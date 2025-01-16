@@ -84,7 +84,7 @@ public class Class8955
                                 for (int n11 = 0; n11 < 4; ++n11) {
                                     for (int n12 = -1; n12 < 4; ++n12) {
                                         class400.setPos(i + (n11 - 1) * n8 + n10 * n9, k + n12, j + (n11 - 1) * n9 - n10 * n8);
-                                        if (n12 < 0 && !this.field37652.method6701(class400).method21697().method26439()) {
+                                        if (n12 < 0 && !this.field37652.getBlockState(class400).method21697().method26439()) {
                                             continue Label_0236;
                                         }
                                         if (n12 >= 0 && !this.field37652.method6961(class400)) {
@@ -124,7 +124,7 @@ public class Class8955
                                 for (int n23 = 0; n23 < 4; ++n23) {
                                     for (int n24 = -1; n24 < 4; ++n24) {
                                         class400.setPos(n15 + (n23 - 1) * n21, n19 + n24, n17 + (n23 - 1) * n22);
-                                        if (n24 < 0 && !this.field37652.method6701(class400).method21697().method26439()) {
+                                        if (n24 < 0 && !this.field37652.getBlockState(class400).method21697().method26439()) {
                                             continue Label_0702;
                                         }
                                         if (n24 >= 0 && !this.field37652.method6961(class400)) {
@@ -166,7 +166,7 @@ public class Class8955
                         final int n36 = n28 + (n32 - 1) * n30 - n31 * n29;
                         final boolean b = n33 < 0;
                         class400.setPos(n34, n35, n36);
-                        this.field37652.method6692(class400, b ? Class7521.field29286.method11878() : Class7521.field29147.method11878());
+                        this.field37652.method6692(class400, b ? Class7521.field29286.getDefaultState() : Class7521.field29147.getDefaultState());
                     }
                 }
             }
@@ -183,14 +183,14 @@ public class Class8955
                     }
                 }
                 class400.setPos(n27 + n37 * n29, method35647 + n38, n28 + n37 * n30);
-                this.field37652.method6688(class400, Class7521.field29286.method11878(), 3);
+                this.field37652.setBlockState(class400, Class7521.field29286.getDefaultState(), 3);
             }
         }
-        final BlockState class401 = ((Class7097<O, BlockState>)Class7521.field29341.method11878()).method21773(Class3998.field18018, (n29 != 0) ? Axis.X : Axis.Z);
+        final BlockState class401 = ((StateHolder<O, BlockState>)Class7521.field29341.getDefaultState()).with(Class3998.field18018, (n29 != 0) ? Axis.X : Axis.Z);
         for (int n39 = 0; n39 < 2; ++n39) {
             for (int n40 = 0; n40 < 3; ++n40) {
                 class400.setPos(n27 + n39 * n29, method35647 + n40, n28 + n39 * n30);
-                this.field37652.method6688(class400, class401, 18);
+                this.field37652.setBlockState(class400, class401, 18);
             }
         }
         return true;

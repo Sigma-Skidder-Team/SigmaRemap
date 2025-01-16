@@ -33,7 +33,7 @@ public class Class4110 extends Class4107
     @Override
     public Class9038 method12350(final Class1852 class1852, final BlockPos class1853, final Class9038 class1854, final Class9038 class1855, final Class9092 class1856) {
         final Random random = new Random(MathHelper.method35688(class1855.field38248));
-        final Class7096 method6701 = class1852.method6701(class1855.field38248);
+        final Class7096 method6701 = class1852.getBlockState(class1855.field38248);
         for (final Class8732 class1857 : this.field18213) {
             if (!class1857.method30162(class1855.field38249, method6701, random)) {
                 continue;

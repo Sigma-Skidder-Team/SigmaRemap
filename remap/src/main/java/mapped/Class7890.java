@@ -20,7 +20,7 @@ public class Class7890
     private static Class4995[][] field32396;
     public static boolean field32397;
     
-    public static Class1932 method25542(final Class1932 class1932) {
+    public static ResourceLocation method25542(final ResourceLocation class1932) {
         if (Class7890.field32396 == null) {
             return class1932;
         }
@@ -89,7 +89,7 @@ public class Class7890
         return method25543(Class2005.field11268, Class7890.field32394.field4684.method1894(), field4701, class1932, field4700);
     }
     
-    private static Class1932 method25543(final Class2005 class2005, final BlockPos class2006, final Class1852 class2007, final Class1932 class2008, final Class527 class2009) {
+    private static ResourceLocation method25543(final Class2005 class2005, final BlockPos class2006, final Class1852 class2007, final ResourceLocation class2008, final Class527 class2009) {
         final Class4995[] array = Class7890.field32396[class2005.ordinal()];
         if (array != null) {
             for (int i = 0; i < array.length; ++i) {
@@ -103,7 +103,7 @@ public class Class7890
         return class2008;
     }
     
-    private static Class1932 method25544(final Class2005 class2005, final Entity class2006, final Class1852 class2007, final Class1932 class2008) {
+    private static ResourceLocation method25544(final Class2005 class2005, final Entity class2006, final Class1852 class2007, final ResourceLocation class2008) {
         final Class4995[] array = Class7890.field32396[class2005.ordinal()];
         if (array != null) {
             for (int i = 0; i < array.length; ++i) {
@@ -119,9 +119,9 @@ public class Class7890
     
     public static void method25545() {
         Class7890.field32396 = null;
-        if (Class8571.method29006()) {
+        if (Config.method29006()) {
             final ArrayList list = new ArrayList();
-            final Class1727[] method28903 = Class8571.method28903();
+            final Class1727[] method28903 = Config.method28903();
             for (int i = method28903.length - 1; i >= 0; --i) {
                 method25547(method28903[i], list);
             }
@@ -150,11 +150,11 @@ public class Class7890
         Arrays.sort(method32777);
         for (int i = 0; i < method32777.length; ++i) {
             final String str = method32777[i];
-            Class8571.method28847("CustomGuis: " + str);
+            Config.method28847("CustomGuis: " + str);
             try {
-                final InputStream method32778 = class1727.method6097(Class346.field2137, new Class1932(str));
+                final InputStream method32778 = class1727.method6097(Class346.field2137, new ResourceLocation(str));
                 if (method32778 == null) {
-                    Class8571.method28848("CustomGuis file not found: " + str);
+                    Config.warn("CustomGuis file not found: " + str);
                 }
                 else {
                     final Class27 class1728 = new Class27();
@@ -167,7 +167,7 @@ public class Class7890
                 }
             }
             catch (final FileNotFoundException ex) {
-                Class8571.method28848("CustomGuis file not found: " + str);
+                Config.warn("CustomGuis file not found: " + str);
             }
             catch (final Exception ex2) {
                 ex2.printStackTrace();
@@ -214,11 +214,11 @@ public class Class7890
     }
     
     private static void method25552(final String str) {
-        Class8571.method28848("[CustomGuis] " + str);
+        Config.warn("[CustomGuis] " + str);
     }
     
     static {
-        Class7890.field32394 = Class8571.method28894();
+        Class7890.field32394 = Config.method28894();
         Class7890.field32395 = null;
         Class7890.field32396 = null;
         Class7890.field32397 = method25551();

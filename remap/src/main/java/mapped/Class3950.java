@@ -33,14 +33,14 @@ public class Class3950 extends Class3948
     
     @Override
     public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
-        if (class7096.method21772((Class7111<Boolean>)Class3950.field17847)) {
+        if (class7096.method21772((IProperty<Boolean>)Class3950.field17847)) {
             final double n = class7098.getX() + 0.5;
             final double n2 = class7098.getY();
             final double n3 = class7098.getZ() + 0.5;
             if (random.nextDouble() < 0.1) {
                 class7097.method6708(n, n2, n3, Class8520.field35039, Class286.field1582, 1.0f, 1.0f, false);
             }
-            final Direction class7099 = class7096.method21772((Class7111<Direction>)Class3950.field17846);
+            final Direction class7099 = class7096.method21772((IProperty<Direction>)Class3950.field17846);
             final Axis method790 = class7099.getAxis();
             final double n4 = random.nextDouble() * 0.6 - 0.3;
             class7097.method6709(Class8432.field34639, n + ((method790 != Axis.X) ? n4 : (class7099.getXOffset() * 0.52)), n2 + random.nextDouble() * 9.0 / 16.0, n3 + ((method790 != Axis.Z) ? n4 : (class7099.getZOffset() * 0.52)), 0.0, 0.0, 0.0);

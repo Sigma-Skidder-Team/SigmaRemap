@@ -39,7 +39,7 @@ public class Class9591
     }
     
     public void method35962(final Class1656 class1656) {
-        if (Class8571.method29003()) {
+        if (Config.method29003()) {
             final long currentTimeMillis = System.currentTimeMillis();
             if (currentTimeMillis < this.field41810 + 500L) {
                 return;

@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class Class3980 extends Class3833
+public class Class3980 extends Block
 {
     private static final Class2259 field17974;
     public static final Class7115 field17975;
@@ -19,12 +19,12 @@ public class Class3980 extends Class3833
     
     public Class3980(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3980.field17975, Direction.NORTH));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3980.field17975, Direction.NORTH));
     }
     
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        return ((Class7097<O, BlockState>)this.method11878()).method21773((Class7111<Comparable>)Class3980.field17975, class7074.method21644().getOpposite());
+        return ((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3980.field17975, class7074.method21644().getOpposite());
     }
     
     @Override
@@ -60,16 +60,16 @@ public class Class3980 extends Class3833
     
     @Override
     public Class7096 method11790(final Class7096 class7096, final Class2052 class7097) {
-        return ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3980.field17975, class7097.method8142(class7096.method21772((Class7111<Direction>)Class3980.field17975)));
+        return ((StateHolder<O, Class7096>)class7096).with((IProperty<Comparable>)Class3980.field17975, class7097.method8142(class7096.method21772((IProperty<Direction>)Class3980.field17975)));
     }
     
     @Override
     public Class7096 method11791(final Class7096 class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.method21772((Class7111<Direction>)Class3980.field17975)));
+        return class7096.method21708(class7097.method8344(class7096.method21772((IProperty<Direction>)Class3980.field17975)));
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Block, Class7096> class9500) {
         class9500.method35378(Class3980.field17975);
     }
     
@@ -81,6 +81,6 @@ public class Class3980 extends Class3833
     static {
         field17974 = new Class2259("container.stonecutter", new Object[0]);
         field17975 = Class3892.field17564;
-        field17976 = Class3833.method11778(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
+        field17976 = Block.method11778(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
     }
 }

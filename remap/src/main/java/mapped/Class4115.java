@@ -7,14 +7,14 @@ package mapped;
 public class Class4115 implements Class4114
 {
     private int field18221;
-    private Class1932 field18222;
+    private ResourceLocation field18222;
     private int field18223;
     private Class1666 field18224;
     public static final int field18225 = 0;
     public static final int field18226 = 1;
     public static final int field18227 = 2;
     
-    public Class4115(final int field18221, final Class1932 field18222, final int field18223) {
+    public Class4115(final int field18221, final ResourceLocation field18222, final int field18223) {
         this.field18221 = -1;
         this.field18223 = 0;
         this.field18221 = field18221;

@@ -64,7 +64,7 @@ public class Class488 extends Class489 implements Class439
         ++this.field2802;
         if (!method2433) {
             if (!this.field2656.isRemote) {
-                final List<Entity> method2434 = this.field2656.method7128((Class<? extends Entity>) Entity.class, new AxisAlignedBB(this.method2193()));
+                final List<Entity> method2434 = this.field2656.method7128((Class<? extends Entity>) Entity.class, new AxisAlignedBB(this.getPos()));
                 if (!method2434.isEmpty()) {
                     this.method2437(((Entity)method2434.get(0)).method1915());
                 }
@@ -111,7 +111,7 @@ public class Class488 extends Class489 implements Class439
     public void method2436() {
         if (!this.field2656.isRemote) {
             this.field2803 = 40;
-            this.field2656.method6763(this.method2193(), this.method2194().method21696(), 1, 0);
+            this.field2656.method6763(this.getPos(), this.method2194().getBlock(), 1, 0);
             this.method2161();
         }
     }
@@ -150,7 +150,7 @@ public class Class488 extends Class489 implements Class439
     }
     
     private void method2439(final Class1849 class1849) {
-        final Vec3d method16738 = new Vec3d(this.method2193().getX(), 0.0, this.method2193().getZ()).normalize();
+        final Vec3d method16738 = new Vec3d(this.getPos().getX(), 0.0, this.getPos().getZ()).normalize();
         Vec3d class1850 = method16738.scale(1024.0);
         for (int n = 16; method2441(class1849, class1850).method7012() > 0 && n-- > 0; class1850 = class1850.add(method16738.scale(-16.0))) {
             Class488.field2801.debug("Skipping backwards past nonempty chunk at {}", (Object)class1850);
@@ -187,7 +187,7 @@ public class Class488 extends Class489 implements Class439
                 }
                 for (int k = 255; k > ((class1857 != null) ? class1857.getY() : 0); --k) {
                     final BlockPos class1858 = new BlockPos(class1856.getX() + i, k, class1856.getZ() + j);
-                    final Class7096 method6701 = class1855.method6701(class1858);
+                    final Class7096 method6701 = class1855.getBlockState(class1858);
                     if (method6701.method21762(class1855, class1858) && (b || method6701.method21696() != Class7521.field29172)) {
                         class1857 = class1858;
                         break;
@@ -210,16 +210,16 @@ public class Class488 extends Class489 implements Class439
         BlockPos class1865 = null;
         double n = 0.0;
         for (final BlockPos class1866 : BlockPos.getAllInBoxMutable(class1863, class1864)) {
-            final Class7096 method7020 = class1862.method6701(class1866);
+            final Class7096 method7020 = class1862.getBlockState(class1866);
             final BlockPos method7021 = class1866.method1137();
             final BlockPos method7022 = class1866.method1138(2);
             if (method7020.method21696() != Class7521.field29403) {
                 continue;
             }
-            if (class1862.method6701(method7021).method21762(class1862, method7021)) {
+            if (class1862.getBlockState(method7021).isCollisionShapeOpaque(class1862, method7021)) {
                 continue;
             }
-            if (class1862.method6701(method7022).method21762(class1862, method7022)) {
+            if (class1862.getBlockState(method7022).isCollisionShapeOpaque(class1862, method7022)) {
                 continue;
             }
             final double method7023 = class1866.distanceSq(0.0, 0.0, 0.0, true);
@@ -233,12 +233,12 @@ public class Class488 extends Class489 implements Class439
     }
     
     private void method2443(final Class1849 class1849, final BlockPos class1850) {
-        Class4535.field20006.method13527(Class5116.method16014(this.method2193(), false)).method28613(class1849, (Class6346<? extends Class7065>)class1849.method6904().method7438(), new Random(), class1850);
+        Class4535.field20006.method13527(Class5116.method16014(this.getPos(), false)).method28613(class1849, (Class6346<? extends Class7065>)class1849.method6904().method7438(), new Random(), class1850);
     }
     
     @Override
     public boolean method2444(final Direction class179) {
-        return Class3833.method11805(this.method2194(), this.field2656, this.method2193(), class179);
+        return Block.method11805(this.method2194(), this.field2656, this.getPos(), class179);
     }
     
     public int method2445() {

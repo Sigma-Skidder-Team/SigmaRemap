@@ -48,7 +48,7 @@ public class Class5029 implements IProfiler
     public void method15295() {
         this.field21555 = (Class869.method5277().method5327() == this);
         this.field21556 = (this.field21555 && Class9036.method32483());
-        this.field21557 = (this.field21555 && Class8571.method28953());
+        this.field21557 = (this.field21555 && Config.method28953());
         this.field21553.field25880.method15295();
         this.field21554.field25880.method15295();
     }
@@ -60,7 +60,7 @@ public class Class5029 implements IProfiler
     }
     
     @Override
-    public void method15297(final String s) {
+    public void startSection(final String s) {
         if (this.field21556) {
             final int hashCode = s.hashCode();
             if (hashCode == Class5029.field21563 && s.equals("scheduledExecutables")) {
@@ -68,7 +68,7 @@ public class Class5029 implements IProfiler
             }
             else if (hashCode == Class5029.field21564) {
                 if (s.equals("tick")) {
-                    if (Class8571.method28834()) {
+                    if (Config.method28834()) {
                         Class9036.field38221.method26345();
                         Class9036.field38220.method26344();
                     }
@@ -86,8 +86,8 @@ public class Class5029 implements IProfiler
                 }
             }
         }
-        this.field21553.field25880.method15297(s);
-        this.field21554.field25880.method15297(s);
+        this.field21553.field25880.startSection(s);
+        this.field21554.field25880.startSection(s);
     }
     
     @Override
@@ -97,9 +97,9 @@ public class Class5029 implements IProfiler
     }
     
     @Override
-    public void method15299() {
-        this.field21553.field25880.method15299();
-        this.field21554.field25880.method15299();
+    public void endSection() {
+        this.field21553.field25880.endSection();
+        this.field21554.field25880.endSection();
     }
     
     @Override

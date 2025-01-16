@@ -42,7 +42,7 @@ public class Class9243
         list.add("textures/gui/title/background");
         for (int i = 0; i < 100; ++i) {
             final String string = "optifine/gui/background" + i;
-            if (Class8571.method28900(new Class1932(string + "/panorama_0.png"))) {
+            if (Config.method28900(new ResourceLocation(string + "/panorama_0.png"))) {
                 list.add(string);
             }
         }
@@ -57,15 +57,15 @@ public class Class9243
                 s = "optifine/gui";
             }
             else {
-                Class8571.method28847("CustomPanorama: " + s);
+                Config.method28847("CustomPanorama: " + s);
             }
-            final Class1932 class1932 = new Class1932(s + "/background.properties");
+            final ResourceLocation class1932 = new ResourceLocation(s + "/background.properties");
             try {
-                final InputStream method28897 = Class8571.method28897(class1932);
+                final InputStream method28897 = Config.method28897(class1932);
                 if (method28897 != null) {
                     final Class27 class1933 = new Class27();
                     class1933.load(method28897);
-                    Class8571.method28847("CustomPanorama: " + class1932.method7797());
+                    Config.method28847("CustomPanorama: " + class1932.method7797());
                     array2[i] = class1933;
                     method28897.close();
                 }
@@ -83,7 +83,7 @@ public class Class9243
                 properties = array[0];
             }
             if (properties != null) {
-                array2[i] = Class8571.method28933(properties.getProperty("weight", null), 1);
+                array2[i] = Config.method28933(properties.getProperty("weight", null), 1);
             }
             else {
                 array2[i] = 1;

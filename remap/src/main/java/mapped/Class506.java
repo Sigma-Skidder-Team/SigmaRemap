@@ -152,7 +152,7 @@ public class Class506 extends Class428
     
     @Override
     public BlockState method2141() {
-        return ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29299.method11878()).method21773((Class7111<Comparable>)Class3951.field17846, Direction.NORTH)).method21773((Class7111<Comparable>)Class3951.field17847, this.method2598());
+        return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class7521.field29299.getDefaultState()).with((IProperty<Comparable>)Class3951.field17846, Direction.NORTH)).with((IProperty<Comparable>)Class3951.field17847, this.method2598());
     }
     
     static {

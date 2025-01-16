@@ -35,11 +35,11 @@ public class Class757 extends Class756
     }
     
     @Override
-    public void method1838(final double n, final double n2, final double n3) {
+    public void pushOutOfBlocks(final double n, final double n2, final double n3) {
         final Class5713 class5713 = new Class5713();
         Class9463.method35173().method35188().method21097(class5713);
         if (!class5713.method16962()) {
-            super.method1838(n, n2, n3);
+            super.pushOutOfBlocks(n, n2, n3);
         }
     }
     

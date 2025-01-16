@@ -54,7 +54,7 @@ public class Class7256 extends Class7255
     
     @Override
     public BlockState method22162(final Class7099 class7099) {
-        return Class7521.field29147.method11878();
+        return Class7521.field29147.getDefaultState();
     }
     
     @Override
@@ -69,6 +69,6 @@ public class Class7256 extends Class7255
     
     @Override
     public VoxelShape method22167(final Class7099 class7099, final Class1855 class7100, final BlockPos class7101) {
-        return Class7698.method24486();
+        return VoxelShapes.method24486();
     }
 }

@@ -12,14 +12,14 @@ import com.mojang.datafixers.Dynamic;
 
 public class Class6218 extends Class6213
 {
-    private final Class7909<Class3833> field25068;
+    private final Class7909<Block> field25068;
     
-    public Class6218(final Class7909<Class3833> field25068) {
+    public Class6218(final Class7909<Block> field25068) {
         this.field25068 = field25068;
     }
     
     public <T> Class6218(final Dynamic<T> dynamic) {
-        this(Class7188.method22057().method18460(new Class1932(dynamic.get("tag").asString(""))));
+        this(Class7188.method22057().method18460(new ResourceLocation(dynamic.get("tag").asString(""))));
     }
     
     @Override

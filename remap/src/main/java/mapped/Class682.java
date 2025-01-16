@@ -8,7 +8,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class682 extends Class648
 {
-    private static final Class1932 field3725;
+    private static final ResourceLocation field3725;
     public boolean field3726;
     
     public Class682(final int n, final int n2, final int n3, final int n4, final String s, final boolean field3726) {
@@ -37,10 +37,10 @@ public class Class682 extends Class648
         Class8726.method30013(Class2050.field11693, Class2135.field12460);
         Class565.method3188(this.field3426, this.field3427, 0.0f, this.field3726 ? 20.0f : 0.0f, 20, this.field3425, 32, 64);
         this.method3354(method5277, n, n2);
-        this.method3297(field4643, this.method3369(), this.field3426 + 24, this.field3427 + (this.field3425 - 8) / 2, 0xE0E0E0 | MathHelper.method35649(this.field3433 * 255.0f) << 24);
+        this.method3297(field4643, this.method3369(), this.field3426 + 24, this.field3427 + (this.field3425 - 8) / 2, 0xE0E0E0 | MathHelper.ceil(this.field3433 * 255.0f) << 24);
     }
     
     static {
-        field3725 = new Class1932("textures/gui/checkbox.png");
+        field3725 = new ResourceLocation("textures/gui/checkbox.png");
     }
 }

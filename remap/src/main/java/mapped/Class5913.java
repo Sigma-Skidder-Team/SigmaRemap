@@ -16,11 +16,11 @@ import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public class Class5913 implements Consumer<BiConsumer<Class1932, Class4947>>
+public class Class5913 implements Consumer<BiConsumer<ResourceLocation, Class4947>>
 {
     private static final Class5754 field24291;
     private static final Set<EntityType<?>> field24292;
-    private final Map<Class1932, Class4947> field24293;
+    private final Map<ResourceLocation, Class4947> field24293;
     
     public Class5913() {
         this.field24293 = Maps.newHashMap();
@@ -31,7 +31,7 @@ public class Class5913 implements Consumer<BiConsumer<Class1932, Class4947>>
     }
     
     @Override
-    public void accept(final BiConsumer<Class1932, Class4947> biConsumer) {
+    public void accept(final BiConsumer<ResourceLocation, Class4947> biConsumer) {
         this.method17777(EntityType.field28958, Class9317.method34491());
         this.method17777(EntityType.field28960, Class9317.method34491());
         this.method17777(EntityType.field28961, Class9317.method34491());
@@ -116,8 +116,8 @@ public class Class5913 implements Consumer<BiConsumer<Class1932, Class4947>>
         this.method17777(EntityType.field29014, Class9317.method34491().method14902(Class9320.method34514().method14895(Class5771.method17164(1)).method14897(((Class4948<Class4950<?>>)Class6377.method19045(Items.field31435).method14907(Class132.method663(Class5772.method17166(0.0f, 1.0f)))).method14907((Class4942)Class138.method681(Class5772.method17166(0.0f, 1.0f))))).method14902(Class9320.method34514().method14895(Class5771.method17164(1)).method14897(((Class4948<Class4950<?>>)Class6377.method19045(Items.field31439).method14907(Class132.method663(Class5772.method17166(0.0f, 1.0f)))).method14907((Class4942)Class138.method681(Class5772.method17166(0.0f, 1.0f))))).method14902(Class9320.method34514().method14895(Class5771.method17164(1)).method14897(Class6377.method19045(Items.field31285)).method14898(Class160.method758()).method14898(Class159.method754(0.025f, 0.01f))));
         this.method17777(EntityType.field29054, Class9317.method34491().method14902(Class9320.method34514().method14895(Class5771.method17164(1)).method14897(((Class4948<Class4950<?>>)Class6377.method19045(Items.field31435).method14907(Class132.method663(Class5772.method17166(0.0f, 2.0f)))).method14907((Class4942)Class138.method681(Class5772.method17166(0.0f, 1.0f))))).method14902(Class9320.method34514().method14895(Class5771.method17164(1)).method14897(Class6377.method19045(Items.field31284)).method14897(Class6377.method19045(Items.field31517)).method14897(Class6377.method19045(Items.field31518)).method14898(Class160.method758()).method14898(Class159.method754(0.025f, 0.01f))));
         final HashSet hashSet = Sets.newHashSet();
-        for (final EntityType class7499 : Class90.field210) {
-            final Class1932 method23368 = class7499.method23368();
+        for (final EntityType class7499 : Registry.field210) {
+            final ResourceLocation method23368 = class7499.method23368();
             if (!Class5913.field24292.contains(class7499) && class7499.method23365() == Class1976.field10952) {
                 if (method23368 == Class9020.field38063) {
                     continue;
@@ -125,7 +125,7 @@ public class Class5913 implements Consumer<BiConsumer<Class1932, Class4947>>
                 if (this.field24293.remove(method23368) == null) {
                     continue;
                 }
-                throw new IllegalStateException(String.format("Weird loottable '%s' for '%s', not a LivingEntity so should not have loot", method23368, Class90.field210.method503(class7499)));
+                throw new IllegalStateException(String.format("Weird loottable '%s' for '%s', not a LivingEntity so should not have loot", method23368, Registry.field210.getKey(class7499)));
             }
             else {
                 if (method23368 == Class9020.field38063) {
@@ -136,7 +136,7 @@ public class Class5913 implements Consumer<BiConsumer<Class1932, Class4947>>
                 }
                 final Class4947 class7500 = this.field24293.remove(method23368);
                 if (class7500 == null) {
-                    throw new IllegalStateException(String.format("Missing loottable '%s' for '%s'", method23368, Class90.field210.method503(class7499)));
+                    throw new IllegalStateException(String.format("Missing loottable '%s' for '%s'", method23368, Registry.field210.getKey(class7499)));
                 }
                 biConsumer.accept(method23368, class7500);
             }
@@ -148,7 +148,7 @@ public class Class5913 implements Consumer<BiConsumer<Class1932, Class4947>>
         this.method17778(class7499.method23368(), class7500);
     }
     
-    private void method17778(final Class1932 class1932, final Class4947 class1933) {
+    private void method17778(final ResourceLocation class1932, final Class4947 class1933) {
         this.field24293.put(class1932, class1933);
     }
     

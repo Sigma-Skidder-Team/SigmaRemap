@@ -15,8 +15,8 @@ public class Class4331 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19389;
     private Class2227 field19390;
-    private List<Class1932> field19391;
-    private List<Class1932> field19392;
+    private List<ResourceLocation> field19391;
+    private List<ResourceLocation> field19392;
     private boolean field19393;
     private boolean field19394;
     private boolean field19395;
@@ -25,10 +25,10 @@ public class Class4331 implements IPacket<IClientPlayNetHandler>
     public Class4331() {
     }
     
-    public Class4331(final Class2227 field19390, final Collection<Class1932> collection, final Collection<Class1932> collection2, final boolean field19391, final boolean field19392, final boolean field19393, final boolean field19394) {
+    public Class4331(final Class2227 field19390, final Collection<ResourceLocation> collection, final Collection<ResourceLocation> collection2, final boolean field19391, final boolean field19392, final boolean field19393, final boolean field19394) {
         this.field19390 = field19390;
-        this.field19391 = (List<Class1932>)ImmutableList.copyOf((Collection)collection);
-        this.field19392 = (List<Class1932>)ImmutableList.copyOf((Collection)collection2);
+        this.field19391 = (List<ResourceLocation>)ImmutableList.copyOf((Collection)collection);
+        this.field19392 = (List<ResourceLocation>)ImmutableList.copyOf((Collection)collection2);
         this.field19393 = field19391;
         this.field19394 = field19392;
         this.field19395 = field19393;
@@ -68,24 +68,24 @@ public class Class4331 implements IPacket<IClientPlayNetHandler>
         class8654.writeBoolean(this.field19395);
         class8654.writeBoolean(this.field19396);
         class8654.writeVarInt(this.field19391.size());
-        final Iterator<Class1932> iterator = this.field19391.iterator();
+        final Iterator<ResourceLocation> iterator = this.field19391.iterator();
         while (iterator.hasNext()) {
             class8654.method29517(iterator.next());
         }
         if (this.field19390 == Class2227.field13701) {
             class8654.writeVarInt(this.field19392.size());
-            final Iterator<Class1932> iterator2 = this.field19392.iterator();
+            final Iterator<ResourceLocation> iterator2 = this.field19392.iterator();
             while (iterator2.hasNext()) {
                 class8654.method29517(iterator2.next());
             }
         }
     }
     
-    public List<Class1932> method13003() {
+    public List<ResourceLocation> method13003() {
         return this.field19391;
     }
     
-    public List<Class1932> method13004() {
+    public List<ResourceLocation> method13004() {
         return this.field19392;
     }
     

@@ -139,12 +139,12 @@ public class Class856 extends Class855
             this.field2970 = 0.5f;
             this.rotationYaw += method1140;
             if (this.rand.nextInt(100) == 0) {
-                if (this.world.method6701(method1137).method21713(this.world, method1137)) {
+                if (this.world.getBlockState(method1137).method21713(this.world, method1137)) {
                     this.method5145(true);
                 }
             }
         }
-        else if (!this.world.method6701(method1137).method21713(this.world, class354)) {
+        else if (!this.world.getBlockState(method1137).method21713(this.world, class354)) {
             this.method5145(false);
             this.world.method6839(null, 1025, class354, 0);
         }

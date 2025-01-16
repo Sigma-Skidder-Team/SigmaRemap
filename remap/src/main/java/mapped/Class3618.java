@@ -29,21 +29,21 @@ public class Class3618 extends Class3617
         if (Class798.method4571(this.field16814).nextInt(30) == 0) {
             for (int i = 1; i <= 2; ++i) {
                 final BlockPos method1140 = new BlockPos(this.field16814).method1140(i);
-                final BlockState method1141 = this.field16814.world.method6701(method1140);
-                final Class3833 method1142 = method1141.method21696();
+                final BlockState method1141 = this.field16814.world.getBlockState(method1140);
+                final Block method1142 = method1141.getBlock();
                 int n = 0;
                 Object o = null;
                 if (method1142.method11785(Class7188.field27933)) {
                     if (!(method1142 instanceof Class3878)) {
                         if (!(method1142 instanceof Class3873)) {
                             if (method1142 == Class7521.field29819) {
-                                if (((Class7097<Object, BlockState>)method1141).method21772((Class7111<Integer>)Class3884.field17541) < 3) {
+                                if (((StateHolder<Object, BlockState>)method1141).get((IProperty<Integer>)Class3884.field17541) < 3) {
                                     n = 1;
                                     o = Class3884.field17541;
                                 }
                             }
                         }
-                        else if (((Class7097<Object, BlockState>)method1141).method21772((Class7111<Integer>)Class3873.field17516) < 7) {
+                        else if (((StateHolder<Object, BlockState>)method1141).get((IProperty<Integer>)Class3873.field17516) < 7) {
                             n = 1;
                             o = Class3873.field17516;
                         }
@@ -57,7 +57,7 @@ public class Class3618 extends Class3617
                     }
                     if (n != 0) {
                         this.field16814.world.method6955(2005, method1140, 0);
-                        this.field16814.world.method6692(method1140, ((Class7097<Object, BlockState>)method1141).method21773((Class7111<Comparable>)o, ((Class7097<Object, BlockState>)method1141).method21772((Class7111<Integer>)o) + 1));
+                        this.field16814.world.method6692(method1140, ((StateHolder<Object, BlockState>)method1141).with((IProperty<Comparable>)o, ((StateHolder<Object, BlockState>)method1141).get((IProperty<Integer>)o) + 1));
                         Class798.method4572(this.field16814);
                     }
                 }

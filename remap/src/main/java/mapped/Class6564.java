@@ -71,9 +71,9 @@ public class Class6564
                     this.field26066.rotationYaw = this.method19909(this.field26066.rotationYaw, (float)(MathHelper.method35693(n2, n) * 57.2957763671875) - 90.0f, 90.0f);
                     this.field26066.method2733((float)(this.field26070 * this.field26066.method2710(Class8107.field33408).method23950()));
                     final BlockPos class354 = new BlockPos(this.field26066);
-                    final BlockState method6701 = this.field26066.world.method6701(class354);
-                    final Class3833 method6702 = method6701.method21696();
-                    final VoxelShape method6703 = method6701.method21727(this.field26066.world, class354);
+                    final BlockState method6701 = this.field26066.world.getBlockState(class354);
+                    final Block method6702 = method6701.getBlock();
+                    final VoxelShape method6703 = method6701.getCollisionShape(this.field26066.world, class354);
                     Label_0593: {
                         if (n3 > this.field26066.stepHeight && n * n + n2 * n2 < Math.max(1.0f, this.field26066.method1930())) {
                             break Label_0593;

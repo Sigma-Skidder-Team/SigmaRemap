@@ -13,7 +13,7 @@ public class Class4028 extends Class4027
     
     public Class4028(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773(Class4028.field18120, Axis.Y));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with(Class4028.field18120, Axis.Y));
     }
     
     @Override

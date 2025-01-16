@@ -129,11 +129,11 @@ public class Class7718 implements Class7712
     }
     
     private Class8802[] method24621() {
-        final Class1932 class1932 = new Class1932(this.field30681);
-        if (!Class90.field208.method510(class1932)) {
+        final ResourceLocation class1932 = new ResourceLocation(this.field30681);
+        if (!Registry.BLOCK.method510(class1932)) {
             final Matcher matcher = Pattern.compile("^block([0-9]+).*$").matcher(this.field30681);
             if (matcher.matches()) {
-                final int method28933 = Class8571.method28933(matcher.group(1), -1);
+                final int method28933 = Config.method28933(matcher.group(1), -1);
                 if (method28933 >= 0) {
                     return new Class8802[] { new Class8802(method28933) };
                 }
@@ -141,7 +141,7 @@ public class Class7718 implements Class7712
             final Class8802[] method28934 = new Class8652("Colormap").method29444(this.field30681);
             return (Class8802[])((method28934 == null) ? null : method28934);
         }
-        return new Class8802[] { new Class8802(Class6770.method20649(Class90.field208.method505(class1932))) };
+        return new Class8802[] { new Class8802(BlockUtils.method20649(Registry.BLOCK.getOrDefault(class1932))) };
     }
     
     private void method24622() {
@@ -151,7 +151,7 @@ public class Class7718 implements Class7712
                 return;
             }
             final String string = this.field30685 + ".png";
-            final InputStream method28897 = Class8571.method28897(new Class1932(string));
+            final InputStream method28897 = Config.method28897(new ResourceLocation(string));
             if (method28897 == null) {
                 return;
             }
@@ -180,11 +180,11 @@ public class Class7718 implements Class7712
     }
     
     private static void method24623(final String str) {
-        Class8571.method28847("CustomColors: " + str);
+        Config.method28847("CustomColors: " + str);
     }
     
     private static void method24624(final String str) {
-        Class8571.method28848("CustomColors: " + str);
+        Config.warn("CustomColors: " + str);
     }
     
     private static String method24625(String s, final String s2, final String s3) {
@@ -243,13 +243,13 @@ public class Class7718 implements Class7712
     }
     
     public int method24629(int method28865) {
-        method28865 = Class8571.method28865(method28865, 0, this.field30691.length - 1);
+        method28865 = Config.method28865(method28865, 0, this.field30691.length - 1);
         return this.field30691[method28865] & 0xFFFFFF;
     }
     
     public int method24630(int method28865, int method28866) {
-        method28865 = Class8571.method28865(method28865, 0, this.field30689 - 1);
-        method28866 = Class8571.method28865(method28866, 0, this.field30690 - 1);
+        method28865 = Config.method28865(method28865, 0, this.field30689 - 1);
+        method28866 = Config.method28865(method28866, 0, this.field30690 - 1);
         return this.field30691[method28866 * this.field30689 + method28865] & 0xFFFFFF;
     }
     
@@ -312,10 +312,10 @@ public class Class7718 implements Class7712
     }
     
     private int method24636(final Class3090 class3090, final BlockPos class3091) {
-        final int method504 = Class90.field217.method504(class3090);
+        final int method504 = Registry.field217.getId(class3090);
         int n = class3091.getY() - this.field30688;
         if (this.field30687 > 0) {
-            n += (Class8571.method28967(class3091.getX() << 16 + class3091.getZ()) & 0xFF) % (this.field30687 * 2 + 1) - this.field30687;
+            n += (Config.method28967(class3091.getX() << 16 + class3091.getZ()) & 0xFF) % (this.field30687 * 2 + 1) - this.field30687;
         }
         return this.method24630(method504, n);
     }
@@ -351,7 +351,7 @@ public class Class7718 implements Class7712
         if (this.field30684 == null) {
             this.field30684 = new Class8802[0];
         }
-        this.field30684 = (Class8802[])Class8571.method28982(this.field30684, class8802);
+        this.field30684 = (Class8802[]) Config.method28982(this.field30684, class8802);
     }
     
     public void method24642(final int n, final int n2) {
@@ -398,7 +398,7 @@ public class Class7718 implements Class7712
     
     @Override
     public String toString() {
-        return "" + this.field30682 + "/" + this.field30681 + ", blocks: " + Class8571.method28888(this.field30684) + ", source: " + this.field30685;
+        return "" + this.field30682 + "/" + this.field30681 + ", blocks: " + Config.method28888(this.field30684) + ", source: " + this.field30685;
     }
     
     static {

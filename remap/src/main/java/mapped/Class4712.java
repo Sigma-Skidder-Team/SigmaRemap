@@ -46,7 +46,7 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
     }
     
     private <E extends Entity> void method14007(final T t, final float n, final Class7351 class7351, final Class7807 class7352, final E e) {
-        if (!Class8571.method28955() || !Class9216.field39049) {
+        if (!Config.method28955() || !Class9216.field39049) {
             class7351.method22567();
             final double n2 = MathHelper.method35700(n * 0.5f, e.rotationYaw, e.prevRotationYaw) * 0.017453292f;
             final double n3 = MathHelper.method35700(n * 0.5f, e.rotationPitch, e.prevRotationPitch) * 0.017453292f;
@@ -81,12 +81,12 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
             final int method35705 = this.field20283.method28699(e).method13954(e, n);
             final int method35706 = t.world.method6992(Class237.field911, new BlockPos(t.method1747(n)));
             final int method35707 = t.world.method6992(Class237.field911, new BlockPos(e.method1747(n)));
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class9216.method33873();
             }
             method14008(method35702, method35703, n12, n13, n14, method35704, method35705, method35706, method35707, 0.025f, 0.025f, n16, n17);
             method14008(method35702, method35703, n12, n13, n14, method35704, method35705, method35706, method35707, 0.025f, 0.0f, n16, n17);
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class9216.method33874();
             }
             class7351.method22568();

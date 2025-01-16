@@ -15,8 +15,8 @@ public class Class4051 extends Item
         this.field18143 = "textures/entity/horse/armor/horse_armor_" + str + ".png";
     }
     
-    public Class1932 method12249() {
-        return new Class1932(this.field18143);
+    public ResourceLocation method12249() {
+        return new ResourceLocation(this.field18143);
     }
     
     public int method12250() {

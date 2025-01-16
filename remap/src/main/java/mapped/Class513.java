@@ -98,7 +98,7 @@ public class Class513 extends Class512 implements Class514
         final BlockPos method6758 = class1849.method6758();
         if (class1849.dimension.method20503() && class1849.method6764().method29564() != Class101.field300) {
             int max = Math.max(0, this.field3040.method1565(class1849));
-            final int method6759 = MathHelper.floor(class1849.method6787().method34784(method6758.getX(), method6758.getZ()));
+            final int method6759 = MathHelper.floor(class1849.getWorldBorder().method34784(method6758.getX(), method6758.getZ()));
             if (method6759 < max) {
                 max = method6759;
             }
@@ -305,27 +305,27 @@ public class Class513 extends Class512 implements Class514
             }
             if (this.method2664() + this.method2750() != this.field3045) {
                 this.field3045 = this.method2664() + this.method2750();
-                this.method2921(Class9456.field40645, MathHelper.method35649(this.field3045));
+                this.method2921(Class9456.field40645, MathHelper.ceil(this.field3045));
             }
             if (this.field3010.method33491() != this.field3046) {
                 this.field3046 = this.field3010.method33491();
-                this.method2921(Class9456.field40646, MathHelper.method35649((float)this.field3046));
+                this.method2921(Class9456.field40646, MathHelper.ceil((float)this.field3046));
             }
             if (this.getAir() != this.field3047) {
                 this.field3047 = this.getAir();
-                this.method2921(Class9456.field40647, MathHelper.method35649((float)this.field3047));
+                this.method2921(Class9456.field40647, MathHelper.ceil((float)this.field3047));
             }
             if (this.method2693() != this.field3048) {
                 this.field3048 = this.method2693();
-                this.method2921(Class9456.field40648, MathHelper.method35649((float)this.field3048));
+                this.method2921(Class9456.field40648, MathHelper.ceil((float)this.field3048));
             }
             if (this.field3027 != this.field3050) {
                 this.field3050 = this.field3027;
-                this.method2921(Class9456.field40649, MathHelper.method35649((float)this.field3050));
+                this.method2921(Class9456.field40649, MathHelper.ceil((float)this.field3050));
             }
             if (this.field3026 != this.field3049) {
                 this.field3049 = this.field3026;
-                this.method2921(Class9456.field40650, MathHelper.method35649((float)this.field3049));
+                this.method2921(Class9456.field40650, MathHelper.ceil((float)this.field3049));
             }
             if (this.field3027 != this.field3054) {
                 this.field3054 = this.field3027;
@@ -508,7 +508,7 @@ public class Class513 extends Class512 implements Class514
         float field2454 = this.rotationPitch;
         final float field2455;
         float n = field2455 = this.rotationYaw;
-        method1481.method6796().method15297("moving");
+        method1481.method6796().startSection("moving");
         if (field2453 == DimensionType.field2223 && field2452 == DimensionType.field2224) {
             this.field3066 = this.method1934();
             method1485 /= 8.0;
@@ -529,9 +529,9 @@ public class Class513 extends Class512 implements Class514
             }
         }
         this.method1730(method1485, method1486, method1487, n, field2454);
-        method1481.method6796().method15299();
-        method1481.method6796().method15297("placing");
-        this.method1730(MathHelper.clamp(method1485, Math.min(-2.9999872E7, method1482.method6787().method34786() + 16.0), Math.min(2.9999872E7, method1482.method6787().method34788() - 16.0)), method1486, MathHelper.clamp(method1487, Math.min(-2.9999872E7, method1482.method6787().method34787() + 16.0), Math.min(2.9999872E7, method1482.method6787().method34789() - 16.0)), n, field2454);
+        method1481.method6796().endSection();
+        method1481.method6796().startSection("placing");
+        this.method1730(MathHelper.clamp(method1485, Math.min(-2.9999872E7, method1482.getWorldBorder().method34786() + 16.0), Math.min(2.9999872E7, method1482.getWorldBorder().method34788() - 16.0)), method1486, MathHelper.clamp(method1487, Math.min(-2.9999872E7, method1482.getWorldBorder().method34787() + 16.0), Math.min(2.9999872E7, method1482.getWorldBorder().method34789() - 16.0)), n, field2454);
         if (field2452 != DimensionType.field2225) {
             if (!method1482.method6909().method31767(this, field2455)) {
                 method1482.method6909().method31769(this);
@@ -545,14 +545,14 @@ public class Class513 extends Class512 implements Class514
             for (int i = -2; i <= 2; ++i) {
                 for (int j = -2; j <= 2; ++j) {
                     for (int k = -1; k < 3; ++k) {
-                        method1482.method6692(new BlockPos(method1489 + j * 1 + i * 0, n2 + k, method1490 + j * 0 - i * 1), (k < 0) ? Class7521.field29286.method11878() : Class7521.field29147.method11878());
+                        method1482.method6692(new BlockPos(method1489 + j * 1 + i * 0, n2 + k, method1490 + j * 0 - i * 1), (k < 0) ? Class7521.field29286.getDefaultState() : Class7521.field29147.getDefaultState());
                     }
                 }
             }
             this.method1730(method1489, n2, method1490, n, 0.0f);
             this.method1936(Vec3d.ZERO);
         }
-        method1481.method6796().method15299();
+        method1481.method6796().endSection();
         this.method1727(method1482);
         method1482.method6890(this);
         this.method2924(method1481);
@@ -681,14 +681,14 @@ public class Class513 extends Class512 implements Class514
     public void method2926(final double n, final boolean b) {
         final BlockPos method1672 = this.method1672();
         if (this.world.method6971(method1672)) {
-            super.method1701(n, b, this.world.method6701(method1672), method1672);
+            super.method1701(n, b, this.world.getBlockState(method1672), method1672);
         }
     }
     
     @Override
     public void method2827(final Class497 class497) {
         class497.method2525(this);
-        this.field3039.method17469(new Class4350(class497.method2193()));
+        this.field3039.method17469(new Class4350(class497.getPos()));
     }
     
     private void method2927() {
@@ -827,7 +827,7 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method2863(final Class1932[] array) {
+    public void method2863(final ResourceLocation[] array) {
         final ArrayList arrayList = Lists.newArrayList();
         for (int length = array.length, i = 0; i < length; ++i) {
             this.field3040.method1577().method6382(array[i]).ifPresent(arrayList::add);

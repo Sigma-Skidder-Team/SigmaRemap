@@ -34,7 +34,7 @@ public class Class3602 extends Class3446
         final LivingEntity method2634 = this.field16778.method2634();
         if (method2634 != null) {
             Vec3d class5487 = new Vec3d(this.field16778.getPosX() - method2634.getPosX(), this.field16778.getPosY() - method2634.getPosY(), this.field16778.getPosZ() - method2634.getPosZ());
-            final BlockState method2635 = this.field16778.world.method6701(new BlockPos(this.field16778.getPosX() + class5487.x, this.field16778.getPosY() + class5487.y, this.field16778.getPosZ() + class5487.z));
+            final BlockState method2635 = this.field16778.world.getBlockState(new BlockPos(this.field16778.getPosX() + class5487.x, this.field16778.getPosY() + class5487.y, this.field16778.getPosZ() + class5487.z));
             if (this.field16778.world.method6702(new BlockPos(this.field16778.getPosX() + class5487.x, this.field16778.getPosY() + class5487.y, this.field16778.getPosZ() + class5487.z)).method21793(Class7324.field28319) || method2635.method21706()) {
                 final double method2636 = class5487.length();
                 if (method2636 > 0.0) {

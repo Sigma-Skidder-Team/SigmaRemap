@@ -77,8 +77,8 @@ public enum Class230
         this.field856[2] = s6;
     }
     
-    public Class1932 method857(final boolean b) {
-        return new Class1932("entity/" + (b ? "banner" : "shield") + "/" + this.method858());
+    public ResourceLocation method857(final boolean b) {
+        return new ResourceLocation("entity/" + (b ? "banner" : "shield") + "/" + this.method858());
     }
     
     public String method858() {

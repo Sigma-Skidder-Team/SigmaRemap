@@ -41,7 +41,7 @@ public class Class5109 implements Class5108
             return null;
         }
         if (s.indexOf(":") >= 0) {
-            final String[] method28937 = Class8571.method28937(s, ":");
+            final String[] method28937 = Config.method28937(s, ":");
             Class6300 method28938 = this.method16006(method28937[0]);
             for (int i = 1; i < method28937.length; ++i) {
                 final Class6300 method28939 = method28938.method18657(method28937[i]);
@@ -77,7 +77,7 @@ public class Class5109 implements Class5108
     
     @Override
     public Class330 method16007(final String s) {
-        final String[] method28937 = Class8571.method28937(s, ".");
+        final String[] method28937 = Config.method28937(s, ".");
         if (method28937.length != 2) {
             return null;
         }

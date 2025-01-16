@@ -99,8 +99,8 @@ public class Class862 extends Class860
     @Override
     public boolean method5189() {
         if (this.world.method6977(this)) {
-            final BlockState method6701 = this.world.method6701(this.field4599.method1149(this.field4600.getOpposite()));
-            return (method6701.method21697().method26439() || (this.field4600.getAxis().isHorizontal() && Class3895.method11975(method6701))) && this.world.method6737(this, this.getBoundingBox(), Class862.field4597).isEmpty();
+            final BlockState method6701 = this.world.getBlockState(this.field4599.method1149(this.field4600.getOpposite()));
+            return (method6701.getMaterial().method26439() || (this.field4600.getAxis().isHorizontal() && Class3895.method11975(method6701))) && this.world.method6737(this, this.getBoundingBox(), Class862.field4597).isEmpty();
         }
         return false;
     }

@@ -69,93 +69,93 @@ public abstract class Class6332 extends Class6322
         return Class6332.field25330;
     }
     
-    public static Class6332 method18767(Class1932 method32643) {
-        if (Class8571.method28941()) {
+    public static Class6332 method18767(ResourceLocation method32643) {
+        if (Config.method28941()) {
             method32643 = Class9066.method32643(method32643);
         }
         return method18803("entity_solid", method32643, () -> method18793("entity_solid", Class9237.field39608, 7, 256, true, false, Class6304.method18666().method28318(new Class6340(class1932, false, false)).method28319(Class6332.field25277).method28320(Class6332.field25300).method28325(Class6332.field25296).method28326(Class6332.field25298).method28333(true)));
     }
     
-    public static Class6332 method18768(Class1932 method32643) {
-        if (Class8571.method28941()) {
+    public static Class6332 method18768(ResourceLocation method32643) {
+        if (Config.method28941()) {
             method32643 = Class9066.method32643(method32643);
         }
         return method18803("entity_cutout", method32643, () -> method18793("entity_cutout", Class9237.field39608, 7, 256, true, false, Class6304.method18666().method28318(new Class6340(class1932, false, false)).method28319(Class6332.field25277).method28320(Class6332.field25300).method28322(Class6332.field25284).method28325(Class6332.field25296).method28326(Class6332.field25298).method28333(true)));
     }
     
-    public static Class6332 method18769(Class1932 method32643, final boolean b) {
-        if (Class8571.method28941()) {
+    public static Class6332 method18769(ResourceLocation method32643, final boolean b) {
+        if (Config.method28941()) {
             method32643 = Class9066.method32643(method32643);
         }
         return method18804("entity_cutout_no_cull", method32643, b, () -> method18793("entity_cutout_no_cull", Class9237.field39608, 7, 256, true, false, Class6304.method18666().method28318(new Class6340(class1932, false, false)).method28319(Class6332.field25277).method28320(Class6332.field25300).method28322(Class6332.field25284).method28324(Class6332.field25303).method28325(Class6332.field25296).method28326(Class6332.field25298).method28333(b2)));
     }
     
-    public static Class6332 method18770(final Class1932 class1932) {
+    public static Class6332 method18770(final ResourceLocation class1932) {
         return method18769(class1932, true);
     }
     
-    public static Class6332 method18771(Class1932 method32643) {
-        if (Class8571.method28941()) {
+    public static Class6332 method18771(ResourceLocation method32643) {
+        if (Config.method28941()) {
             method32643 = Class9066.method32643(method32643);
         }
         return method18803("entity_translucent_cull", method32643, () -> method18793("entity_translucent_cull", Class9237.field39608, 7, 256, true, true, Class6304.method18666().method28318(new Class6340(class1932, false, false)).method28319(Class6332.field25282).method28320(Class6332.field25300).method28322(Class6332.field25284).method28325(Class6332.field25296).method28326(Class6332.field25298).method28333(true)));
     }
     
-    public static Class6332 method18772(Class1932 method32643, final boolean b) {
-        if (Class8571.method28941()) {
+    public static Class6332 method18772(ResourceLocation method32643, final boolean b) {
+        if (Config.method28941()) {
             method32643 = Class9066.method32643(method32643);
         }
         return method18804("entity_translucent", method32643, b, () -> method18793("entity_translucent", Class9237.field39608, 7, 256, true, true, Class6304.method18666().method28318(new Class6340(class1932, false, false)).method28319(Class6332.field25282).method28320(Class6332.field25300).method28322(Class6332.field25284).method28324(Class6332.field25303).method28325(Class6332.field25296).method28326(Class6332.field25298).method28333(b2)));
     }
     
-    public static Class6332 method18773(final Class1932 class1932) {
+    public static Class6332 method18773(final ResourceLocation class1932) {
         return method18772(class1932, true);
     }
     
-    public static Class6332 method18774(Class1932 method32643) {
-        if (Class8571.method28941()) {
+    public static Class6332 method18774(ResourceLocation method32643) {
+        if (Config.method28941()) {
             method32643 = Class9066.method32643(method32643);
         }
         return method18803("entity_smooth_cutout", method32643, () -> method18792("entity_smooth_cutout", Class9237.field39608, 7, 256, Class6304.method18666().method28318(new Class6340(class1932, false, false)).method28322(Class6332.field25285).method28320(Class6332.field25300).method28321(Class6332.field25288).method28324(Class6332.field25303).method28325(Class6332.field25296).method28333(true)));
     }
     
-    public static Class6332 method18775(Class1932 method32643, final boolean b) {
-        if (Class8571.method28941()) {
+    public static Class6332 method18775(ResourceLocation method32643, final boolean b) {
+        if (Config.method28941()) {
             method32643 = Class9066.method32643(method32643);
         }
         return method18804("beacon_beam", method32643, b, () -> method18793("beacon_beam", Class9237.field39607, 7, 256, false, true, Class6304.method18666().method28318(new Class6340(class1932, false, false)).method28319(b2 ? Class6332.field25282 : Class6332.field25277).method28331(b2 ? Class6332.field25308 : Class6332.field25307).method28327(Class6332.field25313).method28333(false)));
     }
     
-    public static Class6332 method18776(Class1932 method32643) {
-        if (Class8571.method28941()) {
+    public static Class6332 method18776(ResourceLocation method32643) {
+        if (Config.method28941()) {
             method32643 = Class9066.method32643(method32643);
         }
         return method18803("entity_decal", method32643, () -> method18792("entity_decal", Class9237.field39608, 7, 256, Class6304.method18666().method28318(new Class6340(class1932, false, false)).method28320(Class6332.field25300).method28322(Class6332.field25284).method28323(Class6332.field25305).method28324(Class6332.field25303).method28325(Class6332.field25296).method28326(Class6332.field25298).method28333(false)));
     }
     
-    public static Class6332 method18777(Class1932 method32643) {
-        if (Class8571.method28941()) {
+    public static Class6332 method18777(ResourceLocation method32643) {
+        if (Config.method28941()) {
             method32643 = Class9066.method32643(method32643);
         }
         return method18803("entity_no_outline", method32643, () -> method18793("entity_no_outline", Class9237.field39608, 7, 256, false, true, Class6304.method18666().method28318(new Class6340(class1932, false, false)).method28319(Class6332.field25282).method28320(Class6332.field25300).method28322(Class6332.field25284).method28324(Class6332.field25303).method28325(Class6332.field25296).method28326(Class6332.field25298).method28331(Class6332.field25308).method28333(false)));
     }
     
-    public static Class6332 method18778(Class1932 method32643, final float n) {
-        if (Class8571.method28941()) {
+    public static Class6332 method18778(ResourceLocation method32643, final float n) {
+        if (Config.method28941()) {
             method32643 = Class9066.method32643(method32643);
         }
         return method18805("entity_alpha", method32643, n, () -> method18792("entity_alpha", Class9237.field39608, 7, 256, Class6304.method18666().method28318(new Class6340(class1932, false, false)).method28322(new Class6321(n2)).method28324(Class6332.field25303).method28333(true)));
     }
     
-    public static Class6332 method18779(Class1932 method32643) {
-        if (Class8571.method28941()) {
+    public static Class6332 method18779(ResourceLocation method32643) {
+        if (Config.method28941()) {
             method32643 = Class9066.method32643(method32643);
         }
         return method18803("eyes", method32643, () -> method18793("eyes", Class9237.field39608, 7, 256, false, true, Class6304.method18666().method28318(new Class6340(class1932, false, false)).method28319(Class6332.field25278).method28331(Class6332.field25308).method28327(Class6332.field25315).method28333(false)));
     }
     
-    public static Class6332 method18780(Class1932 method32643, final float n, final float n2) {
-        if (Class8571.method28941()) {
+    public static Class6332 method18780(ResourceLocation method32643, final float n, final float n2) {
+        if (Config.method28941()) {
             method32643 = Class9066.method32643(method32643);
         }
         return method18806("energy_swirl", method32643, n, n2, () -> method18793("energy_swirl", Class9237.field39608, 7, 256, false, true, Class6304.method18666().method28318(new Class6340(class1932, false, false)).method28330(new Class6324(n3, n4)).method28327(Class6332.field25315).method28319(Class6332.field25278).method28320(Class6332.field25300).method28322(Class6332.field25284).method28324(Class6332.field25303).method28325(Class6332.field25296).method28326(Class6332.field25298).method28333(false)));
@@ -169,7 +169,7 @@ public abstract class Class6332 extends Class6322
         return Class6332.field25332;
     }
     
-    public static Class6332 method18783(final Class1932 class1932) {
+    public static Class6332 method18783(final ResourceLocation class1932) {
         return method18803("outline", class1932, () -> method18792("outline", Class9237.field39618, 7, 256, Class6304.method18666().method28318(new Class6340(class1933, false, false)).method28324(Class6332.field25303).method28323(Class6332.field25304).method28322(Class6332.field25284).method28330(Class6332.field25293).method28327(Class6332.field25313).method28329(Class6332.field25317).method28334(Class2017.field11497)));
     }
     
@@ -181,15 +181,15 @@ public abstract class Class6332 extends Class6322
         return Class6332.field25334;
     }
     
-    public static Class6332 method18786(final Class1932 class1932) {
+    public static Class6332 method18786(final ResourceLocation class1932) {
         return method18803("crumbling", class1932, () -> method18793("crumbling", Class9237.field39607, 7, 256, false, true, Class6304.method18666().method28318(new Class6340(class1933, false, false)).method28322(Class6332.field25284).method28319(Class6332.field25281).method28331(Class6332.field25308).method28328(Class6332.field25311).method28333(false)));
     }
     
-    public static Class6332 method18787(final Class1932 class1932) {
+    public static Class6332 method18787(final ResourceLocation class1932) {
         return method18803("text", class1932, () -> method18793("text", Class9237.field39620, 7, 256, false, true, Class6304.method18666().method28318(new Class6340(class1933, false, false)).method28322(Class6332.field25284).method28319(Class6332.field25282).method28325(Class6332.field25296).method28333(false)));
     }
     
-    public static Class6332 method18788(final Class1932 class1932) {
+    public static Class6332 method18788(final ResourceLocation class1932) {
         return method18803("text_see_through", class1932, () -> method18793("text_see_through", Class9237.field39620, 7, 256, false, true, Class6304.method18666().method28318(new Class6340(class1933, false, false)).method28322(Class6332.field25284).method28319(Class6332.field25282).method28325(Class6332.field25296).method28323(Class6332.field25304).method28331(Class6332.field25308).method28333(false)));
     }
     
@@ -246,11 +246,11 @@ public abstract class Class6332 extends Class6322
             }
             class4148.method12393();
             this.method18709();
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class7778.method24960(this, class4148);
             }
             Class8475.method28282(class4148);
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class7778.method24961(this, class4148);
             }
             this.method18710();
@@ -294,19 +294,19 @@ public abstract class Class6332 extends Class6322
         return this.field25342;
     }
     
-    private static Class6332 method18803(final String s, final Class1932 class1932, final Supplier<Class6332> supplier) {
+    private static Class6332 method18803(final String s, final ResourceLocation class1932, final Supplier<Class6332> supplier) {
         return method18808(new Class9100(s, class1932), supplier);
     }
     
-    private static Class6332 method18804(final String s, final Class1932 class1932, final boolean b, final Supplier<Class6332> supplier) {
+    private static Class6332 method18804(final String s, final ResourceLocation class1932, final boolean b, final Supplier<Class6332> supplier) {
         return method18808(new Class9100(s, class1932, b), supplier);
     }
     
-    private static Class6332 method18805(final String s, final Class1932 class1932, final float f, final Supplier<Class6332> supplier) {
+    private static Class6332 method18805(final String s, final ResourceLocation class1932, final float f, final Supplier<Class6332> supplier) {
         return method18808(new Class9100(s, class1932, f), supplier);
     }
     
-    private static Class6332 method18806(final String s, final Class1932 class1932, final float f, final float f2, final Supplier<Class6332> supplier) {
+    private static Class6332 method18806(final String s, final ResourceLocation class1932, final float f, final float f2, final Supplier<Class6332> supplier) {
         return method18808(new Class9100(s, class1932, f, f2), supplier);
     }
     

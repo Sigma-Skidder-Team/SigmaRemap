@@ -40,7 +40,7 @@ public class Class9439
     public static final Class5328 field40505;
     
     private static Class5328 method35077(final int n, final String s, final Class5328 class5328) {
-        return Class90.method513(Class90.field207, n, s, class5328);
+        return Registry.method513(Registry.field207, n, s, class5328);
     }
     
     static {

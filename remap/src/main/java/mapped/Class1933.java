@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.Locale;
 
-public class Class1933 extends Class1932
+public class Class1933 extends ResourceLocation
 {
     private final String field10544;
     
@@ -19,7 +19,7 @@ public class Class1933 extends Class1932
         this(method7806(s));
     }
     
-    public Class1933(final Class1932 class1932, final String s) {
+    public Class1933(final ResourceLocation class1932, final String s) {
         this(class1932.toString(), s);
     }
     
@@ -37,7 +37,7 @@ public class Class1933 extends Class1932
                 substring = s.substring(0, index);
             }
         }
-        System.arraycopy(Class1932.method7796(substring, ':'), 0, array, 0, 2);
+        System.arraycopy(ResourceLocation.method7796(substring, ':'), 0, array, 0, 2);
         return array;
     }
     

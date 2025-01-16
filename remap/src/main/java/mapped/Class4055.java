@@ -26,7 +26,7 @@ public class Class4055 extends Item
     public final Class2035 field18151;
     
     public static boolean method12256(final Class5491 class5491, final ItemStack class5492) {
-        final List<Entity> method6739 = class5491.method16763().method6739((Class<? extends Entity>) LivingEntity.class, new AxisAlignedBB(class5491.method16764().method1149(class5491.method16765().method21772((Class7111<Direction>)Class3955.field17859))), (Predicate<? super Entity>)Class9170.field38850.and(new Class168(class5492)));
+        final List<Entity> method6739 = class5491.method16763().method6739((Class<? extends Entity>) LivingEntity.class, new AxisAlignedBB(class5491.method16764().method1149(class5491.method16765().get((IProperty<Direction>)Class3955.field17859))), (Predicate<? super Entity>)Class9170.field38850.and(new Class168(class5492)));
         if (!method6739.isEmpty()) {
             final LivingEntity class5493 = method6739.get(0);
             final Class2215 method6740 = Class759.method4185(class5492);

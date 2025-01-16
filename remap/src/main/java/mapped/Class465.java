@@ -86,11 +86,11 @@ public class Class465 extends TileEntity implements INameable
         if (class51.method316("CustomName", 8)) {
             this.field2747 = Class5953.method17871(class51.method323("CustomName"));
         }
-        if (!this.method2188()) {
+        if (!this.hasWorld()) {
             this.field2748 = null;
         }
         else {
-            this.field2748 = ((Class3944)this.method2194().method21696()).method12064();
+            this.field2748 = ((Class3944)this.method2194().getBlock()).method12064();
         }
         this.field2749 = class51.method328("Patterns", 10);
         this.field2751 = null;
@@ -167,7 +167,7 @@ public class Class465 extends TileEntity implements INameable
     
     public Class181 method2390(final Supplier<BlockState> supplier) {
         if (this.field2748 == null) {
-            this.field2748 = ((Class3944)supplier.get().method21696()).method12064();
+            this.field2748 = ((Class3944)supplier.get().getBlock()).method12064();
         }
         return this.field2748;
     }

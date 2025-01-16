@@ -115,11 +115,11 @@ public class Class8754
             max = Math.max(max, intBitsToFloat);
             max2 = Math.max(max2, intBitsToFloat2);
         }
-        return Class8571.method29001().method6356((min + max) / 2.0f, (min2 + max2) / 2.0f);
+        return Config.method29001().method6356((min + max) / 2.0f, (min2 + max2) / 2.0f);
     }
     
     public void method30302() {
-        if (!Class8571.method28955()) {
+        if (!Config.method28955()) {
             if (this.field36765.length == Class9237.field39612) {
                 this.field36765 = method30304(this.field36765);
             }

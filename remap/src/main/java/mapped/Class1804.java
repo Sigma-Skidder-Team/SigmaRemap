@@ -6,7 +6,7 @@ package mapped;
 
 public class Class1804<T extends Class827> extends Class1799<T, Class5864<T>>
 {
-    private static final Class1932 field9973;
+    private static final ResourceLocation field9973;
     private final Class5864<T> field9974;
     
     public Class1804(final Class4778<T, Class5864<T>> class4778) {
@@ -19,6 +19,6 @@ public class Class1804<T extends Class827> extends Class1799<T, Class5864<T>>
     }
     
     static {
-        field9973 = new Class1932("textures/entity/zombie/drowned_outer_layer.png");
+        field9973 = new ResourceLocation("textures/entity/zombie/drowned_outer_layer.png");
     }
 }

@@ -121,7 +121,7 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
         return class758;
     }
     
-    public Class1932 method13997(final Class754 class754) {
+    public ResourceLocation method13997(final Class754 class754) {
         return class754.method4097();
     }
     

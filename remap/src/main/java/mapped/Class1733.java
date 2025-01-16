@@ -103,13 +103,13 @@ public class Class1733 extends Class1732
     }
     
     @Override
-    public Collection<Class1932> method6098(final Class346 class346, final String str, final String str2, final int n, final Predicate<String> predicate) {
+    public Collection<ResourceLocation> method6098(final Class346 class346, final String str, final String str2, final int n, final Predicate<String> predicate) {
         ZipFile method6131;
         try {
             method6131 = this.method6131();
         }
         catch (final IOException ex) {
-            return (Collection<Class1932>)Collections.emptySet();
+            return (Collection<ResourceLocation>)Collections.emptySet();
         }
         final Enumeration<? extends ZipEntry> entries = method6131.entries();
         final ArrayList arrayList = Lists.newArrayList();
@@ -127,7 +127,7 @@ public class Class1733 extends Class1732
                 if (split.length < n + 1 || !predicate.test(split[split.length - 1])) {
                     continue;
                 }
-                arrayList.add(new Class1932(str, substring));
+                arrayList.add(new ResourceLocation(str, substring));
             }
         }
         return arrayList;

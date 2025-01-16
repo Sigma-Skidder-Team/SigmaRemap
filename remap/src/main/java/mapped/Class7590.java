@@ -19,9 +19,9 @@ public class Class7590 extends Class7591
     }
     
     @Override
-    public <T extends Comparable<T>> boolean method23883(final Class7098<?> class7098, final Class7111<T> class7099) {
-        final Comparable<T> method21772 = class7098.method21772(class7099);
-        final Optional<T> method21773 = class7099.method21830(this.field30111);
+    public <T extends Comparable<T>> boolean method23883(final IStateHolder<?> class7098, final IProperty<T> class7099) {
+        final Comparable<T> method21772 = class7098.get(class7099);
+        final Optional<T> method21773 = class7099.parseValue(this.field30111);
         return method21773.isPresent() && method21772.compareTo(method21773.get()) == 0;
     }
     

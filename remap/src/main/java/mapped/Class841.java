@@ -158,14 +158,14 @@ public class Class841 extends Class785 implements Class762
         }
         if (!this.isPassenger()) {
             if (!this.world.isRemote) {
-                final BlockState method6701 = this.world.method6701(class354);
+                final BlockState method6701 = this.world.getBlockState(class354);
                 if (!method6701.method21706()) {
-                    if (method6701.method21696() != Class7521.field29264) {
-                        if (method6701.method21696() != Class7521.field29247) {
+                    if (method6701.getBlock() != Class7521.field29264) {
+                        if (method6701.getBlock() != Class7521.field29247) {
                             this.method5016();
                         }
                         else {
-                            final Direction class355 = method6701.method21772((Class7111<Direction>)Class3835.field17415);
+                            final Direction class355 = method6701.get((IProperty<Direction>)Class3835.field17415);
                             if (!this.world.method6961(class354.method1149(class355))) {
                                 this.method5016();
                             }
@@ -176,7 +176,7 @@ public class Class841 extends Class785 implements Class762
                         }
                     }
                     else {
-                        final Direction class356 = method6701.method21772((Class7111<Direction>)Class3836.field17415);
+                        final Direction class356 = method6701.get((IProperty<Direction>)Class3836.field17415);
                         if (!this.world.method6961(class354.method1149(class356))) {
                             this.method5016();
                         }
@@ -287,7 +287,7 @@ public class Class841 extends Class785 implements Class762
                 final BlockPos method1134 = class354.add(8 - this.rand.nextInt(17), 8 - this.rand.nextInt(17), 8 - this.rand.nextInt(17));
                 if (method1134.getY() > 0) {
                     if (this.world.method6961(method1134)) {
-                        if (this.world.method6787().method34779(method1134)) {
+                        if (this.world.getWorldBorder().contains(method1134)) {
                             if (this.world.method6978(this, new AxisAlignedBB(method1134))) {
                                 int n = 0;
                                 for (final Direction class355 : Direction.values()) {

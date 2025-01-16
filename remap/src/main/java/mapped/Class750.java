@@ -8,7 +8,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class750 extends Class516<Class3440>
 {
-    private static final Class1932 field4048;
+    private static final ResourceLocation field4048;
     
     public Class750(final Class3440 class3440, final Class464 class3441, final ITextComponent class3442) {
         super(class3440, class3441, class3442);
@@ -43,6 +43,6 @@ public class Class750 extends Class516<Class3440>
     }
     
     static {
-        field4048 = new Class1932("textures/gui/container/grindstone.png");
+        field4048 = new ResourceLocation("textures/gui/container/grindstone.png");
     }
 }

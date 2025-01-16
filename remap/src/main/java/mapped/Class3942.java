@@ -18,13 +18,13 @@ import java.util.List;
 public class Class3942 extends Class3841
 {
     public static final Class7114<Direction> field17832;
-    public static final Class1932 field17833;
+    public static final ResourceLocation field17833;
     private final Class181 field17834;
     
     public Class3942(final Class181 field17834, final Class9288 class9288) {
         super(class9288);
         this.field17834 = field17834;
-        this.method11877(((Class7097<O, Class7096>)this.field17406.method32903()).method21773(Class3942.field17832, Direction.UP));
+        this.method11877(((StateHolder<O, Class7096>)this.field17406.method32903()).with(Class3942.field17832, Direction.UP));
     }
     
     @Override
@@ -56,7 +56,7 @@ public class Class3942 extends Class3841
         }
         final Direction class7102 = class7096.method21772(Class3942.field17832);
         final Class440 class7103 = (Class440)method6727;
-        if (class7103.method2234() != Class2100.field12169 || class7097.method6976(Class7698.method24487().method24537().method18494(0.5f * class7102.getXOffset(), 0.5f * class7102.getYOffset(), 0.5f * class7102.getZOffset()).method18492(class7102.getXOffset(), class7102.getYOffset(), class7102.getZOffset()).method18500(class7098.method1149(class7102)))) {
+        if (class7103.method2234() != Class2100.field12169 || class7097.method6976(VoxelShapes.method24487().method24537().method18494(0.5f * class7102.getXOffset(), 0.5f * class7102.getYOffset(), 0.5f * class7102.getZOffset()).method18492(class7102.getXOffset(), class7102.getYOffset(), class7102.getZOffset()).method18500(class7098.method1149(class7102)))) {
             class7099.method2833(class7103);
             class7099.method2857(Class8276.field34045);
         }
@@ -65,11 +65,11 @@ public class Class3942 extends Class3841
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        return ((Class7097<O, Class7096>)this.method11878()).method21773(Class3942.field17832, class7074.method21648());
+        return ((StateHolder<O, Class7096>)this.getDefaultState()).with(Class3942.field17832, class7074.method21648());
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Block, Class7096> class9500) {
         class9500.method35378(Class3942.field17832);
     }
     
@@ -170,14 +170,14 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public Class2117 method11858(final Class7096 class7096) {
-        return Class2117.field12341;
+    public PushReaction method11858(final Class7096 class7096) {
+        return PushReaction.DESTROY;
     }
     
     @Override
     public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final TileEntity method6727 = class7097.method6727(class7098);
-        return (method6727 instanceof Class440) ? Class7698.method24489(((Class440)method6727).method2235(class7096)) : Class7698.method24487();
+        return (method6727 instanceof Class440) ? VoxelShapes.method24489(((Class440)method6727).method2235(class7096)) : VoxelShapes.method24487();
     }
     
     @Override
@@ -202,15 +202,15 @@ public class Class3942 extends Class3841
     
     @Nullable
     public static Class181 method12057(final Item class3820) {
-        return method12058(Class3833.method11776(class3820));
+        return method12058(Block.method11776(class3820));
     }
     
     @Nullable
-    public static Class181 method12058(final Class3833 class3833) {
+    public static Class181 method12058(final Block class3833) {
         return (class3833 instanceof Class3942) ? ((Class3942)class3833).method12060() : null;
     }
     
-    public static Class3833 method12059(final Class181 class181) {
+    public static Block method12059(final Class181 class181) {
         if (class181 == null) {
             return Class7521.field29648;
         }
@@ -277,7 +277,7 @@ public class Class3942 extends Class3841
     
     @Override
     public Class7096 method11790(final Class7096 class7096, final Class2052 class7097) {
-        return ((Class7097<O, Class7096>)class7096).method21773(Class3942.field17832, class7097.method8142(class7096.method21772(Class3942.field17832)));
+        return ((StateHolder<O, Class7096>)class7096).with(Class3942.field17832, class7097.method8142(class7096.method21772(Class3942.field17832)));
     }
     
     @Override
@@ -287,6 +287,6 @@ public class Class3942 extends Class3841
     
     static {
         field17832 = Class3834.field17415;
-        field17833 = new Class1932("contents");
+        field17833 = new ResourceLocation("contents");
     }
 }

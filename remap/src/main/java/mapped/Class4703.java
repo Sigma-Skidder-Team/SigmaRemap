@@ -16,7 +16,7 @@ public abstract class Class4703<T extends Entity>
     public float field20284;
     public float field20285;
     private EntityType field20286;
-    private Class1932 field20287;
+    private ResourceLocation field20287;
     
     public Class4703(final Class8551 field20283) {
         this.field20285 = 1.0f;
@@ -71,7 +71,7 @@ public abstract class Class4703<T extends Entity>
         return t.method1879() && t.hasCustomName();
     }
     
-    public abstract Class1932 method13950(final T p0);
+    public abstract ResourceLocation method13950(final T p0);
     
     public Class1844 method13957() {
         return this.field20283.method28718();
@@ -110,11 +110,11 @@ public abstract class Class4703<T extends Entity>
         this.field20286 = class8651.method29436().get();
     }
     
-    public Class1932 method13962() {
+    public ResourceLocation method13962() {
         return this.field20287;
     }
     
-    public void method13963(final Class1932 field20287) {
+    public void method13963(final ResourceLocation field20287) {
         this.field20287 = field20287;
     }
 }

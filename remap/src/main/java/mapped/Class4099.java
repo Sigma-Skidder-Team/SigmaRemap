@@ -13,9 +13,9 @@ import java.util.List;
 public class Class4099 extends Item
 {
     private static String[] field18201;
-    private final Class3833 field18202;
+    private final Block field18202;
     
-    public Class4099(final Class3833 field18202, final Class8959 class8959) {
+    public Class4099(final Block field18202, final Class8959 class8959) {
         super(class8959);
         this.field18202 = field18202;
     }

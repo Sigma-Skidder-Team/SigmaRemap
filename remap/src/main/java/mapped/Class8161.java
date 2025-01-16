@@ -215,7 +215,7 @@ public class Class8161
                     }
                 }
             }
-            this.field33604.method5327().method15297("mouse");
+            this.field33604.method5327().startSection("mouse");
             if (this.method26962()) {
                 if (this.field33604.method5320()) {
                     this.field33617 += n9 - this.field33608;
@@ -225,7 +225,7 @@ public class Class8161
             this.method26956();
             this.field33608 = n9;
             this.field33609 = n11;
-            this.field33604.method5327().method15299();
+            this.field33604.method5327().endSection();
         }
     }
     

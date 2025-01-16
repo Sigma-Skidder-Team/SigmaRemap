@@ -13,13 +13,13 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonDeserializer;
 
-public class Class5958 implements JsonDeserializer<Class1932>, JsonSerializer<Class1932>
+public class Class5958 implements JsonDeserializer<ResourceLocation>, JsonSerializer<ResourceLocation>
 {
-    public Class1932 deserialize(final JsonElement jsonElement, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
-        return new Class1932(Class9583.method35894(jsonElement, "location"));
+    public ResourceLocation deserialize(final JsonElement jsonElement, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
+        return new ResourceLocation(Class9583.method35894(jsonElement, "location"));
     }
     
-    public JsonElement serialize(final Class1932 class1932, final Type type, final JsonSerializationContext jsonSerializationContext) {
+    public JsonElement serialize(final ResourceLocation class1932, final Type type, final JsonSerializationContext jsonSerializationContext) {
         return (JsonElement)new JsonPrimitive(class1932.toString());
     }
 }

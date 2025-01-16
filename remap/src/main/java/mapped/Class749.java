@@ -9,7 +9,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class749 extends Class516<Class3417>
 {
-    private static final Class1932 field4047;
+    private static final ResourceLocation field4047;
     
     public Class749(final Class3417 class3417, final Class464 class3418, final ITextComponent class3419) {
         super(class3417, class3418, class3419);
@@ -112,6 +112,6 @@ public class Class749 extends Class516<Class3417>
     }
     
     static {
-        field4047 = new Class1932("textures/gui/container/cartography_table.png");
+        field4047 = new ResourceLocation("textures/gui/container/cartography_table.png");
     }
 }

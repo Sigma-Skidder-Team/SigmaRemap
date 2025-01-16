@@ -80,12 +80,12 @@ public class MathHelper
         return Math.abs(a);
     }
     
-    public static int method35649(final float n) {
+    public static int ceil(final float n) {
         final int n2 = (int)n;
         return (n <= n2) ? n2 : (n2 + 1);
     }
     
-    public static int method35650(final double n) {
+    public static int ceil(final double n) {
         final int n2 = (int)n;
         return (n <= n2) ? n2 : (n2 + 1);
     }

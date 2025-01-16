@@ -135,7 +135,7 @@ public abstract class Class7207
     }
     
     public void method22126(final Class2265<ItemStack> class2265) {
-        final Iterator<Object> iterator = Class90.field211.iterator();
+        final Iterator<Object> iterator = Registry.field211.iterator();
         while (iterator.hasNext()) {
             iterator.next().method11735(this, class2265);
         }

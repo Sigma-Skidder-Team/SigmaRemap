@@ -11,12 +11,12 @@ public class Class8445 implements Class8444
     
     @Override
     public int method28177() {
-        return Class8571.method28968(this.field34702.method2193(), 0);
+        return Config.method28968(this.field34702.getPos(), 0);
     }
     
     @Override
     public BlockPos method28178() {
-        return this.field34702.method2193();
+        return this.field34702.getPos();
     }
     
     @Override
@@ -26,7 +26,7 @@ public class Class8445 implements Class8444
     
     @Override
     public Class3090 method28179() {
-        return this.field34702.method2186().method6959(this.field34702.method2193());
+        return this.field34702.method2186().method6959(this.field34702.getPos());
     }
     
     @Override

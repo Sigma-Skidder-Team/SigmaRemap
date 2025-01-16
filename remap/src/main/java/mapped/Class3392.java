@@ -79,7 +79,7 @@ public class Class3392 extends Class3167
             for (float n8 = (float)n; n8 <= n4; ++n8) {
                 for (float n9 = (float)n2; n9 <= n5; ++n9) {
                     final BlockPos class7860 = new BlockPos(n8, n7, n9);
-                    if (Class3392.field15514.field4683.method6701(class7860).method21696() == Class7521.field29294) {
+                    if (Class3392.field15514.field4683.getBlockState(class7860).method21696() == Class7521.field29294) {
                         list.add(class7860);
                     }
                 }

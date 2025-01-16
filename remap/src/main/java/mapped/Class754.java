@@ -16,13 +16,13 @@ public abstract class Class754 extends Class512
     public float field4058;
     public float field4059;
     public final Class1848 field4060;
-    private Class1932 field4061;
+    private ResourceLocation field4061;
     private long field4062;
     private boolean field4063;
     private String field4064;
     public Class795 field4065;
     public Class795 field4066;
-    private static final Class1932 field4067;
+    private static final ResourceLocation field4067;
     
     public Class754(final Class1848 field4060, final GameProfile gameProfile) {
         super(field4060, gameProfile);
@@ -70,14 +70,14 @@ public abstract class Class754 extends Class512
         return method4095 != null && method4095.method32724();
     }
     
-    public Class1932 method4097() {
+    public ResourceLocation method4097() {
         final Class9081 method4095 = this.method4095();
         return (method4095 != null) ? method4095.method32726() : Class7634.method24004(this.method1865());
     }
     
     @Nullable
-    public Class1932 method4098() {
-        if (!Class8571.method28948()) {
+    public ResourceLocation method4098() {
+        if (!Config.method28948()) {
             return null;
         }
         if (this.field4062 != 0L) {
@@ -98,12 +98,12 @@ public abstract class Class754 extends Class512
     }
     
     @Nullable
-    public Class1932 method4100() {
+    public ResourceLocation method4100() {
         final Class9081 method4095 = this.method4095();
         return (method4095 != null) ? method4095.method32728() : null;
     }
     
-    public static Class1768 method4101(final Class1932 class1932, final String s) {
+    public static Class1768 method4101(final ResourceLocation class1932, final String s) {
         final Class1663 method5290 = Class869.method5277().method5290();
         Class1666 method5291 = method5290.method5853(class1932);
         if (method5291 == null) {
@@ -113,8 +113,8 @@ public abstract class Class754 extends Class512
         return (Class1768)method5291;
     }
     
-    public static Class1932 method4102(final String s) {
-        return new Class1932("skins/" + Hashing.sha1().hashUnencodedChars((CharSequence)Class8272.method27499(s)));
+    public static ResourceLocation method4102(final String s) {
+        return new ResourceLocation("skins/" + Hashing.sha1().hashUnencodedChars((CharSequence)Class8272.method27499(s)));
     }
     
     public String method4103() {
@@ -160,16 +160,16 @@ public abstract class Class754 extends Class512
         return this.field4064;
     }
     
-    public Class1932 method4106() {
+    public ResourceLocation method4106() {
         return this.field4061;
     }
     
-    public void method4107(final Class1932 field4061) {
+    public void method4107(final ResourceLocation field4061) {
         this.field4061 = field4061;
     }
     
     public boolean method4108() {
-        final Class1932 method4098 = this.method4098();
+        final ResourceLocation method4098 = this.method4098();
         return method4098 != null && (method4098 != this.field4061 || this.field4063);
     }
     
@@ -190,6 +190,6 @@ public abstract class Class754 extends Class512
     }
     
     static {
-        field4067 = new Class1932("textures/entity/elytra.png");
+        field4067 = new ResourceLocation("textures/entity/elytra.png");
     }
 }

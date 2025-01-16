@@ -55,7 +55,7 @@ public class Class429 extends Class428
     
     @Override
     public BlockState method2141() {
-        return Class7521.field29416.method11878();
+        return Class7521.field29416.getDefaultState();
     }
     
     public Class865 method2149() {

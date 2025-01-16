@@ -31,7 +31,7 @@ import it.unimi.dsi.fastutil.longs.LongSet;
 import java.util.Map;
 import org.apache.logging.log4j.Logger;
 
-public class Class1862 implements Class1860
+public class Class1862 implements IChunk
 {
     private static final Logger field10140;
     public static final Class8199 field10141;
@@ -47,7 +47,7 @@ public class Class1862 implements Class1860
     private final Map<String, Class5936> field10151;
     private final Map<String, LongSet> field10152;
     private final ShortList[] field10153;
-    private Class6952<Class3833> field10154;
+    private Class6952<Block> field10154;
     private Class6952<Class7255> field10155;
     private boolean field10156;
     private long field10157;
@@ -59,10 +59,10 @@ public class Class1862 implements Class1860
     private volatile boolean field10163;
     
     public Class1862(final World class1847, final Class7859 class1848, final Class1873 class1849) {
-        this(class1847, class1848, class1849, Class8288.field34078, (Class6952<Class3833>)Class6954.method21355(), (Class6952<Class7255>)Class6954.method21355(), 0L, null, null);
+        this(class1847, class1848, class1849, Class8288.field34078, (Class6952<Block>)Class6954.method21355(), (Class6952<Class7255>)Class6954.method21355(), 0L, null, null);
     }
     
-    public Class1862(final World field10146, final Class7859 field10147, final Class1873 field10148, final Class8288 field10149, final Class6952<Class3833> field10150, final Class6952<Class7255> field10151, final long field10152, final Class8199[] array, final Consumer<Class1862> field10153) {
+    public Class1862(final World field10146, final Class7859 field10147, final Class1873 field10148, final Class8288 field10149, final Class6952<Block> field10150, final Class6952<Class7255> field10151, final long field10152, final Class8199[] array, final Consumer<Class1862> field10153) {
         this.field10142 = new Class8199[16];
         this.field10144 = Maps.newHashMap();
         this.field10147 = Maps.newEnumMap((Class)Class2020.class);
@@ -75,7 +75,7 @@ public class Class1862 implements Class1860
         this.field10162 = field10147;
         this.field10148 = field10149;
         for (final Class2020 o : Class2020.values()) {
-            if (Class9312.field39989.method34450().contains(o)) {
+            if (ChunkStatus.field39989.method34450().contains(o)) {
                 this.field10147.put(o, new Class9548(this, o));
             }
         }
@@ -117,7 +117,7 @@ public class Class1862 implements Class1860
         this.method7022(class1848.method7021());
         this.method7050(class1848.method7049());
         for (final Map.Entry<Object, V> entry : class1848.method7015()) {
-            if (!Class9312.field39989.method34450().contains(entry.getKey())) {
+            if (!ChunkStatus.field39989.method34450().contains(entry.getKey())) {
                 continue;
             }
             this.method7017(entry.getKey()).method35716(((Class9548)entry.getValue()).method35717());
@@ -144,19 +144,19 @@ public class Class1862 implements Class1860
     }
     
     @Override
-    public BlockState method6701(final BlockPos class354) {
+    public BlockState getBlockState(final BlockPos class354) {
         final int method1074 = class354.getX();
         final int method1075 = class354.getY();
         final int method1076 = class354.getZ();
         if (this.field10146.method6745() == Class9505.field40898) {
             BlockState class355 = null;
             if (method1075 == 60) {
-                class355 = Class7521.field29517.method11878();
+                class355 = Class7521.field29517.getDefaultState();
             }
             if (method1075 == 70) {
                 class355 = Class6348.method18887(method1074, method1076);
             }
-            return (class355 == null) ? Class7521.field29147.method11878() : class355;
+            return (class355 == null) ? Class7521.field29147.getDefaultState() : class355;
         }
         try {
             if (method1075 >= 0 && method1075 >> 4 < this.field10142.length) {
@@ -165,7 +165,7 @@ public class Class1862 implements Class1860
                     return class356.method27148(method1074 & 0xF, method1075 & 0xF, method1076 & 0xF);
                 }
             }
-            return Class7521.field29147.method11878();
+            return Class7521.field29147.getDefaultState();
         }
         catch (final Throwable t) {
             final Class7689 method1077 = Class7689.method24421(t, "Getting block state");
@@ -215,15 +215,15 @@ public class Class1862 implements Class1860
         if (method1077 == class355) {
             return null;
         }
-        final Class3833 method1078 = class355.method21696();
-        final Class3833 method1079 = method1077.method21696();
+        final Block method1078 = class355.getBlock();
+        final Block method1079 = method1077.getBlock();
         this.field10147.get(Class2020.field11525).method35712(n, method1075, n2, class355);
         this.field10147.get(Class2020.field11526).method35712(n, method1075, n2, class355);
         this.field10147.get(Class2020.field11524).method35712(n, method1075, n2, class355);
         this.field10147.get(Class2020.field11522).method35712(n, method1075, n2, class355);
         final boolean method1080 = class356.method27154();
         if (method1076 != method1080) {
-            this.field10146.method6762().method7405().method7291(class354, method1080);
+            this.field10146.getChunkProvider().getLightManager().method7291(class354, method1080);
         }
         if (this.field10146.isRemote) {
             if (method1079 != method1078) {
@@ -235,7 +235,7 @@ public class Class1862 implements Class1860
         else {
             method1077.method21738(this.field10146, class354, class355, b);
         }
-        if (class356.method27148(n, method1075 & 0xF, n2).method21696() == method1078) {
+        if (class356.method27148(n, method1075 & 0xF, n2).getBlock() == method1078) {
             if (method1079 instanceof Class3840) {
                 final TileEntity method1081 = this.method7000(class354, Class2079.field12022);
                 if (method1081 != null) {
@@ -262,7 +262,7 @@ public class Class1862 implements Class1860
     
     @Nullable
     public Class1886 method7052() {
-        return this.field10146.method6762().method7405();
+        return this.field10146.getChunkProvider().getLightManager();
     }
     
     @Override
@@ -314,7 +314,7 @@ public class Class1862 implements Class1860
     
     @Nullable
     private TileEntity method7055(final BlockPos class354) {
-        final Class3833 method21696 = this.method6701(class354).method21696();
+        final Block method21696 = this.getBlockState(class354).getBlock();
         return method21696.method11802() ? ((Class3840)method21696).method11898(this.field10146) : null;
     }
     
@@ -337,7 +337,7 @@ public class Class1862 implements Class1860
             }
         }
         if (method7055 != null) {
-            if (method7055.method2197()) {
+            if (method7055.isRemoved()) {
                 this.field10149.remove(class354);
                 return null;
             }
@@ -350,15 +350,15 @@ public class Class1862 implements Class1860
     }
     
     public void method7056(final TileEntity tileEntity) {
-        this.method7009(tileEntity.method2193(), tileEntity);
+        this.method7009(tileEntity.getPos(), tileEntity);
         if (this.field10145 || this.field10146.isRemote()) {
-            this.field10146.method6729(tileEntity.method2193(), tileEntity);
+            this.field10146.method6729(tileEntity.getPos(), tileEntity);
         }
     }
     
     @Override
     public void method7009(final BlockPos class354, final TileEntity class355) {
-        if (this.method6701(class354).method21696() instanceof Class3840) {
+        if (this.getBlockState(class354).getBlock() instanceof Class3840) {
             class355.method2187(this.field10146, class354);
             class355.method2199();
             final TileEntity class356 = this.field10149.put(class354.toImmutable(), class355);
@@ -379,7 +379,7 @@ public class Class1862 implements Class1860
     @Override
     public Class51 method7034(final BlockPos class354) {
         final TileEntity method6727 = this.method6727(class354);
-        if (method6727 != null && !method6727.method2197()) {
+        if (method6727 != null && !method6727.isRemoved()) {
             final Class51 method6728 = method6727.method2180(new Class51());
             method6728.method312("keepPacked", false);
             return method6728;
@@ -414,8 +414,8 @@ public class Class1862 implements Class1860
     }
     
     public void method7059(final Entity class399, final AxisAlignedBB class400, final List<Entity> list, final Predicate<? super Entity> predicate) {
-        final int method35644 = MathHelper.floor((class400.field25074 - 2.0) / 16.0);
-        final int method35645 = MathHelper.floor((class400.field25077 + 2.0) / 16.0);
+        final int method35644 = MathHelper.floor((class400.minY - 2.0) / 16.0);
+        final int method35645 = MathHelper.floor((class400.maxY + 2.0) / 16.0);
         final int method35646 = MathHelper.method35651(method35644, 0, this.field10150.length - 1);
         for (int method35647 = MathHelper.method35651(method35645, 0, this.field10150.length - 1), i = method35646; i <= method35647; ++i) {
             if (!this.field10150[i].isEmpty()) {
@@ -447,8 +447,8 @@ public class Class1862 implements Class1860
     }
     
     public <T extends Entity> void method7060(final EntityType<?> class7499, final AxisAlignedBB class7500, final List<? super T> list, final Predicate<? super T> predicate) {
-        final int method35644 = MathHelper.floor((class7500.field25074 - 2.0) / 16.0);
-        final int method35645 = MathHelper.floor((class7500.field25077 + 2.0) / 16.0);
+        final int method35644 = MathHelper.floor((class7500.minY - 2.0) / 16.0);
+        final int method35645 = MathHelper.floor((class7500.maxY + 2.0) / 16.0);
         final int method35646 = MathHelper.method35651(method35644, 0, this.field10150.length - 1);
         for (int method35647 = MathHelper.method35651(method35645, 0, this.field10150.length - 1), i = method35646; i <= method35647; ++i) {
             for (final Entity class7501 : this.field10150[i].method443(Entity.class)) {
@@ -467,8 +467,8 @@ public class Class1862 implements Class1860
     }
     
     public <T extends Entity> void method7061(final Class<? extends T> clazz, final AxisAlignedBB class6221, final List<T> list, final Predicate<? super T> predicate) {
-        final int method35644 = MathHelper.floor((class6221.field25074 - 2.0) / 16.0);
-        final int method35645 = MathHelper.floor((class6221.field25077 + 2.0) / 16.0);
+        final int method35644 = MathHelper.floor((class6221.minY - 2.0) / 16.0);
+        final int method35645 = MathHelper.floor((class6221.maxY + 2.0) / 16.0);
         final int method35646 = MathHelper.method35651(method35644, 0, this.field10150.length - 1);
         for (int method35647 = MathHelper.method35651(method35645, 0, this.field10150.length - 1), i = method35646; i <= method35647; ++i) {
             for (final Entity class6222 : this.field10150[i].method443((Class<T>)clazz)) {
@@ -558,11 +558,11 @@ public class Class1862 implements Class1860
     
     @Override
     public Stream<BlockPos> method7035() {
-        return StreamSupport.stream(BlockPos.getAllInBoxMutable(this.field10162.method25426(), 0, this.field10162.method25427(), this.field10162.method25428(), 255, this.field10162.method25429()).spliterator(), false).filter(class354 -> this.method6701(class354).method21704() != 0);
+        return StreamSupport.stream(BlockPos.getAllInBoxMutable(this.field10162.method25426(), 0, this.field10162.method25427(), this.field10162.method25428(), 255, this.field10162.method25429()).spliterator(), false).filter(class354 -> this.getBlockState(class354).method21704() != 0);
     }
     
     @Override
-    public Class6952<Class3833> method7036() {
+    public Class6952<Block> method7036() {
         return this.field10154;
     }
     
@@ -650,7 +650,7 @@ public class Class1862 implements Class1860
                 final ShortListIterator iterator = this.field10153[i].iterator();
                 while (((Iterator)iterator).hasNext()) {
                     final BlockPos method7020 = Class1865.method7101((short)((Iterator)iterator).next(), i, method7019);
-                    this.field10146.method6688(method7020, Class3833.method11786(this.method6701(method7020), this.field10146, method7020), 20);
+                    this.field10146.setBlockState(method7020, Block.method11786(this.getBlockState(method7020), this.field10146, method7020), 20);
                 }
                 this.field10153[i].clear();
             }
@@ -671,17 +671,17 @@ public class Class1862 implements Class1860
             class356 = TileEntity.method2190(class355);
         }
         else {
-            final Class3833 method21696 = this.method6701(class354).method21696();
+            final Block method21696 = this.getBlockState(class354).getBlock();
             if (!(method21696 instanceof Class3840)) {
                 class356 = null;
-                Class1862.field10140.warn("Tried to load a DUMMY block entity @ {} but found not block entity block {} at location", (Object)class354, (Object)this.method6701(class354));
+                Class1862.field10140.warn("Tried to load a DUMMY block entity @ {} but found not block entity block {} at location", (Object)class354, (Object)this.getBlockState(class354));
             }
             else {
                 class356 = ((Class3840)method21696).method11898(this.field10146);
             }
         }
         if (class356 == null) {
-            Class1862.field10140.warn("Tried to load a block entity for block {} but failed at location {}", (Object)this.method6701(class354), (Object)class354);
+            Class1862.field10140.warn("Tried to load a block entity for block {} but failed at location {}", (Object)this.getBlockState(class354), (Object)class354);
         }
         else {
             class356.method2187(this.field10146, class354);
@@ -704,12 +704,12 @@ public class Class1862 implements Class1860
         if (!(this.field10154 instanceof Class6951)) {
             if (this.field10154 instanceof Class6956) {
                 this.field10146.method6833().method21343(((Class6956)this.field10154).method21357());
-                this.field10154 = (Class6952<Class3833>)Class6954.method21355();
+                this.field10154 = (Class6952<Block>)Class6954.method21355();
             }
         }
         else {
-            ((Class6951)this.field10154).method21339(this.field10146.method6833(), class354 -> this.method6701(class354).method21696());
-            this.field10154 = (Class6952<Class3833>)Class6954.method21355();
+            ((Class6951)this.field10154).method21339(this.field10146.method6833(), class354 -> this.getBlockState(class354).getBlock());
+            this.field10154 = (Class6952<Block>)Class6954.method21355();
         }
         if (!(this.field10155 instanceof Class6951)) {
             if (this.field10155 instanceof Class6956) {
@@ -725,18 +725,18 @@ public class Class1862 implements Class1860
     
     public void method7072(final Class1849 class1849) {
         if (this.field10154 == Class6954.method21355()) {
-            this.field10154 = new Class6956<Class3833>(Class90.field208::method503, class1849.method6907().method21347(this.field10162, true, false));
+            this.field10154 = new Class6956<Block>(Registry.BLOCK::getKey, class1849.method6907().method21347(this.field10162, true, false));
             this.method7025(true);
         }
         if (this.field10155 == Class6954.method21355()) {
-            this.field10155 = new Class6956<Class7255>(Class90.field206::method503, class1849.method6908().method21347(this.field10162, true, false));
+            this.field10155 = new Class6956<Class7255>(Registry.field206::getKey, class1849.method6908().method21347(this.field10162, true, false));
             this.method7025(true);
         }
     }
     
     @Override
-    public Class9312 method7027() {
-        return Class9312.field39989;
+    public ChunkStatus method7027() {
+        return ChunkStatus.field39989;
     }
     
     public Class2152 method7073() {

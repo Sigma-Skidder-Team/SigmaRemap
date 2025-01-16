@@ -27,7 +27,7 @@ public abstract class Class1666
         int n;
         int n2;
         if (!field9436) {
-            final int method28838 = Class8571.method28838();
+            final int method28838 = Config.method28838();
             n = (field9437 ? method28838 : 9728);
             n2 = 9728;
         }
@@ -78,7 +78,7 @@ public abstract class Class1666
         }
     }
     
-    public void method5873(final Class1663 class1663, final Class6582 class1664, final Class1932 class1665, final Executor executor) {
+    public void method5873(final Class1663 class1663, final Class6582 class1664, final ResourceLocation class1665, final Executor executor) {
         class1663.method5851(class1665, this);
     }
     

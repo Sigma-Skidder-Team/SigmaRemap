@@ -20,17 +20,17 @@ public class Class4608 extends Class4535<Class5133>
     public boolean method13663(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5133 class1854) {
         final float n = random.nextFloat() * 3.1415927f;
         final float n2 = class1854.field22108 / 8.0f;
-        final int method35649 = MathHelper.method35649((class1854.field22108 / 16.0f * 2.0f + 1.0f) / 2.0f);
+        final int method35649 = MathHelper.ceil((class1854.field22108 / 16.0f * 2.0f + 1.0f) / 2.0f);
         final double n3 = class1853.getX() + MathHelper.sin(n) * n2;
         final double n4 = class1853.getX() - MathHelper.sin(n) * n2;
         final double n5 = class1853.getZ() + MathHelper.cos(n) * n2;
         final double n6 = class1853.getZ() - MathHelper.cos(n) * n2;
         final double n7 = class1853.getY() + random.nextInt(3) - 2;
         final double n8 = class1853.getY() + random.nextInt(3) - 2;
-        final int n9 = class1853.getX() - MathHelper.method35649(n2) - method35649;
+        final int n9 = class1853.getX() - MathHelper.ceil(n2) - method35649;
         final int n10 = class1853.getY() - 2 - method35649;
-        final int n11 = class1853.getZ() - MathHelper.method35649(n2) - method35649;
-        final int n12 = 2 * (MathHelper.method35649(n2) + method35649);
+        final int n11 = class1853.getZ() - MathHelper.ceil(n2) - method35649;
+        final int n12 = 2 * (MathHelper.ceil(n2) + method35649);
         final int n13 = 2 * (2 + method35649);
         for (int i = n9; i <= n9 + n12; ++i) {
             for (int j = n11; j <= n11 + n12; ++j) {
@@ -103,8 +103,8 @@ public class Class4608 extends Class4535<Class5133>
                                         if (!set.get(n26)) {
                                             set.set(n26);
                                             class1853.setPos(n20, n22, n24);
-                                            if (class1852.field22107.method8158().test(class1851.method6701(class1853))) {
-                                                class1851.method6688(class1853, class1852.field22109, 2);
+                                            if (class1852.field22107.method8158().test(class1851.getBlockState(class1853))) {
+                                                class1851.setBlockState(class1853, class1852.field22109, 2);
                                                 ++n9;
                                             }
                                         }

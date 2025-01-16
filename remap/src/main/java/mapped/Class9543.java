@@ -41,19 +41,19 @@ public class Class9543
         field41079 = new HashMap<EntityType, Integer>();
         field41080 = new HashMap<String, Integer>();
         field41081 = new HashMap<String, Integer>();
-        for (final EntityType obj : Class90.field210) {
-            final int method504 = Class90.field210.method504(obj);
-            final Class1932 method505 = Class90.field210.method503(obj);
+        for (final EntityType obj : Registry.field210) {
+            final int method504 = Registry.field210.getId(obj);
+            final ResourceLocation method505 = Registry.field210.getKey(obj);
             final String string = method505.toString();
             final String method506 = method505.method7797();
             if (Class9543.field41079.containsKey(obj)) {
-                Class8571.method28848("Duplicate entity type: " + obj + ", id1: " + Class9543.field41079.get(obj) + ", id2: " + method504);
+                Config.warn("Duplicate entity type: " + obj + ", id1: " + Class9543.field41079.get(obj) + ", id2: " + method504);
             }
             if (Class9543.field41080.containsKey(string)) {
-                Class8571.method28848("Duplicate entity location: " + string + ", id1: " + Class9543.field41080.get(string) + ", id2: " + method504);
+                Config.warn("Duplicate entity location: " + string + ", id1: " + Class9543.field41080.get(string) + ", id2: " + method504);
             }
             if (Class9543.field41081.containsKey(string)) {
-                Class8571.method28848("Duplicate entity name: " + method506 + ", id1: " + Class9543.field41081.get(method506) + ", id2: " + method504);
+                Config.warn("Duplicate entity name: " + method506 + ", id1: " + Class9543.field41081.get(method506) + ", id2: " + method504);
             }
             Class9543.field41079.put(obj, method504);
             Class9543.field41080.put(string, method504);

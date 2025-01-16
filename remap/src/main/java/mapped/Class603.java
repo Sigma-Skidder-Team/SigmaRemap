@@ -83,7 +83,7 @@ public class Class603 extends Class599
             return true;
         }
         final String trim = property.trim();
-        if (Class8571.method28965("G1_pre18", trim) < 0) {
+        if (Config.method28965("G1_pre18", trim) < 0) {
             this.field3512.method5244(new Class546(b -> {
                 if (b) {
                     this.method3523(n);

@@ -114,8 +114,8 @@ public class Class4094 extends Class4093
                                                                 do {
                                                                     --n15;
                                                                     class1851.setPos(method18923.method25426() + k + n11, n15, method18923.method25427() + l + n12);
-                                                                    class1853 = method18922.method6701(class1851);
-                                                                } while (class1853.method21707(class1847, class1851) == Class8819.field37032 && n15 > 0);
+                                                                    class1853 = method18922.getBlockState(class1851);
+                                                                } while (class1853.method21707(class1847, class1851) == MaterialColor.AIR && n15 > 0);
                                                                 if (n15 > 0) {
                                                                     if (!class1853.method21756().method21781()) {
                                                                         int n16 = n15 - 1;
@@ -123,7 +123,7 @@ public class Class4094 extends Class4093
                                                                         Class7096 method18924;
                                                                         do {
                                                                             class1852.method1294(n16--);
-                                                                            method18924 = method18922.method6701(class1852);
+                                                                            method18924 = method18922.getBlockState(class1852);
                                                                             ++n13;
                                                                         } while (n16 > 0 && !method18924.method21756().method21781());
                                                                         class1853 = this.method12333(class1847, class1853, class1851);
@@ -131,7 +131,7 @@ public class Class4094 extends Class4093
                                                                 }
                                                             }
                                                             else {
-                                                                class1853 = Class7521.field29172.method11878();
+                                                                class1853 = Class7521.field29172.getDefaultState();
                                                             }
                                                             class1849.method18923(class1847, method18923.method25426() + k + n11, method18923.method25427() + l + n12);
                                                             n14 += n15 / (double)(n * n);
@@ -142,10 +142,10 @@ public class Class4094 extends Class4093
                                                 else {
                                                     final int n17 = n9 + n10 * 231871;
                                                     if ((n17 * n17 * 31287121 + n17 * 11 >> 20 & 0x1) != 0x0) {
-                                                        ((Multiset)create).add((Object)Class7521.field29148.method11878().method21707(class1847, BlockPos.ZERO), 100);
+                                                        ((Multiset)create).add((Object)Class7521.field29148.getDefaultState().method21707(class1847, BlockPos.ZERO), 100);
                                                     }
                                                     else {
-                                                        ((Multiset)create).add((Object)Class7521.field29156.method11878().method21707(class1847, BlockPos.ZERO), 10);
+                                                        ((Multiset)create).add((Object)Class7521.field29156.getDefaultState().method21707(class1847, BlockPos.ZERO), 10);
                                                     }
                                                     n14 = 100.0;
                                                 }
@@ -158,8 +158,8 @@ public class Class4094 extends Class4093
                                                 if (n19 < -0.6) {
                                                     n20 = 0;
                                                 }
-                                                final Class8819 class1854 = (Class8819)Iterables.getFirst((Iterable)Multisets.copyHighestCountFirst((Multiset)create), (Object)Class8819.field37032);
-                                                if (class1854 == Class8819.field37044) {
+                                                final MaterialColor class1854 = (MaterialColor)Iterables.getFirst((Iterable)Multisets.copyHighestCountFirst((Multiset)create), (Object) MaterialColor.AIR);
+                                                if (class1854 == MaterialColor.WATER) {
                                                     final double n21 = n18 * 0.1 + (i + j & 0x1) * 0.2;
                                                     n20 = 1;
                                                     if (n21 < 0.5) {
@@ -174,7 +174,7 @@ public class Class4094 extends Class4093
                                                     if (n7 * n7 + n8 * n8 < n4 * n4) {
                                                         if (!b || (i + j & 0x1) != 0x0) {
                                                             final byte b2 = class1849.field25426[i + j * 128];
-                                                            final byte b3 = (byte)(class1854.field37085 * 4 + n20);
+                                                            final byte b3 = (byte)(class1854.colorIndex * 4 + n20);
                                                             if (b2 != b3) {
                                                                 class1849.field25426[i + j * 128] = b3;
                                                                 class1849.method18920(i, j);
@@ -197,7 +197,7 @@ public class Class4094 extends Class4093
     
     private Class7096 method12333(final World class1847, final Class7096 class1848, final BlockPos class1849) {
         final Class7099 method21756 = class1848.method21756();
-        return (!method21756.method21781() && !class1848.method21761(class1847, class1849, Direction.UP)) ? method21756.method21791() : class1848;
+        return (!method21756.isEmpty() && !class1848.method21761(class1847, class1849, Direction.UP)) ? method21756.method21791() : class1848;
     }
     
     private static boolean method12334(final Class3090[] array, final int n, final int n2, final int n3) {
@@ -250,10 +250,10 @@ public class Class4094 extends Class4093
                                             --n2;
                                         }
                                         int n3 = 3;
-                                        Class8819 class1852 = Class8819.field37032;
+                                        MaterialColor class1852 = MaterialColor.AIR;
                                         if (class1851.method9862() >= 0.0f) {
                                             if (n2 > 0) {
-                                                class1852 = Class8819.field37058;
+                                                class1852 = MaterialColor.BROWN;
                                                 if (n2 <= 3) {
                                                     n3 = 3;
                                                 }
@@ -263,7 +263,7 @@ public class Class4094 extends Class4093
                                             }
                                         }
                                         else {
-                                            class1852 = Class8819.field37047;
+                                            class1852 = MaterialColor.ADOBE;
                                             if (n2 > 7 && l % 2 == 0) {
                                                 n3 = (k + (int)(MathHelper.sin(l + 0.0f) * 7.0f)) / 8 % 5;
                                                 if (n3 != 3) {
@@ -291,11 +291,11 @@ public class Class4094 extends Class4093
                                                 }
                                             }
                                             else {
-                                                class1852 = Class8819.field37032;
+                                                class1852 = MaterialColor.AIR;
                                             }
                                         }
-                                        if (class1852 != Class8819.field37032) {
-                                            method12328.field25426[k + l * 128] = (byte)(class1852.field37085 * 4 + n3);
+                                        if (class1852 != MaterialColor.AIR) {
+                                            method12328.field25426[k + l * 128] = (byte)(class1852.colorIndex * 4 + n3);
                                             method12328.method18920(k, l);
                                         }
                                     }
@@ -396,7 +396,7 @@ public class Class4094 extends Class4093
     
     @Override
     public Class2201 method11694(final Class7075 class7075) {
-        if (!class7075.method21654().method6701(class7075.method21639()).method21755(Class7188.field27900)) {
+        if (!class7075.method21654().getBlockState(class7075.method21639()).method21755(Class7188.field27900)) {
             return super.method11694(class7075);
         }
         if (!class7075.field27554.isRemote) {

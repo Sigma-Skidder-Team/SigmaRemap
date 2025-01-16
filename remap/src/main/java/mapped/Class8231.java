@@ -37,7 +37,7 @@ public class Class8231 extends Class8228
     
     public Class8231(final Dynamic<?> dynamic) {
         super(dynamic);
-        final List list = dynamic.get("elements").asList(dynamic2 -> Class7754.method24753((com.mojang.datafixers.Dynamic<Object>)dynamic2, Class90.field234, "element_type", Class8230.field33794));
+        final List list = dynamic.get("elements").asList(dynamic2 -> Class7754.method24753((com.mojang.datafixers.Dynamic<Object>)dynamic2, Registry.field234, "element_type", Class8230.field33794));
         if (!list.isEmpty()) {
             this.field33795 = list;
             return;

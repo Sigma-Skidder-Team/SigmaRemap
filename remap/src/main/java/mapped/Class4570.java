@@ -10,24 +10,24 @@ import java.util.function.Function;
 
 public class Class4570 extends Class4535<Class5122>
 {
-    private static final Class1932 field20042;
-    private static final Class1932 field20043;
-    private static final Class1932 field20044;
-    private static final Class1932 field20045;
-    private static final Class1932 field20046;
-    private static final Class1932 field20047;
-    private static final Class1932 field20048;
-    private static final Class1932 field20049;
-    private static final Class1932 field20050;
-    private static final Class1932 field20051;
-    private static final Class1932 field20052;
-    private static final Class1932 field20053;
-    private static final Class1932 field20054;
-    private static final Class1932 field20055;
-    private static final Class1932 field20056;
-    private static final Class1932 field20057;
-    private static final Class1932[] field20058;
-    private static final Class1932[] field20059;
+    private static final ResourceLocation field20042;
+    private static final ResourceLocation field20043;
+    private static final ResourceLocation field20044;
+    private static final ResourceLocation field20045;
+    private static final ResourceLocation field20046;
+    private static final ResourceLocation field20047;
+    private static final ResourceLocation field20048;
+    private static final ResourceLocation field20049;
+    private static final ResourceLocation field20050;
+    private static final ResourceLocation field20051;
+    private static final ResourceLocation field20052;
+    private static final ResourceLocation field20053;
+    private static final ResourceLocation field20054;
+    private static final ResourceLocation field20055;
+    private static final ResourceLocation field20056;
+    private static final ResourceLocation field20057;
+    private static final ResourceLocation[] field20058;
+    private static final ResourceLocation[] field20059;
     
     public Class4570(final Function<Dynamic<?>, ? extends Class5122> function) {
         super(function);
@@ -63,23 +63,23 @@ public class Class4570 extends Class4535<Class5122>
     }
     
     static {
-        field20042 = new Class1932("fossil/spine_1");
-        field20043 = new Class1932("fossil/spine_2");
-        field20044 = new Class1932("fossil/spine_3");
-        field20045 = new Class1932("fossil/spine_4");
-        field20046 = new Class1932("fossil/spine_1_coal");
-        field20047 = new Class1932("fossil/spine_2_coal");
-        field20048 = new Class1932("fossil/spine_3_coal");
-        field20049 = new Class1932("fossil/spine_4_coal");
-        field20050 = new Class1932("fossil/skull_1");
-        field20051 = new Class1932("fossil/skull_2");
-        field20052 = new Class1932("fossil/skull_3");
-        field20053 = new Class1932("fossil/skull_4");
-        field20054 = new Class1932("fossil/skull_1_coal");
-        field20055 = new Class1932("fossil/skull_2_coal");
-        field20056 = new Class1932("fossil/skull_3_coal");
-        field20057 = new Class1932("fossil/skull_4_coal");
-        field20058 = new Class1932[] { Class4570.field20042, Class4570.field20043, Class4570.field20044, Class4570.field20045, Class4570.field20050, Class4570.field20051, Class4570.field20052, Class4570.field20053 };
-        field20059 = new Class1932[] { Class4570.field20046, Class4570.field20047, Class4570.field20048, Class4570.field20049, Class4570.field20054, Class4570.field20055, Class4570.field20056, Class4570.field20057 };
+        field20042 = new ResourceLocation("fossil/spine_1");
+        field20043 = new ResourceLocation("fossil/spine_2");
+        field20044 = new ResourceLocation("fossil/spine_3");
+        field20045 = new ResourceLocation("fossil/spine_4");
+        field20046 = new ResourceLocation("fossil/spine_1_coal");
+        field20047 = new ResourceLocation("fossil/spine_2_coal");
+        field20048 = new ResourceLocation("fossil/spine_3_coal");
+        field20049 = new ResourceLocation("fossil/spine_4_coal");
+        field20050 = new ResourceLocation("fossil/skull_1");
+        field20051 = new ResourceLocation("fossil/skull_2");
+        field20052 = new ResourceLocation("fossil/skull_3");
+        field20053 = new ResourceLocation("fossil/skull_4");
+        field20054 = new ResourceLocation("fossil/skull_1_coal");
+        field20055 = new ResourceLocation("fossil/skull_2_coal");
+        field20056 = new ResourceLocation("fossil/skull_3_coal");
+        field20057 = new ResourceLocation("fossil/skull_4_coal");
+        field20058 = new ResourceLocation[] { Class4570.field20042, Class4570.field20043, Class4570.field20044, Class4570.field20045, Class4570.field20050, Class4570.field20051, Class4570.field20052, Class4570.field20053 };
+        field20059 = new ResourceLocation[] { Class4570.field20046, Class4570.field20047, Class4570.field20048, Class4570.field20049, Class4570.field20054, Class4570.field20055, Class4570.field20056, Class4570.field20057 };
     }
 }

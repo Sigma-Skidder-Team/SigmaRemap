@@ -40,7 +40,7 @@ public class Class8802
     }
     
     public boolean method30711(final BlockState class7096) {
-        return class7096.method21691() == this.field36998 && Class7980.method26017(class7096.method21692(), this.field36999);
+        return class7096.getBlockId() == this.field36998 && Class7980.method26017(class7096.getMetadata(), this.field36999);
     }
     
     public boolean method30712(final int n, final int n2) {
@@ -55,7 +55,7 @@ public class Class8802
                         return;
                     }
                 }
-                this.field36999 = Class8571.method28997(this.field36999, n);
+                this.field36999 = Config.method28997(this.field36999, n);
             }
         }
     }
@@ -68,6 +68,6 @@ public class Class8802
     
     @Override
     public String toString() {
-        return "" + this.field36998 + ":" + Class8571.method28890(this.field36999);
+        return "" + this.field36998 + ":" + Config.method28890(this.field36999);
     }
 }

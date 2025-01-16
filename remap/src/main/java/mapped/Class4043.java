@@ -14,9 +14,9 @@ import javax.annotation.Nullable;
 public class Class4043 extends Class4036
 {
     private static String[] field18137;
-    public final Class3833 field18138;
+    public final Block field18138;
     
-    public Class4043(final Class3833 class3833, final Class3833 field18138, final Class8959 class3834) {
+    public Class4043(final Block class3833, final Block field18138, final Class8959 class3834) {
         super(class3833, class3834);
         this.field18138 = field18138;
     }
@@ -43,7 +43,7 @@ public class Class4043 extends Class4036
     }
     
     @Override
-    public void method12241(final Map<Class3833, Item> map, final Item class3820) {
+    public void method12241(final Map<Block, Item> map, final Item class3820) {
         super.method12241(map, class3820);
         map.put(this.field18138, class3820);
     }

@@ -93,7 +93,7 @@ public class Class8697
                 jsonObject.addProperty("feature", (String)Class4535.field20023.inverse().get((Object)this.field36549));
             }
             if (this.field36548 != null) {
-                jsonObject.addProperty("biome", Class90.field217.method503(this.field36548).toString());
+                jsonObject.addProperty("biome", Registry.field217.getKey(this.field36548).toString());
             }
             jsonObject.add("light", this.field36551.method27891());
             jsonObject.add("block", this.field36552.method25400());
@@ -110,11 +110,11 @@ public class Class8697
             final Class8683 method35915 = Class8683.method29738(method35914.get("x"));
             final Class8683 method35916 = Class8683.method29738(method35914.get("y"));
             final Class8683 method35917 = Class8683.method29738(method35914.get("z"));
-            final DimensionType class383 = method35913.has("dimension") ? DimensionType.method1275(new Class1932(Class9583.method35895(method35913, "dimension"))) : null;
+            final DimensionType class383 = method35913.has("dimension") ? DimensionType.method1275(new ResourceLocation(Class9583.method35895(method35913, "dimension"))) : null;
             final Class4574 class384 = method35913.has("feature") ? ((Class4574)Class4535.field20023.get((Object)Class9583.method35895(method35913, "feature"))) : null;
             Class3090 class385 = null;
             if (method35913.has("biome")) {
-                class385 = Class90.field217.method506(new Class1932(Class9583.method35895(method35913, "biome"))).orElseThrow(() -> {
+                class385 = Registry.field217.method506(new ResourceLocation(Class9583.method35895(method35913, "biome"))).orElseThrow(() -> {
                     new JsonSyntaxException("Unknown biome '" + obj + "'");
                     return;
                 });

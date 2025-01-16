@@ -26,10 +26,10 @@ public abstract class Class4479 extends Class4473
     public BlockState method13462() {
         switch (Class8427.field34588[this.field19869.ordinal()]) {
             default: {
-                return Class7521.field29160.method11878();
+                return Class7521.field29160.getDefaultState();
             }
             case 2: {
-                return Class7521.field29165.method11878();
+                return Class7521.field29165.getDefaultState();
             }
         }
     }
@@ -37,10 +37,10 @@ public abstract class Class4479 extends Class4473
     public BlockState method13463() {
         switch (Class8427.field34588[this.field19869.ordinal()]) {
             default: {
-                return Class7521.field29336.method11878();
+                return Class7521.field29336.getDefaultState();
             }
             case 2: {
-                return Class7521.field29623.method11878();
+                return Class7521.field29623.getDefaultState();
             }
         }
     }

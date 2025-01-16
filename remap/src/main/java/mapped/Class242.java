@@ -125,7 +125,7 @@ public enum Class242
         
         @Override
         public boolean method894(final Item class3820) {
-            final Class3833 method11776 = Class3833.method11776(class3820);
+            final Block method11776 = Block.method11776(class3820);
             if (!(class3820 instanceof Class4055)) {
                 if (!(class3820 instanceof Class4080)) {
                     if (!(method11776 instanceof Class3932)) {

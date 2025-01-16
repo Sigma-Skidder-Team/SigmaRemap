@@ -20,20 +20,20 @@ public class Class1782 extends Class1779
 {
     private static final Logger field9888;
     private static final Gson field9889;
-    private Map<Class1932, Class9317> field9890;
+    private Map<ResourceLocation, Class9317> field9890;
     private final Class1783 field9891;
     
     public Class1782(final Class1783 field9891) {
         super(Class1782.field9889, "loot_tables");
-        this.field9890 = (Map<Class1932, Class9317>)ImmutableMap.of();
+        this.field9890 = (Map<ResourceLocation, Class9317>)ImmutableMap.of();
         this.field9891 = field9891;
     }
     
-    public Class9317 method6402(final Class1932 key) {
+    public Class9317 method6402(final ResourceLocation key) {
         return this.field9890.getOrDefault(key, Class9317.field40009);
     }
     
-    public void method6377(final Map<Class1932, JsonObject> map, final Class6582 class6582, final IProfiler class6583) {
+    public void method6377(final Map<ResourceLocation, JsonObject> map, final Class6582 class6582, final IProfiler class6583) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
         if (map.remove(Class9020.field38063) != null) {
             Class1782.field9888.warn("Datapack tried to redefine {} loot table, ignoring", (Object)Class9020.field38063);
@@ -52,10 +52,10 @@ public class Class1782 extends Class1779
         final Class7790 class6584 = new Class7790(Class7104.field27718, this.field9891::method6409, build::get);
         build.forEach((class6587, class6588) -> method6403(class6586, class6587, class6588));
         class6584.method25020().forEach((str, str2) -> Class1782.field9888.warn("Found validation problem in " + str + ": " + str2));
-        this.field9890 = (Map<Class1932, Class9317>)build;
+        this.field9890 = (Map<ResourceLocation, Class9317>)build;
     }
     
-    public static void method6403(final Class7790 class7790, final Class1932 obj, final Class9317 class7791) {
+    public static void method6403(final Class7790 class7790, final ResourceLocation obj, final Class9317 class7791) {
         class7791.method34487(class7790.method25024(class7791.method34486()).method25016("{" + obj + "}", obj));
     }
     
@@ -63,7 +63,7 @@ public class Class1782 extends Class1779
         return Class1782.field9889.toJsonTree((Object)class9317);
     }
     
-    public Set<Class1932> method6405() {
+    public Set<ResourceLocation> method6405() {
         return this.field9890.keySet();
     }
     

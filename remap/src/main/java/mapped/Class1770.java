@@ -12,7 +12,7 @@ public class Class1770 extends Class1767
     private static String[] field9828;
     private CompletableFuture<Class1674> field9844;
     
-    public Class1770(final Class6582 class6582, final Class1932 class6583, final Executor executor) {
+    public Class1770(final Class6582 class6582, final ResourceLocation class6583, final Executor executor) {
         super(class6583);
         this.field9844 = CompletableFuture.supplyAsync(() -> Class1674.method5891(class6584, class6585), executor);
     }
@@ -32,7 +32,7 @@ public class Class1770 extends Class1767
     }
     
     @Override
-    public void method5873(final Class1663 class1663, final Class6582 class1664, final Class1932 class1665, final Executor executor) {
+    public void method5873(final Class1663 class1663, final Class6582 class1664, final ResourceLocation class1665, final Executor executor) {
         (this.field9844 = CompletableFuture.supplyAsync(() -> Class1674.method5891(class1666, this.field9830), Class8349.method27841())).thenRunAsync(() -> class1667.method5851(this.field9830, this), method6317(executor));
     }
     

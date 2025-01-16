@@ -19,7 +19,7 @@ import org.apache.logging.log4j.Logger;
 public class Class1878 implements Class1851
 {
     private static final Logger field10214;
-    private final List<Class1860> field10215;
+    private final List<IChunk> field10215;
     private final int field10216;
     private final int field10217;
     private final int field10218;
@@ -30,12 +30,12 @@ public class Class1878 implements Class1851
     private final Random field10223;
     private final Dimension field10224;
     private final Class7065 field10225;
-    private final Class6952<Class3833> field10226;
+    private final Class6952<Block> field10226;
     private final Class6952<Class7255> field10227;
     private final BiomeManager field10228;
     
-    public Class1878(final Class1849 field10219, final List<Class1860> field10220) {
-        this.field10226 = new Class6955<Class3833>(class355 -> this.method6965(class355).method7036());
+    public Class1878(final Class1849 field10219, final List<IChunk> field10220) {
+        this.field10226 = new Class6955<Block>(class355 -> this.method6965(class355).method7036());
         this.field10227 = new Class6955<Class7255>(class357 -> this.method6965(class357).method7037());
         final int method35644 = MathHelper.floor(Math.sqrt(field10220.size()));
         if (method35644 * method35644 == field10220.size()) {
@@ -66,14 +66,14 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public Class1860 method6798(final int n, final int n2) {
-        return this.method6966(n, n2, Class9312.field39977);
+    public IChunk method6798(final int n, final int n2) {
+        return this.method6966(n, n2, ChunkStatus.field39977);
     }
     
     @Nullable
     @Override
-    public Class1860 method6687(final int i, final int j, final Class9312 class9312, final boolean b) {
-        Class1860 class9313;
+    public IChunk getChunk(final int i, final int j, final ChunkStatus class9312, final boolean b) {
+        IChunk class9313;
         if (!this.method6814(i, j)) {
             class9313 = null;
         }
@@ -87,8 +87,8 @@ public class Class1878 implements Class1851
         if (!b) {
             return null;
         }
-        final Class1860 class9314 = this.field10215.get(0);
-        final Class1860 class9315 = this.field10215.get(this.field10215.size() - 1);
+        final IChunk class9314 = this.field10215.get(0);
+        final IChunk class9315 = this.field10215.get(this.field10215.size() - 1);
         Class1878.field10214.error("Requested chunk : {} {}", (Object)i, (Object)j);
         Class1878.field10214.error("Region bounds : {} {} | {} {}", (Object)class9314.method7019().field32290, (Object)class9314.method7019().field32291, (Object)class9315.method7019().field32290, (Object)class9315.method7019().field32291);
         if (class9313 == null) {
@@ -99,8 +99,8 @@ public class Class1878 implements Class1851
     
     @Override
     public boolean method6814(final int n, final int n2) {
-        final Class1860 class1860 = this.field10215.get(0);
-        final Class1860 class1861 = this.field10215.get(this.field10215.size() - 1);
+        final IChunk class1860 = this.field10215.get(0);
+        final IChunk class1861 = this.field10215.get(this.field10215.size() - 1);
         if (n >= class1860.method7019().field32290) {
             if (n <= class1861.method7019().field32290) {
                 if (n2 >= class1860.method7019().field32291) {
@@ -114,8 +114,8 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public BlockState method6701(final BlockPos class354) {
-        return this.method6798(class354.getX() >> 4, class354.getZ() >> 4).method6701(class354);
+    public BlockState getBlockState(final BlockPos class354) {
+        return this.method6798(class354.getX() >> 4, class354.getZ() >> 4).getBlockState(class354);
     }
     
     @Override
@@ -151,12 +151,12 @@ public class Class1878 implements Class1851
     
     @Override
     public boolean method6691(final BlockPos class354, final boolean b, final Entity class355) {
-        final BlockState method6701 = this.method6701(class354);
+        final BlockState method6701 = this.getBlockState(class354);
         if (!method6701.method21706()) {
             if (b) {
-                Class3833.method11838(method6701, this.field10219, class354, method6701.method21696().method11802() ? this.method6727(class354) : null, class355, ItemStack.field34174);
+                Block.method11838(method6701, this.field10219, class354, method6701.getBlock().method11802() ? this.method6727(class354) : null, class355, ItemStack.field34174);
             }
-            return this.method6688(class354, Class7521.field29147.method11878(), 3);
+            return this.setBlockState(class354, Class7521.field29147.getDefaultState(), 3);
         }
         return false;
     }
@@ -164,7 +164,7 @@ public class Class1878 implements Class1851
     @Nullable
     @Override
     public TileEntity method6727(final BlockPos class354) {
-        final Class1860 method6965 = this.method6965(class354);
+        final IChunk method6965 = this.method6965(class354);
         final TileEntity method6966 = method6965.method6727(class354);
         if (method6966 == null) {
             final Class51 method6967 = method6965.method7033(class354);
@@ -174,7 +174,7 @@ public class Class1878 implements Class1851
                     class355 = TileEntity.method2190(method6967);
                 }
                 else {
-                    final Class3833 method6968 = this.method6701(class354).method21696();
+                    final Block method6968 = this.getBlockState(class354).getBlock();
                     if (!(method6968 instanceof Class3840)) {
                         return null;
                     }
@@ -185,7 +185,7 @@ public class Class1878 implements Class1851
                     return class355;
                 }
             }
-            if (method6965.method6701(class354).method21696() instanceof Class3840) {
+            if (method6965.getBlockState(class354).getBlock() instanceof Class3840) {
                 Class1878.field10214.warn("Tried to access a block entity before it was created. {}", (Object)class354);
             }
             return null;
@@ -194,16 +194,16 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public boolean method6688(final BlockPos class354, final BlockState class355, final int n) {
-        final Class1860 method6965 = this.method6965(class354);
+    public boolean setBlockState(final BlockPos class354, final BlockState class355, final int n) {
+        final IChunk method6965 = this.method6965(class354);
         final BlockState method6966 = method6965.method7008(class354, class355, false);
         if (method6966 != null) {
             this.field10219.method6689(class354, method6966, class355);
         }
-        final Class3833 method6967 = class355.method21696();
+        final Block method6967 = class355.getBlock();
         if (!method6967.method11802()) {
             if (method6966 != null) {
-                if (method6966.method21696().method11802()) {
+                if (method6966.getBlock().method11802()) {
                     method6965.method7028(class354);
                 }
             }
@@ -237,12 +237,12 @@ public class Class1878 implements Class1851
     
     @Override
     public boolean method6690(final BlockPos class354, final boolean b) {
-        return this.method6688(class354, Class7521.field29147.method11878(), 3);
+        return this.setBlockState(class354, Class7521.field29147.getDefaultState(), 3);
     }
     
     @Override
-    public WorldBorder method6787() {
-        return this.field10219.method6787();
+    public WorldBorder getWorldBorder() {
+        return this.field10219.getWorldBorder();
     }
     
     @Override
@@ -269,7 +269,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public AbstractChunkProvider method6762() {
+    public AbstractChunkProvider getChunkProvider() {
         return this.field10219.method6904();
     }
     
@@ -279,7 +279,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public Class6952<Class3833> method6833() {
+    public Class6952<Block> method6833() {
         return this.field10226;
     }
     
@@ -299,7 +299,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public void method6694(final BlockPos class354, final Class3833 class355) {
+    public void method6694(final BlockPos class354, final Block class355) {
     }
     
     @Override
@@ -331,7 +331,7 @@ public class Class1878 implements Class1851
     
     @Override
     public boolean method6791(final BlockPos class354, final Predicate<BlockState> predicate) {
-        return predicate.test(this.method6701(class354));
+        return predicate.test(this.getBlockState(class354));
     }
     
     @Override

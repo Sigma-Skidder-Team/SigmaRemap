@@ -17,7 +17,7 @@ public class Class3694 extends Class3693<Item>
     private static final Logger field17013;
     
     public Class3694(final Class7203 class7203) {
-        super(class7203, Class90.field211);
+        super(class7203, Registry.field211);
     }
     
     @Override
@@ -66,15 +66,15 @@ public class Class3694 extends Class3693<Item>
         this.method11368(Class7855.field32277).method26978(Items.field31513, Items.field31512);
     }
     
-    public void method11373(final Class7909<Class3833> class7909, final Class7909<Item> class7910) {
+    public void method11373(final Class7909<Block> class7909, final Class7909<Item> class7910) {
         final Class8162<Item> method11368 = this.method11368(class7910);
-        final Iterator<Class6967<Class3833>> iterator = class7909.method25617().iterator();
+        final Iterator<Class6967<Block>> iterator = class7909.method25617().iterator();
         while (iterator.hasNext()) {
             method11368.method26976(this.method11374(iterator.next()));
         }
     }
     
-    private Class6967<Item> method11374(final Class6967<Class3833> obj) {
+    private Class6967<Item> method11374(final Class6967<Block> obj) {
         if (obj instanceof Class6966) {
             return new Class6966<Item>(((Class6966)obj).method21380());
         }
@@ -82,20 +82,20 @@ public class Class3694 extends Class3693<Item>
             throw new UnsupportedOperationException("Unknown tag entry " + obj);
         }
         final ArrayList arrayList = Lists.newArrayList();
-        for (final Class3833 class3833 : ((Class6968)obj).method21382()) {
+        for (final Block class3833 : ((Class6968)obj).method21382()) {
             final Item method11704 = class3833.method11704();
             if (method11704 != Items.AIR) {
                 arrayList.add(method11704);
             }
             else {
-                Class3694.field17013.warn("Itemless block copied to item tag: {}", (Object)Class90.field208.method503(class3833));
+                Class3694.field17013.warn("Itemless block copied to item tag: {}", (Object) Registry.BLOCK.getKey(class3833));
             }
         }
         return new Class6968<Item>(arrayList);
     }
     
     @Override
-    public Path method11367(final Class1932 class1932) {
+    public Path method11367(final ResourceLocation class1932) {
         return this.field17010.method22099().resolve("data/" + class1932.method7798() + "/tags/items/" + class1932.method7797() + ".json");
     }
     

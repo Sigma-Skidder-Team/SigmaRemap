@@ -16,7 +16,7 @@ import java.util.List;
 
 public class Class581 extends Class565 implements Class563, Class574, Class586, Class587<Class120>
 {
-    public static final Class1932 field3462;
+    public static final ResourceLocation field3462;
     private int field3463;
     private int field3464;
     private int field3465;
@@ -478,6 +478,6 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
     }
     
     static {
-        field3462 = new Class1932("textures/gui/recipe_book.png");
+        field3462 = new ResourceLocation("textures/gui/recipe_book.png");
     }
 }

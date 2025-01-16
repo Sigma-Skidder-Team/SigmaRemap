@@ -9,7 +9,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 
 public enum Class2040 implements Class2041
 {
-    field11632(BlockState::method21728),
+    field11632(BlockState::getCollisionShape),
     field11633(BlockState::method21726);
     
     private final Class2041 field11634;

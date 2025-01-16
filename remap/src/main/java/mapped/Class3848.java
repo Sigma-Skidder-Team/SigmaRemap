@@ -78,7 +78,7 @@ public class Class3848 extends Class3846
     private void method11904(final Entity class399, final BlockPos class400) {
         if (class399 instanceof Class513) {
             if (class399.world.method6754() % 20L == 0L) {
-                Class7770.field31811.method13782((Class513)class399, class399.world.method6701(class400));
+                Class7770.field31811.method13782((Class513)class399, class399.world.getBlockState(class400));
             }
         }
     }
@@ -118,7 +118,7 @@ public class Class3848 extends Class3846
     
     private static void method11909(final Entity class399, final int n) {
         if (class399.world.isRemote) {
-            final BlockState method11878 = Class7521.field29825.method11878();
+            final BlockState method11878 = Class7521.field29825.getDefaultState();
             for (int i = 0; i < n; ++i) {
                 class399.world.method6709(new Class6911(Class8432.field34600, method11878), class399.getPosX(), class399.getPosY(), class399.getPosZ(), 0.0, 0.0, 0.0);
             }
@@ -126,6 +126,6 @@ public class Class3848 extends Class3846
     }
     
     static {
-        field17457 = Class3833.method11778(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
+        field17457 = Block.method11778(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
     }
 }

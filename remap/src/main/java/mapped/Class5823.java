@@ -29,27 +29,27 @@ public abstract class Class5823 extends Class5827
         if (method17515 == null) {
             return false;
         }
-        final BlockState method17516 = Class7521.field29147.method11878();
-        class1851.method6688(class1853.add(n, 0, n2), method17516, 4);
-        class1851.method6688(class1853.add(n + 1, 0, n2), method17516, 4);
-        class1851.method6688(class1853.add(n, 0, n2 + 1), method17516, 4);
-        class1851.method6688(class1853.add(n + 1, 0, n2 + 1), method17516, 4);
+        final BlockState method17516 = Class7521.field29147.getDefaultState();
+        class1851.setBlockState(class1853.add(n, 0, n2), method17516, 4);
+        class1851.setBlockState(class1853.add(n + 1, 0, n2), method17516, 4);
+        class1851.setBlockState(class1853.add(n, 0, n2 + 1), method17516, 4);
+        class1851.setBlockState(class1853.add(n + 1, 0, n2 + 1), method17516, 4);
         if (!method17515.method28613(class1851, (Class6346)class1852, random, class1853.add(n, 0, n2))) {
-            class1851.method6688(class1853.add(n, 0, n2), class1854, 4);
-            class1851.method6688(class1853.add(n + 1, 0, n2), class1854, 4);
-            class1851.method6688(class1853.add(n, 0, n2 + 1), class1854, 4);
-            class1851.method6688(class1853.add(n + 1, 0, n2 + 1), class1854, 4);
+            class1851.setBlockState(class1853.add(n, 0, n2), class1854, 4);
+            class1851.setBlockState(class1853.add(n + 1, 0, n2), class1854, 4);
+            class1851.setBlockState(class1853.add(n, 0, n2 + 1), class1854, 4);
+            class1851.setBlockState(class1853.add(n + 1, 0, n2 + 1), class1854, 4);
             return false;
         }
         return true;
     }
     
     public static boolean method17517(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final int n, final int n2) {
-        final Class3833 method21696 = class7096.method21696();
-        if (method21696 == class7097.method6701(class7098.add(n, 0, n2)).method21696()) {
-            if (method21696 == class7097.method6701(class7098.add(n + 1, 0, n2)).method21696()) {
-                if (method21696 == class7097.method6701(class7098.add(n, 0, n2 + 1)).method21696()) {
-                    if (method21696 == class7097.method6701(class7098.add(n + 1, 0, n2 + 1)).method21696()) {
+        final Block method21696 = class7096.getBlock();
+        if (method21696 == class7097.getBlockState(class7098.add(n, 0, n2)).getBlock()) {
+            if (method21696 == class7097.getBlockState(class7098.add(n + 1, 0, n2)).getBlock()) {
+                if (method21696 == class7097.getBlockState(class7098.add(n, 0, n2 + 1)).getBlock()) {
+                    if (method21696 == class7097.getBlockState(class7098.add(n + 1, 0, n2 + 1)).getBlock()) {
                         return true;
                     }
                 }

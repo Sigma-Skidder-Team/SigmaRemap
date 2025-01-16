@@ -87,7 +87,7 @@ public abstract class Class428 extends Entity
         this.dataManager.register(Class428.field2620, 0);
         this.dataManager.register(Class428.field2621, 1);
         this.dataManager.register(Class428.field2622, 0.0f);
-        this.dataManager.register(Class428.field2623, Class3833.method11774(Class7521.field29147.method11878()));
+        this.dataManager.register(Class428.field2623, Block.method11774(Class7521.field29147.getDefaultState()));
         this.dataManager.register(Class428.field2624, 6);
         this.dataManager.register(Class428.field2625, false);
     }
@@ -184,18 +184,18 @@ public abstract class Class428 extends Entity
             final int method35644 = MathHelper.floor(this.getPosX());
             int method35645 = MathHelper.floor(this.getPosY());
             final int method35646 = MathHelper.floor(this.getPosZ());
-            if (this.world.method6701(new BlockPos(method35644, method35645 - 1, method35646)).method21755(Class7188.field27906)) {
+            if (this.world.getBlockState(new BlockPos(method35644, method35645 - 1, method35646)).method21755(Class7188.field27906)) {
                 --method35645;
             }
             final BlockPos class354 = new BlockPos(method35644, method35645, method35646);
-            final BlockState method35647 = this.world.method6701(class354);
+            final BlockState method35647 = this.world.getBlockState(class354);
             if (!method35647.method21755(Class7188.field27906)) {
                 this.method2127();
             }
             else {
                 this.method2128(class354, method35647);
-                if (method35647.method21696() == Class7521.field29480) {
-                    this.method2126(method35644, method35645, method35646, method35647.method21772((Class7111<Boolean>)Class4019.field18101));
+                if (method35647.getBlock() == Class7521.field29480) {
+                    this.method2126(method35644, method35645, method35646, method35647.get((IProperty<Boolean>)Class4019.field18101));
                 }
             }
             this.method1689();
@@ -296,13 +296,13 @@ public abstract class Class428 extends Entity
         double n = class354.getY();
         boolean booleanValue = false;
         int n2 = 0;
-        final Class4017 class356 = (Class4017)class355.method21696();
+        final Class4017 class356 = (Class4017)class355.getBlock();
         if (class356 == Class7521.field29237) {
-            booleanValue = class355.method21772((Class7111<Boolean>)Class4019.field18101);
+            booleanValue = class355.get((IProperty<Boolean>)Class4019.field18101);
             n2 = (booleanValue ? 0 : 1);
         }
         final Vec3d method1942 = this.getMotion();
-        final Class104 class357 = class355.method21772(class356.method12205());
+        final Class104 class357 = class355.get(class356.method12205());
         switch (Class7650.field30382[class357.ordinal()]) {
             case 1: {
                 this.method1936(method1942.add(-0.0078125, 0.0, 0.0));
@@ -436,7 +436,7 @@ public abstract class Class428 extends Entity
     }
     
     private boolean method2129(final BlockPos class354) {
-        return this.world.method6701(class354).method21713(this.world, class354);
+        return this.world.getBlockState(class354).method21713(this.world, class354);
     }
     
     public void method2130() {
@@ -449,14 +449,14 @@ public abstract class Class428 extends Entity
         final int method35644 = MathHelper.floor(n);
         int method35645 = MathHelper.floor(n2);
         final int method35646 = MathHelper.floor(n3);
-        if (this.world.method6701(new BlockPos(method35644, method35645 - 1, method35646)).method21755(Class7188.field27906)) {
+        if (this.world.getBlockState(new BlockPos(method35644, method35645 - 1, method35646)).method21755(Class7188.field27906)) {
             --method35645;
         }
-        final BlockState method35647 = this.world.method6701(new BlockPos(method35644, method35645, method35646));
+        final BlockState method35647 = this.world.getBlockState(new BlockPos(method35644, method35645, method35646));
         if (!method35647.method21755(Class7188.field27906)) {
             return null;
         }
-        final Class104 class104 = method35647.method21772(((Class4017)method35647.method21696()).method12205());
+        final Class104 class104 = method35647.get(((Class4017)method35647.getBlock()).method12205());
         n2 = method35645;
         if (class104.method597()) {
             n2 = method35645 + 1;
@@ -494,14 +494,14 @@ public abstract class Class428 extends Entity
         final int method35644 = MathHelper.floor(n);
         int method35645 = MathHelper.floor(n2);
         final int method35646 = MathHelper.floor(n3);
-        if (this.world.method6701(new BlockPos(method35644, method35645 - 1, method35646)).method21755(Class7188.field27906)) {
+        if (this.world.getBlockState(new BlockPos(method35644, method35645 - 1, method35646)).method21755(Class7188.field27906)) {
             --method35645;
         }
-        final BlockState method35647 = this.world.method6701(new BlockPos(method35644, method35645, method35646));
+        final BlockState method35647 = this.world.getBlockState(new BlockPos(method35644, method35645, method35646));
         if (!method35647.method21755(Class7188.field27906)) {
             return null;
         }
-        final Pair<Vec3i, Vec3i> method35648 = method2124(method35647.method21772(((Class4017)method35647.method21696()).method12205()));
+        final Pair<Vec3i, Vec3i> method35648 = method2124(method35647.get(((Class4017)method35647.getBlock()).method12205()));
         final Vec3i class352 = (Vec3i)method35648.getFirst();
         final Vec3i class353 = (Vec3i)method35648.getSecond();
         final double n4 = method35644 + 0.5 + class352.getX() * 0.5;
@@ -669,11 +669,11 @@ public abstract class Class428 extends Entity
     public abstract Class2080 method2139();
     
     public BlockState method2140() {
-        return this.method2146() ? Class3833.method11775(this.method1650().get(Class428.field2623)) : this.method2141();
+        return this.method2146() ? Block.method11775(this.method1650().get(Class428.field2623)) : this.method2141();
     }
     
     public BlockState method2141() {
-        return Class7521.field29147.method11878();
+        return Class7521.field29147.getDefaultState();
     }
     
     public int method2142() {
@@ -685,7 +685,7 @@ public abstract class Class428 extends Entity
     }
     
     public void method2144(final BlockState class7096) {
-        this.method1650().set(Class428.field2623, Class3833.method11774(class7096));
+        this.method1650().set(Class428.field2623, Block.method11774(class7096));
         this.method2147(true);
     }
     

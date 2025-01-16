@@ -34,7 +34,7 @@ public class Class6300
     public float field25192;
     public float field25193;
     public float field25194;
-    private Class1932 field25195;
+    private ResourceLocation field25195;
     private String field25196;
     private Class8473 field25197;
     private Class1656 field25198;
@@ -52,7 +52,7 @@ public class Class6300
         this.field25194 = 1.0f;
         this.field25195 = null;
         this.field25196 = null;
-        this.field25198 = Class8571.method28908();
+        this.field25198 = Config.method28908();
         class5901.accept(this);
         this.method18647(class5901.field24269, class5901.field24270);
     }
@@ -75,7 +75,7 @@ public class Class6300
         this.field25194 = 1.0f;
         this.field25195 = null;
         this.field25196 = null;
-        this.field25198 = Class8571.method28908();
+        this.field25198 = Config.method28908();
         this.method18647(n, n2);
         this.method18634(n3, n4);
     }
@@ -207,11 +207,11 @@ public class Class6300
         this.field25190.add(new Class7846(this, this.field25178, this.field25179, n, n2, n3, n4, n5, n6, n7));
     }
     
-    public Class1932 method18650() {
+    public ResourceLocation method18650() {
         return this.field25195;
     }
     
-    public void method18651(final Class1932 field25195) {
+    public void method18651(final ResourceLocation field25195) {
         this.field25195 = field25195;
     }
     

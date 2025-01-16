@@ -18,13 +18,13 @@ public class Class8863
     private final Class8863 field37253;
     private final Class7339 field37254;
     private final Class9032 field37255;
-    private final Class1932 field37256;
+    private final ResourceLocation field37256;
     private final Map<String, Class8832> field37257;
     private final String[][] field37258;
     private final Set<Class8863> field37259;
     private final ITextComponent field37260;
     
-    public Class8863(final Class1932 field37256, final Class8863 field37257, final Class7339 class2252, final Class9032 field37259, final Map<String, Class8832> map, final String[][] field37260) {
+    public Class8863(final ResourceLocation field37256, final Class8863 field37257, final Class7339 class2252, final Class9032 field37259, final Map<String, Class8832> map, final String[][] field37260) {
         this.field37259 = Sets.newLinkedHashSet();
         this.field37256 = field37256;
         this.field37254 = class2252;
@@ -87,7 +87,7 @@ public class Class8863
         this.field37259.add(class8863);
     }
     
-    public Class1932 method31042() {
+    public ResourceLocation method31042() {
         return this.field37256;
     }
     

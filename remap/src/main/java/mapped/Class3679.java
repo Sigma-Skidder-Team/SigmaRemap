@@ -10,12 +10,12 @@ import net.minecraft.world.World;
 public class Class3679 implements Class3663
 {
     private static String[] field16969;
-    private final Class1932 field16970;
+    private final ResourceLocation field16970;
     private final String field16971;
     private final ItemStack field16972;
     private final Class2265<Class120> field16973;
     
-    public Class3679(final Class1932 field16970, final String field16971, final ItemStack field16972, final Class2265<Class120> field16973) {
+    public Class3679(final ResourceLocation field16970, final String field16971, final ItemStack field16972, final Class2265<Class120> field16973) {
         this.field16970 = field16970;
         this.field16971 = field16971;
         this.field16972 = field16972;
@@ -23,7 +23,7 @@ public class Class3679 implements Class3663
     }
     
     @Override
-    public Class1932 method11298() {
+    public ResourceLocation method11298() {
         return this.field16970;
     }
     

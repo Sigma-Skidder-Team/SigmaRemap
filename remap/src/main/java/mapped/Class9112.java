@@ -43,8 +43,8 @@ public class Class9112
                     class7520.getClass();
                     field38610[n] = new Class8974(class7520);
                     this.field38610[method32959].method31867(i * 16, j * 16, k * 16);
-                    if (Class8571.method29010()) {
-                        if (Class8571.method29009()) {
+                    if (Config.method29010()) {
+                        if (Config.method29009()) {
                             this.method32964(this.field38610[method32959]);
                         }
                     }

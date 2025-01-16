@@ -126,7 +126,7 @@ public class Class9036
                 Class8933.method31633(5888);
                 Class8933.method31636();
                 Class8933.method31609();
-                final float method7696 = Class8571.method28866(1.0f - (float)((System.currentTimeMillis() - Class7741.method24702()) / 1000.0), 0.0f, 1.0f);
+                final float method7696 = Config.method28866(1.0f - (float)((System.currentTimeMillis() - Class7741.method24702()) / 1000.0), 0.0f, 1.0f);
                 final int n13 = (int)(170.0f + method7696 * 85.0f) << 16 | (int)(100.0f + method7696 * 55.0f) << 8 | (int)(10.0f + method7696 * 10.0f);
                 final int n14 = 512 / n + 2;
                 final int n15 = method7693 / n - 8;

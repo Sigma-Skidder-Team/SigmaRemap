@@ -20,7 +20,7 @@ public class Class8475
         }
         else {
             if (class4148.method12417() == 7) {
-                if (Class8571.method29021()) {
+                if (Config.method29021()) {
                     class4148.method12416();
                 }
             }

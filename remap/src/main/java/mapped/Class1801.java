@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 
 public class Class1801<T extends LivingEntity, M extends Class5845<T>> extends Class1799<T, M>
 {
-    private static final Class1932 field9968;
+    private static final ResourceLocation field9968;
     private final Class5923<T> field9969;
     
     public Class1801(final Class4778<T, M> class4778) {
@@ -20,10 +20,10 @@ public class Class1801<T extends LivingEntity, M extends Class5845<T>> extends C
     public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         final ItemStack method2718 = t.method2718(Class2215.field13604);
         if (method2718.getItem() == Items.field31584) {
-            Class1932 class7353 = null;
+            ResourceLocation class7353 = null;
             if (!(t instanceof Class754)) {
                 class7353 = Class1801.field9968;
-                if (Class8571.method28987()) {
+                if (Config.method28987()) {
                     class7353 = Class9404.method34969(method2718, class7353);
                 }
             }
@@ -45,7 +45,7 @@ public class Class1801<T extends LivingEntity, M extends Class5845<T>> extends C
                             }
                         }
                         class7353 = Class1801.field9968;
-                        if (Class8571.method28987()) {
+                        if (Config.method28987()) {
                             class7353 = Class9404.method34969(method2718, class7353);
                         }
                     }
@@ -61,6 +61,6 @@ public class Class1801<T extends LivingEntity, M extends Class5845<T>> extends C
     }
     
     static {
-        field9968 = new Class1932("textures/entity/elytra.png");
+        field9968 = new ResourceLocation("textures/entity/elytra.png");
     }
 }

@@ -12,7 +12,7 @@ public interface Class9559
     
     void method35768(final Class8651<EntityType, Class5412> p0);
     
-    Class1932 method35769();
+    ResourceLocation method35769();
     
-    void method35770(final Class1932 p0);
+    void method35770(final ResourceLocation p0);
 }

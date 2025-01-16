@@ -26,7 +26,7 @@ public class Class5114 implements Class5113
     
     @Override
     public String toString() {
-        return String.format("< %s [%s | %s] >", this.getClass().getSimpleName(), Class90.field215.method503((Class4535<?>)this.field22060.field35804), Class90.field216.method503(this.field22061.field38832));
+        return String.format("< %s [%s | %s] >", this.getClass().getSimpleName(), Registry.field215.getKey((Class4535<?>)this.field22060.field35804), Registry.field216.getKey(this.field22061.field38832));
     }
     
     public static <T> Class5114 method16012(final Dynamic<T> dynamic) {

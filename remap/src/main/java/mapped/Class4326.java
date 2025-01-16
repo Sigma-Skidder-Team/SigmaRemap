@@ -8,14 +8,14 @@ import java.io.IOException;
 
 public class Class4326 implements IPacket<Class5813>
 {
-    public static final Class1932 field19371;
-    private Class1932 field19372;
+    public static final ResourceLocation field19371;
+    private ResourceLocation field19372;
     private PacketBuffer field19373;
     
     public Class4326() {
     }
     
-    public Class4326(final Class1932 field19372, final PacketBuffer field19373) {
+    public Class4326(final ResourceLocation field19372, final PacketBuffer field19373) {
         this.field19372 = field19372;
         this.field19373 = field19373;
     }
@@ -45,6 +45,6 @@ public class Class4326 implements IPacket<Class5813>
     }
     
     static {
-        field19371 = new Class1932("brand");
+        field19371 = new ResourceLocation("brand");
     }
 }

@@ -32,7 +32,7 @@ public class Class4279 implements IPacket<IClientPlayNetHandler>
         final int method29501 = class8654.readVarInt();
         this.field19200 = (Object2IntMap<Class9455<?>>)new Object2IntOpenHashMap(method29501);
         for (int i = 0; i < method29501; ++i) {
-            this.method12854(Class90.field238.method499(class8654.readVarInt()), class8654);
+            this.method12854(Registry.field238.method499(class8654.readVarInt()), class8654);
         }
     }
     
@@ -45,14 +45,14 @@ public class Class4279 implements IPacket<IClientPlayNetHandler>
         class8654.writeVarInt(this.field19200.size());
         for (final Object2IntMap$Entry object2IntMap$Entry : this.field19200.object2IntEntrySet()) {
             final Class9455 class8655 = (Class9455)object2IntMap$Entry.getKey();
-            class8654.writeVarInt(Class90.field238.method504(class8655.method35134()));
+            class8654.writeVarInt(Registry.field238.getId(class8655.method35134()));
             class8654.writeVarInt(this.method12855((Class9455<Object>)class8655));
             class8654.writeVarInt(object2IntMap$Entry.getIntValue());
         }
     }
     
     private <T> int method12855(final Class9455<T> class9455) {
-        return class9455.method35134().method8448().method504(class9455.method35135());
+        return class9455.method35134().method8448().getId(class9455.method35135());
     }
     
     public Map<Class9455<?>, Integer> method12856() {

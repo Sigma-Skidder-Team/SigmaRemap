@@ -19,54 +19,54 @@ import java.util.function.Supplier;
 import java.util.Map;
 import org.apache.logging.log4j.Logger;
 
-public abstract class Class90<T> implements Class89<T>
+public abstract class Registry<T> implements Class89<T>
 {
     public static final Logger field202;
-    private static final Map<Class1932, Supplier<?>> field203;
+    private static final Map<ResourceLocation, Supplier<?>> field203;
     public static final Class91<Class91<?>> field204;
-    public static final Class90<Class7795> field205;
+    public static final Registry<Class7795> field205;
     public static final Class93<Class7255> field206;
-    public static final Class90<Class5328> field207;
-    public static final Class93<Class3833> field208;
-    public static final Class90<Class6257> field209;
+    public static final Registry<Class5328> field207;
+    public static final Class93<Block> BLOCK;
+    public static final Registry<Class6257> field209;
     public static final Class93<EntityType<?>> field210;
     public static final Class93<Item> field211;
     public static final Class93<Class8061> field212;
-    public static final Class90<Class7304<?>> field213;
-    public static final Class90<Class6032<?>> field214;
-    public static final Class90<Class4535<?>> field215;
-    public static final Class90<Class7133<?>> field216;
-    public static final Class90<Class3090> field217;
-    public static final Class90<Class8804<?>> field218;
-    public static final Class90<Class8372<?>> field219;
-    public static final Class90<Class7944<?>> field220;
-    public static final Class90<Class7742<?>> field221;
-    public static final Class90<Class6907<? extends Class6909>> field222;
-    public static final Class90<Class7768<?, ?>> field223;
-    public static final Class90<Class5412<?>> field224;
-    public static final Class90<Class8705<?, ?>> field225;
-    public static final Class90<DimensionType> field226;
+    public static final Registry<Class7304<?>> field213;
+    public static final Registry<Class6032<?>> field214;
+    public static final Registry<Class4535<?>> field215;
+    public static final Registry<Class7133<?>> field216;
+    public static final Registry<Class3090> field217;
+    public static final Registry<Class8804<?>> field218;
+    public static final Registry<Class8372<?>> field219;
+    public static final Registry<Class7944<?>> field220;
+    public static final Registry<Class7742<?>> field221;
+    public static final Registry<Class6907<? extends Class6909>> field222;
+    public static final Registry<Class7768<?, ?>> field223;
+    public static final Registry<Class5412<?>> field224;
+    public static final Registry<Class8705<?, ?>> field225;
+    public static final Registry<DimensionType> field226;
     public static final Class93<Class8539> field227;
-    public static final Class90<Class1932> field228;
-    public static final Class93<Class9312> field229;
-    public static final Class90<Class4574<?>> field230;
-    public static final Class90<Class9520> field231;
-    public static final Class90<Class7757> field232;
-    public static final Class90<Class7756> field233;
-    public static final Class90<Class7755> field234;
-    public static final Class90<Class8471<?>> field235;
-    public static final Class90<Class8976<?>> field236;
-    public static final Class90<Class6096<?>> field237;
-    public static final Class90<Class2248<?>> field238;
+    public static final Registry<ResourceLocation> field228;
+    public static final Class93<ChunkStatus> field229;
+    public static final Registry<Class4574<?>> field230;
+    public static final Registry<Class9520> field231;
+    public static final Registry<Class7757> field232;
+    public static final Registry<Class7756> field233;
+    public static final Registry<Class7755> field234;
+    public static final Registry<Class8471<?>> field235;
+    public static final Registry<Class8976<?>> field236;
+    public static final Registry<Class6096<?>> field237;
+    public static final Registry<Class2248<?>> field238;
     public static final Class93<Class7611> field239;
     public static final Class93<Class9334> field240;
     public static final Class93<Class8912> field241;
     public static final Class93<Class8233<?>> field242;
     public static final Class93<Class8033<?>> field243;
-    public static final Class90<Class8771> field244;
-    public static final Class90<Class7635> field245;
+    public static final Registry<Class8771> field244;
+    public static final Registry<Class7635> field245;
     
-    private static <T> Class90<T> method500(final String s, final Supplier<T> supplier) {
+    private static <T> Registry<T> method500(final String s, final Supplier<T> supplier) {
         return method502(s, new Class92(), supplier);
     }
     
@@ -75,22 +75,22 @@ public abstract class Class90<T> implements Class89<T>
     }
     
     private static <T, R extends Class91<T>> R method502(final String s, final R r, final Supplier<T> supplier) {
-        final Class1932 class1932 = new Class1932(s);
-        Class90.field203.put(class1932, supplier);
-        return Class90.field204.method558(class1932, r);
+        final ResourceLocation class1932 = new ResourceLocation(s);
+        Registry.field203.put(class1932, supplier);
+        return Registry.field204.method558(class1932, r);
     }
     
     @Nullable
-    public abstract Class1932 method503(final T p0);
+    public abstract ResourceLocation getKey(final T p0);
     
-    public abstract int method504(final T p0);
+    public abstract int getId(final T p0);
     
     @Nullable
-    public abstract T method505(final Class1932 p0);
+    public abstract T getOrDefault(final ResourceLocation p0);
     
-    public abstract Optional<T> method506(final Class1932 p0);
+    public abstract Optional<T> method506(final ResourceLocation p0);
     
-    public abstract Set<Class1932> method507();
+    public abstract Set<ResourceLocation> method507();
     
     @Nullable
     public abstract T method508(final Random p0);
@@ -99,18 +99,18 @@ public abstract class Class90<T> implements Class89<T>
         return StreamSupport.stream(this.spliterator(), false);
     }
     
-    public abstract boolean method510(final Class1932 p0);
+    public abstract boolean method510(final ResourceLocation p0);
     
-    public static <T> T method511(final Class90<? super T> class90, final String s, final T t) {
-        return method512(class90, new Class1932(s), t);
+    public static <T> T method511(final Registry<? super T> class90, final String s, final T t) {
+        return method512(class90, new ResourceLocation(s), t);
     }
     
-    public static <T> T method512(final Class90<? super T> class90, final Class1932 class91, final T t) {
+    public static <T> T method512(final Registry<? super T> class90, final ResourceLocation class91, final T t) {
         return ((Class91<? super T>)class90).method558(class91, t);
     }
     
-    public static <T> T method513(final Class90<? super T> class90, final int n, final String s, final T t) {
-        return ((Class91<? super T>)class90).method557(n, new Class1932(s), t);
+    public static <T> T method513(final Registry<? super T> class90, final int n, final String s, final T t) {
+        return ((Class91<? super T>)class90).method557(n, new ResourceLocation(s), t);
     }
     
     static {
@@ -120,7 +120,7 @@ public abstract class Class90<T> implements Class89<T>
         field205 = method500("sound_event", () -> Class8520.field35327);
         field206 = method501("fluid", "empty", () -> Class7558.field29974);
         field207 = method500("mob_effect", () -> Class9439.field40499);
-        field208 = method501("block", "air", () -> Class7521.field29147);
+        BLOCK = method501("block", "air", () -> Class7521.field29147);
         field209 = method500("enchantment", () -> Class7882.field32368);
         field210 = method501("entity_type", "pig", () -> EntityType.field29012);
         field211 = method501("item", "air", () -> Items.AIR);
@@ -141,7 +141,7 @@ public abstract class Class90<T> implements Class89<T>
         field226 = method500("dimension_type", () -> DimensionType.field2223);
         field227 = method501("motive", "kebab", () -> Class8539.field35829);
         field228 = method500("custom_stat", () -> Class8276.field34007);
-        field229 = method501("chunk_status", "empty", () -> Class9312.field39977);
+        field229 = method501("chunk_status", "empty", () -> ChunkStatus.field39977);
         field230 = method500("structure_feature", () -> Class9380.field40226);
         field231 = method500("structure_piece", () -> Class9520.field40945);
         field232 = method500("rule_test", () -> Class7757.field31698);
@@ -158,24 +158,24 @@ public abstract class Class90<T> implements Class89<T>
         field243 = method501("sensor_type", "dummy", () -> Class8033.field33063);
         field244 = method500("schedule", () -> Class8771.field36872);
         field245 = method500("activity", () -> Class7635.field30227);
-        Class90.field203.entrySet().forEach(entry -> {
+        Registry.field203.entrySet().forEach(entry -> {
             if (entry.getValue().get() == null) {
-                Class90.field202.error("Unable to bootstrap registry '{}'", (Object)entry.getKey());
+                Registry.field202.error("Unable to bootstrap registry '{}'", (Object)entry.getKey());
             }
             return;
         });
-        Class90.field204.forEach(class91 -> {
+        Registry.field204.forEach(class91 -> {
             if (!(!class91.method559())) {
-                Class90.field202.error("Registry '{}' was empty after loading", (Object)Class90.field204.method503(class91));
+                Registry.field202.error("Registry '{}' was empty after loading", (Object) Registry.field204.getKey(class91));
                 if (!(!Class9528.field41021)) {
-                    new IllegalStateException("Registry: '" + Class90.field204.method503(class91) + "' is empty, not allowed, fix me!");
+                    new IllegalStateException("Registry: '" + Registry.field204.getKey(class91) + "' is empty, not allowed, fix me!");
                     throw;
                 }
             }
             if (!(!(class91 instanceof Class93))) {
                 ((Class93)class91).method560();
-                final Class1932 obj;
-                Validate.notNull(class91.method505(obj), "Missing default of DefaultedMappedRegistry: " + obj, new Object[0]);
+                final ResourceLocation obj;
+                Validate.notNull(class91.getOrDefault(obj), "Missing default of DefaultedMappedRegistry: " + obj, new Object[0]);
             }
         });
     }

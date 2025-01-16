@@ -23,7 +23,7 @@ public class Class3883 extends Class3882
     
     @Override
     public boolean method11943(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        final Class3833 method21696 = class7096.method21696();
+        final Block method21696 = class7096.getBlock();
         if (!super.method11943(class7096, class7097, class7098)) {
             if (method21696 != Class7521.field29338) {
                 if (method21696 != Class7521.field29339) {

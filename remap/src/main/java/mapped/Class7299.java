@@ -6,7 +6,6 @@ package mapped;
 
 import java.util.Iterator;
 import java.util.List;
-import java.util.Collection;
 import java.util.Arrays;
 import java.util.ArrayList;
 
@@ -22,8 +21,8 @@ public class Class7299 extends Class7298
     
     private String[] method22388(final Class5601 class5601, final int n) {
         final String method16858 = class5601.method16858();
-        final String[] method16859 = this.method22389(Class8571.method28980(class5601.method16859()).trim());
-        final Class5760 method16860 = Class8571.method28962();
+        final String[] method16859 = this.method22389(Config.method28980(class5601.method16859()).trim());
+        final Class5760 method16860 = Config.method28962();
         Object string = null;
         if (!method16858.equals(class5601.method16860())) {
             if (method16860.field23394) {
@@ -33,7 +32,7 @@ public class Class7299 extends Class7298
         Object string2 = null;
         if (class5601.method16870() != null) {
             if (method16860.field23394) {
-                string2 = "§8" + Class4647.method13876("of.general.from") + ": " + Class8571.method28888(class5601.method16870());
+                string2 = "§8" + Class4647.method13876("of.general.from") + ": " + Config.method28888(class5601.method16870());
             }
         }
         Object string3 = null;
@@ -71,7 +70,7 @@ public class Class7299 extends Class7298
     }
     
     private String[] method22390(final int n, final List<String> list) {
-        final Class1844 field4643 = Class8571.method28894().field4643;
+        final Class1844 field4643 = Config.method28894().field4643;
         final ArrayList list2 = new ArrayList();
         for (int i = 0; i < list.size(); ++i) {
             final String s = list.get(i);

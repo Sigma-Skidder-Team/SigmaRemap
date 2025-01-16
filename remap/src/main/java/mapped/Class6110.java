@@ -75,29 +75,29 @@ public class Class6110
         Class6110.field24789 = true;
         Class6110.field24790 = true;
         Class6110.field24791 = true;
-        Class6110.field24793 = class1774.method6359(new Class1932("block/grass_block_top"));
-        Class6110.field24794 = class1774.method6359(new Class1932("block/grass_block_side"));
-        Class6110.field24795 = class1774.method6359(new Class1932("block/grass_path_top"));
-        Class6110.field24796 = class1774.method6359(new Class1932("block/grass_path_side"));
-        Class6110.field24797 = class1774.method6359(new Class1932("block/mycelium_top"));
-        Class6110.field24798 = class1774.method6359(new Class1932("block/podzol_top"));
-        Class6110.field24799 = class1774.method6359(new Class1932("block/snow"));
+        Class6110.field24793 = class1774.method6359(new ResourceLocation("block/grass_block_top"));
+        Class6110.field24794 = class1774.method6359(new ResourceLocation("block/grass_block_side"));
+        Class6110.field24795 = class1774.method6359(new ResourceLocation("block/grass_path_top"));
+        Class6110.field24796 = class1774.method6359(new ResourceLocation("block/grass_path_side"));
+        Class6110.field24797 = class1774.method6359(new ResourceLocation("block/mycelium_top"));
+        Class6110.field24798 = class1774.method6359(new ResourceLocation("block/podzol_top"));
+        Class6110.field24799 = class1774.method6359(new ResourceLocation("block/snow"));
         Class6110.field24800 = true;
         final String str = "optifine/bettergrass.properties";
         try {
-            final Class1932 class1775 = new Class1932(str);
-            if (!Class8571.method28900(class1775)) {
+            final ResourceLocation class1775 = new ResourceLocation(str);
+            if (!Config.method28900(class1775)) {
                 return;
             }
-            final InputStream method28897 = Class8571.method28897(class1775);
+            final InputStream method28897 = Config.method28897(class1775);
             if (method28897 == null) {
                 return;
             }
-            if (Class8571.method28906(class1775)) {
-                Class8571.method28847("BetterGrass: Parsing default configuration " + str);
+            if (Config.method28906(class1775)) {
+                Config.method28847("BetterGrass: Parsing default configuration " + str);
             }
             else {
-                Class8571.method28847("BetterGrass: Parsing configuration " + str);
+                Config.method28847("BetterGrass: Parsing configuration " + str);
             }
             final Class27 class1776 = new Class27();
             class1776.load(method28897);
@@ -118,7 +118,7 @@ public class Class6110
             Class6110.field24799 = method18259(class1776, "texture.snow", "block/snow", class1774);
         }
         catch (final IOException ex) {
-            Class8571.method28848("Error reading: " + str + ", " + ex.getClass().getName() + ": " + ex.getMessage());
+            Config.warn("Error reading: " + str + ", " + ex.getClass().getName() + ": " + ex.getMessage());
         }
     }
     
@@ -132,10 +132,10 @@ public class Class6110
         Class6110.field24799 = method18258(class1774, Class6110.field24799.method7503());
     }
     
-    private static Class1912 method18258(final Class1774 class1774, final Class1932 obj) {
+    private static Class1912 method18258(final Class1774 class1774, final ResourceLocation obj) {
         final Class1912 method6338 = class1774.method6338(obj);
         if (method6338 == null || method6338 instanceof Class1913) {
-            Class8571.method28848("Missing BetterGrass sprite: " + obj);
+            Config.warn("Missing BetterGrass sprite: " + obj);
         }
         return method6338;
     }
@@ -145,12 +145,12 @@ public class Class6110
         if (property == null) {
             property = s;
         }
-        final Class1932 obj = new Class1932("textures/" + property + ".png");
-        if (!Class8571.method28900(obj)) {
-            Class8571.method28848("BetterGrass texture not found: " + obj);
+        final ResourceLocation obj = new ResourceLocation("textures/" + property + ".png");
+        if (!Config.method28900(obj)) {
+            Config.warn("BetterGrass texture not found: " + obj);
             property = s;
         }
-        return class1774.method6359(new Class1932(property));
+        return class1774.method6359(new ResourceLocation(property));
     }
     
     public static List method18260(final Class1855 class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
@@ -160,7 +160,7 @@ public class Class6110
         if (!Class6110.field24807) {
             return list;
         }
-        final Class3833 method21696 = class1856.method21696();
+        final Block method21696 = class1856.getBlock();
         if (method21696 instanceof Class3912) {
             return method18261(class1855, class1856, class1857, class1858, list);
         }
@@ -177,9 +177,9 @@ public class Class6110
     }
     
     private static List method18261(final Class1855 class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
-        final Class3833 method21696 = class1855.method6701(class1857.method1137()).method21696();
+        final Block method21696 = class1855.getBlockState(class1857.method1137()).getBlock();
         final boolean b = method21696 == Class7521.field29331 || method21696 == Class7521.field29329;
-        if (!Class8571.method28911()) {
+        if (!Config.method28911()) {
             if (!b) {
                 if (Class6110.field24787) {
                     return Class6110.field24804.method18691(class1856, class1858, Class6110.field24815);
@@ -208,16 +208,16 @@ public class Class6110
         if (!Class6110.field24786) {
             return list;
         }
-        if (!Class8571.method28911()) {
+        if (!Config.method28911()) {
             return Class6110.field24802.method18691(class1856, class1858, Class6110.field24815);
         }
         return (method18266(class1857.method1139(), class1858, class1855) != Class7521.field29637) ? list : Class6110.field24802.method18691(class1856, class1858, Class6110.field24815);
     }
     
     private static List method18263(final Class1855 class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
-        final Class3833 method18266 = method18266(class1857, Direction.UP, class1855);
+        final Block method18266 = method18266(class1857, Direction.UP, class1855);
         final boolean b = method18266 == Class7521.field29331 || method18266 == Class7521.field29329;
-        if (!Class8571.method28911()) {
+        if (!Config.method28911()) {
             if (!b) {
                 if (Class6110.field24788) {
                     return Class6110.field24805.method18691(class1856, class1858, Class6110.field24815);
@@ -229,7 +229,7 @@ public class Class6110
         }
         else if (!b) {
             if (Class6110.field24788) {
-                if (class1855.method6701(class1857.method1139().method1149(class1858)).method21696() == Class7521.field29158) {
+                if (class1855.getBlockState(class1857.method1139().method1149(class1858)).getBlock() == Class7521.field29158) {
                     return Class6110.field24805.method18691(class1856, class1858, Class6110.field24815);
                 }
             }
@@ -254,9 +254,9 @@ public class Class6110
     }
     
     private static List method18265(final Class1855 class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
-        final Class3833 method21696 = class1855.method6701(class1857.method1137()).method21696();
+        final Block method21696 = class1855.getBlockState(class1857.method1137()).getBlock();
         final boolean b = method21696 == Class7521.field29331 || method21696 == Class7521.field29329;
-        if (!Class8571.method28911()) {
+        if (!Config.method28911()) {
             if (!b) {
                 if (Class6110.field24785) {
                     return Class6110.field24801.method18691(class1856, class1858, Class6110.field24815);
@@ -281,8 +281,8 @@ public class Class6110
         return list;
     }
     
-    private static Class3833 method18266(final BlockPos class354, final Direction class355, final Class1855 class356) {
-        return class356.method6701(class354.method1149(class355)).method21696();
+    private static Block method18266(final BlockPos class354, final Direction class355, final Class1855 class356) {
+        return class356.getBlockState(class354.method1149(class355)).getBlock();
     }
     
     private static boolean method18267(final Properties properties, final String key, final boolean b) {

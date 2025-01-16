@@ -18,7 +18,7 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
     private final Class869 field3641;
     private final Class544 field3642;
     private final Class1934 field3643;
-    private final Class1932 field3644;
+    private final ResourceLocation field3644;
     private File field3645;
     private final Class1773 field3646;
     private long field3647;
@@ -29,7 +29,7 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
         this.field3642 = class620.method3611();
         this.field3643 = field3649;
         this.field3641 = Class869.method5277();
-        this.field3644 = new Class1932("worlds/" + Hashing.sha1().hashUnencodedChars((CharSequence)field3649.method7808()) + "/icon");
+        this.field3644 = new ResourceLocation("worlds/" + Hashing.sha1().hashUnencodedChars((CharSequence)field3649.method7808()) + "/icon");
         this.field3645 = class621.method25800(field3649.method7808(), "icon.png");
         if (!this.field3645.isFile()) {
             this.field3645 = null;

@@ -112,6 +112,6 @@ public class Class8721
     }
     
     static {
-        field36637 = ((commandContext, suggestionsBuilder) -> Class7491.method23222(((Class7492)commandContext.getSource()).method23255().method1566().method6399().stream().map((Function<? super Class8863, ? extends Class1932>)Class8863::method31042), suggestionsBuilder));
+        field36637 = ((commandContext, suggestionsBuilder) -> Class7491.method23222(((Class7492)commandContext.getSource()).method23255().method1566().method6399().stream().map((Function<? super Class8863, ? extends ResourceLocation>)Class8863::method31042), suggestionsBuilder));
     }
 }

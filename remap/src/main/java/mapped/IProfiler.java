@@ -12,11 +12,11 @@ public interface IProfiler
     
     void method15296();
     
-    void method15297(final String p0);
+    void startSection(final String p0);
     
     void method15298(final Supplier<String> p0);
     
-    void method15299();
+    void endSection();
     
     void method15300(final String p0);
     

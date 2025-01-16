@@ -14,5 +14,5 @@ public interface Class5020
     
     void method15236(final JsonObject p0, final JsonSerializationContext p1);
     
-    Class1932 method15238();
+    ResourceLocation method15238();
 }

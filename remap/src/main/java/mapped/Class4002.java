@@ -20,23 +20,23 @@ public class Class4002 extends Class4000
     
     public Class4002(final Class318 field18039, final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class4002.field18038, false));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class4002.field18038, false));
         this.field18039 = field18039;
     }
     
     @Override
     public int method12166(final BlockState class7096) {
-        return class7096.method21772((Class7111<Boolean>)Class4002.field18038) ? 15 : 0;
+        return class7096.get((IProperty<Boolean>)Class4002.field18038) ? 15 : 0;
     }
     
     @Override
     public BlockState method12167(final BlockState class7096, final int n) {
-        return ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class4002.field18038, n > 0);
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class4002.field18038, n > 0);
     }
     
     @Override
     public void method12162(final Class1851 class1851, final BlockPos class1852) {
-        if (this.field17401 != Class8059.field33176) {
+        if (this.field17401 != Material.WOOD) {
             class1851.method6705(null, class1852, Class8520.field35622, Class286.field1582, 0.3f, 0.6f);
         }
         else {
@@ -46,7 +46,7 @@ public class Class4002 extends Class4000
     
     @Override
     public void method12163(final Class1851 class1851, final BlockPos class1852) {
-        if (this.field17401 != Class8059.field33176) {
+        if (this.field17401 != Material.WOOD) {
             class1851.method6705(null, class1852, Class8520.field35621, Class286.field1582, 0.3f, 0.5f);
         }
         else {
@@ -83,7 +83,7 @@ public class Class4002 extends Class4000
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class4002.field18038);
     }
     

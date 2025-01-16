@@ -29,13 +29,13 @@ public interface Class6096<T extends Class3662<?>>
     public static final Class6098<Class3682> field24751 = method18182("campfire_cooking", new Class6098<Class3682>(Class3682::new, 100));
     public static final Class6096<Class3686> field24752 = method18182("stonecutting", new Class6100(Class3686::new));
     
-    T method18179(final Class1932 p0, final JsonObject p1);
+    T method18179(final ResourceLocation p0, final JsonObject p1);
     
-    T method18180(final Class1932 p0, final PacketBuffer p1);
+    T method18180(final ResourceLocation p0, final PacketBuffer p1);
     
     void method18181(final PacketBuffer p0, final T p1);
     
     default <S extends Class6096<T>, T extends Class3662<?>> S method18182(final String s, final S n) {
-        return Class90.method511(Class90.field237, s, n);
+        return Registry.method511(Registry.field237, s, n);
     }
 }

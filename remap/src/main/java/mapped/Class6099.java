@@ -11,7 +11,7 @@ import com.google.gson.JsonObject;
 
 public class Class6099 implements Class6096<Class3679>
 {
-    public Class3679 method18190(final Class1932 class1932, final JsonObject jsonObject) {
+    public Class3679 method18190(final ResourceLocation class1932, final JsonObject jsonObject) {
         final String method35896 = Class9583.method35896(jsonObject, "group", "");
         final Class2265<Class120> method35897 = method18191(Class9583.method35917(jsonObject, "ingredients"));
         if (method35897.isEmpty()) {
@@ -34,7 +34,7 @@ public class Class6099 implements Class6096<Class3679>
         return (Class2265<Class120>)method8506;
     }
     
-    public Class3679 method18192(final Class1932 class1932, final PacketBuffer class1933) {
+    public Class3679 method18192(final ResourceLocation class1932, final PacketBuffer class1933) {
         final String method29513 = class1933.method29513(32767);
         final Class2265<Class120> method29514 = Class2265.method8507(class1933.readVarInt(), Class120.field374);
         for (int i = 0; i < method29514.size(); ++i) {

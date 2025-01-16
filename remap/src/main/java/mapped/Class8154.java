@@ -1204,7 +1204,7 @@ public class Class8154
             if (class8321.field34176 == 0) {
                 class8321 = new ItemStack(class8321.getItem());
             }
-            Class3833.method11776(class8321.getItem());
+            Block.method11776(class8321.getItem());
             Class8726.method30108();
             Class8726.method30003();
             Class8726.method30002();

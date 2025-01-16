@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 
-public class Class3973 extends Class3833
+public class Class3973 extends Block
 {
     private static String[] field17947;
     
@@ -15,7 +15,7 @@ public class Class3973 extends Class3833
     }
     
     @Override
-    public boolean method11818(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean propagatesSkylightDown(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
         return true;
     }
     
@@ -30,7 +30,7 @@ public class Class3973 extends Class3833
     }
     
     @Override
-    public boolean method11779(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+    public boolean canEntitySpawn(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return false;
     }
 }

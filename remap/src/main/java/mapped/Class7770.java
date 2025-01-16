@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class Class7770
 {
-    private static final Map<Class1932, Class4640<?>> field31774;
+    private static final Map<ResourceLocation, Class4640<?>> field31774;
     public static final Class4641 field31775;
     public static final Class4614 field31776;
     public static final Class4614 field31777;
@@ -59,7 +59,7 @@ public class Class7770
     }
     
     @Nullable
-    public static <T extends Class4220> Class4640<T> method24878(final Class1932 class1932) {
+    public static <T extends Class4220> Class4640<T> method24878(final ResourceLocation class1932) {
         return (Class4640)Class7770.field31774.get(class1932);
     }
     
@@ -70,8 +70,8 @@ public class Class7770
     static {
         field31774 = Maps.newHashMap();
         field31775 = method24877(new Class4641());
-        field31776 = method24877(new Class4614(new Class1932("player_killed_entity")));
-        field31777 = method24877(new Class4614(new Class1932("entity_killed_player")));
+        field31776 = method24877(new Class4614(new ResourceLocation("player_killed_entity")));
+        field31777 = method24877(new Class4614(new ResourceLocation("entity_killed_player")));
         field31778 = method24877(new Class4632());
         field31779 = method24877(new Class4645());
         field31780 = method24877(new Class4620());
@@ -84,8 +84,8 @@ public class Class7770
         field31787 = method24877(new Class4615());
         field31788 = method24877(new Class4626());
         field31789 = method24877(new Class4630());
-        field31790 = method24877(new Class4635(new Class1932("location")));
-        field31791 = method24877(new Class4635(new Class1932("slept_in_bed")));
+        field31790 = method24877(new Class4635(new ResourceLocation("location")));
+        field31791 = method24877(new Class4635(new ResourceLocation("slept_in_bed")));
         field31792 = method24877(new Class4613());
         field31793 = method24877(new Class4619());
         field31794 = method24877(new Class4616());
@@ -102,9 +102,9 @@ public class Class7770
         field31805 = method24877(new Class4610());
         field31806 = method24877(new Class4638());
         field31807 = method24877(new Class4636());
-        field31808 = method24877(new Class4635(new Class1932("hero_of_the_village")));
-        field31809 = method24877(new Class4635(new Class1932("voluntary_exile")));
-        field31810 = method24877(new Class4621(new Class1932("safely_harvest_honey")));
+        field31808 = method24877(new Class4635(new ResourceLocation("hero_of_the_village")));
+        field31809 = method24877(new Class4635(new ResourceLocation("voluntary_exile")));
+        field31810 = method24877(new Class4621(new ResourceLocation("safely_harvest_honey")));
         field31811 = method24877(new Class4625());
         field31812 = method24877(new Class4643());
     }

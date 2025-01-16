@@ -63,10 +63,10 @@ public class Class3246 extends Class3167
             if (this.field15741 != null) {
                 if (Class3246.field15514.field4700 == null) {
                     if (this.field15740.method23935() > 1000L) {
-                        final Class7005 class5745 = (Class7005)Class4609.method13700(this.field15741.method2193());
-                        if (class5745.method21447().getX() == this.field15741.method2193().getX()) {
-                            if (class5745.method21447().getY() == this.field15741.method2193().getY()) {
-                                if (class5745.method21447().getZ() == this.field15741.method2193().getZ()) {
+                        final Class7005 class5745 = (Class7005)Class4609.method13700(this.field15741.getPos());
+                        if (class5745.method21447().getX() == this.field15741.getPos().getX()) {
+                            if (class5745.method21447().getY() == this.field15741.getPos().getY()) {
+                                if (class5745.method21447().getZ() == this.field15741.getPos().getZ()) {
                                     this.field15737 = true;
                                     Class3246.field15514.method5269().method17292(new Class4329(Class316.field1877, class5745));
                                     Class3246.field15514.method5269().method17292(new Class4380(Class316.field1877));
@@ -81,9 +81,9 @@ public class Class3246 extends Class3167
             for (final Map.Entry<Class475, V> entry : this.field15738.entrySet()) {
                 final Class475 field15741 = entry.getKey();
                 final boolean booleanValue = (boolean)entry.getValue();
-                final float n2 = (float)field15741.method2193().getX();
-                final float n3 = field15741.method2193().getY() + 0.1f;
-                final float n4 = (float)field15741.method2193().getZ();
+                final float n2 = (float)field15741.getPos().getX();
+                final float n3 = field15741.getPos().getY() + 0.1f;
+                final float n4 = (float)field15741.getPos().getZ();
                 if (this.field15737) {
                     continue;
                 }
@@ -102,14 +102,14 @@ public class Class3246 extends Class3167
                 if (Class3246.field15514.field4700 != null) {
                     continue;
                 }
-                final Class7005 class5746 = (Class7005)Class4609.method13700(field15741.method2193());
-                if (class5746.method21447().getX() != field15741.method2193().getX()) {
+                final Class7005 class5746 = (Class7005)Class4609.method13700(field15741.getPos());
+                if (class5746.method21447().getX() != field15741.getPos().getX()) {
                     continue;
                 }
-                if (class5746.method21447().getY() != field15741.method2193().getY()) {
+                if (class5746.method21447().getY() != field15741.getPos().getY()) {
                     continue;
                 }
-                if (class5746.method21447().getZ() != field15741.method2193().getZ()) {
+                if (class5746.method21447().getZ() != field15741.getPos().getZ()) {
                     continue;
                 }
                 this.field15741 = field15741;

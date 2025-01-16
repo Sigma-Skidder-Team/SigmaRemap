@@ -85,7 +85,7 @@ public class Class3616 extends Class3446
             }
             if (class5488 != null) {
                 final BlockPos class5489 = new BlockPos(class5488);
-                if (!field2391.method6702(class5489).method21793(Class7324.field28319) || !field2391.method6701(class5489).method21749(field2391, class5489, Class2084.field12052)) {
+                if (!field2391.method6702(class5489).method21793(Class7324.field28319) || !field2391.getBlockState(class5489).method21749(field2391, class5489, Class2084.field12052)) {
                     class5488 = Class7775.method24905(this.field16812, 8, 5, class5487);
                 }
             }

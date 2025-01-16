@@ -6,7 +6,6 @@ package mapped;
 
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
-import java.util.function.Function;
 import java.util.Arrays;
 import java.io.IOException;
 import com.google.common.collect.Maps;
@@ -19,7 +18,7 @@ public class Class1741 implements Class1737
     private final Class6582 field9708;
     private final byte[] field9709;
     private final String field9710;
-    private final Map<Class1932, Class1846> field9711;
+    private final Map<ResourceLocation, Class1846> field9711;
     
     public Class1741(final Class6582 field9708, final byte[] array, final String field9709) {
         this.field9711 = Maps.newHashMap();
@@ -28,7 +27,7 @@ public class Class1741 implements Class1737
         this.field9710 = field9709;
         for (int i = 0; i < 256; ++i) {
             final char fromIndex = (char)(i * 256);
-            final Class1932 method6164 = this.method6164(fromIndex);
+            final ResourceLocation method6164 = this.method6164(fromIndex);
             try (final Class1671 method6165 = this.field9708.method19933(method6164);
                  final Class1846 method6166 = Class1846.method6638(Class2235.field13729, method6165.method5887())) {
                 if (method6166.method6644() == 256 && method6166.method6645() == 256) {
@@ -51,9 +50,9 @@ public class Class1741 implements Class1737
         this.field9711.values().forEach(Class1846::close);
     }
     
-    private Class1932 method6164(final char c) {
-        final Class1932 class1932 = new Class1932(String.format(this.field9710, String.format("%02x", c / '\u0100')));
-        return new Class1932(class1932.method7798(), "textures/" + class1932.method7797());
+    private ResourceLocation method6164(final char c) {
+        final ResourceLocation class1932 = new ResourceLocation(String.format(this.field9710, String.format("%02x", c / '\u0100')));
+        return new ResourceLocation(class1932.method7798(), "textures/" + class1932.method7797());
     }
     
     @Nullable
@@ -71,7 +70,7 @@ public class Class1741 implements Class1737
     }
     
     @Nullable
-    private Class1846 method6165(final Class1932 class1932) {
+    private Class1846 method6165(final ResourceLocation class1932) {
         try (final Class1671 method19933 = this.field9708.method19933(class1932)) {
             return Class1846.method6638(Class2235.field13729, method19933.method5887());
         }

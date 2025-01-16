@@ -294,12 +294,12 @@ public class Class8990
         return array;
     }
     
-    public static BufferedImage method32056(final Class1932 class1932) {
+    public static BufferedImage method32056(final ResourceLocation class1932) {
         try {
-            if (!Class8571.method28900(class1932)) {
+            if (!Config.method28900(class1932)) {
                 return null;
             }
-            final InputStream method28897 = Class8571.method28897(class1932);
+            final InputStream method28897 = Config.method28897(class1932);
             if (method28897 == null) {
                 return null;
             }
@@ -533,14 +533,14 @@ public class Class8990
         Class8933.method31608(33984);
     }
     
-    public static Class1932 method32066(final Class1932 class1932, final String str) {
+    public static ResourceLocation method32066(final ResourceLocation class1932, final String str) {
         if (class1932 != null) {
-            return new Class1932(class1932.method7798(), class1932.method7797().split(".png")[0] + "_" + str + ".png");
+            return new ResourceLocation(class1932.method7798(), class1932.method7797().split(".png")[0] + "_" + str + ".png");
         }
         return null;
     }
     
-    private static Class1846 method32067(final Class6582 class6582, final Class1932 class6583, final int n, final int n2, final int n3) {
+    private static Class1846 method32067(final Class6582 class6582, final ResourceLocation class6583, final int n, final int n2, final int n3) {
         Class1846 method32069 = method32069(class6582, class6583, n, n2);
         if (method32069 == null) {
             method32069 = new Class1846(n, n2, false);
@@ -555,7 +555,7 @@ public class Class8990
         return class1846;
     }
     
-    private static Class1846 method32069(final Class6582 class6582, final Class1932 class6583, final int n, final int n2) {
+    private static Class1846 method32069(final Class6582 class6582, final ResourceLocation class6583, final int n, final int n2) {
         if (class6583 == null) {
             return null;
         }
@@ -575,7 +575,7 @@ public class Class8990
         }
     }
     
-    public static void method32070(final int n, final Class1846 class1846, final boolean b, final boolean b2, final Class6582 class1847, final Class1932 class1848, final Class9025 class1849) {
+    public static void method32070(final int n, final Class1846 class1846, final boolean b, final boolean b2, final Class6582 class1847, final ResourceLocation class1848, final Class9025 class1849) {
         final int method6644 = class1846.method6644();
         final int method6645 = class1846.method6645();
         final Class1846 method6646 = method32067(class1847, method32066(class1848, "n"), method6644, method6645, -8421377);

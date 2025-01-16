@@ -44,7 +44,7 @@ public class Class5492 implements Class5491
     
     @Override
     public BlockState method16765() {
-        return this.field22774.method6701(this.field22775);
+        return this.field22774.getBlockState(this.field22775);
     }
     
     @Override

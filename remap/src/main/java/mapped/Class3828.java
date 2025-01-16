@@ -30,8 +30,8 @@ public class Class3828 extends Item
     public Class2201 method11694(final Class7075 class7075) {
         final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
-        final BlockState method21656 = method21654.method6701(method21655);
-        if (method21656.method21696() == Class7521.field29335 && !method21656.method21772((Class7111<Boolean>)Class3931.field17811)) {
+        final BlockState method21656 = method21654.getBlockState(method21655);
+        if (method21656.getBlock() == Class7521.field29335 && !method21656.get((IProperty<Boolean>)Class3931.field17811)) {
             final ItemStack method21657 = class7075.method21651();
             if (!method21654.isRemote) {
                 ((Class3931)Class7521.field29335).method12048(method21654, method21655, method21656, method21657);

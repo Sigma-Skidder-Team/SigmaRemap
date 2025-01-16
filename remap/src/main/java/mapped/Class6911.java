@@ -17,12 +17,12 @@ public class Class6911 implements Class6909
     
     @Override
     public void method21273(final PacketBuffer class8654) {
-        class8654.writeVarInt(Class3833.field17391.method563(this.field27100));
+        class8654.writeVarInt(Block.field17391.method563(this.field27100));
     }
     
     @Override
     public String method21274() {
-        return Class90.field222.method503(this.method21272()) + " " + Class7572.toString(this.field27100);
+        return Registry.field222.getKey(this.method21272()) + " " + Class7572.toString(this.field27100);
     }
     
     @Override

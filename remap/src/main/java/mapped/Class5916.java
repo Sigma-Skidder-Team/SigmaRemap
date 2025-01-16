@@ -10,7 +10,7 @@ public class Class5916 extends Class5901
 {
     private static String[] field24305;
     
-    public Class5916(final Function<Class1932, Class6332> function) {
+    public Class5916(final Function<ResourceLocation, Class6332> function) {
         super(function);
     }
     

@@ -30,7 +30,7 @@ public class Class4706 extends Class4703<Class406>
         super.method13951(class406, n, n2, class407, class408, n3);
     }
     
-    public Class1932 method13970(final Class406 class406) {
+    public ResourceLocation method13970(final Class406 class406) {
         return Class1774.field9853;
     }
 }

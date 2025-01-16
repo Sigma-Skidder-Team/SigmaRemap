@@ -6,5 +6,5 @@ package mapped;
 
 public interface Class8046<T>
 {
-    T method26391(final Class1932 p0);
+    T method26391(final ResourceLocation p0);
 }

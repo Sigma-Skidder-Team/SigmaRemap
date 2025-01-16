@@ -6,12 +6,10 @@ package mapped;
 
 import java.util.Iterator;
 import java.util.ArrayList;
-import java.util.List;
+
 import com.google.common.collect.Lists;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonElement;
-import java.util.function.Consumer;
-import java.util.function.Function;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonObject;
@@ -19,7 +17,7 @@ import com.google.gson.JsonObject;
 public class Class6247 extends Class6227<Class147>
 {
     public Class6247() {
-        super(new Class1932("copy_nbt"), Class147.class);
+        super(new ResourceLocation("copy_nbt"), Class147.class);
     }
     
     public void method18582(final JsonObject jsonObject, final Class147 class147, final JsonSerializationContext jsonSerializationContext) {

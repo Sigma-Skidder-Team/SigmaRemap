@@ -27,7 +27,7 @@ public class Class1784 extends Class1776<Class8875>
     private static final Logger field9896;
     private static final Gson field9897;
     private static final ParameterizedType field9898;
-    private final Map<Class1932, Class7833> field9899;
+    private final Map<ResourceLocation, Class7833> field9899;
     private final Class9382 field9900;
     
     public Class1784(final Class6582 class6582, final Class5760 class6583) {
@@ -39,27 +39,27 @@ public class Class1784 extends Class1776<Class8875>
         final Class8875 class6584 = new Class8875();
         class6583.method15295();
         for (final String s : class6582.method19932()) {
-            class6583.method15297(s);
+            class6583.startSection(s);
             try {
-                for (final Class1671 class6585 : class6582.method19935(new Class1932(s, "sounds.json"))) {
-                    class6583.method15297(class6585.method5889());
+                for (final Class1671 class6585 : class6582.method19935(new ResourceLocation(s, "sounds.json"))) {
+                    class6583.startSection(class6585.method5889());
                     try {
-                        class6583.method15297("parse");
+                        class6583.startSection("parse");
                         final Map<String, Class8722> method6417 = method6417(class6585.method5887());
                         class6583.method15300("register");
                         for (final Map.Entry<String, V> entry : method6417.entrySet()) {
-                            Class8875.method31204(class6584, new Class1932(s, entry.getKey()), (Class8722)entry.getValue(), class6582);
+                            Class8875.method31204(class6584, new ResourceLocation(s, entry.getKey()), (Class8722)entry.getValue(), class6582);
                         }
-                        class6583.method15299();
+                        class6583.endSection();
                     }
                     catch (final RuntimeException ex) {
                         Class1784.field9896.warn("Invalid sounds.json in resourcepack: '{}'", (Object)class6585.method5889(), (Object)ex);
                     }
-                    class6583.method15299();
+                    class6583.endSection();
                 }
             }
             catch (final IOException ex2) {}
-            class6583.method15299();
+            class6583.endSection();
         }
         class6583.method15296();
         return class6584;
@@ -67,7 +67,7 @@ public class Class1784 extends Class1776<Class8875>
     
     public void method6416(final Class8875 class8875, final Class6582 class8876, final IProfiler class8877) {
         class8875.method31203(this.field9899, this.field9900);
-        for (final Class1932 class8878 : this.field9899.keySet()) {
+        for (final ResourceLocation class8878 : this.field9899.keySet()) {
             final Class7833 class8879 = this.field9899.get(class8878);
             if (!(class8879.method25313() instanceof Class2259)) {
                 continue;
@@ -79,8 +79,8 @@ public class Class1784 extends Class1776<Class8875>
             Class1784.field9896.debug("Missing subtitle {} for event: {}", (Object)method8496, (Object)class8878);
         }
         if (Class1784.field9896.isDebugEnabled()) {
-            for (final Class1932 class8880 : this.field9899.keySet()) {
-                if (Class90.field205.method510(class8880)) {
+            for (final ResourceLocation class8880 : this.field9899.keySet()) {
+                if (Registry.field205.method510(class8880)) {
                     continue;
                 }
                 Class1784.field9896.debug("Not having sound event for: {}", (Object)class8880);
@@ -101,8 +101,8 @@ public class Class1784 extends Class1776<Class8875>
         return map;
     }
     
-    private static boolean method6418(final Class7832 class7832, final Class1932 class7833, final Class6582 class7834) {
-        final Class1932 method25305 = class7832.method25305();
+    private static boolean method6418(final Class7832 class7832, final ResourceLocation class7833, final Class6582 class7834) {
+        final ResourceLocation method25305 = class7832.method25305();
         if (class7834.method19934(method25305)) {
             return true;
         }
@@ -111,11 +111,11 @@ public class Class1784 extends Class1776<Class8875>
     }
     
     @Nullable
-    public Class7833 method6419(final Class1932 class1932) {
+    public Class7833 method6419(final ResourceLocation class1932) {
         return this.field9899.get(class1932);
     }
     
-    public Collection<Class1932> method6420() {
+    public Collection<ResourceLocation> method6420() {
         return this.field9899.keySet();
     }
     
@@ -180,7 +180,7 @@ public class Class1784 extends Class1776<Class8875>
         this.field9900.method34840(class687);
     }
     
-    public void method6435(final Class1932 class1932, final Class286 class1933) {
+    public void method6435(final ResourceLocation class1932, final Class286 class1933) {
         this.field9900.method34853(class1932, class1933);
     }
     

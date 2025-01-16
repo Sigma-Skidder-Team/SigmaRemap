@@ -100,7 +100,7 @@ public class Class4575 extends Class4574<Class5122>
     private void method13599(final Class6346<?> class6346) {
         this.field20068 = class6346.method18880();
         final ArrayList arrayList = Lists.newArrayList();
-        for (final Class3090 class6347 : Class90.field217) {
+        for (final Class3090 class6347 : Registry.field217) {
             if (class6347 == null) {
                 continue;
             }

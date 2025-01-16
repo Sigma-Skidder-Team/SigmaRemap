@@ -19,8 +19,8 @@ public class Class612 extends Class608<Class633>
 {
     private static final Logger field3566;
     private static final ThreadPoolExecutor field3567;
-    private static final Class1932 field3568;
-    private static final Class1932 field3569;
+    private static final ResourceLocation field3568;
+    private static final ResourceLocation field3569;
     private final Class720 field3570;
     private final List<Class634> field3571;
     private final Class633 field3572;
@@ -101,7 +101,7 @@ public class Class612 extends Class608<Class633>
     static {
         field3566 = LogManager.getLogger();
         field3567 = new ScheduledThreadPoolExecutor(5, new ThreadFactoryBuilder().setNameFormat("Server Pinger #%d").setDaemon(true).setUncaughtExceptionHandler((Thread.UncaughtExceptionHandler)new Class8239(Class612.field3566)).build());
-        field3568 = new Class1932("textures/misc/unknown_server.png");
-        field3569 = new Class1932("textures/gui/server_selection.png");
+        field3568 = new ResourceLocation("textures/misc/unknown_server.png");
+        field3569 = new ResourceLocation("textures/gui/server_selection.png");
     }
 }

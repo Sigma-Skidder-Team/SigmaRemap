@@ -28,8 +28,8 @@ public class Class8871
         this.field37292 = 0;
         this.field37294 = new Class8081<Class9009>();
         this.field37295 = null;
-        this.field37296 = Class8571.method29016(this.field37291);
-        this.field37297 = Class8571.method29016(this.field37291);
+        this.field37296 = Config.method29016(this.field37291);
+        this.field37297 = Config.method29016(this.field37291);
         this.field37298 = Class9237.field39607.method34194();
         this.field37299 = 7;
         this.field37289 = field37289;
@@ -166,7 +166,7 @@ public class Class8871
         Class8933.method31551(Class8933.field37578, this.field37290);
         Class8933.method31551(Class8933.field37579, this.field37290);
         Class8933.method31685(Class8933.field37578, Class8933.field37579, method31177, method31178, method31179);
-        Class8571.method28942("Copy VBO range");
+        Config.method28942("Copy VBO range");
         Class8933.method31551(Class8933.field37578, 0);
         Class8933.method31551(Class8933.field37579, 0);
     }
@@ -179,17 +179,17 @@ public class Class8871
         final int method31179 = Class8933.method31550();
         Class8933.method31551(Class8933.field37580, method31179);
         Class8933.method31683(Class8933.field37580, method31178, Class8933.field37581);
-        Class8571.method28942("Expand VBO");
+        Config.method28942("Expand VBO");
         Class8933.method31551(Class8933.field37580, 0);
         Class8933.method31551(Class8933.field37578, this.field37290);
         Class8933.method31551(Class8933.field37579, method31179);
         Class8933.method31685(Class8933.field37578, Class8933.field37579, 0L, 0L, method31177);
-        Class8571.method28942("Copy VBO: " + method31178);
+        Config.method28942("Copy VBO: " + method31178);
         Class8933.method31551(Class8933.field37578, 0);
         Class8933.method31551(Class8933.field37579, 0);
         Class8933.method31553(this.field37290);
-        this.field37296 = Class8571.method29016(i);
-        this.field37297 = Class8571.method29016(i);
+        this.field37296 = Config.method29016(i);
+        this.field37297 = Config.method29016(i);
         this.field37290 = method31179;
         this.field37291 = i;
     }

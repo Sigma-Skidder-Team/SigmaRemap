@@ -16,9 +16,9 @@ import javax.annotation.Nullable;
 public class Class4036 extends Item
 {
     @Deprecated
-    private final Class3833 field18131;
+    private final Block field18131;
     
-    public Class4036(final Class3833 field18131, final Class8959 class8959) {
+    public Class4036(final Block field18131, final Class8959 class8959) {
         super(class8959);
         this.field18131 = field18131;
     }
@@ -46,8 +46,8 @@ public class Class4036 extends Item
             final World method12234 = method12231.method21654();
             final Class512 method12235 = method12231.method21652();
             final ItemStack method12236 = method12231.method21651();
-            Class7096 class7075 = method12234.method6701(method12233);
-            final Class3833 method12237 = class7075.method21696();
+            Class7096 class7075 = method12234.getBlockState(method12233);
+            final Block method12237 = class7075.method21696();
             if (method12237 == method12232.method21696()) {
                 class7075 = this.method12234(method12233, method12234, method12236, class7075);
                 this.method12232(method12233, method12234, method12235, method12236, class7075);
@@ -56,7 +56,7 @@ public class Class4036 extends Item
                     Class7770.field31799.method13836((Class513)method12235, method12233, method12236);
                 }
             }
-            final Class7696 method12238 = class7075.method21759();
+            final SoundType method12238 = class7075.method21759();
             method12234.method6705(method12235, method12233, this.method12230(class7075), Class286.field1582, (method12238.method24477() + 1.0f) / 2.0f, method12238.method24478() * 0.8f);
             method12236.method27693(1);
             return Class2201.field13400;
@@ -88,9 +88,9 @@ public class Class4036 extends Item
         final Class51 method12236 = class356.method27657();
         if (method12236 != null) {
             final Class51 method12237 = method12236.method327("BlockStateTag");
-            final Class9104<Class3833, Class7096> method12238 = class357.method21696().method11876();
+            final StateContainer<Block, Class7096> method12238 = class357.method21696().method11876();
             for (final String s : method12237.method293()) {
-                final Class7111 method12239 = method12238.method32906(s);
+                final IProperty method12239 = method12238.getProperty(s);
                 if (method12239 == null) {
                     continue;
                 }
@@ -98,13 +98,13 @@ public class Class4036 extends Item
             }
         }
         if (method12235 != class357) {
-            class355.method6688(class354, method12235, 2);
+            class355.setBlockState(class354, method12235, 2);
         }
         return method12235;
     }
     
-    private static <T extends Comparable<T>> Class7096 method12235(final Class7096 other, final Class7111<T> class7111, final String s) {
-        return class7111.method21830(s).map(comparable -> ((Class7097<O, Class7096>)class7112).method21773((Class7111<Comparable>)class7113, comparable)).orElse(other);
+    private static <T extends Comparable<T>> Class7096 method12235(final Class7096 other, final IProperty<T> class7111, final String s) {
+        return class7111.parseValue(s).map(comparable -> ((StateHolder<O, Class7096>)class7112).with((IProperty<Comparable>)class7113, comparable)).orElse(other);
     }
     
     public boolean method12236(final Class7074 class7074, final Class7096 class7075) {
@@ -123,7 +123,7 @@ public class Class4036 extends Item
     }
     
     public boolean method12238(final Class7074 class7074, final Class7096 class7075) {
-        return class7074.method21654().method6688(class7074.method21639(), class7075, 11);
+        return class7074.method21654().setBlockState(class7074.method21639(), class7075, 11);
     }
     
     public static boolean method12239(final World class1847, final Class512 class1848, final BlockPos class1849, final ItemStack class1850) {
@@ -175,11 +175,11 @@ public class Class4036 extends Item
         this.method12240().method11883(class8321, class8322, list, class8323);
     }
     
-    public Class3833 method12240() {
+    public Block method12240() {
         return this.field18131;
     }
     
-    public void method12241(final Map<Class3833, Item> map, final Item class3820) {
+    public void method12241(final Map<Block, Item> map, final Item class3820) {
         map.put(this.method12240(), class3820);
     }
 }

@@ -13,10 +13,10 @@ import java.util.Random;
 
 public class Class4794 extends Class4703<Class852>
 {
-    public static final Class1932 field20436;
-    private static final Class1932 field20437;
-    private static final Class1932 field20438;
-    private static final Class1932 field20439;
+    public static final ResourceLocation field20436;
+    private static final ResourceLocation field20437;
+    private static final ResourceLocation field20438;
+    private static final ResourceLocation field20439;
     private static final Class6332 field20440;
     private static final Class6332 field20441;
     private static final Class6332 field20442;
@@ -49,13 +49,13 @@ public class Class4794 extends Class4703<Class852>
             this.field20445.method17564(class853, class854.method25214(Class4794.field20441), n3, Class1904.method7388(0.0f, b), 1.0f, 1.0f, 1.0f, 1.0f);
         }
         final Class4150 method25214 = class854.method25214(Class4794.field20442);
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             Class9216.method33837();
         }
-        Class8571.method28908().field9363 = true;
+        Config.method28908().field9363 = true;
         this.field20445.method17564(class853, method25214, n3, Class1904.field10335, 1.0f, 1.0f, 1.0f, 1.0f);
-        Class8571.method28908().field9363 = false;
-        if (Class8571.method28955()) {
+        Config.method28908().field9363 = false;
+        if (Config.method28955()) {
             Class9216.method33838();
         }
         if (class852.field4546 > 0) {
@@ -148,15 +148,15 @@ public class Class4794 extends Class4703<Class852>
         class7351.method22568();
     }
     
-    public Class1932 method14185(final Class852 class852) {
+    public ResourceLocation method14185(final Class852 class852) {
         return Class4794.field20438;
     }
     
     static {
-        field20436 = new Class1932("textures/entity/end_crystal/end_crystal_beam.png");
-        field20437 = new Class1932("textures/entity/enderdragon/dragon_exploding.png");
-        field20438 = new Class1932("textures/entity/enderdragon/dragon.png");
-        field20439 = new Class1932("textures/entity/enderdragon/dragon_eyes.png");
+        field20436 = new ResourceLocation("textures/entity/end_crystal/end_crystal_beam.png");
+        field20437 = new ResourceLocation("textures/entity/enderdragon/dragon_exploding.png");
+        field20438 = new ResourceLocation("textures/entity/enderdragon/dragon.png");
+        field20439 = new ResourceLocation("textures/entity/enderdragon/dragon_eyes.png");
         field20440 = Class6332.method18770(Class4794.field20438);
         field20441 = Class6332.method18776(Class4794.field20438);
         field20442 = Class6332.method18779(Class4794.field20439);

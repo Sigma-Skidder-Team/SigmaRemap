@@ -12,12 +12,12 @@ public class Class1767 extends Class1666
 {
     private static String[] field9828;
     private static final Logger field9829;
-    public final Class1932 field9830;
+    public final ResourceLocation field9830;
     private Class6582 field9831;
-    public Class1932 field9832;
+    public ResourceLocation field9832;
     public boolean field9833;
     
-    public Class1767(final Class1932 field9830) {
+    public Class1767(final ResourceLocation field9830) {
         this.field9830 = field9830;
     }
     
@@ -49,7 +49,7 @@ public class Class1767 extends Class1666
     private void method6296(final Class1846 class1846, final boolean b, final boolean b2) {
         Class8995.method32105(this.method5869(), 0, class1846.method6644(), class1846.method6645());
         class1846.method6654(0, 0, 0, 0, 0, class1846.method6644(), class1846.method6645(), b, b2, false, true);
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             Class8990.method32070(this.method5869(), class1846, b, b2, this.field9831, this.field9830, this.method5874());
         }
         if (Class8880.method31235()) {

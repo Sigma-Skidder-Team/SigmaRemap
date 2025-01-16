@@ -24,7 +24,7 @@ public class Class861 extends Class860
         super(EntityType.field29009, class1847, class1848);
         final ArrayList arrayList = Lists.newArrayList();
         int n = 0;
-        for (final Class8539 field4601 : Class90.field227) {
+        for (final Class8539 field4601 : Registry.field227) {
             this.field4601 = field4601;
             this.method5186(class1849);
             if (!this.method5189()) {
@@ -59,13 +59,13 @@ public class Class861 extends Class860
     
     @Override
     public void method1761(final Class51 class51) {
-        class51.method306("Motive", Class90.field227.method503(this.field4601).toString());
+        class51.method306("Motive", Registry.field227.getKey(this.field4601).toString());
         super.method1761(class51);
     }
     
     @Override
     public void method1760(final Class51 class51) {
-        this.field4601 = Class90.field227.method505(Class1932.method7795(class51.method323("Motive")));
+        this.field4601 = Registry.field227.getOrDefault(ResourceLocation.method7795(class51.method323("Motive")));
         super.method1760(class51);
     }
     

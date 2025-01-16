@@ -72,7 +72,7 @@ public class Class3322 extends Class3167
         if (this.method9906() && Class3322.field15514.field4684 != null) {
             if (class5753.method17065() != null) {
                 if (!class5753.method17065().method24540()) {
-                    if (class5753.method17065().method24537().field25074 > Class3322.field15514.field4684.boundingBox.field25074 + 1.0) {
+                    if (class5753.method17065().method24537().minY > Class3322.field15514.field4684.boundingBox.minY + 1.0) {
                         class5753.method16961(true);
                     }
                 }

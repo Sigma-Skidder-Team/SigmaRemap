@@ -25,11 +25,11 @@ public class Class6348 extends Class6346<Class7066>
     }
     
     @Override
-    public void method18859(final Class1878 class1878, final Class1860 class1879) {
+    public void method18859(final Class1878 class1878, final IChunk class1879) {
     }
     
     @Override
-    public void method18873(final BiomeManager class5507, final Class1860 class5508, final Class2126 class5509) {
+    public void method18873(final BiomeManager class5507, final IChunk class5508, final Class2126 class5509) {
     }
     
     @Override
@@ -46,17 +46,17 @@ public class Class6348 extends Class6346<Class7066>
             for (int j = 0; j < 16; ++j) {
                 final int n = (method7150 << 4) + i;
                 final int n2 = (method7151 << 4) + j;
-                class1878.method6688(class1879.setPos(n, 60, n2), Class6348.field25395, 2);
+                class1878.setBlockState(class1879.setPos(n, 60, n2), Class6348.field25395, 2);
                 final BlockState method7152 = method18887(n, n2);
                 if (method7152 != null) {
-                    class1878.method6688(class1879.setPos(n, 70, n2), method7152, 2);
+                    class1878.setBlockState(class1879.setPos(n, 70, n2), method7152, 2);
                 }
             }
         }
     }
     
     @Override
-    public void method18861(final Class1851 class1851, final Class1860 class1852) {
+    public void method18861(final Class1851 class1851, final IChunk class1852) {
     }
     
     @Override
@@ -88,10 +88,10 @@ public class Class6348 extends Class6346<Class7066>
     }
     
     static {
-        field25391 = StreamSupport.stream(Class90.field208.spliterator(), false).flatMap(class3833 -> class3833.method11876().method32902().stream()).collect((Collector<? super Object, ?, List<BlockState>>)Collectors.toList());
-        field25392 = MathHelper.method35649(MathHelper.method35640((float)Class6348.field25391.size()));
-        field25393 = MathHelper.method35649(Class6348.field25391.size() / (float)Class6348.field25392);
-        field25394 = Class7521.field29147.method11878();
-        field25395 = Class7521.field29517.method11878();
+        field25391 = StreamSupport.stream(Registry.BLOCK.spliterator(), false).flatMap(class3833 -> class3833.getStateContainer().method32902().stream()).collect((Collector<? super Object, ?, List<BlockState>>)Collectors.toList());
+        field25392 = MathHelper.ceil(MathHelper.method35640((float)Class6348.field25391.size()));
+        field25393 = MathHelper.ceil(Class6348.field25391.size() / (float)Class6348.field25392);
+        field25394 = Class7521.field29147.getDefaultState();
+        field25395 = Class7521.field29517.getDefaultState();
     }
 }

@@ -16,7 +16,7 @@ public final class Class84 implements Class83
     private final int field191;
     
     public Class84(final int field189, final int field190) {
-        this.field188 = new Class81((int)Class7698.method24491(field189, field190));
+        this.field188 = new Class81((int) VoxelShapes.method24491(field189, field190));
         this.field189 = field189;
         this.field190 = field190;
         this.field191 = IntMath.gcd(field189, field190);

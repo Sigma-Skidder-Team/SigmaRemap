@@ -20,6 +20,6 @@ public class Class1839<T extends LivingEntity> extends Class1837<T, Class5868<T>
     }
     
     static {
-        field10021 = Class6332.method18779(new Class1932("textures/entity/enderman/enderman_eyes.png"));
+        field10021 = Class6332.method18779(new ResourceLocation("textures/entity/enderman/enderman_eyes.png"));
     }
 }

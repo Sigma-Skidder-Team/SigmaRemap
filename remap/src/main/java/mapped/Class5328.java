@@ -23,11 +23,11 @@ public class Class5328
     
     @Nullable
     public static Class5328 method16450(final int n) {
-        return Class90.field207.method499(n);
+        return Registry.field207.method499(n);
     }
     
     public static int method16451(final Class5328 class5328) {
-        return Class90.field207.method504(class5328);
+        return Registry.field207.getId(class5328);
     }
     
     public Class5328(final Class2069 field22363, final int field22364) {
@@ -118,7 +118,7 @@ public class Class5328
     
     public String method16454() {
         if (this.field22365 == null) {
-            this.field22365 = Class8349.method27836("effect", Class90.field207.method503(this));
+            this.field22365 = Class8349.method27836("effect", Registry.field207.getKey(this));
         }
         return this.field22365;
     }

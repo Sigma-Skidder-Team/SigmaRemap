@@ -7,8 +7,7 @@ package mapped;
 import com.mojang.datafixers.util.Pair;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+
 import com.google.common.collect.Lists;
 import java.util.Arrays;
 
@@ -51,7 +50,7 @@ public class Class1912 implements AutoCloseable
     private boolean field10400;
     private Class6582 field10401;
     
-    public Class1912(final Class1932 class1932) {
+    public Class1912(final ResourceLocation class1932) {
         this.field10381 = -1;
         this.field10386 = -1;
         this.field10387 = null;
@@ -94,8 +93,8 @@ public class Class1912 implements AutoCloseable
         this.field10397 = false;
         this.field10366 = class1912.field10366;
         final Class9336 field10367 = class1912.field10367;
-        final Class1932 method34591 = field10367.method34591();
-        this.field10367 = new Class9336(new Class1932(method34591.method7798(), method34591.method7797() + ".sprite_single"), field10367.method34592(), field10367.method34593(), field10367.method34596());
+        final ResourceLocation method34591 = field10367.method34591();
+        this.field10367 = new Class9336(new ResourceLocation(method34591.method7798(), method34591.method7797() + ".sprite_single"), field10367.method34592(), field10367.method34593(), field10367.method34596());
         this.field10368 = class1912.field10368;
         this.field10369 = class1912.field10369;
         this.field10370 = class1912.field10370;
@@ -279,7 +278,7 @@ public class Class1912 implements AutoCloseable
         return this.field10377 + (this.field10378 - this.field10377) * (float)n / 16.0f;
     }
     
-    public Class1932 method7503() {
+    public ResourceLocation method7503() {
         return Class9336.method34603(this.field10367);
     }
     
@@ -519,8 +518,8 @@ public class Class1912 implements AutoCloseable
     }
     
     public Class1912 method7533(final String str, final int n) {
-        final Class1932 class1932 = new Class1932(this.method7503().method7798(), this.method7503().method7797() + str);
-        final Class1932 method6336 = this.field10366.method6336(class1932);
+        final ResourceLocation class1932 = new ResourceLocation(this.method7503().method7798(), this.method7503().method7797() + str);
+        final ResourceLocation method6336 = this.field10366.method6336(class1932);
         Class1912 class1933 = null;
         if (this.field10401.method19934(method6336)) {
             try (final Class1671 method6337 = this.field10401.method19933(method6336)) {
@@ -572,8 +571,8 @@ public class Class1912 implements AutoCloseable
             this.field10392.close();
             this.field10392 = null;
         }
-        this.field10400 = Class8571.method28928();
-        this.field10399 = Class8571.method28955();
+        this.field10400 = Config.method28928();
+        this.field10399 = Config.method28955();
         if (this.field10400) {
             if (!this.field10388) {
                 this.field10387 = this.method7532();

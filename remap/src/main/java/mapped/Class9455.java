@@ -20,10 +20,10 @@ public class Class9455<T> extends Class9456
     }
     
     public static <T> String method35132(final Class2248<T> class2248, final T t) {
-        return method35133(Class90.field238.method503(class2248)) + ":" + method35133(class2248.method8448().method503(t));
+        return method35133(Registry.field238.getKey(class2248)) + ":" + method35133(class2248.method8448().getKey(t));
     }
     
-    private static <T> String method35133(final Class1932 class1932) {
+    private static <T> String method35133(final ResourceLocation class1932) {
         return class1932.toString().replace(':', '.');
     }
     

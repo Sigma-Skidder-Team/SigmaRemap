@@ -25,7 +25,7 @@ public class Class8652
     private String field36317;
     public static final Class9449[] field36318;
     public static final Class181[] field36319;
-    private static Map<Class1932, Class3090> field36320;
+    private static Map<ResourceLocation, Class3090> field36320;
     private static final Class6786<Enum> field36321;
     private static final Class6786<Class181> field36322;
     
@@ -55,7 +55,7 @@ public class Class8652
     public Class8802[] method29442(final String s) {
         if (s != null) {
             final ArrayList list = new ArrayList();
-            final String[] method28937 = Class8571.method28937(s, " ");
+            final String[] method28937 = Config.method28937(s, " ");
             for (int i = 0; i < method28937.length; ++i) {
                 final Class8802[] method28938 = this.method29444(method28937[i]);
                 if (method28938 != null) {
@@ -73,7 +73,7 @@ public class Class8652
             return class7096;
         }
         if (method29444.length == 1) {
-            return Class90.field208.method499(method29444[0].method30709()).method11878();
+            return Registry.BLOCK.method499(method29444[0].method30709()).getDefaultState();
         }
         return class7096;
     }
@@ -86,7 +86,7 @@ public class Class8652
         if (trim.length() <= 0) {
             return null;
         }
-        final String[] method28937 = Class8571.method28937(trim, ":");
+        final String[] method28937 = Config.method28937(trim, ":");
         String s;
         int n;
         if (method28937.length > 1 && this.method29445(method28937)) {
@@ -99,12 +99,12 @@ public class Class8652
         }
         final String s2 = method28937[n];
         final String[] array = Arrays.copyOfRange(method28937, n + 1, method28937.length);
-        final Class3833[] method28938 = this.method29447(s, s2);
+        final Block[] method28938 = this.method29447(s, s2);
         if (method28938 != null) {
             final Class8802[] array2 = new Class8802[method28938.length];
             for (int i = 0; i < method28938.length; ++i) {
-                final Class3833 class3833 = method28938[i];
-                final int method28939 = Class90.field208.method504(class3833);
+                final Block class3833 = method28938[i];
+                final int method28939 = Registry.BLOCK.getId(class3833);
                 int[] method28940 = null;
                 if (array.length > 0) {
                     method28940 = this.method29448(class3833, array);
@@ -131,33 +131,33 @@ public class Class8652
         return s != null && s.length() >= 1 && Character.isDigit(s.charAt(0));
     }
     
-    public Class3833[] method29447(final String str, final String str2) {
+    public Block[] method29447(final String str, final String str2) {
         final String string = str + ":" + str2;
-        final Class3833 method20650 = Class6770.method20650(new Class1932(string));
+        final Block method20650 = BlockUtils.method20650(new ResourceLocation(string));
         if (method20650 != null) {
-            return new Class3833[] { method20650 };
+            return new Block[] { method20650 };
         }
         this.method29461("Block not found for name: " + string);
         return null;
     }
     
-    public int[] method29448(final Class3833 class3833, final String[] array) {
+    public int[] method29448(final Block class3833, final String[] array) {
         if (array.length <= 0) {
             return null;
         }
-        final Collection<Class7111<?>> method21770 = class3833.method11878().method21770();
+        final Collection<IProperty<?>> method21770 = class3833.getDefaultState().method21770();
         final HashMap hashMap = new HashMap();
         for (int i = 0; i < array.length; ++i) {
             final String str = array[i];
             if (str.length() > 0) {
-                final String[] method21771 = Class8571.method28937(str, "=");
+                final String[] method21771 = Config.method28937(str, "=");
                 if (method21771.length != 2) {
                     this.method29461("Invalid block property: " + str);
                     return null;
                 }
                 final String s = method21771[0];
                 final String s2 = method21771[1];
-                final Class7111 method21772 = Class6779.method20704(s, (Collection<Class7111>)method21770);
+                final IProperty method21772 = Class6779.method20704(s, (Collection<IProperty>)method21770);
                 if (method21772 == null) {
                     this.method29461("Property not found: " + s + ", block: " + class3833);
                     return null;
@@ -167,7 +167,7 @@ public class Class8652
                     o = new ArrayList<Comparable>();
                     hashMap.put(method21772, o);
                 }
-                final String[] method21773 = Class8571.method28937(s2, ",");
+                final String[] method21773 = Config.method28937(s2, ",");
                 for (int j = 0; j < method21773.length; ++j) {
                     final String str2 = method21773[j];
                     final Comparable method21774 = method29449(method21772, str2);
@@ -183,10 +183,10 @@ public class Class8652
             return null;
         }
         final ArrayList list = new ArrayList();
-        final int method21775 = Class6770.method20652(class3833);
+        final int method21775 = BlockUtils.method20652(class3833);
         for (int k = 0; k < method21775; ++k) {
             try {
-                if (this.method29453(Class6770.method20653(class3833, k), hashMap)) {
+                if (this.method29453(BlockUtils.method20653(class3833, k), hashMap)) {
                     list.add(k);
                 }
             }
@@ -202,10 +202,10 @@ public class Class8652
         return array2;
     }
     
-    public static Comparable method29449(final Class7111 class7111, final String s) {
-        Comparable comparable = method29452(s, class7111.method21827());
+    public static Comparable method29449(final IProperty class7111, final String s) {
+        Comparable comparable = method29452(s, class7111.getValueClass());
         if (comparable == null) {
-            comparable = method29450(s, class7111.method21829());
+            comparable = method29450(s, class7111.getAllowedValues());
         }
         return comparable;
     }
@@ -246,10 +246,10 @@ public class Class8652
         return Integer.valueOf(s);
     }
     
-    public boolean method29453(final BlockState class7096, final Map<Class7111, List<Comparable>> map) {
-        for (final Class7111 class7097 : map.keySet()) {
+    public boolean method29453(final BlockState class7096, final Map<IProperty, List<Comparable>> map) {
+        for (final IProperty class7097 : map.keySet()) {
             final List list = map.get(class7097);
-            final Comparable method21772 = class7096.method21772((Class7111<Comparable>)class7097);
+            final Comparable method21772 = class7096.get((IProperty<Comparable>)class7097);
             if (method21772 == null) {
                 return false;
             }
@@ -269,7 +269,7 @@ public class Class8652
                 b = true;
                 s = s.substring(1);
             }
-            final String[] method28937 = Class8571.method28937(s, " ");
+            final String[] method28937 = Config.method28937(s, " ");
             ArrayList list = new ArrayList();
             for (int i = 0; i < method28937.length; ++i) {
                 final String str = method28937[i];
@@ -282,7 +282,7 @@ public class Class8652
                 }
             }
             if (b) {
-                final ArrayList arrayList = Lists.newArrayList((Iterator)Class90.field217.iterator());
+                final ArrayList arrayList = Lists.newArrayList((Iterator) Registry.field217.iterator());
                 arrayList.removeAll(list);
                 list = arrayList;
             }
@@ -293,13 +293,13 @@ public class Class8652
     
     public Class3090 method29455(String lowerCase) {
         lowerCase = lowerCase.toLowerCase();
-        final Class3090 method26042 = Class7984.method26042(new Class1932(lowerCase));
+        final Class3090 method26042 = Class7984.method26042(new ResourceLocation(lowerCase));
         if (method26042 == null) {
-            final Class1932 class1932 = new Class1932(lowerCase.replace(" ", "").replace("_", ""));
+            final ResourceLocation class1932 = new ResourceLocation(lowerCase.replace(" ", "").replace("_", ""));
             if (Class8652.field36320 == null) {
-                Class8652.field36320 = new HashMap<Class1932, Class3090>();
-                for (final Class1932 class1933 : Class7984.method26044()) {
-                    Class8652.field36320.put(new Class1932(class1933.method7798(), class1933.method7797().replace(" ", "").replace("_", "").toLowerCase()), Class7984.method26042(class1933));
+                Class8652.field36320 = new HashMap<ResourceLocation, Class3090>();
+                for (final ResourceLocation class1933 : Class7984.method26044()) {
+                    Class8652.field36320.put(new ResourceLocation(class1933.method7798(), class1933.method7797().replace(" ", "").replace("_", "").toLowerCase()), Class7984.method26042(class1933));
                 }
             }
             final Class3090 class1934 = Class8652.field36320.get(class1932);
@@ -313,7 +313,7 @@ public class Class8652
             return n;
         }
         trim = trim.trim();
-        final int method28933 = Class8571.method28933(trim, -1);
+        final int method28933 = Config.method28933(trim, -1);
         if (method28933 >= 0) {
             return method28933;
         }
@@ -324,11 +324,11 @@ public class Class8652
     public int[] method29457(final String str) {
         if (str != null) {
             final ArrayList list = new ArrayList();
-            final String[] method28937 = Class8571.method28937(str, " ,");
+            final String[] method28937 = Config.method28937(str, " ,");
             for (int i = 0; i < method28937.length; ++i) {
                 final String str2 = method28937[i];
                 if (!str2.contains("-")) {
-                    final int method28938 = Class8571.method28933(str2, -1);
+                    final int method28938 = Config.method28933(str2, -1);
                     if (method28938 >= 0) {
                         list.add(method28938);
                     }
@@ -337,11 +337,11 @@ public class Class8652
                     }
                 }
                 else {
-                    final String[] method28939 = Class8571.method28937(str2, "-");
+                    final String[] method28939 = Config.method28937(str2, "-");
                     Label_0281: {
                         if (method28939.length == 2) {
-                            final int method28940 = Class8571.method28933(method28939[0], -1);
-                            final int method28941 = Class8571.method28933(method28939[1], -1);
+                            final int method28940 = Config.method28933(method28939[0], -1);
+                            final int method28941 = Config.method28933(method28939[1], -1);
                             if (method28940 >= 0) {
                                 if (method28941 >= 0) {
                                     if (method28940 <= method28941) {
@@ -372,7 +372,7 @@ public class Class8652
     public boolean[] method29458(final String s, final boolean[] array) {
         if (s != null) {
             final EnumSet<Direction> all = EnumSet.allOf(Direction.class);
-            final String[] method28937 = Class8571.method28937(s, " ,");
+            final String[] method28937 = Config.method28937(s, " ,");
             for (int i = 0; i < method28937.length; ++i) {
                 final String s2 = method28937[i];
                 if (!s2.equals("sides")) {
@@ -420,24 +420,24 @@ public class Class8652
             return Direction.EAST;
         }
         if (!lowerCase.equals("west")) {
-            Class8571.method28848("Unknown face: " + lowerCase);
+            Config.warn("Unknown face: " + lowerCase);
             return null;
         }
         return Direction.WEST;
     }
     
     public void method29460(final String str) {
-        Class8571.method28847("" + this.field36317 + ": " + str);
+        Config.method28847("" + this.field36317 + ": " + str);
     }
     
     public void method29461(final String str) {
-        Class8571.method28848("" + this.field36317 + ": " + str);
+        Config.warn("" + this.field36317 + ": " + str);
     }
     
     public Class7740 method29462(final String s) {
         if (s != null) {
             final Class7740 class7740 = new Class7740();
-            final String[] method28937 = Class8571.method28937(s, " ,");
+            final String[] method28937 = Config.method28937(s, " ,");
             for (int i = 0; i < method28937.length; ++i) {
                 final Class7356 method28938 = this.method29463(method28937[i]);
                 if (method28938 == null) {
@@ -455,7 +455,7 @@ public class Class8652
             return null;
         }
         if (str.indexOf(45) < 0) {
-            final int method28933 = Class8571.method28933(str, -1);
+            final int method28933 = Config.method28933(str, -1);
             if (method28933 >= 0) {
                 return new Class7356(method28933, method28933);
             }
@@ -463,13 +463,13 @@ public class Class8652
             return null;
         }
         else {
-            final String[] method28934 = Class8571.method28937(str, "-");
+            final String[] method28934 = Config.method28937(str, "-");
             if (method28934.length != 2) {
                 this.method29461("Invalid range: " + str);
                 return null;
             }
-            final int method28935 = Class8571.method28933(method28934[0], -1);
-            final int method28936 = Class8571.method28933(method28934[1], -1);
+            final int method28935 = Config.method28933(method28934[0], -1);
+            final int method28936 = Config.method28933(method28934[1], -1);
             if (method28935 >= 0 && method28936 >= 0) {
                 return new Class7356(method28935, method28936);
             }
@@ -568,7 +568,7 @@ public class Class8652
     public <T> T[] method29470(String trim, final T[] array, final Class6786 class6786, final String s, final T[] array2) {
         if (trim != null) {
             trim = trim.toLowerCase().trim();
-            final String[] method28937 = Class8571.method28937(trim, " ");
+            final String[] method28937 = Config.method28937(trim, " ");
             final Object[] array3 = (Object[])Array.newInstance(array.getClass().getComponentType(), method28937.length);
             for (int i = 0; i < method28937.length; ++i) {
                 final T method28938 = this.method29469(method28937[i], array, class6786, s);
@@ -607,7 +607,7 @@ public class Class8652
             return null;
         }
         final ArrayList list = new ArrayList();
-        final String[] method28937 = Class8571.method28937(s, " ");
+        final String[] method28937 = Config.method28937(s, " ");
         for (int i = 0; i < method28937.length; ++i) {
             final String str = method28937[i];
             final Class9449 method28938 = this.method29477(str);
@@ -645,9 +645,9 @@ public class Class8652
     private Class9334 method29478(String lowerCase) {
         if (lowerCase != null) {
             lowerCase = lowerCase.toLowerCase();
-            final Class1932 class1932 = new Class1932(lowerCase);
-            final Class93<Class9334> field240 = Class90.field240;
-            return field240.method510(class1932) ? ((Class9334)field240.method505(class1932)) : null;
+            final ResourceLocation class1932 = new ResourceLocation(lowerCase);
+            final Class93<Class9334> field240 = Registry.field240;
+            return field240.method510(class1932) ? ((Class9334)field240.getOrDefault(class1932)) : null;
         }
         return null;
     }
@@ -655,10 +655,10 @@ public class Class8652
     public int[] method29479(String trim) {
         trim = trim.trim();
         final TreeSet set = new TreeSet();
-        final String[] method28937 = Class8571.method28937(trim, " ");
+        final String[] method28937 = Config.method28937(trim, " ");
         for (int i = 0; i < method28937.length; ++i) {
             final String s = method28937[i];
-            final Item method28938 = Class8333.method27771(new Class1932(s));
+            final Item method28938 = Class8333.method27771(new ResourceLocation(s));
             if (method28938 != null) {
                 final int method28939 = Class8333.method27772(method28938);
                 if (method28939 >= 0) {
@@ -672,18 +672,18 @@ public class Class8652
                 this.method29461("Item not found: " + s);
             }
         }
-        return Class8571.method29008((Integer[])set.toArray(new Integer[set.size()]));
+        return Config.method29008((Integer[])set.toArray(new Integer[set.size()]));
     }
     
     public int[] method29480(String trim) {
         trim = trim.trim();
         final TreeSet set = new TreeSet();
-        final String[] method28937 = Class8571.method28937(trim, " ");
+        final String[] method28937 = Config.method28937(trim, " ");
         for (int i = 0; i < method28937.length; ++i) {
             final String s = method28937[i];
-            final EntityType method28938 = Class9423.method35021(new Class1932(s));
+            final EntityType method28938 = Class9423.method35021(new ResourceLocation(s));
             if (method28938 != null) {
-                final int method28939 = Class90.field210.method504(method28938);
+                final int method28939 = Registry.field210.getId(method28938);
                 if (method28939 >= 0) {
                     set.add(new Integer(method28939));
                 }
@@ -695,7 +695,7 @@ public class Class8652
                 this.method29461("Entity not found: " + s);
             }
         }
-        return Class8571.method29008((Integer[])set.toArray(new Integer[set.size()]));
+        return Config.method29008((Integer[])set.toArray(new Integer[set.size()]));
     }
     
     static {

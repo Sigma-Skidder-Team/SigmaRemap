@@ -37,41 +37,41 @@ public abstract class Class4500 extends Class4473
                 break;
             }
             case 2: {
-                this.method13440(class1851, Class7521.field29368.method11878(), n, n2, n3, class1852);
-                this.method13440(class1851, Class7521.field29368.method11878(), n, n2 + 1, n3, class1852);
-                this.method13440(class1851, Class7521.field29368.method11878(), n, n2 + 2, n3, class1852);
-                this.method13440(class1851, Class7521.field29368.method11878(), n + 1, n2 + 2, n3, class1852);
-                this.method13440(class1851, Class7521.field29368.method11878(), n + 2, n2 + 2, n3, class1852);
-                this.method13440(class1851, Class7521.field29368.method11878(), n + 2, n2 + 1, n3, class1852);
-                this.method13440(class1851, Class7521.field29368.method11878(), n + 2, n2, n3, class1852);
-                this.method13440(class1851, Class7521.field29306.method11878(), n + 1, n2, n3, class1852);
-                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29306.method11878()).method21773(Class3969.field17935, Class182.field564), n + 1, n2 + 1, n3, class1852);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), n, n2, n3, class1852);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), n, n2 + 1, n3, class1852);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), n, n2 + 2, n3, class1852);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), n + 1, n2 + 2, n3, class1852);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), n + 2, n2 + 2, n3, class1852);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), n + 2, n2 + 1, n3, class1852);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), n + 2, n2, n3, class1852);
+                this.method13440(class1851, Class7521.field29306.getDefaultState(), n + 1, n2, n3, class1852);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29306.getDefaultState()).with(Class3969.field17935, Class182.field564), n + 1, n2 + 1, n3, class1852);
                 break;
             }
             case 3: {
-                this.method13440(class1851, Class7521.field29764.method11878(), n + 1, n2, n3, class1852);
-                this.method13440(class1851, Class7521.field29764.method11878(), n + 1, n2 + 1, n3, class1852);
-                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29381.method11878()).method21773((Class7111<Comparable>)Class3853.field17468, true), n, n2, n3, class1852);
-                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29381.method11878()).method21773((Class7111<Comparable>)Class3853.field17468, true), n, n2 + 1, n3, class1852);
-                this.method13440(class1851, ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29381.method11878()).method21773((Class7111<Comparable>)Class3853.field17466, true)).method21773((Class7111<Comparable>)Class3853.field17468, true), n, n2 + 2, n3, class1852);
-                this.method13440(class1851, ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29381.method11878()).method21773((Class7111<Comparable>)Class3853.field17466, true)).method21773((Class7111<Comparable>)Class3853.field17468, true), n + 1, n2 + 2, n3, class1852);
-                this.method13440(class1851, ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29381.method11878()).method21773((Class7111<Comparable>)Class3853.field17466, true)).method21773((Class7111<Comparable>)Class3853.field17468, true), n + 2, n2 + 2, n3, class1852);
-                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29381.method11878()).method21773((Class7111<Comparable>)Class3853.field17466, true), n + 2, n2 + 1, n3, class1852);
-                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29381.method11878()).method21773((Class7111<Comparable>)Class3853.field17466, true), n + 2, n2, n3, class1852);
+                this.method13440(class1851, Class7521.field29764.getDefaultState(), n + 1, n2, n3, class1852);
+                this.method13440(class1851, Class7521.field29764.getDefaultState(), n + 1, n2 + 1, n3, class1852);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29381.getDefaultState()).with((IProperty<Comparable>)Class3853.field17468, true), n, n2, n3, class1852);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29381.getDefaultState()).with((IProperty<Comparable>)Class3853.field17468, true), n, n2 + 1, n3, class1852);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class7521.field29381.getDefaultState()).with((IProperty<Comparable>)Class3853.field17466, true)).with((IProperty<Comparable>)Class3853.field17468, true), n, n2 + 2, n3, class1852);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class7521.field29381.getDefaultState()).with((IProperty<Comparable>)Class3853.field17466, true)).with((IProperty<Comparable>)Class3853.field17468, true), n + 1, n2 + 2, n3, class1852);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class7521.field29381.getDefaultState()).with((IProperty<Comparable>)Class3853.field17466, true)).with((IProperty<Comparable>)Class3853.field17468, true), n + 2, n2 + 2, n3, class1852);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29381.getDefaultState()).with((IProperty<Comparable>)Class3853.field17466, true), n + 2, n2 + 1, n3, class1852);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29381.getDefaultState()).with((IProperty<Comparable>)Class3853.field17466, true), n + 2, n2, n3, class1852);
                 break;
             }
             case 4: {
-                this.method13440(class1851, Class7521.field29368.method11878(), n, n2, n3, class1852);
-                this.method13440(class1851, Class7521.field29368.method11878(), n, n2 + 1, n3, class1852);
-                this.method13440(class1851, Class7521.field29368.method11878(), n, n2 + 2, n3, class1852);
-                this.method13440(class1851, Class7521.field29368.method11878(), n + 1, n2 + 2, n3, class1852);
-                this.method13440(class1851, Class7521.field29368.method11878(), n + 2, n2 + 2, n3, class1852);
-                this.method13440(class1851, Class7521.field29368.method11878(), n + 2, n2 + 1, n3, class1852);
-                this.method13440(class1851, Class7521.field29368.method11878(), n + 2, n2, n3, class1852);
-                this.method13440(class1851, Class7521.field29318.method11878(), n + 1, n2, n3, class1852);
-                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29318.method11878()).method21773(Class3969.field17935, Class182.field564), n + 1, n2 + 1, n3, class1852);
-                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29328.method11878()).method21773((Class7111<Comparable>)Class3905.field17564, Direction.NORTH), n + 2, n2 + 1, n3 + 1, class1852);
-                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29328.method11878()).method21773((Class7111<Comparable>)Class3905.field17564, Direction.SOUTH), n + 2, n2 + 1, n3 - 1, class1852);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), n, n2, n3, class1852);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), n, n2 + 1, n3, class1852);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), n, n2 + 2, n3, class1852);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), n + 1, n2 + 2, n3, class1852);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), n + 2, n2 + 2, n3, class1852);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), n + 2, n2 + 1, n3, class1852);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), n + 2, n2, n3, class1852);
+                this.method13440(class1851, Class7521.field29318.getDefaultState(), n + 1, n2, n3, class1852);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29318.getDefaultState()).with(Class3969.field17935, Class182.field564), n + 1, n2 + 1, n3, class1852);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29328.getDefaultState()).with((IProperty<Comparable>)Class3905.field17564, Direction.NORTH), n + 2, n2 + 1, n3 + 1, class1852);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29328.getDefaultState()).with((IProperty<Comparable>)Class3905.field17564, Direction.SOUTH), n + 2, n2 + 1, n3 - 1, class1852);
                 break;
             }
         }

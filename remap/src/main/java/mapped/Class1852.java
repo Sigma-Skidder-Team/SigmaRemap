@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 public interface Class1852 extends Class1856, Class1853, Class1867
 {
     @Nullable
-    Class1860 method6687(final int p0, final int p1, final Class9312 p2, final boolean p3);
+    IChunk getChunk(final int p0, final int p1, final ChunkStatus p2, final boolean p3);
     
     @Deprecated
     boolean method6814(final int p0, final int p1);
@@ -33,7 +33,7 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     }
     
     default Class3090 method6960(final int n, final int n2, final int n3) {
-        final Class1860 method6687 = this.method6687(n >> 2, n3 >> 2, Class9312.field39980, false);
+        final IChunk method6687 = this.getChunk(n >> 2, n3 >> 2, ChunkStatus.field39980, false);
         return (method6687 != null && method6687.method7024() != null) ? method6687.method7024().method6960(n, n2, n3) : this.method6841(n, n2, n3);
     }
     
@@ -50,7 +50,7 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     }
     
     default boolean method6961(final BlockPos class354) {
-        return this.method6701(class354).method21706();
+        return this.getBlockState(class354).method21706();
     }
     
     default boolean method6962(final BlockPos class354) {
@@ -60,8 +60,8 @@ public interface Class1852 extends Class1856, Class1853, Class1867
         final BlockPos class355 = new BlockPos(class354.getX(), this.method6743(), class354.getZ());
         if (this.method6994(class355)) {
             for (BlockPos class356 = class355.method1139(); class356.getY() > class354.getY(); class356 = class356.method1139()) {
-                final BlockState method6701 = this.method6701(class356);
-                if (method6701.method21700(this, class356) > 0 && !method6701.method21697().method26438()) {
+                final BlockState method6701 = this.getBlockState(class356);
+                if (method6701.getOpacity(this, class356) > 0 && !method6701.getMaterial().method26438()) {
                     return false;
                 }
             }
@@ -76,24 +76,24 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     }
     
     default int method6964(final BlockPos class354, final Direction class355) {
-        return this.method6701(class354).method21720(this, class354, class355);
+        return this.getBlockState(class354).method21720(this, class354, class355);
     }
     
-    default Class1860 method6965(final BlockPos class354) {
+    default IChunk method6965(final BlockPos class354) {
         return this.method6798(class354.getX() >> 4, class354.getZ() >> 4);
     }
     
-    default Class1860 method6798(final int n, final int n2) {
-        return this.method6687(n, n2, Class9312.field39989, true);
+    default IChunk method6798(final int n, final int n2) {
+        return this.getChunk(n, n2, ChunkStatus.field39989, true);
     }
     
-    default Class1860 method6966(final int n, final int n2, final Class9312 class9312) {
-        return this.method6687(n, n2, class9312, true);
+    default IChunk method6966(final int n, final int n2, final ChunkStatus class9312) {
+        return this.getChunk(n, n2, class9312, true);
     }
     
     @Nullable
     default Class1855 method6736(final int n, final int n2) {
-        return this.method6687(n, n2, Class9312.field39977, false);
+        return this.getChunk(n, n2, ChunkStatus.field39977, false);
     }
     
     default boolean method6967(final BlockPos class354) {
@@ -101,17 +101,17 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     }
     
     default boolean method6968(final AxisAlignedBB class6221) {
-        final int method35644 = MathHelper.floor(class6221.field25073);
-        final int method35645 = MathHelper.method35650(class6221.field25076);
-        final int method35646 = MathHelper.floor(class6221.field25074);
-        final int method35647 = MathHelper.method35650(class6221.field25077);
-        final int method35648 = MathHelper.floor(class6221.field25075);
-        final int method35649 = MathHelper.method35650(class6221.field25078);
+        final int method35644 = MathHelper.floor(class6221.minX);
+        final int method35645 = MathHelper.ceil(class6221.maxX);
+        final int method35646 = MathHelper.floor(class6221.minY);
+        final int method35647 = MathHelper.ceil(class6221.maxY);
+        final int method35648 = MathHelper.floor(class6221.minZ);
+        final int method35649 = MathHelper.ceil(class6221.maxZ);
         try (final Class386 method35650 = Class386.method1296()) {
             for (int i = method35644; i < method35645; ++i) {
                 for (int j = method35646; j < method35647; ++j) {
                     for (int k = method35648; k < method35649; ++k) {
-                        if (!this.method6701(method35650.method1300(i, j, k)).method21756().method21781()) {
+                        if (!this.getBlockState(method35650.method1300(i, j, k)).getFluidState().isEmpty()) {
                             return true;
                         }
                     }

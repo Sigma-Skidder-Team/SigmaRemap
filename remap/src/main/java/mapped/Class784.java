@@ -77,10 +77,10 @@ public class Class784 extends Class785 implements Class768
             if (!this.world.method6765().method31216(Class8878.field37316)) {
                 return;
             }
-            final BlockState method35647 = Class7521.field29329.method11878();
+            final BlockState method35647 = Class7521.field29329.getDefaultState();
             for (int i = 0; i < 4; ++i) {
                 final BlockPos class354 = new BlockPos(MathHelper.floor(this.getPosX() + (i % 2 * 2 - 1) * 0.25f), MathHelper.floor(this.getPosY()), MathHelper.floor(this.getPosZ() + (i / 2 % 2 * 2 - 1) * 0.25f));
-                if (this.world.method6701(class354).method21706()) {
+                if (this.world.getBlockState(class354).method21706()) {
                     if (this.world.method6959(class354).method9845(class354) < 0.8f) {
                         if (method35647.method21752(this.world, class354)) {
                             this.world.method6692(class354, method35647);

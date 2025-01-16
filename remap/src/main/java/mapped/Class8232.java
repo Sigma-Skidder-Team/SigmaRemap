@@ -52,7 +52,7 @@ public class Class8232
             ++j;
         }
         for (final BlockPos class7497 : arrayList) {
-            method23250.method6694(class7497, method23250.method6701(class7497).method21696());
+            method23250.method6694(class7497, method23250.getBlockState(class7497).method21696());
         }
         if (j != 0) {
             class7492.method23257(new Class2259("commands.fill.success", new Object[] { j }), true);
@@ -63,7 +63,7 @@ public class Class8232
     
     static {
         field33796 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("commands.fill.toobig", new Object[] { o, o2 }));
-        field33797 = new Class118(Class7521.field29147.method11878(), Collections.emptySet(), null);
+        field33797 = new Class118(Class7521.field29147.getDefaultState(), Collections.emptySet(), null);
         field33798 = new SimpleCommandExceptionType((Message)new Class2259("commands.fill.failed", new Object[0]));
     }
 }

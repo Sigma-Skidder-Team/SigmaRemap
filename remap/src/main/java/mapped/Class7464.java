@@ -33,7 +33,7 @@ public class Class7464
     private static final Random field28838;
     
     public static Class6313 method22995(final Class6313 class6313, final BlockState class6314) {
-        if (!Class8571.method28862()) {
+        if (!Config.method28862()) {
             return class6313;
         }
         final List<Class8754> method18691 = class6313.method18691(class6314, null, Class7464.field28838);
@@ -56,7 +56,7 @@ public class Class7464
     }
     
     public static boolean method22996(final BlockState class7096, final BlockState class7097) {
-        return class7096 == class7097 || class7096.method21696() == class7097.method21696();
+        return class7096 == class7097 || class7096.getBlock() == class7097.getBlock();
     }
     
     public static void method22997() {
@@ -80,7 +80,7 @@ public class Class7464
         Class7464.field28836 = method23000(Class7464.field28824);
         Class7464.field28837 = method23000(Class7464.field28825);
         if (list.size() > 0) {
-            Class8571.method28847("Enable face culling: " + Class8571.method28888(list.toArray()));
+            Config.method28847("Enable face culling: " + Config.method28888(list.toArray()));
         }
     }
     
@@ -89,14 +89,14 @@ public class Class7464
     }
     
     public static Class6313 method22999(final String s, final List list) {
-        final Class1790 method28860 = Class8571.method28860();
+        final Class1790 method28860 = Config.method28860();
         if (method28860 == null) {
             return null;
         }
-        if (!Class8571.method28906(new Class1932("blockstates/" + s + "_leaves.json"))) {
+        if (!Config.method28906(new ResourceLocation("blockstates/" + s + "_leaves.json"))) {
             return null;
         }
-        if (!Class8571.method28906(new Class1932("models/block/" + s + "_leaves.json"))) {
+        if (!Config.method28906(new ResourceLocation("models/block/" + s + "_leaves.json"))) {
             return null;
         }
         final Class6313 method28861 = method28860.method6451(new Class1933(s + "_leaves", "normal"));
@@ -132,7 +132,7 @@ public class Class7464
                 final Direction obj = field524[i];
                 final List<Class8754> method18691 = class6313.method18691(null, obj, Class7464.field28838);
                 if (method18691.size() != 1) {
-                    Class8571.method28848("SmartLeaves: Model is not cube, side: " + obj + ", quads: " + method18691.size() + ", model: " + class6313);
+                    Config.warn("SmartLeaves: Model is not cube, side: " + obj + ", quads: " + method18691.size() + ", model: " + class6313);
                     return class6313;
                 }
             }
@@ -154,7 +154,7 @@ public class Class7464
             }
             return method18692;
         }
-        Class8571.method28848("SmartLeaves: Model is not cube, general quads: " + class6313.method18691(null, null, Class7464.field28838).size() + ", model: " + class6313);
+        Config.warn("SmartLeaves: Model is not cube, general quads: " + class6313.method18691(null, null, Class7464.field28838).size() + ", model: " + class6313);
         return class6313;
     }
     

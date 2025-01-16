@@ -48,7 +48,7 @@ public class Class4169 extends Class4158<Class437>
         }
         else {
             final Class7096 method2187 = class437.method2194();
-            this.method12484(class438, class439, method2187.method21772(Class3900.field17599) == Class105.field323, method2187.method21772((Class7111<Direction>)Class3900.field17564), class440, Class8565.method28798(Class5412.field22564, Class3900::method11990, Class3900::method11989, Class3865.field17497, method2187, method2186, class437.method2193(), (p0, p1) -> false).method22074((Class6389<? super Class437, Int2IntFunction>)new Class6388<Object>()).get(n2), n3, false);
+            this.method12484(class438, class439, method2187.method21772(Class3900.field17599) == Class105.field323, method2187.method21772((IProperty<Direction>)Class3900.field17564), class440, Class8565.method28798(Class5412.field22564, Class3900::method11990, Class3900::method11989, Class3865.field17497, method2187, method2186, class437.getPos(), (p0, p1) -> false).method22074((Class6389<? super Class437, Int2IntFunction>)new Class6388<Object>()).get(n2), n3, false);
         }
     }
     

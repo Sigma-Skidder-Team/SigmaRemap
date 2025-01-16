@@ -35,7 +35,7 @@ public class WorldBorder
         this.field40210 = new Class7925(this, 6.0E7);
     }
     
-    public boolean method34779(final BlockPos class354) {
+    public boolean contains(final BlockPos class354) {
         if (class354.getX() + 1 > this.method34786()) {
             if (class354.getX() < this.method34788()) {
                 if (class354.getZ() + 1 > this.method34787()) {
@@ -62,10 +62,10 @@ public class WorldBorder
     }
     
     public boolean method34781(final AxisAlignedBB class6221) {
-        if (class6221.field25076 > this.method34786()) {
-            if (class6221.field25073 < this.method34788()) {
-                if (class6221.field25078 > this.method34787()) {
-                    if (class6221.field25075 < this.method34789()) {
+        if (class6221.maxX > this.method34786()) {
+            if (class6221.minX < this.method34788()) {
+                if (class6221.maxZ > this.method34787()) {
+                    if (class6221.minZ < this.method34789()) {
                         return true;
                     }
                 }

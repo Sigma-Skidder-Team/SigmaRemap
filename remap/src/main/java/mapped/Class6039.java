@@ -21,7 +21,7 @@ public class Class6039 extends Class6032<Class4408>
         super(function);
     }
     
-    public void method17959(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final BlockState class1862, final BlockState class1863, final int n5, final long n6, final Class4408 class1864) {
+    public void method17959(final Random random, final IChunk class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final BlockState class1862, final BlockState class1863, final int n5, final long n6, final Class4408 class1864) {
         final int n7 = n5 + 1;
         final int n8 = n & 0xF;
         final int n9 = n2 & 0xF;
@@ -34,9 +34,9 @@ public class Class6039 extends Class6032<Class4408>
         BlockState class1867 = Class6039.field24574;
         for (int i = 127; i >= 0; --i) {
             class1865.setPos(n8, i, n9);
-            final BlockState method6701 = class1860.method6701(class1865);
-            if (method6701.method21696() != null && !method6701.method21706()) {
-                if (method6701.method21696() == class1862.method21696()) {
+            final BlockState method6701 = class1860.getBlockState(class1865);
+            if (method6701.getBlock() != null && !method6701.method21706()) {
+                if (method6701.getBlock() == class1862.getBlock()) {
                     if (n11 != -1) {
                         if (n11 > 0) {
                             --n11;
@@ -94,9 +94,9 @@ public class Class6039 extends Class6032<Class4408>
     }
     
     static {
-        field24573 = Class7521.field29764.method11878();
-        field24574 = Class7521.field29338.method11878();
-        field24575 = Class7521.field29177.method11878();
-        field24576 = Class7521.field29339.method11878();
+        field24573 = Class7521.field29764.getDefaultState();
+        field24574 = Class7521.field29338.getDefaultState();
+        field24575 = Class7521.field29177.getDefaultState();
+        field24576 = Class7521.field29339.getDefaultState();
     }
 }

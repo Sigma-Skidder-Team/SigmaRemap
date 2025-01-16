@@ -184,7 +184,7 @@ public enum Class305
                 return (float) MathHelper.method35642(method971(array, 0));
             }
             case 23: {
-                return (float) MathHelper.method35649(method971(array, 0));
+                return (float) MathHelper.ceil(method971(array, 0));
             }
             case 24: {
                 return MathHelper.method35686(method971(array, 0));
@@ -237,7 +237,7 @@ public enum Class305
                 return Class7901.method25570(n3, method976, n4, (array.length > 3) ? method971(array, 3) : n4);
             }
             default: {
-                Class8571.method28848("Unknown function type: " + this);
+                Config.warn("Unknown function type: " + this);
                 return 0.0f;
             }
         }
@@ -327,7 +327,7 @@ public enum Class305
                 return false;
             }
             default: {
-                Class8571.method28848("Unknown function type: " + this);
+                Config.warn("Unknown function type: " + this);
                 return false;
             }
         }
@@ -349,7 +349,7 @@ public enum Class305
                 return new float[] { method971(array, 0), method971(array, 1), method971(array, 2), method971(array, 3) };
             }
             default: {
-                Class8571.method28848("Unknown function type: " + this);
+                Config.warn("Unknown function type: " + this);
                 return null;
             }
         }

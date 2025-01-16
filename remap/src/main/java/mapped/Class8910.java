@@ -17,7 +17,7 @@ public class Class8910
     }
     
     private Class3090 method31392(final int n) {
-        final Class3090 class3090 = Class90.field217.method499(n);
+        final Class3090 class3090 = Registry.field217.method499(n);
         if (class3090 != null) {
             return class3090;
         }

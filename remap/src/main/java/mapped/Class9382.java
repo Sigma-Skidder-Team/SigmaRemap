@@ -27,7 +27,7 @@ public class Class9382
 {
     private static final Marker field40242;
     private static final Logger field40243;
-    private static final Set<Class1932> field40244;
+    private static final Set<ResourceLocation> field40244;
     private final Class1784 field40245;
     private final Class5760 field40246;
     private boolean field40247;
@@ -66,12 +66,12 @@ public class Class9382
     
     public void method34832() {
         Class9382.field40244.clear();
-        for (final Class7795 class7795 : Class90.field205) {
-            final Class1932 method25124 = class7795.method25124();
+        for (final Class7795 class7795 : Registry.field205) {
+            final ResourceLocation method25124 = class7795.method25124();
             if (this.field40245.method6419(method25124) != null) {
                 continue;
             }
-            Class9382.field40243.warn("Missing sound for event: {}", (Object)Class90.field205.method503(class7795));
+            Class9382.field40243.warn("Missing sound for event: {}", (Object) Registry.field205.getKey(class7795));
             Class9382.field40244.add(method25124);
         }
         this.method34836();
@@ -243,7 +243,7 @@ public class Class9382
     public void method34844(final Class6834 class6834) {
         if (this.field40247) {
             final Class7833 method20921 = class6834.method20921(this.field40245);
-            final Class1932 method20922 = class6834.method20920();
+            final ResourceLocation method20922 = class6834.method20920();
             if (method20921 != null) {
                 if (!this.field40259.isEmpty()) {
                     final Iterator<Class687> iterator = this.field40259.iterator();
@@ -362,7 +362,7 @@ public class Class9382
         }
     }
     
-    public void method34853(final Class1932 class1932, final Class286 class1933) {
+    public void method34853(final ResourceLocation class1932, final Class286 class1933) {
         if (class1933 == null) {
             if (class1932 != null) {
                 for (final Class6834 class1934 : this.field40254.keySet()) {

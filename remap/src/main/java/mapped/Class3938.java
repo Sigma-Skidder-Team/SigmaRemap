@@ -32,7 +32,7 @@ public class Class3938 extends Class3936
     
     public static void method12051(final World class1847, final BlockPos class1848, final Class493 class1849) {
         if (!class1847.isRemote) {
-            final Class3833 method21696 = class1849.method2194().method21696();
+            final Block method21696 = class1849.method2194().getBlock();
             if (method21696 == Class7521.field29455 || method21696 == Class7521.field29456) {
                 if (class1848.getY() >= 2) {
                     if (class1847.method6954() != Class2113.field12290) {
@@ -42,8 +42,8 @@ public class Class3938 extends Class3936
                             for (int i = 0; i < method21697.method29794(); ++i) {
                                 for (int j = 0; j < method21697.method29793(); ++j) {
                                     final Class7990 method21699 = method21698.method25270(i, j, 0);
-                                    class1847.method6688(method21699.method26068(), Class7521.field29147.method11878(), 2);
-                                    class1847.method6955(2001, method21699.method26068(), Class3833.method11774(method21699.method26065()));
+                                    class1847.setBlockState(method21699.method26068(), Class7521.field29147.getDefaultState(), 2);
+                                    class1847.method6955(2001, method21699.method26068(), Block.method11774(method21699.method26065()));
                                 }
                             }
                             final Class767 class1850 = EntityType.field29048.method23371(class1847);
@@ -83,14 +83,14 @@ public class Class3938 extends Class3936
     
     private static Class8691 method12053() {
         if (Class3938.field17821 == null) {
-            Class3938.field17821 = Class9512.method35439().method35438("^^^", "###", "~#~").method35440('#', Class7990.method26069(Class169.method766(Class7521.field29339))).method35440('^', Class7990.method26069(Class169.method766(Class7521.field29455).or(Class169.method766(Class7521.field29456)))).method35440('~', Class7990.method26069(Class114.method607(Class8059.field33153))).method35441();
+            Class3938.field17821 = Class9512.method35439().method35438("^^^", "###", "~#~").method35440('#', Class7990.method26069(Class169.method766(Class7521.field29339))).method35440('^', Class7990.method26069(Class169.method766(Class7521.field29455).or(Class169.method766(Class7521.field29456)))).method35440('~', Class7990.method26069(Class114.method607(Material.AIR))).method35441();
         }
         return Class3938.field17821;
     }
     
     private static Class8691 method12054() {
         if (Class3938.field17822 == null) {
-            Class3938.field17822 = Class9512.method35439().method35438("   ", "###", "~#~").method35440('#', Class7990.method26069(Class169.method766(Class7521.field29339))).method35440('~', Class7990.method26069(Class114.method607(Class8059.field33153))).method35441();
+            Class3938.field17822 = Class9512.method35439().method35438("   ", "###", "~#~").method35440('#', Class7990.method26069(Class169.method766(Class7521.field29339))).method35440('~', Class7990.method26069(Class114.method607(Material.AIR))).method35441();
         }
         return Class3938.field17822;
     }

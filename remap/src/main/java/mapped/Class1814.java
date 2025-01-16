@@ -10,8 +10,8 @@ import net.minecraft.util.math.MathHelper;
 public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
 {
     private Class6300 field9986;
-    private static final Class1932 field9987;
-    private static final Class1932 field9988;
+    private static final ResourceLocation field9987;
+    private static final ResourceLocation field9988;
     private static boolean field9989;
     private static boolean field9990;
     
@@ -30,7 +30,7 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
             if (!t.method1823()) {
                 final Class1658 method5305 = Class869.method5277().method5305();
                 final BlockState method5306 = t.method4708().method7992();
-                final Class1932 method5307 = this.method6576(method5306);
+                final ResourceLocation method5307 = this.method6576(method5306);
                 Class4150 method5308 = null;
                 if (method5307 != null) {
                     method5308 = class7352.method25214(Class6332.method18770(method5307));
@@ -79,8 +79,8 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
         }
     }
     
-    private Class1932 method6576(final BlockState class7096) {
-        final Class3833 method21696 = class7096.method21696();
+    private ResourceLocation method6576(final BlockState class7096) {
+        final Block method21696 = class7096.getBlock();
         if (method21696 == Class7521.field29279 && Class1814.field9989) {
             return Class1814.field9987;
         }
@@ -88,13 +88,13 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
     }
     
     public static void method6577() {
-        Class1814.field9989 = Class8571.method28900(Class1814.field9987);
-        Class1814.field9990 = Class8571.method28900(Class1814.field9988);
+        Class1814.field9989 = Config.method28900(Class1814.field9987);
+        Class1814.field9990 = Config.method28900(Class1814.field9988);
     }
     
     static {
-        field9987 = new Class1932("textures/entity/cow/red_mushroom.png");
-        field9988 = new Class1932("textures/entity/cow/brown_mushroom.png");
+        field9987 = new ResourceLocation("textures/entity/cow/red_mushroom.png");
+        field9988 = new ResourceLocation("textures/entity/cow/brown_mushroom.png");
         Class1814.field9989 = false;
         Class1814.field9990 = false;
     }

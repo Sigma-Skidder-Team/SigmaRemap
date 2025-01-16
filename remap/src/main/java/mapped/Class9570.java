@@ -952,11 +952,11 @@ public class Class9570
         Class9570.field41187 = new Class7361(Class9570.field41186, "isLoading");
         Class9570.field41188 = new Class7361(Class9570.field41186, "renderProgressText");
         Class9570.field41189 = new Class7363("net.minecraftforge.event.world.ChunkDataEvent$Save");
-        Class9570.field41190 = new Class7362(Class9570.field41189, new Class[] { Class1860.class, Class51.class });
+        Class9570.field41190 = new Class7362(Class9570.field41189, new Class[] { IChunk.class, Class51.class });
         Class9570.field41191 = new Class7363("net.minecraftforge.event.world.ChunkEvent$Load");
-        Class9570.field41192 = new Class7362(Class9570.field41191, new Class[] { Class1860.class });
+        Class9570.field41192 = new Class7362(Class9570.field41191, new Class[] { IChunk.class });
         Class9570.field41193 = new Class7363("net.minecraftforge.event.world.ChunkEvent$Unload");
-        Class9570.field41194 = new Class7362(Class9570.field41193, new Class[] { Class1860.class });
+        Class9570.field41194 = new Class7362(Class9570.field41193, new Class[] { IChunk.class });
         Class9570.field41195 = new Class7363("net.minecraftforge.fml.client.ClientHooks");
         Class9570.field41196 = new Class7361(Class9570.field41195, "trackBrokenTexture");
         Class9570.field41197 = new Class7361(Class9570.field41195, "trackMissingTexture");

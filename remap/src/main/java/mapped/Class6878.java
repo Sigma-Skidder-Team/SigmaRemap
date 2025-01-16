@@ -18,12 +18,12 @@ import java.util.Set;
 
 public class Class6878 extends Class6879
 {
-    private final Class1932 field26947;
+    private final ResourceLocation field26947;
     private final Set<UUID> field26948;
     private int field26949;
     private int field26950;
     
-    public Class6878(final Class1932 field26947, final ITextComponent class2250) {
+    public Class6878(final ResourceLocation field26947, final ITextComponent class2250) {
         super(class2250, Class2200.field13396, Class342.field2105);
         this.field26948 = Sets.newHashSet();
         this.field26950 = 100;
@@ -31,7 +31,7 @@ public class Class6878 extends Class6879
         this.method21064(0.0f);
     }
     
-    public Class1932 method21048() {
+    public ResourceLocation method21048() {
         return this.field26947;
     }
     
@@ -155,7 +155,7 @@ public class Class6878 extends Class6879
         return class51;
     }
     
-    public static Class6878 method21060(final Class51 class51, final Class1932 class52) {
+    public static Class6878 method21060(final Class51 class51, final ResourceLocation class52) {
         final Class6878 class53 = new Class6878(class52, Class5953.method17871(class51.method323("Name")));
         class53.method21073(class51.method329("Visible"));
         class53.method21055(class51.method319("Value"));

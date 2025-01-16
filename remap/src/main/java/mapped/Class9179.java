@@ -5,7 +5,7 @@
 package mapped;
 
 import java.util.Arrays;
-import com.mojang.brigadier.Message;
+
 import com.mojang.datafixers.util.Either;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
@@ -27,16 +27,16 @@ public class Class9179 implements ArgumentType<Class8279>
     public Class8279 parse(final StringReader stringReader) throws CommandSyntaxException {
         if (stringReader.canRead() && stringReader.peek() == '#') {
             stringReader.skip();
-            return new Class8280(this, Class1932.method7799(stringReader));
+            return new Class8280(this, ResourceLocation.method7799(stringReader));
         }
-        return new Class8278(this, Class1932.method7799(stringReader));
+        return new Class8278(this, ResourceLocation.method7799(stringReader));
     }
     
-    private static Class8263 method33538(final CommandContext<Class7492> commandContext, final Class1932 class1932) throws CommandSyntaxException {
+    private static Class8263 method33538(final CommandContext<Class7492> commandContext, final ResourceLocation class1932) throws CommandSyntaxException {
         return ((Class7492)commandContext.getSource()).method23255().method1567().method6502(class1932).orElseThrow(() -> Class9179.field38898.create((Object)class1933.toString()));
     }
     
-    private static Class7909<Class8263> method33539(final CommandContext<Class7492> commandContext, final Class1932 class1932) throws CommandSyntaxException {
+    private static Class7909<Class8263> method33539(final CommandContext<Class7492> commandContext, final ResourceLocation class1932) throws CommandSyntaxException {
         final Class7909<Class8263> method18460 = ((Class7492)commandContext.getSource()).method23255().method1567().method6513().method18460(class1932);
         if (method18460 != null) {
             return method18460;

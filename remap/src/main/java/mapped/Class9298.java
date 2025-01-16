@@ -18,17 +18,17 @@ import net.minecraft.world.World;
 public class Class9298
 {
     private static String[] field39870;
-    public static final Either<Class1860, Class6797> field39871;
-    public static final CompletableFuture<Either<Class1860, Class6797>> field39872;
+    public static final Either<IChunk, Class6797> field39871;
+    public static final CompletableFuture<Either<IChunk, Class6797>> field39872;
     public static final Either<Class1862, Class6797> field39873;
     private static final CompletableFuture<Either<Class1862, Class6797>> field39874;
-    private static final List<Class9312> field39875;
+    private static final List<ChunkStatus> field39875;
     private static final Class2152[] field39876;
-    private final AtomicReferenceArray<CompletableFuture<Either<Class1860, Class6797>>> field39877;
+    private final AtomicReferenceArray<CompletableFuture<Either<IChunk, Class6797>>> field39877;
     private volatile CompletableFuture<Either<Class1862, Class6797>> field39878;
     private volatile CompletableFuture<Either<Class1862, Class6797>> field39879;
     private volatile CompletableFuture<Either<Class1862, Class6797>> field39880;
-    private CompletableFuture<Class1860> field39881;
+    private CompletableFuture<IChunk> field39881;
     private int field39882;
     private int field39883;
     private int field39884;
@@ -45,11 +45,11 @@ public class Class9298
     private boolean field39895;
     
     public Class9298(final Class7859 field39885, final int n, final Class1886 field39886, final Class1911 field39887, final Class389 field39888) {
-        this.field39877 = new AtomicReferenceArray<CompletableFuture<Either<Class1860, Class6797>>>(Class9298.field39875.size());
+        this.field39877 = new AtomicReferenceArray<CompletableFuture<Either<IChunk, Class6797>>>(Class9298.field39875.size());
         this.field39878 = Class9298.field39874;
         this.field39879 = Class9298.field39874;
         this.field39880 = Class9298.field39874;
-        this.field39881 = CompletableFuture.completedFuture((Class1860)null);
+        this.field39881 = CompletableFuture.completedFuture((IChunk)null);
         this.field39886 = new short[64];
         this.field39885 = field39885;
         this.field39892 = field39886;
@@ -61,12 +61,12 @@ public class Class9298
         this.method34361(n);
     }
     
-    public CompletableFuture<Either<Class1860, Class6797>> method34340(final Class9312 class9312) {
+    public CompletableFuture<Either<IChunk, Class6797>> method34340(final ChunkStatus class9312) {
         final CompletableFuture completableFuture = this.field39877.get(class9312.method34442());
         return (completableFuture != null) ? completableFuture : Class9298.field39872;
     }
     
-    public CompletableFuture<Either<Class1860, Class6797>> method34341(final Class9312 class9312) {
+    public CompletableFuture<Either<IChunk, Class6797>> method34341(final ChunkStatus class9312) {
         return method34363(this.field39883).method34451(class9312) ? this.method34340(class9312) : Class9298.field39872;
     }
     
@@ -89,9 +89,9 @@ public class Class9298
     }
     
     @Nullable
-    public Class9312 method34346() {
+    public ChunkStatus method34346() {
         for (int i = Class9298.field39875.size() - 1; i >= 0; --i) {
-            final Class9312 class9312 = Class9298.field39875.get(i);
+            final ChunkStatus class9312 = Class9298.field39875.get(i);
             if (this.method34340(class9312).getNow(Class9298.field39871).left().isPresent()) {
                 return class9312;
             }
@@ -100,20 +100,20 @@ public class Class9298
     }
     
     @Nullable
-    public Class1860 method34347() {
+    public IChunk method34347() {
         for (int i = Class9298.field39875.size() - 1; i >= 0; --i) {
-            final CompletableFuture<Either<Class1860, Class6797>> method34340 = this.method34340(Class9298.field39875.get(i));
+            final CompletableFuture<Either<IChunk, Class6797>> method34340 = this.method34340(Class9298.field39875.get(i));
             if (!method34340.isCompletedExceptionally()) {
                 final Optional left = method34340.getNow(Class9298.field39871).left();
                 if (left.isPresent()) {
-                    return (Class1860)left.get();
+                    return (IChunk)left.get();
                 }
             }
         }
         return null;
     }
     
-    public CompletableFuture<Class1860> method34348() {
+    public CompletableFuture<IChunk> method34348() {
         return this.field39881;
     }
     
@@ -174,7 +174,7 @@ public class Class9298
                     this.method34353(new Class4312(this.field39887, this.field39886, class1862), false);
                     for (int i = 0; i < this.field39887; ++i) {
                         final BlockPos class1863 = new BlockPos((this.field39886[i] >> 12 & 0xF) + this.field39885.field32290 * 16, this.field39886[i] & 0xFF, (this.field39886[i] >> 8 & 0xF) + this.field39885.field32291 * 16);
-                        if (method7065.method6701(class1863).method21696().method11802()) {
+                        if (method7065.getBlockState(class1863).method21696().method11802()) {
                             this.method34352(method7065, class1863);
                         }
                     }
@@ -187,7 +187,7 @@ public class Class9298
         else {
             final BlockPos class1864 = new BlockPos((this.field39886[0] >> 12 & 0xF) + this.field39885.field32290 * 16, this.field39886[0] & 0xFF, (this.field39886[0] >> 8 & 0xF) + this.field39885.field32291 * 16);
             this.method34353(new Class4271(method7065, class1864), false);
-            if (method7065.method6701(class1864).method21696().method11802()) {
+            if (method7065.getBlockState(class1864).method21696().method11802()) {
                 this.method34352(method7065, class1864);
             }
         }
@@ -209,7 +209,7 @@ public class Class9298
         this.field39894.method1351(this.field39885, b).forEach(class4254 -> class4254.field3039.method17469(class4253));
     }
     
-    public CompletableFuture<Either<Class1860, Class6797>> method34354(final Class9312 class9312, final Class388 class9313) {
+    public CompletableFuture<Either<IChunk, Class6797>> method34354(final ChunkStatus class9312, final Class388 class9313) {
         final int method34442 = class9312.method34442();
         final CompletableFuture completableFuture = this.field39877.get(method34442);
         if (completableFuture != null) {
@@ -221,13 +221,13 @@ public class Class9298
         if (!method34363(this.field39883).method34451(class9312)) {
             return (completableFuture != null) ? completableFuture : Class9298.field39872;
         }
-        final CompletableFuture<Either<Class1860, Class6797>> method34443 = class9313.method1328(this, class9312);
+        final CompletableFuture<Either<IChunk, Class6797>> method34443 = class9313.method1328(this, class9312);
         this.method34355(method34443);
         this.field39877.set(method34442, method34443);
         return method34443;
     }
     
-    private void method34355(final CompletableFuture<? extends Either<? extends Class1860, Class6797>> other) {
+    private void method34355(final CompletableFuture<? extends Either<? extends IChunk, Class6797>> other) {
         this.field39881 = this.field39881.thenCombine((CompletionStage<?>)other, (p0, either) -> either.map(class1860 -> class1860, p1 -> class1861));
     }
     
@@ -256,8 +256,8 @@ public class Class9298
     }
     
     public void method34362(final Class388 class388) {
-        final Class9312 method34363 = method34363(this.field39882);
-        final Class9312 method34364 = method34363(this.field39883);
+        final ChunkStatus method34363 = method34363(this.field39882);
+        final ChunkStatus method34364 = method34363(this.field39883);
         final boolean b = this.field39882 <= Class388.field2249;
         final boolean b2 = this.field39883 <= Class388.field2249;
         final Class2152 method34365 = method34364(this.field39882);
@@ -286,7 +286,7 @@ public class Class9298
             if (!method34368) {
                 final CompletableFuture<Either<Class1862, Class6797>> field39878 = this.field39878;
                 this.field39878 = Class9298.field39874;
-                this.method34355((CompletableFuture<? extends Either<? extends Class1860, Class6797>>)field39878.thenApply(either -> either.ifLeft((Consumer)class389::method1359)));
+                this.method34355((CompletableFuture<? extends Either<? extends IChunk, Class6797>>)field39878.thenApply(either -> either.ifLeft((Consumer)class389::method1359)));
             }
         }
         final boolean method34369 = method34365.method8321(Class2152.field12788);
@@ -322,8 +322,8 @@ public class Class9298
         this.field39882 = this.field39883;
     }
     
-    public static Class9312 method34363(final int n) {
-        return (n >= 33) ? Class9312.method34439(n - 33) : Class9312.field39989;
+    public static ChunkStatus method34363(final int n) {
+        return (n >= 33) ? ChunkStatus.method34439(n - 33) : ChunkStatus.field39989;
     }
     
     public static Class2152 method34364(final int n) {
@@ -350,7 +350,7 @@ public class Class9298
                 }
             }
         }
-        this.method34355((CompletableFuture<? extends Either<? extends Class1860, Class6797>>)CompletableFuture.completedFuture(Either.left((Object)class1866.method7114())));
+        this.method34355((CompletableFuture<? extends Either<? extends IChunk, Class6797>>)CompletableFuture.completedFuture(Either.left((Object)class1866.method7114())));
     }
     
     static {
@@ -358,7 +358,7 @@ public class Class9298
         field39872 = CompletableFuture.completedFuture(Class9298.field39871);
         field39873 = Either.right((Object)Class6797.field26732);
         field39874 = CompletableFuture.completedFuture(Class9298.field39873);
-        field39875 = Class9312.method34437();
+        field39875 = ChunkStatus.method34437();
         field39876 = Class2152.values();
     }
 }

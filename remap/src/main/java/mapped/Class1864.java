@@ -23,8 +23,8 @@ public class Class1864 extends Class1862
     }
     
     @Override
-    public BlockState method6701(final BlockPos class354) {
-        return Class7521.field29763.method11878();
+    public BlockState getBlockState(final BlockPos class354) {
+        return Class7521.field29763.getDefaultState();
     }
     
     @Nullable

@@ -4,9 +4,8 @@
 
 package mapped;
 
-import java.util.Optional;
 import com.google.common.base.MoreObjects;
-import java.util.stream.Collector;
+
 import java.util.stream.Collectors;
 import java.util.List;
 import java.util.function.Predicate;
@@ -24,8 +23,8 @@ public class Class7412 implements Class7410
     }
     
     @Override
-    public Predicate<BlockState> method22768(final Class9104<Class3833, BlockState> class9104) {
-        final Class7111<?> method32906 = class9104.method32906(this.field28549);
+    public Predicate<BlockState> method22768(final StateContainer<Block, BlockState> class9104) {
+        final IProperty<?> method32906 = class9104.getProperty(this.field28549);
         if (method32906 == null) {
             throw new RuntimeException(String.format("Unknown property '%s' on '%s'", this.field28549, class9104.method32904().toString()));
         }
@@ -52,9 +51,9 @@ public class Class7412 implements Class7410
         throw new RuntimeException(String.format("Empty value '%s' for property '%s' on '%s'", this.field28550, this.field28549, class9104.method32904().toString()));
     }
     
-    private Predicate<BlockState> method22776(final Class9104<Class3833, BlockState> class9104, final Class7111<?> class9105, final String s) {
-        if (class9105.method21830(s).isPresent()) {
-            return class9107 -> class9107.method21772((Class7111<Object>)class9106).equals(optional.get());
+    private Predicate<BlockState> method22776(final StateContainer<Block, BlockState> class9104, final IProperty<?> class9105, final String s) {
+        if (class9105.parseValue(s).isPresent()) {
+            return class9107 -> class9107.get((IProperty<Object>)class9106).equals(optional.get());
         }
         throw new RuntimeException(String.format("Unknown value '%s' for property '%s' on '%s' in '%s'", s, this.field28549, class9104.method32904().toString(), this.field28550));
     }

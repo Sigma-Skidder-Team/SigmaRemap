@@ -15,7 +15,7 @@ import java.util.Map;
 public class Class4174 extends Class4158<Class493>
 {
     private static final Map<Class299, Class5918> field18591;
-    private static final Map<Class299, Class1932> field18592;
+    private static final Map<Class299, ResourceLocation> field18592;
     
     public Class4174(final Class9550 class9550) {
         super(class9550);
@@ -24,9 +24,9 @@ public class Class4174 extends Class4158<Class493>
     public void method12497(final Class493 class493, final float n, final Class7351 class494, final Class7807 class495, final int n2, final int n3) {
         final float method2504 = class493.method2504(n);
         final BlockState method2505 = class493.method2194();
-        final boolean b = method2505.method21696() instanceof Class3933;
-        final Direction class496 = b ? method2505.method21772((Class7111<Direction>)Class3933.field17814) : null;
-        method12498(class496, 22.5f * (b ? ((2 + class496.getHorizontalIndex()) * 4) : method2505.method21772((Class7111<Integer>)Class3936.field17819)), ((Class3932)method2505.method21696()).method12050(), class493.method2505(), method2504, class494, class495, n2);
+        final boolean b = method2505.getBlock() instanceof Class3933;
+        final Direction class496 = b ? method2505.get((IProperty<Direction>)Class3933.field17814) : null;
+        method12498(class496, 22.5f * (b ? ((2 + class496.getHorizontalIndex()) * 4) : method2505.get((IProperty<Integer>)Class3936.field17819)), ((Class3932)method2505.getBlock()).method12050(), class493.method2505(), method2504, class494, class495, n2);
     }
     
     public static void method12498(final Direction class179, final float n, final Class299 class180, final GameProfile gameProfile, final float n2, final Class7351 class181, final Class7807 class182, final int n3) {
@@ -63,7 +63,7 @@ public class Class4174 extends Class4158<Class493>
     }
     
     private static Class6332 method12499(final Class299 class299, final GameProfile gameProfile) {
-        final Class1932 class300 = Class4174.field18592.get(class299);
+        final ResourceLocation class300 = Class4174.field18592.get(class299);
         if (class299 == Class298.field1713 && gameProfile != null) {
             final Class869 method5277 = Class869.method5277();
             final Map<MinecraftProfileTexture$Type, MinecraftProfileTexture> method5278 = method5277.method5302().method24295(gameProfile);
@@ -86,11 +86,11 @@ public class Class4174 extends Class4158<Class493>
             return;
         });
         field18592 = Class8349.method27851(Maps.newHashMap(), hashMap2 -> {
-            hashMap2.put(Class298.field1711, new Class1932("textures/entity/skeleton/skeleton.png"));
-            hashMap2.put(Class298.field1712, new Class1932("textures/entity/skeleton/wither_skeleton.png"));
-            hashMap2.put(Class298.field1714, new Class1932("textures/entity/zombie/zombie.png"));
-            hashMap2.put(Class298.field1715, new Class1932("textures/entity/creeper/creeper.png"));
-            hashMap2.put(Class298.field1716, new Class1932("textures/entity/enderdragon/dragon.png"));
+            hashMap2.put(Class298.field1711, new ResourceLocation("textures/entity/skeleton/skeleton.png"));
+            hashMap2.put(Class298.field1712, new ResourceLocation("textures/entity/skeleton/wither_skeleton.png"));
+            hashMap2.put(Class298.field1714, new ResourceLocation("textures/entity/zombie/zombie.png"));
+            hashMap2.put(Class298.field1715, new ResourceLocation("textures/entity/creeper/creeper.png"));
+            hashMap2.put(Class298.field1716, new ResourceLocation("textures/entity/enderdragon/dragon.png"));
             hashMap2.put(Class298.field1713, Class7634.method24003());
         });
     }

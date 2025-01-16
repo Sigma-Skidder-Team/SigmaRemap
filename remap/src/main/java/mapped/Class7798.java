@@ -180,7 +180,7 @@ public class Class7798
         }
     }
     
-    private static void method25168(final Class7492 class7492, final List<ItemStack> list, final Class1932 class7493) {
+    private static void method25168(final Class7492 class7492, final List<ItemStack> list, final ResourceLocation class7493) {
         if (list.size() != 1) {
             class7492.method23257(new Class2259("commands.drop.success.multiple_with_table", new Object[] { list.size(), class7493 }), false);
         }
@@ -201,13 +201,13 @@ public class Class7798
     private static int method25170(final CommandContext<Class7492> commandContext, final BlockPos class354, final ItemStack class355, final Class8917 class356) throws CommandSyntaxException {
         final Class7492 class357 = (Class7492)commandContext.getSource();
         final Class1849 method23250 = class357.method23250();
-        final Class7096 method23251 = method23250.method6701(class354);
+        final Class7096 method23251 = method23250.getBlockState(class354);
         return class356.method31443(commandContext, method23251.method21743(new Class9098(method23250).method32877(Class6683.field26367, class354).method32877(Class6683.field26368, method23251).method32878(Class6683.field26369, method23250.method6727(class354)).method32878(Class6683.field26362, class357.method23251()).method32877(Class6683.field26370, class355)), list -> method25168(class357, list, method23251.method21696().method11832()));
     }
     
     private static int method25171(final CommandContext<Class7492> commandContext, final Entity class399, final Class8917 class400) throws CommandSyntaxException {
         if (class399 instanceof LivingEntity) {
-            final Class1932 method2679 = ((LivingEntity)class399).method2679();
+            final ResourceLocation method2679 = ((LivingEntity)class399).method2679();
             final Class7492 class401 = (Class7492)commandContext.getSource();
             final Class9098 class402 = new Class9098(class401.method23250());
             final Entity method2680 = class401.method23251();
@@ -224,16 +224,16 @@ public class Class7798
         throw Class7798.field31961.create((Object)class399.getDisplayName());
     }
     
-    private static int method25172(final CommandContext<Class7492> commandContext, final Class1932 class1932, final Class8917 class1933) throws CommandSyntaxException {
+    private static int method25172(final CommandContext<Class7492> commandContext, final ResourceLocation class1932, final Class8917 class1933) throws CommandSyntaxException {
         final Class7492 class1934 = (Class7492)commandContext.getSource();
         return method25174(commandContext, class1932, new Class9098(class1934.method23250()).method32878(Class6683.field26362, class1934.method23251()).method32877(Class6683.field26367, new BlockPos(class1934.method23249())).method32883(Class7104.field27711), class1933);
     }
     
-    private static int method25173(final CommandContext<Class7492> commandContext, final Class1932 class1932, final BlockPos class1933, final ItemStack class1934, final Class8917 class1935) throws CommandSyntaxException {
+    private static int method25173(final CommandContext<Class7492> commandContext, final ResourceLocation class1932, final BlockPos class1933, final ItemStack class1934, final Class8917 class1935) throws CommandSyntaxException {
         return method25174(commandContext, class1932, new Class9098(((Class7492)commandContext.getSource()).method23250()).method32877(Class6683.field26367, class1933).method32877(Class6683.field26370, class1934).method32883(Class7104.field27714), class1935);
     }
     
-    private static int method25174(final CommandContext<Class7492> commandContext, final Class1932 class1932, final Class7529 class1933, final Class8917 class1934) throws CommandSyntaxException {
+    private static int method25174(final CommandContext<Class7492> commandContext, final ResourceLocation class1932, final Class7529 class1933, final Class8917 class1934) throws CommandSyntaxException {
         final Class7492 class1935 = (Class7492)commandContext.getSource();
         return class1934.method31443(commandContext, class1935.method23255().method1581().method6402(class1932).method34485(class1933), list -> method25167(class1935, list));
     }

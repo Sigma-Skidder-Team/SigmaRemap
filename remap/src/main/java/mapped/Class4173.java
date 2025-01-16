@@ -36,6 +36,6 @@ public class Class4173 extends Class4158<Class463>
     }
     
     static {
-        field18589 = new Class3687(Class1774.field9853, new Class1932("entity/enchanting_table_book"));
+        field18589 = new Class3687(Class1774.field9853, new ResourceLocation("entity/enchanting_table_book"));
     }
 }

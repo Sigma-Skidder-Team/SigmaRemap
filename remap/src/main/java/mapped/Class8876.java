@@ -14,7 +14,7 @@ public class Class8876
     private static String[] field37312;
     
     public static Class1849 method31206() {
-        final Class869 method28894 = Class8571.method28894();
+        final Class869 method28894 = Config.method28894();
         final Class1848 field4683 = method28894.field4683;
         if (field4683 == null) {
             return null;
@@ -52,7 +52,7 @@ public class Class8876
         if (method31206 == null) {
             return null;
         }
-        final Class1860 method31207 = method31206.method6904().method7402(class354.getX() >> 4, class354.getZ() >> 4, Class9312.field39989, false);
+        final IChunk method31207 = method31206.method6904().getChunk(class354.getX() >> 4, class354.getZ() >> 4, ChunkStatus.field39989, false);
         if (method31207 != null) {
             return method31207.method6727(class354);
         }

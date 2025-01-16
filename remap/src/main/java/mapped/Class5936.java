@@ -65,7 +65,7 @@ public abstract class Class5936
     public Class51 method17855(final int n, final int n2) {
         final Class51 class51 = new Class51();
         if (this.method17858()) {
-            class51.method306("id", Class90.field230.method503(this.method17866()).toString());
+            class51.method306("id", Registry.field230.getKey(this.method17866()).toString());
             class51.method298("ChunkX", n);
             class51.method298("ChunkZ", n2);
             class51.method298("references", this.field24435);

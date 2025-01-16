@@ -4,9 +4,7 @@
 
 package mapped;
 
-import java.awt.image.RenderedImage;
 import java.awt.geom.AffineTransform;
-import java.io.InputStream;
 import javax.imageio.ImageIO;
 import java.io.ByteArrayInputStream;
 import org.apache.commons.codec.binary.Base64;
@@ -115,7 +113,7 @@ public class Class4916 extends Class4825
         GL11.glScaled(1.0 + 0.1 * n, 1.0 + 0.1 * n, 0.0);
         GL11.glTranslatef((float)(-this.method14272() - 44), (float)(-this.method14274() - 44), 0.0f);
         if (this.field21027 == null) {
-            Class869.method5277().method5290().method5849(new Class1932("textures/misc/unknown_server.png"));
+            Class869.method5277().method5290().method5849(new ResourceLocation("textures/misc/unknown_server.png"));
             Class8154.method26907((float)(this.field20478 + 12), (float)(this.field20479 + 12), 64.0f, 64.0f, Class265.field1278.field1292, 0.0f, 0.0f, 64.0f, 64.0f);
         }
         else {

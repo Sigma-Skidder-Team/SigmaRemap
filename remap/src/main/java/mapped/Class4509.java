@@ -53,72 +53,72 @@ public class Class4509 extends Class4500
         this.method13444(class1851, class1853, 10, 1, 4, 10, 3, 6, Class4509.field19848, Class4509.field19848, false);
         switch (this.field19907) {
             case 0: {
-                this.method13440(class1851, Class7521.field29368.method11878(), 5, 1, 5, class1853);
-                this.method13440(class1851, Class7521.field29368.method11878(), 5, 2, 5, class1853);
-                this.method13440(class1851, Class7521.field29368.method11878(), 5, 3, 5, class1853);
-                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.WEST), 4, 3, 5, class1853);
-                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.EAST), 6, 3, 5, class1853);
-                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.SOUTH), 5, 3, 4, class1853);
-                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.NORTH), 5, 3, 6, class1853);
-                this.method13440(class1851, Class7521.field29598.method11878(), 4, 1, 4, class1853);
-                this.method13440(class1851, Class7521.field29598.method11878(), 4, 1, 5, class1853);
-                this.method13440(class1851, Class7521.field29598.method11878(), 4, 1, 6, class1853);
-                this.method13440(class1851, Class7521.field29598.method11878(), 6, 1, 4, class1853);
-                this.method13440(class1851, Class7521.field29598.method11878(), 6, 1, 5, class1853);
-                this.method13440(class1851, Class7521.field29598.method11878(), 6, 1, 6, class1853);
-                this.method13440(class1851, Class7521.field29598.method11878(), 5, 1, 4, class1853);
-                this.method13440(class1851, Class7521.field29598.method11878(), 5, 1, 6, class1853);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), 5, 1, 5, class1853);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), 5, 2, 5, class1853);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), 5, 3, 5, class1853);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29288.getDefaultState()).with((IProperty<Comparable>)Class4023.field18110, Direction.WEST), 4, 3, 5, class1853);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29288.getDefaultState()).with((IProperty<Comparable>)Class4023.field18110, Direction.EAST), 6, 3, 5, class1853);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29288.getDefaultState()).with((IProperty<Comparable>)Class4023.field18110, Direction.SOUTH), 5, 3, 4, class1853);
+                this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29288.getDefaultState()).with((IProperty<Comparable>)Class4023.field18110, Direction.NORTH), 5, 3, 6, class1853);
+                this.method13440(class1851, Class7521.field29598.getDefaultState(), 4, 1, 4, class1853);
+                this.method13440(class1851, Class7521.field29598.getDefaultState(), 4, 1, 5, class1853);
+                this.method13440(class1851, Class7521.field29598.getDefaultState(), 4, 1, 6, class1853);
+                this.method13440(class1851, Class7521.field29598.getDefaultState(), 6, 1, 4, class1853);
+                this.method13440(class1851, Class7521.field29598.getDefaultState(), 6, 1, 5, class1853);
+                this.method13440(class1851, Class7521.field29598.getDefaultState(), 6, 1, 6, class1853);
+                this.method13440(class1851, Class7521.field29598.getDefaultState(), 5, 1, 4, class1853);
+                this.method13440(class1851, Class7521.field29598.getDefaultState(), 5, 1, 6, class1853);
                 break;
             }
             case 1: {
                 for (int i = 0; i < 5; ++i) {
-                    this.method13440(class1851, Class7521.field29368.method11878(), 3, 1, 3 + i, class1853);
-                    this.method13440(class1851, Class7521.field29368.method11878(), 7, 1, 3 + i, class1853);
-                    this.method13440(class1851, Class7521.field29368.method11878(), 3 + i, 1, 3, class1853);
-                    this.method13440(class1851, Class7521.field29368.method11878(), 3 + i, 1, 7, class1853);
+                    this.method13440(class1851, Class7521.field29368.getDefaultState(), 3, 1, 3 + i, class1853);
+                    this.method13440(class1851, Class7521.field29368.getDefaultState(), 7, 1, 3 + i, class1853);
+                    this.method13440(class1851, Class7521.field29368.getDefaultState(), 3 + i, 1, 3, class1853);
+                    this.method13440(class1851, Class7521.field29368.getDefaultState(), 3 + i, 1, 7, class1853);
                 }
-                this.method13440(class1851, Class7521.field29368.method11878(), 5, 1, 5, class1853);
-                this.method13440(class1851, Class7521.field29368.method11878(), 5, 2, 5, class1853);
-                this.method13440(class1851, Class7521.field29368.method11878(), 5, 3, 5, class1853);
-                this.method13440(class1851, Class7521.field29173.method11878(), 5, 4, 5, class1853);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), 5, 1, 5, class1853);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), 5, 2, 5, class1853);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), 5, 3, 5, class1853);
+                this.method13440(class1851, Class7521.field29173.getDefaultState(), 5, 4, 5, class1853);
                 break;
             }
             case 2: {
                 for (int j = 1; j <= 9; ++j) {
-                    this.method13440(class1851, Class7521.field29159.method11878(), 1, 3, j, class1853);
-                    this.method13440(class1851, Class7521.field29159.method11878(), 9, 3, j, class1853);
+                    this.method13440(class1851, Class7521.field29159.getDefaultState(), 1, 3, j, class1853);
+                    this.method13440(class1851, Class7521.field29159.getDefaultState(), 9, 3, j, class1853);
                 }
                 for (int k = 1; k <= 9; ++k) {
-                    this.method13440(class1851, Class7521.field29159.method11878(), k, 3, 1, class1853);
-                    this.method13440(class1851, Class7521.field29159.method11878(), k, 3, 9, class1853);
+                    this.method13440(class1851, Class7521.field29159.getDefaultState(), k, 3, 1, class1853);
+                    this.method13440(class1851, Class7521.field29159.getDefaultState(), k, 3, 9, class1853);
                 }
-                this.method13440(class1851, Class7521.field29159.method11878(), 5, 1, 4, class1853);
-                this.method13440(class1851, Class7521.field29159.method11878(), 5, 1, 6, class1853);
-                this.method13440(class1851, Class7521.field29159.method11878(), 5, 3, 4, class1853);
-                this.method13440(class1851, Class7521.field29159.method11878(), 5, 3, 6, class1853);
-                this.method13440(class1851, Class7521.field29159.method11878(), 4, 1, 5, class1853);
-                this.method13440(class1851, Class7521.field29159.method11878(), 6, 1, 5, class1853);
-                this.method13440(class1851, Class7521.field29159.method11878(), 4, 3, 5, class1853);
-                this.method13440(class1851, Class7521.field29159.method11878(), 6, 3, 5, class1853);
+                this.method13440(class1851, Class7521.field29159.getDefaultState(), 5, 1, 4, class1853);
+                this.method13440(class1851, Class7521.field29159.getDefaultState(), 5, 1, 6, class1853);
+                this.method13440(class1851, Class7521.field29159.getDefaultState(), 5, 3, 4, class1853);
+                this.method13440(class1851, Class7521.field29159.getDefaultState(), 5, 3, 6, class1853);
+                this.method13440(class1851, Class7521.field29159.getDefaultState(), 4, 1, 5, class1853);
+                this.method13440(class1851, Class7521.field29159.getDefaultState(), 6, 1, 5, class1853);
+                this.method13440(class1851, Class7521.field29159.getDefaultState(), 4, 3, 5, class1853);
+                this.method13440(class1851, Class7521.field29159.getDefaultState(), 6, 3, 5, class1853);
                 for (int l = 1; l <= 3; ++l) {
-                    this.method13440(class1851, Class7521.field29159.method11878(), 4, l, 4, class1853);
-                    this.method13440(class1851, Class7521.field29159.method11878(), 6, l, 4, class1853);
-                    this.method13440(class1851, Class7521.field29159.method11878(), 4, l, 6, class1853);
-                    this.method13440(class1851, Class7521.field29159.method11878(), 6, l, 6, class1853);
+                    this.method13440(class1851, Class7521.field29159.getDefaultState(), 4, l, 4, class1853);
+                    this.method13440(class1851, Class7521.field29159.getDefaultState(), 6, l, 4, class1853);
+                    this.method13440(class1851, Class7521.field29159.getDefaultState(), 4, l, 6, class1853);
+                    this.method13440(class1851, Class7521.field29159.getDefaultState(), 6, l, 6, class1853);
                 }
-                this.method13440(class1851, Class7521.field29287.method11878(), 5, 3, 5, class1853);
+                this.method13440(class1851, Class7521.field29287.getDefaultState(), 5, 3, 5, class1853);
                 for (int n = 2; n <= 8; ++n) {
-                    this.method13440(class1851, Class7521.field29160.method11878(), 2, 3, n, class1853);
-                    this.method13440(class1851, Class7521.field29160.method11878(), 3, 3, n, class1853);
+                    this.method13440(class1851, Class7521.field29160.getDefaultState(), 2, 3, n, class1853);
+                    this.method13440(class1851, Class7521.field29160.getDefaultState(), 3, 3, n, class1853);
                     if (n <= 3 || n >= 7) {
-                        this.method13440(class1851, Class7521.field29160.method11878(), 4, 3, n, class1853);
-                        this.method13440(class1851, Class7521.field29160.method11878(), 5, 3, n, class1853);
-                        this.method13440(class1851, Class7521.field29160.method11878(), 6, 3, n, class1853);
+                        this.method13440(class1851, Class7521.field29160.getDefaultState(), 4, 3, n, class1853);
+                        this.method13440(class1851, Class7521.field29160.getDefaultState(), 5, 3, n, class1853);
+                        this.method13440(class1851, Class7521.field29160.getDefaultState(), 6, 3, n, class1853);
                     }
-                    this.method13440(class1851, Class7521.field29160.method11878(), 7, 3, n, class1853);
-                    this.method13440(class1851, Class7521.field29160.method11878(), 8, 3, n, class1853);
+                    this.method13440(class1851, Class7521.field29160.getDefaultState(), 7, 3, n, class1853);
+                    this.method13440(class1851, Class7521.field29160.getDefaultState(), 8, 3, n, class1853);
                 }
-                final BlockState class1855 = ((Class7097<O, BlockState>)Class7521.field29307.method11878()).method21773((Class7111<Comparable>)Class3917.field17752, Direction.WEST);
+                final BlockState class1855 = ((StateHolder<O, BlockState>)Class7521.field29307.getDefaultState()).with((IProperty<Comparable>)Class3917.field17752, Direction.WEST);
                 this.method13440(class1851, class1855, 9, 1, 3, class1853);
                 this.method13440(class1851, class1855, 9, 2, 3, class1853);
                 this.method13440(class1851, class1855, 9, 3, 3, class1853);

@@ -31,10 +31,10 @@ public enum Class206 implements Class198, Class200
     }
     
     static {
-        field716 = Class90.field217.method504(Class7102.field27643);
-        field717 = Class90.field217.method504(Class7102.field27644);
-        field718 = Class90.field217.method504(Class7102.field27646);
-        field719 = Class90.field217.method504(Class7102.field27647);
-        field720 = Class90.field217.method504(Class7102.field27639);
+        field716 = Registry.field217.getId(Class7102.field27643);
+        field717 = Registry.field217.getId(Class7102.field27644);
+        field718 = Registry.field217.getId(Class7102.field27646);
+        field719 = Registry.field217.getId(Class7102.field27647);
+        field720 = Registry.field217.getId(Class7102.field27639);
     }
 }

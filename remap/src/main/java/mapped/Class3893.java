@@ -13,17 +13,17 @@ public class Class3893 extends Class3892
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class3893.field17564);
     }
     
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        return ((Class7097<O, BlockState>)this.method11878()).method21773((Class7111<Comparable>)Class3893.field17564, class7074.method21644().getOpposite());
+        return ((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3893.field17564, class7074.method21644().getOpposite());
     }
     
     @Override
-    public Class2117 method11858(final BlockState class7096) {
-        return Class2117.field12344;
+    public PushReaction method11858(final BlockState class7096) {
+        return PushReaction.PUSH_ONLY;
     }
 }

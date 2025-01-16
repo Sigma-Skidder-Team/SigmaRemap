@@ -19,7 +19,7 @@ public class Class8897
         if (Class8897.field37407.put(class7499, new Class8449(class7501, class7500, class7502)) == null) {
             return;
         }
-        throw new IllegalStateException("Duplicate registration for type " + Class90.field210.method503(class7499));
+        throw new IllegalStateException("Duplicate registration for type " + Registry.field210.getKey(class7499));
     }
     
     public static Class2194 method31328(final EntityType<?> class7499) {

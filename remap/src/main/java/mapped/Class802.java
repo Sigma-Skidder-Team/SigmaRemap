@@ -88,7 +88,7 @@ public class Class802 extends Class789
     }
     
     @Override
-    public Class1932 method4161() {
+    public ResourceLocation method4161() {
         if (this.method4636()) {
             return this.getType().method23368();
         }

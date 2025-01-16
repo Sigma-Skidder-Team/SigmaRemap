@@ -92,7 +92,7 @@ public class Class7335
                 return true;
             }
             case 76: {
-                final Class869 method28894 = Class8571.method28894();
+                final Class869 method28894 = Config.method28894();
                 method28894.field4636.field9366 = 1;
                 method28894.field4647.method3807().method3762(new StringTextComponent(Class8822.method30773("of.message.loadingVisibleChunks", new Object[0])), 201435902);
                 return true;
@@ -110,8 +110,8 @@ public class Class7335
                 return true;
             }
             case 79: {
-                if (Class8571.method28955()) {
-                    Class8571.method28894().method5244(new Class713(null, Class8571.method28962()));
+                if (Config.method28955()) {
+                    Config.method28894().method5244(new Class713(null, Config.method28962()));
                 }
                 return true;
             }
@@ -140,7 +140,7 @@ public class Class7335
                 return true;
             }
             case 82: {
-                if (Class8571.method28955()) {
+                if (Config.method28955()) {
                     Class9216.method33788();
                     Class9216.method33708();
                 }
@@ -160,7 +160,7 @@ public class Class7335
             switch (Class8540.field35858[field4691.method21449().ordinal()]) {
                 case 1: {
                     final BlockPos method21447 = ((Class7005)field4691).method21447();
-                    final BlockState method21448 = this.field28331.field4684.world.method6701(method21447);
+                    final BlockState method21448 = this.field28331.field4684.world.getBlockState(method21447);
                     if (!b) {
                         this.method22501(method21448, method21447, null);
                         this.method22497("debug.inspect.client.block", new Object[0]);
@@ -181,7 +181,7 @@ public class Class7335
                 }
                 case 2: {
                     final Entity method21450 = ((Class7007)field4691).method21452();
-                    final Class1932 method21451 = Class90.field210.method503(method21450.getType());
+                    final ResourceLocation method21451 = Registry.field210.getKey(method21450.getType());
                     if (!b) {
                         this.method22502(method21451, method21450.method1934(), null);
                         this.method22497("debug.inspect.client.entity", new Object[0]);
@@ -217,7 +217,7 @@ public class Class7335
         this.method22508(String.format(Locale.ROOT, "/setblock %d %d %d %s", class7097.getX(), class7097.getY(), class7097.getZ(), sb));
     }
     
-    private void method22502(final Class1932 class1932, final Vec3d class1933, final Class51 class1934) {
+    private void method22502(final ResourceLocation class1932, final Vec3d class1933, final Class51 class1934) {
         String s;
         if (class1934 == null) {
             s = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f", class1932.toString(), class1933.x, class1933.y, class1933.z);
@@ -570,7 +570,7 @@ public class Class7335
             }
             if (n5 >= 1000L) {
                 if (this.field28336 != 0L) {
-                    this.method22498("debug.crash.warning", MathHelper.method35649(n4 / 1000.0f));
+                    this.method22498("debug.crash.warning", MathHelper.ceil(n4 / 1000.0f));
                 }
                 else {
                     this.method22497("debug.crash.message", new Object[0]);

@@ -9,10 +9,10 @@ import java.util.Random;
 public class Class4519 extends Class4515
 {
     private final Class2052 field19930;
-    private final Class1932 field19931;
+    private final ResourceLocation field19931;
     private final boolean field19932;
     
-    public Class4519(final Class1795 class1795, final Class1932 field19931, final BlockPos field19932, final Class2052 field19933, final boolean field19934) {
+    public Class4519(final Class1795 class1795, final ResourceLocation field19931, final BlockPos field19932, final Class2052 field19933, final boolean field19934) {
         super(Class9520.field40997, 0);
         this.field19920 = field19932;
         this.field19930 = field19933;
@@ -23,7 +23,7 @@ public class Class4519 extends Class4515
     
     public Class4519(final Class1795 class1795, final Class51 class1796) {
         super(Class9520.field40997, class1796);
-        this.field19931 = new Class1932(class1796.method323("Template"));
+        this.field19931 = new ResourceLocation(class1796.method323("Template"));
         this.field19932 = class1796.method329("isBeached");
         this.field19930 = Class2052.valueOf(class1796.method323("Rot"));
         this.method13516(class1795);

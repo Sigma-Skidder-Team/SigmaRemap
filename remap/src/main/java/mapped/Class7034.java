@@ -11,7 +11,7 @@ import com.google.gson.JsonObject;
 public class Class7034 extends Class7020<Class150>
 {
     public Class7034() {
-        super(new Class1932("entity_properties"), Class150.class);
+        super(new ResourceLocation("entity_properties"), Class150.class);
     }
     
     public void method21515(final JsonObject jsonObject, final Class150 class150, final JsonSerializationContext jsonSerializationContext) {

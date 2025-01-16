@@ -39,7 +39,7 @@ public class Class5024
     }
     
     public static int method15245(final ItemStack class8321) {
-        return Class90.field211.method504(class8321.getItem());
+        return Registry.field211.getId(class8321.getItem());
     }
     
     private boolean method15246(final int n) {

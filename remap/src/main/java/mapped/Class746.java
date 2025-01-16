@@ -10,7 +10,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class746 extends Class516<Class3423>
 {
-    private static final Class1932 field4032;
+    private static final ResourceLocation field4032;
     private int field4033;
     private final Class669[] field4034;
     private int field4035;
@@ -261,6 +261,6 @@ public class Class746 extends Class516<Class3423>
     }
     
     static {
-        field4032 = new Class1932("textures/gui/container/villager2.png");
+        field4032 = new ResourceLocation("textures/gui/container/villager2.png");
     }
 }

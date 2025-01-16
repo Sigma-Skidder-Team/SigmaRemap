@@ -10,5 +10,5 @@ public interface Class4778<T extends Entity, M extends Class5845<T>>
 {
     M method13979();
     
-    Class1932 method13950(final T p0);
+    ResourceLocation method13950(final T p0);
 }

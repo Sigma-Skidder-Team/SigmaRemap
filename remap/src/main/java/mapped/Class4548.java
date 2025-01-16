@@ -19,8 +19,8 @@ public class Class4548 extends Class4535<Class5140>
         for (int i = 0; i < 16; ++i) {
             for (int j = 0; j < 16; ++j) {
                 class1855.setPos(class1853.getX() + i, class1854.field22125, class1853.getZ() + j);
-                if (class1851.method6701(class1855).method21706()) {
-                    class1851.method6688(class1855, class1854.field22126, 2);
+                if (class1851.getBlockState(class1855).method21706()) {
+                    class1851.setBlockState(class1855, class1854.field22126, 2);
                 }
             }
         }

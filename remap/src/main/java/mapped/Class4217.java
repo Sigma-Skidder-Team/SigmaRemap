@@ -11,7 +11,7 @@ public class Class4217 extends Class4211
     private static String[] field19011;
     private final Class8697 field19012;
     
-    public Class4217(final Class1932 class1932, final Class8697 field19012) {
+    public Class4217(final ResourceLocation class1932, final Class8697 field19012) {
         super(class1932);
         this.field19012 = field19012;
     }

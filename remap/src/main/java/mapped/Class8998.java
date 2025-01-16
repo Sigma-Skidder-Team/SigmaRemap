@@ -43,7 +43,7 @@ public class Class8998
         this.field37961 = 0;
         this.field37962 = null;
         this.field37963 = 0;
-        final String[] method28937 = Class8571.method28937(s, ".");
+        final String[] method28937 = Config.method28937(s, ".");
         this.field37958 = Arrays.copyOfRange(method28937, 0, method28937.length - 1);
         this.field37959 = method28937[method28937.length - 1];
         if (s2.startsWith("!")) {
@@ -140,7 +140,7 @@ public class Class8998
         }
         final Class52 class42 = (Class52)class41;
         if (!s.equals("count")) {
-            final int method28933 = Class8571.method28933(s, -1);
+            final int method28933 = Config.method28933(s, -1);
             return (method28933 >= 0 && method28933 < class42.size()) ? class42.get(method28933) : null;
         }
         return IntNBT.valueOf(class42.size());

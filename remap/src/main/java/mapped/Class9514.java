@@ -5,15 +5,12 @@
 package mapped;
 
 import com.mojang.brigadier.Message;
-import java.util.concurrent.CompletableFuture;
-import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.datafixers.util.Either;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
@@ -36,7 +33,7 @@ public class Class9514
             class7492.method23250().method6764().method29601();
             either.ifLeft(class7495 -> {
                 class7495.method27443();
-                final Class1932 class7496;
+                final ResourceLocation class7496;
                 class7496.toString();
                 final String s;
                 if (!(!b2)) {
@@ -49,7 +46,7 @@ public class Class9514
                 return;
             }).ifRight(class7500 -> {
                 class7500.method25621();
-                final Class1932 class7501;
+                final ResourceLocation class7501;
                 new StringBuilder().append("#").append(class7501.toString()).toString();
                 final String s2;
                 if (!(!b3)) {

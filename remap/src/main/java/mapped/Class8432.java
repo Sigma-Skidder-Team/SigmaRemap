@@ -70,11 +70,11 @@ public class Class8432
     public static final Class6908 field34658;
     
     private static Class6908 method28154(final String s, final boolean b) {
-        return Class90.method511(Class90.field222, s, new Class6908(b));
+        return Registry.method511(Registry.field222, s, new Class6908(b));
     }
     
     private static <T extends Class6909> Class6907<T> method28155(final String s, final Class6382<T> class6382) {
-        return Class90.method511(Class90.field222, s, new Class6907<T>(false, class6382));
+        return Registry.method511(Registry.field222, s, new Class6907<T>(false, class6382));
     }
     
     static {

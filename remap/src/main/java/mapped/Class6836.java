@@ -36,7 +36,7 @@ public class Class6836 extends Class6835
         this(class7795.method25124(), class7796, n, n2, b, n3, class7797, n4, n5, n6, false);
     }
     
-    public Class6836(final Class1932 class1932, final Class286 class1933, final float field26835, final float field26836, final boolean field26837, final int field26838, final Class229 field26839, final float field26840, final float field26841, final float field26842, final boolean field26843) {
+    public Class6836(final ResourceLocation class1932, final Class286 class1933, final float field26835, final float field26836, final boolean field26837, final int field26838, final Class229 field26839, final float field26840, final float field26841, final float field26842, final boolean field26843) {
         super(class1932, class1933);
         this.field26835 = field26835;
         this.field26836 = field26836;

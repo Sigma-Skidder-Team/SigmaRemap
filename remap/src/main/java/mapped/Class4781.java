@@ -42,7 +42,7 @@ public class Class4781<T extends Entity & Class407> extends Class4703<T>
     }
     
     @Override
-    public Class1932 method13950(final Entity class399) {
+    public ResourceLocation method13950(final Entity class399) {
         return Class1774.field9853;
     }
 }

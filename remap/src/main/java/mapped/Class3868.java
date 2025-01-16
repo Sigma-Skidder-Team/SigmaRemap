@@ -28,7 +28,7 @@ public class Class3868 extends Class3869 implements Class3867
     
     @Override
     public boolean method11943(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        return class7096.method21761(class7097, class7098, Direction.UP) && class7096.method21696() != Class7521.field29642;
+        return class7096.isSolidSide(class7097, class7098, Direction.UP) && class7096.getBlock() != Class7521.field29642;
     }
     
     @Override
@@ -53,7 +53,7 @@ public class Class3868 extends Class3869 implements Class3867
     
     @Override
     public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
-        if (class7096.method21772(Class3868.field17508) != Class182.field564) {
+        if (class7096.get(Class3868.field17508) != Class182.field564) {
             final Class7099 method6702 = class7097.method6702(class7098);
             if (super.method11843(class7096, class7097, class7098)) {
                 if (method6702.method21793(Class7324.field28319)) {
@@ -64,8 +64,8 @@ public class Class3868 extends Class3869 implements Class3867
             }
             return false;
         }
-        final BlockState method6703 = class7097.method6701(class7098.method1139());
-        return method6703.method21696() == this && method6703.method21772(Class3868.field17508) == Class182.field565;
+        final BlockState method6703 = class7097.getBlockState(class7098.method1139());
+        return method6703.getBlock() == this && method6703.get(Class3868.field17508) == Class182.field565;
     }
     
     @Override
@@ -85,6 +85,6 @@ public class Class3868 extends Class3869 implements Class3867
     
     static {
         field17508 = Class3869.field17511;
-        field17509 = Class3833.method11778(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
+        field17509 = Block.method11778(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
     }
 }

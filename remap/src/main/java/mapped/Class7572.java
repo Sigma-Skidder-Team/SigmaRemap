@@ -5,7 +5,7 @@
 package mapped;
 
 import com.mojang.brigadier.Message;
-import com.google.common.collect.UnmodifiableIterator;
+
 import java.util.Optional;
 import com.mojang.brigadier.ImmutableStringReader;
 import java.util.Iterator;
@@ -36,27 +36,27 @@ public class Class7572
     private static final Function<SuggestionsBuilder, CompletableFuture<Suggestions>> field30031;
     private final StringReader field30032;
     private final boolean field30033;
-    private final Map<Class7111<?>, Comparable<?>> field30034;
+    private final Map<IProperty<?>, Comparable<?>> field30034;
     private final Map<String, String> field30035;
-    private Class1932 field30036;
-    private Class9104<Class3833, Class7096> field30037;
+    private ResourceLocation field30036;
+    private StateContainer<Block, Class7096> field30037;
     private Class7096 field30038;
     private Class51 field30039;
-    private Class1932 field30040;
+    private ResourceLocation field30040;
     private int field30041;
     private Function<SuggestionsBuilder, CompletableFuture<Suggestions>> field30042;
     
     public Class7572(final StringReader field30032, final boolean field30033) {
         this.field30034 = Maps.newHashMap();
         this.field30035 = Maps.newHashMap();
-        this.field30036 = new Class1932("");
-        this.field30040 = new Class1932("");
+        this.field30036 = new ResourceLocation("");
+        this.field30040 = new ResourceLocation("");
         this.field30042 = Class7572.field30031;
         this.field30032 = field30032;
         this.field30033 = field30033;
     }
     
-    public Map<Class7111<?>, Comparable<?>> method23798() {
+    public Map<IProperty<?>, Comparable<?>> method23798() {
         return this.field30034;
     }
     
@@ -71,7 +71,7 @@ public class Class7572
     }
     
     @Nullable
-    public Class1932 method23801() {
+    public ResourceLocation method23801() {
         return this.field30040;
     }
     
@@ -124,14 +124,14 @@ public class Class7572
     
     private CompletableFuture<Suggestions> method23805(final SuggestionsBuilder suggestionsBuilder) {
         final String lowerCase = suggestionsBuilder.getRemaining().toLowerCase(Locale.ROOT);
-        for (final Class7111 class7111 : this.field30038.method21770()) {
+        for (final IProperty class7111 : this.field30038.method21770()) {
             if (this.field30034.containsKey(class7111)) {
                 continue;
             }
-            if (!class7111.method21826().startsWith(lowerCase)) {
+            if (!class7111.getName().startsWith(lowerCase)) {
                 continue;
             }
-            suggestionsBuilder.suggest(class7111.method21826() + '=');
+            suggestionsBuilder.suggest(class7111.getName() + '=');
         }
         return suggestionsBuilder.buildFuture();
     }
@@ -140,18 +140,18 @@ public class Class7572
         final String lowerCase = suggestionsBuilder.getRemaining().toLowerCase(Locale.ROOT);
         if (this.field30040 != null) {
             if (!this.field30040.method7797().isEmpty()) {
-                final Class7909<Class3833> method18460 = Class7188.method22057().method18460(this.field30040);
+                final Class7909<Block> method18460 = Class7188.method22057().method18460(this.field30040);
                 if (method18460 != null) {
-                    final Iterator<Class3833> iterator = method18460.method25616().iterator();
+                    final Iterator<Block> iterator = method18460.method25616().iterator();
                     while (iterator.hasNext()) {
-                        for (final Class7111 class7111 : iterator.next().method11876().method32905()) {
-                            if (this.field30035.containsKey(class7111.method21826())) {
+                        for (final IProperty class7111 : iterator.next().getStateContainer().method32905()) {
+                            if (this.field30035.containsKey(class7111.getName())) {
                                 continue;
                             }
-                            if (!class7111.method21826().startsWith(lowerCase)) {
+                            if (!class7111.getName().startsWith(lowerCase)) {
                                 continue;
                             }
-                            suggestionsBuilder.suggest(class7111.method21826() + '=');
+                            suggestionsBuilder.suggest(class7111.getName() + '=');
                         }
                     }
                 }
@@ -172,9 +172,9 @@ public class Class7572
     private boolean method23808() {
         if (this.field30038 == null) {
             if (this.field30040 != null) {
-                final Class7909<Class3833> method18460 = Class7188.method22057().method18460(this.field30040);
+                final Class7909<Block> method18460 = Class7188.method22057().method18460(this.field30040);
                 if (method18460 != null) {
-                    final Iterator<Class3833> iterator = method18460.method25616().iterator();
+                    final Iterator<Block> iterator = method18460.method25616().iterator();
                     while (iterator.hasNext()) {
                         if (!iterator.next().method11802()) {
                             continue;
@@ -207,10 +207,10 @@ public class Class7572
         return suggestionsBuilder.buildFuture();
     }
     
-    private static <T extends Comparable<T>> SuggestionsBuilder method23811(final SuggestionsBuilder suggestionsBuilder, final Class7111<T> class7111) {
-        for (final Comparable<T> comparable : class7111.method21829()) {
+    private static <T extends Comparable<T>> SuggestionsBuilder method23811(final SuggestionsBuilder suggestionsBuilder, final IProperty<T> class7111) {
+        for (final Comparable<T> comparable : class7111.getAllowedValues()) {
             if (!(comparable instanceof Integer)) {
-                suggestionsBuilder.suggest(class7111.method21831((T)comparable));
+                suggestionsBuilder.suggest(class7111.getName((T)comparable));
             }
             else {
                 suggestionsBuilder.suggest((int)comparable);
@@ -223,19 +223,19 @@ public class Class7572
         int n = 0;
         if (this.field30040 != null) {
             if (!this.field30040.method7797().isEmpty()) {
-                final Class7909<Class3833> method18460 = Class7188.method22057().method18460(this.field30040);
+                final Class7909<Block> method18460 = Class7188.method22057().method18460(this.field30040);
                 if (method18460 != null) {
-                    for (final Class3833 class3833 : method18460.method25616()) {
-                        final Class7111<?> method18461 = class3833.method11876().method32906(s);
+                    for (final Block class3833 : method18460.method25616()) {
+                        final IProperty<?> method18461 = class3833.getStateContainer().getProperty(s);
                         if (method18461 != null) {
                             method23811(suggestionsBuilder, method18461);
                         }
                         if (n != 0) {
                             continue;
                         }
-                        final Iterator<Class7111<?>> iterator2 = class3833.method11876().method32905().iterator();
+                        final Iterator<IProperty<?>> iterator2 = class3833.getStateContainer().method32905().iterator();
                         while (iterator2.hasNext()) {
-                            if (this.field30035.containsKey(iterator2.next().method21826())) {
+                            if (this.field30035.containsKey(iterator2.next().getName())) {
                                 continue;
                             }
                             n = 1;
@@ -254,12 +254,12 @@ public class Class7572
     
     private CompletableFuture<Suggestions> method23813(final SuggestionsBuilder suggestionsBuilder) {
         if (suggestionsBuilder.getRemaining().isEmpty()) {
-            final Class7909<Class3833> method18460 = Class7188.method22057().method18460(this.field30040);
+            final Class7909<Block> method18460 = Class7188.method22057().method18460(this.field30040);
             if (method18460 != null) {
                 boolean b = false;
                 boolean b2 = false;
-                for (final Class3833 class3833 : method18460.method25616()) {
-                    b |= !class3833.method11876().method32905().isEmpty();
+                for (final Block class3833 : method18460.method25616()) {
+                    b |= !class3833.getStateContainer().method32905().isEmpty();
                     b2 |= class3833.method11802();
                     if (b && b2) {
                         break;
@@ -296,19 +296,19 @@ public class Class7572
         if (this.field30033) {
             Class7491.method23219(Class7188.method22057().method18462(), suggestionsBuilder, String.valueOf('#'));
         }
-        Class7491.method23220(Class90.field208.method507(), suggestionsBuilder);
+        Class7491.method23220(Registry.BLOCK.method507(), suggestionsBuilder);
         return suggestionsBuilder.buildFuture();
     }
     
     public void method23817() throws CommandSyntaxException {
         this.field30032.getCursor();
-        this.field30036 = Class1932.method7799(this.field30032);
-        final Class3833 class3833 = Class90.field208.method506(this.field30036).orElseThrow(() -> {
+        this.field30036 = ResourceLocation.method7799(this.field30032);
+        final Block class3833 = Registry.BLOCK.method506(this.field30036).orElseThrow(() -> {
             this.field30032.setCursor(cursor);
             return Class7572.field30025.createWithContext((ImmutableStringReader)this.field30032, (Object)this.field30036.toString());
         });
-        this.field30037 = class3833.method11876();
-        this.field30038 = class3833.method11878();
+        this.field30037 = class3833.getStateContainer();
+        this.field30038 = class3833.getDefaultState();
     }
     
     public void method23818() throws CommandSyntaxException {
@@ -316,7 +316,7 @@ public class Class7572
             this.field30042 = this::method23815;
             this.field30032.expect('#');
             this.field30041 = this.field30032.getCursor();
-            this.field30040 = Class1932.method7799(this.field30032);
+            this.field30040 = ResourceLocation.method7799(this.field30032);
             return;
         }
         throw Class7572.field30024.create();
@@ -333,7 +333,7 @@ public class Class7572
             this.field30032.skipWhitespace();
             final int cursor = this.field30032.getCursor();
             final String string = this.field30032.readString();
-            final Class7111<?> method32906 = this.field30037.method32906(string);
+            final IProperty<?> method32906 = this.field30037.getProperty(string);
             if (method32906 == null) {
                 this.field30032.setCursor(cursor);
                 throw Class7572.field30026.createWithContext((ImmutableStringReader)this.field30032, (Object)this.field30036.toString(), (Object)string);
@@ -349,7 +349,7 @@ public class Class7572
             }
             this.field30032.skip();
             this.field30032.skipWhitespace();
-            this.field30042 = (Function<SuggestionsBuilder, CompletableFuture<Suggestions>>)(suggestionsBuilder2 -> method23811(suggestionsBuilder2, (Class7111<Comparable>)class7111).buildFuture());
+            this.field30042 = (Function<SuggestionsBuilder, CompletableFuture<Suggestions>>)(suggestionsBuilder2 -> method23811(suggestionsBuilder2, (IProperty<Comparable>)class7111).buildFuture());
             this.method23822(method32906, this.field30032.readString(), this.field30032.getCursor());
             this.field30042 = this::method23810;
             this.field30032.skipWhitespace();
@@ -428,18 +428,18 @@ public class Class7572
         this.field30039 = new Class5704(this.field30032).method16945();
     }
     
-    private <T extends Comparable<T>> void method23822(final Class7111<T> class7111, final String s, final int cursor) throws CommandSyntaxException {
-        final Optional method21830 = class7111.method21830(s);
+    private <T extends Comparable<T>> void method23822(final IProperty<T> class7111, final String s, final int cursor) throws CommandSyntaxException {
+        final Optional method21830 = class7111.parseValue(s);
         if (!method21830.isPresent()) {
             this.field30032.setCursor(cursor);
-            throw Class7572.field30028.createWithContext((ImmutableStringReader)this.field30032, (Object)this.field30036.toString(), (Object)class7111.method21826(), (Object)s);
+            throw Class7572.field30028.createWithContext((ImmutableStringReader)this.field30032, (Object)this.field30036.toString(), (Object)class7111.getName(), (Object)s);
         }
-        this.field30038 = (Class7096)((Class7097<Object, Object>)this.field30038).method21773(class7111, method21830.get());
+        this.field30038 = (Class7096)((StateHolder<Object, Object>)this.field30038).with(class7111, method21830.get());
         this.field30034.put(class7111, (Comparable<?>)method21830.get());
     }
     
     public static String toString(final Class7096 class7096) {
-        final StringBuilder sb = new StringBuilder(Class90.field208.method503(class7096.method21696()).toString());
+        final StringBuilder sb = new StringBuilder(Registry.BLOCK.getKey(class7096.method21696()).toString());
         if (!class7096.method21770().isEmpty()) {
             sb.append('[');
             int n = 0;
@@ -447,7 +447,7 @@ public class Class7572
                 if (n != 0) {
                     sb.append(',');
                 }
-                method23823(sb, (Class7111<Comparable>)entry.getKey(), (Comparable<?>)entry.getValue());
+                method23823(sb, (IProperty<Comparable>)entry.getKey(), (Comparable<?>)entry.getValue());
                 n = 1;
             }
             sb.append(']');
@@ -455,10 +455,10 @@ public class Class7572
         return sb.toString();
     }
     
-    private static <T extends Comparable<T>> void method23823(final StringBuilder sb, final Class7111<T> class7111, final Comparable<?> comparable) {
-        sb.append(class7111.method21826());
+    private static <T extends Comparable<T>> void method23823(final StringBuilder sb, final IProperty<T> class7111, final Comparable<?> comparable) {
+        sb.append(class7111.getName());
         sb.append('=');
-        sb.append(class7111.method21831((T)comparable));
+        sb.append(class7111.getName((T)comparable));
     }
     
     public CompletableFuture<Suggestions> method23824(final SuggestionsBuilder suggestionsBuilder) {

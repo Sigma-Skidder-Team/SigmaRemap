@@ -41,7 +41,7 @@ public class Class9357
         this.field40142 = (List<Class7591>)ImmutableList.copyOf((Collection)list);
     }
     
-    public <S extends Class7098<S>> boolean method34688(final Class9104<?, S> class9104, final S n) {
+    public <S extends IStateHolder<S>> boolean method34688(final StateContainer<?, S> class9104, final S n) {
         final Iterator<Class7591> iterator = this.field40142.iterator();
         while (iterator.hasNext()) {
             if (iterator.next().method23885(class9104, n)) {
@@ -53,14 +53,14 @@ public class Class9357
     }
     
     public boolean method34689(final BlockState class7096) {
-        return this.method34688(class7096.method21696().method11876(), class7096);
+        return this.method34688(class7096.getBlock().getStateContainer(), class7096);
     }
     
     public boolean method34690(final Class7099 class7099) {
         return this.method34688(class7099.method21779().method22146(), class7099);
     }
     
-    public void method34691(final Class9104<?, ?> class9104, final Consumer<String> consumer) {
+    public void method34691(final StateContainer<?, ?> class9104, final Consumer<String> consumer) {
         this.field40142.forEach(class9106 -> class9106.method23887(class9105, consumer2));
     }
     

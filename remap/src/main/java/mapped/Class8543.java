@@ -6,8 +6,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import org.apache.logging.log4j.LogManager;
-import java.util.HashMap;
-import java.util.List;
+
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import org.lwjgl.opengl.GL11;
@@ -89,10 +88,10 @@ public class Class8543
     public static void method28668() {
         Class8726.method29989(Class8726::method29984);
         if (GL.getCapabilities().GL_NV_fog_distance) {
-            if (Class8571.method28841()) {
+            if (Config.method28841()) {
                 Class8933.method31591(34138, 34139);
             }
-            if (Class8571.method28842()) {
+            if (Config.method28842()) {
                 Class8933.method31591(34138, 34140);
             }
         }

@@ -39,6 +39,6 @@ public class Class8478
     }
     
     public VoxelShape method28310(final Class7099 class7099, final Class1855 class7100, final BlockPos class7101) {
-        return this.field34792.method8359(class7099) ? class7099.method21798(class7100, class7101) : Class7698.method24486();
+        return this.field34792.method8359(class7099) ? class7099.method21798(class7100, class7101) : VoxelShapes.method24486();
     }
 }

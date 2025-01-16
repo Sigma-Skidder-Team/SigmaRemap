@@ -6,13 +6,13 @@ package mapped;
 
 public class Class4734 extends Class4712<Class790, Class5843<Class790>>
 {
-    private static final Class1932 field20340;
+    private static final ResourceLocation field20340;
     
     public Class4734(final Class8551 class8551) {
         super(class8551, new Class5843(), 0.9f);
     }
     
-    public Class1932 method14053(final Class790 class790) {
+    public ResourceLocation method14053(final Class790 class790) {
         return Class4734.field20340;
     }
     
@@ -22,6 +22,6 @@ public class Class4734 extends Class4712<Class790, Class5843<Class790>>
     }
     
     static {
-        field20340 = new Class1932("textures/entity/bear/polarbear.png");
+        field20340 = new ResourceLocation("textures/entity/bear/polarbear.png");
     }
 }

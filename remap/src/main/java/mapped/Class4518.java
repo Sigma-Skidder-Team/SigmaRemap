@@ -12,11 +12,11 @@ public class Class4518 extends Class4515
 {
     private final Class1957 field19925;
     private final float field19926;
-    private final Class1932 field19927;
+    private final ResourceLocation field19927;
     private final Class2052 field19928;
     private final boolean field19929;
     
-    public Class4518(final Class1795 class1795, final Class1932 field19927, final BlockPos field19928, final Class2052 field19929, final float field19930, final Class1957 field19931, final boolean field19932) {
+    public Class4518(final Class1795 class1795, final ResourceLocation field19927, final BlockPos field19928, final Class2052 field19929, final float field19930, final Class1957 field19931, final boolean field19932) {
         super(Class9520.field40978, 0);
         this.field19927 = field19927;
         this.field19920 = field19928;
@@ -29,7 +29,7 @@ public class Class4518 extends Class4515
     
     public Class4518(final Class1795 class1795, final Class51 class1796) {
         super(Class9520.field40978, class1796);
-        this.field19927 = new Class1932(class1796.method323("Template"));
+        this.field19927 = new ResourceLocation(class1796.method323("Template"));
         this.field19928 = Class2052.valueOf(class1796.method323("Rot"));
         this.field19926 = class1796.method321("Integrity");
         this.field19925 = Class1957.valueOf(class1796.method323("BiomeType"));
@@ -61,15 +61,15 @@ public class Class4518 extends Class4515
                 class357.method4188(class355, class355.method6784(class354), Class2101.field12177, null, null);
                 class355.method6886(class357);
                 if (class354.getY() <= class355.method6743()) {
-                    class355.method6688(class354, Class7521.field29173.method11878(), 2);
+                    class355.setBlockState(class354, Class7521.field29173.getDefaultState(), 2);
                 }
                 else {
-                    class355.method6688(class354, Class7521.field29147.method11878(), 2);
+                    class355.setBlockState(class354, Class7521.field29147.getDefaultState(), 2);
                 }
             }
         }
         else {
-            class355.method6688(class354, ((Class7097<O, BlockState>)Class7521.field29292.method11878()).method21773((Class7111<Comparable>)Class3865.field17499, class355.method6702(class354).method21793(Class7324.field28319)), 2);
+            class355.setBlockState(class354, ((StateHolder<O, BlockState>)Class7521.field29292.getDefaultState()).with((IProperty<Comparable>)Class3865.field17499, class355.method6702(class354).method21793(Class7324.field28319)), 2);
             final TileEntity method6727 = class355.method6727(class354);
             if (method6727 instanceof Class475) {
                 ((Class475)method6727).method2327(this.field19929 ? Class9020.field38094 : Class9020.field38093, random.nextLong());
@@ -96,12 +96,12 @@ public class Class4518 extends Class4515
             final int method1077 = class357.getZ();
             int b = class354.getY() - 1;
             final Mutable class358 = new Mutable(method1076, b, method1077);
-            BlockState class359 = class355.method6701(class358);
+            BlockState class359 = class355.getBlockState(class358);
             Class7099 class360 = class355.method6702(class358);
             while (true) {
                 if (!class359.method21706()) {
                     if (!class360.method21793(Class7324.field28319)) {
-                        if (!class359.method21696().method11785(Class7188.field27917)) {
+                        if (!class359.getBlock().method11785(Class7188.field27917)) {
                             break;
                         }
                     }
@@ -111,7 +111,7 @@ public class Class4518 extends Class4515
                 }
                 --b;
                 class358.setPos(method1076, b, method1077);
-                class359 = class355.method6701(class358);
+                class359 = class355.getBlockState(class358);
                 class360 = class355.method6702(class358);
             }
             while (true) {

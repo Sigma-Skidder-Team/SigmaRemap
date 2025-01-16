@@ -43,20 +43,20 @@ public class Class7747 extends Class7746
     
     @Override
     public Class9468 method24721(BlockPos class354, final int n) {
-        if (this.field31658.method6701(class354).method21706()) {
+        if (this.field31658.getBlockState(class354).method21706()) {
             BlockPos class355;
-            for (class355 = class354.method1139(); class355.getY() > 0 && this.field31658.method6701(class355).method21706(); class355 = class355.method1139()) {}
+            for (class355 = class354.method1139(); class355.getY() > 0 && this.field31658.getBlockState(class355).method21706(); class355 = class355.method1139()) {}
             if (class355.getY() > 0) {
                 return super.method24721(class355.method1137(), n);
             }
-            while (class355.getY() < this.field31658.method6986() && this.field31658.method6701(class355).method21706()) {
+            while (class355.getY() < this.field31658.method6986() && this.field31658.getBlockState(class355).method21706()) {
                 class355 = class355.method1137();
             }
             class354 = class355;
         }
-        if (this.field31658.method6701(class354).method21697().method26439()) {
+        if (this.field31658.getBlockState(class354).method21697().method26439()) {
             BlockPos class356;
-            for (class356 = class354.method1137(); class356.getY() < this.field31658.method6986() && this.field31658.method6701(class356).method21697().method26439(); class356 = class356.method1137()) {}
+            for (class356 = class354.method1137(); class356.getY() < this.field31658.method6986() && this.field31658.getBlockState(class356).method21697().method26439(); class356 = class356.method1137()) {}
             return super.method24721(class356, n);
         }
         return super.method24721(class354, n);
@@ -70,11 +70,11 @@ public class Class7747 extends Class7746
     private int method24744() {
         if (this.field31657.method1706() && this.method24742()) {
             int method35644 = MathHelper.floor(this.field31657.getPosY());
-            Class3833 class3833 = this.field31658.method6701(new BlockPos(this.field31657.getPosX(), method35644, this.field31657.getPosZ())).method21696();
+            Block class3833 = this.field31658.getBlockState(new BlockPos(this.field31657.getPosX(), method35644, this.field31657.getPosZ())).method21696();
             int n = 0;
             while (class3833 == Class7521.field29173) {
                 ++method35644;
-                class3833 = this.field31658.method6701(new BlockPos(this.field31657.getPosX(), method35644, this.field31657.getPosZ())).method21696();
+                class3833 = this.field31658.getBlockState(new BlockPos(this.field31657.getPosX(), method35644, this.field31657.getPosZ())).method21696();
                 if (++n <= 16) {
                     continue;
                 }
@@ -199,7 +199,7 @@ public class Class7747 extends Class7746
     
     private boolean method24746(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final Vec3d class5487, final double n7, final double n8) {
         for (final BlockPos class5488 : BlockPos.getAllInBoxMutable(new BlockPos(n, n2, n3), new BlockPos(n + n4 - 1, n2 + n5 - 1, n3 + n6 - 1))) {
-            if ((class5488.getX() + 0.5 - class5487.x) * n7 + (class5488.getZ() + 0.5 - class5487.z) * n8 >= 0.0 && !this.field31658.method6701(class5488).method21749(this.field31658, class5488, Class2084.field12051)) {
+            if ((class5488.getX() + 0.5 - class5487.x) * n7 + (class5488.getZ() + 0.5 - class5487.z) * n8 >= 0.0 && !this.field31658.getBlockState(class5488).method21749(this.field31658, class5488, Class2084.field12051)) {
                 return false;
             }
         }

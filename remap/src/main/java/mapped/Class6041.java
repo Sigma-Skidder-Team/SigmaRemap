@@ -19,7 +19,7 @@ public class Class6041 extends Class6040
     }
     
     @Override
-    public void method17959(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final Class7096 class1862, final Class7096 class1863, final int n5, final long n6, final Class4408 class1864) {
+    public void method17959(final Random random, final IChunk class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final Class7096 class1862, final Class7096 class1863, final int n5, final long n6, final Class4408 class1864) {
         final int n7 = n & 0xF;
         final int n8 = n2 & 0xF;
         Class7096 class1865 = Class6041.field24579;
@@ -33,7 +33,7 @@ public class Class6041 extends Class6040
         for (int i = n3; i >= 0; --i) {
             if (n11 < 15) {
                 class1867.setPos(n7, i, n8);
-                final Class7096 method6701 = class1860.method6701(class1867);
+                final Class7096 method6701 = class1860.getBlockState(class1867);
                 if (!method6701.method21706()) {
                     if (method6701.method21696() == class1862.method21696()) {
                         if (n10 != -1) {
@@ -58,7 +58,7 @@ public class Class6041 extends Class6040
                                 }
                             }
                             else {
-                                class1865 = Class7521.field29147.method11878();
+                                class1865 = Class7521.field29147.getDefaultState();
                                 class1866 = class1862;
                             }
                             if (i < n5) {
@@ -95,10 +95,10 @@ public class Class6041 extends Class6040
                                 }
                             }
                             else if (!b) {
-                                class1860.method7008(class1867, Class7521.field29155.method11878(), false);
+                                class1860.method7008(class1867, Class7521.field29155.getDefaultState(), false);
                             }
                             else {
-                                class1860.method7008(class1867, Class7521.field29157.method11878(), false);
+                                class1860.method7008(class1867, Class7521.field29157.getDefaultState(), false);
                             }
                         }
                         ++n11;
@@ -112,8 +112,8 @@ public class Class6041 extends Class6040
     }
     
     static {
-        field24579 = Class7521.field29482.method11878();
-        field24580 = Class7521.field29483.method11878();
-        field24581 = Class7521.field29546.method11878();
+        field24579 = Class7521.field29482.getDefaultState();
+        field24580 = Class7521.field29483.getDefaultState();
+        field24581 = Class7521.field29546.getDefaultState();
     }
 }

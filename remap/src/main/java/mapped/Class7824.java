@@ -10,16 +10,16 @@ import com.google.gson.JsonObject;
 
 public class Class7824 implements Class7823
 {
-    private final Class1932 field32041;
+    private final ResourceLocation field32041;
     private final String field32042;
     
-    public Class7824(final Class1932 field32041, final String field32042) {
+    public Class7824(final ResourceLocation field32041, final String field32042) {
         this.field32041 = field32041;
         this.field32042 = field32042;
     }
     
     public static Class7823 method25278(final JsonObject jsonObject) {
-        return new Class7824(new Class1932(Class9583.method35895(jsonObject, "sizes")), Class9583.method35895(jsonObject, "template"));
+        return new Class7824(new ResourceLocation(Class9583.method35895(jsonObject, "sizes")), Class9583.method35895(jsonObject, "template"));
     }
     
     @Nullable

@@ -22,7 +22,7 @@ public class Class9280
     public static void method34254() {
         if (!Class9280.field39815) {
             Class9280.field39815 = true;
-            if (Class90.field204.method559()) {
+            if (Registry.field204.method559()) {
                 throw new IllegalStateException("Unable to load registries");
             }
             Class4011.method12193();
@@ -38,7 +38,7 @@ public class Class9280
         }
     }
     
-    private static <T> void method34255(final Class90<T> class90, final Function<T, String> function, final Set<String> set) {
+    private static <T> void method34255(final Registry<T> class90, final Function<T, String> function, final Set<String> set) {
         class90.iterator().forEachRemaining(o -> {
             Class8837.method30858();
             final String s = function2.apply(o);
@@ -50,13 +50,13 @@ public class Class9280
     
     public static Set<String> method34256() {
         final TreeSet set = new TreeSet();
-        method34255(Class90.field210, EntityType::method23366, set);
-        method34255(Class90.field207, Class5328::method16455, set);
-        method34255(Class90.field211, Item::method11717, set);
-        method34255(Class90.field209, Class6257::method18598, set);
-        method34255(Class90.field217, Class3090::method9865, set);
-        method34255(Class90.field208, Class3833::method11856, set);
-        method34255(Class90.field228, class1932 -> "stat." + class1932.toString().replace(':', '.'), (Set<String>)set);
+        method34255(Registry.field210, EntityType::method23366, set);
+        method34255(Registry.field207, Class5328::method16455, set);
+        method34255(Registry.field211, Item::method11717, set);
+        method34255(Registry.field209, Class6257::method18598, set);
+        method34255(Registry.field217, Class3090::method9865, set);
+        method34255(Registry.BLOCK, Block::method11856, set);
+        method34255(Registry.field228, class1932 -> "stat." + class1932.toString().replace(':', '.'), (Set<String>)set);
         return set;
     }
     

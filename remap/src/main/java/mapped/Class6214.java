@@ -19,7 +19,7 @@ public class Class6214 extends Class6213
     }
     
     public <T> Class6214(final Dynamic<T> dynamic) {
-        this(BlockState.method21764((com.mojang.datafixers.Dynamic<Object>)dynamic.get("blockstate").orElseEmptyMap()));
+        this(BlockState.deserialize((com.mojang.datafixers.Dynamic<Object>)dynamic.get("blockstate").orElseEmptyMap()));
     }
     
     @Override
@@ -34,6 +34,6 @@ public class Class6214 extends Class6213
     
     @Override
     public <T> Dynamic<T> method18487(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("blockstate"), BlockState.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field25062).getValue())));
+        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("blockstate"), BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field25062).getValue())));
     }
 }

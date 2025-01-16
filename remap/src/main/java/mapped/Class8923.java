@@ -18,11 +18,11 @@ public class Class8923<T> implements Class8924<T>
     private static String[] field37510;
     public Class8134<T> field37511;
     public Class8134<T> field37512;
-    private final Function<T, Stream<Class1932>> field37513;
+    private final Function<T, Stream<ResourceLocation>> field37513;
     private final List<T> field37514;
     private final Object2IntMap<T> field37515;
     
-    public Class8923(final Function<T, Stream<Class1932>> field37513) {
+    public Class8923(final Function<T, Stream<ResourceLocation>> field37513) {
         this.field37511 = new Class8134<T>();
         this.field37512 = new Class8134<T>();
         this.field37514 = Lists.newArrayList();

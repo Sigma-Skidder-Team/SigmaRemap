@@ -12,7 +12,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
-public class Class3965 extends Class3833 implements Class3966
+public class Class3965 extends Block implements Class3966
 {
     private static String[] field17914;
     public static final Class7112 field17915;
@@ -98,11 +98,11 @@ public class Class3965 extends Class3833 implements Class3966
     
     public Class3965(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3965.field17915, 0));
+        this.method11877(((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3965.field17915, 0));
     }
     
     public static void method12096(final World class1847, final BlockPos class1848, final boolean b) {
-        final Class7096 method6701 = class1847.method6701(class1848);
+        final Class7096 method6701 = class1847.getBlockState(class1848);
         class1847.method6708(class1848.getX(), class1848.getY(), class1848.getZ(), b ? Class8520.field35088 : Class8520.field35087, Class286.field1582, 1.0f, 1.0f, false);
         final double n = method6701.method21725(class1847, class1848).method24547(Axis.Y, 0.5, 0.5) + 0.03125;
         final Random method6702 = class1847.method6790();
@@ -113,7 +113,7 @@ public class Class3965 extends Class3833 implements Class3966
     
     @Override
     public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return Class3965.field17918[class7096.method21772((Class7111<Integer>)Class3965.field17915)];
+        return Class3965.field17918[class7096.method21772((IProperty<Integer>)Class3965.field17915)];
     }
     
     @Override
@@ -128,14 +128,14 @@ public class Class3965 extends Class3833 implements Class3966
     
     @Override
     public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
-        if (class7096.method21772((Class7111<Integer>)Class3965.field17915) == 7) {
+        if (class7096.method21772((IProperty<Integer>)Class3965.field17915) == 7) {
             class7097.method6833().method21345(class7098, class7096.method21696(), 20);
         }
     }
     
     @Override
     public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        final int intValue = class7096.method21772((Class7111<Integer>)Class3965.field17915);
+        final int intValue = class7096.method21772((IProperty<Integer>)Class3965.field17915);
         final ItemStack method2715 = class7099.method2715(class7100);
         if (intValue < 8 && Class3965.field17916.containsKey((Object)method2715.getItem())) {
             if (intValue < 7) {
@@ -162,11 +162,11 @@ public class Class3965 extends Class3833 implements Class3966
     }
     
     private static void method12097(final Class7096 class7096, final Class1851 class7097, final BlockPos class7098) {
-        class7097.method6688(class7098, ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3965.field17915, 0), 3);
+        class7097.setBlockState(class7098, ((StateHolder<O, Class7096>)class7096).with((IProperty<Comparable>)Class3965.field17915, 0), 3);
     }
     
     private static boolean method12098(final Class7096 class7096, final Class1851 class7097, final BlockPos class7098, final ItemStack class7099) {
-        final int intValue = class7096.method21772((Class7111<Integer>)Class3965.field17915);
+        final int intValue = class7096.method21772((IProperty<Integer>)Class3965.field17915);
         final float float1 = Class3965.field17916.getFloat((Object)class7099.getItem());
         if (intValue != 0 || float1 <= 0.0f) {
             if (class7097.method6790().nextDouble() >= float1) {
@@ -174,7 +174,7 @@ public class Class3965 extends Class3833 implements Class3966
             }
         }
         final int i = intValue + 1;
-        class7097.method6688(class7098, (Class7096)((Class7097<Object, Object>)class7096).method21773((Class7111<Comparable>)Class3965.field17915, i), 3);
+        class7097.setBlockState(class7098, (Class7096)((StateHolder<Object, Object>)class7096).with((IProperty<Comparable>)Class3965.field17915, i), 3);
         if (i == 7) {
             class7097.method6833().method21345(class7098, class7096.method21696(), 20);
         }
@@ -183,8 +183,8 @@ public class Class3965 extends Class3833 implements Class3966
     
     @Override
     public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
-        if (class7096.method21772((Class7111<Integer>)Class3965.field17915) == 7) {
-            class7097.method6688(class7098, ((Class7097<O, Class7096>)class7096).method21768((Class7111<Comparable>)Class3965.field17915), 3);
+        if (class7096.method21772((IProperty<Integer>)Class3965.field17915) == 7) {
+            class7097.setBlockState(class7098, ((StateHolder<O, Class7096>)class7096).method21768((IProperty<Comparable>)Class3965.field17915), 3);
             class7097.method6705(null, class7098, Class8520.field35089, Class286.field1582, 1.0f, 1.0f);
         }
         super.method11822(class7096, class7097, class7098, random);
@@ -197,11 +197,11 @@ public class Class3965 extends Class3833 implements Class3966
     
     @Override
     public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
-        return class7096.method21772((Class7111<Integer>)Class3965.field17915);
+        return class7096.method21772((IProperty<Integer>)Class3965.field17915);
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Block, Class7096> class9500) {
         class9500.method35378(Class3965.field17915);
     }
     
@@ -212,7 +212,7 @@ public class Class3965 extends Class3833 implements Class3966
     
     @Override
     public Class441 method12099(final Class7096 class7096, final Class1851 class7097, final BlockPos class7098) {
-        final int intValue = class7096.method21772((Class7111<Integer>)Class3965.field17915);
+        final int intValue = class7096.method21772((IProperty<Integer>)Class3965.field17915);
         if (intValue != 8) {
             return (intValue >= 7) ? new Class480() : new Class487(class7096, class7097, class7098);
         }
@@ -222,11 +222,11 @@ public class Class3965 extends Class3833 implements Class3966
     static {
         field17915 = Class8970.field37783;
         field17916 = (Object2FloatMap)new Object2FloatOpenHashMap();
-        field17917 = Class7698.method24487();
+        field17917 = VoxelShapes.method24487();
         field17918 = Class8349.method27851(new VoxelShape[9], array -> {
             int i = 0;
             while (i < 8) {
-                array[i] = Class7698.method24494(Class3965.field17917, Class3833.method11778(2.0, Math.max(2, 1 + i * 2), 2.0, 14.0, 16.0, 14.0), Class9306.field39920);
+                array[i] = VoxelShapes.method24494(Class3965.field17917, Block.method11778(2.0, Math.max(2, 1 + i * 2), 2.0, 14.0, 16.0, 14.0), Class9306.field39920);
                 ++i;
             }
             array[8] = array[7];

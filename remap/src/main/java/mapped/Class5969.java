@@ -21,7 +21,7 @@ public class Class5969 implements JsonDeserializer<Class9317>, JsonSerializer<Cl
         final Class9320[] array = Class9583.method35921(method35913, "pools", new Class9320[0], jsonDeserializationContext, Class9320[].class);
         Class8212 method35914 = null;
         if (method35913.has("type")) {
-            method35914 = Class7104.method21810(new Class1932(Class9583.method35895(method35913, "type")));
+            method35914 = Class7104.method21810(new ResourceLocation(Class9583.method35895(method35913, "type")));
         }
         return new Class9317((method35914 == null) ? Class7104.field27718 : method35914, array, Class9583.method35921(method35913, "functions", new Class125[0], jsonDeserializationContext, Class125[].class), null);
     }
@@ -29,7 +29,7 @@ public class Class5969 implements JsonDeserializer<Class9317>, JsonSerializer<Cl
     public JsonElement serialize(final Class9317 class9317, final Type type, final JsonSerializationContext jsonSerializationContext) {
         final JsonObject jsonObject = new JsonObject();
         if (Class9317.method34493(class9317) != Class9317.field40010) {
-            final Class1932 method21811 = Class7104.method21811(Class9317.method34493(class9317));
+            final ResourceLocation method21811 = Class7104.method21811(Class9317.method34493(class9317));
             if (method21811 == null) {
                 Class9317.method34494().warn("Failed to find id for param set " + Class9317.method34493(class9317));
             }

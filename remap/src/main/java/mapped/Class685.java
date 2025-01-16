@@ -26,9 +26,9 @@ import java.util.Random;
 
 public class Class685 extends Class565
 {
-    private static final Class1932 field3749;
-    private static final Class1932 field3750;
-    private static final Class1932 field3751;
+    private static final ResourceLocation field3749;
+    private static final ResourceLocation field3750;
+    private static final ResourceLocation field3751;
     private final Random field3752;
     private final Class869 field3753;
     private final Class1796 field3754;
@@ -99,7 +99,7 @@ public class Class685 extends Class565
         this.field3779 = this.field3753.method5332().method7697();
         final Class1844 method3809 = this.method3809();
         Class8726.method30011();
-        if (!Class8571.method28917()) {
+        if (!Config.method28917()) {
             Class8726.method30008();
             Class8726.method30117();
         }
@@ -134,9 +134,9 @@ public class Class685 extends Class565
             this.method3781();
             Class8933.method31503();
             Class8726.method30117();
-            this.field3753.method5327().method15297("bossHealth");
+            this.field3753.method5327().startSection("bossHealth");
             this.field3767.method3330();
-            this.field3753.method5327().method15299();
+            this.field3753.method5327().endSection();
             Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             this.field3753.method5290().method5849(Class685.field3363);
             if (this.field3753.field4682.method27310()) {
@@ -161,7 +161,7 @@ public class Class685 extends Class565
             }
         }
         if (this.field3753.field4684.method2852() > 0) {
-            this.field3753.method5327().method15297("sleep");
+            this.field3753.method5327().startSection("sleep");
             Class8726.method30007();
             Class8726.method29998();
             final float n3 = (float)this.field3753.field4684.method2852();
@@ -172,7 +172,7 @@ public class Class685 extends Class565
             Class565.method3293(0, 0, this.field3778, this.field3779, (int)(220.0f * n4) << 24 | 0x101020);
             Class8726.method29999();
             Class8726.method30008();
-            this.field3753.method5327().method15299();
+            this.field3753.method5327().endSection();
             Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         }
         if (this.field3753.method5268()) {
@@ -185,7 +185,7 @@ public class Class685 extends Class565
         Label_0204: {
             if (!this.field3753.field4648.field23464) {
                 if (this.field3758 > 0) {
-                    this.field3753.method5327().method15297("overlayMessage");
+                    this.field3753.method5327().startSection("overlayMessage");
                     final float n5 = this.field3758 - n;
                     int n6 = (int)(n5 * 255.0f / 20.0f);
                     if (n6 > 255) {
@@ -206,10 +206,10 @@ public class Class685 extends Class565
                         Class8726.method30012();
                         Class8726.method30060();
                     }
-                    this.field3753.method5327().method15299();
+                    this.field3753.method5327().endSection();
                 }
                 if (this.field3768 > 0) {
-                    this.field3753.method5327().method15297("titleAndSubtitle");
+                    this.field3753.method5327().startSection("titleAndSubtitle");
                     final float n9 = this.field3768 - n;
                     int n10 = 255;
                     if (this.field3768 > this.field3773 + this.field3772) {
@@ -242,7 +242,7 @@ public class Class685 extends Class565
                         Class8726.method30012();
                         Class8726.method30060();
                     }
-                    this.field3753.method5327().method15299();
+                    this.field3753.method5327().endSection();
                 }
                 this.field3764.method3817();
                 final Class6516 method3815 = this.field3753.field4683.method6782();
@@ -269,9 +269,9 @@ public class Class685 extends Class565
                 Class8726.method29998();
                 Class8726.method30059();
                 Class8726.method30065(0.0f, (float)(this.field3779 - 48), 0.0f);
-                this.field3753.method5327().method15297("chat");
+                this.field3753.method5327().startSection("chat");
                 this.field3755.method3757(this.field3756);
-                this.field3753.method5327().method15299();
+                this.field3753.method5327().endSection();
                 Class8726.method30060();
                 final Class9290 method3819 = method3815.method19644(0);
                 Label_1448: {
@@ -365,7 +365,7 @@ public class Class685 extends Class565
         }
         final BlockPos method21447 = ((Class7005)class7006).method21447();
         final Class1848 field4683 = this.field3753.field4683;
-        return field4683.method6701(method21447).method21754(field4683, method21447) != null;
+        return field4683.getBlockState(method21447).method21754(field4683, method21447) != null;
     }
     
     public void method3783() {
@@ -493,7 +493,7 @@ public class Class685 extends Class565
     }
     
     public void method3785(final int n) {
-        this.field3753.method5327().method15297("jumpBar");
+        this.field3753.method5327().startSection("jumpBar");
         this.field3753.method5290().method5849(Class565.field3363);
         final int n2 = (int)(this.field3753.field4684.method4130() * 183.0f);
         final int n3 = this.field3779 - 32 + 3;
@@ -501,11 +501,11 @@ public class Class685 extends Class565
         if (n2 > 0) {
             this.method3186(n, n3, 0, 89, n2, 5);
         }
-        this.field3753.method5327().method15299();
+        this.field3753.method5327().endSection();
     }
     
     public void method3786(final int n) {
-        this.field3753.method5327().method15297("expBar");
+        this.field3753.method5327().startSection("expBar");
         this.field3753.method5290().method5849(Class565.field3363);
         if (this.field3753.field4684.method2875() > 0) {
             final int n2 = (int)(this.field3753.field4684.field3028 * 183.0f);
@@ -515,11 +515,11 @@ public class Class685 extends Class565
                 this.method3186(n, n3, 0, 69, n2, 5);
             }
         }
-        this.field3753.method5327().method15299();
+        this.field3753.method5327().endSection();
         if (this.field3753.field4684.field3026 > 0) {
-            this.field3753.method5327().method15297("expLevel");
+            this.field3753.method5327().startSection("expLevel");
             int method30384 = 8453920;
-            if (Class8571.method28945()) {
+            if (Config.method28945()) {
                 method30384 = Class8763.method30384(method30384);
             }
             final String string = "" + this.field3753.field4684.field3026;
@@ -530,12 +530,12 @@ public class Class685 extends Class565
             this.method3809().method6610(string, (float)n4, (float)(n5 + 1), 0);
             this.method3809().method6610(string, (float)n4, (float)(n5 - 1), 0);
             this.method3809().method6610(string, (float)n4, (float)n5, method30384);
-            this.field3753.method5327().method15299();
+            this.field3753.method5327().endSection();
         }
     }
     
     public void method3787() {
-        this.field3753.method5327().method15297("selectedItemName");
+        this.field3753.method5327().startSection("selectedItemName");
         if (this.field3761 > 0) {
             if (!this.field3762.method27620()) {
                 final ITextComponent method8469 = new StringTextComponent("").appendSibling(this.field3762.method27664()).applyTextStyle(this.field3762.method27672().field11190);
@@ -575,11 +575,11 @@ public class Class685 extends Class565
                 }
             }
         }
-        this.field3753.method5327().method15299();
+        this.field3753.method5327().endSection();
     }
     
     public void method3788() {
-        this.field3753.method5327().method15297("demo");
+        this.field3753.method5327().startSection("demo");
         String s;
         if (this.field3753.field4683.method6754() < 120500L) {
             s = Class8822.method30773("demo.remainingTime", Class8272.method27498((int)(120500L - this.field3753.field4683.method6754())));
@@ -588,7 +588,7 @@ public class Class685 extends Class565
             s = Class8822.method30773("demo.demoExpired", new Object[0]);
         }
         this.method3809().method6609(s, (float)(this.field3778 - this.method3809().method6617(s) - 10), 5.0f, 16777215);
-        this.field3753.method5327().method15299();
+        this.field3753.method5327().endSection();
     }
     
     private void method3789(final Class9290 class9290) {
@@ -667,7 +667,7 @@ public class Class685 extends Class565
     private void method3794() {
         final Class512 method3790 = this.method3790();
         if (method3790 != null) {
-            final int method3791 = MathHelper.method35649(method3790.method2664());
+            final int method3791 = MathHelper.ceil(method3790.method2664());
             final boolean b = this.field3777 > this.field3756 && (this.field3777 - this.field3756) / 3L % 2L == 1L;
             final long method3792 = Class8349.method27837();
             if (method3791 < this.field3774 && method3790.hurtResistantTime > 0) {
@@ -694,8 +694,8 @@ public class Class685 extends Class565
             final int n2 = this.field3778 / 2 + 91;
             final int n3 = this.field3779 - 39;
             final float n4 = (float)method3794.method23950();
-            final int method3795 = MathHelper.method35649(method3790.method2750());
-            final int method3796 = MathHelper.method35649((n4 + method3795) / 2.0f / 10.0f);
+            final int method3795 = MathHelper.ceil(method3790.method2750());
+            final int method3796 = MathHelper.ceil((n4 + method3795) / 2.0f / 10.0f);
             final int max = Math.max(10 - (method3796 - 2), 3);
             final int n5 = n3 - (method3796 - 1) * max - 10;
             int n6 = n3 - 10;
@@ -703,9 +703,9 @@ public class Class685 extends Class565
             final int method3797 = method3790.method2693();
             int n8 = -1;
             if (method3790.method2653(Class9439.field40483)) {
-                n8 = this.field3756 % MathHelper.method35649(n4 + 5.0f);
+                n8 = this.field3756 % MathHelper.ceil(n4 + 5.0f);
             }
-            this.field3753.method5327().method15297("armor");
+            this.field3753.method5327().startSection("armor");
             for (int i = 0; i < 10; ++i) {
                 if (method3797 > 0) {
                     final int n9 = n + i * 8;
@@ -721,7 +721,7 @@ public class Class685 extends Class565
                 }
             }
             this.field3753.method5327().method15300("health");
-            for (int j = MathHelper.method35649((n4 + method3795) / 2.0f) - 1; j >= 0; --j) {
+            for (int j = MathHelper.ceil((n4 + method3795) / 2.0f) - 1; j >= 0; --j) {
                 int n10 = 16;
                 if (!method3790.method2653(Class9439.field40492)) {
                     if (method3790.method2653(Class9439.field40493)) {
@@ -735,7 +735,7 @@ public class Class685 extends Class565
                 if (b) {
                     n11 = 1;
                 }
-                final int n12 = MathHelper.method35649((j + 1) / 10.0f) - 1;
+                final int n12 = MathHelper.ceil((j + 1) / 10.0f) - 1;
                 final int n13 = n + j % 10 * 8;
                 int n14 = n3 - n12 * max;
                 if (method3791 <= 4) {
@@ -808,7 +808,7 @@ public class Class685 extends Class565
             final int method3800 = method3790.getMaxAir();
             if (method3790.method1720(Class7324.field28319) || method3799 < method3800) {
                 final int n20 = n6 - (this.method3793(method3798) - 1) * 10;
-                for (int method3801 = MathHelper.method35650((method3799 - 2) * 10.0 / method3800), n21 = MathHelper.method35650(method3799 * 10.0 / method3800) - method3801, l = 0; l < method3801 + n21; ++l) {
+                for (int method3801 = MathHelper.ceil((method3799 - 2) * 10.0 / method3800), n21 = MathHelper.ceil(method3799 * 10.0 / method3800) - method3801, l = 0; l < method3801 + n21; ++l) {
                     if (l >= method3801) {
                         this.method3186(n2 - l * 8 - 9, n20, 25, 18, 9, 9);
                     }
@@ -817,7 +817,7 @@ public class Class685 extends Class565
                     }
                 }
             }
-            this.field3753.method5327().method15299();
+            this.field3753.method5327().endSection();
         }
     }
     
@@ -881,8 +881,8 @@ public class Class685 extends Class565
     }
     
     private void method3798(final Entity class399) {
-        if (Class8571.method28917()) {
-            final WorldBorder method6787 = this.field3753.field4683.method6787();
+        if (Config.method28917()) {
+            final WorldBorder method6787 = this.field3753.field4683.getWorldBorder();
             final float n = (float)method6787.method34782(class399);
             final double max = Math.max(method6787.method34807(), Math.min(method6787.method34804() * method6787.method34805() * 1000.0, Math.abs(method6787.method34793() - method6787.method34791())));
             float n2;
@@ -933,7 +933,7 @@ public class Class685 extends Class565
         Class8726.method30117();
         Class8726.method30068(1.0f, 1.0f, 1.0f, n);
         this.field3753.method5290().method5849(Class1774.field9853);
-        final Class1912 method35427 = this.field3753.method5305().method5787().method35427(Class7521.field29341.method11878());
+        final Class1912 method35427 = this.field3753.method5305().method5787().method35427(Class7521.field29341.getDefaultState());
         final float method35428 = method35427.method7497();
         final float method35429 = method35427.method7500();
         final float method35430 = method35427.method7498();
@@ -993,7 +993,7 @@ public class Class685 extends Class565
             final ItemStack method5304 = this.field3753.field4684.field3006.method2345();
             boolean equals = true;
             if (Class9570.field41336.method22605()) {
-                equals = Class8571.equals(Class9570.method35825(method5304, Class9570.field41336, method5304.method27664().getUnformattedComponentText()), Class9570.method35825(this.field3762, Class9570.field41336, this.field3762.method27664().getUnformattedComponentText()));
+                equals = Config.equals(Class9570.method35825(method5304, Class9570.field41336, method5304.method27664().getUnformattedComponentText()), Class9570.method35825(this.field3762, Class9570.field41336, this.field3762.method27664().getUnformattedComponentText()));
             }
             Label_0317: {
                 if (!method5304.method27620()) {
@@ -1116,8 +1116,8 @@ public class Class685 extends Class565
     }
     
     static {
-        field3749 = new Class1932("textures/misc/vignette.png");
-        field3750 = new Class1932("textures/gui/widgets.png");
-        field3751 = new Class1932("textures/misc/pumpkinblur.png");
+        field3749 = new ResourceLocation("textures/misc/vignette.png");
+        field3750 = new ResourceLocation("textures/gui/widgets.png");
+        field3751 = new ResourceLocation("textures/misc/pumpkinblur.png");
     }
 }

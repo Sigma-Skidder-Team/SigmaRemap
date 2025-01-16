@@ -11,7 +11,7 @@ public class Class3668 extends Class3666
 {
     private static String[] field16953;
     
-    public Class3668(final Class1932 class1932) {
+    public Class3668(final ResourceLocation class1932) {
         super(class1932);
     }
     

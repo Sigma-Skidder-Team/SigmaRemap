@@ -43,7 +43,7 @@ public class Class7510
             for (int i = 0; i < method34504.length; ++i) {
                 final String s = method34504[i];
                 final Class5601 method34505 = method23440(s, array);
-                if (method34505 != null && !Class8571.equals(b ? method34505.method16865() : method34505.method16863(), class9319.method34505(s))) {
+                if (method34505 != null && !Config.equals(b ? method34505.method16865() : method34505.method16863(), class9319.method34505(s))) {
                     return false;
                 }
             }

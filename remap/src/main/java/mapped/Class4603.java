@@ -20,6 +20,6 @@ public class Class4603 extends Class4535<Class5114>
     
     @Override
     public String toString() {
-        return String.format("< %s [%s] >", this.getClass().getSimpleName(), Class90.field215.method503(this));
+        return String.format("< %s [%s] >", this.getClass().getSimpleName(), Registry.field215.getKey(this));
     }
 }

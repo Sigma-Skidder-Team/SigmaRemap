@@ -27,7 +27,7 @@ public class Class4554 extends Class4535<Class5122>
             if (class1851.method6961(class1855)) {
                 for (final Direction class1856 : Class4554.field20035) {
                     if (class1856 != Direction.DOWN && Class4006.method12176(class1851, class1855, class1856)) {
-                        class1851.method6688(class1855, (BlockState)((Class7097<Object, Object>)Class7521.field29388.method11878()).method21773((Class7111<Comparable>)Class4006.method12181(class1856), true), 2);
+                        class1851.setBlockState(class1855, (BlockState)((StateHolder<Object, Object>)Class7521.field29388.getDefaultState()).with((IProperty<Comparable>)Class4006.method12181(class1856), true), 2);
                         break;
                     }
                 }

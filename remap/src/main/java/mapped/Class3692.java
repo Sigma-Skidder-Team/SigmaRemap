@@ -855,7 +855,7 @@ public class Class3692 implements Class3689
         Class8851.method31000(Class120.method618(Items.field31541), Items.field31542, 0.35f, n, class6098).method31003("has_rabbit", this.method11361(Items.field31541)).method31005(consumer, "cooked_rabbit_from_" + str);
     }
     
-    private Class4236 method11360(final Class3833 class3833) {
+    private Class4236 method11360(final Block class3833) {
         return new Class4236(class3833, Class9357.field40141);
     }
     

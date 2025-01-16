@@ -35,7 +35,7 @@ public class Class141 extends Class126
         }
         else {
             final ArrayList arrayList = Lists.newArrayList();
-            for (final Class6257 class8324 : Class90.field209) {
+            for (final Class6257 class8324 : Registry.field209) {
                 if (class8321.getItem() != Items.field31370 && !class8324.method18600(class8321)) {
                     continue;
                 }

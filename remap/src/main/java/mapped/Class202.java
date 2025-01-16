@@ -81,22 +81,22 @@ public class Class202 implements Class201
     }
     
     static {
-        field688 = Class90.field217.method504(Class7102.field27659);
-        field689 = Class90.field217.method504(Class7102.field27634);
-        field690 = Class90.field217.method504(Class7102.field27635);
-        field691 = Class90.field217.method504(Class7102.field27636);
-        field692 = Class90.field217.method504(Class7102.field27644);
-        field693 = Class90.field217.method504(Class7102.field27653);
-        field694 = Class90.field217.method504(Class7102.field27671);
-        field695 = Class90.field217.method504(Class7102.field27670);
-        field696 = Class90.field217.method504(Class7102.field27646);
-        field697 = Class90.field217.method504(Class7102.field27633);
-        field698 = Class90.field217.method504(Class7102.field27664);
-        field699 = Class90.field217.method504(Class7102.field27661);
-        field700 = Class90.field217.method504(Class7102.field27667);
-        field701 = Class90.field217.method504(Class7102.field27638);
-        field702 = Class90.field217.method504(Class7102.field27637);
-        field703 = Class90.field217.method504(Class7102.field27662);
+        field688 = Registry.field217.getId(Class7102.field27659);
+        field689 = Registry.field217.getId(Class7102.field27634);
+        field690 = Registry.field217.getId(Class7102.field27635);
+        field691 = Registry.field217.getId(Class7102.field27636);
+        field692 = Registry.field217.getId(Class7102.field27644);
+        field693 = Registry.field217.getId(Class7102.field27653);
+        field694 = Registry.field217.getId(Class7102.field27671);
+        field695 = Registry.field217.getId(Class7102.field27670);
+        field696 = Registry.field217.getId(Class7102.field27646);
+        field697 = Registry.field217.getId(Class7102.field27633);
+        field698 = Registry.field217.getId(Class7102.field27664);
+        field699 = Registry.field217.getId(Class7102.field27661);
+        field700 = Registry.field217.getId(Class7102.field27667);
+        field701 = Registry.field217.getId(Class7102.field27638);
+        field702 = Registry.field217.getId(Class7102.field27637);
+        field703 = Registry.field217.getId(Class7102.field27662);
         field704 = new int[] { Class202.field689, Class202.field691, Class202.field690, Class202.field701, Class202.field697, Class202.field702 };
         field705 = new int[] { Class202.field689, Class202.field689, Class202.field689, Class202.field700, Class202.field700, Class202.field697 };
         field706 = new int[] { Class202.field691, Class202.field699, Class202.field690, Class202.field697, Class202.field688, Class202.field701 };

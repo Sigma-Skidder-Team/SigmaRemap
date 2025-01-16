@@ -22,7 +22,7 @@ public class Class3678 extends Class3666
     private static final Map<Item, Class2141> field16967;
     private static final Class120 field16968;
     
-    public Class3678(final Class1932 class1932) {
+    public Class3678(final ResourceLocation class1932) {
         super(class1932);
     }
     

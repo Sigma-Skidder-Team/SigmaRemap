@@ -56,7 +56,7 @@ public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializ
                                         if (!asJsonObject.has("storage")) {
                                             throw new JsonParseException("Don't know how to turn " + obj + " into a Component");
                                         }
-                                        class2251 = new Class2258(method35895, method35896, new Class1932(Class9583.method35895(asJsonObject, "storage")));
+                                        class2251 = new Class2258(method35895, method35896, new ResourceLocation(Class9583.method35895(asJsonObject, "storage")));
                                     }
                                     else {
                                         class2251 = new Class2256(method35895, method35896, Class9583.method35895(asJsonObject, "entity"));

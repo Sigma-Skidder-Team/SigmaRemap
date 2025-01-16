@@ -57,7 +57,7 @@ public enum Class2187
                 return class6300.field25194;
             }
             default: {
-                Class8571.method28848("GetFloat not supported for: " + this);
+                Config.warn("GetFloat not supported for: " + this);
                 return 0.0f;
             }
         }
@@ -102,7 +102,7 @@ public enum Class2187
                 return;
             }
             default: {
-                Class8571.method28848("SetFloat not supported for: " + this);
+                Config.warn("SetFloat not supported for: " + this);
             }
         }
     }

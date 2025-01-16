@@ -16,11 +16,11 @@ public final class Class6403 extends Class6397
     public ItemStack method19087(final Class5491 class5491, final ItemStack class5492) {
         final World method16763 = class5491.method16763();
         this.field25515 = true;
-        final BlockPos method16764 = class5491.method16764().method1149(class5491.method16765().method21772((Class7111<Direction>)Class3955.field17859));
-        final BlockState method16765 = method16763.method6701(method16764);
+        final BlockPos method16764 = class5491.method16764().method1149(class5491.method16765().get((IProperty<Direction>)Class3955.field17859));
+        final BlockState method16765 = method16763.getBlockState(method16764);
         if (!Class3827.method11760(method16765, method16763, method16764)) {
             if (!Class3827.method11759(method16765)) {
-                if (!(method16765.method21696() instanceof Class3976)) {
+                if (!(method16765.getBlock() instanceof Class3976)) {
                     this.field25515 = false;
                 }
                 else {
@@ -29,11 +29,11 @@ public final class Class6403 extends Class6397
                 }
             }
             else {
-                method16763.method6692(method16764, ((Class7097<Object, BlockState>)method16765).method21773((Class7111<Comparable>)Class8970.field37736, true));
+                method16763.method6692(method16764, ((StateHolder<Object, BlockState>)method16765).with((IProperty<Comparable>)Class8970.field37736, true));
             }
         }
         else {
-            method16763.method6692(method16764, Class7521.field29289.method11878());
+            method16763.method6692(method16764, Class7521.field29289.getDefaultState());
         }
         if (this.field25515) {
             if (class5492.method27635(1, method16763.rand, null)) {

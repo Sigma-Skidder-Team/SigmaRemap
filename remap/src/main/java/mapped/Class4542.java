@@ -20,7 +20,7 @@ public class Class4542 extends Class4535<Class5122>
         while (class1851.method6961(class1853) && class1853.getY() > 2) {
             class1853 = class1853.method1139();
         }
-        if (class1851.method6701(class1853).method21696() == Class7521.field29331) {
+        if (class1851.getBlockState(class1853).getBlock() == Class7521.field29331) {
             class1853 = class1853.method1138(random.nextInt(4));
             final int n = random.nextInt(4) + 7;
             final int n2 = n / 4 + random.nextInt(2);
@@ -31,7 +31,7 @@ public class Class4542 extends Class4535<Class5122>
             }
             for (int i = 0; i < n; ++i) {
                 final float n3 = (1.0f - i / (float)n) * n2;
-                for (int method35649 = MathHelper.method35649(n3), j = -method35649; j <= method35649; ++j) {
+                for (int method35649 = MathHelper.ceil(n3), j = -method35649; j <= method35649; ++j) {
                     final float n4 = MathHelper.abs(j) - 0.25f;
                     for (int k = -method35649; k <= method35649; ++k) {
                         final float n5 = MathHelper.abs(k) - 0.25f;
@@ -50,8 +50,8 @@ public class Class4542 extends Class4535<Class5122>
                                     continue;
                                 }
                             }
-                            final BlockState method35650 = class1851.method6701(class1853.add(j, i, k));
-                            final Class3833 method35651 = method35650.method21696();
+                            final BlockState method35650 = class1851.getBlockState(class1853.add(j, i, k));
+                            final Block method35651 = method35650.getBlock();
                             Label_0447: {
                                 if (!method35650.method21706()) {
                                     if (!Class4535.method13533(method35651)) {
@@ -62,12 +62,12 @@ public class Class4542 extends Class4535<Class5122>
                                         }
                                     }
                                 }
-                                this.method13529(class1851, class1853.add(j, i, k), Class7521.field29548.method11878());
+                                this.method13529(class1851, class1853.add(j, i, k), Class7521.field29548.getDefaultState());
                             }
                             if (i != 0) {
                                 if (method35649 > 1) {
-                                    final BlockState method35652 = class1851.method6701(class1853.add(j, -i, k));
-                                    final Class3833 method35653 = method35652.method21696();
+                                    final BlockState method35652 = class1851.getBlockState(class1853.add(j, -i, k));
+                                    final Block method35653 = method35652.getBlock();
                                     if (!method35652.method21706()) {
                                         if (!Class4535.method13533(method35653)) {
                                             if (method35653 != Class7521.field29331) {
@@ -77,7 +77,7 @@ public class Class4542 extends Class4535<Class5122>
                                             }
                                         }
                                     }
-                                    this.method13529(class1851, class1853.add(j, -i, k), Class7521.field29548.method11878());
+                                    this.method13529(class1851, class1853.add(j, -i, k), Class7521.field29548.getDefaultState());
                                 }
                             }
                         }
@@ -103,8 +103,8 @@ public class Class4542 extends Class4535<Class5122>
                         }
                     }
                     while (class1855.getY() > 50) {
-                        final BlockState method35654 = class1851.method6701(class1855);
-                        final Class3833 method35655 = method35654.method21696();
+                        final BlockState method35654 = class1851.getBlockState(class1855);
+                        final Block method35655 = method35654.getBlock();
                         if (!method35654.method21706()) {
                             if (!Class4535.method13533(method35655)) {
                                 if (method35655 != Class7521.field29331) {
@@ -116,7 +116,7 @@ public class Class4542 extends Class4535<Class5122>
                                 }
                             }
                         }
-                        this.method13529(class1851, class1855, Class7521.field29548.method11878());
+                        this.method13529(class1851, class1855, Class7521.field29548.getDefaultState());
                         class1855 = class1855.method1139();
                         if (--n7 > 0) {
                             continue;

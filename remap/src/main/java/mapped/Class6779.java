@@ -6,7 +6,6 @@ package mapped;
 
 import java.util.Collection;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.HashMap;
 import java.util.Properties;
 
@@ -111,7 +110,7 @@ public class Class6779
         this.field26637 = null;
         this.field26638 = null;
         this.field26639 = -1;
-        this.field26640 = Class7521.field29147.method11878();
+        this.field26640 = Class7521.field29147.getDefaultState();
         this.field26641 = null;
         final Class8652 class8652 = new Class8652("ConnectedTextures");
         this.field26611 = class8652.method29440(s);
@@ -145,7 +144,7 @@ public class Class6779
         this.field26636 = class8652.method29442(properties.getProperty("connectBlocks"));
         this.field26637 = this.method20696(properties.getProperty("connectTiles"));
         this.field26639 = class8652.method29456(properties.getProperty("tintIndex"), -1);
-        this.field26640 = class8652.method29443(properties.getProperty("tintBlock"), Class7521.field29147.method11878());
+        this.field26640 = class8652.method29443(properties.getProperty("tintBlock"), Class7521.field29147.getDefaultState());
         this.field26641 = class8652.method29468(properties.getProperty("layer"), Class9484.field40760);
     }
     
@@ -169,18 +168,18 @@ public class Class6779
                 continue;
             }
             final String trim = property.trim();
-            final int method28933 = Class8571.method28933(substring, -1);
+            final int method28933 = Config.method28933(substring, -1);
             if (method28933 >= 0 && method28933 <= 46) {
-                final int method28934 = Class8571.method28933(trim, -1);
+                final int method28934 = Config.method28933(trim, -1);
                 if (method28934 >= 0 && method28934 < this.field26617.length) {
                     hashMap.put(method28933, method28934);
                 }
                 else {
-                    Class8571.method28848("Invalid CTM tile index: " + trim);
+                    Config.warn("Invalid CTM tile index: " + trim);
                 }
             }
             else {
-                Class8571.method28848("Invalid CTM index: " + substring);
+                Config.warn("Invalid CTM index: " + substring);
             }
         }
         if (!hashMap.isEmpty()) {
@@ -198,7 +197,7 @@ public class Class6779
     
     private String[] method20696(final String s) {
         if (s != null) {
-            final String[] method28937 = Class8571.method28937(s, " ");
+            final String[] method28937 = Config.method28937(s, " ");
             for (int i = 0; i < method28937.length; ++i) {
                 String substring = method28937[i];
                 if (substring.endsWith(".png")) {
@@ -232,14 +231,14 @@ public class Class6779
     private String[] method20699(final String str) {
         if (str != null) {
             final ArrayList list = new ArrayList();
-            final String[] method28937 = Class8571.method28937(str, " ,");
+            final String[] method28937 = Config.method28937(str, " ,");
             for (int i = 0; i < method28937.length; ++i) {
                 final String str2 = method28937[i];
                 if (str2.contains("-")) {
-                    final String[] method28938 = Class8571.method28937(str2, "-");
+                    final String[] method28938 = Config.method28937(str2, "-");
                     if (method28938.length == 2) {
-                        final int method28939 = Class8571.method28933(method28938[0], -1);
-                        final int method28940 = Class8571.method28933(method28938[1], -1);
+                        final int method28939 = Config.method28933(method28938[0], -1);
+                        final int method28940 = Config.method28933(method28938[1], -1);
                         if (method28939 >= 0) {
                             if (method28940 >= 0) {
                                 if (method28939 <= method28940) {
@@ -248,7 +247,7 @@ public class Class6779
                                     }
                                     continue;
                                 }
-                                Class8571.method28848("Invalid interval: " + str2 + ", when parsing: " + str);
+                                Config.warn("Invalid interval: " + str2 + ", when parsing: " + str);
                                 continue;
                             }
                         }
@@ -288,7 +287,7 @@ public class Class6779
             return 2;
         }
         if (!trim.equals("all")) {
-            Class8571.method28848("Unknown symmetry: " + trim);
+            Config.warn("Unknown symmetry: " + trim);
             return 1;
         }
         return 6;
@@ -296,7 +295,7 @@ public class Class6779
     
     private static int method20701(final String s) {
         if (s != null) {
-            final String[] method28937 = Class8571.method28937(s, " ,");
+            final String[] method28937 = Config.method28937(s, " ,");
             int n = 0;
             for (int i = 0; i < method28937.length; ++i) {
                 n |= method20702(method28937[i]);
@@ -330,7 +329,7 @@ public class Class6779
             return 60;
         }
         if (!lowerCase.equals("all")) {
-            Class8571.method28848("Unknown face: " + lowerCase);
+            Config.warn("Unknown face: " + lowerCase);
             return 128;
         }
         return 63;
@@ -351,15 +350,15 @@ public class Class6779
             return 3;
         }
         if (!trim.equals("state")) {
-            Class8571.method28848("Unknown connect: " + trim);
+            Config.warn("Unknown connect: " + trim);
             return 128;
         }
         return 4;
     }
     
-    public static Class7111 method20704(final String s, final Collection<Class7111> collection) {
-        for (final Class7111 class7111 : collection) {
-            if (!s.equals(class7111.method21826())) {
+    public static IProperty method20704(final String s, final Collection<IProperty> collection) {
+        for (final IProperty class7111 : collection) {
+            if (!s.equals(class7111.getName())) {
                 continue;
             }
             return class7111;
@@ -415,7 +414,7 @@ public class Class6779
             return 14;
         }
         if (!trim.equals("overlay_ctm")) {
-            Class8571.method28848("Unknown method: " + trim);
+            Config.warn("Unknown method: " + trim);
             return 0;
         }
         return 15;
@@ -423,11 +422,11 @@ public class Class6779
     
     public boolean method20706(final String str) {
         if (this.field26611 == null || this.field26611.length() <= 0) {
-            Class8571.method28848("No name found: " + str);
+            Config.warn("No name found: " + str);
             return false;
         }
         if (this.field26612 == null) {
-            Class8571.method28848("No base path found: " + str);
+            Config.warn("No base path found: " + str);
             return false;
         }
         if (this.field26613 == null) {
@@ -437,38 +436,38 @@ public class Class6779
             this.field26615 = this.method20710();
         }
         if (this.field26613 == null && this.field26615 == null) {
-            Class8571.method28848("No matchBlocks or matchTiles specified: " + str);
+            Config.warn("No matchBlocks or matchTiles specified: " + str);
             return false;
         }
         if (this.field26614 != null) {
-            Class8571.method28848("Metadata is not supported: " + Class8571.method28890(this.field26614));
+            Config.warn("Metadata is not supported: " + Config.method28890(this.field26614));
             return false;
         }
         if (this.field26616 == 0) {
-            Class8571.method28848("No method: " + str);
+            Config.warn("No method: " + str);
             return false;
         }
         if (this.field26617 == null || this.field26617.length <= 0) {
-            Class8571.method28848("No tiles specified: " + str);
+            Config.warn("No tiles specified: " + str);
             return false;
         }
         if (this.field26618 == 0) {
             this.field26618 = this.method20707();
         }
         if (this.field26618 == 128) {
-            Class8571.method28848("Invalid connect in: " + str);
+            Config.warn("Invalid connect in: " + str);
             return false;
         }
         if (this.field26622 > 0) {
-            Class8571.method28848("Render pass not supported: " + this.field26622);
+            Config.warn("Render pass not supported: " + this.field26622);
             return false;
         }
         if ((this.field26619 & 0x80) != 0x0) {
-            Class8571.method28848("Invalid faces in: " + str);
+            Config.warn("Invalid faces in: " + str);
             return false;
         }
         if ((this.field26629 & 0x80) != 0x0) {
-            Class8571.method28848("Invalid symmetry in: " + str);
+            Config.warn("Invalid symmetry in: " + str);
             return false;
         }
         switch (this.field26616) {
@@ -518,7 +517,7 @@ public class Class6779
                 return this.method20718(str);
             }
             default: {
-                Class8571.method28848("Unknown method: " + str);
+                Config.warn("Unknown method: " + str);
                 return false;
             }
         }
@@ -548,9 +547,9 @@ public class Class6779
         if (!this.field26611.startsWith(prefix)) {
             return null;
         }
-        final Class3833 method20650 = Class6770.method20650(new Class1932(this.field26611.substring(prefix.length())));
+        final Block method20650 = BlockUtils.method20650(new ResourceLocation(this.field26611.substring(prefix.length())));
         if (method20650 != null) {
-            return new int[] { Class6770.method20649(method20650) };
+            return new int[] { BlockUtils.method20649(method20650) };
         }
         return null;
     }
@@ -560,7 +559,7 @@ public class Class6779
     }
     
     private static Class1912 method20711(final String str) {
-        final Class1774 method29001 = Class8571.method29001();
+        final Class1774 method29001 = Config.method29001();
         final Class1912 method29002 = method29001.method6344(str);
         if (method29002 == null) {
             return method29001.method6344("block/" + str);
@@ -575,7 +574,7 @@ public class Class6779
         if (this.field26617.length >= 47) {
             return true;
         }
-        Class8571.method28848("Invalid tiles, must be at least 47: " + str);
+        Config.warn("Invalid tiles, must be at least 47: " + str);
         return false;
     }
     
@@ -586,7 +585,7 @@ public class Class6779
         if (this.field26617.length >= 5) {
             return true;
         }
-        Class8571.method28848("Invalid tiles, must be at least 5: " + str);
+        Config.warn("Invalid tiles, must be at least 5: " + str);
         return false;
     }
     
@@ -595,13 +594,13 @@ public class Class6779
             this.field26617 = this.method20699("0-16");
         }
         if (this.field26617.length < 17) {
-            Class8571.method28848("Invalid tiles, must be at least 17: " + str);
+            Config.warn("Invalid tiles, must be at least 17: " + str);
             return false;
         }
         if (this.field26641 != null && this.field26641 != Class9484.field40759) {
             return true;
         }
-        Class8571.method28848("Invalid overlay layer: " + this.field26641);
+        Config.warn("Invalid overlay layer: " + this.field26641);
         return false;
     }
     
@@ -612,7 +611,7 @@ public class Class6779
         if (this.field26641 != null && this.field26641 != Class9484.field40759) {
             return true;
         }
-        Class8571.method28848("Invalid overlay layer: " + this.field26641);
+        Config.warn("Invalid overlay layer: " + this.field26641);
         return false;
     }
     
@@ -623,7 +622,7 @@ public class Class6779
         if (this.field26641 != null && this.field26641 != Class9484.field40759) {
             return true;
         }
-        Class8571.method28848("Invalid overlay layer: " + this.field26641);
+        Config.warn("Invalid overlay layer: " + this.field26641);
         return false;
     }
     
@@ -634,7 +633,7 @@ public class Class6779
         if (this.field26641 != null && this.field26641 != Class9484.field40759) {
             return true;
         }
-        Class8571.method28848("Invalid overlay layer: " + this.field26641);
+        Config.warn("Invalid overlay layer: " + this.field26641);
         return false;
     }
     
@@ -645,7 +644,7 @@ public class Class6779
         if (this.field26641 != null && this.field26641 != Class9484.field40759) {
             return true;
         }
-        Class8571.method28848("Invalid overlay layer: " + this.field26641);
+        Config.warn("Invalid overlay layer: " + this.field26641);
         return false;
     }
     
@@ -656,60 +655,60 @@ public class Class6779
         if (this.field26617.length == 4) {
             return true;
         }
-        Class8571.method28848("Invalid tiles, must be exactly 4: " + str);
+        Config.warn("Invalid tiles, must be exactly 4: " + str);
         return false;
     }
     
     private boolean method20720(final String s) {
         if (this.field26617 == null) {
-            Class8571.method28848("No tiles defined for vertical: " + s);
+            Config.warn("No tiles defined for vertical: " + s);
             return false;
         }
         if (this.field26617.length == 4) {
             return true;
         }
-        Class8571.method28848("Invalid tiles, must be exactly 4: " + s);
+        Config.warn("Invalid tiles, must be exactly 4: " + s);
         return false;
     }
     
     private boolean method20721(final String s) {
         if (this.field26617 == null) {
-            Class8571.method28848("No tiles defined for horizontal+vertical: " + s);
+            Config.warn("No tiles defined for horizontal+vertical: " + s);
             return false;
         }
         if (this.field26617.length == 7) {
             return true;
         }
-        Class8571.method28848("Invalid tiles, must be exactly 7: " + s);
+        Config.warn("Invalid tiles, must be exactly 7: " + s);
         return false;
     }
     
     private boolean method20722(final String s) {
         if (this.field26617 == null) {
-            Class8571.method28848("No tiles defined for vertical+horizontal: " + s);
+            Config.warn("No tiles defined for vertical+horizontal: " + s);
             return false;
         }
         if (this.field26617.length == 7) {
             return true;
         }
-        Class8571.method28848("Invalid tiles, must be exactly 7: " + s);
+        Config.warn("Invalid tiles, must be exactly 7: " + s);
         return false;
     }
     
     private boolean method20723(final String str) {
         if (this.field26617 == null || this.field26617.length <= 0) {
-            Class8571.method28848("Tiles not defined: " + str);
+            Config.warn("Tiles not defined: " + str);
             return false;
         }
         if (this.field26627 != null) {
             if (this.field26627.length > this.field26617.length) {
-                Class8571.method28848("More weights defined than tiles, trimming weights: " + str);
+                Config.warn("More weights defined than tiles, trimming weights: " + str);
                 final int[] field26627 = new int[this.field26617.length];
                 System.arraycopy(this.field26627, 0, field26627, 0, field26627.length);
                 this.field26627 = field26627;
             }
             if (this.field26627.length < this.field26617.length) {
-                Class8571.method28848("Less weights defined than tiles, expanding weights: " + str);
+                Config.warn("Less weights defined than tiles, expanding weights: " + str);
                 final int[] field26628 = new int[this.field26617.length];
                 System.arraycopy(this.field26627, 0, field26628, 0, this.field26627.length);
                 final int method28403 = Class8500.method28403(this.field26627);
@@ -726,46 +725,46 @@ public class Class6779
             }
             this.field26633 = n;
             if (this.field26633 <= 0) {
-                Class8571.method28848("Invalid sum of all weights: " + n);
+                Config.warn("Invalid sum of all weights: " + n);
                 this.field26633 = 1;
             }
         }
         if (this.field26628 >= 0 && this.field26628 <= 9) {
             return true;
         }
-        Class8571.method28848("Invalid randomLoops: " + this.field26628);
+        Config.warn("Invalid randomLoops: " + this.field26628);
         return false;
     }
     
     private boolean method20724(final String s) {
         if (this.field26617 == null) {
-            Class8571.method28848("Tiles not defined: " + s);
+            Config.warn("Tiles not defined: " + s);
             return false;
         }
         if (this.field26625 <= 0) {
-            Class8571.method28848("Invalid width: " + s);
+            Config.warn("Invalid width: " + s);
             return false;
         }
         if (this.field26626 <= 0) {
-            Class8571.method28848("Invalid height: " + s);
+            Config.warn("Invalid height: " + s);
             return false;
         }
         if (this.field26617.length == this.field26625 * this.field26626) {
             return true;
         }
-        Class8571.method28848("Number of tiles does not equal width x height: " + s);
+        Config.warn("Number of tiles does not equal width x height: " + s);
         return false;
     }
     
     private boolean method20725(final String str) {
         if (this.field26617 == null) {
-            Class8571.method28848("Tiles not defined: " + str);
+            Config.warn("Tiles not defined: " + str);
             return false;
         }
         if (this.field26617.length == 1) {
             return true;
         }
-        Class8571.method28848("Number of tiles should be 1 for method: fixed.");
+        Config.warn("Number of tiles should be 1 for method: fixed.");
         return false;
     }
     
@@ -776,7 +775,7 @@ public class Class6779
         if (this.field26617.length == 1) {
             return true;
         }
-        Class8571.method28848("Invalid tiles, must be exactly 1: " + str);
+        Config.warn("Invalid tiles, must be exactly 1: " + str);
         return false;
     }
     
@@ -803,10 +802,10 @@ public class Class6779
             for (int i = 0; i < array.length; ++i) {
                 final Class1912 class1775 = array[i];
                 if (class1775 != null) {
-                    final Class1932 method7503 = class1775.method7503();
+                    final ResourceLocation method7503 = class1775.method7503();
                     final Class1912 method7504 = class1774.method6338(method7503);
                     if (method7504 == null || method7504 instanceof Class1913) {
-                        Class8571.method28848("Missing CTM sprite: " + method7503 + ", properties: " + this.field26612);
+                        Config.warn("Missing CTM sprite: " + method7503 + ", properties: " + this.field26612);
                     }
                     array[i] = method7504;
                 }
@@ -833,7 +832,7 @@ public class Class6779
         if (array != null) {
             final ArrayList list = new ArrayList();
             for (int i = 0; i < array.length; ++i) {
-                final Class1932 class1775 = new Class1932(array[i]);
+                final ResourceLocation class1775 = new ResourceLocation(array[i]);
                 final String method7798 = class1775.method7798();
                 String s = class1775.method7797();
                 if (!s.contains("/")) {
@@ -847,15 +846,15 @@ public class Class6779
                     list.add(Class7970.field32785);
                 }
                 else {
-                    if (!Class8571.method28900(new Class1932(method7798, string))) {
-                        Class8571.method28848("File not found: " + string);
+                    if (!Config.method28900(new ResourceLocation(method7798, string))) {
+                        Config.warn("File not found: " + string);
                     }
                     final String prefix = "textures/";
                     String substring = s;
                     if (s.startsWith(prefix)) {
                         substring = s.substring(prefix.length());
                     }
-                    list.add(class1774.method6359(new Class1932(method7798, substring)));
+                    list.add(class1774.method6359(new ResourceLocation(method7798, substring)));
                 }
             }
             return (Class1912[])list.toArray(new Class1912[list.size()]);
@@ -877,7 +876,7 @@ public class Class6779
     
     @Override
     public String toString() {
-        return "CTM name: " + this.field26611 + ", basePath: " + this.field26612 + ", matchBlocks: " + Class8571.method28888(this.field26613) + ", matchTiles: " + Class8571.method28888(this.field26615);
+        return "CTM name: " + this.field26611 + ", basePath: " + this.field26612 + ", matchBlocks: " + Config.method28888(this.field26613) + ", matchTiles: " + Config.method28888(this.field26615);
     }
     
     public boolean method20735(final Class3090 class3090) {

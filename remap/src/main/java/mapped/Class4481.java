@@ -166,12 +166,12 @@ public class Class4481 extends Class4479
     }
     
     @Override
-    public boolean method13450(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final int n, final int n2, final int n3, final Class1932 class1853) {
+    public boolean method13450(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final int n, final int n2, final int n3, final ResourceLocation class1853) {
         final BlockPos class1854 = new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
         if (class1852.isVecInside(class1854)) {
-            if (class1851.method6701(class1854).method21706()) {
-                if (!class1851.method6701(class1854.method1139()).method21706()) {
-                    this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29308.method11878()).method21773(Class4020.field18103, random.nextBoolean() ? Class104.field311 : Class104.field312), n, n2, n3, class1852);
+            if (class1851.getBlockState(class1854).method21706()) {
+                if (!class1851.getBlockState(class1854.method1139()).method21706()) {
+                    this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29308.getDefaultState()).with(Class4020.field18103, random.nextBoolean() ? Class104.field311 : Class104.field312), n, n2, n3, class1852);
                     final Class505 class1855 = new Class505(class1851.method6744(), class1854.getX() + 0.5f, class1854.getY() + 0.5f, class1854.getZ() + 0.5f);
                     class1855.method2165(class1853, random.nextLong());
                     class1851.method6886(class1855);
@@ -190,7 +190,7 @@ public class Class4481 extends Class4479
             this.method13444(class1851, class1853, 0, 0, 0, 2, 1, n, Class4481.field19848, Class4481.field19848, false);
             this.method13446(class1851, class1853, random, 0.8f, 0, 2, 0, 2, 2, n, Class4481.field19848, Class4481.field19848, false, false);
             if (this.field19872) {
-                this.method13446(class1851, class1853, random, 0.6f, 0, 0, 0, 2, 1, n, Class7521.field29240.method11878(), Class4481.field19848, false, true);
+                this.method13446(class1851, class1853, random, 0.6f, 0, 0, 0, 2, 1, n, Class7521.field29240.getDefaultState(), Class4481.field19848, false, true);
             }
             for (int i = 0; i < this.field19874; ++i) {
                 final int n2 = 2 + i * 5;
@@ -217,7 +217,7 @@ public class Class4481 extends Class4479
                         if (class1853.isVecInside(class1855)) {
                             if (this.method13442(class1851, 1, 0, n3, class1853)) {
                                 this.field19873 = true;
-                                class1851.method6688(class1855, Class7521.field29290.method11878(), 2);
+                                class1851.setBlockState(class1855, Class7521.field29290.getDefaultState(), 2);
                                 final TileEntity method13464 = class1851.method6727(class1855);
                                 if (method13464 instanceof Class494) {
                                     ((Class494)method13464).method2509().method13884(EntityType.field28965);
@@ -237,11 +237,11 @@ public class Class4481 extends Class4479
                 }
             }
             if (this.field19871) {
-                final BlockState class1856 = ((Class7097<O, BlockState>)Class7521.field29308.method11878()).method21773(Class4020.field18103, Class104.field311);
+                final BlockState class1856 = ((StateHolder<O, BlockState>)Class7521.field29308.getDefaultState()).with(Class4020.field18103, Class104.field311);
                 for (int l = 0; l <= n; ++l) {
                     final BlockState method13465 = this.method13441(class1851, 1, -1, l, class1853);
                     if (!method13465.method21706()) {
-                        if (method13465.method21722(class1851, new BlockPos(this.method13437(1, l), this.method13438(-1), this.method13439(1, l)))) {
+                        if (method13465.isOpaqueCube(class1851, new BlockPos(this.method13437(1, l), this.method13438(-1), this.method13439(1, l)))) {
                             this.method13447(class1851, class1853, random, this.method13442(class1851, 1, 0, l, class1853) ? 0.7f : 0.9f, 1, 0, l, class1856);
                         }
                     }
@@ -256,12 +256,12 @@ public class Class4481 extends Class4479
         if (this.method13464(class1851, class1852, n, n5, n4, n3)) {
             final BlockState method13462 = this.method13462();
             final BlockState method13463 = this.method13463();
-            this.method13444(class1851, class1852, n, n2, n3, n, n4 - 1, n3, ((Class7097<Object, BlockState>)method13463).method21773((Class7111<Comparable>)Class3929.field17468, true), Class4481.field19848, false);
-            this.method13444(class1851, class1852, n5, n2, n3, n5, n4 - 1, n3, ((Class7097<Object, BlockState>)method13463).method21773((Class7111<Comparable>)Class3929.field17466, true), Class4481.field19848, false);
+            this.method13444(class1851, class1852, n, n2, n3, n, n4 - 1, n3, ((StateHolder<Object, BlockState>)method13463).with((IProperty<Comparable>)Class3929.field17468, true), Class4481.field19848, false);
+            this.method13444(class1851, class1852, n5, n2, n3, n5, n4 - 1, n3, ((StateHolder<Object, BlockState>)method13463).with((IProperty<Comparable>)Class3929.field17466, true), Class4481.field19848, false);
             if (random.nextInt(4) != 0) {
                 this.method13444(class1851, class1852, n, n4, n3, n5, n4, n3, method13462, Class4481.field19848, false);
-                this.method13447(class1851, class1852, random, 0.05f, n + 1, n4, n3 - 1, ((Class7097<O, BlockState>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.NORTH));
-                this.method13447(class1851, class1852, random, 0.05f, n + 1, n4, n3 + 1, ((Class7097<O, BlockState>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.SOUTH));
+                this.method13447(class1851, class1852, random, 0.05f, n + 1, n4, n3 - 1, ((StateHolder<O, BlockState>)Class7521.field29288.getDefaultState()).with((IProperty<Comparable>)Class4023.field18110, Direction.NORTH));
+                this.method13447(class1851, class1852, random, 0.05f, n + 1, n4, n3 + 1, ((StateHolder<O, BlockState>)Class7521.field29288.getDefaultState()).with((IProperty<Comparable>)Class4023.field18110, Direction.SOUTH));
             }
             else {
                 this.method13444(class1851, class1852, n, n4, n3, n, n4, n3, method13462, Class4481.field19848, false);
@@ -272,7 +272,7 @@ public class Class4481 extends Class4479
     
     private void method13468(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final float n, final int n2, final int n3, final int n4) {
         if (this.method13442(class1851, n2, n3, n4, class1852)) {
-            this.method13447(class1851, class1852, random, n, n2, n3, n4, Class7521.field29240.method11878());
+            this.method13447(class1851, class1852, random, n, n2, n3, n4, Class7521.field29240.getDefaultState());
         }
     }
 }

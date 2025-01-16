@@ -32,7 +32,7 @@ public class Class9292
                     }
                 }
             }
-            final double method28867 = Class8571.method28867(n4 * 0.001, 0.0, 1.0);
+            final double method28867 = Config.method28867(n4 * 0.001, 0.0, 1.0);
             return this.field39854 = new Vec3d(this.field39854.x + (n - this.field39854.x) * method28867, this.field39854.y + (n2 - this.field39854.y) * method28867, this.field39854.z + (n3 - this.field39854.z) * method28867);
         }
         return this.field39854;

@@ -56,7 +56,7 @@ public class Class6606 extends Class6601
         }
         Class3441.method11001(this.field26184).method19833(0);
         this.field26183.method22437((class515, class516) -> {
-            class515.method6701(class516);
+            class515.getBlockState(class516);
             if (!class514.field3025.field27304) {
                 final BlockState class517;
                 if (!(!class517.method21755(Class7188.field27905))) {
@@ -64,7 +64,7 @@ public class Class6606 extends Class6601
                         Class3990.method12139(class517);
                         final BlockState class518;
                         if (class518 != null) {
-                            class515.method6688(class516, class518, 2);
+                            class515.setBlockState(class516, class518, 2);
                             class515.method6955(1030, class516, 0);
                             return;
                         }

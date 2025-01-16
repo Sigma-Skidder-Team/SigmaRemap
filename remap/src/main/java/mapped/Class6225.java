@@ -14,7 +14,7 @@ public class Class6225
     private static final float field25093;
     private static final float field25094;
     
-    public Class8754 method18519(final Vector3f class9138, final Vector3f class9139, final Class8111 class9140, final Class1912 class9141, final Direction class9142, final Class2123 class9143, final Class8225 class9144, final boolean b, final Class1932 class9145) {
+    public Class8754 method18519(final Vector3f class9138, final Vector3f class9139, final Class8111 class9140, final Class1912 class9141, final Direction class9142, final Class2123 class9143, final Class8225 class9144, final boolean b, final ResourceLocation class9145) {
         Class8435 class9146 = class9140.field33426;
         if (class9143.method8278()) {
             class9146 = method18520(class9140.field33426, class9142, class9143.method8274(), class9145);
@@ -41,7 +41,7 @@ public class Class6225
         return new Class8754(method7510, class9140.field33424, method7511, class9141, b);
     }
     
-    public static Class8435 method18520(final Class8435 class8435, final Direction class8436, final Class9294 class8437, final Class1932 class8438) {
+    public static Class8435 method18520(final Class8435 class8435, final Direction class8436, final Class9294 class8437, final ResourceLocation class8438) {
         final Matrix4f method34328 = Class7235.method22138(class8437, class8436, () -> "Unable to resolve UVLock for model: " + obj).method34328();
         final float method34329 = class8435.method28163(class8435.method28166(0));
         final float method34330 = class8435.method28164(class8435.method28166(0));
@@ -82,7 +82,7 @@ public class Class6225
     }
     
     private int[] method18521(final Class8435 class8435, final Class1912 class8436, final Direction class8437, final float[] array, final Class9294 class8438, final Class8225 class8439, final boolean b) {
-        final int[] array2 = new int[Class8571.method28955() ? Class9237.field39612 : Class9237.field39611];
+        final int[] array2 = new int[Config.method28955() ? Class9237.field39612 : Class9237.field39611];
         for (int i = 0; i < 4; ++i) {
             this.method18525(array2, i, class8437, class8435, array, class8436, class8438, class8439, b);
         }
@@ -97,7 +97,7 @@ public class Class6225
     public static float method18523(final Direction class179) {
         switch (Class8668.field36447[class179.ordinal()]) {
             case 1: {
-                if (Class8571.method28955()) {
+                if (Config.method28955()) {
                     return Class9216.field39371;
                 }
                 return 0.5f;
@@ -107,14 +107,14 @@ public class Class6225
             }
             case 3:
             case 4: {
-                if (Class8571.method28955()) {
+                if (Config.method28955()) {
                     return Class9216.field39373;
                 }
                 return 0.8f;
             }
             case 5:
             case 6: {
-                if (Class8571.method28955()) {
+                if (Config.method28955()) {
                     return Class9216.field39372;
                 }
                 return 0.6f;

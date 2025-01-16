@@ -41,7 +41,7 @@ public class Class435 extends TileEntity implements Class447, Class434
     private void method2171() {
         this.field2652 = 0;
         this.field2653 = 0;
-        Class3930.method12042(this.method2186(), this.method2193(), this.method2194(), false);
+        Class3930.method12042(this.method2186(), this.getPos(), this.method2194(), false);
     }
     
     public void method2172(final ItemStack class8321, final Class512 class8322) {
@@ -56,7 +56,7 @@ public class Class435 extends TileEntity implements Class447, Class434
         if (method35651 != this.field2652) {
             this.field2652 = method35651;
             this.method2161();
-            Class3930.method12043(this.method2186(), this.method2193(), this.method2194());
+            Class3930.method12043(this.method2186(), this.getPos(), this.method2194());
         }
     }
     

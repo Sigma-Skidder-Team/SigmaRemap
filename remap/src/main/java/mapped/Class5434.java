@@ -102,7 +102,7 @@ public class Class5434 extends Class5419<Class759>
     }
     
     private boolean method16596(final Class1849 class1849, final BlockPos class1850) {
-        return class1849.method6701(class1850).method21755(Class7188.field27910);
+        return class1849.getBlockState(class1850).method21755(Class7188.field27910);
     }
     
     private Optional<BlockPos> method16597(final Class759 class759) {

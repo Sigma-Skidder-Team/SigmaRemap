@@ -27,12 +27,12 @@ public class Class3990 extends Class3986
     
     public Class3990(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3990.field18000, Direction.NORTH));
+        this.method11877(((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3990.field18000, Direction.NORTH));
     }
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        return ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3990.field18000, class7074.method21644().rotateY());
+        return ((StateHolder<O, Class7096>)this.getDefaultState()).with((IProperty<Comparable>)Class3990.field18000, class7074.method21644().rotateY());
     }
     
     @Override
@@ -53,7 +53,7 @@ public class Class3990 extends Class3986
     
     @Override
     public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return (class7096.method21772((Class7111<Direction>)Class3990.field18000).getAxis() != Axis.X) ? Class3990.field18009 : Class3990.field18008;
+        return (class7096.method21772((IProperty<Direction>)Class3990.field18000).getAxis() != Axis.X) ? Class3990.field18009 : Class3990.field18008;
     }
     
     @Override
@@ -73,20 +73,20 @@ public class Class3990 extends Class3986
     
     @Nullable
     public static Class7096 method12139(final Class7096 class7096) {
-        final Class3833 method21696 = class7096.method21696();
+        final Block method21696 = class7096.method21696();
         if (method21696 != Class7521.field29465) {
-            return (method21696 != Class7521.field29466) ? null : ((Class7097<O, Class7096>)Class7521.field29467.method11878()).method21773((Class7111<Comparable>)Class3990.field18000, (Comparable)class7096.method21772((Class7111<V>)Class3990.field18000));
+            return (method21696 != Class7521.field29466) ? null : ((StateHolder<O, Class7096>)Class7521.field29467.getDefaultState()).with((IProperty<Comparable>)Class3990.field18000, (Comparable)class7096.method21772((IProperty<V>)Class3990.field18000));
         }
-        return ((Class7097<O, Class7096>)Class7521.field29466.method11878()).method21773((Class7111<Comparable>)Class3990.field18000, (Comparable)class7096.method21772((Class7111<V>)Class3990.field18000));
+        return ((StateHolder<O, Class7096>)Class7521.field29466.getDefaultState()).with((IProperty<Comparable>)Class3990.field18000, (Comparable)class7096.method21772((IProperty<V>)Class3990.field18000));
     }
     
     @Override
     public Class7096 method11790(final Class7096 class7096, final Class2052 class7097) {
-        return ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3990.field18000, class7097.method8142(class7096.method21772((Class7111<Direction>)Class3990.field18000)));
+        return ((StateHolder<O, Class7096>)class7096).with((IProperty<Comparable>)Class3990.field18000, class7097.method8142(class7096.method21772((IProperty<Direction>)Class3990.field18000)));
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Block, Class7096> class9500) {
         class9500.method35378(Class3990.field18000);
     }
     
@@ -97,15 +97,15 @@ public class Class3990 extends Class3986
     
     static {
         field18000 = Class3892.field17564;
-        field18001 = Class3833.method11778(2.0, 0.0, 2.0, 14.0, 4.0, 14.0);
-        field18002 = Class3833.method11778(3.0, 4.0, 4.0, 13.0, 5.0, 12.0);
-        field18003 = Class3833.method11778(4.0, 5.0, 6.0, 12.0, 10.0, 10.0);
-        field18004 = Class3833.method11778(0.0, 10.0, 3.0, 16.0, 16.0, 13.0);
-        field18005 = Class3833.method11778(4.0, 4.0, 3.0, 12.0, 5.0, 13.0);
-        field18006 = Class3833.method11778(6.0, 5.0, 4.0, 10.0, 10.0, 12.0);
-        field18007 = Class3833.method11778(3.0, 10.0, 0.0, 13.0, 16.0, 16.0);
-        field18008 = Class7698.method24493(Class3990.field18001, Class3990.field18002, Class3990.field18003, Class3990.field18004);
-        field18009 = Class7698.method24493(Class3990.field18001, Class3990.field18005, Class3990.field18006, Class3990.field18007);
+        field18001 = Block.method11778(2.0, 0.0, 2.0, 14.0, 4.0, 14.0);
+        field18002 = Block.method11778(3.0, 4.0, 4.0, 13.0, 5.0, 12.0);
+        field18003 = Block.method11778(4.0, 5.0, 6.0, 12.0, 10.0, 10.0);
+        field18004 = Block.method11778(0.0, 10.0, 3.0, 16.0, 16.0, 13.0);
+        field18005 = Block.method11778(4.0, 4.0, 3.0, 12.0, 5.0, 13.0);
+        field18006 = Block.method11778(6.0, 5.0, 4.0, 10.0, 10.0, 12.0);
+        field18007 = Block.method11778(3.0, 10.0, 0.0, 13.0, 16.0, 16.0);
+        field18008 = VoxelShapes.method24493(Class3990.field18001, Class3990.field18002, Class3990.field18003, Class3990.field18004);
+        field18009 = VoxelShapes.method24493(Class3990.field18001, Class3990.field18005, Class3990.field18006, Class3990.field18007);
         field18010 = new Class2259("container.repair", new Object[0]);
     }
 }

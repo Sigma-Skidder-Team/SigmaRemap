@@ -14,7 +14,7 @@ import org.apache.commons.io.IOUtils;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonArray;
-import java.io.Reader;
+
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import com.google.common.collect.Lists;
@@ -52,7 +52,7 @@ public class Class1926 implements Class1927, AutoCloseable
         this.field10509 = Lists.newArrayList();
         this.field10510 = Lists.newArrayList();
         this.field10511 = Maps.newHashMap();
-        final Class1932 class6583 = new Class1932("shaders/program/" + s + ".json");
+        final ResourceLocation class6583 = new ResourceLocation("shaders/program/" + s + ".json");
         this.field10513 = s;
         Class1671 method19933 = null;
         try {
@@ -139,7 +139,7 @@ public class Class1926 implements Class1927, AutoCloseable
     public static Class9331 method7709(final Class6582 class6582, final Class2032 class6583, final String str) throws IOException {
         Class9331 method34572 = class6583.method8094().get(str);
         if (method34572 == null) {
-            final Class1671 method34573 = class6582.method19933(new Class1932("shaders/program/" + str + class6583.method8092()));
+            final Class1671 method34573 = class6582.method19933(new ResourceLocation("shaders/program/" + str + class6583.method8092()));
             try {
                 method34572 = Class9331.method34572(class6583, str, method34573.method5887());
             }

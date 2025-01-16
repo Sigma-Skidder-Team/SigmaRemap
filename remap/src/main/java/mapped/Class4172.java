@@ -8,7 +8,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4172 extends Class4171<Class488>
 {
-    private static final Class1932 field18588;
+    private static final ResourceLocation field18588;
     
     public Class4172(final Class9550 class9550) {
         super(class9550);
@@ -39,6 +39,6 @@ public class Class4172 extends Class4171<Class488>
     }
     
     static {
-        field18588 = new Class1932("textures/entity/end_gateway_beam.png");
+        field18588 = new ResourceLocation("textures/entity/end_gateway_beam.png");
     }
 }

@@ -186,12 +186,12 @@ public class Class850 extends Class763
     
     private boolean method5078(final double n, final double n2, final double n3) {
         final Mutable class385 = new Mutable(n, n2, n3);
-        while (class385.getY() > 0 && !this.world.method6701(class385).method21697().method26440()) {
+        while (class385.getY() > 0 && !this.world.getBlockState(class385).method21697().method26440()) {
             class385.method1290(Direction.DOWN);
         }
-        final BlockState method6701 = this.world.method6701(class385);
-        final boolean method6702 = method6701.method21697().method26440();
-        final boolean method6703 = method6701.method21756().method21793(Class7324.field28319);
+        final BlockState method6701 = this.world.getBlockState(class385);
+        final boolean method6702 = method6701.getMaterial().method26440();
+        final boolean method6703 = method6701.getFluidState().method21793(Class7324.field28319);
         if (method6702 && !method6703) {
             final boolean method6704 = this.method2775(n, n2, n3, true);
             if (method6704) {
@@ -223,7 +223,7 @@ public class Class850 extends Class763
         super.method2678(class7929, n, b);
         final BlockState method5080 = this.method5080();
         if (method5080 != null) {
-            this.method1764(method5080.method21696());
+            this.method1764(method5080.getBlock());
         }
     }
     

@@ -38,7 +38,7 @@ public class Class7953 implements Class7954
     @Override
     public Class9017 method25804(final Entity class399, final Random random) {
         final ItemStack class400 = new ItemStack(Items.field31514, this.field32674);
-        final List<? super Object> list = Class90.field212.method509().filter(class401 -> !class401.method26449().isEmpty() && Class7652.method24243(class401)).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList());
+        final List<? super Object> list = Registry.field212.method509().filter(class401 -> !class401.method26449().isEmpty() && Class7652.method24243(class401)).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList());
         return new Class9017(class400, new ItemStack(this.field32677, this.field32678), Class5333.method16476(new ItemStack(this.field32672.getItem(), this.field32673), (Class8061)list.get(random.nextInt(list.size()))), this.field32675, this.field32676, this.field32679);
     }
 }

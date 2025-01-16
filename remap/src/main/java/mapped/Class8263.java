@@ -14,14 +14,14 @@ import java.util.List;
 public class Class8263
 {
     private final Class6782[] field33931;
-    private final Class1932 field33932;
+    private final ResourceLocation field33932;
     
-    public Class8263(final Class1932 field33932, final Class6782[] field33933) {
+    public Class8263(final ResourceLocation field33932, final Class6782[] field33933) {
         this.field33932 = field33932;
         this.field33931 = field33933;
     }
     
-    public Class1932 method27443() {
+    public ResourceLocation method27443() {
         return this.field33932;
     }
     
@@ -29,7 +29,7 @@ public class Class8263
         return this.field33931;
     }
     
-    public static Class8263 method27445(final Class1932 class1932, final Class1794 class1933, final List<String> list) {
+    public static Class8263 method27445(final ResourceLocation class1932, final Class1794 class1933, final List<String> list) {
         final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(list.size());
         for (int i = 0; i < list.size(); ++i) {
             final int j = i + 1;

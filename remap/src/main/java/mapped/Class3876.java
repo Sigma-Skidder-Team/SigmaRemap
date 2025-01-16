@@ -20,7 +20,7 @@ public class Class3876 extends Class3874 implements Class3872
     public Class3876(final Class5827 field17527, final Class9288 class9288) {
         super(class9288);
         this.field17527 = field17527;
-        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3876.field17525, 0));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3876.field17525, 0));
     }
     
     @Override
@@ -39,11 +39,11 @@ public class Class3876 extends Class3874 implements Class3872
     }
     
     public void method11951(final Class1849 class1849, final BlockPos class1850, final BlockState class1851, final Random random) {
-        if (class1851.method21772((Class7111<Integer>)Class3876.field17525) != 0) {
+        if (class1851.get((IProperty<Integer>)Class3876.field17525) != 0) {
             this.field17527.method17514(class1849, class1849.method6904().method7438(), class1850, class1851, random);
         }
         else {
-            class1849.method6688(class1850, ((Class7097<O, BlockState>)class1851).method21768((Class7111<Comparable>)Class3876.field17525), 4);
+            class1849.setBlockState(class1850, ((StateHolder<O, BlockState>)class1851).method21768((IProperty<Comparable>)Class3876.field17525), 4);
         }
     }
     
@@ -63,12 +63,12 @@ public class Class3876 extends Class3874 implements Class3872
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class3876.field17525);
     }
     
     static {
         field17525 = Class8970.field37791;
-        field17526 = Class3833.method11778(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
+        field17526 = Block.method11778(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
     }
 }

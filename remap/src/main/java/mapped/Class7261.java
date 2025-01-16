@@ -30,8 +30,8 @@ public abstract class Class7261 extends Class7257
     @Override
     public void method22150(final World class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
         final BlockPos method1137 = class1848.method1137();
-        if (class1847.method6701(method1137).method21706()) {
-            if (!class1847.method6701(method1137).method21722(class1847, method1137)) {
+        if (class1847.getBlockState(method1137).method21706()) {
+            if (!class1847.getBlockState(method1137).method21722(class1847, method1137)) {
                 if (random.nextInt(100) == 0) {
                     final double n = class1848.getX() + random.nextFloat();
                     final double n2 = class1848.getY() + 1;
@@ -58,7 +58,7 @@ public abstract class Class7261 extends Class7257
                     }
                     if (class1847.method6961(method1134.method1137())) {
                         if (this.method22202(class1847, method1134)) {
-                            class1847.method6692(method1134.method1137(), Class7521.field29289.method11878());
+                            class1847.method6692(method1134.method1137(), Class7521.field29289.getDefaultState());
                         }
                     }
                 }
@@ -70,14 +70,14 @@ public abstract class Class7261 extends Class7257
                     if (!class1847.method6731(method1135)) {
                         return;
                     }
-                    final BlockState method1136 = class1847.method6701(method1135);
+                    final BlockState method1136 = class1847.getBlockState(method1135);
                     if (!method1136.method21706()) {
-                        if (method1136.method21697().method26440()) {
+                        if (method1136.getMaterial().method26440()) {
                             return;
                         }
                     }
                     else if (this.method22201(class1847, method1135)) {
-                        class1847.method6692(method1135, Class7521.field29289.method11878());
+                        class1847.method6692(method1135, Class7521.field29289.getDefaultState());
                         return;
                     }
                 }
@@ -103,7 +103,7 @@ public abstract class Class7261 extends Class7257
                 }
             }
         }
-        return class1852.method6701(class1853).method21697().method26441();
+        return class1852.getBlockState(class1853).getMaterial().method26441();
     }
     
     @Nullable
@@ -124,7 +124,7 @@ public abstract class Class7261 extends Class7257
     
     @Override
     public BlockState method22162(final Class7099 class7099) {
-        return ((Class7097<O, BlockState>)Class7521.field29174.method11878()).method21773((Class7111<Comparable>)Class3859.field17480, Class7257.method22193(class7099));
+        return ((StateHolder<O, BlockState>)Class7521.field29174.getDefaultState()).with((IProperty<Comparable>)Class3859.field17480, Class7257.method22193(class7099));
     }
     
     @Override
@@ -150,10 +150,10 @@ public abstract class Class7261 extends Class7257
     @Override
     public int method22192(final World class1847, final BlockPos class1848, final Class7099 class1849, final Class7099 class1850) {
         int method22156 = this.method22156(class1847);
-        if (!class1849.method21781()) {
-            if (!class1850.method21781()) {
-                if (!class1849.method21772((Class7111<Boolean>)Class7261.field28132)) {
-                    if (!class1850.method21772((Class7111<Boolean>)Class7261.field28132)) {
+        if (!class1849.isEmpty()) {
+            if (!class1850.isEmpty()) {
+                if (!class1849.get((IProperty<Boolean>)Class7261.field28132)) {
+                    if (!class1850.get((IProperty<Boolean>)Class7261.field28132)) {
                         if (class1850.method21782(class1847, class1848) > class1849.method21782(class1847, class1848)) {
                             if (class1847.method6790().nextInt(4) != 0) {
                                 method22156 *= 4;
@@ -181,8 +181,8 @@ public abstract class Class7261 extends Class7257
             final Class7099 method6702 = class1851.method6702(class1852);
             if (this.method22166(Class7324.field28320)) {
                 if (method6702.method21793(Class7324.field28319)) {
-                    if (class1853.method21696() instanceof Class3859) {
-                        class1851.method6688(class1852, Class7521.field29148.method11878(), 3);
+                    if (class1853.getBlock() instanceof Class3859) {
+                        class1851.setBlockState(class1852, Class7521.field29148.getDefaultState(), 3);
                     }
                     this.method22203(class1851, class1852);
                     return;

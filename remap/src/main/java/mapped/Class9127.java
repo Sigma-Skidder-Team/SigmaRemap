@@ -10,9 +10,9 @@ public class Class9127
     private final int field38682;
     private int field38683;
     
-    public Class9127(final int field38682, final Class3833 class3833) {
+    public Class9127(final int field38682, final Block class3833) {
         this.field38682 = field38682;
-        this.field38681 = class3833.method11878();
+        this.field38681 = class3833.getDefaultState();
     }
     
     public int method33114() {
@@ -33,6 +33,6 @@ public class Class9127
     
     @Override
     public String toString() {
-        return ((this.field38682 == 1) ? "" : (this.field38682 + "*")) + Class90.field208.method503(this.field38681.method21696());
+        return ((this.field38682 == 1) ? "" : (this.field38682 + "*")) + Registry.BLOCK.getKey(this.field38681.getBlock());
     }
 }

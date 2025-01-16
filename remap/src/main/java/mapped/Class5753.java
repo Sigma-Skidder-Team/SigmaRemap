@@ -32,7 +32,7 @@ public class Class5753 extends Class5714
     
     public void method17067(VoxelShape method24488) {
         if (method24488 == null) {
-            method24488 = Class7698.method24488(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+            method24488 = VoxelShapes.method24488(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
         }
         this.field23351 = method24488;
     }

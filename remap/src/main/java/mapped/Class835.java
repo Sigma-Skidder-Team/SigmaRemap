@@ -16,9 +16,9 @@ import javax.annotation.Nullable;
 public class Class835 extends Class834
 {
     private static final DataParameter<Integer> field4447;
-    private static final Class1932[] field4448;
-    private static final Class1932[] field4449;
-    private static final Class1932[] field4450;
+    private static final ResourceLocation[] field4448;
+    private static final ResourceLocation[] field4449;
+    private static final ResourceLocation[] field4450;
     public static final int[] field4451;
     private boolean field4452;
     
@@ -137,11 +137,11 @@ public class Class835 extends Class834
         return Math.min((n & 0xFF00) >> 8, 5);
     }
     
-    public Class1932 method4986() {
+    public ResourceLocation method4986() {
         return (method4983(this.method4978()) != 0) ? Class835.field4450[method4985(this.method4978())] : Class835.field4449[method4985(this.method4978())];
     }
     
-    public Class1932 method4987() {
+    public ResourceLocation method4987() {
         return Class835.field4448[method4983(this.method4978())];
     }
     
@@ -187,9 +187,9 @@ public class Class835 extends Class834
     
     static {
         field4447 = EntityDataManager.method33564(Class835.class, Class7709.field30654);
-        field4448 = new Class1932[] { new Class1932("textures/entity/fish/tropical_a.png"), new Class1932("textures/entity/fish/tropical_b.png") };
-        field4449 = new Class1932[] { new Class1932("textures/entity/fish/tropical_a_pattern_1.png"), new Class1932("textures/entity/fish/tropical_a_pattern_2.png"), new Class1932("textures/entity/fish/tropical_a_pattern_3.png"), new Class1932("textures/entity/fish/tropical_a_pattern_4.png"), new Class1932("textures/entity/fish/tropical_a_pattern_5.png"), new Class1932("textures/entity/fish/tropical_a_pattern_6.png") };
-        field4450 = new Class1932[] { new Class1932("textures/entity/fish/tropical_b_pattern_1.png"), new Class1932("textures/entity/fish/tropical_b_pattern_2.png"), new Class1932("textures/entity/fish/tropical_b_pattern_3.png"), new Class1932("textures/entity/fish/tropical_b_pattern_4.png"), new Class1932("textures/entity/fish/tropical_b_pattern_5.png"), new Class1932("textures/entity/fish/tropical_b_pattern_6.png") };
+        field4448 = new ResourceLocation[] { new ResourceLocation("textures/entity/fish/tropical_a.png"), new ResourceLocation("textures/entity/fish/tropical_b.png") };
+        field4449 = new ResourceLocation[] { new ResourceLocation("textures/entity/fish/tropical_a_pattern_1.png"), new ResourceLocation("textures/entity/fish/tropical_a_pattern_2.png"), new ResourceLocation("textures/entity/fish/tropical_a_pattern_3.png"), new ResourceLocation("textures/entity/fish/tropical_a_pattern_4.png"), new ResourceLocation("textures/entity/fish/tropical_a_pattern_5.png"), new ResourceLocation("textures/entity/fish/tropical_a_pattern_6.png") };
+        field4450 = new ResourceLocation[] { new ResourceLocation("textures/entity/fish/tropical_b_pattern_1.png"), new ResourceLocation("textures/entity/fish/tropical_b_pattern_2.png"), new ResourceLocation("textures/entity/fish/tropical_b_pattern_3.png"), new ResourceLocation("textures/entity/fish/tropical_b_pattern_4.png"), new ResourceLocation("textures/entity/fish/tropical_b_pattern_5.png"), new ResourceLocation("textures/entity/fish/tropical_b_pattern_6.png") };
         field4451 = new int[] { method4972(Class296.field1691, Class181.field538, Class181.field544), method4972(Class296.field1690, Class181.field544, Class181.field544), method4972(Class296.field1690, Class181.field544, Class181.field548), method4972(Class296.field1695, Class181.field537, Class181.field544), method4972(Class296.field1685, Class181.field548, Class181.field544), method4972(Class296.field1684, Class181.field538, Class181.field537), method4972(Class296.field1689, Class181.field543, Class181.field540), method4972(Class296.field1693, Class181.field547, Class181.field541), method4972(Class296.field1695, Class181.field537, Class181.field551), method4972(Class296.field1689, Class181.field537, Class181.field541), method4972(Class296.field1692, Class181.field537, Class181.field544), method4972(Class296.field1695, Class181.field537, Class181.field538), method4972(Class296.field1687, Class181.field546, Class181.field543), method4972(Class296.field1688, Class181.field542, Class181.field540), method4972(Class296.field1694, Class181.field551, Class181.field537), method4972(Class296.field1686, Class181.field544, Class181.field551), method4972(Class296.field1693, Class181.field551, Class181.field537), method4972(Class296.field1690, Class181.field537, Class181.field541), method4972(Class296.field1684, Class181.field551, Class181.field537), method4972(Class296.field1685, Class181.field544, Class181.field537), method4972(Class296.field1687, Class181.field546, Class181.field541), method4972(Class296.field1690, Class181.field541, Class181.field541) };
     }
 }

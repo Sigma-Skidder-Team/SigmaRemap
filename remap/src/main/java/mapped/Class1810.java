@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Class1810 extends Class1799<Class786, Class5874<Class786>>
 {
-    private static final Map<Class2195, Class1932> field9981;
+    private static final Map<Class2195, ResourceLocation> field9981;
     
     public Class1810(final Class4778<Class786, Class5874<Class786>> class4778) {
         super(class4778);
@@ -25,6 +25,6 @@ public class Class1810 extends Class1799<Class786, Class5874<Class786>>
     }
     
     static {
-        field9981 = (Map)ImmutableMap.of((Object)Class2195.field13359, (Object)new Class1932("textures/entity/iron_golem/iron_golem_crackiness_low.png"), (Object)Class2195.field13360, (Object)new Class1932("textures/entity/iron_golem/iron_golem_crackiness_medium.png"), (Object)Class2195.field13361, (Object)new Class1932("textures/entity/iron_golem/iron_golem_crackiness_high.png"));
+        field9981 = (Map)ImmutableMap.of((Object)Class2195.field13359, (Object)new ResourceLocation("textures/entity/iron_golem/iron_golem_crackiness_low.png"), (Object)Class2195.field13360, (Object)new ResourceLocation("textures/entity/iron_golem/iron_golem_crackiness_medium.png"), (Object)Class2195.field13361, (Object)new ResourceLocation("textures/entity/iron_golem/iron_golem_crackiness_high.png"));
     }
 }

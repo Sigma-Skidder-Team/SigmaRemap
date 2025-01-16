@@ -20,7 +20,7 @@ public class Class7870
     public Class7870(final Class4312 field32315, final short field32316, final Class1862 class1862) {
         this.field32315 = field32315;
         this.field32313 = field32316;
-        this.field32314 = class1862.method6701(this.method25489());
+        this.field32314 = class1862.getBlockState(this.method25489());
     }
     
     public BlockPos method25489() {

@@ -16,7 +16,7 @@ public class Class7259 extends Class7258
     
     @Override
     public int method22164(final Class7099 class7099) {
-        return class7099.method21772((Class7111<Integer>)Class7259.field28133);
+        return class7099.get((IProperty<Integer>)Class7259.field28133);
     }
     
     @Override

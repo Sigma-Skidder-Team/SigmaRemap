@@ -66,7 +66,7 @@ public class Class716 extends Class698
     }
     
     public void method3934() {
-        final boolean method28955 = Class8571.method28955();
+        final boolean method28955 = Config.method28955();
         for (final Class573 class573 : this.field3842) {
             if (!(class573 instanceof Class673)) {
                 continue;
@@ -127,7 +127,7 @@ public class Class716 extends Class698
                                 b = true;
                             }
                             if (b) {
-                                Class8571.method28847("Opening via system class!");
+                                Config.method28847("Opening via system class!");
                                 Class8349.method27845().method980("file://" + Class9216.field39331.getAbsolutePath());
                                 break;
                             }
@@ -140,7 +140,7 @@ public class Class716 extends Class698
                             break;
                         }
                         case 203: {
-                            Class8571.method28894().method5244(new Class713(this, Class8571.method28962()));
+                            Config.method28894().method5244(new Class713(this, Config.method28962()));
                             break;
                         }
                         case 210: {

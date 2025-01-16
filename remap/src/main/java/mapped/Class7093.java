@@ -31,7 +31,7 @@ public class Class7093 extends Class7094
     
     @Override
     public boolean method21677(String s) {
-        if (Class8571.equals(s, "none")) {
+        if (Config.equals(s, "none")) {
             s = "off";
         }
         return super.method21677(s);

@@ -5,7 +5,6 @@
 package mapped;
 
 import java.util.Arrays;
-import com.mojang.brigadier.Message;
 import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
@@ -48,7 +47,7 @@ public class Class9286 implements ArgumentType<Class9456>
     
     public <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> commandContext, final SuggestionsBuilder suggestionsBuilder) {
         final ArrayList arrayList = Lists.newArrayList((Iterable)Class9456.field40639.keySet());
-        for (final Class2248 class2248 : Class90.field238) {
+        for (final Class2248 class2248 : Registry.field238) {
             final Iterator iterator2 = class2248.method8448().iterator();
             while (iterator2.hasNext()) {
                 arrayList.add(this.method34276((Class2248<Object>)class2248, iterator2.next()));

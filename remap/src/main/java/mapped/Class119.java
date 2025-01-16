@@ -10,11 +10,11 @@ import java.util.function.Predicate;
 public class Class119 implements Predicate<Class7990>
 {
     private static String[] field369;
-    private final Class7909<Class3833> field370;
+    private final Class7909<Block> field370;
     private final Class51 field371;
     private final Map<String, String> field372;
     
-    private Class119(final Class7909<Class3833> field370, final Map<String, String> field371, final Class51 field372) {
+    private Class119(final Class7909<Block> field370, final Map<String, String> field371, final Class51 field372) {
         this.field370 = field370;
         this.field372 = field371;
         this.field371 = field372;
@@ -27,15 +27,15 @@ public class Class119 implements Predicate<Class7990>
             return false;
         }
         for (final Map.Entry<String, V> entry : this.field372.entrySet()) {
-            final Class7111<?> method26066 = method26065.method21696().method11876().method32906(entry.getKey());
+            final IProperty<?> method26066 = method26065.getBlock().getStateContainer().getProperty(entry.getKey());
             if (method26066 == null) {
                 return false;
             }
-            final Comparable comparable = (Comparable)method26066.method21830((String)entry.getValue()).orElse((Object)null);
+            final Comparable comparable = (Comparable)method26066.parseValue((String)entry.getValue()).orElse((Object)null);
             if (comparable == null) {
                 return false;
             }
-            if (((Class7097<Object, Object>)method26065).method21772(method26066) == comparable) {
+            if (((StateHolder<Object, Object>)method26065).get(method26066) == comparable) {
                 continue;
             }
             return false;

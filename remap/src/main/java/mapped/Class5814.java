@@ -111,7 +111,7 @@ public class Class5814 implements Class5813
             this.field23883 = false;
             this.field23884 = 0;
         }
-        this.field23856.method1590().method15297("keepAlive");
+        this.field23856.method1590().startSection("keepAlive");
         final long method27837 = Class8349.method27837();
         if (method27837 - this.field23859 >= 15000L) {
             if (!this.field23860) {
@@ -124,7 +124,7 @@ public class Class5814 implements Class5813
                 this.method17463(new Class2259("disconnect.timeout", new Object[0]));
             }
         }
-        this.field23856.method1590().method15299();
+        this.field23856.method1590().endSection();
         if (this.field23862 > 0) {
             --this.field23862;
         }
@@ -360,18 +360,18 @@ public class Class5814 implements Class5813
             final boolean method2543 = class4266.method12805();
             if (method2539 != null) {
                 final Class2182 method2544 = class4267.method2550();
-                final Direction class4268 = this.field23857.world.method6701(method2540).method21772((Class7111<Direction>)Class3953.field17853);
+                final Direction class4268 = this.field23857.world.getBlockState(method2540).method21772((IProperty<Direction>)Class3953.field17853);
                 switch (Class8365.field34305[class4266.method12808().ordinal()]) {
                     case 1: {
-                        this.field23857.world.method6688(method2540, (BlockState)((Class7097<Object, Object>)((Class7097<Object, Object>)Class7521.field29640.method11878()).method21773((Class7111<Comparable>)Class3953.field17853, class4268)).method21773((Class7111<Comparable>)Class3953.field17854, class4266.method12806()), 2);
+                        this.field23857.world.setBlockState(method2540, (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)Class7521.field29640.getDefaultState()).with((IProperty<Comparable>)Class3953.field17853, class4268)).with((IProperty<Comparable>)Class3953.field17854, class4266.method12806()), 2);
                         break;
                     }
                     case 2: {
-                        this.field23857.world.method6688(method2540, (BlockState)((Class7097<Object, Object>)((Class7097<Object, Object>)Class7521.field29639.method11878()).method21773((Class7111<Comparable>)Class3953.field17853, class4268)).method21773((Class7111<Comparable>)Class3953.field17854, class4266.method12806()), 2);
+                        this.field23857.world.setBlockState(method2540, (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)Class7521.field29639.getDefaultState()).with((IProperty<Comparable>)Class3953.field17853, class4268)).with((IProperty<Comparable>)Class3953.field17854, class4266.method12806()), 2);
                         break;
                     }
                     default: {
-                        this.field23857.world.method6688(method2540, (BlockState)((Class7097<Object, Object>)((Class7097<Object, Object>)Class7521.field29416.method11878()).method21773((Class7111<Comparable>)Class3953.field17853, class4268)).method21773((Class7111<Comparable>)Class3953.field17854, class4266.method12806()), 2);
+                        this.field23857.world.setBlockState(method2540, (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)Class7521.field29416.getDefaultState()).with((IProperty<Comparable>)Class3953.field17853, class4268)).with((IProperty<Comparable>)Class3953.field17854, class4266.method12806()), 2);
                         break;
                     }
                 }
@@ -453,7 +453,7 @@ public class Class5814 implements Class5813
         Class8663.method29631((IPacket<Class5814>)class4360, this, this.field23857.method2940());
         if (this.field23857.method2908()) {
             final BlockPos method13101 = class4360.method13101();
-            final BlockState method13102 = this.field23857.world.method6701(method13101);
+            final BlockState method13102 = this.field23857.world.getBlockState(method13101);
             final TileEntity method13103 = this.field23857.world.method6727(method13101);
             if (method13103 instanceof Class501) {
                 final Class501 class4361 = (Class501)method13103;
@@ -515,7 +515,7 @@ public class Class5814 implements Class5813
         Class8663.method29631((IPacket<Class5814>)class4270, this, this.field23857.method2940());
         if (this.field23857.method2908()) {
             final BlockPos method12813 = class4270.method12813();
-            final BlockState method12814 = this.field23857.world.method6701(method12813);
+            final BlockState method12814 = this.field23857.world.getBlockState(method12813);
             final TileEntity method12815 = this.field23857.world.method6727(method12813);
             if (method12815 instanceof Class498) {
                 final Class498 class4271 = (Class498)method12815;
@@ -1255,7 +1255,7 @@ public class Class5814 implements Class5813
         final Class1849 method1481 = this.field23856.method1481(this.field23857.dimension);
         final BlockPos method1482 = class4344.method13046();
         if (method1481.method6971(method1482)) {
-            final BlockState method1483 = method1481.method6701(method1482);
+            final BlockState method1483 = method1481.getBlockState(method1482);
             final TileEntity method1484 = method1481.method6727(method1482);
             if (!(method1484 instanceof Class497)) {
                 return;

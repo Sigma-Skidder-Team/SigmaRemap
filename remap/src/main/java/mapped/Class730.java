@@ -35,7 +35,7 @@ public class Class730 extends Class527
         this.field3150.field4651.method22505(false);
         final Class5799 method5269 = this.field3150.method5269();
         if (method5269 != null) {
-            method5269.method17292(new Class4344(this.field3981.method2193(), this.field3981.method2520(0), this.field3981.method2520(1), this.field3981.method2520(2), this.field3981.method2520(3)));
+            method5269.method17292(new Class4344(this.field3981.getPos(), this.field3981.method2520(0), this.field3981.method2520(1), this.field3981.method2520(2), this.field3981.method2520(3)));
         }
         this.field3981.method2524(true);
     }
@@ -43,7 +43,7 @@ public class Class730 extends Class527
     @Override
     public void method2992() {
         ++this.field3982;
-        if (!this.field3981.method2206().method16523(this.field3981.method2194().method21696())) {
+        if (!this.field3981.getType().method16523(this.field3981.method2194().getBlock())) {
             this.method4031();
         }
     }
@@ -94,7 +94,7 @@ public class Class730 extends Class527
         class7351.method22565(93.75f, -93.75f, 93.75f);
         class7351.method22564(0.0, -1.3125, 0.0);
         final BlockState method2194 = this.field3981.method2194();
-        final boolean b = method2194.method21696() instanceof Class3861;
+        final boolean b = method2194.getBlock() instanceof Class3861;
         if (!b) {
             class7351.method22564(0.0, -0.3125, 0.0);
         }
@@ -102,7 +102,7 @@ public class Class730 extends Class527
         class7351.method22567();
         class7351.method22565(0.6666667f, -0.6666667f, -0.6666667f);
         final Class7808 method2195 = this.field3150.method5333().method11006();
-        final Class4150 method2196 = Class4159.method12461(method2194.method21696()).method11334(method2195, this.field3980::method17647);
+        final Class4150 method2196 = Class4159.method12461(method2194.getBlock()).method11334(method2195, this.field3980::method17647);
         this.field3980.field24272.method18643(class7351, method2196, 15728880, Class1904.field10335);
         if (b) {
             this.field3980.field24273.method18643(class7351, method2196, 15728880, Class1904.field10335);

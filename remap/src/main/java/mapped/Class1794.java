@@ -28,12 +28,12 @@ import org.apache.logging.log4j.Logger;
 public class Class1794 implements Class1657
 {
     private static final Logger field9932;
-    private static final Class1932 field9933;
-    private static final Class1932 field9934;
+    private static final ResourceLocation field9933;
+    private static final ResourceLocation field9934;
     public static final int field9935;
     public static final int field9936;
     private final MinecraftServer field9937;
-    private final Map<Class1932, Class8263> field9938;
+    private final Map<ResourceLocation, Class8263> field9938;
     private boolean field9939;
     private final ArrayDeque<Class9234> field9940;
     private final List<Class9234> field9941;
@@ -50,7 +50,7 @@ public class Class1794 implements Class1657
         this.field9937 = field9937;
     }
     
-    public Optional<Class8263> method6502(final Class1932 class1932) {
+    public Optional<Class8263> method6502(final ResourceLocation class1932) {
         return Optional.ofNullable(this.field9938.get(class1932));
     }
     
@@ -62,7 +62,7 @@ public class Class1794 implements Class1657
         return this.field9937.method1583().method31217(Class8878.field37336);
     }
     
-    public Map<Class1932, Class8263> method6505() {
+    public Map<ResourceLocation, Class8263> method6505() {
         return this.field9938;
     }
     
@@ -76,7 +76,7 @@ public class Class1794 implements Class1657
         while (iterator.hasNext()) {
             this.method6508(iterator.next(), this.method6511());
         }
-        this.field9937.method1590().method15299();
+        this.field9937.method1590().endSection();
         if (this.field9944) {
             this.field9944 = false;
             final Collection<Class8263> method25616 = this.method6513().method18461(Class1794.field9934).method25616();
@@ -85,7 +85,7 @@ public class Class1794 implements Class1657
             while (iterator2.hasNext()) {
                 this.method6508(iterator2.next(), this.method6511());
             }
-            this.field9937.method1590().method15299();
+            this.field9937.method1590().endSection();
         }
     }
     
@@ -115,7 +115,7 @@ public class Class1794 implements Class1657
                     }
                 }
                 finally {
-                    this.field9937.method1590().method15299();
+                    this.field9937.method1590().endSection();
                 }
                 if (++n >= method6504) {
                     return n;
@@ -134,15 +134,15 @@ public class Class1794 implements Class1657
     public void method5691(final Class6582 class6582) {
         this.field9938.clear();
         this.field9943.clear();
-        final Collection<Class1932> method19936 = class6582.method19936("functions", s -> s.endsWith(".mcfunction"));
+        final Collection<ResourceLocation> method19936 = class6582.method19936("functions", s -> s.endsWith(".mcfunction"));
         final ArrayList arrayList = Lists.newArrayList();
-        final Iterator<Class1932> iterator = method19936.iterator();
+        final Iterator<ResourceLocation> iterator = method19936.iterator();
         while (iterator.hasNext()) {
             iterator.next().method7797();
             arrayList.add(CompletableFuture.supplyAsync(() -> method6510(class6583, class6584), Class1673.field9460).thenApplyAsync(list -> {
-                final Class1932 class6586;
+                final ResourceLocation class6586;
                 final String s2;
-                final Object o = new Class1932(class6586.method7798(), s2.substring(Class1794.field9935, s2.length() - Class1794.field9936));
+                final Object o = new ResourceLocation(class6586.method7798(), s2.substring(Class1794.field9935, s2.length() - Class1794.field9936));
                 return Class8263.method27445(class6585, this, list);
             }, this.field9937.method1591()).handle((class6588, t3) -> this.method6509(class6588, t3, class6587)));
         }
@@ -156,7 +156,7 @@ public class Class1794 implements Class1657
     }
     
     @Nullable
-    private Class8263 method6509(final Class8263 class8263, final Throwable t, final Class1932 class8264) {
+    private Class8263 method6509(final Class8263 class8263, final Throwable t, final ResourceLocation class8264) {
         if (t != null) {
             Class1794.field9932.error("Couldn't load function at {}", (Object)class8264, (Object)t);
             return null;
@@ -167,7 +167,7 @@ public class Class1794 implements Class1657
         }
     }
     
-    private static List<String> method6510(final Class6582 class6582, final Class1932 class6583) {
+    private static List<String> method6510(final Class6582 class6582, final ResourceLocation class6583) {
         try (final Class1671 method19933 = class6582.method19933(class6583)) {
             return IOUtils.readLines(method19933.method5887(), StandardCharsets.UTF_8);
         }
@@ -190,8 +190,8 @@ public class Class1794 implements Class1657
     
     static {
         field9932 = LogManager.getLogger();
-        field9933 = new Class1932("tick");
-        field9934 = new Class1932("load");
+        field9933 = new ResourceLocation("tick");
+        field9934 = new ResourceLocation("load");
         field9935 = "functions/".length();
         field9936 = Class1794.\u6c4f\ubbcd\u11e9\ud553\u3ead\uc799[6].length();
     }

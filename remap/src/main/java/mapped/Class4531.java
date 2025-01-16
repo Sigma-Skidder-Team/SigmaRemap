@@ -44,7 +44,7 @@ public class Class4531 extends Class4469
             this.method13444(class1851, class1853, 1, i, 15, 14, i, 15, class1855, class1855, false);
         }
         this.method13444(class1851, class1853, 6, 3, 6, 9, 6, 9, Class4531.field19831, Class4531.field19831, false);
-        this.method13444(class1851, class1853, 7, 4, 7, 8, 5, 8, Class7521.field29280.method11878(), Class7521.field29280.method11878(), false);
+        this.method13444(class1851, class1853, 7, 4, 7, 8, 5, 8, Class7521.field29280.getDefaultState(), Class7521.field29280.getDefaultState(), false);
         for (int k = 3; k <= 6; k += 3) {
             for (int l = 6; l <= 9; l += 3) {
                 this.method13440(class1851, Class4531.field19833, l, k, 6, class1853);

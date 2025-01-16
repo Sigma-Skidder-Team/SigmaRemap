@@ -26,7 +26,7 @@ public class DimensionType implements IDynamicSerializable
     private final Class2178 field2231;
     
     private static DimensionType method1267(final String s, final DimensionType class383) {
-        return Class90.method513(Class90.field226, class383.field2226, s, class383);
+        return Registry.method513(Registry.field226, class383.field2226, s, class383);
     }
     
     public DimensionType(final int field2226, final String field2227, final String field2228, final BiFunction<World, DimensionType, ? extends Dimension> field2229, final boolean field2230, final Class2178 field2231) {
@@ -39,11 +39,11 @@ public class DimensionType implements IDynamicSerializable
     }
     
     public static DimensionType method1268(final Dynamic<?> dynamic) {
-        return Class90.field226.method505(new Class1932(dynamic.asString("")));
+        return Registry.field226.getOrDefault(new ResourceLocation(dynamic.asString("")));
     }
     
     public static Iterable<DimensionType> method1269() {
-        return Class90.field226;
+        return Registry.field226;
     }
     
     public int method1270() {
@@ -69,17 +69,17 @@ public class DimensionType implements IDynamicSerializable
     
     @Nullable
     public static DimensionType method1274(final int n) {
-        return Class90.field226.method499(n + 1);
+        return Registry.field226.method499(n + 1);
     }
     
     @Nullable
-    public static DimensionType method1275(final Class1932 class1932) {
-        return Class90.field226.method505(class1932);
+    public static DimensionType method1275(final ResourceLocation class1932) {
+        return Registry.field226.getOrDefault(class1932);
     }
     
     @Nullable
-    public static Class1932 method1276(final DimensionType class383) {
-        return Class90.field226.method503(class383);
+    public static ResourceLocation method1276(final DimensionType class383) {
+        return Registry.field226.getKey(class383);
     }
     
     public boolean method1277() {
@@ -92,7 +92,7 @@ public class DimensionType implements IDynamicSerializable
     
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
-        return (T)dynamicOps.createString(Class90.field226.method503(this).toString());
+        return (T)dynamicOps.createString(Registry.field226.getKey(this).toString());
     }
     
     static {

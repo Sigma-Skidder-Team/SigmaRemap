@@ -6,8 +6,8 @@ package mapped;
 
 public class Class1841 extends Class1799<Class815, Class5899<Class815>>
 {
-    private static final Class1932[] field10023;
-    private static final Class1932 field10024;
+    private static final ResourceLocation[] field10023;
+    private static final ResourceLocation field10024;
     private final Class5899<Class815> field10025;
     
     public Class1841(final Class4778<Class815, Class5899<Class815>> class4778) {
@@ -17,7 +17,7 @@ public class Class1841 extends Class1799<Class815, Class5899<Class815>>
     
     public void method6607(final Class7351 class7351, final Class7807 class7352, final int n, final Class815 class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         final Class181 method4792 = class7353.method4792();
-        Class1932 field10024;
+        ResourceLocation field10024;
         if (method4792 == null) {
             if (!class7353.method4784()) {
                 return;
@@ -33,7 +33,7 @@ public class Class1841 extends Class1799<Class815, Class5899<Class815>>
     }
     
     static {
-        field10023 = new Class1932[] { new Class1932("textures/entity/llama/decor/white.png"), new Class1932("textures/entity/llama/decor/orange.png"), new Class1932("textures/entity/llama/decor/magenta.png"), new Class1932("textures/entity/llama/decor/light_blue.png"), new Class1932("textures/entity/llama/decor/yellow.png"), new Class1932("textures/entity/llama/decor/lime.png"), new Class1932("textures/entity/llama/decor/pink.png"), new Class1932("textures/entity/llama/decor/gray.png"), new Class1932("textures/entity/llama/decor/light_gray.png"), new Class1932("textures/entity/llama/decor/cyan.png"), new Class1932("textures/entity/llama/decor/purple.png"), new Class1932("textures/entity/llama/decor/blue.png"), new Class1932("textures/entity/llama/decor/brown.png"), new Class1932("textures/entity/llama/decor/green.png"), new Class1932("textures/entity/llama/decor/red.png"), new Class1932("textures/entity/llama/decor/black.png") };
-        field10024 = new Class1932("textures/entity/llama/decor/trader_llama.png");
+        field10023 = new ResourceLocation[] { new ResourceLocation("textures/entity/llama/decor/white.png"), new ResourceLocation("textures/entity/llama/decor/orange.png"), new ResourceLocation("textures/entity/llama/decor/magenta.png"), new ResourceLocation("textures/entity/llama/decor/light_blue.png"), new ResourceLocation("textures/entity/llama/decor/yellow.png"), new ResourceLocation("textures/entity/llama/decor/lime.png"), new ResourceLocation("textures/entity/llama/decor/pink.png"), new ResourceLocation("textures/entity/llama/decor/gray.png"), new ResourceLocation("textures/entity/llama/decor/light_gray.png"), new ResourceLocation("textures/entity/llama/decor/cyan.png"), new ResourceLocation("textures/entity/llama/decor/purple.png"), new ResourceLocation("textures/entity/llama/decor/blue.png"), new ResourceLocation("textures/entity/llama/decor/brown.png"), new ResourceLocation("textures/entity/llama/decor/green.png"), new ResourceLocation("textures/entity/llama/decor/red.png"), new ResourceLocation("textures/entity/llama/decor/black.png") };
+        field10024 = new ResourceLocation("textures/entity/llama/decor/trader_llama.png");
     }
 }

@@ -20,7 +20,7 @@ public class Class4773 extends Class4712<Class835, Class5845<Class835>>
         this.method13978(new Class1816(this));
     }
     
-    public Class1932 method14126(final Class835 class835) {
+    public ResourceLocation method14126(final Class835 class835) {
         return class835.method4987();
     }
     

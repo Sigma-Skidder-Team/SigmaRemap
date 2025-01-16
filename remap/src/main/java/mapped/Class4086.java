@@ -28,13 +28,13 @@ public class Class4086 extends Class4085
         super(class8959);
         this.field18191 = false;
         this.field18192 = false;
-        this.method11705(new Class1932("pull"), (class8321, class8322, class8323) -> {
+        this.method11705(new ResourceLocation("pull"), (class8321, class8322, class8323) -> {
             if (class8323 != null && class8321.getItem() == this) {
                 return method12296(class8321) ? 0.0f : ((class8321.method27652() - class8323.method2767()) / (float)method12308(class8321));
             }
             return 0.0f;
         });
-        this.method11705(new Class1932("pulling"), (class8321, class8322, class8323) -> {
+        this.method11705(new ResourceLocation("pulling"), (class8321, class8322, class8323) -> {
             if (class8323 != null) {
                 if (class8323.method2756()) {
                     if (class8323.method2766() == class8321) {
@@ -46,8 +46,8 @@ public class Class4086 extends Class4085
             }
             return 0.0f;
         });
-        this.method11705(new Class1932("charged"), (class8321, class8322, class8323) -> (class8323 != null && method12296(class8321)) ? 1.0f : 0.0f);
-        this.method11705(new Class1932("firework"), (class8321, class8322, class8323) -> {
+        this.method11705(new ResourceLocation("charged"), (class8321, class8322, class8323) -> (class8323 != null && method12296(class8321)) ? 1.0f : 0.0f);
+        this.method11705(new ResourceLocation("firework"), (class8321, class8322, class8323) -> {
             if (class8323 != null) {
                 if (method12296(class8321)) {
                     if (method12301(class8321, Items.field31532)) {

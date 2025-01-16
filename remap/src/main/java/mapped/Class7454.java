@@ -10,11 +10,11 @@ import java.util.Map;
 
 public class Class7454
 {
-    private static final Map<Class1932, Class7020<?>> field28756;
+    private static final Map<ResourceLocation, Class7020<?>> field28756;
     private static final Map<Class<? extends Class122>, Class7020<?>> field28757;
     
     public static <T extends Class122> void method22940(final Class7020<? extends T> class7020) {
-        final Class1932 method21484 = class7020.method21484();
+        final ResourceLocation method21484 = class7020.method21484();
         final Class method21485 = class7020.method21485();
         if (Class7454.field28756.containsKey(method21484)) {
             throw new IllegalArgumentException("Can't re-register item condition name " + method21484);
@@ -27,7 +27,7 @@ public class Class7454
         throw new IllegalArgumentException("Can't re-register item condition class " + method21485.getName());
     }
     
-    public static Class7020<?> method22941(final Class1932 obj) {
+    public static Class7020<?> method22941(final ResourceLocation obj) {
         final Class7020 class7020 = Class7454.field28756.get(obj);
         if (class7020 != null) {
             return class7020;

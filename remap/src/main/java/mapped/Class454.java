@@ -39,7 +39,7 @@ public class Class454 extends Class433 implements Class453
     
     @Override
     public BlockState method2141() {
-        return Class7521.field29475.method11878();
+        return Class7521.field29475.getDefaultState();
     }
     
     @Override

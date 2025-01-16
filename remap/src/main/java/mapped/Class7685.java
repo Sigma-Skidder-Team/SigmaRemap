@@ -43,7 +43,7 @@ public class Class7685 implements Class7684
     public String field30523;
     public final Map<String, Either<Class3687, String>> field30524;
     public Class7685 field30525;
-    public Class1932 field30526;
+    public ResourceLocation field30526;
     
     public static Class7685 method24385(final Reader reader) {
         return Class9583.method35928(Class7685.field30517, reader, Class7685.class);
@@ -53,7 +53,7 @@ public class Class7685 implements Class7684
         return method24385(new StringReader(s));
     }
     
-    public Class7685(final Class1932 field30526, final List<Class9219> field30527, final Map<String, Either<Class3687, String>> field30528, final boolean field30529, final Class240 field30530, final Class7503 field30531, final List<Class6559> field30532) {
+    public Class7685(final ResourceLocation field30526, final List<Class9219> field30527, final Map<String, Either<Class3687, String>> field30528, final boolean field30529, final Class240 field30530, final Class7503 field30531, final List<Class6559> field30532) {
         this.field30523 = "";
         this.field30518 = field30527;
         this.field30520 = field30529;
@@ -88,7 +88,7 @@ public class Class7685 implements Class7684
     }
     
     @Override
-    public Collection<Class1932> method24381() {
+    public Collection<ResourceLocation> method24381() {
         final HashSet hashSet = Sets.newHashSet();
         final Iterator<Class6559> iterator = this.field30522.iterator();
         while (iterator.hasNext()) {
@@ -101,7 +101,7 @@ public class Class7685 implements Class7684
     }
     
     @Override
-    public Collection<Class3687> method24382(final Function<Class1932, Class7684> function, final Set<Pair<String, String>> set) {
+    public Collection<Class3687> method24382(final Function<ResourceLocation, Class7684> function, final Set<Pair<String, String>> set) {
         final LinkedHashSet linkedHashSet = Sets.newLinkedHashSet();
         for (Class7685 field30525 = this; field30525.field30526 != null && field30525.field30525 == null; field30525 = field30525.field30525) {
             linkedHashSet.add(field30525);
@@ -147,11 +147,11 @@ public class Class7685 implements Class7684
     }
     
     @Override
-    public Class6313 method24383(final Class7637 class7637, final Function<Class3687, Class1912> function, final Class2123 class7638, final Class1932 class7639) {
+    public Class6313 method24383(final Class7637 class7637, final Function<Class3687, Class1912> function, final Class2123 class7638, final ResourceLocation class7639) {
         return this.method24392(class7637, this, function, class7638, class7639, true);
     }
     
-    public Class6313 method24392(final Class7637 class7637, final Class7685 class7638, final Function<Class3687, Class1912> function, final Class2123 class7639, final Class1932 class7640, final boolean b) {
+    public Class6313 method24392(final Class7637 class7637, final Class7685 class7638, final Function<Class3687, Class1912> function, final Class2123 class7639, final ResourceLocation class7640, final boolean b) {
         final Class1912 class7641 = function.apply(this.method24395("particle"));
         if (this.method24398() != Class7637.field30257) {
             final Class7878 method25530 = new Class7878(this, this.method24391(class7637, class7638), b).method25530(class7641);
@@ -172,7 +172,7 @@ public class Class7685 implements Class7684
         return new Class6317(this.method24399(), this.method24391(class7637, class7638), class7641, this.method24389().method889());
     }
     
-    private static Class8754 method24393(final Class9219 class9219, final Class8111 class9220, final Class1912 class9221, final Direction class9222, final Class2123 class9223, final Class1932 class9224) {
+    private static Class8754 method24393(final Class9219 class9219, final Class8111 class9220, final Class1912 class9221, final Direction class9222, final Class2123 class9223, final ResourceLocation class9224) {
         return Class7685.field30516.method18519(class9219.field39554, class9219.field39555, class9220, class9221, class9222, class9223, class9219.field39557, class9219.field39558, class9224);
     }
     

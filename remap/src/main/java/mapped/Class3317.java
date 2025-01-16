@@ -52,7 +52,7 @@ public class Class3317 extends Class3167
             }
             Class3317.field15514.field4684.field4078 = Class3317.field15514.field4684.rotationPitch;
             final AxisAlignedBB field2403 = Class3317.field15514.field4684.boundingBox;
-            Class3317.field15901.setPosition((field2403.field25073 + field2403.field25076) / 2.0, field2403.field25074, (field2403.field25075 + field2403.field25078) / 2.0);
+            Class3317.field15901.setPosition((field2403.minX + field2403.maxX) / 2.0, field2403.minY, (field2403.minZ + field2403.maxZ) / 2.0);
             final double n = this.field15905 + (this.field15902 - this.field15905) * class5741.field23312;
             final double n2 = this.field15906 + (this.field15903 - this.field15906) * class5741.field23312;
             final double n3 = this.field15907 + (this.field15904 - this.field15907) * class5741.field23312;

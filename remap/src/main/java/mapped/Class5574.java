@@ -51,7 +51,7 @@ public class Class5574 extends Class5509
         final Class8551 method5306 = Class869.method5277().method5306();
         Class4703 obj = method5306.method28719().get(Class835.class);
         if (!(obj instanceof Class4773)) {
-            Class8571.method28848("Not a TropicalFishRenderer: " + obj);
+            Config.warn("Not a TropicalFishRenderer: " + obj);
             return null;
         }
         if (obj.method13960() == null) {
@@ -64,7 +64,7 @@ public class Class5574 extends Class5509
             Class9570.field41581.method22633(class5903, class5901);
             return (Class9559)class5903;
         }
-        Class8571.method28848("Model field not found: RenderTropicalFish.modelB");
+        Config.warn("Model field not found: RenderTropicalFish.modelB");
         return null;
     }
 }

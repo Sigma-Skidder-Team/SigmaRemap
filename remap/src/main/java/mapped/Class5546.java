@@ -30,7 +30,7 @@ public class Class5546 extends Class5543
     
     @Override
     public String[] method16813() {
-        return (String[])Class8571.method28984(super.method16813(), new String[] { "left_wing", "right_wing" });
+        return (String[]) Config.method28984(super.method16813(), new String[] { "left_wing", "right_wing" });
     }
     
     @Override

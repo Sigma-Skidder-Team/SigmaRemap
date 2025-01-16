@@ -55,8 +55,8 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     private static Class869 field4621;
     private static final Logger field4622;
     public static final boolean field4623;
-    public static final Class1932 field4624;
-    public static final Class1932 field4625;
+    public static final ResourceLocation field4624;
+    public static final ResourceLocation field4625;
     private static final CompletableFuture<Class315> field4626;
     private final File field4627;
     private final PropertyMap field4628;
@@ -219,7 +219,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         this.field4632 = this.field4631.method1413(field37235, this.field4648.field23392, this.method5228());
         this.method5326(true);
         try {
-            this.field4632.method7665(this.method5293().method25740().method6097(Class346.field2137, new Class1932("icons/icon_16x16.png")), this.method5293().method25740().method6097(Class346.field2137, new Class1932("icons/icon_32x32.png")));
+            this.field4632.method7665(this.method5293().method25740().method6097(Class346.field2137, new ResourceLocation("icons/icon_16x16.png")), this.method5293().method25740().method6097(Class346.field2137, new ResourceLocation("icons/icon_32x32.png")));
         }
         catch (final IOException ex) {
             Class869.field4622.error("Couldn't set icon", (Throwable)ex);
@@ -391,10 +391,10 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     }
     
     private void method5231() {
-        final Class8922 class8922 = new Class8922(class8925 -> class8925.method27668(null, Class1980.field10972).stream().map(class8926 -> TextFormatting.getTextWithoutFormattingCodes(class8926.getString()).trim()).filter(s -> !s.isEmpty()), class8927 -> Stream.of(Class90.field211.method503(class8927.method27622())));
+        final Class8922 class8922 = new Class8922(class8925 -> class8925.method27668(null, Class1980.field10972).stream().map(class8926 -> TextFormatting.getTextWithoutFormattingCodes(class8926.getString()).trim()).filter(s -> !s.isEmpty()), class8927 -> Stream.of(Registry.field211.getKey(class8927.method27622())));
         final Class8923 class8923 = new Class8923(class8928 -> Class7855.method25402().method18463(class8928.method27622()).stream());
         final Class2265<Object> method8506 = Class2265.method8506();
-        final Iterator<Object> iterator = Class90.field211.iterator();
+        final Iterator<Object> iterator = Registry.field211.iterator();
         while (iterator.hasNext()) {
             iterator.next().method11735(Class7207.field27998, (Class2265<ItemStack>)method8506);
         }
@@ -403,7 +403,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             class8930.method31458(class8931);
             return;
         });
-        final Class8922<Class9586> class8924 = new Class8922<Class9586>(class8932 -> class8932.method35945().stream().flatMap(class8933 -> class8933.method11292().method27668(null, Class1980.field10972).stream()).map(class8934 -> TextFormatting.getTextWithoutFormattingCodes(class8934.getString()).trim()).filter(s2 -> !s2.isEmpty()), class8935 -> class8935.method35945().stream().map(class8936 -> Class90.field211.method503(class8936.method11292().getItem())));
+        final Class8922<Class9586> class8924 = new Class8922<Class9586>(class8932 -> class8932.method35945().stream().flatMap(class8933 -> class8933.method11292().method27668(null, Class1980.field10972).stream()).map(class8934 -> TextFormatting.getTextWithoutFormattingCodes(class8934.getString()).trim()).filter(s2 -> !s2.isEmpty()), class8935 -> class8935.method35945().stream().map(class8936 -> Registry.field211.getKey(class8936.method11292().getItem())));
         this.field4641.method5798(Class1659.field9375, class8922);
         this.field4641.method5798(Class1659.field9376, class8923);
         this.field4641.method5798(Class1659.field9377, class8924);
@@ -490,7 +490,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         boolean b = false;
         final Class9509 method5787 = this.method5305().method5787();
         final Class6313 method5788 = method5787.method35429().method6452();
-        final Iterator<Object> iterator = Class90.field208.iterator();
+        final Iterator<Object> iterator = Registry.BLOCK.iterator();
         while (iterator.hasNext()) {
             for (final BlockState class7096 : iterator.next().method11876().method32902()) {
                 if (class7096.method21710() == Class2115.field12307 && method5787.method35428(class7096) == method5788) {
@@ -500,7 +500,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             }
         }
         final Class1912 method5789 = method5788.method18696();
-        final Iterator<Object> iterator3 = Class90.field208.iterator();
+        final Iterator<Object> iterator3 = Registry.BLOCK.iterator();
         while (iterator3.hasNext()) {
             for (final BlockState class7097 : iterator3.next().method11876().method32902()) {
                 final Class1912 method5790 = method5787.method35427(class7097);
@@ -511,7 +511,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             }
         }
         final Class2265<Object> method5791 = Class2265.method8506();
-        for (final Item class7098 : Class90.field211) {
+        for (final Item class7098 : Registry.field211) {
             method5791.clear();
             class7098.method11735(Class7207.field27998, (Class2265<ItemStack>)method5791);
             for (final ItemStack class7099 : method5791) {
@@ -639,11 +639,11 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         }
         if (b) {
             this.field4633.method20527(Class8349.method27837());
-            this.field4660.method15297("scheduledExecutables");
+            this.field4660.startSection("scheduledExecutables");
             this.method5383();
-            this.field4660.method15299();
+            this.field4660.endSection();
         }
-        this.field4660.method15297("tick");
+        this.field4660.startSection("tick");
         if (b) {
             for (int i = 0; i < Math.min(10, this.field4633.field26527); ++i) {
                 this.method5260();
@@ -653,21 +653,21 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         this.field4632.method7667("Render");
         this.field4660.method15300("sound");
         this.field4668.method6424(this.field4644.method5833());
-        this.field4660.method15299();
-        this.field4660.method15297("render");
+        this.field4660.endSection();
+        this.field4660.startSection("render");
         Class8726.method30059();
         Class8726.method30056(16640, Class869.field4623);
         this.field4667.method18395(true);
         Class9111.method32953();
-        this.field4660.method15297("display");
+        this.field4660.startSection("display");
         Class8726.method30040();
-        this.field4660.method15299();
+        this.field4660.endSection();
         if (!this.field4699) {
             this.field4660.method15300("gameRenderer");
             this.field4644.method5817(this.field4694 ? this.field4695 : this.field4633.field26528, method27838, b);
             this.field4660.method15300("toasts");
             this.field4678.method3849();
-            this.field4660.method15299();
+            this.field4660.endSection();
         }
         this.field4660.method15296();
         if (this.field4648.field23466 && this.field4648.field23467 && !this.field4648.field23464) {
@@ -683,7 +683,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         this.field4667.method18399(this.field4632.method7692(), this.field4632.method7693());
         Class8726.method30060();
         this.field4660.method15295();
-        this.field4660.method15297("updateDisplay");
+        this.field4660.startSection("updateDisplay");
         this.field4632.method7680();
         final int method27839 = this.method5249();
         if (method27839 < Class6469.field25712.method19473()) {
@@ -691,7 +691,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         }
         this.field4660.method15300("yield");
         Thread.yield();
-        this.field4660.method15299();
+        this.field4660.endSection();
         this.field4632.method7667("Post render");
         ++this.field4698;
         final boolean field4714 = this.method5284() && ((this.field4700 != null && this.field4700.method2991()) || (this.field4701 != null && this.field4701.method3305())) && !this.field4685.method1539();
@@ -893,7 +893,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             if (b && this.field4691 != null && this.field4691.method21449() == Class2165.field12881) {
                 final Class7005 class7005 = (Class7005)this.field4691;
                 final BlockPos method21447 = class7005.method21447();
-                if (!this.field4683.method6701(method21447).method21706()) {
+                if (!this.field4683.getBlockState(method21447).method21706()) {
                     final Direction method21448 = class7005.method21448();
                     if (this.field4682.method27314(method21447, method21448)) {
                         this.field4640.method6487(method21447, method21448);
@@ -946,7 +946,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                     case 2: {
                         final Class7005 class5750 = (Class7005)this.field4691;
                         final BlockPos method21447 = class5750.method21447();
-                        if (!this.field4683.method6701(method21447).method21706()) {
+                        if (!this.field4683.getBlockState(method21447).method21706()) {
                             this.field4682.method27312(method21447, class5750.method21448());
                             break;
                         }
@@ -1040,14 +1040,14 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         if (this.field4692 > 0) {
             --this.field4692;
         }
-        this.field4660.method15297("gui");
+        this.field4660.startSection("gui");
         if (!this.field4694) {
             this.field4647.method3801();
         }
-        this.field4660.method15299();
+        this.field4660.endSection();
         this.field4644.method5807(1.0f);
         this.field4680.method32919(this.field4683, this.field4691);
-        this.field4660.method15297("gameMode");
+        this.field4660.startSection("gameMode");
         if (!this.field4694 && this.field4683 != null) {
             this.field4682.method27316();
         }
@@ -1139,7 +1139,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         }
         this.field4660.method15300("keyboard");
         this.field4651.method22509();
-        this.field4660.method15299();
+        this.field4660.endSection();
     }
     
     private void method5261() {
@@ -1392,8 +1392,8 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             ItemStack class5749;
             if (method6728 == Class2165.field12881) {
                 final BlockPos method6729 = ((Class7005)this.field4691).method21447();
-                final BlockState method6730 = this.field4683.method6701(method6729);
-                final Class3833 method6731 = method6730.method21696();
+                final BlockState method6730 = this.field4683.getBlockState(method6729);
+                final Block method6731 = method6730.getBlock();
                 if (method6730.method21706()) {
                     return;
                 }
@@ -1475,10 +1475,10 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             if (class5749.method27620()) {
                 String s = "";
                 if (method6728 == Class2165.field12881) {
-                    s = Class90.field208.method503(this.field4683.method6701(((Class7005)this.field4691).method21447()).method21696()).toString();
+                    s = Registry.BLOCK.getKey(this.field4683.getBlockState(((Class7005)this.field4691).method21447()).method21696()).toString();
                 }
                 else if (method6728 == Class2165.field12882) {
-                    s = Class90.field210.method503(((Class7007)this.field4691).method21452().getType()).toString();
+                    s = Registry.field210.getKey(((Class7007)this.field4691).method21452().getType()).toString();
                 }
                 Class869.field4622.warn("Picking on: [{}] {} gave null item", (Object)method6728, (Object)s);
             }
@@ -1706,7 +1706,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         return this.field4664;
     }
     
-    public Function<Class1932, Class1912> method5296(final Class1932 class1932) {
+    public Function<ResourceLocation, Class1912> method5296(final ResourceLocation class1932) {
         return this.field4674.method6457(class1932)::method6338;
     }
     
@@ -1924,8 +1924,8 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     static {
         field4622 = LogManager.getLogger();
         field4623 = (Class8349.method27845() == Class306.field1834);
-        field4624 = new Class1932("default");
-        field4625 = new Class1932("alt");
+        field4624 = new ResourceLocation("default");
+        field4625 = new ResourceLocation("alt");
         field4626 = CompletableFuture.completedFuture(Class315.field1875);
         Class869.field4681 = new byte[10485760];
     }

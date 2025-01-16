@@ -62,7 +62,7 @@ public class Class689 extends Class565
     }
     
     public void method3828() {
-        this.field3792.method5327().method15297("debug");
+        this.field3792.method5327().startSection("debug");
         Class8726.method30059();
         final Entity method5303 = this.field3792.method5303();
         this.field3794 = method5303.method1748(20.0, 0.0f, false);
@@ -78,7 +78,7 @@ public class Class689 extends Class565
                 this.method3839(method5305.method1589(), method5304 - Math.min(method5304 / 2, 240), method5304 / 2, false);
             }
         }
-        this.field3792.method5327().method15299();
+        this.field3792.method5327().endSection();
     }
     
     public void method3829() {
@@ -126,27 +126,27 @@ public class Class689 extends Class565
     public List<String> method3831() {
         if (this.field3792.field4707 != this.field3799) {
             final StringBuffer sb = new StringBuffer(this.field3792.field4707);
-            Class8571.method28989();
+            Config.method28989();
             final int index = this.field3792.field4707.indexOf(" fps ");
             if (index >= 0) {
                 sb.append(index);
             }
-            if (Class8571.method29011()) {
+            if (Config.method29011()) {
                 sb.append(" sf");
             }
-            if (Class8571.method28953()) {
+            if (Config.method28953()) {
                 sb.append(" fr");
             }
-            if (Class8571.method28924()) {
+            if (Config.method28924()) {
                 sb.append(" af");
             }
-            if (Class8571.method28926()) {
+            if (Config.method28926()) {
                 sb.append(" aa");
             }
-            if (Class8571.method29009()) {
+            if (Config.method29009()) {
                 sb.append(" reg");
             }
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 sb.append(" sh");
             }
             this.field3792.field4707 = sb.toString();
@@ -154,7 +154,7 @@ public class Class689 extends Class565
         }
         final List<String> method3832 = this.method3832();
         final StringBuilder sb2 = new StringBuilder();
-        final Class1774 method3833 = Class8571.method29001();
+        final Class1774 method3833 = Config.method29001();
         sb2.append(", A: ");
         if (Class7663.method24283()) {
             sb2.append(method3833.method6358() + Class8287.method27545());
@@ -242,10 +242,10 @@ public class Class689 extends Class565
                     arrayList.add("Waiting for chunk...");
                 }
                 else {
-                    arrayList.add("Client Light: " + this.field3792.field4683.method6835().method7405().method7290(class354, 0) + " (" + this.field3792.field4683.method6992(Class237.field911, class354) + " sky, " + this.field3792.field4683.method6992(Class237.field912, class354) + " block)");
+                    arrayList.add("Client Light: " + this.field3792.field4683.method6835().getLightManager().method7290(class354, 0) + " (" + this.field3792.field4683.method6992(Class237.field911, class354) + " sky, " + this.field3792.field4683.method6992(Class237.field912, class354) + " block)");
                     final Class1862 method5294 = this.method3835();
                     if (method5294 != null) {
-                        final Class1886 method5295 = method5291.method6762().method7405();
+                        final Class1886 method5295 = method5291.getChunkProvider().getLightManager();
                         arrayList.add("Server Light: (" + method5295.method7288(Class237.field911).method7293(class354) + " sky, " + method5295.method7288(Class237.field912).method7293(class354) + " block)");
                     }
                     else {
@@ -273,7 +273,7 @@ public class Class689 extends Class565
                     }
                     arrayList.add(sb.toString());
                     if (class354.getY() >= 0 && class354.getY() < 256) {
-                        arrayList.add("Biome: " + Class90.field217.method503(this.field3792.field4683.method6959(class354)));
+                        arrayList.add("Biome: " + Registry.field217.getKey(this.field3792.field4683.method6959(class354)));
                         long method5296 = 0L;
                         float method5297 = 0.0f;
                         if (method5294 != null) {
@@ -331,7 +331,7 @@ public class Class689 extends Class565
             if (method5285 != null) {
                 final Class1849 method5286 = method5285.method1481(this.field3792.field4683.dimension.getType());
                 if (method5286 != null) {
-                    this.field3798 = (CompletableFuture<Class1862>)method5286.method6904().method7427(this.field3796.field32290, this.field3796.field32291, Class9312.field39989, false).thenApply(either -> either.map(class1860 -> class1860, p0 -> null));
+                    this.field3798 = (CompletableFuture<Class1862>)method5286.method6904().method7427(this.field3796.field32290, this.field3796.field32291, ChunkStatus.field39989, false).thenApply(either -> either.map(class1860 -> class1860, p0 -> null));
                 }
             }
             if (this.field3798 == null) {
@@ -366,22 +366,22 @@ public class Class689 extends Class565
         }
         if (!this.field3792.method5317()) {
             if (this.field3794.method21449() == Class2165.field12881) {
-                final BlockState method6701 = this.field3792.field4683.method6701(((Class7005)this.field3794).method21447());
+                final BlockState method6701 = this.field3792.field4683.getBlockState(((Class7005)this.field3794).method21447());
                 arrayList.add("");
                 arrayList.add(TextFormatting.UNDERLINE + "Targeted Block");
-                arrayList.add(String.valueOf(Class90.field208.method503(method6701.method21696())));
-                final UnmodifiableIterator iterator2 = method6701.method21776().entrySet().iterator();
+                arrayList.add(String.valueOf(Registry.BLOCK.getKey(method6701.getBlock())));
+                final UnmodifiableIterator iterator2 = method6701.getValues().entrySet().iterator();
                 while (((Iterator)iterator2).hasNext()) {
-                    arrayList.add(this.method3838((Map.Entry<Class7111<?>, Comparable<?>>)((Iterator)iterator2).next()));
+                    arrayList.add(this.method3838((Map.Entry<IProperty<?>, Comparable<?>>)((Iterator)iterator2).next()));
                 }
-                Collection<Class1932> method6702;
+                Collection<ResourceLocation> method6702;
                 if (!Class9570.field41235.method22605()) {
-                    method6702 = this.field3792.method5269().method17377().method6463().method18463(method6701.method21696());
+                    method6702 = this.field3792.method5269().method17377().method6463().method18463(method6701.getBlock());
                 }
                 else {
-                    method6702 = (Collection)Class9570.method35826(method6701.method21696(), Class9570.field41235, new Object[0]);
+                    method6702 = (Collection)Class9570.method35826(method6701.getBlock(), Class9570.field41235, new Object[0]);
                 }
-                final Iterator<Class1932> iterator3 = method6702.iterator();
+                final Iterator<ResourceLocation> iterator3 = method6702.iterator();
                 while (iterator3.hasNext()) {
                     arrayList.add("#" + iterator3.next());
                 }
@@ -390,19 +390,19 @@ public class Class689 extends Class565
                 final Class7099 method6703 = this.field3792.field4683.method6702(((Class7005)this.field3795).method21447());
                 arrayList.add("");
                 arrayList.add(TextFormatting.UNDERLINE + "Targeted Fluid");
-                arrayList.add(String.valueOf(Class90.field206.method503(method6703.method21779())));
-                final UnmodifiableIterator iterator4 = method6703.method21776().entrySet().iterator();
+                arrayList.add(String.valueOf(Registry.field206.getKey(method6703.method21779())));
+                final UnmodifiableIterator iterator4 = method6703.getValues().entrySet().iterator();
                 while (((Iterator)iterator4).hasNext()) {
-                    arrayList.add(this.method3838((Map.Entry<Class7111<?>, Comparable<?>>)((Iterator)iterator4).next()));
+                    arrayList.add(this.method3838((Map.Entry<IProperty<?>, Comparable<?>>)((Iterator)iterator4).next()));
                 }
-                Collection<Class1932> method6704;
+                Collection<ResourceLocation> method6704;
                 if (!Class9570.field41272.method22605()) {
                     method6704 = this.field3792.method5269().method17377().method6465().method18463(method6703.method21779());
                 }
                 else {
                     method6704 = (Collection)Class9570.method35826(method6703.method21779(), Class9570.field41272, new Object[0]);
                 }
-                final Iterator<Class1932> iterator5 = method6704.iterator();
+                final Iterator<ResourceLocation> iterator5 = method6704.iterator();
                 while (iterator5.hasNext()) {
                     arrayList.add("#" + iterator5.next());
                 }
@@ -411,7 +411,7 @@ public class Class689 extends Class565
             if (field4690 != null) {
                 arrayList.add("");
                 arrayList.add(TextFormatting.UNDERLINE + "Targeted Entity");
-                arrayList.add(String.valueOf(Class90.field210.method503(field4690.getType())));
+                arrayList.add(String.valueOf(Registry.field210.getKey(field4690.getType())));
                 if (Class9570.field41259.method22605()) {
                     ((Collection)Class9570.method35826(field4690.getType(), Class9570.field41259, new Object[0])).forEach(obj -> list.add("#" + obj));
                 }
@@ -421,10 +421,10 @@ public class Class689 extends Class565
         return arrayList;
     }
     
-    private String method3838(final Map.Entry<Class7111<?>, Comparable<?>> entry) {
-        final Class7111 class7111 = entry.getKey();
+    private String method3838(final Map.Entry<IProperty<?>, Comparable<?>> entry) {
+        final IProperty class7111 = entry.getKey();
         final Comparable comparable = entry.getValue();
-        String str = Class8349.method27835((Class7111<Comparable>)class7111, comparable);
+        String str = Class8349.method27835((IProperty<Comparable>)class7111, comparable);
         if (!Boolean.TRUE.equals(comparable)) {
             if (Boolean.FALSE.equals(comparable)) {
                 str = TextFormatting.RED + str;
@@ -433,7 +433,7 @@ public class Class689 extends Class565
         else {
             str = TextFormatting.GREEN + str;
         }
-        return class7111.method21826() + ": " + str;
+        return class7111.getName() + ": " + str;
     }
     
     private void method3839(final Class9462 class9462, int max, int n, final boolean b) {

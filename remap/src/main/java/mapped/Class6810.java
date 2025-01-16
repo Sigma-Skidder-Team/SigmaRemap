@@ -6,15 +6,15 @@ package mapped;
 
 public abstract class Class6810<T, C extends Class8183<T>>
 {
-    private final Class1932 field26748;
+    private final ResourceLocation field26748;
     private final Class<?> field26749;
     
-    public Class6810(final Class1932 field26748, final Class<?> field26749) {
+    public Class6810(final ResourceLocation field26748, final Class<?> field26749) {
         this.field26748 = field26748;
         this.field26749 = field26749;
     }
     
-    public Class1932 method20844() {
+    public ResourceLocation method20844() {
         return this.field26748;
     }
     

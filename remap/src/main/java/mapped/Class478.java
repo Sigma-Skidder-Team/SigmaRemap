@@ -15,6 +15,6 @@ public class Class478 extends Class475
     @Override
     public void method2422() {
         super.method2422();
-        this.field2656.method6696(this.field2657.method1139(), this.method2194().method21696());
+        this.field2656.method6696(this.field2657.method1139(), this.method2194().getBlock());
     }
 }

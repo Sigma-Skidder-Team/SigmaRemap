@@ -4,9 +4,8 @@
 
 package mapped;
 
-import java.util.stream.Stream;
 import javax.annotation.Nullable;
-import java.util.Iterator;
+
 import com.mojang.datafixers.util.Pair;
 import java.util.Set;
 import java.util.stream.Collector;
@@ -39,18 +38,18 @@ public class Class7683 implements Class7684
     }
     
     @Override
-    public Collection<Class1932> method24381() {
-        return this.method24380().stream().map((Function<? super Object, ?>)Class2124::method8279).collect((Collector<? super Object, ?, Collection<Class1932>>)Collectors.toSet());
+    public Collection<ResourceLocation> method24381() {
+        return this.method24380().stream().map((Function<? super Object, ?>)Class2124::method8279).collect((Collector<? super Object, ?, Collection<ResourceLocation>>)Collectors.toSet());
     }
     
     @Override
-    public Collection<Class3687> method24382(final Function<Class1932, Class7684> function, final Set<Pair<String, String>> set) {
+    public Collection<Class3687> method24382(final Function<ResourceLocation, Class7684> function, final Set<Pair<String, String>> set) {
         return this.method24380().stream().map((Function<? super Object, ?>)Class2124::method8279).distinct().flatMap(class1932 -> function2.apply(class1932).method24382(function2, set2).stream()).collect((Collector<? super Object, ?, Collection<Class3687>>)Collectors.toSet());
     }
     
     @Nullable
     @Override
-    public Class6313 method24383(final Class7637 class7637, final Function<Class3687, Class1912> function, final Class2123 class7638, final Class1932 class7639) {
+    public Class6313 method24383(final Class7637 class7637, final Function<Class3687, Class1912> function, final Class2123 class7638, final ResourceLocation class7639) {
         if (!this.method24380().isEmpty()) {
             final Class8765 class7640 = new Class8765();
             for (final Class2124 class7641 : this.method24380()) {

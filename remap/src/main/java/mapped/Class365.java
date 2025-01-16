@@ -63,7 +63,7 @@ public class Class365<E extends LivingEntity> implements IDynamicSerializable
             return;
         });
         for (final Map.Entry<Dynamic, V> entry : dynamic.get("memories").asMap((Function)Function.identity(), (Function)Function.identity()).entrySet()) {
-            this.method1194(Class90.field242.method505(new Class1932(entry.getKey().asString(""))), (com.mojang.datafixers.Dynamic<Object>)entry.getValue());
+            this.method1194(Registry.field242.getOrDefault(new ResourceLocation(entry.getKey().asString(""))), (com.mojang.datafixers.Dynamic<Object>)entry.getValue());
         }
     }
     
@@ -186,7 +186,7 @@ public class Class365<E extends LivingEntity> implements IDynamicSerializable
     
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
-        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("memories"), dynamicOps.createMap((Map)this.field2198.entrySet().stream().filter(entry -> entry.getKey().method27285().isPresent() && ((Optional)entry.getValue()).isPresent()).map(entry2 -> Pair.of(dynamicOps2.createString(Class90.field242.method503(entry2.getKey()).toString()), ((Optional)entry2.getValue()).get().method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond)))));
+        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("memories"), dynamicOps.createMap((Map)this.field2198.entrySet().stream().filter(entry -> entry.getKey().method27285().isPresent() && ((Optional)entry.getValue()).isPresent()).map(entry2 -> Pair.of(dynamicOps2.createString(Registry.field242.getKey(entry2.getKey()).toString()), ((Optional)entry2.getValue()).get().method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond)))));
     }
     
     private void method1213(final Class1849 class1849, final E e) {

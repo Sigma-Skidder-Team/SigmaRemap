@@ -28,7 +28,7 @@ public class Class448 extends TileEntity implements Class447, Class439
     
     @Override
     public void method2229() {
-        final boolean booleanValue = this.method2194().method21772((Class7111<Boolean>)Class3918.field17760);
+        final boolean booleanValue = this.method2194().get((IProperty<Boolean>)Class3918.field17760);
         if (!this.field2656.isRemote) {
             if (!booleanValue) {
                 for (int i = 0; i < this.field2686.size(); ++i) {
@@ -55,7 +55,7 @@ public class Class448 extends TileEntity implements Class447, Class439
                 ++field2687[n];
                 if (this.field2687[i] >= this.field2688[i]) {
                     final ItemStack class8321 = this.field2656.method6792().method6378(Class8976.field37847, new Class443(new ItemStack[] { other }), this.field2656).map(class8323 -> class8323.method11290(class8322)).orElse(other);
-                    final BlockPos method2193 = this.method2193();
+                    final BlockPos method2193 = this.getPos();
                     Class9193.method33642(this.field2656, method2193.getX(), method2193.getY(), method2193.getZ(), class8321);
                     this.field2686.set(i, ItemStack.field34174);
                     this.method2274();
@@ -67,14 +67,14 @@ public class Class448 extends TileEntity implements Class447, Class439
     private void method2269() {
         final World method2186 = this.method2186();
         if (method2186 != null) {
-            final BlockPos method2187 = this.method2193();
+            final BlockPos method2187 = this.getPos();
             final Random field10062 = method2186.rand;
             if (field10062.nextFloat() < 0.11f) {
                 for (int i = 0; i < field10062.nextInt(2) + 2; ++i) {
-                    Class3918.method12032(method2186, method2187, this.method2194().method21772((Class7111<Boolean>)Class3918.field17761), false);
+                    Class3918.method12032(method2186, method2187, this.method2194().get((IProperty<Boolean>)Class3918.field17761), false);
                 }
             }
-            final int method2188 = this.method2194().method21772((Class7111<Direction>)Class3918.field17763).getHorizontalIndex();
+            final int method2188 = this.method2194().get((IProperty<Direction>)Class3918.field17763).getHorizontalIndex();
             for (int j = 0; j < this.field2686.size(); ++j) {
                 if (!this.field2686.get(j).method27620()) {
                     if (field10062.nextFloat() < 0.2f) {
@@ -154,7 +154,7 @@ public class Class448 extends TileEntity implements Class447, Class439
     
     private void method2274() {
         this.method2161();
-        this.method2186().method6693(this.method2193(), this.method2194(), this.method2194(), 3);
+        this.method2186().method6693(this.getPos(), this.method2194(), this.method2194(), 3);
     }
     
     @Override
@@ -164,7 +164,7 @@ public class Class448 extends TileEntity implements Class447, Class439
     
     public void method2275() {
         if (!this.method2186().isRemote) {
-            Class9193.method33641(this.method2186(), this.method2193(), this.method2270());
+            Class9193.method33641(this.method2186(), this.getPos(), this.method2270());
         }
         this.method2274();
     }

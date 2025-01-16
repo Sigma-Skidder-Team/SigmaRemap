@@ -26,7 +26,7 @@ public class Class7990
     public BlockState method26065() {
         if (this.field32897 == null) {
             if (this.field32896 || this.field32894.method6971(this.field32895)) {
-                this.field32897 = this.field32894.method6701(this.field32895);
+                this.field32897 = this.field32894.getBlockState(this.field32895);
             }
         }
         return this.field32897;

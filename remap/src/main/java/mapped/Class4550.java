@@ -46,13 +46,13 @@ public class Class4550 extends Class4535<Class5143>
         final int method34621 = class1853.method34621();
         for (final BlockPos class1854 : BlockPos.getAllInBoxMutable(new BlockPos(class1853.method34619() - method34621, 0, class1853.method34620() - method34621), new BlockPos(class1853.method34619() + method34621, class1853.method34622() + 10, class1853.method34620() + method34621))) {
             if (class1854.distanceSq(class1853.method34619(), class1854.getY(), class1853.method34620(), false) <= method34621 * method34621 + 1 && class1854.getY() < class1853.method34622()) {
-                this.method13529(class1851, class1854, Class7521.field29286.method11878());
+                this.method13529(class1851, class1854, Class7521.field29286.getDefaultState());
             }
             else {
                 if (class1854.getY() <= 65) {
                     continue;
                 }
-                this.method13529(class1851, class1854, Class7521.field29147.method11878());
+                this.method13529(class1851, class1854, Class7521.field29147.getDefaultState());
             }
         }
         if (class1853.method34623()) {
@@ -96,7 +96,7 @@ public class Class4550 extends Class4535<Class5143>
                             b6 = true;
                         }
                         final boolean b7 = b6;
-                        this.method13529(class1851, class1855.setPos(class1853.method34619() + i, class1853.method34622() + k, class1853.method34620() + j), (BlockState)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29381.method11878()).method21773((Class7111<Comparable>)Class3853.field17465, b5 && j != -2)).method21773((Class7111<Comparable>)Class3853.field17467, b5 && j != 2)).method21773((Class7111<Comparable>)Class3853.field17468, b7 && i != -2)).method21773((Class7111<Comparable>)Class3853.field17466, b7 && i != 2));
+                        this.method13529(class1851, class1855.setPos(class1853.method34619() + i, class1853.method34622() + k, class1853.method34620() + j), (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class7521.field29381.getDefaultState()).with((IProperty<Comparable>)Class3853.field17465, b5 && j != -2)).with((IProperty<Comparable>)Class3853.field17467, b5 && j != 2)).with((IProperty<Comparable>)Class3853.field17468, b7 && i != -2)).with((IProperty<Comparable>)Class3853.field17466, b7 && i != 2));
                     }
                 }
             }
@@ -106,7 +106,7 @@ public class Class4550 extends Class4535<Class5143>
         class1856.method1851(class1852.method16058());
         class1856.method1730(class1853.method34619() + 0.5f, class1853.method34622() + 1, class1853.method34620() + 0.5f, random.nextFloat() * 360.0f, 0.0f);
         class1851.method6886(class1856);
-        this.method13529(class1851, new BlockPos(class1853.method34619(), class1853.method34622(), class1853.method34620()), Class7521.field29172.method11878());
+        this.method13529(class1851, new BlockPos(class1853.method34619(), class1853.method34622(), class1853.method34620()), Class7521.field29172.getDefaultState());
     }
     
     static {

@@ -110,7 +110,7 @@ public class Class863 extends Class860
     
     @Override
     public boolean method5189() {
-        return this.world.method6701(this.field4599).method21696().method11785(Class7188.field27911);
+        return this.world.getBlockState(this.field4599).method21696().method11785(Class7188.field27911);
     }
     
     public static Class863 method5205(final World class1847, final BlockPos class1848) {

@@ -243,7 +243,7 @@ public class Class8933
             Class8933.field37549.field34218 = n2;
             Class8933.field37549.field34219 = n;
             Class8933.field37549.field34220 = n2;
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class9216.field39212.method16097(n, n2, n, n2);
             }
             GL11.glBlendFunc(n, n2);
@@ -269,7 +269,7 @@ public class Class8933
             Class8933.field37549.field34218 = field34218;
             Class8933.field37549.field34219 = field34219;
             Class8933.field37549.field34220 = field34220;
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class9216.field39212.method16097(field34217, field34218, field34219, field34220);
             }
             method31567(field34217, field34218, field34219, field34220);
@@ -290,7 +290,7 @@ public class Class8933
     
     public static String method31524(final GLCapabilities glCapabilities) {
         Class8726.method29989(Class8726::method29990);
-        Class8571.method28817();
+        Config.method28817();
         if (!(Class8933.field37576 = glCapabilities.OpenGL31)) {
             Class8933.field37578 = 36662;
             Class8933.field37579 = 36663;
@@ -318,8 +318,8 @@ public class Class8933
             if (!openGL14) {
                 list.add("OpenGL 1.4");
             }
-            final String string = "VboRegions not supported, missing: " + Class8571.method28886(list);
-            Class8571.method28847(string);
+            final String string = "VboRegions not supported, missing: " + Config.method28886(list);
+            Config.method28847(string);
             list.add(string);
         }
         if (glCapabilities.OpenGL30) {
@@ -882,7 +882,7 @@ public class Class8933
         Class8726.method29989(Class8726::method29984);
         if (field34337 != Class8933.field37551.field34337) {
             method31591(2917, Class8933.field37551.field34337 = field34337);
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class9216.method33802(field34337);
             }
         }
@@ -896,7 +896,7 @@ public class Class8933
         }
         if (field34338 != Class8933.field37551.field34338) {
             GL11.glFogf(2914, Class8933.field37551.field34338 = field34338);
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class9216.method33878(field34338);
             }
         }
@@ -1386,7 +1386,7 @@ public class Class8933
     public static void method31657(final int n, final int n2, final int n3) {
         Class8726.method29989(Class8726::method29984);
         GL11.glDrawArrays(n, n2, n3);
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             if (!Class8933.field37573) {
                 final int method32335 = Class9216.field39287.method32335();
                 if (method32335 > 1) {
@@ -1448,14 +1448,14 @@ public class Class8933
     }
     
     public static void method31668() {
-        if (Class8571.method28834()) {
+        if (Config.method28834()) {
             final int glGetInteger = GL11.glGetInteger(34016);
             final int glGetInteger2 = GL11.glGetInteger(32873);
             final int method31665 = method31665();
             final int method31666 = method31667();
             if (method31666 > 0) {
                 if (glGetInteger != method31665 || glGetInteger2 != method31666) {
-                    Class8571.method28847("checkTexture: act: " + method31665 + ", glAct: " + glGetInteger + ", tex: " + method31666 + ", glTex: " + glGetInteger2);
+                    Config.method28847("checkTexture: act: " + method31665 + ", glAct: " + glGetInteger + ", tex: " + method31666 + ", glTex: " + glGetInteger2);
                 }
             }
         }
@@ -1550,7 +1550,7 @@ public class Class8933
     
     public static void method31680(final int n, final IntBuffer intBuffer, final IntBuffer intBuffer2) {
         GL14.glMultiDrawArrays(n, intBuffer, intBuffer2);
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             if (!Class8933.field37573) {
                 final int method32335 = Class9216.field39287.method32335();
                 if (method32335 > 1) {
@@ -1570,7 +1570,7 @@ public class Class8933
     
     public static void method31682(final IntBuffer intBuffer) {
         GL11.glCallLists(intBuffer);
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             if (!Class8933.field37573) {
                 final int method32335 = Class9216.field39287.method32335();
                 if (method32335 > 1) {

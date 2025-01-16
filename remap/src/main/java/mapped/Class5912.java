@@ -7,10 +7,10 @@ package mapped;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public class Class5912 implements Consumer<BiConsumer<Class1932, Class4947>>
+public class Class5912 implements Consumer<BiConsumer<ResourceLocation, Class4947>>
 {
     @Override
-    public void accept(final BiConsumer<Class1932, Class4947> biConsumer) {
+    public void accept(final BiConsumer<ResourceLocation, Class4947> biConsumer) {
         biConsumer.accept(Class9020.field38120, Class9317.method34491().method14902(Class9320.method34514().method14895(Class5771.method17164(1)).method14897((Class4950<?>)Class6377.method19045(Items.field31545).method14909(10)).method14897((Class4950<?>)Class6377.method19045(Items.field31544).method14909(10)).method14897((Class4950<?>)Class6377.method19045(Items.field31433).method14909(10)).method14897((Class4950<?>)Class6377.method19045(Items.field31307).method14909(10)).method14897((Class4950<?>)Class6377.method19045(Items.field31435).method14909(10)).method14897((Class4950<?>)Class6377.method19045(Items.field31306).method14909(10)).method14897((Class4950<?>)Class6377.method19045(Items.field31608).method14909(2))));
         biConsumer.accept(Class9020.field38121, Class9317.method34491().method14902(Class9320.method34514().method14895(Class5771.method17164(1)).method14897(Class6377.method19045(Items.field31321)).method14897(Class6377.method19045(Items.field31322)).method14897(Class6377.method19045(Items.field31323)).method14897(Class6377.method19045(Items.field31324))));
         biConsumer.accept(Class9020.field38122, Class9317.method34491().method14902(Class9320.method34514().method14895(Class5771.method17164(1)).method14897(Class6377.method19045(Items.field31542)).method14897(Class6377.method19045(Items.field31434)).method14897(Class6377.method19045(Items.field31339)).method14897(Class6377.method19045(Items.field31432)).method14897(Class6377.method19045(Items.field31555))));

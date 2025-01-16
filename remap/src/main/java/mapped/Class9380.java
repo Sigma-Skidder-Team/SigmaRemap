@@ -29,7 +29,7 @@ public class Class9380
     public static final Class4574<?> field40240;
     
     private static Class4574<?> method34829(final String s, final Class4574<?> class4574) {
-        return Class90.method511(Class90.field230, s.toLowerCase(Locale.ROOT), class4574);
+        return Registry.method511(Registry.field230, s.toLowerCase(Locale.ROOT), class4574);
     }
     
     public static void method34830() {
@@ -41,7 +41,7 @@ public class Class9380
         if ("INVALID".equals(method323)) {
             return Class5936.field24429;
         }
-        final Class4574 class6349 = Class90.field230.method505(new Class1932(method323.toLowerCase(Locale.ROOT)));
+        final Class4574 class6349 = Registry.field230.getOrDefault(new ResourceLocation(method323.toLowerCase(Locale.ROOT)));
         if (class6349 == null) {
             Class9380.field40225.error("Unknown feature id: {}", (Object)method323);
             return null;
@@ -56,7 +56,7 @@ public class Class9380
             for (int i = 0; i < method327.size(); ++i) {
                 final Class51 method329 = method327.method346(i);
                 final String method330 = method329.method323("id");
-                final Class9520 class6351 = Class90.field231.method505(new Class1932(method330.toLowerCase(Locale.ROOT)));
+                final Class9520 class6351 = Registry.field231.getOrDefault(new ResourceLocation(method330.toLowerCase(Locale.ROOT)));
                 if (class6351 == null) {
                     Class9380.field40225.error("Unknown structure piece id: {}", (Object)method330);
                 }

@@ -12,7 +12,7 @@ public class Class4040 extends Class4036
 {
     private static String[] field18134;
     
-    public Class4040(final Class3833 class3833, final Class8959 class3834) {
+    public Class4040(final Block class3833, final Class8959 class3834) {
         super(class3833, class3834);
     }
     
@@ -34,10 +34,10 @@ public class Class4040 extends Class4036
                     return Class9355.method34677(method2715);
                 }
                 final BlockPos method2719 = method2717.method1137();
-                final Class8059 method2720 = class1847.method6701(method2717).method21697();
-                if (class1847.method6702(method2717).method21779() == Class7558.field29976 || method2720 == Class8059.field33183) {
+                final Material method2720 = class1847.getBlockState(method2717).method21697();
+                if (class1847.method6702(method2717).method21779() == Class7558.field29976 || method2720 == Material.ICE) {
                     if (class1847.method6961(method2719)) {
-                        class1847.method6688(method2719, Class7521.field29393.method11878(), 11);
+                        class1847.setBlockState(method2719, Class7521.field29393.getDefaultState(), 11);
                         if (class1848 instanceof Class513) {
                             Class7770.field31799.method13836((Class513)class1848, method2719, method2715);
                         }

@@ -24,7 +24,7 @@ public abstract class Class6257
     
     @Nullable
     public static Class6257 method18590(final int n) {
-        return Class90.field209.method499(n);
+        return Registry.field209.method499(n);
     }
     
     public Class6257(final Class2233 field25117, final Class242 field25118, final Class2215[] field25119) {
@@ -82,7 +82,7 @@ public abstract class Class6257
     
     public String method18597() {
         if (this.field25119 == null) {
-            this.field25119 = Class8349.method27836("enchantment", Class90.field209.method503(this));
+            this.field25119 = Class8349.method27836("enchantment", Registry.field209.getKey(this));
         }
         return this.field25119;
     }

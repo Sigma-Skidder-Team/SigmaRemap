@@ -37,8 +37,8 @@ public class Class7065
         this.field27484 = 32;
         this.field27488 = 20;
         this.field27492 = 80;
-        this.field27494 = Class7521.field29148.method11878();
-        this.field27495 = Class7521.field29173.method11878();
+        this.field27494 = Class7521.field29148.getDefaultState();
+        this.field27495 = Class7521.field29173.getDefaultState();
     }
     
     public int method21565() {

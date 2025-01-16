@@ -4,19 +4,18 @@
 
 package mapped;
 
-import java.util.Iterator;
 import com.google.common.collect.Maps;
 import java.util.Map;
 
 public class Class8875
 {
-    private final Map<Class1932, Class7833> field37311;
+    private final Map<ResourceLocation, Class7833> field37311;
     
     public Class8875() {
         this.field37311 = Maps.newHashMap();
     }
     
-    private void method31202(final Class1932 class1932, final Class8722 class1933, final Class6582 class1934) {
+    private void method31202(final ResourceLocation class1932, final Class8722 class1933, final Class6582 class1934) {
         Class7833 class1935 = this.field37311.get(class1932);
         final boolean b = class1935 == null;
         if (b || class1933.method29973()) {
@@ -27,7 +26,7 @@ public class Class8875
             this.field37311.put(class1932, class1935);
         }
         for (final Class7832 class1936 : class1933.method29972()) {
-            final Class1932 method25304 = class1936.method25304();
+            final ResourceLocation method25304 = class1936.method25304();
             Class7831<Class7832> class1937 = null;
             switch (Class8270.field33960[class1936.method25308().ordinal()]) {
                 case 1: {
@@ -49,9 +48,9 @@ public class Class8875
         }
     }
     
-    public void method31203(final Map<Class1932, Class7833> map, final Class9382 class9382) {
+    public void method31203(final Map<ResourceLocation, Class7833> map, final Class9382 class9382) {
         map.clear();
-        for (final Map.Entry<Class1932, V> entry : this.field37311.entrySet()) {
+        for (final Map.Entry<ResourceLocation, V> entry : this.field37311.entrySet()) {
             map.put(entry.getKey(), (Class7833)entry.getValue());
             ((Class7833)entry.getValue()).method25302(class9382);
         }

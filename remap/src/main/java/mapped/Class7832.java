@@ -6,7 +6,7 @@ package mapped;
 
 public class Class7832 implements Class7831<Class7832>
 {
-    private final Class1932 field32067;
+    private final ResourceLocation field32067;
     private final float field32068;
     private final float field32069;
     private final int field32070;
@@ -16,7 +16,7 @@ public class Class7832 implements Class7831<Class7832>
     private final int field32074;
     
     public Class7832(final String s, final float field32068, final float field32069, final int field32070, final Class2158 field32071, final boolean field32072, final boolean field32073, final int field32074) {
-        this.field32067 = new Class1932(s);
+        this.field32067 = new ResourceLocation(s);
         this.field32068 = field32068;
         this.field32069 = field32069;
         this.field32070 = field32070;
@@ -26,12 +26,12 @@ public class Class7832 implements Class7831<Class7832>
         this.field32074 = field32074;
     }
     
-    public Class1932 method25304() {
+    public ResourceLocation method25304() {
         return this.field32067;
     }
     
-    public Class1932 method25305() {
-        return new Class1932(this.field32067.method7798(), "sounds/" + this.field32067.method7797() + ".ogg");
+    public ResourceLocation method25305() {
+        return new ResourceLocation(this.field32067.method7798(), "sounds/" + this.field32067.method7797() + ".ogg");
     }
     
     public float method25306() {

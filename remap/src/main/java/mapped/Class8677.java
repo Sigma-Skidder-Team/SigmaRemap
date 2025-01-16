@@ -8,7 +8,7 @@ public interface Class8677<T>
 {
     T method29715();
     
-    Class1932 method29716();
+    ResourceLocation method29716();
     
     Class<T> method29717();
 }

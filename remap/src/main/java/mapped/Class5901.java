@@ -9,11 +9,11 @@ import java.util.function.Consumer;
 
 public abstract class Class5901 implements Consumer<Class6300>
 {
-    public final Function<Class1932, Class6332> field24268;
+    public final Function<ResourceLocation, Class6332> field24268;
     public int field24269;
     public int field24270;
     
-    public Class5901(final Function<Class1932, Class6332> field24268) {
+    public Class5901(final Function<ResourceLocation, Class6332> field24268) {
         this.field24269 = 64;
         this.field24270 = 32;
         this.field24268 = field24268;
@@ -23,7 +23,7 @@ public abstract class Class5901 implements Consumer<Class6300>
     public void accept(final Class6300 class6300) {
     }
     
-    public final Class6332 method17647(final Class1932 class1932) {
+    public final Class6332 method17647(final ResourceLocation class1932) {
         return this.field24268.apply(class1932);
     }
     

@@ -76,7 +76,7 @@ public class Class9583
         if (!jsonElement.isJsonPrimitive()) {
             throw new JsonSyntaxException("Expected " + str + " to be an item, was " + toString(jsonElement));
         }
-        return Class90.field211.method506(new Class1932(jsonElement.getAsString())).orElseThrow(() -> {
+        return Registry.field211.method506(new ResourceLocation(jsonElement.getAsString())).orElseThrow(() -> {
             new JsonSyntaxException("Expected " + str2 + " to be an item, was unknown string '" + str3 + "'");
             return;
         });

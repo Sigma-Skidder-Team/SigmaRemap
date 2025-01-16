@@ -42,7 +42,7 @@ public class Class3172 extends Class3167
         }
         int n = 16;
         final BlockPos method1137 = new BlockPos(Class3172.field15514.field4684.posX, Class3172.field15514.field4684.posY, Class3172.field15514.field4684.posZ).method1137();
-        final Class1860 method1138 = Class3172.field15514.field4683.method6965(method1137);
+        final IChunk method1138 = Class3172.field15514.field4683.method6965(method1137);
         if (method1138 != null) {
             if (method1137.getY() >= 0) {
                 if (method1137.getY() < 256) {

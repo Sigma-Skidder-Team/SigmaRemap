@@ -156,11 +156,11 @@ public class Class423 extends Entity
     @Override
     public void method1737(final Entity class399) {
         if (!(class399 instanceof Class423)) {
-            if (class399.getBoundingBox().field25074 <= this.getBoundingBox().field25074) {
+            if (class399.getBoundingBox().minY <= this.getBoundingBox().minY) {
                 super.method1737(class399);
             }
         }
-        else if (class399.getBoundingBox().field25074 < this.getBoundingBox().field25077) {
+        else if (class399.getBoundingBox().minY < this.getBoundingBox().maxY) {
             super.method1737(class399);
         }
     }
@@ -385,7 +385,7 @@ public class Class423 extends Entity
     private Class2087 method2046() {
         final Class2087 method2050 = this.method2050();
         if (method2050 != null) {
-            this.field2563 = this.getBoundingBox().field25077;
+            this.field2563 = this.getBoundingBox().maxY;
             return method2050;
         }
         if (this.method2049()) {
@@ -401,12 +401,12 @@ public class Class423 extends Entity
     
     public float method2047() {
         final AxisAlignedBB method1886 = this.getBoundingBox();
-        final int method1887 = MathHelper.floor(method1886.field25073);
-        final int method1888 = MathHelper.method35650(method1886.field25076);
-        final int method1889 = MathHelper.floor(method1886.field25077);
-        final int method1890 = MathHelper.method35650(method1886.field25077 - this.field2567);
-        final int method1891 = MathHelper.floor(method1886.field25075);
-        final int method1892 = MathHelper.method35650(method1886.field25078);
+        final int method1887 = MathHelper.floor(method1886.minX);
+        final int method1888 = MathHelper.ceil(method1886.maxX);
+        final int method1889 = MathHelper.floor(method1886.maxY);
+        final int method1890 = MathHelper.ceil(method1886.maxY - this.field2567);
+        final int method1891 = MathHelper.floor(method1886.minZ);
+        final int method1892 = MathHelper.ceil(method1886.maxZ);
         try (final Class386 method1893 = Class386.method1296()) {
             int i = method1889;
         Label_0252_Outer:
@@ -443,14 +443,14 @@ public class Class423 extends Entity
     
     public float method2048() {
         final AxisAlignedBB method1886 = this.getBoundingBox();
-        final AxisAlignedBB class6221 = new AxisAlignedBB(method1886.field25073, method1886.field25074 - 0.001, method1886.field25075, method1886.field25076, method1886.field25074, method1886.field25078);
-        final int n = MathHelper.floor(class6221.field25073) - 1;
-        final int n2 = MathHelper.method35650(class6221.field25076) + 1;
-        final int n3 = MathHelper.floor(class6221.field25074) - 1;
-        final int n4 = MathHelper.method35650(class6221.field25077) + 1;
-        final int n5 = MathHelper.floor(class6221.field25075) - 1;
-        final int n6 = MathHelper.method35650(class6221.field25078) + 1;
-        final VoxelShape method1887 = Class7698.method24489(class6221);
+        final AxisAlignedBB class6221 = new AxisAlignedBB(method1886.minX, method1886.minY - 0.001, method1886.minZ, method1886.maxX, method1886.minY, method1886.maxZ);
+        final int n = MathHelper.floor(class6221.minX) - 1;
+        final int n2 = MathHelper.ceil(class6221.maxX) + 1;
+        final int n3 = MathHelper.floor(class6221.minY) - 1;
+        final int n4 = MathHelper.ceil(class6221.maxY) + 1;
+        final int n5 = MathHelper.floor(class6221.minZ) - 1;
+        final int n6 = MathHelper.ceil(class6221.maxZ) + 1;
+        final VoxelShape method1887 = VoxelShapes.method24489(class6221);
         float n7 = 0.0f;
         int n8 = 0;
         try (final Class386 method1888 = Class386.method1296()) {
@@ -461,9 +461,9 @@ public class Class423 extends Entity
                         for (int k = n3; k < n4; ++k) {
                             if (n9 <= 0 || (k != n3 && k != n4 - 1)) {
                                 method1888.method1300(i, k, j);
-                                final BlockState method1889 = this.world.method6701(method1888);
-                                if (!(method1889.method21696() instanceof Class3886) && Class7698.method24496(method1889.method21727(this.world, method1888).method24541(i, k, j), method1887, Class9306.field39924)) {
-                                    n7 += method1889.method21696().method11865();
+                                final BlockState method1889 = this.world.getBlockState(method1888);
+                                if (!(method1889.getBlock() instanceof Class3886) && VoxelShapes.method24496(method1889.getCollisionShape(this.world, method1888).method24541(i, k, j), method1887, Class9306.field39924)) {
+                                    n7 += method1889.getBlock().method11865();
                                     ++n8;
                                 }
                             }
@@ -477,12 +477,12 @@ public class Class423 extends Entity
     
     private boolean method2049() {
         final AxisAlignedBB method1886 = this.getBoundingBox();
-        final int method1887 = MathHelper.floor(method1886.field25073);
-        final int method1888 = MathHelper.method35650(method1886.field25076);
-        final int method1889 = MathHelper.floor(method1886.field25074);
-        final int method1890 = MathHelper.method35650(method1886.field25074 + 0.001);
-        final int method1891 = MathHelper.floor(method1886.field25075);
-        final int method1892 = MathHelper.method35650(method1886.field25078);
+        final int method1887 = MathHelper.floor(method1886.minX);
+        final int method1888 = MathHelper.ceil(method1886.maxX);
+        final int method1889 = MathHelper.floor(method1886.minY);
+        final int method1890 = MathHelper.ceil(method1886.minY + 0.001);
+        final int method1891 = MathHelper.floor(method1886.minZ);
+        final int method1892 = MathHelper.ceil(method1886.maxZ);
         boolean b = false;
         this.field2563 = Double.MIN_VALUE;
         try (final Class386 method1893 = Class386.method1296()) {
@@ -494,7 +494,7 @@ public class Class423 extends Entity
                         if (method1894.method21793(Class7324.field28319)) {
                             final float n = j + method1894.method21782(this.world, method1893);
                             this.field2563 = Math.max(n, this.field2563);
-                            b |= (method1886.field25074 < n);
+                            b |= (method1886.minY < n);
                         }
                     }
                 }
@@ -506,13 +506,13 @@ public class Class423 extends Entity
     @Nullable
     private Class2087 method2050() {
         final AxisAlignedBB method1886 = this.getBoundingBox();
-        final double n = method1886.field25077 + 0.001;
-        final int method1887 = MathHelper.floor(method1886.field25073);
-        final int method1888 = MathHelper.method35650(method1886.field25076);
-        final int method1889 = MathHelper.floor(method1886.field25077);
-        final int method1890 = MathHelper.method35650(n);
-        final int method1891 = MathHelper.floor(method1886.field25075);
-        final int method1892 = MathHelper.method35650(method1886.field25078);
+        final double n = method1886.maxY + 0.001;
+        final int method1887 = MathHelper.floor(method1886.minX);
+        final int method1888 = MathHelper.ceil(method1886.maxX);
+        final int method1889 = MathHelper.floor(method1886.maxY);
+        final int method1890 = MathHelper.ceil(n);
+        final int method1891 = MathHelper.floor(method1886.minZ);
+        final int method1892 = MathHelper.ceil(method1886.maxZ);
         boolean b = false;
         try (final Class386 method1893 = Class386.method1296()) {
             for (int i = method1887; i < method1888; ++i) {

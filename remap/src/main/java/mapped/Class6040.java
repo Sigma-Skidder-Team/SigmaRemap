@@ -28,7 +28,7 @@ public class Class6040 extends Class6032<Class4408>
         super(function);
     }
     
-    public void method17959(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final BlockState class1862, final BlockState class1863, final int n5, final long n6, final Class4408 class1864) {
+    public void method17959(final Random random, final IChunk class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final BlockState class1862, final BlockState class1863, final int n5, final long n6, final Class4408 class1864) {
         final int n7 = n & 0xF;
         final int n8 = n2 & 0xF;
         BlockState class1865 = Class6040.field24579;
@@ -42,9 +42,9 @@ public class Class6040 extends Class6032<Class4408>
         for (int i = n3; i >= 0; --i) {
             if (n11 < 15) {
                 class1867.setPos(n7, i, n8);
-                final BlockState method6701 = class1860.method6701(class1867);
+                final BlockState method6701 = class1860.getBlockState(class1867);
                 if (!method6701.method21706()) {
-                    if (method6701.method21696() == class1862.method21696()) {
+                    if (method6701.getBlock() == class1862.getBlock()) {
                         if (n10 != -1) {
                             if (n10 > 0) {
                                 --n10;
@@ -67,7 +67,7 @@ public class Class6040 extends Class6032<Class4408>
                                 }
                             }
                             else {
-                                class1865 = Class7521.field29147.method11878();
+                                class1865 = Class7521.field29147.getDefaultState();
                                 class1866 = class1862;
                             }
                             if (i < n5) {
@@ -78,7 +78,7 @@ public class Class6040 extends Class6032<Class4408>
                             n10 = n9 + Math.max(0, i - n5);
                             if (i < n5 - 1) {
                                 class1860.method7008(class1867, class1866, false);
-                                final Class3833 method6702 = class1866.method21696();
+                                final Block method6702 = class1866.getBlock();
                                 Label_0645: {
                                     if (method6702 != Class7521.field29482) {
                                         if (method6702 != Class7521.field29483) {
@@ -216,12 +216,12 @@ public class Class6040 extends Class6032<Class4408>
     }
     
     static {
-        field24579 = Class7521.field29482.method11878();
-        field24580 = Class7521.field29483.method11878();
-        field24581 = Class7521.field29546.method11878();
-        field24582 = Class7521.field29486.method11878();
-        field24583 = Class7521.field29494.method11878();
-        field24584 = Class7521.field29496.method11878();
-        field24585 = Class7521.field29490.method11878();
+        field24579 = Class7521.field29482.getDefaultState();
+        field24580 = Class7521.field29483.getDefaultState();
+        field24581 = Class7521.field29546.getDefaultState();
+        field24582 = Class7521.field29486.getDefaultState();
+        field24583 = Class7521.field29494.getDefaultState();
+        field24584 = Class7521.field29496.getDefaultState();
+        field24585 = Class7521.field29490.getDefaultState();
     }
 }

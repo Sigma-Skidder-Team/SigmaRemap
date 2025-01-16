@@ -6,10 +6,10 @@ package mapped;
 
 public class Class640 extends Class623<Class640>
 {
-    private final Class9455<Class1932> field3639;
+    private final Class9455<ResourceLocation> field3639;
     public final /* synthetic */ Class614 field3640;
     
-    private Class640(final Class614 field3640, final Class9455<Class1932> field3641) {
+    private Class640(final Class614 field3640, final Class9455<ResourceLocation> field3641) {
         this.field3640 = field3640;
         this.field3639 = field3641;
     }

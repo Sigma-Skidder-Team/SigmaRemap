@@ -18,7 +18,7 @@ public class Class5967 implements JsonDeserializer<Class122>, JsonSerializer<Cla
 {
     public Class122 deserialize(final JsonElement jsonElement, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         final JsonObject method35913 = Class9583.method35913(jsonElement, "condition");
-        final Class1932 obj = new Class1932(Class9583.method35895(method35913, "condition"));
+        final ResourceLocation obj = new ResourceLocation(Class9583.method35895(method35913, "condition"));
         Class7020<?> method35914;
         try {
             method35914 = Class7454.method22941(obj);

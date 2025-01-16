@@ -8,9 +8,9 @@ import net.minecraft.client.renderer.Matrix4f;
 
 public abstract class Class565
 {
-    public static final Class1932 field3361;
-    public static final Class1932 field3362;
-    public static final Class1932 field3363;
+    public static final ResourceLocation field3361;
+    public static final ResourceLocation field3362;
+    public static final ResourceLocation field3363;
     private int field3364;
     
     public void method3291(int n, int n2, final int n3, final int n4) {
@@ -150,8 +150,8 @@ public abstract class Class565
     }
     
     static {
-        field3361 = new Class1932("textures/gui/options_background.png");
-        field3362 = new Class1932("textures/gui/container/stats_icons.png");
-        field3363 = new Class1932("textures/gui/icons.png");
+        field3361 = new ResourceLocation("textures/gui/options_background.png");
+        field3362 = new ResourceLocation("textures/gui/container/stats_icons.png");
+        field3363 = new ResourceLocation("textures/gui/icons.png");
     }
 }

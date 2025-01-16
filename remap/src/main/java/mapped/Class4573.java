@@ -15,7 +15,7 @@ public class Class4573 extends Class4572<Class5144>
     }
     
     public boolean method13584(final Class1851 class1851, final BlockPos class1852, final Class5144 class1853) {
-        return !class1853.field22136.contains(class1851.method6701(class1852));
+        return !class1853.field22136.contains(class1851.getBlockState(class1852));
     }
     
     public int method13585(final Class5144 class5144) {

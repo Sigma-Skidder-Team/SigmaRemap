@@ -11,7 +11,7 @@ import com.google.gson.JsonObject;
 public class Class6233 extends Class6227<Class133>
 {
     public Class6233() {
-        super(new Class1932("enchant_with_levels"), Class133.class);
+        super(new ResourceLocation("enchant_with_levels"), Class133.class);
     }
     
     public void method18552(final JsonObject jsonObject, final Class133 class133, final JsonSerializationContext jsonSerializationContext) {

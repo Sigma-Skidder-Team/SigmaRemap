@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.LinkedList;
 import java.io.IOException;
 import java.util.Deque;
-import java.util.Collection;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import net.optifine.expr.ParseException;
@@ -158,7 +157,7 @@ public class Class7186
     }
     
     private static Class327 method22038(final Class7124 obj) throws ParseException {
-        final float method28934 = Class8571.method28934(obj.method21865(), Float.NaN);
+        final float method28934 = Config.method28934(obj.method21865(), Float.NaN);
         if (method28934 != Float.NaN) {
             return new Class337(method28934);
         }

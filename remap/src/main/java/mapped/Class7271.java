@@ -14,7 +14,7 @@ public class Class7271<C>
 {
     private static final Logger field28165;
     public static final Class7271<MinecraftServer> field28166;
-    private final Map<Class1932, Class6810<C, ?>> field28167;
+    private final Map<ResourceLocation, Class6810<C, ?>> field28167;
     private final Map<Class<?>, Class6810<C, ?>> field28168;
     
     public Class7271() {
@@ -42,7 +42,7 @@ public class Class7271<C>
     
     @Nullable
     public Class8183<C> method22280(final Class51 class51) {
-        final Class6810 class52 = this.field28167.get(Class1932.method7795(class51.method323("Type")));
+        final Class6810 class52 = this.field28167.get(ResourceLocation.method7795(class51.method323("Type")));
         if (class52 == null) {
             Class7271.field28165.error("Failed to deserialize timer callback: " + class51);
             return null;

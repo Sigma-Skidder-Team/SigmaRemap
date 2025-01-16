@@ -13,7 +13,7 @@ import java.util.List;
 
 public class Class744 extends Class516<Class3439>
 {
-    private static final Class1932 field4018;
+    private static final ResourceLocation field4018;
     private static final int field4019;
     private final Class6300 field4020;
     private List<Pair<Class230, Class181>> field4021;
@@ -295,7 +295,7 @@ public class Class744 extends Class516<Class3439>
     }
     
     static {
-        field4018 = new Class1932("textures/gui/container/loom.png");
+        field4018 = new ResourceLocation("textures/gui/container/loom.png");
         field4019 = (Class230.field852 - 5 - 1 + 4 - 1) / 4;
     }
 }

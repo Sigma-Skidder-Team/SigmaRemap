@@ -35,7 +35,7 @@ public class Class5853<T extends LivingEntity> extends Class5844<T> implements C
         this(Class6332::method18770, n, n2, n3, n4);
     }
     
-    public Class5853(final Function<Class1932, Class6332> function, final float n, final float n2, final int field24269, final int field24270) {
+    public Class5853(final Function<ResourceLocation, Class6332> function, final float n, final float n2, final int field24269, final int field24270) {
         super(function, true, 16.0f, 0.0f, 2.0f, 2.0f, 24.0f);
         this.field24000 = Class2036.field11607;
         this.field24001 = Class2036.field11607;

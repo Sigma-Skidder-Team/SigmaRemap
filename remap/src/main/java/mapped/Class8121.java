@@ -6,10 +6,8 @@ package mapped;
 
 import java.util.Iterator;
 import java.util.List;
-import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.io.Reader;
 import java.io.BufferedReader;
 import java.io.StringReader;
 import java.io.IOException;
@@ -19,7 +17,7 @@ import java.io.InputStream;
 public class Class8121
 {
     public static InputStream method26733(final InputStream inputStream, final String s) throws IOException {
-        String str = Class8571.method28960(inputStream, "ASCII");
+        String str = Config.method28960(inputStream, "ASCII");
         final String method26735 = method26735(str);
         if (!method26735.isEmpty()) {
             final String string = method26735 + str;

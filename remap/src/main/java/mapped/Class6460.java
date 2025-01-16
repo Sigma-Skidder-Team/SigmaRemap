@@ -29,8 +29,8 @@ public class Class6460 implements Class6459
     }
     
     @Override
-    public void method19318(final Class7859 class7859, final Class9312 class7860) {
-        if (class7860 == Class9312.field39989) {
+    public void method19318(final Class7859 class7859, final ChunkStatus class7860) {
+        if (class7860 == ChunkStatus.field39989) {
             ++this.field25669;
         }
         final int method19322 = this.method19322();

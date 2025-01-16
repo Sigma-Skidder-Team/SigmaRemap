@@ -41,10 +41,10 @@ public class Class4034 extends Item
     public static void method12226(final ItemStack class8321, final Class6827 class8322) {
         final Class52 method12225 = method12225(class8321);
         int n = 1;
-        final Class1932 method12226 = Class90.field209.method503(class8322.field26818);
+        final ResourceLocation method12226 = Registry.field209.getKey(class8322.field26818);
         for (int i = 0; i < method12225.size(); ++i) {
             final Class51 method12227 = method12225.method346(i);
-            final Class1932 method12228 = Class1932.method7795(method12227.method323("id"));
+            final ResourceLocation method12228 = ResourceLocation.method7795(method12227.method323("id"));
             if (method12228 != null && method12228.equals(method12226)) {
                 if (method12227.method319("lvl") < class8322.field26819) {
                     method12227.method297("lvl", (short)class8322.field26819);
@@ -72,7 +72,7 @@ public class Class4034 extends Item
     public void method11735(final Class7207 class7207, final Class2265<ItemStack> class7208) {
         if (class7207 != Class7207.field27998) {
             if (class7207.method22123().length != 0) {
-                for (final Class6257 class7209 : Class90.field209) {
+                for (final Class6257 class7209 : Registry.field209) {
                     if (!class7207.method22125(class7209.field25118)) {
                         continue;
                     }
@@ -81,7 +81,7 @@ public class Class4034 extends Item
             }
         }
         else {
-            for (final Class6257 class7210 : Class90.field209) {
+            for (final Class6257 class7210 : Registry.field209) {
                 if (class7210.field25118 == null) {
                     continue;
                 }

@@ -17,7 +17,7 @@ import java.util.Map;
 public class Class4076 extends Class4071
 {
     private final float field18179;
-    public static final Map<Class3833, Class7096> field18180;
+    public static final Map<Block, Class7096> field18180;
     
     public Class4076(final Class2038 class2038, final float field18179, final Class8959 class2039) {
         super(class2038, class2039);
@@ -29,13 +29,13 @@ public class Class4076 extends Class4071
         final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
         if (class7075.method21648() != Direction.DOWN) {
-            if (method21654.method6701(method21655.method1137()).method21706()) {
-                final Class7096 class7076 = Class4076.field18180.get(method21654.method6701(method21655).method21696());
+            if (method21654.getBlockState(method21655.method1137()).method21706()) {
+                final Class7096 class7076 = Class4076.field18180.get(method21654.getBlockState(method21655).method21696());
                 if (class7076 != null) {
                     final Class512 method21656 = class7075.method21652();
                     method21654.method6705(method21656, method21655, Class8520.field35264, Class286.field1582, 1.0f, 1.0f);
                     if (!method21654.isRemote) {
-                        method21654.method6688(method21655, class7076, 11);
+                        method21654.setBlockState(method21655, class7076, 11);
                         if (method21656 != null) {
                             class7075.method21651().method27636(1, method21656, class7078 -> class7078.method2795(class7077.method21653()));
                         }
@@ -64,6 +64,6 @@ public class Class4076 extends Class4071
     }
     
     static {
-        field18180 = Maps.newHashMap((Map)ImmutableMap.of((Object)Class7521.field29155, (Object)Class7521.field29298.method11878(), (Object)Class7521.field29637, (Object)Class7521.field29298.method11878(), (Object)Class7521.field29156, (Object)Class7521.field29298.method11878(), (Object)Class7521.field29157, (Object)Class7521.field29156.method11878()));
+        field18180 = Maps.newHashMap((Map)ImmutableMap.of((Object)Class7521.field29155, (Object)Class7521.field29298.getDefaultState(), (Object)Class7521.field29637, (Object)Class7521.field29298.getDefaultState(), (Object)Class7521.field29156, (Object)Class7521.field29298.getDefaultState(), (Object)Class7521.field29157, (Object)Class7521.field29156.getDefaultState()));
     }
 }

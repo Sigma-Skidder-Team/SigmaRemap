@@ -44,7 +44,7 @@ public class Class5604 extends Class5601
         final String group2 = matcher.group(2);
         final String group3 = matcher.group(3);
         if (group2 != null && group2.length() > 0) {
-            final boolean b = !Class8571.equals(group, "//");
+            final boolean b = !Config.equals(group, "//");
             method35517 = Class9518.method35517(method35517, "/shaders/");
             return new Class5604(group2, group3, String.valueOf(b), method35517);
         }

@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 import java.util.Collection;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
-import java.util.Iterator;
 import java.io.Reader;
 import org.apache.commons.io.IOUtils;
 import java.io.FileNotFoundException;
@@ -27,7 +26,7 @@ public class Class8175
 {
     public static final Logger field33679;
     private final Map<String, File> field33680;
-    private final Map<Class1932, File> field33681;
+    private final Map<ResourceLocation, File> field33681;
     
     public Class8175() {
         this.field33680 = Maps.newHashMap();
@@ -53,7 +52,7 @@ public class Class8175
                         this.field33680.put(split[0], file3);
                     }
                     else {
-                        this.field33681.put(new Class1932(split[0], split[1]), file3);
+                        this.field33681.put(new ResourceLocation(split[0], split[1]), file3);
                     }
                 }
             }
@@ -70,7 +69,7 @@ public class Class8175
     }
     
     @Nullable
-    public File method27064(final Class1932 class1932) {
+    public File method27064(final ResourceLocation class1932) {
         return this.field33681.get(class1932);
     }
     
@@ -79,7 +78,7 @@ public class Class8175
         return this.field33680.get(s);
     }
     
-    public Collection<Class1932> method27066(final String s, final String s2, final int n, final Predicate<String> predicate) {
+    public Collection<ResourceLocation> method27066(final String s, final String s2, final int n, final Predicate<String> predicate) {
         return this.field33681.keySet().stream().filter(class1932 -> {
             class1932.method7797();
             final boolean b;
@@ -94,7 +93,7 @@ public class Class8175
                 }
             }
             return b;
-        }).collect((Collector<? super Object, ?, Collection<Class1932>>)Collectors.toList());
+        }).collect((Collector<? super Object, ?, Collection<ResourceLocation>>)Collectors.toList());
     }
     
     static {

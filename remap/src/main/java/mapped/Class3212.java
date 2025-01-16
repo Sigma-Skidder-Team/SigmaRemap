@@ -193,7 +193,7 @@ public class Class3212 extends Class3167
         return b;
     }
     
-    public List<Class9052> method10104(final Class3833 class3833, final BlockPos class3834) {
+    public List<Class9052> method10104(final Block class3833, final BlockPos class3834) {
         return Class8582.method29051(class3833, class3834, (int)Class3212.field15514.field4682.method27315());
     }
     

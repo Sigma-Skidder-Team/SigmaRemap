@@ -224,12 +224,12 @@ public class Class7492 implements Class7491
     }
     
     @Override
-    public Collection<Class1932> method23208() {
-        return Class90.field205.method507();
+    public Collection<ResourceLocation> method23208() {
+        return Registry.field205.method507();
     }
     
     @Override
-    public Stream<Class1932> method23209() {
+    public Stream<ResourceLocation> method23209() {
         return this.field28934.method1577().method6384();
     }
     

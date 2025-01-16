@@ -30,10 +30,10 @@ public class Class4552 extends Class4535<Class5122>
                     if (method13563(Class4552.field20033.getX(), Class4552.field20033.getZ(), j, i) <= 16) {
                         class1856.setPos(j, Class4552.field20033.getY(), i);
                         if (!class1856.equals(Class4552.field20033)) {
-                            class1851.method6688(class1856, Class7521.field29148.method11878(), 2);
+                            class1851.setBlockState(class1856, Class7521.field29148.getDefaultState(), 2);
                         }
                         else {
-                            class1851.method6688(class1856, Class7521.field29159.method11878(), 2);
+                            class1851.setBlockState(class1856, Class7521.field29159.getDefaultState(), 2);
                         }
                     }
                 }

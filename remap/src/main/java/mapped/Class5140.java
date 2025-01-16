@@ -22,10 +22,10 @@ public class Class5140 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("height"), dynamicOps.createInt(this.field22125), dynamicOps.createString("state"), BlockState.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22126).getValue())));
+        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("height"), dynamicOps.createInt(this.field22125), dynamicOps.createString("state"), BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22126).getValue())));
     }
     
     public static <T> Class5140 method16054(final Dynamic<T> dynamic) {
-        return new Class5140(dynamic.get("height").asInt(0), dynamic.get("state").map((Function) BlockState::method21764).orElse(Class7521.field29147.method11878()));
+        return new Class5140(dynamic.get("height").asInt(0), dynamic.get("state").map((Function) BlockState::deserialize).orElse(Class7521.field29147.getDefaultState()));
     }
 }

@@ -56,7 +56,7 @@ public abstract class Class4515 extends Class4473
                 if (class1856.field38250 != null) {
                     final String method323 = class1856.field38250.method323("final_state");
                     final Class7572 class1857 = new Class7572(new StringReader(method323), false);
-                    BlockState method324 = Class7521.field29147.method11878();
+                    BlockState method324 = Class7521.field29147.getDefaultState();
                     try {
                         class1857.method23802(true);
                         final BlockState method325 = class1857.method23799();
@@ -70,7 +70,7 @@ public abstract class Class4515 extends Class4473
                     catch (final CommandSyntaxException ex) {
                         Class4515.field19917.error("Error while parsing blockstate {} in jigsaw block @ {}", (Object)method323, (Object)class1856.field38248);
                     }
-                    class1851.method6688(class1856.field38248, method324, 3);
+                    class1851.setBlockState(class1856.field38248, method324, 3);
                 }
             }
         }

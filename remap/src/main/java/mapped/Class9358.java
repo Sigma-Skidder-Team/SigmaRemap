@@ -8,5 +8,5 @@ import net.minecraft.item.ItemStack;
 
 public interface Class9358<T extends Class3685>
 {
-    T method34696(final Class1932 p0, final String p1, final Class120 p2, final ItemStack p3);
+    T method34696(final ResourceLocation p0, final String p1, final Class120 p2, final ItemStack p3);
 }

@@ -18,7 +18,7 @@ public class Class5955 implements JsonDeserializer<Class6368>, JsonSerializer<Cl
 {
     public Class6368 deserialize(final JsonElement jsonElement, final Type type, final JsonDeserializationContext jsonDeserializationContext) {
         final JsonObject method35913 = Class9583.method35913(jsonElement, "entry");
-        final Class1932 obj = new Class1932(Class9583.method35895(method35913, "type"));
+        final ResourceLocation obj = new ResourceLocation(Class9583.method35895(method35913, "type"));
         final Class6529 class6529 = Class8527.method28607().get(obj);
         if (class6529 != null) {
             return class6529.method19752(method35913, jsonDeserializationContext, Class9583.method35921(method35913, "conditions", new Class122[0], jsonDeserializationContext, Class122[].class));

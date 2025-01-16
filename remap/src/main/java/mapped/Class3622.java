@@ -28,11 +28,11 @@ public class Class3622 extends Class3617
             if (!class7096.method21755(Class7188.field27912)) {
                 return class7096.method21755(Class7188.field27909);
             }
-            else if (class7096.method21696() != Class7521.field29549) {
+            else if (class7096.getBlock() != Class7521.field29549) {
                 return true;
             }
             else {
-                return class7096.method21772(Class3870.field17513) == Class182.field564;
+                return class7096.get(Class3870.field17513) == Class182.field564;
             }
         });
         this.field16826 = 0;
@@ -183,7 +183,7 @@ public class Class3622 extends Class3617
                 for (int i = 0; i <= (b ? 1 : 0); i = ((i <= 0) ? (1 - i) : (-i))) {
                     for (int j = (i < (b ? 1 : 0) && i > ((-b) ? 1 : 0)) ? b : 0; j <= (b ? 1 : 0); j = ((j <= 0) ? (1 - j) : (-j))) {
                         value.method1287(class354).method1292(i, n2 - 1, j);
-                        if (class354.withinDistance(value, n) && predicate.test(this.field16831.world.method6701(value))) {
+                        if (class354.withinDistance(value, n) && predicate.test(this.field16831.world.getBlockState(value))) {
                             return (Optional<BlockPos>)Optional.of(value);
                         }
                     }

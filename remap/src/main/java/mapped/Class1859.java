@@ -17,8 +17,8 @@ public enum Class1859 implements Class1855
     }
     
     @Override
-    public BlockState method6701(final BlockPos class354) {
-        return Class7521.field29147.method11878();
+    public BlockState getBlockState(final BlockPos class354) {
+        return Class7521.field29147.getDefaultState();
     }
     
     @Override

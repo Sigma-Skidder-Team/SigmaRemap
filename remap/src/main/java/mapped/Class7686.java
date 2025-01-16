@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.stream.Stream;
 import javax.annotation.Nullable;
 import com.mojang.datafixers.util.Pair;
 import java.util.function.Function;
@@ -21,10 +20,10 @@ import java.util.List;
 public class Class7686 implements Class7684
 {
     private static String[] field30527;
-    private final Class9104<Class3833, BlockState> field30528;
+    private final StateContainer<Block, BlockState> field30528;
     private final List<Class8997> field30529;
     
-    public Class7686(final Class9104<Class3833, BlockState> field30528, final List<Class8997> field30529) {
+    public Class7686(final StateContainer<Block, BlockState> field30528, final List<Class8997> field30529) {
         this.field30528 = field30528;
         this.field30529 = field30529;
     }
@@ -60,18 +59,18 @@ public class Class7686 implements Class7684
     }
     
     @Override
-    public Collection<Class1932> method24381() {
-        return this.method24404().stream().flatMap(class8997 -> class8997.method32115().method24381().stream()).collect((Collector<? super Object, ?, Collection<Class1932>>)Collectors.toSet());
+    public Collection<ResourceLocation> method24381() {
+        return this.method24404().stream().flatMap(class8997 -> class8997.method32115().method24381().stream()).collect((Collector<? super Object, ?, Collection<ResourceLocation>>)Collectors.toSet());
     }
     
     @Override
-    public Collection<Class3687> method24382(final Function<Class1932, Class7684> function, final Set<Pair<String, String>> set) {
+    public Collection<Class3687> method24382(final Function<ResourceLocation, Class7684> function, final Set<Pair<String, String>> set) {
         return this.method24404().stream().flatMap(class8997 -> class8997.method32115().method24382(function2, set2).stream()).collect((Collector<? super Object, ?, Collection<Class3687>>)Collectors.toSet());
     }
     
     @Nullable
     @Override
-    public Class6313 method24383(final Class7637 class7637, final Function<Class3687, Class1912> function, final Class2123 class7638, final Class1932 class7639) {
+    public Class6313 method24383(final Class7637 class7637, final Function<Class3687, Class1912> function, final Class2123 class7638, final ResourceLocation class7639) {
         final Class7897 class7640 = new Class7897();
         for (final Class8997 class7641 : this.method24404()) {
             final Class6313 method24383 = class7641.method32115().method24383(class7637, function, class7638, class7639);

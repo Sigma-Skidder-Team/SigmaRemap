@@ -10,10 +10,10 @@ import net.minecraft.item.ItemStack;
 
 public class Class4616 extends Class4611<Class4230>
 {
-    private static final Class1932 field20082;
+    private static final ResourceLocation field20082;
     
     @Override
-    public Class1932 method13717() {
+    public ResourceLocation method13717() {
         return Class4616.field20082;
     }
     
@@ -26,6 +26,6 @@ public class Class4616 extends Class4611<Class4230>
     }
     
     static {
-        field20082 = new Class1932("item_durability_changed");
+        field20082 = new ResourceLocation("item_durability_changed");
     }
 }

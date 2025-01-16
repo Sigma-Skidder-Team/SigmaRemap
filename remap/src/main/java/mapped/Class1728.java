@@ -9,11 +9,9 @@ import org.apache.logging.log4j.LogManager;
 import java.nio.file.FileSystemNotFoundException;
 import java.util.Collections;
 import java.nio.file.FileSystems;
-import java.util.HashMap;
 import java.io.File;
 import javax.annotation.Nullable;
 import java.util.stream.Stream;
-import java.util.function.Consumer;
 import java.nio.file.FileVisitOption;
 import java.net.URI;
 import java.util.Enumeration;
@@ -67,7 +65,7 @@ public class Class1728 implements Class1727
     }
     
     @Override
-    public InputStream method6097(final Class346 class346, final Class1932 class347) throws IOException {
+    public InputStream method6097(final Class346 class346, final ResourceLocation class347) throws IOException {
         final InputStream method6104 = this.method6104(class346, class347);
         if (method6104 == null) {
             throw new FileNotFoundException(class347.method7797());
@@ -76,7 +74,7 @@ public class Class1728 implements Class1727
     }
     
     @Override
-    public Collection<Class1932> method6098(final Class346 class346, final String s, final String s2, final int n, final Predicate<String> predicate) {
+    public Collection<ResourceLocation> method6098(final Class346 class346, final String s, final String s2, final int n, final Predicate<String> predicate) {
         final HashSet hashSet = Sets.newHashSet();
         if (Class1728.field9659 != null) {
             try {
@@ -125,7 +123,7 @@ public class Class1728 implements Class1727
         return hashSet;
     }
     
-    private static void method6103(final Collection<Class1932> collection, final int maxDepth, final String other, final Path path, final String other2, final Predicate<String> predicate) throws IOException {
+    private static void method6103(final Collection<ResourceLocation> collection, final int maxDepth, final String other, final Path path, final String other2, final Predicate<String> predicate) throws IOException {
         try (final Stream<Path> walk = Files.walk(path.resolve(other).resolve(other2), maxDepth, new FileVisitOption[0])) {
             walk.filter(path2 -> {
                 final boolean b;
@@ -137,12 +135,12 @@ public class Class1728 implements Class1727
                     }
                 }
                 return b;
-            }).map(path4 -> new Class1932(s, path3.relativize(path4).toString().replaceAll("\\\\", "/"))).forEach(collection::add);
+            }).map(path4 -> new ResourceLocation(s, path3.relativize(path4).toString().replaceAll("\\\\", "/"))).forEach(collection::add);
         }
     }
     
     @Nullable
-    public InputStream method6104(final Class346 class346, final Class1932 class347) {
+    public InputStream method6104(final Class346 class346, final ResourceLocation class347) {
         final String method6105 = method6105(class346, class347);
         final InputStream method6106 = Class7667.method24302(method6105);
         if (method6106 != null) {
@@ -166,7 +164,7 @@ public class Class1728 implements Class1727
         }
     }
     
-    private static String method6105(final Class346 class346, final Class1932 class347) {
+    private static String method6105(final Class346 class346, final ResourceLocation class347) {
         return "/" + class346.method1028() + "/" + class347.method7798() + "/" + class347.method7797();
     }
     
@@ -180,7 +178,7 @@ public class Class1728 implements Class1727
     }
     
     @Override
-    public boolean method6099(final Class346 class346, final Class1932 class347) {
+    public boolean method6099(final Class346 class346, final ResourceLocation class347) {
         final String method6105 = method6105(class346, class347);
         if (Class7667.method24302(method6105) != null) {
             return true;

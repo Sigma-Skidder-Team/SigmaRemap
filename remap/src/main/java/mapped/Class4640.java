@@ -9,7 +9,7 @@ import com.google.gson.JsonObject;
 
 public interface Class4640<T extends Class4220>
 {
-    Class1932 method13717();
+    ResourceLocation method13717();
     
     void method13723(final Class7012 p0, final Class8803<T> p1);
     

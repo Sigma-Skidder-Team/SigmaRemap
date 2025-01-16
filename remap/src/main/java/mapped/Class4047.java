@@ -11,7 +11,7 @@ public class Class4047 extends Item
 {
     public Class4047(final Class8959 class8959) {
         super(class8959);
-        this.method11705(new Class1932("cast"), (class8321, class8322, class8323) -> {
+        this.method11705(new ResourceLocation("cast"), (class8321, class8322, class8323) -> {
             if (class8323 != null) {
                 final boolean b = class8323.getHeldItemMainhand() == class8321;
                 boolean b2 = class8323.method2714() == class8321;

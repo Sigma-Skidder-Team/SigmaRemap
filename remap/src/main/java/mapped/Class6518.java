@@ -19,7 +19,7 @@ import org.apache.logging.log4j.Logger;
 public class Class6518
 {
     private static final Logger field25938;
-    private final Map<Class1932, Class8863> field25939;
+    private final Map<ResourceLocation, Class8863> field25939;
     private final Set<Class8863> field25940;
     private final Set<Class8863> field25941;
     private Class559 field25942;
@@ -51,8 +51,8 @@ public class Class6518
         }
     }
     
-    public void method19670(final Set<Class1932> set) {
-        for (final Class1932 class1932 : set) {
+    public void method19670(final Set<ResourceLocation> set) {
+        for (final ResourceLocation class1932 : set) {
             final Class8863 class1933 = this.field25939.get(class1932);
             if (class1933 != null) {
                 this.method19669(class1933);
@@ -63,16 +63,16 @@ public class Class6518
         }
     }
     
-    public void method19671(final Map<Class1932, Class6056> map) {
+    public void method19671(final Map<ResourceLocation, Class6056> map) {
         final com.google.common.base.Function forMap = Functions.forMap((Map)this.field25939, (Object)null);
         while (!map.isEmpty()) {
             int n = 0;
-            final Iterator<Map.Entry<Class1932, Class6056>> iterator = map.entrySet().iterator();
+            final Iterator<Map.Entry<ResourceLocation, Class6056>> iterator = map.entrySet().iterator();
             while (iterator.hasNext()) {
-                final Map.Entry<Class1932, V> entry = (Map.Entry<Class1932, V>)iterator.next();
-                final Class1932 class1932 = entry.getKey();
+                final Map.Entry<ResourceLocation, V> entry = (Map.Entry<ResourceLocation, V>)iterator.next();
+                final ResourceLocation class1932 = entry.getKey();
                 final Class6056 class1933 = (Class6056)entry.getValue();
-                if (!class1933.method18012((Function<Class1932, Class8863>)forMap)) {
+                if (!class1933.method18012((Function<ResourceLocation, Class8863>)forMap)) {
                     continue;
                 }
                 final Class8863 method18013 = class1933.method18013(class1932);
@@ -123,7 +123,7 @@ public class Class6518
     }
     
     @Nullable
-    public Class8863 method19675(final Class1932 class1932) {
+    public Class8863 method19675(final ResourceLocation class1932) {
         return this.field25939.get(class1932);
     }
     

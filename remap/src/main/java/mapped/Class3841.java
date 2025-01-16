@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public abstract class Class3841 extends Class3833 implements Class3840
+public abstract class Class3841 extends Block implements Class3840
 {
     public Class3841(final Class9288 class9288) {
         super(class9288);

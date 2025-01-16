@@ -17,6 +17,6 @@ public final class Class6383 implements Class6382<Class6911>
     }
     
     public Class6911 method19059(final Class6907<Class6911> class6907, final PacketBuffer class6908) {
-        return new Class6911(class6907, Class3833.field17391.method499(class6908.readVarInt()));
+        return new Class6911(class6907, Block.field17391.method499(class6908.readVarInt()));
     }
 }

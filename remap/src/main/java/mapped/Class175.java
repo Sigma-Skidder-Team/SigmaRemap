@@ -36,13 +36,13 @@ public class Class175 implements Predicate<ItemStack>
             class8321.method27663(this.field503);
         }
         if (b && n > class8321.method27628()) {
-            throw Class175.field501.create((Object)Class90.field211.method503(this.field502), (Object)class8321.method27628());
+            throw Class175.field501.create((Object) Registry.field211.getKey(this.field502), (Object)class8321.method27628());
         }
         return class8321;
     }
     
     public String method773() {
-        final StringBuilder sb = new StringBuilder(Class90.field211.method504(this.field502));
+        final StringBuilder sb = new StringBuilder(Registry.field211.getId(this.field502));
         if (this.field503 != null) {
             sb.append(this.field503);
         }

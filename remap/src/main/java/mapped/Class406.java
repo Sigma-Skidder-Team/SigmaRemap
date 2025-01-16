@@ -186,7 +186,7 @@ public class Class406 extends Entity implements Class407, Class401
             else {
                 class7007 = new BlockPos(((Class7005)class7006).method21447());
             }
-            this.world.method6701(class7007).method21741(this.world, class7007, this);
+            this.world.getBlockState(class7007).method21741(this.world, class7007, this);
             if (this.method2001()) {
                 this.method1999();
             }

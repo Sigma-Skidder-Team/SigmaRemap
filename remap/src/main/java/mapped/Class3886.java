@@ -35,10 +35,10 @@ public class Class3886 extends Class3874
     
     @Override
     public boolean method11943(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        return class7097.method6702(class7098).method21779() == Class7558.field29976 || class7096.method21697() == Class8059.field33183;
+        return class7097.method6702(class7098).method21779() == Class7558.field29976 || class7096.getMaterial() == Material.ICE;
     }
     
     static {
-        field17548 = Class3833.method11778(1.0, 0.0, 1.0, 15.0, 1.5, 15.0);
+        field17548 = Block.method11778(1.0, 0.0, 1.0, 15.0, 1.5, 15.0);
     }
 }

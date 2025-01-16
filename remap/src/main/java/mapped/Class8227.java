@@ -21,7 +21,7 @@ import com.google.common.collect.ImmutableList;
 
 public class Class8227 extends Class8228
 {
-    public final Class1932 field33789;
+    public final ResourceLocation field33789;
     public final ImmutableList<Class4107> field33790;
     
     @Deprecated
@@ -31,7 +31,7 @@ public class Class8227 extends Class8228
     
     public Class8227(final String s, final List<Class4107> list, final Class261 class261) {
         super(class261);
-        this.field33789 = new Class1932(s);
+        this.field33789 = new ResourceLocation(s);
         this.field33790 = (ImmutableList<Class4107>)ImmutableList.copyOf((Collection)list);
     }
     
@@ -42,8 +42,8 @@ public class Class8227 extends Class8228
     
     public Class8227(final Dynamic<?> dynamic) {
         super(dynamic);
-        this.field33789 = new Class1932(dynamic.get("location").asString(""));
-        this.field33790 = (ImmutableList<Class4107>)ImmutableList.copyOf((Collection)dynamic.get("processors").asList(dynamic2 -> Class7754.method24753((com.mojang.datafixers.Dynamic<Object>)dynamic2, Class90.field233, "processor_type", Class4111.field18215)));
+        this.field33789 = new ResourceLocation(dynamic.get("location").asString(""));
+        this.field33790 = (ImmutableList<Class4107>)ImmutableList.copyOf((Collection)dynamic.get("processors").asList(dynamic2 -> Class7754.method24753((com.mojang.datafixers.Dynamic<Object>)dynamic2, Registry.field233, "processor_type", Class4111.field18215)));
     }
     
     public List<Class9038> method27252(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797, final boolean b) {

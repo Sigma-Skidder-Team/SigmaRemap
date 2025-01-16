@@ -59,7 +59,7 @@ public class Class7042 implements Class7038
     
     private String method21534(final String s) {
         final ArrayDeque arrayDeque = new ArrayDeque();
-        final String[] method28937 = Class8571.method28937(s, "/");
+        final String[] method28937 = Config.method28937(s, "/");
         for (int i = 0; i < method28937.length; ++i) {
             final String s2 = method28937[i];
             if (!s2.equals("..")) {

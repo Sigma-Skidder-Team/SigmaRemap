@@ -14,7 +14,7 @@ public abstract class AbstractChunkProvider implements Class1908, AutoCloseable
 {
     @Nullable
     public Class1862 method7398(final int n, final int n2, final boolean b) {
-        return (Class1862)this.method7402(n, n2, Class9312.field39989, b);
+        return (Class1862)this.getChunk(n, n2, ChunkStatus.field39989, b);
     }
     
     @Nullable
@@ -25,15 +25,15 @@ public abstract class AbstractChunkProvider implements Class1908, AutoCloseable
     @Nullable
     @Override
     public Class1855 method7400(final int n, final int n2) {
-        return this.method7402(n, n2, Class9312.field39977, false);
+        return this.getChunk(n, n2, ChunkStatus.field39977, false);
     }
     
     public boolean method7401(final int n, final int n2) {
-        return this.method7402(n, n2, Class9312.field39989, false) != null;
+        return this.getChunk(n, n2, ChunkStatus.field39989, false) != null;
     }
     
     @Nullable
-    public abstract Class1860 method7402(final int p0, final int p1, final Class9312 p2, final boolean p3);
+    public abstract IChunk getChunk(final int p0, final int p1, final ChunkStatus p2, final boolean p3);
     
     public abstract void method7403(final BooleanSupplier p0);
     
@@ -43,7 +43,7 @@ public abstract class AbstractChunkProvider implements Class1908, AutoCloseable
     public void close() throws IOException {
     }
     
-    public abstract Class1886 method7405();
+    public abstract Class1886 getLightManager();
     
     public void method7406(final boolean b, final boolean b2) {
     }

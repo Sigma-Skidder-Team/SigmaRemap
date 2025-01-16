@@ -35,7 +35,7 @@ public class Class4854 extends Class4841
             final Class4817 field20798 = new Class4817(this, "scrollview", 0, 40, this.field20480, this.field20481 - 40);
             this.method14239(this.field20798 = field20798);
             final ArrayList list = new ArrayList();
-            Class90.field211.iterator();
+            Registry.field211.iterator();
             final Iterator iterator;
             while (iterator.hasNext()) {
                 list.add(iterator.next());
@@ -57,11 +57,11 @@ public class Class4854 extends Class4841
                         continue;
                     }
                     else {
-                        Class90.field211.method503(class4038);
-                        final Class1932 class4039;
+                        Registry.field211.getKey(class4038);
+                        final ResourceLocation class4039;
                         String str;
                         if (class4038 instanceof Class4036 && class4039.method7797().equals("air")) {
-                            str = Class90.field208.method503(((Class4036)class4038).method12240()).toString();
+                            str = Registry.BLOCK.getKey(((Class4036)class4038).method12240()).toString();
                         }
                         else {
                             str = class4039.toString();

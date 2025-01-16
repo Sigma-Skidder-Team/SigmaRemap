@@ -47,14 +47,14 @@ public class Class4281 implements IPacket<IClientPlayNetHandler>
     }
     
     public static Class3662<?> method12860(final PacketBuffer class8654) {
-        return Class90.field237.method506(class8654.method29516()).orElseThrow(() -> {
+        return Registry.field237.method506(class8654.method29516()).orElseThrow(() -> {
             new IllegalArgumentException("Unknown recipe serializer " + obj);
             return;
         }).method18180(class8654.method29516(), class8654);
     }
     
     public static <T extends Class3662<?>> void method12861(final T t, final PacketBuffer class8654) {
-        class8654.method29517(Class90.field237.method503(t.method11299()));
+        class8654.method29517(Registry.field237.getKey(t.method11299()));
         class8654.method29517(t.method11298());
         t.method11299().method18181(class8654, t);
     }

@@ -49,7 +49,7 @@ public class Class6664
     }
     
     public boolean method20261(final AxisAlignedBB class6221) {
-        return this.method20265(class6221.field25073, class6221.field25074, class6221.field25075, class6221.field25076, class6221.field25077, class6221.field25078);
+        return this.method20265(class6221.minX, class6221.minY, class6221.minZ, class6221.maxX, class6221.maxY, class6221.maxZ);
     }
     
     private boolean method20265(final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {

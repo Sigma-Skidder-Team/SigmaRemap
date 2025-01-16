@@ -5,7 +5,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
-import java.util.HashMap;
+
 import java.util.Map;
 
 public interface Class7611
@@ -65,7 +65,7 @@ public interface Class7611
     });
     
     default Class7611 method23912(final String s) {
-        return Class90.method512(Class90.field239, new Class1932(s), new Class7612(s));
+        return Registry.method512(Registry.field239, new ResourceLocation(s), new Class7612(s));
     }
     
     default Class7611 method23913(final Class3090 key) {

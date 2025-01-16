@@ -14,7 +14,7 @@ public class Class6993 implements Class6991
 {
     private static String[] field27283;
     private final GameProfile field27284;
-    private final Class1932 field27285;
+    private final ResourceLocation field27285;
     
     public Class6993(final GameProfile field27284) {
         this.field27284 = field27284;

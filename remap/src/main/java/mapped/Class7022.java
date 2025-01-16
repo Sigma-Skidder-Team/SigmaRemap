@@ -11,7 +11,7 @@ import com.google.gson.JsonObject;
 public class Class7022 extends Class7020<Class156>
 {
     public Class7022() {
-        super(new Class1932("reference"), Class156.class);
+        super(new ResourceLocation("reference"), Class156.class);
     }
     
     public void method21488(final JsonObject jsonObject, final Class156 class156, final JsonSerializationContext jsonSerializationContext) {
@@ -19,6 +19,6 @@ public class Class7022 extends Class7020<Class156>
     }
     
     public Class156 method21489(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext) {
-        return new Class156(new Class1932(Class9583.method35895(jsonObject, "name")));
+        return new Class156(new ResourceLocation(Class9583.method35895(jsonObject, "name")));
     }
 }

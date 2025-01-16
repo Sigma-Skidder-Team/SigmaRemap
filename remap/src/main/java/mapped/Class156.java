@@ -10,9 +10,9 @@ import org.apache.logging.log4j.Logger;
 public class Class156 implements Class122
 {
     private static final Logger field456;
-    private final Class1932 field457;
+    private final ResourceLocation field457;
     
-    public Class156(final Class1932 field457) {
+    public Class156(final ResourceLocation field457) {
         this.field457 = field457;
     }
     

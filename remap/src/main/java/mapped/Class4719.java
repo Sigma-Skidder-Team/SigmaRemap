@@ -8,7 +8,7 @@ import net.minecraft.entity.LivingEntity;
 
 public class Class4719 extends Class4712<Class764, Class5853<Class764>>
 {
-    private static final Class1932 field20321;
+    private static final ResourceLocation field20321;
     private final float field20322;
     
     public Class4719(final Class8551 class8551, final float field20322) {
@@ -22,11 +22,11 @@ public class Class4719 extends Class4712<Class764, Class5853<Class764>>
         class765.method22565(this.field20322, this.field20322, this.field20322);
     }
     
-    public Class1932 method14027(final Class764 class764) {
+    public ResourceLocation method14027(final Class764 class764) {
         return Class4719.field20321;
     }
     
     static {
-        field20321 = new Class1932("textures/entity/zombie/zombie.png");
+        field20321 = new ResourceLocation("textures/entity/zombie/zombie.png");
     }
 }

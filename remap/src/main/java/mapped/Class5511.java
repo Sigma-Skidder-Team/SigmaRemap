@@ -37,7 +37,7 @@ public class Class5511 extends Class5509
             }
             final Class6300[] array = (Class6300[])Class9570.method35828(class5902, Class9570.field41484);
             if (array != null) {
-                int method28933 = Class8571.method28933(s.substring(prefix2.length()), -1);
+                int method28933 = Config.method28933(s.substring(prefix2.length()), -1);
                 return (--method28933 >= 0 && method28933 < array.length) ? array[method28933] : null;
             }
             return null;
@@ -45,7 +45,7 @@ public class Class5511 extends Class5509
         else {
             final Class6300[] array2 = (Class6300[])Class9570.method35828(class5902, Class9570.field41483);
             if (array2 != null) {
-                int method28934 = Class8571.method28933(s.substring(prefix.length()), -1);
+                int method28934 = Config.method28933(s.substring(prefix.length()), -1);
                 return (--method28934 >= 0 && method28934 < array2.length) ? array2[method28934] : null;
             }
             return null;

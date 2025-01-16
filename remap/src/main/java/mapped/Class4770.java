@@ -6,8 +6,8 @@ package mapped;
 
 public class Class4770 extends Class4712<Class767, Class5872<Class767>>
 {
-    private static final Class1932 field20397;
-    private static final Class1932 field20398;
+    private static final ResourceLocation field20397;
+    private static final ResourceLocation field20398;
     
     public Class4770(final Class8551 class8551) {
         super(class8551, new Class5872(0.0f), 1.0f);
@@ -18,7 +18,7 @@ public class Class4770 extends Class4712<Class767, Class5872<Class767>>
         return 15;
     }
     
-    public Class1932 method14117(final Class767 class767) {
+    public ResourceLocation method14117(final Class767 class767) {
         final int method4255 = class767.method4255();
         return (method4255 > 0 && (method4255 > 80 || method4255 / 5 % 2 != 1)) ? Class4770.field20397 : Class4770.field20398;
     }
@@ -33,7 +33,7 @@ public class Class4770 extends Class4712<Class767, Class5872<Class767>>
     }
     
     static {
-        field20397 = new Class1932("textures/entity/wither/wither_invulnerable.png");
-        field20398 = new Class1932("textures/entity/wither/wither.png");
+        field20397 = new ResourceLocation("textures/entity/wither/wither_invulnerable.png");
+        field20398 = new ResourceLocation("textures/entity/wither/wither.png");
     }
 }

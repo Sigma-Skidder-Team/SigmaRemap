@@ -96,7 +96,7 @@ public class Class7473 extends Class7474
                 final Class51 method23081 = method23080.method327("stats");
                 for (final String s2 : method23081.method293()) {
                     if (method23081.method316(s2, 10)) {
-                        Class8349.method27855(Class90.field238.method506(new Class1932(s2)), class52 -> {
+                        Class8349.method27855(Registry.field238.method506(new ResourceLocation(s2)), class52 -> {
                             class51.method327(s3);
                             final Class51 class53;
                             class53.method293().iterator();
@@ -122,7 +122,7 @@ public class Class7473 extends Class7474
     }
     
     private <T> Optional<Class9455<T>> method23078(final Class2248<T> class2248, final String s) {
-        return Optional.ofNullable(Class1932.method7795(s)).flatMap((Function<? super Class1932, ? extends Optional<?>>)class2248.method8448()::method506).map((Function<? super Object, ? extends Class9455<T>>)class2248::method8449);
+        return Optional.ofNullable(ResourceLocation.method7795(s)).flatMap((Function<? super ResourceLocation, ? extends Optional<?>>)class2248.method8448()::method506).map((Function<? super Object, ? extends Class9455<T>>)class2248::method8449);
     }
     
     private static Class51 method23079(final JsonObject jsonObject) {
@@ -154,7 +154,7 @@ public class Class7473 extends Class7474
         }
         final JsonObject jsonObject = new JsonObject();
         for (final Map.Entry<Class2248<?>, V> entry : hashMap.entrySet()) {
-            jsonObject.add(Class90.field238.method503(entry.getKey()).toString(), (JsonElement)entry.getValue());
+            jsonObject.add(Registry.field238.getKey(entry.getKey()).toString(), (JsonElement)entry.getValue());
         }
         final JsonObject jsonObject2 = new JsonObject();
         jsonObject2.add("stats", (JsonElement)jsonObject);
@@ -162,8 +162,8 @@ public class Class7473 extends Class7474
         return jsonObject2.toString();
     }
     
-    private static <T> Class1932 method23081(final Class9455<T> class9455) {
-        return class9455.method35134().method8448().method503(class9455.method35135());
+    private static <T> ResourceLocation method23081(final Class9455<T> class9455) {
+        return class9455.method35134().method8448().getKey(class9455.method35135());
     }
     
     public void method23082() {

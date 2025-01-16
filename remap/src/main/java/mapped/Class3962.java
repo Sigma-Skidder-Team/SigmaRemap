@@ -9,12 +9,12 @@ import net.minecraft.util.Direction;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class3962 extends Class3833
+public class Class3962 extends Block
 {
     private static String[] field17903;
-    private final Class3833 field17904;
+    private final Block field17904;
     
-    public Class3962(final Class3833 field17904, final Class9288 class9288) {
+    public Class3962(final Block field17904, final Class9288 class9288) {
         super(class9288);
         this.field17904 = field17904;
     }
@@ -22,7 +22,7 @@ public class Class3962 extends Class3833
     @Override
     public void method11822(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         if (!this.method12091(class7097, class7098)) {
-            class7097.method6688(class7098, this.field17904.method11878(), 2);
+            class7097.setBlockState(class7098, this.field17904.getDefaultState(), 2);
         }
     }
     
@@ -50,6 +50,6 @@ public class Class3962 extends Class3833
         if (!this.method12091(class7074.method21654(), class7074.method21639())) {
             class7074.method21654().method6833().method21345(class7074.method21639(), this, 60 + class7074.method21654().method6790().nextInt(40));
         }
-        return this.method11878();
+        return this.getDefaultState();
     }
 }

@@ -52,14 +52,14 @@ public class Class6736 extends Dimension
             if (asJsonObject2 != null) {
                 if (asJsonObject2.has("type")) {
                     if (asJsonObject2.has("options")) {
-                        final Class7768 class1869 = Class90.field223.method505(new Class1932(asJsonObject2.getAsJsonPrimitive("type").getAsString()));
+                        final Class7768 class1869 = Registry.field223.getOrDefault(new ResourceLocation(asJsonObject2.getAsJsonPrimitive("type").getAsString()));
                         final JsonObject asJsonObject3 = asJsonObject2.getAsJsonObject("options");
                         Class3090[] array = { Class7102.field27631 };
                         if (asJsonObject3.has("biomes")) {
                             final JsonArray asJsonArray = asJsonObject3.getAsJsonArray("biomes");
                             array = ((asJsonArray.size() <= 0) ? new Class3090[] { Class7102.field27631 } : new Class3090[asJsonArray.size()]);
                             for (int i = 0; i < asJsonArray.size(); ++i) {
-                                array[i] = Class90.field217.method506(new Class1932(asJsonArray.get(i).getAsString())).orElse(Class7102.field27631);
+                                array[i] = Registry.field217.method506(new ResourceLocation(asJsonArray.get(i).getAsString())).orElse(Class7102.field27631);
                             }
                         }
                         if (Class7768.field31769 == class1869) {
@@ -77,23 +77,23 @@ public class Class6736 extends Dimension
             if (class1868 == null) {
                 class1868 = field36583.method24875(field36583.method24876(this.field26492.method6764()).method16709(Class7102.field27631));
             }
-            BlockState class1870 = Class7521.field29148.method11878();
-            BlockState class1871 = Class7521.field29173.method11878();
+            BlockState class1870 = Class7521.field29148.getDefaultState();
+            BlockState class1871 = Class7521.field29173.getDefaultState();
             final JsonObject asJsonObject4 = asJsonObject.getAsJsonObject("chunk_generator");
             if (asJsonObject4 != null) {
                 if (asJsonObject4.has("options")) {
                     final JsonObject asJsonObject5 = asJsonObject4.getAsJsonObject("options");
                     if (asJsonObject5.has("default_block")) {
-                        class1870 = Class90.field208.method505(new Class1932(asJsonObject5.getAsJsonPrimitive("default_block").getAsString())).method11878();
+                        class1870 = Registry.BLOCK.getOrDefault(new ResourceLocation(asJsonObject5.getAsJsonPrimitive("default_block").getAsString())).getDefaultState();
                     }
                     if (asJsonObject5.has("default_fluid")) {
-                        class1871 = Class90.field208.method505(new Class1932(asJsonObject5.getAsJsonPrimitive("default_fluid").getAsString())).method11878();
+                        class1871 = Registry.BLOCK.getOrDefault(new ResourceLocation(asJsonObject5.getAsJsonPrimitive("default_fluid").getAsString())).getDefaultState();
                     }
                 }
             }
             if (asJsonObject4 != null) {
                 if (asJsonObject4.has("type")) {
-                    final Class8705 class1872 = Class90.field225.method505(new Class1932(asJsonObject4.getAsJsonPrimitive("type").getAsString()));
+                    final Class8705 class1872 = Registry.field225.getOrDefault(new ResourceLocation(asJsonObject4.getAsJsonPrimitive("type").getAsString()));
                     if (Class8705.field36575 == class1872) {
                         final Class7064 class1873 = field36580.method29874();
                         class1873.method21584(class1870);
@@ -137,7 +137,7 @@ public class Class6736 extends Dimension
     public BlockPos method20490(final int n, final int n2, final boolean b) {
         final Mutable class385 = new Mutable(n, 0, n2);
         final BlockState method13338 = this.field26492.method6959(class385).method9872().method13338();
-        if (b && !method13338.method21696().method11785(Class7188.field27918)) {
+        if (b && !method13338.getBlock().method11785(Class7188.field27918)) {
             return null;
         }
         final Class1862 method13339 = this.field26492.method6686(n >> 4, n2 >> 4);
@@ -148,8 +148,8 @@ public class Class6736 extends Dimension
         if (method13339.method7018(Class2020.field11522, n & 0xF, n2 & 0xF) <= method13339.method7018(Class2020.field11524, n & 0xF, n2 & 0xF)) {
             for (int i = method13340 + 1; i >= 0; --i) {
                 class385.setPos(n, i, n2);
-                final BlockState method13341 = this.field26492.method6701(class385);
-                if (!method13341.method21756().method21781()) {
+                final BlockState method13341 = this.field26492.getBlockState(class385);
+                if (!method13341.getFluidState().isEmpty()) {
                     break;
                 }
                 if (method13341.equals(method13338)) {

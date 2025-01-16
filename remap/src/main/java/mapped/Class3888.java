@@ -31,7 +31,7 @@ public class Class3888 extends Class3874 implements Class3872
             int n = 5;
             final Iterator<BlockPos> iterator = BlockPos.getAllInBoxMutable(class7098.add(-4, -1, -4), class7098.add(4, 1, 4)).iterator();
             while (iterator.hasNext()) {
-                if (class7097.method6701(iterator.next()).method21696() == this && --n <= 0) {
+                if (class7097.getBlockState(iterator.next()).method21696() == this && --n <= 0) {
                     return;
                 }
             }
@@ -46,7 +46,7 @@ public class Class3888 extends Class3874 implements Class3872
             }
             if (class7097.method6961(class7099)) {
                 if (class7096.method21752(class7097, class7099)) {
-                    class7097.method6688(class7099, class7096, 2);
+                    class7097.setBlockState(class7099, class7096, 2);
                 }
             }
         }
@@ -54,14 +54,14 @@ public class Class3888 extends Class3874 implements Class3872
     
     @Override
     public boolean method11943(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        return class7096.method21722(class7097, class7098);
+        return class7096.isOpaqueCube(class7097, class7098);
     }
     
     @Override
     public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
         final BlockPos method1139 = class7098.method1139();
-        final BlockState method1140 = class7097.method6701(method1139);
-        final Class3833 method1141 = method1140.method21696();
+        final BlockState method1140 = class7097.getBlockState(method1139);
+        final Block method1141 = method1140.getBlock();
         return method1141 == Class7521.field29392 || method1141 == Class7521.field29158 || (class7097.method6993(class7098, 0) < 13 && this.method11943(method1140, class7097, method1139));
     }
     
@@ -70,7 +70,7 @@ public class Class3888 extends Class3874 implements Class3872
         Class8530<Class5137, ?> class1852;
         if (this != Class7521.field29278) {
             if (this != Class7521.field29279) {
-                class1849.method6688(class1850, class1851, 3);
+                class1849.setBlockState(class1850, class1851, 3);
                 return false;
             }
             class1852 = Class4535.field19990.method13527(Class9218.field39551);
@@ -79,7 +79,7 @@ public class Class3888 extends Class3874 implements Class3872
             class1852 = Class4535.field19991.method13527(Class9218.field39552);
         }
         if (!class1852.method28613(class1849, (Class6346)class1849.method6904().method7438(), random, class1850)) {
-            class1849.method6688(class1850, class1851, 3);
+            class1849.setBlockState(class1850, class1851, 3);
             return false;
         }
         return true;
@@ -106,6 +106,6 @@ public class Class3888 extends Class3874 implements Class3872
     }
     
     static {
-        field17550 = Class3833.method11778(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
+        field17550 = Block.method11778(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
     }
 }

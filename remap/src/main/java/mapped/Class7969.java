@@ -12,12 +12,12 @@ import java.util.Map;
 public class Class7969
 {
     private static String[] field32746;
-    private static final Map<Class3833, Class6332> field32747;
+    private static final Map<Block, Class6332> field32747;
     private static final Map<Class7255, Class6332> field32748;
     private static boolean field32749;
     
     public static Class6332 method25824(final BlockState class7096) {
-        final Class3833 method21696 = class7096.method21696();
+        final Block method21696 = class7096.getBlock();
         if (!(method21696 instanceof Class3972)) {
             final Class6332 class7097 = Class7969.field32747.get(method21696);
             return (class7097 == null) ? Class6332.method18761() : class7097;
@@ -34,7 +34,7 @@ public class Class7969
         if (!(method27622 instanceof Class4036)) {
             return Class8752.method30265();
         }
-        return method25825(((Class4036)method27622).method12240().method11878());
+        return method25825(((Class4036)method27622).method12240().getDefaultState());
     }
     
     public static Class6332 method25827(final Class7099 class7099) {

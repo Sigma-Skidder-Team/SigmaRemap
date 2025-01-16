@@ -20,7 +20,7 @@ public class Class3953 extends Class3841
     
     public Class3953(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3953.field17853, Direction.NORTH)).method21773((Class7111<Comparable>)Class3953.field17854, false));
+        this.method11877(((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3953.field17853, Direction.NORTH)).with((IProperty<Comparable>)Class3953.field17854, false));
     }
     
     @Override
@@ -31,7 +31,7 @@ public class Class3953 extends Class3841
     }
     
     @Override
-    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         if (!class7097.isRemote) {
             final TileEntity method6727 = class7097.method6727(class7098);
             if (method6727 instanceof Class500) {
@@ -99,7 +99,7 @@ public class Class3953 extends Class3841
         else {
             class7099.method5213(class7097);
         }
-        method12068(class7097, class7098, class7096.method21772((Class7111<Direction>)Class3953.field17853));
+        method12068(class7097, class7098, class7096.method21772((IProperty<Direction>)Class3953.field17853));
     }
     
     @Override
@@ -156,22 +156,22 @@ public class Class3953 extends Class3841
     
     @Override
     public Class7096 method11790(final Class7096 class7096, final Class2052 class7097) {
-        return ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3953.field17853, class7097.method8142(class7096.method21772((Class7111<Direction>)Class3953.field17853)));
+        return ((StateHolder<O, Class7096>)class7096).with((IProperty<Comparable>)Class3953.field17853, class7097.method8142(class7096.method21772((IProperty<Direction>)Class3953.field17853)));
     }
     
     @Override
     public Class7096 method11791(final Class7096 class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.method21772((Class7111<Direction>)Class3953.field17853)));
+        return class7096.method21708(class7097.method8344(class7096.method21772((IProperty<Direction>)Class3953.field17853)));
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Block, Class7096> class9500) {
         class9500.method35378(Class3953.field17853, Class3953.field17854);
     }
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        return ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3953.field17853, class7074.method21642().getOpposite());
+        return ((StateHolder<O, Class7096>)this.getDefaultState()).with((IProperty<Comparable>)Class3953.field17853, class7074.method21642().getOpposite());
     }
     
     private static void method12068(final World class1847, final BlockPos class1848, Direction class1849) {
@@ -180,8 +180,8 @@ public class Class3953 extends Class3841
         int method6766 = method6765.method31217(Class8878.field37336);
         while (method6766-- > 0) {
             class1850.method1290(class1849);
-            final Class7096 method6767 = class1847.method6701(class1850);
-            final Class3833 method6768 = method6767.method21696();
+            final Class7096 method6767 = class1847.getBlockState(class1850);
+            final Block method6768 = method6767.method21696();
             if (method6768 != Class7521.field29640) {
                 break;
             }
@@ -207,7 +207,7 @@ public class Class3953 extends Class3841
                     class1847.method6783(class1850, method6768);
                 }
             }
-            class1849 = method6767.method21772((Class7111<Direction>)Class3953.field17853);
+            class1849 = method6767.method21772((IProperty<Direction>)Class3953.field17853);
         }
         if (method6766 <= 0) {
             Class3953.field17390.warn("Command Block chain tried to execute more than {} steps!", (Object)Math.max(method6765.method31217(Class8878.field37336), 0));

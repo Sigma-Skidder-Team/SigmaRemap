@@ -16,7 +16,7 @@ import java.util.List;
 public class Class723 extends Class527
 {
     public static final Class7735 field3946;
-    public static final Class1932 field3947;
+    public static final ResourceLocation field3947;
     private Class7735 field3948;
     private int field3949;
     private List<ITextComponent> field3950;
@@ -230,6 +230,6 @@ public class Class723 extends Class527
     
     static {
         field3946 = new Class7737();
-        field3947 = new Class1932("textures/gui/book.png");
+        field3947 = new ResourceLocation("textures/gui/book.png");
     }
 }

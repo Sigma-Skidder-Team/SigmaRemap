@@ -112,7 +112,7 @@ public class Class7788
         if (stringReader.canRead() && stringReader.peek() == '/') {
             stringReader.skip();
         }
-        class7492.method23255().method1590().method15297(str);
+        class7492.method23255().method1590().startSection(str);
         try {
             return this.field31875.execute(stringReader, (Object)class7492);
         }
@@ -172,7 +172,7 @@ public class Class7788
         }
         catch (final Exception ex3) {}
         finally {
-            class7492.method23255().method1590().method15299();
+            class7492.method23255().method1590().endSection();
         }
     }
     

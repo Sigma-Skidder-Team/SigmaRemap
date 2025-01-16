@@ -27,7 +27,7 @@ public class Class8997
         return this.field37957;
     }
     
-    public Predicate<Class7096> method32116(final Class9104<Class3833, Class7096> class9104) {
+    public Predicate<Class7096> method32116(final StateContainer<Block, Class7096> class9104) {
         return this.field37956.method22768(class9104);
     }
     

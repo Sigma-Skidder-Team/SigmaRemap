@@ -19,7 +19,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 
-public final class Class7698
+public final class VoxelShapes
 {
     private static String[] field30597;
     private static final VoxelShape field30598;
@@ -27,11 +27,11 @@ public final class Class7698
     private static final VoxelShape field30600;
     
     public static VoxelShape method24486() {
-        return Class7698.field30600;
+        return VoxelShapes.field30600;
     }
     
     public static VoxelShape method24487() {
-        return Class7698.field30598;
+        return VoxelShapes.field30598;
     }
     
     public static VoxelShape method24488(final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
@@ -39,9 +39,9 @@ public final class Class7698
     }
     
     public static VoxelShape method24489(final AxisAlignedBB class6221) {
-        final int method24490 = method24490(class6221.field25073, class6221.field25076);
-        final int method24491 = method24490(class6221.field25074, class6221.field25077);
-        final int method24492 = method24490(class6221.field25075, class6221.field25078);
+        final int method24490 = method24490(class6221.minX, class6221.maxX);
+        final int method24491 = method24490(class6221.minY, class6221.maxY);
+        final int method24492 = method24490(class6221.minZ, class6221.maxZ);
         if (method24490 >= 0) {
             if (method24491 >= 0) {
                 if (method24492 >= 0) {
@@ -55,12 +55,12 @@ public final class Class7698
                     final int n = 1 << method24490;
                     final int n2 = 1 << method24491;
                     final int n3 = 1 << method24492;
-                    final int n4 = (int)Math.round(class6221.field25073 * n);
-                    final int n5 = (int)Math.round(class6221.field25076 * n);
-                    final int n6 = (int)Math.round(class6221.field25074 * n2);
-                    final int n7 = (int)Math.round(class6221.field25077 * n2);
-                    final int n8 = (int)Math.round(class6221.field25075 * n3);
-                    final int n9 = (int)Math.round(class6221.field25078 * n3);
+                    final int n4 = (int)Math.round(class6221.minX * n);
+                    final int n5 = (int)Math.round(class6221.maxX * n);
+                    final int n6 = (int)Math.round(class6221.minY * n2);
+                    final int n7 = (int)Math.round(class6221.maxY * n2);
+                    final int n8 = (int)Math.round(class6221.minZ * n3);
+                    final int n9 = (int)Math.round(class6221.maxZ * n3);
                     final Class8259 class6222 = new Class8259(n, n2, n3, n4, n6, n8, n5, n7, n9);
                     for (long n10 = n4; n10 < n5; ++n10) {
                         for (long n11 = n6; n11 < n7; ++n11) {
@@ -73,7 +73,7 @@ public final class Class7698
                 }
             }
         }
-        return new Class7704(Class7698.field30598.field30615, new double[] { class6221.field25073, class6221.field25076 }, new double[] { class6221.field25074, class6221.field25077 }, new double[] { class6221.field25075, class6221.field25078 });
+        return new Class7704(VoxelShapes.field30598.field30615, new double[] { class6221.minX, class6221.maxX}, new double[] { class6221.minY, class6221.maxY}, new double[] { class6221.minZ, class6221.maxZ});
     }
     
     private static int method24490(final double n, final double n2) {
@@ -101,7 +101,7 @@ public final class Class7698
     }
     
     public static VoxelShape method24493(final VoxelShape class7702, final VoxelShape... array) {
-        return Arrays.stream(array).reduce(class7702, Class7698::method24492);
+        return Arrays.stream(array).reduce(class7702, VoxelShapes::method24492);
     }
     
     public static VoxelShape method24494(final VoxelShape class7702, final VoxelShape class7703, final Class9306 class7704) {
@@ -228,10 +228,10 @@ public final class Class7698
                                     }
                                     if (n11 < 3) {
                                         class6225.method1289(method24554, i, j, n10);
-                                        final BlockState method24558 = class6222.method6701(class6225);
-                                        if (n11 != 1 || method24558.method21702()) {
-                                            if (n11 != 2 || method24558.method21696() == Class7521.field29264) {
-                                                VoxelShape class6226 = method24558.method21728(class6222, class6225, class6223);
+                                        final BlockState method24558 = class6222.getBlockState(class6225);
+                                        if (n11 != 1 || method24558.isCollisionShapeLargerThanFullBlock()) {
+                                            if (n11 != 2 || method24558.getBlock() == Class7521.field29264) {
+                                                VoxelShape class6226 = method24558.getCollisionShape(class6222, class6225, class6223);
                                                 if (b) {
                                                     final Class5753 class6227 = new Class5753(class6225, class6226);
                                                     Class9463.method35173().method35188().method21097(class6227);
@@ -286,7 +286,7 @@ public final class Class7698
         return false;
     }
     
-    public static VoxelShape method24503(final VoxelShape class7702, final Direction class7703) {
+    public static VoxelShape getFaceShape(final VoxelShape class7702, final Direction class7703) {
         if (class7702 != method24487()) {
             final Axis method790 = class7703.getAxis();
             boolean b;

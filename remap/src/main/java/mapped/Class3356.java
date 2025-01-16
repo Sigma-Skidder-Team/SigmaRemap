@@ -32,7 +32,7 @@ public class Class3356 extends Class3355
         if (!this.method9906()) {
             return;
         }
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             Class9463.method35173().method35197().method25776(new Class6224("RearView", "Not compatible with Shaders"));
             this.method9909(false);
         }

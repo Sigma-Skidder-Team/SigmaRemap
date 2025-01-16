@@ -23,7 +23,7 @@ public class Class8562
     }
     
     public Class8562(final Dynamic<?> dynamic) {
-        this(Class90.field239.method505(Class1932.method7795(dynamic.get("type").asString(""))), Class90.field240.method505(Class1932.method7795(dynamic.get("profession").asString(""))), dynamic.get("level").asInt(1));
+        this(Registry.field239.getOrDefault(ResourceLocation.method7795(dynamic.get("type").asString(""))), Registry.field240.getOrDefault(ResourceLocation.method7795(dynamic.get("profession").asString(""))), dynamic.get("level").asInt(1));
     }
     
     public Class7611 method28780() {
@@ -51,7 +51,7 @@ public class Class8562
     }
     
     public <T> T method28786(final DynamicOps<T> dynamicOps) {
-        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Class90.field239.method503(this.field35984).toString()), dynamicOps.createString("profession"), dynamicOps.createString(Class90.field240.method503(this.field35985).toString()), dynamicOps.createString("level"), dynamicOps.createInt(this.field35986)));
+        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Registry.field239.getKey(this.field35984).toString()), dynamicOps.createString("profession"), dynamicOps.createString(Registry.field240.getKey(this.field35985).toString()), dynamicOps.createString("level"), dynamicOps.createInt(this.field35986)));
     }
     
     public static int method28787(final int n) {

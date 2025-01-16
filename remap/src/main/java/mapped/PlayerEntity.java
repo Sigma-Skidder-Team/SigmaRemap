@@ -1240,7 +1240,7 @@ public abstract class Class512 extends LivingEntity
     }
     
     public Either<Class2048, Class315> method2845(final BlockPos class354) {
-        final Direction class355 = this.world.method6701(class354).method21772((Class7111<Direction>)Class3892.field17564);
+        final Direction class355 = this.world.getBlockState(class354).method21772((IProperty<Direction>)Class3892.field17564);
         if (!this.world.isRemote) {
             if (this.method2783() || !this.method1768()) {
                 return (Either<Class2048, Class315>)Either.left((Object)Class2048.field11672);
@@ -1317,13 +1317,13 @@ public abstract class Class512 extends LivingEntity
     }
     
     public static Optional<Vec3d> method2850(final Class1852 class1852, final BlockPos class1853, final boolean b) {
-        final Class3833 method21696 = class1852.method6701(class1853).method21696();
+        final Block method21696 = class1852.getBlockState(class1853).getBlock();
         if (method21696 instanceof Class3900) {
             return Class3900.method11991(EntityType.field29058, class1852, class1853, 0);
         }
         if (b) {
             final boolean method21697 = method21696.method11854();
-            final boolean method21698 = class1852.method6701(class1853.method1137()).method21696().method11854();
+            final boolean method21698 = class1852.getBlockState(class1853.method1137()).getBlock().method11854();
             return (method21697 && method21698) ? Optional.of(new Vec3d(class1853.getX() + 0.5, class1853.getY() + 0.1, class1853.getZ() + 0.5)) : Optional.empty();
         }
         return Optional.empty();
@@ -1364,11 +1364,11 @@ public abstract class Class512 extends LivingEntity
         }
     }
     
-    public void method2857(final Class1932 class1932) {
+    public void method2857(final ResourceLocation class1932) {
         this.method2859(Class8276.field33987.method8449(class1932));
     }
     
-    public void method2858(final Class1932 class1932, final int n) {
+    public void method2858(final ResourceLocation class1932, final int n) {
         this.method2860(Class8276.field33987.method8449(class1932), n);
     }
     
@@ -1386,7 +1386,7 @@ public abstract class Class512 extends LivingEntity
         return 0;
     }
     
-    public void method2863(final Class1932[] array) {
+    public void method2863(final ResourceLocation[] array) {
     }
     
     public int method2864(final Collection<Class3662<?>> collection) {
@@ -1417,7 +1417,7 @@ public abstract class Class512 extends LivingEntity
                     final double n = (field22771 >= -0.2) ? 0.06 : 0.085;
                     if (field22771 > 0.0) {
                         if (!this.field2967) {
-                            if (this.world.method6701(new BlockPos(this.getPosX(), this.getPosY() + 1.0 - 0.1, this.getPosZ())).method21756().method21781()) {
+                            if (this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() + 1.0 - 0.1, this.getPosZ())).method21756().method21781()) {
                                 break Label_0025;
                             }
                         }
@@ -1455,7 +1455,7 @@ public abstract class Class512 extends LivingEntity
     }
     
     public boolean method2865(final BlockPos class354) {
-        return !this.world.method6701(class354).method21746(this.world, class354);
+        return !this.world.getBlockState(class354).method21746(this.world, class354);
     }
     
     @Override
@@ -1613,7 +1613,7 @@ public abstract class Class512 extends LivingEntity
     @Override
     public void method1839(final Class7096 class7096, final Vec3d class7097) {
         if (!this.field3025.field27302) {
-            super.method1839(class7096, class7097);
+            super.setMotionMultiplier(class7096, class7097);
         }
     }
     

@@ -38,7 +38,7 @@ public class Class8595
         if (b && !class7494.method610(method23250, class7493, 2)) {
             throw Class8595.field36098.create();
         }
-        method23250.method6694(class7493, class7494.method609().method21696());
+        method23250.method6694(class7493, class7494.method609().getBlock());
         class7492.method23257(new Class2259("commands.setblock.success", new Object[] { class7493.getX(), class7493.getY(), class7493.getZ() }), true);
         return 1;
     }

@@ -52,7 +52,7 @@ public class Class6430
     public static final float field25542 = 0.3f;
     public static final float[] field25543;
     public static final float[] field25544;
-    public static final Class1932 field25545;
+    public static final ResourceLocation field25545;
     private static boolean field25546;
     
     public static void method19106(final String s) {
@@ -480,12 +480,12 @@ public class Class6430
     }
     
     public static boolean method19145(final Vec3d class5487, final AxisAlignedBB class5488) {
-        if (class5487.x >= class5488.field25073) {
-            if (class5487.x <= class5488.field25076) {
-                if (class5487.y >= class5488.field25074) {
-                    if (class5487.y <= class5488.field25077) {
-                        if (class5487.z >= class5488.field25075) {
-                            if (class5487.z <= class5488.field25078) {
+        if (class5487.x >= class5488.minX) {
+            if (class5487.x <= class5488.maxX) {
+                if (class5487.y >= class5488.minY) {
+                    if (class5487.y <= class5488.maxY) {
+                        if (class5487.z >= class5488.minZ) {
+                            if (class5487.z <= class5488.maxZ) {
                                 return true;
                             }
                         }
@@ -584,7 +584,7 @@ public class Class6430
         if (b) {
             class6221 = class6221.method18495(1.2350000143051147, 0.0, 1.2350000143051147);
         }
-        return Class6430.field25541.field4683.method6980(Class6430.field25541.field4684, new AxisAlignedBB(class6221.field25073 + n, class6221.field25074 - 1.5, class6221.field25075 + n2, class6221.field25076 + n, class6221.field25077, class6221.field25078 + n2), Collections.EMPTY_SET).count() != 0L;
+        return Class6430.field25541.field4683.method6980(Class6430.field25541.field4684, new AxisAlignedBB(class6221.minX + n, class6221.minY - 1.5, class6221.minZ + n2, class6221.maxX + n, class6221.maxY, class6221.maxZ + n2), Collections.EMPTY_SET).count() != 0L;
     }
     
     public static boolean method19158(final double n, final double n2) {
@@ -600,7 +600,7 @@ public class Class6430
     }
     
     public static boolean method19160(final Entity class399, final float n) {
-        return Class6430.field25541.field4683.method6980(Class6430.field25541.field4684, new AxisAlignedBB(class399.boundingBox.field25073, class399.boundingBox.field25074 - n, class399.boundingBox.field25075, class399.boundingBox.field25076, class399.boundingBox.field25077, class399.boundingBox.field25078), Collections.EMPTY_SET).count() != 0L;
+        return Class6430.field25541.field4683.method6980(Class6430.field25541.field4684, new AxisAlignedBB(class399.boundingBox.minX, class399.boundingBox.minY - n, class399.boundingBox.minZ, class399.boundingBox.maxX, class399.boundingBox.maxY, class399.boundingBox.maxZ), Collections.EMPTY_SET).count() != 0L;
     }
     
     public static List<BlockPos> method19161(final Entity class399) {
@@ -975,7 +975,7 @@ public class Class6430
         field25541 = Class869.method5277();
         field25543 = new float[4];
         field25544 = new float[4];
-        field25545 = new Class1932("shaders/post/blur.json");
+        field25545 = new ResourceLocation("shaders/post/blur.json");
         Class6430.field25546 = false;
     }
 }

@@ -27,7 +27,7 @@ public class Class6571 extends Class6564
                 final Vec3d class5487 = new Vec3d(this.field26067 - this.field26090.getPosX(), this.field26068 - this.field26090.getPosY(), this.field26069 - this.field26090.getPosZ());
                 final double method16752 = class5487.length();
                 final Vec3d method16753 = class5487.normalize();
-                if (!this.method19915(method16753, MathHelper.method35650(method16752))) {
+                if (!this.method19915(method16753, MathHelper.ceil(method16752))) {
                     this.field26073 = Class2198.field13375;
                 }
                 else {

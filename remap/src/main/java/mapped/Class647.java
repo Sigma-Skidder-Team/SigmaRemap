@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Class647 extends Class573
 {
-    private static final Class1932 field3666;
+    private static final ResourceLocation field3666;
     private Class3426<?> field3667;
     private Class6521 field3668;
     private Class9586 field3669;
@@ -125,6 +125,6 @@ public class Class647 extends Class573
     }
     
     static {
-        field3666 = new Class1932("textures/gui/recipe_book.png");
+        field3666 = new ResourceLocation("textures/gui/recipe_book.png");
     }
 }

@@ -61,7 +61,7 @@ public class Class8942
                     if (predicate.test(class7501)) {
                         final TileEntity method1139 = method1136.method6727(class7500);
                         if (method1139 == null) {
-                            if (!method1138.method21722(method1136, class7500) && !method1138.method21762(method1136, class7500)) {
+                            if (!method1138.isOpaqueCube(method1136, class7500) && !method1138.isCollisionShapeOpaque(method1136, class7500)) {
                                 arrayList3.add(new Class8696(method1137, method1138, null));
                                 linkedList.addFirst(class7500);
                             }
@@ -81,11 +81,11 @@ public class Class8942
         if (class7496 == Class2220.field13633) {
             for (final BlockPos class7502 : linkedList) {
                 Class447.method2267(method1136.method6727(class7502));
-                method1136.method6688(class7502, Class7521.field29517.method11878(), 2);
+                method1136.setBlockState(class7502, Class7521.field29517.getDefaultState(), 2);
             }
             final Iterator iterator2 = linkedList.iterator();
             while (iterator2.hasNext()) {
-                method1136.method6688((BlockPos)iterator2.next(), Class7521.field29147.method11878(), 3);
+                method1136.setBlockState((BlockPos)iterator2.next(), Class7521.field29147.getDefaultState(), 3);
             }
         }
         final ArrayList arrayList4 = Lists.newArrayList();
@@ -95,11 +95,11 @@ public class Class8942
         final List reverse = Lists.reverse((List)arrayList4);
         for (final Class8696 class7503 : reverse) {
             Class447.method2267(method1136.method6727(class7503.field36541));
-            method1136.method6688(class7503.field36541, Class7521.field29517.method11878(), 2);
+            method1136.setBlockState(class7503.field36541, Class7521.field29517.getDefaultState(), 2);
         }
         int m = 0;
         for (final Class8696 class7504 : arrayList4) {
-            if (!method1136.method6688(class7504.field36541, class7504.field36542, 2)) {
+            if (!method1136.setBlockState(class7504.field36541, class7504.field36542, 2)) {
                 continue;
             }
             ++m;
@@ -115,10 +115,10 @@ public class Class8942
                     method1140.method2161();
                 }
             }
-            method1136.method6688(class7505.field36541, class7505.field36542, 2);
+            method1136.setBlockState(class7505.field36541, class7505.field36542, 2);
         }
         for (final Class8696 class7506 : reverse) {
-            method1136.method6694(class7506.field36541, class7506.field36542.method21696());
+            method1136.method6694(class7506.field36541, class7506.field36542.getBlock());
         }
         method1136.method6907().method21350(class7497, class7499);
         if (m != 0) {

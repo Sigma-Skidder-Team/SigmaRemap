@@ -8,7 +8,6 @@ import java.util.LinkedHashMap;
 import java.util.Set;
 import com.google.common.collect.Maps;
 import com.google.gson.JsonDeserializationContext;
-import java.util.Iterator;
 import com.google.gson.JsonElement;
 import java.util.Map;
 import com.google.gson.JsonSerializationContext;
@@ -17,7 +16,7 @@ import com.google.gson.JsonObject;
 public class Class7026 extends Class7020<Class152>
 {
     public Class7026() {
-        super(new Class1932("entity_scores"), Class152.class);
+        super(new ResourceLocation("entity_scores"), Class152.class);
     }
     
     public void method21497(final JsonObject jsonObject, final Class152 class152, final JsonSerializationContext jsonSerializationContext) {

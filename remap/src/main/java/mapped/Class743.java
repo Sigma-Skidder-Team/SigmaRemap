@@ -9,7 +9,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class743 extends Class516<Class3421>
 {
-    private static final Class1932 field4016;
+    private static final ResourceLocation field4016;
     private static final int[] field4017;
     
     public Class743(final Class3421 class3421, final Class464 class3422, final ITextComponent class3423) {
@@ -54,7 +54,7 @@ public class Class743 extends Class516<Class3421>
     }
     
     static {
-        field4016 = new Class1932("textures/gui/container/brewing_stand.png");
+        field4016 = new ResourceLocation("textures/gui/container/brewing_stand.png");
         field4017 = new int[] { 29, 24, 20, 16, 11, 6, 0 };
     }
 }

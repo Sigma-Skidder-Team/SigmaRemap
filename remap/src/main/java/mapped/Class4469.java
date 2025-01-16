@@ -18,7 +18,7 @@ public abstract class Class4469 extends Class4473
     public static final BlockState field19832;
     public static final BlockState field19833;
     public static final BlockState field19834;
-    public static final Set<Class3833> field19835;
+    public static final Set<Block> field19835;
     public static final int field19836;
     public static final int field19837;
     public static final int field19838;
@@ -86,9 +86,9 @@ public abstract class Class4469 extends Class4473
             for (int j = n; j <= n4; ++j) {
                 for (int k = n3; k <= n6; ++k) {
                     final BlockState method13441 = this.method13441(class1851, j, i, k, class1852);
-                    if (!Class4469.field19835.contains(method13441.method21696())) {
+                    if (!Class4469.field19835.contains(method13441.getBlock())) {
                         if (this.method13438(i) >= class1851.method6743() && method13441 != Class4469.field19834) {
-                            this.method13440(class1851, Class7521.field29147.method11878(), j, i, k, class1852);
+                            this.method13440(class1851, Class7521.field29147.getDefaultState(), j, i, k, class1852);
                         }
                         else {
                             this.method13440(class1851, Class4469.field19834, j, i, k, class1852);
@@ -151,13 +151,13 @@ public abstract class Class4469 extends Class4473
     }
     
     static {
-        field19829 = Class7521.field29519.method11878();
-        field19830 = Class7521.field29520.method11878();
-        field19831 = Class7521.field29521.method11878();
+        field19829 = Class7521.field29519.getDefaultState();
+        field19830 = Class7521.field29520.getDefaultState();
+        field19831 = Class7521.field29521.getDefaultState();
         field19832 = Class4469.field19830;
-        field19833 = Class7521.field29528.method11878();
-        field19834 = Class7521.field29173.method11878();
-        field19835 = (Set)ImmutableSet.builder().add((Object)Class7521.field29330).add((Object)Class7521.field29548).add((Object)Class7521.field29758).add((Object)Class4469.field19834.method21696()).build();
+        field19833 = Class7521.field29528.getDefaultState();
+        field19834 = Class7521.field29173.getDefaultState();
+        field19835 = (Set)ImmutableSet.builder().add((Object)Class7521.field29330).add((Object)Class7521.field29548).add((Object)Class7521.field29758).add((Object)Class4469.field19834.getBlock()).build();
         field19836 = method13414(2, 0, 0);
         field19837 = method13414(2, 2, 0);
         field19838 = method13414(0, 1, 0);

@@ -50,8 +50,8 @@ public class Class7637
     public static final Class3687 field30242;
     public static final Class3687 field30243;
     public static final Class3687 field30244;
-    public static final List<Class1932> field30245;
-    public static final List<Class1932> field30246;
+    public static final List<ResourceLocation> field30245;
+    public static final List<ResourceLocation> field30246;
     public static final List<Class6332> field30247;
     private static final Set<Class3687> field30248;
     private static final Logger field30249;
@@ -63,22 +63,22 @@ public class Class7637
     private static final Splitter field30255;
     public static final Class7685 field30256;
     public static final Class7685 field30257;
-    private static final Class9104<Class3833, Class7096> field30258;
+    private static final StateContainer<Block, Class7096> field30258;
     private static final Class8163 field30259;
-    private static final Map<Class1932, Class9104<Class3833, Class7096>> field30260;
+    private static final Map<ResourceLocation, StateContainer<Block, Class7096>> field30260;
     private final Class6582 field30261;
     private Class391 field30262;
     private final Class7860 field30263;
-    private final Set<Class1932> field30264;
+    private final Set<ResourceLocation> field30264;
     private final Class9333 field30265;
-    private final Map<Class1932, Class7684> field30266;
-    private final Map<Triple<Class1932, Class9294, Boolean>, Class6313> field30267;
-    private final Map<Class1932, Class7684> field30268;
-    private final Map<Class1932, Class6313> field30269;
-    private Map<Class1932, Pair<Class1774, Class9430>> field30270;
+    private final Map<ResourceLocation, Class7684> field30266;
+    private final Map<Triple<ResourceLocation, Class9294, Boolean>, Class6313> field30267;
+    private final Map<ResourceLocation, Class7684> field30268;
+    private final Map<ResourceLocation, Class6313> field30269;
+    private Map<ResourceLocation, Pair<Class1774, Class9430>> field30270;
     private int field30271;
     private final Object2IntMap<Class7096> field30272;
-    public Map<Class1932, Class7684> field30273;
+    public Map<ResourceLocation, Class7684> field30273;
     
     public Class7637(final Class6582 class6582, final Class7860 class6583, final IProfiler class6584, final int n) {
         this(class6582, class6583, true);
@@ -99,7 +99,7 @@ public class Class7637
     }
     
     public void method24010(final IProfiler class5028, final int n) {
-        class5028.method15297("missing_model");
+        class5028.startSection("missing_model");
         try {
             this.field30266.put(Class7637.field30250, this.method24022(Class7637.field30250));
             this.method24018(Class7637.field30250);
@@ -111,18 +111,18 @@ public class Class7637
         class5028.method15300("static_definitions");
         Class7637.field30260.forEach((p0, class5030) -> class5030.method32902().forEach(class5032 -> this.method24018(Class9509.method35432(class5031, class5032))));
         class5028.method15300("blocks");
-        final Iterator<Object> iterator = Class90.field208.iterator();
+        final Iterator<Object> iterator = Registry.BLOCK.iterator();
         while (iterator.hasNext()) {
             iterator.next().method11876().method32902().forEach(class5033 -> this.method24018(Class9509.method35431(class5033)));
         }
         class5028.method15300("items");
-        final Iterator<Class1932> iterator2 = Class90.field211.method507().iterator();
+        final Iterator<ResourceLocation> iterator2 = Registry.field211.method507().iterator();
         while (iterator2.hasNext()) {
             this.method24018(new Class1933(iterator2.next(), "inventory"));
         }
         class5028.method15300("special");
         this.method24018(new Class1933("minecraft:trident_in_hand#inventory"));
-        final Iterator<Class1932> iterator3 = this.method24029().iterator();
+        final Iterator<ResourceLocation> iterator3 = this.method24029().iterator();
         while (iterator3.hasNext()) {
             this.method24017(iterator3.next());
         }
@@ -137,15 +137,15 @@ public class Class7637
         final Map<Object, List<? super Object>> map = set.stream().collect((Collector<? super Object, ?, Map<Object, List<? super Object>>>)Collectors.groupingBy((Function<? super Object, ?>)Class3687::method11330));
         class5028.method15300("stitching");
         this.field30270 = Maps.newHashMap();
-        for (final Map.Entry<Class1932, V> entry : map.entrySet()) {
+        for (final Map.Entry<ResourceLocation, V> entry : map.entrySet()) {
             final Class1774 class5029 = new Class1774(entry.getKey());
             this.field30270.put(entry.getKey(), (Pair<Class1774, Class9430>)Pair.of((Object)class5029, (Object)class5029.method6332(this.field30261, ((List)entry.getValue()).stream().map(Class3687::method11331), class5028, n)));
         }
-        class5028.method15299();
+        class5028.endSection();
     }
     
     public Class391 method24011(final Class1663 class1663, final IProfiler class1664) {
-        class1664.method15297("atlas");
+        class1664.startSection("atlas");
         for (final Pair pair : this.field30270.values()) {
             final Class1774 class1665 = (Class1774)pair.getFirst();
             final Class9430 class1666 = (Class9430)pair.getSecond();
@@ -169,11 +169,11 @@ public class Class7637
             }
             return;
         });
-        class1664.method15299();
+        class1664.endSection();
         return this.field30262;
     }
     
-    private static Predicate<Class7096> method24012(final Class9104<Class3833, Class7096> class9105, final String s) {
+    private static Predicate<Class7096> method24012(final StateContainer<Block, Class7096> class9105, final String s) {
         final HashMap hashMap = Maps.newHashMap();
         final Iterator iterator = Class7637.field30254.split((CharSequence)s).iterator();
         while (iterator.hasNext()) {
@@ -182,12 +182,12 @@ public class Class7637
                 continue;
             }
             final String s2 = (String)iterator2.next();
-            final Class7111<?> method32906 = class9105.method32906(s2);
+            final IProperty<?> method32906 = class9105.getProperty(s2);
             if (method32906 != null && iterator2.hasNext()) {
                 final String str = (String)iterator2.next();
                 final Comparable method32907 = method24013(method32906, str);
                 if (method32907 == null) {
-                    throw new RuntimeException("Unknown value: '" + str + "' for blockstate property: '" + s2 + "' " + method32906.method21829());
+                    throw new RuntimeException("Unknown value: '" + str + "' for blockstate property: '" + s2 + "' " + method32906.getAllowedValues());
                 }
                 hashMap.put(method32906, method32907);
             }
@@ -204,8 +204,8 @@ public class Class7637
                 map.entrySet().iterator();
                 final Iterator iterator3;
                 while (iterator3.hasNext()) {
-                    final Map.Entry<Class7111<T>, V> entry = iterator3.next();
-                    if (Objects.equals(class9107.method21772((Class7111<Object>)entry.getKey()), entry.getValue())) {
+                    final Map.Entry<IProperty<T>, V> entry = iterator3.next();
+                    if (Objects.equals(class9107.method21772((IProperty<Object>)entry.getKey()), entry.getValue())) {
                         continue;
                     }
                     else {
@@ -221,11 +221,11 @@ public class Class7637
     }
     
     @Nullable
-    public static <T extends Comparable<T>> T method24013(final Class7111<T> class7111, final String s) {
-        return class7111.method21830(s).orElse(null);
+    public static <T extends Comparable<T>> T method24013(final IProperty<T> class7111, final String s) {
+        return class7111.parseValue(s).orElse(null);
     }
     
-    public Class7684 method24014(final Class1932 class1932) {
+    public Class7684 method24014(final ResourceLocation class1932) {
         if (this.field30266.containsKey(class1932)) {
             return this.field30266.get(class1932);
         }
@@ -235,7 +235,7 @@ public class Class7637
         this.field30264.add(class1932);
         final Class7684 defaultValue = this.field30266.get(Class7637.field30250);
         while (!this.field30264.isEmpty()) {
-            final Class1932 class1933 = this.field30264.iterator().next();
+            final ResourceLocation class1933 = this.field30264.iterator().next();
             try {
                 if (!this.field30266.containsKey(class1933)) {
                     this.method24015(class1933);
@@ -257,7 +257,7 @@ public class Class7637
         return this.field30266.getOrDefault(class1932, defaultValue);
     }
     
-    private void method24015(final Class1932 p0) throws Exception {
+    private void method24015(final ResourceLocation p0) throws Exception {
         // 
         // This method could not be decompiled.
         // 
@@ -592,12 +592,12 @@ public class Class7637
         throw new IllegalStateException("An error occurred while decompiling this method.");
     }
     
-    private void method24016(final Class1932 class1932, final Class7684 class1933) {
+    private void method24016(final ResourceLocation class1932, final Class7684 class1933) {
         this.field30266.put(class1932, class1933);
         this.field30264.addAll(class1933.method24381());
     }
     
-    private void method24017(final Class1932 class1932) {
+    private void method24017(final ResourceLocation class1932) {
         final Class7684 method24014 = this.method24014(class1932);
         this.field30266.put(class1932, method24014);
         this.field30268.put(class1932, method24014);
@@ -617,11 +617,11 @@ public class Class7637
     }
     
     @Nullable
-    public Class6313 method24020(final Class1932 class1932, final Class2123 class1933) {
+    public Class6313 method24020(final ResourceLocation class1932, final Class2123 class1933) {
         return this.method24021(class1932, class1933, this.field30262::method1415);
     }
     
-    public Class6313 method24021(final Class1932 class1932, final Class2123 class1933, final Function<Class3687, Class1912> function) {
+    public Class6313 method24021(final ResourceLocation class1932, final Class2123 class1933, final Function<Class3687, Class1912> function) {
         final Triple of = Triple.of((Object)class1932, (Object)class1933.method8274(), (Object)class1933.method8278());
         if (this.field30267.containsKey(of)) {
             return this.field30267.get(of);
@@ -641,19 +641,19 @@ public class Class7637
             if (Class9570.field41282.method22623()) {
                 class1935 = method24014.method24383(this, function, class1933, class1932);
             }
-            this.field30267.put((Triple<Class1932, Class9294, Boolean>)of, class1935);
+            this.field30267.put((Triple<ResourceLocation, Class9294, Boolean>)of, class1935);
             return class1935;
         }
         throw new IllegalStateException("bake called too early");
     }
     
-    private Class7685 method24022(final Class1932 class1932) throws IOException {
+    private Class7685 method24022(final ResourceLocation class1932) throws IOException {
         Reader reader = null;
         Class1671 method19933 = null;
         Class7685 field30257;
         try {
             final String method19934 = class1932.method7797();
-            Class1932 method19935 = class1932;
+            ResourceLocation method19935 = class1932;
             if ("builtin/generated".equals(method19934)) {
                 return Class7637.field30256;
             }
@@ -684,7 +684,7 @@ public class Class7637
         return field30257;
     }
     
-    public Map<Class1932, Class6313> method24023() {
+    public Map<ResourceLocation, Class6313> method24023() {
         return this.field30269;
     }
     
@@ -692,19 +692,19 @@ public class Class7637
         return this.field30272;
     }
     
-    private Class1932 method24025(Class1932 class1932) {
+    private ResourceLocation method24025(ResourceLocation class1932) {
         final String method7797 = class1932.method7797();
         if (!method7797.startsWith("optifine/")) {
-            return new Class1932(class1932.method7798(), "models/" + class1932.method7797() + ".json");
+            return new ResourceLocation(class1932.method7798(), "models/" + class1932.method7797() + ".json");
         }
         if (!method7797.endsWith(".json")) {
-            class1932 = new Class1932(class1932.method7798(), method7797 + ".json");
+            class1932 = new ResourceLocation(class1932.method7798(), method7797 + ".json");
         }
         return class1932;
     }
     
     public static void method24026(final Class7685 class7685, final String s) {
-        final Class1932 method24027 = method24027(class7685.field30526, s);
+        final ResourceLocation method24027 = method24027(class7685.field30526, s);
         if (method24027 != class7685.field30526) {
             class7685.field30526 = method24027;
         }
@@ -724,7 +724,7 @@ public class Class7637
         }
     }
     
-    public static Class1932 method24027(Class1932 class1932, final String s) {
+    public static ResourceLocation method24027(ResourceLocation class1932, final String s) {
         if (class1932 == null || s == null) {
             return class1932;
         }
@@ -732,7 +732,7 @@ public class Class7637
             final String method7797 = class1932.method7797();
             final String method7798 = method24028(method7797, s);
             if (method7798 != method7797) {
-                class1932 = new Class1932(class1932.method7798(), method7798);
+                class1932 = new ResourceLocation(class1932.method7798(), method7798);
             }
             return class1932;
         }
@@ -746,7 +746,7 @@ public class Class7637
         return s;
     }
     
-    public Set<Class1932> method24029() {
+    public Set<ResourceLocation> method24029() {
         return Collections.emptySet();
     }
     
@@ -755,22 +755,22 @@ public class Class7637
     }
     
     static {
-        field30237 = new Class3687(Class1774.field9853, new Class1932("block/fire_0"));
-        field30238 = new Class3687(Class1774.field9853, new Class1932("block/fire_1"));
-        field30239 = new Class3687(Class1774.field9853, new Class1932("block/lava_flow"));
-        field30240 = new Class3687(Class1774.field9853, new Class1932("block/water_flow"));
-        field30241 = new Class3687(Class1774.field9853, new Class1932("block/water_overlay"));
-        field30242 = new Class3687(Class1774.field9853, new Class1932("entity/banner_base"));
-        field30243 = new Class3687(Class1774.field9853, new Class1932("entity/shield_base"));
-        field30244 = new Class3687(Class1774.field9853, new Class1932("entity/shield_base_nopattern"));
+        field30237 = new Class3687(Class1774.field9853, new ResourceLocation("block/fire_0"));
+        field30238 = new Class3687(Class1774.field9853, new ResourceLocation("block/fire_1"));
+        field30239 = new Class3687(Class1774.field9853, new ResourceLocation("block/lava_flow"));
+        field30240 = new Class3687(Class1774.field9853, new ResourceLocation("block/water_flow"));
+        field30241 = new Class3687(Class1774.field9853, new ResourceLocation("block/water_overlay"));
+        field30242 = new Class3687(Class1774.field9853, new ResourceLocation("entity/banner_base"));
+        field30243 = new Class3687(Class1774.field9853, new ResourceLocation("entity/shield_base"));
+        field30244 = new Class3687(Class1774.field9853, new ResourceLocation("entity/shield_base_nopattern"));
         field30245 = IntStream.range(0, 10).mapToObj(i -> {
-            new Class1932("block/destroy_stage_" + i);
+            new ResourceLocation("block/destroy_stage_" + i);
             return;
-        }).collect((Collector<? super Object, ?, List<Class1932>>)Collectors.toList());
+        }).collect((Collector<? super Object, ?, List<ResourceLocation>>)Collectors.toList());
         field30246 = Class7637.field30245.stream().map(class1933 -> {
-            new Class1932("textures/" + class1933.method7797() + ".png");
+            new ResourceLocation("textures/" + class1933.method7797() + ".png");
             return;
-        }).collect((Collector<? super Object, ?, List<Class1932>>)Collectors.toList());
+        }).collect((Collector<? super Object, ?, List<ResourceLocation>>)Collectors.toList());
         field30247 = Class7637.field30246.stream().map((Function<? super Object, ?>)Class6332::method18786).collect((Collector<? super Object, ?, List<Class6332>>)Collectors.toList());
         field30248 = Class8349.method27851(Sets.newHashSet(), set -> {
             set.add(Class7637.field30240);
@@ -811,8 +811,8 @@ public class Class7637
         field30255 = Splitter.on('=').limit(2);
         field30256 = Class8349.method27851(Class7685.method24386("{\"gui_light\": \"front\"}"), class1935 -> class1935.field30523 = "generation marker");
         field30257 = Class8349.method27851(Class7685.method24386("{\"gui_light\": \"side\"}"), class1936 -> class1936.field30523 = "block entity marker");
-        field30258 = new Class9500<Class3833, Class7096>(Class7521.field29147).method35378(Class7113.method21834("map")).method35380((Class6846<Class3833, Class7096, Class7097>)Class7096::new);
+        field30258 = new Class9500<Block, Class7096>(Class7521.field29147).method35378(Class7113.method21834("map")).method35380((Class6846<Block, Class7096, StateHolder>)Class7096::new);
         field30259 = new Class8163();
-        field30260 = (Map)ImmutableMap.of((Object)new Class1932("item_frame"), (Object)Class7637.field30258);
+        field30260 = (Map)ImmutableMap.of((Object)new ResourceLocation("item_frame"), (Object)Class7637.field30258);
     }
 }

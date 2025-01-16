@@ -34,6 +34,6 @@ public class Class3871 extends Class3870 implements Class3872
     
     @Override
     public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final BlockState class1851) {
-        Class3833.method11839(class1849, class1850, new ItemStack(this));
+        Block.method11839(class1849, class1850, new ItemStack(this));
     }
 }

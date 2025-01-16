@@ -58,7 +58,7 @@ public class Class6514
     
     public static Class7771 method19604(final JsonObject jsonObject) {
         final String method22663 = Class7382.method22663(jsonObject, "type");
-        if (Class8571.equals(method22663, "PlayerItem")) {
+        if (Config.equals(method22663, "PlayerItem")) {
             final int[] method22664 = Class7382.method22667(jsonObject.get("textureSize"), 2);
             method19605(method22664, "Missing texture size");
             final Dimension dimension = new Dimension(method22664[0], method22664[1]);
@@ -74,7 +74,7 @@ public class Class6514
                 if (method22666 != null) {
                     final JsonObject jsonObject3 = (JsonObject)hashMap.get(method22666);
                     if (jsonObject3 == null) {
-                        Class8571.method28848("BaseID not found: " + method22666);
+                        Config.warn("BaseID not found: " + method22666);
                         continue;
                     }
                     for (final Map.Entry<String, V> entry : jsonObject3.entrySet()) {
@@ -87,7 +87,7 @@ public class Class6514
                 final String method22667 = Class7382.method22663(jsonObject2, "id");
                 if (method22667 != null) {
                     if (hashMap.containsKey(method22667)) {
-                        Class8571.method28848("Duplicate model ID: " + method22667);
+                        Config.warn("Duplicate model ID: " + method22667);
                     }
                     else {
                         hashMap.put(method22667, jsonObject2);
@@ -110,12 +110,12 @@ public class Class6514
         throw new JsonParseException(s);
     }
     
-    private static Class1932 method19606(final String s) {
+    private static ResourceLocation method19606(final String s) {
         final int index = s.indexOf(58);
         if (index >= 0) {
-            return new Class1932(s.substring(0, index), s.substring(index + 1));
+            return new ResourceLocation(s.substring(0, index), s.substring(index + 1));
         }
-        return new Class1932(s);
+        return new ResourceLocation(s);
     }
     
     private static int method19607(final String str) {
@@ -141,7 +141,7 @@ public class Class6514
             return 5;
         }
         if (!str.equals("cape")) {
-            Class8571.method28848("Unknown attachModel: " + str);
+            Config.warn("Unknown attachModel: " + str);
             return 0;
         }
         return 6;
@@ -149,14 +149,14 @@ public class Class6514
     
     public static Class8882 method19608(final JsonObject jsonObject, final Dimension dimension) {
         final String method22663 = Class7382.method22663(jsonObject, "type");
-        if (Class8571.equals(method22663, "ModelBox")) {
+        if (Config.equals(method22663, "ModelBox")) {
             final int method22664 = method19607(Class7382.method22663(jsonObject, "attachTo"));
             final Class5903 class5903 = new Class5903(Class6332::method18770);
             class5903.field24269 = dimension.width;
             class5903.field24270 = dimension.height;
             return new Class8882(method22664, method19609(jsonObject, class5903, null, null));
         }
-        Class8571.method28848("Unknown model type: " + method22663);
+        Config.warn("Unknown model type: " + method22663);
         return null;
     }
     
@@ -286,7 +286,7 @@ public class Class6514
                 final Class6300 method22673 = method19609((JsonObject)jsonArray.get(l), class5901, method22663, s);
                 if (method22673.method18652() != null) {
                     if (class5902.method18656(method22673.method18652()) != null) {
-                        Class8571.method28848("Duplicate model ID: " + method22673.method18652());
+                        Config.warn("Duplicate model ID: " + method22673.method18652());
                     }
                 }
                 class5902.method18633(method22673);

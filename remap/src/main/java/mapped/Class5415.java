@@ -16,13 +16,13 @@ public class Class5415 implements Class5414
     private static final SuggestionProvider<Class7492> field22581;
     public static final Function<String, Class6595> field22582;
     private final Class8965 field22583;
-    private final Class1932 field22584;
+    private final ResourceLocation field22584;
     
     private static Class8965 method16532(final CommandContext<Class7492> commandContext) {
         return ((Class7492)commandContext.getSource()).method23255().method1580();
     }
     
-    private Class5415(final Class8965 field22583, final Class1932 field22584) {
+    private Class5415(final Class8965 field22583, final ResourceLocation field22584) {
         this.field22583 = field22583;
         this.field22584 = field22584;
     }

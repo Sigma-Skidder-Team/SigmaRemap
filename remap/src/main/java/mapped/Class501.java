@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 
 public class Class501 extends TileEntity
 {
-    private Class1932 field2864;
+    private ResourceLocation field2864;
     private String field2865;
     private String field2866;
     private BlockPos field2867;
@@ -114,10 +114,10 @@ public class Class501 extends TileEntity
     
     private void method2552() {
         if (this.field2656 != null) {
-            final BlockPos method2193 = this.method2193();
-            final Class7096 method2194 = this.field2656.method6701(method2193);
+            final BlockPos method2193 = this.getPos();
+            final Class7096 method2194 = this.field2656.getBlockState(method2193);
             if (method2194.method21696() == Class7521.field29820) {
-                this.field2656.method6688(method2193, ((Class7097<O, Class7096>)method2194).method21773(Class3941.field17831, this.field2871), 2);
+                this.field2656.setBlockState(method2193, ((StateHolder<O, Class7096>)method2194).with(Class3941.field17831, this.field2871), 2);
             }
         }
     }
@@ -156,10 +156,10 @@ public class Class501 extends TileEntity
     }
     
     public void method2557(final String s) {
-        this.method2558(Class8272.method27500(s) ? null : Class1932.method7795(s));
+        this.method2558(Class8272.method27500(s) ? null : ResourceLocation.method7795(s));
     }
     
-    public void method2558(final Class1932 field2864) {
+    public void method2558(final ResourceLocation field2864) {
         this.field2864 = field2864;
     }
     
@@ -213,9 +213,9 @@ public class Class501 extends TileEntity
     
     public void method2571(final Class102 field2871) {
         this.field2871 = field2871;
-        final Class7096 method6701 = this.field2656.method6701(this.method2193());
+        final Class7096 method6701 = this.field2656.getBlockState(this.getPos());
         if (method6701.method21696() == Class7521.field29820) {
-            this.field2656.method6688(this.method2193(), ((Class7097<O, Class7096>)method6701).method21773(Class3941.field17831, field2871), 2);
+            this.field2656.setBlockState(this.getPos(), ((StateHolder<O, Class7096>)method6701).with(Class3941.field17831, field2871), 2);
         }
     }
     
@@ -268,7 +268,7 @@ public class Class501 extends TileEntity
         if (this.field2871 != Class102.field305) {
             return false;
         }
-        final BlockPos method2193 = this.method2193();
+        final BlockPos method2193 = this.getPos();
         final List<Class501> method2194 = this.method2580(this.method2581(new BlockPos(method2193.getX() - 80, 0, method2193.getZ() - 80), new BlockPos(method2193.getX() + 80, 255, method2193.getZ() + 80)));
         if (method2194.size() >= 1) {
             final MutableBoundingBox method2195 = this.method2582(method2193, method2194);
@@ -278,7 +278,7 @@ public class Class501 extends TileEntity
                         this.field2867 = new BlockPos(method2195.minX - method2193.getX() + 1, method2195.minY - method2193.getY() + 1, method2195.minZ - method2193.getZ() + 1);
                         this.field2868 = new BlockPos(method2195.maxX - method2195.minX - 1, method2195.maxY - method2195.minY - 1, method2195.maxZ - method2195.minZ - 1);
                         this.method2161();
-                        final Class7096 method2196 = this.field2656.method6701(method2193);
+                        final Class7096 method2196 = this.field2656.getBlockState(method2193);
                         this.field2656.method6693(method2193, method2196, method2196, 3);
                         return true;
                     }
@@ -296,7 +296,7 @@ public class Class501 extends TileEntity
     private List<Class501> method2581(final BlockPos class354, final BlockPos class355) {
         final ArrayList arrayList = Lists.newArrayList();
         for (final BlockPos class356 : BlockPos.getAllInBoxMutable(class354, class355)) {
-            if (this.field2656.method6701(class356).method21696() != Class7521.field29820) {
+            if (this.field2656.getBlockState(class356).method21696() != Class7521.field29820) {
                 continue;
             }
             final TileEntity method6727 = this.field2656.method6727(class356);
@@ -317,12 +317,12 @@ public class Class501 extends TileEntity
             class355 = new MutableBoundingBox(class354, class354);
         }
         else {
-            final BlockPos method2193 = list.get(0).method2193();
+            final BlockPos method2193 = list.get(0).getPos();
             class355 = new MutableBoundingBox(method2193, method2193);
         }
         final Iterator iterator = list.iterator();
         while (iterator.hasNext()) {
-            final BlockPos method2194 = ((Class501)iterator.next()).method2193();
+            final BlockPos method2194 = ((Class501)iterator.next()).getPos();
             if (method2194.getX() >= class355.minX) {
                 if (method2194.getX() > class355.maxX) {
                     class355.maxX = method2194.getX();
@@ -358,7 +358,7 @@ public class Class501 extends TileEntity
     
     public boolean method2584(final boolean b) {
         if (this.field2871 == Class102.field305 && !this.field2656.isRemote && this.field2864 != null) {
-            final BlockPos method1135 = this.method2193().add(this.field2867);
+            final BlockPos method1135 = this.getPos().add(this.field2867);
             final Class1795 method1136 = ((Class1849)this.field2656).method6910();
             Class6585 method1137;
             try {
@@ -406,7 +406,7 @@ public class Class501 extends TileEntity
     }
     
     public boolean method2588(final boolean b, final Class6585 class6585) {
-        final BlockPos method2193 = this.method2193();
+        final BlockPos method2193 = this.getPos();
         if (!Class8272.method27500(class6585.method19947())) {
             this.field2865 = class6585.method19947();
         }
@@ -415,7 +415,7 @@ public class Class501 extends TileEntity
         if (!equals) {
             this.field2868 = method2194;
             this.method2161();
-            final Class7096 method2195 = this.field2656.method6701(method2193);
+            final Class7096 method2195 = this.field2656.getBlockState(method2193);
             this.field2656.method6693(method2193, method2195, method2195, 3);
         }
         if (b && !equals) {

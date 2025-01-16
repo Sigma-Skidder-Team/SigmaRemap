@@ -73,10 +73,10 @@ public class Class5606 extends Class5601
         if (s2.length() <= 0) {
             return array;
         }
-        String[] method28937 = Class8571.method28937(s2, " ");
+        String[] method28937 = Config.method28937(s2, " ");
         if (method28937.length > 0) {
             if (!Arrays.asList(method28937).contains(s)) {
-                method28937 = (String[])Class8571.method28983(method28937, s, 0);
+                method28937 = (String[]) Config.method28983(method28937, s, 0);
             }
             return method28937;
         }

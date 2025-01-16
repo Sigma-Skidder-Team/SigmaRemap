@@ -37,20 +37,20 @@ public class Class8646
     }
     
     public void method29412(final Consumer<Class5763> consumer, final String str) {
-        if (!new Class1932(str).equals(Class90.field211.method503(this.field36296))) {
-            this.method29413(consumer, new Class1932(str));
+        if (!new ResourceLocation(str).equals(Registry.field211.getKey(this.field36296))) {
+            this.method29413(consumer, new ResourceLocation(str));
             return;
         }
         throw new IllegalStateException("Single Item Recipe " + str + " should remove its 'save' argument");
     }
     
-    public void method29413(final Consumer<Class5763> consumer, final Class1932 class1932) {
+    public void method29413(final Consumer<Class5763> consumer, final ResourceLocation class1932) {
         this.method29414(class1932);
-        this.field36299.method18003(new Class1932("recipes/root")).method18009("has_the_recipe", new Class4219(class1932)).method18007(Class6467.method19355(class1932)).method18011(Class6526.field25976);
-        consumer.accept(new Class5764(class1932, this.field36301, (this.field36300 != null) ? this.field36300 : "", this.field36297, this.field36296, this.field36298, this.field36299, new Class1932(class1932.method7798(), "recipes/" + this.field36296.method11737().method22110() + "/" + class1932.method7797())));
+        this.field36299.method18003(new ResourceLocation("recipes/root")).method18009("has_the_recipe", new Class4219(class1932)).method18007(Class6467.method19355(class1932)).method18011(Class6526.field25976);
+        consumer.accept(new Class5764(class1932, this.field36301, (this.field36300 != null) ? this.field36300 : "", this.field36297, this.field36296, this.field36298, this.field36299, new ResourceLocation(class1932.method7798(), "recipes/" + this.field36296.method11737().method22110() + "/" + class1932.method7797())));
     }
     
-    private void method29414(final Class1932 obj) {
+    private void method29414(final ResourceLocation obj) {
         if (!this.field36299.method18019().isEmpty()) {
             return;
         }

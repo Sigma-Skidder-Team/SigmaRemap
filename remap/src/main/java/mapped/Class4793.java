@@ -9,7 +9,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4793 extends Class4703<Class403>
 {
-    public static final Class1932 field20434;
+    public static final ResourceLocation field20434;
     private final Class5905 field20435;
     
     public Class4793(final Class8551 class8551) {
@@ -26,11 +26,11 @@ public class Class4793 extends Class4703<Class403>
         super.method13951(class403, n, n2, class404, class405, n3);
     }
     
-    public Class1932 method14178(final Class403 class403) {
+    public ResourceLocation method14178(final Class403 class403) {
         return Class4793.field20434;
     }
     
     static {
-        field20434 = new Class1932("textures/entity/trident.png");
+        field20434 = new ResourceLocation("textures/entity/trident.png");
     }
 }

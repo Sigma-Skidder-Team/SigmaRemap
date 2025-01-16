@@ -27,7 +27,7 @@ import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import com.google.common.cache.LoadingCache;
 import org.apache.logging.log4j.Logger;
 
-public class Class3833 implements Class3832
+public class Block implements Class3832
 {
     public static final Logger field17390;
     public static final Class94<BlockState> field17391;
@@ -39,54 +39,54 @@ public class Class3833 implements Class3832
     public final float field17397;
     public final float field17398;
     public final boolean field17399;
-    public final Class7696 field17400;
-    public final Class8059 field17401;
-    public final Class8819 field17402;
+    public final SoundType field17400;
+    public final Material field17401;
+    public final MaterialColor field17402;
     private final float field17403;
     private final float field17404;
     private final float field17405;
-    public final Class9104<Class3833, BlockState> field17406;
+    public final StateContainer<Block, BlockState> field17406;
     private BlockState field17407;
     public final boolean field17408;
     private final boolean field17409;
     private final boolean field17410;
-    private Class1932 field17411;
+    private ResourceLocation field17411;
     private String field17412;
     private Item field17413;
     private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Class8266>> field17414;
     
     public static int method11774(final BlockState class7096) {
         if (class7096 != null) {
-            final boolean method563 = Class3833.field17391.method563(class7096) != 0;
+            final boolean method563 = Block.field17391.method563(class7096) != 0;
             return (((method563 ? 1 : 0) != -1) ? method563 : false) ? 1 : 0;
         }
         return 0;
     }
     
     public static BlockState method11775(final int n) {
-        final BlockState class7096 = Class3833.field17391.method499(n);
-        return (class7096 != null) ? class7096 : Class7521.field29147.method11878();
+        final BlockState class7096 = Block.field17391.method499(n);
+        return (class7096 != null) ? class7096 : Class7521.field29147.getDefaultState();
     }
     
-    public static Class3833 method11776(final Item class3820) {
+    public static Block method11776(final Item class3820) {
         return (class3820 instanceof Class4036) ? ((Class4036)class3820).method12240() : Class7521.field29147;
     }
     
     public static BlockState method11777(final BlockState class7096, final BlockState class7097, final World class7098, final BlockPos class7099) {
-        final VoxelShape method24541 = Class7698.method24495(class7096.method21727(class7098, class7099), class7097.method21727(class7098, class7099), Class9306.field39918).method24541(class7099.getX(), class7099.getY(), class7099.getZ());
+        final VoxelShape method24541 = VoxelShapes.method24495(class7096.getCollisionShape(class7098, class7099), class7097.getCollisionShape(class7098, class7099), Class9306.field39918).method24541(class7099.getX(), class7099.getY(), class7099.getZ());
         for (final Entity class7100 : class7098.method7127(null, method24541.method24537())) {
-            class7100.method1878(class7100.getPosX(), class7100.getPosY() + 1.0 + Class7698.method24498(Axis.Y, class7100.getBoundingBox().method18499(0.0, 1.0, 0.0), Stream.of(method24541), -1.0), class7100.getPosZ());
+            class7100.method1878(class7100.getPosX(), class7100.getPosY() + 1.0 + VoxelShapes.method24498(Axis.Y, class7100.getBoundingBox().method18499(0.0, 1.0, 0.0), Stream.of(method24541), -1.0), class7100.getPosZ());
         }
         return class7097;
     }
     
     public static VoxelShape method11778(final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        return Class7698.method24488(n / 16.0, n2 / 16.0, n3 / 16.0, n4 / 16.0, n5 / 16.0, n6 / 16.0);
+        return VoxelShapes.method24488(n / 16.0, n2 / 16.0, n3 / 16.0, n4 / 16.0, n5 / 16.0, n6 / 16.0);
     }
     
     @Deprecated
-    public boolean method11779(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
-        return class7096.method21761(class7097, class7098, Direction.UP) && this.field17396 < 14;
+    public boolean canEntitySpawn(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+        return class7096.isSolidSide(class7097, class7098, Direction.UP) && this.field17396 < 14;
     }
     
     @Deprecated
@@ -95,41 +95,41 @@ public class Class3833 implements Class3832
     }
     
     @Deprecated
-    public int method11781(final BlockState class7096) {
+    public int getLightValue(final BlockState class7096) {
         return this.field17396;
     }
     
     @Deprecated
-    public Class8059 method11782(final BlockState class7096) {
+    public Material getMaterial(final BlockState class7096) {
         return this.field17401;
     }
     
     @Deprecated
-    public Class8819 method11783(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public MaterialColor method11783(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
         return this.field17402;
     }
     
     @Deprecated
     public void method11784(final BlockState class7096, final Class1851 class7097, final BlockPos class7098, final int n) {
         try (final Class386 method1296 = Class386.method1296()) {
-            for (final Direction class7099 : Class3833.field17392) {
+            for (final Direction class7099 : Block.field17392) {
                 method1296.method1303(class7098).method1304(class7099);
-                final BlockState method1297 = class7097.method6701(method1296);
+                final BlockState method1297 = class7097.getBlockState(method1296);
                 method11787(method1297, method1297.method21748(class7099.getOpposite(), class7096, class7097, method1296, class7098), class7097, method1296, n);
             }
         }
     }
     
-    public boolean method11785(final Class7909<Class3833> class7909) {
+    public boolean method11785(final Class7909<Block> class7909) {
         return class7909.method25618(this);
     }
     
     public static BlockState method11786(final BlockState class7096, final Class1851 class7097, final BlockPos class7098) {
         BlockState method21748 = class7096;
         final Mutable class7099 = new Mutable();
-        for (final Direction class7100 : Class3833.field17392) {
+        for (final Direction class7100 : Block.field17392) {
             class7099.method1287(class7098).method1290(class7100);
-            method21748 = method21748.method21748(class7100, class7097.method6701(class7099), class7097, class7098, class7099);
+            method21748 = method21748.method21748(class7100, class7097.getBlockState(class7099), class7097, class7098, class7099);
         }
         return method21748;
     }
@@ -137,7 +137,7 @@ public class Class3833 implements Class3832
     public static void method11787(final BlockState class7096, final BlockState class7097, final Class1851 class7098, final BlockPos class7099, final int n) {
         if (class7097 != class7096) {
             if (!class7097.method21706()) {
-                class7098.method6688(class7099, class7097, n & 0xFFFFFFDF);
+                class7098.setBlockState(class7099, class7097, n & 0xFFFFFFDF);
             }
             else if (!class7098.isRemote()) {
                 class7098.method7149(class7099, (n & 0x20) == 0x0);
@@ -164,7 +164,7 @@ public class Class3833 implements Class3832
         return class7096;
     }
     
-    public Class3833(final Class9288 class9288) {
+    public Block(final Class9288 class9288) {
         final Class9500 class9289 = new Class9500((O)this);
         this.method11875(class9289);
         this.field17401 = Class9288.method34297(class9288);
@@ -185,7 +185,7 @@ public class Class3833 implements Class3832
         this.method11877(this.field17406.method32903());
     }
     
-    public static boolean method11792(final Class3833 class3833) {
+    public static boolean method11792(final Block class3833) {
         if (!(class3833 instanceof Class3972)) {
             if (class3833 != Class7521.field29517) {
                 if (class3833 != Class7521.field29342) {
@@ -206,8 +206,8 @@ public class Class3833 implements Class3832
     
     @Deprecated
     public boolean method11793(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        if (class7096.method21697().method26443()) {
-            if (class7096.method21762(class7097, class7098)) {
+        if (class7096.getMaterial().method26443()) {
+            if (class7096.isCollisionShapeOpaque(class7097, class7098)) {
                 if (!class7096.method21714()) {
                     return true;
                 }
@@ -218,7 +218,7 @@ public class Class3833 implements Class3832
     
     @Deprecated
     public boolean method11794(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        return this.field17401.method26440() && class7096.method21762(class7097, class7098);
+        return this.field17401.method26440() && class7096.isCollisionShapeOpaque(class7097, class7098);
     }
     
     @Deprecated
@@ -230,13 +230,13 @@ public class Class3833 implements Class3832
     public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
         switch (Class9511.field40924[class7099.ordinal()]) {
             case 1: {
-                return !class7096.method21762(class7097, class7098);
+                return !class7096.isCollisionShapeOpaque(class7097, class7098);
             }
             case 2: {
                 return class7097.method6702(class7098).method21793(Class7324.field28319);
             }
             case 3: {
-                return !class7096.method21762(class7097, class7098);
+                return !class7096.isCollisionShapeOpaque(class7097, class7098);
             }
             default: {
                 return false;
@@ -284,18 +284,18 @@ public class Class3833 implements Class3832
     
     public static boolean method11805(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
         final BlockPos method1149 = class7098.method1149(class7099);
-        final BlockState method1150 = class7097.method6701(method1149);
+        final BlockState method1150 = class7097.getBlockState(method1149);
         if (class7096.method21724(method1150, class7099)) {
             return false;
         }
-        if (!method1150.method21723()) {
+        if (!method1150.isSolid()) {
             return true;
         }
         final Class8266 class7100 = new Class8266(class7096, method1150, class7099);
-        final Object2ByteLinkedOpenHashMap object2ByteLinkedOpenHashMap = Class3833.field17414.get();
+        final Object2ByteLinkedOpenHashMap object2ByteLinkedOpenHashMap = Block.field17414.get();
         final byte andMoveToFirst = object2ByteLinkedOpenHashMap.getAndMoveToFirst((Object)class7100);
         if (andMoveToFirst == 127) {
-            final boolean method1151 = Class7698.method24496(class7096.method21701(class7097, class7098, class7099), method1150.method21701(class7097, method1149, class7099.getOpposite()), Class9306.field39920);
+            final boolean method1151 = VoxelShapes.method24496(class7096.getFaceOcclusionShape(class7097, class7098, class7099), method1150.getFaceOcclusionShape(class7097, method1149, class7099.getOpposite()), Class9306.field39920);
             if (object2ByteLinkedOpenHashMap.size() == 2048) {
                 object2ByteLinkedOpenHashMap.removeLastByte();
             }
@@ -317,65 +317,65 @@ public class Class3833 implements Class3832
     
     @Deprecated
     public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return Class7698.method24487();
+        return VoxelShapes.method24487();
     }
     
     @Deprecated
     public VoxelShape method11809(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return this.field17408 ? class7096.method21725(class7097, class7098) : Class7698.method24486();
+        return this.field17408 ? class7096.getShape(class7097, class7098) : VoxelShapes.method24486();
     }
     
     @Deprecated
     public VoxelShape method11810(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        return class7096.method21725(class7097, class7098);
+        return class7096.getShape(class7097, class7098);
     }
     
     @Deprecated
     public VoxelShape method11811(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        return Class7698.method24486();
+        return VoxelShapes.method24486();
     }
     
     public static boolean method11812(final Class1855 class1855, final BlockPos class1856) {
-        final BlockState method6701 = class1855.method6701(class1856);
-        return !method6701.method21755(Class7188.field27907) && !Class7698.method24496(method6701.method21727(class1855, class1856).method24551(Direction.UP), Class3833.field17394, Class9306.field39918);
+        final BlockState method6701 = class1855.getBlockState(class1856);
+        return !method6701.method21755(Class7188.field27907) && !VoxelShapes.method24496(method6701.getCollisionShape(class1855, class1856).method24551(Direction.UP), Block.field17394, Class9306.field39918);
     }
     
     public static boolean method11813(final Class1852 class1852, final BlockPos class1853, final Direction class1854) {
-        final BlockState method6701 = class1852.method6701(class1853);
-        return !method6701.method21755(Class7188.field27907) && !Class7698.method24496(method6701.method21727(class1852, class1853).method24551(class1854), Class3833.field17395, Class9306.field39918);
+        final BlockState method6701 = class1852.getBlockState(class1853);
+        return !method6701.method21755(Class7188.field27907) && !VoxelShapes.method24496(method6701.getCollisionShape(class1852, class1853).method24551(class1854), Block.field17395, Class9306.field39918);
     }
     
-    public static boolean method11814(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
-        return !class7096.method21755(Class7188.field27907) && method11815(class7096.method21727(class7097, class7098), class7099);
+    public static boolean hasSolidSide(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+        return !class7096.method21755(Class7188.field27907) && method11815(class7096.getCollisionShape(class7097, class7098), class7099);
     }
     
     public static boolean method11815(final VoxelShape class7702, final Direction class7703) {
-        return method11816(class7702.method24551(class7703));
+        return isOpaque(class7702.method24551(class7703));
     }
     
-    public static boolean method11816(final VoxelShape class7702) {
-        return (boolean)Class3833.field17393.getUnchecked((Object)class7702);
+    public static boolean isOpaque(final VoxelShape class7702) {
+        return (boolean) Block.field17393.getUnchecked((Object)class7702);
     }
     
     @Deprecated
     public final boolean method11817(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        return class7096.method21723() && method11816(class7096.method21729(class7097, class7098));
+        return class7096.isSolid() && isOpaque(class7096.getRenderShape(class7097, class7098));
     }
     
-    public boolean method11818(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        return !method11816(class7096.method21725(class7097, class7098)) && class7096.method21756().method21781();
+    public boolean propagatesSkylightDown(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+        return !isOpaque(class7096.getShape(class7097, class7098)) && class7096.getFluidState().isEmpty();
     }
     
     @Deprecated
-    public int method11819(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        if (!class7096.method21722(class7097, class7098)) {
-            return class7096.method21699(class7097, class7098) ? 0 : 1;
+    public int getOpacity(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+        if (!class7096.isOpaqueCube(class7097, class7098)) {
+            return class7096.propagatesSkylightDown(class7097, class7098) ? 0 : 1;
         }
-        return class7097.method6985();
+        return class7097.getMaxLightLevel();
     }
     
     @Deprecated
-    public boolean method11820(final BlockState class7096) {
+    public boolean isTransparent(final BlockState class7096) {
         return false;
     }
     
@@ -395,7 +395,7 @@ public class Class3833 implements Class3832
     }
     
     @Deprecated
-    public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         Class9324.method34536(class7097, class7098);
     }
     
@@ -416,7 +416,7 @@ public class Class3833 implements Class3832
     @Deprecated
     public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (this.method11802()) {
-            if (class7096.method21696() != class7099.method21696()) {
+            if (class7096.getBlock() != class7099.getBlock()) {
                 class7097.method6730(class7098);
             }
         }
@@ -435,17 +435,17 @@ public class Class3833 implements Class3832
     public void method11831(final BlockState class7096, final World class7097, final BlockPos class7098, final ItemStack class7099) {
     }
     
-    public Class1932 method11832() {
+    public ResourceLocation method11832() {
         if (this.field17411 == null) {
-            final Class1932 method503 = Class90.field208.method503(this);
-            this.field17411 = new Class1932(method503.method7798(), "blocks/" + method503.method7797());
+            final ResourceLocation method503 = Registry.BLOCK.getKey(this);
+            this.field17411 = new ResourceLocation(method503.method7798(), "blocks/" + method503.method7797());
         }
         return this.field17411;
     }
     
     @Deprecated
     public List<ItemStack> method11833(final BlockState class7096, final Class9098 class7097) {
-        final Class1932 method11832 = this.method11832();
+        final ResourceLocation method11832 = this.method11832();
         if (method11832 != Class9020.field38063) {
             final Class7529 method11833 = class7097.method32877(Class6683.field26368, class7096).method32883(Class7104.field27719);
             return method11833.method23588().getServer().method1581().method6402(method11832).method34485(method11833);
@@ -510,7 +510,7 @@ public class Class3833 implements Class3832
         return this.field17398;
     }
     
-    public void method11842(final World class1847, final BlockPos class1848, final Class6154 class1849) {
+    public void method11842(final World class1847, final BlockPos class1848, final Explosion class1849) {
     }
     
     @Deprecated
@@ -528,7 +528,7 @@ public class Class3833 implements Class3832
     
     @Nullable
     public BlockState method11846(final Class7074 class7074) {
-        return this.method11878();
+        return this.getDefaultState();
     }
     
     @Deprecated
@@ -573,7 +573,7 @@ public class Class3833 implements Class3832
     
     public String method11856() {
         if (this.field17412 == null) {
-            this.field17412 = Class8349.method27836("block", Class90.field208.method503(this));
+            this.field17412 = Class8349.method27836("block", Registry.BLOCK.getKey(this));
         }
         return this.field17412;
     }
@@ -584,13 +584,13 @@ public class Class3833 implements Class3832
     }
     
     @Deprecated
-    public Class2117 method11858(final BlockState class7096) {
+    public PushReaction method11858(final BlockState class7096) {
         return this.field17401.method26445();
     }
     
     @Deprecated
     public float method11859(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        return class7096.method21762(class7097, class7098) ? 0.2f : 1.0f;
+        return class7096.isCollisionShapeOpaque(class7097, class7098) ? 0.2f : 1.0f;
     }
     
     public void method11860(final World class1847, final BlockPos class1848, final Entity class1849, final float n) {
@@ -631,7 +631,7 @@ public class Class3833 implements Class3832
         return MathHelper.method35688(class7097);
     }
     
-    public void method11869(final World class1847, final BlockState class1848, final Class7005 class1849, final Entity class1850) {
+    public void onProjectileCollision(final World class1847, final BlockState class1848, final Class7005 class1849, final Entity class1850) {
     }
     
     public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final Class512 class1850) {
@@ -641,7 +641,7 @@ public class Class3833 implements Class3832
     public void method11871(final World class1847, final BlockPos class1848) {
     }
     
-    public boolean method11872(final Class6154 class6154) {
+    public boolean method11872(final Explosion explosion) {
         return true;
     }
     
@@ -655,10 +655,10 @@ public class Class3833 implements Class3832
         return 0;
     }
     
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
     }
     
-    public Class9104<Class3833, BlockState> method11876() {
+    public StateContainer<Block, BlockState> getStateContainer() {
         return this.field17406;
     }
     
@@ -666,7 +666,7 @@ public class Class3833 implements Class3832
         this.field17407 = field17407;
     }
     
-    public final BlockState method11878() {
+    public final BlockState getDefaultState() {
         return this.field17407;
     }
     
@@ -684,7 +684,7 @@ public class Class3833 implements Class3832
         return Vec3d.ZERO;
     }
     
-    public Class7696 method11881(final BlockState class7096) {
+    public SoundType getSoundType(final BlockState class7096) {
         return this.field17400;
     }
     
@@ -702,7 +702,7 @@ public class Class3833 implements Class3832
     
     @Override
     public String toString() {
-        return "Block{" + Class90.field208.method503(this) + "}";
+        return "Block{" + Registry.BLOCK.getKey(this) + "}";
     }
     
     public void method11883(final ItemStack class8321, final Class1855 class8322, final List<ITextComponent> list, final Class1981 class8323) {
@@ -713,7 +713,7 @@ public class Class3833 implements Class3832
         field17391 = new Class94<BlockState>();
         field17392 = new Direction[] { Direction.WEST, Direction.EAST, Direction.NORTH, Direction.SOUTH, Direction.DOWN, Direction.UP};
         field17393 = CacheBuilder.newBuilder().maximumSize(512L).weakKeys().build((CacheLoader)new Class6046());
-        field17394 = Class7698.method24494(Class7698.method24487(), method11778(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), Class9306.field39920);
+        field17394 = VoxelShapes.method24494(VoxelShapes.method24487(), method11778(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), Class9306.field39920);
         field17395 = method11778(7.0, 0.0, 7.0, 9.0, 10.0, 9.0);
         field17414 = ThreadLocal.withInitial(() -> {
             final Class2270 class2270 = new Class2270(2048, 0.25f);

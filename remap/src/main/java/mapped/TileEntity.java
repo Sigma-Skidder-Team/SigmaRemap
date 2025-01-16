@@ -35,7 +35,7 @@ public abstract class TileEntity
         this.field2657 = class354.toImmutable();
     }
     
-    public boolean method2188() {
+    public boolean hasWorld() {
         return this.field2656 != null;
     }
     
@@ -48,7 +48,7 @@ public abstract class TileEntity
     }
     
     private Class51 method2189(final Class51 class51) {
-        final Class1932 method16520 = Class5412.method16520(this.method2206());
+        final ResourceLocation method16520 = Class5412.method16520(this.getType());
         if (method16520 != null) {
             class51.method306("id", method16520.toString());
             class51.method298("x", this.field2657.getX());
@@ -61,7 +61,7 @@ public abstract class TileEntity
     
     @Nullable
     public static TileEntity method2190(final Class51 class51) {
-        return Class90.field224.method506(new Class1932(class51.method323("id"))).map(class52 -> {
+        return Registry.field224.method506(new ResourceLocation(class51.method323("id"))).map(class52 -> {
             try {
                 return class52.method16522();
             }
@@ -86,10 +86,10 @@ public abstract class TileEntity
     
     public void method2161() {
         if (this.field2656 != null) {
-            this.field2659 = this.field2656.method6701(this.field2657);
+            this.field2659 = this.field2656.getBlockState(this.field2657);
             this.field2656.method6742(this.field2657, this);
             if (!this.field2659.method21706()) {
-                this.field2656.method6783(this.field2657, this.field2659.method21696());
+                this.field2656.method6783(this.field2657, this.field2659.getBlock());
             }
         }
     }
@@ -105,13 +105,13 @@ public abstract class TileEntity
         return 4096.0;
     }
     
-    public BlockPos method2193() {
+    public BlockPos getPos() {
         return this.field2657;
     }
     
     public BlockState method2194() {
         if (this.field2659 == null) {
-            this.field2659 = this.field2656.method6701(this.field2657);
+            this.field2659 = this.field2656.getBlockState(this.field2657);
         }
         return this.field2659;
     }
@@ -125,7 +125,7 @@ public abstract class TileEntity
         return this.method2189(new Class51());
     }
     
-    public boolean method2197() {
+    public boolean isRemoved() {
         return this.field2658;
     }
     
@@ -146,10 +146,10 @@ public abstract class TileEntity
     }
     
     public void method2202(final Class5204 class5204) {
-        class5204.method16296("Name", () -> Class90.field224.method503(this.method2206()) + " // " + this.getClass().getCanonicalName());
+        class5204.method16296("Name", () -> Registry.field224.getKey(this.getType()) + " // " + this.getClass().getCanonicalName());
         if (this.field2656 != null) {
             Class5204.method16304(class5204, this.field2657, this.method2194());
-            Class5204.method16304(class5204, this.field2657, this.field2656.method6701(this.field2657));
+            Class5204.method16304(class5204, this.field2657, this.field2656.getBlockState(this.field2657));
         }
     }
     
@@ -167,14 +167,14 @@ public abstract class TileEntity
     public void method2205(final Class2181 class2181) {
     }
     
-    public Class5412<?> method2206() {
+    public Class5412<?> getType() {
         return this.field2655;
     }
     
     public void method2207() {
         if (!this.field2660) {
             this.field2660 = true;
-            TileEntity.field2654.warn("Block entity invalid: {} @ {}", new Supplier[] { () -> Class90.field224.method503(this.method2206()), this::method2193 });
+            TileEntity.field2654.warn("Block entity invalid: {} @ {}", new Supplier[] { () -> Registry.field224.getKey(this.getType()), this::getPos});
         }
     }
     

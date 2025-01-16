@@ -15,7 +15,7 @@ public abstract class Class1834<T extends LivingEntity, M extends Class5853<T>, 
 {
     public final A field10014;
     public final A field10015;
-    private static final Map<String, Class1932> field10016;
+    private static final Map<String, ResourceLocation> field10016;
     
     public Class1834(final Class4778<T, M> class4778, final A field10014, final A field10015) {
         super(class4778);
@@ -61,7 +61,7 @@ public abstract class Class1834<T extends LivingEntity, M extends Class5853<T>, 
         this.method6597(class7351, class7352, n, b, a, n2, n3, n4, this.method6600(class7353, b2, s));
     }
     
-    private void method6597(final Class7351 class7351, final Class7807 class7352, final int n, final boolean b, final A a, final float n2, final float n3, final float n4, final Class1932 class7353) {
+    private void method6597(final Class7351 class7351, final Class7807 class7352, final int n, final boolean b, final A a, final float n2, final float n3, final float n4, final ResourceLocation class7353) {
         a.method17564(class7351, Class1796.method6532(class7352, Class6332.method18770(class7353), false, b), n, Class1904.field10335, n2, n3, n4, 1.0f);
     }
     
@@ -73,8 +73,8 @@ public abstract class Class1834<T extends LivingEntity, M extends Class5853<T>, 
         return class2215 == Class2215.field13603;
     }
     
-    private Class1932 method6600(final Class4055 class4055, final boolean b, final String str) {
-        return Class1834.field10016.computeIfAbsent("textures/models/armor/" + class4055.method12258().method8101() + "_layer_" + (b ? 2 : 1) + ((str != null) ? ("_" + str) : "") + ".png", Class1932::new);
+    private ResourceLocation method6600(final Class4055 class4055, final boolean b, final String str) {
+        return Class1834.field10016.computeIfAbsent("textures/models/armor/" + class4055.method12258().method8101() + "_layer_" + (b ? 2 : 1) + ((str != null) ? ("_" + str) : "") + ".png", ResourceLocation::new);
     }
     
     public abstract void method6601(final A p0, final Class2215 p1);
@@ -85,7 +85,7 @@ public abstract class Class1834<T extends LivingEntity, M extends Class5853<T>, 
         return a;
     }
     
-    public Class1932 method6604(final Entity class399, final ItemStack class400, final Class2215 class401, final String s) {
+    public ResourceLocation method6604(final Entity class399, final ItemStack class400, final Class2215 class401, final String s) {
         String s2 = ((Class4055)class400.getItem()).method12258().method8101();
         String substring = "minecraft";
         final int index = s2.indexOf(58);
@@ -97,9 +97,9 @@ public abstract class Class1834<T extends LivingEntity, M extends Class5853<T>, 
         if (Class9570.field41291.method22605()) {
             s3 = Class9570.method35817(Class9570.field41291, class399, class400, s3, class401, s);
         }
-        Class1932 class402 = Class1834.field10016.get(s3);
+        ResourceLocation class402 = Class1834.field10016.get(s3);
         if (class402 == null) {
-            class402 = new Class1932(s3);
+            class402 = new ResourceLocation(s3);
             Class1834.field10016.put(s3, class402);
         }
         return class402;

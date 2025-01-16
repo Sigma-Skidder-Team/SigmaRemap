@@ -21,7 +21,7 @@ public class Class9132
     
     public static void method33153() {
         method33152();
-        if (Class8571.method28946()) {
+        if (Config.method28946()) {
             Class9132.field38704 = method33154("optifine");
             if (Class9132.field38704 == null) {
                 Class9132.field38704 = method33154("mcpatcher");
@@ -40,20 +40,20 @@ public class Class9132
                 final String string3 = string2 + "/sky" + j + ".properties";
                 int n2 = 0;
                 try {
-                    final InputStream method28897 = Class8571.method28897(new Class1932(string3));
+                    final InputStream method28897 = Config.method28897(new ResourceLocation(string3));
                     if (method28897 == null && ++n2 > 10) {
                         break;
                     }
                     final Class27 class27 = new Class27();
                     class27.load(method28897);
                     method28897.close();
-                    Class8571.method28847("CustomSky properties: " + string3);
+                    Config.method28847("CustomSky properties: " + string3);
                     final Class6741 class28 = new Class6741(class27, j + ".png");
                     if (class28.method20517(string3)) {
-                        final Class1932 obj = new Class1932(Class9518.method35529(class28.field26502, ".png"));
+                        final ResourceLocation obj = new ResourceLocation(Class9518.method35529(class28.field26502, ".png"));
                         final Class1666 method28898 = Class8969.method31823(obj);
                         if (method28898 == null) {
-                            Class8571.method28852("CustomSky: Texture not found: " + obj);
+                            Config.method28852("CustomSky: Texture not found: " + obj);
                         }
                         else {
                             class28.field26520 = method28898.method5869();

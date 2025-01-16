@@ -14,7 +14,7 @@ public class Class1886 implements Class1887
         this.field10271 = (b2 ? new Class1902(class1908) : null);
     }
     
-    public void method7252(final BlockPos class354) {
+    public void checkBlock(final BlockPos class354) {
         if (this.field10270 != null) {
             this.field10270.method7310(class354);
         }

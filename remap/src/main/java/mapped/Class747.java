@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Class747 extends Class516<Class3422>
 {
-    private static final Class1932 field4037;
+    private static final ResourceLocation field4037;
     private float field4038;
     private boolean field4039;
     private int field4040;
@@ -161,6 +161,6 @@ public class Class747 extends Class516<Class3422>
     }
     
     static {
-        field4037 = new Class1932("textures/gui/container/stonecutter.png");
+        field4037 = new ResourceLocation("textures/gui/container/stonecutter.png");
     }
 }

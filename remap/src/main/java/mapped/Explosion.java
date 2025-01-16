@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.Random;
 
-public class Class6154
+public class Explosion
 {
     private final boolean field24894;
     private final Class2196 field24895;
@@ -41,16 +41,16 @@ public class Class6154
     private final List<BlockPos> field24904;
     private final Map<Class512, Vec3d> field24905;
     
-    public Class6154(final World class1847, final Entity class1848, final double n, final double n2, final double n3, final float n4, final List<BlockPos> list) {
+    public Explosion(final World class1847, final Entity class1848, final double n, final double n2, final double n3, final float n4, final List<BlockPos> list) {
         this(class1847, class1848, n, n2, n3, n4, false, Class2196.field13367, list);
     }
     
-    public Class6154(final World class1847, final Entity class1848, final double n, final double n2, final double n3, final float n4, final boolean b, final Class2196 class1849, final List<BlockPos> list) {
+    public Explosion(final World class1847, final Entity class1848, final double n, final double n2, final double n3, final float n4, final boolean b, final Class2196 class1849, final List<BlockPos> list) {
         this(class1847, class1848, n, n2, n3, n4, b, class1849);
         this.field24904.addAll(list);
     }
     
-    public Class6154(final World field24897, final Entity field24898, final double field24899, final double field24900, final double field24901, final float field24902, final boolean field24903, final Class2196 field24904) {
+    public Explosion(final World field24897, final Entity field24898, final double field24899, final double field24900, final double field24901, final float field24902, final boolean field24903, final Class2196 field24904) {
         this.field24896 = new Random();
         this.field24904 = Lists.newArrayList();
         this.field24905 = Maps.newHashMap();
@@ -67,9 +67,9 @@ public class Class6154
     
     public static float method18407(final Vec3d class5487, final Entity class5488) {
         final AxisAlignedBB method1886 = class5488.getBoundingBox();
-        final double n = 1.0 / ((method1886.field25076 - method1886.field25073) * 2.0 + 1.0);
-        final double n2 = 1.0 / ((method1886.field25077 - method1886.field25074) * 2.0 + 1.0);
-        final double n3 = 1.0 / ((method1886.field25078 - method1886.field25075) * 2.0 + 1.0);
+        final double n = 1.0 / ((method1886.maxX - method1886.minX) * 2.0 + 1.0);
+        final double n2 = 1.0 / ((method1886.maxY - method1886.minY) * 2.0 + 1.0);
+        final double n3 = 1.0 / ((method1886.maxZ - method1886.minZ) * 2.0 + 1.0);
         final double n4 = (1.0 - Math.floor(1.0 / n) * n) / 2.0;
         final double n5 = (1.0 - Math.floor(1.0 / n3) * n3) / 2.0;
         if (n >= 0.0) {
@@ -80,7 +80,7 @@ public class Class6154
                     for (float n8 = 0.0f; n8 <= 1.0f; n8 += (float)n) {
                         for (float n9 = 0.0f; n9 <= 1.0f; n9 += (float)n2) {
                             for (float n10 = 0.0f; n10 <= 1.0f; n10 += (float)n3) {
-                                if (class5488.world.method6987(new Class8478(new Vec3d(MathHelper.method35701(n8, method1886.field25073, method1886.field25076) + n4, MathHelper.method35701(n9, method1886.field25074, method1886.field25077), MathHelper.method35701(n10, method1886.field25075, method1886.field25078) + n5), class5487, Class2040.field11633, Class2191.field13325, class5488)).method21449() == Class2165.field12880) {
+                                if (class5488.world.method6987(new Class8478(new Vec3d(MathHelper.method35701(n8, method1886.minX, method1886.maxX) + n4, MathHelper.method35701(n9, method1886.minY, method1886.maxY), MathHelper.method35701(n10, method1886.minZ, method1886.maxZ) + n5), class5487, Class2040.field11633, Class2191.field13325, class5488)).method21449() == Class2165.field12880) {
                                     ++n6;
                                 }
                                 ++n7;
@@ -125,10 +125,10 @@ public class Class6154
                     double field24900 = this.field24900;
                     while (n7 > 0.0f) {
                         final BlockPos class354 = new BlockPos(field24898, field24899, field24900);
-                        final BlockState method6701 = this.field24897.method6701(class354);
+                        final BlockState method6701 = this.field24897.getBlockState(class354);
                         final Class7099 method6702 = this.field24897.method6702(class354);
-                        if (!method6701.method21706() || !method6702.method21781()) {
-                            float n8 = Math.max(method6701.method21696().method11841(), method6702.method21794());
+                        if (!method6701.method21706() || !method6702.isEmpty()) {
+                            float n8 = Math.max(method6701.getBlock().method11841(), method6702.method21794());
                             if (this.field24901 != null) {
                                 n8 = this.field24901.method1856(this, this.field24897, class354, method6701, method6702, n8);
                             }
@@ -202,13 +202,13 @@ public class Class6154
             final ObjectArrayList list = new ObjectArrayList();
             Collections.shuffle(this.field24904, this.field24897.rand);
             for (final BlockPos class354 : this.field24904) {
-                final BlockState method6701 = this.field24897.method6701(class354);
-                final Class3833 method6702 = method6701.method21696();
+                final BlockState method6701 = this.field24897.getBlockState(class354);
+                final Block method6702 = method6701.getBlock();
                 if (method6701.method21706()) {
                     continue;
                 }
                 class354.toImmutable();
-                this.field24897.method6796().method15297("explosion_blocks");
+                this.field24897.method6796().startSection("explosion_blocks");
                 if (method6702.method11872(this)) {
                     if (this.field24897 instanceof Class1849) {
                         final Class9098 method6703 = new Class9098((Class1849)this.field24897).method32873(this.field24897.rand).method32877(Class6683.field26367, class354).method32877(Class6683.field26370, ItemStack.field34174).method32878(Class6683.field26369, method6702.method11802() ? this.field24897.method6727(class354) : null).method32878(Class6683.field26362, this.field24901);
@@ -218,12 +218,12 @@ public class Class6154
                         method6701.method21743(method6703).forEach(class357 -> method18410((ObjectArrayList<Pair<ItemStack, BlockPos>>)list2, class357, class356));
                     }
                 }
-                this.field24897.method6688(class354, Class7521.field29147.method11878(), 3);
+                this.field24897.setBlockState(class354, Class7521.field29147.getDefaultState(), 3);
                 method6702.method11842(this.field24897, class354, this);
-                this.field24897.method6796().method15299();
+                this.field24897.method6796().endSection();
             }
             for (final Pair pair : list) {
-                Class3833.method11839(this.field24897, (BlockPos)pair.getSecond(), (ItemStack)pair.getFirst());
+                Block.method11839(this.field24897, (BlockPos)pair.getSecond(), (ItemStack)pair.getFirst());
             }
         }
         if (this.field24894) {
@@ -231,13 +231,13 @@ public class Class6154
                 if (this.field24896.nextInt(3) != 0) {
                     continue;
                 }
-                if (!this.field24897.method6701(class355).method21706()) {
+                if (!this.field24897.getBlockState(class355).method21706()) {
                     continue;
                 }
-                if (!this.field24897.method6701(class355.method1139()).method21722(this.field24897, class355.method1139())) {
+                if (!this.field24897.getBlockState(class355.method1139()).method21722(this.field24897, class355.method1139())) {
                     continue;
                 }
-                this.field24897.method6692(class355, Class7521.field29289.method11878());
+                this.field24897.method6692(class355, Class7521.field29289.getDefaultState());
             }
         }
     }

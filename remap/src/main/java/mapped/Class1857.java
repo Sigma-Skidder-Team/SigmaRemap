@@ -90,21 +90,21 @@ public class Class1857 implements Class1856
     }
     
     @Override
-    public BlockState method6701(final BlockPos class354) {
+    public BlockState getBlockState(final BlockPos class354) {
         final int method6995 = this.method6995(class354);
         if (method6995 >= 0) {
             if (method6995 < this.field10122) {
                 if (this.field10121 != null) {
                     BlockState method6996 = this.field10121[method6995];
                     if (method6996 == null) {
-                        method6996 = this.field10111.method6701(class354);
+                        method6996 = this.field10111.getBlockState(class354);
                         this.field10121[method6995] = method6996;
                     }
                     return method6996;
                 }
             }
         }
-        return this.field10111.method6701(class354);
+        return this.field10111.getBlockState(class354);
     }
     
     public void method6997() {
@@ -151,7 +151,7 @@ public class Class1857 implements Class1856
     
     @Override
     public Class7099 method6702(final BlockPos class354) {
-        return this.method6701(class354).method21756();
+        return this.getBlockState(class354).getFluidState();
     }
     
     @Override

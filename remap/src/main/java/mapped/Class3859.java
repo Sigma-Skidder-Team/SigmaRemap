@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class Class3859 extends Class3833 implements Class3857
+public class Class3859 extends Block implements Class3857
 {
     private static String[] field17479;
     public static final Class7112 field17480;
@@ -31,7 +31,7 @@ public class Class3859 extends Class3833 implements Class3857
             this.field17482.add(field17481.method22175(8 - i, false));
         }
         this.field17482.add(field17481.method22175(8, true));
-        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3859.field17480, 0));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3859.field17480, 0));
     }
     
     @Override
@@ -40,7 +40,7 @@ public class Class3859 extends Class3833 implements Class3857
     }
     
     @Override
-    public boolean method11818(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean propagatesSkylightDown(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
         return false;
     }
     
@@ -51,12 +51,12 @@ public class Class3859 extends Class3833 implements Class3857
     
     @Override
     public Class7099 method11864(final BlockState class7096) {
-        return this.field17482.get(Math.min(class7096.method21772((Class7111<Integer>)Class3859.field17480), 8));
+        return this.field17482.get(Math.min(class7096.get((IProperty<Integer>)Class3859.field17480), 8));
     }
     
     @Override
     public boolean method11807(final BlockState class7096, final BlockState class7097, final Direction class7098) {
-        return class7097.method21756().method21779().method22165(this.field17481);
+        return class7097.getFluidState().method21779().method22165(this.field17481);
     }
     
     @Override
@@ -71,7 +71,7 @@ public class Class3859 extends Class3833 implements Class3857
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return Class7698.method24486();
+        return VoxelShapes.method24486();
     }
     
     @Override
@@ -82,22 +82,22 @@ public class Class3859 extends Class3833 implements Class3857
     @Override
     public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (this.method11926(class7097, class7098, class7096)) {
-            class7097.method6834().method21345(class7098, class7096.method21756().method21779(), this.method11826(class7097));
+            class7097.method6834().method21345(class7098, class7096.getFluidState().method21779(), this.method11826(class7097));
         }
     }
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.method21756().method21780() || class7098.method21756().method21780()) {
-            class7099.method6834().method21345(class7100, class7096.method21756().method21779(), this.method11826(class7099));
+        if (class7096.getFluidState().method21780() || class7098.getFluidState().method21780()) {
+            class7099.method6834().method21345(class7100, class7096.getFluidState().method21779(), this.method11826(class7099));
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     @Override
-    public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         if (this.method11926(class7097, class7098, class7096)) {
-            class7097.method6834().method21345(class7098, class7096.method21756().method21779(), this.method11826(class7097));
+            class7097.method6834().method21345(class7098, class7096.getFluidState().method21779(), this.method11826(class7097));
         }
     }
     
@@ -113,12 +113,12 @@ public class Class3859 extends Class3833 implements Class3857
             if (n != 0) {
                 final Class7099 method6702 = class1847.method6702(class1848);
                 if (method6702.method21780()) {
-                    class1847.method6692(class1848, Class7521.field29286.method11878());
+                    class1847.method6692(class1848, Class7521.field29286.getDefaultState());
                     this.method11927(class1847, class1848);
                     return false;
                 }
                 if (method6702.method21782(class1847, class1848) >= 0.44444445f) {
-                    class1847.method6692(class1848, Class7521.field29159.method11878());
+                    class1847.method6692(class1848, Class7521.field29159.getDefaultState());
                     this.method11927(class1847, class1848);
                     return false;
                 }
@@ -132,16 +132,16 @@ public class Class3859 extends Class3833 implements Class3857
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class3859.field17480);
     }
     
     @Override
     public Class7255 method11922(final Class1851 class1851, final BlockPos class1852, final BlockState class1853) {
-        if (class1853.method21772((Class7111<Integer>)Class3859.field17480) != 0) {
+        if (class1853.get((IProperty<Integer>)Class3859.field17480) != 0) {
             return Class7558.field29974;
         }
-        class1851.method6688(class1852, Class7521.field29147.method11878(), 11);
+        class1851.setBlockState(class1852, Class7521.field29147.getDefaultState(), 11);
         return this.field17481;
     }
     

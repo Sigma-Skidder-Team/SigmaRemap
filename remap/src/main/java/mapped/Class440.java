@@ -92,7 +92,7 @@ public class Class440 extends Class456 implements Class441, Class439
     
     public AxisAlignedBB method2236(final Direction class179) {
         final float method2251 = this.method2251(1.0f);
-        return Class7698.method24487().method24537().method18494(0.5f * method2251 * class179.getXOffset(), 0.5f * method2251 * class179.getYOffset(), 0.5f * method2251 * class179.getZOffset());
+        return VoxelShapes.method24487().method24537().method18494(0.5f * method2251 * class179.getXOffset(), 0.5f * method2251 * class179.getYOffset(), 0.5f * method2251 * class179.getZOffset());
     }
     
     private AxisAlignedBB method2237(final Direction class179) {
@@ -101,7 +101,7 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     private void method2238() {
-        final Class7096 method6701 = this.field2656.method6701(this.method2193());
+        final Class7096 method6701 = this.field2656.getBlockState(this.getPos());
         if (method6701.method21696() instanceof Class3942) {
             final Direction class179 = method6701.method21772(Class3942.field17832);
             final AxisAlignedBB method6702 = this.method2237(class179).method18500(this.field2657);
@@ -109,7 +109,7 @@ public class Class440 extends Class456 implements Class441, Class439
             if (!method6703.isEmpty()) {
                 for (int i = 0; i < method6703.size(); ++i) {
                     final Entity class180 = method6703.get(i);
-                    if (class180.method1921() != Class2117.field12343) {
+                    if (class180.method1921() != PushReaction.IGNORE) {
                         double n = 0.0;
                         double n2 = 0.0;
                         double n3 = 0.0;
@@ -118,10 +118,10 @@ public class Class440 extends Class456 implements Class441, Class439
                             case 1: {
                                 double n4;
                                 if (class179.getAxisDirection() == AxisDirection.POSITIVE) {
-                                    n4 = method6702.field25076 - method6704.field25073;
+                                    n4 = method6702.maxX - method6704.minX;
                                 }
                                 else {
-                                    n4 = method6704.field25076 - method6702.field25073;
+                                    n4 = method6704.maxX - method6702.minX;
                                 }
                                 n = n4 + 0.01;
                                 break;
@@ -129,10 +129,10 @@ public class Class440 extends Class456 implements Class441, Class439
                             case 2: {
                                 double n5;
                                 if (class179.getAxisDirection() == AxisDirection.POSITIVE) {
-                                    n5 = method6702.field25077 - method6704.field25074;
+                                    n5 = method6702.maxY - method6704.minY;
                                 }
                                 else {
-                                    n5 = method6704.field25077 - method6702.field25074;
+                                    n5 = method6704.maxY - method6702.minY;
                                 }
                                 n2 = n5 + 0.01;
                                 break;
@@ -140,10 +140,10 @@ public class Class440 extends Class456 implements Class441, Class439
                             case 3: {
                                 double n6;
                                 if (class179.getAxisDirection() == AxisDirection.POSITIVE) {
-                                    n6 = method6702.field25078 - method6704.field25075;
+                                    n6 = method6702.maxZ - method6704.minZ;
                                 }
                                 else {
-                                    n6 = method6704.field25078 - method6702.field25075;
+                                    n6 = method6704.maxZ - method6702.minZ;
                                 }
                                 n3 = n6 + 0.01;
                                 break;
@@ -178,7 +178,7 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     private void method2240() {
-        this.method2194().method21735(this.method2186(), this.method2193(), 3);
+        this.method2194().method21735(this.method2186(), this.getPos(), 3);
     }
     
     @Override
@@ -188,7 +188,7 @@ public class Class440 extends Class456 implements Class441, Class439
                 this.field2667 = 0;
             }
             ++this.field2667;
-            this.field2656.method6763(this.field2657, this.method2194().method21696(), 1, this.field2667);
+            this.field2656.method6763(this.field2657, this.method2194().getBlock(), 1, this.field2667);
             if (this.field2667 == 1) {
                 this.field2656.method6705(null, this.field2657, Class8520.field35550, Class286.field1582, 0.5f, this.field2656.rand.nextFloat() * 0.1f + 0.9f);
             }
@@ -199,7 +199,7 @@ public class Class440 extends Class456 implements Class441, Class439
     public void method2242(final Class512 class512) {
         if (!class512.isSpectator()) {
             --this.field2667;
-            this.field2656.method6763(this.field2657, this.method2194().method21696(), 1, this.field2667);
+            this.field2656.method6763(this.field2657, this.method2194().getBlock(), 1, this.field2667);
             if (this.field2667 <= 0) {
                 this.field2656.method6705(null, this.field2657, Class8520.field35549, Class286.field1582, 0.5f, this.field2656.rand.nextFloat() * 0.1f + 0.9f);
             }
@@ -256,7 +256,7 @@ public class Class440 extends Class456 implements Class441, Class439
     
     @Override
     public boolean method2249(final int n, final ItemStack class8321, final Direction class8322) {
-        return !(Class3833.method11776(class8321.getItem()) instanceof Class3942);
+        return !(Block.method11776(class8321.getItem()) instanceof Class3942);
     }
     
     @Override
@@ -271,7 +271,7 @@ public class Class440 extends Class456 implements Class441, Class439
     @Nullable
     public Class181 method2252() {
         if (this.field2672) {
-            this.field2671 = Class3942.method12058(this.method2194().method21696());
+            this.field2671 = Class3942.method12058(this.method2194().getBlock());
             this.field2672 = false;
         }
         return this.field2671;

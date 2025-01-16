@@ -12,10 +12,10 @@ import java.util.Arrays;
 
 public class Class8521
 {
-    private Class1932 field35774;
+    private ResourceLocation field35774;
     private float[] field35775;
     
-    public Class8521(final Class1932 field35774, final float[] array) {
+    public Class8521(final ResourceLocation field35774, final float[] array) {
         this.field35774 = field35774;
         Arrays.sort(this.field35775 = array.clone());
     }
@@ -28,7 +28,7 @@ public class Class8521
         return null;
     }
     
-    public Class1932 method28534() {
+    public ResourceLocation method28534() {
         return this.field35774;
     }
     
@@ -38,6 +38,6 @@ public class Class8521
     
     @Override
     public String toString() {
-        return "location: " + this.field35774 + ", values: [" + Class8571.method28892(this.field35775) + "]";
+        return "location: " + this.field35774 + ", values: [" + Config.method28892(this.field35775) + "]";
     }
 }

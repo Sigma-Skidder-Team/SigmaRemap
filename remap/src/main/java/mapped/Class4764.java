@@ -14,8 +14,8 @@ import net.minecraft.util.math.Vec3d;
 
 public class Class4764 extends Class4712<Class844, Class5879>
 {
-    private static final Class1932 field20389;
-    private static final Class1932 field20390;
+    private static final ResourceLocation field20389;
+    private static final ResourceLocation field20390;
     private static final Class6332 field20391;
     
     public Class4764(final Class8551 class8551) {
@@ -112,13 +112,13 @@ public class Class4764 extends Class4712<Class844, Class5879>
         class4150.method12444(class4151, n, n2, n3).method12399(n4, n5, n6, 255).method12391(n7, n8).method12441(Class1904.field10335).method12440(15728880).method12445(class4152, 0.0f, 1.0f, 0.0f).method12397();
     }
     
-    public Class1932 method14107(final Class844 class844) {
+    public ResourceLocation method14107(final Class844 class844) {
         return Class4764.field20389;
     }
     
     static {
-        field20389 = new Class1932("textures/entity/guardian.png");
-        field20390 = new Class1932("textures/entity/guardian_beam.png");
+        field20389 = new ResourceLocation("textures/entity/guardian.png");
+        field20390 = new ResourceLocation("textures/entity/guardian_beam.png");
         field20391 = Class6332.method18770(Class4764.field20390);
     }
 }

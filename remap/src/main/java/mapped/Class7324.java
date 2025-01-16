@@ -23,7 +23,7 @@ public class Class7324
     }
     
     private static Class7909<Class7255> method22479(final String s) {
-        return new Class7911(new Class1932(s));
+        return new Class7911(new ResourceLocation(s));
     }
     
     static {

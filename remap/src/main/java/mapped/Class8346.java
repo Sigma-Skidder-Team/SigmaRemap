@@ -17,7 +17,7 @@ public class Class8346
     public static Iterator<Class8974> method27814(final Class1848 class1848, final double n, final Entity class1849, final int n2, final Class9112 class1850) {
         final float method33913 = Class9216.method33913();
         if (method33913 > 0.0f && method33913 < (n2 - 1) * 16) {
-            final int n3 = MathHelper.method35649(method33913 / 16.0f) + 1;
+            final int n3 = MathHelper.ceil(method33913 / 16.0f) + 1;
             final float method33914 = class1848.method6713((float)n);
             final float n4 = Class9216.field39375 * MathHelper.field41103;
             final float n5 = (method33914 > MathHelper.field41101 && method33914 < 3.0f * MathHelper.field41101) ? (method33914 + MathHelper.field41099) : method33914;

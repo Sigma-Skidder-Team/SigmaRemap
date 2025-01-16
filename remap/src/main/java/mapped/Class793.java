@@ -126,7 +126,7 @@ public class Class793 extends Class789
     
     public static boolean method4464(final EntityType<Class793> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (class7502.getY() < class7500.method6743() + 4) {
-            if (class7500.method6701(class7502.method1139()).method21696() == Class7521.field29175) {
+            if (class7500.getBlockState(class7502.method1139()).getBlock() == Class7521.field29175) {
                 if (class7500.method6993(class7502, 0) > 8) {
                     return true;
                 }
@@ -251,7 +251,7 @@ public class Class793 extends Class789
         if (!this.method4460() && class355.method6702(class354).method21793(Class7324.field28319)) {
             return 10.0f;
         }
-        return (class355.method6701(class354.method1139()).method21696() != Class7521.field29175) ? (class355.method6963(class354) - 0.5f) : 10.0f;
+        return (class355.getBlockState(class354.method1139()).getBlock() != Class7521.field29175) ? (class355.method6963(class354) - 0.5f) : 10.0f;
     }
     
     @Override
@@ -262,8 +262,8 @@ public class Class793 extends Class789
                 if (this.field4241 >= 1) {
                     if (this.field4241 % 5 == 0) {
                         final BlockPos class354 = new BlockPos(this);
-                        if (this.world.method6701(class354.method1139()).method21696() == Class7521.field29175) {
-                            this.world.method6955(2001, class354, Class3833.method11774(Class7521.field29175.method11878()));
+                        if (this.world.getBlockState(class354.method1139()).method21696() == Class7521.field29175) {
+                            this.world.method6955(2001, class354, Block.method11774(Class7521.field29175.getDefaultState()));
                         }
                     }
                 }

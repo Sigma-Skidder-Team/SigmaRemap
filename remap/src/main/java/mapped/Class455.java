@@ -94,7 +94,7 @@ public class Class455 extends Class456 implements Class453, Class439
     private boolean method2294(final Supplier<Boolean> supplier) {
         if (this.field2656 != null && !this.field2656.isRemote) {
             if (!this.method2314()) {
-                if (this.method2194().method21772((Class7111<Boolean>)Class3959.field17882)) {
+                if (this.method2194().get((IProperty<Boolean>)Class3959.field17882)) {
                     boolean method2296 = false;
                     if (!this.method2156()) {
                         method2296 = this.method2296();
@@ -129,7 +129,7 @@ public class Class455 extends Class456 implements Class453, Class439
         if (method2307 == null) {
             return false;
         }
-        final Direction method2308 = this.method2194().method21772((Class7111<Direction>)Class3959.field17881).getOpposite();
+        final Direction method2308 = this.method2194().get((IProperty<Direction>)Class3959.field17881).getOpposite();
         if (!this.method2298(method2307, method2308)) {
             for (int i = 0; i < this.method2239(); ++i) {
                 if (!this.method2157(i).method27620()) {
@@ -271,7 +271,7 @@ public class Class455 extends Class456 implements Class453, Class439
     
     @Nullable
     private Class446 method2307() {
-        return method2310(this.method2186(), this.field2657.method1149(this.method2194().method21772((Class7111<Direction>)Class3959.field17881)));
+        return method2310(this.method2186(), this.field2657.method1149(this.method2194().get((IProperty<Direction>)Class3959.field17881)));
     }
     
     @Nullable
@@ -292,8 +292,8 @@ public class Class455 extends Class456 implements Class453, Class439
     public static Class446 method2311(final World class1847, final double n, final double n2, final double n3) {
         Class446 class1848 = null;
         final BlockPos class1849 = new BlockPos(n, n2, n3);
-        final BlockState method6701 = class1847.method6701(class1849);
-        final Class3833 method6702 = method6701.method21696();
+        final BlockState method6701 = class1847.getBlockState(class1849);
+        final Block method6702 = method6701.getBlock();
         if (!(method6702 instanceof Class3966)) {
             if (method6702.method11802()) {
                 final TileEntity method6703 = class1847.method6727(class1849);
@@ -362,8 +362,8 @@ public class Class455 extends Class456 implements Class453, Class439
     
     public void method2316(final Entity class399) {
         if (class399 instanceof Class427) {
-            final BlockPos method2193 = this.method2193();
-            if (Class7698.method24496(Class7698.method24489(class399.getBoundingBox().method18499(-method2193.getX(), -method2193.getY(), -method2193.getZ())), this.method2285(), Class9306.field39924)) {
+            final BlockPos method2193 = this.getPos();
+            if (VoxelShapes.method24496(VoxelShapes.method24489(class399.getBoundingBox().method18499(-method2193.getX(), -method2193.getY(), -method2193.getZ())), this.method2285(), Class9306.field39924)) {
                 this.method2294(() -> method2302(this, (Class427)class400));
             }
         }

@@ -6,7 +6,7 @@ package mapped;
 
 public class Class4746<T extends Class759, M extends Class5853<T>> extends Class4712<T, M>
 {
-    private static final Class1932 field20368;
+    private static final ResourceLocation field20368;
     
     public Class4746(final Class8551 class8551, final M m, final float n) {
         super(class8551, m, n);
@@ -15,11 +15,11 @@ public class Class4746<T extends Class759, M extends Class5853<T>> extends Class
         this.method13978(new Class1823<T, M>(this));
     }
     
-    public Class1932 method14080(final T t) {
+    public ResourceLocation method14080(final T t) {
         return Class4746.field20368;
     }
     
     static {
-        field20368 = new Class1932("textures/entity/steve.png");
+        field20368 = new ResourceLocation("textures/entity/steve.png");
     }
 }

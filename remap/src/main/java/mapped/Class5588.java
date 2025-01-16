@@ -49,7 +49,7 @@ public class Class5588 extends Class5509
             Class9570.method35837(method35732, Class9570.field41597, class5901);
             return (Class9559)method35732;
         }
-        Class8571.method28848("Field not found: TileEntityShulkerBoxRenderer.model");
+        Config.warn("Field not found: TileEntityShulkerBoxRenderer.model");
         return null;
     }
 }

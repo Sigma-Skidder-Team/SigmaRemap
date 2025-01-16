@@ -7,7 +7,7 @@ package mapped;
 import org.apache.logging.log4j.LogManager;
 import java.util.concurrent.Executor;
 import javax.annotation.Nullable;
-import java.util.List;
+
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import java.util.Map;
@@ -17,7 +17,7 @@ public class Class1903 implements AutoCloseable
 {
     private static String[] field10328;
     private static final Logger field10329;
-    private final Map<Class1932, Class1844> field10330;
+    private final Map<ResourceLocation, Class1844> field10330;
     private final Class1663 field10331;
     private boolean field10332;
     private final Class1662 field10333;
@@ -30,7 +30,7 @@ public class Class1903 implements AutoCloseable
     }
     
     @Nullable
-    public Class1844 method7376(final Class1932 key) {
+    public Class1844 method7376(final ResourceLocation key) {
         return this.field10330.computeIfAbsent(key, class1932 -> {
             new Class1844(this.field10331, new Class1923(this.field10331, class1932));
             final Class1844 class1934;

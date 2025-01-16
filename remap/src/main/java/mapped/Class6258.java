@@ -39,7 +39,7 @@ public class Class6258 extends Class6257
     
     public static void method18605(final LivingEntity class511, final World class512, final BlockPos class513, final int n) {
         if (class511.onGround) {
-            final BlockState method11878 = Class7521.field29641.method11878();
+            final BlockState method11878 = Class7521.field29641.getDefaultState();
             final float n2 = (float)Math.min(16, 2 + n);
             final Mutable class514 = new Mutable();
             for (final BlockPos class515 : BlockPos.getAllInBoxMutable(class513.add(-n2, -1.0, -n2), class513.add(n2, -1.0, n2))) {
@@ -47,14 +47,14 @@ public class Class6258 extends Class6257
                     continue;
                 }
                 class514.setPos(class515.getX(), class515.getY() + 1, class515.getZ());
-                if (!class512.method6701(class514).method21706()) {
+                if (!class512.getBlockState(class514).method21706()) {
                     continue;
                 }
-                final BlockState method11879 = class512.method6701(class515);
-                if (method11879.method21697() != Class8059.field33161) {
+                final BlockState method11879 = class512.getBlockState(class515);
+                if (method11879.getMaterial() != Material.WATER) {
                     continue;
                 }
-                if (method11879.method21772((Class7111<Integer>)Class3859.field17480) != 0) {
+                if (method11879.get((IProperty<Integer>)Class3859.field17480) != 0) {
                     continue;
                 }
                 if (!method11878.method21752(class512, class515)) {

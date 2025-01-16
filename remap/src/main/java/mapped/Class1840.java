@@ -20,6 +20,6 @@ public class Class1840<T extends Entity, M extends Class5880<T>> extends Class18
     }
     
     static {
-        field10022 = Class6332.method18779(new Class1932("textures/entity/spider_eyes.png"));
+        field10022 = Class6332.method18779(new ResourceLocation("textures/entity/spider_eyes.png"));
     }
 }

@@ -20,7 +20,7 @@ public class Class3939 extends Class3841
     
     public Class3939(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, BlockState>)((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3939.field17824, Direction.NORTH)).method21773((Class7111<Comparable>)Class3939.field17825, false));
+        this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3939.field17824, Direction.NORTH)).with((IProperty<Comparable>)Class3939.field17825, false));
     }
     
     @Override
@@ -38,7 +38,7 @@ public class Class3939 extends Class3841
     
     @Override
     public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
-        if (class7096.method21696() != class7099.method21696()) {
+        if (class7096.getBlock() != class7099.getBlock()) {
             final TileEntity method6727 = class7097.method6727(class7098);
             if (method6727 instanceof Class446) {
                 Class9193.method33638(class7097, class7098, (Class446)method6727);
@@ -89,22 +89,22 @@ public class Class3939 extends Class3841
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class3939.field17824, class7097.method8142(class7096.method21772((Class7111<Direction>)Class3939.field17824)));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3939.field17824, class7097.method8142(class7096.get((IProperty<Direction>)Class3939.field17824)));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.method21772((Class7111<Direction>)Class3939.field17824)));
+        return class7096.method21708(class7097.method8344(class7096.get((IProperty<Direction>)Class3939.field17824)));
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class3939.field17824, Class3939.field17825);
     }
     
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        return ((Class7097<O, BlockState>)this.method11878()).method21773((Class7111<Comparable>)Class3939.field17824, class7074.method21642().getOpposite());
+        return ((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3939.field17824, class7074.method21642().getOpposite());
     }
     
     static {

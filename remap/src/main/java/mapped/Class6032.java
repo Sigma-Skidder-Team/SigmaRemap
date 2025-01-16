@@ -52,32 +52,32 @@ public abstract class Class6032<C extends Class4407>
     private final Function<Dynamic<?>, ? extends C> field24564;
     
     private static <C extends Class4407, F extends Class6032<C>> F method17961(final String s, final F n) {
-        return Class90.method511(Class90.field214, s, n);
+        return Registry.method511(Registry.field214, s, n);
     }
     
     public Class6032(final Function<Dynamic<?>, ? extends C> field24564) {
         this.field24564 = field24564;
     }
     
-    public abstract void method17960(final Random p0, final Class1860 p1, final Class3090 p2, final int p3, final int p4, final int p5, final double p6, final Class7096 p7, final Class7096 p8, final int p9, final long p10, final C p11);
+    public abstract void method17960(final Random p0, final IChunk p1, final Class3090 p2, final int p3, final int p4, final int p5, final double p6, final Class7096 p7, final Class7096 p8, final int p9, final long p10, final C p11);
     
     public void method17962(final long n) {
     }
     
     static {
-        field24525 = Class7521.field29147.method11878();
-        field24526 = Class7521.field29156.method11878();
-        field24527 = Class7521.field29155.method11878();
-        field24528 = Class7521.field29158.method11878();
-        field24529 = Class7521.field29177.method11878();
-        field24530 = Class7521.field29148.method11878();
-        field24531 = Class7521.field29157.method11878();
-        field24532 = Class7521.field29175.method11878();
-        field24533 = Class7521.field29176.method11878();
-        field24534 = Class7521.field29482.method11878();
-        field24535 = Class7521.field29392.method11878();
-        field24536 = Class7521.field29338.method11878();
-        field24537 = Class7521.field29403.method11878();
+        field24525 = Class7521.field29147.getDefaultState();
+        field24526 = Class7521.field29156.getDefaultState();
+        field24527 = Class7521.field29155.getDefaultState();
+        field24528 = Class7521.field29158.getDefaultState();
+        field24529 = Class7521.field29177.getDefaultState();
+        field24530 = Class7521.field29148.getDefaultState();
+        field24531 = Class7521.field29157.getDefaultState();
+        field24532 = Class7521.field29175.getDefaultState();
+        field24533 = Class7521.field29176.getDefaultState();
+        field24534 = Class7521.field29482.getDefaultState();
+        field24535 = Class7521.field29392.getDefaultState();
+        field24536 = Class7521.field29338.getDefaultState();
+        field24537 = Class7521.field29403.getDefaultState();
         field24538 = new Class4408(Class6032.field24525, Class6032.field24525, Class6032.field24525);
         field24539 = new Class4408(Class6032.field24528, Class6032.field24526, Class6032.field24529);
         field24540 = new Class4408(Class6032.field24529, Class6032.field24529, Class6032.field24529);

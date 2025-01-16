@@ -15,7 +15,7 @@ public enum Class2066
     field11827("natural_stone", class7096 -> {
         if (class7096 != null) {
             class7096.method21696();
-            final Class3833 class7097;
+            final Block class7097;
             final boolean b;
             if (class7097 != Class7521.field29148) {
                 if (class7097 != Class7521.field29149) {

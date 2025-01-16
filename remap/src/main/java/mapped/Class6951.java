@@ -29,7 +29,7 @@ public class Class6951<T> implements Class6952<T>
         for (int i = 0; i < class52.size(); ++i) {
             final Class52 method347 = class52.method347(i);
             for (int j = 0; j < method347.size(); ++j) {
-                Class1860.method7042(this.field27218, i).add(method347.method348(j));
+                IChunk.method7042(this.field27218, i).add(method347.method348(j));
             }
         }
     }
@@ -58,7 +58,7 @@ public class Class6951<T> implements Class6952<T>
     
     @Override
     public void method21341(final BlockPos class354, final T t, final int n, final Class1955 class355) {
-        Class1860.method7042(this.field27218, class354.getY() >> 4).add(Class1865.method7100(class354));
+        IChunk.method7042(this.field27218, class354.getY() >> 4).add(Class1865.method7100(class354));
     }
     
     @Override

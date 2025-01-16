@@ -140,7 +140,7 @@ public class Class808 extends Class806
     }
     
     @Override
-    public void method4738(final Class7696 class7696) {
+    public void method4738(final SoundType class7696) {
         super.method4738(class7696);
         if (this.rand.nextInt(10) == 0) {
             this.method1695(Class8520.field35275, class7696.method24477() * 0.6f, class7696.method24478());

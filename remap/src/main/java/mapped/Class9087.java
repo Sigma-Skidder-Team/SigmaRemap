@@ -23,11 +23,11 @@ public class Class9087
     
     public static List<Class8754> method32833(List<Class8754> method18260, final Class1856 class1856, final BlockState class1857, final BlockPos class1858, final Direction class1859, final Class6332 class1860, final long n, final Class9145 class1861) {
         if (class1859 != null) {
-            if (class1861.method33389() && Class7464.method22996(class1856.method6701(class1858.method1149(class1859)), class1857)) {
+            if (class1861.method33389() && Class7464.method22996(class1856.getBlockState(class1858.method1149(class1859)), class1857)) {
                 return Class9087.field38481;
             }
             if (!class1861.method33379(method18260)) {
-                if (Class8571.method28910()) {
+                if (Config.method28910()) {
                     method18260 = Class6110.method18260(class1856, class1857, class1858, class1859, method18260);
                 }
             }
@@ -67,13 +67,13 @@ public class Class9087
     private static Class8754[] method32835(Class8754 method24259, final Class1856 class1856, final BlockState class1857, final BlockPos class1858, final Direction class1859, final long n, final Class9145 class1860) {
         if (!class1860.method33380(method24259)) {
             final Class8754 class1861 = method24259;
-            if (Class8571.method28949()) {
+            if (Config.method28949()) {
                 final Class8754[] method24260 = Class7970.method25831(class1856, class1857, class1858, method24259, class1860);
                 if (method24260.length != 1 || method24260[0] != method24259) {
                     return method24260;
                 }
             }
-            if (Class8571.method28950()) {
+            if (Config.method28950()) {
                 method24259 = Class7657.method24259(class1858, method24259);
                 if (method24259 != class1861) {
                     return class1860.method33391(method24259);

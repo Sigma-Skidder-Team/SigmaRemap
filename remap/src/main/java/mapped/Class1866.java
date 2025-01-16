@@ -30,8 +30,8 @@ public class Class1866 extends Class1865
     
     @Nullable
     @Override
-    public BlockState method6701(final BlockPos class354) {
-        return this.field10190.method6701(class354);
+    public BlockState getBlockState(final BlockPos class354) {
+        return this.field10190.getBlockState(class354);
     }
     
     @Override
@@ -40,8 +40,8 @@ public class Class1866 extends Class1865
     }
     
     @Override
-    public int method6985() {
-        return this.field10190.method6985();
+    public int getMaxLightLevel() {
+        return this.field10190.getMaxLightLevel();
     }
     
     @Nullable
@@ -59,7 +59,7 @@ public class Class1866 extends Class1865
     }
     
     @Override
-    public void method7098(final Class9312 class9312) {
+    public void method7098(final ChunkStatus class9312) {
     }
     
     @Override
@@ -150,7 +150,7 @@ public class Class1866 extends Class1865
     }
     
     @Override
-    public Class9312 method7027() {
+    public ChunkStatus method7027() {
         return this.field10190.method7027();
     }
     
@@ -188,8 +188,8 @@ public class Class1866 extends Class1865
     }
     
     @Override
-    public Class6951<Class3833> method7102() {
-        return new Class6951<Class3833>(class3833 -> class3833.method11878().method21706(), this.method7019());
+    public Class6951<Block> method7102() {
+        return new Class6951<Block>(class3833 -> class3833.getDefaultState().method21706(), this.method7019());
     }
     
     @Override

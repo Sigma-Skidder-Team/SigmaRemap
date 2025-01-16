@@ -52,7 +52,7 @@ public class Class8011
                 continue;
             }
             final BlockPos method6785 = class1851.method1138(20 + field10062.nextInt(15)).method1148(-10 + field10062.nextInt(21)).method1144(-10 + field10062.nextInt(21));
-            if (!Class8532.method28620(class1849, method6785, class1849.method6701(method6785), class1849.method6702(method6785))) {
+            if (!Class8532.method28620(class1849, method6785, class1849.getBlockState(method6785), class1849.method6702(method6785))) {
                 continue;
             }
             Class5496 method6786 = null;

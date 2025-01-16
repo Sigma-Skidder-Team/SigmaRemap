@@ -9,7 +9,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class515 extends Class516<Class3441> implements Class514
 {
-    private static final Class1932 field3072;
+    private static final ResourceLocation field3072;
     private Class576 field3073;
     
     public Class515(final Class3441 class3441, final Class464 class3442, final ITextComponent class3443) {
@@ -143,6 +143,6 @@ public class Class515 extends Class516<Class3441> implements Class514
     }
     
     static {
-        field3072 = new Class1932("textures/gui/container/anvil.png");
+        field3072 = new ResourceLocation("textures/gui/container/anvil.png");
     }
 }

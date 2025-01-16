@@ -26,7 +26,7 @@ public class Class800 extends Class794
     private static final DataParameter<Boolean> field4287;
     private static final DataParameter<Boolean> field4288;
     private static final DataParameter<Integer> field4289;
-    public static final Map<Integer, Class1932> field4290;
+    public static final Map<Integer, ResourceLocation> field4290;
     private Class3451<Class512> field4291;
     private Class3472 field4292;
     private float field4293;
@@ -40,7 +40,7 @@ public class Class800 extends Class794
         super(class7499, class7500);
     }
     
-    public Class1932 method4606() {
+    public ResourceLocation method4606() {
         return Class800.field4290.getOrDefault(this.method4607(), Class800.field4290.get(0));
     }
     
@@ -407,17 +407,17 @@ public class Class800 extends Class794
         field4288 = EntityDataManager.method33564(Class800.class, Class7709.field30661);
         field4289 = EntityDataManager.method33564(Class800.class, Class7709.field30654);
         field4290 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
-            hashMap.put(0, new Class1932("textures/entity/cat/tabby.png"));
-            hashMap.put(1, new Class1932("textures/entity/cat/black.png"));
-            hashMap.put(2, new Class1932("textures/entity/cat/red.png"));
-            hashMap.put(3, new Class1932("textures/entity/cat/siamese.png"));
-            hashMap.put(4, new Class1932("textures/entity/cat/british_shorthair.png"));
-            hashMap.put(5, new Class1932("textures/entity/cat/calico.png"));
-            hashMap.put(6, new Class1932("textures/entity/cat/persian.png"));
-            hashMap.put(7, new Class1932("textures/entity/cat/ragdoll.png"));
-            hashMap.put(8, new Class1932("textures/entity/cat/white.png"));
-            hashMap.put(9, new Class1932("textures/entity/cat/jellie.png"));
-            hashMap.put(10, new Class1932("textures/entity/cat/all_black.png"));
+            hashMap.put(0, new ResourceLocation("textures/entity/cat/tabby.png"));
+            hashMap.put(1, new ResourceLocation("textures/entity/cat/black.png"));
+            hashMap.put(2, new ResourceLocation("textures/entity/cat/red.png"));
+            hashMap.put(3, new ResourceLocation("textures/entity/cat/siamese.png"));
+            hashMap.put(4, new ResourceLocation("textures/entity/cat/british_shorthair.png"));
+            hashMap.put(5, new ResourceLocation("textures/entity/cat/calico.png"));
+            hashMap.put(6, new ResourceLocation("textures/entity/cat/persian.png"));
+            hashMap.put(7, new ResourceLocation("textures/entity/cat/ragdoll.png"));
+            hashMap.put(8, new ResourceLocation("textures/entity/cat/white.png"));
+            hashMap.put(9, new ResourceLocation("textures/entity/cat/jellie.png"));
+            hashMap.put(10, new ResourceLocation("textures/entity/cat/all_black.png"));
         });
     }
 }

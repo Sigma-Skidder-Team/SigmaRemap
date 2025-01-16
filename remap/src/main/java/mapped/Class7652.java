@@ -160,13 +160,13 @@ public class Class7652
     
     private static void method24249(final Item class3820, final Item class3821, final Item class3822) {
         if (!(class3820 instanceof Class4089)) {
-            throw new IllegalArgumentException("Expected a potion, got: " + Class90.field211.method503(class3820));
+            throw new IllegalArgumentException("Expected a potion, got: " + Registry.field211.getKey(class3820));
         }
         if (class3822 instanceof Class4089) {
             Class7652.field30384.add(new Class7388<Item>(class3820, Class120.method618(class3821), class3822));
             return;
         }
-        throw new IllegalArgumentException("Expected a potion, got: " + Class90.field211.method503(class3822));
+        throw new IllegalArgumentException("Expected a potion, got: " + Registry.field211.getKey(class3822));
     }
     
     private static void method24250(final Item class3820) {
@@ -174,7 +174,7 @@ public class Class7652
             Class7652.field30385.add(Class120.method618(class3820));
             return;
         }
-        throw new IllegalArgumentException("Expected a potion, got: " + Class90.field211.method503(class3820));
+        throw new IllegalArgumentException("Expected a potion, got: " + Registry.field211.getKey(class3820));
     }
     
     private static void method24251(final Class8061 class8061, final Item class8062, final Class8061 class8063) {

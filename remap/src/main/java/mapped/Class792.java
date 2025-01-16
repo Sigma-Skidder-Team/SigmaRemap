@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 public class Class792 extends Class789
 {
     private static final DataParameter<Integer> field4228;
-    private static final Class1932 field4229;
+    private static final ResourceLocation field4229;
     private int field4230;
     private int field4231;
     private boolean field4232;
@@ -339,7 +339,7 @@ public class Class792 extends Class789
     }
     
     public static boolean method4447(final EntityType<Class792> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
-        final Class3833 method21696 = class7500.method6701(class7502.method1139()).method21696();
+        final Block method21696 = class7500.getBlockState(class7502.method1139()).getBlock();
         if (method21696 != Class7521.field29155) {
             if (method21696 != Class7521.field29329) {
                 if (method21696 != Class7521.field29175) {
@@ -371,6 +371,6 @@ public class Class792 extends Class789
     
     static {
         field4228 = EntityDataManager.method33564(Class792.class, Class7709.field30654);
-        field4229 = new Class1932("killer_bunny");
+        field4229 = new ResourceLocation("killer_bunny");
     }
 }

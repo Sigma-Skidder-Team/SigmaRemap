@@ -14,7 +14,7 @@ public class Class4227 extends Class4211
     private final Class9357 field19027;
     private final Class9342 field19028;
     
-    public Class4227(final Class1932 class1932, final Class7854 field19026, final Class9357 field19027, final Class9342 field19028) {
+    public Class4227(final ResourceLocation class1932, final Class7854 field19026, final Class9357 field19027, final Class9342 field19028) {
         super(class1932);
         this.field19026 = field19026;
         this.field19027 = field19027;

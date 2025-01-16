@@ -5,7 +5,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
-import java.util.HashMap;
+
 import java.util.Map;
 import java.util.function.Predicate;
 
@@ -15,11 +15,11 @@ public enum Class2020
     field11522("WORLD_SURFACE", Class2106.field12211, (Predicate<BlockState>)Class9548.method35721()),
     field11523("OCEAN_FLOOR_WG", Class2106.field12209, (Predicate<BlockState>)Class9548.method35722()),
     field11524("OCEAN_FLOOR", Class2106.field12210, (Predicate<BlockState>)Class9548.method35722()),
-    field11525("MOTION_BLOCKING", Class2106.field12211, class7096 -> class7096.method21697().method26440() || !class7096.method21756().method21781()), 
+    field11525("MOTION_BLOCKING", Class2106.field12211, class7096 -> class7096.getMaterial().method26440() || !class7096.getFluidState().isEmpty()),
     field11526("MOTION_BLOCKING_NO_LEAVES", Class2106.field12210, class7097 -> {
         final boolean b;
-        if (class7097.method21697().method26440() || !class7097.method21756().method21781()) {
-            if (!(class7097.method21696() instanceof Class3972)) {
+        if (class7097.getMaterial().method26440() || !class7097.getFluidState().isEmpty()) {
+            if (!(class7097.getBlock() instanceof Class3972)) {
                 return b;
             }
         }

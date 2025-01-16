@@ -28,7 +28,7 @@ public class Class5520 extends Class5515
     
     @Override
     public String[] method16813() {
-        return (String[])Class8571.method28982(super.method16813(), "body2");
+        return (String[]) Config.method28982(super.method16813(), "body2");
     }
     
     @Override

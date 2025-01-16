@@ -49,11 +49,11 @@ public class Class8349
         return Collectors.toMap((Function<? super Map.Entry<? extends K, ? extends V>, ? extends K>)Map.Entry::getKey, (Function<? super Map.Entry<? extends K, ? extends V>, ? extends V>)Map.Entry::getValue);
     }
     
-    public static <T extends Comparable<T>> String method27835(final Class7111<T> class7111, final Object o) {
-        return class7111.method21831((T)o);
+    public static <T extends Comparable<T>> String method27835(final IProperty<T> class7111, final Object o) {
+        return class7111.getName((T)o);
     }
     
-    public static String method27836(final String s, final Class1932 class1932) {
+    public static String method27836(final String s, final ResourceLocation class1932) {
         return (class1932 != null) ? (s + '.' + class1932.method7798() + '.' + class1932.method7797().replace('/', '.')) : (s + ".unregistered_sadface");
     }
     

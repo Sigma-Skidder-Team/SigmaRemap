@@ -21,7 +21,7 @@ public class Class4018 extends Class4017
     
     public Class4018(final Class9288 class9288) {
         super(true, class9288);
-        this.method11877(((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class4018.field18098, false)).method21773(Class4018.field18097, Class104.field311));
+        this.method11877(((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class4018.field18098, false)).with(Class4018.field18097, Class104.field311));
     }
     
     @Override
@@ -37,7 +37,7 @@ public class Class4018 extends Class4017
     @Override
     public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (!class7097.isRemote) {
-            if (!class7096.method21772((Class7111<Boolean>)Class4018.field18098)) {
+            if (!class7096.method21772((IProperty<Boolean>)Class4018.field18098)) {
                 this.method12206(class7097, class7098, class7096);
             }
         }
@@ -45,48 +45,48 @@ public class Class4018 extends Class4017
     
     @Override
     public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
-        if (class7096.method21772((Class7111<Boolean>)Class4018.field18098)) {
+        if (class7096.method21772((IProperty<Boolean>)Class4018.field18098)) {
             this.method12206(class7097, class7098, class7096);
         }
     }
     
     @Override
     public int method11848(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
-        return class7096.method21772((Class7111<Boolean>)Class4018.field18098) ? 15 : 0;
+        return class7096.method21772((IProperty<Boolean>)Class4018.field18098) ? 15 : 0;
     }
     
     @Override
     public int method11851(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
-        if (class7096.method21772((Class7111<Boolean>)Class4018.field18098)) {
+        if (class7096.method21772((IProperty<Boolean>)Class4018.field18098)) {
             return (class7099 != Direction.UP) ? 0 : 15;
         }
         return 0;
     }
     
     private void method12206(final World class1847, final BlockPos class1848, final Class7096 class1849) {
-        final boolean booleanValue = class1849.method21772((Class7111<Boolean>)Class4018.field18098);
+        final boolean booleanValue = class1849.method21772((IProperty<Boolean>)Class4018.field18098);
         boolean b = false;
         if (!this.method12208(class1847, class1848, Class428.class, null).isEmpty()) {
             b = true;
         }
         if (b) {
             if (!booleanValue) {
-                final Class7096 class1850 = ((Class7097<O, Class7096>)class1849).method21773((Class7111<Comparable>)Class4018.field18098, true);
-                class1847.method6688(class1848, class1850, 3);
+                final Class7096 class1850 = ((StateHolder<O, Class7096>)class1849).with((IProperty<Comparable>)Class4018.field18098, true);
+                class1847.setBlockState(class1848, class1850, 3);
                 this.method12207(class1847, class1848, class1850, true);
                 class1847.method6696(class1848, this);
                 class1847.method6696(class1848.method1139(), this);
-                class1847.method6695(class1848, class1849, class1850);
+                class1847.markBlockRangeForRenderUpdate(class1848, class1849, class1850);
             }
         }
         if (!b) {
             if (booleanValue) {
-                final Class7096 class1851 = ((Class7097<O, Class7096>)class1849).method21773((Class7111<Comparable>)Class4018.field18098, false);
-                class1847.method6688(class1848, class1851, 3);
+                final Class7096 class1851 = ((StateHolder<O, Class7096>)class1849).with((IProperty<Comparable>)Class4018.field18098, false);
+                class1847.setBlockState(class1848, class1851, 3);
                 this.method12207(class1847, class1848, class1851, false);
                 class1847.method6696(class1848, this);
                 class1847.method6696(class1848.method1139(), this);
-                class1847.method6695(class1848, class1849, class1851);
+                class1847.markBlockRangeForRenderUpdate(class1848, class1849, class1851);
             }
         }
         if (b) {
@@ -97,7 +97,7 @@ public class Class4018 extends Class4017
     
     public void method12207(final World class1847, final BlockPos class1848, final Class7096 class1849, final boolean b) {
         for (final BlockPos class1850 : new Class8354(class1847, class1848, class1849).method27877()) {
-            final Class7096 method6701 = class1847.method6701(class1850);
+            final Class7096 method6701 = class1847.getBlockState(class1850);
             method6701.method21734(class1847, class1850, method6701.method21696(), class1848, false);
         }
     }
@@ -111,7 +111,7 @@ public class Class4018 extends Class4017
     }
     
     @Override
-    public Class7111<Class104> method12205() {
+    public IProperty<Class104> method12205() {
         return Class4018.field18097;
     }
     
@@ -122,7 +122,7 @@ public class Class4018 extends Class4017
     
     @Override
     public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
-        if (class7096.method21772((Class7111<Boolean>)Class4018.field18098)) {
+        if (class7096.method21772((IProperty<Boolean>)Class4018.field18098)) {
             final List<Class429> method12208 = this.method12208(class7097, class7098, Class429.class, null);
             if (!method12208.isEmpty()) {
                 return ((Class429)method12208.get(0)).method2149().method5206();
@@ -150,28 +150,28 @@ public class Class4018 extends Class4017
                 case 1: {
                     switch (Class8350.field34272[class7096.method21772(Class4018.field18097).ordinal()]) {
                         case 1: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field314);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field314);
                         }
                         case 2: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field313);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field313);
                         }
                         case 3: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field316);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field316);
                         }
                         case 4: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field315);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field315);
                         }
                         case 5: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field319);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field319);
                         }
                         case 6: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field320);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field320);
                         }
                         case 7: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field317);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field317);
                         }
                         case 8: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field318);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field318);
                         }
                         default: {
                             break Label_0443;
@@ -182,34 +182,34 @@ public class Class4018 extends Class4017
                 case 2: {
                     switch (Class8350.field34272[class7096.method21772(Class4018.field18097).ordinal()]) {
                         case 1: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field315);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field315);
                         }
                         case 2: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field316);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field316);
                         }
                         case 3: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field314);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field314);
                         }
                         case 4: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field313);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field313);
                         }
                         case 5: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field320);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field320);
                         }
                         case 6: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field317);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field317);
                         }
                         case 7: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field318);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field318);
                         }
                         case 8: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field319);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field319);
                         }
                         case 9: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field312);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field312);
                         }
                         case 10: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field311);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field311);
                         }
                         default: {
                             break Label_0443;
@@ -220,34 +220,34 @@ public class Class4018 extends Class4017
                 case 3: {
                     switch (Class8350.field34272[class7096.method21772(Class4018.field18097).ordinal()]) {
                         case 1: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field316);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field316);
                         }
                         case 2: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field315);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field315);
                         }
                         case 3: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field313);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field313);
                         }
                         case 4: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field314);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field314);
                         }
                         case 5: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field318);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field318);
                         }
                         case 6: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field319);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field319);
                         }
                         case 7: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field320);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field320);
                         }
                         case 8: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field317);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field317);
                         }
                         case 9: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field312);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field312);
                         }
                         case 10: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field311);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field311);
                         }
                         default: {
                             break Label_0443;
@@ -268,22 +268,22 @@ public class Class4018 extends Class4017
                 case 1: {
                     switch (Class8350.field34272[class7098.ordinal()]) {
                         case 3: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field316);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field316);
                         }
                         case 4: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field315);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field315);
                         }
                         case 5: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field320);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field320);
                         }
                         case 6: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field319);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field319);
                         }
                         case 7: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field318);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field318);
                         }
                         case 8: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field317);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field317);
                         }
                         default: {
                             return super.method11791(class7096, class7097);
@@ -294,25 +294,25 @@ public class Class4018 extends Class4017
                 case 2: {
                     switch (Class8350.field34272[class7098.ordinal()]) {
                         case 1: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field314);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field314);
                         }
                         case 2: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field313);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field313);
                         }
                         default: {
                             break Label_0347;
                         }
                         case 5: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field318);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field318);
                         }
                         case 6: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field317);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field317);
                         }
                         case 7: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field320);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field320);
                         }
                         case 8: {
-                            return ((Class7097<O, Class7096>)class7096).method21773(Class4018.field18097, Class104.field319);
+                            return ((StateHolder<O, Class7096>)class7096).with(Class4018.field18097, Class104.field319);
                         }
                     }
                     break;
@@ -323,7 +323,7 @@ public class Class4018 extends Class4017
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Block, Class7096> class9500) {
         class9500.method35378(Class4018.field18097, Class4018.field18098);
     }
     

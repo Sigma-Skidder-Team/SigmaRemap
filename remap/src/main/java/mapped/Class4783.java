@@ -12,7 +12,7 @@ public class Class4783 extends Class4703<Class426>
         super(class8551);
     }
     
-    public Class1932 method14148(final Class426 class426) {
+    public ResourceLocation method14148(final Class426 class426) {
         return Class1774.field9853;
     }
 }

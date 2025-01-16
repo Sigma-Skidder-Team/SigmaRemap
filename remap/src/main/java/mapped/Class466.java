@@ -29,7 +29,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     private int field2758;
     private int field2759;
     public final Class7604 field2760;
-    private final Map<Class1932, Integer> field2761;
+    private final Map<ResourceLocation, Integer> field2761;
     public final Class8976<? extends Class3680> field2762;
     
     public Class466(final Class5412<?> class5412, final Class8976<? extends Class3680> field2762) {
@@ -129,7 +129,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         this.field2759 = class51.method318("CookTimeTotal");
         this.field2757 = this.method2398(this.field2755.get(1));
         for (short method318 = class51.method318("RecipesUsedSize"), n = 0; n < method318; ++n) {
-            this.field2761.put(new Class1932(class51.method323("RecipeLocation" + n)), class51.method319("RecipeAmount" + n));
+            this.field2761.put(new ResourceLocation(class51.method323("RecipeLocation" + n)), class51.method319("RecipeAmount" + n));
         }
     }
     
@@ -142,7 +142,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         Class8508.method28424(class51, this.field2755);
         class51.method297("RecipesUsedSize", (short)this.field2761.size());
         int n = 0;
-        for (final Map.Entry<Class1932, V> entry : this.field2761.entrySet()) {
+        for (final Map.Entry<ResourceLocation, V> entry : this.field2761.entrySet()) {
             class51.method306("RecipeLocation" + n, entry.getKey().toString());
             class51.method298("RecipeAmount" + n, (int)entry.getValue());
             ++n;
@@ -200,7 +200,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
             }
             if (method2395 != this.method2395()) {
                 n = 1;
-                this.field2656.method6688(this.field2657, ((Class7097<O, BlockState>)this.field2656.method6701(this.field2657)).method21773((Class7111<Comparable>)Class3948.field17847, this.method2395()), 3);
+                this.field2656.setBlockState(this.field2657, ((StateHolder<O, BlockState>)this.field2656.getBlockState(this.field2657)).with((IProperty<Comparable>)Class3948.field17847, this.method2395()), 3);
             }
         }
         if (n != 0) {
@@ -394,9 +394,9 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     
     public void method2404(final Class512 class512) {
         final ArrayList arrayList = Lists.newArrayList();
-        final Iterator<Map.Entry<Class1932, Integer>> iterator = this.field2761.entrySet().iterator();
+        final Iterator<Map.Entry<ResourceLocation, Integer>> iterator = this.field2761.entrySet().iterator();
         while (iterator.hasNext()) {
-            class512.world.method6792().method6382(((Map.Entry<Class1932, V>)iterator.next()).getKey()).ifPresent(class514 -> {
+            class512.world.method6792().method6382(((Map.Entry<ResourceLocation, V>)iterator.next()).getKey()).ifPresent(class514 -> {
                 list.add(class514);
                 method2405(class513, entry.getValue(), ((Class3680)class514).method11328());
                 return;
@@ -410,7 +410,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         if (n != 0.0f) {
             if (n < 1.0f) {
                 int method35642 = MathHelper.method35642(i * n);
-                if (method35642 < MathHelper.method35649(i * n)) {
+                if (method35642 < MathHelper.ceil(i * n)) {
                     if (Math.random() < i * n - method35642) {
                         ++method35642;
                     }

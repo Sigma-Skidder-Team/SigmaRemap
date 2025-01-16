@@ -14,17 +14,17 @@ public class Class3931 extends Class3841
     
     public Class3931(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3931.field17811, false));
+        this.method11877(((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3931.field17811, false));
     }
     
     @Override
     public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        if (!class7096.method21772((Class7111<Boolean>)Class3931.field17811)) {
+        if (!class7096.method21772((IProperty<Boolean>)Class3931.field17811)) {
             return Class2201.field13402;
         }
         this.method12049(class7097, class7098);
-        class7096 = ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3931.field17811, false);
-        class7097.method6688(class7098, class7096, 2);
+        class7096 = ((StateHolder<O, Class7096>)class7096).with((IProperty<Comparable>)Class3931.field17811, false);
+        class7097.setBlockState(class7098, class7096, 2);
         return Class2201.field13400;
     }
     
@@ -32,7 +32,7 @@ public class Class3931 extends Class3841
         final TileEntity method6727 = class1851.method6727(class1852);
         if (method6727 instanceof Class449) {
             ((Class449)method6727).method2278(class1854.method27641());
-            class1851.method6688(class1852, ((Class7097<O, Class7096>)class1853).method21773((Class7111<Comparable>)Class3931.field17811, true), 2);
+            class1851.setBlockState(class1852, ((StateHolder<O, Class7096>)class1853).with((IProperty<Comparable>)Class3931.field17811, true), 2);
         }
     }
     
@@ -89,7 +89,7 @@ public class Class3931 extends Class3841
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Block, Class7096> class9500) {
         class9500.method35378(Class3931.field17811);
     }
     

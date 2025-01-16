@@ -6,13 +6,13 @@ package mapped;
 
 public class Class7915<T>
 {
-    private final Class1932 field32500;
+    private final ResourceLocation field32500;
     
-    public Class7915(final Class1932 field32500) {
+    public Class7915(final ResourceLocation field32500) {
         this.field32500 = field32500;
     }
     
-    public Class1932 method25633() {
+    public ResourceLocation method25633() {
         return this.field32500;
     }
     

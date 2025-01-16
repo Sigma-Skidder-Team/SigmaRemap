@@ -26,7 +26,7 @@ public class Class1674 implements Closeable
         this.field9468 = field9468;
     }
     
-    public static Class1674 method5891(final Class6582 class6582, final Class1932 class6583) {
+    public static Class1674 method5891(final Class6582 class6582, final ResourceLocation class6583) {
         try (final Class1671 method19933 = class6582.method19933(class6583)) {
             final Class1846 method19934 = Class1846.method6637(method19933.method5887());
             Class9413 class6584 = null;

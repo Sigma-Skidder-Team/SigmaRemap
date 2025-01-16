@@ -58,7 +58,7 @@ public class Class6344 extends Class6343<Class7064>
                 return Class4535.field19969.method13530();
             }
             if (Class4535.field19969.method13589(this.field25383, class1977)) {
-                if (this.field25383.method6701(class1977.method1139()).method21696() == Class7521.field29394) {
+                if (this.field25383.getBlockState(class1977.method1139()).getBlock() == Class7521.field29394) {
                     return Class4535.field19969.method13530();
                 }
             }

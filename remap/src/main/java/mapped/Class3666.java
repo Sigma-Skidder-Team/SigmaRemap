@@ -8,14 +8,14 @@ import net.minecraft.item.ItemStack;
 
 public abstract class Class3666 implements Class3663
 {
-    private final Class1932 field16952;
+    private final ResourceLocation field16952;
     
-    public Class3666(final Class1932 field16952) {
+    public Class3666(final ResourceLocation field16952) {
         this.field16952 = field16952;
     }
     
     @Override
-    public Class1932 method11298() {
+    public ResourceLocation method11298() {
         return this.field16952;
     }
     

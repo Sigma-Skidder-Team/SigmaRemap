@@ -15,7 +15,7 @@ import java.util.Random;
 public abstract class Class7255
 {
     public static final Class94<Class7099> field28128;
-    public final Class9104<Class7255, Class7099> field28129;
+    public final StateContainer<Class7255, Class7099> field28129;
     private Class7099 field28130;
     
     public Class7255() {
@@ -28,7 +28,7 @@ public abstract class Class7255
     public void method22145(final Class9500<Class7255, Class7099> class9500) {
     }
     
-    public Class9104<Class7255, Class7099> method22146() {
+    public StateContainer<Class7255, Class7099> method22146() {
         return this.field28129;
     }
     

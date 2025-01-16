@@ -119,7 +119,7 @@ public class Class8489
     }
     
     private static void method28351(final int n, final int n2, final int n3, final int n4, final int n5, final long n6, final long n7) {
-        if (!Class8571.method28955() || n != 33352) {
+        if (!Config.method28955() || n != 33352) {
             final Class869 method5277 = Class869.method5277();
             if (method5277 != null) {
                 if (method5277.method5332() != null) {
@@ -143,10 +143,10 @@ public class Class8489
                 else {
                     Class8489.field34836.error(format, (Throwable)ex);
                 }
-                if (Class8571.method29013()) {
+                if (Config.method29013()) {
                     if (Class9419.method35020("ShowGlErrorDebug", 10000L)) {
-                        String method5281 = Class8571.method29017(n3);
-                        if (n3 == 0 || Class8571.equals(method5281, "Unknown")) {
+                        String method5281 = Config.method29017(n3);
+                        if (n3 == 0 || Config.equals(method5281, "Unknown")) {
                             method5281 = method5280;
                         }
                         Class869.method5277().field4647.method3807().method3761(new StringTextComponent(Class8822.method30773("of.message.openglError", n3, method5281)));

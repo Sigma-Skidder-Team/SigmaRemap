@@ -27,7 +27,7 @@ public class Class8039
     }
     
     private static Class7909<EntityType<?>> method26372(final String s) {
-        return new Class7908(new Class1932(s));
+        return new Class7908(new ResourceLocation(s));
     }
     
     static {

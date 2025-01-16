@@ -8,7 +8,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4741 extends Class4712<Class838, Class5845<Class838>>
 {
-    private static final Class1932 field20357;
+    private static final ResourceLocation field20357;
     private int field20358;
     private final Class5893<Class838> field20359;
     private final Class5883<Class838> field20360;
@@ -22,7 +22,7 @@ public class Class4741 extends Class4712<Class838, Class5845<Class838>>
         this.field20358 = 3;
     }
     
-    public Class1932 method14066(final Class838 class838) {
+    public ResourceLocation method14066(final Class838 class838) {
         return Class4741.field20357;
     }
     
@@ -52,6 +52,6 @@ public class Class4741 extends Class4712<Class838, Class5845<Class838>>
     }
     
     static {
-        field20357 = new Class1932("textures/entity/fish/pufferfish.png");
+        field20357 = new ResourceLocation("textures/entity/fish/pufferfish.png");
     }
 }

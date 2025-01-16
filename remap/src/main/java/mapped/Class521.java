@@ -8,12 +8,12 @@ import net.minecraft.util.text.ITextComponent;
 
 public abstract class Class521<T extends Class3429> extends Class516<T> implements Class519
 {
-    private static final Class1932 field3115;
+    private static final ResourceLocation field3115;
     public final Class582 field3116;
     private boolean field3117;
-    private final Class1932 field3118;
+    private final ResourceLocation field3118;
     
-    public Class521(final T t, final Class582 field3116, final Class464 class464, final ITextComponent class465, final Class1932 field3117) {
+    public Class521(final T t, final Class582 field3116, final Class464 class464, final ITextComponent class465, final ResourceLocation field3117) {
         super(t, class464, class465);
         this.field3116 = field3116;
         this.field3118 = field3117;
@@ -134,6 +134,6 @@ public abstract class Class521<T extends Class3429> extends Class516<T> implemen
     }
     
     static {
-        field3115 = new Class1932("textures/gui/recipe_button.png");
+        field3115 = new ResourceLocation("textures/gui/recipe_button.png");
     }
 }

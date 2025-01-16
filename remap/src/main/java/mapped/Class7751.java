@@ -18,7 +18,7 @@ public class Class7751 extends Class7750
     
     @Override
     public boolean method24739(final BlockPos class354) {
-        return !this.field31658.method6701(class354.method1139()).method21706();
+        return !this.field31658.getBlockState(class354.method1139()).method21706();
     }
     
     @Override

@@ -23,7 +23,7 @@ public class Class7074 extends Class7075
         super(class1847, class1848, class1849, class1850, class1851);
         this.field27549 = true;
         this.field27548 = class1851.method21447().method1149(class1851.method21448());
-        this.field27549 = class1847.method6701(class1851.method21447()).method21750(this);
+        this.field27549 = class1847.getBlockState(class1851.method21447()).method21750(this);
     }
     
     public static Class7074 method21647(final Class7074 class7074, final BlockPos class7075, final Direction class7076) {
@@ -36,7 +36,7 @@ public class Class7074 extends Class7075
     }
     
     public boolean method21640() {
-        return this.field27549 || this.method21654().method6701(this.method21639()).method21750(this);
+        return this.field27549 || this.method21654().getBlockState(this.method21639()).method21750(this);
     }
     
     public boolean method21641() {

@@ -287,7 +287,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         final Class8213 method6918 = class8646.method6918();
         this.method1434(method6918);
         this.field2354 = new Class8965(method6918);
-        class8646.method6787().method34811(class8643);
+        class8646.getWorldBorder().method34811(class8643);
         final Class1849 method6919 = this.method1481(DimensionType.field2223);
         if (!class8643.method29576()) {
             try {
@@ -426,7 +426,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         }
         final Class1849 method1481 = this.method1481(DimensionType.field2223);
         final WorldInfo method1482 = method1481.method6764();
-        method1481.method6787().method34810(method1482);
+        method1481.getWorldBorder().method34810(method1482);
         method1482.method29611(this.method1584().method28265());
         method1481.method6917().method29390(method1482, this.method1537().method20575());
         return b4;
@@ -517,13 +517,13 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
                                 this.field2300.method15305().method19596();
                             }
                             this.field2300.method15295();
-                            this.field2300.method15297("tick");
+                            this.field2300.startSection("tick");
                             this.method1469(this::method1457);
                             this.field2300.method15300("nextTickWait");
                             this.field2345 = true;
                             this.field2344 = Math.max(Class8349.method27837() + 50L, this.field2343);
                             this.method1458();
-                            this.field2300.method15299();
+                            this.field2300.endSection();
                             this.field2300.method15296();
                             this.field2332 = true;
                         }
@@ -689,13 +689,13 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         }
         if (this.field2312 % 6000 == 0) {
             MinecraftServer.field2292.debug("Autosave started");
-            this.field2300.method15297("save");
+            this.field2300.startSection("save");
             this.field2309.method20600();
             this.method1451(true, false, false);
-            this.field2300.method15299();
+            this.field2300.endSection();
             MinecraftServer.field2292.debug("Autosave finished");
         }
-        this.field2300.method15297("snooper");
+        this.field2300.startSection("snooper");
         if (!this.field2297.method32488()) {
             if (this.field2312 > 100) {
                 this.field2297.method32484();
@@ -704,30 +704,30 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         if (this.field2312 % 6000 == 0) {
             this.field2297.method32485();
         }
-        this.field2300.method15299();
-        this.field2300.method15297("tallying");
+        this.field2300.endSection();
+        this.field2300.startSection("tallying");
         final long[] field2323 = this.field2323;
         final int n = this.field2312 % 100;
         final long n2 = Class8349.method27838() - method27838;
         field2323[n] = n2;
         this.field2364 = this.field2364 * 0.8f + n2 / 1000000.0f * 0.19999999f;
         this.field2360.method35167(Class8349.method27838() - method27838);
-        this.field2300.method15299();
+        this.field2300.endSection();
     }
     
     public void method1470(final BooleanSupplier booleanSupplier) {
-        this.field2300.method15297("commandFunctions");
+        this.field2300.startSection("commandFunctions");
         this.method1567().method6507();
         this.field2300.method15300("levels");
         for (final Class1849 class1849 : this.method1482()) {
             if (class1849.dimension.getType() == DimensionType.field2223 || this.method1471()) {
-                this.field2300.method15298(() -> class1850.method6764().method29549() + " " + Class90.field226.method503(class1850.field10063.method20487()));
+                this.field2300.method15298(() -> class1850.method6764().method29549() + " " + Registry.field226.getKey(class1850.field10063.method20487()));
                 if (this.field2312 % 20 == 0) {
-                    this.field2300.method15297("timeSync");
+                    this.field2300.startSection("timeSync");
                     this.field2309.method20587(new Class4345(class1849.method6754(), class1849.method6755(), class1849.method6765().method31216(Class8878.field37324)), class1849.dimension.getType());
-                    this.field2300.method15299();
+                    this.field2300.endSection();
                 }
-                this.field2300.method15297("tick");
+                this.field2300.startSection("tick");
                 try {
                     class1849.method6862(booleanSupplier);
                 }
@@ -736,8 +736,8 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
                     class1849.method6779(method24421);
                     throw new Class2365(method24421);
                 }
-                this.field2300.method15299();
-                this.field2300.method15299();
+                this.field2300.endSection();
+                this.field2300.endSection();
             }
         }
         this.field2300.method15300("connection");
@@ -751,7 +751,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         for (int i = 0; i < this.field2299.size(); ++i) {
             this.field2299.get(i).run();
         }
-        this.field2300.method15299();
+        this.field2300.endSection();
     }
     
     public boolean method1471() {
@@ -1444,7 +1444,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
     public void method1593(final Path path) throws IOException {
         final Path resolve = path.resolve("levels");
         for (final Map.Entry<DimensionType, V> entry : this.field2308.entrySet()) {
-            final Class1932 method1276 = DimensionType.method1276(entry.getKey());
+            final ResourceLocation method1276 = DimensionType.method1276(entry.getKey());
             final Path resolve2 = resolve.resolve(method1276.method7798()).resolve(method1276.method7797());
             Files.createDirectories(resolve2, (FileAttribute<?>[])new FileAttribute[0]);
             ((Class1849)entry.getValue()).method6930(resolve2);
@@ -1507,7 +1507,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
     }
     
     private void method1599() {
-        Class3833.field17391.forEach(BlockState::method21695);
+        Block.field17391.forEach(BlockState::method21695);
     }
     
     static {

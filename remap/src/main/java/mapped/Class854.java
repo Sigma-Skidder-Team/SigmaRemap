@@ -51,7 +51,7 @@ public class Class854 extends Class853
     }
     
     @Override
-    public Class1932 method4161() {
+    public ResourceLocation method4161() {
         return this.method5131() ? Class9020.field38063 : this.getType().method23368();
     }
     

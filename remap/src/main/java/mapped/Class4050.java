@@ -30,7 +30,7 @@ public class Class4050 extends Item
         final Class7074 class7076 = new Class7074(class7075);
         final BlockPos method21655 = class7076.method21639();
         final BlockPos method21656 = method21655.method1137();
-        if (!class7076.method21640() || !method21654.method6701(method21656).method21750(class7076)) {
+        if (!class7076.method21640() || !method21654.getBlockState(method21656).method21750(class7076)) {
             return Class2201.field13403;
         }
         final double n = method21655.getX();

@@ -22,7 +22,7 @@ import org.lwjgl.opengl.GL30;
 
 public class Class7778
 {
-    private static final Class1932 field31852;
+    private static final ResourceLocation field31852;
     
     public static void method24943(final Class8902 class8902, final double n, final double n2, final double n3) {
         class8902.method31349(n, n2, n3);
@@ -266,7 +266,7 @@ public class Class7778
                             }
                         }
                         Class9216.method33846(class1665);
-                        final BlockPos method5286 = class1665.method2193();
+                        final BlockPos method5286 = class1665.getPos();
                         class1662.method22567();
                         class1662.method22564(method5286.getX() - method5279, method5286.getY() - method5280, method5286.getZ() - method5281);
                         Class9550.field41126.method35726(class1665, n2, class1662, method5283);
@@ -590,6 +590,6 @@ public class Class7778
     }
     
     static {
-        field31852 = new Class1932("textures/entity/end_portal.png");
+        field31852 = new ResourceLocation("textures/entity/end_portal.png");
     }
 }

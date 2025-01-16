@@ -35,7 +35,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.glfw.GLFW;
 import org.apache.logging.log4j.Logger;
 
-public class Class8571
+public class Config
 {
     public static final String field36010 = "OptiFine";
     public static final String field36011 = "1.15.2";
@@ -69,10 +69,10 @@ public class Class8571
     public static final boolean field36039;
     private static String field36040;
     private static int field36041;
-    public static final Class1932 field36042;
+    public static final ResourceLocation field36042;
     private static Class1774 field36043;
     
-    private Class8571() {
+    private Config() {
     }
     
     public static String method28814() {
@@ -96,25 +96,25 @@ public class Class8571
     }
     
     public static void method28816(final Class5760 field36027) {
-        if (Class8571.field36027 == null) {
-            Class8571.field36027 = field36027;
+        if (Config.field36027 == null) {
+            Config.field36027 = field36027;
             method28970();
             Class7667.method24301("optifine.ForgeSplashCompatible", Boolean.TRUE);
-            Class8571.field36031 = Class8571.field36027.field23487;
+            Config.field36031 = Config.field36027.field23487;
         }
     }
     
     public static void method28817() {
         method28818();
-        Class8571.field36030 = Thread.currentThread();
+        Config.field36030 = Thread.currentThread();
         method28832();
         Class9216.method33746(Class869.method5277());
     }
     
     public static void method28818() {
-        if (!Class8571.field36029) {
+        if (!Config.field36029) {
             if (Class869.method5277().method5332() != null) {
-                Class8571.field36029 = true;
+                Config.field36029 = true;
                 method28819();
                 method28835();
             }
@@ -129,21 +129,21 @@ public class Class8571
         method28852("Java: " + System.getProperty("java.version") + ", " + System.getProperty("java.vendor"));
         method28852("VM: " + System.getProperty("java.vm.name") + " (" + System.getProperty("java.vm.info") + "), " + System.getProperty("java.vm.vendor"));
         method28852("LWJGL: " + GLFW.glfwGetVersionString());
-        Class8571.field36018 = GL11.glGetString(7938);
-        Class8571.field36019 = GL11.glGetString(7937);
-        Class8571.field36020 = GL11.glGetString(7936);
-        method28852("OpenGL: " + Class8571.field36019 + ", version " + Class8571.field36018 + ", " + Class8571.field36020);
+        Config.field36018 = GL11.glGetString(7938);
+        Config.field36019 = GL11.glGetString(7937);
+        Config.field36020 = GL11.glGetString(7936);
+        method28852("OpenGL: " + Config.field36019 + ", version " + Config.field36018 + ", " + Config.field36020);
         method28852("OpenGL Version: " + method28825());
         final GLCapabilities capabilities = GL.getCapabilities();
         if (!capabilities.OpenGL12) {
             method28852("OpenGL Mipmap levels: Not available (GL12.GL_TEXTURE_MAX_LEVEL)");
         }
-        Class8571.field36025 = capabilities.GL_NV_fog_distance;
-        if (!Class8571.field36025) {
+        Config.field36025 = capabilities.GL_NV_fog_distance;
+        if (!Config.field36025) {
             method28852("OpenGL Fancy fog: Not available (GL_NV_fog_distance)");
         }
-        Class8571.field36026 = capabilities.GL_ARB_occlusion_query;
-        if (!Class8571.field36026) {
+        Config.field36026 = capabilities.GL_ARB_occlusion_query;
+        if (!Config.field36026) {
             method28852("OpenGL Occlussion culling: Not available (GL_ARB_occlusion_query)");
         }
         final int method31846 = Class8969.method31846();
@@ -151,37 +151,37 @@ public class Class8571
     }
     
     public static String method28820() {
-        if (Class8571.field36015 == null) {
+        if (Config.field36015 == null) {
             try {
                 final InputStream method28821 = method28821("/buildof.txt");
                 if (method28821 == null) {
                     return null;
                 }
-                Class8571.field36015 = method28957(method28821)[0];
+                Config.field36015 = method28957(method28821)[0];
             }
             catch (final Exception ex) {
-                method28848("" + ex.getClass().getName() + ": " + ex.getMessage());
-                Class8571.field36015 = "";
+                warn("" + ex.getClass().getName() + ": " + ex.getMessage());
+                Config.field36015 = "";
             }
         }
-        return Class8571.field36015;
+        return Config.field36015;
     }
     
     public static InputStream method28821(final String name) {
         final InputStream method24302 = Class7667.method24302(name);
-        return (method24302 == null) ? Class8571.class.getResourceAsStream(name) : method24302;
+        return (method24302 == null) ? Config.class.getResourceAsStream(name) : method24302;
     }
     
     public static boolean method28822() {
-        return Class8571.field36025;
+        return Config.field36025;
     }
     
     public static boolean method28823() {
-        return Class8571.field36026;
+        return Config.field36026;
     }
     
     public static int method28824() {
-        if (Class8571.field36024 < 0) {
+        if (Config.field36024 < 0) {
             final String[] method28937 = method28937("1.15.2", ".");
             int field36024 = 0;
             if (method28937.length > 0) {
@@ -193,9 +193,9 @@ public class Class8571
             if (method28937.length > 2) {
                 field36024 += 1 * method28933(method28937[2], 0);
             }
-            Class8571.field36024 = field36024;
+            Config.field36024 = field36024;
         }
-        return Class8571.field36024;
+        return Config.field36024;
     }
     
     public static String method28825() {
@@ -254,26 +254,26 @@ public class Class8571
     }
     
     public static Class6435 method28827() {
-        if (Class8571.field36022 == null) {
-            Class8571.field36022 = method28829(GL11.glGetString(7938), null);
-            if (Class8571.field36022 == null) {
-                Class8571.field36022 = method28826();
+        if (Config.field36022 == null) {
+            Config.field36022 = method28829(GL11.glGetString(7938), null);
+            if (Config.field36022 == null) {
+                Config.field36022 = method28826();
             }
-            if (Class8571.field36022 == null) {
-                Class8571.field36022 = new Class6435(1, 0);
+            if (Config.field36022 == null) {
+                Config.field36022 = new Class6435(1, 0);
             }
         }
-        return Class8571.field36022;
+        return Config.field36022;
     }
     
     public static Class6435 method28828() {
-        if (Class8571.field36023 == null) {
-            Class8571.field36023 = method28829(GL11.glGetString(35724), null);
-            if (Class8571.field36023 == null) {
-                Class8571.field36023 = new Class6435(1, 10);
+        if (Config.field36023 == null) {
+            Config.field36023 = method28829(GL11.glGetString(35724), null);
+            if (Config.field36023 == null) {
+                Config.field36023 = new Class6435(1, 10);
             }
         }
-        return Class8571.field36023;
+        return Config.field36023;
     }
     
     public static Class6435 method28829(final String input, final Class6435 class6435) {
@@ -294,10 +294,10 @@ public class Class8571
     }
     
     public static String[] method28830() {
-        if (Class8571.field36021 == null) {
-            Class8571.field36021 = method28831();
+        if (Config.field36021 == null) {
+            Config.field36021 = method28831();
         }
-        return Class8571.field36021;
+        return Config.field36021;
     }
     
     private static String[] method28831() {
@@ -328,15 +328,15 @@ public class Class8571
     public static void method28832() {
         method28970();
         if (!method28971()) {
-            Class8571.field36030.setPriority(10);
+            Config.field36030.setPriority(10);
             method28833("Server thread", 5);
         }
         else if (!method28972()) {
-            Class8571.field36030.setPriority(5);
+            Config.field36030.setPriority(5);
             method28833("Server thread", 5);
         }
         else {
-            Class8571.field36030.setPriority(10);
+            Config.field36030.setPriority(10);
             method28833("Server thread", 1);
         }
     }
@@ -357,12 +357,12 @@ public class Class8571
             }
         }
         catch (final Throwable t) {
-            method28848(t.getClass().getName() + ": " + t.getMessage());
+            warn(t.getClass().getName() + ": " + t.getMessage());
         }
     }
     
     public static boolean method28834() {
-        return Thread.currentThread() == Class8571.field36030;
+        return Thread.currentThread() == Config.field36030;
     }
     
     private static void method28835() {
@@ -370,15 +370,15 @@ public class Class8571
     }
     
     public static boolean method28836() {
-        return Class8571.field36027.field23405 > 0;
+        return Config.field36027.field23405 > 0;
     }
     
     public static int method28837() {
-        return Class8571.field36027.field23405;
+        return Config.field36027.field23405;
     }
     
     public static int method28838() {
-        switch (Class8571.field36027.field23479) {
+        switch (Config.field36027.field23479) {
             case 0: {
                 return 9986;
             }
@@ -404,57 +404,57 @@ public class Class8571
     }
     
     public static boolean method28839() {
-        return method28840() > Class8571.field36037 + 1.0E-5f;
+        return method28840() > Config.field36037 + 1.0E-5f;
     }
     
     public static float method28840() {
-        return Class8571.field36037;
+        return Config.field36037;
     }
     
     public static boolean method28841() {
-        return method28822() && Class8571.field36027.field23477 == 2;
+        return method28822() && Config.field36027.field23477 == 2;
     }
     
     public static boolean method28842() {
-        return Class8571.field36027.field23477 == 1;
+        return Config.field36027.field23477 == 1;
     }
     
     public static boolean method28843() {
-        return Class8571.field36027.field23477 == 3;
+        return Config.field36027.field23477 == 3;
     }
     
     public static boolean method28844() {
-        return Class8571.field36027.field23477 != 3;
+        return Config.field36027.field23477 != 3;
     }
     
     public static float method28845() {
-        return Class8571.field36027.field23478;
+        return Config.field36027.field23478;
     }
     
     public static void method28846(final String str) {
-        if (Class8571.field36039) {
-            Class8571.field36038.info("[OptiFine] " + str);
+        if (Config.field36039) {
+            Config.field36038.info("[OptiFine] " + str);
         }
     }
     
     public static void method28847(final String str) {
-        Class8571.field36038.info("[OptiFine] " + str);
+        Config.field36038.info("[OptiFine] " + str);
     }
     
-    public static void method28848(final String str) {
-        Class8571.field36038.warn("[OptiFine] " + str);
+    public static void warn(final String str) {
+        Config.field36038.warn("[OptiFine] " + str);
     }
     
     public static void method28849(final String str, final Throwable t) {
-        Class8571.field36038.warn("[OptiFine] " + str, t);
+        Config.field36038.warn("[OptiFine] " + str, t);
     }
     
     public static void method28850(final String str) {
-        Class8571.field36038.error("[OptiFine] " + str);
+        Config.field36038.error("[OptiFine] " + str);
     }
     
     public static void method28851(final String str, final Throwable t) {
-        Class8571.field36038.error("[OptiFine] " + str, t);
+        Config.field36038.error("[OptiFine] " + str, t);
     }
     
     public static void method28852(final String s) {
@@ -462,53 +462,53 @@ public class Class8571
     }
     
     public static int method28853() {
-        return Class8571.field36027.field23504;
+        return Config.field36027.field23504;
     }
     
     public static boolean method28854() {
-        return Class8571.field36027.field23505;
+        return Config.field36027.field23505;
     }
     
     public static boolean method28855() {
-        if (Class8571.field36027.field23492 != 0) {
-            return Class8571.field36027.field23492 == 2;
+        if (Config.field36027.field23492 != 0) {
+            return Config.field36027.field23492 == 2;
         }
-        return Class8571.field36027.field23385;
+        return Config.field36027.field23385;
     }
     
     public static boolean method28856() {
-        return Class8571.field36027.field23492 == 3;
+        return Config.field36027.field23492 == 3;
     }
     
     public static boolean method28857() {
-        if (Class8571.field36027.field23489 != 0) {
-            return Class8571.field36027.field23489 == 2;
+        if (Config.field36027.field23489 != 0) {
+            return Config.field36027.field23489 == 2;
         }
         if (method28955() && !Class9216.field39339.method21673()) {
             return Class9216.field39339.method21675();
         }
-        if (Class8571.field36034 == 0) {
-            return Class8571.field36027.field23385;
+        if (Config.field36034 == 0) {
+            return Config.field36027.field23385;
         }
-        return Class8571.field36034 == 2;
+        return Config.field36034 == 2;
     }
     
     public static boolean method28858() {
-        if (Class8571.field36027.field23489 != 0) {
-            return Class8571.field36027.field23489 == 3;
+        if (Config.field36027.field23489 != 0) {
+            return Config.field36027.field23489 == 3;
         }
         if (method28955() && !Class9216.field39339.method21673()) {
             return Class9216.field39339.method21676();
         }
-        return Class8571.field36034 != 0 && Class8571.field36034 == 3;
+        return Config.field36034 != 0 && Config.field36034 == 3;
     }
     
     public static void method28859() {
-        Class8571.field36034 = 0;
+        Config.field36034 = 0;
         final Class6582 method28896 = method28896();
         if (method28896 != null) {
             try {
-                final InputStream method28897 = method28896.method19933(new Class1932("optifine/color.properties")).method5887();
+                final InputStream method28897 = method28896.method19933(new ResourceLocation("optifine/color.properties")).method5887();
                 if (method28897 == null) {
                     return;
                 }
@@ -522,13 +522,13 @@ public class Class8571
                 method28847("Texture pack clouds: " + property);
                 final String lowerCase = property.toLowerCase();
                 if (lowerCase.equals("fast")) {
-                    Class8571.field36034 = 1;
+                    Config.field36034 = 1;
                 }
                 if (lowerCase.equals("fancy")) {
-                    Class8571.field36034 = 2;
+                    Config.field36034 = 2;
                 }
                 if (lowerCase.equals("off")) {
-                    Class8571.field36034 = 3;
+                    Config.field36034 = 3;
                 }
             }
             catch (final Exception ex) {}
@@ -536,32 +536,32 @@ public class Class8571
     }
     
     public static Class1790 method28860() {
-        return Class8571.field36028.method5307().field9956;
+        return Config.field36028.method5307().field9956;
     }
     
     public static boolean method28861() {
-        if (Class8571.field36027.field23491 != 0) {
-            return Class8571.field36027.field23491 != 1;
+        if (Config.field36027.field23491 != 0) {
+            return Config.field36027.field23491 != 1;
         }
-        return Class8571.field36027.field23385;
+        return Config.field36027.field23385;
     }
     
     public static boolean method28862() {
-        return Class8571.field36027.field23491 == 4;
+        return Config.field36027.field23491 == 4;
     }
     
     public static boolean method28863() {
-        if (Class8571.field36027.field23491 != 0) {
-            return Class8571.field36027.field23491 == 4;
+        if (Config.field36027.field23491 != 0) {
+            return Config.field36027.field23491 == 4;
         }
-        return !Class8571.field36027.field23385;
+        return !Config.field36027.field23385;
     }
     
     public static boolean method28864() {
-        if (Class8571.field36027.field23493 != 0) {
-            return Class8571.field36027.field23493 == 2;
+        if (Config.field36027.field23493 != 0) {
+            return Config.field36027.field23493 == 2;
         }
-        return Class8571.field36027.field23385;
+        return Config.field36027.field23385;
     }
     
     public static int method28865(final int n, final int n2, final int n3) {
@@ -593,71 +593,71 @@ public class Class8571
     }
     
     public static boolean method28869() {
-        return Class8571.field36027.field23530 != 2;
+        return Config.field36027.field23530 != 2;
     }
     
     public static boolean method28870() {
-        return Class8571.field36027.field23530 == 1;
+        return Config.field36027.field23530 == 1;
     }
     
     public static boolean method28871() {
-        return Class8571.field36027.field23533;
+        return Config.field36027.field23533;
     }
     
     public static boolean method28872() {
-        return Class8571.field36027.field23531 != 2;
+        return Config.field36027.field23531 != 2;
     }
     
     public static boolean method28873() {
-        return Class8571.field36027.field23531 == 1;
+        return Config.field36027.field23531 == 1;
     }
     
     public static boolean method28874() {
-        return Class8571.field36027.field23532;
+        return Config.field36027.field23532;
     }
     
     public static boolean method28875() {
-        return Class8571.field36027.field23534;
+        return Config.field36027.field23534;
     }
     
     public static boolean method28876() {
-        return Class8571.field36027.field23535;
+        return Config.field36027.field23535;
     }
     
     public static boolean method28877() {
-        return Class8571.field36027.field23536;
+        return Config.field36027.field23536;
     }
     
     public static boolean method28878() {
-        return Class8571.field36027.field23537;
+        return Config.field36027.field23537;
     }
     
     public static boolean method28879() {
-        return Class8571.field36027.field23538;
+        return Config.field36027.field23538;
     }
     
     public static boolean method28880() {
-        return Class8571.field36027.field23539;
+        return Config.field36027.field23539;
     }
     
     public static boolean method28881() {
-        return Class8571.field36027.field23540;
+        return Config.field36027.field23540;
     }
     
     public static boolean method28882() {
-        return Class8571.field36027.field23541;
+        return Config.field36027.field23541;
     }
     
     public static boolean method28883() {
-        return Class8571.field36027.field23542;
+        return Config.field36027.field23542;
     }
     
     public static boolean method28884() {
-        return Class8571.field36027.field23543;
+        return Config.field36027.field23543;
     }
     
     public static float method28885() {
-        return (method28955() && Class9216.field39374 >= 0.0f) ? Class9216.field39374 : ((float)Class8571.field36027.field23486);
+        return (method28955() && Class9216.field39374 >= 0.0f) ? Class9216.field39374 : ((float) Config.field36027.field23486);
     }
     
     public static String method28886(final List list) {
@@ -737,35 +737,35 @@ public class Class8571
     }
     
     public static Class869 method28894() {
-        return Class8571.field36028;
+        return Config.field36028;
     }
     
     public static Class1663 method28895() {
-        return Class8571.field36028.method5290();
+        return Config.field36028.method5290();
     }
     
     public static Class6582 method28896() {
-        return Class8571.field36028.method5291();
+        return Config.field36028.method5291();
     }
     
-    public static InputStream method28897(final Class1932 class1932) throws IOException {
-        return method28898(Class8571.field36028.method5291(), class1932);
+    public static InputStream method28897(final ResourceLocation class1932) throws IOException {
+        return method28898(Config.field36028.method5291(), class1932);
     }
     
-    public static InputStream method28898(final Class6582 class6582, final Class1932 class6583) throws IOException {
+    public static InputStream method28898(final Class6582 class6582, final ResourceLocation class6583) throws IOException {
         final Class1671 method19933 = class6582.method19933(class6583);
         return (method19933 != null) ? method19933.method5887() : null;
     }
     
-    public static Class1671 method28899(final Class1932 class1932) throws IOException {
-        return Class8571.field36028.method5291().method19933(class1932);
+    public static Class1671 method28899(final ResourceLocation class1932) throws IOException {
+        return Config.field36028.method5291().method19933(class1932);
     }
     
-    public static boolean method28900(final Class1932 class1932) {
+    public static boolean method28900(final ResourceLocation class1932) {
         return class1932 != null && method28907(class1932) != null;
     }
     
-    public static boolean method28901(final Class6582 class6582, final Class1932 class6583) {
+    public static boolean method28901(final Class6582 class6582, final ResourceLocation class6583) {
         try {
             return class6582.method19933(class6583) != null;
         }
@@ -774,12 +774,12 @@ public class Class8571
         }
     }
     
-    public static boolean method28902(final Class1727 class1727, final Class1932 class1728) {
+    public static boolean method28902(final Class1727 class1727, final ResourceLocation class1728) {
         return class1727 != null && class1728 != null && class1727.method6099(Class346.field2137, class1728);
     }
     
     public static Class1727[] method28903() {
-        final Collection<Class1922> method7611 = Class8571.field36028.method5292().method7611();
+        final Collection<Class1922> method7611 = Config.field36028.method5292().method7611();
         final ArrayList list = new ArrayList();
         final Iterator<Class1922> iterator = method7611.iterator();
         while (iterator.hasNext()) {
@@ -793,7 +793,7 @@ public class Class8571
     }
     
     public static String method28904() {
-        if (Class8571.field36028.method5291() == null) {
+        if (Config.field36028.method5291() == null) {
             return "";
         }
         final Class1727[] method28903 = method28903();
@@ -808,15 +808,15 @@ public class Class8571
     }
     
     public static Class1728 method28905() {
-        return Class8571.field36028.method5293().method25740();
+        return Config.field36028.method5293().method25740();
     }
     
-    public static boolean method28906(final Class1932 class1932) {
+    public static boolean method28906(final ResourceLocation class1932) {
         return method28907(class1932) == method28905();
     }
     
-    public static Class1727 method28907(final Class1932 class1932) {
-        final List list = (List)Class8571.field36028.method5292().method7611();
+    public static Class1727 method28907(final ResourceLocation class1932) {
+        final List list = (List) Config.field36028.method5292().method7611();
         for (int i = list.size() - 1; i >= 0; --i) {
             final Class1727 method7620 = list.get(i).method7620();
             if (method7620.method6099(Class346.field2137, class1932)) {
@@ -827,31 +827,31 @@ public class Class8571
     }
     
     public static Class1656 method28908() {
-        return Class8571.field36028.field4636;
+        return Config.field36028.field4636;
     }
     
     public static Class1660 method28909() {
-        return Class8571.field36028.field4644;
+        return Config.field36028.field4644;
     }
     
     public static boolean method28910() {
-        return Class8571.field36027.field23494 != 3;
+        return Config.field36027.field23494 != 3;
     }
     
     public static boolean method28911() {
-        return Class8571.field36027.field23494 == 2;
+        return Config.field36027.field23494 == 2;
     }
     
     public static boolean method28912() {
-        return Class8571.field36027.field23499;
+        return Config.field36027.field23499;
     }
     
     public static boolean method28913() {
-        return Class8571.field36027.field23500;
+        return Config.field36027.field23500;
     }
     
     public static boolean method28914() {
-        return Class8571.field36027.field23502;
+        return Config.field36027.field23502;
     }
     
     public static boolean method28915() {
@@ -866,14 +866,14 @@ public class Class8571
         if (method28955() && !Class9216.method33755()) {
             return false;
         }
-        if (Class8571.field36027.field23503 != 0) {
-            return Class8571.field36027.field23503 == 2;
+        if (Config.field36027.field23503 != 0) {
+            return Config.field36027.field23503 == 2;
         }
-        return Class8571.field36027.field23385;
+        return Config.field36027.field23385;
     }
     
     public static boolean method28918() {
-        return Class8571.field36027.field23501;
+        return Config.field36027.field23501;
     }
     
     public static void method28919(final long millis) {
@@ -886,15 +886,15 @@ public class Class8571
     }
     
     public static boolean method28920() {
-        return Class8571.field36027.field23506 == 1;
+        return Config.field36027.field23506 == 1;
     }
     
     public static boolean method28921() {
-        return Class8571.field36027.field23506 == 0;
+        return Config.field36027.field23506 == 0;
     }
     
     public static boolean method28922() {
-        return Class8571.field36027.field23506 == 2;
+        return Config.field36027.field23506 == 2;
     }
     
     public static int method28923() {
@@ -930,11 +930,11 @@ public class Class8571
     }
     
     public static boolean method28931() {
-        return Class8571.field36027.field23544;
+        return Config.field36027.field23544;
     }
     
     public static boolean method28932() {
-        return Class8571.field36027.field23507;
+        return Config.field36027.field23507;
     }
     
     public static int method28933(String trim, final int n) {
@@ -1002,19 +1002,19 @@ public class Class8571
     }
     
     public static boolean method28938() {
-        return Class8571.field36027.field23545;
+        return Config.field36027.field23545;
     }
     
     public static boolean method28939() {
-        return Class8571.field36027.field23546;
+        return Config.field36027.field23546;
     }
     
     public static boolean method28940() {
-        return Class8571.field36027.field23508;
+        return Config.field36027.field23508;
     }
     
     public static boolean method28941() {
-        return Class8571.field36027.field23509;
+        return Config.field36027.field23509;
     }
     
     public static void method28942(final String s) {
@@ -1025,7 +1025,7 @@ public class Class8571
                 method28850(String.format("OpenGL error: %s (%s), at: %s", method31662, method31663, s));
                 if (method29013()) {
                     if (Class9419.method35020("ShowGlError", 10000L)) {
-                        Class8571.field36028.field4647.method3807().method3761(new StringTextComponent(Class8822.method30773("of.message.openglError", method31662, method31663)));
+                        Config.field36028.field4647.method3807().method3761(new StringTextComponent(Class8822.method30773("of.message.openglError", method31662, method31663)));
                     }
                 }
             }
@@ -1033,54 +1033,54 @@ public class Class8571
     }
     
     public static boolean method28943() {
-        return Class8571.field36027.field23410 > 0;
+        return Config.field36027.field23410 > 0;
     }
     
     public static int method28944() {
-        return Class8571.field36027.field23410;
+        return Config.field36027.field23410;
     }
     
     public static boolean method28945() {
-        return Class8571.field36027.field23511;
+        return Config.field36027.field23511;
     }
     
     public static boolean method28946() {
-        return Class8571.field36027.field23512;
+        return Config.field36027.field23512;
     }
     
     public static boolean method28947() {
-        return Class8571.field36027.field23510;
+        return Config.field36027.field23510;
     }
     
     public static boolean method28948() {
-        return Class8571.field36027.field23513;
+        return Config.field36027.field23513;
     }
     
     public static boolean method28949() {
-        return Class8571.field36027.field23514 != 3;
+        return Config.field36027.field23514 != 3;
     }
     
     public static boolean method28950() {
-        return Class8571.field36027.field23516;
+        return Config.field36027.field23516;
     }
     
     public static boolean method28951() {
-        return Class8571.field36027.field23517;
+        return Config.field36027.field23517;
     }
     
     public static boolean method28952() {
-        return Class8571.field36027.field23514 == 2;
+        return Config.field36027.field23514 == 2;
     }
     
     public static boolean method28953() {
-        return Class8571.field36027.field23519;
+        return Config.field36027.field23519;
     }
     
     public static boolean method28954() {
-        if (Class8571.field36027.field23520 != 0) {
-            return Class8571.field36027.field23520 == 2;
+        if (Config.field36027.field23520 != 0) {
+            return Config.field36027.field23520 == 2;
         }
-        return Class8571.field36027.field23385;
+        return Config.field36027.field23385;
     }
     
     public static boolean method28955() {
@@ -1141,15 +1141,15 @@ public class Class8571
     }
     
     public static Class5760 method28962() {
-        return Class8571.field36027;
+        return Config.field36027;
     }
     
     public static String method28963() {
-        return Class8571.field36016;
+        return Config.field36016;
     }
     
     public static void method28964(final String field36016) {
-        Class8571.field36016 = field36016;
+        Config.field36016 = field36016;
     }
     
     public static int method28965(final String s, final String s2) {
@@ -1203,11 +1203,11 @@ public class Class8571
     }
     
     public static int method28969() {
-        return Class8571.field36032;
+        return Config.field36032;
     }
     
     public static void method28970() {
-        Class8571.field36032 = Runtime.getRuntime().availableProcessors();
+        Config.field36032 = Runtime.getRuntime().availableProcessors();
     }
     
     public static boolean method28971() {
@@ -1215,24 +1215,24 @@ public class Class8571
     }
     
     public static boolean method28972() {
-        return Class8571.field36027.field23482;
+        return Config.field36027.field23482;
     }
     
     public static boolean method28973() {
-        return Class8571.field36027.field23483;
+        return Config.field36027.field23483;
     }
     
     public static boolean method28974() {
-        return Class8571.field36027.field23521;
+        return Config.field36027.field23521;
     }
     
     public static boolean method28975() {
-        return Class8571.field36027.field23522;
+        return Config.field36027.field23522;
     }
     
     public static int method28976() {
-        if (Class8571.field36027 != null) {
-            return Class8571.field36027.field23382;
+        if (Config.field36027 != null) {
+            return Config.field36027.field23382;
         }
         return 10;
     }
@@ -1340,19 +1340,19 @@ public class Class8571
     }
     
     public static boolean method28987() {
-        return Class8571.field36027.field23515;
+        return Config.field36027.field23515;
     }
     
     public static void method28988() {
-        Class8571.field36028.field4643.method6610("" + Class9570.method35833(Class9570.field41444, -1) + "/" + method28989() + " fps, C: " + Class8571.field36028.field4636.method5757() + ", E: " + Class8571.field36028.field4636.method5758() + "+" + Class8571.field36028.field4636.method5759() + ", U: " + method28990(Class8571.field36028.field4707), 2.0f, 2.0f, -2039584);
+        Config.field36028.field4643.method6610("" + Class9570.method35833(Class9570.field41444, -1) + "/" + method28989() + " fps, C: " + Config.field36028.field4636.method5757() + ", E: " + Config.field36028.field4636.method5758() + "+" + Config.field36028.field4636.method5759() + ", U: " + method28990(Config.field36028.field4707), 2.0f, 2.0f, -2039584);
     }
     
     public static int method28989() {
-        if (Class8571.field36028.field4707 == Class8571.field36040) {
-            return Class8571.field36041;
+        if (Config.field36028.field4707 == Config.field36040) {
+            return Config.field36041;
         }
-        Class8571.field36040 = Class8571.field36028.field4707;
-        final Class9462 method5310 = Class8571.field36028.method5310();
+        Config.field36040 = Config.field36028.field4707;
+        final Class9462 method5310 = Config.field36028.method5310();
         final long[] method5311 = method5310.method35172();
         final int method5312 = method5310.method35170();
         final int method5313 = method5310.method35169();
@@ -1370,9 +1370,9 @@ public class Class8571
                     n = n4;
                 }
             }
-            return Class8571.field36041 = (int)(1.0 / (n / 1.0E9));
+            return Config.field36041 = (int)(1.0 / (n / 1.0E9));
         }
-        return Class8571.field36041;
+        return Config.field36041;
     }
     
     private static String method28990(final String s) {
@@ -1400,11 +1400,11 @@ public class Class8571
     }
     
     public static boolean method28993() {
-        return Class8571.field36017;
+        return Config.field36017;
     }
     
     public static void method28994(final boolean field36017) {
-        Class8571.field36017 = field36017;
+        Config.field36017 = field36017;
     }
     
     public static boolean method28995() {
@@ -1412,7 +1412,7 @@ public class Class8571
     }
     
     public static void method28996(final String s, final String s2) {
-        Class8571.field36028.method5244(new Class715(Class8571.field36028.field4700, s, s2));
+        Config.field36028.method5244(new Class715(Config.field36028.field4700, s, s2));
     }
     
     public static int[] method28997(final int[] array, final int n) {
@@ -1439,19 +1439,19 @@ public class Class8571
     }
     
     public static void method29000(final Class1774 field36043) {
-        Class8571.field36043 = field36043;
+        Config.field36043 = field36043;
     }
     
     public static Class1774 method29001() {
-        return Class8571.field36043;
+        return Config.field36043;
     }
     
     public static boolean method29002() {
-        return Class8571.field36027.field23523 != 3;
+        return Config.field36027.field23523 != 3;
     }
     
     public static boolean method29003() {
-        return Class8571.field36027.field23523 == 1;
+        return Config.field36027.field23523 == 1;
     }
     
     public static boolean method29004() {
@@ -1459,15 +1459,15 @@ public class Class8571
     }
     
     public static boolean method29005() {
-        return Class8571.field36027.field23524;
+        return Config.field36027.field23524;
     }
     
     public static boolean method29006() {
-        return Class8571.field36027.field23525;
+        return Config.field36027.field23525;
     }
     
     public static int method29007() {
-        return Class8571.field36027.field23527;
+        return Config.field36027.field23527;
     }
     
     public static int[] method29008(final Integer[] array) {
@@ -1493,7 +1493,7 @@ public class Class8571
     }
     
     public static boolean method29011() {
-        return Class8571.field36027.field23481;
+        return Config.field36027.field23481;
     }
     
     public static boolean method29012(final URI uri) {
@@ -1503,7 +1503,7 @@ public class Class8571
     }
     
     public static boolean method29013() {
-        return Class8571.field36027.field23526;
+        return Config.field36027.field23526;
     }
     
     public static String method29014(final boolean[] array, final String str) {
@@ -1522,7 +1522,7 @@ public class Class8571
     }
     
     public static boolean method29015() {
-        return Class8571.field36028.method5285() != null && Class8571.field36028.method5283();
+        return Config.field36028.method5285() != null && Config.field36028.method5283();
     }
     
     public static IntBuffer method29016(final int n) {
@@ -1562,7 +1562,7 @@ public class Class8571
     }
     
     public static boolean method29018(final int n) {
-        return GLFW.glfwGetKey(Class8571.field36028.method5332().method7690(), n) == 1;
+        return GLFW.glfwGetKey(Config.field36028.method5332().method7690(), n) == 1;
     }
     
     public static boolean method29019(final Boolean b) {
@@ -1570,7 +1570,7 @@ public class Class8571
     }
     
     public static boolean method29020() {
-        return Class8571.field36028.field4701 != null && (!(Class8571.field36028.field4701 instanceof Class567) || !((Class567)Class8571.field36028.field4701).method3311());
+        return Config.field36028.field4701 != null && (!(Config.field36028.field4701 instanceof Class567) || !((Class567) Config.field36028.field4701).method3311());
     }
     
     public static boolean method29021() {
@@ -1578,33 +1578,33 @@ public class Class8571
     }
     
     static {
-        Class8571.field36015 = null;
-        Class8571.field36016 = null;
-        Class8571.field36017 = false;
-        Class8571.field36018 = null;
-        Class8571.field36019 = null;
-        Class8571.field36020 = null;
-        Class8571.field36021 = null;
-        Class8571.field36022 = null;
-        Class8571.field36023 = null;
-        Class8571.field36024 = -1;
-        Class8571.field36025 = false;
-        Class8571.field36026 = false;
-        Class8571.field36027 = null;
-        Class8571.field36028 = Class869.method5277();
-        Class8571.field36029 = false;
-        Class8571.field36030 = null;
-        Class8571.field36031 = 0;
-        Class8571.field36032 = 0;
-        Class8571.field36033 = false;
-        Class8571.field36034 = 0;
-        Class8571.field36035 = false;
-        Class8571.field36036 = false;
+        Config.field36015 = null;
+        Config.field36016 = null;
+        Config.field36017 = false;
+        Config.field36018 = null;
+        Config.field36019 = null;
+        Config.field36020 = null;
+        Config.field36021 = null;
+        Config.field36022 = null;
+        Config.field36023 = null;
+        Config.field36024 = -1;
+        Config.field36025 = false;
+        Config.field36026 = false;
+        Config.field36027 = null;
+        Config.field36028 = Class869.method5277();
+        Config.field36029 = false;
+        Config.field36030 = null;
+        Config.field36031 = 0;
+        Config.field36032 = 0;
+        Config.field36033 = false;
+        Config.field36034 = 0;
+        Config.field36035 = false;
+        Config.field36036 = false;
         field36037 = 0.1f;
         field36038 = LogManager.getLogger();
-        field36039 = System.getProperty("log.detail", Class8571.\u6c4f\uc3b9\u486b\u11e9\u3ead\u8b48[44]).equals(Class8571.\u6c4f\uc3b9\u486b\u11e9\u3ead\u8b48[43]);
-        Class8571.field36040 = null;
-        Class8571.field36041 = 0;
-        field36042 = new Class1932("textures/gui/title/mojang.png");
+        field36039 = System.getProperty("log.detail", Config.\u6c4f\uc3b9\u486b\u11e9\u3ead\u8b48[44]).equals(Config.\u6c4f\uc3b9\u486b\u11e9\u3ead\u8b48[43]);
+        Config.field36040 = null;
+        Config.field36041 = 0;
+        field36042 = new ResourceLocation("textures/gui/title/mojang.png");
     }
 }

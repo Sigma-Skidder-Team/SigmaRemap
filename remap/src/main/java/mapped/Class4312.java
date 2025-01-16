@@ -28,7 +28,7 @@ public class Class4312 implements IPacket<IClientPlayNetHandler>
         this.field19330 = new Class7859(class8654.readInt(), class8654.readInt());
         this.field19331 = new Class7870[class8654.readVarInt()];
         for (int i = 0; i < this.field19331.length; ++i) {
-            this.field19331[i] = new Class7870(this, class8654.readShort(), Class3833.field17391.method499(class8654.readVarInt()));
+            this.field19331[i] = new Class7870(this, class8654.readShort(), Block.field17391.method499(class8654.readVarInt()));
         }
     }
     
@@ -39,7 +39,7 @@ public class Class4312 implements IPacket<IClientPlayNetHandler>
         class8654.writeVarInt(this.field19331.length);
         for (final Class7870 class8655 : this.field19331) {
             class8654.writeShort(class8655.method25490());
-            class8654.writeVarInt(Class3833.method11774(class8655.method25491()));
+            class8654.writeVarInt(Block.method11774(class8655.method25491()));
         }
     }
     

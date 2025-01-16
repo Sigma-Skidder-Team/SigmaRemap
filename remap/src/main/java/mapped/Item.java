@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class Item implements Class3832
 {
-    public static final Map<Class3833, Item> field17355;
+    public static final Map<Block, Item> field17355;
     private static final Class8967 field17356;
     private static final Class8967 field17357;
     private static final Class8967 field17358;
@@ -32,7 +32,7 @@ public class Item implements Class3832
     public static final UUID field17361;
     public static final UUID field17362;
     public static final Random field17363;
-    private final Map<Class1932, Class8967> field17364;
+    private final Map<ResourceLocation, Class8967> field17364;
     public final Class7207 field17365;
     private final Class1998 field17366;
     private final int field17367;
@@ -42,23 +42,23 @@ public class Item implements Class3832
     private final Class9082 field17371;
     
     public static int method11696(final Item class3820) {
-        return (class3820 != null) ? Class90.field211.method504(class3820) : 0;
+        return (class3820 != null) ? Registry.field211.getId(class3820) : 0;
     }
     
     public static Item method11697(final int n) {
-        return Class90.field211.method499(n);
+        return Registry.field211.method499(n);
     }
     
     @Deprecated
-    public static Item method11698(final Class3833 key) {
+    public static Item method11698(final Block key) {
         return Item.field17355.getOrDefault(key, Items.AIR);
     }
     
     public Item(final Class8959 class8959) {
         this.field17364 = Maps.newHashMap();
-        this.method11705(new Class1932("lefthanded"), Item.field17358);
-        this.method11705(new Class1932("cooldown"), Item.field17359);
-        this.method11705(new Class1932("custom_model_data"), Item.field17360);
+        this.method11705(new ResourceLocation("lefthanded"), Item.field17358);
+        this.method11705(new ResourceLocation("cooldown"), Item.field17359);
+        this.method11705(new ResourceLocation("custom_model_data"), Item.field17360);
         this.field17365 = Class8959.method31788(class8959);
         this.field17366 = Class8959.method31789(class8959);
         this.field17369 = Class8959.method31790(class8959);
@@ -66,8 +66,8 @@ public class Item implements Class3832
         this.field17367 = Class8959.method31792(class8959);
         this.field17371 = Class8959.method31793(class8959);
         if (this.field17368 > 0) {
-            this.method11705(new Class1932("damaged"), Item.field17356);
-            this.method11705(new Class1932("damage"), Item.field17357);
+            this.method11705(new ResourceLocation("damaged"), Item.field17356);
+            this.method11705(new ResourceLocation("damage"), Item.field17357);
         }
     }
     
@@ -75,7 +75,7 @@ public class Item implements Class3832
     }
     
     @Nullable
-    public Class8967 method11700(final Class1932 class1932) {
+    public Class8967 method11700(final ResourceLocation class1932) {
         return this.field17364.get(class1932);
     }
     
@@ -96,7 +96,7 @@ public class Item implements Class3832
         return this;
     }
     
-    public final void method11705(final Class1932 class1932, final Class8967 class1933) {
+    public final void method11705(final ResourceLocation class1932, final Class8967 class1933) {
         this.field17364.put(class1932, class1933);
     }
     
@@ -158,12 +158,12 @@ public class Item implements Class3832
     
     @Override
     public String toString() {
-        return Class90.field211.method503(this).method7797();
+        return Registry.field211.getKey(this).method7797();
     }
     
     public String method11716() {
         if (this.field17370 == null) {
-            this.field17370 = Class8349.method27836("item", Class90.field211.method503(this));
+            this.field17370 = Class8349.method27836("item", Registry.field211.getKey(this));
         }
         return this.field17370;
     }

@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Class4046 extends Class4043
 {
-    public Class4046(final Class3833 class3833, final Class3833 class3834, final Class8959 class3835) {
+    public Class4046(final Block class3833, final Block class3834, final Class8959 class3835) {
         super(class3833, class3834, class3835);
     }
     

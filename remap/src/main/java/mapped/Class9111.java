@@ -223,7 +223,7 @@ public class Class9111
                 else if (!b) {
                     if (class6093 != Class1985.field10993) {
                         Class9111.field38603 = true;
-                        n2 = a * Class8571.method28845();
+                        n2 = a * Config.method28845();
                         f = a;
                     }
                     else {
@@ -274,7 +274,7 @@ public class Class9111
     
     public static void method32956() {
         Class8726.method30026(2918, Class9111.field38597, Class9111.field38598, Class9111.field38599, 1.0f);
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             Class9216.method33803(Class9111.field38597, Class9111.field38598, Class9111.field38599);
         }
     }

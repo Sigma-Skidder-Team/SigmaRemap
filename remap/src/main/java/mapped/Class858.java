@@ -48,8 +48,8 @@ public class Class858 extends Entity
         if (!this.world.isRemote) {
             final BlockPos class354 = new BlockPos(this);
             if (this.world.dimension instanceof Class6738) {
-                if (this.world.method6701(class354).method21706()) {
-                    this.world.method6692(class354, Class7521.field29289.method11878());
+                if (this.world.getBlockState(class354).method21706()) {
+                    this.world.method6692(class354, Class7521.field29289.getDefaultState());
                 }
             }
         }
@@ -88,7 +88,7 @@ public class Class858 extends Entity
                 if (!this.world.isRemote) {
                     this.method1652();
                     if (!class7929.method25707()) {
-                        this.world.method6722(null, this.getPosX(), this.getPosY(), this.getPosZ(), 6.0f, Class2196.field13367);
+                        this.world.createExplosion(null, this.getPosX(), this.getPosY(), this.getPosZ(), 6.0f, Class2196.field13367);
                     }
                     this.method5181(class7929);
                 }

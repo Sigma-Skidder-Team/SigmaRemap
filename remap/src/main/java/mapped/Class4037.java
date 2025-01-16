@@ -11,7 +11,7 @@ import javax.annotation.Nullable;
 
 public class Class4037 extends Class4036
 {
-    public Class4037(final Class3833 class3833, final Class8959 class3834) {
+    public Class4037(final Block class3833, final Class8959 class3834) {
         super(class3833, class3834);
     }
     
@@ -20,7 +20,7 @@ public class Class4037 extends Class4036
     public Class7074 method12231(final Class7074 class7074) {
         final BlockPos method21639 = class7074.method21639();
         final World method21640 = class7074.method21654();
-        if (method21640.method6701(method21639).method21696() == this.method12240()) {
+        if (method21640.getBlockState(method21639).method21696() == this.method12240()) {
             Direction class7075;
             if (!class7074.method21645()) {
                 class7075 = ((class7074.method21648() != Direction.UP) ? Direction.UP : class7074.method21644());
@@ -44,7 +44,7 @@ public class Class4037 extends Class4036
                     break;
                 }
                 else {
-                    final Class7096 method21644 = method21640.method6701(method21641);
+                    final Class7096 method21644 = method21640.getBlockState(method21641);
                     if (method21644.method21696() == this.method12240()) {
                         method21641.method1290(class7075);
                         if (!class7075.getAxis().isHorizontal()) {

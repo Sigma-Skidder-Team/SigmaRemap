@@ -11,7 +11,7 @@ import com.google.gson.JsonObject;
 public class Class6234 extends Class6227<Class131>
 {
     public Class6234() {
-        super(new Class1932("set_loot_table"), Class131.class);
+        super(new ResourceLocation("set_loot_table"), Class131.class);
     }
     
     public void method18554(final JsonObject jsonObject, final Class131 class131, final JsonSerializationContext jsonSerializationContext) {
@@ -23,6 +23,6 @@ public class Class6234 extends Class6227<Class131>
     }
     
     public Class131 method18555(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext, final Class122[] array) {
-        return new Class131(array, new Class1932(Class9583.method35895(jsonObject, "name")), Class9583.method35907(jsonObject, "seed", 0L), null);
+        return new Class131(array, new ResourceLocation(Class9583.method35895(jsonObject, "name")), Class9583.method35907(jsonObject, "seed", 0L), null);
     }
 }

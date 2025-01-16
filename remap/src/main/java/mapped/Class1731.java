@@ -8,7 +8,7 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import java.util.HashMap;
+
 import java.util.Collection;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
@@ -22,13 +22,13 @@ import java.util.Map;
 
 public class Class1731 implements Class1727
 {
-    private static final Map<String, Pair<Class180, Class1932>> field9670;
+    private static final Map<String, Pair<Class180, ResourceLocation>> field9670;
     private static final List<String> field9671;
     private static final Set<String> field9672;
     private static final Set<String> field9673;
-    public static final Class1932 field9674;
-    public static final Class1932 field9675;
-    public static final Class1932 field9676;
+    public static final ResourceLocation field9674;
+    public static final ResourceLocation field9675;
+    public static final ResourceLocation field9676;
     private final Class1727 field9677;
     
     public Class1731(final Class1727 field9677) {
@@ -41,7 +41,7 @@ public class Class1731 implements Class1727
     }
     
     @Override
-    public boolean method6099(final Class346 class346, final Class1932 class347) {
+    public boolean method6099(final Class346 class346, final ResourceLocation class347) {
         if (!"minecraft".equals(class347.method7798())) {
             return this.field9677.method6099(class346, class347);
         }
@@ -62,11 +62,11 @@ public class Class1731 implements Class1727
             return this.field9677.method6099(class346, Class1731.field9675) && this.field9677.method6099(class346, class347);
         }
         final Pair pair = Class1731.field9670.get(method7797);
-        return (pair != null && this.field9677.method6099(class346, (Class1932)pair.getSecond())) || this.field9677.method6099(class346, class347);
+        return (pair != null && this.field9677.method6099(class346, (ResourceLocation)pair.getSecond())) || this.field9677.method6099(class346, class347);
     }
     
     @Override
-    public InputStream method6097(final Class346 class346, final Class1932 class347) throws IOException {
+    public InputStream method6097(final Class346 class346, final ResourceLocation class347) throws IOException {
         if (!"minecraft".equals(class347.method7798())) {
             return this.field9677.method6097(class346, class347);
         }
@@ -105,7 +105,7 @@ public class Class1731 implements Class1727
             final Pair pair = Class1731.field9670.get(method7797);
             if (pair != null) {
                 final Class180 class348 = (Class180)pair.getFirst();
-                final InputStream method7801 = this.field9677.method6097(class346, (Class1932)pair.getSecond());
+                final InputStream method7801 = this.field9677.method6097(class346, (ResourceLocation)pair.getSecond());
                 if (class348 == Class180.field530) {
                     return method6120(method7801);
                 }
@@ -245,7 +245,7 @@ public class Class1731 implements Class1727
     }
     
     @Override
-    public Collection<Class1932> method6098(final Class346 class346, final String s, final String s2, final int n, final Predicate<String> predicate) {
+    public Collection<ResourceLocation> method6098(final Class346 class346, final String s, final String s2, final int n, final Predicate<String> predicate) {
         return this.field9677.method6098(class346, s, s2, n, predicate);
     }
     
@@ -286,43 +286,43 @@ public class Class1731 implements Class1727
     
     static {
         field9670 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
-            new Pair((Object)Class180.field531, (Object)new Class1932("textures/entity/chest/normal_double.png"));
+            new Pair((Object)Class180.field531, (Object)new ResourceLocation("textures/entity/chest/normal_double.png"));
             final Pair value;
             final Object key;
             hashMap.put(key, value);
-            new Pair((Object)Class180.field532, (Object)new Class1932("textures/entity/chest/normal_double.png"));
+            new Pair((Object)Class180.field532, (Object)new ResourceLocation("textures/entity/chest/normal_double.png"));
             final Pair value2;
             final Object key2;
             hashMap.put(key2, value2);
-            new Pair((Object)Class180.field530, (Object)new Class1932("textures/entity/chest/normal.png"));
+            new Pair((Object)Class180.field530, (Object)new ResourceLocation("textures/entity/chest/normal.png"));
             final Pair value3;
             final Object key3;
             hashMap.put(key3, value3);
-            new Pair((Object)Class180.field531, (Object)new Class1932("textures/entity/chest/trapped_double.png"));
+            new Pair((Object)Class180.field531, (Object)new ResourceLocation("textures/entity/chest/trapped_double.png"));
             final Pair value4;
             final Object key4;
             hashMap.put(key4, value4);
-            new Pair((Object)Class180.field532, (Object)new Class1932("textures/entity/chest/trapped_double.png"));
+            new Pair((Object)Class180.field532, (Object)new ResourceLocation("textures/entity/chest/trapped_double.png"));
             final Pair value5;
             final Object key5;
             hashMap.put(key5, value5);
-            new Pair((Object)Class180.field530, (Object)new Class1932("textures/entity/chest/trapped.png"));
+            new Pair((Object)Class180.field530, (Object)new ResourceLocation("textures/entity/chest/trapped.png"));
             final Pair value6;
             final Object key6;
             hashMap.put(key6, value6);
-            new Pair((Object)Class180.field531, (Object)new Class1932("textures/entity/chest/christmas_double.png"));
+            new Pair((Object)Class180.field531, (Object)new ResourceLocation("textures/entity/chest/christmas_double.png"));
             final Pair value7;
             final Object key7;
             hashMap.put(key7, value7);
-            new Pair((Object)Class180.field532, (Object)new Class1932("textures/entity/chest/christmas_double.png"));
+            new Pair((Object)Class180.field532, (Object)new ResourceLocation("textures/entity/chest/christmas_double.png"));
             final Pair value8;
             final Object key8;
             hashMap.put(key8, value8);
-            new Pair((Object)Class180.field530, (Object)new Class1932("textures/entity/chest/christmas.png"));
+            new Pair((Object)Class180.field530, (Object)new ResourceLocation("textures/entity/chest/christmas.png"));
             final Pair value9;
             final Object key9;
             hashMap.put(key9, value9);
-            new Pair((Object)Class180.field530, (Object)new Class1932("textures/entity/chest/ender.png"));
+            new Pair((Object)Class180.field530, (Object)new ResourceLocation("textures/entity/chest/ender.png"));
             final Pair value10;
             final Object key10;
             hashMap.put(key10, value10);
@@ -331,8 +331,8 @@ public class Class1731 implements Class1727
         field9671 = Lists.newArrayList((Object[])new String[] { "base", "border", "bricks", "circle", "creeper", "cross", "curly_border", "diagonal_left", "diagonal_right", "diagonal_up_left", "diagonal_up_right", "flower", "globe", "gradient", "gradient_up", "half_horizontal", "half_horizontal_bottom", "half_vertical", "half_vertical_right", "mojang", "rhombus", "skull", "small_stripes", "square_bottom_left", "square_bottom_right", "square_top_left", "square_top_right", "straight_cross", "stripe_bottom", "stripe_center", "stripe_downleft", "stripe_downright", "stripe_left", "stripe_middle", "stripe_right", "stripe_top", "triangle_bottom", "triangle_top", "triangles_bottom", "triangles_top" });
         field9672 = Class1731.field9671.stream().map(str -> "textures/entity/shield/" + str + ".png").collect((Collector<? super Object, ?, Set<String>>)Collectors.toSet());
         field9673 = Class1731.field9671.stream().map(str2 -> "textures/entity/banner/" + str2 + ".png").collect((Collector<? super Object, ?, Set<String>>)Collectors.toSet());
-        field9674 = new Class1932("textures/entity/shield_base.png");
-        field9675 = new Class1932("textures/entity/banner_base.png");
-        field9676 = new Class1932("textures/entity/iron_golem.png");
+        field9674 = new ResourceLocation("textures/entity/shield_base.png");
+        field9675 = new ResourceLocation("textures/entity/banner_base.png");
+        field9676 = new ResourceLocation("textures/entity/iron_golem.png");
     }
 }

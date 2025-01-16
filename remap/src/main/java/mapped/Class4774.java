@@ -8,7 +8,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4774 extends Class4712<Class765, Class5881<Class765>>
 {
-    private static final Class1932 field20404;
+    private static final ResourceLocation field20404;
     
     public Class4774(final Class8551 class8551) {
         super(class8551, new Class5881(), 0.5f);
@@ -30,11 +30,11 @@ public class Class4774 extends Class4712<Class765, Class5881<Class765>>
         return ((int)(method4234 * 10.0f) % 2 != 0) ? MathHelper.clamp(method4234, 0.5f, 1.0f) : 0.0f;
     }
     
-    public Class1932 method14131(final Class765 class765) {
+    public ResourceLocation method14131(final Class765 class765) {
         return Class4774.field20404;
     }
     
     static {
-        field20404 = new Class1932("textures/entity/creeper/creeper.png");
+        field20404 = new ResourceLocation("textures/entity/creeper/creeper.png");
     }
 }

@@ -49,13 +49,13 @@ public class Class9404
         Class9404.field40346 = null;
         Class9404.field40347 = null;
         Class9404.field40350 = true;
-        if (Class8571.method28987()) {
+        if (Config.method28987()) {
             method34944("optifine/cit.properties");
-            final Class1727[] method28903 = Class8571.method28903();
+            final Class1727[] method28903 = Config.method28903();
             for (int i = method28903.length - 1; i >= 0; --i) {
                 method34945(method28903[i]);
             }
-            method34945(Class8571.method28905());
+            method34945(Config.method28905());
             if (Class9404.field40346.length <= 0) {
                 Class9404.field40346 = null;
             }
@@ -67,15 +67,15 @@ public class Class9404
     
     private static void method34944(final String str) {
         try {
-            final InputStream method28897 = Class8571.method28897(new Class1932(str));
+            final InputStream method28897 = Config.method28897(new ResourceLocation(str));
             if (method28897 == null) {
                 return;
             }
-            Class8571.method28847("CustomItems: Loading " + str);
+            Config.method28847("CustomItems: Loading " + str);
             final Class27 class27 = new Class27();
             class27.load(method28897);
             method28897.close();
-            Class9404.field40350 = Class8571.method28935(class27.getProperty("useGlint"), true);
+            Class9404.field40350 = Config.method28935(class27.getProperty("useGlint"), true);
         }
         catch (final FileNotFoundException ex) {}
         catch (final IOException ex2) {
@@ -88,23 +88,23 @@ public class Class9404
         final Map<String, Class8988> method32778 = method34953(class1727);
         if (method32778.size() > 0) {
             final Set<String> keySet = method32778.keySet();
-            method32777 = (String[])Class8571.method28984(method32777, keySet.toArray(new String[keySet.size()]));
+            method32777 = (String[]) Config.method28984(method32777, keySet.toArray(new String[keySet.size()]));
         }
         Arrays.sort(method32777);
         final List<List<Class8988>> method32779 = method34960(Class9404.field40346);
         final List<List<Class8988>> method32780 = method34960(Class9404.field40347);
         for (int i = 0; i < method32777.length; ++i) {
             final String str = method32777[i];
-            Class8571.method28847("CustomItems: " + str);
+            Config.method28847("CustomItems: " + str);
             try {
                 Class8988 class1728 = null;
                 if (method32778.containsKey(str)) {
                     class1728 = method32778.get(str);
                 }
                 if (class1728 == null) {
-                    final InputStream method32781 = class1727.method6097(Class346.field2137, new Class1932(str));
+                    final InputStream method32781 = class1727.method6097(Class346.field2137, new ResourceLocation(str));
                     if (method32781 == null) {
-                        Class8571.method28848("CustomItems file not found: " + str);
+                        Config.warn("CustomItems file not found: " + str);
                         continue;
                     }
                     final Class27 class1729 = new Class27();
@@ -117,7 +117,7 @@ public class Class9404
                 }
             }
             catch (final FileNotFoundException ex) {
-                Class8571.method28848("CustomItems file not found: " + str);
+                Config.warn("CustomItems file not found: " + str);
             }
             catch (final Exception ex2) {
                 ex2.printStackTrace();
@@ -170,7 +170,7 @@ public class Class9404
             if (class8988.field37883 != 1) {
                 continue;
             }
-            class8988.method32018(Class8571.method29001(), Class9404.field40349);
+            class8988.method32018(Config.method29001(), Class9404.field40349);
             class8988.method32032();
         }
     }
@@ -200,13 +200,13 @@ public class Class9404
     
     private static Map<String, Class8988> method34953(final Class1727 class1727) {
         final HashMap hashMap = new HashMap();
-        hashMap.putAll(method34954(class1727, "normal", Class90.field211.method503(Items.field31441)));
-        hashMap.putAll(method34954(class1727, "splash", Class90.field211.method503(Items.field31579)));
-        hashMap.putAll(method34954(class1727, "linger", Class90.field211.method503(Items.field31582)));
+        hashMap.putAll(method34954(class1727, "normal", Registry.field211.getKey(Items.field31441)));
+        hashMap.putAll(method34954(class1727, "splash", Registry.field211.getKey(Items.field31579)));
+        hashMap.putAll(method34954(class1727, "linger", Registry.field211.getKey(Items.field31582)));
         return hashMap;
     }
     
-    private static Map<String, Class8988> method34954(final Class1727 class1727, final String str, final Class1932 class1728) {
+    private static Map<String, Class8988> method34954(final Class1727 class1727, final String str, final ResourceLocation class1728) {
         final HashMap hashMap = new HashMap();
         final String string = str + "/";
         final String[] array = { "optifine/cit/potion/" + string, "optifine/cit/Potion/" + string };
@@ -223,12 +223,12 @@ public class Class9404
         return hashMap;
     }
     
-    private static Properties method34955(final String s, final String s2, Class1932 method503, final String str) {
+    private static Properties method34955(final String s, final String s2, ResourceLocation method503, final String str) {
         if (Class9518.method35516(s, new String[] { "_n", "_s" })) {
             return null;
         }
         if (s.equals("empty") && s2.equals("normal")) {
-            method503 = Class90.field211.method503(Items.field31442);
+            method503 = Registry.field211.getKey(Items.field31442);
             final Class27 class27 = new Class27();
             class27.put("type", "item");
             class27.put("items", method503.toString());
@@ -264,7 +264,7 @@ public class Class9404
             }
             return class28;
         }
-        Class8571.method28848("Potion not found for image: " + str);
+        Config.warn("Potion not found for image: " + str);
         return null;
     }
     
@@ -318,11 +318,11 @@ public class Class9404
     
     private static int method34959(final String str) {
         final String string = "effect." + str;
-        for (final Class1932 class1932 : Class90.field207.method507()) {
-            if (!Class90.field207.method510(class1932)) {
+        for (final ResourceLocation class1932 : Registry.field207.method507()) {
+            if (!Registry.field207.method510(class1932)) {
                 continue;
             }
-            final Class5328 class1933 = Class90.field207.method505(class1932);
+            final Class5328 class1933 = Registry.field207.getOrDefault(class1932);
             if (!string.equals(class1933.method16455())) {
                 continue;
             }
@@ -367,7 +367,7 @@ public class Class9404
                     method34965(class8988, list, j);
                 }
                 else {
-                    Class8571.method28848("Invalid item ID: " + j);
+                    Config.warn("Invalid item ID: " + j);
                 }
             }
         }
@@ -377,7 +377,7 @@ public class Class9404
         if (class8988.field37883 == 2) {
             if (class8988.field37893 != null) {
                 for (int n = method34964() + 1, i = 0; i < n; ++i) {
-                    if (Class8571.method28978(i, class8988.field37893)) {
+                    if (Config.method28978(i, class8988.field37893)) {
                         method34965(class8988, list, i);
                     }
                 }
@@ -387,7 +387,7 @@ public class Class9404
     
     private static int method34964() {
         int n;
-        for (n = 0; Class90.field209.method499(n) != null; ++n) {}
+        for (n = 0; Registry.field209.method499(n) != null; ++n) {}
         return n;
     }
     
@@ -403,7 +403,7 @@ public class Class9404
         list2.add(class8988);
     }
     
-    public static Class6313 method34966(final ItemStack class8321, final Class6313 class8322, final Class1932 class8323, final boolean b) {
+    public static Class6313 method34966(final ItemStack class8321, final Class6313 class8322, final ResourceLocation class8323, final boolean b) {
         if (!b && class8322.method18693()) {
             return class8322;
         }
@@ -422,15 +422,15 @@ public class Class9404
         if (Class9404.field40346 == null) {
             return false;
         }
-        final Class1932 method34968 = method34968(class8321, class8322, s);
+        final ResourceLocation method34968 = method34968(class8321, class8322, s);
         if (method34968 != null) {
-            Class8571.method28895().method5849(method34968);
+            Config.method28895().method5849(method34968);
             return true;
         }
         return false;
     }
     
-    private static Class1932 method34968(final ItemStack class8321, final Class2215 class8322, final String str) {
+    private static ResourceLocation method34968(final ItemStack class8321, final Class2215 class8322, final String str) {
         final Class8988 method34970 = method34970(class8321, 3);
         if (method34970 == null) {
             return null;
@@ -451,13 +451,13 @@ public class Class9404
                 sb.append("_");
                 sb.append(str);
             }
-            final Class1932 class8323 = method34970.field37904.get(sb.toString());
+            final ResourceLocation class8323 = method34970.field37904.get(sb.toString());
             return (class8323 != null) ? class8323 : method34970.field37903;
         }
         return null;
     }
     
-    public static Class1932 method34969(final ItemStack class8321, final Class1932 class8322) {
+    public static ResourceLocation method34969(final ItemStack class8321, final ResourceLocation class8322) {
         if (Class9404.field40346 == null) {
             return class8322;
         }
@@ -519,7 +519,7 @@ public class Class9404
             }
             int n = 0;
             for (int i = 0; i < array2.length; ++i) {
-                if (Class8571.method28978(array2[i][0], class8988.field37893)) {
+                if (Config.method28978(array2[i][0], class8988.field37893)) {
                     n = 1;
                     break;
                 }
@@ -639,7 +639,7 @@ public class Class9404
                 final int method348 = method346.method319("lvl");
                 final Class6257 method349 = Class7552.method23716(method347);
                 if (method349 != null) {
-                    array[i][0] = Class90.field209.method504(method349);
+                    array[i][0] = Registry.field209.getId(method349);
                     array[i][1] = method348;
                 }
             }
@@ -659,7 +659,7 @@ public class Class9404
         if (method34976.length > 0) {
             Set<Integer> set = null;
             boolean b = false;
-            final Class1663 method34977 = Class8571.method28895();
+            final Class1663 method34977 = Config.method28895();
             for (int i = 0; i < method34976.length; ++i) {
                 final int j = method34976[i][0];
                 if (j >= 0) {
@@ -717,7 +717,7 @@ public class Class9404
         if (Class9404.field40347 == null) {
             return false;
         }
-        if (Class8571.method28955() && Class9216.field39049) {
+        if (Config.method28955() && Class9216.field39049) {
             return false;
         }
         if (class512 == null) {
@@ -727,7 +727,7 @@ public class Class9404
         if (method34976.length > 0) {
             Set<Integer> set = null;
             boolean b = false;
-            final Class1663 method34977 = Class8571.method28895();
+            final Class1663 method34977 = Config.method28895();
             for (int i = 0; i < method34976.length; ++i) {
                 final int j = method34976[i][0];
                 if (j >= 0) {
@@ -746,7 +746,7 @@ public class Class9404
                                             final float method34978 = class514.method32028(method34977);
                                             if (!b) {
                                                 b = true;
-                                                if (Class8571.method28955()) {
+                                                if (Config.method28955()) {
                                                     Class7778.method24968();
                                                 }
                                                 Class8933.method31519();
@@ -782,7 +782,7 @@ public class Class9404
                 Class8933.method31517(true);
                 Class8933.method31516(515);
                 Class8933.method31518();
-                if (Class8571.method28955()) {
+                if (Config.method28955()) {
                     Class7778.method24969();
                 }
             }

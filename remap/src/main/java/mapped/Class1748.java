@@ -5,7 +5,6 @@
 package mapped;
 
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.PrintStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -16,7 +15,7 @@ public class Class1748 extends FilterInputStream
     private final String field9729;
     private boolean field9730;
     
-    public Class1748(final InputStream in, final Class1932 obj, final String str) {
+    public Class1748(final InputStream in, final ResourceLocation obj, final String str) {
         super(in);
         final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         new Exception().printStackTrace(new PrintStream(byteArrayOutputStream));

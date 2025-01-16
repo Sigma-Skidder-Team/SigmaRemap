@@ -43,7 +43,7 @@ public class Class7321
                     Class8787.method30575(s.toLowerCase(), class7494, new BlockPos(n, n2, n3), 2, method23250);
                     for (int i = 0; i < n; ++i) {
                         for (int j = 0; j < n3; ++j) {
-                            new Class118(Class7521.field29154.method11878(), Collections.EMPTY_SET, null).method610(method23250, new BlockPos(class7494.getX() + i, class7494.getY() + 1, class7494.getZ() + j), 2);
+                            new Class118(Class7521.field29154.getDefaultState(), Collections.EMPTY_SET, null).method610(method23250, new BlockPos(class7494.getX() + i, class7494.getY() + 1, class7494.getZ() + j), 2);
                         }
                     }
                     Class8787.method30574(class7494.add(1, 0, -1), method23250);
@@ -182,7 +182,7 @@ public class Class7321
     
     private static int method22453(final Class7492 class7492, final String s) {
         final Path value = Paths.get(Class8787.field36936, new String[0]);
-        final Path method6525 = class7492.method23250().method6910().method6525(new Class1932("minecraft", s), ".nbt");
+        final Path method6525 = class7492.method23250().method6910().method6525(new ResourceLocation("minecraft", s), ".nbt");
         final Path method6526 = Class3701.method11378(method6525, s, value);
         if (method6526 == null) {
             method22452(class7492, "Failed to export " + method6525);
@@ -202,7 +202,7 @@ public class Class7321
     
     private static int method22454(final Class7492 class7492, final String s) {
         final Path value = Paths.get(Class8787.field36936, s + ".snbt");
-        final Path method6525 = class7492.method23250().method6910().method6525(new Class1932("minecraft", s), ".nbt");
+        final Path method6525 = class7492.method23250().method6910().method6525(new ResourceLocation("minecraft", s), ".nbt");
         try {
             final String string = IOUtils.toString((Reader)Files.newBufferedReader(value));
             Files.createDirectories(method6525.getParent(), (FileAttribute<?>[])new FileAttribute[0]);

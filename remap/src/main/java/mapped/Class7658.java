@@ -398,21 +398,21 @@ public class Class7658
     }
     
     public int method24279(BlockPos method1139, final boolean b) {
-        if (this.field30396.field4683.method6701(method1139).method21696() == Class7521.field29147) {
+        if (this.field30396.field4683.getBlockState(method1139).method21696() == Class7521.field29147) {
             method1139 = method1139.method1139();
         }
-        int n = this.field30396.field4683.method6701(method1139).method21697().method26446().field37084;
-        final Class8059 method1140 = this.field30396.field4683.method6701(method1139.method1137()).method21697();
-        if (method1140 != Class8059.field33164) {
-            if (method1140 == Class8059.field33163) {
-                n = method1140.method26446().field37084;
+        int n = this.field30396.field4683.getBlockState(method1139).method21697().method26446().field37084;
+        final Material method1140 = this.field30396.field4683.getBlockState(method1139.method1137()).method21697();
+        if (method1140 != Material.SNOW) {
+            if (method1140 == Material.LAVA) {
+                n = method1140.method26446().colorValue;
             }
         }
         else {
             n = -1;
         }
-        if (this.field30396.field4683.method6701(method1139).method21771((Class7111<Comparable>)Class8970.field37747)) {
-            n = Class8059.field33161.method26446().field37084;
+        if (this.field30396.field4683.getBlockState(method1139).method21771((IProperty<Comparable>)Class8970.field37747)) {
+            n = Material.WATER.method26446().colorValue;
         }
         int rgba = new Color((n & 0xFF0000) >> 16, (n & 0xFF00) >> 8, n & 0xFF).getRGB();
         boolean b2 = Math.abs(method1139.getZ() % 16) != 15 && Math.abs(method1139.getZ() % 16) != 0;
@@ -420,10 +420,10 @@ public class Class7658
             b2 = (Math.abs(method1139.getZ() % 16) != 16 && Math.abs(method1139.getZ() % 16) != 0);
         }
         if (b || b2) {
-            final Class8059 method1141 = this.field30396.field4683.method6701(method1139.method1141()).method21697();
-            final Class8059 method1142 = this.field30396.field4683.method6701(method1139.method1143()).method21697();
-            if (method1141 != Class8059.field33153 && method1141 != Class8059.field33164) {
-                if (method1142 == Class8059.field33153 || method1142 == Class8059.field33164) {
+            final Material method1141 = this.field30396.field4683.getBlockState(method1139.method1141()).method21697();
+            final Material method1142 = this.field30396.field4683.getBlockState(method1139.method1143()).method21697();
+            if (method1141 != Material.AIR && method1141 != Material.SNOW) {
+                if (method1142 == Material.AIR || method1142 == Material.SNOW) {
                     rgba = Class6430.method19109(new Color(rgba, true), Color.WHITE, 0.6f).getRGB();
                 }
             }

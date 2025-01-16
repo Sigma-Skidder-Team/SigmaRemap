@@ -96,7 +96,7 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
                         final boolean b3 = k == -i || k == i;
                         if (b2 || b3) {
                             final Class7859 method13593 = this.method13593(class1848, class1850, n2, n3, j, k);
-                            final Class5936 method13594 = class1847.method6966(method13593.field32290, method13593.field32291, Class9312.field39978).method7045(this.method13596());
+                            final Class5936 method13594 = class1847.method6966(method13593.field32290, method13593.field32291, ChunkStatus.field39978).method7045(this.method13596());
                             if (method13594 != null) {
                                 if (method13594.method17858()) {
                                     if (b && method13594.method17862()) {
@@ -126,10 +126,10 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
     
     private List<Class5936> method13592(final Class1851 class1851, final int n, final int n2) {
         final ArrayList arrayList = Lists.newArrayList();
-        final LongIterator iterator = class1851.method6966(n, n2, Class9312.field39979).method7047(this.method13596()).iterator();
+        final LongIterator iterator = class1851.method6966(n, n2, ChunkStatus.field39979).method7047(this.method13596()).iterator();
         while (iterator.hasNext()) {
             final long nextLong = iterator.nextLong();
-            final Class5936 method7045 = class1851.method6966(Class7859.method25424(nextLong), Class7859.method25425(nextLong), Class9312.field39978).method7045(this.method13596());
+            final Class5936 method7045 = class1851.method6966(Class7859.method25424(nextLong), Class7859.method25425(nextLong), ChunkStatus.field39978).method7045(this.method13596());
             if (method7045 == null) {
                 continue;
             }

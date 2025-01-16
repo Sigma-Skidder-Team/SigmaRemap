@@ -10,14 +10,14 @@ public class Class4270 implements IPacket<Class5813>
 {
     private static String[] field19151;
     private BlockPos field19152;
-    private Class1932 field19153;
-    private Class1932 field19154;
+    private ResourceLocation field19153;
+    private ResourceLocation field19154;
     private String field19155;
     
     public Class4270() {
     }
     
-    public Class4270(final BlockPos field19152, final Class1932 field19153, final Class1932 field19154, final String field19155) {
+    public Class4270(final BlockPos field19152, final ResourceLocation field19153, final ResourceLocation field19154, final String field19155) {
         this.field19152 = field19152;
         this.field19153 = field19153;
         this.field19154 = field19154;
@@ -48,11 +48,11 @@ public class Class4270 implements IPacket<Class5813>
         return this.field19152;
     }
     
-    public Class1932 method12814() {
+    public ResourceLocation method12814() {
         return this.field19154;
     }
     
-    public Class1932 method12815() {
+    public ResourceLocation method12815() {
         return this.field19153;
     }
     

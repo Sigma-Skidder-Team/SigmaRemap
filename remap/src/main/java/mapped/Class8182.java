@@ -9,9 +9,9 @@ import java.util.Iterator;
 public class Class8182 implements Class8183<MinecraftServer>
 {
     private static String[] field33689;
-    private final Class1932 field33690;
+    private final ResourceLocation field33690;
     
-    public Class8182(final Class1932 field33690) {
+    public Class8182(final ResourceLocation field33690) {
         this.field33690 = field33690;
     }
     

@@ -12,14 +12,14 @@ import java.util.Map;
 
 public class Class4771 extends Class4712<Class791, Class5840<Class791>>
 {
-    private static final Map<Class1965, Class1932> field20399;
+    private static final Map<Class1965, ResourceLocation> field20399;
     
     public Class4771(final Class8551 class8551) {
         super(class8551, new Class5840(9, 0.0f), 0.9f);
         this.method13978(new Class1808(this));
     }
     
-    public Class1932 method14119(final Class791 class791) {
+    public ResourceLocation method14119(final Class791 class791) {
         return Class4771.field20399.getOrDefault(class791.method4393(), Class4771.field20399.get(Class1965.field10723));
     }
     
@@ -81,13 +81,13 @@ public class Class4771 extends Class4712<Class791, Class5840<Class791>>
     
     static {
         field20399 = Class8349.method27851(Maps.newEnumMap((Class)Class1965.class), enumMap -> {
-            enumMap.put(Class1965.field10723, new Class1932("textures/entity/panda/panda.png"));
-            enumMap.put(Class1965.field10724, new Class1932("textures/entity/panda/lazy_panda.png"));
-            enumMap.put(Class1965.field10725, new Class1932("textures/entity/panda/worried_panda.png"));
-            enumMap.put(Class1965.field10726, new Class1932("textures/entity/panda/playful_panda.png"));
-            enumMap.put(Class1965.field10727, new Class1932("textures/entity/panda/brown_panda.png"));
-            enumMap.put(Class1965.field10728, new Class1932("textures/entity/panda/weak_panda.png"));
-            enumMap.put(Class1965.field10729, new Class1932("textures/entity/panda/aggressive_panda.png"));
+            enumMap.put(Class1965.field10723, new ResourceLocation("textures/entity/panda/panda.png"));
+            enumMap.put(Class1965.field10724, new ResourceLocation("textures/entity/panda/lazy_panda.png"));
+            enumMap.put(Class1965.field10725, new ResourceLocation("textures/entity/panda/worried_panda.png"));
+            enumMap.put(Class1965.field10726, new ResourceLocation("textures/entity/panda/playful_panda.png"));
+            enumMap.put(Class1965.field10727, new ResourceLocation("textures/entity/panda/brown_panda.png"));
+            enumMap.put(Class1965.field10728, new ResourceLocation("textures/entity/panda/weak_panda.png"));
+            enumMap.put(Class1965.field10729, new ResourceLocation("textures/entity/panda/aggressive_panda.png"));
         });
     }
 }

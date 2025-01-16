@@ -26,7 +26,7 @@ public class Class7073 extends Class7074
     
     @Override
     public boolean method21640() {
-        return this.field27554.method6701(this.field27553.method21447()).method21750(this);
+        return this.field27554.getBlockState(this.field27553.method21447()).method21750(this);
     }
     
     @Override

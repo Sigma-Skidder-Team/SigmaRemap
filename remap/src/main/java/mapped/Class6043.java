@@ -14,11 +14,11 @@ public class Class6043 extends Class6032<Class4408>
         super(function);
     }
     
-    public void method17959(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final Class7096 class1862, final Class7096 class1863, final int n5, final long n6, final Class4408 class1864) {
+    public void method17959(final Random random, final IChunk class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final Class7096 class1862, final Class7096 class1863, final int n5, final long n6, final Class4408 class1864) {
         this.method17965(random, class1860, class1861, n, n2, n3, n4, class1862, class1863, class1864.method13338(), class1864.method13339(), class1864.method13340(), n5);
     }
     
-    public void method17965(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final Class7096 class1862, final Class7096 class1863, final Class7096 class1864, final Class7096 class1865, final Class7096 class1866, final int n5) {
+    public void method17965(final Random random, final IChunk class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final Class7096 class1862, final Class7096 class1863, final Class7096 class1864, final Class7096 class1865, final Class7096 class1866, final int n5) {
         Class7096 class1867 = class1864;
         Class7096 class1868 = class1865;
         final Mutable class1869 = new Mutable();
@@ -28,7 +28,7 @@ public class Class6043 extends Class6032<Class4408>
         final int n9 = n2 & 0xF;
         for (int i = n3; i >= 0; --i) {
             class1869.setPos(n8, i, n9);
-            final Class7096 method6701 = class1860.method6701(class1869);
+            final Class7096 method6701 = class1860.getBlockState(class1869);
             if (!method6701.method21706()) {
                 if (method6701.method21696() == class1862.method21696()) {
                     if (n6 != -1) {
@@ -39,7 +39,7 @@ public class Class6043 extends Class6032<Class4408>
                                 if (class1868.method21696() == Class7521.field29175) {
                                     if (n7 > 1) {
                                         n6 = random.nextInt(4) + Math.max(0, i - 63);
-                                        class1868 = ((class1868.method21696() != Class7521.field29176) ? Class7521.field29217.method11878() : Class7521.field29587.method11878());
+                                        class1868 = ((class1868.method21696() != Class7521.field29176) ? Class7521.field29217.getDefaultState() : Class7521.field29587.getDefaultState());
                                     }
                                 }
                             }
@@ -55,7 +55,7 @@ public class Class6043 extends Class6032<Class4408>
                             }
                         }
                         else {
-                            class1867 = Class7521.field29147.method11878();
+                            class1867 = Class7521.field29147.getDefaultState();
                             class1868 = class1862;
                         }
                         if (i < n5) {
@@ -64,7 +64,7 @@ public class Class6043 extends Class6032<Class4408>
                                     class1867 = class1863;
                                 }
                                 else {
-                                    class1867 = Class7521.field29330.method11878();
+                                    class1867 = Class7521.field29330.getDefaultState();
                                 }
                                 class1869.setPos(n8, i, n9);
                             }
@@ -75,7 +75,7 @@ public class Class6043 extends Class6032<Class4408>
                                 class1860.method7008(class1869, class1868, false);
                             }
                             else {
-                                class1867 = Class7521.field29147.method11878();
+                                class1867 = Class7521.field29147.getDefaultState();
                                 class1868 = class1862;
                                 class1860.method7008(class1869, class1866, false);
                             }

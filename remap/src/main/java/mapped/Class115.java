@@ -6,7 +6,7 @@ package mapped;
 
 public final class Class115 extends Class114
 {
-    public Class115(final Class8059 class8059) {
+    public Class115(final Material class8059) {
         super(class8059, null);
     }
     

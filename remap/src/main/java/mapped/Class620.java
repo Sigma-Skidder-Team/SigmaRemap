@@ -8,7 +8,6 @@ import java.text.SimpleDateFormat;
 import org.apache.logging.log4j.LogManager;
 import java.util.Optional;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.Locale;
 import java.util.Collections;
 import java.util.function.Supplier;
@@ -20,8 +19,8 @@ public class Class620 extends Class608<Class641>
 {
     private static final Logger field3594;
     private static final DateFormat field3595;
-    private static final Class1932 field3596;
-    private static final Class1932 field3597;
+    private static final ResourceLocation field3596;
+    private static final ResourceLocation field3597;
     private final Class544 field3598;
     private List<Class1934> field3599;
     
@@ -101,7 +100,7 @@ public class Class620 extends Class608<Class641>
     static {
         field3594 = LogManager.getLogger();
         field3595 = new SimpleDateFormat();
-        field3596 = new Class1932("textures/misc/unknown_server.png");
-        field3597 = new Class1932("textures/gui/world_selection.png");
+        field3596 = new ResourceLocation("textures/misc/unknown_server.png");
+        field3597 = new ResourceLocation("textures/gui/world_selection.png");
     }
 }

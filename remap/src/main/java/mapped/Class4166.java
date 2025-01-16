@@ -53,6 +53,6 @@ public class Class4166 extends Class4158<Class495>
     }
     
     static {
-        field18565 = new Class3687(Class1774.field9853, new Class1932("entity/bell/bell_body"));
+        field18565 = new Class3687(Class1774.field9853, new ResourceLocation("entity/bell/bell_body"));
     }
 }

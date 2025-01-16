@@ -17,7 +17,7 @@ public class Class6621 extends Class6601
     }
     
     @Override
-    public Pair<Class1932, Class1932> method20059() {
-        return (Pair<Class1932, Class1932>)Pair.of((Object)Class3427.field16192, (Object)Class3427.field16197);
+    public Pair<ResourceLocation, ResourceLocation> method20059() {
+        return (Pair<ResourceLocation, ResourceLocation>)Pair.of((Object)Class3427.field16192, (Object)Class3427.field16197);
     }
 }

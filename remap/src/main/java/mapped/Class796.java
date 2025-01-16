@@ -105,7 +105,7 @@ public class Class796 extends Class795 implements Class797
         Label_0071: {
             if (this.field4258 != null) {
                 if (this.field4258.withinDistance(this.method1934(), 3.46)) {
-                    if (this.world.method6701(this.field4258).method21696() == Class7521.field29335) {
+                    if (this.world.getBlockState(this.field4258).method21696() == Class7521.field29335) {
                         break Label_0071;
                     }
                 }
@@ -219,7 +219,7 @@ public class Class796 extends Class795 implements Class797
     }
     
     public static boolean method4497(final EntityType<Class796> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
-        final Class3833 method21696 = class7500.method6701(class7502.method1139()).method21696();
+        final Block method21696 = class7500.getBlockState(class7502.method1139()).getBlock();
         if (!method21696.method11785(Class7188.field27907)) {
             if (method21696 != Class7521.field29155) {
                 if (!(method21696 instanceof Class4029)) {

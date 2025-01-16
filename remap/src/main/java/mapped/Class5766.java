@@ -27,8 +27,8 @@ public class Class5766 implements Class5763
     }
     
     @Override
-    public Class1932 method17155() {
-        return new Class1932(this.field23580);
+    public ResourceLocation method17155() {
+        return new ResourceLocation(this.field23580);
     }
     
     @Nullable
@@ -38,7 +38,7 @@ public class Class5766 implements Class5763
     }
     
     @Override
-    public Class1932 method17158() {
-        return new Class1932("");
+    public ResourceLocation method17158() {
+        return new ResourceLocation("");
     }
 }

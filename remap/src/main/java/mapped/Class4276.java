@@ -33,7 +33,7 @@ public class Class4276 implements IPacket<IClientPlayNetHandler>
     public Class4276(final LivingEntity class511) {
         this.field19174 = class511.getEntityId();
         this.field19175 = class511.method1865();
-        this.field19176 = Class90.field210.method504(class511.getType());
+        this.field19176 = Registry.field210.getId(class511.getType());
         this.field19177 = class511.getPosX();
         this.field19178 = class511.getPosY();
         this.field19179 = class511.getPosZ();

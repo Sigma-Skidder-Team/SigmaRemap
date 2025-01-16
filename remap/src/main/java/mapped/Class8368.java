@@ -12,7 +12,7 @@ public class Class8368
 {
     private String field34309;
     private String field34310;
-    public Class1932 field34311;
+    public ResourceLocation field34311;
     private int field34312;
     private int field34313;
     private int field34314;
@@ -28,7 +28,7 @@ public class Class8368
     private boolean field34324;
     private boolean field34325;
     
-    public Class8368(final String field34309, final byte[] field34310, final String field34311, final Class1932 field34312, final int field34313, final int field34314, final int n, final int n2, final Properties properties) {
+    public Class8368(final String field34309, final byte[] field34310, final String field34311, final ResourceLocation field34312, final int field34313, final int field34314, final int n, final int n2, final Properties properties) {
         this.field34309 = null;
         this.field34310 = null;
         this.field34311 = null;
@@ -55,7 +55,7 @@ public class Class8368
         this.field34316 = n2;
         final int n3 = n * n2 * 4;
         if (field34310.length % n3 != 0) {
-            Class8571.method28848("Invalid animated texture length: " + field34310.length + ", frameWidth: " + n + ", frameHeight: " + n2);
+            Config.warn("Invalid animated texture length: " + field34310.length + ", frameWidth: " + n + ", frameHeight: " + n2);
         }
         this.field34322 = field34310;
         int n4 = field34310.length / n3;
@@ -64,13 +64,13 @@ public class Class8368
                 n4 = i + 1;
             }
         }
-        final int max = Math.max(Class8571.method28933((String)properties.get("duration"), 1), 1);
+        final int max = Math.max(Config.method28933((String)properties.get("duration"), 1), 1);
         this.field34317 = new Class8363[n4];
         for (int j = 0; j < this.field34317.length; ++j) {
-            this.field34317[j] = new Class8363(Class8571.method28933((String)properties.get("tile." + j), j), Math.max(Class8571.method28933((String)properties.get("duration." + j), max), 1));
+            this.field34317[j] = new Class8363(Config.method28933((String)properties.get("tile." + j), j), Math.max(Config.method28933((String)properties.get("duration." + j), max), 1));
         }
-        this.field34319 = Class8571.method28935(properties.getProperty("interpolate"), false);
-        this.field34320 = Class8571.method28933(properties.getProperty("skip"), 0);
+        this.field34319 = Config.method28935(properties.getProperty("interpolate"), false);
+        this.field34320 = Config.method28933(properties.getProperty("skip"), 0);
         if (this.field34319) {
             this.field34321 = Class9078.method32715(n3);
         }
@@ -184,7 +184,7 @@ public class Class8368
         return this.field34310;
     }
     
-    public Class1932 method27910() {
+    public ResourceLocation method27910() {
         return this.field34311;
     }
     

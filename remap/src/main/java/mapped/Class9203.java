@@ -52,7 +52,7 @@ public class Class9203
         for (int i = 0; i < method32775.length; ++i) {
             final String str = method32775[i];
             final String method32776 = Class9518.method35527(str, s, s2);
-            final int method32777 = Class8571.method28933(method32776, Integer.MIN_VALUE);
+            final int method32777 = Config.method28933(method32776, Integer.MIN_VALUE);
             if (method32777 != Integer.MIN_VALUE) {
                 hashMap.put(method32777, str);
             }
@@ -77,11 +77,11 @@ public class Class9203
     }
     
     public static void method33678(final String str) {
-        Class8571.method28848("CustomLoadingScreen: " + str);
+        Config.warn("CustomLoadingScreen: " + str);
     }
     
     public static void method33679(final String str) {
-        Class8571.method28847("CustomLoadingScreen: " + str);
+        Config.method28847("CustomLoadingScreen: " + str);
     }
     
     static {

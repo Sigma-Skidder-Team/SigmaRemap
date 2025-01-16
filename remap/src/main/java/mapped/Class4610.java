@@ -11,10 +11,10 @@ import net.minecraft.entity.Entity;
 
 public class Class4610 extends Class4611<Class4238>
 {
-    private static final Class1932 field20076;
+    private static final ResourceLocation field20076;
     
     @Override
-    public Class1932 method13717() {
+    public ResourceLocation method13717() {
         return Class4610.field20076;
     }
     
@@ -27,6 +27,6 @@ public class Class4610 extends Class4611<Class4238>
     }
     
     static {
-        field20076 = new Class1932("channeled_lightning");
+        field20076 = new ResourceLocation("channeled_lightning");
     }
 }

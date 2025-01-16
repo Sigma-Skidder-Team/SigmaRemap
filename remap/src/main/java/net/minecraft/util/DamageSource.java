@@ -87,8 +87,8 @@ public class DamageSource
         return new Class7930("thorns", class399).method25727().method25724();
     }
     
-    public static DamageSource method25702(final Class6154 class6154) {
-        return (class6154 != null && class6154.method18414() != null) ? new Class7930("explosion.player", class6154.method18414()).method25721().method25708() : new DamageSource("explosion").method25721().method25708();
+    public static DamageSource method25702(final Explosion explosion) {
+        return (explosion != null && explosion.method18414() != null) ? new Class7930("explosion.player", explosion.method18414()).method25721().method25708() : new DamageSource("explosion").method25721().method25708();
     }
     
     public static DamageSource method25703(final LivingEntity class511) {

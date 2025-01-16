@@ -38,7 +38,7 @@ public class Class1884 implements AutoCloseable
     private float field10261;
     private float field10262;
     
-    public Class1884(final Class1663 class1663, final Class6582 field10253, final Class6153 field10254, final Class1932 class1664) throws IOException, JsonSyntaxException {
+    public Class1884(final Class1663 class1663, final Class6582 field10253, final Class6153 field10254, final ResourceLocation class1664) throws IOException, JsonSyntaxException {
         this.field10255 = Lists.newArrayList();
         this.field10256 = Maps.newHashMap();
         this.field10257 = Lists.newArrayList();
@@ -53,7 +53,7 @@ public class Class1884 implements AutoCloseable
         this.method7238(class1663, class1664);
     }
     
-    private void method7238(final Class1663 class1663, final Class1932 class1664) throws IOException, JsonSyntaxException {
+    private void method7238(final Class1663 class1663, final ResourceLocation class1664) throws IOException, JsonSyntaxException {
         Class1671 method19933 = null;
         try {
             method19933 = this.field10253.method19933(class1664);
@@ -139,7 +139,7 @@ public class Class1884 implements AutoCloseable
                     final String method35923 = Class9583.method35895(method35921, "id");
                     final Class6153 method35924 = this.method7249(method35923);
                     if (method35924 == null) {
-                        final Class1932 class1664 = new Class1932("textures/effect/" + method35923 + ".png");
+                        final ResourceLocation class1664 = new ResourceLocation("textures/effect/" + method35923 + ".png");
                         Closeable method35925 = null;
                         try {
                             method35925 = this.field10253.method19933(class1664);

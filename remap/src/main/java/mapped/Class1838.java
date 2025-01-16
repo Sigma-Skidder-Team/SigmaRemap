@@ -20,6 +20,6 @@ public class Class1838<T extends Entity> extends Class1837<T, Class5891<T>>
     }
     
     static {
-        field10020 = Class6332.method18779(new Class1932("textures/entity/phantom_eyes.png"));
+        field10020 = Class6332.method18779(new ResourceLocation("textures/entity/phantom_eyes.png"));
     }
 }

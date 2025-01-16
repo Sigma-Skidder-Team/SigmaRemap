@@ -154,7 +154,7 @@ public class Class8522
         return method28264.size();
     }
     
-    private static int method28549(final Class7492 class7492, final Class1932 class7493, final ITextComponent class7494) throws CommandSyntaxException {
+    private static int method28549(final Class7492 class7492, final ResourceLocation class7493, final ITextComponent class7494) throws CommandSyntaxException {
         final Class8467 method1584 = class7492.method23255().method1584();
         if (method1584.method28260(class7493) == null) {
             class7492.method23257(new Class2259("commands.bossbar.create.success", new Object[] { method1584.method28261(class7493, Class9479.method35294(class7492, class7494, null, 0)).method21057() }), true);
@@ -172,7 +172,7 @@ public class Class8522
     }
     
     public static Class6878 method28551(final CommandContext<Class7492> commandContext) throws CommandSyntaxException {
-        final Class1932 method21433 = Class7000.method21433(commandContext, "id");
+        final ResourceLocation method21433 = Class7000.method21433(commandContext, "id");
         final Class6878 method21434 = ((Class7492)commandContext.getSource()).method23255().method1584().method28260(method21433);
         if (method21434 != null) {
             return method21434;

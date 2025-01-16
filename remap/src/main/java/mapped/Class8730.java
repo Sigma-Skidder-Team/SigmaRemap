@@ -5,7 +5,6 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import com.mojang.datafixers.util.Either;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongIterator;
 import javax.annotation.Nullable;
@@ -209,6 +208,6 @@ public abstract class Class8730
     
     static {
         field36663 = LogManager.getLogger();
-        field36664 = 33 + Class9312.method34441(Class9312.field39989) - 2;
+        field36664 = 33 + ChunkStatus.method34441(ChunkStatus.field39989) - 2;
     }
 }

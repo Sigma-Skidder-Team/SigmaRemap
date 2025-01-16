@@ -6,7 +6,6 @@ package mapped;
 
 import java.util.Collections;
 import java.io.InputStreamReader;
-import java.io.Reader;
 import java.io.CharArrayReader;
 import java.util.LinkedHashSet;
 import java.io.CharArrayWriter;
@@ -20,7 +19,6 @@ import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.Comparator;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -77,10 +75,10 @@ public class Class7528
                             map.put(method23554, method23553);
                         }
                         else {
-                            if (!Class8571.equals(class7039.method16865(), method23553.method16865())) {
-                                Class8571.method28848("Ambiguous shader option: " + method23553.method16860());
-                                Class8571.method28848(" - in " + Class8571.method28888(class7039.method16870()) + ": " + class7039.method16865());
-                                Class8571.method28848(" - in " + Class8571.method28888(method23553.method16870()) + ": " + method23553.method16865());
+                            if (!Config.equals(class7039.method16865(), method23553.method16865())) {
+                                Config.warn("Ambiguous shader option: " + method23553.method16860());
+                                Config.warn(" - in " + Config.method28888(class7039.method16870()) + ": " + class7039.method16865());
+                                Config.warn(" - in " + Config.method28888(method23553.method16870()) + ": " + method23553.method16865());
                                 class7039.method16873(false);
                             }
                             if (class7039.method16861() == null || class7039.method16861().length() <= 0) {
@@ -109,10 +107,10 @@ public class Class7528
             if (method23564 == null) {
                 return new String[0];
             }
-            return Class8571.method28957(new ByteArrayInputStream(method23564.getBytes()));
+            return Config.method28957(new ByteArrayInputStream(method23564.getBytes()));
         }
         catch (final IOException ex) {
-            Class8571.method28847(ex.getClass().getName() + ": " + ex.getMessage());
+            Config.method28847(ex.getClass().getName() + ": " + ex.getMessage());
             return new String[0];
         }
     }
@@ -233,14 +231,14 @@ public class Class7528
         final HashSet set = new HashSet();
         final String property = properties.getProperty("sliders");
         if (property != null) {
-            final String[] method28937 = Class8571.method28937(property, " ");
+            final String[] method28937 = Config.method28937(property, " ");
             for (int i = 0; i < method28937.length; ++i) {
                 final String str = method28937[i];
                 if (Class7510.method23440(str, array) != null) {
                     set.add(str);
                 }
                 else {
-                    Class8571.method28848("Invalid shader option: " + str);
+                    Config.warn("Invalid shader option: " + str);
                 }
             }
             return set;
@@ -254,11 +252,11 @@ public class Class7528
         if (!set.contains(string)) {
             set.add(s);
             final Class9319 class9319 = new Class9319(s);
-            final String[] method28937 = Class8571.method28937(properties.getProperty(string), " ");
+            final String[] method28937 = Config.method28937(properties.getProperty(string), " ");
             for (int i = 0; i < method28937.length; ++i) {
                 final String str = method28937[i];
                 if (!str.startsWith(s2)) {
-                    final String[] method28938 = Class8571.method28937(str, ":=");
+                    final String[] method28938 = Config.method28937(str, ":=");
                     if (method28938.length != 1) {
                         if (method28938.length == 2) {
                             final String s3 = method28938[0];
@@ -270,15 +268,15 @@ public class Class7528
                                     class9319.method34501(s3, s4);
                                 }
                                 else {
-                                    Class8571.method28848("[Shaders] Invalid value: " + str);
+                                    Config.warn("[Shaders] Invalid value: " + str);
                                 }
                             }
                             else {
-                                Class8571.method28848("[Shaders] Invalid option: " + str);
+                                Config.warn("[Shaders] Invalid option: " + str);
                             }
                         }
                         else {
-                            Class8571.method28848("[Shaders] Invalid option value: " + str);
+                            Config.warn("[Shaders] Invalid option value: " + str);
                         }
                     }
                     else {
@@ -296,7 +294,7 @@ public class Class7528
                                 method28940.method16876(true);
                             }
                             else {
-                                Class8571.method28848("[Shaders] Invalid option: " + substring);
+                                Config.warn("[Shaders] Invalid option: " + substring);
                             }
                         }
                         else {
@@ -310,7 +308,7 @@ public class Class7528
                                 }
                             }
                             else {
-                                Class8571.method28848("Invalid program: " + substring2 + " in profile: " + class9319.method34500());
+                                Config.warn("Invalid program: " + substring2 + " in profile: " + class9319.method34500());
                             }
                         }
                     }
@@ -325,7 +323,7 @@ public class Class7528
             }
             return class9319;
         }
-        Class8571.method28848("[Shaders] Profile already parsed: " + s);
+        Config.warn("[Shaders] Profile already parsed: " + s);
         return null;
     }
     
@@ -340,7 +338,7 @@ public class Class7528
         if (property != null) {
             final ArrayList list = new ArrayList();
             final HashSet set = new HashSet();
-            final String[] method28937 = Class8571.method28937(property, " ");
+            final String[] method28937 = Config.method28937(property, " ");
             for (int i = 0; i < method28937.length; ++i) {
                 final String str2 = method28937[i];
                 if (!str2.equals("<empty>")) {
@@ -355,11 +353,11 @@ public class Class7528
                                             list.add(new Class5600(method28938));
                                         }
                                         else {
-                                            Class8571.method28848("[Shaders] Invalid screen: " + str2 + ", key: " + str);
+                                            Config.warn("[Shaders] Invalid screen: " + str2 + ", key: " + str);
                                         }
                                     }
                                     else {
-                                        Class8571.method28848("[Shaders] Invalid screen: " + str2 + ", key: " + str);
+                                        Config.warn("[Shaders] Invalid screen: " + str2 + ", key: " + str);
                                     }
                                 }
                                 else {
@@ -369,7 +367,7 @@ public class Class7528
                                         list.add(method28939);
                                     }
                                     else {
-                                        Class8571.method28848("[Shaders] Invalid option: " + str2 + ", key: " + str);
+                                        Config.warn("[Shaders] Invalid option: " + str2 + ", key: " + str);
                                         list.add(null);
                                     }
                                 }
@@ -382,18 +380,18 @@ public class Class7528
                             list.add(new Class5603(array, array2));
                         }
                         else {
-                            Class8571.method28848("[Shaders] Option profile can not be used, no profiles defined: " + str2 + ", key: " + str);
+                            Config.warn("[Shaders] Option profile can not be used, no profiles defined: " + str2 + ", key: " + str);
                         }
                     }
                     else {
-                        Class8571.method28848("[Shaders] Duplicate option: " + str2 + ", key: " + str);
+                        Config.warn("[Shaders] Duplicate option: " + str2 + ", key: " + str);
                     }
                 }
                 else {
                     list.add(null);
                 }
             }
-            map.put(str, new Class9442(str, (Class5601[])list.toArray(new Class5601[list.size()]), Class8571.method28933(properties.getProperty(str + ".columns"), 2)));
+            map.put(str, new Class9442(str, (Class5601[])list.toArray(new Class5601[list.size()]), Config.method28933(properties.getProperty(str + ".columns"), 2)));
             return true;
         }
         return false;
@@ -520,7 +518,7 @@ public class Class7528
         final HashMap hashMap = new HashMap();
         final ArrayList list = new ArrayList();
         for (final String key : properties.keySet()) {
-            final String[] method28937 = Class8571.method28937(key, ".");
+            final String[] method28937 = Config.method28937(key, ".");
             if (method28937.length != 3) {
                 continue;
             }
@@ -583,7 +581,7 @@ public class Class7528
     
     public static void method23568(final Properties properties) {
         for (final String key : properties.keySet()) {
-            final String[] method28937 = Class8571.method28937(key, ".");
+            final String[] method28937 = Config.method28937(key, ".");
             if (method28937.length != 2) {
                 continue;
             }
@@ -607,13 +605,13 @@ public class Class7528
     }
     
     private static Class6684 method23569(final String str) {
-        final String[] method28937 = Class8571.method28937(str, " ");
+        final String[] method28937 = Config.method28937(str, " ");
         if (method28937.length != 1) {
             if (method28937.length == 2) {
                 final String s = method28937[0];
                 final String s2 = method28937[1];
                 final Integer n = Class7528.field29892.get(s);
-                final float method28938 = Class8571.method28934(s2, -1.0f);
+                final float method28938 = Config.method28934(s2, -1.0f);
                 if (n != null) {
                     if (method28938 >= 0.0f) {
                         return new Class6684(true, n, method28938);
@@ -633,7 +631,7 @@ public class Class7528
     
     public static void method23570(final Properties properties) {
         for (final String key : properties.keySet()) {
-            final String[] method28937 = Class8571.method28937(key, ".");
+            final String[] method28937 = Config.method28937(key, ".");
             if (method28937.length != 2) {
                 continue;
             }
@@ -657,7 +655,7 @@ public class Class7528
     }
     
     private static Class9075 method23571(final String str) {
-        final String[] method28937 = Class8571.method28937(str, " ");
+        final String[] method28937 = Config.method28937(str, " ");
         if (method28937.length != 1) {
             if (method28937.length == 2 || method28937.length == 4) {
                 final String s = method28937[0];
@@ -695,7 +693,7 @@ public class Class7528
     
     public static void method23572(final Properties properties) {
         for (final String key : properties.keySet()) {
-            final String[] method28937 = Class8571.method28937(key, ".");
+            final String[] method28937 = Config.method28937(key, ".");
             if (method28937.length != 2) {
                 continue;
             }
@@ -719,8 +717,8 @@ public class Class7528
     }
     
     private static Class9529 method23573(final String s) {
-        final String[] method28937 = Class8571.method28937(s, " ");
-        final float method28938 = Class8571.method28934(method28937[0], -1.0f);
+        final String[] method28937 = Config.method28937(s, " ");
+        final float method28938 = Config.method28934(method28937[0], -1.0f);
         float method28939 = 0.0f;
         float method28940 = 0.0f;
         if (method28937.length > 1) {
@@ -728,12 +726,12 @@ public class Class7528
                 Class8885.method31270("Invalid render scale: " + s);
                 return null;
             }
-            method28939 = Class8571.method28934(method28937[1], -1.0f);
-            method28940 = Class8571.method28934(method28937[2], -1.0f);
+            method28939 = Config.method28934(method28937[1], -1.0f);
+            method28940 = Config.method28934(method28937[2], -1.0f);
         }
-        if (Class8571.method28930(method28938, 0.0f, 1.0f)) {
-            if (Class8571.method28930(method28939, 0.0f, 1.0f)) {
-                if (Class8571.method28930(method28940, 0.0f, 1.0f)) {
+        if (Config.method28930(method28938, 0.0f, 1.0f)) {
+            if (Config.method28930(method28939, 0.0f, 1.0f)) {
+                if (Config.method28930(method28940, 0.0f, 1.0f)) {
                     return new Class9529(method28938, method28939, method28940);
                 }
             }
@@ -744,7 +742,7 @@ public class Class7528
     
     public static void method23574(final Properties properties) {
         for (final String key : properties.keySet()) {
-            final String[] method28937 = Class8571.method28937(key, ".");
+            final String[] method28937 = Config.method28937(key, ".");
             if (method28937.length != 3) {
                 continue;
             }
@@ -760,7 +758,7 @@ public class Class7528
                 final int method28940 = Class9216.method33783(str2);
                 if (method28940 >= 0 && method28940 < method28939.length) {
                     final String trim = properties.getProperty(key).trim();
-                    final Boolean method28941 = Class8571.method28936(trim, null);
+                    final Boolean method28941 = Config.method28936(trim, null);
                     if (method28941 != null) {
                         method28939[method28940] = method28941;
                     }

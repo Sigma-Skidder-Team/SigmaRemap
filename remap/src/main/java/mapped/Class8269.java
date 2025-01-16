@@ -21,7 +21,7 @@ public class Class8269
     }
     
     public static int method27461(final float n) {
-        return MathHelper.method35649(n);
+        return MathHelper.ceil(n);
     }
     
     public static int method27462(final double n) {
@@ -45,7 +45,7 @@ public class Class8269
     }
     
     public static int method27467(final double n) {
-        return MathHelper.method35650(n);
+        return MathHelper.ceil(n);
     }
     
     public static boolean method27468(final String s) {

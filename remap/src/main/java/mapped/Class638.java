@@ -17,7 +17,7 @@ public class Class638 extends Class623<Class638>
     @Override
     public void method3467(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final boolean b, final float n8) {
         final Class9127 class9127 = Class696.method3893(this.field3637.field3591).method21590().get(Class696.method3893(this.field3637.field3591).method21590().size() - n - 1);
-        final Class3833 method21696 = class9127.method33115().method21696();
+        final Block method21696 = class9127.method33115().getBlock();
         Item class9128 = method21696.method11704();
         if (class9128 == Items.AIR) {
             if (method21696 != Class7521.field29173) {

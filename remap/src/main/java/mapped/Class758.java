@@ -5,7 +5,7 @@
 package mapped;
 
 import com.google.common.hash.Hashing;
-import java.io.File;
+
 import javax.annotation.Nullable;
 import com.mojang.authlib.GameProfile;
 
@@ -43,14 +43,14 @@ public class Class758 extends Class754
     }
     
     @Override
-    public Class1932 method4097() {
+    public ResourceLocation method4097() {
         final Class9081 method4095 = this.method4095();
         return (method4095 != null) ? method4095.method32726() : Class7634.method24004(this.method1865());
     }
     
     @Nullable
     @Override
-    public Class1932 method4098() {
+    public ResourceLocation method4098() {
         final Class9081 method4095 = this.method4095();
         return (method4095 != null) ? method4095.method32727() : null;
     }
@@ -62,12 +62,12 @@ public class Class758 extends Class754
     
     @Nullable
     @Override
-    public Class1932 method4100() {
+    public ResourceLocation method4100() {
         final Class9081 method4095 = this.method4095();
         return (method4095 != null) ? method4095.method32728() : null;
     }
     
-    public static Class1768 method4101(final Class1932 class1932, final String s) {
+    public static Class1768 method4101(final ResourceLocation class1932, final String s) {
         final Class1663 method5290 = Class869.method5277().method5290();
         Class1666 method5291 = method5290.method5853(class1932);
         if (method5291 == null) {
@@ -77,8 +77,8 @@ public class Class758 extends Class754
         return (Class1768)method5291;
     }
     
-    public static Class1932 method4102(final String s) {
-        return new Class1932("skins/" + Hashing.sha1().hashUnencodedChars((CharSequence)Class8272.method27499(s)));
+    public static ResourceLocation method4102(final String s) {
+        return new ResourceLocation("skins/" + Hashing.sha1().hashUnencodedChars((CharSequence)Class8272.method27499(s)));
     }
     
     @Override

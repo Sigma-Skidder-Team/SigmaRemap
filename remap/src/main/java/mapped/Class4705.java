@@ -8,8 +8,8 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4705 extends Class4703<Class421>
 {
-    private static final Class1932 field20290;
-    private static final Class1932 field20291;
+    private static final ResourceLocation field20290;
+    private static final ResourceLocation field20291;
     private final Class5918 field20292;
     
     public Class4705(final Class8551 class8551) {
@@ -33,12 +33,12 @@ public class Class4705 extends Class4703<Class421>
         super.method13951(class421, n, n2, class422, class423, n3);
     }
     
-    public Class1932 method13968(final Class421 class421) {
+    public ResourceLocation method13968(final Class421 class421) {
         return class421.method2036() ? Class4705.field20290 : Class4705.field20291;
     }
     
     static {
-        field20290 = new Class1932("textures/entity/wither/wither_invulnerable.png");
-        field20291 = new Class1932("textures/entity/wither/wither.png");
+        field20290 = new ResourceLocation("textures/entity/wither/wither_invulnerable.png");
+        field20291 = new ResourceLocation("textures/entity/wither/wither.png");
     }
 }

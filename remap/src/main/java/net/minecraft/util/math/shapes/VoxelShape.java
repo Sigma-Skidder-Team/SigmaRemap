@@ -53,12 +53,12 @@ public abstract class VoxelShape
     }
     
     public VoxelShape method24541(final double n, final double n2, final double n3) {
-        return this.method24540() ? Class7698.method24486() : new Class7704(this.field30615, (DoubleList)new Class87(this.method24539(Axis.X), n), (DoubleList)new Class87(this.method24539(Axis.Y), n2), (DoubleList)new Class87(this.method24539(Axis.Z), n3));
+        return this.method24540() ? VoxelShapes.method24486() : new Class7704(this.field30615, (DoubleList)new Class87(this.method24539(Axis.X), n), (DoubleList)new Class87(this.method24539(Axis.Y), n2), (DoubleList)new Class87(this.method24539(Axis.Z), n3));
     }
     
     public VoxelShape method24542() {
-        final VoxelShape[] array = { Class7698.method24486() };
-        this.method24544((n, n2, n3, n4, n5, n6) -> array[0] = Class7698.method24495(array[0], Class7698.method24488(n, n2, n3, n4, n5, n6), Class9306.field39930));
+        final VoxelShape[] array = { VoxelShapes.method24486() };
+        this.method24544((n, n2, n3, n4, n5, n6) -> array[0] = VoxelShapes.method24495(array[0], VoxelShapes.method24488(n, n2, n3, n4, n5, n6), Class9306.field39930));
         return array[0];
     }
     
@@ -120,7 +120,7 @@ public abstract class VoxelShape
     }
     
     public VoxelShape method24551(final Direction class179) {
-        if (!this.method24540() && this != Class7698.method24487()) {
+        if (!this.method24540() && this != VoxelShapes.method24487()) {
             if (this.field30616 == null) {
                 this.field30616 = new VoxelShape[6];
             }

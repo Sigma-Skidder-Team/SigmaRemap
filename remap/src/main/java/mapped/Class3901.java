@@ -23,12 +23,12 @@ public class Class3901 extends Class3892
     
     public Class3901(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3901.field17611, Direction.NORTH));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3901.field17611, Direction.NORTH));
     }
     
     @Override
     public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
-        if (class7099.method21696() != class7096.method21696()) {
+        if (class7099.getBlock() != class7096.getBlock()) {
             this.method11996(class7097, class7098);
         }
     }
@@ -45,8 +45,8 @@ public class Class3901 extends Class3892
                 for (int i = 0; i < this.method12000().method29794(); ++i) {
                     for (int j = 0; j < this.method12000().method29793(); ++j) {
                         final Class7990 method29798 = method29797.method25270(i, j, 0);
-                        class1847.method6688(method29798.method26068(), Class7521.field29147.method11878(), 2);
-                        class1847.method6955(2001, method29798.method26068(), Class3833.method11774(method29798.method26065()));
+                        class1847.setBlockState(method29798.method26068(), Class7521.field29147.getDefaultState(), 2);
+                        class1847.method6955(2001, method29798.method26068(), Block.method11774(method29798.method26065()));
                     }
                 }
                 final BlockPos method29799 = method29797.method25270(1, 2, 0).method26068();
@@ -68,8 +68,8 @@ public class Class3901 extends Class3892
         else {
             for (int n = 0; n < this.method11998().method29793(); ++n) {
                 final Class7990 method29800 = method29796.method25270(0, n, 0);
-                class1847.method6688(method29800.method26068(), Class7521.field29147.method11878(), 2);
-                class1847.method6955(2001, method29800.method26068(), Class3833.method11774(method29800.method26065()));
+                class1847.setBlockState(method29800.method26068(), Class7521.field29147.getDefaultState(), 2);
+                class1847.method6955(2001, method29800.method26068(), Block.method11774(method29800.method26065()));
             }
             final Class784 class1850 = EntityType.field29027.method23371(class1847);
             final BlockPos method29801 = method29796.method25270(0, 2, 0).method26068();
@@ -87,11 +87,11 @@ public class Class3901 extends Class3892
     
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        return ((Class7097<O, BlockState>)this.method11878()).method21773((Class7111<Comparable>)Class3901.field17611, class7074.method21644().getOpposite());
+        return ((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3901.field17611, class7074.method21644().getOpposite());
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class3901.field17611);
     }
     
@@ -111,25 +111,25 @@ public class Class3901 extends Class3892
     
     private Class8691 method11999() {
         if (this.field17614 == null) {
-            this.field17614 = Class9512.method35439().method35438("~ ~", "###", "~#~").method35440('#', Class7990.method26069(Class169.method766(Class7521.field29281))).method35440('~', Class7990.method26069(Class114.method607(Class8059.field33153))).method35441();
+            this.field17614 = Class9512.method35439().method35438("~ ~", "###", "~#~").method35440('#', Class7990.method26069(Class169.method766(Class7521.field29281))).method35440('~', Class7990.method26069(Class114.method607(Material.AIR))).method35441();
         }
         return this.field17614;
     }
     
     private Class8691 method12000() {
         if (this.field17615 == null) {
-            this.field17615 = Class9512.method35439().method35438("~^~", "###", "~#~").method35440('^', Class7990.method26069(Class3901.field17616)).method35440('#', Class7990.method26069(Class169.method766(Class7521.field29281))).method35440('~', Class7990.method26069(Class114.method607(Class8059.field33153))).method35441();
+            this.field17615 = Class9512.method35439().method35438("~^~", "###", "~#~").method35440('^', Class7990.method26069(Class3901.field17616)).method35440('#', Class7990.method26069(Class169.method766(Class7521.field29281))).method35440('~', Class7990.method26069(Class114.method607(Material.AIR))).method35441();
         }
         return this.field17615;
     }
     
     @Override
-    public boolean method11779(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+    public boolean canEntitySpawn(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return true;
     }
     
     static {
         field17611 = Class3892.field17564;
-        field17616 = (class7096 -> class7096 != null && (class7096.method21696() == Class7521.field29342 || class7096.method21696() == Class7521.field29343));
+        field17616 = (class7096 -> class7096 != null && (class7096.getBlock() == Class7521.field29342 || class7096.getBlock() == Class7521.field29343));
     }
 }

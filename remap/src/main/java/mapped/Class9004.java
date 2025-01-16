@@ -169,11 +169,11 @@ public class Class9004
         if (this.field38011 == null) {
             return null;
         }
-        final String[] method28937 = Class8571.method28937(Class9518.method35531(Class9518.method35517(this.field38011.trim(), "vec4"), " ()"), ", ");
+        final String[] method28937 = Config.method28937(Class9518.method35531(Class9518.method35517(this.field38011.trim(), "vec4"), " ()"), ", ");
         if (method28937.length == 4) {
             final float[] array = new float[4];
             for (int i = 0; i < method28937.length; ++i) {
-                final float method28938 = Class8571.method28934(Class9518.method35524(method28937[i], new String[] { "F", "f" }), Float.MAX_VALUE);
+                final float method28938 = Config.method28934(Class9518.method35524(method28937[i], new String[] { "F", "f" }), Float.MAX_VALUE);
                 if (method28938 == Float.MAX_VALUE) {
                     return null;
                 }

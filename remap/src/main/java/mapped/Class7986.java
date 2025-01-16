@@ -158,7 +158,7 @@ public class Class7986
             break;
         }
         if (i >= 100) {
-            Class8571.method28848("Too many iterations: " + i + ", when resolving: " + str);
+            Config.warn("Too many iterations: " + i + ", when resolving: " + str);
             return true;
         }
         try {
@@ -172,8 +172,8 @@ public class Class7986
             throw new Class2327("Not a boolean or float expression: " + method22032.method1008());
         }
         catch (final Class2327 class2327) {
-            Class8571.method28848("Invalid macro expression: " + str);
-            Class8571.method28848("Error: " + class2327.getMessage());
+            Config.warn("Invalid macro expression: " + str);
+            Config.warn("Error: " + class2327.getMessage());
             return false;
         }
     }

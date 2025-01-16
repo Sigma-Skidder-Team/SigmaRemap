@@ -152,7 +152,7 @@ public final class Class120 implements Predicate<ItemStack>
             throw new JsonParseException("An ingredient entry is either a tag or an item, not both");
         }
         if (jsonObject.has("item")) {
-            return new Class7453(new ItemStack(Class90.field211.method506(new Class1932(Class9583.method35895(jsonObject, "item"))).orElseThrow(() -> {
+            return new Class7453(new ItemStack(Registry.field211.method506(new ResourceLocation(Class9583.method35895(jsonObject, "item"))).orElseThrow(() -> {
                 new JsonSyntaxException("Unknown item '" + obj2 + "'");
                 return;
             })), null);
@@ -160,7 +160,7 @@ public final class Class120 implements Predicate<ItemStack>
         if (!jsonObject.has("tag")) {
             throw new JsonParseException("An ingredient entry needs either a tag or an item");
         }
-        final Class1932 obj = new Class1932(Class9583.method35895(jsonObject, "tag"));
+        final ResourceLocation obj = new ResourceLocation(Class9583.method35895(jsonObject, "tag"));
         final Class7909<Item> method18460 = Class7855.method25402().method18460(obj);
         if (method18460 != null) {
             return new Class7451(method18460, null);

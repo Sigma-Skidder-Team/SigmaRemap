@@ -48,7 +48,7 @@ public class Class684 extends Class565
                     b = true;
                 }
                 final double method3774 = this.method3774();
-                int method3775 = MathHelper.method35650(this.method3772() / method3774);
+                int method3775 = MathHelper.ceil(this.method3772() / method3774);
                 Class8726.method30059();
                 Class8726.method30065(2.0f, 8.0f, 0.0f);
                 Class8726.method30064(method3774, method3774, 1.0);

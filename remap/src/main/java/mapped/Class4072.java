@@ -13,12 +13,12 @@ import java.util.Set;
 
 public class Class4072 extends Class4071
 {
-    private final Set<Class3833> field18167;
+    private final Set<Block> field18167;
     public final float field18168;
     public final float field18169;
     public final float field18170;
     
-    public Class4072(final float n, final float field18170, final Class2038 class2038, final Set<Class3833> field18171, final Class8959 class2039) {
+    public Class4072(final float n, final float field18170, final Class2038 class2038, final Set<Block> field18171, final Class8959 class2039) {
         super(class2038, class2039);
         this.field18167 = field18171;
         this.field18168 = class2038.method8110();
@@ -28,7 +28,7 @@ public class Class4072 extends Class4071
     
     @Override
     public float method11706(final ItemStack class8321, final BlockState class8322) {
-        return this.field18167.contains(class8322.method21696()) ? this.field18168 : 1.0f;
+        return this.field18167.contains(class8322.getBlock()) ? this.field18168 : 1.0f;
     }
     
     @Override

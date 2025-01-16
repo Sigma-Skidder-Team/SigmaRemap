@@ -26,8 +26,8 @@ public class Class8139
     private final Class8685 field33531;
     private final Class101 field33532;
     private final Map<Class9455<?>, Class8685> field33533;
-    private final Object2BooleanMap<Class1932> field33534;
-    private final Map<Class1932, Class170> field33535;
+    private final Object2BooleanMap<ResourceLocation> field33534;
+    private final Map<ResourceLocation, Class170> field33535;
     
     private static Class170 method26818(final JsonElement jsonElement) {
         if (!jsonElement.isJsonPrimitive()) {
@@ -38,7 +38,7 @@ public class Class8139
         return new Class172(jsonElement.getAsBoolean());
     }
     
-    private Class8139(final Class8685 field33531, final Class101 field33532, final Map<Class9455<?>, Class8685> field33533, final Object2BooleanMap<Class1932> field33534, final Map<Class1932, Class170> field33535) {
+    private Class8139(final Class8685 field33531, final Class101 field33532, final Map<Class9455<?>, Class8685> field33533, final Object2BooleanMap<ResourceLocation> field33534, final Map<ResourceLocation, Class170> field33535) {
         this.field33531 = field33531;
         this.field33532 = field33532;
         this.field33533 = field33533;
@@ -69,7 +69,7 @@ public class Class8139
         }
         final Class6522 method2948 = class400.method2948();
         for (final Object2BooleanMap$Entry object2BooleanMap$Entry : this.field33534.object2BooleanEntrySet()) {
-            if (method2948.method19696((Class1932)object2BooleanMap$Entry.getKey()) == object2BooleanMap$Entry.getBooleanValue()) {
+            if (method2948.method19696((ResourceLocation)object2BooleanMap$Entry.getKey()) == object2BooleanMap$Entry.getBooleanValue()) {
                 continue;
             }
             return false;
@@ -77,7 +77,7 @@ public class Class8139
         if (!this.field33535.isEmpty()) {
             final Class7012 method2949 = class400.method2957();
             final Class1781 method2950 = class400.method1897().method1566();
-            for (final Map.Entry<Class1932, V> entry2 : this.field33535.entrySet()) {
+            for (final Map.Entry<ResourceLocation, V> entry2 : this.field33535.entrySet()) {
                 final Class8863 method2951 = method2950.method6398(entry2.getKey());
                 if (method2951 != null && ((Class170)entry2.getValue()).test(method2949.method21470(method2951))) {
                     continue;
@@ -99,37 +99,37 @@ public class Class8139
                 final Iterator iterator = method35916.iterator();
                 while (iterator.hasNext()) {
                     final JsonObject method35917 = Class9583.method35913(iterator.next(), "stats entry");
-                    final Class1932 obj = new Class1932(Class9583.method35895(method35917, "type"));
-                    final Class2248 class2248 = Class90.field238.method505(obj);
+                    final ResourceLocation obj = new ResourceLocation(Class9583.method35895(method35917, "type"));
+                    final Class2248 class2248 = Registry.field238.getOrDefault(obj);
                     if (class2248 == null) {
                         throw new JsonParseException("Invalid stat type: " + obj);
                     }
-                    hashMap.put(method26821((Class2248<Object>)class2248, new Class1932(Class9583.method35895(method35917, "stat"))), Class8685.method29756(method35917.get("value")));
+                    hashMap.put(method26821((Class2248<Object>)class2248, new ResourceLocation(Class9583.method35895(method35917, "stat"))), Class8685.method29756(method35917.get("value")));
                 }
             }
             final Object2BooleanOpenHashMap object2BooleanOpenHashMap = new Object2BooleanOpenHashMap();
             for (final Map.Entry<K, JsonElement> entry : Class9583.method35915(method35913, "recipes", new JsonObject()).entrySet()) {
-                ((Object2BooleanMap)object2BooleanOpenHashMap).put((Object)new Class1932((String)entry.getKey()), Class9583.method35899(entry.getValue(), "recipe present"));
+                ((Object2BooleanMap)object2BooleanOpenHashMap).put((Object)new ResourceLocation((String)entry.getKey()), Class9583.method35899(entry.getValue(), "recipe present"));
             }
             final HashMap hashMap2 = Maps.newHashMap();
             for (final Map.Entry<K, JsonElement> entry2 : Class9583.method35915(method35913, "advancements", new JsonObject()).entrySet()) {
-                hashMap2.put(new Class1932((String)entry2.getKey()), method26818(entry2.getValue()));
+                hashMap2.put(new ResourceLocation((String)entry2.getKey()), method26818(entry2.getValue()));
             }
-            return new Class8139(method35914, method35915, hashMap, (Object2BooleanMap<Class1932>)object2BooleanOpenHashMap, hashMap2);
+            return new Class8139(method35914, method35915, hashMap, (Object2BooleanMap<ResourceLocation>)object2BooleanOpenHashMap, hashMap2);
         }
         return Class8139.field33530;
     }
     
-    private static <T> Class9455<T> method26821(final Class2248<T> class2248, final Class1932 obj) {
-        final T method505 = class2248.method8448().method505(obj);
+    private static <T> Class9455<T> method26821(final Class2248<T> class2248, final ResourceLocation obj) {
+        final T method505 = class2248.method8448().getOrDefault(obj);
         if (method505 != null) {
             return class2248.method8449(method505);
         }
-        throw new JsonParseException("Unknown object " + obj + " for stat type " + Class90.field238.method503(class2248));
+        throw new JsonParseException("Unknown object " + obj + " for stat type " + Registry.field238.getKey(class2248));
     }
     
-    private static <T> Class1932 method26822(final Class9455<T> class9455) {
-        return class9455.method35134().method8448().method503(class9455.method35135());
+    private static <T> ResourceLocation method26822(final Class9455<T> class9455) {
+        return class9455.method35134().method8448().getKey(class9455.method35135());
     }
     
     public JsonElement method26823() {
@@ -143,7 +143,7 @@ public class Class8139
                 final JsonArray jsonArray = new JsonArray();
                 this.field33533.forEach((class9455, class9456) -> {
                     final JsonObject jsonObject4 = new JsonObject();
-                    jsonObject4.addProperty("type", Class90.field238.method503(class9455.method35134()).toString());
+                    jsonObject4.addProperty("type", Registry.field238.getKey(class9455.method35134()).toString());
                     jsonObject4.addProperty("stat", method26822((Class9455<Object>)class9455).toString());
                     jsonObject4.add("value", class9456.method29745());
                     jsonArray2.add((JsonElement)jsonObject4);

@@ -34,7 +34,7 @@ public class Class6912 implements Class6909
     
     @Override
     public String method21274() {
-        return String.format(Locale.ROOT, "%s %.2f %.2f %.2f %.2f", Class90.field222.method503(this.method21272()), this.field27103, this.field27104, this.field27105, this.field27106);
+        return String.format(Locale.ROOT, "%s %.2f %.2f %.2f %.2f", Registry.field222.getKey(this.method21272()), this.field27103, this.field27104, this.field27105, this.field27106);
     }
     
     @Override

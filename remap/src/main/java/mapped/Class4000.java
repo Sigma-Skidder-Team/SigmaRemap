@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public abstract class Class4000 extends Class3833
+public abstract class Class4000 extends Block
 {
     public static final VoxelShape field18031;
     public static final VoxelShape field18032;
@@ -40,13 +40,13 @@ public abstract class Class4000 extends Class3833
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        return (class7097 == Direction.DOWN && !class7096.method21752(class7099, class7100)) ? Class7521.field29147.method11878() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
+        return (class7097 == Direction.DOWN && !class7096.method21752(class7099, class7100)) ? Class7521.field29147.getDefaultState() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     @Override
     public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
         final BlockPos method1139 = class7098.method1139();
-        return Class3833.method11812(class7097, method1139) || Class3833.method11813(class7097, method1139, Direction.UP);
+        return Block.method11812(class7097, method1139) || Block.method11813(class7097, method1139, Direction.UP);
     }
     
     @Override
@@ -73,9 +73,9 @@ public abstract class Class4000 extends Class3833
         final boolean b2 = method12165 > 0;
         if (n != method12165) {
             final BlockState method12166 = this.method12167(class1849, method12165);
-            class1847.method6688(class1848, method12166, 2);
+            class1847.setBlockState(class1848, method12166, 2);
             this.method12164(class1847, class1848);
-            class1847.method6695(class1848, class1849, method12166);
+            class1847.markBlockRangeForRenderUpdate(class1848, class1849, method12166);
         }
         if (!b2 && b) {
             this.method12163(class1847, class1848);
@@ -97,7 +97,7 @@ public abstract class Class4000 extends Class3833
     @Override
     public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (!b) {
-            if (class7096.method21696() != class7099.method21696()) {
+            if (class7096.getBlock() != class7099.getBlock()) {
                 if (this.method12166(class7096) > 0) {
                     this.method12164(class7097, class7098);
                 }
@@ -127,8 +127,8 @@ public abstract class Class4000 extends Class3833
     }
     
     @Override
-    public Class2117 method11858(final BlockState class7096) {
-        return Class2117.field12341;
+    public PushReaction method11858(final BlockState class7096) {
+        return PushReaction.DESTROY;
     }
     
     public abstract int method12165(final World p0, final BlockPos p1);
@@ -138,8 +138,8 @@ public abstract class Class4000 extends Class3833
     public abstract BlockState method12167(final BlockState p0, final int p1);
     
     static {
-        field18031 = Class3833.method11778(1.0, 0.0, 1.0, 15.0, 0.5, 15.0);
-        field18032 = Class3833.method11778(1.0, 0.0, 1.0, 15.0, 1.0, 15.0);
+        field18031 = Block.method11778(1.0, 0.0, 1.0, 15.0, 0.5, 15.0);
+        field18032 = Block.method11778(1.0, 0.0, 1.0, 15.0, 1.0, 15.0);
         field18033 = new AxisAlignedBB(0.125, 0.0, 0.125, 0.875, 0.25, 0.875);
     }
 }

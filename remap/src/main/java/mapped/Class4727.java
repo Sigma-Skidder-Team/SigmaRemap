@@ -9,7 +9,7 @@ import net.minecraft.util.math.Vec3d;
 
 public class Class4727 extends Class4723<Class769>
 {
-    private static final Class1932 field20329;
+    private static final ResourceLocation field20329;
     
     public Class4727(final Class8551 class8551) {
         super(class8551, new Class5851(0.0f, 0.0f, 64, 64), 0.5f);
@@ -17,7 +17,7 @@ public class Class4727 extends Class4723<Class769>
         ((Class5851)this.field20301).method17576().field25187 = true;
     }
     
-    public Class1932 method14038(final Class769 class769) {
+    public ResourceLocation method14038(final Class769 class769) {
         return Class4727.field20329;
     }
     
@@ -42,6 +42,6 @@ public class Class4727 extends Class4723<Class769>
     }
     
     static {
-        field20329 = new Class1932("textures/entity/illager/illusioner.png");
+        field20329 = new ResourceLocation("textures/entity/illager/illusioner.png");
     }
 }

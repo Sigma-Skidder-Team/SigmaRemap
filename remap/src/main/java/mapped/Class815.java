@@ -294,7 +294,7 @@ public class Class815 extends Class812 implements Class768
     
     @Nullable
     private static Class181 method4791(final ItemStack class8321) {
-        final Class3833 method11776 = Class3833.method11776(class8321.getItem());
+        final Block method11776 = Block.method11776(class8321.getItem());
         return (method11776 instanceof Class4016) ? ((Class4016)method11776).method12199() : null;
     }
     

@@ -159,7 +159,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
     }
     
     @Override
-    public void method18859(final Class1878 class1878, final Class1860 class1879) {
+    public void method18859(final Class1878 class1878, final IChunk class1879) {
         final Class7859 method7019 = class1879.method7019();
         final int field32290 = method7019.field32290;
         final int field32291 = method7019.field32291;
@@ -180,7 +180,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
         this.method18860(class1879, class1880);
     }
     
-    public void method18860(final Class1860 class1860, final Random random) {
+    public void method18860(final IChunk class1860, final Random random) {
         final Mutable class1861 = new Mutable();
         final int method25426 = class1860.method7019().method25426();
         final int method25427 = class1860.method7019().method25427();
@@ -191,7 +191,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
             if (method25430 > 0) {
                 for (int i = method25430; i >= method25430 - 4; --i) {
                     if (i >= method25430 - random.nextInt(5)) {
-                        class1860.method7008(class1861.setPos(class1862.getX(), i, class1862.getZ()), Class7521.field29172.method11878(), false);
+                        class1860.method7008(class1861.setPos(class1862.getX(), i, class1862.getZ()), Class7521.field29172.getDefaultState(), false);
                     }
                 }
             }
@@ -200,14 +200,14 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
             }
             for (int j = method25429 + 4; j >= method25429; --j) {
                 if (j <= method25429 + random.nextInt(5)) {
-                    class1860.method7008(class1861.setPos(class1862.getX(), j, class1862.getZ()), Class7521.field29172.method11878(), false);
+                    class1860.method7008(class1861.setPos(class1862.getX(), j, class1862.getZ()), Class7521.field29172.getDefaultState(), false);
                 }
             }
         }
     }
     
     @Override
-    public void method18861(final Class1851 class1851, final Class1860 class1852) {
+    public void method18861(final Class1851 class1851, final IChunk class1852) {
         final int method18853 = this.method18853();
         final ObjectArrayList list = new ObjectArrayList(10);
         final ObjectArrayList list2 = new ObjectArrayList(32);
@@ -393,6 +393,6 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
             }
             return;
         });
-        field25360 = Class7521.field29147.method11878();
+        field25360 = Class7521.field29147.getDefaultState();
     }
 }

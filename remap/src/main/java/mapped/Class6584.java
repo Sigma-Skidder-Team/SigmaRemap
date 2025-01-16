@@ -18,7 +18,7 @@ public class Class6584 implements Class6582
     }
     
     @Override
-    public Class1671 method19933(final Class1932 class1932) throws IOException {
+    public Class1671 method19933(final ResourceLocation class1932) throws IOException {
         if (!class1932.method7797().equals("jelloblur")) {
             return Class8707.method29900().method5291().method19933(class1932);
         }
@@ -26,17 +26,17 @@ public class Class6584 implements Class6582
     }
     
     @Override
-    public boolean method19934(final Class1932 class1932) {
+    public boolean method19934(final ResourceLocation class1932) {
         return class1932.method7797().equals("jelloblur") || Class8707.method29900().method5291().method19934(class1932);
     }
     
     @Override
-    public List<Class1671> method19935(final Class1932 class1932) throws IOException {
+    public List<Class1671> method19935(final ResourceLocation class1932) throws IOException {
         return Class8707.method29900().method5291().method19935(class1932);
     }
     
     @Override
-    public Collection<Class1932> method19936(final String s, final Predicate<String> predicate) {
+    public Collection<ResourceLocation> method19936(final String s, final Predicate<String> predicate) {
         return Class8707.method29900().method5291().method19936(s, predicate);
     }
 }

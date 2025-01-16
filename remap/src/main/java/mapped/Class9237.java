@@ -38,7 +38,7 @@ public class Class9237
     public static final Class9272 field39622;
     
     public static void method34060() {
-        if (!Class8571.method28955()) {
+        if (!Config.method28955()) {
             Class9237.field39607 = Class9237.field39609;
         }
         else {

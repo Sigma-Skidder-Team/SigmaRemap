@@ -20,7 +20,7 @@ public class Class5529 extends Class5528
             class5902.field20284 = field20284;
             return (Class9559)class5902;
         }
-        Class8571.method28848("Field not found: RenderMinecart.modelMinecart");
+        Config.warn("Field not found: RenderMinecart.modelMinecart");
         return null;
     }
 }

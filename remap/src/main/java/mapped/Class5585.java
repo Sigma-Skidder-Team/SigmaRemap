@@ -28,7 +28,7 @@ public class Class5585 extends Class5584
     
     @Override
     public String[] method16813() {
-        return (String[])Class8571.method28982(super.method16813(), "mole");
+        return (String[]) Config.method28982(super.method16813(), "mole");
     }
     
     @Override

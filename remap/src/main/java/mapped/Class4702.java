@@ -10,7 +10,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4702 extends Class4703<Class858>
 {
-    private static final Class1932 field20277;
+    private static final ResourceLocation field20277;
     private static final Class6332 field20278;
     private static final float field20279;
     private final Class6300 field20280;
@@ -70,7 +70,7 @@ public class Class4702 extends Class4703<Class858>
         return (n2 * n2 + n2) * 0.4f - 1.4f;
     }
     
-    public Class1932 method13948(final Class858 class858) {
+    public ResourceLocation method13948(final Class858 class858) {
         return Class4702.field20277;
     }
     
@@ -79,7 +79,7 @@ public class Class4702 extends Class4703<Class858>
     }
     
     static {
-        field20277 = new Class1932("textures/entity/end_crystal/end_crystal.png");
+        field20277 = new ResourceLocation("textures/entity/end_crystal/end_crystal.png");
         field20278 = Class6332.method18770(Class4702.field20277);
         field20279 = (float)Math.sin(0.7853981633974483);
     }

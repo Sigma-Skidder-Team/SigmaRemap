@@ -7,11 +7,11 @@ package mapped;
 public class Class9569
 {
     private final BlockPos field41172;
-    private final Class3833 field41173;
+    private final Block field41173;
     private final int field41174;
     private final int field41175;
     
-    public Class9569(final BlockPos field41172, final Class3833 field41173, final int field41174, final int field41175) {
+    public Class9569(final BlockPos field41172, final Block field41173, final int field41174, final int field41175) {
         this.field41172 = field41172;
         this.field41173 = field41173;
         this.field41174 = field41174;
@@ -22,7 +22,7 @@ public class Class9569
         return this.field41172;
     }
     
-    public Class3833 method35808() {
+    public Block method35808() {
         return this.field41173;
     }
     

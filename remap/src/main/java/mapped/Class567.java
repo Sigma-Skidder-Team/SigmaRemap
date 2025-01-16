@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 
 public class Class567 extends Class566
 {
-    private static final Class1932 field3365;
+    private static final ResourceLocation field3365;
     private final Class869 field3366;
     private final Class8207 field3367;
     private final Consumer<Optional<Throwable>> field3368;
@@ -61,14 +61,14 @@ public class Class567 extends Class566
             if (this.field3366.field4700 != null) {
                 this.field3366.field4700.method2975(0, 0, n3);
             }
-            Class565.method3293(0, 0, method7696, method7697, this.field3373 | MathHelper.method35649((1.0f - MathHelper.clamp(n4 - 1.0f, 0.0f, 1.0f)) * 255.0f) << 24);
+            Class565.method3293(0, 0, method7696, method7697, this.field3373 | MathHelper.ceil((1.0f - MathHelper.clamp(n4 - 1.0f, 0.0f, 1.0f)) * 255.0f) << 24);
             method7699 = 1.0f - MathHelper.clamp(n4 - 1.0f, 0.0f, 1.0f);
         }
         else if (this.field3369) {
             if (this.field3366.field4700 != null && n5 < 1.0f) {
                 this.field3366.field4700.method2975(n, n2, n3);
             }
-            Class565.method3293(0, 0, method7696, method7697, this.field3373 | MathHelper.method35650(MathHelper.clamp(n5, 0.15, 1.0) * 255.0) << 24);
+            Class565.method3293(0, 0, method7696, method7697, this.field3373 | MathHelper.ceil(MathHelper.clamp(n5, 0.15, 1.0) * 255.0) << 24);
             method7699 = MathHelper.clamp(n5, 0.0f, 1.0f);
         }
         else {
@@ -110,7 +110,7 @@ public class Class567 extends Class566
     }
     
     private void method3307(final int n, final int n2, final int n3, final int n4, final float n5) {
-        final int method35649 = MathHelper.method35649((n3 - n - 1) * this.field3370);
+        final int method35649 = MathHelper.ceil((n3 - n - 1) * this.field3370);
         final float n6 = (float)(this.field3373 >> 16 & 0xFF);
         final float n7 = (float)(this.field3373 >> 8 & 0xFF);
         final float n8 = (float)(this.field3373 & 0xFF);
@@ -128,15 +128,15 @@ public class Class567 extends Class566
         this.field3373 = 16777215;
         this.field3374 = 16777215;
         this.field3376 = 14821431;
-        if (Class8571.method28945()) {
+        if (Config.method28945()) {
             try {
                 final String str = "optifine/color.properties";
-                final Class1932 class1932 = new Class1932(str);
-                if (!Class8571.method28900(class1932)) {
+                final ResourceLocation class1932 = new ResourceLocation(str);
+                if (!Config.method28900(class1932)) {
                     return;
                 }
-                final InputStream method28897 = Class8571.method28897(class1932);
-                Class8571.method28847("Loading " + str);
+                final InputStream method28897 = Config.method28897(class1932);
+                Config.method28847("Loading " + str);
                 final Class27 class1933 = new Class27();
                 class1933.load(method28897);
                 method28897.close();
@@ -146,7 +146,7 @@ public class Class567 extends Class566
                 this.field3376 = method3309(class1933, "screen.loading.progress", this.field3376);
             }
             catch (final Exception ex) {
-                Class8571.method28848("" + ex.getClass().getName() + ": " + ex.getMessage());
+                Config.warn("" + ex.getClass().getName() + ": " + ex.getMessage());
             }
         }
     }
@@ -159,10 +159,10 @@ public class Class567 extends Class566
         final String trim = property.trim();
         final int method3310 = method3310(trim, n);
         if (method3310 >= 0) {
-            Class8571.method28847(str + " = " + trim);
+            Config.method28847(str + " = " + trim);
             return method3310;
         }
-        Class8571.method28848("Invalid color: " + str + " = " + trim);
+        Config.warn("Invalid color: " + str + " = " + trim);
         return method3310;
     }
     
@@ -184,6 +184,6 @@ public class Class567 extends Class566
     }
     
     static {
-        field3365 = new Class1932("textures/gui/title/mojang.png");
+        field3365 = new ResourceLocation("textures/gui/title/mojang.png");
     }
 }

@@ -51,29 +51,29 @@ public class Class9436
         final Class384 field40466 = this.field40466;
         Class9144.method33372();
         field40466.method1281(class1860, Class1973.method7977(method7975)[0]);
-        final BlockState method7976 = class1856.method6701(field40466);
+        final BlockState method7976 = class1856.getBlockState(field40466);
         final int method7977 = Class7781.method24980(method7976, class1856, field40466);
         final float method7978 = Class7781.method24979(method7976, class1856, field40466);
         field40466.method1281(class1860, Class1973.method7977(method7975)[1]);
-        final BlockState method7979 = class1856.method6701(field40466);
+        final BlockState method7979 = class1856.getBlockState(field40466);
         final int method7980 = Class7781.method24980(method7979, class1856, field40466);
         final float method7981 = Class7781.method24979(method7979, class1856, field40466);
         field40466.method1281(class1860, Class1973.method7977(method7975)[2]);
-        final BlockState method7982 = class1856.method6701(field40466);
+        final BlockState method7982 = class1856.getBlockState(field40466);
         final int method7983 = Class7781.method24980(method7982, class1856, field40466);
         final float method7984 = Class7781.method24979(method7982, class1856, field40466);
         field40466.method1281(class1860, Class1973.method7977(method7975)[3]);
-        final BlockState method7985 = class1856.method6701(field40466);
+        final BlockState method7985 = class1856.getBlockState(field40466);
         final int method7986 = Class7781.method24980(method7985, class1856, field40466);
         final float method7987 = Class7781.method24979(method7985, class1856, field40466);
         field40466.method1282(class1860, Class1973.method7977(method7975)[0], class1859);
-        final boolean b = class1856.method6701(field40466).method21700(class1856, field40466) == 0;
+        final boolean b = class1856.getBlockState(field40466).getOpacity(class1856, field40466) == 0;
         field40466.method1282(class1860, Class1973.method7977(method7975)[1], class1859);
-        final boolean b2 = class1856.method6701(field40466).method21700(class1856, field40466) == 0;
+        final boolean b2 = class1856.getBlockState(field40466).getOpacity(class1856, field40466) == 0;
         field40466.method1282(class1860, Class1973.method7977(method7975)[2], class1859);
-        final boolean b3 = class1856.method6701(field40466).method21700(class1856, field40466) == 0;
+        final boolean b3 = class1856.getBlockState(field40466).getOpacity(class1856, field40466) == 0;
         field40466.method1282(class1860, Class1973.method7977(method7975)[3], class1859);
-        final boolean b4 = class1856.method6701(field40466).method21700(class1856, field40466) == 0;
+        final boolean b4 = class1856.getBlockState(field40466).getOpacity(class1856, field40466) == 0;
         float method7988;
         int method7989;
         if (!b3 && !b) {
@@ -82,7 +82,7 @@ public class Class9436
         }
         else {
             field40466.method1282(class1860, Class1973.method7977(method7975)[0], Class1973.method7977(method7975)[2]);
-            final BlockState method7990 = class1856.method6701(field40466);
+            final BlockState method7990 = class1856.getBlockState(field40466);
             method7988 = Class7781.method24979(method7990, class1856, field40466);
             method7989 = Class7781.method24980(method7990, class1856, field40466);
         }
@@ -94,7 +94,7 @@ public class Class9436
         }
         else {
             field40466.method1282(class1860, Class1973.method7977(method7975)[0], Class1973.method7977(method7975)[3]);
-            final BlockState method7993 = class1856.method6701(field40466);
+            final BlockState method7993 = class1856.getBlockState(field40466);
             method7991 = Class7781.method24979(method7993, class1856, field40466);
             method7992 = Class7781.method24980(method7993, class1856, field40466);
         }
@@ -106,7 +106,7 @@ public class Class9436
         }
         else {
             field40466.method1282(class1860, Class1973.method7977(method7975)[1], Class1973.method7977(method7975)[2]);
-            final BlockState method7996 = class1856.method6701(field40466);
+            final BlockState method7996 = class1856.getBlockState(field40466);
             method7994 = Class7781.method24979(method7996, class1856, field40466);
             method7995 = Class7781.method24980(method7996, class1856, field40466);
         }
@@ -118,17 +118,17 @@ public class Class9436
         }
         else {
             field40466.method1282(class1860, Class1973.method7977(method7975)[1], Class1973.method7977(method7975)[3]);
-            final BlockState method7999 = class1856.method6701(field40466);
+            final BlockState method7999 = class1856.getBlockState(field40466);
             method7997 = Class7781.method24979(method7999, class1856, field40466);
             method7998 = Class7781.method24980(method7999, class1856, field40466);
         }
         int n = Class7781.method24980(class1857, class1856, class1858);
         field40466.method1281(class1858, class1859);
-        final BlockState method8000 = class1856.method6701(field40466);
-        if (set.get(0) || !method8000.method21722(class1856, field40466)) {
+        final BlockState method8000 = class1856.getBlockState(field40466);
+        if (set.get(0) || !method8000.isOpaqueCube(class1856, field40466)) {
             n = Class7781.method24980(method8000, class1856, field40466);
         }
-        final float n2 = set.get(0) ? Class7781.method24979(class1856.method6701(class1860), class1856, class1860) : Class7781.method24979(class1856.method6701(class1858), class1856, class1858);
+        final float n2 = set.get(0) ? Class7781.method24979(class1856.getBlockState(class1860), class1856, class1860) : Class7781.method24979(class1856.getBlockState(class1858), class1856, class1858);
         final Class99 method8001 = Class99.method577(class1859);
         if (set.get(1) && Class1973.method7978(method7975)) {
             final float n3 = (method7987 + method7978 + method7991 + n2) * 0.25f;

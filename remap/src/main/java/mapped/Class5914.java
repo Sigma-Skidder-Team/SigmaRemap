@@ -17,7 +17,7 @@ public class Class5914 implements Consumer<Consumer<Class8863>>
     
     @Override
     public void accept(final Consumer<Class8863> consumer) {
-        final Class8863 method18014 = Class6056.method18001().method18005(Class7521.field29529, new Class2259("advancements.husbandry.root.title", new Object[0]), new Class2259("advancements.husbandry.root.description", new Object[0]), new Class1932("textures/gui/advancements/backgrounds/husbandry.png"), Class1993.field11162, false, false, false).method18009("consumed_item", Class4224.method12709()).method18014(consumer, "husbandry/root");
+        final Class8863 method18014 = Class6056.method18001().method18005(Class7521.field29529, new Class2259("advancements.husbandry.root.title", new Object[0]), new Class2259("advancements.husbandry.root.description", new Object[0]), new ResourceLocation("textures/gui/advancements/backgrounds/husbandry.png"), Class1993.field11162, false, false, false).method18009("consumed_item", Class4224.method12709()).method18014(consumer, "husbandry/root");
         final Class8863 method18015 = Class6056.method18001().method18002(method18014).method18005(Items.field31315, new Class2259("advancements.husbandry.plant_seed.title", new Object[0]), new Class2259("advancements.husbandry.plant_seed.description", new Object[0]), null, Class1993.field11162, true, true, false).method18011(Class6526.field25976).method18009("wheat", Class4235.method12735(Class7521.field29297)).method18009("pumpkin_stem", Class4235.method12735(Class7521.field29386)).method18009("melon_stem", Class4235.method12735(Class7521.field29387)).method18009("beetroots", Class4235.method12735(Class7521.field29636)).method18009("nether_wart", Class4235.method12735(Class7521.field29397)).method18014(consumer, "husbandry/plant_seed");
         final Class8863 method18016 = Class6056.method18001().method18002(method18014).method18005(Items.field31315, new Class2259("advancements.husbandry.breed_an_animal.title", new Object[0]), new Class2259("advancements.husbandry.breed_an_animal.description", new Object[0]), null, Class1993.field11162, true, true, false).method18011(Class6526.field25976).method18009("bred", Class4218.method12699()).method18014(consumer, "husbandry/breed_an_animal");
         this.method17780(Class6056.method18001()).method18002(method18015).method18005(Items.field31278, new Class2259("advancements.husbandry.balanced_diet.title", new Object[0]), new Class2259("advancements.husbandry.balanced_diet.description", new Object[0]), null, Class1993.field11163, true, true, false).method18007(Class6467.method19353(100)).method18014(consumer, "husbandry/balanced_diet");
@@ -32,7 +32,7 @@ public class Class5914 implements Consumer<Consumer<Class8863>>
     
     private Class6056 method17780(final Class6056 class6056) {
         for (final Item class6057 : Class5914.field24297) {
-            class6056.method18009(Class90.field211.method503(class6057).method7797(), Class4224.method12710(class6057));
+            class6056.method18009(Registry.field211.getKey(class6057).method7797(), Class4224.method12710(class6057));
         }
         return class6056;
     }
@@ -46,14 +46,14 @@ public class Class5914 implements Consumer<Consumer<Class8863>>
     
     private Class6056 method17782(final Class6056 class6056) {
         for (final Item class6057 : Class5914.field24296) {
-            class6056.method18009(Class90.field211.method503(class6057).method7797(), Class4243.method12749(Class9425.method35024().method35025(class6057).method35029()));
+            class6056.method18009(Registry.field211.getKey(class6057).method7797(), Class4243.method12749(Class9425.method35024().method35025(class6057).method35029()));
         }
         return class6056;
     }
     
     private Class6056 method17783(final Class6056 class6056) {
         for (final Item class6057 : Class5914.field24295) {
-            class6056.method18009(Class90.field211.method503(class6057).method7797(), Class4231.method12724(Class9342.field40107, Class8172.field33663, Class9425.method35024().method35025(class6057).method35029()));
+            class6056.method18009(Registry.field211.getKey(class6057).method7797(), Class4231.method12724(Class9342.field40107, Class8172.field33663, Class9425.method35024().method35025(class6057).method35029()));
         }
         return class6056;
     }

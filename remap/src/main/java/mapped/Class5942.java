@@ -70,10 +70,10 @@ public class Class5942 extends Class5936
                         if (n != 0) {
                             for (int k = field27294 - 1; k > 1; --k) {
                                 final BlockPos class1856 = new BlockPos(i, k, j);
-                                if (!class1851.method6961(class1856) && !class1851.method6701(class1856).method21697().method26438()) {
+                                if (!class1851.method6961(class1856) && !class1851.getBlockState(class1856).getMaterial().method26438()) {
                                     break;
                                 }
-                                class1851.method6688(class1856, Class7521.field29159.method11878(), 2);
+                                class1851.setBlockState(class1856, Class7521.field29159.getDefaultState(), 2);
                             }
                         }
                     }

@@ -14,7 +14,6 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.ArrayList;
 import java.io.File;
-import java.util.Collection;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 
@@ -26,7 +25,7 @@ public class Class9084
     
     public static String[] method32776(final String[] array, final String[] array2) {
         final LinkedHashSet set = new LinkedHashSet();
-        final Class1727[] method28903 = Class8571.method28903();
+        final Class1727[] method28903 = Config.method28903();
         for (int i = 0; i < method28903.length; ++i) {
             set.addAll(Arrays.asList(method32779(method28903[i], array, array2, null)));
         }
@@ -48,7 +47,7 @@ public class Class9084
         if (obj instanceof Class1730) {
             final Class1727 class1727 = (Class1727)Class9570.method35828(obj, Class9570.field41440);
             if (class1727 == null) {
-                Class8571.method28848("LegacyResourcePackWrapper base resource pack not found: " + obj);
+                Config.warn("LegacyResourcePackWrapper base resource pack not found: " + obj);
                 return new String[0];
             }
             obj = class1727;
@@ -56,13 +55,13 @@ public class Class9084
         if (obj instanceof Class1731) {
             final Class1727 class1728 = (Class1727)Class9570.method35828(obj, Class9570.field41442);
             if (class1728 == null) {
-                Class8571.method28848("LegacyResourcePackWrapperV4 base resource pack not found: " + obj);
+                Config.warn("LegacyResourcePackWrapperV4 base resource pack not found: " + obj);
                 return new String[0];
             }
             obj = class1728;
         }
         if (!(obj instanceof Class1732)) {
-            Class8571.method28848("Unknown resource pack type: " + obj);
+            Config.warn("Unknown resource pack type: " + obj);
             return new String[0];
         }
         final File field9679 = ((Class1732)obj).field9679;
@@ -73,7 +72,7 @@ public class Class9084
             return method32781(field9679, "", array, array2);
         }
         if (!field9679.isFile()) {
-            Class8571.method28848("Unknown resource pack file: " + field9679);
+            Config.warn("Unknown resource pack file: " + field9679);
             return new String[0];
         }
         return method32782(field9679, array, array2);
@@ -85,12 +84,12 @@ public class Class9084
             for (int i = 0; i < array.length; ++i) {
                 final String str = array[i];
                 if (method32783(str)) {
-                    if (class1727.method6099(Class346.field2137, new Class1932(str))) {
+                    if (class1727.method6099(Class346.field2137, new ResourceLocation(str))) {
                         list.add(str);
                     }
                 }
                 else {
-                    Class8571.method28848("Skipping non-lowercase path: " + str);
+                    Config.warn("Skipping non-lowercase path: " + str);
                 }
             }
             return (String[])list.toArray(new String[list.size()]);
@@ -123,7 +122,7 @@ public class Class9084
                                     list.add(substring);
                                 }
                                 else {
-                                    Class8571.method28848("Skipping non-lowercase path: " + substring);
+                                    Config.warn("Skipping non-lowercase path: " + substring);
                                 }
                             }
                         }
@@ -149,7 +148,7 @@ public class Class9084
                         continue;
                     }
                     if (!method32783(substring)) {
-                        Class8571.method28848("Skipping non-lowercase path: " + substring);
+                        Config.warn("Skipping non-lowercase path: " + substring);
                     }
                     else {
                         list.add(substring);
@@ -170,23 +169,23 @@ public class Class9084
     }
     
     public static Properties method32784(final String s, final String s2) {
-        final Class1932 class1932 = new Class1932(s);
+        final ResourceLocation class1932 = new ResourceLocation(s);
         try {
-            final InputStream method28897 = Class8571.method28897(class1932);
+            final InputStream method28897 = Config.method28897(class1932);
             if (method28897 == null) {
                 return null;
             }
             final Class27 class1933 = new Class27();
             class1933.load(method28897);
             method28897.close();
-            Class8571.method28847("" + s2 + ": Loading " + s);
+            Config.method28847("" + s2 + ": Loading " + s);
             return class1933;
         }
         catch (final FileNotFoundException ex) {
             return null;
         }
         catch (final IOException ex2) {
-            Class8571.method28848("" + s2 + ": Error reading " + s);
+            Config.warn("" + s2 + ": Error reading " + s);
             return null;
         }
     }

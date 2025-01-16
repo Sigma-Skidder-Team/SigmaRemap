@@ -27,7 +27,7 @@ public abstract class Class1805<T extends Entity & Class766, M extends Class5845
     
     public abstract float method6565(final float p0);
     
-    public abstract Class1932 method6566();
+    public abstract ResourceLocation method6566();
     
     public abstract Class5845<T> method6567();
 }

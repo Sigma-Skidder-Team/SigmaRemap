@@ -48,17 +48,17 @@ public class Class3879 extends Class3878
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class3879.field17531);
     }
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return Class3879.field17532[class7096.method21772((Class7111<Integer>)this.method11952())];
+        return Class3879.field17532[class7096.get((IProperty<Integer>)this.method11952())];
     }
     
     static {
         field17531 = Class8970.field37771;
-        field17532 = new VoxelShape[] { Class3833.method11778(0.0, 0.0, 0.0, 16.0, 2.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 4.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 6.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 8.0, 16.0) };
+        field17532 = new VoxelShape[] { Block.method11778(0.0, 0.0, 0.0, 16.0, 2.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 4.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 6.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 8.0, 16.0) };
     }
 }

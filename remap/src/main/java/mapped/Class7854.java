@@ -12,12 +12,12 @@ import com.google.gson.JsonElement;
 public class Class7854
 {
     public static final Class7854 field32229;
-    private final Class7909<Class3833> field32230;
-    private final Class3833 field32231;
+    private final Class7909<Block> field32230;
+    private final Block field32231;
     private final Class9357 field32232;
     private final Class7103 field32233;
     
-    public Class7854(final Class7909<Class3833> field32230, final Class3833 field32231, final Class9357 field32232, final Class7103 field32233) {
+    public Class7854(final Class7909<Block> field32230, final Block field32231, final Class9357 field32232, final Class7103 field32233) {
         this.field32230 = field32230;
         this.field32231 = field32231;
         this.field32232 = field32232;
@@ -31,8 +31,8 @@ public class Class7854
         if (!class1849.method6731(class1850)) {
             return false;
         }
-        final BlockState method6701 = class1849.method6701(class1850);
-        final Class3833 method6702 = method6701.method21696();
+        final BlockState method6701 = class1849.getBlockState(class1850);
+        final Block method6702 = method6701.getBlock();
         if (this.field32230 != null && !this.field32230.method25618(method6702)) {
             return false;
         }
@@ -55,13 +55,13 @@ public class Class7854
         if (jsonElement != null && !jsonElement.isJsonNull()) {
             final JsonObject method35913 = Class9583.method35913(jsonElement, "block");
             final Class7103 method35914 = Class7103.method21807(method35913.get("nbt"));
-            Class3833 class3833 = null;
+            Block class3833 = null;
             if (method35913.has("block")) {
-                class3833 = Class90.field208.method505(new Class1932(Class9583.method35895(method35913, "block")));
+                class3833 = Registry.BLOCK.getOrDefault(new ResourceLocation(Class9583.method35895(method35913, "block")));
             }
-            Class7909<Class3833> method35915 = null;
+            Class7909<Block> method35915 = null;
             if (method35913.has("tag")) {
-                final Class1932 obj = new Class1932(Class9583.method35895(method35913, "tag"));
+                final ResourceLocation obj = new ResourceLocation(Class9583.method35895(method35913, "tag"));
                 method35915 = Class7188.method22057().method18460(obj);
                 if (method35915 == null) {
                     throw new JsonSyntaxException("Unknown block tag '" + obj + "'");
@@ -76,7 +76,7 @@ public class Class7854
         if (this != Class7854.field32229) {
             final JsonObject jsonObject = new JsonObject();
             if (this.field32231 != null) {
-                jsonObject.addProperty("block", Class90.field208.method503(this.field32231).toString());
+                jsonObject.addProperty("block", Registry.BLOCK.getKey(this.field32231).toString());
             }
             if (this.field32230 != null) {
                 jsonObject.addProperty("tag", this.field32230.method25621().toString());

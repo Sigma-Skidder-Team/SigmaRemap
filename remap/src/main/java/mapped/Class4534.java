@@ -17,7 +17,7 @@ public class Class4534 extends Class4535<Class5139>
     public boolean method13524(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, BlockPos class1853, final Class5139 class1854) {
         while (class1853.getY() > 3) {
             if (!class1851.method6961(class1853.method1139())) {
-                final Class3833 method21696 = class1851.method6701(class1853.method1139()).method21696();
+                final Block method21696 = class1851.getBlockState(class1853.method1139()).getBlock();
                 if (Class4535.method13533(method21696)) {
                     break;
                 }
@@ -37,7 +37,7 @@ public class Class4534 extends Class4535<Class5139>
                     if (class1855.distanceSq(class1853) > n5 * n5) {
                         continue;
                     }
-                    class1851.method6688(class1855, class1854.field22123, 4);
+                    class1851.setBlockState(class1855, class1854.field22123, 4);
                 }
                 class1853 = class1853.add(-(field22124 + 1) + random.nextInt(2 + field22124 * 2), 0 - random.nextInt(2), -(field22124 + 1) + random.nextInt(2 + field22124 * 2));
             }

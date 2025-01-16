@@ -19,20 +19,20 @@ public class Class4106 extends Class4107
     public static final Class4106 field18207;
     public static final Class4106 field18208;
     public static final Class4106 field18209;
-    private final ImmutableList<Class3833> field18210;
+    private final ImmutableList<Block> field18210;
     
-    public Class4106(final List<Class3833> list) {
-        this.field18210 = (ImmutableList<Class3833>)ImmutableList.copyOf((Collection)list);
+    public Class4106(final List<Block> list) {
+        this.field18210 = (ImmutableList<Block>)ImmutableList.copyOf((Collection)list);
     }
     
     public Class4106(final Dynamic<?> dynamic) {
-        this(dynamic.get("blocks").asList(dynamic2 -> BlockState.method21764((com.mojang.datafixers.Dynamic<Object>)dynamic2).method21696()));
+        this(dynamic.get("blocks").asList(dynamic2 -> BlockState.deserialize((com.mojang.datafixers.Dynamic<Object>)dynamic2).getBlock()));
     }
     
     @Nullable
     @Override
     public Class9038 method12350(final Class1852 class1852, final BlockPos class1853, final Class9038 class1854, final Class9038 class1855, final Class9092 class1856) {
-        return this.field18210.contains((Object)class1855.field38249.method21696()) ? null : class1855;
+        return this.field18210.contains((Object)class1855.field38249.getBlock()) ? null : class1855;
     }
     
     @Override
@@ -42,12 +42,12 @@ public class Class4106 extends Class4107
     
     @Override
     public <T> Dynamic<T> method12352(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("blocks"), dynamicOps.createList((Stream)this.field18210.stream().map(class3833 -> BlockState.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2, class3833.method11878()).getValue())))));
+        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("blocks"), dynamicOps.createList((Stream)this.field18210.stream().map(class3833 -> BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2, class3833.getDefaultState()).getValue())))));
     }
     
     static {
-        field18207 = new Class4106((List<Class3833>)ImmutableList.of((Object)Class7521.field29820));
-        field18208 = new Class4106((List<Class3833>)ImmutableList.of((Object)Class7521.field29147));
-        field18209 = new Class4106((List<Class3833>)ImmutableList.of((Object)Class7521.field29147, (Object)Class7521.field29820));
+        field18207 = new Class4106((List<Block>)ImmutableList.of((Object)Class7521.field29820));
+        field18208 = new Class4106((List<Block>)ImmutableList.of((Object)Class7521.field29147));
+        field18209 = new Class4106((List<Block>)ImmutableList.of((Object)Class7521.field29147, (Object)Class7521.field29820));
     }
 }

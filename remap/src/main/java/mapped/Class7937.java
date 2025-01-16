@@ -55,7 +55,7 @@ public class Class7937 implements Class7938
         if (this.field32613 != null) {
             map.put("server", (T)this.field32613);
         }
-        final File method7616 = this.field32611.method27064(new Class1932("resourcepacks/programmer_art.zip"));
+        final File method7616 = this.field32611.method27064(new ResourceLocation("resourcepacks/programmer_art.zip"));
         if (method7616 != null) {
             if (method7616.isFile()) {
                 final Class1921 method7617 = Class1921.method7615("programer_art", false, () -> new Class1734(this, file), class6712, Class2043.field11642);

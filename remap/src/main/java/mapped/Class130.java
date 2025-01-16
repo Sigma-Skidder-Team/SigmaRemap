@@ -14,7 +14,7 @@ import java.util.Map;
 public class Class130 extends Class126
 {
     private static String[] field395;
-    private static final Map<Class1932, Class9256> field396;
+    private static final Map<ResourceLocation, Class9256> field396;
     private final Class6257 field397;
     private final Class5020 field398;
     

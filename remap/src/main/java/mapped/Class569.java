@@ -8,8 +8,8 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class569 extends Class565 implements Class570
 {
-    private static final Class1932 field3394;
-    public static final Class1932 field3395;
+    private static final ResourceLocation field3394;
+    public static final ResourceLocation field3395;
     private final Class869 field3396;
     private long field3397;
     private Class9039 field3398;
@@ -146,7 +146,7 @@ public class Class569 extends Class565 implements Class570
     }
     
     static {
-        field3394 = new Class1932("textures/gui/widgets.png");
-        field3395 = new Class1932("textures/gui/spectator_widgets.png");
+        field3394 = new ResourceLocation("textures/gui/widgets.png");
+        field3395 = new ResourceLocation("textures/gui/spectator_widgets.png");
     }
 }

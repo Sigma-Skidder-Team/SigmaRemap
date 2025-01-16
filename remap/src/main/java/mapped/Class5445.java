@@ -75,9 +75,9 @@ public class Class5445 extends Class5419<Class824>
     }
     
     private boolean method16632(final BlockPos class354, final Class1849 class355) {
-        final BlockState method6701 = class355.method6701(class354);
-        final Class3833 method6702 = method6701.method21696();
-        final Class3833 method6703 = class355.method6701(class354.method1139()).method21696();
+        final BlockState method6701 = class355.getBlockState(class354);
+        final Block method6702 = method6701.getBlock();
+        final Block method6703 = class355.getBlockState(class354.method1139()).method21696();
         if (method6702 instanceof Class3878) {
             if (((Class3878)method6702).method11956(method6701)) {
                 if (this.field22669) {
@@ -116,9 +116,9 @@ public class Class5445 extends Class5419<Class824>
     public void method16562(final Class1849 class1849, final Class824 class1850, final long n) {
         if (this.field22667 != null) {
             if (n > this.field22670) {
-                final BlockState method6701 = class1849.method6701(this.field22667);
-                final Class3833 method6702 = method6701.method21696();
-                final Class3833 method6703 = class1849.method6701(this.field22667.method1139()).method21696();
+                final BlockState method6701 = class1849.getBlockState(this.field22667);
+                final Block method6702 = method6701.getBlock();
+                final Block method6703 = class1849.getBlockState(this.field22667.method1139()).method21696();
                 if (method6702 instanceof Class3878) {
                     if (((Class3878)method6702).method11956(method6701)) {
                         if (this.field22669) {
@@ -139,22 +139,22 @@ public class Class5445 extends Class5419<Class824>
                                         if (method6705.getItem() != Items.field31518) {
                                             if (method6705.getItem() != Items.field31517) {
                                                 if (method6705.getItem() == Items.field31576) {
-                                                    class1849.method6688(this.field22667, Class7521.field29636.method11878(), 3);
+                                                    class1849.setBlockState(this.field22667, Class7521.field29636.getDefaultState(), 3);
                                                     n2 = 1;
                                                 }
                                             }
                                             else {
-                                                class1849.method6688(this.field22667, Class7521.field29445.method11878(), 3);
+                                                class1849.setBlockState(this.field22667, Class7521.field29445.getDefaultState(), 3);
                                                 n2 = 1;
                                             }
                                         }
                                         else {
-                                            class1849.method6688(this.field22667, Class7521.field29446.method11878(), 3);
+                                            class1849.setBlockState(this.field22667, Class7521.field29446.getDefaultState(), 3);
                                             n2 = 1;
                                         }
                                     }
                                     else {
-                                        class1849.method6688(this.field22667, Class7521.field29297.method11878(), 3);
+                                        class1849.setBlockState(this.field22667, Class7521.field29297.getDefaultState(), 3);
                                         n2 = 1;
                                     }
                                 }

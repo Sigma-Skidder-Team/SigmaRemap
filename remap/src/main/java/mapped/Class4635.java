@@ -11,14 +11,14 @@ import com.google.gson.JsonObject;
 public class Class4635 extends Class4611<Class4217>
 {
     private static String[] field20101;
-    private final Class1932 field20102;
+    private final ResourceLocation field20102;
     
-    public Class4635(final Class1932 field20102) {
+    public Class4635(final ResourceLocation field20102) {
         this.field20102 = field20102;
     }
     
     @Override
-    public Class1932 method13717() {
+    public ResourceLocation method13717() {
         return this.field20102;
     }
     

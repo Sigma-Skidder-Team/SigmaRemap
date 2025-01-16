@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.Vector3f;
 
 public class Class4740 extends Class4712<Class786, Class5874<Class786>>
 {
-    private static final Class1932 field20356;
+    private static final ResourceLocation field20356;
     
     public Class4740(final Class8551 class8551) {
         super(class8551, new Class5874(), 0.7f);
@@ -16,7 +16,7 @@ public class Class4740 extends Class4712<Class786, Class5874<Class786>>
         this.method13978(new Class1832(this));
     }
     
-    public Class1932 method14064(final Class786 class786) {
+    public ResourceLocation method14064(final Class786 class786) {
         return Class4740.field20356;
     }
     
@@ -28,6 +28,6 @@ public class Class4740 extends Class4712<Class786, Class5874<Class786>>
     }
     
     static {
-        field20356 = new Class1932("textures/entity/iron_golem/iron_golem.png");
+        field20356 = new ResourceLocation("textures/entity/iron_golem/iron_golem.png");
     }
 }

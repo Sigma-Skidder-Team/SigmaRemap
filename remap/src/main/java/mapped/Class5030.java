@@ -48,7 +48,7 @@ public class Class5030 implements Class5027
             this.field21577 = true;
             this.field21576 = "";
             this.field21570.clear();
-            this.method15297("root");
+            this.startSection("root");
         }
         else {
             Class5030.field21569.error("Profiler tick already started - missing endTick()?");
@@ -58,7 +58,7 @@ public class Class5030 implements Class5027
     @Override
     public void method15296() {
         if (this.field21577) {
-            this.method15299();
+            this.endSection();
             this.field21577 = false;
             if (!this.field21576.isEmpty()) {
                 Class5030.field21569.error("Profiler tick ended before path was fully popped (remainder: '{}'). Mismatched push/pop?", new Supplier[] { () -> Class5756.method17107(this.field21576) });
@@ -70,7 +70,7 @@ public class Class5030 implements Class5027
     }
     
     @Override
-    public void method15297(final String str) {
+    public void startSection(final String str) {
         if (this.field21577) {
             if (!this.field21576.isEmpty()) {
                 this.field21576 += '\u001e';
@@ -87,11 +87,11 @@ public class Class5030 implements Class5027
     
     @Override
     public void method15298(final java.util.function.Supplier<String> supplier) {
-        this.method15297(supplier.get());
+        this.startSection(supplier.get());
     }
     
     @Override
-    public void method15299() {
+    public void endSection() {
         if (this.field21577) {
             if (!this.field21571.isEmpty()) {
                 final long method27838 = Class8349.method27838();
@@ -120,13 +120,13 @@ public class Class5030 implements Class5027
     
     @Override
     public void method15300(final String s) {
-        this.method15299();
-        this.method15297(s);
+        this.endSection();
+        this.startSection(s);
     }
     
     @Override
     public void method15301(final java.util.function.Supplier<String> supplier) {
-        this.method15299();
+        this.endSection();
         this.method15298(supplier);
     }
     

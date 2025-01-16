@@ -63,10 +63,10 @@ public class Class490 extends TileEntity implements Class434, Class439
             if (class354.getY() > method1077) {
                 break;
             }
-            final BlockState method1078 = this.field2656.method6701(class354);
-            final Class3833 method1079 = method1078.method21696();
+            final BlockState method1078 = this.field2656.getBlockState(class354);
+            final Block method1079 = method1078.getBlock();
             if (!(method1079 instanceof Class3843)) {
-                if (class355 == null || (method1078.method21700(this.field2656, class354) >= 15 && method1079 != Class7521.field29172)) {
+                if (class355 == null || (method1078.getOpacity(this.field2656, class354) >= 15 && method1079 != Class7521.field29172)) {
                     this.field2810.clear();
                     this.field2812 = method1077;
                     break;
@@ -138,7 +138,7 @@ public class Class490 extends TileEntity implements Class434, Class439
             int n5 = 1;
             for (int n6 = n - i; n6 <= n + i && n5 != 0; ++n6) {
                 for (int j = n3 - i; j <= n3 + i; ++j) {
-                    final Class3833 method21696 = this.field2656.method6701(new BlockPos(n6, n4, j)).method21696();
+                    final Block method21696 = this.field2656.getBlockState(new BlockPos(n6, n4, j)).method21696();
                     if (method21696 != Class7521.field29412) {
                         if (method21696 != Class7521.field29280) {
                             if (method21696 != Class7521.field29295) {
@@ -258,7 +258,7 @@ public class Class490 extends TileEntity implements Class434, Class439
     @Nullable
     @Override
     public Class3418 method2166(final int n, final Class464 class464, final Class512 class465) {
-        return Class460.method2336(class465, this.field2816, this.method1871()) ? new Class3436(n, class464, this.field2817, Class7318.method22434(this.field2656, this.method2193())) : null;
+        return Class460.method2336(class465, this.field2816, this.method1871()) ? new Class3436(n, class464, this.field2817, Class7318.method22434(this.field2656, this.getPos())) : null;
     }
     
     @Override

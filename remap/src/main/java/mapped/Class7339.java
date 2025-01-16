@@ -20,7 +20,7 @@ public class Class7339
     private final ITextComponent field28342;
     private final ITextComponent field28343;
     private final ItemStack field28344;
-    private final Class1932 field28345;
+    private final ResourceLocation field28345;
     private final Class1993 field28346;
     private final boolean field28347;
     private final boolean field28348;
@@ -28,7 +28,7 @@ public class Class7339
     private float field28350;
     private float field28351;
     
-    public Class7339(final ItemStack field28344, final ITextComponent field28345, final ITextComponent field28346, final Class1932 field28347, final Class1993 field28348, final boolean field28349, final boolean field28350, final boolean field28351) {
+    public Class7339(final ItemStack field28344, final ITextComponent field28345, final ITextComponent field28346, final ResourceLocation field28347, final Class1993 field28348, final boolean field28349, final boolean field28350, final boolean field28351) {
         this.field28342 = field28345;
         this.field28343 = field28346;
         this.field28344 = field28344;
@@ -57,7 +57,7 @@ public class Class7339
     }
     
     @Nullable
-    public Class1932 method22530() {
+    public ResourceLocation method22530() {
         return this.field28345;
     }
     
@@ -89,7 +89,7 @@ public class Class7339
         final ITextComponent class2250 = Class9583.method35920(jsonObject, "title", jsonDeserializationContext, (Class<? extends ITextComponent>) ITextComponent.class);
         final ITextComponent class2251 = Class9583.method35920(jsonObject, "description", jsonDeserializationContext, (Class<? extends ITextComponent>) ITextComponent.class);
         if (class2250 != null && class2251 != null) {
-            return new Class7339(method22538(Class9583.method35914(jsonObject, "icon")), class2250, class2251, jsonObject.has("background") ? new Class1932(Class9583.method35895(jsonObject, "background")) : null, jsonObject.has("frame") ? Class1993.method8017(Class9583.method35895(jsonObject, "frame")) : Class1993.field11162, Class9583.method35901(jsonObject, "show_toast", true), Class9583.method35901(jsonObject, "announce_to_chat", true), Class9583.method35901(jsonObject, "hidden", false));
+            return new Class7339(method22538(Class9583.method35914(jsonObject, "icon")), class2250, class2251, jsonObject.has("background") ? new ResourceLocation(Class9583.method35895(jsonObject, "background")) : null, jsonObject.has("frame") ? Class1993.method8017(Class9583.method35895(jsonObject, "frame")) : Class1993.field11162, Class9583.method35901(jsonObject, "show_toast", true), Class9583.method35901(jsonObject, "announce_to_chat", true), Class9583.method35901(jsonObject, "hidden", false));
         }
         throw new JsonSyntaxException("Both title and description must be set");
     }
@@ -165,7 +165,7 @@ public class Class7339
     
     private JsonObject method22542() {
         final JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("item", Class90.field211.method503(this.field28344.getItem()).toString());
+        jsonObject.addProperty("item", Registry.field211.getKey(this.field28344.getItem()).toString());
         if (this.field28344.method27656()) {
             jsonObject.addProperty("nbt", this.field28344.method27657().toString());
         }

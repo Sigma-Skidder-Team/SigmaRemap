@@ -20,9 +20,9 @@ import org.apache.logging.log4j.Logger;
 public class Class697 extends Class527
 {
     private static final Logger field3146;
-    private static final Class1932 field3832;
-    private static final Class1932 field3833;
-    private static final Class1932 field3834;
+    private static final ResourceLocation field3832;
+    private static final ResourceLocation field3833;
+    private static final ResourceLocation field3834;
     private final boolean field3835;
     private final Runnable field3836;
     private float field3837;
@@ -67,7 +67,7 @@ public class Class697 extends Class527
             try {
                 final String string = "" + TextFormatting.WHITE + TextFormatting.OBFUSCATED + TextFormatting.GREEN + TextFormatting.AQUA;
                 if (this.field3835) {
-                    method19933 = this.field3150.method5291().method19933(new Class1932("texts/end.txt"));
+                    method19933 = this.field3150.method5291().method19933(new ResourceLocation("texts/end.txt"));
                     final InputStream method19934 = method19933.method5887();
                     final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(method19934, StandardCharsets.UTF_8));
                     final Random random = new Random(8124371L);
@@ -86,7 +86,7 @@ public class Class697 extends Class527
                         this.field3838.add("");
                     }
                 }
-                final InputStream method19935 = this.field3150.method5291().method19933(new Class1932("texts/credits.txt")).method5887();
+                final InputStream method19935 = this.field3150.method5291().method19933(new ResourceLocation("texts/credits.txt")).method5887();
                 String line2;
                 while ((line2 = new BufferedReader(new InputStreamReader(method19935, StandardCharsets.UTF_8)).readLine()) != null) {
                     this.field3838.addAll(this.field3150.field4643.method6626(line2.replaceAll("PLAYERNAME", this.field3150.method5287().method33692()).replaceAll("\t", "    "), 274));
@@ -187,8 +187,8 @@ public class Class697 extends Class527
     
     static {
         field3146 = LogManager.getLogger();
-        field3832 = new Class1932("textures/gui/title/minecraft.png");
-        field3833 = new Class1932("textures/gui/title/edition.png");
-        field3834 = new Class1932("textures/misc/vignette.png");
+        field3832 = new ResourceLocation("textures/gui/title/minecraft.png");
+        field3833 = new ResourceLocation("textures/gui/title/edition.png");
+        field3834 = new ResourceLocation("textures/misc/vignette.png");
     }
 }

@@ -22,10 +22,10 @@ public class Class5139 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("state"), BlockState.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22123).getValue(), dynamicOps.createString("start_radius"), dynamicOps.createInt(this.field22124))));
+        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("state"), BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22123).getValue(), dynamicOps.createString("start_radius"), dynamicOps.createInt(this.field22124))));
     }
     
     public static <T> Class5139 method16053(final Dynamic<T> dynamic) {
-        return new Class5139(dynamic.get("state").map((Function) BlockState::method21764).orElse(Class7521.field29147.method11878()), dynamic.get("start_radius").asInt(0));
+        return new Class5139(dynamic.get("state").map((Function) BlockState::deserialize).orElse(Class7521.field29147.getDefaultState()), dynamic.get("start_radius").asInt(0));
     }
 }

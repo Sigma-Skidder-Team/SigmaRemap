@@ -240,24 +240,24 @@ public class Class3289 extends Class3167
     
     public static int method10409(BlockPos method1139) {
         final float n = 1.0f;
-        if (Class3289.field15514.field4683.method6701(method1139).method21696() == Class7521.field29147) {
+        if (Class3289.field15514.field4683.getBlockState(method1139).method21696() == Class7521.field29147) {
             method1139 = method1139.method1139();
         }
-        int n2 = Class3289.field15514.field4683.method6701(method1139).method21697().method26446().field37084;
-        final Class8059 method1140 = Class3289.field15514.field4683.method6701(method1139.method1137()).method21697();
-        if (method1140 != Class8059.field33164) {
-            if (method1140 == Class8059.field33163) {
-                n2 = method1140.method26446().field37084;
+        int n2 = Class3289.field15514.field4683.getBlockState(method1139).method21697().method26446().field37084;
+        final Material method1140 = Class3289.field15514.field4683.getBlockState(method1139.method1137()).method21697();
+        if (method1140 != Material.SNOW) {
+            if (method1140 == Material.LAVA) {
+                n2 = method1140.method26446().colorValue;
             }
         }
         else {
             n2 = -1;
         }
         int rgba = new Color((n2 & 0xFF0000) >> 16, (n2 & 0xFF00) >> 8, n2 & 0xFF).getRGB();
-        final Class8059 method1141 = Class3289.field15514.field4683.method6701(method1139.method1141()).method21697();
-        final Class8059 method1142 = Class3289.field15514.field4683.method6701(method1139.method1143()).method21697();
-        if (method1141 != Class8059.field33153 && method1141 != Class8059.field33164) {
-            if (method1142 == Class8059.field33153 || method1142 == Class8059.field33164) {
+        final Material method1141 = Class3289.field15514.field4683.getBlockState(method1139.method1141()).method21697();
+        final Material method1142 = Class3289.field15514.field4683.getBlockState(method1139.method1143()).method21697();
+        if (method1141 != Material.AIR && method1141 != Material.SNOW) {
+            if (method1142 == Material.AIR || method1142 == Material.SNOW) {
                 rgba = Class6430.method19109(new Color(rgba, true), Color.WHITE, 0.6f).getRGB();
             }
         }

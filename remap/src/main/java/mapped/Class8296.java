@@ -64,7 +64,7 @@ public class Class8296
         BlockPos method1139 = new BlockPos(this.field34101, 256.0, this.field34102);
         while (method1139.getY() > 0) {
             method1139 = method1139.method1139();
-            if (class1855.method6701(method1139).method21706()) {
+            if (class1855.getBlockState(method1139).method21706()) {
                 continue;
             }
             return method1139.getY() + 1;
@@ -76,12 +76,12 @@ public class Class8296
         BlockPos method1139 = new BlockPos(this.field34101, 256.0, this.field34102);
         while (method1139.getY() > 0) {
             method1139 = method1139.method1139();
-            final BlockState method1140 = class1855.method6701(method1139);
+            final BlockState method1140 = class1855.getBlockState(method1139);
             if (method1140.method21706()) {
                 continue;
             }
-            final Class8059 method1141 = method1140.method21697();
-            return !method1141.method26438() && method1141 != Class8059.field33165;
+            final Material method1141 = method1140.getMaterial();
+            return !method1141.method26438() && method1141 != Material.FIRE;
         }
         return false;
     }

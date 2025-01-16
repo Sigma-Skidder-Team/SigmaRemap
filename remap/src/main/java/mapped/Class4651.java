@@ -37,7 +37,7 @@ public class Class4651 extends Class4654
             if (this.method13927() && this.field20141.method1706()) {
                 n = MathHelper.floor(this.field20141.getPosY());
                 final Mutable class385 = new Mutable(this.field20141.getPosX(), n, this.field20141.getPosZ());
-                for (BlockState class386 = this.field20140.method6701(class385); class386.method21696() == Class7521.field29173 || class386.method21756() == Class7558.field29976.method22177(false); class386 = this.field20140.method6701(class385)) {
+                for (BlockState class386 = this.field20140.getBlockState(class385); class386.getBlock() == Class7521.field29173 || class386.getFluidState() == Class7558.field29976.method22177(false); class386 = this.field20140.getBlockState(class385)) {
                     ++n;
                     class385.method1286(this.field20141.getPosX(), n, this.field20141.getPosZ());
                 }
@@ -46,7 +46,7 @@ public class Class4651 extends Class4654
             else {
                 if (!this.field20141.onGround) {
                     while (true) {
-                        for (BlockPos method1139 = new BlockPos(this.field20141); this.field20140.method6701(method1139).method21706() || this.field20140.method6701(method1139).method21749(this.field20140, method1139, Class2084.field12051); method1139 = method1139.method1139()) {
+                        for (BlockPos method1139 = new BlockPos(this.field20141); this.field20140.getBlockState(method1139).method21706() || this.field20140.getBlockState(method1139).method21749(this.field20140, method1139, Class2084.field12051); method1139 = method1139.method1139()) {
                             if (method1139.getY() <= 0) {
                                 n = method1139.method1137().getY();
                                 break Label_0263;
@@ -61,10 +61,10 @@ public class Class4651 extends Class4654
         final BlockPos class387 = new BlockPos(this.field20141);
         if (this.field20141.method4144(this.method13912(this.field20141, class387.getX(), n, class387.getZ())) < 0.0f) {
             final HashSet hashSet = Sets.newHashSet();
-            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25073, n, this.field20141.getBoundingBox().field25075));
-            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25073, n, this.field20141.getBoundingBox().field25078));
-            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25076, n, this.field20141.getBoundingBox().field25075));
-            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25076, n, this.field20141.getBoundingBox().field25078));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().minX, n, this.field20141.getBoundingBox().minZ));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().minX, n, this.field20141.getBoundingBox().maxZ));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().maxX, n, this.field20141.getBoundingBox().minZ));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().maxX, n, this.field20141.getBoundingBox().maxZ));
             for (final BlockPos class388 : hashSet) {
                 if (this.field20141.method4144(this.method13911(this.field20141, class388)) < 0.0f) {
                     continue;
@@ -170,7 +170,7 @@ public class Class4651 extends Class4654
     
     public static double method13906(final Class1855 class1855, final BlockPos class1856) {
         final BlockPos method1139 = class1856.method1139();
-        final VoxelShape method1140 = class1855.method6701(method1139).method21727(class1855, method1139);
+        final VoxelShape method1140 = class1855.getBlockState(method1139).getCollisionShape(class1855, method1139);
         return method1139.getY() + (method1140.method24540() ? 0.0 : method1140.method24536(Axis.Y));
     }
     
@@ -327,8 +327,8 @@ public class Class4651 extends Class4654
             }
         }
         if (class1857 == Class257.field1213) {
-            if (!(class1855.method6701(class1856).method21696() instanceof Class4017)) {
-                if (!(class1855.method6701(class1856.method1139()).method21696() instanceof Class4017)) {
+            if (!(class1855.getBlockState(class1856).getBlock() instanceof Class4017)) {
+                if (!(class1855.getBlockState(class1856.method1139()).getBlock() instanceof Class4017)) {
                     class1857 = Class257.field1209;
                 }
             }
@@ -356,7 +356,7 @@ public class Class4651 extends Class4654
         Class257 class1856 = method13916(class1855, n, n2, n3);
         if (class1856 == Class257.field1206) {
             if (n2 >= 1) {
-                final Class3833 method21696 = class1855.method6701(new BlockPos(n, n2 - 1, n3)).method21696();
+                final Block method21696 = class1855.getBlockState(new BlockPos(n, n2 - 1, n3)).getBlock();
                 final Class257 method21697 = method13916(class1855, n, n2 - 1, n3);
                 Class257 class1857 = null;
                 Label_0126: {
@@ -406,7 +406,7 @@ public class Class4651 extends Class4654
                 for (int j = -1; j <= 1; ++j) {
                     for (int k = -1; k <= 1; ++k) {
                         if (i != 0 || k != 0) {
-                            final Class3833 method1297 = class1855.method6701(method1296.method1300(i + n, j + n2, k + n3)).method21696();
+                            final Block method1297 = class1855.getBlockState(method1296.method1300(i + n, j + n2, k + n3)).getBlock();
                             if (method1297 == Class7521.field29332) {
                                 class1856 = Class257.field1216;
                             }
@@ -428,9 +428,9 @@ public class Class4651 extends Class4654
     
     public static Class257 method13916(final Class1855 class1855, final int n, final int n2, final int n3) {
         final BlockPos class1856 = new BlockPos(n, n2, n3);
-        final BlockState method6701 = class1855.method6701(class1856);
-        final Class3833 method6702 = method6701.method21696();
-        final Class8059 method6703 = method6701.method21697();
+        final BlockState method6701 = class1855.getBlockState(class1856);
+        final Block method6702 = method6701.getBlock();
+        final Material method6703 = method6701.getMaterial();
         if (method6701.method21706()) {
             return Class257.field1206;
         }
@@ -453,20 +453,20 @@ public class Class4651 extends Class4654
             return Class257.field1226;
         }
         if (method6702 instanceof Class3969) {
-            if (method6703 == Class8059.field33176) {
-                if (!method6701.method21772((Class7111<Boolean>)Class3969.field17932)) {
+            if (method6703 == Material.WOOD) {
+                if (!method6701.get((IProperty<Boolean>)Class3969.field17932)) {
                     return Class257.field1221;
                 }
             }
         }
         if (method6702 instanceof Class3969) {
-            if (method6703 == Class8059.field33186) {
-                if (!method6701.method21772((Class7111<Boolean>)Class3969.field17932)) {
+            if (method6703 == Material.IRON) {
+                if (!method6701.get((IProperty<Boolean>)Class3969.field17932)) {
                     return Class257.field1222;
                 }
             }
         }
-        if (method6702 instanceof Class3969 && method6701.method21772((Class7111<Boolean>)Class3969.field17932)) {
+        if (method6702 instanceof Class3969 && method6701.get((IProperty<Boolean>)Class3969.field17932)) {
             return Class257.field1220;
         }
         if (method6702 instanceof Class4017) {
@@ -475,7 +475,7 @@ public class Class4651 extends Class4654
         if (!(method6702 instanceof Class3972)) {
             if (!method6702.method11785(Class7188.field27911)) {
                 if (!method6702.method11785(Class7188.field27904)) {
-                    if (!(method6702 instanceof Class3898) || method6701.method21772((Class7111<Boolean>)Class3898.field17585)) {
+                    if (!(method6702 instanceof Class3898) || method6701.get((IProperty<Boolean>)Class3898.field17585)) {
                         final Class7099 method6704 = class1855.method6702(class1856);
                         if (method6704.method21793(Class7324.field28319)) {
                             return Class257.field1211;

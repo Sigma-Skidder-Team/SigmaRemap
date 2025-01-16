@@ -355,7 +355,7 @@ public class Class426 extends Entity
         }
         if (this.field2601 != Class8644.field36250) {
             if (this.field2601 != null) {
-                class51.method306("Potion", Class90.field212.method503(this.field2601).toString());
+                class51.method306("Potion", Registry.field212.getKey(this.field2601).toString());
             }
         }
         if (!this.field2602.isEmpty()) {
@@ -377,8 +377,8 @@ public class Class426 extends Entity
     }
     
     @Override
-    public Class2117 method1921() {
-        return Class2117.field12343;
+    public PushReaction method1921() {
+        return PushReaction.IGNORE;
     }
     
     @Override

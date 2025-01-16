@@ -73,11 +73,11 @@ public class Class495 extends TileEntity implements Class439
     }
     
     private void method2510() {
-        this.field2656.method6705(null, this.method2193(), Class8520.field35026, Class286.field1582, 1.0f, 1.0f);
+        this.field2656.method6705(null, this.getPos(), Class8520.field35026, Class286.field1582, 1.0f, 1.0f);
     }
     
     public void method2511(final Direction field2845) {
-        final BlockPos method2193 = this.method2193();
+        final BlockPos method2193 = this.getPos();
         this.field2845 = field2845;
         if (!this.field2844) {
             this.field2844 = true;
@@ -85,11 +85,11 @@ public class Class495 extends TileEntity implements Class439
         else {
             this.field2843 = 0;
         }
-        this.field2656.method6763(method2193, this.method2194().method21696(), 1, field2845.getIndex());
+        this.field2656.method6763(method2193, this.method2194().getBlock(), 1, field2845.getIndex());
     }
     
     private void method2512() {
-        final BlockPos method2193 = this.method2193();
+        final BlockPos method2193 = this.getPos();
         if (this.field2656.method6754() > this.field2842 + 60L || this.field2846 == null) {
             this.field2842 = this.field2656.method6754();
             this.field2846 = (List<LivingEntity>)this.field2656.method7128((Class<? extends Entity>) LivingEntity.class, new AxisAlignedBB(method2193).method18496(48.0));
@@ -111,7 +111,7 @@ public class Class495 extends TileEntity implements Class439
     }
     
     private boolean method2513() {
-        final BlockPos method2193 = this.method2193();
+        final BlockPos method2193 = this.getPos();
         for (final LivingEntity class511 : this.field2846) {
             if (!class511.method1768()) {
                 continue;
@@ -138,7 +138,7 @@ public class Class495 extends TileEntity implements Class439
     
     private void method2515(final World class1847) {
         if (class1847.isRemote) {
-            this.method2193();
+            this.getPos();
             this.field2846.stream().filter((Predicate<? super Object>)this::method2516).forEach(class1850 -> {
                 final Object o = (int)this.field2846.stream().filter(p1 -> {}).count();
                 final Object o2 = new AtomicInteger(16700985);
@@ -161,7 +161,7 @@ public class Class495 extends TileEntity implements Class439
     private boolean method2516(final LivingEntity class511) {
         if (class511.method1768()) {
             if (!class511.removed) {
-                if (this.method2193().withinDistance(class511.method1934(), 48.0)) {
+                if (this.getPos().withinDistance(class511.method1934(), 48.0)) {
                     if (class511.getType().method23383(Class8039.field33100)) {
                         return true;
                     }

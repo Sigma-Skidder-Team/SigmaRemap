@@ -28,11 +28,11 @@ public class Class8412
     private static final SimpleCommandExceptionType field34547;
     
     public static void method28085(final CommandDispatcher<Class7492> commandDispatcher) {
-        commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("worldborder").requires(class7492 -> class7492.method23210(2))).then(Class7788.method25001("add").then(((RequiredArgumentBuilder)Class7788.method25002("distance", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(-6.0E7f, 6.0E7f)).executes(commandContext -> method28092((Class7492)commandContext.getSource(), ((Class7492)commandContext.getSource()).method23250().method6787().method34791() + FloatArgumentType.getFloat(commandContext, "distance"), 0L))).then(Class7788.method25002("time", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)).executes(commandContext -> method28092((Class7492)commandContext.getSource(), ((Class7492)commandContext.getSource()).method23250().method6787().method34791() + FloatArgumentType.getFloat(commandContext, "distance"), ((Class7492)commandContext.getSource()).method23250().method6787().method34792() + IntegerArgumentType.getInteger(commandContext, "time") * 1000L)))))).then(Class7788.method25001("set").then(((RequiredArgumentBuilder)Class7788.method25002("distance", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(-6.0E7f, 6.0E7f)).executes(commandContext -> method28092((Class7492)commandContext.getSource(), FloatArgumentType.getFloat(commandContext, "distance"), 0L))).then(Class7788.method25002("time", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)).executes(commandContext -> method28092((Class7492)commandContext.getSource(), FloatArgumentType.getFloat(commandContext, "distance"), IntegerArgumentType.getInteger(commandContext, "time") * 1000L)))))).then(Class7788.method25001("center").then(Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8930.method31491()).executes(commandContext -> method28091((Class7492)commandContext.getSource(), Class8930.method31492((CommandContext<Class7492>)commandContext, "pos")))))).then(((LiteralArgumentBuilder)Class7788.method25001("damage").then(Class7788.method25001("amount").then(Class7788.method25002("damagePerBlock", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(0.0f)).executes(commandContext -> method28087((Class7492)commandContext.getSource(), FloatArgumentType.getFloat(commandContext, "damagePerBlock")))))).then(Class7788.method25001("buffer").then(Class7788.method25002("distance", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(0.0f)).executes(commandContext -> method28086((Class7492)commandContext.getSource(), FloatArgumentType.getFloat(commandContext, "distance"))))))).then(Class7788.method25001("get").executes(commandContext -> method28090((Class7492)commandContext.getSource())))).then(((LiteralArgumentBuilder)Class7788.method25001("warning").then(Class7788.method25001("distance").then(Class7788.method25002("distance", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)).executes(commandContext -> method28089((Class7492)commandContext.getSource(), IntegerArgumentType.getInteger(commandContext, "distance")))))).then(Class7788.method25001("time").then(Class7788.method25002("time", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)).executes(commandContext -> method28088((Class7492)commandContext.getSource(), IntegerArgumentType.getInteger(commandContext, "time")))))));
+        commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("worldborder").requires(class7492 -> class7492.method23210(2))).then(Class7788.method25001("add").then(((RequiredArgumentBuilder)Class7788.method25002("distance", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(-6.0E7f, 6.0E7f)).executes(commandContext -> method28092((Class7492)commandContext.getSource(), ((Class7492)commandContext.getSource()).method23250().getWorldBorder().method34791() + FloatArgumentType.getFloat(commandContext, "distance"), 0L))).then(Class7788.method25002("time", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)).executes(commandContext -> method28092((Class7492)commandContext.getSource(), ((Class7492)commandContext.getSource()).method23250().getWorldBorder().method34791() + FloatArgumentType.getFloat(commandContext, "distance"), ((Class7492)commandContext.getSource()).method23250().getWorldBorder().method34792() + IntegerArgumentType.getInteger(commandContext, "time") * 1000L)))))).then(Class7788.method25001("set").then(((RequiredArgumentBuilder)Class7788.method25002("distance", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(-6.0E7f, 6.0E7f)).executes(commandContext -> method28092((Class7492)commandContext.getSource(), FloatArgumentType.getFloat(commandContext, "distance"), 0L))).then(Class7788.method25002("time", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)).executes(commandContext -> method28092((Class7492)commandContext.getSource(), FloatArgumentType.getFloat(commandContext, "distance"), IntegerArgumentType.getInteger(commandContext, "time") * 1000L)))))).then(Class7788.method25001("center").then(Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8930.method31491()).executes(commandContext -> method28091((Class7492)commandContext.getSource(), Class8930.method31492((CommandContext<Class7492>)commandContext, "pos")))))).then(((LiteralArgumentBuilder)Class7788.method25001("damage").then(Class7788.method25001("amount").then(Class7788.method25002("damagePerBlock", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(0.0f)).executes(commandContext -> method28087((Class7492)commandContext.getSource(), FloatArgumentType.getFloat(commandContext, "damagePerBlock")))))).then(Class7788.method25001("buffer").then(Class7788.method25002("distance", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(0.0f)).executes(commandContext -> method28086((Class7492)commandContext.getSource(), FloatArgumentType.getFloat(commandContext, "distance"))))))).then(Class7788.method25001("get").executes(commandContext -> method28090((Class7492)commandContext.getSource())))).then(((LiteralArgumentBuilder)Class7788.method25001("warning").then(Class7788.method25001("distance").then(Class7788.method25002("distance", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)).executes(commandContext -> method28089((Class7492)commandContext.getSource(), IntegerArgumentType.getInteger(commandContext, "distance")))))).then(Class7788.method25001("time").then(Class7788.method25002("time", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)).executes(commandContext -> method28088((Class7492)commandContext.getSource(), IntegerArgumentType.getInteger(commandContext, "time")))))));
     }
     
     private static int method28086(final Class7492 class7492, final float f) throws CommandSyntaxException {
-        final WorldBorder method6787 = class7492.method23250().method6787();
+        final WorldBorder method6787 = class7492.method23250().getWorldBorder();
         if (method6787.method34800() != f) {
             method6787.method34801(f);
             class7492.method23257(new Class2259("commands.worldborder.damage.buffer.success", new Object[] { String.format(Locale.ROOT, "%.2f", f) }), true);
@@ -42,7 +42,7 @@ public class Class8412
     }
     
     private static int method28087(final Class7492 class7492, final float f) throws CommandSyntaxException {
-        final WorldBorder method6787 = class7492.method23250().method6787();
+        final WorldBorder method6787 = class7492.method23250().getWorldBorder();
         if (method6787.method34802() != f) {
             method6787.method34803(f);
             class7492.method23257(new Class2259("commands.worldborder.damage.amount.success", new Object[] { String.format(Locale.ROOT, "%.2f", f) }), true);
@@ -52,7 +52,7 @@ public class Class8412
     }
     
     private static int method28088(final Class7492 class7492, final int i) throws CommandSyntaxException {
-        final WorldBorder method6787 = class7492.method23250().method6787();
+        final WorldBorder method6787 = class7492.method23250().getWorldBorder();
         if (method6787.method34805() != i) {
             method6787.method34806(i);
             class7492.method23257(new Class2259("commands.worldborder.warning.time.success", new Object[] { i }), true);
@@ -62,7 +62,7 @@ public class Class8412
     }
     
     private static int method28089(final Class7492 class7492, final int i) throws CommandSyntaxException {
-        final WorldBorder method6787 = class7492.method23250().method6787();
+        final WorldBorder method6787 = class7492.method23250().getWorldBorder();
         if (method6787.method34807() != i) {
             method6787.method34808(i);
             class7492.method23257(new Class2259("commands.worldborder.warning.distance.success", new Object[] { i }), true);
@@ -72,13 +72,13 @@ public class Class8412
     }
     
     private static int method28090(final Class7492 class7492) {
-        final double method34791 = class7492.method23250().method6787().method34791();
+        final double method34791 = class7492.method23250().getWorldBorder().method34791();
         class7492.method23257(new Class2259("commands.worldborder.get", new Object[] { String.format(Locale.ROOT, "%.0f", method34791) }), false);
         return MathHelper.floor(method34791 + 0.5);
     }
     
     private static int method28091(final Class7492 class7492, final Vec2f class7493) throws CommandSyntaxException {
-        final WorldBorder method6787 = class7492.method23250().method6787();
+        final WorldBorder method6787 = class7492.method23250().getWorldBorder();
         if (method6787.method34777() == class7493.x && method6787.method34778() == class7493.y) {
             throw Class8412.field34540.create();
         }
@@ -88,7 +88,7 @@ public class Class8412
     }
     
     private static int method28092(final Class7492 class7492, final double d, final long n) throws CommandSyntaxException {
-        final WorldBorder method6787 = class7492.method23250().method6787();
+        final WorldBorder method6787 = class7492.method23250().getWorldBorder();
         final double method6788 = method6787.method34791();
         if (method6788 == d) {
             throw Class8412.field34541.create();

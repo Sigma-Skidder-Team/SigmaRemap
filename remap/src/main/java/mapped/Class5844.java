@@ -25,7 +25,7 @@ public abstract class Class5844<E extends Entity> extends Class5845<E>
         this(Class6332::method18770, b, n, n2, n3, n4, n5);
     }
     
-    public Class5844(final Function<Class1932, Class6332> function, final boolean field23949, final float field23950, final float field23951, final float field23952, final float field23953, final float field23954) {
+    public Class5844(final Function<ResourceLocation, Class6332> function, final boolean field23949, final float field23950, final float field23951, final float field23952, final float field23953, final float field23954) {
         super(function);
         this.field23949 = field23949;
         this.field23950 = field23950;

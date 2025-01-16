@@ -35,17 +35,17 @@ public class Class8906
                 method31383.clear();
                 method31382.putAll(Class8906.field37445);
                 method31383.putAll(Class8906.field37446);
-                if (Class8571.method29005()) {
-                    final Class1932[] method31384 = method31384();
+                if (Config.method29005()) {
+                    final ResourceLocation[] method31384 = method31384();
                     for (int i = 0; i < method31384.length; ++i) {
-                        final Class1932 class1932 = method31384[i];
-                        Class8571.method28847("CustomEntityModel: " + class1932.method7797());
+                        final ResourceLocation class1932 = method31384[i];
+                        Config.method28847("CustomEntityModel: " + class1932.method7797());
                         final Class9559 method31385 = method31385(class1932);
                         if (method31385 != null) {
                             final Class8651<EntityType, Class5412> method31386 = method31385.method35767();
                             if (!(method31385 instanceof Class4703)) {
                                 if (!(method31385 instanceof Class4158)) {
-                                    Class8571.method28848("Unknown renderer type: " + ((Class4703<?>)method31385).getClass().getName());
+                                    Config.warn("Unknown renderer type: " + ((Class4703<?>)method31385).getClass().getName());
                                 }
                                 else {
                                     method31383.put(method31386.method29437().get(), (Class4158<?>)method31385);
@@ -60,11 +60,11 @@ public class Class8906
                 }
             }
             else {
-                Class8571.method28848("Tile entity render map not found, custom entity models are DISABLED.");
+                Config.warn("Tile entity render map not found, custom entity models are DISABLED.");
             }
         }
         else {
-            Class8571.method28848("Entity render map not found, custom entity models are DISABLED.");
+            Config.warn("Entity render map not found, custom entity models are DISABLED.");
         }
     }
     
@@ -87,30 +87,30 @@ public class Class8906
         return (Map<Class5412, Class4158>)m;
     }
     
-    private static Class1932[] method31384() {
+    private static ResourceLocation[] method31384() {
         final String str = "optifine/cem/";
         final String str2 = ".jem";
         final ArrayList list = new ArrayList();
         final String[] method28191 = Class8447.method28191();
         for (int i = 0; i < method28191.length; ++i) {
-            final Class1932 class1932 = new Class1932(str + method28191[i] + str2);
-            if (Class8571.method28900(class1932)) {
+            final ResourceLocation class1932 = new ResourceLocation(str + method28191[i] + str2);
+            if (Config.method28900(class1932)) {
                 list.add(class1932);
             }
         }
-        return (Class1932[])list.toArray(new Class1932[list.size()]);
+        return (ResourceLocation[])list.toArray(new ResourceLocation[list.size()]);
     }
     
-    private static Class9559 method31385(final Class1932 class1932) {
+    private static Class9559 method31385(final ResourceLocation class1932) {
         try {
             return method31386(Class6904.method21259(class1932), class1932.method7797());
         }
         catch (final IOException ex) {
-            Class8571.method28850("" + ex.getClass().getName() + ": " + ex.getMessage());
+            Config.method28850("" + ex.getClass().getName() + ": " + ex.getMessage());
             return null;
         }
         catch (final JsonParseException ex2) {
-            Class8571.method28850("" + ex2.getClass().getName() + ": " + ex2.getMessage());
+            Config.method28850("" + ex2.getClass().getName() + ": " + ex2.getMessage());
             return null;
         }
         catch (final Exception ex3) {
@@ -135,7 +135,7 @@ public class Class8906
     }
     
     private static Class9559 method31387(final Class5509 class5509, final Class9208 class5510) {
-        final Class1932 method33682 = class5510.method33682();
+        final ResourceLocation method33682 = class5510.method33682();
         final Class7856[] method33683 = class5510.method33683();
         float n = class5510.method33684();
         if (n < 0.0f) {
@@ -203,7 +203,7 @@ public class Class8906
             }
             return true;
         }
-        Class8571.method28848("Model part not found: " + method25408 + ", model: " + obj);
+        Config.warn("Model part not found: " + method25408 + ", model: " + obj);
         return false;
     }
     

@@ -49,8 +49,8 @@ public class Class8912
     private final Predicate<Class8912> field37484;
     private final int field37485;
     
-    private static Set<BlockState> method31394(final Class3833 class3833) {
-        return (Set<BlockState>)ImmutableSet.copyOf((Collection)class3833.method11876().method32902());
+    private static Set<BlockState> method31394(final Block class3833) {
+        return (Set<BlockState>)ImmutableSet.copyOf((Collection)class3833.getStateContainer().method32902());
     }
     
     private Class8912(final String field37481, final Set<BlockState> set, final int field37482, final Predicate<Class8912> field37483, final int field37484) {
@@ -87,11 +87,11 @@ public class Class8912
     }
     
     private static Class8912 method31398(final String s, final Set<BlockState> set, final int n, final int n2) {
-        return method31400(Class90.field241.method558(new Class1932(s), new Class8912(s, set, n, n2)));
+        return method31400(Registry.field241.method558(new ResourceLocation(s), new Class8912(s, set, n, n2)));
     }
     
     private static Class8912 method31399(final String s, final Set<BlockState> set, final int n, final Predicate<Class8912> predicate, final int n2) {
-        return method31400(Class90.field241.method558(new Class1932(s), new Class8912(s, set, n, predicate, n2)));
+        return method31400(Registry.field241.method558(new ResourceLocation(s), new Class8912(s, set, n, predicate, n2)));
     }
     
     private static Class8912 method31400(final Class8912 class8912) {
@@ -117,9 +117,9 @@ public class Class8912
     }
     
     static {
-        field37457 = (class8912 -> Class90.field240.method509().map((Function<? super Object, ?>)Class9334::method34575).collect((Collector<? super Object, ?, Set<? super Object>>)Collectors.toSet()).contains(class8912));
+        field37457 = (class8912 -> Registry.field240.method509().map((Function<? super Object, ?>)Class9334::method34575).collect((Collector<? super Object, ?, Set<? super Object>>)Collectors.toSet()).contains(class8912));
         field37458 = (p0 -> true);
-        field37459 = ImmutableList.of((Object)Class7521.field29235, (Object)Class7521.field29236, (Object)Class7521.field29232, (Object)Class7521.field29233, (Object)Class7521.field29230, (Object)Class7521.field29228, (Object)Class7521.field29234, (Object)Class7521.field29224, (Object)Class7521.field29229, (Object)Class7521.field29226, (Object)Class7521.field29223, (Object)Class7521.field29222, (Object[])new Class3833[] { Class7521.field29227, Class7521.field29231, Class7521.field29221, Class7521.field29225 }).stream().flatMap(class8913 -> class8913.method11876().method32902().stream()).filter(class8914 -> class8914.method21772(Class3900.field17599) == Class105.field323).collect((Collector<? super Object, Object, Set<BlockState>>)ImmutableSet.toImmutableSet());
+        field37459 = ImmutableList.of((Object)Class7521.field29235, (Object)Class7521.field29236, (Object)Class7521.field29232, (Object)Class7521.field29233, (Object)Class7521.field29230, (Object)Class7521.field29228, (Object)Class7521.field29234, (Object)Class7521.field29224, (Object)Class7521.field29229, (Object)Class7521.field29226, (Object)Class7521.field29223, (Object)Class7521.field29222, (Object[])new Block[] { Class7521.field29227, Class7521.field29231, Class7521.field29221, Class7521.field29225 }).stream().flatMap(class8913 -> class8913.method11876().method32902().stream()).filter(class8914 -> class8914.method21772(Class3900.field17599) == Class105.field323).collect((Collector<? super Object, Object, Set<BlockState>>)ImmutableSet.toImmutableSet());
         field37460 = Maps.newHashMap();
         field37461 = method31399("unemployed", (Set<BlockState>)ImmutableSet.of(), 1, Class8912.field37457, 1);
         field37462 = method31398("armorer", method31394(Class7521.field29809), 1, 1);

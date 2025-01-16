@@ -80,12 +80,12 @@ public class Class1848 extends World
     }
     
     public void method6805(final BooleanSupplier booleanSupplier) {
-        this.method6787().method34809();
+        this.getWorldBorder().method34809();
         this.method6757();
-        this.method6796().method15297("blocks");
+        this.method6796().startSection("blocks");
         this.chunkProvider.method7403(booleanSupplier);
         this.method6815();
-        this.method6796().method15299();
+        this.method6796().endSection();
     }
     
     public Iterable<Entity> method6806() {
@@ -94,8 +94,8 @@ public class Class1848 extends World
     
     public void method6807() {
         final IProfiler method6796 = this.method6796();
-        method6796.method15297("entities");
-        method6796.method15297("global");
+        method6796.startSection("entities");
+        method6796.startSection("global");
         for (int i = 0; i < this.field10071.size(); ++i) {
             final Entity class399 = this.field10071.get(i);
             this.method6717(class401 -> {
@@ -116,21 +116,21 @@ public class Class1848 extends World
             if (class400.isPassenger()) {
                 continue;
             }
-            method6796.method15297("tick");
+            method6796.startSection("tick");
             if (!class400.removed) {
                 this.method6717(this::method6808, class400);
             }
-            method6796.method15299();
-            method6796.method15297("remove");
+            method6796.endSection();
+            method6796.startSection("remove");
             if (class400.removed) {
                 iterator.remove();
                 this.method6822(class400);
             }
-            method6796.method15299();
+            method6796.endSection();
         }
-        method6796.method15299();
-        this.method6716();
-        method6796.method15299();
+        method6796.endSection();
+        this.tickBlockEntities();
+        method6796.endSection();
     }
     
     public void method6808(final Entity class399) {
@@ -140,11 +140,11 @@ public class Class1848 extends World
             class399.prevRotationPitch = class399.rotationPitch;
             if (class399.addedToChunk || class399.isSpectator()) {
                 ++class399.ticksExisted;
-                this.method6796().method15298(() -> Class90.field210.method503(class400.method1642()).toString());
+                this.method6796().method15298(() -> Registry.field210.getKey(class400.method1642()).toString());
                 if (Class7667.method24316(class399)) {
                     class399.method1659();
                 }
-                this.method6796().method15299();
+                this.method6796().endSection();
             }
             this.method6810(class399);
             if (class399.addedToChunk) {
@@ -181,7 +181,7 @@ public class Class1848 extends World
     }
     
     public void method6810(final Entity class399) {
-        this.method6796().method15297("chunkCheck");
+        this.method6796().startSection("chunkCheck");
         final int method35644 = MathHelper.floor(class399.getPosX() / 16.0);
         final int method35645 = MathHelper.floor(class399.getPosY() / 16.0);
         final int method35646 = MathHelper.floor(class399.getPosZ() / 16.0);
@@ -207,7 +207,7 @@ public class Class1848 extends World
                 this.method6686(method35644, method35646).method7010(class399);
             }
         }
-        this.method6796().method15299();
+        this.method6796().endSection();
     }
     
     public void method6811(final Class1862 class1862) {
@@ -219,7 +219,7 @@ public class Class1848 extends World
             field10053 = (Collection)Class9570.method35828(this, Class9570.field41360);
         }
         field10053.addAll(class1862.method7066().values());
-        this.chunkProvider.method7405().method7255(class1862.method7019(), false);
+        this.chunkProvider.getLightManager().method7255(class1862.method7019(), false);
     }
     
     public void method6812(final int n, final int n2) {
@@ -243,7 +243,7 @@ public class Class1848 extends World
                 final double method1135 = class354.distanceSq(method1134);
                 if (method1135 >= 4.0) {
                     if (method1135 <= 256.0) {
-                        if (this.method6701(method1134).method21706()) {
+                        if (this.getBlockState(method1134).method21706()) {
                             if (this.method6993(method1134, 0) <= this.rand.nextInt(8)) {
                                 if (this.method6992(Class237.field911, method1134) <= 0) {
                                     this.method6708(method1134.getX() + 0.5, method1134.getY() + 0.5, method1134.getZ() + 0.5, Class8520.field34964, Class286.field1586, 0.7f, 0.8f + this.rand.nextFloat() * 0.2f, false);
@@ -281,7 +281,7 @@ public class Class1848 extends World
         if (!Class9570.field41223.method22619() || !Class9570.method35840(Class9570.field41223, class399, this)) {
             this.method6821(n);
             this.field10072.put(n, (Object)class399);
-            this.method6835().method7413(MathHelper.floor(class399.getPosX() / 16.0), MathHelper.floor(class399.getPosZ() / 16.0), Class9312.field39989, true).method7010(class399);
+            this.method6835().method7413(MathHelper.floor(class399.getPosX() / 16.0), MathHelper.floor(class399.getPosZ() / 16.0), ChunkStatus.field39989, true).method7010(class399);
             if (Class9570.field41253.method22605()) {
                 Class9570.method35826(class399, Class9570.field41253, new Object[0]);
             }
@@ -365,17 +365,17 @@ public class Class1848 extends World
         final int n6 = n2 + this.rand.nextInt(n4) - this.rand.nextInt(n4);
         final int n7 = n3 + this.rand.nextInt(n4) - this.rand.nextInt(n4);
         class385.setPos(n5, n6, n7);
-        final Class7096 method6701 = this.method6701(class385);
+        final Class7096 method6701 = this.getBlockState(class385);
         method6701.method21696().method11823(method6701, this, class385, random);
         final Class7099 method6702 = this.method6702(class385);
-        if (!method6702.method21781()) {
+        if (!method6702.isEmpty()) {
             method6702.method21787(this, class385, random);
             final Class6909 method6703 = method6702.method21792();
             if (method6703 != null) {
                 if (this.rand.nextInt(10) == 0) {
                     final boolean method6704 = method6701.method21761(this, class385, Direction.DOWN);
                     final BlockPos method6705 = class385.method1139();
-                    this.method6827(method6705, this.method6701(method6705), method6703, method6704);
+                    this.method6827(method6705, this.getBlockState(method6705), method6703, method6704);
                 }
             }
         }
@@ -394,7 +394,7 @@ public class Class1848 extends World
                     final double method21728 = method21727.method24535(Axis.Y);
                     if (method21728 <= 0.0) {
                         final BlockPos method21729 = class354.method1139();
-                        final Class7096 method21730 = this.method6701(method21729);
+                        final Class7096 method21730 = this.getBlockState(method21729);
                         if (method21730.method21727(this, method21729).method24536(Axis.Y) < 1.0) {
                             if (method21730.method21756().method21781()) {
                                 this.method6828(class354, class356, method21727, class354.getY() - 0.05);
@@ -520,8 +520,8 @@ public class Class1848 extends World
     }
     
     @Override
-    public Class6952<Class3833> method6833() {
-        return (Class6952<Class3833>)Class6954.method21355();
+    public Class6952<Block> method6833() {
+        return (Class6952<Block>)Class6954.method21355();
     }
     
     @Override
@@ -530,13 +530,13 @@ public class Class1848 extends World
     }
     
     public Class1907 method6835() {
-        return (Class1907)super.method6762();
+        return (Class1907)super.getChunkProvider();
     }
     
     @Override
     public boolean method6688(final BlockPos class354, final Class7096 class355, final int n) {
         this.field10082 = this.method6836();
-        final boolean method6688 = super.method6688(class354, class355, n);
+        final boolean method6688 = super.setBlockState(class354, class355, n);
         this.field10082 = false;
         return method6688;
     }
@@ -764,15 +764,15 @@ public class Class1848 extends World
     
     public void method6851(final Entity class399) {
         Class9066.method32639(class399, this);
-        if (Class8571.method29002()) {
-            Class8850.method30983(class399, Class8571.method28908());
+        if (Config.method29002()) {
+            Class8850.method30983(class399, Config.method28908());
         }
     }
     
     public void method6852(final Entity class399) {
         Class9066.method32640(class399, this);
-        if (Class8571.method29002()) {
-            Class8850.method30984(class399, Class8571.method28908());
+        if (Config.method29002()) {
+            Class8850.method30984(class399, Config.method28908());
         }
     }
 }

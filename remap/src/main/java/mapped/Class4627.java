@@ -10,10 +10,10 @@ import net.minecraft.util.DamageSource;
 
 public class Class4627 extends Class4611<Class4237>
 {
-    private static final Class1932 field20093;
+    private static final ResourceLocation field20093;
     
     @Override
-    public Class1932 method13717() {
+    public ResourceLocation method13717() {
         return Class4627.field20093;
     }
     
@@ -26,6 +26,6 @@ public class Class4627 extends Class4611<Class4237>
     }
     
     static {
-        field20093 = new Class1932("entity_hurt_player");
+        field20093 = new ResourceLocation("entity_hurt_player");
     }
 }

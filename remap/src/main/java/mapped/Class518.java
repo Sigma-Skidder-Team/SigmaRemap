@@ -10,7 +10,7 @@ import net.minecraft.entity.LivingEntity;
 
 public class Class518 extends Class517<Class3427> implements Class519
 {
-    private static final Class1932 field3104;
+    private static final ResourceLocation field3104;
     private float field3105;
     private float field3106;
     private final Class581 field3107;
@@ -200,6 +200,6 @@ public class Class518 extends Class517<Class3427> implements Class519
     }
     
     static {
-        field3104 = new Class1932("textures/gui/recipe_button.png");
+        field3104 = new ResourceLocation("textures/gui/recipe_button.png");
     }
 }

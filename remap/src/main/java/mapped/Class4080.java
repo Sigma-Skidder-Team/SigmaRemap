@@ -11,7 +11,7 @@ public class Class4080 extends Item
 {
     public Class4080(final Class8959 class8959) {
         super(class8959);
-        this.method11705(new Class1932("broken"), (class8321, class8322, class8323) -> method12285(class8321) ? 0.0f : 1.0f);
+        this.method11705(new ResourceLocation("broken"), (class8321, class8322, class8323) -> method12285(class8321) ? 0.0f : 1.0f);
         Class3955.method12069(this, Class4055.field18147);
     }
     

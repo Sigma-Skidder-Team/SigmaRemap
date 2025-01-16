@@ -21,7 +21,7 @@ import java.util.Map;
 
 public class Class6056
 {
-    private Class1932 field24612;
+    private ResourceLocation field24612;
     private Class8863 field24613;
     private Class7339 field24614;
     private Class9032 field24615;
@@ -29,7 +29,7 @@ public class Class6056
     private String[][] field24617;
     private Class6526 field24618;
     
-    private Class6056(final Class1932 field24612, final Class7339 field24613, final Class9032 field24614, final Map<String, Class8832> field24615, final String[][] field24616) {
+    private Class6056(final ResourceLocation field24612, final Class7339 field24613, final Class9032 field24614, final Map<String, Class8832> field24615, final String[][] field24616) {
         this.field24615 = Class9032.field38193;
         this.field24616 = Maps.newLinkedHashMap();
         this.field24618 = Class6526.field25975;
@@ -55,16 +55,16 @@ public class Class6056
         return this;
     }
     
-    public Class6056 method18003(final Class1932 field24612) {
+    public Class6056 method18003(final ResourceLocation field24612) {
         this.field24612 = field24612;
         return this;
     }
     
-    public Class6056 method18004(final ItemStack class8321, final ITextComponent class8322, final ITextComponent class8323, final Class1932 class8324, final Class1993 class8325, final boolean b, final boolean b2, final boolean b3) {
+    public Class6056 method18004(final ItemStack class8321, final ITextComponent class8322, final ITextComponent class8323, final ResourceLocation class8324, final Class1993 class8325, final boolean b, final boolean b2, final boolean b3) {
         return this.method18006(new Class7339(class8321, class8322, class8323, class8324, class8325, b, b2, b3));
     }
     
-    public Class6056 method18005(final Class3832 class3832, final ITextComponent class3833, final ITextComponent class3834, final Class1932 class3835, final Class1993 class3836, final boolean b, final boolean b2, final boolean b3) {
+    public Class6056 method18005(final Class3832 class3832, final ITextComponent class3833, final ITextComponent class3834, final ResourceLocation class3835, final Class1993 class3836, final boolean b, final boolean b2, final boolean b3) {
         return this.method18006(new Class7339(new ItemStack(class3832.method11704()), class3833, class3834, class3835, class3836, b, b2, b3));
     }
     
@@ -99,7 +99,7 @@ public class Class6056
         return this;
     }
     
-    public boolean method18012(final Function<Class1932, Class8863> function) {
+    public boolean method18012(final Function<ResourceLocation, Class8863> function) {
         if (this.field24612 != null) {
             if (this.field24613 == null) {
                 this.field24613 = function.apply(this.field24612);
@@ -109,7 +109,7 @@ public class Class6056
         return true;
     }
     
-    public Class8863 method18013(final Class1932 class1932) {
+    public Class8863 method18013(final ResourceLocation class1932) {
         if (this.method18012(p0 -> null)) {
             if (this.field24617 == null) {
                 this.field24617 = this.field24618.method19745(this.field24616.keySet());
@@ -120,7 +120,7 @@ public class Class6056
     }
     
     public Class8863 method18014(final Consumer<Class8863> consumer, final String s) {
-        final Class8863 method18013 = this.method18013(new Class1932(s));
+        final Class8863 method18013 = this.method18013(new ResourceLocation(s));
         consumer.accept(method18013);
         return method18013;
     }
@@ -192,7 +192,7 @@ public class Class6056
     }
     
     public static Class6056 method18017(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext) {
-        final Class1932 class1932 = jsonObject.has("parent") ? new Class1932(Class9583.method35895(jsonObject, "parent")) : null;
+        final ResourceLocation class1932 = jsonObject.has("parent") ? new ResourceLocation(Class9583.method35895(jsonObject, "parent")) : null;
         final Class7339 class1933 = jsonObject.has("display") ? Class7339.method22537(Class9583.method35914(jsonObject, "display"), jsonDeserializationContext) : null;
         final Class9032 class1934 = Class9583.method35921(jsonObject, "rewards", Class9032.field38193, jsonDeserializationContext, Class9032.class);
         final Map<String, Class8832> method30841 = Class8832.method30841(Class9583.method35914(jsonObject, "criteria"), jsonDeserializationContext);
@@ -244,7 +244,7 @@ public class Class6056
     }
     
     public static Class6056 method18018(final PacketBuffer class8654) {
-        final Class1932 class8655 = class8654.readBoolean() ? class8654.method29516() : null;
+        final ResourceLocation class8655 = class8654.readBoolean() ? class8654.method29516() : null;
         final Class7339 class8656 = class8654.readBoolean() ? Class7339.method22540(class8654) : null;
         final Map<String, Class8832> method30842 = Class8832.method30842(class8654);
         final String[][] array = new String[class8654.readVarInt()][];

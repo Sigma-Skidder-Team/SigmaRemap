@@ -18,7 +18,7 @@ public abstract class Class5845<T extends Entity> extends Class5901
         this(Class6332::method18770);
     }
     
-    public Class5845(final Function<Class1932, Class6332> function) {
+    public Class5845(final Function<ResourceLocation, Class6332> function) {
         super(function);
         this.field23957 = true;
     }

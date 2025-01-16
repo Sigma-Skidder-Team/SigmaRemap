@@ -10,10 +10,10 @@ import net.minecraft.util.math.Vec3d;
 
 public class Class4629 extends Class4611<Class4245>
 {
-    private static final Class1932 field20095;
+    private static final ResourceLocation field20095;
     
     @Override
-    public Class1932 method13717() {
+    public ResourceLocation method13717() {
         return Class4629.field20095;
     }
     
@@ -26,6 +26,6 @@ public class Class4629 extends Class4611<Class4245>
     }
     
     static {
-        field20095 = new Class1932("nether_travel");
+        field20095 = new ResourceLocation("nether_travel");
     }
 }

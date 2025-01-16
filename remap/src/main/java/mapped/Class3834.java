@@ -4,7 +4,7 @@
 
 package mapped;
 
-public abstract class Class3834 extends Class3833
+public abstract class Class3834 extends Block
 {
     public static final Class7115 field17415;
     

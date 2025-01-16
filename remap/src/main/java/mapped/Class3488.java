@@ -49,6 +49,6 @@ public class Class3488 extends Class3479
     
     @Override
     public boolean method11050(final Class1852 class1852, final BlockPos class1853) {
-        return class1852.method6701(class1853).method21696() == Class7521.field29173;
+        return class1852.getBlockState(class1853).getBlock() == Class7521.field29173;
     }
 }

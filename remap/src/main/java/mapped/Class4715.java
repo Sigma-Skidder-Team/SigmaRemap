@@ -8,13 +8,13 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4715 extends Class4712<Class796, Class5869>
 {
-    public static final Class1932[] field20317;
+    public static final ResourceLocation[] field20317;
     
     public Class4715(final Class8551 class8551) {
         super(class8551, new Class5869(), 0.3f);
     }
     
-    public Class1932 method14019(final Class796 class796) {
+    public ResourceLocation method14019(final Class796 class796) {
         return Class4715.field20317[class796.method4502()];
     }
     
@@ -23,6 +23,6 @@ public class Class4715 extends Class4712<Class796, Class5869>
     }
     
     static {
-        field20317 = new Class1932[] { new Class1932("textures/entity/parrot/parrot_red_blue.png"), new Class1932("textures/entity/parrot/parrot_blue.png"), new Class1932("textures/entity/parrot/parrot_green.png"), new Class1932("textures/entity/parrot/parrot_yellow_blue.png"), new Class1932("textures/entity/parrot/parrot_grey.png") };
+        field20317 = new ResourceLocation[] { new ResourceLocation("textures/entity/parrot/parrot_red_blue.png"), new ResourceLocation("textures/entity/parrot/parrot_blue.png"), new ResourceLocation("textures/entity/parrot/parrot_green.png"), new ResourceLocation("textures/entity/parrot/parrot_yellow_blue.png"), new ResourceLocation("textures/entity/parrot/parrot_grey.png") };
     }
 }

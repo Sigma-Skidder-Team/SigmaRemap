@@ -58,7 +58,7 @@ public class Class9167
         if (this != Class9167.field38834) {
             final JsonObject jsonObject = new JsonObject();
             if (this.field38836 != null) {
-                jsonObject.addProperty("enchantment", Class90.field209.method503(this.field38836).toString());
+                jsonObject.addProperty("enchantment", Registry.field209.getKey(this.field38836).toString());
             }
             jsonObject.add("levels", this.field38837.method29745());
             return (JsonElement)jsonObject;
@@ -71,7 +71,7 @@ public class Class9167
             final JsonObject method35913 = Class9583.method35913(jsonElement, "enchantment");
             Class6257 class6257 = null;
             if (method35913.has("enchantment")) {
-                class6257 = Class90.field209.method506(new Class1932(Class9583.method35895(method35913, "enchantment"))).orElseThrow(() -> {
+                class6257 = Registry.field209.method506(new ResourceLocation(Class9583.method35895(method35913, "enchantment"))).orElseThrow(() -> {
                     new JsonSyntaxException("Unknown enchantment '" + obj + "'");
                     return;
                 });

@@ -6,9 +6,9 @@ package mapped;
 
 public class Class4744 extends Class4712<Class799, Class5922<Class799>>
 {
-    private static final Class1932 field20364;
-    private static final Class1932 field20365;
-    private static final Class1932 field20366;
+    private static final ResourceLocation field20364;
+    private static final ResourceLocation field20365;
+    private static final ResourceLocation field20366;
     
     public Class4744(final Class8551 class8551) {
         super(class8551, new Class5922(), 0.5f);
@@ -30,7 +30,7 @@ public class Class4744 extends Class4712<Class799, Class5922<Class799>>
         }
     }
     
-    public Class1932 method14076(final Class799 class799) {
+    public ResourceLocation method14076(final Class799 class799) {
         if (!class799.method4480()) {
             return class799.method4597() ? Class4744.field20366 : Class4744.field20364;
         }
@@ -38,8 +38,8 @@ public class Class4744 extends Class4712<Class799, Class5922<Class799>>
     }
     
     static {
-        field20364 = new Class1932("textures/entity/wolf/wolf.png");
-        field20365 = new Class1932("textures/entity/wolf/wolf_tame.png");
-        field20366 = new Class1932("textures/entity/wolf/wolf_angry.png");
+        field20364 = new ResourceLocation("textures/entity/wolf/wolf.png");
+        field20365 = new ResourceLocation("textures/entity/wolf/wolf_tame.png");
+        field20366 = new ResourceLocation("textures/entity/wolf/wolf_angry.png");
     }
 }

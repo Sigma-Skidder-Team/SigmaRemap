@@ -129,14 +129,14 @@ public class Class3207 extends Class3167
             BlockPos class354 = null;
             while (iterator.hasNext()) {
                 final VoxelShape class355 = iterator.next();
-                if (class355.method24537().field25077 <= field25077) {
+                if (class355.method24537().maxY <= field25077) {
                     continue;
                 }
-                field25077 = class355.method24537().field25077;
-                class354 = new BlockPos(class355.method24537().field25073, class355.method24537().field25074, class355.method24537().field25075);
+                field25077 = class355.method24537().maxY;
+                class354 = new BlockPos(class355.method24537().minX, class355.method24537().minY, class355.method24537().minZ);
             }
             if (class354 != null) {
-                if (Class3207.field15514.field4683.method6701(class354).method21696() instanceof Class4030) {
+                if (Class3207.field15514.field4683.getBlockState(class354).method21696() instanceof Class4030) {
                     field25077 = (int)field25077 - 1.0E-4;
                 }
             }

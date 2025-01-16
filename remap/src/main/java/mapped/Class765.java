@@ -200,7 +200,7 @@ public class Class765 extends Class763 implements Class766
             final Class2196 class2196 = this.world.method6765().method31216(Class8878.field37316) ? Class2196.field13367 : Class2196.field13365;
             final float n = this.method4233() ? 2.0f : 1.0f;
             this.field2958 = true;
-            this.world.method6722(this, this.getPosX(), this.getPosY(), this.getPosZ(), this.field4141 * n, class2196);
+            this.world.createExplosion(this, this.getPosX(), this.getPosY(), this.getPosZ(), this.field4141 * n, class2196);
             this.method1652();
             this.method4238();
         }

@@ -28,7 +28,7 @@ public class Class867 extends Class865
     
     @Override
     public void method5217() {
-        final BlockState method6701 = this.field4620.field2656.method6701(this.field4620.field2657);
+        final BlockState method6701 = this.field4620.field2656.getBlockState(this.field4620.field2657);
         this.method5216().method6693(this.field4620.field2657, method6701, method6701, 3);
     }
     

@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class4010 extends Class3833
+public class Class4010 extends Block
 {
     private static String[] field18069;
     
@@ -46,7 +46,7 @@ public class Class4010 extends Class3833
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         if (class7097 == Direction.UP) {
-            if (class7098.method21696() == Class7521.field29173) {
+            if (class7098.getBlock() == Class7521.field29173) {
                 class7099.method6833().method21345(class7100, this, this.method11826(class7099));
             }
         }
@@ -73,7 +73,7 @@ public class Class4010 extends Class3833
     }
     
     @Override
-    public boolean method11779(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+    public boolean canEntitySpawn(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return class7099.method23363();
     }
     

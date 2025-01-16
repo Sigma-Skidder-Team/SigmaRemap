@@ -25,13 +25,13 @@ public class Class4159 extends Class4158<Class497>
         class498.method22567();
         if (!(method2194.method21696() instanceof Class3861)) {
             class498.method22564(0.5, 0.5, 0.5);
-            class498.method22566(Vector3f.YP.rotationDegrees(-method2194.method21772((Class7111<Direction>)Class3862.field17489).getHorizontalAngle()));
+            class498.method22566(Vector3f.YP.rotationDegrees(-method2194.method21772((IProperty<Direction>)Class3862.field17489).getHorizontalAngle()));
             class498.method22564(0.0, -0.3125, -0.4375);
             this.field18542.field24273.field25187 = false;
         }
         else {
             class498.method22564(0.5, 0.5, 0.5);
-            class498.method22566(Vector3f.YP.rotationDegrees(-(method2194.method21772((Class7111<Integer>)Class3861.field17487) * 360 / 16.0f)));
+            class498.method22566(Vector3f.YP.rotationDegrees(-(method2194.method21772((IProperty<Integer>)Class3861.field17487) * 360 / 16.0f)));
             this.field18542.field24273.field25187 = true;
         }
         class498.method22567();
@@ -45,7 +45,7 @@ public class Class4159 extends Class4158<Class497>
             class498.method22564(0.0, 0.3333333432674408, 0.046666666865348816);
             class498.method22565(0.010416667f, -0.010416667f, 0.010416667f);
             int n4 = class497.method2529().method818();
-            if (Class8571.method28945()) {
+            if (Config.method28945()) {
                 n4 = Class8763.method30386(n4);
             }
             final int method2197 = Class1846.method6673(0, (int)(Class1846.method6672(n4) * 0.4), (int)(Class1846.method6671(n4) * 0.4), (int)(Class1846.method6670(n4) * 0.4));
@@ -63,7 +63,7 @@ public class Class4159 extends Class4158<Class497>
         class498.method22568();
     }
     
-    public static Class3687 method12461(final Class3833 class3833) {
+    public static Class3687 method12461(final Block class3833) {
         Class8289 class3834;
         if (!(class3833 instanceof Class3860)) {
             class3834 = Class8289.field34085;
@@ -76,7 +76,7 @@ public class Class4159 extends Class4158<Class497>
     
     private static boolean method12462(final Class497 class497) {
         if (!Class9216.field39049) {
-            if (!Class8571.field36033) {
+            if (!Config.field36033) {
                 final Entity method5303 = Class869.method5277().method5303();
                 if (class497.method2191(method5303.getPosX(), method5303.getPosY(), method5303.getPosZ()) > Class4159.field18543) {
                     return false;
@@ -89,7 +89,7 @@ public class Class4159 extends Class4158<Class497>
     
     public static void method12463() {
         final Class869 method5277 = Class869.method5277();
-        final double max = Math.max(1.5 * method5277.method5332().method7695() / Class8571.method28867(method5277.field4648.field23471, 1.0, 120.0), 16.0);
+        final double max = Math.max(1.5 * method5277.method5332().method7695() / Config.method28867(method5277.field4648.field23471, 1.0, 120.0), 16.0);
         Class4159.field18543 = max * max;
     }
     

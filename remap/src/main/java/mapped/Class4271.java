@@ -17,19 +17,19 @@ public class Class4271 implements IPacket<IClientPlayNetHandler>
     
     public Class4271(final Class1855 class1855, final BlockPos field19157) {
         this.field19157 = field19157;
-        this.field19158 = class1855.method6701(field19157);
+        this.field19158 = class1855.getBlockState(field19157);
     }
     
     @Override
     public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19157 = class8654.method29494();
-        this.field19158 = Class3833.field17391.method499(class8654.readVarInt());
+        this.field19158 = Block.field17391.method499(class8654.readVarInt());
     }
     
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29495(this.field19157);
-        class8654.writeVarInt(Class3833.method11774(this.field19158));
+        class8654.writeVarInt(Block.method11774(this.field19158));
     }
     
     public void method12764(final IClientPlayNetHandler class5800) {

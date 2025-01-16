@@ -14,7 +14,7 @@ import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
 import net.minecraft.entity.EntityType;
 
-public class Class8605 implements ArgumentType<Class1932>
+public class Class8605 implements ArgumentType<ResourceLocation>
 {
     private static final Collection<String> field36122;
     public static final DynamicCommandExceptionType field36123;
@@ -23,17 +23,17 @@ public class Class8605 implements ArgumentType<Class1932>
         return new Class8605();
     }
     
-    public static Class1932 method29181(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
-        return method29182((Class1932)commandContext.getArgument(s, (Class)Class1932.class));
+    public static ResourceLocation method29181(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
+        return method29182((ResourceLocation)commandContext.getArgument(s, (Class) ResourceLocation.class));
     }
     
-    private static Class1932 method29182(final Class1932 class1932) throws CommandSyntaxException {
-        Class90.field210.method506(class1932).filter(EntityType::method23362).orElseThrow(() -> Class8605.field36123.create((Object)class1933));
+    private static ResourceLocation method29182(final ResourceLocation class1932) throws CommandSyntaxException {
+        Registry.field210.method506(class1932).filter(EntityType::method23362).orElseThrow(() -> Class8605.field36123.create((Object)class1933));
         return class1932;
     }
     
-    public Class1932 parse(final StringReader stringReader) throws CommandSyntaxException {
-        return method29182(Class1932.method7799(stringReader));
+    public ResourceLocation parse(final StringReader stringReader) throws CommandSyntaxException {
+        return method29182(ResourceLocation.method7799(stringReader));
     }
     
     public Collection<String> getExamples() {

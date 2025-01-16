@@ -14,17 +14,17 @@ import java.util.List;
 
 public class Class5767 implements Class5763
 {
-    private final Class1932 field23582;
+    private final ResourceLocation field23582;
     private final Item field23583;
     private final int field23584;
     private final String field23585;
     private final List<String> field23586;
     private final Map<Character, Class120> field23587;
     private final Class6056 field23588;
-    private final Class1932 field23589;
+    private final ResourceLocation field23589;
     public final /* synthetic */ Class7989 field23590;
     
-    public Class5767(final Class7989 field23590, final Class1932 field23591, final Item field23592, final int field23593, final String field23594, final List<String> field23595, final Map<Character, Class120> field23596, final Class6056 field23597, final Class1932 field23598) {
+    public Class5767(final Class7989 field23590, final ResourceLocation field23591, final Item field23592, final int field23593, final String field23594, final List<String> field23595, final Map<Character, Class120> field23596, final Class6056 field23597, final ResourceLocation field23598) {
         this.field23590 = field23590;
         this.field23582 = field23591;
         this.field23583 = field23592;
@@ -53,7 +53,7 @@ public class Class5767 implements Class5763
         }
         jsonObject.add("key", (JsonElement)jsonObject2);
         final JsonObject jsonObject3 = new JsonObject();
-        jsonObject3.addProperty("item", Class90.field211.method503(this.field23583).toString());
+        jsonObject3.addProperty("item", Registry.field211.getKey(this.field23583).toString());
         if (this.field23584 > 1) {
             jsonObject3.addProperty("count", (Number)this.field23584);
         }
@@ -66,7 +66,7 @@ public class Class5767 implements Class5763
     }
     
     @Override
-    public Class1932 method17155() {
+    public ResourceLocation method17155() {
         return this.field23582;
     }
     
@@ -78,7 +78,7 @@ public class Class5767 implements Class5763
     
     @Nullable
     @Override
-    public Class1932 method17158() {
+    public ResourceLocation method17158() {
         return this.field23589;
     }
 }

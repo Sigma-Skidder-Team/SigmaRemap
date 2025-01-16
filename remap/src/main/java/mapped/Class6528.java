@@ -11,7 +11,7 @@ import com.google.gson.JsonObject;
 
 public abstract class Class6528<T extends Class6367> extends Class6529<T>
 {
-    public Class6528(final Class1932 class1932, final Class<T> clazz) {
+    public Class6528(final ResourceLocation class1932, final Class<T> clazz) {
         super(class1932, clazz);
     }
     

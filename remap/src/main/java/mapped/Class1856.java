@@ -19,6 +19,6 @@ public interface Class1856 extends Class1855
     }
     
     default boolean method6994(final BlockPos class354) {
-        return this.method6992(Class237.field911, class354) >= this.method6985();
+        return this.method6992(Class237.field911, class354) >= this.getMaxLightLevel();
     }
 }

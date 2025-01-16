@@ -179,7 +179,7 @@ public abstract class Class6765
     
     public void method20579(final Class1849 class1849) {
         this.field26571 = class1849.method6917();
-        class1849.method6787().method34797(new Class7487(this));
+        class1849.getWorldBorder().method34797(new Class7487(this));
     }
     
     @Nullable
@@ -532,7 +532,7 @@ public abstract class Class6765
     }
     
     public void method20606(final Class513 class513, final Class1849 class514) {
-        class513.field3039.method17469(new Class4340(this.field26562.method1481(DimensionType.field2223).method6787(), Class2217.field13617));
+        class513.field3039.method17469(new Class4340(this.field26562.method1481(DimensionType.field2223).getWorldBorder(), Class2217.field13617));
         class513.field3039.method17469(new Class4345(class514.method6754(), class514.method6755(), class514.method6765().method31216(Class8878.field37324)));
         class513.field3039.method17469(new Class4335(class514.method6758()));
         if (class514.method6771()) {

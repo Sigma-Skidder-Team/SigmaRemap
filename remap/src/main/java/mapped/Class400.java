@@ -69,7 +69,7 @@ public class Class400 extends Entity implements Class401
         }
         this.rotationPitch = MathHelper.method35700(0.2f, this.prevRotationPitch, this.rotationPitch);
         this.rotationYaw = MathHelper.method35700(0.2f, this.prevRotationYaw, this.rotationYaw);
-        if (this.world.method6721(this.getBoundingBox(), Class8059.field33153)) {
+        if (this.world.isMaterialInBB(this.getBoundingBox(), Material.AIR)) {
             if (!this.method1711()) {
                 this.method1936(method1935.scale(0.9900000095367432));
                 if (!this.method1698()) {

@@ -12,10 +12,10 @@ import net.minecraft.item.ItemStack;
 
 public class Class4637 extends Class4611<Class4235>
 {
-    private static final Class1932 field20104;
+    private static final ResourceLocation field20104;
     
     @Override
-    public Class1932 method13717() {
+    public ResourceLocation method13717() {
         return Class4637.field20104;
     }
     
@@ -87,11 +87,11 @@ public class Class4637 extends Class4611<Class4235>
     }
     
     @Nullable
-    private static Class3833 method13835(final JsonObject jsonObject) {
+    private static Block method13835(final JsonObject jsonObject) {
         if (!jsonObject.has("block")) {
             return null;
         }
-        return Class90.field208.method506(new Class1932(Class9583.method35895(jsonObject, "block"))).orElseThrow(() -> {
+        return Registry.BLOCK.method506(new ResourceLocation(Class9583.method35895(jsonObject, "block"))).orElseThrow(() -> {
             new JsonSyntaxException("Unknown block type '" + obj + "'");
             return;
         });
@@ -99,12 +99,12 @@ public class Class4637 extends Class4611<Class4235>
     
     public void method13836(final Class513 class517, final BlockPos class514, final ItemStack class515) {
         this.method13726(class517.method2957(), class522 -> {
-            class517.method2940().method6701(class519);
+            class517.method2940().getBlockState(class519);
             return class522.method12736(class516, class518, class520.method2940(), class521);
         });
     }
     
     static {
-        field20104 = new Class1932("placed_block");
+        field20104 = new ResourceLocation("placed_block");
     }
 }

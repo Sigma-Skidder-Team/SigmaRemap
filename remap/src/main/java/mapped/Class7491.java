@@ -31,9 +31,9 @@ public interface Class7491
     
     Collection<String> method23207();
     
-    Collection<Class1932> method23208();
+    Collection<ResourceLocation> method23208();
     
-    Stream<Class1932> method23209();
+    Stream<ResourceLocation> method23209();
     
     CompletableFuture<Suggestions> method23211(final CommandContext<Class7491> p0, final SuggestionsBuilder p1);
     
@@ -47,10 +47,10 @@ public interface Class7491
     
     boolean method23210(final int p0);
     
-    default <T> void method23217(final Iterable<T> iterable, final String prefix, final Function<T, Class1932> function, final Consumer<T> consumer) {
+    default <T> void method23217(final Iterable<T> iterable, final String prefix, final Function<T, ResourceLocation> function, final Consumer<T> consumer) {
         final boolean b = prefix.indexOf(58) > -1;
         for (final T next : iterable) {
-            final Class1932 class1932 = function.apply(next);
+            final ResourceLocation class1932 = function.apply(next);
             if (!b) {
                 if (!class1932.method7798().startsWith(prefix)) {
                     if (!class1932.method7798().equals("minecraft")) {
@@ -71,7 +71,7 @@ public interface Class7491
         }
     }
     
-    default <T> void method23218(final Iterable<T> iterable, final String s, final String s2, final Function<T, Class1932> function, final Consumer<T> action) {
+    default <T> void method23218(final Iterable<T> iterable, final String s, final String s2, final Function<T, ResourceLocation> function, final Consumer<T> action) {
         if (!s.isEmpty()) {
             final String commonPrefix = Strings.commonPrefix((CharSequence)s, (CharSequence)s2);
             if (!commonPrefix.isEmpty()) {
@@ -83,26 +83,26 @@ public interface Class7491
         }
     }
     
-    default CompletableFuture<Suggestions> method23219(final Iterable<Class1932> iterable, final SuggestionsBuilder suggestionsBuilder, final String s) {
+    default CompletableFuture<Suggestions> method23219(final Iterable<ResourceLocation> iterable, final SuggestionsBuilder suggestionsBuilder, final String s) {
         method23218(iterable, suggestionsBuilder.getRemaining().toLowerCase(Locale.ROOT), s, class1932 -> class1932, obj -> suggestionsBuilder2.suggest(str + obj));
         return suggestionsBuilder.buildFuture();
     }
     
-    default CompletableFuture<Suggestions> method23220(final Iterable<Class1932> iterable, final SuggestionsBuilder suggestionsBuilder) {
+    default CompletableFuture<Suggestions> method23220(final Iterable<ResourceLocation> iterable, final SuggestionsBuilder suggestionsBuilder) {
         method23217(iterable, suggestionsBuilder.getRemaining().toLowerCase(Locale.ROOT), class1932 -> class1932, class1933 -> suggestionsBuilder2.suggest(class1933.toString()));
         return suggestionsBuilder.buildFuture();
     }
     
-    default <T> CompletableFuture<Suggestions> method23221(final Iterable<T> iterable, final SuggestionsBuilder suggestionsBuilder, final Function<T, Class1932> function, final Function<T, Message> function2) {
+    default <T> CompletableFuture<Suggestions> method23221(final Iterable<T> iterable, final SuggestionsBuilder suggestionsBuilder, final Function<T, ResourceLocation> function, final Function<T, Message> function2) {
         method23217(iterable, suggestionsBuilder.getRemaining().toLowerCase(Locale.ROOT), function, o -> suggestionsBuilder2.suggest(function3.apply(o).toString(), (Message)function4.apply(o)));
         return suggestionsBuilder.buildFuture();
     }
     
-    default CompletableFuture<Suggestions> method23222(final Stream<Class1932> stream, final SuggestionsBuilder suggestionsBuilder) {
+    default CompletableFuture<Suggestions> method23222(final Stream<ResourceLocation> stream, final SuggestionsBuilder suggestionsBuilder) {
         return method23220(stream::iterator, suggestionsBuilder);
     }
     
-    default <T> CompletableFuture<Suggestions> method23223(final Stream<T> stream, final SuggestionsBuilder suggestionsBuilder, final Function<T, Class1932> function, final Function<T, Message> function2) {
+    default <T> CompletableFuture<Suggestions> method23223(final Stream<T> stream, final SuggestionsBuilder suggestionsBuilder, final Function<T, ResourceLocation> function, final Function<T, Message> function2) {
         return method23221(stream::iterator, suggestionsBuilder, function, function2);
     }
     

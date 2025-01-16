@@ -458,7 +458,7 @@ public class Class803 extends Class789
             if (this.method4656()) {
                 if (this.world.rand.nextFloat() < 0.2f) {
                     final BlockPos class354 = new BlockPos(this);
-                    this.world.method6955(2001, class354, Class3833.method11774(this.world.method6701(class354)));
+                    this.world.method6955(2001, class354, Block.method11774(this.world.getBlockState(class354)));
                 }
             }
         }
@@ -540,7 +540,7 @@ public class Class803 extends Class789
     
     @Override
     public int method2691(final float n, final float n2) {
-        return MathHelper.method35649((n - 5.0f) * n2);
+        return MathHelper.ceil((n - 5.0f) * n2);
     }
     
     private void method4673() {
@@ -628,7 +628,7 @@ public class Class803 extends Class789
             final double n4 = (n3 != 0.0) ? (n * (i / 6.0f)) : 0.0;
             final double n5 = (n3 != 0.0) ? (n4 / n3) : (n2 * (i / 6.0f));
             for (int j = 1; j < 4; ++j) {
-                if (!class803.world.method6701(new BlockPos(class803.getPosX() + n5, class803.getPosY() + j, class803.getPosZ() + n4)).method21697().method26442()) {
+                if (!class803.world.getBlockState(new BlockPos(class803.getPosX() + n5, class803.getPosY() + j, class803.getPosZ() + n4)).method21697().method26442()) {
                     return false;
                 }
             }

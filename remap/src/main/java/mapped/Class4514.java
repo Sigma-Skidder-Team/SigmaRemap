@@ -50,23 +50,23 @@ public class Class4514 extends Class4500
     @Override
     public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         for (int i = 0; i < this.field19916; ++i) {
-            this.method13440(class1851, Class7521.field29368.method11878(), 0, 0, i, class1853);
-            this.method13440(class1851, Class7521.field29368.method11878(), 1, 0, i, class1853);
-            this.method13440(class1851, Class7521.field29368.method11878(), 2, 0, i, class1853);
-            this.method13440(class1851, Class7521.field29368.method11878(), 3, 0, i, class1853);
-            this.method13440(class1851, Class7521.field29368.method11878(), 4, 0, i, class1853);
+            this.method13440(class1851, Class7521.field29368.getDefaultState(), 0, 0, i, class1853);
+            this.method13440(class1851, Class7521.field29368.getDefaultState(), 1, 0, i, class1853);
+            this.method13440(class1851, Class7521.field29368.getDefaultState(), 2, 0, i, class1853);
+            this.method13440(class1851, Class7521.field29368.getDefaultState(), 3, 0, i, class1853);
+            this.method13440(class1851, Class7521.field29368.getDefaultState(), 4, 0, i, class1853);
             for (int j = 1; j <= 3; ++j) {
-                this.method13440(class1851, Class7521.field29368.method11878(), 0, j, i, class1853);
-                this.method13440(class1851, Class7521.field29764.method11878(), 1, j, i, class1853);
-                this.method13440(class1851, Class7521.field29764.method11878(), 2, j, i, class1853);
-                this.method13440(class1851, Class7521.field29764.method11878(), 3, j, i, class1853);
-                this.method13440(class1851, Class7521.field29368.method11878(), 4, j, i, class1853);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), 0, j, i, class1853);
+                this.method13440(class1851, Class7521.field29764.getDefaultState(), 1, j, i, class1853);
+                this.method13440(class1851, Class7521.field29764.getDefaultState(), 2, j, i, class1853);
+                this.method13440(class1851, Class7521.field29764.getDefaultState(), 3, j, i, class1853);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), 4, j, i, class1853);
             }
-            this.method13440(class1851, Class7521.field29368.method11878(), 0, 4, i, class1853);
-            this.method13440(class1851, Class7521.field29368.method11878(), 1, 4, i, class1853);
-            this.method13440(class1851, Class7521.field29368.method11878(), 2, 4, i, class1853);
-            this.method13440(class1851, Class7521.field29368.method11878(), 3, 4, i, class1853);
-            this.method13440(class1851, Class7521.field29368.method11878(), 4, 4, i, class1853);
+            this.method13440(class1851, Class7521.field29368.getDefaultState(), 0, 4, i, class1853);
+            this.method13440(class1851, Class7521.field29368.getDefaultState(), 1, 4, i, class1853);
+            this.method13440(class1851, Class7521.field29368.getDefaultState(), 2, 4, i, class1853);
+            this.method13440(class1851, Class7521.field29368.getDefaultState(), 3, 4, i, class1853);
+            this.method13440(class1851, Class7521.field29368.getDefaultState(), 4, 4, i, class1853);
         }
         return true;
     }

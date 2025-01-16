@@ -9,7 +9,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4751 extends Class4748<Class830, Class5864<Class830>>
 {
-    private static final Class1932 field20373;
+    private static final ResourceLocation field20373;
     
     public Class4751(final Class8551 class8551) {
         super(class8551, new Class5864(0.0f, 0.0f, 64, 64), new Class5864(0.5f, true), new Class5864(1.0f, true));
@@ -17,7 +17,7 @@ public class Class4751 extends Class4748<Class830, Class5864<Class830>>
     }
     
     @Override
-    public Class1932 method14083(final Class827 class827) {
+    public ResourceLocation method14083(final Class827 class827) {
         return Class4751.field20373;
     }
     
@@ -30,6 +30,6 @@ public class Class4751 extends Class4748<Class830, Class5864<Class830>>
     }
     
     static {
-        field20373 = new Class1932("textures/entity/zombie/drowned.png");
+        field20373 = new ResourceLocation("textures/entity/zombie/drowned.png");
     }
 }

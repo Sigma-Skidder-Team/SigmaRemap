@@ -9,20 +9,20 @@ import java.util.function.Function;
 
 public class Class3687
 {
-    private final Class1932 field16992;
-    private final Class1932 field16993;
+    private final ResourceLocation field16992;
+    private final ResourceLocation field16993;
     private Class6332 field16994;
     
-    public Class3687(final Class1932 field16992, final Class1932 field16993) {
+    public Class3687(final ResourceLocation field16992, final ResourceLocation field16993) {
         this.field16992 = field16992;
         this.field16993 = field16993;
     }
     
-    public Class1932 method11330() {
+    public ResourceLocation method11330() {
         return this.field16992;
     }
     
-    public Class1932 method11331() {
+    public ResourceLocation method11331() {
         return this.field16993;
     }
     
@@ -30,14 +30,14 @@ public class Class3687
         return Class869.method5277().method5296(this.method11330()).apply(this.method11331());
     }
     
-    public Class6332 method11333(final Function<Class1932, Class6332> function) {
+    public Class6332 method11333(final Function<ResourceLocation, Class6332> function) {
         if (this.field16994 == null) {
             this.field16994 = function.apply(this.field16992);
         }
         return this.field16994;
     }
     
-    public Class4150 method11334(final Class7807 class7807, final Function<Class1932, Class6332> function) {
+    public Class4150 method11334(final Class7807 class7807, final Function<ResourceLocation, Class6332> function) {
         return this.method11332().method7512(class7807.method25214(this.method11333(function)));
     }
     

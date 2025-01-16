@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class4022 extends Class3833
+public class Class4022 extends Block
 {
     private static String[] field18107;
     public static final VoxelShape field18108;
@@ -27,12 +27,12 @@ public class Class4022 extends Class3833
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        return (class7097 == Direction.DOWN && !this.method11843(class7096, class7099, class7100)) ? Class7521.field29147.method11878() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
+        return (class7097 == Direction.DOWN && !this.method11843(class7096, class7099, class7100)) ? Class7521.field29147.getDefaultState() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     @Override
     public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
-        return Class3833.method11813(class7097, class7098.method1139(), Direction.UP);
+        return Block.method11813(class7097, class7098.method1139(), Direction.UP);
     }
     
     @Override
@@ -45,6 +45,6 @@ public class Class4022 extends Class3833
     }
     
     static {
-        field18108 = Class3833.method11778(6.0, 0.0, 6.0, 10.0, 10.0, 10.0);
+        field18108 = Block.method11778(6.0, 0.0, 6.0, 10.0, 10.0, 10.0);
     }
 }

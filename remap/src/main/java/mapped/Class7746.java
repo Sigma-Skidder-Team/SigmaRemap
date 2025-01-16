@@ -120,12 +120,12 @@ public abstract class Class7746
                     }
                 }
             }
-            this.field31658.method6796().method15297("pathfind");
+            this.field31658.method6796().startSection("pathfind");
             final float n2 = (float)this.field31661.method23950();
             final BlockPos class354 = b ? new BlockPos(this.field31657).method1137() : new BlockPos(this.field31657);
             final int n3 = (int)(n2 + n);
             final Class9468 method25625 = this.field31676.method25625(new Class1854(this.field31658, class354.add(-n3, -n3, -n3), class354.add(n3, n3, n3)), this.field31657, set, n2, field31674, this.field31675);
-            this.field31658.method6796().method15299();
+            this.field31658.method6796().endSection();
             if (method25625 != null) {
                 if (method25625.method35232() != null) {
                     this.field31673 = method25625.method35232();
@@ -203,7 +203,7 @@ public abstract class Class7746
             if (!this.method24731()) {
                 final Vec3d method24736 = this.field31659.method35225(this.field31657);
                 final BlockPos class354 = new BlockPos(method24736);
-                this.field31657.method4148().method19907(method24736.x, this.field31658.method6701(class354.method1139()).method21706() ? method24736.y : Class4651.method13906(this.field31658, class354), method24736.z, this.field31660);
+                this.field31657.method4148().method19907(method24736.x, this.field31658.getBlockState(class354.method1139()).method21706() ? method24736.y : Class4651.method13906(this.field31658, class354), method24736.z, this.field31660);
             }
         }
     }
@@ -279,7 +279,7 @@ public abstract class Class7746
             for (int i = 0; i < this.field31659.method35221(); ++i) {
                 final Class6772 method35217 = this.field31659.method35217(i);
                 final Class6772 class6772 = (i + 1 >= this.field31659.method35221()) ? null : this.field31659.method35217(i + 1);
-                if (this.field31658.method6701(new BlockPos(method35217.field26589, method35217.field26590, method35217.field26591)).method21696() == Class7521.field29400) {
+                if (this.field31658.getBlockState(new BlockPos(method35217.field26589, method35217.field26590, method35217.field26591)).method21696() == Class7521.field29400) {
                     this.field31659.method35220(i, method35217.method20665(method35217.field26589, method35217.field26590 + 1, method35217.field26591));
                     if (class6772 != null) {
                         if (method35217.field26590 >= class6772.field26590) {
@@ -295,7 +295,7 @@ public abstract class Class7746
     
     public boolean method24739(final BlockPos class354) {
         final BlockPos method1139 = class354.method1139();
-        return this.field31658.method6701(method1139).method21722(this.field31658, method1139);
+        return this.field31658.getBlockState(method1139).method21722(this.field31658, method1139);
     }
     
     public Class4654 method24740() {

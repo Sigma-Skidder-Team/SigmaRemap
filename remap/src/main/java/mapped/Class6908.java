@@ -24,7 +24,7 @@ public class Class6908 extends Class6907<Class6908> implements Class6909
     
     @Override
     public String method21274() {
-        return Class90.field222.method503(this).toString();
+        return Registry.field222.getKey(this).toString();
     }
     
     static {

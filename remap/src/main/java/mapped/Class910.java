@@ -7,7 +7,6 @@ package mapped;
 import java.io.EOFException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.Map;
 import java.util.LinkedHashMap;
 import java.io.InputStream;
 import java.nio.charset.Charset;
@@ -43,10 +42,10 @@ public class Class910 extends Thread
     
     private Class8215 method5410(final InputStream inputStream) throws IOException {
         final String method5413 = this.method5413(inputStream);
-        final String[] method5414 = Class8571.method28937(method5413, " ");
+        final String[] method5414 = Config.method28937(method5413, " ");
         if (method5414.length >= 3) {
             final String s = method5414[0];
-            final int method5415 = Class8571.method28933(method5414[1], 0);
+            final int method5415 = Config.method28933(method5414[1], 0);
             final String s2 = method5414[2];
             final LinkedHashMap linkedHashMap = new LinkedHashMap();
             while (true) {
@@ -63,12 +62,12 @@ public class Class910 extends Thread
             byte[] method5417 = null;
             final String s3 = (String)linkedHashMap.get("Content-Length");
             if (s3 == null) {
-                if (Class8571.equals(linkedHashMap.get("Transfer-Encoding"), "chunked")) {
+                if (Config.equals(linkedHashMap.get("Transfer-Encoding"), "chunked")) {
                     method5417 = this.method5411(inputStream);
                 }
             }
             else {
-                final int method5418 = Class8571.method28933(s3, -1);
+                final int method5418 = Config.method28933(s3, -1);
                 if (method5418 > 0) {
                     method5417 = new byte[method5418];
                     this.method5412(method5417, inputStream);
@@ -83,7 +82,7 @@ public class Class910 extends Thread
         final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         int int1;
         do {
-            int1 = Integer.parseInt(Class8571.method28937(this.method5413(inputStream), "; ")[0], 16);
+            int1 = Integer.parseInt(Config.method28937(this.method5413(inputStream), "; ")[0], 16);
             final byte[] b = new byte[int1];
             this.method5412(b, inputStream);
             byteArrayOutputStream.write(b);

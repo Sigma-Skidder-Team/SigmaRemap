@@ -38,7 +38,7 @@ public class Class4278 implements IPacket<IClientPlayNetHandler>
     
     @Override
     public void readPacketData(final PacketBuffer class8654) throws IOException {
-        Class6907 field34599 = Class90.field222.method499(class8654.readInt());
+        Class6907 field34599 = Registry.field222.method499(class8654.readInt());
         if (field34599 == null) {
             field34599 = Class8432.field34599;
         }
@@ -60,7 +60,7 @@ public class Class4278 implements IPacket<IClientPlayNetHandler>
     
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
-        class8654.writeInt(Class90.field222.method504((Class6907<? extends Class6909>)this.field19198.method21272()));
+        class8654.writeInt(Registry.field222.getId((Class6907<? extends Class6909>)this.field19198.method21272()));
         class8654.writeBoolean(this.field19197);
         class8654.writeDouble(this.field19189);
         class8654.writeDouble(this.field19190);

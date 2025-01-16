@@ -6,7 +6,7 @@ package mapped;
 
 public class Class645 extends Class573
 {
-    public Class1932 field3657;
+    public ResourceLocation field3657;
     public boolean field3658;
     public int field3659;
     public int field3660;
@@ -18,7 +18,7 @@ public class Class645 extends Class573
         this.field3658 = field3658;
     }
     
-    public void method3690(final int field3659, final int field3660, final int field3661, final int field3662, final Class1932 field3663) {
+    public void method3690(final int field3659, final int field3660, final int field3661, final int field3662, final ResourceLocation field3663) {
         this.field3659 = field3659;
         this.field3660 = field3660;
         this.field3661 = field3661;

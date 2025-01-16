@@ -42,13 +42,13 @@ public class Class4165 extends Class4158<Class465>
                 final Class7096 method2388 = class465.method2194();
                 if (!(method2388.method21696() instanceof Class3946)) {
                     class466.method22564(0.5, -0.1666666716337204, 0.5);
-                    class466.method22566(Vector3f.YP.rotationDegrees(-method2388.method21772((Class7111<Direction>)Class3945.field17839).getHorizontalAngle()));
+                    class466.method22566(Vector3f.YP.rotationDegrees(-method2388.method21772((IProperty<Direction>)Class3945.field17839).getHorizontalAngle()));
                     class466.method22564(0.0, -0.3125, -0.4375);
                     this.field18563.field25187 = false;
                 }
                 else {
                     class466.method22564(0.5, 0.5, 0.5);
-                    class466.method22566(Vector3f.YP.rotationDegrees(-method2388.method21772((Class7111<Integer>)Class3946.field17842) * 360 / 16.0f));
+                    class466.method22566(Vector3f.YP.rotationDegrees(-method2388.method21772((IProperty<Integer>)Class3946.field17842) * 360 / 16.0f));
                     this.field18563.field25187 = true;
                 }
             }
@@ -62,7 +62,7 @@ public class Class4165 extends Class4158<Class465>
             final Class4150 method2389 = Class7637.field30242.method11334(class467, Class6332::method18767);
             this.field18563.method18643(class466, method2389, n2, n3);
             this.field18564.method18643(class466, method2389, n2, n3);
-            final BlockPos method2390 = class465.method2193();
+            final BlockPos method2390 = class465.getPos();
             this.field18562.field25183 = (-0.0125f + 0.01f * MathHelper.cos(6.2831855f * ((Math.floorMod(method2390.getX() * 7 + method2390.getY() * 9 + method2390.getZ() * 13 + method2387, 100L) + n) / 100.0f))) * 3.1415927f;
             this.field18562.field25181 = -32.0f;
             method12473(class466, class467, n2, n3, this.field18562, Class7637.field30242, true, method2386);

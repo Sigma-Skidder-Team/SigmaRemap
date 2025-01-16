@@ -37,7 +37,7 @@ public class Class5544 extends Class5543
     
     @Override
     public String[] method16813() {
-        return (String[])Class8571.method28984(super.method16813(), new String[] { "right", "left", "waist", "base" });
+        return (String[]) Config.method28984(super.method16813(), new String[] { "right", "left", "waist", "base" });
     }
     
     @Override

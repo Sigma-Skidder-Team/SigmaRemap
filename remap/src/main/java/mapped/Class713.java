@@ -46,7 +46,7 @@ public class Class713 extends Class698
         int method33724 = Class9216.method33724(this.field3894, 2);
         final Class5601[] method33725 = Class9216.method33723(this.field3894);
         if (method33725 != null) {
-            final int method33726 = MathHelper.method35650(method33725.length / 9.0);
+            final int method33726 = MathHelper.ceil(method33725.length / 9.0);
             if (method33724 < method33726) {
                 method33724 = method33726;
             }
@@ -81,7 +81,7 @@ public class Class713 extends Class698
     public static String method3931(final Class5601 class5601, final int n) {
         String s = class5601.method16858();
         if (!(class5601 instanceof Class5600)) {
-            for (Class1844 field4643 = Class8571.method28894().field4643; field4643.method6617(s) + (field4643.method6617(": " + Class4647.method13879()) + 5) >= n && s.length() > 0; s = s.substring(0, s.length() - 1)) {}
+            for (Class1844 field4643 = Config.method28894().field4643; field4643.method6617(s) + (field4643.method6617(": " + Class4647.method13879()) + 5) >= n && s.length() > 0; s = s.substring(0, s.length() - 1)) {}
             return s + ": " + (class5601.method16874() ? class5601.method16879(class5601.method16863()) : "") + class5601.method16878(class5601.method16863());
         }
         final Class5600 class5602 = (Class5600)class5601;

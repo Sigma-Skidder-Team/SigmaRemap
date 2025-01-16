@@ -66,6 +66,6 @@ public class Class370 extends Class367
     
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
-        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Class90.field221.method503(this.field2209).toString())))).getValue();
+        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Registry.field221.getKey(this.field2209).toString())))).getValue();
     }
 }

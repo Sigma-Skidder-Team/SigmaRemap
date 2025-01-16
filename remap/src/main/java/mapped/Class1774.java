@@ -35,16 +35,16 @@ public class Class1774 extends Class1666 implements Class1664
 {
     private static final Logger field9852;
     @Deprecated
-    public static final Class1932 field9853;
+    public static final ResourceLocation field9853;
     @Deprecated
-    public static final Class1932 field9854;
+    public static final ResourceLocation field9854;
     private final List<Class1912> field9855;
-    private final Set<Class1932> field9856;
-    private final Map<Class1932, Class1912> field9857;
-    private final Class1932 field9858;
+    private final Set<ResourceLocation> field9856;
+    private final Map<ResourceLocation, Class1912> field9857;
+    private final ResourceLocation field9858;
     private final int field9859;
-    private Map<Class1932, Class1912> field9860;
-    private Map<Class1932, Class1912> field9861;
+    private Map<ResourceLocation, Class1912> field9860;
+    private Map<ResourceLocation, Class1912> field9861;
     private Class1912[] field9862;
     private int field9863;
     private int field9864;
@@ -60,12 +60,12 @@ public class Class1774 extends Class1666 implements Class1664
     private boolean field9874;
     private boolean field9875;
     
-    public Class1774(final Class1932 field9858) {
+    public Class1774(final ResourceLocation field9858) {
         this.field9855 = Lists.newArrayList();
         this.field9856 = Sets.newHashSet();
         this.field9857 = Maps.newHashMap();
-        this.field9860 = new LinkedHashMap<Class1932, Class1912>();
-        this.field9861 = new LinkedHashMap<Class1932, Class1912>();
+        this.field9860 = new LinkedHashMap<ResourceLocation, Class1912>();
+        this.field9861 = new LinkedHashMap<ResourceLocation, Class1912>();
         this.field9862 = null;
         this.field9863 = -1;
         this.field9864 = -1;
@@ -78,10 +78,10 @@ public class Class1774 extends Class1666 implements Class1664
         this.field9858 = field9858;
         this.field9859 = Class8726.method30087();
         this.field9873 = field9858.equals(Class1774.field9853);
-        this.field9874 = Class8571.method28955();
-        this.field9875 = Class8571.method28928();
+        this.field9874 = Config.method28955();
+        this.field9875 = Config.method28928();
         if (this.field9873) {
-            Class8571.method29000(this);
+            Config.method29000(this);
         }
     }
     
@@ -118,8 +118,8 @@ public class Class1774 extends Class1666 implements Class1664
             }
         }
         Class8969.method31830(this);
-        Class8571.method28852("Animated sprites: " + this.field9855.size());
-        if (Class8571.method28928()) {
+        Config.method28852("Animated sprites: " + this.field9855.size());
+        if (Config.method28928()) {
             for (final Class1912 obj : class9430.field40456) {
                 final Class1912 field10387 = obj.field10387;
                 if (field10387 != null) {
@@ -129,14 +129,14 @@ public class Class1774 extends Class1666 implements Class1664
                         field10387.method7507();
                     }
                     catch (final Exception ex) {
-                        Class8571.method28847("Error uploading sprite single: " + field10387 + ", parent: " + obj);
+                        Config.method28847("Error uploading sprite single: " + field10387 + ", parent: " + obj);
                         ex.printStackTrace();
                     }
                 }
             }
             Class8933.method31617(this.method5869());
         }
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             final List<Class1912> field10388 = class9430.field40456;
             if (Class9216.field39313) {
                 Class8933.method31617(this.method5874().field38157);
@@ -162,8 +162,8 @@ public class Class1774 extends Class1666 implements Class1664
         }
         Class9570.method35811(Class9570.field41308, this);
         this.method6355(class9430.field40453, class9430.field40454);
-        if (Class8571.equals(System.getProperty("saveTextureMap"), "true")) {
-            Class8571.method28847("Exporting texture map: " + this.field9858);
+        if (Config.equals(System.getProperty("saveTextureMap"), "true")) {
+            Config.method28847("Exporting texture map: " + this.field9858);
             Class8969.method31845("debug/" + this.field9858.method7797().replaceAll("/", "_"), this.method5869(), class9430.field40455, class9430.field40453, class9430.field40454);
             if (this.field9874) {
                 if (Class9216.field39313) {
@@ -177,31 +177,31 @@ public class Class1774 extends Class1666 implements Class1664
         }
     }
     
-    public Class9430 method6332(final Class6582 class6582, final Stream<Class1932> stream, final IProfiler class6583, final int i) {
+    public Class9430 method6332(final Class6582 class6582, final Stream<ResourceLocation> stream, final IProfiler class6583, final int i) {
         this.field9873 = this.field9858.equals(Class1774.field9853);
-        this.field9874 = Class8571.method28955();
-        this.field9875 = Class8571.method28928();
+        this.field9874 = Config.method28955();
+        this.field9875 = Config.method28928();
         int method6350 = i;
         this.field9860.clear();
         this.field9861.clear();
         this.field9868.method31288();
-        class6583.method15297("preparing");
-        final Set<? super Class1932> set = stream.peek(class6587 -> {
+        class6583.startSection("preparing");
+        final Set<? super ResourceLocation> set = stream.peek(class6587 -> {
             if (class6587 != null) {
                 return;
             }
             else {
                 throw new IllegalArgumentException("Location cannot be null!");
             }
-        }).collect((Collector<? super Class1932, ?, Set<? super Class1932>>)Collectors.toSet());
-        Class8571.method28847("Multitexture: " + Class8571.method28928());
+        }).collect((Collector<? super ResourceLocation, ?, Set<? super ResourceLocation>>)Collectors.toSet());
+        Config.method28847("Multitexture: " + Config.method28928());
         Class8969.method31829(this);
         set.addAll(this.field9860.keySet());
         Class8880.method31244(this, method6363(set, this.field9860.keySet()));
         set.addAll(this.field9860.keySet());
         if (i >= 4) {
-            method6350 = this.method6350((Set<Class1932>)set, class6582);
-            Class8571.method28852("Mipmap levels: " + method6350);
+            method6350 = this.method6350((Set<ResourceLocation>)set, class6582);
+            Config.method28852("Mipmap levels: " + method6350);
         }
         final int method6351 = Class8969.method31846();
         final Class7498 class6584 = new Class7498(method6351, method6351, i);
@@ -211,7 +211,7 @@ public class Class1774 extends Class1666 implements Class1664
         int b = 1 << i;
         class6583.method15300("extracting_frames");
         Class9570.method35811(Class9570.field41307, this, set);
-        for (final Class9336 class6585 : this.method6333(class6582, (Set<Class1932>)set)) {
+        for (final Class9336 class6585 : this.method6333(class6582, (Set<ResourceLocation>)set)) {
             final int method6353 = class6585.method34592();
             final int method6354 = class6585.method34593();
             if (method6353 >= 1 && method6354 >= 1) {
@@ -219,10 +219,10 @@ public class Class1774 extends Class1666 implements Class1664
                     final int n = (method6350 > 0) ? Class8969.method31841(method6353, method6352) : Class8969.method31842(method6353, method6352);
                     if (n != method6353) {
                         if (!Class8969.method31836(method6353)) {
-                            Class8571.method28852("Scaled non power of 2: " + class6585.method34591() + ", " + method6353 + " -> " + n);
+                            Config.method28852("Scaled non power of 2: " + class6585.method34591() + ", " + method6353 + " -> " + n);
                         }
                         else {
-                            Class8571.method28852("Scaled too small texture: " + class6585.method34591() + ", " + method6353 + " -> " + n);
+                            Config.method28852("Scaled too small texture: " + class6585.method34591() + ", " + method6353 + " -> " + n);
                         }
                         final int n2 = method6354 * n / method6353;
                         class6585.method34594(n);
@@ -239,7 +239,7 @@ public class Class1774 extends Class1666 implements Class1664
                 class6584.method23341(class6585);
             }
             else {
-                Class8571.method28848("Invalid sprite size: " + class6585.method34591());
+                Config.warn("Invalid sprite size: " + class6585.method34591());
             }
         }
         final int min3 = Math.min(min, b);
@@ -270,14 +270,14 @@ public class Class1774 extends Class1666 implements Class1664
         }
         class6583.method15300("loading");
         final List<Class1912> method6358 = this.method6334(class6582, class6584, n3);
-        class6583.method15299();
-        return new Class9430((Set<Class1932>)set, class6584.method23339(), class6584.method23340(), n3, method6358);
+        class6583.endSection();
+        return new Class9430((Set<ResourceLocation>)set, class6584.method23339(), class6584.method23340(), n3, method6358);
     }
     
-    private Collection<Class9336> method6333(final Class6582 class6582, final Set<Class1932> set) {
+    private Collection<Class9336> method6333(final Class6582 class6582, final Set<ResourceLocation> set) {
         final ArrayList arrayList = Lists.newArrayList();
         final ConcurrentLinkedQueue concurrentLinkedQueue = new ConcurrentLinkedQueue();
-        final Iterator<Class1932> iterator = set.iterator();
+        final Iterator<ResourceLocation> iterator = set.iterator();
         while (iterator.hasNext()) {
             if (Class1913.method7551().equals(iterator.next())) {
                 continue;
@@ -286,7 +286,7 @@ public class Class1774 extends Class1666 implements Class1664
                 this.method6336(class6583);
                 Object e;
                 try {
-                    final Class1932 class6585;
+                    final ResourceLocation class6585;
                     class6584.method19933(class6585);
                     try {
                         final Class1671 class6587;
@@ -321,13 +321,13 @@ public class Class1774 extends Class1666 implements Class1664
                     }
                 }
                 catch (final RuntimeException ex) {
-                    final Class1932 class6585;
+                    final ResourceLocation class6585;
                     Class1774.field9852.error("Unable to parse metadata from {} : {}", (Object)class6585, (Object)ex);
                     this.method6362(class6583);
                     return;
                 }
                 catch (final IOException ex2) {
-                    final Class1932 class6585;
+                    final ResourceLocation class6585;
                     Class1774.field9852.error("Using missing texture, unable to load {} : {}", (Object)class6585, (Object)ex2);
                     this.method6362(class6583);
                     return;
@@ -365,7 +365,7 @@ public class Class1774 extends Class1666 implements Class1664
     
     @Nullable
     private Class1912 method6335(final Class6582 class6582, final Class9336 class6583, final int n, final int n2, final int n3, final int n4, final int n5) {
-        final Class1932 method6336 = this.method6336(class6583.method34591());
+        final ResourceLocation method6336 = this.method6336(class6583.method34591());
         try (final Class1671 method6337 = class6582.method19933(method6336)) {
             final Class1912 class6584 = new Class1912(this, class6583, n3, n, n2, n4, n5, Class1846.method6637(method6337.method5887()));
             class6584.method7536(class6582);
@@ -381,8 +381,8 @@ public class Class1774 extends Class1666 implements Class1664
         }
     }
     
-    public Class1932 method6336(final Class1932 class1932) {
-        return this.method6342(class1932) ? new Class1932(class1932.method7798(), class1932.method7797() + ".png") : new Class1932(class1932.method7798(), String.format("textures/%s%s", class1932.method7797(), ".png"));
+    public ResourceLocation method6336(final ResourceLocation class1932) {
+        return this.method6342(class1932) ? new ResourceLocation(class1932.method7798(), class1932.method7797() + ".png") : new ResourceLocation(class1932.method7798(), String.format("textures/%s%s", class1932.method7797(), ".png"));
     }
     
     public void method6337() {
@@ -406,7 +406,7 @@ public class Class1774 extends Class1666 implements Class1664
             }
             b2 = true;
         }
-        if (Class8571.method28928()) {
+        if (Config.method28928()) {
             for (final Class1912 class1913 : this.field9855) {
                 if (!this.method6348(class1913)) {
                     continue;
@@ -427,7 +427,7 @@ public class Class1774 extends Class1666 implements Class1664
             }
             Class8933.method31617(this.method5869());
         }
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             if (b) {
                 Class8933.method31617(this.method5874().field38157);
                 for (final Class1912 class1914 : this.field9855) {
@@ -471,7 +471,7 @@ public class Class1774 extends Class1666 implements Class1664
             }
         }
         if (this.field9873) {
-            final int method5768 = Class8571.method28894().field4636.method5768();
+            final int method5768 = Config.method28894().field4636.method5768();
             if (method5768 != this.field9872) {
                 this.field9871 = field9871;
                 this.field9872 = method5768;
@@ -492,7 +492,7 @@ public class Class1774 extends Class1666 implements Class1664
         }
     }
     
-    public Class1912 method6338(final Class1932 class1932) {
+    public Class1912 method6338(final ResourceLocation class1932) {
         final Class1912 class1933 = this.field9857.get(class1932);
         return (class1933 != null) ? class1933 : this.field9857.get(Class1913.method7551());
     }
@@ -512,7 +512,7 @@ public class Class1774 extends Class1666 implements Class1664
         this.field9855.clear();
     }
     
-    public Class1932 method6340() {
+    public ResourceLocation method6340() {
         return this.field9858;
     }
     
@@ -520,7 +520,7 @@ public class Class1774 extends Class1666 implements Class1664
         this.method5868(false, class9430.field40455 > 0);
     }
     
-    private boolean method6342(final Class1932 class1932) {
+    private boolean method6342(final ResourceLocation class1932) {
         return this.method6343(class1932.method7797());
     }
     
@@ -529,18 +529,18 @@ public class Class1774 extends Class1666 implements Class1664
     }
     
     public Class1912 method6344(final String s) {
-        return this.method6345(new Class1932(s));
+        return this.method6345(new ResourceLocation(s));
     }
     
-    public Class1912 method6345(final Class1932 class1932) {
+    public Class1912 method6345(final ResourceLocation class1932) {
         return this.field9860.get(class1932);
     }
     
     public Class1912 method6346(final String s) {
-        return this.method6347(new Class1932(s));
+        return this.method6347(new ResourceLocation(s));
     }
     
-    public Class1912 method6347(final Class1932 class1932) {
+    public Class1912 method6347(final ResourceLocation class1932) {
         return this.field9857.get(class1932);
     }
     
@@ -549,29 +549,29 @@ public class Class1774 extends Class1666 implements Class1664
             return true;
         }
         if (class1912 == Class8969.field37706 || class1912 == Class8969.field37707) {
-            return Class8571.method28869();
+            return Config.method28869();
         }
         if (class1912 == Class8969.field37708 || class1912 == Class8969.field37709) {
-            return Class8571.method28872();
+            return Config.method28872();
         }
         if (class1912 != Class8969.field37710 && class1912 != Class8969.field37711) {
-            return (class1912 != Class8969.field37712) ? Class8571.method28938() : Class8571.method28871();
+            return (class1912 != Class8969.field37712) ? Config.method28938() : Config.method28871();
         }
-        return Class8571.method28874();
+        return Config.method28874();
     }
     
     public int method6349() {
         return this.field9868.method31289();
     }
     
-    private int method6350(final Set<Class1932> set, final Class6582 class6582) {
+    private int method6350(final Set<ResourceLocation> set, final Class6582 class6582) {
         int method6351 = this.method6351(set, class6582, 20);
         if (method6351 < 16) {
             method6351 = 16;
         }
         final int method6352 = MathHelper.smallestEncompassingPowerOfTwo(method6351);
         if (method6352 > 16) {
-            Class8571.method28852("Sprite size: " + method6352);
+            Config.method28852("Sprite size: " + method6352);
         }
         int method6353 = MathHelper.log2(method6352);
         if (method6353 < 4) {
@@ -580,11 +580,11 @@ public class Class1774 extends Class1666 implements Class1664
         return method6353;
     }
     
-    private int method6351(final Set<Class1932> set, final Class6582 class6582, final int n) {
+    private int method6351(final Set<ResourceLocation> set, final Class6582 class6582, final int n) {
         final HashMap hashMap = new HashMap();
-        final Iterator<Class1932> iterator = set.iterator();
+        final Iterator<ResourceLocation> iterator = set.iterator();
         while (iterator.hasNext()) {
-            final Class1932 method6336 = this.method6336(iterator.next());
+            final ResourceLocation method6336 = this.method6336(iterator.next());
             try {
                 final Class1671 method6337 = class6582.method19933(method6336);
                 if (method6337 == null) {
@@ -676,12 +676,12 @@ public class Class1774 extends Class1666 implements Class1664
                                 this.field9862[j * this.field9864 + i] = class1912;
                             }
                             else {
-                                Class8571.method28848("Invalid grid V: " + j + ", icon: " + class1912.method7503());
+                                Config.warn("Invalid grid V: " + j + ", icon: " + class1912.method7503());
                             }
                         }
                     }
                     else {
-                        Class8571.method28848("Invalid grid U: " + i + ", icon: " + class1912.method7503());
+                        Config.warn("Invalid grid U: " + i + ", icon: " + class1912.method7503());
                     }
                 }
             }
@@ -704,7 +704,7 @@ public class Class1774 extends Class1666 implements Class1664
         return this.field9871;
     }
     
-    public Class1912 method6359(final Class1932 class1932) {
+    public Class1912 method6359(final ResourceLocation class1932) {
         if (class1932 == null) {
             throw new IllegalArgumentException("Location cannot be null!");
         }
@@ -727,7 +727,7 @@ public class Class1774 extends Class1666 implements Class1664
         return this.field9868;
     }
     
-    private void method6362(final Class1932 class1932) {
+    private void method6362(final ResourceLocation class1932) {
         final Class1912 class1933 = this.field9860.get(class1932);
         if (class1933 != null) {
             this.field9861.put(class1932, class1933);
@@ -749,6 +749,6 @@ public class Class1774 extends Class1666 implements Class1664
     static {
         field9852 = LogManager.getLogger();
         field9853 = Class3427.field16192;
-        field9854 = new Class1932("textures/atlas/particles.png");
+        field9854 = new ResourceLocation("textures/atlas/particles.png");
     }
 }

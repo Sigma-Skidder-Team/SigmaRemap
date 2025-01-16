@@ -44,7 +44,7 @@ public class Class7012
 {
     private static final Logger field27332;
     private static final Gson field27333;
-    private static final TypeToken<Map<Class1932, Class348>> field27334;
+    private static final TypeToken<Map<ResourceLocation, Class348>> field27334;
     private final MinecraftServer field27335;
     private final File field27336;
     private final Map<Class8863, Class348> field27337;
@@ -133,7 +133,7 @@ public class Class7012
                 if (map == null) {
                     throw new JsonParseException("Found null for advancements");
                 }
-                for (final Map.Entry<Class1932, V> entry : (List<Object>)map.entrySet().stream().sorted(Comparator.comparing((Function<? super T, ? extends Comparable>)Map.Entry::getValue)).collect(Collectors.toList())) {
+                for (final Map.Entry<ResourceLocation, V> entry : (List<Object>)map.entrySet().stream().sorted(Comparator.comparing((Function<? super T, ? extends Comparable>)Map.Entry::getValue)).collect(Collectors.toList())) {
                     final Class8863 method6398 = this.field27335.method1566().method6398(entry.getKey());
                     if (method6398 == null) {
                         Class7012.field27332.warn("Ignored advancement '{}' in progress file {} - it doesn't exist anymore?", (Object)entry.getKey(), (Object)this.field27336);
@@ -399,7 +399,7 @@ public class Class7012
     
     static {
         field27332 = LogManager.getLogger();
-        field27333 = new GsonBuilder().registerTypeAdapter((Type)Class348.class, (Object)new Class5988()).registerTypeAdapter((Type)Class1932.class, (Object)new Class5958()).setPrettyPrinting().create();
+        field27333 = new GsonBuilder().registerTypeAdapter((Type)Class348.class, (Object)new Class5988()).registerTypeAdapter((Type) ResourceLocation.class, (Object)new Class5958()).setPrettyPrinting().create();
         field27334 = new Class7514();
     }
 }

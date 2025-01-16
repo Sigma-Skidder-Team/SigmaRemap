@@ -22,7 +22,7 @@ public class Class5079 extends Class5046
     private static boolean field21825;
     private final RateLimiter field21826;
     private boolean field21827;
-    private static List<Class1932> field21828;
+    private static List<ResourceLocation> field21828;
     private static final Class9057 field21829;
     private static int field21830;
     private final Class5046 field21831;
@@ -1022,12 +1022,12 @@ public class Class5079 extends Class5046
     }
     
     public static void method15797(final Class6582 class6582) {
-        Class5079.field21828 = class6582.method19936("textures/gui/images", s -> s.endsWith(".png")).stream().filter(class6583 -> class6583.method7798().equals("realms")).collect((Collector<? super Class1932, Object, List<Class1932>>)ImmutableList.toImmutableList());
+        Class5079.field21828 = class6582.method19936("textures/gui/images", s -> s.endsWith(".png")).stream().filter(class6583 -> class6583.method7798().equals("realms")).collect((Collector<? super ResourceLocation, Object, List<ResourceLocation>>)ImmutableList.toImmutableList());
     }
     
     static {
         field21824 = LogManager.getLogger();
-        Class5079.field21828 = (List<Class1932>)ImmutableList.of();
+        Class5079.field21828 = (List<ResourceLocation>)ImmutableList.of();
         field21829 = new Class9057();
         Class5079.field21830 = -1;
     }

@@ -21,7 +21,7 @@ public class Class6216 extends Class6213
     }
     
     public <T> Class6216(final Dynamic<T> dynamic) {
-        this(BlockState.method21764((com.mojang.datafixers.Dynamic<Object>)dynamic.get("blockstate").orElseEmptyMap()), dynamic.get("probability").asFloat(1.0f));
+        this(BlockState.deserialize((com.mojang.datafixers.Dynamic<Object>)dynamic.get("blockstate").orElseEmptyMap()), dynamic.get("probability").asFloat(1.0f));
     }
     
     @Override
@@ -36,6 +36,6 @@ public class Class6216 extends Class6213
     
     @Override
     public <T> Dynamic<T> method18487(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("blockstate"), BlockState.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field25065).getValue(), dynamicOps.createString("probability"), dynamicOps.createFloat(this.field25066))));
+        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("blockstate"), BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field25065).getValue(), dynamicOps.createString("probability"), dynamicOps.createFloat(this.field25066))));
     }
 }

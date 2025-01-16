@@ -40,7 +40,7 @@ public class Class3518 extends Class3517
             if (class354.equals(class357)) {
                 continue;
             }
-            final Class3833 method21696 = this.field16510.world.method6701(class356.method1287(class357).method1290(Direction.DOWN)).method21696();
+            final Block method21696 = this.field16510.world.getBlockState(class356.method1287(class357).method1290(Direction.DOWN)).method21696();
             if (!(method21696 instanceof Class3972) && !method21696.method11785(Class7188.field27893)) {
                 continue;
             }

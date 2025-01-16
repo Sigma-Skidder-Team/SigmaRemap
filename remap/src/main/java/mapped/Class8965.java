@@ -24,16 +24,16 @@ public class Class8965
         return class6355;
     }
     
-    public Class51 method31805(final Class1932 class1932) {
+    public Class51 method31805(final ResourceLocation class1932) {
         final Class6355 class1933 = this.field37672.method27209(() -> this.method31804(s, s2), method31808(class1932.method7798()));
         return (class1933 == null) ? new Class51() : class1933.method18908(class1932.method7797());
     }
     
-    public void method31806(final Class1932 class1932, final Class51 class1933) {
+    public void method31806(final ResourceLocation class1932, final Class51 class1933) {
         this.field37672.method27208(() -> this.method31804(s, s2), method31808(class1932.method7798())).method18909(class1932.method7797(), class1933);
     }
     
-    public Stream<Class1932> method31807() {
+    public Stream<ResourceLocation> method31807() {
         return this.field37671.entrySet().stream().flatMap(entry -> entry.getValue().method18910((String)entry.getKey()));
     }
     

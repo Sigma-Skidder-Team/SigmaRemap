@@ -125,8 +125,8 @@ public class Class779 extends Class776
                 if (this.world.method6765().method31216(Class8878.field37316)) {
                     boolean b = false;
                     final AxisAlignedBB method18496 = this.getBoundingBox().method18496(0.2);
-                    for (final BlockPos class354 : BlockPos.getAllInBoxMutable(MathHelper.floor(method18496.field25073), MathHelper.floor(method18496.field25074), MathHelper.floor(method18496.field25075), MathHelper.floor(method18496.field25076), MathHelper.floor(method18496.field25077), MathHelper.floor(method18496.field25078))) {
-                        if (!(this.world.method6701(class354).method21696() instanceof Class3972)) {
+                    for (final BlockPos class354 : BlockPos.getAllInBoxMutable(MathHelper.floor(method18496.minX), MathHelper.floor(method18496.minY), MathHelper.floor(method18496.minZ), MathHelper.floor(method18496.maxX), MathHelper.floor(method18496.maxY), MathHelper.floor(method18496.maxZ))) {
+                        if (!(this.world.getBlockState(class354).method21696() instanceof Class3972)) {
                             continue;
                         }
                         b = (this.world.method6691(class354, true, this) || b);

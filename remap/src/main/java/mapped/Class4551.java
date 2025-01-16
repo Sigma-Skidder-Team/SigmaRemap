@@ -29,36 +29,36 @@ public class Class4551 extends Class4535<Class5122>
                 if (class1855.getY() <= class1853.getY()) {
                     if (method1081) {
                         if (!this.field20032) {
-                            this.method13529(class1851, new BlockPos(class1855), Class7521.field29147.method11878());
+                            this.method13529(class1851, new BlockPos(class1855), Class7521.field29147.getDefaultState());
                         }
                         else {
-                            this.method13529(class1851, new BlockPos(class1855), Class7521.field29401.method11878());
+                            this.method13529(class1851, new BlockPos(class1855), Class7521.field29401.getDefaultState());
                         }
                     }
                     else {
-                        this.method13529(class1851, class1855, Class7521.field29172.method11878());
+                        this.method13529(class1851, class1855, Class7521.field29172.getDefaultState());
                     }
                 }
                 else {
-                    this.method13529(class1851, class1855, Class7521.field29147.method11878());
+                    this.method13529(class1851, class1855, Class7521.field29147.getDefaultState());
                 }
             }
             else if (!method1081) {
                 if (class1855.getY() >= class1853.getY()) {
                     continue;
                 }
-                this.method13529(class1851, class1855, Class7521.field29403.method11878());
+                this.method13529(class1851, class1855, Class7521.field29403.getDefaultState());
             }
             else {
-                this.method13529(class1851, class1855, Class7521.field29172.method11878());
+                this.method13529(class1851, class1855, Class7521.field29172.getDefaultState());
             }
         }
         for (int i = 0; i < 4; ++i) {
-            this.method13529(class1851, class1853.method1138(i), Class7521.field29172.method11878());
+            this.method13529(class1851, class1853.method1138(i), Class7521.field29172.getDefaultState());
         }
         final BlockPos method1082 = class1853.method1138(2);
         for (final Direction class1856 : Plane.HORIZONTAL) {
-            this.method13529(class1851, method1082.method1149(class1856), (BlockState)((Class7097<Object, Object>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, class1856));
+            this.method13529(class1851, method1082.method1149(class1856), (BlockState)((StateHolder<Object, Object>)Class7521.field29288.getDefaultState()).with((IProperty<Comparable>)Class4023.field18110, class1856));
         }
         return true;
     }

@@ -171,13 +171,13 @@ public final class Class9346
     
     public static BlockState method34647(final Class51 class51) {
         if (class51.method316("Name", 8)) {
-            final Class3833 class52 = Class90.field208.method505(new Class1932(class51.method323("Name")));
-            BlockState method11878 = class52.method11878();
+            final Block class52 = Registry.BLOCK.getOrDefault(new ResourceLocation(class51.method323("Name")));
+            BlockState method11878 = class52.getDefaultState();
             if (class51.method316("Properties", 10)) {
                 final Class51 method11879 = class51.method327("Properties");
-                final Class9104<Class3833, BlockState> method11880 = class52.method11876();
+                final StateContainer<Block, BlockState> method11880 = class52.getStateContainer();
                 for (final String s : method11879.method293()) {
-                    final Class7111 method11881 = method11880.method32906(s);
+                    final IProperty method11881 = method11880.getProperty(s);
                     if (method11881 == null) {
                         continue;
                     }
@@ -186,35 +186,35 @@ public final class Class9346
             }
             return method11878;
         }
-        return Class7521.field29147.method11878();
+        return Class7521.field29147.getDefaultState();
     }
     
-    private static <S extends Class7098<S>, T extends Comparable<T>> S method34648(final S n, final Class7111<T> class7111, final String s, final Class51 class7112, final Class51 class7113) {
-        final Optional<T> method21830 = class7111.method21830(class7112.method323(s));
+    private static <S extends IStateHolder<S>, T extends Comparable<T>> S method34648(final S n, final IProperty<T> class7111, final String s, final Class51 class7112, final Class51 class7113) {
+        final Optional<T> method21830 = class7111.parseValue(class7112.method323(s));
         if (!method21830.isPresent()) {
             Class9346.field40120.warn("Unable to read property: {} with value: {} for blockstate: {}", (Object)s, (Object)class7112.method323(s), (Object)class7113.toString());
             return n;
         }
-        return (S)((Class7098<Object>)n).method21773(class7111, (Comparable)method21830.get());
+        return (S)((IStateHolder<Object>)n).with(class7111, (Comparable)method21830.get());
     }
     
     public static Class51 method34649(final BlockState class7096) {
         final Class51 class7097 = new Class51();
-        class7097.method306("Name", Class90.field208.method503(class7096.method21696()).toString());
-        final ImmutableMap<Class7111<?>, Comparable<?>> method21776 = class7096.method21776();
+        class7097.method306("Name", Registry.BLOCK.getKey(class7096.getBlock()).toString());
+        final ImmutableMap<IProperty<?>, Comparable<?>> method21776 = class7096.getValues();
         if (!method21776.isEmpty()) {
             final Class51 class7098 = new Class51();
-            for (final Map.Entry<Class7111, V> entry : method21776.entrySet()) {
-                final Class7111 class7099 = entry.getKey();
-                class7098.method306(class7099.method21826(), method34650((Class7111<Comparable>)class7099, (Comparable<?>)entry.getValue()));
+            for (final Map.Entry<IProperty, V> entry : method21776.entrySet()) {
+                final IProperty class7099 = entry.getKey();
+                class7098.method306(class7099.getName(), method34650((IProperty<Comparable>)class7099, (Comparable<?>)entry.getValue()));
             }
             class7097.method295("Properties", class7098);
         }
         return class7097;
     }
     
-    private static <T extends Comparable<T>> String method34650(final Class7111<T> class7111, final Comparable<?> comparable) {
-        return class7111.method21831((T)comparable);
+    private static <T extends Comparable<T>> String method34650(final IProperty<T> class7111, final Comparable<?> comparable) {
+        return class7111.getName((T)comparable);
     }
     
     public static Class51 method34651(final DataFixer dataFixer, final Class1959 class1959, final Class51 class1960, final int n) {

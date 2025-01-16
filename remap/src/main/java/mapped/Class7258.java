@@ -29,7 +29,7 @@ public abstract class Class7258 extends Class7257
     
     @Override
     public void method22150(final World class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
-        if (!class1849.method21780() && !class1849.method21772((Class7111<Boolean>)Class7258.field28132)) {
+        if (!class1849.method21780() && !class1849.get((IProperty<Boolean>)Class7258.field28132)) {
             if (random.nextInt(64) == 0) {
                 class1847.method6708(class1848.getX() + 0.5, class1848.getY() + 0.5, class1848.getZ() + 0.5, Class8520.field35710, Class286.field1582, random.nextFloat() * 0.25f + 0.75f, random.nextFloat() + 0.5f, false);
             }
@@ -52,7 +52,7 @@ public abstract class Class7258 extends Class7257
     
     @Override
     public void method22180(final Class1851 class1851, final BlockPos class1852, final BlockState class1853) {
-        Class3833.method11837(class1853, class1851.method6744(), class1852, class1853.method21696().method11802() ? class1851.method6727(class1852) : null);
+        Block.method11837(class1853, class1851.method6744(), class1852, class1853.getBlock().method11802() ? class1851.method6727(class1852) : null);
     }
     
     @Override
@@ -62,7 +62,7 @@ public abstract class Class7258 extends Class7257
     
     @Override
     public BlockState method22162(final Class7099 class7099) {
-        return ((Class7097<O, BlockState>)Class7521.field29173.method11878()).method21773((Class7111<Comparable>)Class3859.field17480, Class7257.method22193(class7099));
+        return ((StateHolder<O, BlockState>)Class7521.field29173.getDefaultState()).with((IProperty<Comparable>)Class3859.field17480, Class7257.method22193(class7099));
     }
     
     @Override

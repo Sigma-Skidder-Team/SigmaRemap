@@ -14,8 +14,8 @@ public interface Class7754<T>
     
     T method24752(final Dynamic<?> p0);
     
-    default <T, V, U extends Class7754<V>> V method24753(final Dynamic<T> dynamic, final Class90<U> class90, final String s, final V v) {
-        final Class7754<V> class91 = class90.method505(new Class1932(dynamic.get(s).asString("")));
+    default <T, V, U extends Class7754<V>> V method24753(final Dynamic<T> dynamic, final Registry<U> class90, final String s, final V v) {
+        final Class7754<V> class91 = class90.getOrDefault(new ResourceLocation(dynamic.get(s).asString("")));
         V method24752;
         if (class91 == null) {
             Class7754.field31687.error("Unknown type {}, replacing with {}", (Object)dynamic.get(s).asString(""), (Object)v);

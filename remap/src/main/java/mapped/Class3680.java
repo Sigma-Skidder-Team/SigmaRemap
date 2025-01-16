@@ -10,14 +10,14 @@ import net.minecraft.world.World;
 public abstract class Class3680 implements Class3662<Class446>
 {
     public final Class8976<?> field16974;
-    public final Class1932 field16975;
+    public final ResourceLocation field16975;
     public final String field16976;
     public final Class120 field16977;
     public final ItemStack field16978;
     public final float field16979;
     public final int field16980;
     
-    public Class3680(final Class8976<?> field16974, final Class1932 field16975, final String field16976, final Class120 field16977, final ItemStack field16978, final float field16979, final int field16980) {
+    public Class3680(final Class8976<?> field16974, final ResourceLocation field16975, final String field16976, final Class120 field16977, final ItemStack field16978, final float field16979, final int field16980) {
         this.field16974 = field16974;
         this.field16975 = field16975;
         this.field16976 = field16976;
@@ -68,7 +68,7 @@ public abstract class Class3680 implements Class3662<Class446>
     }
     
     @Override
-    public Class1932 method11298() {
+    public ResourceLocation method11298() {
         return this.field16975;
     }
     

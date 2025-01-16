@@ -10,12 +10,12 @@ public class Class4334 implements IPacket<Class5813>
 {
     private static String[] field19409;
     private Class313 field19410;
-    private Class1932 field19411;
+    private ResourceLocation field19411;
     
     public Class4334() {
     }
     
-    public Class4334(final Class313 field19410, final Class1932 field19411) {
+    public Class4334(final Class313 field19410, final ResourceLocation field19411) {
         this.field19410 = field19410;
         this.field19411 = field19411;
     }
@@ -52,7 +52,7 @@ public class Class4334 implements IPacket<Class5813>
         return this.field19410;
     }
     
-    public Class1932 method13016() {
+    public ResourceLocation method13016() {
         return this.field19411;
     }
 }

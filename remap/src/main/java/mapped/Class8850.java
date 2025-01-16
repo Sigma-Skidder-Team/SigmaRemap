@@ -72,16 +72,16 @@ public class Class8850
         for (int i = 0; i < method24308.length; ++i) {
             final String s = method24308[i];
             try {
-                final Class1932 class1932 = new Class1932(s, "optifine/dynamic_lights.properties");
-                method30987(Class8571.method28897(class1932), class1932.toString(), s);
+                final ResourceLocation class1932 = new ResourceLocation(s, "optifine/dynamic_lights.properties");
+                method30987(Config.method28897(class1932), class1932.toString(), s);
             }
             catch (final IOException ex) {}
         }
         if (Class8850.field37208.size() > 0) {
-            Class8571.method28847("DynamicLights entities: " + Class8850.field37208.size());
+            Config.method28847("DynamicLights entities: " + Class8850.field37208.size());
         }
         if (Class8850.field37209.size() > 0) {
-            Class8571.method28847("DynamicLights items: " + Class8850.field37209.size());
+            Config.method28847("DynamicLights items: " + Class8850.field37209.size());
         }
     }
     
@@ -91,28 +91,28 @@ public class Class8850
                 final Class27 class27 = new Class27();
                 class27.load(inStream);
                 inStream.close();
-                Class8571.method28847("DynamicLights: Parsing " + s);
+                Config.method28847("DynamicLights: Parsing " + s);
                 final Class8652 class28 = new Class8652("DynamicLights");
                 method30988(class27.getProperty("entities"), Class8850.field37208, new Class8045(), class28, s, s2);
                 method30988(class27.getProperty("items"), Class8850.field37209, new Class8047(), class28, s, s2);
             }
             catch (final IOException ex) {
-                Class8571.method28848("DynamicLights: Error reading " + s);
+                Config.warn("DynamicLights: Error reading " + s);
             }
         }
     }
     
     private static <T> void method30988(final String s, final Map<T, Integer> map, final Class8046<T> class8046, final Class8652 class8047, final String str, final String str2) {
         if (s != null) {
-            final String[] method28937 = Class8571.method28937(s, " ");
+            final String[] method28937 = Config.method28937(s, " ");
             for (int i = 0; i < method28937.length; ++i) {
                 final String s2 = method28937[i];
-                final String[] method28938 = Class8571.method28937(s2, ":");
+                final String[] method28938 = Config.method28937(s2, ":");
                 if (method28938.length == 2) {
                     final String str3 = method28938[0];
                     final String s3 = method28938[1];
                     final String string = str2 + ":" + str3;
-                    final T method28939 = class8046.method26391(new Class1932(string));
+                    final T method28939 = class8046.method26391(new ResourceLocation(string));
                     if (method28939 != null) {
                         final int method28940 = class8047.method29456(s3, -1);
                         if (method28940 >= 0 && method28940 <= 15) {
@@ -162,7 +162,7 @@ public class Class8850
     
     public static int method30991(final Entity class399, int method30992) {
         double a = method30993(class399.method1894());
-        if (class399 == Class8571.method28894().field4684) {
+        if (class399 == Config.method28894().field4684) {
             a = Math.max(a, method30995(class399));
         }
         method30992 = method30992(a, method30992);
@@ -204,7 +204,7 @@ public class Class8850
                 }
             }
         }
-        return Class8571.method28867(n, 0.0, 15.0);
+        return Config.method28867(n, 0.0, 15.0);
     }
     
     public static int method30994(final ItemStack class8321) {
@@ -213,13 +213,13 @@ public class Class8850
         }
         final Item method27622 = class8321.getItem();
         if (method27622 instanceof Class4036) {
-            final Class3833 method27623 = ((Class4036)method27622).method12240();
+            final Block method27623 = ((Class4036)method27622).method12240();
             if (method27623 != null) {
-                return method27623.method11781(method27623.method11878());
+                return method27623.getLightValue(method27623.getDefaultState());
             }
         }
         if (method27622 == Items.field31351) {
-            return Class7521.field29174.method11781(Class7521.field29174.method11878());
+            return Class7521.field29174.getLightValue(Class7521.field29174.getDefaultState());
         }
         if (method27622 == Items.field31437 || method27622 == Items.field31445) {
             return 10;
@@ -242,11 +242,11 @@ public class Class8850
             }
             return 0;
         }
-        return Class7521.field29417.method11781(Class7521.field29417.method11878()) / 2;
+        return Class7521.field29417.getLightValue(Class7521.field29417.getDefaultState()) / 2;
     }
     
     public static int method30995(final Entity class399) {
-        if (class399 == Class8571.method28894().method5303() && !Class8571.method29004()) {
+        if (class399 == Config.method28894().method5303() && !Config.method29004()) {
             return 0;
         }
         if (class399 instanceof Class512 && ((Class512)class399).isSpectator()) {

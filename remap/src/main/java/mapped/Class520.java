@@ -8,8 +8,8 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class520 extends Class516<Class3428> implements Class519
 {
-    private static final Class1932 field3111;
-    private static final Class1932 field3112;
+    private static final ResourceLocation field3111;
+    private static final ResourceLocation field3112;
     private final Class581 field3113;
     private boolean field3114;
     
@@ -128,7 +128,7 @@ public class Class520 extends Class516<Class3428> implements Class519
     }
     
     static {
-        field3111 = new Class1932("textures/gui/container/crafting_table.png");
-        field3112 = new Class1932("textures/gui/recipe_button.png");
+        field3111 = new ResourceLocation("textures/gui/container/crafting_table.png");
+        field3112 = new ResourceLocation("textures/gui/recipe_button.png");
     }
 }

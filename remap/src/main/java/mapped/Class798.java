@@ -58,7 +58,7 @@ public class Class798 extends Class789 implements Class797
     
     @Override
     public float method4228(final BlockPos class354, final Class1852 class355) {
-        return class355.method6701(class354).method21706() ? 10.0f : 0.0f;
+        return class355.getBlockState(class354).method21706() ? 10.0f : 0.0f;
     }
     
     @Override
@@ -402,7 +402,7 @@ public class Class798 extends Class789 implements Class797
     private boolean method4528() {
         if (this.method4523()) {
             final TileEntity method6727 = this.world.method6727(this.field4271);
-            return method6727 != null && method6727.method2206() == Class5412.field22573;
+            return method6727 != null && method6727.getType() == Class5412.field22573;
         }
         return false;
     }
@@ -477,7 +477,7 @@ public class Class798 extends Class789 implements Class797
     }
     
     private boolean method4538(final BlockPos class354) {
-        return this.world.method6731(class354) && this.world.method6701(class354).method21696().method11785(Class7188.field27913);
+        return this.world.method6731(class354) && this.world.getBlockState(class354).method21696().method11785(Class7188.field27913);
     }
     
     @Override

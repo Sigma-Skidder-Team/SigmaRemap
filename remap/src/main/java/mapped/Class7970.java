@@ -37,7 +37,7 @@ public class Class7970
     private static final int field32765 = 2;
     public static final Class7096 field32766;
     private static Class1912 field32767;
-    private static Class1932 field32768;
+    private static ResourceLocation field32768;
     private static final Class2192[] field32769;
     private static final Class2192[] field32770;
     private static final Class2192[] field32771;
@@ -70,7 +70,7 @@ public class Class7970
     }
     
     private static boolean method25832(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857, final Class8754 class1858, final Class9145 class1859) {
-        final Class3833 method21696 = class1856.method21696();
+        final Block method21696 = class1856.method21696();
         if (method21696 instanceof Class3853) {
             final Direction method21697 = class1858.method30294();
             if (method21697 != Direction.UP && method21697 != Direction.DOWN) {
@@ -79,29 +79,29 @@ public class Class7970
             if (!class1858.method30309()) {
                 return false;
             }
-            final Class7096 method21698 = class1855.method6701(class1857.method1149(class1858.method30294()));
+            final Class7096 method21698 = class1855.getBlockState(class1857.method1149(class1858.method30294()));
             if (method21698.method21696() != method21696) {
                 return false;
             }
-            final Class3833 method21699 = method21698.method21696();
+            final Block method21699 = method21698.method21696();
             if (method21696 instanceof Class3852 && method21699 instanceof Class3852 && ((Class3852)method21696).method11900() != ((Class3852)method21699).method11900()) {
                 return false;
             }
             final double n = class1858.method30306();
             if (n < 0.4) {
-                if (method21698.method21772((Class7111<Boolean>)Class3854.field17468)) {
+                if (method21698.method21772((IProperty<Boolean>)Class3854.field17468)) {
                     return true;
                 }
             }
             else if (n > 0.6) {
-                if (method21698.method21772((Class7111<Boolean>)Class3854.field17466)) {
+                if (method21698.method21772((IProperty<Boolean>)Class3854.field17466)) {
                     return true;
                 }
             }
             else {
                 final double method21700 = class1858.method30308();
                 if (method21700 < 0.4) {
-                    if (method21698.method21772((Class7111<Boolean>)Class3854.field17465)) {
+                    if (method21698.method21772((IProperty<Boolean>)Class3854.field17465)) {
                         return true;
                     }
                 }
@@ -109,7 +109,7 @@ public class Class7970
                     if (method21700 <= 0.6) {
                         return true;
                     }
-                    if (method21698.method21772((Class7111<Boolean>)Class3854.field17467)) {
+                    if (method21698.method21772((IProperty<Boolean>)Class3854.field17467)) {
                         return true;
                     }
                 }
@@ -473,7 +473,7 @@ public class Class7970
         final int n2 = n / class6779.field26629 * class6779.field26629;
         if (class6779.field26630) {
             BlockPos class6783 = class6782.method1139();
-            for (Class7096 class6784 = class6780.method6701(class6783); class6784.method21696() == class6781.method21696(); class6784 = class6780.method6701(class6783)) {
+            for (Class7096 class6784 = class6780.getBlockState(class6783); class6784.method21696() == class6781.method21696(); class6784 = class6780.getBlockState(class6783)) {
                 class6782 = class6783;
                 class6783 = class6783.method1139();
                 if (class6783.getY() < 0) {
@@ -481,9 +481,9 @@ public class Class7970
                 }
             }
         }
-        int method28967 = Class8571.method28968(class6782, n2) & Integer.MAX_VALUE;
+        int method28967 = Config.method28968(class6782, n2) & Integer.MAX_VALUE;
         for (int i = 0; i < class6779.field26628; ++i) {
-            method28967 = Class8571.method28967(method28967);
+            method28967 = Config.method28967(method28967);
         }
         int n3 = 0;
         if (class6779.field26627 == null) {
@@ -979,7 +979,7 @@ public class Class7970
         if (n4 == 0) {
             return n4;
         }
-        if (!Class8571.method28952()) {
+        if (!Config.method28952()) {
             return n4;
         }
         switch (n2) {
@@ -1185,31 +1185,31 @@ public class Class7970
     }
     
     private static boolean method25860(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final Class1912 class6783, final int n2) {
-        final Class7096 method6701 = class6780.method6701(class6782);
+        final Class7096 method6701 = class6780.getBlockState(class6782);
         if (!method25861(method6701, class6780, class6782)) {
             return false;
         }
         if (class6779.field26636 != null && !Class7980.method26015(method6701.method21691(), method6701.method21692(), class6779.field26636)) {
             return false;
         }
-        if (class6779.field26638 != null && !Class8571.method28979(method25865(class6780, class6781, class6782, method6701, n), class6779.field26638)) {
+        if (class6779.field26638 != null && !Config.method28979(method25865(class6780, class6781, class6782, method6701, n), class6779.field26638)) {
             return false;
         }
         final BlockPos method6702 = class6782.method1149(method25841(n));
-        final Class7096 method6703 = class6780.method6701(method6702);
+        final Class7096 method6703 = class6780.getBlockState(method6702);
         return !method6703.method21722(class6780, method6702) && (n != 1 || method6703.method21696() != Class7521.field29329) && !method25864(class6779, class6780, class6781, class6782, method6701, n, class6783, n2);
     }
     
     private static boolean method25861(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
-        if (Class6770.method20655(class7096, class7097, class7098)) {
+        if (BlockUtils.method20655(class7096, class7097, class7098)) {
             return true;
         }
-        final Class3833 method21696 = class7096.method21696();
+        final Block method21696 = class7096.method21696();
         return method21696 instanceof Class3851 || method21696 instanceof Class3844;
     }
     
     private static boolean method25862(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final Class1912 class6783, final int n2) {
-        final Class7096 method6701 = class6780.method6701(class6782);
+        final Class7096 method6701 = class6780.getBlockState(class6782);
         if (method6701 == Class7970.field32766) {
             return false;
         }
@@ -1220,12 +1220,12 @@ public class Class7970
             return false;
         }
         final BlockPos method6702 = class6782.method1149(method25841(n));
-        final Class7096 method6703 = class6780.method6701(method6702);
+        final Class7096 method6703 = class6780.getBlockState(method6702);
         return !method6703.method21722(class6780, method6702) && (n != 1 || method6703.method21696() != Class7521.field29329);
     }
     
     private static boolean method25863(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final Class1912 class6783, final int n2) {
-        return method25864(class6779, class6780, class6781, class6782, class6780.method6701(class6782), n, class6783, n2);
+        return method25864(class6779, class6780, class6781, class6782, class6780.getBlockState(class6782), n, class6783, n2);
     }
     
     private static boolean method25864(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final Class7096 class6783, final int n, final Class1912 class6784, final int n2) {
@@ -1254,7 +1254,7 @@ public class Class7970
         if (list == null) {
             return null;
         }
-        if (Class8571.method28910()) {
+        if (Config.method28910()) {
             list = Class6110.method18260(class1855, class1858, class1857, method35429, list);
         }
         if (list.size() > 0) {
@@ -1536,12 +1536,12 @@ public class Class7970
         Class7970.field32754 = null;
         Class7970.field32750 = null;
         Class7970.field32752 = null;
-        if (Class8571.method28949()) {
-            final Class1727[] method28903 = Class8571.method28903();
+        if (Config.method28949()) {
+            final Class1727[] method28903 = Config.method28903();
             for (int i = method28903.length - 1; i >= 0; --i) {
                 method25872(class1774, method28903[i]);
             }
-            method25872(class1774, Class8571.method28905());
+            method25872(class1774, Config.method28905());
             Class7970.field32767 = class1774.method6359(Class7970.field32768);
             Class7970.field32750 = new Map[class1774.method6349() + 1];
             Class7970.field32751 = new Map[class1774.method6349() + 1];
@@ -1562,11 +1562,11 @@ public class Class7970
         final List method32779 = method25876(Class7970.field32753);
         for (int i = 0; i < method32777.length; ++i) {
             final String str = method32777[i];
-            Class8571.method28847("ConnectedTextures: " + str);
+            Config.method28847("ConnectedTextures: " + str);
             try {
-                final InputStream method32780 = class1775.method6097(Class346.field2137, new Class1932(str));
+                final InputStream method32780 = class1775.method6097(Class346.field2137, new ResourceLocation(str));
                 if (method32780 == null) {
-                    Class8571.method28848("ConnectedTextures file not found: " + str);
+                    Config.warn("ConnectedTextures file not found: " + str);
                 }
                 else {
                     final Class27 class1776 = new Class27();
@@ -1580,7 +1580,7 @@ public class Class7970
                 }
             }
             catch (final FileNotFoundException ex) {
-                Class8571.method28848("ConnectedTextures file not found: " + str);
+                Config.warn("ConnectedTextures file not found: " + str);
             }
             catch (final Exception ex2) {
                 ex2.printStackTrace();
@@ -1589,7 +1589,7 @@ public class Class7970
         Class7970.field32753 = method25878(method32779);
         Class7970.field32754 = method25878(method32778);
         Class7970.field32755 = method25877();
-        Class8571.method28847("Multipass connected textures: " + Class7970.field32755);
+        Config.method28847("Multipass connected textures: " + Class7970.field32755);
     }
     
     public static void method25873(final Class1774 class1774) {
@@ -1598,10 +1598,10 @@ public class Class7970
         Class7970.field32767 = method25874(class1774, Class7970.field32768);
     }
     
-    private static Class1912 method25874(final Class1774 class1774, final Class1932 obj) {
+    private static Class1912 method25874(final Class1774 class1774, final ResourceLocation obj) {
         final Class1912 method6338 = class1774.method6338(obj);
         if (method6338 == null || method6338 instanceof Class1913) {
-            Class8571.method28848("Missing CTM sprite: " + obj);
+            Config.warn("Missing CTM sprite: " + obj);
         }
         return method6338;
     }
@@ -1683,12 +1683,12 @@ public class Class7970
             for (int i = 0; i < class6779.field26634.length; ++i) {
                 final Class1912 obj = class6779.field26634[i];
                 if (!(obj instanceof Class1912)) {
-                    Class8571.method28848("TextureAtlasSprite is not TextureAtlasSprite: " + obj + ", name: " + obj.method7503());
+                    Config.warn("TextureAtlasSprite is not TextureAtlasSprite: " + obj + ", name: " + obj.method7503());
                 }
                 else {
                     final int method7513 = obj.method7513();
                     if (method7513 < 0) {
-                        Class8571.method28848("Invalid tile ID: " + method7513 + ", icon: " + obj.method7503());
+                        Config.warn("Invalid tile ID: " + method7513 + ", icon: " + obj.method7503());
                     }
                     else {
                         method25881(class6779, list, method7513);
@@ -1703,7 +1703,7 @@ public class Class7970
             for (int i = 0; i < class6779.field26613.length; ++i) {
                 final int method30709 = class6779.field26613[i].method30709();
                 if (method30709 < 0) {
-                    Class8571.method28848("Invalid block ID: " + method30709);
+                    Config.warn("Invalid block ID: " + method30709);
                 }
                 else {
                     method25881(class6779, list, method30709);
@@ -1743,12 +1743,12 @@ public class Class7970
     
     private static void method25883(final List list, final String s, final String s2) {
         final String s3 = "optifine/ctm/default/";
-        final Class1727 method28907 = Class8571.method28907(new Class1932(s));
+        final Class1727 method28907 = Config.method28907(new ResourceLocation(s));
         if (method28907 != null) {
             if (method28907.method6102().equals("Programmer Art")) {
                 list.add(s3 + "programmer_art/" + s2);
             }
-            else if (method28907 == Class8571.method28905()) {
+            else if (method28907 == Config.method28905()) {
                 list.add(s3 + s2);
             }
         }
@@ -1761,9 +1761,9 @@ public class Class7970
         Class7970.field32753 = null;
         Class7970.field32754 = null;
         Class7970.field32755 = false;
-        field32766 = Class7521.field29147.method11878();
+        field32766 = Class7521.field29147.getDefaultState();
         Class7970.field32767 = null;
-        Class7970.field32768 = new Class1932("optifine/ctm/default/empty");
+        Class7970.field32768 = new ResourceLocation("optifine/ctm/default/empty");
         field32769 = new Class2192[] { Class2192.field13334, Class2192.field13335, Class2192.field13332, Class2192.field13333 };
         field32770 = new Class2192[] { Class2192.field13334, Class2192.field13335, Class2192.field13333, Class2192.field13332 };
         field32771 = new Class2192[] { Class2192.field13335, Class2192.field13334, Class2192.field13330, Class2192.field13331 };
@@ -1780,7 +1780,7 @@ public class Class7970
         field32782 = new Class2192[] { Class2192.field13340, Class2192.field13341, Class2192.field13342, Class2192.field13343 };
         field32783 = new Class2192[] { Class2192.field13347, Class2192.field13346, Class2192.field13345, Class2192.field13344 };
         field32784 = new Class2192[] { Class2192.field13343, Class2192.field13342, Class2192.field13341, Class2192.field13340 };
-        field32785 = new Class1912(new Class1932("default"));
+        field32785 = new Class1912(new ResourceLocation("default"));
         field32786 = new Random(0L);
     }
 }

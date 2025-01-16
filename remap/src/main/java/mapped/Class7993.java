@@ -6,7 +6,6 @@ package mapped;
 
 import com.google.gson.JsonParser;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.ByteArrayInputStream;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonArray;
@@ -52,13 +51,13 @@ public class Class7993
                                         continue;
                                     }
                                     method22664.method24883(method22665);
-                                    method22664.method24886(new Class1932("optifine.net", s2));
+                                    method22664.method24886(new ResourceLocation("optifine.net", s2));
                                 }
                                 class6554.method19863(method22664);
                             }
                         }
                         else {
-                            Class8571.method28848("Item type is null, player: " + this.field32926);
+                            Config.warn("Item type is null, player: " + this.field32926);
                         }
                     }
                 }
@@ -74,7 +73,7 @@ public class Class7993
             return Class1846.method6637(new ByteArrayInputStream(Class6579.method19925(string, Class869.method5277().method5289())));
         }
         catch (final IOException ex) {
-            Class8571.method28848("Error loading item texture " + s + ": " + ex.getClass().getName() + ": " + ex.getMessage());
+            Config.warn("Error loading item texture " + s + ": " + ex.getClass().getName() + ": " + ex.getMessage());
             return null;
         }
     }
@@ -85,7 +84,7 @@ public class Class7993
             return Class6514.method19604((JsonObject)new JsonParser().parse(new String(Class6579.method19925(string, Class869.method5277().method5289()), "ASCII")));
         }
         catch (final Exception ex) {
-            Class8571.method28848("Error loading item model " + s + ": " + ex.getClass().getName() + ": " + ex.getMessage());
+            Config.warn("Error loading item model " + s + ": " + ex.getClass().getName() + ": " + ex.getMessage());
             return null;
         }
     }

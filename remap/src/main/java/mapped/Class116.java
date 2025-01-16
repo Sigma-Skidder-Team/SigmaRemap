@@ -11,10 +11,10 @@ public class Class116 implements Predicate<Class7990>
 {
     private static String[] field360;
     private final Class7096 field361;
-    private final Set<Class7111<?>> field362;
+    private final Set<IProperty<?>> field362;
     private final Class51 field363;
     
-    public Class116(final Class7096 field361, final Set<Class7111<?>> field362, final Class51 field363) {
+    public Class116(final Class7096 field361, final Set<IProperty<?>> field362, final Class51 field363) {
         this.field361 = field361;
         this.field362 = field362;
         this.field363 = field363;
@@ -26,8 +26,8 @@ public class Class116 implements Predicate<Class7990>
         if (method26065.method21696() != this.field361.method21696()) {
             return false;
         }
-        for (final Class7111 class7991 : this.field362) {
-            if (((Class7097<Object, Object>)method26065).method21772((Class7111<Comparable>)class7991) == this.field361.method21772((Class7111<Comparable>)class7991)) {
+        for (final IProperty class7991 : this.field362) {
+            if (((StateHolder<Object, Object>)method26065).get((IProperty<Comparable>)class7991) == this.field361.method21772((IProperty<Comparable>)class7991)) {
                 continue;
             }
             return false;

@@ -116,8 +116,8 @@ public class Class3528 extends Class3446
     
     private boolean method11079(final BlockPos class354) {
         if (Class4651.method13914(this.field16547, class354.getX(), class354.getY(), class354.getZ()) == Class257.field1207) {
-            final BlockState method6701 = this.field16547.method6701(class354.method1139());
-            return (this.field16554 || !(method6701.method21696() instanceof Class3972)) && this.field16547.method6978(this.field16545, this.field16545.getBoundingBox().method18500(class354.method1136(new BlockPos(this.field16545))));
+            final BlockState method6701 = this.field16547.getBlockState(class354.method1139());
+            return (this.field16554 || !(method6701.getBlock() instanceof Class3972)) && this.field16547.method6978(this.field16545, this.field16545.getBoundingBox().method18500(class354.method1136(new BlockPos(this.field16545))));
         }
         return false;
     }

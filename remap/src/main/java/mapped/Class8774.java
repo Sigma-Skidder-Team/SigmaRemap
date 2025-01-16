@@ -7,10 +7,10 @@ package mapped;
 public class Class8774 implements Class8775
 {
     private static String[] field36888;
-    private final Class3833 field36889;
+    private final Block field36889;
     private Class9357 field36890;
     
-    public Class8774(final Class3833 field36889) {
+    public Class8774(final Block field36889) {
         this.field36890 = Class9357.field40141;
         this.field36889 = field36889;
     }

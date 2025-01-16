@@ -23,13 +23,13 @@ import org.apache.logging.log4j.Logger;
 public class Class1663 implements Class1664, AutoCloseable, Class1662
 {
     private static final Logger field9427;
-    public static final Class1932 field9428;
-    private final Map<Class1932, Class1666> field9429;
+    public static final ResourceLocation field9428;
+    private final Map<ResourceLocation, Class1666> field9429;
     private final Set<Class1664> field9430;
     private final Map<String, Integer> field9431;
     private final Class6582 field9432;
     private Class1666 field9433;
-    private Class1932 field9434;
+    private ResourceLocation field9434;
     
     public Class1663(final Class6582 field9432) {
         this.field9429 = Maps.newHashMap();
@@ -38,7 +38,7 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
         this.field9432 = field9432;
     }
     
-    public void method5849(final Class1932 class1932) {
+    public void method5849(final ResourceLocation class1932) {
         if (Class8726.method29984()) {
             this.method5850(class1932);
         }
@@ -47,8 +47,8 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
         }
     }
     
-    private void method5850(Class1932 method25542) {
-        if (Class8571.method29006()) {
+    private void method5850(ResourceLocation method25542) {
+        if (Config.method29006()) {
             method25542 = Class7890.method25542(method25542);
         }
         Class1666 method25543 = this.field9429.get(method25542);
@@ -59,7 +59,7 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
             method25543 = new Class1767(method25542);
             this.method5851(method25542, method25543);
         }
-        if (!Class8571.method28955()) {
+        if (!Config.method28955()) {
             method25543.method5872();
         }
         else {
@@ -69,7 +69,7 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
         this.field9434 = method25542;
     }
     
-    public void method5851(final Class1932 class1932, Class1666 method5852) {
+    public void method5851(final ResourceLocation class1932, Class1666 method5852) {
         method5852 = this.method5852(class1932, method5852);
         final Class1666 class1933 = this.field9429.put(class1932, method5852);
         if (class1933 != method5852) {
@@ -85,7 +85,7 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
         }
     }
     
-    private Class1666 method5852(final Class1932 class1932, final Class1666 class1933) {
+    private Class1666 method5852(final ResourceLocation class1932, final Class1666 class1933) {
         try {
             class1933.method5871(this.field9432);
             return class1933;
@@ -106,11 +106,11 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
     }
     
     @Nullable
-    public Class1666 method5853(final Class1932 class1932) {
+    public Class1666 method5853(final ResourceLocation class1932) {
         return this.field9429.get(class1932);
     }
     
-    public Class1932 method5854(final String s, final Class1773 class1773) {
+    public ResourceLocation method5854(final String s, final Class1773 class1773) {
         final Integer n = this.field9431.get(s);
         Integer n2;
         if (n != null) {
@@ -120,12 +120,12 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
             n2 = 1;
         }
         this.field9431.put(s, n2);
-        final Class1932 class1774 = new Class1932(String.format("dynamic/%s_%d", s, n2));
+        final ResourceLocation class1774 = new ResourceLocation(String.format("dynamic/%s_%d", s, n2));
         this.method5851(class1774, class1773);
         return class1774;
     }
     
-    public CompletableFuture<Void> method5855(final Class1932 class1932, final Executor executor) {
+    public CompletableFuture<Void> method5855(final ResourceLocation class1932, final Executor executor) {
         if (this.field9429.containsKey(class1932)) {
             return CompletableFuture.completedFuture((Void)null);
         }
@@ -146,7 +146,7 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
         }
     }
     
-    public void method5858(final Class1932 class1932) {
+    public void method5858(final ResourceLocation class1932) {
         final Class1666 method5853 = this.method5853(class1932);
         if (method5853 != null) {
             this.field9429.remove(class1932);
@@ -164,11 +164,11 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
     
     @Override
     public CompletableFuture<Void> method5785(final Class7885 class7885, final Class6582 class7886, final IProfiler class7887, final IProfiler class7888, final Executor executor, final Executor executor2) {
-        Class8571.method28847("*** Reloading textures ***");
-        Class8571.method28852("Resource packs: " + Class8571.method28904());
-        final Iterator<Class1932> iterator = this.field9429.keySet().iterator();
+        Config.method28847("*** Reloading textures ***");
+        Config.method28852("Resource packs: " + Config.method28904());
+        final Iterator<ResourceLocation> iterator = this.field9429.keySet().iterator();
         while (iterator.hasNext()) {
-            final Class1932 class7889 = iterator.next();
+            final ResourceLocation class7889 = iterator.next();
             if (!class7889.method7797().startsWith("optifine/") && !Class8880.method31248(class7889)) {
                 continue;
             }
@@ -185,8 +185,8 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
             new HashSet(this.field9429.entrySet()).iterator();
             final Iterator iterator2;
             while (iterator2.hasNext()) {
-                final Map.Entry<Class1932, V> entry = iterator2.next();
-                final Class1932 class7892 = entry.getKey();
+                final Map.Entry<ResourceLocation, V> entry = iterator2.next();
+                final ResourceLocation class7892 = entry.getKey();
                 final Class1666 class7893 = (Class1666)entry.getValue();
                 if (class7893 == Class1913.method7553() && !class7892.equals(Class1913.method7551())) {
                     iterator2.remove();
@@ -199,8 +199,8 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
     }
     
     public void method5859() {
-        for (final Map.Entry<Class1932, V> entry : new HashSet(this.field9429.entrySet())) {
-            final Class1932 class1932 = entry.getKey();
+        for (final Map.Entry<ResourceLocation, V> entry : new HashSet(this.field9429.entrySet())) {
+            final ResourceLocation class1932 = entry.getKey();
             final Class1666 class1933 = (Class1666)entry.getValue();
             if (!(class1933 instanceof Class1772)) {
                 continue;
@@ -213,12 +213,12 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
         return this.field9433;
     }
     
-    public Class1932 method5861() {
+    public ResourceLocation method5861() {
         return this.field9434;
     }
     
     static {
         field9427 = LogManager.getLogger();
-        field9428 = new Class1932("");
+        field9428 = new ResourceLocation("");
     }
 }

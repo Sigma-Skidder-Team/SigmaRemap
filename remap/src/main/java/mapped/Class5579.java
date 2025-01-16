@@ -61,7 +61,7 @@ public class Class5579 extends Class5509
             Class9570.method35837(method35732, Class9570.field41595, class5901);
             return (Class9559)method35732;
         }
-        Class8571.method28848("Field not found: TileEntityEnchantmentTableRenderer.modelBook");
+        Config.warn("Field not found: TileEntityEnchantmentTableRenderer.modelBook");
         return null;
     }
 }

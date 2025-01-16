@@ -209,7 +209,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     
     @Override
     public int method2691(final float n, final float n2) {
-        return MathHelper.method35649((n * 0.5f - 3.0f) * n2);
+        return MathHelper.ceil((n * 0.5f - 3.0f) * n2);
     }
     
     public int method4730() {
@@ -297,11 +297,11 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     
     @Override
     public void method1691(final BlockPos class354, final BlockState class355) {
-        if (!class355.method21697().method26438()) {
-            final BlockState method6701 = this.world.method6701(class354.method1137());
-            Class7696 class356 = class355.method21759();
-            if (method6701.method21696() == Class7521.field29329) {
-                class356 = method6701.method21759();
+        if (!class355.getMaterial().method26438()) {
+            final BlockState method6701 = this.world.getBlockState(class354.method1137());
+            SoundType class356 = class355.getSoundType();
+            if (method6701.getBlock() == Class7521.field29329) {
+                class356 = method6701.getSoundType();
             }
             if (this.isBeingRidden() && this.field4352) {
                 ++this.field4353;
@@ -312,7 +312,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
                     this.method1695(Class8520.field35284, class356.method24477() * 0.15f, class356.method24478());
                 }
             }
-            else if (class356 != Class7696.field30567) {
+            else if (class356 != SoundType.field30567) {
                 this.method1695(Class8520.field35283, class356.method24477() * 0.15f, class356.method24478());
             }
             else {
@@ -321,7 +321,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         }
     }
     
-    public void method4738(final Class7696 class7696) {
+    public void method4738(final SoundType class7696) {
         this.method1695(Class8520.field35278, class7696.method24477() * 0.15f, class7696.method24478());
     }
     
@@ -522,7 +522,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
                     if (!this.method4721()) {
                         if (!this.isBeingRidden()) {
                             if (this.rand.nextInt(300) == 0) {
-                                if (this.world.method6701(new BlockPos(this).method1139()).method21696() == Class7521.field29155) {
+                                if (this.world.getBlockState(new BlockPos(this).method1139()).method21696() == Class7521.field29155) {
                                     this.method4747(true);
                                 }
                             }

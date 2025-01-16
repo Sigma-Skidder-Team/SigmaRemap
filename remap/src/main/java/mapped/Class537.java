@@ -29,7 +29,7 @@ public class Class537 extends Class535
         }
         trim = trim.trim();
         if (trim.equals("/reloadShaders")) {
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class9216.method33788();
                 Class9216.method33708();
             }

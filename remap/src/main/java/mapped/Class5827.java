@@ -18,10 +18,10 @@ public abstract class Class5827
         if (method17518 == null) {
             return false;
         }
-        class1851.method6688(class1853, Class7521.field29147.method11878(), 4);
+        class1851.setBlockState(class1853, Class7521.field29147.getDefaultState(), 4);
         method17518.field35805.method16032();
         if (!method17518.method28613(class1851, (Class6346)class1852, random, class1853)) {
-            class1851.method6688(class1853, class1854, 4);
+            class1851.setBlockState(class1853, class1854, 4);
             return false;
         }
         return true;
@@ -30,7 +30,7 @@ public abstract class Class5827
     private boolean method17519(final Class1851 class1851, final BlockPos class1852) {
         final Iterator<BlockPos> iterator = BlockPos.getAllInBoxMutable(class1852.method1139().method1142(2).method1146(2), class1852.method1137().method1144(2).method1148(2)).iterator();
         while (iterator.hasNext()) {
-            if (!class1851.method6701(iterator.next()).method21755(Class7188.field27913)) {
+            if (!class1851.getBlockState(iterator.next()).method21755(Class7188.field27913)) {
                 continue;
             }
             return true;

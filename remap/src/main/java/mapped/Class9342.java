@@ -103,14 +103,14 @@ public class Class9342
             final Class7103 method35916 = Class7103.method21807(method35913.get("nbt"));
             Item class3820 = null;
             if (method35913.has("item")) {
-                class3820 = Class90.field211.method506(new Class1932(Class9583.method35895(method35913, "item"))).orElseThrow(() -> {
+                class3820 = Registry.field211.method506(new ResourceLocation(Class9583.method35895(method35913, "item"))).orElseThrow(() -> {
                     new JsonSyntaxException("Unknown item id '" + obj2 + "'");
                     return;
                 });
             }
             Class7909<Item> method35917 = null;
             if (method35913.has("tag")) {
-                final Class1932 obj = new Class1932(Class9583.method35895(method35913, "tag"));
+                final ResourceLocation obj = new ResourceLocation(Class9583.method35895(method35913, "tag"));
                 method35917 = Class7855.method25402().method18460(obj);
                 if (method35917 == null) {
                     throw new JsonSyntaxException("Unknown item tag '" + obj + "'");
@@ -118,7 +118,7 @@ public class Class9342
             }
             Class8061 class3821 = null;
             if (method35913.has("potion")) {
-                class3821 = Class90.field212.method506(new Class1932(Class9583.method35895(method35913, "potion"))).orElseThrow(() -> {
+                class3821 = Registry.field212.method506(new ResourceLocation(Class9583.method35895(method35913, "potion"))).orElseThrow(() -> {
                     new JsonSyntaxException("Unknown potion '" + obj3 + "'");
                     return;
                 });
@@ -132,7 +132,7 @@ public class Class9342
         if (this != Class9342.field40107) {
             final JsonObject jsonObject = new JsonObject();
             if (this.field40109 != null) {
-                jsonObject.addProperty("item", Class90.field211.method503(this.field40109).toString());
+                jsonObject.addProperty("item", Registry.field211.getKey(this.field40109).toString());
             }
             if (this.field40108 != null) {
                 jsonObject.addProperty("tag", this.field40108.method25621().toString());
@@ -157,7 +157,7 @@ public class Class9342
                 jsonObject.add("stored_enchantments", (JsonElement)jsonArray2);
             }
             if (this.field40114 != null) {
-                jsonObject.addProperty("potion", Class90.field212.method503(this.field40114).toString());
+                jsonObject.addProperty("potion", Registry.field212.getKey(this.field40114).toString());
             }
             return (JsonElement)jsonObject;
         }

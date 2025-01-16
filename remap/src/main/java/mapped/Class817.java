@@ -230,8 +230,8 @@ public class Class817 extends Class789
                 if (class1853.getY() < class1852.method6743()) {
                     return false;
                 }
-                final BlockState method6701 = class1852.method6701(class1853.method1139());
-                if (method6701.method21696() == Class7521.field29155 || method6701.method21755(Class7188.field27907)) {
+                final BlockState method6701 = class1852.getBlockState(class1853.method1139());
+                if (method6701.getBlock() == Class7521.field29155 || method6701.method21755(Class7188.field27907)) {
                     return true;
                 }
             }

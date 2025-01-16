@@ -4,12 +4,11 @@
 
 package mapped;
 
-import java.util.List;
 import com.google.common.collect.Lists;
 
 public final class Class1913 extends Class1912
 {
-    private static final Class1932 field10402;
+    private static final ResourceLocation field10402;
     private static Class1773 field10403;
     private static final Class8656<Class1846> field10404;
     private static final Class9336 field10405;
@@ -26,7 +25,7 @@ public final class Class1913 extends Class1912
         return new Class1913(class1774, n, n2, n3, n4, n5);
     }
     
-    public static Class1932 method7551() {
+    public static ResourceLocation method7551() {
         return Class1913.field10402;
     }
     
@@ -67,7 +66,7 @@ public final class Class1913 extends Class1912
     }
     
     static {
-        field10402 = new Class1932("missingno");
+        field10402 = new ResourceLocation("missingno");
         field10404 = new Class8656<Class1846>(() -> {
             final Class1846 class1846 = new Class1846(16, 16, false);
             int i = 0;

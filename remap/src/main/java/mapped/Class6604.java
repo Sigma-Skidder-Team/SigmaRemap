@@ -60,7 +60,7 @@ public class Class6604 extends Class6601
     
     @Nullable
     @Override
-    public Pair<Class1932, Class1932> method20059() {
+    public Pair<ResourceLocation, ResourceLocation> method20059() {
         return this.field26182.method20059();
     }
     

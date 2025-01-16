@@ -106,8 +106,8 @@ public abstract class Class860 extends Entity
             for (int i = 0; i < max; ++i) {
                 for (int j = 0; j < max2; ++j) {
                     class385.method1287(method1149).method1291(method1150, i + (max - 1) / -2).method1291(Direction.UP, j + (max2 - 1) / -2);
-                    final BlockState method1151 = this.world.method6701(class385);
-                    if (!method1151.method21697().method26439() && !Class3895.method11975(method1151)) {
+                    final BlockState method1151 = this.world.getBlockState(class385);
+                    if (!method1151.getMaterial().method26439() && !Class3895.method11975(method1151)) {
                         return false;
                     }
                 }

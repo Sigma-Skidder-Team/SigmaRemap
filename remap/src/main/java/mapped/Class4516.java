@@ -8,10 +8,10 @@ import java.util.Random;
 
 public class Class4516 extends Class4515
 {
-    private final Class1932 field19921;
+    private final ResourceLocation field19921;
     private final Class2052 field19922;
     
-    public Class4516(final Class1795 class1795, final Class1932 field19921, final BlockPos class1796, final Class2052 field19922, final int n) {
+    public Class4516(final Class1795 class1795, final ResourceLocation field19921, final BlockPos class1796, final Class2052 field19922, final int n) {
         super(Class9520.field40979, 0);
         this.field19921 = field19921;
         final BlockPos class1797 = Class5172.method16138().get(field19921);
@@ -22,7 +22,7 @@ public class Class4516 extends Class4515
     
     public Class4516(final Class1795 class1795, final Class51 class1796) {
         super(Class9520.field40979, class1796);
-        this.field19921 = new Class1932(class1796.method323("Template"));
+        this.field19921 = new ResourceLocation(class1796.method323("Template"));
         this.field19922 = Class2052.valueOf(class1796.method323("Rot"));
         this.method13512(class1795);
     }
@@ -41,7 +41,7 @@ public class Class4516 extends Class4515
     @Override
     public void method13511(final String anObject, final BlockPos class354, final Class1851 class355, final Random random, final MutableBoundingBox class356) {
         if ("chest".equals(anObject)) {
-            class355.method6688(class354, Class7521.field29147.method11878(), 3);
+            class355.setBlockState(class354, Class7521.field29147.getDefaultState(), 3);
             final TileEntity method6727 = class355.method6727(class354.method1139());
             if (method6727 instanceof Class475) {
                 ((Class475)method6727).method2327(Class9020.field38091, random.nextLong());
@@ -60,10 +60,10 @@ public class Class4516 extends Class4515
         final boolean method32856 = super.method13421(class1851, class1852, random, class1853, class1854);
         if (this.field19921.equals(Class5172.method16140())) {
             final BlockPos method32857 = this.field19920.add(Class6585.method19953(method32853, new BlockPos(3, 0, 5)));
-            final BlockState method32858 = class1851.method6701(method32857.method1139());
+            final BlockState method32858 = class1851.getBlockState(method32857.method1139());
             if (!method32858.method21706()) {
-                if (method32858.method21696() != Class7521.field29307) {
-                    class1851.method6688(method32857, Class7521.field29331.method11878(), 3);
+                if (method32858.getBlock() != Class7521.field29307) {
+                    class1851.setBlockState(method32857, Class7521.field29331.getDefaultState(), 3);
                 }
             }
         }

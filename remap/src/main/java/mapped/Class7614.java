@@ -82,7 +82,7 @@ public class Class7614
     
     private Class6977 method23922(final BlockState class7096) {
         for (final Class6977 class7097 : this.field30177) {
-            if (class7097.field27276 != class7096.method21696().getClass()) {
+            if (class7097.field27276 != class7096.getBlock().getClass()) {
                 continue;
             }
             return class7097;
@@ -150,7 +150,7 @@ public class Class7614
             return this.field30175.get(class354);
         }
         if (!this.field30176.containsKey(class354)) {
-            return Class869.method5277().field4683.method6701(class354);
+            return Class869.method5277().field4683.getBlockState(class354);
         }
         return this.field30176.get(class354);
     }

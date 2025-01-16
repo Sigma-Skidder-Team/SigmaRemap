@@ -9,8 +9,8 @@ import net.minecraft.util.math.Vec3d;
 
 public class Class4714 extends Class4712<Class841, Class5876<Class841>>
 {
-    public static final Class1932 field20315;
-    public static final Class1932[] field20316;
+    public static final ResourceLocation field20315;
+    public static final ResourceLocation[] field20316;
     
     public Class4714(final Class8551 class8551) {
         super(class8551, new Class5876(), 0.0f);
@@ -45,7 +45,7 @@ public class Class4714 extends Class4712<Class841, Class5876<Class841>>
         return true;
     }
     
-    public Class1932 method14014(final Class841 class841) {
+    public ResourceLocation method14014(final Class841 class841) {
         return (class841.method5027() != null) ? Class4714.field20316[class841.method5027().method813()] : Class4714.field20315;
     }
     
@@ -61,10 +61,10 @@ public class Class4714 extends Class4712<Class841, Class5876<Class841>>
     }
     
     static {
-        field20315 = new Class1932(Class4714.\u7b4d\u5718\ub5d9\u345d\u708b\u63ae[0] + Class8752.field36750.method11331().method7797() + Class4714.\u7b4d\u5718\ub5d9\u345d\u708b\u63ae[1]);
+        field20315 = new ResourceLocation(Class4714.\u7b4d\u5718\ub5d9\u345d\u708b\u63ae[0] + Class8752.field36750.method11331().method7797() + Class4714.\u7b4d\u5718\ub5d9\u345d\u708b\u63ae[1]);
         field20316 = Class8752.field36751.stream().map(class3687 -> {
-            new Class1932("textures/" + class3687.method11331().method7797() + ".png");
+            new ResourceLocation("textures/" + class3687.method11331().method7797() + ".png");
             return;
-        }).toArray(Class1932[]::new);
+        }).toArray(ResourceLocation[]::new);
     }
 }

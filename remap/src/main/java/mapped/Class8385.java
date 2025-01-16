@@ -91,8 +91,8 @@ public class Class8385
     
     public boolean method27947(final BlockPos class354) {
         for (final Class8422 class355 : Class8385.field34376) {
-            final BlockState method6701 = Class8385.field34375.field4683.method6701(class354.add(class355.field34567, class355.field34568, class355.field34569));
-            if (method6701.method21696() == Class7521.field29173 || method6701.method21696() == Class7521.field29174) {
+            final BlockState method6701 = Class8385.field34375.field4683.getBlockState(class354.add(class355.field34567, class355.field34568, class355.field34569));
+            if (method6701.getBlock() == Class7521.field29173 || method6701.getBlock() == Class7521.field29174) {
                 return true;
             }
         }
@@ -101,7 +101,7 @@ public class Class8385
     
     public boolean method27948(final int n, final int n2, final int n3) {
         final BlockPos class354 = new BlockPos(n, n2, n3);
-        return Class8385.field34375.field4683.method6701(new BlockPos(n, n2 - 1, n3)).method21696() != Class7521.field29147 && (!this.method27947(class354) && !this.method27947(class354.method1137()));
+        return Class8385.field34375.field4683.getBlockState(new BlockPos(n, n2 - 1, n3)).method21696() != Class7521.field29147 && (!this.method27947(class354) && !this.method27947(class354.method1137()));
     }
     
     public Class2239 method27949(final Class8903 class8903, final Class8422 class8904, final boolean b) {
@@ -127,7 +127,7 @@ public class Class8385
     }
     
     public boolean method27950(final Class8422 class8422) {
-        return Class8385.field34375.field4683.method6701(new BlockPos((int)class8422.method28112(), (int)class8422.method28113() - 1, (int)class8422.method28114())).method21696() != Class7521.field29147;
+        return Class8385.field34375.field4683.getBlockState(new BlockPos((int)class8422.method28112(), (int)class8422.method28113() - 1, (int)class8422.method28114())).method21696() != Class7521.field29147;
     }
     
     public boolean method27951(Class8903 method31354) {
@@ -141,7 +141,7 @@ public class Class8385
     }
     
     public static boolean method27952(final int n, final int n2, final int n3) {
-        return Class8385.field34375.field4683.method6701(new BlockPos(n, n2 + 1, n3)).method21696() != Class7521.field29147 || Class8385.field34375.field4683.method6701(new BlockPos(n, n2, n3)).method21696() != Class7521.field29147;
+        return Class8385.field34375.field4683.getBlockState(new BlockPos(n, n2 + 1, n3)).method21696() != Class7521.field29147 || Class8385.field34375.field4683.getBlockState(new BlockPos(n, n2, n3)).method21696() != Class7521.field29147;
     }
     
     public Class8903 method27953(final Class8422 class8422, final Class2239 class8423) {

@@ -11,12 +11,12 @@ import java.util.concurrent.Executor;
 
 public class Class8065
 {
-    private final Class1932[] field33227;
+    private final ResourceLocation[] field33227;
     
-    public Class8065(final Class1932 class1932) {
-        this.field33227 = new Class1932[6];
+    public Class8065(final ResourceLocation class1932) {
+        this.field33227 = new ResourceLocation[6];
         for (int i = 0; i < 6; ++i) {
-            this.field33227[i] = new Class1932(class1932.method7798(), class1932.method7797() + '_' + i + ".png");
+            this.field33227[i] = new ResourceLocation(class1932.method7798(), class1932.method7797() + '_' + i + ".png");
         }
     }
     

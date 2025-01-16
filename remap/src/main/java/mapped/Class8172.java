@@ -24,9 +24,9 @@ public class Class8172
     private final Class6969 field33671;
     private final Class8139 field33672;
     private final String field33673;
-    private final Class1932 field33674;
+    private final ResourceLocation field33674;
     
-    private Class8172(final Class8150 field33665, final Class8817 field33666, final Class8697 field33667, final Class8003 field33668, final Class7103 field33669, final Class9007 field33670, final Class6969 field33671, final Class8139 field33672, final String field33673, final Class1932 field33674) {
+    private Class8172(final Class8150 field33665, final Class8817 field33666, final Class8697 field33667, final Class8003 field33668, final Class7103 field33669, final Class9007 field33670, final Class6969 field33671, final Class8139 field33672, final String field33673, final ResourceLocation field33674) {
         this.field33665 = field33665;
         this.field33666 = field33666;
         this.field33667 = field33667;
@@ -91,7 +91,7 @@ public class Class8172
     public static Class8172 method27017(final JsonElement jsonElement) {
         if (jsonElement != null && !jsonElement.isJsonNull()) {
             final JsonObject method35913 = Class9583.method35913(jsonElement, "entity");
-            return new Class5754().method17072(Class8150.method26847(method35913.get("type"))).method17073(Class8817.method30758(method35913.get("distance"))).method17074(Class8697.method29814(method35913.get("location"))).method17075(Class8003.method26196(method35913.get("effects"))).method17076(Class7103.method21807(method35913.get("nbt"))).method17077(Class9007.method32228(method35913.get("flags"))).method17078(Class6969.method21384(method35913.get("equipment"))).method17079(Class8139.method26820(method35913.get("player"))).method17080(Class9583.method35896(method35913, "team", null)).method17081(method35913.has("catType") ? new Class1932(Class9583.method35895(method35913, "catType")) : null).method17082();
+            return new Class5754().method17072(Class8150.method26847(method35913.get("type"))).method17073(Class8817.method30758(method35913.get("distance"))).method17074(Class8697.method29814(method35913.get("location"))).method17075(Class8003.method26196(method35913.get("effects"))).method17076(Class7103.method21807(method35913.get("nbt"))).method17077(Class9007.method32228(method35913.get("flags"))).method17078(Class6969.method21384(method35913.get("equipment"))).method17079(Class8139.method26820(method35913.get("player"))).method17080(Class9583.method35896(method35913, "team", null)).method17081(method35913.has("catType") ? new ResourceLocation(Class9583.method35895(method35913, "catType")) : null).method17082();
         }
         return Class8172.field33663;
     }

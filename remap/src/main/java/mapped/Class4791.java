@@ -71,7 +71,7 @@ public class Class4791 extends Class4703<Class862>
         return new Vec3d(class862.method1882().getXOffset() * 0.3f, -0.25, class862.method1882().getZOffset() * 0.3f);
     }
     
-    public Class1932 method14170(final Class862 class862) {
+    public ResourceLocation method14170(final Class862 class862) {
         return Class1774.field9853;
     }
     
@@ -96,7 +96,7 @@ public class Class4791 extends Class4703<Class862>
     
     private boolean method14173(final Class862 class862) {
         if (!Class9216.field39049) {
-            if (!Class8571.field36033) {
+            if (!Config.field36033) {
                 final Entity method5303 = this.field20429.method5303();
                 if (class862.method1733(method5303.getPosX(), method5303.getPosY(), method5303.getPosZ()) > Class4791.field20431) {
                     return false;
@@ -109,7 +109,7 @@ public class Class4791 extends Class4703<Class862>
     
     public static void method14174() {
         final Class869 method5277 = Class869.method5277();
-        final double max = Math.max(6.0 * method5277.method5332().method7695() / Class8571.method28867(method5277.field4648.field23471, 1.0, 120.0), 16.0);
+        final double max = Math.max(6.0 * method5277.method5332().method7695() / Config.method28867(method5277.field4648.field23471, 1.0, 120.0), 16.0);
         Class4791.field20431 = max * max;
     }
     

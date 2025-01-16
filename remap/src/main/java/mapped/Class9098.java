@@ -17,7 +17,7 @@ public class Class9098
 {
     private final Class1849 field38530;
     private final Map<Class7915<?>, Object> field38531;
-    private final Map<Class1932, Class8798> field38532;
+    private final Map<ResourceLocation, Class8798> field38532;
     private Random field38533;
     private float field38534;
     
@@ -69,7 +69,7 @@ public class Class9098
         return this;
     }
     
-    public Class9098 method32879(final Class1932 class1932, final Class8798 class1933) {
+    public Class9098 method32879(final ResourceLocation class1932, final Class8798 class1933) {
         if (this.field38532.put(class1932, class1933) == null) {
             return this;
         }

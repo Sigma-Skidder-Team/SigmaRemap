@@ -10,7 +10,7 @@ public class Class4257 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19100;
     private int field19101;
-    private Class1932 field19102;
+    private ResourceLocation field19102;
     
     public Class4257() {
     }
@@ -20,7 +20,7 @@ public class Class4257 implements IPacket<IClientPlayNetHandler>
         this.field19102 = class3662.method11298();
     }
     
-    public Class1932 method12779() {
+    public ResourceLocation method12779() {
         return this.field19102;
     }
     

@@ -51,9 +51,9 @@ public class Class3209 extends Class3167
                     }
                 }
             }
-            final double field38854 = Class8591.method29095(tileEntity.method2193()).field38854;
-            final double field38855 = Class8591.method29095(tileEntity.method2193()).field38855;
-            final double field38856 = Class8591.method29095(tileEntity.method2193()).field38856;
+            final double field38854 = Class8591.method29095(tileEntity.getPos()).field38854;
+            final double field38855 = Class8591.method29095(tileEntity.getPos()).field38855;
+            final double field38856 = Class8591.method29095(tileEntity.getPos()).field38856;
             GL11.glDisable(2929);
             GL11.glEnable(3042);
             int n = method19118;
@@ -65,7 +65,7 @@ public class Class3209 extends Class3167
             else {
                 n = method19119;
             }
-            final Class7644 class437 = new Class7644(tileEntity.method2194().method21725(Class3209.field15514.field4683, tileEntity.method2193()).method24537().method18499(field38854, field38855, field38856));
+            final Class7644 class437 = new Class7644(tileEntity.method2194().getShape(Class3209.field15514.field4683, tileEntity.getPos()).method24537().method18499(field38854, field38855, field38856));
             GL11.glAlphaFunc(519, 0.0f);
             Class8154.method26909(class437, n);
             Class8154.method26912(class437, 2.0f, n);

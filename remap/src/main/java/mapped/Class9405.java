@@ -10,5 +10,5 @@ import java.util.function.Function;
 
 public interface Class9405
 {
-    CompletableFuture<Either<Class1860, Class6797>> method34981(final Class9312 p0, final Class1849 p1, final Class1795 p2, final Class1885 p3, final Function<Class1860, CompletableFuture<Either<Class1860, Class6797>>> p4, final Class1860 p5);
+    CompletableFuture<Either<IChunk, Class6797>> method34981(final ChunkStatus p0, final Class1849 p1, final Class1795 p2, final Class1885 p3, final Function<IChunk, CompletableFuture<Either<IChunk, Class6797>>> p4, final IChunk p5);
 }

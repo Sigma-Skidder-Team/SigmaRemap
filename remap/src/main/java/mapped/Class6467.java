@@ -11,9 +11,9 @@ public class Class6467
 {
     private static String[] field25698;
     private int field25699;
-    private final List<Class1932> field25700;
-    private final List<Class1932> field25701;
-    private Class1932 field25702;
+    private final List<ResourceLocation> field25700;
+    private final List<ResourceLocation> field25701;
+    private ResourceLocation field25702;
     
     public Class6467() {
         this.field25700 = Lists.newArrayList();
@@ -29,16 +29,16 @@ public class Class6467
         return this;
     }
     
-    public static Class6467 method19355(final Class1932 class1932) {
+    public static Class6467 method19355(final ResourceLocation class1932) {
         return new Class6467().method19356(class1932);
     }
     
-    public Class6467 method19356(final Class1932 class1932) {
+    public Class6467 method19356(final ResourceLocation class1932) {
         this.field25701.add(class1932);
         return this;
     }
     
     public Class9032 method19357() {
-        return new Class9032(this.field25699, this.field25700.toArray(new Class1932[0]), this.field25701.toArray(new Class1932[0]), (this.field25702 != null) ? new Class9360(this.field25702) : Class9360.field40145);
+        return new Class9032(this.field25699, this.field25700.toArray(new ResourceLocation[0]), this.field25701.toArray(new ResourceLocation[0]), (this.field25702 != null) ? new Class9360(this.field25702) : Class9360.field40145);
     }
 }

@@ -28,17 +28,17 @@ public class Class4565 extends Class4535<Class5144>
         for (int i = 0; i < class1854.field22137; ++i) {
             class1855.method1287(method1165).method1292(random.nextInt(class1854.field22138 + 1) - random.nextInt(class1854.field22138 + 1), random.nextInt(class1854.field22139 + 1) - random.nextInt(class1854.field22139 + 1), random.nextInt(class1854.field22140 + 1) - random.nextInt(class1854.field22140 + 1));
             final BlockPos method1166 = class1855.method1139();
-            final BlockState method1167 = class1851.method6701(method1166);
+            final BlockState method1167 = class1851.getBlockState(method1166);
             if (!class1851.method6961(class1855)) {
                 if (!class1854.field22141) {
                     continue;
                 }
-                if (!class1851.method6701(class1855).method21697().method26442()) {
+                if (!class1851.getBlockState(class1855).getMaterial().method26442()) {
                     continue;
                 }
             }
             if (method1164.method21752(class1851, class1855)) {
-                if (class1854.field22135.isEmpty() || class1854.field22135.contains(method1167.method21696())) {
+                if (class1854.field22135.isEmpty() || class1854.field22135.contains(method1167.getBlock())) {
                     if (!class1854.field22136.contains(method1167)) {
                         if (class1854.field22143) {
                             if (!class1851.method6702(method1166.method1145()).method21793(Class7324.field28319)) {

@@ -10,7 +10,7 @@ public abstract class Class4158<T extends TileEntity>
 {
     public final Class9550 field18539;
     private Class5412 field18540;
-    private Class1932 field18541;
+    private ResourceLocation field18541;
     
     public Class4158(final Class9550 field18539) {
         this.field18540 = null;
@@ -32,11 +32,11 @@ public abstract class Class4158<T extends TileEntity>
         this.field18540 = class8651.method29437().get();
     }
     
-    public Class1932 method12458() {
+    public ResourceLocation method12458() {
         return this.field18541;
     }
     
-    public void method12459(final Class1932 field18541) {
+    public void method12459(final ResourceLocation field18541) {
         this.field18541 = field18541;
     }
 }

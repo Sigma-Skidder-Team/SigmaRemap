@@ -18,7 +18,7 @@ public class Class3176 extends Class3167
     private Class7838 field15542;
     private BlockPos field15543;
     private BlockPos field15544;
-    private Class3833 field15545;
+    private Block field15545;
     private Class9052 field15546;
     private boolean field15547;
     private boolean field15548;
@@ -48,8 +48,8 @@ public class Class3176 extends Class3167
         return new BlockPos(this.field15543.getX() + this.field15542.method25323().get(n).method31757().method7836(), this.field15543.getY() + this.field15542.method25323().get(n).method31757().method7840(), this.field15543.getZ() + this.field15542.method25323().get(n).method31757().method7844());
     }
     
-    private Class3833 method9966(final int n) {
-        return Class3833.method11775(this.field15542.method25323().get(n).method31755()).method21696();
+    private Block method9966(final int n) {
+        return Block.method11775(this.field15542.method25323().get(n).method31755()).getBlock();
     }
     
     private BlockPos method9967() {

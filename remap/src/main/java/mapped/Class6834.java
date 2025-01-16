@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 
 public interface Class6834
 {
-    Class1932 method20920();
+    ResourceLocation method20920();
     
     @Nullable
     Class7833 method20921(final Class1784 p0);

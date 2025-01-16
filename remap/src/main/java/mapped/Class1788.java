@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class Class1788 extends Class1776<int[]>
 {
-    private static final Class1932 field9904;
+    private static final ResourceLocation field9904;
     
     public int[] method6373(final Class6582 class6582, final IProfiler class6583) {
         try {
@@ -24,6 +24,6 @@ public class Class1788 extends Class1776<int[]>
     }
     
     static {
-        field9904 = new Class1932("textures/colormap/grass.png");
+        field9904 = new ResourceLocation("textures/colormap/grass.png");
     }
 }

@@ -67,35 +67,35 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
             if (mutableInt != null) {
                 mutableInt.setValue(0);
             }
-            return Class7521.field29147.method11878();
+            return Class7521.field29147.getDefaultState();
         }
         final Class1855 method7295 = this.method7295(Class353.method1095(BlockPos.unpackX(n)), Class353.method1095(BlockPos.unpackZ(n)));
         if (method7295 != null) {
             this.field10279.method1288(n);
-            final BlockState method7296 = method7295.method6701(this.field10279);
-            final boolean b = method7296.method21723() && method7296.method21703();
+            final BlockState method7296 = method7295.getBlockState(this.field10279);
+            final boolean b = method7296.isSolid() && method7296.method21703();
             if (mutableInt != null) {
-                mutableInt.setValue(method7296.method21700(this.field10275.method7414(), this.field10279));
+                mutableInt.setValue(method7296.getOpacity(this.field10275.method7414(), this.field10279));
             }
-            return b ? method7296 : Class7521.field29147.method11878();
+            return b ? method7296 : Class7521.field29147.getDefaultState();
         }
         if (mutableInt != null) {
             mutableInt.setValue(16);
         }
-        return Class7521.field29172.method11878();
+        return Class7521.field29172.getDefaultState();
     }
     
     public VoxelShape method7298(final BlockState class7096, final long n, final Direction class7097) {
-        return class7096.method21723() ? class7096.method21701(this.field10275.method7414(), this.field10279.method1288(n), class7097) : Class7698.method24486();
+        return class7096.isSolid() ? class7096.getFaceOcclusionShape(this.field10275.method7414(), this.field10279.method1288(n), class7097) : VoxelShapes.method24486();
     }
     
     public static int method7299(final Class1855 class1855, final BlockState class1856, final BlockPos class1857, final BlockState class1858, final BlockPos class1859, final Direction class1860, final int n) {
-        final boolean b = class1856.method21723() && class1856.method21703();
-        final boolean b2 = class1858.method21723() && class1858.method21703();
+        final boolean b = class1856.isSolid() && class1856.method21703();
+        final boolean b2 = class1858.isSolid() && class1858.method21703();
         if (!b && !b2) {
             return n;
         }
-        return Class7698.method24504(b ? class1856.method21729(class1855, class1857) : Class7698.method24486(), b2 ? class1858.method21729(class1855, class1859) : Class7698.method24486(), class1860) ? 16 : n;
+        return VoxelShapes.method24504(b ? class1856.getRenderShape(class1855, class1857) : VoxelShapes.method24486(), b2 ? class1858.getRenderShape(class1855, class1859) : VoxelShapes.method24486(), class1860) ? 16 : n;
     }
     
     @Override

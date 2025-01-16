@@ -43,7 +43,7 @@ public enum Class185 implements IStringSerializable
     }
     
     public static Class185 method826(final Class7096 class7096) {
-        final Class3833 method21696 = class7096.method21696();
+        final Block method21696 = class7096.method21696();
         if (method21696 == Class7521.field29333) {
             return Class185.field584;
         }
@@ -77,15 +77,15 @@ public enum Class185 implements IStringSerializable
         if (method21696 == Class7521.field29340) {
             return Class185.field594;
         }
-        final Class8059 method21697 = class7096.method21697();
-        if (method21697 == Class8059.field33185) {
+        final Material method21697 = class7096.method21697();
+        if (method21697 == Material.ROCK) {
             return Class185.field580;
         }
-        if (method21697 == Class8059.field33173) {
+        if (method21697 == Material.SAND) {
             return Class185.field581;
         }
-        if (method21697 != Class8059.field33182) {
-            return (method21697 != Class8059.field33176) ? Class185.field579 : Class185.field583;
+        if (method21697 != Material.GLASS) {
+            return (method21697 != Material.WOOD) ? Class185.field579 : Class185.field583;
         }
         return Class185.field582;
     }

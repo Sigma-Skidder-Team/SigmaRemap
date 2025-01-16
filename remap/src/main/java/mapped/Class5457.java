@@ -19,7 +19,7 @@ import java.util.Map;
 public class Class5457 extends Class5419<Class824>
 {
     private static String[] field22696;
-    private static final Map<Class9334, Class1932> field22697;
+    private static final Map<Class9334, ResourceLocation> field22697;
     private int field22698;
     private boolean field22699;
     private long field22700;

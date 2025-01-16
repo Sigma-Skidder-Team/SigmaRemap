@@ -79,7 +79,7 @@ public class Class4784 extends Class4703<LightningBoltEntity>
         class6790.method12444(class6789, n + (b3 ? n10 : (-n10)), (float)(n3 * 16), n2 + (b4 ? n10 : (-n10))).method12439(n6, n7, n8, 0.3f).method12397();
     }
     
-    public Class1932 method14151(final LightningBoltEntity class422) {
+    public ResourceLocation method14151(final LightningBoltEntity class422) {
         return Class1774.field9853;
     }
 }

@@ -31,7 +31,7 @@ public class Class7112 extends Class7110<Integer>
     }
     
     @Override
-    public Collection<Integer> method21829() {
+    public Collection<Integer> getAllowedValues() {
         return (Collection<Integer>)this.field27741;
     }
     
@@ -50,7 +50,7 @@ public class Class7112 extends Class7110<Integer>
     }
     
     @Override
-    public Optional<Integer> method21830(final String s) {
+    public Optional<Integer> parseValue(final String s) {
         try {
             final Integer value = Integer.valueOf(s);
             return this.field27741.contains((Object)value) ? Optional.of(value) : Optional.empty();

@@ -231,8 +231,8 @@ public class Class688 extends Class565
             }
             class9291.method32742(this.field3789);
             class9291.method32734(method23969);
-            final int method23971 = MathHelper.method35649(Math.max(method23969, class9291.method32735()) / 2.0f);
-            final int max = Math.max(MathHelper.method35649((float)(method23969 / 2)), Math.max(MathHelper.method35649((float)(class9291.method32735() / 2)), 10));
+            final int method23971 = MathHelper.ceil(Math.max(method23969, class9291.method32735()) / 2.0f);
+            final int max = Math.max(MathHelper.ceil((float)(method23969 / 2)), Math.max(MathHelper.ceil((float)(class9291.method32735() / 2)), 10));
             final boolean b = class9291.method32739() > this.field3786.method3808() && (class9291.method32739() - this.field3786.method3808()) / 3L % 2L == 1L;
             if (method23971 > 0) {
                 final int method23972 = MathHelper.method35642(Math.min((n3 - n2 - 4) / (float)max, 9.0f));

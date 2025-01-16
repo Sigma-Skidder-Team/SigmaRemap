@@ -11,14 +11,14 @@ import net.minecraft.util.DamageSource;
 
 public class Class4614 extends Class4611<Class4233>
 {
-    private final Class1932 field20080;
+    private final ResourceLocation field20080;
     
-    public Class4614(final Class1932 field20080) {
+    public Class4614(final ResourceLocation field20080) {
         this.field20080 = field20080;
     }
     
     @Override
-    public Class1932 method13717() {
+    public ResourceLocation method13717() {
         return this.field20080;
     }
     

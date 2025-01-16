@@ -8,14 +8,14 @@ import javax.annotation.Nullable;
 
 public class Class498 extends TileEntity
 {
-    private Class1932 field2855;
-    private Class1932 field2856;
+    private ResourceLocation field2855;
+    private ResourceLocation field2856;
     private String field2857;
     
     public Class498(final Class5412<?> class5412) {
         super(class5412);
-        this.field2855 = new Class1932("empty");
-        this.field2856 = new Class1932("empty");
+        this.field2855 = new ResourceLocation("empty");
+        this.field2856 = new ResourceLocation("empty");
         this.field2857 = "minecraft:air";
     }
     
@@ -23,11 +23,11 @@ public class Class498 extends TileEntity
         this(Class5412.field22571);
     }
     
-    public Class1932 method2531() {
+    public ResourceLocation method2531() {
         return this.field2855;
     }
     
-    public Class1932 method2532() {
+    public ResourceLocation method2532() {
         return this.field2856;
     }
     
@@ -35,11 +35,11 @@ public class Class498 extends TileEntity
         return this.field2857;
     }
     
-    public void method2534(final Class1932 field2855) {
+    public void method2534(final ResourceLocation field2855) {
         this.field2855 = field2855;
     }
     
-    public void method2535(final Class1932 field2856) {
+    public void method2535(final ResourceLocation field2856) {
         this.field2856 = field2856;
     }
     
@@ -59,8 +59,8 @@ public class Class498 extends TileEntity
     @Override
     public void method2179(final Class51 class51) {
         super.method2179(class51);
-        this.field2855 = new Class1932(class51.method323("attachement_type"));
-        this.field2856 = new Class1932(class51.method323("target_pool"));
+        this.field2855 = new ResourceLocation(class51.method323("attachement_type"));
+        this.field2856 = new ResourceLocation(class51.method323("target_pool"));
         this.field2857 = class51.method323("final_state");
     }
     

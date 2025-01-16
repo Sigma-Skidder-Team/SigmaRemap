@@ -551,20 +551,20 @@ public class Class3363 extends Class3355
                     if (!(method27622 instanceof Class4075)) {
                         return 1.0f;
                     }
-                    n = class8322.method11706(class8321, Class7521.field29181.method11878());
+                    n = class8322.method11706(class8321, Class7521.field29181.getDefaultState());
                     if (lowerCase.toLowerCase().contains("gold")) {
                         n -= 5.0f;
                     }
                 }
                 else {
-                    n = class8322.method11706(class8321, Class7521.field29156.method11878());
+                    n = class8322.method11706(class8321, Class7521.field29156.getDefaultState());
                     if (lowerCase.toLowerCase().contains("gold")) {
                         n -= 5.0f;
                     }
                 }
             }
             else {
-                n = class8322.method11706(class8321, Class7521.field29148.method11878());
+                n = class8322.method11706(class8321, Class7521.field29148.getDefaultState());
                 if (lowerCase.toLowerCase().contains("gold")) {
                     n -= 5.0f;
                 }

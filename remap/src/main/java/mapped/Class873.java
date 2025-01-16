@@ -12,7 +12,7 @@ public final class Class873 extends Class872<Runnable>
     
     private Class873(final Class1909 field4721, final World class1847) {
         this.field4721 = field4721;
-        super("Chunk source main thread executor for " + Class90.field226.method503(class1847.method6789().getType()));
+        super("Chunk source main thread executor for " + Registry.field226.getKey(class1847.method6789().getType()));
     }
     
     @Override

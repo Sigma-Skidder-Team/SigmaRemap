@@ -315,11 +315,11 @@ public class PacketBuffer extends ByteBuf
         throw new EncoderException("String too big (was " + bytes.length + " bytes encoded, max " + i + ")");
     }
     
-    public Class1932 method29516() {
-        return new Class1932(this.method29513(32767));
+    public ResourceLocation method29516() {
+        return new ResourceLocation(this.method29513(32767));
     }
     
-    public PacketBuffer method29517(final Class1932 class1932) {
+    public PacketBuffer method29517(final ResourceLocation class1932) {
         this.method29514(class1932.toString());
         return this;
     }

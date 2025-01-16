@@ -10,9 +10,9 @@ import java.util.function.Consumer;
 
 public class Class6375 extends Class6367
 {
-    private final Class1932 field25483;
+    private final ResourceLocation field25483;
     
-    private Class6375(final Class1932 field25483, final int n, final int n2, final Class122[] array, final Class125[] array2) {
+    private Class6375(final ResourceLocation field25483, final int n, final int n2, final Class122[] array, final Class125[] array2) {
         super(n, n2, array, array2);
         this.field25483 = field25483;
     }
@@ -39,7 +39,7 @@ public class Class6375 extends Class6367
         }
     }
     
-    public static Class4948<?> method19036(final Class1932 class1932) {
+    public static Class4948<?> method19036(final ResourceLocation class1932) {
         return Class6367.method19017((n, n2, array, array2) -> new Class6375(class1932, n, n2, array, array2));
     }
 }

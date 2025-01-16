@@ -12,10 +12,10 @@ import java.util.Properties;
 public class Class9310
 {
     private String field39951;
-    private Class1932 field39952;
+    private ResourceLocation field39952;
     private int field39953;
     private int[] field39954;
-    private Class1932[] field39955;
+    private ResourceLocation[] field39955;
     private int[] field39956;
     private Class3090[] field39957;
     private Class7740 field39958;
@@ -31,7 +31,7 @@ public class Class9310
     private Class7740 field39968;
     private Class2185[] field39969;
     
-    public Class9310(final Properties properties, final String field39951, final Class1932 field39952, final int i, final String s, final Class8652 class8652) {
+    public Class9310(final Properties properties, final String field39951, final ResourceLocation field39952, final int i, final String s, final Class8652 class8652) {
         this.field39951 = null;
         this.field39952 = null;
         this.field39954 = null;
@@ -82,17 +82,17 @@ public class Class9310
         }
         int method28933 = 0;
         if (property != null) {
-            method28933 = Class8571.method28933(property, -1);
+            method28933 = Config.method28933(property, -1);
             if (method28933 < 0) {
-                Class8571.method28848("Invalid minHeight: " + property);
+                Config.warn("Invalid minHeight: " + property);
                 return null;
             }
         }
         int method28934 = 256;
         if (property2 != null) {
-            method28934 = Class8571.method28933(property2, -1);
+            method28934 = Config.method28933(property2, -1);
             if (method28934 < 0) {
-                Class8571.method28848("Invalid maxHeight: " + property2);
+                Config.warn("Invalid maxHeight: " + property2);
                 return null;
             }
         }
@@ -101,34 +101,34 @@ public class Class9310
             class7740.method24696(new Class7356(method28933, method28934));
             return class7740;
         }
-        Class8571.method28848("Invalid minHeight, maxHeight: " + property + ", " + property2);
+        Config.warn("Invalid minHeight, maxHeight: " + property + ", " + property2);
         return null;
     }
     
     public boolean method34428(final String s) {
         if (this.field39954 == null || this.field39954.length == 0) {
-            Class8571.method28848("Invalid skins for rule: " + this.field39953);
+            Config.warn("Invalid skins for rule: " + this.field39953);
             return false;
         }
         if (this.field39955 != null) {
             return true;
         }
-        this.field39955 = new Class1932[this.field39954.length];
-        final Class1932 method32649 = Class9066.method32649(this.field39952, this.field39951.startsWith("optifine/mob/"));
+        this.field39955 = new ResourceLocation[this.field39954.length];
+        final ResourceLocation method32649 = Class9066.method32649(this.field39952, this.field39951.startsWith("optifine/mob/"));
         if (method32649 == null) {
-            Class8571.method28848("Invalid path: " + this.field39952.method7797());
+            Config.warn("Invalid path: " + this.field39952.method7797());
             return false;
         }
         for (int i = 0; i < this.field39955.length; ++i) {
             final int n = this.field39954[i];
             if (n > 1) {
-                final Class1932 method32650 = Class9066.method32651(method32649, n);
+                final ResourceLocation method32650 = Class9066.method32651(method32649, n);
                 if (method32650 == null) {
-                    Class8571.method28848("Invalid path: " + this.field39952.method7797());
+                    Config.warn("Invalid path: " + this.field39952.method7797());
                     return false;
                 }
-                if (!Class8571.method28900(method32650)) {
-                    Class8571.method28848("Texture not found: " + method32650.method7797());
+                if (!Config.method28900(method32650)) {
+                    Config.warn("Texture not found: " + method32650.method7797());
                     return false;
                 }
                 this.field39955[i] = method32650;
@@ -139,13 +139,13 @@ public class Class9310
         }
         if (this.field39956 != null) {
             if (this.field39956.length > this.field39955.length) {
-                Class8571.method28848("More weights defined than skins, trimming weights: " + s);
+                Config.warn("More weights defined than skins, trimming weights: " + s);
                 final int[] field39956 = new int[this.field39955.length];
                 System.arraycopy(this.field39956, 0, field39956, 0, field39956.length);
                 this.field39956 = field39956;
             }
             if (this.field39956.length < this.field39955.length) {
-                Class8571.method28848("Less weights defined than skins, expanding weights: " + s);
+                Config.warn("Less weights defined than skins, expanding weights: " + s);
                 final int[] field39957 = new int[this.field39955.length];
                 System.arraycopy(this.field39956, 0, field39957, 0, this.field39956.length);
                 final int method32651 = Class8500.method28403(this.field39956);
@@ -158,7 +158,7 @@ public class Class9310
             int n2 = 0;
             for (int k = 0; k < this.field39956.length; ++k) {
                 if (this.field39956[k] < 0) {
-                    Class8571.method28848("Invalid weight: " + this.field39956[k]);
+                    Config.warn("Invalid weight: " + this.field39956[k]);
                     return false;
                 }
                 n2 += this.field39956[k];
@@ -166,18 +166,18 @@ public class Class9310
             }
             this.field39963 = n2;
             if (this.field39963 <= 0) {
-                Class8571.method28848("Invalid sum of all weights: " + n2);
+                Config.warn("Invalid sum of all weights: " + n2);
                 this.field39963 = 1;
             }
         }
         if (this.field39964 == Class8652.field36318) {
-            Class8571.method28848("Invalid professions or careers: " + s);
+            Config.warn("Invalid professions or careers: " + s);
             return false;
         }
         if (this.field39965 != Class8652.field36319) {
             return true;
         }
-        Class8571.method28848("Invalid collar colors: " + s);
+        Config.warn("Invalid collar colors: " + s);
         return false;
     }
     
@@ -227,7 +227,7 @@ public class Class9310
                     if (!class8445.method4480()) {
                         return false;
                     }
-                    if (!Class8571.method28977(class8445.method4599(), this.field39965)) {
+                    if (!Config.method28977(class8445.method4599(), this.field39965)) {
                         return false;
                     }
                 }
@@ -236,7 +236,7 @@ public class Class9310
                     if (!class8446.method4480()) {
                         return false;
                     }
-                    if (!Class8571.method28977(class8446.method4613(), this.field39965)) {
+                    if (!Config.method28977(class8446.method4613(), this.field39965)) {
                         return false;
                     }
                 }
@@ -253,7 +253,7 @@ public class Class9310
             }
         }
         if (this.field39967 != null) {
-            final Class1848 field4683 = Class8571.method28894().field4683;
+            final Class1848 field4683 = Config.method28894().field4683;
             if (field4683 != null) {
                 if (!this.field39967.method24697(field4683.method6953())) {
                     return false;
@@ -261,7 +261,7 @@ public class Class9310
             }
         }
         if (this.field39968 != null) {
-            final Class1848 field4684 = Class8571.method28894().field4683;
+            final Class1848 field4684 = Config.method28894().field4683;
             if (field4684 != null) {
                 if (!this.field39968.method24697((int)field4684.method6755())) {
                     return false;
@@ -269,7 +269,7 @@ public class Class9310
             }
         }
         if (this.field39969 != null) {
-            final Class1848 field4685 = Class8571.method28894().field4683;
+            final Class1848 field4685 = Config.method28894().field4683;
             if (field4685 != null) {
                 if (!Class9008.method32231(this.field39969, Class2185.method8352(field4685, 0.0f))) {
                     return false;
@@ -279,7 +279,7 @@ public class Class9310
         return true;
     }
     
-    public Class1932 method34430(final Class1932 class1932, final int n) {
+    public ResourceLocation method34430(final ResourceLocation class1932, final int n) {
         if (this.field39955 != null && this.field39955.length != 0) {
             int n2 = 0;
             if (this.field39956 != null) {

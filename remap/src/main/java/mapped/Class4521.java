@@ -39,7 +39,7 @@ public abstract class Class4521 extends Class4473
         this.field19941 = field19941;
         this.field19937 = new BlockPos(class51.method319("PosX"), class51.method319("PosY"), class51.method319("PosZ"));
         this.field19938 = class51.method319("ground_level_delta");
-        this.field19936 = Class7754.method24753((com.mojang.datafixers.Dynamic<Object>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.method327("pool_element")), Class90.field234, "element_type", Class8230.field33794);
+        this.field19936 = Class7754.method24753((com.mojang.datafixers.Dynamic<Object>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.method327("pool_element")), Registry.field234, "element_type", Class8230.field33794);
         this.field19939 = Class2052.valueOf(class51.method323("rotation"));
         this.field19849 = this.field19936.method27254(field19941, this.field19937, this.field19939);
         final Class52 method328 = class51.method328("junctions", 10);

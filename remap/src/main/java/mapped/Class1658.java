@@ -92,7 +92,7 @@ public class Class1658 implements Class1657
                     break;
                 }
                 case 2: {
-                    Class9388.field40282.method34897(new ItemStack(class7096.method21696()), class7097, class7098, n, n2);
+                    Class9388.field40282.method34897(new ItemStack(class7096.getBlock()), class7097, class7098, n, n2);
                     break;
                 }
             }

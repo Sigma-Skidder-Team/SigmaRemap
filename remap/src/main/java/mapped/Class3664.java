@@ -26,10 +26,10 @@ public class Class3664 implements Class3663
     private final int field16947;
     private final Class2265<Class120> field16948;
     private final ItemStack field16949;
-    private final Class1932 field16950;
+    private final ResourceLocation field16950;
     private final String field16951;
     
-    public Class3664(final Class1932 field16950, final String field16951, final int field16952, final int field16953, final Class2265<Class120> field16954, final ItemStack field16955) {
+    public Class3664(final ResourceLocation field16950, final String field16951, final int field16952, final int field16953, final Class2265<Class120> field16954, final ItemStack field16955) {
         this.field16950 = field16950;
         this.field16951 = field16951;
         this.field16946 = field16952;
@@ -39,7 +39,7 @@ public class Class3664 implements Class3663
     }
     
     @Override
-    public Class1932 method11298() {
+    public ResourceLocation method11298() {
         return this.field16950;
     }
     
@@ -223,7 +223,7 @@ public class Class3664 implements Class3663
     }
     
     public static ItemStack method11312(final JsonObject jsonObject) {
-        final Item class3820 = Class90.field211.method506(new Class1932(Class9583.method35895(jsonObject, "item"))).orElseThrow(() -> {
+        final Item class3820 = Registry.field211.method506(new ResourceLocation(Class9583.method35895(jsonObject, "item"))).orElseThrow(() -> {
             new JsonSyntaxException("Unknown item '" + str + "'");
             return;
         });

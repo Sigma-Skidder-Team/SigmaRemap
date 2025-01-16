@@ -12,7 +12,7 @@ public class Class9055
     private static String[] field38327;
     private final Class357 field38328;
     private final Class373 field38329;
-    private Set<Class3833> field38330;
+    private Set<Block> field38330;
     private Set<BlockState> field38331;
     private int field38332;
     private int field38333;
@@ -23,7 +23,7 @@ public class Class9055
     private boolean field38338;
     
     public Class9055(final Class357 field38328, final Class373 field38329) {
-        this.field38330 = (Set<Class3833>)ImmutableSet.of();
+        this.field38330 = (Set<Block>)ImmutableSet.of();
         this.field38331 = (Set<BlockState>)ImmutableSet.of();
         this.field38332 = 64;
         this.field38333 = 7;
@@ -35,7 +35,7 @@ public class Class9055
         this.field38329 = field38329;
     }
     
-    public Class9055 method32578(final Set<Class3833> field38330) {
+    public Class9055 method32578(final Set<Block> field38330) {
         this.field38330 = field38330;
         return this;
     }

@@ -5,7 +5,6 @@
 package mapped;
 
 import java.lang.reflect.Method;
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.function.LongSupplier;
 
@@ -51,7 +50,7 @@ public class Class8203
             break;
         }
         for (final Throwable t2 : list) {
-            Class8571.method28848("" + t2.getClass().getName() + ": " + t2.getMessage());
+            Config.warn("" + t2.getClass().getName() + ": " + t2.getMessage());
         }
         return null;
     }

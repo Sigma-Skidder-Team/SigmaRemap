@@ -4,14 +4,12 @@
 
 package mapped;
 
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 import java.util.Iterator;
 import java.util.Collection;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 
@@ -25,7 +23,7 @@ public class Class8403
         commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("stopsound").requires(class287 -> class287.method23210(2))).then((ArgumentBuilder)requiredArgumentBuilder));
     }
     
-    private static int method28025(final Class7492 class7492, final Collection<Class513> collection, final Class286 class7493, final Class1932 class7494) {
+    private static int method28025(final Class7492 class7492, final Collection<Class513> collection, final Class286 class7493, final ResourceLocation class7494) {
         final Class4382 class7495 = new Class4382(class7494, class7493);
         final Iterator iterator = collection.iterator();
         while (iterator.hasNext()) {

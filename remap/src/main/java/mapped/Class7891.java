@@ -10,7 +10,7 @@ import java.util.Map;
 public class Class7891
 {
     private static String[] field32398;
-    private final Map<Class1932, Class8795> field32399;
+    private final Map<ResourceLocation, Class8795> field32399;
     
     public Class7891() {
         this.field32399 = Maps.newHashMap();
@@ -21,7 +21,7 @@ public class Class7891
         this.field32399.put(class8795.method30675(), class8795);
     }
     
-    public Class8795 method25554(final Class1932 class1932) {
+    public Class8795 method25554(final ResourceLocation class1932) {
         final Class8795 class1933 = this.field32399.get(class1932);
         return (class1933 == null) ? Class8795.field36978 : class1933;
     }

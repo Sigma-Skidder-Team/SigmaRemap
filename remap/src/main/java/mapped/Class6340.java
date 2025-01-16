@@ -8,11 +8,11 @@ import java.util.Optional;
 
 public class Class6340 extends Class6322
 {
-    private final Optional<Class1932> field25354;
+    private final Optional<ResourceLocation> field25354;
     private final boolean field25355;
     private final boolean field25356;
     
-    public Class6340(final Class1932 value, final boolean field25355, final boolean field25356) {
+    public Class6340(final ResourceLocation value, final boolean field25355, final boolean field25356) {
         super("texture", () -> {
             Class8726.method30040();
             Class869.method5277().method5290();
@@ -57,7 +57,7 @@ public class Class6340 extends Class6322
         return this.field25354.hashCode();
     }
     
-    public Optional<Class1932> method18842() {
+    public Optional<ResourceLocation> method18842() {
         return this.field25354;
     }
 }

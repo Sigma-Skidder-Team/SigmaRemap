@@ -50,16 +50,16 @@ public class Class3941 extends Class3841
     
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        return ((Class7097<O, BlockState>)this.method11878()).method21773(Class3941.field17831, Class102.field308);
+        return ((StateHolder<O, BlockState>)this.getDefaultState()).with(Class3941.field17831, Class102.field308);
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class3941.field17831);
     }
     
     @Override
-    public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         if (!class7097.isRemote) {
             final TileEntity method6727 = class7097.method6727(class7098);
             if (method6727 instanceof Class501) {

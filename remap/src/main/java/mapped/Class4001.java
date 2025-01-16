@@ -16,7 +16,7 @@ public class Class4001 extends Class4000
     
     public Class4001(final int field18036, final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class4001.field18035, 0));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class4001.field18035, 0));
         this.field18036 = field18036;
     }
     
@@ -26,7 +26,7 @@ public class Class4001 extends Class4000
         if (min <= 0) {
             return 0;
         }
-        return MathHelper.method35649(Math.min(this.field18036, min) / (float)this.field18036 * 15.0f);
+        return MathHelper.ceil(Math.min(this.field18036, min) / (float)this.field18036 * 15.0f);
     }
     
     @Override
@@ -41,12 +41,12 @@ public class Class4001 extends Class4000
     
     @Override
     public int method12166(final BlockState class7096) {
-        return class7096.method21772((Class7111<Integer>)Class4001.field18035);
+        return class7096.get((IProperty<Integer>)Class4001.field18035);
     }
     
     @Override
     public BlockState method12167(final BlockState class7096, final int i) {
-        return ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class4001.field18035, i);
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class4001.field18035, i);
     }
     
     @Override
@@ -55,7 +55,7 @@ public class Class4001 extends Class4000
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class4001.field18035);
     }
     

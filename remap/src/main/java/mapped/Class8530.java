@@ -36,7 +36,7 @@ public class Class8530<FC extends Class5113, F extends Class4535<FC>>
     }
     
     public <T> Dynamic<T> method28612(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("name"), dynamicOps.createString(Class90.field215.method503(this.field35804).toString()), dynamicOps.createString("config"), this.field35805.method16010((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue())));
+        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("name"), dynamicOps.createString(Registry.field215.getKey(this.field35804).toString()), dynamicOps.createString("config"), this.field35805.method16010((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue())));
     }
     
     public boolean method28613(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853) {
@@ -45,7 +45,7 @@ public class Class8530<FC extends Class5113, F extends Class4535<FC>>
     
     public static <T> Class8530<?, ?> method28614(final Dynamic<T> dynamic) {
         final String string = dynamic.get("name").asString("");
-        final Class4535<?> class4535 = Class90.field215.method505(new Class1932(string));
+        final Class4535<?> class4535 = Registry.field215.getOrDefault(new ResourceLocation(string));
         try {
             return new Class8530<Object, Object>(class4535, (Dynamic<?>)dynamic.get("config").orElseEmptyMap());
         }

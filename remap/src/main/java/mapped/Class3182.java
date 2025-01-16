@@ -78,10 +78,10 @@ public class Class3182 extends Class3167
     }
     
     public boolean method9981(final BlockPos class354) {
-        final BlockState method6701 = Class3182.field15514.field4683.method6701(class354);
-        final BlockState method6702 = Class3182.field15514.field4683.method6701(class354.method1137());
-        final BlockState method6703 = Class3182.field15514.field4683.method6701(class354.method1138(2));
-        if (method6701.method21723()) {
+        final BlockState method6701 = Class3182.field15514.field4683.getBlockState(class354);
+        final BlockState method6702 = Class3182.field15514.field4683.getBlockState(class354.method1137());
+        final BlockState method6703 = Class3182.field15514.field4683.getBlockState(class354.method1138(2));
+        if (method6701.isSolid()) {
             if (method6702.method21706()) {
                 if (method6703.method21706()) {
                     return true;

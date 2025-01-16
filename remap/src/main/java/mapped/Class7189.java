@@ -42,7 +42,7 @@ public class Class7189
     }
     
     public void method22064() {
-        this.field27939.method15297("goalCleanup");
+        this.field27939.startSection("goalCleanup");
         if (this.field27938.size() > 0) {
             for (final Class3499 class3499 : this.field27938) {
                 if (!class3499.method11062()) {
@@ -66,8 +66,8 @@ public class Class7189
                 return;
             });
         }
-        this.field27939.method15299();
-        this.field27939.method15297("goalUpdate");
+        this.field27939.endSection();
+        this.field27939.startSection("goalUpdate");
         if (this.field27938.size() > 0) {
             for (final Class3499 class3500 : this.field27938) {
                 if (class3500.method11062()) {
@@ -86,8 +86,8 @@ public class Class7189
                 class3500.method11015();
             }
         }
-        this.field27939.method15299();
-        this.field27939.method15297("goalTick");
+        this.field27939.endSection();
+        this.field27939.startSection("goalTick");
         if (this.field27938.size() > 0) {
             for (final Class3499 class3501 : this.field27938) {
                 if (!class3501.method11062()) {
@@ -96,7 +96,7 @@ public class Class7189
                 class3501.method11016();
             }
         }
-        this.field27939.method15299();
+        this.field27939.endSection();
     }
     
     private static boolean method22065(final Class3499 class3499, final EnumSet<Class2139> set, final Map<Class2139, Class3499> map) {

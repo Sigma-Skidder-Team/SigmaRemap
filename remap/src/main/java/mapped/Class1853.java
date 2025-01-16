@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 
 public interface Class1853 extends Class1855
 {
-    WorldBorder method6787();
+    WorldBorder getWorldBorder();
     
     @Nullable
     Class1855 method6736(final int p0, final int p1);
@@ -31,12 +31,12 @@ public interface Class1853 extends Class1855
     }
     
     default boolean method6974(final BlockState class7096, final BlockPos class7097, final ISelectionContext class7098) {
-        final VoxelShape method21728 = class7096.method21728(this, class7097, class7098);
+        final VoxelShape method21728 = class7096.getCollisionShape(this, class7097, class7098);
         return method21728.method24540() || this.method6957(null, method21728.method24541(class7097.getX(), class7097.getY(), class7097.getZ()));
     }
     
     default boolean method6975(final Entity class399) {
-        return this.method6957(class399, Class7698.method24489(class399.getBoundingBox()));
+        return this.method6957(class399, VoxelShapes.method24489(class399.getBoundingBox()));
     }
     
     default boolean method6976(final AxisAlignedBB class6221) {
@@ -64,6 +64,6 @@ public interface Class1853 extends Class1855
     }
     
     default Stream<VoxelShape> method6981(final Entity class399, final AxisAlignedBB class400) {
-        return StreamSupport.stream((Spliterator<VoxelShape>)new Class7583(this, Long.MAX_VALUE, 1280, class399, new CubeCoordinateIterator(MathHelper.floor(class400.field25073 - 1.0E-7) - 1, MathHelper.floor(class400.field25074 - 1.0E-7) - 1, MathHelper.floor(class400.field25075 - 1.0E-7) - 1, MathHelper.floor(class400.field25076 + 1.0E-7) + 1, MathHelper.floor(class400.field25077 + 1.0E-7) + 1, MathHelper.floor(class400.field25078 + 1.0E-7) + 1), new Mutable(), (class399 != null) ? ISelectionContext.forEntity(class399) : ISelectionContext.dummy(), Class7698.method24489(class400)), false);
+        return StreamSupport.stream((Spliterator<VoxelShape>)new Class7583(this, Long.MAX_VALUE, 1280, class399, new CubeCoordinateIterator(MathHelper.floor(class400.minX - 1.0E-7) - 1, MathHelper.floor(class400.minY - 1.0E-7) - 1, MathHelper.floor(class400.minZ - 1.0E-7) - 1, MathHelper.floor(class400.maxX + 1.0E-7) + 1, MathHelper.floor(class400.maxY + 1.0E-7) + 1, MathHelper.floor(class400.maxZ + 1.0E-7) + 1), new Mutable(), (class399 != null) ? ISelectionContext.forEntity(class399) : ISelectionContext.dummy(), VoxelShapes.method24489(class400)), false);
     }
 }

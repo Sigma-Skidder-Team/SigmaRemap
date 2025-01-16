@@ -23,7 +23,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 
-import java.util.function.Function;
 import java.util.HashSet;
 import java.util.Collection;
 import java.util.Collections;
@@ -306,7 +305,7 @@ public abstract class Entity implements INameable, ICommandSource {
     }
 
     public void method1660() {
-        this.world.method6796().method15297("entityBaseTick");
+        this.world.method6796().startSection("entityBaseTick");
         if (this.isPassenger()) {
             if (this.method1920().removed) {
                 this.stopRiding();
@@ -349,7 +348,7 @@ public abstract class Entity implements INameable, ICommandSource {
             this.setFlag(0, this.fire > 0);
         }
         this.firstUpdate = false;
-        this.world.method6796().method15299();
+        this.world.method6796().endSection();
     }
 
     public void method1661() {
@@ -422,7 +421,7 @@ public abstract class Entity implements INameable, ICommandSource {
                     return;
                 }
             }
-            this.world.method6796().method15297("move");
+            this.world.method6796().startSection("move");
             if (this.motionMultiplier.lengthSquared() > 1.0E-7) {
                 class2161 = class2161.mul(this.motionMultiplier);
                 this.motionMultiplier = Vec3d.ZERO;
@@ -434,14 +433,14 @@ public abstract class Entity implements INameable, ICommandSource {
                 this.method1889(this.getBoundingBox().method18501(method1679));
                 this.method1685();
             }
-            this.world.method6796().method15299();
-            this.world.method6796().method15297("rest");
+            this.world.method6796().endSection();
+            this.world.method6796().startSection("rest");
             this.collidedHorizontally = (!MathHelper.method35663(class2161.x, method1679.x) || !MathHelper.method35663(class2161.z, method1679.z));
             this.collidedVertically = (class2161.y != method1679.y);
             this.onGround = (this.collidedVertically && class2161.y < 0.0);
             this.collided = (this.collidedHorizontally || this.collidedVertically);
             final BlockPos method1680 = this.method1672();
-            final Class7096 method1681 = this.world.method6701(method1680);
+            final BlockState method1681 = this.world.getBlockState(method1680);
             this.method1701(method1679.y, this.onGround, method1681, method1680);
             final Vec3d method1682 = this.getMotion();
             if (class2161.x != method1679.x) {
@@ -450,7 +449,7 @@ public abstract class Entity implements INameable, ICommandSource {
             if (class2161.z != method1679.z) {
                 this.setMotion(method1682.x, method1682.y, 0.0);
             }
-            final Class3833 method1683 = method1681.method21696();
+            final Block method1683 = method1681.getBlock();
             if (class2161.y != method1679.y) {
                 method1683.method11861(this.world, this);
             }
@@ -509,15 +508,15 @@ public abstract class Entity implements INameable, ICommandSource {
                 this.method1695(Class8520.field35219, 0.7f, 1.6f + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.4f);
                 this.fire = -this.method1923();
             }
-            this.world.method6796().method15299();
+            this.world.method6796().endSection();
         }
     }
 
     public BlockPos method1672() {
         final BlockPos class354 = new BlockPos(MathHelper.floor(this.posX), MathHelper.floor(this.posY - 0.20000000298023224), MathHelper.floor(this.posZ));
-        if (this.world.method6701(class354).method21706()) {
+        if (this.world.getBlockState(class354).method21706()) {
             final BlockPos method1139 = class354.method1139();
-            final Class3833 method1140 = this.world.method6701(method1139).method21696();
+            final Block method1140 = this.world.getBlockState(method1139).getBlock();
             if (!method1140.method11785(Class7188.field27911)) {
                 if (!method1140.method11785(Class7188.field27904)) {
                     if (!(method1140 instanceof Class3898)) {
@@ -531,22 +530,22 @@ public abstract class Entity implements INameable, ICommandSource {
     }
 
     public float method1673() {
-        final float method11867 = this.world.method6701(new BlockPos(this)).method21696().method11867();
-        final float method11868 = this.world.method6701(this.method1675()).method21696().method11867();
+        final float method11867 = this.world.getBlockState(new BlockPos(this)).getBlock().method11867();
+        final float method11868 = this.world.getBlockState(this.getPositionUnderneath()).getBlock().method11867();
         return (method11867 != 1.0) ? method11867 : method11868;
     }
 
     public float method1674() {
-        final Class3833 method21696 = this.world.method6701(new BlockPos(this)).method21696();
-        final float method21697 = method21696.method11866();
-        if (method21696 != Class7521.field29173 && method21696 != Class7521.field29765) {
-            return (method21697 != 1.0) ? method21697 : this.world.method6701(this.method1675()).method21696().method11866();
+        final Block getBlock = this.world.getBlockState(new BlockPos(this)).getBlock();
+        final float method21697 = getBlock.method11866();
+        if (getBlock != Class7521.field29173 && getBlock != Class7521.field29765) {
+            return (method21697 != 1.0) ? method21697 : this.world.getBlockState(this.getPositionUnderneath()).getBlock().method11866();
         }
         return method21697;
     }
 
-    public BlockPos method1675() {
-        return new BlockPos(this.posX, this.getBoundingBox().field25074 - 0.5000001, this.posZ);
+    public BlockPos getPositionUnderneath() {
+        return new BlockPos(this.posX, this.getBoundingBox().minY - 0.5000001, this.posZ);
     }
 
     public Vec3d method1676(final Vec3d class5487, final Class2160 class5488) {
@@ -646,7 +645,7 @@ public abstract class Entity implements INameable, ICommandSource {
         double n = class5487.y;
         double a2 = class5487.z;
         if (n != 0.0) {
-            n = Class7698.method24498(Axis.Y, class5488, class5489.createStream(), n);
+            n = VoxelShapes.method24498(Axis.Y, class5488, class5489.createStream(), n);
             if (n != 0.0) {
                 class5488 = class5488.method18499(0.0, n, 0.0);
             }
@@ -654,14 +653,14 @@ public abstract class Entity implements INameable, ICommandSource {
         final boolean b = Math.abs(a) < Math.abs(a2);
         if (b) {
             if (a2 != 0.0) {
-                a2 = Class7698.method24498(Axis.Z, class5488, class5489.createStream(), a2);
+                a2 = VoxelShapes.method24498(Axis.Z, class5488, class5489.createStream(), a2);
                 if (a2 != 0.0) {
                     class5488 = class5488.method18499(0.0, 0.0, a2);
                 }
             }
         }
         if (a != 0.0) {
-            a = Class7698.method24498(Axis.X, class5488, class5489.createStream(), a);
+            a = VoxelShapes.method24498(Axis.X, class5488, class5489.createStream(), a);
             if (!b) {
                 if (a != 0.0) {
                     class5488 = class5488.method18499(a, 0.0, 0.0);
@@ -670,7 +669,7 @@ public abstract class Entity implements INameable, ICommandSource {
         }
         if (!b) {
             if (a2 != 0.0) {
-                a2 = Class7698.method24498(Axis.Z, class5488, class5489.createStream(), a2);
+                a2 = VoxelShapes.method24498(Axis.Z, class5488, class5489.createStream(), a2);
             }
         }
         return new Vec3d(a, n, a2);
@@ -681,7 +680,7 @@ public abstract class Entity implements INameable, ICommandSource {
         double n = class5487.y;
         double a2 = class5487.z;
         if (n != 0.0) {
-            n = Class7698.method24499(Axis.Y, class5488, class5489, n, class5490, class5491.createStream(), b);
+            n = VoxelShapes.method24499(Axis.Y, class5488, class5489, n, class5490, class5491.createStream(), b);
             if (n != 0.0) {
                 class5488 = class5488.method18499(0.0, n, 0.0);
             }
@@ -689,14 +688,14 @@ public abstract class Entity implements INameable, ICommandSource {
         final boolean b2 = Math.abs(a) < Math.abs(a2);
         if (b2) {
             if (a2 != 0.0) {
-                a2 = Class7698.method24499(Axis.Z, class5488, class5489, a2, class5490, class5491.createStream(), b);
+                a2 = VoxelShapes.method24499(Axis.Z, class5488, class5489, a2, class5490, class5491.createStream(), b);
                 if (a2 != 0.0) {
                     class5488 = class5488.method18499(0.0, 0.0, a2);
                 }
             }
         }
         if (a != 0.0) {
-            a = Class7698.method24499(Axis.X, class5488, class5489, a, class5490, class5491.createStream(), b);
+            a = VoxelShapes.method24499(Axis.X, class5488, class5489, a, class5490, class5491.createStream(), b);
             if (!b2) {
                 if (a != 0.0) {
                     class5488 = class5488.method18499(a, 0.0, 0.0);
@@ -705,7 +704,7 @@ public abstract class Entity implements INameable, ICommandSource {
         }
         if (!b2) {
             if (a2 != 0.0) {
-                a2 = Class7698.method24499(Axis.Z, class5488, class5489, a2, class5490, class5491.createStream(), b);
+                a2 = VoxelShapes.method24499(Axis.Z, class5488, class5489, a2, class5490, class5491.createStream(), b);
             }
         }
         return new Vec3d(a, n, a2);
@@ -717,7 +716,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
     public void method1685() {
         final AxisAlignedBB method1886 = this.getBoundingBox();
-        this.method1948((method1886.field25073 + method1886.field25076) / 2.0, method1886.field25074, (method1886.field25075 + method1886.field25078) / 2.0);
+        this.method1948((method1886.minX + method1886.maxX) / 2.0, method1886.minY, (method1886.minZ + method1886.maxZ) / 2.0);
     }
 
     public Class7795 method1686() {
@@ -734,15 +733,15 @@ public abstract class Entity implements INameable, ICommandSource {
 
     public void method1689() {
         final AxisAlignedBB method1886 = this.getBoundingBox();
-        try (final Class386 method1887 = Class386.method1298(method1886.field25073 + 0.001, method1886.field25074 + 0.001, method1886.field25075 + 0.001);
-             final Class386 method1888 = Class386.method1298(method1886.field25076 - 0.001, method1886.field25077 - 0.001, method1886.field25078 - 0.001);
+        try (final Class386 method1887 = Class386.method1298(method1886.minX + 0.001, method1886.minY + 0.001, method1886.minZ + 0.001);
+             final Class386 method1888 = Class386.method1298(method1886.maxX - 0.001, method1886.maxY - 0.001, method1886.maxZ - 0.001);
              final Class386 method1889 = Class386.method1296()) {
             if (this.world.method6972(method1887, method1888)) {
                 for (int i = method1887.getX(); i <= method1888.getX(); ++i) {
                     for (int j = method1887.getY(); j <= method1888.getY(); ++j) {
                         for (int k = method1887.getZ(); k <= method1888.getZ(); ++k) {
                             method1889.method1300(i, j, k);
-                            final Class7096 method1890 = this.world.method6701(method1889);
+                            final BlockState method1890 = this.world.getBlockState(method1889);
                             try {
                                 method1890.method21741(this.world, method1889, this);
                                 this.method1690(method1890);
@@ -758,13 +757,13 @@ public abstract class Entity implements INameable, ICommandSource {
         }
     }
 
-    public void method1690(final Class7096 class7096) {
+    public void method1690(final BlockState BlockState) {
     }
 
-    public void method1691(final BlockPos class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final BlockState class355) {
         if (!class355.method21697().method26438()) {
-            final Class7096 method6701 = this.world.method6701(class354.method1137());
-            final Class7696 class356 = (method6701.method21696() != Class7521.field29329) ? class355.method21759() : method6701.method21759();
+            final BlockState method6701 = this.world.getBlockState(class354.method1137());
+            final SoundType class356 = (method6701.getBlock() != Class7521.field29329) ? class355.method21759() : method6701.method21759();
             this.method1695(class356.method24480(), class356.method24477() * 0.15f, class356.method24478());
         }
     }
@@ -807,14 +806,14 @@ public abstract class Entity implements INameable, ICommandSource {
         return true;
     }
 
-    public void method1701(final double n, final boolean b, final Class7096 class7096, final BlockPos class7097) {
+    public void method1701(final double n, final boolean b, final BlockState BlockState, final BlockPos class7097) {
         if (!b) {
             if (n < 0.0) {
                 this.fallDistance -= (float) n;
             }
         } else {
             if (this.fallDistance > 0.0f) {
-                class7096.method21696().method11860(this.world, class7097, this, this.fallDistance);
+                BlockState.getBlock().method11860(this.world, class7097, this, this.fallDistance);
             }
             this.fallDistance = 0.0f;
         }
@@ -858,7 +857,7 @@ public abstract class Entity implements INameable, ICommandSource {
     }
 
     private boolean method1708() {
-        return this.world.method6701(new BlockPos(this)).method21696() == Class7521.field29765;
+        return this.world.getBlockState(new BlockPos(this)).getBlock() == Class7521.field29765;
     }
 
     public boolean method1709() {
@@ -979,7 +978,7 @@ public abstract class Entity implements INameable, ICommandSource {
     }
 
     public void method1719() {
-        final Class7096 method6701 = this.world.method6701(new BlockPos(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY() - 0.20000000298023224), MathHelper.floor(this.getPosZ())));
+        final BlockState method6701 = this.world.getBlockState(new BlockPos(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY() - 0.20000000298023224), MathHelper.floor(this.getPosZ())));
         if (method6701.method21710() != Class2115.field12305) {
             final Vec3d method6702 = this.getMotion();
             this.world.method6709(new Class6911(Class8432.field34600, method6701), this.getPosX() + (this.rand.nextFloat() - 0.5) * this.size.field34097, this.getPosY() + 0.1, this.getPosZ() + (this.rand.nextFloat() - 0.5) * this.size.field34097, method6702.x * -4.0, 1.5, method6702.z * -4.0);
@@ -1360,7 +1359,7 @@ public abstract class Entity implements INameable, ICommandSource {
     @Nullable
     public final String method1759() {
         final EntityType<?> method1642 = this.getType();
-        final Class1932 method1643 = EntityType.method23354(method1642);
+        final ResourceLocation method1643 = EntityType.method23354(method1642);
         return (method1642.method23361() && method1643 != null) ? method1643.toString() : null;
     }
 
@@ -1428,7 +1427,7 @@ public abstract class Entity implements INameable, ICommandSource {
                 final int method1299 = MathHelper.floor(this.getPosZ() + ((i >> 2) % 2 - 0.5f) * this.size.field34097 * 0.8f);
                 if (method1296.getX() != method1298 || method1296.getY() != method1297 || method1296.getZ() != method1299) {
                     method1296.method1300(method1298, method1297, method1299);
-                    if (this.world.method6701(method1296).method21746(this.world, method1296)) {
+                    if (this.world.getBlockState(method1296).method21746(this.world, method1296)) {
                         return true;
                     }
                 }
@@ -1607,11 +1606,11 @@ public abstract class Entity implements INameable, ICommandSource {
                 if (this.world.getServer().method1471()) {
                     if (!this.isPassenger()) {
                         if (this.portalCounter++ >= method1662) {
-                            this.world.method6796().method15297("portal");
+                            this.world.method6796().startSection("portal");
                             this.portalCounter = method1662;
                             this.timeUntilPortal = this.method1796();
                             this.method1854((this.world.dimension.getType() != DimensionType.field2224) ? DimensionType.field2224 : DimensionType.field2223);
-                            this.world.method6796().method15299();
+                            this.world.method6796().endSection();
                         }
                     }
                 }
@@ -1844,7 +1843,7 @@ public abstract class Entity implements INameable, ICommandSource {
     public void onKillEntity(final LivingEntity class511) {
     }
 
-    public void method1838(final double n, final double n2, final double n3) {
+    public void pushOutOfBlocks(final double n, final double n2, final double n3) {
         final BlockPos class354 = new BlockPos(n, n2, n3);
         final Vec3d class355 = new Vec3d(n - class354.getX(), n2 - class354.getY(), n3 - class354.getZ());
         final Mutable class356 = new Mutable();
@@ -1852,7 +1851,7 @@ public abstract class Entity implements INameable, ICommandSource {
         double n4 = Double.MAX_VALUE;
         for (final Direction class357 : new Direction[]{Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST, Direction.UP}) {
             class356.method1287(class354).method1290(class357);
-            if (!this.world.method6701(class356).method21762(this.world, class356)) {
+            if (!this.world.getBlockState(class356).isCollisionShapeOpaque(this.world, class356)) {
                 final double method16759 = class355.getCoordinate(class357.getAxis());
                 final double n5 = (class357.getAxisDirection() != AxisDirection.POSITIVE) ? method16759 : (1.0 - method16759);
                 if (n5 < n4) {
@@ -1877,7 +1876,7 @@ public abstract class Entity implements INameable, ICommandSource {
         }
     }
 
-    public void method1839(final Class7096 class7096, final Vec3d field2409) {
+    public void setMotionMultiplier(final BlockState BlockState, final Vec3d field2409) {
         this.fallDistance = 0.0f;
         this.motionMultiplier = field2409;
     }
@@ -1964,14 +1963,14 @@ public abstract class Entity implements INameable, ICommandSource {
     @Nullable
     public Entity method1854(final DimensionType field2452) {
         if (!this.world.isRemote && !this.removed) {
-            this.world.method6796().method15297("changeDimension");
+            this.world.method6796().startSection("changeDimension");
             final MinecraftServer method1897 = this.method1897();
             final DimensionType field2453 = this.dimension;
             final Class1849 method1898 = method1897.method1481(field2453);
             final Class1849 method1899 = method1897.method1481(field2452);
             this.dimension = field2452;
             this.detach();
-            this.world.method6796().method15297("reposition");
+            this.world.method6796().startSection("reposition");
             Vec3d class5487 = this.getMotion();
             float n = 0.0f;
             BlockPos class5488;
@@ -1989,10 +1988,10 @@ public abstract class Entity implements INameable, ICommandSource {
                         method1901 *= 8.0;
                     }
                 }
-                final double min = Math.min(-2.9999872E7, method1899.method6787().method34786() + 16.0);
-                final double min2 = Math.min(-2.9999872E7, method1899.method6787().method34787() + 16.0);
-                final double min3 = Math.min(2.9999872E7, method1899.method6787().method34788() - 16.0);
-                final double min4 = Math.min(2.9999872E7, method1899.method6787().method34789() - 16.0);
+                final double min = Math.min(-2.9999872E7, method1899.getWorldBorder().method34786() + 16.0);
+                final double min2 = Math.min(-2.9999872E7, method1899.getWorldBorder().method34787() + 16.0);
+                final double min3 = Math.min(2.9999872E7, method1899.getWorldBorder().method34788() - 16.0);
+                final double min4 = Math.min(2.9999872E7, method1899.getWorldBorder().method34789() - 16.0);
                 final double method1902 = MathHelper.clamp(method1900, min, min3);
                 final double method1903 = MathHelper.clamp(method1901, min2, min4);
                 final Vec3d method1904 = this.method1859();
@@ -2015,10 +2014,10 @@ public abstract class Entity implements INameable, ICommandSource {
                 method1899.method6888((Entity) method1906);
             }
             this.removed = true;
-            this.world.method6796().method15299();
+            this.world.method6796().endSection();
             method1898.method6870();
             method1899.method6870();
-            this.world.method6796().method15299();
+            this.world.method6796().endSection();
             return (Entity) method1906;
         }
         return null;
@@ -2028,11 +2027,11 @@ public abstract class Entity implements INameable, ICommandSource {
         return true;
     }
 
-    public float method1856(final Class6154 class6154, final Class1855 class6155, final BlockPos class6156, final Class7096 class6157, final Class7099 class6158, final float n) {
+    public float method1856(final Explosion explosion, final Class1855 class6155, final BlockPos class6156, final BlockState class6157, final Class7099 class6158, final float n) {
         return n;
     }
 
-    public boolean method1857(final Class6154 class6154, final Class1855 class6155, final BlockPos class6156, final Class7096 class6157, final float n) {
+    public boolean method1857(final Explosion explosion, final Class1855 class6155, final BlockPos class6156, final BlockState class6157, final float n) {
         return true;
     }
 
@@ -2138,7 +2137,7 @@ public abstract class Entity implements INameable, ICommandSource {
         if (this.world instanceof Class1849) {
             final Class1849 class1849 = (Class1849) this.world;
             this.method1730(n, n2, n3, this.rotationYaw, this.rotationPitch);
-            this.method1912().forEach(class1851 -> {
+            this.func_226276_cg_().forEach(class1851 -> {
                 class1849.method6875(class1851);
                 class1851.isPositionDirty = true;
                 class1851.method1918(Entity::method1950);
@@ -2164,7 +2163,7 @@ public abstract class Entity implements INameable, ICommandSource {
         this.eyeHeight = this.method1890(method1654, method1655);
         if (method1655.field34097 >= field2464.field34097) {
             final AxisAlignedBB method1656 = this.getBoundingBox();
-            this.method1889(new AxisAlignedBB(method1656.field25073, method1656.field25074, method1656.field25075, method1656.field25073 + method1655.field34097, method1656.field25074 + method1655.field34098, method1656.field25075 + method1655.field34097));
+            this.method1889(new AxisAlignedBB(method1656.minX, method1656.minY, method1656.minZ, method1656.minX + method1655.field34097, method1656.minY + method1655.field34098, method1656.minZ + method1655.field34097));
             if (method1655.field34097 > field2464.field34097) {
                 if (!this.firstUpdate) {
                     if (!this.world.isRemote) {
@@ -2189,7 +2188,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
     public Class9390 method1884() {
         final Class51 class51 = new Class51();
-        final Class1932 method23354 = EntityType.method23354(this.getType());
+        final ResourceLocation method23354 = EntityType.method23354(this.getType());
         class51.method306("id", this.method1866());
         if (method23354 != null) {
             class51.method306("type", method23354.toString());
@@ -2361,8 +2360,8 @@ public abstract class Entity implements INameable, ICommandSource {
         return hashSet;
     }
 
-    public Stream<Entity> method1912() {
-        return Stream.concat(Stream.of(this), this.passengers.stream().flatMap((Function<? super Object, ? extends Stream<? extends Entity>>) Entity::method1912));
+    public Stream<Entity> func_226276_cg_() {
+        return Stream.concat(Stream.of(this), this.passengers.stream().flatMap(Entity::func_226276_cg_));
     }
 
     public boolean method1913() {
@@ -2424,8 +2423,8 @@ public abstract class Entity implements INameable, ICommandSource {
         return this.ridingEntity;
     }
 
-    public Class2117 method1921() {
-        return Class2117.field12340;
+    public PushReaction method1921() {
+        return PushReaction.NORMAL;
     }
 
     public Class286 method1922() {
@@ -2476,12 +2475,12 @@ public abstract class Entity implements INameable, ICommandSource {
 
     public boolean method1928(final Class7909<Class7255> class7909) {
         final AxisAlignedBB method18511 = this.getBoundingBox().method18511(0.001);
-        final int method18512 = MathHelper.floor(method18511.field25073);
-        final int method18513 = MathHelper.method35650(method18511.field25076);
-        final int method18514 = MathHelper.floor(method18511.field25074);
-        final int method18515 = MathHelper.method35650(method18511.field25077);
-        final int method18516 = MathHelper.floor(method18511.field25075);
-        final int method18517 = MathHelper.method35650(method18511.field25078);
+        final int method18512 = MathHelper.floor(method18511.minX);
+        final int method18513 = MathHelper.ceil(method18511.maxX);
+        final int method18514 = MathHelper.floor(method18511.minY);
+        final int method18515 = MathHelper.ceil(method18511.maxY);
+        final int method18516 = MathHelper.floor(method18511.minZ);
+        final int method18517 = MathHelper.ceil(method18511.maxZ);
         if (!this.world.method6973(method18512, method18514, method18516, method18513, method18515, method18517)) {
             return false;
         }
@@ -2498,9 +2497,9 @@ public abstract class Entity implements INameable, ICommandSource {
                         final Class7099 method18520 = this.world.method6702(method18519);
                         if (method18520.method21793(class7909)) {
                             final double n2 = j + method18520.method21782(this.world, method18519);
-                            if (n2 >= method18511.field25074) {
+                            if (n2 >= method18511.minY) {
                                 b = true;
-                                max = Math.max(n2 - method18511.field25074, max);
+                                max = Math.max(n2 - method18511.minY, max);
                                 if (method18518) {
                                     Vec3d class7911 = method18520.method21790(this.world, method18519);
                                     if (max < 0.4) {

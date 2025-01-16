@@ -8,14 +8,14 @@ import net.minecraft.entity.LivingEntity;
 
 public abstract class Class4748<T extends Class827, M extends Class5863<T>> extends Class4746<T, M>
 {
-    private static final Class1932 field20370;
+    private static final ResourceLocation field20370;
     
     public Class4748(final Class8551 class8551, final M m, final M i, final M j) {
         super(class8551, m, 0.5f);
         this.method13978((Class1799<T, M>)new Class1835((Class4778<LivingEntity, Class5853>)this, i, j));
     }
     
-    public Class1932 method14083(final Class827 class827) {
+    public ResourceLocation method14083(final Class827 class827) {
         return Class4748.field20370;
     }
     
@@ -27,6 +27,6 @@ public abstract class Class4748<T extends Class827, M extends Class5863<T>> exte
     }
     
     static {
-        field20370 = new Class1932("textures/entity/zombie/zombie.png");
+        field20370 = new ResourceLocation("textures/entity/zombie/zombie.png");
     }
 }

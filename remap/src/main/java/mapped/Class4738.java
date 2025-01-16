@@ -8,7 +8,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4738 extends Class4712<Class854, Class5875<Class854>>
 {
-    private static final Class1932 field20354;
+    private static final ResourceLocation field20354;
     
     public Class4738(final Class8551 class8551) {
         super(class8551, new Class5875(), 0.25f);
@@ -18,7 +18,7 @@ public class Class4738 extends Class4712<Class854, Class5875<Class854>>
         return 15;
     }
     
-    public Class1932 method14060(final Class854 class854) {
+    public ResourceLocation method14060(final Class854 class854) {
         return Class4738.field20354;
     }
     
@@ -29,6 +29,6 @@ public class Class4738 extends Class4712<Class854, Class5875<Class854>>
     }
     
     static {
-        field20354 = new Class1932("textures/entity/slime/magmacube.png");
+        field20354 = new ResourceLocation("textures/entity/slime/magmacube.png");
     }
 }

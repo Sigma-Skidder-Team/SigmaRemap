@@ -13,7 +13,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class1822<T extends LivingEntity, M extends Class5860<T>> extends Class1820<T, M>
 {
-    private static final Class1932 field10003;
+    private static final ResourceLocation field10003;
     
     public Class1822(final Class4710<T, M> class4710) {
         super(class4710);
@@ -53,6 +53,6 @@ public class Class1822<T extends LivingEntity, M extends Class5860<T>> extends C
     }
     
     static {
-        field10003 = new Class1932("textures/entity/bee/bee_stinger.png");
+        field10003 = new ResourceLocation("textures/entity/bee/bee_stinger.png");
     }
 }

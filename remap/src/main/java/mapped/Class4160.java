@@ -19,8 +19,8 @@ public class Class4160 extends Class4158<Class440>
     
     public void method12465(final Class440 class440, final float n, final Class7351 class441, final Class7807 class442, final int n2, final int n3) {
         Direction field512 = Direction.UP;
-        if (class440.method2188()) {
-            final Class7096 method6701 = class440.method2186().method6701(class440.method2193());
+        if (class440.hasWorld()) {
+            final Class7096 method6701 = class440.method2186().getBlockState(class440.getPos());
             if (method6701.method21696() instanceof Class3942) {
                 field512 = method6701.method21772(Class3942.field17832);
             }

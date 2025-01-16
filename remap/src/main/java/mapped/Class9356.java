@@ -21,9 +21,9 @@ public class Class9356
     }
     
     public void method34678() {
-        this.field40138[0] = Class869.method5277().method5322().method6453().method35428(Class7521.field29174.method11878()).method18696();
+        this.field40138[0] = Class869.method5277().method5322().method6453().method35428(Class7521.field29174.getDefaultState()).method18696();
         this.field40138[1] = Class7637.field30239.method11332();
-        this.field40139[0] = Class869.method5277().method5322().method6453().method35428(Class7521.field29173.method11878()).method18696();
+        this.field40139[0] = Class869.method5277().method5322().method6453().method35428(Class7521.field29173.getDefaultState()).method18696();
         this.field40139[1] = Class7637.field30240.method11332();
         this.field40140 = Class7637.field30241.method11332();
     }
@@ -34,15 +34,15 @@ public class Class9356
     
     private static boolean method34680(final Class1855 class1855, final BlockPos class1856, final Direction class1857, final float n) {
         final BlockPos method1149 = class1856.method1149(class1857);
-        final BlockState method1150 = class1855.method6701(method1149);
-        return method1150.method21723() && Class7698.method24502(Class7698.method24488(0.0, 0.0, 0.0, 1.0, n, 1.0), method1150.method21729(class1855, method1149), class1857);
+        final BlockState method1150 = class1855.getBlockState(method1149);
+        return method1150.isSolid() && VoxelShapes.method24502(VoxelShapes.method24488(0.0, 0.0, 0.0, 1.0, n, 1.0), method1150.getRenderShape(class1855, method1149), class1857);
     }
     
     public boolean method34681(final Class1856 class1856, final BlockPos class1857, final Class4150 class1858, final Class7099 class1859) {
         final BlockState method21791 = class1859.method21791();
         boolean b7;
         try {
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class8900.method31337(method21791, class1858);
             }
             final boolean method21792 = class1859.method21793(Class7324.field28320);
@@ -231,8 +231,8 @@ public class Class9356
                             b9 = (array[2] != null);
                         }
                         if (b9) {
-                            final BlockState method21820 = class1856.method6701(method21819);
-                            final Class3833 method21821 = method21820.method21696();
+                            final BlockState method21820 = class1856.getBlockState(method21819);
+                            final Block method21821 = method21820.getBlock();
                             boolean method21822 = false;
                             if (Class9570.field41248.method22605()) {
                                 method21822 = Class9570.method35820(method21820, Class9570.field41248, class1856, method21819, class1859);
@@ -246,7 +246,7 @@ public class Class9356
                             }
                             if (method21821 instanceof Class3921) {
                                 final Class3921 class1863 = (Class3921)method21821;
-                                if (method21820.method21772(Class3921.field17777) == Class186.field599) {
+                                if (method21820.get(Class3921.field17777) == Class186.field599) {
                                     a = 0.5f;
                                     a2 = 0.5f;
                                 }
@@ -293,7 +293,7 @@ public class Class9356
             b7 = false;
         }
         finally {
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class8900.method31338(class1858);
             }
         }
@@ -328,7 +328,7 @@ public class Class9356
             }
             final Class7099 method1135 = class1855.method6702(method1134);
             if (!method1135.method21779().method22165(class1857)) {
-                if (!class1855.method6701(method1134).method21697().method26439()) {
+                if (!class1855.getBlockState(method1134).getMaterial().method26439()) {
                     ++n;
                 }
             }

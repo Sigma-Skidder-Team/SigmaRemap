@@ -39,7 +39,7 @@ public class Class8271
             final String format = String.format("lang/%s.json", iterator.next());
             for (final String s : class6582.method19932()) {
                 try {
-                    this.method27493(class6582.method19935(new Class1932(s, format)));
+                    this.method27493(class6582.method19935(new ResourceLocation(s, format)));
                 }
                 catch (final FileNotFoundException ex) {}
                 catch (final Exception ex2) {

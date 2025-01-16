@@ -17,14 +17,14 @@ public class Class9130
 {
     private static String[] field38692;
     private final Class6582 field38693;
-    private final Map<Class1932, CompletableFuture<Class6598>> field38694;
+    private final Map<ResourceLocation, CompletableFuture<Class6598>> field38694;
     
     public Class9130(final Class6582 field38693) {
         this.field38694 = Maps.newHashMap();
         this.field38693 = field38693;
     }
     
-    public CompletableFuture<Class6598> method33125(final Class1932 key) {
+    public CompletableFuture<Class6598> method33125(final ResourceLocation key) {
         return this.field38694.computeIfAbsent(key, p0 -> CompletableFuture.supplyAsync(() -> {
             try {
                 this.field38693.method19933(class1932);
@@ -105,7 +105,7 @@ public class Class9130
         }, Class8349.method27841()));
     }
     
-    public CompletableFuture<Class1742> method33126(final Class1932 class1932) {
+    public CompletableFuture<Class1742> method33126(final ResourceLocation class1932) {
         return (CompletableFuture<Class1742>)CompletableFuture.supplyAsync(() -> {
             try {
                 return new Class1743(this.field38693.method19933(class1933).method5887());

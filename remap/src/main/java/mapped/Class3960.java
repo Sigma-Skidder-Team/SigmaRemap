@@ -22,7 +22,7 @@ public class Class3960 extends Class3841
     
     public Class3960(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, BlockState>)((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3960.field17898, Direction.NORTH)).method21773(Class3960.field17899, Class178.field507));
+        this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3960.field17898, Direction.NORTH)).with(Class3960.field17899, Class178.field507));
     }
     
     @Nullable
@@ -37,7 +37,7 @@ public class Class3960 extends Class3841
     
     @Override
     public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
-        if (class7096.method21696() != class7099.method21696()) {
+        if (class7096.getBlock() != class7099.getBlock()) {
             final TileEntity method6727 = class7097.method6727(class7098);
             if (method6727 instanceof Class491) {
                 ((Class491)method6727).method2482();
@@ -47,10 +47,10 @@ public class Class3960 extends Class3841
     
     @Override
     public void method11824(final Class1851 class1851, final BlockPos class1852, final BlockState class1853) {
-        final BlockPos method1149 = class1852.method1149(class1853.method21772((Class7111<Direction>)Class3960.field17898).getOpposite());
-        final BlockState method1150 = class1851.method6701(method1149);
-        if (method1150.method21696() instanceof Class3836) {
-            if (method1150.method21772((Class7111<Boolean>)Class3836.field17438)) {
+        final BlockPos method1149 = class1852.method1149(class1853.get((IProperty<Direction>)Class3960.field17898).getOpposite());
+        final BlockState method1150 = class1851.getBlockState(method1149);
+        if (method1150.getBlock() instanceof Class3836) {
+            if (method1150.get((IProperty<Boolean>)Class3836.field17438)) {
                 class1851.method6690(method1149, false);
             }
         }
@@ -83,13 +83,13 @@ public class Class3960 extends Class3841
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return Class7698.method24486();
+        return VoxelShapes.method24486();
     }
     
     @Override
     public VoxelShape method11809(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final Class491 method12081 = this.method12081(class7097, class7098);
-        return (method12081 == null) ? Class7698.method24486() : method12081.method2483(class7097, class7098);
+        return (method12081 == null) ? VoxelShapes.method24486() : method12081.method2483(class7097, class7098);
     }
     
     @Nullable
@@ -105,16 +105,16 @@ public class Class3960 extends Class3841
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class3960.field17898, class7097.method8142(class7096.method21772((Class7111<Direction>)Class3960.field17898)));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3960.field17898, class7097.method8142(class7096.get((IProperty<Direction>)Class3960.field17898)));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.method21772((Class7111<Direction>)Class3960.field17898)));
+        return class7096.method21708(class7097.method8344(class7096.get((IProperty<Direction>)Class3960.field17898)));
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class3960.field17898, Class3960.field17899);
     }
     

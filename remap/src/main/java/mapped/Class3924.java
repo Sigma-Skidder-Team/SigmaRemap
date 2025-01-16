@@ -22,6 +22,6 @@ public class Class3924 extends Class3922
     }
     
     static {
-        field17788 = Class3833.method11778(2.0, 0.0, 2.0, 14.0, 4.0, 14.0);
+        field17788 = Block.method11778(2.0, 0.0, 2.0, 14.0, 4.0, 14.0);
     }
 }

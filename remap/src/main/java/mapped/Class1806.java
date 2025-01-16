@@ -6,7 +6,7 @@ package mapped;
 
 public class Class1806 extends Class1805<Class765, Class5881<Class765>>
 {
-    private static final Class1932 field9975;
+    private static final ResourceLocation field9975;
     private final Class5881<Class765> field9976;
     
     public Class1806(final Class4778<Class765, Class5881<Class765>> class4778) {
@@ -20,7 +20,7 @@ public class Class1806 extends Class1805<Class765, Class5881<Class765>>
     }
     
     @Override
-    public Class1932 method6566() {
+    public ResourceLocation method6566() {
         return Class1806.field9975;
     }
     
@@ -30,6 +30,6 @@ public class Class1806 extends Class1805<Class765, Class5881<Class765>>
     }
     
     static {
-        field9975 = new Class1932("textures/entity/creeper/creeper_armor.png");
+        field9975 = new ResourceLocation("textures/entity/creeper/creeper_armor.png");
     }
 }

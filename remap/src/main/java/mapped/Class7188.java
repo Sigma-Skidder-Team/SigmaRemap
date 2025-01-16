@@ -8,80 +8,80 @@ import java.util.Optional;
 
 public class Class7188
 {
-    private static Class6208<Class3833> field27877;
+    private static Class6208<Block> field27877;
     private static int field27878;
-    public static final Class7909<Class3833> field27879;
-    public static final Class7909<Class3833> field27880;
-    public static final Class7909<Class3833> field27881;
-    public static final Class7909<Class3833> field27882;
-    public static final Class7909<Class3833> field27883;
-    public static final Class7909<Class3833> field27884;
-    public static final Class7909<Class3833> field27885;
-    public static final Class7909<Class3833> field27886;
-    public static final Class7909<Class3833> field27887;
-    public static final Class7909<Class3833> field27888;
-    public static final Class7909<Class3833> field27889;
-    public static final Class7909<Class3833> field27890;
-    public static final Class7909<Class3833> field27891;
-    public static final Class7909<Class3833> field27892;
-    public static final Class7909<Class3833> field27893;
-    public static final Class7909<Class3833> field27894;
-    public static final Class7909<Class3833> field27895;
-    public static final Class7909<Class3833> field27896;
-    public static final Class7909<Class3833> field27897;
-    public static final Class7909<Class3833> field27898;
-    public static final Class7909<Class3833> field27899;
-    public static final Class7909<Class3833> field27900;
-    public static final Class7909<Class3833> field27901;
-    public static final Class7909<Class3833> field27902;
-    public static final Class7909<Class3833> field27903;
-    public static final Class7909<Class3833> field27904;
-    public static final Class7909<Class3833> field27905;
-    public static final Class7909<Class3833> field27906;
-    public static final Class7909<Class3833> field27907;
-    public static final Class7909<Class3833> field27908;
-    public static final Class7909<Class3833> field27909;
-    public static final Class7909<Class3833> field27910;
-    public static final Class7909<Class3833> field27911;
-    public static final Class7909<Class3833> field27912;
-    public static final Class7909<Class3833> field27913;
-    public static final Class7909<Class3833> field27914;
-    public static final Class7909<Class3833> field27915;
-    public static final Class7909<Class3833> field27916;
-    public static final Class7909<Class3833> field27917;
-    public static final Class7909<Class3833> field27918;
-    public static final Class7909<Class3833> field27919;
-    public static final Class7909<Class3833> field27920;
-    public static final Class7909<Class3833> field27921;
-    public static final Class7909<Class3833> field27922;
-    public static final Class7909<Class3833> field27923;
-    public static final Class7909<Class3833> field27924;
-    public static final Class7909<Class3833> field27925;
-    public static final Class7909<Class3833> field27926;
-    public static final Class7909<Class3833> field27927;
-    public static final Class7909<Class3833> field27928;
-    public static final Class7909<Class3833> field27929;
-    public static final Class7909<Class3833> field27930;
-    public static final Class7909<Class3833> field27931;
-    public static final Class7909<Class3833> field27932;
-    public static final Class7909<Class3833> field27933;
-    public static final Class7909<Class3833> field27934;
+    public static final Class7909<Block> field27879;
+    public static final Class7909<Block> field27880;
+    public static final Class7909<Block> field27881;
+    public static final Class7909<Block> field27882;
+    public static final Class7909<Block> field27883;
+    public static final Class7909<Block> field27884;
+    public static final Class7909<Block> field27885;
+    public static final Class7909<Block> field27886;
+    public static final Class7909<Block> field27887;
+    public static final Class7909<Block> field27888;
+    public static final Class7909<Block> field27889;
+    public static final Class7909<Block> field27890;
+    public static final Class7909<Block> field27891;
+    public static final Class7909<Block> field27892;
+    public static final Class7909<Block> field27893;
+    public static final Class7909<Block> field27894;
+    public static final Class7909<Block> field27895;
+    public static final Class7909<Block> field27896;
+    public static final Class7909<Block> field27897;
+    public static final Class7909<Block> field27898;
+    public static final Class7909<Block> field27899;
+    public static final Class7909<Block> field27900;
+    public static final Class7909<Block> field27901;
+    public static final Class7909<Block> field27902;
+    public static final Class7909<Block> field27903;
+    public static final Class7909<Block> field27904;
+    public static final Class7909<Block> field27905;
+    public static final Class7909<Block> field27906;
+    public static final Class7909<Block> field27907;
+    public static final Class7909<Block> field27908;
+    public static final Class7909<Block> field27909;
+    public static final Class7909<Block> field27910;
+    public static final Class7909<Block> field27911;
+    public static final Class7909<Block> field27912;
+    public static final Class7909<Block> field27913;
+    public static final Class7909<Block> field27914;
+    public static final Class7909<Block> field27915;
+    public static final Class7909<Block> field27916;
+    public static final Class7909<Block> field27917;
+    public static final Class7909<Block> field27918;
+    public static final Class7909<Block> field27919;
+    public static final Class7909<Block> field27920;
+    public static final Class7909<Block> field27921;
+    public static final Class7909<Block> field27922;
+    public static final Class7909<Block> field27923;
+    public static final Class7909<Block> field27924;
+    public static final Class7909<Block> field27925;
+    public static final Class7909<Block> field27926;
+    public static final Class7909<Block> field27927;
+    public static final Class7909<Block> field27928;
+    public static final Class7909<Block> field27929;
+    public static final Class7909<Block> field27930;
+    public static final Class7909<Block> field27931;
+    public static final Class7909<Block> field27932;
+    public static final Class7909<Block> field27933;
+    public static final Class7909<Block> field27934;
     
-    public static void method22056(final Class6208<Class3833> field27877) {
+    public static void method22056(final Class6208<Block> field27877) {
         Class7188.field27877 = field27877;
         ++Class7188.field27878;
     }
     
-    public static Class6208<Class3833> method22057() {
+    public static Class6208<Block> method22057() {
         return Class7188.field27877;
     }
     
-    private static Class7909<Class3833> method22058(final String s) {
-        return new Class7910(new Class1932(s));
+    private static Class7909<Block> method22058(final String s) {
+        return new Class7910(new ResourceLocation(s));
     }
     
     static {
-        Class7188.field27877 = new Class6208<Class3833>(p0 -> Optional.empty(), "", false, "");
+        Class7188.field27877 = new Class6208<Block>(p0 -> Optional.empty(), "", false, "");
         field27879 = method22058("wool");
         field27880 = method22058("planks");
         field27881 = method22058("stone_bricks");

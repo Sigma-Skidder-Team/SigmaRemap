@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 
-public interface Class6846<O, S extends Class7098<S>, A extends Class7097<O, S>>
+public interface Class6846<O, S extends IStateHolder<S>, A extends StateHolder<O, S>>
 {
-    A method20943(final O p0, final ImmutableMap<Class7111<?>, Comparable<?>> p1);
+    A method20943(final O p0, final ImmutableMap<IProperty<?>, Comparable<?>> p1);
 }

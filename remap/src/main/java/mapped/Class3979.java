@@ -11,19 +11,19 @@ import net.minecraft.world.World;
 
 import java.util.Map;
 
-public class Class3979 extends Class3833
+public class Class3979 extends Block
 {
     private static String[] field17971;
-    private final Class3833 field17972;
-    private static final Map<Class3833, Class3833> field17973;
+    private final Block field17972;
+    private static final Map<Block, Block> field17973;
     
-    public Class3979(final Class3833 field17972, final Class9288 class9288) {
+    public Class3979(final Block field17972, final Class9288 class9288) {
         super(class9288);
         this.field17972 = field17972;
         Class3979.field17973.put(field17972, this);
     }
     
-    public Class3833 method12122() {
+    public Block method12122() {
         return this.field17972;
     }
     
@@ -46,8 +46,8 @@ public class Class3979 extends Class3833
         }
     }
     
-    public static Class7096 method12124(final Class3833 class3833) {
-        return Class3979.field17973.get(class3833).method11878();
+    public static Class7096 method12124(final Block class3833) {
+        return Class3979.field17973.get(class3833).getDefaultState();
     }
     
     static {

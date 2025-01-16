@@ -90,10 +90,10 @@ public class Class4170 extends Class4158<Class501>
     
     private void method12487(final Class501 class501, final Class4150 class502, final BlockPos class503, final boolean b, final Class7351 class504) {
         final World method2186 = class501.method2186();
-        final BlockPos method2187 = class501.method2193();
+        final BlockPos method2187 = class501.getPos();
         final BlockPos method2188 = method2187.add(class503);
         for (final BlockPos class505 : BlockPos.getAllInBoxMutable(method2188, method2188.add(class501.method2562()).add(-1, -1, -1))) {
-            final Class7096 method2189 = method2186.method6701(class505);
+            final Class7096 method2189 = method2186.getBlockState(class505);
             final boolean method2190 = method2189.method21706();
             final boolean b2 = method2189.method21696() == Class7521.field29646;
             if (!method2190 && !b2) {

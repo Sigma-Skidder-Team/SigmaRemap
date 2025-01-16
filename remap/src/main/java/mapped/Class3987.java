@@ -37,9 +37,9 @@ public class Class3987 extends Class3986
     private void method12135(final BlockState class7096, final World class7097, final BlockPos class7098) {
         for (int i = 0; i < 1000; ++i) {
             final BlockPos method1134 = class7098.add(class7097.rand.nextInt(16) - class7097.rand.nextInt(16), class7097.rand.nextInt(8) - class7097.rand.nextInt(8), class7097.rand.nextInt(16) - class7097.rand.nextInt(16));
-            if (class7097.method6701(method1134).method21706()) {
+            if (class7097.getBlockState(method1134).method21706()) {
                 if (!class7097.isRemote) {
-                    class7097.method6688(method1134, class7096, 2);
+                    class7097.setBlockState(method1134, class7096, 2);
                     class7097.method6690(class7098, false);
                 }
                 else {
@@ -64,6 +64,6 @@ public class Class3987 extends Class3986
     }
     
     static {
-        field17996 = Class3833.method11778(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
+        field17996 = Block.method11778(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
     }
 }

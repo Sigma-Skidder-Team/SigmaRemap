@@ -63,7 +63,7 @@ public class Class6581 implements Class6580
     }
     
     @Override
-    public Class1671 method19933(final Class1932 class1932) throws IOException {
+    public Class1671 method19933(final ResourceLocation class1932) throws IOException {
         final Class6582 class1933 = this.field26114.get(class1932.method7798());
         if (class1933 == null) {
             throw new FileNotFoundException(class1932.toString());
@@ -72,13 +72,13 @@ public class Class6581 implements Class6580
     }
     
     @Override
-    public boolean method19934(final Class1932 class1932) {
+    public boolean method19934(final ResourceLocation class1932) {
         final Class6582 class1933 = this.field26114.get(class1932.method7798());
         return class1933 != null && class1933.method19934(class1932);
     }
     
     @Override
-    public List<Class1671> method19935(final Class1932 class1932) throws IOException {
+    public List<Class1671> method19935(final ResourceLocation class1932) throws IOException {
         final Class6582 class1933 = this.field26114.get(class1932.method7798());
         if (class1933 == null) {
             throw new FileNotFoundException(class1932.toString());
@@ -87,7 +87,7 @@ public class Class6581 implements Class6580
     }
     
     @Override
-    public Collection<Class1932> method19936(final String s, final Predicate<String> predicate) {
+    public Collection<ResourceLocation> method19936(final String s, final Predicate<String> predicate) {
         final HashSet hashSet = Sets.newHashSet();
         final Iterator<Class6583> iterator = this.field26114.values().iterator();
         while (iterator.hasNext()) {

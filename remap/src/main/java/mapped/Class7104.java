@@ -11,7 +11,7 @@ import com.google.common.collect.BiMap;
 
 public class Class7104
 {
-    private static final BiMap<Class1932, Class8212> field27709;
+    private static final BiMap<ResourceLocation, Class8212> field27709;
     public static final Class8212 field27710;
     public static final Class8212 field27711;
     public static final Class8212 field27712;
@@ -27,7 +27,7 @@ public class Class7104
         final Class7724 class7724 = new Class7724();
         consumer.accept(class7724);
         final Class8212 method24661 = class7724.method24661();
-        final Class1932 obj = new Class1932(s);
+        final ResourceLocation obj = new ResourceLocation(s);
         if (Class7104.field27709.put((Object)obj, (Object)method24661) == null) {
             return method24661;
         }
@@ -35,13 +35,13 @@ public class Class7104
     }
     
     @Nullable
-    public static Class8212 method21810(final Class1932 class1932) {
+    public static Class8212 method21810(final ResourceLocation class1932) {
         return (Class8212)Class7104.field27709.get((Object)class1932);
     }
     
     @Nullable
-    public static Class1932 method21811(final Class8212 class8212) {
-        return (Class1932)Class7104.field27709.inverse().get((Object)class8212);
+    public static ResourceLocation method21811(final Class8212 class8212) {
+        return (ResourceLocation)Class7104.field27709.inverse().get((Object)class8212);
     }
     
     static {

@@ -21,9 +21,9 @@ public class Class6492 extends Class6490
         if (this.field25849.field4684 == null) {
             return 0;
         }
-        final BlockState method6701 = this.field25849.field4683.method6701(new BlockPos(class6109.method27704(), class6109.method27705(), class6109.method27706()));
+        final BlockState method6701 = this.field25849.field4683.getBlockState(new BlockPos(class6109.method27704(), class6109.method27705(), class6109.method27706()));
         if (method6701 != null) {
-            return Class4609.method13704(method6701.method21696()) << 4 | Class4609.method13703(method6701);
+            return Class4609.method13704(method6701.getBlock()) << 4 | Class4609.method13703(method6701);
         }
         return 0;
     }

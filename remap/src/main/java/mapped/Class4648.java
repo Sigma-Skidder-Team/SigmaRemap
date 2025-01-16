@@ -48,10 +48,10 @@ public abstract class Class4648
     }
     
     @Nullable
-    private Class1932 method13883() {
+    private ResourceLocation method13883() {
         final String method323 = this.field20122.method20916().method323("id");
         try {
-            return Class8272.method27500(method323) ? null : new Class1932(method323);
+            return Class8272.method27500(method323) ? null : new ResourceLocation(method323);
         }
         catch (final Class2357 class2357) {
             final BlockPos method324 = this.method13896();
@@ -61,7 +61,7 @@ public abstract class Class4648
     }
     
     public void method13884(final EntityType<?> class7499) {
-        this.field20122.method20916().method306("id", Class90.field210.method503(class7499).toString());
+        this.field20122.method20916().method306("id", Registry.field210.getKey(class7499).toString());
     }
     
     private boolean method13885() {

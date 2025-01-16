@@ -31,13 +31,13 @@ public class Class4077 extends Class4071
     
     @Override
     public float method11706(final ItemStack class8321, final BlockState class8322) {
-        if (class8322.method21696() != Class7521.field29240) {
-            final Class8059 method21697 = class8322.method21697();
-            if (method21697 != Class8059.field33157) {
-                if (method21697 != Class8059.field33159) {
-                    if (method21697 != Class8059.field33191) {
+        if (class8322.getBlock() != Class7521.field29240) {
+            final Material method21697 = class8322.getMaterial();
+            if (method21697 != Material.PLANTS) {
+                if (method21697 != Material.TALL_PLANTS) {
+                    if (method21697 != Material.CORAL) {
                         if (!class8322.method21755(Class7188.field27907)) {
-                            if (method21697 != Class8059.field33192) {
+                            if (method21697 != Material.GOURD) {
                                 return 1.0f;
                             }
                         }
@@ -65,7 +65,7 @@ public class Class4077 extends Class4071
     
     @Override
     public boolean method11713(final BlockState class7096) {
-        return class7096.method21696() == Class7521.field29240;
+        return class7096.getBlock() == Class7521.field29240;
     }
     
     @Override

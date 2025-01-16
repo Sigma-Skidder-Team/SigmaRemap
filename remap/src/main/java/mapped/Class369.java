@@ -50,7 +50,7 @@ public class Class369 extends Class367
                             continue;
                         }
                         else {
-                            this.method1243(class1854, class1859, (Class7096)((Class7097<Object, Object>)((Class7097<O, Class7096>)Class7521.field29406.method11878()).method21773((Class7111<Comparable>)Class3891.field17559, random2.nextInt(3))).method21773((Class7111<Comparable>)Class3891.field17564, class1857), set2, class1855);
+                            this.method1243(class1854, class1859, (Class7096)((StateHolder<Object, Object>)((StateHolder<O, Class7096>)Class7521.field29406.getDefaultState()).with((IProperty<Comparable>)Class3891.field17559, random2.nextInt(3))).with((IProperty<Comparable>)Class3891.field17564, class1857), set2, class1855);
                         }
                     }
                 }
@@ -60,6 +60,6 @@ public class Class369 extends Class367
     
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
-        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Class90.field221.method503(this.field2209).toString()), dynamicOps.createString("probability"), dynamicOps.createFloat(this.field2211)))).getValue();
+        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Registry.field221.getKey(this.field2209).toString()), dynamicOps.createString("probability"), dynamicOps.createFloat(this.field2211)))).getValue();
     }
 }

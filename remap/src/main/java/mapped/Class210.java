@@ -17,7 +17,7 @@ public enum Class210 implements Class207
     }
     
     static {
-        field729 = Class90.field217.method504(Class7102.field27653);
-        field730 = Class90.field217.method504(Class7102.field27705);
+        field729 = Registry.field217.getId(Class7102.field27653);
+        field730 = Registry.field217.getId(Class7102.field27705);
     }
 }

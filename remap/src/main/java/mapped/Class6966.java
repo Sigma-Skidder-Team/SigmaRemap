@@ -10,10 +10,10 @@ import java.util.function.Function;
 
 public class Class6966<T> implements Class6967<T>
 {
-    private final Class1932 field27246;
+    private final ResourceLocation field27246;
     private Class7909<T> field27247;
     
-    public Class6966(final Class1932 field27246) {
+    public Class6966(final ResourceLocation field27246) {
         this.field27246 = field27246;
     }
     
@@ -23,7 +23,7 @@ public class Class6966<T> implements Class6967<T>
     }
     
     @Override
-    public boolean method21378(final Function<Class1932, Class7909<T>> function) {
+    public boolean method21378(final Function<ResourceLocation, Class7909<T>> function) {
         if (this.field27247 == null) {
             this.field27247 = function.apply(this.field27246);
         }
@@ -39,7 +39,7 @@ public class Class6966<T> implements Class6967<T>
         throw Class8349.method27859(new IllegalStateException("Cannot build unresolved tag entry"));
     }
     
-    public Class1932 method21380() {
+    public ResourceLocation method21380() {
         if (this.field27247 != null) {
             return this.field27247.method25621();
         }
@@ -50,7 +50,7 @@ public class Class6966<T> implements Class6967<T>
     }
     
     @Override
-    public void method21381(final JsonArray jsonArray, final Function<T, Class1932> function) {
+    public void method21381(final JsonArray jsonArray, final Function<T, ResourceLocation> function) {
         jsonArray.add("#" + this.method21380());
     }
 }

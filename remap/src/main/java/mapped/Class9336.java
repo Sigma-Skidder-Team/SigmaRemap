@@ -6,13 +6,13 @@ package mapped;
 
 public final class Class9336
 {
-    private final Class1932 field40089;
+    private final ResourceLocation field40089;
     private int field40090;
     private int field40091;
     private final Class8637 field40092;
     private double field40093;
     
-    public Class9336(final Class1932 field40089, final int field40090, final int field40091, final Class8637 field40092) {
+    public Class9336(final ResourceLocation field40089, final int field40090, final int field40091, final Class8637 field40092) {
         this.field40093 = 1.0;
         this.field40089 = field40089;
         this.field40090 = field40090;
@@ -20,7 +20,7 @@ public final class Class9336
         this.field40092 = field40092;
     }
     
-    public Class1932 method34591() {
+    public ResourceLocation method34591() {
         return this.field40089;
     }
     

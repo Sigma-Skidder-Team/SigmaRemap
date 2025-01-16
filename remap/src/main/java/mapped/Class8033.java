@@ -29,7 +29,7 @@ public class Class8033<U extends Class6851<?>>
     }
     
     private static <U extends Class6851<?>> Class8033<U> method26349(final String s, final Supplier<U> supplier) {
-        return Class90.method512(Class90.field243, new Class1932(s), new Class8033<U>(supplier));
+        return Registry.method512(Registry.field243, new ResourceLocation(s), new Class8033<U>(supplier));
     }
     
     static {

@@ -117,7 +117,7 @@ public class Class7282
     }
     
     public static void method22336(final AxisAlignedBB class6221, final float n, final float n2, final float n3, final float n4) {
-        method22337(class6221.field25073, class6221.field25074, class6221.field25075, class6221.field25076, class6221.field25077, class6221.field25078, n, n2, n3, n4);
+        method22337(class6221.minX, class6221.minY, class6221.minZ, class6221.maxX, class6221.maxY, class6221.maxZ, n, n2, n3, n4);
     }
     
     public static void method22337(final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final float n7, final float n8, final float n9, final float n10) {

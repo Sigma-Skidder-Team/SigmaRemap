@@ -16,7 +16,7 @@ public abstract class Class6409 extends Class6404
     public ItemStack method19087(final Class5491 class5491, final ItemStack class5492) {
         final World method16763 = class5491.method16763();
         final IPosition method16764 = Class3955.method12072(class5491);
-        final Direction class5493 = class5491.method16765().method21772((Class7111<Direction>)Class3955.field17859);
+        final Direction class5493 = class5491.method16765().get((IProperty<Direction>)Class3955.field17859);
         final Class401 method16765 = this.method19093(method16763, method16764, class5492);
         method16765.method1958(class5493.getXOffset(), class5493.getYOffset() + 0.1f, class5493.getZOffset(), this.method19095(), this.method19094());
         method16763.method6886((Entity)method16765);

@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.Matrix4f;
 public class Class8049 extends Class8048
 {
     public Class8049() {
-        super(Class6332.method18787(new Class1932("")), Class6332.method18788(new Class1932("")), 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+        super(Class6332.method18787(new ResourceLocation("")), Class6332.method18788(new ResourceLocation("")), 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
     }
     
     @Override

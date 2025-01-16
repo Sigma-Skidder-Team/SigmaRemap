@@ -16,11 +16,11 @@ public interface Class1727 extends Closeable
 {
     InputStream method6096(final String p0) throws IOException;
     
-    InputStream method6097(final Class346 p0, final Class1932 p1) throws IOException;
+    InputStream method6097(final Class346 p0, final ResourceLocation p1) throws IOException;
     
-    Collection<Class1932> method6098(final Class346 p0, final String p1, final String p2, final int p3, final Predicate<String> p4);
+    Collection<ResourceLocation> method6098(final Class346 p0, final String p1, final String p2, final int p3, final Predicate<String> p4);
     
-    boolean method6099(final Class346 p0, final Class1932 p1);
+    boolean method6099(final Class346 p0, final ResourceLocation p1);
     
     Set<String> method6100(final Class346 p0);
     

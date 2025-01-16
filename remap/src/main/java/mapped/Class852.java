@@ -320,8 +320,8 @@ public class Class852 extends Class759 implements Class762
     }
     
     private void method5112(final List<Entity> list) {
-        final double n = (this.field4537.getBoundingBox().field25073 + this.field4537.getBoundingBox().field25076) / 2.0;
-        final double n2 = (this.field4537.getBoundingBox().field25075 + this.field4537.getBoundingBox().field25078) / 2.0;
+        final double n = (this.field4537.getBoundingBox().minX + this.field4537.getBoundingBox().maxX) / 2.0;
+        final double n2 = (this.field4537.getBoundingBox().minZ + this.field4537.getBoundingBox().maxZ) / 2.0;
         for (final Entity class399 : list) {
             if (!(class399 instanceof LivingEntity)) {
                 continue;
@@ -356,22 +356,22 @@ public class Class852 extends Class759 implements Class762
     }
     
     private boolean method5115(final AxisAlignedBB class6221) {
-        final int method35644 = MathHelper.floor(class6221.field25073);
-        final int method35645 = MathHelper.floor(class6221.field25074);
-        final int method35646 = MathHelper.floor(class6221.field25075);
-        final int method35647 = MathHelper.floor(class6221.field25076);
-        final int method35648 = MathHelper.floor(class6221.field25077);
-        final int method35649 = MathHelper.floor(class6221.field25078);
+        final int method35644 = MathHelper.floor(class6221.minX);
+        final int method35645 = MathHelper.floor(class6221.minY);
+        final int method35646 = MathHelper.floor(class6221.minZ);
+        final int method35647 = MathHelper.floor(class6221.maxX);
+        final int method35648 = MathHelper.floor(class6221.maxY);
+        final int method35649 = MathHelper.floor(class6221.maxZ);
         boolean b = false;
         boolean b2 = false;
         for (int i = method35644; i <= method35647; ++i) {
             for (int j = method35645; j <= method35648; ++j) {
                 for (int k = method35646; k <= method35649; ++k) {
                     final BlockPos class6222 = new BlockPos(i, j, k);
-                    final BlockState method35650 = this.world.method6701(class6222);
-                    final Class3833 method35651 = method35650.method21696();
+                    final BlockState method35650 = this.world.getBlockState(class6222);
+                    final Block method35651 = method35650.getBlock();
                     if (!method35650.method21706()) {
-                        if (method35650.method21697() != Class8059.field33165) {
+                        if (method35650.getMaterial() != Material.FIRE) {
                             if (this.world.method6765().method31216(Class8878.field37316) && !Class7188.field27929.method25618(method35651)) {
                                 b2 = (this.world.method6690(class6222, false) || b2);
                             }

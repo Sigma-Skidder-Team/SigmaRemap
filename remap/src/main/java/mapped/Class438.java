@@ -28,7 +28,7 @@ public class Class438 extends TileEntity implements Class439
     @Override
     public void method2161() {
         if (this.method2215()) {
-            this.method2218(null, this.field2656.method6701(this.method2193()), Class2144.field12626);
+            this.method2218(null, this.field2656.getBlockState(this.getPos()), Class2144.field12626);
         }
         super.method2161();
     }
@@ -37,7 +37,7 @@ public class Class438 extends TileEntity implements Class439
         if (this.field2656 != null) {
             final Iterator<BlockPos> iterator = BlockPos.getAllInBoxMutable(this.field2657.add(-1, -1, -1), this.field2657.add(1, 1, 1)).iterator();
             while (iterator.hasNext()) {
-                if (!(this.field2656.method6701(iterator.next()).method21696() instanceof Class4011)) {
+                if (!(this.field2656.getBlockState(iterator.next()).method21696() instanceof Class4011)) {
                     continue;
                 }
                 return true;
@@ -91,11 +91,11 @@ public class Class438 extends TileEntity implements Class439
     }
     
     public static int method2222(final Class7096 class7096) {
-        return class7096.method21772((Class7111<Integer>)Class3961.field17902);
+        return class7096.method21772((IProperty<Integer>)Class3961.field17902);
     }
     
     public boolean method2223() {
-        return Class3918.method12033(this.field2656, this.method2193(), 5);
+        return Class3918.method12033(this.field2656, this.getPos(), 5);
     }
     
     public void method2224() {
@@ -118,7 +118,7 @@ public class Class438 extends TileEntity implements Class439
                         }
                     }
                 }
-                final BlockPos method2193 = this.method2193();
+                final BlockPos method2193 = this.getPos();
                 this.field2656.method6706(null, method2193.getX(), method2193.getY(), method2193.getZ(), Class8520.field35021, Class286.field1582, 1.0f, 1.0f);
             }
             class399.method1652();
@@ -126,7 +126,7 @@ public class Class438 extends TileEntity implements Class439
     }
     
     private boolean method2226(final Class7096 class7096, final Class51 class7097, final List<Entity> list, final Class2144 class7098) {
-        final BlockPos method2193 = this.method2193();
+        final BlockPos method2193 = this.getPos();
         if (this.field2656.method6704() || this.field2656.method6771()) {
             if (class7098 != Class2144.field12626) {
                 return false;
@@ -135,9 +135,9 @@ public class Class438 extends TileEntity implements Class439
         class7097.method330("Passengers");
         class7097.method330("Leash");
         class7097.method303("UUID");
-        final Direction class7099 = class7096.method21772((Class7111<Direction>)Class3961.field17901);
+        final Direction class7099 = class7096.method21772((IProperty<Direction>)Class3961.field17901);
         final BlockPos method2194 = method2193.method1149(class7099);
-        final boolean b = !this.field2656.method6701(method2194).method21727(this.field2656, method2194).method24540();
+        final boolean b = !this.field2656.getBlockState(method2194).method21727(this.field2656, method2194).method24540();
         if (b && class7098 != Class2144.field12626) {
             return false;
         }
@@ -167,7 +167,7 @@ public class Class438 extends TileEntity implements Class439
                             if (method2197 + n2 > 5) {
                                 --n2;
                             }
-                            this.field2656.method6692(this.method2193(), (Class7096)((Class7097<Object, Object>)class7096).method21773((Class7111<Comparable>)Class3961.field17902, method2197 + n2));
+                            this.field2656.method6692(this.getPos(), (Class7096)((StateHolder<Object, Object>)class7096).with((IProperty<Comparable>)Class3961.field17902, method2197 + n2));
                         }
                     }
                 }
@@ -176,7 +176,7 @@ public class Class438 extends TileEntity implements Class439
                     list.add(class7100);
                 }
             }
-            final BlockPos method2198 = this.method2193();
+            final BlockPos method2198 = this.getPos();
             this.field2656.method6706(null, method2198.getX(), method2198.getY(), method2198.getZ(), Class8520.field35022, Class286.field1582, 1.0f, 1.0f);
             return this.field2656.method6886(method2195);
         }
@@ -209,7 +209,7 @@ public class Class438 extends TileEntity implements Class439
     public void method2229() {
         if (!this.field2656.isRemote) {
             this.method2228();
-            final BlockPos method2193 = this.method2193();
+            final BlockPos method2193 = this.getPos();
             if (this.field2663.size() > 0) {
                 if (this.field2656.method6790().nextDouble() < 0.005) {
                     this.field2656.method6706(null, method2193.getX() + 0.5, method2193.getY(), method2193.getZ() + 0.5, Class8520.field35024, Class286.field1582, 1.0f, 1.0f);

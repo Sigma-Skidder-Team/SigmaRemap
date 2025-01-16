@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.List;
 import java.util.Arrays;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonSerializationContext;
@@ -13,7 +12,7 @@ import com.google.gson.JsonObject;
 public class Class6241 extends Class6227<Class145>
 {
     public Class6241() {
-        super(new Class1932("set_contents"), Class145.class);
+        super(new ResourceLocation("set_contents"), Class145.class);
     }
     
     public void method18571(final JsonObject jsonObject, final Class145 class145, final JsonSerializationContext jsonSerializationContext) {

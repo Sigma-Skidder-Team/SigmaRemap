@@ -33,7 +33,7 @@ public class Class8929
         if (method32784 != null) {
             method31488(s, method32784, list);
         }
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             final Class27 method32785 = Class3660.method11285();
             if (method32785 != null) {
                 method31488("shaders/block.properties", method32785, list);
@@ -46,7 +46,7 @@ public class Class8929
     }
     
     private static void method31488(final String str, final Properties properties, final List<Class6332> list) {
-        Class8571.method28847("CustomBlockLayers: " + str);
+        Config.method28847("CustomBlockLayers: " + str);
         method31489("solid", Class9484.field40759, properties, list);
         method31489("cutout", Class9484.field40761, properties, list);
         method31489("cutout_mipped", Class9484.field40760, properties, list);
@@ -65,7 +65,7 @@ public class Class8929
                             list.add(null);
                         }
                         if (list.get(method29443) != null) {
-                            Class8571.method28848("CustomBlockLayers: Block layer is already set, block: " + method29443 + ", layer: " + s);
+                            Config.warn("CustomBlockLayers: Block layer is already set, block: " + method29443 + ", layer: " + s);
                         }
                         list.set(method29443, class6332);
                     }

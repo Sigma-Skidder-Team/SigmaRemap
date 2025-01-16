@@ -26,7 +26,7 @@ public class Class3237 extends Class3167
     @Class6753
     public void method10218(final Class5719 class5719) {
         if (this.method9906()) {
-            if (!(class5719.method16986().method21696() instanceof Class3992)) {
+            if (!(class5719.method16986().getBlock() instanceof Class3992)) {
                 class5719.method16961(true);
             }
             else {

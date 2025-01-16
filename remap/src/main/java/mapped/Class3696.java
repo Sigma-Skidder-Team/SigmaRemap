@@ -11,7 +11,7 @@ import java.nio.file.Path;
 public class Class3696 extends Class3693<EntityType<?>>
 {
     public Class3696(final Class7203 class7203) {
-        super(class7203, Class90.field210);
+        super(class7203, Registry.field210);
     }
     
     @Override
@@ -23,7 +23,7 @@ public class Class3696 extends Class3693<EntityType<?>>
     }
     
     @Override
-    public Path method11367(final Class1932 class1932) {
+    public Path method11367(final ResourceLocation class1932) {
         return this.field17010.method22099().resolve("data/" + class1932.method7798() + "/tags/entity_types/" + class1932.method7797() + ".json");
     }
     

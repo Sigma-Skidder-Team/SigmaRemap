@@ -289,7 +289,7 @@ public class Class425 extends Entity
                         final double n4 = this.getPosX() + MathHelper.sin(n3) * method1138 * 0.1f;
                         final double n5 = MathHelper.floor(this.getPosY()) + 1.0f;
                         final double n6 = this.getPosZ() + MathHelper.cos(n3) * method1138 * 0.1f;
-                        if (class355.method6701(new BlockPos(n4, n5 - 1.0, n6)).method21696() == Class7521.field29173) {
+                        if (class355.getBlockState(new BlockPos(n4, n5 - 1.0, n6)).method21696() == Class7521.field29173) {
                             class355.method6911(Class8432.field34646, n4, n5, n6, 2 + this.rand.nextInt(2), 0.10000000149011612, 0.0, 0.10000000149011612, 0.0);
                         }
                     }
@@ -318,7 +318,7 @@ public class Class425 extends Entity
                     final double n9 = this.getPosX() + method1140 * this.field2590 * 0.1f;
                     final double n10 = MathHelper.floor(this.getPosY()) + 1.0f;
                     final double n11 = this.getPosZ() + method1141 * this.field2590 * 0.1f;
-                    if (class355.method6701(new BlockPos(n9, n10 - 1.0, n11)).method21696() == Class7521.field29173) {
+                    if (class355.getBlockState(new BlockPos(n9, n10 - 1.0, n11)).method21696() == Class7521.field29173) {
                         if (this.rand.nextFloat() < 0.15f) {
                             class355.method6911(Class8432.field34601, n9, n10 - 0.10000000149011612, n11, 1, method1140, 0.1, method1141, 0.0);
                         }

@@ -8,7 +8,7 @@ import net.minecraft.entity.Entity;
 
 public interface Class1876
 {
-    boolean method6688(final BlockPos p0, final BlockState p1, final int p2);
+    boolean setBlockState(final BlockPos p0, final BlockState p1, final int p2);
     
     boolean method6690(final BlockPos p0, final boolean p1);
     

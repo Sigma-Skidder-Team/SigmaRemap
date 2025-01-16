@@ -34,7 +34,7 @@ public class Class4517 extends Class4515
     }
     
     private void method13513(final Class1795 class1795) {
-        this.method13510(class1795.method6518(new Class1932("end_city/" + this.field19923)), this.field19920, (this.field19924 ? Class7699.method24525() : Class7699.method24526()).method32843().method32845(this.field19852));
+        this.method13510(class1795.method6518(new ResourceLocation("end_city/" + this.field19923)), this.field19920, (this.field19924 ? Class7699.method24525() : Class7699.method24526()).method32843().method32845(this.field19852));
     }
     
     @Override

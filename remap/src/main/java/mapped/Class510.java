@@ -76,7 +76,7 @@ public class Class510 extends Entity
     }
     
     private void method2613() {
-        this.world.method6722(this, this.getPosX(), this.method1942(0.0625), this.getPosZ(), 4.0f, Class2196.field13366);
+        this.world.createExplosion(this, this.getPosX(), this.method1942(0.0625), this.getPosZ(), 4.0f, Class2196.field13366);
     }
     
     @Override

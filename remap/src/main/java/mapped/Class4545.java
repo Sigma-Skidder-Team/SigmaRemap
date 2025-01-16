@@ -47,7 +47,7 @@ public class Class4545 extends Class4535<Class5141>
         for (int l = -n5; l < n5; ++l) {
             for (int n7 = -n5; n7 < n5; ++n7) {
                 for (int n8 = -1; n8 > -min; --n8) {
-                    final int n9 = b2 ? MathHelper.method35649(n5 * (1.0f - (float)Math.pow(n8, 2.0) / (min * 8.0f))) : n5;
+                    final int n9 = b2 ? MathHelper.ceil(n5 * (1.0f - (float)Math.pow(n8, 2.0) / (min * 8.0f))) : n5;
                     final int method13553 = this.method13553(random, -n8, min, min2);
                     if (l < method13553) {
                         this.method13546(class1851, random, class1853, min, l, n8, n7, method13553, n9, b2, n3, n, b, field22127);
@@ -92,14 +92,14 @@ public class Class4545 extends Class4535<Class5141>
             for (int j = -n6; j < n6; ++j) {
                 if (this.method13550(i, j, class356, n6, n7, n3) < 0.0) {
                     final BlockPos method1134 = class354.add(i, n2, j);
-                    final Class3833 method1135 = class355.method6701(method1134).method21696();
+                    final Block method1135 = class355.getBlockState(method1134).getBlock();
                     if (this.method13554(method1135) || method1135 == Class7521.field29331) {
                         if (!b) {
-                            this.method13529(class355, method1134, Class7521.field29147.method11878());
+                            this.method13529(class355, method1134, Class7521.field29147.getDefaultState());
                             this.method13545(class355, method1134);
                         }
                         else {
-                            this.method13529(class355, method1134, Class7521.field29173.method11878());
+                            this.method13529(class355, method1134, Class7521.field29173.getDefaultState());
                         }
                     }
                 }
@@ -108,8 +108,8 @@ public class Class4545 extends Class4535<Class5141>
     }
     
     private void method13545(final Class1851 class1851, final BlockPos class1852) {
-        if (class1851.method6701(class1852.method1137()).method21696() == Class7521.field29329) {
-            this.method13529(class1851, class1852.method1137(), Class7521.field29147.method11878());
+        if (class1851.getBlockState(class1852.method1137()).getBlock() == Class7521.field29329) {
+            this.method13529(class1851, class1852.method1137(), Class7521.field29147.getDefaultState());
         }
     }
     
@@ -125,9 +125,9 @@ public class Class4545 extends Class4535<Class5141>
     }
     
     private void method13547(final BlockPos class354, final Class1851 class355, final Random random, final int n, final int n2, final boolean b, final boolean b2, final BlockState class356) {
-        final BlockState method6701 = class355.method6701(class354);
-        final Class3833 method6702 = method6701.method21696();
-        if (method6701.method21697() != Class8059.field33153) {
+        final BlockState method6701 = class355.getBlockState(class354);
+        final Block method6702 = method6701.getBlock();
+        if (method6701.getMaterial() != Material.AIR) {
             if (method6702 != Class7521.field29331) {
                 if (method6702 != Class7521.field29330) {
                     if (method6702 != Class7521.field29173) {
@@ -142,7 +142,7 @@ public class Class4545 extends Class4535<Class5141>
             if (method6702 != Class7521.field29173) {
                 if (n <= random.nextInt(Math.max(1, n2 / n3)) + n2 * 0.6) {
                     if (b3) {
-                        this.method13529(class355, class354, Class7521.field29331.method11878());
+                        this.method13529(class355, class354, Class7521.field29331.getDefaultState());
                         return;
                     }
                 }
@@ -175,18 +175,18 @@ public class Class4545 extends Class4535<Class5141>
         if (n2 > 15 + random.nextInt(5)) {
             n5 = (1.0f - ((n >= 3 + random.nextInt(6)) ? n : (n / 2)) / (n2 * n4 * 0.4f)) * n3;
         }
-        return MathHelper.method35649(n5 / 2.0f);
+        return MathHelper.ceil(n5 / 2.0f);
     }
     
     private int method13552(final int n, final int n2, final int n3) {
-        return MathHelper.method35649((1.0f - (float)Math.pow(n, 2.0) / (n2 * 1.0f)) * n3 / 2.0f);
+        return MathHelper.ceil((1.0f - (float)Math.pow(n, 2.0) / (n2 * 1.0f)) * n3 / 2.0f);
     }
     
     private int method13553(final Random random, final int n, final int n2, final int n3) {
-        return MathHelper.method35649((1.0f - n / (n2 * (1.0f + random.nextFloat() / 2.0f))) * n3 / 2.0f);
+        return MathHelper.ceil((1.0f - n / (n2 * (1.0f + random.nextFloat() / 2.0f))) * n3 / 2.0f);
     }
     
-    private boolean method13554(final Class3833 class3833) {
+    private boolean method13554(final Block class3833) {
         if (class3833 != Class7521.field29548) {
             if (class3833 != Class7521.field29331) {
                 if (class3833 != Class7521.field29758) {
@@ -198,7 +198,7 @@ public class Class4545 extends Class4535<Class5141>
     }
     
     private boolean method13555(final Class1855 class1855, final BlockPos class1856) {
-        return class1855.method6701(class1856.method1139()).method21697() == Class8059.field33153;
+        return class1855.getBlockState(class1856.method1139()).getMaterial() == Material.AIR;
     }
     
     private void method13556(final Class1851 class1851, final BlockPos class1852, final int n, final int n2, final boolean b, final int n3) {
@@ -206,26 +206,26 @@ public class Class4545 extends Class4535<Class5141>
             for (int j = -n4; j <= n4; ++j) {
                 for (int k = 0; k <= n2; ++k) {
                     final BlockPos method1134 = class1852.add(i, k, j);
-                    final Class3833 method1135 = class1851.method6701(method1134).method21696();
+                    final Block method1135 = class1851.getBlockState(method1134).getBlock();
                     if (this.method13554(method1135) || method1135 == Class7521.field29329) {
                         if (!this.method13555(class1851, method1134)) {
                             if (this.method13554(method1135)) {
-                                final Class3833[] array = { class1851.method6701(method1134.method1145()).method21696(), class1851.method6701(method1134.method1147()).method21696(), class1851.method6701(method1134.method1141()).method21696(), class1851.method6701(method1134.method1143()).method21696() };
+                                final Block[] array = { class1851.getBlockState(method1134.method1145()).getBlock(), class1851.getBlockState(method1134.method1147()).getBlock(), class1851.getBlockState(method1134.method1141()).getBlock(), class1851.getBlockState(method1134.method1143()).getBlock() };
                                 int n5 = 0;
-                                final Class3833[] array2 = array;
+                                final Block[] array2 = array;
                                 for (int length = array2.length, l = 0; l < length; ++l) {
                                     if (!this.method13554(array2[l])) {
                                         ++n5;
                                     }
                                 }
                                 if (n5 >= 3) {
-                                    this.method13529(class1851, method1134, Class7521.field29147.method11878());
+                                    this.method13529(class1851, method1134, Class7521.field29147.getDefaultState());
                                 }
                             }
                         }
                         else {
-                            this.method13529(class1851, method1134, Class7521.field29147.method11878());
-                            this.method13529(class1851, method1134.method1137(), Class7521.field29147.method11878());
+                            this.method13529(class1851, method1134, Class7521.field29147.getDefaultState());
+                            this.method13529(class1851, method1134.method1137(), Class7521.field29147.getDefaultState());
                         }
                     }
                 }

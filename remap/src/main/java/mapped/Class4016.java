@@ -8,7 +8,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 
-public class Class4016 extends Class3833
+public class Class4016 extends Block
 {
     private static String[] field18090;
     public static final VoxelShape field18091;
@@ -30,7 +30,7 @@ public class Class4016 extends Class3833
     
     @Override
     public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        return class7096.method21752(class7099, class7100) ? super.method11789(class7096, class7097, class7098, class7099, class7100, class7101) : Class7521.field29147.method11878();
+        return class7096.method21752(class7099, class7100) ? super.method11789(class7096, class7097, class7098, class7099, class7100, class7101) : Class7521.field29147.getDefaultState();
     }
     
     @Override
@@ -39,6 +39,6 @@ public class Class4016 extends Class3833
     }
     
     static {
-        field18091 = Class3833.method11778(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
+        field18091 = Block.method11778(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
     }
 }

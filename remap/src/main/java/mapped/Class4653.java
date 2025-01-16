@@ -36,7 +36,7 @@ public class Class4653 extends Class4651
     
     @Override
     public Class6772 method13902() {
-        return this.method13919(MathHelper.floor(this.field20141.getBoundingBox().field25073), MathHelper.floor(this.field20141.getBoundingBox().field25074 + 0.5), MathHelper.floor(this.field20141.getBoundingBox().field25075));
+        return this.method13919(MathHelper.floor(this.field20141.getBoundingBox().minX), MathHelper.floor(this.field20141.getBoundingBox().minY + 0.5), MathHelper.floor(this.field20141.getBoundingBox().minZ));
     }
     
     @Override
@@ -184,7 +184,7 @@ public class Class4653 extends Class4651
             return class354.getY() + 0.5;
         }
         final BlockPos method1139 = class354.method1139();
-        final VoxelShape method1140 = this.field20140.method6701(method1139).method21727(this.field20140, method1139);
+        final VoxelShape method1140 = this.field20140.getBlockState(method1139).getCollisionShape(this.field20140, method1139);
         return method1139.getY() + (method1140.method24540() ? 0.0 : method1140.method24536(Axis.Y));
     }
     
@@ -266,8 +266,8 @@ public class Class4653 extends Class4651
     @Override
     public Class257 method13910(final Class1855 class1855, final boolean b, final boolean b2, final BlockPos class1856, Class257 class1857) {
         if (class1857 == Class257.field1213) {
-            if (!(class1855.method6701(class1856).method21696() instanceof Class4017)) {
-                if (!(class1855.method6701(class1856.method1139()).method21696() instanceof Class4017)) {
+            if (!(class1855.getBlockState(class1856).getBlock() instanceof Class4017)) {
+                if (!(class1855.getBlockState(class1856.method1139()).getBlock() instanceof Class4017)) {
                     class1857 = Class257.field1209;
                 }
             }
@@ -294,7 +294,7 @@ public class Class4653 extends Class4651
         if (class1856 != Class257.field1211) {
             if (class1856 == Class257.field1206) {
                 if (n2 >= 1) {
-                    final Class3833 method21696 = class1855.method6701(new BlockPos(n, n2 - 1, n3)).method21696();
+                    final Block method21696 = class1855.getBlockState(new BlockPos(n, n2 - 1, n3)).getBlock();
                     final Class257 method21697 = Class4651.method13916(class1855, n, n2 - 1, n3);
                     Label_0209: {
                         if (method21697 != Class257.field1207) {

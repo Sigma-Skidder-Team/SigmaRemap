@@ -29,6 +29,6 @@ public enum Class211 implements Class195
     }
     
     static {
-        field733 = Class90.field217.method504(Class7102.field27646);
+        field733 = Registry.field217.getId(Class7102.field27646);
     }
 }

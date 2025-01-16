@@ -21,17 +21,17 @@ public class Class3878 extends Class3874 implements Class3872
     
     public Class3878(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)this.method11952(), 0));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)this.method11952(), 0));
     }
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return Class3878.field17530[class7096.method21772((Class7111<Integer>)this.method11952())];
+        return Class3878.field17530[class7096.get((IProperty<Integer>)this.method11952())];
     }
     
     @Override
     public boolean method11943(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        return class7096.method21696() == Class7521.field29298;
+        return class7096.getBlock() == Class7521.field29298;
     }
     
     public Class7112 method11952() {
@@ -43,15 +43,15 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     public int method11954(final BlockState class7096) {
-        return class7096.method21772((Class7111<Integer>)this.method11952());
+        return class7096.get((IProperty<Integer>)this.method11952());
     }
     
     public BlockState method11955(final int i) {
-        return ((Class7097<O, BlockState>)this.method11878()).method21773((Class7111<Comparable>)this.method11952(), i);
+        return ((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)this.method11952(), i);
     }
     
     public boolean method11956(final BlockState class7096) {
-        return class7096.method21772((Class7111<Integer>)this.method11952()) >= this.method11953();
+        return class7096.get((IProperty<Integer>)this.method11952()) >= this.method11953();
     }
     
     @Override
@@ -61,7 +61,7 @@ public class Class3878 extends Class3874 implements Class3872
             final int method11954 = this.method11954(class7096);
             if (method11954 < this.method11953()) {
                 if (random.nextInt((int)(25.0f / method11959(this, class7097, class7098)) + 1) == 0) {
-                    class7097.method6688(class7098, this.method11955(method11954 + 1), 2);
+                    class7097.setBlockState(class7098, this.method11955(method11954 + 1), 2);
                 }
             }
         }
@@ -73,23 +73,23 @@ public class Class3878 extends Class3874 implements Class3872
         if (n > method11953) {
             n = method11953;
         }
-        class1847.method6688(class1848, this.method11955(n), 2);
+        class1847.setBlockState(class1848, this.method11955(n), 2);
     }
     
     public int method11958(final World class1847) {
         return MathHelper.method35658(class1847.rand, 2, 5);
     }
     
-    public static float method11959(final Class3833 class3833, final Class1855 class3834, final BlockPos class3835) {
+    public static float method11959(final Block class3833, final Class1855 class3834, final BlockPos class3835) {
         float n = 1.0f;
         final BlockPos method1139 = class3835.method1139();
         for (int i = -1; i <= 1; ++i) {
             for (int j = -1; j <= 1; ++j) {
                 float n2 = 0.0f;
-                final BlockState method1140 = class3834.method6701(method1139.add(i, 0, j));
-                if (method1140.method21696() == Class7521.field29298) {
+                final BlockState method1140 = class3834.getBlockState(method1139.add(i, 0, j));
+                if (method1140.getBlock() == Class7521.field29298) {
                     n2 = 1.0f;
-                    if (method1140.method21772((Class7111<Integer>)Class4021.field18105) > 0) {
+                    if (method1140.get((IProperty<Integer>)Class4021.field18105) > 0) {
                         n2 = 3.0f;
                     }
                 }
@@ -103,18 +103,18 @@ public class Class3878 extends Class3874 implements Class3872
         final BlockPos method1142 = class3835.method1143();
         final BlockPos method1143 = class3835.method1145();
         final BlockPos method1144 = class3835.method1147();
-        final boolean b = class3833 == class3834.method6701(method1143).method21696() || class3833 == class3834.method6701(method1144).method21696();
-        final boolean b2 = class3833 == class3834.method6701(method1141).method21696() || class3833 == class3834.method6701(method1142).method21696();
+        final boolean b = class3833 == class3834.getBlockState(method1143).getBlock() || class3833 == class3834.getBlockState(method1144).getBlock();
+        final boolean b2 = class3833 == class3834.getBlockState(method1141).getBlock() || class3833 == class3834.getBlockState(method1142).getBlock();
         if (b && b2) {
             n /= 2.0f;
         }
         else {
             boolean b3 = false;
             Label_0371: {
-                if (class3833 != class3834.method6701(method1143.method1141()).method21696()) {
-                    if (class3833 != class3834.method6701(method1144.method1141()).method21696()) {
-                        if (class3833 != class3834.method6701(method1144.method1143()).method21696()) {
-                            if (class3833 != class3834.method6701(method1143.method1143()).method21696()) {
+                if (class3833 != class3834.getBlockState(method1143.method1141()).getBlock()) {
+                    if (class3833 != class3834.getBlockState(method1144.method1141()).getBlock()) {
+                        if (class3833 != class3834.getBlockState(method1144.method1143()).getBlock()) {
+                            if (class3833 != class3834.getBlockState(method1143.method1143()).getBlock()) {
                                 b3 = false;
                                 break Label_0371;
                             }
@@ -175,12 +175,12 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class3878.field17529);
     }
     
     static {
         field17529 = Class8970.field37773;
-        field17530 = new VoxelShape[] { Class3833.method11778(0.0, 0.0, 0.0, 16.0, 2.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 4.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 6.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 8.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 10.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 12.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 14.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 16.0, 16.0) };
+        field17530 = new VoxelShape[] { Block.method11778(0.0, 0.0, 0.0, 16.0, 2.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 4.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 6.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 8.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 10.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 12.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 14.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 16.0, 16.0) };
     }
 }

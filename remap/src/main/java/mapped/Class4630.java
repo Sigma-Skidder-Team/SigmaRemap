@@ -9,10 +9,10 @@ import com.google.gson.JsonObject;
 
 public class Class4630 extends Class4611<Class4218>
 {
-    private static final Class1932 field20096;
+    private static final ResourceLocation field20096;
     
     @Override
-    public Class1932 method13717() {
+    public ResourceLocation method13717() {
         return Class4630.field20096;
     }
     
@@ -25,6 +25,6 @@ public class Class4630 extends Class4611<Class4218>
     }
     
     static {
-        field20096 = new Class1932("bred_animals");
+        field20096 = new ResourceLocation("bred_animals");
     }
 }

@@ -27,7 +27,7 @@ public abstract class Class6346<C extends Class7065>
         this.field25386 = field25385;
     }
     
-    public void method18871(final Class1860 class1860) {
+    public void method18871(final IChunk class1860) {
         ((Class1865)class1860).method7097(new Class1873(class1860.method7019(), this.field25385));
     }
     
@@ -35,7 +35,7 @@ public abstract class Class6346<C extends Class7065>
         return class5507.method16810(class5508);
     }
     
-    public void method18873(final BiomeManager class5507, final Class1860 class5508, final Class2126 class5509) {
+    public void method18873(final BiomeManager class5507, final IChunk class5508, final Class2126 class5509) {
         final Class2317 class5510 = new Class2317();
         final Class7859 method7019 = class5508.method7019();
         final int field32290 = method7019.field32290;
@@ -79,13 +79,13 @@ public abstract class Class6346<C extends Class7065>
             }
             catch (final Exception ex) {
                 final Class7689 method7154 = Class7689.method24421(ex, "Biome decoration");
-                method7154.method24418("Generation").method16297("CenterX", method7150).method16297("CenterZ", method7151).method16297("Step", class1881).method16297("Seed", method7153).method16297("Biome", Class90.field217.method503(method7152));
+                method7154.method24418("Generation").method16297("CenterX", method7150).method16297("CenterZ", method7151).method16297("Step", class1881).method16297("Seed", method7153).method16297("Biome", Registry.field217.getKey(method7152));
                 throw new Class2365(method7154);
             }
         }
     }
     
-    public abstract void method18859(final Class1878 p0, final Class1860 p1);
+    public abstract void method18859(final Class1878 p0, final IChunk p1);
     
     public void method18868(final Class1878 class1878) {
     }
@@ -124,7 +124,7 @@ public abstract class Class6346<C extends Class7065>
         return this.field25383.method6959(class1977).method9840(class1976);
     }
     
-    public void method18881(final BiomeManager class5507, final Class1860 class5508, final Class6346<?> class5509, final Class1795 class5510) {
+    public void method18881(final BiomeManager class5507, final IChunk class5508, final Class6346<?> class5509, final Class1795 class5510) {
         for (final Class4574 class5511 : Class4535.field20023.values()) {
             if (!class5509.method18879().method7121(class5511)) {
                 continue;
@@ -144,7 +144,7 @@ public abstract class Class6346<C extends Class7065>
         }
     }
     
-    public void method18882(final Class1851 class1851, final Class1860 class1852) {
+    public void method18882(final Class1851 class1851, final IChunk class1852) {
         final int field32290 = class1852.method7019().field32290;
         final int field32291 = class1852.method7019().field32291;
         final int n = field32290 << 4;
@@ -167,7 +167,7 @@ public abstract class Class6346<C extends Class7065>
         }
     }
     
-    public abstract void method18861(final Class1851 p0, final Class1860 p1);
+    public abstract void method18861(final Class1851 p0, final IChunk p1);
     
     public int method18853() {
         return 63;

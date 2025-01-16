@@ -12,7 +12,7 @@ import com.google.gson.JsonObject;
 public class Class6248 extends Class6227<Class129>
 {
     public Class6248() {
-        super(new Class1932("exploration_map"), Class129.class);
+        super(new ResourceLocation("exploration_map"), Class129.class);
     }
     
     public void method18584(final JsonObject jsonObject, final Class129 class129, final JsonSerializationContext jsonSerializationContext) {

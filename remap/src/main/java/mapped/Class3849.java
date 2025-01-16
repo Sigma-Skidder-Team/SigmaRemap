@@ -26,23 +26,23 @@ public class Class3849 extends Class3846
                 class1847.method6690(class1849, false);
                 return;
             }
-            final Class8059 method21697 = class1847.method6701(class1849.method1139()).method21697();
+            final Material method21697 = class1847.getBlockState(class1849.method1139()).method21697();
             if (method21697.method26440() || method21697.method26438()) {
-                class1847.method6692(class1849, Class7521.field29173.method11878());
+                class1847.method6692(class1849, Class7521.field29173.getDefaultState());
             }
         }
     }
     
     @Override
     public void method11822(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
-        if (class7097.method6992(Class237.field912, class7098) > 11 - class7096.method21700(class7097, class7098)) {
+        if (class7097.method6992(Class237.field912, class7098) > 11 - class7096.getOpacity(class7097, class7098)) {
             this.method11910(class7096, class7097, class7098);
         }
     }
     
     public void method11910(final BlockState class7096, final World class7097, final BlockPos class7098) {
         if (!class7097.dimension.method20502()) {
-            class7097.method6692(class7098, Class7521.field29173.method11878());
+            class7097.method6692(class7098, Class7521.field29173.getDefaultState());
             class7097.method6698(class7098, Class7521.field29173, class7098);
         }
         else {
@@ -51,12 +51,12 @@ public class Class3849 extends Class3846
     }
     
     @Override
-    public Class2117 method11858(final BlockState class7096) {
-        return Class2117.field12340;
+    public PushReaction method11858(final BlockState class7096) {
+        return PushReaction.NORMAL;
     }
     
     @Override
-    public boolean method11779(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+    public boolean canEntitySpawn(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return class7099 == EntityType.field29015;
     }
 }

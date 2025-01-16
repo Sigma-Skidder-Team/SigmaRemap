@@ -43,16 +43,16 @@ public class Class1793 implements Class1662
     private final Queue<Class6177> field9925;
     private final Class1663 field9926;
     private final Random field9927;
-    private final Map<Class1932, Class5350<?>> field9928;
+    private final Map<ResourceLocation, Class5350<?>> field9928;
     private final Queue<Class6173> field9929;
-    private final Map<Class1932, Class7806> field9930;
+    private final Map<ResourceLocation, Class7806> field9930;
     private final Class1774 field9931;
     
     public Class1793(final World field9923, final Class1663 field9924) {
         this.field9924 = Maps.newIdentityHashMap();
         this.field9925 = Queues.newArrayDeque();
         this.field9927 = new Random();
-        this.field9928 = new HashMap<Class1932, Class5350<?>>();
+        this.field9928 = new HashMap<ResourceLocation, Class5350<?>>();
         this.field9929 = Queues.newArrayDeque();
         this.field9930 = Maps.newHashMap();
         this.field9931 = new Class1774(Class1774.field9854);
@@ -128,22 +128,22 @@ public class Class1793 implements Class1662
     }
     
     private <T extends Class6909> void method6472(final Class6907<T> class6907, final Class5350<T> class6908) {
-        this.field9928.put(Class90.field222.method503(class6907), class6908);
+        this.field9928.put(Registry.field222.getKey(class6907), class6908);
     }
     
     private <T extends Class6909> void method6473(final Class6907<T> class6907, final Class7759<T> class6908) {
         final Class7806 class6909 = new Class7806(this, null);
-        this.field9930.put(Class90.field222.method503(class6907), class6909);
-        this.field9928.put(Class90.field222.method503(class6907), class6908.method24763(class6909));
+        this.field9930.put(Registry.field222.getKey(class6907), class6909);
+        this.field9928.put(Registry.field222.getKey(class6907), class6908.method24763(class6909));
     }
     
     @Override
     public CompletableFuture<Void> method5785(final Class7885 class7885, final Class6582 class7886, final IProfiler class7887, final IProfiler class7888, final Executor executor, final Executor executor2) {
         Maps.newConcurrentMap();
-        return CompletableFuture.allOf((CompletableFuture<?>[])Class90.field222.method507().stream().map(p3 -> CompletableFuture.runAsync(() -> this.method6475(class7889, class7890, map), executor3)).toArray(CompletableFuture[]::new)).thenApplyAsync(p3 -> {
+        return CompletableFuture.allOf((CompletableFuture<?>[]) Registry.field222.method507().stream().map(p3 -> CompletableFuture.runAsync(() -> this.method6475(class7889, class7890, map), executor3)).toArray(CompletableFuture[]::new)).thenApplyAsync(p3 -> {
             class7891.method15295();
             class7891.method15297("stitching");
-            this.field9931.method6332(class7892, map2.values().stream().flatMap((Function<? super Object, ? extends Stream<? extends Class1932>>)Collection::stream), class7891, 0);
+            this.field9931.method6332(class7892, map2.values().stream().flatMap((Function<? super Object, ? extends Stream<? extends ResourceLocation>>)Collection::stream), class7891, 0);
             class7891.method15299();
             class7891.method15296();
             return;
@@ -167,11 +167,11 @@ public class Class1793 implements Class1662
         this.field9931.method6339();
     }
     
-    private void method6475(final Class6582 class6582, final Class1932 obj, final Map<Class1932, List<Class1932>> map) {
-        final Class1932 class6583 = new Class1932(obj.method7798(), "particles/" + obj.method7797() + ".json");
+    private void method6475(final Class6582 class6582, final ResourceLocation obj, final Map<ResourceLocation, List<ResourceLocation>> map) {
+        final ResourceLocation class6583 = new ResourceLocation(obj.method7798(), "particles/" + obj.method7797() + ".json");
         try (final Class1671 method19933 = class6582.method19933(class6583);
              final InputStreamReader inputStreamReader = new InputStreamReader(method19933.method5887(), Charsets.UTF_8)) {
-            final List<Class1932> method19934 = Class8638.method29314(Class9583.method35933(inputStreamReader)).method29313();
+            final List<ResourceLocation> method19934 = Class8638.method29314(Class9583.method35933(inputStreamReader)).method29313();
             final boolean containsKey = this.field9930.containsKey(obj);
             if (method19934 == null) {
                 if (containsKey) {
@@ -183,9 +183,9 @@ public class Class1793 implements Class1662
                     throw new IllegalStateException("Redundant texture list for particle " + obj);
                 }
                 map.put(obj, method19934.stream().map(class6584 -> {
-                    new Class1932(class6584.method7798(), "particle/" + class6584.method7797());
+                    new ResourceLocation(class6584.method7798(), "particle/" + class6584.method7797());
                     return;
-                }).collect((Collector<? super Object, ?, List<Class1932>>)Collectors.toList()));
+                }).collect((Collector<? super Object, ?, List<ResourceLocation>>)Collectors.toList()));
             }
         }
         catch (final IOException cause) {
@@ -213,13 +213,13 @@ public class Class1793 implements Class1662
     
     @Nullable
     private <T extends Class6909> Class6173 method6479(final T t, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        final Class5350 class5350 = this.field9928.get(Class90.field222.method503((Class6907<? extends Class6909>)t.method21272()));
+        final Class5350 class5350 = this.field9928.get(Registry.field222.getKey((Class6907<? extends Class6909>)t.method21272()));
         return (class5350 != null) ? class5350.method16516(t, this.field9923, n, n2, n3, n4, n5, n6) : null;
     }
     
     public void method6480(final Class6173 class6173) {
         if (class6173 != null) {
-            if (!(class6173 instanceof Class6201) || Class8571.method28884()) {
+            if (!(class6173 instanceof Class6201) || Config.method28884()) {
                 this.field9929.add(class6173);
             }
         }
@@ -227,9 +227,9 @@ public class Class1793 implements Class1662
     
     public void method6481() {
         this.field9924.forEach((class6179, queue2) -> {
-            this.field9923.method6796().method15297(class6179.toString());
+            this.field9923.method6796().startSection(class6179.toString());
             this.method6482(queue2);
-            this.field9923.method6796().method15299();
+            this.field9923.method6796().endSection();
             return;
         });
         if (!this.field9925.isEmpty()) {
@@ -359,20 +359,20 @@ public class Class1793 implements Class1662
     public void method6486(final BlockPos class354, final BlockState class355) {
         boolean b;
         if (Class9570.field41241.method22605() && Class9570.field41247.method22605()) {
-            class355.method21696();
+            class355.getBlock();
             b = (!Class9570.method35820(class355, Class9570.field41247, this.field9923, class354) && !Class9570.method35820(class355, Class9570.field41241, this.field9923, class354, this));
         }
         else {
             b = !class355.method21706();
         }
         if (b) {
-            class355.method21725(this.field9923, class354).method24544((n, n2, n3, n4, n5, n6) -> {
+            class355.getShape(this.field9923, class354).method24544((n, n2, n3, n4, n5, n6) -> {
                 final double min = Math.min(1.0, n4 - n);
                 final double min2 = Math.min(1.0, n5 - n2);
                 final double min3 = Math.min(1.0, n6 - n3);
-                final int max = Math.max(2, MathHelper.method35650(min / 0.25));
-                final int max2 = Math.max(2, MathHelper.method35650(min2 / 0.25));
-                final int max3 = Math.max(2, MathHelper.method35650(min3 / 0.25));
+                final int max = Math.max(2, MathHelper.ceil(min / 0.25));
+                final int max2 = Math.max(2, MathHelper.ceil(min2 / 0.25));
+                final int max3 = Math.max(2, MathHelper.ceil(min3 / 0.25));
                 for (int i = 0; i < max; ++i) {
                     for (int j = 0; j < max2; ++j) {
                         for (int k = 0; k < max3; ++k) {
@@ -388,32 +388,32 @@ public class Class1793 implements Class1662
     }
     
     public void method6487(final BlockPos class354, final Direction class355) {
-        final BlockState method6701 = this.field9923.method6701(class354);
+        final BlockState method6701 = this.field9923.getBlockState(class354);
         if (method6701.method21710() != Class2115.field12305) {
             final int method6702 = class354.getX();
             final int method6703 = class354.getY();
             final int method6704 = class354.getZ();
-            final AxisAlignedBB method6705 = method6701.method21725(this.field9923, class354).method24537();
-            double n = method6702 + this.field9927.nextDouble() * (method6705.field25076 - method6705.field25073 - 0.20000000298023224) + 0.10000000149011612 + method6705.field25073;
-            double n2 = method6703 + this.field9927.nextDouble() * (method6705.field25077 - method6705.field25074 - 0.20000000298023224) + 0.10000000149011612 + method6705.field25074;
-            double n3 = method6704 + this.field9927.nextDouble() * (method6705.field25078 - method6705.field25075 - 0.20000000298023224) + 0.10000000149011612 + method6705.field25075;
+            final AxisAlignedBB method6705 = method6701.getShape(this.field9923, class354).method24537();
+            double n = method6702 + this.field9927.nextDouble() * (method6705.maxX - method6705.minX - 0.20000000298023224) + 0.10000000149011612 + method6705.minX;
+            double n2 = method6703 + this.field9927.nextDouble() * (method6705.maxY - method6705.minY - 0.20000000298023224) + 0.10000000149011612 + method6705.minY;
+            double n3 = method6704 + this.field9927.nextDouble() * (method6705.maxZ - method6705.minZ - 0.20000000298023224) + 0.10000000149011612 + method6705.minZ;
             if (class355 == Direction.DOWN) {
-                n2 = method6703 + method6705.field25074 - 0.10000000149011612;
+                n2 = method6703 + method6705.minY - 0.10000000149011612;
             }
             if (class355 == Direction.UP) {
-                n2 = method6703 + method6705.field25077 + 0.10000000149011612;
+                n2 = method6703 + method6705.maxY + 0.10000000149011612;
             }
             if (class355 == Direction.NORTH) {
-                n3 = method6704 + method6705.field25075 - 0.10000000149011612;
+                n3 = method6704 + method6705.minZ - 0.10000000149011612;
             }
             if (class355 == Direction.SOUTH) {
-                n3 = method6704 + method6705.field25078 + 0.10000000149011612;
+                n3 = method6704 + method6705.maxZ + 0.10000000149011612;
             }
             if (class355 == Direction.WEST) {
-                n = method6702 + method6705.field25073 - 0.10000000149011612;
+                n = method6702 + method6705.minX - 0.10000000149011612;
             }
             if (class355 == Direction.EAST) {
-                n = method6702 + method6705.field25076 + 0.10000000149011612;
+                n = method6702 + method6705.maxX + 0.10000000149011612;
             }
             this.method6480(new Class6182(this.field9923, n, n2, n3, 0.0, 0.0, 0.0, method6701).method18452(class354).method18434(0.2f).method18433(0.6f));
         }
@@ -444,7 +444,7 @@ public class Class1793 implements Class1662
     }
     
     public void method6490(final BlockPos class354, final Class7005 class355) {
-        final BlockState method6701 = this.field9923.method6701(class354);
+        final BlockState method6701 = this.field9923.getBlockState(class354);
         if (method6701 != null) {
             if (!Class9570.method35820(method6701, Class9570.field41242, this.field9923, class355, this)) {
                 this.method6487(class354, class355.method21448());

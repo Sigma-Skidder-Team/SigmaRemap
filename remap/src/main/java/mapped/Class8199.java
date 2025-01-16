@@ -24,7 +24,7 @@ public class Class8199
         this.field33721 = field33721;
         this.field33722 = field33722;
         this.field33723 = field33723;
-        this.field33724 = new Class7875<BlockState>(Class8199.field33719, Class3833.field17391, Class9346::method34647, Class9346::method34649, Class7521.field29147.method11878());
+        this.field33724 = new Class7875<BlockState>(Class8199.field33719, Block.field17391, Class9346::method34647, Class9346::method34649, Class7521.field29147.getDefaultState());
     }
     
     public BlockState method27148(final int n, final int n2, final int n3) {
@@ -32,7 +32,7 @@ public class Class8199
     }
     
     public Class7099 method27149(final int n, final int n2, final int n3) {
-        return this.field33724.method25507(n, n2, n3).method21756();
+        return this.field33724.method25507(n, n2, n3).getFluidState();
     }
     
     public void method27150() {
@@ -55,15 +55,15 @@ public class Class8199
         else {
             class7097 = this.field33724.method25503(n, n2, n3, class7096);
         }
-        final Class7099 method21756 = class7097.method21756();
-        final Class7099 method21757 = class7096.method21756();
+        final Class7099 method21756 = class7097.getFluidState();
+        final Class7099 method21757 = class7096.getFluidState();
         if (!class7097.method21706()) {
             --this.field33721;
             if (class7097.method21757()) {
                 --this.field33722;
             }
         }
-        if (!method21756.method21781()) {
+        if (!method21756.isEmpty()) {
             --this.field33723;
         }
         if (!class7096.method21706()) {
@@ -72,7 +72,7 @@ public class Class8199
                 ++this.field33722;
             }
         }
-        if (!method21757.method21781()) {
+        if (!method21757.isEmpty()) {
             ++this.field33723;
         }
         return class7097;
@@ -126,14 +126,14 @@ public class Class8199
         this.field33722 = 0;
         this.field33723 = 0;
         this.field33724.method25515((class7096, n) -> {
-            final Class7099 method21756 = class7096.method21756();
+            final Class7099 method21756 = class7096.getFluidState();
             if (!class7096.method21706()) {
                 this.field33721 += (short)n;
                 if (class7096.method21757()) {
                     this.field33722 += (short)n;
                 }
             }
-            if (!method21756.method21781()) {
+            if (!method21756.isEmpty()) {
                 this.field33721 += (short)n;
                 if (method21756.method21788()) {
                     this.field33723 += (short)n;
@@ -177,7 +177,7 @@ public class Class8199
     }
     
     static {
-        field33719 = new Class6061<BlockState>(Class3833.field17391, Class7521.field29147.method11878());
+        field33719 = new Class6061<BlockState>(Block.field17391, Class7521.field29147.getDefaultState());
         field33725 = new ThreadLocal<Class9489>();
     }
 }

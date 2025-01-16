@@ -15,31 +15,31 @@ public class Class4605 extends Class4535<Class5131>
     }
     
     public boolean method13662(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5131 class1854) {
-        if (!class1854.field22104.contains(class1851.method6701(class1853.method1137()).method21696())) {
+        if (!class1854.field22104.contains(class1851.getBlockState(class1853.method1137()).getBlock())) {
             return false;
         }
-        if (class1854.field22101 && !class1854.field22104.contains(class1851.method6701(class1853.method1139()).method21696())) {
+        if (class1854.field22101 && !class1854.field22104.contains(class1851.getBlockState(class1853.method1139()).getBlock())) {
             return false;
         }
-        final BlockState method6701 = class1851.method6701(class1853);
-        if (!method6701.method21706() && !class1854.field22104.contains(method6701.method21696())) {
+        final BlockState method6701 = class1851.getBlockState(class1853);
+        if (!method6701.method21706() && !class1854.field22104.contains(method6701.getBlock())) {
             return false;
         }
         int n = 0;
         int n2 = 0;
-        if (class1854.field22104.contains(class1851.method6701(class1853.method1145()).method21696())) {
+        if (class1854.field22104.contains(class1851.getBlockState(class1853.method1145()).getBlock())) {
             ++n2;
         }
-        if (class1854.field22104.contains(class1851.method6701(class1853.method1147()).method21696())) {
+        if (class1854.field22104.contains(class1851.getBlockState(class1853.method1147()).getBlock())) {
             ++n2;
         }
-        if (class1854.field22104.contains(class1851.method6701(class1853.method1141()).method21696())) {
+        if (class1854.field22104.contains(class1851.getBlockState(class1853.method1141()).getBlock())) {
             ++n2;
         }
-        if (class1854.field22104.contains(class1851.method6701(class1853.method1143()).method21696())) {
+        if (class1854.field22104.contains(class1851.getBlockState(class1853.method1143()).getBlock())) {
             ++n2;
         }
-        if (class1854.field22104.contains(class1851.method6701(class1853.method1139()).method21696())) {
+        if (class1854.field22104.contains(class1851.getBlockState(class1853.method1139()).getBlock())) {
             ++n2;
         }
         int n3 = 0;
@@ -60,7 +60,7 @@ public class Class4605 extends Class4535<Class5131>
         }
         if (n2 == class1854.field22102) {
             if (n3 == class1854.field22103) {
-                class1851.method6688(class1853, class1854.field22100.method21791(), 2);
+                class1851.setBlockState(class1853, class1854.field22100.method21791(), 2);
                 class1851.method6834().method21345(class1853, class1854.field22100.method21779(), 0);
                 ++n;
             }

@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
-public class Class4007 extends Class3833
+public class Class4007 extends Block
 {
     private static final ITextComponent field18066;
     

@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.common.base.MoreObjects;
 
-public abstract class Class7110<T extends Comparable<T>> implements Class7111<T>
+public abstract class Class7110<T extends Comparable<T>> implements IProperty<T>
 {
     private final Class<T> field27738;
     private final String field27739;
@@ -18,18 +18,18 @@ public abstract class Class7110<T extends Comparable<T>> implements Class7111<T>
     }
     
     @Override
-    public String method21826() {
+    public String getName() {
         return this.field27739;
     }
     
     @Override
-    public Class<T> method21827() {
+    public Class<T> getValueClass() {
         return this.field27738;
     }
     
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper((Object)this).add("name", (Object)this.field27739).add("clazz", (Object)this.field27738).add("values", (Object)this.method21829()).toString();
+        return MoreObjects.toStringHelper((Object)this).add("name", (Object)this.field27739).add("clazz", (Object)this.field27738).add("values", (Object)this.getAllowedValues()).toString();
     }
     
     @Override

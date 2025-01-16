@@ -37,7 +37,7 @@ public class Class3831 extends Item
             final ItemStack method21655 = class7075.method21651();
             final BlockPos method21656 = class7075.method21639();
             final Direction method21657 = class7075.method21648();
-            final Class7096 method21658 = method21654.method6701(method21656);
+            final Class7096 method21658 = method21654.getBlockState(method21656);
             if (method21658.method21696() == Class7521.field29290) {
                 final TileEntity method21659 = method21654.method6727(method21656);
                 if (method21659 instanceof Class494) {
@@ -75,7 +75,7 @@ public class Class3831 extends Item
         }
         final Class7005 class1850 = (Class7005)method2716;
         final BlockPos method2717 = class1850.method21447();
-        if (!(class1847.method6701(method2717).method21696() instanceof Class3859)) {
+        if (!(class1847.getBlockState(method2717).method21696() instanceof Class3859)) {
             return Class9355.method34676(method2715);
         }
         if (!class1847.method6760(class1848, method2717) || !class1848.method2881(method2717, class1850.method21448(), method2715)) {

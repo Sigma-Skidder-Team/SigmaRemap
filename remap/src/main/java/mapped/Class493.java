@@ -60,7 +60,7 @@ public class Class493 extends TileEntity implements Class439
     
     @Override
     public void method2229() {
-        final Class3833 method21696 = this.method2194().method21696();
+        final Block method21696 = this.method2194().getBlock();
         if (method21696 == Class7521.field29463 || method21696 == Class7521.field29464) {
             if (!this.field2656.method6749(this.field2657)) {
                 this.field2837 = false;

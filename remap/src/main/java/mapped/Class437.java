@@ -25,7 +25,7 @@ public class Class437 extends TileEntity
     
     public Class181 method2213() {
         if (this.field2662 == null) {
-            this.field2662 = ((Class3900)this.method2194().method21696()).method11993();
+            this.field2662 = ((Class3900)this.method2194().getBlock()).method11993();
         }
         return this.field2662;
     }

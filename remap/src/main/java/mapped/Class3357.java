@@ -94,7 +94,7 @@ public class Class3357 extends Class3355
             }
             case "BrainFreeze": {
                 Class3357.field15514.method5269().method17292(new Class4354(Class3357.field15514.field4684.posX + 9999.0, Class3357.field15514.field4684.posY + 9999.0, Class3357.field15514.field4684.posZ + 9999.0, false));
-                Class3357.field15514.method5269().method17292(new Class4354(Class3357.field15514.field4684.posX, Class3357.field15514.field4684.getBoundingBox().field25074, Class3357.field15514.field4684.posZ + 9999.0, Class3357.field15514.field4684.onGround));
+                Class3357.field15514.method5269().method17292(new Class4354(Class3357.field15514.field4684.posX, Class3357.field15514.field4684.getBoundingBox().minY, Class3357.field15514.field4684.posZ + 9999.0, Class3357.field15514.field4684.onGround));
                 if (this.field15991++ >= 200) {
                     this.method9910();
                     Class9274.method34209("Trying to crash the server..");

@@ -8,7 +8,7 @@ import net.minecraft.entity.LivingEntity;
 
 public class Class4716 extends Class4712<Class778, Class5857<Class778>>
 {
-    private static final Class1932 field20318;
+    private static final ResourceLocation field20318;
     
     public Class4716(final Class8551 class8551) {
         super(class8551, new Class5857(0.0f), 0.5f);
@@ -20,7 +20,7 @@ public class Class4716 extends Class4712<Class778, Class5857<Class778>>
         super.method14006(class778, n, n2, class779, class780, n3);
     }
     
-    public Class1932 method14022(final Class778 class778) {
+    public ResourceLocation method14022(final Class778 class778) {
         return Class4716.field20318;
     }
     
@@ -29,6 +29,6 @@ public class Class4716 extends Class4712<Class778, Class5857<Class778>>
     }
     
     static {
-        field20318 = new Class1932("textures/entity/witch.png");
+        field20318 = new ResourceLocation("textures/entity/witch.png");
     }
 }

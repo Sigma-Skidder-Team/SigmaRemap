@@ -10,7 +10,7 @@ import java.io.Closeable;
 
 public interface Class1671 extends Closeable
 {
-    Class1932 method5886();
+    ResourceLocation method5886();
     
     InputStream method5887();
     

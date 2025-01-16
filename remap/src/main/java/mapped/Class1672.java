@@ -15,7 +15,7 @@ public class Class1672 implements Class1671
     }
     
     @Override
-    public Class1932 method5886() {
+    public ResourceLocation method5886() {
         return null;
     }
     

@@ -20,7 +20,7 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     
     public Class3863(final Class9288 class9288) {
         super(class9288, () -> Class5412.field22544);
-        this.method11877(((Class7097<O, BlockState>)((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3863.field17491, Direction.NORTH)).method21773((Class7111<Comparable>)Class3863.field17492, false));
+        this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3863.field17491, Direction.NORTH)).with((IProperty<Comparable>)Class3863.field17492, false));
     }
     
     @Override
@@ -40,7 +40,7 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        return ((Class7097<O, BlockState>)((Class7097<O, BlockState>)this.method11878()).method21773((Class7111<Comparable>)Class3863.field17491, class7074.method21644().getOpposite())).method21773((Class7111<Comparable>)Class3863.field17492, class7074.method21654().method6702(class7074.method21639()).method21779() == Class7558.field29976);
+        return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3863.field17491, class7074.method21644().getOpposite())).with((IProperty<Comparable>)Class3863.field17492, class7074.method21654().method6702(class7074.method21639()).method21779() == Class7558.field29976);
     }
     
     @Override
@@ -51,7 +51,7 @@ public class Class3863 extends Class3864<Class477> implements Class3856
             return Class2201.field13400;
         }
         final BlockPos method2886 = class7098.method1137();
-        if (class7097.method6701(method2886).method21713(class7097, method2886)) {
+        if (class7097.getBlockState(method2886).method21713(class7097, method2886)) {
             return Class2201.field13400;
         }
         if (!class7097.isRemote) {
@@ -79,27 +79,27 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class3863.field17491, class7097.method8142(class7096.method21772((Class7111<Direction>)Class3863.field17491)));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3863.field17491, class7097.method8142(class7096.get((IProperty<Direction>)Class3863.field17491)));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.method21772((Class7111<Direction>)Class3863.field17491)));
+        return class7096.method21708(class7097.method8344(class7096.get((IProperty<Direction>)Class3863.field17491)));
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class3863.field17491, Class3863.field17492);
     }
     
     @Override
     public Class7099 method11864(final BlockState class7096) {
-        return class7096.method21772((Class7111<Boolean>)Class3863.field17492) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
+        return class7096.get((IProperty<Boolean>)Class3863.field17492) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.method21772((Class7111<Boolean>)Class3863.field17492)) {
+        if (class7096.get((IProperty<Boolean>)Class3863.field17492)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
@@ -113,7 +113,7 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     static {
         field17491 = Class3892.field17564;
         field17492 = Class8970.field37747;
-        field17493 = Class3833.method11778(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
+        field17493 = Block.method11778(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
         field17494 = new Class2259("container.enderchest", new Object[0]);
     }
 }

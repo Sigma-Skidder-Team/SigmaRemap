@@ -26,17 +26,17 @@ public abstract class Class7304<C extends Class5118>
     public static final BlockState field28282;
     public static final Class7099 field28283;
     public static final Class7099 field28284;
-    public Set<Class3833> field28285;
+    public Set<Block> field28285;
     public Set<Class7255> field28286;
     private final Function<Dynamic<?>, ? extends C> field28287;
     public final int field28288;
     
     private static <C extends Class5118, F extends Class7304<C>> F method22404(final String s, final F n) {
-        return Class90.method511(Class90.field213, s, n);
+        return Registry.method511(Registry.field213, s, n);
     }
     
     public Class7304(final Function<Dynamic<?>, ? extends C> field28287, final int field28288) {
-        this.field28285 = (Set<Class3833>)ImmutableSet.of((Object)Class7521.field29148, (Object)Class7521.field29149, (Object)Class7521.field29151, (Object)Class7521.field29153, (Object)Class7521.field29156, (Object)Class7521.field29157, (Object[])new Class3833[] { Class7521.field29158, Class7521.field29155, Class7521.field29546, Class7521.field29482, Class7521.field29483, Class7521.field29484, Class7521.field29485, Class7521.field29486, Class7521.field29487, Class7521.field29488, Class7521.field29489, Class7521.field29490, Class7521.field29491, Class7521.field29492, Class7521.field29493, Class7521.field29494, Class7521.field29495, Class7521.field29496, Class7521.field29497, Class7521.field29217, Class7521.field29587, Class7521.field29392, Class7521.field29329, Class7521.field29548 });
+        this.field28285 = (Set<Block>)ImmutableSet.of((Object)Class7521.field29148, (Object)Class7521.field29149, (Object)Class7521.field29151, (Object)Class7521.field29153, (Object)Class7521.field29156, (Object)Class7521.field29157, (Object[])new Block[] { Class7521.field29158, Class7521.field29155, Class7521.field29546, Class7521.field29482, Class7521.field29483, Class7521.field29484, Class7521.field29485, Class7521.field29486, Class7521.field29487, Class7521.field29488, Class7521.field29489, Class7521.field29490, Class7521.field29491, Class7521.field29492, Class7521.field29493, Class7521.field29494, Class7521.field29495, Class7521.field29496, Class7521.field29497, Class7521.field29217, Class7521.field29587, Class7521.field29392, Class7521.field29329, Class7521.field29548 });
         this.field28286 = (Set<Class7255>)ImmutableSet.of((Object)Class7558.field29976);
         this.field28287 = field28287;
         this.field28288 = field28288;
@@ -46,7 +46,7 @@ public abstract class Class7304<C extends Class5118>
         return 4;
     }
     
-    public boolean method22406(final Class1860 class1860, final Function<BlockPos, Class3090> function, final long n, final int n2, final int n3, final int n4, final double n5, final double n6, final double n7, final double n8, final double n9, final BitSet set) {
+    public boolean method22406(final IChunk class1860, final Function<BlockPos, Class3090> function, final long n, final int n2, final int n3, final int n4, final double n5, final double n6, final double n7, final double n8, final double n9, final BitSet set) {
         final Random random = new Random(n + n3 + n4);
         final double n10 = n3 * 16 + 8;
         final double n11 = n4 * 16 + 8;
@@ -91,16 +91,16 @@ public abstract class Class7304<C extends Class5118>
         return false;
     }
     
-    public boolean method22396(final Class1860 class1860, final Function<BlockPos, Class3090> function, final BitSet set, final Random random, final Mutable class1861, final Mutable class1862, final Mutable class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
+    public boolean method22396(final IChunk class1860, final Function<BlockPos, Class3090> function, final BitSet set, final Random random, final Mutable class1861, final Mutable class1862, final Mutable class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
         final int n9 = n6 | n8 << 4 | n7 << 8;
         if (set.get(n9)) {
             return false;
         }
         set.set(n9);
         class1861.setPos(n4, n7, n5);
-        final BlockState method6701 = class1860.method6701(class1861);
-        final BlockState method6702 = class1860.method6701(class1862.method1287(class1861).method1290(Direction.UP));
-        if (method6701.method21696() == Class7521.field29155 || method6701.method21696() == Class7521.field29392) {
+        final BlockState method6701 = class1860.getBlockState(class1861);
+        final BlockState method6702 = class1860.getBlockState(class1862.method1287(class1861).method1290(Direction.UP));
+        if (method6701.getBlock() == Class7521.field29155 || method6701.getBlock() == Class7521.field29392) {
             atomicBoolean.set(true);
         }
         if (this.method22408(method6701, method6702)) {
@@ -108,7 +108,7 @@ public abstract class Class7304<C extends Class5118>
                 class1860.method7008(class1861, Class7304.field28282, false);
                 if (atomicBoolean.get()) {
                     class1863.method1287(class1861).method1290(Direction.DOWN);
-                    if (class1860.method6701(class1863).method21696() == Class7521.field29156) {
+                    if (class1860.getBlockState(class1863).getBlock() == Class7521.field29156) {
                         class1860.method7008(class1863, function.apply(class1861).method9872().method13338(), false);
                     }
                 }
@@ -121,19 +121,19 @@ public abstract class Class7304<C extends Class5118>
         return false;
     }
     
-    public abstract boolean method22403(final Class1860 p0, final Function<BlockPos, Class3090> p1, final Random p2, final int p3, final int p4, final int p5, final int p6, final int p7, final BitSet p8, final C p9);
+    public abstract boolean method22403(final IChunk p0, final Function<BlockPos, Class3090> p1, final Random p2, final int p3, final int p4, final int p5, final int p6, final int p7, final BitSet p8, final C p9);
     
     public abstract boolean method22402(final Random p0, final int p1, final int p2, final C p3);
     
     public boolean method22407(final BlockState class7096) {
-        return this.field28285.contains(class7096.method21696());
+        return this.field28285.contains(class7096.getBlock());
     }
     
     public boolean method22408(final BlockState class7096, final BlockState class7097) {
-        final Class3833 method21696 = class7096.method21696();
+        final Block method21696 = class7096.getBlock();
         if (!this.method22407(class7096)) {
             if (method21696 == Class7521.field29175 || method21696 == Class7521.field29177) {
-                if (!class7097.method21756().method21793(Class7324.field28319)) {
+                if (!class7097.getFluidState().method21793(Class7324.field28319)) {
                     return true;
                 }
             }
@@ -142,7 +142,7 @@ public abstract class Class7304<C extends Class5118>
         return true;
     }
     
-    public boolean method22409(final Class1860 class1860, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8) {
+    public boolean method22409(final IChunk class1860, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8) {
         final Mutable class1861 = new Mutable();
         for (int i = n3; i < n4; ++i) {
             for (int j = n7; j < n8; ++j) {
@@ -192,8 +192,8 @@ public abstract class Class7304<C extends Class5118>
         field28278 = method22404("canyon", new Class7305(Class5117::method16023));
         field28279 = method22404("underwater_canyon", new Class7306(Class5117::method16023));
         field28280 = method22404("underwater_cave", new Class7307(Class5117::method16023));
-        field28281 = Class7521.field29147.method11878();
-        field28282 = Class7521.field29764.method11878();
+        field28281 = Class7521.field29147.getDefaultState();
+        field28282 = Class7521.field29764.getDefaultState();
         field28283 = Class7558.field29976.method22148();
         field28284 = Class7558.field29978.method22148();
     }

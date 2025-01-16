@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 
 public class Class4779 extends Class4710<Class857, Class5866>
 {
-    public static final Class1932 field20408;
+    public static final ResourceLocation field20408;
     
     public Class4779(final Class8551 class8551) {
         super(class8551, new Class5867(), 0.0f);
@@ -22,7 +22,7 @@ public class Class4779 extends Class4710<Class857, Class5866>
         this.method13978(new Class1831<Class857, Class5866>(this));
     }
     
-    public Class1932 method14136(final Class857 class857) {
+    public ResourceLocation method14136(final Class857 class857) {
         return Class4779.field20408;
     }
     
@@ -45,7 +45,7 @@ public class Class4779 extends Class4710<Class857, Class5866>
         if (!class857.method5166()) {
             return super.method13981(class857, b, b2);
         }
-        final Class1932 method14136 = this.method14136(class857);
+        final ResourceLocation method14136 = this.method14136(class857);
         if (!b2) {
             return b ? Class6332.method18769(method14136, false) : null;
         }
@@ -53,6 +53,6 @@ public class Class4779 extends Class4710<Class857, Class5866>
     }
     
     static {
-        field20408 = new Class1932("textures/entity/armorstand/wood.png");
+        field20408 = new ResourceLocation("textures/entity/armorstand/wood.png");
     }
 }

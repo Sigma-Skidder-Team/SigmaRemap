@@ -14,7 +14,7 @@ import java.util.Set;
 
 public abstract class Class516<T extends Class3418> extends Class527 implements Class725<T>
 {
-    public static final Class1932 field3074;
+    public static final ResourceLocation field3074;
     public int field3075;
     public int field3076;
     public final T field3077;
@@ -105,7 +105,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
             String string = null;
             if (!this.field3084.method27620() && this.field3083) {
                 class8321 = class8321.method27641();
-                class8321.method27691(MathHelper.method35649(class8321.method27690() / 2.0f));
+                class8321.method27691(MathHelper.ceil(class8321.method27690() / 2.0f));
             }
             else if (this.field3093) {
                 if (this.field3092.size() > 1) {
@@ -215,9 +215,9 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
         this.field3151.field9952 = 100.0f;
         if (class6602.method27620()) {
             if (class6601.method20062()) {
-                final Pair<Class1932, Class1932> method2376 = class6601.method20059();
+                final Pair<ResourceLocation, ResourceLocation> method2376 = class6601.method20059();
                 if (method2376 != null) {
-                    final Class1912 class6603 = this.field3150.method5296((Class1932)method2376.getFirst()).apply((Class1932)method2376.getSecond());
+                    final Class1912 class6603 = this.field3150.method5296((ResourceLocation)method2376.getFirst()).apply((ResourceLocation)method2376.getSecond());
                     this.field3150.method5290().method5849(class6603.method7504().method6340());
                     Class565.method3298(field26175, field26176, this.method3303(), 16, 16, class6603);
                     n2 = 1;
@@ -662,6 +662,6 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     }
     
     static {
-        field3074 = new Class1932("textures/gui/container/inventory.png");
+        field3074 = new ResourceLocation("textures/gui/container/inventory.png");
     }
 }

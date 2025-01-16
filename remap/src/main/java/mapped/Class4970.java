@@ -24,7 +24,7 @@ public class Class4970
                 method15155.method27396(class8473, class8471, class8472, n);
             }
             else {
-                Class4970.field21431.warn("Failed to create screen for menu type: {}", (Object)Class90.field235.method503(class8471));
+                Class4970.field21431.warn("Failed to create screen for menu type: {}", (Object) Registry.field235.getKey(class8471));
             }
         }
         else {
@@ -41,16 +41,16 @@ public class Class4970
         if (Class4970.field21432.put(class8471, class8472) == null) {
             return;
         }
-        throw new IllegalStateException("Duplicate registration for " + Class90.field235.method503(class8471));
+        throw new IllegalStateException("Duplicate registration for " + Registry.field235.getKey(class8471));
     }
     
     public static boolean method15157() {
         boolean b = false;
-        for (final Class8471 class8471 : Class90.field235) {
+        for (final Class8471 class8471 : Registry.field235) {
             if (Class4970.field21432.containsKey(class8471)) {
                 continue;
             }
-            Class4970.field21431.debug("Menu {} has no matching screen", (Object)Class90.field235.method503(class8471));
+            Class4970.field21431.debug("Menu {} has no matching screen", (Object) Registry.field235.getKey(class8471));
             b = true;
         }
         return b;

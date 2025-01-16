@@ -19,7 +19,7 @@ import java.util.List;
 
 public class Class492 extends TileEntity implements Class439
 {
-    private static final Class3833[] field2826;
+    private static final Block[] field2826;
     public int field2827;
     private float field2828;
     private boolean field2829;
@@ -153,10 +153,10 @@ public class Class492 extends TileEntity implements Class439
                         }
                     }
                     final BlockPos method1134 = this.field2657.add(l, a, a2);
-                    final BlockState method1135 = this.field2656.method6701(method1134);
-                    final Class3833[] field2826 = Class492.field2826;
+                    final BlockState method1135 = this.field2656.getBlockState(method1134);
+                    final Block[] field2826 = Class492.field2826;
                     for (int length = field2826.length, n = 0; n < length; ++n) {
-                        if (method1135.method21696() == field2826[n]) {
+                        if (method1135.getBlock() == field2826[n]) {
                             this.field2831.add(method1134);
                         }
                     }
@@ -295,6 +295,6 @@ public class Class492 extends TileEntity implements Class439
     }
     
     static {
-        field2826 = new Class3833[] { Class7521.field29519, Class7521.field29520, Class7521.field29528, Class7521.field29521 };
+        field2826 = new Block[] { Class7521.field29519, Class7521.field29520, Class7521.field29528, Class7521.field29521 };
     }
 }

@@ -66,7 +66,7 @@ public class Class9388
             }
         }
         else {
-            final Class3833 method27624 = ((Class4036)method27622).method12240();
+            final Block method27624 = ((Class4036)method27622).method12240();
             if (!(method27624 instanceof Class3932)) {
                 Object o;
                 if (!(method27624 instanceof Class3944)) {

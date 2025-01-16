@@ -14,50 +14,50 @@ public class Class7657
     
     public static void method24258() {
         Class7657.field30395 = new Class9497[0];
-        if (Class8571.method28950()) {
+        if (Config.method28950()) {
             final String str = "optifine/natural.properties";
             try {
-                final Class1932 class1932 = new Class1932(str);
-                if (!Class8571.method28900(class1932)) {
-                    Class8571.method28847("NaturalTextures: configuration \"" + str + "\" not found");
+                final ResourceLocation class1932 = new ResourceLocation(str);
+                if (!Config.method28900(class1932)) {
+                    Config.method28847("NaturalTextures: configuration \"" + str + "\" not found");
                     return;
                 }
-                final boolean method28906 = Class8571.method28906(class1932);
-                final InputStream method28907 = Class8571.method28897(class1932);
+                final boolean method28906 = Config.method28906(class1932);
+                final InputStream method28907 = Config.method28897(class1932);
                 final ArrayList list = new ArrayList(256);
-                final String method28908 = Class8571.method28959(method28907);
+                final String method28908 = Config.method28959(method28907);
                 method28907.close();
-                final String[] method28909 = Class8571.method28937(method28908, "\n\r");
+                final String[] method28909 = Config.method28937(method28908, "\n\r");
                 if (method28906) {
-                    Class8571.method28847("Natural Textures: Parsing default configuration \"" + str + "\"");
-                    Class8571.method28847("Natural Textures: Valid only for textures from default resource pack");
+                    Config.method28847("Natural Textures: Parsing default configuration \"" + str + "\"");
+                    Config.method28847("Natural Textures: Valid only for textures from default resource pack");
                 }
                 else {
-                    Class8571.method28847("Natural Textures: Parsing configuration \"" + str + "\"");
+                    Config.method28847("Natural Textures: Parsing configuration \"" + str + "\"");
                 }
                 int i = 0;
                 final Class1774 method28910 = Class8969.method31825();
                 for (int j = 0; j < method28909.length; ++j) {
                     final String trim = method28909[j].trim();
                     if (!trim.startsWith("#")) {
-                        final String[] method28911 = Class8571.method28937(trim, "=");
+                        final String[] method28911 = Config.method28937(trim, "=");
                         if (method28911.length != 2) {
-                            Class8571.method28848("Natural Textures: Invalid \"" + str + "\" line: " + trim);
+                            Config.warn("Natural Textures: Invalid \"" + str + "\" line: " + trim);
                         }
                         else {
                             final String trim2 = method28911[0].trim();
                             final String trim3 = method28911[1].trim();
                             final Class1912 method28912 = method28910.method6346("minecraft:block/" + trim2);
                             if (method28912 == null) {
-                                Class8571.method28848("Natural Textures: Texture not found: \"" + str + "\" line: " + trim);
+                                Config.warn("Natural Textures: Texture not found: \"" + str + "\" line: " + trim);
                             }
                             else {
                                 final int method28913 = method28912.method7513();
                                 if (method28913 < 0) {
-                                    Class8571.method28848("Natural Textures: Invalid \"" + str + "\" line: " + trim);
+                                    Config.warn("Natural Textures: Invalid \"" + str + "\" line: " + trim);
                                 }
                                 else {
-                                    if (method28906 && !Class8571.method28906(new Class1932("textures/block/" + trim2 + ".png"))) {
+                                    if (method28906 && !Config.method28906(new ResourceLocation("textures/block/" + trim2 + ".png"))) {
                                         return;
                                     }
                                     final Class9497 element = new Class9497(trim3);
@@ -75,11 +75,11 @@ public class Class7657
                 }
                 Class7657.field30395 = list.toArray(new Class9497[list.size()]);
                 if (i > 0) {
-                    Class8571.method28847("NaturalTextures: " + i);
+                    Config.method28847("NaturalTextures: " + i);
                 }
             }
             catch (final FileNotFoundException ex) {
-                Class8571.method28848("NaturalTextures: configuration \"" + str + "\" not found");
+                Config.warn("NaturalTextures: configuration \"" + str + "\" not found");
             }
             catch (final Exception ex2) {
                 ex2.printStackTrace();
@@ -94,7 +94,7 @@ public class Class7657
         }
         final Class9497 method30296 = method24260(method30295);
         if (method30296 != null) {
-            final int method30297 = Class8571.method28968(class354, Class7970.method25840(class355.method30294()));
+            final int method30297 = Config.method28968(class354, Class7970.method25840(class355.method30294()));
             int n = 0;
             boolean b = false;
             if (method30296.field40850 > 1) {

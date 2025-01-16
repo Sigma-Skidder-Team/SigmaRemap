@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class Class3978 extends Class3833
+public class Class3978 extends Block
 {
     private static final Class2259 field17970;
     

@@ -27,7 +27,7 @@ public final class Class7125
     private final Random field27771;
     private final Deque<Class8433> field27772;
     
-    public Class7125(final Class1932 class1932, final int field27766, final Class7669 field27767, final Class6346<?> field27768, final Class1795 field27769, final BlockPos class1933, final List<Class4473> field27770, final Random field27771) {
+    public Class7125(final ResourceLocation class1932, final int field27766, final Class7669 field27767, final Class6346<?> field27768, final Class1795 field27769, final BlockPos class1933, final List<Class4473> field27770, final Random field27771) {
         this.field27772 = Queues.newArrayDeque();
         this.field27766 = field27766;
         this.field27767 = field27767;
@@ -45,7 +45,7 @@ public final class Class7125
         method8146.method13454(0, method8148 - (method8147.minY + method8146.method13520()), 0);
         field27770.add(method8146);
         if (field27766 > 0) {
-            this.field27772.addLast(new Class8433(method8146, new AtomicReference(Class7698.method24494(Class7698.method24489(new AxisAlignedBB(n - 80, method8148 - 80, n2 - 80, n + 80 + 1, method8148 + 80 + 1, n2 + 80 + 1)), Class7698.method24489(AxisAlignedBB.method18489(method8147)), Class9306.field39920)), method8148 + 80, 0, null));
+            this.field27772.addLast(new Class8433(method8146, new AtomicReference(VoxelShapes.method24494(VoxelShapes.method24489(new AxisAlignedBB(n - 80, method8148 - 80, n2 - 80, n + 80 + 1, method8148 + 80 + 1, n2 + 80 + 1)), VoxelShapes.method24489(AxisAlignedBB.method18489(method8147)), Class9306.field39920)), method8148 + 80, 0, null));
             while (!this.field27772.isEmpty()) {
                 final Class8433 class1934 = this.field27772.removeFirst();
                 this.method21866(Class8433.method28156(class1934), Class8433.method28157(class1934), Class8433.method28158(class1934), Class8433.method28159(class1934));
@@ -65,12 +65,12 @@ public final class Class7125
     Label_0087:
         while (true) {
             for (final Class9038 class4522 : method13518.method27253(this.field27769, method13519, method13520, this.field27771)) {
-                final Direction class4523 = class4522.field38249.method21772((Class7111<Direction>)Class3839.field17415);
+                final Direction class4523 = class4522.field38249.get((IProperty<Direction>)Class3839.field17415);
                 final BlockPos field27295 = class4522.field38248;
                 final BlockPos method13523 = field27295.method1149(class4523);
                 final int n3 = field27295.getY() - field27294;
                 int n4 = -1;
-                final Class8795 method13524 = Class7323.field28316.method25554(new Class1932(class4522.field38250.method323("target_pool")));
+                final Class8795 method13524 = Class7323.field28316.method25554(new ResourceLocation(class4522.field38250.method323("target_pool")));
                 final Class8795 method13525 = Class7323.field28316.method25554(method13524.method30672());
                 if (method13524 != Class8795.field36978 && (method13524.method30676() != 0 || method13524 == Class8795.field36977)) {
                     AtomicReference<VoxelShape> atomicReference3;
@@ -83,7 +83,7 @@ public final class Class7125
                         atomicReference3 = atomicReference2;
                         n5 = field27294;
                         if (atomicReference2.get() == null) {
-                            atomicReference2.set(Class7698.method24489(AxisAlignedBB.method18489(method13522)));
+                            atomicReference2.set(VoxelShapes.method24489(AxisAlignedBB.method18489(method13522)));
                         }
                     }
                     final ArrayList arrayList = Lists.newArrayList();
@@ -100,8 +100,8 @@ public final class Class7125
                             int orElse;
                             if (class4524.method27254(this.field27769, BlockPos.ZERO, class4525).getYSize() <= 16) {
                                 orElse = method13526.stream().mapToInt(class4529 -> {
-                                    if (class4528.method21415(class4529.field38248.method1149(class4529.field38249.method21772((Class7111<Direction>)Class3839.field17415)))) {
-                                        Class7323.field28316.method25554(new Class1932(class4529.field38250.method323("target_pool")));
+                                    if (class4528.method21415(class4529.field38248.method1149(class4529.field38249.get((IProperty<Direction>)Class3839.field17415)))) {
+                                        Class7323.field28316.method25554(new ResourceLocation(class4529.field38250.method323("target_pool")));
                                         final Class8795 class4530;
                                         return Math.max(class4530.method30671(this.field27769), Class7323.field28316.method25554(class4530.method30672()).method30671(this.field27769));
                                     }
@@ -124,7 +124,7 @@ public final class Class7125
                                 final Class261 method13528 = class4524.method27263();
                                 final boolean b2 = method13528 == Class261.field1247;
                                 final int method13529 = field27296.getY();
-                                final int n6 = n3 - method13529 + class4522.field38249.method21772((Class7111<Direction>)Class3839.field17415).getYOffset();
+                                final int n6 = n3 - method13529 + class4522.field38249.get((IProperty<Direction>)Class3839.field17415).getYOffset();
                                 int n7;
                                 if (b && b2) {
                                     n7 = field27294 + n6;
@@ -141,10 +141,10 @@ public final class Class7125
                                 if (orElse > 0) {
                                     method13530.maxY = method13530.minY + Math.max(orElse + 1, method13530.maxY - method13530.minY);
                                 }
-                                if (Class7698.method24496(atomicReference3.get(), Class7698.method24489(AxisAlignedBB.method18489(method13530).method18511(0.25)), Class9306.field39918)) {
+                                if (VoxelShapes.method24496(atomicReference3.get(), VoxelShapes.method24489(AxisAlignedBB.method18489(method13530).method18511(0.25)), Class9306.field39918)) {
                                     continue;
                                 }
-                                atomicReference3.set(Class7698.method24495(atomicReference3.get(), Class7698.method24489(AxisAlignedBB.method18489(method13530)), Class9306.field39920));
+                                atomicReference3.set(VoxelShapes.method24495(atomicReference3.get(), VoxelShapes.method24489(AxisAlignedBB.method18489(method13530)), Class9306.field39920));
                                 final int method13532 = class4521.method13520();
                                 int method13533;
                                 if (!b2) {

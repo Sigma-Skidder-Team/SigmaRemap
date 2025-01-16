@@ -200,15 +200,15 @@ public class Class8639
     }
     
     public static int method29331() {
-        return method29334(Class3833.method11775(1));
+        return method29334(Block.method11775(1));
     }
     
     public static int method29332() {
-        return method29334(Class3833.method11775(5));
+        return method29334(Block.method11775(5));
     }
     
     public static int method29333() {
-        return method29334(Class3833.method11775(3));
+        return method29334(Block.method11775(3));
     }
     
     public static int method29334(final BlockState class7096) {

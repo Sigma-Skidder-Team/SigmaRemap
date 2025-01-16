@@ -92,7 +92,7 @@ public class Class6579
     
     public static byte[] method19925(final String spec, final Proxy proxy) throws IOException {
         if (spec.startsWith("file:")) {
-            return Class8571.method28961(new URL(spec).openStream());
+            return Config.method28961(new URL(spec).openStream());
         }
         final Class8215 method19926 = method19926(method19919(spec, proxy));
         if (method19926.method27216() / 100 == 2) {

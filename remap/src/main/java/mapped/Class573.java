@@ -10,7 +10,7 @@ import java.util.Objects;
 
 public abstract class Class573 extends Class565 implements Class563, Class574
 {
-    public static final Class1932 field3421;
+    public static final ResourceLocation field3421;
     private static final int field3422 = 750;
     private static final int field3423 = 200;
     public int field3424;
@@ -122,7 +122,7 @@ public abstract class Class573 extends Class565 implements Class563, Class574
         this.method3186(this.field3426, this.field3427, 0, 46 + method5278 * 20, this.field3424 / 2, this.field3425);
         this.method3186(this.field3426 + this.field3424 / 2, this.field3427, 200 - this.field3424 / 2, 46 + method5278 * 20, this.field3424 / 2, this.field3425);
         this.method3354(method5277, n, n2);
-        this.method3295(field4643, this.method3369(), this.field3426 + this.field3424 / 2, this.field3427 + (this.field3425 - 8) / 2, (this.field3431 ? 16777215 : 10526880) | MathHelper.method35649(this.field3433 * 255.0f) << 24);
+        this.method3295(field4643, this.method3369(), this.field3426 + this.field3424 / 2, this.field3427 + (this.field3425 - 8) / 2, (this.field3431 ? 16777215 : 10526880) | MathHelper.ceil(this.field3433 * 255.0f) << 24);
     }
     
     public void method3354(final Class869 class869, final int n, final int n2) {
@@ -266,6 +266,6 @@ public abstract class Class573 extends Class565 implements Class563, Class574
     }
     
     static {
-        field3421 = new Class1932("textures/gui/widgets.png");
+        field3421 = new ResourceLocation("textures/gui/widgets.png");
     }
 }

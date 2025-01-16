@@ -94,9 +94,9 @@ public class Class846 extends Class763
     }
     
     @Override
-    public void method1839(final BlockState class7096, final Vec3d class7097) {
-        if (class7096.method21696() != Class7521.field29240) {
-            super.method1839(class7096, class7097);
+    public void setMotionMultiplier(final BlockState class7096, final Vec3d class7097) {
+        if (class7096.getBlock() != Class7521.field29240) {
+            super.setMotionMultiplier(class7096, class7097);
         }
     }
     

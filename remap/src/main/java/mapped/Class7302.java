@@ -16,7 +16,7 @@ public class Class7302 extends Class7303
 {
     public Class7302(final Function<Dynamic<?>, ? extends Class5117> function) {
         super(function, 128);
-        this.field28285 = (Set<Class3833>)ImmutableSet.of((Object)Class7521.field29148, (Object)Class7521.field29149, (Object)Class7521.field29151, (Object)Class7521.field29153, (Object)Class7521.field29156, (Object)Class7521.field29157, (Object[])new Class3833[] { Class7521.field29158, Class7521.field29155, Class7521.field29338 });
+        this.field28285 = (Set<Block>)ImmutableSet.of((Object)Class7521.field29148, (Object)Class7521.field29149, (Object)Class7521.field29151, (Object)Class7521.field29153, (Object)Class7521.field29156, (Object)Class7521.field29157, (Object[])new Block[] { Class7521.field29158, Class7521.field29155, Class7521.field29338 });
         this.field28286 = (Set<Class7255>)ImmutableSet.of((Object)Class7558.field29978, (Object)Class7558.field29976);
     }
     
@@ -41,14 +41,14 @@ public class Class7302 extends Class7303
     }
     
     @Override
-    public boolean method22396(final Class1860 class1860, final Function<BlockPos, Class3090> function, final BitSet set, final Random random, final Mutable class1861, final Mutable class1862, final Mutable class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
+    public boolean method22396(final IChunk class1860, final Function<BlockPos, Class3090> function, final BitSet set, final Random random, final Mutable class1861, final Mutable class1862, final Mutable class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
         final int n9 = n6 | n8 << 4 | n7 << 8;
         if (set.get(n9)) {
             return false;
         }
         set.set(n9);
         class1861.setPos(n4, n7, n5);
-        if (!this.method22407(class1860.method6701(class1861))) {
+        if (!this.method22407(class1860.getBlockState(class1861))) {
             return false;
         }
         BlockState class1864;

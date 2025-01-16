@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import com.google.common.collect.Iterables;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.Charsets;
@@ -27,12 +26,12 @@ public class Class4647
         final String s2 = "en_us";
         final String s3 = ".lang";
         list.add(s + s2 + s3);
-        if (!Class8571.method28962().field23476.equals(s2)) {
-            list.add(s + Class8571.method28962().field23476 + s3);
+        if (!Config.method28962().field23476.equals(s2)) {
+            list.add(s + Config.method28962().field23476 + s3);
         }
         final String[] array = (String[])list.toArray(new String[list.size()]);
-        method13874(Class8571.method28905(), array, method30775);
-        final Class1727[] method30776 = Class8571.method28903();
+        method13874(Config.method28905(), array, method30775);
+        final Class1727[] method30776 = Config.method28903();
         for (int i = 0; i < method30776.length; ++i) {
             method13874(method30776[i], array, method30775);
         }
@@ -41,7 +40,7 @@ public class Class4647
     private static void method13874(final Class1727 class1727, final String[] array, final Map map) {
         try {
             for (int i = 0; i < array.length; ++i) {
-                final Class1932 class1728 = new Class1932(array[i]);
+                final ResourceLocation class1728 = new ResourceLocation(array[i]);
                 if (class1727.method6099(Class346.field2137, class1728)) {
                     final InputStream method6097 = class1727.method6097(Class346.field2137, class1728);
                     if (method6097 != null) {

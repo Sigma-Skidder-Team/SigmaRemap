@@ -89,7 +89,7 @@ public class Class3353 extends Class3167
     
     public float[] method10614() {
         final double n = Class3353.field15514.field4684.posX + Class3353.field15514.field4684.getMotion().x * 26.0;
-        final double n2 = Class3353.field15514.field4684.boundingBox.field25074 - 3.6;
+        final double n2 = Class3353.field15514.field4684.boundingBox.minY - 3.6;
         final double n3 = Class3353.field15514.field4684.posZ + Class3353.field15514.field4684.getMotion().z * 26.0;
         if (!this.method9883("Predict")) {
             return new float[] { Class3353.field15514.field4684.rotationYaw, 90.0f };

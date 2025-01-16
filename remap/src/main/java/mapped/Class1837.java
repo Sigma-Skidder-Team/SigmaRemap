@@ -15,13 +15,13 @@ public abstract class Class1837<T extends Entity, M extends Class5845<T>> extend
     @Override
     public void method6554(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         final Class4150 method25214 = class7352.method25214(this.method6606());
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             Class9216.method33837();
         }
-        Class8571.method28908().field9363 = true;
+        Config.method28908().field9363 = true;
         this.method6559().method17564(class7351, method25214, 15728640, Class1904.field10335, 1.0f, 1.0f, 1.0f, 1.0f);
-        Class8571.method28908().field9363 = false;
-        if (Class8571.method28955()) {
+        Config.method28908().field9363 = false;
+        if (Config.method28955()) {
             Class9216.method33838();
         }
     }

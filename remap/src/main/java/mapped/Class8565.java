@@ -26,12 +26,12 @@ public class Class8565
         final boolean b2 = class5417 == Class2083.field12048;
         if (!b) {
             final BlockPos method16525 = class5416.method1149(function2.apply(class5414));
-            final BlockState method16526 = class5415.method6701(method16525);
-            if (method16526.method21696() == class5414.method21696()) {
+            final BlockState method16526 = class5415.getBlockState(method16525);
+            if (method16526.getBlock() == class5414.getBlock()) {
                 final Class2083 class5418 = function.apply(method16526);
                 if (class5418 != Class2083.field12047) {
                     if (class5417 != class5418) {
-                        if (((Class7097<Object, Object>)method16526).method21772((Class7111<Comparable>)class5413) == class5414.method21772((Class7111<Comparable>)class5413)) {
+                        if (((StateHolder<Object, Object>)method16526).get((IProperty<Comparable>)class5413) == class5414.get((IProperty<Comparable>)class5413)) {
                             if (biPredicate.test(class5415, method16525)) {
                                 return Class6389::method19072;
                             }

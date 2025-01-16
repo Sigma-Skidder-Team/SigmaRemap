@@ -6,7 +6,7 @@ package mapped;
 
 public class Class742 extends Class516<Class3425>
 {
-    private static final Class1932 field4012;
+    private static final ResourceLocation field4012;
     private final Class806 field4013;
     private float field4014;
     private float field4015;
@@ -60,6 +60,6 @@ public class Class742 extends Class516<Class3425>
     }
     
     static {
-        field4012 = new Class1932("textures/gui/container/horse.png");
+        field4012 = new ResourceLocation("textures/gui/container/horse.png");
     }
 }

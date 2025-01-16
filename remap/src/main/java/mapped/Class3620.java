@@ -31,7 +31,7 @@ public class Class3620 extends Class3617
             if (!this.field16821.method4201()) {
                 if (Class798.method4544(this.field16821)) {
                     if (!this.method11145(Class798.method4545(this.field16821))) {
-                        if (this.field16821.world.method6701(Class798.method4545(this.field16821)).method21755(Class7188.field27931)) {
+                        if (this.field16821.world.getBlockState(Class798.method4545(this.field16821)).method21755(Class7188.field27931)) {
                             return true;
                         }
                     }

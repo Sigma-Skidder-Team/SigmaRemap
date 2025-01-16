@@ -30,7 +30,7 @@ public class Class432 extends Class428
     
     @Override
     public BlockState method2141() {
-        return Class7521.field29283.method11878();
+        return Class7521.field29283.getDefaultState();
     }
     
     @Override
@@ -95,7 +95,7 @@ public class Class432 extends Class428
             if (sqrt > 5.0) {
                 sqrt = 5.0;
             }
-            this.world.method6722(this, this.getPosX(), this.getPosY(), this.getPosZ(), (float)(4.0 + this.rand.nextDouble() * 1.5 * sqrt), Class2196.field13366);
+            this.world.createExplosion(this, this.getPosX(), this.getPosY(), this.getPosZ(), (float)(4.0 + this.rand.nextDouble() * 1.5 * sqrt), Class2196.field13366);
             this.method1652();
         }
     }
@@ -147,13 +147,13 @@ public class Class432 extends Class428
     }
     
     @Override
-    public float method1856(final Class6154 class6154, final Class1855 class6155, final BlockPos class6156, final BlockState class6157, final Class7099 class6158, final float n) {
-        return (this.method2155() && (class6157.method21755(Class7188.field27906) || class6155.method6701(class6156.method1137()).method21755(Class7188.field27906))) ? 0.0f : super.method1856(class6154, class6155, class6156, class6157, class6158, n);
+    public float method1856(final Explosion explosion, final Class1855 class6155, final BlockPos class6156, final BlockState class6157, final Class7099 class6158, final float n) {
+        return (this.method2155() && (class6157.method21755(Class7188.field27906) || class6155.getBlockState(class6156.method1137()).method21755(Class7188.field27906))) ? 0.0f : super.method1856(explosion, class6155, class6156, class6157, class6158, n);
     }
     
     @Override
-    public boolean method1857(final Class6154 class6154, final Class1855 class6155, final BlockPos class6156, final BlockState class6157, final float n) {
-        return (!this.method2155() || (!class6157.method21755(Class7188.field27906) && !class6155.method6701(class6156.method1137()).method21755(Class7188.field27906))) && super.method1857(class6154, class6155, class6156, class6157, n);
+    public boolean method1857(final Explosion explosion, final Class1855 class6155, final BlockPos class6156, final BlockState class6157, final float n) {
+        return (!this.method2155() || (!class6157.method21755(Class7188.field27906) && !class6155.getBlockState(class6156.method1137()).method21755(Class7188.field27906))) && super.method1857(explosion, class6155, class6156, class6157, n);
     }
     
     @Override

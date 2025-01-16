@@ -32,7 +32,7 @@ public class Class1768 extends Class1767
     public boolean field9842;
     private boolean field9843;
     
-    public Class1768(final File field9835, final String field9836, final Class1932 class1932, final boolean field9837, final Runnable field9838) {
+    public Class1768(final File field9835, final String field9836, final ResourceLocation class1932, final boolean field9837, final Runnable field9838) {
         super(class1932);
         this.field9841 = null;
         this.field9842 = false;
@@ -110,7 +110,7 @@ public class Class1768 extends Class1767
                             urlConnection.connect();
                             if (((HttpURLConnection)urlConnection).getResponseCode() / 100 != 2) {
                                 if (((HttpURLConnection)urlConnection).getErrorStream() != null) {
-                                    Class8571.method28961(((HttpURLConnection)urlConnection).getErrorStream());
+                                    Config.method28961(((HttpURLConnection)urlConnection).getErrorStream());
                                 }
                             }
                             else {

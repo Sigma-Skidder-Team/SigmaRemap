@@ -35,7 +35,7 @@ public abstract class Class6369 extends Class6368
         return this.method19019(class7529) && this.field25476.method19016(class7529, consumer);
     }
     
-    public static <T extends Class6369> Class6530<T> method19021(final Class1932 class1932, final Class<T> clazz, final Class9303<T> class1933) {
+    public static <T extends Class6369> Class6530<T> method19021(final ResourceLocation class1932, final Class<T> clazz, final Class9303<T> class1933) {
         return (Class6530<T>)new Class6531(class1932, clazz, class1933);
     }
 }

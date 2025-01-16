@@ -37,13 +37,13 @@ public class Class7114<T extends Enum<T> & IStringSerializable> extends Class711
     }
     
     @Override
-    public Collection<T> method21829() {
+    public Collection<T> getAllowedValues() {
         return (Collection<T>)this.field27743;
     }
     
     @Override
-    public Optional<T> method21830(final String s) {
-        return Optional.ofNullable(this.field27744.get(s));
+    public Optional<T> parseValue(final String value) {
+        return Optional.ofNullable(this.field27744.get(value));
     }
     
     public String method21836(final T t) {

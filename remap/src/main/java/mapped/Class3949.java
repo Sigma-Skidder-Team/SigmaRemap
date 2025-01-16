@@ -32,7 +32,7 @@ public class Class3949 extends Class3948
     
     @Override
     public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
-        if (class7096.method21772((Class7111<Boolean>)Class3949.field17847)) {
+        if (class7096.method21772((IProperty<Boolean>)Class3949.field17847)) {
             final double n = class7098.getX() + 0.5;
             final double n2 = class7098.getY();
             final double n3 = class7098.getZ() + 0.5;

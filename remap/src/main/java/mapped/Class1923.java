@@ -28,7 +28,7 @@ public class Class1923 implements AutoCloseable
     private static final Class2023 field10456;
     private static final Random field10457;
     private final Class1663 field10458;
-    public final Class1932 field10459;
+    public final ResourceLocation field10459;
     private Class8048 field10460;
     private Class8048 field10461;
     private final List<Class1737> field10462;
@@ -37,7 +37,7 @@ public class Class1923 implements AutoCloseable
     private final Int2ObjectMap<CharList> field10465;
     private final List<Class1667> field10466;
     
-    public Class1923(final Class1663 field10458, final Class1932 field10459) {
+    public Class1923(final Class1663 field10458, final ResourceLocation field10459) {
         this.field10462 = Lists.newArrayList();
         this.field10463 = (Char2ObjectMap<Class8048>)new Char2ObjectOpenHashMap();
         this.field10464 = (Char2ObjectMap<Class2023>)new Char2ObjectOpenHashMap();
@@ -66,7 +66,7 @@ public class Class1923 implements AutoCloseable
                 if (class1738 == Class2021.field11532) {
                     break;
                 }
-                ((CharList)this.field10465.computeIfAbsent(MathHelper.method35649(class1738.method8080(false)), p0 -> new CharArrayList())).add(c);
+                ((CharList)this.field10465.computeIfAbsent(MathHelper.ceil(class1738.method8080(false)), p0 -> new CharArrayList())).add(c);
                 break;
             }
         }
@@ -144,7 +144,7 @@ public class Class1923 implements AutoCloseable
             }
             return method5879;
         }
-        final Class1667 class2023 = new Class1667(new Class1932(this.field10459.method7798(), this.field10459.method7797() + "/" + this.field10466.size()), class2022.method8073());
+        final Class1667 class2023 = new Class1667(new ResourceLocation(this.field10459.method7798(), this.field10459.method7797() + "/" + this.field10466.size()), class2022.method8073());
         this.field10466.add(class2023);
         this.field10458.method5851(class2023.method5880(), class2023);
         final Class8048 method5880 = class2023.method5879(class2022);
@@ -152,7 +152,7 @@ public class Class1923 implements AutoCloseable
     }
     
     public Class8048 method7634(final Class2023 class2023) {
-        final CharList list = (CharList)this.field10465.get(MathHelper.method35649(class2023.method8080(false)));
+        final CharList list = (CharList)this.field10465.get(MathHelper.ceil(class2023.method8080(false)));
         return (list != null && !list.isEmpty()) ? this.method7632(list.get(Class1923.field10457.nextInt(list.size()))) : this.field10460;
     }
     

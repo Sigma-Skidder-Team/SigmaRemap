@@ -80,8 +80,8 @@ public class Class491 extends TileEntity implements Class439
     private BlockState method2470() {
         if (!this.method2462()) {
             if (this.method2464()) {
-                if (this.field2818.method21696() instanceof Class3836) {
-                    return ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29247.method11878()).method21773(Class3835.field17417, (this.field2818.method21696() != Class7521.field29239) ? Class178.field507 : Class178.field508)).method21773((Class7111<Comparable>)Class3835.field17415, (Comparable)this.field2818.method21772((Class7111<V>)Class3836.field17415));
+                if (this.field2818.getBlock() instanceof Class3836) {
+                    return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class7521.field29247.getDefaultState()).with(Class3835.field17417, (this.field2818.getBlock() != Class7521.field29239) ? Class178.field507 : Class178.field508)).with((IProperty<Comparable>)Class3835.field17415, (Comparable)this.field2818.get((IProperty<V>)Class3836.field17415));
                 }
             }
         }
@@ -91,15 +91,15 @@ public class Class491 extends TileEntity implements Class439
     private void method2471(final float n) {
         final Direction method2476 = this.method2476();
         final double b = n - this.field2823;
-        final VoxelShape method2477 = this.method2470().method21727(this.field2656, this.method2193());
+        final VoxelShape method2477 = this.method2470().getCollisionShape(this.field2656, this.getPos());
         if (!method2477.method24540()) {
             final List<AxisAlignedBB> method2478 = method2477.method24545();
             final AxisAlignedBB method2479 = this.method2479(this.method2477(method2478));
             final List<Entity> method2480 = this.field2656.method7127(null, Class8159.method26948(method2479, method2476, b).method18498(method2479));
             if (!method2480.isEmpty()) {
-                final boolean b2 = this.field2818.method21696() == Class7521.field29516;
+                final boolean b2 = this.field2818.getBlock() == Class7521.field29516;
                 for (final Entity class399 : method2480) {
-                    if (class399.method1921() != Class2117.field12343) {
+                    if (class399.method1921() != PushReaction.IGNORE) {
                         if (b2) {
                             final Vec3d method2481 = class399.getMotion();
                             double field22770 = method2481.x;
@@ -158,7 +158,7 @@ public class Class491 extends TileEntity implements Class439
         if (this.method2475()) {
             final Direction method2476 = this.method2476();
             if (method2476.getAxis().isHorizontal()) {
-                final AxisAlignedBB method2477 = this.method2479(new AxisAlignedBB(0.0, this.field2818.method21727(this.field2656, this.field2657).method24536(Axis.Y), 0.0, 1.0, 1.5000000999999998, 1.0));
+                final AxisAlignedBB method2477 = this.method2479(new AxisAlignedBB(0.0, this.field2818.getCollisionShape(this.field2656, this.field2657).method24536(Axis.Y), 0.0, 1.0, 1.5000000999999998, 1.0));
                 final double n2 = n - this.field2823;
                 final Iterator<Entity> iterator = this.field2656.method6737(null, method2477, class6222 -> method2474(class6221, class6222)).iterator();
                 while (iterator.hasNext()) {
@@ -169,12 +169,12 @@ public class Class491 extends TileEntity implements Class439
     }
     
     private static boolean method2474(final AxisAlignedBB class6221, final Entity class6222) {
-        if (class6222.method1921() == Class2117.field12340) {
+        if (class6222.method1921() == PushReaction.NORMAL) {
             if (class6222.onGround) {
-                if (class6222.getPosX() >= class6221.field25073) {
-                    if (class6222.getPosX() <= class6221.field25076) {
-                        if (class6222.getPosZ() >= class6221.field25075) {
-                            if (class6222.getPosZ() <= class6221.field25078) {
+                if (class6222.getPosX() >= class6221.minX) {
+                    if (class6222.getPosX() <= class6221.maxX) {
+                        if (class6222.getPosZ() >= class6221.minZ) {
+                            if (class6222.getPosZ() <= class6221.maxZ) {
                                 return true;
                             }
                         }
@@ -186,7 +186,7 @@ public class Class491 extends TileEntity implements Class439
     }
     
     private boolean method2475() {
-        return this.field2818.method21696() == Class7521.field29825;
+        return this.field2818.getBlock() == Class7521.field29825;
     }
     
     public Direction method2476() {
@@ -201,12 +201,12 @@ public class Class491 extends TileEntity implements Class439
         double max2 = 1.0;
         double max3 = 1.0;
         for (final AxisAlignedBB class6221 : list) {
-            min = Math.min(class6221.field25073, min);
-            min2 = Math.min(class6221.field25074, min2);
-            min3 = Math.min(class6221.field25075, min3);
-            max = Math.max(class6221.field25076, max);
-            max2 = Math.max(class6221.field25077, max2);
-            max3 = Math.max(class6221.field25078, max3);
+            min = Math.min(class6221.minX, min);
+            min2 = Math.min(class6221.minY, min2);
+            min3 = Math.min(class6221.minZ, min3);
+            max = Math.max(class6221.maxX, max);
+            max2 = Math.max(class6221.maxY, max2);
+            max3 = Math.max(class6221.maxZ, max3);
         }
         return new AxisAlignedBB(min, min2, min3, max, max2, max3);
     }
@@ -214,22 +214,22 @@ public class Class491 extends TileEntity implements Class439
     private static double method2478(final AxisAlignedBB class6221, final Direction class6222, final AxisAlignedBB class6223) {
         switch (Class8986.field37877[class6222.ordinal()]) {
             case 1: {
-                return class6221.field25076 - class6223.field25073;
+                return class6221.maxX - class6223.minX;
             }
             case 2: {
-                return class6223.field25076 - class6221.field25073;
+                return class6223.maxX - class6221.minX;
             }
             default: {
-                return class6221.field25077 - class6223.field25074;
+                return class6221.maxY - class6223.minY;
             }
             case 4: {
-                return class6223.field25077 - class6221.field25074;
+                return class6223.maxY - class6221.minY;
             }
             case 5: {
-                return class6221.field25078 - class6223.field25075;
+                return class6221.maxZ - class6223.minZ;
             }
             case 6: {
-                return class6223.field25078 - class6221.field25075;
+                return class6223.maxZ - class6221.minZ;
             }
         }
     }
@@ -241,7 +241,7 @@ public class Class491 extends TileEntity implements Class439
     
     private void method2480(final Entity class399, final Direction class400, final double b) {
         final AxisAlignedBB method1886 = class399.getBoundingBox();
-        final AxisAlignedBB method1887 = Class7698.method24487().method24537().method18500(this.field2657);
+        final AxisAlignedBB method1887 = VoxelShapes.method24487().method24537().method18500(this.field2657);
         if (method1886.method18502(method1887)) {
             final Direction method1888 = class400.getOpposite();
             final double a = method2478(method1887, method1888, method1886) + 0.01;
@@ -262,16 +262,16 @@ public class Class491 extends TileEntity implements Class439
                 this.field2824 = this.field2823;
                 this.field2656.method6730(this.field2657);
                 this.method2198();
-                if (this.field2656.method6701(this.field2657).method21696() == Class7521.field29264) {
+                if (this.field2656.getBlockState(this.field2657).method21696() == Class7521.field29264) {
                     BlockState class7096;
                     if (!this.field2821) {
-                        class7096 = Class3833.method11786(this.field2818, this.field2656, this.field2657);
+                        class7096 = Block.method11786(this.field2818, this.field2656, this.field2657);
                     }
                     else {
-                        class7096 = Class7521.field29147.method11878();
+                        class7096 = Class7521.field29147.getDefaultState();
                     }
-                    this.field2656.method6688(this.field2657, class7096, 3);
-                    this.field2656.method6698(this.field2657, class7096.method21696(), this.field2657);
+                    this.field2656.setBlockState(this.field2657, class7096, 3);
+                    this.field2656.method6698(this.field2657, class7096.getBlock(), this.field2657);
                 }
             }
         }
@@ -294,20 +294,20 @@ public class Class491 extends TileEntity implements Class439
             this.field2656.method6730(this.field2657);
             this.method2198();
             if (this.field2818 != null) {
-                if (this.field2656.method6701(this.field2657).method21696() == Class7521.field29264) {
-                    BlockState method11786 = Class3833.method11786(this.field2818, this.field2656, this.field2657);
+                if (this.field2656.getBlockState(this.field2657).method21696() == Class7521.field29264) {
+                    BlockState method11786 = Block.method11786(this.field2818, this.field2656, this.field2657);
                     if (!method11786.method21706()) {
-                        if (((Class7097<Object, Object>)method11786).method21771((Class7111<Comparable>)Class8970.field37747)) {
-                            if (((Class7097<Object, Object>)method11786).method21772((Class7111<Boolean>)Class8970.field37747)) {
-                                method11786 = ((Class7097<Object, BlockState>)method11786).method21773((Class7111<Comparable>)Class8970.field37747, false);
+                        if (((StateHolder<Object, Object>)method11786).method21771((IProperty<Comparable>)Class8970.field37747)) {
+                            if (((StateHolder<Object, Object>)method11786).get((IProperty<Boolean>)Class8970.field37747)) {
+                                method11786 = ((StateHolder<Object, BlockState>)method11786).with((IProperty<Comparable>)Class8970.field37747, false);
                             }
                         }
-                        this.field2656.method6688(this.field2657, method11786, 67);
-                        this.field2656.method6698(this.field2657, method11786.method21696(), this.field2657);
+                        this.field2656.setBlockState(this.field2657, method11786, 67);
+                        this.field2656.method6698(this.field2657, method11786.getBlock(), this.field2657);
                     }
                     else {
-                        this.field2656.method6688(this.field2657, this.field2818, 84);
-                        Class3833.method11787(this.field2818, method11786, this.field2656, this.field2657, 3);
+                        this.field2656.setBlockState(this.field2657, this.field2818, 84);
+                        Block.method11787(this.field2818, method11786, this.field2656, this.field2657, 3);
                     }
                 }
             }
@@ -339,10 +339,10 @@ public class Class491 extends TileEntity implements Class439
     public VoxelShape method2483(final Class1855 class1855, final BlockPos class1856) {
         VoxelShape class1857;
         if (!this.field2820 && this.field2821) {
-            class1857 = ((Class7097<O, BlockState>)this.field2818).method21773((Class7111<Comparable>)Class3836.field17438, true).method21727(class1855, class1856);
+            class1857 = ((StateHolder<O, BlockState>)this.field2818).with((IProperty<Comparable>)Class3836.field17438, true).getCollisionShape(class1855, class1856);
         }
         else {
-            class1857 = Class7698.method24486();
+            class1857 = VoxelShapes.method24486();
         }
         final Direction class1858 = Class491.field2822.get();
         if (this.field2823 < 1.0 && class1858 == this.method2476()) {
@@ -353,10 +353,10 @@ public class Class491 extends TileEntity implements Class439
             field2818 = this.field2818;
         }
         else {
-            field2818 = ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29247.method11878()).method21773((Class7111<Comparable>)Class3835.field17415, this.field2819)).method21773((Class7111<Comparable>)Class3835.field17418, this.field2820 != 1.0f - this.field2823 < 4.0f);
+            field2818 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class7521.field29247.getDefaultState()).with((IProperty<Comparable>)Class3835.field17415, this.field2819)).with((IProperty<Comparable>)Class3835.field17418, this.field2820 != 1.0f - this.field2823 < 4.0f);
         }
         final float method2469 = this.method2469(this.field2823);
-        return Class7698.method24492(class1857, field2818.method21727(class1855, class1856).method24541(this.field2819.getXOffset() * method2469, this.field2819.getYOffset() * method2469, this.field2819.getZOffset() * method2469));
+        return VoxelShapes.method24492(class1857, field2818.getCollisionShape(class1855, class1856).method24541(this.field2819.getXOffset() * method2469, this.field2819.getYOffset() * method2469, this.field2819.getZOffset() * method2469));
     }
     
     public long method2484() {

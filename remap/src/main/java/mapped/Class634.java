@@ -14,7 +14,7 @@ public class Class634 extends Class633
     private final Class720 field3622;
     private final Class869 field3623;
     private final Class9575 field3624;
-    private final Class1932 field3625;
+    private final ResourceLocation field3625;
     private String field3626;
     private Class1773 field3627;
     private long field3628;
@@ -25,7 +25,7 @@ public class Class634 extends Class633
         this.field3622 = field3630;
         this.field3624 = field3631;
         this.field3623 = Class869.method5277();
-        this.field3625 = new Class1932("servers/" + Hashing.sha1().hashUnencodedChars((CharSequence)field3631.field41613) + "/icon");
+        this.field3625 = new ResourceLocation("servers/" + Hashing.sha1().hashUnencodedChars((CharSequence)field3631.field41613) + "/icon");
         this.field3627 = (Class1773)this.field3623.method5290().method5853(this.field3625);
     }
     
@@ -188,7 +188,7 @@ public class Class634 extends Class633
         }
     }
     
-    public void method3654(final int n, final int n2, final Class1932 class1932) {
+    public void method3654(final int n, final int n2, final ResourceLocation class1932) {
         this.field3623.method5290().method5849(class1932);
         Class8726.method30011();
         Class565.method3188(n, n2, 0.0f, 0.0f, 32, 32, 32, 32);

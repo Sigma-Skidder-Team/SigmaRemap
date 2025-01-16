@@ -27,7 +27,7 @@ import java.util.List;
 public class Class1909 extends AbstractChunkProvider
 {
     private static final int field10346;
-    private static final List<Class9312> field10347;
+    private static final List<ChunkStatus> field10347;
     private final Class8730 field10348;
     private final Class6346<?> field10349;
     private final Class1849 field10350;
@@ -40,15 +40,15 @@ public class Class1909 extends AbstractChunkProvider
     private boolean field10357;
     private boolean field10358;
     private final long[] field10359;
-    private final Class9312[] field10360;
-    private final Class1860[] field10361;
+    private final ChunkStatus[] field10360;
+    private final IChunk[] field10361;
     
     public Class1909(final Class1849 field10350, final File file, final DataFixer dataFixer, final Class1795 class1795, final Executor executor, final Class6346<?> field10351, final int n, final Class6459 class1796, final Supplier<Class8213> supplier) {
         this.field10357 = true;
         this.field10358 = true;
         this.field10359 = new long[4];
-        this.field10360 = new Class9312[4];
-        this.field10361 = new Class1860[4];
+        this.field10360 = new ChunkStatus[4];
+        this.field10361 = new IChunk[4];
         this.field10350 = field10350;
         this.field10353 = new Class873(this, field10350, null);
         this.field10349 = field10351;
@@ -75,7 +75,7 @@ public class Class1909 extends AbstractChunkProvider
         return this.field10354.method1336();
     }
     
-    private void method7425(final long n, final Class1860 class1860, final Class9312 class1861) {
+    private void method7425(final long n, final IChunk class1860, final ChunkStatus class1861) {
         for (int i = 3; i > 0; --i) {
             this.field10359[i] = this.field10359[i - 1];
             this.field10360[i] = this.field10360[i - 1];
@@ -88,7 +88,7 @@ public class Class1909 extends AbstractChunkProvider
     
     @Nullable
     @Override
-    public Class1860 method7402(final int p0, final int p1, final Class9312 p2, final boolean p3) {
+    public IChunk getChunk(final int p0, final int p1, final ChunkStatus p2, final boolean p3) {
         // 
         // This method could not be decompiled.
         // 
@@ -231,8 +231,8 @@ public class Class1909 extends AbstractChunkProvider
         this.field10350.method6796().method15302("getChunkNow");
         final long method25423 = Class7859.method25423(n, n2);
         for (int i = 0; i < 4; ++i) {
-            if (method25423 == this.field10359[i] && this.field10360[i] == Class9312.field39989) {
-                final Class1860 class1860 = this.field10361[i];
+            if (method25423 == this.field10359[i] && this.field10360[i] == ChunkStatus.field39989) {
+                final IChunk class1860 = this.field10361[i];
                 return (class1860 instanceof Class1862) ? ((Class1862)class1860) : null;
             }
         }
@@ -240,11 +240,11 @@ public class Class1909 extends AbstractChunkProvider
         if (method25424 == null) {
             return null;
         }
-        final Either either = method25424.method34341(Class9312.field39989).getNow(null);
+        final Either either = method25424.method34341(ChunkStatus.field39989).getNow(null);
         if (either != null) {
-            final Class1860 class1861 = either.left().orElse(null);
+            final IChunk class1861 = either.left().orElse(null);
             if (class1861 != null) {
-                this.method7425(method25423, class1861, Class9312.field39989);
+                this.method7425(method25423, class1861, ChunkStatus.field39989);
                 if (class1861 instanceof Class1862) {
                     return (Class1862)class1861;
                 }
@@ -260,7 +260,7 @@ public class Class1909 extends AbstractChunkProvider
         Arrays.fill(this.field10361, null);
     }
     
-    public CompletableFuture<Either<Class1860, Class6797>> method7427(final int n, final int n2, final Class9312 class9312, final boolean b) {
+    public CompletableFuture<Either<IChunk, Class6797>> method7427(final int n, final int n2, final ChunkStatus class9312, final boolean b) {
         Future<T> future;
         if (Thread.currentThread() != this.field10351) {
             future = (Future<T>)CompletableFuture.supplyAsync(() -> this.method7428(n3, n4, class9313, b2), this.field10353).thenCompose(completableFuture -> completableFuture);
@@ -269,22 +269,22 @@ public class Class1909 extends AbstractChunkProvider
             future = (Future<T>)this.method7428(n, n2, class9312, b);
             this.field10353.method5384(future::isDone);
         }
-        return (CompletableFuture<Either<Class1860, Class6797>>)future;
+        return (CompletableFuture<Either<IChunk, Class6797>>)future;
     }
     
-    private CompletableFuture<Either<Class1860, Class6797>> method7428(final int n, final int n2, final Class9312 class9312, final boolean b) {
+    private CompletableFuture<Either<IChunk, Class6797>> method7428(final int n, final int n2, final ChunkStatus class9312, final boolean b) {
         final Class7859 class9313 = new Class7859(n, n2);
         final long method25422 = class9313.method25422();
-        final int n3 = 33 + Class9312.method34441(class9312);
+        final int n3 = 33 + ChunkStatus.method34441(class9312);
         Class9298 class9314 = this.method7423(method25422);
         if (b) {
             this.field10348.method30130(Class9105.field38572, class9313, n3, class9313);
             if (this.method7429(class9314, n3)) {
                 final IProfiler method25423 = this.field10350.method6796();
-                method25423.method15297("chunkLoad");
+                method25423.startSection("chunkLoad");
                 this.method7432();
                 class9314 = this.method7423(method25422);
-                method25423.method15299();
+                method25423.endSection();
                 if (this.method7429(class9314, n3)) {
                     throw Class8349.method27859(new IllegalStateException("No chunk holder after ticket has been added"));
                 }
@@ -299,7 +299,7 @@ public class Class1909 extends AbstractChunkProvider
     
     @Override
     public boolean method7401(final int n, final int n2) {
-        return !this.method7429(this.method7423(new Class7859(n, n2).method25422()), 33 + Class9312.method34441(Class9312.field39989));
+        return !this.method7429(this.method7423(new Class7859(n, n2).method25422()), 33 + ChunkStatus.method34441(ChunkStatus.field39989));
     }
     
     @Override
@@ -310,12 +310,12 @@ public class Class1909 extends AbstractChunkProvider
         }
         int n3 = Class1909.field10347.size() - 1;
         while (true) {
-            final Class9312 class9312 = Class1909.field10347.get(n3);
+            final ChunkStatus class9312 = Class1909.field10347.get(n3);
             final Optional left = method7423.method34340(class9312).getNow(Class9298.field39871).left();
             if (left.isPresent()) {
                 return (Class1855)left.get();
             }
-            if (class9312 == Class9312.field39986.method34444()) {
+            if (class9312 == ChunkStatus.field39986.method34444()) {
                 return null;
             }
             --n3;
@@ -378,14 +378,14 @@ public class Class1909 extends AbstractChunkProvider
     
     @Override
     public void method7403(final BooleanSupplier booleanSupplier) {
-        this.field10350.method6796().method15297("purge");
+        this.field10350.method6796().startSection("purge");
         this.field10348.method30122();
         this.method7432();
         this.field10350.method6796().method15300("chunks");
         this.method7436();
         this.field10350.method6796().method15300("unload");
         this.field10354.method1324(booleanSupplier);
-        this.field10350.method6796().method15299();
+        this.field10350.method6796().endSection();
         this.method7426();
     }
     
@@ -397,29 +397,29 @@ public class Class1909 extends AbstractChunkProvider
         final boolean b = method6755.method29570() == Class9505.field40898;
         final boolean method6756 = this.field10350.method6765().method31216(Class8878.field37318);
         if (!b) {
-            this.field10350.method6796().method15297("pollingChunks");
+            this.field10350.method6796().startSection("pollingChunks");
             this.field10350.method6765().method31217(Class8878.field37327);
             this.field10350.method6758();
             final boolean b2 = method6755.method29539() % 400L == 0L;
-            this.field10350.method6796().method15297("naturalSpawnCount");
+            this.field10350.method6796().startSection("naturalSpawnCount");
             this.field10348.method30140();
             Class1976.values();
             this.field10350.method6885();
-            this.field10350.method6796().method15299();
+            this.field10350.method6796().endSection();
             this.field10354.method1342().forEach(class355 -> {
                 class355.method34343().getNow(Class9298.field39873).left();
                 final Optional optional;
                 if (!(!optional.isPresent())) {
                     final Class1862 class356 = optional.get();
-                    this.field10350.method6796().method15297("broadcast");
+                    this.field10350.method6796().startSection("broadcast");
                     class355.method34351(class356);
-                    this.field10350.method6796().method15299();
+                    this.field10350.method6796().endSection();
                     if (!this.field10354.method1346(class355.method34357())) {
                         class356.method7040(class356.method7041() + n2);
                         if (!(!b3)) {
                             if (this.field10357 || this.field10358) {
-                                if (!(!this.field10350.method6787().method34780(class356.method7019()))) {
-                                    this.field10350.method6796().method15297("spawner");
+                                if (!(!this.field10350.getWorldBorder().method34780(class356.method7019()))) {
+                                    this.field10350.method6796().startSection("spawner");
                                     int i = 0;
                                     for (int length = array.length; i < length; ++i) {
                                         final Class1976 class357 = array[i];
@@ -435,7 +435,7 @@ public class Class1909 extends AbstractChunkProvider
                                             }
                                         }
                                     }
-                                    this.field10350.method6796().method15299();
+                                    this.field10350.method6796().endSection();
                                 }
                             }
                         }
@@ -444,12 +444,12 @@ public class Class1909 extends AbstractChunkProvider
                 }
                 return;
             });
-            this.field10350.method6796().method15297("customSpawners");
+            this.field10350.method6796().startSection("customSpawners");
             if (method6756) {
                 this.field10349.method18870(this.field10350, this.field10357, this.field10358);
             }
-            this.field10350.method6796().method15299();
-            this.field10350.method6796().method15299();
+            this.field10350.method6796().endSection();
+            this.field10350.method6796().endSection();
         }
         this.field10354.method1354();
     }
@@ -547,6 +547,6 @@ public class Class1909 extends AbstractChunkProvider
     
     static {
         field10346 = (int)Math.pow(17.0, 2.0);
-        field10347 = Class9312.method34437();
+        field10347 = ChunkStatus.method34437();
     }
 }

@@ -369,7 +369,7 @@ public class Class540 extends Class527
     }
     
     private boolean method3139(final Class2146 class2146) {
-        this.field3150.method5269().method17292(new Class4360(this.field3232.method2193(), class2146, this.field3232.method2570(), this.field3239.method3378(), new BlockPos(this.method3142(this.field3240.method3378()), this.method3142(this.field3241.method3378()), this.method3142(this.field3242.method3378())), new BlockPos(this.method3142(this.field3243.method3378()), this.method3142(this.field3244.method3378()), this.method3142(this.field3245.method3378())), this.field3232.method2564(), this.field3232.method2566(), this.field3248.method3378(), this.field3232.method2573(), this.field3232.method2593(), this.field3232.method2595(), this.method3141(this.field3246.method3378()), this.method3140(this.field3247.method3378())));
+        this.field3150.method5269().method17292(new Class4360(this.field3232.getPos(), class2146, this.field3232.method2570(), this.field3239.method3378(), new BlockPos(this.method3142(this.field3240.method3378()), this.method3142(this.field3241.method3378()), this.method3142(this.field3242.method3378())), new BlockPos(this.method3142(this.field3243.method3378()), this.method3142(this.field3244.method3378()), this.method3142(this.field3245.method3378())), this.field3232.method2564(), this.field3232.method2566(), this.field3248.method3378(), this.field3232.method2573(), this.field3232.method2593(), this.field3232.method2595(), this.method3141(this.field3246.method3378()), this.method3140(this.field3247.method3378())));
         return true;
     }
     

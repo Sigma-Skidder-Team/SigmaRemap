@@ -8,10 +8,10 @@ public class Class1112 implements Runnable
 {
     private static String[] field5995;
     private Class754 field5996;
-    private Class1932 field5997;
+    private ResourceLocation field5997;
     private boolean field5998;
     
-    public Class1112(final Class754 field5996, final Class1932 field5997) {
+    public Class1112(final Class754 field5996, final ResourceLocation field5997) {
         this.field5996 = field5996;
         this.field5997 = field5997;
     }

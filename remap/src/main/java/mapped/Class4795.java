@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.Vector3f;
 
 public class Class4795 extends Class4703<Class507>
 {
-    private static final Class1932 field20446;
+    private static final ResourceLocation field20446;
     private final Class5897<Class507> field20447;
     
     public Class4795(final Class8551 class8551) {
@@ -35,11 +35,11 @@ public class Class4795 extends Class4703<Class507>
         }
     }
     
-    public Class1932 method14187(final Class507 class507) {
+    public ResourceLocation method14187(final Class507 class507) {
         return Class4795.field20446;
     }
     
     static {
-        field20446 = new Class1932("textures/entity/illager/evoker_fangs.png");
+        field20446 = new ResourceLocation("textures/entity/illager/evoker_fangs.png");
     }
 }

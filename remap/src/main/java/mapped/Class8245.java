@@ -62,11 +62,11 @@ public class Class8245
             return false;
         }
         final Class1848 field4683 = this.field33863.field4683;
-        final BlockState method6701 = field4683.method6701(class354);
+        final BlockState method6701 = field4683.getBlockState(class354);
         if (!this.field33863.field4684.getHeldItemMainhand().getItem().method11703(method6701, field4683, class354, this.field33863.field4684)) {
             return false;
         }
-        final Class3833 method6702 = method6701.method21696();
+        final Block method6702 = method6701.getBlock();
         Label_0101: {
             if (!(method6702 instanceof Class3953)) {
                 if (!(method6702 instanceof Class3941)) {
@@ -81,7 +81,7 @@ public class Class8245
         }
         if (!method6701.method21706()) {
             method6702.method11870(field4683, class354, method6701, this.field33863.field4684);
-            final boolean method6703 = field4683.method6688(class354, field4683.method6702(class354).method21791(), 11);
+            final boolean method6703 = field4683.setBlockState(class354, field4683.method6702(class354).method21791(), 11);
             if (method6703) {
                 method6702.method11824(field4683, class354, method6701);
             }
@@ -94,13 +94,13 @@ public class Class8245
         if (this.field33863.field4684.method2803(this.field33863.field4683, field33865, this.field33871)) {
             return false;
         }
-        if (this.field33863.field4683.method6787().method34779(field33865)) {
+        if (this.field33863.field4683.getWorldBorder().contains(field33865)) {
             if (!this.field33871.method590()) {
                 if (!this.field33870 || !this.method27317(field33865)) {
                     if (this.field33870) {
                         this.method27339(Class2003.field11241, this.field33865, class179);
                     }
-                    final BlockState method6701 = this.field33863.field4683.method6701(field33865);
+                    final BlockState method6701 = this.field33863.field4683.getBlockState(field33865);
                     this.field33863.method5319().method32920(this.field33863.field4683, field33865, method6701, 0.0f);
                     this.method27339(Class2003.field11240, field33865, class179);
                     final boolean b = !method6701.method21706();
@@ -123,7 +123,7 @@ public class Class8245
                 }
             }
             else {
-                this.field33863.method5319().method32920(this.field33863.field4683, field33865, this.field33863.field4683.method6701(field33865), 1.0f);
+                this.field33863.method5319().method32920(this.field33863.field4683, field33865, this.field33863.field4683.getBlockState(field33865), 1.0f);
                 this.method27339(Class2003.field11240, field33865, class179);
                 method27307(this.field33863, this, field33865, class179);
                 this.field33869 = 5;
@@ -135,7 +135,7 @@ public class Class8245
     
     public void method27313() {
         if (this.field33870) {
-            this.field33863.method5319().method32920(this.field33863.field4683, this.field33865, this.field33863.field4683.method6701(this.field33865), -1.0f);
+            this.field33863.method5319().method32920(this.field33863.field4683, this.field33865, this.field33863.field4683.getBlockState(this.field33865), -1.0f);
             this.method27339(Class2003.field11241, this.field33865, Direction.DOWN);
             this.field33870 = false;
             this.field33867 = 0.0f;
@@ -150,9 +150,9 @@ public class Class8245
             --this.field33869;
             return true;
         }
-        if (this.field33871.method590() && this.field33863.field4683.method6787().method34779(class354)) {
+        if (this.field33871.method590() && this.field33863.field4683.getWorldBorder().contains(class354)) {
             this.field33869 = 5;
-            this.field33863.method5319().method32920(this.field33863.field4683, class354, this.field33863.field4683.method6701(class354), 1.0f);
+            this.field33863.method5319().method32920(this.field33863.field4683, class354, this.field33863.field4683.getBlockState(class354), 1.0f);
             this.method27339(Class2003.field11240, class354, class355);
             method27307(this.field33863, this, class354, class355);
             return true;
@@ -160,11 +160,11 @@ public class Class8245
         if (!this.method27317(class354)) {
             return this.method27312(class354, class355);
         }
-        final BlockState method6701 = this.field33863.field4683.method6701(class354);
+        final BlockState method6701 = this.field33863.field4683.getBlockState(class354);
         if (!method6701.method21706()) {
             this.field33867 += method6701.method21719(this.field33863.field4684, this.field33863.field4684.world, class354);
             if (this.field33868 % 4.0f == 0.0f) {
-                final Class7696 method6702 = method6701.method21759();
+                final SoundType method6702 = method6701.getSoundType();
                 this.field33863.method5299().method6422(new Class6836(method6702.method24482(), Class286.field1582, (method6702.method24477() + 1.0f) / 8.0f, method6702.method24478() * 0.5f, class354));
             }
             ++this.field33868;
@@ -231,7 +231,7 @@ public class Class8245
     public Class2201 method27319(final Class756 class756, final Class1848 class757, final Class316 class758, final Class7005 class759) {
         this.method27318();
         final BlockPos method21447 = class759.method21447();
-        if (!this.field33863.field4683.method6787().method34779(method21447)) {
+        if (!this.field33863.field4683.getWorldBorder().contains(method21447)) {
             return Class2201.field13403;
         }
         final ItemStack method21448 = class756.method2715(class758);
@@ -241,7 +241,7 @@ public class Class8245
         }
         final boolean b = !class756.getHeldItemMainhand().method27620() || !class756.method2714().method27620();
         if (!class756.method2804() || !b) {
-            final Class2201 method21449 = class757.method6701(method21447).method21744(class757, class756, class758, class759);
+            final Class2201 method21449 = class757.getBlockState(method21447).method21744(class757, class756, class758, class759);
             if (method21449.method8374()) {
                 this.field33864.method17292(new Class4329(class758, class759));
                 return method21449;
@@ -394,7 +394,7 @@ public class Class8245
                     break Label_0023;
                 }
                 if (class1851 != Class2003.field11240) {
-                    if (class1848.method6701(class1849) != class1850) {
+                    if (class1848.getBlockState(class1849) != class1850) {
                         break Label_0023;
                     }
                 }

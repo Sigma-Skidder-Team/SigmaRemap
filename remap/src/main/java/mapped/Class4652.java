@@ -32,7 +32,7 @@ public class Class4652 extends Class4651
         if (this.method13927() && this.field20141.method1706()) {
             n = MathHelper.floor(this.field20141.getPosY());
             final Mutable class385 = new Mutable(this.field20141.getPosX(), n, this.field20141.getPosZ());
-            for (Class3833 class386 = this.field20140.method6701(class385).method21696(); class386 == Class7521.field29173; class386 = this.field20140.method6701(class385).method21696()) {
+            for (Block class386 = this.field20140.getBlockState(class385).getBlock(); class386 == Class7521.field29173; class386 = this.field20140.getBlockState(class385).getBlock()) {
                 ++n;
                 class385.method1286(this.field20141.getPosX(), n, this.field20141.getPosZ());
             }
@@ -43,10 +43,10 @@ public class Class4652 extends Class4651
         final BlockPos class387 = new BlockPos(this.field20141);
         if (this.field20141.method4144(this.method13912(this.field20141, class387.getX(), n, class387.getZ())) < 0.0f) {
             final HashSet hashSet = Sets.newHashSet();
-            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25073, n, this.field20141.getBoundingBox().field25075));
-            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25073, n, this.field20141.getBoundingBox().field25078));
-            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25076, n, this.field20141.getBoundingBox().field25075));
-            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25076, n, this.field20141.getBoundingBox().field25078));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().minX, n, this.field20141.getBoundingBox().minZ));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().minX, n, this.field20141.getBoundingBox().maxZ));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().maxX, n, this.field20141.getBoundingBox().minZ));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().maxX, n, this.field20141.getBoundingBox().maxZ));
             for (final BlockPos class388 : hashSet) {
                 if (this.field20141.method4144(this.method13911(this.field20141, class388)) < 0.0f) {
                     continue;
@@ -320,7 +320,7 @@ public class Class4652 extends Class4651
         Label_0018: {
             if (class1856 == Class257.field1206) {
                 if (n2 >= 1) {
-                    final Class3833 method21696 = class1855.method6701(new BlockPos(n, n2 - 1, n3)).method21696();
+                    final Block method21696 = class1855.getBlockState(new BlockPos(n, n2 - 1, n3)).getBlock();
                     final Class257 method21697 = Class4651.method13916(class1855, n, n2 - 1, n3);
                     if (method21697 != Class257.field1215) {
                         if (method21696 != Class7521.field29642) {

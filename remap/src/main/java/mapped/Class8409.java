@@ -56,7 +56,7 @@ public class Class8409
             }
             return (Dimension[])list.toArray(new Dimension[list.size()]);
         }
-        Class8571.method28848("Mipmaps not possible (power of 2 dimensions needed), texture: " + str + ", dim: " + i + "x" + j);
+        Config.warn("Mipmaps not possible (power of 2 dimensions needed), texture: " + str + ", dim: " + i + "x" + j);
         return new Dimension[0];
     }
     
@@ -121,7 +121,7 @@ public class Class8409
             final IntBuffer[] array3 = new IntBuffer[array.length];
             for (int i = 0; i < array.length; ++i) {
                 final Dimension dimension = array[i];
-                final IntBuffer method29016 = Class8571.method29016(dimension.width * dimension.height);
+                final IntBuffer method29016 = Config.method29016(dimension.width * dimension.height);
                 final int[] src = array2[i];
                 method29016.clear();
                 method29016.put(src);

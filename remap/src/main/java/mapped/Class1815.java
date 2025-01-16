@@ -9,7 +9,7 @@ import net.minecraft.entity.LivingEntity;
 
 public class Class1815<T extends LivingEntity> extends Class1799<T, Class5860<T>>
 {
-    public static final Class1932 field9991;
+    public static final ResourceLocation field9991;
     private final Class6300 field9992;
     
     public Class1815(final Class4778<T, Class5860<T>> class4778) {
@@ -33,6 +33,6 @@ public class Class1815<T extends LivingEntity> extends Class1799<T, Class5860<T>
     }
     
     static {
-        field9991 = new Class1932("textures/entity/trident_riptide.png");
+        field9991 = new ResourceLocation("textures/entity/trident_riptide.png");
     }
 }

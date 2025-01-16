@@ -8,14 +8,14 @@ import java.util.UUID;
 
 public class Class7634
 {
-    private static final Class1932 field30224;
-    private static final Class1932 field30225;
+    private static final ResourceLocation field30224;
+    private static final ResourceLocation field30225;
     
-    public static Class1932 method24003() {
+    public static ResourceLocation method24003() {
         return Class7634.field30224;
     }
     
-    public static Class1932 method24004(final UUID uuid) {
+    public static ResourceLocation method24004(final UUID uuid) {
         return method24006(uuid) ? Class7634.field30225 : Class7634.field30224;
     }
     
@@ -28,7 +28,7 @@ public class Class7634
     }
     
     static {
-        field30224 = new Class1932("textures/entity/steve.png");
-        field30225 = new Class1932("textures/entity/alex.png");
+        field30224 = new ResourceLocation("textures/entity/steve.png");
+        field30225 = new ResourceLocation("textures/entity/alex.png");
     }
 }

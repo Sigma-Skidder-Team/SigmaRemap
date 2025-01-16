@@ -83,14 +83,14 @@ public class Class9145
     
     public int method33374() {
         if (this.field38739 < 0) {
-            this.field38739 = this.field38737.method21691();
+            this.field38739 = this.field38737.getBlockId();
         }
         return this.field38739;
     }
     
     public int method33375() {
         if (this.field38740 < 0) {
-            this.field38740 = this.field38737.method21692();
+            this.field38740 = this.field38737.getMetadata();
         }
         return this.field38740;
     }
@@ -187,7 +187,7 @@ public class Class9145
     
     public boolean method33389() {
         if (this.field38742 == -1) {
-            if (Class8571.method28862() && this.field38737.method21696() instanceof Class3972) {
+            if (Config.method28862() && this.field38737.getBlock() instanceof Class3972) {
                 this.field38742 = 1;
             }
             else {

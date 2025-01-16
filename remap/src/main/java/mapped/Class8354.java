@@ -27,8 +27,8 @@ public class Class8354
         this.field34282 = field34282;
         this.field34283 = field34283;
         this.field34285 = field34284;
-        this.field34284 = (Class4017)field34284.method21696();
-        final Class104 class104 = field34284.method21772(this.field34284.method12205());
+        this.field34284 = (Class4017)field34284.getBlock();
+        final Class104 class104 = field34284.get(this.field34284.method12205());
         this.field34286 = this.field34284.method12202();
         this.method27878(class104);
     }
@@ -118,15 +118,15 @@ public class Class8354
     
     @Nullable
     private Class8354 method27881(final BlockPos class354) {
-        final BlockState method6701 = this.field34282.method6701(class354);
+        final BlockState method6701 = this.field34282.getBlockState(class354);
         if (Class4017.method12201(method6701)) {
             return new Class8354(this.field34282, class354, method6701);
         }
         final BlockPos method6702 = class354.method1137();
-        final BlockState method6703 = this.field34282.method6701(method6702);
+        final BlockState method6703 = this.field34282.getBlockState(method6702);
         if (!Class4017.method12201(method6703)) {
             final BlockPos method6704 = class354.method1139();
-            final BlockState method6705 = this.field34282.method6701(method6704);
+            final BlockState method6705 = this.field34282.getBlockState(method6704);
             return Class4017.method12201(method6705) ? new Class8354(this.field34282, method6704, method6705) : null;
         }
         return new Class8354(this.field34282, method6702, method6703);
@@ -236,8 +236,8 @@ public class Class8354
         if (class8355 == null) {
             class8355 = Class104.field311;
         }
-        this.field34285 = (BlockState)((Class7097<Object, Object>)this.field34285).method21773(this.field34284.method12205(), class8355);
-        this.field34282.method6688(this.field34283, this.field34285, 3);
+        this.field34285 = (BlockState)((StateHolder<Object, Object>)this.field34285).with(this.field34284.method12205(), class8355);
+        this.field34282.setBlockState(this.field34283, this.field34285, 3);
     }
     
     private boolean method27887(final BlockPos class354) {
@@ -368,9 +368,9 @@ public class Class8354
             class105 = class104;
         }
         this.method27878(class105);
-        this.field34285 = (BlockState)((Class7097<Object, Object>)this.field34285).method21773(this.field34284.method12205(), class105);
-        if (b2 || this.field34282.method6701(this.field34283) != this.field34285) {
-            this.field34282.method6688(this.field34283, this.field34285, 3);
+        this.field34285 = (BlockState)((StateHolder<Object, Object>)this.field34285).with(this.field34284.method12205(), class105);
+        if (b2 || this.field34282.getBlockState(this.field34283) != this.field34285) {
+            this.field34282.setBlockState(this.field34283, this.field34285, 3);
             for (int i = 0; i < this.field34287.size(); ++i) {
                 final Class8354 method1149 = this.method27881(this.field34287.get(i));
                 if (method1149 != null) {

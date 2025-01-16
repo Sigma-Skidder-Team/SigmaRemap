@@ -9,17 +9,17 @@ import com.google.gson.JsonObject;
 
 public class Class5768 implements Class5763
 {
-    private final Class1932 field23591;
+    private final ResourceLocation field23591;
     private final String field23592;
     private final Class120 field23593;
     private final Item field23594;
     private final float field23595;
     private final int field23596;
     private final Class6056 field23597;
-    private final Class1932 field23598;
+    private final ResourceLocation field23598;
     private final Class6096<? extends Class3680> field23599;
     
-    public Class5768(final Class1932 field23591, final String field23592, final Class120 field23593, final Item field23594, final float field23595, final int field23596, final Class6056 field23597, final Class1932 field23598, final Class6096<? extends Class3680> field23599) {
+    public Class5768(final ResourceLocation field23591, final String field23592, final Class120 field23593, final Item field23594, final float field23595, final int field23596, final Class6056 field23597, final ResourceLocation field23598, final Class6096<? extends Class3680> field23599) {
         this.field23591 = field23591;
         this.field23592 = field23592;
         this.field23593 = field23593;
@@ -37,7 +37,7 @@ public class Class5768 implements Class5763
             jsonObject.addProperty("group", this.field23592);
         }
         jsonObject.add("ingredient", this.field23593.method615());
-        jsonObject.addProperty("result", Class90.field211.method503(this.field23594).toString());
+        jsonObject.addProperty("result", Registry.field211.getKey(this.field23594).toString());
         jsonObject.addProperty("experience", (Number)this.field23595);
         jsonObject.addProperty("cookingtime", (Number)this.field23596);
     }
@@ -48,7 +48,7 @@ public class Class5768 implements Class5763
     }
     
     @Override
-    public Class1932 method17155() {
+    public ResourceLocation method17155() {
         return this.field23591;
     }
     
@@ -60,7 +60,7 @@ public class Class5768 implements Class5763
     
     @Nullable
     @Override
-    public Class1932 method17158() {
+    public ResourceLocation method17158() {
         return this.field23598;
     }
 }

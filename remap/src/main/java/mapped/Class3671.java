@@ -14,7 +14,7 @@ public class Class3671 extends Class3666
 {
     private static final Class120 field16956;
     
-    public Class3671(final Class1932 class1932) {
+    public Class3671(final ResourceLocation class1932) {
         super(class1932);
     }
     

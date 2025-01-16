@@ -11,7 +11,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
-public class Class4012 extends Class3833
+public class Class4012 extends Block
 {
     private static String[] field18080;
     public static final Class7112 field18081;
@@ -20,7 +20,7 @@ public class Class4012 extends Class3833
     
     public Class4012(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class4012.field18081, 0));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class4012.field18081, 0));
     }
     
     @Override
@@ -35,7 +35,7 @@ public class Class4012 extends Class3833
     
     @Override
     public void method11850(final BlockState class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
-        final int intValue = class7096.method21772((Class7111<Integer>)Class4012.field18081);
+        final int intValue = class7096.get((IProperty<Integer>)Class4012.field18081);
         final float n = class7098.getY() + (6.0f + 3 * intValue) / 16.0f;
         if (!class7097.isRemote) {
             if (class7099.method1804()) {
@@ -55,7 +55,7 @@ public class Class4012 extends Class3833
         if (method2715.method27620()) {
             return Class2201.field13402;
         }
-        final int intValue = class7096.method21772((Class7111<Integer>)Class4012.field18081);
+        final int intValue = class7096.get((IProperty<Integer>)Class4012.field18081);
         final Item method2716 = method2715.getItem();
         if (method2716 == Items.field31350) {
             if (intValue < 3) {
@@ -193,7 +193,7 @@ public class Class4012 extends Class3833
     }
     
     public void method12195(final World class1847, final BlockPos class1848, final BlockState class1849, final int n) {
-        class1847.method6688(class1848, ((Class7097<O, BlockState>)class1849).method21773((Class7111<Comparable>)Class4012.field18081, MathHelper.method35651(n, 0, 3)), 2);
+        class1847.setBlockState(class1848, ((StateHolder<O, BlockState>)class1849).with((IProperty<Comparable>)Class4012.field18081, MathHelper.method35651(n, 0, 3)), 2);
         class1847.method6783(class1848, this);
     }
     
@@ -201,9 +201,9 @@ public class Class4012 extends Class3833
     public void method11871(final World class1847, final BlockPos class1848) {
         if (class1847.rand.nextInt(20) == 1) {
             if (class1847.method6959(class1848).method9845(class1848) >= 0.15f) {
-                final BlockState method6701 = class1847.method6701(class1848);
-                if (((Class7097<Object, BlockState>)method6701).method21772((Class7111<Integer>)Class4012.field18081) < 3) {
-                    class1847.method6688(class1848, ((Class7097<Object, BlockState>)method6701).method21768((Class7111<Comparable>)Class4012.field18081), 2);
+                final BlockState method6701 = class1847.getBlockState(class1848);
+                if (((StateHolder<Object, BlockState>)method6701).get((IProperty<Integer>)Class4012.field18081) < 3) {
+                    class1847.setBlockState(class1848, ((StateHolder<Object, BlockState>)method6701).method21768((IProperty<Comparable>)Class4012.field18081), 2);
                 }
             }
         }
@@ -216,11 +216,11 @@ public class Class4012 extends Class3833
     
     @Override
     public int method11874(final BlockState class7096, final World class7097, final BlockPos class7098) {
-        return class7096.method21772((Class7111<Integer>)Class4012.field18081);
+        return class7096.get((IProperty<Integer>)Class4012.field18081);
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class4012.field18081);
     }
     
@@ -231,7 +231,7 @@ public class Class4012 extends Class3833
     
     static {
         field18081 = Class8970.field37782;
-        field18082 = Class3833.method11778(2.0, 4.0, 2.0, 14.0, 16.0, 14.0);
-        field18083 = Class7698.method24494(Class7698.method24487(), Class7698.method24493(Class3833.method11778(0.0, 0.0, 4.0, 16.0, 3.0, 12.0), Class3833.method11778(4.0, 0.0, 0.0, 12.0, 3.0, 16.0), Class3833.method11778(2.0, 0.0, 2.0, 14.0, 3.0, 14.0), Class4012.field18082), Class9306.field39920);
+        field18082 = Block.method11778(2.0, 4.0, 2.0, 14.0, 16.0, 14.0);
+        field18083 = VoxelShapes.method24494(VoxelShapes.method24487(), VoxelShapes.method24493(Block.method11778(0.0, 0.0, 4.0, 16.0, 3.0, 12.0), Block.method11778(4.0, 0.0, 0.0, 12.0, 3.0, 16.0), Block.method11778(2.0, 0.0, 2.0, 14.0, 3.0, 14.0), Class4012.field18082), Class9306.field39920);
     }
 }

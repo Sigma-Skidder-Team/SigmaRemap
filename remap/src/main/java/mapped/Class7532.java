@@ -39,13 +39,13 @@ public class Class7532
         }
         final Class1873 class1853 = new Class1873(a, method7439, (int[])(method7440.method316("Biomes", 11) ? method7440.method325("Biomes") : null));
         final Class8288 class1854 = method7440.method316("UpgradeData", 10) ? new Class8288(method7440.method327("UpgradeData")) : Class8288.field34078;
-        final Class6951 class1855 = new Class6951<Class3833>(class1862 -> class1862 == null || class1862.method11878().method21706(), a, method7440.method328("ToBeTicked", 9));
+        final Class6951 class1855 = new Class6951<Block>(class1862 -> class1862 == null || class1862.getDefaultState().method21706(), a, method7440.method328("ToBeTicked", 9));
         final Class6951 class1856 = new Class6951<Class7255>(class1863 -> class1863 == null || class1863 == Class7558.field29974, a, method7440.method328("LiquidsToBeTicked", 9));
         final boolean method7441 = method7440.method329("isLightOn");
         final Class52 method7442 = method7440.method328("Sections", 10);
         final Class8199[] array = new Class8199[16];
         final boolean method7443 = class1849.method6789().method20503();
-        final Class1886 method7444 = class1849.method6904().method7405();
+        final Class1886 method7444 = class1849.method6904().getLightManager();
         if (method7441) {
             method7444.method7259(a, true);
         }
@@ -76,20 +76,20 @@ public class Class7532
         }
         final long method7447 = method7440.method320("InhabitedTime");
         final Class260 method7448 = method23594(class1852);
-        Class1860 class1859;
+        IChunk class1859;
         if (method7448 != Class260.field1244) {
-            final Class1865 class1858 = new Class1865(a, class1854, array, (Class6951<Class3833>)class1855, (Class6951<Class7255>)class1856);
+            final Class1865 class1858 = new Class1865(a, class1854, array, (Class6951<Block>)class1855, (Class6951<Class7255>)class1856);
             class1858.method7097(class1853);
             class1859 = class1858;
             class1858.method7040(method7447);
-            class1858.method7098(Class9312.method34449(method7440.method323("Status")));
-            if (class1858.method7027().method34451(Class9312.field39985)) {
+            class1858.method7098(ChunkStatus.method34449(method7440.method323("Status")));
+            if (class1858.method7027().method34451(ChunkStatus.field39985)) {
                 class1858.method7106(method7444);
             }
             if (!method7441) {
-                if (class1858.method7027().method34451(Class9312.field39986)) {
+                if (class1858.method7027().method34451(ChunkStatus.field39986)) {
                     for (final BlockPos class1860 : BlockPos.getAllInBoxMutable(a.method25426(), 0, a.method25427(), a.method25428(), 255, a.method25429())) {
-                        if (class1859.method6701(class1860).method21704() == 0) {
+                        if (class1859.getBlockState(class1860).method21704() == 0) {
                             continue;
                         }
                         class1858.method7092(class1860);
@@ -103,16 +103,16 @@ public class Class7532
                 method7449 = class1855;
             }
             else {
-                method7449 = Class6956.method21359(method7440.method328("TileTicks", 10), Class90.field208::method503, Class90.field208::method505);
+                method7449 = Class6956.method21359(method7440.method328("TileTicks", 10), Registry.BLOCK::getKey, Registry.BLOCK::getOrDefault);
             }
             Object method7450;
             if (!method7440.method316("LiquidTicks", 9)) {
                 method7450 = class1856;
             }
             else {
-                method7450 = Class6956.method21359(method7440.method328("LiquidTicks", 10), Class90.field206::method503, Class90.field206::method505);
+                method7450 = Class6956.method21359(method7440.method328("LiquidTicks", 10), Registry.field206::getKey, Registry.field206::getOrDefault);
             }
-            class1859 = new Class1862(class1849.method6744(), a, class1853, class1854, (Class6952<Class3833>)method7449, (Class6952<Class7255>)method7450, method7447, array, class1865 -> method23595(class1864, class1865));
+            class1859 = new Class1862(class1849.method6744(), a, class1853, class1854, (Class6952<Block>)method7449, (Class6952<Class7255>)method7450, method7447, array, class1865 -> method23595(class1864, class1865));
         }
         class1859.method7044(method7441);
         final Class51 method7451 = method7440.method327("Heightmaps");
@@ -166,7 +166,7 @@ public class Class7532
         return new Class1866((Class1862)class1859);
     }
     
-    public static Class51 method23593(final Class1849 class1849, final Class1860 class1850) {
+    public static Class51 method23593(final Class1849 class1849, final IChunk class1850) {
         final Class7859 method7019 = class1850.method7019();
         final Class51 class1851 = new Class51();
         final Class51 class1852 = new Class51();
@@ -258,7 +258,7 @@ public class Class7532
             }
         }
         class1852.method295("Entities", class1856);
-        final Class6952<Class3833> method7028 = class1850.method7036();
+        final Class6952<Block> method7028 = class1850.method7036();
         if (!(method7028 instanceof Class6951)) {
             if (!(method7028 instanceof Class6956)) {
                 class1852.method295("TileTicks", class1849.method6907().method21351(method7019));
@@ -297,7 +297,7 @@ public class Class7532
     
     public static Class260 method23594(final Class51 class51) {
         if (class51 != null) {
-            final Class9312 method34449 = Class9312.method34449(class51.method327("Level").method323("Status"));
+            final ChunkStatus method34449 = ChunkStatus.method34449(class51.method327("Level").method323("Status"));
             if (method34449 != null) {
                 return method34449.method34448();
             }

@@ -11,7 +11,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.Map;
 
-public class Class3967 extends Class3833
+public class Class3967 extends Block
 {
     private static String[] field17919;
     private static final Direction[] field17920;
@@ -32,18 +32,18 @@ public class Class3967 extends Class3833
     private VoxelShape[] method12103(final float n) {
         final float n2 = 0.5f - n;
         final float n3 = 0.5f + n;
-        final VoxelShape method11778 = Class3833.method11778(n2 * 16.0f, n2 * 16.0f, n2 * 16.0f, n3 * 16.0f, n3 * 16.0f, n3 * 16.0f);
+        final VoxelShape method11778 = Block.method11778(n2 * 16.0f, n2 * 16.0f, n2 * 16.0f, n3 * 16.0f, n3 * 16.0f, n3 * 16.0f);
         final VoxelShape[] array = new VoxelShape[Class3967.field17920.length];
         for (int i = 0; i < Class3967.field17920.length; ++i) {
             final Direction class179 = Class3967.field17920[i];
-            array[i] = Class7698.method24488(0.5 + Math.min(-n, class179.getXOffset() * 0.5), 0.5 + Math.min(-n, class179.getYOffset() * 0.5), 0.5 + Math.min(-n, class179.getZOffset() * 0.5), 0.5 + Math.max(n, class179.getXOffset() * 0.5), 0.5 + Math.max(n, class179.getYOffset() * 0.5), 0.5 + Math.max(n, class179.getZOffset() * 0.5));
+            array[i] = VoxelShapes.method24488(0.5 + Math.min(-n, class179.getXOffset() * 0.5), 0.5 + Math.min(-n, class179.getYOffset() * 0.5), 0.5 + Math.min(-n, class179.getZOffset() * 0.5), 0.5 + Math.max(n, class179.getXOffset() * 0.5), 0.5 + Math.max(n, class179.getYOffset() * 0.5), 0.5 + Math.max(n, class179.getZOffset() * 0.5));
         }
         final VoxelShape[] array2 = new VoxelShape[64];
         for (int j = 0; j < 64; ++j) {
             VoxelShape method11779 = method11778;
             for (int k = 0; k < Class3967.field17920.length; ++k) {
                 if ((j & 1 << k) != 0x0) {
-                    method11779 = Class7698.method24492(method11779, array[k]);
+                    method11779 = VoxelShapes.method24492(method11779, array[k]);
                 }
             }
             array2[j] = method11779;
@@ -52,7 +52,7 @@ public class Class3967 extends Class3833
     }
     
     @Override
-    public boolean method11818(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean propagatesSkylightDown(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
         return false;
     }
     
@@ -64,7 +64,7 @@ public class Class3967 extends Class3833
     public int method12104(final BlockState class7096) {
         int n = 0;
         for (int i = 0; i < Class3967.field17920.length; ++i) {
-            if (class7096.method21772((Class7111<Boolean>)Class3967.field17927.get(Class3967.field17920[i]))) {
+            if (class7096.get((IProperty<Boolean>)Class3967.field17927.get(Class3967.field17920[i]))) {
                 n |= 1 << i;
             }
         }

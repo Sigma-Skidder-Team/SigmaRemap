@@ -28,11 +28,11 @@ public class Class8742
 {
     public static int method30195(final Class6257 class6257, final ItemStack class6258) {
         if (!class6258.method27620()) {
-            final Class1932 method503 = Class90.field209.method503(class6257);
+            final ResourceLocation method503 = Registry.field209.getKey(class6257);
             final Class52 method504 = class6258.method27662();
             for (int i = 0; i < method504.size(); ++i) {
                 final Class51 method505 = method504.method346(i);
-                final Class1932 method506 = Class1932.method7795(method505.method323("id"));
+                final ResourceLocation method506 = ResourceLocation.method7795(method505.method323("id"));
                 if (method506 != null && method506.equals(method503)) {
                     return MathHelper.method35651(method505.method319("lvl"), 0, 255);
                 }
@@ -49,7 +49,7 @@ public class Class8742
     public static Map<Class6257, Integer> method30197(final Class52 class52) {
         final LinkedHashMap linkedHashMap = Maps.newLinkedHashMap();
         for (int i = 0; i < class52.size(); ++i) {
-            Class90.field209.method506(Class1932.method7795(class52.method346(i).method323("id"))).ifPresent(class54 -> {
+            Registry.field209.method506(ResourceLocation.method7795(class52.method346(i).method323("id"))).ifPresent(class54 -> {
                 final Integer n = map.put(class54, class53.method319("lvl"));
                 return;
             });
@@ -66,7 +66,7 @@ public class Class8742
             }
             final int intValue = (int)entry.getValue();
             final Class51 e = new Class51();
-            e.method306("id", String.valueOf(Class90.field209.method503(class8323)));
+            e.method306("id", String.valueOf(Registry.field209.getKey(class8323)));
             e.method297("lvl", (short)intValue);
             ((AbstractList<Class51>)class8322).add(e);
             if (class8321.getItem() != Items.field31534) {
@@ -88,7 +88,7 @@ public class Class8742
         if (!class7312.method27620()) {
             final Class52 class7315 = class7312.method27662();
             for (int n2 = 0; n2 < class7315.size(); ++n2) {
-                Class90.field209.method506(Class1932.method7795(class7315.method346(n2).method323("id"))).ifPresent(class7314 -> {
+                Registry.field209.method506(ResourceLocation.method7795(class7315.method346(n2).method323("id"))).ifPresent(class7314 -> {
                     final Class52 class7315;
                     final int n2;
                     class7315.method346(n2).method319("lvl");
@@ -319,7 +319,7 @@ public class Class8742
         final ArrayList arrayList = Lists.newArrayList();
         final Item method27622 = class8321.getItem();
         final boolean b2 = class8321.getItem() == Items.field31370;
-        for (final Class6257 class8322 : Class90.field209) {
+        for (final Class6257 class8322 : Registry.field209) {
             if (class8322.method18603() && !b) {
                 continue;
             }

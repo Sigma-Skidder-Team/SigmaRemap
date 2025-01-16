@@ -56,7 +56,7 @@ public class Class412 extends Class409
                     return;
                 }
                 if (method2019 instanceof Class513) {
-                    Class7770.field31778.method13813((Class513)method2019, this.world.method6701(method2021));
+                    Class7770.field31778.method13813((Class513)method2019, this.world.getBlockState(method2021));
                 }
                 class7007.method2437(method2019);
                 this.method1652();

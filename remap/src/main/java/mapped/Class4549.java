@@ -34,19 +34,19 @@ public class Class4549 extends Class4535<Class5122>
             while (iterator2.hasNext()) {
                 class1856.setPos(n, 0, iterator2.next());
                 final BlockPos method6958 = class1851.method6958(Class2020.field11526, class1856);
-                if (!class1851.method6961(method6958) && !class1851.method6701(method6958).method21727(class1851, method6958).method24540()) {
+                if (!class1851.method6961(method6958) && !class1851.getBlockState(method6958).getCollisionShape(class1851, method6958).method24540()) {
                     continue;
                 }
-                class1851.method6688(method6958, Class7521.field29292.method11878(), 2);
+                class1851.setBlockState(method6958, Class7521.field29292.getDefaultState(), 2);
                 Class456.method2323(class1851, random, method6958, Class9020.field38064);
-                final BlockState method6959 = Class7521.field29287.method11878();
+                final BlockState method6959 = Class7521.field29287.getDefaultState();
                 final Iterator<Direction> iterator3 = Plane.HORIZONTAL.iterator();
                 while (iterator3.hasNext()) {
                     final BlockPos method6960 = method6958.method1149(iterator3.next());
                     if (!method6959.method21752(class1851, method6960)) {
                         continue;
                     }
-                    class1851.method6688(method6960, method6959, 2);
+                    class1851.setBlockState(method6960, method6959, 2);
                 }
                 return true;
             }

@@ -14,7 +14,7 @@ public class Class7908 extends Class7909<EntityType<?>>
     private int field32478;
     private Class7909<EntityType<?>> field32479;
     
-    public Class7908(final Class1932 class1932) {
+    public Class7908(final ResourceLocation class1932) {
         super(class1932);
         this.field32478 = -1;
     }

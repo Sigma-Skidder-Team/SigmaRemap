@@ -11,10 +11,10 @@ import net.minecraft.entity.Entity;
 
 public class Class4636 extends Class4611<Class4210>
 {
-    private static final Class1932 field20103;
+    private static final ResourceLocation field20103;
     
     @Override
-    public Class1932 method13717() {
+    public ResourceLocation method13717() {
         return Class4636.field20103;
     }
     
@@ -27,6 +27,6 @@ public class Class4636 extends Class4611<Class4210>
     }
     
     static {
-        field20103 = new Class1932("killed_by_crossbow");
+        field20103 = new ResourceLocation("killed_by_crossbow");
     }
 }

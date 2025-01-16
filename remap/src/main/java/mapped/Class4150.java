@@ -15,7 +15,7 @@ public interface Class4150 extends Class4152
 {
     public static final Logger field18475 = LogManager.getLogger();
     public static final ThreadLocal<Class9145> field18506 = ThreadLocal.withInitial(() -> {
-        new Class9145(Class7521.field29147.method11878(), new BlockPos(0, 0, 0));
+        new Class9145(Class7521.field29147.getDefaultState(), new BlockPos(0, 0, 0));
         return;
     });
     public static final boolean field18507 = Class9570.field41282.method22623();

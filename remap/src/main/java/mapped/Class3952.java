@@ -38,7 +38,7 @@ public class Class3952 extends Class3841
             if (!class7099.isPassenger()) {
                 if (!class7099.isBeingRidden()) {
                     if (class7099.method1855()) {
-                        if (Class7698.method24496(Class7698.method24489(class7099.getBoundingBox().method18499(-class7098.getX(), -class7098.getY(), -class7098.getZ())), class7096.method21725(class7097, class7098), Class9306.field39924)) {
+                        if (VoxelShapes.method24496(VoxelShapes.method24489(class7099.getBoundingBox().method18499(-class7098.getX(), -class7098.getY(), -class7098.getZ())), class7096.getShape(class7097, class7098), Class9306.field39924)) {
                             class7099.method1854((class7097.dimension.getType() != DimensionType.field2225) ? DimensionType.field2225 : DimensionType.field2223);
                         }
                     }
@@ -63,6 +63,6 @@ public class Class3952 extends Class3841
     }
     
     static {
-        field17852 = Class3833.method11778(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
+        field17852 = Block.method11778(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
     }
 }

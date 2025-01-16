@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 
-public class Class4032 extends Class3833
+public class Class4032 extends Block
 {
     private static String[] field18129;
     

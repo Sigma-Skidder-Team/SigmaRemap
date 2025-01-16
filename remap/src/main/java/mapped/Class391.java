@@ -12,13 +12,13 @@ import java.util.Map;
 public class Class391 implements AutoCloseable
 {
     private static String[] field2277;
-    private final Map<Class1932, Class1774> field2278;
+    private final Map<ResourceLocation, Class1774> field2278;
     
     public Class391(final Collection<Class1774> collection) {
-        this.field2278 = collection.stream().collect(Collectors.toMap((Function<? super Class1774, ? extends Class1932>)Class1774::method6340, (Function<? super Class1774, ? extends Class1774>)Function.identity()));
+        this.field2278 = collection.stream().collect(Collectors.toMap((Function<? super Class1774, ? extends ResourceLocation>)Class1774::method6340, (Function<? super Class1774, ? extends Class1774>)Function.identity()));
     }
     
-    public Class1774 method1414(final Class1932 class1932) {
+    public Class1774 method1414(final ResourceLocation class1932) {
         return this.field2278.get(class1932);
     }
     

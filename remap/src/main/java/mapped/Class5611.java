@@ -6,7 +6,7 @@ package mapped;
 
 public abstract class Class5611 extends Class5610<Class665>
 {
-    public static final Class1932 field22980;
+    public static final ResourceLocation field22980;
     private final int field22981;
     private final Class665 field22982;
     
@@ -68,6 +68,6 @@ public abstract class Class5611 extends Class5610<Class665>
     }
     
     static {
-        field22980 = new Class1932("textures/gui/widgets.png");
+        field22980 = new ResourceLocation("textures/gui/widgets.png");
     }
 }

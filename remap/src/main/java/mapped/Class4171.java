@@ -15,8 +15,8 @@ import java.util.Random;
 
 public class Class4171<T extends Class489> extends Class4158<T>
 {
-    public static final Class1932 field18584;
-    public static final Class1932 field18585;
+    public static final ResourceLocation field18584;
+    public static final ResourceLocation field18585;
     private static final Random field18586;
     private static final List<Class6332> field18587;
     
@@ -25,9 +25,9 @@ public class Class4171<T extends Class489> extends Class4158<T>
     }
     
     public void method12489(final T t, final float n, final Class7351 class7351, final Class7807 class7352, final int n2, final int n3) {
-        if (!Class8571.method28955() || !Class7778.method24970(t, n, this.method12493(), class7351, class7352, n2, n3)) {
+        if (!Config.method28955() || !Class7778.method24970(t, n, this.method12493(), class7351, class7352, n2, n3)) {
             Class4171.field18586.setSeed(31100L);
-            final int method12492 = this.method12492(t.method2193().distanceSq(this.field18539.field41131.method18161(), true));
+            final int method12492 = this.method12492(t.getPos().distanceSq(this.field18539.field41131.method18161(), true));
             final float method12493 = this.method12493();
             final Matrix4f method12494 = class7351.method22569().method32111();
             this.method12490(t, method12493, 0.15f, method12494, class7352.method25214(Class4171.field18587.get(0)));
@@ -88,8 +88,8 @@ public class Class4171<T extends Class489> extends Class4158<T>
     }
     
     static {
-        field18584 = new Class1932("textures/environment/end_sky.png");
-        field18585 = new Class1932("textures/entity/end_portal.png");
+        field18584 = new ResourceLocation("textures/environment/end_sky.png");
+        field18585 = new ResourceLocation("textures/entity/end_portal.png");
         field18586 = new Random(31100L);
         field18587 = IntStream.range(0, 16).mapToObj(n -> Class6332.method18790(n + 1)).collect((Collector<? super Object, Object, List<Class6332>>)ImmutableList.toImmutableList());
     }

@@ -16,11 +16,11 @@ public class Class9032
 {
     public static final Class9032 field38193;
     private final int field38194;
-    private final Class1932[] field38195;
-    private final Class1932[] field38196;
+    private final ResourceLocation[] field38195;
+    private final ResourceLocation[] field38196;
     private final Class9360 field38197;
     
-    public Class9032(final int field38194, final Class1932[] field38195, final Class1932[] field38196, final Class9360 field38197) {
+    public Class9032(final int field38194, final ResourceLocation[] field38195, final ResourceLocation[] field38196, final Class9360 field38197) {
         this.field38194 = field38194;
         this.field38195 = field38195;
         this.field38196 = field38196;
@@ -31,7 +31,7 @@ public class Class9032
         class513.method2871(this.field38194);
         final Class7529 method32883 = new Class9098(class513.method2940()).method32877(Class6683.field26362, class513).method32877(Class6683.field26367, new BlockPos(class513)).method32873(class513.method2633()).method32883(Class7104.field27717);
         int n = 0;
-        final Class1932[] field38195 = this.field38195;
+        final ResourceLocation[] field38195 = this.field38195;
         for (int length = field38195.length, i = 0; i < length; ++i) {
             for (final ItemStack class514 : class513.field3040.method1581().method6402(field38195[i]).method34485(method32883)) {
                 if (!class513.method2885(class514)) {
@@ -70,7 +70,7 @@ public class Class9032
             }
             if (this.field38195.length > 0) {
                 final JsonArray jsonArray = new JsonArray();
-                final Class1932[] field38195 = this.field38195;
+                final ResourceLocation[] field38195 = this.field38195;
                 for (int length = field38195.length, i = 0; i < length; ++i) {
                     jsonArray.add(field38195[i].toString());
                 }
@@ -78,7 +78,7 @@ public class Class9032
             }
             if (this.field38196.length > 0) {
                 final JsonArray jsonArray2 = new JsonArray();
-                final Class1932[] field38196 = this.field38196;
+                final ResourceLocation[] field38196 = this.field38196;
                 for (int length2 = field38196.length, j = 0; j < length2; ++j) {
                     jsonArray2.add(field38196[j].toString());
                 }
@@ -93,6 +93,6 @@ public class Class9032
     }
     
     static {
-        field38193 = new Class9032(0, new Class1932[0], new Class1932[0], Class9360.field40145);
+        field38193 = new Class9032(0, new ResourceLocation[0], new ResourceLocation[0], Class9360.field40145);
     }
 }

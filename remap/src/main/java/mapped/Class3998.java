@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class3998 extends Class3833
+public class Class3998 extends Block
 {
     private static String[] field18017;
     public static final Class7114<Axis> field18018;
@@ -25,12 +25,12 @@ public class Class3998 extends Class3833
     
     public Class3998(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773(Class3998.field18018, Axis.X));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with(Class3998.field18018, Axis.X));
     }
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        switch (Class9275.field39763[class7096.method21772(Class3998.field18018).ordinal()]) {
+        switch (Class9275.field39763[class7096.get(Class3998.field18018).ordinal()]) {
             case 1: {
                 return Class3998.field18020;
             }
@@ -45,10 +45,10 @@ public class Class3998 extends Class3833
         if (class7097.dimension.method20492()) {
             if (class7097.method6765().method31216(Class8878.field37318)) {
                 if (random.nextInt(2000) < class7097.method6954().method8235()) {
-                    while (class7097.method6701(method1139).method21696() == this) {
+                    while (class7097.getBlockState(method1139).method21696() == this) {
                         method1139 = method1139.method1139();
                     }
-                    if (class7097.method6701(method1139).method21698(class7097, method1139, EntityType.field29014)) {
+                    if (class7097.getBlockState(method1139).method21698(class7097, method1139, EntityType.field29014)) {
                         final Class828 method1140 = EntityType.field29014.method23357(class7097, null, null, null, method1139.method1137(), Class2101.field12177, false, false);
                         if (method1140 != null) {
                             method1140.timeUntilPortal = method1140.method1796();
@@ -81,11 +81,11 @@ public class Class3998 extends Class3833
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         final Axis method790 = class7097.getAxis();
-        final Axis class7102 = class7096.method21772(Class3998.field18018);
+        final Axis class7102 = class7096.get(Class3998.field18018);
         if (class7102 == method790 || !method790.isHorizontal()) {
-            if (class7098.method21696() != this) {
+            if (class7098.getBlock() != this) {
                 if (!new Class8874(class7099, class7100, class7102).method31198()) {
-                    return Class7521.field29147.method11878();
+                    return Class7521.field29147.getDefaultState();
                 }
             }
         }
@@ -116,7 +116,7 @@ public class Class3998 extends Class3833
             final double n5 = (random.nextFloat() - 0.5) * 0.5;
             double n6 = (random.nextFloat() - 0.5) * 0.5;
             final int n7 = random.nextInt(2) * 2 - 1;
-            if (class7097.method6701(class7098.method1145()).method21696() != this && class7097.method6701(class7098.method1147()).method21696() != this) {
+            if (class7097.getBlockState(class7098.method1145()).method21696() != this && class7097.getBlockState(class7098.method1147()).method21696() != this) {
                 n = class7098.getX() + 0.5 + 0.25 * n7;
                 n4 = random.nextFloat() * 2.0f * n7;
             }
@@ -138,12 +138,12 @@ public class Class3998 extends Class3833
         switch (Class9275.field39764[class7097.ordinal()]) {
             case 1:
             case 2: {
-                switch (Class9275.field39763[class7096.method21772(Class3998.field18018).ordinal()]) {
+                switch (Class9275.field39763[class7096.get(Class3998.field18018).ordinal()]) {
                     case 1: {
-                        return ((Class7097<O, BlockState>)class7096).method21773(Class3998.field18018, Axis.X);
+                        return ((StateHolder<O, BlockState>)class7096).with(Class3998.field18018, Axis.X);
                     }
                     case 2: {
-                        return ((Class7097<O, BlockState>)class7096).method21773(Class3998.field18018, Axis.Z);
+                        return ((StateHolder<O, BlockState>)class7096).with(Class3998.field18018, Axis.Z);
                     }
                     default: {
                         return class7096;
@@ -158,7 +158,7 @@ public class Class3998 extends Class3833
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class3998.field18018);
     }
     
@@ -199,7 +199,7 @@ public class Class3998 extends Class3833
     
     static {
         field18018 = Class8970.field37748;
-        field18019 = Class3833.method11778(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
-        field18020 = Class3833.method11778(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
+        field18019 = Block.method11778(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
+        field18020 = Block.method11778(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
     }
 }

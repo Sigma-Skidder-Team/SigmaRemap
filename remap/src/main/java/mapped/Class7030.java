@@ -4,7 +4,6 @@
 
 package mapped;
 
-import com.google.gson.JsonSyntaxException;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonObject;
@@ -12,11 +11,11 @@ import com.google.gson.JsonObject;
 public class Class7030 extends Class7020<Class154>
 {
     public Class7030() {
-        super(new Class1932("block_state_property"), Class154.class);
+        super(new ResourceLocation("block_state_property"), Class154.class);
     }
     
     public void method21505(final JsonObject jsonObject, final Class154 class154, final JsonSerializationContext jsonSerializationContext) {
-        jsonObject.addProperty("block", Class90.field208.method503(Class154.method740(class154)).toString());
+        jsonObject.addProperty("block", Registry.BLOCK.getKey(Class154.method740(class154)).toString());
         jsonObject.add("properties", Class154.method741(class154).method34693());
     }
     

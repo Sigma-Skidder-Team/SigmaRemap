@@ -6,7 +6,7 @@ package mapped;
 
 public class Class4739 extends Class4712<Class793, Class5932<Class793>>
 {
-    private static final Class1932 field20355;
+    private static final ResourceLocation field20355;
     
     public Class4739(final Class8551 class8551) {
         super(class8551, new Class5932(0.0f), 0.7f);
@@ -19,11 +19,11 @@ public class Class4739 extends Class4712<Class793, Class5932<Class793>>
         super.method14006(class793, n, n2, class794, class795, n3);
     }
     
-    public Class1932 method14063(final Class793 class793) {
+    public ResourceLocation method14063(final Class793 class793) {
         return Class4739.field20355;
     }
     
     static {
-        field20355 = new Class1932("textures/entity/turtle/big_sea_turtle.png");
+        field20355 = new ResourceLocation("textures/entity/turtle/big_sea_turtle.png");
     }
 }

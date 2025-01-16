@@ -8,7 +8,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public abstract class Class615 extends Class608<Class632>
 {
-    private static final Class1932 field3586;
+    private static final ResourceLocation field3586;
     private static final ITextComponent field3587;
     private static final ITextComponent field3588;
     public final Class869 field3589;
@@ -44,7 +44,7 @@ public abstract class Class615 extends Class608<Class632>
     }
     
     static {
-        field3586 = new Class1932("textures/gui/resource_packs.png");
+        field3586 = new ResourceLocation("textures/gui/resource_packs.png");
         field3587 = new Class2259("resourcePack.incompatible", new Object[0]);
         field3588 = new Class2259("resourcePack.incompatible.confirm.title", new Object[0]);
     }

@@ -13,7 +13,7 @@ import com.google.gson.JsonObject;
 public class Class6243 extends Class6227<Class142>
 {
     public Class6243() {
-        super(new Class1932("set_nbt"), Class142.class);
+        super(new ResourceLocation("set_nbt"), Class142.class);
     }
     
     public void method18575(final JsonObject jsonObject, final Class142 class142, final JsonSerializationContext jsonSerializationContext) {

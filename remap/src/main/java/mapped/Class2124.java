@@ -8,19 +8,19 @@ import java.util.Objects;
 
 public class Class2124 implements Class2123
 {
-    private final Class1932 field12393;
+    private final ResourceLocation field12393;
     private final Class9294 field12394;
     private final boolean field12395;
     private final int field12396;
     
-    public Class2124(final Class1932 field12393, final Class9294 field12394, final boolean field12395, final int field12396) {
+    public Class2124(final ResourceLocation field12393, final Class9294 field12394, final boolean field12395, final int field12396) {
         this.field12393 = field12393;
         this.field12394 = field12394;
         this.field12395 = field12395;
         this.field12396 = field12396;
     }
     
-    public Class1932 method8279() {
+    public ResourceLocation method8279() {
         return this.field12393;
     }
     

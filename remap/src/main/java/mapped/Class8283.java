@@ -33,14 +33,14 @@ public class Class8283
     }
     
     private static void method27526(final File parent, final String child, final int n, final int n2, final Class6153 class6153, final Consumer<ITextComponent> consumer) {
-        final Class869 method28894 = Class8571.method28894();
+        final Class869 method28894 = Config.method28894();
         final Class1925 method28895 = method28894.method5332();
-        final Class5760 method28896 = Class8571.method28962();
+        final Class5760 method28896 = Config.method28962();
         final int method28897 = method28895.method7692();
         final int method28898 = method28895.method7693();
         final int field23473 = method28896.field23473;
         final int method28899 = method28895.method7687(method28894.field4648.field23473, method28894.field4648.field23421);
-        final int method28900 = Class8571.method29007();
+        final int method28900 = Config.method29007();
         final boolean b = Class8543.method28676() && method28900 > 1;
         if (b) {
             method28896.field23473 = method28899 * method28900;
@@ -55,7 +55,7 @@ public class Class8283
         if (b) {
             method28894.method5234().method18397();
             Class8933.method31636();
-            Class8571.method28962().field23473 = field23473;
+            Config.method28962().field23473 = field23473;
             method28895.method7703(method28897, method28898);
         }
         final File parent2 = new File(parent, "screenshots");

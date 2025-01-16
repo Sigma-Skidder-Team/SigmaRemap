@@ -24,7 +24,7 @@ public class Class6910 implements Class6909
     
     @Override
     public String method21274() {
-        return Class90.field222.method503(this.method21272()) + " " + new Class175(this.field27097.getItem(), this.field27097.method27657()).method773();
+        return Registry.field222.getKey(this.method21272()) + " " + new Class175(this.field27097.getItem(), this.field27097.method27657()).method773();
     }
     
     @Override

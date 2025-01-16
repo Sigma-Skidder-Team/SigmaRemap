@@ -29,10 +29,10 @@ public class Class9166<DC extends Class6926>
     }
     
     public <T> Dynamic<T> method33462(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("name"), dynamicOps.createString(Class90.field216.method503(this.field38832).toString()), dynamicOps.createString("config"), this.field38833.method21299((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue())));
+        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("name"), dynamicOps.createString(Registry.field216.getKey(this.field38832).toString()), dynamicOps.createString("config"), this.field38833.method21299((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue())));
     }
     
     public static <T> Class9166<?> method33463(final Dynamic<T> dynamic) {
-        return new Class9166<Object>(Class90.field216.method505(new Class1932(dynamic.get("name").asString(""))), (Dynamic<?>)dynamic.get("config").orElseEmptyMap());
+        return new Class9166<Object>(Registry.field216.getOrDefault(new ResourceLocation(dynamic.get("name").asString(""))), (Dynamic<?>)dynamic.get("config").orElseEmptyMap());
     }
 }

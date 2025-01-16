@@ -32,11 +32,11 @@ public class Class362 extends Class357
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
-        builder.put(dynamicOps.createString("type"), dynamicOps.createString(Class90.field218.method503(this.field2184).toString()));
+        builder.put(dynamicOps.createString("type"), dynamicOps.createString(Registry.field218.getKey(this.field2184).toString()));
         return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build())).getValue();
     }
     
     static {
-        field2190 = new BlockState[] { Class7521.field29265.method11878(), Class7521.field29266.method11878(), Class7521.field29268.method11878(), Class7521.field29269.method11878(), Class7521.field29270.method11878(), Class7521.field29271.method11878(), Class7521.field29272.method11878(), Class7521.field29273.method11878(), Class7521.field29274.method11878(), Class7521.field29275.method11878(), Class7521.field29277.method11878() };
+        field2190 = new BlockState[] { Class7521.field29265.getDefaultState(), Class7521.field29266.getDefaultState(), Class7521.field29268.getDefaultState(), Class7521.field29269.getDefaultState(), Class7521.field29270.getDefaultState(), Class7521.field29271.getDefaultState(), Class7521.field29272.getDefaultState(), Class7521.field29273.getDefaultState(), Class7521.field29274.getDefaultState(), Class7521.field29275.getDefaultState(), Class7521.field29277.getDefaultState() };
     }
 }

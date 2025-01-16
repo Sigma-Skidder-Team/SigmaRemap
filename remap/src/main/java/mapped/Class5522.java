@@ -43,7 +43,7 @@ public class Class5522 extends Class5515
             class5903.method13978(class5904);
             return (Class9559)class5903;
         }
-        Class8571.method28848("Not a RenderSheep: " + obj);
+        Config.warn("Not a RenderSheep: " + obj);
         return null;
     }
 }

@@ -5,7 +5,7 @@
 package mapped;
 
 import java.util.stream.Stream;
-import java.util.Iterator;
+
 import com.google.common.collect.Maps;
 import java.util.Map;
 
@@ -49,7 +49,7 @@ public class Class6355 extends Class6354
         this.method18903();
     }
     
-    public Stream<Class1932> method18910(final String s) {
-        return this.field25419.keySet().stream().map(s3 -> new Class1932(s2, s3));
+    public Stream<ResourceLocation> method18910(final String s) {
+        return this.field25419.keySet().stream().map(s3 -> new ResourceLocation(s2, s3));
     }
 }

@@ -14,9 +14,9 @@ public enum Class241
     field1186(Class7521.field29165, "dark_oak");
     
     private final String field1187;
-    private final Class3833 field1188;
+    private final Block field1188;
     
-    private Class241(final Class3833 field1188, final String field1189) {
+    private Class241(final Block field1188, final String field1189) {
         this.field1187 = field1189;
         this.field1188 = field1188;
     }
@@ -25,7 +25,7 @@ public enum Class241
         return this.field1187;
     }
     
-    public Class3833 method891() {
+    public Block method891() {
         return this.field1188;
     }
     

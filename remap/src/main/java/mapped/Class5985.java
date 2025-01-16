@@ -36,7 +36,7 @@ public class Class5985 implements JsonDeserializer<Class7685>
         if (asJsonObject.has("gui_light")) {
             method17920 = Class240.method888(Class9583.method35895(asJsonObject, "gui_light"));
         }
-        return new Class7685(method17916.isEmpty() ? null : new Class1932(method17916), method17915, method17917, method17918, method17920, field29079, method17919);
+        return new Class7685(method17916.isEmpty() ? null : new ResourceLocation(method17916), method17915, method17917, method17918, method17920, field29079, method17919);
     }
     
     public List<Class6559> method17910(final JsonDeserializationContext jsonDeserializationContext, final JsonObject jsonObject) {
@@ -51,7 +51,7 @@ public class Class5985 implements JsonDeserializer<Class7685>
     }
     
     private Map<String, Either<Class3687, String>> method17911(final JsonObject jsonObject) {
-        final Class1932 field9853 = Class1774.field9853;
+        final ResourceLocation field9853 = Class1774.field9853;
         final HashMap hashMap = Maps.newHashMap();
         if (jsonObject.has("textures")) {
             for (final Map.Entry<Object, V> entry : Class9583.method35914(jsonObject, "textures").entrySet()) {
@@ -61,11 +61,11 @@ public class Class5985 implements JsonDeserializer<Class7685>
         return hashMap;
     }
     
-    private static Either<Class3687, String> method17912(final Class1932 class1932, final String str) {
+    private static Either<Class3687, String> method17912(final ResourceLocation class1932, final String str) {
         if (Class7685.method24403(str)) {
             return (Either<Class3687, String>)Either.right((Object)str.substring(1));
         }
-        final Class1932 method7795 = Class1932.method7795(str);
+        final ResourceLocation method7795 = ResourceLocation.method7795(str);
         if (method7795 != null) {
             return (Either<Class3687, String>)Either.left((Object)new Class3687(class1932, method7795));
         }

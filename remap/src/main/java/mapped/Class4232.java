@@ -28,7 +28,7 @@ public class Class4232 extends Class4211
     public JsonElement method12682() {
         final JsonObject jsonObject = new JsonObject();
         if (this.field19040 != null) {
-            jsonObject.addProperty("potion", Class90.field212.method503(this.field19040).toString());
+            jsonObject.addProperty("potion", Registry.field212.getKey(this.field19040).toString());
         }
         return (JsonElement)jsonObject;
     }

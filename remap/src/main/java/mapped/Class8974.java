@@ -59,7 +59,7 @@ public class Class8974
             }
             return;
         });
-        this.field37820 = Class8571.method28836();
+        this.field37820 = Config.method28836();
         this.field37821 = !Class9570.field41178.method22623();
         this.field37822 = false;
         this.field37825 = new Class8974[6];
@@ -71,7 +71,7 @@ public class Class8974
     }
     
     private boolean method31863(final BlockPos class354) {
-        return Class7520.method23478(this.field37833).method6687(class354.getX() >> 4, class354.getZ() >> 4, Class9312.field39989, false) != null;
+        return Class7520.method23478(this.field37833).method6687(class354.getX() >> 4, class354.getZ() >> 4, ChunkStatus.field39989, false) != null;
     }
     
     public boolean method31864() {
@@ -136,9 +136,9 @@ public class Class8974
     
     public double method31868() {
         final Class6092 method5833 = Class869.method5277().field4644.method5833();
-        final double n = this.field37814.field25073 + 8.0 - method5833.method18161().x;
-        final double n2 = this.field37814.field25074 + 8.0 - method5833.method18161().y;
-        final double n3 = this.field37814.field25075 + 8.0 - method5833.method18161().z;
+        final double n = this.field37814.minX + 8.0 - method5833.method18161().x;
+        final double n2 = this.field37814.minY + 8.0 - method5833.method18161().y;
+        final double n3 = this.field37814.minZ + 8.0 - method5833.method18161().z;
         return n * n + n2 * n2 + n3 * n3;
     }
     
@@ -290,7 +290,7 @@ public class Class8974
                 }
             }
             else if (class1858 == Class9484.field40761) {
-                final Class3833 method31487 = class1856.method21696();
+                final Block method31487 = class1856.method21696();
                 if (method31487 instanceof Class3999) {
                     return class1858;
                 }
@@ -415,9 +415,9 @@ public class Class8974
                 }
                 final Class6222 method31877 = Class7520.method23480(this.field37833).method5762(new BlockPos(n2, n3, n4)).method31904();
                 if (method31877 != null) {
-                    if (method31877.field25073 == n2) {
-                        if (method31877.field25074 == n3) {
-                            if (method31877.field25075 == n4) {
+                    if (method31877.minX == n2) {
+                        if (method31877.minY == n3) {
+                            if (method31877.minZ == n4) {
                                 this.field37832 = method31877;
                             }
                         }

@@ -14,7 +14,7 @@ public class Class4100 extends Item
 {
     public Class4100(final Class8959 class8959) {
         super(class8959);
-        this.method11705(new Class1932("blocking"), (class8321, class8322, class8323) -> {
+        this.method11705(new ResourceLocation("blocking"), (class8321, class8322, class8323) -> {
             if (class8323 != null) {
                 if (class8323.method2756()) {
                     if (class8323.method2766() == class8321) {

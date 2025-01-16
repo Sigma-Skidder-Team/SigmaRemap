@@ -23,7 +23,7 @@ public class Class6033 extends Class6032<Class4408>
         super(function);
     }
     
-    public void method17959(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int a, final double a2, final BlockState class1862, final BlockState class1863, final int n3, final long n4, final Class4408 class1864) {
+    public void method17959(final Random random, final IChunk class1860, final Class3090 class1861, final int n, final int n2, final int a, final double a2, final BlockState class1862, final BlockState class1863, final int n3, final long n4, final Class4408 class1864) {
         double n5 = 0.0;
         double n6 = 0.0;
         final Mutable class1865 = new Mutable();
@@ -59,7 +59,7 @@ public class Class6033 extends Class6032<Class4408>
         for (int i = Math.max(a, (int)n5 + 1); i >= 0; --i) {
             class1865.setPos(n9, i, n10);
             Label_0364: {
-                if (class1860.method6701(class1865).method21706()) {
+                if (class1860.getBlockState(class1865).method21706()) {
                     if (i < (int)n5) {
                         if (random.nextDouble() > 0.01) {
                             class1860.method7008(class1865, Class6033.field24565, false);
@@ -67,7 +67,7 @@ public class Class6033 extends Class6032<Class4408>
                         }
                     }
                 }
-                if (class1860.method6701(class1865).method21697() == Class8059.field33161) {
+                if (class1860.getBlockState(class1865).getMaterial() == Material.WATER) {
                     if (i > (int)n6) {
                         if (i < n3) {
                             if (n6 != 0.0) {
@@ -79,18 +79,18 @@ public class Class6033 extends Class6032<Class4408>
                     }
                 }
             }
-            final BlockState method9846 = class1860.method6701(class1865);
+            final BlockState method9846 = class1860.getBlockState(class1865);
             if (!method9846.method21706()) {
-                if (method9846.method21696() == class1862.method21696()) {
+                if (method9846.getBlock() == class1862.getBlock()) {
                     if (n12 != -1) {
                         if (n12 > 0) {
                             --n12;
                             class1860.method7008(class1865, class1866, false);
                             if (n12 == 0) {
-                                if (class1866.method21696() == Class7521.field29175) {
+                                if (class1866.getBlock() == Class7521.field29175) {
                                     if (n11 > 1) {
                                         n12 = random.nextInt(4) + Math.max(0, i - 63);
-                                        class1866 = ((class1866.method21696() != Class7521.field29176) ? Class7521.field29217.method11878() : Class7521.field29587.method11878());
+                                        class1866 = ((class1866.getBlock() != Class7521.field29176) ? Class7521.field29217.getDefaultState() : Class7521.field29587.getDefaultState());
                                     }
                                 }
                             }
@@ -135,7 +135,7 @@ public class Class6033 extends Class6032<Class4408>
                         }
                     }
                 }
-                else if (method9846.method21696() == Class7521.field29548) {
+                else if (method9846.getBlock() == Class7521.field29548) {
                     if (n13 <= n14) {
                         if (i > n15) {
                             class1860.method7008(class1865, Class6033.field24566, false);
@@ -168,10 +168,10 @@ public class Class6033 extends Class6032<Class4408>
     }
     
     static {
-        field24565 = Class7521.field29548.method11878();
-        field24566 = Class7521.field29331.method11878();
-        field24567 = Class7521.field29147.method11878();
-        field24568 = Class7521.field29177.method11878();
-        field24569 = Class7521.field29330.method11878();
+        field24565 = Class7521.field29548.getDefaultState();
+        field24566 = Class7521.field29331.getDefaultState();
+        field24567 = Class7521.field29147.getDefaultState();
+        field24568 = Class7521.field29177.getDefaultState();
+        field24569 = Class7521.field29330.getDefaultState();
     }
 }

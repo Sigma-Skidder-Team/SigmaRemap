@@ -11,7 +11,7 @@ import java.io.IOException;
 public class Class4342 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19449;
-    public Class1932 field19450;
+    public ResourceLocation field19450;
     private Class286 field19451;
     private int field19452;
     private int field19453;
@@ -23,7 +23,7 @@ public class Class4342 implements IPacket<IClientPlayNetHandler>
         this.field19453 = Integer.MAX_VALUE;
     }
     
-    public Class4342(final Class1932 field19450, final Class286 field19451, final Vec3d class5487, final float field19452, final float field19453) {
+    public Class4342(final ResourceLocation field19450, final Class286 field19451, final Vec3d class5487, final float field19452, final float field19453) {
         this.field19453 = Integer.MAX_VALUE;
         this.field19450 = field19450;
         this.field19451 = field19451;
@@ -56,7 +56,7 @@ public class Class4342 implements IPacket<IClientPlayNetHandler>
         class8654.writeFloat(this.field19456);
     }
     
-    public Class1932 method13038() {
+    public ResourceLocation method13038() {
         return this.field19450;
     }
     

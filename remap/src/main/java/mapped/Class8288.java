@@ -23,7 +23,7 @@ public class Class8288
     private static final Class322[] field34079;
     private final EnumSet<Class322> field34080;
     private final int[][] field34081;
-    private static final Map<Class3833, Class2168> field34082;
+    private static final Map<Block, Class2168> field34082;
     private static final Set<Class2168> field34083;
     
     private Class8288() {
@@ -80,18 +80,18 @@ public class Class8288
             final Mutable class1863 = new Mutable();
             for (final BlockPos class1864 : BlockPos.getAllInBoxMutable(n, 0, n3, n2, method7065.method6986() - 1, n4)) {
                 BlockState class1866;
-                final BlockState class1865 = class1866 = method7065.method6701(class1864);
+                final BlockState class1865 = class1866 = method7065.getBlockState(class1864);
                 for (final Direction class1867 : values) {
                     class1863.method1287(class1864).method1290(class1867);
                     class1866 = method27548(class1866, class1867, method7065, class1864, class1863);
                 }
-                Class3833.method11787(class1865, class1866, method7065, class1864, 18);
+                Block.method11787(class1865, class1866, method7065, class1864, 18);
             }
         }
     }
     
     private static BlockState method27548(final BlockState class7096, final Direction class7097, final Class1851 class7098, final BlockPos class7099, final BlockPos class7100) {
-        return Class8288.field34082.getOrDefault(class7096.method21696(), Class2167.field12889).method8335(class7096, class7097, class7098.method6701(class7100), class7098, class7099, class7100);
+        return Class8288.field34082.getOrDefault(class7096.getBlock(), Class2167.field12889).method8335(class7096, class7097, class7098.getBlockState(class7100), class7098, class7099, class7100);
     }
     
     private void method27549(final Class1862 class1862) {
@@ -116,7 +116,7 @@ public class Class8288
                                 method1301 = method27548(method1301, class1865, method1299, method1296, method1297);
                             }
                         }
-                        Class3833.method11787(class1864, method1301, method1299, method1296, 18);
+                        Block.method11787(class1864, method1301, method1299, method1296, 18);
                     }
                 }
             }
@@ -166,7 +166,7 @@ public class Class8288
         field34077 = LogManager.getLogger();
         field34078 = new Class8288();
         field34079 = Class322.values();
-        field34082 = new IdentityHashMap<Class3833, Class2168>();
+        field34082 = new IdentityHashMap<Block, Class2168>();
         field34083 = Sets.newHashSet();
     }
 }

@@ -25,16 +25,16 @@ public class Class7071
     private static final Function<SuggestionsBuilder, CompletableFuture<Suggestions>> field27536;
     private final StringReader field27537;
     private final boolean field27538;
-    private final Map<Class7111<?>, Comparable<?>> field27539;
+    private final Map<IProperty<?>, Comparable<?>> field27539;
     private Item field27540;
     private Class51 field27541;
-    private Class1932 field27542;
+    private ResourceLocation field27542;
     private int field27543;
     private Function<SuggestionsBuilder, CompletableFuture<Suggestions>> field27544;
     
     public Class7071(final StringReader field27537, final boolean field27538) {
         this.field27539 = Maps.newHashMap();
-        this.field27542 = new Class1932("");
+        this.field27542 = new ResourceLocation("");
         this.field27544 = Class7071.field27536;
         this.field27537 = field27537;
         this.field27538 = field27538;
@@ -49,13 +49,13 @@ public class Class7071
         return this.field27541;
     }
     
-    public Class1932 method21628() {
+    public ResourceLocation method21628() {
         return this.field27542;
     }
     
     public void method21629() throws CommandSyntaxException {
         this.field27537.getCursor();
-        this.field27540 = Class90.field211.method506(Class1932.method7799(this.field27537)).orElseThrow(() -> {
+        this.field27540 = Registry.field211.method506(ResourceLocation.method7799(this.field27537)).orElseThrow(() -> {
             this.field27537.setCursor(cursor);
             return Class7071.field27535.createWithContext((ImmutableStringReader)this.field27537, (Object)class1932.toString());
         });
@@ -66,7 +66,7 @@ public class Class7071
             this.field27544 = this::method21634;
             this.field27537.expect('#');
             this.field27543 = this.field27537.getCursor();
-            this.field27542 = Class1932.method7799(this.field27537);
+            this.field27542 = ResourceLocation.method7799(this.field27537);
             return;
         }
         throw Class7071.field27534.create();
@@ -109,7 +109,7 @@ public class Class7071
         if (this.field27538) {
             Class7491.method23219(Class7855.method25402().method18462(), suggestionsBuilder, String.valueOf('#'));
         }
-        return Class7491.method23220(Class90.field211.method507(), suggestionsBuilder);
+        return Class7491.method23220(Registry.field211.method507(), suggestionsBuilder);
     }
     
     public CompletableFuture<Suggestions> method21636(final SuggestionsBuilder suggestionsBuilder) {

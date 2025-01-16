@@ -72,7 +72,7 @@ public class Class5573 extends Class5509
         final Class8551 method5306 = Class869.method5277().method5306();
         Class4703 obj = method5306.method28719().get(Class838.class);
         if (!(obj instanceof Class4741)) {
-            Class8571.method28848("Not a PufferfishRenderer: " + obj);
+            Config.warn("Not a PufferfishRenderer: " + obj);
             return null;
         }
         if (obj.method13960() == null) {
@@ -85,7 +85,7 @@ public class Class5573 extends Class5509
             Class9570.field41574.method22633(class5903, class5901);
             return (Class9559)class5903;
         }
-        Class8571.method28848("Model field not found: RenderPufferfish.modelBig");
+        Config.warn("Model field not found: RenderPufferfish.modelBig");
         return null;
     }
 }

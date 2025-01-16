@@ -26,7 +26,7 @@ public class Class1811 extends Class1799
     }
     
     public void method6571(final Entity class399, final Class7351 class400, final Class7807 class401, final int n, final int n2) {
-        if (Class8571.method28948()) {
+        if (Config.method28948()) {
             if (class399 instanceof Class754) {
                 final Class754 class402 = (Class754)class399;
                 Class8933.method31646(1.0f, 1.0f, 1.0f, 1.0f);
@@ -52,7 +52,7 @@ public class Class1811 extends Class1799
             n = 1;
         }
         if (n == 0) {
-            Class8571.method28848("PlayerItemsLayer not registered");
+            Config.warn("PlayerItemsLayer not registered");
         }
     }
 }

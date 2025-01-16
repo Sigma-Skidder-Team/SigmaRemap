@@ -36,7 +36,7 @@ public class Class4060 extends Item
         if (!method21653.isRemote) {
             if (method21652 != null) {
                 final BlockPos method21654 = class7075.method21639();
-                this.method12265(method21652, method21653.method6701(method21654), method21653, method21654, true, class7075.method21651());
+                this.method12265(method21652, method21653.getBlockState(method21654), method21653, method21654, true, class7075.method21651());
             }
         }
         return Class2201.field13400;
@@ -44,26 +44,26 @@ public class Class4060 extends Item
     
     private void method12265(final Class512 class512, final BlockState class513, final Class1851 class514, final BlockPos class515, final boolean b, final ItemStack class516) {
         if (class512.method2908()) {
-            final Class3833 method21696 = class513.method21696();
-            final Class9104<Class3833, BlockState> method21697 = method21696.method11876();
+            final Block method21696 = class513.getBlock();
+            final StateContainer<Block, BlockState> method21697 = method21696.getStateContainer();
             final Collection method21698 = method21697.method32905();
-            final String string = Class90.field208.method503(method21696).toString();
+            final String string = Registry.BLOCK.getKey(method21696).toString();
             if (!method21698.isEmpty()) {
                 final Class51 method21699 = class516.method27659("DebugProperty");
-                Class7111 method21700 = method21697.method32906(method21699.method323(string));
+                IProperty method21700 = method21697.getProperty(method21699.method323(string));
                 if (!b) {
-                    final Class7111<?> class517 = method12267(method21698, method21700, class512.method2804());
-                    final String method21701 = class517.method21826();
+                    final IProperty<?> class517 = method12267(method21698, method21700, class512.method2804());
+                    final String method21701 = class517.getName();
                     method21699.method306(string, method21701);
                     method12268(class512, new Class2259(this.method11717() + ".select", new Object[] { method21701, method12269(class513, class517) }));
                 }
                 else {
                     if (method21700 == null) {
-                        method21700 = (Class7111)method21698.iterator().next();
+                        method21700 = (IProperty)method21698.iterator().next();
                     }
                     final BlockState method21702 = method12266(class513, method21700, class512.method2804());
-                    class514.method6688(class515, method21702, 18);
-                    method12268(class512, new Class2259(this.method11717() + ".update", new Object[] { method21700.method21826(), method12269(method21702, method21700) }));
+                    class514.setBlockState(class515, method21702, 18);
+                    method12268(class512, new Class2259(this.method11717() + ".update", new Object[] { method21700.getName(), method12269(method21702, method21700) }));
                 }
             }
             else {
@@ -72,8 +72,8 @@ public class Class4060 extends Item
         }
     }
     
-    private static <T extends Comparable<T>> BlockState method12266(final BlockState class7096, final Class7111<T> class7097, final boolean b) {
-        return ((Class7097<O, BlockState>)class7096).method21773(class7097, (Comparable)method12267((Iterable<V>)class7097.method21829(), (V)class7096.method21772((Class7111<T>)class7097), b));
+    private static <T extends Comparable<T>> BlockState method12266(final BlockState class7096, final IProperty<T> class7097, final boolean b) {
+        return ((StateHolder<O, BlockState>)class7096).with(class7097, (Comparable)method12267((Iterable<V>)class7097.getAllowedValues(), (V)class7096.get((IProperty<T>)class7097), b));
     }
     
     private static <T> T method12267(final Iterable<T> iterable, final T t, final boolean b) {
@@ -84,7 +84,7 @@ public class Class4060 extends Item
         ((Class513)class512).method2941(class513, Class285.field1574);
     }
     
-    private static <T extends Comparable<T>> String method12269(final BlockState class7096, final Class7111<T> class7097) {
-        return class7097.method21831(class7096.method21772(class7097));
+    private static <T extends Comparable<T>> String method12269(final BlockState class7096, final IProperty<T> class7097) {
+        return class7097.getName(class7096.get(class7097));
     }
 }

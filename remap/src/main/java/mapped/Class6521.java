@@ -4,15 +4,14 @@
 
 package mapped;
 
-import java.util.Collection;
 import com.google.common.collect.Sets;
 import java.util.Set;
 
 public class Class6521
 {
     private static String[] field25950;
-    public final Set<Class1932> field25951;
-    public final Set<Class1932> field25952;
+    public final Set<ResourceLocation> field25951;
+    public final Set<ResourceLocation> field25952;
     public boolean field25953;
     public boolean field25954;
     public boolean field25955;
@@ -40,7 +39,7 @@ public class Class6521
         }
     }
     
-    public void method19694(final Class1932 class1932) {
+    public void method19694(final ResourceLocation class1932) {
         this.field25951.add(class1932);
     }
     
@@ -48,7 +47,7 @@ public class Class6521
         return class3662 != null && this.field25951.contains(class3662.method11298());
     }
     
-    public boolean method19696(final Class1932 class1932) {
+    public boolean method19696(final ResourceLocation class1932) {
         return this.field25951.contains(class1932);
     }
     
@@ -56,7 +55,7 @@ public class Class6521
         this.method19698(class3662.method11298());
     }
     
-    public void method19698(final Class1932 class1932) {
+    public void method19698(final ResourceLocation class1932) {
         this.field25951.remove(class1932);
         this.field25952.remove(class1932);
     }
@@ -73,7 +72,7 @@ public class Class6521
         this.method19702(class3662.method11298());
     }
     
-    public void method19702(final Class1932 class1932) {
+    public void method19702(final ResourceLocation class1932) {
         this.field25952.add(class1932);
     }
     

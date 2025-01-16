@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Class1905 implements AutoCloseable
 {
-    private static final Class1932 field10337;
+    private static final ResourceLocation field10337;
     private static final Class6332 field10338;
     private final Class1663 field10339;
     private final Map<String, Class1845> field10340;
@@ -62,7 +62,7 @@ public class Class1905 implements AutoCloseable
     }
     
     static {
-        field10337 = new Class1932("textures/map/map_icons.png");
+        field10337 = new ResourceLocation("textures/map/map_icons.png");
         field10338 = Class6332.method18787(Class1905.field10337);
     }
 }

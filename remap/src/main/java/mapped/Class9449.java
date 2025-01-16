@@ -23,11 +23,11 @@ public class Class9449
     }
     
     public boolean method35099(final Class9334 class9334, final int n) {
-        return this.field40609 == class9334 && (this.field40610 == null || Class8571.method28978(n, this.field40610));
+        return this.field40609 == class9334 && (this.field40610 == null || Config.method28978(n, this.field40610));
     }
     
     private boolean method35100(final int n) {
-        return this.field40610 != null && Class8571.method28978(n, this.field40610);
+        return this.field40610 != null && Config.method28978(n, this.field40610);
     }
     
     public boolean method35101(final int n) {
@@ -36,7 +36,7 @@ public class Class9449
             return true;
         }
         if (!this.method35100(n)) {
-            this.field40610 = Class8571.method28997(this.field40610, n);
+            this.field40610 = Config.method28997(this.field40610, n);
             return true;
         }
         return false;
@@ -64,6 +64,6 @@ public class Class9449
     
     @Override
     public String toString() {
-        return (this.field40610 != null) ? ("" + this.field40609 + ":" + Class8571.method28890(this.field40610)) : ("" + this.field40609);
+        return (this.field40610 != null) ? ("" + this.field40609 + ":" + Config.method28890(this.field40610)) : ("" + this.field40609);
     }
 }

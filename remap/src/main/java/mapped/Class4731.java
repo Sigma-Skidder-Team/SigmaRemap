@@ -9,10 +9,10 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4731 extends Class4712<Class803, Class5927<Class803>>
 {
-    private static final Class1932 field20334;
-    private static final Class1932 field20335;
-    private static final Class1932 field20336;
-    private static final Class1932 field20337;
+    private static final ResourceLocation field20334;
+    private static final ResourceLocation field20335;
+    private static final ResourceLocation field20336;
+    private static final ResourceLocation field20337;
     
     public Class4731(final Class8551 class8551) {
         super(class8551, new Class5927(), 0.4f);
@@ -26,7 +26,7 @@ public class Class4731 extends Class4712<Class803, Class5927<Class803>>
         }
     }
     
-    public Class1932 method14047(final Class803 class803) {
+    public ResourceLocation method14047(final Class803 class803) {
         if (class803.method4650() != Class2074.field11963) {
             return class803.method2783() ? Class4731.field20337 : Class4731.field20336;
         }
@@ -34,9 +34,9 @@ public class Class4731 extends Class4712<Class803, Class5927<Class803>>
     }
     
     static {
-        field20334 = new Class1932("textures/entity/fox/fox.png");
-        field20335 = new Class1932("textures/entity/fox/fox_sleep.png");
-        field20336 = new Class1932("textures/entity/fox/snow_fox.png");
-        field20337 = new Class1932("textures/entity/fox/snow_fox_sleep.png");
+        field20334 = new ResourceLocation("textures/entity/fox/fox.png");
+        field20335 = new ResourceLocation("textures/entity/fox/fox_sleep.png");
+        field20336 = new ResourceLocation("textures/entity/fox/snow_fox.png");
+        field20337 = new ResourceLocation("textures/entity/fox/snow_fox_sleep.png");
     }
 }

@@ -50,7 +50,7 @@ public class Class702 extends Class698
                         final String string = new BigInteger(128, new Random()).xor(new BigInteger(128, new Random(System.identityHashCode(new Object())))).toString(16);
                         this.field3150.method5301().joinServer(this.field3150.method5287().method33694(), method33693, string);
                         final String string2 = "https://optifine.net/capeChange?u=" + replace + "&n=" + name + "&s=" + string;
-                        if (Class8571.method29012(new URI(string2))) {
+                        if (Config.method29012(new URI(string2))) {
                             this.method3903(Class4647.method13876("of.message.capeOF.openEditor"), 10000L);
                         }
                         else {
@@ -59,13 +59,13 @@ public class Class702 extends Class698
                         }
                     }
                     catch (final InvalidCredentialsException ex) {
-                        Class8571.method28996(Class8822.method30773("of.message.capeOF.error1", new Object[0]), Class8822.method30773("of.message.capeOF.error2", ex.getMessage()));
-                        Class8571.method28848("Mojang authentication failed");
-                        Class8571.method28848(ex.getClass().getName() + ": " + ex.getMessage());
+                        Config.method28996(Class8822.method30773("of.message.capeOF.error1", new Object[0]), Class8822.method30773("of.message.capeOF.error2", ex.getMessage()));
+                        Config.warn("Mojang authentication failed");
+                        Config.warn(ex.getClass().getName() + ": " + ex.getMessage());
                     }
                     catch (final Exception ex2) {
-                        Class8571.method28848("Error opening OptiFine cape link");
-                        Class8571.method28848(ex2.getClass().getName() + ": " + ex2.getMessage());
+                        Config.warn("Error opening OptiFine cape link");
+                        Config.warn(ex2.getClass().getName() + ": " + ex2.getMessage());
                     }
                 }
                 if (class574.field3708 == 220) {

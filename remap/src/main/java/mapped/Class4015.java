@@ -9,7 +9,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
-public class Class4015 extends Class3833
+public class Class4015 extends Block
 {
     private static String[] field18089;
     
@@ -19,21 +19,21 @@ public class Class4015 extends Class3833
     
     @Override
     public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
-        if (class7099.method21696() != class7096.method21696()) {
+        if (class7099.getBlock() != class7096.getBlock()) {
             this.method12197(class7097, class7098);
         }
     }
     
     @Override
-    public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         this.method12197(class7097, class7098);
         super.method11825(class7096, class7097, class7098, class7099, class7100, b);
     }
     
     public void method12197(final World class1847, final BlockPos class1848) {
         if (this.method12198(class1847, class1848)) {
-            class1847.method6688(class1848, Class7521.field29212.method11878(), 2);
-            class1847.method6955(2001, class1848, Class3833.method11774(Class7521.field29173.method11878()));
+            class1847.setBlockState(class1848, Class7521.field29212.getDefaultState(), 2);
+            class1847.method6955(2001, class1848, Block.method11774(Class7521.field29173.getDefaultState()));
         }
     }
     
@@ -48,20 +48,20 @@ public class Class4015 extends Class3833
             final Direction[] values = Direction.values();
             for (int length = values.length, i = 0; i < length; ++i) {
                 final BlockPos method1149 = class1850.method1149(values[i]);
-                final BlockState method1150 = class1847.method6701(method1149);
+                final BlockState method1150 = class1847.getBlockState(method1149);
                 final Class7099 method1151 = class1847.method6702(method1149);
-                final Class8059 method1152 = method1150.method21697();
+                final Material method1152 = method1150.getMaterial();
                 if (method1151.method21793(Class7324.field28319)) {
-                    if (method1150.method21696() instanceof Class3857 && ((Class3857)method1150.method21696()).method11922(class1847, method1149, method1150) != Class7558.field29974) {
+                    if (method1150.getBlock() instanceof Class3857 && ((Class3857)method1150.getBlock()).method11922(class1847, method1149, method1150) != Class7558.field29974) {
                         ++n;
                         if (intValue < 6) {
                             linkedList.add(new Class8554(method1149, intValue + 1));
                         }
                     }
-                    else if (!(method1150.method21696() instanceof Class3859)) {
-                        if (method1152 == Class8059.field33158 || method1152 == Class8059.field33160) {
-                            Class3833.method11837(method1150, class1847, method1149, method1150.method21696().method11802() ? class1847.method6727(method1149) : null);
-                            class1847.method6688(method1149, Class7521.field29147.method11878(), 3);
+                    else if (!(method1150.getBlock() instanceof Class3859)) {
+                        if (method1152 == Material.OCEAN_PLANT || method1152 == Material.SEA_GRASS) {
+                            Block.method11837(method1150, class1847, method1149, method1150.getBlock().method11802() ? class1847.method6727(method1149) : null);
+                            class1847.setBlockState(method1149, Class7521.field29147.getDefaultState(), 3);
                             ++n;
                             if (intValue < 6) {
                                 linkedList.add(new Class8554(method1149, intValue + 1));
@@ -69,7 +69,7 @@ public class Class4015 extends Class3833
                         }
                     }
                     else {
-                        class1847.method6688(method1149, Class7521.field29147.method11878(), 3);
+                        class1847.setBlockState(method1149, Class7521.field29147.getDefaultState(), 3);
                         ++n;
                         if (intValue < 6) {
                             linkedList.add(new Class8554(method1149, intValue + 1));

@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Class1790 extends Class1776<Class7637> implements AutoCloseable
 {
-    private Map<Class1932, Class6313> field9906;
+    private Map<ResourceLocation, Class6313> field9906;
     private Class391 field9907;
     private final Class9509 field9908;
     private final Class1663 field9909;
@@ -46,7 +46,7 @@ public class Class1790 extends Class1776<Class7637> implements AutoCloseable
     
     public void method6455(final Class7637 class7637, final Class6582 class7638, final IProfiler class7639) {
         class7639.method15295();
-        class7639.method15297("upload");
+        class7639.startSection("upload");
         if (this.field9907 != null) {
             this.field9907.close();
         }
@@ -56,19 +56,19 @@ public class Class1790 extends Class1776<Class7637> implements AutoCloseable
         this.field9912 = this.field9906.get(Class7637.field30250);
         class7639.method15300("cache");
         this.field9908.method35430();
-        class7639.method15299();
+        class7639.endSection();
         class7639.method15296();
     }
     
     public boolean method6456(final BlockState class7096, final BlockState class7097) {
         if (class7096 != class7097) {
             final int int1 = this.field9913.getInt((Object)class7096);
-            return int1 == -1 || int1 != this.field9913.getInt((Object)class7097) || class7096.method21756() != class7097.method21756();
+            return int1 == -1 || int1 != this.field9913.getInt((Object)class7097) || class7096.getFluidState() != class7097.getFluidState();
         }
         return false;
     }
     
-    public Class1774 method6457(final Class1932 class1932) {
+    public Class1774 method6457(final ResourceLocation class1932) {
         return this.field9907.method1414(class1932);
     }
     

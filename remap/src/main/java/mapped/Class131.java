@@ -8,10 +8,10 @@ import net.minecraft.item.ItemStack;
 
 public class Class131 extends Class126
 {
-    private final Class1932 field399;
+    private final ResourceLocation field399;
     private final long field400;
     
-    private Class131(final Class122[] array, final Class1932 field399, final long field400) {
+    private Class131(final Class122[] array, final ResourceLocation field399, final long field400) {
         super(array);
         this.field399 = field399;
         this.field400 = field400;

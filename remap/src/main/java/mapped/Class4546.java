@@ -25,13 +25,13 @@ public class Class4546 extends Class4535<Class5138>
                     if (n3 * n3 + n4 * n4 <= n2 * n2) {
                         for (int k = class1853.getY() - class1854.field22121; k <= class1853.getY() + class1854.field22121; ++k) {
                             final BlockPos class1855 = new BlockPos(i, k, j);
-                            final BlockState method6701 = class1851.method6701(class1855);
+                            final BlockState method6701 = class1851.getBlockState(class1855);
                             final Iterator<BlockState> iterator = class1854.field22122.iterator();
                             while (iterator.hasNext()) {
-                                if (iterator.next().method21696() != method6701.method21696()) {
+                                if (iterator.next().getBlock() != method6701.getBlock()) {
                                     continue;
                                 }
-                                class1851.method6688(class1855, class1854.field22119, 2);
+                                class1851.setBlockState(class1855, class1854.field22119, 2);
                                 ++n;
                                 break;
                             }

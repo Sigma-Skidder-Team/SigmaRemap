@@ -5,7 +5,7 @@
 package mapped;
 
 import com.google.gson.GsonBuilder;
-import java.util.Iterator;
+
 import java.io.IOException;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -23,7 +23,7 @@ public class Class3691 implements Class3689
     @Override
     public void method11337(final Class8842 class8842) throws IOException {
         final JsonObject jsonObject = new JsonObject();
-        Class90.field204.method507().forEach(class8843 -> jsonObject2.add(class8843.toString(), method11354(Class90.field204.method505(class8843))));
+        Registry.field204.method507().forEach(class8843 -> jsonObject2.add(class8843.toString(), method11354(Registry.field204.getOrDefault(class8843))));
         Class3689.method11346(Class3691.field17003, class8842, (JsonElement)jsonObject, this.field17004.method22099().resolve("reports/registries.json"));
     }
     
@@ -32,10 +32,10 @@ public class Class3691 implements Class3689
         if (class91 instanceof Class93) {
             jsonObject.addProperty("default", ((Class93)class91).method560().toString());
         }
-        jsonObject.addProperty("protocol_id", (Number)Class90.field204.method504((Class93)class91));
+        jsonObject.addProperty("protocol_id", (Number) Registry.field204.getId((Class93)class91));
         final JsonObject jsonObject2 = new JsonObject();
-        for (final Class1932 class92 : class91.method507()) {
-            final int method504 = class91.method504(class91.method505(class92));
+        for (final ResourceLocation class92 : class91.method507()) {
+            final int method504 = class91.getId(class91.getOrDefault(class92));
             final JsonObject jsonObject3 = new JsonObject();
             jsonObject3.addProperty("protocol_id", (Number)method504);
             jsonObject2.add(class92.toString(), (JsonElement)jsonObject3);

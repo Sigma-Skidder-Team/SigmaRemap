@@ -43,12 +43,12 @@ public class Class9456
     public static Optional<Class9456> method35137(final String s) {
         if (!Class9456.field40639.containsKey(s)) {
             final int index = s.indexOf(58);
-            return (Optional<Class9456>)((index >= 0) ? Class90.field238.method506(Class1932.method7794(s.substring(0, index), '.')).flatMap(class2248 -> method35138((Class2248<Object>)class2248, Class1932.method7794(s2.substring(n + 1), '.'))) : Optional.empty());
+            return (Optional<Class9456>)((index >= 0) ? Registry.field238.method506(ResourceLocation.method7794(s.substring(0, index), '.')).flatMap(class2248 -> method35138((Class2248<Object>)class2248, ResourceLocation.method7794(s2.substring(n + 1), '.'))) : Optional.empty());
         }
         return Optional.of(Class9456.field40639.get(s));
     }
     
-    private static <T> Optional<Class9456> method35138(final Class2248<T> class2248, final Class1932 class2249) {
+    private static <T> Optional<Class9456> method35138(final Class2248<T> class2248, final ResourceLocation class2249) {
         return class2248.method8448().method506(class2249).map((Function<? super T, ? extends Class9456>)class2248::method8449);
     }
     

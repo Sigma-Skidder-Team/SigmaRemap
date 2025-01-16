@@ -6,7 +6,7 @@ package mapped;
 
 public class Class1836 extends Class1799<Class802, Class5838<Class802>>
 {
-    private static final Class1932 field10018;
+    private static final ResourceLocation field10018;
     public Class5841<Class802> field10019;
     
     public Class1836(final Class4778<Class802, Class5838<Class802>> class4778) {
@@ -28,7 +28,7 @@ public class Class1836 extends Class1799<Class802, Class5838<Class802>>
                     final float n11 = (class7353.ticksExisted % 25 + n4) / 25.0f;
                     float[] array = Class802.method4630(Class181.method819(n9));
                     float[] array2 = Class802.method4630(Class181.method819(n10));
-                    if (Class8571.method28945()) {
+                    if (Config.method28945()) {
                         array = Class8763.method30370(Class181.method819(n9), array);
                         array2 = Class8763.method30370(Class181.method819(n10), array2);
                     }
@@ -38,7 +38,7 @@ public class Class1836 extends Class1799<Class802, Class5838<Class802>>
                 }
                 else {
                     float[] array3 = Class802.method4630(class7353.method4634());
-                    if (Class8571.method28945()) {
+                    if (Config.method28945()) {
                         array3 = Class8763.method30370(class7353.method4634(), array3);
                     }
                     n12 = array3[0];
@@ -51,6 +51,6 @@ public class Class1836 extends Class1799<Class802, Class5838<Class802>>
     }
     
     static {
-        field10018 = new Class1932("textures/entity/sheep/sheep_fur.png");
+        field10018 = new ResourceLocation("textures/entity/sheep/sheep_fur.png");
     }
 }

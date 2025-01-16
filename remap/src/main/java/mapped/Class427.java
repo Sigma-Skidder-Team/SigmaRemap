@@ -81,7 +81,7 @@ public class Class427 extends Entity
             }
             if (!this.world.isRemote) {
                 if (this.noClip = !this.world.method6977(this)) {
-                    this.method1838(this.getPosX(), (this.getBoundingBox().field25074 + this.getBoundingBox().field25077) / 2.0, this.getPosZ());
+                    this.pushOutOfBlocks(this.getPosX(), (this.getBoundingBox().minY + this.getBoundingBox().maxY) / 2.0, this.getPosZ());
                 }
             }
             else {
@@ -98,7 +98,7 @@ public class Class427 extends Entity
                 this.method1671(Class2160.field12826, this.getMotion());
                 float n = 0.98f;
                 if (this.onGround) {
-                    n = this.world.method6701(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.98f;
+                    n = this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.98f;
                 }
                 this.method1936(this.getMotion().mul(n, 0.98, n));
                 if (this.onGround) {

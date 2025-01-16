@@ -9,14 +9,14 @@ import net.minecraft.entity.Entity;
 
 public class Class4722 extends Class4712<Class851, Class5891<Class851>>
 {
-    private static final Class1932 field20325;
+    private static final ResourceLocation field20325;
     
     public Class4722(final Class8551 class8551) {
         super(class8551, new Class5891(), 0.75f);
         this.method13978((Class1799<Class851, Class5891<Class851>>)new Class1838((Class4778<Entity, Class5891<Entity>>)this));
     }
     
-    public Class1932 method14031(final Class851 class851) {
+    public ResourceLocation method14031(final Class851 class851) {
         return Class4722.field20325;
     }
     
@@ -32,6 +32,6 @@ public class Class4722 extends Class4712<Class851, Class5891<Class851>>
     }
     
     static {
-        field20325 = new Class1932("textures/entity/phantom.png");
+        field20325 = new ResourceLocation("textures/entity/phantom.png");
     }
 }

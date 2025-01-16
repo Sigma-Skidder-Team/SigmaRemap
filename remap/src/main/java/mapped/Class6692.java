@@ -26,11 +26,11 @@ public class Class6692 extends Class6693
         }
         Class6257 class6429 = null;
         final ItemStack method27641 = Class6692.field26420.field4684.getHeldItemMainhand().method27641();
-        for (final Class1932 class6430 : Class90.field209.method507()) {
+        for (final ResourceLocation class6430 : Registry.field209.method507()) {
             if (!array[0].method26314().equals(class6430.method7797())) {
                 continue;
             }
-            class6429 = Class90.field209.method505(class6430);
+            class6429 = Registry.field209.getOrDefault(class6430);
         }
         if (class6429 != null) {
             method27641.method27674(class6429, array[1].method26313());

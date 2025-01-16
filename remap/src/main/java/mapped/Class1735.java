@@ -93,14 +93,14 @@ public class Class1735 extends Class1732
     }
     
     @Override
-    public Collection<Class1932> method6098(final Class346 class346, final String child, final String s, final int n, final Predicate<String> predicate) {
+    public Collection<ResourceLocation> method6098(final Class346 class346, final String child, final String s, final int n, final Predicate<String> predicate) {
         final File parent = new File(this.field9679, class346.method1028());
         final ArrayList arrayList = Lists.newArrayList();
         this.method6134(new File(new File(parent, child), s), n, child, arrayList, s + "/", predicate);
         return arrayList;
     }
     
-    private void method6134(final File file, final int n, final String s, final List<Class1932> list, final String s2, final Predicate<String> predicate) {
+    private void method6134(final File file, final int n, final String s, final List<ResourceLocation> list, final String s2, final Predicate<String> predicate) {
         final File[] listFiles = file.listFiles();
         if (listFiles != null) {
             for (final File file2 : listFiles) {
@@ -111,7 +111,7 @@ public class Class1735 extends Class1732
                 }
                 else if (!file2.getName().endsWith(".mcmeta") && predicate.test(file2.getName())) {
                     try {
-                        list.add(new Class1932(s, s2 + file2.getName()));
+                        list.add(new ResourceLocation(s, s2 + file2.getName()));
                     }
                     catch (final Class2357 class2357) {
                         Class1735.field9683.error(class2357.getMessage());

@@ -93,7 +93,7 @@ public class Class4482 extends Class4479
     @Override
     public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         if (!this.method13436(class1851, class1853)) {
-            this.method13444(class1851, class1853, this.field19849.minX, this.field19849.minY, this.field19849.minZ, this.field19849.maxX, this.field19849.minY, this.field19849.maxZ, Class7521.field29156.method11878(), Class4482.field19848, true);
+            this.method13444(class1851, class1853, this.field19849.minX, this.field19849.minY, this.field19849.minZ, this.field19849.maxX, this.field19849.minY, this.field19849.maxZ, Class7521.field29156.getDefaultState(), Class4482.field19848, true);
             this.method13444(class1851, class1853, this.field19849.minX, this.field19849.minY + 1, this.field19849.minZ, this.field19849.maxX, Math.min(this.field19849.minY + 3, this.field19849.maxY), this.field19849.maxZ, Class4482.field19848, Class4482.field19848, false);
             for (final MutableBoundingBox class1855 : this.field19875) {
                 this.method13444(class1851, class1853, class1855.minX, class1855.maxY - 2, class1855.minZ, class1855.maxX, class1855.maxY, class1855.maxZ, Class4482.field19848, Class4482.field19848, false);

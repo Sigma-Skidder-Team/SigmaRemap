@@ -8,7 +8,7 @@ import net.minecraft.util.math.MathHelper;
 
 public abstract class Class5609 extends Class5610<Class663>
 {
-    public static final Class1932 field22975;
+    public static final ResourceLocation field22975;
     private final int field22976;
     private final Class663 field22977;
     private final double field22978;
@@ -87,6 +87,6 @@ public abstract class Class5609 extends Class5610<Class663>
     }
     
     static {
-        field22975 = new Class1932("textures/gui/widgets.png");
+        field22975 = new ResourceLocation("textures/gui/widgets.png");
     }
 }

@@ -41,17 +41,17 @@ public class Class4485 extends Class4484
         final Random random2 = new Random(this.field19878);
         for (int i = 0; i <= 4; ++i) {
             for (int j = 3; j <= 4; ++j) {
-                this.method13444(class1851, class1853, i, j, 0, i, j, random2.nextInt(8), Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
+                this.method13444(class1851, class1853, i, j, 0, i, j, random2.nextInt(8), Class7521.field29394.getDefaultState(), Class7521.field29394.getDefaultState(), false);
             }
         }
-        this.method13444(class1851, class1853, 0, 5, 0, 0, 5, random2.nextInt(8), Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
-        this.method13444(class1851, class1853, 4, 5, 0, 4, 5, random2.nextInt(8), Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
+        this.method13444(class1851, class1853, 0, 5, 0, 0, 5, random2.nextInt(8), Class7521.field29394.getDefaultState(), Class7521.field29394.getDefaultState(), false);
+        this.method13444(class1851, class1853, 4, 5, 0, 4, 5, random2.nextInt(8), Class7521.field29394.getDefaultState(), Class7521.field29394.getDefaultState(), false);
         for (int k = 0; k <= 4; ++k) {
-            this.method13444(class1851, class1853, k, 2, 0, k, 2, random2.nextInt(5), Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
+            this.method13444(class1851, class1853, k, 2, 0, k, 2, random2.nextInt(5), Class7521.field29394.getDefaultState(), Class7521.field29394.getDefaultState(), false);
         }
         for (int l = 0; l <= 4; ++l) {
             for (int n = 0; n <= 1; ++n) {
-                this.method13444(class1851, class1853, l, n, 0, l, n, random2.nextInt(3), Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
+                this.method13444(class1851, class1853, l, n, 0, l, n, random2.nextInt(3), Class7521.field29394.getDefaultState(), Class7521.field29394.getDefaultState(), false);
             }
         }
         return true;

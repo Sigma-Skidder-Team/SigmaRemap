@@ -64,9 +64,9 @@ public class Class6502
             }
         }
         catch (final Exception ex) {
-            Class8571.method28848(ex.getClass().getName() + " " + ex.getMessage());
+            Config.warn(ex.getClass().getName() + " " + ex.getMessage());
         }
-        Class8571.method28848("Error finding Chunk." + str);
+        Config.warn("Error finding Chunk." + str);
         return new Class7364(new Class7363(Class1862.class), str);
     }
     

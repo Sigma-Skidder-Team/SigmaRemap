@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 public interface IStateHolder<C>
 {
-    Logger field_215672_b = LogManager.getLogger();
+    Logger logger = LogManager.getLogger();
 
     <T extends Comparable<T>> T get(IProperty<T> property);
 
@@ -30,7 +30,7 @@ public interface IStateHolder<C>
         }
         else
         {
-            field_215672_b.warn("Unable to read property: {} with value: {} for input: {}", propertyNameIn, valueIn, inputIn);
+            logger.warn("Unable to read property: {} with value: {} for input: {}", propertyNameIn, valueIn, inputIn);
             return state;
         }
     }

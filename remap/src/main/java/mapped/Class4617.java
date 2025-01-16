@@ -10,17 +10,17 @@ import com.google.gson.JsonObject;
 
 public class Class4617 extends Class4611<Class4232>
 {
-    private static final Class1932 field20083;
+    private static final ResourceLocation field20083;
     
     @Override
-    public Class1932 method13717() {
+    public ResourceLocation method13717() {
         return Class4617.field20083;
     }
     
     public Class4232 method13749(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext) {
         Class8061 class8061 = null;
         if (jsonObject.has("potion")) {
-            class8061 = Class90.field212.method506(new Class1932(Class9583.method35895(jsonObject, "potion"))).orElseThrow(() -> {
+            class8061 = Registry.field212.method506(new ResourceLocation(Class9583.method35895(jsonObject, "potion"))).orElseThrow(() -> {
                 new JsonSyntaxException("Unknown potion '" + obj + "'");
                 return;
             });
@@ -33,6 +33,6 @@ public class Class4617 extends Class4611<Class4232>
     }
     
     static {
-        field20083 = new Class1932("brewed_potion");
+        field20083 = new ResourceLocation("brewed_potion");
     }
 }

@@ -144,10 +144,10 @@ public class Class3302 extends Class3167
             double field25077 = -1.0;
             while (iterator.hasNext()) {
                 final VoxelShape class7702 = iterator.next();
-                if (class7702.method24537().field25077 <= field25077) {
+                if (class7702.method24537().maxY <= field25077) {
                     continue;
                 }
-                field25077 = class7702.method24537().field25077;
+                field25077 = class7702.method24537().maxY;
             }
             return field25077;
         }

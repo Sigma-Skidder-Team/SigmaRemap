@@ -31,11 +31,11 @@ public class Class5110 implements Class5106
             }
             s = s2;
         }
-        final int method28933 = Class8571.method28933(s, Integer.MIN_VALUE);
+        final int method28933 = Config.method28933(s, Integer.MIN_VALUE);
         if (method28933 != Integer.MIN_VALUE) {
             return new Class337((float)method28933);
         }
-        Class8571.method28848("Unknown macro value: " + s);
+        Config.warn("Unknown macro value: " + s);
         return new Class337(0.0f);
     }
 }

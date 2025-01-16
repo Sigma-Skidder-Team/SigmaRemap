@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Class534 extends Class527
 {
-    private static final List<Class1932> field3184;
+    private static final List<ResourceLocation> field3184;
     private final Class539 field3185;
     private final Class51 field3186;
     private Class621 field3187;
@@ -49,7 +49,7 @@ public class Class534 extends Class527
     private void method3081() {
         if (this.field3186.method316("chunk_generator", 10)) {
             if (this.field3186.method327("chunk_generator").method316("type", 8)) {
-                final Class1932 class1932 = new Class1932(this.field3186.method327("chunk_generator").method323("type"));
+                final ResourceLocation class1932 = new ResourceLocation(this.field3186.method327("chunk_generator").method323("type"));
                 for (int i = 0; i < Class534.field3184.size(); ++i) {
                     if (Class534.field3184.get(i).equals(class1932)) {
                         this.field3188 = i;
@@ -65,7 +65,7 @@ public class Class534 extends Class527
                     this.field3187.method3617(this.field3187.method3040().stream().filter(class1933 -> {
                         final Class52 class1934;
                         final int n;
-                        final Object o = new Class1932(class1934.method353(n));
+                        final Object o = new ResourceLocation(class1934.method353(n));
                         return Objects.equals(Class642.method3685(class1933), b);
                     }).findFirst().orElse(null));
                 }
@@ -78,7 +78,7 @@ public class Class534 extends Class527
     private Class51 method3082() {
         final Class51 class51 = new Class51();
         final Class51 class52 = new Class51();
-        class52.method306("type", Class90.field223.method503(Class7768.field31769).toString());
+        class52.method306("type", Registry.field223.getKey(Class7768.field31769).toString());
         final Class51 class53 = new Class51();
         final Class52 class54 = new Class52();
         ((AbstractList<Class50>)class54).add(Class50.method290(Class642.method3685(this.field3187.method3530()).toString()));
@@ -110,6 +110,6 @@ public class Class534 extends Class527
     }
     
     static {
-        field3184 = Class90.field225.method507().stream().filter(class1932 -> Class90.field225.method505(class1932).method29875()).collect((Collector<? super Object, ?, List<Class1932>>)Collectors.toList());
+        field3184 = Registry.field225.method507().stream().filter(class1932 -> Registry.field225.getOrDefault(class1932).method29875()).collect((Collector<? super Object, ?, List<ResourceLocation>>)Collectors.toList());
     }
 }

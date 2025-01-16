@@ -169,7 +169,7 @@ public class Class5799 implements IClientPlayNetHandler
                                                                                                                                             }
                                                                                                                                         }
                                                                                                                                         else {
-                                                                                                                                            class4340 = new Class424(this.field23809, method13025, method13026, method13027, Class3833.method11775(class4339.method13034()));
+                                                                                                                                            class4340 = new Class424(this.field23809, method13025, method13026, method13027, Block.method11775(class4339.method13034()));
                                                                                                                                         }
                                                                                                                                     }
                                                                                                                                     else {
@@ -595,7 +595,7 @@ public class Class5799 implements IClientPlayNetHandler
         final int method12877 = class4288.method12877();
         final Class1907 method12878 = this.field23809.method6835();
         method12878.method7412(method12876, method12877);
-        final Class1886 method12879 = method12878.method7405();
+        final Class1886 method12879 = method12878.getLightManager();
         for (int i = 0; i < 16; ++i) {
             this.field23809.method6838(method12876, i, method12877);
             method12879.method7254(Class353.method1088(method12876, i, method12877), true);
@@ -873,7 +873,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17306(final Class4394 class4394) {
         Class8663.method29632((IPacket<Class5799>)class4394, this, this.field23808);
-        new Class6154(this.field23808.field4683, null, class4394.method13214(), class4394.method13215(), class4394.method13216(), class4394.method13217(), class4394.method13218()).method18409(true);
+        new Explosion(this.field23808.field4683, null, class4394.method13214(), class4394.method13215(), class4394.method13216(), class4394.method13217(), class4394.method13218()).method18409(true);
         this.field23808.field4684.method1936(this.field23808.field4684.getMotion().add(class4394.method13211(), class4394.method13212(), class4394.method13213()));
     }
     
@@ -1210,7 +1210,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17323(final Class4269 class4269) {
         Class8663.method29632((IPacket<Class5799>)class4269, this, this.field23808);
-        final Class1932 method12812 = class4269.method12812();
+        final ResourceLocation method12812 = class4269.method12812();
         if (method12812 != null) {
             this.field23812.method30869(this.field23812.method30868().method19675(method12812), false);
         }
@@ -1287,25 +1287,25 @@ public class Class5799 implements IClientPlayNetHandler
         method4122.method19711(class4331.method13008());
         switch (Class8379.field34355[class4331.method13009().ordinal()]) {
             case 1: {
-                final Iterator<Class1932> iterator = class4331.method13003().iterator();
+                final Iterator<ResourceLocation> iterator = class4331.method13003().iterator();
                 while (iterator.hasNext()) {
                     this.field23819.method6382(iterator.next()).ifPresent(method4122::method19697);
                 }
                 break;
             }
             case 2: {
-                final Iterator<Class1932> iterator2 = class4331.method13003().iterator();
+                final Iterator<ResourceLocation> iterator2 = class4331.method13003().iterator();
                 while (iterator2.hasNext()) {
                     this.field23819.method6382(iterator2.next()).ifPresent(method4122::method19693);
                 }
-                final Iterator<Class1932> iterator3 = class4331.method13004().iterator();
+                final Iterator<ResourceLocation> iterator3 = class4331.method13004().iterator();
                 while (iterator3.hasNext()) {
                     this.field23819.method6382(iterator3.next()).ifPresent(method4122::method19701);
                 }
                 break;
             }
             case 3: {
-                final Iterator<Class1932> iterator4 = class4331.method13003().iterator();
+                final Iterator<ResourceLocation> iterator4 = class4331.method13003().iterator();
                 while (iterator4.hasNext()) {
                     this.field23819.method6382(iterator4.next()).ifPresent(class4333 -> {
                         class4332.method19693(class4333);
@@ -1384,7 +1384,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17337(final Class4340 class4340) {
         Class8663.method29632((IPacket<Class5799>)class4340, this, this.field23808);
-        class4340.method13035(this.field23809.method6787());
+        class4340.method13035(this.field23809.getWorldBorder());
     }
     
     @Override
@@ -1635,7 +1635,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17355(final Class4376 class4376) {
         Class8663.method29632((IPacket<Class5799>)class4376, this, this.field23808);
-        final Class1932 method13158 = class4376.method13158();
+        final ResourceLocation method13158 = class4376.method13158();
         PacketBuffer method13159 = null;
         try {
             method13159 = class4376.method13159();
@@ -1960,7 +1960,7 @@ public class Class5799 implements IClientPlayNetHandler
         Class8663.method29632((IPacket<Class5799>)class4349, this, this.field23808);
         final int method13059 = class4349.method13059();
         final int method13060 = class4349.method13060();
-        final Class1886 method13061 = this.field23809.method6835().method7405();
+        final Class1886 method13061 = this.field23809.method6835().getLightManager();
         this.method17368(method13059, method13060, method13061, Class237.field911, class4349.method13061(), class4349.method13062(), class4349.method13063().iterator());
         this.method17368(method13059, method13060, method13061, Class237.field912, class4349.method13064(), class4349.method13065(), class4349.method13066().iterator());
     }

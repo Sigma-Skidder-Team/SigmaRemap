@@ -43,10 +43,10 @@ public class Class3529 extends Class3446
                 for (int n = 0; n <= 10 && n >= -10; n = ((n <= 0) ? 1 : 0) - n) {
                     for (int n2 = 0; n2 <= 10 && n2 >= -10; n2 = ((n2 <= 0) ? 1 : 0) - n2) {
                         final BlockPos method2634 = class354.add(n, i, n2);
-                        final Class3833 method2635 = field2391.method6701(method2634).method21696();
+                        final Block method2635 = field2391.getBlockState(method2634).method21696();
                         if (method2635 instanceof Class3979) {
                             if (!field2391.method6765().method31216(Class8878.field37316)) {
-                                field2391.method6688(method2634, ((Class3979)method2635).method12122().method11878(), 3);
+                                field2391.setBlockState(method2634, ((Class3979)method2635).method12122().getDefaultState(), 3);
                             }
                             else {
                                 field2391.method6691(method2634, true, this.field16556);

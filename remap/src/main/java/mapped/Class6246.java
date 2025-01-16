@@ -10,7 +10,7 @@ import com.google.gson.JsonObject;
 public class Class6246 extends Class6227<Class135>
 {
     public Class6246() {
-        super(new Class1932("furnace_smelt"), Class135.class);
+        super(new ResourceLocation("furnace_smelt"), Class135.class);
     }
     
     public Class135 method18581(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext, final Class122[] array) {

@@ -16,12 +16,12 @@ public abstract class Class3948 extends Class3841
     
     public Class3948(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3948.field17846, Direction.NORTH)).method21773((Class7111<Comparable>)Class3948.field17847, false));
+        this.method11877(((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3948.field17846, Direction.NORTH)).with((IProperty<Comparable>)Class3948.field17847, false));
     }
     
     @Override
     public int method11781(final Class7096 class7096) {
-        return class7096.method21772((Class7111<Boolean>)Class3948.field17847) ? super.method11781(class7096) : 0;
+        return class7096.method21772((IProperty<Boolean>)Class3948.field17847) ? super.getLightValue(class7096) : 0;
     }
     
     @Override
@@ -37,7 +37,7 @@ public abstract class Class3948 extends Class3841
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        return ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3948.field17846, class7074.method21644().getOpposite());
+        return ((StateHolder<O, Class7096>)this.getDefaultState()).with((IProperty<Comparable>)Class3948.field17846, class7074.method21644().getOpposite());
     }
     
     @Override
@@ -79,16 +79,16 @@ public abstract class Class3948 extends Class3841
     
     @Override
     public Class7096 method11790(final Class7096 class7096, final Class2052 class7097) {
-        return ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3948.field17846, class7097.method8142(class7096.method21772((Class7111<Direction>)Class3948.field17846)));
+        return ((StateHolder<O, Class7096>)class7096).with((IProperty<Comparable>)Class3948.field17846, class7097.method8142(class7096.method21772((IProperty<Direction>)Class3948.field17846)));
     }
     
     @Override
     public Class7096 method11791(final Class7096 class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.method21772((Class7111<Direction>)Class3948.field17846)));
+        return class7096.method21708(class7097.method8344(class7096.method21772((IProperty<Direction>)Class3948.field17846)));
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Block, Class7096> class9500) {
         class9500.method35378(Class3948.field17846, Class3948.field17847);
     }
     

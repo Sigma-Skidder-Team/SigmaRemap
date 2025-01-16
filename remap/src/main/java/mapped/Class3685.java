@@ -12,10 +12,10 @@ public abstract class Class3685 implements Class3662<Class446>
     public final ItemStack field16986;
     private final Class8976<?> field16987;
     private final Class6096<?> field16988;
-    public final Class1932 field16989;
+    public final ResourceLocation field16989;
     public final String field16990;
     
-    public Class3685(final Class8976<?> field16987, final Class6096<?> field16988, final Class1932 field16989, final String field16990, final Class120 field16991, final ItemStack field16992) {
+    public Class3685(final Class8976<?> field16987, final Class6096<?> field16988, final ResourceLocation field16989, final String field16990, final Class120 field16991, final ItemStack field16992) {
         this.field16987 = field16987;
         this.field16988 = field16988;
         this.field16989 = field16989;
@@ -35,7 +35,7 @@ public abstract class Class3685 implements Class3662<Class446>
     }
     
     @Override
-    public Class1932 method11298() {
+    public ResourceLocation method11298() {
         return this.field16989;
     }
     

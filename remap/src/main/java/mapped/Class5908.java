@@ -15,7 +15,7 @@ public class Class5908 implements Consumer<Consumer<Class8863>>
     
     @Override
     public void accept(final Consumer<Class8863> consumer) {
-        final Class8863 method18014 = Class6056.method18001().method18005(Items.field31521, new Class2259("advancements.adventure.root.title", new Object[0]), new Class2259("advancements.adventure.root.description", new Object[0]), new Class1932("textures/gui/advancements/backgrounds/adventure.png"), Class1993.field11162, false, false, false).method18011(Class6526.field25976).method18009("killed_something", Class4233.method12729()).method18009("killed_by_something", Class4233.method12731()).method18014(consumer, "adventure/root");
+        final Class8863 method18014 = Class6056.method18001().method18005(Items.field31521, new Class2259("advancements.adventure.root.title", new Object[0]), new Class2259("advancements.adventure.root.description", new Object[0]), new ResourceLocation("textures/gui/advancements/backgrounds/adventure.png"), Class1993.field11162, false, false, false).method18011(Class6526.field25976).method18009("killed_something", Class4233.method12729()).method18009("killed_by_something", Class4233.method12731()).method18014(consumer, "adventure/root");
         this.method17762(Class6056.method18001()).method18002(Class6056.method18001().method18002(method18014).method18005(Class7521.field29235, new Class2259("advancements.adventure.sleep_in_bed.title", new Object[0]), new Class2259("advancements.adventure.sleep_in_bed.description", new Object[0]), null, Class1993.field11162, true, true, false).method18009("slept_in_bed", Class4217.method12696()).method18014(consumer, "adventure/sleep_in_bed")).method18005(Items.field31332, new Class2259("advancements.adventure.adventuring_time.title", new Object[0]), new Class2259("advancements.adventure.adventuring_time.description", new Object[0]), null, Class1993.field11163, true, true, false).method18007(Class6467.method19353(500)).method18014(consumer, "adventure/adventuring_time");
         final Class8863 method18015 = Class6056.method18001().method18002(method18014).method18005(Items.field31514, new Class2259("advancements.adventure.trade.title", new Object[0]), new Class2259("advancements.adventure.trade.description", new Object[0]), null, Class1993.field11162, true, true, false).method18009("traded", Class4212.method12684()).method18014(consumer, "adventure/trade");
         final Class8863 method18016 = this.method17761(Class6056.method18001()).method18002(method18014).method18005(Items.field31286, new Class2259("advancements.adventure.kill_a_mob.title", new Object[0]), new Class2259("advancements.adventure.kill_a_mob.description", new Object[0]), null, Class1993.field11162, true, true, false).method18011(Class6526.field25976).method18014(consumer, "adventure/kill_a_mob");
@@ -35,14 +35,14 @@ public class Class5908 implements Consumer<Consumer<Class8863>>
     
     private Class6056 method17761(final Class6056 class6056) {
         for (final EntityType<?> class6057 : Class5908.field24290) {
-            class6056.method18009(Class90.field210.method503(class6057).toString(), Class4233.method12728(Class5754.method17068().method17069(class6057)));
+            class6056.method18009(Registry.field210.getKey(class6057).toString(), Class4233.method12728(Class5754.method17068().method17069(class6057)));
         }
         return class6056;
     }
     
     private Class6056 method17762(final Class6056 class6056) {
         for (final Class3090 class6057 : Class5908.field24289) {
-            class6056.method18009(Class90.field217.method503(class6057).toString(), Class4217.method12695(Class8697.method29808(class6057)));
+            class6056.method18009(Registry.field217.getKey(class6057).toString(), Class4217.method12695(Class8697.method29808(class6057)));
         }
         return class6056;
     }

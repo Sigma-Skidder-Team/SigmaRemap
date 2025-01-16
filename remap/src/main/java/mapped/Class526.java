@@ -17,8 +17,8 @@ import java.util.Random;
 
 public class Class526 extends Class516<Class3433>
 {
-    private static final Class1932 field3134;
-    private static final Class1932 field3135;
+    private static final ResourceLocation field3134;
+    private static final ResourceLocation field3135;
     private static final Class5917 field3136;
     private final Random field3137;
     public int field3138;
@@ -267,8 +267,8 @@ public class Class526 extends Class516<Class3433>
     }
     
     static {
-        field3134 = new Class1932("textures/gui/container/enchanting_table.png");
-        field3135 = new Class1932("textures/entity/enchanting_table_book.png");
+        field3134 = new ResourceLocation("textures/gui/container/enchanting_table.png");
+        field3135 = new ResourceLocation("textures/entity/enchanting_table_book.png");
         field3136 = new Class5917();
     }
 }

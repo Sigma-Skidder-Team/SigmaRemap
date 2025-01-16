@@ -224,7 +224,7 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
     
     @Nullable
     public Class6332 method13981(final T t, final boolean b, final boolean b2) {
-        final Class1932 method13950 = this.method13950(t);
+        final ResourceLocation method13950 = this.method13950(t);
         if (b2) {
             return Class6332.method18773(method13950);
         }

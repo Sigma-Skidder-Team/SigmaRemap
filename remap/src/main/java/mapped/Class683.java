@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 
 public class Class683 extends Class565
 {
-    private static final Class1932 field3727;
+    private static final ResourceLocation field3727;
     private static final Pattern field3728;
     private final Class572 field3729;
     private final Class8863 field3730;
@@ -295,7 +295,7 @@ public class Class683 extends Class565
     }
     
     static {
-        field3727 = new Class1932("textures/gui/advancements/widgets.png");
+        field3727 = new ResourceLocation("textures/gui/advancements/widgets.png");
         field3728 = Pattern.compile("(.+) \\S+");
     }
 }

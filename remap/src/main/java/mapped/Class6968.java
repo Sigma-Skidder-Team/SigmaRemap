@@ -23,10 +23,10 @@ public class Class6968<T> implements Class6967<T>
     }
     
     @Override
-    public void method21381(final JsonArray jsonArray, final Function<T, Class1932> function) {
+    public void method21381(final JsonArray jsonArray, final Function<T, ResourceLocation> function) {
         final Iterator<T> iterator = this.field27248.iterator();
         while (iterator.hasNext()) {
-            final Class1932 class1932 = function.apply(iterator.next());
+            final ResourceLocation class1932 = function.apply(iterator.next());
             if (class1932 == null) {
                 throw new IllegalStateException("Unable to serialize an anonymous value to json!");
             }

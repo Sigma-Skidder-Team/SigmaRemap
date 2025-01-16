@@ -26,7 +26,7 @@ public class Class6975 implements Class6974
                 }
             }
             catch (final Exception ex) {
-                Class8571.method28847("Error parsing configuration: " + str + ", " + ex.getClass().getName() + ": " + ex.getMessage());
+                Config.method28847("Error parsing configuration: " + str + ", " + ex.getClass().getName() + ": " + ex.getMessage());
             }
         }
     }

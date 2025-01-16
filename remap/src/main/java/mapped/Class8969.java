@@ -86,7 +86,7 @@ public class Class8969
     public static Class1912 method31818(final Class1774 class1774, final String str) {
         final Class1912 method6346 = class1774.method6346(str);
         if (method6346 == null || method6346 instanceof Class1913) {
-            Class8571.method28848("Sprite not found: " + str);
+            Config.warn("Sprite not found: " + str);
         }
         return method6346;
     }
@@ -127,14 +127,14 @@ public class Class8969
         return n2;
     }
     
-    public static Class1666 method31823(final Class1932 class1932) {
-        final Class1666 method5853 = Class8571.method28895().method5853(class1932);
+    public static Class1666 method31823(final ResourceLocation class1932) {
+        final Class1666 method5853 = Config.method28895().method5853(class1932);
         if (method5853 != null) {
             return method5853;
         }
-        if (Class8571.method28900(class1932)) {
+        if (Config.method28900(class1932)) {
             final Class1767 class1933 = new Class1767(class1932);
-            Class8571.method28895().method5851(class1932, class1933);
+            Config.method28895().method5851(class1932, class1933);
             return class1933;
         }
         return null;
@@ -142,7 +142,7 @@ public class Class8969
     
     public static void method31824(final Class6582 class6582) {
         if (method31825() != null) {
-            Class8571.method28847("*** Reloading custom textures ***");
+            Config.method28847("*** Reloading custom textures ***");
             Class9132.method33152();
             Class8287.method27534();
             method31817();
@@ -157,25 +157,25 @@ public class Class8969
             Class8906.method31381();
             Class9216.method33895();
             Class4647.method13873();
-            Class8571.method28859();
+            Config.method28859();
             Class7464.method22997();
             Class9243.method34079();
             Class7890.method25545();
             Class1814.method6577();
             Class9203.method33676();
             Class8929.method31487();
-            Class8571.method28895().method5857();
-            Class8571.method28847("Disable Forge light pipeline");
+            Config.method28895().method5857();
+            Config.method28847("Disable Forge light pipeline");
             Class7667.method24313(false);
         }
     }
     
     public static Class1774 method31825() {
-        return Class8571.method29001();
+        return Config.method29001();
     }
     
     public static void method31826() {
-        final Class6582 method28896 = Class8571.method28896();
+        final Class6582 method28896 = Config.method28896();
         if (method28896 instanceof Class6580) {
             final Class6580 class6580 = (Class6580)method28896;
             class6580.method19930(new Class1778());
@@ -184,7 +184,7 @@ public class Class8969
     }
     
     public static void method31827() {
-        Class8571.method28895().method5851(new Class1932("optifine/tickable_textures"), new Class1775());
+        Config.method28895().method5851(new ResourceLocation("optifine/tickable_textures"), new Class1775());
     }
     
     public static void method31828(final Class7637 class7637) {
@@ -208,12 +208,12 @@ public class Class8969
         }
     }
     
-    public static Class1932 method31831(Class1932 class1932, final String s) {
+    public static ResourceLocation method31831(ResourceLocation class1932, final String s) {
         if (class1932.method7798().equals("minecraft")) {
             final String method7797 = class1932.method7797();
             final String method7798 = method31832(method7797, s);
             if (method7798 != method7797) {
-                class1932 = new Class1932(class1932.method7798(), method7798);
+                class1932 = new ResourceLocation(class1932.method7798(), method7798);
             }
             return class1932;
         }
@@ -257,7 +257,7 @@ public class Class8969
     
     public static void method31834() {
         if (GL.getCapabilities().GL_EXT_texture_filter_anisotropic) {
-            GL11.glTexParameterf(3553, 34046, Math.min((float)Class8571.method28923(), GL11.glGetFloat(34047)));
+            GL11.glTexParameterf(3553, 34046, Math.min((float) Config.method28923(), GL11.glGetFloat(34047)));
         }
     }
     
@@ -348,10 +348,10 @@ public class Class8969
         for (int i = 0; i < method7526.length; ++i) {
             final Class1846 obj = method7526[i];
             if (obj != null) {
-                Class8571.method28847("" + i + ": " + obj.method6644() * obj.method6645());
+                Config.method28847("" + i + ": " + obj.method6644() * obj.method6645());
             }
             else {
-                Class8571.method28847("" + i + ": " + obj);
+                Config.method28847("" + i + ": " + obj);
             }
         }
     }
@@ -380,11 +380,11 @@ public class Class8969
             im.setRGB(0, 0, n5, n6, array, 0, n5);
             try {
                 ImageIO.write(im, "png", obj);
-                Class8571.method28847("Exported: " + obj);
+                Config.method28847("Exported: " + obj);
             }
             catch (final Exception ex) {
-                Class8571.method28848("Error writing: " + obj);
-                Class8571.method28848("" + ex.getClass().getName() + ": " + ex.getMessage());
+                Config.warn("Error writing: " + obj);
+                Config.warn("" + ex.getClass().getName() + ": " + ex.getMessage());
             }
         }
     }
@@ -433,7 +433,7 @@ public class Class8969
     }
     
     static {
-        Class8969.field37717 = Class8571.method29016(256);
+        Class8969.field37717 = Config.method29016(256);
         Class8969.field37718 = -1;
     }
 }

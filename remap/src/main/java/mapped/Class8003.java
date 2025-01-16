@@ -60,7 +60,7 @@ public class Class8003
             final JsonObject method35913 = Class9583.method35913(jsonElement, "effects");
             final HashMap hashMap = Maps.newHashMap();
             for (final Map.Entry<K, JsonElement> entry : method35913.entrySet()) {
-                hashMap.put(Class90.field207.method506(new Class1932((String)entry.getKey())).orElseThrow(() -> {
+                hashMap.put(Registry.field207.method506(new ResourceLocation((String)entry.getKey())).orElseThrow(() -> {
                     new JsonSyntaxException("Unknown effect '" + obj + "'");
                     return;
                 }), Class8940.method31710(Class9583.method35913(entry.getValue(), (String)entry.getKey())));
@@ -74,7 +74,7 @@ public class Class8003
         if (this != Class8003.field32963) {
             final JsonObject jsonObject = new JsonObject();
             for (final Map.Entry<Class5328, V> entry : this.field32964.entrySet()) {
-                jsonObject.add(Class90.field207.method503(entry.getKey()).toString(), ((Class8940)entry.getValue()).method31709());
+                jsonObject.add(Registry.field207.getKey(entry.getKey()).toString(), ((Class8940)entry.getValue()).method31709());
             }
             return (JsonElement)jsonObject;
         }

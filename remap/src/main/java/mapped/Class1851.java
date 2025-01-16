@@ -29,7 +29,7 @@ public interface Class1851 extends Class1874, Class1852, Class1875
         return this.method6789().method20496(this.method6764().method29540());
     }
     
-    Class6952<Class3833> method6833();
+    Class6952<Block> method6833();
     
     Class6952<Class7255> method6834();
     
@@ -43,15 +43,15 @@ public interface Class1851 extends Class1874, Class1852, Class1875
         return this.method6764().method29597();
     }
     
-    AbstractChunkProvider method6762();
+    AbstractChunkProvider getChunkProvider();
     
     default boolean method6814(final int n, final int n2) {
-        return this.method6762().method7401(n, n2);
+        return this.getChunkProvider().method7401(n, n2);
     }
     
     Random method6790();
     
-    void method6694(final BlockPos p0, final Class3833 p1);
+    void method6694(final BlockPos p0, final Block p1);
     
     BlockPos method6758();
     

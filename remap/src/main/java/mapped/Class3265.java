@@ -42,7 +42,7 @@ public class Class3265 extends Class3247
         final double n2 = Class3265.field15514.field4684.posZ + class5745.method17052().z;
         final double n3 = 0.41;
         final double n4 = class5745.method17049() - class5745.method17051();
-        final Object[] array = Class3265.field15514.field4683.method6981(Class3265.field15514.field4684, new AxisAlignedBB(n - n3, Class3265.field15514.field4684.boundingBox.field25074, n2 - n3, n + n3, Class3265.field15514.field4684.boundingBox.field25074 + n4, n2 + n3)).toArray();
+        final Object[] array = Class3265.field15514.field4683.method6981(Class3265.field15514.field4684, new AxisAlignedBB(n - n3, Class3265.field15514.field4684.boundingBox.minY, n2 - n3, n + n3, Class3265.field15514.field4684.boundingBox.minY + n4, n2 + n3)).toArray();
         final int length = array.length;
         Class7096 class5746 = null;
         BlockPos class5747 = null;
@@ -50,11 +50,11 @@ public class Class3265 extends Class3247
         for (int i = 0; i < length; ++i) {
             final VoxelShape class5748 = (VoxelShape)array[i];
             final BlockPos class5749 = new BlockPos(class5748.method24535(Axis.X), class5748.method24535(Axis.Y), class5748.method24535(Axis.Z));
-            final Class7096 method6701 = Class3265.field15514.field4683.method6701(class5749);
-            if (class5746 == null || class5748.method24537().field25077 > field25077) {
+            final Class7096 method6701 = Class3265.field15514.field4683.getBlockState(class5749);
+            if (class5746 == null || class5748.method24537().maxY > field25077) {
                 class5746 = method6701;
                 class5747 = class5749;
-                field25077 = class5748.method24537().field25077;
+                field25077 = class5748.method24537().maxY;
             }
         }
         if (!Class3265.field15514.field4684.method1706() && !Class3265.field15514.field4684.method1723()) {

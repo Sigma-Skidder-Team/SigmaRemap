@@ -40,8 +40,8 @@ public abstract class Class3418
         this.field16154 = field16154;
     }
     
-    public static boolean method10866(final Class7318 class7318, final Class512 class7319, final Class3833 class7320) {
-        return class7318.method22436((class7325, class7326) -> class7325.method6701(class7326).method21696() == class7321 && class7323.method1733(class7326.getX() + 0.5, class7326.getY() + 0.5, class7326.getZ() + 0.5) <= 64.0, Boolean.valueOf(true));
+    public static boolean method10866(final Class7318 class7318, final Class512 class7319, final Block class7320) {
+        return class7318.method22436((class7325, class7326) -> class7325.getBlockState(class7326).method21696() == class7321 && class7323.method1733(class7326.getX() + 0.5, class7326.getY() + 0.5, class7326.getZ() + 0.5) <= 64.0, Boolean.valueOf(true));
     }
     
     public Class8471<?> method10867() {

@@ -11,11 +11,11 @@ import com.mojang.datafixers.types.DynamicOps;
 
 public class Class5115 implements Class5113
 {
-    public final Class1932 field22062;
+    public final ResourceLocation field22062;
     public final int field22063;
     
     public Class5115(final String s, final int field22063) {
-        this.field22062 = new Class1932(s);
+        this.field22062 = new ResourceLocation(s);
         this.field22063 = field22063;
     }
     

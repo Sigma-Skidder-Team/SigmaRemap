@@ -20,18 +20,18 @@ public class Class4566 extends Class4535<Class5122>
         if (class1853.getY() > class1851.method6743() - 1) {
             return false;
         }
-        if (class1851.method6701(class1853).method21696() != Class7521.field29173 && class1851.method6701(class1853.method1139()).method21696() != Class7521.field29173) {
+        if (class1851.getBlockState(class1853).getBlock() != Class7521.field29173 && class1851.getBlockState(class1853.method1139()).getBlock() != Class7521.field29173) {
             return false;
         }
         int n = 0;
         for (final Direction class1855 : Direction.values()) {
-            if (class1855 != Direction.DOWN && class1851.method6701(class1853.method1149(class1855)).method21696() == Class7521.field29548) {
+            if (class1855 != Direction.DOWN && class1851.getBlockState(class1853.method1149(class1855)).getBlock() == Class7521.field29548) {
                 n = 1;
                 break;
             }
         }
         if (n != 0) {
-            class1851.method6688(class1853, Class7521.field29758.method11878(), 2);
+            class1851.setBlockState(class1853, Class7521.field29758.getDefaultState(), 2);
             for (int j = 0; j < 200; ++j) {
                 final int n2 = random.nextInt(5) - random.nextInt(6);
                 int n3 = 3;
@@ -40,9 +40,9 @@ public class Class4566 extends Class4535<Class5122>
                 }
                 if (n3 >= 1) {
                     final BlockPos method1134 = class1853.add(random.nextInt(n3) - random.nextInt(n3), n2, random.nextInt(n3) - random.nextInt(n3));
-                    final BlockState method1135 = class1851.method6701(method1134);
-                    final Class3833 method1136 = method1135.method21696();
-                    if (method1135.method21697() != Class8059.field33153) {
+                    final BlockState method1135 = class1851.getBlockState(method1134);
+                    final Block method1136 = method1135.getBlock();
+                    if (method1135.getMaterial() != Material.AIR) {
                         if (method1136 != Class7521.field29173) {
                             if (method1136 != Class7521.field29548) {
                                 if (method1136 != Class7521.field29330) {
@@ -53,8 +53,8 @@ public class Class4566 extends Class4535<Class5122>
                     }
                     final Direction[] values2 = Direction.values();
                     for (int length2 = values2.length, k = 0; k < length2; ++k) {
-                        if (class1851.method6701(method1134.method1149(values2[k])).method21696() == Class7521.field29758) {
-                            class1851.method6688(method1134, Class7521.field29758.method11878(), 2);
+                        if (class1851.getBlockState(method1134.method1149(values2[k])).getBlock() == Class7521.field29758) {
+                            class1851.setBlockState(method1134, Class7521.field29758.getDefaultState(), 2);
                             break;
                         }
                     }

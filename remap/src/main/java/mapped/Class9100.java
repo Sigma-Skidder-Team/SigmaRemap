@@ -77,6 +77,6 @@ public class Class9100
     
     @Override
     public String toString() {
-        return "[" + Class8571.method28888(this.field38545) + "]";
+        return "[" + Config.method28888(this.field38545) + "]";
     }
 }

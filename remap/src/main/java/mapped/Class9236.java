@@ -43,12 +43,12 @@ public class Class9236
     public boolean method34052() {
         this.field39596.clear();
         this.field39597.clear();
-        final BlockState method6701 = this.field39591.method6701(this.field39594);
+        final BlockState method6701 = this.field39591.getBlockState(this.field39594);
         if (Class3836.method11894(method6701, this.field39591, this.field39594, this.field39595, false, this.field39598)) {
             if (this.method34055(this.field39594, this.field39595)) {
                 for (int i = 0; i < this.field39596.size(); ++i) {
                     final BlockPos class354 = this.field39596.get(i);
-                    if (method34053(this.field39591.method6701(class354).method21696()) && !this.method34057(class354)) {
+                    if (method34053(this.field39591.getBlockState(class354).method21696()) && !this.method34057(class354)) {
                         return false;
                     }
                 }
@@ -57,7 +57,7 @@ public class Class9236
             return false;
         }
         else {
-            if (this.field39593 && method6701.method21721() == Class2117.field12341) {
+            if (this.field39593 && method6701.method21721() == PushReaction.DESTROY) {
                 this.field39597.add(this.field39594);
                 return true;
             }
@@ -65,17 +65,17 @@ public class Class9236
         }
     }
     
-    private static boolean method34053(final Class3833 class3833) {
+    private static boolean method34053(final Block class3833) {
         return class3833 == Class7521.field29516 || class3833 == Class7521.field29825;
     }
     
-    private static boolean method34054(final Class3833 class3833, final Class3833 class3834) {
+    private static boolean method34054(final Block class3833, final Block class3834) {
         return (class3833 != Class7521.field29825 || class3834 != Class7521.field29516) && (class3833 != Class7521.field29516 || class3834 != Class7521.field29825) && (method34053(class3833) || method34053(class3834));
     }
     
     private boolean method34055(final BlockPos class354, final Direction class355) {
-        final BlockState method6701 = this.field39591.method6701(class354);
-        Class3833 class356 = method6701.method21696();
+        final BlockState method6701 = this.field39591.getBlockState(class354);
+        Block class356 = method6701.getBlock();
         if (method6701.method21706()) {
             return true;
         }
@@ -94,9 +94,9 @@ public class Class9236
         }
         while (method34053(class356)) {
             final BlockPos method6702 = class354.method1150(this.field39595.getOpposite(), n);
-            final Class3833 class357 = class356;
-            final BlockState method6703 = this.field39591.method6701(method6702);
-            class356 = method6703.method21696();
+            final Block class357 = class356;
+            final BlockState method6703 = this.field39591.getBlockState(method6702);
+            class356 = method6703.getBlock();
             if (method6703.method21706()) {
                 break;
             }
@@ -127,20 +127,20 @@ public class Class9236
                 this.method34056(n2, index);
                 for (int j = 0; j <= index + n2; ++j) {
                     final BlockPos class358 = this.field39596.get(j);
-                    if (method34053(this.field39591.method6701(class358).method21696()) && !this.method34057(class358)) {
+                    if (method34053(this.field39591.getBlockState(class358).method21696()) && !this.method34057(class358)) {
                         return false;
                     }
                 }
                 return true;
             }
-            final BlockState method6705 = this.field39591.method6701(method6704);
+            final BlockState method6705 = this.field39591.getBlockState(method6704);
             if (method6705.method21706()) {
                 return true;
             }
             if (!Class3836.method11894(method6705, this.field39591, method6704, this.field39595, true, this.field39595) || method6704.equals(this.field39592)) {
                 return false;
             }
-            if (method6705.method21721() == Class2117.field12341) {
+            if (method6705.method21721() == PushReaction.DESTROY) {
                 this.field39597.add(method6704);
                 return true;
             }
@@ -167,11 +167,11 @@ public class Class9236
     }
     
     private boolean method34057(final BlockPos class354) {
-        final BlockState method6701 = this.field39591.method6701(class354);
+        final BlockState method6701 = this.field39591.getBlockState(class354);
         for (final Direction class355 : Direction.values()) {
             if (class355.getAxis() != this.field39595.getAxis()) {
                 final BlockPos method6702 = class354.method1149(class355);
-                if (method34054(this.field39591.method6701(method6702).method21696(), method6701.method21696())) {
+                if (method34054(this.field39591.getBlockState(method6702).method21696(), method6701.getBlock())) {
                     if (!this.method34055(method6702, class355)) {
                         return false;
                     }

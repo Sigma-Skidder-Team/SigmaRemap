@@ -10,15 +10,15 @@ import com.google.gson.JsonObject;
 
 public abstract class Class6529<T extends Class6368>
 {
-    private final Class1932 field25977;
+    private final ResourceLocation field25977;
     private final Class<T> field25978;
     
-    public Class6529(final Class1932 field25977, final Class<T> field25978) {
+    public Class6529(final ResourceLocation field25977, final Class<T> field25978) {
         this.field25977 = field25977;
         this.field25978 = field25978;
     }
     
-    public Class1932 method19754() {
+    public ResourceLocation method19754() {
         return this.field25977;
     }
     

@@ -10,10 +10,10 @@ import java.util.function.Predicate;
 public class Class118 implements Predicate<Class7990>
 {
     private final BlockState field366;
-    private final Set<Class7111<?>> field367;
+    private final Set<IProperty<?>> field367;
     private final Class51 field368;
     
-    public Class118(final BlockState field366, final Set<Class7111<?>> field367, final Class51 field368) {
+    public Class118(final BlockState field366, final Set<IProperty<?>> field367, final Class51 field368) {
         this.field366 = field366;
         this.field367 = field367;
         this.field368 = field368;
@@ -26,11 +26,11 @@ public class Class118 implements Predicate<Class7990>
     @Override
     public boolean test(final Class7990 class7990) {
         final BlockState method26065 = class7990.method26065();
-        if (method26065.method21696() != this.field366.method21696()) {
+        if (method26065.getBlock() != this.field366.getBlock()) {
             return false;
         }
-        for (final Class7111 class7991 : this.field367) {
-            if (((Class7097<Object, Object>)method26065).method21772((Class7111<Comparable>)class7991) == this.field366.method21772((Class7111<Comparable>)class7991)) {
+        for (final IProperty class7991 : this.field367) {
+            if (((StateHolder<Object, Object>)method26065).get((IProperty<Comparable>)class7991) == this.field366.get((IProperty<Comparable>)class7991)) {
                 continue;
             }
             return false;
@@ -43,7 +43,7 @@ public class Class118 implements Predicate<Class7990>
     }
     
     public boolean method610(final Class1849 class1849, final BlockPos class1850, final int n) {
-        if (class1849.method6688(class1850, this.field366, n)) {
+        if (class1849.setBlockState(class1850, this.field366, n)) {
             if (this.field368 != null) {
                 final TileEntity method6727 = class1849.method6727(class1850);
                 if (method6727 != null) {

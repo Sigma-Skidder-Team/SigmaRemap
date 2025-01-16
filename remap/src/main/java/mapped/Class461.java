@@ -95,14 +95,14 @@ public class Class461 extends Class460 implements Class441, Class439
             final boolean[] method2339 = this.method2337();
             if (!Arrays.equals(method2339, this.field2723)) {
                 this.field2723 = method2339;
-                BlockState method2340 = this.field2656.method6701(this.method2193());
-                if (!(method2340.method21696() instanceof Class3954)) {
+                BlockState method2340 = this.field2656.getBlockState(this.getPos());
+                if (!(method2340.getBlock() instanceof Class3954)) {
                     return;
                 }
                 for (int i = 0; i < Class3954.field17856.length; ++i) {
-                    method2340 = ((Class7097<Object, BlockState>)method2340).method21773((Class7111<Comparable>)Class3954.field17856[i], method2339[i]);
+                    method2340 = ((StateHolder<Object, BlockState>)method2340).with((IProperty<Comparable>)Class3954.field17856[i], method2339[i]);
                 }
-                this.field2656.method6688(this.field2657, method2340, 2);
+                this.field2656.setBlockState(this.field2657, method2340, 2);
             }
         }
     }
@@ -140,7 +140,7 @@ public class Class461 extends Class460 implements Class441, Class439
             this.field2721.set(i, Class7652.method24247(class8321, this.field2721.get(i)));
         }
         class8321.method27693(1);
-        final BlockPos method2193 = this.method2193();
+        final BlockPos method2193 = this.getPos();
         if (class8321.getItem().method11721()) {
             final ItemStack class8322 = new ItemStack(class8321.getItem().method11720());
             if (!class8321.method27620()) {

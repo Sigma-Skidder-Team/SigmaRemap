@@ -18,7 +18,7 @@ public interface Class8976<T extends Class3662<?>>
     public static final Class8976<Class3686> field37848 = method31917("stonecutting");
     
     default <T extends Class3662<?>> Class8976<T> method31917(final String s) {
-        return Class90.method512(Class90.field236, new Class1932(s), (Class8976<T>)new Class8977(s));
+        return Registry.method512(Registry.field236, new ResourceLocation(s), (Class8976<T>)new Class8977(s));
     }
     
     default <C extends Class446> Optional<T> method31918(final Class3662<C> value, final World class1847, final C c) {

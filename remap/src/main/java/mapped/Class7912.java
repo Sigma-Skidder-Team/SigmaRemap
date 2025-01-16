@@ -12,7 +12,7 @@ public class Class7912 extends Class7909<Item>
     private int field32490;
     private Class7909<Item> field32491;
     
-    public Class7912(final Class1932 class1932) {
+    public Class7912(final ResourceLocation class1932) {
         super(class1932);
         this.field32490 = -1;
     }

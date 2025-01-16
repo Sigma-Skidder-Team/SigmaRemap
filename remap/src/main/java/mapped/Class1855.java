@@ -18,15 +18,15 @@ public interface Class1855
     @Nullable
     TileEntity method6727(final BlockPos p0);
     
-    BlockState method6701(final BlockPos p0);
+    BlockState getBlockState(final BlockPos p0);
     
     Class7099 method6702(final BlockPos p0);
     
     default int method6984(final BlockPos class354) {
-        return this.method6701(class354).method21704();
+        return this.getBlockState(class354).method21704();
     }
     
-    default int method6985() {
+    default int getMaxLightLevel() {
         return 15;
     }
     
@@ -36,7 +36,7 @@ public interface Class1855
     
     default Class7005 method6987(final Class8478 class8478) {
         return method6989(class8478, (class8480, class8482) -> {
-            this.method6701(class8482);
+            this.getBlockState(class8482);
             this.method6702(class8482);
             class8480.method28308();
             class8480.method28307();

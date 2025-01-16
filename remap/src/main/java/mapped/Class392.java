@@ -12,7 +12,7 @@ public class Class392 implements AutoCloseable
 {
     private final Class1773 field2279;
     private final Class1846 field2280;
-    private final Class1932 field2281;
+    private final ResourceLocation field2281;
     private boolean field2282;
     private float field2283;
     private final Class1660 field2284;
@@ -53,7 +53,7 @@ public class Class392 implements AutoCloseable
         Class8726.method30039(33986);
         Class8726.method30041();
         Class8726.method30039(33984);
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             Class9216.method33881();
         }
     }
@@ -74,7 +74,7 @@ public class Class392 implements AutoCloseable
             Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             Class8726.method30040();
             Class8726.method30039(33984);
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class9216.method33880();
             }
         }
@@ -83,14 +83,14 @@ public class Class392 implements AutoCloseable
     public void method1419(final float f) {
         if (this.field2282) {
             this.field2282 = false;
-            this.field2285.method5327().method15297("lightTex");
+            this.field2285.method5327().startSection("lightTex");
             final Class1848 field4683 = this.field2285.field4683;
             if (field4683 != null) {
                 this.field2287 = false;
-                if (Class8571.method28945() && Class8763.method30361(field4683, this.field2283, this.field2280, this.field2285.field4684.method2653(Class9439.field40489) || this.field2285.field4684.method2653(Class9439.field40502), f)) {
+                if (Config.method28945() && Class8763.method30361(field4683, this.field2283, this.field2280, this.field2285.field4684.method2653(Class9439.field40489) || this.field2285.field4684.method2653(Class9439.field40502), f)) {
                     this.field2279.method6327();
                     this.field2282 = false;
-                    this.field2285.method5327().method15299();
+                    this.field2285.method5327().endSection();
                     this.field2287 = true;
                     return;
                 }
@@ -163,7 +163,7 @@ public class Class392 implements AutoCloseable
                     }
                 }
                 this.field2279.method6327();
-                this.field2285.method5327().method15299();
+                this.field2285.method5327().endSection();
             }
         }
     }

@@ -36,7 +36,7 @@ public class Class3482 extends Class3479
     @Override
     public boolean method11050(final Class1852 class1852, final BlockPos class1853) {
         final BlockPos method1137 = class1853.method1137();
-        return class1852.method6961(method1137) && class1852.method6961(method1137.method1137()) && class1852.method6701(class1853).method21731(class1852, class1853, this.field16405);
+        return class1852.method6961(method1137) && class1852.method6961(method1137.method1137()) && class1852.getBlockState(class1853).method21731(class1852, class1853, this.field16405);
     }
     
     @Override

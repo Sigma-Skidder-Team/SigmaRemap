@@ -7,7 +7,7 @@ package mapped;
 import org.apache.logging.log4j.LogManager;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
-import java.io.Reader;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -26,7 +26,7 @@ public abstract class Class1732 implements Class1727
         this.field9679 = field9679;
     }
     
-    private static String method6125(final Class346 class346, final Class1932 class347) {
+    private static String method6125(final Class346 class346, final ResourceLocation class347) {
         return String.format("%s/%s/%s", class346.method1028(), class347.method7798(), class347.method7797());
     }
     
@@ -35,12 +35,12 @@ public abstract class Class1732 implements Class1727
     }
     
     @Override
-    public InputStream method6097(final Class346 class346, final Class1932 class347) throws IOException {
+    public InputStream method6097(final Class346 class346, final ResourceLocation class347) throws IOException {
         return this.method6127(method6125(class346, class347));
     }
     
     @Override
-    public boolean method6099(final Class346 class346, final Class1932 class347) {
+    public boolean method6099(final Class346 class346, final ResourceLocation class347) {
         return this.method6128(method6125(class346, class347));
     }
     

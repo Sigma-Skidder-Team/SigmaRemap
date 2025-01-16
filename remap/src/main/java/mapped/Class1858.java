@@ -79,8 +79,8 @@ public class Class1858 implements Class1856
     }
     
     @Override
-    public BlockState method6701(final BlockPos class354) {
-        return this.field10134[(class354.getX() >> 4) - this.field10128][(class354.getZ() >> 4) - this.field10129].method6701(class354);
+    public BlockState getBlockState(final BlockPos class354) {
+        return this.field10134[(class354.getX() >> 4) - this.field10128][(class354.getZ() >> 4) - this.field10129].getBlockState(class354);
     }
     
     @Override

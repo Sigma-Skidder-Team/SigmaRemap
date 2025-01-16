@@ -6,7 +6,6 @@ package mapped;
 
 import java.util.ArrayList;
 import com.google.gson.JsonSyntaxException;
-import java.util.List;
 import com.google.common.collect.Lists;
 import com.google.gson.JsonDeserializationContext;
 import java.util.Iterator;
@@ -18,7 +17,7 @@ import com.google.gson.JsonObject;
 public class Class6240 extends Class6227<Class127>
 {
     public Class6240() {
-        super(new Class1932("set_attributes"), Class127.class);
+        super(new ResourceLocation("set_attributes"), Class127.class);
     }
     
     public void method18569(final JsonObject jsonObject, final Class127 class127, final JsonSerializationContext jsonSerializationContext) {

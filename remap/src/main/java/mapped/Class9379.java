@@ -81,22 +81,22 @@ public class Class9379
         }
     }
     
-    public static boolean method34824(final AxisAlignedBB class6221, final Class8059 class6222) {
-        final int method35644 = MathHelper.floor(class6221.field25073);
-        final int method35645 = MathHelper.method35650(class6221.field25076);
-        final int method35646 = MathHelper.floor(class6221.field25074);
-        final int method35647 = MathHelper.method35650(class6221.field25077);
-        final int method35648 = MathHelper.floor(class6221.field25075);
-        final int method35649 = MathHelper.method35650(class6221.field25078);
+    public static boolean method34824(final AxisAlignedBB class6221, final Material class6222) {
+        final int method35644 = MathHelper.floor(class6221.minX);
+        final int method35645 = MathHelper.ceil(class6221.maxX);
+        final int method35646 = MathHelper.floor(class6221.minY);
+        final int method35647 = MathHelper.ceil(class6221.maxY);
+        final int method35648 = MathHelper.floor(class6221.minZ);
+        final int method35649 = MathHelper.ceil(class6221.maxZ);
         if (Class9379.field40212.field4683.method6973(method35644, method35646, method35648, method35645, method35647, method35649)) {
             final Class386 method35650 = Class386.method1296();
             for (int i = method35644; i < method35645; ++i) {
                 for (int j = method35646; j < method35647; ++j) {
                     for (int k = method35648; k < method35649; ++k) {
                         method35650.method1300(i, j, k);
-                        final BlockState method35651 = Class9379.field40212.field4683.method6701(method35650);
-                        method35651.method21696();
-                        if (method35651.method21697() == class6222) {
+                        final BlockState method35651 = Class9379.field40212.field4683.getBlockState(method35650);
+                        method35651.getBlock();
+                        if (method35651.getMaterial() == class6222) {
                             return true;
                         }
                     }
@@ -119,7 +119,7 @@ public class Class9379
     }
     
     public static boolean method34828() {
-        return method34824(Class9379.field40212.field4684.getBoundingBox().method18494(0.0, -0.4000000059604645, 0.0).method18492(0.001, 0.001, 0.001), Class8059.field33161);
+        return method34824(Class9379.field40212.field4684.getBoundingBox().method18494(0.0, -0.4000000059604645, 0.0).method18492(0.001, 0.001, 0.001), Material.WATER);
     }
     
     static {

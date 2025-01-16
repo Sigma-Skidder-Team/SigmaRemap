@@ -10,20 +10,20 @@ public class Class7984
 {
     private static String[] field32856;
     
-    public static Class1932 method26041(final Class3090 class3090) {
-        return Class90.field217.method503(class3090);
+    public static ResourceLocation method26041(final Class3090 class3090) {
+        return Registry.field217.getKey(class3090);
     }
     
-    public static Class3090 method26042(final Class1932 class1932) {
-        return Class90.field217.method510(class1932) ? Class90.field217.method505(class1932) : null;
+    public static Class3090 method26042(final ResourceLocation class1932) {
+        return Registry.field217.method510(class1932) ? Registry.field217.getOrDefault(class1932) : null;
     }
     
-    public static Class3090 method26043(final Class1932 class1932) {
-        return Class90.field217.method505(class1932);
+    public static Class3090 method26043(final ResourceLocation class1932) {
+        return Registry.field217.getOrDefault(class1932);
     }
     
-    public static Set<Class1932> method26044() {
-        return Class90.field217.method507();
+    public static Set<ResourceLocation> method26044() {
+        return Registry.field217.method507();
     }
     
     public static Class3090 method26045(final Class1856 class1856, final BlockPos class1857) {

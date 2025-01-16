@@ -86,11 +86,11 @@ public class Class4164 extends Class4158<Class492>
     }
     
     static {
-        field18551 = new Class3687(Class1774.field9853, new Class1932("entity/conduit/base"));
-        field18552 = new Class3687(Class1774.field9853, new Class1932("entity/conduit/cage"));
-        field18553 = new Class3687(Class1774.field9853, new Class1932("entity/conduit/wind"));
-        field18554 = new Class3687(Class1774.field9853, new Class1932("entity/conduit/wind_vertical"));
-        field18555 = new Class3687(Class1774.field9853, new Class1932("entity/conduit/open_eye"));
-        field18556 = new Class3687(Class1774.field9853, new Class1932("entity/conduit/closed_eye"));
+        field18551 = new Class3687(Class1774.field9853, new ResourceLocation("entity/conduit/base"));
+        field18552 = new Class3687(Class1774.field9853, new ResourceLocation("entity/conduit/cage"));
+        field18553 = new Class3687(Class1774.field9853, new ResourceLocation("entity/conduit/wind"));
+        field18554 = new Class3687(Class1774.field9853, new ResourceLocation("entity/conduit/wind_vertical"));
+        field18555 = new Class3687(Class1774.field9853, new ResourceLocation("entity/conduit/open_eye"));
+        field18556 = new Class3687(Class1774.field9853, new ResourceLocation("entity/conduit/closed_eye"));
     }
 }

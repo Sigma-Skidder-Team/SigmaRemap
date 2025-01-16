@@ -25,7 +25,7 @@ import org.apache.logging.log4j.Logger;
 public class Class1795 implements Class1657
 {
     private static final Logger field9945;
-    private final Map<Class1932, Class6585> field9946;
+    private final Map<ResourceLocation, Class6585> field9946;
     private final DataFixer field9947;
     private final MinecraftServer field9948;
     private final Path field9949;
@@ -38,7 +38,7 @@ public class Class1795 implements Class1657
         field9948.method1571().method19930(this);
     }
     
-    public Class6585 method6518(final Class1932 class1932) {
+    public Class6585 method6518(final ResourceLocation class1932) {
         Class6585 method6519 = this.method6519(class1932);
         if (method6519 == null) {
             method6519 = new Class6585();
@@ -48,7 +48,7 @@ public class Class1795 implements Class1657
     }
     
     @Nullable
-    public Class6585 method6519(final Class1932 key) {
+    public Class6585 method6519(final ResourceLocation key) {
         return this.field9946.computeIfAbsent(key, class1932 -> {
             this.method6521(class1932);
             final Class6585 class1933;
@@ -62,8 +62,8 @@ public class Class1795 implements Class1657
     }
     
     @Nullable
-    private Class6585 method6520(final Class1932 class1932) {
-        final Class1932 class1933 = new Class1932(class1932.method7798(), "structures/" + class1932.method7797() + ".nbt");
+    private Class6585 method6520(final ResourceLocation class1932) {
+        final ResourceLocation class1933 = new ResourceLocation(class1932.method7798(), "structures/" + class1932.method7797() + ".nbt");
         try (final Class1671 method19933 = this.field9948.method1571().method19933(class1933)) {
             return this.method6522(method19933.method5887());
         }
@@ -77,7 +77,7 @@ public class Class1795 implements Class1657
     }
     
     @Nullable
-    private Class6585 method6521(final Class1932 class1932) {
+    private Class6585 method6521(final ResourceLocation class1932) {
         if (!this.field9949.toFile().isDirectory()) {
             return null;
         }
@@ -107,7 +107,7 @@ public class Class1795 implements Class1657
         return class52;
     }
     
-    public boolean method6524(final Class1932 class1932) {
+    public boolean method6524(final ResourceLocation class1932) {
         final Class6585 class1933 = this.field9946.get(class1932);
         if (class1933 == null) {
             return false;
@@ -134,7 +134,7 @@ public class Class1795 implements Class1657
         }
     }
     
-    public Path method6525(final Class1932 obj, final String s) {
+    public Path method6525(final ResourceLocation obj, final String s) {
         try {
             return Class6732.method20424(this.field9949.resolve(obj.method7798()).resolve("structures"), obj.method7797(), s);
         }
@@ -143,7 +143,7 @@ public class Class1795 implements Class1657
         }
     }
     
-    private Path method6526(final Class1932 obj, final String s) {
+    private Path method6526(final ResourceLocation obj, final String s) {
         if (!obj.method7797().contains("//")) {
             final Path method6525 = this.method6525(obj, s);
             if (method6525.startsWith(this.field9949)) {
@@ -158,7 +158,7 @@ public class Class1795 implements Class1657
         throw new Class2357("Invalid resource path: " + obj);
     }
     
-    public void method6527(final Class1932 class1932) {
+    public void method6527(final ResourceLocation class1932) {
         this.field9946.remove(class1932);
     }
     

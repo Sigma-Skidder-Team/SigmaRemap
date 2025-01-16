@@ -47,7 +47,7 @@ public class Class9540
             return 7;
         }
         if (!trim.equals("replace")) {
-            Class8571.method28848("Unknown blend: " + trim);
+            Config.warn("Unknown blend: " + trim);
             return 1;
         }
         return 8;

@@ -22,7 +22,7 @@ public class Class8492
         }
         if (System.currentTimeMillis() > Class8492.field34866 + 3000L) {
             if (Class8492.field34868 > 0) {
-                Class8571.method28850("Suppressed " + Class8492.field34867 + " OpenGL errors");
+                Config.method28850("Suppressed " + Class8492.field34867 + " OpenGL errors");
             }
             Class8492.field34869 = (Class8492.field34867 > 10);
             Class8492.field34866 = System.currentTimeMillis();

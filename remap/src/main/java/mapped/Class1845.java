@@ -27,7 +27,7 @@ public class Class1845 implements AutoCloseable
             for (int j = 0; j < 128; ++j) {
                 final int n = this.field10036.field25426[j + i * 128] & 0xFF;
                 if (n / 4 != 0) {
-                    this.field10037.method6328().method6648(j, i, Class8819.field37031[n / 4].method30762(n & 0x3));
+                    this.field10037.method6328().method6648(j, i, MaterialColor.COLORS[n / 4].getMapColor(n & 0x3));
                 }
                 else {
                     this.field10037.method6328().method6648(j, i, 0);

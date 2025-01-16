@@ -12,12 +12,12 @@ public class Class4363 implements IPacket<IClientPlayNetHandler>
     private BlockPos field19551;
     private int field19552;
     private int field19553;
-    private Class3833 field19554;
+    private Block field19554;
     
     public Class4363() {
     }
     
-    public Class4363(final BlockPos field19551, final Class3833 field19552, final int field19553, final int field19554) {
+    public Class4363(final BlockPos field19551, final Block field19552, final int field19553, final int field19554) {
         this.field19551 = field19551;
         this.field19554 = field19552;
         this.field19552 = field19553;
@@ -29,7 +29,7 @@ public class Class4363 implements IPacket<IClientPlayNetHandler>
         this.field19551 = class8654.method29494();
         this.field19552 = class8654.readUnsignedByte();
         this.field19553 = class8654.readUnsignedByte();
-        this.field19554 = Class90.field208.method499(class8654.readVarInt());
+        this.field19554 = Registry.BLOCK.method499(class8654.readVarInt());
     }
     
     @Override
@@ -37,7 +37,7 @@ public class Class4363 implements IPacket<IClientPlayNetHandler>
         class8654.method29495(this.field19551);
         class8654.writeByte(this.field19552);
         class8654.writeByte(this.field19553);
-        class8654.writeVarInt(Class90.field208.method504(this.field19554));
+        class8654.writeVarInt(Registry.BLOCK.getId(this.field19554));
     }
     
     public void method12764(final IClientPlayNetHandler class5800) {
@@ -56,7 +56,7 @@ public class Class4363 implements IPacket<IClientPlayNetHandler>
         return this.field19553;
     }
     
-    public Class3833 method13126() {
+    public Block method13126() {
         return this.field19554;
     }
 }

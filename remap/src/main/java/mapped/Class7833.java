@@ -17,10 +17,10 @@ public class Class7833 implements Class7831<Class7832>
     private static String[] field32075;
     private final List<Class7831<Class7832>> field32076;
     private final Random field32077;
-    private final Class1932 field32078;
+    private final ResourceLocation field32078;
     private final ITextComponent field32079;
     
-    public Class7833(final Class1932 field32078, final String s) {
+    public Class7833(final ResourceLocation field32078, final String s) {
         this.field32076 = Lists.newArrayList();
         this.field32077 = new Random();
         this.field32078 = field32078;

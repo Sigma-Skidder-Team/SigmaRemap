@@ -39,7 +39,7 @@ public class Class5582 extends Class5509
             class5902.field20284 = field20284;
             return (Class9559)class5902;
         }
-        Class8571.method28848("Field not found: RenderLeashKnot.leashKnotModel");
+        Config.warn("Field not found: RenderLeashKnot.leashKnotModel");
         return null;
     }
 }

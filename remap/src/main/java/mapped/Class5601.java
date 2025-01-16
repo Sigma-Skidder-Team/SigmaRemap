@@ -49,7 +49,7 @@ public abstract class Class5601
     }
     
     public String method16859() {
-        return Class9216.method33898("option." + this.method16860() + ".comment", Class9518.method35517(Class8571.method28980(this.field22953), "//"));
+        return Class9216.method33898("option." + this.method16860() + ".comment", Class9518.method35517(Config.method28980(this.field22953), "//"));
     }
     
     public void method16862(final String field22953) {
@@ -108,7 +108,7 @@ public abstract class Class5601
         for (int i = 0; i < array.length; ++i) {
             final String s = array[i];
             if (!list.contains(s)) {
-                this.field22957 = (String[])Class8571.method28982(this.field22957, s);
+                this.field22957 = (String[]) Config.method28982(this.field22957, s);
             }
         }
     }
@@ -122,7 +122,7 @@ public abstract class Class5601
     }
     
     public boolean method16874() {
-        return !Class8571.equals(this.field22954, this.field22956);
+        return !Config.equals(this.field22954, this.field22956);
     }
     
     public boolean method16875() {
@@ -182,13 +182,13 @@ public abstract class Class5601
     
     public void method16886(float method28866) {
         if (this.field22955.length > 1) {
-            method28866 = Class8571.method28866(method28866, 0.0f, 1.0f);
+            method28866 = Config.method28866(method28866, 0.0f, 1.0f);
             this.field22954 = this.field22955[Math.round(method28866 * (this.field22955.length - 1))];
         }
     }
     
     @Override
     public String toString() {
-        return "" + this.field22952 + ", value: " + this.field22954 + ", valueDefault: " + this.field22956 + ", paths: " + Class8571.method28888(this.field22957);
+        return "" + this.field22952 + ", value: " + this.field22954 + ", valueDefault: " + this.field22956 + ", paths: " + Config.method28888(this.field22957);
     }
 }

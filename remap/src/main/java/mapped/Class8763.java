@@ -123,7 +123,7 @@ public class Class8763
         final String s = "optifine/colormap/";
         Class8763.field36793 = method30333(s, new String[] { "water.png", "watercolorx.png" }, 256, 256);
         method30335();
-        if (Class8571.method28945()) {
+        if (Config.method28945()) {
             Class8763.field36794 = method30333(s, new String[] { "pine.png", "pinecolor.png" }, 256, 256);
             Class8763.field36795 = method30333(s, new String[] { "birch.png", "birchcolor.png" }, 256, 256);
             Class8763.field36797 = method30333(s, new String[] { "swampgrass.png", "swampgrasscolor.png" }, 256, 256);
@@ -150,7 +150,7 @@ public class Class8763
     
     private static String method30320(final String s, final String str, final String[] a, final String s2) {
         try {
-            final InputStream method28897 = Class8571.method28897(new Class1932(s));
+            final InputStream method28897 = Config.method28897(new ResourceLocation(s));
             if (method28897 == null) {
                 return s2;
             }
@@ -163,7 +163,7 @@ public class Class8763
             }
             if (!Arrays.asList(a).contains(property)) {
                 method30383("Invalid value: " + str + "=" + property);
-                method30383("Expected values: " + Class8571.method28888(a));
+                method30383("Expected values: " + Config.method28888(a));
                 return s2;
             }
             method30382("" + str + "=" + property);
@@ -186,7 +186,7 @@ public class Class8763
         for (int i = 0; i < method32775.length; ++i) {
             final String str = method32775[i];
             final String method32776 = Class9518.method35527(str, s, s2);
-            final int method32777 = Class8571.method28933(method32776, Integer.MIN_VALUE);
+            final int method32777 = Config.method28933(method32776, Integer.MIN_VALUE);
             if (method32777 != Integer.MIN_VALUE) {
                 hashMap.put(method32777, str);
             }
@@ -231,7 +231,7 @@ public class Class8763
     
     private static int method30322(final String s, final int n) {
         try {
-            final InputStream method28897 = Class8571.method28897(new Class1932(s));
+            final InputStream method28897 = Config.method28897(new ResourceLocation(s));
             if (method28897 == null) {
                 return n;
             }
@@ -246,7 +246,7 @@ public class Class8763
     
     private static void method30323(final String s) {
         try {
-            final InputStream method28897 = Class8571.method28897(new Class1932(s));
+            final InputStream method28897 = Config.method28897(new ResourceLocation(s));
             if (method28897 == null) {
                 return;
             }
@@ -277,12 +277,12 @@ public class Class8763
                 method30381(method28898);
             }
             Class8763.field36834 = method30374(class27, s, "potion.", "Potion");
-            Class8763.field36812 = Class8571.method28933(class27.getProperty("xporb.time"), -1);
+            Class8763.field36812 = Config.method28933(class27.getProperty("xporb.time"), -1);
         }
         catch (final FileNotFoundException ex) {}
         catch (final IOException ex2) {
-            Class8571.method28848("Error parsing: " + s);
-            Class8571.method28848(ex2.getClass().getName() + ": " + ex2.getMessage());
+            Config.warn("Error parsing: " + s);
+            Config.warn(ex2.getClass().getName() + ": " + ex2.getMessage());
         }
     }
     
@@ -334,7 +334,7 @@ public class Class8763
             final String str = method32776[i];
             method30382("Block colormap: " + str);
             try {
-                final InputStream method32777 = Class8571.method28897(new Class1932("minecraft", str));
+                final InputStream method32777 = Config.method28897(new ResourceLocation("minecraft", str));
                 if (method32777 == null) {
                     method30383("File not found: " + str);
                 }
@@ -379,7 +379,7 @@ public class Class8763
             }
         }
         else {
-            method30383("No match blocks: " + Class8571.method28890(method24644));
+            method30383("No match blocks: " + Config.method28890(method24644));
         }
     }
     
@@ -464,15 +464,15 @@ public class Class8763
     
     public static Class7718 method30334(final String s, final int n, final int n2) {
         try {
-            if (!Class8571.method28900(new Class1932(s))) {
+            if (!Config.method28900(new ResourceLocation(s))) {
                 return null;
             }
             method30382("Colormap " + s);
             final Class27 class27 = new Class27();
             String method35519 = Class9518.method35519(s, ".png", ".properties");
-            final Class1932 class28 = new Class1932(method35519);
-            if (Class8571.method28900(class28)) {
-                final InputStream method35520 = Class8571.method28897(class28);
+            final ResourceLocation class28 = new ResourceLocation(method35519);
+            if (Config.method28900(class28)) {
+                final InputStream method35520 = Config.method28897(class28);
                 class27.load(method35520);
                 method35520.close();
                 method30382("Colormap properties: " + method35519);
@@ -498,7 +498,7 @@ public class Class8763
                 if (Class8763.field36794 == null) {
                     if (Class8763.field36797 == null) {
                         if (Class8763.field36796 == null) {
-                            if (Class8571.method28940()) {
+                            if (Config.method28940()) {
                                 field36818 = true;
                                 break Label_0052;
                             }
@@ -512,7 +512,7 @@ public class Class8763
     }
     
     public static int method30336(final Class8754 class8754, final Class7096 class8755, final Class1856 class8756, BlockPos class8757, final Class9145 class8758) {
-        final Class3833 method21696 = class8755.method21696();
+        final Block method21696 = class8755.method21696();
         Class7096 class8759 = class8755;
         if (Class8763.field36799 != null) {
             if (!class8754.method30292()) {
@@ -526,12 +526,12 @@ public class Class8763
             if (method21696 instanceof Class3870) {
                 if (class8755.method21772(Class3870.field17513) == Class182.field564) {
                     class8757 = class8757.method1139();
-                    class8759 = class8756.method6701(class8757);
+                    class8759 = class8756.getBlockState(class8757);
                 }
             }
             final Class7718 method21697 = method30338(class8759);
             if (method21697 != null) {
-                if (Class8571.method28943() && !method21697.method24617()) {
+                if (Config.method28943() && !method21697.method24617()) {
                     return method30339(class8755, class8756, class8757, method21697, class8758.method33383());
                 }
                 return method21697.method24632(class8756, class8757);
@@ -557,40 +557,40 @@ public class Class8763
                             if (!(method21696 instanceof Class3972)) {
                                 if (method21696 == Class7521.field29388) {
                                     final Class7712 class8760 = Class8763.field36839;
-                                    return (Class8571.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
+                                    return (Config.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
                                 }
                                 return -1;
                             }
                             else {
                                 if (method21696 == Class7521.field29205) {
                                     final Class7712 class8760 = Class8763.field36839;
-                                    return (Class8571.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
+                                    return (Config.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
                                 }
                                 if (method21696 == Class7521.field29206) {
                                     final Class7712 class8760 = Class8763.field36840;
-                                    return (Class8571.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
+                                    return (Config.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
                                 }
                                 if (method21696 != Class7521.field29207) {
                                     final Class7712 class8760 = Class8763.field36839;
-                                    return (Class8571.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
+                                    return (Config.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
                                 }
                                 final Class7712 class8760 = Class8763.field36841;
-                                return (Class8571.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
+                                return (Config.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
                             }
                         }
                         else {
                             final Class7712 class8760 = Class8763.field36838;
                             if (class8755.method21772(Class3870.field17513) != Class182.field564) {
-                                return (Class8571.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
+                                return (Config.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
                             }
                             class8757 = class8757.method1139();
-                            return (Class8571.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
+                            return (Config.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
                         }
                     }
                 }
             }
             final Class7712 class8760 = Class8763.field36838;
-            return (Class8571.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
+            return (Config.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
         }
         return -1;
     }
@@ -598,7 +598,7 @@ public class Class8763
     public static Class3090 method30337(final Class1856 class1856, final BlockPos class1857) {
         Class3090 class1858 = Class7984.method26045(class1856, class1857);
         if (class1858 == Class7102.field27638 || class1858 == Class7102.field27689) {
-            if (!Class8571.method28940()) {
+            if (!Config.method28940()) {
                 class1858 = Class7102.field27633;
             }
         }
@@ -636,7 +636,7 @@ public class Class8763
         final int method1074 = class7098.getX();
         final int method1075 = class7098.getY();
         final int method1076 = class7098.getZ();
-        final int method1077 = Class8571.method28944();
+        final int method1077 = Config.method28944();
         final int n4 = method1077 * 2 + 1;
         final int n5 = n4 * n4;
         for (int i = method1074 - method1077; i <= method1074 + method1077; ++i) {
@@ -655,12 +655,12 @@ public class Class8763
         class1857.method21696();
         Class7712 class1860 = method30338(class1857);
         if (class1860 == null) {
-            if (class1857.method21697() == Class8059.field33161) {
+            if (class1857.method21697() == Material.WATER) {
                 class1860 = Class8763.field36842;
             }
         }
         if (class1860 != null) {
-            return (Class8571.method28943() && !class1860.method24617()) ? method30339(class1857, class1856, class1858, class1860, class1859.method33383()) : class1860.method24616(class1857, class1856, class1858);
+            return (Config.method28943() && !class1860.method24617()) ? method30339(class1857, class1856, class1858, class1860, class1859.method33383()) : class1860.method24616(class1857, class1856, class1858);
         }
         return method30341().method25441(class1857, class1856, class1858, 0);
     }
@@ -692,7 +692,7 @@ public class Class8763
     
     public static void method30345(final Class6173 class6173, final Class1856 class6174, final double n, final double n2, final double n3) {
         if (Class8763.field36810 != null) {
-            final int method24629 = Class8763.field36810.method24629(method30346(class6174.method6701(new BlockPos(n, n2, n3)), 15));
+            final int method24629 = Class8763.field36810.method24629(method30346(class6174.getBlockState(new BlockPos(n, n2, n3)), 15));
             class6173.method18435((method24629 >> 16 & 0xFF) / 255.0f, (method24629 >> 8 & 0xFF) / 255.0f, (method24629 & 0xFF) / 255.0f);
         }
     }
@@ -701,7 +701,7 @@ public class Class8763
         if (!(class7096.method21696() instanceof Class3999)) {
             return n;
         }
-        final Integer method21772 = class7096.method21772((Class7111<Integer>)Class3999.field18026);
+        final Integer method21772 = class7096.method21772((IProperty<Integer>)Class3999.field18026);
         if (method21772 instanceof Integer) {
             return method21772;
         }
@@ -758,7 +758,7 @@ public class Class8763
     }
     
     private static int method30351(final Class1856 class1856, final BlockPos class1857) {
-        return (Class8763.field36821 >= 0) ? Class8763.field36821 : method30341().method25441(Class7521.field29393.method11878(), class1856, class1857, 0);
+        return (Class8763.field36821 >= 0) ? Class8763.field36821 : method30341().method25441(Class7521.field29393.getDefaultState(), class1856, class1857, 0);
     }
     
     private static Vec3d method30352(final Vec3d class5487) {
@@ -807,7 +807,7 @@ public class Class8763
     
     private static int method30360(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class9145 class7099) {
         Class7718 class7100 = Class8763.field36814;
-        final Class3833 method21696 = class7096.method21696();
+        final Block method21696 = class7096.method21696();
         if (method21696 == Class7521.field29386) {
             if (Class8763.field36816 != null) {
                 class7100 = Class8763.field36816;
@@ -822,7 +822,7 @@ public class Class8763
             return -1;
         }
         if (method21696 instanceof Class3873) {
-            return class7100.method24629(class7096.method21772((Class7111<Integer>)Class3873.field17516));
+            return class7100.method24629(class7096.method21772((IProperty<Integer>)Class3873.field17516));
         }
         return -1;
     }
@@ -874,11 +874,11 @@ public class Class8763
                 int n = Class9543.method35627(method35517);
                 try {
                     if (n < 0) {
-                        n = Class9543.method35626(new Class1932(method35517).toString());
+                        n = Class9543.method35626(new ResourceLocation(method35517).toString());
                     }
                 }
                 catch (final Class2357 class2357) {
-                    Class8571.method28848("ResourceLocationException: " + class2357.getMessage());
+                    Config.warn("ResourceLocationException: " + class2357.getMessage());
                 }
                 if (n < 0) {
                     method30383("Invalid spawn egg name: " + str2);
@@ -917,7 +917,7 @@ public class Class8763
         if (method11773 == null) {
             return n2;
         }
-        final int method11774 = Class90.field210.method504(method11773);
+        final int method11774 = Registry.field210.getId(method11773);
         if (method11774 < 0) {
             return n2;
         }
@@ -1004,7 +1004,7 @@ public class Class8763
             if (!s2.startsWith(prefix)) {
                 continue;
             }
-            final int method28933 = Class8571.method28933(Class9518.method35517(s2, prefix), -1);
+            final int method28933 = Config.method28933(Class9518.method35517(s2, prefix), -1);
             final int method28934 = method30331(property);
             if (method28933 >= 0) {
                 if (method28933 < a.length) {
@@ -1036,7 +1036,7 @@ public class Class8763
     }
     
     private static int[] method30373(final Properties properties, final String s, final String prefix, final String str) {
-        final int[] a = new int[Class8819.field37031.length];
+        final int[] a = new int[MaterialColor.COLORS.length];
         Arrays.fill(a, -1);
         int i = 0;
         for (final String s2 : properties.keySet()) {
@@ -1095,7 +1095,7 @@ public class Class8763
     
     private static int method30375() {
         int n = 0;
-        final Iterator<Class1932> iterator = Class90.field207.method507().iterator();
+        final Iterator<ResourceLocation> iterator = Registry.field207.method507().iterator();
         while (iterator.hasNext()) {
             final int method16451 = Class5328.method16451(Class7711.method24615(iterator.next()));
             if (method16451 <= n) {
@@ -1109,7 +1109,7 @@ public class Class8763
     private static int method30376(String method35520) {
         if (!method35520.equals("potion.water")) {
             method35520 = Class9518.method35520(method35520, "potion.", "effect.");
-            final Iterator<Class1932> iterator = Class90.field207.method507().iterator();
+            final Iterator<ResourceLocation> iterator = Registry.field207.method507().iterator();
             while (iterator.hasNext()) {
                 final Class5328 method35521 = Class7711.method24615(iterator.next());
                 if (!method35521.method16455().equals(method35520)) {
@@ -1146,121 +1146,121 @@ public class Class8763
             return -1;
         }
         if (s.equals("air")) {
-            return Class8819.field37032.field37085;
+            return MaterialColor.AIR.colorIndex;
         }
         if (s.equals("grass")) {
-            return Class8819.field37033.field37085;
+            return MaterialColor.GRASS.colorIndex;
         }
         if (s.equals("sand")) {
-            return Class8819.field37034.field37085;
+            return MaterialColor.SAND.colorIndex;
         }
         if (s.equals("cloth")) {
-            return Class8819.field37035.field37085;
+            return MaterialColor.WOOL.colorIndex;
         }
         if (s.equals("tnt")) {
-            return Class8819.field37036.field37085;
+            return MaterialColor.TNT.colorIndex;
         }
         if (s.equals("ice")) {
-            return Class8819.field37037.field37085;
+            return MaterialColor.ICE.colorIndex;
         }
         if (s.equals("iron")) {
-            return Class8819.field37038.field37085;
+            return MaterialColor.IRON.colorIndex;
         }
         if (s.equals("foliage")) {
-            return Class8819.field37039.field37085;
+            return MaterialColor.FOLIAGE.colorIndex;
         }
         if (s.equals("clay")) {
-            return Class8819.field37041.field37085;
+            return MaterialColor.CLAY.colorIndex;
         }
         if (s.equals("dirt")) {
-            return Class8819.field37042.field37085;
+            return MaterialColor.DIRT.colorIndex;
         }
         if (s.equals("stone")) {
-            return Class8819.field37043.field37085;
+            return MaterialColor.STONE.colorIndex;
         }
         if (s.equals("water")) {
-            return Class8819.field37044.field37085;
+            return MaterialColor.WATER.colorIndex;
         }
         if (s.equals("wood")) {
-            return Class8819.field37045.field37085;
+            return MaterialColor.WOOD.colorIndex;
         }
         if (s.equals("quartz")) {
-            return Class8819.field37046.field37085;
+            return MaterialColor.QUARTZ.colorIndex;
         }
         if (s.equals("gold")) {
-            return Class8819.field37062.field37085;
+            return MaterialColor.GOLD.colorIndex;
         }
         if (s.equals("diamond")) {
-            return Class8819.field37063.field37085;
+            return MaterialColor.DIAMOND.colorIndex;
         }
         if (s.equals("lapis")) {
-            return Class8819.field37064.field37085;
+            return MaterialColor.LAPIS.colorIndex;
         }
         if (s.equals("emerald")) {
-            return Class8819.field37065.field37085;
+            return MaterialColor.EMERALD.colorIndex;
         }
         if (s.equals("podzol")) {
-            return Class8819.field37066.field37085;
+            return MaterialColor.OBSIDIAN.colorIndex;
         }
         if (s.equals("netherrack")) {
-            return Class8819.field37067.field37085;
+            return MaterialColor.NETHERRACK.colorIndex;
         }
         if (s.equals("snow") || s.equals("white")) {
-            return Class8819.field37040.field37085;
+            return MaterialColor.SNOW.colorIndex;
         }
         if (s.equals("adobe") || s.equals("orange")) {
-            return Class8819.field37047.field37085;
+            return MaterialColor.ADOBE.colorIndex;
         }
         if (s.equals("magenta")) {
-            return Class8819.field37048.field37085;
+            return MaterialColor.MAGENTA.colorIndex;
         }
         if (s.equals("light_blue") || s.equals("lightBlue")) {
-            return Class8819.field37049.field37085;
+            return MaterialColor.LIGHT_BLUE.colorIndex;
         }
         if (s.equals("yellow")) {
-            return Class8819.field37050.field37085;
+            return MaterialColor.YELLOW.colorIndex;
         }
         if (s.equals("lime")) {
-            return Class8819.field37051.field37085;
+            return MaterialColor.LIME.colorIndex;
         }
         if (s.equals("pink")) {
-            return Class8819.field37052.field37085;
+            return MaterialColor.PINK.colorIndex;
         }
         if (s.equals("gray")) {
-            return Class8819.field37053.field37085;
+            return MaterialColor.GRAY.colorIndex;
         }
         if (s.equals("silver")) {
-            return Class8819.field37054.field37085;
+            return MaterialColor.LIGHT_GRAY.colorIndex;
         }
         if (s.equals("cyan")) {
-            return Class8819.field37055.field37085;
+            return MaterialColor.CYAN.colorIndex;
         }
         if (s.equals("purple")) {
-            return Class8819.field37056.field37085;
+            return MaterialColor.PURPLE.colorIndex;
         }
         if (s.equals("blue")) {
-            return Class8819.field37057.field37085;
+            return MaterialColor.BLUE.colorIndex;
         }
         if (s.equals("brown")) {
-            return Class8819.field37058.field37085;
+            return MaterialColor.BROWN.colorIndex;
         }
         if (s.equals("green")) {
-            return Class8819.field37059.field37085;
+            return MaterialColor.GREEN.colorIndex;
         }
         if (!s.equals("red")) {
-            return s.equals("black") ? Class8819.field37061.field37085 : -1;
+            return s.equals("black") ? MaterialColor.BLACK.colorIndex : -1;
         }
-        return Class8819.field37060.field37085;
+        return MaterialColor.RED.colorIndex;
     }
     
     private static int[] method30380() {
-        final Class8819[] field37031 = Class8819.field37031;
+        final MaterialColor[] field37031 = MaterialColor.COLORS;
         final int[] a = new int[field37031.length];
         Arrays.fill(a, -1);
         for (int n = 0; n < field37031.length && n < a.length; ++n) {
-            final Class8819 class8819 = field37031[n];
-            if (class8819 != null) {
-                a[n] = class8819.field37084;
+            final MaterialColor MaterialColor = field37031[n];
+            if (MaterialColor != null) {
+                a[n] = MaterialColor.colorValue;
             }
         }
         return a;
@@ -1268,15 +1268,15 @@ public class Class8763
     
     private static void method30381(final int[] array) {
         if (array != null) {
-            final Class8819[] field37031 = Class8819.field37031;
+            final MaterialColor[] field37031 = MaterialColor.COLORS;
             int n = 0;
             for (int n2 = 0; n2 < field37031.length && n2 < array.length; ++n2) {
-                final Class8819 class8819 = field37031[n2];
-                if (class8819 != null) {
+                final MaterialColor MaterialColor = field37031[n2];
+                if (MaterialColor != null) {
                     final int field37032 = array[n2];
                     if (field37032 >= 0) {
-                        if (class8819.field37084 != field37032) {
-                            class8819.field37084 = field37032;
+                        if (MaterialColor.colorValue != field37032) {
+                            MaterialColor.colorValue = field37032;
                             n = 1;
                         }
                     }
@@ -1289,11 +1289,11 @@ public class Class8763
     }
     
     private static void method30382(final String str) {
-        Class8571.method28847("CustomColors: " + str);
+        Config.method28847("CustomColors: " + str);
     }
     
     private static void method30383(final String str) {
-        Class8571.method28848("CustomColors: " + str);
+        Config.warn("CustomColors: " + str);
     }
     
     public static int method30384(final int n) {
@@ -1355,8 +1355,8 @@ public class Class8763
         Class8763.field36832 = null;
         Class8763.field36833 = null;
         Class8763.field36834 = null;
-        field36835 = Class7521.field29156.method11878();
-        field36836 = Class7521.field29173.method11878();
+        field36835 = Class7521.field29156.getDefaultState();
+        field36836 = Class7521.field29173.getDefaultState();
         Class8763.field36837 = new Random();
         field36838 = new Class7716();
         field36839 = new Class7715();

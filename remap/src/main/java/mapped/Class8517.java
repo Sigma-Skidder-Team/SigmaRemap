@@ -15,9 +15,9 @@ public class Class8517 implements SuggestionProvider<Class7491>
 {
     private static String[] field34931;
     private final SuggestionProvider<Class7491> field34932;
-    private final Class1932 field34933;
+    private final ResourceLocation field34933;
     
-    public Class8517(final Class1932 field34933, final SuggestionProvider<Class7491> field34934) {
+    public Class8517(final ResourceLocation field34933, final SuggestionProvider<Class7491> field34934) {
         this.field34932 = field34934;
         this.field34933 = field34933;
     }

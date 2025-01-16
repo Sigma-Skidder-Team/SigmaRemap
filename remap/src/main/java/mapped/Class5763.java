@@ -13,12 +13,12 @@ public interface Class5763
     
     default JsonObject method17154() {
         final JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("type", Class90.field237.method503(this.method17156()).toString());
+        jsonObject.addProperty("type", Registry.field237.getKey(this.method17156()).toString());
         this.method17153(jsonObject);
         return jsonObject;
     }
     
-    Class1932 method17155();
+    ResourceLocation method17155();
     
     Class6096<?> method17156();
     
@@ -26,5 +26,5 @@ public interface Class5763
     JsonObject method17157();
     
     @Nullable
-    Class1932 method17158();
+    ResourceLocation method17158();
 }

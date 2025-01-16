@@ -75,7 +75,7 @@ public class Class6601
     }
     
     @Nullable
-    public Pair<Class1932, Class1932> method20059() {
+    public Pair<ResourceLocation, ResourceLocation> method20059() {
         return null;
     }
     

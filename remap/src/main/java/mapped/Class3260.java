@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Class3260 extends Class3247
 {
-    public static List<Class3833> field15749;
+    public static List<Block> field15749;
     public int field15750;
     public Class9572 field15751;
     public int field15752;
@@ -39,7 +39,7 @@ public class Class3260 extends Class3247
         if (!(class3820 instanceof Class4036)) {
             return false;
         }
-        final Class3833 method12240 = ((Class4036)class3820).method12240();
+        final Block method12240 = ((Class4036)class3820).method12240();
         if (!Class3260.field15749.contains(method12240)) {
             if (!(method12240 instanceof Class3905)) {
                 if (!(method12240 instanceof Class3874)) {

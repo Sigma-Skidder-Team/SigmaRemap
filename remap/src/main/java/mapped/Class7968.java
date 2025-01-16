@@ -13,20 +13,20 @@ import java.util.Random;
 
 public class Class7968
 {
-    private static final Class1932[] field32738;
-    private static final Class1932[] field32739;
-    private static final Class1932[] field32740;
-    private static final Class1932[] field32741;
-    private static final Class1932[] field32742;
-    private static final Class1932[] field32743;
-    private static final Class1932[] field32744;
-    private static final Class1932[] field32745;
+    private static final ResourceLocation[] field32738;
+    private static final ResourceLocation[] field32739;
+    private static final ResourceLocation[] field32740;
+    private static final ResourceLocation[] field32741;
+    private static final ResourceLocation[] field32742;
+    private static final ResourceLocation[] field32743;
+    private static final ResourceLocation[] field32744;
+    private static final ResourceLocation[] field32745;
     
-    private static Class1932 method25818(final Random random) {
+    private static ResourceLocation method25818(final Random random) {
         return Class7968.field32738[random.nextInt(Class7968.field32738.length)];
     }
     
-    private static Class1932 method25819(final Random random) {
+    private static ResourceLocation method25819(final Random random) {
         return Class7968.field32745[random.nextInt(Class7968.field32745.length)];
     }
     
@@ -77,9 +77,9 @@ public class Class7968
     private static void method25823(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797, final List<Class4473> list, final Random random, final Class5130 class1798, final boolean b, final float n) {
         if (class1798.field22097 != Class1957.field10666) {
             if (class1798.field22097 == Class1957.field10667) {
-                final Class1932[] array = b ? Class7968.field32742 : Class7968.field32739;
-                final Class1932[] array2 = b ? Class7968.field32744 : Class7968.field32740;
-                final Class1932[] array3 = b ? Class7968.field32743 : Class7968.field32741;
+                final ResourceLocation[] array = b ? Class7968.field32742 : Class7968.field32739;
+                final ResourceLocation[] array2 = b ? Class7968.field32744 : Class7968.field32740;
+                final ResourceLocation[] array3 = b ? Class7968.field32743 : Class7968.field32741;
                 final int nextInt = random.nextInt(array.length);
                 list.add(new Class4518(class1795, array[nextInt], class1796, class1797, n, class1798.field22097, b));
                 list.add(new Class4518(class1795, array2[nextInt], class1796, class1797, 0.7f, class1798.field22097, b));
@@ -92,13 +92,13 @@ public class Class7968
     }
     
     static {
-        field32738 = new Class1932[] { new Class1932("underwater_ruin/warm_1"), new Class1932("underwater_ruin/warm_2"), new Class1932("underwater_ruin/warm_3"), new Class1932("underwater_ruin/warm_4"), new Class1932("underwater_ruin/warm_5"), new Class1932("underwater_ruin/warm_6"), new Class1932("underwater_ruin/warm_7"), new Class1932("underwater_ruin/warm_8") };
-        field32739 = new Class1932[] { new Class1932("underwater_ruin/brick_1"), new Class1932("underwater_ruin/brick_2"), new Class1932("underwater_ruin/brick_3"), new Class1932("underwater_ruin/brick_4"), new Class1932("underwater_ruin/brick_5"), new Class1932("underwater_ruin/brick_6"), new Class1932("underwater_ruin/brick_7"), new Class1932("underwater_ruin/brick_8") };
-        field32740 = new Class1932[] { new Class1932("underwater_ruin/cracked_1"), new Class1932("underwater_ruin/cracked_2"), new Class1932("underwater_ruin/cracked_3"), new Class1932("underwater_ruin/cracked_4"), new Class1932("underwater_ruin/cracked_5"), new Class1932("underwater_ruin/cracked_6"), new Class1932("underwater_ruin/cracked_7"), new Class1932("underwater_ruin/cracked_8") };
-        field32741 = new Class1932[] { new Class1932("underwater_ruin/mossy_1"), new Class1932("underwater_ruin/mossy_2"), new Class1932("underwater_ruin/mossy_3"), new Class1932("underwater_ruin/mossy_4"), new Class1932("underwater_ruin/mossy_5"), new Class1932("underwater_ruin/mossy_6"), new Class1932("underwater_ruin/mossy_7"), new Class1932("underwater_ruin/mossy_8") };
-        field32742 = new Class1932[] { new Class1932("underwater_ruin/big_brick_1"), new Class1932("underwater_ruin/big_brick_2"), new Class1932("underwater_ruin/big_brick_3"), new Class1932("underwater_ruin/big_brick_8") };
-        field32743 = new Class1932[] { new Class1932("underwater_ruin/big_mossy_1"), new Class1932("underwater_ruin/big_mossy_2"), new Class1932("underwater_ruin/big_mossy_3"), new Class1932("underwater_ruin/big_mossy_8") };
-        field32744 = new Class1932[] { new Class1932("underwater_ruin/big_cracked_1"), new Class1932("underwater_ruin/big_cracked_2"), new Class1932("underwater_ruin/big_cracked_3"), new Class1932("underwater_ruin/big_cracked_8") };
-        field32745 = new Class1932[] { new Class1932("underwater_ruin/big_warm_4"), new Class1932("underwater_ruin/big_warm_5"), new Class1932("underwater_ruin/big_warm_6"), new Class1932("underwater_ruin/big_warm_7") };
+        field32738 = new ResourceLocation[] { new ResourceLocation("underwater_ruin/warm_1"), new ResourceLocation("underwater_ruin/warm_2"), new ResourceLocation("underwater_ruin/warm_3"), new ResourceLocation("underwater_ruin/warm_4"), new ResourceLocation("underwater_ruin/warm_5"), new ResourceLocation("underwater_ruin/warm_6"), new ResourceLocation("underwater_ruin/warm_7"), new ResourceLocation("underwater_ruin/warm_8") };
+        field32739 = new ResourceLocation[] { new ResourceLocation("underwater_ruin/brick_1"), new ResourceLocation("underwater_ruin/brick_2"), new ResourceLocation("underwater_ruin/brick_3"), new ResourceLocation("underwater_ruin/brick_4"), new ResourceLocation("underwater_ruin/brick_5"), new ResourceLocation("underwater_ruin/brick_6"), new ResourceLocation("underwater_ruin/brick_7"), new ResourceLocation("underwater_ruin/brick_8") };
+        field32740 = new ResourceLocation[] { new ResourceLocation("underwater_ruin/cracked_1"), new ResourceLocation("underwater_ruin/cracked_2"), new ResourceLocation("underwater_ruin/cracked_3"), new ResourceLocation("underwater_ruin/cracked_4"), new ResourceLocation("underwater_ruin/cracked_5"), new ResourceLocation("underwater_ruin/cracked_6"), new ResourceLocation("underwater_ruin/cracked_7"), new ResourceLocation("underwater_ruin/cracked_8") };
+        field32741 = new ResourceLocation[] { new ResourceLocation("underwater_ruin/mossy_1"), new ResourceLocation("underwater_ruin/mossy_2"), new ResourceLocation("underwater_ruin/mossy_3"), new ResourceLocation("underwater_ruin/mossy_4"), new ResourceLocation("underwater_ruin/mossy_5"), new ResourceLocation("underwater_ruin/mossy_6"), new ResourceLocation("underwater_ruin/mossy_7"), new ResourceLocation("underwater_ruin/mossy_8") };
+        field32742 = new ResourceLocation[] { new ResourceLocation("underwater_ruin/big_brick_1"), new ResourceLocation("underwater_ruin/big_brick_2"), new ResourceLocation("underwater_ruin/big_brick_3"), new ResourceLocation("underwater_ruin/big_brick_8") };
+        field32743 = new ResourceLocation[] { new ResourceLocation("underwater_ruin/big_mossy_1"), new ResourceLocation("underwater_ruin/big_mossy_2"), new ResourceLocation("underwater_ruin/big_mossy_3"), new ResourceLocation("underwater_ruin/big_mossy_8") };
+        field32744 = new ResourceLocation[] { new ResourceLocation("underwater_ruin/big_cracked_1"), new ResourceLocation("underwater_ruin/big_cracked_2"), new ResourceLocation("underwater_ruin/big_cracked_3"), new ResourceLocation("underwater_ruin/big_cracked_8") };
+        field32745 = new ResourceLocation[] { new ResourceLocation("underwater_ruin/big_warm_4"), new ResourceLocation("underwater_ruin/big_warm_5"), new ResourceLocation("underwater_ruin/big_warm_6"), new ResourceLocation("underwater_ruin/big_warm_7") };
     }
 }

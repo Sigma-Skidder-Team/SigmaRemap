@@ -63,7 +63,7 @@ public class Class7855
     }
     
     private static Class7909<Item> method25403(final String s) {
-        return new Class7912(new Class1932(s));
+        return new Class7912(new ResourceLocation(s));
     }
     
     static {

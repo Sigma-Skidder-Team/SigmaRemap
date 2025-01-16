@@ -35,13 +35,13 @@ public class Class7665
         this.field30447 = (LoadingCache<GameProfile, Map<MinecraftProfileTexture$Type, MinecraftProfileTexture>>)CacheBuilder.newBuilder().expireAfterAccess(15L, TimeUnit.SECONDS).build((CacheLoader)new Class6045(this));
     }
     
-    public Class1932 method24292(final MinecraftProfileTexture minecraftProfileTexture, final MinecraftProfileTexture$Type minecraftProfileTexture$Type) {
+    public ResourceLocation method24292(final MinecraftProfileTexture minecraftProfileTexture, final MinecraftProfileTexture$Type minecraftProfileTexture$Type) {
         return this.method24293(minecraftProfileTexture, minecraftProfileTexture$Type, null);
     }
     
-    public Class1932 method24293(final MinecraftProfileTexture minecraftProfileTexture, final MinecraftProfileTexture$Type minecraftProfileTexture$Type, final Class7723 class7723) {
+    public ResourceLocation method24293(final MinecraftProfileTexture minecraftProfileTexture, final MinecraftProfileTexture$Type minecraftProfileTexture$Type, final Class7723 class7723) {
         final String string = Hashing.sha1().hashUnencodedChars((CharSequence)minecraftProfileTexture.getHash()).toString();
-        final Class1932 class7724 = new Class1932("skins/" + string);
+        final ResourceLocation class7724 = new ResourceLocation("skins/" + string);
         if (this.field30444.method5853(class7724) == null) {
             this.field30444.method5851(class7724, new Class1768(new File(new File(this.field30445, (string.length() <= 2) ? "xx" : string.substring(0, 2)), string), minecraftProfileTexture.getUrl(), Class7634.method24003(), minecraftProfileTexture$Type == MinecraftProfileTexture$Type.SKIN, () -> {
                 if (class7725 != null) {

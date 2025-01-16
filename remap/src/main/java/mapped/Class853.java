@@ -244,7 +244,7 @@ public class Class853 extends Class759 implements Class762
     }
     
     @Override
-    public Class1932 method4161() {
+    public ResourceLocation method4161() {
         return (this.method5130() != 1) ? Class9020.field38063 : this.getType().method23368();
     }
     

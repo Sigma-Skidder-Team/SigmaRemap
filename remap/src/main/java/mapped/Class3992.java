@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class3992 extends Class3833
+public class Class3992 extends Block
 {
     private static String[] field18011;
     

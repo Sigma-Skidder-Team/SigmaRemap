@@ -9,15 +9,15 @@ import javax.annotation.Nonnull;
 
 public class Class93<T> extends Class92<T>
 {
-    private final Class1932 field251;
+    private final ResourceLocation field251;
     private T field252;
     
     public Class93(final String s) {
-        this.field251 = new Class1932(s);
+        this.field251 = new ResourceLocation(s);
     }
     
     @Override
-    public <V extends T> V method557(final int n, final Class1932 class1932, final V field252) {
+    public <V extends T> V method557(final int n, final ResourceLocation class1932, final V field252) {
         if (this.field251.equals(class1932)) {
             this.field252 = field252;
         }
@@ -25,22 +25,22 @@ public class Class93<T> extends Class92<T>
     }
     
     @Override
-    public int method504(final T t) {
-        final int method504 = super.method504(t);
-        return (method504 != -1) ? method504 : super.method504(this.field252);
+    public int getId(final T t) {
+        final int method504 = super.getId(t);
+        return (method504 != -1) ? method504 : super.getId(this.field252);
     }
     
     @Nonnull
     @Override
-    public Class1932 method503(final T t) {
-        final Class1932 method503 = super.method503(t);
+    public ResourceLocation getKey(final T t) {
+        final ResourceLocation method503 = super.getKey(t);
         return (method503 != null) ? method503 : this.field251;
     }
     
     @Nonnull
     @Override
-    public T method505(final Class1932 class1932) {
-        final T method505 = super.method505(class1932);
+    public T getOrDefault(final ResourceLocation class1932) {
+        final T method505 = super.getOrDefault(class1932);
         return (method505 != null) ? method505 : this.field252;
     }
     
@@ -58,7 +58,7 @@ public class Class93<T> extends Class92<T>
         return (method508 != null) ? method508 : this.field252;
     }
     
-    public Class1932 method560() {
+    public ResourceLocation method560() {
         return this.field251;
     }
 }

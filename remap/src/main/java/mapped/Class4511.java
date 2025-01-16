@@ -95,15 +95,15 @@ public class Class4511 extends Class4500
         this.method13445(class1851, class1853, 8, 1, 5, 8, 4, 9, false, random, Class6924.method21296());
         this.method13445(class1851, class1853, 1, 4, 7, 3, 4, 9, false, random, Class6924.method21296());
         this.method13445(class1851, class1853, 1, 3, 5, 3, 3, 6, false, random, Class6924.method21296());
-        this.method13444(class1851, class1853, 1, 3, 4, 3, 3, 4, Class7521.field29598.method11878(), Class7521.field29598.method11878(), false);
-        this.method13444(class1851, class1853, 1, 4, 6, 3, 4, 6, Class7521.field29598.method11878(), Class7521.field29598.method11878(), false);
+        this.method13444(class1851, class1853, 1, 3, 4, 3, 3, 4, Class7521.field29598.getDefaultState(), Class7521.field29598.getDefaultState(), false);
+        this.method13444(class1851, class1853, 1, 4, 6, 3, 4, 6, Class7521.field29598.getDefaultState(), Class7521.field29598.getDefaultState(), false);
         this.method13445(class1851, class1853, 5, 1, 7, 7, 1, 8, false, random, Class6924.method21296());
-        this.method13444(class1851, class1853, 5, 1, 9, 7, 1, 9, Class7521.field29598.method11878(), Class7521.field29598.method11878(), false);
-        this.method13444(class1851, class1853, 5, 2, 7, 7, 2, 7, Class7521.field29598.method11878(), Class7521.field29598.method11878(), false);
-        this.method13444(class1851, class1853, 4, 5, 7, 4, 5, 9, Class7521.field29598.method11878(), Class7521.field29598.method11878(), false);
-        this.method13444(class1851, class1853, 8, 5, 7, 8, 5, 9, Class7521.field29598.method11878(), Class7521.field29598.method11878(), false);
-        this.method13444(class1851, class1853, 5, 5, 7, 7, 5, 9, ((Class7097<O, BlockState>)Class7521.field29598.method11878()).method21773(Class3921.field17777, Class186.field600), ((Class7097<O, BlockState>)Class7521.field29598.method11878()).method21773(Class3921.field17777, Class186.field600), false);
-        this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.SOUTH), 6, 5, 6, class1853);
+        this.method13444(class1851, class1853, 5, 1, 9, 7, 1, 9, Class7521.field29598.getDefaultState(), Class7521.field29598.getDefaultState(), false);
+        this.method13444(class1851, class1853, 5, 2, 7, 7, 2, 7, Class7521.field29598.getDefaultState(), Class7521.field29598.getDefaultState(), false);
+        this.method13444(class1851, class1853, 4, 5, 7, 4, 5, 9, Class7521.field29598.getDefaultState(), Class7521.field29598.getDefaultState(), false);
+        this.method13444(class1851, class1853, 8, 5, 7, 8, 5, 9, Class7521.field29598.getDefaultState(), Class7521.field29598.getDefaultState(), false);
+        this.method13444(class1851, class1853, 5, 5, 7, 7, 5, 9, ((StateHolder<O, BlockState>)Class7521.field29598.getDefaultState()).with(Class3921.field17777, Class186.field600), ((StateHolder<O, BlockState>)Class7521.field29598.getDefaultState()).with(Class3921.field17777, Class186.field600), false);
+        this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29288.getDefaultState()).with((IProperty<Comparable>)Class4023.field18110, Direction.SOUTH), 6, 5, 6, class1853);
         return true;
     }
 }

@@ -6,7 +6,7 @@ package mapped;
 
 public class Class4767 extends Class4712<Class821, Class5856<Class821>>
 {
-    private static final Class1932 field20394;
+    private static final ResourceLocation field20394;
     
     public Class4767(final Class8551 class8551) {
         super(class8551, new Class5856(0.0f), 0.5f);
@@ -14,7 +14,7 @@ public class Class4767 extends Class4712<Class821, Class5856<Class821>>
         this.method13978(new Class1827<Class821, Class5856<Class821>>(this));
     }
     
-    public Class1932 method14110(final Class821 class821) {
+    public ResourceLocation method14110(final Class821 class821) {
         return Class4767.field20394;
     }
     
@@ -23,6 +23,6 @@ public class Class4767 extends Class4712<Class821, Class5856<Class821>>
     }
     
     static {
-        field20394 = new Class1932("textures/entity/wandering_trader.png");
+        field20394 = new ResourceLocation("textures/entity/wandering_trader.png");
     }
 }

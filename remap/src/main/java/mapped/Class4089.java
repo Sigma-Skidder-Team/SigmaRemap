@@ -89,7 +89,7 @@ public class Class4089 extends Item
     @Override
     public void method11735(final Class7207 class7207, final Class2265<ItemStack> class7208) {
         if (this.method11736(class7207)) {
-            for (final Class8061 class7209 : Class90.field212) {
+            for (final Class8061 class7209 : Registry.field212) {
                 if (class7209 == Class8644.field36250) {
                     continue;
                 }

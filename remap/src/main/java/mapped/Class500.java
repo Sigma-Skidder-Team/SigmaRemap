@@ -98,7 +98,7 @@ public class Class500 extends TileEntity
     }
     
     private void method2545() {
-        final Class3833 method21696 = this.method2194().method21696();
+        final Block method21696 = this.method2194().getBlock();
         if (method21696 instanceof Class3953) {
             this.method2547();
             this.field2656.method6833().method21345(this.field2657, method21696, method21696.method11826(this.field2656));
@@ -112,8 +112,8 @@ public class Class500 extends TileEntity
     public boolean method2547() {
         this.field2861 = true;
         if (this.method2551()) {
-            final BlockPos method1149 = this.field2657.method1149(this.field2656.method6701(this.field2657).method21772((Class7111<Direction>)Class3953.field17853).getOpposite());
-            if (!(this.field2656.method6701(method1149).method21696() instanceof Class3953)) {
+            final BlockPos method1149 = this.field2657.method1149(this.field2656.getBlockState(this.field2657).method21772((IProperty<Direction>)Class3953.field17853).getOpposite());
+            if (!(this.field2656.getBlockState(method1149).method21696() instanceof Class3953)) {
                 this.field2861 = false;
             }
             else {
@@ -133,7 +133,7 @@ public class Class500 extends TileEntity
     }
     
     public Class2182 method2550() {
-        final Class3833 method21696 = this.method2194().method21696();
+        final Block method21696 = this.method2194().getBlock();
         if (method21696 == Class7521.field29416) {
             return Class2182.field12923;
         }
@@ -144,8 +144,8 @@ public class Class500 extends TileEntity
     }
     
     public boolean method2551() {
-        final BlockState method6701 = this.field2656.method6701(this.method2193());
-        return method6701.method21696() instanceof Class3953 && method6701.method21772((Class7111<Boolean>)Class3953.field17854);
+        final BlockState method6701 = this.field2656.getBlockState(this.getPos());
+        return method6701.getBlock() instanceof Class3953 && method6701.get((IProperty<Boolean>)Class3953.field17854);
     }
     
     @Override

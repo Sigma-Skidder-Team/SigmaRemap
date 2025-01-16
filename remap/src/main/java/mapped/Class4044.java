@@ -13,7 +13,7 @@ import org.apache.commons.lang3.Validate;
 
 public class Class4044 extends Class4043
 {
-    public Class4044(final Class3833 class3833, final Class3833 class3834, final Class8959 class3835) {
+    public Class4044(final Block class3833, final Block class3834, final Class8959 class3835) {
         super(class3833, class3834, class3835);
         Validate.isInstanceOf((Class)Class3944.class, (Object)class3833);
         Validate.isInstanceOf((Class)Class3944.class, (Object)class3834);

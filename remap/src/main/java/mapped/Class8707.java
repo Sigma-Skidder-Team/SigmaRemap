@@ -43,7 +43,7 @@ public class Class8707
         if (Class9463.method35173().method35193().method32146() && Class8707.field36590 < Class8707.field36592 && Class8707.field36591 < Class8707.field36593) {
             if (Class8707.field36588 == null) {
                 try {
-                    (Class8707.field36587 = new Class1884(Class8707.field36586.method5290(), new Class6584(), Class8707.field36586.method5234(), new Class1932("jelloblur"))).method7246(Class8707.field36586.field4667.field24886, Class8707.field36586.field4667.field24887);
+                    (Class8707.field36587 = new Class1884(Class8707.field36586.method5290(), new Class6584(), Class8707.field36586.method5234(), new ResourceLocation("jelloblur"))).method7246(Class8707.field36586.field4667.field24886, Class8707.field36586.field4667.field24887);
                     Class8707.field36587.field10255.get(0).method7605().method7715("Radius").method7163(35.0f);
                     Class8707.field36587.field10255.get(1).method7605().method7715("Radius").method7163(35.0f);
                     Class8707.field36588 = Class8707.field36587.method7249("jello");

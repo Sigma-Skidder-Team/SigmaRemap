@@ -6,18 +6,18 @@ package mapped;
 
 public class Class4718 extends Class4712<Class815, Class5899<Class815>>
 {
-    private static final Class1932[] field20320;
+    private static final ResourceLocation[] field20320;
     
     public Class4718(final Class8551 class8551) {
         super(class8551, new Class5899(0.0f), 0.7f);
         this.method13978(new Class1841(this));
     }
     
-    public Class1932 method14025(final Class815 class815) {
+    public ResourceLocation method14025(final Class815 class815) {
         return Class4718.field20320[class815.method4788()];
     }
     
     static {
-        field20320 = new Class1932[] { new Class1932("textures/entity/llama/creamy.png"), new Class1932("textures/entity/llama/white.png"), new Class1932("textures/entity/llama/brown.png"), new Class1932("textures/entity/llama/gray.png") };
+        field20320 = new ResourceLocation[] { new ResourceLocation("textures/entity/llama/creamy.png"), new ResourceLocation("textures/entity/llama/white.png"), new ResourceLocation("textures/entity/llama/brown.png"), new ResourceLocation("textures/entity/llama/gray.png") };
     }
 }

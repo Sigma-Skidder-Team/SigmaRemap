@@ -16,7 +16,7 @@ public class Class6994 implements Class6991
 {
     private static String[] field27286;
     private final Class6749 field27287;
-    private final Class1932 field27288;
+    private final ResourceLocation field27288;
     private final List<Class9081> field27289;
     public final /* synthetic */ Class6990 field27290;
     

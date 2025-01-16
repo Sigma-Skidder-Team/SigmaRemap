@@ -27,14 +27,14 @@ public final class Class8532
         final int method7440 = method7439.getX();
         final int method7441 = method7439.getY();
         final int method7442 = method7439.getZ();
-        if (method7441 >= 1 && !class1978.method6701(method7439).method21713(class1978, method7439)) {
+        if (method7441 >= 1 && !class1978.getBlockState(method7439).method21713(class1978, method7439)) {
             final Mutable class1980 = new Mutable();
             for (int i = 0; i < 3; ++i) {
                 int n2 = method7440;
                 int n3 = method7442;
                 Class6828 method7443 = null;
                 Class5496 method7444 = null;
-                int method7445 = MathHelper.method35650(Math.random() * 4.0);
+                int method7445 = MathHelper.ceil(Math.random() * 4.0);
                 int n4 = 0;
                 for (int j = 0; j < method7445; ++j) {
                     n2 += class1977.rand.nextInt(6) - class1977.rand.nextInt(6);
@@ -67,7 +67,7 @@ public final class Class8532
                                                             try {
                                                                 final Entity method7448 = field26820.method23371(class1977);
                                                                 if (!(method7448 instanceof Class759)) {
-                                                                    throw new IllegalStateException("Trying to spawn a non-mob: " + Class90.field210.method503(field26820));
+                                                                    throw new IllegalStateException("Trying to spawn a non-mob: " + Registry.field210.getKey(field26820));
                                                                 }
                                                                 class1981 = (Class759)method7448;
                                                             }
@@ -124,26 +124,26 @@ public final class Class8532
     }
     
     public static boolean method28620(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Class7099 class1858) {
-        return !class1857.method21762(class1855, class1856) && !class1857.method21714() && class1858.method21781() && !class1857.method21755(Class7188.field27906);
+        return !class1857.isCollisionShapeOpaque(class1855, class1856) && !class1857.method21714() && class1858.isEmpty() && !class1857.method21755(Class7188.field27906);
     }
     
     public static boolean method28621(final Class2194 class2194, final Class1852 class2195, final BlockPos class2196, final EntityType<?> class2197) {
         if (class2194 == Class2194.field13356) {
             return true;
         }
-        if (class2197 == null || !class2195.method6787().method34779(class2196)) {
+        if (class2197 == null || !class2195.getWorldBorder().contains(class2196)) {
             return false;
         }
-        final BlockState method6701 = class2195.method6701(class2196);
+        final BlockState method6701 = class2195.getBlockState(class2196);
         final Class7099 method6702 = class2195.method6702(class2196);
         final BlockPos method6703 = class2196.method1137();
         final BlockPos method6704 = class2196.method1139();
         switch (Class8621.field36186[class2194.ordinal()]) {
             case 1: {
-                return method6702.method21793(Class7324.field28319) && class2195.method6702(method6704).method21793(Class7324.field28319) && !class2195.method6701(method6703).method21713(class2195, method6703);
+                return method6702.method21793(Class7324.field28319) && class2195.method6702(method6704).method21793(Class7324.field28319) && !class2195.getBlockState(method6703).method21713(class2195, method6703);
             }
             default: {
-                return class2195.method6701(method6704).method21698(class2195, method6704, class2197) && method28620(class2195, class2196, method6701, method6702) && method28620(class2195, method6703, class2195.method6701(method6703), class2195.method6702(method6703));
+                return class2195.getBlockState(method6704).canEntitySpawn(class2195, method6704, class2197) && method28620(class2195, class2196, method6701, method6702) && method28620(class2195, method6703, class2195.getBlockState(method6703), class2195.method6702(method6703));
             }
         }
     }
@@ -202,7 +202,7 @@ public final class Class8532
     private static BlockPos method28623(final Class1852 class1852, final EntityType<?> class1853, final int n, final int n2) {
         final BlockPos class1854 = new BlockPos(n, class1852.method6699(Class8897.method31329(class1853), n, n2), n2);
         final BlockPos method1139 = class1854.method1139();
-        return class1852.method6701(method1139).method21749(class1852, method1139, Class2084.field12051) ? method1139 : class1854;
+        return class1852.getBlockState(method1139).method21749(class1852, method1139, Class2084.field12051) ? method1139 : class1854;
     }
     
     static {

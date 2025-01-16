@@ -18,7 +18,7 @@ public class Class7740
     }
     
     public void method24696(final Class7356 class7356) {
-        this.field31638 = (Class7356[])Class8571.method28982(this.field31638, class7356);
+        this.field31638 = (Class7356[]) Config.method28982(this.field31638, class7356);
     }
     
     public boolean method24697(final int n) {

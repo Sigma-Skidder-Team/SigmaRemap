@@ -18,7 +18,7 @@ public class Class7113 extends Class7110<Boolean>
     }
     
     @Override
-    public Collection<Boolean> method21829() {
+    public Collection<Boolean> getAllowedValues() {
         return (Collection<Boolean>)this.field27742;
     }
     
@@ -27,8 +27,8 @@ public class Class7113 extends Class7110<Boolean>
     }
     
     @Override
-    public Optional<Boolean> method21830(final String s) {
-        return (!"true".equals(s) && !"false".equals(s)) ? Optional.empty() : Optional.of(Boolean.valueOf(s));
+    public Optional<Boolean> parseValue(final String value) {
+        return (!"true".equals(value) && !"false".equals(value)) ? Optional.empty() : Optional.of(Boolean.valueOf(value));
     }
     
     public String method21835(final Boolean b) {

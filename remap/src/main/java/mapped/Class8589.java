@@ -68,8 +68,8 @@ public class Class8589
     }
     
     private boolean method29088(final World class1847, final BlockPos class1848, final Random random, final boolean b) {
-        final BlockState method6701 = class1847.method6701(class1848);
-        if (!Class8532.method28620(class1847, class1848, method6701, method6701.method21756())) {
+        final BlockState method6701 = class1847.getBlockState(class1848);
+        if (!Class8532.method28620(class1847, class1848, method6701, method6701.getFluidState())) {
             return false;
         }
         if (!Class777.method4309(EntityType.field29045, class1847, Class2101.field12189, class1848, random)) {

@@ -17,12 +17,12 @@ import java.util.List;
 
 public class Class8752
 {
-    public static final Class1932 field36734;
-    public static final Class1932 field36735;
-    public static final Class1932 field36736;
-    public static final Class1932 field36737;
-    public static final Class1932 field36738;
-    public static final Class1932 field36739;
+    public static final ResourceLocation field36734;
+    public static final ResourceLocation field36735;
+    public static final ResourceLocation field36736;
+    public static final ResourceLocation field36737;
+    public static final ResourceLocation field36738;
+    public static final ResourceLocation field36739;
     private static final Class6332 field36740;
     private static final Class6332 field36741;
     private static final Class6332 field36742;
@@ -113,11 +113,11 @@ public class Class8752
     }
     
     public static Class3687 method30268(final Class8289 class8289) {
-        return new Class3687(Class8752.field36738, new Class1932("entity/signs/" + class8289.method27557()));
+        return new Class3687(Class8752.field36738, new ResourceLocation("entity/signs/" + class8289.method27557()));
     }
     
     private static Class3687 method30269(final String str) {
-        return new Class3687(Class8752.field36739, new Class1932("entity/chest/" + str));
+        return new Class3687(Class8752.field36739, new ResourceLocation("entity/chest/" + str));
     }
     
     public static Class3687 method30270(final TileEntity tileEntity, final Class180 class437, final boolean b) {
@@ -145,12 +145,12 @@ public class Class8752
     }
     
     static {
-        field36734 = new Class1932("textures/atlas/shulker_boxes.png");
-        field36735 = new Class1932("textures/atlas/beds.png");
-        field36736 = new Class1932("textures/atlas/banner_patterns.png");
-        field36737 = new Class1932("textures/atlas/shield_patterns.png");
-        field36738 = new Class1932("textures/atlas/signs.png");
-        field36739 = new Class1932("textures/atlas/chest.png");
+        field36734 = new ResourceLocation("textures/atlas/shulker_boxes.png");
+        field36735 = new ResourceLocation("textures/atlas/beds.png");
+        field36736 = new ResourceLocation("textures/atlas/banner_patterns.png");
+        field36737 = new ResourceLocation("textures/atlas/shield_patterns.png");
+        field36738 = new ResourceLocation("textures/atlas/signs.png");
+        field36739 = new ResourceLocation("textures/atlas/chest.png");
         field36740 = Class6332.method18770(Class8752.field36734);
         field36741 = Class6332.method18767(Class8752.field36735);
         field36742 = Class6332.method18777(Class8752.field36736);
@@ -161,21 +161,21 @@ public class Class8752
         field36747 = Class6332.method18768(Class1774.field9853);
         field36748 = Class6332.method18773(Class1774.field9853);
         field36749 = Class6332.method18771(Class1774.field9853);
-        field36750 = new Class3687(Class8752.field36734, new Class1932("entity/shulker/shulker"));
+        field36750 = new Class3687(Class8752.field36734, new ResourceLocation("entity/shulker/shulker"));
         field36751 = Stream.of(new String[] { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black" }).map(str -> {
             new(mapped.Class3687.class)();
-            final Class1932 field36764 = Class8752.field36734;
-            new Class1932("entity/shulker/shulker_" + str);
-            final Class1932 class1932;
+            final ResourceLocation field36764 = Class8752.field36734;
+            new ResourceLocation("entity/shulker/shulker_" + str);
+            final ResourceLocation class1932;
             new Class3687(field36764, class1932);
             return;
         }).collect((Collector<? super Object, Object, List<Class3687>>)ImmutableList.toImmutableList());
         field36752 = Class8289.method27556().collect(Collectors.toMap((Function<? super Class8289, ? extends Class8289>)Function.identity(), (Function<? super Class8289, ? extends Class3687>)Class8752::method30268));
         field36753 = Arrays.stream(Class181.values()).sorted(Comparator.comparingInt(Class181::method813)).map(class1933 -> {
             new(mapped.Class3687.class)();
-            final Class1932 field36765 = Class8752.field36735;
-            new Class1932("entity/bed/" + class1933.method814());
-            final Class1932 class1934;
+            final ResourceLocation field36765 = Class8752.field36735;
+            new ResourceLocation("entity/bed/" + class1933.method814());
+            final ResourceLocation class1934;
             new Class3687(field36765, class1934);
             return;
         }).toArray(Class3687[]::new);

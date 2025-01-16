@@ -43,7 +43,7 @@ public abstract class Class759 extends LivingEntity
     private boolean field4122;
     private boolean field4123;
     private final Map<Class257, Float> field4124;
-    private Class1932 field4125;
+    private ResourceLocation field4125;
     private long field4126;
     private Entity field4127;
     private int field4128;
@@ -168,14 +168,14 @@ public abstract class Class759 extends LivingEntity
     @Override
     public void method1660() {
         super.method1660();
-        this.world.method6796().method15297("mobBaseTick");
+        this.world.method6796().startSection("mobBaseTick");
         if (this.method1768()) {
             if (this.rand.nextInt(1000) < this.field4107++) {
                 this.method4157();
                 this.method4156();
             }
         }
-        this.world.method6796().method15299();
+        this.world.method6796().endSection();
     }
     
     @Override
@@ -237,7 +237,7 @@ public abstract class Class759 extends LivingEntity
     
     @Override
     public void method1659() {
-        if (Class8571.method28972() && this.method4219()) {
+        if (Config.method28972() && this.method4219()) {
             this.method4221();
         }
         else {
@@ -373,7 +373,7 @@ public abstract class Class759 extends LivingEntity
         }
         this.method4212(class51.method329("LeftHanded"));
         if (class51.method316("DeathLootTable", 8)) {
-            this.field4125 = new Class1932(class51.method323("DeathLootTable"));
+            this.field4125 = new ResourceLocation(class51.method323("DeathLootTable"));
             this.field4126 = class51.method320("DeathLootTableSeed");
         }
         this.method4211(class51.method329("NoAI"));
@@ -391,11 +391,11 @@ public abstract class Class759 extends LivingEntity
     }
     
     @Override
-    public final Class1932 method2679() {
+    public final ResourceLocation method2679() {
         return (this.field4125 != null) ? this.field4125 : this.method4161();
     }
     
-    public Class1932 method4161() {
+    public ResourceLocation method4161() {
         return super.method2679();
     }
     
@@ -420,7 +420,7 @@ public abstract class Class759 extends LivingEntity
     @Override
     public void method2736() {
         super.method2736();
-        this.world.method6796().method15297("looting");
+        this.world.method6796().startSection("looting");
         boolean b = this.world.method6765().method31216(Class8878.field37316);
         if (Class9570.field41266.method22605()) {
             b = Class9570.method35812(Class9570.field41266, this.world, this);
@@ -447,7 +447,7 @@ public abstract class Class759 extends LivingEntity
                 }
             }
         }
-        this.world.method6796().method15299();
+        this.world.method6796().endSection();
     }
     
     public void method4165(final Class427 class427) {
@@ -588,30 +588,30 @@ public abstract class Class759 extends LivingEntity
     @Override
     public final void method2738() {
         ++this.field2959;
-        this.world.method6796().method15297("sensing");
+        this.world.method6796().startSection("sensing");
         this.field4117.method34142();
-        this.world.method6796().method15299();
-        this.world.method6796().method15297("targetSelector");
+        this.world.method6796().endSection();
+        this.world.method6796().startSection("targetSelector");
         this.field4115.method22064();
-        this.world.method6796().method15299();
-        this.world.method6796().method15297("goalSelector");
+        this.world.method6796().endSection();
+        this.world.method6796().startSection("goalSelector");
         this.field4114.method22064();
-        this.world.method6796().method15299();
-        this.world.method6796().method15297("navigation");
+        this.world.method6796().endSection();
+        this.world.method6796().startSection("navigation");
         this.field4113.method24728();
-        this.world.method6796().method15299();
-        this.world.method6796().method15297("mob tick");
+        this.world.method6796().endSection();
+        this.world.method6796().startSection("mob tick");
         this.method4172();
-        this.world.method6796().method15299();
-        this.world.method6796().method15297("controls");
-        this.world.method6796().method15297("move");
+        this.world.method6796().endSection();
+        this.world.method6796().startSection("controls");
+        this.world.method6796().startSection("move");
         this.field4110.method19904();
         this.world.method6796().method15300("look");
         this.field4109.method24665();
         this.world.method6796().method15300("jump");
         this.field4111.method22381();
-        this.world.method6796().method15299();
-        this.world.method6796().method15299();
+        this.world.method6796().endSection();
+        this.world.method6796().endSection();
         this.method4171();
     }
     
@@ -639,7 +639,7 @@ public abstract class Class759 extends LivingEntity
         final double n4 = class399.getPosZ() - this.getPosZ();
         double n5;
         if (!(class399 instanceof LivingEntity)) {
-            n5 = (class399.getBoundingBox().field25074 + class399.getBoundingBox().field25077) / 2.0 - this.method1944();
+            n5 = (class399.getBoundingBox().minY + class399.getBoundingBox().maxY) / 2.0 - this.method1944();
         }
         else {
             n5 = class399.method1944() - this.method1944();
@@ -663,7 +663,7 @@ public abstract class Class759 extends LivingEntity
     
     public static boolean method4178(final EntityType<? extends Class759> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         final BlockPos method1139 = class7502.method1139();
-        return class7501 == Class2101.field12176 || class7500.method6701(method1139).method21698(class7500, method1139, class7499);
+        return class7501 == Class2101.field12176 || class7500.getBlockState(method1139).canEntitySpawn(class7500, method1139, class7499);
     }
     
     public boolean method4179(final Class1851 class1851, final Class2101 class1852) {

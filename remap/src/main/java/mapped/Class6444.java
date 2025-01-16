@@ -4,8 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
-import java.util.Set;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -37,7 +35,7 @@ public class Class6444
         method19221();
         if (class7038 != null) {
             if (Class9570.field41383.method22605() && Class869.method5277().method5291() == null) {
-                Class8571.method28847("[Shaders] Delayed loading of item mappings after resources are loaded");
+                Config.method28847("[Shaders] Delayed loading of item mappings after resources are loaded");
                 Class6444.field25580 = true;
             }
             else {
@@ -60,8 +58,8 @@ public class Class6444
         for (int i = 0; i < method24308.length; ++i) {
             final String s = method24308[i];
             try {
-                final Class1932 class1932 = new Class1932(s, "shaders/item.properties");
-                method19218(Class8571.method28897(class1932), class1932.toString(), list);
+                final ResourceLocation class1932 = new ResourceLocation(s, "shaders/item.properties");
+                method19218(Config.method28897(class1932), class1932.toString(), list);
             }
             catch (final IOException ex) {}
         }
@@ -74,18 +72,18 @@ public class Class6444
                 final Class27 class27 = new Class27();
                 class27.load(method26733);
                 method26733.close();
-                Class8571.method28847("[Shaders] Parsing item mappings: " + s);
+                Config.method28847("[Shaders] Parsing item mappings: " + s);
                 final Class8652 class28 = new Class8652("Shaders");
                 for (final String str : class27.keySet()) {
                     final String property = class27.getProperty(str);
                     final String prefix = "item.";
                     if (!str.startsWith(prefix)) {
-                        Class8571.method28848("[Shaders] Invalid item ID: " + str);
+                        Config.warn("[Shaders] Invalid item ID: " + str);
                     }
                     else {
-                        final int method26734 = Class8571.method28933(Class9518.method35517(str, prefix), -1);
+                        final int method26734 = Config.method28933(Class9518.method35517(str, prefix), -1);
                         if (method26734 < 0) {
-                            Class8571.method28848("[Shaders] Invalid item alias ID: " + method26734);
+                            Config.warn("[Shaders] Invalid item alias ID: " + method26734);
                         }
                         else {
                             final int[] method26735 = class28.method29479(property);
@@ -95,14 +93,14 @@ public class Class6444
                                 }
                             }
                             else {
-                                Class8571.method28848("[Shaders] Invalid item ID mapping: " + str + "=" + property);
+                                Config.warn("[Shaders] Invalid item ID mapping: " + str + "=" + property);
                             }
                         }
                     }
                 }
             }
             catch (final IOException ex) {
-                Class8571.method28848("[Shaders] Error reading: " + s);
+                Config.warn("[Shaders] Error reading: " + s);
             }
         }
     }

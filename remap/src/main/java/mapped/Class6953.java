@@ -25,8 +25,8 @@ import java.util.function.Predicate;
 public class Class6953<T> implements Class6952<T>
 {
     public final Predicate<T> field27219;
-    private final Function<T, Class1932> field27220;
-    private final Function<Class1932, T> field27221;
+    private final Function<T, ResourceLocation> field27220;
+    private final Function<ResourceLocation, T> field27221;
     private final Set<Class7460<T>> field27222;
     private final TreeSet<Class7460<T>> field27223;
     private final Class1849 field27224;
@@ -34,7 +34,7 @@ public class Class6953<T> implements Class6952<T>
     private final List<Class7460<T>> field27226;
     private final Consumer<Class7460<T>> field27227;
     
-    public Class6953(final Class1849 field27224, final Predicate<T> field27225, final Function<T, Class1932> field27226, final Function<Class1932, T> field27227, final Consumer<Class7460<T>> field27228) {
+    public Class6953(final Class1849 field27224, final Predicate<T> field27225, final Function<T, ResourceLocation> field27226, final Function<ResourceLocation, T> field27227, final Consumer<Class7460<T>> field27228) {
         this.field27222 = Sets.newHashSet();
         this.field27223 = Sets.newTreeSet((Comparator)Class7460.method22979());
         this.field27225 = Queues.newArrayDeque();
@@ -56,7 +56,7 @@ public class Class6953<T> implements Class6952<T>
         }
         final Class1909 method6904 = this.field27224.method6904();
         final Iterator<Class7460<T>> iterator = this.field27223.iterator();
-        this.field27224.method6796().method15297("cleaning");
+        this.field27224.method6796().startSection("cleaning");
         while (size > 0 && iterator.hasNext()) {
             final Class7460 class7460 = iterator.next();
             if (class7460.field28775 > this.field27224.method6754()) {
@@ -87,7 +87,7 @@ public class Class6953<T> implements Class6952<T>
             }
             this.method21345(class7461.field28774, (T)class7461.method22980(), 0);
         }
-        this.field27224.method6796().method15299();
+        this.field27224.method6796().endSection();
         this.field27226.clear();
         this.field27225.clear();
     }
@@ -165,7 +165,7 @@ public class Class6953<T> implements Class6952<T>
         return method21352(this.field27220, this.method21347(class7859, false, true), this.field27224.method6754());
     }
     
-    public static <T> Class52 method21352(final Function<T, Class1932> function, final Iterable<Class7460<T>> iterable, final long n) {
+    public static <T> Class52 method21352(final Function<T, ResourceLocation> function, final Iterable<Class7460<T>> iterable, final long n) {
         final Class52 class52 = new Class52();
         for (final Class7460 class53 : iterable) {
             final Class51 e = new Class51();

@@ -60,14 +60,14 @@ public class Class4167<T extends TileEntity & Class476> extends Class4158<T>
     public void method12454(final T t, final float n, final Class7351 class7351, final Class7807 class7352, final int n2, final int n3) {
         final World method2186 = t.method2186();
         final boolean b = method2186 != null;
-        final Class7096 class7353 = b ? t.method2194() : ((Class7097<O, Class7096>)Class7521.field29292.method11878()).method21773((Class7111<Comparable>)Class3865.field17497, Direction.SOUTH);
+        final Class7096 class7353 = b ? t.method2194() : ((StateHolder<O, Class7096>)Class7521.field29292.getDefaultState()).with((IProperty<Comparable>)Class3865.field17497, Direction.SOUTH);
         final Class180 class7354 = class7353.method21771(Class3865.field17498) ? class7353.method21772(Class3865.field17498) : Class180.field530;
-        final Class3833 method2187 = class7353.method21696();
+        final Block method2187 = class7353.method21696();
         if (method2187 instanceof Class3864) {
             final Class3864 class7355 = (Class3864)method2187;
             final boolean b2 = class7354 != Class180.field530;
             class7351.method22567();
-            final float method2188 = class7353.method21772((Class7111<Direction>)Class3865.field17497).getHorizontalAngle();
+            final float method2188 = class7353.method21772((IProperty<Direction>)Class3865.field17497).getHorizontalAngle();
             class7351.method22564(0.5, 0.5, 0.5);
             class7351.method22566(Vector3f.YP.rotationDegrees(-method2188));
             class7351.method22564(-0.5, -0.5, -0.5);
@@ -76,7 +76,7 @@ public class Class4167<T extends TileEntity & Class476> extends Class4158<T>
                 method2189 = Class6389::method19072;
             }
             else {
-                method2189 = class7355.method11929(class7353, method2186, t.method2193(), true);
+                method2189 = class7355.method11929(class7353, method2186, t.getPos(), true);
             }
             final float n4 = 1.0f - ((Float2FloatFunction)method2189.method22074(Class3865.method11937(t))).get(n);
             final float n5 = 1.0f - n4 * n4 * n4;

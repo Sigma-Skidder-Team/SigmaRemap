@@ -34,7 +34,7 @@ public class Class424 extends Entity
     
     public Class424(final EntityType<? extends Class424> class7499, final World class7500) {
         super(class7499, class7500);
-        this.field2573 = Class7521.field29175.method11878();
+        this.field2573 = Class7521.field29175.getDefaultState();
         this.field2575 = true;
         this.field2578 = 40;
         this.field2579 = 2.0f;
@@ -83,10 +83,10 @@ public class Class424 extends Entity
     @Override
     public void method1659() {
         if (!this.field2573.method21706()) {
-            final Class3833 method21696 = this.field2573.method21696();
+            final Block method21696 = this.field2573.getBlock();
             if (this.field2574++ == 0) {
                 final BlockPos class354 = new BlockPos(this);
-                if (this.world.method6701(class354).method21696() != method21696) {
+                if (this.world.getBlockState(class354).method21696() != method21696) {
                     if (!this.world.isRemote) {
                         this.method1652();
                         return;
@@ -103,7 +103,7 @@ public class Class424 extends Entity
             Label_0060: {
                 if (!this.world.isRemote) {
                     BlockPos method21697 = new BlockPos(this);
-                    final boolean b = this.field2573.method21696() instanceof Class3988;
+                    final boolean b = this.field2573.getBlock() instanceof Class3988;
                     boolean b2 = b && this.world.method6702(method21697).method21793(Class7324.field28319);
                     final double method21698 = this.getMotion().lengthSquared();
                     if (b) {
@@ -141,9 +141,9 @@ public class Class424 extends Entity
                         }
                     }
                     else {
-                        final BlockState method21700 = this.world.method6701(method21697);
+                        final BlockState method21700 = this.world.getBlockState(method21697);
                         this.method1936(this.getMotion().mul(0.7, -0.5, 0.7));
-                        if (method21700.method21696() != Class7521.field29264) {
+                        if (method21700.getBlock() != Class7521.field29264) {
                             this.method1652();
                             if (this.field2576) {
                                 if (method21696 instanceof Class3986) {
@@ -152,15 +152,15 @@ public class Class424 extends Entity
                             }
                             else {
                                 final boolean method21701 = method21700.method21750(new Class7073(this.world, method21697, Direction.DOWN, ItemStack.field34174, Direction.UP));
-                                final boolean b3 = Class3986.method12131(this.world.method6701(method21697.method1139())) && (!b || !b2);
+                                final boolean b3 = Class3986.method12131(this.world.getBlockState(method21697.method1139())) && (!b || !b2);
                                 final boolean b4 = this.field2573.method21752(this.world, method21697) && !b3;
                                 if (method21701 && b4) {
-                                    if (this.field2573.method21771((Class7111<Comparable>)Class8970.field37747)) {
+                                    if (this.field2573.method21771((IProperty<Comparable>)Class8970.field37747)) {
                                         if (this.world.method6702(method21697).method21779() == Class7558.field29976) {
-                                            this.field2573 = ((Class7097<O, BlockState>)this.field2573).method21773((Class7111<Comparable>)Class8970.field37747, true);
+                                            this.field2573 = ((StateHolder<O, BlockState>)this.field2573).with((IProperty<Comparable>)Class8970.field37747, true);
                                         }
                                     }
-                                    if (!this.world.method6688(method21697, this.field2573, 3)) {
+                                    if (!this.world.setBlockState(method21697, this.field2573, 3)) {
                                         if (this.field2575) {
                                             if (this.world.method6765().method31216(Class8878.field37321)) {
                                                 this.method1764(method21696);
@@ -216,7 +216,7 @@ public class Class424 extends Entity
     @Override
     public boolean method1705(final float n, final float n2) {
         if (this.field2577) {
-            final int method35649 = MathHelper.method35649(n - 1.0f);
+            final int method35649 = MathHelper.ceil(n - 1.0f);
             if (method35649 > 0) {
                 final ArrayList arrayList = Lists.newArrayList((Iterable)this.world.method7127(this, this.getBoundingBox()));
                 final boolean method35650 = this.field2573.method21755(Class7188.field27905);
@@ -275,7 +275,7 @@ public class Class424 extends Entity
             this.field2580 = class51.method327("TileEntityData");
         }
         if (this.field2573.method21706()) {
-            this.field2573 = Class7521.field29175.method11878();
+            this.field2573 = Class7521.field29175.getDefaultState();
         }
     }
     
@@ -309,7 +309,7 @@ public class Class424 extends Entity
     
     @Override
     public IPacket<?> method1932() {
-        return new Class4339(this, Class3833.method11774(this.method2071()));
+        return new Class4339(this, Block.method11774(this.method2071()));
     }
     
     static {

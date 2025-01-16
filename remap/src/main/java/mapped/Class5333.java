@@ -74,7 +74,7 @@ public class Class5333
     public static int method16473(final Collection<Class1948> collection) {
         final int n = 3694022;
         if (collection.isEmpty()) {
-            return Class8571.method28945() ? Class8763.method30377(null, n) : 3694022;
+            return Config.method28945() ? Class8763.method30377(null, n) : 3694022;
         }
         float n2 = 0.0f;
         float n3 = 0.0f;
@@ -85,7 +85,7 @@ public class Class5333
                 continue;
             }
             int n6 = class1948.method7906().method16458();
-            if (Class8571.method28945()) {
+            if (Config.method28945()) {
                 n6 = Class8763.method30377(class1948.method7906(), n6);
             }
             final int n7 = class1948.method7908() + 1;
@@ -109,7 +109,7 @@ public class Class5333
     }
     
     public static ItemStack method16476(final ItemStack class8321, final Class8061 class8322) {
-        final Class1932 method503 = Class90.field212.method503(class8322);
+        final ResourceLocation method503 = Registry.field212.getKey(class8322);
         if (class8322 != Class8644.field36250) {
             class8321.method27658().method306("Potion", method503.toString());
         }

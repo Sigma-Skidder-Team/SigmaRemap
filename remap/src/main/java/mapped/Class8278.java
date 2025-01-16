@@ -13,10 +13,10 @@ import com.mojang.brigadier.context.CommandContext;
 public class Class8278 implements Class8279
 {
     private static String[] field34060;
-    public final /* synthetic */ Class1932 field34061;
+    public final /* synthetic */ ResourceLocation field34061;
     public final /* synthetic */ Class9179 field34062;
     
-    public Class8278(final Class9179 field34062, final Class1932 field34063) {
+    public Class8278(final Class9179 field34062, final ResourceLocation field34063) {
         this.field34062 = field34062;
         this.field34061 = field34063;
     }

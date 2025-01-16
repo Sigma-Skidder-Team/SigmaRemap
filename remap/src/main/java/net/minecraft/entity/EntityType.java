@@ -133,19 +133,19 @@ public class EntityType<T extends Entity>
     private final boolean field29065;
     private String field29066;
     private ITextComponent field29067;
-    private Class1932 field29068;
+    private ResourceLocation field29068;
     private final EntitySize field29069;
     
     private static <T extends Entity> EntityType<T> method23353(final String s, final Class8868<T> class8868) {
-        return Class90.method511(Class90.field210, s, class8868.method31162(s));
+        return Registry.method511(Registry.field210, s, class8868.method31162(s));
     }
     
-    public static Class1932 method23354(final EntityType<?> class7499) {
-        return Class90.field210.method503(class7499);
+    public static ResourceLocation method23354(final EntityType<?> class7499) {
+        return Registry.field210.getKey(class7499);
     }
     
     public static Optional<EntityType<?>> method23355(final String s) {
-        return Class90.field210.method506(Class1932.method7795(s));
+        return Registry.field210.method506(ResourceLocation.method7795(s));
     }
     
     public EntityType(final Class8962<T> field29060, final Class1976 field29061, final boolean field29062, final boolean field29063, final boolean field29064, final boolean field29065, final EntitySize field29066) {
@@ -206,7 +206,7 @@ public class EntityType<T extends Entity>
         if (b) {
             method18494 = method18494.method18494(0.0, -1.0, 0.0);
         }
-        return 1.0 + Class7698.method24498(Axis.Y, class1854, class1852.method6980(null, method18494, Collections.emptySet()), b ? -2.0 : -1.0);
+        return 1.0 + VoxelShapes.method24498(Axis.Y, class1854, class1852.method6980(null, method18494, Collections.emptySet()), b ? -2.0 : -1.0);
     }
     
     public static void method23360(final World class1847, final Class512 class1848, final Entity class1849, final Class51 class1850) {
@@ -258,7 +258,7 @@ public class EntityType<T extends Entity>
     
     public String method23366() {
         if (this.field29066 == null) {
-            this.field29066 = Class8349.method27836("entity", Class90.field210.method503(this));
+            this.field29066 = Class8349.method27836("entity", Registry.field210.getKey(this));
         }
         return this.field29066;
     }
@@ -270,10 +270,10 @@ public class EntityType<T extends Entity>
         return this.field29067;
     }
     
-    public Class1932 method23368() {
+    public ResourceLocation method23368() {
         if (this.field29068 == null) {
-            final Class1932 method503 = Class90.field210.method503(this);
-            this.field29068 = new Class1932(method503.method7798(), "entities/" + method503.method7797());
+            final ResourceLocation method503 = Registry.field210.getKey(this);
+            this.field29068 = new ResourceLocation(method503.method7798(), "entities/" + method503.method7797());
         }
         return this.field29068;
     }
@@ -293,7 +293,7 @@ public class EntityType<T extends Entity>
     
     @Nullable
     public static Entity method23372(final int n, final World class1847) {
-        return method23374(class1847, Class90.field210.method499(n));
+        return method23374(class1847, Registry.field210.method499(n));
     }
     
     public static Optional<Entity> method23373(final Class51 class51, final World class52) {
@@ -315,7 +315,7 @@ public class EntityType<T extends Entity>
     }
     
     public static Optional<EntityType<?>> method23377(final Class51 class51) {
-        return Class90.field210.method506(new Class1932(class51.method323("id")));
+        return Registry.field210.method506(new ResourceLocation(class51.method323("id")));
     }
     
     @Nullable

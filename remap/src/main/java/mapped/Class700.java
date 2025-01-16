@@ -118,16 +118,16 @@ public class Class700 extends Class698
                 this.field3150.method5244(new Class701(this, this.field3853));
             }
             if (class673.field3708 == 231) {
-                if (Class8571.method28926() || Class8571.method28927()) {
-                    Class8571.method28996(Class4647.method13876("of.message.shaders.aa1"), Class4647.method13876("of.message.shaders.aa2"));
+                if (Config.method28926() || Config.method28927()) {
+                    Config.method28996(Class4647.method13876("of.message.shaders.aa1"), Class4647.method13876("of.message.shaders.aa2"));
                     return;
                 }
-                if (Class8571.method28924()) {
-                    Class8571.method28996(Class4647.method13876("of.message.shaders.af1"), Class4647.method13876("of.message.shaders.af2"));
+                if (Config.method28924()) {
+                    Config.method28996(Class4647.method13876("of.message.shaders.af1"), Class4647.method13876("of.message.shaders.af2"));
                     return;
                 }
-                if (Class8571.method28953()) {
-                    Class8571.method28996(Class4647.method13876("of.message.shaders.fr1"), Class4647.method13876("of.message.shaders.fr2"));
+                if (Config.method28953()) {
+                    Config.method28996(Class4647.method13876("of.message.shaders.fr1"), Class4647.method13876("of.message.shaders.fr2"));
                     return;
                 }
                 this.field3150.field4648.method17121();
@@ -146,7 +146,7 @@ public class Class700 extends Class698
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
         this.method3295(this.field3150.field4643, this.field3148.getFormattedText(), this.field3152 / 2, 15, 16777215);
-        String method28814 = Class8571.method28814();
+        String method28814 = Config.method28814();
         final String s = "HD_U";
         if (s.equals("HD")) {
             method28814 = "OptiFine HD G1_pre18";

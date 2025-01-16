@@ -21,7 +21,7 @@ import com.google.gson.GsonBuilder;
 import java.util.List;
 import java.util.Map;
 
-public class Class1789 extends Class1776<Map<Class1932, List<Class1737>>>
+public class Class1789 extends Class1776<Map<ResourceLocation, List<Class1737>>>
 {
     public final /* synthetic */ Class1903 field9905;
     
@@ -29,13 +29,13 @@ public class Class1789 extends Class1776<Map<Class1932, List<Class1737>>>
         this.field9905 = field9905;
     }
     
-    public Map<Class1932, List<Class1737>> method6375(final Class6582 class6582, final IProfiler class6583) {
+    public Map<ResourceLocation, List<Class1737>> method6375(final Class6582 class6582, final IProfiler class6583) {
         class6583.method15295();
         final Gson create = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
         final HashMap hashMap = Maps.newHashMap();
-        for (final Class1932 class6584 : class6582.method19936("font", s -> s.endsWith(".json"))) {
+        for (final ResourceLocation class6584 : class6582.method19936("font", s -> s.endsWith(".json"))) {
             final String method7797 = class6584.method7797();
-            final Class1932 key = new Class1932(class6584.method7798(), method7797.substring("font/".length(), method7797.length() - ".json".length()));
+            final ResourceLocation key = new ResourceLocation(class6584.method7798(), method7797.substring("font/".length(), method7797.length() - ".json".length()));
             final List list = (List)hashMap.computeIfAbsent(key, p0 -> Lists.newArrayList((Object[])new Class1737[] { new Class1739() }));
             class6583.method15298(key::toString);
             try {
@@ -43,7 +43,7 @@ public class Class1789 extends Class1776<Map<Class1932, List<Class1737>>>
                     class6583.method15298(class6585::method5889);
                     try (final InputStream method7798 = class6585.method5887();
                          final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(method7798, StandardCharsets.UTF_8))) {
-                        class6583.method15297("reading");
+                        class6583.startSection("reading");
                         final JsonArray method7799 = Class9583.method35917(Class9583.method35928(create, bufferedReader, JsonObject.class), "providers");
                         class6583.method15300("parsing");
                         for (int i = method7799.size() - 1; i >= 0; --i) {
@@ -52,27 +52,27 @@ public class Class1789 extends Class1776<Map<Class1932, List<Class1737>>>
                                 final String method7801 = Class9583.method35895(method7800, "type");
                                 final Class2030 method7802 = Class2030.method8086(method7801);
                                 if (!Class1903.method7380(this.field9905) || method7802 == Class2030.field11570 || !key.equals(Class869.field4624)) {
-                                    class6583.method15297(method7801);
+                                    class6583.startSection(method7801);
                                     list.add(method7802.method8087(method7800).method25276(class6582));
-                                    class6583.method15299();
+                                    class6583.endSection();
                                 }
                             }
                             catch (final RuntimeException ex) {
                                 Class1903.method7381().warn("Unable to read definition '{}' in fonts.json in resourcepack: '{}': {}", (Object)key, (Object)class6585.method5889(), (Object)ex.getMessage());
                             }
                         }
-                        class6583.method15299();
+                        class6583.endSection();
                     }
                     catch (final RuntimeException ex2) {
                         Class1903.method7381().warn("Unable to load font '{}' in fonts.json in resourcepack: '{}': {}", (Object)key, (Object)class6585.method5889(), (Object)ex2.getMessage());
                     }
-                    class6583.method15299();
+                    class6583.endSection();
                 }
             }
             catch (final IOException ex3) {
                 Class1903.method7381().warn("Unable to load font '{}' in fonts.json: {}", (Object)key, (Object)ex3.getMessage());
             }
-            class6583.method15297("caching");
+            class6583.startSection("caching");
             for (char c = '\0'; c < '\uffff'; ++c) {
                 if (c != ' ') {
                     final Iterator iterator3 = Lists.reverse(list).iterator();
@@ -83,14 +83,14 @@ public class Class1789 extends Class1776<Map<Class1932, List<Class1737>>>
                     }
                 }
             }
-            class6583.method15299();
-            class6583.method15299();
+            class6583.endSection();
+            class6583.endSection();
         }
         class6583.method15296();
         return hashMap;
     }
     
-    public void method6377(final Map<Class1932, List<Class1737>> p0, final Class6582 p1, final IProfiler p2) {
+    public void method6377(final Map<ResourceLocation, List<Class1737>> p0, final Class6582 p1, final IProfiler p2) {
         // 
         // This method could not be decompiled.
         // 

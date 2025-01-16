@@ -10,7 +10,7 @@ public class Class8979
     private static Class6313 field37856;
     
     public static void method31922() {
-        Class8979.field37856 = Class8571.method28894().method5305().method5787().method35428(Class7521.field29329.method11878());
+        Class8979.field37856 = Config.method28894().method5305().method5787().method35428(Class7521.field29329.getDefaultState());
     }
     
     public static Class6313 method31923() {
@@ -18,7 +18,7 @@ public class Class8979
     }
     
     public static Class7096 method31924() {
-        return Class7521.field29329.method11878();
+        return Class7521.field29329.getDefaultState();
     }
     
     public static boolean method31925(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858) {
@@ -26,21 +26,21 @@ public class Class8979
     }
     
     private static boolean method31926(final Class1855 class1855, final BlockPos class1856) {
-        final Class3833 field29329 = Class7521.field29329;
-        if (class1855.method6701(class1856.method1141()).method21696() != field29329) {
-            if (class1855.method6701(class1856.method1143()).method21696() != field29329) {
-                if (class1855.method6701(class1856.method1145()).method21696() != field29329) {
-                    if (class1855.method6701(class1856.method1147()).method21696() != field29329) {
+        final Block field29329 = Class7521.field29329;
+        if (class1855.getBlockState(class1856.method1141()).getBlock() != field29329) {
+            if (class1855.getBlockState(class1856.method1143()).getBlock() != field29329) {
+                if (class1855.getBlockState(class1856.method1145()).getBlock() != field29329) {
+                    if (class1855.getBlockState(class1856.method1147()).getBlock() != field29329) {
                         return false;
                     }
                 }
             }
         }
-        final Class7096 method6701 = class1855.method6701(class1856.method1139());
+        final Class7096 method6701 = class1855.getBlockState(class1856.method1139());
         if (method6701.method21722(class1855, class1856)) {
             return true;
         }
-        final Class3833 method6702 = method6701.method21696();
+        final Block method6702 = method6701.method21696();
         if (method6702 instanceof Class3916) {
             return method6701.method21772(Class3916.field17733) == Class109.field343;
         }
@@ -51,13 +51,13 @@ public class Class8979
     }
     
     private static boolean method31927(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857) {
-        if (Class6770.method20655(class1856, class1855, class1857)) {
+        if (BlockUtils.method20655(class1856, class1855, class1857)) {
             return false;
         }
         if (class1856.method21722(class1855, class1857)) {
             return false;
         }
-        final Class3833 method21696 = class1856.method21696();
+        final Block method21696 = class1856.method21696();
         if (method21696 != Class7521.field29331) {
             Label_0040: {
                 if (method21696 instanceof Class3874) {

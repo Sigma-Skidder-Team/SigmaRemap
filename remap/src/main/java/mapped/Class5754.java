@@ -18,7 +18,7 @@ public class Class5754
     private Class6969 field23360;
     private Class8139 field23361;
     private String field23362;
-    private Class1932 field23363;
+    private ResourceLocation field23363;
     
     public Class5754() {
         this.field23354 = Class8150.field33561;
@@ -45,7 +45,7 @@ public class Class5754
         return this;
     }
     
-    public Class5754 method17071(final Class1932 field23363) {
+    public Class5754 method17071(final ResourceLocation field23363) {
         this.field23363 = field23363;
         return this;
     }
@@ -95,7 +95,7 @@ public class Class5754
         return this;
     }
     
-    public Class5754 method17081(final Class1932 field23363) {
+    public Class5754 method17081(final ResourceLocation field23363) {
         this.field23363 = field23363;
         return this;
     }

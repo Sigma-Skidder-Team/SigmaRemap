@@ -26,10 +26,10 @@ public class Class8381
 {
     private static final Logger field34361;
     private static final Map<Class<?>, Class6219<?>> field34362;
-    private static final Map<Class1932, Class6219<?>> field34363;
+    private static final Map<ResourceLocation, Class6219<?>> field34363;
     
     public static <T extends ArgumentType<?>> void method27930(final String s, final Class<T> clazz, final Class6672<T> class6672) {
-        final Class1932 obj = new Class1932(s);
+        final ResourceLocation obj = new ResourceLocation(s);
         if (Class8381.field34362.containsKey(clazz)) {
             throw new IllegalArgumentException("Class " + clazz.getName() + " already has a serializer!");
         }
@@ -87,7 +87,7 @@ public class Class8381
     }
     
     @Nullable
-    private static Class6219<?> method27932(final Class1932 class1932) {
+    private static Class6219<?> method27932(final ResourceLocation class1932) {
         return Class8381.field34363.get(class1932);
     }
     
@@ -104,13 +104,13 @@ public class Class8381
         }
         else {
             Class8381.field34361.error("Could not serialize {} ({}) - will not be sent to client!", (Object)t, (Object)t.getClass());
-            class8654.method29517(new Class1932(""));
+            class8654.method29517(new ResourceLocation(""));
         }
     }
     
     @Nullable
     public static ArgumentType<?> method27935(final PacketBuffer class8654) {
-        final Class1932 method29516 = class8654.method29516();
+        final ResourceLocation method29516 = class8654.method29516();
         final Class6219<?> method29517 = method27932(method29516);
         if (method29517 != null) {
             return (ArgumentType<?>)method29517.field25071.method20297(class8654);

@@ -80,7 +80,7 @@ public class Class4601 extends Class4592<Class5129>
                 }
             }
             else {
-                this.method13620(class1875, method1136, (BlockState)((Class7097<Object, Object>)class1877.field22079.method1164(random, method1136)).method21773(Class4029.field18120, this.method13654(a, method1136)), class1876);
+                this.method13620(class1875, method1136, (BlockState)((StateHolder<Object, Object>)class1877.field22079.method1164(random, method1136)).with(Class4029.field18120, this.method13654(a, method1136)), class1876);
                 set.add(method1136);
             }
         }

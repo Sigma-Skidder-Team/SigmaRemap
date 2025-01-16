@@ -19,7 +19,7 @@ public class Class6042 extends Class6040
     }
     
     @Override
-    public void method17959(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int a, final double a2, final Class7096 class1862, final Class7096 class1863, final int n3, final long n4, final Class4408 class1864) {
+    public void method17959(final Random random, final IChunk class1860, final Class3090 class1861, final int n, final int n2, final int a, final double a2, final Class7096 class1862, final Class7096 class1863, final int n3, final long n4, final Class4408 class1864) {
         double n5 = 0.0;
         final double min = Math.min(Math.abs(a2), this.field24588.method29027(n * 0.25, n2 * 0.25, false) * 15.0);
         if (min > 0.0) {
@@ -42,12 +42,12 @@ public class Class6042 extends Class6040
         final Mutable class1867 = new Mutable();
         for (int i = Math.max(a, (int)n5 + 1); i >= 0; --i) {
             class1867.setPos(n8, i, n9);
-            if (class1860.method6701(class1867).method21706()) {
+            if (class1860.getBlockState(class1867).method21706()) {
                 if (i < (int)n5) {
                     class1860.method7008(class1867, class1862, false);
                 }
             }
-            final Class7096 method6701 = class1860.method6701(class1867);
+            final Class7096 method6701 = class1860.getBlockState(class1867);
             if (!method6701.method21706()) {
                 if (method6701.method21696() == class1862.method21696()) {
                     if (n11 != -1) {
@@ -72,7 +72,7 @@ public class Class6042 extends Class6040
                             }
                         }
                         else {
-                            class1865 = Class7521.field29147.method11878();
+                            class1865 = Class7521.field29147.getDefaultState();
                             class1866 = class1862;
                         }
                         if (i < n3) {
@@ -83,7 +83,7 @@ public class Class6042 extends Class6040
                         n11 = n10 + Math.max(0, i - n3);
                         if (i < n3 - 1) {
                             class1860.method7008(class1867, class1866, false);
-                            final Class3833 method6702 = class1866.method21696();
+                            final Block method6702 = class1866.method21696();
                             Label_0810: {
                                 if (method6702 != Class7521.field29482) {
                                     if (method6702 != Class7521.field29483) {
@@ -150,8 +150,8 @@ public class Class6042 extends Class6040
     }
     
     static {
-        field24579 = Class7521.field29482.method11878();
-        field24580 = Class7521.field29483.method11878();
-        field24581 = Class7521.field29546.method11878();
+        field24579 = Class7521.field29482.getDefaultState();
+        field24580 = Class7521.field29483.getDefaultState();
+        field24581 = Class7521.field29546.getDefaultState();
     }
 }

@@ -39,9 +39,9 @@ public class Class9432
             if (class1848.method6848() > 0) {
                 n3 = 1.0f;
             }
-            final float n4 = Class8571.method28868(n3) * (method24640 - 1);
-            final float n5 = Class8571.method28868(n + 0.5f) * (method24640 - 1);
-            final float method24641 = Class8571.method28868((float)Class8571.method28962().field23472);
+            final float n4 = Config.method28868(n3) * (method24640 - 1);
+            final float n5 = Config.method28868(n + 0.5f) * (method24640 - 1);
+            final float method24641 = Config.method28868((float) Config.method28962().field23472);
             final boolean b2 = method24641 > 1.0E-4f;
             final float[][] method24642 = this.field40457.method24631();
             this.method35054(method24642, n4, n2, method24640, this.field40458);
@@ -50,7 +50,7 @@ public class Class9432
             for (int i = 0; i < 16; ++i) {
                 for (int j = 0; j < 16; ++j) {
                     for (int k = 0; k < 3; ++k) {
-                        float method24643 = Class8571.method28868(this.field40458[i][k] + this.field40459[j][k]);
+                        float method24643 = Config.method28868(this.field40458[i][k] + this.field40459[j][k]);
                         if (b2) {
                             final float n6 = 1.0f - method24643;
                             method24643 = method24641 * (1.0f - n6 * n6 * n6 * n6) + (1.0f - method24641) * method24643;
@@ -94,10 +94,10 @@ public class Class9432
     }
     
     private static void method35055(final String str) {
-        Class8571.method28847("CustomColors: " + str);
+        Config.method28847("CustomColors: " + str);
     }
     
     private static void method35056(final String str) {
-        Class8571.method28848("CustomColors: " + str);
+        Config.warn("CustomColors: " + str);
     }
 }

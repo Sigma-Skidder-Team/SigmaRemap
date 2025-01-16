@@ -7,9 +7,9 @@ package mapped;
 public class Class8184 implements Class8183<MinecraftServer>
 {
     private static String[] field33691;
-    private final Class1932 field33692;
+    private final ResourceLocation field33692;
     
-    public Class8184(final Class1932 field33692) {
+    public Class8184(final ResourceLocation field33692) {
         this.field33692 = field33692;
     }
     

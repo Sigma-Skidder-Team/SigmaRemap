@@ -37,7 +37,7 @@ public class Class9509
     
     public void method35430() {
         this.field40921.clear();
-        final Iterator<Object> iterator = Class90.field208.iterator();
+        final Iterator<Object> iterator = Registry.BLOCK.iterator();
         while (iterator.hasNext()) {
             iterator.next().method11876().method32902().forEach(class7096 -> {
                 final Class6313 class7097 = this.field40921.put(class7096, this.field40922.method6451(method35431(class7096)));
@@ -46,28 +46,28 @@ public class Class9509
     }
     
     public static Class1933 method35431(final BlockState class7096) {
-        return method35432(Class90.field208.method503(class7096.method21696()), class7096);
+        return method35432(Registry.BLOCK.getKey(class7096.getBlock()), class7096);
     }
     
-    public static Class1933 method35432(final Class1932 class1932, final BlockState class1933) {
-        return new Class1933(class1932, method35433((Map<Class7111<?>, Comparable<?>>)class1933.method21776()));
+    public static Class1933 method35432(final ResourceLocation class1932, final BlockState class1933) {
+        return new Class1933(class1932, method35433((Map<IProperty<?>, Comparable<?>>)class1933.getValues()));
     }
     
-    public static String method35433(final Map<Class7111<?>, Comparable<?>> map) {
+    public static String method35433(final Map<IProperty<?>, Comparable<?>> map) {
         final StringBuilder sb = new StringBuilder();
-        for (final Map.Entry<Class7111, V> entry : map.entrySet()) {
+        for (final Map.Entry<IProperty, V> entry : map.entrySet()) {
             if (sb.length() != 0) {
                 sb.append(',');
             }
-            final Class7111 class7111 = entry.getKey();
-            sb.append(class7111.method21826());
+            final IProperty class7111 = entry.getKey();
+            sb.append(class7111.getName());
             sb.append('=');
-            sb.append(method35434((Class7111<Comparable>)class7111, (Comparable<?>)entry.getValue()));
+            sb.append(method35434((IProperty<Comparable>)class7111, (Comparable<?>)entry.getValue()));
         }
         return sb.toString();
     }
     
-    private static <T extends Comparable<T>> String method35434(final Class7111<T> class7111, final Comparable<?> comparable) {
-        return class7111.method21831((T)comparable);
+    private static <T extends Comparable<T>> String method35434(final IProperty<T> class7111, final Comparable<?> comparable) {
+        return class7111.getName((T)comparable);
     }
 }

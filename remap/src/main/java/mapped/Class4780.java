@@ -30,7 +30,7 @@ public class Class4780 extends Class4703<Class861>
         super.method13951(class861, n, n2, class862, class863, n3);
     }
     
-    public Class1932 method14141(final Class861 class861) {
+    public ResourceLocation method14141(final Class861 class861) {
         return Class869.method5277().method5324().method6445().method7504().method6340();
     }
     

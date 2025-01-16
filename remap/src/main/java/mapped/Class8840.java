@@ -5,7 +5,6 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import java.util.Iterator;
 import com.google.common.collect.Maps;
 import java.util.Map;
 import org.apache.logging.log4j.Logger;
@@ -32,7 +31,7 @@ public class Class8840
         }
         this.field37154.method19670(class4385.method13194());
         this.field37154.method19671(class4385.method13193());
-        for (final Map.Entry<Class1932, V> entry : class4385.method13195().entrySet()) {
+        for (final Map.Entry<ResourceLocation, V> entry : class4385.method13195().entrySet()) {
             final Class8863 method19675 = this.field37154.method19675(entry.getKey());
             if (method19675 == null) {
                 Class8840.field37152.warn("Server informed client about progress for unknown advancement {}", (Object)entry.getKey());

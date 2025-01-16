@@ -36,9 +36,9 @@ public class Class3821 extends Item
             return Class9355.method34677(method2715);
         }
         if (this.field17373 == Class7558.field29974) {
-            final BlockState method2720 = class1847.method6701(method2717);
-            if (method2720.method21696() instanceof Class3857) {
-                final Class7255 method2721 = ((Class3857)method2720.method21696()).method11922(class1847, method2717, method2720);
+            final BlockState method2720 = class1847.getBlockState(method2717);
+            if (method2720.getBlock() instanceof Class3857) {
+                final Class7255 method2721 = ((Class3857)method2720.getBlock()).method11922(class1847, method2717, method2720);
                 if (method2721 != Class7558.field29974) {
                     class1848.method2859(Class8276.field33981.method8449(this));
                     class1848.method1695(method2721.method22166(Class7324.field28320) ? Class8520.field35054 : Class8520.field35052, 1.0f, 1.0f);
@@ -51,7 +51,7 @@ public class Class3821 extends Item
             }
             return Class9355.method34677(method2715);
         }
-        final BlockPos class1851 = (class1847.method6701(method2717).method21696() instanceof Class3867 && this.field17373 == Class7558.field29976) ? method2717 : method2719;
+        final BlockPos class1851 = (class1847.getBlockState(method2717).method21696() instanceof Class3867 && this.field17373 == Class7558.field29976) ? method2717 : method2719;
         if (!this.method11755(class1848, class1847, class1851, class1850)) {
             return Class9355.method34677(method2715);
         }
@@ -86,12 +86,12 @@ public class Class3821 extends Item
     
     public boolean method11755(final Class512 class512, final World class513, final BlockPos class514, final Class7005 class515) {
         if (this.field17373 instanceof Class7257) {
-            final BlockState method6701 = class513.method6701(class514);
-            final Class8059 method6702 = method6701.method21697();
+            final BlockState method6701 = class513.getBlockState(class514);
+            final Material method6702 = method6701.getMaterial();
             final boolean method6703 = method6701.method21751(this.field17373);
             if (!method6701.method21706()) {
                 if (!method6703) {
-                    if (!(method6701.method21696() instanceof Class3867) || !((Class3867)method6701.method21696()).method11920(class513, class514, method6701, this.field17373)) {
+                    if (!(method6701.getBlock() instanceof Class3867) || !((Class3867)method6701.getBlock()).method11920(class513, class514, method6701, this.field17373)) {
                         return class515 != null && this.method11755(class512, class513, class515.method21447().method1149(class515.method21448()), null);
                     }
                 }
@@ -105,8 +105,8 @@ public class Class3821 extends Item
                     class513.method6709(Class8432.field34632, method6704 + Math.random(), method6705 + Math.random(), method6706 + Math.random(), 0.0, 0.0, 0.0);
                 }
             }
-            else if (method6701.method21696() instanceof Class3867 && this.field17373 == Class7558.field29976) {
-                if (((Class3867)method6701.method21696()).method11921(class513, class514, method6701, ((Class7257)this.field17373).method22177(false))) {
+            else if (method6701.getBlock() instanceof Class3867 && this.field17373 == Class7558.field29976) {
+                if (((Class3867)method6701.getBlock()).method11921(class513, class514, method6701, ((Class7257)this.field17373).method22177(false))) {
                     this.method11756(class512, class513, class514);
                 }
             }
@@ -119,7 +119,7 @@ public class Class3821 extends Item
                     }
                 }
                 this.method11756(class512, class513, class514);
-                class513.method6688(class514, this.field17373.method22148().method21791(), 11);
+                class513.setBlockState(class514, this.field17373.method22148().method21791(), 11);
             }
             return true;
         }

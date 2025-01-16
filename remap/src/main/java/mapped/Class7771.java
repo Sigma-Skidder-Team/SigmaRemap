@@ -11,10 +11,10 @@ public class Class7771
     private Dimension field31813;
     private boolean field31814;
     private Class8882[] field31815;
-    private Class1932 field31816;
+    private ResourceLocation field31816;
     private Class1846 field31817;
     private Class1773 field31818;
-    private Class1932 field31819;
+    private ResourceLocation field31819;
     public static final int field31820 = 0;
     public static final int field31821 = 1;
     public static final int field31822 = 2;
@@ -30,14 +30,14 @@ public class Class7771
         this.field31816 = null;
         this.field31817 = null;
         this.field31818 = null;
-        this.field31819 = new Class1932("textures/block/red_wool.png");
+        this.field31819 = new ResourceLocation("textures/block/red_wool.png");
         this.field31813 = field31813;
         this.field31814 = field31814;
         this.field31815 = field31815;
     }
     
     public void method24880(final Class5853 class5853, final Class754 class5854, final Class7351 class5855, final Class7807 class5856, final int n, final int n2) {
-        final Class1663 method28895 = Class8571.method28895();
+        final Class1663 method28895 = Config.method28895();
         if (!this.field31814) {
             if (this.field31816 == null) {
                 method28895.method5849(this.field31819);
@@ -104,11 +104,11 @@ public class Class7771
         return this.field31818;
     }
     
-    public Class1932 method24885() {
+    public ResourceLocation method24885() {
         return this.field31816;
     }
     
-    public void method24886(final Class1932 field31816) {
+    public void method24886(final ResourceLocation field31816) {
         this.field31816 = field31816;
     }
     

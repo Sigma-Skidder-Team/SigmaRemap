@@ -10,7 +10,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.Random;
 
-public class Class3971 extends Class3833
+public class Class3971 extends Block
 {
     private static String[] field17942;
     public static final VoxelShape field17943;
@@ -20,13 +20,13 @@ public class Class3971 extends Class3833
     }
     
     @Override
-    public boolean method11820(final BlockState class7096) {
+    public boolean isTransparent(final BlockState class7096) {
         return true;
     }
     
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        return this.method11878().method21752(class7074.method21654(), class7074.method21639()) ? super.method11846(class7074) : Class3833.method11777(this.method11878(), Class7521.field29156.method11878(), class7074.method21654(), class7074.method21639());
+        return this.getDefaultState().method21752(class7074.method21654(), class7074.method21639()) ? super.method11846(class7074) : Block.method11777(this.getDefaultState(), Class7521.field29156.getDefaultState(), class7074.method21654(), class7074.method21639());
     }
     
     @Override
@@ -46,8 +46,8 @@ public class Class3971 extends Class3833
     
     @Override
     public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
-        final BlockState method6701 = class7097.method6701(class7098.method1137());
-        return !method6701.method21697().method26439() || method6701.method21696() instanceof Class3898;
+        final BlockState method6701 = class7097.getBlockState(class7098.method1137());
+        return !method6701.getMaterial().method26439() || method6701.getBlock() instanceof Class3898;
     }
     
     @Override

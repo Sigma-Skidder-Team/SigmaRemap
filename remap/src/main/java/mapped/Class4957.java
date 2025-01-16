@@ -9,16 +9,16 @@ import java.util.Set;
 
 public class Class4957 extends Class4943<Class4957>
 {
-    private final Class3833 field21261;
-    private final Set<Class7111<?>> field21262;
+    private final Block field21261;
+    private final Set<IProperty<?>> field21262;
     
-    private Class4957(final Class3833 field21261) {
+    private Class4957(final Block field21261) {
         this.field21262 = Sets.newHashSet();
         this.field21261 = field21261;
     }
     
-    public Class4957 method14932(final Class7111<?> obj) {
-        if (this.field21261.method11876().method32905().contains(obj)) {
+    public Class4957 method14932(final IProperty<?> obj) {
+        if (this.field21261.getStateContainer().method32905().contains(obj)) {
             this.field21262.add(obj);
             return this;
         }

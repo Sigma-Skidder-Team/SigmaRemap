@@ -25,16 +25,16 @@ public class Class4609
         return method13680(class512, class513) < method13690();
     }
     
-    public static final Class3833 method13666(final BlockPos class354) {
-        return Class4609.field20075.field4683.method6701(class354).method21696();
+    public static final Block method13666(final BlockPos class354) {
+        return Class4609.field20075.field4683.getBlockState(class354).method21696();
     }
     
-    public static final Class3833 method13667(final double n, final double n2, final double n3) {
+    public static final Block method13667(final double n, final double n2, final double n3) {
         return method13666(new BlockPos(n, n2, n3));
     }
     
-    public static boolean method13668(final Class3833 class3833, final BlockPos class3834) {
-        final VoxelShape method21727 = class3833.method11878().method21727(Class4609.field20075.field4683, class3834);
+    public static boolean method13668(final Block class3833, final BlockPos class3834) {
+        final VoxelShape method21727 = class3833.getDefaultState().getCollisionShape(Class4609.field20075.field4683, class3834);
         if (!method13708(class3834)) {
             if (Class4609.field20075.field4683.method6957(Class4609.field20075.field4684, method21727)) {
                 if (class3834.getY() <= Class4609.field20075.field4684.method1894().getY()) {
@@ -279,7 +279,7 @@ public class Class4609
         return MathHelper.method35640((n - 0.5f) * (n - 0.5f) + (n2 - 0.5f) * (n2 - 0.5f) + (n3 - 0.5f) * (n3 - 0.5f));
     }
     
-    public static Class3833 method13689(final Class512 class512) {
+    public static Block method13689(final Class512 class512) {
         return method13666(class512.method1894().method1139());
     }
     
@@ -319,7 +319,7 @@ public class Class4609
             for (float n4 = (float)(-n2); n4 <= n2; ++n4) {
                 for (float n5 = (float)(-n2); n5 <= n2; ++n5) {
                     final BlockPos class354 = new BlockPos(Class4609.field20075.field4684.posX + n4, Class4609.field20075.field4684.posY + n3, Class4609.field20075.field4684.posZ + n5);
-                    if (Class4609.field20075.field4683.method6701(class354).method21696() instanceof Class3992) {
+                    if (Class4609.field20075.field4683.getBlockState(class354).method21696() instanceof Class3992) {
                         list.add(class354);
                     }
                 }
@@ -420,11 +420,11 @@ public class Class4609
     }
     
     public static int method13703(final BlockState class7096) {
-        return ((List)class7096.method21696().method11876().method32902()).indexOf(class7096);
+        return ((List)class7096.getBlock().getStateContainer().method32902()).indexOf(class7096);
     }
     
-    public static int method13704(final Class3833 class3833) {
-        return Class90.field208.method504(class3833);
+    public static int method13704(final Block class3833) {
+        return Registry.BLOCK.getId(class3833);
     }
     
     public static Class9301 method13705(final BlockPos class354, final boolean b) {
@@ -478,8 +478,8 @@ public class Class4609
     
     public static boolean method13708(final BlockPos class354) {
         if (class354 != null) {
-            final Class3833 method21696 = Class4609.field20075.field4683.method6701(class354).method21696();
-            return (method21696.method11806(method21696.method11878()) || !method21696.method11782(method21696.method11878()).method26442()) && (!(method21696 instanceof Class4030) || method13703(Class4609.field20075.field4683.method6701(class354)) != 0);
+            final Block method21696 = Class4609.field20075.field4683.getBlockState(class354).method21696();
+            return (method21696.method11806(method21696.getDefaultState()) || !method21696.getMaterial(method21696.getDefaultState()).method26442()) && (!(method21696 instanceof Class4030) || method13703(Class4609.field20075.field4683.getBlockState(class354)) != 0);
         }
         return false;
     }
@@ -567,7 +567,7 @@ public class Class4609
                 final double n8 = class399.method1944() - n3;
                 final double n9 = class399.getPosZ() - n4;
                 if (MathHelper.sqrt(n7 * n7 + n8 * n8 + n9 * n9) != 0.0) {
-                    final double n10 = (1.0 - n6) * Class6154.method18407(class401, class399);
+                    final double n10 = (1.0 - n6) * Explosion.method18407(class401, class399);
                     return (float)(int)((n10 * n10 + n10) / 2.0 * 7.0 * n5 + 1.0);
                 }
             }

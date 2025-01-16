@@ -24,13 +24,13 @@ public class Class1673 implements Class1671
     private static final Logger field9459;
     public static final Executor field9460;
     private final String field9461;
-    private final Class1932 field9462;
+    private final ResourceLocation field9462;
     private final InputStream field9463;
     private final InputStream field9464;
     private boolean field9465;
     private JsonObject field9466;
     
-    public Class1673(final String field9461, final Class1932 field9462, final InputStream field9463, final InputStream field9464) {
+    public Class1673(final String field9461, final ResourceLocation field9462, final InputStream field9463, final InputStream field9464) {
         this.field9461 = field9461;
         this.field9462 = field9462;
         this.field9463 = field9463;
@@ -38,7 +38,7 @@ public class Class1673 implements Class1671
     }
     
     @Override
-    public Class1932 method5886() {
+    public ResourceLocation method5886() {
         return this.field9462;
     }
     

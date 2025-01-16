@@ -12,13 +12,13 @@ import javax.annotation.Nullable;
 import org.apache.commons.lang3.StringUtils;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 
-public class Class1932 implements Comparable<Class1932>
+public class ResourceLocation implements Comparable<ResourceLocation>
 {
     private static final SimpleCommandExceptionType field10541;
     public final String field10542;
     public final String field10543;
     
-    public Class1932(final String[] array) {
+    public ResourceLocation(final String[] array) {
         this.field10542 = (StringUtils.isEmpty((CharSequence)array[0]) ? "minecraft" : array[0]);
         this.field10543 = array[1];
         if (this.field10543.equals("DUMMY")) {
@@ -31,22 +31,22 @@ public class Class1932 implements Comparable<Class1932>
         }
     }
     
-    public Class1932(final String s) {
+    public ResourceLocation(final String s) {
         this(method7796(s, ':'));
     }
     
-    public Class1932(final String s, final String s2) {
+    public ResourceLocation(final String s, final String s2) {
         this(new String[] { s, s2 });
     }
     
-    public static Class1932 method7794(final String s, final char c) {
-        return new Class1932(method7796(s, c));
+    public static ResourceLocation method7794(final String s, final char c) {
+        return new ResourceLocation(method7796(s, c));
     }
     
     @Nullable
-    public static Class1932 method7795(final String s) {
+    public static ResourceLocation method7795(final String s) {
         try {
-            return new Class1932(s);
+            return new ResourceLocation(s);
         }
         catch (final Class2357 class2357) {
             return null;
@@ -83,8 +83,8 @@ public class Class1932 implements Comparable<Class1932>
         if (this == o) {
             return true;
         }
-        if (o instanceof Class1932) {
-            final Class1932 class1932 = (Class1932)o;
+        if (o instanceof ResourceLocation) {
+            final ResourceLocation class1932 = (ResourceLocation)o;
             return this.field10542.equals(class1932.field10542) && this.field10543.equals(class1932.field10543);
         }
         return false;
@@ -96,7 +96,7 @@ public class Class1932 implements Comparable<Class1932>
     }
     
     @Override
-    public int compareTo(final Class1932 class1932) {
+    public int compareTo(final ResourceLocation class1932) {
         int n = this.field10543.compareTo(class1932.field10543);
         if (n == 0) {
             n = this.field10542.compareTo(class1932.field10542);
@@ -104,18 +104,18 @@ public class Class1932 implements Comparable<Class1932>
         return n;
     }
     
-    public static Class1932 method7799(final StringReader stringReader) throws CommandSyntaxException {
+    public static ResourceLocation method7799(final StringReader stringReader) throws CommandSyntaxException {
         final int cursor = stringReader.getCursor();
         while (stringReader.canRead() && method7800(stringReader.peek())) {
             stringReader.skip();
         }
         final String substring = stringReader.getString().substring(cursor, stringReader.getCursor());
         try {
-            return new Class1932(substring);
+            return new ResourceLocation(substring);
         }
         catch (final Class2357 class2357) {
             stringReader.setCursor(cursor);
-            throw Class1932.field10541.createWithContext((ImmutableStringReader)stringReader);
+            throw ResourceLocation.field10541.createWithContext((ImmutableStringReader)stringReader);
         }
     }
     

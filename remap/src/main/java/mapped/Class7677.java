@@ -54,7 +54,7 @@ public class Class7677
     }
     
     public static String method24368() {
-        final String field36020 = Class8571.field36020;
+        final String field36020 = Config.field36020;
         if (field36020 == null) {
             return "MC_GL_VENDOR_OTHER";
         }
@@ -72,7 +72,7 @@ public class Class7677
     }
     
     public static String method24369() {
-        final String field36019 = Class8571.field36019;
+        final String field36019 = Config.field36019;
         if (field36019 == null) {
             return "MC_GL_RENDERER_OTHER";
         }
@@ -113,7 +113,7 @@ public class Class7677
     
     public static Class8573[] method24371() {
         if (Class7677.field30504 == null) {
-            final String[] method28830 = Class8571.method28830();
+            final String[] method28830 = Config.method28830();
             final Class8573[] field30504 = new Class8573[method28830.length];
             for (int i = 0; i < method28830.length; ++i) {
                 field30504[i] = new Class8573(Class7677.field30476 + method28830[i], "");
@@ -125,9 +125,9 @@ public class Class7677
     
     public static String method24372() {
         final StringBuilder sb = new StringBuilder();
-        method24374(sb, "MC_VERSION", Class8571.method28824());
-        method24376(sb, "MC_GL_VERSION " + Class8571.method28827().method19200());
-        method24376(sb, "MC_GLSL_VERSION " + Class8571.method28828().method19200());
+        method24374(sb, "MC_VERSION", Config.method28824());
+        method24376(sb, "MC_GL_VERSION " + Config.method28827().method19200());
+        method24376(sb, "MC_GLSL_VERSION " + Config.method28828().method19200());
         method24376(sb, method24367());
         method24376(sb, method24368());
         method24376(sb, method24369());

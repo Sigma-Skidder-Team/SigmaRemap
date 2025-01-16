@@ -30,7 +30,7 @@ public class Class5413 implements Class5414
         class51.method298("z", this.field22580.getZ());
         this.field22579.method2179(class51);
         this.field22579.method2161();
-        final BlockState method6701 = this.field22579.method2186().method6701(this.field22580);
+        final BlockState method6701 = this.field22579.method2186().getBlockState(this.field22580);
         this.field22579.method2186().method6693(this.field22580, method6701, method6701, 3);
     }
     

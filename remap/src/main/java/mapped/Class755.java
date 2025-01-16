@@ -76,9 +76,9 @@ public class Class755 extends Class754
             final float n4 = (float)Math.atan(-this.getMotion().y * 0.20000000298023224) * 15.0f;
         }
         this.field3013 += (min - this.field3013) * 0.4f;
-        this.world.method6796().method15297("push");
+        this.world.method6796().startSection("push");
         this.method2739();
-        this.world.method6796().method15299();
+        this.world.method6796().endSection();
     }
     
     @Override

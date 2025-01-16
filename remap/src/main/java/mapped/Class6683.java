@@ -22,7 +22,7 @@ public class Class6683
     public static final Class7915<Float> field26371;
     
     private static <T> Class7915<T> method20325(final String s) {
-        return new Class7915<T>(new Class1932(s));
+        return new Class7915<T>(new ResourceLocation(s));
     }
     
     static {

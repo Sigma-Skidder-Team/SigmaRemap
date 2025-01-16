@@ -9,14 +9,14 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
-public abstract class Class4017 extends Class3833
+public abstract class Class4017 extends Block
 {
     public static final VoxelShape field18093;
     public static final VoxelShape field18094;
     private final boolean field18095;
     
     public static boolean method12200(final World class1847, final BlockPos class1848) {
-        return method12201(class1847.method6701(class1848));
+        return method12201(class1847.getBlockState(class1848));
     }
     
     public static boolean method12201(final Class7096 class7096) {
@@ -40,7 +40,7 @@ public abstract class Class4017 extends Class3833
     
     @Override
     public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
-        return Class3833.method11812(class7097, class7098.method1139());
+        return Block.method11812(class7097, class7098.method1139());
     }
     
     @Override
@@ -54,31 +54,31 @@ public abstract class Class4017 extends Class3833
     }
     
     @Override
-    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         if (!class7097.isRemote) {
             final Class104 class7101 = class7096.method21772(this.method12205());
             boolean b2 = false;
-            if (!Class3833.method11812(class7097, class7098.method1139())) {
+            if (!Block.method11812(class7097, class7098.method1139())) {
                 b2 = true;
             }
             final BlockPos method1147 = class7098.method1147();
-            if (class7101 == Class104.field313 && !Class3833.method11812(class7097, method1147)) {
+            if (class7101 == Class104.field313 && !Block.method11812(class7097, method1147)) {
                 b2 = true;
             }
             else {
                 final BlockPos method1148 = class7098.method1145();
-                if (class7101 == Class104.field314 && !Class3833.method11812(class7097, method1148)) {
+                if (class7101 == Class104.field314 && !Block.method11812(class7097, method1148)) {
                     b2 = true;
                 }
                 else {
                     final BlockPos method1149 = class7098.method1141();
-                    if (class7101 == Class104.field315 && !Class3833.method11812(class7097, method1149)) {
+                    if (class7101 == Class104.field315 && !Block.method11812(class7097, method1149)) {
                         b2 = true;
                     }
                     else {
                         final BlockPos method1150 = class7098.method1143();
                         if (class7101 == Class104.field316) {
-                            if (!Class3833.method11812(class7097, method1150)) {
+                            if (!Block.method11812(class7097, method1150)) {
                                 b2 = true;
                             }
                         }
@@ -87,7 +87,7 @@ public abstract class Class4017 extends Class3833
             }
             if (b2 && !class7097.method6961(class7098)) {
                 if (!b) {
-                    Class3833.method11836(class7096, class7097, class7098);
+                    Block.method11836(class7096, class7097, class7098);
                 }
                 class7097.method6690(class7098, b);
             }
@@ -97,7 +97,7 @@ public abstract class Class4017 extends Class3833
         }
     }
     
-    public void method12203(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099) {
+    public void method12203(final Class7096 class7096, final World class7097, final BlockPos class7098, final Block class7099) {
     }
     
     public Class7096 method12204(final World class1847, final BlockPos class1848, final Class7096 class1849, final boolean b) {
@@ -108,8 +108,8 @@ public abstract class Class4017 extends Class3833
     }
     
     @Override
-    public Class2117 method11858(final Class7096 class7096) {
-        return Class2117.field12340;
+    public PushReaction method11858(final Class7096 class7096) {
+        return PushReaction.NORMAL;
     }
     
     @Override
@@ -128,15 +128,15 @@ public abstract class Class4017 extends Class3833
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        final Class7096 method11878 = super.method11878();
+        final Class7096 method11878 = super.getDefaultState();
         final Direction method11879 = class7074.method21644();
-        return ((Class7097<Object, Class7096>)method11878).method21773(this.method12205(), (method11879 == Direction.EAST || method11879 == Direction.WEST) ? Class104.field312 : Class104.field311);
+        return ((StateHolder<Object, Class7096>)method11878).with(this.method12205(), (method11879 == Direction.EAST || method11879 == Direction.WEST) ? Class104.field312 : Class104.field311);
     }
     
-    public abstract Class7111<Class104> method12205();
+    public abstract IProperty<Class104> method12205();
     
     static {
-        field18093 = Class3833.method11778(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
-        field18094 = Class3833.method11778(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
+        field18093 = Block.method11778(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
+        field18094 = Block.method11778(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
     }
 }

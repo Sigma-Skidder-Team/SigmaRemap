@@ -34,7 +34,7 @@ public class Class3605 extends Class3446
                     if (Math.abs(method35639) > 0.5) {
                         n3 += (int)(method35639 / Math.abs(method35639));
                     }
-                    return this.field16787.world.method6701(new BlockPos(this.field16787).add(n2, -1, n3)).method21706() || (this.field16787.method4396() && Class791.method4425(this.field16787).nextInt(60) == 1) || Class791.method4426(this.field16787).nextInt(500) == 1;
+                    return this.field16787.world.getBlockState(new BlockPos(this.field16787).add(n2, -1, n3)).method21706() || (this.field16787.method4396() && Class791.method4425(this.field16787).nextInt(60) == 1) || Class791.method4426(this.field16787).nextInt(500) == 1;
                 }
                 return false;
             }

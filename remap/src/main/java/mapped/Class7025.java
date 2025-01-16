@@ -11,7 +11,7 @@ import com.google.gson.JsonObject;
 public class Class7025 extends Class7020<Class155>
 {
     public Class7025() {
-        super(new Class1932("inverted"), Class155.class);
+        super(new ResourceLocation("inverted"), Class155.class);
     }
     
     public void method21495(final JsonObject jsonObject, final Class155 class155, final JsonSerializationContext jsonSerializationContext) {

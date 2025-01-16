@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 
-public class Class3846 extends Class3833
+public class Class3846 extends Block
 {
     private static String[] field17455;
     
@@ -16,6 +16,6 @@ public class Class3846 extends Class3833
     
     @Override
     public boolean method11807(final BlockState class7096, final BlockState class7097, final Direction class7098) {
-        return class7097.method21696() == this || super.method11807(class7096, class7097, class7098);
+        return class7097.getBlock() == this || super.method11807(class7096, class7097, class7098);
     }
 }

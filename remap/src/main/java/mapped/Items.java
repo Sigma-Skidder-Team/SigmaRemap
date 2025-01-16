@@ -893,11 +893,11 @@ public class Items
     public static final Item field31636;
     public static final Item field31637;
     
-    private static Item method24690(final Class3833 class3833) {
+    private static Item method24690(final Block class3833) {
         return method24692(new Class4036(class3833, new Class8959()));
     }
     
-    private static Item method24691(final Class3833 class3833, final Class7207 class3834) {
+    private static Item method24691(final Block class3833, final Class7207 class3834) {
         return method24692(new Class4036(class3833, new Class8959().method31786(class3834)));
     }
     
@@ -905,19 +905,19 @@ public class Items
         return method24693(class4036.method12240(), class4036);
     }
     
-    public static Item method24693(final Class3833 class3833, final Item class3834) {
-        return method24695(Class90.field208.method503(class3833), class3834);
+    public static Item method24693(final Block class3833, final Item class3834) {
+        return method24695(Registry.BLOCK.getKey(class3833), class3834);
     }
     
     private static Item method24694(final String s, final Item class3820) {
-        return method24695(new Class1932(s), class3820);
+        return method24695(new ResourceLocation(s), class3820);
     }
     
-    private static Item method24695(final Class1932 class1932, final Item class1933) {
+    private static Item method24695(final ResourceLocation class1932, final Item class1933) {
         if (class1933 instanceof Class4036) {
             ((Class4036)class1933).method12241(Item.field17355, class1933);
         }
-        return Class90.method512(Class90.field211, class1932, class1933);
+        return Registry.method512(Registry.field211, class1932, class1933);
     }
     
     static {

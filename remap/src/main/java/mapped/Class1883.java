@@ -148,6 +148,6 @@ public class Class1883 extends Class1882<Class364>
     }
     
     public void method7216(final Class1852 class1852, final BlockPos class1853, final int x) {
-        Class353.method1120(new Class7859(class1853), Math.floorDiv(x, 16)).map(class1854 -> Pair.of((Object)class1854, (Object)this.method7180(class1854.method1117()))).filter(pair -> !((Optional)pair.getSecond()).map(Class364::method1183).orElse(false)).map(pair2 -> ((Class353)pair2.getFirst()).method1115()).filter(class1855 -> this.field10251.add(class1855.method25422())).forEach(class1857 -> class1856.method6966(class1857.field32290, class1857.field32291, Class9312.field39977));
+        Class353.method1120(new Class7859(class1853), Math.floorDiv(x, 16)).map(class1854 -> Pair.of((Object)class1854, (Object)this.method7180(class1854.method1117()))).filter(pair -> !((Optional)pair.getSecond()).map(Class364::method1183).orElse(false)).map(pair2 -> ((Class353)pair2.getFirst()).method1115()).filter(class1855 -> this.field10251.add(class1855.method25422())).forEach(class1857 -> class1856.method6966(class1857.field32290, class1857.field32291, ChunkStatus.field39977));
     }
 }

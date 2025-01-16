@@ -8,7 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class Class4004 extends Class3833
+public class Class4004 extends Block
 {
     private static String[] field18048;
     
@@ -18,6 +18,6 @@ public class Class4004 extends Class3833
     
     @Override
     public void method11850(final BlockState class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
-        class7099.method1839(class7096, new Vec3d(0.25, 0.05000000074505806, 0.25));
+        class7099.setMotionMultiplier(class7096, new Vec3d(0.25, 0.05000000074505806, 0.25));
     }
 }

@@ -19,7 +19,7 @@ public class Class6778
     private static final Random field26610;
     
     public static Class6313 method20685(final String s, final int n) {
-        return method20686(Class8571.method29001().method6346(s), n);
+        return method20686(Config.method29001().method6346(s), n);
     }
     
     public static Class6313 method20686(final Class1912 class1912, final int n) {
@@ -56,7 +56,7 @@ public class Class6778
     }
     
     public static Class6313 method20689(final String s, final String s2, final String s3) {
-        final Class1774 method29001 = Class8571.method29001();
+        final Class1774 method29001 = Config.method29001();
         return method20690(s, method29001.method6346(s2), method29001.method6346(s3));
     }
     
@@ -64,7 +64,7 @@ public class Class6778
         if (class1912 == null || class1913 == null) {
             return null;
         }
-        final Class1790 method28860 = Class8571.method28860();
+        final Class1790 method28860 = Config.method28860();
         if (method28860 == null) {
             return null;
         }

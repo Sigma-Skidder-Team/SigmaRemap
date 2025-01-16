@@ -71,24 +71,24 @@ public class Class8411
     }
     
     public void method28081(final Consumer<Class5763> consumer) {
-        this.method28083(consumer, Class90.field211.method503(this.field34535));
+        this.method28083(consumer, Registry.field211.getKey(this.field34535));
     }
     
     public void method28082(final Consumer<Class5763> consumer, final String str) {
-        if (!new Class1932(str).equals(Class90.field211.method503(this.field34535))) {
-            this.method28083(consumer, new Class1932(str));
+        if (!new ResourceLocation(str).equals(Registry.field211.getKey(this.field34535))) {
+            this.method28083(consumer, new ResourceLocation(str));
             return;
         }
         throw new IllegalStateException("Shapeless Recipe " + str + " should remove its 'save' argument");
     }
     
-    public void method28083(final Consumer<Class5763> consumer, final Class1932 class1932) {
+    public void method28083(final Consumer<Class5763> consumer, final ResourceLocation class1932) {
         this.method28084(class1932);
-        this.field34538.method18003(new Class1932("recipes/root")).method18009("has_the_recipe", new Class4219(class1932)).method18007(Class6467.method19355(class1932)).method18011(Class6526.field25976);
-        consumer.accept(new Class5765(class1932, this.field34535, this.field34536, (this.field34539 != null) ? this.field34539 : "", this.field34537, this.field34538, new Class1932(class1932.method7798(), "recipes/" + this.field34535.method11737().method22110() + "/" + class1932.method7797())));
+        this.field34538.method18003(new ResourceLocation("recipes/root")).method18009("has_the_recipe", new Class4219(class1932)).method18007(Class6467.method19355(class1932)).method18011(Class6526.field25976);
+        consumer.accept(new Class5765(class1932, this.field34535, this.field34536, (this.field34539 != null) ? this.field34539 : "", this.field34537, this.field34538, new ResourceLocation(class1932.method7798(), "recipes/" + this.field34535.method11737().method22110() + "/" + class1932.method7797())));
     }
     
-    private void method28084(final Class1932 obj) {
+    private void method28084(final ResourceLocation obj) {
         if (!this.field34538.method18019().isEmpty()) {
             return;
         }

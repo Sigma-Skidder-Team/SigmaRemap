@@ -62,9 +62,9 @@ public class Class7067 extends Class7065
     }
     
     @Nullable
-    public static Class3833 method21586(final String s) {
+    public static Block method21586(final String s) {
         try {
-            return Class90.field208.method506(new Class1932(s)).orElse(null);
+            return Registry.BLOCK.method506(new ResourceLocation(s)).orElse(null);
         }
         catch (final IllegalArgumentException ex) {
             Class7067.field27497.warn("Invalid blockstate: {}", (Object)s, (Object)ex);
@@ -100,12 +100,12 @@ public class Class7067 extends Class7065
         for (final Class9127 class9128 : this.field27517) {
             for (int i = class9128.method33116(); i < class9128.method33116() + class9128.method33114(); ++i) {
                 final BlockState method33115 = class9128.method33115();
-                if (method33115.method21696() != Class7521.field29147) {
+                if (method33115.getBlock() != Class7521.field29147) {
                     this.field27521 = false;
                     this.field27520[i] = method33115;
                 }
             }
-            if (class9128.method33115().method21696() != Class7521.field29147) {
+            if (class9128.method33115().getBlock() != Class7521.field29147) {
                 this.field27522 += class9128.method33114() + n2;
                 n2 = 0;
             }
@@ -125,7 +125,7 @@ public class Class7067 extends Class7065
             sb.append(this.field27517.get(i));
         }
         sb.append(";");
-        sb.append(Class90.field217.method503(this.field27519));
+        sb.append(Registry.field217.getKey(this.field27519));
         sb.append(";");
         if (!this.field27518.isEmpty()) {
             int n = 0;
@@ -172,7 +172,7 @@ public class Class7067 extends Class7065
             max = 1;
         }
         final int n2 = Math.min(n + max, 256) - n;
-        Class3833 method21586;
+        Block method21586;
         try {
             method21586 = method21586(split[split.length - 1]);
         }
@@ -206,7 +206,7 @@ public class Class7067 extends Class7065
     }
     
     public <T> Dynamic<T> method21594(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("layers"), dynamicOps.createList((Stream)this.field27517.stream().map(class9127 -> dynamicOps2.createMap((Map)ImmutableMap.of(dynamicOps2.createString("height"), dynamicOps2.createInt(class9127.method33114()), dynamicOps2.createString("block"), dynamicOps2.createString(Class90.field208.method503(class9127.method33115().method21696()).toString()))))), dynamicOps.createString("biome"), dynamicOps.createString(Class90.field217.method503(this.field27519).toString()), dynamicOps.createString("structures"), dynamicOps.createMap((Map)this.field27518.entrySet().stream().map(entry -> Pair.of(dynamicOps3.createString(entry.getKey().toLowerCase(Locale.ROOT)), dynamicOps3.createMap((Map)((Map)entry.getValue()).entrySet().stream().map(entry2 -> Pair.of(dynamicOps4.createString((String)entry2.getKey()), dynamicOps4.createString((String)entry2.getValue()))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond))))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond))))));
+        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("layers"), dynamicOps.createList((Stream)this.field27517.stream().map(class9127 -> dynamicOps2.createMap((Map)ImmutableMap.of(dynamicOps2.createString("height"), dynamicOps2.createInt(class9127.method33114()), dynamicOps2.createString("block"), dynamicOps2.createString(Registry.BLOCK.getKey(class9127.method33115().getBlock()).toString()))))), dynamicOps.createString("biome"), dynamicOps.createString(Registry.field217.getKey(this.field27519).toString()), dynamicOps.createString("structures"), dynamicOps.createMap((Map)this.field27518.entrySet().stream().map(entry -> Pair.of(dynamicOps3.createString(entry.getKey().toLowerCase(Locale.ROOT)), dynamicOps3.createMap((Map)((Map)entry.getValue()).entrySet().stream().map(entry2 -> Pair.of(dynamicOps4.createString((String)entry2.getKey()), dynamicOps4.createString((String)entry2.getValue()))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond))))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond))))));
     }
     
     public static Class7067 method21595(final Dynamic<?> dynamic) {
@@ -215,11 +215,11 @@ public class Class7067 extends Class7065
         if (list.stream().anyMatch(pair -> pair.getSecond() == null)) {
             return method21599();
         }
-        final List list2 = (List)list.stream().map(pair2 -> new Class9127((int)pair2.getFirst(), (Class3833)pair2.getSecond())).collect(Collectors.toList());
+        final List list2 = (List)list.stream().map(pair2 -> new Class9127((int)pair2.getFirst(), (Block)pair2.getSecond())).collect(Collectors.toList());
         if (!list2.isEmpty()) {
             class7067.method21590().addAll(list2);
             class7067.method21591();
-            class7067.method21588(Class90.field217.method505(new Class1932(dynamic.get("biome").asString(""))));
+            class7067.method21588(Registry.field217.getOrDefault(new ResourceLocation(dynamic.get("biome").asString(""))));
             dynamic.get("structures").flatMap((Function)Dynamic::getMapValues).ifPresent(map -> map.keySet().forEach(dynamic3 -> dynamic3.asString().map(s -> class7068.method21589().put(s, Maps.newHashMap()))));
             return class7067;
         }
@@ -241,7 +241,7 @@ public class Class7067 extends Class7065
         Class3090 field27633 = Class7102.field27633;
         if (iterator.hasNext()) {
             try {
-                field27633 = Class90.field217.method506(new Class1932((String)iterator.next())).orElseThrow(() -> {
+                field27633 = Registry.field217.method506(new ResourceLocation((String)iterator.next())).orElseThrow(() -> {
                     new IllegalArgumentException("Invalid Biome: " + obj);
                     return;
                 });
@@ -362,8 +362,8 @@ public class Class7067 extends Class7065
         field27504 = Class4535.field19963.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
         field27505 = Class4535.field19964.method13527(new Class5125(false)).method28610(Class7133.field27782.method21889(Class6926.field27145));
         field27506 = Class4535.field19967.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
-        field27507 = Class4535.field20002.method13527(new Class5141(Class7521.field29173.method11878())).method28610(Class7133.field27812.method21889((Object)new Class6928(4)));
-        field27508 = Class4535.field20002.method13527(new Class5141(Class7521.field29174.method11878())).method28610(Class7133.field27811.method21889((Object)new Class6928(80)));
+        field27507 = Class4535.field20002.method13527(new Class5141(Class7521.field29173.getDefaultState())).method28610(Class7133.field27812.method21889((Object)new Class6928(4)));
+        field27508 = Class4535.field20002.method13527(new Class5141(Class7521.field29174.getDefaultState())).method28610(Class7133.field27811.method21889((Object)new Class6928(80)));
         field27509 = Class4535.field19970.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
         field27510 = Class4535.field19960.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
         field27511 = Class4535.field19969.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));

@@ -16,7 +16,7 @@ public class Class8061
     private final ImmutableList<Class1948> field33206;
     
     public static Class8061 method26447(final String s) {
-        return Class90.field212.method505(Class1932.method7795(s));
+        return Registry.field212.getOrDefault(ResourceLocation.method7795(s));
     }
     
     public Class8061(final Class1948... array) {
@@ -29,7 +29,7 @@ public class Class8061
     }
     
     public String method26448(final String str) {
-        return str + ((this.field33205 != null) ? this.field33205 : Class90.field212.method503(this).method7797());
+        return str + ((this.field33205 != null) ? this.field33205 : Registry.field212.getKey(this).method7797());
     }
     
     public List<Class1948> method26449() {

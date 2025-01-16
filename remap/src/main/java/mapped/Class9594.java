@@ -11,10 +11,10 @@ public class Class9594
 {
     public String field41819;
     public String field41820;
-    public Class1932[] field41821;
+    public ResourceLocation[] field41821;
     public Class9310[] field41822;
     
-    public Class9594(final String s, final Class1932[] field41821) {
+    public Class9594(final String s, final ResourceLocation[] field41821) {
         this.field41819 = null;
         this.field41820 = null;
         this.field41821 = null;
@@ -25,7 +25,7 @@ public class Class9594
         this.field41821 = field41821;
     }
     
-    public Class9594(final Properties properties, final String s, final Class1932 class1932) {
+    public Class9594(final Properties properties, final String s, final ResourceLocation class1932) {
         this.field41819 = null;
         this.field41820 = null;
         this.field41821 = null;
@@ -36,7 +36,7 @@ public class Class9594
         this.field41822 = this.method35982(properties, s, class1932, class1933);
     }
     
-    public Class1932 method35981(final Class1932 class1932, final Class8444 class1933) {
+    public ResourceLocation method35981(final ResourceLocation class1932, final Class8444 class1933) {
         if (this.field41822 != null) {
             for (int i = 0; i < this.field41822.length; ++i) {
                 final Class9310 class1934 = this.field41822[i];
@@ -51,7 +51,7 @@ public class Class9594
         return this.field41821[class1933.method28177() % this.field41821.length];
     }
     
-    private Class9310[] method35982(final Properties properties, final String s, final Class1932 class1932, final Class8652 class1933) {
+    private Class9310[] method35982(final Properties properties, final String s, final ResourceLocation class1932, final Class8652 class1933) {
         final ArrayList list = new ArrayList();
         for (int size = properties.size(), i = 0; i < size; ++i) {
             final int n = i + 1;
@@ -71,7 +71,7 @@ public class Class9594
     
     public boolean method35983(final String str) {
         if (this.field41821 == null && this.field41822 == null) {
-            Class8571.method28848("No skins specified: " + str);
+            Config.warn("No skins specified: " + str);
             return false;
         }
         if (this.field41822 != null) {
@@ -83,9 +83,9 @@ public class Class9594
         }
         if (this.field41821 != null) {
             for (int j = 0; j < this.field41821.length; ++j) {
-                final Class1932 class1932 = this.field41821[j];
-                if (!Class8571.method28900(class1932)) {
-                    Class8571.method28848("Texture not found: " + class1932.method7797());
+                final ResourceLocation class1932 = this.field41821[j];
+                if (!Config.method28900(class1932)) {
+                    Config.warn("Texture not found: " + class1932.method7797());
                     return false;
                 }
             }

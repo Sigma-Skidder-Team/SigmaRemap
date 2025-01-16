@@ -44,7 +44,7 @@ public interface Class3662<C extends Class446>
         return new ItemStack(Class7521.field29296);
     }
     
-    Class1932 method11298();
+    ResourceLocation method11298();
     
     Class6096<?> method11299();
     

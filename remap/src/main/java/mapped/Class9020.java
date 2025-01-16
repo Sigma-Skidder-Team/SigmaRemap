@@ -10,99 +10,99 @@ import java.util.Set;
 
 public class Class9020
 {
-    private static final Set<Class1932> field38061;
-    private static final Set<Class1932> field38062;
-    public static final Class1932 field38063;
-    public static final Class1932 field38064;
-    public static final Class1932 field38065;
-    public static final Class1932 field38066;
-    public static final Class1932 field38067;
-    public static final Class1932 field38068;
-    public static final Class1932 field38069;
-    public static final Class1932 field38070;
-    public static final Class1932 field38071;
-    public static final Class1932 field38072;
-    public static final Class1932 field38073;
-    public static final Class1932 field38074;
-    public static final Class1932 field38075;
-    public static final Class1932 field38076;
-    public static final Class1932 field38077;
-    public static final Class1932 field38078;
-    public static final Class1932 field38079;
-    public static final Class1932 field38080;
-    public static final Class1932 field38081;
-    public static final Class1932 field38082;
-    public static final Class1932 field38083;
-    public static final Class1932 field38084;
-    public static final Class1932 field38085;
-    public static final Class1932 field38086;
-    public static final Class1932 field38087;
-    public static final Class1932 field38088;
-    public static final Class1932 field38089;
-    public static final Class1932 field38090;
-    public static final Class1932 field38091;
-    public static final Class1932 field38092;
-    public static final Class1932 field38093;
-    public static final Class1932 field38094;
-    public static final Class1932 field38095;
-    public static final Class1932 field38096;
-    public static final Class1932 field38097;
-    public static final Class1932 field38098;
-    public static final Class1932 field38099;
-    public static final Class1932 field38100;
-    public static final Class1932 field38101;
-    public static final Class1932 field38102;
-    public static final Class1932 field38103;
-    public static final Class1932 field38104;
-    public static final Class1932 field38105;
-    public static final Class1932 field38106;
-    public static final Class1932 field38107;
-    public static final Class1932 field38108;
-    public static final Class1932 field38109;
-    public static final Class1932 field38110;
-    public static final Class1932 field38111;
-    public static final Class1932 field38112;
-    public static final Class1932 field38113;
-    public static final Class1932 field38114;
-    public static final Class1932 field38115;
-    public static final Class1932 field38116;
-    public static final Class1932 field38117;
-    public static final Class1932 field38118;
-    public static final Class1932 field38119;
-    public static final Class1932 field38120;
-    public static final Class1932 field38121;
-    public static final Class1932 field38122;
-    public static final Class1932 field38123;
-    public static final Class1932 field38124;
-    public static final Class1932 field38125;
-    public static final Class1932 field38126;
-    public static final Class1932 field38127;
-    public static final Class1932 field38128;
-    public static final Class1932 field38129;
-    public static final Class1932 field38130;
-    public static final Class1932 field38131;
-    public static final Class1932 field38132;
-    public static final Class1932 field38133;
+    private static final Set<ResourceLocation> field38061;
+    private static final Set<ResourceLocation> field38062;
+    public static final ResourceLocation field38063;
+    public static final ResourceLocation field38064;
+    public static final ResourceLocation field38065;
+    public static final ResourceLocation field38066;
+    public static final ResourceLocation field38067;
+    public static final ResourceLocation field38068;
+    public static final ResourceLocation field38069;
+    public static final ResourceLocation field38070;
+    public static final ResourceLocation field38071;
+    public static final ResourceLocation field38072;
+    public static final ResourceLocation field38073;
+    public static final ResourceLocation field38074;
+    public static final ResourceLocation field38075;
+    public static final ResourceLocation field38076;
+    public static final ResourceLocation field38077;
+    public static final ResourceLocation field38078;
+    public static final ResourceLocation field38079;
+    public static final ResourceLocation field38080;
+    public static final ResourceLocation field38081;
+    public static final ResourceLocation field38082;
+    public static final ResourceLocation field38083;
+    public static final ResourceLocation field38084;
+    public static final ResourceLocation field38085;
+    public static final ResourceLocation field38086;
+    public static final ResourceLocation field38087;
+    public static final ResourceLocation field38088;
+    public static final ResourceLocation field38089;
+    public static final ResourceLocation field38090;
+    public static final ResourceLocation field38091;
+    public static final ResourceLocation field38092;
+    public static final ResourceLocation field38093;
+    public static final ResourceLocation field38094;
+    public static final ResourceLocation field38095;
+    public static final ResourceLocation field38096;
+    public static final ResourceLocation field38097;
+    public static final ResourceLocation field38098;
+    public static final ResourceLocation field38099;
+    public static final ResourceLocation field38100;
+    public static final ResourceLocation field38101;
+    public static final ResourceLocation field38102;
+    public static final ResourceLocation field38103;
+    public static final ResourceLocation field38104;
+    public static final ResourceLocation field38105;
+    public static final ResourceLocation field38106;
+    public static final ResourceLocation field38107;
+    public static final ResourceLocation field38108;
+    public static final ResourceLocation field38109;
+    public static final ResourceLocation field38110;
+    public static final ResourceLocation field38111;
+    public static final ResourceLocation field38112;
+    public static final ResourceLocation field38113;
+    public static final ResourceLocation field38114;
+    public static final ResourceLocation field38115;
+    public static final ResourceLocation field38116;
+    public static final ResourceLocation field38117;
+    public static final ResourceLocation field38118;
+    public static final ResourceLocation field38119;
+    public static final ResourceLocation field38120;
+    public static final ResourceLocation field38121;
+    public static final ResourceLocation field38122;
+    public static final ResourceLocation field38123;
+    public static final ResourceLocation field38124;
+    public static final ResourceLocation field38125;
+    public static final ResourceLocation field38126;
+    public static final ResourceLocation field38127;
+    public static final ResourceLocation field38128;
+    public static final ResourceLocation field38129;
+    public static final ResourceLocation field38130;
+    public static final ResourceLocation field38131;
+    public static final ResourceLocation field38132;
+    public static final ResourceLocation field38133;
     
-    private static Class1932 method32315(final String s) {
-        return method32316(new Class1932(s));
+    private static ResourceLocation method32315(final String s) {
+        return method32316(new ResourceLocation(s));
     }
     
-    private static Class1932 method32316(final Class1932 obj) {
+    private static ResourceLocation method32316(final ResourceLocation obj) {
         if (!Class9020.field38061.add(obj)) {
             throw new IllegalArgumentException(obj + " is already a registered built-in loot table");
         }
         return obj;
     }
     
-    public static Set<Class1932> method32317() {
+    public static Set<ResourceLocation> method32317() {
         return Class9020.field38062;
     }
     
     static {
         field38061 = Sets.newHashSet();
-        field38062 = Collections.unmodifiableSet((Set<? extends Class1932>)Class9020.field38061);
-        field38063 = new Class1932("empty");
+        field38062 = Collections.unmodifiableSet((Set<? extends ResourceLocation>)Class9020.field38061);
+        field38063 = new ResourceLocation("empty");
         field38064 = method32315("chests/spawn_bonus_chest");
         field38065 = method32315("chests/end_city_treasure");
         field38066 = method32315("chests/simple_dungeon");

@@ -23,7 +23,7 @@ public class Class1729 extends Class1728
     
     @Nullable
     @Override
-    public InputStream method6104(final Class346 class346, final Class1932 class347) {
+    public InputStream method6104(final Class346 class346, final ResourceLocation class347) {
         if (class346 == Class346.field2137) {
             final File method27064 = this.field9666.method27064(class347);
             if (method27064 != null && method27064.exists()) {
@@ -37,7 +37,7 @@ public class Class1729 extends Class1728
     }
     
     @Override
-    public boolean method6099(final Class346 class346, final Class1932 class347) {
+    public boolean method6099(final Class346 class346, final ResourceLocation class347) {
         if (class346 == Class346.field2137) {
             final File method27064 = this.field9666.method27064(class347);
             if (method27064 != null) {
@@ -63,8 +63,8 @@ public class Class1729 extends Class1728
     }
     
     @Override
-    public Collection<Class1932> method6098(final Class346 class346, final String s, final String s2, final int n, final Predicate<String> predicate) {
-        final Collection<Class1932> method6098 = super.method6098(class346, s, s2, n, predicate);
+    public Collection<ResourceLocation> method6098(final Class346 class346, final String s, final String s2, final int n, final Predicate<String> predicate) {
+        final Collection<ResourceLocation> method6098 = super.method6098(class346, s, s2, n, predicate);
         method6098.addAll(this.field9666.method27066(s2, s, n, predicate));
         return method6098;
     }

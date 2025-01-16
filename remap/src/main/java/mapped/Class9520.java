@@ -67,6 +67,6 @@ public interface Class9520
     Class4473 method35540(final Class1795 p0, final Class51 p1);
     
     default Class9520 method35541(final Class9520 class9520, final String s) {
-        return Class90.method511(Class90.field231, s.toLowerCase(Locale.ROOT), class9520);
+        return Registry.method511(Registry.field231, s.toLowerCase(Locale.ROOT), class9520);
     }
 }

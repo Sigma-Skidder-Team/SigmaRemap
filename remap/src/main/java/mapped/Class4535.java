@@ -86,7 +86,7 @@ public abstract class Class4535<FC extends Class5113>
     private final Function<Dynamic<?>, ? extends FC> field20025;
     
     private static <C extends Class5113, F extends Class4535<C>> F method13526(final String s, final F n) {
-        return Class90.method511(Class90.field215, s, n);
+        return Registry.method511(Registry.field215, s, n);
     }
     
     public Class4535(final Function<Dynamic<?>, ? extends FC> field20025) {
@@ -102,7 +102,7 @@ public abstract class Class4535<FC extends Class5113>
     }
     
     public void method13529(final Class1876 class1876, final BlockPos class1877, final BlockState class1878) {
-        class1876.method6688(class1877, class1878, 3);
+        class1876.setBlockState(class1877, class1878, 3);
     }
     
     public abstract boolean method13525(final Class1851 p0, final Class6346<? extends Class7065> p1, final Random p2, final BlockPos p3, final FC p4);
@@ -115,7 +115,7 @@ public abstract class Class4535<FC extends Class5113>
         return Collections.emptyList();
     }
     
-    public static boolean method13532(final Class3833 class3833) {
+    public static boolean method13532(final Block class3833) {
         if (class3833 != Class7521.field29148) {
             if (class3833 != Class7521.field29149) {
                 if (class3833 != Class7521.field29151) {
@@ -128,7 +128,7 @@ public abstract class Class4535<FC extends Class5113>
         return true;
     }
     
-    public static boolean method13533(final Class3833 class3833) {
+    public static boolean method13533(final Block class3833) {
         if (class3833 != Class7521.field29156) {
             if (class3833 != Class7521.field29155) {
                 if (class3833 != Class7521.field29158) {

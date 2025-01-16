@@ -130,9 +130,9 @@ public class Class824 extends Class819 implements Class831, Class825
     
     @Override
     public void method4172() {
-        this.world.method6796().method15297("brain");
+        this.world.method6796().startSection("brain");
         this.method2618().method1211((Class1849)this.world, this);
-        this.world.method6796().method15299();
+        this.world.method6796().endSection();
         if (!this.method4824()) {
             if (this.field4402 > 0) {
                 --this.field4402;
@@ -561,7 +561,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     @Override
     public ITextComponent method1842() {
-        return new Class2259(this.getType().method23366() + '.' + Class90.field240.method503(this.method4870().method28781()).method7797(), new Object[0]);
+        return new Class2259(this.getType().method23366() + '.' + Registry.field240.getKey(this.method4870().method28781()).method7797(), new Object[0]);
     }
     
     @Override
@@ -783,8 +783,8 @@ public class Class824 extends Class819 implements Class831, Class825
             double n3 = 6.0;
             for (int j = 0; j >= -12; --j) {
                 final BlockPos method1133 = class354.add(n, n3 + j, n2);
-                if (this.world.method6701(method1133).method21706() || this.world.method6701(method1133).method21697().method26438()) {
-                    if (this.world.method6701(method1133.method1139()).method21697().method26443()) {
+                if (this.world.getBlockState(method1133).method21706() || this.world.getBlockState(method1133).method21697().method26438()) {
+                    if (this.world.getBlockState(method1133.method1139()).method21697().method26443()) {
                         n3 += j;
                         break;
                     }

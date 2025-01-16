@@ -111,7 +111,7 @@ public class Class8447
         for (int j = 0; j < method16819.length; ++j) {
             final String str = method16819[j];
             if (class5509.method16812(method16818, str) == null) {
-                Class8571.method28848("Model renderer not found, model: " + class5509.method16816() + ", name: " + str);
+                Config.warn("Model renderer not found, model: " + class5509.method16816() + ", name: " + str);
             }
         }
     }
@@ -126,7 +126,7 @@ public class Class8447
             if (method16815.method29437().isPresent()) {
                 str2 = "" + Class5412.method16520(method16815.method29437().get());
             }
-            Class8571.method28848("Model adapter already registered for id: " + str + ", type: " + str2);
+            Config.warn("Model adapter already registered for id: " + str + ", type: " + str2);
         }
         map.put(str, class5509);
     }

@@ -26,7 +26,7 @@ public class Class6829 extends Class6826
         final Class51 class51 = new Class51();
         if (this.field26823.method316("id", 8)) {
             if (!this.field26823.method323("id").contains(":")) {
-                this.field26823.method306("id", new Class1932(this.field26823.method323("id")).toString());
+                this.field26823.method306("id", new ResourceLocation(this.field26823.method323("id")).toString());
             }
         }
         else {

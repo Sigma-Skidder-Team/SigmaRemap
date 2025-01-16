@@ -51,7 +51,7 @@ public class Class8233<U>
     
     @Override
     public String toString() {
-        return Class90.field242.method503(this).toString();
+        return Registry.field242.getKey(this).toString();
     }
     
     public Optional<Function<Dynamic<?>, U>> method27285() {
@@ -59,11 +59,11 @@ public class Class8233<U>
     }
     
     private static <U extends IDynamicSerializable> Class8233<U> method27286(final String s, final Optional<Function<Dynamic<?>, U>> optional) {
-        return Class90.method512(Class90.field242, new Class1932(s), new Class8233<U>(optional));
+        return Registry.method512(Registry.field242, new ResourceLocation(s), new Class8233<U>(optional));
     }
     
     private static <U> Class8233<U> method27287(final String s) {
-        return Class90.method512(Class90.field242, new Class1932(s), new Class8233<U>(Optional.empty()));
+        return Registry.method512(Registry.field242, new ResourceLocation(s), new Class8233<U>(Optional.empty()));
     }
     
     static {

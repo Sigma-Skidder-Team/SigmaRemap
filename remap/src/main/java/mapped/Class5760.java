@@ -301,8 +301,8 @@ public class Class5760
         this.field23479 = 0;
         this.field23480 = false;
         this.field23481 = false;
-        this.field23482 = Class8571.method28971();
-        this.field23483 = Class8571.method28971();
+        this.field23482 = Config.method28971();
+        this.field23483 = Config.method28971();
         this.field23484 = false;
         this.field23485 = false;
         this.field23486 = 1.0;
@@ -391,7 +391,7 @@ public class Class5760
         Class9079.method32717(this.field23460 = (Class350[])ArrayUtils.add((Object[])this.field23460, (Object)this.field23563), new Class350[] { this.field23563 });
         this.field23382 = 8;
         this.method17118();
-        Class8571.method28816(this);
+        Config.method28816(this);
     }
     
     public float method17114(final float n) {
@@ -876,8 +876,8 @@ public class Class5760
         }
         if (class6469 == Class6469.field25798) {
             final int n2 = (int)n;
-            if (n2 > 0 && Class8571.method28955()) {
-                Class8571.method28996(Class4647.method13876("of.message.aa.shaders1"), Class4647.method13876("of.message.aa.shaders2"));
+            if (n2 > 0 && Config.method28955()) {
+                Config.method28996(Class4647.method13876("of.message.aa.shaders1"), Class4647.method13876("of.message.aa.shaders2"));
                 return;
             }
             final int[] array = { 0, 2, 4, 6, 8, 12, 16 };
@@ -887,23 +887,23 @@ public class Class5760
                     this.field23487 = array[i];
                 }
             }
-            this.field23487 = Class8571.method28865(this.field23487, 0, 16);
+            this.field23487 = Config.method28865(this.field23487, 0, 16);
         }
         if (class6469 == Class6469.field25799) {
             final int n3 = (int)n;
-            if (n3 > 1 && Class8571.method28955()) {
-                Class8571.method28996(Class4647.method13876("of.message.af.shaders1"), Class4647.method13876("of.message.af.shaders2"));
+            if (n3 > 1 && Config.method28955()) {
+                Config.method28996(Class4647.method13876("of.message.af.shaders1"), Class4647.method13876("of.message.af.shaders2"));
                 return;
             }
             this.field23488 = 1;
             while (this.field23488 * 2 <= n3) {
                 this.field23488 *= 2;
             }
-            this.field23488 = Class8571.method28865(this.field23488, 1, 16);
+            this.field23488 = Config.method28865(this.field23488, 1, 16);
             this.field23461.method5278();
         }
         if (class6469 == Class6469.field25752) {
-            this.field23479 = Class8571.method28865((int)n, 0, 3);
+            this.field23479 = Config.method28865((int)n, 0, 3);
             this.method17139();
         }
     }
@@ -935,7 +935,7 @@ public class Class5760
             switch (this.field23477) {
                 case 1: {
                     this.field23477 = 2;
-                    if (!Class8571.method28822()) {
+                    if (!Config.method28822()) {
                         this.field23477 = 3;
                         break;
                     }
@@ -966,7 +966,7 @@ public class Class5760
         }
         if (class6469 == Class6469.field25779) {
             this.field23482 = !this.field23482;
-            Class8571.method28832();
+            Config.method28832();
         }
         if (class6469 == Class6469.field25754) {
             ++this.field23489;
@@ -1170,8 +1170,8 @@ public class Class5760
             MathHelper.field41105 = this.field23518;
         }
         if (class6469 == Class6469.field25808) {
-            if (!this.field23519 && Class8571.method28955()) {
-                Class8571.method28996(Class4647.method13876("of.message.fr.shaders1"), Class4647.method13876("of.message.fr.shaders2"));
+            if (!this.field23519 && Config.method28955()) {
+                Config.method28996(Class4647.method13876("of.message.fr.shaders1"), Class4647.method13876("of.message.fr.shaders2"));
                 return;
             }
             this.field23519 = !this.field23519;
@@ -1569,7 +1569,7 @@ public class Class5760
                             else {
                                 if (class6469 == Class6469.field25798) {
                                     String string2 = "";
-                                    if (this.field23487 != Class8571.method28925()) {
+                                    if (this.field23487 != Config.method28925()) {
                                         string2 = " (" + Class4647.method13876("of.general.restart") + ")";
                                     }
                                     return (this.field23487 == 0) ? (str + Class4647.method13879() + string2) : (str + this.field23487 + string2);
@@ -1710,11 +1710,11 @@ public class Class5760
                     final String[] split = line.split(":");
                     if (split[0].equals("ofRenderDistanceChunks") && split.length >= 2) {
                         this.field23382 = Integer.valueOf(split[1]);
-                        this.field23382 = Class8571.method28865(this.field23382, 2, 1024);
+                        this.field23382 = Config.method28865(this.field23382, 2, 1024);
                     }
                     if (split[0].equals("ofFogType") && split.length >= 2) {
                         this.field23477 = Integer.valueOf(split[1]);
-                        this.field23477 = Class8571.method28865(this.field23477, 1, 3);
+                        this.field23477 = Config.method28865(this.field23477, 1, 3);
                     }
                     if (split[0].equals("ofFogStart") && split.length >= 2) {
                         this.field23478 = Float.valueOf(split[1]);
@@ -1727,7 +1727,7 @@ public class Class5760
                     }
                     if (split[0].equals("ofMipmapType") && split.length >= 2) {
                         this.field23479 = Integer.valueOf(split[1]);
-                        this.field23479 = Class8571.method28865(this.field23479, 0, 3);
+                        this.field23479 = Config.method28865(this.field23479, 0, 3);
                     }
                     if (split[0].equals("ofOcclusionFancy") && split.length >= 2) {
                         this.field23480 = Boolean.valueOf(split[1]);
@@ -1740,16 +1740,16 @@ public class Class5760
                     }
                     if (split[0].equals("ofAoLevel") && split.length >= 2) {
                         this.field23486 = Float.valueOf(split[1]);
-                        this.field23486 = Class8571.method28867(this.field23486, 0.0, 1.0);
+                        this.field23486 = Config.method28867(this.field23486, 0.0, 1.0);
                     }
                     if (split[0].equals("ofClouds") && split.length >= 2) {
                         this.field23489 = Integer.valueOf(split[1]);
-                        this.field23489 = Class8571.method28865(this.field23489, 0, 3);
+                        this.field23489 = Config.method28865(this.field23489, 0, 3);
                         this.method17136();
                     }
                     if (split[0].equals("ofCloudsHeight") && split.length >= 2) {
                         this.field23490 = Float.valueOf(split[1]);
-                        this.field23490 = Class8571.method28867(this.field23490, 0.0, 1.0);
+                        this.field23490 = Config.method28867(this.field23490, 0.0, 1.0);
                     }
                     if (split[0].equals("ofTrees") && split.length >= 2) {
                         this.field23491 = Integer.valueOf(split[1]);
@@ -1757,19 +1757,19 @@ public class Class5760
                     }
                     if (split[0].equals("ofDroppedItems") && split.length >= 2) {
                         this.field23493 = Integer.valueOf(split[1]);
-                        this.field23493 = Class8571.method28865(this.field23493, 0, 2);
+                        this.field23493 = Config.method28865(this.field23493, 0, 2);
                     }
                     if (split[0].equals("ofRain") && split.length >= 2) {
                         this.field23492 = Integer.valueOf(split[1]);
-                        this.field23492 = Class8571.method28865(this.field23492, 0, 3);
+                        this.field23492 = Config.method28865(this.field23492, 0, 3);
                     }
                     if (split[0].equals("ofAnimatedWater") && split.length >= 2) {
                         this.field23530 = Integer.valueOf(split[1]);
-                        this.field23530 = Class8571.method28865(this.field23530, 0, 2);
+                        this.field23530 = Config.method28865(this.field23530, 0, 2);
                     }
                     if (split[0].equals("ofAnimatedLava") && split.length >= 2) {
                         this.field23531 = Integer.valueOf(split[1]);
-                        this.field23531 = Class8571.method28865(this.field23531, 0, 2);
+                        this.field23531 = Config.method28865(this.field23531, 0, 2);
                     }
                     if (split[0].equals("ofAnimatedFire") && split.length >= 2) {
                         this.field23532 = Boolean.valueOf(split[1]);
@@ -1824,15 +1824,15 @@ public class Class5760
                     }
                     if (split[0].equals("ofAutoSaveTicks") && split.length >= 2) {
                         this.field23495 = Integer.valueOf(split[1]);
-                        this.field23495 = Class8571.method28865(this.field23495, 40, 40000);
+                        this.field23495 = Config.method28865(this.field23495, 40, 40000);
                     }
                     if (split[0].equals("ofBetterGrass") && split.length >= 2) {
                         this.field23494 = Integer.valueOf(split[1]);
-                        this.field23494 = Class8571.method28865(this.field23494, 1, 3);
+                        this.field23494 = Config.method28865(this.field23494, 1, 3);
                     }
                     if (split[0].equals("ofConnectedTextures") && split.length >= 2) {
                         this.field23514 = Integer.valueOf(split[1]);
-                        this.field23514 = Class8571.method28865(this.field23514, 1, 3);
+                        this.field23514 = Config.method28865(this.field23514, 1, 3);
                     }
                     if (split[0].equals("ofWeather") && split.length >= 2) {
                         this.field23499 = Boolean.valueOf(split[1]);
@@ -1848,26 +1848,26 @@ public class Class5760
                     }
                     if (split[0].equals("ofVignette") && split.length >= 2) {
                         this.field23503 = Integer.valueOf(split[1]);
-                        this.field23503 = Class8571.method28865(this.field23503, 0, 2);
+                        this.field23503 = Config.method28865(this.field23503, 0, 2);
                     }
                     if (split[0].equals("ofChunkUpdates") && split.length >= 2) {
                         this.field23504 = Integer.valueOf(split[1]);
-                        this.field23504 = Class8571.method28865(this.field23504, 1, 5);
+                        this.field23504 = Config.method28865(this.field23504, 1, 5);
                     }
                     if (split[0].equals("ofChunkUpdatesDynamic") && split.length >= 2) {
                         this.field23505 = Boolean.valueOf(split[1]);
                     }
                     if (split[0].equals("ofTime") && split.length >= 2) {
                         this.field23506 = Integer.valueOf(split[1]);
-                        this.field23506 = Class8571.method28865(this.field23506, 0, 2);
+                        this.field23506 = Config.method28865(this.field23506, 0, 2);
                     }
                     if (split[0].equals("ofAaLevel") && split.length >= 2) {
                         this.field23487 = Integer.valueOf(split[1]);
-                        this.field23487 = Class8571.method28865(this.field23487, 0, 16);
+                        this.field23487 = Config.method28865(this.field23487, 0, 16);
                     }
                     if (split[0].equals("ofAfLevel") && split.length >= 2) {
                         this.field23488 = Integer.valueOf(split[1]);
-                        this.field23488 = Class8571.method28865(this.field23488, 1, 16);
+                        this.field23488 = Config.method28865(this.field23488, 1, 16);
                     }
                     if (split[0].equals("ofProfiler") && split.length >= 2) {
                         this.field23497 = Boolean.valueOf(split[1]);
@@ -1923,7 +1923,7 @@ public class Class5760
                     }
                     if (split[0].equals("ofScreenshotSize") && split.length >= 2) {
                         this.field23527 = Integer.valueOf(split[1]);
-                        this.field23527 = Class8571.method28865(this.field23527, 1, 4);
+                        this.field23527 = Config.method28865(this.field23527, 1, 4);
                     }
                     if (split[0].equals("ofCustomEntityModels") && split.length >= 2) {
                         this.field23524 = Boolean.valueOf(split[1]);
@@ -1943,7 +1943,7 @@ public class Class5760
                     }
                     if (split[0].equals("ofTranslucentBlocks") && split.length >= 2) {
                         this.field23520 = Integer.valueOf(split[1]);
-                        this.field23520 = Class8571.method28865(this.field23520, 0, 2);
+                        this.field23520 = Config.method28865(this.field23520, 0, 2);
                     }
                     if (split[0].equals("ofChatBackground") && split.length >= 2) {
                         this.field23528 = Integer.valueOf(split[1]);
@@ -1960,7 +1960,7 @@ public class Class5760
                     this.field23563.method1062(Class8341.method27797(split[1]));
                 }
                 catch (final Exception ex) {
-                    Class8571.method28847("Skipping bad option: " + line);
+                    Config.method28847("Skipping bad option: " + line);
                     ex.printStackTrace();
                 }
             }
@@ -1969,7 +1969,7 @@ public class Class5760
             bufferedReader.close();
         }
         catch (final Exception ex2) {
-            Class8571.method28848("Failed to load options");
+            Config.warn("Failed to load options");
             ex2.printStackTrace();
         }
     }
@@ -2052,7 +2052,7 @@ public class Class5760
             printWriter.close();
         }
         catch (final Exception ex) {
-            Class8571.method28848("Failed to save options");
+            Config.warn("Failed to save options");
             ex.printStackTrace();
         }
     }
@@ -2105,8 +2105,8 @@ public class Class5760
         this.field23480 = false;
         this.field23485 = false;
         this.field23481 = false;
-        Class8571.method28970();
-        this.field23482 = Class8571.method28971();
+        Config.method28970();
+        this.field23482 = Config.method28971();
         this.field23483 = false;
         this.field23484 = false;
         this.field23518 = false;

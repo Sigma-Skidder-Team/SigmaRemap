@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 
 public class Class9316
 {
-    private static final Class1932 field40007;
+    private static final ResourceLocation field40007;
     
     public static void method34477(final Class869 class869, final Class7351 class870) {
         Class8726.method29998();
@@ -39,7 +39,7 @@ public class Class9316
         final Mutable class513 = new Mutable();
         for (int i = 0; i < 8; ++i) {
             class513.method1286(class512.getPosX() + ((i >> 0) % 2 - 0.5f) * class512.method1930() * 0.8f, class512.method1944() + ((i >> 1) % 2 - 0.5f) * 0.1f, class512.getPosZ() + ((i >> 2) % 2 - 0.5f) * class512.method1930() * 0.8f);
-            final BlockState method6701 = class512.world.method6701(class513);
+            final BlockState method6701 = class512.world.getBlockState(class513);
             if (method6701.method21710() != Class2115.field12305 && method6701.method21747(class512.world, class513)) {
                 return method6701;
             }
@@ -133,6 +133,6 @@ public class Class9316
     }
     
     static {
-        field40007 = new Class1932("textures/misc/underwater.png");
+        field40007 = new ResourceLocation("textures/misc/underwater.png");
     }
 }

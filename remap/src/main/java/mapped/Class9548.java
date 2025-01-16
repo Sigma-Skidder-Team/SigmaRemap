@@ -18,15 +18,15 @@ public class Class9548
     private static final Predicate<BlockState> field41115;
     private final Class9217 field41116;
     private final Predicate<BlockState> field41117;
-    private final Class1860 field41118;
+    private final IChunk field41118;
     
-    public Class9548(final Class1860 field41118, final Class2020 class2020) {
+    public Class9548(final IChunk field41118, final Class2020 class2020) {
         this.field41116 = new Class9217(9, 256);
         this.field41117 = class2020.method8064();
         this.field41118 = field41118;
     }
     
-    public static void method35711(final Class1860 class1860, final Set<Class2020> set) {
+    public static void method35711(final IChunk class1860, final Set<Class2020> set) {
         final int size = set.size();
         final ObjectArrayList list = new ObjectArrayList(size);
         final ObjectListIterator iterator = ((ObjectList)list).iterator();
@@ -40,8 +40,8 @@ public class Class9548
                     }
                     for (int k = n - 1; k >= 0; --k) {
                         method1296.method1300(i, k, j);
-                        final BlockState method1297 = class1860.method6701(method1296);
-                        if (method1297.method21696() != Class7521.field29147) {
+                        final BlockState method1297 = class1860.getBlockState(method1296);
+                        if (method1297.getBlock() != Class7521.field29147) {
                             while (iterator.hasNext()) {
                                 final Class9548 class1861 = (Class9548)iterator.next();
                                 if (class1861.field41117.test(method1297)) {
@@ -68,7 +68,7 @@ public class Class9548
                     final Mutable class7097 = new Mutable();
                     for (int i = n2 - 1; i >= 0; --i) {
                         class7097.setPos(n, i, n3);
-                        if (this.field41117.test(this.field41118.method6701(class7097))) {
+                        if (this.field41117.test(this.field41118.getBlockState(class7097))) {
                             this.method35715(n, n3, i + 1);
                             return true;
                         }
@@ -112,6 +112,6 @@ public class Class9548
     
     static {
         field41114 = (class7096 -> !class7096.method21706());
-        field41115 = (class7097 -> class7097.method21697().method26440());
+        field41115 = (class7097 -> class7097.getMaterial().method26440());
     }
 }

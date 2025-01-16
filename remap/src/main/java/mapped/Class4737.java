@@ -6,20 +6,20 @@ package mapped;
 
 public class Class4737 extends Class4712<Class792, Class5900<Class792>>
 {
-    private static final Class1932 field20346;
-    private static final Class1932 field20347;
-    private static final Class1932 field20348;
-    private static final Class1932 field20349;
-    private static final Class1932 field20350;
-    private static final Class1932 field20351;
-    private static final Class1932 field20352;
-    private static final Class1932 field20353;
+    private static final ResourceLocation field20346;
+    private static final ResourceLocation field20347;
+    private static final ResourceLocation field20348;
+    private static final ResourceLocation field20349;
+    private static final ResourceLocation field20350;
+    private static final ResourceLocation field20351;
+    private static final ResourceLocation field20352;
+    private static final ResourceLocation field20353;
     
     public Class4737(final Class8551 class8551) {
         super(class8551, new Class5900(), 0.3f);
     }
     
-    public Class1932 method14058(final Class792 class792) {
+    public ResourceLocation method14058(final Class792 class792) {
         final String method8259 = TextFormatting.getTextWithoutFormattingCodes(class792.getName().getString());
         if (method8259 != null && "Toast".equals(method8259)) {
             return Class4737.field20352;
@@ -50,13 +50,13 @@ public class Class4737 extends Class4712<Class792, Class5900<Class792>>
     }
     
     static {
-        field20346 = new Class1932("textures/entity/rabbit/brown.png");
-        field20347 = new Class1932("textures/entity/rabbit/white.png");
-        field20348 = new Class1932("textures/entity/rabbit/black.png");
-        field20349 = new Class1932("textures/entity/rabbit/gold.png");
-        field20350 = new Class1932("textures/entity/rabbit/salt.png");
-        field20351 = new Class1932("textures/entity/rabbit/white_splotched.png");
-        field20352 = new Class1932("textures/entity/rabbit/toast.png");
-        field20353 = new Class1932("textures/entity/rabbit/caerbannog.png");
+        field20346 = new ResourceLocation("textures/entity/rabbit/brown.png");
+        field20347 = new ResourceLocation("textures/entity/rabbit/white.png");
+        field20348 = new ResourceLocation("textures/entity/rabbit/black.png");
+        field20349 = new ResourceLocation("textures/entity/rabbit/gold.png");
+        field20350 = new ResourceLocation("textures/entity/rabbit/salt.png");
+        field20351 = new ResourceLocation("textures/entity/rabbit/white_splotched.png");
+        field20352 = new ResourceLocation("textures/entity/rabbit/toast.png");
+        field20353 = new ResourceLocation("textures/entity/rabbit/caerbannog.png");
     }
 }

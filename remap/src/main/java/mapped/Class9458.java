@@ -227,7 +227,7 @@ public class Class9458
     }
     
     private void method35154(final Class754 class754, final float n, final float n2, final Class316 class755, final float n3, final ItemStack class756, final float n4, final Class7351 class757, final Class7807 class758, final int n5) {
-        if (!Class8571.method28955() || !Class9216.method33907(class755)) {
+        if (!Config.method28955() || !Class9216.method33907(class755)) {
             final boolean b = class755 == Class316.field1877;
             final Class2226 class759 = b ? class754.method2755() : class754.method2755().method8419();
             class757.method22567();
@@ -394,13 +394,13 @@ public class Class9458
         }
         if (this.field40661 < 0.1f) {
             this.field40659 = method2713;
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class9216.method33901(this.field40659);
             }
         }
         if (this.field40663 < 0.1f) {
             this.field40660 = method2714;
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class9216.method33902(this.field40660);
             }
         }
@@ -416,7 +416,7 @@ public class Class9458
     }
     
     static {
-        field40656 = Class6332.method18787(new Class1932("textures/map/map_background.png"));
-        field40657 = Class6332.method18787(new Class1932("textures/map/map_background_checkerboard.png"));
+        field40656 = Class6332.method18787(new ResourceLocation("textures/map/map_background.png"));
+        field40657 = Class6332.method18787(new ResourceLocation("textures/map/map_background_checkerboard.png"));
     }
 }

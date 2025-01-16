@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 
 public class Class568 extends Class566
 {
-    private static final Class1932 field3378;
+    private static final ResourceLocation field3378;
     private final Class869 field3379;
     private final Class8207 field3380;
     private final Consumer<Optional<Throwable>> field3381;
@@ -122,7 +122,7 @@ public class Class568 extends Class566
     }
     
     private void method3315(final int n, final int n2, final int n3, final int n4, final float n5, final float n6) {
-        final int method35649 = MathHelper.method35649((n3 - n - 2) * n5);
+        final int method35649 = MathHelper.ceil((n3 - n - 2) * n5);
         final float n7 = (float)(this.field3386 >> 16 & 0xFF);
         final float n8 = (float)(this.field3386 >> 8 & 0xFF);
         final float n9 = (float)(this.field3386 & 0xFF);
@@ -160,6 +160,6 @@ public class Class568 extends Class566
     }
     
     static {
-        field3378 = new Class1932("textures/gui/title/mojang.png");
+        field3378 = new ResourceLocation("textures/gui/title/mojang.png");
     }
 }

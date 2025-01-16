@@ -148,7 +148,7 @@ public class Class405 extends Class402
         super.method1761(class51);
         if (this.field2491 != Class8644.field36250) {
             if (this.field2491 != null) {
-                class51.method306("Potion", Class90.field212.method503(this.field2491).toString());
+                class51.method306("Potion", Registry.field212.getKey(this.field2491).toString());
             }
         }
         if (this.field2493) {

@@ -147,9 +147,9 @@ public abstract class Class6173
             this.field24947 = field24947;
             this.field24948 = field24948;
             final AxisAlignedBB method18444 = this.method18444();
-            final double n = (method18444.field25073 + method18444.field25076 - field24947) / 2.0;
-            final double n2 = (method18444.field25075 + method18444.field25078 - field24947) / 2.0;
-            this.method18445(new AxisAlignedBB(n, method18444.field25074, n2, n + this.field24947, method18444.field25074 + this.field24948, n2 + this.field24947));
+            final double n = (method18444.minX + method18444.maxX - field24947) / 2.0;
+            final double n2 = (method18444.minZ + method18444.maxZ - field24947) / 2.0;
+            this.method18445(new AxisAlignedBB(n, method18444.minY, n2, n + this.field24947, method18444.minY + this.field24948, n2 + this.field24947));
         }
     }
     
@@ -210,9 +210,9 @@ public abstract class Class6173
     
     public void method18442() {
         final AxisAlignedBB method18444 = this.method18444();
-        this.field24936 = (method18444.field25073 + method18444.field25076) / 2.0;
-        this.field24937 = method18444.field25074;
-        this.field24938 = (method18444.field25075 + method18444.field25078) / 2.0;
+        this.field24936 = (method18444.minX + method18444.maxX) / 2.0;
+        this.field24937 = method18444.minY;
+        this.field24938 = (method18444.minZ + method18444.maxZ) / 2.0;
     }
     
     public int method18419(final float n) {
@@ -240,10 +240,10 @@ public abstract class Class6173
         final int method35645 = MathHelper.floor(this.field24937);
         final int method35646 = MathHelper.floor(this.field24938);
         this.field24959.method1279(method35644, method35645, method35646);
-        if (this.field24932.method6701(this.field24959).method21706()) {
-            final double n4 = (n <= 0.0) ? ((n >= 0.0) ? this.field24936 : this.field24942.field25073) : this.field24942.field25076;
-            final double n5 = (n2 <= 0.0) ? ((n2 >= 0.0) ? this.field24937 : this.field24942.field25074) : this.field24942.field25077;
-            final double n6 = (n3 <= 0.0) ? ((n3 >= 0.0) ? this.field24938 : this.field24942.field25075) : this.field24942.field25078;
+        if (this.field24932.getBlockState(this.field24959).method21706()) {
+            final double n4 = (n <= 0.0) ? ((n >= 0.0) ? this.field24936 : this.field24942.minX) : this.field24942.maxX;
+            final double n5 = (n2 <= 0.0) ? ((n2 >= 0.0) ? this.field24937 : this.field24942.minY) : this.field24942.maxY;
+            final double n6 = (n3 <= 0.0) ? ((n3 >= 0.0) ? this.field24938 : this.field24942.minZ) : this.field24942.maxZ;
             final int method35647 = MathHelper.floor(n4 + n);
             final int method35648 = MathHelper.floor(n5 + n2);
             final int method35649 = MathHelper.floor(n6 + n3);
@@ -255,7 +255,7 @@ public abstract class Class6173
                 }
             }
             this.field24959.method1279(method35647, method35648, method35649);
-            if (!this.field24932.method6701(this.field24959).method21706()) {
+            if (!this.field24932.getBlockState(this.field24959).method21706()) {
                 return true;
             }
             return false;

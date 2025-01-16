@@ -35,7 +35,7 @@ public class Class9545
             ++n3;
         }
         if (n3 != 0) {
-            class7492.method23257(new Class2259("commands.particle.success", new Object[] { Class90.field222.method503((Class6907<? extends Class6909>)class7493.method21272()).toString() }), true);
+            class7492.method23257(new Class2259("commands.particle.success", new Object[] { Registry.field222.getKey((Class6907<? extends Class6909>)class7493.method21272()).toString() }), true);
             return n3;
         }
         throw Class9545.field41093.create();

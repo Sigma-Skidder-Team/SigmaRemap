@@ -6,10 +6,10 @@ package mapped;
 
 import java.nio.file.Path;
 
-public class Class3695 extends Class3693<Class3833>
+public class Class3695 extends Class3693<Block>
 {
     public Class3695(final Class7203 class7203) {
-        super(class7203, Class90.field208);
+        super(class7203, Registry.BLOCK);
     }
     
     @Override
@@ -73,7 +73,7 @@ public class Class3695 extends Class3693<Class3833>
     }
     
     @Override
-    public Path method11367(final Class1932 class1932) {
+    public Path method11367(final ResourceLocation class1932) {
         return this.field17010.method22099().resolve("data/" + class1932.method7798() + "/tags/blocks/" + class1932.method7797() + ".json");
     }
     
@@ -83,7 +83,7 @@ public class Class3695 extends Class3693<Class3833>
     }
     
     @Override
-    public void method11366(final Class6208<Class3833> class6208) {
+    public void method11366(final Class6208<Block> class6208) {
         Class7188.method22056(class6208);
     }
 }

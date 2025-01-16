@@ -293,7 +293,7 @@ public class Class827 extends Class763
                             final int n3 = method4154 + MathHelper.method35658(this.rand, 7, 40) * MathHelper.method35658(this.rand, -1, 1);
                             final int n4 = method4155 + MathHelper.method35658(this.rand, 7, 40) * MathHelper.method35658(this.rand, -1, 1);
                             final BlockPos class7931 = new BlockPos(n2, n3 - 1, n4);
-                            if (this.world.method6701(class7931).method21731(this.world, class7931, class7930)) {
+                            if (this.world.getBlockState(class7931).method21731(this.world, class7931, class7930)) {
                                 if (this.world.method6969(new BlockPos(n2, n3, n4)) < 10) {
                                     class7930.setPosition(n2, n3, n4);
                                     if (!this.world.method7134(n2, n3, n4, 7.0)) {

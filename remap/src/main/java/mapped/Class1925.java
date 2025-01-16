@@ -88,8 +88,8 @@ public final class Class1925 implements AutoCloseable
         this.field10491 = n2;
         this.field10484 = n2;
         GLFW.glfwDefaultWindowHints();
-        if (Class8571.method28926()) {
-            GLFW.glfwWindowHint(135181, Class8571.method28925());
+        if (Config.method28926()) {
+            GLFW.glfwWindowHint(135181, Config.method28925());
         }
         Class9000.method32149();
         GLFW.glfwWindowHint(139265, 196609);

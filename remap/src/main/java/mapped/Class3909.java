@@ -19,7 +19,7 @@ public class Class3909 extends Class3910 implements Class3872
     
     @Override
     public boolean method11945(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
-        return class1855.method6701(class1856.method1137()).method21706();
+        return class1855.getBlockState(class1856.method1137()).method21706();
     }
     
     @Override
@@ -30,7 +30,7 @@ public class Class3909 extends Class3910 implements Class3872
     @Override
     public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final BlockState class1851) {
         final BlockPos method1137 = class1850.method1137();
-        final BlockState method1138 = Class7521.field29241.method11878();
+        final BlockState method1138 = Class7521.field29241.getDefaultState();
         int i = 0;
     Label_0096_Outer:
         while (i < 128) {
@@ -39,8 +39,8 @@ public class Class3909 extends Class3910 implements Class3872
             while (true) {
                 while (j < i / 16) {
                     method1139 = method1139.add(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);
-                    if (class1849.method6701(method1139.method1139()).method21696() == this) {
-                        if (!class1849.method6701(method1139).method21762(class1849, method1139)) {
+                    if (class1849.getBlockState(method1139.method1139()).method21696() == this) {
+                        if (!class1849.getBlockState(method1139).method21762(class1849, method1139)) {
                             ++j;
                             continue Label_0096_Outer;
                         }
@@ -48,10 +48,10 @@ public class Class3909 extends Class3910 implements Class3872
                     ++i;
                     continue Label_0096_Outer;
                 }
-                final BlockState method1140 = class1849.method6701(method1139);
-                if (method1140.method21696() == method1138.method21696()) {
+                final BlockState method1140 = class1849.getBlockState(method1139);
+                if (method1140.getBlock() == method1138.getBlock()) {
                     if (random.nextInt(10) == 0) {
-                        ((Class3872)method1138.method21696()).method11947(class1849, random, method1139, method1140);
+                        ((Class3872)method1138.getBlock()).method11947(class1849, random, method1139, method1140);
                     }
                 }
                 if (!method1140.method21706()) {
@@ -72,7 +72,7 @@ public class Class3909 extends Class3910 implements Class3872
                 if (!method1141.method21752(class1849, method1139)) {
                     continue;
                 }
-                class1849.method6688(method1139, method1141, 3);
+                class1849.setBlockState(method1139, method1141, 3);
                 continue;
             }
         }

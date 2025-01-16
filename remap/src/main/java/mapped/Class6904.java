@@ -6,7 +6,6 @@ package mapped;
 
 import java.io.InputStream;
 import com.google.gson.JsonParser;
-import java.util.Iterator;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 import java.io.IOException;
@@ -69,7 +68,7 @@ public class Class6904
             }
         }
         final Class7856[] array = (Class7856[])list.toArray(new Class7856[list.size()]);
-        Class1932 method29446 = null;
+        ResourceLocation method29446 = null;
         if (method29442 != null) {
             method29446 = method21255(method29441, method29442, ".png");
         }
@@ -84,7 +83,7 @@ public class Class6904
                 method21254(jsonObject2, jsonObject);
             }
             else {
-                Class8571.method28848("BaseID not found: " + method22663);
+                Config.warn("BaseID not found: " + method22663);
             }
         }
     }
@@ -92,20 +91,20 @@ public class Class6904
     private static void method21253(final JsonObject jsonObject, final Map map, final String s) {
         final String method22663 = Class7382.method22663(jsonObject, "model");
         if (method22663 != null) {
-            final Class1932 method22664 = method21255(s, method22663, ".jpm");
+            final ResourceLocation method22664 = method21255(s, method22663, ".jpm");
             try {
                 final JsonObject method22665 = method21259(method22664);
                 if (method22665 == null) {
-                    Class8571.method28848("Model not found: " + method22664);
+                    Config.warn("Model not found: " + method22664);
                     return;
                 }
                 method21254(method22665, jsonObject);
             }
             catch (final IOException ex) {
-                Class8571.method28850("" + ex.getClass().getName() + ": " + ex.getMessage());
+                Config.method28850("" + ex.getClass().getName() + ": " + ex.getMessage());
             }
             catch (final JsonParseException ex2) {
-                Class8571.method28850("" + ex2.getClass().getName() + ": " + ex2.getMessage());
+                Config.method28850("" + ex2.getClass().getName() + ": " + ex2.getMessage());
             }
             catch (final Exception ex3) {
                 ex3.printStackTrace();
@@ -125,7 +124,7 @@ public class Class6904
         }
     }
     
-    public static Class1932 method21255(final String s, String s2, final String s3) {
+    public static ResourceLocation method21255(final String s, String s2, final String s3) {
         if (!s2.endsWith(s3)) {
             s2 += s3;
         }
@@ -142,7 +141,7 @@ public class Class6904
         else {
             s2 = s + "/" + s2;
         }
-        return new Class1932(s2);
+        return new ResourceLocation(s2);
     }
     
     private static void method21256(final JsonObject jsonObject, final Map map) {
@@ -153,11 +152,11 @@ public class Class6904
                     map.put(method22663, jsonObject);
                 }
                 else {
-                    Class8571.method28848("Duplicate model ID: " + method22663);
+                    Config.warn("Duplicate model ID: " + method22663);
                 }
             }
             else {
-                Class8571.method28848("Empty model ID: " + method22663);
+                Config.warn("Empty model ID: " + method22663);
             }
         }
     }
@@ -194,10 +193,10 @@ public class Class6904
         throw new JsonParseException(s);
     }
     
-    public static JsonObject method21259(final Class1932 class1932) throws IOException, JsonParseException {
-        final InputStream method28897 = Class8571.method28897(class1932);
+    public static JsonObject method21259(final ResourceLocation class1932) throws IOException, JsonParseException {
+        final InputStream method28897 = Config.method28897(class1932);
         if (method28897 != null) {
-            final String method28898 = Class8571.method28960(method28897, "ASCII");
+            final String method28898 = Config.method28960(method28897, "ASCII");
             method28897.close();
             return (JsonObject)new JsonParser().parse(method28898);
         }

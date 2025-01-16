@@ -18,7 +18,7 @@ import org.apache.logging.log4j.Logger;
 import com.google.gson.JsonObject;
 import java.util.Map;
 
-public abstract class Class1779 extends Class1776<Map<Class1932, JsonObject>>
+public abstract class Class1779 extends Class1776<Map<ResourceLocation, JsonObject>>
 {
     private static final Logger field9879;
     private static final int field9880;
@@ -30,12 +30,12 @@ public abstract class Class1779 extends Class1776<Map<Class1932, JsonObject>>
         this.field9882 = field9882;
     }
     
-    public Map<Class1932, JsonObject> method6375(final Class6582 class6582, final IProfiler class6583) {
+    public Map<ResourceLocation, JsonObject> method6375(final Class6582 class6582, final IProfiler class6583) {
         final HashMap hashMap = Maps.newHashMap();
         final int beginIndex = this.field9882.length() + 1;
-        for (final Class1932 class6584 : class6582.method19936(this.field9882, s -> s.endsWith(".json"))) {
+        for (final ResourceLocation class6584 : class6582.method19936(this.field9882, s -> s.endsWith(".json"))) {
             final String method7797 = class6584.method7797();
-            final Class1932 obj = new Class1932(class6584.method7798(), method7797.substring(beginIndex, method7797.length() - Class1779.field9880));
+            final ResourceLocation obj = new ResourceLocation(class6584.method7798(), method7797.substring(beginIndex, method7797.length() - Class1779.field9880));
             try (final Class1671 method7798 = class6582.method19933(class6584);
                  final InputStream method7799 = method7798.method5887();
                  final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(method7799, StandardCharsets.UTF_8))) {

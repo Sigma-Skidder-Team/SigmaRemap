@@ -20,7 +20,7 @@ public class Class4025 extends Class4024
     
     public Class4025(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class4025.field18115, Direction.NORTH)).method21773((Class7111<Comparable>)Class4025.field18116, true));
+        this.method11877(((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class4025.field18115, Direction.NORTH)).with((IProperty<Comparable>)Class4025.field18116, true));
     }
     
     @Override
@@ -47,26 +47,26 @@ public class Class4025 extends Class4024
     @Override
     public Class7096 method11846(final Class7074 class7074) {
         final Class7096 method11846 = Class7521.field29288.method11846(class7074);
-        return (method11846 != null) ? ((Class7096)((Class7097<Object, Object>)this.method11878()).method21773((Class7111<Comparable>)Class4025.field18115, (Comparable)method11846.method21772((Class7111<V>)Class4025.field18115))) : null;
+        return (method11846 != null) ? ((Class7096)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class4025.field18115, (Comparable)method11846.method21772((IProperty<V>)Class4025.field18115))) : null;
     }
     
     @Override
     public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
-        if (class7096.method21772((Class7111<Boolean>)Class4025.field18116)) {
-            final Direction method782 = class7096.method21772((Class7111<Direction>)Class4025.field18115).getOpposite();
+        if (class7096.method21772((IProperty<Boolean>)Class4025.field18116)) {
+            final Direction method782 = class7096.method21772((IProperty<Direction>)Class4025.field18115).getOpposite();
             class7097.method6709(Class6912.field27101, class7098.getX() + 0.5 + (random.nextDouble() - 0.5) * 0.2 + 0.27 * method782.getXOffset(), class7098.getY() + 0.7 + (random.nextDouble() - 0.5) * 0.2 + 0.22, class7098.getZ() + 0.5 + (random.nextDouble() - 0.5) * 0.2 + 0.27 * method782.getZOffset(), 0.0, 0.0, 0.0);
         }
     }
     
     @Override
     public boolean method12216(final World class1847, final BlockPos class1848, final Class7096 class1849) {
-        final Direction method782 = class1849.method21772((Class7111<Direction>)Class4025.field18115).getOpposite();
+        final Direction method782 = class1849.method21772((IProperty<Direction>)Class4025.field18115).getOpposite();
         return class1847.method6747(class1848.method1149(method782), method782);
     }
     
     @Override
     public int method11848(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
-        return (class7096.method21772((Class7111<Boolean>)Class4025.field18116) && class7096.method21772((Class7111<Comparable>)Class4025.field18115) != class7099) ? 15 : 0;
+        return (class7096.method21772((IProperty<Boolean>)Class4025.field18116) && class7096.method21772((IProperty<Comparable>)Class4025.field18115) != class7099) ? 15 : 0;
     }
     
     @Override
@@ -80,7 +80,7 @@ public class Class4025 extends Class4024
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Block, Class7096> class9500) {
         class9500.method35378(Class4025.field18115, Class4025.field18116);
     }
     

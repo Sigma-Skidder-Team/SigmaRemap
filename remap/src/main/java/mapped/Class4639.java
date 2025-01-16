@@ -10,10 +10,10 @@ import net.minecraft.item.ItemStack;
 
 public class Class4639 extends Class4611<Class4229>
 {
-    private static final Class1932 field20106;
+    private static final ResourceLocation field20106;
     
     @Override
-    public Class1932 method13717() {
+    public ResourceLocation method13717() {
         return Class4639.field20106;
     }
     
@@ -26,6 +26,6 @@ public class Class4639 extends Class4611<Class4229>
     }
     
     static {
-        field20106 = new Class1932("used_totem");
+        field20106 = new ResourceLocation("used_totem");
     }
 }

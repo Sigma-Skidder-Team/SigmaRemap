@@ -19,7 +19,7 @@ import net.minecraft.util.text.ITextComponent;
 public class Class6232 extends Class6227<Class140>
 {
     public Class6232() {
-        super(new Class1932("set_lore"), Class140.class);
+        super(new ResourceLocation("set_lore"), Class140.class);
     }
     
     public void method18550(final JsonObject jsonObject, final Class140 class140, final JsonSerializationContext jsonSerializationContext) {

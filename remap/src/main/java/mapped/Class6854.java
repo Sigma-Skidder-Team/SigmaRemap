@@ -25,7 +25,7 @@ public class Class6854 extends Class6851<LivingEntity>
             for (int j = -1; j <= 1; ++j) {
                 for (int k = -1; k <= 1; ++k) {
                     final BlockPos method20488 = class1851.add(i, j, k);
-                    if (class1849.method6701(method20488).method21755(Class7188.field27885)) {
+                    if (class1849.getBlockState(method20488).method21755(Class7188.field27885)) {
                         arrayList.add(Class363.method1167(method20487, method20488));
                     }
                 }

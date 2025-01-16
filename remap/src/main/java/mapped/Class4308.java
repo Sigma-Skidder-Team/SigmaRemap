@@ -21,7 +21,7 @@ public class Class4308 implements IPacket<IClientPlayNetHandler>
     
     public Class4308(final int field19314, final Class8471<?> class8471, final ITextComponent field19315) {
         this.field19314 = field19314;
-        this.field19315 = Class90.field235.method504(class8471);
+        this.field19315 = Registry.field235.getId(class8471);
         this.field19316 = field19315;
     }
     
@@ -49,7 +49,7 @@ public class Class4308 implements IPacket<IClientPlayNetHandler>
     
     @Nullable
     public Class8471<?> method12952() {
-        return Class90.field235.method499(this.field19315);
+        return Registry.field235.method499(this.field19315);
     }
     
     public ITextComponent method12953() {

@@ -13,7 +13,7 @@ import java.util.List;
 
 public class Class4168 extends Class4158<Class490>
 {
-    public static final Class1932 field18578;
+    public static final ResourceLocation field18578;
     
     public Class4168(final Class9550 class9550) {
         super(class9550);
@@ -34,7 +34,7 @@ public class Class4168 extends Class4158<Class490>
         method12478(class7351, class7352, Class4168.field18578, n, 1.0f, n2, n3, n4, array, 0.2f, 0.25f);
     }
     
-    public static void method12478(final Class7351 class7351, final Class7807 class7352, final Class1932 class7353, final float n, final float n2, final long x, final int n3, final int n4, final float[] array, final float n5, final float n6) {
+    public static void method12478(final Class7351 class7351, final Class7807 class7352, final ResourceLocation class7353, final float n, final float n2, final long x, final int n3, final int n4, final float[] array, final float n5, final float n6) {
         final int n7 = n3 + n4;
         class7351.method22567();
         class7351.method22564(0.5, 0.0, 0.5);
@@ -86,6 +86,6 @@ public class Class4168 extends Class4158<Class490>
     }
     
     static {
-        field18578 = new Class1932("textures/entity/beacon_beam.png");
+        field18578 = new ResourceLocation("textures/entity/beacon_beam.png");
     }
 }

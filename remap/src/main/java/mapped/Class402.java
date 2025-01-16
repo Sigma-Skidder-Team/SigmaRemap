@@ -138,7 +138,7 @@ public abstract class Class402 extends Entity implements Class401
             }
         }
         final BlockPos class354 = new BlockPos(this);
-        final Class7096 method1990 = this.world.method6701(class354);
+        final Class7096 method1990 = this.world.getBlockState(class354);
         if (!method1990.method21706()) {
             if (!method1987) {
                 final VoxelShape method1991 = method1990.method21727(this.world, class354);
@@ -280,7 +280,7 @@ public abstract class Class402 extends Entity implements Class401
         if (method21449 != Class2165.field12882) {
             if (method21449 == Class2165.field12881) {
                 final Class7005 class7007 = (Class7005)class7006;
-                final Class7096 method21450 = this.world.method6701(class7007.method21447());
+                final Class7096 method21450 = this.world.getBlockState(class7007.method21447());
                 this.field2471 = method21450;
                 final Vec3d method21451 = class7007.method21451().subtract(this.getPosX(), this.getPosY(), this.getPosZ());
                 this.method1936(method21451);
@@ -313,7 +313,7 @@ public abstract class Class402 extends Entity implements Class401
     
     public void method1967(final Class7007 class7007) {
         final Entity method21452 = class7007.method21452();
-        int method21453 = MathHelper.method35650(Math.max((float)this.getMotion().length() * this.field2479, 0.0));
+        int method21453 = MathHelper.ceil(Math.max((float)this.getMotion().length() * this.field2479, 0.0));
         if (this.method1983() > 0) {
             if (this.field2482 == null) {
                 this.field2482 = new IntOpenHashSet(5);
@@ -467,7 +467,7 @@ public abstract class Class402 extends Entity implements Class401
         if (this.field2476 != null) {
             class51.method300("OwnerUUID", this.field2476);
         }
-        class51.method306("SoundEvent", Class90.field205.method503(this.field2481).toString());
+        class51.method306("SoundEvent", Registry.field205.getKey(this.field2481).toString());
         class51.method312("ShotFromCrossbow", this.method1982());
     }
     
@@ -496,7 +496,7 @@ public abstract class Class402 extends Entity implements Class401
             this.field2476 = class51.method301("OwnerUUID");
         }
         if (class51.method316("SoundEvent", 8)) {
-            this.field2481 = Class90.field205.method506(new Class1932(class51.method323("SoundEvent"))).orElse(this.method1968());
+            this.field2481 = Registry.field205.method506(new ResourceLocation(class51.method323("SoundEvent"))).orElse(this.method1968());
         }
         this.method1988(class51.method329("ShotFromCrossbow"));
     }

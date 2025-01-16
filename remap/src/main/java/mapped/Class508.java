@@ -67,7 +67,7 @@ public class Class508 extends Entity
             this.method1695(Class8520.field35214, 0.4f, 2.0f + this.rand.nextFloat() * 0.4f);
         }
         if (!this.world.method6976(this.getBoundingBox())) {
-            this.method1838(this.getPosX(), (this.getBoundingBox().field25074 + this.getBoundingBox().field25077) / 2.0, this.getPosZ());
+            this.pushOutOfBlocks(this.getPosX(), (this.getBoundingBox().minY + this.getBoundingBox().maxY) / 2.0, this.getPosZ());
         }
         if (this.field2903 < this.field2897 - 20 + this.getEntityId() % 100) {
             if (this.field2902 == null || this.field2902.method1734(this) > 64.0) {
@@ -91,7 +91,7 @@ public class Class508 extends Entity
         this.method1671(Class2160.field12826, this.getMotion());
         float n2 = 0.98f;
         if (this.onGround) {
-            n2 = this.world.method6701(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.98f;
+            n2 = this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.98f;
         }
         this.method1936(this.getMotion().mul(n2, 0.98, n2));
         if (this.onGround) {

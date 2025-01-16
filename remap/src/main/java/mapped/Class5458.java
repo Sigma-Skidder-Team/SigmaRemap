@@ -48,9 +48,9 @@ public class Class5458 extends Class5419<LivingEntity>
     }
     
     private boolean method16676(final Class1849 class1849, final BlockPos class1850, final LivingEntity class1851) {
-        final BlockState method6701 = class1849.method6701(class1850);
-        if (method6701.method21696().method11785(Class7188.field27910)) {
-            if (method6701.method21772((Class7111<Boolean>)Class3900.field17600)) {
+        final BlockState method6701 = class1849.getBlockState(class1850);
+        if (method6701.getBlock().method11785(Class7188.field27910)) {
+            if (method6701.get((IProperty<Boolean>)Class3900.field17600)) {
                 if (!class1851.method2783()) {
                     return true;
                 }

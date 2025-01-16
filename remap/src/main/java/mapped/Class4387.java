@@ -10,7 +10,7 @@ public class Class4387 implements IPacket<Class5813>
 {
     private static String[] field19658;
     private int field19659;
-    private Class1932 field19660;
+    private ResourceLocation field19660;
     private boolean field19661;
     
     public Class4387() {
@@ -44,7 +44,7 @@ public class Class4387 implements IPacket<Class5813>
         return this.field19659;
     }
     
-    public Class1932 method13203() {
+    public ResourceLocation method13203() {
         return this.field19660;
     }
     

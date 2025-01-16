@@ -26,7 +26,7 @@ public class Class9437 implements ArgumentType<DimensionType>
     public static final DynamicCommandExceptionType field40468;
     
     public DimensionType parse(final StringReader stringReader) throws CommandSyntaxException {
-        return Class90.field226.method506(Class1932.method7799(stringReader)).orElseThrow(() -> Class9437.field40468.create((Object)class1932));
+        return Registry.field226.method506(ResourceLocation.method7799(stringReader)).orElseThrow(() -> Class9437.field40468.create((Object)class1932));
     }
     
     public <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> commandContext, final SuggestionsBuilder suggestionsBuilder) {

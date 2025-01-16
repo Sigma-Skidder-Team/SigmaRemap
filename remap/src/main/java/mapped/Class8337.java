@@ -6,11 +6,8 @@ package mapped;
 
 import java.io.File;
 import java.io.OutputStream;
-import java.util.Iterator;
-import java.io.Reader;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Set;
 import java.net.HttpURLConnection;
 import java.util.Map;
 import java.io.InputStream;
@@ -34,7 +31,7 @@ public class Class8337
             urlConnection.connect();
             if (((HttpURLConnection)urlConnection).getResponseCode() / 100 != 2) {
                 if (((HttpURLConnection)urlConnection).getErrorStream() != null) {
-                    Class8571.method28961(((HttpURLConnection)urlConnection).getErrorStream());
+                    Config.method28961(((HttpURLConnection)urlConnection).getErrorStream());
                 }
                 throw new IOException("HTTP response: " + ((HttpURLConnection)urlConnection).getResponseCode());
             }
@@ -103,12 +100,12 @@ public class Class8337
     public static synchronized String method27789() {
         if (Class8337.field34230 == null) {
             try {
-                if (Class8571.method28935(System.getProperty("player.models.local"), false)) {
+                if (Config.method28935(System.getProperty("player.models.local"), false)) {
                     Class8337.field34230 = new File(Class869.method5277().field4652, "playermodels").toURI().toURL().toExternalForm();
                 }
             }
             catch (final Exception ex) {
-                Class8571.method28848("" + ex.getClass().getName() + ": " + ex.getMessage());
+                Config.warn("" + ex.getClass().getName() + ": " + ex.getMessage());
             }
             if (Class8337.field34230 == null) {
                 Class8337.field34230 = "http://s.optifine.net";

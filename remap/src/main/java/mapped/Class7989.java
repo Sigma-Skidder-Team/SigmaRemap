@@ -79,24 +79,24 @@ public class Class7989
     }
     
     public void method26061(final Consumer<Class5763> consumer) {
-        this.method26063(consumer, Class90.field211.method503(this.field32887));
+        this.method26063(consumer, Registry.field211.getKey(this.field32887));
     }
     
     public void method26062(final Consumer<Class5763> consumer, final String str) {
-        if (!new Class1932(str).equals(Class90.field211.method503(this.field32887))) {
-            this.method26063(consumer, new Class1932(str));
+        if (!new ResourceLocation(str).equals(Registry.field211.getKey(this.field32887))) {
+            this.method26063(consumer, new ResourceLocation(str));
             return;
         }
         throw new IllegalStateException("Shaped Recipe " + str + " should remove its 'save' argument");
     }
     
-    public void method26063(final Consumer<Class5763> consumer, final Class1932 class1932) {
+    public void method26063(final Consumer<Class5763> consumer, final ResourceLocation class1932) {
         this.method26064(class1932);
-        this.field32891.method18003(new Class1932("recipes/root")).method18009("has_the_recipe", new Class4219(class1932)).method18007(Class6467.method19355(class1932)).method18011(Class6526.field25976);
-        consumer.accept(new Class5767(class1932, this.field32887, this.field32888, (this.field32892 != null) ? this.field32892 : "", this.field32889, this.field32890, this.field32891, new Class1932(class1932.method7798(), "recipes/" + this.field32887.method11737().method22110() + "/" + class1932.method7797())));
+        this.field32891.method18003(new ResourceLocation("recipes/root")).method18009("has_the_recipe", new Class4219(class1932)).method18007(Class6467.method19355(class1932)).method18011(Class6526.field25976);
+        consumer.accept(new Class5767(class1932, this.field32887, this.field32888, (this.field32892 != null) ? this.field32892 : "", this.field32889, this.field32890, this.field32891, new ResourceLocation(class1932.method7798(), "recipes/" + this.field32887.method11737().method22110() + "/" + class1932.method7797())));
     }
     
-    private void method26064(final Class1932 obj) {
+    private void method26064(final ResourceLocation obj) {
         if (this.field32889.isEmpty()) {
             throw new IllegalStateException("No pattern is defined for shaped recipe " + obj + "!");
         }

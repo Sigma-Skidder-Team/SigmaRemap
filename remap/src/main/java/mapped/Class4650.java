@@ -34,7 +34,7 @@ public class Class4650 extends Class4648
     public void method13893(final Class6829 class6829) {
         super.method13893(class6829);
         if (this.method13895() != null) {
-            final BlockState method6701 = this.method13895().method6701(this.method13896());
+            final BlockState method6701 = this.method13895().getBlockState(this.method13896());
             this.method13895().method6693(this.field20135.field2657, method6701, method6701, 4);
         }
     }

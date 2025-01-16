@@ -6,8 +6,8 @@ package mapped;
 
 public enum Class1983
 {
-    field10981("red", Class7521.field29279.method11878()), 
-    field10982("brown", Class7521.field29278.method11878());
+    field10981("red", Class7521.field29279.getDefaultState()),
+    field10982("brown", Class7521.field29278.getDefaultState());
     
     private final String field10983;
     private final BlockState field10984;

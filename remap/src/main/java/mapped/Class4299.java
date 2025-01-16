@@ -9,7 +9,7 @@ import java.io.IOException;
 public class Class4299 implements IPacket<Class5807>
 {
     private int field19276;
-    private Class1932 field19277;
+    private ResourceLocation field19277;
     private PacketBuffer field19278;
     
     @Override

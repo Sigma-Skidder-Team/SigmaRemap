@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Class8527
 {
-    private static final Map<Class1932, Class6529<?>> field35799;
+    private static final Map<ResourceLocation, Class6529<?>> field35799;
     private static final Map<Class<?>, Class6529<?>> field35800;
     
     private static void method28606(final Class6529<?> class6529) {
@@ -20,9 +20,9 @@ public class Class8527
     static {
         field35799 = Maps.newHashMap();
         field35800 = Maps.newHashMap();
-        method28606(Class6369.method19021(new Class1932("alternatives"), Class6370.class, Class6370::new));
-        method28606(Class6369.method19021(new Class1932("sequence"), Class6372.class, Class6372::new));
-        method28606(Class6369.method19021(new Class1932("group"), Class6371.class, Class6371::new));
+        method28606(Class6369.method19021(new ResourceLocation("alternatives"), Class6370.class, Class6370::new));
+        method28606(Class6369.method19021(new ResourceLocation("sequence"), Class6372.class, Class6372::new));
+        method28606(Class6369.method19021(new ResourceLocation("group"), Class6371.class, Class6371::new));
         method28606(new Class6527());
         method28606(new Class6535());
         method28606(new Class6533());

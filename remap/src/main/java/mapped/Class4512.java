@@ -39,15 +39,15 @@ public class Class4512 extends Class4500
         this.method13445(class1851, class1853, 0, 0, 0, 4, 10, 7, true, random, Class6924.method21296());
         this.method13492(class1851, random, class1853, this.field19896, 1, 7, 0);
         this.method13492(class1851, random, class1853, Class1982.field10976, 1, 1, 7);
-        final BlockState class1855 = ((Class7097<O, BlockState>)Class7521.field29309.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.SOUTH);
+        final BlockState class1855 = ((StateHolder<O, BlockState>)Class7521.field29309.getDefaultState()).with((IProperty<Comparable>)Class3916.field17732, Direction.SOUTH);
         for (int i = 0; i < 6; ++i) {
             this.method13440(class1851, class1855, 1, 6 - i, 1 + i, class1853);
             this.method13440(class1851, class1855, 2, 6 - i, 1 + i, class1853);
             this.method13440(class1851, class1855, 3, 6 - i, 1 + i, class1853);
             if (i < 5) {
-                this.method13440(class1851, Class7521.field29368.method11878(), 1, 5 - i, 1 + i, class1853);
-                this.method13440(class1851, Class7521.field29368.method11878(), 2, 5 - i, 1 + i, class1853);
-                this.method13440(class1851, Class7521.field29368.method11878(), 3, 5 - i, 1 + i, class1853);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), 1, 5 - i, 1 + i, class1853);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), 2, 5 - i, 1 + i, class1853);
+                this.method13440(class1851, Class7521.field29368.getDefaultState(), 3, 5 - i, 1 + i, class1853);
             }
         }
         return true;

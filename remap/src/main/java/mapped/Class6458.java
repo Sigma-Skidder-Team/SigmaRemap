@@ -22,7 +22,7 @@ public class Class6458 implements Class6459
     }
     
     @Override
-    public void method19318(final Class7859 class7859, final Class9312 class7860) {
+    public void method19318(final Class7859 class7859, final ChunkStatus class7860) {
         this.field25666.method5386(() -> this.field25665.method19318(class7861, class7862));
     }
     

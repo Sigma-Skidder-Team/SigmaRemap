@@ -5,7 +5,7 @@
 package mapped;
 
 import java.util.Arrays;
-import com.mojang.brigadier.Message;
+
 import com.mojang.brigadier.suggestion.Suggestions;
 import java.util.concurrent.CompletableFuture;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
@@ -30,11 +30,11 @@ public class Class9162 implements ArgumentType<Class6257>
     }
     
     public Class6257 parse(final StringReader stringReader) throws CommandSyntaxException {
-        return Class90.field209.method506(Class1932.method7799(stringReader)).orElseThrow(() -> Class9162.field38822.create((Object)class1932));
+        return Registry.field209.method506(ResourceLocation.method7799(stringReader)).orElseThrow(() -> Class9162.field38822.create((Object)class1932));
     }
     
     public <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> commandContext, final SuggestionsBuilder suggestionsBuilder) {
-        return Class7491.method23220(Class90.field209.method507(), suggestionsBuilder);
+        return Class7491.method23220(Registry.field209.method507(), suggestionsBuilder);
     }
     
     public Collection<String> getExamples() {

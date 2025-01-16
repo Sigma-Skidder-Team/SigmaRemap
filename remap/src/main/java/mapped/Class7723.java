@@ -9,5 +9,5 @@ import com.mojang.authlib.minecraft.MinecraftProfileTexture$Type;
 
 public interface Class7723
 {
-    void method24658(final MinecraftProfileTexture$Type p0, final Class1932 p1, final MinecraftProfileTexture p2);
+    void method24658(final MinecraftProfileTexture$Type p0, final ResourceLocation p1, final MinecraftProfileTexture p2);
 }

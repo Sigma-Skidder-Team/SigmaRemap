@@ -9,7 +9,7 @@ import java.nio.file.Path;
 public class Class3697 extends Class3693<Class7255>
 {
     public Class3697(final Class7203 class7203) {
-        super(class7203, Class90.field206);
+        super(class7203, Registry.field206);
     }
     
     @Override
@@ -19,7 +19,7 @@ public class Class3697 extends Class3693<Class7255>
     }
     
     @Override
-    public Path method11367(final Class1932 class1932) {
+    public Path method11367(final ResourceLocation class1932) {
         return this.field17010.method22099().resolve("data/" + class1932.method7798() + "/tags/fluids/" + class1932.method7797() + ".json");
     }
     

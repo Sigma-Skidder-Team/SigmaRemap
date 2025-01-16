@@ -17,14 +17,14 @@ public class Class8795
 {
     public static final Class8795 field36977;
     public static final Class8795 field36978;
-    private final Class1932 field36979;
+    private final ResourceLocation field36979;
     private final ImmutableList<Pair<Class8228, Integer>> field36980;
     private final List<Class8228> field36981;
-    private final Class1932 field36982;
+    private final ResourceLocation field36982;
     private final Class261 field36983;
     private int field36984;
     
-    public Class8795(final Class1932 field36979, final Class1932 field36980, final List<Pair<Class8228, Integer>> list, final Class261 field36981) {
+    public Class8795(final ResourceLocation field36979, final ResourceLocation field36980, final List<Pair<Class8228, Integer>> list, final Class261 field36981) {
         this.field36984 = Integer.MIN_VALUE;
         this.field36979 = field36979;
         this.field36980 = (ImmutableList<Pair<Class8228, Integer>>)ImmutableList.copyOf((Collection)list);
@@ -45,7 +45,7 @@ public class Class8795
         return this.field36984;
     }
     
-    public Class1932 method30672() {
+    public ResourceLocation method30672() {
         return this.field36982;
     }
     
@@ -57,7 +57,7 @@ public class Class8795
         return (List<Class8228>)ImmutableList.copyOf(ObjectArrays.shuffle((Object[])this.field36981.toArray(new Class8228[0]), random));
     }
     
-    public Class1932 method30675() {
+    public ResourceLocation method30675() {
         return this.field36979;
     }
     
@@ -66,7 +66,7 @@ public class Class8795
     }
     
     static {
-        field36977 = new Class8795(new Class1932("empty"), new Class1932("empty"), (List<Pair<Class8228, Integer>>)ImmutableList.of(), Class261.field1247);
-        field36978 = new Class8795(new Class1932("invalid"), new Class1932("invalid"), (List<Pair<Class8228, Integer>>)ImmutableList.of(), Class261.field1247);
+        field36977 = new Class8795(new ResourceLocation("empty"), new ResourceLocation("empty"), (List<Pair<Class8228, Integer>>)ImmutableList.of(), Class261.field1247);
+        field36978 = new Class8795(new ResourceLocation("invalid"), new ResourceLocation("invalid"), (List<Pair<Class8228, Integer>>)ImmutableList.of(), Class261.field1247);
     }
 }

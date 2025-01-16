@@ -155,16 +155,16 @@ public class Class6092
     public Class7099 method18169() {
         if (this.field24705) {
             final Class7099 method6702 = this.field24706.method6702(this.field24709);
-            return (!method6702.method21781() && this.field24708.y >= this.field24709.getY() + method6702.method21782(this.field24706, this.field24709)) ? Class7558.field29974.method22148() : method6702;
+            return (!method6702.isEmpty() && this.field24708.y >= this.field24709.getY() + method6702.method21782(this.field24706, this.field24709)) ? Class7558.field29974.method22148() : method6702;
         }
         return Class7558.field29974.method22148();
     }
     
     public BlockState method18170() {
         if (this.field24705) {
-            return this.field24706.method6701(this.field24709);
+            return this.field24706.getBlockState(this.field24709);
         }
-        return Class7521.field29147.method11878();
+        return Class7521.field29147.getDefaultState();
     }
     
     public void method18171(final float field24714, final float field24715) {
@@ -174,13 +174,13 @@ public class Class6092
     
     public BlockState method18172() {
         if (this.field24705) {
-            BlockState method6701 = this.field24706.method6701(this.field24709);
+            BlockState method6701 = this.field24706.getBlockState(this.field24709);
             if (Class9570.field41245.method22605()) {
                 method6701 = (BlockState)Class9570.method35826(method6701, Class9570.field41245, this.field24706, this.field24709, this.field24708);
             }
             return method6701;
         }
-        return Class7521.field29147.method11878();
+        return Class7521.field29147.getDefaultState();
     }
     
     public final Vector3f method18173() {

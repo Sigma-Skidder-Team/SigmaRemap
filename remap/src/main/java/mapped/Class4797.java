@@ -11,7 +11,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4797 extends Class4703<Class508>
 {
-    private static final Class1932 field20449;
+    private static final ResourceLocation field20449;
     private static final Class6332 field20450;
     
     public Class4797(final Class8551 class8551) {
@@ -32,7 +32,7 @@ public class Class4797 extends Class4703<Class508>
         final float n6 = (method2608 / 4 * 16 + 0) / 64.0f;
         final float n7 = (method2608 / 4 * 16 + 16) / 64.0f;
         float method2609 = (class508.field2897 + n2) / 2.0f;
-        if (Class8571.method28945()) {
+        if (Config.method28945()) {
             method2609 = Class8763.method30347(method2609);
         }
         final int n8 = (int)((MathHelper.sin(method2609 + 0.0f) + 1.0f) * 0.5f * 255.0f);
@@ -48,7 +48,7 @@ public class Class4797 extends Class4703<Class508>
         int n10 = n8;
         int n11 = 255;
         int n12 = n9;
-        if (Class8571.method28945()) {
+        if (Config.method28945()) {
             final int method2614 = Class8763.method30348(method2609);
             if (method2614 >= 0) {
                 n10 = (method2614 >> 16 & 0xFF);
@@ -68,12 +68,12 @@ public class Class4797 extends Class4703<Class508>
         class4150.method12444(class4151, n, n2, 0.0f).method12399(n3, n4, n5, 128).method12391(n6, n7).method12441(Class1904.field10335).method12440(n8).method12445(class4152, 0.0f, 1.0f, 0.0f).method12397();
     }
     
-    public Class1932 method14193(final Class508 class508) {
+    public ResourceLocation method14193(final Class508 class508) {
         return Class4797.field20449;
     }
     
     static {
-        field20449 = new Class1932("textures/entity/experience_orb.png");
+        field20449 = new ResourceLocation("textures/entity/experience_orb.png");
         field20450 = Class6332.method18773(Class4797.field20449);
     }
 }

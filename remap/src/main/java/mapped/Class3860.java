@@ -23,7 +23,7 @@ public abstract class Class3860 extends Class3841 implements Class3856
     
     @Override
     public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.method21772((Class7111<Boolean>)Class3860.field17483)) {
+        if (class7096.method21772((IProperty<Boolean>)Class3860.field17483)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
@@ -68,7 +68,7 @@ public abstract class Class3860 extends Class3841 implements Class3856
     
     @Override
     public Class7099 method11864(final Class7096 class7096) {
-        return class7096.method21772((Class7111<Boolean>)Class3860.field17483) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
+        return class7096.method21772((IProperty<Boolean>)Class3860.field17483) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     
     public Class8289 method11928() {
@@ -77,6 +77,6 @@ public abstract class Class3860 extends Class3841 implements Class3856
     
     static {
         field17483 = Class8970.field37747;
-        field17484 = Class3833.method11778(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
+        field17484 = Block.method11778(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
     }
 }

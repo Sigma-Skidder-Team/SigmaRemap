@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class3908 extends Class3833 implements Class3872
+public class Class3908 extends Block implements Class3872
 {
     private static String[] field17713;
     public static final VoxelShape field17714;
@@ -46,7 +46,7 @@ public class Class3908 extends Class3833 implements Class3872
     
     @Override
     public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
-        return class7097.method6701(class7098.method1139()).method21755(Class7188.field27925);
+        return class7097.getBlockState(class7098.method1139()).method21755(Class7188.field27925);
     }
     
     @Override
@@ -54,12 +54,12 @@ public class Class3908 extends Class3833 implements Class3872
         if (class7096.method21752(class7099, class7100)) {
             if (class7097 == Direction.UP) {
                 if (class7098.method21696() == Class7521.field29761) {
-                    class7099.method6688(class7100, Class7521.field29761.method11878(), 2);
+                    class7099.setBlockState(class7100, Class7521.field29761.getDefaultState(), 2);
                 }
             }
             return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
         }
-        return Class7521.field29147.method11878();
+        return Class7521.field29147.getDefaultState();
     }
     
     @Override
@@ -69,7 +69,7 @@ public class Class3908 extends Class3833 implements Class3872
     
     @Override
     public boolean method11945(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
-        return class1855.method6701(class1856.method1137()).method21706();
+        return class1855.getBlockState(class1856.method1137()).method21706();
     }
     
     @Override
@@ -88,10 +88,10 @@ public class Class3908 extends Class3833 implements Class3872
     }
     
     public void method12014(final World class1847, final BlockPos class1848) {
-        class1847.method6688(class1848.method1137(), ((Class7097<O, Class7096>)Class7521.field29761.method11878()).method21773(Class3913.field17724, Class184.field575), 3);
+        class1847.setBlockState(class1848.method1137(), ((StateHolder<O, Class7096>)Class7521.field29761.getDefaultState()).with(Class3913.field17724, Class184.field575), 3);
     }
     
     static {
-        field17714 = Class3833.method11778(4.0, 0.0, 4.0, 12.0, 12.0, 12.0);
+        field17714 = Block.method11778(4.0, 0.0, 4.0, 12.0, 12.0, 12.0);
     }
 }

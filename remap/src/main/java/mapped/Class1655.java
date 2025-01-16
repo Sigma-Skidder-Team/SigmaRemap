@@ -100,11 +100,11 @@ public class Class1655 extends MinecraftServer
         final Class5029 method1590 = this.method1590();
         if (!field9271) {
             if (this.field9271) {
-                method1590.method15297("autoSave");
+                method1590.startSection("autoSave");
                 Class1655.field9268.info("Saving and pausing game...");
                 this.method1537().method20600();
                 this.method1451(false, false, false);
-                method1590.method15299();
+                method1590.endSection();
             }
         }
         if (!this.field9271) {
@@ -297,10 +297,10 @@ public class Class1655 extends MinecraftServer
     }
     
     private void method5682(final Class1849 class1849) {
-        if (!Class8571.method28921()) {
+        if (!Config.method28921()) {
             this.method5685(class1849);
         }
-        if (!Class8571.method28912()) {
+        if (!Config.method28912()) {
             this.method5684(class1849);
         }
         if (this.field9276 == class1849) {
@@ -337,7 +337,7 @@ public class Class1655 extends MinecraftServer
         if (class1849.method6764().method29564().method585() == 1) {
             final long method6755 = class1849.method6755();
             final long n = method6755 % 24000L;
-            if (Class8571.method28920()) {
+            if (Config.method28920()) {
                 if (n <= 1000L) {
                     class1849.method6756(method6755 - n + 1001L);
                 }
@@ -345,7 +345,7 @@ public class Class1655 extends MinecraftServer
                     class1849.method6756(method6755 - n + 24001L);
                 }
             }
-            if (Class8571.method28922()) {
+            if (Config.method28922()) {
                 if (n <= 14000L) {
                     class1849.method6756(method6755 - n + 14001L);
                 }

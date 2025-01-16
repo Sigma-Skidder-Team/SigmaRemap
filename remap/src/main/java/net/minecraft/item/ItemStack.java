@@ -80,7 +80,7 @@ public final class ItemStack
     }
     
     private ItemStack(final Class51 class51) {
-        this.field34178 = Class90.field211.method505(new Class1932(class51.method323("id")));
+        this.field34178 = Registry.field211.getOrDefault(new ResourceLocation(class51.method323("id")));
         this.field34176 = class51.method317("Count");
         if (class51.method316("tag", 10)) {
             this.field34179 = class51.method327("tag");
@@ -151,7 +151,7 @@ public final class ItemStack
     }
     
     public Class51 method27627(final Class51 class51) {
-        final Class1932 method503 = Class90.field211.method503(this.getItem());
+        final ResourceLocation method503 = Registry.field211.getKey(this.getItem());
         class51.method306("id", (method503 != null) ? method503.toString() : "minecraft:air");
         class51.method296("Count", (byte)this.field34176);
         if (this.field34179 != null) {
@@ -564,7 +564,7 @@ public final class ItemStack
             if (this.method27631()) {
                 arrayList.add(new Class2259("item.durability", new Object[] { this.method27634() - this.method27632(), this.method27634() }));
             }
-            arrayList.add(new StringTextComponent(Class90.field211.method503(this.getItem()).toString()).applyTextStyle(TextFormatting.DARK_GRAY));
+            arrayList.add(new StringTextComponent(Registry.field211.getKey(this.getItem()).toString()).applyTextStyle(TextFormatting.DARK_GRAY));
             if (this.method27656()) {
                 arrayList.add(new Class2259("item.nbt_tags", new Object[] { this.method27657().method293().size() }).applyTextStyle(TextFormatting.DARK_GRAY));
             }
@@ -574,7 +574,7 @@ public final class ItemStack
     
     public static void method27669(final List<ITextComponent> list, final Class52 class52) {
         for (int i = 0; i < class52.size(); ++i) {
-            Class90.field209.method506(Class1932.method7795(class52.method346(i).method323("id"))).ifPresent(class54 -> list2.add(class54.method18599(class53.method319("lvl"))));
+            Registry.field209.method506(ResourceLocation.method7795(class52.method346(i).method323("id"))).ifPresent(class54 -> list2.add(class54.method18599(class53.method319("lvl"))));
         }
     }
     
@@ -582,18 +582,18 @@ public final class ItemStack
         try {
             final Class7572 method23802 = new Class7572(new StringReader(s), true).method23802(true);
             final Class7096 method23803 = method23802.method23799();
-            final Class1932 method23804 = method23802.method23801();
+            final ResourceLocation method23804 = method23802.method23801();
             final boolean b = method23803 != null;
             final boolean b2 = method23804 != null;
             if (b || b2) {
                 if (b) {
                     return Lists.newArrayList((Iterable)method23803.method21696().method11855().applyTextStyle(TextFormatting.DARK_GRAY));
                 }
-                final Class7909<Class3833> method23805 = Class7188.method22057().method18460(method23804);
+                final Class7909<Block> method23805 = Class7188.method22057().method18460(method23804);
                 if (method23805 != null) {
-                    final Collection<Class3833> method23806 = method23805.method25616();
+                    final Collection<Block> method23806 = method23805.method25616();
                     if (!method23806.isEmpty()) {
-                        return method23806.stream().map((Function<? super Object, ?>)Class3833::method11855).map(class2250 -> class2250.method8469(TextFormatting.DARK_GRAY)).collect((Collector<? super Object, ?, Collection<ITextComponent>>)Collectors.toList());
+                        return method23806.stream().map((Function<? super Object, ?>) Block::method11855).map(class2250 -> class2250.method8469(TextFormatting.DARK_GRAY)).collect((Collector<? super Object, ?, Collection<ITextComponent>>)Collectors.toList());
                     }
                 }
             }
@@ -621,7 +621,7 @@ public final class ItemStack
         }
         final Class52 method328 = this.field34179.method328("Enchantments", 10);
         final Class51 e = new Class51();
-        e.method306("id", String.valueOf(Class90.field209.method503(class6257)));
+        e.method306("id", String.valueOf(Registry.field209.getKey(class6257)));
         e.method297("lvl", (byte)n);
         ((AbstractList<Class51>)method328).add(e);
     }

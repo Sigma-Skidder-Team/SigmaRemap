@@ -84,14 +84,14 @@ public class Class6741
     private List<String> method20512(final String s) {
         final List<String> list = Arrays.asList("clear", "rain", "thunder");
         final ArrayList list2 = new ArrayList();
-        final String[] method28937 = Class8571.method28937(s, " ");
+        final String[] method28937 = Config.method28937(s, " ");
         for (int i = 0; i < method28937.length; ++i) {
             final String str = method28937[i];
             if (list.contains(str)) {
                 list2.add(str);
             }
             else {
-                Class8571.method28848("Unknown weather: " + str);
+                Config.warn("Unknown weather: " + str);
             }
         }
         return list2;
@@ -101,12 +101,12 @@ public class Class6741
         if (s == null) {
             return -1;
         }
-        final String[] method28937 = Class8571.method28937(s, ":");
+        final String[] method28937 = Config.method28937(s, ":");
         if (method28937.length == 2) {
             final String s2 = method28937[0];
             final String s3 = method28937[1];
-            final int method28938 = Class8571.method28933(s2, -1);
-            final int method28939 = Class8571.method28933(s3, -1);
+            final int method28938 = Config.method28933(s2, -1);
+            final int method28939 = Config.method28933(s3, -1);
             if (method28938 >= 0) {
                 if (method28938 <= 23) {
                     if (method28939 >= 0) {
@@ -120,10 +120,10 @@ public class Class6741
                     }
                 }
             }
-            Class8571.method28848("Invalid time: " + s);
+            Config.warn("Invalid time: " + s);
             return -1;
         }
-        Class8571.method28848("Invalid time: " + s);
+        Config.warn("Invalid time: " + s);
         return -1;
     }
     
@@ -135,7 +135,7 @@ public class Class6741
             return true;
         }
         if (!str.toLowerCase().equals("false")) {
-            Class8571.method28848("Unknown boolean: " + str);
+            Config.warn("Unknown boolean: " + str);
             return b;
         }
         return false;
@@ -145,11 +145,11 @@ public class Class6741
         if (str == null) {
             return n;
         }
-        final float method28934 = Class8571.method28934(str, Float.MIN_VALUE);
+        final float method28934 = Config.method28934(str, Float.MIN_VALUE);
         if (method28934 != Float.MIN_VALUE) {
             return method28934;
         }
-        Class8571.method28848("Invalid value: " + str);
+        Config.warn("Invalid value: " + str);
         return n;
     }
     
@@ -157,16 +157,16 @@ public class Class6741
         if (str == null) {
             return array;
         }
-        final String[] method28937 = Class8571.method28937(str, " ");
+        final String[] method28937 = Config.method28937(str, " ");
         if (method28937.length != 3) {
-            Class8571.method28848("Invalid axis: " + str);
+            Config.warn("Invalid axis: " + str);
             return array;
         }
         final float[] array2 = new float[3];
         for (int i = 0; i < method28937.length; ++i) {
-            array2[i] = Class8571.method28934(method28937[i], Float.MIN_VALUE);
+            array2[i] = Config.method28934(method28937[i], Float.MIN_VALUE);
             if (array2[i] == Float.MIN_VALUE) {
-                Class8571.method28848("Invalid axis: " + str);
+                Config.warn("Invalid axis: " + str);
                 return array;
             }
         }
@@ -176,7 +176,7 @@ public class Class6741
         if (n * n + n2 * n2 + n3 * n3 >= 1.0E-5f) {
             return new float[] { n3, n2, -n };
         }
-        Class8571.method28848("Invalid axis values: " + str);
+        Config.warn("Invalid axis values: " + str);
         return array;
     }
     
@@ -195,25 +195,25 @@ public class Class6741
                         }
                         final int i = method20518 + this.method20518(this.field26505 - this.field26504) + this.method20518(this.field26506 - this.field26505) + this.method20518(this.field26503 - this.field26506);
                         if (i != 24000) {
-                            Class8571.method28848("Invalid fadeIn/fadeOut times, sum is not 24h: " + i);
+                            Config.warn("Invalid fadeIn/fadeOut times, sum is not 24h: " + i);
                             return false;
                         }
                         if (this.field26509 < 0.0f) {
-                            Class8571.method28848("Invalid speed: " + this.field26509);
+                            Config.warn("Invalid speed: " + this.field26509);
                             return false;
                         }
                         if (this.field26512 > 0) {
                             return true;
                         }
-                        Class8571.method28848("Invalid daysLoop: " + this.field26512);
+                        Config.warn("Invalid daysLoop: " + this.field26512);
                         return false;
                     }
                 }
             }
-            Class8571.method28848("Invalid times, required are: startFadeIn, endFadeIn and endFadeOut.");
+            Config.warn("Invalid times, required are: startFadeIn, endFadeIn and endFadeOut.");
             return false;
         }
-        Class8571.method28848("No source texture: " + str);
+        Config.warn("No source texture: " + str);
         return false;
     }
     
@@ -228,7 +228,7 @@ public class Class6741
     }
     
     public void method20519(final World class1847, final Class7351 class1848, final int n, final float n2, final float n3, final float n4) {
-        final float method28866 = Class8571.method28866(this.method20520(class1847) * this.method20522(n3, n4) * this.method20523(n), 0.0f, 1.0f);
+        final float method28866 = Config.method28866(this.method20520(class1847) * this.method20522(n3, n4) * this.method20523(n), 0.0f, 1.0f);
         if (method28866 >= 1.0E-4f) {
             Class8933.method31617(this.field26520);
             Class9540.method35616(this.field26507, method28866);

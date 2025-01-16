@@ -38,7 +38,7 @@ public class Class6174 extends Class6173
     @Override
     public void method18432(final Class4150 class4150, final Class6092 class4151, final float n) {
         Class9023 field39287 = null;
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             field39287 = Class9216.field39287;
             Class9216.method33835(this.field24962);
         }
@@ -54,7 +54,7 @@ public class Class6174 extends Class6173
         final Vec3d method35707 = class4151.method18161();
         this.field24965.method28706(this.field24962, method35703 - method35707.getX(), method35704 - method35707.getY(), method35705 - method35707.getZ(), this.field24962.rotationYaw, n, new Class7351(), method35706, this.field24965.method28695(this.field24962, n));
         method35706.method25216();
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             Class9216.method33836(null);
             Class9216.method33776(field39287);
         }

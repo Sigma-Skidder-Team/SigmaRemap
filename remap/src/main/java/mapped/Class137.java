@@ -12,10 +12,10 @@ import java.util.Set;
 
 public class Class137 extends Class126
 {
-    private final Class3833 field411;
-    private final Set<Class7111<?>> field412;
+    private final Block field411;
+    private final Set<IProperty<?>> field412;
     
-    private Class137(final Class122[] array, final Class3833 field411, final Set<Class7111<?>> field412) {
+    private Class137(final Class122[] array, final Block field411, final Set<IProperty<?>> field412) {
         super(array);
         this.field411 = field411;
         this.field412 = field412;
@@ -38,16 +38,16 @@ public class Class137 extends Class126
             else {
                 final Class51 method27659 = method27658.method327("BlockStateTag");
             }
-            this.field412.stream().filter((Predicate<? super Object>)class8323::method21771).forEach(class8326 -> class8324.method306(class8326.method21826(), method676(class8325, (Class7111<Comparable>)class8326)));
+            this.field412.stream().filter((Predicate<? super Object>)class8323::method21771).forEach(class8326 -> class8324.method306(class8326.getName(), method676(class8325, (IProperty<Comparable>)class8326)));
         }
         return class8321;
     }
     
-    public static Class4957 method675(final Class3833 class3833) {
+    public static Class4957 method675(final Block class3833) {
         return new Class4957(class3833, null);
     }
     
-    private static <T extends Comparable<T>> String method676(final Class7096 class7096, final Class7111<T> class7097) {
-        return class7097.method21831(class7096.method21772(class7097));
+    private static <T extends Comparable<T>> String method676(final Class7096 class7096, final IProperty<T> class7097) {
+        return class7097.getName(class7096.method21772(class7097));
     }
 }

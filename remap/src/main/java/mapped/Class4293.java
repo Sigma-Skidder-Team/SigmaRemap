@@ -26,7 +26,7 @@ public class Class4293 implements IPacket<IClientPlayNetHandler>
         this.field19253 = class861.method1865();
         this.field19254 = class861.method5194();
         this.field19255 = class861.method1882();
-        this.field19256 = Class90.field227.method504(class861.field4601);
+        this.field19256 = Registry.field227.getId(class861.field4601);
     }
     
     @Override
@@ -68,6 +68,6 @@ public class Class4293 implements IPacket<IClientPlayNetHandler>
     }
     
     public Class8539 method12898() {
-        return Class90.field227.method499(this.field19256);
+        return Registry.field227.method499(this.field19256);
     }
 }

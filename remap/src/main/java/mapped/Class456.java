@@ -11,14 +11,14 @@ import java.util.Random;
 
 public abstract class Class456 extends Class460
 {
-    public Class1932 field2710;
+    public ResourceLocation field2710;
     public long field2711;
     
     public Class456(final Class5412<?> class5412) {
         super(class5412);
     }
     
-    public static void method2323(final Class1855 class1855, final Random random, final BlockPos class1856, final Class1932 class1857) {
+    public static void method2323(final Class1855 class1855, final Random random, final BlockPos class1856, final ResourceLocation class1857) {
         final TileEntity method6727 = class1855.method6727(class1856);
         if (method6727 instanceof Class456) {
             ((Class456)method6727).method2327(class1857, random.nextLong());
@@ -29,7 +29,7 @@ public abstract class Class456 extends Class460
         if (!class51.method316("LootTable", 8)) {
             return false;
         }
-        this.field2710 = new Class1932(class51.method323("LootTable"));
+        this.field2710 = new ResourceLocation(class51.method323("LootTable"));
         this.field2711 = class51.method320("LootTableSeed");
         return true;
     }
@@ -59,7 +59,7 @@ public abstract class Class456 extends Class460
         }
     }
     
-    public void method2327(final Class1932 field2710, final long field2711) {
+    public void method2327(final ResourceLocation field2710, final long field2711) {
         this.field2710 = field2710;
         this.field2711 = field2711;
     }

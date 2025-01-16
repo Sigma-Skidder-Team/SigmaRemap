@@ -6,7 +6,6 @@ package mapped;
 
 import java.util.HashMap;
 import com.google.common.collect.Maps;
-import com.google.common.collect.UnmodifiableIterator;
 import com.google.common.collect.ArrayTable;
 import com.google.common.collect.HashBasedTable;
 import java.util.Collections;
@@ -19,20 +18,20 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.function.Function;
 
-public abstract class Class7097<O, S> implements Class7098<S>
+public abstract class StateHolder<O, S> implements IStateHolder<S>
 {
-    private static final Function<Map.Entry<Class7111<?>, Comparable<?>>, String> field27623;
-    public final O field27624;
-    private final ImmutableMap<Class7111<?>, Comparable<?>> field27625;
-    private Table<Class7111<?>, Comparable<?>, S> field27626;
+    private static final Function<Map.Entry<IProperty<?>, Comparable<?>>, String> field27623;
+    public final O object;
+    private final ImmutableMap<IProperty<?>, Comparable<?>> field27625;
+    private Table<IProperty<?>, Comparable<?>, S> field27626;
     
-    public Class7097(final O field27624, final ImmutableMap<Class7111<?>, Comparable<?>> field27625) {
-        this.field27624 = field27624;
+    public StateHolder(final O field27624, final ImmutableMap<IProperty<?>, Comparable<?>> field27625) {
+        this.object = field27624;
         this.field27625 = field27625;
     }
     
-    public <T extends Comparable<T>> S method21768(final Class7111<T> class7111) {
-        return this.method21773(class7111, (Comparable)method21769((Collection<V>)class7111.method21829(), (V)this.method21772((Class7111<T>)class7111)));
+    public <T extends Comparable<T>> S method21768(final IProperty<T> class7111) {
+        return this.with(class7111, (Comparable)method21769((Collection<V>)class7111.getAllowedValues(), (V)this.get((IProperty<T>)class7111)));
     }
     
     public static <T> T method21769(final Collection<T> collection, final T obj) {
@@ -52,37 +51,37 @@ public abstract class Class7097<O, S> implements Class7098<S>
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
-        sb.append(this.field27624);
-        if (!this.method21776().isEmpty()) {
+        sb.append(this.object);
+        if (!this.getValues().isEmpty()) {
             sb.append('[');
-            sb.append(this.method21776().entrySet().stream().map(Class7097.field27623).collect((Collector<? super Object, ?, String>)Collectors.joining(",")));
+            sb.append(this.getValues().entrySet().stream().map(StateHolder.field27623).collect((Collector<? super Object, ?, String>)Collectors.joining(",")));
             sb.append(']');
         }
         return sb.toString();
     }
     
-    public Collection<Class7111<?>> method21770() {
-        return Collections.unmodifiableCollection((Collection<? extends Class7111<?>>)this.field27625.keySet());
+    public Collection<IProperty<?>> method21770() {
+        return Collections.unmodifiableCollection((Collection<? extends IProperty<?>>)this.field27625.keySet());
     }
     
-    public <T extends Comparable<T>> boolean method21771(final Class7111<T> class7111) {
+    public <T extends Comparable<T>> boolean method21771(final IProperty<T> class7111) {
         return this.field27625.containsKey((Object)class7111);
     }
     
     @Override
-    public <T extends Comparable<T>> T method21772(final Class7111<T> obj) {
+    public <T extends Comparable<T>> T get(final IProperty<T> obj) {
         final Comparable obj2 = (Comparable)this.field27625.get((Object)obj);
         if (obj2 != null) {
-            return obj.method21827().cast(obj2);
+            return obj.getValueClass().cast(obj2);
         }
-        throw new IllegalArgumentException("Cannot get property " + obj + " as it does not exist in " + this.field27624);
+        throw new IllegalArgumentException("Cannot get property " + obj + " as it does not exist in " + this.object);
     }
     
     @Override
-    public <T extends Comparable<T>, V extends T> S method21773(final Class7111<T> class7111, final V obj) {
+    public <T extends Comparable<T>, V extends T> S with(final IProperty<T> class7111, final V obj) {
         final Comparable comparable = (Comparable)this.field27625.get((Object)class7111);
         if (comparable == null) {
-            throw new IllegalArgumentException("Cannot set property " + class7111 + " as it does not exist in " + this.field27624);
+            throw new IllegalArgumentException("Cannot set property " + class7111 + " as it does not exist in " + this.object);
         }
         if (comparable == obj) {
             return (S)this;
@@ -91,35 +90,35 @@ public abstract class Class7097<O, S> implements Class7098<S>
         if (value != null) {
             return (S)value;
         }
-        throw new IllegalArgumentException("Cannot set property " + class7111 + " to " + obj + " on " + this.field27624 + ", it is not an allowed value");
+        throw new IllegalArgumentException("Cannot set property " + class7111 + " to " + obj + " on " + this.object + ", it is not an allowed value");
     }
     
-    public void method21774(final Map<Map<Class7111<?>, Comparable<?>>, S> map) {
+    public void method21774(final Map<Map<IProperty<?>, Comparable<?>>, S> map) {
         if (this.field27626 == null) {
             final HashBasedTable create = HashBasedTable.create();
-            for (final Map.Entry<Class7111, V> entry : this.field27625.entrySet()) {
-                final Class7111 class7111 = entry.getKey();
-                for (final Comparable comparable : class7111.method21829()) {
+            for (final Map.Entry<IProperty, V> entry : this.field27625.entrySet()) {
+                final IProperty class7111 = entry.getKey();
+                for (final Comparable comparable : class7111.getAllowedValues()) {
                     if (comparable == entry.getValue()) {
                         continue;
                     }
                     ((Table)create).put((Object)class7111, (Object)comparable, (Object)map.get(this.method21775(class7111, comparable)));
                 }
             }
-            this.field27626 = (Table<Class7111<?>, Comparable<?>, S>)(((Table)create).isEmpty() ? create : ArrayTable.create((Table)create));
+            this.field27626 = (Table<IProperty<?>, Comparable<?>, S>)(((Table)create).isEmpty() ? create : ArrayTable.create((Table)create));
             return;
         }
         throw new IllegalStateException();
     }
     
-    private Map<Class7111<?>, Comparable<?>> method21775(final Class7111<?> class7111, final Comparable<?> comparable) {
+    private Map<IProperty<?>, Comparable<?>> method21775(final IProperty<?> class7111, final Comparable<?> comparable) {
         final HashMap hashMap = Maps.newHashMap((Map)this.field27625);
         hashMap.put(class7111, comparable);
         return hashMap;
     }
     
     @Override
-    public ImmutableMap<Class7111<?>, Comparable<?>> method21776() {
+    public ImmutableMap<IProperty<?>, Comparable<?>> getValues() {
         return this.field27625;
     }
     

@@ -6,7 +6,7 @@ package mapped;
 
 public class Class4707 extends Class4703<Class863>
 {
-    private static final Class1932 field20295;
+    private static final ResourceLocation field20295;
     private final Class5892<Class863> field20296;
     
     public Class4707(final Class8551 class8551) {
@@ -23,11 +23,11 @@ public class Class4707 extends Class4703<Class863>
         super.method13951(class863, n, n2, class864, class865, n3);
     }
     
-    public Class1932 method13972(final Class863 class863) {
+    public ResourceLocation method13972(final Class863 class863) {
         return Class4707.field20295;
     }
     
     static {
-        field20295 = new Class1932("textures/entity/lead_knot.png");
+        field20295 = new ResourceLocation("textures/entity/lead_knot.png");
     }
 }

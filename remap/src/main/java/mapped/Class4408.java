@@ -34,6 +34,6 @@ public class Class4408 implements Class4407
     }
     
     public static Class4408 method13341(final Dynamic<?> dynamic) {
-        return new Class4408(dynamic.get("top_material").map((Function) BlockState::method21764).orElse(Class7521.field29147.method11878()), dynamic.get("under_material").map((Function) BlockState::method21764).orElse(Class7521.field29147.method11878()), dynamic.get("underwater_material").map((Function) BlockState::method21764).orElse(Class7521.field29147.method11878()));
+        return new Class4408(dynamic.get("top_material").map((Function) BlockState::deserialize).orElse(Class7521.field29147.getDefaultState()), dynamic.get("under_material").map((Function) BlockState::deserialize).orElse(Class7521.field29147.getDefaultState()), dynamic.get("underwater_material").map((Function) BlockState::deserialize).orElse(Class7521.field29147.getDefaultState()));
     }
 }

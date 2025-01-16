@@ -11,19 +11,19 @@ import java.util.stream.Stream;
 
 public class Class2258 extends Class2255
 {
-    private final Class1932 field13808;
+    private final ResourceLocation field13808;
     
-    public Class2258(final String s, final boolean b, final Class1932 field13808) {
+    public Class2258(final String s, final boolean b, final ResourceLocation field13808) {
         super(s, b);
         this.field13808 = field13808;
     }
     
-    public Class2258(final String s, final Class8570 class8570, final boolean b, final Class1932 field13808) {
+    public Class2258(final String s, final Class8570 class8570, final boolean b, final ResourceLocation field13808) {
         super(s, class8570, b);
         this.field13808 = field13808;
     }
     
-    public Class1932 method8491() {
+    public ResourceLocation method8491() {
         return this.field13808;
     }
     

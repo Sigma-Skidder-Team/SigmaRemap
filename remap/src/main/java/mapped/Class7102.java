@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Collection;
 import java.util.Collections;
 
 public abstract class Class7102
@@ -87,9 +86,9 @@ public abstract class Class7102
     public static final Class3090 field27706;
     
     private static Class3090 method21802(final int n, final String s, final Class3090 class3090) {
-        Class90.method513(Class90.field217, n, s, class3090);
+        Registry.method513(Registry.field217, n, s, class3090);
         if (class3090.method9836()) {
-            Class3090.field15440.method561(class3090, Class90.field217.method504(Class90.field217.method505(new Class1932(class3090.field15451))));
+            Class3090.field15440.method561(class3090, Registry.field217.getId(Registry.field217.getOrDefault(new ResourceLocation(class3090.field15451))));
         }
         return class3090;
     }

@@ -11,8 +11,8 @@ import java.util.Map;
 
 public class Class557 extends Class527 implements Class558
 {
-    private static final Class1932 field3336;
-    private static final Class1932 field3337;
+    private static final ResourceLocation field3336;
+    private static final ResourceLocation field3337;
     private final Class8840 field3338;
     private final Map<Class8863, Class572> field3339;
     private Class572 field3340;
@@ -215,7 +215,7 @@ public class Class557 extends Class527 implements Class558
     }
     
     static {
-        field3336 = new Class1932("textures/gui/advancements/window.png");
-        field3337 = new Class1932("textures/gui/advancements/tabs.png");
+        field3336 = new ResourceLocation("textures/gui/advancements/window.png");
+        field3337 = new ResourceLocation("textures/gui/advancements/tabs.png");
     }
 }

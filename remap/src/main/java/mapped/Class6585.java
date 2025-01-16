@@ -48,7 +48,7 @@ public class Class6585
         return this.field26127;
     }
     
-    public void method19948(final World class1847, final BlockPos class1848, final BlockPos field26126, final boolean b, final Class3833 class1849) {
+    public void method19948(final World class1847, final BlockPos class1848, final BlockPos field26126, final boolean b, final Block class1849) {
         if (field26126.getX() >= 1) {
             if (field26126.getY() >= 1) {
                 if (field26126.getZ() >= 1) {
@@ -61,13 +61,13 @@ public class Class6585
                     this.field26126 = field26126;
                     for (final BlockPos class1852 : BlockPos.getAllInBoxMutable(class1850, class1851)) {
                         final BlockPos method1135 = class1852.method1136(class1850);
-                        final BlockState method1136 = class1847.method6701(class1852);
-                        if (class1849 != null && class1849 == method1136.method21696()) {
+                        final BlockState method1136 = class1847.getBlockState(class1852);
+                        if (class1849 != null && class1849 == method1136.getBlock()) {
                             continue;
                         }
                         final TileEntity method1137 = class1847.method6727(class1852);
                         if (method1137 == null) {
-                            if (!method1136.method21722(class1847, class1852) && !method1136.method21762(class1847, class1852)) {
+                            if (!method1136.isOpaqueCube(class1847, class1852) && !method1136.isCollisionShapeOpaque(class1847, class1852)) {
                                 arrayList3.add(new Class9038(method1135, method1136, null));
                             }
                             else {
@@ -117,11 +117,11 @@ public class Class6585
         }
     }
     
-    public List<Class9038> method19950(final BlockPos class354, final Class9092 class355, final Class3833 class356) {
+    public List<Class9038> method19950(final BlockPos class354, final Class9092 class355, final Block class356) {
         return this.method19951(class354, class355, class356, true);
     }
     
-    public List<Class9038> method19951(final BlockPos class354, final Class9092 class355, final Class3833 class356, final boolean b) {
+    public List<Class9038> method19951(final BlockPos class354, final Class9092 class355, final Block class356, final boolean b) {
         final ArrayList arrayList = Lists.newArrayList();
         final MutableBoundingBox method32860 = class355.method32860();
         for (final Class9038 class357 : class355.method32865(this.field26124, class354)) {
@@ -130,7 +130,7 @@ public class Class6585
                 continue;
             }
             final BlockState field38249 = class357.field38249;
-            if (field38249.method21696() != class356) {
+            if (field38249.getBlock() != class356) {
                 continue;
             }
             arrayList.add(new Class9038(class358, field38249.method21708(class355.method32856()), class357.field38250));
@@ -187,9 +187,9 @@ public class Class6585
                             final BlockState method32867 = class1854.field38249.method21709(class1853.method32855()).method21708(class1853.method32856());
                             if (class1854.field38250 != null) {
                                 Class447.method2267(class1851.method6727(field38248));
-                                class1851.method6688(field38248, Class7521.field29517.method11878(), 20);
+                                class1851.setBlockState(field38248, Class7521.field29517.getDefaultState(), 20);
                             }
-                            if (!class1851.method6688(field38248, method32867, n)) {
+                            if (!class1851.setBlockState(field38248, method32867, n)) {
                                 continue;
                             }
                             min = Math.min(min, field38248.getX());
@@ -213,10 +213,10 @@ public class Class6585
                             if (class1855 == null) {
                                 continue;
                             }
-                            if (!(method32867.method21696() instanceof Class3867)) {
+                            if (!(method32867.getBlock() instanceof Class3867)) {
                                 continue;
                             }
-                            ((Class3867)method32867.method21696()).method11921(class1851, field38248, method32867, class1855);
+                            ((Class3867)method32867.getBlock()).method11921(class1851, field38248, method32867, class1855);
                             if (class1855.method21780()) {
                                 continue;
                             }
@@ -248,8 +248,8 @@ public class Class6585
                                 if (!method32869.method21780()) {
                                     continue;
                                 }
-                                final BlockState method32872 = class1851.method6701(class1856);
-                                final Class3833 method32873 = method32872.method21696();
+                                final BlockState method32872 = class1851.getBlockState(class1856);
+                                final Block method32873 = method32872.getBlock();
                                 if (!(method32873 instanceof Class3867)) {
                                     continue;
                                 }
@@ -274,12 +274,12 @@ public class Class6585
                             for (final Pair pair : arrayListWithCapacity2) {
                                 final BlockPos class1860 = (BlockPos)pair.getFirst();
                                 if (!class1853.method32861()) {
-                                    final BlockState method32874 = class1851.method6701(class1860);
-                                    final BlockState method32875 = Class3833.method11786(method32874, class1851, class1860);
+                                    final BlockState method32874 = class1851.getBlockState(class1860);
+                                    final BlockState method32875 = Block.method11786(method32874, class1851, class1860);
                                     if (method32874 != method32875) {
-                                        class1851.method6688(class1860, method32875, (n & 0xFFFFFFFE) | 0x10);
+                                        class1851.setBlockState(class1860, method32875, (n & 0xFFFFFFFE) | 0x10);
                                     }
-                                    class1851.method6694(class1860, method32875.method21696());
+                                    class1851.method6694(class1860, method32875.getBlock());
                                 }
                                 if (pair.getSecond() == null) {
                                     continue;
@@ -307,15 +307,15 @@ public class Class6585
         class1852.method27438((class1852, n5, n6, n7) -> {
             final BlockPos class1853 = new BlockPos(n2 + n5, n3 + n6, n4 + n7);
             final BlockPos method1149 = class1853.method1149(class1852);
-            final BlockState method1150 = class1851.method6701(class1853);
-            final BlockState method1151 = class1851.method6701(method1149);
+            final BlockState method1150 = class1851.getBlockState(class1853);
+            final BlockState method1151 = class1851.getBlockState(method1149);
             final BlockState method1152 = method1150.method21748(class1852, method1151, class1851, class1853, method1149);
             if (method1150 != method1152) {
-                class1851.method6688(class1853, method1152, (n & 0xFFFFFFFE) | 0x10);
+                class1851.setBlockState(class1853, method1152, (n & 0xFFFFFFFE) | 0x10);
             }
             final BlockState method1153 = method1151.method21748(class1852.getOpposite(), method1152, class1851, method1149, class1853);
             if (method1151 != method1153) {
-                class1851.method6688(method1149, method1153, (n & 0xFFFFFFFE) | 0x10);
+                class1851.setBlockState(method1149, method1153, (n & 0xFFFFFFFE) | 0x10);
             }
         });
     }

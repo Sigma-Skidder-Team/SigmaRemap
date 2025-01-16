@@ -80,7 +80,7 @@ public class Class3470 extends Class3467
             if (this.method11037(this.field16340.world.method6954())) {
                 this.field16340.world.method6690(this.field16341, false);
                 this.field16340.world.method6955(1021, this.field16341, 0);
-                this.field16340.world.method6955(2001, this.field16341, Class3833.method11774(this.field16340.world.method6701(this.field16341)));
+                this.field16340.world.method6955(2001, this.field16341, Block.method11774(this.field16340.world.getBlockState(this.field16341)));
             }
         }
     }

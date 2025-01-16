@@ -144,7 +144,7 @@ public class Class497 extends TileEntity
         }
         this.field2854 = field2854;
         this.method2161();
-        this.field2656.method6693(this.method2193(), this.method2194(), this.method2194(), 3);
+        this.field2656.method6693(this.getPos(), this.method2194(), this.method2194(), 3);
         return true;
     }
 }

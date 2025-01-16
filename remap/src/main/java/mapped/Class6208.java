@@ -35,14 +35,14 @@ public class Class6208<T>
     private static final Logger field25043;
     private static final Gson field25044;
     private static final int field25045;
-    private Map<Class1932, Class7909<T>> field25046;
-    private final Function<Class1932, Optional<T>> field25047;
+    private Map<ResourceLocation, Class7909<T>> field25046;
+    private final Function<ResourceLocation, Optional<T>> field25047;
     private final String field25048;
     private final boolean field25049;
     private final String field25050;
     
-    public Class6208(final Function<Class1932, Optional<T>> field25047, final String field25048, final boolean field25049, final String field25050) {
-        this.field25046 = (Map<Class1932, Class7909<T>>)ImmutableMap.of();
+    public Class6208(final Function<ResourceLocation, Optional<T>> field25047, final String field25048, final boolean field25049, final String field25050) {
+        this.field25046 = (Map<ResourceLocation, Class7909<T>>)ImmutableMap.of();
         this.field25047 = field25047;
         this.field25048 = field25048;
         this.field25049 = field25049;
@@ -50,20 +50,20 @@ public class Class6208<T>
     }
     
     @Nullable
-    public Class7909<T> method18460(final Class1932 class1932) {
+    public Class7909<T> method18460(final ResourceLocation class1932) {
         return this.field25046.get(class1932);
     }
     
-    public Class7909<T> method18461(final Class1932 class1932) {
+    public Class7909<T> method18461(final ResourceLocation class1932) {
         final Class7909 class1933 = this.field25046.get(class1932);
         return (class1933 != null) ? class1933 : new Class7909<T>(class1932);
     }
     
-    public Collection<Class1932> method18462() {
+    public Collection<ResourceLocation> method18462() {
         return this.field25046.keySet();
     }
     
-    public Collection<Class1932> method18463(final T t) {
+    public Collection<ResourceLocation> method18463(final T t) {
         final ArrayList arrayList = Lists.newArrayList();
         for (final Map.Entry<K, Class7909> entry : this.field25046.entrySet()) {
             if (!entry.getValue().method25618(t)) {
@@ -74,17 +74,17 @@ public class Class6208<T>
         return arrayList;
     }
     
-    public CompletableFuture<Map<Class1932, Class8162<T>>> method18464(final Class6582 class6582, final Executor executor) {
-        return (CompletableFuture<Map<Class1932, Class8162<T>>>)CompletableFuture.supplyAsync(() -> {
+    public CompletableFuture<Map<ResourceLocation, Class8162<T>>> method18464(final Class6582 class6582, final Executor executor) {
+        return (CompletableFuture<Map<ResourceLocation, Class8162<T>>>)CompletableFuture.supplyAsync(() -> {
             Maps.newHashMap();
             class6583.method19936(this.field25048, s2 -> s2.endsWith(".json")).iterator();
             final Iterator iterator;
             final HashMap hashMap;
             while (iterator.hasNext()) {
-                final Class1932 class6584 = iterator.next();
+                final ResourceLocation class6584 = iterator.next();
                 class6584.method7797();
                 final String s;
-                final Class1932 key = new Class1932(class6584.method7798(), s.substring(this.field25048.length() + 1, s.length() - Class6208.field25045));
+                final ResourceLocation key = new ResourceLocation(class6584.method7798(), s.substring(this.field25048.length() + 1, s.length() - Class6208.field25045));
                 try {
                     class6583.method19935(class6584).iterator();
                     final Iterator iterator2;
@@ -163,11 +163,11 @@ public class Class6208<T>
         }, executor);
     }
     
-    public void method18465(final Map<Class1932, Class8162<T>> map) {
+    public void method18465(final Map<ResourceLocation, Class8162<T>> map) {
         final HashMap hashMap = Maps.newHashMap();
         while (!map.isEmpty()) {
             int n = 0;
-            final Iterator<Map.Entry<Class1932, Class8162<T>>> iterator = map.entrySet().iterator();
+            final Iterator<Map.Entry<ResourceLocation, Class8162<T>>> iterator = map.entrySet().iterator();
             while (iterator.hasNext()) {
                 final Map.Entry<K, Class8162> entry = (Map.Entry<K, Class8162>)iterator.next();
                 final Class8162 class8162 = entry.getValue();
@@ -175,7 +175,7 @@ public class Class6208<T>
                     continue;
                 }
                 n = 1;
-                final Class1932 class8163 = (Class1932)entry.getKey();
+                final ResourceLocation class8163 = (ResourceLocation)entry.getKey();
                 hashMap.put(class8163, class8162.method26982(class8163));
                 iterator.remove();
             }
@@ -192,11 +192,11 @@ public class Class6208<T>
         this.method18466(hashMap);
     }
     
-    public void method18466(final Map<Class1932, Class7909<T>> map) {
-        this.field25046 = (Map<Class1932, Class7909<T>>)ImmutableMap.copyOf((Map)map);
+    public void method18466(final Map<ResourceLocation, Class7909<T>> map) {
+        this.field25046 = (Map<ResourceLocation, Class7909<T>>)ImmutableMap.copyOf((Map)map);
     }
     
-    public Map<Class1932, Class7909<T>> method18467() {
+    public Map<ResourceLocation, Class7909<T>> method18467() {
         return this.field25046;
     }
     

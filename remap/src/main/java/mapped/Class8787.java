@@ -28,22 +28,22 @@ public class Class8787
     public static String field36936;
     
     public static AxisAlignedBB method30573(final Class501 class501) {
-        final BlockPos method1135 = class501.method2193().add(class501.method2560());
+        final BlockPos method1135 = class501.getPos().add(class501.method2560());
         return new AxisAlignedBB(method1135, method1135.add(class501.method2562()));
     }
     
     public static void method30574(final BlockPos class354, final Class1849 class355) {
-        class355.method6692(class354, Class7521.field29416.method11878());
+        class355.method6692(class354, Class7521.field29416.getDefaultState());
         ((Class500)class355.method6727(class354)).method2539().method5211("test runthis");
-        class355.method6692(class354.add(0, 0, -1), Class7521.field29328.method11878());
+        class355.method6692(class354.add(0, 0, -1), Class7521.field29328.getDefaultState());
     }
     
     public static void method30575(final String s, final BlockPos class354, final BlockPos class355, final int n, final Class1849 class356) {
         method30578(method30579(class354, class355, n), class354.getY(), class356);
-        class356.method6692(class354, Class7521.field29820.method11878());
+        class356.method6692(class354, Class7521.field29820.getDefaultState());
         final Class501 class357 = (Class501)class356.method6727(class354);
         class357.method2574(false);
-        class357.method2558(new Class1932(s));
+        class357.method2558(new ResourceLocation(s));
         class357.method2563(class355);
         class357.method2571(Class102.field305);
         class357.method2596(true);
@@ -93,11 +93,11 @@ public class Class8787
     public static Collection<BlockPos> method30582(final BlockPos class354, final int n, final Class1849 class355) {
         final ArrayList arrayList = Lists.newArrayList();
         final AxisAlignedBB method18496 = new AxisAlignedBB(class354).method18496(n);
-        for (int i = (int)method18496.field25073; i <= (int)method18496.field25076; ++i) {
-            for (int j = (int)method18496.field25074; j <= (int)method18496.field25077; ++j) {
-                for (int k = (int)method18496.field25075; k <= (int)method18496.field25078; ++k) {
+        for (int i = (int)method18496.minX; i <= (int)method18496.maxX; ++i) {
+            for (int j = (int)method18496.minY; j <= (int)method18496.maxY; ++j) {
+                for (int k = (int)method18496.minZ; k <= (int)method18496.maxZ; ++k) {
                     final BlockPos class356 = new BlockPos(i, j, k);
-                    if (class355.method6701(class356).method21696() == Class7521.field29820) {
+                    if (class355.getBlockState(class356).method21696() == Class7521.field29820) {
                         arrayList.add(class356);
                     }
                 }
@@ -108,7 +108,7 @@ public class Class8787
     
     private static Class6585 method30583(final String str, final Class1849 class1849) {
         final Class1795 method6910 = class1849.method6910();
-        final Class6585 method6911 = method6910.method6519(new Class1932(str));
+        final Class6585 method6911 = method6910.method6519(new ResourceLocation(str));
         if (method6911 != null) {
             return method6911;
         }
@@ -121,11 +121,11 @@ public class Class8787
     }
     
     private static Class501 method30584(final String str, final BlockPos class354, final Class1849 class355, final boolean b) {
-        class355.method6692(class354, Class7521.field29820.method11878());
+        class355.method6692(class354, Class7521.field29820.getDefaultState());
         final Class501 class356 = (Class501)class355.method6727(class354);
         class356.method2571(Class102.field306);
         class356.method2574(false);
-        class356.method2558(new Class1932(str));
+        class356.method2558(new ResourceLocation(str));
         class356.method2587(b);
         if (class356.method2562() != BlockPos.ZERO) {
             return class356;
@@ -156,7 +156,7 @@ public class Class8787
         if (!(method18876 instanceof Class7067)) {
             if (class354.getY() != n - 1) {
                 if (class354.getY() >= n - 1) {
-                    class356 = Class7521.field29147.method11878();
+                    class356 = Class7521.field29147.getDefaultState();
                 }
                 else {
                     class356 = class355.method6959(class354).method9872().method13339();
@@ -169,14 +169,14 @@ public class Class8787
         else {
             final BlockState[] method18877 = ((Class7067)method18876).method21601();
             if (class354.getY() >= n) {
-                class356 = Class7521.field29147.method11878();
+                class356 = Class7521.field29147.getDefaultState();
             }
             else {
                 class356 = method18877[class354.getY() - 1];
             }
         }
         new Class118(class356, Collections.emptySet(), null).method610(class355, class354, 2);
-        class355.method6694(class354, class356.method21696());
+        class355.method6694(class354, class356.getBlock());
     }
     
     private static boolean method30587(final BlockPos class354, final BlockPos class355, final Class1849 class356) {

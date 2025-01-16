@@ -16,14 +16,14 @@ public class Class4385 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19646;
     private boolean field19647;
-    private Map<Class1932, Class6056> field19648;
-    private Set<Class1932> field19649;
-    private Map<Class1932, Class348> field19650;
+    private Map<ResourceLocation, Class6056> field19648;
+    private Set<ResourceLocation> field19649;
+    private Map<ResourceLocation, Class348> field19650;
     
     public Class4385() {
     }
     
-    public Class4385(final boolean field19647, final Collection<Class8863> collection, final Set<Class1932> field19648, final Map<Class1932, Class348> map) {
+    public Class4385(final boolean field19647, final Collection<Class8863> collection, final Set<ResourceLocation> field19648, final Map<ResourceLocation, Class348> map) {
         this.field19647 = field19647;
         this.field19648 = Maps.newHashMap();
         for (final Class8863 class8863 : collection) {
@@ -58,33 +58,33 @@ public class Class4385 implements IPacket<IClientPlayNetHandler>
     public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.writeBoolean(this.field19647);
         class8654.writeVarInt(this.field19648.size());
-        for (final Map.Entry<Class1932, V> entry : this.field19648.entrySet()) {
-            final Class1932 class8655 = entry.getKey();
+        for (final Map.Entry<ResourceLocation, V> entry : this.field19648.entrySet()) {
+            final ResourceLocation class8655 = entry.getKey();
             final Class6056 class8656 = (Class6056)entry.getValue();
             class8654.method29517(class8655);
             class8656.method18016(class8654);
         }
         class8654.writeVarInt(this.field19649.size());
-        final Iterator<Class1932> iterator2 = this.field19649.iterator();
+        final Iterator<ResourceLocation> iterator2 = this.field19649.iterator();
         while (iterator2.hasNext()) {
             class8654.method29517(iterator2.next());
         }
         class8654.writeVarInt(this.field19650.size());
-        for (final Map.Entry<Class1932, V> entry2 : this.field19650.entrySet()) {
+        for (final Map.Entry<ResourceLocation, V> entry2 : this.field19650.entrySet()) {
             class8654.method29517(entry2.getKey());
             ((Class348)entry2.getValue()).method1035(class8654);
         }
     }
     
-    public Map<Class1932, Class6056> method13193() {
+    public Map<ResourceLocation, Class6056> method13193() {
         return this.field19648;
     }
     
-    public Set<Class1932> method13194() {
+    public Set<ResourceLocation> method13194() {
         return this.field19649;
     }
     
-    public Map<Class1932, Class348> method13195() {
+    public Map<ResourceLocation, Class348> method13195() {
         return this.field19650;
     }
     

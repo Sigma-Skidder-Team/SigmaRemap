@@ -41,7 +41,7 @@ public class Class8090
                                 for (float n2 = 0.0f; n2 <= 15.0f; ++n2) {
                                     for (float n3 = 0.0f; n3 <= 15.0f; ++n3) {
                                         for (float n4 = 0.0f; n4 <= 15.0f; ++n4) {
-                                            final BlockState method12965 = class5728.method6701(new BlockPos(n3, n * 16 + n2, n4));
+                                            final BlockState method12965 = class5728.getBlockState(new BlockPos(n3, n * 16 + n2, n4));
                                             if (class5724.method23925(method12965)) {
                                                 class5724.method23926(new BlockPos(class5728.method7019().field32290 * 16 + n3, n * 16 + n2, class5728.method7019().field32291 * 16 + n4), method12965);
                                             }

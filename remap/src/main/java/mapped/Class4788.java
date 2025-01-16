@@ -28,12 +28,12 @@ public class Class4788 extends Class4703<Class510>
         class511.method22566(Vector3f.YP.rotationDegrees(-90.0f));
         class511.method22564(-0.5, -0.5, 0.5);
         class511.method22566(Vector3f.YP.rotationDegrees(90.0f));
-        Class4709.method13977(Class7521.field29283.method11878(), class511, class512, n3, class510.method2617() / 5 % 2 == 0);
+        Class4709.method13977(Class7521.field29283.getDefaultState(), class511, class512, n3, class510.method2617() / 5 % 2 == 0);
         class511.method22568();
         super.method13951(class510, n, n2, class511, class512, n3);
     }
     
-    public Class1932 method14157(final Class510 class510) {
+    public ResourceLocation method14157(final Class510 class510) {
         return Class1774.field9853;
     }
 }

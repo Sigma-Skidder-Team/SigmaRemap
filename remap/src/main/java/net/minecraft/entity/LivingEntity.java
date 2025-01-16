@@ -183,7 +183,7 @@ public abstract class LivingEntity extends Entity
         if (!this.world.isRemote) {
             if (this.fallDistance > 3.0f) {
                 if (b) {
-                    final float n2 = (float) MathHelper.method35649(this.fallDistance - 3.0f);
+                    final float n2 = (float) MathHelper.ceil(this.fallDistance - 3.0f);
                     if (!class7096.method21706()) {
                         ((Class1849)this.world).method6911(new Class6911(Class8432.field34600, class7096), this.getPosX(), this.getPosY(), this.getPosZ(), (int)(150.0 * Math.min(0.2f + n2 / 15.0f, 2.5)), 0.0, 0.0, 0.0, 0.15000000596046448);
                     }
@@ -208,15 +208,15 @@ public abstract class LivingEntity extends Entity
             this.method2780().ifPresent(this::method2785);
         }
         super.method1660();
-        this.world.method6796().method15297("livingEntityBaseTick");
+        this.world.method6796().startSection("livingEntityBaseTick");
         final boolean b = this instanceof Class512;
         if (this.method1768()) {
             if (!this.method1769()) {
                 if (b) {
-                    if (!this.world.method6787().method34781(this.getBoundingBox())) {
-                        final double n = this.world.method6787().method34782(this) + this.world.method6787().method34800();
+                    if (!this.world.getWorldBorder().method34781(this.getBoundingBox())) {
+                        final double n = this.world.getWorldBorder().method34782(this) + this.world.getWorldBorder().method34800();
                         if (n < 0.0) {
-                            final double method34802 = this.world.method6787().method34802();
+                            final double method34802 = this.world.getWorldBorder().method34802();
                             if (method34802 > 0.0) {
                                 this.attackEntityFrom(DamageSource.field32567, (float)Math.max(1, MathHelper.floor(-n * method34802)));
                             }
@@ -233,7 +233,7 @@ public abstract class LivingEntity extends Entity
         }
         final boolean b2 = b && ((Class512)this).field3025.field27301;
         if (this.method1768()) {
-            if (this.method1720(Class7324.field28319) && this.world.method6701(new BlockPos(this.getPosX(), this.method1944(), this.getPosZ())).method21696() != Class7521.field29765) {
+            if (this.method1720(Class7324.field28319) && this.world.getBlockState(new BlockPos(this.getPosX(), this.method1944(), this.getPosZ())).method21696() != Class7521.field29765) {
                 if (!this.method2622()) {
                     if (!Class9434.method35060(this)) {
                         if (!b2) {
@@ -312,7 +312,7 @@ public abstract class LivingEntity extends Entity
         this.field2954 = this.field2953;
         this.prevRotationYaw = this.rotationYaw;
         this.prevRotationPitch = this.rotationPitch;
-        this.world.method6796().method15299();
+        this.world.method6796().endSection();
     }
     
     public void method2624(final BlockPos class354) {
@@ -1018,10 +1018,10 @@ public abstract class LivingEntity extends Entity
             if (class511 instanceof Class767) {
                 if (this.world.method6765().method31216(Class8878.field37316)) {
                     final BlockPos class512 = new BlockPos(this);
-                    final Class7096 method11878 = Class7521.field29276.method11878();
-                    if (this.world.method6701(class512).method21706()) {
+                    final Class7096 method11878 = Class7521.field29276.getDefaultState();
+                    if (this.world.getBlockState(class512).method21706()) {
                         if (method11878.method21752(this.world, class512)) {
-                            this.world.method6688(class512, method11878, 3);
+                            this.world.setBlockState(class512, method11878, 3);
                             n = 1;
                         }
                     }
@@ -1081,7 +1081,7 @@ public abstract class LivingEntity extends Entity
     public void method2678(final DamageSource class7929, final int n, final boolean b) {
     }
     
-    public Class1932 method2679() {
+    public ResourceLocation method2679() {
         return this.getType().method23368();
     }
     
@@ -1133,7 +1133,7 @@ public abstract class LivingEntity extends Entity
     public boolean method2688() {
         if (!this.isSpectator()) {
             final Class7096 method2689 = this.method2689();
-            final Class3833 method2690 = method2689.method21696();
+            final Block method2690 = method2689.method21696();
             if (method2690 != Class7521.field29307) {
                 if (method2690 != Class7521.field29388) {
                     if (method2690 != Class7521.field29805) {
@@ -1147,14 +1147,14 @@ public abstract class LivingEntity extends Entity
     }
     
     public Class7096 method2689() {
-        return this.world.method6701(new BlockPos(this));
+        return this.world.getBlockState(new BlockPos(this));
     }
     
     private boolean method2690(final BlockPos class354, final Class7096 class355) {
-        if (class355.method21772((Class7111<Boolean>)Class3894.field17567)) {
-            final Class7096 method6701 = this.world.method6701(class354.method1139());
+        if (class355.method21772((IProperty<Boolean>)Class3894.field17567)) {
+            final Class7096 method6701 = this.world.getBlockState(class354.method1139());
             if (method6701.method21696() == Class7521.field29307) {
-                if (((Class7097<Object, Object>)method6701).method21772((Class7111<Comparable>)Class3917.field17752) == class355.method21772((Class7111<Comparable>)Class3894.field17564)) {
+                if (((StateHolder<Object, Object>)method6701).get((IProperty<Comparable>)Class3917.field17752) == class355.method21772((IProperty<Comparable>)Class3894.field17564)) {
                     return true;
                 }
             }
@@ -1182,14 +1182,14 @@ public abstract class LivingEntity extends Entity
     
     public int method2691(final float n, final float n2) {
         final Class1948 method2654 = this.method2654(Class9439.field40481);
-        return MathHelper.method35649((n - 3.0f - ((method2654 != null) ? ((float)(method2654.method7908() + 1)) : 0.0f)) * n2);
+        return MathHelper.ceil((n - 3.0f - ((method2654 != null) ? ((float)(method2654.method7908() + 1)) : 0.0f)) * n2);
     }
     
     public void method2692() {
         if (!this.method1696()) {
-            final Class7096 method6701 = this.world.method6701(new BlockPos(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY() - 0.20000000298023224), MathHelper.floor(this.getPosZ())));
+            final Class7096 method6701 = this.world.getBlockState(new BlockPos(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY() - 0.20000000298023224), MathHelper.floor(this.getPosZ())));
             if (!method6701.method21706()) {
-                final Class7696 method6702 = method6701.method21759();
+                final SoundType method6702 = method6701.method21759();
                 this.method1695(method6702.method24483(), method6702.method24477() * 0.5f, method6702.method24478() * 0.75f);
             }
         }
@@ -1571,7 +1571,7 @@ public abstract class LivingEntity extends Entity
     }
     
     private void method2723(final Entity class399) {
-        if (!this.world.method6701(new BlockPos(class399)).method21696().method11785(Class7188.field27934)) {
+        if (!this.world.getBlockState(new BlockPos(class399)).method21696().method11785(Class7188.field27934)) {
             if (!(class399 instanceof Class423) && !(class399 instanceof Class806)) {
                 double method1938 = class399.getPosX();
                 double method1939 = class399.method1942(1.0);
@@ -1583,9 +1583,9 @@ public abstract class LivingEntity extends Entity
                         final int[][] array = { { 0, 1 }, { 0, -1 }, { -1, 1 }, { -1, -1 }, { 1, 1 }, { 1, -1 }, { -1, 0 }, { 1, 0 }, { 0, 1 } };
                         final double n = Math.floor(this.getPosX()) + 0.5;
                         final double n2 = Math.floor(this.getPosZ()) + 0.5;
-                        final double n3 = this.getBoundingBox().field25076 - this.getBoundingBox().field25073;
-                        final double n4 = this.getBoundingBox().field25078 - this.getBoundingBox().field25075;
-                        final AxisAlignedBB class400 = new AxisAlignedBB(n - n3 / 2.0, class399.getBoundingBox().field25074, n2 - n4 / 2.0, n + n3 / 2.0, Math.floor(class399.getBoundingBox().field25074) + this.method1931(), n2 + n4 / 2.0);
+                        final double n3 = this.getBoundingBox().maxX - this.getBoundingBox().minX;
+                        final double n4 = this.getBoundingBox().maxZ - this.getBoundingBox().minZ;
+                        final AxisAlignedBB class400 = new AxisAlignedBB(n - n3 / 2.0, class399.getBoundingBox().minY, n2 - n4 / 2.0, n + n3 / 2.0, Math.floor(class399.getBoundingBox().minY) + this.method1931(), n2 + n4 / 2.0);
                         for (final int[] array3 : array) {
                             final double n5 = method1941.getXOffset() * array3[0] + method1942.getXOffset() * array3[1];
                             final double n6 = method1941.getZOffset() * array3[0] + method1942.getZOffset() * array3[1];
@@ -1595,7 +1595,7 @@ public abstract class LivingEntity extends Entity
                             if (!this.world.method6978(this, method1943)) {
                                 final BlockPos class401 = new BlockPos(n7, this.getPosY() + 1.0, n8);
                                 if (this.world.method6978(this, method1943.method18499(0.0, 1.0, 0.0))) {
-                                    if (this.world.method6701(class401).method21731(this.world, class401, this)) {
+                                    if (this.world.getBlockState(class401).method21731(this.world, class401, this)) {
                                         method1938 = n7;
                                         method1939 = this.getPosY() + 2.0;
                                         method1940 = n8;
@@ -1604,12 +1604,12 @@ public abstract class LivingEntity extends Entity
                             }
                             else {
                                 final BlockPos class402 = new BlockPos(n7, this.getPosY(), n8);
-                                if (this.world.method6701(class402).method21731(this.world, class402, this)) {
+                                if (this.world.getBlockState(class402).method21731(this.world, class402, this)) {
                                     this.method1878(n7, this.getPosY() + 1.0, n8);
                                     return;
                                 }
                                 final BlockPos class403 = new BlockPos(n7, this.getPosY() - 1.0, n8);
-                                if (this.world.method6701(class403).method21731(this.world, class403, this) || this.world.method6702(class403).method21793(Class7324.field28319)) {
+                                if (this.world.getBlockState(class403).method21731(this.world, class403, this) || this.world.method6702(class403).method21793(Class7324.field28319)) {
                                     method1938 = n7;
                                     method1939 = this.getPosY() + 1.0;
                                     method1940 = n8;
@@ -1627,12 +1627,12 @@ public abstract class LivingEntity extends Entity
                 int n11;
                 float n12;
                 if (!(class399 instanceof Class423)) {
-                    n10 = method1944.field25074;
+                    n10 = method1944.minY;
                     n11 = 3;
                     n12 = 1.5707964f * ((this.method2755() != Class2226.field13698) ? 1 : -1);
                 }
                 else {
-                    n10 = method1944.field25077;
+                    n10 = method1944.maxY;
                     n11 = 2;
                     n12 = 0.0f;
                 }
@@ -1782,8 +1782,8 @@ public abstract class LivingEntity extends Entity
                 }
             }
             else if (!this.method2773()) {
-                final BlockPos method1947 = this.method1675();
-                final float method1948 = this.world.method6701(method1947).method21696().method11865();
+                final BlockPos method1947 = this.getPositionUnderneath();
+                final float method1948 = this.world.getBlockState(method1947).method21696().method11865();
                 final float n6 = this.onGround ? (method1948 * 0.91f) : 0.91f;
                 this.method1724(this.method2731(method1948), class5487);
                 this.method1936(this.method2730(this.getMotion()));
@@ -2013,10 +2013,10 @@ public abstract class LivingEntity extends Entity
             n6 = 0.0f;
         }
         this.field2961 += (n6 - this.field2961) * 0.3f;
-        this.world.method6796().method15297("headTurn");
+        this.world.method6796().startSection("headTurn");
         final float method2707 = this.method2735(n4, n5);
-        this.world.method6796().method15299();
-        this.world.method6796().method15297("rangeChecks");
+        this.world.method6796().endSection();
+        this.world.method6796().startSection("rangeChecks");
         while (this.rotationYaw - this.prevRotationYaw < -180.0f) {
             this.prevRotationYaw -= 360.0f;
         }
@@ -2041,7 +2041,7 @@ public abstract class LivingEntity extends Entity
         while (this.field2953 - this.field2954 >= 180.0f) {
             this.field2954 += 360.0f;
         }
-        this.world.method6796().method15299();
+        this.world.method6796().endSection();
         this.field2962 += method2707;
         if (this.method2773()) {
             ++this.field2989;
@@ -2115,12 +2115,12 @@ public abstract class LivingEntity extends Entity
             field22772 = 0.0;
         }
         this.setMotion(field22770, field22771, field22772);
-        this.world.method6796().method15297("ai");
+        this.world.method6796().startSection("ai");
         if (!this.method2722()) {
             if (this.method2749()) {
-                this.world.method6796().method15297("newAi");
+                this.world.method6796().startSection("newAi");
                 this.method2738();
-                this.world.method6796().method15299();
+                this.world.method6796().endSection();
             }
         }
         else {
@@ -2128,8 +2128,8 @@ public abstract class LivingEntity extends Entity
             this.field2968 = 0.0f;
             this.field2970 = 0.0f;
         }
-        this.world.method6796().method15299();
-        this.world.method6796().method15297("jump");
+        this.world.method6796().endSection();
+        this.world.method6796().startSection("jump");
         Label_0551: {
             if (!this.field2967) {
                 this.field2985 = 0;
@@ -2155,21 +2155,21 @@ public abstract class LivingEntity extends Entity
                 this.method2727(Class7324.field28320);
             }
         }
-        this.world.method6796().method15299();
-        this.world.method6796().method15297("travel");
+        this.world.method6796().endSection();
+        this.world.method6796().startSection("travel");
         this.field2968 *= 0.98f;
         this.field2970 *= 0.98f;
         this.method2737();
         final AxisAlignedBB method1936 = this.getBoundingBox();
         this.method2729(new Vec3d(this.field2968, this.field2969, this.field2970));
-        this.world.method6796().method15299();
-        this.world.method6796().method15297("push");
+        this.world.method6796().endSection();
+        this.world.method6796().startSection("push");
         if (this.field2993 > 0) {
             --this.field2993;
             this.method2740(method1936, this.getBoundingBox());
         }
         this.method2739();
-        this.world.method6796().method15299();
+        this.world.method6796().endSection();
     }
     
     private void method2737() {
@@ -2611,7 +2611,7 @@ public abstract class LivingEntity extends Entity
             int n6 = 0;
             while (n6 == 0 && class354.getY() > 0) {
                 final BlockPos method1941 = class354.method1139();
-                if (!field2391.method6701(method1941).method21697().method26440()) {
+                if (!field2391.getBlockState(method1941).method21697().method26440()) {
                     --n4;
                     class354 = method1941;
                 }
@@ -2686,9 +2686,9 @@ public abstract class LivingEntity extends Entity
         if (this.isPassenger()) {
             this.stopRiding();
         }
-        final Class7096 method6701 = this.world.method6701(class354);
+        final Class7096 method6701 = this.world.getBlockState(class354);
         if (method6701.method21696() instanceof Class3900) {
-            this.world.method6688(class354, ((Class7097<Object, Class7096>)method6701).method21773((Class7111<Comparable>)Class3900.field17600, true), 3);
+            this.world.setBlockState(class354, ((StateHolder<Object, Class7096>)method6701).with((IProperty<Comparable>)Class3900.field17600, true), 3);
         }
         this.method1653(Pose.field1665);
         this.method2785(class354);
@@ -2702,15 +2702,15 @@ public abstract class LivingEntity extends Entity
     }
     
     private boolean method2786() {
-        return this.method2780().map(class354 -> this.world.method6701(class354).method21696() instanceof Class3900).orElse(false);
+        return this.method2780().map(class354 -> this.world.getBlockState(class354).method21696() instanceof Class3900).orElse(false);
     }
     
     public void method2787() {
         this.method2780().filter(this.world::method6971).ifPresent(class354 -> {
-            this.world.method6701(class354);
-            final Class7097<Object, Class7096> class355;
+            this.world.getBlockState(class354);
+            final StateHolder<Object, Class7096> class355;
             if (!(!(((Class7096)class355).method21696() instanceof Class3900))) {
-                this.world.method6688(class354, class355.method21773((Class7111<Comparable>)Class3900.field17600, false), 3);
+                this.world.setBlockState(class354, class355.with((IProperty<Comparable>)Class3900.field17600, false), 3);
                 final Vec3d class356 = Class3900.method11991(this.getType(), this.world, class354, 0).orElseGet(() -> {
                     class357.method1137();
                     final BlockPos class358;

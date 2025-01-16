@@ -9,7 +9,7 @@ public abstract class Class6835 implements Class6834
     public Class7832 field26831;
     private Class7833 field26832;
     public final Class286 field26833;
-    public final Class1932 field26834;
+    public final ResourceLocation field26834;
     public float field26835;
     public float field26836;
     public float field26837;
@@ -25,7 +25,7 @@ public abstract class Class6835 implements Class6834
         this(class7795.method25124(), class7796);
     }
     
-    public Class6835(final Class1932 field26834, final Class286 field26835) {
+    public Class6835(final ResourceLocation field26834, final Class286 field26835) {
         this.field26835 = 1.0f;
         this.field26836 = 1.0f;
         this.field26842 = Class229.field810;
@@ -34,7 +34,7 @@ public abstract class Class6835 implements Class6834
     }
     
     @Override
-    public Class1932 method20920() {
+    public ResourceLocation method20920() {
         return this.field26834;
     }
     

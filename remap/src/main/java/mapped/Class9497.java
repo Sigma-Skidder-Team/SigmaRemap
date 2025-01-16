@@ -25,7 +25,7 @@ public class Class9497
                 if (!str.equals("F")) {
                     if (!str.equals("4F")) {
                         if (!str.equals("2F")) {
-                            Class8571.method28848("NaturalTextures: Unknown type: " + str);
+                            Config.warn("NaturalTextures: Unknown type: " + str);
                         }
                         else {
                             this.field40850 = 2;

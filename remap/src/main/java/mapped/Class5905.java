@@ -6,7 +6,7 @@ package mapped;
 
 public class Class5905 extends Class5901
 {
-    public static final Class1932 field24278;
+    public static final ResourceLocation field24278;
     private final Class6300 field24279;
     
     public Class5905() {
@@ -33,6 +33,6 @@ public class Class5905 extends Class5901
     }
     
     static {
-        field24278 = new Class1932("textures/entity/trident.png");
+        field24278 = new ResourceLocation("textures/entity/trident.png");
     }
 }

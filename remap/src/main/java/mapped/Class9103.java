@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class Class9103
 {
-    private Class1932 field38550;
+    private ResourceLocation field38550;
     private int field38551;
     private int field38552;
     private boolean field38553;
@@ -17,7 +17,7 @@ public class Class9103
     private static final int field38556 = 1;
     private static final int field38557 = 2;
     
-    public Class9103(final Class1932 field38550, final int field38551, final int field38552, final boolean field38553) {
+    public Class9103(final ResourceLocation field38550, final int field38551, final int field38552, final boolean field38553) {
         this.field38551 = 0;
         this.field38552 = 2;
         this.field38550 = field38550;
@@ -27,9 +27,9 @@ public class Class9103
     }
     
     public static Class9103 method32897(final String s, final int n, final Properties properties) {
-        final Class1932 class1932 = new Class1932(s);
+        final ResourceLocation class1932 = new ResourceLocation(s);
         final int method32899 = method32899(method32898("scaleMode", n, properties));
-        return new Class9103(class1932, method32899, method32900(method32898("scale", n, properties), (method32899 != 0) ? 1 : 2), Class8571.method28935(method32898("center", n, properties), false));
+        return new Class9103(class1932, method32899, method32900(method32898("scale", n, properties), (method32899 != 0) ? 1 : 2), Config.method28935(method32898("center", n, properties), false));
     }
     
     private static String method32898(final String s, final int i, final Properties properties) {
@@ -66,7 +66,7 @@ public class Class9103
             return n;
         }
         trim = trim.trim();
-        final int method28933 = Class8571.method28933(trim, -1);
+        final int method28933 = Config.method28933(trim, -1);
         if (method28933 >= 1) {
             return method28933;
         }
@@ -79,7 +79,7 @@ public class Class9103
         Class8933.method31585();
         final Class7392 method22694 = Class7392.method22694();
         final Class4148 method22695 = method22694.method22696();
-        Class8571.method28895().method5849(this.field38550);
+        Config.method28895().method5849(this.field38550);
         Class8933.method31646(1.0f, 1.0f, 1.0f, 1.0f);
         final float n = (float)(16 * this.field38552);
         float n2 = a / n;

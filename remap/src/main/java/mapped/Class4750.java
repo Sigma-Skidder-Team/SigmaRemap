@@ -6,7 +6,7 @@ package mapped;
 
 public class Class4750 extends Class4749
 {
-    private static final Class1932 field20372;
+    private static final ResourceLocation field20372;
     
     public Class4750(final Class8551 class8551) {
         super(class8551);
@@ -18,11 +18,11 @@ public class Class4750 extends Class4749
     }
     
     @Override
-    public Class1932 method14083(final Class827 class827) {
+    public ResourceLocation method14083(final Class827 class827) {
         return Class4750.field20372;
     }
     
     static {
-        field20372 = new Class1932("textures/entity/zombie/husk.png");
+        field20372 = new ResourceLocation("textures/entity/zombie/husk.png");
     }
 }

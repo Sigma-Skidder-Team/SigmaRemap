@@ -36,6 +36,6 @@ public class Class6554
     }
     
     public void method19863(final Class7771 class7771) {
-        this.field26041 = (Class7771[])Class8571.method28982(this.field26041, class7771);
+        this.field26041 = (Class7771[]) Config.method28982(this.field26041, class7771);
     }
 }

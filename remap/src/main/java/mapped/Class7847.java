@@ -141,8 +141,8 @@ public class Class7847
         return Class9528.method35579().getName();
     }
     
-    public static Class1932 method25378(final String s) {
-        return new Class1932(s);
+    public static ResourceLocation method25378(final String s) {
+        return new ResourceLocation(s);
     }
     
     public static String method25379(final String s, final Object... array) {
@@ -150,7 +150,7 @@ public class Class7847
     }
     
     public static void method25380(final String s) {
-        Class869.method5277().method5290().method5849(new Class1932(s));
+        Class869.method5277().method5290().method5849(new ResourceLocation(s));
     }
     
     public static void method25381(final String s) {

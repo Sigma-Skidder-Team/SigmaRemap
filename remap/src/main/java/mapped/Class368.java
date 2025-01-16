@@ -23,7 +23,7 @@ public class Class368 extends Class367
     }
     
     public <T> Class368(final Dynamic<T> dynamic) {
-        this(Class90.field218.method505(new Class1932(dynamic.get("provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("provider").orElseEmptyMap()));
+        this(Registry.field218.getOrDefault(new ResourceLocation(dynamic.get("provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("provider").orElseEmptyMap()));
     }
     
     @Override
@@ -72,7 +72,7 @@ public class Class368 extends Class367
         for (int i = 2; i >= -3; --i) {
             final BlockPos method1138 = class1876.method1138(i);
             if (Class4592.method13614(class1875, method1138)) {
-                class1875.method6688(method1138, this.field2210.method1164(random, class1876), 19);
+                class1875.setBlockState(method1138, this.field2210.method1164(random, class1876), 19);
                 break;
             }
             if (!Class4592.method13609(class1875, method1138) && i < 0) {
@@ -83,6 +83,6 @@ public class Class368 extends Class367
     
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
-        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Class90.field221.method503(this.field2209).toString()), dynamicOps.createString("provider"), this.field2210.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)))).getValue();
+        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Registry.field221.getKey(this.field2209).toString()), dynamicOps.createString("provider"), this.field2210.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)))).getValue();
     }
 }

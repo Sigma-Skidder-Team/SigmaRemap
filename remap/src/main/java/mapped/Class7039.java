@@ -14,7 +14,7 @@ public class Class7039 implements Class7038
     
     @Override
     public InputStream method21531(final String s) {
-        return Class8571.method28821(s);
+        return Config.method28821(s);
     }
     
     @Override

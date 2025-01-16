@@ -18,13 +18,13 @@ import java.util.List;
 
 public class Class7822 implements Class7823
 {
-    private Class1932 field32037;
+    private ResourceLocation field32037;
     private final List<String> field32038;
     private final int field32039;
     private final int field32040;
     
-    public Class7822(final Class1932 class1932, final int field32039, final int field32040, final List<String> field32041) {
-        this.field32037 = new Class1932(class1932.method7798(), "textures/" + class1932.method7797());
+    public Class7822(final ResourceLocation class1932, final int field32039, final int field32040, final List<String> field32041) {
+        this.field32037 = new ResourceLocation(class1932.method7798(), "textures/" + class1932.method7797());
         this.field32037 = Class9265.method34179(this.field32037);
         this.field32038 = field32041;
         this.field32039 = field32039;
@@ -51,7 +51,7 @@ public class Class7822 implements Class7823
             arrayList.add(method35913);
         }
         if (!arrayList.isEmpty() && !((String)arrayList.get(0)).isEmpty()) {
-            return new Class7822(new Class1932(Class9583.method35895(jsonObject, "file")), method35910, method35911, arrayList);
+            return new Class7822(new ResourceLocation(Class9583.method35895(jsonObject, "file")), method35910, method35911, arrayList);
         }
         throw new JsonParseException("Expected to find data in chars, found none.");
     }

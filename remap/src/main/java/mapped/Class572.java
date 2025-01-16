@@ -83,7 +83,7 @@ public class Class572 extends Class565
         Class8726.method30009(518);
         Class565.method3293(234, 113, 0, 0, -16777216);
         Class8726.method30009(515);
-        final Class1932 method22530 = this.field3408.method22530();
+        final ResourceLocation method22530 = this.field3408.method22530();
         if (method22530 == null) {
             this.field3403.method5290().method5849(Class1663.field9428);
         }

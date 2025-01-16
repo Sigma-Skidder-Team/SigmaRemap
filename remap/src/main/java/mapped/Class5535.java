@@ -72,7 +72,7 @@ public class Class5535 extends Class5509
             class5902.field20284 = field20284;
             return (Class9559)class5902;
         }
-        Class8571.method28848("Field not found: EnderDragonRenderer.model");
+        Config.warn("Field not found: EnderDragonRenderer.model");
         return null;
     }
 }

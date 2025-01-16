@@ -12,7 +12,7 @@ import net.minecraft.util.math.Vec3d;
 
 public class Class4789 extends Class4703<Class425>
 {
-    private static final Class1932 field20422;
+    private static final ResourceLocation field20422;
     private static final Class6332 field20423;
     
     public Class4789(final Class8551 class8551) {
@@ -95,12 +95,12 @@ public class Class4789 extends Class4703<Class425>
         class4150.method12444(class4151, n * n4, n2 * (n4 * n4 + n4) * 0.5f + 0.25f, n3 * n4).method12399(0, 0, 0, 255).method12397();
     }
     
-    public Class1932 method14162(final Class425 class425) {
+    public ResourceLocation method14162(final Class425 class425) {
         return Class4789.field20422;
     }
     
     static {
-        field20422 = new Class1932("textures/entity/fishing_hook.png");
+        field20422 = new ResourceLocation("textures/entity/fishing_hook.png");
         field20423 = Class6332.method18768(Class4789.field20422);
     }
 }

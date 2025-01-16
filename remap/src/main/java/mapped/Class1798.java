@@ -14,7 +14,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class1798<T extends LivingEntity & Class825, M extends Class5845<T> & Class5858> extends Class1799<T, M> implements Class1657
 {
-    private static final Int2ObjectMap<Class1932> field9961;
+    private static final Int2ObjectMap<ResourceLocation> field9961;
     private final Object2ObjectMap<Class7611, Class235> field9962;
     private final Object2ObjectMap<Class9334, Class235> field9963;
     private final Class6580 field9964;
@@ -34,25 +34,25 @@ public class Class1798<T extends LivingEntity & Class825, M extends Class5845<T>
             final Class8562 method4870 = t.method4870();
             final Class7611 method4871 = method4870.method28780();
             final Class9334 method4872 = method4870.method28781();
-            final Class235 method4873 = this.method6553(this.field9962, "type", Class90.field239, method4871);
-            final Class235 method4874 = this.method6553(this.field9963, "profession", Class90.field240, method4872);
+            final Class235 method4873 = this.method6553(this.field9962, "type", Registry.field239, method4871);
+            final Class235 method4874 = this.method6553(this.field9963, "profession", Registry.field240, method4872);
             final Class5845<T> method4875 = this.method6559();
             ((Class5858)method4875).method17589(method4874 == Class235.field897 || (method4874 == Class235.field898 && method4873 != Class235.field899));
-            Class1799.method6558(method4875, this.method6552("type", Class90.field239.method503(method4871)), class7351, class7352, n, t, 1.0f, 1.0f, 1.0f);
+            Class1799.method6558(method4875, this.method6552("type", Registry.field239.getKey(method4871)), class7351, class7352, n, t, 1.0f, 1.0f, 1.0f);
             ((Class5858)method4875).method17589(true);
             if (method4872 != Class9334.field40060) {
                 if (!t.method2625()) {
-                    Class1799.method6558(method4875, this.method6552("profession", Class90.field240.method503(method4872)), class7351, class7352, n, t, 1.0f, 1.0f, 1.0f);
+                    Class1799.method6558(method4875, this.method6552("profession", Registry.field240.getKey(method4872)), class7351, class7352, n, t, 1.0f, 1.0f, 1.0f);
                     if (method4872 != Class9334.field40071) {
-                        Class1799.method6558(method4875, this.method6552("profession_level", (Class1932)Class1798.field9961.get(MathHelper.method35651(method4870.method28782(), 1, Class1798.field9961.size()))), class7351, class7352, n, t, 1.0f, 1.0f, 1.0f);
+                        Class1799.method6558(method4875, this.method6552("profession_level", (ResourceLocation)Class1798.field9961.get(MathHelper.method35651(method4870.method28782(), 1, Class1798.field9961.size()))), class7351, class7352, n, t, 1.0f, 1.0f, 1.0f);
                     }
                 }
             }
         }
     }
     
-    private Class1932 method6552(final String str, final Class1932 class1932) {
-        return new Class1932(class1932.method7798(), "textures/entity/" + this.field9965 + "/" + str + "/" + class1932.method7797() + ".png");
+    private ResourceLocation method6552(final String str, final ResourceLocation class1932) {
+        return new ResourceLocation(class1932.method7798(), "textures/entity/" + this.field9965 + "/" + str + "/" + class1932.method7797() + ".png");
     }
     
     public <K> Class235 method6553(final Object2ObjectMap<K, Class235> object2ObjectMap, final String s, final Class93<K> class93, final K k) {
@@ -104,11 +104,11 @@ public class Class1798<T extends LivingEntity & Class825, M extends Class5845<T>
     
     static {
         field9961 = Class8349.method27851((Int2ObjectMap)new Int2ObjectOpenHashMap(), int2ObjectOpenHashMap -> {
-            int2ObjectOpenHashMap.put(1, (Object)new Class1932("stone"));
-            int2ObjectOpenHashMap.put(2, (Object)new Class1932("iron"));
-            int2ObjectOpenHashMap.put(3, (Object)new Class1932("gold"));
-            int2ObjectOpenHashMap.put(4, (Object)new Class1932("emerald"));
-            int2ObjectOpenHashMap.put(5, (Object)new Class1932("diamond"));
+            int2ObjectOpenHashMap.put(1, (Object)new ResourceLocation("stone"));
+            int2ObjectOpenHashMap.put(2, (Object)new ResourceLocation("iron"));
+            int2ObjectOpenHashMap.put(3, (Object)new ResourceLocation("gold"));
+            int2ObjectOpenHashMap.put(4, (Object)new ResourceLocation("emerald"));
+            int2ObjectOpenHashMap.put(5, (Object)new ResourceLocation("diamond"));
         });
     }
 }

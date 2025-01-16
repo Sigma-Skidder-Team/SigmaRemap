@@ -10,13 +10,13 @@ import java.io.IOException;
 public class Class4382 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19626;
-    private Class1932 field19627;
+    private ResourceLocation field19627;
     private Class286 field19628;
     
     public Class4382() {
     }
     
-    public Class4382(final Class1932 field19627, final Class286 field19628) {
+    public Class4382(final ResourceLocation field19627, final Class286 field19628) {
         this.field19627 = field19627;
         this.field19628 = field19628;
     }
@@ -49,7 +49,7 @@ public class Class4382 implements IPacket<IClientPlayNetHandler>
     }
     
     @Nullable
-    public Class1932 method13174() {
+    public ResourceLocation method13174() {
         return this.field19627;
     }
     

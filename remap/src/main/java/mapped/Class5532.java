@@ -46,7 +46,7 @@ public class Class5532 extends Class5509
             map.put(Class298.field1713, class5901);
             return (Class9559)method35732;
         }
-        Class8571.method28848("Field not found: TileEntitySkullRenderer.MODELS");
+        Config.warn("Field not found: TileEntitySkullRenderer.MODELS");
         return null;
     }
 }

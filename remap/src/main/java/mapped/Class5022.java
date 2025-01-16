@@ -11,7 +11,7 @@ import java.util.Random;
 
 public final class Class5022 implements Class5020
 {
-    public static final Class1932 field21530;
+    public static final ResourceLocation field21530;
     
     private Class5022() {
     }
@@ -37,11 +37,11 @@ public final class Class5022 implements Class5020
     }
     
     @Override
-    public Class1932 method15238() {
+    public ResourceLocation method15238() {
         return Class5022.field21530;
     }
     
     static {
-        field21530 = new Class1932("ore_drops");
+        field21530 = new ResourceLocation("ore_drops");
     }
 }

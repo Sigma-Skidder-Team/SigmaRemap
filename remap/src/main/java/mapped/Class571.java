@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Class571 extends Class565
 {
-    private static final Class1932 field3399;
+    private static final ResourceLocation field3399;
     private final Class869 field3400;
     private final Map<UUID, Class6881> field3401;
     
@@ -114,6 +114,6 @@ public class Class571 extends Class565
     }
     
     static {
-        field3399 = new Class1932("textures/gui/bars.png");
+        field3399 = new ResourceLocation("textures/gui/bars.png");
     }
 }

@@ -22,7 +22,7 @@ import java.util.List;
 
 public class Class525 extends Class517<Class3434>
 {
-    private static final Class1932 field3122;
+    private static final ResourceLocation field3122;
     private static final Class443 field3123;
     private static int field3124;
     private float field3125;
@@ -33,7 +33,7 @@ public class Class525 extends Class517<Class3434>
     private Class752 field3130;
     private boolean field3131;
     private boolean field3132;
-    private final Map<Class1932, Class7909<Item>> field3133;
+    private final Map<ResourceLocation, Class7909<Item>> field3133;
     
     public Class525(final Class512 class512) {
         super(new Class3434(class512), class512.field3006, new StringTextComponent(""));
@@ -356,7 +356,7 @@ public class Class525 extends Class517<Class3434>
             ((Class3434)this.field3077).field16225.addAll((Collection<?>)class8924.method31456(s.toLowerCase(Locale.ROOT)));
         }
         else {
-            final Iterator<Object> iterator = Class90.field211.iterator();
+            final Iterator<Object> iterator = Registry.field211.iterator();
             while (iterator.hasNext()) {
                 iterator.next().method11735(Class7207.field27998, ((Class3434)this.field3077).field16225);
             }
@@ -675,7 +675,7 @@ public class Class525 extends Class517<Class3434>
                 this.method3017(class7208);
             }
         }
-        this.field3150.method5290().method5849(new Class1932("textures/gui/container/creative_inventory/tab_" + class7207.method22113()));
+        this.field3150.method5290().method5849(new ResourceLocation("textures/gui/container/creative_inventory/tab_" + class7207.method22113()));
         this.method3186(this.field3079, this.field3080, 0, 0, this.field3075, this.field3076);
         this.field3127.method2975(n2, n3, n);
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
@@ -817,7 +817,7 @@ public class Class525 extends Class517<Class3434>
     }
     
     static {
-        field3122 = new Class1932("textures/gui/container/creative_inventory/tabs.png");
+        field3122 = new ResourceLocation("textures/gui/container/creative_inventory/tabs.png");
         field3123 = new Class443(45);
         Class525.field3124 = Class7207.field27993.method22108();
     }

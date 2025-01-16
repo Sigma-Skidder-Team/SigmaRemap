@@ -82,7 +82,7 @@ public class Class3219 extends Class3167
             for (float n3 = -n; n3 <= n; ++n3) {
                 for (float n4 = -n; n4 <= n; ++n4) {
                     final BlockPos class354 = new BlockPos(Class3219.field15514.field4684.posX + n3, Class3219.field15514.field4684.posY + n2, Class3219.field15514.field4684.posZ + n4);
-                    if (Class3219.field15514.field4683.method6701(class354).method21696() instanceof Class3963) {
+                    if (Class3219.field15514.field4683.getBlockState(class354).method21696() instanceof Class3963) {
                         if (Math.sqrt(Class3219.field15514.field4684.method1733(class354.getX() + 0.5, class354.getY() + 0.5, class354.getZ() + 0.5)) < n) {
                             list.add(class354);
                         }

@@ -22,7 +22,7 @@ public class Class8880
     private static float field37355;
     private static float field37356;
     private static final String field37357 = ".png";
-    private static final Class1932 field37358;
+    private static final ResourceLocation field37358;
     
     public static boolean method31235() {
         return Class8880.field37351;
@@ -37,14 +37,14 @@ public class Class8880
         Class8880.field37353 = false;
     }
     
-    public static Class1666 method31238(final Class1666 class1666, final Map<Class1932, Class1666> map) {
+    public static Class1666 method31238(final Class1666 class1666, final Map<ResourceLocation, Class1666> map) {
         if (!Class8880.field37352) {
             return class1666;
         }
         if (!(class1666 instanceof Class1767)) {
             return class1666;
         }
-        Class1932 class1667 = ((Class1767)class1666).field9832;
+        ResourceLocation class1667 = ((Class1767)class1666).field9832;
         if (Class8880.field37354) {
             if (class1667 == null) {
                 class1667 = Class8880.field37358;
@@ -52,7 +52,7 @@ public class Class8880
             Class1666 class1668 = map.get(class1667);
             if (class1668 == null) {
                 class1668 = new Class1767(class1667);
-                Class8571.method28895().method5851(class1667, class1668);
+                Config.method28895().method5851(class1667, class1668);
             }
             return class1668;
         }
@@ -86,10 +86,10 @@ public class Class8880
         Class8880.field37351 = false;
         Class8880.field37349 = null;
         Class8880.field37350 = null;
-        if (Class8571.method28951()) {
+        if (Config.method28951()) {
             try {
                 final String str = "optifine/emissive.properties";
-                final InputStream method28897 = Class8571.method28897(new Class1932(str));
+                final InputStream method28897 = Config.method28897(new ResourceLocation(str));
                 if (method28897 == null) {
                     return;
                 }
@@ -110,21 +110,21 @@ public class Class8880
         }
     }
     
-    public static void method31244(final Class1774 class1774, final Set<Class1932> set) {
+    public static void method31244(final Class1774 class1774, final Set<ResourceLocation> set) {
         if (Class8880.field37351) {
-            final Iterator<Class1932> iterator = set.iterator();
+            final Iterator<ResourceLocation> iterator = set.iterator();
             while (iterator.hasNext()) {
                 method31245(class1774, iterator.next());
             }
         }
     }
     
-    private static void method31245(final Class1774 class1774, final Class1932 class1775) {
+    private static void method31245(final Class1774 class1774, final ResourceLocation class1775) {
         final String method31236 = method31236();
         if (method31236 != null) {
             if (!class1775.method7797().endsWith(method31236)) {
-                final Class1932 class1776 = new Class1932(class1775.method7798(), class1775.method7797() + method31236);
-                if (Class8571.method28900(class1774.method6336(class1776))) {
+                final ResourceLocation class1776 = new ResourceLocation(class1775.method7798(), class1775.method7797() + method31236);
+                if (Config.method28900(class1774.method6336(class1776))) {
                     final Class1912 method31237 = class1774.method6359(class1775);
                     final Class1912 method31238 = class1774.method6359(class1776);
                     method31238.field10395 = true;
@@ -135,18 +135,18 @@ public class Class8880
     }
     
     private static void method31246(final String str) {
-        Class8571.method28847("EmissiveTextures: " + str);
+        Config.method28847("EmissiveTextures: " + str);
     }
     
     private static void method31247(final String str) {
-        Class8571.method28848("EmissiveTextures: " + str);
+        Config.warn("EmissiveTextures: " + str);
     }
     
-    public static boolean method31248(final Class1932 class1932) {
+    public static boolean method31248(final ResourceLocation class1932) {
         return Class8880.field37350 != null && class1932.method7797().endsWith(Class8880.field37350);
     }
     
-    public static void method31249(final Class1932 class1932, final Class1767 class1933) {
+    public static void method31249(final ResourceLocation class1932, final Class1767 class1933) {
         if (class1932 != null) {
             if (class1933 != null) {
                 class1933.field9833 = false;
@@ -155,8 +155,8 @@ public class Class8880
                     final String method7797 = class1932.method7797();
                     if (method7797.endsWith(".png")) {
                         if (!method7797.endsWith(Class8880.field37350)) {
-                            final Class1932 field9832 = new Class1932(class1932.method7798(), method7797.substring(0, method7797.length() - ".png".length()) + Class8880.field37350);
-                            if (Class8571.method28900(field9832)) {
+                            final ResourceLocation field9832 = new ResourceLocation(class1932.method7798(), method7797.substring(0, method7797.length() - ".png".length()) + Class8880.field37350);
+                            if (Config.method28900(field9832)) {
                                 class1933.field9832 = field9832;
                             }
                         }
@@ -176,6 +176,6 @@ public class Class8880
         Class8880.field37352 = false;
         Class8880.field37353 = false;
         Class8880.field37354 = false;
-        field37358 = new Class1932("optifine/ctm/default/empty.png");
+        field37358 = new ResourceLocation("optifine/ctm/default/empty.png");
     }
 }

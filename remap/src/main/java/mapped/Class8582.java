@@ -35,7 +35,7 @@ public class Class8582
         return list2;
     }
     
-    public static List<Class9052> method29051(final Class3833 class3833, final BlockPos class3834, final int n) {
+    public static List<Class9052> method29051(final Block class3833, final BlockPos class3834, final int n) {
         final ArrayList list = new ArrayList();
         if (class3834 == null || n < 0) {
             return list;

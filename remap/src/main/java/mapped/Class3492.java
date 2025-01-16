@@ -27,7 +27,7 @@ public class Class3492 extends Class3446
     public boolean method11013() {
         if (this.field16434.method2633().nextInt(this.field16434.method2625() ? 50 : 1000) == 0) {
             final BlockPos class354 = new BlockPos(this.field16434);
-            return Class3492.field16433.test(this.field16435.method6701(class354)) || this.field16435.method6701(class354.method1139()).method21696() == Class7521.field29155;
+            return Class3492.field16433.test(this.field16435.getBlockState(class354)) || this.field16435.getBlockState(class354.method1139()).method21696() == Class7521.field29155;
         }
         return false;
     }
@@ -58,12 +58,12 @@ public class Class3492 extends Class3446
         this.field16436 = Math.max(0, this.field16436 - 1);
         if (this.field16436 == 4) {
             final BlockPos class354 = new BlockPos(this.field16434);
-            if (!Class3492.field16433.test(this.field16435.method6701(class354))) {
+            if (!Class3492.field16433.test(this.field16435.getBlockState(class354))) {
                 final BlockPos method1139 = class354.method1139();
-                if (this.field16435.method6701(method1139).method21696() == Class7521.field29155) {
+                if (this.field16435.getBlockState(method1139).method21696() == Class7521.field29155) {
                     if (this.field16435.method6765().method31216(Class8878.field37316)) {
-                        this.field16435.method6955(2001, method1139, Class3833.method11774(Class7521.field29155.method11878()));
-                        this.field16435.method6688(method1139, Class7521.field29156.method11878(), 2);
+                        this.field16435.method6955(2001, method1139, Block.method11774(Class7521.field29155.getDefaultState()));
+                        this.field16435.setBlockState(method1139, Class7521.field29156.getDefaultState(), 2);
                     }
                     this.field16434.method4154();
                 }

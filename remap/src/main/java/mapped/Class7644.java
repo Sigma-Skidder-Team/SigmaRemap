@@ -26,12 +26,12 @@ public class Class7644
     }
     
     public Class7644(final AxisAlignedBB class6221) {
-        this.field30361 = class6221.field25073;
-        this.field30362 = class6221.field25074;
-        this.field30363 = class6221.field25075;
-        this.field30364 = class6221.field25076;
-        this.field30365 = class6221.field25077;
-        this.field30366 = class6221.field25078;
+        this.field30361 = class6221.minX;
+        this.field30362 = class6221.minY;
+        this.field30363 = class6221.minZ;
+        this.field30364 = class6221.maxX;
+        this.field30365 = class6221.maxY;
+        this.field30366 = class6221.maxZ;
     }
     
     public Class7644 method24204(final double n) {

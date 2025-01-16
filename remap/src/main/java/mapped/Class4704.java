@@ -10,7 +10,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4704 extends Class4703<Class423>
 {
-    private static final Class1932[] field20288;
+    private static final ResourceLocation[] field20288;
     public final Class5888 field20289;
     
     public Class4704(final Class8551 class8551) {
@@ -43,11 +43,11 @@ public class Class4704 extends Class4703<Class423>
         super.method13951(class423, n, n2, class424, class425, n3);
     }
     
-    public Class1932 method13965(final Class423 class423) {
+    public ResourceLocation method13965(final Class423 class423) {
         return Class4704.field20288[class423.method2065().ordinal()];
     }
     
     static {
-        field20288 = new Class1932[] { new Class1932("textures/entity/boat/oak.png"), new Class1932("textures/entity/boat/spruce.png"), new Class1932("textures/entity/boat/birch.png"), new Class1932("textures/entity/boat/jungle.png"), new Class1932("textures/entity/boat/acacia.png"), new Class1932("textures/entity/boat/dark_oak.png") };
+        field20288 = new ResourceLocation[] { new ResourceLocation("textures/entity/boat/oak.png"), new ResourceLocation("textures/entity/boat/spruce.png"), new ResourceLocation("textures/entity/boat/birch.png"), new ResourceLocation("textures/entity/boat/jungle.png"), new ResourceLocation("textures/entity/boat/acacia.png"), new ResourceLocation("textures/entity/boat/dark_oak.png") };
     }
 }

@@ -79,7 +79,7 @@ public class Class3903 extends Class3902
     
     public Class3903(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, BlockState>)((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3903.field17564, Direction.NORTH)).method21773(Class3903.field17618, Class107.field333));
+        this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3903.field17564, Direction.NORTH)).with(Class3903.field17618, Class107.field333));
     }
     
     @Override
@@ -88,8 +88,8 @@ public class Class3903 extends Class3902
     }
     
     private VoxelShape method12004(final BlockState class7096) {
-        final Direction class7097 = class7096.method21772((Class7111<Direction>)Class3903.field17564);
-        switch (Class9270.field39751[class7096.method21772(Class3903.field17618).ordinal()]) {
+        final Direction class7097 = class7096.get((IProperty<Direction>)Class3903.field17564);
+        switch (Class9270.field39751[class7096.get(Class3903.field17618).ordinal()]) {
             case 1: {
                 if (class7097 != Direction.NORTH && class7097 != Direction.SOUTH) {
                     return Class3903.field17634;
@@ -152,16 +152,16 @@ public class Class3903 extends Class3902
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class3903.field17564, class7097.method8142(class7096.method21772((Class7111<Direction>)Class3903.field17564)));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3903.field17564, class7097.method8142(class7096.get((IProperty<Direction>)Class3903.field17564)));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.method21772((Class7111<Direction>)Class3903.field17564)));
+        return class7096.method21708(class7097.method8344(class7096.get((IProperty<Direction>)Class3903.field17564)));
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class3903.field17564, Class3903.field17618);
     }
     
@@ -171,70 +171,70 @@ public class Class3903 extends Class3902
     }
     
     static {
-        field17619 = Class3833.method11778(2.0, 0.0, 6.0, 4.0, 7.0, 10.0);
-        field17620 = Class3833.method11778(12.0, 0.0, 6.0, 14.0, 7.0, 10.0);
-        field17621 = Class3833.method11778(2.0, 7.0, 5.0, 4.0, 13.0, 11.0);
-        field17622 = Class3833.method11778(12.0, 7.0, 5.0, 14.0, 13.0, 11.0);
-        field17623 = Class7698.method24492(Class3903.field17619, Class3903.field17621);
-        field17624 = Class7698.method24492(Class3903.field17620, Class3903.field17622);
-        field17625 = Class7698.method24492(Class3903.field17623, Class3903.field17624);
-        field17626 = Class7698.method24492(Class3903.field17625, Class3833.method11778(4.0, 4.0, 2.0, 12.0, 16.0, 14.0));
-        field17627 = Class3833.method11778(6.0, 0.0, 2.0, 10.0, 7.0, 4.0);
-        field17628 = Class3833.method11778(6.0, 0.0, 12.0, 10.0, 7.0, 14.0);
-        field17629 = Class3833.method11778(5.0, 7.0, 2.0, 11.0, 13.0, 4.0);
-        field17630 = Class3833.method11778(5.0, 7.0, 12.0, 11.0, 13.0, 14.0);
-        field17631 = Class7698.method24492(Class3903.field17627, Class3903.field17629);
-        field17632 = Class7698.method24492(Class3903.field17628, Class3903.field17630);
-        field17633 = Class7698.method24492(Class3903.field17631, Class3903.field17632);
-        field17634 = Class7698.method24492(Class3903.field17633, Class3833.method11778(2.0, 4.0, 4.0, 14.0, 16.0, 12.0));
-        field17635 = Class3833.method11778(2.0, 6.0, 0.0, 4.0, 10.0, 7.0);
-        field17636 = Class3833.method11778(12.0, 6.0, 0.0, 14.0, 10.0, 7.0);
-        field17637 = Class3833.method11778(2.0, 5.0, 7.0, 4.0, 11.0, 13.0);
-        field17638 = Class3833.method11778(12.0, 5.0, 7.0, 14.0, 11.0, 13.0);
-        field17639 = Class7698.method24492(Class3903.field17635, Class3903.field17637);
-        field17640 = Class7698.method24492(Class3903.field17636, Class3903.field17638);
-        field17641 = Class7698.method24492(Class3903.field17639, Class3903.field17640);
-        field17642 = Class7698.method24492(Class3903.field17641, Class3833.method11778(4.0, 2.0, 4.0, 12.0, 14.0, 16.0));
-        field17643 = Class3833.method11778(2.0, 6.0, 7.0, 4.0, 10.0, 16.0);
-        field17644 = Class3833.method11778(12.0, 6.0, 7.0, 14.0, 10.0, 16.0);
-        field17645 = Class3833.method11778(2.0, 5.0, 3.0, 4.0, 11.0, 9.0);
-        field17646 = Class3833.method11778(12.0, 5.0, 3.0, 14.0, 11.0, 9.0);
-        field17647 = Class7698.method24492(Class3903.field17643, Class3903.field17645);
-        field17648 = Class7698.method24492(Class3903.field17644, Class3903.field17646);
-        field17649 = Class7698.method24492(Class3903.field17647, Class3903.field17648);
-        field17650 = Class7698.method24492(Class3903.field17649, Class3833.method11778(4.0, 2.0, 0.0, 12.0, 14.0, 12.0));
-        field17651 = Class3833.method11778(7.0, 6.0, 2.0, 16.0, 10.0, 4.0);
-        field17652 = Class3833.method11778(7.0, 6.0, 12.0, 16.0, 10.0, 14.0);
-        field17653 = Class3833.method11778(3.0, 5.0, 2.0, 9.0, 11.0, 4.0);
-        field17654 = Class3833.method11778(3.0, 5.0, 12.0, 9.0, 11.0, 14.0);
-        field17655 = Class7698.method24492(Class3903.field17651, Class3903.field17653);
-        field17656 = Class7698.method24492(Class3903.field17652, Class3903.field17654);
-        field17657 = Class7698.method24492(Class3903.field17655, Class3903.field17656);
-        field17658 = Class7698.method24492(Class3903.field17657, Class3833.method11778(0.0, 2.0, 4.0, 12.0, 14.0, 12.0));
-        field17659 = Class3833.method11778(0.0, 6.0, 2.0, 9.0, 10.0, 4.0);
-        field17660 = Class3833.method11778(0.0, 6.0, 12.0, 9.0, 10.0, 14.0);
-        field17661 = Class3833.method11778(7.0, 5.0, 2.0, 13.0, 11.0, 4.0);
-        field17662 = Class3833.method11778(7.0, 5.0, 12.0, 13.0, 11.0, 14.0);
-        field17663 = Class7698.method24492(Class3903.field17659, Class3903.field17661);
-        field17664 = Class7698.method24492(Class3903.field17660, Class3903.field17662);
-        field17665 = Class7698.method24492(Class3903.field17663, Class3903.field17664);
-        field17666 = Class7698.method24492(Class3903.field17665, Class3833.method11778(4.0, 2.0, 4.0, 16.0, 14.0, 12.0));
-        field17667 = Class3833.method11778(2.0, 9.0, 6.0, 4.0, 16.0, 10.0);
-        field17668 = Class3833.method11778(12.0, 9.0, 6.0, 14.0, 16.0, 10.0);
-        field17669 = Class3833.method11778(2.0, 3.0, 5.0, 4.0, 9.0, 11.0);
-        field17670 = Class3833.method11778(12.0, 3.0, 5.0, 14.0, 9.0, 11.0);
-        field17671 = Class7698.method24492(Class3903.field17667, Class3903.field17669);
-        field17672 = Class7698.method24492(Class3903.field17668, Class3903.field17670);
-        field17673 = Class7698.method24492(Class3903.field17671, Class3903.field17672);
-        field17674 = Class7698.method24492(Class3903.field17673, Class3833.method11778(4.0, 0.0, 2.0, 12.0, 12.0, 14.0));
-        field17675 = Class3833.method11778(6.0, 9.0, 2.0, 10.0, 16.0, 4.0);
-        field17676 = Class3833.method11778(6.0, 9.0, 12.0, 10.0, 16.0, 14.0);
-        field17677 = Class3833.method11778(5.0, 3.0, 2.0, 11.0, 9.0, 4.0);
-        field17678 = Class3833.method11778(5.0, 3.0, 12.0, 11.0, 9.0, 14.0);
-        field17679 = Class7698.method24492(Class3903.field17675, Class3903.field17677);
-        field17680 = Class7698.method24492(Class3903.field17676, Class3903.field17678);
-        field17681 = Class7698.method24492(Class3903.field17679, Class3903.field17680);
-        field17682 = Class7698.method24492(Class3903.field17681, Class3833.method11778(2.0, 0.0, 4.0, 14.0, 12.0, 12.0));
+        field17619 = Block.method11778(2.0, 0.0, 6.0, 4.0, 7.0, 10.0);
+        field17620 = Block.method11778(12.0, 0.0, 6.0, 14.0, 7.0, 10.0);
+        field17621 = Block.method11778(2.0, 7.0, 5.0, 4.0, 13.0, 11.0);
+        field17622 = Block.method11778(12.0, 7.0, 5.0, 14.0, 13.0, 11.0);
+        field17623 = VoxelShapes.method24492(Class3903.field17619, Class3903.field17621);
+        field17624 = VoxelShapes.method24492(Class3903.field17620, Class3903.field17622);
+        field17625 = VoxelShapes.method24492(Class3903.field17623, Class3903.field17624);
+        field17626 = VoxelShapes.method24492(Class3903.field17625, Block.method11778(4.0, 4.0, 2.0, 12.0, 16.0, 14.0));
+        field17627 = Block.method11778(6.0, 0.0, 2.0, 10.0, 7.0, 4.0);
+        field17628 = Block.method11778(6.0, 0.0, 12.0, 10.0, 7.0, 14.0);
+        field17629 = Block.method11778(5.0, 7.0, 2.0, 11.0, 13.0, 4.0);
+        field17630 = Block.method11778(5.0, 7.0, 12.0, 11.0, 13.0, 14.0);
+        field17631 = VoxelShapes.method24492(Class3903.field17627, Class3903.field17629);
+        field17632 = VoxelShapes.method24492(Class3903.field17628, Class3903.field17630);
+        field17633 = VoxelShapes.method24492(Class3903.field17631, Class3903.field17632);
+        field17634 = VoxelShapes.method24492(Class3903.field17633, Block.method11778(2.0, 4.0, 4.0, 14.0, 16.0, 12.0));
+        field17635 = Block.method11778(2.0, 6.0, 0.0, 4.0, 10.0, 7.0);
+        field17636 = Block.method11778(12.0, 6.0, 0.0, 14.0, 10.0, 7.0);
+        field17637 = Block.method11778(2.0, 5.0, 7.0, 4.0, 11.0, 13.0);
+        field17638 = Block.method11778(12.0, 5.0, 7.0, 14.0, 11.0, 13.0);
+        field17639 = VoxelShapes.method24492(Class3903.field17635, Class3903.field17637);
+        field17640 = VoxelShapes.method24492(Class3903.field17636, Class3903.field17638);
+        field17641 = VoxelShapes.method24492(Class3903.field17639, Class3903.field17640);
+        field17642 = VoxelShapes.method24492(Class3903.field17641, Block.method11778(4.0, 2.0, 4.0, 12.0, 14.0, 16.0));
+        field17643 = Block.method11778(2.0, 6.0, 7.0, 4.0, 10.0, 16.0);
+        field17644 = Block.method11778(12.0, 6.0, 7.0, 14.0, 10.0, 16.0);
+        field17645 = Block.method11778(2.0, 5.0, 3.0, 4.0, 11.0, 9.0);
+        field17646 = Block.method11778(12.0, 5.0, 3.0, 14.0, 11.0, 9.0);
+        field17647 = VoxelShapes.method24492(Class3903.field17643, Class3903.field17645);
+        field17648 = VoxelShapes.method24492(Class3903.field17644, Class3903.field17646);
+        field17649 = VoxelShapes.method24492(Class3903.field17647, Class3903.field17648);
+        field17650 = VoxelShapes.method24492(Class3903.field17649, Block.method11778(4.0, 2.0, 0.0, 12.0, 14.0, 12.0));
+        field17651 = Block.method11778(7.0, 6.0, 2.0, 16.0, 10.0, 4.0);
+        field17652 = Block.method11778(7.0, 6.0, 12.0, 16.0, 10.0, 14.0);
+        field17653 = Block.method11778(3.0, 5.0, 2.0, 9.0, 11.0, 4.0);
+        field17654 = Block.method11778(3.0, 5.0, 12.0, 9.0, 11.0, 14.0);
+        field17655 = VoxelShapes.method24492(Class3903.field17651, Class3903.field17653);
+        field17656 = VoxelShapes.method24492(Class3903.field17652, Class3903.field17654);
+        field17657 = VoxelShapes.method24492(Class3903.field17655, Class3903.field17656);
+        field17658 = VoxelShapes.method24492(Class3903.field17657, Block.method11778(0.0, 2.0, 4.0, 12.0, 14.0, 12.0));
+        field17659 = Block.method11778(0.0, 6.0, 2.0, 9.0, 10.0, 4.0);
+        field17660 = Block.method11778(0.0, 6.0, 12.0, 9.0, 10.0, 14.0);
+        field17661 = Block.method11778(7.0, 5.0, 2.0, 13.0, 11.0, 4.0);
+        field17662 = Block.method11778(7.0, 5.0, 12.0, 13.0, 11.0, 14.0);
+        field17663 = VoxelShapes.method24492(Class3903.field17659, Class3903.field17661);
+        field17664 = VoxelShapes.method24492(Class3903.field17660, Class3903.field17662);
+        field17665 = VoxelShapes.method24492(Class3903.field17663, Class3903.field17664);
+        field17666 = VoxelShapes.method24492(Class3903.field17665, Block.method11778(4.0, 2.0, 4.0, 16.0, 14.0, 12.0));
+        field17667 = Block.method11778(2.0, 9.0, 6.0, 4.0, 16.0, 10.0);
+        field17668 = Block.method11778(12.0, 9.0, 6.0, 14.0, 16.0, 10.0);
+        field17669 = Block.method11778(2.0, 3.0, 5.0, 4.0, 9.0, 11.0);
+        field17670 = Block.method11778(12.0, 3.0, 5.0, 14.0, 9.0, 11.0);
+        field17671 = VoxelShapes.method24492(Class3903.field17667, Class3903.field17669);
+        field17672 = VoxelShapes.method24492(Class3903.field17668, Class3903.field17670);
+        field17673 = VoxelShapes.method24492(Class3903.field17671, Class3903.field17672);
+        field17674 = VoxelShapes.method24492(Class3903.field17673, Block.method11778(4.0, 0.0, 2.0, 12.0, 12.0, 14.0));
+        field17675 = Block.method11778(6.0, 9.0, 2.0, 10.0, 16.0, 4.0);
+        field17676 = Block.method11778(6.0, 9.0, 12.0, 10.0, 16.0, 14.0);
+        field17677 = Block.method11778(5.0, 3.0, 2.0, 11.0, 9.0, 4.0);
+        field17678 = Block.method11778(5.0, 3.0, 12.0, 11.0, 9.0, 14.0);
+        field17679 = VoxelShapes.method24492(Class3903.field17675, Class3903.field17677);
+        field17680 = VoxelShapes.method24492(Class3903.field17676, Class3903.field17678);
+        field17681 = VoxelShapes.method24492(Class3903.field17679, Class3903.field17680);
+        field17682 = VoxelShapes.method24492(Class3903.field17681, Block.method11778(2.0, 0.0, 4.0, 14.0, 12.0, 12.0));
         field17683 = new Class2259("container.grindstone_title", new Object[0]);
     }
 }

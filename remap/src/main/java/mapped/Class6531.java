@@ -12,7 +12,7 @@ public final class Class6531 extends Class6530<Object>
     private static String[] field25979;
     public final /* synthetic */ Class9303 field25980;
     
-    public Class6531(final Class1932 class1932, final Class clazz, final Class9303 field25980) {
+    public Class6531(final ResourceLocation class1932, final Class clazz, final Class9303 field25980) {
         this.field25980 = field25980;
         super(class1932, clazz);
     }

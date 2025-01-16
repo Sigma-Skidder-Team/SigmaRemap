@@ -15,7 +15,7 @@ import net.minecraft.util.text.ITextComponent;
 public class Class9081
 {
     private final GameProfile field38437;
-    private final Map<MinecraftProfileTexture$Type, Class1932> field38438;
+    private final Map<MinecraftProfileTexture$Type, ResourceLocation> field38438;
     private Class101 field38439;
     private int field38440;
     private boolean field38441;
@@ -64,19 +64,19 @@ public class Class9081
         return (this.field38442 != null) ? this.field38442 : Class7634.method24005(this.field38437.getId());
     }
     
-    public Class1932 method32726() {
+    public ResourceLocation method32726() {
         this.method32730();
-        return (Class1932)MoreObjects.firstNonNull((Object)this.field38438.get(MinecraftProfileTexture$Type.SKIN), (Object)Class7634.method24004(this.field38437.getId()));
+        return (ResourceLocation)MoreObjects.firstNonNull((Object)this.field38438.get(MinecraftProfileTexture$Type.SKIN), (Object)Class7634.method24004(this.field38437.getId()));
     }
     
     @Nullable
-    public Class1932 method32727() {
+    public ResourceLocation method32727() {
         this.method32730();
         return this.field38438.get(MinecraftProfileTexture$Type.CAPE);
     }
     
     @Nullable
-    public Class1932 method32728() {
+    public ResourceLocation method32728() {
         this.method32730();
         return this.field38438.get(MinecraftProfileTexture$Type.ELYTRA);
     }

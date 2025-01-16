@@ -25,18 +25,18 @@ public class Class9168
     private final List<Class6559> field38840;
     private final List<Class6313> field38841;
     private Class7974 field38842;
-    public static Class1932 field38843;
+    public static ResourceLocation field38843;
     
     private Class9168() {
         this.field38840 = Lists.newArrayList();
         this.field38841 = Collections.emptyList();
     }
     
-    public Class9168(final Class7637 class7637, final Class7685 class7638, final Function<Class1932, Class7684> function, final List<Class6559> list) {
+    public Class9168(final Class7637 class7637, final Class7685 class7638, final Function<ResourceLocation, Class7684> function, final List<Class6559> list) {
         this(class7637, class7638, function, class7637.method24030()::method1415, list);
     }
     
-    public Class9168(final Class7637 class7637, final Class7684 class7638, final Function<Class1932, Class7684> function, final Function<Class3687, Class1912> function2, final List<Class6559> list) {
+    public Class9168(final Class7637 class7637, final Class7684 class7638, final Function<ResourceLocation, Class7684> function, final Function<Class3687, Class1912> function2, final List<Class6559> list) {
         this.field38840 = Lists.newArrayList();
         Collections.reverse(this.field38841 = (List<Class6313>)list.stream().map(class7640 -> Objects.equals(function3.apply(class7640.method19882()), b) ? null : class7639.method24021(class7640.method19882(), Class2122.field12371, function4)).collect(Collectors.toList()));
         for (int i = list.size() - 1; i >= 0; --i) {
@@ -49,7 +49,7 @@ public class Class9168
     
     @Nullable
     public Class6313 method33469(final Class6313 class6313, final ItemStack class6314, final World class6315, final LivingEntity class6316) {
-        final boolean method28987 = Class8571.method28987();
+        final boolean method28987 = Config.method28987();
         if (method28987) {
             Class9168.field38843 = null;
         }

@@ -50,10 +50,10 @@ public enum Class197 implements Class198, Class196
         if (!Class7983.method26039(method20074)) {
             if (method20075 >= 2) {
                 if (n3 == 1) {
-                    final Class3090 class6436 = Class90.field217.method499(method20074);
+                    final Class3090 class6436 = Registry.field217.method499(method20074);
                     if (class6436 == null || !class6436.method9836()) {
                         final Class3090 method20076 = Class3090.method9834(class6436);
-                        return (method20076 != null) ? Class90.field217.method504(method20076) : method20074;
+                        return (method20076 != null) ? Registry.field217.getId(method20076) : method20074;
                     }
                 }
             }
@@ -166,8 +166,8 @@ public enum Class197 implements Class198, Class196
             }
             if (n3 == 0) {
                 if (n4 != method20074) {
-                    final Class3090 method20077 = Class3090.method9834(Class90.field217.method499(n4));
-                    n4 = ((method20077 != null) ? Class90.field217.method504(method20077) : method20074);
+                    final Class3090 method20077 = Class3090.method9834(Registry.field217.method499(n4));
+                    n4 = ((method20077 != null) ? Registry.field217.getId(method20077) : method20074);
                 }
             }
             if (n4 != method20074) {
@@ -194,31 +194,31 @@ public enum Class197 implements Class198, Class196
     
     static {
         field657 = LogManager.getLogger();
-        field658 = Class90.field217.method504(Class7102.field27659);
-        field659 = Class90.field217.method504(Class7102.field27660);
-        field660 = Class90.field217.method504(Class7102.field27634);
-        field661 = Class90.field217.method504(Class7102.field27649);
-        field662 = Class90.field217.method504(Class7102.field27635);
-        field663 = Class90.field217.method504(Class7102.field27666);
-        field664 = Class90.field217.method504(Class7102.field27636);
-        field665 = Class90.field217.method504(Class7102.field27650);
-        field666 = Class90.field217.method504(Class7102.field27644);
-        field667 = Class90.field217.method504(Class7102.field27645);
-        field668 = Class90.field217.method504(Class7102.field27653);
-        field669 = Class90.field217.method504(Class7102.field27654);
-        field670 = Class90.field217.method504(Class7102.field27705);
-        field671 = Class90.field217.method504(Class7102.field27706);
-        field672 = Class90.field217.method504(Class7102.field27669);
-        field673 = Class90.field217.method504(Class7102.field27670);
-        field674 = Class90.field217.method504(Class7102.field27633);
-        field675 = Class90.field217.method504(Class7102.field27664);
-        field676 = Class90.field217.method504(Class7102.field27665);
-        field677 = Class90.field217.method504(Class7102.field27661);
-        field678 = Class90.field217.method504(Class7102.field27667);
-        field679 = Class90.field217.method504(Class7102.field27668);
-        field680 = Class90.field217.method504(Class7102.field27637);
-        field681 = Class90.field217.method504(Class7102.field27662);
-        field682 = Class90.field217.method504(Class7102.field27663);
-        field683 = Class90.field217.method504(Class7102.field27651);
+        field658 = Registry.field217.getId(Class7102.field27659);
+        field659 = Registry.field217.getId(Class7102.field27660);
+        field660 = Registry.field217.getId(Class7102.field27634);
+        field661 = Registry.field217.getId(Class7102.field27649);
+        field662 = Registry.field217.getId(Class7102.field27635);
+        field663 = Registry.field217.getId(Class7102.field27666);
+        field664 = Registry.field217.getId(Class7102.field27636);
+        field665 = Registry.field217.getId(Class7102.field27650);
+        field666 = Registry.field217.getId(Class7102.field27644);
+        field667 = Registry.field217.getId(Class7102.field27645);
+        field668 = Registry.field217.getId(Class7102.field27653);
+        field669 = Registry.field217.getId(Class7102.field27654);
+        field670 = Registry.field217.getId(Class7102.field27705);
+        field671 = Registry.field217.getId(Class7102.field27706);
+        field672 = Registry.field217.getId(Class7102.field27669);
+        field673 = Registry.field217.getId(Class7102.field27670);
+        field674 = Registry.field217.getId(Class7102.field27633);
+        field675 = Registry.field217.getId(Class7102.field27664);
+        field676 = Registry.field217.getId(Class7102.field27665);
+        field677 = Registry.field217.getId(Class7102.field27661);
+        field678 = Registry.field217.getId(Class7102.field27667);
+        field679 = Registry.field217.getId(Class7102.field27668);
+        field680 = Registry.field217.getId(Class7102.field27637);
+        field681 = Registry.field217.getId(Class7102.field27662);
+        field682 = Registry.field217.getId(Class7102.field27663);
+        field683 = Registry.field217.getId(Class7102.field27651);
     }
 }

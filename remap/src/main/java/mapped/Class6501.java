@@ -39,11 +39,11 @@ public class Class6501
         final long method19582 = method19582(n, n2);
         final long method19583 = method19581(n, n2);
         final long method19584 = method19583(BlockState.class, n, n2);
-        Class8571.method28847("New: " + method19580);
-        Class8571.method28847("Clone: " + method19581);
-        Class8571.method28847("NewObj: " + method19582);
-        Class8571.method28847("CloneObj: " + method19583);
-        Class8571.method28847("NewObjDyn: " + method19584);
+        Config.method28847("New: " + method19580);
+        Config.method28847("Clone: " + method19581);
+        Config.method28847("NewObj: " + method19582);
+        Config.method28847("CloneObj: " + method19583);
+        Config.method28847("NewObjDyn: " + method19584);
     }
     
     private static long method19579(final int n, final int n2) {

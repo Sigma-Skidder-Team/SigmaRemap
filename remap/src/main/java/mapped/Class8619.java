@@ -241,7 +241,7 @@ public class Class8619
                     if (!(tileEntity instanceof Class489)) {
                         continue;
                     }
-                    final Class7820 method29796 = this.field36168.method29796(this.field36166, tileEntity.method2193());
+                    final Class7820 method29796 = this.field36168.method29796(this.field36166, tileEntity.getPos());
                     if (method29796 == null) {
                         continue;
                     }
@@ -272,7 +272,7 @@ public class Class8619
     private boolean method29241() {
         for (int i = -8; i <= 8; ++i) {
             for (int j = 8; j <= 8; ++j) {
-                final Class1860 method6687 = this.field36166.method6687(i, j, Class9312.field39989, false);
+                final IChunk method6687 = this.field36166.getChunk(i, j, ChunkStatus.field39989, false);
                 if (!(method6687 instanceof Class1862)) {
                     return false;
                 }
@@ -315,7 +315,7 @@ public class Class8619
             this.method29247(true);
             this.method29245();
             if (!this.field36174) {
-                this.field36166.method6692(this.field36166.method6958(Class2020.field11525, Class4551.field20031), Class7521.field29404.method11878());
+                this.field36166.method6692(this.field36166.method6958(Class2020.field11525, Class4551.field20031), Class7521.field29404.getDefaultState());
             }
             this.field36174 = true;
             this.field36173 = true;
@@ -338,7 +338,7 @@ public class Class8619
         final Class4551 class4551 = new Class4551(b);
         if (this.field36177 == null) {
             this.field36177 = this.field36166.method6958(Class2020.field11526, Class4551.field20031).method1139();
-            while (this.field36166.method6701(this.field36177).method21696() == Class7521.field29172) {
+            while (this.field36166.getBlockState(this.field36177).method21696() == Class7521.field29172) {
                 if (this.field36177.getY() <= this.field36166.method6743()) {
                     break;
                 }
@@ -432,8 +432,8 @@ public class Class8619
                         for (int j = 0; j < this.field36168.method29793(); ++j) {
                             for (int k = 0; k < this.field36168.method29792(); ++k) {
                                 final Class7990 method25270 = class7820.method25270(i, j, k);
-                                if (method25270.method26065().method21696() == Class7521.field29172 || method25270.method26065().method21696() == Class7521.field29401) {
-                                    this.field36166.method6692(method25270.method26068(), Class7521.field29403.method11878());
+                                if (method25270.method26065().getBlock() == Class7521.field29172 || method25270.method26065().getBlock() == Class7521.field29401) {
+                                    this.field36166.method6692(method25270.method26068(), Class7521.field29403.getDefaultState());
                                 }
                             }
                         }

@@ -60,7 +60,7 @@ public class Class9066
     private static void method32641(final Class795 class795, final boolean b) {
         LivingEntity class796 = class795.method4488();
         if (class796 == null) {
-            class796 = Class8571.method28894().field4684;
+            class796 = Config.method28894().field4684;
         }
         if (class796 instanceof Class754) {
             final Class754 class797 = (Class754)class796;
@@ -68,7 +68,7 @@ public class Class9066
             if (!b) {
                 final EntityDataManager method1866 = class795.method1650();
                 if (class797.field4065 != null) {
-                    if (Class8571.equals(class797.field4065.method1865(), method1865)) {
+                    if (Config.equals(class797.field4065.method1865(), method1865)) {
                         final EntityDataManager method1867 = class797.field4065.method1650();
                         method1866.field38922 = method1867.field38922;
                         method1866.field38921 = method1867.field38921;
@@ -76,7 +76,7 @@ public class Class9066
                     }
                 }
                 if (class797.field4066 != null) {
-                    if (Class8571.equals(class797.field4066.method1865(), method1865)) {
+                    if (Config.equals(class797.field4066.method1865(), method1865)) {
                         final EntityDataManager method1868 = class797.field4066.method1650();
                         method1866.field38922 = method1868.field38922;
                         method1866.field38921 = method1868.field38921;
@@ -87,13 +87,13 @@ public class Class9066
             else {
                 final Class51 method1869 = class797.method2899();
                 if (method1869 != null) {
-                    if (Class8571.equals(method1869.method301("UUID"), method1865)) {
+                    if (Config.equals(method1869.method301("UUID"), method1865)) {
                         class797.field4065 = class795;
                     }
                 }
                 final Class51 method1870 = class797.method2901();
                 if (method1870 != null) {
-                    if (Class8571.equals(method1870.method301("UUID"), method1865)) {
+                    if (Config.equals(method1870.method301("UUID"), method1865)) {
                         class797.field4066 = class795;
                     }
                 }
@@ -112,7 +112,7 @@ public class Class9066
         Class9066.field38386.method28186(null);
     }
     
-    public static Class1932 method32643(final Class1932 class1932) {
+    public static ResourceLocation method32643(final ResourceLocation class1932) {
         if (!Class9066.field38382) {
             return class1932;
         }
@@ -170,24 +170,24 @@ public class Class9066
         return Class9066.field38384;
     }
     
-    private static Class9594 method32646(final Class1932 class1932, final boolean b) {
+    private static Class9594 method32646(final ResourceLocation class1932, final boolean b) {
         final String method7797 = class1932.method7797();
-        final Class1932 method7798 = method32648(class1932, b);
+        final ResourceLocation method7798 = method32648(class1932, b);
         if (method7798 != null) {
             final Class9594 method7799 = method32647(method7798, class1932);
             if (method7799 != null) {
                 return method7799;
             }
         }
-        final Class1932[] method7800 = method32653(class1932, b);
+        final ResourceLocation[] method7800 = method32653(class1932, b);
         return (method7800 != null) ? new Class9594(method7797, method7800) : null;
     }
     
-    private static Class9594 method32647(final Class1932 class1932, final Class1932 class1933) {
+    private static Class9594 method32647(final ResourceLocation class1932, final ResourceLocation class1933) {
         try {
             final String method7797 = class1932.method7797();
             method32656(class1933.method7797() + ", properties: " + method7797);
-            final InputStream method7798 = Class8571.method28897(class1932);
+            final InputStream method7798 = Config.method28897(class1932);
             if (method7798 == null) {
                 method32657("Properties not found: " + method7797);
                 return null;
@@ -208,26 +208,26 @@ public class Class9066
         }
     }
     
-    private static Class1932 method32648(final Class1932 class1932, final boolean b) {
-        final Class1932 method32649 = method32649(class1932, b);
+    private static ResourceLocation method32648(final ResourceLocation class1932, final boolean b) {
+        final ResourceLocation method32649 = method32649(class1932, b);
         if (method32649 == null) {
             return null;
         }
         final String method32650 = method32649.method7798();
         final String method32651 = Class9518.method35518(method32649.method7797(), ".png");
-        final Class1932 class1933 = new Class1932(method32650, method32651 + ".properties");
-        if (Class8571.method28900(class1933)) {
+        final ResourceLocation class1933 = new ResourceLocation(method32650, method32651 + ".properties");
+        if (Config.method28900(class1933)) {
             return class1933;
         }
         final String method32652 = method32652(method32651);
         if (method32652 != null) {
-            final Class1932 class1934 = new Class1932(method32650, method32652 + ".properties");
-            return Class8571.method28900(class1934) ? class1934 : null;
+            final ResourceLocation class1934 = new ResourceLocation(method32650, method32652 + ".properties");
+            return Config.method28900(class1934) ? class1934 : null;
         }
         return null;
     }
     
-    public static Class1932 method32649(final Class1932 class1932, final boolean b) {
+    public static ResourceLocation method32649(final ResourceLocation class1932, final boolean b) {
         final String method7798 = class1932.method7798();
         final String method7799 = class1932.method7797();
         String prefix = "textures/";
@@ -237,7 +237,7 @@ public class Class9066
             s = "optifine/mob/";
         }
         if (method7799.startsWith(prefix)) {
-            return new Class1932(method7798, Class9518.method35520(method7799, prefix, s));
+            return new ResourceLocation(method7798, Class9518.method35520(method7799, prefix, s));
         }
         return null;
     }
@@ -249,14 +249,14 @@ public class Class9066
         return Class9518.method35520(s, "optifine/random/", "textures/");
     }
     
-    public static Class1932 method32651(final Class1932 class1932, final int i) {
+    public static ResourceLocation method32651(final ResourceLocation class1932, final int i) {
         if (class1932 == null) {
             return null;
         }
         final String method7797 = class1932.method7797();
         final int lastIndex = method7797.lastIndexOf(46);
         if (lastIndex >= 0) {
-            return new Class1932(class1932.method7798(), method7797.substring(0, lastIndex) + i + method7797.substring(lastIndex));
+            return new ResourceLocation(class1932.method7798(), method7797.substring(0, lastIndex) + i + method7797.substring(lastIndex));
         }
         return null;
     }
@@ -271,21 +271,21 @@ public class Class9066
         return null;
     }
     
-    private static Class1932[] method32653(final Class1932 class1932, final boolean b) {
+    private static ResourceLocation[] method32653(final ResourceLocation class1932, final boolean b) {
         final ArrayList list = new ArrayList();
         list.add(class1932);
-        final Class1932 method32649 = method32649(class1932, b);
+        final ResourceLocation method32649 = method32649(class1932, b);
         if (method32649 == null) {
             return null;
         }
         for (int i = 1; i < list.size() + 10; ++i) {
-            final Class1932 method32650 = method32651(method32649, i + 1);
-            if (Class8571.method28900(method32650)) {
+            final ResourceLocation method32650 = method32651(method32649, i + 1);
+            if (Config.method28900(method32650)) {
                 list.add(method32650);
             }
         }
         if (list.size() > 1) {
-            final Class1932[] array = (Class1932[])list.toArray(new Class1932[list.size()]);
+            final ResourceLocation[] array = (ResourceLocation[])list.toArray(new ResourceLocation[list.size()]);
             method32656(class1932.method7797() + ", variants: " + array.length);
             return array;
         }
@@ -295,13 +295,13 @@ public class Class9066
     public static void method32654() {
         Class9066.field38381.clear();
         Class9066.field38382 = false;
-        if (Class8571.method28941()) {
+        if (Config.method28941()) {
             method32655();
         }
     }
     
     private static void method32655() {
-        Class9066.field38383 = Class8571.method28908();
+        Class9066.field38383 = Config.method28908();
         Class9066.field38385 = Class9550.field41126;
         final String[] array = { "optifine/random/", "optifine/mob/" };
         final String[] array2 = { ".png", ".properties" };
@@ -311,8 +311,8 @@ public class Class9066
             final String method32777 = method32650(Class9518.method35533(Class9518.method35524(method32776[i], array2), "0123456789") + ".png");
             if (!set.contains(method32777)) {
                 set.add(method32777);
-                final Class1932 class1932 = new Class1932(method32777);
-                if (Class8571.method28900(class1932)) {
+                final ResourceLocation class1932 = new ResourceLocation(method32777);
+                if (Config.method28900(class1932)) {
                     if (Class9066.field38381.get(method32777) == null) {
                         Class9594 class1933 = method32646(class1932, false);
                         if (class1933 == null) {
@@ -329,11 +329,11 @@ public class Class9066
     }
     
     public static void method32656(final String str) {
-        Class8571.method28847("RandomEntities: " + str);
+        Config.method28847("RandomEntities: " + str);
     }
     
     public static void method32657(final String str) {
-        Class8571.method28848("RandomEntities: " + str);
+        Config.warn("RandomEntities: " + str);
     }
     
     static {

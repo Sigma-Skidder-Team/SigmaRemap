@@ -33,19 +33,19 @@ public class Class1780 extends Class1779
 {
     private static final Gson field9883;
     private static final Logger field9879;
-    private Map<Class8976<?>, Map<Class1932, Class3662<?>>> field9884;
+    private Map<Class8976<?>, Map<ResourceLocation, Class3662<?>>> field9884;
     private boolean field9885;
     
     public Class1780() {
         super(Class1780.field9883, "recipes");
-        this.field9884 = (Map<Class8976<?>, Map<Class1932, Class3662<?>>>)ImmutableMap.of();
+        this.field9884 = (Map<Class8976<?>, Map<ResourceLocation, Class3662<?>>>)ImmutableMap.of();
     }
     
-    public void method6377(final Map<Class1932, JsonObject> map, final Class6582 class6582, final IProfiler class6583) {
+    public void method6377(final Map<ResourceLocation, JsonObject> map, final Class6582 class6582, final IProfiler class6583) {
         this.field9885 = false;
         final HashMap hashMap = Maps.newHashMap();
-        for (final Map.Entry<Class1932, V> entry : map.entrySet()) {
-            final Class1932 class6584 = entry.getKey();
+        for (final Map.Entry<ResourceLocation, V> entry : map.entrySet()) {
+            final ResourceLocation class6584 = entry.getKey();
             try {
                 final Class3662<?> method6385 = method6385(class6584, (JsonObject)entry.getValue());
                 ((ImmutableMap$Builder)hashMap.computeIfAbsent(method6385.method11300(), p0 -> ImmutableMap.builder())).put((Object)class6584, (Object)method6385);
@@ -66,7 +66,7 @@ public class Class1780 extends Class1779
         return this.method6380(class8976).values().stream().flatMap(class8981 -> Class8349.method27854(class8978.method31918(class8981, class8979, class8980))).sorted(Comparator.comparing(class8982 -> class8982.method11292().method27649())).collect((Collector<? super Object, ?, List<T>>)Collectors.toList());
     }
     
-    private <C extends Class446, T extends Class3662<C>> Map<Class1932, Class3662<C>> method6380(final Class8976<T> key) {
+    private <C extends Class446, T extends Class3662<C>> Map<ResourceLocation, Class3662<C>> method6380(final Class8976<T> key) {
         return (Map)this.field9884.getOrDefault(key, Collections.emptyMap());
     }
     
@@ -82,7 +82,7 @@ public class Class1780 extends Class1779
         return method6378.get().method11293(c);
     }
     
-    public Optional<? extends Class3662<?>> method6382(final Class1932 class1932) {
+    public Optional<? extends Class3662<?>> method6382(final ResourceLocation class1932) {
         return (Optional<? extends Class3662<?>>)this.field9884.values().stream().map(map -> map.get(class1933)).filter(Objects::nonNull).findFirst();
     }
     
@@ -90,12 +90,12 @@ public class Class1780 extends Class1779
         return this.field9884.values().stream().flatMap(map -> map.values().stream()).collect((Collector<? super Object, ?, Collection<Class3662<?>>>)Collectors.toSet());
     }
     
-    public Stream<Class1932> method6384() {
+    public Stream<ResourceLocation> method6384() {
         return this.field9884.values().stream().flatMap(map -> map.keySet().stream());
     }
     
-    public static Class3662<?> method6385(final Class1932 class1932, final JsonObject jsonObject) {
-        return Class90.field237.method506(new Class1932(Class9583.method35895(jsonObject, "type"))).orElseThrow(() -> {
+    public static Class3662<?> method6385(final ResourceLocation class1932, final JsonObject jsonObject) {
+        return Registry.field237.method506(new ResourceLocation(Class9583.method35895(jsonObject, "type"))).orElseThrow(() -> {
             new JsonSyntaxException("Invalid or unsupported recipe type '" + str + "'");
             return;
         }).method18179(class1932, jsonObject);
@@ -113,7 +113,7 @@ public class Class1780 extends Class1779
                 throw;
             }
         });
-        this.field9884 = (Map<Class8976<?>, Map<Class1932, Class3662<?>>>)ImmutableMap.copyOf((Map)hashMap);
+        this.field9884 = (Map<Class8976<?>, Map<ResourceLocation, Class3662<?>>>)ImmutableMap.copyOf((Map)hashMap);
     }
     
     static {

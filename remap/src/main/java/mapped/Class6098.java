@@ -18,14 +18,14 @@ public class Class6098<T extends Class3680> implements Class6096<T>
         this.field24754 = field24754;
     }
     
-    public T method18186(final Class1932 class1932, final JsonObject jsonObject) {
-        return this.field24754.method27913(class1932, Class9583.method35896(jsonObject, "group", ""), Class120.method622((JsonElement)(Class9583.method35891(jsonObject, "ingredient") ? Class9583.method35917(jsonObject, "ingredient") : Class9583.method35914(jsonObject, "ingredient"))), new ItemStack(Class90.field211.method506(new Class1932(Class9583.method35895(jsonObject, "result"))).orElseThrow(() -> {
+    public T method18186(final ResourceLocation class1932, final JsonObject jsonObject) {
+        return this.field24754.method27913(class1932, Class9583.method35896(jsonObject, "group", ""), Class120.method622((JsonElement)(Class9583.method35891(jsonObject, "ingredient") ? Class9583.method35917(jsonObject, "ingredient") : Class9583.method35914(jsonObject, "ingredient"))), new ItemStack(Registry.field211.method506(new ResourceLocation(Class9583.method35895(jsonObject, "result"))).orElseThrow(() -> {
             new IllegalStateException("Item: " + str + " does not exist");
             return;
         })), Class9583.method35904(jsonObject, "experience", 0.0f), Class9583.method35910(jsonObject, "cookingtime", this.field24753));
     }
     
-    public T method18187(final Class1932 class1932, final PacketBuffer class1933) {
+    public T method18187(final ResourceLocation class1932, final PacketBuffer class1933) {
         return this.field24754.method27913(class1932, class1933.method29513(32767), Class120.method621(class1933), class1933.method29511(), class1933.readFloat(), class1933.readVarInt());
     }
     

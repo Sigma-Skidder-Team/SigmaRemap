@@ -37,9 +37,9 @@ public class Class7583 extends AbstractSpliterator<VoxelShape>
     public boolean tryAdvance(final Consumer<? super VoxelShape> consumer) {
         if (!this.field30081) {
             this.field30081 = true;
-            final VoxelShape method34783 = this.field30087.method6787().method34783();
-            final boolean method34784 = Class7698.method24496(method34783, Class7698.method24489(this.field30082.getBoundingBox().method18511(1.0E-7)), Class9306.field39924);
-            final boolean method34785 = Class7698.method24496(method34783, Class7698.method24489(this.field30082.getBoundingBox().method18496(1.0E-7)), Class9306.field39924);
+            final VoxelShape method34783 = this.field30087.getWorldBorder().method34783();
+            final boolean method34784 = VoxelShapes.method24496(method34783, VoxelShapes.method24489(this.field30082.getBoundingBox().method18511(1.0E-7)), Class9306.field39924);
+            final boolean method34785 = VoxelShapes.method24496(method34783, VoxelShapes.method24489(this.field30082.getBoundingBox().method18496(1.0E-7)), Class9306.field39924);
             if (!method34784) {
                 if (method34785) {
                     consumer.accept(method34783);
@@ -60,14 +60,14 @@ public class Class7583 extends AbstractSpliterator<VoxelShape>
                 continue;
             }
             this.field30084.setPos(method34786, method34787, method34788);
-            final BlockState method34791 = method34790.method6701(this.field30084);
-            if (method34789 == 1 && !method34791.method21702()) {
+            final BlockState method34791 = method34790.getBlockState(this.field30084);
+            if (method34789 == 1 && !method34791.isCollisionShapeLargerThanFullBlock()) {
                 continue;
             }
-            if (method34789 == 2 && method34791.method21696() != Class7521.field29264) {
+            if (method34789 == 2 && method34791.getBlock() != Class7521.field29264) {
                 continue;
             }
-            VoxelShape class7702 = method34791.method21728(this.field30087, this.field30084, this.field30085);
+            VoxelShape class7702 = method34791.getCollisionShape(this.field30087, this.field30084, this.field30085);
             if (this.field30082 instanceof Class512) {
                 final Class5753 class7703 = new Class5753(this.field30084, class7702);
                 Class9463.method35173().method35188().method21097(class7703);
@@ -77,7 +77,7 @@ public class Class7583 extends AbstractSpliterator<VoxelShape>
                 }
             }
             final VoxelShape method34792 = class7702.method24541(method34786, method34787, method34788);
-            if (!Class7698.method24496(this.field30086, method34792, Class9306.field39924)) {
+            if (!VoxelShapes.method24496(this.field30086, method34792, Class9306.field39924)) {
                 continue;
             }
             consumer.accept(method34792);

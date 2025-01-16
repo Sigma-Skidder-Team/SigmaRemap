@@ -18,7 +18,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
 {
     private Class2265<ItemStack> field2645;
     private boolean field2646;
-    private Class1932 field2647;
+    private ResourceLocation field2647;
     private long field2648;
     
     public Class433(final EntityType<?> class7499, final World class7500) {
@@ -144,7 +144,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
             Class8508.method28426(class51, this.field2645);
         }
         else {
-            this.field2647 = new Class1932(class51.method323("LootTable"));
+            this.field2647 = new ResourceLocation(class51.method323("LootTable"));
             this.field2648 = class51.method320("LootTableSeed");
         }
     }
@@ -184,7 +184,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
         this.field2645.clear();
     }
     
-    public void method2165(final Class1932 field2647, final long field2648) {
+    public void method2165(final ResourceLocation field2647, final long field2648) {
         this.field2647 = field2647;
         this.field2648 = field2648;
     }

@@ -17,7 +17,7 @@ public class Class8922<T> extends Class8923<T>
     public Class8134<T> field37508;
     private final Function<T, Stream<String>> field37509;
     
-    public Class8922(final Function<T, Stream<String>> field37509, final Function<T, Stream<Class1932>> function) {
+    public Class8922(final Function<T, Stream<String>> field37509, final Function<T, Stream<ResourceLocation>> function) {
         super(function);
         this.field37508 = new Class8134<T>();
         this.field37509 = field37509;

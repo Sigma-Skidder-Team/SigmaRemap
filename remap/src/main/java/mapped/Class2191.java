@@ -10,7 +10,7 @@ public enum Class2191
 {
     field13325(p0 -> false), 
     field13326(Class7099::method21780), 
-    field13327(class7099 -> !class7099.method21781());
+    field13327(class7099 -> !class7099.isEmpty());
     
     private final Predicate<Class7099> field13328;
     

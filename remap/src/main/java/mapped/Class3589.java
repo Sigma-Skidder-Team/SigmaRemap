@@ -43,7 +43,7 @@ public class Class3589 extends Class3587
                 for (int j = 0; j <= (b ? 1 : 0); j = ((j <= 0) ? (1 - j) : (-j))) {
                     for (int k = (j < (b ? 1 : 0) && j > ((-b) ? 1 : 0)) ? b : 0; k <= (b ? 1 : 0); k = ((k <= 0) ? (1 - k) : (-k))) {
                         class355.method1287(class354).method1292(j, i, k);
-                        if (this.field16721.method6701(class355).method21696() == Class7521.field29761) {
+                        if (this.field16721.getBlockState(class355).method21696() == Class7521.field29761) {
                             return true;
                         }
                     }

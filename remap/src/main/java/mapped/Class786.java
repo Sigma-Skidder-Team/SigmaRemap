@@ -83,7 +83,7 @@ public class Class786 extends Class785
         }
         if (Entity.horizontalMag(this.getMotion()) > 2.500000277905201E-7) {
             if (this.rand.nextInt(5) == 0) {
-                final Class7096 method6701 = this.world.method6701(new BlockPos(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY() - 0.20000000298023224), MathHelper.floor(this.getPosZ())));
+                final Class7096 method6701 = this.world.getBlockState(new BlockPos(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY() - 0.20000000298023224), MathHelper.floor(this.getPosZ())));
                 if (!method6701.method21706()) {
                     this.world.method6709(new Class6911(Class8432.field34600, method6701), this.getPosX() + (this.rand.nextFloat() - 0.5) * this.method1930(), this.getPosY() + 0.1, this.getPosZ() + (this.rand.nextFloat() - 0.5) * this.method1930(), 4.0 * (this.rand.nextFloat() - 0.5), 0.5, (this.rand.nextFloat() - 0.5) * 4.0);
                 }
@@ -238,15 +238,15 @@ public class Class786 extends Class785
     public boolean method4180(final Class1852 class1852) {
         final BlockPos class1853 = new BlockPos(this);
         final BlockPos method1139 = class1853.method1139();
-        if (class1852.method6701(method1139).method21731(class1852, method1139, this)) {
+        if (class1852.getBlockState(method1139).method21731(class1852, method1139, this)) {
             for (int i = 1; i < 3; ++i) {
                 final BlockPos method1140 = class1853.method1138(i);
-                final Class7096 method1141 = class1852.method6701(method1140);
+                final Class7096 method1141 = class1852.getBlockState(method1140);
                 if (!Class8532.method28620(class1852, method1140, method1141, method1141.method21756())) {
                     return false;
                 }
             }
-            return Class8532.method28620(class1852, class1853, class1852.method6701(class1853), Class7558.field29974.method22148()) && class1852.method6975(this);
+            return Class8532.method28620(class1852, class1853, class1852.getBlockState(class1853), Class7558.field29974.method22148()) && class1852.method6975(this);
         }
         return false;
     }

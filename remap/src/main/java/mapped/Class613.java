@@ -15,7 +15,7 @@ import java.util.List;
 public class Class613 extends Class608<Class639>
 {
     private static String[] field3574;
-    public final List<Class2248<Class3833>> field3575;
+    public final List<Class2248<Block>> field3575;
     public final List<Class2248<Item>> field3576;
     private final int[] field3577;
     public int field3578;
@@ -35,7 +35,7 @@ public class Class613 extends Class608<Class639>
         this.field3576 = Lists.newArrayList((Object[])new Class2248[] { Class8276.field33982, Class8276.field33980, Class8276.field33981, Class8276.field33983, Class8276.field33984 });
         this.method3528(true, 20);
         final Set identityHashSet = Sets.newIdentityHashSet();
-        for (final Item class870 : Class90.field211) {
+        for (final Item class870 : Registry.field211) {
             int n = 0;
             for (final Class2248 class871 : this.field3576) {
                 if (!class871.method8446(class870)) {
@@ -51,7 +51,7 @@ public class Class613 extends Class608<Class639>
             }
             identityHashSet.add(class870);
         }
-        for (final Class3833 class872 : Class90.field208) {
+        for (final Block class872 : Registry.BLOCK) {
             int n2 = 0;
             for (final Class2248 class873 : this.field3575) {
                 if (!class873.method8446(class872)) {
@@ -123,7 +123,7 @@ public class Class613 extends Class608<Class639>
     }
     
     private Class2248<?> method3585(final int n) {
-        return (Class2248<?>)((n >= this.field3575.size()) ? ((Class2248<Item>)this.field3576.get(n - this.field3575.size())) : ((Class2248<Class3833>)this.field3575.get(n)));
+        return (Class2248<?>)((n >= this.field3575.size()) ? ((Class2248<Item>)this.field3576.get(n - this.field3575.size())) : ((Class2248<Block>)this.field3575.get(n)));
     }
     
     private int method3586(final Class2248<?> class2248) {

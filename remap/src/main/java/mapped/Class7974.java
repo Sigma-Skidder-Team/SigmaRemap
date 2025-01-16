@@ -63,7 +63,7 @@ public class Class7974
             final Iterator iterator = list.iterator();
             while (iterator.hasNext()) {
                 final Map map = (Map)Class9570.method35828(iterator.next(), Class9570.field41438);
-                for (final Class1932 class1932 : map.keySet()) {
+                for (final ResourceLocation class1932 : map.keySet()) {
                     final Float n = map.get(class1932);
                     if (n == null) {
                         continue;
@@ -77,7 +77,7 @@ public class Class7974
                 }
             }
             final ArrayList list2 = new ArrayList();
-            for (final Class1932 class1933 : linkedHashMap.keySet()) {
+            for (final ResourceLocation class1933 : linkedHashMap.keySet()) {
                 list2.add(new Class8521(class1933, Floats.toArray((Collection)linkedHashMap.get(class1933))));
             }
             final Class8521[] array = (Class8521[])list2.toArray(new Class8521[list2.size()]);
@@ -100,7 +100,7 @@ public class Class7974
         if (list.size() > 0) {
             sb.append(" -> " + list.get(0).method19882() + " ...");
         }
-        Class8571.method28847("ItemOverrideCache: " + sb.toString());
+        Config.method28847("ItemOverrideCache: " + sb.toString());
     }
     
     @Override

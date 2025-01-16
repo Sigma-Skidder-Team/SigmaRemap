@@ -13,14 +13,14 @@ import net.minecraft.world.World;
 
 import java.util.Map;
 
-public class Class3974 extends Class3833
+public class Class3974 extends Block
 {
     private static String[] field17948;
-    private static final Map<Class3833, Class3833> field17949;
+    private static final Map<Block, Block> field17949;
     public static final VoxelShape field17950;
-    private final Class3833 field17951;
+    private final Block field17951;
     
-    public Class3974(final Class3833 field17951, final Class9288 class9288) {
+    public Class3974(final Block field17951, final Class9288 class9288) {
         super(class9288);
         this.field17951 = field17951;
         Class3974.field17949.put(field17951, this);
@@ -40,7 +40,7 @@ public class Class3974 extends Class3833
     public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         final ItemStack method2715 = class7099.method2715(class7100);
         final Item method2716 = method2715.getItem();
-        final Class3833 class7102 = (method2716 instanceof Class4036) ? Class3974.field17949.getOrDefault(((Class4036)method2716).method12240(), Class7521.field29147) : Class7521.field29147;
+        final Block class7102 = (method2716 instanceof Class4036) ? Class3974.field17949.getOrDefault(((Class4036)method2716).method12240(), Class7521.field29147) : Class7521.field29147;
         final boolean b = class7102 == Class7521.field29147;
         final boolean b2 = this.field17951 == Class7521.field29147;
         if (b == b2) {
@@ -56,10 +56,10 @@ public class Class3974 extends Class3833
             else {
                 class7099.method2716(class7100, class7103);
             }
-            class7097.method6688(class7098, Class7521.field29420.method11878(), 3);
+            class7097.setBlockState(class7098, Class7521.field29420.getDefaultState(), 3);
         }
         else {
-            class7097.method6688(class7098, class7102.method11878(), 3);
+            class7097.setBlockState(class7098, class7102.getDefaultState(), 3);
             class7099.method2857(Class8276.field34036);
             if (!class7099.field3025.field27304) {
                 method2715.method27693(1);
@@ -75,15 +75,15 @@ public class Class3974 extends Class3833
     
     @Override
     public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        return (class7097 == Direction.DOWN && !class7096.method21752(class7099, class7100)) ? Class7521.field29147.method11878() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
+        return (class7097 == Direction.DOWN && !class7096.method21752(class7099, class7100)) ? Class7521.field29147.getDefaultState() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
-    public Class3833 method12114() {
+    public Block method12114() {
         return this.field17951;
     }
     
     static {
         field17949 = Maps.newHashMap();
-        field17950 = Class3833.method11778(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
+        field17950 = Block.method11778(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
     }
 }

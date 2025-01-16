@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class Class4730 extends Class4712<Class850, Class5868<Class850>>
 {
-    private static final Class1932 field20332;
+    private static final ResourceLocation field20332;
     private final Random field20333;
     
     public Class4730(final Class8551 class8551) {
@@ -36,11 +36,11 @@ public class Class4730 extends Class4712<Class850, Class5868<Class850>>
         return new Vec3d(this.field20333.nextGaussian() * 0.02, 0.0, this.field20333.nextGaussian() * 0.02);
     }
     
-    public Class1932 method14045(final Class850 class850) {
+    public ResourceLocation method14045(final Class850 class850) {
         return Class4730.field20332;
     }
     
     static {
-        field20332 = new Class1932("textures/entity/enderman/enderman.png");
+        field20332 = new ResourceLocation("textures/entity/enderman/enderman.png");
     }
 }

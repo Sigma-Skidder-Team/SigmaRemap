@@ -8,13 +8,13 @@ import net.minecraft.item.ItemStack;
 
 public class Class3427 extends Class3426<Class473>
 {
-    public static final Class1932 field16192;
-    public static final Class1932 field16193;
-    public static final Class1932 field16194;
-    public static final Class1932 field16195;
-    public static final Class1932 field16196;
-    public static final Class1932 field16197;
-    private static final Class1932[] field16198;
+    public static final ResourceLocation field16192;
+    public static final ResourceLocation field16193;
+    public static final ResourceLocation field16194;
+    public static final ResourceLocation field16195;
+    public static final ResourceLocation field16196;
+    public static final ResourceLocation field16197;
+    private static final ResourceLocation[] field16198;
     private static final Class2215[] field16199;
     private final Class473 field16200;
     private final Class470 field16201;
@@ -177,13 +177,13 @@ public class Class3427 extends Class3426<Class473>
     }
     
     static {
-        field16192 = new Class1932("textures/atlas/blocks.png");
-        field16193 = new Class1932("item/empty_armor_slot_helmet");
-        field16194 = new Class1932("item/empty_armor_slot_chestplate");
-        field16195 = new Class1932("item/empty_armor_slot_leggings");
-        field16196 = new Class1932("item/empty_armor_slot_boots");
-        field16197 = new Class1932("item/empty_armor_slot_shield");
-        field16198 = new Class1932[] { Class3427.field16196, Class3427.field16195, Class3427.field16194, Class3427.field16193 };
+        field16192 = new ResourceLocation("textures/atlas/blocks.png");
+        field16193 = new ResourceLocation("item/empty_armor_slot_helmet");
+        field16194 = new ResourceLocation("item/empty_armor_slot_chestplate");
+        field16195 = new ResourceLocation("item/empty_armor_slot_leggings");
+        field16196 = new ResourceLocation("item/empty_armor_slot_boots");
+        field16197 = new ResourceLocation("item/empty_armor_slot_shield");
+        field16198 = new ResourceLocation[] { Class3427.field16196, Class3427.field16195, Class3427.field16194, Class3427.field16193 };
         field16199 = new Class2215[] { Class2215.field13605, Class2215.field13604, Class2215.field13603, Class2215.field13602 };
     }
 }

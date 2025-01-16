@@ -89,7 +89,7 @@ public class Class3285 extends Class3167
         if (class7859 != null) {
             final List list2 = (List)this.method9882("Blocks");
             for (final BlockPos class7860 : this.method10373(class7859)) {
-                if (!list2.contains(Class90.field208.method503(Class3285.field15514.field4683.method6701(class7860).method21696()).toString())) {
+                if (!list2.contains(Registry.BLOCK.getKey(Class3285.field15514.field4683.getBlockState(class7860).method21696()).toString())) {
                     continue;
                 }
                 list.add(class7860);
@@ -97,13 +97,13 @@ public class Class3285 extends Class3167
             if (this.method9883("Holes")) {
             Label_0145:
                 for (final BlockPos class7861 : this.method10373(class7859)) {
-                    if (Class3285.field15514.field4683.method6701(class7861).method21696() != Class7521.field29147) {
+                    if (Class3285.field15514.field4683.getBlockState(class7861).method21696() != Class7521.field29147) {
                         continue;
                     }
                     for (final Direction class7862 : Direction.values()) {
                         if (class7862 != Direction.UP) {
-                            if (Class3285.field15514.field4683.method6701(class7861.add(class7862.getDirectionVec())).method21696() != Class7521.field29286) {
-                                if (Class3285.field15514.field4683.method6701(class7861.add(class7862.getDirectionVec())).method21696() != Class7521.field29172) {
+                            if (Class3285.field15514.field4683.getBlockState(class7861.add(class7862.getDirectionVec())).method21696() != Class7521.field29286) {
+                                if (Class3285.field15514.field4683.getBlockState(class7861.add(class7862.getDirectionVec())).method21696() != Class7521.field29172) {
                                     continue Label_0145;
                                 }
                             }

@@ -7,11 +7,11 @@ package mapped;
 public class Class7830 implements Class7831<Class7832>
 {
     private static String[] field32063;
-    public final /* synthetic */ Class1932 field32064;
+    public final /* synthetic */ ResourceLocation field32064;
     public final /* synthetic */ Class7832 field32065;
     public final /* synthetic */ Class8875 field32066;
     
-    public Class7830(final Class8875 field32066, final Class1932 field32067, final Class7832 field32068) {
+    public Class7830(final Class8875 field32066, final ResourceLocation field32067, final Class7832 field32068) {
         this.field32066 = field32066;
         this.field32064 = field32067;
         this.field32065 = field32068;

@@ -40,7 +40,7 @@ public class Class8988
     public int field37900;
     public float field37901;
     public int field37902;
-    public Class1932 field37903;
+    public ResourceLocation field37903;
     public Map field37904;
     public Class1912 field37905;
     public Map field37906;
@@ -162,7 +162,7 @@ public class Class8988
             return 3;
         }
         if (!str.equals("elytra")) {
-            Class8571.method28848("Unknown method: " + str);
+            Config.warn("Unknown method: " + str);
             return 0;
         }
         return 4;
@@ -175,7 +175,7 @@ public class Class8988
         if (trim != null) {
             trim = trim.trim();
             final TreeSet set = new TreeSet();
-            final String[] method28937 = Class8571.method28937(trim, " ");
+            final String[] method28937 = Config.method28937(trim, " ");
             for (int i = 0; i < method28937.length; ++i) {
                 final String s2 = method28937[i];
                 final Item method28938 = this.method31997(s2);
@@ -185,11 +185,11 @@ public class Class8988
                         set.add(new Integer(method28939));
                     }
                     else {
-                        Class8571.method28848("Item ID not found: " + s2);
+                        Config.warn("Item ID not found: " + s2);
                     }
                 }
                 else {
-                    Class8571.method28848("Item not found: " + s2);
+                    Config.warn("Item not found: " + s2);
                 }
             }
             final Integer[] array = (Integer[])set.toArray(new Integer[set.size()]);
@@ -203,9 +203,9 @@ public class Class8988
     }
     
     private Item method31997(final String s) {
-        final Class1932 class1932 = new Class1932(s);
-        if (Class90.field211.method510(class1932)) {
-            return Class90.field211.method505(class1932);
+        final ResourceLocation class1932 = new ResourceLocation(s);
+        if (Registry.field211.method510(class1932)) {
+            return Registry.field211.getOrDefault(class1932);
         }
         return null;
     }
@@ -339,11 +339,11 @@ public class Class8988
             return n;
         }
         trim = trim.trim();
-        final int method28933 = Class8571.method28933(trim, Integer.MIN_VALUE);
+        final int method28933 = Config.method28933(trim, Integer.MIN_VALUE);
         if (method28933 != Integer.MIN_VALUE) {
             return method28933;
         }
-        Class8571.method28848("Invalid integer: " + trim);
+        Config.warn("Invalid integer: " + trim);
         return n;
     }
     
@@ -352,17 +352,17 @@ public class Class8988
             return n;
         }
         trim = trim.trim();
-        final float method28934 = Class8571.method28934(trim, Float.MIN_VALUE);
+        final float method28934 = Config.method28934(trim, Float.MIN_VALUE);
         if (method28934 != Float.MIN_VALUE) {
             return method28934;
         }
-        Class8571.method28848("Invalid float: " + trim);
+        Config.warn("Invalid float: " + trim);
         return n;
     }
     
     private int[] method32006(final String s, final Class8946 class8946) {
         if (s != null) {
-            final String[] method28937 = Class8571.method28937(s, " ");
+            final String[] method28937 = Config.method28937(s, " ");
             final ArrayList list = new ArrayList();
             for (int i = 0; i < method28937.length; ++i) {
                 final String str = method28937[i];
@@ -371,22 +371,22 @@ public class Class8988
                     list.add(method28938);
                 }
                 else {
-                    Class8571.method28848("Invalid value: " + str);
+                    Config.warn("Invalid value: " + str);
                 }
             }
-            return Class8571.method29008((Integer[])list.toArray(new Integer[list.size()]));
+            return Config.method29008((Integer[])list.toArray(new Integer[list.size()]));
         }
         return null;
     }
     
     private Class7740 method32007(final String str) {
         if (str != null) {
-            final String[] method28937 = Class8571.method28937(str, " ");
+            final String[] method28937 = Config.method28937(str, " ");
             final Class7740 class7740 = new Class7740();
             for (int i = 0; i < method28937.length; ++i) {
                 final Class7356 method28938 = this.method32008(method28937[i]);
                 if (method28938 == null) {
-                    Class8571.method28848("Invalid range list: " + str);
+                    Config.warn("Invalid range list: " + str);
                     return null;
                 }
                 class7740.method24696(method28938);
@@ -402,22 +402,22 @@ public class Class8988
         }
         trim = trim.trim();
         if (trim.length() - trim.replace("-", "").length() > 1) {
-            Class8571.method28848("Invalid range: " + trim);
+            Config.warn("Invalid range: " + trim);
             return null;
         }
-        final String[] method28937 = Class8571.method28937(trim, "- ");
+        final String[] method28937 = Config.method28937(trim, "- ");
         final int[] array = new int[method28937.length];
         for (int i = 0; i < method28937.length; ++i) {
-            final int method28938 = Class8571.method28933(method28937[i], -1);
+            final int method28938 = Config.method28933(method28937[i], -1);
             if (method28938 < 0) {
-                Class8571.method28848("Invalid range: " + trim);
+                Config.warn("Invalid range: " + trim);
                 return null;
             }
             array[i] = method28938;
         }
         if (array.length != 1) {
             if (array.length != 2) {
-                Class8571.method28848("Invalid range: " + trim);
+                Config.warn("Invalid range: " + trim);
                 return null;
             }
             return new Class7356(Math.min(array[0], array[1]), Math.max(array[0], array[1]));
@@ -468,7 +468,7 @@ public class Class8988
             return 1;
         }
         if (!lowerCase.equals("off")) {
-            Class8571.method28848("Invalid hand: " + lowerCase);
+            Config.warn("Invalid hand: " + lowerCase);
             return 0;
         }
         return 2;
@@ -476,15 +476,15 @@ public class Class8988
     
     public boolean method32012(final String s) {
         if (this.field37881 == null || this.field37881.length() <= 0) {
-            Class8571.method28848("No name found: " + s);
+            Config.warn("No name found: " + s);
             return false;
         }
         if (this.field37882 == null) {
-            Class8571.method28848("No base path found: " + s);
+            Config.warn("No base path found: " + s);
             return false;
         }
         if (this.field37883 == 0) {
-            Class8571.method28848("No type defined: " + s);
+            Config.warn("No type defined: " + s);
             return false;
         }
         if (this.field37883 == 4) {
@@ -504,7 +504,7 @@ public class Class8988
                 this.field37884 = this.method32013();
             }
             if (this.field37884 == null) {
-                Class8571.method28848("No items defined: " + s);
+                Config.warn("No items defined: " + s);
                 return false;
             }
         }
@@ -512,14 +512,14 @@ public class Class8988
             if (this.field37886 == null) {
                 if (this.field37887 == null) {
                     if (this.field37888 == null) {
-                        Class8571.method28848("No texture or model specified: " + s);
+                        Config.warn("No texture or model specified: " + s);
                         return false;
                     }
                 }
             }
         }
         if (this.field37883 == 2 && this.field37893 == null) {
-            Class8571.method28848("No enchantmentIDs specified: " + s);
+            Config.warn("No enchantmentIDs specified: " + s);
             return false;
         }
         return true;
@@ -545,7 +545,7 @@ public class Class8988
             this.field37904 = new HashMap();
             this.field37906 = new HashMap();
             for (final String s : this.field37886.keySet()) {
-                final Class1932 method32016 = this.method32016(this.field37886.get(s));
+                final ResourceLocation method32016 = this.method32016(this.field37886.get(s));
                 this.field37904.put(s, method32016);
                 if (this.field37883 != 1) {
                     continue;
@@ -565,36 +565,36 @@ public class Class8988
                 if (class1775 == null) {
                     continue;
                 }
-                final Class1932 method7503 = class1775.method7503();
+                final ResourceLocation method7503 = class1775.method7503();
                 final Class1912 method7504 = class1774.method6338(method7503);
                 if (method7504 == null || method7504 instanceof Class1913) {
-                    Class8571.method28848("Missing CIT sprite: " + method7503 + ", properties: " + this.field37882);
+                    Config.warn("Missing CIT sprite: " + method7503 + ", properties: " + this.field37882);
                 }
                 this.field37906.put(s, method7504);
             }
         }
     }
     
-    private Class1932 method32016(final String s) {
+    private ResourceLocation method32016(final String s) {
         if (s != null) {
-            final Class1932 class1932 = new Class1932(s);
+            final ResourceLocation class1932 = new ResourceLocation(s);
             final String method7798 = class1932.method7798();
             String s2 = class1932.method7797();
             if (!s2.contains("/")) {
                 s2 = "textures/item/" + s2;
             }
             final String string = s2 + ".png";
-            final Class1932 class1933 = new Class1932(method7798, string);
-            if (!Class8571.method28900(class1933)) {
-                Class8571.method28848("File not found: " + string);
+            final ResourceLocation class1933 = new ResourceLocation(method7798, string);
+            if (!Config.method28900(class1933)) {
+                Config.warn("File not found: " + string);
             }
             return class1933;
         }
         return null;
     }
     
-    private Class1932 method32017(final Class1932 class1932) {
-        return new Class1932(class1932.method7798(), Class9518.method35518(Class9518.method35517(class1932.method7797(), "textures/"), ".png"));
+    private ResourceLocation method32017(final ResourceLocation class1932) {
+        return new ResourceLocation(class1932.method7798(), Class9518.method35518(Class9518.method35517(class1932.method7797(), "textures/"), ".png"));
     }
     
     public void method32018(final Class1774 class1774, final Class8163 class1775) {
@@ -758,7 +758,7 @@ public class Class8988
     
     @Override
     public String toString() {
-        return "" + this.field37882 + "/" + this.field37881 + ", type: " + this.field37883 + ", items: [" + Class8571.method28890(this.field37884) + "], textture: " + this.field37885;
+        return "" + this.field37882 + "/" + this.field37881 + ", type: " + this.field37883 + ", items: [" + Config.method28890(this.field37884) + "], textture: " + this.field37885;
     }
     
     public float method32028(final Class1663 class1663) {
@@ -793,7 +793,7 @@ public class Class8988
         return (float)this.field37912;
     }
     
-    public Class6313 method32030(final Class1932 class1932, final boolean b) {
+    public Class6313 method32030(final ResourceLocation class1932, final boolean b) {
         Class6313 class1933;
         Map<String, Class6313> map;
         if (!b) {
@@ -833,13 +833,13 @@ public class Class8988
     }
     
     public void method32032() {
-        final Class1790 method28860 = Class8571.method28860();
+        final Class1790 method28860 = Config.method28860();
         final Class6313 method28861 = method28860.method6452();
         if (this.field37887 != null) {
             final Class1933 class1933 = new Class1933(method32035(this.field37887), "inventory");
             this.field37909 = method28860.method6451(class1933);
             if (this.field37909 == method28861) {
-                Class8571.method28848("Custom Items: Model not found " + class1933.method7797());
+                Config.warn("Custom Items: Model not found " + class1933.method7797());
                 this.field37909 = null;
             }
         }
@@ -860,7 +860,7 @@ public class Class8988
                         this.field37910.put("item/" + method28862, method28863);
                     }
                     else {
-                        Class8571.method28848("Custom Items: Model not found " + class1934.method7797());
+                        Config.warn("Custom Items: Model not found " + class1934.method7797());
                     }
                 }
             }
@@ -885,7 +885,7 @@ public class Class8988
                 set.addAll(collection);
             }
             catch (final Exception ex) {
-                Class8571.method28848("Error registering model: " + obj + ", " + ex.getClass().getName() + ": " + ex.getMessage());
+                Config.warn("Error registering model: " + obj + ", " + ex.getClass().getName() + ": " + ex.getMessage());
             }
         }
         else {
@@ -900,7 +900,7 @@ public class Class8988
         throw new NullPointerException(s);
     }
     
-    private static Class1932 method32035(final String str) {
-        return (Class9570.field41391.method22623() && !str.startsWith("optifine/")) ? new Class1932("models/" + str) : new Class1932(str);
+    private static ResourceLocation method32035(final String str) {
+        return (Class9570.field41391.method22623() && !str.startsWith("optifine/")) ? new ResourceLocation("models/" + str) : new ResourceLocation(str);
     }
 }

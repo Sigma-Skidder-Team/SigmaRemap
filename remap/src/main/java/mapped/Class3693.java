@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.gson.GsonBuilder;
 import org.apache.logging.log4j.LogManager;
-import com.google.gson.JsonObject;
+
 import java.io.BufferedWriter;
 import java.nio.file.Path;
 import com.google.gson.JsonElement;
@@ -29,10 +29,10 @@ public abstract class Class3693<T> implements Class3689
     private static final Logger field17008;
     private static final Gson field17009;
     public final Class7203 field17010;
-    public final Class90<T> field17011;
+    public final Registry<T> field17011;
     public final Map<Class7909<T>, Class8162<T>> field17012;
     
-    public Class3693(final Class7203 field17010, final Class90<T> field17011) {
+    public Class3693(final Class7203 field17010, final Registry<T> field17011) {
         this.field17012 = Maps.newLinkedHashMap();
         this.field17010 = field17010;
         this.field17011 = field17011;
@@ -47,7 +47,7 @@ public abstract class Class3693<T> implements Class3689
         final Class6208 class8843 = new Class6208(p0 -> Optional.empty(), "", false, "generated");
         class8843.method18465(this.field17012.entrySet().stream().collect(Collectors.toMap(entry -> entry.getKey().method25621(), (Function<? super Object, ?>)Map.Entry::getValue)));
         class8843.method18467().forEach((class8846, class8847) -> {
-            class8847.method25619(this.field17011::method503);
+            class8847.method25619(this.field17011::getKey);
             this.method11367(class8846);
             try {
                 final JsonElement jsonElement;
@@ -97,7 +97,7 @@ public abstract class Class3693<T> implements Class3689
     
     public abstract void method11366(final Class6208<T> p0);
     
-    public abstract Path method11367(final Class1932 p0);
+    public abstract Path method11367(final ResourceLocation p0);
     
     public Class8162<T> method11368(final Class7909<T> key) {
         return this.field17012.computeIfAbsent(key, p0 -> Class8162.method26975());

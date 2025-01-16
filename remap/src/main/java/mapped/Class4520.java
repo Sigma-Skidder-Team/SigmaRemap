@@ -37,7 +37,7 @@ public class Class4520 extends Class4515
     }
     
     private void method13517(final Class1795 class1795) {
-        this.method13510(class1795.method6518(new Class1932("woodland_mansion/" + this.field19933)), this.field19920, new Class9092().method32847(true).method32845(this.field19934).method32844(this.field19935).method32853(Class4106.field18207));
+        this.method13510(class1795.method6518(new ResourceLocation("woodland_mansion/" + this.field19933)), this.field19920, new Class9092().method32847(true).method32845(this.field19934).method32844(this.field19935).method32853(Class4106.field18207));
     }
     
     @Override
@@ -52,18 +52,18 @@ public class Class4520 extends Class4515
     public void method13511(final String s, final BlockPos class354, final Class1851 class355, final Random random, final MutableBoundingBox class356) {
         if (s.startsWith("Chest")) {
             final Class2052 method32856 = this.field19919.method32856();
-            BlockState method32857 = Class7521.field29292.method11878();
+            BlockState method32857 = Class7521.field29292.getDefaultState();
             if ("ChestWest".equals(s)) {
-                method32857 = ((Class7097<Object, BlockState>)method32857).method21773((Class7111<Comparable>)Class3865.field17497, method32856.method8142(Direction.WEST));
+                method32857 = ((StateHolder<Object, BlockState>)method32857).with((IProperty<Comparable>)Class3865.field17497, method32856.method8142(Direction.WEST));
             }
             else if ("ChestEast".equals(s)) {
-                method32857 = ((Class7097<Object, BlockState>)method32857).method21773((Class7111<Comparable>)Class3865.field17497, method32856.method8142(Direction.EAST));
+                method32857 = ((StateHolder<Object, BlockState>)method32857).with((IProperty<Comparable>)Class3865.field17497, method32856.method8142(Direction.EAST));
             }
             else if ("ChestSouth".equals(s)) {
-                method32857 = ((Class7097<Object, BlockState>)method32857).method21773((Class7111<Comparable>)Class3865.field17497, method32856.method8142(Direction.SOUTH));
+                method32857 = ((StateHolder<Object, BlockState>)method32857).with((IProperty<Comparable>)Class3865.field17497, method32856.method8142(Direction.SOUTH));
             }
             else if ("ChestNorth".equals(s)) {
-                method32857 = ((Class7097<Object, BlockState>)method32857).method21773((Class7111<Comparable>)Class3865.field17497, method32856.method8142(Direction.NORTH));
+                method32857 = ((StateHolder<Object, BlockState>)method32857).with((IProperty<Comparable>)Class3865.field17497, method32856.method8142(Direction.NORTH));
             }
             this.method13452(class355, class356, random, class354, Class9020.field38092, method32857);
         }
@@ -86,7 +86,7 @@ public class Class4520 extends Class4515
             class357.method1729(class354, 0.0f, 0.0f);
             class357.method4188(class355, class355.method6784(new BlockPos(class357)), Class2101.field12177, null, null);
             class355.method6886(class357);
-            class355.method6688(class354, Class7521.field29147.method11878(), 2);
+            class355.setBlockState(class354, Class7521.field29147.getDefaultState(), 2);
         }
     }
 }

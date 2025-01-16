@@ -8,7 +8,7 @@ import net.minecraft.entity.LivingEntity;
 
 public class Class4747 extends Class4746<Class826, Class5859<Class826>>
 {
-    private static final Class1932 field20369;
+    private static final ResourceLocation field20369;
     
     public Class4747(final Class8551 class8551, final Class6580 class8552) {
         super(class8551, new Class5859(0.0f, false), 0.5f);
@@ -16,7 +16,7 @@ public class Class4747 extends Class4746<Class826, Class5859<Class826>>
         this.method13978(new Class1798<Class826, Class5859<Class826>>(this, class8552, "zombie_villager"));
     }
     
-    public Class1932 method14081(final Class826 class826) {
+    public ResourceLocation method14081(final Class826 class826) {
         return Class4747.field20369;
     }
     
@@ -28,6 +28,6 @@ public class Class4747 extends Class4746<Class826, Class5859<Class826>>
     }
     
     static {
-        field20369 = new Class1932("textures/entity/zombie_villager/zombie_villager.png");
+        field20369 = new ResourceLocation("textures/entity/zombie_villager/zombie_villager.png");
     }
 }

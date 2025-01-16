@@ -9,10 +9,10 @@ import com.google.gson.JsonObject;
 
 public class Class4641 implements Class4640<Class4242>
 {
-    private static final Class1932 field20107;
+    private static final ResourceLocation field20107;
     
     @Override
-    public Class1932 method13717() {
+    public ResourceLocation method13717() {
         return Class4641.field20107;
     }
     
@@ -33,6 +33,6 @@ public class Class4641 implements Class4640<Class4242>
     }
     
     static {
-        field20107 = new Class1932("impossible");
+        field20107 = new ResourceLocation("impossible");
     }
 }

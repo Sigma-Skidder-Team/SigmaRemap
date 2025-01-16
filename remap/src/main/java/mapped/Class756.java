@@ -150,7 +150,7 @@ public class Class756 extends Class754
     }
     
     public void method4113() {
-        final Class5744 class5744 = new Class5744(this.posX, this.getBoundingBox().field25074, this.posZ, this.rotationPitch, this.rotationYaw, this.onGround);
+        final Class5744 class5744 = new Class5744(this.posX, this.getBoundingBox().minY, this.posZ, this.rotationPitch, this.rotationYaw, this.onGround);
         Class9463.method35173().method35188().method21097(class5744);
         if (!class5744.method16962()) {
             final boolean method1815 = this.method1815();
@@ -360,7 +360,7 @@ public class Class756 extends Class754
     }
     
     @Override
-    public void method1838(final double n, final double n2, final double n3) {
+    public void pushOutOfBlocks(final double n, final double n2, final double n3) {
         final BlockPos class354 = new BlockPos(n, n2, n3);
         if (this.method4125(class354)) {
             final double n4 = n - class354.getX();
@@ -409,7 +409,7 @@ public class Class756 extends Class754
     private boolean method4125(final BlockPos class354) {
         final AxisAlignedBB method1886 = this.getBoundingBox();
         final Mutable class355 = new Mutable(class354);
-        for (int i = MathHelper.floor(method1886.field25074); i < MathHelper.method35650(method1886.field25077); ++i) {
+        for (int i = MathHelper.floor(method1886.minY); i < MathHelper.ceil(method1886.maxY); ++i) {
             class355.method1294(i);
             if (!this.method2865(class355)) {
                 return true;
@@ -648,10 +648,10 @@ public class Class756 extends Class754
             this.field4085.field24727 = true;
         }
         if (!this.noClip) {
-            this.method1838(this.getPosX() - this.method1930() * 0.35, this.getPosY() + 0.5, this.getPosZ() + this.method1930() * 0.35);
-            this.method1838(this.getPosX() - this.method1930() * 0.35, this.getPosY() + 0.5, this.getPosZ() - this.method1930() * 0.35);
-            this.method1838(this.getPosX() + this.method1930() * 0.35, this.getPosY() + 0.5, this.getPosZ() - this.method1930() * 0.35);
-            this.method1838(this.getPosX() + this.method1930() * 0.35, this.getPosY() + 0.5, this.getPosZ() + this.method1930() * 0.35);
+            this.pushOutOfBlocks(this.getPosX() - this.method1930() * 0.35, this.getPosY() + 0.5, this.getPosZ() + this.method1930() * 0.35);
+            this.pushOutOfBlocks(this.getPosX() - this.method1930() * 0.35, this.getPosY() + 0.5, this.getPosZ() - this.method1930() * 0.35);
+            this.pushOutOfBlocks(this.getPosX() + this.method1930() * 0.35, this.getPosY() + 0.5, this.getPosZ() - this.method1930() * 0.35);
+            this.pushOutOfBlocks(this.getPosX() + this.method1930() * 0.35, this.getPosY() + 0.5, this.getPosZ() + this.method1930() * 0.35);
         }
         final boolean b2 = this.method2877().method33491() > 6.0f || this.field3025.field27303;
         if (this.onGround || this.method1712()) {
@@ -960,10 +960,10 @@ public class Class756 extends Class754
             final Vec3d method1942 = this.method1793();
             if ((float)(method1942.x * method1941.x + method1942.z * method1941.z) >= -0.15f) {
                 final ISelectionContext method1943 = ISelectionContext.forEntity(this);
-                final BlockPos class5488 = new BlockPos(this.getPosX(), this.getBoundingBox().field25077, this.getPosZ());
-                if (this.world.method6701(class5488).method21728(this.world, class5488, method1943).method24540()) {
+                final BlockPos class5488 = new BlockPos(this.getPosX(), this.getBoundingBox().maxY, this.getPosZ());
+                if (this.world.getBlockState(class5488).method21728(this.world, class5488, method1943).method24540()) {
                     BlockPos class5489 = class5488.method1137();
-                    if (this.world.method6701(class5489).method21728(this.world, class5489, method1943).method24540()) {
+                    if (this.world.getBlockState(class5489).method21728(this.world, class5489, method1943).method24540()) {
                         float n6 = 1.2f;
                         if (this.method2653(Class9439.field40481)) {
                             n6 += (this.method2654(Class9439.field40481).method7908() + 1) * 0.75f;
@@ -985,12 +985,12 @@ public class Class756 extends Class754
                             if (!class5490.method18504(method1950, method1951) && !class5490.method18504(method1952, method1953)) {
                                 continue;
                             }
-                            n7 = (float)class5490.field25077;
+                            n7 = (float)class5490.maxY;
                             final BlockPos class5491 = new BlockPos(class5490.method18517());
                             for (int n8 = 1; n8 < n6; ++n8) {
                                 final BlockPos method1954 = class5491.method1138(n8);
                                 final VoxelShape method1955;
-                                if (!(method1955 = this.world.method6701(method1954).method21728(this.world, method1954, method1943)).method24540()) {
+                                if (!(method1955 = this.world.getBlockState(method1954).method21728(this.world, method1954, method1943)).method24540()) {
                                     n7 = (float)method1955.method24536(Axis.Y) + method1954.getY();
                                     if (n7 - this.getPosY() > n6) {
                                         return;
@@ -998,7 +998,7 @@ public class Class756 extends Class754
                                 }
                                 if (n8 > 1) {
                                     class5489 = class5489.method1137();
-                                    if (!this.world.method6701(class5489).method21728(this.world, class5489, method1943).method24540()) {
+                                    if (!this.world.getBlockState(class5489).method21728(this.world, class5489, method1943).method24540()) {
                                         return;
                                     }
                                 }

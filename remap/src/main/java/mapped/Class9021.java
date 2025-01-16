@@ -7,8 +7,8 @@ package mapped;
 public class Class9021
 {
     private static String[] field38134;
-    private Class3833 field38135;
-    private Class7909<Class3833> field38136;
+    private Block field38135;
+    private Class7909<Block> field38136;
     private Class9357 field38137;
     private Class7103 field38138;
     
@@ -21,7 +21,7 @@ public class Class9021
         return new Class9021();
     }
     
-    public Class9021 method32319(final Class7909<Class3833> field38136) {
+    public Class9021 method32319(final Class7909<Block> field38136) {
         this.field38136 = field38136;
         return this;
     }

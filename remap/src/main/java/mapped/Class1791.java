@@ -22,7 +22,7 @@ import java.util.List;
 
 public class Class1791 extends Class1776<List<String>>
 {
-    private static final Class1932 field9914;
+    private static final ResourceLocation field9914;
     private static final Random field9915;
     private final List<String> field9916;
     private final Class9212 field9917;
@@ -67,7 +67,7 @@ public class Class1791 extends Class1776<List<String>>
     }
     
     static {
-        field9914 = new Class1932("texts/splashes.txt");
+        field9914 = new ResourceLocation("texts/splashes.txt");
         field9915 = new Random();
     }
 }

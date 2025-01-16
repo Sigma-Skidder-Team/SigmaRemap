@@ -25,11 +25,11 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
     
     public static boolean method13608(final Class1877 class1877, final BlockPos class1878) {
         return class1877.method6791(class1878, class1879 -> {
-            class1879.method21696();
+            class1879.getBlock();
             final boolean b;
             if (!class1879.method21706()) {
                 if (!class1879.method21755(Class7188.field27907)) {
-                    final Class3833 class1880;
+                    final Block class1880;
                     if (!Class4535.method13533(class1880)) {
                         if (!class1880.method11785(Class7188.field27893)) {
                             if (!class1880.method11785(Class7188.field27892)) {
@@ -51,8 +51,8 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
     
     public static boolean method13610(final Class1877 class1877, final BlockPos class1878) {
         return class1877.method6791(class1878, class1879 -> {
-            class1879.method21696();
-            final Class3833 class1880;
+            class1879.getBlock();
+            final Block class1880;
             final boolean b;
             if (!(!Class4535.method13533(class1880))) {
                 if (class1880 != Class7521.field29155) {
@@ -66,11 +66,11 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
     }
     
     public static boolean method13611(final Class1877 class1877, final BlockPos class1878) {
-        return class1877.method6791(class1878, class1879 -> class1879.method21696() == Class7521.field29388);
+        return class1877.method6791(class1878, class1879 -> class1879.getBlock() == Class7521.field29388);
     }
     
     public static boolean method13612(final Class1877 class1877, final BlockPos class1878) {
-        return class1877.method6791(class1878, class1879 -> class1879.method21696() == Class7521.field29173);
+        return class1877.method6791(class1878, class1879 -> class1879.getBlock() == Class7521.field29173);
     }
     
     public static boolean method13613(final Class1877 class1877, final BlockPos class1878) {
@@ -78,24 +78,24 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
     }
     
     public static boolean method13614(final Class1877 class1877, final BlockPos class1878) {
-        return class1877.method6791(class1878, class1879 -> Class4535.method13533(class1879.method21696()));
+        return class1877.method6791(class1878, class1879 -> Class4535.method13533(class1879.getBlock()));
     }
     
     public static boolean method13615(final Class1877 class1877, final BlockPos class1878) {
         return class1877.method6791(class1878, class1879 -> {
-            class1879.method21696();
-            final Class3833 class1880;
+            class1879.getBlock();
+            final Block class1880;
             return Class4535.method13533(class1880) || class1880 == Class7521.field29298;
         });
     }
     
     public static boolean method13616(final Class1877 class1877, final BlockPos class1878) {
-        return class1877.method6791(class1878, class1879 -> class1879.method21697() == Class8059.field33159);
+        return class1877.method6791(class1878, class1879 -> class1879.getMaterial() == Material.TALL_PLANTS);
     }
     
     public void method13617(final Class1875 class1875, final BlockPos class1876) {
         if (!method13610(class1875, class1876)) {
-            this.method13529(class1875, class1876, Class7521.field29156.method11878());
+            this.method13529(class1875, class1876, Class7521.field29156.getDefaultState());
         }
     }
     
@@ -136,7 +136,7 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
     }
     
     private void method13621(final Class1876 class1876, final BlockPos class1877, final BlockState class1878) {
-        class1876.method6688(class1877, class1878, 19);
+        class1876.setBlockState(class1877, class1878, 19);
     }
     
     public final boolean method13622(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final T t) {
@@ -183,10 +183,10 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
                 for (int length = values.length, j = 0; j < length; ++j) {
                     method1296.method1303(class1855).method1304(values[j]);
                     if (!set.contains(method1296)) {
-                        final BlockState method1297 = class1851.method6701(method1296);
-                        if (((Class7097<Object, Object>)method1297).method21771((Class7111<Comparable>)Class8970.field37778)) {
+                        final BlockState method1297 = class1851.getBlockState(method1296);
+                        if (((StateHolder<Object, Object>)method1297).method21771((IProperty<Comparable>)Class8970.field37778)) {
                             ((Set)arrayList.get(0)).add(method1296.toImmutable());
-                            this.method13621(class1851, method1296, ((Class7097<Object, BlockState>)method1297).method21773((Class7111<Comparable>)Class8970.field37778, 1));
+                            this.method13621(class1851, method1296, ((StateHolder<Object, BlockState>)method1297).with((IProperty<Comparable>)Class8970.field37778, 1));
                             if (class1852.isVecInside(method1296)) {
                                 class1853.method27415(method1296.getX() - class1852.minX, method1296.getY() - class1852.minY, method1296.getZ() - class1852.minZ, true, true);
                             }
@@ -205,9 +205,9 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
                     for (int length2 = values2.length, l = 0; l < length2; ++l) {
                         method1296.method1303(class1856).method1304(values2[l]);
                         if (!set3.contains(method1296) && !set4.contains(method1296)) {
-                            final BlockState method1298 = class1851.method6701(method1296);
-                            if (((Class7097<Object, Object>)method1298).method21771((Class7111<Comparable>)Class8970.field37778) && ((Class7097<Object, BlockState>)method1298).method21772((Class7111<Integer>)Class8970.field37778) > k + 1) {
-                                this.method13621(class1851, method1296, ((Class7097<Object, BlockState>)method1298).method21773((Class7111<Comparable>)Class8970.field37778, k + 1));
+                            final BlockState method1298 = class1851.getBlockState(method1296);
+                            if (((StateHolder<Object, Object>)method1298).method21771((IProperty<Comparable>)Class8970.field37778) && ((StateHolder<Object, BlockState>)method1298).get((IProperty<Integer>)Class8970.field37778) > k + 1) {
+                                this.method13621(class1851, method1296, ((StateHolder<Object, BlockState>)method1298).with((IProperty<Comparable>)Class8970.field37778, k + 1));
                                 if (class1852.isVecInside(method1296)) {
                                     class1853.method27415(method1296.getX() - class1852.minX, method1296.getY() - class1852.minY, method1296.getZ() - class1852.minZ, true, true);
                                 }

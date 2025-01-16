@@ -235,10 +235,10 @@ public class Class4148 extends Class4154 implements Class4149
             this.field18483 = (Class7187)class9272.method34195().get(0);
             this.field18484 = 0;
             this.field18476.clear();
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class8900.method31340(this);
             }
-            if (!Class8571.method28928()) {
+            if (!Config.method28928()) {
                 if (this.field18492 != null) {
                     this.field18493 = this.field18492;
                 }
@@ -323,7 +323,7 @@ public class Class4148 extends Class4154 implements Class4149
         if (this.field18484 == 0) {
             ++this.field18482;
             this.method12382();
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class8900.method31342(this);
             }
             return;
@@ -478,7 +478,7 @@ public class Class4148 extends Class4154 implements Class4149
     
     public void method12409() {
         if (this.field18492 != null) {
-            final int method6349 = Class8571.method29001().method6349();
+            final int method6349 = Config.method29001().method6349();
             if (this.field18491.length <= method6349) {
                 this.field18491 = new boolean[method6349 + 1];
             }
@@ -664,7 +664,7 @@ public class Class4148 extends Class4154 implements Class4149
     }
     
     public void method12427(final ByteBuffer src) {
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             Class8900.method31344(this, src);
         }
         this.method12383(src.limit() + this.field18486.method34194());
@@ -672,7 +672,7 @@ public class Class4148 extends Class4154 implements Class4149
         this.field18476.put(src);
         this.field18482 += src.limit() / this.field18486.method34194();
         this.field18480 += src.limit();
-        if (Class8571.method28955()) {
+        if (Config.method28955()) {
             Class8900.method31345(this);
         }
     }

@@ -34,7 +34,7 @@ public class Class737 extends Class527
     }
     
     private void method4048() {
-        this.field3150.method5269().method17292(new Class4270(this.field3999.method2193(), new Class1932(this.field4000.method3378()), new Class1932(this.field4001.method3378()), this.field4002.method3378()));
+        this.field3150.method5269().method17292(new Class4270(this.field3999.getPos(), new ResourceLocation(this.field4000.method3378()), new ResourceLocation(this.field4001.method3378()), this.field4002.method3378()));
     }
     
     @Override
@@ -63,7 +63,7 @@ public class Class737 extends Class527
     }
     
     public void method4049() {
-        this.field4003.field3431 = (Class1932.method7803(this.field4000.method3378()) & Class1932.method7803(this.field4001.method3378()));
+        this.field4003.field3431 = (ResourceLocation.method7803(this.field4000.method3378()) & ResourceLocation.method7803(this.field4001.method3378()));
     }
     
     @Override

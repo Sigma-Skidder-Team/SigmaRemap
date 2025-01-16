@@ -26,6 +26,6 @@ public class Class5112 implements Class5113
     }
     
     public static <T> Class5112 method16011(final Dynamic<T> dynamic) {
-        return new Class5112(Class90.field218.method505(new Class1932(dynamic.get("state_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("state_provider").orElseEmptyMap()));
+        return new Class5112(Registry.field218.getOrDefault(new ResourceLocation(dynamic.get("state_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("state_provider").orElseEmptyMap()));
     }
 }

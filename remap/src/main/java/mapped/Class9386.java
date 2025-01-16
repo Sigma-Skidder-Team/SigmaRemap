@@ -50,7 +50,7 @@ public class Class9386
         for (int i = 0; i < this.field40279.length; ++i) {
             set.add(this.field40279[i].method30709());
         }
-        return Class8571.method29008((Integer[])set.toArray(new Integer[set.size()]));
+        return Config.method29008((Integer[])set.toArray(new Integer[set.size()]));
     }
     
     public Class8802[] method34896(final int n) {
@@ -66,6 +66,6 @@ public class Class9386
     
     @Override
     public String toString() {
-        return "block." + this.field40277 + ":" + this.field40278 + "=" + Class8571.method28888(this.field40279);
+        return "block." + this.field40277 + ":" + this.field40278 + "=" + Config.method28888(this.field40279);
     }
 }

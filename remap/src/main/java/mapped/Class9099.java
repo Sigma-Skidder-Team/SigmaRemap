@@ -9,7 +9,7 @@ import java.util.Properties;
 public class Class9099
 {
     private String field38535;
-    private Class1932[] field38536;
+    private ResourceLocation[] field38536;
     private int field38537;
     private int field38538;
     private int field38539;
@@ -30,9 +30,9 @@ public class Class9099
         this.field38544 = Integer.MIN_VALUE;
         final Class8652 class8652 = new Class8652("CustomPanorama");
         this.field38535 = s;
-        this.field38536 = new Class1932[6];
+        this.field38536 = new ResourceLocation[6];
         for (int i = 0; i < this.field38536.length; ++i) {
-            this.field38536[i] = new Class1932(s + "/panorama_" + i + ".png");
+            this.field38536[i] = new ResourceLocation(s + "/panorama_" + i + ".png");
         }
         this.field38537 = class8652.method29456(properties.getProperty("weight"), 1);
         this.field38538 = class8652.method29456(properties.getProperty("blur1"), 64);
@@ -44,7 +44,7 @@ public class Class9099
         this.field38544 = Class8652.method29467(properties.getProperty("overlay2.bottom"), Integer.MIN_VALUE);
     }
     
-    public Class1932[] method32884() {
+    public ResourceLocation[] method32884() {
         return this.field38536;
     }
     

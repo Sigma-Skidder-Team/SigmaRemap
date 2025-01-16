@@ -10,7 +10,7 @@ import java.util.function.Function;
 
 public class Class4567 extends Class4535<Class5120>
 {
-    private final Class3833 field20041;
+    private final Block field20041;
     
     public Class4567(final Function<Dynamic<?>, ? extends Class5120> function) {
         super(function);
@@ -21,7 +21,7 @@ public class Class4567 extends Class4535<Class5120>
         while (class1851.method6961(method1139) && method1139.getY() > 2) {
             method1139 = method1139.method1139();
         }
-        if (class1851.method6701(method1139).method21696() == Class7521.field29331) {
+        if (class1851.getBlockState(method1139).getBlock() == Class7521.field29331) {
             for (int n = random.nextInt(class1853.field22069) + 2, i = method1139.getX() - n; i <= method1139.getX() + n; ++i) {
                 for (int j = method1139.getZ() - n; j <= method1139.getZ() + n; ++j) {
                     final int n2 = i - method1139.getX();
@@ -29,7 +29,7 @@ public class Class4567 extends Class4535<Class5120>
                     if (n2 * n2 + n3 * n3 <= n * n) {
                         for (int k = method1139.getY() - 1; k <= method1139.getY() + 1; ++k) {
                             final BlockPos class1854 = new BlockPos(i, k, j);
-                            final Class3833 method1140 = class1851.method6701(class1854).method21696();
+                            final Block method1140 = class1851.getBlockState(class1854).getBlock();
                             if (!Class4535.method13533(method1140)) {
                                 if (method1140 != Class7521.field29331) {
                                     if (method1140 != Class7521.field29330) {
@@ -37,7 +37,7 @@ public class Class4567 extends Class4535<Class5120>
                                     }
                                 }
                             }
-                            class1851.method6688(class1854, this.field20041.method11878(), 2);
+                            class1851.setBlockState(class1854, this.field20041.getDefaultState(), 2);
                         }
                     }
                 }

@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 public class Class1922 extends Class1921
 {
     private Class1846 field10452;
-    private Class1932 field10453;
+    private ResourceLocation field10453;
     
     public Class1922(final String s, final boolean b, final Supplier<Class1727> supplier, final Class1727 class1727, final Class8545 class1728, final Class2043 class1729) {
         super(s, b, supplier, class1727, class1728, class1729);
@@ -36,7 +36,7 @@ public class Class1922 extends Class1921
                 this.field10453 = class1663.method5854("texturepackicon", new Class1773(this.field10452));
             }
             else {
-                this.field10453 = new Class1932("textures/misc/unknown_pack.png");
+                this.field10453 = new ResourceLocation("textures/misc/unknown_pack.png");
             }
         }
         class1663.method5849(this.field10453);

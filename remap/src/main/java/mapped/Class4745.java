@@ -9,13 +9,13 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4745 extends Class4712<Class839, Class5895<Class839>>
 {
-    private static final Class1932 field20367;
+    private static final ResourceLocation field20367;
     
     public Class4745(final Class8551 class8551) {
         super(class8551, new Class5895(), 0.7f);
     }
     
-    public Class1932 method14077(final Class839 class839) {
+    public ResourceLocation method14077(final Class839 class839) {
         return Class4745.field20367;
     }
     
@@ -34,6 +34,6 @@ public class Class4745 extends Class4712<Class839, Class5895<Class839>>
     }
     
     static {
-        field20367 = new Class1932("textures/entity/squid.png");
+        field20367 = new ResourceLocation("textures/entity/squid.png");
     }
 }

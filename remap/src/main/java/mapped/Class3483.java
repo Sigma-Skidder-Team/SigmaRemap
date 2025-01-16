@@ -43,17 +43,17 @@ public class Class3483 extends Class3479
         if (this.method11048()) {
             final World field2391 = this.field16407.world;
             final BlockPos method1137 = this.field16395.method1137();
-            final BlockState method1138 = field2391.method6701(method1137);
-            final Class3833 method1139 = method1138.method21696();
+            final BlockState method1138 = field2391.getBlockState(method1137);
+            final Block method1139 = method1138.getBlock();
             if (this.field16409) {
                 if (method1139 instanceof Class3881) {
-                    final Integer n = ((Class7097<Object, BlockState>)method1138).method21772((Class7111<Integer>)Class3881.field17529);
+                    final Integer n = ((StateHolder<Object, BlockState>)method1138).get((IProperty<Integer>)Class3881.field17529);
                     if (n != 0) {
-                        field2391.method6688(method1137, ((Class7097<Object, BlockState>)method1138).method21773((Class7111<Comparable>)Class3881.field17529, n - 1), 2);
-                        field2391.method6955(2001, method1137, Class3833.method11774(method1138));
+                        field2391.setBlockState(method1137, ((StateHolder<Object, BlockState>)method1138).with((IProperty<Comparable>)Class3881.field17529, n - 1), 2);
+                        field2391.method6955(2001, method1137, Block.method11774(method1138));
                     }
                     else {
-                        field2391.method6688(method1137, Class7521.field29147.method11878(), 2);
+                        field2391.setBlockState(method1137, Class7521.field29147.getDefaultState(), 2);
                         field2391.method6691(method1137, true, this.field16407);
                     }
                     Class792.method4451(this.field16407, 40);
@@ -66,12 +66,12 @@ public class Class3483 extends Class3479
     
     @Override
     public boolean method11050(final Class1852 class1852, BlockPos method1137) {
-        if (class1852.method6701(method1137).method21696() == Class7521.field29298) {
+        if (class1852.getBlockState(method1137).getBlock() == Class7521.field29298) {
             if (this.field16408) {
                 if (!this.field16409) {
                     method1137 = method1137.method1137();
-                    final BlockState method1138 = class1852.method6701(method1137);
-                    final Class3833 method1139 = method1138.method21696();
+                    final BlockState method1138 = class1852.getBlockState(method1137);
+                    final Block method1139 = method1138.getBlock();
                     if (method1139 instanceof Class3881) {
                         if (((Class3881)method1139).method11956(method1138)) {
                             return this.field16409 = true;

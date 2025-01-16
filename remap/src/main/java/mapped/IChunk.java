@@ -15,7 +15,7 @@ import java.util.Collection;
 import java.util.Set;
 import javax.annotation.Nullable;
 
-public interface Class1860 extends Class1855, Class1861
+public interface IChunk extends Class1855, Class1861
 {
     @Nullable
     BlockState method7008(final BlockPos p0, final BlockState p1, final boolean p2);
@@ -83,7 +83,7 @@ public interface Class1860 extends Class1855, Class1861
     
     boolean method7026();
     
-    Class9312 method7027();
+    ChunkStatus method7027();
     
     void method7028(final BlockPos p0);
     
@@ -109,7 +109,7 @@ public interface Class1860 extends Class1855, Class1861
     
     Stream<BlockPos> method7035();
     
-    Class6952<Class3833> method7036();
+    Class6952<Block> method7036();
     
     Class6952<Class7255> method7037();
     

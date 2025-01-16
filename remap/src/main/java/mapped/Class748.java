@@ -9,7 +9,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class748 extends Class516<Class3436>
 {
-    private static final Class1932 field4042;
+    private static final ResourceLocation field4042;
     private Class651 field4043;
     private boolean field4044;
     private Class5328 field4045;
@@ -123,6 +123,6 @@ public class Class748 extends Class516<Class3436>
     }
     
     static {
-        field4042 = new Class1932("textures/gui/container/beacon.png");
+        field4042 = new ResourceLocation("textures/gui/container/beacon.png");
     }
 }

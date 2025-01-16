@@ -6,14 +6,14 @@ package mapped;
 
 public class Class4755 extends Class4754
 {
-    private static final Class1932 field20378;
+    private static final ResourceLocation field20378;
     
     public Class4755(final Class8551 class8551) {
         super(class8551);
     }
     
     @Override
-    public Class1932 method14091(final Class780 class780) {
+    public ResourceLocation method14091(final Class780 class780) {
         return Class4755.field20378;
     }
     
@@ -22,6 +22,6 @@ public class Class4755 extends Class4754
     }
     
     static {
-        field20378 = new Class1932("textures/entity/skeleton/wither_skeleton.png");
+        field20378 = new ResourceLocation("textures/entity/skeleton/wither_skeleton.png");
     }
 }

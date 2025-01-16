@@ -8,7 +8,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class741 extends Class516<Class3437>
 {
-    private static final Class1932 field4011;
+    private static final ResourceLocation field4011;
     
     public Class741(final Class3437 class3437, final Class464 class3438, final ITextComponent class3439) {
         super(class3437, class3438, class3439);
@@ -37,6 +37,6 @@ public class Class741 extends Class516<Class3437>
     }
     
     static {
-        field4011 = new Class1932("textures/gui/container/hopper.png");
+        field4011 = new ResourceLocation("textures/gui/container/hopper.png");
     }
 }

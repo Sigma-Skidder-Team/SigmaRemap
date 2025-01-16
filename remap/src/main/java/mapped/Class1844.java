@@ -185,7 +185,7 @@ public class Class1844 implements AutoCloseable
                     }
                     else {
                         int n15 = method17002.getColor();
-                        if (Class8571.method28945()) {
+                        if (Config.method28945()) {
                             n15 = Class8763.method30372(method17002.getColorIndex(), n15);
                         }
                         n11 = (n15 >> 16 & 0xFF) / 255.0f * n6;
@@ -259,7 +259,7 @@ public class Class1844 implements AutoCloseable
                     n += this.method6631(char1).method8080(b);
                 }
             }
-            return MathHelper.method35649(n);
+            return MathHelper.ceil(n);
         }
         return 0;
     }

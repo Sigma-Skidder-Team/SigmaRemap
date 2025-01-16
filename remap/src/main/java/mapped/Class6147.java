@@ -6,7 +6,7 @@ package mapped;
 
 import com.mojang.datafixers.DataFixUtils;
 import com.google.common.collect.Maps;
-import java.util.HashMap;
+
 import java.util.function.Function;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.Typed;
@@ -30,7 +30,7 @@ public class Class6147 extends Class6132
             return dynamic;
         }
         final String lowerCase = string.get().toLowerCase(Locale.ROOT);
-        return (Dynamic<?>)dynamic.set("Motive", dynamic.createString(new Class1932(Class6147.field24881.getOrDefault(lowerCase, lowerCase)).toString()));
+        return (Dynamic<?>)dynamic.set("Motive", dynamic.createString(new ResourceLocation(Class6147.field24881.getOrDefault(lowerCase, lowerCase)).toString()));
     }
     
     @Override

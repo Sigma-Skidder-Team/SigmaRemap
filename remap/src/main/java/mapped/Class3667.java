@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 
 public class Class3667 extends Class3666
 {
-    public Class3667(final Class1932 class1932) {
+    public Class3667(final ResourceLocation class1932) {
         super(class1932);
     }
     

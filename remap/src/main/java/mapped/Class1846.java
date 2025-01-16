@@ -10,12 +10,11 @@ import com.google.common.base.Charsets;
 import java.util.Base64;
 import org.lwjgl.stb.STBImageResize;
 import org.lwjgl.stb.STBImageWrite;
-import java.io.OutputStream;
+
 import java.nio.channels.Channels;
 import java.io.ByteArrayOutputStream;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.channels.WritableByteChannel;
-import java.nio.file.OpenOption;
 import java.nio.file.Files;
 import java.nio.file.attribute.FileAttribute;
 import java.nio.file.Path;
@@ -141,7 +140,7 @@ public final class Class1846 implements AutoCloseable
     public static void method6642(final boolean b, final boolean b2) {
         Class8726.method29989(Class8726::method29985);
         if (!b) {
-            final int method28838 = Class8571.method28838();
+            final int method28838 = Config.method28838();
             Class8933.method31613(3553, 10241, b2 ? method28838 : 9728);
             Class8933.method31613(3553, 10240, 9728);
         }

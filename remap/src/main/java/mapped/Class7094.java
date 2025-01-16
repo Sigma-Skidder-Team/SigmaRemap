@@ -108,6 +108,6 @@ public class Class7094
     
     @Override
     public String toString() {
-        return "" + this.field27608 + "=" + this.method21682() + " [" + Class8571.method28888(this.field27609) + "], value: " + this.field27612;
+        return "" + this.field27608 + "=" + this.method21682() + " [" + Config.method28888(this.field27609) + "], value: " + this.field27612;
     }
 }

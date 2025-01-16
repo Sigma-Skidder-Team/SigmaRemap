@@ -5,7 +5,7 @@
 package mapped;
 
 import java.util.Iterator;
-import java.util.Collection;
+
 import com.google.common.collect.Lists;
 import java.util.List;
 
@@ -36,7 +36,7 @@ public class Class715 extends Class698
     
     @Override
     public void method3896(final Class573 class573) {
-        Class8571.method28894().method5244(this.field3904);
+        Config.method28894().method5244(this.field3904);
     }
     
     @Override

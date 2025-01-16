@@ -23,7 +23,7 @@ public class Class5026 implements Class5027
     }
     
     @Override
-    public void method15297(final String s) {
+    public void startSection(final String s) {
     }
     
     @Override
@@ -31,7 +31,7 @@ public class Class5026 implements Class5027
     }
     
     @Override
-    public void method15299() {
+    public void endSection() {
     }
     
     @Override

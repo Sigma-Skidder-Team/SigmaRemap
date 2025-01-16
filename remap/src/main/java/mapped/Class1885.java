@@ -49,9 +49,9 @@ public class Class1885 extends Class1886 implements AutoCloseable
     }
     
     @Override
-    public void method7252(final BlockPos class354) {
+    public void checkBlock(final BlockPos class354) {
         class354.toImmutable();
-        this.method7257(class354.getX() >> 4, class354.getZ() >> 4, Class2216.field13612, Class8349.method27856(() -> super.method7252(class355), () -> "checkBlock " + obj));
+        this.method7257(class354.getX() >> 4, class354.getZ() >> 4, Class2216.field13612, Class8349.method27856(() -> super.checkBlock(class355), () -> "checkBlock " + obj));
     }
     
     public void method7253(final Class7859 class7859) {
@@ -105,7 +105,7 @@ public class Class1885 extends Class1886 implements AutoCloseable
         this.method7258(class7859.field32290, class7859.field32291, () -> 0, Class2216.field13611, Class8349.method27856(() -> super.method7259(class7860, b2), () -> "retainData " + obj));
     }
     
-    public CompletableFuture<Class1860> method7260(final Class1860 class1860, final boolean b) {
+    public CompletableFuture<IChunk> method7260(final IChunk class1860, final boolean b) {
         final Class7859 method7019 = class1860.method7019();
         class1860.method7044(false);
         this.method7257(method7019.field32290, method7019.field32291, Class2216.field13611, Class8349.method27856(() -> {

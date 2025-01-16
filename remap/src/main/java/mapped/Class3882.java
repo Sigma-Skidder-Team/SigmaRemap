@@ -46,6 +46,6 @@ public class Class3882 extends Class3874
     }
     
     static {
-        field17537 = Class3833.method11778(5.0, 0.0, 5.0, 11.0, 10.0, 11.0);
+        field17537 = Block.method11778(5.0, 0.0, 5.0, 11.0, 10.0, 11.0);
     }
 }

@@ -133,7 +133,7 @@ public class Class475 extends Class456 implements Class476, Class439
     }
     
     private void method2421(final Class7795 class7795) {
-        final Class180 class7796 = this.method2194().method21772(Class3865.field17498);
+        final Class180 class7796 = this.method2194().get(Class3865.field17498);
         if (class7796 != Class180.field531) {
             double n = this.field2657.getX() + 0.5;
             final double n2 = this.field2657.getY() + 0.5;
@@ -176,7 +176,7 @@ public class Class475 extends Class456 implements Class476, Class439
     }
     
     public void method2422() {
-        final Class3833 method21696 = this.method2194().method21696();
+        final Block method21696 = this.method2194().getBlock();
         if (method21696 instanceof Class3865) {
             this.field2656.method6763(this.field2657, method21696, 1, this.field2776);
             this.field2656.method6696(this.field2657, method21696);
@@ -199,7 +199,7 @@ public class Class475 extends Class456 implements Class476, Class439
     }
     
     public static int method2424(final Class1855 class1855, final BlockPos class1856) {
-        if (class1855.method6701(class1856).method21696().method11802()) {
+        if (class1855.getBlockState(class1856).getBlock().method11802()) {
             final TileEntity method6727 = class1855.method6727(class1856);
             if (method6727 instanceof Class475) {
                 return ((Class475)method6727).field2776;

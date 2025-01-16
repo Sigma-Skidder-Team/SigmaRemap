@@ -16,7 +16,7 @@ public class Class4995
     private String field21474;
     private String field21475;
     private Class2005 field21476;
-    private Map<Class1932, Class1932> field21477;
+    private Map<ResourceLocation, ResourceLocation> field21477;
     private Class8998 field21478;
     private Class3090[] field21479;
     private Class7740 field21480;
@@ -32,19 +32,19 @@ public class Class4995
     private static final Class2004[] field21490;
     private static final Class2004[] field21491;
     private static final Class181[] field21492;
-    private static final Class1932 field21493;
-    private static final Class1932 field21494;
-    private static final Class1932 field21495;
-    private static final Class1932 field21496;
-    private static final Class1932 field21497;
-    private static final Class1932 field21498;
-    private static final Class1932 field21499;
-    private static final Class1932 field21500;
-    private static final Class1932 field21501;
-    private static final Class1932 field21502;
-    private static final Class1932 field21503;
-    private static final Class1932 field21504;
-    private static final Class1932 field21505;
+    private static final ResourceLocation field21493;
+    private static final ResourceLocation field21494;
+    private static final ResourceLocation field21495;
+    private static final ResourceLocation field21496;
+    private static final ResourceLocation field21497;
+    private static final ResourceLocation field21498;
+    private static final ResourceLocation field21499;
+    private static final ResourceLocation field21500;
+    private static final ResourceLocation field21501;
+    private static final ResourceLocation field21502;
+    private static final ResourceLocation field21503;
+    private static final ResourceLocation field21504;
+    private static final ResourceLocation field21505;
     
     public Class4995(final Properties properties, final String s) {
         this.field21474 = null;
@@ -90,7 +90,7 @@ public class Class4995
     private static Class181[] method15161(String lowerCase) {
         if (lowerCase != null) {
             lowerCase = lowerCase.toLowerCase();
-            final String[] method28937 = Class8571.method28937(lowerCase, " ");
+            final String[] method28937 = Config.method28937(lowerCase, " ");
             final Class181[] array = new Class181[method28937.length];
             for (int i = 0; i < method28937.length; ++i) {
                 final String str = method28937[i];
@@ -123,24 +123,24 @@ public class Class4995
         return null;
     }
     
-    private static Class1932 method15163(String trim, final String str) {
+    private static ResourceLocation method15163(String trim, final String str) {
         if (trim != null) {
             trim = trim.trim();
             String s = Class8969.method31832(trim, str);
             if (!s.endsWith(".png")) {
                 s += ".png";
             }
-            return new Class1932(str + "/" + s);
+            return new ResourceLocation(str + "/" + s);
         }
         return null;
     }
     
-    private static Map<Class1932, Class1932> method15164(final Properties properties, final String s, final Class2005 class2005, final String str, final String s2) {
+    private static Map<ResourceLocation, ResourceLocation> method15164(final Properties properties, final String s, final Class2005 class2005, final String str, final String s2) {
         final HashMap hashMap = new HashMap();
         final String property = properties.getProperty(s);
         if (property != null) {
-            final Class1932 method15165 = method15165(class2005);
-            final Class1932 method15166 = method15163(property, s2);
+            final ResourceLocation method15165 = method15165(class2005);
+            final ResourceLocation method15166 = method15163(property, s2);
             if (method15165 != null) {
                 if (method15166 != null) {
                     hashMap.put(method15165, method15166);
@@ -152,12 +152,12 @@ public class Class4995
             if (!key.startsWith(string)) {
                 continue;
             }
-            hashMap.put(new Class1932(str + Class9518.method35527(key.substring(string.length()).replace('\\', '/'), "/", ".png") + ".png"), method15163(properties.getProperty(key), s2));
+            hashMap.put(new ResourceLocation(str + Class9518.method35527(key.substring(string.length()).replace('\\', '/'), "/", ".png") + ".png"), method15163(properties.getProperty(key), s2));
         }
         return hashMap;
     }
     
-    private static Class1932 method15165(final Class2005 class2005) {
+    private static ResourceLocation method15165(final Class2005 class2005) {
         if (class2005 == null) {
             return null;
         }
@@ -243,7 +243,7 @@ public class Class4995
     }
     
     private static void method15167(final String str) {
-        Class8571.method28848("[CustomGuis] " + str);
+        Config.warn("[CustomGuis] " + str);
     }
     
     private boolean method15168(final Class2005 class2005, final BlockPos class2006, final Class1852 class2007) {
@@ -299,8 +299,8 @@ public class Class4995
     }
     
     private boolean method15173(final Class475 class475, final BlockPos class476, final Class1856 class477) {
-        final BlockState method6701 = class477.method6701(class476);
-        return this.method15175((method6701.method21771(Class3865.field17498) ? method6701.method21772(Class3865.field17498) : Class180.field530) == Class180.field530, class475 instanceof Class478, Class7890.field32397, false);
+        final BlockState method6701 = class477.getBlockState(class476);
+        return this.method15175((method6701.method21771(Class3865.field17498) ? method6701.get(Class3865.field17498) : Class180.field530) == Class180.field530, class475 instanceof Class478, Class7890.field32397, false);
     }
     
     private boolean method15174(final Class477 class477, final BlockPos class478, final Class1856 class479) {
@@ -315,7 +315,7 @@ public class Class4995
         final TileEntity method6727 = class355.method6727(class354);
         if (method6727 instanceof Class458) {
             final Class458 class356 = (Class458)method6727;
-            return this.field21487 == null || Class8571.method28977(this.method15177(class356), this.field21487);
+            return this.field21487 == null || Config.method28977(this.method15177(class356), this.field21487);
         }
         return false;
     }
@@ -328,7 +328,7 @@ public class Class4995
         final TileEntity method6727 = class355.method6727(class354);
         if (method6727 instanceof Class440) {
             final Class440 class356 = (Class440)method6727;
-            return this.field21488 == null || Class8571.method28977(class356.method2252(), this.field21488);
+            return this.field21488 == null || Config.method28977(class356.method2252(), this.field21488);
         }
         return false;
     }
@@ -372,12 +372,12 @@ public class Class4995
             return false;
         }
         final Class806 class401 = (Class806)class399;
-        if (this.field21487 != null && !Class8571.method28977(this.method15182(class401), this.field21487)) {
+        if (this.field21487 != null && !Config.method28977(this.method15182(class401), this.field21487)) {
             return false;
         }
         if (this.field21488 != null) {
             if (class401 instanceof Class815) {
-                if (!Class8571.method28977(((Class815)class401).method4792(), this.field21488)) {
+                if (!Config.method28977(((Class815)class401).method4792(), this.field21488)) {
                     return false;
                 }
             }
@@ -402,8 +402,8 @@ public class Class4995
         return this.field21476;
     }
     
-    public Class1932 method15184(final Class1932 class1932) {
-        final Class1932 class1933 = this.field21477.get(class1932);
+    public ResourceLocation method15184(final ResourceLocation class1932) {
+        final ResourceLocation class1933 = this.field21477.get(class1932);
         return (class1933 != null) ? class1933 : class1932;
     }
     
@@ -417,18 +417,18 @@ public class Class4995
         field21490 = new Class2004[] { Class2004.field11252, Class2004.field11253 };
         field21491 = new Class2004[0];
         field21492 = new Class181[0];
-        field21493 = new Class1932("textures/gui/container/anvil.png");
-        field21494 = new Class1932("textures/gui/container/beacon.png");
-        field21495 = new Class1932("textures/gui/container/brewing_stand.png");
-        field21496 = new Class1932("textures/gui/container/generic_54.png");
-        field21497 = new Class1932("textures/gui/container/crafting_table.png");
-        field21498 = new Class1932("textures/gui/container/horse.png");
-        field21499 = new Class1932("textures/gui/container/dispenser.png");
-        field21500 = new Class1932("textures/gui/container/enchanting_table.png");
-        field21501 = new Class1932("textures/gui/container/furnace.png");
-        field21502 = new Class1932("textures/gui/container/hopper.png");
-        field21503 = new Class1932("textures/gui/container/inventory.png");
-        field21504 = new Class1932("textures/gui/container/shulker_box.png");
-        field21505 = new Class1932("textures/gui/container/villager2.png");
+        field21493 = new ResourceLocation("textures/gui/container/anvil.png");
+        field21494 = new ResourceLocation("textures/gui/container/beacon.png");
+        field21495 = new ResourceLocation("textures/gui/container/brewing_stand.png");
+        field21496 = new ResourceLocation("textures/gui/container/generic_54.png");
+        field21497 = new ResourceLocation("textures/gui/container/crafting_table.png");
+        field21498 = new ResourceLocation("textures/gui/container/horse.png");
+        field21499 = new ResourceLocation("textures/gui/container/dispenser.png");
+        field21500 = new ResourceLocation("textures/gui/container/enchanting_table.png");
+        field21501 = new ResourceLocation("textures/gui/container/furnace.png");
+        field21502 = new ResourceLocation("textures/gui/container/hopper.png");
+        field21503 = new ResourceLocation("textures/gui/container/inventory.png");
+        field21504 = new ResourceLocation("textures/gui/container/shulker_box.png");
+        field21505 = new ResourceLocation("textures/gui/container/villager2.png");
     }
 }

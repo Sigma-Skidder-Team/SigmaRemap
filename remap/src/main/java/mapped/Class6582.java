@@ -14,11 +14,11 @@ public interface Class6582
 {
     Set<String> method19932();
     
-    Class1671 method19933(final Class1932 p0) throws IOException;
+    Class1671 method19933(final ResourceLocation p0) throws IOException;
     
-    boolean method19934(final Class1932 p0);
+    boolean method19934(final ResourceLocation p0);
     
-    List<Class1671> method19935(final Class1932 p0) throws IOException;
+    List<Class1671> method19935(final ResourceLocation p0) throws IOException;
     
-    Collection<Class1932> method19936(final String p0, final Predicate<String> p1);
+    Collection<ResourceLocation> method19936(final String p0, final Predicate<String> p1);
 }

@@ -14,7 +14,7 @@ public class Class9241
     public boolean method34071(final Class5108 class5108) {
         this.field39628 = class5108.method16007(this.field39626);
         if (this.field39628 == null) {
-            Class8571.method28848("Model variable not found: " + this.field39626);
+            Config.warn("Model variable not found: " + this.field39626);
             return false;
         }
         try {
@@ -22,8 +22,8 @@ public class Class9241
             return true;
         }
         catch (final Class2327 class5109) {
-            Class8571.method28848("Error parsing expression: " + this.field39627);
-            Class8571.method28848(class5109.getClass().getName() + ": " + class5109.getMessage());
+            Config.warn("Error parsing expression: " + this.field39627);
+            Config.warn(class5109.getClass().getName() + ": " + class5109.getMessage());
             return false;
         }
     }

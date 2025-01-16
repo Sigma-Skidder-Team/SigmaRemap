@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 
-public class Class3996 extends Class3833
+public class Class3996 extends Block
 {
     private static String[] field18014;
     
@@ -22,7 +22,7 @@ public class Class3996 extends Class3833
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return Class7698.method24486();
+        return VoxelShapes.method24486();
     }
     
     @Override

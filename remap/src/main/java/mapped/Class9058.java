@@ -18,7 +18,7 @@ public class Class9058
     
     public static void method32617(final Class6313 obj) {
         if (obj != null) {
-            Class8571.method28847("Model: " + obj + ", ao: " + obj.method18692() + ", gui3d: " + obj.method18693() + ", builtIn: " + obj.method18695() + ", particle: " + obj.method18696());
+            Config.method28847("Model: " + obj + ", ao: " + obj.method18692() + ", gui3d: " + obj.method18693() + ", builtIn: " + obj.method18695() + ", particle: " + obj.method18696());
             final Direction[] field524 = Direction.VALUES;
             for (int i = 0; i < field524.length; ++i) {
                 final Direction class179 = field524[i];
@@ -36,16 +36,16 @@ public class Class9058
     }
     
     public static void method32619(final String str, final Class8754 class8754, final String s) {
-        Class8571.method28847(s + "Quad: " + class8754.getClass().getName() + ", type: " + str + ", face: " + class8754.method30294() + ", tint: " + class8754.method30293() + ", sprite: " + class8754.method30295());
+        Config.method28847(s + "Quad: " + class8754.getClass().getName() + ", type: " + str + ", face: " + class8754.method30294() + ", tint: " + class8754.method30293() + ", sprite: " + class8754.method30295());
         method32620(class8754.method30291(), "  " + s);
     }
     
     public static void method32620(final int[] array, final String s) {
         final int i = array.length / 4;
-        Class8571.method28847(s + "Length: " + array.length + ", step: " + i);
+        Config.method28847(s + "Length: " + array.length + ", step: " + i);
         for (int j = 0; j < 4; ++j) {
             final int n = j * i;
-            Class8571.method28847(s + j + " xyz: " + Float.intBitsToFloat(array[n + 0]) + "," + Float.intBitsToFloat(array[n + 1]) + "," + Float.intBitsToFloat(array[n + 2]) + " col: " + array[n + 3] + " u,v: " + Float.intBitsToFloat(array[n + 4]) + "," + Float.intBitsToFloat(array[n + 5]));
+            Config.method28847(s + j + " xyz: " + Float.intBitsToFloat(array[n + 0]) + "," + Float.intBitsToFloat(array[n + 1]) + "," + Float.intBitsToFloat(array[n + 2]) + " col: " + array[n + 3] + " u,v: " + Float.intBitsToFloat(array[n + 4]) + "," + Float.intBitsToFloat(array[n + 5]));
         }
     }
     

@@ -40,7 +40,7 @@ public class Class8551
     
     public <E extends Entity> int method28695(final E e, final float n) {
         int n2 = this.method28699(e).method13953(e, n);
-        if (Class8571.method29002()) {
+        if (Config.method29002()) {
             n2 = Class8850.method30991(e, n2);
         }
         return n2;
@@ -171,9 +171,9 @@ public class Class8551
     }
     
     public void method28698() {
-        for (final EntityType class7499 : Class90.field210) {
+        for (final EntityType class7499 : Registry.field210) {
             if (class7499 != EntityType.field29058 && !this.field35900.containsKey(class7499)) {
-                throw new IllegalStateException("No renderer registered for " + Class90.field210.method503(class7499));
+                throw new IllegalStateException("No renderer registered for " + Registry.field210.getKey(class7499));
             }
         }
     }
@@ -299,7 +299,7 @@ public class Class8551
         float n5 = 0.0f;
         int n6 = 0;
         final Class4150 method11334 = class7352.method25214(Class8752.method30264());
-        final boolean method11335 = Class8571.method28928();
+        final boolean method11335 = Config.method28928();
         if (method11335) {
             method11334.method12412(Class9484.field40759);
         }
@@ -338,7 +338,7 @@ public class Class8551
     }
     
     private static void method28711(final Class7351 class7351, final Class7807 class7352, final Entity class7353, final float n, final float n2, final Class1852 class7354, final float n3) {
-        if (!Class8571.method28955() || !Class9216.field39233) {
+        if (!Config.method28955() || !Class9216.field39233) {
             float n4 = n3;
             if (class7353 instanceof Class759) {
                 if (((Class759)class7353).method2625()) {
@@ -365,11 +365,11 @@ public class Class8551
     
     private static void method28712(final Class8996 class8996, final Class4150 class8997, final Class1852 class8998, final BlockPos class8999, final double n, final double n2, final double n3, final float n4, final float n5) {
         final BlockPos method1139 = class8999.method1139();
-        final BlockState method1140 = class8998.method6701(method1139);
+        final BlockState method1140 = class8998.getBlockState(method1139);
         if (method1140.method21710() != Class2115.field12305) {
             if (class8998.method6969(class8999) > 3) {
-                if (method1140.method21762(class8998, method1139)) {
-                    final VoxelShape method1141 = method1140.method21725(class8998, class8999.method1139());
+                if (method1140.isCollisionShapeOpaque(class8998, method1139)) {
+                    final VoxelShape method1141 = method1140.getShape(class8998, class8999.method1139());
                     if (!method1141.method24540()) {
                         float n6 = (float)((n5 - (n2 - class8999.getY()) / 2.0) * 0.5 * class8998.method6963(class8999));
                         if (n6 >= 0.0f) {
@@ -377,11 +377,11 @@ public class Class8551
                                 n6 = 1.0f;
                             }
                             final AxisAlignedBB method1142 = method1141.method24537();
-                            final double n7 = class8999.getX() + method1142.field25073;
-                            final double n8 = class8999.getX() + method1142.field25076;
-                            final double n9 = class8999.getY() + method1142.field25074;
-                            final double n10 = class8999.getZ() + method1142.field25075;
-                            final double n11 = class8999.getZ() + method1142.field25078;
+                            final double n7 = class8999.getX() + method1142.minX;
+                            final double n8 = class8999.getX() + method1142.maxX;
+                            final double n9 = class8999.getY() + method1142.minY;
+                            final double n10 = class8999.getZ() + method1142.minZ;
+                            final double n11 = class8999.getZ() + method1142.maxZ;
                             final float n12 = (float)(n7 - n);
                             final float n13 = (float)(n8 - n);
                             final float n14 = (float)(n9 - n2 + 0.015625);
@@ -438,6 +438,6 @@ public class Class8551
     }
     
     static {
-        field35899 = Class6332.method18777(new Class1932("textures/misc/shadow.png"));
+        field35899 = Class6332.method18777(new ResourceLocation("textures/misc/shadow.png"));
     }
 }

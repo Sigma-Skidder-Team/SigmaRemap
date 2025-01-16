@@ -27,7 +27,7 @@ public class Class1800 extends Class1799<Class841, Class5876<Class841>>
         method779.field25184 = n6 * 0.017453292f;
         method779.field25183 = n7 * 0.017453292f;
         final Class181 method780 = class7353.method5027();
-        Class1932 field20315;
+        ResourceLocation field20315;
         if (method780 != null) {
             field20315 = Class4714.field20316[method780.method813()];
         }

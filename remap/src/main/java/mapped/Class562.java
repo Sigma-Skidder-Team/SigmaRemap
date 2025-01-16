@@ -6,7 +6,7 @@ package mapped;
 
 public class Class562 extends Class527
 {
-    private static final Class1932 field3350;
+    private static final ResourceLocation field3350;
     
     public Class562() {
         super(new Class2259("demo.help.title", new Object[0]));
@@ -49,6 +49,6 @@ public class Class562 extends Class527
     }
     
     static {
-        field3350 = new Class1932("textures/gui/demo_background.png");
+        field3350 = new ResourceLocation("textures/gui/demo_background.png");
     }
 }

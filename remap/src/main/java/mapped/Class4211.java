@@ -6,14 +6,14 @@ package mapped;
 
 public class Class4211 implements Class4220
 {
-    private final Class1932 field19003;
+    private final ResourceLocation field19003;
     
-    public Class4211(final Class1932 field19003) {
+    public Class4211(final ResourceLocation field19003) {
         this.field19003 = field19003;
     }
     
     @Override
-    public Class1932 method12683() {
+    public ResourceLocation method12683() {
         return this.field19003;
     }
     

@@ -22,11 +22,11 @@ public class Class375 extends Class373
     
     @Override
     public void method1254(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final Random random) {
-        class1851.method6688(class1852, class1853, 2);
+        class1851.setBlockState(class1852, class1853, 2);
     }
     
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
-        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Class90.field219.method503(this.field2213).toString())))).getValue();
+        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Registry.field219.getKey(this.field2213).toString())))).getValue();
     }
 }

@@ -21,7 +21,7 @@ public final class Class5771 implements Class5770
     }
     
     @Override
-    public Class1932 method17161() {
+    public ResourceLocation method17161() {
         return Class5771.field23603;
     }
     

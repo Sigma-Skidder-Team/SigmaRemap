@@ -90,9 +90,9 @@ public class Class1945 extends Class1944
             final Random random = new Random();
             final Class1658 method1156 = Class869.method5277().method5305();
             for (final BlockPos class9010 : Class384.method1154(method1153, method1154)) {
-                final BlockState method1157 = method1155.method6701(class9010);
-                method1157.method21696();
-                if (method1157.method21722(method1155, class9010)) {
+                final BlockState method1157 = method1155.getBlockState(class9010);
+                method1157.getBlock();
+                if (method1157.isOpaqueCube(method1155, class9010)) {
                     class9008.method27958(class9010);
                 }
                 if (Class7667.method24304(method1157)) {
@@ -101,9 +101,9 @@ public class Class1945 extends Class1944
                         this.method7898(class9006, hashSet, method1158);
                     }
                 }
-                final Class7099 method1159 = method1157.method21756();
+                final Class7099 method1159 = method1157.getFluidState();
                 final Class6349 method1160 = this.method7896(class9010);
-                if (!method1159.method21781()) {
+                if (!method1159.isEmpty()) {
                     final Class6332[] method1161 = Class8974.method31912(this.field10599, method1159, array);
                     for (int i = 0; i < method1161.length; ++i) {
                         final Class6332 class9011 = method1161[i];
@@ -173,7 +173,7 @@ public class Class1945 extends Class1944
                 class9006.method32211(field29141[k], null);
             }
             for (final Class6332 class9013 : Class9006.method32219(class9006)) {
-                if (Class8571.method28955()) {
+                if (Config.method28955()) {
                     Class8900.method31347(class9007.method34024(class9013));
                 }
                 final Class4148 method1169 = class9007.method34024(class9013);

@@ -12,12 +12,12 @@ import java.util.Map;
 
 public class Class7463
 {
-    private static final Map<Class1932, Class6230<?>> field28817;
+    private static final Map<ResourceLocation, Class6230<?>> field28817;
     private static final Map<Class<? extends Class125>, Class6230<?>> field28818;
     public static final BiFunction<ItemStack, Class7529, ItemStack> field28819;
     
     public static <T extends Class125> void method22988(final Class6230<? extends T> class6230) {
-        final Class1932 method18545 = class6230.method18545();
+        final ResourceLocation method18545 = class6230.method18545();
         final Class method18546 = class6230.method18546();
         if (Class7463.field28817.containsKey(method18545)) {
             throw new IllegalArgumentException("Can't re-register item function name " + method18545);
@@ -30,7 +30,7 @@ public class Class7463
         throw new IllegalArgumentException("Can't re-register item function class " + method18546.getName());
     }
     
-    public static Class6230<?> method22989(final Class1932 obj) {
+    public static Class6230<?> method22989(final ResourceLocation obj) {
         final Class6230 class6230 = Class7463.field28817.get(obj);
         if (class6230 != null) {
             return class6230;

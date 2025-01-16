@@ -150,6 +150,6 @@ public class Class7750 extends Class7746
     
     @Override
     public boolean method24739(final BlockPos class354) {
-        return this.field31658.method6701(class354).method21731(this.field31658, class354, this.field31657);
+        return this.field31658.getBlockState(class354).method21731(this.field31658, class354, this.field31657);
     }
 }

@@ -446,7 +446,7 @@ public class Class9216
     public static final IntBuffer field39417;
     public static final IntBuffer field39418;
     public static final Class9339 field39419;
-    public static Map<Class3833, Integer> field39420;
+    public static Map<Block, Integer> field39420;
     private static final String[] field39421;
     private static final int[] field39422;
     private static final Pattern field39423;
@@ -524,31 +524,31 @@ public class Class9216
         }
         switch (Class9349.field40124[obj.ordinal()]) {
             case 1: {
-                Class9216.field39317 = Class8571.method28933(method8418, 0);
+                Class9216.field39317 = Config.method28933(method8418, 0);
                 break;
             }
             case 2: {
-                Class9216.field39313 = Class8571.method28935(method8418, true);
+                Class9216.field39313 = Config.method28935(method8418, true);
                 break;
             }
             case 3: {
-                Class9216.field39314 = Class8571.method28935(method8418, true);
+                Class9216.field39314 = Config.method28935(method8418, true);
                 break;
             }
             case 4: {
-                Class9216.field39304 = Class8571.method28934(method8418, 1.0f);
+                Class9216.field39304 = Config.method28934(method8418, 1.0f);
                 break;
             }
             case 5: {
-                Class9216.field39305 = Class8571.method28934(method8418, 1.0f);
+                Class9216.field39305 = Config.method28934(method8418, 1.0f);
                 break;
             }
             case 6: {
-                Class9216.field39303 = Class8571.method28934(method8418, 0.125f);
+                Class9216.field39303 = Config.method28934(method8418, 0.125f);
                 break;
             }
             case 7: {
-                Class9216.field39302 = Class8571.method28935(method8418, true);
+                Class9216.field39302 = Config.method28935(method8418, true);
                 break;
             }
             case 8: {
@@ -564,35 +564,35 @@ public class Class9216
                 break;
             }
             case 11: {
-                Class9216.field39301 = Class8571.method28935(method8418, true);
+                Class9216.field39301 = Config.method28935(method8418, true);
                 break;
             }
             case 12: {
-                Class9216.field39312 = Class8571.method28935(method8418, true);
+                Class9216.field39312 = Config.method28935(method8418, true);
                 break;
             }
             case 13: {
-                Class9216.field39306 = Class8571.method28933(method8418, 0);
+                Class9216.field39306 = Config.method28933(method8418, 0);
                 break;
             }
             case 14: {
-                Class9216.field39307 = Class8571.method28933(method8418, 0);
+                Class9216.field39307 = Config.method28933(method8418, 0);
                 break;
             }
             case 15: {
-                Class9216.field39308 = Class8571.method28933(method8418, 0);
+                Class9216.field39308 = Config.method28933(method8418, 0);
                 break;
             }
             case 16: {
-                Class9216.field39309 = Class8571.method28933(method8418, 0);
+                Class9216.field39309 = Config.method28933(method8418, 0);
                 break;
             }
             case 17: {
-                Class9216.field39309 = Class8571.method28933(method8418, 0);
+                Class9216.field39309 = Config.method28933(method8418, 0);
                 break;
             }
             case 18: {
-                Class9216.field39309 = Class8571.method28933(method8418, 0);
+                Class9216.field39309 = Config.method28933(method8418, 0);
                 break;
             }
             default: {
@@ -714,15 +714,15 @@ public class Class9216
             Class9216.field39362 = null;
         }
         boolean b = false;
-        if (Class8571.method28926()) {
-            Class8885.method31272("Shaders can not be loaded, Antialiasing is enabled: " + Class8571.method28925() + "x");
+        if (Config.method28926()) {
+            Class8885.method31272("Shaders can not be loaded, Antialiasing is enabled: " + Config.method28925() + "x");
             b = true;
         }
-        if (Class8571.method28924()) {
-            Class8885.method31272("Shaders can not be loaded, Anisotropic Filtering is enabled: " + Class8571.method28923() + "x");
+        if (Config.method28924()) {
+            Class8885.method31272("Shaders can not be loaded, Anisotropic Filtering is enabled: " + Config.method28923() + "x");
             b = true;
         }
-        if (Class8571.method28953()) {
+        if (Config.method28953()) {
             Class8885.method31272("Shaders can not be loaded, Fast Render is enabled.");
             b = true;
         }
@@ -802,7 +802,7 @@ public class Class9216
             }
         }
         if (Class9216.field39358.size() > 0) {
-            Class8571.method28847("[Shaders] Worlds: " + Class8571.method28888(Class9216.field39358.toArray(new Integer[Class9216.field39358.size()])));
+            Config.method28847("[Shaders] Worlds: " + Config.method28888(Class9216.field39358.toArray(new Integer[Class9216.field39358.size()])));
         }
     }
     
@@ -880,7 +880,7 @@ public class Class9216
                 Class7528.method23574(class27);
             }
             catch (final IOException ex) {
-                Class8571.method28848("[Shaders] Error reading: " + str);
+                Config.warn("[Shaders] Error reading: " + str);
             }
         }
     }
@@ -941,12 +941,12 @@ public class Class9216
         if (s2.startsWith("minecraft:dynamic/lightmap_")) {
             s2 = s2.replace("lightmap", "light_map");
         }
-        return new Class4115(n, new Class1932(s2), n2);
+        return new Class4115(n, new ResourceLocation(s2), n2);
     }
     
     private static Class4114 method33716(final int n, final String s) {
         final Class8652 class8652 = new Class8652("Shaders");
-        final ArrayDeque arrayDeque = new ArrayDeque((Collection<? extends E>)Arrays.asList(Class8571.method28937(s, " ")));
+        final ArrayDeque arrayDeque = new ArrayDeque((Collection<? extends E>)Arrays.asList(Config.method28937(s, " ")));
         final String s2 = (String)arrayDeque.poll();
         final Class347 obj = (Class347)class8652.method29471((String)arrayDeque.poll(), Class347.values(), "texture type");
         if (obj == null) {
@@ -1015,7 +1015,7 @@ public class Class9216
                 Class8885.method31271("Raw texture not found: " + s2);
                 return null;
             }
-            final byte[] method21532 = Class8571.method28961(method21531);
+            final byte[] method21532 = Config.method28961(method21531);
             IOUtils.closeQuietly(method21531);
             final ByteBuffer method21533 = Class9078.method32715(method21532.length);
             method21533.put(method21532);
@@ -1198,7 +1198,7 @@ public class Class9216
         Class5601[] array = Class9216.field39333.clone();
         if (Class9216.field39336 == null) {
             if (Class9216.field39335 != null) {
-                array = (Class5601[])Class8571.method28983(array, new Class5603(Class9216.field39335, array), 0);
+                array = (Class5601[]) Config.method28983(array, new Class5603(Class9216.field39335, array), 0);
             }
             return method33729(array);
         }
@@ -1295,7 +1295,7 @@ public class Class9216
             method33732(class7038, class7039);
         }
         catch (final IOException ex) {
-            Class8571.method28848("[Shaders] Error saving configuration for " + Class9216.field39324.method21530());
+            Config.warn("[Shaders] Error saving configuration for " + Class9216.field39324.method21530());
             ex.printStackTrace();
         }
     }
@@ -1323,14 +1323,14 @@ public class Class9216
                 if (property != null) {
                     class5601.method16866();
                     if (!class5601.method16864(property)) {
-                        Class8571.method28848("[Shaders] Invalid value, option: " + class5601.method16860() + ", value: " + property);
+                        Config.warn("[Shaders] Invalid value, option: " + class5601.method16860() + ", value: " + property);
                     }
                 }
             }
             return method23548;
         }
         catch (final IOException ex) {
-            Class8571.method28848("[Shaders] Error reading configuration for " + Class9216.field39324.method21530());
+            Config.warn("[Shaders] Error reading configuration for " + Class9216.field39324.method21530());
             ex.printStackTrace();
             return null;
         }
@@ -1415,9 +1415,9 @@ public class Class9216
     public static int method33739(final String s) {
         final int method31662 = Class8933.method31662();
         if (method31662 != 0 && Class8492.method28378(method31662)) {
-            final String method31663 = Class8571.method29017(method31662);
+            final String method31663 = Config.method29017(method31662);
             Class8885.method31270(String.format("OpenGL error: %s (%s)%s, at: %s", method31662, method31663, method33740(method31662, s), s));
-            if (Class8571.method29013() && Class9419.method35020("ShowGlErrorShaders", 10000L)) {
+            if (Config.method29013() && Class9419.method35020("ShowGlErrorShaders", 10000L)) {
                 method33743(Class8822.method30773("of.message.openglError", method31662, method31663));
             }
         }
@@ -2037,7 +2037,7 @@ public class Class9216
                         continue;
                     }
                     if (method33738.method32197("GL_ARB_geometry_shader4")) {
-                        final String method33739 = Class8571.method28980(method33738.method32180());
+                        final String method33739 = Config.method28980(method33738.method32180());
                         if (method33739.equals("enable") || method33739.equals("require") || method33739.equals("warn")) {
                             Class9216.field39119 = true;
                         }
@@ -2214,7 +2214,7 @@ public class Class9216
                                             Class8885.method31272("Sun path rotation: " + Class9216.field39375);
                                         }
                                         else if (method33738.method32195("ambientOcclusionLevel")) {
-                                            Class9216.field39374 = Class8571.method28866(method33738.method32207(), 0.0f, 1.0f);
+                                            Class9216.field39374 = Config.method28866(method33738.method32207(), 0.0f, 1.0f);
                                             Class8885.method31272("AO Level: " + Class9216.field39374);
                                         }
                                         else if (method33738.method32193("superSamplingLevel")) {
@@ -2368,10 +2368,10 @@ public class Class9216
         try {
             final File file = new File(Class9216.field39331, "debug/" + s);
             file.getParentFile().mkdirs();
-            Class8571.method28999(file, s2);
+            Config.method28999(file, s2);
         }
         catch (final IOException ex) {
-            Class8571.method28848("Error saving: " + s);
+            Config.warn("Error saving: " + s);
             ex.printStackTrace();
         }
     }
@@ -2543,27 +2543,27 @@ public class Class9216
                 final ItemStack class8321 = (Class9216.field39031.field4684 != null) ? Class9216.field39031.field4684.getHeldItemMainhand() : null;
                 final Item class8322 = (class8321 != null) ? class8321.getItem() : null;
                 int method32333 = -1;
-                Class3833 method32334 = null;
+                Block method32334 = null;
                 if (class8322 != null) {
-                    final int method32335 = Class90.field211.method504(class8322);
+                    final int method32335 = Registry.field211.getId(class8322);
                     if (class8322 instanceof Class4036) {
                         method32334 = ((Class4036)class8322).method12240();
                     }
                     method32333 = Class6444.method19214(method32335);
                 }
-                int n2 = (method32334 != null) ? method32334.method11781(method32334.method11878()) : 0;
+                int n2 = (method32334 != null) ? method32334.getLightValue(method32334.getDefaultState()) : 0;
                 final ItemStack class8323 = (Class9216.field39031.field4684 != null) ? Class9216.field39031.field4684.method2714() : null;
                 final Item class8324 = (class8323 != null) ? class8323.getItem() : null;
                 int method32336 = -1;
-                Class3833 method32337 = null;
+                Block method32337 = null;
                 if (class8324 != null) {
-                    final int method32338 = Class90.field211.method504(class8324);
+                    final int method32338 = Registry.field211.getId(class8324);
                     if (class8324 instanceof Class4036) {
                         method32337 = ((Class4036)class8324).method12240();
                     }
                     method32336 = Class6444.method19214(method32338);
                 }
-                final int n3 = (method32337 != null) ? method32337.method11781(method32337.method11878()) : 0;
+                final int n3 = (method32337 != null) ? method32337.getLightValue(method32337.getDefaultState()) : 0;
                 if (method33748() && n3 > n2) {
                     method32333 = method32336;
                     n2 = n3;
@@ -2711,12 +2711,12 @@ public class Class9216
     }
     
     private static void method33786() {
-        Class9216.field39420 = new IdentityHashMap<Class3833, Integer>(300);
+        Class9216.field39420 = new IdentityHashMap<Block, Integer>(300);
         if (Class9216.field39420.isEmpty()) {
-            final Iterator<Class1932> iterator = Class90.field208.method507().iterator();
+            final Iterator<ResourceLocation> iterator = Registry.BLOCK.method507().iterator();
             while (iterator.hasNext()) {
-                final Class3833 class3833 = Class90.field208.method505(iterator.next());
-                Class9216.field39420.put(class3833, Class90.field208.method504(class3833));
+                final Block class3833 = Registry.BLOCK.getOrDefault(iterator.next());
+                Class9216.field39420.put(class3833, Registry.BLOCK.getId(class3833));
             }
         }
         BufferedReader bufferedReader = null;
@@ -2732,9 +2732,9 @@ public class Class9216
                     if (matcher.matches()) {
                         final String group = matcher.group(1);
                         final int int1 = Integer.parseInt(matcher.group(2));
-                        final Class1932 class3834 = new Class1932(group);
-                        if (Class90.field208.method510(class3834)) {
-                            Class9216.field39420.put(Class90.field208.method505(class3834), int1);
+                        final ResourceLocation class3834 = new ResourceLocation(group);
+                        if (Registry.BLOCK.method510(class3834)) {
+                            Class9216.field39420.put(Registry.BLOCK.getOrDefault(class3834), int1);
                         }
                         else {
                             Class8885.method31275("Unknown block name %s", group);
@@ -2992,14 +2992,14 @@ public class Class9216
         method33739("pre beginRender");
         method33798(Class9216.field39031.field4683);
         Class9216.field39031 = field39031;
-        Class9216.field39031.method5327().method15297("init");
+        Class9216.field39031.method5327().startSection("init");
         Class9216.field39032 = Class9216.field39031.field4644;
         if (!Class9216.field39034) {
             try {
                 method33761();
             }
             catch (final IllegalStateException ex) {
-                if (Class8571.method28980(ex.getMessage()).equals("Function is not supported")) {
+                if (Config.method28980(ex.getMessage()).equals("Function is not supported")) {
                     method33744("[Shaders] Error: " + ex.getMessage());
                     ex.printStackTrace();
                     method33707("OFF");
@@ -3068,7 +3068,7 @@ public class Class9216
                     }
                     Class9216.field39106 = 0.0f;
                     if (class6093.method2653(Class9439.field40488)) {
-                        Class9216.field39106 = Class8571.method28866(class6093.method2654(Class9439.field40488).method7907() / 20.0f, 0.0f, 1.0f);
+                        Class9216.field39106 = Config.method28866(class6093.method2654(Class9439.field40488).method7907() / 20.0f, 0.0f, 1.0f);
                     }
                 }
                 final Vec3d method18168 = Class8763.method30363(field39032.method6843(method18166.method1894(), n), field39032, method18166, n);
@@ -3100,7 +3100,7 @@ public class Class9216
         Class9216.field39401.position();
         method33739("beginRender");
         Class7778.method24956(Class9216.field39032, class6092, 0, n, n2);
-        Class9216.field39031.method5327().method15299();
+        Class9216.field39031.method5327().endSection();
         EXTFramebufferObject.glBindFramebufferEXT(36160, Class9216.field39246);
         for (int i = 0; i < Class9216.field39240; ++i) {
             EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36064 + i, 3553, Class9216.field39419.method34612(i), 0);
@@ -3533,7 +3533,7 @@ public class Class9216
         boolean b = false;
         final Boolean[] method32339 = class9023.method32339();
         for (int i = 0; i < Class9216.field39240; ++i) {
-            if (Class8571.method29019(method32339[i])) {
+            if (Config.method29019(method32339[i])) {
                 Class9216.field39419.method34615(i);
                 b = true;
             }
@@ -4189,9 +4189,9 @@ public class Class9216
         Class9216.field39424[Class9216.field39425 * 2 + 1] = 0;
     }
     
-    public static void method33888(final Class3833 class3833) {
+    public static void method33888(final Block class3833) {
         ++Class9216.field39425;
-        Class9216.field39424[Class9216.field39425 * 2] = ((Class90.field208.method504(class3833) & 0xFFFF) | class3833.method11797(class3833.method11878()).ordinal() << 16);
+        Class9216.field39424[Class9216.field39425 * 2] = ((Registry.BLOCK.getId(class3833) & 0xFFFF) | class3833.method11797(class3833.getDefaultState()).ordinal() << 16);
         Class9216.field39424[Class9216.field39425 * 2 + 1] = 0;
     }
     
@@ -4202,7 +4202,7 @@ public class Class9216
     }
     
     public static void method33890() {
-        Class9216.field39031.method5327().method15299();
+        Class9216.field39031.method5327().endSection();
     }
     
     public static String method33891() {
@@ -4222,7 +4222,7 @@ public class Class9216
         if (Class9216.field39317 > 4) {
             Class9216.field39317 = 0;
         }
-        Class9216.field39317 = Class8571.method28865(Class9216.field39317, 0, 4);
+        Class9216.field39317 = Config.method28865(Class9216.field39317, 0, 4);
     }
     
     public static void method33894() {
@@ -4253,8 +4253,8 @@ public class Class9216
             final String s3 = ".lang";
             list.add(s + s2 + s3);
             list.add(s + method33897(s2) + s3);
-            if (!Class8571.method28962().field23476.equals(s2)) {
-                final String field23476 = Class8571.method28962().field23476;
+            if (!Config.method28962().field23476.equals(s2)) {
+                final String field23476 = Config.method28962().field23476;
                 list.add(s + field23476 + s3);
                 list.add(s + method33897(field23476) + s3);
             }
@@ -4340,8 +4340,8 @@ public class Class9216
         if (!(method27622 instanceof Class4036)) {
             return false;
         }
-        final Class3833 method27623 = ((Class4036)method27622).method12240();
-        return method27623 != null && Class7969.method25824(method27623.method11878()) == Class9484.field40762;
+        final Block method27623 = ((Class4036)method27622).method12240();
+        return method27623 != null && Class7969.method25824(method27623.getDefaultState()) == Class9484.field40762;
     }
     
     public static boolean method33907(final Class316 class316) {

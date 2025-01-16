@@ -75,10 +75,10 @@ public class Class9144
         final Vec3d method32834 = class1857.method21732(class1856, class1858);
         class1859.method22564(method32834.x, method32834.y, method32834.z);
         try {
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class8900.method31337(class1857, class1860);
             }
-            if (!Class8571.method28975()) {
+            if (!Config.method28975()) {
                 n = 0L;
             }
             final Class9145 method32835 = class1860.method12414(class1857, class1858);
@@ -87,7 +87,7 @@ public class Class9144
             if (b3) {
                 this.method33370(class1856, method32832, class1857, class1858, class1859, class1860, n2, b, random, n, method32835, b2, method32834);
             }
-            if (Class8571.method28955()) {
+            if (Config.method28955()) {
                 Class8900.method31338(class1860);
             }
             return b3;
@@ -110,7 +110,7 @@ public class Class9144
         final Class9145 method12414 = class1861.method12414(class1858, class1859);
         final Class6332 method12415 = class1861.method12415();
         for (final Direction class1863 : Direction.VALUES) {
-            if (!b || Class6770.method20647(class1858, class1856, class1859, class1863, method12414)) {
+            if (!b || BlockUtils.method20647(class1858, class1856, class1859, class1863, method12414)) {
                 random.setSeed(n);
                 this.method33359(class1856, class1858, class1859, class1860, class1861, Class9087.method32833(this.field38735 ? class1857.method18700(class1858, class1863, random, class1862) : class1857.method18691(class1858, class1863, random), class1856, class1858, class1859, class1863, method12415, n, method12414), n2, method12414);
                 b2 = true;
@@ -134,7 +134,7 @@ public class Class9144
         final Class9145 method12414 = class1861.method12414(class1858, class1859);
         final Class6332 method12415 = class1861.method12415();
         for (final Direction class1863 : Direction.VALUES) {
-            if (!b || Class6770.method20647(class1858, class1856, class1859, class1863, method12414)) {
+            if (!b || BlockUtils.method20647(class1858, class1856, class1859, class1863, method12414)) {
                 random.setSeed(n);
                 this.method33362(class1856, class1858, class1859, Class1656.method5777(class1856, class1858, class1859.method1149(class1863)), n2, false, class1860, class1861, Class9087.method32833(this.field38735 ? class1857.method18700(class1858, class1863, random, class1862) : class1857.method18691(class1858, class1863, random), class1856, class1858, class1859, class1863, method12415, n, method12414), method12414);
                 b2 = true;
@@ -226,32 +226,32 @@ public class Class9144
         switch (Class6537.field25985[class1859.ordinal()]) {
             case 1: {
                 set.set(1, min >= 1.0E-4f || min3 >= 1.0E-4f || max <= 0.9999f || max3 <= 0.9999f);
-                set.set(0, min2 == max2 && (min2 < 1.0E-4f || class1857.method21762(class1856, class1858)));
+                set.set(0, min2 == max2 && (min2 < 1.0E-4f || class1857.isCollisionShapeOpaque(class1856, class1858)));
                 break;
             }
             case 2: {
                 set.set(1, min >= 1.0E-4f || min3 >= 1.0E-4f || max <= 0.9999f || max3 <= 0.9999f);
-                set.set(0, min2 == max2 && (max2 > 0.9999f || class1857.method21762(class1856, class1858)));
+                set.set(0, min2 == max2 && (max2 > 0.9999f || class1857.isCollisionShapeOpaque(class1856, class1858)));
                 break;
             }
             case 3: {
                 set.set(1, min >= 1.0E-4f || min2 >= 1.0E-4f || max <= 0.9999f || max2 <= 0.9999f);
-                set.set(0, min3 == max3 && (min3 < 1.0E-4f || class1857.method21762(class1856, class1858)));
+                set.set(0, min3 == max3 && (min3 < 1.0E-4f || class1857.isCollisionShapeOpaque(class1856, class1858)));
                 break;
             }
             case 4: {
                 set.set(1, min >= 1.0E-4f || min2 >= 1.0E-4f || max <= 0.9999f || max2 <= 0.9999f);
-                set.set(0, min3 == max3 && (max3 > 0.9999f || class1857.method21762(class1856, class1858)));
+                set.set(0, min3 == max3 && (max3 > 0.9999f || class1857.isCollisionShapeOpaque(class1856, class1858)));
                 break;
             }
             case 5: {
                 set.set(1, min2 >= 1.0E-4f || min3 >= 1.0E-4f || max2 <= 0.9999f || max3 <= 0.9999f);
-                set.set(0, min == max && (min < 1.0E-4f || class1857.method21762(class1856, class1858)));
+                set.set(0, min == max && (min < 1.0E-4f || class1857.isCollisionShapeOpaque(class1856, class1858)));
                 break;
             }
             case 6: {
                 set.set(1, min2 >= 1.0E-4f || min3 >= 1.0E-4f || max2 <= 0.9999f || max3 <= 0.9999f);
-                set.set(0, min == max && (max > 0.9999f || class1857.method21762(class1856, class1858)));
+                set.set(0, min == max && (max > 0.9999f || class1857.isCollisionShapeOpaque(class1856, class1858)));
                 break;
             }
         }
@@ -328,8 +328,8 @@ public class Class9144
     }
     
     public static void method33369() {
-        Class9144.field38731 = 1.0f - Class8571.method28885() * 0.8f;
-        Class9144.field38732 = (Class8571.method28955() && Class9216.method33759());
+        Class9144.field38731 = 1.0f - Config.method28885() * 0.8f;
+        Class9144.field38732 = (Config.method28955() && Class9216.method33759());
     }
     
     private void method33370(final Class1856 class1856, final Class6313 class1857, final BlockState class1858, final BlockPos class1859, final Class7351 class1860, final Class4150 class1861, final int n, final boolean b, final Random random, final long n2, final Class9145 class1862, final boolean b2, final Vec3d class1863) {
@@ -364,7 +364,7 @@ public class Class9144
                 }
             }
         }
-        if (Class8571.method28932()) {
+        if (Config.method28932()) {
             if (!class1862.method33381()) {
                 if (Class8979.method31925(class1856, class1858, class1859)) {
                     final Class6313 method33404 = Class8979.method31923();

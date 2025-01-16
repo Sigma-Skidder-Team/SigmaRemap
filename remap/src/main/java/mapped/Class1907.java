@@ -27,7 +27,7 @@ public class Class1907 extends AbstractChunkProvider
     }
     
     @Override
-    public Class1886 method7405() {
+    public Class1886 getLightManager() {
         return this.field10343;
     }
     
@@ -53,7 +53,7 @@ public class Class1907 extends AbstractChunkProvider
     }
     
     @Nullable
-    public Class1862 method7413(final int n, final int n2, final Class9312 class9312, final boolean b) {
+    public Class1862 method7413(final int n, final int n2, final ChunkStatus class9312, final boolean b) {
         if (Class9225.method34017(this.field10344, n, n2)) {
             final Class1862 method34016 = this.field10344.method34016(this.field10344.method34012(n, n2));
             if (method7411(method34016, n, n2)) {
@@ -100,7 +100,7 @@ public class Class1907 extends AbstractChunkProvider
                 this.field10344.method34013(method34012, class1876);
             }
             final Class8199[] method34014 = class1876.method7014();
-            final Class1886 method34015 = this.method7405();
+            final Class1886 method34015 = this.getLightManager();
             method34015.method7255(new Class7859(n, n2), true);
             for (int i = 0; i < method34014.length; ++i) {
                 method34015.method7254(Class353.method1088(n, i, n2), Class8199.method27155(method34014[i]));

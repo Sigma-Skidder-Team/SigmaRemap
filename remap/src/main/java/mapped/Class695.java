@@ -12,7 +12,7 @@ public class Class695 extends Class527
 {
     private final Class6461 field3823;
     private long field3824;
-    private static final Object2IntMap<Class9312> field3825;
+    private static final Object2IntMap<ChunkStatus> field3825;
     
     public Class695(final Class6461 field3823) {
         super(Class7895.field32402);
@@ -61,7 +61,7 @@ public class Class695 extends Class527
         }
         for (int i = 0; i < method19325; ++i) {
             for (int j = 0; j < method19325; ++j) {
-                final Class9312 method19326 = class6461.method19327(i, j);
+                final ChunkStatus method19326 = class6461.method19327(i, j);
                 final int n11 = n8 + i * n5;
                 final int n12 = n9 + j * n5;
                 Class565.method3293(n11, n12, n11 + n3, n12 + n3, Class695.field3825.getInt((Object)method19326) | 0xFF000000);
@@ -72,19 +72,19 @@ public class Class695 extends Class527
     static {
         field3825 = Class8349.method27851((Object2IntMap)new Object2IntOpenHashMap(), object2IntOpenHashMap -> {
             object2IntOpenHashMap.defaultReturnValue(0);
-            object2IntOpenHashMap.put((Object)Class9312.field39977, 5526612);
-            object2IntOpenHashMap.put((Object)Class9312.field39978, 10066329);
-            object2IntOpenHashMap.put((Object)Class9312.field39979, 6250897);
-            object2IntOpenHashMap.put((Object)Class9312.field39980, 8434258);
-            object2IntOpenHashMap.put((Object)Class9312.field39981, 13750737);
-            object2IntOpenHashMap.put((Object)Class9312.field39982, 7497737);
-            object2IntOpenHashMap.put((Object)Class9312.field39983, 7169628);
-            object2IntOpenHashMap.put((Object)Class9312.field39984, 3159410);
-            object2IntOpenHashMap.put((Object)Class9312.field39985, 2213376);
-            object2IntOpenHashMap.put((Object)Class9312.field39986, 13421772);
-            object2IntOpenHashMap.put((Object)Class9312.field39987, 15884384);
-            object2IntOpenHashMap.put((Object)Class9312.field39988, 15658734);
-            object2IntOpenHashMap.put((Object)Class9312.field39989, 16777215);
+            object2IntOpenHashMap.put((Object) ChunkStatus.field39977, 5526612);
+            object2IntOpenHashMap.put((Object) ChunkStatus.field39978, 10066329);
+            object2IntOpenHashMap.put((Object) ChunkStatus.field39979, 6250897);
+            object2IntOpenHashMap.put((Object) ChunkStatus.field39980, 8434258);
+            object2IntOpenHashMap.put((Object) ChunkStatus.field39981, 13750737);
+            object2IntOpenHashMap.put((Object) ChunkStatus.field39982, 7497737);
+            object2IntOpenHashMap.put((Object) ChunkStatus.field39983, 7169628);
+            object2IntOpenHashMap.put((Object) ChunkStatus.field39984, 3159410);
+            object2IntOpenHashMap.put((Object) ChunkStatus.field39985, 2213376);
+            object2IntOpenHashMap.put((Object) ChunkStatus.field39986, 13421772);
+            object2IntOpenHashMap.put((Object) ChunkStatus.field39987, 15884384);
+            object2IntOpenHashMap.put((Object) ChunkStatus.field39988, 15658734);
+            object2IntOpenHashMap.put((Object) ChunkStatus.field39989, 16777215);
         });
     }
 }

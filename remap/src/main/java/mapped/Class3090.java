@@ -47,7 +47,7 @@ public abstract class Class3090
     
     @Nullable
     public static Class3090 method9834(final Class3090 class3090) {
-        return Class3090.field15440.method499(Class90.field217.method504(class3090));
+        return Class3090.field15440.method499(Registry.field217.getId(class3090));
     }
     
     public static <C extends Class5118> Class8312<C> method9835(final Class7304<C> class7304, final C c) {
@@ -170,7 +170,7 @@ public abstract class Class3090
             if (class1853.getY() >= 0) {
                 if (class1853.getY() < 256) {
                     if (class1852.method6992(Class237.field912, class1853) < 10) {
-                        final Class7096 method6701 = class1852.method6701(class1853);
+                        final Class7096 method6701 = class1852.getBlockState(class1853);
                         if (class1852.method6702(class1853).method21779() == Class7558.field29976) {
                             if (method6701.method21696() instanceof Class3859) {
                                 if (!b) {
@@ -208,8 +208,8 @@ public abstract class Class3090
             if (class1853.getY() >= 0) {
                 if (class1853.getY() < 256) {
                     if (class1852.method6992(Class237.field912, class1853) < 10) {
-                        if (class1852.method6701(class1853).method21706()) {
-                            if (Class7521.field29329.method11878().method21752(class1852, class1853)) {
+                        if (class1852.getBlockState(class1853).method21706()) {
+                            if (Class7521.field29329.getDefaultState().method21752(class1852, class1853)) {
                                 return true;
                             }
                         }
@@ -266,7 +266,7 @@ public abstract class Class3090
             }
             catch (final Exception ex) {
                 final Class7689 method24421 = Class7689.method24421(ex, "Feature placement");
-                method24421.method24418("Feature").method16297("Id", Class90.field215.method503(class2113.field35804)).method16296("Description", () -> class2114.field35804.toString());
+                method24421.method24418("Feature").method16297("Id", Registry.field215.getKey(class2113.field35804)).method16296("Description", () -> class2114.field35804.toString());
                 throw new Class2365(method24421);
             }
             ++n2;
@@ -281,7 +281,7 @@ public abstract class Class3090
         return Class8861.method31025(MathHelper.clamp(this.method9867(), 0.0f, 1.0f), MathHelper.clamp(this.method9863(), 0.0f, 1.0f));
     }
     
-    public void method9860(final Random random, final Class1860 class1860, final int n, final int n2, final int n3, final double n4, final Class7096 class1861, final Class7096 class1862, final int n5, final long n6) {
+    public void method9860(final Random random, final IChunk class1860, final int n, final int n2, final int n3, final double n4, final Class7096 class1861, final Class7096 class1862, final int n5, final long n6) {
         this.field15452.method27603(n6);
         this.field15452.method27602(random, class1860, this, n, n2, n3, n4, class1861, class1862, n5, n6);
     }
@@ -310,7 +310,7 @@ public abstract class Class3090
     
     public String method9865() {
         if (this.field15443 == null) {
-            this.field15443 = Class8349.method27836("biome", Class90.field217.method503(this));
+            this.field15443 = Class8349.method27836("biome", Registry.field217.getKey(this));
         }
         return this.field15443;
     }

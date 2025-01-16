@@ -32,7 +32,7 @@ public class Class5564 extends Class5509
         }
         final Class6300[] array = (Class6300[])Class9570.method35828(class5902, Class9570.field41479);
         if (array != null) {
-            int method28933 = Class8571.method28933(s.substring(prefix.length()), -1);
+            int method28933 = Config.method28933(s.substring(prefix.length()), -1);
             return (--method28933 >= 0 && method28933 < array.length) ? array[method28933] : null;
         }
         return null;

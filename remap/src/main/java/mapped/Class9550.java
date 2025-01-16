@@ -52,7 +52,7 @@ public class Class9550
     
     @Nullable
     public <E extends TileEntity> Class4158<E> method35724(final E e) {
-        return (Class4158)this.field41125.get(e.method2206());
+        return (Class4158)this.field41125.get(e.getType());
     }
     
     public void method35725(final World class1847, final Class1663 field41129, final Class1844 field41130, final Class6092 field41131, final Class7006 field41132) {
@@ -68,8 +68,8 @@ public class Class9550
     public <E extends TileEntity> void method35726(final E e, final float n, final Class7351 class7351, final Class7807 class7352) {
         if (e.method2191(this.field41131.method18161().x, this.field41131.method18161().y, this.field41131.method18161().z) < e.method2192()) {
             if (this.method35724(e) != null) {
-                if (e.method2188()) {
-                    if (e.method2206().method16523(e.method2194().method21696())) {
+                if (e.hasWorld()) {
+                    if (e.getType().method16523(e.method2194().getBlock())) {
                         method35729(e, () -> {
                             if (!(!Class8880.method31235())) {
                                 Class8880.method31237();
@@ -97,7 +97,7 @@ public class Class9550
             method2187 = 15728880;
         }
         else {
-            method2187 = Class1656.method5776(method2186, t.method2193());
+            method2187 = Class1656.method5776(method2186, t.getPos());
         }
         class4158.method12454(t, n, class4159, class4160, method2187, Class1904.field10335);
     }

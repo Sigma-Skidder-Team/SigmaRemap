@@ -47,7 +47,7 @@ public class Class7667
     }
     
     public static boolean method24304(final BlockState class7096) {
-        return Class7667.field30455 ? Class9570.method35820(class7096, Class9570.field41246, new Object[0]) : class7096.method21696().method11802();
+        return Class7667.field30455 ? Class9570.method35820(class7096, Class9570.field41246, new Object[0]) : class7096.getBlock().method11802();
     }
     
     public static boolean method24305(final ItemStack class8321) {

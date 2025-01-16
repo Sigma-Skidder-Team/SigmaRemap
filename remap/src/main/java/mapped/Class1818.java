@@ -6,7 +6,7 @@ package mapped;
 
 public class Class1818<T extends Class759 & Class768, M extends Class5845<T>> extends Class1799<T, M>
 {
-    private static final Class1932 field9997;
+    private static final ResourceLocation field9997;
     private final Class5854<T> field9998;
     
     public Class1818(final Class4778<T, M> class4778) {
@@ -19,6 +19,6 @@ public class Class1818<T extends Class759 & Class768, M extends Class5845<T>> ex
     }
     
     static {
-        field9997 = new Class1932("textures/entity/skeleton/stray_overlay.png");
+        field9997 = new ResourceLocation("textures/entity/skeleton/stray_overlay.png");
     }
 }

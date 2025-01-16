@@ -39,6 +39,6 @@ public class Class5127 implements Class5113
     }
     
     public static <T> Class5127 method16033(final Dynamic<T> dynamic) {
-        return new Class5127(Class90.field218.method505(new Class1932(dynamic.get("trunk_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("trunk_provider").orElseEmptyMap()), Class90.field218.method505(new Class1932(dynamic.get("leaves_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("leaves_provider").orElseEmptyMap()), dynamic.get("decorators").asList(dynamic2 -> Class90.field221.method505(new Class1932(dynamic2.get("type").asString().orElseThrow(RuntimeException::new))).method24707((Dynamic<?>)dynamic2)), dynamic.get("base_height").asInt(0));
+        return new Class5127(Registry.field218.getOrDefault(new ResourceLocation(dynamic.get("trunk_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("trunk_provider").orElseEmptyMap()), Registry.field218.getOrDefault(new ResourceLocation(dynamic.get("leaves_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("leaves_provider").orElseEmptyMap()), dynamic.get("decorators").asList(dynamic2 -> Registry.field221.getOrDefault(new ResourceLocation(dynamic2.get("type").asString().orElseThrow(RuntimeException::new))).method24707((Dynamic<?>)dynamic2)), dynamic.get("base_height").asInt(0));
     }
 }

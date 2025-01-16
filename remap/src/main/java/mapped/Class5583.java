@@ -66,7 +66,7 @@ public class Class5583 extends Class5509
             class5902.field20284 = field20284;
             return (Class9559)class5902;
         }
-        Class8571.method28848("Field not found: RenderBoat.modelBoat");
+        Config.warn("Field not found: RenderBoat.modelBoat");
         return null;
     }
 }

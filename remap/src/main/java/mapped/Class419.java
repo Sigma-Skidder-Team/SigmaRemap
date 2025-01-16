@@ -118,7 +118,7 @@ public abstract class Class419 extends Entity
     public void method2032(final Class7006 class7006) {
         if (class7006.method21449() == Class2165.field12881) {
             final Class7005 class7007 = (Class7005)class7006;
-            final Class7096 method6701 = this.world.method6701(class7007.method21447());
+            final Class7096 method6701 = this.world.getBlockState(class7007.method21447());
             method6701.method21760(this.world, method6701, class7007, this);
         }
     }

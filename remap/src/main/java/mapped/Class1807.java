@@ -8,7 +8,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class1807 extends Class1805<Class767, Class5872<Class767>>
 {
-    private static final Class1932 field9977;
+    private static final ResourceLocation field9977;
     private final Class5872<Class767> field9978;
     
     public Class1807(final Class4778<Class767, Class5872<Class767>> class4778) {
@@ -22,7 +22,7 @@ public class Class1807 extends Class1805<Class767, Class5872<Class767>>
     }
     
     @Override
-    public Class1932 method6566() {
+    public ResourceLocation method6566() {
         return Class1807.field9977;
     }
     
@@ -32,6 +32,6 @@ public class Class1807 extends Class1805<Class767, Class5872<Class767>>
     }
     
     static {
-        field9977 = new Class1932("textures/entity/wither/wither_armor.png");
+        field9977 = new ResourceLocation("textures/entity/wither/wither_armor.png");
     }
 }

@@ -29,7 +29,7 @@ public class Class8832
     }
     
     public static Class8832 method30839(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext) {
-        final Class1932 obj = new Class1932(Class9583.method35895(jsonObject, "trigger"));
+        final ResourceLocation obj = new ResourceLocation(Class9583.method35895(jsonObject, "trigger"));
         final Class4640<Class4220> method24878 = Class7770.method24878(obj);
         if (method24878 != null) {
             return new Class8832(method24878.method13720(Class9583.method35915(jsonObject, "conditions", new JsonObject()), jsonDeserializationContext));

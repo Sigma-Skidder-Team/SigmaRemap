@@ -16,7 +16,7 @@ public class Class6100<T extends Class3685> implements Class6096<T>
         this.field24755 = field24755;
     }
     
-    public T method18194(final Class1932 class1932, final JsonObject jsonObject) {
+    public T method18194(final ResourceLocation class1932, final JsonObject jsonObject) {
         final String method35896 = Class9583.method35896(jsonObject, "group", "");
         Class120 class1933;
         if (!Class9583.method35891(jsonObject, "ingredient")) {
@@ -25,10 +25,10 @@ public class Class6100<T extends Class3685> implements Class6096<T>
         else {
             class1933 = Class120.method622((JsonElement)Class9583.method35917(jsonObject, "ingredient"));
         }
-        return this.field24755.method34696(class1932, method35896, class1933, new ItemStack(Class90.field211.method505(new Class1932(Class9583.method35895(jsonObject, "result"))), Class9583.method35909(jsonObject, "count")));
+        return this.field24755.method34696(class1932, method35896, class1933, new ItemStack(Registry.field211.getOrDefault(new ResourceLocation(Class9583.method35895(jsonObject, "result"))), Class9583.method35909(jsonObject, "count")));
     }
     
-    public T method18195(final Class1932 class1932, final PacketBuffer class1933) {
+    public T method18195(final ResourceLocation class1932, final PacketBuffer class1933) {
         return this.field24755.method34696(class1932, class1933.method29513(32767), Class120.method621(class1933), class1933.method29511());
     }
     

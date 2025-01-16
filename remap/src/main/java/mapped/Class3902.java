@@ -24,7 +24,7 @@ public class Class3902 extends Class3892
     
     public static boolean method12002(final Class1852 class1852, final BlockPos class1853, final Direction class1854) {
         final BlockPos method1149 = class1853.method1149(class1854);
-        return class1852.method6701(method1149).method21761(class1852, method1149, class1854.getOpposite());
+        return class1852.getBlockState(method1149).isSolidSide(class1852, method1149, class1854.getOpposite());
     }
     
     @Nullable
@@ -33,10 +33,10 @@ public class Class3902 extends Class3892
         for (final Direction class7075 : class7074.method21643()) {
             BlockState class7076;
             if (class7075.getAxis() != Axis.Y) {
-                class7076 = ((Class7097<O, BlockState>)((Class7097<O, BlockState>)this.method11878()).method21773(Class3902.field17618, Class107.field333)).method21773((Class7111<Comparable>)Class3902.field17564, class7075.getOpposite());
+                class7076 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with(Class3902.field17618, Class107.field333)).with((IProperty<Comparable>)Class3902.field17564, class7075.getOpposite());
             }
             else {
-                class7076 = ((Class7097<O, BlockState>)((Class7097<O, BlockState>)this.method11878()).method21773(Class3902.field17618, (class7075 != Direction.UP) ? Class107.field332 : Class107.field334)).method21773((Class7111<Comparable>)Class3902.field17564, class7074.method21644());
+                class7076 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with(Class3902.field17618, (class7075 != Direction.UP) ? Class107.field332 : Class107.field334)).with((IProperty<Comparable>)Class3902.field17564, class7074.method21644());
             }
             if (class7076.method21752(class7074.method21654(), class7074.method21639())) {
                 return class7076;
@@ -47,11 +47,11 @@ public class Class3902 extends Class3892
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        return (method12003(class7096).getOpposite() == class7097 && !class7096.method21752(class7099, class7100)) ? Class7521.field29147.method11878() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
+        return (method12003(class7096).getOpposite() == class7097 && !class7096.method21752(class7099, class7100)) ? Class7521.field29147.getDefaultState() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     public static Direction method12003(final BlockState class7096) {
-        switch (Class9247.field39656[class7096.method21772(Class3902.field17618).ordinal()]) {
+        switch (Class9247.field39656[class7096.get(Class3902.field17618).ordinal()]) {
             case 1: {
                 return Direction.DOWN;
             }
@@ -59,7 +59,7 @@ public class Class3902 extends Class3892
                 return Direction.UP;
             }
             default: {
-                return class7096.method21772((Class7111<Direction>)Class3902.field17564);
+                return class7096.get((IProperty<Direction>)Class3902.field17564);
             }
         }
     }

@@ -64,7 +64,7 @@ public class Class8071
         ++this.field33253;
         if (!this.field33254) {
             if (this.field33250) {
-                final BlockState method6701 = this.field33247.method6701(this.field33252);
+                final BlockState method6701 = this.field33247.getBlockState(this.field33252);
                 if (!method6701.method21706()) {
                     this.method26486(method6701, this.field33252, this.field33251);
                 }
@@ -76,7 +76,7 @@ public class Class8071
             }
         }
         else {
-            final BlockState method6702 = this.field33247.method6701(this.field33255);
+            final BlockState method6702 = this.field33247.getBlockState(this.field33255);
             if (!method6702.method21706()) {
                 if (this.method26486(method6702, this.field33255, this.field33256) >= 1.0f) {
                     this.field33254 = false;
@@ -112,16 +112,16 @@ public class Class8071
                             if (!Objects.equals(this.field33252, field33255)) {
                                 Class8071.field33246.warn("Mismatch in destroy block pos: " + this.field33252 + " " + field33255);
                                 this.field33247.method6780(this.field33248.getEntityId(), this.field33252, -1);
-                                this.field33248.field3039.method17469(new Class4320(this.field33252, this.field33247.method6701(this.field33252), class2003, true, "aborted mismatched destroying"));
+                                this.field33248.field3039.method17469(new Class4320(this.field33252, this.field33247.getBlockState(this.field33252), class2003, true, "aborted mismatched destroying"));
                             }
                             this.field33247.method6780(this.field33248.getEntityId(), field33255, -1);
-                            this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.method6701(field33255), class2003, true, "aborted destroying"));
+                            this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.getBlockState(field33255), class2003, true, "aborted destroying"));
                         }
                     }
                     else {
                         if (field33255.equals(this.field33252)) {
                             final int n5 = this.field33253 - this.field33251;
-                            final BlockState method6701 = this.field33247.method6701(field33255);
+                            final BlockState method6701 = this.field33247.getBlockState(field33255);
                             if (!method6701.method21706()) {
                                 if (method6701.method21719(this.field33248, this.field33248.world, field33255) * (n5 + 1) >= 0.7f) {
                                     this.field33250 = false;
@@ -137,17 +137,17 @@ public class Class8071
                                 }
                             }
                         }
-                        this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.method6701(field33255), class2003, true, "stopped destroying"));
+                        this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.getBlockState(field33255), class2003, true, "stopped destroying"));
                     }
                 }
                 else {
                     if (!this.field33247.method6760(this.field33248, field33255)) {
-                        this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.method6701(field33255), class2003, false, "may not interact"));
+                        this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.getBlockState(field33255), class2003, false, "may not interact"));
                         return;
                     }
                     if (this.method26484()) {
                         if (this.field33247.method6725(null, field33255, class2004)) {
-                            this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.method6701(field33255), class2003, true, "fire put out"));
+                            this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.getBlockState(field33255), class2003, true, "fire put out"));
                         }
                         else {
                             this.method26487(field33255, class2003, "creative destroy");
@@ -155,13 +155,13 @@ public class Class8071
                         return;
                     }
                     if (this.field33248.method2803(this.field33247, field33255, this.field33249)) {
-                        this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.method6701(field33255), class2003, false, "block action restricted"));
+                        this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.getBlockState(field33255), class2003, false, "block action restricted"));
                         return;
                     }
                     this.field33247.method6725(null, field33255, class2004);
                     this.field33251 = this.field33253;
                     float method6702 = 1.0f;
-                    final BlockState method6703 = this.field33247.method6701(field33255);
+                    final BlockState method6703 = this.field33247.getBlockState(field33255);
                     if (!method6703.method21706()) {
                         method6703.method21745(this.field33247, field33255, this.field33248);
                         method6702 = method6703.method21719(this.field33248, this.field33248.world, field33255);
@@ -171,42 +171,42 @@ public class Class8071
                     }
                     else {
                         if (this.field33250) {
-                            this.field33248.field3039.method17469(new Class4320(this.field33252, this.field33247.method6701(this.field33252), Class2003.field11240, false, "abort destroying since another started (client insta mine, server disagreed)"));
+                            this.field33248.field3039.method17469(new Class4320(this.field33252, this.field33247.getBlockState(this.field33252), Class2003.field11240, false, "abort destroying since another started (client insta mine, server disagreed)"));
                         }
                         this.field33250 = true;
                         this.field33252 = field33255.toImmutable();
                         final int field33256 = (int)(method6702 * 10.0f);
                         this.field33247.method6780(this.field33248.getEntityId(), field33255, field33256);
-                        this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.method6701(field33255), class2003, true, "actual start of destroying"));
+                        this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.getBlockState(field33255), class2003, true, "actual start of destroying"));
                         this.field33257 = field33256;
                     }
                 }
             }
             else {
-                this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.method6701(field33255), class2003, false, "too high"));
+                this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.getBlockState(field33255), class2003, false, "too high"));
             }
         }
         else {
-            this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.method6701(field33255), class2003, false, "too far"));
+            this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.getBlockState(field33255), class2003, false, "too far"));
         }
     }
     
     public void method26487(final BlockPos class354, final Class2003 class355, final String s) {
         if (!this.method26488(class354)) {
-            this.field33248.field3039.method17469(new Class4320(class354, this.field33247.method6701(class354), class355, false, s));
+            this.field33248.field3039.method17469(new Class4320(class354, this.field33247.getBlockState(class354), class355, false, s));
         }
         else {
-            this.field33248.field3039.method17469(new Class4320(class354, this.field33247.method6701(class354), class355, true, s));
+            this.field33248.field3039.method17469(new Class4320(class354, this.field33247.getBlockState(class354), class355, true, s));
         }
     }
     
     public boolean method26488(final BlockPos class354) {
-        final BlockState method6701 = this.field33247.method6701(class354);
+        final BlockState method6701 = this.field33247.getBlockState(class354);
         if (!this.field33248.getHeldItemMainhand().getItem().method11703(method6701, this.field33247, class354, this.field33248)) {
             return false;
         }
         final TileEntity method6702 = this.field33247.method6727(class354);
-        final Class3833 method6703 = method6701.method21696();
+        final Block method6703 = method6701.getBlock();
         Label_0072: {
             if (!(method6703 instanceof Class3953)) {
                 if (!(method6703 instanceof Class3941)) {
@@ -290,7 +290,7 @@ public class Class8071
     
     public Class2201 method26480(final Class512 class512, final World class513, final ItemStack class514, final Class316 class515, final Class7005 class516) {
         final BlockPos method21447 = class516.method21447();
-        final BlockState method21448 = class513.method6701(method21447);
+        final BlockState method21448 = class513.getBlockState(method21447);
         if (this.field33249 != Class101.field301) {
             final boolean b = !class512.getHeldItemMainhand().method27620() || !class512.method2714().method27620();
             if (!class512.method2804() || !b) {

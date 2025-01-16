@@ -20,7 +20,7 @@ public class Class4732 extends Class4712<Class800, Class5926<Class800>>
         this.method13978(new Class1803(this));
     }
     
-    public Class1932 method14048(final Class800 class800) {
+    public ResourceLocation method14048(final Class800 class800) {
         return class800.method4606();
     }
     

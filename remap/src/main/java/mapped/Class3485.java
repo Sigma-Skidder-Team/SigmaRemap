@@ -14,11 +14,11 @@ import java.util.Random;
 public class Class3485 extends Class3479
 {
     private static String[] field16413;
-    private final Class3833 field16414;
+    private final Block field16414;
     private final Class759 field16415;
     private int field16416;
     
-    public Class3485(final Class3833 field16414, final Class787 field16415, final double n, final int n2) {
+    public Class3485(final Block field16414, final Class787 field16415, final double n, final int n2) {
         super(field16415, n, 24, n2);
         this.field16414 = field16414;
         this.field16415 = field16415;
@@ -101,9 +101,9 @@ public class Class3485 extends Class3479
     
     @Nullable
     private BlockPos method11055(final BlockPos class354, final Class1855 class355) {
-        if (class355.method6701(class354).method21696() != this.field16414) {
+        if (class355.getBlockState(class354).getBlock() != this.field16414) {
             for (final BlockPos class356 : new BlockPos[] { class354.method1139(), class354.method1145(), class354.method1147(), class354.method1141(), class354.method1143(), class354.method1139().method1139() }) {
-                if (class355.method6701(class356).method21696() == this.field16414) {
+                if (class355.getBlockState(class356).getBlock() == this.field16414) {
                     return class356;
                 }
             }
@@ -114,11 +114,11 @@ public class Class3485 extends Class3479
     
     @Override
     public boolean method11050(final Class1852 class1852, final BlockPos class1853) {
-        final Class1860 method6687 = class1852.method6687(class1853.getX() >> 4, class1853.getZ() >> 4, Class9312.field39989, false);
+        final IChunk method6687 = class1852.getChunk(class1853.getX() >> 4, class1853.getZ() >> 4, ChunkStatus.field39989, false);
         if (method6687 != null) {
-            if (method6687.method6701(class1853).method21696() == this.field16414) {
-                if (method6687.method6701(class1853.method1137()).method21706()) {
-                    if (method6687.method6701(class1853.method1138(2)).method21706()) {
+            if (method6687.getBlockState(class1853).getBlock() == this.field16414) {
+                if (method6687.getBlockState(class1853.method1137()).method21706()) {
+                    if (method6687.getBlockState(class1853.method1138(2)).method21706()) {
                         return true;
                     }
                 }

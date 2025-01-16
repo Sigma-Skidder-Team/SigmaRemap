@@ -29,8 +29,8 @@ public class Class6739 extends Dimension
     @Override
     public Class6346<?> method20488() {
         final Class7064 class7064 = Class8705.field36575.method29874();
-        class7064.method21584(Class7521.field29338.method11878());
-        class7064.method21585(Class7521.field29174.method11878());
+        class7064.method21584(Class7521.field29338.getDefaultState());
+        class7064.method21585(Class7521.field29174.getDefaultState());
         return Class8705.field36575.method29872(this.field26492, Class7768.field31769.method24875(Class7768.field31769.method24876(this.field26492.method6764()).method16709(Class7102.field27640)), class7064);
     }
     

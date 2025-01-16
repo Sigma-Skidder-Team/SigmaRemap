@@ -20,7 +20,7 @@ public class Class4079 extends Item
     public Class2201 method11694(final Class7075 class7075) {
         final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
-        if (!method21654.method6701(method21655).method21696().method11785(Class7188.field27911)) {
+        if (!method21654.getBlockState(method21655).method21696().method11785(Class7188.field27911)) {
             return Class2201.field13402;
         }
         final Class512 method21656 = class7075.method21652();

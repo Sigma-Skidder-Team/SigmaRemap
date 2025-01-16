@@ -494,7 +494,7 @@ public class Class857 extends LivingEntity
     
     private void method5154() {
         if (this.world instanceof Class1849) {
-            ((Class1849)this.world).method6911(new Class6911(Class8432.field34600, Class7521.field29160.method11878()), this.getPosX(), this.method1942(0.6666666666666666), this.getPosZ(), 10, this.method1930() / 4.0f, this.method1931() / 4.0f, this.method1930() / 4.0f, 0.05);
+            ((Class1849)this.world).method6911(new Class6911(Class8432.field34600, Class7521.field29160.getDefaultState()), this.getPosX(), this.method1942(0.6666666666666666), this.getPosZ(), 10, this.method1930() / 4.0f, this.method1931() / 4.0f, this.method1930() / 4.0f, 0.05);
         }
     }
     
@@ -510,7 +510,7 @@ public class Class857 extends LivingEntity
     }
     
     private void method5156(final DamageSource class7929) {
-        Class3833.method11839(this.world, new BlockPos(this), new ItemStack(Items.field31546));
+        Block.method11839(this.world, new BlockPos(this), new ItemStack(Items.field31546));
         this.method5157(class7929);
     }
     
@@ -520,14 +520,14 @@ public class Class857 extends LivingEntity
         for (int i = 0; i < this.field4579.size(); ++i) {
             final ItemStack class7930 = this.field4579.get(i);
             if (!class7930.method27620()) {
-                Class3833.method11839(this.world, new BlockPos(this).method1137(), class7930);
+                Block.method11839(this.world, new BlockPos(this).method1137(), class7930);
                 this.field4579.set(i, ItemStack.field34174);
             }
         }
         for (int j = 0; j < this.field4580.size(); ++j) {
             final ItemStack class7931 = this.field4580.get(j);
             if (!class7931.method27620()) {
-                Class3833.method11839(this.world, new BlockPos(this).method1137(), class7931);
+                Block.method11839(this.world, new BlockPos(this).method1137(), class7931);
                 this.field4580.set(j, ItemStack.field34174);
             }
         }
@@ -632,8 +632,8 @@ public class Class857 extends LivingEntity
     }
     
     @Override
-    public Class2117 method1921() {
-        return this.method5166() ? Class2117.field12343 : super.method1921();
+    public PushReaction method1921() {
+        return this.method5166() ? PushReaction.IGNORE : super.method1921();
     }
     
     private void method5159(final boolean b) {

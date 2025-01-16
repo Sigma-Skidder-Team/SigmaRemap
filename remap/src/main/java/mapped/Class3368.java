@@ -285,7 +285,7 @@ public class Class3368 extends Class3355
             this.field16033 = 0;
             this.field16036.clear();
             for (final BlockPos class354 : Class4609.method13691(Class3368.field15514.field4682.method27315())) {
-                if (!(Class3368.field15514.field4683.method6701(class354).method21696() instanceof Class3984)) {
+                if (!(Class3368.field15514.field4683.getBlockState(class354).method21696() instanceof Class3984)) {
                     continue;
                 }
                 if (this.method10713(new Class9486(class354)) > 24) {

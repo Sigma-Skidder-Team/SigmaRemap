@@ -30,6 +30,6 @@ public class Class5137 implements Class5113
     }
     
     public static <T> Class5137 method16050(final Dynamic<T> dynamic) {
-        return new Class5137(Class90.field218.method505(new Class1932(dynamic.get("cap_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("cap_provider").orElseEmptyMap()), Class90.field218.method505(new Class1932(dynamic.get("stem_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("stem_provider").orElseEmptyMap()), dynamic.get("foliage_radius").asInt(2));
+        return new Class5137(Registry.field218.getOrDefault(new ResourceLocation(dynamic.get("cap_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("cap_provider").orElseEmptyMap()), Registry.field218.getOrDefault(new ResourceLocation(dynamic.get("stem_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("stem_provider").orElseEmptyMap()), dynamic.get("foliage_radius").asInt(2));
     }
 }

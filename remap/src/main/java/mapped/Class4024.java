@@ -21,7 +21,7 @@ public class Class4024 extends Class4022
     
     public Class4024(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class4024.field18113, true));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class4024.field18113, true));
     }
     
     @Override
@@ -49,7 +49,7 @@ public class Class4024 extends Class4022
     
     @Override
     public int method11848(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
-        return (class7096.method21772((Class7111<Boolean>)Class4024.field18113) && Direction.UP != class7099) ? 15 : 0;
+        return (class7096.get((IProperty<Boolean>)Class4024.field18113) && Direction.UP != class7099) ? 15 : 0;
     }
     
     public boolean method12216(final World class1847, final BlockPos class1848, final BlockState class1849) {
@@ -72,25 +72,25 @@ public class Class4024 extends Class4022
             }
             list.remove(0);
         }
-        if (!class7096.method21772((Class7111<Boolean>)Class4024.field18113)) {
+        if (!class7096.get((IProperty<Boolean>)Class4024.field18113)) {
             if (!b) {
                 if (!method12218(class7097, class7098, false)) {
-                    class7097.method6688(class7098, ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class4024.field18113, true), 3);
+                    class7097.setBlockState(class7098, ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class4024.field18113, true), 3);
                 }
             }
         }
         else if (b) {
-            class7097.method6688(class7098, ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class4024.field18113, false), 3);
+            class7097.setBlockState(class7098, ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class4024.field18113, false), 3);
             if (method12218(class7097, class7098, true)) {
                 class7097.method6955(1502, class7098, 0);
-                class7097.method6833().method21345(class7098, class7097.method6701(class7098).method21696(), 160);
+                class7097.method6833().method21345(class7098, class7097.getBlockState(class7098).method21696(), 160);
             }
         }
     }
     
     @Override
-    public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
-        if (class7096.method21772((Class7111<Boolean>)Class4024.field18113) == this.method12216(class7097, class7098, class7096)) {
+    public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
+        if (class7096.get((IProperty<Boolean>)Class4024.field18113) == this.method12216(class7097, class7098, class7096)) {
             if (!class7097.method6833().method21342(class7098, this)) {
                 class7097.method6833().method21345(class7098, this, this.method11826(class7097));
             }
@@ -109,18 +109,18 @@ public class Class4024 extends Class4022
     
     @Override
     public void method11823(final BlockState class7096, final World class7097, final BlockPos class7098, final Random random) {
-        if (class7096.method21772((Class7111<Boolean>)Class4024.field18113)) {
+        if (class7096.get((IProperty<Boolean>)Class4024.field18113)) {
             class7097.method6709(Class6912.field27101, class7098.getX() + 0.5 + (random.nextDouble() - 0.5) * 0.2, class7098.getY() + 0.7 + (random.nextDouble() - 0.5) * 0.2, class7098.getZ() + 0.5 + (random.nextDouble() - 0.5) * 0.2, 0.0, 0.0, 0.0);
         }
     }
     
     @Override
-    public int method11781(final BlockState class7096) {
-        return class7096.method21772((Class7111<Boolean>)Class4024.field18113) ? super.method11781(class7096) : 0;
+    public int getLightValue(final BlockState class7096) {
+        return class7096.get((IProperty<Boolean>)Class4024.field18113) ? super.getLightValue(class7096) : 0;
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, BlockState> class9500) {
+    public void method11875(final Class9500<Block, BlockState> class9500) {
         class9500.method35378(Class4024.field18113);
     }
     

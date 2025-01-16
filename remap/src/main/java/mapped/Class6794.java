@@ -209,18 +209,18 @@ public class Class6794
         }
         final String method27220 = class8215.method27219("Keep-Alive");
         if (method27220 != null) {
-            final String[] method27221 = Class8571.method28937(method27220, ",;");
+            final String[] method27221 = Config.method28937(method27220, ",;");
             for (int i = 0; i < method27221.length; ++i) {
                 final String[] method27222 = this.method20811(method27221[i], '=');
                 if (method27222.length >= 2) {
                     if (method27222[0].equals("timeout")) {
-                        final int method27223 = Class8571.method28933(method27222[1], -1);
+                        final int method27223 = Config.method28933(method27222[1], -1);
                         if (method27223 > 0) {
                             this.field26720 = method27223 * 1000;
                         }
                     }
                     if (method27222[0].equals("max")) {
-                        final int method27224 = Class8571.method28933(method27222[1], -1);
+                        final int method27224 = Config.method28933(method27222[1], -1);
                         if (method27224 > 0) {
                             this.field26721 = method27224;
                         }

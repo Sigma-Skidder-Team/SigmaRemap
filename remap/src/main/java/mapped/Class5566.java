@@ -45,7 +45,7 @@ public class Class5566 extends Class5509
             class5902.field20284 = field20284;
             return (Class9559)class5902;
         }
-        Class8571.method28848("Field not found: RenderEvokerFangs.model");
+        Config.warn("Field not found: RenderEvokerFangs.model");
         return null;
     }
 }

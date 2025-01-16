@@ -7,13 +7,12 @@ package mapped;
 import java.util.ArrayList;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParseException;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import java.util.Optional;
 import java.util.Iterator;
 import java.util.function.Function;
 import com.google.common.collect.Lists;
-import java.util.Collection;
+
 import java.util.Collections;
 import com.google.common.collect.Sets;
 import java.util.Set;
@@ -57,7 +56,7 @@ public class Class8162<T>
         return this;
     }
     
-    public boolean method26981(final Function<Class1932, Class7909<T>> function) {
+    public boolean method26981(final Function<ResourceLocation, Class7909<T>> function) {
         final Iterator<Class6967<T>> iterator = this.field33622.iterator();
         while (iterator.hasNext()) {
             if (iterator.next().method21378(function)) {
@@ -68,24 +67,24 @@ public class Class8162<T>
         return true;
     }
     
-    public Class7909<T> method26982(final Class1932 class1932) {
+    public Class7909<T> method26982(final ResourceLocation class1932) {
         return new Class7909<T>(class1932, this.field33622, this.field33623);
     }
     
-    public Class8162<T> method26983(final Function<Class1932, Optional<T>> function, final JsonObject jsonObject) {
+    public Class8162<T> method26983(final Function<ResourceLocation, Optional<T>> function, final JsonObject jsonObject) {
         final JsonArray method35917 = Class9583.method35917(jsonObject, "values");
         final ArrayList arrayList = Lists.newArrayList();
         final Iterator iterator = method35917.iterator();
         while (iterator.hasNext()) {
             final String method35918 = Class9583.method35894(iterator.next(), "value");
             if (!method35918.startsWith("#")) {
-                arrayList.add(new Class6968(Collections.singleton((Object)((Optional<T>)function.apply(new Class1932(method35918))).orElseThrow(() -> {
+                arrayList.add(new Class6968(Collections.singleton((Object)((Optional<T>)function.apply(new ResourceLocation(method35918))).orElseThrow(() -> {
                     new JsonParseException("Unknown value '" + obj + "'");
                     return;
                 }))));
             }
             else {
-                arrayList.add(new Class6966(new Class1932(method35918.substring(1))));
+                arrayList.add(new Class6966(new ResourceLocation(method35918.substring(1))));
             }
         }
         if (Class9583.method35901(jsonObject, "replace", false)) {

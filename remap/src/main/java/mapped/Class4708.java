@@ -10,7 +10,7 @@ import net.minecraft.util.math.Vec3d;
 
 public class Class4708<T extends Class428> extends Class4703<T>
 {
-    private static final Class1932 field20297;
+    private static final ResourceLocation field20297;
     public final Class5845<T> field20298;
     
     public Class4708(final Class8551 class8551) {
@@ -74,7 +74,7 @@ public class Class4708<T extends Class428> extends Class4703<T>
         class7351.method22568();
     }
     
-    public Class1932 method13974(final T t) {
+    public ResourceLocation method13974(final T t) {
         return Class4708.field20297;
     }
     
@@ -83,6 +83,6 @@ public class Class4708<T extends Class428> extends Class4703<T>
     }
     
     static {
-        field20297 = new Class1932("textures/entity/minecart.png");
+        field20297 = new ResourceLocation("textures/entity/minecart.png");
     }
 }

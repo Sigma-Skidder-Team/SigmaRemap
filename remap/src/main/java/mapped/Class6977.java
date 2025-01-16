@@ -11,9 +11,9 @@ public class Class6977
 {
     private static String[] field27274;
     public Class869 field27275;
-    public final Class<? extends Class3833> field27276;
+    public final Class<? extends Block> field27276;
     
-    public Class6977(final Class<? extends Class3833> field27276) {
+    public Class6977(final Class<? extends Block> field27276) {
         this.field27275 = Class869.method5277();
         this.field27276 = field27276;
     }

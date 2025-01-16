@@ -19,7 +19,7 @@ public class Class7961 implements Class7954
     private final int field32716;
     private final float field32717;
     
-    public Class7961(final Class3833 class3833, final int n, final int n2, final int n3, final int n4) {
+    public Class7961(final Block class3833, final int n, final int n2, final int n3, final int n4) {
         this(new ItemStack(class3833), n, n2, n3, n4);
     }
     

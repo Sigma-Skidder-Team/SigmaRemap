@@ -22,10 +22,10 @@ public class Class5126 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("target"), BlockState.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22077).getValue(), dynamicOps.createString("state"), BlockState.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22078).getValue())));
+        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("target"), BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22077).getValue(), dynamicOps.createString("state"), BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22078).getValue())));
     }
     
     public static <T> Class5126 method16031(final Dynamic<T> dynamic) {
-        return new Class5126(dynamic.get("target").map((Function) BlockState::method21764).orElse(Class7521.field29147.method11878()), dynamic.get("state").map((Function) BlockState::method21764).orElse(Class7521.field29147.method11878()));
+        return new Class5126(dynamic.get("target").map((Function) BlockState::deserialize).orElse(Class7521.field29147.getDefaultState()), dynamic.get("state").map((Function) BlockState::deserialize).orElse(Class7521.field29147.getDefaultState()));
     }
 }

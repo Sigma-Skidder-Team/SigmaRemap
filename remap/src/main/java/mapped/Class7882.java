@@ -46,7 +46,7 @@ public class Class7882
     public static final Class6257 field32383;
     
     private static Class6257 method25537(final String s, final Class6257 class6257) {
-        return Class90.method511(Class90.field209, s, class6257);
+        return Registry.method511(Registry.field209, s, class6257);
     }
     
     static {

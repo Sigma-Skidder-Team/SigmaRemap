@@ -53,7 +53,7 @@ public class Class3279 extends Class3167
                 final Iterator<Map.Entry<BlockPos, Class6312>> iterator = this.field15778.entrySet().iterator();
                 while (iterator.hasNext()) {
                     final Map.Entry<BlockPos, V> entry = (Map.Entry<BlockPos, V>)iterator.next();
-                    if (!(Class3279.field15514.field4683.method6701(entry.getKey()).method21696() instanceof Class3951)) {
+                    if (!(Class3279.field15514.field4683.getBlockState(entry.getKey()).method21696() instanceof Class3951)) {
                         iterator.remove();
                     }
                     ((Class6312)entry.getValue()).method18687();
@@ -86,7 +86,7 @@ public class Class3279 extends Class3167
         if (this.method9906()) {
             if (class5721.method16990() instanceof Class4329) {
                 final Class4329 class5722 = (Class4329)class5721.method16990();
-                if (Class3279.field15514.field4683.method6701(class5722.method13000().method21447()).method21696() instanceof Class3951) {
+                if (Class3279.field15514.field4683.getBlockState(class5722.method13000().method21447()).method21696() instanceof Class3951) {
                     this.field15779 = class5722.method13000().method21447();
                 }
             }

@@ -120,7 +120,7 @@ public class Class3362 extends Class3355
                 final double n8 = class399.method1944() - n3;
                 final double n9 = class399.getPosZ() - n4;
                 if (MathHelper.sqrt(n7 * n7 + n8 * n8 + n9 * n9) != 0.0) {
-                    final double n10 = (1.0 - n6) * Class6154.method18407(class401, class399);
+                    final double n10 = (1.0 - n6) * Explosion.method18407(class401, class399);
                     return (float)(int)((n10 * n10 + n10) / 2.0 * 7.0 * n5 + 1.0);
                 }
             }
@@ -134,11 +134,11 @@ public class Class3362 extends Class3355
         final ArrayList list = new ArrayList();
     Label_0068:
         for (final BlockPos class400 : Class4609.method13676(Class4609.method13691(4.0f), new Vec3d(class399.getPosX(), class399.getPosY() - 1.0, class399.getPosZ()))) {
-            final Class3833 method10658 = Class3362.field15514.field4683.method6701(class400).method21696();
+            final Block method10658 = Class3362.field15514.field4683.getBlockState(class400).method21696();
             if (method10658 != Class7521.field29286 && method10658 != Class7521.field29172) {
                 continue;
             }
-            if (Class3362.field15514.field4683.method6701(class400.method1137()).method21696() != Class7521.field29147) {
+            if (Class3362.field15514.field4683.getBlockState(class400.method1137()).method21696() != Class7521.field29147) {
                 continue;
             }
             final AxisAlignedBB method10659 = new AxisAlignedBB(class400).method18495(0.5, 0.5, 0.5).method18499(0.0, 1.5, 0.0);

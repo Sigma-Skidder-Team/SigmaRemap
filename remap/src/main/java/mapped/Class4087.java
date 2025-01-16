@@ -14,13 +14,13 @@ public class Class4087 extends Class4085
 {
     public Class4087(final Class8959 class8959) {
         super(class8959);
-        this.method11705(new Class1932("pull"), (class8321, class8322, class8323) -> {
+        this.method11705(new ResourceLocation("pull"), (class8321, class8322, class8323) -> {
             if (class8323 != null) {
                 return (class8323.method2766().getItem() == Items.field31279) ? ((class8321.method27652() - class8323.method2767()) / 20.0f) : 0.0f;
             }
             return 0.0f;
         });
-        this.method11705(new Class1932("pulling"), (class8321, class8322, class8323) -> {
+        this.method11705(new ResourceLocation("pulling"), (class8321, class8322, class8323) -> {
             if (class8323 != null) {
                 if (class8323.method2756()) {
                     if (class8323.method2766() == class8321) {

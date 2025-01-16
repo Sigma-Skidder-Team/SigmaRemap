@@ -32,8 +32,8 @@ public class Class5984 implements JsonDeserializer<Class2124>
         throw new JsonParseException("Invalid BlockModelRotation x: " + method35910 + ", y: " + method35911);
     }
     
-    public Class1932 method17908(final JsonObject jsonObject) {
-        return new Class1932(Class9583.method35895(jsonObject, "model"));
+    public ResourceLocation method17908(final JsonObject jsonObject) {
+        return new ResourceLocation(Class9583.method35895(jsonObject, "model"));
     }
     
     public int method17909(final JsonObject jsonObject) {

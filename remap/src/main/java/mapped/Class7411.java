@@ -20,7 +20,7 @@ public class Class7411 implements Class7410
     }
     
     @Override
-    public Predicate<BlockState> method22768(final Class9104<Class3833, BlockState> class9104) {
+    public Predicate<BlockState> method22768(final StateContainer<Block, BlockState> class9104) {
         return p1 -> {
             final Object o = Streams.stream((Iterable)this.field28547).map(p1 -> {}).collect((Collector<? super Object, ?, List<Object>>)Collectors.toList());
             return list.stream().anyMatch(predicate -> predicate.test(class9105));

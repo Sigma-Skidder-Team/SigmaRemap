@@ -30,12 +30,12 @@ public abstract class Class760 extends Class759
             if (!this.method1723()) {
                 float n = 0.91f;
                 if (this.onGround) {
-                    n = this.world.method6701(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.91f;
+                    n = this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.91f;
                 }
                 final float n2 = 0.16277137f / (n * n * n);
                 float n3 = 0.91f;
                 if (this.onGround) {
-                    n3 = this.world.method6701(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.91f;
+                    n3 = this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.91f;
                 }
                 this.method1724(this.onGround ? (0.1f * n2) : 0.02f, class5487);
                 this.method1671(Class2160.field12826, this.getMotion());

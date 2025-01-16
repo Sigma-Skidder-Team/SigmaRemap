@@ -8,13 +8,13 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4742 extends Class4712<Class856, Class5873>
 {
-    private static final Class1932 field20362;
+    private static final ResourceLocation field20362;
     
     public Class4742(final Class8551 class8551) {
         super(class8551, new Class5873(), 0.25f);
     }
     
-    public Class1932 method14069(final Class856 class856) {
+    public ResourceLocation method14069(final Class856 class856) {
         return Class4742.field20362;
     }
     
@@ -33,6 +33,6 @@ public class Class4742 extends Class4712<Class856, Class5873>
     }
     
     static {
-        field20362 = new Class1932("textures/entity/bat.png");
+        field20362 = new ResourceLocation("textures/entity/bat.png");
     }
 }

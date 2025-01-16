@@ -58,8 +58,8 @@ public class Class7983
         if (n == n2) {
             return true;
         }
-        final Class3090 class3090 = Class90.field217.method499(n);
-        final Class3090 class3091 = Class90.field217.method499(n2);
+        final Class3090 class3090 = Registry.field217.method499(n);
+        final Class3090 class3091 = Registry.field217.method499(n2);
         if (class3090 == null || class3091 == null) {
             return false;
         }
@@ -117,15 +117,15 @@ public class Class7983
     }
     
     static {
-        field32846 = Class90.field217.method504(Class7102.field27676);
-        field32847 = Class90.field217.method504(Class7102.field27677);
-        field32848 = Class90.field217.method504(Class7102.field27631);
-        field32849 = Class90.field217.method504(Class7102.field27678);
-        field32850 = Class90.field217.method504(Class7102.field27642);
-        field32851 = Class90.field217.method504(Class7102.field27679);
-        field32852 = Class90.field217.method504(Class7102.field27680);
-        field32853 = Class90.field217.method504(Class7102.field27656);
-        field32854 = Class90.field217.method504(Class7102.field27681);
-        field32855 = Class90.field217.method504(Class7102.field27682);
+        field32846 = Registry.field217.getId(Class7102.field27676);
+        field32847 = Registry.field217.getId(Class7102.field27677);
+        field32848 = Registry.field217.getId(Class7102.field27631);
+        field32849 = Registry.field217.getId(Class7102.field27678);
+        field32850 = Registry.field217.getId(Class7102.field27642);
+        field32851 = Registry.field217.getId(Class7102.field27679);
+        field32852 = Registry.field217.getId(Class7102.field27680);
+        field32853 = Registry.field217.getId(Class7102.field27656);
+        field32854 = Registry.field217.getId(Class7102.field27681);
+        field32855 = Registry.field217.getId(Class7102.field27682);
     }
 }

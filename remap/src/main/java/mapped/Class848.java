@@ -101,7 +101,7 @@ public class Class848 extends Class763
     
     @Override
     public float method4228(final BlockPos class354, final Class1852 class355) {
-        return Class3979.method12123(class355.method6701(class354.method1139())) ? 10.0f : super.method4228(class354, class355);
+        return Class3979.method12123(class355.getBlockState(class354.method1139())) ? 10.0f : super.method4228(class354, class355);
     }
     
     public static boolean method5070(final EntityType<Class848> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {

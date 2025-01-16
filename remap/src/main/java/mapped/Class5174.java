@@ -17,7 +17,7 @@ public class Class5174 extends Schema
     }
     
     public static String method16141(final String s) {
-        final Class1932 method7795 = Class1932.method7795(s);
+        final ResourceLocation method7795 = ResourceLocation.method7795(s);
         return (method7795 == null) ? s : method7795.toString();
     }
     

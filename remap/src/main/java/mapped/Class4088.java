@@ -27,7 +27,7 @@ public class Class4088 extends Item
             }
             return Class2201.field13400;
         }
-        if (method21654.method6701(method21655).method21761(method21654, method21655, class7075.method21648()) && method12323(class7075.method21651(), method21654, method21656, class7075.method21648())) {
+        if (method21654.getBlockState(method21655).method21761(method21654, method21655, class7075.method21648()) && method12323(class7075.method21651(), method21654, method21656, class7075.method21648())) {
             if (!method21654.isRemote) {
                 method21654.method6955(2005, method21656, 0);
             }
@@ -37,7 +37,7 @@ public class Class4088 extends Item
     }
     
     public static boolean method12322(final ItemStack class8321, final World class8322, final BlockPos class8323) {
-        final Class7096 method6701 = class8322.method6701(class8323);
+        final Class7096 method6701 = class8322.getBlockState(class8323);
         if (method6701.method21696() instanceof Class3872) {
             final Class3872 class8324 = (Class3872)method6701.method21696();
             if (class8324.method11945(class8322, class8323, method6701, class8322.isRemote)) {
@@ -54,7 +54,7 @@ public class Class4088 extends Item
     }
     
     public static boolean method12323(final ItemStack class8321, final World class8322, final BlockPos class8323, final Direction class8324) {
-        if (class8322.method6701(class8323).method21696() != Class7521.field29173 || class8322.method6702(class8323).method21784() != 8) {
+        if (class8322.getBlockState(class8323).method21696() != Class7521.field29173 || class8322.method6702(class8323).method21784() != 8) {
             return false;
         }
         if (class8322 instanceof Class1849) {
@@ -63,12 +63,12 @@ public class Class4088 extends Item
             while (i < 128) {
                 BlockPos method1134 = class8323;
                 Class3090 class8325 = class8322.method6959(class8323);
-                Class7096 class8326 = Class7521.field29244.method11878();
+                Class7096 class8326 = Class7521.field29244.getDefaultState();
                 while (true) {
                     for (int j = 0; j < i / 16; ++j) {
                         method1134 = method1134.add(Class4088.field17363.nextInt(3) - 1, (Class4088.field17363.nextInt(3) - 1) * Class4088.field17363.nextInt(3) / 2, Class4088.field17363.nextInt(3) - 1);
                         class8325 = class8322.method6959(method1134);
-                        if (class8322.method6701(method1134).method21762(class8322, method1134)) {
+                        if (class8322.getBlockState(method1134).method21762(class8322, method1134)) {
                             ++i;
                             continue Label_0053;
                         }
@@ -78,18 +78,18 @@ public class Class4088 extends Item
                             if (i == 0) {
                                 if (class8324 != null) {
                                     if (class8324.getAxis().isHorizontal()) {
-                                        class8326 = ((Class7097<O, Class7096>)Class7188.field27922.method25620(class8322.rand).method11878()).method21773((Class7111<Comparable>)Class3926.field17791, class8324);
+                                        class8326 = ((StateHolder<O, Class7096>)Class7188.field27922.method25620(class8322.rand).getDefaultState()).with((IProperty<Comparable>)Class3926.field17791, class8324);
                                         break Label_0123;
                                     }
                                 }
                             }
                             if (Class4088.field17363.nextInt(4) == 0) {
-                                class8326 = Class7188.field27920.method25620(Class4088.field17363).method11878();
+                                class8326 = Class7188.field27920.method25620(Class4088.field17363).getDefaultState();
                             }
                         }
                     }
                     if (class8326.method21696().method11785(Class7188.field27922)) {
-                        for (int n = 0; !class8326.method21752(class8322, method1134); class8326 = ((Class7097<Object, Class7096>)class8326).method21773((Class7111<Comparable>)Class3926.field17791, Plane.HORIZONTAL.method576(Class4088.field17363)), ++n) {
+                        for (int n = 0; !class8326.method21752(class8322, method1134); class8326 = ((StateHolder<Object, Class7096>)class8326).with((IProperty<Comparable>)Class3926.field17791, Plane.HORIZONTAL.method576(Class4088.field17363)), ++n) {
                             if (n >= 4) {
                                 break;
                             }
@@ -98,9 +98,9 @@ public class Class4088 extends Item
                     if (!class8326.method21752(class8322, method1134)) {
                         continue;
                     }
-                    final Class7096 method1135 = class8322.method6701(method1134);
+                    final Class7096 method1135 = class8322.getBlockState(method1134);
                     if (method1135.method21696() == Class7521.field29173 && class8322.method6702(method1134).method21784() == 8) {
-                        class8322.method6688(method1134, class8326, 3);
+                        class8322.setBlockState(method1134, class8326, 3);
                         continue;
                     }
                     if (method1135.method21696() != Class7521.field29244) {
@@ -123,7 +123,7 @@ public class Class4088 extends Item
         if (n == 0) {
             n = 15;
         }
-        final Class7096 method6701 = class1851.method6701(class1852);
+        final Class7096 method6701 = class1851.getBlockState(class1852);
         if (!method6701.method21706()) {
             for (int i = 0; i < n; ++i) {
                 class1851.method6709(Class8432.field34625, class1852.getX() + Class4088.field17363.nextFloat(), class1852.getY() + Class4088.field17363.nextFloat() * method6701.method21725(class1851, class1852).method24536(Axis.Y), class1852.getZ() + Class4088.field17363.nextFloat(), Class4088.field17363.nextGaussian() * 0.02, Class4088.field17363.nextGaussian() * 0.02, Class4088.field17363.nextGaussian() * 0.02);

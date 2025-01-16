@@ -6,22 +6,22 @@ package mapped;
 
 public class Class679 extends Class654
 {
-    private final Class1932 field3714;
+    private final ResourceLocation field3714;
     private final int field3715;
     private final int field3716;
     private final int field3717;
     private final int field3718;
     private final int field3719;
     
-    public Class679(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final Class1932 class1932, final Class6887 class1933) {
+    public Class679(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final ResourceLocation class1932, final Class6887 class1933) {
         this(n, n2, n3, n4, n5, n6, n7, class1932, 256, 256, class1933);
     }
     
-    public Class679(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final Class1932 class1932, final int n8, final int n9, final Class6887 class1933) {
+    public Class679(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final ResourceLocation class1932, final int n8, final int n9, final Class6887 class1933) {
         this(n, n2, n3, n4, n5, n6, n7, class1932, n8, n9, class1933, "");
     }
     
-    public Class679(final int n, final int n2, final int n3, final int n4, final int field3715, final int field3716, final int field3717, final Class1932 field3718, final int field3719, final int field3720, final Class6887 class6887, final String s) {
+    public Class679(final int n, final int n2, final int n3, final int n4, final int field3715, final int field3716, final int field3717, final ResourceLocation field3718, final int field3719, final int field3720, final Class6887 class6887, final String s) {
         super(n, n2, n3, n4, s, class6887);
         this.field3718 = field3719;
         this.field3719 = field3720;

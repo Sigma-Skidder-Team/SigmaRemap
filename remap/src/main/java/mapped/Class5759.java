@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.io.File;
 import java.util.regex.Pattern;
 
 public class Class5759
@@ -18,7 +17,7 @@ public class Class5759
                 if (!method4105.contains("\u0000")) {
                     if (Class5759.field23376.matcher(method4105).matches()) {
                         final String string = "http://s.optifine.net/capes/" + method4105 + ".png";
-                        final Class1932 class755 = new Class1932("capeof/" + method4105);
+                        final ResourceLocation class755 = new ResourceLocation("capeof/" + method4105);
                         final Class1663 method4106 = Class869.method5277().method5290();
                         final Class1666 method4107 = method4106.method5853(class755);
                         if (method4107 != null) {
@@ -35,7 +34,7 @@ public class Class5759
                                 }
                             }
                         }
-                        final Class1768 class757 = new Class1768(null, string, new Class1932("optifine/ctm/default/empty.png"), false, new Class1112(class754, class755));
+                        final Class1768 class757 = new Class1768(null, string, new ResourceLocation("optifine/ctm/default/empty.png"), false, new Class1112(class754, class755));
                         class757.field9842 = true;
                         method4106.method5851(class755, class757);
                     }
@@ -59,8 +58,8 @@ public class Class5759
     }
     
     public static void method17113(final Class754 class754) {
-        final Class1932 class755 = new Class1932("capeof/" + class754.method4105());
-        final Class1663 method28895 = Class8571.method28895();
+        final ResourceLocation class755 = new ResourceLocation("capeof/" + class754.method4105());
+        final Class1663 method28895 = Config.method28895();
         final Class1666 method28896 = method28895.method5853(class755);
         if (method28896 instanceof Class1767) {
             ((Class1767)method28896).method5870();

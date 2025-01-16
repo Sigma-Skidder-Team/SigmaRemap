@@ -82,7 +82,7 @@ public class Class6347 extends Class6346<Class7067>
     }
     
     @Override
-    public void method18859(final Class1878 class1878, final Class1860 class1879) {
+    public void method18859(final Class1878 class1878, final IChunk class1879) {
     }
     
     @Override
@@ -96,7 +96,7 @@ public class Class6347 extends Class6346<Class7067>
     }
     
     @Override
-    public void method18861(final Class1851 class1851, final Class1860 class1852) {
+    public void method18861(final Class1851 class1851, final IChunk class1852) {
         final Class7096[] method21601 = ((Class7067)this.field25386).method21601();
         final Mutable class1853 = new Mutable();
         final Class9548 method21602 = class1852.method7017(Class2020.field11523);

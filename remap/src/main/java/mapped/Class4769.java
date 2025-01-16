@@ -6,7 +6,7 @@ package mapped;
 
 public class Class4769 extends Class4768<Class847>
 {
-    private static final Class1932 field20396;
+    private static final ResourceLocation field20396;
     
     public Class4769(final Class8551 class8551) {
         super(class8551);
@@ -17,11 +17,11 @@ public class Class4769 extends Class4768<Class847>
         class848.method22565(0.7f, 0.7f, 0.7f);
     }
     
-    public Class1932 method14115(final Class847 class847) {
+    public ResourceLocation method14115(final Class847 class847) {
         return Class4769.field20396;
     }
     
     static {
-        field20396 = new Class1932("textures/entity/spider/cave_spider.png");
+        field20396 = new ResourceLocation("textures/entity/spider/cave_spider.png");
     }
 }

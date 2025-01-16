@@ -11,10 +11,10 @@ import com.google.gson.JsonObject;
 
 public class Class4625 extends Class4611<Class4234>
 {
-    private static final Class1932 field20091;
+    private static final ResourceLocation field20091;
     
     @Override
-    public Class1932 method13717() {
+    public ResourceLocation method13717() {
         return Class4625.field20091;
     }
     
@@ -74,11 +74,11 @@ public class Class4625 extends Class4611<Class4234>
     }
     
     @Nullable
-    private static Class3833 method13781(final JsonObject jsonObject) {
+    private static Block method13781(final JsonObject jsonObject) {
         if (!jsonObject.has("block")) {
             return null;
         }
-        return Class90.field208.method506(new Class1932(Class9583.method35895(jsonObject, "block"))).orElseThrow(() -> {
+        return Registry.BLOCK.method506(new ResourceLocation(Class9583.method35895(jsonObject, "block"))).orElseThrow(() -> {
             new JsonSyntaxException("Unknown block type '" + obj + "'");
             return;
         });
@@ -89,6 +89,6 @@ public class Class4625 extends Class4611<Class4234>
     }
     
     static {
-        field20091 = new Class1932("slide_down_block");
+        field20091 = new ResourceLocation("slide_down_block");
     }
 }

@@ -20,7 +20,7 @@ public class Class3954 extends Class3841
     
     public Class3954(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3954.field17856[0], false)).method21773((Class7111<Comparable>)Class3954.field17856[1], false)).method21773((Class7111<Comparable>)Class3954.field17856[2], false));
+        this.method11877(((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3954.field17856[0], false)).with((IProperty<Comparable>)Class3954.field17856[1], false)).with((IProperty<Comparable>)Class3954.field17856[2], false));
     }
     
     @Override
@@ -88,7 +88,7 @@ public class Class3954 extends Class3841
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Block, Class7096> class9500) {
         class9500.method35378(Class3954.field17856[0], Class3954.field17856[1], Class3954.field17856[2]);
     }
     
@@ -99,6 +99,6 @@ public class Class3954 extends Class3841
     
     static {
         field17856 = new Class7113[] { Class8970.field37729, Class8970.field37730, Class8970.field37731 };
-        field17857 = Class7698.method24492(Class3833.method11778(1.0, 0.0, 1.0, 15.0, 2.0, 15.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 14.0, 9.0));
+        field17857 = VoxelShapes.method24492(Block.method11778(1.0, 0.0, 1.0, 15.0, 2.0, 15.0), Block.method11778(7.0, 0.0, 7.0, 9.0, 14.0, 9.0));
     }
 }

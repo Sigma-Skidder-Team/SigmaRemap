@@ -9,7 +9,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class4798 extends Class4703<Class509>
 {
-    private static final Class1932 field20451;
+    private static final ResourceLocation field20451;
     private static final Class6332 field20452;
     private final Class5887<Class509> field20453;
     
@@ -40,12 +40,12 @@ public class Class4798 extends Class4703<Class509>
         super.method13951(class509, n, n2, class510, class511, n3);
     }
     
-    public Class1932 method14196(final Class509 class509) {
+    public ResourceLocation method14196(final Class509 class509) {
         return Class4798.field20451;
     }
     
     static {
-        field20451 = new Class1932("textures/entity/shulker/spark.png");
+        field20451 = new ResourceLocation("textures/entity/shulker/spark.png");
         field20452 = Class6332.method18773(Class4798.field20451);
     }
 }

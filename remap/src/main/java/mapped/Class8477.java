@@ -23,7 +23,7 @@ public class Class8477
     }
     
     public static void method28303(final TileEntity tileEntity) {
-        final BlockPos method2193 = tileEntity.method2193();
+        final BlockPos method2193 = tileEntity.getPos();
         if (method28305(tileEntity) == null) {
             ITextComponent method2194 = method28304(method2193);
             if (method2194 == null) {

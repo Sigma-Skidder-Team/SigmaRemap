@@ -116,16 +116,16 @@ public enum Class289
     
     public float method941(final int i, final int j) {
         if (this.field1660 != null && (i < 0 || i > this.field1660.length)) {
-            Class8571.method28848("Invalid index1, parameter: " + this + ", index: " + i);
+            Config.warn("Invalid index1, parameter: " + this + ", index: " + i);
             return 0.0f;
         }
         if (this.field1661 != null && (j < 0 || j > this.field1661.length)) {
-            Class8571.method28848("Invalid index2, parameter: " + this + ", index: " + j);
+            Config.warn("Invalid index2, parameter: " + this + ", index: " + j);
             return 0.0f;
         }
         switch (Class8103.field33366[this.ordinal()]) {
             case 1: {
-                return (float)Class90.field217.method504(Class9216.method33918().method6959(Class9216.method33919()));
+                return (float) Registry.field217.getId(Class9216.method33918().method6959(Class9216.method33919()));
             }
             case 2: {
                 final Class3090 method6959 = Class9216.method33918().method6959(Class9216.method33919());

@@ -270,7 +270,7 @@ public class Class767 extends Class763 implements Class766, Class768
                             for (int l = -1; l <= 1; ++l) {
                                 for (int n3 = 0; n3 <= 3; ++n3) {
                                     final BlockPos class512 = new BlockPos(method4261 + k, method4260 + n3, method4262 + l);
-                                    if (method4244(this.world.method6701(class512))) {
+                                    if (method4244(this.world.getBlockState(class512))) {
                                         b = (this.world.method6691(class512, true, this) || b);
                                     }
                                 }
@@ -301,7 +301,7 @@ public class Class767 extends Class763 implements Class766, Class768
     }
     
     public static boolean method4244(final BlockState class7096) {
-        return !class7096.method21706() && !Class7188.field27930.method25618(class7096.method21696());
+        return !class7096.method21706() && !Class7188.field27930.method25618(class7096.getBlock());
     }
     
     public void method4245() {
@@ -310,7 +310,7 @@ public class Class767 extends Class763 implements Class766, Class768
     }
     
     @Override
-    public void method1839(final BlockState class7096, final Vec3d class7097) {
+    public void setMotionMultiplier(final BlockState class7096, final Vec3d class7097) {
     }
     
     @Override

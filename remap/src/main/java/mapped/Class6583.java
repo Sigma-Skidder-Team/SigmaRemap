@@ -42,10 +42,10 @@ public class Class6583 implements Class6582
     }
     
     @Override
-    public Class1671 method19933(final Class1932 class1932) throws IOException {
+    public Class1671 method19933(final ResourceLocation class1932) throws IOException {
         this.method19941(class1932);
         Class1727 class1933 = null;
-        final Class1932 method19943 = method19943(class1932);
+        final ResourceLocation method19943 = method19943(class1932);
         for (int i = this.field26121.size() - 1; i >= 0; --i) {
             final Class1727 class1934 = this.field26121.get(i);
             if (class1933 == null) {
@@ -65,7 +65,7 @@ public class Class6583 implements Class6582
     }
     
     @Override
-    public boolean method19934(final Class1932 class1932) {
+    public boolean method19934(final ResourceLocation class1932) {
         if (this.method19942(class1932)) {
             for (int i = this.field26121.size() - 1; i >= 0; --i) {
                 if (this.field26121.get(i).method6099(this.field26122, class1932)) {
@@ -77,27 +77,27 @@ public class Class6583 implements Class6582
         return false;
     }
     
-    public InputStream method19940(final Class1932 class1932, final Class1727 class1933) throws IOException {
+    public InputStream method19940(final ResourceLocation class1932, final Class1727 class1933) throws IOException {
         final InputStream method6097 = class1933.method6097(this.field26122, class1932);
         return Class6583.field26120.isDebugEnabled() ? new Class1748(method6097, class1932, class1933.method6102()) : method6097;
     }
     
-    private void method19941(final Class1932 obj) throws IOException {
+    private void method19941(final ResourceLocation obj) throws IOException {
         if (this.method19942(obj)) {
             return;
         }
         throw new IOException("Invalid relative path to resource: " + obj);
     }
     
-    private boolean method19942(final Class1932 class1932) {
+    private boolean method19942(final ResourceLocation class1932) {
         return !class1932.method7797().contains("..");
     }
     
     @Override
-    public List<Class1671> method19935(final Class1932 class1932) throws IOException {
+    public List<Class1671> method19935(final ResourceLocation class1932) throws IOException {
         this.method19941(class1932);
         final ArrayList arrayList = Lists.newArrayList();
-        final Class1932 method19943 = method19943(class1932);
+        final ResourceLocation method19943 = method19943(class1932);
         for (final Class1727 class1933 : this.field26121) {
             if (!class1933.method6099(this.field26122, class1932)) {
                 continue;
@@ -111,7 +111,7 @@ public class Class6583 implements Class6582
     }
     
     @Override
-    public Collection<Class1932> method19936(final String s, final Predicate<String> predicate) {
+    public Collection<ResourceLocation> method19936(final String s, final Predicate<String> predicate) {
         final ArrayList arrayList = Lists.newArrayList();
         final Iterator<Class1727> iterator = this.field26121.iterator();
         while (iterator.hasNext()) {
@@ -121,8 +121,8 @@ public class Class6583 implements Class6582
         return arrayList;
     }
     
-    public static Class1932 method19943(final Class1932 class1932) {
-        return new Class1932(class1932.method7798(), class1932.method7797() + ".mcmeta");
+    public static ResourceLocation method19943(final ResourceLocation class1932) {
+        return new ResourceLocation(class1932.method7798(), class1932.method7797() + ".mcmeta");
     }
     
     static {

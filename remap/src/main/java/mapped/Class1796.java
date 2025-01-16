@@ -18,7 +18,7 @@ import java.util.Set;
 
 public class Class1796 implements Class1657
 {
-    public static final Class1932 field9950;
+    public static final ResourceLocation field9950;
     private static final Set<Item> field9951;
     public float field9952;
     private final Class7264 field9953;
@@ -41,11 +41,11 @@ public class Class1796 implements Class1657
         else {
             this.field9953 = (Class7264)Class9570.method35842(Class9570.field41370, this.field9956);
         }
-        for (final Item class3820 : Class90.field211) {
+        for (final Item class3820 : Registry.field211) {
             if (Class1796.field9951.contains(class3820)) {
                 continue;
             }
-            this.field9953.method22209(class3820, new Class1933(Class90.field211.method503(class3820), "inventory"));
+            this.field9953.method22209(class3820, new Class1933(Registry.field211.getKey(class3820), "inventory"));
         }
         this.field9955 = field9956;
     }
@@ -55,8 +55,8 @@ public class Class1796 implements Class1657
     }
     
     public void method6530(final Class6313 class6313, final ItemStack class6314, final int n, final int n2, final Class7351 class6315, final Class4150 class6316) {
-        final boolean method6354 = Class8571.method29001().method6354();
-        final boolean b = Class8571.method28928() && method6354;
+        final boolean method6354 = Config.method29001().method6354();
+        final boolean b = Config.method28928() && method6354;
         if (b) {
             class6316.method12412(Class9484.field40759);
         }
@@ -112,7 +112,7 @@ public class Class1796 implements Class1657
                     method25827 = method25826;
                 }
                 final Class4150 method25828 = method6532(class8324, method25827, true, class8321.method27671());
-                if (Class8571.method28987()) {
+                if (Config.method28987()) {
                     class8325 = Class9404.method34966(class8321, class8325, Class9168.field38843, false);
                     Class9168.field38843 = null;
                 }
@@ -213,7 +213,7 @@ public class Class1796 implements Class1657
         Class8726.method30011();
         Class8726.method30013(Class2050.field11693, Class2135.field12460);
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        if (Class8571.method28987()) {
+        if (Config.method28987()) {
             method34966 = Class9404.method34966(class8321, method34966, Class9168.field38843, true);
         }
         Class8726.method30065((float)n, (float)n2, 100.0f + this.field9952);
@@ -295,7 +295,7 @@ public class Class1796 implements Class1657
                         n6 = method25215;
                     }
                 }
-                if (Class8571.method28945()) {
+                if (Config.method28945()) {
                     n6 = Class8763.method30349(max, n6);
                 }
                 this.method6544(method25213, n + 2, n2 + 13, 13, 2, 0, 0, 0, 255);
@@ -312,7 +312,7 @@ public class Class1796 implements Class1657
                 Class8726.method30041();
                 Class8726.method30011();
                 Class8726.method30117();
-                this.method6544(Class7392.method22694().method22696(), n, n2 + MathHelper.method35642(16.0f * (1.0f - n7)), 16, MathHelper.method35649(16.0f * n7), 255, 255, 255, 127);
+                this.method6544(Class7392.method22694().method22696(), n, n2 + MathHelper.method35642(16.0f * (1.0f - n7)), 16, MathHelper.ceil(16.0f * n7), 255, 255, 255, 127);
                 Class8726.method30040();
                 Class8726.method30008();
             }
@@ -338,7 +338,7 @@ public class Class1796 implements Class1657
     }
     
     static {
-        field9950 = new Class1932("textures/misc/enchanted_item_glint.png");
+        field9950 = new ResourceLocation("textures/misc/enchanted_item_glint.png");
         field9951 = Sets.newHashSet((Object[])new Item[] { Items.AIR});
         Class1796.field9959 = false;
     }

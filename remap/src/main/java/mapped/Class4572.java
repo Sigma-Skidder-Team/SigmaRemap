@@ -24,7 +24,7 @@ public abstract class Class4572<U extends Class5113> extends Class4535<U>
                 if (method13584.getY() < 255) {
                     if (method13583.method21752(class1851, method13584)) {
                         if (this.method13580(class1851, method13584, u)) {
-                            class1851.method6688(method13584, method13583, 2);
+                            class1851.setBlockState(method13584, method13583, 2);
                             ++n;
                         }
                     }

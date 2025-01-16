@@ -9,7 +9,7 @@ import com.google.gson.JsonElement;
 
 public interface Class4220
 {
-    Class1932 method12683();
+    ResourceLocation method12683();
     
     default JsonElement method12682() {
         return (JsonElement)JsonNull.INSTANCE;

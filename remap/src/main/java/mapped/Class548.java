@@ -15,13 +15,13 @@ import java.util.Random;
 public class Class548 extends Class527
 {
     public static final Class8065 field3300;
-    private static final Class1932 field3301;
-    private static final Class1932 field3302;
+    private static final ResourceLocation field3301;
+    private static final ResourceLocation field3302;
     private final boolean field3303;
     private String field3304;
     private Class654 field3305;
-    private static final Class1932 field3306;
-    private static final Class1932 field3307;
+    private static final ResourceLocation field3306;
+    private static final ResourceLocation field3307;
     private boolean field3308;
     private Class527 field3309;
     private int field3310;
@@ -157,10 +157,10 @@ public class Class548 extends Class527
         this.field3150.method5290().method5849(Class548.field3301);
         Class8726.method30011();
         Class8726.method30013(Class2050.field11693, Class2135.field12460);
-        Class8726.method30068(1.0f, 1.0f, 1.0f, this.field3313 ? ((float) MathHelper.method35649(MathHelper.clamp(n4, 0.0f, 1.0f))) : 1.0f);
+        Class8726.method30068(1.0f, 1.0f, 1.0f, this.field3313 ? ((float) MathHelper.ceil(MathHelper.clamp(n4, 0.0f, 1.0f))) : 1.0f);
         Class565.method3300(0, 0, this.field3152, this.field3153, 0.0f, 0.0f, 16, 128, 16, 128);
         final float n6 = this.field3313 ? MathHelper.clamp(n4 - 1.0f, 0.0f, 1.0f) : 1.0f;
-        final int n7 = MathHelper.method35649(n6 * 255.0f) << 24;
+        final int n7 = MathHelper.ceil(n6 * 255.0f) << 24;
         if ((n7 & 0xFC000000) != 0x0) {
             this.field3150.method5290().method5849(Class548.field3306);
             Class8726.method30068(1.0f, 1.0f, 1.0f, n6);
@@ -272,10 +272,10 @@ public class Class548 extends Class527
     }
     
     static {
-        field3300 = new Class8065(new Class1932("textures/gui/title/background/panorama"));
-        field3301 = new Class1932("textures/gui/title/background/panorama_overlay.png");
-        field3302 = new Class1932("textures/gui/accessibility.png");
-        field3306 = new Class1932("textures/gui/title/minecraft.png");
-        field3307 = new Class1932("textures/gui/title/edition.png");
+        field3300 = new Class8065(new ResourceLocation("textures/gui/title/background/panorama"));
+        field3301 = new ResourceLocation("textures/gui/title/background/panorama_overlay.png");
+        field3302 = new ResourceLocation("textures/gui/accessibility.png");
+        field3306 = new ResourceLocation("textures/gui/title/minecraft.png");
+        field3307 = new ResourceLocation("textures/gui/title/edition.png");
     }
 }

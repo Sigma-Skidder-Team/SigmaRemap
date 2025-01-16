@@ -18,7 +18,7 @@ public class Class7663
     }
     
     public static void method24284() {
-        Class7663.field30439 = Class8571.method28962().field23485;
+        Class7663.field30439 = Config.method28962().field23485;
     }
     
     public static void method24285(final Class1912 class1912) {

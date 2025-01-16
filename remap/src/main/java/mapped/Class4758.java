@@ -6,14 +6,14 @@ package mapped;
 
 public class Class4758 extends Class4712<Class761, Class5890<Class761>>
 {
-    private static final Class1932 field20381;
-    private static final Class1932 field20382;
+    private static final ResourceLocation field20381;
+    private static final ResourceLocation field20382;
     
     public Class4758(final Class8551 class8551) {
         super(class8551, new Class5890(), 1.5f);
     }
     
-    public Class1932 method14095(final Class761 class761) {
+    public ResourceLocation method14095(final Class761 class761) {
         return class761.method4222() ? Class4758.field20382 : Class4758.field20381;
     }
     
@@ -22,7 +22,7 @@ public class Class4758 extends Class4712<Class761, Class5890<Class761>>
     }
     
     static {
-        field20381 = new Class1932("textures/entity/ghast/ghast.png");
-        field20382 = new Class1932("textures/entity/ghast/ghast_shooting.png");
+        field20381 = new ResourceLocation("textures/entity/ghast/ghast.png");
+        field20382 = new ResourceLocation("textures/entity/ghast/ghast_shooting.png");
     }
 }

@@ -10,7 +10,7 @@ import net.minecraft.client.renderer.Vector3f;
 
 public class Class4782 extends Class4703<Class420>
 {
-    private static final Class1932 field20414;
+    private static final ResourceLocation field20414;
     private static final Class6332 field20415;
     
     public Class4782(final Class8551 class8551) {
@@ -42,12 +42,12 @@ public class Class4782 extends Class4703<Class420>
         class4150.method12444(class4151, n2 - 0.5f, n3 - 0.25f, 0.0f).method12399(255, 255, 255, 255).method12391((float)n4, (float)n5).method12441(Class1904.field10335).method12440(n).method12445(class4152, 0.0f, 1.0f, 0.0f).method12397();
     }
     
-    public Class1932 method14147(final Class420 class420) {
+    public ResourceLocation method14147(final Class420 class420) {
         return Class4782.field20414;
     }
     
     static {
-        field20414 = new Class1932("textures/entity/enderdragon/dragon_fireball.png");
+        field20414 = new ResourceLocation("textures/entity/enderdragon/dragon_fireball.png");
         field20415 = Class6332.method18770(Class4782.field20414);
     }
 }

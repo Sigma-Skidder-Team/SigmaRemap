@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class Class9411
 {
-    private static final Map<Class1932, Class<? extends Class5770>> field40386;
+    private static final Map<ResourceLocation, Class<? extends Class5770>> field40386;
     
     public static Class5770 method35007(final JsonElement jsonElement, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         if (jsonElement.isJsonPrimitive()) {
@@ -23,7 +23,7 @@ public class Class9411
         }
         final JsonObject asJsonObject = jsonElement.getAsJsonObject();
         final String method35896 = Class9583.method35896(asJsonObject, "type", Class5770.field23604.toString());
-        final Class clazz = Class9411.field40386.get(new Class1932(method35896));
+        final Class clazz = Class9411.field40386.get(new ResourceLocation(method35896));
         if (clazz != null) {
             return (Class5770)jsonDeserializationContext.deserialize((JsonElement)asJsonObject, (Type)clazz);
         }
