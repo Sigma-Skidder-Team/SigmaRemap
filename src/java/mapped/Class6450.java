@@ -314,7 +314,7 @@ public class Class6450 {
                         var12.func_230547_a_(var43.field27679, var43.field27680.getBlock());
                     }
 
-                    var12.method6860().method20732(var8, var17);
+                    var12.getBlockTickScheduler().method20732(var8, var17);
                     if (var35 != 0) {
                         var0.sendFeedback(new TranslationTextComponent("commands.clone.success", var35), true);
                         return var35;

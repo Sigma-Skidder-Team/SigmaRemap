@@ -15,12 +15,12 @@ import java.util.Random;
 
 public class Class2784 extends Class2595 {
    private static String[] field17400;
-   private final Class1098 field17401;
+   private final CatEntity field17401;
    private PlayerEntity field17402;
    private BlockPos field17403;
    private int field17404;
 
-   public Class2784(Class1098 var1) {
+   public Class2784(CatEntity var1) {
       this.field17401 = var1;
    }
 
@@ -59,7 +59,7 @@ public class Class2784 extends Class2595 {
    }
 
    private boolean method10974() {
-      for (Class1098 var4 : this.field17401.world.<Class1098>getEntitiesWithinAABB(Class1098.class, new AxisAlignedBB(this.field17403).grow(2.0))) {
+      for (CatEntity var4 : this.field17401.world.<CatEntity>getEntitiesWithinAABB(CatEntity.class, new AxisAlignedBB(this.field17403).grow(2.0))) {
          if (var4 != this.field17401 && (var4.method5253() || var4.method5255())) {
             return true;
          }

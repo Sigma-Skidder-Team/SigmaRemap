@@ -13,7 +13,7 @@ import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class Class5738 extends EntityRenderer<Class904> {
+public class Class5738 extends EntityRenderer<FishingBobberEntity> {
    private static final ResourceLocation field25159 = new ResourceLocation("textures/entity/fishing_hook.png");
    private static final RenderType field25160 = RenderType.getEntityCutout(field25159);
 
@@ -21,7 +21,7 @@ public class Class5738 extends EntityRenderer<Class904> {
       super(var1);
    }
 
-   public void render(Class904 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(FishingBobberEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       PlayerEntity var9 = var1.method3544();
       if (var9 != null) {
          var4.push();
@@ -112,7 +112,7 @@ public class Class5738 extends EntityRenderer<Class904> {
       var3.pos(var4, var0 * var5, var1 * (var5 * var5 + var5) * 0.5F + 0.25F, var2 * var5).color(0, 0, 0, 255).endVertex();
    }
 
-   public ResourceLocation method17843(Class904 var1) {
+   public ResourceLocation method17843(FishingBobberEntity var1) {
       return field25159;
    }
 }

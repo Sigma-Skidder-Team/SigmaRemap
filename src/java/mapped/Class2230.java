@@ -102,7 +102,7 @@ public enum Class2230 implements Class2234 {
       public BlockState method8970(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
          BlockState var9 = var1.method23439(var2, var4.getBlockState(var6), var4, var5, var6);
          if (var1 != var9) {
-            int var10 = var9.get(BlockStateProperties.field39747);
+            int var10 = var9.get(BlockStateProperties.DISTANCE);
             List<ObjectSet<BlockPos>> var11 = this.field14625.get();
             if (var11.isEmpty()) {
                for(int var12 = 0; var12 < 7; ++var12) {
@@ -128,13 +128,13 @@ public enum Class2230 implements Class2234 {
 
              for (BlockPos var11 : var8) {
                  BlockState var12 = var1.getBlockState(var11);
-                 if (var12.get(BlockStateProperties.field39747) >= var7) {
-                     var1.setBlockState(var11, var12.with(BlockStateProperties.field39747, Integer.valueOf(var7)), 18);
+                 if (var12.get(BlockStateProperties.DISTANCE) >= var7) {
+                     var1.setBlockState(var11, var12.with(BlockStateProperties.DISTANCE, Integer.valueOf(var7)), 18);
                      if (var6 != 7) {
                          for (Direction var16 : field14623) {
                              var4.method8377(var11, var16);
                              BlockState var17 = var1.getBlockState(var4);
-                             if (var17.method23462(BlockStateProperties.field39747) && var12.get(BlockStateProperties.field39747) > var6) {
+                             if (var17.method23462(BlockStateProperties.DISTANCE) && var12.get(BlockStateProperties.DISTANCE) > var6) {
                                  var9.add(var4.toImmutable());
                              }
                          }

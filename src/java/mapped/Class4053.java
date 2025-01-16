@@ -24,7 +24,7 @@ public class Class4053 extends Class4051 {
       if (var6 instanceof Class5749) {
          if (((EntityRenderer)var6).method17898() == null) {
             Class5749 var7 = new Class5749(var5);
-            var7.entityModel = new Class2869<Class1019>();
+            var7.entityModel = new Class2869<SheepEntity>();
             var7.shadowSize = 0.7F;
             var6 = var7;
          }
@@ -41,7 +41,7 @@ public class Class4053 extends Class4051 {
          }
 
          Class249 var12 = new Class249(var11);
-         var12.field906 = (Class2868<Class1019>)var1;
+         var12.field906 = (Class2868<SheepEntity>)var1;
          var11.addLayer(var12);
          return (Class9492)var11;
       } else {

@@ -34,7 +34,7 @@ public class Class3259 extends Item implements IVanishable {
          if (!var1.isRemote) {
             int var7 = EnchantmentHelper.method26329(var6);
             int var8 = EnchantmentHelper.method26328(var6);
-            var1.addEntity(new Class904(var2, var1, var8, var7));
+            var1.addEntity(new FishingBobberEntity(var2, var1, var8, var7));
          }
 
          var2.addStat(Stats.field40098.method172(this));

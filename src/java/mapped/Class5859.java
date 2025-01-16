@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;

@@ -49,10 +49,10 @@ public class Class7881 extends Class7882<LivingEntity> {
 
       for (LivingEntity var17 : var5.<List<LivingEntity>>method21410(Class8830.field39819).orElse(ImmutableList.of())) {
          if (!(var17 instanceof HoglinEntity)) {
-            if (!(var17 instanceof Class1036)) {
+            if (!(var17 instanceof PiglinBruteEntity)) {
                if (!(var17 instanceof PiglinEntity)) {
                   if (!(var17 instanceof PlayerEntity)) {
-                     if (var6.isPresent() || !(var17 instanceof Class1084) && !(var17 instanceof WitherEntity)) {
+                     if (var6.isPresent() || !(var17 instanceof WitherSkeletonEntity) && !(var17 instanceof WitherEntity)) {
                         if (!var10.isPresent() && Class4388.method13880(var17.getType())) {
                            var10 = Optional.<LivingEntity>of(var17);
                         }
@@ -78,7 +78,7 @@ public class Class7881 extends Class7882<LivingEntity> {
                   }
                }
             } else {
-               var14.add((Class1036)var17);
+               var14.add((PiglinBruteEntity)var17);
             }
          } else {
             HoglinEntity var18 = (HoglinEntity)var17;

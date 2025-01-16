@@ -17,7 +17,9 @@ import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.boss.dragon.EnderDragonPartEntity;
 import net.minecraft.entity.item.BoatEntity;
+import net.minecraft.entity.item.minecart.AbstractMinecartEntity;
 import net.minecraft.entity.passive.TameableEntity;
+import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Container;
@@ -73,7 +75,7 @@ public abstract class PlayerEntity extends LivingEntity {
       .put(Pose.field13624, EntitySize.method32101(0.6F, 1.5F))
       .put(Pose.field13625, EntitySize.method32102(0.2F, 0.2F))
       .build();
-   private static final DataParameter<Float> field4895 = EntityDataManager.<Float>createKey(PlayerEntity.class, DataSerializers.field33392);
+   private static final DataParameter<Float> field4895 = EntityDataManager.<Float>createKey(PlayerEntity.class, DataSerializers.FLOAT);
    private static final DataParameter<Integer> field4896 = EntityDataManager.<Integer>createKey(PlayerEntity.class, DataSerializers.VARINT);
    public static final DataParameter<Byte> field4897 = EntityDataManager.<Byte>createKey(PlayerEntity.class, DataSerializers.field33390);
    public static final DataParameter<Byte> field4898 = EntityDataManager.<Byte>createKey(PlayerEntity.class, DataSerializers.field33390);
@@ -108,7 +110,7 @@ public abstract class PlayerEntity extends LivingEntity {
    private boolean field4927;
    private ItemStack field4928 = ItemStack.EMPTY;
    private final Class6462 field4929 = this.method2733();
-   public Class904 field4930;
+   public FishingBobberEntity field4930;
 
    public PlayerEntity(World var1, BlockPos var2, float var3, GameProfile var4) {
       super(EntityType.PLAYER, var1);
@@ -1511,7 +1513,7 @@ public abstract class PlayerEntity extends LivingEntity {
             Entity var10 = this.getRidingEntity();
             if (!(var10 instanceof AbstractMinecartEntity)) {
                if (!(var10 instanceof BoatEntity)) {
-                  if (!(var10 instanceof Class1072)) {
+                  if (!(var10 instanceof PigEntity)) {
                      if (!(var10 instanceof AbstractHorseEntity)) {
                         if (var10 instanceof StriderEntity) {
                            this.addStat(Stats.field40124, var9);

@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 
 public class Class116 implements Predicate<BlockState> {
    private static String[] field421;
-   private static final Class116 field422 = new Class117(Material.field38932);
+   private static final Class116 field422 = new Class117(Material.AIR);
    private final Material field423;
 
    private Class116(Material var1) {
@@ -15,7 +15,7 @@ public class Class116 implements Predicate<BlockState> {
    }
 
    public static Class116 method330(Material var0) {
-      return var0 != Material.field38932 ? new Class116(var0) : field422;
+      return var0 != Material.AIR ? new Class116(var0) : field422;
    }
 
    public boolean test(BlockState var1) {

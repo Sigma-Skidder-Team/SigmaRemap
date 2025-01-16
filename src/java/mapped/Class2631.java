@@ -8,9 +8,9 @@ import java.util.EnumSet;
 
 public class Class2631 extends Class2628 {
    private static String[] field16942;
-   private final Class1098 field16943;
+   private final CatEntity field16943;
 
-   public Class2631(Class1098 var1, double var2, int var4) {
+   public Class2631(CatEntity var1, double var2, int var4) {
       super(var1, var2, var4, 6);
       this.field16943 = var1;
       this.field16937 = -2;

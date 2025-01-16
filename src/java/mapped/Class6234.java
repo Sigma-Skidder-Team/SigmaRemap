@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -28,7 +29,7 @@ public final class Class6234 extends Class6230 {
                var5.removeBlock(var7, false);
             }
          } else {
-            var5.setBlockState(var7, var8.with(BlockStateProperties.field39699, Boolean.valueOf(true)));
+            var5.setBlockState(var7, var8.with(BlockStateProperties.LIT, Boolean.valueOf(true)));
          }
       } else {
          var5.setBlockState(var7, AbstractFireBlock.method12009(var5, var7));

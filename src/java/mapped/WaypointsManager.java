@@ -438,9 +438,9 @@ public class WaypointsManager {
       if (var2 || var11) {
          Material var12 = this.field36365.world.getBlockState(var1.north()).getMaterial();
          Material var13 = this.field36365.world.getBlockState(var1.south()).getMaterial();
-         if (var12 == Material.field38932 || var12 == Material.field38944) {
+         if (var12 == Material.AIR || var12 == Material.field38944) {
             var6 = MultiUtilities.method17681(new Color(var6, true), Color.BLACK, 0.6F).getRGB();
-         } else if (var13 == Material.field38932 || var13 == Material.field38944) {
+         } else if (var13 == Material.AIR || var13 == Material.field38944) {
             var6 = MultiUtilities.method17681(new Color(var6, true), Color.WHITE, 0.6F).getRGB();
          }
       }

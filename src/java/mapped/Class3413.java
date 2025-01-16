@@ -23,12 +23,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3413 extends Block {
    private static String[] field19099;
-   public static final IntegerProperty field19100 = BlockStateProperties.field39751;
+   public static final IntegerProperty field19100 = BlockStateProperties.LEVEL_2;
    private static final VoxelShape field19101 = makeCuboidShape(2.0, 4.0, 2.0, 14.0, 16.0, 14.0);
    public static final VoxelShape field19102 = VoxelShapes.combineAndSimplify(
       VoxelShapes.method27426(),

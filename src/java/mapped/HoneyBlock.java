@@ -7,10 +7,12 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.BoatEntity;
+import net.minecraft.entity.item.minecart.AbstractMinecartEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
@@ -24,7 +26,7 @@ public class HoneyBlock extends Class3231 {
    }
 
    private static boolean method11971(Entity var0) {
-      return var0 instanceof LivingEntity || var0 instanceof AbstractMinecartEntity || var0 instanceof Class1004 || var0 instanceof BoatEntity;
+      return var0 instanceof LivingEntity || var0 instanceof AbstractMinecartEntity || var0 instanceof TntEntity || var0 instanceof BoatEntity;
    }
 
    @Override

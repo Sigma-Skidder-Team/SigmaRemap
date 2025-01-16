@@ -6,7 +6,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class Class5740 extends EntityRenderer<Class1004> {
+public class Class5740 extends EntityRenderer<TntEntity> {
    private static String[] field25163;
 
    public Class5740(EntityRendererManager var1) {
@@ -14,7 +14,7 @@ public class Class5740 extends EntityRenderer<Class1004> {
       this.shadowSize = 0.5F;
    }
 
-   public void render(Class1004 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(TntEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       var4.translate(0.0, 0.5, 0.0);
       if ((float)var1.method4184() - var3 + 1.0F < 10.0F) {
@@ -34,7 +34,7 @@ public class Class5740 extends EntityRenderer<Class1004> {
       super.render(var1, var2, var3, var4, var5, var6);
    }
 
-   public ResourceLocation method17843(Class1004 var1) {
+   public ResourceLocation method17843(TntEntity var1) {
       return AtlasTexture.LOCATION_BLOCKS_TEXTURE;
    }
 }

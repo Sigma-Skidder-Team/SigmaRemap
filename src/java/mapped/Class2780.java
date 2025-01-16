@@ -9,11 +9,11 @@ import java.util.List;
 
 public class Class2780 extends Class2595 {
    private static String[] field17381;
-   public final Class1064 field17382;
+   public final LlamaEntity field17382;
    private double field17383;
    private int field17384;
 
-   public Class2780(Class1064 var1, double var2) {
+   public Class2780(LlamaEntity var1, double var2) {
       this.field17382 = var1;
       this.field17383 = var2;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657));
@@ -26,11 +26,11 @@ public class Class2780 extends Class2595 {
             EntityType var3x = var0.getType();
             return var3x == EntityType.LLAMA || var3x == EntityType.TRADER_LLAMA;
          });
-         Class1064 var4 = null;
+         LlamaEntity var4 = null;
          double var5 = Double.MAX_VALUE;
 
          for (Entity var8 : var3) {
-            Class1064 var9 = (Class1064)var8;
+            LlamaEntity var9 = (LlamaEntity)var8;
             if (var9.method4914() && !var9.method4913()) {
                double var10 = this.field17382.getDistanceSq(var9);
                if (!(var10 > var5)) {
@@ -42,7 +42,7 @@ public class Class2780 extends Class2595 {
 
          if (var4 == null) {
             for (Entity var13 : var3) {
-               Class1064 var14 = (Class1064)var13;
+               LlamaEntity var14 = (LlamaEntity)var13;
                if (var14.method4296() && !var14.method4913()) {
                   double var15 = this.field17382.getDistanceSq(var14);
                   if (!(var15 > var5)) {
@@ -103,7 +103,7 @@ public class Class2780 extends Class2595 {
    @Override
    public void method10805() {
       if (this.field17382.method4914() && !(this.field17382.method4297() instanceof LeashKnotEntity)) {
-         Class1064 var3 = this.field17382.method4915();
+         LlamaEntity var3 = this.field17382.method4915();
          double var4 = (double)this.field17382.getDistance(var3);
          float var6 = 2.0F;
          Vector3d var7 = new Vector3d(
@@ -124,12 +124,12 @@ public class Class2780 extends Class2595 {
       }
    }
 
-   private boolean method10971(Class1064 var1, int var2) {
+   private boolean method10971(LlamaEntity var1, int var2) {
       if (var2 <= 8) {
          if (!var1.method4914()) {
             return false;
          } else if (!var1.method4915().method4296()) {
-            Class1064 var5 = var1.method4915();
+            LlamaEntity var5 = var1.method4915();
             return this.method10971(var5, ++var2);
          } else {
             return true;

@@ -5,11 +5,11 @@ import java.util.EnumSet;
 public class Class2777 extends Class2595 {
    private static String[] field17370;
    private static final Class8522 field17371 = new Class8522().method30203(6.0).method30205().method30204();
-   private final Class1058 field17372;
-   private Class1042 field17373;
+   private final IronGolemEntity field17372;
+   private VillagerEntity field17373;
    private int field17374;
 
-   public Class2777(Class1058 var1) {
+   public Class2777(IronGolemEntity var1) {
       this.field17372 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
    }
@@ -20,8 +20,8 @@ public class Class2777 extends Class2595 {
          if (this.field17372.getRNG().nextInt(8000) == 0) {
             this.field17373 = this.field17372
                .world
-               .<Class1042>method7191(
-                  Class1042.class,
+               .<VillagerEntity>method7191(
+                  VillagerEntity.class,
                   field17371,
                   this.field17372,
                   this.field17372.getPosX(),

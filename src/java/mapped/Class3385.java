@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.IGrowable;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -11,7 +12,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3385 extends Block implements Class3196 {
+public class Class3385 extends Block implements IGrowable {
    private static String[] field18992;
 
    public Class3385(Properties var1) {

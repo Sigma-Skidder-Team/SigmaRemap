@@ -2,9 +2,9 @@ package mapped;
 
 public class Class8094 extends Class8092 {
    private static String[] field34811;
-   public final Class1017 field34821;
+   public final BeeEntity field34821;
 
-   public Class8094(Class1017 var1, MobEntity var2) {
+   public Class8094(BeeEntity var1, MobEntity var2) {
       super(var2);
       this.field34821 = var1;
    }
@@ -18,6 +18,6 @@ public class Class8094 extends Class8092 {
 
    @Override
    public boolean method28038() {
-      return !Class2663.method10870(Class1017.method4451(this.field34821));
+      return !Class2663.method10870(BeeEntity.method4451(this.field34821));
    }
 }

@@ -26,6 +26,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3f;
@@ -96,14 +97,14 @@ public class EntityRendererManager {
       this.method32209(EntityType.ENDERMAN, new Class5674(this));
       this.method32209(EntityType.ENDERMITE, new Class5673(this));
       this.method32209(EntityType.ENDER_PEARL, new Class5735(this, var1));
-      this.method32209(EntityType.field41028, new Class5722(this));
+      this.method32209(EntityType.EVOKER_FANGS, new Class5722(this));
       this.method32209(EntityType.EVOKER, new Class5677(this));
       this.method32209(EntityType.EXPERIENCE_BOTTLE, new Class5735(this, var1));
-      this.method32209(EntityType.field41029, new Class5731(this));
-      this.method32209(EntityType.field41030, new Class5735(this, var1, 1.0F, true));
-      this.method32209(EntityType.field41031, new Class5721(this));
+      this.method32209(EntityType.EXPERIENCE_ORB, new Class5731(this));
+      this.method32209(EntityType.EYE_OF_ENDER, new Class5735(this, var1, 1.0F, true));
+      this.method32209(EntityType.FALLING_BLOCK, new Class5721(this));
       this.method32209(EntityType.FIREBALL, new Class5735(this, var1, 3.0F, true));
-      this.method32209(EntityType.field41032, new Class5726(this, var1));
+      this.method32209(EntityType.FIREWORK_ROCKET, new Class5726(this, var1));
       this.method32209(EntityType.FISHING_BOBBER, new Class5738(this));
       this.method32209(EntityType.FOX, new Class5650(this));
       this.method32209(EntityType.FURNACE_MINECART, new Class5732(this));
@@ -306,12 +307,12 @@ public class EntityRendererManager {
       if (! Shaders.isShadowPass) {
          float var7 = var3.getWidth() / 2.0F;
          this.method32221(var1, var2, var3, 1.0F, 1.0F, 1.0F);
-         if (var3 instanceof Class1007) {
+         if (var3 instanceof EnderDragonEntity) {
             double var10 = -MathHelper.lerp((double)var4, var3.lastTickPosX, var3.getPosX());
             double var12 = -MathHelper.lerp((double)var4, var3.lastTickPosY, var3.getPosY());
             double var14 = -MathHelper.lerp((double)var4, var3.lastTickPosZ, var3.getPosZ());
 
-            for (EnderDragonPartEntity var19 : ((Class1007)var3).method4332()) {
+            for (EnderDragonPartEntity var19 : ((EnderDragonEntity)var3).method4332()) {
                var1.push();
                double var20 = var10 + MathHelper.lerp((double)var4, var19.lastTickPosX, var19.getPosX());
                double var22 = var12 + MathHelper.lerp((double)var4, var19.lastTickPosY, var19.getPosY());

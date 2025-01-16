@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.event.impl;
 
 import com.mentalfrostbyte.jello.event.CancellableEvent;
-import mapped.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShape;
 import mapped.VoxelShapes;
 import net.minecraft.util.math.BlockPos;
 

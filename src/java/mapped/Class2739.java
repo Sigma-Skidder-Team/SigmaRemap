@@ -49,9 +49,9 @@ public class Class2739 extends Class2736 {
    @Nullable
    private Vector3d method10948() {
       ServerWorld var3 = (ServerWorld)this.field17258.world;
-      List var4 = var3.<Class1042>method6771(EntityType.VILLAGER, this.field17258.getBoundingBox().grow(32.0), this::method10952);
+      List var4 = var3.<VillagerEntity>method6771(EntityType.VILLAGER, this.field17258.getBoundingBox().grow(32.0), this::method10952);
       if (!var4.isEmpty()) {
-         Class1042 var5 = (Class1042)var4.get(this.field17258.world.rand.nextInt(var4.size()));
+         VillagerEntity var5 = (VillagerEntity)var4.get(this.field17258.world.rand.nextInt(var4.size()));
          Vector3d var6 = var5.getPositionVec();
          return Class8037.method27586(this.field17258, 10, 7, var6);
       } else {
@@ -85,7 +85,7 @@ public class Class2739 extends Class2736 {
       return !var6.isEmpty() ? (BlockPos)var6.get(var4.rand.nextInt(var6.size())) : null;
    }
 
-   private boolean method10952(Class1042 var1) {
+   private boolean method10952(VillagerEntity var1) {
       return var1.method4717(this.field17258.world.getGameTime());
    }
 }

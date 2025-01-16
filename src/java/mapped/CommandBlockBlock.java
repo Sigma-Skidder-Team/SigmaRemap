@@ -28,7 +28,7 @@ import org.apache.logging.log4j.Logger;
 public class CommandBlockBlock extends Class3241 {
    private static final Logger field18892 = LogManager.getLogger();
    public static final DirectionProperty field18893 = Class3433.field19198;
-   public static final BooleanProperty field18894 = BlockStateProperties.field39684;
+   public static final BooleanProperty field18894 = BlockStateProperties.CONDITIONAL;
 
    public CommandBlockBlock(Properties var1) {
       super(var1);
@@ -53,7 +53,7 @@ public class CommandBlockBlock extends Class3241 {
             var10.method4010(var11);
             if (!var12 && !var10.isAuto() && var10.method4020() != CommandBlockTileEntity.Mode.field13323 && var11) {
                var10.method4017();
-               var2.method6860().scheduleTick(var3, this, 1);
+               var2.getBlockTickScheduler().scheduleTick(var3, this, 1);
             }
          }
       }
@@ -89,7 +89,7 @@ public class CommandBlockBlock extends Class3241 {
             }
 
             if (var8.isPowered() || var8.isAuto()) {
-               var2.method6860().scheduleTick(var3, this, 1);
+               var2.getBlockTickScheduler().scheduleTick(var3, this, 1);
             }
          }
 

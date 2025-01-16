@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;

@@ -92,7 +92,7 @@ public class Class3344 extends Class3343 {
             .method37705("^^^", "###", "~#~")
             .method37707('#', var0 -> var0.method37548().isIn(BlockTags.field32793))
             .method37707('^', CachedBlockInfo.method37552(Class166.method497(Blocks.field36703).or(Class166.method497(Blocks.field36704))))
-            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.field38932)))
+            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.AIR)))
             .method37708();
       }
 
@@ -104,7 +104,7 @@ public class Class3344 extends Class3343 {
          field18858 = Class9659.method37706()
             .method37705("   ", "###", "~#~")
             .method37707('#', var0 -> var0.method37548().isIn(BlockTags.field32793))
-            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.field38932)))
+            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.AIR)))
             .method37708();
       }
 

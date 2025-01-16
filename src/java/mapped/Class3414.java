@@ -32,7 +32,7 @@ public class Class3414 extends Block {
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (!this.method12052(var4, var5)) {
-         var4.method6860().scheduleTick(var5, this, 60 + var4.method6814().nextInt(40));
+         var4.getBlockTickScheduler().scheduleTick(var5, this, 60 + var4.method6814().nextInt(40));
       }
 
       return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
@@ -53,7 +53,7 @@ public class Class3414 extends Block {
    @Override
    public BlockState getStateForPlacement(BlockItemUseContext var1) {
       if (!this.method12052(var1.getWorld(), var1.getPos())) {
-         var1.getWorld().method6860().scheduleTick(var1.getPos(), this, 60 + var1.getWorld().method6814().nextInt(40));
+         var1.getWorld().getBlockTickScheduler().scheduleTick(var1.getPos(), this, 60 + var1.getWorld().method6814().nextInt(40));
       }
 
       return this.getDefaultState();

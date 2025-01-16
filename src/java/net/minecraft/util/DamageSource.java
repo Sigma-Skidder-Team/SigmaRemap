@@ -68,7 +68,7 @@ public class DamageSource {
       return new Class8653("trident", var0, var1).method31130();
    }
 
-   public static DamageSource method31120(Class888 var0, Entity var1) {
+   public static DamageSource method31120(FireworkRocketEntity var0, Entity var1) {
       return new Class8653("fireworks", var0, var1).method31132();
    }
 
@@ -76,7 +76,7 @@ public class DamageSource {
       return var1 != null ? new Class8653("fireball", var0, var1).method31140().method31130() : new Class8653("onFire", var0, var0).method31140().method31130();
    }
 
-   public static DamageSource method31122(Class902 var0, Entity var1) {
+   public static DamageSource method31122(WitherSkullEntity var0, Entity var1) {
       return new Class8653("witherSkull", var0, var1).method31130();
    }
 

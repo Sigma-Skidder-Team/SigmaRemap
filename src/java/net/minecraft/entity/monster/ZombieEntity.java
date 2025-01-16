@@ -71,7 +71,7 @@ public class ZombieEntity extends MonsterEntity {
       this.field5601.addGoal(1, new HurtByTargetGoal(this).method10918(ZombifiedPiglinEntity.class));
       this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
       this.field5601.addGoal(5, new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, true, false, TurtleEntity.field5963));
    }
 
@@ -365,13 +365,13 @@ public class ZombieEntity extends MonsterEntity {
    @Override
    public void method2927(ServerWorld var1, LivingEntity var2) {
       super.method2927(var1, var2);
-      if ((var1.method6997() == Difficulty.NORMAL || var1.method6997() == Difficulty.HARD) && var2 instanceof Class1042) {
+      if ((var1.method6997() == Difficulty.NORMAL || var1.method6997() == Difficulty.HARD) && var2 instanceof VillagerEntity) {
          if (var1.method6997() != Difficulty.HARD && this.rand.nextBoolean()) {
             return;
          }
 
-         Class1042 var5 = (Class1042)var2;
-         Class1040 var6 = var5.<Class1040>method4292(EntityType.ZOMBIE_VILLAGER, false);
+         VillagerEntity var5 = (VillagerEntity)var2;
+         ZombieVillagerEntity var6 = var5.<ZombieVillagerEntity>method4292(EntityType.ZOMBIE_VILLAGER, false);
          var6.method4276(var1, var1.method6807(var6.getPosition()), SpawnReason.field14399, new Class5096(false, true), (CompoundNBT)null);
          var6.method4673(var5.method4674());
          var6.method4672((INBT)var5.method4724().method25528(NBTDynamicOps.INSTANCE).getValue());
@@ -410,7 +410,7 @@ public class ZombieEntity extends MonsterEntity {
             if (var9.field23190) {
                if (!((double)var1.method6814().nextFloat() < 0.05)) {
                   if ((double)var1.method6814().nextFloat() < 0.05) {
-                     Class1089 var10 = EntityType.CHICKEN.create(this.world);
+                     ChickenEntity var10 = EntityType.CHICKEN.create(this.world);
                      var10.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
                      var10.method4276(var1, var2, SpawnReason.field14397, (Class5093)null, (CompoundNBT)null);
                      var10.method5071(true);
@@ -418,9 +418,9 @@ public class ZombieEntity extends MonsterEntity {
                      var1.addEntity(var10);
                   }
                } else {
-                  List var14 = var1.<Entity>getEntitiesInAABBexcluding(Class1089.class, this.getBoundingBox().grow(5.0, 3.0, 5.0), EntityPredicates.field34759);
+                  List var14 = var1.<Entity>getEntitiesInAABBexcluding(ChickenEntity.class, this.getBoundingBox().grow(5.0, 3.0, 5.0), EntityPredicates.field34759);
                   if (!var14.isEmpty()) {
-                     Class1089 var11 = (Class1089)var14.get(0);
+                     ChickenEntity var11 = (ChickenEntity)var14.get(0);
                      var11.method5071(true);
                      this.method3311(var11);
                   }
@@ -480,8 +480,8 @@ public class ZombieEntity extends MonsterEntity {
    public void dropSpecialItems(DamageSource var1, int var2, boolean var3) {
       super.dropSpecialItems(var1, var2, var3);
       Entity var6 = var1.getTrueSource();
-      if (var6 instanceof Class1081) {
-         Class1081 var7 = (Class1081)var6;
+      if (var6 instanceof CreeperEntity) {
+         CreeperEntity var7 = (CreeperEntity)var6;
          if (var7.method5026()) {
             ItemStack var8 = this.method4644();
             if (!var8.isEmpty()) {

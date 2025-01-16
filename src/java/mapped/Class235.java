@@ -39,8 +39,8 @@ public class Class235<T extends LivingEntity, M extends Class2827<T> & IHasHead>
          Item var14 = var13.getItem();
          var1.push();
          var1.scale(this.field881, this.field882, this.field883);
-         boolean var15 = var4 instanceof Class1042 || var4 instanceof Class1040;
-         if (var4.isChild() && !(var4 instanceof Class1042)) {
+         boolean var15 = var4 instanceof VillagerEntity || var4 instanceof ZombieVillagerEntity;
+         if (var4.isChild() && !(var4 instanceof VillagerEntity)) {
             float var16 = 2.0F;
             float var17 = 1.4F;
             var1.translate(0.0, 0.03125, 0.0);

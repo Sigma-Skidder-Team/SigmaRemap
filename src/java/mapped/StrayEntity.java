@@ -46,8 +46,8 @@ public class StrayEntity extends Class1082 {
    @Override
    public AbstractArrowEntity method5032(ItemStack var1, float var2) {
       AbstractArrowEntity var5 = super.method5032(var1, var2);
-      if (var5 instanceof Class887) {
-         ((Class887)var5).method3500(new EffectInstance(Effects.SLOWNESS, 600));
+      if (var5 instanceof ArrowEntity) {
+         ((ArrowEntity)var5).method3500(new EffectInstance(Effects.SLOWNESS, 600));
       }
 
       return var5;

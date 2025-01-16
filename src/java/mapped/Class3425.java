@@ -14,6 +14,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -26,8 +27,8 @@ import java.util.Random;
 public class Class3425 extends Block {
    private static String[] field19162;
    public static final BooleanProperty field19163 = BlockStateProperties.POWERED;
-   public static final BooleanProperty field19164 = BlockStateProperties.field39682;
-   public static final BooleanProperty field19165 = BlockStateProperties.field39685;
+   public static final BooleanProperty field19164 = BlockStateProperties.ATTACHED;
+   public static final BooleanProperty field19165 = BlockStateProperties.DISARMED;
    public static final BooleanProperty field19166 = Class3392.field19019;
    public static final BooleanProperty field19167 = Class3392.field19020;
    public static final BooleanProperty field19168 = Class3392.field19021;
@@ -153,7 +154,7 @@ public class Class3425 extends Block {
       }
 
       if (var7) {
-         var1.method6860().scheduleTick(new BlockPos(var2), this, 10);
+         var1.getBlockTickScheduler().scheduleTick(new BlockPos(var2), this, 10);
       }
    }
 

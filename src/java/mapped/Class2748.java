@@ -4,9 +4,9 @@ import net.minecraft.util.math.BlockPos;
 
 public class Class2748 extends Class2747 {
    private static String[] field17280;
-   private final Class1097 field17287;
+   private final PandaEntity field17287;
 
-   public Class2748(Class1097 var1, double var2) {
+   public Class2748(PandaEntity var1, double var2) {
       super(var1, var2);
       this.field17287 = var1;
    }

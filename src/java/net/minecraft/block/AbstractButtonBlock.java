@@ -15,6 +15,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -106,7 +107,7 @@ public abstract class AbstractButtonBlock extends Class3200 {
    public void method11519(BlockState var1, World var2, BlockPos var3) {
       var2.setBlockState(var3, var1.with(field18510, Boolean.valueOf(true)), 3);
       this.method11525(var1, var2, var3);
-      var2.method6860().scheduleTick(var3, this, this.method11518());
+      var2.getBlockTickScheduler().scheduleTick(var3, this, this.method11518());
    }
 
    public void method11520(PlayerEntity var1, IWorld var2, BlockPos var3, boolean var4) {
@@ -172,7 +173,7 @@ public abstract class AbstractButtonBlock extends Class3200 {
       }
 
       if (var7) {
-         var2.method6860().scheduleTick(new BlockPos(var3), this, this.method11518());
+         var2.getBlockTickScheduler().scheduleTick(new BlockPos(var3), this, this.method11518());
       }
    }
 

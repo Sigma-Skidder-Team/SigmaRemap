@@ -315,7 +315,7 @@ public class WorldGenRegion implements ISeedReader {
    }
 
    @Override
-   public ITickList<Block> method6860() {
+   public ITickList<Block> getBlockTickScheduler() {
       return this.field9210;
    }
 

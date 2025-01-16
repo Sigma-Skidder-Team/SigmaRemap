@@ -8,6 +8,7 @@ import java.util.Set;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.state.properties.ChestType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
@@ -402,8 +403,8 @@ public class Class8149 {
    }
 
    private boolean method28273(Entity var1, IBlockDisplayReader var2) {
-      if (var1 instanceof Class1042) {
-         Class1042 var5 = (Class1042)var1;
+      if (var1 instanceof VillagerEntity) {
+         VillagerEntity var5 = (VillagerEntity)var1;
          if (this.field35058 != null) {
             Class7921 var6 = var5.method4674();
             Class8395 var7 = var6.method26571();
@@ -429,8 +430,8 @@ public class Class8149 {
             }
          }
 
-         if (this.field35060 != null && var5 instanceof Class1064) {
-            Class1064 var8 = (Class1064)var5;
+         if (this.field35060 != null && var5 instanceof LlamaEntity) {
+            LlamaEntity var8 = (LlamaEntity)var5;
             Class112 var7 = var8.method4906();
             if (!Config.method26943(var7, this.field35060)) {
                return false;
@@ -444,10 +445,10 @@ public class Class8149 {
    }
 
    private Class2224 method28275(AbstractHorseEntity var1) {
-      if (!(var1 instanceof Class1074)) {
-         if (!(var1 instanceof Class1067)) {
-            if (!(var1 instanceof Class1078)) {
-               return !(var1 instanceof Class1064) ? null : Class2224.field14550;
+      if (!(var1 instanceof HorseEntity)) {
+         if (!(var1 instanceof DonkeyEntity)) {
+            if (!(var1 instanceof MuleEntity)) {
+               return !(var1 instanceof LlamaEntity) ? null : Class2224.field14550;
             } else {
                return Class2224.field14549;
             }

@@ -116,7 +116,7 @@ public class Class7803 {
       method26057(var1, var4);
       method26058(var9, var1.getY(), var4);
       Class964 var11 = method26064(var0, var10, var2, var4, var5);
-      var4.method6860().method20730(var9, true, false);
+      var4.getBlockTickScheduler().method20730(var9, true, false);
       var4.method6963(var9);
       return var11;
    }
@@ -138,7 +138,7 @@ public class Class7803 {
          var0.field45678 - 2, var0.field45679 - 3, var0.field45680 - 3, var0.field45681 + 3, var0.field45682 + 20, var0.field45683 + 3
       );
       BlockPos.method8361(var5).forEach(var2x -> method26066(var1, var2x, var2));
-      var2.method6860().method20730(var5, true, false);
+      var2.getBlockTickScheduler().method20730(var5, true, false);
       var2.method6963(var5);
       AxisAlignedBB var6 = new AxisAlignedBB(
          (double)var5.field45678, (double)var5.field45679, (double)var5.field45680, (double)var5.field45681, (double)var5.field45682, (double)var5.field45683

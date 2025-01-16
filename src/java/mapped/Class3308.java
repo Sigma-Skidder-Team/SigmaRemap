@@ -14,7 +14,7 @@ public class Class3308 extends Item {
    }
 
    public AbstractArrowEntity method11850(World var1, ItemStack var2, LivingEntity var3) {
-      Class887 var6 = new Class887(var1, var3);
+      ArrowEntity var6 = new ArrowEntity(var1, var3);
       var6.method3497(var2);
       return var6;
    }

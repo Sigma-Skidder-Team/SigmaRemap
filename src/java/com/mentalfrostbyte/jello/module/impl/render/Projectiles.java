@@ -37,7 +37,7 @@ public class Projectiles extends Module {
     public void method16523(Render3DEvent var1) {
         if (this.isEnabled()) {
             if (mc.player.getHeldItemMainhand() != null) {
-                ProjectileThingy var4 = ProjectileThingy.method9085(mc.player.getHeldItemMainhand().getItem());
+                ProjectileThingy var4 = ProjectileThingy.getProjectileThingyForItem(mc.player.getHeldItemMainhand().getItem());
                 if (var4 != null) {
                     float rotYawRadians = (float) Math.toRadians(mc.player.rotationYaw - 25.0F);
                     float rotPitchRadians = (float) Math.toRadians(mc.player.rotationPitch);

@@ -4,7 +4,7 @@ import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.util.DamageSource;
 
 public abstract class Class7362 extends Class7361 {
-   public Class7362(Class1007 var1) {
+   public Class7362(EnderDragonEntity var1) {
       super(var1);
    }
 

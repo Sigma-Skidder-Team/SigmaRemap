@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class Class9110 {
@@ -179,7 +180,7 @@ public class Class9110 {
          }
       }
 
-      return field41868.world.getBlockState(this.method33979().up(2)).getBlock() instanceof Class3213
+      return field41868.world.getBlockState(this.method33979().up(2)).getBlock() instanceof FallingBlock
          && !this.field41869.field44283.contains(this.method33979().up(2).toLong());
    }
 

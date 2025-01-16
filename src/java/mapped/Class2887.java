@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2887<T extends Class1057> extends Class2803<T> {
+public class Class2887<T extends ShulkerEntity> extends Class2803<T> {
    private static String[] field17887;
    private final ModelRenderer field17888;
    private final ModelRenderer field17889 = new ModelRenderer(64, 64, 0, 0);

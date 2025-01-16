@@ -98,7 +98,7 @@ public class CommandBlockTileEntity extends TileEntity {
       Block var3 = this.getBlockState().getBlock();
       if (var3 instanceof CommandBlockBlock) {
          this.method4017();
-         this.world.method6860().scheduleTick(this.pos, var3, 1);
+         this.world.getBlockTickScheduler().scheduleTick(this.pos, var3, 1);
       }
    }
 

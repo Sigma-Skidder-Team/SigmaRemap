@@ -1,6 +1,6 @@
 package net.minecraft.util.math;
 
-import mapped.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShape;
 import mapped.VoxelShapes;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;

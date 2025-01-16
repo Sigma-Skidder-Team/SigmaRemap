@@ -43,13 +43,13 @@ public class Class4210 extends Class4209 {
       if (!this.method13002(var1, var5, 0)) {
          return false;
       } else {
-         this.method12927(var1, var5, 1, 1, 1, 5, 1, 7, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
-         this.method12927(var1, var5, 1, 4, 2, 5, 4, 7, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
-         this.method12927(var1, var5, 2, 1, 0, 4, 1, 0, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
-         this.method12927(var1, var5, 2, 2, 2, 3, 3, 2, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
-         this.method12927(var1, var5, 1, 2, 3, 1, 3, 6, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
-         this.method12927(var1, var5, 5, 2, 3, 5, 3, 6, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
-         this.method12927(var1, var5, 2, 2, 7, 4, 3, 7, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
+         this.method12927(var1, var5, 1, 1, 1, 5, 1, 7, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 1, 4, 2, 5, 4, 7, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 2, 1, 0, 4, 1, 0, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 2, 2, 2, 3, 3, 2, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 1, 2, 3, 1, 3, 6, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 5, 2, 3, 5, 3, 6, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 2, 2, 7, 4, 3, 7, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
          this.method12927(var1, var5, 1, 0, 2, 1, 3, 2, Blocks.field36422.getDefaultState(), Blocks.field36422.getDefaultState(), false);
          this.method12927(var1, var5, 5, 0, 2, 5, 3, 2, Blocks.field36422.getDefaultState(), Blocks.field36422.getDefaultState(), false);
          this.method12927(var1, var5, 1, 0, 7, 1, 3, 7, Blocks.field36422.getDefaultState(), Blocks.field36422.getDefaultState(), false);
@@ -89,7 +89,7 @@ public class Class4210 extends Class4209 {
             int var16 = this.method12922(2, 5);
             if (var5.method38396(new BlockPos(var18, var19, var16))) {
                this.field20520 = true;
-               Class1027 var17 = EntityType.WITCH.create(var1.method6970());
+               WitchEntity var17 = EntityType.WITCH.create(var1.method6970());
                var17.method4278();
                var17.setLocationAndAngles((double)var18 + 0.5, (double)var19, (double)var16 + 0.5, 0.0F, 0.0F);
                var17.method4276(var1, var1.method6807(new BlockPos(var18, var19, var16)), SpawnReason.field14394, (Class5093)null, (CompoundNBT)null);
@@ -109,7 +109,7 @@ public class Class4210 extends Class4209 {
          int var7 = this.method12922(2, 5);
          if (var2.method38396(new BlockPos(var5, var6, var7))) {
             this.field20521 = true;
-            Class1098 var8 = EntityType.CAT.create(var1.method6970());
+            CatEntity var8 = EntityType.CAT.create(var1.method6970());
             var8.method4278();
             var8.setLocationAndAngles((double)var5 + 0.5, (double)var6, (double)var7 + 0.5, 0.0F, 0.0F);
             var8.method4276(var1, var1.method6807(new BlockPos(var5, var6, var7)), SpawnReason.field14394, (Class5093)null, (CompoundNBT)null);

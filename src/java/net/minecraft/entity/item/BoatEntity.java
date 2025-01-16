@@ -21,6 +21,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
@@ -31,7 +32,7 @@ import java.util.List;
 public class BoatEntity extends Entity {
    private static final DataParameter<Integer> field5524 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Integer> field5525 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.VARINT);
-   private static final DataParameter<Float> field5526 = EntityDataManager.<Float>createKey(BoatEntity.class, DataSerializers.field33392);
+   private static final DataParameter<Float> field5526 = EntityDataManager.<Float>createKey(BoatEntity.class, DataSerializers.FLOAT);
    private static final DataParameter<Integer> field5527 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field5528 = EntityDataManager.<Boolean>createKey(BoatEntity.class, DataSerializers.field33398);
    private static final DataParameter<Boolean> field5529 = EntityDataManager.<Boolean>createKey(BoatEntity.class, DataSerializers.field33398);

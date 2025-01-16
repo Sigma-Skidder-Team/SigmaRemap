@@ -43,6 +43,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.*;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -650,7 +651,7 @@ public abstract class Entity implements INameable, ICommandSource {
       Stream var7 = ! VoxelShapes.compare(var6, VoxelShapes.create(var4.shrink(1.0E-7)), IBooleanFunction.AND)
          ? Stream.<VoxelShape>of(var6)
          : Stream.empty();
-      Stream var8 = this.world.func_230318_c_(this, var4.expand(var1), var0 -> true);
+      Stream var8 = this.world.getEntityCollisions(this, var4.expand(var1), var0 -> true);
       Class8544 var9 = new Class8544(Stream.concat(var8, var7));
       Vector3d var10 = var1.lengthSquared() != 0.0 ? collideBoundingBoxHeuristically(this, var1, var4, this.world, var5, var9) : var1;
       boolean var11 = var1.x != var10.x;
@@ -1935,7 +1936,7 @@ public abstract class Entity implements INameable, ICommandSource {
       this.dataManager.method35446(AIR, var1);
    }
 
-   public void method3353(ServerWorld var1, Class906 var2) {
+   public void method3353(ServerWorld var1, LightningBoltEntity var2) {
       this.forceFireTicks(this.fire + 1);
       if (this.fire == 0) {
          this.setFire(8);
@@ -2153,11 +2154,11 @@ public abstract class Entity implements INameable, ICommandSource {
                BlockState var5x = this.world.getBlockState(this.field_242271_ac);
                Direction.Axis var6x;
                Vector3d var7x;
-               if (!var5x.method23462(BlockStateProperties.field39712)) {
+               if (!var5x.method23462(BlockStateProperties.HORIZONTAL_AXIS)) {
                   var6x = Direction.Axis.X;
                   var7x = new Vector3d(0.5, 0.0, 0.0);
                } else {
-                  var6x = var5x.<Direction.Axis>get(BlockStateProperties.field39712);
+                  var6x = var5x.<Direction.Axis>get(BlockStateProperties.HORIZONTAL_AXIS);
                   TeleportationRepositioner var8x = Class7215.method22658(this.field_242271_ac, var6x, 21, Direction.Axis.Y, 21, var2x -> this.world.getBlockState(var2x) == var5x);
                   var7x = this.func_241839_a(var6x, var8x);
                }
@@ -2168,7 +2169,7 @@ public abstract class Entity implements INameable, ICommandSource {
       } else {
          BlockPos var6;
          if (!var5) {
-            var6 = var1.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var1.getSpawnPoint());
+            var6 = var1.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var1.getSpawnPoint());
          } else {
             var6 = ServerWorld.field9038;
          }

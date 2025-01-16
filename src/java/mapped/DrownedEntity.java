@@ -52,7 +52,7 @@ public class DrownedEntity extends ZombieEntity implements Class1022 {
       this.field5601.addGoal(1, new HurtByTargetGoal(this, DrownedEntity.class).method10918(ZombifiedPiglinEntity.class));
       this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4646));
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
       this.field5601.addGoal(5, new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, true, false, TurtleEntity.field5963));
    }
 
@@ -211,7 +211,7 @@ public class DrownedEntity extends ZombieEntity implements Class1022 {
 
    @Override
    public void method4530(LivingEntity var1, float var2) {
-      Class886 var5 = new Class886(this.world, this, new ItemStack(Items.TRIDENT));
+      TridentEntity var5 = new TridentEntity(this.world, this, new ItemStack(Items.TRIDENT));
       double var6 = var1.getPosX() - this.getPosX();
       double var8 = var1.getPosYHeight(0.3333333333333333) - var5.getPosY();
       double var10 = var1.getPosZ() - this.getPosZ();

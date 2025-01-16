@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.vector.Vector3d;
 

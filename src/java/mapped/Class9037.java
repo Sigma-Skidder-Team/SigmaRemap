@@ -221,7 +221,7 @@ public class Class9037 {
       if (var2 <= 48 && var3 <= 48 && var4 <= 48) {
          ServerWorld var7 = var0.method20172();
          BlockPos var8 = new BlockPos(var0.method20171());
-         BlockPos var9 = new BlockPos(var8.getX(), var0.method20172().method7006(Heightmap.Type.WORLD_SURFACE, var8).getY(), var8.getZ() + 3);
+         BlockPos var9 = new BlockPos(var8.getX(), var0.method20172().getTopPosition(Heightmap.Type.WORLD_SURFACE, var8).getY(), var8.getZ() + 3);
          Class7803.method26055(var1.toLowerCase(), var9, new BlockPos(var2, var3, var4), Rotation.NONE, var7);
 
          for (int var10 = 0; var10 < var2; var10++) {
@@ -337,7 +337,7 @@ public class Class9037 {
       Class7440.method24038(var4);
       BlockPos var5 = new BlockPos(
          var0.method20171().x,
-         (double)var0.method20172().method7006(Heightmap.Type.WORLD_SURFACE, new BlockPos(var0.method20171())).getY(),
+         (double)var0.method20172().getTopPosition(Heightmap.Type.WORLD_SURFACE, new BlockPos(var0.method20171())).getY(),
          var0.method20171().z
       );
       Class7440.method24040(var4, var5, Class7879.field33820, MathHelper.clamp(var1, 0, 1024));
@@ -347,7 +347,7 @@ public class Class9037 {
    private static int method33497(CommandSource var0, Class4871 var1, int var2) {
       ServerWorld var5 = var0.method20172();
       BlockPos var6 = new BlockPos(var0.method20171());
-      int var7 = var0.method20172().method7006(Heightmap.Type.WORLD_SURFACE, var6).getY();
+      int var7 = var0.method20172().getTopPosition(Heightmap.Type.WORLD_SURFACE, var6).getY();
       BlockPos var8 = new BlockPos(var6.getX(), var7, var6.getZ() + 3);
       Class7440.method24038(var5);
       method33498(var1, var5);
@@ -403,7 +403,7 @@ public class Class9037 {
 
    private static void method33502(CommandSource var0, Collection<Class4871> var1, int var2, int var3) {
       BlockPos var6 = new BlockPos(var0.method20171());
-      BlockPos var7 = new BlockPos(var6.getX(), var0.method20172().method7006(Heightmap.Type.WORLD_SURFACE, var6).getY(), var6.getZ() + 3);
+      BlockPos var7 = new BlockPos(var6.getX(), var0.method20172().getTopPosition(Heightmap.Type.WORLD_SURFACE, var6).getY(), var6.getZ() + 3);
       ServerWorld var8 = var0.method20172();
       Rotation var9 = Class7803.method26051(var2);
       Collection var10 = Class7440.method24031(var1, var7, var9, var8, Class7879.field33820, var3);

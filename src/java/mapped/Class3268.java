@@ -16,7 +16,7 @@ public class Class3268 extends ToolItem {
    private static final Set<Block> field18764 = ImmutableSet.of(
       Blocks.field36728,
       Blocks.field36420,
-      Blocks.field36399,
+      Blocks.COBBLESTONE,
       Blocks.DETECTOR_RAIL,
       Blocks.field36537,
       Blocks.field36536,
@@ -128,7 +128,7 @@ public class Class3268 extends ToolItem {
          && !var1.isIn(Blocks.field36456)
          && !var1.isIn(Blocks.field36455)) {
          Material var5 = var1.getMaterial();
-         return var5 == Material.field38966 || var5 == Material.field38967 || var5 == Material.ANVIL || var1.isIn(Blocks.field36421);
+         return var5 == Material.STONE || var5 == Material.field38967 || var5 == Material.ANVIL || var1.isIn(Blocks.field36421);
       } else {
          return var4 >= 1;
       }
@@ -137,6 +137,6 @@ public class Class3268 extends ToolItem {
    @Override
    public float getDestroySpeed(ItemStack stack, BlockState state) {
       Material var5 = state.getMaterial();
-      return var5 != Material.field38967 && var5 != Material.ANVIL && var5 != Material.field38966 ? super.getDestroySpeed(stack, state) : this.efficiency;
+      return var5 != Material.field38967 && var5 != Material.ANVIL && var5 != Material.STONE ? super.getDestroySpeed(stack, state) : this.efficiency;
    }
 }

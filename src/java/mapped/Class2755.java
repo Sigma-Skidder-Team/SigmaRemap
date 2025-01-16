@@ -8,9 +8,9 @@ import net.minecraft.util.math.vector.Vector3d;
 
 public class Class2755 extends Class2754 {
    private static String[] field17294;
-   public final Class1095 field17295;
+   public final FoxEntity field17295;
 
-   public Class2755(Class1095 var1) {
+   public Class2755(FoxEntity var1) {
       this.field17295 = var1;
    }
 
@@ -20,7 +20,7 @@ public class Class2755 extends Class2754 {
          LivingEntity var3 = this.field17295.method4232();
          if (var3 != null && var3.isAlive()) {
             if (var3.method3387() == var3.getHorizontalFacing()) {
-               boolean var4 = Class1095.method5152(this.field17295, var3);
+               boolean var4 = FoxEntity.method5152(this.field17295, var3);
                if (!var4) {
                   this.field17295.method4230().method21652(var3, 0);
                   this.field17295.method5143(false);
@@ -75,8 +75,8 @@ public class Class2755 extends Class2754 {
    @Override
    public void method10807() {
       this.field17295.method5143(false);
-      Class1095.method5172(this.field17295, 0.0F);
-      Class1095.method5173(this.field17295, 0.0F);
+      FoxEntity.method5172(this.field17295, 0.0F);
+      FoxEntity.method5173(this.field17295, 0.0F);
       this.field17295.method5144(false);
       this.field17295.method5141(false);
    }
@@ -107,7 +107,7 @@ public class Class2755 extends Class2754 {
          && this.field17295.world.getBlockState(this.field17295.getPosition()).isIn(Blocks.SNOW)) {
          this.field17295.rotationPitch = 60.0F;
          this.field17295.method4233((LivingEntity)null);
-         Class1095.method5170(this.field17295, true);
+         FoxEntity.method5170(this.field17295, true);
       }
    }
 }

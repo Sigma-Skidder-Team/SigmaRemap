@@ -3,6 +3,7 @@ package net.minecraft.world;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import mapped.*;
+import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -896,7 +897,7 @@ public abstract class World implements IWorld, AutoCloseable {
       if (!this.method6795()) {
          return false;
       } else if (this.method7022(var1)) {
-         if (this.method7006(Heightmap.Type.MOTION_BLOCKING, var1).getY() > var1.getY()) {
+         if (this.getTopPosition(Heightmap.Type.MOTION_BLOCKING, var1).getY() > var1.getY()) {
             return false;
          } else {
             Biome var4 = this.getBiome(var1);

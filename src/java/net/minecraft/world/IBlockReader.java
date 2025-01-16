@@ -1,11 +1,11 @@
 package net.minecraft.world;
 
-import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.*;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 
 import javax.annotation.Nullable;

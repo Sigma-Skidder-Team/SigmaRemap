@@ -17,6 +17,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -26,11 +27,11 @@ import java.util.Map;
 
 public class Class3415 extends Block implements IWaterLoggable {
    private static String[] field19105;
-   public static final BooleanProperty field19106 = BlockStateProperties.field39714;
-   public static final EnumProperty<WallHeight> field19107 = BlockStateProperties.field39726;
-   public static final EnumProperty<WallHeight> field19108 = BlockStateProperties.field39727;
-   public static final EnumProperty<WallHeight> field19109 = BlockStateProperties.field39728;
-   public static final EnumProperty<WallHeight> field19110 = BlockStateProperties.field39729;
+   public static final BooleanProperty field19106 = BlockStateProperties.UP;
+   public static final EnumProperty<WallHeight> field19107 = BlockStateProperties.WALLHEIGHT_EAST;
+   public static final EnumProperty<WallHeight> field19108 = BlockStateProperties.WALLHEIGHT_NORTH;
+   public static final EnumProperty<WallHeight> field19109 = BlockStateProperties.WALLHEIGHT_SOUTH;
+   public static final EnumProperty<WallHeight> field19110 = BlockStateProperties.WALLHEIGHT_WEST;
    public static final BooleanProperty field19111 = BlockStateProperties.WATERLOGGED;
    private final Map<BlockState, VoxelShape> field19112;
    private final Map<BlockState, VoxelShape> field19113;

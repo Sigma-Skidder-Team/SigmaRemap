@@ -8,9 +8,9 @@ public class Class2694 extends Class2692 {
    private double field17138;
    private int field17139;
    private int field17140;
-   public final Class1095 field17133;
+   public final FoxEntity field17133;
 
-   public Class2694(Class1095 var1) {
+   public Class2694(FoxEntity var1) {
       super(var1);
       this.field17133 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));

@@ -5,7 +5,7 @@ import com.google.common.collect.Iterables;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2896 extends BipedModel<Class1100> {
+public class Class2896 extends BipedModel<VexEntity> {
    private static String[] field17431;
    private final ModelRenderer field17934;
    private final ModelRenderer field17935;
@@ -29,7 +29,7 @@ public class Class2896 extends BipedModel<Class1100> {
       return Iterables.concat(super.getBodyParts(), ImmutableList.of(this.field17935, this.field17934));
    }
 
-   public void setRotationAngles(Class1100 var1, float var2, float var3, float var4, float var5, float var6) {
+   public void setRotationAngles(VexEntity var1, float var2, float var3, float var4, float var5, float var6) {
       super.setRotationAngles(var1, var2, var3, var4, var5, var6);
       if (var1.method5275()) {
          if (!var1.getHeldItemMainhand().isEmpty()) {

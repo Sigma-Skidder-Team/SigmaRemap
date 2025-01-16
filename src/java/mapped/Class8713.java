@@ -41,8 +41,8 @@ public class Class8713 {
 
    public boolean method31429(Entity var1) {
       if (this != field39324) {
-         if (var1 instanceof Class904) {
-            Class904 var4 = (Class904)var1;
+         if (var1 instanceof FishingBobberEntity) {
+            FishingBobberEntity var4 = (FishingBobberEntity)var1;
             return this.field39325 == var4.method3541();
          } else {
             return false;

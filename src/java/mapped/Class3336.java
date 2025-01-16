@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.IGrowable;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tags.BlockTags;
@@ -52,8 +53,8 @@ public class Class3336 extends Item {
 
    public static boolean method11883(ItemStack var0, World var1, BlockPos var2) {
       BlockState var5 = var1.getBlockState(var2);
-      if (var5.getBlock() instanceof Class3196) {
-         Class3196 var6 = (Class3196)var5.getBlock();
+      if (var5.getBlock() instanceof IGrowable) {
+         IGrowable var6 = (IGrowable)var5.getBlock();
          if (var6.method11486(var1, var2, var5, var1.isRemote)) {
             if (var1 instanceof ServerWorld) {
                if (var6.method11487(var1, var1.rand, var2, var5)) {
@@ -108,7 +109,7 @@ public class Class3336 extends Item {
                   if (var12.isIn(Blocks.WATER) && var1.getFluidState(var7).method23477() == 8) {
                      var1.setBlockState(var7, var8, 3);
                   } else if (var12.isIn(Blocks.SEAGRASS) && field18735.nextInt(10) == 0) {
-                     ((Class3196) Blocks.SEAGRASS).method11488((ServerWorld)var1, field18735, var7, var12);
+                     ((IGrowable) Blocks.SEAGRASS).method11488((ServerWorld)var1, field18735, var7, var12);
                   }
                }
             }

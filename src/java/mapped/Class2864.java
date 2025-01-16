@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2864<T extends Class1095> extends AgeableModel<T> {
+public class Class2864<T extends FoxEntity> extends AgeableModel<T> {
    private static String[] field17749;
    public final ModelRenderer field17750;
    private final ModelRenderer field17751;

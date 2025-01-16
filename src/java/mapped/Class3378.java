@@ -17,7 +17,7 @@ import java.util.Random;
 
 public class Class3378 extends Class3377 {
    private static String[] field18977;
-   public static final IntegerProperty field18978 = BlockStateProperties.field39740;
+   public static final IntegerProperty field18978 = BlockStateProperties.AGE3;
 
    public Class3378(Properties var1) {
       super(var1);
@@ -40,11 +40,11 @@ public class Class3378 extends Class3377 {
             var7.method8377(var3, var11);
             BlockState var12 = var2.getBlockState(var7);
             if (var12.isIn(this) && !this.method11969(var12, var2, var7)) {
-               var2.method6860().scheduleTick(var7, this, MathHelper.method37782(var4, 20, 40));
+               var2.getBlockTickScheduler().scheduleTick(var7, this, MathHelper.method37782(var4, 20, 40));
             }
          }
       } else {
-         var2.method6860().scheduleTick(var3, this, MathHelper.method37782(var4, 20, 40));
+         var2.getBlockTickScheduler().scheduleTick(var3, this, MathHelper.method37782(var4, 20, 40));
       }
    }
 

@@ -11,7 +11,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Optional;
 
-public class Class3725 extends Class3676<Class1042> {
+public class Class3725 extends Class3676<VillagerEntity> {
    private static String[] field19814;
    private long field19815;
    private long field19816;
@@ -22,7 +22,7 @@ public class Class3725 extends Class3676<Class1042> {
       super(ImmutableMap.of(Class8830.field39825, Class2217.field14485, Class8830.field39824, Class2217.field14485));
    }
 
-   public boolean method12508(ServerWorld var1, Class1042 var2) {
+   public boolean method12508(ServerWorld var1, VillagerEntity var2) {
       if (var2.ticksExisted % 10 == 0 && (this.field19816 == 0L || this.field19816 + 160L <= (long)var2.ticksExisted)) {
          if (var2.method4752().count(Items.field37934) > 0) {
             this.field19818 = this.method12625(var1, var2);
@@ -35,11 +35,11 @@ public class Class3725 extends Class3676<Class1042> {
       }
    }
 
-   public boolean method12499(ServerWorld var1, Class1042 var2, long var3) {
+   public boolean method12499(ServerWorld var1, VillagerEntity var2, long var3) {
       return this.field19817 < 80 && this.field19818.isPresent();
    }
 
-   private Optional<BlockPos> method12625(ServerWorld var1, Class1042 var2) {
+   private Optional<BlockPos> method12625(ServerWorld var1, VillagerEntity var2) {
       BlockPos.Mutable var5 = new BlockPos.Mutable();
       Optional var6 = Optional.empty();
       int var7 = 0;
@@ -66,14 +66,14 @@ public class Class3725 extends Class3676<Class1042> {
       return var6 instanceof Class3480 && !((Class3480)var6).method12179(var5);
    }
 
-   public void method12502(ServerWorld var1, Class1042 var2, long var3) {
+   public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
       this.method12627(var2);
       var2.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37934));
       this.field19815 = var3;
       this.field19817 = 0;
    }
 
-   private void method12627(Class1042 var1) {
+   private void method12627(VillagerEntity var1) {
       this.field19818.ifPresent(var1x -> {
          Class7863 var4 = new Class7863(var1x);
          var1.getBrain().method21406(Class8830.field39825, var4);
@@ -81,12 +81,12 @@ public class Class3725 extends Class3676<Class1042> {
       });
    }
 
-   public void method12506(ServerWorld var1, Class1042 var2, long var3) {
+   public void method12506(ServerWorld var1, VillagerEntity var2, long var3) {
       var2.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
       this.field19816 = (long)var2.ticksExisted;
    }
 
-   public void method12504(ServerWorld var1, Class1042 var2, long var3) {
+   public void method12504(ServerWorld var1, VillagerEntity var2, long var3) {
       BlockPos var7 = this.field19818.get();
       if (var3 >= this.field19815 && var7.method8317(var2.getPositionVec(), 1.0)) {
          ItemStack var8 = ItemStack.EMPTY;

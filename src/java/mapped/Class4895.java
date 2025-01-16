@@ -23,7 +23,7 @@ public class Class4895 extends Class4874<Class4487> {
       return new Class4487(var2, var6, var7, var8);
    }
 
-   public void method15124(ServerPlayerEntity var1, ItemStack var2, Class904 var3, Collection<ItemStack> var4) {
+   public void method15124(ServerPlayerEntity var1, ItemStack var2, FishingBobberEntity var3, Collection<ItemStack> var4) {
       LootContext var7 = Class6671.method20332(var1, (Entity)(var3.method3545() == null ? var3 : var3.method3545()));
       this.method15053(var1, var3x -> var3x.method14155(var2, var7, var4));
    }

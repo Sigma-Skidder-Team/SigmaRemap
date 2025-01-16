@@ -24,7 +24,7 @@ public class Class6825 extends Class6824 {
 
    @Override
    public void method20786(
-           Class1679 var1, Random var2, Class4733 var3, int var4, Class9359 var5, int var6, int var7, Set<BlockPos> var8, int var9, MutableBoundingBox var10
+           IWorldGenerationReader var1, Random var2, Class4733 var3, int var4, Class9359 var5, int var6, int var7, Set<BlockPos> var8, int var9, MutableBoundingBox var10
    ) {
       for (int var13 = var9; var13 >= var9 - var6; var13--) {
          int var14 = var7 + (var13 != var9 && var13 != var9 - var6 ? 1 : 0);

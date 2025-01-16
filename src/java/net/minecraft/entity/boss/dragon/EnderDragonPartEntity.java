@@ -1,6 +1,6 @@
 package net.minecraft.entity.boss.dragon;
 
-import mapped.Class1007;
+import mapped.EnderDragonEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.Pose;
@@ -10,11 +10,11 @@ import net.minecraft.util.DamageSource;
 
 public class EnderDragonPartEntity extends Entity {
    private static String[] field5185;
-   public final Class1007 dragon;
+   public final EnderDragonEntity dragon;
    public final String field5187;
    private final EntitySize field5188;
 
-   public EnderDragonPartEntity(Class1007 var1, String var2, float var3, float var4) {
+   public EnderDragonPartEntity(EnderDragonEntity var1, String var2, float var3, float var4) {
       super(var1.getType(), var1.world);
       this.field5188 = EntitySize.method32101(var3, var4);
       this.recalculateSize();

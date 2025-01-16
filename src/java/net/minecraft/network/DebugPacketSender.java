@@ -75,7 +75,7 @@ public class DebugPacketSender {
    public static void method23622(LivingEntity var0) {
    }
 
-   public static void method23623(Class1017 var0) {
+   public static void method23623(BeeEntity var0) {
    }
 
    public static void method23624(BeehiveTileEntity var0) {

@@ -18,6 +18,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import org.lwjgl.opengl.GL11;
 

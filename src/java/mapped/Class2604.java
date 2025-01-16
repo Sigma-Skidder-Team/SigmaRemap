@@ -2,9 +2,9 @@ package mapped;
 
 public class Class2604 extends Class2603 {
    private static String[] field16848;
-   public final Class1095 field16850;
+   public final FoxEntity field16850;
 
-   public Class2604(Class1095 var1) {
+   public Class2604(FoxEntity var1) {
       super(var1);
       this.field16850 = var1;
    }
@@ -12,7 +12,7 @@ public class Class2604 extends Class2603 {
    @Override
    public void method10804() {
       super.method10804();
-      Class1095.method5167(this.field16850);
+      FoxEntity.method5167(this.field16850);
    }
 
    @Override

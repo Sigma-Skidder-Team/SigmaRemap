@@ -352,7 +352,7 @@ public class Class1313 extends Screen {
          false,
          new Class9537(1, Blocks.GRASS_BLOCK),
          new Class9537(3, Blocks.DIRT),
-         new Class9537(2, Blocks.field36399)
+         new Class9537(2, Blocks.COBBLESTONE)
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.desert"),

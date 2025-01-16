@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.IGrowable;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.BlockItemUseContext;
@@ -17,6 +18,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
@@ -27,14 +29,14 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3418 extends Block implements Class3196 {
+public class Class3418 extends Block implements IGrowable {
    private static String[] field19121;
    public static final VoxelShape field19122 = Block.makeCuboidShape(5.0, 0.0, 5.0, 11.0, 16.0, 11.0);
    public static final VoxelShape field19123 = Block.makeCuboidShape(3.0, 0.0, 3.0, 13.0, 16.0, 13.0);
    public static final VoxelShape field19124 = Block.makeCuboidShape(6.5, 0.0, 6.5, 9.5, 16.0, 9.5);
-   public static final IntegerProperty field19125 = BlockStateProperties.field39738;
-   public static final EnumProperty<BambooLeaves> field19126 = BlockStateProperties.field39773;
-   public static final IntegerProperty field19127 = BlockStateProperties.field39760;
+   public static final IntegerProperty field19125 = BlockStateProperties.AGE;
+   public static final EnumProperty<BambooLeaves> field19126 = BlockStateProperties.LEAVES;
+   public static final IntegerProperty field19127 = BlockStateProperties.STAGE;
 
    public Class3418(Properties var1) {
       super(var1);
@@ -139,7 +141,7 @@ public class Class3418 extends Block implements Class3196 {
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (!var1.isValidPosition(var4, var5)) {
-         var4.method6860().scheduleTick(var5, this, 1);
+         var4.getBlockTickScheduler().scheduleTick(var5, this, 1);
       }
 
       if (var2 == Direction.UP && var3.isIn(Blocks.field37009) && var3.<Integer>get(field19125) > var1.<Integer>get(field19125)) {

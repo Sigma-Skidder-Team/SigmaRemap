@@ -23,8 +23,8 @@ public class Class3321 extends Item {
 
    @Override
    public ActionResultType method11716(ItemStack var1, PlayerEntity var2, LivingEntity var3, Hand var4) {
-      if (var3 instanceof Class1019) {
-         Class1019 var7 = (Class1019)var3;
+      if (var3 instanceof SheepEntity) {
+         SheepEntity var7 = (SheepEntity)var3;
          if (var7.isAlive() && !var7.method4519() && var7.method4517() != this.field18831) {
             if (!var2.world.isRemote) {
                var7.method4518(this.field18831);

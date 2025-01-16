@@ -12,7 +12,7 @@ public class Class7372 extends Class7361 {
    private Class8238 field31551;
    private Vector3d field31552;
 
-   public Class7372(Class1007 var1) {
+   public Class7372(EnderDragonEntity var1) {
       super(var1);
    }
 
@@ -46,7 +46,7 @@ public class Class7372 extends Class7361 {
    private void method23377() {
       if (this.field31551 == null || this.field31551.method28693()) {
          int var3 = this.field31519.method4328();
-         BlockPos var4 = this.field31519.world.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994);
+         BlockPos var4 = this.field31519.world.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994);
          PlayerEntity var5 = this.field31519.world.method7190(field31550, (double)var4.getX(), (double)var4.getY(), (double)var4.getZ());
          int var6;
          if (var5 == null) {

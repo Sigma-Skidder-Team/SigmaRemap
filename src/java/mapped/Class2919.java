@@ -46,7 +46,7 @@ public class Class2919 extends Class2898<Class4712> {
                if (var21 >= 1) {
                   BlockPos var22 = var4.add(var3.nextInt(var21) - var3.nextInt(var21), var20, var3.nextInt(var21) - var3.nextInt(var21));
                   BlockState var13 = var1.getBlockState(var22);
-                  if (var13.getMaterial() == Material.field38932
+                  if (var13.getMaterial() == Material.AIR
                      || var13.isIn(Blocks.WATER)
                      || var13.isIn(Blocks.PACKED_ICE)
                      || var13.isIn(Blocks.ICE)) {

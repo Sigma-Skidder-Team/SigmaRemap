@@ -227,8 +227,8 @@ public class NameTags extends Module {
 
             if (this.getBooleanValueFromSettingName("Mob Owners")) {
                 for (Entity var12 : mc.world.getAllEntities()) {
-                    if (var12 == mc.player && (var12 instanceof TameableEntity || var12 instanceof Class1074)) {
-                        UUID var14 = !(var12 instanceof TameableEntity) ? ((Class1074) var12).method4933() : ((TameableEntity) var12).method4397();
+                    if (var12 == mc.player && (var12 instanceof TameableEntity || var12 instanceof HorseEntity)) {
+                        UUID var14 = !(var12 instanceof TameableEntity) ? ((HorseEntity) var12).method4933() : ((TameableEntity) var12).method4397();
                         if (var14 != null) {
                             if (!this.field24007.containsKey(var14)) {
                                 this.field24007.put(var14, null);

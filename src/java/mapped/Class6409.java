@@ -4,6 +4,7 @@ import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import net.minecraft.util.Util;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.Arrays;
 

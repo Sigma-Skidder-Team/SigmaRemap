@@ -7,7 +7,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Optional;
 
-public class Class3753 extends Class3676<Class1042> {
+public class Class3753 extends Class3676<VillagerEntity> {
    private static String[] field19907;
    public final float field19908;
 
@@ -16,22 +16,22 @@ public class Class3753 extends Class3676<Class1042> {
       this.field19908 = var1;
    }
 
-   public boolean method12508(ServerWorld var1, Class1042 var2) {
+   public boolean method12508(ServerWorld var1, VillagerEntity var2) {
       return var2.getBrain()
          .method21418()
          .<Boolean>map(var0 -> var0 == Activity.field40220 || var0 == Activity.field40221 || var0 == Activity.field40222)
          .orElse(true);
    }
 
-   public boolean method12499(ServerWorld var1, Class1042 var2, long var3) {
+   public boolean method12499(ServerWorld var1, VillagerEntity var2, long var3) {
       return var2.getBrain().method21404(Class8830.field39815);
    }
 
-   public void method12504(ServerWorld var1, Class1042 var2, long var3) {
+   public void method12504(ServerWorld var1, VillagerEntity var2, long var3) {
       Class6983.method21577(var2, var2.getBrain().<Class9378>method21410(Class8830.field39815).get().method35579(), this.field19908, 1);
    }
 
-   public void method12506(ServerWorld var1, Class1042 var2, long var3) {
+   public void method12506(ServerWorld var1, VillagerEntity var2, long var3) {
       Optional<Class9378> var7 = var2.getBrain().<Class9378>method21410(Class8830.field39815);
       var7.ifPresent(var1x -> {
          BlockPos var4 = var1x.method35579();

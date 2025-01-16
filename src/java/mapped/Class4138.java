@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4138 extends Class4057 {
    public Class4138() {
-      super(EntityType.field41028, "evoker_fangs", 0.0F, new String[]{"evocation_fangs"});
+      super(EntityType.EVOKER_FANGS, "evoker_fangs", 0.0F, new String[]{"evocation_fangs"});
    }
 
    @Override

@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public class Class3447 extends Class3445 {
    private static String[] field19261;

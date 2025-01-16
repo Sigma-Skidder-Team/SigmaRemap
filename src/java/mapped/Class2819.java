@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2819 extends Class2803<Class1029> {
+public class Class2819 extends Class2803<RavagerEntity> {
    private static String[] field17556;
    private final ModelRenderer field17557;
    private final ModelRenderer field17558;
@@ -66,7 +66,7 @@ public class Class2819 extends Class2803<Class1029> {
       return ImmutableList.of(this.field17564, this.field17559, this.field17560, this.field17561, this.field17562, this.field17563);
    }
 
-   public void setRotationAngles(Class1029 var1, float var2, float var3, float var4, float var5, float var6) {
+   public void setRotationAngles(RavagerEntity var1, float var2, float var3, float var4, float var5, float var6) {
       this.field17557.rotateAngleX = var6 * (float) (Math.PI / 180.0);
       this.field17557.rotateAngleY = var5 * (float) (Math.PI / 180.0);
       this.field17559.rotateAngleX = (float) (Math.PI / 2);
@@ -77,7 +77,7 @@ public class Class2819 extends Class2803<Class1029> {
       this.field17563.rotateAngleX = MathHelper.cos(var2 * 0.6662F) * var9;
    }
 
-   public void setLivingAnimations(Class1029 var1, float var2, float var3, float var4) {
+   public void setLivingAnimations(RavagerEntity var1, float var2, float var3, float var4) {
       super.setLivingAnimations(var1, var2, var3, var4);
       int var7 = var1.method4586();
       int var8 = var1.method4587();

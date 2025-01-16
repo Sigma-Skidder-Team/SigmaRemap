@@ -5,9 +5,9 @@ import net.minecraft.world.World;
 
 public class Class6996 extends Class6995 {
    private static String[] field30269;
-   public final Class1017 field30270;
+   public final BeeEntity field30270;
 
-   public Class6996(Class1017 var1, MobEntity var2, World var3) {
+   public Class6996(BeeEntity var1, MobEntity var2, World var3) {
       super(var2, var3);
       this.field30270 = var1;
    }
@@ -19,7 +19,7 @@ public class Class6996 extends Class6995 {
 
    @Override
    public void method21658() {
-      if (!Class2663.method10870(Class1017.method4451(this.field30270))) {
+      if (!Class2663.method10870(BeeEntity.method4451(this.field30270))) {
          super.method21658();
       }
    }

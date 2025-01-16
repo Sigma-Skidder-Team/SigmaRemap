@@ -23,8 +23,8 @@ public class Class3328 extends Item {
 
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
-      List var6 = var1.<Class999>getEntitiesInAABBexcluding(
-         Class999.class, var2.getBoundingBox().grow(2.0), var0 -> var0 != null && var0.isAlive() && var0.method4114() instanceof Class1007
+      List var6 = var1.<AreaEffectCloudEntity>getEntitiesInAABBexcluding(
+         AreaEffectCloudEntity.class, var2.getBoundingBox().grow(2.0), var0 -> var0 != null && var0.isAlive() && var0.method4114() instanceof EnderDragonEntity
       );
       ItemStack var7 = var2.getHeldItem(var3);
       if (var6.isEmpty()) {
@@ -49,7 +49,7 @@ public class Class3328 extends Item {
             return Class6794.<ItemStack>method20698(var7);
          }
       } else {
-         Class999 var8 = (Class999)var6.get(0);
+         AreaEffectCloudEntity var8 = (AreaEffectCloudEntity)var6.get(0);
          var8.method4097(var8.method4098() - 0.5F);
          var1.playSound((PlayerEntity)null, var2.getPosX(), var2.getPosY(), var2.getPosZ(), SoundEvents.field26419, SoundCategory.field14734, 1.0F, 1.0F);
          return Class6794.<ItemStack>method20700(this.method11878(var7, var2, new ItemStack(Items.field38114)), var1.isRemote());

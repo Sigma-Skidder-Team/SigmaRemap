@@ -1,9 +1,6 @@
 package mapped;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.BushBlock;
+import net.minecraft.block.*;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -12,6 +9,7 @@ import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -20,7 +18,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3450 extends BushBlock implements Class3196, Class3449 {
+public class Class3450 extends BushBlock implements IGrowable, Class3449 {
    private static String[] field18470;
    public static final VoxelShape field19264 = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
 

@@ -28,6 +28,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
@@ -361,15 +362,15 @@ public abstract class AbstractBlock {
          this.field33965 = var2;
       }
 
-      public static Properties method26609(Material var0) {
-         return method26611(var0, var0.getColor());
+      public static Properties withMaterial(Material var0) {
+         return withMaterialAndColor(var0, var0.getColor());
       }
 
       public static Properties method26610(Material var0, Class112 var1) {
-         return method26611(var0, var1.method312());
+         return withMaterialAndColor(var0, var1.method312());
       }
 
-      public static Properties method26611(Material var0, MaterialColor var1) {
+      public static Properties withMaterialAndColor(Material var0, MaterialColor var1) {
          return new Properties(var0, var1);
       }
 

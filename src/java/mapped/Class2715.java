@@ -5,7 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 public class Class2715 extends NearestAttackableTargetGoal<PlayerEntity> {
    private static String[] field17187;
 
-   public Class2715(Class1017 var1) {
+   public Class2715(BeeEntity var1) {
       super(var1, PlayerEntity.class, 10, true, false, var1::method4367);
    }
 
@@ -26,7 +26,7 @@ public class Class2715 extends NearestAttackableTargetGoal<PlayerEntity> {
    }
 
    private boolean method10928() {
-      Class1017 var3 = (Class1017)this.field17153;
+      BeeEntity var3 = (BeeEntity)this.field17153;
       return var3.method4369() && !var3.method4440();
    }
 }

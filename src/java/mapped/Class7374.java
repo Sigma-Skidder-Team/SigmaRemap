@@ -18,7 +18,7 @@ public class Class7374 extends Class7361 {
    private LivingEntity field31557;
    private boolean field31558;
 
-   public Class7374(Class1007 var1) {
+   public Class7374(EnderDragonEntity var1) {
       super(var1);
    }
 
@@ -79,7 +79,7 @@ public class Class7374 extends Class7361 {
                   this.field31519.world.method6869((PlayerEntity)null, 1017, this.field31519.getPosition(), 0);
                }
 
-               Class903 var32 = new Class903(this.field31519.world, this.field31519, var26, var28, var30);
+               DragonFireball var32 = new DragonFireball(this.field31519.world, this.field31519, var26, var28, var30);
                var32.setLocationAndAngles(var20, var22, var24, 0.0F, 0.0F);
                this.field31519.world.addEntity(var32);
                this.field31554 = 0;

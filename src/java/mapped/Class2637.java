@@ -9,9 +9,9 @@ import net.minecraft.world.IWorldReader;
 
 public class Class2637 extends Class2628 {
    private static String[] field16958;
-   private final Class1098 field16959;
+   private final CatEntity field16959;
 
-   public Class2637(Class1098 var1, double var2) {
+   public Class2637(CatEntity var1, double var2) {
       super(var1, var2, 8);
       this.field16959 = var1;
    }

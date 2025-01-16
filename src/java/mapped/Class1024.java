@@ -55,7 +55,7 @@ public class Class1024 extends Class1025 implements Class1023 {
       this.field5601.addGoal(1, new HurtByTargetGoal(this, Class1026.class).method10918());
       this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
    }
 
    public static MutableAttribute method4541() {

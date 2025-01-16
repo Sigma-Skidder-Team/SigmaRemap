@@ -66,7 +66,7 @@ public class Class7880 {
             || !(var5 instanceof Class3456)
                && !(var5 instanceof Class3490)
                && !(var5 instanceof Class3479)
-               && !(var5 instanceof Class3193)
+               && !(var5 instanceof SaplingBlock)
                && !(var5 instanceof Class3487)) {
             if (var5 instanceof Class3239
                || var5 instanceof FenceGateBlock

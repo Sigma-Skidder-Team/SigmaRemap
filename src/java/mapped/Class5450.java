@@ -81,7 +81,7 @@ public class Class5450 extends StructureStart<Class4712> {
                         break;
                      }
 
-                     var1.setBlockState(var17, Blocks.field36399.getDefaultState(), 2);
+                     var1.setBlockState(var17, Blocks.COBBLESTONE.getDefaultState(), 2);
                   }
                }
             }

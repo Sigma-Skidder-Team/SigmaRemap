@@ -26,7 +26,7 @@ public class Class9598<T extends Class7373> {
       this.field44909 = var3;
    }
 
-   public Class7373 method37257(Class1007 var1) {
+   public Class7373 method37257(EnderDragonEntity var1) {
       try {
          Constructor var4 = this.method37258();
          return (Class7373)var4.newInstance(var1);
@@ -36,7 +36,7 @@ public class Class9598<T extends Class7373> {
    }
 
    public Constructor<? extends Class7373> method37258() throws NoSuchMethodException {
-      return this.field44907.getConstructor(Class1007.class);
+      return this.field44907.getConstructor(EnderDragonEntity.class);
    }
 
    public int method37259() {

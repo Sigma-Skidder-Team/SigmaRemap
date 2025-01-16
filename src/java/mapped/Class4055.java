@@ -17,7 +17,7 @@ public class Class4055 extends Class4051 {
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5699 var6 = new Class5699(var5);
-      var6.entityModel = (Class2870<Class1087>)var1;
+      var6.entityModel = (Class2870<CowEntity>)var1;
       var6.shadowSize = var2;
       return (Class9492)var6;
    }

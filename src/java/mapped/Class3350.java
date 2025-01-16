@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 
 public abstract class Class3350 extends Class3241 {
    public static final DirectionProperty field18875 = HorizontalBlock.HORIZONTAL_FACING;
-   public static final BooleanProperty field18876 = BlockStateProperties.field39699;
+   public static final BooleanProperty field18876 = BlockStateProperties.LIT;
 
    public Class3350(Properties var1) {
       super(var1);

@@ -63,7 +63,7 @@ public class PolarBearEntity extends AnimalEntity implements IAngerable {
       this.field5601.addGoal(1, new Class2707(this));
       this.field5601.addGoal(2, new Class2720(this));
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
-      this.field5601.addGoal(4, new NearestAttackableTargetGoal<Class1095>(this, Class1095.class, 10, true, true, (Predicate<LivingEntity>)null));
+      this.field5601.addGoal(4, new NearestAttackableTargetGoal<FoxEntity>(this, FoxEntity.class, 10, true, true, (Predicate<LivingEntity>)null));
       this.field5601.addGoal(5, new ResetAngerGoal<PolarBearEntity>(this, false));
    }
 

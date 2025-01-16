@@ -6,9 +6,9 @@ import net.minecraft.world.server.ServerWorld;
 public class Class2641 extends Class2640 {
    private static String[] field16965;
    private int field16972;
-   public final Class1095 field16973;
+   public final FoxEntity field16973;
 
-   public Class2641(Class1095 var1, double var2) {
+   public Class2641(FoxEntity var1, double var2) {
       super(var1, var2);
       this.field16973 = var1;
       this.field16972 = 100;
@@ -35,7 +35,7 @@ public class Class2641 extends Class2640 {
 
    @Override
    public void method10804() {
-      Class1095.method5167(this.field16973);
+      FoxEntity.method5167(this.field16973);
       super.method10804();
    }
 }

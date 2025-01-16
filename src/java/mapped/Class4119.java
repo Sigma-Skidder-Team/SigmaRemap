@@ -18,7 +18,7 @@ public class Class4119 extends Class4117 {
       IReloadableResourceManager var5 = (IReloadableResourceManager) Minecraft.getInstance().getResourceManager();
       EntityRendererManager var6 = Minecraft.getInstance().getRenderManager();
       Class5669 var7 = new Class5669(var6, var5);
-      var7.entityModel = (Class2800<Class1040>)var1;
+      var7.entityModel = (Class2800<ZombieVillagerEntity>)var1;
       var7.shadowSize = var2;
       return (Class9492)var7;
    }

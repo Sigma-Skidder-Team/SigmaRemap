@@ -98,8 +98,8 @@ public class ElytraFly extends Module {
             if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
                 SEntityVelocityPacket var4 = (SEntityVelocityPacket) var1.getPacket();
                 Entity var5 = mc.world.getEntityByID(var4.getEntityID());
-                if (var5 instanceof Class888) {
-                    Class888 var6 = (Class888) var5;
+                if (var5 instanceof FireworkRocketEntity) {
+                    FireworkRocketEntity var6 = (FireworkRocketEntity) var5;
                     if (var6.field5125 != null && var6.field5125.getEntityId() == mc.player.getEntityId()) {
                         this.field23529 = this.field23529 + (float) var4.motionX / 8000.0F;
                         this.field23531 = this.field23531 + (float) var4.motionZ / 8000.0F;

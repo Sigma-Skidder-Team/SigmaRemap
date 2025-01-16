@@ -47,7 +47,7 @@ public class SlimeEntity extends MobEntity implements IMob {
       this.field5600.addGoal(5, new Class2601(this));
       this.field5601
          .addGoal(1, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, var1 -> Math.abs(var1.getPosY() - this.getPosY()) <= 4.0));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
    }
 
    @Override
@@ -203,7 +203,7 @@ public class SlimeEntity extends MobEntity implements IMob {
    @Override
    public void applyEntityCollision(Entity var1) {
       super.applyEntityCollision(var1);
-      if (var1 instanceof Class1058 && this.method5325()) {
+      if (var1 instanceof IronGolemEntity && this.method5325()) {
          this.method5324((LivingEntity)var1);
       }
    }

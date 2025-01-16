@@ -17,6 +17,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.*;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
@@ -295,7 +296,7 @@ public class MultiUtilities {
 
          return traceEntityRay(
                  mc.world, renderViewEntity, playerEyesPos, rayEndPos, searchBox,
-                 entity -> entity instanceof LivingEntity || entity instanceof Class907,
+                 entity -> entity instanceof LivingEntity || entity instanceof FallingBlockEntity,
                  (double) (reachDistanceModifier * reachDistanceModifier), boundingBoxExpansion
          );
       } else {

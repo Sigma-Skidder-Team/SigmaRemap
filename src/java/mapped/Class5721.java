@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class5721 extends EntityRenderer<Class907> {
+public class Class5721 extends EntityRenderer<FallingBlockEntity> {
    private static String[] field25119;
 
    public Class5721(EntityRendererManager var1) {
@@ -18,7 +18,7 @@ public class Class5721 extends EntityRenderer<Class907> {
       this.shadowSize = 0.5F;
    }
 
-   public void render(Class907 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(FallingBlockEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       BlockState var9 = var1.method3556();
       if (var9.getRenderType() == BlockRenderType.MODEL) {
          World var10 = var1.method3554();
@@ -46,7 +46,7 @@ public class Class5721 extends EntityRenderer<Class907> {
       }
    }
 
-   public ResourceLocation method17843(Class907 var1) {
+   public ResourceLocation method17843(FallingBlockEntity var1) {
       return AtlasTexture.LOCATION_BLOCKS_TEXTURE;
    }
 }
