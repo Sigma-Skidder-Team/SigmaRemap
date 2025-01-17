@@ -33,7 +33,7 @@ public class Class4940 extends Class4800
         super("KeybindManager");
         this.field21214 = false;
         this.field21211 = new Date();
-        this.method14239(this.field21213 = new Class4882(this, "keyboard", (this.field20480 - 1060) / 2, (this.field20481 - 357) / 2));
+        this.addVisualThing(this.field21213 = new Class4882(this, "keyboard", (this.field20480 - 1060) / 2, (this.field20481 - 357) / 2));
         this.field21213.method14288(0.4f, 0.4f);
         this.field21213.method14516(class4941 -> {
             boolean b = false;
@@ -104,7 +104,7 @@ public class Class4940 extends Class4800
         if (this.field21212 != null) {
             this.field21213.method14251();
             this.method14253();
-            this.method14239(this.field21212);
+            this.addVisualThing(this.field21212);
             this.field21212 = null;
         }
         super.method14200(n, n2);

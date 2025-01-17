@@ -18,9 +18,9 @@ public class Class4858 extends Class4841
         this.field20811 = n5;
         final Color color = new Color(n5);
         Color.RGBtoHSB(color.getRed(), color.getGreen(), color.getBlue(), null);
-        this.method14239(this.field20812 = new Class4851(this, "redSlider", 14, 10, n3 - 28, 8, n5, color.getRed()));
-        this.method14239(this.field20813 = new Class4851(this, "greenSlider", 14, 20, n3 - 28, 8, n5, color.getGreen()));
-        this.method14239(this.field20814 = new Class4851(this, "blueSlider", 14, 30, n3 - 28, 8, n5, color.getBlue()));
+        this.addVisualThing(this.field20812 = new Class4851(this, "redSlider", 14, 10, n3 - 28, 8, n5, color.getRed()));
+        this.addVisualThing(this.field20813 = new Class4851(this, "greenSlider", 14, 20, n3 - 28, 8, n5, color.getGreen()));
+        this.addVisualThing(this.field20814 = new Class4851(this, "blueSlider", 14, 30, n3 - 28, 8, n5, color.getBlue()));
         this.field20812.method14516(class4841 -> this.method14573());
         this.field20813.method14516(class4841 -> this.method14573());
         this.field20814.method14516(class4841 -> this.method14573());

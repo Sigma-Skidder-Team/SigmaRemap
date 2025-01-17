@@ -18,8 +18,8 @@ public class Class4838 extends Class4825
     public Class4838(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final String s2) {
         super(class4803, s, n, n2, n3, n4, Class6523.field25964, s2, false);
         this.field20744 = Client.method35173().method35199();
-        this.method14239(this.field20741 = new Class4817(this, "albumView", 0, 0, n3, n4, Class6523.field25964, "View"));
-        this.method14239(this.field20742 = new Class4831(this, "searchInput", 30, 14, n3 - 60, 70, Class4831.field20671, "", "Search..."));
+        this.addVisualThing(this.field20741 = new Class4817(this, "albumView", 0, 0, n3, n4, Class6523.field25964, "View"));
+        this.addVisualThing(this.field20742 = new Class4831(this, "searchInput", 30, 14, n3 - 60, 70, Class4831.field20671, "", "Search..."));
         this.field20742.method14301(true);
     }
     
@@ -45,7 +45,7 @@ public class Class4838 extends Class4825
                     this.method14225(() -> {
                         this.method14245(this.field20741);
                         final Class4817 field20741 = new Class4817(this, "albumView", 0, 0, this.field20480, this.field20481, Class6523.field25964, "View");
-                        this.method14239(this.field20741 = field20741);
+                        this.addVisualThing(this.field20741 = field20741);
                         if (this.field20743 != null) {
                             int j = 0;
                             while (j < this.field20743.size()) {
@@ -55,7 +55,7 @@ public class Class4838 extends Class4825
                                 final int n3;
                                 new Class4910(this.field20741, n2 + j % 3 * 183 - ((j % 3 <= 0) ? 0 : n2) - ((j % 3 <= 1) ? 0 : n2), n3 + n2 + (j - j % 3) / 3 * 210, 183, 220, class7358);
                                 final Class4803 class7359;
-                                field20742.method14239(class7359);
+                                field20742.addVisualThing(class7359);
                                 final Class4803 class7360;
                                 class7360.method14260((class8682, n) -> this.field20744.method24182(null, class7358));
                                 ++j;

@@ -17,7 +17,7 @@ public class Class4899 extends Class4841
     
     public Class4899(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final boolean b) {
         super(class4803, s, n, n2, n3, n4, b);
-        this.method14239(this.field20954 = new Class4831(this, "search", 50, 0, n3 - 60, n4 - 2, Class4831.field20670, "", "Search..."));
+        this.addVisualThing(this.field20954 = new Class4831(this, "search", 50, 0, n3 - 60, n4 - 2, Class4831.field20670, "", "Search..."));
         this.field20954.method14478(false);
         this.field20954.method14473(class4831 -> this.field20955 = this.field20954.method14314());
     }

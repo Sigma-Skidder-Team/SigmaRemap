@@ -44,7 +44,7 @@ public class Class4907 extends Class4841
             this.field20993 += array[i].field32813 + 10;
         }
         this.field20993 -= 10;
-        this.method14239(this.field20987 = new Class4803(this, "modalContent", (this.field20480 - this.field20992) / 2, (this.field20481 - this.field20993) / 2, this.field20992, this.field20993));
+        this.addVisualThing(this.field20987 = new Class4803(this, "modalContent", (this.field20480 - this.field20992) / 2, (this.field20481 - this.field20993) / 2, this.field20992, this.field20993));
         int n = 0;
         int n2 = 0;
         for (final Class7976 class4806 : array) {
@@ -53,19 +53,19 @@ public class Class4907 extends Class4841
                 if (class4806.field32811 != Class294.field1676) {
                     if (class4806.field32811 != Class294.field1677) {
                         if (class4806.field32811 == Class294.field1678) {
-                            this.field20987.method14239(new Class4834(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, new Class6523(Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292), class4806.field32812, ClientFonts.JelloLight36));
+                            this.field20987.addVisualThing(new Class4834(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, new Class6523(Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292), class4806.field32812, ClientFonts.JelloLight36));
                         }
                     }
                     else {
                         final Class4868 class4807;
-                        this.field20987.method14239(class4807 = new Class4868(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, Class6523.field25964, class4806.field32812));
+                        this.field20987.addVisualThing(class4807 = new Class4868(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, Class6523.field25964, class4806.field32812));
                         class4807.field20847 = 4;
                         class4807.method14260((class4803, n) -> this.method14742());
                     }
                 }
                 else {
                     final Class4831 class4808;
-                    this.field20987.method14239(class4808 = new Class4831(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, Class4831.field20670, "", class4806.field32812));
+                    this.field20987.addVisualThing(class4808 = new Class4831(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, Class4831.field20670, "", class4806.field32812));
                     if (!class4806.field32812.contains("Password")) {
                         if (class4806.field32812.contains("Email")) {
                             class4804 = class4808;
@@ -78,7 +78,7 @@ public class Class4907 extends Class4841
                 }
             }
             else {
-                this.field20987.method14239(new Class4834(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, new Class6523(Class265.field1281.field1292, Class265.field1281.field1292, Class265.field1281.field1292, Class265.field1281.field1292), class4806.field32812, ClientFonts.JelloLight20));
+                this.field20987.addVisualThing(new Class4834(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, new Class6523(Class265.field1281.field1292, Class265.field1281.field1292, Class265.field1281.field1292, Class265.field1281.field1292), class4806.field32812, ClientFonts.JelloLight20));
             }
             n2 += class4806.field32813 + 10;
         }

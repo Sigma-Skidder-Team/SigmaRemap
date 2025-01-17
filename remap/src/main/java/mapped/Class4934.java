@@ -68,17 +68,17 @@ public class Class4934 extends Class4800
         }
         this.method14813();
         this.method14814();
-        this.method14239(this.field21139 = new Class4817(this, "alts", 0, 114, (int)(Minecraft.method5277().field4632.method7694() * this.field21143) - 4, Minecraft.method5277().field4632.method7695() - 119 - this.field21145));
-        this.method14239(this.field21140 = new Class4817(this, "altView", (int)(Minecraft.method5277().field4632.method7694() * this.field21143), 114, (int)(Minecraft.method5277().field4632.method7694() * this.field21144) - this.field21145, Minecraft.method5277().field4632.method7695() - 119 - this.field21145));
+        this.addVisualThing(this.field21139 = new Class4817(this, "alts", 0, 114, (int)(Minecraft.method5277().field4632.method7694() * this.field21143) - 4, Minecraft.method5277().field4632.method7695() - 119 - this.field21145));
+        this.addVisualThing(this.field21140 = new Class4817(this, "altView", (int)(Minecraft.method5277().field4632.method7694() * this.field21143), 114, (int)(Minecraft.method5277().field4632.method7694() * this.field21144) - this.field21145, Minecraft.method5277().field4632.method7695() - 119 - this.field21145));
         this.field21139.method14311(false);
         this.field21140.method14311(false);
         this.field21139.method14394(false);
-        this.field21140.method14239(this.field21146 = new Class4837(this.field21140, "", (int)(Minecraft.method5277().field4632.method7694() * this.field21144 - (int)(Minecraft.method5277().field4632.method7694() * this.field21144)) / 2 - 10, Minecraft.method5277().field4632.method7695() / 12, (int)(Minecraft.method5277().field4632.method7694() * this.field21144), 350, "steve"));
-        this.field21140.method14239(this.field21147 = new Class4826(this.field21140, "info", (int)(Minecraft.method5277().field4632.method7694() * this.field21144 - (int)(Minecraft.method5277().field4632.method7694() * this.field21144)) / 2 - 10, this.method14825(), (int)(Minecraft.method5277().field4632.method7694() * this.field21144), 500));
+        this.field21140.addVisualThing(this.field21146 = new Class4837(this.field21140, "", (int)(Minecraft.method5277().field4632.method7694() * this.field21144 - (int)(Minecraft.method5277().field4632.method7694() * this.field21144)) / 2 - 10, Minecraft.method5277().field4632.method7695() / 12, (int)(Minecraft.method5277().field4632.method7694() * this.field21144), 350, "steve"));
+        this.field21140.addVisualThing(this.field21147 = new Class4826(this.field21140, "info", (int)(Minecraft.method5277().field4632.method7694() * this.field21144 - (int)(Minecraft.method5277().field4632.method7694() * this.field21144)) / 2 - 10, this.method14825(), (int)(Minecraft.method5277().field4632.method7694() * this.field21144), 500));
         final Class4894 class9296 = new Class4894(this, "drop", (int)(Minecraft.method5277().field4632.method7694() * this.field21143) - 220, 44, 200, 32, list, 0);
         class9296.method14681(list2, 1);
         class9296.method14694(2);
-        this.method14239(class9296);
+        this.addVisualThing(class9296);
         class9296.method14516(class4895 -> {
             switch (class9296.method14693()) {
                 case 0: {
@@ -105,10 +105,10 @@ public class Class4934 extends Class4800
             }
             this.method14823(false);
         });
-        this.method14239(this.field21155 = new Class4831(this, "textbox", (int)(Minecraft.method5277().field4632.method7694() * this.field21143), 44, 150, 32, Class4831.field20670, "", "Search...", ClientFonts.JelloLight18));
+        this.addVisualThing(this.field21155 = new Class4831(this, "textbox", (int)(Minecraft.method5277().field4632.method7694() * this.field21143), 44, 150, 32, Class4831.field20670, "", "Search...", ClientFonts.JelloLight18));
         this.field21155.method14317(ClientFonts.JelloLight18);
         this.field21155.method14473(class4831 -> this.method14823(false));
-        this.method14239(this.field21151 = new Class4861(this, "btnt", this.method14276() - 90, 43, 70, 30, Class6523.field25964, "Add +", ClientFonts.JelloLight25));
+        this.addVisualThing(this.field21151 = new Class4861(this, "btnt", this.method14276() - 90, 43, 70, 30, Class6523.field25964, "Add +", ClientFonts.JelloLight25));
         this.field21139.method14251();
         this.field21151.method14260((class4803, n) -> {
             if (this.method14820()) {
@@ -119,7 +119,7 @@ public class Class4934 extends Class4800
     
     private void method14811(final Class7971 class7971, final boolean b) {
         final Class4917 class7972;
-        this.field21139.method14239(class7972 = new Class4917(this.field21139, class7971.method25888(), this.field21145, (100 + this.field21145 / 2) * this.method14821(), this.field21139.method14276() - this.field21145 * 2 + 4, 100, class7971));
+        this.field21139.addVisualThing(class7972 = new Class4917(this.field21139, class7971.method25888(), this.field21145, (100 + this.field21145 / 2) * this.method14821(), this.field21139.method14276() - this.field21145 * 2 + 4, 100, class7971));
         if (!b) {
             class7972.field21038 = new Class9572(0, 0);
         }
@@ -182,7 +182,7 @@ public class Class4934 extends Class4800
     }
     
     private void method14813() {
-        this.method14239(this.field21141 = new Class4907(this, "Testt", true, "Add Alt", new Class7976[] { new Class7976(Class294.field1678, "Add Alt", 50), new Class7976(Class294.field1675, "Login with your minecraft", 15), new Class7976(Class294.field1675, "account here!", 25), new Class7976(Class294.field1676, "Email", 50), new Class7976(Class294.field1676, "Password", 50), new Class7976(Class294.field1679, "", 15), new Class7976(Class294.field1677, "Add alt", 50) }));
+        this.addVisualThing(this.field21141 = new Class4907(this, "Testt", true, "Add Alt", new Class7976[] { new Class7976(Class294.field1678, "Add Alt", 50), new Class7976(Class294.field1675, "Login with your minecraft", 15), new Class7976(Class294.field1675, "account here!", 25), new Class7976(Class294.field1676, "Email", 50), new Class7976(Class294.field1676, "Password", 50), new Class7976(Class294.field1679, "", 15), new Class7976(Class294.field1677, "Add alt", 50) }));
         this.field21141.method14516(class4841 -> {
             if (!this.field21141.method14741().get("Email").contains(":")) {
                 final Class7971 class4842 = new Class7971(this.field21141.method14741().get("Email"), this.field21141.method14741().get("Password"));
@@ -207,7 +207,7 @@ public class Class4934 extends Class4800
     }
     
     private void method14814() {
-        this.method14239(this.field21142 = new Class4907(this, "delete", true, "Delete", new Class7976[] { new Class7976(Class294.field1678, "Delete?", 50), new Class7976(Class294.field1675, "Are you sure you want", 15), new Class7976(Class294.field1675, "to delete this alt?", 40), new Class7976(Class294.field1677, "Delete", 50) }));
+        this.addVisualThing(this.field21142 = new Class4907(this, "delete", true, "Delete", new Class7976[] { new Class7976(Class294.field1678, "Delete?", 50), new Class7976(Class294.field1675, "Are you sure you want", 15), new Class7976(Class294.field1675, "to delete this alt?", 40), new Class7976(Class294.field1677, "Delete", 50) }));
     }
     
     @Override

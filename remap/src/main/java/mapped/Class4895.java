@@ -32,7 +32,7 @@ public class Class4895 extends Class4841
         this.field20934 = field20934;
         final int n5 = 10;
         final int n6 = 59;
-        this.method14239(this.field20933 = new Class4819(this, "mods", this.field20929 + n5, this.field20928 + n6, this.field20930 - n5 * 2, this.field20931 - n6 - n5, field20934));
+        this.addVisualThing(this.field20933 = new Class4819(this, "mods", this.field20929 + n5, this.field20928 + n6, this.field20930 - n5 * 2, this.field20931 - n6 - n5, field20934));
         this.field20926 = new Class9572(200, 120);
         this.field20927 = new Class9572(240, 200);
         this.method14311(false);

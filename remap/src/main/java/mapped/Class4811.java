@@ -43,17 +43,17 @@ public class Class4811 extends Class4803
         final StringBuilder append = new StringBuilder().append("Jello for Sigma ");
         Client.method35173();
         final String v18 = append.append("5.0.0b6").toString();
-        this.method14239(this.field20570 = new Class4871(this, "Singleplayer", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.singeplayer, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
-        this.method14239(this.field20571 = new Class4871(this, "Multiplayer", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.multiplayer, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
-        this.method14239(this.field20572 = new Class4871(this, "Realms", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.shop, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
-        this.method14239(this.field20573 = new Class4871(this, "Options", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.options, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
-        this.method14239(this.field20574 = new Class4871(this, "Alt Manager", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.alt, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
-        this.method14239(this.field20577 = new Class4834(this, "Copyright", 10, this.method14278() - 31, v15.getWidth(v17), 128, new Class6523(Class265.field1278.field1292), v17, v15));
-        this.method14239(this.field20576 = new Class4834(this, "Version", this.method14276() - v15.getWidth(v18) - 9, this.method14278() - 31, 128, 128, new Class6523(Class265.field1278.field1292), v18, v15));
-        this.method14239(this.field20579 = new Class4861(this, "changelog", 232, 24, 110, 50, new Class6523(Class6430.method19118(Class265.field1278.field1292, 0.7f)), "                                                                                                        Changelog                                                                   ", ClientFonts.JelloLight20));
+        this.addVisualThing(this.field20570 = new Class4871(this, "Singleplayer", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.singeplayer, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
+        this.addVisualThing(this.field20571 = new Class4871(this, "Multiplayer", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.multiplayer, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
+        this.addVisualThing(this.field20572 = new Class4871(this, "Realms", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.shop, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
+        this.addVisualThing(this.field20573 = new Class4871(this, "Options", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.options, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
+        this.addVisualThing(this.field20574 = new Class4871(this, "Alt Manager", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.alt, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
+        this.addVisualThing(this.field20577 = new Class4834(this, "Copyright", 10, this.method14278() - 31, v15.getWidth(v17), 128, new Class6523(Class265.field1278.field1292), v17, v15));
+        this.addVisualThing(this.field20576 = new Class4834(this, "Version", this.method14276() - v15.getWidth(v18) - 9, this.method14278() - 31, 128, 128, new Class6523(Class265.field1278.field1292), v18, v15));
+        this.addVisualThing(this.field20579 = new Class4861(this, "changelog", 232, 24, 110, 50, new Class6523(Class6430.method19118(Class265.field1278.field1292, 0.7f)), "                                                                                                        Changelog                                                                   ", ClientFonts.JelloLight20));
         this.field20579.method14260((class4803, n) -> ((Class4929)this.method14267()).method14791());
-        this.method14239(this.field20578 = new Class4897(this, "Account", 0, i15, 0, i14, "Log in"));
-        this.method14239(this.field20575 = new Class4839(this, "pre", 0, 0, 240, 100));
+        this.addVisualThing(this.field20578 = new Class4897(this, "Account", 0, i15, 0, i14, "Log in"));
+        this.addVisualThing(this.field20575 = new Class4839(this, "pre", 0, 0, 240, 100));
         this.field20575.method14256((class4803, n) -> {
             if (Client.method35173().method35201().method19347() != null) {
                 ((Class4929)this.method14267()).method14792();

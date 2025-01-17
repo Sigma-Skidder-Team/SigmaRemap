@@ -25,7 +25,7 @@ public class Class1271 implements Runnable
     @Override
     public void run() {
         if (this.field6942.field21164 == null) {
-            this.field6938.method14239(this.field6942.field21164 = new Class4862(this.field6938, "popover", this.field6939, this.field6940, this.field6941));
+            this.field6938.addVisualThing(this.field6942.field21164 = new Class4862(this.field6938, "popover", this.field6939, this.field6940, this.field6941));
             Class4935.method14843(this.field6942, this.field6942.field21164);
         }
     }

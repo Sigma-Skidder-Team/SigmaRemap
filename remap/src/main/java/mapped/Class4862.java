@@ -43,13 +43,13 @@ public class Class4862 extends Class4841
         this.method14301(true);
         this.method14311(false);
         final Class4861 class4804;
-        this.method14239(class4804 = new Class4861(this, "addButton", this.field20480 - 66, this.field20481 - 60, ClientFonts.JelloLight25.getWidth("Add"), 50, Class6523.field25964, "Add", ClientFonts.JelloLight25));
+        this.addVisualThing(class4804 = new Class4861(this, "addButton", this.field20480 - 66, this.field20481 - 60, ClientFonts.JelloLight25.getWidth("Add"), 50, Class6523.field25964, "Add", ClientFonts.JelloLight25));
         class4804.method14260((class4803, n) -> this.method14581(this.field20825.method14314(), this.method14579(), this.field20826.field20984));
-        this.method14239(this.field20825 = new Class4831(this, "Name", 20, 7, this.field20480 - 40, 60, Class4831.field20670, "My waypoint", "My waypoint"));
+        this.addVisualThing(this.field20825 = new Class4831(this, "Name", 20, 7, this.field20480 - 40, 60, Class4831.field20670, "My waypoint", "My waypoint"));
         this.field20825.method14471();
         this.field20825.method14478(false);
-        this.method14239(this.field20826 = new Class4905(this, "badgeSelect", 0, 86));
-        this.method14239(this.field20824 = new Class4831(this, "Cords", 20, this.field20481 - 44, this.field20480 - 100, 20, Class4831.field20670, field20823.getX() + " " + field20823.getZ(), field20823.getX() + " " + field20823.getZ()));
+        this.addVisualThing(this.field20826 = new Class4905(this, "badgeSelect", 0, 86));
+        this.addVisualThing(this.field20824 = new Class4831(this, "Cords", 20, this.field20481 - 44, this.field20480 - 100, 20, Class4831.field20670, field20823.getX() + " " + field20823.getZ(), field20823.getX() + " " + field20823.getZ()));
         this.field20824.method14478(false);
         this.field20824.method14317(ClientFonts.JelloLight18);
     }

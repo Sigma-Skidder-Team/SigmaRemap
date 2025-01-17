@@ -25,7 +25,7 @@ public class Class4941 extends Class4800
         this.method14311(false);
         final int max = Math.max((int)(this.field20481 * 0.8f), 420);
         final int n = (int)(this.field20480 * 0.8f);
-        this.method14239(this.field21226 = new Class4813(this, "centerBlock", this.method14276() - n, this.method14278() - max, n - (this.method14276() - n), max - (this.method14278() - max)));
+        this.addVisualThing(this.field21226 = new Class4813(this, "centerBlock", this.method14276() - n, this.method14278() - max, n - (this.method14276() - n), max - (this.method14278() - max)));
         Class4941.field21224 = new Class9572(300, 100);
     }
     

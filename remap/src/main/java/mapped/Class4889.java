@@ -27,9 +27,9 @@ public class Class4889 extends Class4841
         this.method14301(true);
         this.method14311(false);
         final Class4861 class4804;
-        this.method14239(class4804 = new Class4861(this, "addButton", this.field20480 - 55, 0, ClientFonts.JelloLight25.getWidth("Add"), 69, Class6523.field25964, "+", ClientFonts.JelloLight25));
+        this.addVisualThing(class4804 = new Class4861(this, "addButton", this.field20480 - 55, 0, ClientFonts.JelloLight25.getWidth("Add"), 69, Class6523.field25964, "+", ClientFonts.JelloLight25));
         class4804.method14260((class4803, n) -> this.field20901.method14706(true));
-        this.method14239(this.field20901 = new Class4898(this, "profile", 0, 69, this.field20480, 200));
+        this.addVisualThing(this.field20901 = new Class4898(this, "profile", 0, 69, this.field20480, 200));
         this.field20901.method14301(true);
         this.method14640();
     }
@@ -91,7 +91,7 @@ public class Class4889 extends Class4841
             method14392 = this.field20900.method14392();
             this.method14245(this.field20900);
         }
-        this.method14239(this.field20900 = new Class4817(this, "profileScrollView", 10, 80, this.field20480 - 20, this.field20481 - 80 - 10));
+        this.addVisualThing(this.field20900 = new Class4817(this, "profileScrollView", 10, 80, this.field20480 - 20, this.field20481 - 80 - 10));
         this.field20900.method14391(method14392);
         this.field20902.clear();
         int i = 0;
@@ -99,7 +99,7 @@ public class Class4889 extends Class4841
         final Iterator<Class8241> iterator = Client.method35173().method35189().method21556().method32709().iterator();
         while (iterator.hasNext()) {
             final Class4830 class4830 = new Class4830(this, "profile" + i, 0, n * i, this.field20900.method14276(), n, iterator.next(), i);
-            this.field20900.method14239(class4830);
+            this.field20900.addVisualThing(class4830);
             this.field20902.add(class4830);
             ++i;
         }

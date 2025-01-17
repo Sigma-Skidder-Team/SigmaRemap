@@ -23,23 +23,23 @@ public class Class4887 extends Class4841
     
     public Class4887(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
         super(class4803, s, n, n2, n3, n4, false);
-        this.method14239(this.field20887 = new Class4834(this, "Login", 228, 43, ClientFonts.JelloMedium40.getWidth("Login"), 50, new Class6523(Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292, -7631989), "Login", ClientFonts.JelloMedium40));
-        this.method14239(this.field20891 = new Class4861(this, "LoginButton", 468, 238, ClientFonts.JelloLight25.getWidth("Login"), 70, Class6523.field25964, "Login", ClientFonts.JelloLight25));
-        this.method14239(this.field20892 = new Class4861(this, "RegisterButton", 88, 250, ClientFonts.JelloLight14.getWidth("Register"), 14, Class6523.field25964, "Register", ClientFonts.JelloLight14));
-        this.method14239(this.field20893 = new Class4861(this, "ForgotButton", 60, 275, ClientFonts.JelloLight14.getWidth("Forgot password?"), 14, Class6523.field25964, "Forgot password?", ClientFonts.JelloLight14));
-        this.method14239(this.field20894 = new Class4840(this, "loading", 511, 260, 30, 30));
+        this.addVisualThing(this.field20887 = new Class4834(this, "Login", 228, 43, ClientFonts.JelloMedium40.getWidth("Login"), 50, new Class6523(Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292, -7631989), "Login", ClientFonts.JelloMedium40));
+        this.addVisualThing(this.field20891 = new Class4861(this, "LoginButton", 468, 238, ClientFonts.JelloLight25.getWidth("Login"), 70, Class6523.field25964, "Login", ClientFonts.JelloLight25));
+        this.addVisualThing(this.field20892 = new Class4861(this, "RegisterButton", 88, 250, ClientFonts.JelloLight14.getWidth("Register"), 14, Class6523.field25964, "Register", ClientFonts.JelloLight14));
+        this.addVisualThing(this.field20893 = new Class4861(this, "ForgotButton", 60, 275, ClientFonts.JelloLight14.getWidth("Forgot password?"), 14, Class6523.field25964, "Forgot password?", ClientFonts.JelloLight14));
+        this.addVisualThing(this.field20894 = new Class4840(this, "loading", 511, 260, 30, 30));
         this.field20894.method14305(false);
         this.field20894.method14303(true);
         final int n5 = 50;
         final int n6 = 300;
         final int n7 = 106;
         final Class6523 class4804 = new Class6523(-892679478, -892679478, -892679478, Class265.field1281.field1292, Class2056.field11734, Class2056.field11738);
-        this.method14239(this.field20888 = new Class4831(this, "Username", 228, n7, n6, n5, class4804, "", "Username"));
-        this.method14239(this.field20889 = new Class4831(this, "Password", 228, n7 + 53, n6, n5, class4804, "", "Password"));
+        this.addVisualThing(this.field20888 = new Class4831(this, "Username", 228, n7, n6, n5, class4804, "", "Username"));
+        this.addVisualThing(this.field20889 = new Class4831(this, "Password", 228, n7 + 53, n6, n5, class4804, "", "Password"));
         this.field20888.method14317(ClientFonts.JelloLight20);
         this.field20889.method14317(ClientFonts.JelloLight20);
         this.field20889.method14477(true);
-        this.method14239(this.field20890 = new Class4831(this, "CaptchaBox", 228, n7 + 135, 84, n5, class4804, "", "Captcha"));
+        this.addVisualThing(this.field20890 = new Class4831(this, "CaptchaBox", 228, n7 + 135, 84, n5, class4804, "", "Captcha"));
         this.field20890.method14317(ClientFonts.JelloLight20);
         this.field20890.method14297(false);
         this.field20891.method14260((class4803, n) -> this.method14630());

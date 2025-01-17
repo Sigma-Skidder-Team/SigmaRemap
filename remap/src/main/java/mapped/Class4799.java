@@ -5,7 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.mods.Category;
-import com.mentalfrostbyte.jello.Class4809;
+import com.mentalfrostbyte.jello.UglyClickGUICategory;
 
 public class Class4799 extends Class4800
 {
@@ -31,7 +31,7 @@ public class Class4799 extends Class4800
                 this.method14245(this.field20457);
             }
             final Class4808 field20457 = new Class4808(this, s2, this.method14276() / 2, this.method14278() / 2, array2);
-            this.method14239(this.field20457 = field20457);
+            this.addVisualThing(this.field20457 = field20457);
         });
     }
     
@@ -39,7 +39,7 @@ public class Class4799 extends Class4800
         if (this.field20457 != null) {
             this.method14245(this.field20457);
         }
-        this.method14239(this.field20457 = new Class4809(this, "Sigma", this.method14276() / 2, this.method14278() / 2));
+        this.addVisualThing(this.field20457 = new UglyClickGUICategory(this, "Sigma", this.method14276() / 2, this.method14278() / 2));
     }
     
     @Override

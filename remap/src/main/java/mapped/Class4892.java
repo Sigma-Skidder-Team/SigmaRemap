@@ -44,7 +44,7 @@ public class Class4892 extends Class4841
     }
     
     private void method14673() {
-        this.method14239(this.field20916 = new Class4879(this, this.method14278()));
+        this.addVisualThing(this.field20916 = new Class4879(this, this.method14278()));
         this.field20914 = -1.0f;
         this.field20917 = new Class9572(114, 114, Class2186.field12965);
     }

@@ -53,9 +53,9 @@ public class Class4929 extends Class4800
         for (int i = 0; i < n; ++i) {
             this.field21098.add(new Class4804(this, Integer.toString(i), random.nextInt(Minecraft.method5277().field4632.method7694()), random.nextInt(Minecraft.method5277().field4632.method7695()), 7 + random.nextInt(5), (1 + random.nextInt(4)) * (random.nextBoolean() ? -1 : 1), 1 + random.nextInt(2)));
         }
-        this.method14239(this.field21091 = new Class4811(this, "main", 0, 0, this.field20480, this.field20481));
-        this.method14239(this.field21092 = new Class4812(this, "changelog", 0, 0, this.field20480, this.field20481));
-        this.method14239(this.field21093 = new Class4806(this, "redeem", 0, 0, this.field20480, this.field20481));
+        this.addVisualThing(this.field21091 = new Class4811(this, "main", 0, 0, this.field20480, this.field20481));
+        this.addVisualThing(this.field21092 = new Class4812(this, "changelog", 0, 0, this.field20480, this.field20481));
+        this.addVisualThing(this.field21093 = new Class4806(this, "redeem", 0, 0, this.field20480, this.field20481));
         this.field21092.method14305(false);
         this.field21092.method14303(true);
         this.field21093.method14305(false);

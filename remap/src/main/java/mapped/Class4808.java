@@ -7,7 +7,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
-import com.mentalfrostbyte.jello.Class4809;
+import com.mentalfrostbyte.jello.UglyClickGUICategory;
 
 public class Class4808 extends Class4807
 {
@@ -27,7 +27,7 @@ public class Class4808 extends Class4807
             }
         }
         final Class4886 class4805;
-        this.method14239(class4805 = new Class4886(this, "exit", this.method14276() - 47, 18));
+        this.addVisualThing(class4805 = new Class4886(this, "exit", this.method14276() - 47, 18));
         class4805.method14260((class4803, n) -> {
             if (this.field20528 == null) {
                 ((Class4799)this.method14267()).method14197();
@@ -43,7 +43,7 @@ public class Class4808 extends Class4807
         final int n2 = (int)Math.floor(this.field20529 / 3.0f);
         final int n3 = 170;
         final int n4 = 80;
-        this.method14239(new Class4883(this, class3167.getName(), 40 + n3 * n, 72 + n4 * n2, n3, n4, class3167));
+        this.addVisualThing(new Class4883(this, class3167.getName(), 40 + n3 * n, 72 + n4 * n2, n3, n4, class3167));
         ++this.field20529;
     }
     
@@ -51,7 +51,7 @@ public class Class4808 extends Class4807
         this.method14225(() -> {
             if (this.field20528 == null) {
                 final Class4822 field20528 = new Class4822(this, "settings", 5, 70, this.method14276() - 10, this.method14278() - 75, class3168);
-                this.method14239(this.field20528 = field20528);
+                this.addVisualThing(this.field20528 = field20528);
                 this.field20528.method14301(true);
             }
         });
@@ -73,7 +73,7 @@ public class Class4808 extends Class4807
                 }
                 Class8154.method26889(Class9493.field40808, 20.0f, (float)(this.method14278() - 26), ((Class4883)class4803).field20878.getDesc(), -14540254);
                 Class8154.method26869(5.0f, (float)(this.method14278() - 27), 12.0f, 24.0f);
-                Class8154.method26905(5.0f, (float)(this.method14278() - 27), 24.0f, 24.0f, Class4809.field20557);
+                Class8154.method26905(5.0f, (float)(this.method14278() - 27), 24.0f, 24.0f, UglyClickGUICategory.xmark);
                 Class8154.method26872();
                 break;
             }

@@ -35,7 +35,7 @@ public class Class4917 extends Class4825
         this.field21040 = 0;
         this.field21041 = Class6430.method19120(Class265.field1278.field1292, Class265.field1273.field1292, 20.0f);
         this.field21031 = field21031;
-        this.method14239(this.field21034 = new Class4840(this, "loading", n3 - 50, 35, 30, 30));
+        this.addVisualThing(this.field21034 = new Class4840(this, "loading", n3 - 50, 35, 30, 30));
         this.field21034.method14305(false);
     }
     

@@ -16,7 +16,7 @@ public class Class1435 implements Runnable
     
     @Override
     public void run() {
-        this.field7944.method14239(this.field7945.field21216 = new Class4849(this.field7944, "mods", 0, 0, Class4940.method14883(this.field7945), Class4940.method14884(this.field7945)));
+        this.field7944.addVisualThing(this.field7945.field21216 = new Class4849(this.field7944, "mods", 0, 0, Class4940.method14883(this.field7945), Class4940.method14884(this.field7945)));
         this.field7945.field21216.method14543((class4849, class4850) -> {
             if (class4850 != null) {
                 class4850.method30704(this.field7945.field21213.field20877);

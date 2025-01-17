@@ -20,10 +20,10 @@ public class Class4806 extends Class4803
         this.field20524 = new Class9572(380, 200, Class2186.field12965);
         this.method14311(false);
         final Class4831 class4804;
-        this.method14239(class4804 = new Class4831(this, "redeemBox", 100, 200, 350, 50, Class4831.field20671, "", "Premium Code"));
+        this.addVisualThing(class4804 = new Class4831(this, "redeemBox", 100, 200, 350, 50, Class4831.field20671, "", "Premium Code"));
         final Class4861 class4805;
-        this.method14239(class4805 = new Class4861(this, "redeembtn", 100, 290, 80, 30, new Class6523(Class265.field1278.field1292, Class265.field1278.field1292, Class265.field1278.field1292), "Redeem", ClientFonts.JelloLight20));
-        this.method14239(this.field20526 = new Class4831(this, "captcha", 195, 290, 75, 35, Class4831.field20671, "", "Captcha"));
+        this.addVisualThing(class4805 = new Class4861(this, "redeembtn", 100, 290, 80, 30, new Class6523(Class265.field1278.field1292, Class265.field1278.field1292, Class265.field1278.field1292), "Redeem", ClientFonts.JelloLight20));
+        this.addVisualThing(this.field20526 = new Class4831(this, "captcha", 195, 290, 75, 35, Class4831.field20671, "", "Captcha"));
         this.field20526.method14317(ClientFonts.JelloLight18);
         this.field20526.method14297(false);
         class4805.method14260((class4832, n) -> new Thread(() -> {

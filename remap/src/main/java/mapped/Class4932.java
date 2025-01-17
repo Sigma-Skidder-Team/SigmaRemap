@@ -27,7 +27,7 @@ public class Class4932 extends Class4800
         final int n = 48;
         final int n2 = 27;
         final int n3 = 14;
-        this.method14239(this.field21124 = new Class4915(this, "snake", (this.field20480 - n * n3) / 2, (this.method14278() - n2 * n3) / 2 + 30, n, 27, n3));
+        this.addVisualThing(this.field21124 = new Class4915(this, "snake", (this.field20480 - n * n3) / 2, (this.method14278() - n2 * n3) / 2 + 30, n, 27, n3));
     }
     
     @Override

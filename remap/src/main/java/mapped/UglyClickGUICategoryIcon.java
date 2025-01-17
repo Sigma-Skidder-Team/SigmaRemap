@@ -7,13 +7,13 @@ package mapped;
 import org.lwjgl.opengl.GL11;
 import slick2d.Texture;
 
-public class Class4853 extends Class4841
+public class UglyClickGUICategoryIcon extends Class4841
 {
     private static String[] field20591;
     public Texture field20795;
     public Texture field20796;
     
-    public Class4853(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final String s2, final Texture field20795, final Texture field20796) {
+    public UglyClickGUICategoryIcon(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final String s2, final Texture field20795, final Texture field20796) {
         super(class4803, s, n, n2, n3, n4, Class6523.field25964, s2, false);
         this.field20795 = field20795;
         this.field20796 = field20796;

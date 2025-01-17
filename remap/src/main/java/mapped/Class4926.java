@@ -40,10 +40,10 @@ public class Class4926 extends Class4800
         this.field21080 = new Class9572(250, 250, Class2186.field12965);
         this.method14311(false);
         this.field21074 = ClientAssets.method25396("com/mentalfrostbyte/gui/resources/" + ClientAssets.getPanorama(), 0.075f, 8);
-        this.method14239(this.field21075 = new Class4887(this, "login", (this.field20480 - Class4887.field20896) / 2, (this.field20481 - Class4887.field20895) / 2, Class4887.field20896, Class4887.field20895));
-        this.method14239(this.field21076 = new Class4866(this, "register", (this.field20480 - Class4866.field20842) / 2, (this.field20481 - Class4866.field20841) / 2, Class4866.field20842, Class4866.field20841));
+        this.addVisualThing(this.field21075 = new Class4887(this, "login", (this.field20480 - Class4887.field20896) / 2, (this.field20481 - Class4887.field20895) / 2, Class4887.field20896, Class4887.field20895));
+        this.addVisualThing(this.field21076 = new Class4866(this, "register", (this.field20480 - Class4866.field20842) / 2, (this.field20481 - Class4866.field20841) / 2, Class4866.field20842, Class4866.field20841));
         this.method14780();
-        this.method14239(this.field21078 = new Class4861(this, "continue", this.field20480 / 2 - 120, this.field20481 / 2 + 120, 240, 60, new Class6523(Class6430.method19118(Class265.field1278.field1292, 0.5f)), "Continue", ClientFonts.JelloLight25));
+        this.addVisualThing(this.field21078 = new Class4861(this, "continue", this.field20480 / 2 - 120, this.field20481 / 2 + 120, 240, 60, new Class6523(Class6430.method19118(Class265.field1278.field1292, 0.5f)), "Continue", ClientFonts.JelloLight25));
         this.field21078.method14297(false);
         this.field21075.method14516(class4841 -> {
             this.field21079 = true;

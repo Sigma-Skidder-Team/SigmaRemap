@@ -37,8 +37,8 @@ public class Class4822 extends Class4817
     private int method14434(final Class4803 class4803, final Setting class4804, final int n, int n2, final int n3) {
         final Class4834 class4805 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, 0, 0, Class4834.field20719, class4804.method15204(), this.field20496);
         final Class4852 class4806 = new Class4852(class4803, class4804.method15204() + "desc", n + 195, n2 + 4, 330, 18, class4804);
-        class4803.method14239(class4805);
-        class4803.method14239(class4806);
+        class4803.addVisualThing(class4805);
+        class4803.addVisualThing(class4806);
         switch (Class8559.field35939[class4804.method15197().ordinal()]) {
             case 1: {
                 final Class4864 class4807 = new Class4864(class4803, class4804.method15204() + "checkbox", n + 135, n2 + 4, 40, 18);
@@ -49,7 +49,7 @@ public class Class4822 extends Class4817
                     }
                 });
                 class4807.method14516(class4998 -> class4804.method15199(((Class4864)class4998).method14588()));
-                class4803.method14239(class4807);
+                class4803.addVisualThing(class4807);
                 n2 += 18 + n3;
                 break;
             }
@@ -75,7 +75,7 @@ public class Class4822 extends Class4817
                     }
                     class4805.method14315(class4804.method15204() + ": " + Float.toString(class4804.method15198()));
                 });
-                class4803.method14239(class4809);
+                class4803.addVisualThing(class4809);
                 n2 += 54;
                 break;
             }
@@ -83,7 +83,7 @@ public class Class4822 extends Class4817
                 final int n4 = 114;
                 final int n5 = 27;
                 final Class4832 class4810;
-                this.method14239(class4810 = new Class4832(class4803, class4804.method15204() + "txt", n, n2 + 27, n4, n5, Class4831.field20670, (String)class4804.method15198(), class4804.method15204(), ClientFonts.Default));
+                this.addVisualThing(class4810 = new Class4832(class4803, class4804.method15204() + "txt", n, n2 + 27, n4, n5, Class4831.field20670, (String)class4804.method15198(), class4804.method15204(), ClientFonts.Default));
                 class4810.method14317(ClientFonts.JelloLight18);
                 class4810.method14473(class4998 -> class4804.method15199(class4998.method14314()));
                 class4804.method15195(class4833 -> {
@@ -102,7 +102,7 @@ public class Class4822 extends Class4817
                     }
                 });
                 class4811.method14516(class4998 -> ((StringSetting)class4804).method15214(((Class4890)class4998).method14654()));
-                class4803.method14239(class4811);
+                class4803.addVisualThing(class4811);
                 n2 += 65;
                 break;
             }
@@ -115,7 +115,7 @@ public class Class4822 extends Class4817
                 });
                 class4812.method14516(class4998 -> class4804.method15199(((Class4875)class4998).method14610()));
                 class4812.method14270((class4804, class4805) -> class4804.method14273(class4803.method14276() - 123 - n3));
-                class4803.method14239(class4812);
+                class4803.addVisualThing(class4812);
                 n2 += 27 + n3;
             }
             case 6: {}
@@ -124,7 +124,7 @@ public class Class4822 extends Class4817
     }
     
     private void method14390() {
-        this.method14239(new Class4834(this, "settingsname", 12, 2, this.field20480, 20, Class4834.field20719, this.field20634.getName2() + " Settings", this.field20496));
+        this.addVisualThing(new Class4834(this, "settingsname", 12, 2, this.field20480, 20, Class4834.field20719, this.field20634.getName2() + " Settings", this.field20496));
         int method14434 = 35;
         final Iterator<Setting> iterator = this.field20634.method9899().values().iterator();
         while (iterator.hasNext()) {
@@ -140,13 +140,13 @@ public class Class4822 extends Class4817
                 while (iterator2.hasNext()) {
                     method14435 = this.method14434(value, iterator2.next(), 30, method14435, 20);
                 }
-                this.method14239(value);
+                this.addVisualThing(value);
                 this.field20636.put(key, value);
             }
             class3247.method10261((class3247, key, b) -> this.field20636.get(key).method14297(b));
             class3247.method10258();
         }
-        this.method14239(new Class4834(this, "lbl", 5, 200, 0, 33, Class4834.field20719, this.field20495));
+        this.addVisualThing(new Class4834(this, "lbl", 5, 200, 0, 33, Class4834.field20719, this.field20495));
     }
     
     public void method14435() {

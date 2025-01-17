@@ -41,7 +41,7 @@ public class Class4850 extends Class4841
         this.method14311(false);
         this.method14549();
         final Class4861 class4804;
-        this.method14239(class4804 = new Class4861(this, "addButton", this.field20480 - 70, this.field20481 - 70, ClientFonts.JelloLight25.getWidth("Add"), 70, Class6523.field25964, "Add", ClientFonts.JelloLight25));
+        this.addVisualThing(class4804 = new Class4861(this, "addButton", this.field20480 - 70, this.field20481 - 70, ClientFonts.JelloLight25.getWidth("Add"), 70, Class6523.field25964, "Add", ClientFonts.JelloLight25));
         class4804.method14260((class4803, n) -> this.method14551());
     }
     
@@ -66,7 +66,7 @@ public class Class4850 extends Class4841
                 continue;
             }
             final Class4896 class4805;
-            this.method14239(class4805 = new Class4896(this, class4804.method30702(), 0, 20 + 55 * n, this.field20480, 55, class4804, n++));
+            this.addVisualThing(class4805 = new Class4896(this, class4804.method30702(), 0, 20 + 55 * n, this.field20480, 55, class4804, n++));
             class4805.method14516(class8800 -> {
                 class4804.method30704(0);
                 this.method14517();

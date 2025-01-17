@@ -22,7 +22,7 @@ public class Class4854 extends Class4841
         super(class4803, s, n, n2, n3, n4, false);
         this.field20797 = new ArrayList<String>();
         this.field20800 = field20800;
-        this.method14239(this.field20799 = new Class4831(this, "textbox", 0, 0, n3, 32, Class4831.field20670, "", "Search...", ClientFonts.JelloLight14));
+        this.addVisualThing(this.field20799 = new Class4831(this, "textbox", 0, 0, n3, 32, Class4831.field20670, "", "Search...", ClientFonts.JelloLight14));
         this.field20799.method14317(ClientFonts.JelloLight18);
         this.field20799.method14473(class4831 -> this.method14560(this.field20799.method14314()));
         this.method14562(array);
@@ -35,7 +35,7 @@ public class Class4854 extends Class4841
                 this.method14245(this.field20798);
             }
             final Class4817 field20798 = new Class4817(this, "scrollview", 0, 40, this.field20480, this.field20481 - 40);
-            this.method14239(this.field20798 = field20798);
+            this.addVisualThing(this.field20798 = field20798);
             final ArrayList list = new ArrayList();
             Registry.field211.iterator();
             final Iterator iterator;
@@ -72,7 +72,7 @@ public class Class4854 extends Class4841
                         final int n;
                         new Class4902(this, "btn" + str, 0, 0, n, n, class4038.method11741());
                         final Class4803 class4040;
-                        field20799.method14239(class4040);
+                        field20799.addVisualThing(class4040);
                         final Class4902 class4041;
                         class4041.method14725(this.field20797.contains(str), false);
                         class4041.method14516(class4903 -> {

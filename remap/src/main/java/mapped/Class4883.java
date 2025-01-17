@@ -14,12 +14,12 @@ public class Class4883 extends Class4841
         super(class4803, s, n, n2, n3, n4, false);
         this.field20878 = field20878;
         final Class4864 class4804;
-        this.method14239(class4804 = new Class4864(this, "enable", 114, 9, 40, 18));
+        this.addVisualThing(class4804 = new Class4864(this, "enable", 114, 9, 40, 18));
         class4804.method14589(field20878.method9906());
         class4804.method14516(class3169 -> field20878.method9909(class4804.method14588()));
         if (field20878.method9899().size() > 0) {
             final Class4888 class4805;
-            this.method14239(class4805 = new Class4888(this, "gear", 132, 32));
+            this.addVisualThing(class4805 = new Class4888(this, "gear", 132, 32));
             class4805.method14260((class3168, n) -> ((Class4808)this.method14267()).method14328(field20878));
         }
     }

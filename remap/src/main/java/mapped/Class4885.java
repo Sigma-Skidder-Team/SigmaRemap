@@ -19,9 +19,9 @@ public class Class4885 extends Class4841
         this.field20881 = n5;
         final Color color = new Color(n5);
         final float[] rgBtoHSB = Color.RGBtoHSB(color.getRed(), color.getGreen(), color.getBlue(), null);
-        this.method14239(this.field20883 = new Class4904(this, "block", 10, 10, n3 - 20, n4 - 50, rgBtoHSB[0], rgBtoHSB[1], rgBtoHSB[2]));
-        this.method14239(this.field20884 = new Class4903(this, "slider", 14, n4 - 25, n3 - 65, 8, rgBtoHSB[0]));
-        this.method14239(this.field20885 = new Class4884(this, "bubble", n3 - 40, n4 - 32, 25, 25, color.getRGB()));
+        this.addVisualThing(this.field20883 = new Class4904(this, "block", 10, 10, n3 - 20, n4 - 50, rgBtoHSB[0], rgBtoHSB[1], rgBtoHSB[2]));
+        this.addVisualThing(this.field20884 = new Class4903(this, "slider", 14, n4 - 25, n3 - 65, 8, rgBtoHSB[0]));
+        this.addVisualThing(this.field20885 = new Class4884(this, "bubble", n3 - 40, n4 - 32, 25, 25, color.getRGB()));
         this.field20883.method14516(class4841 -> this.method14624());
         this.field20884.method14516(class4841 -> this.method14624());
         this.field20885.method14260((class4803, n) -> this.method14619(!this.method14621()));

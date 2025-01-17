@@ -60,10 +60,10 @@ public class Class4937 extends Class4800
         final StringBuilder append = new StringBuilder().append("Sigma ");
         Client.method35173();
         final String string = append.append("5.0.0b6").append(" for Minecraft 1.8 to 1.15").toString();
-        this.method14239(this.field21194 = new Class4920(this, "particles"));
+        this.addVisualThing(this.field21194 = new Class4920(this, "particles"));
         final int n = 480;
-        this.method14239(this.field21195 = new Class4814(this, "group", (this.method14276() - n) / 2, this.method14278() / 2 - 230, n, 480));
-        this.method14239(this.field21187 = new Class4834(this, "Copyright", 10, 8, field40807.getWidth(s), 140, new Class6523(Class265.field1278.field1292), s, ClientFonts.JelloLight18));
+        this.addVisualThing(this.field21195 = new Class4814(this, "group", (this.method14276() - n) / 2, this.method14278() / 2 - 230, n, 480));
+        this.addVisualThing(this.field21187 = new Class4834(this, "Copyright", 10, 8, field40807.getWidth(s), 140, new Class6523(Class265.field1278.field1292), s, ClientFonts.JelloLight18));
         final Class6523 class6523 = new Class6523(Class6430.method19118(Class265.field1278.field1292, 0.5f));
         class6523.method19734(Class6430.method19118(Class265.field1278.field1292, 0.5f));
         final ArrayList list = new ArrayList();
@@ -71,10 +71,10 @@ public class Class4937 extends Class4800
         list.add("Tomygames");
         list.add("Omikron");
         Collections.shuffle(list);
-        this.method14239(new Class4834(this, "names", 130, 9, field40807.getWidth(s), 140, class6523, "by " + (String)list.get(0) + ", " + (String)list.get(1) + ", " + (String)list.get(2), Class9493.field40808));
-        this.method14239(this.field21186 = new Class4834(this, "Version", this.method14276() - field40807.getWidth(string) - 9, this.method14278() - 31, 114, 140, new Class6523(Class265.field1278.field1292), string, field40807));
-        this.method14239(new Class4834(this, "Hello", 10, this.method14278() - 55, 114, 140, new Class6523(Class265.field1278.field1292), "Hello,", field40807));
-        this.method14239(new Class4834(this, "Latest", 10, this.method14278() - 31, 114, 140, new Class6523(Class265.field1278.field1292), "You are using the latest version", field40807));
+        this.addVisualThing(new Class4834(this, "names", 130, 9, field40807.getWidth(s), 140, class6523, "by " + (String)list.get(0) + ", " + (String)list.get(1) + ", " + (String)list.get(2), Class9493.field40808));
+        this.addVisualThing(this.field21186 = new Class4834(this, "Version", this.method14276() - field40807.getWidth(string) - 9, this.method14278() - 31, 114, 140, new Class6523(Class265.field1278.field1292), string, field40807));
+        this.addVisualThing(new Class4834(this, "Hello", 10, this.method14278() - 55, 114, 140, new Class6523(Class265.field1278.field1292), "Hello,", field40807));
+        this.addVisualThing(new Class4834(this, "Latest", 10, this.method14278() - 31, 114, 140, new Class6523(Class265.field1278.field1292), "You are using the latest version", field40807));
         this.field21196 = (float)(this.method14276() / 2);
         this.field21197 = (float)(this.method14278() / 2);
     }

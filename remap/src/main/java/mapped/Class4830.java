@@ -39,13 +39,13 @@ public class Class4830 extends Class4825
         method19740.method19730(-3254955);
         method19740.method19728(-4700859);
         method19740.method19734(Class265.field1278.field1292);
-        this.method14239(this.field20660 = new Class4922(this, "edit", n3 - this.field20667, 0, this.field20667, field20668));
+        this.addVisualThing(this.field20660 = new Class4922(this, "edit", n3 - this.field20667, 0, this.field20667, field20668));
         final Class4881 class4804;
-        this.field20660.method14239(class4804 = new Class4881(this.field20660, "rename", 0, 0, this.field20667 / 2, field20668, method19739, "Rename"));
+        this.field20660.addVisualThing(class4804 = new Class4881(this.field20660, "rename", 0, 0, this.field20667 / 2, field20668, method19739, "Rename"));
         final Class4881 class4805;
-        this.field20660.method14239(class4805 = new Class4881(this.field20660, "remove", this.field20667 / 2, 0, this.field20667 / 2, field20668, method19740, "Delete"));
+        this.field20660.addVisualThing(class4805 = new Class4881(this.field20660, "remove", this.field20667 / 2, 0, this.field20667 / 2, field20668, method19740, "Delete"));
         this.field20660.method14305(false);
-        this.method14239(this.field20665 = new Class4831(this, "profileName", 16, 8, this.method14276() - 60, 50, new Class6523(-892679478, -892679478, -892679478, Class265.field1273.field1292, Class2056.field11734, Class2056.field11738), field20669.field33839));
+        this.addVisualThing(this.field20665 = new Class4831(this, "profileName", 16, 8, this.method14276() - 60, 50, new Class6523(-892679478, -892679478, -892679478, Class265.field1273.field1292, Class2056.field11734, Class2056.field11738), field20669.field33839));
         this.field20665.method14478(false);
         this.field20665.method14317(ClientFonts.JelloLight24);
         this.field20665.method14297(false);

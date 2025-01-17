@@ -15,20 +15,20 @@ public class Class4813 extends Class4803
         final Class6523 method19739 = Class6523.field25964.method19739();
         method19739.method19730(Class265.field1278.field1292);
         final Class4861 class4804;
-        this.method14239(class4804 = new Class4861(this, "openKeybinds", n3 / 2 - 300, n4 - 80, 300, 38, method19739, "Open Keybind Manager", ClientFonts.JelloLight24));
+        this.addVisualThing(class4804 = new Class4861(this, "openKeybinds", n3 / 2 - 300, n4 - 80, 300, 38, method19739, "Open Keybind Manager", ClientFonts.JelloLight24));
         final Class4861 class4805;
-        this.method14239(class4805 = new Class4861(this, "openGui", n3 / 2, n4 - 80, 300, 38, method19739, "Open Jello's Click GUI", ClientFonts.JelloLight24));
+        this.addVisualThing(class4805 = new Class4861(this, "openGui", n3 / 2, n4 - 80, 300, 38, method19739, "Open Jello's Click GUI", ClientFonts.JelloLight24));
         final Class4861 class4806;
-        this.method14239(class4806 = new Class4861(this, "credits", n3 / 2 - 100, n4 - 280, 200, 38, method19739, "Credits", ClientFonts.JelloLight18));
+        this.addVisualThing(class4806 = new Class4861(this, "credits", n3 / 2 - 100, n4 - 280, 200, 38, method19739, "Credits", ClientFonts.JelloLight18));
         class4804.method14260((class4803, n) -> Class4941.method14887(new Class531(new StringTextComponent("Keybind Manager"))));
         class4805.method14260((class4803, n) -> Class4941.method14887(new Class722(new StringTextComponent("Click GUI"))));
         class4806.method14260((class4803, n) -> Class4941.method14887(new Class718(new StringTextComponent("GuiCredits"))));
         final Class4867 class4807;
-        this.method14239(class4807 = new Class4867(this, "guiBlurCheckBox", n3 / 2 - 70, n4 - 220, 25, 25));
+        this.addVisualThing(class4807 = new Class4867(this, "guiBlurCheckBox", n3 / 2 - 70, n4 - 220, 25, 25));
         class4807.method14602(Client.method35173().method35193().method32144(), false);
         class4807.method14516(class4868 -> Client.method35173().method35193().method32143(class4807.method14600()));
         final Class4867 class4808;
-        this.method14239(class4808 = new Class4867(this, "guiBlurIngameCheckBox", n3 / 2 + 130, n4 - 220, 25, 25));
+        this.addVisualThing(class4808 = new Class4867(this, "guiBlurIngameCheckBox", n3 / 2 + 130, n4 - 220, 25, 25));
         class4808.method14602(Client.method35173().method35193().method32146(), false);
         class4808.method14516(class4868 -> Client.method35173().method35193().method32145(class4808.method14600()));
     }

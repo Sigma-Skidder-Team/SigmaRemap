@@ -26,15 +26,15 @@ public class Class4938 extends Class4800
         final int n = 400;
         int n2 = 114;
         final int n3 = (this.method14276() - n) / 2;
-        this.method14239(this.field21199 = new Class4832(this, "username", n3, n2, n, 45, Class4832.field20670, "", "Username / E-Mail", ClientFonts.Default));
+        this.addVisualThing(this.field21199 = new Class4832(this, "username", n3, n2, n, 45, Class4832.field20670, "", "Username / E-Mail", ClientFonts.Default));
         n2 += 80;
-        this.method14239(this.field21200 = new Class4832(this, "password", n3, n2, n, 45, Class4832.field20670, "", "Password", ClientFonts.Default));
+        this.addVisualThing(this.field21200 = new Class4832(this, "password", n3, n2, n, 45, Class4832.field20670, "", "Password", ClientFonts.Default));
         n2 += 190;
-        this.method14239(this.field21201 = new Class4909(this, "login", n3, n2, n, 40, "Login", Class265.field1281.field1292));
+        this.addVisualThing(this.field21201 = new Class4909(this, "login", n3, n2, n, 40, "Login", Class265.field1281.field1292));
         n2 += 50;
-        this.method14239(this.field21202 = new Class4909(this, "back", n3, n2, n, 40, "Back", Class265.field1281.field1292));
+        this.addVisualThing(this.field21202 = new Class4909(this, "back", n3, n2, n, 40, "Back", Class265.field1281.field1292));
         n2 += 50;
-        this.method14239(this.field21203 = new Class4909(this, "import", n3, n2, n, 40, "Import user:pass", Class265.field1281.field1292));
+        this.addVisualThing(this.field21203 = new Class4909(this, "import", n3, n2, n, 40, "Import user:pass", Class265.field1281.field1292));
         this.field21200.method14477(true);
         this.field21200.method14470("*");
         this.field21201.method14260((class4803, n) -> {

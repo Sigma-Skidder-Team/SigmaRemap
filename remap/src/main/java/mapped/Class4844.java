@@ -10,7 +10,7 @@ public class Class4844 extends Class4841
     
     public Class4844(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
         super(class4803, s, n, n2, n3, n4, false);
-        this.method14239(this.field20756 = new Class4824(this, "messages", 0, 114, n3, n4 - 114));
+        this.addVisualThing(this.field20756 = new Class4824(this, "messages", 0, 114, n3, n4 - 114));
     }
     
     public void method14522(final String s) {

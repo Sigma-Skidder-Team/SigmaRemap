@@ -39,19 +39,19 @@ public class Class4849 extends Class4841
         this.field20775 = (n4 - this.field20778) / 2;
         final int n5 = 30;
         final Class4831 class4804;
-        this.method14239(class4804 = new Class4831(this, "search", this.field20776 + n5, this.field20775 + n5 + 50, this.field20777 - n5 * 2, 60, Class4831.field20670, "", "Search..."));
+        this.addVisualThing(class4804 = new Class4831(this, "search", this.field20776 + n5, this.field20775 + n5 + 50, this.field20777 - n5 * 2, 60, Class4831.field20670, "", "Search..."));
         class4804.method14473(class4832 -> {
             this.field20779 = class4804.method14314();
             this.field20780.method14391(0);
         });
         class4804.method14251();
-        this.method14239(this.field20780 = new Class4817(this, "mods", this.field20776 + n5, this.field20775 + n5 + 120, this.field20777 - n5 * 2, this.field20778 - n5 * 2 - 120));
+        this.addVisualThing(this.field20780 = new Class4817(this, "mods", this.field20776 + n5, this.field20775 + n5 + 120, this.field20777 - n5 * 2, this.field20778 - n5 * 2 - 120));
         int n6 = 10;
         final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator = Class9000.field37983.entrySet().iterator();
         while (iterator.hasNext()) {
             final Class8799 class4805 = new Class8799(((Map.Entry<Class<? extends Screen>, V>)iterator.next()).getKey());
             final Class4868 class4806;
-            this.field20780.method14239(class4806 = new Class4868(this.field20780, class4805.method30702(), 0, n6++ * 55, this.field20780.method14276(), 55, new Class6523(Class6430.method19118(Class265.field1273.field1292, 0.02f), -986896).method19734(Class6430.method19118(Class265.field1273.field1292, 0.5f)).method19736(Class2056.field11738), class4805.method30702()));
+            this.field20780.addVisualThing(class4806 = new Class4868(this.field20780, class4805.method30702(), 0, n6++ * 55, this.field20780.method14276(), 55, new Class6523(Class6430.method19118(Class265.field1273.field1292, 0.02f), -986896).method19734(Class6430.method19118(Class265.field1273.field1292, 0.5f)).method19736(Class2056.field11738), class4805.method30702()));
             class4806.method14260((class4869, n) -> {
                 final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator = Class9000.field37983.entrySet().iterator();
                 while (iterator.hasNext()) {
@@ -67,7 +67,7 @@ public class Class4849 extends Class4841
         n6 += 50;
         for (final Module class4807 : Client.method35173().method35189().method21553().values()) {
             final Class4868 class4808;
-            this.field20780.method14239(class4808 = new Class4868(this.field20780, class4807.getName(), 0, n6++ * 40, this.field20780.method14276(), 40, new Class6523(16777215, -986896).method19734(Class265.field1273.field1292).method19736(Class2056.field11734), new Class8799(class4807).method30702()));
+            this.field20780.addVisualThing(class4808 = new Class4868(this.field20780, class4807.getName(), 0, n6++ * 40, this.field20780.method14276(), 40, new Class6523(16777215, -986896).method19734(Class265.field1273.field1292).method19736(Class2056.field11734), new Class8799(class4807).method30702()));
             class4808.method14603(10);
             class4808.method14260((class4869, n) -> {
                 for (final Module class4870 : Client.method35173().method35189().method21553().values()) {

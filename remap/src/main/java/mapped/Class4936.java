@@ -47,7 +47,7 @@ public class Class4936 extends Class4800
         this.field21185 = "§7Idle...";
         this.method14311(false);
         final Class4920 class4920;
-        this.method14239(class4920 = new Class4920(this, "particles"));
+        this.addVisualThing(class4920 = new Class4920(this, "particles"));
         class4920.method14303(true);
         final ArrayList list = new ArrayList();
         final Class9295 class4921 = new Class9295(Minecraft.method5277());
@@ -59,18 +59,18 @@ public class Class4936 extends Class4800
             }
         }
         final int n = 790;
-        this.method14239(this.field21183 = new Class4832(this, "textbox", (Minecraft.method5277().field4632.method7694() - n) / 2 - 140, this.method14278() - 40, 140, 32, Class4831.field20670, "", "Search...", ClientFonts.JelloLight18));
+        this.addVisualThing(this.field21183 = new Class4832(this, "textbox", (Minecraft.method5277().field4632.method7694() - n) / 2 - 140, this.method14278() - 40, 140, 32, Class4831.field20670, "", "Search...", ClientFonts.JelloLight18));
         this.field21183.method14317(ClientFonts.Default);
         this.field21183.method14473(class4831 -> this.method14851());
         this.method14852();
-        this.method14239(this.field21184 = new Class4810(this, "toolbar", (Minecraft.method5277().field4632.method7694() - n) / 2 + 16, this.method14278() - 94));
+        this.addVisualThing(this.field21184 = new Class4810(this, "toolbar", (Minecraft.method5277().field4632.method7694() - n) / 2 + 16, this.method14278() - 94));
         this.field21184.method14305(false);
     }
     
     private void method14844(final Class7971 class7971) {
         final int n = 52;
         final Class4836 class7972;
-        this.field21172.method14239(class7972 = new Class4836(this.field21172, class7971.method25888(), 4, n * this.method14849() + 4, this.field21172.method14276() - 8, n, class7971));
+        this.field21172.addVisualThing(class7972 = new Class4836(this.field21172, class7971.method25888(), 4, n * this.method14849() + 4, this.field21172.method14276() - 8, n, class7971));
         class7972.method14260((class4837, n) -> {
             if (n == 0) {
                 final Class4836 method14855 = this.method14855();

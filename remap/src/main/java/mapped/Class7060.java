@@ -5,7 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
-import com.mentalfrostbyte.jello.Class7178;
+import com.mentalfrostbyte.jello.JelloTouch;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
@@ -33,7 +33,7 @@ public class Class7060
 {
     private Map<Class<? extends Module>, Module> field27468;
     private Class9076 field27469;
-    private Class7178 field27470;
+    private JelloTouch field27470;
     private List<Module> field27471;
     
     public Class7060() {
@@ -295,7 +295,7 @@ public class Class7060
             method13268 = "Classic";
         }
         this.field27469 = new Class9076();
-        this.field27470 = new Class7178();
+        this.field27470 = new JelloTouch();
         try {
             this.field27469.method32704(method13268);
             this.field27470.method21963(class4405);
@@ -374,7 +374,7 @@ public class Class7060
         return this.field27469;
     }
     
-    public Class7178 method21557() {
+    public JelloTouch method21557() {
         return this.field27470;
     }
 }

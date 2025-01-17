@@ -39,12 +39,12 @@ public class Class4924 extends Class4815
         this.method14225(() -> {
             this.method14245(this.field21062);
             final Class4821 field21062 = new Class4821(this, "modListView", 0, 60, this.method14276(), this.method14278() - 60, this.field21061);
-            this.method14239(this.field21062 = field21062);
+            this.addVisualThing(this.field21062 = field21062);
         });
     }
     
     private void method14773() {
-        this.method14239(this.field21062 = new Class4821(this, "modListView", 0, 60, this.method14276(), this.method14278() - 60, this.field21061));
+        this.addVisualThing(this.field21062 = new Class4821(this, "modListView", 0, 60, this.method14276(), this.method14278() - 60, this.field21061));
         this.field21062.method14270(new Class6508());
         this.field21062.method14270((class4803, class4804) -> {
             class4803.method14275(60);

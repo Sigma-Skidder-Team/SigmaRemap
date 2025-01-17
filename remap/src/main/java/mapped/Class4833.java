@@ -67,11 +67,11 @@ public class Class4833 extends Class4825
         this.method14279(600);
         this.method14273(Math.abs(this.method14272()));
         this.method14275(Math.abs(this.method14274()));
-        this.method14239(this.field20695 = new Class4817(this, "musictabs", 0, this.field20691 + 14, this.field20689, this.method14278() - 64 - this.field20692));
-        this.method14239(this.field20697 = new Class4817(this, "musiccontrols", this.field20689, this.method14278() - this.field20692, this.method14276() - this.field20689, this.field20692));
-        this.method14239(this.field20709 = new Class4803(this, "reShowView", 0, 0, 1, this.method14278()));
+        this.addVisualThing(this.field20695 = new Class4817(this, "musictabs", 0, this.field20691 + 14, this.field20689, this.method14278() - 64 - this.field20692));
+        this.addVisualThing(this.field20697 = new Class4817(this, "musiccontrols", this.field20689, this.method14278() - this.field20692, this.method14276() - this.field20689, this.field20692));
+        this.addVisualThing(this.field20709 = new Class4803(this, "reShowView", 0, 0, 1, this.method14278()));
         final Class4906 class4804;
-        this.method14239(class4804 = new Class4906(this, "spectrumButton", 15, this.field20481 - 140, 40, 40, this.field20698.method24178()));
+        this.addVisualThing(class4804 = new Class4906(this, "spectrumButton", 15, this.field20481 - 140, 40, 40, this.field20698.method24178()));
         class4804.method14301(true);
         class4804.method14260((class4803, n) -> {
             this.field20698.method24177(!this.field20698.method24178());
@@ -101,15 +101,15 @@ public class Class4833 extends Class4825
             ((Thread)list.get(list.size() - 1)).start();
         }
         final int n = (this.method14276() - this.field20689 - 38) / 2;
-        this.field20697.method14239(this.field20702 = new Class4873(this.field20697, "play", n, 27, 38, 38, ClientAssets.playmusic, new Class6523(Class265.field1278.field1292), null));
-        this.field20697.method14239(this.field20703 = new Class4873(this.field20697, "pause", n, 27, 38, 38, ClientAssets.pause, new Class6523(Class265.field1278.field1292), null));
-        this.field20697.method14239(this.field20704 = new Class4873(this.field20697, "forwards", n + 114, 23, 46, 46, ClientAssets.forwards, new Class6523(Class265.field1278.field1292), null));
-        this.field20697.method14239(this.field20705 = new Class4873(this.field20697, "backwards", n - 114, 23, 46, 46, ClientAssets.backwards, new Class6523(Class265.field1278.field1292), null));
-        this.field20697.method14239(this.field20706 = new Class4865(this.field20697, "volume", this.method14276() - this.field20689 - 19, 14, 4, 40));
+        this.field20697.addVisualThing(this.field20702 = new Class4873(this.field20697, "play", n, 27, 38, 38, ClientAssets.playmusic, new Class6523(Class265.field1278.field1292), null));
+        this.field20697.addVisualThing(this.field20703 = new Class4873(this.field20697, "pause", n, 27, 38, 38, ClientAssets.pause, new Class6523(Class265.field1278.field1292), null));
+        this.field20697.addVisualThing(this.field20704 = new Class4873(this.field20697, "forwards", n + 114, 23, 46, 46, ClientAssets.forwards, new Class6523(Class265.field1278.field1292), null));
+        this.field20697.addVisualThing(this.field20705 = new Class4873(this.field20697, "backwards", n - 114, 23, 46, 46, ClientAssets.backwards, new Class6523(Class265.field1278.field1292), null));
+        this.field20697.addVisualThing(this.field20706 = new Class4865(this.field20697, "volume", this.method14276() - this.field20689 - 19, 14, 4, 40));
         final Class4860 class4805;
-        this.field20697.method14239(class4805 = new Class4860(this.field20697, "repeat", 14, 34, 27, 20, this.field20698.method24169()));
+        this.field20697.addVisualThing(class4805 = new Class4860(this.field20697, "repeat", 14, 34, 27, 20, this.field20698.method24169()));
         class4805.method14516(class4861 -> this.field20698.method24168(class4805.method14577()));
-        this.method14239(this.field20711 = new Class4842(this, "progress", this.field20689, this.method14278() - 5, this.method14276() - this.field20689, 5));
+        this.addVisualThing(this.field20711 = new Class4842(this, "progress", this.field20689, this.method14278() - 5, this.method14276() - this.field20689, 5));
         this.field20711.method14301(true);
         this.field20711.method14311(false);
         this.field20709.method14301(true);
@@ -126,7 +126,7 @@ public class Class4833 extends Class4825
         this.field20705.method14260((class4803, n) -> this.field20698.method24180());
         this.field20706.method14594(class4865 -> this.field20698.method24176((int)((1.0f - this.field20706.method14592()) * 100.0f)));
         this.field20706.method14593(1.0f - this.field20698.method24179() / 100.0f);
-        this.method14239(this.field20710 = new Class4838(this, "search", this.field20689, 0, this.method14276() - this.field20689, this.method14278() - this.field20692, "Search..."));
+        this.addVisualThing(this.field20710 = new Class4838(this, "search", this.field20689, 0, this.method14276() - this.field20689, this.method14278() - this.field20692, "Search..."));
         this.field20710.method14297(true);
         this.field20710.method14311(false);
     }

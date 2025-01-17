@@ -4,7 +4,7 @@
 
 package mapped;
 
-import com.mentalfrostbyte.jello.Class4809;
+import com.mentalfrostbyte.jello.UglyClickGUICategory;
 import org.lwjgl.opengl.GL11;
 
 public class Class4888 extends Class4841
@@ -31,7 +31,7 @@ public class Class4888 extends Class4841
         GL11.glTranslatef((float)n2, (float)n3, 0.0f);
         GL11.glRotatef(this.field20897.method35858() * 360.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n2), (float)(-n3), 0.0f);
-        Class8154.method26905((float)this.field20478, (float)this.field20479, 20.0f, 20.0f, this.method14308() ? Class4809.field20544 : Class4809.field20543);
+        Class8154.method26905((float)this.field20478, (float)this.field20479, 20.0f, 20.0f, this.method14308() ? UglyClickGUICategory.gear2 : UglyClickGUICategory.gear);
         GL11.glPopMatrix();
         super.method14205(n);
     }

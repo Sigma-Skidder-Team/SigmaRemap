@@ -48,7 +48,7 @@ public class Class4826 extends Class4825
                         continue;
                     }
                     final Class4916 class8849 = new Class4916(this, ((Class8848)list.get(n)).method30980(), 40, 100 + n * (n2 + n3), this.field20480 - 90, n2, class8848);
-                    this.method14239(class8849);
+                    this.addVisualThing(class8849);
                     this.field20648.add(class8849);
                     ++n;
                 }

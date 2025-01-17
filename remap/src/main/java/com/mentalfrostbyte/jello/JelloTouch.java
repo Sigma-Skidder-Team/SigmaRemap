@@ -22,14 +22,14 @@ import java.util.HashMap;
 import java.util.LinkedHashSet;
 import com.thizzer.jtouchbar.JTouchBar;
 
-public class Class7178
+public class JelloTouch
 {
     public JTouchBar field27848;
     private LinkedHashSet<Class8879> field27849;
     public boolean field27850;
     public HashMap<Module, TouchBarButton> field27851;
     
-    public Class7178() {
+    public JelloTouch() {
         this.field27849 = new LinkedHashSet<Class8879>();
         this.field27850 = false;
         this.field27851 = new HashMap<Module, TouchBarButton>();

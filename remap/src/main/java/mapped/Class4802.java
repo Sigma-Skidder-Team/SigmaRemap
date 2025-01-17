@@ -50,13 +50,13 @@ public class Class4802 extends Class4800
         this.field20473.add(Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[16]);
         this.field20473.add(Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[16]);
         final Class4817 class4817;
-        this.method14239(class4817 = new Class4817(this, Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[18], 0, 100, this.field20480, this.field20481 - 100));
+        this.addVisualThing(class4817 = new Class4817(this, Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[18], 0, 100, this.field20480, this.field20481 - 100));
         int i = 0;
         final int n = 20;
         final Iterator<String> iterator = this.field20473.iterator();
         while (iterator.hasNext()) {
             for (final String s : iterator.next().split(Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[19])) {
-                class4817.method14239(new Class4834(class4817, Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[20] + i, 40, 40 + n * i++, 0, 0, Class6523.field25964, s, s.startsWith(Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[21]) ? ClientFonts.JelloMedium20 : ClientFonts.JelloLight20));
+                class4817.addVisualThing(new Class4834(class4817, Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[20] + i, 40, 40 + n * i++, 0, 0, Class6523.field25964, s, s.startsWith(Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[21]) ? ClientFonts.JelloMedium20 : ClientFonts.JelloLight20));
             }
         }
     }

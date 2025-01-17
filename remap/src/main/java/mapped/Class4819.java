@@ -54,8 +54,8 @@ public class Class4819 extends Class4817 implements Class4820
                 });
                 class4805.method14516(class4998 -> class4804.method15199(((Class4867)class4998).method14600()));
                 class4805.method14270((class4803, class4804) -> class4803.method14273(class4804.method14276() - 24 - n3));
-                class4803.method14239(key);
-                class4803.method14239(class4805);
+                class4803.addVisualThing(key);
+                class4803.addVisualThing(class4805);
                 n2 += 24 + n3;
                 break;
             }
@@ -83,8 +83,8 @@ public class Class4819 extends Class4817 implements Class4820
                     }
                 });
                 class4807.method14270((class4803, class4804) -> class4803.method14273(class4804.method14276() - 126 - n3));
-                class4803.method14239(key2);
-                class4803.method14239(class4807);
+                class4803.addVisualThing(key2);
+                class4803.addVisualThing(class4807);
                 n2 += 24 + n3;
                 break;
             }
@@ -92,10 +92,10 @@ public class Class4819 extends Class4817 implements Class4820
                 final int n4 = 114;
                 final int n5 = 27;
                 final Class4834 key3;
-                this.method14239(key3 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, n5, Class4834.field20719, class4804.method15204()));
+                this.addVisualThing(key3 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, n5, Class4834.field20719, class4804.method15204()));
                 this.field20624.put(key3, class4804);
                 final Class4831 class4808;
-                this.method14239(class4808 = new Class4831(class4803, class4804.method15204() + "txt", class4803.method14276() - n3 - n4, n2 + n5 / 4 - 1, n4, n5, Class4831.field20670, (String)class4804.method15198()));
+                this.addVisualThing(class4808 = new Class4831(class4803, class4804.method15204() + "txt", class4803.method14276() - n3 - n4, n2 + n5 / 4 - 1, n4, n5, Class4831.field20670, (String)class4804.method15198()));
                 class4808.method14317(ClientFonts.JelloLight18);
                 class4808.method14473(class4998 -> class4804.method15199(class4998.method14314()));
                 class4804.method15195(class4833 -> {
@@ -120,8 +120,8 @@ public class Class4819 extends Class4817 implements Class4820
                     class4809.method14694(((StringSetting)class4804).method15213());
                 });
                 class4809.method14270((class4804, class4805) -> class4804.method14273(class4803.method14276() - 123 - n3));
-                class4803.method14239(key4);
-                class4803.method14239(class4809);
+                class4803.addVisualThing(key4);
+                class4803.addVisualThing(class4809);
                 n2 += 27 + n3;
             }
             case 6: {
@@ -133,7 +133,7 @@ public class Class4819 extends Class4817 implements Class4820
                 }
                 new Class6509().method19597(class4810, class4803);
                 class4810.method14270((class4803, class4804) -> class4803.method14277(class4804.method14276() - n3));
-                class4803.method14239(class4810);
+                class4803.addVisualThing(class4810);
                 n2 += class4810.method14278() + n3;
                 break;
             }
@@ -148,8 +148,8 @@ public class Class4819 extends Class4817 implements Class4820
                 });
                 class4811.method14516(class4998 -> class4804.method15199(((Class4875)class4998).method14610()));
                 class4811.method14270((class4804, class4805) -> class4804.method14273(class4803.method14276() - 123 - n3));
-                class4803.method14239(key5);
-                class4803.method14239(class4811);
+                class4803.addVisualThing(key5);
+                class4803.addVisualThing(class4811);
                 n2 += 27 + n3;
                 break;
             }
@@ -159,8 +159,8 @@ public class Class4819 extends Class4817 implements Class4820
                 this.field20624.put(key6, class4804);
                 class4812.method14516(class4999 -> class4804.method15199(class4812.method14563()));
                 class4812.method14270((class4804, class4805) -> class4804.method14273(class4803.method14276() - 175 - n3));
-                class4803.method14239(key6);
-                class4803.method14239(class4812);
+                class4803.addVisualThing(key6);
+                class4803.addVisualThing(class4812);
                 n2 += 200 + n3;
                 break;
             }
@@ -177,8 +177,8 @@ public class Class4819 extends Class4817 implements Class4820
                     class4804.method15200(((Class4885)class4999).method14623(), false);
                     class4813.method15220(((Class4885)class4999).method14621());
                 });
-                class4803.method14239(key7);
-                class4803.method14239(class4814);
+                class4803.addVisualThing(key7);
+                class4803.addVisualThing(class4814);
                 n2 += 114 + n3 - 10;
                 break;
             }
@@ -192,8 +192,8 @@ public class Class4819 extends Class4817 implements Class4820
                     class4816.method14568(class5000.field35807, class5000.field35808, class5000.field35809, class5000.field35810);
                 });
                 class4816.method14516(class4999 -> ((BezierSetting)class4804).method15216(class4816.method14567()[0], class4816.method14567()[1], class4816.method14567()[2], class4816.method14567()[3]));
-                class4803.method14239(key8);
-                class4803.method14239(class4816);
+                class4803.addVisualThing(key8);
+                class4803.addVisualThing(class4816);
                 n2 += 150 + n3 - 10;
                 break;
             }
@@ -227,13 +227,13 @@ public class Class4819 extends Class4817 implements Class4820
                     a = Math.max(a, class3249.method14687() + class3249.method14274() + class3249.method14278() + 14);
                 }
                 value.method14279(a);
-                this.method14239(value);
+                this.addVisualThing(value);
                 this.field20625.put(key, value);
             }
             class3247.method10261((class3247, key, b) -> this.field20625.get(key).method14297(b));
             class3247.method10258();
         }
-        this.method14239(new Class4803(this, "extentionhack", 0, b, 0, 20));
+        this.addVisualThing(new Class4803(this, "extentionhack", 0, b, 0, 20));
     }
     
     @Override

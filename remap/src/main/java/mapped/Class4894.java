@@ -77,7 +77,7 @@ public class Class4894 extends Class4841
             this.method14696(false);
             this.method14517();
         });
-        this.method14239(class4845);
+        this.addVisualThing(class4845);
     }
     
     public int method14682(final int n) {
@@ -101,7 +101,7 @@ public class Class4894 extends Class4841
         this.method14250().clear();
         this.field20496 = ClientFonts.JelloLight18;
         final Class4868 class4868;
-        this.method14239(class4868 = new Class4868(this, "dropdownButton", 0, 0, this.method14278(), this.method14278(), this.field20497));
+        this.addVisualThing(class4868 = new Class4868(this, "dropdownButton", 0, 0, this.method14278(), this.method14278(), this.field20497));
         class4868.method14270((class4803, class4804) -> {
             class4803.method14273(0);
             class4803.method14275(0);
@@ -111,7 +111,7 @@ public class Class4894 extends Class4841
         class4868.method14260((class4803, n) -> this.method14696(!this.method14695()));
         for (final String s : this.field20920) {
             final Class4868 class4869;
-            this.method14239(class4869 = new Class4868(this, s, 0, this.method14278(), this.method14276(), this.method14278(), new Class6523(Class265.field1278.field1292, -1381654, this.field20497.method19729(), this.field20497.method19729(), Class2056.field11734, Class2056.field11738), s, this.method14316()));
+            this.addVisualThing(class4869 = new Class4868(this, s, 0, this.method14278(), this.method14276(), this.method14278(), new Class6523(Class265.field1278.field1292, -1381654, this.field20497.method19729(), this.field20497.method19729(), Class2056.field11734, Class2056.field11738), s, this.method14316()));
             class4869.method14603(10);
             class4869.method14260((class4803, n) -> {
                 final int method14693 = this.method14693();

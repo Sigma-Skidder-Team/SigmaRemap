@@ -26,11 +26,11 @@ public class Class4939 extends Class4800
         final int n5 = (this.method14276() - n) / 2;
         final int n6 = (this.method14278() - n3) / 2 + 14;
         final Class4876 class4876;
-        this.method14239(class4876 = new Class4876(this, "pb", n5, n6, n, n3, ClientAssets.noaddons));
+        this.addVisualThing(class4876 = new Class4876(this, "pb", n5, n6, n, n3, ClientAssets.noaddons));
         final Class4876 class4877;
-        this.method14239(class4877 = new Class4876(this, "pb2", n5, n3 + n6 + 9, n2, n4, ClientAssets.sigma2));
+        this.addVisualThing(class4877 = new Class4876(this, "pb2", n5, n3 + n6 + 9, n2, n4, ClientAssets.sigma2));
         final Class4876 class4878;
-        this.method14239(class4878 = new Class4876(this, "pb3", n5 + n2 + 9, n3 + n6 + 9, n2, n4, ClientAssets.jello));
+        this.addVisualThing(class4878 = new Class4876(this, "pb3", n5 + n2 + 9, n3 + n6 + 9, n2, n4, ClientAssets.jello));
         class4876.method14260((class4803, n) -> {
             Client.method35173().method35210(Class2209.field13466);
             Minecraft.method5277().displayGuiScreen(new Class548());
@@ -45,11 +45,11 @@ public class Class4939 extends Class4800
         });
         final Class4803 class4879 = new Class4803(this, "socialbtns", (this.method14276() - 174) / 2, this.method14278() - 70, 174, 34);
         final Class4914 class4880;
-        class4879.method14239(class4880 = new Class4914(class4879, "youtube", 0, 0, 65, 34, ClientAssets.youtube));
+        class4879.addVisualThing(class4880 = new Class4914(class4879, "youtube", 0, 0, 65, 34, ClientAssets.youtube));
         final Class4914 class4881;
-        class4879.method14239(class4881 = new Class4914(class4879, "reddit", 85, 0, 36, 34, ClientAssets.reddit));
+        class4879.addVisualThing(class4881 = new Class4914(class4879, "reddit", 85, 0, 36, 34, ClientAssets.reddit));
         final Class4914 class4882;
-        class4879.method14239(class4882 = new Class4914(class4879, "guilded", 142, 0, 32, 34, ClientAssets.guilded));
+        class4879.addVisualThing(class4882 = new Class4914(class4879, "guilded", 142, 0, 32, 34, ClientAssets.guilded));
         class4880.method14260((class4803, n) -> {
             try {
                 Util.method27845().method976(new URL("http://jelloconnect.sigmaclient.info/urls/youtube.php"));
@@ -68,7 +68,7 @@ public class Class4939 extends Class4800
             }
             catch (final MalformedURLException ex) {}
         });
-        this.method14239(class4879);
+        this.addVisualThing(class4879);
     }
     
     @Override

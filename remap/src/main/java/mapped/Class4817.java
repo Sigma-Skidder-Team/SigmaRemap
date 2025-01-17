@@ -116,8 +116,8 @@ public class Class4817 extends Class4815
     }
     
     @Override
-    public void method14239(final Class4803 class4803) {
-        this.field20610.method14239(class4803);
+    public void addVisualThing(final Class4803 class4803) {
+        this.field20610.addVisualThing(class4803);
     }
     
     @Override

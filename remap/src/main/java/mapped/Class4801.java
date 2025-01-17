@@ -39,14 +39,14 @@ public class Class4801 extends Class4800
         Class4801.field20463 |= !Class4801.field20462;
         int n = 30;
         int n2 = 30;
-        this.method14239(this.field20466 = new Class4912(this, "brainFreeze"));
+        this.addVisualThing(this.field20466 = new Class4912(this, "brainFreeze"));
         for (final Module class3167 : Client.method35173().method35189().method21553().values()) {
             if (this.field20464.containsKey(class3167.getCategory2())) {
                 continue;
             }
             final Class4924 class3168 = new Class4924(this, class3167.getCategory2().getName(), n, n2, class3167.getCategory2());
             this.field20464.put(class3167.getCategory2(), class3168);
-            this.method14239(class3168);
+            this.addVisualThing(class3168);
             n += class3168.method14276() + 10;
             if (this.field20464.size() == 4) {
                 n = 30;
@@ -58,10 +58,10 @@ public class Class4801 extends Class4800
                 this.field20468.method14301(true);
             }));
         }
-        this.method14239(this.field20465 = new Class4833(this, "musicPlayer"));
+        this.addVisualThing(this.field20465 = new Class4833(this, "musicPlayer"));
         this.field20465.method14385(true);
         final Class4873 class3169;
-        this.method14239(class3169 = new Class4873(this, "more", this.method14276() - 69, this.method14278() - 55, 55, 41, ClientAssets.options2));
+        this.addVisualThing(class3169 = new Class4873(this, "more", this.method14276() - 69, this.method14278() - 55, 55, 41, ClientAssets.options2));
         class3169.method14318().method19730(Class6430.method19118(Class265.field1278.field1292, 0.3f));
         class3169.method14311(false);
         this.field20465.method14297(Class4801.field20470);
@@ -71,7 +71,7 @@ public class Class4801 extends Class4800
             }
             else {
                 final Class4889 field20467 = new Class4889(this, "morepopover", this.method14276() - 14, this.method14278() - 14);
-                this.method14239(this.field20467 = field20467);
+                this.addVisualThing(this.field20467 = field20467);
                 this.field20467.method14301(true);
             }
         }));

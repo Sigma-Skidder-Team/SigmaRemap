@@ -19,7 +19,7 @@ public class Class4896 extends Class4841
     
     public Class4896(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class8799 field20938, final int field20939) {
         super(class4803, s, n, n2, n3, n4, false);
-        this.method14239(this.field20942 = new Class4893(this, "delete", 200, 20, 20, 20));
+        this.addVisualThing(this.field20942 = new Class4893(this, "delete", 200, 20, 20, 20));
         this.field20942.method14260((class4803, n) -> {
             this.field20939 = new Date();
             this.method14517();

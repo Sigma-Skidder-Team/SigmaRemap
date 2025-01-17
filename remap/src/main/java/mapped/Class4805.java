@@ -21,10 +21,10 @@ public class Class4805 extends Class4803
         }
         final String method13268 = class4804.method13268("title");
         final Class88 method13269 = class4804.method13263("changes");
-        this.method14239(new Class4834(this, "title", 0, n, 0, 0, Class6523.field25964, method13268, ClientFonts.JelloMedium40));
+        this.addVisualThing(new Class4834(this, "title", 0, n, 0, 0, Class6523.field25964, method13268, ClientFonts.JelloMedium40));
         n += 55;
         for (int i = 0; i < method13269.method462(); ++i) {
-            this.method14239(new Class4834(this, "change" + i, 0, n, 0, 0, new Class6523(0, 0, 0, Class6430.method19118(Class265.field1278.field1292, 0.8f)), " - " + method13269.method459(i), ClientFonts.JelloLight20));
+            this.addVisualThing(new Class4834(this, "change" + i, 0, n, 0, 0, new Class6523(0, 0, 0, Class6430.method19118(Class265.field1278.field1292, 0.8f)), " - " + method13269.method459(i), ClientFonts.JelloLight20));
             n += 22;
         }
         n += 75;

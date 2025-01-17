@@ -31,7 +31,7 @@ public class Class4891 extends Class4841
         this.method14250().clear();
         this.field20496 = ClientFonts.JelloLight18;
         final Class4868 class4868;
-        this.method14239(class4868 = new Class4868(this, "dropdownButton", 0, 0, this.method14278(), this.method14278(), this.field20497));
+        this.addVisualThing(class4868 = new Class4868(this, "dropdownButton", 0, 0, this.method14278(), this.method14278(), this.field20497));
         class4868.method14270((class4803, class4804) -> {
             class4803.method14273(0);
             class4803.method14275(0);
@@ -43,7 +43,7 @@ public class Class4891 extends Class4841
         int n = 0;
         for (final int intValue : this.field20909) {
             final Class4835 class4869;
-            this.method14239(class4869 = new Class4835(this, intValue + "item", n % (this.field20480 / 50) * 50, this.field20481 + n / (this.field20480 / 50) * 50, 50, 50, intValue));
+            this.addVisualThing(class4869 = new Class4835(this, intValue + "item", n % (this.field20480 / 50) * 50, this.field20481 + n / (this.field20480 / 50) * 50, 50, 50, intValue));
             class4869.method14503(this.field20910.contains(this.field20909.indexOf(intValue)));
             class4869.method14260((class4803, n) -> this.method14517());
             ++n;

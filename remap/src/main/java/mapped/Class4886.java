@@ -4,7 +4,7 @@
 
 package mapped;
 
-import com.mentalfrostbyte.jello.Class4809;
+import com.mentalfrostbyte.jello.UglyClickGUICategory;
 
 public class Class4886 extends Class4841
 {
@@ -18,7 +18,7 @@ public class Class4886 extends Class4841
     
     @Override
     public void method14205(final float n) {
-        Class8154.method26905((float)this.field20478, (float)this.field20479, 30.0f, 30.0f, this.method14308() ? Class4809.field20558 : Class4809.field20557);
+        Class8154.method26905((float)this.field20478, (float)this.field20479, 30.0f, 30.0f, this.method14308() ? UglyClickGUICategory.xmark2 : UglyClickGUICategory.xmark);
         super.method14205(n);
     }
 }

@@ -39,7 +39,7 @@ public class Class4818 extends Class4817
             final Class4846 class353 = new Class4846(this, string, this.field20478, this.method14250().get(0).method14250().size() * this.field20616, this.field20480, this.field20616, s, class352, n);
             class353.field20760 = class353.method14274();
             this.field20615.add(class353);
-            this.method14239(class353);
+            this.addVisualThing(class353);
             class353.method14260((class4820, n) -> ((Class4843)class4818.method14267()).field20752.method14718(class353.field20764.getX(), class353.field20764.getZ()));
             class353.method14516(class4848 -> {
                 Client.method35173().method35200().method24266(new Class8124(class353.field20763, class353.field20764.getX(), class353.field20764.getZ(), class353.field20765));

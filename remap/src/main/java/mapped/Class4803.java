@@ -407,7 +407,7 @@ public class Class4803 implements Class4925
         return this.method14237(n, n2, true);
     }
     
-    public void method14239(final Class4803 class4803) {
+    public void addVisualThing(final Class4803 class4803) {
         if (class4803 == null) {
             return;
         }

@@ -19,13 +19,13 @@ public class Class4814 extends Class4803
     public Class4814(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
         super(class4803, s, n, n2, n3, n4);
         int n5 = 0;
-        this.method14239(this.field20584 = new Class4859(this, "Singleplayer", this.method14376(n5++), this.method14375(), 114, 140, Class9493.field40795));
-        this.method14239(this.field20589 = new Class4859(this, "Multiplayer", this.method14376(n5++), this.method14375(), 114, 140, Class9493.field40796));
-        this.method14239(this.field20587 = new Class4859(this, "Options", this.method14376(n5++), this.method14375(), 114, 140, Class9493.field40797));
-        this.method14239(this.field20586 = new Class4859(this, "Language", this.method14376(n5++), this.method14375(), 114, 140, Class9493.field40798));
-        this.method14239(this.field20588 = new Class4859(this, "Accounts", this.method14376(n5++), this.method14375() + 140 + 10, 114, 140, Class9493.field40799));
-        this.method14239(this.field20590 = new Class4859(this, "Agora", this.method14376(n5++), this.method14375() + 140 + 10, 114, 140, Class9493.field40803));
-        this.method14239(this.field20585 = new Class4859(this, "Exit", this.method14376(n5++), this.method14375() + 140 + 10, 114, 140, Class9493.field40800));
+        this.addVisualThing(this.field20584 = new Class4859(this, "Singleplayer", this.method14376(n5++), this.method14375(), 114, 140, Class9493.field40795));
+        this.addVisualThing(this.field20589 = new Class4859(this, "Multiplayer", this.method14376(n5++), this.method14375(), 114, 140, Class9493.field40796));
+        this.addVisualThing(this.field20587 = new Class4859(this, "Options", this.method14376(n5++), this.method14375(), 114, 140, Class9493.field40797));
+        this.addVisualThing(this.field20586 = new Class4859(this, "Language", this.method14376(n5++), this.method14375(), 114, 140, Class9493.field40798));
+        this.addVisualThing(this.field20588 = new Class4859(this, "Accounts", this.method14376(n5++), this.method14375() + 140 + 10, 114, 140, Class9493.field40799));
+        this.addVisualThing(this.field20590 = new Class4859(this, "Agora", this.method14376(n5++), this.method14375() + 140 + 10, 114, 140, Class9493.field40803));
+        this.addVisualThing(this.field20585 = new Class4859(this, "Exit", this.method14376(n5++), this.method14375() + 140 + 10, 114, 140, Class9493.field40800));
         this.field20584.method14260((class4803, n) -> this.method14372(new Class544(Minecraft.method5277().field4700)));
         this.field20589.method14260((class4803, n) -> this.method14372(new Class721(Minecraft.method5277().field4700)));
         this.field20587.method14260((class4803, n) -> this.method14372(new Class550(Minecraft.method5277().field4700, Minecraft.method5277().gameSettings)));

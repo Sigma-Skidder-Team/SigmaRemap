@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +17,7 @@ public class Class4882 extends Class4841
         this.field20876 = new ArrayList<Class4868>();
         for (final Class283 class4804 : Class283.values()) {
             final Class4857 class4805;
-            this.method14239(class4805 = new Class4857(this, "KEY_" + class4804.field1563 + this.method14250().size(), class4804.method928(), class4804.method927(), class4804.method929(), class4804.method930(), class4804.field1560, class4804.field1563));
+            this.addVisualThing(class4805 = new Class4857(this, "KEY_" + class4804.field1563 + this.method14250().size(), class4804.method928(), class4804.method927(), class4804.method929(), class4804.method930(), class4804.field1560, class4804.field1563));
             class4805.method14260((class4858, n) -> {
                 this.field20877 = class4805.field20807;
                 this.method14517();

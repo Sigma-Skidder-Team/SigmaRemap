@@ -20,8 +20,8 @@ public class Class4855 extends Class4841
         this.field20803 = 30;
         this.field20804 = new Class9572(300, 300);
         this.field20803 = field20803;
-        this.method14239(this.field20801 = new Class4911(this, 10, "pos1"));
-        this.method14239(this.field20802 = new Class4911(this, 10, "pos2"));
+        this.addVisualThing(this.field20801 = new Class4911(this, 10, "pos1"));
+        this.addVisualThing(this.field20802 = new Class4911(this, 10, "pos2"));
         this.method14258((class4803, n) -> this.method14517());
         this.method14568(n5, n6, n7, n8);
     }

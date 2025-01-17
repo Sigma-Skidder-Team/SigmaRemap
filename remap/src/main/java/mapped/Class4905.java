@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +21,7 @@ public class Class4905 extends Class4841
             final String string = "badge" + class4804.field13387;
             n += 25;
             final Class4877 class4805;
-            this.method14239(class4805 = new Class4877(this, string, n, 0, class4804));
+            this.addVisualThing(class4805 = new Class4877(this, string, n, 0, class4804));
             if (n3 != 0) {
                 class4805.field20867 = true;
                 this.field20984 = class4804.field13388;

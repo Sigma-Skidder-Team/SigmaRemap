@@ -24,7 +24,7 @@ public class Class4827 extends Class4825 implements Class4828
             class4803.method14277(n);
             class4803.method14279(class4804.method14278() - 10);
         });
-        this.method14239(this.field20653 = new Class4921(this, this, n));
+        this.addVisualThing(this.field20653 = new Class4921(this, this, n));
     }
     
     @Override
