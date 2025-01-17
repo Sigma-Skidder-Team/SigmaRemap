@@ -11,7 +11,7 @@ public class Class3899 extends Class3892
 {
     private static final Class2259 field17598;
     
-    public Class3899(final Class9288 class9288) {
+    public Class3899(final Properties class9288) {
         super(class9288);
     }
     

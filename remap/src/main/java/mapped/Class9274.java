@@ -4,6 +4,9 @@
 
 package mapped;
 
+import slick2d.Color;
+import slick2d.TrueTypeFont;
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -85,24 +88,24 @@ public class Class9274
         return s.substring(0, (min <= min2) ? min : min2) + str + s.substring((min <= min2) ? min2 : min, s.length());
     }
     
-    public static int method34216(final String s, final Class7524 class7524, final float n, final int n2, final float n3) {
+    public static int method34216(final String s, final TrueTypeFont class7524, final float n, final int n2, final float n3) {
         int n4 = -1;
         int method23505 = -1;
         for (int i = 0; i <= s.length(); ++i) {
-            final int method23506 = class7524.method23505(s.substring(0, Math.max(i - 1, 0)));
-            final int method23507 = class7524.method23505(s.substring(0, i));
+            final int method23506 = class7524.getWidth(s.substring(0, Math.max(i - 1, 0)));
+            final int method23507 = class7524.getWidth(s.substring(0, i));
             if (method23507 > n2 - n - n3) {
                 n4 = method23506;
                 method23505 = method23507;
                 break;
             }
         }
-        if (n2 - n - n3 >= class7524.method23505(s)) {
-            method23505 = class7524.method23505(s);
+        if (n2 - n - n3 >= class7524.getWidth(s)) {
+            method23505 = class7524.getWidth(s);
         }
         int length = (Math.abs(n2 - n - n3 - n4) >= Math.abs(n2 - n - n3 - method23505)) ? method23505 : n4;
         for (int j = 0; j < s.length(); ++j) {
-            if (class7524.method23505(s.substring(0, j)) == length) {
+            if (class7524.getWidth(s.substring(0, j)) == length) {
                 length = j;
                 break;
             }
@@ -142,7 +145,7 @@ public class Class9274
         }
     }
     
-    public static Class2427 method34218(final char c) {
+    public static Color method34218(final char c) {
         final char[] array = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
         final int[] array2 = { -16777216, -16777046, -16733696, -16733526, -5636096, -5635926, -22016, -5592406, -11184811, -11184641, -11141291, -11141121, -43691, -43521, -171, -65794 };
         int n = -1;
@@ -153,7 +156,7 @@ public class Class9274
             }
         }
         if (n != -1) {
-            return new Class2427(n);
+            return new Color(n);
         }
         return null;
     }

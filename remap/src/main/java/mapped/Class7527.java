@@ -4,9 +4,12 @@
 
 package mapped;
 
+import slick2d.Color;
+import slick2d.Font;
+
 import java.io.UnsupportedEncodingException;
 
-public class Class7527 implements Class7523
+public class Class7527 implements Font
 {
     private Class7765 field29883;
     private char field29884;
@@ -26,26 +29,26 @@ public class Class7527 implements Class7523
     }
     
     @Override
-    public void method23500(final float n, final float n2, final String s) {
-        this.method23501(n, n2, s, Class2427.field14355);
+    public void drawString(final float x, final float y, final String text) {
+        this.drawString(x, y, text, Color.field14355);
     }
     
     @Override
-    public void method23501(final float n, final float n2, final String s, final Class2427 class2427) {
-        this.method23499(n, n2, s, class2427, 0, s.length() - 1);
+    public void drawString(final float x, final float y, final String text, final Color color) {
+        this.drawString(x, y, text, color, 0, text.length() - 1);
     }
     
     @Override
-    public void method23499(final float n, final float n2, final String s, final Class2427 class2427, final int n3, final int n4) {
+    public void drawString(final float x, final float y, final String text, final Color color, final int startIndex, final int endIndex) {
         try {
-            final byte[] bytes = s.getBytes("US-ASCII");
+            final byte[] bytes = text.getBytes("US-ASCII");
             for (int i = 0; i < bytes.length; ++i) {
                 final int n5 = bytes[i] - this.field29884;
                 if (n5 < this.field29888) {
                     final int n6 = n5 % this.field29887;
                     final int n7 = n5 / this.field29887;
-                    if (i >= n3 || i <= n4) {
-                        this.field29883.method24860(n6, n7).method24776(n + i * this.field29885, n2, class2427);
+                    if (i >= startIndex || i <= endIndex) {
+                        this.field29883.method24860(n6, n7).method24776(x + i * this.field29885, y, color);
                     }
                 }
             }
@@ -56,17 +59,17 @@ public class Class7527 implements Class7523
     }
     
     @Override
-    public int method23506(final String s) {
+    public int getHeight(final String str) {
         return this.field29886;
     }
     
     @Override
-    public int method23505(final String s) {
-        return this.field29885 * s.length();
+    public int getWidth(final String str) {
+        return this.field29885 * str.length();
     }
     
     @Override
-    public int method23521() {
+    public int getLineHeight() {
         return this.field29886;
     }
 }

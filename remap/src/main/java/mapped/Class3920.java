@@ -25,7 +25,7 @@ public class Class3920 extends Block implements Class3856
     public static final Class7113 field17774;
     public static final Class7113 field17775;
     
-    public Class3920(final Class9288 class9288) {
+    public Class3920(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3920.field17773, 7)).with((IProperty<Comparable>)Class3920.field17774, false)).with((IProperty<Comparable>)Class3920.field17775, false));
     }

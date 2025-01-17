@@ -21,7 +21,7 @@ public class Class3919 extends Class3841 implements Class3856
     public static final Class7113 field17766;
     public static final VoxelShape field17767;
     
-    public Class3919(final Class9288 class9288) {
+    public Class3919(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3919.field17766, true));
     }

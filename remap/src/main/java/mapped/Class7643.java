@@ -24,10 +24,11 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.AudioFormat;
 import java.io.IOException;
 import org.lwjgl.opengl.GL11;
+import slick2d.Texture;
+
 import javax.sound.sampled.SourceDataLine;
 import java.util.ArrayList;
 import java.util.List;
-import java.awt.image.BufferedImage;
 
 public class Class7643
 {
@@ -37,11 +38,11 @@ public class Class7643
     private int field30335;
     private long field30336;
     private Thread field30337;
-    public BufferedImage field30338;
+    public java.awt.image.BufferedImage field30338;
     public String field30339;
-    private Class7776 field30340;
-    private BufferedImage field30341;
-    private Class7776 field30342;
+    private Texture field30340;
+    private java.awt.image.BufferedImage field30341;
+    private Texture field30342;
     private boolean field30343;
     private boolean field30344;
     private transient volatile Thread field30345;
@@ -197,14 +198,14 @@ public class Class7643
             GL11.glPopMatrix();
             final String[] split = this.field30339.split(" - ");
             if (split.length <= 1) {
-                Class8154.method26889(Class9400.field40328, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 70), split[0], Class6430.method19118(Class265.field1273.field1292, 0.5f));
-                Class8154.method26889(Class9400.field40312, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 70), split[0], Class6430.method19118(Class265.field1278.field1292, 0.7f));
+                Class8154.method26889(ClientFonts.JelloLight18_AA, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 70), split[0], Class6430.method19118(Class265.field1273.field1292, 0.5f));
+                Class8154.method26889(ClientFonts.JelloLight18, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 70), split[0], Class6430.method19118(Class265.field1278.field1292, 0.7f));
             }
             else {
-                Class8154.method26889(Class9400.field40329, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 81), split[0], Class6430.method19118(Class265.field1273.field1292, 0.45f));
-                Class8154.method26889(Class9400.field40323, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 81), split[0], Class6430.method19118(Class265.field1278.field1292, 0.6f));
-                Class8154.method26889(Class9400.field40328, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 56), split[1], Class6430.method19118(Class265.field1273.field1292, 0.5f));
-                Class8154.method26889(Class9400.field40312, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 56), split[1], Class6430.method19118(Class265.field1278.field1292, 0.7f));
+                Class8154.method26889(ClientFonts.JelloMedium20_AA, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 81), split[0], Class6430.method19118(Class265.field1273.field1292, 0.45f));
+                Class8154.method26889(ClientFonts.JelloMedium20, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 81), split[0], Class6430.method19118(Class265.field1278.field1292, 0.6f));
+                Class8154.method26889(ClientFonts.JelloLight18_AA, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 56), split[1], Class6430.method19118(Class265.field1273.field1292, 0.5f));
+                Class8154.method26889(ClientFonts.JelloLight18, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 56), split[1], Class6430.method19118(Class265.field1278.field1292, 0.7f));
             }
         }
     }
@@ -437,8 +438,8 @@ public class Class7643
     public void method24174(final Class8681 class8681) {
         try {
             this.field30343 = true;
-            final BufferedImage read = ImageIO.read(new URL(class8681.field36488));
-            this.field30341 = Class6804.method20826(read, 15);
+            final java.awt.image.BufferedImage read = ImageIO.read(new URL(class8681.field36488));
+            this.field30341 = BufferedImage.method20826(read, 15);
             this.field30341 = this.field30341.getSubimage(0, (int)(this.field30341.getHeight() * 0.75f), this.field30341.getWidth(), (int)(this.field30341.getHeight() * 0.2f));
             this.field30339 = class8681.field36487;
             if (read.getHeight() != read.getWidth()) {
@@ -572,11 +573,11 @@ public class Class7643
         return this.field30339;
     }
     
-    public Class7776 method24190() {
+    public Texture method24190() {
         return this.field30342;
     }
     
-    public Class7776 method24191() {
+    public Texture method24191() {
         return this.field30340;
     }
     

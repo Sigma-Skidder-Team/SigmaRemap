@@ -4,6 +4,8 @@
 
 package mapped;
 
+import slick2d.TrueTypeFont;
+
 public class Class4834 extends Class4825
 {
     private static String[] field20591;
@@ -13,7 +15,7 @@ public class Class4834 extends Class4825
         super(class4803, s, n, n2, n3, n4, class4804, s2, false);
     }
     
-    public Class4834(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2, final Class7524 class4805) {
+    public Class4834(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2, final TrueTypeFont class4805) {
         super(class4803, s, n, n2, n3, n4, class4804, s2, class4805, false);
     }
     

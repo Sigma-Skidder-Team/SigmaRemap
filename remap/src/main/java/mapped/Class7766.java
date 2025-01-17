@@ -9,10 +9,13 @@ import java.nio.ByteBuffer;
 import org.newdawn.slick.SlickException;
 import java.nio.IntBuffer;
 import org.lwjgl.BufferUtils;
+import slick2d.Color;
+import slick2d.Renderer;
+import slick2d.Texture;
 
 public class Class7766 extends Class7764
 {
-    public static Class6448 field31755;
+    public static SGL field31755;
     private static Class7764 field31756;
     private Class7764[][] field31757;
     private int field31758;
@@ -120,17 +123,17 @@ public class Class7766 extends Class7764
     }
     
     @Override
-    public void method24776(final float n, final float n2, final Class2427 class2427) {
-        this.method24778(n, n2, (float)this.field31730, (float)this.field31731, class2427);
+    public void method24776(final float n, final float n2, final Color color) {
+        this.method24778(n, n2, (float)this.field31730, (float)this.field31731, color);
     }
     
     @Override
-    public void method24822(final float n, final float n2, final float n3, final Class2427 class2427) {
-        this.method24778(n, n2, this.field31730 * n3, this.field31731 * n3, class2427);
+    public void method24822(final float n, final float n2, final float n3, final Color color) {
+        this.method24778(n, n2, this.field31730 * n3, this.field31731 * n3, color);
     }
     
     @Override
-    public void method24778(final float n, final float n2, final float n3, final float n4, final Class2427 class2427) {
+    public void method24778(final float n, final float n2, final float n3, final float n4, final Color color) {
         final float n5 = n3 / this.field31760;
         final float n6 = n4 / this.field31761;
         Class7766.field31755.method19274(n, n2, 0.0f);
@@ -140,7 +143,7 @@ public class Class7766 extends Class7764
             float n8 = 0.0f;
             for (int j = 0; j < this.field31759; ++j) {
                 final Class7764 class2428 = this.field31757[i][j];
-                class2428.method24778(n7, n8, (float)class2428.method24843(), (float)class2428.method24844(), class2427);
+                class2428.method24778(n7, n8, (float)class2428.method24843(), (float)class2428.method24844(), color);
                 n8 += class2428.method24844();
                 if (j == this.field31759 - 1) {
                     n7 += class2428.method24843();
@@ -163,17 +166,17 @@ public class Class7766 extends Class7764
     
     @Override
     public void method24777(final float n, final float n2, final float n3, final float n4) {
-        this.method24778(n, n2, n3, n4, Class2427.field14355);
+        this.method24778(n, n2, n3, n4, Color.field14355);
     }
     
     @Override
     public void method24821(final float n, final float n2, final float n3) {
-        this.method24822(n, n2, n3, Class2427.field14355);
+        this.method24822(n, n2, n3, Color.field14355);
     }
     
     @Override
     public void method24775(final float n, final float n2) {
-        this.method24776(n, n2, Class2427.field14355);
+        this.method24776(n, n2, Color.field14355);
     }
     
     @Override
@@ -245,7 +248,7 @@ public class Class7766 extends Class7764
     }
     
     @Override
-    public Class2427 method24855(final int n, final int n2) {
+    public Color method24855(final int n, final int n2) {
         throw new Class2362("Can't use big images as buffers");
     }
     
@@ -352,7 +355,7 @@ public class Class7766 extends Class7764
     }
     
     @Override
-    public Class7776 method24852() {
+    public Texture method24852() {
         throw new Class2362("Can't use big images as offscreen buffers");
     }
     
@@ -367,7 +370,7 @@ public class Class7766 extends Class7764
     }
     
     @Override
-    public void method24853(final Class7776 class7776) {
+    public void method24853(final Texture class7776) {
         throw new Class2362("Can't use big images as offscreen buffers");
     }
     
@@ -398,8 +401,8 @@ public class Class7766 extends Class7764
     }
     
     @Override
-    public void method24839(final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final Class2427 class2427) {
-        this.method24836((int)n5, (int)n6, (int)(n7 - n5), (int)(n8 - n6)).method24778(n, n2, (float)(int)(n3 - n), (float)(int)(n4 - n2), class2427);
+    public void method24839(final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final Color color) {
+        this.method24836((int)n5, (int)n6, (int)(n7 - n5), (int)(n8 - n6)).method24778(n, n2, (float)(int)(n3 - n), (float)(int)(n4 - n2), color);
     }
     
     @Override
@@ -408,7 +411,7 @@ public class Class7766 extends Class7764
     }
     
     @Override
-    public void method24841(final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final Class2427 class2427) {
+    public void method24841(final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final Color color) {
         throw new UnsupportedOperationException();
     }
     
@@ -418,7 +421,7 @@ public class Class7766 extends Class7764
     }
     
     @Override
-    public void method24829(final float n, final float n2, final float n3, final float n4, final Class2427 class2427) {
+    public void method24829(final float n, final float n2, final float n3, final float n4, final Color color) {
         throw new UnsupportedOperationException();
     }
     
@@ -428,6 +431,6 @@ public class Class7766 extends Class7764
     }
     
     static {
-        Class7766.field31755 = Class7840.method25330();
+        Class7766.field31755 = Renderer.get();
     }
 }

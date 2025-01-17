@@ -17,7 +17,7 @@ public class Class3882 extends Class3874
     private final Class5328 field17538;
     private final int field17539;
     
-    public Class3882(final Class5328 field17538, final int field17539, final Class9288 class9288) {
+    public Class3882(final Class5328 field17538, final int field17539, final Properties class9288) {
         super(class9288);
         this.field17538 = field17538;
         if (!field17538.method16453()) {

@@ -4,11 +4,13 @@
 
 package mapped;
 
-public final class Class5474
+import slick2d.Renderer;
+
+public final class GLUtils
 {
-    public static void method16716() {
+    public static void checkGLContext() {
         try {
-            Class7840.method25330().method19296();
+            Renderer.get().method19296();
         }
         catch (final NullPointerException ex) {
             throw new RuntimeException("OpenGL based resources (images, fonts, sprites etc) must be loaded as part of init() or the game loop. They cannot be loaded before initialisation.");

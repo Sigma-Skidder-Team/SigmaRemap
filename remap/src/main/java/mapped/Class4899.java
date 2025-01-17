@@ -28,7 +28,7 @@ public class Class4899 extends Class4841
         Class8154.method26913((float)(this.field20478 + n2 / 2), (float)(this.field20479 + n2 / 2), (float)(this.field20480 - n2), (float)(this.field20481 - n2), 9.0f, n * 0.9f);
         Class8154.method26913((float)(this.field20478 + n2 / 2), (float)(this.field20479 + n2 / 2), (float)(this.field20480 - n2), (float)(this.field20481 - n2), 30.0f, n * 0.4f);
         Class8154.method26925((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, (float)n2, Class6430.method19118(Class265.field1278.field1292, 0.97f));
-        Class8154.method26899((float)(this.field20478 + 20), (float)(this.field20479 + 20), 20.0f, 20.0f, Class7853.field32216, Class6430.method19118(Class265.field1273.field1292, 0.3f));
+        Class8154.method26899((float)(this.field20478 + 20), (float)(this.field20479 + 20), 20.0f, 20.0f, ClientAssets.search, Class6430.method19118(Class265.field1273.field1292, 0.3f));
         final ArrayList<Module> method14713 = this.method14713();
         if (method14713.size() > 0) {
             if (this.method14715(this.field20955, method14713.get(0).getName())) {

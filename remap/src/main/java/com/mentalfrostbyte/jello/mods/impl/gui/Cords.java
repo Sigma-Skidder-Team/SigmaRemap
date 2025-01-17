@@ -74,7 +74,7 @@ public class Cords extends Module
             final String string = Cords.mc.player.method1894().getX() + " " + Cords.mc.player.method1894().getY() + " " + Cords.mc.player.method1894().getZ();
             final int n = 85;
             final int method17028 = class5740.method17028();
-            final float min2 = Math.min(1.0f, 150 / (float)Class9400.field40312.method23505(string));
+            final float min2 = Math.min(1.0f, 150 / (float) ClientFonts.JelloLight18.getWidth(string));
             float n2;
             if (this.field15925.method35857() != Class2186.field12964) {
                 n2 = min2 * (0.9f + Class7791.method25029(Math.min(1.0f, this.field15925.method35858() * 8.0f), 0.0f, 1.0f, 1.0f) * 0.1f);
@@ -86,8 +86,8 @@ public class Cords extends Module
             GL11.glTranslatef((float)n, (float)(method17028 + 10), 0.0f);
             GL11.glScalef(n2, n2, 1.0f);
             GL11.glTranslatef((float)(-n), (float)(-method17028 - 10), 0.0f);
-            Class8154.method26890(Class9400.field40328, (float)n, (float)method17028, string, Class6430.method19118(-16777216, 0.5f * min), Class2056.field11738, Class2056.field11734);
-            Class8154.method26890(Class9400.field40312, (float)n, (float)method17028, string, Class6430.method19118(Class265.field1278.field1292, 0.8f * min), Class2056.field11738, Class2056.field11734);
+            Class8154.method26890(ClientFonts.JelloLight18_AA, (float)n, (float)method17028, string, Class6430.method19118(-16777216, 0.5f * min), Class2056.field11738, Class2056.field11734);
+            Class8154.method26890(ClientFonts.JelloLight18, (float)n, (float)method17028, string, Class6430.method19118(Class265.field1278.field1292, 0.8f * min), Class2056.field11738, Class2056.field11734);
             GL11.glPopMatrix();
         }
     }

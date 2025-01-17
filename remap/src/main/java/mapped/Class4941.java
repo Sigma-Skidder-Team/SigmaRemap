@@ -5,6 +5,7 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
+import slick2d.Texture;
 
 public class Class4941 extends Class4800
 {
@@ -12,7 +13,7 @@ public class Class4941 extends Class4800
     private int field21222;
     private boolean field21223;
     public static Class9572 field21224;
-    private Class7776 field21225;
+    private Texture field21225;
     private Class4813 field21226;
     public static Screen field21227;
     

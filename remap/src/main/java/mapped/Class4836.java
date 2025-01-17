@@ -4,13 +4,15 @@
 
 package mapped;
 
+import slick2d.Texture;
+
 import java.awt.image.BufferedImage;
 
 public class Class4836 extends Class4825
 {
     public Class7971 field20723;
     private BufferedImage field20724;
-    private Class7776 field20725;
+    private Texture field20725;
     private float field20726;
     private Class4840 field20727;
     private boolean field20728;
@@ -86,7 +88,7 @@ public class Class4836 extends Class4825
             Class8154.method26872();
             if (this.field20726 > 0.0f) {
                 if (this.field20481 > 55) {
-                    Class8154.method26899((float)(this.field20478 + this.method14276()), this.field20479 + 26 * this.field20481 / 100.0f, 18.0f * this.field20726 * this.field20481 / 100.0f, 47 * this.field20481 / 100.0f, Class7853.field32197, this.method14309() ? this.field20732 : Class265.field1278.field1292);
+                    Class8154.method26899((float)(this.field20478 + this.method14276()), this.field20479 + 26 * this.field20481 / 100.0f, 18.0f * this.field20726 * this.field20481 / 100.0f, 47 * this.field20481 / 100.0f, ClientAssets.select, this.method14309() ? this.field20732 : Class265.field1278.field1292);
                 }
             }
             super.method14205(n);
@@ -96,7 +98,7 @@ public class Class4836 extends Class4825
     public void method14508() {
         Class8154.method26900((float)(this.field20478 + 13), (float)(this.field20479 + 13), 75.0f, 75.0f, this.field20723.method25899(), Class265.field1278.field1292, true);
         Class8154.method26914((float)(this.field20478 + 13), (float)(this.field20479 + 13), 75.0f, 75.0f, 20.0f, 1.0f);
-        Class8154.method26899((float)(this.field20478 + 1), (float)this.field20479, 100.0f, 100.0f, Class7853.field32196, this.method14309() ? this.field20732 : Class265.field1278.field1292);
+        Class8154.method26899((float)(this.field20478 + 1), (float)this.field20479, 100.0f, 100.0f, ClientAssets.cercle, this.method14309() ? this.field20732 : Class265.field1278.field1292);
     }
     
     public void method14509() {
@@ -104,13 +106,13 @@ public class Class4836 extends Class4825
         if (s.equals("Unknown name")) {
             s = this.field20723.method25888();
         }
-        Class8154.method26890(Class9400.field40327, (float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + 20), s, Class6430.method19118(Class265.field1273.field1292, 0.4f), Class2056.field11738, Class2056.field11738);
-        Class8154.method26890(Class9400.field40327, (float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + 18), s, Class265.field1278.field1292, Class2056.field11738, Class2056.field11738);
+        Class8154.method26890(ClientFonts.Default, (float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + 20), s, Class6430.method19118(Class265.field1273.field1292, 0.4f), Class2056.field11738, Class2056.field11738);
+        Class8154.method26890(ClientFonts.Default, (float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + 18), s, Class265.field1278.field1292, Class2056.field11738, Class2056.field11738);
         if (!this.field20723.method25912()) {
-            Class8154.method26891(Class9400.field40327, (float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + 32), this.field20723.method25892().replaceAll(".", "*"), -8355712, Class2056.field11738, Class2056.field11735, true);
+            Class8154.method26891(ClientFonts.Default, (float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + 32), this.field20723.method25892().replaceAll(".", "*"), -8355712, Class2056.field11738, Class2056.field11735, true);
         }
         else {
-            Class8154.method26891(Class9400.field40327, (float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + 29), "Cracked", Class265.field1283.field1292, Class2056.field11738, Class2056.field11735, true);
+            Class8154.method26891(ClientFonts.Default, (float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + 29), "Cracked", Class265.field1283.field1292, Class2056.field11738, Class2056.field11735, true);
         }
     }
     

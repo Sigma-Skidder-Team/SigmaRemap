@@ -35,7 +35,7 @@ public abstract class Class3905 extends Class3902
     public static final VoxelShape field17709;
     private final boolean field17710;
     
-    public Class3905(final boolean field17710, final Class9288 class9288) {
+    public Class3905(final boolean field17710, final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3905.field17564, Direction.NORTH)).with((IProperty<Comparable>)Class3905.field17693, false)).with(Class3905.field17618, Class107.field333));
         this.field17710 = field17710;

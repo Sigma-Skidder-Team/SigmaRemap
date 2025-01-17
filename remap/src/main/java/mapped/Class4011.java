@@ -32,7 +32,7 @@ public class Class4011 extends Block
     private final Object2IntMap<Block> field18078;
     private final Object2IntMap<Block> field18079;
     
-    public Class4011(final Class9288 class9288) {
+    public Class4011(final Properties class9288) {
         super(class9288);
         this.field18078 = (Object2IntMap<Block>)new Object2IntOpenHashMap();
         this.field18079 = (Object2IntMap<Block>)new Object2IntOpenHashMap();

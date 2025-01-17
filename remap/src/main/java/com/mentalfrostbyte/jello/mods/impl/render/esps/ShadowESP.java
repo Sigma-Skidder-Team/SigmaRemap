@@ -66,8 +66,8 @@ public class ShadowESP extends Module
                 GL11.glTranslatef(0.0f, 0.1f, 0.0f);
                 GL11.glRotatef(ShadowESP.mc.field4644.method5833().method18164(), 0.0f, -1.0f, 0.0f);
                 GL11.glScalef(-0.11f, -0.11f, -0.11f);
-                Class8154.method26900(-class399.method1930() * 22.0f, -class399.method1931() * 5.5f, class399.method1930() * 44.0f, class399.method1931() * 21.0f, Class7853.field32200, n, false);
-                Class7853.field32188.method24916();
+                Class8154.method26900(-class399.method1930() * 22.0f, -class399.method1931() * 5.5f, class399.method1930() * 44.0f, class399.method1931() * 21.0f, ClientAssets.shadow, n, false);
+                ClientAssets.shout.bind();
                 GL11.glPopMatrix();
             }
         });

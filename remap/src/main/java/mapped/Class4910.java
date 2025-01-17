@@ -5,21 +5,22 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import slick2d.Texture;
+import slick2d.TrueTypeFont;
 
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import java.net.MalformedURLException;
-import java.awt.image.BufferedImage;
 import java.net.URL;
 
 public class Class4910 extends Class4825
 {
     public static Class6523 field21004;
     public URL field21005;
-    public BufferedImage field21006;
+    public java.awt.image.BufferedImage field21006;
     public boolean field21007;
-    private Class7776 field21008;
-    private Class7776 field21009;
+    private Texture field21008;
+    private Texture field21009;
     private Class9572 field21010;
     
     public void finalize() throws Throwable {
@@ -94,7 +95,7 @@ public class Class4910 extends Class4825
             new Thread(() -> {
                 try {
                     ImageIO.read(this.field21005);
-                    final BufferedImage field40311;
+                    final java.awt.image.BufferedImage field40311;
                     if (field40311.getHeight() != field40311.getWidth()) {
                         if (this.method14314().contains("[NCS Release]")) {
                             this.field21006 = field40311.getSubimage(1, 3, 170, 170);
@@ -136,7 +137,7 @@ public class Class4910 extends Class4825
                     if (this.field21009 != null) {
                         this.field21009.method24923();
                     }
-                    this.field21009 = Class9399.method34928("picture", Class6804.method20826(this.field21006, 14));
+                    this.field21009 = Class9399.method34928("picture", BufferedImage.method20826(this.field21006, 14));
                 }
                 catch (final IOException ex2) {
                     ex2.printStackTrace();
@@ -151,9 +152,9 @@ public class Class4910 extends Class4825
             }
         }
         else {
-            Class8154.method26899(n2, n3, n4, n5, Class7853.field32183, Class6430.method19118(Class265.field1278.field1292, n * (1.0f - method35858)));
+            Class8154.method26899(n2, n3, n4, n5, ClientAssets.artwork, Class6430.method19118(Class265.field1278.field1292, n * (1.0f - method35858)));
             if (this.field21009 != null) {
-                Class8154.method26899(n2, n3, n4, n5, Class7853.field32183, Class6430.method19118(Class265.field1278.field1292, method35858 * n));
+                Class8154.method26899(n2, n3, n4, n5, ClientAssets.artwork, Class6430.method19118(Class265.field1278.field1292, method35858 * n));
             }
         }
         int n6 = 50;
@@ -161,17 +162,17 @@ public class Class4910 extends Class4825
             n6 = 40;
         }
         final float n7 = 0.5f + method35858 / 2.0f;
-        Class8154.method26899(this.method14272() + this.method14276() / 2 - n6 / 2 * n7, this.method14274() + this.method14276() / 2 - n6 / 2 * n7, n6 * n7, n6 * n7, Class7853.field32186, Class6430.method19118(Class265.field1278.field1292, method35858 * n));
-        final Class7524 field40310 = Class9400.field40310;
+        Class8154.method26899(this.method14272() + this.method14276() / 2 - n6 / 2 * n7, this.method14274() + this.method14276() / 2 - n6 / 2 * n7, n6 * n7, n6 * n7, ClientAssets.play, Class6430.method19118(Class265.field1278.field1292, method35858 * n));
+        final TrueTypeFont field40310 = ClientFonts.JelloLight12;
         if (this.field20495 != null) {
             Class8154.method26865(this);
             final String[] split = this.method14314().replaceAll("\\(.*\\)", "").replaceAll("\\[.*\\]", "").split(" - ");
             if (split.length > 1) {
-                Class8154.method26889(field40310, (float)(this.method14272() + (this.method14276() - field40310.method23505(split[1])) / 2), (float)(this.method14274() + this.method14276() - 2), split[1], Class6430.method19118(Class265.field1278.field1292, n));
-                Class8154.method26889(field40310, (float)(this.method14272() + (this.method14276() - field40310.method23505(split[0])) / 2), (float)(this.method14274() + this.method14276() - 2 + 13), split[0], Class6430.method19118(Class265.field1278.field1292, n));
+                Class8154.method26889(field40310, (float)(this.method14272() + (this.method14276() - field40310.getWidth(split[1])) / 2), (float)(this.method14274() + this.method14276() - 2), split[1], Class6430.method19118(Class265.field1278.field1292, n));
+                Class8154.method26889(field40310, (float)(this.method14272() + (this.method14276() - field40310.getWidth(split[0])) / 2), (float)(this.method14274() + this.method14276() - 2 + 13), split[0], Class6430.method19118(Class265.field1278.field1292, n));
             }
             else {
-                Class8154.method26889(field40310, (float)(this.method14272() + (this.method14276() - field40310.method23505(split[0])) / 2), (float)(this.method14274() + this.method14276() - 2 + 6), split[0], Class6430.method19118(Class265.field1278.field1292, n));
+                Class8154.method26889(field40310, (float)(this.method14272() + (this.method14276() - field40310.getWidth(split[0])) / 2), (float)(this.method14274() + this.method14276() - 2 + 6), split[0], Class6430.method19118(Class265.field1278.field1292, n));
             }
             Class8154.method26872();
         }

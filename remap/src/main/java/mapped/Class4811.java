@@ -5,6 +5,8 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import slick2d.Texture;
+import slick2d.TrueTypeFont;
 
 public class Class4811 extends Class4803
 {
@@ -30,8 +32,8 @@ public class Class4811 extends Class4803
         final int i10 = 2;
         final int i11 = 128;
         final int i12 = 128;
-        final Class7524 v15 = Class9400.field40313;
-        final Class7524 v16 = Class9400.field40312;
+        final TrueTypeFont v15 = ClientFonts.JelloLight20;
+        final TrueTypeFont v16 = ClientFonts.JelloLight18;
         int i13 = 0;
         final int i14 = 80;
         final int i15 = 10;
@@ -39,14 +41,14 @@ public class Class4811 extends Class4803
         final StringBuilder append = new StringBuilder().append("Jello for Sigma ");
         Client.method35173();
         final String v18 = append.append("5.0.0b6").toString();
-        this.method14239(this.field20570 = new Class4871(this, "Singleplayer", this.method14352(i13++), this.method14353(), 128, 128, Class7853.field32157, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
-        this.method14239(this.field20571 = new Class4871(this, "Multiplayer", this.method14352(i13++), this.method14353(), 128, 128, Class7853.field32155, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
-        this.method14239(this.field20572 = new Class4871(this, "Realms", this.method14352(i13++), this.method14353(), 128, 128, Class7853.field32158, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
-        this.method14239(this.field20573 = new Class4871(this, "Options", this.method14352(i13++), this.method14353(), 128, 128, Class7853.field32156, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
-        this.method14239(this.field20574 = new Class4871(this, "Alt Manager", this.method14352(i13++), this.method14353(), 128, 128, Class7853.field32159, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
-        this.method14239(this.field20577 = new Class4834(this, "Copyright", 10, this.method14278() - 31, v15.method23505(v17), 128, new Class6523(Class265.field1278.field1292), v17, v15));
-        this.method14239(this.field20576 = new Class4834(this, "Version", this.method14276() - v15.method23505(v18) - 9, this.method14278() - 31, 128, 128, new Class6523(Class265.field1278.field1292), v18, v15));
-        this.method14239(this.field20579 = new Class4861(this, "changelog", 232, 24, 110, 50, new Class6523(Class6430.method19118(Class265.field1278.field1292, 0.7f)), "                                                                                                        Changelog                                                                   ", Class9400.field40313));
+        this.method14239(this.field20570 = new Class4871(this, "Singleplayer", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.singeplayer, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
+        this.method14239(this.field20571 = new Class4871(this, "Multiplayer", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.multiplayer, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
+        this.method14239(this.field20572 = new Class4871(this, "Realms", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.shop, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
+        this.method14239(this.field20573 = new Class4871(this, "Options", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.options, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
+        this.method14239(this.field20574 = new Class4871(this, "Alt Manager", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.alt, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
+        this.method14239(this.field20577 = new Class4834(this, "Copyright", 10, this.method14278() - 31, v15.getWidth(v17), 128, new Class6523(Class265.field1278.field1292), v17, v15));
+        this.method14239(this.field20576 = new Class4834(this, "Version", this.method14276() - v15.getWidth(v18) - 9, this.method14278() - 31, 128, 128, new Class6523(Class265.field1278.field1292), v18, v15));
+        this.method14239(this.field20579 = new Class4861(this, "changelog", 232, 24, 110, 50, new Class6523(Class6430.method19118(Class265.field1278.field1292, 0.7f)), "                                                                                                        Changelog                                                                   ", ClientFonts.JelloLight20));
         this.field20579.method14260((class4803, n) -> ((Class4929)this.method14267()).method14791());
         this.method14239(this.field20578 = new Class4897(this, "Account", 0, i15, 0, i14, "Log in"));
         this.method14239(this.field20575 = new Class4839(this, "pre", 0, 0, 240, 100));
@@ -86,13 +88,13 @@ public class Class4811 extends Class4803
     @Override
     public void method14205(final float n) {
         this.method14227();
-        final Class7776 field32160 = Class7853.field32160;
+        final Texture field32160 = ClientAssets.logo_large;
         final int method24918 = field32160.method24918();
         final int method24919 = field32160.method24917();
         if (Class9000.field37993 > 1.0f) {
-            final Class7776 field32161 = Class7853.field32161;
+            final Texture field32161 = ClientAssets.logo_large2x;
         }
-        Class8154.method26899((float)(this.method14276() / 2 - method24918 / 2), (float)(this.method14278() / 2 - method24919), (float)method24918, (float)method24919, Class7853.field32160, Class6430.method19118(Class265.field1278.field1292, n));
+        Class8154.method26899((float)(this.method14276() / 2 - method24918 / 2), (float)(this.method14278() / 2 - method24919), (float)method24918, (float)method24919, ClientAssets.logo_large, Class6430.method19118(Class265.field1278.field1292, n));
         super.method14205(n);
     }
     

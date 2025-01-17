@@ -20,7 +20,7 @@ public abstract class Class3895 extends Class3892
     public static final VoxelShape field17577;
     public static final Class7113 field17578;
     
-    public Class3895(final Class9288 class9288) {
+    public Class3895(final Properties class9288) {
         super(class9288);
     }
     

@@ -8,7 +8,7 @@ public class Class3991 extends Class3986
 {
     private static String[] field17995;
     
-    public Class3991(final Class9288 class9288) {
+    public Class3991(final Properties class9288) {
         super(class9288);
     }
     

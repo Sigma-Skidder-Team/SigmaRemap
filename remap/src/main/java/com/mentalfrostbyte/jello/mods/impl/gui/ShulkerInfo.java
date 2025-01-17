@@ -18,6 +18,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import org.lwjgl.opengl.GL11;
+import slick2d.TrueTypeFont;
 
 public class ShulkerInfo extends Module
 {
@@ -99,7 +100,7 @@ public class ShulkerInfo extends Module
     }
     
     public void method9927(final double n, final double n2, final double n3, final Entity class399, final float n4) {
-        final Class7524 field40314 = Class9400.field40314;
+        final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         final String method8459 = class399.getName().getUnformattedComponentText();
         final float n5 = (float)(n - ShulkerInfo.mc.field4644.method5833().method18161().getX());
         final float n6 = (float)(n2 - ShulkerInfo.mc.field4644.method5833().method18161().getY());
@@ -117,7 +118,7 @@ public class ShulkerInfo extends Module
         GL11.glRotatef(ShulkerInfo.mc.field4644.method5833().method18164(), 0.0f, -1.0f, 0.0f);
         GL11.glRotatef(ShulkerInfo.mc.field4644.method5833().method18163(), 1.0f, 0.0f, 0.0f);
         GL11.glScalef(-0.009f * n4, -0.009f * n4, -0.009f * n4);
-        GL11.glTranslated((double)(-field40314.method23505(method8459) / 2), 0.0, 0.0);
+        GL11.glTranslated((double)(-field40314.getWidth(method8459) / 2), 0.0, 0.0);
         this.method9929(-87, -70, this.method9931(((Class427)class399).method2107()), ((Class427)class399).method2107().method27664().getUnformattedComponentText(), false);
         GL11.glPopMatrix();
         GL11.glEnable(2929);
@@ -150,7 +151,7 @@ public class ShulkerInfo extends Module
                             final int round = Math.round(16.0f * Class8154.method26867());
                             final int n = 1;
                             final int n2 = 12;
-                            Class9400.field40314.method23539();
+                            ClientFonts.JelloLight25.getHeight();
                             this.method9929((int)(ShulkerInfo.mc.field4650.method26959() * Class9000.field37993 - 9 * (round + n) - n2 * 3), (int)(ShulkerInfo.mc.field4650.method26960() * Class9000.field37993 - 33.0), method20054, method20053.method27664().getUnformattedComponentText(), true);
                             GL11.glPopMatrix();
                             RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
@@ -170,7 +171,7 @@ public class ShulkerInfo extends Module
     
     private void method9929(final int n, final int n2, final List<ItemStack> list, final String s, final boolean b) {
         final int n3 = 12;
-        final int method23539 = Class9400.field40314.method23539();
+        final int method23539 = ClientFonts.JelloLight25.getHeight();
         int round = Math.round(16.0f * Class8154.method26867());
         final int n4 = 1;
         final int n5 = (int)Math.ceil(list.size() / 9.0f) * (round + n4) + n3 * 2 + method23539;
@@ -184,7 +185,7 @@ public class ShulkerInfo extends Module
         else {
             Class8154.method26917(n, n2, n6, n5, Class6430.method19118(Class265.field1273.field1292, 0.94f));
         }
-        Class8154.method26889(Class9400.field40314, (float)(n + n3), (float)(n2 + n3 - 3), s, Class6430.method19118(Class265.field1278.field1292, 0.8f));
+        Class8154.method26889(ClientFonts.JelloLight25, (float)(n + n3), (float)(n2 + n3 - 3), s, Class6430.method19118(Class265.field1278.field1292, 0.8f));
         RenderSystem.method30001();
         for (int i = 0; i < list.size(); ++i) {
             final ItemStack class8321 = list.get(i);
@@ -198,12 +199,12 @@ public class ShulkerInfo extends Module
             }
             Class8154.method26929(class8321, n8, n7, round, round);
             if (class8321.field34176 > 1) {
-                final int n9 = round - Class9400.field40313.method23505("" + class8321.field34176);
-                final int method23540 = Class9400.field40313.method23505("" + class8321.field34176);
+                final int n9 = round - ClientFonts.JelloLight20.getWidth("" + class8321.field34176);
+                final int method23540 = ClientFonts.JelloLight20.getWidth("" + class8321.field34176);
                 GL11.glAlphaFunc(519, 0.0f);
                 RenderSystem.method30002();
-                Class8154.method26900((float)(n8 + n9 - 17 - method23540 / 4), (float)(n7 + 7), (float)(40 + method23540), 40.0f, Class7853.field32200, Class6430.method19118(Class265.field1278.field1292, 0.7f), false);
-                Class8154.method26889(Class9400.field40313, (float)(n8 + n9), (float)(n7 + 13), "" + class8321.field34176, Class265.field1278.field1292);
+                Class8154.method26900((float)(n8 + n9 - 17 - method23540 / 4), (float)(n7 + 7), (float)(40 + method23540), 40.0f, ClientAssets.shadow, Class6430.method19118(Class265.field1278.field1292, 0.7f), false);
+                Class8154.method26889(ClientFonts.JelloLight20, (float)(n8 + n9), (float)(n7 + 13), "" + class8321.field34176, Class265.field1278.field1292);
                 RenderSystem.method30001();
             }
             RenderSystem.method30001();

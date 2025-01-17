@@ -12,7 +12,7 @@ public class Class4007 extends Block
 {
     private static final ITextComponent field18066;
     
-    public Class4007(final Class9288 class9288) {
+    public Class4007(final Properties class9288) {
         super(class9288);
     }
     

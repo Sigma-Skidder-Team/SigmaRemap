@@ -8,6 +8,9 @@ import java.util.Iterator;
 import java.nio.ByteOrder;
 import java.nio.ByteBuffer;
 import org.lwjgl.BufferUtils;
+import slick2d.Renderer;
+import slick2d.Texture;
+
 import java.io.BufferedInputStream;
 import java.lang.ref.SoftReference;
 import java.io.IOException;
@@ -19,7 +22,7 @@ import java.util.HashMap;
 
 public class Class7649
 {
-    public static Class6448 field30374;
+    public static SGL field30374;
     private static final Class7649 field30375;
     private HashMap field30376;
     private HashMap field30377;
@@ -69,23 +72,23 @@ public class Class7649
         return method24233.get(0);
     }
     
-    public Class7776 method24222(final File file, final boolean b, final int n) throws IOException {
+    public Texture method24222(final File file, final boolean b, final int n) throws IOException {
         return this.method24227(new FileInputStream(file), file.getAbsolutePath(), b, n, null);
     }
     
-    public Class7776 method24223(final File file, final boolean b, final int n, final int[] array) throws IOException {
+    public Texture method24223(final File file, final boolean b, final int n, final int[] array) throws IOException {
         return this.method24227(new FileInputStream(file), file.getAbsolutePath(), b, n, array);
     }
     
-    public Class7776 method24224(final String s, final boolean b, final int n) throws IOException {
+    public Texture method24224(final String s, final boolean b, final int n) throws IOException {
         return this.method24227(Class8834.method30851(s), s, b, n, null);
     }
     
-    public Class7776 method24225(final String s, final boolean b, final int n, final int[] array) throws IOException {
+    public Texture method24225(final String s, final boolean b, final int n, final int[] array) throws IOException {
         return this.method24227(Class8834.method30851(s), s, b, n, array);
     }
     
-    public Class7776 method24226(final InputStream inputStream, final String s, final boolean b, final int n) throws IOException {
+    public Texture method24226(final InputStream inputStream, final String s, final boolean b, final int n) throws IOException {
         return this.method24227(inputStream, s, b, n, null);
     }
     
@@ -156,25 +159,25 @@ public class Class7649
         if (this.field30380) {
             class7777.method24940(n4, n5, n3, n2, method28388);
         }
-        final Class6448 field30374 = Class7649.field30374;
-        final Class6448 field30375 = Class7649.field30374;
+        final SGL field30374 = Class7649.field30374;
+        final SGL field30375 = Class7649.field30374;
         field30374.method19289(n, 10241, n3);
-        final Class6448 field30376 = Class7649.field30374;
-        final Class6448 field30377 = Class7649.field30374;
+        final SGL field30376 = Class7649.field30374;
+        final SGL field30377 = Class7649.field30374;
         field30376.method19289(n, 10240, n2);
         Class7649.field30374.method19297(n, 0, this.field30378, method24232(method28390), method24232(method28391), 0, n4, 5121, method28388);
         return class7777;
     }
     
-    public Class7776 method24229(final int n, final int n2) throws IOException {
+    public Texture method24229(final int n, final int n2) throws IOException {
         return this.method24230(n, n2, 9728);
     }
     
-    public Class7776 method24230(final int n, final int n2, final int n3) throws IOException {
+    public Texture method24230(final int n, final int n2, final int n3) throws IOException {
         return this.method24231(new Class5342(n, n2), n3);
     }
     
-    public Class7776 method24231(final Class5336 obj, final int n) throws IOException {
+    public Texture method24231(final Class5336 obj, final int n) throws IOException {
         final int n2 = 3553;
         final ByteBuffer method16485 = obj.method16485();
         final int method16486 = method24221();
@@ -241,7 +244,7 @@ public class Class7649
     }
     
     static {
-        Class7649.field30374 = Class7840.method25330();
+        Class7649.field30374 = Renderer.get();
         field30375 = new Class7649();
     }
 }

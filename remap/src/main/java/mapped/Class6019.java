@@ -4,10 +4,12 @@
 
 package mapped;
 
+import slick2d.Renderer;
+
 public class Class6019 implements Class6020
 {
     private static String[] field24496;
-    private Class6448 field24497;
+    private SGL field24497;
     public static int field24498;
     private boolean field24499;
     private float field24500;
@@ -20,7 +22,7 @@ public class Class6019 implements Class6020
     private boolean field24507;
     
     public Class6019() {
-        this.field24497 = Class7840.method25330();
+        this.field24497 = Renderer.get();
         this.field24500 = 1.0f;
         this.field24505 = new Class6021();
         this.field24507 = false;
@@ -97,7 +99,7 @@ public class Class6019 implements Class6020
         float n5 = 0.0f;
         float n6 = 0.0f;
         float n7 = 0.0f;
-        this.field24497.method19251(7);
+        this.field24497.glBegin(7);
         for (int i = 0; i < n + 1; ++i) {
             int n8 = i;
             int n9 = i + 1;
@@ -153,12 +155,12 @@ public class Class6019 implements Class6020
             final float n25 = array[3] - array[1];
             final float n26 = (float)Math.toDegrees(Math.atan2(n25, n24)) + 90.0f;
             if (n24 != 0.0f || n25 != 0.0f) {
-                this.field24497.method19251(6);
+                this.field24497.glBegin(6);
                 this.method17939(0);
-                this.field24497.method19255(array[0], array[1]);
+                this.field24497.glVertex2f(array[0], array[1]);
                 for (int n27 = 0; n27 < 180.0f + n23; n27 += (int)n23) {
                     final float n28 = (float)Math.toRadians(n26 + n27);
-                    this.field24497.method19255(array[0] + (float)(Math.cos(n28) * n3), array[1] + (float)(Math.sin(n28) * n3));
+                    this.field24497.glVertex2f(array[0] + (float)(Math.cos(n28) * n3), array[1] + (float)(Math.sin(n28) * n3));
                 }
                 this.field24497.method19253();
             }
@@ -168,12 +170,12 @@ public class Class6019 implements Class6020
             final float n30 = array[n * 2 - 1] - array[n * 2 - 3];
             final float n31 = (float)Math.toDegrees(Math.atan2(n30, n29)) - 90.0f;
             if (n29 != 0.0f || n30 != 0.0f) {
-                this.field24497.method19251(6);
+                this.field24497.glBegin(6);
                 this.method17939(n - 1);
-                this.field24497.method19255(array[n * 2 - 2], array[n * 2 - 1]);
+                this.field24497.glVertex2f(array[n * 2 - 2], array[n * 2 - 1]);
                 for (int n32 = 0; n32 < 180.0f + n23; n32 += (int)n23) {
                     final float n33 = (float)Math.toRadians(n31 + n32);
-                    this.field24497.method19255(array[n * 2 - 2] + (float)(Math.cos(n33) * n3), array[n * 2 - 1] + (float)(Math.sin(n33) * n3));
+                    this.field24497.glVertex2f(array[n * 2 - 2] + (float)(Math.cos(n33) * n3), array[n * 2 - 1] + (float)(Math.sin(n33) * n3));
                 }
                 this.field24497.method19253();
             }

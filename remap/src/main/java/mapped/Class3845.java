@@ -10,7 +10,7 @@ import net.minecraft.world.IBlockReader;
 
 public abstract class Class3845 extends Class3846
 {
-    public Class3845(final Class9288 class9288) {
+    public Class3845(final Properties class9288) {
         super(class9288);
     }
     

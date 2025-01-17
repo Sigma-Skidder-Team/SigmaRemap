@@ -72,7 +72,7 @@ public class Step extends ModuleWithSettings
                 if (Step.mc.player.onGround) {
                     if (n4 != class5745.method17049()) {
                         if (n4 < 0.5) {
-                            if (!(class5746.method21696() instanceof Class3921)) {
+                            if (!(class5746.method21696() instanceof SlabBlock)) {
                                 if (class5746.method21696() instanceof Class3916) {
                                     return Class2166.field12885;
                                 }
@@ -85,7 +85,7 @@ public class Step extends ModuleWithSettings
                     }
                 }
                 else {
-                    if (class5746.method21696() instanceof Class3921 && class5746.method21725(Step.mc.world, class5747).method24537().field25077 == 1.0) {
+                    if (class5746.method21696() instanceof SlabBlock && class5746.method21725(Step.mc.world, class5747).method24537().field25077 == 1.0) {
                         return Class2166.field12884;
                     }
                     if (class5746.method21696() instanceof Class3916) {

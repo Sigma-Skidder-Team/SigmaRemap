@@ -41,6 +41,7 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.commons.codec.binary.Base64;
+import slick2d.TrueTypeFont;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -803,22 +804,22 @@ public class Class6430
         return Class2068.field11839;
     }
     
-    public static String[] method19175(final String s, final int n, final Class7524 class7524) {
+    public static String[] method19175(final String s, final int n, final TrueTypeFont class7524) {
         final String[] split = s.split(" ");
         final HashMap hashMap = new HashMap();
         int i = 0;
         for (String substring : split) {
             String str = (hashMap.get(i) != null) ? hashMap.get(i) : "";
             boolean b = hashMap.get(i) == null;
-            boolean b2 = class7524.method23505(str) + class7524.method23505(substring) <= n;
-            boolean b3 = class7524.method23505(substring) >= n;
+            boolean b2 = class7524.getWidth(str) + class7524.getWidth(substring) <= n;
+            boolean b3 = class7524.getWidth(substring) >= n;
             if (!b2) {
                 if (!b3) {
                     ++i;
                     str = ((hashMap.get(i) != null) ? hashMap.get(i) : "");
                     b = (hashMap.get(i) == null);
-                    b2 = (class7524.method23505(str) + class7524.method23505(substring) <= n);
-                    b3 = (class7524.method23505(substring) >= n);
+                    b2 = (class7524.getWidth(str) + class7524.getWidth(substring) <= n);
+                    b3 = (class7524.getWidth(substring) >= n);
                 }
             }
             if (!b2) {
@@ -826,15 +827,15 @@ public class Class6430
                     while (b3 && !b2) {
                         for (int k = 0; k <= substring.length(); ++k) {
                             final String substring2 = substring.substring(0, substring.length() - k);
-                            if (class7524.method23505(substring2) <= n) {
+                            if (class7524.getWidth(substring2) <= n) {
                                 ++i;
                                 hashMap.put(i, substring2);
                                 substring = substring.substring(substring.length() - k, substring.length());
                                 break;
                             }
                         }
-                        b2 = (class7524.method23505((hashMap.get(i) != null) ? hashMap.get(i) : "") + class7524.method23505(substring) <= n);
-                        b3 = (class7524.method23505(substring) >= n);
+                        b2 = (class7524.getWidth((hashMap.get(i) != null) ? hashMap.get(i) : "") + class7524.getWidth(substring) <= n);
+                        b3 = (class7524.getWidth(substring) >= n);
                         final boolean b4 = hashMap.get(i) == null;
                     }
                     if (!b2) {

@@ -4,8 +4,9 @@
 
 package mapped;
 
+import slick2d.TrueTypeFont;
+
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Class4913 extends Class4825
@@ -26,20 +27,20 @@ public class Class4913 extends Class4825
             Class8154.method26876((float)this.method14272(), (float)this.method14274(), (float)this.field20480, (float)this.field20481, -14144460);
             Class8154.method26914((float)this.method14272(), (float)this.method14274(), (float)this.field20480, (float)(this.field20481 - this.method14274()), 114.0f, n);
             final int n2 = 30;
-            final Class7524 field40312 = Class9400.field40312;
+            final TrueTypeFont field40312 = ClientFonts.JelloLight18;
             final String property = System.getProperty("line.separator");
             final String[] split = this.field20495.split("(?<=" + property + ")");
             int field40313 = this.field21016;
             int n3 = -1;
-            float n4 = (float)field40312.method23505(this.field20495.substring(0, this.field21016));
+            float n4 = (float)field40312.getWidth(this.field20495.substring(0, this.field21016));
             int i = 0;
         Label_0295_Outer:
             while (i < split.length) {
                 final List<String> method14753 = this.method14753(split[i]);
                 int n5 = 0;
                 for (final String s : method14753) {
-                    Class8154.method26889(field40312, (float)(this.method14272() + n5 + n2), (float)(this.method14274() + n2 + i * field40312.method23539()), s, Class6430.method19118(this.method14754(s), n));
-                    n5 += field40312.method23505(s);
+                    Class8154.method26889(field40312, (float)(this.method14272() + n5 + n2), (float)(this.method14274() + n2 + i * field40312.getHeight()), s, Class6430.method19118(this.method14754(s), n));
+                    n5 += field40312.getWidth(s);
                     field40313 -= s.length();
                 }
                 while (true) {
@@ -71,7 +72,7 @@ public class Class4913 extends Class4825
                     continue;
                 }
             }
-            Class8154.method26876(n2 + n4, (float)(this.method14274() + n2 + n3 * field40312.method23539()), n2 + n4 + 1.0f, (float)(this.method14274() + n2 + field40312.method23506(this.field20495) + n3 * field40312.method23539()), Class6430.method19118(Class265.field1278.field1292, n));
+            Class8154.method26876(n2 + n4, (float)(this.method14274() + n2 + n3 * field40312.getHeight()), n2 + n4 + 1.0f, (float)(this.method14274() + n2 + field40312.getHeight(this.field20495) + n3 * field40312.getHeight()), Class6430.method19118(Class265.field1278.field1292, n));
             super.method14205(n);
         }
     }
@@ -122,7 +123,7 @@ public class Class4913 extends Class4825
         super.method14232(c);
         if (this.method14306()) {
             if (Class9274.method34208(c)) {
-                if (Class9400.field40312.method23505(Character.toString(c)) > 1) {
+                if (ClientFonts.JelloLight18.getWidth(Character.toString(c)) > 1) {
                     this.field20495 = Class9274.method34214(this.field20495, Character.toString(c), this.field21016);
                     ++this.field21016;
                 }
@@ -142,7 +143,7 @@ public class Class4913 extends Class4825
         if (this.field20492) {
             final String property = System.getProperty("line.separator");
             final String[] split = this.field20495.split("(?<=" + property + ")");
-            int n3 = (n2 - this.method14281() - Class9400.field40312.method23539() / 2) / Class9400.field40312.method23539() - 1;
+            int n3 = (n2 - this.method14281() - ClientFonts.JelloLight18.getHeight() / 2) / ClientFonts.JelloLight18.getHeight() - 1;
             if (n3 > split.length - 1) {
                 n3 = split.length - 1;
             }
@@ -153,7 +154,7 @@ public class Class4913 extends Class4825
             for (int i = 0; i < n3; ++i) {
                 n4 += split[i].length();
             }
-            this.field21016 = n4 + Class9274.method34216(split[n3], Class9400.field40312, (float)this.method14280(), n, 30.0f);
+            this.field21016 = n4 + Class9274.method34216(split[n3], ClientFonts.JelloLight18, (float)this.method14280(), n, 30.0f);
             if (this.field20495.substring(0, this.field21016).endsWith(property)) {
                 if (this.field21016 != this.field20495.length()) {
                     --this.field21016;

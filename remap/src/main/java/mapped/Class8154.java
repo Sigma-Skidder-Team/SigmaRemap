@@ -4,14 +4,16 @@
 
 package mapped;
 
-import java.awt.Color;
-
 import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.BufferUtils;
+import slick2d.Color;
+import slick2d.Texture;
+import slick2d.TrueTypeFont;
+
 import java.awt.Rectangle;
 import java.math.BigDecimal;
 import java.nio.IntBuffer;
@@ -396,36 +398,36 @@ public class Class8154
         RenderSystem.disableBlend();
     }
     
-    public static void method26889(final Class7524 class7524, final float n, final float n2, final String s, final int n3) {
+    public static void method26889(final TrueTypeFont class7524, final float n, final float n2, final String s, final int n3) {
         method26891(class7524, n, n2, s, n3, Class2056.field11734, Class2056.field11735, false);
     }
     
-    public static void method26890(final Class7524 class7524, final float n, final float n2, final String s, final int n3, final Class2056 class7525, final Class2056 class7526) {
+    public static void method26890(final TrueTypeFont class7524, final float n, final float n2, final String s, final int n3, final Class2056 class7525, final Class2056 class7526) {
         method26891(class7524, n, n2, s, n3, class7525, class7526, false);
     }
     
-    public static void method26891(Class7524 class7524, final float n, final float n2, final String s, final int n3, final Class2056 class7525, final Class2056 class7526, final boolean b) {
+    public static void method26891(TrueTypeFont class7524, final float n, final float n2, final String s, final int n3, final Class2056 class7525, final Class2056 class7526, final boolean b) {
         RenderSystem.method30068(0.0f, 0.0f, 0.0f, 1.0f);
         GL11.glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
         int n4 = 0;
         int n5 = 0;
         switch (Class9090.field38496[class7525.ordinal()]) {
             case 1: {
-                n4 = -class7524.method23505(s) / 2;
+                n4 = -class7524.getWidth(s) / 2;
                 break;
             }
             case 2: {
-                n4 = -class7524.method23505(s);
+                n4 = -class7524.getWidth(s);
                 break;
             }
         }
         switch (Class9090.field38496[class7526.ordinal()]) {
             case 1: {
-                n5 = -class7524.method23506(s) / 2;
+                n5 = -class7524.getHeight(s) / 2;
                 break;
             }
             case 3: {
-                n5 = -class7524.method23506(s);
+                n5 = -class7524.getHeight(s);
                 break;
             }
         }
@@ -436,29 +438,29 @@ public class Class8154
         GL11.glPushMatrix();
         boolean b2 = false;
         if (Class9000.field37993 == 2.0) {
-            if (class7524 == Class9400.field40313) {
-                class7524 = Class9400.field40315;
+            if (class7524 == ClientFonts.JelloLight20) {
+                class7524 = ClientFonts.JelloLight40;
             }
-            else if (class7524 == Class9400.field40314) {
-                class7524 = Class9400.field40316;
+            else if (class7524 == ClientFonts.JelloLight25) {
+                class7524 = ClientFonts.JelloLight50;
             }
-            else if (class7524 == Class9400.field40310) {
-                class7524 = Class9400.field40318;
+            else if (class7524 == ClientFonts.JelloLight12) {
+                class7524 = ClientFonts.JelloLight24;
             }
-            else if (class7524 == Class9400.field40311) {
-                class7524 = Class9400.field40317;
+            else if (class7524 == ClientFonts.JelloLight14) {
+                class7524 = ClientFonts.JelloLight28;
             }
-            else if (class7524 == Class9400.field40312) {
-                class7524 = Class9400.field40319;
+            else if (class7524 == ClientFonts.JelloLight18) {
+                class7524 = ClientFonts.JelloLight36;
             }
-            else if (class7524 == Class9400.field40320) {
-                class7524 = Class9400.field40321;
+            else if (class7524 == ClientFonts.Regular20) {
+                class7524 = ClientFonts.Regular40;
             }
-            else if (class7524 == Class9400.field40323) {
-                class7524 = Class9400.field40325;
+            else if (class7524 == ClientFonts.JelloMedium20) {
+                class7524 = ClientFonts.JelloMedium40;
             }
-            else if (class7524 == Class9400.field40324) {
-                class7524 = Class9400.field40326;
+            else if (class7524 == ClientFonts.JelloMedium25) {
+                class7524 = ClientFonts.JelloMedium50;
             }
             else {
                 b2 = true;
@@ -477,10 +479,10 @@ public class Class8154
         RenderSystem.enableBlend();
         GL11.glBlendFunc(770, 771);
         if (b) {
-            class7524.method23501((float)Math.round(n + n4), (float)(Math.round(n2 + n5) + 2), s, new Class2427(0.0f, 0.0f, 0.0f, 0.35f));
+            class7524.drawString((float)Math.round(n + n4), (float)(Math.round(n2 + n5) + 2), s, new Color(0.0f, 0.0f, 0.0f, 0.35f));
         }
         if (s != null) {
-            class7524.method23501((float)Math.round(n + n4), (float)Math.round(n2 + n5), s, new Class2427(n7, n8, n9, n6));
+            class7524.drawString((float)Math.round(n + n4), (float)Math.round(n2 + n5), s, new Color(n7, n8, n9, n6));
         }
         RenderSystem.disableBlend();
         GL11.glPopMatrix();
@@ -501,21 +503,21 @@ public class Class8154
         int n5 = 0;
         switch (Class9090.field38496[class7523.ordinal()]) {
             case 1: {
-                n4 = -class7522.method23505(s) / 2;
+                n4 = -class7522.getWidth(s) / 2;
                 break;
             }
             case 2: {
-                n4 = -class7522.method23505(s);
+                n4 = -class7522.getWidth(s);
                 break;
             }
         }
         switch (Class9090.field38496[class7524.ordinal()]) {
             case 1: {
-                n5 = -class7522.method23506(s) / 2;
+                n5 = -class7522.getHeight(s) / 2;
                 break;
             }
             case 3: {
-                n5 = -class7522.method23506(s);
+                n5 = -class7522.getHeight(s);
                 break;
             }
         }
@@ -526,7 +528,7 @@ public class Class8154
         RenderSystem.enableBlend();
         GL11.glBlendFunc(770, 771);
         Class7777.method24930();
-        class7522.method23501((float)Math.round(n + n4), (float)Math.round(n2 + n5), s, new Class2427(n7, n8, n9, n6));
+        class7522.drawString((float)Math.round(n + n4), (float)Math.round(n2 + n5), s, new Color(n7, n8, n9, n6));
         RenderSystem.disableBlend();
     }
     
@@ -591,24 +593,24 @@ public class Class8154
         RenderSystem.disableBlend();
     }
     
-    public static void method26898(final float n, final float n2, final float n3, final float n4, final Class7776 class7776, final int n5) {
+    public static void method26898(final float n, final float n2, final float n3, final float n4, final Texture class7776, final int n5) {
         method26902(n, n2, n3, n4, class7776, n5, 0.0f, 0.0f, (float)class7776.method24918(), (float)class7776.method24917(), true);
         method26902(n, n2, n3, n4, class7776, n5, 0.0f, 0.0f, (float)class7776.method24918(), (float)class7776.method24917(), false);
     }
     
-    public static void method26899(final float n, final float n2, final float n3, final float n4, final Class7776 class7776, final int n5) {
+    public static void method26899(final float n, final float n2, final float n3, final float n4, final Texture class7776, final int n5) {
         method26902(n, n2, n3, n4, class7776, n5, 0.0f, 0.0f, (float)class7776.method24918(), (float)class7776.method24917(), true);
     }
     
-    public static void method26900(final float n, final float n2, final float n3, final float n4, final Class7776 class7776, final int n5, final boolean b) {
+    public static void method26900(final float n, final float n2, final float n3, final float n4, final Texture class7776, final int n5, final boolean b) {
         method26902(n, n2, n3, n4, class7776, n5, 0.0f, 0.0f, (float)class7776.method24918(), (float)class7776.method24917(), b);
     }
     
-    public static void method26901(final float n, final float n2, final float n3, final float n4, final Class7776 class7776, final int n5, final float n6, final float n7, final float n8, final float n9) {
+    public static void method26901(final float n, final float n2, final float n3, final float n4, final Texture class7776, final int n5, final float n6, final float n7, final float n8, final float n9) {
         method26902(n, n2, n3, n4, class7776, n5, n6, n7, n8, n9, true);
     }
     
-    public static void method26902(float a, float a2, float a3, float a4, final Class7776 class7776, final int n, final float n2, final float n3, final float n4, final float n5, final boolean b) {
+    public static void method26902(float a, float a2, float a3, float a4, final Texture class7776, final int n, final float n2, final float n3, final float n4, final float n5, final boolean b) {
         if (class7776 != null) {
             RenderSystem.method30068(0.0f, 0.0f, 0.0f, 1.0f);
             GL11.glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
@@ -626,7 +628,7 @@ public class Class8154
             RenderSystem.method30068(n7, n8, n9, n6);
             GL11.glEnable(3042);
             GL11.glEnable(3553);
-            class7776.method24916();
+            class7776.bind();
             final float n10 = a3 / class7776.method24922() / (a3 / class7776.method24918());
             final float n11 = a4 / class7776.method24921() / (a4 / class7776.method24917());
             final float n12 = n4 / class7776.method24918() * n10;
@@ -704,15 +706,15 @@ public class Class8154
         }
     }
     
-    public static void method26904(final float n, final float n2, final float n3, final float n4, final Class7776 class7776, final float n5) {
+    public static void method26904(final float n, final float n2, final float n3, final float n4, final Texture class7776, final float n5) {
         method26899(n, n2, n3, n4, class7776, Class6430.method19118(Class265.field1278.field1292, n5));
     }
     
-    public static void method26905(final float n, final float n2, final float n3, final float n4, final Class7776 class7776) {
+    public static void method26905(final float n, final float n2, final float n3, final float n4, final Texture class7776) {
         method26899(n, n2, n3, n4, class7776, -1);
     }
     
-    public static void method26906(final float n, final float n2, final float n3, final float n4, final Class7776 class7776, final float n5, final float n6, final float n7, final float n8) {
+    public static void method26906(final float n, final float n2, final float n3, final float n4, final Texture class7776, final float n5, final float n6, final float n7, final float n8) {
         GL11.glPushMatrix();
         GL11.glTranslatef(n + n3 / 2.0f, n2 + n4 / 2.0f, 0.0f);
         GL11.glRotatef(n5, n6, n7, n8);
@@ -933,22 +935,22 @@ public class Class8154
     public static void method26913(final float n, final float n2, final float n3, final float n4, final float n5, final float n6) {
         GL11.glAlphaFunc(519, 0.0f);
         final int method19118 = Class6430.method19118(Class265.field1278.field1292, n6);
-        method26899(n - n5, n2 - n5, n5, n5, Class7853.field32173, method19118);
-        method26899(n + n3, n2 - n5, n5, n5, Class7853.field32174, method19118);
-        method26899(n - n5, n2 + n4, n5, n5, Class7853.field32175, method19118);
-        method26899(n + n3, n2 + n4, n5, n5, Class7853.field32176, method19118);
-        method26900(n - n5, n2, n5, n4, Class7853.field32169, method19118, false);
-        method26900(n + n3, n2, n5, n4, Class7853.field32170, method19118, false);
-        method26900(n, n2 - n5, n3, n5, Class7853.field32171, method19118, false);
-        method26900(n, n2 + n4, n3, n5, Class7853.field32172, method19118, false);
+        method26899(n - n5, n2 - n5, n5, n5, ClientAssets.shadow_corner, method19118);
+        method26899(n + n3, n2 - n5, n5, n5, ClientAssets.shadow_corner_2, method19118);
+        method26899(n - n5, n2 + n4, n5, n5, ClientAssets.shadow_corner_3, method19118);
+        method26899(n + n3, n2 + n4, n5, n5, ClientAssets.shadow_corner_4, method19118);
+        method26900(n - n5, n2, n5, n4, ClientAssets.shadow_left, method19118, false);
+        method26900(n + n3, n2, n5, n4, ClientAssets.shadow_right, method19118, false);
+        method26900(n, n2 - n5, n3, n5, ClientAssets.shadow_top, method19118, false);
+        method26900(n, n2 + n4, n3, n5, ClientAssets.shadow_bottom, method19118, false);
     }
     
     public static void method26914(final float n, final float n2, final float n3, final float n4, final float n5, final float n6) {
         final int method19118 = Class6430.method19118(Class265.field1278.field1292, n6);
-        method26900(n, n2, n5, n4, Class7853.field32170, method19118, false);
-        method26900(n + n3 - n5, n2, n5, n4, Class7853.field32169, method19118, false);
-        method26900(n, n2, n3, n5, Class7853.field32172, method19118, false);
-        method26900(n, n2 + n4 - n5, n3, n5, Class7853.field32171, method19118, false);
+        method26900(n, n2, n5, n4, ClientAssets.shadow_right, method19118, false);
+        method26900(n + n3 - n5, n2, n5, n4, ClientAssets.shadow_left, method19118, false);
+        method26900(n, n2, n3, n5, ClientAssets.shadow_bottom, method19118, false);
+        method26900(n, n2 + n4 - n5, n3, n5, ClientAssets.shadow_top, method19118, false);
     }
     
     public static void method26915(final int n, final int n2, final int n3, final int n4, final int n5) {
@@ -960,28 +962,28 @@ public class Class8154
         final int n9 = 10;
         final int n10 = n8 - n9;
         method26876((float)(n + n9), (float)(n2 + n9), (float)(n + n3 - n9), (float)(n2 + n4 - n9), n5);
-        method26899((float)(n - n10), (float)(n2 - n10), (float)n8, (float)n8, Class7853.field32195, n5);
+        method26899((float)(n - n10), (float)(n2 - n10), (float)n8, (float)n8, ClientAssets.floating_corner, n5);
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(n + n3 - n8 / 2), (float)(n2 + n8 / 2), 0.0f);
         GL11.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n - n3 - n8 / 2), (float)(-n2 - n8 / 2), 0.0f);
-        method26899((float)(n + n3 - n10), (float)(n2 - n10), (float)n8, (float)n8, Class7853.field32195, n5);
+        method26899((float)(n + n3 - n10), (float)(n2 - n10), (float)n8, (float)n8, ClientAssets.floating_corner, n5);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(n + n3 - n8 / 2), (float)(n2 + n4 + n8 / 2), 0.0f);
         GL11.glRotatef(180.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n - n3 - n8 / 2), (float)(-n2 - n4 - n8 / 2), 0.0f);
-        method26899((float)(n + n3 - n10), (float)(n2 + n9 + n4), (float)n8, (float)n8, Class7853.field32195, n5);
+        method26899((float)(n + n3 - n10), (float)(n2 + n9 + n4), (float)n8, (float)n8, ClientAssets.floating_corner, n5);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(n - n8 / 2), (float)(n2 + n4 + n8 / 2), 0.0f);
         GL11.glRotatef(270.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n - n8 / 2), (float)(-n2 - n4 - n8 / 2), 0.0f);
-        method26899((float)(n + n9), (float)(n2 + n9 + n4), (float)n8, (float)n8, Class7853.field32195, n5);
+        method26899((float)(n + n9), (float)(n2 + n9 + n4), (float)n8, (float)n8, ClientAssets.floating_corner, n5);
         GL11.glPopMatrix();
         method26870(n6 - n8, n7 + n9, n6 - n10 + n8, n7 - n9 + n4);
         for (int i = 0; i < n4; i += n8) {
-            method26899((float)(n - n10), (float)(n2 + n9 + i), (float)n8, (float)n8, Class7853.field32194, n5);
+            method26899((float)(n - n10), (float)(n2 + n9 + i), (float)n8, (float)n8, ClientAssets.floating_border, n5);
         }
         method26872();
         method26870(n6, n7 - n10, n6 + n3 - n9, n7 + n9);
@@ -990,7 +992,7 @@ public class Class8154
             GL11.glTranslatef((float)(n + n8 / 2), (float)(n2 + n8 / 2), 0.0f);
             GL11.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-n - n8 / 2), (float)(-n2 - n8 / 2), 0.0f);
-            method26899((float)(n - n10), (float)(n2 - n9 - j), (float)n8, (float)n8, Class7853.field32194, n5);
+            method26899((float)(n - n10), (float)(n2 - n9 - j), (float)n8, (float)n8, ClientAssets.floating_border, n5);
             GL11.glPopMatrix();
         }
         method26872();
@@ -1000,7 +1002,7 @@ public class Class8154
             GL11.glTranslatef((float)(n + n8 / 2), (float)(n2 + n8 / 2), 0.0f);
             GL11.glRotatef(180.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-n - n8 / 2), (float)(-n2 - n8 / 2), 0.0f);
-            method26899((float)(n - n3 + n9), (float)(n2 - n9 - k), (float)n8, (float)n8, Class7853.field32194, n5);
+            method26899((float)(n - n3 + n9), (float)(n2 - n9 - k), (float)n8, (float)n8, ClientAssets.floating_border, n5);
             GL11.glPopMatrix();
         }
         method26872();
@@ -1010,7 +1012,7 @@ public class Class8154
             GL11.glTranslatef((float)(n + n8 / 2), (float)(n2 + n8 / 2), 0.0f);
             GL11.glRotatef(270.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-n - n8 / 2), (float)(-n2 - n8 / 2), 0.0f);
-            method26899((float)(n - n4 + n9), (float)(n2 + n9 + l), (float)n8, (float)n8, Class7853.field32194, n5);
+            method26899((float)(n - n4 + n9), (float)(n2 + n9 + l), (float)n8, (float)n8, ClientAssets.floating_border, n5);
             GL11.glPopMatrix();
         }
         method26872();
@@ -1021,28 +1023,28 @@ public class Class8154
         final int n7 = 10;
         final int n8 = n6 - n7;
         method26876((float)(n + n7), (float)(n2 + n7), (float)(n + n3 - n7), (float)(n2 + n4 - n7), n5);
-        method26899((float)(n - n8), (float)(n2 - n8), (float)n6, (float)n6, Class7853.field32195, n5);
+        method26899((float)(n - n8), (float)(n2 - n8), (float)n6, (float)n6, ClientAssets.floating_corner, n5);
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(n + n3 - n6 / 2), (float)(n2 + n6 / 2), 0.0f);
         GL11.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n - n3 - n6 / 2), (float)(-n2 - n6 / 2), 0.0f);
-        method26899((float)(n + n3 - n8), (float)(n2 - n8), (float)n6, (float)n6, Class7853.field32195, n5);
+        method26899((float)(n + n3 - n8), (float)(n2 - n8), (float)n6, (float)n6, ClientAssets.floating_corner, n5);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(n + n3 - n6 / 2), (float)(n2 + n4 + n6 / 2), 0.0f);
         GL11.glRotatef(180.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n - n3 - n6 / 2), (float)(-n2 - n4 - n6 / 2), 0.0f);
-        method26899((float)(n + n3 - n8), (float)(n2 + n7 + n4), (float)n6, (float)n6, Class7853.field32195, n5);
+        method26899((float)(n + n3 - n8), (float)(n2 + n7 + n4), (float)n6, (float)n6, ClientAssets.floating_corner, n5);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(n - n6 / 2), (float)(n2 + n4 + n6 / 2), 0.0f);
         GL11.glRotatef(270.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n - n6 / 2), (float)(-n2 - n4 - n6 / 2), 0.0f);
-        method26899((float)(n + n7), (float)(n2 + n7 + n4), (float)n6, (float)n6, Class7853.field32195, n5);
+        method26899((float)(n + n7), (float)(n2 + n7 + n4), (float)n6, (float)n6, ClientAssets.floating_corner, n5);
         GL11.glPopMatrix();
         method26871(n - n6, n2 + n7, n - n8 + n6, n2 - n7 + n4, true);
         for (int i = 0; i < n4; i += n6) {
-            method26899((float)(n - n8), n2 + n7 + i - 0.4f, (float)n6, n6 + 0.4f, Class7853.field32194, n5);
+            method26899((float)(n - n8), n2 + n7 + i - 0.4f, (float)n6, n6 + 0.4f, ClientAssets.floating_border, n5);
         }
         method26872();
         method26871(n, n2 - n8, n + n3 - n7, n2 + n7, true);
@@ -1051,7 +1053,7 @@ public class Class8154
             GL11.glTranslatef((float)(n + n6 / 2), (float)(n2 + n6 / 2), 0.0f);
             GL11.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-n - n6 / 2), (float)(-n2 - n6 / 2), 0.0f);
-            method26899((float)(n - n8), n2 - n7 - j - 0.4f, (float)n6, n6 + 0.4f, Class7853.field32194, n5);
+            method26899((float)(n - n8), n2 - n7 - j - 0.4f, (float)n6, n6 + 0.4f, ClientAssets.floating_border, n5);
             GL11.glPopMatrix();
         }
         method26872();
@@ -1061,7 +1063,7 @@ public class Class8154
             GL11.glTranslatef((float)(n + n6 / 2), (float)(n2 + n6 / 2), 0.0f);
             GL11.glRotatef(180.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-n - n6 / 2), (float)(-n2 - n6 / 2), 0.0f);
-            method26899((float)(n - n3 + n7), n2 - n7 - k - 0.4f, (float)n6, n6 + 0.4f, Class7853.field32194, n5);
+            method26899((float)(n - n3 + n7), n2 - n7 - k - 0.4f, (float)n6, n6 + 0.4f, ClientAssets.floating_border, n5);
             GL11.glPopMatrix();
         }
         method26872();
@@ -1071,7 +1073,7 @@ public class Class8154
             GL11.glTranslatef((float)(n + n6 / 2), (float)(n2 + n6 / 2), 0.0f);
             GL11.glRotatef(270.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-n - n6 / 2), (float)(-n2 - n6 / 2), 0.0f);
-            method26899((float)(n - n4 + n7), n2 + n7 + l - 0.4f, (float)n6, n6 + 0.4f, Class7853.field32194, n5);
+            method26899((float)(n - n4 + n7), n2 + n7 + l - 0.4f, (float)n6, n6 + 0.4f, ClientAssets.floating_border, n5);
             GL11.glPopMatrix();
         }
         method26872();
@@ -1226,13 +1228,13 @@ public class Class8154
         }
     }
     
-    public static Color method26930(int n, int n2, final Color color) {
+    public static java.awt.Color method26930(int n, int n2, final java.awt.Color color) {
         n *= (int)Class9000.field37993;
         n2 *= (int)Class9000.field37993;
         final ByteBuffer allocateDirect = ByteBuffer.allocateDirect(3);
         GL11.glPixelStorei(3317, 1);
         GL11.glReadPixels(n, Minecraft.method5277().field4632.method7693() - n2, 1, 1, 6407, 5120, allocateDirect);
-        return new Color(allocateDirect.get(0) * 2, allocateDirect.get(1) * 2, allocateDirect.get(2) * 2, 1);
+        return new java.awt.Color(allocateDirect.get(0) * 2, allocateDirect.get(1) * 2, allocateDirect.get(2) * 2, 1);
     }
     
     public static double[] method26931(final double n, final double n2, final double n3) {

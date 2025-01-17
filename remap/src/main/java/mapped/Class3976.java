@@ -15,7 +15,7 @@ public class Class3976 extends Block
     private static String[] field17964;
     public static final Class7113 field17965;
     
-    public Class3976(final Class9288 class9288) {
+    public Class3976(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3976.field17965, false));
     }

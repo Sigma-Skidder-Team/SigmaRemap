@@ -5,6 +5,7 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
+import slick2d.TrueTypeFont;
 
 public class Class4807 extends Class4803
 {
@@ -28,12 +29,12 @@ public class Class4807 extends Class4803
         else {
             Class8154.method26925((float)this.field20478, (float)this.field20479, (float)(this.field20480 - 1), (float)(this.field20481 - 1), 3.0f, Class6430.method19118(-2500135, 0.9f));
         }
-        final Class7524 class7524 = this.field20474.equals("Sigma") ? Class9493.field40805 : Class9493.field40806;
+        final TrueTypeFont class7524 = this.field20474.equals("Sigma") ? Class9493.field40805 : Class9493.field40806;
         if (!this.field20474.equals("Sigma")) {
-            Class8154.method26889(class7524, this.field20478 + (this.method14276() - class7524.method23505(this.field20474)) / 2.0f, (float)(this.field20479 + 18), this.field20474, -16777216);
+            Class8154.method26889(class7524, this.field20478 + (this.method14276() - class7524.getWidth(this.field20474)) / 2.0f, (float)(this.field20479 + 18), this.field20474, -16777216);
         }
         else {
-            Class8154.method26889(class7524, this.field20478 + (this.method14276() - class7524.method23505(this.field20474)) / 2.0f, (float)(this.field20479 + 10), this.field20474, -13619152);
+            Class8154.method26889(class7524, this.field20478 + (this.method14276() - class7524.getWidth(this.field20474)) / 2.0f, (float)(this.field20479 + 10), this.field20474, -13619152);
         }
         super.method14205(n);
         Class8154.method26872();

@@ -19,7 +19,7 @@ public class Class3980 extends Block
     public static final Class7115 field17975;
     public static final VoxelShape field17976;
     
-    public Class3980(final Class9288 class9288) {
+    public Class3980(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3980.field17975, Direction.NORTH));
     }

@@ -5,35 +5,36 @@
 package mapped;
 
 import java.lang.reflect.Field;
-import java.awt.font.FontRenderContext;
 import java.awt.Rectangle;
 import java.util.Iterator;
 import java.util.Collections;
 import java.awt.font.GlyphVector;
-import java.util.Collection;
 import java.awt.FontMetrics;
-import java.text.AttributedCharacterIterator;
 import java.util.Map;
 import java.awt.font.TextAttribute;
 import java.util.ArrayList;
 import org.newdawn.slick.SlickException;
+import slick2d.Color;
+import slick2d.Font;
+import slick2d.Renderer;
+import slick2d.Texture;
+
 import java.io.IOException;
 import java.awt.FontFormatException;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.awt.Font;
 import java.util.Comparator;
 
-public class Class7522 implements Class7523
+public class Class7522 implements Font
 {
     private static final int field29827 = 200;
     private static final int field29828 = 1114111;
     private static final int field29829 = 512;
     private static final int field29830 = 2175;
-    private static final Class6448 field29831;
+    private static final SGL field29831;
     private static final Class8941 field29832;
     private static final Comparator field29833;
-    private Font field29834;
+    private java.awt.Font field29834;
     private String field29835;
     private int field29836;
     private int field29837;
@@ -58,9 +59,9 @@ public class Class7522 implements Class7523
     private Class8941 field29856;
     private final LinkedHashMap field29857;
     
-    private static Font method23487(final String s) throws SlickException {
+    private static java.awt.Font method23487(final String s) throws SlickException {
         try {
-            return Font.createFont(0, Class8834.method30851(s));
+            return java.awt.Font.createFont(0, Class8834.method30851(s));
         }
         catch (final FontFormatException ex) {
             throw new Class2324("Invalid font: " + s, ex);
@@ -103,11 +104,11 @@ public class Class7522 implements Class7523
         this.method23488(method23487(field29835), n, b, b2);
     }
     
-    public Class7522(final Font font, final String s) throws SlickException {
+    public Class7522(final java.awt.Font font, final String s) throws SlickException {
         this(font, new Class8552(s));
     }
     
-    public Class7522(final Font font, final Class8552 class8552) {
+    public Class7522(final java.awt.Font font, final Class8552 class8552) {
         this.field29840 = new Class8274[2175][];
         this.field29841 = new ArrayList();
         this.field29842 = new ArrayList(256);
@@ -121,7 +122,7 @@ public class Class7522 implements Class7523
         this.method23489(class8552);
     }
     
-    public Class7522(final Font font) {
+    public Class7522(final java.awt.Font font) {
         this.field29840 = new Class8274[2175][];
         this.field29841 = new ArrayList();
         this.field29842 = new ArrayList(256);
@@ -134,7 +135,7 @@ public class Class7522 implements Class7523
         this.method23488(font, font.getSize(), font.isBold(), font.isItalic());
     }
     
-    public Class7522(final Font font, final int n, final boolean b, final boolean b2) {
+    public Class7522(final java.awt.Font font, final int n, final boolean b, final boolean b2) {
         this.field29840 = new Class8274[2175][];
         this.field29841 = new ArrayList();
         this.field29842 = new ArrayList(256);
@@ -147,7 +148,7 @@ public class Class7522 implements Class7523
         this.method23488(font, n, b, b2);
     }
     
-    private void method23488(final Font font, final int n, final boolean b, final boolean b2) {
+    private void method23488(final java.awt.Font font, final int n, final boolean b, final boolean b2) {
         final Map<TextAttribute, ?> attributes = font.getAttributes();
         attributes.put(TextAttribute.SIZE, new Float((float)n));
         attributes.put(TextAttribute.WEIGHT, b ? TextAttribute.WEIGHT_BOLD : TextAttribute.WEIGHT_REGULAR);
@@ -281,18 +282,18 @@ public class Class7522 implements Class7523
         this.method23496();
     }
     
-    public Class8941 method23498(float n, float n2, final String s, final Class2427 class2427, final int beginIndex, final int n3) {
+    public Class8941 method23498(float n, float n2, final String s, final Color color, final int beginIndex, final int n3) {
         if (s == null) {
             throw new IllegalArgumentException("text cannot be null.");
         }
         if (s.length() == 0) {
             return Class7522.field29832;
         }
-        if (class2427 != null) {
+        if (color != null) {
             n -= this.field29845;
             n2 -= this.field29844;
             final String substring = s.substring(beginIndex, n3);
-            class2427.method9766();
+            color.bind();
             Class7777.method24930();
             Class8941 class2428 = null;
             if (this.field29853) {
@@ -343,7 +344,7 @@ public class Class7522 implements Class7523
             int n5 = 0;
             int field29836 = this.field29836;
             int n6 = 0;
-            Class7776 class2429 = null;
+            Texture class2429 = null;
             for (int i = 0; i < layoutGlyphVector.getNumGlyphs(); ++i) {
                 final int glyphCharIndex = layoutGlyphVector.getGlyphCharIndex(i);
                 if (glyphCharIndex >= beginIndex) {
@@ -368,7 +369,7 @@ public class Class7522 implements Class7523
                         }
                     }
                     if (class2430 != null) {
-                        final Class7776 method23505 = class2430.method24852();
+                        final Texture method23505 = class2430.method24852();
                         if (class2429 != null) {
                             if (class2429 != method23505) {
                                 Class7522.field29831.method19253();
@@ -376,8 +377,8 @@ public class Class7522 implements Class7523
                             }
                         }
                         if (class2429 == null) {
-                            method23505.method24916();
-                            Class7522.field29831.method19251(7);
+                            method23505.bind();
+                            Class7522.field29831.glBegin(7);
                             class2429 = method23505;
                         }
                         class2430.method24816((float)(method23503.x + n5), (float)(method23503.y + field29836), (float)class2430.method24843(), (float)class2430.method24844());
@@ -389,7 +390,7 @@ public class Class7522 implements Class7523
                     max2 = Math.max(max2, this.field29836 + method23503.y + method23503.height);
                     if (codePoint == 10) {
                         n6 = 1;
-                        field29836 += this.method23521();
+                        field29836 += this.getLineHeight();
                         ++n4;
                         max2 = 0;
                     }
@@ -409,25 +410,25 @@ public class Class7522 implements Class7523
                 class2428 = new Class8941();
             }
             class2428.field37624 = (short)max;
-            class2428.field37625 = (short)(n4 * this.method23521() + max2);
+            class2428.field37625 = (short)(n4 * this.getLineHeight() + max2);
             return class2428;
         }
         throw new IllegalArgumentException("color cannot be null.");
     }
     
     @Override
-    public void method23499(final float n, final float n2, final String s, final Class2427 class2427, final int n3, final int n4) {
-        this.method23498(n, n2, s, class2427, n3, n4);
+    public void drawString(final float x, final float y, final String text, final Color color, final int startIndex, final int endIndex) {
+        this.method23498(x, y, text, color, startIndex, endIndex);
     }
     
     @Override
-    public void method23500(final float n, final float n2, final String s) {
-        this.method23501(n, n2, s, Class2427.field14355);
+    public void drawString(final float x, final float y, final String text) {
+        this.drawString(x, y, text, Color.field14355);
     }
     
     @Override
-    public void method23501(final float n, final float n2, final String s, final Class2427 class2427) {
-        this.method23499(n, n2, s, class2427, 0, s.length());
+    public void drawString(final float x, final float y, final String text, final Color color) {
+        this.drawString(x, y, text, color, 0, text.length());
     }
     
     private Class8274 method23502(final int n, final int n2, final Rectangle rectangle, final GlyphVector glyphVector, final int n3) {
@@ -472,24 +473,24 @@ public class Class7522 implements Class7523
     }
     
     @Override
-    public int method23505(final String key) {
-        if (key == null) {
+    public int getWidth(final String str) {
+        if (str == null) {
             throw new IllegalArgumentException("text cannot be null.");
         }
-        if (key.length() != 0) {
+        if (str.length() != 0) {
             if (this.field29853) {
-                final Class8941 class8941 = this.field29857.get(key);
+                final Class8941 class8941 = this.field29857.get(str);
                 if (class8941 != null) {
                     return class8941.field37624;
                 }
             }
-            final char[] charArray = key.toCharArray();
+            final char[] charArray = str.toCharArray();
             final GlyphVector layoutGlyphVector = this.field29834.layoutGlyphVector(Class9498.field40860, charArray, 0, charArray.length, 0);
             int max = 0;
             int n = 0;
             int n2 = 0;
             for (int i = 0; i < layoutGlyphVector.getNumGlyphs(); ++i) {
-                final int codePoint = key.codePointAt(layoutGlyphVector.getGlyphCharIndex(i));
+                final int codePoint = str.codePointAt(layoutGlyphVector.getGlyphCharIndex(i));
                 final Rectangle method23503 = this.method23503(layoutGlyphVector, i, codePoint);
                 if (n2 != 0) {
                     if (codePoint != 10) {
@@ -510,23 +511,23 @@ public class Class7522 implements Class7523
     }
     
     @Override
-    public int method23506(final String key) {
-        if (key == null) {
+    public int getHeight(final String str) {
+        if (str == null) {
             throw new IllegalArgumentException("text cannot be null.");
         }
-        if (key.length() != 0) {
+        if (str.length() != 0) {
             if (this.field29853) {
-                final Class8941 class8941 = this.field29857.get(key);
+                final Class8941 class8941 = this.field29857.get(str);
                 if (class8941 != null) {
                     return class8941.field37625;
                 }
             }
-            final char[] charArray = key.toCharArray();
+            final char[] charArray = str.toCharArray();
             final GlyphVector layoutGlyphVector = this.field29834.layoutGlyphVector(Class9498.field40860, charArray, 0, charArray.length, 0);
             int n = 0;
             int max = 0;
             for (int i = 0; i < layoutGlyphVector.getNumGlyphs(); ++i) {
-                final int codePoint = key.codePointAt(layoutGlyphVector.getGlyphCharIndex(i));
+                final int codePoint = str.codePointAt(layoutGlyphVector.getGlyphCharIndex(i));
                 if (codePoint != 32) {
                     final Rectangle method23503 = this.method23503(layoutGlyphVector, i, codePoint);
                     max = Math.max(max, this.field29836 + method23503.y + method23503.height);
@@ -536,7 +537,7 @@ public class Class7522 implements Class7523
                     }
                 }
             }
-            return n * this.method23521() + max;
+            return n * this.getLineHeight() + max;
         }
         return 0;
     }
@@ -566,7 +567,7 @@ public class Class7522 implements Class7523
         throw new IllegalArgumentException("text cannot be null.");
     }
     
-    public Font method23508() {
+    public java.awt.Font method23508() {
         return this.field29834;
     }
     
@@ -619,7 +620,7 @@ public class Class7522 implements Class7523
     }
     
     @Override
-    public int method23521() {
+    public int getLineHeight() {
         return this.field29837 + this.field29836 + this.field29838 + this.field29844 + this.field29846 + this.field29849;
     }
     
@@ -670,7 +671,7 @@ public class Class7522 implements Class7523
     public String method23533() {
         if (this.field29835 == null) {
             try {
-                final Object invoke = Class.forName("sun.font.FontManager").getDeclaredMethod("getFont2D", Font.class).invoke(null, this.field29834);
+                final Object invoke = Class.forName("sun.font.FontManager").getDeclaredMethod("getFont2D", java.awt.Font.class).invoke(null, this.field29834);
                 final Field declaredField = Class.forName("sun.font.PhysicalFont").getDeclaredField("platName");
                 declaredField.setAccessible(true);
                 this.field29835 = (String)declaredField.get(invoke);
@@ -687,7 +688,7 @@ public class Class7522 implements Class7523
     }
     
     static {
-        field29831 = Class7840.method25330();
+        field29831 = Renderer.get();
         field29832 = new Class8941();
         field29833 = new Class4433();
     }

@@ -246,9 +246,9 @@ public class Class9356
                                 a = 0.9375f;
                                 a2 = 0.9375f;
                             }
-                            if (method21821 instanceof Class3921) {
-                                final Class3921 class1863 = (Class3921)method21821;
-                                if (method21820.get(Class3921.field17777) == Class186.field599) {
+                            if (method21821 instanceof SlabBlock) {
+                                final SlabBlock class1863 = (SlabBlock)method21821;
+                                if (method21820.get(SlabBlock.field17777) == Class186.field599) {
                                     a = 0.5f;
                                     a2 = 0.5f;
                                 }

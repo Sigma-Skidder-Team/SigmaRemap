@@ -49,12 +49,12 @@ public class Class4510 extends Class4500
         this.method13492(class1851, random, class1853, this.field19896, 1, 1, 0);
         this.method13492(class1851, random, class1853, Class1982.field10976, 1, 1, 6);
         this.method13444(class1851, class1853, 3, 1, 2, 3, 1, 4, Blocks.field29368.getDefaultState(), Blocks.field29368.getDefaultState(), false);
-        this.method13440(class1851, Blocks.field29604.getDefaultState(), 3, 1, 1, class1853);
-        this.method13440(class1851, Blocks.field29604.getDefaultState(), 3, 1, 5, class1853);
-        this.method13440(class1851, Blocks.field29604.getDefaultState(), 3, 2, 2, class1853);
-        this.method13440(class1851, Blocks.field29604.getDefaultState(), 3, 2, 4, class1853);
+        this.method13440(class1851, Blocks.STONE_BRICK_SLAB.getDefaultState(), 3, 1, 1, class1853);
+        this.method13440(class1851, Blocks.STONE_BRICK_SLAB.getDefaultState(), 3, 1, 5, class1853);
+        this.method13440(class1851, Blocks.STONE_BRICK_SLAB.getDefaultState(), 3, 2, 2, class1853);
+        this.method13440(class1851, Blocks.STONE_BRICK_SLAB.getDefaultState(), 3, 2, 4, class1853);
         for (int i = 2; i <= 4; ++i) {
-            this.method13440(class1851, Blocks.field29604.getDefaultState(), 2, 1, i, class1853);
+            this.method13440(class1851, Blocks.STONE_BRICK_SLAB.getDefaultState(), 2, 1, i, class1853);
         }
         if (!this.field19908) {
             if (class1853.isVecInside(new BlockPos(this.method13437(3, 3), this.method13438(2), this.method13439(3, 3)))) {

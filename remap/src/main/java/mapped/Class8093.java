@@ -6,15 +6,17 @@ package mapped;
 
 import org.newdawn.slick.SlickException;
 import org.lwjgl.opengl.GL11;
+import slick2d.Renderer;
+import slick2d.Texture;
 
 public abstract class Class8093
 {
-    private static Class7776 field33325;
+    private static Texture field33325;
     private static boolean field33326;
     
     public static void method26586() {
         if (!Class8093.field33326) {
-            Class7840.method25330().method19250();
+            Renderer.get().method19250();
             Class8093.field33325 = Class7777.method24927();
             Class7777.method24930();
             GL11.glPushAttrib(1048575);
@@ -40,7 +42,7 @@ public abstract class Class8093
                 Class7777.method24930();
             }
             else {
-                Class8093.field33325.method24916();
+                Class8093.field33325.bind();
             }
             Class8093.field33326 = false;
         }

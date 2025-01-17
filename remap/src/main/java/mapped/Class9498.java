@@ -6,14 +6,13 @@ package mapped;
 
 import java.awt.RenderingHints;
 import java.nio.ByteOrder;
-import java.util.ListIterator;
 import java.awt.image.WritableRaster;
-import java.awt.Shape;
-import java.awt.Color;
-import java.awt.Composite;
 import java.awt.AlphaComposite;
 import java.util.Iterator;
 import org.newdawn.slick.SlickException;
+import slick2d.Color;
+import slick2d.Renderer;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.awt.font.FontRenderContext;
@@ -25,7 +24,7 @@ import java.nio.ByteBuffer;
 public class Class9498
 {
     private static String[] field40853;
-    private static final Class6448 field40854;
+    private static final SGL field40854;
     public static final int field40855 = 256;
     private static ByteBuffer field40856;
     private static IntBuffer field40857;
@@ -82,7 +81,7 @@ public class Class9498
                 }
             }
         }
-        Class2427.field14355.method9766();
+        Color.field14355.bind();
         this.field40864.method24811();
         int n2 = 0;
         final Iterator method35368 = this.method35365(list);
@@ -130,7 +129,7 @@ public class Class9498
         Class9498.field40859.setComposite(AlphaComposite.Clear);
         Class9498.field40859.fillRect(0, 0, 256, 256);
         Class9498.field40859.setComposite(AlphaComposite.SrcOver);
-        Class9498.field40859.setColor(Color.white);
+        Class9498.field40859.setColor(java.awt.Color.white);
         final Iterator iterator = this.field40861.method23530().iterator();
         while (iterator.hasNext()) {
             ((Class6898)iterator.next()).method21195(Class9498.field40858, Class9498.field40859, this.field40861, class8274);
@@ -163,7 +162,7 @@ public class Class9498
     }
     
     static {
-        field40854 = Class7840.method25330();
+        field40854 = Renderer.get();
         (Class9498.field40856 = ByteBuffer.allocateDirect(262144)).order(ByteOrder.LITTLE_ENDIAN);
         Class9498.field40857 = Class9498.field40856.asIntBuffer();
         Class9498.field40858 = new BufferedImage(256, 256, 2);

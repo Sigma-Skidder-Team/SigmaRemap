@@ -26,7 +26,7 @@ public class Class4889 extends Class4841
         this.method14301(true);
         this.method14311(false);
         final Class4861 class4804;
-        this.method14239(class4804 = new Class4861(this, "addButton", this.field20480 - 55, 0, Class9400.field40314.method23505("Add"), 69, Class6523.field25964, "+", Class9400.field40314));
+        this.method14239(class4804 = new Class4861(this, "addButton", this.field20480 - 55, 0, ClientFonts.JelloLight25.getWidth("Add"), 69, Class6523.field25964, "+", ClientFonts.JelloLight25));
         class4804.method14260((class4803, n) -> this.field20901.method14706(true));
         this.method14239(this.field20901 = new Class4898(this, "profile", 0, 69, this.field20480, 200));
         this.field20901.method14301(true);
@@ -136,7 +136,7 @@ public class Class4889 extends Class4841
             n3 = 0.9f + (1.0f - Class8862.method31033(this.field20901.field20949.method35858(), 0.61, 0.01, 0.87, 0.16)) * 0.1f;
         }
         this.field20900.method14288(n3, n3);
-        Class8154.method26889(Class9400.field40314, (float)(this.field20478 + 25), (float)(this.field20479 + 20), "Profiles", Class6430.method19118(Class265.field1273.field1292, 0.8f * method35858));
+        Class8154.method26889(ClientFonts.JelloLight25, (float)(this.field20478 + 25), (float)(this.field20479 + 20), "Profiles", Class6430.method19118(Class265.field1273.field1292, 0.8f * method35858));
         Class8154.method26876((float)(this.field20478 + 25), (float)(this.field20479 + 69), (float)(this.field20478 + this.field20480 - 25), (float)(this.field20479 + 70), Class6430.method19118(Class265.field1273.field1292, 0.05f * method35858));
         super.method14205(method35858);
     }

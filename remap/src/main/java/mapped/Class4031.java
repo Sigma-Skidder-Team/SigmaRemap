@@ -18,7 +18,7 @@ public class Class4031 extends Block
     public static final Class7112 field18127;
     private final Class3968 field18128;
     
-    public Class4031(final Class3968 field18128, final Class9288 class9288) {
+    public Class4031(final Class3968 field18128, final Properties class9288) {
         super(class9288);
         this.field18128 = field18128;
         this.method11877(((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class4031.field18127, 0));

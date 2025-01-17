@@ -5,15 +5,18 @@
 package mapped;
 
 import org.lwjgl.BufferUtils;
+import slick2d.Renderer;
+import slick2d.Texture;
+
 import java.nio.ByteOrder;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 
-public class Class7777 implements Class7776
+public class Class7777 implements Texture
 {
     private static String[] field31837;
-    public static Class6448 field31838;
-    public static Class7776 field31839;
+    public static SGL field31838;
+    public static Texture field31839;
     private int field31840;
     private int field31841;
     private int field31842;
@@ -27,7 +30,7 @@ public class Class7777 implements Class7776
     private String field31850;
     private Class9044 field31851;
     
-    public static Class7776 method24927() {
+    public static Texture method24927() {
         return Class7777.field31839;
     }
     
@@ -69,7 +72,7 @@ public class Class7777 implements Class7776
     }
     
     @Override
-    public void method24916() {
+    public void bind() {
         if (Class7777.field31839 != this) {
             Class7777.field31839 = this;
             Class7777.field31838.method19265(3553);
@@ -174,7 +177,7 @@ public class Class7777 implements Class7776
     @Override
     public byte[] method24925() {
         final ByteBuffer byteBuffer = BufferUtils.createByteBuffer((this.method24914() ? 4 : 3) * this.field31844 * this.field31845);
-        this.method24916();
+        this.bind();
         Class7777.field31838.method19286(3553, 0, this.method24914() ? 6408 : 6407, 5121, byteBuffer);
         final byte[] dst = new byte[byteBuffer.limit()];
         byteBuffer.get(dst);
@@ -184,7 +187,7 @@ public class Class7777 implements Class7776
     
     @Override
     public void method24926(final int n) {
-        this.method24916();
+        this.bind();
         Class7777.field31838.method19289(this.field31840, 10241, n);
         Class7777.field31838.method19289(this.field31840, 10240, n);
     }
@@ -204,6 +207,6 @@ public class Class7777 implements Class7776
     }
     
     static {
-        Class7777.field31838 = Class7840.method25330();
+        Class7777.field31838 = Renderer.get();
     }
 }

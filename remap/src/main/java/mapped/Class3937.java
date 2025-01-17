@@ -15,7 +15,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Class3937 extends Class3936
 {
-    public Class3937(final Class9288 class9288) {
+    public Class3937(final Properties class9288) {
         super(Class298.field1713, class9288);
     }
     

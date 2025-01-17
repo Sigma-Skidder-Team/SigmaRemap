@@ -24,7 +24,7 @@ public class Class3942 extends Class3841
     public static final ResourceLocation field17833;
     private final Class181 field17834;
     
-    public Class3942(final Class181 field17834, final Class9288 class9288) {
+    public Class3942(final Class181 field17834, final Properties class9288) {
         super(class9288);
         this.field17834 = field17834;
         this.method11877(((StateHolder<O, Class7096>)this.field17406.method32903()).with(Class3942.field17832, Direction.UP));

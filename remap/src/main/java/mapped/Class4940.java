@@ -6,6 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Module;
+import slick2d.Texture;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -15,7 +16,7 @@ import java.util.Date;
 public class Class4940 extends Class4800
 {
     private static Minecraft field21209;
-    private Class7776 field21210;
+    private Texture field21210;
     public Date field21211;
     public Class4850 field21212;
     public Class4882 field21213;
@@ -130,7 +131,7 @@ public class Class4940 extends Class4800
         this.method14288(0.8f + method24584 * 0.2f, 0.8f + method24584 * 0.2f);
         Class8154.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), Class6430.method19118(Class265.field1273.field1292, 0.25f * n));
         super.method14227();
-        Class8154.method26889(Class9400.field40325, (float)((this.field20480 - 1060) / 2), (float)((this.field20481 - 357) / 2 - 90), "Keybind Manager", Class265.field1278.field1292);
+        Class8154.method26889(ClientFonts.JelloMedium40, (float)((this.field20480 - 1060) / 2), (float)((this.field20481 - 357) / 2 - 90), "Keybind Manager", Class265.field1278.field1292);
         super.method14205(n);
     }
     

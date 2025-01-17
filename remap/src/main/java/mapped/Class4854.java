@@ -20,8 +20,8 @@ public class Class4854 extends Class4841
         super(class4803, s, n, n2, n3, n4, false);
         this.field20797 = new ArrayList<String>();
         this.field20800 = field20800;
-        this.method14239(this.field20799 = new Class4831(this, "textbox", 0, 0, n3, 32, Class4831.field20670, "", "Search...", Class9400.field40311));
-        this.field20799.method14317(Class9400.field40312);
+        this.method14239(this.field20799 = new Class4831(this, "textbox", 0, 0, n3, 32, Class4831.field20670, "", "Search...", ClientFonts.JelloLight14));
+        this.field20799.method14317(ClientFonts.JelloLight18);
         this.field20799.method14473(class4831 -> this.method14560(this.field20799.method14314()));
         this.method14562(array);
         this.method14560("");

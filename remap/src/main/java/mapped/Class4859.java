@@ -5,14 +5,15 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
+import slick2d.Texture;
 
 public class Class4859 extends Class4841
 {
     private static String[] field20591;
     public Class9572 field20815;
-    public Class7776 field20816;
+    public Texture field20816;
     
-    public Class4859(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class7776 field20816) {
+    public Class4859(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Texture field20816) {
         super(class4803, s, n, n2, n3, n4, false);
         this.field20815 = new Class9572(300, 300, Class2186.field12965);
         this.field20816 = field20816;
@@ -40,7 +41,7 @@ public class Class4859 extends Class4841
         this.method14294((int)(-25.0f * n2));
         this.method14228();
         Class8154.method26905((float)(this.field20478 + 20), (float)this.field20479, 100.0f, 100.0f, this.field20816);
-        final int n3 = this.field20478 + 12 - (Class9493.field40807.method23505(this.field20474) - this.field20480) / 2;
+        final int n3 = this.field20478 + 12 - (Class9493.field40807.getWidth(this.field20474) - this.field20480) / 2;
         final int n4 = this.field20479 + 102;
         GL11.glAlphaFunc(516, 0.1f);
         Class8154.method26889(Class9493.field40807, (float)n3, (float)(n4 + 1), this.field20474, Class6430.method19118(Class265.field1273.field1292, 0.5f));

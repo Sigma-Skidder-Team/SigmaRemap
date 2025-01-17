@@ -14,7 +14,7 @@ public class Class3842 extends Class3841 implements Class3843
 {
     private static String[] field17452;
     
-    public Class3842(final Class9288 class9288) {
+    public Class3842(final Properties class9288) {
         super(class9288);
     }
     

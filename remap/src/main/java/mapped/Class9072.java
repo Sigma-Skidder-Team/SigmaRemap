@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import slick2d.Texture;
 
 import java.io.IOException;
 import java.awt.Color;
@@ -13,7 +14,7 @@ import java.awt.image.BufferedImage;
 
 public class Class9072
 {
-    public static Class7776 method32684(final String name, final BufferedImage bufferedImage) {
+    public static Texture method32684(final String name, final BufferedImage bufferedImage) {
         try {
             final BufferedImage read = ImageIO.read(Client.method35173().getClass().getClassLoader().getResourceAsStream(name));
             final BufferedImage bufferedImage2 = new BufferedImage(bufferedImage.getWidth(), bufferedImage.getHeight(), read.getType());
@@ -32,7 +33,7 @@ public class Class9072
         }
     }
     
-    public static Class7776 method32685(final BufferedImage bufferedImage) {
+    public static Texture method32685(final BufferedImage bufferedImage) {
         return method32684("com/mentalfrostbyte/gui/resources/user/mask.png", bufferedImage);
     }
 }

@@ -41,7 +41,7 @@ public class Class4862 extends Class4841
         this.method14301(true);
         this.method14311(false);
         final Class4861 class4804;
-        this.method14239(class4804 = new Class4861(this, "addButton", this.field20480 - 66, this.field20481 - 60, Class9400.field40314.method23505("Add"), 50, Class6523.field25964, "Add", Class9400.field40314));
+        this.method14239(class4804 = new Class4861(this, "addButton", this.field20480 - 66, this.field20481 - 60, ClientFonts.JelloLight25.getWidth("Add"), 50, Class6523.field25964, "Add", ClientFonts.JelloLight25));
         class4804.method14260((class4803, n) -> this.method14581(this.field20825.method14314(), this.method14579(), this.field20826.field20984));
         this.method14239(this.field20825 = new Class4831(this, "Name", 20, 7, this.field20480 - 40, 60, Class4831.field20670, "My waypoint", "My waypoint"));
         this.field20825.method14471();
@@ -49,7 +49,7 @@ public class Class4862 extends Class4841
         this.method14239(this.field20826 = new Class4905(this, "badgeSelect", 0, 86));
         this.method14239(this.field20824 = new Class4831(this, "Cords", 20, this.field20481 - 44, this.field20480 - 100, 20, Class4831.field20670, field20823.getX() + " " + field20823.getZ(), field20823.getX() + " " + field20823.getZ()));
         this.field20824.method14478(false);
-        this.field20824.method14317(Class9400.field40312);
+        this.field20824.method14317(ClientFonts.JelloLight18);
     }
     
     public Vec3i method14579() {
@@ -84,7 +84,7 @@ public class Class4862 extends Class4841
         GL11.glTranslatef((float)this.field20478, (float)this.field20479, 0.0f);
         GL11.glRotatef(this.field20821 ? 90.0f : -90.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-this.field20478), (float)(-this.field20479), 0.0f);
-        Class8154.method26899((float)(this.field20478 + (this.field20821 ? this.field20481 : 0)), this.field20479 + (this.field20480 - 47) / 2 * (this.field20821 ? -1.58f : 1.0f), 18.0f, 47.0f, Class7853.field32197, method35861);
+        Class8154.method26899((float)(this.field20478 + (this.field20821 ? this.field20481 : 0)), this.field20479 + (this.field20480 - 47) / 2 * (this.field20821 ? -1.58f : 1.0f), 18.0f, 47.0f, ClientAssets.select, method35861);
         GL11.glPopMatrix();
         Class8154.method26876((float)(this.field20478 + 25), (float)(this.field20479 + 68), (float)(this.field20478 + this.field20480 - 25), (float)(this.field20479 + 69), Class6430.method19118(Class265.field1273.field1292, 0.05f * method35859));
         super.method14205(method35859);

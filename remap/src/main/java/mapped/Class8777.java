@@ -4,9 +4,12 @@
 
 package mapped;
 
+import slick2d.Color;
+import slick2d.Renderer;
+
 public class Class8777
 {
-    public static Class6448 field36893;
+    public static SGL field36893;
     public static final int field36894 = 1;
     public static final int field36895 = 2;
     public static final int field36896 = 3;
@@ -15,7 +18,7 @@ public class Class8777
     public float field36899;
     public float field36900;
     public float field36901;
-    public Class2427 field36902;
+    public Color field36902;
     public float field36903;
     public float field36904;
     private Class8014 field36905;
@@ -28,7 +31,7 @@ public class Class8777
     
     public Class8777(final Class8014 field36905) {
         this.field36901 = 10.0f;
-        this.field36902 = Class2427.field14355;
+        this.field36902 = Color.field14355;
         this.field36909 = 1;
         this.field36910 = false;
         this.field36911 = 1.0f;
@@ -52,7 +55,7 @@ public class Class8777
         return this.field36901;
     }
     
-    public Class2427 method30486() {
+    public Color method30486() {
         return this.field36902;
     }
     
@@ -75,7 +78,7 @@ public class Class8777
     public void method30491() {
         if ((!this.field36905.method26235() || this.field36909 != 1) && this.field36909 != 2) {
             if (!this.field36910 && this.field36911 == 1.0f) {
-                this.field36902.method9766();
+                this.field36902.bind();
                 this.field36907.method24816((float)(int)(this.field36897 - this.field36901 / 2.0f), (float)(int)(this.field36898 - this.field36901 / 2.0f), (float)(int)this.field36901, (float)(int)this.field36901);
             }
             else {
@@ -93,9 +96,9 @@ public class Class8777
             Class7777.method24930();
             Class8777.field36893.method19265(2832);
             Class8777.field36893.method19267(this.field36901 / 2.0f);
-            this.field36902.method9766();
-            Class8777.field36893.method19251(0);
-            Class8777.field36893.method19255(this.field36897, this.field36898);
+            this.field36902.bind();
+            Class8777.field36893.glBegin(0);
+            Class8777.field36893.glVertex2f(this.field36897, this.field36898);
             Class8777.field36893.method19253();
         }
     }
@@ -160,14 +163,14 @@ public class Class8777
     }
     
     public void method30502(final float field14368, final float field14369, final float field14370, final float field14371) {
-        if (this.field36902 != Class2427.field14355) {
+        if (this.field36902 != Color.field14355) {
             this.field36902.field14368 = field14368;
             this.field36902.field14369 = field14369;
             this.field36902.field14370 = field14370;
             this.field36902.field14371 = field14371;
         }
         else {
-            this.field36902 = new Class2427(field14368, field14369, field14370, field14371);
+            this.field36902 = new Color(field14368, field14369, field14370, field14371);
         }
     }
     
@@ -199,30 +202,30 @@ public class Class8777
     }
     
     public void method30508(final float n, final float n2, final float n3, final float n4) {
-        if (this.field36902 == Class2427.field14355) {
-            this.field36902 = new Class2427(1.0f, 1.0f, 1.0f, 1.0f);
+        if (this.field36902 == Color.field14355) {
+            this.field36902 = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }
-        final Class2427 field36902 = this.field36902;
+        final Color field36902 = this.field36902;
         field36902.field14368 += n;
-        final Class2427 field36903 = this.field36902;
+        final Color field36903 = this.field36902;
         field36903.field14369 += n2;
-        final Class2427 field36904 = this.field36902;
+        final Color field36904 = this.field36902;
         field36904.field14370 += n3;
-        final Class2427 field36905 = this.field36902;
+        final Color field36905 = this.field36902;
         field36905.field14371 += n4;
     }
     
     public void method30509(final int n, final int n2, final int n3, final int n4) {
-        if (this.field36902 == Class2427.field14355) {
-            this.field36902 = new Class2427(1.0f, 1.0f, 1.0f, 1.0f);
+        if (this.field36902 == Color.field14355) {
+            this.field36902 = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }
-        final Class2427 field36902 = this.field36902;
+        final Color field36902 = this.field36902;
         field36902.field14368 += n / 255.0f;
-        final Class2427 field36903 = this.field36902;
+        final Color field36903 = this.field36902;
         field36903.field14369 += n2 / 255.0f;
-        final Class2427 field36904 = this.field36902;
+        final Color field36904 = this.field36902;
         field36904.field14370 += n3 / 255.0f;
-        final Class2427 field36905 = this.field36902;
+        final Color field36905 = this.field36902;
         field36905.field14371 += n4 / 255.0f;
     }
     
@@ -257,6 +260,6 @@ public class Class8777
     }
     
     static {
-        Class8777.field36893 = Class7840.method25330();
+        Class8777.field36893 = Renderer.get();
     }
 }

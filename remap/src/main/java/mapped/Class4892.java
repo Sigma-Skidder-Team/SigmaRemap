@@ -4,6 +4,8 @@
 
 package mapped;
 
+import slick2d.TrueTypeFont;
+
 public class Class4892 extends Class4841
 {
     private static String[] field20591;
@@ -35,7 +37,7 @@ public class Class4892 extends Class4841
         this.method14673();
     }
     
-    public Class4892(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2, final Class7524 class4805) {
+    public Class4892(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2, final TrueTypeFont class4805) {
         super(class4803, s, n, n2, n3, n4, class4804, s2, class4805, false);
         this.method14673();
     }
@@ -77,7 +79,7 @@ public class Class4892 extends Class4841
         Class8154.method26925((float)n4, (float)n5, (float)n6, (float)n2, (float)(n2 / 2), Class6430.method19118(this.field20497.method19729(), n * n * n));
         Class8154.method26925((float)(n4 + n6), (float)n5, (float)(n3 - n6), (float)n2, (float)(n2 / 2), Class6430.method19118(Class6430.method19122(this.field20497.method19729(), 0.8f), n * n * n));
         if (this.method14314() != null) {
-            Class8154.method26889(Class9400.field40311, (float)(n4 - Class9400.field40311.method23505(this.method14314()) - 10 - Math.max(0, 9 - this.field20916.method14272())), (float)(n5 - 5), this.method14314(), Class6430.method19118(Class265.field1273.field1292, 0.5f * this.field20917.method35858() * n));
+            Class8154.method26889(ClientFonts.JelloLight14, (float)(n4 - ClientFonts.JelloLight14.getWidth(this.method14314()) - 10 - Math.max(0, 9 - this.field20916.method14272())), (float)(n5 - 5), this.method14314(), Class6430.method19118(Class265.field1273.field1292, 0.5f * this.field20917.method35858() * n));
         }
         super.method14205(n);
     }

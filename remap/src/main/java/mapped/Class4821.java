@@ -38,7 +38,7 @@ public class Class4821 extends Class4817 implements Class4820
             final Class6523 method19119 = new Class6523(class3167.method9906() ? -14047489 : 1895167477, class3167.method9906() ? -14042881 : method19118).method19734(class3167.method9906() ? Class265.field1278.field1292 : Class265.field1273.field1292);
             method19119.method19736(Class2056.field11734);
             final Class4868 class3168;
-            this.method14396().method14239(class3168 = new Class4868(this.method14396(), class3167.getName() + "Button", 0, n * 30, this.method14276(), 30, method19119, class3167.getName(), Class9400.field40313));
+            this.method14396().method14239(class3168 = new Class4868(this.method14396(), class3167.getName() + "Button", 0, n * 30, this.method14276(), 30, method19119, class3167.getName(), ClientFonts.JelloLight20));
             if (!class3167.method9906()) {
                 class3168.method14603(22);
             }

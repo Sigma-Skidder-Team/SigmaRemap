@@ -4,6 +4,8 @@
 
 package mapped;
 
+import slick2d.Color;
+
 import java.util.ArrayList;
 
 public class Class7762 implements Class7763
@@ -229,15 +231,15 @@ public class Class7762 implements Class7763
         this.method24777(n, n2, (float)this.method24780(), (float)this.method24781());
     }
     
-    public void method24776(final float n, final float n2, final Class2427 class2427) {
-        this.method24778(n, n2, (float)this.method24780(), (float)this.method24781(), class2427);
+    public void method24776(final float n, final float n2, final Color color) {
+        this.method24778(n, n2, (float)this.method24780(), (float)this.method24781(), color);
     }
     
     public void method24777(final float n, final float n2, final float n3, final float n4) {
-        this.method24778(n, n2, n3, n4, Class2427.field14355);
+        this.method24778(n, n2, n3, n4, Color.field14355);
     }
     
-    public void method24778(final float n, final float n2, final float n3, final float n4, final Class2427 class2427) {
+    public void method24778(final float n, final float n2, final float n3, final float n4, final Color color) {
         if (this.field31707.size() != 0) {
             if (this.field31716) {
                 final long method24793 = this.method24793();
@@ -249,7 +251,7 @@ public class Class7762 implements Class7763
                 this.field31714 = method24793;
                 this.method24791(n5);
             }
-            this.field31707.get(this.field31708).field41120.method24778(n, n2, n3, n4, class2427);
+            this.field31707.get(this.field31708).field41120.method24778(n, n2, n3, n4, color);
         }
     }
     
@@ -279,10 +281,10 @@ public class Class7762 implements Class7763
     }
     
     public void method24782(final float n, final float n2, final float n3, final float n4) {
-        this.method24783(n, n2, n3, n4, Class2427.field14355);
+        this.method24783(n, n2, n3, n4, Color.field14355);
     }
     
-    public void method24783(final float n, final float n2, final float n3, final float n4, final Class2427 class2427) {
+    public void method24783(final float n, final float n2, final float n3, final float n4, final Color color) {
         if (this.field31707.size() != 0) {
             if (this.field31716) {
                 final long method24793 = this.method24793();
@@ -294,7 +296,7 @@ public class Class7762 implements Class7763
                 this.field31714 = method24793;
                 this.method24791(n5);
             }
-            this.field31707.get(this.field31708).field41120.method24829(n, n2, n3, n4, class2427);
+            this.field31707.get(this.field31708).field41120.method24829(n, n2, n3, n4, color);
         }
     }
     

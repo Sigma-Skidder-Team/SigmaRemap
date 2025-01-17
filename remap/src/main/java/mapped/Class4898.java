@@ -18,10 +18,10 @@ public class Class4898 extends Class4841
         super(class4803, s, n, n2, n3, 0, Class6523.field25964, false);
         this.field20949 = new Class9572(300, 200, Class2186.field12965);
         final Class4861 class4804;
-        this.method14239(class4804 = new Class4861(this, "blankButton", 25, 0, Class9400.field40313.method23505("Blank"), 30, Class6523.field25964, "Blank", Class9400.field40313));
+        this.method14239(class4804 = new Class4861(this, "blankButton", 25, 0, ClientFonts.JelloLight20.getWidth("Blank"), 30, Class6523.field25964, "Blank", ClientFonts.JelloLight20));
         class4804.method14260((class4803, n) -> ((Class4889)this.method14267()).method14637());
         final Class4861 class4805;
-        this.method14239(class4805 = new Class4861(this, "dupeButton", n3 - 25 - Class9400.field40313.method23505("Duplicate"), 0, Class9400.field40313.method23505("Duplicate"), 30, Class6523.field25964, "Duplicate", Class9400.field40313));
+        this.method14239(class4805 = new Class4861(this, "dupeButton", n3 - 25 - ClientFonts.JelloLight20.getWidth("Duplicate"), 0, ClientFonts.JelloLight20.getWidth("Duplicate"), 30, Class6523.field25964, "Duplicate", ClientFonts.JelloLight20));
         class4805.method14260((class4803, n) -> ((Class4889)this.method14267()).method14635());
         this.method14239(this.field20953 = new Class4840(this, "loading", (n3 - 30) / 2, 100, 30, 30));
         this.method14239(this.field20951 = new Class4817(this, "defaultProfiles", 0, 40, n3, field20950 - 40));
@@ -30,7 +30,7 @@ public class Class4898 extends Class4841
             final Class4889 class4889 = (Class4889)this.method14267();
             for (final String str : list) {
                 final Class4868 class4890;
-                this.field20951.method14239(class4890 = new Class4868(this.field20951, "p_" + str, 0, 0, n3, 30, new Class6523(-723724, -2039584, 0, -14671840), str, Class9400.field40312));
+                this.field20951.method14239(class4890 = new Class4868(this.field20951, "p_" + str, 0, 0, n3, 30, new Class6523(-723724, -2039584, 0, -14671840), str, ClientFonts.JelloLight18));
                 class4890.method14260((class4890, n) -> {
                     this.method14705(true);
                     new Thread(() -> {
@@ -71,7 +71,7 @@ public class Class4898 extends Class4841
         }
         this.method14279((int)(this.field20950 * n2));
         if (this.field20949.method35858() != 0.0f) {
-            Class8154.method26899((float)this.field20478, (float)(this.field20479 + this.field20481), (float)this.field20480, 50.0f, Class7853.field32172, Class6430.method19118(Class265.field1278.field1292, this.field20949.method35858() * n * 0.3f));
+            Class8154.method26899((float)this.field20478, (float)(this.field20479 + this.field20481), (float)this.field20480, 50.0f, ClientAssets.shadow_bottom, Class6430.method19118(Class265.field1278.field1292, this.field20949.method35858() * n * 0.3f));
             Class8154.method26865(this);
             Class8154.method26874((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, Class6430.method19118(-723724, n));
             if (Class4898.field20952 != null) {
@@ -79,7 +79,7 @@ public class Class4898 extends Class4841
                 if (Class8784.field36931 != null) {
                     final Class8784 field20953 = Class4898.field20952;
                     if (Class8784.field36931.isEmpty()) {
-                        Class8154.method26889(Class9400.field40311, (float)(this.field20478 + 40), (float)(this.field20479 + 110), "No Default Profiles Available", Class265.field1281.field1292);
+                        Class8154.method26889(ClientFonts.JelloLight14, (float)(this.field20478 + 40), (float)(this.field20479 + 110), "No Default Profiles Available", Class265.field1281.field1292);
                     }
                 }
             }

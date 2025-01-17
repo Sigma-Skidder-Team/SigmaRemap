@@ -21,7 +21,7 @@ public class Class3933 extends Class3932
     public static final Class7115 field17814;
     private static final Map<Direction, VoxelShape> field17815;
     
-    public Class3933(final Class299 class299, final Class9288 class300) {
+    public Class3933(final Class299 class299, final Properties class300) {
         super(class299, class300);
         this.method11877(((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3933.field17814, Direction.NORTH));
     }

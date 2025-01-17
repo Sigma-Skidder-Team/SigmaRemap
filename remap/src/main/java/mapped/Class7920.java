@@ -4,9 +4,11 @@
 
 package mapped;
 
+import slick2d.Texture;
+
 public class Class7920
 {
-    private Class7776 field32514;
+    private Texture field32514;
     private int field32515;
     private int field32516;
     private int field32517;
@@ -22,7 +24,7 @@ public class Class7920
     private int field32527;
     private Class9572 field32528;
     
-    public Class7920(final Class7776 field32514, final int field32515, final int field32516, final int field32517, final Class267 field32518, final int field32519, final int field32520) {
+    public Class7920(final Texture field32514, final int field32515, final int field32516, final int field32517, final Class267 field32518, final int field32519, final int field32520) {
         this.field32522 = true;
         this.field32525 = new Class7617();
         this.field32527 = 1;
@@ -109,7 +111,7 @@ public class Class7920
         Class8154.method26901((float)n, (float)n2, (float)n3, (float)n4, this.field32514, Class6430.method19118(Class265.field1278.field1292, n5), (float)(this.field32515 % this.field32520 * this.field32517), (float)(this.field32515 / this.field32520 * this.field32518), (float)this.field32517, (float)this.field32518);
     }
     
-    public Class7776 method25649() {
+    public Texture method25649() {
         return this.field32514;
     }
     

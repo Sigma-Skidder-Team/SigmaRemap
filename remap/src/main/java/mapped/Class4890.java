@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -103,7 +102,7 @@ public class Class4890 extends Class4841
         }
         if (this.method14314() != null) {
             Class8154.method26865(this);
-            Class8154.method26889(this.method14316(), (float)(this.method14272() + 7), (float)(this.method14274() + (this.method14278() - this.method14316().method23539()) / 2), this.method14314(), Class6430.method19118(Class265.field1278.field1292, n * 0.5f));
+            Class8154.method26889(this.method14316(), (float)(this.method14272() + 7), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2), this.method14314(), Class6430.method19118(Class265.field1278.field1292, n * 0.5f));
             Class8154.method26872();
         }
         if (!this.method14656()) {

@@ -25,7 +25,7 @@ public abstract class Class4017 extends Block
         return class7096.method21755(Class7188.field27906);
     }
     
-    public Class4017(final boolean field18095, final Class9288 class9288) {
+    public Class4017(final boolean field18095, final Properties class9288) {
         super(class9288);
         this.field18095 = field18095;
     }

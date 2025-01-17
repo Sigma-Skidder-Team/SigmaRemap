@@ -28,7 +28,7 @@ public class Class3854 extends Block implements Class3856
     public final VoxelShape[] field17472;
     private final Object2IntMap<BlockState> field17473;
     
-    public Class3854(final float n, final float n2, final float n3, final float n4, final float n5, final Class9288 class9288) {
+    public Class3854(final float n, final float n2, final float n3, final float n4, final float n5, final Properties class9288) {
         super(class9288);
         this.field17473 = (Object2IntMap<BlockState>)new Object2IntOpenHashMap();
         this.field17471 = this.method11914(n, n2, n5, 0.0f, n5);

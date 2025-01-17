@@ -29,7 +29,7 @@ public class Class4840 extends Class4825
             GL11.glTranslatef((float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + this.field20481 / 2), 0.0f);
             GL11.glRotatef(n2 * 30.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-this.field20478 - this.field20480 / 2), (float)(-this.field20479 - this.field20481 / 2), 0.0f);
-            Class8154.method26899((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, Class7853.field32203, Class6430.method19118(Class265.field1273.field1292, this.field20746 * n));
+            Class8154.method26899((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, ClientAssets.loading_indicator, Class6430.method19118(Class265.field1273.field1292, this.field20746 * n));
             GL11.glPopMatrix();
         }
     }

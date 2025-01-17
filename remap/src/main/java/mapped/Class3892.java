@@ -10,7 +10,7 @@ public abstract class Class3892 extends Block
 {
     public static final Class7115 field17564;
     
-    public Class3892(final Class9288 class9288) {
+    public Class3892(final Properties class9288) {
         super(class9288);
     }
     

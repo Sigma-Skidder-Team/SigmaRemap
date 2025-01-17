@@ -14,7 +14,7 @@ public class Class3988 extends Class3986
     private static String[] field17995;
     private final BlockState field17997;
     
-    public Class3988(final Block class3833, final Class9288 class3834) {
+    public Class3988(final Block class3833, final Properties class3834) {
         super(class3834);
         this.field17997 = class3833.getDefaultState();
     }

@@ -5,15 +5,16 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
+import slick2d.Texture;
 
 public class Class4876 extends Class4868
 {
     private static String[] field20862;
-    private final Class7776 field20863;
+    private final Texture field20863;
     private boolean field20864;
     private Class9572 field20865;
     
-    public Class4876(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class7776 field20863) {
+    public Class4876(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Texture field20863) {
         super(class4803, s, n, n2, n3, n4);
         this.field20865 = new Class9572(150, 190, Class2186.field12965);
         this.field20863 = field20863;

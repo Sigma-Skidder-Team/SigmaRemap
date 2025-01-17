@@ -2,15 +2,17 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package slick2d;
 
-public class Class7840
+import mapped.*;
+
+public class Renderer
 {
     public static final int field32094 = 1;
     public static final int field32095 = 2;
     public static final int field32096 = 3;
     public static final int field32097 = 4;
-    private static Class6448 field32098;
+    private static SGL field32098;
     private static Class6020 field32099;
     
     public static void method25326(final int i) {
@@ -46,23 +48,23 @@ public class Class7840
     }
     
     public static void method25328(final Class6020 field32099) {
-        Class7840.field32099 = field32099;
+        Renderer.field32099 = field32099;
     }
     
-    public static void method25329(final Class6448 field32098) {
-        Class7840.field32098 = field32098;
+    public static void method25329(final SGL field32098) {
+        Renderer.field32098 = field32098;
     }
     
-    public static Class6448 method25330() {
-        return Class7840.field32098;
+    public static SGL get() {
+        return Renderer.field32098;
     }
     
     public static Class6020 method25331() {
-        return Class7840.field32099;
+        return Renderer.field32099;
     }
     
     static {
-        Class7840.field32098 = new Class6447();
-        Class7840.field32099 = new Class6021();
+        Renderer.field32098 = new Class6447();
+        Renderer.field32099 = new Class6021();
     }
 }

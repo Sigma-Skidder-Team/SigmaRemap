@@ -99,12 +99,12 @@ public class Class4924 extends Class4815
         else {
             this.field21067 = 20;
         }
-        Class8154.method26890(Class9400.field40314, (float)(this.method14272() + 20), (float)(this.method14274() + 30), this.method14774().getName(), Class6430.method19118(Class265.field1273.field1292, n * 0.5f * this.field21063), Class2056.field11734, Class2056.field11738);
+        Class8154.method26890(ClientFonts.JelloLight25, (float)(this.method14272() + 20), (float)(this.method14274() + 30), this.method14774().getName(), Class6430.method19118(Class265.field1273.field1292, n * 0.5f * this.field21063), Class2056.field11734, Class2056.field11738);
         GL11.glPushMatrix();
         super.method14205(n * n);
         GL11.glPopMatrix();
         if (this.field21062.method14392() > 0) {
-            Class8154.method26899((float)this.method14272(), (float)(this.method14274() + 60), (float)this.method14276(), 18.0f, Class7853.field32172, Class6430.method19118(Class265.field1278.field1292, n * this.field21063 * 0.5f));
+            Class8154.method26899((float)this.method14272(), (float)(this.method14274() + 60), (float)this.method14276(), 18.0f, ClientAssets.shadow_bottom, Class6430.method19118(Class265.field1278.field1292, n * this.field21063 * 0.5f));
         }
     }
     

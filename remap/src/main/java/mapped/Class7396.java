@@ -5,6 +5,7 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
+import slick2d.Color;
 
 public class Class7396
 {
@@ -60,10 +61,10 @@ public class Class7396
         GL11.glEnable(3553);
         GL11.glEnable(3008);
         GL11.glPopAttrib();
-        method22725(new Class2427(255.0f, 255.0f, 255.0f, 1.0f));
+        method22725(new Color(255.0f, 255.0f, 255.0f, 1.0f));
     }
     
-    public static void method22725(final Class2427 class2427) {
-        GL11.glColor4d((double)(class2427.method9770() / 255.0f), (double)(class2427.method9771() / 255.0f), (double)(class2427.method9772() / 255.0f), (double)(class2427.method9773() / 255.0f));
+    public static void method22725(final Color color) {
+        GL11.glColor4d((double)(color.method9770() / 255.0f), (double)(color.method9771() / 255.0f), (double)(color.method9772() / 255.0f), (double)(color.method9773() / 255.0f));
     }
 }

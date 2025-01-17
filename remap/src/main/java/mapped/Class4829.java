@@ -4,6 +4,8 @@
 
 package mapped;
 
+import slick2d.Texture;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +16,7 @@ public class Class4829 extends Class4825
     public Class2118 field20656;
     public final int field20657 = 0;
     public final List<Class4868> field20658;
-    private Class7776 field20659;
+    private Texture field20659;
     
     public Class4829(final Class4803 class4803, final String s) {
         super(class4803, s, 0, Minecraft.method5277().field4632.method7695() - 70, Minecraft.method5277().field4632.method7694(), 110, false);

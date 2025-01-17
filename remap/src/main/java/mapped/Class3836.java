@@ -32,7 +32,7 @@ public class Class3836 extends Class3834
     public static final VoxelShape field17444;
     private final boolean field17445;
     
-    public Class3836(final boolean field17445, final Class9288 class9288) {
+    public Class3836(final boolean field17445, final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3836.field17415, Direction.NORTH)).with((IProperty<Comparable>)Class3836.field17438, false));
         this.field17445 = field17445;

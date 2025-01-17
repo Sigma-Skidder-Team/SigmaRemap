@@ -6,6 +6,7 @@ package com.mentalfrostbyte.jello;
 
 import com.mentalfrostbyte.jello.mods.Category;
 import mapped.*;
+import slick2d.Texture;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,29 +21,29 @@ public class Class4809 extends Class4807
     public Class4853 field20535;
     public Class4853 field20536;
     public Class4853 field20537;
-    public static Class7776 field20538;
-    public static Class7776 field20539;
-    public static Class7776 field20540;
-    public static Class7776 field20541;
-    public static Class7776 field20542;
-    public static Class7776 field20543;
-    public static Class7776 field20544;
-    public static Class7776 field20545;
-    public static Class7776 field20546;
-    public static Class7776 field20547;
-    public static Class7776 field20548;
-    public static Class7776 field20549;
-    public static Class7776 field20550;
-    public static Class7776 field20551;
-    public static Class7776 field20552;
-    public static Class7776 field20553;
-    public static Class7776 field20554;
-    public static Class7776 field20555;
-    public static Class7776 field20556;
-    public static Class7776 field20557;
-    public static Class7776 field20558;
-    public static Class7776 field20559;
-    public static Class7776 field20560;
+    public static Texture field20538;
+    public static Texture field20539;
+    public static Texture field20540;
+    public static Texture field20541;
+    public static Texture field20542;
+    public static Texture field20543;
+    public static Texture field20544;
+    public static Texture field20545;
+    public static Texture field20546;
+    public static Texture field20547;
+    public static Texture field20548;
+    public static Texture field20549;
+    public static Texture field20550;
+    public static Texture field20551;
+    public static Texture field20552;
+    public static Texture field20553;
+    public static Texture field20554;
+    public static Texture field20555;
+    public static Texture field20556;
+    public static Texture field20557;
+    public static Texture field20558;
+    public static Texture field20559;
+    public static Texture field20560;
     
     public Class4809(final Class4803 class4803, final String s, final int n, final int n2) {
         super(class4803, s, n - 198, n2 - 298, 396, 596);
@@ -69,29 +70,29 @@ public class Class4809 extends Class4807
     
     public static void method14332() {
         if (Class4809.field20538 == null) {
-            Class4809.field20538 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/colors.png");
-            Class4809.field20539 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/colors2.png");
-            Class4809.field20540 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/combat.png");
-            Class4809.field20541 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/combat2.png");
-            Class4809.field20542 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/downarrow.png");
-            Class4809.field20543 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/gear.png");
-            Class4809.field20544 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/gear2.png");
-            Class4809.field20545 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/movement.png");
-            Class4809.field20546 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/movement2.png");
-            Class4809.field20547 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/msgo.png");
-            Class4809.field20548 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/msgo2.png");
-            Class4809.field20549 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/others.png");
-            Class4809.field20550 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/others2.png");
-            Class4809.field20551 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/player.png");
-            Class4809.field20552 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/player2.png");
-            Class4809.field20553 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/uparrow.png");
-            Class4809.field20554 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/uparrow2.png");
-            Class4809.field20555 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/visuals.png");
-            Class4809.field20556 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/visuals2.png");
-            Class4809.field20557 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/xmark.png");
-            Class4809.field20558 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/xmark2.png");
-            Class4809.field20559 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/world.png");
-            Class4809.field20560 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/uglygui/world2.png");
+            Class4809.field20538 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/colors.png");
+            Class4809.field20539 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/colors2.png");
+            Class4809.field20540 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/combat.png");
+            Class4809.field20541 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/combat2.png");
+            Class4809.field20542 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/downarrow.png");
+            Class4809.field20543 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/gear.png");
+            Class4809.field20544 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/gear2.png");
+            Class4809.field20545 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/movement.png");
+            Class4809.field20546 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/movement2.png");
+            Class4809.field20547 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/msgo.png");
+            Class4809.field20548 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/msgo2.png");
+            Class4809.field20549 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/others.png");
+            Class4809.field20550 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/others2.png");
+            Class4809.field20551 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/player.png");
+            Class4809.field20552 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/player2.png");
+            Class4809.field20553 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/uparrow.png");
+            Class4809.field20554 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/uparrow2.png");
+            Class4809.field20555 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/visuals.png");
+            Class4809.field20556 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/visuals2.png");
+            Class4809.field20557 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/xmark.png");
+            Class4809.field20558 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/xmark2.png");
+            Class4809.field20559 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/world.png");
+            Class4809.field20560 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/world2.png");
         }
     }
     

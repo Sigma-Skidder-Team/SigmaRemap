@@ -7,6 +7,9 @@ package mapped;
 import java.io.InputStream;
 import java.io.IOException;
 import org.newdawn.slick.SlickException;
+import slick2d.Color;
+import slick2d.Renderer;
+import slick2d.Texture;
 
 public class Class7764 implements Class7763
 {
@@ -14,11 +17,11 @@ public class Class7764 implements Class7763
     public static final int field31722 = 1;
     public static final int field31723 = 2;
     public static final int field31724 = 3;
-    public static Class6448 field31725;
+    public static SGL field31725;
     public static Class7764 field31726;
     public static final int field31727 = 1;
     public static final int field31728 = 2;
-    public Class7776 field31729;
+    public Texture field31729;
     public int field31730;
     public int field31731;
     public float field31732;
@@ -34,10 +37,10 @@ public class Class7764 implements Class7763
     public float field31742;
     public float field31743;
     public String field31744;
-    public Class2427[] field31745;
+    public Color[] field31745;
     private int field31746;
     private boolean field31747;
-    private Class2427 field31748;
+    private Color field31748;
     
     public Class7764(final Class7764 class7764) {
         this.field31737 = 1.0f;
@@ -62,7 +65,7 @@ public class Class7764 implements Class7763
         this.field31746 = 9729;
     }
     
-    public Class7764(final Class7776 field31729) {
+    public Class7764(final Texture field31729) {
         this.field31737 = 1.0f;
         this.field31739 = false;
         this.field31746 = 9729;
@@ -75,8 +78,8 @@ public class Class7764 implements Class7763
         this(s, false);
     }
     
-    public Class7764(final String s, final Class2427 class2427) throws SlickException {
-        this(s, false, 1, class2427);
+    public Class7764(final String s, final Color color) throws SlickException {
+        this(s, false, 1, color);
     }
     
     public Class7764(final String s, final boolean b) throws SlickException {
@@ -87,7 +90,7 @@ public class Class7764 implements Class7763
         this(s, b, n, null);
     }
     
-    public Class7764(final String s, final boolean field31747, final int n, final Class2427 field31748) throws SlickException {
+    public Class7764(final String s, final boolean field31747, final int n, final Color field31748) throws SlickException {
         this.field31737 = 1.0f;
         this.field31739 = false;
         this.field31746 = 9729;
@@ -110,7 +113,7 @@ public class Class7764 implements Class7763
     
     public void method24800(final int n) {
         this.field31746 = ((n != 1) ? 9728 : 9729);
-        this.field31729.method24916();
+        this.field31729.bind();
         Class7764.field31725.method19289(3553, 10241, this.field31746);
         Class7764.field31725.method19289(3553, 10240, this.field31746);
     }
@@ -198,7 +201,7 @@ public class Class7764 implements Class7763
     
     public void method24805(final int n, final float field14368, final float field14369, final float field14370, final float field14371) {
         if (this.field31745 == null) {
-            this.field31745 = new Class2427[] { new Class2427(1.0f, 1.0f, 1.0f, 1.0f), new Class2427(1.0f, 1.0f, 1.0f, 1.0f), new Class2427(1.0f, 1.0f, 1.0f, 1.0f), new Class2427(1.0f, 1.0f, 1.0f, 1.0f) };
+            this.field31745 = new Color[] { new Color(1.0f, 1.0f, 1.0f, 1.0f), new Color(1.0f, 1.0f, 1.0f, 1.0f), new Color(1.0f, 1.0f, 1.0f, 1.0f), new Color(1.0f, 1.0f, 1.0f, 1.0f) };
         }
         this.field31745[n].field14368 = field14368;
         this.field31745[n].field14369 = field14369;
@@ -208,7 +211,7 @@ public class Class7764 implements Class7763
     
     public void method24806(final int n, final float field14368, final float field14369, final float field14370) {
         if (this.field31745 == null) {
-            this.field31745 = new Class2427[] { new Class2427(1.0f, 1.0f, 1.0f, 1.0f), new Class2427(1.0f, 1.0f, 1.0f, 1.0f), new Class2427(1.0f, 1.0f, 1.0f, 1.0f), new Class2427(1.0f, 1.0f, 1.0f, 1.0f) };
+            this.field31745 = new Color[] { new Color(1.0f, 1.0f, 1.0f, 1.0f), new Color(1.0f, 1.0f, 1.0f, 1.0f), new Color(1.0f, 1.0f, 1.0f, 1.0f), new Color(1.0f, 1.0f, 1.0f, 1.0f) };
         }
         this.field31745[n].field14368 = field14368;
         this.field31745[n].field14369 = field14369;
@@ -234,13 +237,13 @@ public class Class7764 implements Class7763
         return this.field31744;
     }
     
-    private void method24810(final InputStream inputStream, final String s, final boolean b, final int n, final Class2427 class2427) throws SlickException {
+    private void method24810(final InputStream inputStream, final String s, final boolean b, final int n, final Color color) throws SlickException {
         this.field31746 = ((n == 1) ? 9729 : 9728);
         try {
             this.field31738 = s;
             int[] array = null;
-            if (class2427 != null) {
-                array = new int[] { (int)(class2427.field14368 * 255.0f), (int)(class2427.field14369 * 255.0f), (int)(class2427.field14370 * 255.0f) };
+            if (color != null) {
+                array = new int[] { (int)(color.field14368 * 255.0f), (int)(color.field14369 * 255.0f), (int)(color.field14370 * 255.0f) };
             }
             this.field31729 = Class7649.method24214().method24227(inputStream, s, b, this.field31746, array);
         }
@@ -251,7 +254,7 @@ public class Class7764 implements Class7763
     }
     
     public void method24811() {
-        this.field31729.method24916();
+        this.field31729.bind();
     }
     
     public void method24812() {
@@ -293,35 +296,35 @@ public class Class7764 implements Class7763
         this.method24777(n, n2, (float)this.field31730, (float)this.field31731);
     }
     
-    public void method24776(final float n, final float n2, final Class2427 class2427) {
+    public void method24776(final float n, final float n2, final Color color) {
         this.method24813();
-        this.method24778(n, n2, (float)this.field31730, (float)this.field31731, class2427);
+        this.method24778(n, n2, (float)this.field31730, (float)this.field31731, color);
     }
     
     public void method24816(final float n, final float n2, final float n3, final float n4) {
         this.method24813();
         if (this.field31745 != null) {
-            this.field31745[0].method9766();
-            Class7764.field31725.method19254(this.field31734, this.field31735);
+            this.field31745[0].bind();
+            Class7764.field31725.glTexCoord2f(this.field31734, this.field31735);
             Class7764.field31725.method19256(n, n2, 0.0f);
-            this.field31745[3].method9766();
-            Class7764.field31725.method19254(this.field31734, this.field31735 + this.field31733);
+            this.field31745[3].bind();
+            Class7764.field31725.glTexCoord2f(this.field31734, this.field31735 + this.field31733);
             Class7764.field31725.method19256(n, n2 + n4, 0.0f);
-            this.field31745[2].method9766();
-            Class7764.field31725.method19254(this.field31734 + this.field31732, this.field31735 + this.field31733);
+            this.field31745[2].bind();
+            Class7764.field31725.glTexCoord2f(this.field31734 + this.field31732, this.field31735 + this.field31733);
             Class7764.field31725.method19256(n + n3, n2 + n4, 0.0f);
-            this.field31745[1].method9766();
-            Class7764.field31725.method19254(this.field31734 + this.field31732, this.field31735);
+            this.field31745[1].bind();
+            Class7764.field31725.glTexCoord2f(this.field31734 + this.field31732, this.field31735);
             Class7764.field31725.method19256(n + n3, n2, 0.0f);
         }
         else {
-            Class7764.field31725.method19254(this.field31734, this.field31735);
+            Class7764.field31725.glTexCoord2f(this.field31734, this.field31735);
             Class7764.field31725.method19256(n, n2, 0.0f);
-            Class7764.field31725.method19254(this.field31734, this.field31735 + this.field31733);
+            Class7764.field31725.glTexCoord2f(this.field31734, this.field31735 + this.field31733);
             Class7764.field31725.method19256(n, n2 + n4, 0.0f);
-            Class7764.field31725.method19254(this.field31734 + this.field31732, this.field31735 + this.field31733);
+            Class7764.field31725.glTexCoord2f(this.field31734 + this.field31732, this.field31735 + this.field31733);
             Class7764.field31725.method19256(n + n3, n2 + n4, 0.0f);
-            Class7764.field31725.method19254(this.field31734 + this.field31732, this.field31735);
+            Class7764.field31725.glTexCoord2f(this.field31734 + this.field31732, this.field31735);
             Class7764.field31725.method19256(n + n3, n2, 0.0f);
         }
     }
@@ -348,51 +351,51 @@ public class Class7764 implements Class7763
     
     public void method24821(final float n, final float n2, final float n3) {
         this.method24813();
-        this.method24778(n, n2, this.field31730 * n3, this.field31731 * n3, Class2427.field14355);
+        this.method24778(n, n2, this.field31730 * n3, this.field31731 * n3, Color.field14355);
     }
     
-    public void method24822(final float n, final float n2, final float n3, final Class2427 class2427) {
+    public void method24822(final float n, final float n2, final float n3, final Color color) {
         this.method24813();
-        this.method24778(n, n2, this.field31730 * n3, this.field31731 * n3, class2427);
+        this.method24778(n, n2, this.field31730 * n3, this.field31731 * n3, color);
     }
     
     public void method24777(final float n, final float n2, final float n3, final float n4) {
         this.method24813();
-        this.method24778(n, n2, n3, n4, Class2427.field14355);
+        this.method24778(n, n2, n3, n4, Color.field14355);
     }
     
     public void method24823(final float n, final float n2, final float n3, final float n4) {
-        this.method24824(n, n2, n3, n4, Class2427.field14355);
+        this.method24824(n, n2, n3, n4, Color.field14355);
     }
     
-    public void method24824(final float n, final float n2, final float n3, final float n4, Class2427 field14355) {
+    public void method24824(final float n, final float n2, final float n3, final float n4, Color field14355) {
         if (this.field31737 != 1.0f) {
             if (field14355 == null) {
-                field14355 = Class2427.field14355;
+                field14355 = Color.field14355;
             }
-            final Class2427 class2427;
-            field14355 = (class2427 = new Class2427(field14355));
-            class2427.field14371 *= this.field31737;
+            final Color color;
+            field14355 = (color = new Color(field14355));
+            color.field14371 *= this.field31737;
         }
         if (field14355 != null) {
-            field14355.method9766();
+            field14355.bind();
         }
-        this.field31729.method24916();
+        this.field31729.bind();
         Class7764.field31725.method19274(n, n2, 0.0f);
         if (this.field31736 != 0.0f) {
             Class7764.field31725.method19274(this.field31742, this.field31743, 0.0f);
             Class7764.field31725.method19270(this.field31736, 0.0f, 0.0f, 1.0f);
             Class7764.field31725.method19274(-this.field31742, -this.field31743, 0.0f);
         }
-        Class7764.field31725.method19251(7);
+        Class7764.field31725.glBegin(7);
         this.method24813();
-        Class7764.field31725.method19254(this.field31734, this.field31735);
+        Class7764.field31725.glTexCoord2f(this.field31734, this.field31735);
         Class7764.field31725.method19256(0.0f, 0.0f, 0.0f);
-        Class7764.field31725.method19254(this.field31734, this.field31735 + this.field31733);
+        Class7764.field31725.glTexCoord2f(this.field31734, this.field31735 + this.field31733);
         Class7764.field31725.method19256(n3, (float)this.field31731, 0.0f);
-        Class7764.field31725.method19254(this.field31734 + this.field31732, this.field31735 + this.field31733);
+        Class7764.field31725.glTexCoord2f(this.field31734 + this.field31732, this.field31735 + this.field31733);
         Class7764.field31725.method19256(this.field31730 + n3, this.field31731 + n4, 0.0f);
-        Class7764.field31725.method19254(this.field31734 + this.field31732, this.field31735);
+        Class7764.field31725.glTexCoord2f(this.field31734 + this.field31732, this.field31735);
         Class7764.field31725.method19256((float)this.field31730, n4, 0.0f);
         Class7764.field31725.method19253();
         if (this.field31736 != 0.0f) {
@@ -403,26 +406,26 @@ public class Class7764 implements Class7763
         Class7764.field31725.method19274(-n, -n2, 0.0f);
     }
     
-    public void method24778(final float n, final float n2, final float n3, final float n4, Class2427 field14355) {
+    public void method24778(final float n, final float n2, final float n3, final float n4, Color field14355) {
         if (this.field31737 != 1.0f) {
             if (field14355 == null) {
-                field14355 = Class2427.field14355;
+                field14355 = Color.field14355;
             }
-            final Class2427 class2427;
-            field14355 = (class2427 = new Class2427(field14355));
-            class2427.field14371 *= this.field31737;
+            final Color color;
+            field14355 = (color = new Color(field14355));
+            color.field14371 *= this.field31737;
         }
         if (field14355 != null) {
-            field14355.method9766();
+            field14355.bind();
         }
-        this.field31729.method24916();
+        this.field31729.bind();
         Class7764.field31725.method19274(n, n2, 0.0f);
         if (this.field31736 != 0.0f) {
             Class7764.field31725.method19274(this.field31742, this.field31743, 0.0f);
             Class7764.field31725.method19270(this.field31736, 0.0f, 0.0f, 1.0f);
             Class7764.field31725.method19274(-this.field31742, -this.field31743, 0.0f);
         }
-        Class7764.field31725.method19251(7);
+        Class7764.field31725.glBegin(7);
         this.method24816(0.0f, 0.0f, n3, n4);
         Class7764.field31725.method19253();
         if (this.field31736 != 0.0f) {
@@ -434,7 +437,7 @@ public class Class7764 implements Class7763
     }
     
     public void method24825(final float n, final float n2, final float n3, final float n4) {
-        this.method24829(n, n2, n3, n4, Class2427.field14355);
+        this.method24829(n, n2, n3, n4, Color.field14355);
     }
     
     public void method24826(final float field31742, final float field31743) {
@@ -452,13 +455,13 @@ public class Class7764 implements Class7763
         return this.field31743;
     }
     
-    public void method24829(final float n, final float n2, final float n3, final float n4, final Class2427 class2427) {
+    public void method24829(final float n, final float n2, final float n3, final float n4, final Color color) {
         this.method24813();
-        class2427.method9766();
-        this.field31729.method24916();
+        color.bind();
+        this.field31729.bind();
         if (Class7764.field31725.method19300()) {
             Class7764.field31725.method19265(33880);
-            Class7764.field31725.method19301((byte)(class2427.field14368 * 255.0f), (byte)(class2427.field14369 * 255.0f), (byte)(class2427.field14370 * 255.0f));
+            Class7764.field31725.method19301((byte)(color.field14368 * 255.0f), (byte)(color.field14369 * 255.0f), (byte)(color.field14370 * 255.0f));
         }
         Class7764.field31725.method19273(8960, 8704, 8448);
         Class7764.field31725.method19274(n, n2, 0.0f);
@@ -467,7 +470,7 @@ public class Class7764 implements Class7763
             Class7764.field31725.method19270(this.field31736, 0.0f, 0.0f, 1.0f);
             Class7764.field31725.method19274(-this.field31742, -this.field31743, 0.0f);
         }
-        Class7764.field31725.method19251(7);
+        Class7764.field31725.glBegin(7);
         this.method24816(0.0f, 0.0f, n3, n4);
         Class7764.field31725.method19253();
         if (this.field31736 != 0.0f) {
@@ -532,28 +535,28 @@ public class Class7764 implements Class7763
     }
     
     public void method24838(final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8) {
-        this.method24839(n, n2, n3, n4, n5, n6, n7, n8, Class2427.field14355);
+        this.method24839(n, n2, n3, n4, n5, n6, n7, n8, Color.field14355);
     }
     
-    public void method24839(final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, Class2427 field14355) {
+    public void method24839(final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, Color field14355) {
         this.method24813();
         if (this.field31737 != 1.0f) {
             if (field14355 == null) {
-                field14355 = Class2427.field14355;
+                field14355 = Color.field14355;
             }
-            final Class2427 class2427;
-            field14355 = (class2427 = new Class2427(field14355));
-            class2427.field14371 *= this.field31737;
+            final Color color;
+            field14355 = (color = new Color(field14355));
+            color.field14371 *= this.field31737;
         }
-        field14355.method9766();
-        this.field31729.method24916();
+        field14355.bind();
+        this.field31729.bind();
         Class7764.field31725.method19274(n, n2, 0.0f);
         if (this.field31736 != 0.0f) {
             Class7764.field31725.method19274(this.field31742, this.field31743, 0.0f);
             Class7764.field31725.method19270(this.field31736, 0.0f, 0.0f, 1.0f);
             Class7764.field31725.method19274(-this.field31742, -this.field31743, 0.0f);
         }
-        Class7764.field31725.method19251(7);
+        Class7764.field31725.glBegin(7);
         this.method24840(0.0f, 0.0f, n3 - n, n4 - n2, n5, n6, n7, n8);
         Class7764.field31725.method19253();
         if (this.field31736 != 0.0f) {
@@ -568,9 +571,9 @@ public class Class7764 implements Class7763
         this.method24841(n, n2, n3, n4, n5, n6, n7, n8, null);
     }
     
-    public void method24841(final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final Class2427 class2427) {
-        if (class2427 != null) {
-            class2427.method9766();
+    public void method24841(final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final Color color) {
+        if (color != null) {
+            color.bind();
         }
         final float n9 = n3 - n;
         final float n10 = n4 - n2;
@@ -580,34 +583,34 @@ public class Class7764 implements Class7763
         final float n14 = n6 / this.field31731 * this.field31733 + this.field31735;
         final float n15 = n11 / this.field31730 * this.field31732;
         final float n16 = n12 / this.field31731 * this.field31733;
-        Class7764.field31725.method19254(n13, n14);
+        Class7764.field31725.glTexCoord2f(n13, n14);
         Class7764.field31725.method19256(n, n2, 0.0f);
-        Class7764.field31725.method19254(n13, n14 + n16);
+        Class7764.field31725.glTexCoord2f(n13, n14 + n16);
         Class7764.field31725.method19256(n, n2 + n10, 0.0f);
-        Class7764.field31725.method19254(n13 + n15, n14 + n16);
+        Class7764.field31725.glTexCoord2f(n13 + n15, n14 + n16);
         Class7764.field31725.method19256(n + n9, n2 + n10, 0.0f);
-        Class7764.field31725.method19254(n13 + n15, n14);
+        Class7764.field31725.glTexCoord2f(n13 + n15, n14);
         Class7764.field31725.method19256(n + n9, n2, 0.0f);
     }
     
     public void method24842(final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8) {
-        Class2427.field14355.method9766();
-        this.field31729.method24916();
+        Color.field14355.bind();
+        this.field31729.bind();
         Class7764.field31725.method19274(n, n2, 0.0f);
         if (this.field31736 != 0.0f) {
             Class7764.field31725.method19274(this.field31742, this.field31743, 0.0f);
             Class7764.field31725.method19270(this.field31736, 0.0f, 0.0f, 1.0f);
             Class7764.field31725.method19274(-this.field31742, -this.field31743, 0.0f);
         }
-        Class7764.field31725.method19251(7);
+        Class7764.field31725.glBegin(7);
         this.method24813();
-        Class7764.field31725.method19254(this.field31734, this.field31735);
+        Class7764.field31725.glTexCoord2f(this.field31734, this.field31735);
         Class7764.field31725.method19256(0.0f, 0.0f, 0.0f);
-        Class7764.field31725.method19254(this.field31734, this.field31735 + this.field31733);
+        Class7764.field31725.glTexCoord2f(this.field31734, this.field31735 + this.field31733);
         Class7764.field31725.method19256(n3 - n, n4 - n2, 0.0f);
-        Class7764.field31725.method19254(this.field31734 + this.field31732, this.field31735 + this.field31733);
+        Class7764.field31725.glTexCoord2f(this.field31734 + this.field31732, this.field31735 + this.field31733);
         Class7764.field31725.method19256(n5 - n, n6 - n2, 0.0f);
-        Class7764.field31725.method19254(this.field31734 + this.field31732, this.field31735);
+        Class7764.field31725.glTexCoord2f(this.field31734 + this.field31732, this.field31735);
         Class7764.field31725.method19256(n7 - n, n8 - n2, 0.0f);
         Class7764.field31725.method19253();
         if (this.field31736 != 0.0f) {
@@ -681,9 +684,9 @@ public class Class7764 implements Class7763
     public void method24851() {
         if (Class7764.field31726 == null) {
             (Class7764.field31726 = this).method24813();
-            Class2427.field14355.method9766();
-            this.field31729.method24916();
-            Class7764.field31725.method19251(7);
+            Color.field14355.bind();
+            this.field31729.bind();
+            Class7764.field31725.glBegin(7);
             return;
         }
         throw new RuntimeException("Attempt to start use of a sprite sheet before ending use with another - see endUse()");
@@ -695,11 +698,11 @@ public class Class7764 implements Class7763
         return "[Image " + this.field31738 + " " + this.field31730 + "x" + this.field31731 + "  " + this.field31734 + "," + this.field31735 + "," + this.field31732 + "," + this.field31733 + "]";
     }
     
-    public Class7776 method24852() {
+    public Texture method24852() {
         return this.field31729;
     }
     
-    public void method24853(final Class7776 field31729) {
+    public void method24853(final Texture field31729) {
         this.field31729 = field31729;
         this.method24812();
     }
@@ -711,7 +714,7 @@ public class Class7764 implements Class7763
         return 256 + b;
     }
     
-    public Class2427 method24855(int n, int n2) {
+    public Color method24855(int n, int n2) {
         if (this.field31740 == null) {
             this.field31740 = this.field31729.method24925();
         }
@@ -731,9 +734,9 @@ public class Class7764 implements Class7763
         }
         final int n5 = (n + n2 * this.field31729.method24922()) * (this.field31729.method24914() ? 4 : 3);
         if (!this.field31729.method24914()) {
-            return new Class2427(this.method24854(this.field31740[n5]), this.method24854(this.field31740[n5 + 1]), this.method24854(this.field31740[n5 + 2]));
+            return new Color(this.method24854(this.field31740[n5]), this.method24854(this.field31740[n5 + 1]), this.method24854(this.field31740[n5 + 2]));
         }
-        return new Class2427(this.method24854(this.field31740[n5]), this.method24854(this.field31740[n5 + 1]), this.method24854(this.field31740[n5 + 2]), this.method24854(this.field31740[n5 + 3]));
+        return new Color(this.method24854(this.field31740[n5]), this.method24854(this.field31740[n5 + 1]), this.method24854(this.field31740[n5 + 2]), this.method24854(this.field31740[n5 + 3]));
     }
     
     public boolean method24856() {
@@ -752,6 +755,6 @@ public class Class7764 implements Class7763
     }
     
     static {
-        Class7764.field31725 = Class7840.method25330();
+        Class7764.field31725 = Renderer.get();
     }
 }

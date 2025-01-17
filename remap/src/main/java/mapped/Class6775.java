@@ -4,9 +4,11 @@
 
 package mapped;
 
+import slick2d.Renderer;
+
 public class Class6775
 {
-    public static Class6448 field26606;
+    public static SGL field26606;
     private Runnable field26607;
     private int field26608;
     
@@ -44,6 +46,6 @@ public class Class6775
     }
     
     static {
-        Class6775.field26606 = Class7840.method25330();
+        Class6775.field26606 = Renderer.get();
     }
 }

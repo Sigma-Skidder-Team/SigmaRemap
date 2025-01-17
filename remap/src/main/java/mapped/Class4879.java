@@ -4,6 +4,8 @@
 
 package mapped;
 
+import slick2d.TrueTypeFont;
+
 public class Class4879 extends Class4868
 {
     private Class4892 field20871;
@@ -44,7 +46,7 @@ public class Class4879 extends Class4868
         Class8154.method26913((float)(this.method14272() + n3), (float)(this.method14274() + n3), (float)(this.method14276() - n3 * 2), (float)(this.method14278() - n3 * 2), 10.0f, n * 0.8f);
         Class8154.method26888((float)(this.method14272() + this.method14276() / 2), (float)(this.method14274() + this.method14276() / 2), n4, Class6430.method19118(Class265.field1278.field1292, n));
         if (this.method14314() == null) {}
-        final Class7524 field40310 = Class9400.field40310;
+        final TrueTypeFont field40310 = ClientFonts.JelloLight12;
         super.method14229(n);
     }
 }

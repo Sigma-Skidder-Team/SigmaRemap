@@ -26,6 +26,8 @@ import com.mojang.authlib.Agent;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
 import java.net.Proxy;
 import com.mojang.authlib.exceptions.AuthenticationException;
+import slick2d.Texture;
+
 import java.util.Date;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -42,7 +44,7 @@ public class Class7971
     private int field32794;
     private BufferedImage field32795;
     private BufferedImage field32796;
-    private Class7776 field32797;
+    private Texture field32797;
     private Thread field32798;
     private static Date field32799;
     
@@ -195,7 +197,7 @@ public class Class7971
         this.field32788 = field32788;
     }
     
-    public Class7776 method25899() {
+    public Texture method25899() {
         if (this.field32797 == null && this.field32795 != null) {
             try {
                 this.field32797 = Class9399.method34928("skin", this.field32795.getSubimage(8, 8, 8, 8));
@@ -207,7 +209,7 @@ public class Class7971
         if (this.field32797 != null) {
             return this.field32797;
         }
-        return Class7853.field32202;
+        return ClientAssets.skin;
     }
     
     public void finalize() throws Throwable {

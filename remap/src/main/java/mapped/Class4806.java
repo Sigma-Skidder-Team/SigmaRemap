@@ -21,9 +21,9 @@ public class Class4806 extends Class4803
         final Class4831 class4804;
         this.method14239(class4804 = new Class4831(this, "redeemBox", 100, 200, 350, 50, Class4831.field20671, "", "Premium Code"));
         final Class4861 class4805;
-        this.method14239(class4805 = new Class4861(this, "redeembtn", 100, 290, 80, 30, new Class6523(Class265.field1278.field1292, Class265.field1278.field1292, Class265.field1278.field1292), "Redeem", Class9400.field40313));
+        this.method14239(class4805 = new Class4861(this, "redeembtn", 100, 290, 80, 30, new Class6523(Class265.field1278.field1292, Class265.field1278.field1292, Class265.field1278.field1292), "Redeem", ClientFonts.JelloLight20));
         this.method14239(this.field20526 = new Class4831(this, "captcha", 195, 290, 75, 35, Class4831.field20671, "", "Captcha"));
-        this.field20526.method14317(Class9400.field40312);
+        this.field20526.method14317(ClientFonts.JelloLight18);
         this.field20526.method14297(false);
         class4805.method14260((class4832, n) -> new Thread(() -> {
             Client.method35173().method35201().method19344();
@@ -61,9 +61,9 @@ public class Class4806 extends Class4803
         }
         this.method14294((int)(150.0f * (1.0f - method19345)));
         this.method14228();
-        Class8154.method26889(Class9400.field40319, 100.0f, 100.0f, "Redeem Premium", Class6430.method19118(Class265.field1278.field1292, n));
-        Class8154.method26889(Class9400.field40314, 100.0f, 150.0f, "Visit http://sigmaclient.info for more info", Class6430.method19118(Class265.field1278.field1292, 0.6f * n));
-        Class8154.method26889(Class9400.field40312, 100.0f, 263.0f, this.field20523, Class6430.method19118(Class265.field1278.field1292, 0.6f * n));
+        Class8154.method26889(ClientFonts.JelloLight36, 100.0f, 100.0f, "Redeem Premium", Class6430.method19118(Class265.field1278.field1292, n));
+        Class8154.method26889(ClientFonts.JelloLight25, 100.0f, 150.0f, "Visit http://sigmaclient.info for more info", Class6430.method19118(Class265.field1278.field1292, 0.6f * n));
+        Class8154.method26889(ClientFonts.JelloLight18, 100.0f, 263.0f, this.field20523, Class6430.method19118(Class265.field1278.field1292, 0.6f * n));
         super.method14205(n);
     }
 }

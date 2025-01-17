@@ -4,17 +4,19 @@
 
 package mapped;
 
+import slick2d.Texture;
+
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class Class4918 extends Class4825
 {
-    public Class7776 field21042;
-    public Class7776 field21043;
-    public Class7776 field21044;
-    public Class7776 field21045;
-    public Class7776 field21046;
+    public Texture field21042;
+    public Texture field21043;
+    public Texture field21044;
+    public Texture field21045;
+    public Texture field21046;
     public TreeMap<Long, Double> field21047;
     public float field21048;
     public float field21049;
@@ -26,11 +28,11 @@ public class Class4918 extends Class4825
         this.field21048 = 0.5f;
         this.field21049 = 0.0f;
         this.field21050 = System.currentTimeMillis();
-        this.field21042 = Class7853.method25392("com/mentalfrostbyte/gui/resources/games/bg.png");
-        this.field21043 = Class7853.method25392("com/mentalfrostbyte/gui/resources/games/fg.png");
-        this.field21044 = Class7853.method25392("com/mentalfrostbyte/gui/resources/games/pipe.png");
-        this.field21045 = Class7853.method25392("com/mentalfrostbyte/gui/resources/games/pipe2.png");
-        this.field21046 = Class7853.method25392("com/mentalfrostbyte/gui/resources/games/bird.png");
+        this.field21042 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/games/bg.png");
+        this.field21043 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/games/fg.png");
+        this.field21044 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/games/pipe.png");
+        this.field21045 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/games/pipe2.png");
+        this.field21046 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/games/bird.png");
     }
     
     private void method14770() {

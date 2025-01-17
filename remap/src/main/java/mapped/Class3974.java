@@ -22,7 +22,7 @@ public class Class3974 extends Block
     public static final VoxelShape field17950;
     private final Block field17951;
     
-    public Class3974(final Block field17951, final Class9288 class9288) {
+    public Class3974(final Block field17951, final Properties class9288) {
         super(class9288);
         this.field17951 = field17951;
         Class3974.field17949.put(field17951, this);

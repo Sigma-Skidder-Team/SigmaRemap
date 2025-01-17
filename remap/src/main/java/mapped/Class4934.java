@@ -8,6 +8,8 @@ import java.util.Iterator;
 
 import com.mentalfrostbyte.Client;
 import org.lwjgl.opengl.GL11;
+import slick2d.Texture;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -28,7 +30,7 @@ public class Class4934 extends Class4800
     private Class4837 field21146;
     private Class4826 field21147;
     public Class7861 field21148;
-    private Class7776 field21149;
+    private Texture field21149;
     private float field21150;
     private Class4861 field21151;
     private Class225 field21152;
@@ -101,10 +103,10 @@ public class Class4934 extends Class4800
             }
             this.method14823(false);
         });
-        this.method14239(this.field21155 = new Class4831(this, "textbox", (int)(Minecraft.method5277().field4632.method7694() * this.field21143), 44, 150, 32, Class4831.field20670, "", "Search...", Class9400.field40312));
-        this.field21155.method14317(Class9400.field40312);
+        this.method14239(this.field21155 = new Class4831(this, "textbox", (int)(Minecraft.method5277().field4632.method7694() * this.field21143), 44, 150, 32, Class4831.field20670, "", "Search...", ClientFonts.JelloLight18));
+        this.field21155.method14317(ClientFonts.JelloLight18);
         this.field21155.method14473(class4831 -> this.method14823(false));
-        this.method14239(this.field21151 = new Class4861(this, "btnt", this.method14276() - 90, 43, 70, 30, Class6523.field25964, "Add +", Class9400.field40314));
+        this.method14239(this.field21151 = new Class4861(this, "btnt", this.method14276() - 90, 43, 70, 30, Class6523.field25964, "Add +", ClientFonts.JelloLight25));
         this.field21139.method14251();
         this.field21151.method14260((class4803, n) -> {
             if (this.method14820()) {
@@ -219,7 +221,7 @@ public class Class4934 extends Class4800
     private void method14815() {
         if (this.field21150 != this.field21139.method14392()) {
             try {
-                this.field21149 = Class9399.method34928("blur", Class6804.method20832(0, 0, (int)(Minecraft.method5277().field4632.method7694() * this.field21143) - 15, 114, 4, 40, -921102));
+                this.field21149 = Class9399.method34928("blur", BufferedImage.method20832(0, 0, (int)(Minecraft.method5277().field4632.method7694() * this.field21143) - 15, 114, 4, 40, -921102));
             }
             catch (final IOException ex) {
                 ex.printStackTrace();
@@ -240,8 +242,8 @@ public class Class4934 extends Class4800
         final int n = this.field20478 + this.field21145;
         final int n2 = this.field20479 + this.field21145;
         final int method19118 = Class6430.method19118(Class265.field1273.field1292, 0.8f);
-        Class8154.method26889(Class9400.field40315, (float)n, (float)n2, "Jello", method19118);
-        Class8154.method26889(Class9400.field40314, (float)(n + 87), (float)(n2 + 15), "Alt Manager", method19118);
+        Class8154.method26889(ClientFonts.JelloLight40, (float)n, (float)n2, "Jello", method19118);
+        Class8154.method26889(ClientFonts.JelloLight25, (float)(n + 87), (float)(n2 + 15), "Alt Manager", method19118);
     }
     
     private void method14818() {
@@ -315,7 +317,7 @@ public class Class4934 extends Class4800
         }
         final float n2 = n - this.field21135;
         final float n3 = (float)(field21134 - this.field21134);
-        Class8154.method26905((float)this.field21134, this.field21135, (float)(this.method14276() * 2), (float)(this.method14278() + 114), Class7853.field32177);
+        Class8154.method26905((float)this.field21134, this.field21135, (float)(this.method14276() * 2), (float)(this.method14278() + 114), ClientAssets.getBlurredPanorama);
         final float n4 = 0.5f;
         if (n != this.field21135) {
             this.field21135 += n2 * n4;

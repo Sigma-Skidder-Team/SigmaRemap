@@ -44,7 +44,7 @@ public class Class4867 extends Class4841
         GL11.glTranslatef((float)(this.method14272() + this.method14276() / 2), (float)(this.method14274() + this.method14278() / 2), 0.0f);
         GL11.glScalef(1.5f - 0.5f * n2, 1.5f - 0.5f * n2, 0.0f);
         GL11.glTranslatef((float)(-this.method14272() - this.method14276() / 2), (float)(-this.method14274() - this.method14278() / 2), 0.0f);
-        Class8154.method26899((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, Class7853.field32165, Class6430.method19118(Class265.field1278.field1292, n2));
+        Class8154.method26899((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, ClientAssets.check, Class6430.method19118(Class265.field1278.field1292, n2));
         GL11.glPopMatrix();
         super.method14205(n);
     }

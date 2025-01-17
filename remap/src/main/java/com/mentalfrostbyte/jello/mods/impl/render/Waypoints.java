@@ -12,6 +12,7 @@ import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
+import slick2d.TrueTypeFont;
 
 import java.util.Collection;
 import java.util.ArrayList;
@@ -236,13 +237,13 @@ public class Waypoints extends Module
         GL11.glTranslated(n + 0.5, n2 + 1.9, n3 + 0.5);
         GL11.glRotatef(Waypoints.mc.field4644.method5833().method18164(), 0.0f, -1.0f, 0.0f);
         GL11.glRotatef(Waypoints.mc.field4644.method5833().method18163(), 1.0f, 0.0f, 0.0f);
-        final Class7524 field40314 = Class9400.field40314;
+        final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.009f * n5, -0.009f * n5, -0.009f * n5);
         GL11.glTranslated(0.0, -20.0 * Math.sqrt(Math.sqrt(n5)), 0.0);
-        Class8154.method26876((float)(-field40314.method23505(s) / 2 - 14), -5.0f, field40314.method23505(s) / 2.0f + 14.0f, (float)(field40314.method23539() + 7), Class6430.method19118(Class6430.method19120(Class265.field1278.field1292, Class265.field1273.field1292, 75.0f), 0.5f));
-        Class8154.method26913((float)(-field40314.method23505(s) / 2 - 14), -5.0f, (float)(field40314.method23505(s) + 28), (float)(field40314.method23539() + 12), 20.0f, 0.5f);
-        GL11.glTranslated((double)(-field40314.method23505(s) / 2), 0.0, 0.0);
+        Class8154.method26876((float)(-field40314.getWidth(s) / 2 - 14), -5.0f, field40314.getWidth(s) / 2.0f + 14.0f, (float)(field40314.getHeight() + 7), Class6430.method19118(Class6430.method19120(Class265.field1278.field1292, Class265.field1273.field1292, 75.0f), 0.5f));
+        Class8154.method26913((float)(-field40314.getWidth(s) / 2 - 14), -5.0f, (float)(field40314.getWidth(s) + 28), (float)(field40314.getHeight() + 12), 20.0f, 0.5f);
+        GL11.glTranslated((double)(-field40314.getWidth(s) / 2), 0.0, 0.0);
         Class8154.method26889(field40314, 0.0f, 0.0f, s, Class6430.method19118(Class265.field1278.field1292, 0.8f));
         GL11.glPopMatrix();
         GL11.glPopMatrix();

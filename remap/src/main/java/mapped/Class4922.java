@@ -21,7 +21,7 @@ public class Class4922 extends Class4825
             final float n2 = 1.0f - Math.min(1.0f, Math.max(this.method14276() / (float)this.field21057, 0.0f));
             Class8154.method26874((float)this.field20478, (float)this.field20479, (float)this.field21057, (float)this.field20481, Class6430.method19118(-3254955, n));
             super.method14205(n * (1.0f - n2));
-            Class8154.method26899(0.0f, 0.0f, 20.0f, (float)this.field20481, Class7853.field32170, Class6430.method19118(Class265.field1278.field1292, n2 * n));
+            Class8154.method26899(0.0f, 0.0f, 20.0f, (float)this.field20481, ClientAssets.shadow_right, Class6430.method19118(Class265.field1278.field1292, n2 * n));
         }
     }
 }

@@ -4,13 +4,15 @@
 
 package mapped;
 
+import slick2d.Texture;
+
 import java.awt.image.BufferedImage;
 
 public class Class4917 extends Class4825
 {
     public Class7971 field21031;
     private BufferedImage field21032;
-    private Class7776 field21033;
+    private Texture field21033;
     private Class4840 field21034;
     private boolean field21035;
     private Class9572 field21036;
@@ -76,7 +78,7 @@ public class Class4917 extends Class4825
             this.method14766(n2);
             if (this.field21036.method35858() > 0.0f) {
                 if (max2 > 55) {
-                    Class8154.method26899((float)(this.field20478 + this.method14276()), n5 + 26 * max2 / 100.0f, 18.0f * this.field21036.method35858() * max2 / 100.0f, 47 * max2 / 100.0f, Class7853.field32197, this.method14309() ? this.field21041 : Class265.field1278.field1292);
+                    Class8154.method26899((float)(this.field20478 + this.method14276()), n5 + 26 * max2 / 100.0f, 18.0f * this.field21036.method35858() * max2 / 100.0f, 47 * max2 / 100.0f, ClientAssets.select, this.method14309() ? this.field21041 : Class265.field1278.field1292);
                 }
             }
             super.method14205(n * n2);
@@ -87,19 +89,19 @@ public class Class4917 extends Class4825
     public void method14764() {
         Class8154.method26900((float)(this.field20478 + 13), (float)(this.field20479 + 13), 75.0f, 75.0f, this.field21031.method25899(), Class265.field1278.field1292, true);
         Class8154.method26914((float)(this.field20478 + 13), (float)(this.field20479 + 13), 75.0f, 75.0f, 20.0f, 1.0f);
-        Class8154.method26899((float)(this.field20478 + 1), (float)this.field20479, 100.0f, 100.0f, Class7853.field32196, this.method14309() ? this.field21041 : Class265.field1278.field1292);
+        Class8154.method26899((float)(this.field20478 + 1), (float)this.field20479, 100.0f, 100.0f, ClientAssets.cercle, this.method14309() ? this.field21041 : Class265.field1278.field1292);
     }
     
     public void method14765() {
         if (this.field21031.method25912()) {
-            Class8154.method26889(Class9400.field40314, (float)(this.field20478 + 110), (float)(this.field20479 + 18), this.field21031.method25888(), Class265.field1273.field1292);
-            Class8154.method26889(Class9400.field40311, (float)(this.field20478 + 110), (float)(this.field20479 + 50), "Username: " + this.field21031.method25888(), Class265.field1281.field1292);
-            Class8154.method26889(Class9400.field40311, (float)(this.field20478 + 110), (float)(this.field20479 + 65), "Offline account", Class265.field1281.field1292);
+            Class8154.method26889(ClientFonts.JelloLight25, (float)(this.field20478 + 110), (float)(this.field20479 + 18), this.field21031.method25888(), Class265.field1273.field1292);
+            Class8154.method26889(ClientFonts.JelloLight14, (float)(this.field20478 + 110), (float)(this.field20479 + 50), "Username: " + this.field21031.method25888(), Class265.field1281.field1292);
+            Class8154.method26889(ClientFonts.JelloLight14, (float)(this.field20478 + 110), (float)(this.field20479 + 65), "Offline account", Class265.field1281.field1292);
         }
         else {
-            Class8154.method26889(Class9400.field40314, (float)(this.field20478 + 110), (float)(this.field20479 + 18), this.field21031.method25889(), Class265.field1273.field1292);
-            Class8154.method26889(Class9400.field40311, (float)(this.field20478 + 110), (float)(this.field20479 + 50), "Email: " + this.field21031.method25888(), Class265.field1281.field1292);
-            Class8154.method26889(Class9400.field40311, (float)(this.field20478 + 110), (float)(this.field20479 + 65), "Password: " + this.field21031.method25892().replaceAll(".", Character.toString('·')), Class265.field1281.field1292);
+            Class8154.method26889(ClientFonts.JelloLight25, (float)(this.field20478 + 110), (float)(this.field20479 + 18), this.field21031.method25889(), Class265.field1273.field1292);
+            Class8154.method26889(ClientFonts.JelloLight14, (float)(this.field20478 + 110), (float)(this.field20479 + 50), "Email: " + this.field21031.method25888(), Class265.field1281.field1292);
+            Class8154.method26889(ClientFonts.JelloLight14, (float)(this.field20478 + 110), (float)(this.field20479 + 65), "Password: " + this.field21031.method25892().replaceAll(".", Character.toString('·')), Class265.field1281.field1292);
         }
     }
     
@@ -108,8 +110,8 @@ public class Class4917 extends Class4825
         this.field21037 = Math.min(1.0f, Math.max(0.0f, this.field21037));
         this.field21039 = Math.max(0, this.field21039 - 1);
         final float n2 = (this.field21039 <= 20) ? 20.0f : -20.0f;
-        Class8154.method26899((float)(this.field20478 + this.field20480 - 45), (float)(this.field20479 + 42), 17.0f, 17.0f, Class7853.field32199, Class6430.method19118(Class265.field1278.field1292, ((this.field21039 >= n2 && this.field21039 <= this.field21040 - n2) ? 1.0f : (this.field21039 % n2 / n2)) * n));
-        Class8154.method26899((float)(this.field20478 + this.field20480 - 45), (float)(this.field20479 + 45), 17.0f, 13.0f, Class7853.field32198, Class6430.method19118(Class265.field1278.field1292, this.field21037 * n));
+        Class8154.method26899((float)(this.field20478 + this.field20480 - 45), (float)(this.field20479 + 42), 17.0f, 17.0f, ClientAssets.errors, Class6430.method19118(Class265.field1278.field1292, ((this.field21039 >= n2 && this.field21039 <= this.field21040 - n2) ? 1.0f : (this.field21039 % n2 / n2)) * n));
+        Class8154.method26899((float)(this.field20478 + this.field20480 - 45), (float)(this.field20479 + 45), 17.0f, 13.0f, ClientAssets.active, Class6430.method19118(Class265.field1278.field1292, this.field21037 * n));
     }
     
     public void method14767(final boolean field21035) {

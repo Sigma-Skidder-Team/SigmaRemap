@@ -4,6 +4,8 @@
 
 package mapped;
 
+import slick2d.TrueTypeFont;
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +30,7 @@ public class Class4841 extends Class4825
         this.field20747 = new ArrayList<Class9397>();
     }
     
-    public Class4841(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2, final Class7524 class4805, final boolean b) {
+    public Class4841(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2, final TrueTypeFont class4805, final boolean b) {
         super(class4803, s, n, n2, n3, n4, class4804, s2, class4805, b);
         this.field20747 = new ArrayList<Class9397>();
     }

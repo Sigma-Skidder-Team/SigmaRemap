@@ -22,7 +22,7 @@ public class Class3960 extends Class3841
     public static final Class7115 field17898;
     public static final Class7114<Class178> field17899;
     
-    public Class3960(final Class9288 class9288) {
+    public Class3960(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3960.field17898, Direction.NORTH)).with(Class3960.field17899, Class178.field507));
     }

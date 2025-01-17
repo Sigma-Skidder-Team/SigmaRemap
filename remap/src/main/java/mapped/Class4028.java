@@ -13,7 +13,7 @@ public class Class4028 extends Class4027
 {
     private static String[] field18121;
     
-    public Class4028(final Class9288 class9288) {
+    public Class4028(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with(Class4028.field18120, Direction.Axis.Y));
     }

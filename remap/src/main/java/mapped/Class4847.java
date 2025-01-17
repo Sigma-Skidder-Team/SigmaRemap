@@ -4,12 +4,13 @@
 
 package mapped;
 
-import java.awt.image.BufferedImage;
 import java.util.Iterator;
 import java.io.IOException;
 
 import com.mentalfrostbyte.Client;
 import org.lwjgl.opengl.GL11;
+import slick2d.Texture;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ public class Class4847 extends Class4841
     public List<Class7015> field20768;
     public int field20769;
     public boolean field20770;
-    private Class7776 field20771;
+    private Texture field20771;
     
     public Class4847(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
         super(class4803, s, n, n2, n3, n4, false);
@@ -74,7 +75,7 @@ public class Class4847 extends Class4841
         final int n2 = 8;
         try {
             if (this.field20770) {
-                final BufferedImage method20833 = Class6804.method20833(this.method14280(), this.method14281(), this.field20480, this.field20481, 3, 10, true);
+                final java.awt.image.BufferedImage method20833 = BufferedImage.method20833(this.method14280(), this.method14281(), this.field20480, this.field20481, 3, 10, true);
                 this.field20767 = Class6430.method19110(new Color(method20833.getRGB(6, 7)), new Color(method20833.getRGB(6, 22))).getRGB();
                 this.field20767 = Class6430.method19121(this.field20767, 0.25f);
                 if (this.field20771 != null) {
@@ -107,7 +108,7 @@ public class Class4847 extends Class4841
                 Class8154.method26928();
                 Class8154.method26925((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, 6.0f, Class6430.method19118(Class265.field1273.field1292, 0.3f));
                 GL11.glPopMatrix();
-                Class8154.method26889(Class9400.field40323, (float)(this.field20478 + 14), (float)(this.field20479 + 8), "+", Class6430.method19118(Class265.field1278.field1292, 0.8f));
+                Class8154.method26889(ClientFonts.JelloMedium20, (float)(this.field20478 + 14), (float)(this.field20479 + 8), "+", Class6430.method19118(Class265.field1278.field1292, 0.8f));
                 Class8154.method26874((float)(this.field20478 + 16), (float)(this.field20479 + 65), 8.0f, 2.0f, Class6430.method19118(Class265.field1278.field1292, 0.8f));
             }
         }

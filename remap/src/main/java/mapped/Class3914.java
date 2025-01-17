@@ -16,7 +16,7 @@ public class Class3914 extends Block implements Class3867
     private static String[] field17726;
     private final Class3915 field17727;
     
-    public Class3914(final Class3915 field17727, final Class9288 class9288) {
+    public Class3914(final Class3915 field17727, final Properties class9288) {
         super(class9288);
         this.field17727 = field17727;
     }

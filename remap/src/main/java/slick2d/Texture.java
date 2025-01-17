@@ -2,15 +2,15 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package slick2d;
 
-public interface Class7776
+public interface Texture
 {
     boolean method24914();
     
     String method24915();
     
-    void method24916();
+    void bind();
     
     int method24917();
     

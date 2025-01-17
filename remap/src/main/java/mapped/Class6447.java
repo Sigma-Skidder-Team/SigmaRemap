@@ -11,7 +11,7 @@ import java.nio.IntBuffer;
 import java.nio.DoubleBuffer;
 import org.lwjgl.opengl.GL11;
 
-public class Class6447 implements Class6448
+public class Class6447 implements SGL
 {
     private static String[] field25597;
     private int field25598;
@@ -51,7 +51,7 @@ public class Class6447 implements Class6448
     }
     
     @Override
-    public void method19251(final int n) {
+    public void glBegin(final int n) {
         GL11.glBegin(n);
     }
     
@@ -197,7 +197,7 @@ public class Class6447 implements Class6448
     }
     
     @Override
-    public void method19254(final float n, final float n2) {
+    public void glTexCoord2f(final float n, final float n2) {
         GL11.glTexCoord2f(n, n2);
     }
     
@@ -212,7 +212,7 @@ public class Class6447 implements Class6448
     }
     
     @Override
-    public void method19255(final float n, final float n2) {
+    public void glVertex2f(final float n, final float n2) {
         GL11.glVertex2f(n, n2);
     }
     

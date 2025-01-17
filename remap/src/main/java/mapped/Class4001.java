@@ -15,7 +15,7 @@ public class Class4001 extends Class4000
     public static final Class7112 field18035;
     private final int field18036;
     
-    public Class4001(final int field18036, final Class9288 class9288) {
+    public Class4001(final int field18036, final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class4001.field18035, 0));
         this.field18036 = field18036;

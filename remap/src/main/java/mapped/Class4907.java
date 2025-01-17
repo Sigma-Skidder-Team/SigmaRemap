@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import slick2d.Texture;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -17,7 +18,7 @@ public class Class4907 extends Class4841
 {
     public Class4803 field20987;
     public String field20988;
-    public Class7776 field20989;
+    public Texture field20989;
     private Class9572 field20990;
     public boolean field20991;
     public int field20992;
@@ -51,7 +52,7 @@ public class Class4907 extends Class4841
                 if (class4806.field32811 != Class294.field1676) {
                     if (class4806.field32811 != Class294.field1677) {
                         if (class4806.field32811 == Class294.field1678) {
-                            this.field20987.method14239(new Class4834(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, new Class6523(Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292), class4806.field32812, Class9400.field40319));
+                            this.field20987.method14239(new Class4834(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, new Class6523(Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292), class4806.field32812, ClientFonts.JelloLight36));
                         }
                     }
                     else {
@@ -76,7 +77,7 @@ public class Class4907 extends Class4841
                 }
             }
             else {
-                this.field20987.method14239(new Class4834(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, new Class6523(Class265.field1281.field1292, Class265.field1281.field1292, Class265.field1281.field1292, Class265.field1281.field1292), class4806.field32812, Class9400.field40313));
+                this.field20987.method14239(new Class4834(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, new Class6523(Class265.field1281.field1292, Class265.field1281.field1292, Class265.field1281.field1292, Class265.field1281.field1292), class4806.field32812, ClientFonts.JelloLight20));
             }
             n2 += class4806.field32813 + 10;
         }
@@ -210,7 +211,7 @@ public class Class4907 extends Class4841
                 if (this.field20989 != null) {
                     this.field20989.method24923();
                 }
-                this.field20989 = Class9399.method34928("blur", Class6804.method20830(0, 0, this.method14276(), this.method14278(), 5, 10, Class265.field1278.field1292, true));
+                this.field20989 = Class9399.method34928("blur", BufferedImage.method20830(0, 0, this.method14276(), this.method14278(), 5, 10, Class265.field1278.field1292, true));
             }
             catch (final IOException ex) {
                 Client.method35173().method35187().method20242(ex.getMessage());

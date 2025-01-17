@@ -23,7 +23,7 @@ public final class Class6920 implements Class6918
     
     @Override
     public float[] method21290(final Class2400 class2400, float n, float n2) {
-        this.field27123.method23071(class2400, n - this.field27124[0], n2 - this.field27124[1]).method9766();
+        this.field27123.method23071(class2400, n - this.field27124[0], n2 - this.field27124[1]).bind();
         final Class2412 method23073 = this.field27123.method23073(class2400, n, n2);
         n += method23073.field14278;
         n2 += method23073.field14279;

@@ -4,11 +4,11 @@
 
 package mapped;
 
-import java.awt.image.ImageObserver;
-import java.awt.Image;
-import java.awt.Graphics;
 import java.nio.ByteBuffer;
 import org.lwjgl.opengl.GL11;
+import slick2d.Renderer;
+import slick2d.Texture;
+
 import java.io.IOException;
 import java.awt.image.BufferedImage;
 
@@ -16,20 +16,20 @@ public class Class9399
 {
     private static String[] field40306;
     
-    public static Class7776 method34928(final String s, final BufferedImage bufferedImage) throws IOException {
+    public static Texture method34928(final String s, final BufferedImage bufferedImage) throws IOException {
         return method34930(s, bufferedImage, 3553, 6408, 9729, 9729);
     }
     
-    public static Class7776 method34929(final String s, final BufferedImage bufferedImage, final int n) throws IOException {
+    public static Texture method34929(final String s, final BufferedImage bufferedImage, final int n) throws IOException {
         return method34930(s, bufferedImage, 3553, 6408, n, n);
     }
     
-    public static Class7776 method34930(final String s, final BufferedImage bufferedImage, final int n, final int n2, final int n3, final int n4) throws IOException {
+    public static Texture method34930(final String s, final BufferedImage bufferedImage, final int n, final int n2, final int n3, final int n4) throws IOException {
         final Class5338 class5338 = new Class5338();
         final int method24221 = Class7649.method24221();
         final Class7777 class5339 = new Class7777(s, n, method24221);
-        Class7840.method25330().method19265(3553);
-        Class7840.method25330().method19258(n, method24221);
+        Renderer.get().method19265(3553);
+        Renderer.get().method19258(n, method24221);
         class5339.method24933(bufferedImage.getWidth());
         class5339.method24932(bufferedImage.getHeight());
         int n5;
@@ -44,15 +44,15 @@ public class Class9399
         class5339.method24935(class5338.method16483());
         class5339.method24929(class5338.method16480() == 32);
         if (n == 3553) {
-            Class7840.method25330().method19289(n, 10241, n3);
-            Class7840.method25330().method19289(n, 10240, n4);
-            if (!Class7840.method25330().method19299()) {
-                Class7840.method25330().method19289(3553, 10242, 10496);
-                Class7840.method25330().method19289(3553, 10243, 10496);
+            Renderer.get().method19289(n, 10241, n3);
+            Renderer.get().method19289(n, 10240, n4);
+            if (!Renderer.get().method19299()) {
+                Renderer.get().method19289(3553, 10242, 10496);
+                Renderer.get().method19289(3553, 10243, 10496);
             }
             else {
-                Class7840.method25330().method19289(3553, 10242, 34627);
-                Class7840.method25330().method19289(3553, 10243, 34627);
+                Renderer.get().method19289(3553, 10242, 34627);
+                Renderer.get().method19289(3553, 10243, 34627);
             }
         }
         GL11.glPixelStorei(3312, 0);
@@ -61,7 +61,7 @@ public class Class9399
         GL11.glPixelStorei(3315, 0);
         GL11.glPixelStorei(3316, 0);
         GL11.glPixelStorei(3317, 4);
-        Class7840.method25330().method19297(n, 0, n2, class5339.method24922(), class5339.method24921(), 0, n5, 5121, method24222);
+        Renderer.get().method19297(n, 0, n2, class5339.method24922(), class5339.method24921(), 0, n5, 5121, method24222);
         return class5339;
     }
     

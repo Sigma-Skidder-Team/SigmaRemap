@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import slick2d.Texture;
 
 import java.util.List;
 import java.util.Iterator;
@@ -24,7 +25,7 @@ public class Class4936 extends Class4800
     private float field21176;
     private int field21177;
     public Class7861 field21178;
-    private Class7776 field21179;
+    private Texture field21179;
     private float field21180;
     private Class225 field21181;
     private boolean field21182;
@@ -57,8 +58,8 @@ public class Class4936 extends Class4800
             }
         }
         final int n = 790;
-        this.method14239(this.field21183 = new Class4832(this, "textbox", (Minecraft.method5277().field4632.method7694() - n) / 2 - 140, this.method14278() - 40, 140, 32, Class4831.field20670, "", "Search...", Class9400.field40312));
-        this.field21183.method14317(Class9400.field40327);
+        this.method14239(this.field21183 = new Class4832(this, "textbox", (Minecraft.method5277().field4632.method7694() - n) / 2 - 140, this.method14278() - 40, 140, 32, Class4831.field20670, "", "Search...", ClientFonts.JelloLight18));
+        this.field21183.method14317(ClientFonts.Default);
         this.field21183.method14473(class4831 -> this.method14851());
         this.method14852();
         this.method14239(this.field21184 = new Class4810(this, "toolbar", (Minecraft.method5277().field4632.method7694() - n) / 2 + 16, this.method14278() - 94));
@@ -122,9 +123,9 @@ public class Class4936 extends Class4800
     public void method14205(final float n) {
         this.method14850();
         super.method14205(n);
-        Class8154.method26889(Class9400.field40327, 20.0f, 20.0f, Minecraft.method5277().method5287().method33692(), -2236963);
-        Class8154.method26890(Class9400.field40327, (float)(this.method14276() / 2), 20.0f, "Account Manager - " + this.method14849() + " alts", Class265.field1278.field1292, Class2056.field11738, Class2056.field11734);
-        Class8154.method26891(Class9400.field40327, (float)(this.method14276() / 2), 40.0f, this.field21185, Class265.field1278.field1292, Class2056.field11738, Class2056.field11734, false);
+        Class8154.method26889(ClientFonts.Default, 20.0f, 20.0f, Minecraft.method5277().method5287().method33692(), -2236963);
+        Class8154.method26890(ClientFonts.Default, (float)(this.method14276() / 2), 20.0f, "Account Manager - " + this.method14849() + " alts", Class265.field1278.field1292, Class2056.field11738, Class2056.field11734);
+        Class8154.method26891(ClientFonts.Default, (float)(this.method14276() / 2), 40.0f, this.field21185, Class265.field1278.field1292, Class2056.field11738, Class2056.field11734, false);
     }
     
     private int method14849() {

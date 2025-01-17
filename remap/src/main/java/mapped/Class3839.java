@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 
 public class Class3839 extends Class3834 implements Class3840
 {
-    public Class3839(final Class9288 class9288) {
+    public Class3839(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3839.field17415, Direction.UP));
     }

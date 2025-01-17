@@ -27,7 +27,7 @@ public class Class3990 extends Class3986
     private static final VoxelShape field18009;
     private static final Class2259 field18010;
     
-    public Class3990(final Class9288 class9288) {
+    public Class3990(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3990.field18000, Direction.NORTH));
     }

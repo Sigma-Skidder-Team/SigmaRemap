@@ -6,6 +6,8 @@ package mapped;
 
 import net.minecraft.util.math.MathHelper;
 import org.lwjgl.opengl.GL11;
+import slick2d.Texture;
+
 import java.util.Optional;
 import java.util.function.Consumer;
 
@@ -23,9 +25,9 @@ public class Class568 extends Class566
     private int field3387;
     private int field3388;
     private boolean field3389;
-    public static Class7776 field3390;
-    public static Class7776 field3391;
-    public static Class7776 field3392;
+    public static Texture field3390;
+    public static Texture field3391;
+    public static Texture field3392;
     private float field3393;
     
     public Class568(final Minecraft field3379, final Class8207 field3380, final Consumer<Optional<Throwable>> field3381, final boolean field3382) {
@@ -42,9 +44,9 @@ public class Class568 extends Class566
     }
     
     public static void method3313() {
-        Class568.field3390 = Class7853.method25392("com/mentalfrostbyte/gui/resources/sigma/logo.png");
-        Class568.field3391 = Class7853.method25392("com/mentalfrostbyte/gui/resources/loading/back.png");
-        Class568.field3392 = Class7853.method25396("com/mentalfrostbyte/gui/resources/loading/back.png", 0.25f, 25);
+        Class568.field3390 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/sigma/logo.png");
+        Class568.field3391 = ClientAssets.getTexture("com/mentalfrostbyte/gui/resources/loading/back.png");
+        Class568.field3392 = ClientAssets.method25396("com/mentalfrostbyte/gui/resources/loading/back.png", 0.25f, 25);
     }
     
     @Override

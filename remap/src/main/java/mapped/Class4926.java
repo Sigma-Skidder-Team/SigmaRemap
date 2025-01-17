@@ -8,6 +8,8 @@ import java.awt.Rectangle;
 
 import com.mentalfrostbyte.Client;
 import org.lwjgl.opengl.GL11;
+import slick2d.Texture;
+
 import java.util.ArrayList;
 
 public class Class4926 extends Class4800
@@ -17,7 +19,7 @@ public class Class4926 extends Class4800
     private boolean field21071;
     private float field21072;
     private float field21073;
-    private Class7776 field21074;
+    private Texture field21074;
     private Class4887 field21075;
     private Class4866 field21076;
     private Class4907 field21077;
@@ -35,11 +37,11 @@ public class Class4926 extends Class4800
         this.field21079 = false;
         this.field21080 = new Class9572(250, 250, Class2186.field12965);
         this.method14311(false);
-        this.field21074 = Class7853.method25396("com/mentalfrostbyte/gui/resources/" + Class7853.method25397(), 0.075f, 8);
+        this.field21074 = ClientAssets.method25396("com/mentalfrostbyte/gui/resources/" + ClientAssets.getPanorama(), 0.075f, 8);
         this.method14239(this.field21075 = new Class4887(this, "login", (this.field20480 - Class4887.field20896) / 2, (this.field20481 - Class4887.field20895) / 2, Class4887.field20896, Class4887.field20895));
         this.method14239(this.field21076 = new Class4866(this, "register", (this.field20480 - Class4866.field20842) / 2, (this.field20481 - Class4866.field20841) / 2, Class4866.field20842, Class4866.field20841));
         this.method14780();
-        this.method14239(this.field21078 = new Class4861(this, "continue", this.field20480 / 2 - 120, this.field20481 / 2 + 120, 240, 60, new Class6523(Class6430.method19118(Class265.field1278.field1292, 0.5f)), "Continue", Class9400.field40314));
+        this.method14239(this.field21078 = new Class4861(this, "continue", this.field20480 / 2 - 120, this.field20481 / 2 + 120, 240, 60, new Class6523(Class6430.method19118(Class265.field1278.field1292, 0.5f)), "Continue", ClientFonts.JelloLight25));
         this.field21078.method14297(false);
         this.field21075.method14516(class4841 -> {
             this.field21079 = true;
@@ -63,7 +65,7 @@ public class Class4926 extends Class4800
             this.method14225(() -> {
                 final ArrayList list = new ArrayList();
                 list.add(new Class7976(Class294.field1678, s3, 45));
-                Class6430.method19175(s4, 240, Class9400.field40313);
+                Class6430.method19175(s4, 240, ClientFonts.JelloLight20);
                 int i = 0;
                 final String[] array;
                 while (i < array.length) {
@@ -95,7 +97,7 @@ public class Class4926 extends Class4800
     
     @Override
     public void method14205(final float n) {
-        Class7853.field32191.method24916();
+        ClientAssets.cancel.bind();
         this.field21072 = Math.max(0.0f, Math.min(this.field21072 + 0.075f, 1.0f));
         if (this.field21079) {
             this.field21080.method35855(Class2186.field12964);
@@ -125,14 +127,14 @@ public class Class4926 extends Class4800
             final String field32930 = Client.method35173().method35201().method19347().field32930;
             final String s = "Welcome back";
             final int n3 = 100;
-            final int n4 = (this.field20480 - (n3 + Math.max(Class9400.field40325.method23505(s), Class9400.field40319.method23505(field32930)) + 10 * 10)) / 2;
+            final int n4 = (this.field20480 - (n3 + Math.max(ClientFonts.JelloMedium40.getWidth(s), ClientFonts.JelloLight36.getWidth(field32930)) + 10 * 10)) / 2;
             final int n5 = (this.field20481 - n3 * 2) / 2;
             Class8154.method26876(0.0f, 0.0f, (float)this.field20480, (float)this.field20481, Class6430.method19118(Class265.field1273.field1292, 0.45f * this.field21080.method35858()));
-            Class8154.method26904((float)(n4 + 20), (float)(n5 + 40), (float)(n3 + 30), (float)(n3 + 30), Class7853.field32205, this.field21080.method35858());
+            Class8154.method26904((float)(n4 + 20), (float)(n5 + 40), (float)(n3 + 30), (float)(n3 + 30), ClientAssets.sigma, this.field21080.method35858());
             final int n6 = 165;
             final int n7 = 54;
-            Class8154.method26889(Class9400.field40325, (float)(n4 + n6), (float)(n5 + n7), s, Class265.field1278.field1292);
-            Class8154.method26889(Class9400.field40319, (float)(n4 + n6), (float)(n5 + n7 + 45), field32930, Class265.field1278.field1292);
+            Class8154.method26889(ClientFonts.JelloMedium40, (float)(n4 + n6), (float)(n5 + n7), s, Class265.field1278.field1292);
+            Class8154.method26889(ClientFonts.JelloLight36, (float)(n4 + n6), (float)(n5 + n7 + 45), field32930, Class265.field1278.field1292);
         }
         GL11.glPushMatrix();
         this.field21078.method14205(this.field21080.method35858());

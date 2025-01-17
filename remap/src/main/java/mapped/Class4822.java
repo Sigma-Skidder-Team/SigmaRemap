@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import com.mentalfrostbyte.jello.settings.impl.TextInputSetting;
+import slick2d.TrueTypeFont;
 
 import java.util.Iterator;
 import java.util.HashMap;
@@ -18,7 +19,7 @@ import java.util.HashMap;
 public class Class4822 extends Class4817
 {
     private Module field20634;
-    public Class7524 field20496;
+    public TrueTypeFont field20496;
     public Class9572 field20635;
     public HashMap<Module, Class4803> field20636;
     
@@ -81,8 +82,8 @@ public class Class4822 extends Class4817
                 final int n4 = 114;
                 final int n5 = 27;
                 final Class4832 class4810;
-                this.method14239(class4810 = new Class4832(class4803, class4804.method15204() + "txt", n, n2 + 27, n4, n5, Class4831.field20670, (String)class4804.method15198(), class4804.method15204(), Class9400.field40327));
-                class4810.method14317(Class9400.field40312);
+                this.method14239(class4810 = new Class4832(class4803, class4804.method15204() + "txt", n, n2 + 27, n4, n5, Class4831.field20670, (String)class4804.method15198(), class4804.method15204(), ClientFonts.Default));
+                class4810.method14317(ClientFonts.JelloLight18);
                 class4810.method14473(class4998 -> class4804.method15199(class4998.method14314()));
                 class4804.method15195(class4833 -> {
                     if (class4810.method14314() != ((TextInputSetting)class4804).method15198()) {

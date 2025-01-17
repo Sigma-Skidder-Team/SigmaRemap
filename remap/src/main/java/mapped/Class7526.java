@@ -11,16 +11,19 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.io.Reader;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.InputStream;
 import org.newdawn.slick.SlickException;
+import slick2d.Color;
+import slick2d.Font;
+import slick2d.Renderer;
+
 import java.util.LinkedHashMap;
 
-public class Class7526 implements Class7523
+public class Class7526 implements Font
 {
-    private static Class6448 field29872;
+    private static SGL field29872;
     private static final int field29873 = 200;
     private static final int field29874 = 255;
     private boolean field29875;
@@ -193,28 +196,28 @@ public class Class7526 implements Class7523
     }
     
     @Override
-    public void method23500(final float n, final float n2, final String s) {
-        this.method23501(n, n2, s, Class2427.field14355);
+    public void drawString(final float x, final float y, final String text) {
+        this.drawString(x, y, text, Color.field14355);
     }
     
     @Override
-    public void method23501(final float n, final float n2, final String s, final Class2427 class2427) {
-        this.method23499(n, n2, s, class2427, 0, s.length() - 1);
+    public void drawString(final float x, final float y, final String text, final Color color) {
+        this.drawString(x, y, text, color, 0, text.length() - 1);
     }
     
     @Override
-    public void method23499(final float n, final float n2, final String key, final Class2427 class2427, final int n3, final int n4) {
+    public void drawString(final float x, final float y, final String text, final Color color, final int startIndex, final int endIndex) {
         this.field29876.method24811();
-        class2427.method9766();
-        Class7526.field29872.method19274(n, n2, 0.0f);
+        color.bind();
+        Class7526.field29872.method19274(x, y, 0.0f);
         Label_0219: {
             if (this.field29875) {
-                if (n3 == 0) {
-                    if (n4 == key.length() - 1) {
-                        final Class7560 class2428 = this.field29882.get(key);
+                if (startIndex == 0) {
+                    if (endIndex == text.length() - 1) {
+                        final Class7560 class2428 = this.field29882.get(text);
                         if (class2428 == null) {
                             final Class7560 value = new Class7560(null);
-                            value.field29985 = key;
+                            value.field29985 = text;
                             final int size = this.field29882.size();
                             if (size >= 200) {
                                 value.field29981 = this.field29880;
@@ -223,9 +226,9 @@ public class Class7526 implements Class7523
                             else {
                                 value.field29981 = this.field29879 + size;
                             }
-                            this.field29882.put(key, value);
+                            this.field29882.put(text, value);
                             Class7526.field29872.method19276(value.field29981, 4865);
-                            this.method23542(key, n3, n4);
+                            this.method23542(text, startIndex, endIndex);
                             Class7526.field29872.method19275();
                             break Label_0219;
                         }
@@ -234,13 +237,13 @@ public class Class7526 implements Class7523
                     }
                 }
             }
-            this.method23542(key, n3, n4);
+            this.method23542(text, startIndex, endIndex);
         }
-        Class7526.field29872.method19274(-n, -n2, 0.0f);
+        Class7526.field29872.method19274(-x, -y, 0.0f);
     }
     
     private void method23542(final String s, final int n, final int n2) {
-        Class7526.field29872.method19251(7);
+        Class7526.field29872.glBegin(7);
         int n3 = 0;
         int n4 = 0;
         Class8935 class8935 = null;
@@ -266,7 +269,7 @@ public class Class7526 implements Class7523
             }
             else {
                 n3 = 0;
-                n4 += this.method23521();
+                n4 += this.getLineHeight();
             }
         }
         Class7526.field29872.method19253();
@@ -300,10 +303,10 @@ public class Class7526 implements Class7523
     }
     
     @Override
-    public int method23506(final String key) {
+    public int getHeight(final String str) {
         Class7560 class7560 = null;
         if (this.field29875) {
-            class7560 = this.field29882.get(key);
+            class7560 = this.field29882.get(str);
             if (class7560 != null) {
                 if (class7560.field29984 != null) {
                     return class7560.field29984;
@@ -312,8 +315,8 @@ public class Class7526 implements Class7523
         }
         int n = 0;
         int max = 0;
-        for (int i = 0; i < key.length(); ++i) {
-            final char char1 = key.charAt(i);
+        for (int i = 0; i < str.length(); ++i) {
+            final char char1 = str.charAt(i);
             if (char1 != '\n') {
                 if (char1 != ' ') {
                     final Class8935 class7561 = this.field29877[char1];
@@ -327,7 +330,7 @@ public class Class7526 implements Class7523
                 max = 0;
             }
         }
-        final int n2 = max + n * this.method23521();
+        final int n2 = max + n * this.getLineHeight();
         if (class7560 != null) {
             class7560.field29984 = new Short((short)n2);
         }
@@ -335,10 +338,10 @@ public class Class7526 implements Class7523
     }
     
     @Override
-    public int method23505(final String key) {
+    public int getWidth(final String str) {
         Class7560 class7560 = null;
         if (this.field29875) {
-            class7560 = this.field29882.get(key);
+            class7560 = this.field29882.get(str);
             if (class7560 != null) {
                 if (class7560.field29983 != null) {
                     return class7560.field29983;
@@ -348,8 +351,8 @@ public class Class7526 implements Class7523
         int max = 0;
         int b = 0;
         Class8935 class7561 = null;
-        for (int i = 0, length = key.length(); i < length; ++i) {
-            final char char1 = key.charAt(i);
+        for (int i = 0, length = str.length(); i < length; ++i) {
+            final char char1 = str.charAt(i);
             if (char1 != '\n') {
                 if (char1 < this.field29877.length) {
                     final Class8935 class7562 = this.field29877[char1];
@@ -379,11 +382,11 @@ public class Class7526 implements Class7523
     }
     
     @Override
-    public int method23521() {
+    public int getLineHeight() {
         return this.field29878;
     }
     
     static {
-        Class7526.field29872 = Class7840.method25330();
+        Class7526.field29872 = Renderer.get();
     }
 }

@@ -88,7 +88,7 @@ public class KeyStrokes extends Module
                 }
                 Class8154.method26876((float)(this.field15538 + method8210.field37368), (float)(this.field15539 + method8210.field37369), (float)(this.field15538 + method8210.field37368 + method8211.field37368), (float)(this.field15539 + method8210.field37369 + method8211.field37369), Class6430.method19118(Class265.field1273.field1292, 0.5f * n));
                 Class8154.method26913((float)(this.field15538 + method8210.field37368), (float)(this.field15539 + method8210.field37369), (float)method8211.field37368, (float)method8211.field37369, 10.0f, 0.75f * n2);
-                Class8154.method26889(Class9400.field40312, (float)(this.field15538 + method8210.field37368 + (method8211.field37368 - Class9400.field40312.method23505(method8212)) / 2), (float)(this.field15539 + method8210.field37369 + 12), method8212, Class265.field1278.field1292);
+                Class8154.method26889(ClientFonts.JelloLight18, (float)(this.field15538 + method8210.field37368 + (method8211.field37368 - ClientFonts.JelloLight18.getWidth(method8212)) / 2), (float)(this.field15539 + method8210.field37369 + 12), method8212, Class265.field1278.field1292);
             }
             final Iterator<Class9151> iterator = this.field15540.iterator();
             while (iterator.hasNext()) {

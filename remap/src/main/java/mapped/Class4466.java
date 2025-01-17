@@ -20,8 +20,8 @@ public class Class4466 implements Comparator<Module>
     
     @Override
     public int compare(final Module class3167, final Module class3168) {
-        final int method23505 = Class9400.field40313.method23505(class3167.getName());
-        final int method23506 = Class9400.field40313.method23505(class3168.getName());
+        final int method23505 = ClientFonts.JelloLight20.getWidth(class3167.getName());
+        final int method23506 = ClientFonts.JelloLight20.getWidth(class3168.getName());
         if (method23505 > method23506) {
             return -1;
         }

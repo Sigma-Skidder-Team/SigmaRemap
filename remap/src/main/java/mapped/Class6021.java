@@ -4,13 +4,15 @@
 
 package mapped;
 
+import slick2d.Renderer;
+
 public class Class6021 implements Class6020
 {
     private static String[] field24508;
-    private Class6448 field24509;
+    private SGL field24509;
     
     public Class6021() {
-        this.field24509 = Class7840.method25330();
+        this.field24509 = Renderer.get();
     }
     
     @Override
@@ -35,12 +37,12 @@ public class Class6021 implements Class6020
     
     @Override
     public void method17932() {
-        this.field24509.method19251(3);
+        this.field24509.glBegin(3);
     }
     
     @Override
     public void method17934(final float n, final float n2) {
-        this.field24509.method19255(n, n2);
+        this.field24509.glVertex2f(n, n2);
     }
     
     @Override

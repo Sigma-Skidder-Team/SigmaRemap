@@ -53,8 +53,8 @@ public class Class4896 extends Class4841
             }
         }
         Class8154.method26871(this.field20478, this.field20479, this.field20478 + this.field20480, this.field20479 + this.field20481, true);
-        Class8154.method26889(Class9400.field40320, (float)(this.field20478 + 25), this.field20479 + this.field20481 / 2.0f - 17.5f, this.field20938.method30702(), Class6430.method19118(Class265.field1273.field1292, 0.6f * n));
-        Class8154.method26889(Class9400.field40310, (float)(this.field20478 + 25), this.field20479 + this.field20481 / 2.0f + 7.5f, this.field20938.method30703(), Class6430.method19118(Class265.field1273.field1292, 0.6f * n));
+        Class8154.method26889(ClientFonts.Regular20, (float)(this.field20478 + 25), this.field20479 + this.field20481 / 2.0f - 17.5f, this.field20938.method30702(), Class6430.method19118(Class265.field1273.field1292, 0.6f * n));
+        Class8154.method26889(ClientFonts.JelloLight12, (float)(this.field20478 + 25), this.field20479 + this.field20481 / 2.0f + 7.5f, this.field20938.method30703(), Class6430.method19118(Class265.field1273.field1292, 0.6f * n));
         this.field20942.method14275((int)(this.field20481 / 2.0f - 7.5f));
         super.method14205(n);
         Class8154.method26872();

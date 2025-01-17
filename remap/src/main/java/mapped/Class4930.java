@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import slick2d.Texture;
 
 import java.io.IOException;
 import java.util.Map;
@@ -23,7 +24,7 @@ public class Class4930 extends Class4800
     private int field21111;
     private int field21112;
     public boolean field21113;
-    private Class7776 field21114;
+    private Texture field21114;
     
     public Class4930() {
         super("JelloChat");
@@ -81,7 +82,7 @@ public class Class4930 extends Class4800
         final int field21110 = this.field21110;
         try {
             if (this.field21113) {
-                this.field21114 = Class9399.method34928("blur", Class6804.method20836(Class6804.method20830(field21108, n, 200, field21110, 10, 14, 0, true), 0.0f, 1.1f, 1.3f));
+                this.field21114 = Class9399.method34928("blur", BufferedImage.method20836(BufferedImage.method20830(field21108, n, 200, field21110, 10, 14, 0, true), 0.0f, 1.1f, 1.3f));
             }
         }
         catch (final IOException ex) {

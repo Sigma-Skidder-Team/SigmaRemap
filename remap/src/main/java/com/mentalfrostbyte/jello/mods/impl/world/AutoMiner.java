@@ -135,7 +135,7 @@ public class AutoMiner extends Module
                     if (!Client.method35173().method35205().method26559()) {
                         if (this.field16106 == null) {
                             this.method10821();
-                            Client.method35173().method35197().method25776(new Class6224("AutoMiner", "Computing...", Class7853.field32190));
+                            Client.method35173().method35197().method25776(new Class6224("AutoMiner", "Computing...", ClientAssets.direction));
                             (this.field16106 = new Thread(() -> {
                                 list2.iterator();
                                 final Iterator iterator4;
@@ -158,7 +158,7 @@ public class AutoMiner extends Module
                                         if (list3.size() > 1) {
                                             Client.method35173().method35205().method26556(list3);
                                             Client.method35173().method35197();
-                                            new Class6224("AutoMiner", "Solved in " + list3.size() + " steps! (" + this.field16105.field40407 + ":" + n3 + ")", Class7853.field32190);
+                                            new Class6224("AutoMiner", "Solved in " + list3.size() + " steps! (" + this.field16105.field40407 + ":" + n3 + ")", ClientAssets.direction);
                                             final Class6224 class5751;
                                             final Object o2;
                                             ((Class7951)o2).method25776(class5751);
@@ -176,7 +176,7 @@ public class AutoMiner extends Module
                                     final boolean b;
                                     if (!b) {
                                         Client.method35173().method35197();
-                                        new Class6224("AutoMiner", "Could not fin any safe path. (" + list2.size() + ")", Class7853.field32190);
+                                        new Class6224("AutoMiner", "Could not fin any safe path. (" + list2.size() + ")", ClientAssets.direction);
                                         final Class6224 class5752;
                                         final Object o3;
                                         ((Class7951)o3).method25776(class5752);
@@ -198,7 +198,7 @@ public class AutoMiner extends Module
                             this.field16110 = this.field16109;
                             this.field16109 = this.method10825();
                         }
-                        Client.method35173().method35197().method25776(new Class6224("AutoMiner", "Computing... (" + this.field16105.field40407 + ")", Class7853.field32190));
+                        Client.method35173().method35197().method25776(new Class6224("AutoMiner", "Computing... (" + this.field16105.field40407 + ")", ClientAssets.direction));
                     }
                 }
             }

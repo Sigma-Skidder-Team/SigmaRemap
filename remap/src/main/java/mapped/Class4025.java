@@ -20,7 +20,7 @@ public class Class4025 extends Class4024
     public static final Class7115 field18115;
     public static final Class7113 field18116;
     
-    public Class4025(final Class9288 class9288) {
+    public Class4025(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class4025.field18115, Direction.NORTH)).with((IProperty<Comparable>)Class4025.field18116, true));
     }

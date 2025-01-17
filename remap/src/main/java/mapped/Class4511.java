@@ -103,7 +103,7 @@ public class Class4511 extends Class4500
         this.method13444(class1851, class1853, 5, 2, 7, 7, 2, 7, Blocks.field29598.getDefaultState(), Blocks.field29598.getDefaultState(), false);
         this.method13444(class1851, class1853, 4, 5, 7, 4, 5, 9, Blocks.field29598.getDefaultState(), Blocks.field29598.getDefaultState(), false);
         this.method13444(class1851, class1853, 8, 5, 7, 8, 5, 9, Blocks.field29598.getDefaultState(), Blocks.field29598.getDefaultState(), false);
-        this.method13444(class1851, class1853, 5, 5, 7, 7, 5, 9, ((StateHolder<O, BlockState>) Blocks.field29598.getDefaultState()).with(Class3921.field17777, Class186.field600), ((StateHolder<O, BlockState>) Blocks.field29598.getDefaultState()).with(Class3921.field17777, Class186.field600), false);
+        this.method13444(class1851, class1853, 5, 5, 7, 7, 5, 9, ((StateHolder<O, BlockState>) Blocks.field29598.getDefaultState()).with(SlabBlock.field17777, Class186.field600), ((StateHolder<O, BlockState>) Blocks.field29598.getDefaultState()).with(SlabBlock.field17777, Class186.field600), false);
         this.method13440(class1851, ((StateHolder<O, BlockState>) Blocks.WALL_TORCH.getDefaultState()).with((IProperty<Comparable>)Class4023.field18110, Direction.SOUTH), 6, 5, 6, class1853);
         return true;
     }

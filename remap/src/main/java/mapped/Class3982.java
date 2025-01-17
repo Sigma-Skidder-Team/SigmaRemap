@@ -14,7 +14,7 @@ public class Class3982 extends Block
     private static String[] field17980;
     private static final VoxelShape field17981;
     
-    public Class3982(final Class9288 class9288) {
+    public Class3982(final Properties class9288) {
         super(class9288);
     }
     

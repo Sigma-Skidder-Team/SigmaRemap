@@ -4,6 +4,8 @@
 
 package mapped;
 
+import slick2d.Color;
+
 import java.util.Properties;
 
 public class Class8299
@@ -85,9 +87,9 @@ public class Class8299
         return this.field34121.getProperty(key);
     }
     
-    public Class2427 method27585(final String str) {
+    public Color method27585(final String str) {
         if (this.method27583(str)) {
-            return new Class2427(Integer.parseInt(this.method27579(str).substring(1), 16));
+            return new Color(Integer.parseInt(this.method27579(str).substring(1), 16));
         }
         throw new RuntimeException("Attribute " + str + " is not specified as a color:" + this.method27579(str));
     }

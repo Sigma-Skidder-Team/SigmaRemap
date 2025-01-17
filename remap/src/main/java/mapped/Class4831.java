@@ -8,6 +8,8 @@ import java.util.Iterator;
 
 import com.mentalfrostbyte.Client;
 import org.lwjgl.glfw.GLFW;
+import slick2d.TrueTypeFont;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,7 +68,7 @@ public class Class4831 extends Class4825
     }
     
     public Class4831(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2, final String field20672) {
-        super(class4803, s, n, n2, n3, n4, class4804, s2, Class9400.field40314, false);
+        super(class4803, s, n, n2, n3, n4, class4804, s2, ClientFonts.JelloLight25, false);
         this.field20672 = "";
         this.field20683 = false;
         this.field20684 = Character.toString('·');
@@ -77,7 +79,7 @@ public class Class4831 extends Class4825
         this.field20685.method23932();
     }
     
-    public Class4831(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2, final String field20672, final Class7524 class4805) {
+    public Class4831(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2, final String field20672, final TrueTypeFont class4805) {
         super(class4803, s, n, n2, n3, n4, class4804, s2, false);
         this.field20672 = "";
         this.field20683 = false;
@@ -359,10 +361,10 @@ public class Class4831 extends Class4825
         Class8154.method26871(this.method14272(), this.method14274(), this.method14272() + this.field20480, this.method14274() + this.field20481, true);
         final int n3 = this.field20478 + 4;
         final int n4 = this.field20480 - 4;
-        final float n5 = n3 + this.field20675 + this.field20496.method23505(s.substring(0, this.field20678));
+        final float n5 = n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20678));
         if (this.method14306()) {
-            Class8154.method26876(n5 + (s.isEmpty() ? 0 : -1), (float)(this.field20479 + this.field20481 / 2 - this.field20496.method23506(s) / 2 + 2), n5 + (float)(s.isEmpty() ? 1 : 0), (float)(this.field20479 + this.field20481 / 2 + this.field20496.method23506(s) / 2 - 1), Class6430.method19118(this.field20497.method19733(), b ? 0.8f : (0.1f * n)));
-            final float n6 = n3 + this.field20496.method23505(s.substring(0, this.field20678)) + this.field20676;
+            Class8154.method26876(n5 + (s.isEmpty() ? 0 : -1), (float)(this.field20479 + this.field20481 / 2 - this.field20496.getHeight(s) / 2 + 2), n5 + (float)(s.isEmpty() ? 1 : 0), (float)(this.field20479 + this.field20481 / 2 + this.field20496.getHeight(s) / 2 - 1), Class6430.method19118(this.field20497.method19733(), b ? 0.8f : (0.1f * n)));
+            final float n6 = n3 + this.field20496.getWidth(s.substring(0, this.field20678)) + this.field20676;
             if (n6 < n3) {
                 this.field20676 += n3 - n6;
                 this.field20676 -= Math.min((float)n4, this.field20676);
@@ -374,7 +376,7 @@ public class Class4831 extends Class4825
         this.field20675 += (this.field20676 - this.field20675) / 2.0f;
         this.field20679 = Math.min(Math.max(0, this.field20679), s.length());
         this.field20680 = Math.min(Math.max(0, this.field20680), s.length());
-        Class8154.method26876(n3 + this.field20675 + this.field20496.method23505(s.substring(0, this.field20679)), (float)(this.field20479 + this.field20481 / 2 - this.field20496.method23506(s) / 2), n3 + this.field20675 + this.field20496.method23505(s.substring(0, this.field20680)), (float)(this.field20479 + this.field20481 / 2 + this.field20496.method23506(s) / 2), Class6430.method19118(-5516546, n));
+        Class8154.method26876(n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20679)), (float)(this.field20479 + this.field20481 / 2 - this.field20496.getHeight(s) / 2), n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20680)), (float)(this.field20479 + this.field20481 / 2 + this.field20496.getHeight(s) / 2), Class6430.method19118(-5516546, n));
         Class8154.method26890(this.field20496, n3 + this.field20675, (float)(this.field20479 + this.field20481 / 2), (s.length() != 0 || (this.field20488 && s.length() > 0)) ? s : this.field20672, Class6430.method19118(this.field20497.method19733(), (this.field20673 / 2.0f + 0.4f) * n * ((this.field20488 && s.length() > 0) ? 1.0f : 0.5f)), this.field20497.method19735(), this.field20497.method19737());
         Class8154.method26872();
         if (this.field20687) {

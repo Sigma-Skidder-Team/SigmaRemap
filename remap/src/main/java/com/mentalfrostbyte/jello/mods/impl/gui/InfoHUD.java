@@ -62,8 +62,8 @@ public class InfoHUD extends Module
     public int method10539(final int n, final int n2) {
         final String s = "Facing South";
         final String method10538 = this.method10538(this.method9887("Cords").equals("Precise"));
-        Class8154.method26889(Class9400.field40323, (float)n, (float)(InfoHUD.mc.field4632.method7695() - n2), method10538, Class6430.method19118(Class265.field1278.field1292, 0.8f));
-        return Math.max(Class9400.field40313.method23505(s), Class9400.field40323.method23505(method10538));
+        Class8154.method26889(ClientFonts.JelloMedium20, (float)n, (float)(InfoHUD.mc.field4632.method7695() - n2), method10538, Class6430.method19118(Class265.field1278.field1292, 0.8f));
+        return Math.max(ClientFonts.JelloLight20.getWidth(s), ClientFonts.JelloMedium20.getWidth(method10538));
     }
     
     public int method10540(final int n, final int n2) {

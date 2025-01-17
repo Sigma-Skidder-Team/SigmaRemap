@@ -260,7 +260,7 @@ public class TabGUI extends Module
             final int method10078 = class8225.method27235();
             class8225.getClass();
             final int n5 = method10078 + 25 * class8225.field33778 + 4;
-            final int n6 = class8225.field33770.method23505(s) + 8;
+            final int n6 = class8225.field33770.getWidth(s) + 8;
             final float method10079 = Class8468.method28270(this.field15638.method35858(), 0.0f, 1.0f, 1.0f);
             final float n7 = (float)n4;
             final float n8 = (float)n5;

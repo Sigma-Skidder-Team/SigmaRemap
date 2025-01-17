@@ -7,6 +7,9 @@ package mapped;
 import java.io.InputStream;
 import java.io.IOException;
 import org.newdawn.slick.SlickException;
+import slick2d.Color;
+import slick2d.Texture;
+
 import java.net.URL;
 
 public class Class7765 extends Class7764
@@ -54,12 +57,12 @@ public class Class7765 extends Class7764
         this(s, n, n2, null);
     }
     
-    public Class7765(final String s, final int n, final int n2, final Class2427 class2427) throws SlickException {
-        this(s, n, n2, class2427, 0);
+    public Class7765(final String s, final int n, final int n2, final Color color) throws SlickException {
+        this(s, n, n2, color, 0);
     }
     
-    public Class7765(final String s, final int field31749, final int field31750, final Class2427 class2427, final int field31751) throws SlickException {
-        super(s, false, 2, class2427);
+    public Class7765(final String s, final int field31749, final int field31750, final Color color, final int field31751) throws SlickException {
+        super(s, false, 2, color);
         this.field31751 = 0;
         this.field31754 = this;
         this.field31749 = field31749;
@@ -150,7 +153,7 @@ public class Class7765 extends Class7764
     }
     
     @Override
-    public void method24853(final Class7776 class7776) {
+    public void method24853(final Texture class7776) {
         if (this.field31754 != this) {
             this.field31754.method24853(class7776);
             return;

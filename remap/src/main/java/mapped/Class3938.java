@@ -19,7 +19,7 @@ public class Class3938 extends Class3936
     private static Class8691 field17821;
     private static Class8691 field17822;
     
-    public Class3938(final Class9288 class9288) {
+    public Class3938(final Properties class9288) {
         super(Class298.field1712, class9288);
     }
     

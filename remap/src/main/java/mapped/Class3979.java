@@ -18,7 +18,7 @@ public class Class3979 extends Block
     private final Block field17972;
     private static final Map<Block, Block> field17973;
     
-    public Class3979(final Block field17972, final Class9288 class9288) {
+    public Class3979(final Block field17972, final Properties class9288) {
         super(class9288);
         this.field17972 = field17972;
         Class3979.field17973.put(field17972, this);

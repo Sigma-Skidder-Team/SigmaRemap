@@ -26,7 +26,7 @@ public class Class3904 extends Class3902
     public static final VoxelShape field17691;
     public static final VoxelShape field17692;
     
-    public Class3904(final Class9288 class9288) {
+    public Class3904(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3904.field17564, Direction.NORTH)).with((IProperty<Comparable>)Class3904.field17684, false)).with(Class3904.field17618, Class107.field333));
     }

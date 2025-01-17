@@ -5,11 +5,12 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.mods.impl.gui.TabGUI;
+import slick2d.TrueTypeFont;
 
 public class Class8221
 {
     private static String[] field33769;
-    public final Class7524 field33770;
+    public final TrueTypeFont field33770;
     public final int field33771;
     private boolean field33772;
     public final int field33773 = 25;

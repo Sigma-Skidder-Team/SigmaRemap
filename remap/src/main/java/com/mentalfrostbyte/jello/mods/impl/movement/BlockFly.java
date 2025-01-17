@@ -378,21 +378,21 @@ public class BlockFly extends ModuleWithSettings
     
     public void method10291(int n, int n2, final float n3) {
         final int n4 = 0;
-        final int n5 = Class9400.field40312.method23505(this.field15752 + "") + 3;
-        final int n6 = n4 + n5 + Class9400.field40311.method23505("Blocks") + 20;
+        final int n5 = ClientFonts.JelloLight18.getWidth(this.field15752 + "") + 3;
+        final int n6 = n4 + n5 + ClientFonts.JelloLight14.getWidth("Blocks") + 20;
         final int n7 = 32;
         n -= n6 / 2;
         GL11.glPushMatrix();
         Class8154.method26915(n, n2, n6, n7, Class6430.method19118(-15461356, 0.8f * n3));
-        Class8154.method26889(Class9400.field40312, (float)(n + 10), (float)(n2 + 4), this.field15752 + "", Class6430.method19118(Class265.field1278.field1292, n3));
-        Class8154.method26889(Class9400.field40311, (float)(n + 10 + n5), (float)(n2 + 8), "Blocks", Class6430.method19118(Class265.field1278.field1292, 0.6f * n3));
+        Class8154.method26889(ClientFonts.JelloLight18, (float)(n + 10), (float)(n2 + 4), this.field15752 + "", Class6430.method19118(Class265.field1278.field1292, n3));
+        Class8154.method26889(ClientFonts.JelloLight14, (float)(n + 10 + n5), (float)(n2 + 8), "Blocks", Class6430.method19118(Class265.field1278.field1292, 0.6f * n3));
         n += 11 + n6 / 2;
         n2 += n7;
         GL11.glPushMatrix();
         GL11.glTranslatef((float)n, (float)n2, 0.0f);
         GL11.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n), (float)(-n2), 0.0f);
-        Class8154.method26899((float)n, (float)n2, 9.0f, 23.0f, Class7853.field32197, Class6430.method19118(-15461356, 0.8f * n3));
+        Class8154.method26899((float)n, (float)n2, 9.0f, 23.0f, ClientAssets.select, Class6430.method19118(-15461356, 0.8f * n3));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
     }

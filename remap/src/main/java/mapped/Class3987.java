@@ -16,7 +16,7 @@ public class Class3987 extends Class3986
     private static String[] field17995;
     public static final VoxelShape field17996;
     
-    public Class3987(final Class9288 class9288) {
+    public Class3987(final Properties class9288) {
         super(class9288);
     }
     

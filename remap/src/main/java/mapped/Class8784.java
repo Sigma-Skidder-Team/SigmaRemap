@@ -42,12 +42,7 @@ public class Class8784
     }
     
     public Class4405 method30569(final String string1) {
-        try {
-            System.out.println("Changelog");
-        }
-        catch (final IOException v4) {
-            v4.printStackTrace();
-        }
+        System.out.println("Changelog");
         return new Class4405();
     }
     

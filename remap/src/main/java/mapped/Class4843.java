@@ -65,10 +65,10 @@ public class Class4843 extends Class4841
         Class8154.method26928();
         Class8154.method26874((float)(this.field20478 + this.field20754), (float)(this.field20479 + 0), 1.0f, (float)this.field20481, Class6430.method19118(Class265.field1273.field1292, 0.14f));
         Class6430.method19118(Class6430.method19121(-7687425, 0.2f), 0.8f);
-        Class8154.method26889(Class9400.field40314, (float)(this.field20478 + 30), (float)(this.field20479 + 25), "Waypoints", Class6430.method19118(Class265.field1273.field1292, 0.6f));
-        Class8154.method26889(Class9400.field40325, (float)this.field20478, (float)((this.field20475.method14278() - this.field20481) / 2 - 70), "Jello Maps", Class265.field1278.field1292);
+        Class8154.method26889(ClientFonts.JelloLight25, (float)(this.field20478 + 30), (float)(this.field20479 + 25), "Waypoints", Class6430.method19118(Class265.field1273.field1292, 0.6f));
+        Class8154.method26889(ClientFonts.JelloMedium40, (float)this.field20478, (float)((this.field20475.method14278() - this.field20481) / 2 - 70), "Jello Maps", Class265.field1278.field1292);
         final String replace = Client.method35173().method35200().method24271().replace("/", " - ");
-        Class8154.method26889(Class9400.field40318, (float)(this.field20478 + this.field20480 - Class9400.field40318.method23505(replace) - 10), (float)((this.field20475.method14278() - this.field20481) / 2 - 62), replace, Class6430.method19118(Class265.field1278.field1292, 0.5f));
+        Class8154.method26889(ClientFonts.JelloLight24, (float)(this.field20478 + this.field20480 - ClientFonts.JelloLight24.getWidth(replace) - 10), (float)((this.field20475.method14278() - this.field20481) / 2 - 62), replace, Class6430.method19118(Class265.field1278.field1292, 0.5f));
     }
     
     public final void method14520(final Class8383 class8383) {

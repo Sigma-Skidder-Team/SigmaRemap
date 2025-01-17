@@ -6,7 +6,7 @@ package mapped;
 
 public abstract class Class3993 extends Block
 {
-    public Class3993(final Class9288 class9288) {
+    public Class3993(final Properties class9288) {
         super(class9288);
     }
     

@@ -11,7 +11,7 @@ import java.util.Random;
 
 public abstract class Class3910 extends Class3911
 {
-    public Class3910(final Class9288 class9288) {
+    public Class3910(final Properties class9288) {
         super(class9288);
     }
     

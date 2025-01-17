@@ -45,7 +45,7 @@ public class Class4830 extends Class4825
         this.field20660.method14305(false);
         this.method14239(this.field20665 = new Class4831(this, "profileName", 16, 8, this.method14276() - 60, 50, new Class6523(-892679478, -892679478, -892679478, Class265.field1273.field1292, Class2056.field11734, Class2056.field11738), field20669.field33839));
         this.field20665.method14478(false);
-        this.field20665.method14317(Class9400.field40318);
+        this.field20665.method14317(ClientFonts.JelloLight24);
         this.field20665.method14297(false);
         this.field20665.method14262((class8242, n) -> {
             if (this.field20665.method14306() && n == 257) {
@@ -61,8 +61,8 @@ public class Class4830 extends Class4825
                 catch (final IOException ex) {}
             }
         });
-        class4804.method14317(Class9400.field40312);
-        class4805.method14317(Class9400.field40312);
+        class4804.method14317(ClientFonts.JelloLight18);
+        class4805.method14317(ClientFonts.JelloLight18);
         class4804.method14270((class4803, class4804) -> class4803.method14277(Math.round(class4804.method14276() / 2.0f)));
         class4805.method14270((class4803, class4804) -> {
             class4803.method14273(Math.round(class4804.method14276() / 2.0f));
@@ -143,11 +143,11 @@ public class Class4830 extends Class4825
         Class8154.method26865(this);
         Class8154.method26874((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, Class6430.method19118(Class265.field1273.field1292, 0.04f * this.field20661.method35858() + ((this.method14309() && this.field20662.method35857().equals(Class2186.field12965)) ? 0.03f : 0.0f)));
         if (!this.field20665.method14306()) {
-            Class8154.method26889(Class9400.field40318, this.field20478 + 20 - n2 * this.field20480, (float)(this.field20479 + 18), this.field20664.field33839, Class6430.method19118(Class265.field1273.field1292, 0.9f * n));
+            Class8154.method26889(ClientFonts.JelloLight24, this.field20478 + 20 - n2 * this.field20480, (float)(this.field20479 + 18), this.field20664.field33839, Class6430.method19118(Class265.field1273.field1292, 0.9f * n));
         }
         this.field20665.method14293(Math.round(-n2 * this.field20480));
         if (Client.method35173().method35189().method21556().method32707() == this.field20664) {
-            Class8154.method26899(this.method14272() + this.method14276() - 35 - n2 * this.field20480, (float)(this.method14274() + 27), 17.0f, 13.0f, Class7853.field32198, Class6430.method19118(Class265.field1278.field1292, (1.0f - this.field20662.method35858()) * n));
+            Class8154.method26899(this.method14272() + this.method14276() - 35 - n2 * this.field20480, (float)(this.method14274() + 27), 17.0f, 13.0f, ClientAssets.active, Class6430.method19118(Class265.field1278.field1292, (1.0f - this.field20662.method35858()) * n));
         }
         super.method14205(n);
         Class8154.method26872();

@@ -19,7 +19,7 @@ public class Class3877 extends Class3874 implements Class3872, Class3867
     private static String[] field17519;
     public static final VoxelShape field17528;
     
-    public Class3877(final Class9288 class9288) {
+    public Class3877(final Properties class9288) {
         super(class9288);
     }
     

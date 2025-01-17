@@ -25,9 +25,9 @@ public class Class4938 extends Class4800
         final int n = 400;
         int n2 = 114;
         final int n3 = (this.method14276() - n) / 2;
-        this.method14239(this.field21199 = new Class4832(this, "username", n3, n2, n, 45, Class4832.field20670, "", "Username / E-Mail", Class9400.field40327));
+        this.method14239(this.field21199 = new Class4832(this, "username", n3, n2, n, 45, Class4832.field20670, "", "Username / E-Mail", ClientFonts.Default));
         n2 += 80;
-        this.method14239(this.field21200 = new Class4832(this, "password", n3, n2, n, 45, Class4832.field20670, "", "Password", Class9400.field40327));
+        this.method14239(this.field21200 = new Class4832(this, "password", n3, n2, n, 45, Class4832.field20670, "", "Password", ClientFonts.Default));
         n2 += 190;
         this.method14239(this.field21201 = new Class4909(this, "login", n3, n2, n, 40, "Login", Class265.field1281.field1292));
         n2 += 50;
@@ -71,8 +71,8 @@ public class Class4938 extends Class4800
         Class8154.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class9493.field40801);
         Class8154.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class6430.method19118(Class265.field1290.field1292, 0.1f));
         Class8154.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class6430.method19118(Class265.field1273.field1292, 0.95f));
-        Class8154.method26890(Class9400.field40327, (float)(this.method14276() / 2), 38.0f, "Add Alt", Class265.field1278.field1292, Class2056.field11738, Class2056.field11734);
-        Class8154.method26891(Class9400.field40327, (float)(this.method14276() / 2), 58.0f, this.field21205, Class265.field1278.field1292, Class2056.field11738, Class2056.field11734, true);
+        Class8154.method26890(ClientFonts.Default, (float)(this.method14276() / 2), 38.0f, "Add Alt", Class265.field1278.field1292, Class2056.field11738, Class2056.field11734);
+        Class8154.method26891(ClientFonts.Default, (float)(this.method14276() / 2), 58.0f, this.field21205, Class265.field1278.field1292, Class2056.field11738, Class2056.field11734, true);
         super.method14205(n);
     }
     

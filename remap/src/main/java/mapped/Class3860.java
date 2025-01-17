@@ -18,7 +18,7 @@ public abstract class Class3860 extends Class3841 implements Class3856
     public static final VoxelShape field17484;
     private final Class8289 field17485;
     
-    public Class3860(final Class9288 class9288, final Class8289 field17485) {
+    public Class3860(final Properties class9288, final Class8289 field17485) {
         super(class9288);
         this.field17485 = field17485;
     }

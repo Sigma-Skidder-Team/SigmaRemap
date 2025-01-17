@@ -21,7 +21,7 @@ public class Class3946 extends Class3944
     private static final Map<Class181, Block> field17843;
     private static final VoxelShape field17844;
     
-    public Class3946(final Class181 class181, final Class9288 class182) {
+    public Class3946(final Class181 class181, final Properties class182) {
         super(class181, class182);
         this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3946.field17842, 0));
         Class3946.field17843.put(class181, this);

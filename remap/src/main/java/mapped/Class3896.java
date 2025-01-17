@@ -20,7 +20,7 @@ public class Class3896 extends Class3895 implements Class3840
     private static String[] field17579;
     public static final Class7114<Class110> field17580;
     
-    public Class3896(final Class9288 class9288) {
+    public Class3896(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3896.field17564, Direction.NORTH)).with((IProperty<Comparable>)Class3896.field17578, false)).with(Class3896.field17580, Class110.field347));
     }

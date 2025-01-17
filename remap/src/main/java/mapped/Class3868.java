@@ -19,7 +19,7 @@ public class Class3868 extends Class3869 implements Class3867
     public static final Class7114<Class182> field17508;
     public static final VoxelShape field17509;
     
-    public Class3868(final Class9288 class9288) {
+    public Class3868(final Properties class9288) {
         super(class9288);
     }
     

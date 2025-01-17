@@ -19,7 +19,7 @@ public class Class3858 extends Block implements Class3857
     private static String[] field17477;
     public static final Class7113 field17478;
     
-    public Class3858(final Class9288 class9288) {
+    public Class3858(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3858.field17478, true));
     }

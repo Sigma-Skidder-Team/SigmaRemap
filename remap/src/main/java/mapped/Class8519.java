@@ -8,13 +8,17 @@ import java.nio.FloatBuffer;
 import java.security.PrivilegedAction;
 import java.security.AccessController;
 import org.lwjgl.BufferUtils;
+import slick2d.Color;
+import slick2d.Font;
+import slick2d.Renderer;
+
 import java.util.ArrayList;
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 
 public class Class8519
 {
-    public static Class6448 field34937;
+    public static SGL field34937;
     private static Class6020 field34938;
     public static int field34939;
     public static int field34940;
@@ -24,11 +28,11 @@ public class Class8519
     public static int field34944;
     private static final int field34945 = 50;
     public static Class8519 field34946;
-    public static Class7523 field34947;
+    public static Font field34947;
     private float field34948;
     private float field34949;
-    private Class7523 field34950;
-    private Class2427 field34951;
+    private Font field34950;
+    private Color field34951;
     public int field34952;
     public int field34953;
     private boolean field34954;
@@ -54,7 +58,7 @@ public class Class8519
     public Class8519() {
         this.field34948 = 1.0f;
         this.field34949 = 1.0f;
-        this.field34951 = Class2427.field14355;
+        this.field34951 = Color.field14355;
         this.field34956 = BufferUtils.createDoubleBuffer(4);
         this.field34957 = BufferUtils.createByteBuffer(4);
         this.field34960 = Class8519.field34939;
@@ -65,7 +69,7 @@ public class Class8519
     public Class8519(final int field34952, final int field34953) {
         this.field34948 = 1.0f;
         this.field34949 = 1.0f;
-        this.field34951 = Class2427.field14355;
+        this.field34951 = Color.field14355;
         this.field34956 = BufferUtils.createDoubleBuffer(4);
         this.field34957 = BufferUtils.createByteBuffer(4);
         this.field34960 = Class8519.field34939;
@@ -124,7 +128,7 @@ public class Class8519
         Class8519.field34937.method19287();
         final int field34960 = this.field34960;
         this.method28459(Class8519.field34940);
-        this.method28474(new Class2427(0, 0, 0, 0));
+        this.method28474(new Color(0, 0, 0, 0));
         this.method28497(0.0f, 0.0f, (float)this.field34952, (float)this.field34953);
         this.method28474(this.field34951);
         this.method28459(field34960);
@@ -151,22 +155,22 @@ public class Class8519
     public void method28451() {
     }
     
-    public Class7523 method28463() {
+    public Font method28463() {
         return this.field34950;
     }
     
-    public void method28464(final Class2427 class2427) {
+    public void method28464(final Color color) {
         this.method28461();
-        Class8519.field34937.method19280(class2427.field14368, class2427.field14369, class2427.field14370, class2427.field14371);
+        Class8519.field34937.method19280(color.field14368, color.field14369, color.field14370, color.field14371);
         this.method28462();
     }
     
-    public Class2427 method28465() {
+    public Color method28465() {
         this.method28461();
         final FloatBuffer floatBuffer = BufferUtils.createFloatBuffer(16);
         Class8519.field34937.method19284(3106, floatBuffer);
         this.method28462();
-        return new Class2427(floatBuffer);
+        return new Color(floatBuffer);
     }
     
     public void method28466() {
@@ -220,7 +224,7 @@ public class Class8519
         this.method28462();
     }
     
-    public void method28472(final Class7523 field34950) {
+    public void method28472(final Font field34950) {
         this.field34950 = field34950;
     }
     
@@ -228,17 +232,17 @@ public class Class8519
         this.field34950 = Class8519.field34947;
     }
     
-    public void method28474(final Class2427 class2427) {
-        if (class2427 != null) {
-            this.field34951 = new Class2427(class2427);
+    public void method28474(final Color color) {
+        if (color != null) {
+            this.field34951 = new Color(color);
             this.method28461();
-            this.field34951.method9766();
+            this.field34951.bind();
             this.method28462();
         }
     }
     
-    public Class2427 method28475() {
-        return new Class2427(this.field34951);
+    public Color method28475() {
+        return new Color(this.field34951);
     }
     
     public void method28476(float n, float n2, float n3, float n4) {
@@ -268,7 +272,7 @@ public class Class8519
             }
         }
         this.method28461();
-        this.field34951.method9766();
+        this.field34951.bind();
         Class7777.method24930();
         Class8519.field34938.method17932();
         Class8519.field34938.method17934(n, n2);
@@ -281,7 +285,7 @@ public class Class8519
         this.method28461();
         Class7777.method24930();
         Class6044.method17967(class2400, class2401);
-        this.field34951.method9766();
+        this.field34951.bind();
         this.method28462();
     }
     
@@ -289,14 +293,14 @@ public class Class8519
         this.method28461();
         Class7777.method24930();
         Class6044.method17975(class2400, class2401);
-        this.field34951.method9766();
+        this.field34951.bind();
         this.method28462();
     }
     
     public void method28479(final Class2400 class2400) {
         this.method28461();
         Class7777.method24930();
-        this.field34951.method9766();
+        this.field34951.bind();
         Class6044.method17966(class2400);
         this.method28462();
     }
@@ -304,7 +308,7 @@ public class Class8519
     public void method28480(final Class2400 class2400) {
         this.method28461();
         Class7777.method24930();
-        this.field34951.method9766();
+        this.field34951.bind();
         Class6044.method17969(class2400);
         this.method28462();
     }
@@ -333,7 +337,7 @@ public class Class8519
     public void method28485(final Class2400 class2400, final Class7764 class2401, final float n, final float n2, final boolean b) {
         this.method28461();
         Class7777.method24930();
-        this.field34951.method9766();
+        this.field34951.bind();
         if (!b) {
             Class6044.method17973(class2400, class2401, n, n2);
         }
@@ -346,7 +350,7 @@ public class Class8519
     public void method28486(final Class2400 class2400, final Class7764 class2401, final float n, final float n2, final Class7471 class2402) {
         this.method28461();
         Class7777.method24930();
-        this.field34951.method9766();
+        this.field34951.bind();
         Class6044.method17976(class2400, class2401, n, n2, class2402);
         this.method28462();
     }
@@ -450,12 +454,12 @@ public class Class8519
     public void method28497(final float n, final float n2, final float n3, final float n4) {
         this.method28461();
         Class7777.method24930();
-        this.field34951.method9766();
-        Class8519.field34937.method19251(7);
-        Class8519.field34937.method19255(n, n2);
-        Class8519.field34937.method19255(n + n3, n2);
-        Class8519.field34937.method19255(n + n3, n2 + n4);
-        Class8519.field34937.method19255(n, n2 + n4);
+        this.field34951.bind();
+        Class8519.field34937.glBegin(7);
+        Class8519.field34937.glVertex2f(n, n2);
+        Class8519.field34937.glVertex2f(n + n3, n2);
+        Class8519.field34937.glVertex2f(n + n3, n2 + n4);
+        Class8519.field34937.glVertex2f(n, n2 + n4);
         Class8519.field34937.method19253();
         this.method28462();
     }
@@ -475,7 +479,7 @@ public class Class8519
     public void method28501(final float n, final float n2, final float n3, final float n4, final int n5, final float n6, float n7) {
         this.method28461();
         Class7777.method24930();
-        this.field34951.method9766();
+        this.field34951.bind();
         while (n7 < n6) {
             n7 += 360.0f;
         }
@@ -508,26 +512,26 @@ public class Class8519
     public void method28505(final float n, final float n2, final float n3, final float n4, final int n5, final float n6, float n7) {
         this.method28461();
         Class7777.method24930();
-        this.field34951.method9766();
+        this.field34951.bind();
         while (n7 < n6) {
             n7 += 360.0f;
         }
         final float n8 = n + n3 / 2.0f;
         final float n9 = n2 + n4 / 2.0f;
-        Class8519.field34937.method19251(6);
+        Class8519.field34937.glBegin(6);
         final int n10 = 360 / n5;
-        Class8519.field34937.method19255(n8, n9);
+        Class8519.field34937.glVertex2f(n8, n9);
         for (int i = (int)n6; i < (int)(n7 + n10); i += n10) {
             float n11 = (float)i;
             if (n11 > n7) {
                 n11 = n7;
             }
-            Class8519.field34937.method19255((float)(n8 + Class6882.method21086(Math.toRadians(n11)) * n3 / 2.0), (float)(n9 + Class6882.method21085(Math.toRadians(n11)) * n4 / 2.0));
+            Class8519.field34937.glVertex2f((float)(n8 + Class6882.method21086(Math.toRadians(n11)) * n3 / 2.0), (float)(n9 + Class6882.method21085(Math.toRadians(n11)) * n4 / 2.0));
         }
         Class8519.field34937.method19253();
         if (this.field34958) {
-            Class8519.field34937.method19251(6);
-            Class8519.field34937.method19255(n8, n9);
+            Class8519.field34937.glBegin(6);
+            Class8519.field34937.glVertex2f(n8, n9);
             if (n7 != 360.0f) {
                 n7 -= 10.0f;
             }
@@ -536,7 +540,7 @@ public class Class8519
                 if (n12 > n7) {
                     n12 = n7;
                 }
-                Class8519.field34937.method19255((float)(n8 + Class6882.method21086(Math.toRadians(n12 + 10.0f)) * n3 / 2.0), (float)(n9 + Class6882.method21085(Math.toRadians(n12 + 10.0f)) * n4 / 2.0));
+                Class8519.field34937.glVertex2f((float)(n8 + Class6882.method21086(Math.toRadians(n12 + 10.0f)) * n3 / 2.0), (float)(n9 + Class6882.method21085(Math.toRadians(n12 + 10.0f)) * n4 / 2.0));
             }
             Class8519.field34937.method19253();
         }
@@ -612,7 +616,7 @@ public class Class8519
     
     public void method28512() {
         this.method28461();
-        Class7840.method25331().method17935(1.0f);
+        Renderer.method25331().method17935(1.0f);
         Class8519.field34937.method19266(1.0f);
         Class8519.field34937.method19267(1.0f);
         this.method28462();
@@ -637,36 +641,36 @@ public class Class8519
     
     public void method28515(final String s, final float n, final float n2) {
         this.method28461();
-        this.field34950.method23501(n, n2, s, this.field34951);
+        this.field34950.drawString(n, n2, s, this.field34951);
         this.method28462();
     }
     
-    public void method28516(final Class7764 class7764, final float n, final float n2, final Class2427 class7765) {
+    public void method28516(final Class7764 class7764, final float n, final float n2, final Color class7765) {
         this.method28461();
         class7764.method24776(n, n2, class7765);
-        this.field34951.method9766();
+        this.field34951.bind();
         this.method28462();
     }
     
     public void method28517(final Class7762 class7762, final float n, final float n2) {
-        this.method28518(class7762, n, n2, Class2427.field14355);
+        this.method28518(class7762, n, n2, Color.field14355);
     }
     
-    public void method28518(final Class7762 class7762, final float n, final float n2, final Class2427 class7763) {
+    public void method28518(final Class7762 class7762, final float n, final float n2, final Color class7763) {
         this.method28461();
         class7762.method24776(n, n2, class7763);
-        this.field34951.method9766();
+        this.field34951.bind();
         this.method28462();
     }
     
     public void method28519(final Class7764 class7764, final float n, final float n2) {
-        this.method28516(class7764, n, n2, Class2427.field14355);
+        this.method28516(class7764, n, n2, Color.field14355);
     }
     
     public void method28520(final Class7764 class7764, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8) {
         this.method28461();
         class7764.method24838(n, n2, n3, n4, n5, n6, n7, n8);
-        this.field34951.method9766();
+        this.field34951.bind();
         this.method28462();
     }
     
@@ -688,11 +692,11 @@ public class Class8519
         return 256 + b;
     }
     
-    public Class2427 method28524(final int n, final int n2) {
+    public Color method28524(final int n, final int n2) {
         this.method28461();
         Class8519.field34937.method19288(n, this.field34953 - n2, 1, 1, 6408, 5121, this.field34957);
         this.method28462();
-        return new Class2427(this.method28523(this.field34957.get(0)), this.method28523(this.field34957.get(1)), this.method28523(this.field34957.get(2)), this.method28523(this.field34957.get(3)));
+        return new Color(this.method28523(this.field34957.get(0)), this.method28523(this.field34957.get(1)), this.method28523(this.field34957.get(2)), this.method28523(this.field34957.get(3)));
     }
     
     public void method28525(final int n, final int n2, final int n3, final int n4, final ByteBuffer byteBuffer) {
@@ -705,37 +709,37 @@ public class Class8519
         throw new IllegalArgumentException("Byte buffer provided to get area is not big enough");
     }
     
-    public void method28526(final Class7764 class7764, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final Class2427 class7765) {
+    public void method28526(final Class7764 class7764, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final Color class7765) {
         this.method28461();
         class7764.method24839(n, n2, n3, n4, n5, n6, n7, n8, class7765);
-        this.field34951.method9766();
+        this.field34951.bind();
         this.method28462();
     }
     
-    public void method28527(final Class7764 class7764, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final Class2427 class7765) {
+    public void method28527(final Class7764 class7764, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final Color class7765) {
         this.method28526(class7764, n, n2, n + class7764.method24843(), n2 + class7764.method24844(), n3, n4, n5, n6, class7765);
     }
     
     public void method28528(final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final float n9, final float n10, final float n11, final float n12) {
         this.method28461();
         Class7777.method24930();
-        Class8519.field34937.method19251(1);
+        Class8519.field34937.glBegin(1);
         Class8519.field34937.method19252(n3, n4, n5, n6);
-        Class8519.field34937.method19255(n, n2);
+        Class8519.field34937.glVertex2f(n, n2);
         Class8519.field34937.method19252(n9, n10, n11, n12);
-        Class8519.field34937.method19255(n7, n8);
+        Class8519.field34937.glVertex2f(n7, n8);
         Class8519.field34937.method19253();
         this.method28462();
     }
     
-    public void method28529(final float n, final float n2, final Class2427 class2427, final float n3, final float n4, final Class2427 class2428) {
+    public void method28529(final float n, final float n2, final Color color, final float n3, final float n4, final Color class2428) {
         this.method28461();
         Class7777.method24930();
-        Class8519.field34937.method19251(1);
-        class2427.method9766();
-        Class8519.field34937.method19255(n, n2);
-        class2428.method9766();
-        Class8519.field34937.method19255(n3, n4);
+        Class8519.field34937.glBegin(1);
+        color.bind();
+        Class8519.field34937.glVertex2f(n, n2);
+        class2428.bind();
+        Class8519.field34937.glVertex2f(n3, n4);
         Class8519.field34937.method19253();
         this.method28462();
     }
@@ -775,8 +779,8 @@ public class Class8519
     }
     
     static {
-        Class8519.field34937 = Class7840.method25330();
-        Class8519.field34938 = Class7840.method25331();
+        Class8519.field34937 = Renderer.get();
+        Class8519.field34938 = Renderer.method25331();
         Class8519.field34939 = 1;
         Class8519.field34940 = 2;
         Class8519.field34941 = 3;

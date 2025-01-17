@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.mods.Module;
+import slick2d.Texture;
 
 public class Class4895 extends Class4841
 {
@@ -17,7 +18,7 @@ public class Class4895 extends Class4841
     public String field20932;
     public Class4819 field20933;
     public final Module field20934;
-    public Class7776 field20935;
+    public Texture field20935;
     public boolean field20936;
     
     public Class4895(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Module field20934) {
@@ -90,10 +91,10 @@ public class Class4895 extends Class4841
         Class8154.method26876((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, Class6430.method19118(Class265.field1273.field1292, 0.45f * method35858));
         super.method14227();
         Class8154.method26925((float)this.field20929, (float)this.field20928, (float)this.field20930, (float)this.field20931, 10.0f, Class6430.method19118(Class265.field1278.field1292, method35858));
-        Class8154.method26889(Class9400.field40325, (float)this.field20929, (float)(this.field20928 - 60), this.field20934.getName(), Class6430.method19118(Class265.field1278.field1292, method35858));
+        Class8154.method26889(ClientFonts.JelloMedium40, (float)this.field20929, (float)(this.field20928 - 60), this.field20934.getName(), Class6430.method19118(Class265.field1278.field1292, method35858));
         final int n2 = 30;
         Class8154.method26869((float)this.field20929, (float)this.field20928, (float)(this.field20930 - 30), (float)this.field20931);
-        Class8154.method26889(Class9400.field40313, (float)(n2 + this.field20929), (float)(n2 + this.field20928), this.field20934.getDesc(), Class6430.method19118(Class265.field1273.field1292, method35858 * 0.7f));
+        Class8154.method26889(ClientFonts.JelloLight20, (float)(n2 + this.field20929), (float)(n2 + this.field20928), this.field20934.getDesc(), Class6430.method19118(Class265.field1273.field1292, method35858 * 0.7f));
         Class8154.method26872();
         super.method14205(method35858);
     }

@@ -54,7 +54,7 @@ public class Class4802 extends Class4800
         final Iterator<String> iterator = this.field20473.iterator();
         while (iterator.hasNext()) {
             for (final String s : iterator.next().split(Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[19])) {
-                class4817.method14239(new Class4834(class4817, Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[20] + i, 40, 40 + n * i++, 0, 0, Class6523.field25964, s, s.startsWith(Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[21]) ? Class9400.field40323 : Class9400.field40313));
+                class4817.method14239(new Class4834(class4817, Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[20] + i, 40, 40 + n * i++, 0, 0, Class6523.field25964, s, s.startsWith(Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[21]) ? ClientFonts.JelloMedium20 : ClientFonts.JelloLight20));
             }
         }
     }
@@ -62,7 +62,7 @@ public class Class4802 extends Class4800
     @Override
     public void method14205(final float n) {
         Class8154.method26874(0.0f, 0.0f, (float)this.field20480, (float)this.field20481, Class6430.method19118(Class265.field1273.field1292, this.field20472.method35858() * 0.95f));
-        Class8154.method26889(Class9400.field40325, 40.0f, 40.0f, Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[22], Class265.field1278.field1292);
+        Class8154.method26889(ClientFonts.JelloMedium40, 40.0f, 40.0f, Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[22], Class265.field1278.field1292);
         super.method14205(this.field20472.method35858());
     }
     

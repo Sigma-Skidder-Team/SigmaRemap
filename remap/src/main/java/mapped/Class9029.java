@@ -9,6 +9,8 @@ import org.w3c.dom.NodeList;
 import java.util.Properties;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Element;
+import slick2d.Color;
+
 import java.util.HashMap;
 
 public class Class9029
@@ -62,13 +64,13 @@ public class Class9029
         }
         final Element element = (Element)documentElement.getElementsByTagName("image").item(0);
         final String attribute6 = element.getAttribute("source");
-        Class2427 class2427 = null;
+        Color color = null;
         final String attribute7 = element.getAttribute("trans");
         if (attribute7 != null && attribute7.length() > 0) {
-            class2427 = new Class2427(Integer.parseInt(attribute7, 16));
+            color = new Color(Integer.parseInt(attribute7, 16));
         }
         if (b) {
-            this.method32358(new Class7764(field38171.method15259() + "/" + attribute6, false, 2, class2427));
+            this.method32358(new Class7764(field38171.method15259() + "/" + attribute6, false, 2, color));
         }
         final NodeList elementsByTagName = documentElement.getElementsByTagName("tile");
         for (int i = 0; i < elementsByTagName.getLength(); ++i) {

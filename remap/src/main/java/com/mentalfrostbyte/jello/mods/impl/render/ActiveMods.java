@@ -12,15 +12,17 @@ import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import mapped.*;
 import org.lwjgl.opengl.GL11;
+import slick2d.Color;
+import slick2d.TrueTypeFont;
+
 import java.util.Map;
-import java.awt.Color;
 import java.util.TreeMap;
 
 public class ActiveMods extends Module
 {
     private TreeMap<Module, Class9572> field15896;
-    private Class7524 field15897;
-    private Class7524 field15898;
+    private TrueTypeFont field15897;
+    private TrueTypeFont field15898;
     private Class9572 field15899;
     
     public ActiveMods() {
@@ -60,8 +62,8 @@ public class ActiveMods extends Module
             int n = -2;
             final int n2 = Minecraft.method5277().field4632.method7694() - 2;
             final int n3 = -2;
-            new Color(0, 192, 255, 255).getRGB();
-            int n4 = new Color(0, 192, 255, 255).getRGB();
+            new java.awt.Color(0, 192, 255, 255).getRGB();
+            int n4 = new java.awt.Color(0, 192, 255, 255).getRGB();
             int n5 = -7;
             float method9889 = this.field15899.method35858();
             for (final Map.Entry<K, Class9572> entry : this.field15896.entrySet()) {
@@ -75,10 +77,10 @@ public class ActiveMods extends Module
                         continue;
                     }
                 }
-                final int hsBtoRGB = Color.HSBtoRGB(method9889, 1.0f, 1.0f);
-                n4 = Color.HSBtoRGB(method9889, 1.0f, 1.0f);
+                final int hsBtoRGB = java.awt.Color.HSBtoRGB(method9889, 1.0f, 1.0f);
+                n4 = java.awt.Color.HSBtoRGB(method9889, 1.0f, 1.0f);
                 final int method9890 = this.method10491(class5742);
-                int n6 = this.field15897.method23506(class5742.getName2()) + n3;
+                int n6 = this.field15897.getHeight(class5742.getName2()) + n3;
                 final float n7 = 1.0f - Class7791.method25030(class5741.method35858(), 0.0f, 1.0f, 1.0f);
                 if (method9887.equalsIgnoreCase("Smooth") || method9887.equalsIgnoreCase("Both")) {
                     n6 *= (int)n7;
@@ -87,7 +89,7 @@ public class ActiveMods extends Module
                 if (method9888.equalsIgnoreCase("Right")) {
                     GL11.glTranslated(-3.0, 0.0, 0.0);
                 }
-                Class8154.method26876((float)(n2 - method9890 - 3), (float)(n + 1), (float)(n2 + 2), (float)(n + n6 + 1), new Color(0, 0, 0, 150).getRGB());
+                Class8154.method26876((float)(n2 - method9890 - 3), (float)(n + 1), (float)(n2 + 2), (float)(n + n6 + 1), new java.awt.Color(0, 0, 0, 150).getRGB());
                 if (!method9888.equalsIgnoreCase("None")) {
                     if (!method9888.equalsIgnoreCase("All")) {
                         if (!method9888.equalsIgnoreCase("Left")) {
@@ -110,8 +112,8 @@ public class ActiveMods extends Module
                     GL11.glTranslated((double)(method9890 * Class7791.method25030(class5741.method35858(), 0.0f, 1.0f, 1.0f)), 0.0, 0.0);
                 }
                 Class8154.method26868((float)(n2 - method9890 - 3), (float)(n + 1), (float)n2, n + n6 - Class7791.method25030(class5741.method35858(), 0.0f, 1.0f, 1.0f));
-                this.field15897.method23501((float)(n2 - method9890), (float)n, class5742.getName2(), new Class2427(hsBtoRGB));
-                this.field15898.method23501((float)(n2 - this.field15898.method23505(this.method10490(class5742))), n + 1.6f, this.method10490(class5742), new Class2427(160, 160, 160));
+                this.field15897.drawString((float)(n2 - method9890), (float)n, class5742.getName2(), new Color(hsBtoRGB));
+                this.field15898.drawString((float)(n2 - this.field15898.getWidth(this.method10490(class5742))), n + 1.6f, this.method10490(class5742), new Color(160, 160, 160));
                 Class8154.method26872();
                 RenderSystem.disableBlend();
                 n += n6;
@@ -176,6 +178,6 @@ public class ActiveMods extends Module
     }
     
     private int method10491(final Module class3167) {
-        return this.field15897.method23505(class3167.getName2()) + this.field15898.method23505(this.method10490(class3167));
+        return this.field15897.getWidth(class3167.getName2()) + this.field15898.getWidth(this.method10490(class3167));
     }
 }

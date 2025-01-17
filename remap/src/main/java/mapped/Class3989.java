@@ -9,7 +9,7 @@ public class Class3989 extends Class3986
     private static String[] field17998;
     private final int field17999;
     
-    public Class3989(final int field17999, final Class9288 class9288) {
+    public Class3989(final int field17999, final Properties class9288) {
         super(class9288);
         this.field17999 = field17999;
     }

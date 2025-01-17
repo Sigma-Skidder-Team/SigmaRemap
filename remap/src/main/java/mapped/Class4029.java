@@ -13,7 +13,7 @@ public class Class4029 extends Class4027
     private static String[] field18119;
     private final MaterialColor field18122;
     
-    public Class4029(final MaterialColor field18122, final Class9288 class9288) {
+    public Class4029(final MaterialColor field18122, final Properties class9288) {
         super(class9288);
         this.field18122 = field18122;
     }

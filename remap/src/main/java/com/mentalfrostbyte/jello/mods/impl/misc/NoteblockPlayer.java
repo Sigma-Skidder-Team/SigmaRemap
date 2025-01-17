@@ -15,6 +15,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
 import org.lwjgl.opengl.GL11;
+import slick2d.TrueTypeFont;
+
 import java.util.Iterator;
 import java.util.Arrays;
 import java.io.File;
@@ -247,11 +249,11 @@ public class NoteblockPlayer extends PremiumModule
         GL11.glAlphaFunc(519, 0.0f);
         GL11.glRotatef(NoteblockPlayer.mc.field4644.method5833().method18164(), 0.0f, -1.0f, 0.0f);
         GL11.glRotatef(NoteblockPlayer.mc.field4644.method5833().method18163(), 1.0f, 0.0f, 0.0f);
-        final Class7524 field40314 = Class9400.field40314;
+        final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.01f, -0.01f, -0.01f);
-        Class8154.method26876((float)(-field40314.method23505(s) / 2 - 10), 0.0f, (float)(field40314.method23505(s) / 2 + 10), (float)(field40314.method23539() + 2), Class6430.method19118(Class265.field1273.field1292, 0.4f));
-        GL11.glTranslated((double)(-field40314.method23505(s) / 2), 0.0, 0.0);
+        Class8154.method26876((float)(-field40314.getWidth(s) / 2 - 10), 0.0f, (float)(field40314.getWidth(s) / 2 + 10), (float)(field40314.getHeight() + 2), Class6430.method19118(Class265.field1273.field1292, 0.4f));
+        GL11.glTranslated((double)(-field40314.getWidth(s) / 2), 0.0, 0.0);
         Class8154.method26889(field40314, 0.0f, 0.0f, s, Class265.field1278.field1292);
         GL11.glPopMatrix();
         GL11.glPopMatrix();
@@ -268,7 +270,7 @@ public class NoteblockPlayer extends PremiumModule
             if (this.field16035.isEmpty()) {
                 Class6430.method19106("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
                 Class6430.method19106("§cPlaying the only integrated demo song!");
-                this.field16034 = Class9377.method34815(Class7853.method25394("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
+                this.field16034 = Class9377.method34815(ClientAssets.method25394("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
                 if (this.field16034 == null) {
                     Class6430.method19106("§cError loading included song, wtf!");
                     this.method9909(false);

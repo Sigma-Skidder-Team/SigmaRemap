@@ -15,6 +15,8 @@ import net.minecraft.world.chunk.Chunk;
 import org.lwjgl.BufferUtils;
 import java.io.IOException;
 import org.lwjgl.opengl.GL11;
+import slick2d.TrueTypeFont;
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
@@ -144,7 +146,7 @@ public class MiniMap extends Module
                         this.field15840 = class5740.method17028();
                         if (field15832 != null) {
                             final String s = "^";
-                            final Class7524 field15833 = Class9400.field40323;
+                            final TrueTypeFont field15833 = ClientFonts.JelloMedium20;
                             final float n = 1.5f;
                             Class8154.method26874((float)this.field15839, (float)this.field15840, (float)this.field15838, (float)this.field15837, -7687425);
                             GL11.glPushMatrix();
@@ -157,10 +159,10 @@ public class MiniMap extends Module
                             final float n5 = this.field15838 * n;
                             final float n6 = this.field15837 * n;
                             Class8154.method26870(this.field15839, this.field15840, this.field15839 + this.field15838, this.field15840 + this.field15837);
-                            Class8154.method26905(0.0f, 0.0f, 0.0f, 0.0f, Class7853.field32188);
+                            Class8154.method26905(0.0f, 0.0f, 0.0f, 0.0f, ClientAssets.shout);
                             final float n7 = -n5 / 2.0f + this.field15838 / 2 + n3;
                             final float n8 = -n6 / 2.0f + this.field15837 / 2 + n4;
-                            Class8154.method26905(0.0f, 0.0f, 0.0f, 0.0f, Class7853.field32193);
+                            Class8154.method26905(0.0f, 0.0f, 0.0f, 0.0f, ClientAssets.gingerbread);
                             Class8154.method26903(n7, n8, n5, n6, field15832, Class265.field1278.field1292, 0.0f, 0.0f, (float)(this.field15843 * 16), (float)(this.field15843 * 16), true, false);
                             Class8154.method26872();
                             GL11.glPopMatrix();

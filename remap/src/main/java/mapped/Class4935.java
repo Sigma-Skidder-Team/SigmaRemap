@@ -5,13 +5,14 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import slick2d.Texture;
 
 import java.util.Date;
 
 public class Class4935 extends Class4800
 {
     private static Minecraft field21156;
-    private Class7776 field21157;
+    private Texture field21157;
     public Date field21158;
     public Class4843 field21159;
     public boolean field21160;

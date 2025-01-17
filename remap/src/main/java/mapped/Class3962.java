@@ -16,7 +16,7 @@ public class Class3962 extends Block
     private static String[] field17903;
     private final Block field17904;
     
-    public Class3962(final Block field17904, final Class9288 class9288) {
+    public Class3962(final Block field17904, final Properties class9288) {
         super(class9288);
         this.field17904 = field17904;
     }

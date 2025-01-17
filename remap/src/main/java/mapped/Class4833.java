@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import slick2d.Texture;
 
 import java.util.LinkedHashMap;
 import java.io.IOException;
@@ -35,7 +36,7 @@ public class Class4833 extends Class4825
     private Class4868 field20705;
     private Class4865 field20706;
     private int field20707;
-    private Class7776 field20708;
+    private Texture field20708;
     private Class4803 field20709;
     public Class4838 field20710;
     public Class4842 field20711;
@@ -98,10 +99,10 @@ public class Class4833 extends Class4825
             ((Thread)list.get(list.size() - 1)).start();
         }
         final int n = (this.method14276() - this.field20689 - 38) / 2;
-        this.field20697.method14239(this.field20702 = new Class4873(this.field20697, "play", n, 27, 38, 38, Class7853.field32178, new Class6523(Class265.field1278.field1292), null));
-        this.field20697.method14239(this.field20703 = new Class4873(this.field20697, "pause", n, 27, 38, 38, Class7853.field32179, new Class6523(Class265.field1278.field1292), null));
-        this.field20697.method14239(this.field20704 = new Class4873(this.field20697, "forwards", n + 114, 23, 46, 46, Class7853.field32180, new Class6523(Class265.field1278.field1292), null));
-        this.field20697.method14239(this.field20705 = new Class4873(this.field20697, "backwards", n - 114, 23, 46, 46, Class7853.field32181, new Class6523(Class265.field1278.field1292), null));
+        this.field20697.method14239(this.field20702 = new Class4873(this.field20697, "play", n, 27, 38, 38, ClientAssets.playmusic, new Class6523(Class265.field1278.field1292), null));
+        this.field20697.method14239(this.field20703 = new Class4873(this.field20697, "pause", n, 27, 38, 38, ClientAssets.pause, new Class6523(Class265.field1278.field1292), null));
+        this.field20697.method14239(this.field20704 = new Class4873(this.field20697, "forwards", n + 114, 23, 46, 46, ClientAssets.forwards, new Class6523(Class265.field1278.field1292), null));
+        this.field20697.method14239(this.field20705 = new Class4873(this.field20697, "backwards", n - 114, 23, 46, 46, ClientAssets.backwards, new Class6523(Class265.field1278.field1292), null));
         this.field20697.method14239(this.field20706 = new Class4865(this.field20697, "volume", this.method14276() - this.field20689 - 19, 14, 4, 40));
         final Class4860 class4805;
         this.field20697.method14239(class4805 = new Class4860(this.field20697, "repeat", 14, 34, 27, 20, this.field20698.method24169()));
@@ -267,8 +268,8 @@ public class Class4833 extends Class4825
         this.method14484(n);
         this.method14482(n);
         final int n2 = 55;
-        Class8154.method26889(Class9400.field40315, (float)(n2 + this.method14272()), (float)(this.method14274() + 20), "Jello", Class6430.method19118(Class265.field1278.field1292, n));
-        Class8154.method26889(Class9400.field40313, (float)(n2 + this.method14272() + 80), (float)(this.method14274() + 40), "music", Class6430.method19118(Class265.field1278.field1292, n));
+        Class8154.method26889(ClientFonts.JelloLight40, (float)(n2 + this.method14272()), (float)(this.method14274() + 20), "Jello", Class6430.method19118(Class265.field1278.field1292, n));
+        Class8154.method26889(ClientFonts.JelloLight20, (float)(n2 + this.method14272() + 80), (float)(this.method14274() + 40), "music", Class6430.method19118(Class265.field1278.field1292, n));
         Class8154.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), 14.0f, n);
         super.method14205(n);
         if (this.field20696 != null) {
@@ -279,13 +280,13 @@ public class Class4833 extends Class4825
     private void method14482(final float n) {
         final int n2 = (int)this.field20698.method24186();
         final int method24192 = this.field20698.method24192();
-        Class8154.method26889(Class9400.field40311, (float)(this.method14272() + this.field20689 + 14), this.method14274() + this.method14278() - 10 - 22.0f * n, Class5031.method15312(n2), Class6430.method19118(Class265.field1278.field1292, n * n));
-        Class8154.method26889(Class9400.field40311, (float)(this.method14272() + this.method14276() - 14 - Class9400.field40311.method23505(Class5031.method15312(method24192))), this.method14274() + this.method14278() - 10 - 22.0f * n, Class5031.method15312(method24192), Class6430.method19118(Class265.field1278.field1292, n * n));
+        Class8154.method26889(ClientFonts.JelloLight14, (float)(this.method14272() + this.field20689 + 14), this.method14274() + this.method14278() - 10 - 22.0f * n, Class5031.method15312(n2), Class6430.method19118(Class265.field1278.field1292, n * n));
+        Class8154.method26889(ClientFonts.JelloLight14, (float)(this.method14272() + this.method14276() - 14 - ClientFonts.JelloLight14.getWidth(Class5031.method15312(method24192))), this.method14274() + this.method14278() - 10 - 22.0f * n, Class5031.method15312(method24192), Class6430.method19118(Class265.field1278.field1292, n * n));
     }
     
     private void method14483(final float n) {
-        final Class7776 method24191 = this.field20698.method24191();
-        final Class7776 method24192 = this.field20698.method24190();
+        final Texture method24191 = this.field20698.method24191();
+        final Texture method24192 = this.field20698.method24190();
         if (method24191 != null && method24192 != null) {
             Class8154.method26899((float)this.method14272(), (float)(this.method14274() + this.method14278() - this.field20692), (float)this.method14276(), (float)this.field20692, method24192, Class6430.method19118(Class265.field1278.field1292, n * n));
             Class8154.method26876((float)this.method14272(), (float)(this.method14274() + this.method14278() - this.field20692), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() - 5), Class6430.method19118(Class265.field1273.field1292, 0.43f * n));
@@ -294,10 +295,10 @@ public class Class4833 extends Class4825
             Class8154.method26913((float)(this.method14272() + (this.field20689 - 114) / 2), (float)(this.method14274() + this.method14278() - 170), 114.0f, 114.0f, 14.0f, n);
         }
         else {
-            Class8154.method26899((float)this.method14272(), (float)(this.method14274() + this.method14278() - this.field20692), (float)this.method14276(), (float)this.field20692, Class7853.field32182, Class6430.method19118(Class265.field1278.field1292, n * n));
+            Class8154.method26899((float)this.method14272(), (float)(this.method14274() + this.method14278() - this.field20692), (float)this.method14276(), (float)this.field20692, ClientAssets.bg, Class6430.method19118(Class265.field1278.field1292, n * n));
             Class8154.method26876((float)this.method14272(), (float)(this.method14274() + this.method14278() - this.field20692), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() - 5), Class6430.method19118(Class265.field1273.field1292, 0.43f * n));
             Class8154.method26876((float)this.method14272(), (float)(this.method14274() + this.method14278() - 5), (float)(this.method14272() + this.field20689), (float)(this.method14274() + this.method14278()), Class6430.method19118(Class265.field1273.field1292, 0.43f * n));
-            Class8154.method26899((float)(this.method14272() + (this.field20689 - 114) / 2), (float)(this.method14274() + this.method14278() - 170), 114.0f, 114.0f, Class7853.field32183, Class6430.method19118(Class265.field1278.field1292, n));
+            Class8154.method26899((float)(this.method14272() + (this.field20689 - 114) / 2), (float)(this.method14274() + this.method14278() - 170), 114.0f, 114.0f, ClientAssets.artwork, Class6430.method19118(Class265.field1278.field1292, n));
             Class8154.method26913((float)(this.method14272() + (this.field20689 - 114) / 2), (float)(this.method14274() + this.method14278() - 170), 114.0f, 114.0f, 14.0f, n);
         }
     }
@@ -326,9 +327,9 @@ public class Class4833 extends Class4825
             n5 = 0.0f;
         }
         float method25031 = Class7791.method25031(n5, 0.0f, 1.0f, 1.0f);
-        final int method25032 = Class9400.field40311.method23505(s);
+        final int method25032 = ClientFonts.JelloLight14.getWidth(s);
         final int min = Math.min(a, method25032);
-        final int method25033 = Class9400.field40311.method23539();
+        final int method25033 = ClientFonts.JelloLight14.getHeight();
         final int n6 = this.method14272() + (this.field20689 - min) / 2;
         final int n7 = this.method14274() + this.method14278() - 50 + n2;
         final int n8 = Math.max(0, method25032 - min) * 2;
@@ -336,9 +337,9 @@ public class Class4833 extends Class4825
             method25031 = 0.0f;
         }
         Class8154.method26871(n6, n7, n6 + min, n7 + method25033, true);
-        Class8154.method26889(Class9400.field40311, n6 - method25032 * method25031 - 50.0f * method25031, (float)n7, s, Class6430.method19118(Class265.field1278.field1292, n * n * Math.min(1.0f, Math.max(0.0f, 1.0f - method25031 * 0.75f))));
+        Class8154.method26889(ClientFonts.JelloLight14, n6 - method25032 * method25031 - 50.0f * method25031, (float)n7, s, Class6430.method19118(Class265.field1278.field1292, n * n * Math.min(1.0f, Math.max(0.0f, 1.0f - method25031 * 0.75f))));
         if (method25031 > 0.0f) {
-            Class8154.method26889(Class9400.field40311, n6 - method25032 * method25031 + method25032, (float)n7, s, Class6430.method19118(Class265.field1278.field1292, n * n));
+            Class8154.method26889(ClientFonts.JelloLight14, n6 - method25032 * method25031 + method25032, (float)n7, s, Class6430.method19118(Class265.field1278.field1292, n * n));
         }
         Class8154.method26872();
     }
@@ -350,7 +351,7 @@ public class Class4833 extends Class4825
                 if (this.field20708 != null) {
                     this.field20708.method24923();
                 }
-                this.field20708 = Class9399.method34928("blur", Class6804.method20831(this.method14272() + this.field20689, this.method14274(), this.method14276() - this.field20689, this.field20691, 10, 10));
+                this.field20708 = Class9399.method34928("blur", BufferedImage.method20831(this.method14272() + this.field20689, this.method14274(), this.method14276() - this.field20689, this.field20691, 10, 10));
             }
             catch (final IOException ex) {
                 ex.printStackTrace();
@@ -361,9 +362,9 @@ public class Class4833 extends Class4825
             Class8154.method26898((float)this.field20689, 0.0f, (float)(this.method14276() - this.field20689), (float)this.field20691, this.field20708, Class6430.method19118(Class265.field1278.field1292, n2 * n));
         }
         Class8154.method26876((float)this.field20689, 0.0f, (float)this.method14276(), (float)this.field20691, Class6430.method19118(Class265.field1278.field1292, n2 * n * 0.2f));
-        Class8154.method26889(Class9400.field40314, (float)((this.method14276() - Class9400.field40314.method23505(this.field20693) + this.field20689) / 2), 16.0f + (1.0f - n2) * 14.0f, this.field20693, Class6430.method19118(Class265.field1278.field1292, n2));
-        Class8154.method26889(Class9400.field40324, (float)((this.method14276() - Class9400.field40324.method23505(this.field20693) + this.field20689) / 2), 16.0f + (1.0f - n2) * 14.0f, this.field20693, Class6430.method19118(Class265.field1278.field1292, 1.0f - n2));
-        Class8154.method26899((float)this.field20689, (float)this.field20691, (float)(this.method14276() - this.field20689), 20.0f, Class7853.field32172, Class6430.method19118(Class265.field1278.field1292, n2 * n * 0.5f));
+        Class8154.method26889(ClientFonts.JelloLight25, (float)((this.method14276() - ClientFonts.JelloLight25.getWidth(this.field20693) + this.field20689) / 2), 16.0f + (1.0f - n2) * 14.0f, this.field20693, Class6430.method19118(Class265.field1278.field1292, n2));
+        Class8154.method26889(ClientFonts.JelloMedium25, (float)((this.method14276() - ClientFonts.JelloMedium25.getWidth(this.field20693) + this.field20689) / 2), 16.0f + (1.0f - n2) * 14.0f, this.field20693, Class6430.method19118(Class265.field1278.field1292, 1.0f - n2));
+        Class8154.method26899((float)this.field20689, (float)this.field20691, (float)(this.method14276() - this.field20689), 20.0f, ClientAssets.shadow_bottom, Class6430.method19118(Class265.field1278.field1292, n2 * n * 0.5f));
         this.field20707 = this.field20696.method14392();
     }
     

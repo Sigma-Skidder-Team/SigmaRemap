@@ -4,6 +4,8 @@
 
 package mapped;
 
+import slick2d.TrueTypeFont;
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,7 +71,7 @@ public class Class4815 extends Class4803 implements Class4816
         this.field20592 = field20592;
     }
     
-    public Class4815(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2, final Class7524 class4805, final boolean field20592) {
+    public Class4815(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2, final TrueTypeFont class4805, final boolean field20592) {
         super(class4803, s, n, n2, n3, n4, class4804, s2, class4805);
         this.field20598 = true;
         this.field20599 = false;

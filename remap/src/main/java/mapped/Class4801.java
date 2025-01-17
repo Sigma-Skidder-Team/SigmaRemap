@@ -59,7 +59,7 @@ public class Class4801 extends Class4800
         this.method14239(this.field20465 = new Class4833(this, "musicPlayer"));
         this.field20465.method14385(true);
         final Class4873 class3169;
-        this.method14239(class3169 = new Class4873(this, "more", this.method14276() - 69, this.method14278() - 55, 55, 41, Class7853.field32217));
+        this.method14239(class3169 = new Class4873(this, "more", this.method14276() - 69, this.method14278() - 55, 55, 41, ClientAssets.options2));
         class3169.method14318().method19730(Class6430.method19118(Class265.field1278.field1292, 0.3f));
         class3169.method14311(false);
         this.field20465.method14297(Class4801.field20470);
@@ -266,7 +266,7 @@ public class Class4801 extends Class4800
         }
         if (Client.method35173().method35189().method21556().method32707() != null) {
             final String field33839 = Client.method35173().method35189().method21556().method32707().field33839;
-            Class8154.method26889(Class9400.field40313, (float)(this.field20480 - Class9400.field40313.method23505(field33839) - 80), (float)(this.field20481 - 47), field33839, Class6430.method19118(Class265.field1278.field1292, 0.5f * Math.max(0.0f, Math.min(1.0f, n2))));
+            Class8154.method26889(ClientFonts.JelloLight20, (float)(this.field20480 - ClientFonts.JelloLight20.getWidth(field33839) - 80), (float)(this.field20481 - 47), field33839, Class6430.method19118(Class265.field1278.field1292, 0.5f * Math.max(0.0f, Math.min(1.0f, n2))));
         }
         for (final Class4803 class4803 : this.method14250()) {
             class4803.method14295((int)((class4803.method14272() + class4803.method14276() / 2 - Class4801.field20460.field4632.method7694() / 2) * (1.0f - n2) * 0.5f), (int)((class4803.method14274() + class4803.method14278() / 2 - Class4801.field20460.field4632.method7695() / 2) * (1.0f - n2) * 0.5f));

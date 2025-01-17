@@ -13,7 +13,7 @@ public class Class4004 extends Block
 {
     private static String[] field18048;
     
-    public Class4004(final Class9288 class9288) {
+    public Class4004(final Properties class9288) {
         super(class9288);
     }
     

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import slick2d.TrueTypeFont;
+
 import java.util.Iterator;
 
 public class Class4857 extends Class4841
@@ -43,7 +45,7 @@ public class Class4857 extends Class4841
     public void method14205(final float n) {
         Class8154.method26924((float)this.field20478, (float)(this.field20479 + 5), (float)this.field20480, (float)this.field20481, 8.0f, Class6430.method19120(-3092272, -2171170, this.field20808));
         Class8154.method26924((float)this.field20478, this.field20479 + 3.0f * this.field20808, (float)this.field20480, (float)this.field20481, 8.0f, -986896);
-        Class7524 class7524 = Class9400.field40313;
+        TrueTypeFont class7524 = ClientFonts.JelloLight20;
         if (this.field20495.contains("Lock")) {
             Class8154.method26888((float)(this.field20478 + 14), this.field20479 + 11 + 3.0f * this.field20808, 10.0f, Class6430.method19118(Class265.field1276.field1292, this.field20808));
         }
@@ -53,9 +55,9 @@ public class Class4857 extends Class4841
                     if (!this.field20495.equals("Menu")) {
                         if (!this.field20495.equals("Space")) {
                             if (this.field20810) {
-                                class7524 = Class9400.field40320;
+                                class7524 = ClientFonts.Regular20;
                             }
-                            Class8154.method26889(class7524, (float)(this.field20478 + (this.field20480 - class7524.method23505(this.field20495)) / 2), this.field20479 + 19 + 3.0f * this.field20808, this.field20495, Class6430.method19118(Class265.field1273.field1292, 0.4f + (this.field20810 ? 0.2f : 0.0f)));
+                            Class8154.method26889(class7524, (float)(this.field20478 + (this.field20480 - class7524.getWidth(this.field20495)) / 2), this.field20479 + 19 + 3.0f * this.field20808, this.field20495, Class6430.method19118(Class265.field1273.field1292, 0.4f + (this.field20810 ? 0.2f : 0.0f)));
                         }
                     }
                     else {

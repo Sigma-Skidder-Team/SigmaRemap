@@ -63,7 +63,7 @@ public class Class4819 extends Class4817 implements Class4820
                 this.field20624.put(key2, class4804);
                 final NumberSetting class4806 = (NumberSetting)class4804;
                 final Class4892 class4807 = new Class4892(class4803, class4804.method15204() + "slider", class4803.method14276() - 126 - n3, n2 + 6, 126, 24);
-                class4807.method14674().method14317(Class9400.field40311);
+                class4807.method14674().method14317(ClientFonts.JelloLight14);
                 class4807.method14315(Float.toString((float)class4804.method15198()));
                 class4807.method14677(Class4892.method14671(class4806.method15187(), class4806.method15189(), (float)class4806.method15198()), false);
                 class4807.method14680(-1.0f);
@@ -95,7 +95,7 @@ public class Class4819 extends Class4817 implements Class4820
                 this.field20624.put(key3, class4804);
                 final Class4831 class4808;
                 this.method14239(class4808 = new Class4831(class4803, class4804.method15204() + "txt", class4803.method14276() - n3 - n4, n2 + n5 / 4 - 1, n4, n5, Class4831.field20670, (String)class4804.method15198()));
-                class4808.method14317(Class9400.field40312);
+                class4808.method14317(ClientFonts.JelloLight18);
                 class4808.method14473(class4998 -> class4804.method15199(class4998.method14314()));
                 class4804.method15195(class4833 -> {
                     if (class4808.method14314() != ((TextInputSetting)class4804).method15198()) {
@@ -257,9 +257,9 @@ public class Class4819 extends Class4817 implements Class4820
         super.method14205(n);
         GL11.glPopMatrix();
         this.field20626.method35855((!b) ? Class2186.field12965 : Class2186.field12964);
-        Class8154.method26889(Class9400.field40311, (float)(this.method14272() + 10), (float)(this.method14274() + this.method14278() + 24), this.field20628, Class6430.method19118(Class265.field1278.field1292, 0.5f * this.field20626.method35858()));
-        Class8154.method26889(Class9400.field40311, (float)(this.method14272() + 11), (float)(this.method14274() + this.method14278() + 24), this.field20628, Class6430.method19118(Class265.field1278.field1292, 0.5f * this.field20626.method35858()));
-        Class8154.method26889(Class9400.field40311, (float)(this.method14272() + 14 + Class9400.field40311.method23505(this.field20628) + 2), (float)(this.method14274() + this.method14278() + 24), this.field20627, Class6430.method19118(Class265.field1278.field1292, 0.5f * this.field20626.method35858()));
+        Class8154.method26889(ClientFonts.JelloLight14, (float)(this.method14272() + 10), (float)(this.method14274() + this.method14278() + 24), this.field20628, Class6430.method19118(Class265.field1278.field1292, 0.5f * this.field20626.method35858()));
+        Class8154.method26889(ClientFonts.JelloLight14, (float)(this.method14272() + 11), (float)(this.method14274() + this.method14278() + 24), this.field20628, Class6430.method19118(Class265.field1278.field1292, 0.5f * this.field20626.method35858()));
+        Class8154.method26889(ClientFonts.JelloLight14, (float)(this.method14272() + 14 + ClientFonts.JelloLight14.getWidth(this.field20628) + 2), (float)(this.method14274() + this.method14278() + 24), this.field20627, Class6430.method19118(Class265.field1278.field1292, 0.5f * this.field20626.method35858()));
     }
     
     @Override

@@ -166,10 +166,10 @@ public class NewTabGUI extends Module
                 }
             }
             if (key.method9906()) {
-                Class8154.method26889(Class9400.field40323, n + 11 + this.field15812.get(key), (float)(n2 + this.field15816 / 2 - Class9400.field40323.method23539() / 2 + 3 + n4 * this.field15816), key.getName(), Class265.field1278.field1292);
+                Class8154.method26889(ClientFonts.JelloMedium20, n + 11 + this.field15812.get(key), (float)(n2 + this.field15816 / 2 - ClientFonts.JelloMedium20.getHeight() / 2 + 3 + n4 * this.field15816), key.getName(), Class265.field1278.field1292);
             }
             else {
-                Class8154.method26889(Class9400.field40313, n + 11 + this.field15812.get(key), (float)(n2 + this.field15816 / 2 - Class9400.field40313.method23539() / 2 + 2 + n4 * this.field15816), key.getName(), Class265.field1278.field1292);
+                Class8154.method26889(ClientFonts.JelloLight20, n + 11 + this.field15812.get(key), (float)(n2 + this.field15816 / 2 - ClientFonts.JelloLight20.getHeight() / 2 + 2 + n4 * this.field15816), key.getName(), Class265.field1278.field1292);
             }
             ++n4;
         }
@@ -192,7 +192,7 @@ public class NewTabGUI extends Module
                     this.field15811.put(class8013, this.field15811.get(class8013) - this.field15818);
                 }
             }
-            Class8154.method26889(Class9400.field40313, n + 11 + this.field15811.get(class8013), (float)(n2 + this.field15816 / 2 - Class9400.field40313.method23539() / 2 + 2 + n3 * this.field15816), class8013.toString(), -1);
+            Class8154.method26889(ClientFonts.JelloLight20, n + 11 + this.field15811.get(class8013), (float)(n2 + this.field15816 / 2 - ClientFonts.JelloLight20.getHeight() / 2 + 2 + n3 * this.field15816), class8013.toString(), -1);
             ++n3;
         }
     }
@@ -247,8 +247,8 @@ public class NewTabGUI extends Module
             }
         }
         Class8154.method26876((float)n, (n7 >= 0) ? ((float)(n7 + n2)) : ((float)n2), (float)(n + n4), (n7 + this.field15817 + this.field15816 <= n3) ? ((float)(n7 + n2 + this.field15816 + this.field15817)) : ((float)(n2 + n3 + this.field15817)), this.field15828);
-        Class8154.method26899((float)n, (n7 + this.field15817 + this.field15816 <= n3) ? ((float)(n7 + n2 + this.field15816 - 10)) : ((float)(n2 + n3 - 10)), (float)n4, 14.0f, Class7853.field32171, this.field15829);
-        Class8154.method26899((float)n, (n7 >= 0) ? ((float)(n7 + n2)) : ((float)n2), (float)n4, 14.0f, Class7853.field32172, this.field15829);
+        Class8154.method26899((float)n, (n7 + this.field15817 + this.field15816 <= n3) ? ((float)(n7 + n2 + this.field15816 - 10)) : ((float)(n2 + n3 - 10)), (float)n4, 14.0f, ClientAssets.shadow_top, this.field15829);
+        Class8154.method26899((float)n, (n7 >= 0) ? ((float)(n7 + n2)) : ((float)n2), (float)n4, 14.0f, ClientAssets.shadow_bottom, this.field15829);
         Class8154.method26870(n, (n7 >= 0) ? (n7 + n2) : n2, n + n4, (n7 + this.field15817 + this.field15816 <= n3) ? (n7 + n2 + this.field15816 + this.field15817) : (n2 + n3 + this.field15817));
         final Iterator<Class8479> iterator = this.field15827.iterator();
         while (iterator.hasNext()) {

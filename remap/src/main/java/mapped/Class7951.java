@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import slick2d.TrueTypeFont;
 
 import java.awt.Color;
 import java.util.Iterator;
@@ -24,8 +25,8 @@ public class Class7951
     private int field32661;
     private int field32662;
     private int field32663;
-    private Class7524 field32664;
-    private Class7524 field32665;
+    private TrueTypeFont field32664;
+    private TrueTypeFont field32665;
     
     public Class7951() {
         this.field32654 = Minecraft.method5277();
@@ -38,8 +39,8 @@ public class Class7951
         this.field32661 = 10;
         this.field32662 = 10;
         this.field32663 = 10;
-        this.field32664 = Class9400.field40311;
-        this.field32665 = Class9400.field40313;
+        this.field32664 = ClientFonts.JelloLight14;
+        this.field32665 = ClientFonts.JelloLight20;
     }
     
     public void method25776(final Class6224 class6224) {
@@ -99,7 +100,7 @@ public class Class7951
                 Class8154.method26876((float)(n2 + this.field32659 - 1), (float)(n3 + 1), (float)(n2 + this.field32659), (float)(n3 + this.field32660 - 1), rgb2);
                 Class8154.method26870(n2, n3, n2 + this.field32659 - this.field32663, n3 + this.field32660);
                 Class8154.method26889(this.field32665, (float)(n2 + this.field32660 + this.field32663 - 2), (float)(n3 + this.field32663), class5741.field25085, rgb3);
-                Class8154.method26889(this.field32664, (float)(n2 + this.field32660 + this.field32663 - 2), (float)(n3 + this.field32663 + this.field32665.method23506(class5741.field25085)), class5741.field25086, rgb3);
+                Class8154.method26889(this.field32664, (float)(n2 + this.field32660 + this.field32663 - 2), (float)(n3 + this.field32663 + this.field32665.getHeight(class5741.field25085)), class5741.field25086, rgb3);
                 Class8154.method26872();
                 Class8154.method26905((float)(n2 + this.field32663 / 2), (float)(n3 + this.field32663 / 2), (float)(this.field32660 - this.field32663), (float)(this.field32660 - this.field32663), class5741.field25087);
             }

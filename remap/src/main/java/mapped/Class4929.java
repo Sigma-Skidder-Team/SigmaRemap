@@ -6,6 +6,8 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import org.lwjgl.opengl.GL11;
+import slick2d.Texture;
+
 import java.util.Iterator;
 import java.util.Random;
 import java.util.ArrayList;
@@ -23,7 +25,7 @@ public class Class4929 extends Class4800
     private Class9572 field21094;
     private Class9572 field21095;
     private Class9572 field21096;
-    private static Class7776 field21097;
+    private static Texture field21097;
     public List<Class4804> field21098;
     public static float field21099;
     public Class4907 field21100;
@@ -41,7 +43,7 @@ public class Class4929 extends Class4800
         this.method14311(false);
         Class4929.field21087 = System.nanoTime();
         if (Class4929.field21097 == null) {
-            Class4929.field21097 = Class7853.method25396("com/mentalfrostbyte/gui/resources/" + Class7853.method25397(), 0.075f, 8);
+            Class4929.field21097 = ClientAssets.method25396("com/mentalfrostbyte/gui/resources/" + ClientAssets.getPanorama(), 0.075f, 8);
         }
         this.field21095.method35855(Class2186.field12965);
         this.field21096.method35855(Class2186.field12965);
@@ -119,19 +121,19 @@ public class Class4929 extends Class4800
             final int n11 = (int)(600.0f * n10);
             final int n12 = (int)(450.0f * n10);
             final int n13 = 0;
-            Class8154.method26905(this.field21089 - n11 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n11), (float)(this.method14278() + 114), Class7853.field32221);
-            Class8154.method26905(this.field21089 - n12 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n12), (float)(this.method14278() + 114), Class7853.field32222);
+            Class8154.method26905(this.field21089 - n11 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n11), (float)(this.method14278() + 114), ClientAssets.background);
+            Class8154.method26905(this.field21089 - n12 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n12), (float)(this.method14278() + 114), ClientAssets.middle);
             for (final Class4803 class4803 : this.field21098) {
                 GL11.glPushMatrix();
                 class4803.method14205(n);
                 GL11.glPopMatrix();
             }
-            Class8154.method26905(this.field21089 - n13 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n13), (float)(this.method14278() + 114), Class7853.field32220);
-            final Class7776 field21090 = Class7853.field32160;
+            Class8154.method26905(this.field21089 - n13 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n13), (float)(this.method14278() + 114), ClientAssets.foreground);
+            final Texture field21090 = ClientAssets.logo_large;
             field21090.method24918();
             field21090.method24917();
             if (Class9000.field37993 > 1.0f) {
-                final Class7776 field21091 = Class7853.field32161;
+                final Texture field21091 = ClientAssets.logo_large2x;
             }
             Class8154.method26900((float)this.field21089, (float)(this.field21088 - 50), (float)(this.method14276() * 2), (float)(this.method14278() + 200), Class4929.field21097, Class6430.method19118(Class265.field1278.field1292, n2), false);
             Class8154.method26874(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class6430.method19118(Class265.field1273.field1292, n2 * 0.3f));

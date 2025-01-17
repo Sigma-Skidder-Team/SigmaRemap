@@ -32,7 +32,7 @@ public class Class3975 extends Block
     public static final VoxelShape field17962;
     private final Class3983 field17963;
     
-    public Class3975(final Class3983 field17963, final Class9288 class9288) {
+    public Class3975(final Class3983 field17963, final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3975.field17953, false)).with((IProperty<Comparable>)Class3975.field17954, false)).with((IProperty<Comparable>)Class3975.field17955, false)).with((IProperty<Comparable>)Class3975.field17956, false)).with((IProperty<Comparable>)Class3975.field17957, false)).with((IProperty<Comparable>)Class3975.field17958, false)).with((IProperty<Comparable>)Class3975.field17959, false));
         this.field17963 = field17963;

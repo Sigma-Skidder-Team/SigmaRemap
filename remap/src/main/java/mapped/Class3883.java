@@ -19,7 +19,7 @@ public class Class3883 extends Class3882
 {
     private static String[] field17540;
     
-    public Class3883(final Class5328 class5328, final Class9288 class5329) {
+    public Class3883(final Class5328 class5328, final Properties class5329) {
         super(class5328, 8, class5329);
     }
     

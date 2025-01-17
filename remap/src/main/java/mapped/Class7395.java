@@ -4,10 +4,10 @@
 
 package mapped;
 
+import slick2d.Color;
+
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.ByteArrayInputStream;
-import java.io.OutputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
@@ -94,8 +94,8 @@ public class Class7395 implements Class7394
         this.field28502 = field28502;
         this.field28513 = (int)this.field28498.method35543();
         this.field28510 = (int)this.field28490.method35543();
-        this.field28491.add(new Class8757(this, 0.0f, Class2427.field14355));
-        this.field28491.add(new Class8757(this, 1.0f, Class2427.field14357));
+        this.field28491.add(new Class8757(this, 0.0f, Color.field14355));
+        this.field28491.add(new Class8757(this, 1.0f, Color.field14357));
         final ArrayList list = new ArrayList();
         list.add(new Class2412(0.0f, 0.0f));
         list.add(new Class2412(1.0f, 255.0f));
@@ -245,8 +245,8 @@ public class Class7395 implements Class7394
         final float n3 = 1.0f - n2;
         float n4 = 0.0f;
         float n5 = 1.0f;
-        Class2427 field36777 = null;
-        Class2427 field36778 = null;
+        Color field36777 = null;
+        Color field36778 = null;
         for (int i = 0; i < this.field28491.size() - 1; ++i) {
             final Class8757 class8778 = this.field28491.get(i);
             final Class8757 class8779 = this.field28491.get(i + 1);
@@ -338,8 +338,8 @@ public class Class7395 implements Class7394
         return method33098;
     }
     
-    public void method22719(final float n, final Class2427 class2427) {
-        this.field28491.add(new Class8757(this, n, class2427));
+    public void method22719(final float n, final Color color) {
+        this.field28491.add(new Class8757(this, n, color));
     }
     
     @Override

@@ -5,7 +5,7 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
-import java.util.Iterator;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +27,7 @@ public class Class4845 extends Class4841
     
     private void method14524() {
         this.method14250().clear();
-        this.field20496 = Class9400.field40312;
+        this.field20496 = ClientFonts.JelloLight18;
         for (final String s : this.field20758) {
             final Class4868 class4868;
             this.method14239(class4868 = new Class4868(this, s, 0, 0, this.method14276(), this.method14278(), new Class6523(Class265.field1278.field1292, -1381654, this.field20497.method19729(), this.field20497.method19729(), Class2056.field11734, Class2056.field11738), s, this.method14316()));

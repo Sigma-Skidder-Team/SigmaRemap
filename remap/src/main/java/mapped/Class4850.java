@@ -39,7 +39,7 @@ public class Class4850 extends Class4841
         this.method14311(false);
         this.method14549();
         final Class4861 class4804;
-        this.method14239(class4804 = new Class4861(this, "addButton", this.field20480 - 70, this.field20481 - 70, Class9400.field40314.method23505("Add"), 70, Class6523.field25964, "Add", Class9400.field40314));
+        this.method14239(class4804 = new Class4861(this, "addButton", this.field20480 - 70, this.field20481 - 70, ClientFonts.JelloLight25.getWidth("Add"), 70, Class6523.field25964, "Add", ClientFonts.JelloLight25));
         class4804.method14260((class4803, n) -> this.method14551());
     }
     
@@ -113,9 +113,9 @@ public class Class4850 extends Class4841
         GL11.glTranslatef((float)this.field20478, (float)this.field20479, 0.0f);
         GL11.glRotatef(this.field20788 ? 90.0f : -90.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-this.field20478), (float)(-this.field20479), 0.0f);
-        Class8154.method26899((float)(this.field20478 + (this.field20788 ? this.field20481 : 0)), this.field20479 + (this.field20480 - 47) / 2 * (this.field20788 ? -1.5f : 1.0f), 18.0f, 47.0f, Class7853.field32197, method35860);
+        Class8154.method26899((float)(this.field20478 + (this.field20788 ? this.field20481 : 0)), this.field20479 + (this.field20480 - 47) / 2 * (this.field20788 ? -1.5f : 1.0f), 18.0f, 47.0f, ClientAssets.select, method35860);
         GL11.glPopMatrix();
-        Class8154.method26889(Class9400.field40314, (float)(this.field20478 + 25), (float)(this.field20479 + 20), this.field20495 + " Key", Class6430.method19118(Class265.field1273.field1292, 0.8f * method35858));
+        Class8154.method26889(ClientFonts.JelloLight25, (float)(this.field20478 + 25), (float)(this.field20479 + 20), this.field20495 + " Key", Class6430.method19118(Class265.field1273.field1292, 0.8f * method35858));
         Class8154.method26876((float)(this.field20478 + 25), (float)(this.field20479 + 68), (float)(this.field20478 + this.field20480 - 25), (float)(this.field20479 + 69), Class6430.method19118(Class265.field1273.field1292, 0.05f * method35858));
         super.method14205(method35858);
     }

@@ -104,7 +104,7 @@ public class Class6446 extends Class6447
     }
     
     @Override
-    public void method19251(final int field25586) {
+    public void glBegin(final int field25586) {
         if (this.field25596 <= 0) {
             if (this.field25586 != field25586) {
                 this.method19249();
@@ -112,7 +112,7 @@ public class Class6446 extends Class6447
             }
             return;
         }
-        super.method19251(field25586);
+        super.glBegin(field25586);
     }
     
     @Override
@@ -137,22 +137,22 @@ public class Class6446 extends Class6447
     }
     
     @Override
-    public void method19254(final float n, final float n2) {
+    public void glTexCoord2f(final float n, final float n2) {
         if (this.field25596 <= 0) {
             this.field25588[0] = n;
             this.field25588[1] = n2;
             return;
         }
-        super.method19254(n, n2);
+        super.glTexCoord2f(n, n2);
     }
     
     @Override
-    public void method19255(final float n, final float n2) {
+    public void glVertex2f(final float n, final float n2) {
         if (this.field25596 <= 0) {
             this.method19256(n, n2, 0.0f);
             return;
         }
-        super.method19255(n, n2);
+        super.glVertex2f(n, n2);
     }
     
     @Override

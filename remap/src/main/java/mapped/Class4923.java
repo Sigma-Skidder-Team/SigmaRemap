@@ -35,7 +35,7 @@ public class Class4923 extends Class4825
         int n7 = 0;
         final String[] field36095 = this.field21058.field36095;
         for (int length = field36095.length, i = 0; i < length; ++i) {
-            Class8154.method26889(Class9400.field40312, (float)(n2 + 10), (float)(n3 + 5 + n7 * Class9400.field40312.method23539()), field36095[i], n6);
+            Class8154.method26889(ClientFonts.JelloLight18, (float)(n2 + 10), (float)(n3 + 5 + n7 * ClientFonts.JelloLight18.getHeight()), field36095[i], n6);
             ++n7;
         }
         super.method14205(n);

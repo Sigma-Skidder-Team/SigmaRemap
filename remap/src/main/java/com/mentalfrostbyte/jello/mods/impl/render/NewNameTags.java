@@ -17,6 +17,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
+import slick2d.Texture;
+import slick2d.TrueTypeFont;
+
 import java.util.Iterator;
 import java.util.Map;
 import java.util.ArrayList;
@@ -29,7 +32,7 @@ public class NewNameTags extends Module
     private HashMap<BlockPos, Class6312> field15778;
     private BlockPos field15779;
     private static Class1780 field15780;
-    private static HashMap<String, Class7776> field15781;
+    private static HashMap<String, Texture> field15781;
     public static NewNameTags field15782;
     private List<Entity> field15783;
     private boolean field15784;
@@ -263,7 +266,7 @@ public class NewNameTags extends Module
     }
     
     public void method10335(final BlockPos class354, final Class6312 class355, final float n) {
-        final Class7524 field40314 = Class9400.field40314;
+        final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         if (class355.field25240 != null) {
             new StringBuilder().append(class355.field25240.field34176).append(" ").append(class355.field25240.method27664()).toString();
         }
@@ -291,7 +294,7 @@ public class NewNameTags extends Module
         final ItemStack method18690 = class355.method18690();
         int max;
         if (method18690 != null) {
-            max = Math.max(Class9400.field40313.method23505(method18690.method27664().getUnformattedComponentText()), 50);
+            max = Math.max(ClientFonts.JelloLight20.getWidth(method18690.method27664().getUnformattedComponentText()), 50);
         }
         else {
             max = 37;
@@ -303,13 +306,13 @@ public class NewNameTags extends Module
         Class8154.method26913(0.0f, 0.0f, (float)n7, (float)n8, 20.0f, 0.5f);
         Class8154.method26889(field40314, (float)n5, (float)(n5 - 5), "Furnace", Class265.field1278.field1292);
         if (method18690 == null) {
-            Class8154.method26889(Class9400.field40313, (float)(n5 + 15), (float)(n5 + 40), "Empty", Class6430.method19118(Class265.field1278.field1292, 0.6f));
+            Class8154.method26889(ClientFonts.JelloLight20, (float)(n5 + 15), (float)(n5 + 40), "Empty", Class6430.method19118(Class265.field1278.field1292, 0.6f));
         }
         final ItemStack method18691 = class355.method18690();
         if (method18691 != null) {
             Class8154.method26929(method18691, n5, n5 + 27, 45, 45);
-            Class8154.method26889(Class9400.field40313, (float)(n5 + 51), 40.0f, method18691.method27664().getUnformattedComponentText(), Class265.field1278.field1292);
-            Class8154.method26889(Class9400.field40311, (float)(n5 + 51), 62.0f, "Count: " + method18691.field34176, Class265.field1278.field1292);
+            Class8154.method26889(ClientFonts.JelloLight20, (float)(n5 + 51), 40.0f, method18691.method27664().getUnformattedComponentText(), Class265.field1278.field1292);
+            Class8154.method26889(ClientFonts.JelloLight14, (float)(n5 + 51), 62.0f, "Count: " + method18691.field34176, Class265.field1278.field1292);
         }
         Class8154.method26876(0.0f, n8 - 12.0f, Math.min(n7 * min2, (float)n7), n8 - 6.0f, Class6430.method19118(-106750, 0.3f));
         Class8154.method26876(0.0f, n8 - 6.0f, Math.min(n7 * min, (float)n7), (float)n8, Class6430.method19118(Class265.field1278.field1292, 0.75f));
@@ -324,7 +327,7 @@ public class NewNameTags extends Module
     }
     
     public void method10336(final double n, final double n2, final double n3, final Entity class399, final float n4, final String s) {
-        final Class7524 field40314 = Class9400.field40314;
+        final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         String method9887 = (s == null) ? class399.getName().getUnformattedComponentText().replaceAll("§.", "") : s;
         if (Client.method35173().method35189().method21551(NameProtect.class).method9906()) {
             if (method9887.equals(NewNameTags.mc.method5287().method33692())) {
@@ -359,30 +362,30 @@ public class NewNameTags extends Module
                 n8 = Class6430.method19118(-16171506, 0.5f);
             }
             final int method9888 = Class6430.method19118((class399 instanceof PlayerEntity) ? new Color(Class9011.method32263((PlayerEntity)class399)).getRGB() : Class265.field1278.field1292, 0.5f);
-            final int n9 = field40314.method23505(method9887) / 2;
+            final int n9 = field40314.getWidth(method9887) / 2;
             if (!NewNameTags.field15781.containsKey(method9887)) {
-                Class8154.method26913((float)(-n9 - 10), -25.0f, (float)(n9 * 2 + 20), (float)(field40314.method23539() + 27), 20.0f, 0.5f);
+                Class8154.method26913((float)(-n9 - 10), -25.0f, (float)(n9 * 2 + 20), (float)(field40314.getHeight() + 27), 20.0f, 0.5f);
             }
             else {
-                Class8154.method26899((float)(-n9 - 10 - 31), -25.0f, (float)(field40314.method23539() + 27), (float)(field40314.method23539() + 27), NewNameTags.field15781.get(method9887), Class6430.method19118(Color.getHSBColor(System.currentTimeMillis() % 10000L / 10000.0f, 0.5f, 1.0f).getRGB(), 0.7f));
-                Class8154.method26899((float)(-n9 - 10 - 31 + field40314.method23539() + 27), -25.0f, 14.0f, (float)(field40314.method23539() + 27), Class7853.field32170, Class6430.method19118(Class265.field1278.field1292, 0.6f));
-                Class8154.method26913((float)(-n9 - 10 - 31), -25.0f, (float)(n9 * 2 + 20 + 31 + 27), (float)(field40314.method23539() + 27), 20.0f, 0.5f);
+                Class8154.method26899((float)(-n9 - 10 - 31), -25.0f, (float)(field40314.getHeight() + 27), (float)(field40314.getHeight() + 27), NewNameTags.field15781.get(method9887), Class6430.method19118(Color.getHSBColor(System.currentTimeMillis() % 10000L / 10000.0f, 0.5f, 1.0f).getRGB(), 0.7f));
+                Class8154.method26899((float)(-n9 - 10 - 31 + field40314.getHeight() + 27), -25.0f, 14.0f, (float)(field40314.getHeight() + 27), ClientAssets.shadow_right, Class6430.method19118(Class265.field1278.field1292, 0.6f));
+                Class8154.method26913((float)(-n9 - 10 - 31), -25.0f, (float)(n9 * 2 + 20 + 31 + 27), (float)(field40314.getHeight() + 27), 20.0f, 0.5f);
                 GL11.glTranslatef(27.0f, 0.0f, 0.0f);
             }
-            Class8154.method26876((float)(-n9 - 10), -25.0f, (float)(n9 + 10), (float)(field40314.method23539() + 2), n8);
-            Class8154.method26876((float)(-n9 - 10), field40314.method23539() - 1 - ((LivingEntity)class399).field2938 / 3.0f, Math.min((n9 * 2 + 20) * (min - 0.5f), (float)(n9 + 10)), (float)(field40314.method23539() + 2), method9888);
+            Class8154.method26876((float)(-n9 - 10), -25.0f, (float)(n9 + 10), (float)(field40314.getHeight() + 2), n8);
+            Class8154.method26876((float)(-n9 - 10), field40314.getHeight() - 1 - ((LivingEntity)class399).field2938 / 3.0f, Math.min((n9 * 2 + 20) * (min - 0.5f), (float)(n9 + 10)), (float)(field40314.getHeight() + 2), method9888);
             GL11.glPushMatrix();
-            GL11.glTranslated((double)(-field40314.method23505(method9887) / 2), 0.0, 0.0);
-            final int method9889 = Class9400.field40311.method23505("Health: 20.0");
+            GL11.glTranslated((double)(-field40314.getWidth(method9887) / 2), 0.0, 0.0);
+            final int method9889 = ClientFonts.JelloLight14.getWidth("Health: 20.0");
             String str = "Health: ";
-            if (method9889 > field40314.method23505(method9887)) {
+            if (method9889 > field40314.getWidth(method9887)) {
                 str = "H: ";
             }
             Class8154.method26889(field40314, 0.0f, -20.0f, method9887, Class265.field1278.field1292);
-            Class8154.method26889(Class9400.field40311, 0.0f, 10.0f, str + string, Class265.field1278.field1292);
+            Class8154.method26889(ClientFonts.JelloLight14, 0.0f, 10.0f, str + string, Class265.field1278.field1292);
             final Class6538 method9890 = Client.method35173().method35201().field25697.method33657(class399);
             if (method9890 != null) {
-                Class8154.method26889(Class9400.field40311, 0.0f, -30.0f, method9890.field25986, Class265.field1278.field1292);
+                Class8154.method26889(ClientFonts.JelloLight14, 0.0f, -30.0f, method9890.field25986, Class265.field1278.field1292);
             }
             GL11.glPopMatrix();
             GL11.glPopMatrix();
@@ -405,10 +408,10 @@ public class NewNameTags extends Module
     
     static {
         NewNameTags.field15780 = new Class1780();
-        (NewNameTags.field15781 = new HashMap<String, Class7776>()).put("Tomygaims", Class7853.field32206);
-        NewNameTags.field15781.put("Andro24", Class7853.field32207);
-        NewNameTags.field15781.put("Gretorm", Class7853.field32208);
-        NewNameTags.field15781.put("Flyinqq", Class7853.field32210);
-        NewNameTags.field15781.put("cxbot", Class7853.field32209);
+        (NewNameTags.field15781 = new HashMap<String, Texture>()).put("Tomygaims", ClientAssets.tomy);
+        NewNameTags.field15781.put("Andro24", ClientAssets.andro);
+        NewNameTags.field15781.put("Gretorm", ClientAssets.lp);
+        NewNameTags.field15781.put("Flyinqq", ClientAssets.cody);
+        NewNameTags.field15781.put("cxbot", ClientAssets.cx);
     }
 }

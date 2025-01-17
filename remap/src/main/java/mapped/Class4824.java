@@ -4,6 +4,8 @@
 
 package mapped;
 
+import slick2d.TrueTypeFont;
+
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +18,7 @@ public class Class4824 extends Class4817
     private float field20641;
     private int field20642;
     private int field20643;
-    private static Class7524 field20496;
+    private static TrueTypeFont field20496;
     private static int field20644;
     private boolean field20645;
     private static final String field20646 = "\n";
@@ -77,7 +79,7 @@ public class Class4824 extends Class4817
     }
     
     static {
-        Class4824.field20496 = Class9400.field40312;
+        Class4824.field20496 = ClientFonts.JelloLight18;
         Class4824.field20644 = 14;
     }
 }

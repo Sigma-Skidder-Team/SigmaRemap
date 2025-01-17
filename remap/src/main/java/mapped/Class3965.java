@@ -99,7 +99,7 @@ public class Class3965 extends Block implements Class3966
         Class3965.field17916.put((Object)class3832.method11704(), n);
     }
     
-    public Class3965(final Class9288 class9288) {
+    public Class3965(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3965.field17915, 0));
     }

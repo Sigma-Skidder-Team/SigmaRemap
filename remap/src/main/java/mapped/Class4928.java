@@ -5,6 +5,7 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
+import slick2d.TrueTypeFont;
 
 public class Class4928 extends Class4800
 {
@@ -25,8 +26,8 @@ public class Class4928 extends Class4800
     @Override
     public void method14205(final float n) {
         super.method14205(n);
-        final int method24918 = Class7853.field32204.method24918();
-        final int method24919 = Class7853.field32204.method24917();
+        final int method24918 = ClientAssets.mentalfrostbyte.method24918();
+        final int method24919 = ClientAssets.mentalfrostbyte.method24917();
         final int min = Math.min(method24918, (int)(Minecraft.method5277().field4632.method7695() / 1.65f));
         final int min2 = Math.min(method24919, (int)(Minecraft.method5277().field4632.method7695() / 1.65f));
         this.method14789();
@@ -37,10 +38,10 @@ public class Class4928 extends Class4800
         GL11.glScaled((double)method24920, (double)method24920, 0.0);
         GL11.glTranslatef((float)(-this.method14276() / 2), (float)(-this.method14278() / 2), 0.0f);
         final String s = "Jello by MF & Tomygames";
-        final Class7524 field40314 = Class9400.field40314;
-        Class8154.method26889(field40314, (float)((this.method14276() - field40314.method23505(s)) / 2), (float)(this.method14278() - 110), s, Class265.field1273.field1292);
+        final TrueTypeFont field40314 = ClientFonts.JelloLight25;
+        Class8154.method26889(field40314, (float)((this.method14276() - field40314.getWidth(s)) / 2), (float)(this.method14278() - 110), s, Class265.field1273.field1292);
         GL11.glPopMatrix();
-        Class8154.method26899(this.method14276() / 2 - (min - min * (this.field21083 - 1.0f) * this.field21083) / 2.0f, (float)(Math.max(min2 * 1.2f, (float)(this.method14278() / 2)) - min2 - min2 * Math.sin(this.field21083 * this.field21083 * 3.141592653589793) * Math.sin(this.field21083 * this.field21083 * 3.141592653589793)), min - min * (this.field21083 - 1.0f) * this.field21083, min2 - min2 * (this.field21083 - 1.0f) * this.field21083, Class7853.field32204, Class6430.method19118(Class265.field1278.field1292, Math.min(1.0f, this.field21083)));
+        Class8154.method26899(this.method14276() / 2 - (min - min * (this.field21083 - 1.0f) * this.field21083) / 2.0f, (float)(Math.max(min2 * 1.2f, (float)(this.method14278() / 2)) - min2 - min2 * Math.sin(this.field21083 * this.field21083 * 3.141592653589793) * Math.sin(this.field21083 * this.field21083 * 3.141592653589793)), min - min * (this.field21083 - 1.0f) * this.field21083, min2 - min2 * (this.field21083 - 1.0f) * this.field21083, ClientAssets.mentalfrostbyte, Class6430.method19118(Class265.field1278.field1292, Math.min(1.0f, this.field21083)));
         if (this.field21083 >= 0.986) {
             this.field21083 = 1.0f;
         }
@@ -59,7 +60,7 @@ public class Class4928 extends Class4800
         }
         final float n2 = n - this.field21084;
         final float n3 = (float)(field21085 - this.field21085);
-        Class8154.method26905((float)this.field21085, (float)this.field21084, (float)(this.method14276() * 2), (float)(this.method14278() + 114), Class7853.field32177);
+        Class8154.method26905((float)this.field21085, (float)this.field21084, (float)(this.method14276() * 2), (float)(this.method14278() + 114), ClientAssets.getBlurredPanorama);
         final float n4 = 0.5f;
         if (n != this.field21084) {
             this.field21084 += (int)(n2 * n4);

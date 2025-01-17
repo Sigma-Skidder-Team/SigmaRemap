@@ -21,7 +21,7 @@ public abstract class Class4000 extends Block
     public static final VoxelShape field18032;
     public static final AxisAlignedBB field18033;
     
-    public Class4000(final Class9288 class9288) {
+    public Class4000(final Properties class9288) {
         super(class9288);
     }
     

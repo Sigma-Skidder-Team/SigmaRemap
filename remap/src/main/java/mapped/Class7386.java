@@ -46,7 +46,7 @@ public class Class7386
         GL11.glTranslatef((float)(-MusicParticles.method10690().field4632.method7694() / 2), (float)(-MusicParticles.method10691().field4632.method7695() / 2), 0.0f);
         final int rgb = Color.getHSBColor(System.currentTimeMillis() % 4000L / 4000.0f, 0.3f, 1.0f).getRGB();
         final float n3 = 60.0f * this.field28456;
-        Class8154.method26899(this.field28457 - n3 / 2.0f, this.field28458 - n3 / 2.0f, n3, n3, Class7853.field32184, Class6430.method19118(rgb, n2 * 0.9f));
+        Class8154.method26899(this.field28457 - n3 / 2.0f, this.field28458 - n3 / 2.0f, n3, n3, ClientAssets.particle, Class6430.method19118(rgb, n2 * 0.9f));
         GL11.glPopMatrix();
     }
     

@@ -49,7 +49,7 @@ public class Class4842 extends Class4841
             Class8154.method26874(this.method14272() + this.method14276() * max, (float)this.method14274(), this.method14276() * (1.0f - max), (float)this.method14278(), Class6430.method19118(Class265.field1273.field1292, 0.43f * n));
             Class8154.method26874((float)this.method14272(), (float)this.method14274(), this.method14276() * n3, (float)this.method14278(), Class6430.method19118(Class265.field1278.field1292, n * n));
             if (n3 != 0.0f) {
-                Class8154.method26905(this.method14272() + this.method14276() * n3, (float)this.method14274(), 5.0f, 5.0f, Class7853.field32170);
+                Class8154.method26905(this.method14272() + this.method14276() * n3, (float)this.method14274(), 5.0f, 5.0f, ClientAssets.shadow_right);
             }
         }
     }

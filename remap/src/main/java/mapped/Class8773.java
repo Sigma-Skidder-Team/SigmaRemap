@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import slick2d.Texture;
 
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -19,7 +20,7 @@ public class Class8773
     private boolean field36884;
     private String field36885;
     private BufferedImage field36886;
-    private Class7776 field36887;
+    private Texture field36887;
     
     public Class8773(final String field36881, final boolean field36882) {
         this.field36883 = System.currentTimeMillis();
@@ -49,7 +50,7 @@ public class Class8773
         }
     }
     
-    public Class7776 method30470() {
+    public Texture method30470() {
         if (this.field36887 == null && this.field36886 != null) {
             try {
                 this.field36887 = Class9399.method34928("", this.field36886);

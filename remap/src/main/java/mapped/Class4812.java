@@ -4,7 +4,6 @@
 
 package mapped;
 
-import org.apache.http.HttpResponse;
 import java.io.InputStream;
 import org.apache.http.HttpEntity;
 import java.io.IOException;
@@ -67,8 +66,8 @@ public class Class4812 extends Class4803
         }
         this.method14294((int)(150.0f * (1.0f - method31033)));
         this.method14228();
-        Class8154.method26889(Class9400.field40319, 100.0f, 100.0f, "Changelog", Class6430.method19118(Class265.field1278.field1292, n));
-        Class8154.method26889(Class9400.field40314, 100.0f, 150.0f, "You're currently using Sigma 5.0.0", Class6430.method19118(Class265.field1278.field1292, 0.6f * n));
+        Class8154.method26889(ClientFonts.JelloLight36, 100.0f, 100.0f, "Changelog", Class6430.method19118(Class265.field1278.field1292, n));
+        Class8154.method26889(ClientFonts.JelloLight25, 100.0f, 150.0f, "You're currently using Sigma 5.0.0", Class6430.method19118(Class265.field1278.field1292, 0.6f * n));
         super.method14205(n);
     }
     
@@ -77,7 +76,7 @@ public class Class4812 extends Class4803
             return Class4812.field20583;
         }
         try {
-            final HttpEntity entity = ((HttpResponse)HttpClients.createDefault().execute((HttpUriRequest)new HttpGet("https://jelloconnect.sigmaclient.info/changelog.php?v=5.0.0b6"))).getEntity();
+            final HttpEntity entity = HttpClients.createDefault().execute((HttpUriRequest)new HttpGet("https://jelloconnect.sigmaclient.info/changelog.php?v=5.0.0b6")).getEntity();
             if (entity != null) {
                 try (final InputStream content = entity.getContent()) {
                     return Class4812.field20583 = new Class88(IOUtils.toString(content, "UTF-8"));

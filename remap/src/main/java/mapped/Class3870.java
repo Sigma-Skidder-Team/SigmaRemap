@@ -18,7 +18,7 @@ public class Class3870 extends Class3874
     private static String[] field17512;
     public static final Class7114<Class182> field17513;
     
-    public Class3870(final Class9288 class9288) {
+    public Class3870(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with(Class3870.field17513, Class182.field565));
     }

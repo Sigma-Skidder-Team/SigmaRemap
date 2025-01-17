@@ -5,7 +5,7 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
-import java.util.Iterator;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +28,7 @@ public class Class4891 extends Class4841
     
     private void method14661() {
         this.method14250().clear();
-        this.field20496 = Class9400.field40312;
+        this.field20496 = ClientFonts.JelloLight18;
         final Class4868 class4868;
         this.method14239(class4868 = new Class4868(this, "dropdownButton", 0, 0, this.method14278(), this.method14278(), this.field20497));
         class4868.method14270((class4803, class4804) -> {
@@ -84,7 +84,7 @@ public class Class4891 extends Class4841
         Class8154.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14662()), 6.0f, n * 0.21f);
         if (this.method14314() != null) {
             Class8154.method26865(this);
-            Class8154.method26889(this.method14316(), (float)(this.method14272() + 10), (float)(this.method14274() + (this.method14278() - this.method14316().method23539()) / 2 + 1), this.field20495, Class6430.method19118(this.field20497.method19729(), n * 0.7f));
+            Class8154.method26889(this.method14316(), (float)(this.method14272() + 10), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2 + 1), this.field20495, Class6430.method19118(this.field20497.method19729(), n * 0.7f));
             Class8154.method26872();
         }
         Class8154.method26870(this.method14280(), this.method14281(), this.method14280() + this.method14276(), this.method14281() + this.method14278() + this.method14662());

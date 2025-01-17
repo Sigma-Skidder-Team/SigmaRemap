@@ -47,8 +47,8 @@ public class Class8979
         if (method6702 instanceof Class3916) {
             return method6701.method21772(Class3916.field17733) == Class109.field343;
         }
-        if (method6702 instanceof Class3921) {
-            return method6701.method21772(Class3921.field17777) == Class186.field598;
+        if (method6702 instanceof SlabBlock) {
+            return method6701.method21772(SlabBlock.field17777) == Class186.field598;
         }
         return false;
     }
@@ -90,8 +90,8 @@ public class Class8979
                                     if (method21696 instanceof Class3916) {
                                         return class1856.method21772(Class3916.field17733) == Class109.field343;
                                     }
-                                    if (method21696 instanceof Class3921) {
-                                        return class1856.method21772(Class3921.field17777) == Class186.field598;
+                                    if (method21696 instanceof SlabBlock) {
+                                        return class1856.method21772(SlabBlock.field17777) == Class186.field598;
                                     }
                                     if (!(method21696 instanceof Class3905)) {
                                         return method21696 instanceof Class3959 || method21696 instanceof Class3917 || method21696 instanceof Class3904 || method21696 instanceof Class4005 || method21696 instanceof Class4006;

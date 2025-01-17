@@ -6,6 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Module;
+import slick2d.Texture;
 
 import java.util.TreeMap;
 import java.util.Iterator;
@@ -23,7 +24,7 @@ public class Class4849 extends Class4841
     public String field20779;
     public Class4817 field20780;
     public Class8799 field20781;
-    public Class7776 field20782;
+    public Texture field20782;
     public boolean field20783;
     private final List<Class7390> field20784;
     
@@ -201,7 +202,7 @@ public class Class4849 extends Class4841
         super.method14227();
         Class8154.method26925((float)this.field20776, (float)this.field20775, (float)this.field20777, (float)this.field20778, 10.0f, Class6430.method19118(Class265.field1278.field1292, method35858));
         final int n2 = 30;
-        Class8154.method26889(Class9400.field40319, (float)(n2 + this.field20776), (float)(n2 + this.field20775), "Select mod to bind", Class6430.method19118(Class265.field1273.field1292, method35858 * 0.7f));
+        Class8154.method26889(ClientFonts.JelloLight36, (float)(n2 + this.field20776), (float)(n2 + this.field20775), "Select mod to bind", Class6430.method19118(Class265.field1273.field1292, method35858 * 0.7f));
         super.method14205(method35858);
     }
     

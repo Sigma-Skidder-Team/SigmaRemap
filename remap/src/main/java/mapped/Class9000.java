@@ -212,7 +212,7 @@ public class Class9000
     }
     
     public void method32138() {
-        Class7853.field32193.method24916();
+        ClientAssets.gingerbread.bind();
         if (Minecraft.method5277().world != null) {
             GL11.glDisable(2896);
             int n = 0;
@@ -233,7 +233,7 @@ public class Class9000
             }
             else {
                 GL11.glAlphaFunc(519, 0.0f);
-                Class8154.method26905((float)n, (float)n2, 170.0f, 104.0f, (Class9000.field37993 <= 1.0f) ? Class7853.field32167 : Class7853.field32168);
+                Class8154.method26905((float)n, (float)n2, 170.0f, 104.0f, (Class9000.field37993 <= 1.0f) ? ClientAssets.jello_watermark : ClientAssets.jello_watermark2x);
             }
             Client.method35173().method35188().method21097(new Class5740());
         }

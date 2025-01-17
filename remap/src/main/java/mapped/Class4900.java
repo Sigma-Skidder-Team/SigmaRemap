@@ -12,10 +12,10 @@ public class Class4900 extends Class4841
     
     public Class4900(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
         super(class4803, s, n, n2, n3, n4, Class6523.field25964, "", false);
-        this.field20496 = Class9400.field40313;
+        this.field20496 = ClientFonts.JelloLight20;
         this.method14239(this.field20956 = new Class4831(this, "chat", 14, 0, n3 - 28, n4, Class4831.field20670, "", "Chat..."));
         this.field20956.method14478(false);
-        this.field20956.method14317(Class9400.field40313);
+        this.field20956.method14317(ClientFonts.JelloLight20);
         this.field20956.method14307(true);
     }
     

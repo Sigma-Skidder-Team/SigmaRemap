@@ -26,7 +26,7 @@ public class Class3967 extends Block
     public static final Map<Direction, Class7113> field17927;
     public final VoxelShape[] field17928;
     
-    public Class3967(final float n, final Class9288 class9288) {
+    public Class3967(final float n, final Properties class9288) {
         super(class9288);
         this.field17928 = this.method12103(n);
     }

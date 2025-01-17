@@ -4,10 +4,12 @@
 
 package mapped;
 
+import slick2d.Renderer;
+
 public class Class7941
 {
     private static String[] field32617;
-    public static Class6448 field32618;
+    public static SGL field32618;
     
     public static void method25759() {
         Class7941.field32618.method19293(true);
@@ -41,6 +43,6 @@ public class Class7941
     }
     
     static {
-        Class7941.field32618 = Class7840.method25330();
+        Class7941.field32618 = Renderer.get();
     }
 }

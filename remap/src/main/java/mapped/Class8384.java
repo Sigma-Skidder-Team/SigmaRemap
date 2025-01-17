@@ -4,9 +4,12 @@
 
 package mapped;
 
+import slick2d.Color;
+import slick2d.Renderer;
+
 public class Class8384
 {
-    public static Class6448 field34364;
+    public static SGL field34364;
     public Class5831 field34365;
     public int field34366;
     
@@ -51,7 +54,7 @@ public class Class8384
                     else {
                         class8521 = new Class8376(method17533, class8520.method17530(i).method23754(), method17532);
                     }
-                    Class2427.field14355.method9766();
+                    Color.field14355.bind();
                     Class6044.method17977(method17533, method17532.method16275(), class8521);
                 }
             }
@@ -69,6 +72,6 @@ public class Class8384
     }
     
     static {
-        Class8384.field34364 = Class7840.method25330();
+        Class8384.field34364 = Renderer.get();
     }
 }

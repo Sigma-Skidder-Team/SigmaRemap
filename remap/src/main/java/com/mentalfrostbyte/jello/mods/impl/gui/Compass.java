@@ -34,7 +34,7 @@ public class Compass extends Module
                 }
             }
             final double n3 = (7.0f + this.method10809(Compass.mc.player.rotationYaw) - intValue) / 15.0f * n;
-            Class8154.method26899(Compass.mc.field4632.method7694() / 2 - index * n * 1.5f, -40.0f, index * n * 2 * 1.5f, (float)(220 + n2), Class7853.field32200, Class6430.method19118(Class265.field1278.field1292, 0.25f));
+            Class8154.method26899(Compass.mc.field4632.method7694() / 2 - index * n * 1.5f, -40.0f, index * n * 2 * 1.5f, (float)(220 + n2), ClientAssets.shadow, Class6430.method19118(Class265.field1278.field1292, 0.25f));
             int n4 = 0;
             for (final int intValue2 : method10807) {
                 ++n4;
@@ -85,15 +85,15 @@ public class Compass extends Module
         }
         if (!string.matches(".*\\d+.*")) {
             if (string.length() != 1) {
-                Class8154.method26889(Class9400.field40314, (float)(n + (n3 - Class9400.field40314.method23505(string)) / 2), (float)(n2 + 20), string, Class6430.method19118(Class265.field1278.field1292, n4));
+                Class8154.method26889(ClientFonts.JelloLight25, (float)(n + (n3 - ClientFonts.JelloLight25.getWidth(string)) / 2), (float)(n2 + 20), string, Class6430.method19118(Class265.field1278.field1292, n4));
             }
             else {
-                Class8154.method26889(Class9400.field40325, (float)(n + (n3 - Class9400.field40325.method23505(string)) / 2), (float)(n2 + 10), string, Class6430.method19118(Class265.field1278.field1292, n4));
+                Class8154.method26889(ClientFonts.JelloMedium40, (float)(n + (n3 - ClientFonts.JelloMedium40.getWidth(string)) / 2), (float)(n2 + 10), string, Class6430.method19118(Class265.field1278.field1292, n4));
             }
         }
         else {
             Class8154.method26876((float)(n + n3 / 2 - 1), (float)(n2 + 28), (float)(n + n3 / 2 + 1), (float)(n2 + 38), Class6430.method19118(Class265.field1278.field1292, n4 * 0.5f));
-            Class8154.method26889(Class9400.field40312, (float)(n + (n3 - Class9400.field40312.method23505(string)) / 2), (float)(n2 + 40), string, Class6430.method19118(Class265.field1278.field1292, n4));
+            Class8154.method26889(ClientFonts.JelloLight18, (float)(n + (n3 - ClientFonts.JelloLight18.getWidth(string)) / 2), (float)(n2 + 40), string, Class6430.method19118(Class265.field1278.field1292, n4));
         }
     }
     

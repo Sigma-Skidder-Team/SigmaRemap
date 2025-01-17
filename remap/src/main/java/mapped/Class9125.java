@@ -7,18 +7,17 @@ package mapped;
 import java.util.ArrayList;
 import javax.xml.transform.Transformer;
 import org.w3c.dom.Document;
-import javax.xml.transform.Result;
-import javax.xml.transform.Source;
+
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
-import java.io.Writer;
 import javax.xml.transform.stream.StreamResult;
 import java.io.OutputStreamWriter;
-import org.w3c.dom.Node;
 import java.io.OutputStream;
 import java.io.FileOutputStream;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Element;
+import slick2d.Color;
+
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.InputStream;
 import java.io.FileInputStream;
@@ -27,8 +26,8 @@ import java.io.IOException;
 
 public class Class9125
 {
-    public static Class8014 method33085(final String s, final Class2427 class2427) throws IOException {
-        return method33093(Class8834.method30851(s), null, null, class2427);
+    public static Class8014 method33085(final String s, final Color color) throws IOException {
+        return method33093(Class8834.method30851(s), null, null, color);
     }
     
     public static Class8014 method33086(final String s) throws IOException {
@@ -39,8 +38,8 @@ public class Class9125
         return method33093(new FileInputStream(file), null, null, null);
     }
     
-    public static Class8014 method33088(final InputStream inputStream, final Class2427 class2427) throws IOException {
-        return method33093(inputStream, null, null, class2427);
+    public static Class8014 method33088(final InputStream inputStream, final Color color) throws IOException {
+        return method33093(inputStream, null, null, color);
     }
     
     public static Class8014 method33089(final InputStream inputStream) throws IOException {
@@ -59,7 +58,7 @@ public class Class9125
         return method33093(inputStream, class7865, null, null);
     }
     
-    public static Class8014 method33093(final InputStream is, Class7865 class7865, Class8014 class7866, final Class2427 class7867) throws IOException {
+    public static Class8014 method33093(final InputStream is, Class7865 class7865, Class8014 class7866, final Color class7867) throws IOException {
         if (class7865 == null) {
             class7865 = new Class7866();
         }
@@ -243,7 +242,7 @@ public class Class9125
         class7395.field28491.clear();
         for (int i = 0; i < elementsByTagName.getLength(); ++i) {
             final Element element2 = (Element)elementsByTagName.item(i);
-            class7395.method22719(Float.parseFloat(element2.getAttribute("offset")), new Class2427(Float.parseFloat(element2.getAttribute("r")), Float.parseFloat(element2.getAttribute("g")), Float.parseFloat(element2.getAttribute("b")), 1.0f));
+            class7395.method22719(Float.parseFloat(element2.getAttribute("offset")), new Color(Float.parseFloat(element2.getAttribute("r")), Float.parseFloat(element2.getAttribute("g")), Float.parseFloat(element2.getAttribute("b")), 1.0f));
         }
         class7395.method22715();
     }

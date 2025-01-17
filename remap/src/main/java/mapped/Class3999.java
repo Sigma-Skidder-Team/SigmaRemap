@@ -36,7 +36,7 @@ public class Class3999 extends Block
     private boolean field18029;
     private final Set<BlockPos> field18030;
     
-    public Class3999(final Class9288 class9288) {
+    public Class3999(final Properties class9288) {
         super(class9288);
         this.field18029 = true;
         this.field18030 = Sets.newHashSet();

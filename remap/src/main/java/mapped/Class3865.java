@@ -37,7 +37,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     private static final Class6389<Class475, Optional<IInventory>> field17505;
     private static final Class6389<Class475, Optional<Class434>> field17506;
     
-    public Class3865(final Class9288 class9288, final Supplier<Class5412<? extends Class475>> supplier) {
+    public Class3865(final Properties class9288, final Supplier<Class5412<? extends Class475>> supplier) {
         super(class9288, supplier);
         this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3865.field17497, Direction.NORTH)).with(Class3865.field17498, Class180.field530)).with((IProperty<Comparable>)Class3865.field17499, false));
     }

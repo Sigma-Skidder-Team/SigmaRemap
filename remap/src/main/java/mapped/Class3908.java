@@ -20,7 +20,7 @@ public class Class3908 extends Block implements Class3872
     private static String[] field17713;
     public static final VoxelShape field17714;
     
-    public Class3908(final Class9288 class9288) {
+    public Class3908(final Properties class9288) {
         super(class9288);
     }
     

@@ -6,6 +6,8 @@ package mapped;
 
 import net.minecraft.client.renderer.Matrix4f;
 import org.lwjgl.opengl.GL11;
+import slick2d.Texture;
+
 import java.awt.image.BufferedImage;
 import java.net.URL;
 
@@ -16,8 +18,8 @@ public class Class4908 extends Class4825
     public URL field20997;
     public BufferedImage field20998;
     public boolean field20999;
-    private Class7776 field21000;
-    private Class7776 field21001;
+    private Texture field21000;
+    private Texture field21001;
     private Class9572 field21002;
     
     public Class4908(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {

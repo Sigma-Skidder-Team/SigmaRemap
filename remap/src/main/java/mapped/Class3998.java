@@ -25,7 +25,7 @@ public class Class3998 extends Block
     public static final VoxelShape field18019;
     public static final VoxelShape field18020;
     
-    public Class3998(final Class9288 class9288) {
+    public Class3998(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with(Class3998.field18018, Direction.Axis.X));
     }

@@ -4,18 +4,20 @@
 
 package mapped;
 
+import slick2d.Color;
+
 public class Class8114
 {
     private static String[] field33441;
     private Class7764 field33442;
     private int field33443;
     private int field33444;
-    private Class2427 field33445;
+    private Color field33445;
     private float field33446;
     private float field33447;
     
     public Class8114(final Class7764 field33442, final int field33443, final int field33444) {
-        this.field33445 = Class2427.field14355;
+        this.field33445 = Color.field14355;
         this.field33442 = field33442;
         this.field33443 = field33443;
         this.field33444 = field33444;
@@ -39,11 +41,11 @@ public class Class8114
         this.field33446 = field33446;
     }
     
-    public void method26687(final Class2427 field33445) {
+    public void method26687(final Color field33445) {
         this.field33445 = field33445;
     }
     
-    public Class2427 method26688() {
+    public Color method26688() {
         return this.field33445;
     }
     

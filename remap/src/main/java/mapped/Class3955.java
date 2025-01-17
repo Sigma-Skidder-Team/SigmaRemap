@@ -27,7 +27,7 @@ public class Class3955 extends Class3841
         Class3955.field17861.put(class3832.method11704(), class3833);
     }
     
-    public Class3955(final Class9288 class9288) {
+    public Class3955(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3955.field17859, Direction.NORTH)).with((IProperty<Comparable>)Class3955.field17860, false));
     }

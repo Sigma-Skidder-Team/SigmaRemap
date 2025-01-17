@@ -16,7 +16,7 @@ public class Class8592
     public Class8592(final String s, final boolean field36094) {
         this.field36096 = new Date();
         this.field36094 = field36094;
-        this.field36095 = Class6430.method19175(s, 200, Class9400.field40312);
+        this.field36095 = Class6430.method19175(s, 200, ClientFonts.JelloLight18);
     }
     
     public int method29096() {

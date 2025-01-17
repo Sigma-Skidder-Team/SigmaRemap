@@ -15,7 +15,7 @@ public class Class4839 extends Class4825
     @Override
     public void method14205(final float n) {
         if (this.method14296()) {
-            Class8154.method26899((float)(this.field20478 + 30), (float)(this.field20479 + 30), 187.0f, 36.0f, Class7853.field32219, Class6430.method19118(Class265.field1278.field1292, n));
+            Class8154.method26899((float)(this.field20478 + 30), (float)(this.field20479 + 30), 187.0f, 36.0f, ClientAssets.gem, Class6430.method19118(Class265.field1278.field1292, n));
         }
     }
 }

@@ -21,7 +21,7 @@ public class Class4003 extends Block
     public static final Class7113 field18046;
     private static final Map<Direction, Class7113> field18047;
     
-    public Class4003(final Class9288 class9288) {
+    public Class4003(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class4003.field18041, true)).with((IProperty<Comparable>)Class4003.field18042, true)).with((IProperty<Comparable>)Class4003.field18043, true)).with((IProperty<Comparable>)Class4003.field18044, true)).with((IProperty<Comparable>)Class4003.field18045, true)).with((IProperty<Comparable>)Class4003.field18046, true));
     }

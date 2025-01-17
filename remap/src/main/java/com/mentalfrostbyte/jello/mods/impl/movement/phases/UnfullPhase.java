@@ -45,7 +45,7 @@ public class UnfullPhase extends Module
         if (this.method9906()) {
             if (class5753.method17065() == null || class5753.method17064().getY() != this.field15944 - 1) {
                 if (class5753.method17064().getY() != this.field15944) {
-                    if (class5753.method17064().getY() != this.field15944 + 1 || !(UnfullPhase.mc.world.getBlockState(class5753.method17064()).method21696() instanceof Class3921)) {
+                    if (class5753.method17064().getY() != this.field15944 + 1 || !(UnfullPhase.mc.world.getBlockState(class5753.method17064()).method21696() instanceof SlabBlock)) {
                         if (!(UnfullPhase.mc.world.getBlockState(class5753.method17064()).method21696() instanceof Class3972)) {
                             if (!(UnfullPhase.mc.world.getBlockState(class5753.method17064()).method21696() instanceof Class3916)) {
                                 if (!(UnfullPhase.mc.world.getBlockState(class5753.method17064()).method21696() instanceof Class3855)) {

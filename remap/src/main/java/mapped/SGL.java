@@ -9,7 +9,7 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.DoubleBuffer;
 
-public interface Class6448
+public interface SGL
 {
     public static final int field25602 = 3553;
     public static final int field25603 = 6408;
@@ -101,17 +101,17 @@ public interface Class6448
     
     void method19252(final float p0, final float p1, final float p2, final float p3);
     
-    void method19254(final float p0, final float p1);
+    void glTexCoord2f(final float p0, final float p1);
     
     void method19256(final float p0, final float p1, final float p2);
     
-    void method19255(final float p0, final float p1);
+    void glVertex2f(final float p0, final float p1);
     
     void method19270(final float p0, final float p1, final float p2, final float p3);
     
     void method19274(final float p0, final float p1, final float p2);
     
-    void method19251(final int p0);
+    void glBegin(final int p0);
     
     void method19253();
     

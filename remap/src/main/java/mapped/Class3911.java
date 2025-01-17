@@ -12,7 +12,7 @@ public class Class3911 extends Block
     private static String[] field17716;
     public static final Class7113 field17717;
     
-    public Class3911(final Class9288 class9288) {
+    public Class3911(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3911.field17717, false));
     }

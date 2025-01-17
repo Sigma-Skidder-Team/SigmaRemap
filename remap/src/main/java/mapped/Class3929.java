@@ -15,7 +15,7 @@ public class Class3929 extends Class3854
     private static String[] field17464;
     private final VoxelShape[] field17796;
     
-    public Class3929(final Class9288 class9288) {
+    public Class3929(final Properties class9288) {
         super(2.0f, 2.0f, 16.0f, 16.0f, 24.0f, class9288);
         this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3929.field17465, false)).with((IProperty<Comparable>)Class3929.field17466, false)).with((IProperty<Comparable>)Class3929.field17467, false)).with((IProperty<Comparable>)Class3929.field17468, false)).with((IProperty<Comparable>)Class3929.field17469, false));
         this.field17796 = this.method11914(2.0f, 1.0f, 16.0f, 6.0f, 15.0f);

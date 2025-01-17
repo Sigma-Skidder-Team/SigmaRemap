@@ -15,7 +15,7 @@ public class Class3968 extends Class3967
 {
     private static String[] field17929;
     
-    public Class3968(final Class9288 class9288) {
+    public Class3968(final Properties class9288) {
         super(0.3125f, class9288);
         this.method11877(((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.field17406.method32903()).with((IProperty<Comparable>)Class3968.field17921, false)).with((IProperty<Comparable>)Class3968.field17922, false)).with((IProperty<Comparable>)Class3968.field17923, false)).with((IProperty<Comparable>)Class3968.field17924, false)).with((IProperty<Comparable>)Class3968.field17925, false)).with((IProperty<Comparable>)Class3968.field17926, false));
     }

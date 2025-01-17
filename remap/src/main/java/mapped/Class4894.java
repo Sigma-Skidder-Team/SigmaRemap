@@ -5,6 +5,8 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
+import slick2d.TrueTypeFont;
+
 import java.util.Iterator;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -54,7 +56,7 @@ public class Class4894 extends Class4841
         this.method14684();
     }
     
-    public Class4894(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20920, final int field20921, final Class6523 class4804, final String s2, final Class7524 class4805) {
+    public Class4894(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20920, final int field20921, final Class6523 class4804, final String s2, final TrueTypeFont class4805) {
         super(class4803, s, n, n2, n3, n4, class4804, s2, class4805, false);
         this.field20920 = new ArrayList<String>();
         this.field20921 = 0;
@@ -96,7 +98,7 @@ public class Class4894 extends Class4841
     
     private void method14684() {
         this.method14250().clear();
-        this.field20496 = Class9400.field40312;
+        this.field20496 = ClientFonts.JelloLight18;
         final Class4868 class4868;
         this.method14239(class4868 = new Class4868(this, "dropdownButton", 0, 0, this.method14278(), this.method14278(), this.field20497));
         class4868.method14270((class4803, class4804) -> {
@@ -200,7 +202,7 @@ public class Class4894 extends Class4841
                 }
                 string = " (" + ((Class4845)entry.getValue()).field20758.get(((Class4845)entry.getValue()).field20759) + ")";
             }
-            Class8154.method26889(this.method14316(), (float)(this.method14272() + 10), (float)(this.method14274() + (this.method14278() - this.method14316().method23539()) / 2 + 1), this.method14314() + string, Class6430.method19118(this.field20497.method19729(), n * 0.7f));
+            Class8154.method26889(this.method14316(), (float)(this.method14272() + 10), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2 + 1), this.method14314() + string, Class6430.method19118(this.field20497.method19729(), n * 0.7f));
             Class8154.method26872();
         }
         final boolean b = this.field20924.method35858() < 1.0f;

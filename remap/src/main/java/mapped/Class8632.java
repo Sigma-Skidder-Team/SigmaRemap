@@ -4,14 +4,11 @@
 
 package mapped;
 
+import slick2d.Color;
+
 import java.io.IOException;
-import java.awt.image.RenderedImage;
 import javax.imageio.ImageIO;
-import java.util.Hashtable;
-import java.awt.image.ColorModel;
 import java.awt.image.BufferedImage;
-import java.awt.image.DataBuffer;
-import java.awt.image.SampleModel;
 import java.awt.image.Raster;
 import java.awt.Point;
 import java.awt.image.ComponentColorModel;
@@ -34,7 +31,7 @@ public class Class8632 implements Class8633
         final ByteBuffer allocate = ByteBuffer.allocate(n);
         for (int i = 0; i < class7764.method24844(); ++i) {
             for (int j = 0; j < class7764.method24843(); ++j) {
-                final Class2427 method24855 = class7764.method24855(j, i);
+                final Color method24855 = class7764.method24855(j, i);
                 allocate.put((byte)(method24855.field14368 * 255.0f));
                 allocate.put((byte)(method24855.field14369 * 255.0f));
                 allocate.put((byte)(method24855.field14370 * 255.0f));

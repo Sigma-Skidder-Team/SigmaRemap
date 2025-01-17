@@ -75,8 +75,8 @@ public class Class4921 extends Class4825
             Class8154.method26876((float)field20478, (float)(this.field20479 + n3), (float)(field20478 + field20479), (float)(this.field20479 + this.method14278() - n3), Class6430.method19118(Class265.field1281.field1292, 1.0f * n));
         }
         else {
-            Class8154.method26904((float)field20478, (float)this.field20479, (float)field20479, (float)n2, Class7853.field32162, n);
-            Class8154.method26904((float)field20478, (float)(this.field20479 + this.field20481 - n2), (float)field20479, (float)n2, Class7853.field32163, n);
+            Class8154.method26904((float)field20478, (float)this.field20479, (float)field20479, (float)n2, ClientAssets.verticalscrollbartop, n);
+            Class8154.method26904((float)field20478, (float)(this.field20479 + this.field20481 - n2), (float)field20479, (float)n2, ClientAssets.verticalscrollbarbottom, n);
             Class8154.method26876((float)field20478, (float)(this.field20479 + n2), (float)(field20478 + field20479), (float)(this.field20479 + this.method14278() - n2), Class6430.method19118(Class265.field1273.field1292, 0.45f * n));
         }
         super.method14205(n);

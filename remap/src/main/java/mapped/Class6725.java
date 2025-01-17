@@ -8,6 +8,7 @@ import org.newdawn.slick.svg.ParsingException;
 import org.w3c.dom.NodeList;
 import java.util.ArrayList;
 import org.w3c.dom.Element;
+import slick2d.Color;
 
 public class Class6725 implements Class6721
 {
@@ -56,7 +57,7 @@ public class Class6725 implements Class6721
                     final float float1 = Float.parseFloat(element4.getAttribute("offset"));
                     final String method27122 = Class8189.method27122(element4.getAttribute("style"), "stop-color");
                     final String method27123 = Class8189.method27122(element4.getAttribute("style"), "stop-opacity");
-                    final Class2427 class8816 = new Class2427(Integer.parseInt(method27122.substring(1), 16));
+                    final Color class8816 = new Color(Integer.parseInt(method27122.substring(1), 16));
                     class8816.field14371 = Float.parseFloat(method27123);
                     e.method16286(float1, class8816);
                 }
@@ -97,7 +98,7 @@ public class Class6725 implements Class6721
                     final float float2 = Float.parseFloat(element6.getAttribute("offset"));
                     final String method27124 = Class8189.method27122(element6.getAttribute("style"), "stop-color");
                     final String method27125 = Class8189.method27122(element6.getAttribute("style"), "stop-opacity");
-                    final Class2427 class8817 = new Class2427(Integer.parseInt(method27124.substring(1), 16));
+                    final Color class8817 = new Color(Integer.parseInt(method27124.substring(1), 16));
                     class8817.field14371 = Float.parseFloat(method27125);
                     e2.method16286(float2, class8817);
                 }

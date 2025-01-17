@@ -16,7 +16,7 @@ public class Class4016 extends Block
     public static final VoxelShape field18091;
     private final Class181 field18092;
     
-    public Class4016(final Class181 field18092, final Class9288 class9288) {
+    public Class4016(final Class181 field18092, final Properties class9288) {
         super(class9288);
         this.field18092 = field18092;
     }

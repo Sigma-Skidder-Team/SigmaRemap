@@ -18,7 +18,7 @@ public class Class3855 extends Class3854
     private final VoxelShape[] field17475;
     private final VoxelShape[] field17476;
     
-    public Class3855(final Class9288 class9288) {
+    public Class3855(final Properties class9288) {
         super(0.0f, 3.0f, 0.0f, 14.0f, 24.0f, class9288);
         this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3855.field17474, true)).with((IProperty<Comparable>)Class3855.field17465, false)).with((IProperty<Comparable>)Class3855.field17466, false)).with((IProperty<Comparable>)Class3855.field17467, false)).with((IProperty<Comparable>)Class3855.field17468, false)).with((IProperty<Comparable>)Class3855.field17469, false));
         this.field17475 = this.method11914(4.0f, 3.0f, 16.0f, 0.0f, 14.0f);

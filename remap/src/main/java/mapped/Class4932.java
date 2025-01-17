@@ -40,10 +40,10 @@ public class Class4932 extends Class4800
         super.method14205(method35858);
         final int n = (this.field20480 - this.field21124.method14276()) / 2;
         final int n2 = (this.field20481 - this.field21124.method14278()) / 2;
-        Class8154.method26889(Class9400.field40325, (float)n, (float)(n2 - 60), "Snake", Class265.field1278.field1292);
+        Class8154.method26889(ClientFonts.JelloMedium40, (float)n, (float)(n2 - 60), "Snake", Class265.field1278.field1292);
         this.field21126 = Math.max(this.field21124.method14756(), this.field21126);
         final String string = "Max: " + this.field21126 + "   |   Score: " + this.field21124.method14756();
-        Class8154.method26889(Class9400.field40313, (float)(n + this.field21124.method14276() - Class9400.field40313.method23505(string)), (float)(n2 - 50), string, Class6430.method19118(Class265.field1278.field1292, 0.8f));
+        Class8154.method26889(ClientFonts.JelloLight20, (float)(n + this.field21124.method14276() - ClientFonts.JelloLight20.getWidth(string)), (float)(n2 - 50), string, Class6430.method19118(Class265.field1278.field1292, 0.8f));
     }
     
     @Override

@@ -23,7 +23,7 @@ public class Class3901 extends Class3892
     private Class8691 field17615;
     private static final Predicate<BlockState> field17616;
     
-    public Class3901(final Class9288 class9288) {
+    public Class3901(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3901.field17611, Direction.NORTH));
     }

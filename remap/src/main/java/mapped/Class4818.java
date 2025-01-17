@@ -121,6 +121,6 @@ public class Class4818 extends Class4817
             }
         }
         super.method14205(n);
-        Class8154.method26900((float)(this.field20478 - Math.round(Class7791.method25029(1.0f - this.field20617.method35858(), 0.0f, 1.0f, 1.0f) * 30.0f) + 18), (float)(this.field20481 - 46), 22.0f, 26.0f, Class7853.field32166, Class6430.method19118(this.field20618 ? Class265.field1283.field1292 : Class265.field1273.field1292, this.field20617.method35858() * 0.5f), false);
+        Class8154.method26900((float)(this.field20478 - Math.round(Class7791.method25029(1.0f - this.field20617.method35858(), 0.0f, 1.0f, 1.0f) * 30.0f) + 18), (float)(this.field20481 - 46), 22.0f, 26.0f, ClientAssets.trashcan, Class6430.method19118(this.field20618 ? Class265.field1283.field1292 : Class265.field1273.field1292, this.field20617.method35858() * 0.5f), false);
     }
 }

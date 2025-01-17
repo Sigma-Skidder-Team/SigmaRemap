@@ -29,7 +29,7 @@ public class Class4856 extends Class4841
             this.field20497.method19729();
             final int n2 = this.method14272() + ((this.field20497.method19735() != Class2056.field11738) ? 0 : ((this.field20497.method19735() != Class2056.field11736) ? (this.method14276() / 2) : this.method14276()));
             final int n3 = this.method14274() + ((this.field20497.method19737() != Class2056.field11738) ? 0 : ((this.field20497.method19737() != Class2056.field11737) ? (this.method14278() / 2) : this.method14278()));
-            this.method14316().method23505(this.method14314());
+            this.method14316().getWidth(this.method14314());
             final float n4 = this.field20805 * this.field20805 * this.field20805;
             boolean b = false;
             if (this.method14306()) {
@@ -44,8 +44,8 @@ public class Class4856 extends Class4841
             if (b) {
                 n7 = Class265.field1278.field1292;
             }
-            Class8154.method26889(Class9400.field40311, (float)(this.field20478 + n5 + 50), (float)(this.field20479 + n6 + 5), this.field20495, Class6430.method19118(n7, n));
-            Class8154.method26889(Class9400.field40310, (float)(this.field20478 + n5 + 50), (float)(this.field20479 + n6 + 19), this.field20806, Class6430.method19118(n7, n * 0.5f));
+            Class8154.method26889(ClientFonts.JelloLight14, (float)(this.field20478 + n5 + 50), (float)(this.field20479 + n6 + 5), this.field20495, Class6430.method19118(n7, n));
+            Class8154.method26889(ClientFonts.JelloLight12, (float)(this.field20478 + n5 + 50), (float)(this.field20479 + n6 + 19), this.field20806, Class6430.method19118(n7, n * 0.5f));
             super.method14205(n);
         }
     }

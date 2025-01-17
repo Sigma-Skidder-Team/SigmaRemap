@@ -13,7 +13,7 @@ public class Class8220 extends Class8221
     public Class8220(final String field33767, final int n) {
         super(n);
         this.field33767 = field33767;
-        this.field33768 = this.field33770.method23505(field33767);
+        this.field33768 = this.field33770.getWidth(field33767);
     }
     
     @Override

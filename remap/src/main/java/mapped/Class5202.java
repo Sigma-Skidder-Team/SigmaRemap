@@ -4,6 +4,8 @@
 
 package mapped;
 
+import slick2d.Color;
+
 import java.util.ArrayList;
 
 public class Class5202
@@ -56,7 +58,7 @@ public class Class5202
         if (this.field22209 == null) {
             final Class5335 class5335 = new Class5335(128, 16);
             for (int i = 0; i < 128; ++i) {
-                final Class2427 method16287 = this.method16287(i / 128.0f);
+                final Color method16287 = this.method16287(i / 128.0f);
                 for (int j = 0; j < 16; ++j) {
                     class5335.method16486(i, j, method16287.method9774(), method16287.method9775(), method16287.method9776(), method16287.method9777());
                 }
@@ -110,11 +112,11 @@ public class Class5202
         return this.field22207;
     }
     
-    public void method16286(final float n, final Class2427 class2427) {
-        this.field22203.add(new Class5592(this, n, class2427));
+    public void method16286(final float n, final Color color) {
+        this.field22203.add(new Class5592(this, n, color));
     }
     
-    public Class2427 method16287(float n) {
+    public Color method16287(float n) {
         if (n <= 0.0f) {
             return this.field22203.get(0).field22823;
         }
@@ -126,7 +128,7 @@ public class Class5202
                     final float n2 = class5593.field22822 - class5592.field22822;
                     n -= class5592.field22822;
                     final float n3 = n / n2;
-                    final Class2427 class5594 = new Class2427(1, 1, 1, 1);
+                    final Color class5594 = new Color(1, 1, 1, 1);
                     class5594.field14371 = class5592.field22823.field14371 * (1.0f - n3) + class5593.field22823.field14371 * n3;
                     class5594.field14368 = class5592.field22823.field14368 * (1.0f - n3) + class5593.field22823.field14368 * n3;
                     class5594.field14369 = class5592.field22823.field14369 * (1.0f - n3) + class5593.field22823.field14369 * n3;
@@ -134,7 +136,7 @@ public class Class5202
                     return class5594;
                 }
             }
-            return Class2427.field14360;
+            return Color.field14360;
         }
         return this.field22203.get(this.field22203.size() - 1).field22823;
     }

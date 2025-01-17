@@ -6,6 +6,8 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import org.lwjgl.opengl.GL11;
+import slick2d.TrueTypeFont;
+
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.Collection;
@@ -36,7 +38,7 @@ public class Class4803 implements Class4925
     public boolean field20493;
     public boolean field20494;
     public String field20495;
-    public Class7524 field20496;
+    public TrueTypeFont field20496;
     public Class6523 field20497;
     private ArrayList<Runnable> field20498;
     private final List<Class4803> field20499;
@@ -64,10 +66,10 @@ public class Class4803 implements Class4925
     }
     
     public Class4803(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2) {
-        this(class4803, s, n, n2, n3, n4, class4804, s2, Class9400.field40314);
+        this(class4803, s, n, n2, n3, n4, class4804, s2, ClientFonts.JelloLight25);
     }
     
-    public Class4803(final Class4803 field20475, final String field20476, final int field20477, final int field20478, final int field20479, final int field20480, final Class6523 field20481, final String field20482, final Class7524 field20483) {
+    public Class4803(final Class4803 field20475, final String field20476, final int field20477, final int field20478, final int field20479, final int field20480, final Class6523 field20481, final String field20482, final TrueTypeFont field20483) {
         this.field20476 = new ArrayList<Class4803>();
         this.field20477 = new ArrayList<Class6507>();
         this.field20482 = 1.0f;
@@ -889,11 +891,11 @@ public class Class4803 implements Class4925
         this.field20495 = field20495;
     }
     
-    public Class7524 method14316() {
+    public TrueTypeFont method14316() {
         return this.field20496;
     }
     
-    public void method14317(final Class7524 field20496) {
+    public void method14317(final TrueTypeFont field20496) {
         this.field20496 = field20496;
     }
     

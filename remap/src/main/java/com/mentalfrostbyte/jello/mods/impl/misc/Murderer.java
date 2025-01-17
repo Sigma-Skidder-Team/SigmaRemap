@@ -9,13 +9,15 @@ import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import mapped.*;
 import net.minecraft.entity.Entity;
+import slick2d.Texture;
+import slick2d.TrueTypeFont;
 
 import java.io.IOException;
 
 public class Murderer extends Module
 {
     public String field15732;
-    private Class7776 field15733;
+    private Texture field15733;
     private boolean field15734;
     private boolean field15735;
     
@@ -62,7 +64,7 @@ public class Murderer extends Module
             return;
         }
         if (this.method9883("GUI")) {
-            final Class7524 field40313 = Class9400.field40313;
+            final TrueTypeFont field40313 = ClientFonts.JelloLight20;
             final int method7694 = Minecraft.method5277().field4632.method7694();
             final int method7695 = Minecraft.method5277().field4632.method7695();
             if (this.field15734) {
@@ -71,9 +73,9 @@ public class Murderer extends Module
                 }
             }
             if (this.field15733 != null) {
-                Class8154.method26876((float)(method7694 - field40313.method23505(this.field15732) - 90), (float)(method7695 - 130), (float)(method7694 - 10), (float)(method7695 - 10), 1342177280);
-                Class8154.method26905((float)(method7694 - field40313.method23505(this.field15732) - 80), (float)(method7695 - 120), 50.0f, 100.0f, this.field15733);
-                Class8154.method26889(field40313, (float)(method7694 - field40313.method23505(this.field15732) - 20), (float)(method7695 - field40313.method23506(this.field15732) - 60), this.field15732, -1);
+                Class8154.method26876((float)(method7694 - field40313.getWidth(this.field15732) - 90), (float)(method7695 - 130), (float)(method7694 - 10), (float)(method7695 - 10), 1342177280);
+                Class8154.method26905((float)(method7694 - field40313.getWidth(this.field15732) - 80), (float)(method7695 - 120), 50.0f, 100.0f, this.field15733);
+                Class8154.method26889(field40313, (float)(method7694 - field40313.getWidth(this.field15732) - 20), (float)(method7695 - field40313.getHeight(this.field15732) - 60), this.field15732, -1);
             }
         }
     }

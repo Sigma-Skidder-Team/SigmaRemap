@@ -39,7 +39,7 @@ public class AutoFish extends Module
             }
             AutoFish.mc.method5269().method17292(new Class4307(Class316.field1877));
             AutoFish.mc.method5269().method17292(new Class4307(Class316.field1877));
-            Client.method35173().method35197().method25776(new Class6224("AutoFish", "We catched something!", Class7853.field32192));
+            Client.method35173().method35197().method25776(new Class6224("AutoFish", "We catched something!", ClientAssets.done));
         }
     }
 }

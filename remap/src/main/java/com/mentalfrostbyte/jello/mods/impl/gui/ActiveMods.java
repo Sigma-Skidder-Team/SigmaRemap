@@ -14,6 +14,8 @@ import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import mapped.*;
 import org.lwjgl.opengl.GL11;
+import slick2d.TrueTypeFont;
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Collections;
@@ -27,14 +29,14 @@ public class ActiveMods extends Module
     public int field15891;
     public int field15892;
     public HashMap<Module, Class9572> field15893;
-    public Class7524 field15894;
+    public TrueTypeFont field15894;
     
     public ActiveMods() {
         super(Category.GUI, "ActiveMods", "Renders active mods");
         this.field15890 = new ArrayList<Module>();
         this.field15891 = 0;
         this.field15893 = new HashMap<Module, Class9572>();
-        this.field15894 = Class9400.field40313;
+        this.field15894 = ClientFonts.JelloLight20;
         this.addSetting(new StringSetting("Size", "The font size", 0, new String[] { "Normal", "Small", "Tiny" }));
         this.addSetting(new BooleanSetting("Animations", "Scale in animation", true));
         this.addSetting(new BooleanSetting("Sound", "Toggle sound", true));
@@ -51,15 +53,15 @@ public class ActiveMods extends Module
         final String method9887 = this.method9887("Size");
         switch (method9887) {
             case "Normal": {
-                this.field15894 = Class9400.field40313;
+                this.field15894 = ClientFonts.JelloLight20;
                 break;
             }
             case "Small": {
-                this.field15894 = Class9400.field40312;
+                this.field15894 = ClientFonts.JelloLight18;
                 break;
             }
             default: {
-                this.field15894 = Class9400.field40311;
+                this.field15894 = ClientFonts.JelloLight14;
                 break;
             }
         }
@@ -106,7 +108,7 @@ public class ActiveMods extends Module
                     }
                     ++n;
                 }
-                final int n2 = 23 + n * (this.field15894.method23539() + 1);
+                final int n2 = 23 + n * (this.field15894.getHeight() + 1);
                 final int size = method6786.size();
                 final int n3 = Minecraft.method5277().field4632.method7695() / 2;
                 ActiveMods.mc.fontRenderer.getClass();
@@ -137,9 +139,9 @@ public class ActiveMods extends Module
             int n = 10;
             final int n2 = 1;
             final int method7694 = Minecraft.method5277().field4632.method7694();
-            final Class7524 field15894 = this.field15894;
+            final TrueTypeFont field15894 = this.field15894;
             int field15895 = n - 4;
-            if (this.field15894 == Class9400.field40311) {
+            if (this.field15894 == ClientFonts.JelloLight14) {
                 n -= 3;
             }
             if (Minecraft.method5277().gameSettings.field23466) {
@@ -166,16 +168,16 @@ public class ActiveMods extends Module
                 final String method7697 = key2.getName2();
                 GL11.glAlphaFunc(519, 0.0f);
                 GL11.glPushMatrix();
-                final int n5 = method7694 - n - field15894.method23505(method7697) / 2;
+                final int n5 = method7694 - n - field15894.getWidth(method7697) / 2;
                 final int n6 = field15895 + 12;
                 GL11.glTranslatef((float)n5, (float)n6, 0.0f);
                 GL11.glScalef(n4, n4, 1.0f);
                 GL11.glTranslatef((float)(-n5), (float)(-n6), 0.0f);
-                Class8154.method26899(method7694 - field15894.method23505(method7697) * 1.5f - n - 20.0f, (float)(field15895 - 20), field15894.method23505(method7697) * 3.0f, (float)(field15894.method23539() + n2 + 40), Class7853.field32200, Class6430.method19118(Class265.field1278.field1292, 0.36f * method7696 * (float)Math.sqrt(Math.min(1.2f, field15894.method23505(method7697) / 63.0f))));
-                Class8154.method26889(field15894, (float)(method7694 - n - field15894.method23505(method7697)), (float)field15895, method7697, (method7696 != 1.0f) ? Class6430.method19118(-1, method7696 * 0.95f) : method7695);
+                Class8154.method26899(method7694 - field15894.getWidth(method7697) * 1.5f - n - 20.0f, (float)(field15895 - 20), field15894.getWidth(method7697) * 3.0f, (float)(field15894.getHeight() + n2 + 40), ClientAssets.shadow, Class6430.method19118(Class265.field1278.field1292, 0.36f * method7696 * (float)Math.sqrt(Math.min(1.2f, field15894.getWidth(method7697) / 63.0f))));
+                Class8154.method26889(field15894, (float)(method7694 - n - field15894.getWidth(method7697)), (float)field15895, method7697, (method7696 != 1.0f) ? Class6430.method19118(-1, method7696 * 0.95f) : method7695);
                 GL11.glPopMatrix();
                 n3 -= 100;
-                field15895 += (int)((field15894.method23539() + n2) * Class7791.method25031(method7696, 0.0f, 1.0f, 1.0f));
+                field15895 += (int)((field15894.getHeight() + n2) * Class7791.method25031(method7696, 0.0f, 1.0f, 1.0f));
             }
             this.field15891 = field15895;
         }

@@ -5,38 +5,40 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
+import slick2d.Texture;
+import slick2d.TrueTypeFont;
 
 public class Class4873 extends Class4868
 {
     private static String[] field20855;
     public static final Class6523 field20856;
-    public Class7776 field20857;
+    public Texture field20857;
     
-    public Class4873(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class7776 field20857, final Class6523 class4804, final String s2, final Class7524 class4805) {
+    public Class4873(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Texture field20857, final Class6523 class4804, final String s2, final TrueTypeFont class4805) {
         super(class4803, s, n, n2, n3, n4, class4804, s2, class4805);
         this.field20857 = field20857;
     }
     
-    public Class4873(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class7776 field20857, final Class6523 class4804, final String s2) {
+    public Class4873(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Texture field20857, final Class6523 class4804, final String s2) {
         super(class4803, s, n, n2, n3, n4, class4804, s2);
         this.field20857 = field20857;
     }
     
-    public Class4873(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class7776 field20857, final Class6523 class4804) {
+    public Class4873(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Texture field20857, final Class6523 class4804) {
         super(class4803, s, n, n2, n3, n4, class4804);
         this.field20857 = field20857;
     }
     
-    public Class4873(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class7776 field20857) {
+    public Class4873(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Texture field20857) {
         super(class4803, s, n, n2, n3, n4, Class4873.field20856);
         this.field20857 = field20857;
     }
     
-    public Class7776 method14607() {
+    public Texture method14607() {
         return this.field20857;
     }
     
-    public void method14608(final Class7776 field20857) {
+    public void method14608(final Texture field20857) {
         this.field20857 = field20857;
     }
     

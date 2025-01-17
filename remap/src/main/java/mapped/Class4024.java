@@ -21,7 +21,7 @@ public class Class4024 extends Class4022
     public static final Class7113 field18113;
     private static final Map<IBlockReader, List<Class7387>> field18114;
     
-    public Class4024(final Class9288 class9288) {
+    public Class4024(final Properties class9288) {
         super(class9288);
         this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class4024.field18113, true));
     }

@@ -9,6 +9,7 @@ import java.nio.IntBuffer;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import org.newdawn.slick.SlickException;
+import slick2d.Texture;
 
 public class Class8518 extends Class8519
 {
@@ -63,7 +64,7 @@ public class Class8518 extends Class8519
         EXTFramebufferObject.glGenFramebuffersEXT(intBuffer);
         this.field34935 = intBuffer.get();
         try {
-            final Class7776 method24230 = Class7649.method24214().method24230(this.field34934.method24843(), this.field34934.method24844(), this.field34934.method24801());
+            final Texture method24230 = Class7649.method24214().method24230(this.field34934.method24843(), this.field34934.method24844(), this.field34934.method24801());
             EXTFramebufferObject.glBindFramebufferEXT(36160, this.field34935);
             EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36064, 3553, method24230.method24924(), 0);
             this.method28447();

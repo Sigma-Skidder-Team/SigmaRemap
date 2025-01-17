@@ -160,11 +160,11 @@ public class Class4901 extends Class4841
             final float n10 = class7861.field33469 - n8 + 1.0f;
             final float n11 = class7861.field33470 - n9 + 1.0f;
             final float n12 = max / ((this.field20961 - 1) * 2.0f);
-            Class8154.method26899((float)(this.field20478 + Math.round(n10 * n12 / 16.0f) + this.field20480 / 2 - 16), (float)(this.field20479 + Math.round(n11 * n12 / 16.0f) + this.field20481 / 2 - 42), 32.0f, 46.0f, Class7853.field32212, class7861.field33471);
+            Class8154.method26899((float)(this.field20478 + Math.round(n10 * n12 / 16.0f) + this.field20480 / 2 - 16), (float)(this.field20479 + Math.round(n11 * n12 / 16.0f) + this.field20481 / 2 - 42), 32.0f, 46.0f, ClientAssets.waypoint, class7861.field33471);
         }
         Class8154.method26872();
         final String string = Math.round(this.field20960.field32290 * 16 - this.field20963 * 16.0f) + "  " + Math.round(this.field20960.field32291 * 16 - this.field20962 * 16.0f);
-        Class8154.method26889(Class9400.field40311, (float)(this.field20478 - Class9400.field40311.method23505(string) - 23), (float)(this.field20479 + 35), string, Class6430.method19118(Class265.field1273.field1292, 0.4f));
+        Class8154.method26889(ClientFonts.JelloLight14, (float)(this.field20478 - ClientFonts.JelloLight14.getWidth(string) - 23), (float)(this.field20479 + 35), string, Class6430.method19118(Class265.field1273.field1292, 0.4f));
         this.field20968 = this.field20962;
         this.field20969 = this.field20963;
         this.field20967 = this.field20961;

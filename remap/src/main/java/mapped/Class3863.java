@@ -20,7 +20,7 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     public static final VoxelShape field17493;
     public static final Class2259 field17494;
     
-    public Class3863(final Class9288 class9288) {
+    public Class3863(final Properties class9288) {
         super(class9288, () -> Class5412.field22544);
         this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3863.field17491, Direction.NORTH)).with((IProperty<Comparable>)Class3863.field17492, false));
     }

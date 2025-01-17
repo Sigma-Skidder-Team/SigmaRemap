@@ -12,6 +12,8 @@ import club.minnced.discord.rpc.DiscordRichPresence;
 import club.minnced.discord.rpc.DiscordEventHandlers;
 import club.minnced.discord.rpc.DiscordRPC;
 import org.lwjgl.glfw.GLFW;
+import slick2d.Texture;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.io.File;
@@ -50,7 +52,7 @@ public class Client
     private Class8088 field40707;
     private Class9367 field40708;
     private Class2209 field40709;
-    public static ArrayList<Class7776> field40710;
+    public static ArrayList<Texture> field40710;
     public static boolean field40711;
     
     public static Client method35173() {
@@ -83,7 +85,7 @@ public class Client
         this.field40688 = Class8678.method29718();
         this.field40689 = new Class6883();
         (this.field40691 = new Class9070()).method32666();
-        Class7853.method25391();
+        ClientAssets.decryptTextures();
         (this.field40701 = new Class6466()).method19338();
         (this.field40702 = new Class5837()).method17548();
         this.field40692 = new Class9000();
@@ -188,7 +190,7 @@ public class Client
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         GL11.glDisable(2896);
         RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
-        Class7853.field32193.method24916();
+        ClientAssets.gingerbread.bind();
         method35173().method35188().method21097(new Class5734());
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.method30028();
@@ -198,13 +200,13 @@ public class Client
         GL11.glPopMatrix();
     }
     
-    public void method35182(final Class7776 e) {
+    public void method35182(final Texture e) {
         Client.field40710.add(e);
     }
     
     public void method35183() {
         if (!Client.field40710.isEmpty()) {
-            final Iterator<Class7776> iterator = Client.field40710.iterator();
+            final Iterator<Texture> iterator = Client.field40710.iterator();
             while (iterator.hasNext()) {
                 iterator.next().method24923();
             }
@@ -374,7 +376,7 @@ public class Client
     
     static {
         Client.field40683 = Minecraft.method5277();
-        Client.field40710 = new ArrayList<Class7776>();
+        Client.field40710 = new ArrayList<Texture>();
         Client.field40711 = false;
     }
 }

@@ -13,7 +13,7 @@ public abstract class Class3864<E extends TileEntity> extends Class3841
 {
     public final Supplier<Class5412<? extends E>> field17495;
     
-    public Class3864(final Class9288 class9288, final Supplier<Class5412<? extends E>> field17495) {
+    public Class3864(final Properties class9288, final Supplier<Class5412<? extends E>> field17495) {
         super(class9288);
         this.field17495 = field17495;
     }

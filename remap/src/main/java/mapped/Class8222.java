@@ -41,7 +41,7 @@ public class Class8222 extends Class8221
         this.field33777 = 0;
         final Iterator<String> iterator = this.field33776.iterator();
         while (iterator.hasNext()) {
-            this.field33777 = Math.max(this.field33777, this.field33770.method23505(iterator.next()));
+            this.field33777 = Math.max(this.field33777, this.field33770.getWidth(iterator.next()));
         }
     }
     

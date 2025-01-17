@@ -167,23 +167,23 @@ public class Block implements Class3832
         return class7096;
     }
     
-    public Block(final Class9288 class9288) {
+    public Block(final Properties class9288) {
         final Class9500 class9289 = new Class9500((O)this);
         this.method11875(class9289);
-        this.field17401 = Class9288.method34297(class9288);
-        this.field17402 = Class9288.method34298(class9288);
-        this.field17408 = Class9288.method34299(class9288);
-        this.field17400 = Class9288.method34300(class9288);
-        this.field17396 = Class9288.method34301(class9288);
-        this.field17398 = Class9288.method34302(class9288);
-        this.field17397 = Class9288.method34303(class9288);
-        this.field17399 = Class9288.method34304(class9288);
-        this.field17403 = Class9288.method34305(class9288);
-        this.field17404 = Class9288.method34306(class9288);
-        this.field17405 = Class9288.method34307(class9288);
-        this.field17409 = Class9288.method34308(class9288);
-        this.field17411 = Class9288.method34309(class9288);
-        this.field17410 = Class9288.method34310(class9288);
+        this.field17401 = Properties.method34297(class9288);
+        this.field17402 = Properties.method34298(class9288);
+        this.field17408 = Properties.method34299(class9288);
+        this.field17400 = Properties.method34300(class9288);
+        this.field17396 = Properties.method34301(class9288);
+        this.field17398 = Properties.method34302(class9288);
+        this.field17397 = Properties.method34303(class9288);
+        this.field17399 = Properties.method34304(class9288);
+        this.field17403 = Properties.method34305(class9288);
+        this.field17404 = Properties.method34306(class9288);
+        this.field17405 = Properties.method34307(class9288);
+        this.field17409 = Properties.method34308(class9288);
+        this.field17411 = Properties.method34309(class9288);
+        this.field17410 = Properties.method34310(class9288);
         this.field17406 = class9289.method35380(BlockState::new);
         this.method11877(this.field17406.method32903());
     }
@@ -723,5 +723,135 @@ public class Block implements Class3832
             class2270.defaultReturnValue((byte)127);
             return class2270;
         });
+    }
+
+    public static class Properties
+    {
+        private static String[] field39830;
+        private Material field39831;
+        private MaterialColor field39832;
+        private boolean field39833;
+        private SoundType field39834;
+        private int field39835;
+        private float field39836;
+        private float field39837;
+        private boolean field39838;
+        private float field39839;
+        private float field39840;
+        private float field39841;
+        private ResourceLocation field39842;
+        private boolean field39843;
+        private boolean field39844;
+
+        private Properties(final Material field39831, final MaterialColor field39832) {
+            this.field39833 = true;
+            this.field39834 = SoundType.field30570;
+            this.field39839 = 0.6f;
+            this.field39840 = 1.0f;
+            this.field39841 = 1.0f;
+            this.field39843 = true;
+            this.field39831 = field39831;
+            this.field39832 = field39832;
+        }
+
+        public static Properties method34279(final Material class8059) {
+            return create(class8059, class8059.method26446());
+        }
+
+        public static Properties method34280(final Material class8059, final Class181 class8060) {
+            return create(class8059, class8060.method816());
+        }
+
+        public static Properties create(final Material class8059, final MaterialColor class8060) {
+            return new Properties(class8059, class8060);
+        }
+
+        public static Properties method34282(final Block class3833) {
+            final Properties class3834 = new Properties(class3833.field17401, class3833.field17402);
+            class3834.field39831 = class3833.field17401;
+            class3834.field39837 = class3833.field17397;
+            class3834.field39836 = class3833.field17398;
+            class3834.field39833 = class3833.field17408;
+            class3834.field39838 = class3833.field17399;
+            class3834.field39835 = class3833.field17396;
+            class3834.field39832 = class3833.field17402;
+            class3834.field39834 = class3833.field17400;
+            class3834.field39839 = class3833.method11865();
+            class3834.field39840 = class3833.method11866();
+            class3834.field39844 = Block.method11888(class3833);
+            class3834.field39843 = Block.method11889(class3833);
+            return class3834;
+        }
+
+        public Properties method34283() {
+            this.field39833 = false;
+            this.field39843 = false;
+            return this;
+        }
+
+        public Properties method34284() {
+            this.field39843 = false;
+            return this;
+        }
+
+        public Properties method34285(final float field39839) {
+            this.field39839 = field39839;
+            return this;
+        }
+
+        public Properties method34286(final float field39840) {
+            this.field39840 = field39840;
+            return this;
+        }
+
+        public Properties method34287(final float field39841) {
+            this.field39841 = field39841;
+            return this;
+        }
+
+        public Properties method34288(final SoundType field39834) {
+            this.field39834 = field39834;
+            return this;
+        }
+
+        public Properties method34289(final int field39835) {
+            this.field39835 = field39835;
+            return this;
+        }
+
+        public Properties hardnessAndResistance(final float field39837, final float b) {
+            this.field39837 = field39837;
+            this.field39836 = Math.max(0.0f, b);
+            return this;
+        }
+
+        public Properties method34291() {
+            return this.method34292(0.0f);
+        }
+
+        public Properties method34292(final float n) {
+            this.hardnessAndResistance(n, n);
+            return this;
+        }
+
+        public Properties method34293() {
+            this.field39838 = true;
+            return this;
+        }
+
+        public Properties method34294() {
+            this.field39844 = true;
+            return this;
+        }
+
+        public Properties method34295() {
+            this.field39842 = Class9020.field38063;
+            return this;
+        }
+
+        public Properties method34296(final Block class3833) {
+            this.field39842 = class3833.method11832();
+            return this;
+        }
     }
 }

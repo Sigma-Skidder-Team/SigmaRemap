@@ -36,7 +36,7 @@ public class NameTags extends Module
                 if (!class5735.method1823()) {
                     final Vec2f class5736 = (Vec2f)entry.getValue();
                     final String method8459 = class5735.getName().getUnformattedComponentText();
-                    final int n3 = Class9493.field40813.method23505(method8459) + 8;
+                    final int n3 = Class9493.field40813.getWidth(method8459) + 8;
                     final int round = Math.round(class5736.x);
                     final int round2 = Math.round(class5736.y);
                     GL11.glPushMatrix();

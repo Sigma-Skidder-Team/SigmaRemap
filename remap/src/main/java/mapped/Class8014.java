@@ -5,12 +5,12 @@
 package mapped;
 
 import org.newdawn.slick.SlickException;
+import slick2d.Color;
+import slick2d.Renderer;
+
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.ByteArrayInputStream;
-import java.io.OutputStream;
 import java.io.ByteArrayOutputStream;
-import java.util.Collection;
 import java.security.PrivilegedAction;
 import java.security.AccessController;
 import java.util.Iterator;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class Class8014
 {
-    public Class6448 field32994;
+    public SGL field32994;
     public static final int field32995 = 1;
     public static final int field32996 = 2;
     private static final int field32997 = 100;
@@ -37,7 +37,7 @@ public class Class8014
     private Class7764 field33009;
     private boolean field33010;
     private String field33011;
-    private Class2427 field33012;
+    private Color field33012;
     
     public static void method26229(final String s) {
         Class7395.method22708(s);
@@ -85,8 +85,8 @@ public class Class8014
         this(s, n, null);
     }
     
-    public Class8014(final String s, final int field33000, final Class2427 field33001) {
-        this.field32994 = Class7840.method25330();
+    public Class8014(final String s, final int field33000, final Color field33001) {
+        this.field32994 = Renderer.get();
         this.field32998 = new ArrayList();
         this.field32999 = new HashMap();
         this.field33001 = new ArrayList();
@@ -100,7 +100,7 @@ public class Class8014
     }
     
     public Class8014(final Class7764 field33009, final int field33010) {
-        this.field32994 = Class7840.method25330();
+        this.field32994 = Renderer.get();
         this.field32998 = new ArrayList();
         this.field32999 = new HashMap();
         this.field33001 = new ArrayList();
@@ -222,7 +222,7 @@ public class Class8014
             if (this.field33003 == 1) {
                 this.field32994.method19259(770, 771);
             }
-            Class2427.field14355.method9766();
+            Color.field14355.bind();
             this.field32994.method19274(-n, -n2, 0.0f);
         }
     }

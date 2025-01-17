@@ -13,7 +13,7 @@ public class Class4019 extends Class4017
     public static final Class7114<Class104> field18100;
     public static final Class7113 field18101;
     
-    public Class4019(final Class9288 class9288) {
+    public Class4019(final Properties class9288) {
         super(true, class9288);
         this.method11877(((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.field17406.method32903()).with(Class4019.field18100, Class104.field311)).with((IProperty<Comparable>)Class4019.field18101, false));
     }

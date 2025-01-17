@@ -25,7 +25,7 @@ public class Class3859 extends Block implements Class3857
     public final Class7257 field17481;
     private final List<IFluidState> field17482;
     
-    public Class3859(final Class7257 field17481, final Class9288 class9288) {
+    public Class3859(final Class7257 field17481, final Properties class9288) {
         super(class9288);
         this.field17481 = field17481;
         (this.field17482 = Lists.newArrayList()).add(field17481.method22177(false));

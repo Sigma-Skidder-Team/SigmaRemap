@@ -14,7 +14,7 @@ public abstract class Class3944 extends Class3841
 {
     private final Class181 field17837;
     
-    public Class3944(final Class181 field17837, final Class9288 class9288) {
+    public Class3944(final Class181 field17837, final Properties class9288) {
         super(class9288);
         this.field17837 = field17837;
     }
