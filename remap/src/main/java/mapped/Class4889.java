@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientFonts;
 
 import java.util.Iterator;
 import java.util.ArrayList;

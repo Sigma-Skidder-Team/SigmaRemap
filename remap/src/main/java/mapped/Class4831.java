@@ -7,6 +7,7 @@ package mapped;
 import java.util.Iterator;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientFonts;
 import org.lwjgl.glfw.GLFW;
 import slick2d.TrueTypeFont;
 

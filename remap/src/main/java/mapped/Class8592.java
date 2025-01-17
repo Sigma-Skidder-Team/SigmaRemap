@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.ClientFonts;
+
 import java.util.Date;
 
 public class Class8592

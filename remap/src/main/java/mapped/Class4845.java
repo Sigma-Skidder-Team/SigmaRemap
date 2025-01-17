@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.ClientFonts;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;

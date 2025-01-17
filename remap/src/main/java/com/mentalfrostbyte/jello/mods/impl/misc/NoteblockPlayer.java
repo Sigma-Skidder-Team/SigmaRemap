@@ -7,6 +7,8 @@ package com.mentalfrostbyte.jello.mods.impl.misc;
 import java.util.HashMap;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientAssets;
+import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.PremiumModule;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;

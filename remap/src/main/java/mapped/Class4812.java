@@ -5,6 +5,8 @@
 package mapped;
 
 import java.io.InputStream;
+
+import com.mentalfrostbyte.jello.ClientFonts;
 import org.apache.http.HttpEntity;
 import java.io.IOException;
 import org.apache.commons.io.IOUtils;

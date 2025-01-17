@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
 import com.mentalfrostbyte.jello.settings.impl.*;

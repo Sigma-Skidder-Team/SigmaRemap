@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientAssets;
 
 public class Class4921 extends Class4825
 {

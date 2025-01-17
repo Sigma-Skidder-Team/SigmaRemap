@@ -10,6 +10,7 @@ import java.io.File;
 import java.awt.Color;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.mods.impl.gui.TabGUI;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;

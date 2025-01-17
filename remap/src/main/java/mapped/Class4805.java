@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.ClientFonts;
 import org.lwjgl.opengl.GL11;
 
 public class Class4805 extends Class4803

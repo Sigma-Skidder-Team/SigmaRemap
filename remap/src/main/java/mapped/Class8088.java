@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.mods.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.mods.impl.movement.Fly;
 import net.minecraft.util.math.BlockPos;

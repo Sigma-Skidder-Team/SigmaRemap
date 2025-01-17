@@ -5,6 +5,8 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientAssets;
+import com.mentalfrostbyte.jello.ClientFonts;
 import slick2d.Texture;
 
 public class Class4897 extends Class4841

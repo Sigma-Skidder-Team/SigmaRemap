@@ -7,6 +7,8 @@ package com.mentalfrostbyte.jello.mods.impl.render;
 import java.awt.Color;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientAssets;
+import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.impl.player.Blink;

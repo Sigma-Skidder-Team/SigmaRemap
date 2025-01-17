@@ -4,6 +4,7 @@
 
 package com.mentalfrostbyte.jello.mods.impl.render;
 
+import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.*;

@@ -9,6 +9,8 @@ import javax.imageio.ImageIO;
 import java.io.ByteArrayInputStream;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientAssets;
+import com.mentalfrostbyte.jello.ClientFonts;
 import org.apache.commons.codec.binary.Base64;
 import java.util.Date;
 import org.lwjgl.opengl.GL11;

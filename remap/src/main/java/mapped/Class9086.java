@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientAssets;
 
 import java.util.ArrayList;
 import java.util.Arrays;

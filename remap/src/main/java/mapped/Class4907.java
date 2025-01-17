@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientFonts;
 import slick2d.Texture;
 
 import java.io.IOException;

@@ -9,6 +9,8 @@ import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.Iterator;
 
+import com.mentalfrostbyte.jello.ClientAssets;
+import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.*;

@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Iterator;
 
+import com.mentalfrostbyte.jello.ClientAssets;
+import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import org.lwjgl.opengl.GL11;

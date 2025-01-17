@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.ClientFonts;
 import slick2d.TrueTypeFont;
 
 public class Class4832 extends Class4831

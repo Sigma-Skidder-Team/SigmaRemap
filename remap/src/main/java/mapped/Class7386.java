@@ -6,6 +6,7 @@ package mapped;
 
 import java.awt.Color;
 
+import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.mods.impl.gui.MusicParticles;
 import org.lwjgl.opengl.GL11;
 

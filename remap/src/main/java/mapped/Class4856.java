@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.ClientFonts;
+
 public class Class4856 extends Class4841
 {
     private static String[] field20591;

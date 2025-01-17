@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.ClientFonts;
+
 public class Class4932 extends Class4800
 {
     public Minecraft field21122;

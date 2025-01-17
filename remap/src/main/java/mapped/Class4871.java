@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.ClientAssets;
 import org.lwjgl.opengl.GL11;
 import slick2d.Texture;
 import slick2d.TrueTypeFont;

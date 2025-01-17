@@ -2,9 +2,11 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package com.mentalfrostbyte.jello;
 
 import com.mentalfrostbyte.Client;
+import mapped.Class2209;
+import mapped.DefaultFont;
 import slick2d.TrueTypeFont;
 
 import java.awt.Font;

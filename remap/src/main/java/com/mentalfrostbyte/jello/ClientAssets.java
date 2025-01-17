@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package com.mentalfrostbyte.jello;
 
 import java.awt.Graphics2D;
 import javax.imageio.ImageIO;
@@ -11,6 +11,9 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
 import com.mentalfrostbyte.Client;
+import mapped.BufferedImage;
+import mapped.Class9399;
+import mapped.Class9577;
 import org.apache.commons.codec.digest.DigestUtils;
 import slick2d.Texture;
 

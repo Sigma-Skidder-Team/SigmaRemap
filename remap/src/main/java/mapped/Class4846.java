@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.ClientFonts;
 import net.minecraft.util.math.Vec3i;
 
 public class Class4846 extends Class4841

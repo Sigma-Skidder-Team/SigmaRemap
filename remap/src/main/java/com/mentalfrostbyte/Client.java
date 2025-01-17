@@ -6,6 +6,7 @@ package com.mentalfrostbyte;
 
 import java.util.Iterator;
 
+import com.mentalfrostbyte.jello.ClientAssets;
 import mapped.*;
 import org.lwjgl.opengl.GL11;
 import club.minnced.discord.rpc.DiscordRichPresence;

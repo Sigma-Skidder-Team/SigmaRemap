@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.ClientAssets;
+
 public class Class4839 extends Class4825
 {
     private static String[] field20591;

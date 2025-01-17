@@ -7,6 +7,8 @@ package mapped;
 import java.util.Iterator;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientAssets;
+import com.mentalfrostbyte.jello.ClientFonts;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3i;
 import org.lwjgl.opengl.GL11;

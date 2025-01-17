@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.ClientAssets;
+import com.mentalfrostbyte.jello.ClientFonts;
 import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import java.nio.ByteBuffer;

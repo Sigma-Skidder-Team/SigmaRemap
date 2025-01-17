@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientAssets;
 import net.minecraft.util.math.Vec3i;
 
 import java.util.Collections;

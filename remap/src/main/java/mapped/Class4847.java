@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.io.IOException;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientFonts;
 import org.lwjgl.opengl.GL11;
 import slick2d.Texture;
 

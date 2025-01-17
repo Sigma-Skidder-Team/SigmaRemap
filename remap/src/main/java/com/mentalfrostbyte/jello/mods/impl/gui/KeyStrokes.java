@@ -5,6 +5,7 @@
 package com.mentalfrostbyte.jello.mods.impl.gui;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.*;

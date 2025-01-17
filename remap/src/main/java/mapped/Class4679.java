@@ -7,6 +7,7 @@ package mapped;
 import java.io.IOException;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientAssets;
 import com.mojang.authlib.exceptions.AuthenticationException;
 
 public class Class4679 implements Class4659

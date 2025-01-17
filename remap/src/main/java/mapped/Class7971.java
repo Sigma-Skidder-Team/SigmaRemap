@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 import java.nio.charset.Charset;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientAssets;
 import org.apache.commons.codec.binary.Base64;
 
 import java.io.OutputStream;

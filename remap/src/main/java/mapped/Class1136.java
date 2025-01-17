@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.ClientFonts;
+
 public class Class1136 implements Runnable
 {
     private static String[] field6139;

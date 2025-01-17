@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.ClientFonts;
 import slick2d.TrueTypeFont;
 
 import java.util.Iterator;

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.ClientAssets;
 import org.lwjgl.opengl.GL11;
 
 public class Class4867 extends Class4841

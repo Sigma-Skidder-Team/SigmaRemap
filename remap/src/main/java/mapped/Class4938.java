@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.ClientFonts;
 import org.lwjgl.glfw.GLFW;
 
 public class Class4938 extends Class4800
