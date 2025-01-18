@@ -42,7 +42,7 @@ public class Class4372 extends Class4247 {
    }
 
    @Override
-   public void method13089(int var1, int var2, int var3) {
+   public void onClick3(int mouseX, int mouseY, int mouseButton) {
       this.method13702(!this.field21367, true);
    }
 }

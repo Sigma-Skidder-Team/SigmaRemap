@@ -14,7 +14,7 @@ public class ClickGUIBlurOverlay extends Class4278 {
    }
 
    @Override
-   public void method13089(int var1, int var2, int var3) {
-      super.method13089(var1, var2, var3);
+   public void onClick3(int mouseX, int mouseY, int mouseButton) {
+      super.onClick3(mouseX, mouseY, mouseButton);
    }
 }

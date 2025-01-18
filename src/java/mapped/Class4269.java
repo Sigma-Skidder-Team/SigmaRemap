@@ -32,9 +32,9 @@ public class Class4269 extends Class4247 {
    }
 
    @Override
-   public void keyPressed(int var1) {
-      super.keyPressed(var1);
-      if (var1 == 257) {
+   public void keyPressed(int keyCode) {
+      super.keyPressed(keyCode);
+      if (keyCode == 257) {
          ((JelloChatPanel)this.getScreen()).method13359(this.field20694.getTypedText());
          Client.getInstance().getNetworkManager().field38429.method29515("SF4FSERFERF", this.field20694.getTypedText());
          this.field20694.method13304("");

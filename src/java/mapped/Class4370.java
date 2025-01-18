@@ -76,13 +76,13 @@ public class Class4370 extends Class4247 {
    }
 
    @Override
-   public boolean method13078(int var1, int var2, int var3) {
+   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
       this.field21364 = true;
-      return super.method13078(var1, var2, var3);
+      return super.onClick(mouseX, mouseY, mouseButton);
    }
 
    @Override
-   public void method13095(int var1, int var2, int var3) {
+   public void onClick2(int mouseX, int mouseY, int mouseButton) {
       this.field21364 = false;
    }
 

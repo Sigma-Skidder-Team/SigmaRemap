@@ -207,20 +207,20 @@ public class JelloClickGUI extends Screen {
    }
 
    @Override
-   public boolean method13078(int var1, int var2, int var3) {
-      if (var3 <= 1) {
-         return super.method13078(var1, var2, var3);
+   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
+      if (mouseButton <= 1) {
+         return super.onClick(mouseX, mouseY, mouseButton);
       } else {
-         this.keyPressed(var3);
+         this.keyPressed(mouseButton);
          return false;
       }
    }
 
    @Override
-   public void keyPressed(int var1) {
-      super.keyPressed(var1);
+   public void keyPressed(int keyCode) {
+      super.keyPressed(keyCode);
       int var4 = Client.getInstance().getModuleManager().getMacOSTouchBar().method13728(ClickGui.class);
-      if (var1 == 256 || var1 == var4 && this.field20949 == null && !this.method13227()) {
+      if (keyCode == 256 || keyCode == var4 && this.field20949 == null && !this.method13227()) {
          if (field20944) {
             field20943 = !field20943;
          }

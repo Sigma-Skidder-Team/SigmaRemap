@@ -73,7 +73,7 @@ public class UICheckBox extends Class4247 {
    }
 
    @Override
-   public void method13089(int var1, int var2, int var3) {
+   public void onClick3(int mouseX, int mouseY, int mouseButton) {
       this.method13705(!this.field21369, true);
    }
 }

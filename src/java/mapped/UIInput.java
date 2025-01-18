@@ -99,15 +99,15 @@ public class UIInput extends Class4278 {
    }
 
    @Override
-   public boolean method13078(int var1, int var2, int var3) {
-      if (!super.method13078(var1, var2, var3)) {
+   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
+      if (!super.onClick(mouseX, mouseY, mouseButton)) {
          String var6 = this.field20912;
          if (this.field20754) {
             var6 = this.field20912.replaceAll(".", this.field20755);
          }
 
          this.field20752 = true;
-         this.field20749 = Class8906.method32494(var6, this.font, (float)this.method13271(), var1, this.field20746);
+         this.field20749 = Class8906.method32494(var6, this.font, (float)this.method13271(), mouseX, this.field20746);
          if (!InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 340)
             && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
             this.field20750 = this.field20749;
@@ -127,16 +127,16 @@ public class UIInput extends Class4278 {
    }
 
    @Override
-   public void method13095(int var1, int var2, int var3) {
-      super.method13095(var1, var2, var3);
+   public void onClick2(int mouseX, int mouseY, int mouseButton) {
+      super.onClick2(mouseX, mouseY, mouseButton);
       this.field20752 = false;
    }
 
    @Override
-   public void keyPressed(int var1) {
-      super.keyPressed(var1);
+   public void keyPressed(int keyCode) {
+      super.keyPressed(keyCode);
       if (this.field20905) {
-         switch (var1) {
+         switch (keyCode) {
             case 65:
                if (this.method13149()) {
                   this.field20749 = this.field20912.length();
@@ -312,13 +312,13 @@ public class UIInput extends Class4278 {
    }
 
    @Override
-   public void charTyped(char var1) {
-      super.charTyped(var1);
-      if (this.method13297() && Class8906.method32486(var1)) {
+   public void charTyped(char typed) {
+      super.charTyped(typed);
+      if (this.method13297() && Class8906.method32486(typed)) {
          if (this.field20750 == this.field20751) {
-            this.field20912 = Class8906.method32492(this.field20912, Character.toString(var1), this.field20749);
+            this.field20912 = Class8906.method32492(this.field20912, Character.toString(typed), this.field20749);
          } else {
-            this.field20912 = Class8906.method32493(this.field20912, Character.toString(var1), this.field20750, this.field20751);
+            this.field20912 = Class8906.method32493(this.field20912, Character.toString(typed), this.field20750, this.field20751);
          }
 
          this.field20749++;

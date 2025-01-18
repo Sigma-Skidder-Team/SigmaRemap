@@ -97,8 +97,8 @@ public class Class4277 extends Class4247 {
    }
 
    @Override
-   public boolean method13078(int var1, int var2, int var3) {
-      if (!super.method13078(var1, var2, var3)) {
+   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
+      if (!super.onClick(mouseX, mouseY, mouseButton)) {
          this.field20734.method13217(true);
          return false;
       } else {
@@ -111,11 +111,11 @@ public class Class4277 extends Class4247 {
    }
 
    @Override
-   public void method13079(float var1) {
+   public void onScrolling(float scroll) {
       if (!this.method13298() && !this.field20734.method13298()) {
       }
 
-      super.method13079(var1);
+      super.onScrolling(scroll);
    }
 
    public float method13138() {

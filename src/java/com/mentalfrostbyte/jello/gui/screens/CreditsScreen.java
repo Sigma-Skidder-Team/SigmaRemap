@@ -99,9 +99,9 @@ public class CreditsScreen extends Screen {
    }
 
    @Override
-   public void keyPressed(int var1) {
-      super.keyPressed(var1);
-      if (var1 == 256) {
+   public void keyPressed(int keyCode) {
+      super.keyPressed(keyCode);
+      if (keyCode == 256) {
          Minecraft.getInstance().displayGuiScreen(new VanillaMainMenuScreen());
       }
    }

@@ -28,8 +28,8 @@ public class SearchBoxButton extends Class4278 {
    }
 
    @Override
-   public void keyPressed(int var1) {
-      if (var1 == 257 && this.searchBox.method13297()) {
+   public void keyPressed(int keyCode) {
+      if (keyCode == 257 && this.searchBox.method13297()) {
          this.searchBox.method13145(false);
          new Thread(
                () -> {
@@ -73,6 +73,6 @@ public class SearchBoxButton extends Class4278 {
             .start();
       }
 
-      super.keyPressed(var1);
+      super.keyPressed(keyCode);
    }
 }

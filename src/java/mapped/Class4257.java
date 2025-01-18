@@ -91,9 +91,9 @@ public class Class4257 extends Class4247 {
    }
 
    @Override
-   public void keyPressed(int var1) {
-      super.keyPressed(var1);
-      if (var1 == 257) {
+   public void keyPressed(int keyCode) {
+      super.keyPressed(keyCode);
+      if (keyCode == 257) {
          ArrayList var4 = this.method13064();
          if (var4.size() > 0) {
             ((Module)var4.get(0)).toggle();

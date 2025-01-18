@@ -126,9 +126,9 @@ public class JelloKeyboardScreen extends Screen {
    }
 
    @Override
-   public void keyPressed(int var1) {
-      super.keyPressed(var1);
-      if (var1 == 256) {
+   public void keyPressed(int keyCode) {
+      super.keyPressed(keyCode);
+      if (keyCode == 256) {
          MultiUtilities.method17742();
          field20953.displayGuiScreen(null);
       }

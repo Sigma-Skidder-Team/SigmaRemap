@@ -21,9 +21,9 @@ public class Class4295 extends Class4278 {
    }
 
    @Override
-   public void method13089(int var1, int var2, int var3) {
+   public void onClick3(int mouseX, int mouseY, int mouseButton) {
       this.method13176(!this.field20809);
-      super.method13089(var1, var2, var3);
+      super.onClick3(mouseX, mouseY, mouseButton);
    }
 
    public boolean method13175() {

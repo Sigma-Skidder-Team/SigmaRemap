@@ -23,12 +23,12 @@ public abstract class Screen
     }
 
     @Override
-    public void keyPressed(int var1) {
-        if (var1 == Minecraft.getInstance().gameSettings.keyBindFullscreen.inputMappingsInput.keyCode) {
+    public void keyPressed(int keyCode) {
+        if (keyCode == Minecraft.getInstance().gameSettings.keyBindFullscreen.inputMappingsInput.keyCode) {
             Minecraft.getInstance().mainWindow.toggleFullscreen();
             Minecraft.getInstance().gameSettings.fullscreen = Minecraft.getInstance().mainWindow.isFullscreen();
         }
 
-        super.keyPressed(var1);
+        super.keyPressed(keyCode);
     }
 }

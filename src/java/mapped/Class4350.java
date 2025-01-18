@@ -122,17 +122,17 @@ public class Class4350 extends Class4278 {
    }
 
    @Override
-   public void charTyped(char var1) {
-      super.charTyped(var1);
-      if (this.method13297() && Class8906.method32486(var1) && ResourceRegistry.JelloLightFont18.getStringWidth(Character.toString(var1)) > 1) {
-         this.field20912 = Class8906.method32492(this.field20912, Character.toString(var1), this.field21260);
+   public void charTyped(char typed) {
+      super.charTyped(typed);
+      if (this.method13297() && Class8906.method32486(typed) && ResourceRegistry.JelloLightFont18.getStringWidth(Character.toString(typed)) > 1) {
+         this.field20912 = Class8906.method32492(this.field20912, Character.toString(typed), this.field21260);
          this.field21260++;
       }
    }
 
    @Override
-   public void keyPressed(int var1) {
-      super.keyPressed(var1);
+   public void keyPressed(int keyCode) {
+      super.keyPressed(keyCode);
       String var4 = System.getProperty("line.separator");
    }
 

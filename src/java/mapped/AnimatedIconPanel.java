@@ -64,12 +64,12 @@ public class AnimatedIconPanel extends CustomGuiScreen implements Class4347 {
    }
 
    @Override
-   public boolean method13078(int var1, int var2, int var3) {
-      if (!super.method13078(var1, var2, var3)) {
+   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
+      if (!super.onClick(mouseX, mouseY, mouseButton)) {
          if (this.method13214()) {
             this.timerUtil.start();
-            this.field20878 = var1;
-            this.field20879 = var2;
+            this.field20878 = mouseX;
+            this.field20879 = mouseY;
             this.field20880 = this.field20878 - this.method13271();
             this.field20881 = this.field20879 - this.method13272();
          }
@@ -81,8 +81,8 @@ public class AnimatedIconPanel extends CustomGuiScreen implements Class4347 {
    }
 
    @Override
-   public void method13095(int var1, int var2, int var3) {
-      super.method13095(var1, var2, var3);
+   public void onClick2(int mouseX, int mouseY, int mouseButton) {
+      super.onClick2(mouseX, mouseY, mouseButton);
       if (this.method13214()) {
          this.timerUtil.stop();
          this.timerUtil.reset();

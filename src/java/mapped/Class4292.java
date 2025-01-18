@@ -29,8 +29,8 @@ public class Class4292 extends Class4278 implements Class4293 {
    }
 
    @Override
-   public void method13079(float var1) {
-      super.method13079(var1);
+   public void onScrolling(float scroll) {
+      super.onScrolling(scroll);
       if (this.screen != null && this.screen.method13228(this.getHeightO(), this.getWidthO(), false) || ((Class4339)this.screen).field21208) {
          float var4 = (float)((Class4339)this.getScreen()).getButton().getHeightA();
          float var5 = (float)this.getScreen().getHeightA();
@@ -45,7 +45,7 @@ public class Class4292 extends Class4278 implements Class4293 {
          }
 
          this.field20793 = this.field20793
-            - Math.round(!(var1 < 0.0F) ? (float)((Class4339)this.screen).field21207 * var1 : 1.0F * (float)((Class4339)this.screen).field21207 * var1);
+            - Math.round(!(scroll < 0.0F) ? (float)((Class4339)this.screen).field21207 * scroll : 1.0F * (float)((Class4339)this.screen).field21207 * scroll);
          this.field20797.reset();
          this.field20797.start();
       }
@@ -103,11 +103,11 @@ public class Class4292 extends Class4278 implements Class4293 {
    }
 
    @Override
-   public boolean method13078(int var1, int var2, int var3) {
-      if (!super.method13078(var1, var2, var3)) {
-         this.field20908 = this.method13228(var1, var2, false);
+   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
+      if (!super.onClick(mouseX, mouseY, mouseButton)) {
+         this.field20908 = this.method13228(mouseX, mouseY, false);
          if (this.method13298()) {
-            int var6 = var2 - this.method13272();
+            int var6 = mouseY - this.method13272();
             if (var6 <= this.field20796.getYA() + this.field20796.getHeightA()) {
                if (var6 < this.field20796.getYA()) {
                   this.field20793 = this.field20793 - (int)((float)((Class4339)this.screen).getButton().getHeightA() / 4.0F);

@@ -55,9 +55,9 @@ public class Class4299 extends Class4278 {
    }
 
    @Override
-   public void keyPressed(int var1) {
-      super.keyPressed(var1);
-      if (var1 == 32) {
+   public void keyPressed(int keyCode) {
+      super.keyPressed(keyCode);
+      if (keyCode == 32) {
          this.field20836 = 0.045F;
       }
    }

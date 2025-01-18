@@ -37,8 +37,8 @@ public class VolumeSlider extends Class4247 {
    }
 
    @Override
-   public boolean method13078(int var1, int var2, int var3) {
-      if (!super.method13078(this.xA, this.yA, var3)) {
+   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
+      if (!super.onClick(this.xA, this.yA, mouseButton)) {
          this.field21373 = true;
          return false;
       } else {
@@ -60,19 +60,19 @@ public class VolumeSlider extends Class4247 {
    }
 
    @Override
-   public void method13095(int var1, int var2, int var3) {
-      super.method13095(var1, var2, var3);
+   public void onClick2(int mouseX, int mouseY, int mouseButton) {
+      super.onClick2(mouseX, mouseY, mouseButton);
       this.field21373 = false;
    }
 
    @Override
-   public void method13079(float var1) {
+   public void onScrolling(float scroll) {
       if (this.method13298()) {
-         this.method13708(this.method13707() - var1 / 2000.0F);
+         this.method13708(this.method13707() - scroll / 2000.0F);
          this.method13710();
       }
 
-      super.method13079(var1);
+      super.onScrolling(scroll);
    }
 
    public float method13707() {

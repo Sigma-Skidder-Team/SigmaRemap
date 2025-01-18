@@ -227,39 +227,39 @@ public class CustomGuiScreen implements IGuiEventListener {
     }
 
     @Override
-    public void charTyped(char var1) {
+    public void charTyped(char typed) {
         for (CustomGuiScreen var5 : this.iconPanelList) {
             if (var5.isHovered() && var5.method13287()) {
-                var5.charTyped(var1);
+                var5.charTyped(typed);
             }
         }
 
-        this.method13256(var1);
+        this.method13256(typed);
     }
 
     @Override
-    public void keyPressed(int var1) {
+    public void keyPressed(int keyCode) {
         for (CustomGuiScreen var5 : this.iconPanelList) {
             if (var5.isHovered() && var5.method13287()) {
-                var5.keyPressed(var1);
+                var5.keyPressed(keyCode);
             }
         }
 
-        this.method13254(var1);
+        this.method13254(keyCode);
     }
 
     @Override
-    public boolean method13078(int var1, int var2, int var3) {
+    public boolean onClick(int mouseX, int mouseY, int mouseButton) {
         boolean var6 = false;
 
         for (int var7 = this.iconPanelList.size() - 1; var7 >= 0; var7--) {
             CustomGuiScreen var8 = this.iconPanelList.get(var7);
             boolean var9 = var8.getScreen() != null
                     && var8.getScreen() instanceof Class4339
-                    && var8.getScreen().method13114(var1, var2)
+                    && var8.getScreen().method13114(mouseX, mouseY)
                     && var8.getScreen().method13287()
                     && var8.getScreen().isHovered();
-            if (var6 || !var8.isHovered() || !var8.method13287() || !var8.method13114(var1, var2) && !var9) {
+            if (var6 || !var8.isHovered() || !var8.method13287() || !var8.method13114(mouseX, mouseY) && !var9) {
                 var8.method13145(false);
                 if (var8 != null) {
                     for (CustomGuiScreen var12 : var8.method13241()) {
@@ -267,7 +267,7 @@ public class CustomGuiScreen implements IGuiEventListener {
                     }
                 }
             } else {
-                var8.method13078(var1, var2, var3);
+                var8.onClick(mouseX, mouseY, mouseButton);
                 var6 = !var9;
             }
         }
@@ -275,7 +275,7 @@ public class CustomGuiScreen implements IGuiEventListener {
         if (!var6) {
             this.field20909 = this.field20908 = true;
             this.method13242();
-            this.method13248(var3);
+            this.method13248(mouseButton);
             return false;
         } else {
             return true;
@@ -283,33 +283,33 @@ public class CustomGuiScreen implements IGuiEventListener {
     }
 
     @Override
-    public void method13095(int var1, int var2, int var3) {
-        this.field20908 = this.method13114(var1, var2);
+    public void onClick2(int mouseX, int mouseY, int mouseButton) {
+        this.field20908 = this.method13114(mouseX, mouseY);
 
         for (CustomGuiScreen var7 : this.iconPanelList) {
             if (var7.isHovered() && var7.method13287()) {
-                var7.method13095(var1, var2, var3);
+                var7.onClick2(mouseX, mouseY, mouseButton);
             }
         }
 
-        this.method13250(var3);
+        this.method13250(mouseButton);
         if (this.method13212() && this.method13298()) {
-            this.method13089(var1, var2, var3);
+            this.onClick3(mouseX, mouseY, mouseButton);
         }
 
         this.field20909 = false;
     }
 
     @Override
-    public void method13089(int var1, int var2, int var3) {
-        this.method13252(var3);
+    public void onClick3(int mouseX, int mouseY, int mouseButton) {
+        this.method13252(mouseButton);
     }
 
     @Override
-    public void method13079(float var1) {
+    public void onScrolling(float scroll) {
         for (CustomGuiScreen var5 : this.iconPanelList) {
             if (var5.isHovered() && var5.method13287()) {
-                var5.method13079(var1);
+                var5.onScrolling(scroll);
             }
         }
     }
