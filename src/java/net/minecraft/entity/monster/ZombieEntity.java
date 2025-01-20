@@ -39,9 +39,9 @@ import java.util.function.Predicate;
 public class ZombieEntity extends MonsterEntity {
    private static final UUID field5758 = UUID.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");
    private static final AttributeModifier field5759 = new AttributeModifier(field5758, "Baby speed boost", 0.5, AttributeModifier.Operation.field13353);
-   private static final DataParameter<Boolean> field5760 = EntityDataManager.<Boolean>createKey(ZombieEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5760 = EntityDataManager.<Boolean>createKey(ZombieEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<Integer> field5761 = EntityDataManager.<Integer>createKey(ZombieEntity.class, DataSerializers.VARINT);
-   private static final DataParameter<Boolean> field5762 = EntityDataManager.<Boolean>createKey(ZombieEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5762 = EntityDataManager.<Boolean>createKey(ZombieEntity.class, DataSerializers.BOOLEAN);
    private static final Predicate<Difficulty> field5763 = var0 -> var0 == Difficulty.HARD;
    private final Class2643 field5764 = new Class2643(this, field5763);
    private boolean field5765;

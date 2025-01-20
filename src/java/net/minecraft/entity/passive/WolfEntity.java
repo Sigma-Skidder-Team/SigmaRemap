@@ -28,7 +28,7 @@ import java.util.UUID;
 import java.util.function.Predicate;
 
 public class WolfEntity extends TameableEntity implements IAngerable {
-   private static final DataParameter<Boolean> field5656 = EntityDataManager.<Boolean>createKey(WolfEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5656 = EntityDataManager.<Boolean>createKey(WolfEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<Integer> field5657 = EntityDataManager.<Integer>createKey(WolfEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Integer> field5658 = EntityDataManager.<Integer>createKey(WolfEntity.class, DataSerializers.VARINT);
    public static final Predicate<LivingEntity> field5659 = var0 -> {

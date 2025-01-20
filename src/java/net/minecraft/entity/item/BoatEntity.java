@@ -34,8 +34,8 @@ public class BoatEntity extends Entity {
    private static final DataParameter<Integer> field5525 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Float> field5526 = EntityDataManager.<Float>createKey(BoatEntity.class, DataSerializers.FLOAT);
    private static final DataParameter<Integer> field5527 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.VARINT);
-   private static final DataParameter<Boolean> field5528 = EntityDataManager.<Boolean>createKey(BoatEntity.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> field5529 = EntityDataManager.<Boolean>createKey(BoatEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5528 = EntityDataManager.<Boolean>createKey(BoatEntity.class, DataSerializers.BOOLEAN);
+   private static final DataParameter<Boolean> field5529 = EntityDataManager.<Boolean>createKey(BoatEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<Integer> field5530 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.VARINT);
    private final float[] field5531 = new float[2];
    private float field5532;

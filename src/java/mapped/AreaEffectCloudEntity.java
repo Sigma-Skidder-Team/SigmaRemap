@@ -30,7 +30,7 @@ public class AreaEffectCloudEntity extends Entity {
    private static final Logger field5497 = LogManager.getLogger();
    private static final DataParameter<Float> field5498 = EntityDataManager.<Float>createKey(AreaEffectCloudEntity.class, DataSerializers.FLOAT);
    private static final DataParameter<Integer> field5499 = EntityDataManager.<Integer>createKey(AreaEffectCloudEntity.class, DataSerializers.VARINT);
-   private static final DataParameter<Boolean> field5500 = EntityDataManager.<Boolean>createKey(AreaEffectCloudEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5500 = EntityDataManager.<Boolean>createKey(AreaEffectCloudEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<IParticleData> field5501 = EntityDataManager.<IParticleData>createKey(AreaEffectCloudEntity.class, DataSerializers.field33399);
    private Class8812 field5502 = Class8137.field34976;
    private final List<EffectInstance> field5503 = Lists.newArrayList();

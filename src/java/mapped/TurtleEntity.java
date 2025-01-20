@@ -32,11 +32,11 @@ import java.util.function.Predicate;
 
 public class TurtleEntity extends AnimalEntity {
    private static final DataParameter<BlockPos> field5956 = EntityDataManager.<BlockPos>createKey(TurtleEntity.class, DataSerializers.field33401);
-   private static final DataParameter<Boolean> field5957 = EntityDataManager.<Boolean>createKey(TurtleEntity.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> field5958 = EntityDataManager.<Boolean>createKey(TurtleEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5957 = EntityDataManager.<Boolean>createKey(TurtleEntity.class, DataSerializers.BOOLEAN);
+   private static final DataParameter<Boolean> field5958 = EntityDataManager.<Boolean>createKey(TurtleEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<BlockPos> field5959 = EntityDataManager.<BlockPos>createKey(TurtleEntity.class, DataSerializers.field33401);
-   private static final DataParameter<Boolean> field5960 = EntityDataManager.<Boolean>createKey(TurtleEntity.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> field5961 = EntityDataManager.<Boolean>createKey(TurtleEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5960 = EntityDataManager.<Boolean>createKey(TurtleEntity.class, DataSerializers.BOOLEAN);
+   private static final DataParameter<Boolean> field5961 = EntityDataManager.<Boolean>createKey(TurtleEntity.class, DataSerializers.BOOLEAN);
    private int field5962;
    public static final Predicate<LivingEntity> field5963 = var0 -> var0.isChild() && !var0.isInWater();
 

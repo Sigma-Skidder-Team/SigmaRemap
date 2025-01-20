@@ -30,7 +30,7 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 public abstract class AbstractFishEntity extends WaterMobEntity {
-   private static final DataParameter<Boolean> field5809 = EntityDataManager.<Boolean>createKey(AbstractFishEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5809 = EntityDataManager.<Boolean>createKey(AbstractFishEntity.class, DataSerializers.BOOLEAN);
 
    public AbstractFishEntity(EntityType<? extends AbstractFishEntity> var1, World var2) {
       super(var1, var2);

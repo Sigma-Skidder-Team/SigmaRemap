@@ -32,8 +32,8 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
    private static final UUID field5645 = UUID.fromString("020E0DFB-87AE-4653-9556-831010E291A0");
    private static final AttributeModifier field5646 = new AttributeModifier(field5645, "Attacking speed boost", 0.15F, AttributeModifier.Operation.ADDITION);
    private static final DataParameter<Optional<BlockState>> field5647 = EntityDataManager.<Optional<BlockState>>createKey(EndermanEntity.class, DataSerializers.field33397);
-   private static final DataParameter<Boolean> field5648 = EntityDataManager.<Boolean>createKey(EndermanEntity.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> field5649 = EntityDataManager.<Boolean>createKey(EndermanEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5648 = EntityDataManager.<Boolean>createKey(EndermanEntity.class, DataSerializers.BOOLEAN);
+   private static final DataParameter<Boolean> field5649 = EntityDataManager.<Boolean>createKey(EndermanEntity.class, DataSerializers.BOOLEAN);
    private static final Predicate<LivingEntity> field5650 = var0 -> var0 instanceof EndermiteEntity && ((EndermiteEntity)var0).method5297();
    private int field5651 = Integer.MIN_VALUE;
    private int field5652;

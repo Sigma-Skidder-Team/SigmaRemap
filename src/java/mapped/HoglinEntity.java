@@ -31,7 +31,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class HoglinEntity extends AnimalEntity implements IMob, Class1092 {
-   private static final DataParameter<Boolean> field5976 = EntityDataManager.<Boolean>createKey(HoglinEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5976 = EntityDataManager.<Boolean>createKey(HoglinEntity.class, DataSerializers.BOOLEAN);
    private int field5977;
    private int field5978 = 0;
    private boolean field5979 = false;

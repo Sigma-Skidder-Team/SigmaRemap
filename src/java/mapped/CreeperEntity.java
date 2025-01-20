@@ -23,8 +23,8 @@ import java.util.Collection;
 
 public class CreeperEntity extends MonsterEntity implements Class1080 {
    private static final DataParameter<Integer> field5938 = EntityDataManager.<Integer>createKey(CreeperEntity.class, DataSerializers.VARINT);
-   private static final DataParameter<Boolean> field5939 = EntityDataManager.<Boolean>createKey(CreeperEntity.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> field5940 = EntityDataManager.<Boolean>createKey(CreeperEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5939 = EntityDataManager.<Boolean>createKey(CreeperEntity.class, DataSerializers.BOOLEAN);
+   private static final DataParameter<Boolean> field5940 = EntityDataManager.<Boolean>createKey(CreeperEntity.class, DataSerializers.BOOLEAN);
    private int field5941;
    private int field5942;
    private int field5943 = 30;

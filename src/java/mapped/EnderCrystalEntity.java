@@ -20,8 +20,8 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 
 public class EnderCrystalEntity extends Entity {
-   private static final DataParameter<Optional<BlockPos>> field5521 = EntityDataManager.<Optional<BlockPos>>createKey(EnderCrystalEntity.class, DataSerializers.field33402);
-   private static final DataParameter<Boolean> field5522 = EntityDataManager.<Boolean>createKey(EnderCrystalEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Optional<BlockPos>> field5521 = EntityDataManager.<Optional<BlockPos>>createKey(EnderCrystalEntity.class, DataSerializers.OPTIONAL_BLOCK_POS);
+   private static final DataParameter<Boolean> field5522 = EntityDataManager.<Boolean>createKey(EnderCrystalEntity.class, DataSerializers.BOOLEAN);
    public int field5523;
 
    public EnderCrystalEntity(EntityType<? extends EnderCrystalEntity> var1, World var2) {

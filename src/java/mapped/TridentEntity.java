@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 
 public class TridentEntity extends AbstractArrowEntity {
    private static final DataParameter<Byte> field5111 = EntityDataManager.<Byte>createKey(TridentEntity.class, DataSerializers.field33390);
-   private static final DataParameter<Boolean> field5112 = EntityDataManager.<Boolean>createKey(TridentEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5112 = EntityDataManager.<Boolean>createKey(TridentEntity.class, DataSerializers.BOOLEAN);
    private ItemStack field5113 = new ItemStack(Items.TRIDENT);
    private boolean field5114;
    public int field5115;

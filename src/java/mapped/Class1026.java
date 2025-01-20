@@ -26,7 +26,7 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public abstract class Class1026 extends PillagerEntity {
-   public static final DataParameter<Boolean> field5712 = EntityDataManager.<Boolean>createKey(Class1026.class, DataSerializers.field33398);
+   public static final DataParameter<Boolean> field5712 = EntityDataManager.<Boolean>createKey(Class1026.class, DataSerializers.BOOLEAN);
    private static final Predicate<ItemEntity> field5713 = var0 -> !var0.method4135()
          && var0.isAlive()
          && ItemStack.areItemStacksEqual(var0.method4124(), Raid.method25421());

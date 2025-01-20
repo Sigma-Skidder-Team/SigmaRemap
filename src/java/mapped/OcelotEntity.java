@@ -28,7 +28,7 @@ import java.util.Random;
 
 public class OcelotEntity extends AnimalEntity {
    private static final Class120 field5972 = Class120.method339(Items.field37909, Items.field37910);
-   private static final DataParameter<Boolean> field5973 = EntityDataManager.<Boolean>createKey(OcelotEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5973 = EntityDataManager.<Boolean>createKey(OcelotEntity.class, DataSerializers.BOOLEAN);
    private Class2775<PlayerEntity> field5974;
    private Class2681 field5975;
 

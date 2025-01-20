@@ -26,7 +26,7 @@ import java.util.Random;
 
 public class GuardianEntity extends MonsterEntity {
    private static String[] field6065;
-   private static final DataParameter<Boolean> field6066 = EntityDataManager.<Boolean>createKey(GuardianEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field6066 = EntityDataManager.<Boolean>createKey(GuardianEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<Integer> field6067 = EntityDataManager.<Integer>createKey(GuardianEntity.class, DataSerializers.VARINT);
    private float field6068;
    private float field6069;

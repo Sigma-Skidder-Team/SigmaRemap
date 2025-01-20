@@ -36,7 +36,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Class1024 extends Class1025 implements Class1023 {
-   private static final DataParameter<Boolean> field5710 = EntityDataManager.<Boolean>createKey(Class1024.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5710 = EntityDataManager.<Boolean>createKey(Class1024.class, DataSerializers.BOOLEAN);
    private final Class927 field5711 = new Class927(5);
 
    public Class1024(EntityType<? extends Class1024> var1, World var2) {

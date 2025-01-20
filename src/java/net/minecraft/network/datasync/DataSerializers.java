@@ -26,11 +26,11 @@ public class DataSerializers {
    public static final Class6466<Optional<ITextComponent>> field33395 = new Class6484();
    public static final Class6466<ItemStack> field33396 = new Class6471();
    public static final Class6466<Optional<BlockState>> field33397 = new Class6470();
-   public static final Class6466<Boolean> field33398 = new Class6478();
+   public static final Class6466<Boolean> BOOLEAN = new Class6478();
    public static final Class6466<IParticleData> field33399 = new Class6482();
    public static final Class6466<Class7087> field33400 = new Class6476();
    public static final Class6466<BlockPos> field33401 = new Class6483();
-   public static final Class6466<Optional<BlockPos>> field33402 = new Class6474();
+   public static final Class6466<Optional<BlockPos>> OPTIONAL_BLOCK_POS = new Class6474();
    public static final Class6466<Direction> field33403 = new Class6469();
    public static final Class6466<Optional<UUID>> field33404 = new Class6477();
    public static final Class6466<CompoundNBT> field33405 = new Class6480();
@@ -59,10 +59,10 @@ public class DataSerializers {
       method25804(field33394);
       method25804(field33395);
       method25804(field33396);
-      method25804(field33398);
+      method25804(BOOLEAN);
       method25804(field33400);
       method25804(field33401);
-      method25804(field33402);
+      method25804(OPTIONAL_BLOCK_POS);
       method25804(field33403);
       method25804(field33404);
       method25804(field33397);

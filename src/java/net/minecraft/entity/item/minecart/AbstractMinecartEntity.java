@@ -44,7 +44,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    private static final DataParameter<Float> field5215 = EntityDataManager.<Float>createKey(AbstractMinecartEntity.class, DataSerializers.FLOAT);
    private static final DataParameter<Integer> field5216 = EntityDataManager.<Integer>createKey(AbstractMinecartEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Integer> field5217 = EntityDataManager.<Integer>createKey(AbstractMinecartEntity.class, DataSerializers.VARINT);
-   private static final DataParameter<Boolean> field5218 = EntityDataManager.<Boolean>createKey(AbstractMinecartEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5218 = EntityDataManager.<Boolean>createKey(AbstractMinecartEntity.class, DataSerializers.BOOLEAN);
    private static final ImmutableMap<Pose, ImmutableList<Integer>> field5219 = ImmutableMap.of(
       Pose.STANDING, ImmutableList.of(0, 1, -1), Pose.field13624, ImmutableList.of(0, 1, -1), Pose.field13622, ImmutableList.of(0, 1)
    );

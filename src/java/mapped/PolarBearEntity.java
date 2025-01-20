@@ -28,7 +28,7 @@ import java.util.function.Predicate;
 
 public class PolarBearEntity extends AnimalEntity implements IAngerable {
    private static String[] field6009;
-   private static final DataParameter<Boolean> field6010 = EntityDataManager.<Boolean>createKey(PolarBearEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field6010 = EntityDataManager.<Boolean>createKey(PolarBearEntity.class, DataSerializers.BOOLEAN);
    private float field6011;
    private float field6012;
    private int field6013;

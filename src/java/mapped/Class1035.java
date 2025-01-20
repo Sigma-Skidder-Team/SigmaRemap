@@ -17,7 +17,7 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 
 public abstract class Class1035 extends MonsterEntity {
-   public static final DataParameter<Boolean> field5750 = EntityDataManager.<Boolean>createKey(Class1035.class, DataSerializers.field33398);
+   public static final DataParameter<Boolean> field5750 = EntityDataManager.<Boolean>createKey(Class1035.class, DataSerializers.BOOLEAN);
    public int field5751 = 0;
 
    public Class1035(EntityType<? extends Class1035> var1, World var2) {

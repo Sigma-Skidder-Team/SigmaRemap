@@ -22,7 +22,7 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 public class FurnaceMinecartEntity extends AbstractMinecartEntity {
-   private static final DataParameter<Boolean> field5481 = EntityDataManager.<Boolean>createKey(FurnaceMinecartEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5481 = EntityDataManager.<Boolean>createKey(FurnaceMinecartEntity.class, DataSerializers.BOOLEAN);
    private int field5482;
    public double field5483;
    public double field5484;

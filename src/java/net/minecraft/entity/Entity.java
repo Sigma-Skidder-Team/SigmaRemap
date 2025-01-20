@@ -120,9 +120,9 @@ public abstract class Entity implements INameable, ICommandSource {
    public static final DataParameter<Byte> FLAGS = EntityDataManager.<Byte>createKey(Entity.class, DataSerializers.field33390);
    private static final DataParameter<Integer> AIR = EntityDataManager.<Integer>createKey(Entity.class, DataSerializers.VARINT);
    private static final DataParameter<Optional<ITextComponent>> CUSTOM_NAME = EntityDataManager.<Optional<ITextComponent>>createKey(Entity.class, DataSerializers.field33395);
-   public static final DataParameter<Boolean> CUSTOM_NAME_VISIBLE = EntityDataManager.<Boolean>createKey(Entity.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> SILENT = EntityDataManager.<Boolean>createKey(Entity.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> NO_GRAVITY = EntityDataManager.<Boolean>createKey(Entity.class, DataSerializers.field33398);
+   public static final DataParameter<Boolean> CUSTOM_NAME_VISIBLE = EntityDataManager.<Boolean>createKey(Entity.class, DataSerializers.BOOLEAN);
+   private static final DataParameter<Boolean> SILENT = EntityDataManager.<Boolean>createKey(Entity.class, DataSerializers.BOOLEAN);
+   private static final DataParameter<Boolean> NO_GRAVITY = EntityDataManager.<Boolean>createKey(Entity.class, DataSerializers.BOOLEAN);
    public static final DataParameter<Pose> POSE = EntityDataManager.<Pose>createKey(Entity.class, DataSerializers.field33408);
    public boolean addedToChunk;
    public int chunkCoordX;

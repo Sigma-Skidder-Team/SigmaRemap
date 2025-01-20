@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 public class GhastEntity extends Class1111 implements IMob {
-   private static final DataParameter<Boolean> field6091 = EntityDataManager.<Boolean>createKey(GhastEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field6091 = EntityDataManager.<Boolean>createKey(GhastEntity.class, DataSerializers.BOOLEAN);
    private int field6092 = 1;
 
    public GhastEntity(EntityType<? extends GhastEntity> var1, World var2) {

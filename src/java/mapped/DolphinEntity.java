@@ -33,7 +33,7 @@ import java.util.function.Predicate;
 
 public class DolphinEntity extends WaterMobEntity {
    private static final DataParameter<BlockPos> field5804 = EntityDataManager.<BlockPos>createKey(DolphinEntity.class, DataSerializers.field33401);
-   private static final DataParameter<Boolean> field5805 = EntityDataManager.<Boolean>createKey(DolphinEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5805 = EntityDataManager.<Boolean>createKey(DolphinEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<Integer> field5806 = EntityDataManager.<Integer>createKey(DolphinEntity.class, DataSerializers.VARINT);
    private static final EntityPredicate field5807 = new EntityPredicate().method30203(10.0).method30205().method30204().method30206();
    public static final Predicate<ItemEntity> field5808 = var0 -> !var0.method4135() && var0.isAlive() && var0.isInWater();

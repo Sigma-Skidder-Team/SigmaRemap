@@ -19,7 +19,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
 public abstract class Class1066 extends AbstractHorseEntity {
-   private static final DataParameter<Boolean> field5877 = EntityDataManager.<Boolean>createKey(Class1066.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5877 = EntityDataManager.<Boolean>createKey(Class1066.class, DataSerializers.BOOLEAN);
 
    public Class1066(EntityType<? extends Class1066> var1, World var2) {
       super(var1, var2);

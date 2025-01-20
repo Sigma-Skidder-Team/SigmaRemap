@@ -33,7 +33,7 @@ public class ShulkerEntity extends Class1056 implements IMob {
    private static final UUID field5839 = UUID.fromString("7E0292F2-9434-48D5-A29F-9583AF7DF27F");
    private static final AttributeModifier field5840 = new AttributeModifier(field5839, "Covered armor bonus", 20.0, AttributeModifier.Operation.ADDITION);
    public static final DataParameter<Direction> field5841 = EntityDataManager.<Direction>createKey(ShulkerEntity.class, DataSerializers.field33403);
-   public static final DataParameter<Optional<BlockPos>> field5842 = EntityDataManager.<Optional<BlockPos>>createKey(ShulkerEntity.class, DataSerializers.field33402);
+   public static final DataParameter<Optional<BlockPos>> field5842 = EntityDataManager.<Optional<BlockPos>>createKey(ShulkerEntity.class, DataSerializers.OPTIONAL_BLOCK_POS);
    public static final DataParameter<Byte> field5843 = EntityDataManager.<Byte>createKey(ShulkerEntity.class, DataSerializers.field33390);
    public static final DataParameter<Byte> field5844 = EntityDataManager.<Byte>createKey(ShulkerEntity.class, DataSerializers.field33390);
    private float field5845;

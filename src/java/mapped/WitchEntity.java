@@ -31,7 +31,7 @@ import java.util.function.Predicate;
 public class WitchEntity extends Class1026 implements Class1022 {
    private static final UUID field5718 = UUID.fromString("5CD17E52-A79A-43D3-A529-90FDE04B181E");
    private static final AttributeModifier field5719 = new AttributeModifier(field5718, "Drinking speed penalty", -0.25, AttributeModifier.Operation.ADDITION);
-   private static final DataParameter<Boolean> field5720 = EntityDataManager.<Boolean>createKey(WitchEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5720 = EntityDataManager.<Boolean>createKey(WitchEntity.class, DataSerializers.BOOLEAN);
    private int field5721;
    private Class2712<Class1026> field5722;
    private Class2711<PlayerEntity> field5723;

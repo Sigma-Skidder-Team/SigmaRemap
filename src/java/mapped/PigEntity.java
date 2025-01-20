@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
 
 public class PigEntity extends AnimalEntity implements Class1071, Class1069 {
    private static String[] field5911;
-   private static final DataParameter<Boolean> field5912 = EntityDataManager.<Boolean>createKey(PigEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5912 = EntityDataManager.<Boolean>createKey(PigEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<Integer> field5913 = EntityDataManager.<Integer>createKey(PigEntity.class, DataSerializers.VARINT);
    private static final Class120 field5914 = Class120.method339(Items.field38052, Items.field38053, Items.field38111);
    private final Class6500 field5915 = new Class6500(this.dataManager, field5913, field5912);

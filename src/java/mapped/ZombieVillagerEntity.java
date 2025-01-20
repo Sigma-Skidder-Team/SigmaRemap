@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class ZombieVillagerEntity extends ZombieEntity implements Class1041 {
-   private static final DataParameter<Boolean> field5769 = EntityDataManager.<Boolean>createKey(ZombieVillagerEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5769 = EntityDataManager.<Boolean>createKey(ZombieVillagerEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<Class7921> field5770 = EntityDataManager.<Class7921>createKey(ZombieVillagerEntity.class, DataSerializers.field33406);
    private int field5771;
    private UUID field5772;

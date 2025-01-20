@@ -43,8 +43,8 @@ public class StriderEntity extends AnimalEntity implements Class1071, Class1069 
    private static final Class120 field5903 = Class120.method339(Items.field37349);
    private static final Class120 field5904 = Class120.method339(Items.field37349, Items.field38065);
    private static final DataParameter<Integer> field5905 = EntityDataManager.<Integer>createKey(StriderEntity.class, DataSerializers.VARINT);
-   private static final DataParameter<Boolean> field5906 = EntityDataManager.<Boolean>createKey(StriderEntity.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> field5907 = EntityDataManager.<Boolean>createKey(StriderEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5906 = EntityDataManager.<Boolean>createKey(StriderEntity.class, DataSerializers.BOOLEAN);
+   private static final DataParameter<Boolean> field5907 = EntityDataManager.<Boolean>createKey(StriderEntity.class, DataSerializers.BOOLEAN);
    private final Class6500 field5908 = new Class6500(this.dataManager, field5905, field5907);
    private Class2680 field5909;
    private Class2747 field5910;

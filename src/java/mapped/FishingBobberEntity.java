@@ -40,7 +40,7 @@ public class FishingBobberEntity extends ProjectileEntity {
    private boolean field5149;
    private int field5150;
    private static final DataParameter<Integer> field5151 = EntityDataManager.<Integer>createKey(FishingBobberEntity.class, DataSerializers.VARINT);
-   private static final DataParameter<Boolean> field5152 = EntityDataManager.<Boolean>createKey(FishingBobberEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5152 = EntityDataManager.<Boolean>createKey(FishingBobberEntity.class, DataSerializers.BOOLEAN);
    private int field5153;
    private int field5154;
    private int field5155;

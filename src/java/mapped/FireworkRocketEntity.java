@@ -29,7 +29,7 @@ import java.util.OptionalInt;
 public class FireworkRocketEntity extends ProjectileEntity implements Class889 {
    private static final DataParameter<ItemStack> field5120 = EntityDataManager.<ItemStack>createKey(FireworkRocketEntity.class, DataSerializers.field33396);
    private static final DataParameter<OptionalInt> field5121 = EntityDataManager.<OptionalInt>createKey(FireworkRocketEntity.class, DataSerializers.field33407);
-   private static final DataParameter<Boolean> field5122 = EntityDataManager.<Boolean>createKey(FireworkRocketEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5122 = EntityDataManager.<Boolean>createKey(FireworkRocketEntity.class, DataSerializers.BOOLEAN);
    private int field5123;
    private int field5124;
    public LivingEntity field5125;

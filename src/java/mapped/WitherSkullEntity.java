@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 
 public class WitherSkullEntity extends Class901 {
    private static String[] field5144;
-   private static final DataParameter<Boolean> field5145 = EntityDataManager.<Boolean>createKey(WitherSkullEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5145 = EntityDataManager.<Boolean>createKey(WitherSkullEntity.class, DataSerializers.BOOLEAN);
 
    public WitherSkullEntity(EntityType<? extends WitherSkullEntity> var1, World var2) {
       super(var1, var2);

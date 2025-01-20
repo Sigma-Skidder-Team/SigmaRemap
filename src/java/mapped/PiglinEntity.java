@@ -33,9 +33,9 @@ import java.util.Random;
 import java.util.UUID;
 
 public class PiglinEntity extends Class1035 implements Class1023 {
-   private static final DataParameter<Boolean> field5741 = EntityDataManager.<Boolean>createKey(PiglinEntity.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> field5742 = EntityDataManager.<Boolean>createKey(PiglinEntity.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> field5743 = EntityDataManager.<Boolean>createKey(PiglinEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5741 = EntityDataManager.<Boolean>createKey(PiglinEntity.class, DataSerializers.BOOLEAN);
+   private static final DataParameter<Boolean> field5742 = EntityDataManager.<Boolean>createKey(PiglinEntity.class, DataSerializers.BOOLEAN);
+   private static final DataParameter<Boolean> field5743 = EntityDataManager.<Boolean>createKey(PiglinEntity.class, DataSerializers.BOOLEAN);
    private static final UUID field5744 = UUID.fromString("766bfa64-11f3-11ea-8d71-362b9e155667");
    private static final AttributeModifier field5745 = new AttributeModifier(field5744, "Baby speed boost", 0.2F, AttributeModifier.Operation.field13353);
    private final Class927 field5746 = new Class927(8);
