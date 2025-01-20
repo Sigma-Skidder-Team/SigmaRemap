@@ -35,7 +35,7 @@ public class Class6883 {
 
    private static Class4188 method20958(Class4178 var0, List<Class4178> var1, Random var2, int var3, int var4, int var5, Direction var6, int var7) {
       if (var7 <= 8) {
-         if (Math.abs(var3 - var0.method12915().field45678) <= 80 && Math.abs(var5 - var0.method12915().field45680) <= 80) {
+         if (Math.abs(var3 - var0.method12915().minX) <= 80 && Math.abs(var5 - var0.method12915().minZ) <= 80) {
             Class102 var10 = ((Class4188)var0).field20479;
             Class4188 var11 = method20957(var1, var2, var3, var4, var5, var6, var7 + 1, var10);
             if (var11 != null) {

@@ -132,10 +132,10 @@ public class Class6805<T> implements ITickList<T> {
       while (var7.hasNext()) {
          Class8269 var8 = (Class8269)var7.next();
          BlockPos var9 = var8.field35556;
-         if (var9.getX() >= var3.field45678
-            && var9.getX() < var3.field45681
-            && var9.getZ() >= var3.field45680
-            && var9.getZ() < var3.field45683) {
+         if (var9.getX() >= var3.minX
+            && var9.getX() < var3.maxX
+            && var9.getZ() >= var3.minZ
+            && var9.getZ() < var3.maxZ) {
             if (var4) {
                var7.remove();
             }

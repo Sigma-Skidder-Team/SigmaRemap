@@ -41,7 +41,7 @@ public class Class3305 extends Item {
 
             for (Entity var14 : var11) {
                AxisAlignedBB var15 = var14.getBoundingBox().grow((double)var14.getCollisionBorderSize());
-               if (var15.method19673(var12)) {
+               if (var15.contains(var12)) {
                   return Class6794.<ItemStack>method20698(var6);
                }
             }

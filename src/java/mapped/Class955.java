@@ -102,7 +102,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
       VoxelShape var7 = this.method3854().method23414(this.world, this.getPos());
       if (!var7.isEmpty()) {
          AxisAlignedBB var8 = this.method3862(var7.getBoundingBox());
-         List var9 = this.world.method7181((Entity)null, Class7769.method25747(var8, var4, var5).method19666(var8));
+         List var9 = this.world.method7181((Entity)null, Class7769.method25747(var8, var4, var5).union(var8));
          if (!var9.isEmpty()) {
             List<AxisAlignedBB> var10 = var7.method19521();
             boolean var11 = this.field5361.isIn(Blocks.field36764);
@@ -148,7 +148,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
                for (AxisAlignedBB var24 : var10) {
                   AxisAlignedBB var25 = Class7769.method25747(this.method3862(var24), var4, var5);
                   AxisAlignedBB var26 = var13.getBoundingBox();
-                  if (var25.method19670(var26)) {
+                  if (var25.intersects(var26)) {
                      var21 = Math.max(var21, method3861(var25, var4, var26));
                      if (var21 >= var5) {
                         break;
@@ -235,11 +235,11 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
 
    private void method3863(Entity var1, Direction var2, double var3) {
       AxisAlignedBB var7 = var1.getBoundingBox();
-      AxisAlignedBB var8 = VoxelShapes.method27426().getBoundingBox().method19668(this.pos);
-      if (var7.method19670(var8)) {
+      AxisAlignedBB var8 = VoxelShapes.method27426().getBoundingBox().offset(this.pos);
+      if (var7.intersects(var8)) {
          Direction var9 = var2.getOpposite();
          double var10 = method3861(var8, var9, var7) + 0.01;
-         double var12 = method3861(var8, var9, var7.method19665(var8)) + 0.01;
+         double var12 = method3861(var8, var9, var7.intersect(var8)) + 0.01;
          if (Math.abs(var10 - var12) < 0.01) {
             var10 = Math.min(var10, var3) + 0.01;
             method3856(var2, var1, var10, var9);

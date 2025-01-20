@@ -70,7 +70,7 @@ public abstract class Class4167 extends Class4178 {
    }
 
    private Class4178 method12900(Class4175 var1, List<Class4178> var2, Random var3, int var4, int var5, int var6, Direction var7, int var8, boolean var9) {
-      if (Math.abs(var4 - var1.method12915().field45678) <= 112 && Math.abs(var6 - var1.method12915().field45680) <= 112) {
+      if (Math.abs(var4 - var1.method12915().minX) <= 112 && Math.abs(var6 - var1.method12915().minZ) <= 112) {
          List var12 = var1.field20438;
          if (var9) {
             var12 = var1.field20439;
@@ -98,9 +98,9 @@ public abstract class Class4167 extends Class4178 {
                   var1,
                   var2,
                   var3,
-                  this.field20444.field45678 + var4,
-                  this.field20444.field45679 + var5,
-                  this.field20444.field45680 - 1,
+                  this.field20444.minX + var4,
+                  this.field20444.minY + var5,
+                  this.field20444.minZ - 1,
                   var9,
                   this.method12916(),
                   var6
@@ -110,9 +110,9 @@ public abstract class Class4167 extends Class4178 {
                   var1,
                   var2,
                   var3,
-                  this.field20444.field45678 + var4,
-                  this.field20444.field45679 + var5,
-                  this.field20444.field45683 + 1,
+                  this.field20444.minX + var4,
+                  this.field20444.minY + var5,
+                  this.field20444.maxZ + 1,
                   var9,
                   this.method12916(),
                   var6
@@ -122,9 +122,9 @@ public abstract class Class4167 extends Class4178 {
                   var1,
                   var2,
                   var3,
-                  this.field20444.field45678 - 1,
-                  this.field20444.field45679 + var5,
-                  this.field20444.field45680 + var4,
+                  this.field20444.minX - 1,
+                  this.field20444.minY + var5,
+                  this.field20444.minZ + var4,
                   var9,
                   this.method12916(),
                   var6
@@ -134,9 +134,9 @@ public abstract class Class4167 extends Class4178 {
                   var1,
                   var2,
                   var3,
-                  this.field20444.field45681 + 1,
-                  this.field20444.field45679 + var5,
-                  this.field20444.field45680 + var4,
+                  this.field20444.maxX + 1,
+                  this.field20444.minY + var5,
+                  this.field20444.minZ + var4,
                   var9,
                   this.method12916(),
                   var6
@@ -157,9 +157,9 @@ public abstract class Class4167 extends Class4178 {
                   var1,
                   var2,
                   var3,
-                  this.field20444.field45678 - 1,
-                  this.field20444.field45679 + var4,
-                  this.field20444.field45680 + var5,
+                  this.field20444.minX - 1,
+                  this.field20444.minY + var4,
+                  this.field20444.minZ + var5,
                   Direction.WEST,
                   this.method12916(),
                   var6
@@ -169,9 +169,9 @@ public abstract class Class4167 extends Class4178 {
                   var1,
                   var2,
                   var3,
-                  this.field20444.field45678 - 1,
-                  this.field20444.field45679 + var4,
-                  this.field20444.field45680 + var5,
+                  this.field20444.minX - 1,
+                  this.field20444.minY + var4,
+                  this.field20444.minZ + var5,
                   Direction.WEST,
                   this.method12916(),
                   var6
@@ -181,9 +181,9 @@ public abstract class Class4167 extends Class4178 {
                   var1,
                   var2,
                   var3,
-                  this.field20444.field45678 + var5,
-                  this.field20444.field45679 + var4,
-                  this.field20444.field45680 - 1,
+                  this.field20444.minX + var5,
+                  this.field20444.minY + var4,
+                  this.field20444.minZ - 1,
                   Direction.NORTH,
                   this.method12916(),
                   var6
@@ -193,9 +193,9 @@ public abstract class Class4167 extends Class4178 {
                   var1,
                   var2,
                   var3,
-                  this.field20444.field45678 + var5,
-                  this.field20444.field45679 + var4,
-                  this.field20444.field45680 - 1,
+                  this.field20444.minX + var5,
+                  this.field20444.minY + var4,
+                  this.field20444.minZ - 1,
                   Direction.NORTH,
                   this.method12916(),
                   var6
@@ -216,9 +216,9 @@ public abstract class Class4167 extends Class4178 {
                   var1,
                   var2,
                   var3,
-                  this.field20444.field45681 + 1,
-                  this.field20444.field45679 + var4,
-                  this.field20444.field45680 + var5,
+                  this.field20444.maxX + 1,
+                  this.field20444.minY + var4,
+                  this.field20444.minZ + var5,
                   Direction.EAST,
                   this.method12916(),
                   var6
@@ -228,9 +228,9 @@ public abstract class Class4167 extends Class4178 {
                   var1,
                   var2,
                   var3,
-                  this.field20444.field45681 + 1,
-                  this.field20444.field45679 + var4,
-                  this.field20444.field45680 + var5,
+                  this.field20444.maxX + 1,
+                  this.field20444.minY + var4,
+                  this.field20444.minZ + var5,
                   Direction.EAST,
                   this.method12916(),
                   var6
@@ -240,9 +240,9 @@ public abstract class Class4167 extends Class4178 {
                   var1,
                   var2,
                   var3,
-                  this.field20444.field45678 + var5,
-                  this.field20444.field45679 + var4,
-                  this.field20444.field45683 + 1,
+                  this.field20444.minX + var5,
+                  this.field20444.minY + var4,
+                  this.field20444.maxZ + 1,
                   Direction.SOUTH,
                   this.method12916(),
                   var6
@@ -252,9 +252,9 @@ public abstract class Class4167 extends Class4178 {
                   var1,
                   var2,
                   var3,
-                  this.field20444.field45678 + var5,
-                  this.field20444.field45679 + var4,
-                  this.field20444.field45683 + 1,
+                  this.field20444.minX + var5,
+                  this.field20444.minY + var4,
+                  this.field20444.maxZ + 1,
                   Direction.SOUTH,
                   this.method12916(),
                   var6
@@ -266,6 +266,6 @@ public abstract class Class4167 extends Class4178 {
    }
 
    public static boolean method12904(MutableBoundingBox var0) {
-      return var0 != null && var0.field45679 > 10;
+      return var0 != null && var0.minY > 10;
    }
 }

@@ -332,7 +332,7 @@ public enum Direction implements IStringSerializable {
          }
 
          @Override
-         public double method328(double var1, double var3, double var5) {
+         public double getCoordinate(double var1, double var3, double var5) {
             return var1;
          }
       },
@@ -343,7 +343,7 @@ public enum Direction implements IStringSerializable {
          }
 
          @Override
-         public double method328(double var1, double var3, double var5) {
+         public double getCoordinate(double var1, double var3, double var5) {
             return var3;
          }
       },
@@ -354,7 +354,7 @@ public enum Direction implements IStringSerializable {
          }
 
          @Override
-         public double method328(double var1, double var3, double var5) {
+         public double getCoordinate(double var1, double var3, double var5) {
             return var5;
          }
       };
@@ -418,7 +418,7 @@ public enum Direction implements IStringSerializable {
 
       public abstract int method327(int var1, int var2, int var3);
 
-      public abstract double method328(double var1, double var3, double var5);
+      public abstract double getCoordinate(double var1, double var3, double var5);
    }
 
    public enum Plane implements Iterable<Direction>, Predicate<Direction> {

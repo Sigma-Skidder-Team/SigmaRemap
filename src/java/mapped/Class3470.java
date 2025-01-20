@@ -26,7 +26,7 @@ public class Class3470 extends Class3468 {
 
    @Override
    public int method12157(World var1, BlockPos var2) {
-      int var5 = Math.min(var1.<Entity>getEntitiesWithinAABB(Entity.class, field19315.method19668(var2)).size(), this.field19321);
+      int var5 = Math.min(var1.<Entity>getEntitiesWithinAABB(Entity.class, field19315.offset(var2)).size(), this.field19321);
       if (var5 <= 0) {
          return 0;
       } else {

@@ -39,27 +39,27 @@ public class AxisAlignedBB {
       this(min.x, min.y, min.z, max.x, max.y, max.z);
    }
 
-   public static AxisAlignedBB method19656(MutableBoundingBox var0) {
+   public static AxisAlignedBB toImmutable(MutableBoundingBox mutableBox) {
       return new AxisAlignedBB(
-         (double)var0.field45678,
-         (double)var0.field45679,
-         (double)var0.field45680,
-         (double)(var0.field45681 + 1),
-         (double)(var0.field45682 + 1),
-         (double)(var0.field45683 + 1)
+         (double)mutableBox.minX,
+         (double)mutableBox.minY,
+         (double)mutableBox.minZ,
+         (double)(mutableBox.maxX + 1),
+         (double)(mutableBox.maxY + 1),
+         (double)(mutableBox.maxZ + 1)
       );
    }
 
-   public static AxisAlignedBB method19657(Vector3d var0) {
-      return new AxisAlignedBB(var0.x, var0.y, var0.z, var0.x + 1.0, var0.y + 1.0, var0.z + 1.0);
+   public static AxisAlignedBB fromVector(Vector3d vector) {
+      return new AxisAlignedBB(vector.x, vector.y, vector.z, vector.x + 1.0, vector.y + 1.0, vector.z + 1.0);
    }
 
-   public double method19658(Direction.Axis var1) {
-      return var1.method328(this.minX, this.minY, this.minZ);
+   public double getMin(Direction.Axis axis) {
+      return axis.getCoordinate(this.minX, this.minY, this.minZ);
    }
 
-   public double method19659(Direction.Axis var1) {
-      return var1.method328(this.maxX, this.maxY, this.maxZ);
+   public double getMax(Direction.Axis axis) {
+      return axis.getCoordinate(this.maxX, this.maxY, this.maxZ);
    }
 
    @Override
@@ -108,186 +108,293 @@ public class AxisAlignedBB {
       return 31 * var5 + (int)(var3 ^ var3 >>> 32);
    }
 
-   public AxisAlignedBB method19660(double var1, double var3, double var5) {
-      double var9 = this.minX;
-      double var11 = this.minY;
-      double var13 = this.minZ;
-      double var15 = this.maxX;
-      double var17 = this.maxY;
-      double var19 = this.maxZ;
-      if (!(var1 < 0.0)) {
-         if (var1 > 0.0) {
-            var15 -= var1;
-         }
-      } else {
-         var9 -= var1;
+   /**
+    * Creates a new {@link AxisAlignedBB} that has been contracted by the given amount, with positive changes
+    * decreasing max values and negative changes increasing min values.
+    * <br/>
+    * If the amount to contract by is larger than the length of a side, then the side will wrap (still creating a valid
+    * AABB - see last sample).
+    *
+    * <h3>Samples:</h3>
+    * <table>
+    * <tr><th>Input</th><th>Result</th></tr>
+    * <tr><td><pre><code>new AxisAlignedBB(0, 0, 0, 4, 4, 4).contract(2, 2, 2)</code></pre></td><td><pre><samp>box[0.0,
+    * 0.0, 0.0 -> 2.0, 2.0, 2.0]</samp></pre></td></tr>
+    * <tr><td><pre><code>new AxisAlignedBB(0, 0, 0, 4, 4, 4).contract(-2, -2,
+    * -2)</code></pre></td><td><pre><samp>box[2.0, 2.0, 2.0 -> 4.0, 4.0, 4.0]</samp></pre></td></tr>
+    * <tr><td><pre><code>new AxisAlignedBB(5, 5, 5, 7, 7, 7).contract(0, 1,
+    * -1)</code></pre></td><td><pre><samp>box[5.0, 5.0, 6.0 -> 7.0, 6.0, 7.0]</samp></pre></td></tr>
+    * <tr><td><pre><code>new AxisAlignedBB(-2, -2, -2, 2, 2, 2).contract(4, -4,
+    * 0)</code></pre></td><td><pre><samp>box[-8.0, 2.0, -2.0 -> -2.0, 8.0, 2.0]</samp></pre></td></tr>
+    * </table>
+    *
+    * <h3>See Also:</h3>
+    * <ul>
+    * <li>{@link #expand(double, double, double)} - like this, except for expanding.</li>
+    * <li>{@link #grow(double, double, double)} and {@link #grow(double)} - expands in all directions.</li>
+    * <li>{@link #shrink(double)} - contracts in all directions (like {@link #grow(double)})</li>
+    * </ul>
+    *
+    * @return A new modified bounding box.
+    */
+   public AxisAlignedBB contract(double x, double y, double z)
+   {
+      double d0 = this.minX;
+      double d1 = this.minY;
+      double d2 = this.minZ;
+      double d3 = this.maxX;
+      double d4 = this.maxY;
+      double d5 = this.maxZ;
+
+      if (x < 0.0D)
+      {
+         d0 -= x;
+      }
+      else if (x > 0.0D)
+      {
+         d3 -= x;
       }
 
-      if (!(var3 < 0.0)) {
-         if (var3 > 0.0) {
-            var17 -= var3;
-         }
-      } else {
-         var11 -= var3;
+      if (y < 0.0D)
+      {
+         d1 -= y;
+      }
+      else if (y > 0.0D)
+      {
+         d4 -= y;
       }
 
-      if (!(var5 < 0.0)) {
-         if (var5 > 0.0) {
-            var19 -= var5;
-         }
-      } else {
-         var13 -= var5;
+      if (z < 0.0D)
+      {
+         d2 -= z;
+      }
+      else if (z > 0.0D)
+      {
+         d5 -= z;
       }
 
-      return new AxisAlignedBB(var9, var11, var13, var15, var17, var19);
+      return new AxisAlignedBB(d0, d1, d2, d3, d4, d5);
    }
+
 
    public AxisAlignedBB expand(Vector3d var1) {
       return this.expand(var1.x, var1.y, var1.z);
    }
 
-   public AxisAlignedBB expand(double var1, double var3, double var5) {
+   /**
+    * Creates a new {@link AxisAlignedBB} that has been expanded by the given amount, with positive changes increasing
+    * max values and negative changes decreasing min values.
+
+    * <h3>Samples:</h3>
+    * <table>
+    * <tr><th>Input</th><th>Result</th></tr>
+    * <tr><td><pre><code>new AxisAlignedBB(0, 0, 0, 1, 1, 1).expand(2, 2, 2)</code></pre></td><td><pre><samp>box[0, 0,
+    * 0 -> 3, 3, 3]</samp></pre></td><td>
+    * <tr><td><pre><code>new AxisAlignedBB(0, 0, 0, 1, 1, 1).expand(-2, -2, -2)</code></pre></td><td><pre><samp>box[-2,
+    * -2, -2 -> 1, 1, 1]</samp></pre></td><td>
+    * <tr><td><pre><code>new AxisAlignedBB(5, 5, 5, 7, 7, 7).expand(0, 1, -1)</code></pre></td><td><pre><samp>box[5, 5,
+    * 4, 7, 8, 7]</samp></pre></td><td>
+    * </table>
+
+    * <h3>See Also:</h3>
+    * <ul>
+    * <li>{@link #contract(double, double, double)} - like this, except for shrinking.</li>
+    * <li>{@link #grow(double, double, double)} and {@link #grow(double)} - expands in all directions.</li>
+    * <li>{@link #shrink(double)} - contracts in all directions (like {@link #grow(double)})</li>
+    * </ul>
+
+    * @return A modified bounding box that will always be equal or greater in volume to this bounding box.
+    */
+   public AxisAlignedBB expand(double x, double y, double z) {
       double var9 = this.minX;
       double var11 = this.minY;
       double var13 = this.minZ;
       double var15 = this.maxX;
       double var17 = this.maxY;
       double var19 = this.maxZ;
-      if (!(var1 < 0.0)) {
-         if (var1 > 0.0) {
-            var15 += var1;
+      if (!(x < 0.0)) {
+         if (x > 0.0) {
+            var15 += x;
          }
       } else {
-         var9 += var1;
+         var9 += x;
       }
 
-      if (!(var3 < 0.0)) {
-         if (var3 > 0.0) {
-            var17 += var3;
+      if (!(y < 0.0)) {
+         if (y > 0.0) {
+            var17 += y;
          }
       } else {
-         var11 += var3;
+         var11 += y;
       }
 
-      if (!(var5 < 0.0)) {
-         if (var5 > 0.0) {
-            var19 += var5;
+      if (!(z < 0.0)) {
+         if (z > 0.0) {
+            var19 += z;
          }
       } else {
-         var13 += var5;
+         var13 += z;
       }
 
       return new AxisAlignedBB(var9, var11, var13, var15, var17, var19);
    }
 
-   public AxisAlignedBB grow(double var1, double var3, double var5) {
-      double var9 = this.minX - var1;
-      double var11 = this.minY - var3;
-      double var13 = this.minZ - var5;
-      double var15 = this.maxX + var1;
-      double var17 = this.maxY + var3;
-      double var19 = this.maxZ + var5;
+   /**
+    * Creates a new {@link AxisAlignedBB} that has been contracted by the given amount in both directions. Negative
+    * values will shrink the AABB instead of expanding it.
+    * <br/>
+    * Side lengths will be increased by 2 times the value of the parameters, since both min and max are changed.
+    * <br/>
+    * If contracting and the amount to contract by is larger than the length of a side, then the side will wrap (still
+    * creating a valid AABB - see last ample).
+    *
+    * <h3>Samples:</h3>
+    * <table>
+    * <tr><th>Input</th><th>Result</th></tr>
+    * <tr><td><pre><code>new AxisAlignedBB(0, 0, 0, 1, 1, 1).grow(2, 2, 2)</code></pre></td><td><pre><samp>box[-2.0,
+    * -2.0, -2.0 -> 3.0, 3.0, 3.0]</samp></pre></td></tr>
+    * <tr><td><pre><code>new AxisAlignedBB(0, 0, 0, 6, 6, 6).grow(-2, -2, -2)</code></pre></td><td><pre><samp>box[2.0,
+    * 2.0, 2.0 -> 4.0, 4.0, 4.0]</samp></pre></td></tr>
+    * <tr><td><pre><code>new AxisAlignedBB(5, 5, 5, 7, 7, 7).grow(0, 1, -1)</code></pre></td><td><pre><samp>box[5.0,
+    * 4.0, 6.0 -> 7.0, 8.0, 6.0]</samp></pre></td></tr>
+    * <tr><td><pre><code>new AxisAlignedBB(1, 1, 1, 3, 3, 3).grow(-4, -2, -3)</code></pre></td><td><pre><samp>box[-1.0,
+    * 1.0, 0.0 -> 5.0, 3.0, 4.0]</samp></pre></td></tr>
+    * </table>
+    *
+    * <h3>See Also:</h3>
+    * <ul>
+    * <li>{@link #expand(double, double, double)} - expands in only one direction.</li>
+    * <li>{@link #contract(double, double, double)} - contracts in only one direction.</li>
+    * <lu>{@link #grow(double)} - version of this that expands in all directions from one parameter.</li>
+    * <li>{@link #shrink(double)} - contracts in all directions</li>
+    * </ul>
+    *
+    * @return A modified bounding box.
+    */
+   public AxisAlignedBB grow(double x, double y, double z) {
+      double var9 = this.minX - x;
+      double var11 = this.minY - y;
+      double var13 = this.minZ - z;
+      double var15 = this.maxX + x;
+      double var17 = this.maxY + y;
+      double var19 = this.maxZ + z;
       return new AxisAlignedBB(var9, var11, var13, var15, var17, var19);
    }
 
-   public AxisAlignedBB grow(double var1) {
-      return this.grow(var1, var1, var1);
+   /**
+    * Creates a new {@link AxisAlignedBB} that is expanded by the given value in all directions. Equivalent to {@link
+    * #grow(double, double, double)} with the given value for all 3 params. Negative values will shrink the AABB.
+    * <br/>
+    * Side lengths will be increased by 2 times the value of the parameter, since both min and max are changed.
+    * <br/>
+    * If contracting and the amount to contract by is larger than the length of a side, then the side will wrap (still
+    * creating a valid AABB - see samples on {@link #grow(double, double, double)}).
+    *
+    * @return A modified AABB.
+    */
+   public AxisAlignedBB grow(double value) {
+      return this.grow(value, value, value);
    }
 
-   public AxisAlignedBB method19665(AxisAlignedBB var1) {
-      double var4 = Math.max(this.minX, var1.minX);
-      double var6 = Math.max(this.minY, var1.minY);
-      double var8 = Math.max(this.minZ, var1.minZ);
-      double var10 = Math.min(this.maxX, var1.maxX);
-      double var12 = Math.min(this.maxY, var1.maxY);
-      double var14 = Math.min(this.maxZ, var1.maxZ);
+   public AxisAlignedBB intersect(AxisAlignedBB other) {
+      double var4 = Math.max(this.minX, other.minX);
+      double var6 = Math.max(this.minY, other.minY);
+      double var8 = Math.max(this.minZ, other.minZ);
+      double var10 = Math.min(this.maxX, other.maxX);
+      double var12 = Math.min(this.maxY, other.maxY);
+      double var14 = Math.min(this.maxZ, other.maxZ);
       return new AxisAlignedBB(var4, var6, var8, var10, var12, var14);
    }
 
-   public AxisAlignedBB method19666(AxisAlignedBB var1) {
-      double var4 = Math.min(this.minX, var1.minX);
-      double var6 = Math.min(this.minY, var1.minY);
-      double var8 = Math.min(this.minZ, var1.minZ);
-      double var10 = Math.max(this.maxX, var1.maxX);
-      double var12 = Math.max(this.maxY, var1.maxY);
-      double var14 = Math.max(this.maxZ, var1.maxZ);
+   public AxisAlignedBB union(AxisAlignedBB other) {
+      double var4 = Math.min(this.minX, other.minX);
+      double var6 = Math.min(this.minY, other.minY);
+      double var8 = Math.min(this.minZ, other.minZ);
+      double var10 = Math.max(this.maxX, other.maxX);
+      double var12 = Math.max(this.maxY, other.maxY);
+      double var14 = Math.max(this.maxZ, other.maxZ);
       return new AxisAlignedBB(var4, var6, var8, var10, var12, var14);
    }
 
-   public AxisAlignedBB offset(double var1, double var3, double var5) {
+   /**
+    * Offsets the current bounding box by the specified amount.
+    */
+   public AxisAlignedBB offset(double x, double y, double z) {
       return new AxisAlignedBB(
-         this.minX + var1, this.minY + var3, this.minZ + var5, this.maxX + var1, this.maxY + var3, this.maxZ + var5
+         this.minX + x, this.minY + y, this.minZ + z, this.maxX + x, this.maxY + y, this.maxZ + z
       );
    }
 
-   public AxisAlignedBB method19668(BlockPos var1) {
+   public AxisAlignedBB offset(BlockPos pos) {
       return new AxisAlignedBB(
-         this.minX + (double)var1.getX(),
-         this.minY + (double)var1.getY(),
-         this.minZ + (double)var1.getZ(),
-         this.maxX + (double)var1.getX(),
-         this.maxY + (double)var1.getY(),
-         this.maxZ + (double)var1.getZ()
+         this.minX + (double)pos.getX(),
+         this.minY + (double)pos.getY(),
+         this.minZ + (double)pos.getZ(),
+         this.maxX + (double)pos.getX(),
+         this.maxY + (double)pos.getY(),
+         this.maxZ + (double)pos.getZ()
       );
    }
 
-   public AxisAlignedBB offset(Vector3d var1) {
-      return this.offset(var1.x, var1.y, var1.z);
+   public AxisAlignedBB offset(Vector3d vec) {
+      return this.offset(vec.x, vec.y, vec.z);
    }
 
-   public boolean method19670(AxisAlignedBB var1) {
-      return this.method19671(var1.minX, var1.minY, var1.minZ, var1.maxX, var1.maxY, var1.maxZ);
+   /**
+    * Checks if the bounding box intersects with another.
+    */
+   public boolean intersects(AxisAlignedBB other) {
+      return this.intersects(other.minX, other.minY, other.minZ, other.maxX, other.maxY, other.maxZ);
    }
 
-   public boolean method19671(double var1, double var3, double var5, double var7, double var9, double var11) {
-      return this.minX < var7
-         && this.maxX > var1
-         && this.minY < var9
-         && this.maxY > var3
-         && this.minZ < var11
-         && this.maxZ > var5;
+   public boolean intersects(double x1, double y1, double z1, double x2, double y2, double z2)
+   {
+      return this.minX < x2 && this.maxX > x1 && this.minY < y2 && this.maxY > y1 && this.minZ < z2 && this.maxZ > z1;
    }
 
-   public boolean method19672(Vector3d var1, Vector3d var2) {
-      return this.method19671(
-         Math.min(var1.x, var2.x),
-         Math.min(var1.y, var2.y),
-         Math.min(var1.z, var2.z),
-         Math.max(var1.x, var2.x),
-         Math.max(var1.y, var2.y),
-         Math.max(var1.z, var2.z)
+   public boolean intersects(Vector3d min, Vector3d max) {
+      return this.intersects(
+         Math.min(min.x, max.x),
+         Math.min(min.y, max.y),
+         Math.min(min.z, max.z),
+         Math.max(min.x, max.x),
+         Math.max(min.y, max.y),
+         Math.max(min.z, max.z)
       );
    }
 
-   public boolean method19673(Vector3d var1) {
-      return this.method19674(var1.x, var1.y, var1.z);
+   /**
+    * Returns if the supplied Vec3D is completely inside the bounding box
+    */
+   public boolean contains(Vector3d vec) {
+      return this.contains(vec.x, vec.y, vec.z);
    }
 
-   public boolean method19674(double var1, double var3, double var5) {
-      return var1 >= this.minX
-         && var1 < this.maxX
-         && var3 >= this.minY
-         && var3 < this.maxY
-         && var5 >= this.minZ
-         && var5 < this.maxZ;
+   public boolean contains(double x, double y, double z) {
+      return x >= this.minX
+         && x < this.maxX
+         && y >= this.minY
+         && y < this.maxY
+         && z >= this.minZ
+         && z < this.maxZ;
    }
 
    public double getAverageEdgeLength() {
-      double var3 = this.method19676();
-      double var5 = this.method19677();
-      double var7 = this.method19678();
-      return (var3 + var5 + var7) / 3.0;
+      double xSize = this.getXSize();
+      double ySize = this.getYSize();
+      double zSize = this.getZSize();
+      return (xSize + ySize + zSize) / 3.0;
    }
 
-   public double method19676() {
+   public double getXSize() {
       return this.maxX - this.minX;
    }
 
-   public double method19677() {
+   public double getYSize() {
       return this.maxY - this.minY;
    }
 
-   public double method19678() {
+   public double getZSize() {
       return this.maxZ - this.minZ;
    }
 
@@ -300,7 +407,7 @@ public class AxisAlignedBB {
       double var6 = var2.x - var1.x;
       double var8 = var2.y - var1.y;
       double var10 = var2.z - var1.z;
-      Direction var12 = method19682(this, var1, var5, (Direction)null, var6, var8, var10);
+      Direction var12 = calcSideHit(this, var1, var5, (Direction)null, var6, var8, var10);
       if (var12 != null) {
          double var13 = var5[0];
          return Optional.<Vector3d>of(var1.add(var13 * var6, var13 * var8, var13 * var10));
@@ -318,7 +425,7 @@ public class AxisAlignedBB {
       double var12 = var2.z - var1.z;
 
       for (AxisAlignedBB var17 : var0) {
-         var7 = method19682(var17.method19668(var3), var1, var6, var7, var8, var10, var12);
+         var7 = calcSideHit(var17.offset(var3), var1, var6, var7, var8, var10, var12);
       }
 
       if (var7 != null) {
@@ -330,149 +437,55 @@ public class AxisAlignedBB {
    }
 
    @Nullable
-   private static Direction method19682(AxisAlignedBB var0, Vector3d var1, double[] var2, Direction var3, double var4, double var6, double var8) {
-      if (!(var4 > 1.0E-7)) {
-         if (var4 < -1.0E-7) {
-            var3 = method19683(
-               var2,
-               var3,
-               var4,
-               var6,
-               var8,
-               var0.maxX,
-               var0.minY,
-               var0.maxY,
-               var0.minZ,
-               var0.maxZ,
-               Direction.EAST,
-               var1.x,
-               var1.y,
-               var1.z
-            );
-         }
-      } else {
-         var3 = method19683(
-            var2,
-            var3,
-            var4,
-            var6,
-            var8,
-            var0.minX,
-            var0.minY,
-            var0.maxY,
-            var0.minZ,
-            var0.maxZ,
-            Direction.WEST,
-            var1.x,
-            var1.y,
-            var1.z
-         );
+   private static Direction calcSideHit(AxisAlignedBB aabb, Vector3d start, double[] minDistance, @Nullable Direction facing, double deltaX, double deltaY, double deltaZ)
+   {
+      if (deltaX > 1.0E-7D)
+      {
+         facing = checkSideForHit(minDistance, facing, deltaX, deltaY, deltaZ, aabb.minX, aabb.minY, aabb.maxY, aabb.minZ, aabb.maxZ, Direction.WEST, start.x, start.y, start.z);
+      }
+      else if (deltaX < -1.0E-7D)
+      {
+         facing = checkSideForHit(minDistance, facing, deltaX, deltaY, deltaZ, aabb.maxX, aabb.minY, aabb.maxY, aabb.minZ, aabb.maxZ, Direction.EAST, start.x, start.y, start.z);
       }
 
-      if (!(var6 > 1.0E-7)) {
-         if (var6 < -1.0E-7) {
-            var3 = method19683(
-               var2,
-               var3,
-               var6,
-               var8,
-               var4,
-               var0.maxY,
-               var0.minZ,
-               var0.maxZ,
-               var0.minX,
-               var0.maxX,
-               Direction.UP,
-               var1.y,
-               var1.z,
-               var1.x
-            );
-         }
-      } else {
-         var3 = method19683(
-            var2,
-            var3,
-            var6,
-            var8,
-            var4,
-            var0.minY,
-            var0.minZ,
-            var0.maxZ,
-            var0.minX,
-            var0.maxX,
-            Direction.DOWN,
-            var1.y,
-            var1.z,
-            var1.x
-         );
+      if (deltaY > 1.0E-7D)
+      {
+         facing = checkSideForHit(minDistance, facing, deltaY, deltaZ, deltaX, aabb.minY, aabb.minZ, aabb.maxZ, aabb.minX, aabb.maxX, Direction.DOWN, start.y, start.z, start.x);
+      }
+      else if (deltaY < -1.0E-7D)
+      {
+         facing = checkSideForHit(minDistance, facing, deltaY, deltaZ, deltaX, aabb.maxY, aabb.minZ, aabb.maxZ, aabb.minX, aabb.maxX, Direction.UP, start.y, start.z, start.x);
       }
 
-      if (!(var8 > 1.0E-7)) {
-         if (var8 < -1.0E-7) {
-            var3 = method19683(
-               var2,
-               var3,
-               var8,
-               var4,
-               var6,
-               var0.maxZ,
-               var0.minX,
-               var0.maxX,
-               var0.minY,
-               var0.maxY,
-               Direction.SOUTH,
-               var1.z,
-               var1.x,
-               var1.y
-            );
-         }
-      } else {
-         var3 = method19683(
-            var2,
-            var3,
-            var8,
-            var4,
-            var6,
-            var0.minZ,
-            var0.minX,
-            var0.maxX,
-            var0.minY,
-            var0.maxY,
-            Direction.NORTH,
-            var1.z,
-            var1.x,
-            var1.y
-         );
+      if (deltaZ > 1.0E-7D)
+      {
+         facing = checkSideForHit(minDistance, facing, deltaZ, deltaX, deltaY, aabb.minZ, aabb.minX, aabb.maxX, aabb.minY, aabb.maxY, Direction.NORTH, start.z, start.x, start.y);
+      }
+      else if (deltaZ < -1.0E-7D)
+      {
+         facing = checkSideForHit(minDistance, facing, deltaZ, deltaX, deltaY, aabb.maxZ, aabb.minX, aabb.maxX, aabb.minY, aabb.maxY, Direction.SOUTH, start.z, start.x, start.y);
       }
 
-      return var3;
+      return facing;
    }
 
+
+
    @Nullable
-   private static Direction method19683(
-      double[] var0,
-      Direction var1,
-      double var2,
-      double var4,
-      double var6,
-      double var8,
-      double var10,
-      double var12,
-      double var14,
-      double var16,
-      Direction var18,
-      double var19,
-      double var21,
-      double var23
-   ) {
-      double var27 = (var8 - var19) / var2;
-      double var29 = var21 + var27 * var4;
-      double var31 = var23 + var27 * var6;
-      if (0.0 < var27 && var27 < var0[0] && var10 - 1.0E-7 < var29 && var29 < var12 + 1.0E-7 && var14 - 1.0E-7 < var31 && var31 < var16 + 1.0E-7) {
-         var0[0] = var27;
-         return var18;
-      } else {
-         return var1;
+   private static Direction checkSideForHit(double[] minDistance, @Nullable Direction prevDirection, double distanceSide, double distanceOtherA, double distanceOtherB, double minSide, double minOtherA, double maxOtherA, double minOtherB, double maxOtherB, Direction hitSide, double startSide, double startOtherA, double startOtherB)
+   {
+      double d0 = (minSide - startSide) / distanceSide;
+      double d1 = startOtherA + d0 * distanceOtherA;
+      double d2 = startOtherB + d0 * distanceOtherB;
+
+      if (0.0D < d0 && d0 < minDistance[0] && minOtherA - 1.0E-7D < d1 && d1 < maxOtherA + 1.0E-7D && minOtherB - 1.0E-7D < d2 && d2 < maxOtherB + 1.0E-7D)
+      {
+         minDistance[0] = d0;
+         return hitSide;
+      }
+      else
+      {
+         return prevDirection;
       }
    }
 
@@ -493,7 +506,7 @@ public class AxisAlignedBB {
          + "]";
    }
 
-   public boolean method19684() {
+   public boolean hasNaN() {
       return Double.isNaN(this.minX)
          || Double.isNaN(this.minY)
          || Double.isNaN(this.minZ)
@@ -502,7 +515,7 @@ public class AxisAlignedBB {
          || Double.isNaN(this.maxZ);
    }
 
-   public Vector3d method19685() {
+   public Vector3d getCenter() {
       return new Vector3d(
          MathHelper.lerp(0.5, this.minX, this.maxX),
          MathHelper.lerp(0.5, this.minY, this.maxY),
@@ -510,7 +523,7 @@ public class AxisAlignedBB {
       );
    }
 
-   public static AxisAlignedBB method19686(double var0, double var2, double var4) {
-      return new AxisAlignedBB(-var0 / 2.0, -var2 / 2.0, -var4 / 2.0, var0 / 2.0, var2 / 2.0, var4 / 2.0);
+   public static AxisAlignedBB withSizeAtOrigin(double xSize, double ySize, double zSize) {
+      return new AxisAlignedBB(-xSize / 2.0, -ySize / 2.0, -zSize / 2.0, xSize / 2.0, ySize / 2.0, zSize / 2.0);
    }
 }

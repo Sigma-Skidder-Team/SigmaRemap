@@ -414,7 +414,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          net.minecraft.util.Direction[] var15 = new net.minecraft.util.Direction[]{net.minecraft.util.Direction.WEST, net.minecraft.util.Direction.EAST, net.minecraft.util.Direction.NORTH, net.minecraft.util.Direction.SOUTH};
 
          for (net.minecraft.util.Direction var19 : var15) {
-            double var20 = var19.getAxis().method328(var8, 0.0, var10);
+            double var20 = var19.getAxis().getCoordinate(var8, 0.0, var10);
             double var22 = var19.getAxisDirection() != net.minecraft.util.Direction.AxisDirection.POSITIVE ? var20 : 1.0 - var20;
             if (var22 < var13 && !this.method5401(var7.offset(var19))) {
                var13 = var22;
@@ -936,9 +936,9 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
                   while (var32.hasNext()) {
                      AxisAlignedBB var34 = (AxisAlignedBB)var32.next();
-                     if (var34.method19672(var28, var29) || var34.method19672(var30, var31)) {
+                     if (var34.intersects(var28, var29) || var34.intersects(var30, var31)) {
                         var33 = (float)var34.maxY;
-                        Vector3d var35 = var34.method19685();
+                        Vector3d var35 = var34.getCenter();
                         BlockPos var36 = new BlockPos(var35);
 
                         for (int var37 = 1; (float)var37 < var19; var37++) {

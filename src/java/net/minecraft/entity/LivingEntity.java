@@ -2512,7 +2512,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void updateSpinAttack(AxisAlignedBB var1, AxisAlignedBB var2) {
-      AxisAlignedBB var5 = var1.method19666(var2);
+      AxisAlignedBB var5 = var1.union(var2);
       List var6 = this.world.method7181(this, var5);
       if (var6.isEmpty()) {
          if (this.collidedHorizontally) {

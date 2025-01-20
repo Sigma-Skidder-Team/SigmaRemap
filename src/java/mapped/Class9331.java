@@ -144,13 +144,13 @@ public class Class9331 {
          }
 
          MutableBoundingBox var16 = Class4208.method13001(var1, var2, var3, var4, var5, var6);
-         return var16 != null && var16.field45679 > 1 ? new Class4208(var7, var16, var6) : null;
+         return var16 != null && var16.minY > 1 ? new Class4208(var7, var16, var6) : null;
       }
    }
 
    private static Class4178 method35287(Class4196 var0, List<Class4178> var1, Random var2, int var3, int var4, int var5, Direction var6, int var7) {
       if (var7 <= 50) {
-         if (Math.abs(var3 - var0.method12915().field45678) <= 112 && Math.abs(var5 - var0.method12915().field45680) <= 112) {
+         if (Math.abs(var3 - var0.method12915().minX) <= 112 && Math.abs(var5 - var0.method12915().minZ) <= 112) {
             Class4194 var10 = method35286(var0, var1, var2, var3, var4, var5, var6, var7 + 1);
             if (var10 != null) {
                var1.add(var10);

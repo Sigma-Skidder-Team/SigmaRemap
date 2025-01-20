@@ -125,7 +125,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
             Vector3d var8 = this.getPositionVec();
 
             for (AxisAlignedBB var23 : var7.method19521()) {
-               if (var23.method19668(var32).method19673(var8)) {
+               if (var23.offset(var32).contains(var8)) {
                   this.field5100 = true;
                   break;
                }

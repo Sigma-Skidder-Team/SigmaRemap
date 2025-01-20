@@ -244,7 +244,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    @Override
    public Vector3d getLeashPosition(float var1) {
       float var4 = MathHelper.lerp(var1, this.prevRenderYawOffset, this.renderYawOffset) * (float) (Math.PI / 180.0);
-      Vector3d var5 = new Vector3d(0.0, this.getBoundingBox().method19677() - 1.0, 0.2);
+      Vector3d var5 = new Vector3d(0.0, this.getBoundingBox().getYSize() - 1.0, 0.2);
       return this.method3288(var1).add(var5.method11351(-var4));
    }
 }

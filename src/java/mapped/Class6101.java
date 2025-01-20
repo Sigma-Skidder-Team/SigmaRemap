@@ -91,10 +91,10 @@ public class Class6101 {
          AxisAlignedBB var10 = Class7803.method26052(var9);
          var7.method28802(var9.getPos());
          this.field27353.put(var7, new BlockPos(this.field27357));
-         var5 = var5.method19666(var10);
-         this.field27357.method8381((int)var10.method19676() + 5, 0, 0);
+         var5 = var5.union(var10);
+         this.field27357.method8381((int)var10.getXSize() + 5, 0, 0);
          if (var4++ % this.field27351 == this.field27351 - 1) {
-            this.field27357.method8381(0, 0, (int)var5.method19678() + 6);
+            this.field27357.method8381(0, 0, (int)var5.getZSize() + 6);
             this.field27357.method8307(this.field27348.getX());
             var5 = new AxisAlignedBB(this.field27357);
          }

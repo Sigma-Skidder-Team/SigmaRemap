@@ -59,10 +59,10 @@ public class Class5450 extends StructureStart<Class4712> {
    @Override
    public void func_230366_a_(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6) {
       super.func_230366_a_(var1, var2, var3, var4, var5, var6);
-      int var9 = this.field24197.field45679;
+      int var9 = this.field24197.minY;
 
-      for (int var10 = var5.field45678; var10 <= var5.field45681; var10++) {
-         for (int var11 = var5.field45680; var11 <= var5.field45683; var11++) {
+      for (int var10 = var5.minX; var10 <= var5.maxX; var10++) {
+         for (int var11 = var5.minZ; var11 <= var5.maxZ; var11++) {
             BlockPos var12 = new BlockPos(var10, var9, var11);
             if (!var1.method7007(var12) && this.field24197.method38396(var12)) {
                boolean var13 = false;

@@ -37,8 +37,8 @@ public class Class8814 {
       Class7487 var15 = var14.method35535(var7);
       Class4193 var16 = var2.method21640(var4, var15, var5, var15.method24383(), var13, var15.method24375(var4, var5, var13));
       MutableBoundingBox var17 = var16.method12915();
-      int var18 = (var17.field45681 + var17.field45678) / 2;
-      int var19 = (var17.field45683 + var17.field45680) / 2;
+      int var18 = (var17.maxX + var17.minX) / 2;
+      int var19 = (var17.maxZ + var17.minZ) / 2;
       int var20;
       if (!var9) {
          var20 = var5.getY();
@@ -46,7 +46,7 @@ public class Class8814 {
          var20 = var5.getY() + var3.getNoiseHeight(var18, var19, Heightmap.Type.WORLD_SURFACE_WG);
       }
 
-      int var21 = var17.field45679 + var16.method12979();
+      int var21 = var17.minY + var16.method12979();
       var16.method12937(0, var20 - var21, 0);
       var6.add(var16);
       if (var1.method14742() > 0) {
@@ -59,7 +59,7 @@ public class Class8814 {
                new Class7213(
                   var16,
                   new MutableObject(
-                     VoxelShapes.combineAndSimplify(VoxelShapes.create(var23), VoxelShapes.create(AxisAlignedBB.method19656(var17)), IBooleanFunction.ONLY_FIRST)
+                     VoxelShapes.combineAndSimplify(VoxelShapes.create(var23), VoxelShapes.create(AxisAlignedBB.toImmutable(var17)), IBooleanFunction.ONLY_FIRST)
                   ),
                   var20 + 80,
                   0

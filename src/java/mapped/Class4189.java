@@ -54,9 +54,9 @@ public class Class4189 extends Class4188 {
             var1,
             var2,
             var3,
-            this.field20444.field45678 + var8,
-            this.field20444.field45679 + var3.nextInt(var7) + 1,
-            this.field20444.field45680 - 1,
+            this.field20444.minX + var8,
+            this.field20444.minY + var3.nextInt(var7) + 1,
+            this.field20444.minZ - 1,
             Direction.NORTH,
             var6
          );
@@ -65,7 +65,7 @@ public class Class4189 extends Class4188 {
             this.field20480
                .add(
                   new MutableBoundingBox(
-                     var10.field45678, var10.field45679, this.field20444.field45680, var10.field45681, var10.field45682, this.field20444.field45680 + 1
+                     var10.minX, var10.minY, this.field20444.minZ, var10.maxX, var10.maxY, this.field20444.minZ + 1
                   )
                );
          }
@@ -85,9 +85,9 @@ public class Class4189 extends Class4188 {
             var1,
             var2,
             var3,
-            this.field20444.field45678 + var8,
-            this.field20444.field45679 + var3.nextInt(var7) + 1,
-            this.field20444.field45683 + 1,
+            this.field20444.minX + var8,
+            this.field20444.minY + var3.nextInt(var7) + 1,
+            this.field20444.maxZ + 1,
             Direction.SOUTH,
             var6
          );
@@ -96,7 +96,7 @@ public class Class4189 extends Class4188 {
             this.field20480
                .add(
                   new MutableBoundingBox(
-                     var21.field45678, var21.field45679, this.field20444.field45683 - 1, var21.field45681, var21.field45682, this.field20444.field45683
+                     var21.minX, var21.minY, this.field20444.maxZ - 1, var21.maxX, var21.maxY, this.field20444.maxZ
                   )
                );
          }
@@ -116,9 +116,9 @@ public class Class4189 extends Class4188 {
             var1,
             var2,
             var3,
-            this.field20444.field45678 - 1,
-            this.field20444.field45679 + var3.nextInt(var7) + 1,
-            this.field20444.field45680 + var8,
+            this.field20444.minX - 1,
+            this.field20444.minY + var3.nextInt(var7) + 1,
+            this.field20444.minZ + var8,
             Direction.WEST,
             var6
          );
@@ -127,7 +127,7 @@ public class Class4189 extends Class4188 {
             this.field20480
                .add(
                   new MutableBoundingBox(
-                     this.field20444.field45678, var22.field45679, var22.field45680, this.field20444.field45678 + 1, var22.field45682, var22.field45683
+                     this.field20444.minX, var22.minY, var22.minZ, this.field20444.minX + 1, var22.maxY, var22.maxZ
                   )
                );
          }
@@ -147,9 +147,9 @@ public class Class4189 extends Class4188 {
             var1,
             var2,
             var3,
-            this.field20444.field45681 + 1,
-            this.field20444.field45679 + var3.nextInt(var7) + 1,
-            this.field20444.field45680 + var8,
+            this.field20444.maxX + 1,
+            this.field20444.minY + var3.nextInt(var7) + 1,
+            this.field20444.minZ + var8,
             Direction.EAST,
             var6
          );
@@ -158,7 +158,7 @@ public class Class4189 extends Class4188 {
             this.field20480
                .add(
                   new MutableBoundingBox(
-                     this.field20444.field45681 - 1, var23.field45679, var23.field45680, this.field20444.field45681, var23.field45682, var23.field45683
+                     this.field20444.maxX - 1, var23.minY, var23.minZ, this.field20444.maxX, var23.maxY, var23.maxZ
                   )
                );
          }
@@ -175,12 +175,12 @@ public class Class4189 extends Class4188 {
          this.method12927(
             var1,
             var5,
-            this.field20444.field45678,
-            this.field20444.field45679,
-            this.field20444.field45680,
-            this.field20444.field45681,
-            this.field20444.field45679,
-            this.field20444.field45683,
+            this.field20444.minX,
+            this.field20444.minY,
+            this.field20444.minZ,
+            this.field20444.maxX,
+            this.field20444.minY,
+            this.field20444.maxZ,
             Blocks.DIRT.getDefaultState(),
             field20443,
             true
@@ -188,12 +188,12 @@ public class Class4189 extends Class4188 {
          this.method12927(
             var1,
             var5,
-            this.field20444.field45678,
-            this.field20444.field45679 + 1,
-            this.field20444.field45680,
-            this.field20444.field45681,
-            Math.min(this.field20444.field45679 + 3, this.field20444.field45682),
-            this.field20444.field45683,
+            this.field20444.minX,
+            this.field20444.minY + 1,
+            this.field20444.minZ,
+            this.field20444.maxX,
+            Math.min(this.field20444.minY + 3, this.field20444.maxY),
+            this.field20444.maxZ,
             field20443,
             field20443,
             false
@@ -203,12 +203,12 @@ public class Class4189 extends Class4188 {
             this.method12927(
                var1,
                var5,
-               var11.field45678,
-               var11.field45682 - 2,
-               var11.field45680,
-               var11.field45681,
-               var11.field45682,
-               var11.field45683,
+               var11.minX,
+               var11.maxY - 2,
+               var11.minZ,
+               var11.maxX,
+               var11.maxY,
+               var11.maxZ,
                field20443,
                field20443,
                false
@@ -218,12 +218,12 @@ public class Class4189 extends Class4188 {
          this.method12931(
             var1,
             var5,
-            this.field20444.field45678,
-            this.field20444.field45679 + 4,
-            this.field20444.field45680,
-            this.field20444.field45681,
-            this.field20444.field45682,
-            this.field20444.field45683,
+            this.field20444.minX,
+            this.field20444.minY + 4,
+            this.field20444.minZ,
+            this.field20444.maxX,
+            this.field20444.maxY,
+            this.field20444.maxZ,
             field20443,
             false
          );

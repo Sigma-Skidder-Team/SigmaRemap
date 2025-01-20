@@ -56,7 +56,7 @@ public class Class4224 extends Class4213 {
          }
       }
 
-      int var17 = this.field20444.field45679;
+      int var17 = this.field20444.minY;
       int var18 = this.method12920(9, 22);
       int var19 = this.method12922(9, 22);
 
@@ -201,7 +201,7 @@ public class Class4224 extends Class4213 {
 
    @Override
    public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
-      int var10 = Math.max(var1.getSeaLevel(), 64) - this.field20444.field45679;
+      int var10 = Math.max(var1.getSeaLevel(), 64) - this.field20444.minY;
       this.method13005(var1, var5, 0, 0, 0, 58, var10, 58);
       this.method13011(false, 0, var1, var4, var5);
       this.method13011(true, 33, var1, var4, var5);

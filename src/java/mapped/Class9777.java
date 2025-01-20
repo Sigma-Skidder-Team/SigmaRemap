@@ -49,7 +49,7 @@ public final class Class9777 {
       boolean var12 = var11 == Class109.field367;
       MutableObject<VoxelShape> var13 = new MutableObject();
       MutableBoundingBox var14 = var1.method12915();
-      int var15 = var14.field45679;
+      int var15 = var14.minY;
 
       label174:
       for (Class8266 var17 : var8.method24374(this.field45737, var9, var10, this.field45739)) {
@@ -76,7 +76,7 @@ public final class Class9777 {
                   var28 = var13;
                   var29 = var15;
                   if (var13.getValue() == null) {
-                     var13.setValue(VoxelShapes.create(AxisAlignedBB.method19656(var14)));
+                     var13.setValue(VoxelShapes.create(AxisAlignedBB.toImmutable(var14)));
                   }
                }
 
@@ -120,7 +120,7 @@ public final class Class9777 {
                               var20.getX() - var40.getX(), var20.getY() - var40.getY(), var20.getZ() - var40.getZ()
                            );
                            MutableBoundingBox var42 = var32.method24375(this.field45737, var41, var34);
-                           int var43 = var42.field45679;
+                           int var43 = var42.minY;
                            Class109 var44 = var32.method24382();
                            boolean var45 = var44 == Class109.field367;
                            int var46 = var40.getY();
@@ -140,15 +140,15 @@ public final class Class9777 {
                            MutableBoundingBox var50 = var42.method38394(0, var49, 0);
                            BlockPos var51 = var41.add(0, var49, 0);
                            if (var37 > 0) {
-                              int var52 = Math.max(var37 + 1, var50.field45682 - var50.field45679);
-                              var50.field45682 = var50.field45679 + var52;
+                              int var52 = Math.max(var37 + 1, var50.maxY - var50.minY);
+                              var50.maxY = var50.minY + var52;
                            }
 
                            if (! VoxelShapes.compare(
-                              (VoxelShape)var28.getValue(), VoxelShapes.create(AxisAlignedBB.method19656(var50).shrink(0.25)), IBooleanFunction.field44039
+                              (VoxelShape)var28.getValue(), VoxelShapes.create(AxisAlignedBB.toImmutable(var50).shrink(0.25)), IBooleanFunction.field44039
                            )) {
                               var28.setValue(
-                                 VoxelShapes.method27434((VoxelShape)var28.getValue(), VoxelShapes.create(AxisAlignedBB.method19656(var50)), IBooleanFunction.ONLY_FIRST)
+                                 VoxelShapes.method27434((VoxelShape)var28.getValue(), VoxelShapes.create(AxisAlignedBB.toImmutable(var50)), IBooleanFunction.ONLY_FIRST)
                               );
                               int var56 = var1.method12979();
                               int var53;

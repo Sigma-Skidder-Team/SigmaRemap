@@ -51,8 +51,8 @@ public abstract class Class4209 extends Class4178 {
          int var7 = 0;
          BlockPos.Mutable var8 = new BlockPos.Mutable();
 
-         for (int var9 = this.field20444.field45680; var9 <= this.field20444.field45683; var9++) {
-            for (int var10 = this.field20444.field45678; var10 <= this.field20444.field45681; var10++) {
+         for (int var9 = this.field20444.minZ; var9 <= this.field20444.maxZ; var9++) {
+            for (int var10 = this.field20444.minX; var10 <= this.field20444.maxX; var10++) {
                var8.setPos(var10, 64, var9);
                if (var2.method38396(var8)) {
                   var6 += var1.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var8).getY();
@@ -63,7 +63,7 @@ public abstract class Class4209 extends Class4178 {
 
          if (var7 != 0) {
             this.field20519 = var6 / var7;
-            this.field20444.method38393(0, this.field20519 - this.field20444.field45679 + var3, 0);
+            this.field20444.method38393(0, this.field20519 - this.field20444.minY + var3, 0);
             return true;
          } else {
             return false;

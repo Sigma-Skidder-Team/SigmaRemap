@@ -207,7 +207,7 @@ public class Class9110 {
             return false;
          } else {
             AxisAlignedBB var5 = var4.getBoundingBox();
-            return var5.method19677() >= 0.9 && var5.method19677() <= 1.0;
+            return var5.getYSize() >= 0.9 && var5.getYSize() <= 1.0;
          }
       } else {
          return false;

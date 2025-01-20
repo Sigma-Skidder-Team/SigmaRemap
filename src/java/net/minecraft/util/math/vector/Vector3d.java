@@ -211,7 +211,7 @@ public class Vector3d implements Class2955 {
    }
 
    public double getCoordinate(Direction.Axis var1) {
-      return var1.method328(this.x, this.y, this.z);
+      return var1.getCoordinate(this.x, this.y, this.z);
    }
 
    @Override

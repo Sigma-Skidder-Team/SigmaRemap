@@ -504,9 +504,9 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
                         while (var18.hasNext()) {
                            Class4178 var72 = (Class4178)var18.next();
                            MutableBoundingBox var73 = var72.method12915();
-                           int var74 = Math.max(0, Math.max(var73.field45678 - var55, var55 - var73.field45681));
-                           int var75 = var41 - (var73.field45679 + (!(var72 instanceof Class4193) ? 0 : ((Class4193)var72).method12979()));
-                           int var76 = Math.max(0, Math.max(var73.field45680 - var64, var64 - var73.field45683));
+                           int var74 = Math.max(0, Math.max(var73.minX - var55, var55 - var73.maxX));
+                           int var75 = var41 - (var73.minY + (!(var72 instanceof Class4193) ? 0 : ((Class4193)var72).method12979()));
+                           int var76 = Math.max(0, Math.max(var73.minZ - var64, var64 - var73.maxZ));
                            var70 += method17804(var74, var75, var76) * 0.8;
                         }
 

@@ -3,22 +3,22 @@ package mapped;
 public enum Class2222 {
    field14510((var0, var1, var2, var3) -> var2),
    field14511(
-      (var0, var1, var2, var3) -> var1.getX() != var0.field45678
-               && var1.getX() != var0.field45681
-               && var1.getY() != var0.field45679
-               && var1.getY() != var0.field45682
-               && var1.getZ() != var0.field45680
-               && var1.getZ() != var0.field45683
+      (var0, var1, var2, var3) -> var1.getX() != var0.minX
+               && var1.getX() != var0.maxX
+               && var1.getY() != var0.minY
+               && var1.getY() != var0.maxY
+               && var1.getZ() != var0.minZ
+               && var1.getZ() != var0.maxZ
             ? null
             : var2
    ),
    field14512(
-      (var0, var1, var2, var3) -> var1.getX() != var0.field45678
-               && var1.getX() != var0.field45681
-               && var1.getY() != var0.field45679
-               && var1.getY() != var0.field45682
-               && var1.getZ() != var0.field45680
-               && var1.getZ() != var0.field45683
+      (var0, var1, var2, var3) -> var1.getX() != var0.minX
+               && var1.getX() != var0.maxX
+               && var1.getY() != var0.minY
+               && var1.getY() != var0.maxY
+               && var1.getZ() != var0.minZ
+               && var1.getZ() != var0.maxZ
             ? Class8031.method27552()
             : var2
    ),

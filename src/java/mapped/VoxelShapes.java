@@ -60,7 +60,7 @@ public final class VoxelShapes {
       int var5 = method27429(var0.minZ, var0.maxZ);
       if (var3 >= 0 && var4 >= 0 && var5 >= 0) {
          if (var3 == 0 && var4 == 0 && var5 == 0) {
-            return !var0.method19674(0.5, 0.5, 0.5) ? empty() : method27426();
+            return !var0.contains(0.5, 0.5, 0.5) ? empty() : method27426();
          } else {
             int var6 = 1 << var3;
             int var7 = 1 << var4;
@@ -226,7 +226,7 @@ public final class VoxelShapes {
    }
 
    private static double method27439(AxisAlignedBB var0, IWorldReader var1, double var2, ISelectionContext var4, Class2321 var5, Stream<VoxelShape> var6, boolean var7) {
-      if (var0.method19676() < 1.0E-6 || var0.method19677() < 1.0E-6 || var0.method19678() < 1.0E-6) {
+      if (var0.getXSize() < 1.0E-6 || var0.getYSize() < 1.0E-6 || var0.getZSize() < 1.0E-6) {
          return var2;
       } else if (Math.abs(var2) < 1.0E-7) {
          return 0.0;
@@ -236,14 +236,14 @@ public final class VoxelShapes {
          Direction.Axis var12 = var10.method9099(Direction.Axis.Y);
          Direction.Axis var13 = var10.method9099(Direction.Axis.Z);
          BlockPos.Mutable var14 = new BlockPos.Mutable();
-         int var15 = MathHelper.floor(var0.method19658(var11) - 1.0E-7) - 1;
-         int var16 = MathHelper.floor(var0.method19659(var11) + 1.0E-7) + 1;
-         int var17 = MathHelper.floor(var0.method19658(var12) - 1.0E-7) - 1;
-         int var18 = MathHelper.floor(var0.method19659(var12) + 1.0E-7) + 1;
-         double var19 = var0.method19658(var13) - 1.0E-7;
-         double var21 = var0.method19659(var13) + 1.0E-7;
+         int var15 = MathHelper.floor(var0.getMin(var11) - 1.0E-7) - 1;
+         int var16 = MathHelper.floor(var0.getMax(var11) + 1.0E-7) + 1;
+         int var17 = MathHelper.floor(var0.getMin(var12) - 1.0E-7) - 1;
+         int var18 = MathHelper.floor(var0.getMax(var12) + 1.0E-7) + 1;
+         double var19 = var0.getMin(var13) - 1.0E-7;
+         double var21 = var0.getMax(var13) + 1.0E-7;
          boolean var23 = var2 > 0.0;
-         int var24 = !var23 ? MathHelper.floor(var0.method19658(var13) + 1.0E-7) + 1 : MathHelper.floor(var0.method19659(var13) - 1.0E-7) - 1;
+         int var24 = !var23 ? MathHelper.floor(var0.getMin(var13) + 1.0E-7) + 1 : MathHelper.floor(var0.getMax(var13) - 1.0E-7) - 1;
          int var25 = method27440(var2, var19, var21);
          int var26 = !var23 ? -1 : 1;
 

@@ -70,10 +70,10 @@ public class Class2978 extends Structure<Class4726> {
       }
 
       ImmutableList<BlockPos> var20 = ImmutableList.of(
-         new BlockPos(var6.field45678, 0, var6.field45680),
-         new BlockPos(var6.field45681, 0, var6.field45680),
-         new BlockPos(var6.field45678, 0, var6.field45683),
-         new BlockPos(var6.field45681, 0, var6.field45683)
+         new BlockPos(var6.minX, 0, var6.minZ),
+         new BlockPos(var6.maxX, 0, var6.minZ),
+         new BlockPos(var6.minX, 0, var6.maxZ),
+         new BlockPos(var6.maxX, 0, var6.maxZ)
       );
       List<IBlockReader> var11 = var20.stream().map(var1x -> var1.func_230348_a_(var1x.getX(), var1x.getZ())).collect(Collectors.toList());
       Heightmap.Type var12 = var2 != Class2219.field14496 ? Heightmap.Type.WORLD_SURFACE_WG : Heightmap.Type.OCEAN_FLOOR_WG;

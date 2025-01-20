@@ -54,7 +54,7 @@ public abstract class StructureStart<C extends Class4698> {
          if (!this.field24196.isEmpty()) {
             MutableBoundingBox var10 = this.field24196.get(0).field20444;
             Vector3i var11 = var10.method38401();
-            BlockPos var12 = new BlockPos(var11.getX(), var10.field45679, var11.getZ());
+            BlockPos var12 = new BlockPos(var11.getX(), var10.minY, var11.getZ());
             Iterator var13 = this.field24196.iterator();
 
             while (var13.hasNext()) {
@@ -107,7 +107,7 @@ public abstract class StructureStart<C extends Class4698> {
          var7 += var2.nextInt(var6 - var7);
       }
 
-      int var8 = var7 - this.field24197.field45682;
+      int var8 = var7 - this.field24197.maxY;
       this.field24197.method38393(0, var8, 0);
 
       for (Class4178 var10 : this.field24196) {
@@ -124,7 +124,7 @@ public abstract class StructureStart<C extends Class4698> {
          var7 = var2 + var1.nextInt(var6);
       }
 
-      int var8 = var7 - this.field24197.field45679;
+      int var8 = var7 - this.field24197.minY;
       this.field24197.method38393(0, var8, 0);
 
       for (Class4178 var10 : this.field24196) {

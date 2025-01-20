@@ -121,7 +121,7 @@ public class BlockFlySmoothMode extends Module {
                 if (mc.world
                         .getCollisionShapes(
                                 mc.player,
-                                mc.player.boundingBox.expand(0.0, -1.5, 0.0).method19660(0.05, 0.0, 0.05).method19660(-0.05, 0.0, -0.05)
+                                mc.player.boundingBox.expand(0.0, -1.5, 0.0).contract(0.05, 0.0, 0.05).contract(-0.05, 0.0, -0.05)
                         )
                         .count()
                         == 0L

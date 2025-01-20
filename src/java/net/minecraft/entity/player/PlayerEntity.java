@@ -483,7 +483,7 @@ public abstract class PlayerEntity extends LivingEntity {
       if (this.getHealth() > 0.0F && !this.isSpectator()) {
          AxisAlignedBB var4;
          if (this.isPassenger() && !this.getRidingEntity().removed) {
-            var4 = this.getBoundingBox().method19666(this.getRidingEntity().getBoundingBox()).grow(1.0, 0.0, 1.0);
+            var4 = this.getBoundingBox().union(this.getRidingEntity().getBoundingBox()).grow(1.0, 0.0, 1.0);
          } else {
             var4 = this.getBoundingBox().grow(1.0, 0.5, 1.0);
          }
@@ -2106,7 +2106,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
          return this.method3288(var1).add(new Vector3d(var4, -0.11, 0.85).method11352(-var14).method11350(-var6).method11351(-var7));
       } else if (!this.isActualySwimming()) {
-         double var15 = this.getBoundingBox().method19677() - 1.0;
+         double var15 = this.getBoundingBox().getYSize() - 1.0;
          double var10 = !this.isCrouching() ? 0.07 : -0.2;
          return this.method3288(var1).add(new Vector3d(var4, var15, var10).method11351(-var7));
       } else {

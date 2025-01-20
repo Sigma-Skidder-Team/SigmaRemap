@@ -34,7 +34,7 @@ public class Class3491 extends Class3490 {
    @Override
    public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       VoxelShape var7 = this.getShape(var1, var2, var3, ISelectionContext.method14947());
-      Vector3d var8 = var7.getBoundingBox().method19685();
+      Vector3d var8 = var7.getBoundingBox().getCenter();
       double var9 = (double)var3.getX() + var8.x;
       double var11 = (double)var3.getZ() + var8.z;
 

@@ -49,7 +49,7 @@ public final class ProjectileHelper {
       for (Entity var15 : var9.getEntitiesInAABBexcluding(var0, var3, var4)) {
          AxisAlignedBB var16 = var15.getBoundingBox().grow((double)var15.getCollisionBorderSize());
          Optional<Vector3d> var17 = var16.rayTrace(var1, var2);
-         if (!var16.method19673(var1)) {
+         if (!var16.contains(var1)) {
             if (var17.isPresent()) {
                Vector3d var18 = (Vector3d)var17.get();
                double var19 = var1.squareDistanceTo(var18);

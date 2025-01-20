@@ -36,7 +36,7 @@ public class Class5118 implements Class5119 {
             VoxelShape var16 = var15.method23412(var11, var14);
 
             for (AxisAlignedBB var18 : var16.method19521()) {
-               AxisAlignedBB var19 = var18.method19668(var14).grow(0.002).offset(-var3, -var5, -var7);
+               AxisAlignedBB var19 = var18.offset(var14).grow(0.002).offset(-var3, -var5, -var7);
                double var20 = var19.minX;
                double var22 = var19.minY;
                double var24 = var19.minZ;

@@ -489,14 +489,14 @@ public class Chunk implements IChunk {
 
          for (int var13 = 0; var13 < var12; var13++) {
             Entity var14 = (Entity)var11.get(var13);
-            if (var14.getBoundingBox().method19670(var2) && var14 != var1) {
+            if (var14.getBoundingBox().intersects(var2) && var14 != var1) {
                if (var4 == null || var4.test(var14)) {
                   var3.add(var14);
                }
 
                if (var14 instanceof EnderDragonEntity) {
                   for (EnderDragonPartEntity var18 : ((EnderDragonEntity)var14).method4332()) {
-                     if (var18 != var1 && var18.getBoundingBox().method19670(var2) && (var4 == null || var4.test(var18))) {
+                     if (var18 != var1 && var18.getBoundingBox().intersects(var2) && (var4 == null || var4.test(var18))) {
                         var3.add(var18);
                      }
                   }
@@ -514,7 +514,7 @@ public class Chunk implements IChunk {
 
       for (int var9 = var7; var9 <= var8; var9++) {
          for (Entity var11 : this.field9120[var9].method176(Entity.class)) {
-            if ((var1 == null || var11.getType() == var1) && var11.getBoundingBox().method19670(var2) && var4.test((T)var11)) {
+            if ((var1 == null || var11.getType() == var1) && var11.getBoundingBox().intersects(var2) && var4.test((T)var11)) {
                var3.add((T)var11);
             }
          }
@@ -529,7 +529,7 @@ public class Chunk implements IChunk {
 
       for (int var9 = var7; var9 <= var8; var9++) {
          for (Entity var11 : this.field9120[var9].method176(var1)) {
-            if (var11.getBoundingBox().method19670(var2) && (var4 == null || var4.test((T)var11))) {
+            if (var11.getBoundingBox().intersects(var2) && (var4 == null || var4.test((T)var11))) {
                var3.add((T)var11);
             }
          }

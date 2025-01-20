@@ -88,7 +88,7 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
                         var1.accept(var12);
                         return true;
                      }
-                  } else if (this.field35187.method19671((double)var4, (double)var5, (double)var6, (double)var4 + 1.0, (double)var5 + 1.0, (double)var6 + 1.0)) {
+                  } else if (this.field35187.intersects((double)var4, (double)var5, (double)var6, (double)var4 + 1.0, (double)var5 + 1.0, (double)var6 + 1.0)) {
                      var1.accept(var10.withOffset((double)var4, (double)var5, (double)var6));
                      return true;
                   }

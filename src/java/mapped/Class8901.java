@@ -144,12 +144,12 @@ public class Class8901 {
    public static boolean method32449(int var0, int var1, int var2, boolean var3) {
       AxisAlignedBB var6 = field40291.player.getRidingEntity() != null ? field40291.player.getRidingEntity().getBoundingBox() : field40291.player.getBoundingBox();
       AxisAlignedBB var7 = new AxisAlignedBB(
-         (double)((float)var0 + 0.5F) - var6.method19676() / 2.0,
+         (double)((float)var0 + 0.5F) - var6.getXSize() / 2.0,
          (double)var1,
-         (double)((float)var2 + 0.5F) - var6.method19678() / 2.0,
-         (double)((float)var0 + 0.5F) + var6.method19676() / 2.0,
-         (double)var1 + var6.method19677(),
-         (double)((float)var2 + 0.5F) + var6.method19678() / 2.0
+         (double)((float)var2 + 0.5F) - var6.getZSize() / 2.0,
+         (double)((float)var0 + 0.5F) + var6.getXSize() / 2.0,
+         (double)var1 + var6.getYSize(),
+         (double)((float)var2 + 0.5F) + var6.getZSize() / 2.0
       );
       return field40291.world.getCollisionShapes(field40291.player, var7).count() == 0L;
    }

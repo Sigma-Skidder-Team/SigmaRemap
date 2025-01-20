@@ -12,11 +12,11 @@ public abstract class Class5455<C extends Class4698> extends StructureStart<C> {
    public void method17113() {
       super.method17113();
       byte var3 = 12;
-      this.field24197.field45678 -= 12;
-      this.field24197.field45679 -= 12;
-      this.field24197.field45680 -= 12;
-      this.field24197.field45681 += 12;
-      this.field24197.field45682 += 12;
-      this.field24197.field45683 += 12;
+      this.field24197.minX -= 12;
+      this.field24197.minY -= 12;
+      this.field24197.minZ -= 12;
+      this.field24197.maxX += 12;
+      this.field24197.maxY += 12;
+      this.field24197.maxZ += 12;
    }
 }

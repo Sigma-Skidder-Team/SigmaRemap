@@ -31,20 +31,20 @@ public class Class4192 extends Class4188 {
       switch (Class7441.field32015[var5.ordinal()]) {
          case 1:
          default:
-            var8.field45681 = var2 + 3 - 1;
-            var8.field45680 = var4 - 8;
+            var8.maxX = var2 + 3 - 1;
+            var8.minZ = var4 - 8;
             break;
          case 2:
-            var8.field45681 = var2 + 3 - 1;
-            var8.field45683 = var4 + 8;
+            var8.maxX = var2 + 3 - 1;
+            var8.maxZ = var4 + 8;
             break;
          case 3:
-            var8.field45678 = var2 - 8;
-            var8.field45683 = var4 + 3 - 1;
+            var8.minX = var2 - 8;
+            var8.maxZ = var4 + 3 - 1;
             break;
          case 4:
-            var8.field45681 = var2 + 8;
-            var8.field45683 = var4 + 3 - 1;
+            var8.maxX = var2 + 8;
+            var8.maxZ = var4 + 3 - 1;
       }
 
       return Class4178.method12918(var0, var8) != null ? null : var8;
@@ -59,22 +59,22 @@ public class Class4192 extends Class4188 {
             case 1:
             default:
                Class6883.method20959(
-                  var1, var2, var3, this.field20444.field45678, this.field20444.field45679, this.field20444.field45680 - 1, Direction.NORTH, var6
+                  var1, var2, var3, this.field20444.minX, this.field20444.minY, this.field20444.minZ - 1, Direction.NORTH, var6
                );
                break;
             case 2:
                Class6883.method20959(
-                  var1, var2, var3, this.field20444.field45678, this.field20444.field45679, this.field20444.field45683 + 1, Direction.SOUTH, var6
+                  var1, var2, var3, this.field20444.minX, this.field20444.minY, this.field20444.maxZ + 1, Direction.SOUTH, var6
                );
                break;
             case 3:
                Class6883.method20959(
-                  var1, var2, var3, this.field20444.field45678 - 1, this.field20444.field45679, this.field20444.field45680, Direction.WEST, var6
+                  var1, var2, var3, this.field20444.minX - 1, this.field20444.minY, this.field20444.minZ, Direction.WEST, var6
                );
                break;
             case 4:
                Class6883.method20959(
-                  var1, var2, var3, this.field20444.field45681 + 1, this.field20444.field45679, this.field20444.field45680, Direction.EAST, var6
+                  var1, var2, var3, this.field20444.maxX + 1, this.field20444.minY, this.field20444.minZ, Direction.EAST, var6
                );
          }
       }

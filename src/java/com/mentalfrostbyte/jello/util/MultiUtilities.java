@@ -740,9 +740,9 @@ public class MultiUtilities {
    }
 
    public static Vector3d method17752(AxisAlignedBB var0) {
-      double var3 = var0.method19685().x;
+      double var3 = var0.getCenter().x;
       double var5 = var0.minY;
-      double var7 = var0.method19685().z;
+      double var7 = var0.getCenter().z;
       double var9 = (var0.maxY - var5) * 0.95;
       double var11 = (var0.maxX - var0.minX) * 0.95;
       double var13 = (var0.maxZ - var0.minZ) * 0.95;

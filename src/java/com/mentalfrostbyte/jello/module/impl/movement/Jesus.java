@@ -213,7 +213,7 @@ public class Jesus extends Module {
          while (shapeIterator.hasNext()) {
             VoxelShape shape = shapeIterator.next();
             AxisAlignedBB bb = shape.getBoundingBox();
-            BlockPos pos = new BlockPos(bb.method19685());
+            BlockPos pos = new BlockPos(bb.getCenter());
             Block block = mc.world.getBlockState(pos).getBlock();
             if (block != Blocks.WATER
                && block != Blocks.LAVA

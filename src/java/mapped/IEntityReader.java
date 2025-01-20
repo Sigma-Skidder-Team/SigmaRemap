@@ -59,7 +59,7 @@ public interface IEntityReader {
       if (!(var2.getAverageEdgeLength() < 1.0E-7)) {
          AxisAlignedBB var6 = var2.grow(1.0E-7);
          return this.getEntitiesInAABBexcluding(var1, var6, var3.and(var2x -> {
-            if (var2x.getBoundingBox().method19670(var6)) {
+            if (var2x.getBoundingBox().intersects(var6)) {
                if (var1 != null) {
                   if (var1.canCollide(var2x)) {
                      return true;
@@ -165,7 +165,7 @@ public interface IEntityReader {
       ArrayList var6 = Lists.newArrayList();
 
       for (PlayerEntity var8 : this.method6870()) {
-         if (var3.method19674(var8.getPosX(), var8.getPosY(), var8.getPosZ()) && var1.canTarget(var2, var8)) {
+         if (var3.contains(var8.getPosX(), var8.getPosY(), var8.getPosZ()) && var1.canTarget(var2, var8)) {
             var6.add(var8);
          }
       }

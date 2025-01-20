@@ -64,20 +64,20 @@ public class Class4191 extends Class4188 {
          switch (Class7441.field32015[var5.ordinal()]) {
             case 1:
             default:
-               var8.field45681 = var2 + 3 - 1;
-               var8.field45680 = var4 - (var10 - 1);
+               var8.maxX = var2 + 3 - 1;
+               var8.minZ = var4 - (var10 - 1);
                break;
             case 2:
-               var8.field45681 = var2 + 3 - 1;
-               var8.field45683 = var4 + var10 - 1;
+               var8.maxX = var2 + 3 - 1;
+               var8.maxZ = var4 + var10 - 1;
                break;
             case 3:
-               var8.field45678 = var2 - (var10 - 1);
-               var8.field45683 = var4 + 3 - 1;
+               var8.minX = var2 - (var10 - 1);
+               var8.maxZ = var4 + 3 - 1;
                break;
             case 4:
-               var8.field45681 = var2 + var10 - 1;
-               var8.field45683 = var4 + 3 - 1;
+               var8.maxX = var2 + var10 - 1;
+               var8.maxZ = var4 + 3 - 1;
          }
 
          if (Class4178.method12918(var0, var8) == null) {
@@ -99,16 +99,16 @@ public class Class4191 extends Class4188 {
             default:
                if (var7 <= 1) {
                   Class6883.method20959(
-                     var1, var2, var3, this.field20444.field45678, this.field20444.field45679 - 1 + var3.nextInt(3), this.field20444.field45680 - 1, var8, var6
+                     var1, var2, var3, this.field20444.minX, this.field20444.minY - 1 + var3.nextInt(3), this.field20444.minZ - 1, var8, var6
                   );
                } else if (var7 == 2) {
                   Class6883.method20959(
                      var1,
                      var2,
                      var3,
-                     this.field20444.field45678 - 1,
-                     this.field20444.field45679 - 1 + var3.nextInt(3),
-                     this.field20444.field45680,
+                     this.field20444.minX - 1,
+                     this.field20444.minY - 1 + var3.nextInt(3),
+                     this.field20444.minZ,
                      Direction.WEST,
                      var6
                   );
@@ -117,9 +117,9 @@ public class Class4191 extends Class4188 {
                      var1,
                      var2,
                      var3,
-                     this.field20444.field45681 + 1,
-                     this.field20444.field45679 - 1 + var3.nextInt(3),
-                     this.field20444.field45680,
+                     this.field20444.maxX + 1,
+                     this.field20444.minY - 1 + var3.nextInt(3),
+                     this.field20444.minZ,
                      Direction.EAST,
                      var6
                   );
@@ -128,16 +128,16 @@ public class Class4191 extends Class4188 {
             case 2:
                if (var7 <= 1) {
                   Class6883.method20959(
-                     var1, var2, var3, this.field20444.field45678, this.field20444.field45679 - 1 + var3.nextInt(3), this.field20444.field45683 + 1, var8, var6
+                     var1, var2, var3, this.field20444.minX, this.field20444.minY - 1 + var3.nextInt(3), this.field20444.maxZ + 1, var8, var6
                   );
                } else if (var7 == 2) {
                   Class6883.method20959(
                      var1,
                      var2,
                      var3,
-                     this.field20444.field45678 - 1,
-                     this.field20444.field45679 - 1 + var3.nextInt(3),
-                     this.field20444.field45683 - 3,
+                     this.field20444.minX - 1,
+                     this.field20444.minY - 1 + var3.nextInt(3),
+                     this.field20444.maxZ - 3,
                      Direction.WEST,
                      var6
                   );
@@ -146,9 +146,9 @@ public class Class4191 extends Class4188 {
                      var1,
                      var2,
                      var3,
-                     this.field20444.field45681 + 1,
-                     this.field20444.field45679 - 1 + var3.nextInt(3),
-                     this.field20444.field45683 - 3,
+                     this.field20444.maxX + 1,
+                     this.field20444.minY - 1 + var3.nextInt(3),
+                     this.field20444.maxZ - 3,
                      Direction.EAST,
                      var6
                   );
@@ -157,16 +157,16 @@ public class Class4191 extends Class4188 {
             case 3:
                if (var7 <= 1) {
                   Class6883.method20959(
-                     var1, var2, var3, this.field20444.field45678 - 1, this.field20444.field45679 - 1 + var3.nextInt(3), this.field20444.field45680, var8, var6
+                     var1, var2, var3, this.field20444.minX - 1, this.field20444.minY - 1 + var3.nextInt(3), this.field20444.minZ, var8, var6
                   );
                } else if (var7 == 2) {
                   Class6883.method20959(
                      var1,
                      var2,
                      var3,
-                     this.field20444.field45678,
-                     this.field20444.field45679 - 1 + var3.nextInt(3),
-                     this.field20444.field45680 - 1,
+                     this.field20444.minX,
+                     this.field20444.minY - 1 + var3.nextInt(3),
+                     this.field20444.minZ - 1,
                      Direction.NORTH,
                      var6
                   );
@@ -175,9 +175,9 @@ public class Class4191 extends Class4188 {
                      var1,
                      var2,
                      var3,
-                     this.field20444.field45678,
-                     this.field20444.field45679 - 1 + var3.nextInt(3),
-                     this.field20444.field45683 + 1,
+                     this.field20444.minX,
+                     this.field20444.minY - 1 + var3.nextInt(3),
+                     this.field20444.maxZ + 1,
                      Direction.SOUTH,
                      var6
                   );
@@ -186,16 +186,16 @@ public class Class4191 extends Class4188 {
             case 4:
                if (var7 <= 1) {
                   Class6883.method20959(
-                     var1, var2, var3, this.field20444.field45681 + 1, this.field20444.field45679 - 1 + var3.nextInt(3), this.field20444.field45680, var8, var6
+                     var1, var2, var3, this.field20444.maxX + 1, this.field20444.minY - 1 + var3.nextInt(3), this.field20444.minZ, var8, var6
                   );
                } else if (var7 == 2) {
                   Class6883.method20959(
                      var1,
                      var2,
                      var3,
-                     this.field20444.field45681 - 3,
-                     this.field20444.field45679 - 1 + var3.nextInt(3),
-                     this.field20444.field45680 - 1,
+                     this.field20444.maxX - 3,
+                     this.field20444.minY - 1 + var3.nextInt(3),
+                     this.field20444.minZ - 1,
                      Direction.NORTH,
                      var6
                   );
@@ -204,9 +204,9 @@ public class Class4191 extends Class4188 {
                      var1,
                      var2,
                      var3,
-                     this.field20444.field45681 - 3,
-                     this.field20444.field45679 - 1 + var3.nextInt(3),
-                     this.field20444.field45683 + 1,
+                     this.field20444.maxX - 3,
+                     this.field20444.minY - 1 + var3.nextInt(3),
+                     this.field20444.maxZ + 1,
                      Direction.SOUTH,
                      var6
                   );
@@ -216,21 +216,21 @@ public class Class4191 extends Class4188 {
 
       if (var6 < 8) {
          if (var8 != Direction.NORTH && var8 != Direction.SOUTH) {
-            for (int var11 = this.field20444.field45678 + 3; var11 + 3 <= this.field20444.field45681; var11 += 5) {
+            for (int var11 = this.field20444.minX + 3; var11 + 3 <= this.field20444.maxX; var11 += 5) {
                int var12 = var3.nextInt(5);
                if (var12 == 0) {
-                  Class6883.method20959(var1, var2, var3, var11, this.field20444.field45679, this.field20444.field45680 - 1, Direction.NORTH, var6 + 1);
+                  Class6883.method20959(var1, var2, var3, var11, this.field20444.minY, this.field20444.minZ - 1, Direction.NORTH, var6 + 1);
                } else if (var12 == 1) {
-                  Class6883.method20959(var1, var2, var3, var11, this.field20444.field45679, this.field20444.field45683 + 1, Direction.SOUTH, var6 + 1);
+                  Class6883.method20959(var1, var2, var3, var11, this.field20444.minY, this.field20444.maxZ + 1, Direction.SOUTH, var6 + 1);
                }
             }
          } else {
-            for (int var9 = this.field20444.field45680 + 3; var9 + 3 <= this.field20444.field45683; var9 += 5) {
+            for (int var9 = this.field20444.minZ + 3; var9 + 3 <= this.field20444.maxZ; var9 += 5) {
                int var10 = var3.nextInt(5);
                if (var10 == 0) {
-                  Class6883.method20959(var1, var2, var3, this.field20444.field45678 - 1, this.field20444.field45679, var9, Direction.WEST, var6 + 1);
+                  Class6883.method20959(var1, var2, var3, this.field20444.minX - 1, this.field20444.minY, var9, Direction.WEST, var6 + 1);
                } else if (var10 == 1) {
-                  Class6883.method20959(var1, var2, var3, this.field20444.field45681 + 1, this.field20444.field45679, var9, Direction.EAST, var6 + 1);
+                  Class6883.method20959(var1, var2, var3, this.field20444.maxX + 1, this.field20444.minY, var9, Direction.EAST, var6 + 1);
                }
             }
          }

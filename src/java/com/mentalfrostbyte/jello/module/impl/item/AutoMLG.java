@@ -166,7 +166,7 @@ public class AutoMLG extends PremiumModule {
         while (var11.hasNext()) {
             VoxelShape var13 = (VoxelShape) var11.next();
             AxisAlignedBB var14 = var13.getBoundingBox();
-            BlockPos var15 = new BlockPos(var14.method19685());
+            BlockPos var15 = new BlockPos(var14.getCenter());
             if (BlockUtil.method34578(var15)
                     && (double) (var15.getY() + 1) < mc.player.getPosY()
                     && (
@@ -191,7 +191,7 @@ public class AutoMLG extends PremiumModule {
             while (var11.hasNext()) {
                 VoxelShape var20 = (VoxelShape) var11.next();
                 AxisAlignedBB var21 = var20.getBoundingBox();
-                BlockPos var22 = new BlockPos(var21.method19685());
+                BlockPos var22 = new BlockPos(var21.getCenter());
                 if (BlockUtil.method34578(var22)
                         && (double) (var22.getY() + 1) < mc.player.getPosY()
                         && (

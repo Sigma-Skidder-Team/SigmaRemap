@@ -32,8 +32,8 @@ public class Class4179 extends Class4178 {
 
    @Override
    public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
-      int var10 = var1.method6736(Heightmap.Type.OCEAN_FLOOR_WG, this.field20444.field45678, this.field20444.field45680);
-      BlockPos.Mutable var11 = new BlockPos.Mutable(this.field20444.field45678, var10, this.field20444.field45680);
+      int var10 = var1.method6736(Heightmap.Type.OCEAN_FLOOR_WG, this.field20444.minX, this.field20444.minZ);
+      BlockPos.Mutable var11 = new BlockPos.Mutable(this.field20444.minX, var10, this.field20444.minZ);
 
       while (var11.getY() > 0) {
          BlockState var12 = var1.getBlockState(var11);

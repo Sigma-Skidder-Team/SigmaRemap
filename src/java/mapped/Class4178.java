@@ -107,12 +107,12 @@ public abstract class Class4178 {
    }
 
    public boolean method12919(IBlockReader var1, MutableBoundingBox var2) {
-      int var5 = Math.max(this.field20444.field45678 - 1, var2.field45678);
-      int var6 = Math.max(this.field20444.field45679 - 1, var2.field45679);
-      int var7 = Math.max(this.field20444.field45680 - 1, var2.field45680);
-      int var8 = Math.min(this.field20444.field45681 + 1, var2.field45681);
-      int var9 = Math.min(this.field20444.field45682 + 1, var2.field45682);
-      int var10 = Math.min(this.field20444.field45683 + 1, var2.field45683);
+      int var5 = Math.max(this.field20444.minX - 1, var2.minX);
+      int var6 = Math.max(this.field20444.minY - 1, var2.minY);
+      int var7 = Math.max(this.field20444.minZ - 1, var2.minZ);
+      int var8 = Math.min(this.field20444.maxX + 1, var2.maxX);
+      int var9 = Math.min(this.field20444.maxY + 1, var2.maxY);
+      int var10 = Math.min(this.field20444.maxZ + 1, var2.maxZ);
       BlockPos.Mutable var11 = new BlockPos.Mutable();
 
       for (int var12 = var5; var12 <= var8; var12++) {
@@ -162,11 +162,11 @@ public abstract class Class4178 {
          switch (Class8727.field39366[var5.ordinal()]) {
             case 1:
             case 2:
-               return this.field20444.field45678 + var1;
+               return this.field20444.minX + var1;
             case 3:
-               return this.field20444.field45681 - var2;
+               return this.field20444.maxX - var2;
             case 4:
-               return this.field20444.field45678 + var2;
+               return this.field20444.minX + var2;
             default:
                return var1;
          }
@@ -174,7 +174,7 @@ public abstract class Class4178 {
    }
 
    public int method12921(int var1) {
-      return this.method12938() != null ? var1 + this.field20444.field45679 : var1;
+      return this.method12938() != null ? var1 + this.field20444.minY : var1;
    }
 
    public int method12922(int var1, int var2) {
@@ -184,12 +184,12 @@ public abstract class Class4178 {
       } else {
          switch (Class8727.field39366[var5.ordinal()]) {
             case 1:
-               return this.field20444.field45683 - var2;
+               return this.field20444.maxZ - var2;
             case 2:
-               return this.field20444.field45680 + var2;
+               return this.field20444.minZ + var2;
             case 3:
             case 4:
-               return this.field20444.field45680 + var1;
+               return this.field20444.minZ + var1;
             default:
                return var2;
          }

@@ -232,7 +232,7 @@ public class InteractAutoBlock {
                            var31.y,
                            var31.z - var19,
                            var31.x + var19,
-                           var31.y + this.mc.player.boundingBox.method19677(),
+                           var31.y + this.mc.player.boundingBox.getYSize(),
                            var31.z + var19
                         );
                         double var22 = MultiUtilities.method17755(var21);

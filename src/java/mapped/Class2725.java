@@ -130,7 +130,7 @@ public class Class2725 extends Class2595 {
             return false;
          } else {
             BlockPos var6 = var1.method8338(this.field17220.getPosition());
-            return this.field17222.hasNoCollisions(this.field17220, this.field17220.getBoundingBox().method19668(var6));
+            return this.field17222.hasNoCollisions(this.field17220, this.field17220.getBoundingBox().offset(var6));
          }
       } else {
          return false;

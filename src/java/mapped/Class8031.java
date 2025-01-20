@@ -139,7 +139,7 @@ public class Class8031 {
          ServerWorld var9 = var0.method20172();
          int var10 = 0;
 
-         for (BlockPos var12 : BlockPos.method8364(var1.field45678, var1.field45679, var1.field45680, var1.field45681, var1.field45682, var1.field45683)) {
+         for (BlockPos var12 : BlockPos.method8364(var1.minX, var1.minY, var1.minZ, var1.maxX, var1.maxY, var1.maxZ)) {
             if (var4 == null || var4.test(new CachedBlockInfo(var9, var12, true))) {
                Class164 var13 = var3.field14514.method26284(var1, var12, var2, var9);
                if (var13 != null) {

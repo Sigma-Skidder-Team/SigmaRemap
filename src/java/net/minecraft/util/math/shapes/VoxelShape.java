@@ -201,14 +201,14 @@ public abstract class VoxelShape {
             Direction.Axis var8 = var7.method9099(Direction.Axis.X);
             Direction.Axis var9 = var7.method9099(Direction.Axis.Y);
             Direction.Axis var10 = var7.method9099(Direction.Axis.Z);
-            double var11 = var2.method19659(var8);
-            double var13 = var2.method19658(var8);
+            double var11 = var2.getMax(var8);
+            double var13 = var2.getMin(var8);
             int var15 = this.method19523(var8, var13 + 1.0E-7);
             int var16 = this.method19523(var8, var11 - 1.0E-7);
-            int var17 = Math.max(0, this.method19523(var9, var2.method19658(var9) + 1.0E-7));
-            int var18 = Math.min(this.field28033.method26732(var9), this.method19523(var9, var2.method19659(var9) - 1.0E-7) + 1);
-            int var19 = Math.max(0, this.method19523(var10, var2.method19658(var10) + 1.0E-7));
-            int var20 = Math.min(this.field28033.method26732(var10), this.method19523(var10, var2.method19659(var10) - 1.0E-7) + 1);
+            int var17 = Math.max(0, this.method19523(var9, var2.getMin(var9) + 1.0E-7));
+            int var18 = Math.min(this.field28033.method26732(var9), this.method19523(var9, var2.getMax(var9) - 1.0E-7) + 1);
+            int var19 = Math.max(0, this.method19523(var10, var2.getMin(var10) + 1.0E-7));
+            int var20 = Math.min(this.field28033.method26732(var10), this.method19523(var10, var2.getMax(var10) - 1.0E-7) + 1);
             int var21 = this.field28033.method26732(var8);
             if (!(var3 > 0.0)) {
                if (var3 < 0.0) {

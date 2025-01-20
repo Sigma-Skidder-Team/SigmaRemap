@@ -225,7 +225,7 @@ public class RavagerEntity extends Class1026 {
             this.method4584(var4);
          }
 
-         Vector3d var11 = this.getBoundingBox().method19685();
+         Vector3d var11 = this.getBoundingBox().getCenter();
 
          for (int var12 = 0; var12 < 40; var12++) {
             double var5 = this.rand.nextGaussian() * 0.2;

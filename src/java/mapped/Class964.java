@@ -284,12 +284,12 @@ public class Class964 extends TileEntity {
          List var8 = this.method3960(var7);
          if (var8.size() >= 1) {
             MutableBoundingBox var9 = this.method3962(var3, var8);
-            if (var9.field45681 - var9.field45678 > 1 && var9.field45682 - var9.field45679 > 1 && var9.field45683 - var9.field45680 > 1) {
+            if (var9.maxX - var9.minX > 1 && var9.maxY - var9.minY > 1 && var9.maxZ - var9.minZ > 1) {
                this.field5398 = new BlockPos(
-                  var9.field45678 - var3.getX() + 1, var9.field45679 - var3.getY() + 1, var9.field45680 - var3.getZ() + 1
+                  var9.minX - var3.getX() + 1, var9.minY - var3.getY() + 1, var9.minZ - var3.getZ() + 1
                );
                this.field5399 = new BlockPos(
-                  var9.field45681 - var9.field45678 - 1, var9.field45682 - var9.field45679 - 1, var9.field45683 - var9.field45680 - 1
+                  var9.maxX - var9.minX - 1, var9.maxY - var9.minY - 1, var9.maxZ - var9.minZ - 1
                );
                this.markDirty();
                BlockState var10 = this.world.getBlockState(var3);
@@ -338,28 +338,28 @@ public class Class964 extends TileEntity {
 
       for (Class964 var7 : var2) {
          BlockPos var8 = var7.getPos();
-         if (var8.getX() >= var5.field45678) {
-            if (var8.getX() > var5.field45681) {
-               var5.field45681 = var8.getX();
+         if (var8.getX() >= var5.minX) {
+            if (var8.getX() > var5.maxX) {
+               var5.maxX = var8.getX();
             }
          } else {
-            var5.field45678 = var8.getX();
+            var5.minX = var8.getX();
          }
 
-         if (var8.getY() >= var5.field45679) {
-            if (var8.getY() > var5.field45682) {
-               var5.field45682 = var8.getY();
+         if (var8.getY() >= var5.minY) {
+            if (var8.getY() > var5.maxY) {
+               var5.maxY = var8.getY();
             }
          } else {
-            var5.field45679 = var8.getY();
+            var5.minY = var8.getY();
          }
 
-         if (var8.getZ() >= var5.field45680) {
-            if (var8.getZ() > var5.field45683) {
-               var5.field45683 = var8.getZ();
+         if (var8.getZ() >= var5.minZ) {
+            if (var8.getZ() > var5.maxZ) {
+               var5.maxZ = var8.getZ();
             }
          } else {
-            var5.field45680 = var8.getZ();
+            var5.minZ = var8.getZ();
          }
       }
 

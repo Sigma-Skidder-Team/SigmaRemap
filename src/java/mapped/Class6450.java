@@ -236,11 +236,11 @@ public class Class6450 {
                     List<Class6202> var14 = Lists.newArrayList();
                     List var15 = Lists.newArrayList();
                     LinkedList<BlockPos> var16 = Lists.newLinkedList();
-                    BlockPos var17 = new BlockPos(var10.field45678 - var8.field45678, var10.field45679 - var8.field45679, var10.field45680 - var8.field45680);
+                    BlockPos var17 = new BlockPos(var10.minX - var8.minX, var10.minY - var8.minY, var10.minZ - var8.minZ);
 
-                    for (int var18 = var8.field45680; var18 <= var8.field45683; var18++) {
-                        for (int var19 = var8.field45679; var19 <= var8.field45682; var19++) {
-                            for (int var20 = var8.field45678; var20 <= var8.field45681; var20++) {
+                    for (int var18 = var8.minZ; var18 <= var8.maxZ; var18++) {
+                        for (int var19 = var8.minY; var19 <= var8.maxY; var19++) {
+                            for (int var20 = var8.minX; var20 <= var8.maxX; var20++) {
                                 BlockPos var21 = new BlockPos(var20, var19, var18);
                                 BlockPos var22 = var21.method8337(var17);
                                 CachedBlockInfo var23 = new CachedBlockInfo(var12, var21, false);

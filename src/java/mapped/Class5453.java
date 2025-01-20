@@ -22,7 +22,7 @@ public class Class5453 extends StructureStart<MineshaftConfig> {
          this.method17115(var2.func_230356_f_(), this.field24201, 10);
       } else {
          byte var11 = -5;
-         int var12 = var2.func_230356_f_() - this.field24197.field45682 + this.field24197.method38399() / 2 - -5;
+         int var12 = var2.func_230356_f_() - this.field24197.maxY + this.field24197.method38399() / 2 - -5;
          this.field24197.method38393(0, var12, 0);
 
          for (Class4178 var14 : this.field24196) {

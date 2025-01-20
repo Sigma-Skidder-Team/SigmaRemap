@@ -58,7 +58,7 @@ public class Class3469 extends Class3468 {
 
    @Override
    public int method12157(World var1, BlockPos var2) {
-      AxisAlignedBB var5 = field19315.method19668(var2);
+      AxisAlignedBB var5 = field19315.offset(var2);
       List<Entity> var6;
       switch (Class7415.field31771[this.field19318.ordinal()]) {
          case 1:

@@ -201,7 +201,7 @@ public class Class8429 {
       Predicate<Entity> var4 = this.field36112;
       if (this.field36115 != null) {
          AxisAlignedBB var5 = this.field36115.offset(var1);
-         var4 = var4.and(var1x -> var5.method19670(var1x.getBoundingBox()));
+         var4 = var4.and(var1x -> var5.intersects(var1x.getBoundingBox()));
       }
 
       if (!this.field36113.method32004()) {

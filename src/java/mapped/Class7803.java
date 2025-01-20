@@ -135,13 +135,13 @@ public class Class7803 {
 
    public static void method26058(MutableBoundingBox var0, int var1, ServerWorld var2) {
       MutableBoundingBox var5 = new MutableBoundingBox(
-         var0.field45678 - 2, var0.field45679 - 3, var0.field45680 - 3, var0.field45681 + 3, var0.field45682 + 20, var0.field45683 + 3
+         var0.minX - 2, var0.minY - 3, var0.minZ - 3, var0.maxX + 3, var0.maxY + 20, var0.maxZ + 3
       );
       BlockPos.method8361(var5).forEach(var2x -> method26066(var1, var2x, var2));
       var2.getBlockTickScheduler().method20730(var5, true, false);
       var2.method6963(var5);
       AxisAlignedBB var6 = new AxisAlignedBB(
-         (double)var5.field45678, (double)var5.field45679, (double)var5.field45680, (double)var5.field45681, (double)var5.field45682, (double)var5.field45683
+         (double)var5.minX, (double)var5.minY, (double)var5.minZ, (double)var5.maxX, (double)var5.maxY, (double)var5.maxZ
       );
       List<Entity> var7 = var2.<Entity>getEntitiesInAABBexcluding(Entity.class, var6, var0x -> !(var0x instanceof PlayerEntity));
       var7.forEach(Entity::remove);
@@ -151,8 +151,8 @@ public class Class7803 {
       BlockPos var5 = var0.method8337(var1).add(-1, -1, -1);
       BlockPos var6 = Class8969.method32905(var5, Mirror.field13614, var2, var0);
       MutableBoundingBox var7 = MutableBoundingBox.method38389(var0.getX(), var0.getY(), var0.getZ(), var6.getX(), var6.getY(), var6.getZ());
-      int var8 = Math.min(var7.field45678, var7.field45681);
-      int var9 = Math.min(var7.field45680, var7.field45683);
+      int var8 = Math.min(var7.minX, var7.maxX);
+      int var9 = Math.min(var7.minZ, var7.maxZ);
       BlockPos var10 = new BlockPos(var0.getX() - var8, 0, var0.getZ() - var9);
       var7.method38395(var10);
       return var7;
@@ -271,6 +271,6 @@ public class Class7803 {
    private static boolean method26067(BlockPos var0, BlockPos var1, ServerWorld var2) {
       Class964 var5 = (Class964)var2.getTileEntity(var0);
       AxisAlignedBB var6 = method26052(var5).grow(1.0);
-      return var6.method19673(Vector3d.method11328(var1));
+      return var6.contains(Vector3d.method11328(var1));
    }
 }

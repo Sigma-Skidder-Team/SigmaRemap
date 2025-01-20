@@ -67,7 +67,7 @@ public class Class2607 extends Class2605 {
    public void method10805() {
       LivingEntity var3 = this.field16858.method4232();
       PhantomEntity.method5351(this.field16858, new Vector3d(var3.getPosX(), var3.getPosYHeight(0.5), var3.getPosZ()));
-      if (!this.field16858.getBoundingBox().grow(0.2F).method19670(var3.getBoundingBox())) {
+      if (!this.field16858.getBoundingBox().grow(0.2F).intersects(var3.getBoundingBox())) {
          if (this.field16858.collidedHorizontally || this.field16858.hurtTime > 0) {
             PhantomEntity.method5352(this.field16858, Class2143.field14028);
          }

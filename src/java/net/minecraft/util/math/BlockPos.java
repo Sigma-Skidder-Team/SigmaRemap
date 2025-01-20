@@ -254,12 +254,12 @@ public class BlockPos extends Vector3i {
 
    public static Stream<BlockPos> method8361(MutableBoundingBox var0) {
       return method8363(
-         Math.min(var0.field45678, var0.field45681),
-         Math.min(var0.field45679, var0.field45682),
-         Math.min(var0.field45680, var0.field45683),
-         Math.max(var0.field45678, var0.field45681),
-         Math.max(var0.field45679, var0.field45682),
-         Math.max(var0.field45680, var0.field45683)
+         Math.min(var0.minX, var0.maxX),
+         Math.min(var0.minY, var0.maxY),
+         Math.min(var0.minZ, var0.maxZ),
+         Math.max(var0.minX, var0.maxX),
+         Math.max(var0.minY, var0.maxY),
+         Math.max(var0.minZ, var0.maxZ)
       );
    }
 

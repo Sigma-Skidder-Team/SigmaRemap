@@ -140,7 +140,7 @@ public class MovementAntiBot extends Class7249 {
 
          for (BlockPos var6 : method22757(var1)) {
             VoxelShape var7 = field31119.world.getBlockState(var6).method23412(field31119.world, var6);
-            if (!var7.isEmpty() && var4.method19670(var7.getBoundingBox().method19668(var6))) {
+            if (!var7.isEmpty() && var4.intersects(var7.getBoundingBox().offset(var6))) {
                return true;
             }
          }

@@ -42,7 +42,7 @@ public class Class4208 extends Class4194 {
       if (var10 == null) {
          return null;
       } else {
-         if (var10.method12915().field45679 == var9.field45679) {
+         if (var10.method12915().minY == var9.minY) {
             for (int var11 = 3; var11 >= 1; var11--) {
                var9 = MutableBoundingBox.method38388(var2, var3, var4, -1, -1, 0, 5, 5, var11 - 1, var5);
                if (!var10.method12915().method38390(var9)) {

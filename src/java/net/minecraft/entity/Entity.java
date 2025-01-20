@@ -1571,7 +1571,7 @@ public abstract class Entity implements INameable, ICommandSource {
       if (!this.noClip) {
          float var3 = 0.1F;
          float var4 = this.size.field39968 * 0.8F;
-         AxisAlignedBB var5 = AxisAlignedBB.method19686((double)var4, 0.1F, (double)var4).offset(this.getPosX(), this.getPosYEye(), this.getPosZ());
+         AxisAlignedBB var5 = AxisAlignedBB.withSizeAtOrigin((double)var4, 0.1F, (double)var4).offset(this.getPosX(), this.getPosYEye(), this.getPosZ());
          return this.world.func_241457_a_(this, var5, (var1, var2) -> var1.method23437(this.world, var2)).findAny().isPresent();
       } else {
          return false;

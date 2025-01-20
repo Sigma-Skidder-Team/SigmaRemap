@@ -7,24 +7,24 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3i;
 
 public class MutableBoundingBox {
-   public int field45678;
-   public int field45679;
-   public int field45680;
-   public int field45681;
-   public int field45682;
-   public int field45683;
+   public int minX;
+   public int minY;
+   public int minZ;
+   public int maxX;
+   public int maxY;
+   public int maxZ;
 
    public MutableBoundingBox() {
    }
 
    public MutableBoundingBox(int[] var1) {
       if (var1.length == 6) {
-         this.field45678 = var1[0];
-         this.field45679 = var1[1];
-         this.field45680 = var1[2];
-         this.field45681 = var1[3];
-         this.field45682 = var1[4];
-         this.field45683 = var1[5];
+         this.minX = var1[0];
+         this.minY = var1[1];
+         this.minZ = var1[2];
+         this.maxX = var1[3];
+         this.maxY = var1[4];
+         this.maxZ = var1[5];
       }
    }
 
@@ -56,75 +56,75 @@ public class MutableBoundingBox {
    }
 
    public MutableBoundingBox(MutableBoundingBox var1) {
-      this.field45678 = var1.field45678;
-      this.field45679 = var1.field45679;
-      this.field45680 = var1.field45680;
-      this.field45681 = var1.field45681;
-      this.field45682 = var1.field45682;
-      this.field45683 = var1.field45683;
+      this.minX = var1.minX;
+      this.minY = var1.minY;
+      this.minZ = var1.minZ;
+      this.maxX = var1.maxX;
+      this.maxY = var1.maxY;
+      this.maxZ = var1.maxZ;
    }
 
    public MutableBoundingBox(int var1, int var2, int var3, int var4, int var5, int var6) {
-      this.field45678 = var1;
-      this.field45679 = var2;
-      this.field45680 = var3;
-      this.field45681 = var4;
-      this.field45682 = var5;
-      this.field45683 = var6;
+      this.minX = var1;
+      this.minY = var2;
+      this.minZ = var3;
+      this.maxX = var4;
+      this.maxY = var5;
+      this.maxZ = var6;
    }
 
    public MutableBoundingBox(Vector3i var1, Vector3i var2) {
-      this.field45678 = Math.min(var1.getX(), var2.getX());
-      this.field45679 = Math.min(var1.getY(), var2.getY());
-      this.field45680 = Math.min(var1.getZ(), var2.getZ());
-      this.field45681 = Math.max(var1.getX(), var2.getX());
-      this.field45682 = Math.max(var1.getY(), var2.getY());
-      this.field45683 = Math.max(var1.getZ(), var2.getZ());
+      this.minX = Math.min(var1.getX(), var2.getX());
+      this.minY = Math.min(var1.getY(), var2.getY());
+      this.minZ = Math.min(var1.getZ(), var2.getZ());
+      this.maxX = Math.max(var1.getX(), var2.getX());
+      this.maxY = Math.max(var1.getY(), var2.getY());
+      this.maxZ = Math.max(var1.getZ(), var2.getZ());
    }
 
    public MutableBoundingBox(int var1, int var2, int var3, int var4) {
-      this.field45678 = var1;
-      this.field45680 = var2;
-      this.field45681 = var3;
-      this.field45683 = var4;
-      this.field45679 = 1;
-      this.field45682 = 512;
+      this.minX = var1;
+      this.minZ = var2;
+      this.maxX = var3;
+      this.maxZ = var4;
+      this.minY = 1;
+      this.maxY = 512;
    }
 
    public boolean method38390(MutableBoundingBox var1) {
-      return this.field45681 >= var1.field45678
-         && this.field45678 <= var1.field45681
-         && this.field45683 >= var1.field45680
-         && this.field45680 <= var1.field45683
-         && this.field45682 >= var1.field45679
-         && this.field45679 <= var1.field45682;
+      return this.maxX >= var1.minX
+         && this.minX <= var1.maxX
+         && this.maxZ >= var1.minZ
+         && this.minZ <= var1.maxZ
+         && this.maxY >= var1.minY
+         && this.minY <= var1.maxY;
    }
 
    public boolean intersectsWith(int var1, int var2, int var3, int var4) {
-      return this.field45681 >= var1 && this.field45678 <= var3 && this.field45683 >= var2 && this.field45680 <= var4;
+      return this.maxX >= var1 && this.minX <= var3 && this.maxZ >= var2 && this.minZ <= var4;
    }
 
    public void method38392(MutableBoundingBox var1) {
-      this.field45678 = Math.min(this.field45678, var1.field45678);
-      this.field45679 = Math.min(this.field45679, var1.field45679);
-      this.field45680 = Math.min(this.field45680, var1.field45680);
-      this.field45681 = Math.max(this.field45681, var1.field45681);
-      this.field45682 = Math.max(this.field45682, var1.field45682);
-      this.field45683 = Math.max(this.field45683, var1.field45683);
+      this.minX = Math.min(this.minX, var1.minX);
+      this.minY = Math.min(this.minY, var1.minY);
+      this.minZ = Math.min(this.minZ, var1.minZ);
+      this.maxX = Math.max(this.maxX, var1.maxX);
+      this.maxY = Math.max(this.maxY, var1.maxY);
+      this.maxZ = Math.max(this.maxZ, var1.maxZ);
    }
 
    public void method38393(int var1, int var2, int var3) {
-      this.field45678 += var1;
-      this.field45679 += var2;
-      this.field45680 += var3;
-      this.field45681 += var1;
-      this.field45682 += var2;
-      this.field45683 += var3;
+      this.minX += var1;
+      this.minY += var2;
+      this.minZ += var3;
+      this.maxX += var1;
+      this.maxY += var2;
+      this.maxZ += var3;
    }
 
    public MutableBoundingBox method38394(int var1, int var2, int var3) {
       return new MutableBoundingBox(
-         this.field45678 + var1, this.field45679 + var2, this.field45680 + var3, this.field45681 + var1, this.field45682 + var2, this.field45683 + var3
+         this.minX + var1, this.minY + var2, this.minZ + var3, this.maxX + var1, this.maxY + var2, this.maxZ + var3
       );
    }
 
@@ -133,51 +133,51 @@ public class MutableBoundingBox {
    }
 
    public boolean method38396(Vector3i var1) {
-      return var1.getX() >= this.field45678
-         && var1.getX() <= this.field45681
-         && var1.getZ() >= this.field45680
-         && var1.getZ() <= this.field45683
-         && var1.getY() >= this.field45679
-         && var1.getY() <= this.field45682;
+      return var1.getX() >= this.minX
+         && var1.getX() <= this.maxX
+         && var1.getZ() >= this.minZ
+         && var1.getZ() <= this.maxZ
+         && var1.getY() >= this.minY
+         && var1.getY() <= this.maxY;
    }
 
    public Vector3i method38397() {
-      return new Vector3i(this.field45681 - this.field45678, this.field45682 - this.field45679, this.field45683 - this.field45680);
+      return new Vector3i(this.maxX - this.minX, this.maxY - this.minY, this.maxZ - this.minZ);
    }
 
    public int method38398() {
-      return this.field45681 - this.field45678 + 1;
+      return this.maxX - this.minX + 1;
    }
 
    public int method38399() {
-      return this.field45682 - this.field45679 + 1;
+      return this.maxY - this.minY + 1;
    }
 
    public int method38400() {
-      return this.field45683 - this.field45680 + 1;
+      return this.maxZ - this.minZ + 1;
    }
 
    public Vector3i method38401() {
       return new BlockPos(
-         this.field45678 + (this.field45681 - this.field45678 + 1) / 2,
-         this.field45679 + (this.field45682 - this.field45679 + 1) / 2,
-         this.field45680 + (this.field45683 - this.field45680 + 1) / 2
+         this.minX + (this.maxX - this.minX + 1) / 2,
+         this.minY + (this.maxY - this.minY + 1) / 2,
+         this.minZ + (this.maxZ - this.minZ + 1) / 2
       );
    }
 
    @Override
    public String toString() {
       return MoreObjects.toStringHelper(this)
-         .add("x0", this.field45678)
-         .add("y0", this.field45679)
-         .add("z0", this.field45680)
-         .add("x1", this.field45681)
-         .add("y1", this.field45682)
-         .add("z1", this.field45683)
+         .add("x0", this.minX)
+         .add("y0", this.minY)
+         .add("z0", this.minZ)
+         .add("x1", this.maxX)
+         .add("y1", this.maxY)
+         .add("z1", this.maxZ)
          .toString();
    }
 
    public IntArrayNBT method38402() {
-      return new IntArrayNBT(new int[]{this.field45678, this.field45679, this.field45680, this.field45681, this.field45682, this.field45683});
+      return new IntArrayNBT(new int[]{this.minX, this.minY, this.minZ, this.maxX, this.maxY, this.maxZ});
    }
 }

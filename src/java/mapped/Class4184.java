@@ -155,9 +155,9 @@ public class Class4184 extends Class4180 {
    }
 
    private void method12953(Random var1, IWorld var2) {
-      for (int var5 = this.field20444.field45678 + 1; var5 < this.field20444.field45681; var5++) {
-         for (int var6 = this.field20444.field45680 + 1; var6 < this.field20444.field45683; var6++) {
-            BlockPos var7 = new BlockPos(var5, this.field20444.field45679, var6);
+      for (int var5 = this.field20444.minX + 1; var5 < this.field20444.maxX; var5++) {
+         for (int var6 = this.field20444.minZ + 1; var6 < this.field20444.maxZ; var6++) {
+            BlockPos var7 = new BlockPos(var5, this.field20444.minY, var6);
             if (var2.getBlockState(var7).isIn(Blocks.NETHERRACK)) {
                this.method12954(var1, var2, var7.down());
             }
@@ -197,9 +197,9 @@ public class Class4184 extends Class4180 {
                float var19 = var9[var18];
                if (var1.nextDouble() < (double)var19) {
                   int var20 = method12958(var2, var15, var16, this.field20469);
-                  int var21 = !var5 ? Math.min(this.field20444.field45679, var20) : var20;
+                  int var21 = !var5 ? Math.min(this.field20444.minY, var20) : var20;
                   var14.setPos(var15, var21, var16);
-                  if (Math.abs(var21 - this.field20444.field45679) <= 3 && this.method12956(var2, var14)) {
+                  if (Math.abs(var21 - this.field20444.minY) <= 3 && this.method12956(var2, var14)) {
                      this.method12957(var1, var2, var14);
                      if (this.field20470.field35677) {
                         this.method12952(var1, var2, var14);

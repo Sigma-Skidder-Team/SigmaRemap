@@ -138,7 +138,7 @@ public class Class2903 extends Class2898<Class4733> {
       HashSet var10 = Sets.newHashSet();
       MutableBoundingBox var11 = MutableBoundingBox.method38386();
       boolean var12 = this.method11234(var1, var3, var4, var8, var9, var11, var5);
-      if (var11.field45678 <= var11.field45681 && var12 && !var8.isEmpty()) {
+      if (var11.minX <= var11.maxX && var12 && !var8.isEmpty()) {
          if (!var5.field22413.isEmpty()) {
             ArrayList var13 = Lists.newArrayList(var8);
             ArrayList var14 = Lists.newArrayList(var9);
@@ -148,7 +148,7 @@ public class Class2903 extends Class2898<Class4733> {
          }
 
          Class7938 var15 = this.method11236(var1, var11, var8, var10);
-         Class8969.method32900(var1, 3, var15, var11.field45678, var11.field45679, var11.field45680);
+         Class8969.method32900(var1, 3, var15, var11.minX, var11.minY, var11.minZ);
          return true;
       } else {
          return false;
@@ -168,13 +168,13 @@ public class Class2903 extends Class2898<Class4733> {
 
       for (BlockPos var12 : Lists.newArrayList(var4)) {
          if (var2.method38396(var12)) {
-            var8.method26718(var12.getX() - var2.field45678, var12.getY() - var2.field45679, var12.getZ() - var2.field45680, true, true);
+            var8.method26718(var12.getX() - var2.minX, var12.getY() - var2.minY, var12.getZ() - var2.minZ, true, true);
          }
       }
 
       for (BlockPos var26 : Lists.newArrayList(var3)) {
          if (var2.method38396(var26)) {
-            var8.method26718(var26.getX() - var2.field45678, var26.getY() - var2.field45679, var26.getZ() - var2.field45680, true, true);
+            var8.method26718(var26.getX() - var2.minX, var26.getY() - var2.minY, var26.getZ() - var2.minZ, true, true);
          }
 
          for (Direction var16 : Direction.values()) {
@@ -186,7 +186,7 @@ public class Class2903 extends Class2898<Class4733> {
                   method11232(var1, var23, var17.with(BlockStateProperties.DISTANCE, Integer.valueOf(1)));
                   if (var2.method38396(var23)) {
                      var8.method26718(
-                        var23.getX() - var2.field45678, var23.getY() - var2.field45679, var23.getZ() - var2.field45680, true, true
+                        var23.getX() - var2.minX, var23.getY() - var2.minY, var23.getZ() - var2.minZ, true, true
                      );
                   }
                }
@@ -200,7 +200,7 @@ public class Class2903 extends Class2898<Class4733> {
 
          for (BlockPos var30 : var27) {
             if (var2.method38396(var30)) {
-               var8.method26718(var30.getX() - var2.field45678, var30.getY() - var2.field45679, var30.getZ() - var2.field45680, true, true);
+               var8.method26718(var30.getX() - var2.minX, var30.getY() - var2.minY, var30.getZ() - var2.minZ, true, true);
             }
 
             for (Direction var19 : Direction.values()) {
@@ -214,7 +214,7 @@ public class Class2903 extends Class2898<Class4733> {
                         method11232(var1, var23, var22);
                         if (var2.method38396(var23)) {
                            var8.method26718(
-                              var23.getX() - var2.field45678, var23.getY() - var2.field45679, var23.getZ() - var2.field45680, true, true
+                              var23.getX() - var2.minX, var23.getY() - var2.minY, var23.getZ() - var2.minZ, true, true
                            );
                         }
 

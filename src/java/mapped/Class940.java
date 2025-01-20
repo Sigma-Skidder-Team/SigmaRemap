@@ -97,14 +97,14 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
 
    private AxisAlignedBB method3749(Direction var1) {
       Direction var4 = var1.getOpposite();
-      return this.method3748(var1).method19660((double)var4.getXOffset(), (double)var4.getYOffset(), (double)var4.getZOffset());
+      return this.method3748(var1).contract((double)var4.getXOffset(), (double)var4.getYOffset(), (double)var4.getZOffset());
    }
 
    private void method3750() {
       BlockState var3 = this.world.getBlockState(this.getPos());
       if (var3.getBlock() instanceof Class3368) {
          Direction var4 = var3.<Direction>get(Class3368.field18939);
-         AxisAlignedBB var5 = this.method3749(var4).method19668(this.pos);
+         AxisAlignedBB var5 = this.method3749(var4).offset(this.pos);
          List var6 = this.world.method7181((Entity)null, var5);
          if (!var6.isEmpty()) {
             for (int var7 = 0; var7 < var6.size(); var7++) {
