@@ -16,7 +16,7 @@ public class Class4703 implements Class4698 {
    public static final Codec<Class4703> field22305 = RecordCodecBuilder.create(
       var0 -> var0.group(
                Class6698.field29330.fieldOf("state_provider").forGetter(var0x -> var0x.field22306),
-               Class6166.field27591.fieldOf("block_placer").forGetter(var0x -> var0x.field22307),
+               BlockPlacer.field27591.fieldOf("block_placer").forGetter(var0x -> var0x.field22307),
                BlockState.field31585
                   .listOf()
                   .fieldOf("whitelist")
@@ -33,7 +33,7 @@ public class Class4703 implements Class4698 {
             .apply(var0, Class4703::new)
    );
    public final Class6698 field22306;
-   public final Class6166 field22307;
+   public final BlockPlacer field22307;
    public final Set<Block> field22308;
    public final Set<BlockState> field22309;
    public final int field22310;
@@ -46,7 +46,7 @@ public class Class4703 implements Class4698 {
 
    private Class4703(
       Class6698 var1,
-      Class6166 var2,
+      BlockPlacer var2,
       List<BlockState> var3,
       List<BlockState> var4,
       int var5,
@@ -74,7 +74,7 @@ public class Class4703 implements Class4698 {
 
    public Class4703(
            Class6698 var1,
-           Class6166 var2,
+           BlockPlacer var2,
            Set<Block> var3,
            Set<BlockState> var4,
            int var5,

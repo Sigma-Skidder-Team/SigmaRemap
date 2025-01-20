@@ -7,6 +7,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
+import net.minecraft.world.gen.blockplacer.ColumnPlacer;
+import net.minecraft.world.gen.blockplacer.DoublePlantPlacer;
+import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.OptionalInt;
@@ -311,7 +314,7 @@ public class Features {
       "patch_fire",
       Class2898.field17940
          .method11216(
-            new Class8326(new Class6700(Class7700.field33031), Class6168.field27597)
+            new Class8326(new Class6700(Class7700.field33031), SimpleBlockPlacer.field27597)
                .method29191(64)
                .method29189(ImmutableSet.of(Class7700.field33033.getBlock()))
                .method29196()
@@ -323,7 +326,7 @@ public class Features {
       "patch_soul_fire",
       Class2898.field17940
          .method11216(
-            new Class8326(new Class6700(Class7700.field33032), new Class6168())
+            new Class8326(new Class6700(Class7700.field33032), new SimpleBlockPlacer())
                .method29191(64)
                .method29189(ImmutableSet.of(Class7700.field33034.getBlock()))
                .method29196()
@@ -333,22 +336,22 @@ public class Features {
    );
    public static final ConfiguredFeature<?, ?> field41698 = method33941(
       "patch_brown_mushroom",
-      Class2898.field17940.method11216(new Class8326(new Class6700(Class7700.field33019), Class6168.field27597).method29191(64).method29196().method29198())
+      Class2898.field17940.method11216(new Class8326(new Class6700(Class7700.field33019), SimpleBlockPlacer.field27597).method29191(64).method29196().method29198())
    );
    public static final ConfiguredFeature<?, ?> field41699 = method33941(
       "patch_red_mushroom",
-      Class2898.field17940.method11216(new Class8326(new Class6700(Class7700.field33020), Class6168.field27597).method29191(64).method29196().method29198())
+      Class2898.field17940.method11216(new Class8326(new Class6700(Class7700.field33020), SimpleBlockPlacer.field27597).method29191(64).method29196().method29198())
    );
    public static final ConfiguredFeature<?, ?> field41700 = method33941(
       "patch_crimson_roots",
       Class2898.field17940
-         .method11216(new Class8326(new Class6700(Class7700.field33035), new Class6168()).method29191(64).method29196().method29198())
+         .method11216(new Class8326(new Class6700(Class7700.field33035), new SimpleBlockPlacer()).method29191(64).method29196().method29198())
          .method26516(128)
    );
    public static final ConfiguredFeature<?, ?> field41701 = method33941(
       "patch_sunflower",
       Class2898.field17940
-         .method11216(new Class8326(new Class6700(Class7700.field33039), new Class6169()).method29191(64).method29196().method29198())
+         .method11216(new Class8326(new Class6700(Class7700.field33039), new DoublePlantPlacer()).method29191(64).method29196().method29198())
          .method26510(Class9006.field41181)
          .method26510(Class9006.field41182)
          .method26514(10)
@@ -357,7 +360,7 @@ public class Features {
       "patch_pumpkin",
       Class2898.field17940
          .method11216(
-            new Class8326(new Class6700(Class7700.field33029), Class6168.field27597)
+            new Class8326(new Class6700(Class7700.field33029), SimpleBlockPlacer.field27597)
                .method29191(64)
                .method29189(ImmutableSet.of(Class7700.field33013.getBlock()))
                .method29196()
@@ -409,7 +412,7 @@ public class Features {
       "patch_melon",
       Class2898.field17940
          .method11216(
-            new Class8326(new Class6700(Class7700.field33028), Class6168.field27597)
+            new Class8326(new Class6700(Class7700.field33028), SimpleBlockPlacer.field27597)
                .method29191(64)
                .method29189(ImmutableSet.of(Class7700.field33013.getBlock()))
                .method29195()
@@ -423,7 +426,7 @@ public class Features {
    public static final ConfiguredFeature<?, ?> field41719 = method33941(
       "patch_waterlilly",
       Class2898.field17940
-         .method11216(new Class8326(new Class6700(Class7700.field33036), Class6168.field27597).method29191(10).method29198())
+         .method11216(new Class8326(new Class6700(Class7700.field33036), SimpleBlockPlacer.field27597).method29191(10).method29198())
          .method26510(Class9006.field41183)
          .method26514(4)
    );
@@ -443,14 +446,14 @@ public class Features {
    public static final ConfiguredFeature<?, ?> field41722 = method33941(
       "patch_large_fern",
       Class2898.field17940
-         .method11216(new Class8326(new Class6700(Class7700.field33014), new Class6169()).method29191(64).method29196().method29198())
+         .method11216(new Class8326(new Class6700(Class7700.field33014), new DoublePlantPlacer()).method29191(64).method29196().method29198())
          .method26510(Class9006.field41181)
          .method26510(Class9006.field41182)
          .method26514(7)
    );
    public static final ConfiguredFeature<?, ?> field41723 = method33941(
       "patch_cactus",
-      Class2898.field17940.method11216(new Class8326(new Class6700(Class7700.field33040), new Class6167(1, 2)).method29191(10).method29196().method29198())
+      Class2898.field17940.method11216(new Class8326(new Class6700(Class7700.field33040), new ColumnPlacer(1, 2)).method29191(10).method29196().method29198())
    );
    public static final ConfiguredFeature<?, ?> field41724 = method33941("patch_cactus_desert", field41723.method26510(Class9006.field41183).method26514(10));
    public static final ConfiguredFeature<?, ?> field41725 = method33941("patch_cactus_decorated", field41723.method26510(Class9006.field41183).method26514(5));
@@ -902,7 +905,7 @@ public class Features {
    public static final ConfiguredFeature<?, ?> field41798 = method33941(
       "flower_forest",
       Class2898.field17938
-         .method11216(new Class8326(Class6702.field29340, Class6168.field27597).method29191(64).method29198())
+         .method11216(new Class8326(Class6702.field29340, SimpleBlockPlacer.field27597).method29191(64).method29198())
          .method26510(Class9006.field41181)
          .method26510(Class9006.field41182)
          .method26514(100)
@@ -910,12 +913,12 @@ public class Features {
    public static final ConfiguredFeature<?, ?> field41799 = method33941(
       "flower_swamp",
       Class2898.field17938
-         .method11216(new Class8326(new Class6700(Class7700.field33024), Class6168.field27597).method29191(64).method29198())
+         .method11216(new Class8326(new Class6700(Class7700.field33024), SimpleBlockPlacer.field27597).method29191(64).method29198())
          .method26510(Class9006.field41181)
          .method26510(Class9006.field41182)
    );
    public static final ConfiguredFeature<?, ?> field41800 = method33941(
-      "flower_plain", Class2898.field17938.method11216(new Class8326(Class6697.field29327, Class6168.field27597).method29191(64).method29198())
+      "flower_plain", Class2898.field17938.method11216(new Class8326(Class6697.field29327, SimpleBlockPlacer.field27597).method29191(64).method29198())
    );
    public static final ConfiguredFeature<?, ?> field41801 = method33941(
       "flower_plain_decorated",
@@ -926,13 +929,13 @@ public class Features {
    );
    private static final ImmutableList<Supplier<ConfiguredFeature<?, ?>>> field41802 = ImmutableList.of(
       (Supplier<ConfiguredFeature<?, ?>>)() -> Class2898.field17940
-            .method11216(new Class8326(new Class6700(Class7700.field33016), new Class6169()).method29191(64).method29196().method29198()),
+            .method11216(new Class8326(new Class6700(Class7700.field33016), new DoublePlantPlacer()).method29191(64).method29196().method29198()),
       (Supplier<ConfiguredFeature<?, ?>>)() -> Class2898.field17940
-            .method11216(new Class8326(new Class6700(Class7700.field33017), new Class6169()).method29191(64).method29196().method29198()),
+            .method11216(new Class8326(new Class6700(Class7700.field33017), new DoublePlantPlacer()).method29191(64).method29196().method29198()),
       (Supplier<ConfiguredFeature<?, ?>>)() -> Class2898.field17940
-            .method11216(new Class8326(new Class6700(Class7700.field33018), new Class6169()).method29191(64).method29196().method29198()),
+            .method11216(new Class8326(new Class6700(Class7700.field33018), new DoublePlantPlacer()).method29191(64).method29196().method29198()),
       (Supplier<ConfiguredFeature<?, ?>>)() -> Class2898.field17939
-            .method11216(new Class8326(new Class6700(Class7700.field33023), Class6168.field27597).method29191(64).method29198())
+            .method11216(new Class8326(new Class6700(Class7700.field33023), SimpleBlockPlacer.field27597).method29191(64).method29198())
    );
    public static final ConfiguredFeature<?, ?> field41803 = method33941(
       "forest_flower_vegetation_common",

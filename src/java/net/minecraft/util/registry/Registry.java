@@ -27,6 +27,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.gen.ChunkGenerator;
+import net.minecraft.world.gen.blockplacer.BlockPlacerType;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
@@ -133,7 +134,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Class6272<?>>> field16117 = createKey("worldgen/decorator");
    public static final Registry<Class6272<?>> field16118 = method9175(field16117, () -> Class6272.field27752);
    public static final RegistryKey<Registry<Class9654<?>>> field16119 = createKey("worldgen/block_state_provider_type");
-   public static final RegistryKey<Registry<Class9269<?>>> field16120 = createKey("worldgen/block_placer_type");
+   public static final RegistryKey<Registry<BlockPlacerType<?>>> field16120 = createKey("worldgen/block_placer_type");
    public static final RegistryKey<Registry<Class5984<?>>> field16121 = createKey("worldgen/foliage_placer_type");
    public static final RegistryKey<Registry<Class9107<?>>> field16122 = createKey("worldgen/trunk_placer_type");
    public static final RegistryKey<Registry<Class9542<?>>> field16123 = createKey("worldgen/tree_decorator_type");
@@ -143,7 +144,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Class7525<?>>> field16127 = createKey("worldgen/structure_processor");
    public static final RegistryKey<Registry<Class8325<?>>> field16128 = createKey("worldgen/structure_pool_element");
    public static final Registry<Class9654<?>> field16129 = method9175(field16119, () -> Class9654.field45131);
-   public static final Registry<Class9269<?>> field16130 = method9175(field16120, () -> Class9269.field42638);
+   public static final Registry<BlockPlacerType<?>> field16130 = method9175(field16120, () -> BlockPlacerType.SIMPLE_BLOCK_PLACER);
    public static final Registry<Class5984<?>> field16131 = method9175(field16121, () -> Class5984.field26059);
    public static final Registry<Class9107<?>> field16132 = method9175(field16122, () -> Class9107.field41831);
    public static final Registry<Class9542<?>> field16133 = method9175(field16123, () -> Class9542.field44429);

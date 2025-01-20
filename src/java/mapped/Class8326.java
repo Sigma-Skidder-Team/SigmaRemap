@@ -9,7 +9,7 @@ import java.util.Set;
 public class Class8326 {
    private static String[] field35775;
    private final Class6698 field35776;
-   private final Class6166 field35777;
+   private final BlockPlacer field35777;
    private Set<Block> field35778 = ImmutableSet.of();
    private Set<BlockState> field35779 = ImmutableSet.of();
    private int field35780 = 64;
@@ -20,7 +20,7 @@ public class Class8326 {
    private boolean field35785 = true;
    private boolean field35786 = false;
 
-   public Class8326(Class6698 var1, Class6166 var2) {
+   public Class8326(Class6698 var1, BlockPlacer var2) {
       this.field35776 = var1;
       this.field35777 = var2;
    }
