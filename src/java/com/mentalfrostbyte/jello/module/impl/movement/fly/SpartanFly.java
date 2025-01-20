@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
@@ -109,13 +109,13 @@ public class SpartanFly extends Module {
                         this.field23569 = !mc.gameSettings.keyBindJump.isKeyDown()
                                 ? (!this.field23571 ? mc.player.getPositionVec().y : mc.player.getPositionVec().y - 1.0)
                                 : (!this.field23571 ? mc.player.getPositionVec().y + 1.0 : mc.player.getPositionVec().y);
-                        MovementUtils.setSpeed(var1, 0.35);
+                        MovementUtil.setSpeed(var1, 0.35);
                     }
                 }
             } else {
                 mc.player.jump();
                 var1.setY(mc.player.getMotion().y);
-                MovementUtils.setSpeed(var1, 0.35);
+                MovementUtil.setSpeed(var1, 0.35);
                 this.field23569 = !mc.gameSettings.keyBindJump.isKeyDown()
                         ? (!this.field23571 ? mc.player.getPositionVec().y : mc.player.getPositionVec().y - 1.0)
                         : (!this.field23571 ? mc.player.getPositionVec().y + 1.0 : mc.player.getPositionVec().y);

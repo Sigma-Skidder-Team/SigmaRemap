@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class Unstuck extends Module {
@@ -33,7 +33,7 @@ public class Unstuck extends Module {
     public void method16285(EventMove var1) {
         if (this.isEnabled()) {
             if ((float) this.field23574 >= this.getNumberValueBySettingName("Flags")) {
-                MovementUtils.setSpeed(var1, 0.0);
+                MovementUtil.setSpeed(var1, 0.0);
                 var1.setY(0.0);
                 mc.player.setMotion(0.0, 0.0, 0.0);
             }

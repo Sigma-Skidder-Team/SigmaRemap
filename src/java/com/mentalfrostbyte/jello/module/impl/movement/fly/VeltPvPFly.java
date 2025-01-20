@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
@@ -41,7 +41,7 @@ public class VeltPvPFly extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.strafe(0.0);
+        MovementUtil.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
             MultiUtilities.setPlayerYMotion(-0.0789);
         }
@@ -76,27 +76,27 @@ public class VeltPvPFly extends Module {
                 if (this.field23419 != -1) {
                     if (this.field23419 == 0) {
                         if (!mc.gameSettings.keyBindJump.isKeyDown() && var1.getY() > 0.0) {
-                            var1.setY(-MovementUtils.getJumpValue());
+                            var1.setY(-MovementUtil.getJumpValue());
                         }
 
                         MultiUtilities.setPlayerYMotion(var1.getY());
-                        MovementUtils.setSpeed(var1, var4 - 0.1);
+                        MovementUtil.setSpeed(var1, var4 - 0.1);
                     }
                 } else {
                     if (!mc.gameSettings.keyBindJump.isKeyDown()) {
-                        var1.setY(!this.field23423 ? MovementUtils.getJumpValue() : -var4 / 2.0);
+                        var1.setY(!this.field23423 ? MovementUtil.getJumpValue() : -var4 / 2.0);
                     } else {
-                        var1.setY(!this.field23423 ? var4 / 2.0 : MovementUtils.getJumpValue());
+                        var1.setY(!this.field23423 ? var4 / 2.0 : MovementUtil.getJumpValue());
                         this.field23422 = this.field23421;
                         this.field23421 = !this.field23423 ? mc.player.getPosY() + var1.getY() : this.field23421;
                     }
 
                     MultiUtilities.setPlayerYMotion(var1.getY());
-                    MovementUtils.setSpeed(var1, var4);
+                    MovementUtil.setSpeed(var1, var4);
                 }
             } else {
                 var1.setY(0.0);
-                MovementUtils.setSpeed(var1, 0.0);
+                MovementUtil.setSpeed(var1, 0.0);
             }
         }
     }

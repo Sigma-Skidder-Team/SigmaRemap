@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 
 public class FullBlockPhase extends Module {
     public FullBlockPhase() {
@@ -26,11 +26,11 @@ public class FullBlockPhase extends Module {
         if (this.isEnabled()) {
             if (!MultiUtilities.method17761()) {
                 if (mc.player.collidedHorizontally) {
-                    MovementUtils.setSpeed(event, 0.0);
-                    MovementUtils.method37095(1.1920931E-8);
+                    MovementUtil.setSpeed(event, 0.0);
+                    MovementUtil.method37095(1.1920931E-8);
                 }
             } else {
-                MovementUtils.method37095(0.617);
+                MovementUtil.method37095(0.617);
             }
         }
     }

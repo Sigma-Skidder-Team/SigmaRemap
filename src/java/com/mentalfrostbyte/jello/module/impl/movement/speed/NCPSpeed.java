@@ -14,7 +14,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.movement.Speed;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.module.impl.movement.Jesus;
 
 public class NCPSpeed extends Module {
@@ -66,10 +66,10 @@ public class NCPSpeed extends Module {
                         this.field23607++;
                         double var4 = this.field23609;
                         if (this.field23607 > 1) {
-                            var4 = Math.max(MovementUtils.method37076(), this.field23609 - (0.004 - MovementUtils.method37076() * 0.003) - Math.random() * 1.0E-10);
+                            var4 = Math.max(MovementUtil.method37076(), this.field23609 - (0.004 - MovementUtil.method37076() * 0.003) - Math.random() * 1.0E-10);
                         }
 
-                        MovementUtils.setSpeed(var1, var4);
+                        MovementUtil.setSpeed(var1, var4);
                         if (var1.getY() >= -0.008744698139753596 && var1.getY() <= -0.008724698139753597) {
                             var1.setY(0.001);
                         } else if (var1.getY() >= -0.07743000150680542 && var1.getY() <= -0.07741000150680542) {
@@ -98,13 +98,13 @@ public class NCPSpeed extends Module {
             }
 
             if (!mc.gameSettings.keyBindJump.isKeyDown() || !Client.getInstance().moduleManager.getModuleByClass(BlockFly.class).isEnabled()) {
-                double var4 = 0.56 + (double) MovementUtils.getSpeedBoost() * 0.1;
-                var1.method14002(0.407 + (double) MovementUtils.getJumpBoost() * 0.1 + Math.random() * 1.0E-5);
+                double var4 = 0.56 + (double) MovementUtil.getSpeedBoost() * 0.1;
+                var1.method14002(0.407 + (double) MovementUtil.getJumpBoost() * 0.1 + Math.random() * 1.0E-5);
                 if (Speed.tickCounter< 2) {
                     var4 /= 2.5;
                 }
 
-                var4 = Math.max(MovementUtils.method37076(), var4);
+                var4 = Math.max(MovementUtil.method37076(), var4);
                 var1.method14003(var4);
                 this.field23609 = var4;
             }

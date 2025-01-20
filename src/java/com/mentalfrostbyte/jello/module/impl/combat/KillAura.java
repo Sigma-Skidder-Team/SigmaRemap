@@ -17,12 +17,12 @@ import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.Rots;
+import com.mentalfrostbyte.jello.util.player.Rots;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mentalfrostbyte.jello.util.ClientColors;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
@@ -224,7 +224,7 @@ public class KillAura extends Module {
                     this.field23945--;
                 }
 
-                if (target != null && interactAB.isBlocking() && MovementUtils.isMoving()
+                if (target != null && interactAB.isBlocking() && MovementUtil.isMoving()
                         && this.getStringSettingValueByName("Autoblock Mode").equals("NCP")) {
                     interactAB.method36816();
                 }
@@ -477,7 +477,7 @@ public class KillAura extends Module {
             if (interactAB.method36820(this.field23939)) {
                 this.field23940 = 1;
                 var8 = var3;
-                var6 = !var2.equals("Cubecraft") ? 0.0626 : MovementUtils.getJumpValue() / 10.0;
+                var6 = !var2.equals("Cubecraft") ? 0.0626 : MovementUtil.getJumpValue() / 10.0;
                 this.field23960 = new double[] { var1.getX(), var1.getY() + var6, var1.getZ() };
             }
         } else if (this.field23940 == 1) {

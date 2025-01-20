@@ -14,12 +14,12 @@ import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.Rots;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
+import com.mentalfrostbyte.jello.util.player.Rots;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
 import com.mentalfrostbyte.jello.util.ClientColors;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import mapped.*;
 import net.minecraft.block.*;
 import net.minecraft.inventory.container.ClickType;
@@ -303,7 +303,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                 switch (var4) {
                     case "NCP":
                         if (var1.getY() > 0.0) {
-                            if (MovementUtils.getJumpBoost() == 0) {
+                            if (MovementUtil.getJumpBoost() == 0) {
                                 if (var1.getY() > 0.247 && var1.getY() < 0.249) {
                                     var1.setY(
                                             (double) ((int) (mc.player.getPosY() + var1.getY())) - mc.player.getPosY());
@@ -321,11 +321,11 @@ public class BlockFly extends ModuleWithModuleSettings {
                                 && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                             if (mc.gameSettings.keyBindJump.pressed) {
                                 if (!MultiUtilities.method17686()) {
-                                    MovementUtils.strafe(0.0);
-                                    MovementUtils.setSpeed(var1, 0.0);
+                                    MovementUtil.strafe(0.0);
+                                    MovementUtil.setSpeed(var1, 0.0);
                                 }
 
-                                var1.setY(MovementUtils.getJumpValue());
+                                var1.setY(MovementUtil.getJumpValue());
                             } else {
                                 var1.setY(-1.0E-5);
                             }
@@ -335,8 +335,8 @@ public class BlockFly extends ModuleWithModuleSettings {
                         if (var1.getY() > 0.247 && var1.getY() < 0.249) {
                             var1.setY((double) ((int) (mc.player.getPosY() + var1.getY())) - mc.player.getPosY());
                             if (mc.gameSettings.keyBindJump.pressed && !MultiUtilities.method17686()) {
-                                MovementUtils.strafe(0.0);
-                                MovementUtils.setSpeed(var1, 0.0);
+                                MovementUtil.strafe(0.0);
+                                MovementUtil.setSpeed(var1, 0.0);
                             }
                         } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())
                                 && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
@@ -351,7 +351,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                             mc.player
                                     .setPosition(mc.player.getPosX(), mc.player.getPosY() + 1.0, mc.player.getPosZ());
                             var1.setY(0.0);
-                            MovementUtils.setSpeed(var1, 0.0);
+                            MovementUtil.setSpeed(var1, 0.0);
                             mc.timer.timerSpeed = 0.8038576F;
                         }
                 }
@@ -364,13 +364,13 @@ public class BlockFly extends ModuleWithModuleSettings {
                     && MultiUtilities.isAboveBounds(mc.player, 0.001F)
                     && mc.gameSettings.keyBindJump.pressed) {
                 mc.player.jumpTicks = 20;
-                var1.setY(MovementUtils.getJumpValue());
+                var1.setY(MovementUtil.getJumpValue());
             }
         } else if (!MultiUtilities.method17686() || this.getBooleanValueFromSettingName("Tower while moving")) {
             mc.player.jumpTicks = 0;
             mc.player.jump();
-            MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
-            MovementUtils.strafe(MovementUtils.getSpeed());
+            MovementUtil.setSpeed(var1, MovementUtil.getSpeed());
+            MovementUtil.strafe(MovementUtil.getSpeed());
         }
 
         if (!this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")) {

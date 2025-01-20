@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 
 public class HypixelHighJump extends Module {
@@ -43,7 +43,7 @@ public class HypixelHighJump extends Module {
          if (this.field23405 >= 0) {
             this.field23405++;
             var1.setY(0.0);
-            MovementUtils.setSpeed(var1, 0.0);
+            MovementUtil.setSpeed(var1, 0.0);
             var1.setY((double)this.getNumberValueBySettingName("Motion"));
             this.field23406 = true;
             this.field23407 = mc.player.getPosY();

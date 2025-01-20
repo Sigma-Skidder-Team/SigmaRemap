@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Items;
@@ -50,19 +50,19 @@ public class ElytraFly extends Module {
     @EventTarget
     public void method16221(EventMove var1) {
         if (this.isEnabled()) {
-            double var4 = MovementUtils.getSpeed();
+            double var4 = MovementUtil.getSpeed();
             boolean var6 = MultiUtilities.method17686();
             if (!this.getBooleanValueFromSettingName("NCP") && mc.player.isSneaking()) {
                 var4 *= 2.5;
             }
 
-            MovementUtils.setSpeed(var1, 0.0);
+            MovementUtil.setSpeed(var1, 0.0);
             if (!mc.player.isElytraFlying()) {
                 this.field23528 = 0;
             } else {
                 if (this.field23528 > 0) {
                     if (this.field23528 > 7) {
-                        MovementUtils.setSpeed(var1, var4 * 6.3F);
+                        MovementUtil.setSpeed(var1, var4 * 6.3F);
                     }
 
                     MultiUtilities.setPlayerYMotion(-0.071);
@@ -73,7 +73,7 @@ public class ElytraFly extends Module {
             }
 
             if (this.field23530 > 1.0001E-4F && mc.player.isJumping) {
-                MovementUtils.setSpeed(var1, var4 * 6.3F);
+                MovementUtil.setSpeed(var1, var4 * 6.3F);
                 var1.setY(this.field23530);
             }
 
@@ -167,7 +167,7 @@ public class ElytraFly extends Module {
 
     @Override
     public void onDisable() {
-        if (!MovementUtils.isMoving()) {
+        if (!MovementUtil.isMoving()) {
             MultiUtilities.setPlayerXMotion(0.0);
             MultiUtilities.setPlayerZMotion(0.0);
         }

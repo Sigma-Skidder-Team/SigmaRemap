@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.network.IPacket;
@@ -61,7 +61,7 @@ public class AGCFly extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.strafe(0.0);
+        MovementUtil.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
             MultiUtilities.setPlayerYMotion(-0.0789);
         }
@@ -75,14 +75,14 @@ public class AGCFly extends Module {
                 if (this.field23902 == -1) {
                     var1.setY(this.field23903 != 3 ? 0.001 : 0.095);
                     if (this.field23903 != 3) {
-                        MovementUtils.setSpeed(var1, 0.32);
+                        MovementUtil.setSpeed(var1, 0.32);
                     }
 
                     MultiUtilities.setPlayerYMotion(var1.getY());
                 }
             } else {
                 var1.setY(0.0);
-                MovementUtils.setSpeed(var1, 0.0);
+                MovementUtil.setSpeed(var1, 0.0);
             }
         }
     }

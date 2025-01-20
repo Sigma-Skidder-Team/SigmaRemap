@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
@@ -47,7 +47,7 @@ public class MineplexHighJump extends Module {
 
          if (!mc.player.onGround && this.field24023) {
             this.field24024 = Math.max(this.field24024, 0.499);
-            MovementUtils.setSpeed(var1, this.field24024);
+            MovementUtil.setSpeed(var1, this.field24024);
             this.field24024 -= 0.007;
             double var4 = 0.5;
             if (this.getNumberValueBySettingName("Motion") > 3.0F) {
@@ -71,7 +71,7 @@ public class MineplexHighJump extends Module {
          if (mc.player.onGround) {
             if (this.field24023) {
                this.field24023 = !this.field24023;
-               MovementUtils.strafe(0.0);
+               MovementUtil.strafe(0.0);
                if (this.getBooleanValueFromSettingName("Disable")) {
                   this.access().toggle();
                }
@@ -127,7 +127,7 @@ public class MineplexHighJump extends Module {
          mc.player.lastTickPosY = this.field24026;
          mc.player.chasingPosY = this.field24026;
          mc.player.prevPosY = this.field24026;
-         if (MovementUtils.isMoving()) {
+         if (MovementUtil.isMoving()) {
             mc.player.cameraYaw = 0.099999994F;
          }
       }

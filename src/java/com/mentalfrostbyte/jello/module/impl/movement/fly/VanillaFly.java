@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -45,8 +45,8 @@ public class VanillaFly extends Module {
     @Override
     public void onDisable() {
         MultiUtilities.setPlayerYMotion(-0.08);
-        double plrSpeed = MovementUtils.getSpeed();
-        MovementUtils.strafe(plrSpeed);
+        double plrSpeed = MovementUtil.getSpeed();
+        MovementUtil.strafe(plrSpeed);
         if (this.sneakCancelled) {
             mc.gameSettings.keyBindSneak.pressed = true;
         }
@@ -141,7 +141,7 @@ public class VanillaFly extends Module {
                 verticalSpeed = -speed / 2.0;
             }
 
-            MovementUtils.setSpeed(event, speed);
+            MovementUtil.setSpeed(event, speed);
             event.setY(verticalSpeed);
             MultiUtilities.setPlayerYMotion(event.getY());
         }

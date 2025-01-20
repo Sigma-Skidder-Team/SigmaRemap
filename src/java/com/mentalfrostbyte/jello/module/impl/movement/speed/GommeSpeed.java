@@ -6,8 +6,8 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
 
 public class GommeSpeed extends Module {
     private int field23581;
@@ -23,15 +23,15 @@ public class GommeSpeed extends Module {
     public void onEnable() {
         this.field23581 = 0;
         this.field23582 = 0;
-        this.field23584 = MovementUtils.otherStrafe()[0];
+        this.field23584 = MovementUtil.otherStrafe()[0];
     }
 
     @Override
     public void onDisable() {
         if (MultiUtilities.method17686()) {
-            MovementUtils.method37093(0.27, MovementUtils.otherStrafe()[0], this.field23584, 45.0F);
+            MovementUtil.method37093(0.27, MovementUtil.otherStrafe()[0], this.field23584, 45.0F);
         } else {
-            MovementUtils.strafe(0.0);
+            MovementUtil.strafe(0.0);
         }
     }
 
@@ -78,23 +78,23 @@ public class GommeSpeed extends Module {
                     }
 
                     if (MultiUtilities.method17686()) {
-                        this.field23584 = MovementUtils.method37092(var1, Math.max(this.field23583, 0.23), MovementUtils.otherStrafe()[0], this.field23584, 45.0F);
+                        this.field23584 = MovementUtil.method37092(var1, Math.max(this.field23583, 0.23), MovementUtil.otherStrafe()[0], this.field23584, 45.0F);
                     } else {
                         this.field23583 = 0.1;
-                        MovementUtils.setSpeed(var1, 0.0);
+                        MovementUtil.setSpeed(var1, 0.0);
                     }
                 }
             } else if (MultiUtilities.method17686()) {
                 this.field23581 = 0;
-                var1.setY(MovementUtils.getJumpValue());
+                var1.setY(MovementUtil.getJumpValue());
                 double[] var9 = new double[]{0.549, 0.625};
                 this.field23583 = var9[Math.min(this.field23582, var9.length - 1)];
                 if (this.field23582 < var9.length) {
                     this.field23582++;
                 }
 
-                MovementUtils.setSpeed(var1, this.field23583);
-                this.field23584 = MovementUtils.otherStrafe()[0];
+                MovementUtil.setSpeed(var1, this.field23583);
+                this.field23584 = MovementUtil.otherStrafe()[0];
             }
         }
     }

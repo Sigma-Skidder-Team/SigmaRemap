@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.client.CPlayerPacket;
 
 public class AACStep extends Module {
@@ -23,7 +23,7 @@ public class AACStep extends Module {
             if (!MultiUtilities.isAboveBounds(mc.player, 1.0E-4F)) {
                 var1.setCancelled(true);
             } else {
-                if (!MovementUtils.isInWater() && var4 >= 0.625) {
+                if (!MovementUtil.isInWater() && var4 >= 0.625) {
                     double var6 = mc.player.getPosX();
                     double var8 = mc.player.getPosY();
                     double var10 = mc.player.getPosZ();

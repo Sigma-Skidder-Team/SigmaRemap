@@ -13,7 +13,7 @@ import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 
-public class MovementUtils {
+public class MovementUtil {
     public static Minecraft mc = Minecraft.getInstance();
 
    /**

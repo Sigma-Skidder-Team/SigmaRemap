@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.Direction;
@@ -47,7 +47,7 @@ public class MinemenSpider extends Module {
                 event.setY(0.6);
             }
 
-            MovementUtils.setSpeed(event, 0.689 + (double) MovementUtils.getSpeedBoost() * 0.06);
+            MovementUtil.setSpeed(event, 0.689 + (double) MovementUtil.getSpeedBoost() * 0.06);
         }
 
         if (MultiUtilities.isAboveBounds(mc.player, 0.001F) && this.getBooleanValueFromSettingName("SneakVClip")) {
@@ -81,14 +81,14 @@ public class MinemenSpider extends Module {
                     && !mc.gameSettings.keyBindSneak.isKeyDown()
                     && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, 0.01, 0.0)).count() > 0L) {
                 event.setY(1.0E-14);
-                MovementUtils.setSpeed(event, 0.689 + (double) MovementUtils.getSpeedBoost() * 0.06);
+                MovementUtil.setSpeed(event, 0.689 + (double) MovementUtil.getSpeedBoost() * 0.06);
             }
 
             if (this.field23813) {
                 mc.timer.timerSpeed = 1.0F;
                 this.field23813 = false;
                 event.setY(1.0E-14);
-                MovementUtils.setSpeed(event, 0.28);
+                MovementUtil.setSpeed(event, 0.28);
             }
         }
 

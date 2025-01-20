@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class YPortSpeed extends Module {
@@ -38,7 +38,7 @@ public class YPortSpeed extends Module {
     public void onEnable() {
         this.field23541 = false;
         this.field23545 = 0;
-        this.field23543 = mc.player != null ? MovementUtils.getSpeed() : 0.2873;
+        this.field23543 = mc.player != null ? MovementUtil.getSpeed() : 0.2873;
         this.field23542 = mc.player.getPosY();
     }
 
@@ -46,8 +46,8 @@ public class YPortSpeed extends Module {
     public void onDisable() {
         this.field23541 = false;
         if (mc.player.getMotion().y > 0.33) {
-            MultiUtilities.setPlayerYMotion(-0.43 + (double) MovementUtils.getJumpBoost() * 0.1);
-            MovementUtils.strafe(MovementUtils.getSpeed());
+            MultiUtilities.setPlayerYMotion(-0.43 + (double) MovementUtil.getJumpBoost() * 0.1);
+            MovementUtil.strafe(MovementUtil.getSpeed());
         }
     }
 
@@ -58,17 +58,17 @@ public class YPortSpeed extends Module {
                 String var4 = this.getStringSettingValueByName("Mode");
                 switch (var4) {
                     case "NCP":
-                        if (MovementUtils.isMoving() && mc.player.onGround) {
+                        if (MovementUtil.isMoving() && mc.player.onGround) {
                             mc.player.jump();
                             var1.setY(mc.player.getMotion().y);
-                            MovementUtils.setSpeed(var1, 0.461);
+                            MovementUtil.setSpeed(var1, 0.461);
                             this.field23541 = true;
                             mc.player.stepHeight = 0.5F;
                         } else if (this.field23541
-                                && MultiUtilities.isAboveBounds(mc.player, (float) (MovementUtils.getJumpValue() + (double) MovementUtils.getJumpBoost() * 0.1 + 0.001F))) {
+                                && MultiUtilities.isAboveBounds(mc.player, (float) (MovementUtil.getJumpValue() + (double) MovementUtil.getJumpBoost() * 0.1 + 0.001F))) {
                             this.field23541 = !this.field23541;
-                            MovementUtils.setSpeed(var1, 0.312);
-                            var1.setY(-0.43 + (double) MovementUtils.getJumpBoost() * 0.1);
+                            MovementUtil.setSpeed(var1, 0.312);
+                            var1.setY(-0.43 + (double) MovementUtil.getJumpBoost() * 0.1);
                             MultiUtilities.setPlayerYMotion(var1.getY());
                             mc.player.stepHeight = 0.0F;
                         } else if (this.field23541) {
@@ -83,16 +83,16 @@ public class YPortSpeed extends Module {
 
                         if (this.field23545 == 1 && MultiUtilities.method17686()) {
                             this.field23545 = 2;
-                            this.field23543 = 1.38 * MovementUtils.getSpeed() - 0.01;
+                            this.field23543 = 1.38 * MovementUtil.getSpeed() - 0.01;
                         } else if (this.field23545 == 2) {
                             this.field23545 = 3;
                             double var8 = 0.401448482 + 0.002 * Math.random();
-                            var8 *= 1.0 + Math.sqrt((float) MovementUtils.getJumpBoost() / 2.0F) / 2.0;
+                            var8 *= 1.0 + Math.sqrt((float) MovementUtil.getJumpBoost() / 2.0F) / 2.0;
                             var1.setY(var8);
                             this.field23543 *= 2.149;
                         } else if (this.field23545 == 3) {
                             this.field23545 = 4;
-                            double var6 = 0.66 * (this.field23544 - MovementUtils.getSpeed());
+                            double var6 = 0.66 * (this.field23544 - MovementUtil.getSpeed());
                             this.field23543 = this.field23544 - var6;
                         } else {
                             if (mc.world
@@ -108,8 +108,8 @@ public class YPortSpeed extends Module {
                             this.field23543 = this.field23544 - this.field23544 / 159.0;
                         }
 
-                        this.field23543 = Math.max(this.field23543, MovementUtils.getSpeed());
-                        MovementUtils.setSpeed(var1, this.field23543);
+                        this.field23543 = Math.max(this.field23543, MovementUtil.getSpeed());
+                        MovementUtil.setSpeed(var1, this.field23543);
                         mc.player.stepHeight = 0.6F;
                         MultiUtilities.setPlayerYMotion(var1.getY());
                 }
@@ -125,7 +125,7 @@ public class YPortSpeed extends Module {
             if (!mc.player.isInWater() && !mc.player.isInLava() && !mc.player.isOnLadder()) {
                 if (!mc.gameSettings.keyBindJump.pressed
                         && !mc.player.isOnLadder()
-                        && !MovementUtils.isInWater()
+                        && !MovementUtil.isInWater()
                         && !mc.player.isInWater()
                         && MultiUtilities.isAboveBounds(mc.player, 1.0F)
                         && !mc.player.onGround
@@ -156,7 +156,7 @@ public class YPortSpeed extends Module {
             mc.player.lastTickPosY = this.field23542;
             mc.player.chasingPosY = this.field23542;
             mc.player.prevPosY = this.field23542;
-            if (MovementUtils.isMoving()) {
+            if (MovementUtil.isMoving()) {
                 mc.player.cameraYaw = 0.099999994F;
             }
         }

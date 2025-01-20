@@ -8,8 +8,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import net.minecraft.util.math.BlockPos;
 
 public class RedeskyLongJump extends Module {
@@ -47,10 +47,10 @@ public class RedeskyLongJump extends Module {
                 BlockPos var6 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.method34578(var6) && MultiUtilities.method17686()
                         || this.access().getBooleanValueFromSettingName("Auto Jump") && MultiUtilities.method17686()
-                        || var1.getY() == MovementUtils.getJumpValue()) {
+                        || var1.getY() == MovementUtil.getJumpValue()) {
                     this.field23981 = 1;
-                    var1.setY(MovementUtils.getJumpValue());
-                    MovementUtils.setSpeed(var1, 0.55);
+                    var1.setY(MovementUtil.getJumpValue());
+                    MovementUtil.setSpeed(var1, 0.55);
                 }
             }
         } else if (this.field23981 > 0) {
@@ -83,8 +83,8 @@ public class RedeskyLongJump extends Module {
                         var7 = 1.32;
                 }
 
-                MovementUtils.setSpeed(var1, (double) this.getNumberValueBySettingName("Boost") * var7);
-                var1.setY((double) this.getNumberValueBySettingName("Heigh") * MovementUtils.getJumpValue());
+                MovementUtil.setSpeed(var1, (double) this.getNumberValueBySettingName("Boost") * var7);
+                var1.setY((double) this.getNumberValueBySettingName("Heigh") * MovementUtil.getJumpValue());
                 this.field23982 = 1.0;
             } else if (var1.getY() < 0.0 && mc.player.fallDistance < 3.0F) {
                 this.field23982 = this.field23982 - var1.getY();

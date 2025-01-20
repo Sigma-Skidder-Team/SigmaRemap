@@ -8,8 +8,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
@@ -48,17 +48,17 @@ public class Cubecraft2Fly extends PremiumModule {
 
     @Override
     public void onDisable() {
-        MovementUtils.strafe(0.2);
+        MovementUtil.strafe(0.2);
         MultiUtilities.setPlayerYMotion(-0.0789);
         if (MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
-            MovementUtils.strafe(0.0);
+            MovementUtil.strafe(0.0);
             MultiUtilities.setPlayerYMotion(-0.0789);
         } else {
             double var3 = mc.player.getPosX();
             double var5 = mc.player.getPosY();
             double var7 = mc.player.getPosZ();
             mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3, -150.0, var7, false));
-            MovementUtils.strafe(0.0);
+            MovementUtil.strafe(0.0);
             MultiUtilities.setPlayerYMotion(0.0);
             this.field23696 = -3;
             this.field23697.reset();
@@ -94,15 +94,15 @@ public class Cubecraft2Fly extends PremiumModule {
             if (this.field23696 != 1) {
                 if (this.field23696 != 2) {
                     var1.setY(0.0);
-                    MovementUtils.setSpeed(var1, 0.0);
+                    MovementUtil.setSpeed(var1, 0.0);
                 } else {
                     var1.setY(-9.999999999E-5);
-                    MovementUtils.setSpeed(var1, 0.28);
+                    MovementUtil.setSpeed(var1, 0.28);
                 }
             } else {
                 var1.setY(!mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 1.0E-4 : -0.99)
                         : (!this.field23699 ? 0.99 : 1.0E-4));
-                MovementUtils.setSpeed(var1, !mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 3.7 : 2.8)
+                MovementUtil.setSpeed(var1, !mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 3.7 : 2.8)
                         : (!this.field23699 ? 2.8 : 3.7));
             }
 
@@ -114,12 +114,12 @@ public class Cubecraft2Fly extends PremiumModule {
                         if (this.field23696 == -1) {
                             this.field23696++;
                             var1.setY(-0.4);
-                            MovementUtils.setSpeed(var1, 0.0);
+                            MovementUtil.setSpeed(var1, 0.0);
                         }
                     } else {
                         var1.setY(0.4);
                         this.field23696++;
-                        MovementUtils.setSpeed(var1, 0.0);
+                        MovementUtil.setSpeed(var1, 0.0);
                     }
                 } else {
                     if (this.field23697.getElapsedTime() > 1000L) {
@@ -129,7 +129,7 @@ public class Cubecraft2Fly extends PremiumModule {
                     }
 
                     var1.setY(0.0);
-                    MovementUtils.setSpeed(var1, 0.0);
+                    MovementUtil.setSpeed(var1, 0.0);
                 }
             }
         }

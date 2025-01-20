@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 
 public class InvadedSpeed extends Module {
@@ -21,7 +21,7 @@ public class InvadedSpeed extends Module {
 
    @Override
    public void onDisable() {
-      MovementUtils.strafe(0.28F);
+      MovementUtil.strafe(0.28F);
       mc.timer.timerSpeed = 1.0F;
    }
 
@@ -34,15 +34,15 @@ public class InvadedSpeed extends Module {
                if (this.field24022 >= 3) {
                   this.field24022 = 0;
                   mc.timer.timerSpeed = 0.25F;
-                  MovementUtils.setSpeed(var1, (double)this.getNumberValueBySettingName("Speed"));
+                  MovementUtil.setSpeed(var1, (double)this.getNumberValueBySettingName("Speed"));
                }
             } else {
                mc.timer.timerSpeed = 2.0F;
-               MovementUtils.setSpeed(var1, MovementUtils.getSpeed() + 0.05);
+               MovementUtil.setSpeed(var1, MovementUtil.getSpeed() + 0.05);
             }
          } else {
             mc.timer.timerSpeed = 2.0F;
-            MovementUtils.setSpeed(var1, MovementUtils.getSpeed() + 0.05);
+            MovementUtil.setSpeed(var1, MovementUtil.getSpeed() + 0.05);
          }
       }
    }

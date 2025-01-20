@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.BlockPos;
@@ -33,8 +33,8 @@ public class SpartanClickTP extends Module {
     @Override
     public void onDisable() {
         MultiUtilities.setPlayerYMotion(-0.08);
-        double var3 = MovementUtils.getSpeed();
-        MovementUtils.strafe(var3);
+        double var3 = MovementUtil.getSpeed();
+        MovementUtil.strafe(var3);
         mc.timer.timerSpeed = 1.0F;
     }
 
@@ -79,8 +79,8 @@ public class SpartanClickTP extends Module {
                         this.field23464 = -1;
                         this.field23465 = null;
                         MultiUtilities.setPlayerYMotion(-0.08);
-                        double var5 = MovementUtils.getSpeed();
-                        MovementUtils.strafe(var5);
+                        double var5 = MovementUtil.getSpeed();
+                        MovementUtil.strafe(var5);
                         mc.timer.timerSpeed = 1.0F;
                     } else {
                         this.access().toggle();

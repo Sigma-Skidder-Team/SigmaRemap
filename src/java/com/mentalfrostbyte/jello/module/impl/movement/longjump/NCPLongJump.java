@@ -13,8 +13,8 @@ import com.mentalfrostbyte.jello.module.impl.player.NoFall;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.BlockPos;
 
@@ -36,7 +36,7 @@ public class NCPLongJump extends Module {
     public void onDisable() {
         this.field23479 = false;
         mc.timer.timerSpeed = 1.0F;
-        MovementUtils.strafe(MovementUtils.method37076() * 0.7);
+        MovementUtil.strafe(MovementUtil.method37076() * 0.7);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class NCPLongJump extends Module {
                 this.field23477++;
                 if (this.field23479 && var1.getY() != 0.599 && this.access().getBooleanValueFromSettingName("Auto Disable")) {
                     this.access().toggle();
-                    MovementUtils.setSpeed(var1, MovementUtils.method37076() * 0.8);
+                    MovementUtil.setSpeed(var1, MovementUtil.method37076() * 0.8);
                     return;
                 }
 
@@ -75,10 +75,10 @@ public class NCPLongJump extends Module {
                 this.field23478++;
                 this.field23477 = 0;
                 if (this.field23479) {
-                    double var5 = MovementUtils.method37076() * 0.95;
+                    double var5 = MovementUtil.method37076() * 0.95;
                     if (this.field23478 == 1) {
-                        this.field23480 = (double) this.getNumberValueBySettingName("Boost") * 0.4 + (double) MovementUtils.getSpeedBoost() * 0.05;
-                    } else if ((float) this.field23478 > this.getNumberValueBySettingName("Duration") + (float) MovementUtils.getSpeedBoost()) {
+                        this.field23480 = (double) this.getNumberValueBySettingName("Boost") * 0.4 + (double) MovementUtil.getSpeedBoost() * 0.05;
+                    } else if ((float) this.field23478 > this.getNumberValueBySettingName("Duration") + (float) MovementUtil.getSpeedBoost()) {
                         this.field23480 = var5;
                     } else if (this.field23480 > var5) {
                         String var7 = this.getStringSettingValueByName("Speed Mode");
@@ -102,8 +102,8 @@ public class NCPLongJump extends Module {
                         this.field23480 = var5;
                     }
 
-                    MovementUtils.setSpeed(var1, this.field23480);
-                    if (MovementUtils.getJumpBoost() == 0) {
+                    MovementUtil.setSpeed(var1, this.field23480);
+                    if (MovementUtil.getJumpBoost() == 0) {
                         String var13 = this.getStringSettingValueByName("Glide Mode");
                         switch (var13) {
                             case "Basic":
@@ -130,7 +130,7 @@ public class NCPLongJump extends Module {
                 }
 
                 if (this.field23477 == 1 && mc.player.getMotion().y < 0.0 && this.access().getBooleanValueFromSettingName("Auto Jump")) {
-                    MovementUtils.setSpeed(var1, MovementUtils.method37076() * 0.2);
+                    MovementUtil.setSpeed(var1, MovementUtil.method37076() * 0.2);
                 }
             }
 
@@ -142,14 +142,14 @@ public class NCPLongJump extends Module {
     public void method16123(JumpEvent var1) {
         if (this.isEnabled() && mc.player != null) {
             this.field23479 = true;
-            this.field23480 = MovementUtils.method37076();
+            this.field23480 = MovementUtil.method37076();
             var1.method14003(this.field23480);
-            var1.method14002(0.425 + (double) MovementUtils.getJumpBoost() * 0.1);
-            if (this.getStringSettingValueByName("Glide Mode").equals("High") && MovementUtils.getJumpBoost() == 0) {
+            var1.method14002(0.425 + (double) MovementUtil.getJumpBoost() * 0.1);
+            if (this.getStringSettingValueByName("Glide Mode").equals("High") && MovementUtil.getJumpBoost() == 0) {
                 var1.method14002(0.599);
                 var1.method14003(0.0);
                 if ((double) this.getNumberValueBySettingName("Boost") > 1.5) {
-                    var1.method14003(0.28 + (double) this.getNumberValueBySettingName("Boost") * 0.1 + (double) MovementUtils.getSpeedBoost() * 0.05);
+                    var1.method14003(0.28 + (double) this.getNumberValueBySettingName("Boost") * 0.1 + (double) MovementUtil.getSpeedBoost() * 0.05);
                 }
 
                 if (this.getStringSettingValueByName("Speed Mode").equals("Hypixel") && (double) this.getNumberValueBySettingName("Boost") > 1.75) {

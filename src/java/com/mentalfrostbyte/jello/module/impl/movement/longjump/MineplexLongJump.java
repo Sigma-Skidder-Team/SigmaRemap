@@ -8,9 +8,9 @@ import com.mentalfrostbyte.jello.event.impl.JumpEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import net.minecraft.util.math.BlockPos;
 
 public class MineplexLongJump extends Module {
@@ -27,7 +27,7 @@ public class MineplexLongJump extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.strafe(MovementUtils.getSpeed() * 0.7);
+        MovementUtil.strafe(MovementUtil.getSpeed() * 0.7);
     }
 
     @Override
@@ -85,7 +85,7 @@ public class MineplexLongJump extends Module {
                         this.field23802 = 0.3;
                     }
 
-                    MovementUtils.setSpeed(var1, this.field23802);
+                    MovementUtil.setSpeed(var1, this.field23802);
                     var1.setY(this.field23803);
                 }
             } else {
@@ -109,7 +109,7 @@ public class MineplexLongJump extends Module {
                         && (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.method34578(var4) || this.access().getBooleanValueFromSettingName("Auto Jump"))) {
                     mc.player.jump();
                     var1.setY(mc.player.getMotion().y);
-                    MovementUtils.setSpeed(var1, 0.0);
+                    MovementUtil.setSpeed(var1, 0.0);
                 }
             }
         }

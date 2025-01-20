@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.impl.item.AutoMLG;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -118,7 +118,7 @@ public class Jesus extends Module {
                }
             }
          } else {
-            if (isWalkingOnLiquid() && var1.getY() != -0.0784000015258789 && var1.getY() != MovementUtils.getJumpValue()) {
+            if (isWalkingOnLiquid() && var1.getY() != -0.0784000015258789 && var1.getY() != MovementUtil.getJumpValue()) {
                var1.setY(-0.078);
             }
 
@@ -133,7 +133,7 @@ public class Jesus extends Module {
                      }
 
                      if (this.field24016 > 0) {
-                        MovementUtils.setSpeed(var1, 0.25 + (double) MovementUtils.getSpeedBoost() * 0.05);
+                        MovementUtil.setSpeed(var1, 0.25 + (double) MovementUtil.getSpeedBoost() * 0.05);
                         this.field24016++;
                      }
 
@@ -146,7 +146,7 @@ public class Jesus extends Module {
                } else if (isWalkingOnLiquid() && this.field24015 % 2 == 0) {
                   this.field24016++;
                   double var12 = this.method16954((double)this.field24016);
-                  MovementUtils.setSpeed(var1, 0.25);
+                  MovementUtil.setSpeed(var1, 0.25);
                   if (var12 != -999.0) {
                      var1.setY(var12);
                   }
@@ -186,7 +186,7 @@ public class Jesus extends Module {
    }
 
    public boolean method16950() {
-      return MovementUtils.isInWater();
+      return MovementUtil.isInWater();
    }
 
    public boolean method16951(AxisAlignedBB var1) {

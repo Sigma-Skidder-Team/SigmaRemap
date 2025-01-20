@@ -6,8 +6,8 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
 
 public class LegitSpeed extends Module {
     private double field24010;
@@ -38,9 +38,9 @@ public class LegitSpeed extends Module {
             double var6 = var1.getVector().length();
             var1.getVector().y = var4;
             this.field24010 = var6;
-            float var8 = MovementUtils.lenientStrafe()[1];
-            float var9 = MovementUtils.lenientStrafe()[2];
-            float var10 = MovementUtils.lenientStrafe()[0];
+            float var8 = MovementUtil.lenientStrafe()[1];
+            float var9 = MovementUtil.lenientStrafe()[2];
+            float var10 = MovementUtil.lenientStrafe()[0];
             if (var8 == 0.0F && var9 == 0.0F) {
                 var1.setX(0.0);
                 var1.setZ(0.0);

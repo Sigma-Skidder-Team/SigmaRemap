@@ -13,7 +13,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
@@ -40,7 +40,7 @@ public class MineplexSpeed extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.strafe(MovementUtils.getSpeed() * 0.7);
+        MovementUtil.strafe(MovementUtil.getSpeed() * 0.7);
         if (mc.player.inventory.currentItem != this.field23554) {
             mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
             this.field23554 = mc.player.inventory.currentItem;
@@ -77,7 +77,7 @@ public class MineplexSpeed extends Module {
                     this.field23555 = 0.3;
                 }
 
-                MovementUtils.setSpeed(var1, this.field23555);
+                MovementUtil.setSpeed(var1, this.field23555);
             } else {
                 if (this.field23552 > 1) {
                     this.field23553 = 0;
@@ -91,7 +91,7 @@ public class MineplexSpeed extends Module {
                 }
 
                 if (var1.getY() == 0.4199998) {
-                    MovementUtils.setSpeed(var1, 0.0);
+                    MovementUtil.setSpeed(var1, 0.0);
                     return;
                 }
 
@@ -101,7 +101,7 @@ public class MineplexSpeed extends Module {
 
                 int var6 = this.method16254();
                 if (var6 == -1) {
-                    MovementUtils.setSpeed(var1, 0.2);
+                    MovementUtil.setSpeed(var1, 0.2);
                     return;
                 }
 
@@ -123,7 +123,7 @@ public class MineplexSpeed extends Module {
                     this.field23555 = 0.3;
                 }
 
-                MovementUtils.setSpeed(var1, this.field23555);
+                MovementUtil.setSpeed(var1, this.field23555);
             }
         }
     }

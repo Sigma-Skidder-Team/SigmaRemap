@@ -1,6 +1,6 @@
 package net.minecraft.entity;
 
-import com.mentalfrostbyte.jello.util.Rots;
+import com.mentalfrostbyte.jello.util.player.Rots;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.*;
 import net.minecraft.client.Minecraft;

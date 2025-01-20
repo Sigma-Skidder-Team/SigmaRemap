@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventSlowDown;
-import com.mentalfrostbyte.jello.util.Rots;
+import com.mentalfrostbyte.jello.util.player.Rots;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;

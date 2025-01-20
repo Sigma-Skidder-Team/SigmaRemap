@@ -15,9 +15,9 @@ import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.Rots;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
+import com.mentalfrostbyte.jello.util.player.Rots;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import mapped.*;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
@@ -119,7 +119,7 @@ public class BlockFlyNCPMode extends Module {
             ((BlockFly) this.access()).field23884 = -1;
         }
 
-        MovementUtils.strafe(MovementUtils.getSpeed() * 0.9);
+        MovementUtil.strafe(MovementUtil.getSpeed() * 0.9);
         mc.timer.timerSpeed = 1.0F;
         if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23926 == 0) {
             MultiUtilities.setPlayerYMotion(-0.0789);
@@ -318,7 +318,7 @@ public class BlockFlyNCPMode extends Module {
                     break;
                 case "AAC":
                     if (this.field23925 == 0 && mc.player.onGround) {
-                        MovementUtils.setSpeed(var1, MovementUtils.getSpeed() * 0.82);
+                        MovementUtil.setSpeed(var1, MovementUtil.getSpeed() * 0.82);
                     }
                     break;
                 case "Cubecraft":
@@ -360,7 +360,7 @@ public class BlockFlyNCPMode extends Module {
                     }
 
                     if (mc.player.fallDistance < 1.0F) {
-                        MovementUtils.method37092(var1, var6, var8, var8, 360.0F);
+                        MovementUtil.method37092(var1, var6, var8, var8, 360.0F);
                     }
 
                     MultiUtilities.setPlayerYMotion(var1.getY());
@@ -418,7 +418,7 @@ public class BlockFlyNCPMode extends Module {
                         mc.player.lastTickPosY = this.field23931;
                         mc.player.chasingPosY = this.field23931;
                         mc.player.prevPosY = this.field23931;
-                        if (MovementUtils.isMoving()) {
+                        if (MovementUtil.isMoving()) {
                             mc.player.cameraYaw = 0.099999994F;
                         }
                     }

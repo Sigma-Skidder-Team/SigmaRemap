@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 
 public class ViperMCSpeed extends Module {
     private int tickCounter;
@@ -20,7 +20,7 @@ public class ViperMCSpeed extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.strafe(0.28F);
+        MovementUtil.strafe(0.28F);
         mc.timer.timerSpeed = 1.0F;
     }
 
@@ -28,17 +28,17 @@ public class ViperMCSpeed extends Module {
     public void EventMove(EventMove event) {
         if (this.isEnabled()) {
             this.tickCounter++;
-            float speed = 0.28F + (float) MovementUtils.getSpeedBoost() * 0.05F;
+            float speed = 0.28F + (float) MovementUtil.getSpeedBoost() * 0.05F;
             if (this.tickCounter >= 4) {
                 this.tickCounter = 0;
-                speed = 1.15F + (float) MovementUtils.getSpeedBoost() * 0.04F;
+                speed = 1.15F + (float) MovementUtil.getSpeedBoost() * 0.04F;
             }
 
             if (mc.gameSettings.keyBindBack.pressed) {
                 speed /= 1.3F;
             }
 
-            MovementUtils.setSpeed(event, speed);
+            MovementUtil.setSpeed(event, speed);
         }
     }
 }

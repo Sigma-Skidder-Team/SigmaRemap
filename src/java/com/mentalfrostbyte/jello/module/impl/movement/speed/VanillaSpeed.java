@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 
 public class VanillaSpeed extends Module {
@@ -16,8 +16,8 @@ public class VanillaSpeed extends Module {
     @EventTarget
     public void EventMove(EventMove event) {
         if (this.isEnabled()) {
-            double speedInput= MovementUtils.getSpeed() * (double) this.getNumberValueBySettingName("Speed");
-            MovementUtils.setSpeed(event, speedInput);
+            double speedInput= MovementUtil.getSpeed() * (double) this.getNumberValueBySettingName("Speed");
+            MovementUtil.setSpeed(event, speedInput);
         }
     }
 }

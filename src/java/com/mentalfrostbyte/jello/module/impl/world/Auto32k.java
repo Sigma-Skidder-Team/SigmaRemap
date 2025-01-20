@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.Rots;
+import com.mentalfrostbyte.jello.util.player.Rots;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;

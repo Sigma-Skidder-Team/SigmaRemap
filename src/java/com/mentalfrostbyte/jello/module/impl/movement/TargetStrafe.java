@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -126,7 +126,7 @@ public class TargetStrafe extends Module {
 
         if (this.field23496 && mc.player.getDistance(var1) > this.getNumberValueBySettingName("Radius")) {
             if (!var27.equals("Halt")) {
-                MovementUtils.setSpeed(var6, var2);
+                MovementUtil.setSpeed(var6, var2);
                 if (var27.equals("Smart")) {
                     var26 = new Vector3d(
                             mc.player.getPositionVec().x + var6.getX(),
@@ -134,11 +134,11 @@ public class TargetStrafe extends Module {
                             mc.player.getPositionVec().z + var6.getZ()
                     );
                     if (this.method16153(var26) && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
-                        MovementUtils.setSpeed(var6, 0.0);
+                        MovementUtil.setSpeed(var6, 0.0);
                     }
                 }
             } else {
-                MovementUtils.setSpeed(var6, 0.0);
+                MovementUtil.setSpeed(var6, 0.0);
             }
         }
     }

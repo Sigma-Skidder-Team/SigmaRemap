@@ -13,7 +13,7 @@ import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.movement.Step;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.util.math.MathHelper;
 
@@ -42,16 +42,16 @@ public class SpiderStep extends Module {
             if (var6 == Class2131.field13904) {
                 var1.setCancelled(true);
             } else if (var6 != Class2131.field13905) {
-                if (!MovementUtils.isInWater() && var4 >= 0.625) {
+                if (!MovementUtil.isInWater() && var4 >= 0.625) {
                     this.field23760 = var4;
-                    double var7 = MovementUtils.getJumpValue();
+                    double var7 = MovementUtil.getJumpValue();
                     if (var4 < 1.1) {
                         var7 *= var4;
                     }
 
                     var7 = !(var7 > 0.42) ? var7 : 0.4199998;
                     var1.setY(var7);
-                    this.field23761 = MovementUtils.otherStrafe()[0] - 90.0F;
+                    this.field23761 = MovementUtil.otherStrafe()[0] - 90.0F;
                     this.field23758 = 1;
                     this.field23759 = mc.player.getPosY();
                     var4 = var1.getHeight();
@@ -82,18 +82,18 @@ public class SpiderStep extends Module {
     private void method16588(EventMove var1) {
         if (this.isEnabled() && mc.player != null) {
             if (this.field23758 == 1) {
-                double var4 = MovementUtils.getJumpValue();
+                double var4 = MovementUtil.getJumpValue();
                 if (this.field23760 < 1.1) {
                     var4 *= this.field23760;
                 }
 
                 var4 = var4 > 0.42 ? 0.4199998 : var4;
                 var1.setY(var4 * 0.797);
-                MovementUtils.setSpeed(var1, 0.0);
+                MovementUtil.setSpeed(var1, 0.0);
                 this.field23758++;
             } else if (this.field23758 == 2) {
                 var1.setY(this.field23759 + this.field23760 - mc.player.getPosY());
-                double var10 = this.getStringSettingValueByName("Mode").equals("AAC") ? 0.301 : MovementUtils.getSpeed();
+                double var10 = this.getStringSettingValueByName("Mode").equals("AAC") ? 0.301 : MovementUtil.getSpeed();
                 float var6 = this.field23761 * (float) (Math.PI / 180.0);
                 var1.setX((double) (-MathHelper.sin(var6)) * var10);
                 var1.setZ((double) MathHelper.cos(var6) * var10);
@@ -104,20 +104,20 @@ public class SpiderStep extends Module {
                     String var7 = this.getStringSettingValueByName("Mode");
                     switch (var7) {
                         case "NCP":
-                            MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
+                            MovementUtil.setSpeed(var1, MovementUtil.getSpeed());
                             break;
                         case "AAC":
-                            MovementUtils.setSpeed(var1, 0.301);
+                            MovementUtil.setSpeed(var1, 0.301);
                             break;
                         case "Gomme":
-                            MovementUtils.setSpeed(var1, 0.175);
+                            MovementUtil.setSpeed(var1, 0.175);
                     }
                 } else {
-                    MovementUtils.setSpeed(var1, 0.25);
+                    MovementUtil.setSpeed(var1, 0.25);
                 }
 
                 if (!MultiUtilities.method17686()) {
-                    MovementUtils.setSpeed(var1, 0.0);
+                    MovementUtil.setSpeed(var1, 0.0);
                 }
 
                 this.field23758 = 0;

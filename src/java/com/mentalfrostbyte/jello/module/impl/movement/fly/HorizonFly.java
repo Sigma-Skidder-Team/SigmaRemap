@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
@@ -28,7 +28,7 @@ public class HorizonFly extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.strafe(0.0);
+        MovementUtil.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
             MultiUtilities.setPlayerYMotion(-0.0789);
         }
@@ -45,18 +45,18 @@ public class HorizonFly extends Module {
                 if (this.field23497 != -1) {
                     if (this.field23497 != 0) {
                         if (this.field23497 >= 1) {
-                            MovementUtils.setSpeed(var1, var4 + 5.0E-4);
+                            MovementUtil.setSpeed(var1, var4 + 5.0E-4);
                         }
                     } else {
-                        MovementUtils.setSpeed(var1, var4 + 0.0015);
+                        MovementUtil.setSpeed(var1, var4 + 0.0015);
                     }
                 } else {
-                    var1.setY(MovementUtils.getJumpValue());
+                    var1.setY(MovementUtil.getJumpValue());
                     MultiUtilities.setPlayerYMotion(var1.getY());
-                    MovementUtils.setSpeed(var1, 0.125);
+                    MovementUtil.setSpeed(var1, 0.125);
                 }
             } else {
-                MovementUtils.setSpeed(var1, 0.0);
+                MovementUtil.setSpeed(var1, 0.0);
             }
         }
     }

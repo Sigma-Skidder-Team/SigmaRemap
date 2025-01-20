@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
 
 public class SpartanAntiKB extends Module {
@@ -23,7 +23,7 @@ public class SpartanAntiKB extends Module {
             if (this.field23617 < 10) {
                 this.field23617++;
                 if (this.field23617 == (int) this.getNumberValueBySettingName("Ticks")) {
-                    MovementUtils.strafe(0.0);
+                    MovementUtil.strafe(0.0);
                 }
             }
         }

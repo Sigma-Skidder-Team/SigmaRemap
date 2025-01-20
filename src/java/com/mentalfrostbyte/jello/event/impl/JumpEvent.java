@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.event.impl;
 
 import com.mentalfrostbyte.jello.event.CancellableEvent;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class JumpEvent extends CancellableEvent {
@@ -25,7 +25,7 @@ public class JumpEvent extends CancellableEvent {
     }
 
     public void method14003(double var1) {
-        float[] var5 = MovementUtils.lenientStrafe();
+        float[] var5 = MovementUtil.lenientStrafe();
         float var6 = var5[1];
         float var7 = var5[2];
         float var8 = var5[0];

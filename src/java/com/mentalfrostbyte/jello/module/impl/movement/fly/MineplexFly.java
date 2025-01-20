@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
@@ -40,7 +40,7 @@ public class MineplexFly extends Module {
     @Override
     public void onEnable() {
         this.field23668 = -1;
-        this.field23671 = MovementUtils.getSpeed();
+        this.field23671 = MovementUtil.getSpeed();
         this.field23669 = 0;
         this.field23675 = false;
         this.field23670 = -1;
@@ -50,8 +50,8 @@ public class MineplexFly extends Module {
 
     @Override
     public void onDisable() {
-        double var3 = MovementUtils.getSpeed() * 0.5;
-        MovementUtils.strafe(var3);
+        double var3 = MovementUtil.getSpeed() * 0.5;
+        MovementUtil.strafe(var3);
         if (this.field23670 != -1) {
             mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
             this.field23670 = mc.player.inventory.currentItem;
@@ -73,7 +73,7 @@ public class MineplexFly extends Module {
             this.field23673 = this.field23668 = this.field23670 = -1;
             this.field23669 = 0;
             this.field23675 = false;
-            this.field23671 = MovementUtils.getSpeed();
+            this.field23671 = MovementUtil.getSpeed();
         }
     }
 
@@ -98,7 +98,7 @@ public class MineplexFly extends Module {
     public void method16458(EventMove var1) {
         if (this.isEnabled()) {
             if (this.field23675) {
-                MovementUtils.setSpeed(var1, 0.01);
+                MovementUtil.setSpeed(var1, 0.01);
             } else {
                 float var4 = mc.player.rotationYaw + 90.0F;
                 if (!mc.player.onGround && !MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
@@ -128,11 +128,11 @@ public class MineplexFly extends Module {
                             this.field23671 = 0.35;
                         }
 
-                        MovementUtils.setSpeed(var1, this.field23671);
+                        MovementUtil.setSpeed(var1, this.field23671);
                     }
                 } else {
                     if (this.field23669 > 0) {
-                        MovementUtils.setSpeed(var1, 0.0);
+                        MovementUtil.setSpeed(var1, 0.0);
                         this.access().toggle();
                         return;
                     }
@@ -155,7 +155,7 @@ public class MineplexFly extends Module {
                     CPlayerTryUseItemOnBlockPacket var9 = new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, var8);
                     mc.getConnection().sendPacket(var9);
                     if (!(this.field23671 < (double) this.getNumberValueBySettingName("Boost"))) {
-                        MovementUtils.setSpeed(var1, 0.0);
+                        MovementUtil.setSpeed(var1, 0.0);
                         mc.player.jump();
                         this.field23672 = 0.4299999;
                         this.field23669 = 0;
@@ -245,7 +245,7 @@ public class MineplexFly extends Module {
             mc.player.lastTickPosY = this.field23673;
             mc.player.chasingPosY = this.field23673;
             mc.player.prevPosY = this.field23673;
-            if (MovementUtils.isMoving()) {
+            if (MovementUtil.isMoving()) {
                 mc.player.cameraYaw = 0.099999994F;
             }
         }

@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.antikb.AACAntiKB;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class OldAACSpeed extends Module {
@@ -31,8 +31,8 @@ public class OldAACSpeed extends Module {
     @Override
     public void onEnable() {
         this.field23537 = Client.getInstance().getPlayerTracker().getgroundTicks() <= 0 ? 1 : 0;
-        this.field23534 = MovementUtils.getSpeed();
-        this.field23535 = MovementUtils.otherStrafe()[0];
+        this.field23534 = MovementUtil.getSpeed();
+        this.field23535 = MovementUtil.otherStrafe()[0];
     }
 
     @EventTarget
@@ -52,10 +52,10 @@ public class OldAACSpeed extends Module {
                     }
 
                     if (mc.player.collidedHorizontally) {
-                        this.field23534 = MovementUtils.getSpeed();
+                        this.field23534 = MovementUtil.getSpeed();
                     }
 
-                    this.field23535 = MovementUtils.method37092(var1, this.field23534, MovementUtils.otherStrafe()[0], this.field23535, 45.0F);
+                    this.field23535 = MovementUtil.method37092(var1, this.field23534, MovementUtil.otherStrafe()[0], this.field23535, 45.0F);
                 }
             } else if (this.getBooleanValueFromSettingName("Auto Jump") && MultiUtilities.method17686()) {
                 this.field23536 = 0;
@@ -63,10 +63,10 @@ public class OldAACSpeed extends Module {
                 var1.setX(mc.player.getMotion().x);
                 var1.setY(mc.player.getMotion().y);
                 var1.setZ(mc.player.getMotion().z);
-            } else if (var1.getY() != 0.4 + (double) MovementUtils.getJumpBoost() * 0.1) {
+            } else if (var1.getY() != 0.4 + (double) MovementUtil.getJumpBoost() * 0.1) {
                 this.field23537 = 0;
             } else {
-                MovementUtils.setSpeed(var1, this.field23534);
+                MovementUtil.setSpeed(var1, this.field23534);
             }
         }
     }
@@ -86,9 +86,9 @@ public class OldAACSpeed extends Module {
                 this.field23534 = 0.5;
             }
 
-            this.field23535 = MovementUtils.otherStrafe()[0];
+            this.field23535 = MovementUtil.otherStrafe()[0];
             var1.method14003(this.field23534);
-            var1.method14002(0.4 + (double) MovementUtils.getJumpBoost() * 0.1);
+            var1.method14002(0.4 + (double) MovementUtil.getJumpBoost() * 0.1);
             this.field23536 = 0;
         }
     }
@@ -98,7 +98,7 @@ public class OldAACSpeed extends Module {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23537 = 0;
-                this.field23534 = MovementUtils.getSpeed();
+                this.field23534 = MovementUtil.getSpeed();
             }
         }
     }

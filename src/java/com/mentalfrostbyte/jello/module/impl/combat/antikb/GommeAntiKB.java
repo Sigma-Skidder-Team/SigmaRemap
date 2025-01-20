@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
 
 public class GommeAntiKB extends Module {
@@ -37,7 +37,7 @@ public class GommeAntiKB extends Module {
             var1.setZ(var1.getZ() * 0.5);
         } else if (this.field23610 == 2) {
             this.field23610++;
-            MovementUtils.setSpeed(var1, this.getNumberValueBySettingName("Boost"));
+            MovementUtil.setSpeed(var1, this.getNumberValueBySettingName("Boost"));
         }
     }
 

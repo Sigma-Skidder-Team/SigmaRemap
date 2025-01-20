@@ -12,9 +12,9 @@ import com.mentalfrostbyte.jello.module.impl.movement.SafeWalk;
 import com.mentalfrostbyte.jello.module.impl.movement.speed.AACSpeed;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.Rots;
+import com.mentalfrostbyte.jello.util.player.Rots;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -119,7 +119,7 @@ public class BlockFlyAACMode extends Module {
                 } else {
                     this.field23524 = 0;
                     mc.player.jump();
-                    var1.setY(0.419998 + (double) MovementUtils.getJumpBoost() * 0.1);
+                    var1.setY(0.419998 + (double) MovementUtil.getJumpBoost() * 0.1);
                     if (this.field23525 < 3) {
                         this.field23525++;
                     }
@@ -131,7 +131,7 @@ public class BlockFlyAACMode extends Module {
 
                 this.field23526 = AACSpeed.method16016(this.field23524, this.field23525, () -> this.field23525 = 0);
                 if (this.field23524 >= 0) {
-                    MovementUtils.setSpeed(var1, this.field23526);
+                    MovementUtil.setSpeed(var1, this.field23526);
                 }
             }
         }
@@ -140,7 +140,7 @@ public class BlockFlyAACMode extends Module {
     @EventTarget
     private void method16206(EventFOV var1) {
         if (this.isEnabled() && mc.world != null && mc.player != null) {
-            if (this.getBooleanValueFromSettingName("Haphe (AACAP)") && MovementUtils.isMoving() && !mc.player.isSprinting()) {
+            if (this.getBooleanValueFromSettingName("Haphe (AACAP)") && MovementUtil.isMoving() && !mc.player.isSprinting()) {
                 var1.fovModifier *= 1.14F;
             }
         }
@@ -223,7 +223,7 @@ public class BlockFlyAACMode extends Module {
     private void method16210(EventUpdate event) {
         if (this.isEnabled()) {
             if (!event.isPre()) {
-                if (MovementUtils.isMoving() && mc.player.onGround && this.getBooleanValueFromSettingName("Haphe (AACAP)") && !mc.player.isJumping) {
+                if (MovementUtil.isMoving() && mc.player.onGround && this.getBooleanValueFromSettingName("Haphe (AACAP)") && !mc.player.isJumping) {
                     mc.player.jump();
                 }
 

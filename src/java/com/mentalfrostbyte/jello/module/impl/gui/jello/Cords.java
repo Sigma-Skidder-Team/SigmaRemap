@@ -8,10 +8,10 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
@@ -35,7 +35,7 @@ public class Cords extends Module {
                 this.field23755--;
             }
 
-            boolean var4 = MovementUtils.isMoving() || mc.player.isJumping || mc.player.isSneaking();
+            boolean var4 = MovementUtil.isMoving() || mc.player.isJumping || mc.player.isSneaking();
             if (!var4) {
                 if (this.field23756.calcPercent() == 1.0F && this.field23756.getDirection() == Direction.FORWARDS) {
                     this.field23756.changeDirection(Direction.BACKWARDS);

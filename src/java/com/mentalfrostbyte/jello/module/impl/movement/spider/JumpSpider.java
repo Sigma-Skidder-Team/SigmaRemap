@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3d;
@@ -43,7 +43,7 @@ public class JumpSpider extends Module {
                 mc.player.jump();
                 event.setY(mc.player.getMotion().y);
             } else if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
-                MovementUtils.setSpeed(event, 0.28 + (double) MovementUtils.getSpeedBoost() * 0.05);
+                MovementUtil.setSpeed(event, 0.28 + (double) MovementUtil.getSpeedBoost() * 0.05);
                 event.setY(0.0);
             } else {
                 event.setY(-0.0784);

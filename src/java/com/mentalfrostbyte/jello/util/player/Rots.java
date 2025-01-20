@@ -1,4 +1,4 @@
-package com.mentalfrostbyte.jello.util;
+package com.mentalfrostbyte.jello.util.player;
 
 public class Rots {
 

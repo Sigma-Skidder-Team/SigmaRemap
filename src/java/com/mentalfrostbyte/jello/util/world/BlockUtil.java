@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.util.world;
 
 import com.google.common.collect.ImmutableList;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -379,7 +379,7 @@ public class BlockUtil {
    }
 
    public static float[] method34565() {
-      BlockRayTraceResult var2 = method34566(MovementUtils.method37086() - 270.0F);
+      BlockRayTraceResult var2 = method34566(MovementUtil.method37086() - 270.0F);
       if (var2.getType() != RayTraceResult.Type.MISS) {
          double var3 = var2.getHitVec().x - (double)var2.getPos().getX();
          double var5 = var2.getHitVec().z - (double)var2.getPos().getZ();
@@ -460,8 +460,8 @@ public class BlockUtil {
    }
 
    public static RayTraceResult method34569(float var0, float var1, float var2, float var3) {
-      double var6 = Math.cos((double) MovementUtils.method37086() * Math.PI / 180.0) * (double)var3;
-      double var8 = Math.sin((double) MovementUtils.method37086() * Math.PI / 180.0) * (double)var3;
+      double var6 = Math.cos((double) MovementUtil.method37086() * Math.PI / 180.0) * (double)var3;
+      double var8 = Math.sin((double) MovementUtil.method37086() * Math.PI / 180.0) * (double)var3;
       Vector3d var10 = new Vector3d(
          mc.player.getPosX() + var6,
          mc.player.getPosY() + (double) mc.player.getEyeHeight(),

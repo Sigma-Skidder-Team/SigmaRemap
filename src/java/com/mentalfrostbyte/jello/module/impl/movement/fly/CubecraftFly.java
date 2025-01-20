@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -51,7 +51,7 @@ public class CubecraftFly extends Module {
     @Override
     public void onDisable() {
         MultiUtilities.setPlayerYMotion(-0.078);
-        MovementUtils.strafe(0.2);
+        MovementUtil.strafe(0.2);
         mc.timer.timerSpeed = 1.0F;
         if (this.field23846) {
             mc.gameSettings.keyBindSneak.pressed = true;
@@ -88,13 +88,13 @@ public class CubecraftFly extends Module {
         } else if (MultiUtilities.isCubecraft()) {
             if (this.field23845 > 0) {
                 var1.setY(0.0);
-                MovementUtils.setSpeed(var1, 0.0);
+                MovementUtil.setSpeed(var1, 0.0);
                 this.field23845++;
             } else {
                 if (this.field23845 != 0) {
                     if (this.field23847) {
                         var1.setY(0.0);
-                        MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
+                        MovementUtil.setSpeed(var1, MovementUtil.getSpeed());
                         if (this.field23845 != -4) {
                             if (this.field23845 != -1) {
                                 /*
@@ -102,11 +102,11 @@ public class CubecraftFly extends Module {
                                  * ViaVerList._1_8_x.getVersionNumber()) {
                                  * if (mc.gameSettings.keyBindJump.isKeyDown() && !this.field23846) {
                                  * var1.setY(0.0625);
-                                 * MovementUtils.setSpeed(var1, 0.0);
+                                 * MovementUtil.setSpeed(var1, 0.0);
                                  * this.field23845 = 1;
                                  * } else if (this.field23846 && !mc.gameSettings.keyBindJump.isKeyDown()) {
                                  * var1.setY(-0.225);
-                                 * MovementUtils.setSpeed(var1, 0.0);
+                                 * MovementUtil.setSpeed(var1, 0.0);
                                  * this.field23845 = 1;
                                  * }
                                  * }
@@ -128,14 +128,14 @@ public class CubecraftFly extends Module {
                      * ViaVerList._1_8_x.getVersionNumber()) {
                      * if (!MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                      * var1.setY(0.0);
-                     * MovementUtils.setSpeed(var1, 0.0);
+                     * MovementUtil.setSpeed(var1, 0.0);
                      * if (mc.player.fallDistance > 4.0F) {
                      * mc.getConnection().sendPacket(new CPlayerPacket(true));
                      * this.field23848 = true;
                      * }
                      * } else {
-                     * var1.setY(MovementUtils.method37080());
-                     * MovementUtils.setSpeed(var1, 0.615);
+                     * var1.setY(MovementUtil.method37080());
+                     * MovementUtil.setSpeed(var1, 0.615);
                      * }
                      * 
                      * this.field23845 = 1;
@@ -146,7 +146,7 @@ public class CubecraftFly extends Module {
                     Client.getInstance().notificationManager
                             .send(new Notification("Cubecraft Fly", "Please start on the ground."));
                 } else {
-                    MovementUtils.setSpeed(var1, 0.0);
+                    MovementUtil.setSpeed(var1, 0.0);
                     var1.setY(0.0);
                     long var14 = MultiUtilities.method17762() % 90L;
                     double var15 = 0.016 + (double) var14 / 10000.0;
@@ -162,7 +162,7 @@ public class CubecraftFly extends Module {
                 MultiUtilities.setPlayerYMotion(var1.getY());
             }
         } else {
-            MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
+            MovementUtil.setSpeed(var1, MovementUtil.getSpeed());
             var1.setY(0.0);
             if (mc.player.ticksExisted % 2 == 0) {
                 double var4 = mc.player.getPosX();
@@ -206,13 +206,13 @@ public class CubecraftFly extends Module {
                 /*
                  * if (JelloPortal.getCurrentVersionApplied() !=
                  * ViaVerList._1_8_x.getVersionNumber()) {
-                 * float[] var6 = MovementUtils.lenientStrafe();
+                 * float[] var6 = MovementUtil.lenientStrafe();
                  * float var7 = var6[1];
                  * float var8 = var6[2];
                  * float var9 = var6[0];
                  * double var10 = Math.cos(Math.toRadians(var9));
                  * double var12 = Math.sin(Math.toRadians(var9));
-                 * double var14 = MovementUtils.getSpeed();
+                 * double var14 = MovementUtil.getSpeed();
                  * double var16 = ((double) var7 * var10 + (double) var8 * var12) * var14;
                  * double var18 = ((double) var7 * var12 - (double) var8 * var10) * var14;
                  * this.field23849 = var20.y;

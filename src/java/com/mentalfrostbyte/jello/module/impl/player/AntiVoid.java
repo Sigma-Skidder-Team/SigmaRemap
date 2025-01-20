@@ -14,7 +14,7 @@ import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -72,7 +72,7 @@ public class AntiVoid extends Module {
                     this.fallDistanceAccumulated = 0.0;
                 }
             } else {
-                MovementUtils.setSpeed(event, 0.0);
+                MovementUtil.setSpeed(event, 0.0);
                 event.setY(0.0);
                 this.disableTimer--;
             }
@@ -84,7 +84,7 @@ public class AntiVoid extends Module {
 
             if (this.speedBoostTimer > 0) {
                 this.speedBoostTimer--;
-                MovementUtils.setSpeed(event, 0.1);
+                MovementUtil.setSpeed(event, 0.1);
             }
         }
     }

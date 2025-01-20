@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.RotationHelper;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
@@ -43,9 +43,9 @@ public class AACAntiKB extends Module {
                 if (field23907 < 7) {
                     field23907++;
                     if (field23907 > 1) {
-                        float var4 = MovementUtils.lenientStrafe()[1];
-                        float var5 = MovementUtils.lenientStrafe()[2];
-                        float var6 = MovementUtils.lenientStrafe()[0];
+                        float var4 = MovementUtil.lenientStrafe()[1];
+                        float var5 = MovementUtil.lenientStrafe()[2];
+                        float var6 = MovementUtil.lenientStrafe()[0];
                         double var7 = Math.cos(Math.toRadians(var6));
                         double var9 = Math.sin(Math.toRadians(var6));
                         double var11 = (double) ((float) (7 - field23907) * this.getNumberValueBySettingName("Strengh")) * 0.04 * (double) this.field23909 * 0.2;

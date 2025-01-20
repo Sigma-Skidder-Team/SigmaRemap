@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 
 public class OmegaCraftFly extends Module {
     private int field23700;
@@ -42,7 +42,7 @@ public class OmegaCraftFly extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.strafe(0.2);
+        MovementUtil.strafe(0.2);
         if (mc.player.getMotion().y > 0.03) {
             MultiUtilities.setPlayerYMotion(-0.0784);
         }
@@ -93,8 +93,8 @@ public class OmegaCraftFly extends Module {
         if (this.field23700 != 1) {
             if (this.field23700 > 1) {
                 mc.player.setPosition(mc.player.getPositionVec().x, this.field23702, mc.player.getPositionVec().z);
-                double var4 = !mc.gameSettings.keyBindSneak.isKeyDown() ? 0.405 + (double) MovementUtils.getSpeedBoost() * 0.02 : 0.25;
-                MovementUtils.setSpeed(var1, var4);
+                double var4 = !mc.gameSettings.keyBindSneak.isKeyDown() ? 0.405 + (double) MovementUtil.getSpeedBoost() * 0.02 : 0.25;
+                MovementUtil.setSpeed(var1, var4);
                 this.field23700 = 0;
             }
         } else {
@@ -106,7 +106,7 @@ public class OmegaCraftFly extends Module {
             }
 
             double var6 = !mc.gameSettings.keyBindSneak.isKeyDown() ? 0.6 : 0.25;
-            MovementUtils.setSpeed(var1, var6);
+            MovementUtil.setSpeed(var1, var6);
         }
 
         MultiUtilities.setPlayerXMotion(var1.getX());

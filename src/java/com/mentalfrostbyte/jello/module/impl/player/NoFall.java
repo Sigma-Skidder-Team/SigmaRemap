@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.AxisAlignedBB;
 
@@ -39,7 +39,7 @@ public class NoFall extends Module {
     private void method16187(EventMove var1) {
         if (this.isEnabled()) {
             if (var1.getY() < -0.5
-                    && (double) mc.player.fallDistance > 2.0 + (double) MovementUtils.getJumpBoost() * 0.5
+                    && (double) mc.player.fallDistance > 2.0 + (double) MovementUtil.getJumpBoost() * 0.5
                     && !mc.player.onGround
                     && this.getStringSettingValueByName("Mode").equals("Hypixel")
                     && MultiUtilities.isHypixel()) {
@@ -51,7 +51,7 @@ public class NoFall extends Module {
                     double var13 = (double) ((int) (var11 + var1.getY())) - var11 - var1.getY() + var9;
                     double var15 = 0.02;
                     double var17 = -0.05;
-                    if (var1.getY() > -0.5 + (double) (MovementUtils.getJumpBoost())) {
+                    if (var1.getY() > -0.5 + (double) (MovementUtil.getJumpBoost())) {
                         var15 = 0.0;
                     }
 

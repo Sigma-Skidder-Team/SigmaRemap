@@ -9,8 +9,8 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.item.InvManager;
 import com.mentalfrostbyte.jello.notification.Notification;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -55,9 +55,9 @@ public class BowFly extends Module {
             var1.getVector().y = 0.0;
             double var6 = var1.getVector().length();
             var1.getVector().y = var4;
-            float var8 = MovementUtils.lenientStrafe()[1];
-            float var9 = MovementUtils.lenientStrafe()[2];
-            float var10 = MovementUtils.lenientStrafe()[0];
+            float var8 = MovementUtil.lenientStrafe()[1];
+            float var9 = MovementUtil.lenientStrafe()[2];
+            float var10 = MovementUtil.lenientStrafe()[0];
             System.out.println(var6);
             if ((var8 != 0.0F || var9 != 0.0F) && !(var1.getVector().y < -0.5)) {
                 double var11 = Math.cos(Math.toRadians(var10));

@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
@@ -91,18 +91,18 @@ public class NCPPhase extends PremiumModule {
                 if (this.field23652 != 0) {
                     if (!MultiUtilities.method17761()) {
                         this.field23651 = false;
-                        MovementUtils.setSpeed(var1, 0.0);
+                        MovementUtil.setSpeed(var1, 0.0);
                         return;
                     }
 
                     if (!this.field23651) {
-                        MovementUtils.setSpeed(var1, !this.getBooleanValueFromSettingName("Hypixel") ? 0.0031 : 0.03);
+                        MovementUtil.setSpeed(var1, !this.getBooleanValueFromSettingName("Hypixel") ? 0.0031 : 0.03);
                     } else {
-                        MovementUtils.setSpeed(var1, 0.617);
+                        MovementUtil.setSpeed(var1, 0.617);
                     }
                 } else {
-                    MovementUtils.setSpeed(var1, 0.0);
-                    MovementUtils.method37095(6.000000238415E-4);
+                    MovementUtil.setSpeed(var1, 0.0);
+                    MovementUtil.method37095(6.000000238415E-4);
                 }
 
                 this.field23652++;

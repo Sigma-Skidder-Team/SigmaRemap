@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.InvManagerUtils;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.RotationHelper;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.item.ItemStack;
@@ -56,7 +56,7 @@ public class AutoMLG extends PremiumModule {
     private void method16422(EventMove var1) {
         if (this.isEnabled()) {
             if (field23649 > 0 && !mc.player.onGround) {
-                MovementUtils.setSpeed(var1, 0.0);
+                MovementUtil.setSpeed(var1, 0.0);
             }
         }
     }

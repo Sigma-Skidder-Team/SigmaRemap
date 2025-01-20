@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3d;
@@ -42,8 +42,8 @@ public class VanillaPhase extends Module {
     private void EventMove(EventMove event) {
         if (this.isEnabled()) {
             if (mc.player.collidedHorizontally || MultiUtilities.method17761()) {
-                MovementUtils.setSpeed(event, 0.0);
-                MovementUtils.method37095(1.7);
+                MovementUtil.setSpeed(event, 0.0);
+                MovementUtil.method37095(1.7);
             }
         }
     }

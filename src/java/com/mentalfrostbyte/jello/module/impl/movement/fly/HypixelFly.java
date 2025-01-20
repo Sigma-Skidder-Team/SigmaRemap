@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.player.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
@@ -71,8 +71,8 @@ public class HypixelFly extends Module {
 
     @Override
     public void onDisable() {
-        double var3 = MovementUtils.getSpeed();
-        MovementUtils.strafe(var3 * 0.7);
+        double var3 = MovementUtil.getSpeed();
+        MovementUtil.strafe(var3 * 0.7);
         this.duration = 1.0F;
         mc.timer.timerSpeed = 1.0F;
         this.field23563 = -1;
@@ -130,20 +130,20 @@ public class HypixelFly extends Module {
                     this.grounded = !this.grounded;
                     break;
                 case "Fast":
-                    event.setY(MovementUtils.getJumpValue());
-                    MovementUtils.setSpeed(event, var28);
+                    event.setY(MovementUtil.getJumpValue());
+                    MovementUtil.setSpeed(event, var28);
                     this.grounded = !this.grounded;
-                    this.flySpeed = 0.51 + (double) this.getNumberValueBySettingName("Speed") + 0.015 * (double) MovementUtils.getSpeedBoost();
+                    this.flySpeed = 0.51 + (double) this.getNumberValueBySettingName("Speed") + 0.015 * (double) MovementUtil.getSpeedBoost();
                     break;
                 case "NoDmg":
-                    event.setY(MovementUtils.getJumpValue());
-                    MovementUtils.setSpeed(event, var28);
+                    event.setY(MovementUtil.getJumpValue());
+                    MovementUtil.setSpeed(event, var28);
                     this.grounded = !this.grounded;
                     this.flySpeed = var28 * 0.987;
                     break;
                 case "Funcraft":
-                    event.setY(MovementUtils.getJumpValue());
-                    MovementUtils.setSpeed(event, var28);
+                    event.setY(MovementUtil.getJumpValue());
+                    MovementUtil.setSpeed(event, var28);
                     this.grounded = !this.grounded;
                     this.flySpeed = 0.51 + (double) this.getNumberValueBySettingName("Speed");
             }
@@ -158,14 +158,14 @@ public class HypixelFly extends Module {
                 this.flySpeed = 0.0;
             }
 
-            double var10 = curMode.equals("Basic") ? MovementUtils.method37076() : MovementUtils.method37076() - 0.008;
+            double var10 = curMode.equals("Basic") ? MovementUtil.method37076() : MovementUtil.method37076() - 0.008;
             if (this.flySpeed < var10) {
                 this.flySpeed = var10;
             } else if (!MultiUtilities.method17686()) {
                 this.flySpeed = var10;
             }
 
-            MovementUtils.setSpeed(event, this.flySpeed);
+            MovementUtil.setSpeed(event, this.flySpeed);
             if (!mc.player.onGround || !MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                 this.field23563++;
                 event.setY(0.0);
@@ -183,7 +183,7 @@ public class HypixelFly extends Module {
             boolean var21 = var19 < 1.0E-4;
             if (this.getBooleanValueFromSettingName("No Collision") && this.flySpeed > var10) {
                 List<Vector3d> var22 = new ArrayList();
-                float var23 = MathHelper.wrapDegrees(MovementUtils.method37086());
+                float var23 = MathHelper.wrapDegrees(MovementUtil.method37086());
                 if (var23 > 0.0F && var23 < 90.0F) {
                     var22.add(new Vector3d(1.0, 0.0, 0.0));
                     var22.add(new Vector3d(0.0, 0.0, 1.0));
@@ -207,7 +207,7 @@ public class HypixelFly extends Module {
                 }
 
                 event.setVector(allowedMovement);
-                if (!var21 && mc.player.getPosY() % 1.0 > 0.1F && MovementUtils.isMoving()) {
+                if (!var21 && mc.player.getPosY() % 1.0 > 0.1F && MovementUtil.isMoving()) {
                     for (Vector3d var25 : var22) {
                         var25.x = var25.x * this.flySpeed;
                         var25.z = var25.z * this.flySpeed;
