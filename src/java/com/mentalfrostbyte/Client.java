@@ -62,8 +62,8 @@ public class Client {
     private MusicManager musicManager;
     private PlayerStateTracker playerStateTracker;
     private AccountManager accountManager;
-    private BlurEngine field28981;
-    private CombatTracker field28982;
+    private BlurEngine blurEngine;
+    private CombatTracker combatTracker;
     private NetworkManager networkManager;
     private SoundManager soundManager;
     private NotificationManager notificationManager;
@@ -125,8 +125,8 @@ public class Client {
         this.accountManager.registerEvents();
         this.waypointsManager = new WaypointsManager();
         this.waypointsManager.init();
-        this.field28981 = new BlurEngine();
-        this.field28981.init();
+        this.blurEngine = new BlurEngine();
+        this.blurEngine.init();
         this.field28989 = new Class8795();
         this.field28989.init();
         GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Sigma 5.0");
