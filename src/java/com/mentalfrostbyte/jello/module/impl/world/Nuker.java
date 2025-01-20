@@ -163,7 +163,7 @@ public class Nuker extends Module {
                                 }
                                 break;
                             case "Bed":
-                                if (!(mc.world.getBlockState(var8).getBlock() instanceof Class3250)) {
+                                if (!(mc.world.getBlockState(var8).getBlock() instanceof BedBlock)) {
                                     continue;
                                 }
                                 break;

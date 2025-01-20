@@ -23,7 +23,7 @@ public class Class967 extends TileEntity {
 
    public Class112 method4000() {
       if (this.field5423 == null) {
-         this.field5423 = ((Class3250)this.getBlockState().getBlock()).method11690();
+         this.field5423 = ((BedBlock)this.getBlockState().getBlock()).method11690();
       }
 
       return this.field5423;

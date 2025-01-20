@@ -19,7 +19,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public class StructureBlock extends Class3241 {
+public class StructureBlock extends BannerBlock {
    private static String[] field18937;
    public static final EnumProperty<StructureMode> field18938 = BlockStateProperties.STRUCTURE_MODE;
 

@@ -86,7 +86,7 @@ public class Class9809 {
          if (!(var14 instanceof Class3251)) {
             Object var17;
             if (!(var14 instanceof Class3359)) {
-               if (!(var14 instanceof Class3250)) {
+               if (!(var14 instanceof BedBlock)) {
                   if (var14 != Blocks.field37007) {
                      if (var14 != Blocks.CHEST) {
                         if (var14 != Blocks.ENDER_CHEST) {
@@ -114,7 +114,7 @@ public class Class9809 {
                      var17 = this.field45850;
                   }
                } else {
-                  this.field45849.method4001(((Class3250)var14).method11690());
+                  this.field45849.method4001(((BedBlock)var14).method11690());
                   var17 = this.field45849;
                }
             } else {

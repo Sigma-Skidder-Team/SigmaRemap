@@ -33,7 +33,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class Class3368 extends Class3241 {
+public class Class3368 extends BannerBlock {
    public static final EnumProperty<Direction> field18939 = Class3433.field19198;
    public static final ResourceLocation field18940 = new ResourceLocation("contents");
    private final Class112 field18941;

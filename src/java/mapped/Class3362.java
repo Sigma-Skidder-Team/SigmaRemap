@@ -23,7 +23,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class Class3362 extends Class3241 {
+public class Class3362 extends BannerBlock {
    private static String[] field18912;
    public static final DirectionProperty field18913 = BlockStateProperties.FACING_EXCEPT_UP;
    public static final BooleanProperty field18914 = BlockStateProperties.ENABLED;

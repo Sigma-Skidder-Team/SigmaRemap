@@ -43,7 +43,7 @@ public class Class4913 {
       )
       .stream()
       .<BlockState>flatMap(var0 -> var0.getStateContainer().getValidStates().stream())
-      .filter(var0 -> var0.<BedPart>get(Class3250.field18713) == BedPart.HEAD)
+      .filter(var0 -> var0.<BedPart>get(BedBlock.field18713) == BedPart.HEAD)
       .collect(ImmutableSet.toImmutableSet());
    private static final Map<BlockState, Class4913> field22750 = Maps.newHashMap();
    public static final Class4913 field22751 = method15185("unemployed", ImmutableSet.of(), 1, field22747, 1);

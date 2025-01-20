@@ -49,7 +49,7 @@ public class Class2637 extends Class2628 {
             return var5.isIn(Blocks.FURNACE) && var5.<Boolean>get(Class3353.field18876)
                ? true
                : var5.method23447(
-                  BlockTags.field32770, var0 -> var0.<BedPart>method23464(Class3250.field18713).<Boolean>map(var0x -> var0x != BedPart.HEAD).orElse(true)
+                  BlockTags.field32770, var0 -> var0.<BedPart>method23464(BedBlock.field18713).<Boolean>map(var0x -> var0x != BedPart.HEAD).orElse(true)
                );
          }
       } else {

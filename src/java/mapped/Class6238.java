@@ -22,7 +22,7 @@ public final class Class6238 extends Class6230 {
             var7,
             Blocks.field36703
                .getDefaultState()
-               .with(Class3343.field18855, Integer.valueOf(var6.getAxis() != Direction.Axis.Y ? var6.getOpposite().getHorizontalIndex() * 4 : 0)),
+               .with(SkullBlock.field18855, Integer.valueOf(var6.getAxis() != Direction.Axis.Y ? var6.getOpposite().getHorizontalIndex() * 4 : 0)),
             3
          );
          TileEntity var8 = var5.getTileEntity(var7);

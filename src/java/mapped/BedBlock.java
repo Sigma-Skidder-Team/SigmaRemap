@@ -40,7 +40,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Optional;
 
-public class Class3250 extends HorizontalBlock implements Class3245 {
+public class BedBlock extends HorizontalBlock implements Class3245 {
    public static final EnumProperty<BedPart> field18713 = BlockStateProperties.PART;
    public static final BooleanProperty field18714 = BlockStateProperties.OCCUPIED;
    public static final VoxelShape field18715 = Block.makeCuboidShape(0.0, 3.0, 0.0, 16.0, 9.0, 16.0);
@@ -54,7 +54,7 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
    public static final VoxelShape field18723 = VoxelShapes.method27432(field18715, field18718, field18719);
    private final Class112 field18724;
 
-   public Class3250(Class112 var1, Properties var2) {
+   public BedBlock(Class112 var1, Properties var2) {
       super(var2);
       this.field18724 = var1;
       this.setDefaultState(this.stateContainer.getBaseState().with(field18713, BedPart.FOOT).with(field18714, Boolean.valueOf(false)));
@@ -63,7 +63,7 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
    @Nullable
    public static Direction method11678(IBlockReader var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
-      return !(var4.getBlock() instanceof Class3250) ? null : var4.<Direction>get(HORIZONTAL_FACING);
+      return !(var4.getBlock() instanceof BedBlock) ? null : var4.<Direction>get(HORIZONTAL_FACING);
    }
 
    @Override
@@ -220,7 +220,7 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
    }
 
    private static boolean method11685(IBlockReader var0, BlockPos var1) {
-      return var0.getBlockState(var1.down()).getBlock() instanceof Class3250;
+      return var0.getBlockState(var1.down()).getBlock() instanceof BedBlock;
    }
 
    public static Optional<Vector3d> method11686(EntityType<?> var0, ICollisionReader var1, BlockPos var2, float var3) {

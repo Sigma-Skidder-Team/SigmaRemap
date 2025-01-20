@@ -18,12 +18,12 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public abstract class Class3468 extends Block {
+public abstract class AbstractPressurePlateBlock extends Block {
    public static final VoxelShape field19313 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 0.5, 15.0);
    public static final VoxelShape field19314 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 1.0, 15.0);
    public static final AxisAlignedBB field19315 = new AxisAlignedBB(0.125, 0.0, 0.125, 0.875, 0.25, 0.875);
 
-   public Class3468(Properties var1) {
+   public AbstractPressurePlateBlock(Properties var1) {
       super(var1);
    }
 

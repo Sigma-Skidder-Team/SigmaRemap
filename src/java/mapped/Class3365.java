@@ -15,7 +15,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3365 extends Class3241 {
+public class Class3365 extends BannerBlock {
    private static String[] field18932;
    public static final VoxelShape field18933 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
 

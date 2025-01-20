@@ -12,9 +12,9 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3420 extends Block {
+public class OreBlock extends Block {
 
-   public Class3420(Properties var1) {
+   public OreBlock(Properties var1) {
       super(var1);
    }
 

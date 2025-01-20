@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3366 extends Class3241 {
+public class Class3366 extends BannerBlock {
    private static final Direction[] field18934 = new Direction[]{Direction.WEST, Direction.EAST, Direction.SOUTH};
    public static final DirectionProperty field18935 = HorizontalBlock.HORIZONTAL_FACING;
    public static final IntegerProperty field18936 = BlockStateProperties.HONEY_LEVEL;

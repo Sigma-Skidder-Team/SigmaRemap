@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public abstract class Class3359 extends Class3241 {
+public abstract class Class3359 extends BannerBlock {
    private final Class112 field18904;
 
    public Class3359(Class112 var1, Properties var2) {

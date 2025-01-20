@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class Class3469 extends Class3468 {
+public class Class3469 extends AbstractPressurePlateBlock {
    private static String[] field19316;
    public static final BooleanProperty field19317 = BlockStateProperties.POWERED;
    private final Class2275 field19318;

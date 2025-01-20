@@ -362,7 +362,7 @@ public class BlockUtil {
                   mc.player.getPosY() + (double)var5,
                   mc.player.getPosZ() + (double)var7
                );
-               if (mc.world.getBlockState(var8).getBlock() instanceof Class3420) {
+               if (mc.world.getBlockState(var8).getBlock() instanceof OreBlock) {
                   var2.add(var8);
                }
             }

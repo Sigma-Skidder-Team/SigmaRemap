@@ -20,7 +20,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 
-public class Class3372 extends Class3241 {
+public class Class3372 extends BannerBlock {
    private static String[] field18962;
    public static final IntegerProperty field18963 = BlockStateProperties.POWER;
    public static final BooleanProperty field18964 = BlockStateProperties.INVERTED;

@@ -24,7 +24,7 @@ import java.util.Collections;
 import java.util.List;
 import javax.annotation.Nullable;
 
-public class Class3356 extends Class3241 {
+public class Class3356 extends BannerBlock {
    private static String[] field18895;
    public static final DirectionProperty field18896 = Class3436.field19198;
    public static final EnumProperty<PistonType> field18897 = Class3436.field19211;

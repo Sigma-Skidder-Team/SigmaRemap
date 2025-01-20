@@ -23,7 +23,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class3376 extends Class3241 {
+public class Class3376 extends BannerBlock {
    private static String[] field18974;
    public static final BooleanProperty[] field18975 = new BooleanProperty[]{BlockStateProperties.HAS_BOTTLE_0, BlockStateProperties.HAS_BOTTLE_1, BlockStateProperties.HAS_BOTTLE_2};
    public static final VoxelShape field18976 = VoxelShapes.or(

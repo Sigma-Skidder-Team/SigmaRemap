@@ -46,14 +46,14 @@ public class Class5950 extends Class5942<Class967> {
       } else {
          BlockState var11 = var1.getBlockState();
          Class7995<Class967> var12 = Class9324.<Class967>method35243(
-            TileEntityType.field21444, Class3250::method11684, Class3250::method11683, ChestBlock.field18865, var11, var10, var1.getPos(), (var0, var1x) -> false
+            TileEntityType.field21444, BedBlock::method11684, BedBlock::method11683, ChestBlock.field18865, var11, var10, var1.getPos(), (var0, var1x) -> false
          );
          int var13 = var12.method27292(new Class6138<>()).get(var5);
          this.method18480(
             var3,
             var4,
-            var11.<BedPart>get(Class3250.field18713) == BedPart.HEAD,
-            var11.<Direction>get(Class3250.HORIZONTAL_FACING),
+            var11.<BedPart>get(BedBlock.field18713) == BedPart.HEAD,
+            var11.<Direction>get(BedBlock.HORIZONTAL_FACING),
             var9,
             var13,
             var6,

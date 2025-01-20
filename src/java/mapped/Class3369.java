@@ -33,7 +33,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class Class3369 extends Class3241 {
+public class Class3369 extends BannerBlock {
    private static String[] field18942;
    public static final DirectionProperty field18943 = HorizontalBlock.HORIZONTAL_FACING;
    public static final EnumProperty<BellAttachment> field18944 = BlockStateProperties.BELL_ATTACHMENT;

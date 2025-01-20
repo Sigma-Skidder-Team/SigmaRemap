@@ -1333,8 +1333,8 @@ public abstract class PlayerEntity extends LivingEntity {
          }
 
          return var11;
-      } else if (var8 instanceof Class3250 && Class3250.method11679(var0)) {
-         return Class3250.method11686(EntityType.PLAYER, var0, var1, var2);
+      } else if (var8 instanceof BedBlock && BedBlock.method11679(var0)) {
+         return BedBlock.method11686(EntityType.PLAYER, var0, var1, var2);
       } else if (!var3) {
          return Optional.<Vector3d>empty();
       } else {

@@ -19,7 +19,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class Class3364 extends Class3241 {
+public class Class3364 extends BannerBlock {
    public static final BooleanProperty field18931 = BlockStateProperties.HAS_RECORD;
 
    public Class3364(Properties var1) {

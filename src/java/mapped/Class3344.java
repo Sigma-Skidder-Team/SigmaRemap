@@ -19,7 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 
-public class Class3344 extends Class3343 {
+public class Class3344 extends SkullBlock {
    private static Class9803 field18857;
    private static Class9803 field18858;
 

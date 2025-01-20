@@ -7,7 +7,7 @@ import net.minecraft.world.World;
 
 import java.util.function.Supplier;
 
-public abstract class Class3346<E extends TileEntity> extends Class3241 {
+public abstract class Class3346<E extends TileEntity> extends BannerBlock {
    public final Supplier<TileEntityType<? extends E>> field18859;
 
    public Class3346(Properties var1, Supplier<TileEntityType<? extends E>> var2) {

@@ -28,7 +28,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3354 extends Class3241 {
+public class Class3354 extends BannerBlock {
    public static final DirectionProperty field18880 = HorizontalBlock.HORIZONTAL_FACING;
    public static final BooleanProperty field18881 = BlockStateProperties.POWERED;
    public static final BooleanProperty field18882 = BlockStateProperties.HAS_BOOK;

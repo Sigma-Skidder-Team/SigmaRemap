@@ -7,7 +7,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class3370 extends Class3241 {
+public class Class3370 extends BannerBlock {
    private static String[] field18958;
 
    public Class3370(Properties var1) {

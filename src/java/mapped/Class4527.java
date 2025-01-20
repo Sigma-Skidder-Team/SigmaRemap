@@ -58,7 +58,7 @@ public class Class4527 {
 
    public static VoxelShape method14426(IBlockReader var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
-      return !var4.isIn(BlockTags.field32804) && (!(var4.getBlock() instanceof Class3206) || !var4.<Boolean>get(Class3206.field18594))
+      return !var4.isIn(BlockTags.field32804) && (!(var4.getBlock() instanceof TrapDoorBlock) || !var4.<Boolean>get(TrapDoorBlock.field18594))
          ? var4.method23414(var0, var1)
          : VoxelShapes.empty();
    }

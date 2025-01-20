@@ -1336,7 +1336,7 @@ public abstract class LivingEntity extends Entity {
          BlockState var4 = this.getBlockState();
          Block var5 = var4.getBlock();
          if (!var5.isIn(BlockTags.field32804)) {
-            if (var5 instanceof Class3206 && this.canGoThroughtTrapDoorOnLadder(var3, var4)) {
+            if (var5 instanceof TrapDoorBlock && this.canGoThroughtTrapDoorOnLadder(var3, var4)) {
                this.field_233624_bE_ = Optional.<BlockPos>of(var3);
                return true;
             } else {
@@ -1356,9 +1356,9 @@ public abstract class LivingEntity extends Entity {
    }
 
    private boolean canGoThroughtTrapDoorOnLadder(BlockPos var1, BlockState var2) {
-      if (var2.<Boolean>get(Class3206.field18594)) {
+      if (var2.<Boolean>get(TrapDoorBlock.field18594)) {
          BlockState var5 = this.world.getBlockState(var1.down());
-         if (var5.isIn(Blocks.LADDER) && var5.<Direction>get(Class3423.field19154) == var2.<Direction>get(Class3206.HORIZONTAL_FACING)) {
+         if (var5.isIn(Blocks.LADDER) && var5.<Direction>get(Class3423.field19154) == var2.<Direction>get(TrapDoorBlock.HORIZONTAL_FACING)) {
             return true;
          }
       }
@@ -3012,8 +3012,8 @@ public abstract class LivingEntity extends Entity {
       }
 
       BlockState var4 = this.world.getBlockState(var1);
-      if (var4.getBlock() instanceof Class3250) {
-         this.world.setBlockState(var1, var4.with(Class3250.field18714, Boolean.valueOf(true)), 3);
+      if (var4.getBlock() instanceof BedBlock) {
+         this.world.setBlockState(var1, var4.with(BedBlock.field18714, Boolean.valueOf(true)), 3);
       }
 
       this.setPose(Pose.SLEEPING);
@@ -3028,15 +3028,15 @@ public abstract class LivingEntity extends Entity {
    }
 
    private boolean isInValidBed() {
-      return this.getBedPosition().<Boolean>map(var1 -> this.world.getBlockState(var1).getBlock() instanceof Class3250).orElse(false);
+      return this.getBedPosition().<Boolean>map(var1 -> this.world.getBlockState(var1).getBlock() instanceof BedBlock).orElse(false);
    }
 
    public void wakeUp() {
       this.getBedPosition().filter(this.world::isBlockLoaded).ifPresent(var1 -> {
          BlockState var4 = this.world.getBlockState(var1);
-         if (var4.getBlock() instanceof Class3250) {
-            this.world.setBlockState(var1, var4.with(Class3250.field18714, Boolean.valueOf(false)), 3);
-            Vector3d var5 = Class3250.method11686(this.getType(), this.world, var1, this.rotationYaw).orElseGet(() -> {
+         if (var4.getBlock() instanceof BedBlock) {
+            this.world.setBlockState(var1, var4.with(BedBlock.field18714, Boolean.valueOf(false)), 3);
+            Vector3d var5 = BedBlock.method11686(this.getType(), this.world, var1, this.rotationYaw).orElseGet(() -> {
                BlockPos var3x = var1.up();
                return new Vector3d((double)var3x.getX() + 0.5, (double)var3x.getY() + 0.1, (double)var3x.getZ() + 0.5);
             });
@@ -3056,7 +3056,7 @@ public abstract class LivingEntity extends Entity {
    @Nullable
    public Direction getBedDirection() {
       BlockPos var3 = this.getBedPosition().orElse((BlockPos)null);
-      return var3 == null ? null : Class3250.method11678(this.world, var3);
+      return var3 == null ? null : BedBlock.method11678(this.world, var3);
    }
 
    @Override

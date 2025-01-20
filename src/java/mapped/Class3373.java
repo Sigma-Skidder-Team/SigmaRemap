@@ -21,7 +21,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public abstract class Class3373 extends Class3241 implements IWaterLoggable {
+public abstract class Class3373 extends BannerBlock implements IWaterLoggable {
    public static final BooleanProperty field18966 = BlockStateProperties.WATERLOGGED;
    public static final VoxelShape field18967 = Block.makeCuboidShape(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
    private final Class9673 field18968;

@@ -8,8 +8,8 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public abstract class Class3241 extends Block implements Class3245 {
-   public Class3241(Properties var1) {
+public abstract class BannerBlock extends Block implements Class3245 {
+   public BannerBlock(Properties var1) {
       super(var1);
    }
 

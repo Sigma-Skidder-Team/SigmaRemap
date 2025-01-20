@@ -129,17 +129,17 @@ public class Blocks {
       "gravel", new Class3215(AbstractBlock.Properties.withMaterialAndColor(Material.field38953, MaterialColor.STONE).method26623(0.6F).method26619(SoundType.GRAVEL))
    );
    public static final Block field36418 = register(
-      "gold_ore", new Class3420(AbstractBlock.Properties.withMaterial(Material.STONE).method26635().method26621(3.0F, 3.0F))
+      "gold_ore", new OreBlock(AbstractBlock.Properties.withMaterial(Material.STONE).method26635().method26621(3.0F, 3.0F))
    );
    public static final Block field36419 = register(
-      "iron_ore", new Class3420(AbstractBlock.Properties.withMaterial(Material.STONE).method26635().method26621(3.0F, 3.0F))
+      "iron_ore", new OreBlock(AbstractBlock.Properties.withMaterial(Material.STONE).method26635().method26621(3.0F, 3.0F))
    );
    public static final Block field36420 = register(
-      "coal_ore", new Class3420(AbstractBlock.Properties.withMaterial(Material.STONE).method26635().method26621(3.0F, 3.0F))
+      "coal_ore", new OreBlock(AbstractBlock.Properties.withMaterial(Material.STONE).method26635().method26621(3.0F, 3.0F))
    );
    public static final Block field36421 = register(
       "nether_gold_ore",
-      new Class3420(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30982).method26635().method26621(3.0F, 3.0F).method26619(SoundType.GILDED_BLACKSTONE))
+      new OreBlock(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30982).method26635().method26621(3.0F, 3.0F).method26619(SoundType.GILDED_BLACKSTONE))
    );
    public static final Block field36422 = register("oak_log", method30016(MaterialColor.OAK_PLANK, MaterialColor.PODZOL));
    public static final Block field36423 = register("spruce_log", method30016(MaterialColor.PODZOL, MaterialColor.field30973));
@@ -220,7 +220,7 @@ public class Blocks {
       )
    );
    public static final Block field36455 = register(
-      "lapis_ore", new Class3420(AbstractBlock.Properties.withMaterial(Material.STONE).method26635().method26621(3.0F, 3.0F))
+      "lapis_ore", new OreBlock(AbstractBlock.Properties.withMaterial(Material.STONE).method26635().method26621(3.0F, 3.0F))
    );
    public static final Block field36456 = register(
       "lapis_block", new Block(AbstractBlock.Properties.withMaterialAndColor(Material.field38967, MaterialColor.field30979).method26635().method26621(3.0F, 3.0F))
@@ -495,7 +495,7 @@ public class Blocks {
       "redstone_wire", new Class3222(AbstractBlock.Properties.withMaterial(Material.field38946).method26614().method26622())
    );
    public static final Block field36536 = register(
-      "diamond_ore", new Class3420(AbstractBlock.Properties.withMaterial(Material.STONE).method26635().method26621(3.0F, 3.0F))
+      "diamond_ore", new OreBlock(AbstractBlock.Properties.withMaterial(Material.STONE).method26635().method26621(3.0F, 3.0F))
    );
    public static final Block field36537 = register(
       "diamond_block",
@@ -848,7 +848,7 @@ public class Blocks {
    public static final Block field36608 = register("black_stained_glass", method30020(Class112.field401));
    public static final Block field36609 = register(
       "oak_trapdoor",
-      new Class3206(
+      new TrapDoorBlock(
          AbstractBlock.Properties.withMaterialAndColor(Material.PLANKS, MaterialColor.OAK_PLANK)
             .method26623(3.0F)
             .method26619(SoundType.WOOD)
@@ -858,7 +858,7 @@ public class Blocks {
    );
    public static final Block field36610 = register(
       "spruce_trapdoor",
-      new Class3206(
+      new TrapDoorBlock(
          AbstractBlock.Properties.withMaterialAndColor(Material.PLANKS, MaterialColor.PODZOL)
             .method26623(3.0F)
             .method26619(SoundType.WOOD)
@@ -868,7 +868,7 @@ public class Blocks {
    );
    public static final Block field36611 = register(
       "birch_trapdoor",
-      new Class3206(
+      new TrapDoorBlock(
          AbstractBlock.Properties.withMaterialAndColor(Material.PLANKS, MaterialColor.field30949)
             .method26623(3.0F)
             .method26619(SoundType.WOOD)
@@ -878,7 +878,7 @@ public class Blocks {
    );
    public static final Block field36612 = register(
       "jungle_trapdoor",
-      new Class3206(
+      new TrapDoorBlock(
          AbstractBlock.Properties.withMaterialAndColor(Material.PLANKS, MaterialColor.GRANITE)
             .method26623(3.0F)
             .method26619(SoundType.WOOD)
@@ -888,7 +888,7 @@ public class Blocks {
    );
    public static final Block ACACIA_TRAPDOOR = register(
       "acacia_trapdoor",
-      new Class3206(
+      new TrapDoorBlock(
          AbstractBlock.Properties.withMaterialAndColor(Material.PLANKS, MaterialColor.field30962)
             .method26623(3.0F)
             .method26619(SoundType.WOOD)
@@ -898,7 +898,7 @@ public class Blocks {
    );
    public static final Block field36614 = register(
       "dark_oak_trapdoor",
-      new Class3206(
+      new TrapDoorBlock(
          AbstractBlock.Properties.withMaterialAndColor(Material.PLANKS, MaterialColor.field30973)
             .method26623(3.0F)
             .method26619(SoundType.WOOD)
@@ -1069,7 +1069,7 @@ public class Blocks {
    );
    public static final Block SANDSTONE_STAIRS = register("sandstone_stairs", new StairsBlock(SANDSTONE.getDefaultState(), AbstractBlock.Properties.method26613(SANDSTONE)));
    public static final Block EMERALD_ORE = register(
-      "emerald_ore", new Class3420(AbstractBlock.Properties.withMaterial(Material.STONE).method26635().method26621(3.0F, 3.0F))
+      "emerald_ore", new OreBlock(AbstractBlock.Properties.withMaterial(Material.STONE).method26635().method26621(3.0F, 3.0F))
    );
    public static final Block ENDER_CHEST = register(
       "ender_chest", new Class3347(AbstractBlock.Properties.withMaterial(Material.STONE).method26635().method26621(22.5F, 600.0F).method26620(var0 -> 7))
@@ -1201,7 +1201,7 @@ public class Blocks {
       "dark_oak_button", new WoodButtonBlock(AbstractBlock.Properties.withMaterial(Material.field38946).method26614().method26623(0.5F).method26619(SoundType.WOOD))
    );
    public static final Block field36701 = register(
-      "skeleton_skull", new Class3343(Class2136.field13989, AbstractBlock.Properties.withMaterial(Material.field38946).method26623(1.0F))
+      "skeleton_skull", new SkullBlock(Class2136.field13989, AbstractBlock.Properties.withMaterial(Material.field38946).method26623(1.0F))
    );
    public static final Block field36702 = register(
       "skeleton_wall_skull", new Class3252(Class2136.field13989, AbstractBlock.Properties.withMaterial(Material.field38946).method26623(1.0F).method26627(field36701))
@@ -1211,7 +1211,7 @@ public class Blocks {
       "wither_skeleton_wall_skull", new Class3253(AbstractBlock.Properties.withMaterial(Material.field38946).method26623(1.0F).method26627(field36703))
    );
    public static final Block field36705 = register(
-      "zombie_head", new Class3343(Class2136.field13992, AbstractBlock.Properties.withMaterial(Material.field38946).method26623(1.0F))
+      "zombie_head", new SkullBlock(Class2136.field13992, AbstractBlock.Properties.withMaterial(Material.field38946).method26623(1.0F))
    );
    public static final Block field36706 = register(
       "zombie_wall_head", new Class3252(Class2136.field13992, AbstractBlock.Properties.withMaterial(Material.field38946).method26623(1.0F).method26627(field36705))
@@ -1221,13 +1221,13 @@ public class Blocks {
       "player_wall_head", new Class3254(AbstractBlock.Properties.withMaterial(Material.field38946).method26623(1.0F).method26627(field36707))
    );
    public static final Block field36709 = register(
-      "creeper_head", new Class3343(Class2136.field13993, AbstractBlock.Properties.withMaterial(Material.field38946).method26623(1.0F))
+      "creeper_head", new SkullBlock(Class2136.field13993, AbstractBlock.Properties.withMaterial(Material.field38946).method26623(1.0F))
    );
    public static final Block field36710 = register(
       "creeper_wall_head", new Class3252(Class2136.field13993, AbstractBlock.Properties.withMaterial(Material.field38946).method26623(1.0F).method26627(field36709))
    );
    public static final Block DRAGON_HEAD = register(
-      "dragon_head", new Class3343(Class2136.field13994, AbstractBlock.Properties.withMaterial(Material.field38946).method26623(1.0F))
+      "dragon_head", new SkullBlock(Class2136.field13994, AbstractBlock.Properties.withMaterial(Material.field38946).method26623(1.0F))
    );
    public static final Block DRAGON_WALL_HEAD = register(
       "dragon_wall_head", new Class3252(Class2136.field13994, AbstractBlock.Properties.withMaterial(Material.field38946).method26623(1.0F).method26627(DRAGON_HEAD))
@@ -1281,7 +1281,7 @@ public class Blocks {
    );
    public static final Block field36722 = register(
       "nether_quartz_ore",
-      new Class3420(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30982).method26635().method26621(3.0F, 3.0F).method26619(SoundType.BONE))
+      new OreBlock(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30982).method26635().method26621(3.0F, 3.0F).method26619(SoundType.BONE))
    );
    public static final Block HOPPER = register(
       "hopper",
@@ -1431,7 +1431,7 @@ public class Blocks {
    );
    public static final Block field36766 = register(
       "iron_trapdoor",
-      new Class3206(
+      new TrapDoorBlock(
          AbstractBlock.Properties.withMaterial(Material.field38967)
             .method26635()
             .method26623(5.0F)
@@ -2679,7 +2679,7 @@ public class Blocks {
    );
    public static final Block field37099 = register(
       "crimson_trapdoor",
-      new Class3206(
+      new TrapDoorBlock(
          AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37091.method12000())
             .method26623(3.0F)
             .method26619(SoundType.WOOD)
@@ -2689,7 +2689,7 @@ public class Blocks {
    );
    public static final Block field37100 = register(
       "warped_trapdoor",
-      new Class3206(
+      new TrapDoorBlock(
          AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37092.method12000())
             .method26623(3.0F)
             .method26619(SoundType.WOOD)
@@ -2887,11 +2887,11 @@ public class Blocks {
       return var3 == EntityType.OCELOT || var3 == EntityType.PARROT;
    }
 
-   private static Class3250 method30015(Class112 var0) {
-      return new Class3250(
+   private static BedBlock method30015(Class112 var0) {
+      return new BedBlock(
          var0,
          AbstractBlock.Properties.method26612(
-               Material.field38960, var1 -> var1.get(Class3250.field18713) != BedPart.FOOT ? MaterialColor.field30950 : var0.method312()
+               Material.field38960, var1 -> var1.get(BedBlock.field18713) != BedPart.FOOT ? MaterialColor.field30950 : var0.method312()
             )
             .method26619(SoundType.WOOD)
             .method26623(0.2F)

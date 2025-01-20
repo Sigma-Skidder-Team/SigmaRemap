@@ -29,7 +29,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Map;
 import java.util.Random;
 
-public class Class3357 extends Class3241 {
+public class Class3357 extends BannerBlock {
    private static String[] field18898;
    public static final DirectionProperty field18899 = Class3433.field19198;
    public static final BooleanProperty field18900 = BlockStateProperties.TRIGGERED;

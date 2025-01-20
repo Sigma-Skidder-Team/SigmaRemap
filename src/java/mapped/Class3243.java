@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class3243 extends Class3241 {
+public class Class3243 extends BannerBlock {
    private static String[] field18695;
 
    public Class3243(Properties var1) {

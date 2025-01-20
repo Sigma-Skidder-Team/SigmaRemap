@@ -26,7 +26,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class Class3206 extends HorizontalBlock implements IWaterLoggable {
+public class TrapDoorBlock extends HorizontalBlock implements IWaterLoggable {
    private static String[] field18593;
    public static final BooleanProperty field18594 = BlockStateProperties.OPEN;
    public static final EnumProperty<Half> field18595 = BlockStateProperties.HALF;
@@ -39,7 +39,7 @@ public class Class3206 extends HorizontalBlock implements IWaterLoggable {
    public static final VoxelShape field18602 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
    public static final VoxelShape field18603 = Block.makeCuboidShape(0.0, 13.0, 0.0, 16.0, 16.0, 16.0);
 
-   public Class3206(Properties var1) {
+   public TrapDoorBlock(Properties var1) {
       super(var1);
       this.setDefaultState(
          this.stateContainer

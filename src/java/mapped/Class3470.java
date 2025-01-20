@@ -13,7 +13,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class Class3470 extends Class3468 {
+public class Class3470 extends AbstractPressurePlateBlock {
    private static String[] field19319;
    public static final IntegerProperty field19320 = BlockStateProperties.POWER;
    private final int field19321;

@@ -37,7 +37,7 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.Random;
 
-public class Class3244 extends Class3241 implements IWaterLoggable {
+public class Class3244 extends BannerBlock implements IWaterLoggable {
    private static String[] field18696;
    public static final VoxelShape field18697 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 7.0, 16.0);
    public static final BooleanProperty field18698 = BlockStateProperties.LIT;

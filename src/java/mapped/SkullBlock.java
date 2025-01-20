@@ -14,12 +14,12 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 
-public class Class3343 extends Class3251 {
+public class SkullBlock extends Class3251 {
    private static String[] field18854;
    public static final IntegerProperty field18855 = BlockStateProperties.ROTATION;
    public static final VoxelShape field18856 = Block.makeCuboidShape(4.0, 0.0, 4.0, 12.0, 8.0, 12.0);
 
-   public Class3343(Class2137 var1, Properties var2) {
+   public SkullBlock(Class2137 var1, Properties var2) {
       super(var1, var2);
       this.setDefaultState(this.stateContainer.getBaseState().with(field18855, Integer.valueOf(0)));
    }

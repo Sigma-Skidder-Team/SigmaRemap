@@ -21,7 +21,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class Class3363 extends Class3241 {
+public class Class3363 extends BannerBlock {
    private static String[] field18929;
    public static final VoxelShape field18930 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
 

@@ -225,7 +225,7 @@ public class ZombieVillagerEntity extends ZombieEntity implements Class1041 {
             for (int var7 = (int)this.getPosY() - 4; var7 < (int)this.getPosY() + 4 && var4 < 14; var7++) {
                for (int var8 = (int)this.getPosZ() - 4; var8 < (int)this.getPosZ() + 4 && var4 < 14; var8++) {
                   Block var9 = this.world.getBlockState(var5.setPos(var6, var7, var8)).getBlock();
-                  if (var9 == Blocks.IRON_BARS || var9 instanceof Class3250) {
+                  if (var9 == Blocks.IRON_BARS || var9 instanceof BedBlock) {
                      if (this.rand.nextFloat() < 0.3F) {
                         var3++;
                      }
