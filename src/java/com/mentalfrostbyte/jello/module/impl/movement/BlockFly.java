@@ -429,13 +429,13 @@ public class BlockFly extends ModuleWithModuleSettings {
                 (float) (var1 + 10),
                 (float) (var2 + 5),
                 this.field23886 + " Blocks",
-                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var3 * 0.3F));
+                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), var3 * 0.3F));
         RenderUtil.drawString(
                 ResourceList.medium17,
                 (float) (var1 + 10),
                 (float) (var2 + 4),
                 this.field23886 + " Blocks",
-                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3 * 0.8F));
+                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var3 * 0.8F));
         GL11.glAlphaFunc(519, 0.0F);
     }
 
@@ -451,10 +451,10 @@ public class BlockFly extends ModuleWithModuleSettings {
         RenderUtil.method11465(var1, var2, var8, var9, MultiUtilities.applyAlpha(-15461356, 0.8F * var3));
         RenderUtil.drawString(
                 ResourceRegistry.JelloLightFont18, (float) (var1 + 10), (float) (var2 + 4), this.field23886 + "",
-                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3));
+                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var3));
         RenderUtil.drawString(
                 ResourceRegistry.JelloLightFont14, (float) (var1 + 10 + var7), (float) (var2 + 8), "Blocks",
-                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var3));
+                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.6F * var3));
         var1 += 11 + var8 / 2;
         var2 += var9;
         GL11.glPushMatrix();

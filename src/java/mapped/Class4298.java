@@ -26,13 +26,12 @@ import java.util.UUID;
 
 public class Class4298 extends Class4278 {
    public static ColorHelper field20821 = new ColorHelper(
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
-      Class2218.field14488,
-      Class2218.field14492
-   );
+         ClientColors.DEEP_TEAL.getColor(),
+         ClientColors.DEEP_TEAL.getColor(),
+         ClientColors.DEEP_TEAL.getColor(),
+         ClientColors.DEEP_TEAL.getColor(),
+         Class2218.field14488,
+         Class2218.field14492);
    public String field20822 = null;
    private AbstractClientPlayerEntity field20823;
    private Minecraft mc = Minecraft.getInstance();
@@ -58,35 +57,38 @@ public class Class4298 extends Class4278 {
          RenderHelper.enableStandardItemLighting();
          RenderSystem.disableDepthTest();
          RenderSystem.pushMatrix();
-         RenderSystem.translatef((float)(this.xA + this.widthA / 2), (float)(this.yA - this.heightA / 4), -200.0F);
+         RenderSystem.translatef((float) (this.xA + this.widthA / 2), (float) (this.yA - this.heightA / 4), -200.0F);
          GL11.glColor3f(1.0F, 1.0F, 1.0F);
          RenderSystem.rotatef(180.0F, 1.0F, 0.0F, 0.0F);
          RenderSystem.rotatef(180.0F, 0.0F, 0.0F, 1.0F);
-         float var4 = (float)(this.mc.mainWindow.getHeight() - this.getWidthO() - this.mc.mainWindow.getHeight() / 2);
-         float var5 = (float)(this.mc.mainWindow.getWidth() - this.getHeightO() - this.mc.mainWindow.getWidth() / 2);
-         float var6 = (float)Math.atan((double)(var4 / (float)(this.mc.mainWindow.getHeight() / 2))) * 20.0F;
-         float var7 = (float)Math.atan((double)(var5 / (float)(this.mc.mainWindow.getWidth() / 2))) * 20.0F;
+         float var4 = (float) (this.mc.mainWindow.getHeight() - this.getWidthO() - this.mc.mainWindow.getHeight() / 2);
+         float var5 = (float) (this.mc.mainWindow.getWidth() - this.getHeightO() - this.mc.mainWindow.getWidth() / 2);
+         float var6 = (float) Math.atan((double) (var4 / (float) (this.mc.mainWindow.getHeight() / 2))) * 20.0F;
+         float var7 = (float) Math.atan((double) (var5 / (float) (this.mc.mainWindow.getWidth() / 2))) * 20.0F;
          RenderSystem.rotatef(-var6, 1.0F, 0.0F, 0.0F);
          RenderSystem.rotatef(-var7, 0.0F, 1.0F, 0.0F);
-         UUID uid = UUID.fromString(this.account.getKnownUUID().equals("steve") ? "123e4567-e89b-12d3-a456-556642440000" : this.account.getKnownUUID());
+         UUID uid = UUID.fromString(this.account.getKnownUUID().equals("steve") ? "123e4567-e89b-12d3-a456-556642440000"
+               : this.account.getKnownUUID());
          if (clientWorld == null) {
             ClientWorld.ClientWorldInfo var9 = new ClientWorld.ClientWorldInfo(Difficulty.NORMAL, false, false);
-            clientWorld = new ClientWorld(this.mc.getConnection(), var9, World.OVERWORLD, DimensionType.OVERWORLD_TYPE, 1, this::method13180, null, false, 0L);
+            clientWorld = new ClientWorld(this.mc.getConnection(), var9, World.OVERWORLD, DimensionType.OVERWORLD_TYPE,
+                  1, this::method13180, null, false, 0L);
          }
 
          GameProfile prof = new GameProfile(uid, this.account.getKnownName());
          if (this.entity == null || !this.entity.getDisplayName().getString().equals(this.account.getKnownName())) {
             this.entity = new Class1118(clientWorld, new GameProfile(uid, this.account.getKnownName()));
-            this.entity.playerInfo = new NetworkPlayerInfo(new SPlayerListItemPacket.AddPlayerData(prof, 0, GameType.CREATIVE, this.entity.getDisplayName()));
+            this.entity.playerInfo = new NetworkPlayerInfo(
+                  new SPlayerListItemPacket.AddPlayerData(prof, 0, GameType.CREATIVE, this.entity.getDisplayName()));
          }
 
          this.entity.setUniqueId(uid);
-         float var10 = (float)(System.currentTimeMillis() % 1750L) / 278.52115F;
-         var10 = (float)Math.sin((double)var10);
-         float var11 = (float)(System.currentTimeMillis() % 14000L) / 2228.1692F;
-         var11 = (float)Math.sin((double)var11);
-         float var12 = (float)(System.currentTimeMillis() % 30000L) / 4774.648F;
-         var12 = (float)Math.sin((double)var12);
+         float var10 = (float) (System.currentTimeMillis() % 1750L) / 278.52115F;
+         var10 = (float) Math.sin((double) var10);
+         float var11 = (float) (System.currentTimeMillis() % 14000L) / 2228.1692F;
+         var11 = (float) Math.sin((double) var11);
+         float var12 = (float) (System.currentTimeMillis() % 30000L) / 4774.648F;
+         var12 = (float) Math.sin((double) var12);
          new PlayerModel(0.0F, false);
          new PlayerRenderer(this.mc.getRenderManager());
          Class7735 var15 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
@@ -96,7 +98,7 @@ public class Class4298 extends Class4278 {
          RenderHelper.setupGui3DDiffuseLighting();
          RenderSystem.enableLighting();
          RenderSystem.enableDepthTest();
-         GL11.glLightModelfv(2899, new float[]{0.7F, 0.7F, 0.7F, 1.0F});
+         GL11.glLightModelfv(2899, new float[] { 0.7F, 0.7F, 0.7F, 1.0F });
          if (this.mc.getRenderManager().info == null) {
             this.mc.getRenderManager().info = new ActiveRenderInfo();
          }

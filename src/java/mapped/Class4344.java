@@ -14,20 +14,18 @@ public class Class4344 extends Class4339 {
    @Override
    public void draw(float var1) {
       RenderUtil.drawRect(
-         (float)this.xA,
-         (float)this.yA,
-         (float)(this.xA + this.widthA),
-         (float)(this.yA + this.heightA),
-         MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 0.35F)
-      );
+            (float) this.xA,
+            (float) this.yA,
+            (float) (this.xA + this.widthA),
+            (float) (this.yA + this.heightA),
+            MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor(), 0.35F));
       RenderUtil.method11429(
-         (float)this.xA,
-         (float)this.yA,
-         (float)(this.xA + this.widthA),
-         (float)(this.yA + this.heightA),
-         2,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.14F)
-      );
+            (float) this.xA,
+            (float) this.yA,
+            (float) (this.xA + this.widthA),
+            (float) (this.yA + this.heightA),
+            2,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.14F));
       super.draw(var1);
    }
 }

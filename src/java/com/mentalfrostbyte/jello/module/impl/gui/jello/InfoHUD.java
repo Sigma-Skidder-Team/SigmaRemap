@@ -30,7 +30,7 @@ public class InfoHUD extends Module {
     @EventTarget
     private void method16692(EventRender var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (! Minecraft.getInstance().gameSettings.hideGUI) {
+            if (!Minecraft.getInstance().gameSettings.hideGUI) {
                 if (!(mc.currentScreen instanceof ChatScreen)) {
                     float var4 = mc.player.rotationYaw % 360.0F - this.field23851 % 360.0F;
                     this.field23851 = this.field23851 + var4 / (float) Minecraft.getFps() * 1.5F;
@@ -55,15 +55,15 @@ public class InfoHUD extends Module {
     public String method16693(boolean var1) {
         return !var1
                 ? Math.round(mc.player.getPosX())
-                + " "
-                + Math.round(mc.player.getPosY())
-                + " "
-                + Math.round(mc.player.getPosZ())
+                        + " "
+                        + Math.round(mc.player.getPosY())
+                        + " "
+                        + Math.round(mc.player.getPosZ())
                 : (float) Math.round(mc.player.getPosX() * 10.0) / 10.0F
-                + " "
-                + (float) Math.round(mc.player.getPosY() * 10.0) / 10.0F
-                + " "
-                + (float) Math.round(mc.player.getPosZ() * 10.0) / 10.0F;
+                        + " "
+                        + (float) Math.round(mc.player.getPosY() * 10.0) / 10.0F
+                        + " "
+                        + (float) Math.round(mc.player.getPosZ() * 10.0) / 10.0F;
     }
 
     public int method16694(int var1, int var2) {
@@ -74,9 +74,9 @@ public class InfoHUD extends Module {
                 (float) var1,
                 (float) (mc.mainWindow.getHeight() - var2),
                 var6,
-                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
-        );
-        return Math.max(ResourceRegistry.JelloLightFont20.getStringWidth(var5), ResourceRegistry.JelloMediumFont20.getStringWidth(var6));
+                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.8F));
+        return Math.max(ResourceRegistry.JelloLightFont20.getStringWidth(var5),
+                ResourceRegistry.JelloMediumFont20.getStringWidth(var6));
     }
 
     public int method16695(int var1, int var2) {
@@ -91,14 +91,15 @@ public class InfoHUD extends Module {
                 GL11.glDisable(2896);
                 float var9 = 1.0F - (float) var7.method32117() / (float) var7.method32119();
                 if (var9 != 1.0F) {
-                    RenderUtil.renderBackgroundBox((float) (var1 + 2), (float) (var8 + 28), 28.0F, 5.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                    RenderUtil.renderBackgroundBox((float) (var1 + 2), (float) (var8 + 28), 28.0F, 5.0F,
+                            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.5F));
                     RenderUtil.renderBackgroundBox(
                             (float) (var1 + 2),
                             (float) (var8 + 28),
                             28.0F * var9,
                             3.0F,
-                            MultiUtilities.applyAlpha(!((double) var9 <= 0.2) ? ClientColors.DARK_SLATE_GREY.getColor : ClientColors.PALE_YELLOW.getColor, 0.9F)
-                    );
+                            MultiUtilities.applyAlpha(!((double) var9 <= 0.2) ? ClientColors.DARK_SLATE_GREY.getColor()
+                                    : ClientColors.PALE_YELLOW.getColor(), 0.9F));
                 }
             }
         }

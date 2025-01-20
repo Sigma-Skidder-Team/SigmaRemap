@@ -23,7 +23,8 @@ public class Class4294 extends Class4278 {
    public Animation field20805 = new Animation(300, 300, Direction.BACKWARDS);
    private int field20806 = 0;
    private int field20807 = 0;
-   private int field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 20.0F);
+   private int field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+         ClientColors.DEEP_TEAL.getColor(), 20.0F);
 
    public Class4294(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
       super(var1, var2, var3, var4, var5, var6, false);
@@ -50,23 +51,24 @@ public class Class4294 extends Class4278 {
    @Override
    public void draw(float var1) {
       this.method13225();
-      this.field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 2.0F);
-      int var4 = ((Class4339)this.screen.getScreen()).method13513();
+      this.field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+            ClientColors.DEEP_TEAL.getColor(), 2.0F);
+      int var4 = ((Class4339) this.screen.getScreen()).method13513();
       int var5 = Math.max(0, this.yA - var4);
       int var6 = Math.max(0, this.heightA + Math.min(100, this.yA - var4 - var5));
-      float var7 = (float)Math.min(50, var6) / 50.0F;
+      float var7 = (float) Math.min(50, var6) / 50.0F;
       int var8 = this.getScreen().getScreen().getHeightA() + this.getScreen().getScreen().method13272();
       int var9 = 0;
       var5 += var4;
       if (var5 - var4 <= var8) {
          if (var7 != 0.0F) {
             RenderUtil.method11467(
-               this.xA,
-               var5,
-               this.widthA,
-               Math.max(20, var6),
-               MultiUtilities.applyAlpha(!this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808, var7)
-            );
+                  this.xA,
+                  var5,
+                  this.widthA,
+                  Math.max(20, var6),
+                  MultiUtilities.applyAlpha(
+                        !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field20808, var7));
             RenderUtil.method11421(this.xA, var5, this.xA + this.widthA + 20, var5 + var6, true);
             if (this.selectedAccount != null) {
                this.method13169();
@@ -74,13 +76,12 @@ public class Class4294 extends Class4278 {
                this.method13171(var7);
                if (this.field20803.calcPercent() > 0.0F && var6 > 55) {
                   RenderUtil.drawImage(
-                     (float)(this.xA + this.getWidthA()),
-                     (float)var5 + (float)(26 * var6) / 100.0F,
-                     18.0F * this.field20803.calcPercent() * (float)var6 / 100.0F,
-                     (float)(47 * var6) / 100.0F,
-                     ResourceList.selectPNG,
-                     !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808
-                  );
+                        (float) (this.xA + this.getWidthA()),
+                        (float) var5 + (float) (26 * var6) / 100.0F,
+                        18.0F * this.field20803.calcPercent() * (float) var6 / 100.0F,
+                        (float) (47 * var6) / 100.0F,
+                        ResourceList.selectPNG,
+                        !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field20808);
                }
 
                super.draw(var1 * var7);
@@ -94,52 +95,48 @@ public class Class4294 extends Class4278 {
 
    public void method13169() {
       RenderUtil.method11450(
-         (float)(this.xA + 13), (float)(this.yA + 13), 75.0F, 75.0F, this.selectedAccount.setSkinTexture(), ClientColors.LIGHT_GREYISH_BLUE.getColor, true
-      );
-      RenderUtil.method11464((float)(this.xA + 13), (float)(this.yA + 13), 75.0F, 75.0F, 20.0F, 1.0F);
+            (float) (this.xA + 13), (float) (this.yA + 13), 75.0F, 75.0F, this.selectedAccount.setSkinTexture(),
+            ClientColors.LIGHT_GREYISH_BLUE.getColor(), true);
+      RenderUtil.method11464((float) (this.xA + 13), (float) (this.yA + 13), 75.0F, 75.0F, 20.0F, 1.0F);
       RenderUtil.drawImage(
-         (float)(this.xA + 1),
-         (float)this.yA,
-         100.0F,
-         100.0F,
-         ResourceList.cerclePNG,
-         !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808
-      );
+            (float) (this.xA + 1),
+            (float) this.yA,
+            100.0F,
+            100.0F,
+            ResourceList.cerclePNG,
+            !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field20808);
    }
 
    public void method13170() {
       if (this.selectedAccount.isEmailAValidEmailFormat()) {
          RenderUtil.drawString(
-            ResourceRegistry.JelloLightFont25, (float)(this.xA + 110), (float)(this.yA + 18), this.selectedAccount.getEmail(), ClientColors.DEEP_TEAL.getColor
-         );
+               ResourceRegistry.JelloLightFont25, (float) (this.xA + 110), (float) (this.yA + 18),
+               this.selectedAccount.getEmail(), ClientColors.DEEP_TEAL.getColor());
          RenderUtil.drawString(
-            ResourceRegistry.JelloLightFont14,
-            (float)(this.xA + 110),
-            (float)(this.yA + 50),
-            "Username: " + this.selectedAccount.getEmail(),
-            ClientColors.MID_GREY.getColor
-         );
+               ResourceRegistry.JelloLightFont14,
+               (float) (this.xA + 110),
+               (float) (this.yA + 50),
+               "Username: " + this.selectedAccount.getEmail(),
+               ClientColors.MID_GREY.getColor());
          RenderUtil.drawString(
-            ResourceRegistry.JelloLightFont14, (float)(this.xA + 110), (float)(this.yA + 65), "Offline account", ClientColors.MID_GREY.getColor
-         );
+               ResourceRegistry.JelloLightFont14, (float) (this.xA + 110), (float) (this.yA + 65), "Offline account",
+               ClientColors.MID_GREY.getColor());
       } else {
          RenderUtil.drawString(
-            ResourceRegistry.JelloLightFont25, (float)(this.xA + 110), (float)(this.yA + 18), this.selectedAccount.getKnownName(), ClientColors.DEEP_TEAL.getColor
-         );
+               ResourceRegistry.JelloLightFont25, (float) (this.xA + 110), (float) (this.yA + 18),
+               this.selectedAccount.getKnownName(), ClientColors.DEEP_TEAL.getColor());
          RenderUtil.drawString(
-            ResourceRegistry.JelloLightFont14,
-            (float)(this.xA + 110),
-            (float)(this.yA + 50),
-            "Email: " + this.selectedAccount.getEmail(),
-            ClientColors.MID_GREY.getColor
-         );
+               ResourceRegistry.JelloLightFont14,
+               (float) (this.xA + 110),
+               (float) (this.yA + 50),
+               "Email: " + this.selectedAccount.getEmail(),
+               ClientColors.MID_GREY.getColor());
          RenderUtil.drawString(
-            ResourceRegistry.JelloLightFont14,
-            (float)(this.xA + 110),
-            (float)(this.yA + 65),
-            "Password: " + this.selectedAccount.getPassword().replaceAll(".", Character.toString('·')),
-            ClientColors.MID_GREY.getColor
-         );
+               ResourceRegistry.JelloLightFont14,
+               (float) (this.xA + 110),
+               (float) (this.yA + 65),
+               "Password: " + this.selectedAccount.getPassword().replaceAll(".", Character.toString('·')),
+               ClientColors.MID_GREY.getColor());
       }
    }
 
@@ -148,23 +145,22 @@ public class Class4294 extends Class4278 {
       this.field20804 = Math.min(1.0F, Math.max(0.0F, this.field20804));
       this.field20806 = Math.max(0, this.field20806 - 1);
       float var4 = this.field20806 <= 20 ? 20.0F : -20.0F;
-      float var5 = (float)this.field20806 >= var4 && (float)this.field20806 <= (float)this.field20807 - var4 ? 1.0F : (float)this.field20806 % var4 / var4;
+      float var5 = (float) this.field20806 >= var4 && (float) this.field20806 <= (float) this.field20807 - var4 ? 1.0F
+            : (float) this.field20806 % var4 / var4;
       RenderUtil.drawImage(
-         (float)(this.xA + this.widthA - 45),
-         (float)(this.yA + 42),
-         17.0F,
-         17.0F,
-         ResourceList.errorsPNG,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5 * var1)
-      );
+            (float) (this.xA + this.widthA - 45),
+            (float) (this.yA + 42),
+            17.0F,
+            17.0F,
+            ResourceList.errorsPNG,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var5 * var1));
       RenderUtil.drawImage(
-         (float)(this.xA + this.widthA - 45),
-         (float)(this.yA + 45),
-         17.0F,
-         13.0F,
-         ResourceList.activePNG,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20804 * var1)
-      );
+            (float) (this.xA + this.widthA - 45),
+            (float) (this.yA + 45),
+            17.0F,
+            13.0F,
+            ResourceList.activePNG,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), this.field20804 * var1));
    }
 
    public void method13172(boolean var1) {

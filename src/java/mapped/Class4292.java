@@ -31,10 +31,11 @@ public class Class4292 extends Class4278 implements Class4293 {
    @Override
    public void onScrolling(float scroll) {
       super.onScrolling(scroll);
-      if (this.screen != null && this.screen.method13228(this.getHeightO(), this.getWidthO(), false) || ((Class4339)this.screen).field21208) {
-         float var4 = (float)((Class4339)this.getScreen()).getButton().getHeightA();
-         float var5 = (float)this.getScreen().getHeightA();
-         float var6 = (float)this.getHeightA();
+      if (this.screen != null && this.screen.method13228(this.getHeightO(), this.getWidthO(), false)
+            || ((Class4339) this.screen).field21208) {
+         float var4 = (float) ((Class4339) this.getScreen()).getButton().getHeightA();
+         float var5 = (float) this.getScreen().getHeightA();
+         float var6 = (float) this.getHeightA();
          if (var4 == 0.0F) {
             return;
          }
@@ -45,7 +46,8 @@ public class Class4292 extends Class4278 implements Class4293 {
          }
 
          this.field20793 = this.field20793
-            - Math.round(!(scroll < 0.0F) ? (float)((Class4339)this.screen).field21207 * scroll : 1.0F * (float)((Class4339)this.screen).field21207 * scroll);
+               - Math.round(!(scroll < 0.0F) ? (float) ((Class4339) this.screen).field21207 * scroll
+                     : 1.0F * (float) ((Class4339) this.screen).field21207 * scroll);
          this.field20797.reset();
          this.field20797.start();
       }
@@ -56,19 +58,16 @@ public class Class4292 extends Class4278 implements Class4293 {
       super.method13028(var1, var2);
       this.field20908 = this.method13228(var1, var2, false);
       this.field20794 = this.field20794
-         + (
-            this.field20796.getHeightA() >= this.getHeightA()
-               ? -1.0F
-               : (
-                  !this.method13298() && !this.field20796.method13216() && (!this.field20797.isEnabled() || this.field20797.getElapsedTime() >= 500L)
-                     ? -0.05F
-                     : 0.05F
-               )
-         );
+            + (this.field20796.getHeightA() >= this.getHeightA()
+                  ? -1.0F
+                  : (!this.method13298() && !this.field20796.method13216()
+                        && (!this.field20797.isEnabled() || this.field20797.getElapsedTime() >= 500L)
+                              ? -0.05F
+                              : 0.05F));
       this.field20794 = Math.min(Math.max(0.0F, this.field20794), 1.0F);
-      float var5 = (float)((Class4339)this.getScreen()).getButton().getHeightA();
-      float var6 = (float)this.getScreen().getHeightA();
-      float var7 = (float)this.getHeightA();
+      float var5 = (float) ((Class4339) this.getScreen()).getButton().getHeightA();
+      float var6 = (float) this.getScreen().getHeightA();
+      float var7 = (float) this.getHeightA();
       float var8 = var6 / var5;
       boolean var9 = var8 < 1.0F && var5 > 0.0F && this.field20794 >= 0.0F;
       this.setEnabled(var9);
@@ -79,7 +78,7 @@ public class Class4292 extends Class4278 implements Class4293 {
    public void draw(float var1) {
       var1 *= this.field20794;
       byte var4 = 5;
-      int var5 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.2F * var1);
+      int var5 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.2F * var1);
       int var6 = this.xA;
       int var7 = this.widthA;
       if (Client.getInstance().clientMode != ClientMode.JELLO) {
@@ -87,16 +86,18 @@ public class Class4292 extends Class4278 implements Class4293 {
          var7 -= 8;
          var6 += 8;
          RenderUtil.drawRect(
-            (float)var6,
-            (float)(this.yA + var4),
-            (float)(var6 + var7),
-            (float)(this.yA + this.heightA - var4),
-            MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 0.1F * var1)
-         );
+               (float) var6,
+               (float) (this.yA + var4),
+               (float) (var6 + var7),
+               (float) (this.yA + this.heightA - var4),
+               MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor(), 0.1F * var1));
       } else {
-         RenderUtil.drawImage((float)var6, (float)this.yA, (float)var7, 5.0F, ResourceList.verticalScrollBarTopPNG, 0.45F * var1);
-         RenderUtil.drawImage((float)var6, (float)(this.yA + this.heightA - var4), (float)var7, 5.0F, ResourceList.verticalScrollBarBottomPNG, 0.45F * var1);
-         RenderUtil.drawRect((float)var6, (float)(this.yA + var4), (float)(var6 + var7), (float)(this.yA + this.heightA - var4), var5);
+         RenderUtil.drawImage((float) var6, (float) this.yA, (float) var7, 5.0F, ResourceList.verticalScrollBarTopPNG,
+               0.45F * var1);
+         RenderUtil.drawImage((float) var6, (float) (this.yA + this.heightA - var4), (float) var7, 5.0F,
+               ResourceList.verticalScrollBarBottomPNG, 0.45F * var1);
+         RenderUtil.drawRect((float) var6, (float) (this.yA + var4), (float) (var6 + var7),
+               (float) (this.yA + this.heightA - var4), var5);
       }
 
       super.draw(var1);
@@ -110,10 +111,12 @@ public class Class4292 extends Class4278 implements Class4293 {
             int var6 = mouseY - this.method13272();
             if (var6 <= this.field20796.getYA() + this.field20796.getHeightA()) {
                if (var6 < this.field20796.getYA()) {
-                  this.field20793 = this.field20793 - (int)((float)((Class4339)this.screen).getButton().getHeightA() / 4.0F);
+                  this.field20793 = this.field20793
+                        - (int) ((float) ((Class4339) this.screen).getButton().getHeightA() / 4.0F);
                }
             } else {
-               this.field20793 = this.field20793 + (int)((float)((Class4339)this.screen).getButton().getHeightA() / 4.0F);
+               this.field20793 = this.field20793
+                     + (int) ((float) ((Class4339) this.screen).getButton().getHeightA() / 4.0F);
             }
          }
 

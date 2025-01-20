@@ -63,7 +63,8 @@ public class TabGUI extends Module {
             this.field23384 = 80;
             int categoryState = this.getCurrentCategoryState();
             CategoryDrawPart category = categoryDrawParts.get(categoryState - 1);
-            if (var4 != Class2071.field13494 && (!this.method15971() && var4 != Class2071.field13492 || categoryState != 3)) {
+            if (var4 != Class2071.field13494
+                  && (!this.method15971() && var4 != Class2071.field13492 || categoryState != 3)) {
                this.secondAnimationProgress = new Animation(500, 200, Direction.BACKWARDS);
             }
 
@@ -83,14 +84,14 @@ public class TabGUI extends Module {
                   if (categoryState == 3 && this.method15971()) {
                      this.onSettingChange(true);
                   } else if (category != null) {
-                      category.method24731();
+                     category.method24731();
                   }
                   break;
                case 3:
                   if (categoryState == 3 && this.method15971()) {
                      this.onSettingChange(false);
                   } else if (category != null) {
-                      category.method24730();
+                     category.method24730();
                   }
                   break;
                case 4:
@@ -99,7 +100,8 @@ public class TabGUI extends Module {
                   } else if (categoryState == 2 && category != null) {
                      CategoryDrawPart drawPart = categoryDrawParts.get(0);
                      ModuleCategory modCategory = this.categories.get(drawPart.index);
-                     Module module = Client.getInstance().moduleManager.getModulesByCategory(modCategory).get(category.index);
+                     Module module = Client.getInstance().moduleManager.getModulesByCategory(modCategory)
+                           .get(category.index);
                      this.method15963(module);
                   } else if (categoryState == 3) {
                      this.method15970(true);
@@ -128,7 +130,7 @@ public class TabGUI extends Module {
       if (!(setting instanceof ModeSetting)) {
          if (!(setting instanceof BooleanSetting)) {
             if (setting instanceof NumberSetting) {
-               NumberSetting<?> numberSetting = (NumberSetting<?>)setting;
+               NumberSetting<?> numberSetting = (NumberSetting<?>) setting;
                Object obj = numberSetting.getCurrentValue();
                if (obj != null) {
                   Float value = numberSetting.getCurrentValue();
@@ -143,11 +145,11 @@ public class TabGUI extends Module {
                }
             }
          } else {
-            BooleanSetting var13 = (BooleanSetting)setting;
+            BooleanSetting var13 = (BooleanSetting) setting;
             var13.setCurrentValue(!var13.getCurrentValue());
          }
       } else {
-         ModeSetting var14 = (ModeSetting)setting;
+         ModeSetting var14 = (ModeSetting) setting;
          int var15 = var14.getModeIndex();
          if (!var1) {
             var15--;
@@ -185,16 +187,16 @@ public class TabGUI extends Module {
    @HigestPriority
    private void method15957(EventRender var1) {
       if (this.isEnabled() && mc.player != null) {
-         if (! Minecraft.getInstance().gameSettings.showDebugInfo) {
+         if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
             if (!Minecraft.getInstance().gameSettings.hideGUI) {
                this.method15958();
 
                for (CategoryDrawPartBackground var5 : categoryDrawParts) {
-                  var5.method24726((float)(0.5 + (double) animationProgress.calcPercent() * 0.5));
+                  var5.method24726((float) (0.5 + (double) animationProgress.calcPercent() * 0.5));
                }
 
-               this.drawCategories((float)(0.5 + (double) animationProgress.calcPercent() * 0.5));
-               RenderUtil.renderBackgroundBox(12.0F, 30.0F, 90.0F, 1.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+               this.drawCategories((float) (0.5 + (double) animationProgress.calcPercent() * 0.5));
+               RenderUtil.renderBackgroundBox(12.0F, 30.0F, 90.0F, 1.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor());
             }
          }
       }
@@ -233,34 +235,43 @@ public class TabGUI extends Module {
          }
 
          ModuleCategory currentCategory = this.categories.get(firstCategoryPart.index);
-         Module currentModule = Client.getInstance().moduleManager.getModulesByCategory(currentCategory).get(secondCategoryPart.index);
+         Module currentModule = Client.getInstance().moduleManager.getModulesByCategory(currentCategory)
+               .get(secondCategoryPart.index);
          String description = currentModule.getDescription();
          if (drawState == 3) {
             Setting<?> currentSetting = this.getModuleSettings(currentModule).get(thirdCategoryPart.index);
             description = currentSetting.getDescription();
          }
 
-         float animationProgressValue = MathHelper.calculateTransition(this.firstAnimationProgress.calcPercent(), 0.0F, 1.0F, 1.0F) * animationProgress.calcPercent();
+         float animationProgressValue = MathHelper.calculateTransition(this.firstAnimationProgress.calcPercent(), 0.0F,
+               1.0F, 1.0F) * animationProgress.calcPercent();
          if (this.firstAnimationProgress.getDirection() == Direction.BACKWARDS) {
-            animationProgressValue = MathHelper.calculateBackwardTransition(this.firstAnimationProgress.calcPercent(), 0.0F, 1.0F, 1.0F);
+            animationProgressValue = MathHelper.calculateBackwardTransition(this.firstAnimationProgress.calcPercent(),
+                  0.0F, 1.0F, 1.0F);
          }
 
          RenderUtil.renderCategoryBox(
-            (float)activeCategoryPart.getStartX() + (float)activeCategoryPart.getWidth() + 14.0F * animationProgressValue,
-            (float)activeCategoryPart.getStartY() + 16.0F + (float)(25 * activeCategoryPart.index),
-            24.0F * animationProgressValue,
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, partialTicks * 0.6F),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, partialTicks * 0.6F)
-         );
-         int descriptionX = activeCategoryPart.getStartX() + activeCategoryPart.getWidth() + 4 + Math.round(animationProgressValue * 28.0F);
+               (float) activeCategoryPart.getStartX() + (float) activeCategoryPart.getWidth()
+                     + 14.0F * animationProgressValue,
+               (float) activeCategoryPart.getStartY() + 16.0F + (float) (25 * activeCategoryPart.index),
+               24.0F * animationProgressValue,
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), partialTicks * 0.6F),
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), partialTicks * 0.6F));
+         int descriptionX = activeCategoryPart.getStartX() + activeCategoryPart.getWidth() + 4
+               + Math.round(animationProgressValue * 28.0F);
          int descriptionY = activeCategoryPart.getStartY() + 25 * activeCategoryPart.index + 4;
          int descriptionWidth = activeCategoryPart.fontRenderer.getStringWidth(description) + 8;
-         float secondAnimationValue = MathHelper.calculateTransition(this.secondAnimationProgress.calcPercent(), 0.0F, 1.0F, 1.0F);
-         RenderUtil.renderBackgroundBox((float)descriptionX, (float)descriptionY, (float)descriptionWidth * secondAnimationValue, 25.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, partialTicks * 0.6F));
-         RenderUtil.startScissor((float)descriptionX, (float)descriptionY, (float)descriptionWidth * secondAnimationValue, 25.0F);
+         float secondAnimationValue = MathHelper.calculateTransition(this.secondAnimationProgress.calcPercent(), 0.0F,
+               1.0F, 1.0F);
+         RenderUtil.renderBackgroundBox((float) descriptionX, (float) descriptionY,
+               (float) descriptionWidth * secondAnimationValue, 25.0F,
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), partialTicks * 0.6F));
+         RenderUtil.startScissor((float) descriptionX, (float) descriptionY,
+               (float) descriptionWidth * secondAnimationValue, 25.0F);
          RenderUtil.drawString(
-            activeCategoryPart.fontRenderer, (float)(descriptionX + 4), (float)(descriptionY + 2), description, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, partialTicks * 1.7F))
-         );
+               activeCategoryPart.fontRenderer, (float) (descriptionX + 4), (float) (descriptionY + 2), description,
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+                     Math.min(1.0F, partialTicks * 1.7F)));
          RenderUtil.endScissor();
       }
    }
@@ -319,7 +330,7 @@ public class TabGUI extends Module {
       Iterator var4 = categoryDrawParts.iterator();
 
       while (var4.hasNext()) {
-         if (((CategoryDrawPartBackground)var4.next()).field32395 >= var1) {
+         if (((CategoryDrawPartBackground) var4.next()).field32395 >= var1) {
             var4.remove();
          }
       }
@@ -350,7 +361,7 @@ public class TabGUI extends Module {
    public List<Setting> getModuleSettings(Module var1) {
       ArrayList var4 = new ArrayList<Setting>(var1.getSettingMap().values());
       if (var1 instanceof ModuleWithModuleSettings) {
-         ModuleWithModuleSettings var5 = (ModuleWithModuleSettings)var1;
+         ModuleWithModuleSettings var5 = (ModuleWithModuleSettings) var1;
          var5.method16724();
          if (var5.method16726() != null) {
             var4.addAll(var5.method16726().getSettingMap().values());
@@ -360,7 +371,7 @@ public class TabGUI extends Module {
       Iterator var7 = var4.iterator();
 
       while (var7.hasNext()) {
-         Setting var6 = (Setting)var7.next();
+         Setting var6 = (Setting) var7.next();
          if (var6.getName().equals("Keybind")) {
             var7.remove();
          }

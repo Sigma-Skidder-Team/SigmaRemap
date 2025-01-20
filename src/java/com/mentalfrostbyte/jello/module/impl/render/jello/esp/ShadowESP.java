@@ -30,7 +30,8 @@ public class ShadowESP extends Module {
 
     public ShadowESP() {
         super(ModuleCategory.RENDER, "Shadow", "Draws a line arround entities");
-        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
+        this.registerSetting(
+                new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.getColor()));
     }
 
     @EventTarget
@@ -59,7 +60,7 @@ public class ShadowESP extends Module {
     }
 
     private void method16606() {
-        int var3 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F);
+        int var3 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.8F);
         mc.world.entitiesById
                 .forEach(
                         (var2, var3x) -> {

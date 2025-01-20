@@ -12,7 +12,7 @@ public class Class4246 extends ButtonPanel {
    private Animation field20601 = new Animation(125, 125);
 
    public Class4246(Class4277 var1, int var2) {
-      super(var1, "sliderButton", 0, 0, var2, var2, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor));
+      super(var1, "sliderButton", 0, 0, var2, var2, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor()));
       this.field20601.changeDirection(Direction.BACKWARDS);
       this.method13215(true);
       this.field20886 = true;
@@ -23,7 +23,7 @@ public class Class4246 extends ButtonPanel {
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
       float var5 = this.field20600.method13138();
-      float var6 = (float)this.getXA() / (float)(this.screen.getWidthA() - this.getWidthA());
+      float var6 = (float) this.getXA() / (float) (this.screen.getWidthA() - this.getWidthA());
       if (!this.method13212() && !this.method13298() && !this.method13216()) {
          this.field20601.changeDirection(Direction.BACKWARDS);
       } else {
@@ -48,21 +48,19 @@ public class Class4246 extends ButtonPanel {
       }
 
       byte var5 = 5;
-      float var6 = (float)this.getWidthA();
+      float var6 = (float) this.getWidthA();
       RenderUtil.drawRoundedRect(
-         (float)(this.getXA() + var5),
-         (float)(this.getYA() + var5),
-         (float)(this.getWidthA() - var5 * 2),
-         (float)(this.getHeightA() - var5 * 2),
-         10.0F,
-         var1 * 0.8F
-      );
+            (float) (this.getXA() + var5),
+            (float) (this.getYA() + var5),
+            (float) (this.getWidthA() - var5 * 2),
+            (float) (this.getHeightA() - var5 * 2),
+            10.0F,
+            var1 * 0.8F);
       RenderUtil.method11438(
-         (float)(this.getXA() + this.getWidthA() / 2),
-         (float)(this.getYA() + this.getWidthA() / 2),
-         var6,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
-      );
+            (float) (this.getXA() + this.getWidthA() / 2),
+            (float) (this.getYA() + this.getWidthA() / 2),
+            var6,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
       if (this.getTypedText() == null) {
       }
 

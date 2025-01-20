@@ -354,8 +354,8 @@ public class Orientation {
          BlockPos var17 = BlockUtil.method34564(this.mc.player.rotationYaw, this.mc.player.rotationPitch, 100.0F);
          if (var17 != null) {
             if (this.field39613 != null && this.field39613.size() > 0) {
-               int var18 = MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.02F);
-               int var6 = MultiUtilities.applyAlpha(ClientColors.DARK_SLATE_GREY.getColor, 0.02F);
+               int var18 = MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor(), 0.02F);
+               int var6 = MultiUtilities.applyAlpha(ClientColors.DARK_SLATE_GREY.getColor(), 0.02F);
                GL11.glPushMatrix();
                GL11.glDisable(2929);
 
@@ -413,10 +413,10 @@ public class Orientation {
             0.0F,
             (float) (var10.getStringWidth(var7) / 2 + 10),
             (float) (var10.method23952() + 2),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F));
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.1F));
       GL11.glTranslated((double) (-var10.getStringWidth(var7) / 2), 0.0, 0.0);
       RenderUtil.drawString(var10, 0.0F, 0.0F, var7,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.3F));
       GL11.glPopMatrix();
       GL11.glPopMatrix();
       GL11.glEnable(3553);

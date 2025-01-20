@@ -28,10 +28,9 @@ public class ConfigButtonOnClickGui extends Class4247 {
       this.method13300(false);
       UIButton var7;
       this.addToList(
-         var7 = new UIButton(
-            this, "addButton", this.widthA - 55, 0, ResourceRegistry.JelloLightFont25.getStringWidth("Add"), 69, ColorHelper.field27961, "+", ResourceRegistry.JelloLightFont25
-         )
-      );
+            var7 = new UIButton(
+                  this, "addButton", this.widthA - 55, 0, ResourceRegistry.JelloLightFont25.getStringWidth("Add"), 69,
+                  ColorHelper.field27961, "+", ResourceRegistry.JelloLightFont25));
       var7.doThis((var1x, var2x) -> this.field21300.method13119(true));
       this.addToList(this.field21300 = new Class4272(this, "profile", 0, 69, this.widthA, 200));
       this.field21300.method13292(true);
@@ -109,20 +108,22 @@ public class ConfigButtonOnClickGui extends Class4247 {
          this.method13236(this.field21299);
       }
 
-      this.addToList(this.field21299 = new Class4339(this, "profileScrollView", 10, 80, this.widthA - 20, this.heightA - 80 - 10));
+      this.addToList(this.field21299 = new Class4339(this, "profileScrollView", 10, 80, this.widthA - 20,
+            this.heightA - 80 - 10));
       this.field21299.method13512(var3);
       this.field21301.clear();
       int var4 = 0;
       byte var5 = 70;
 
       for (Configuration var7 : Client.getInstance().moduleManager.getConfigurationManager().getAllConfigs()) {
-         Class4351 var8 = new Class4351(this, "profile" + var4, 0, var5 * var4, this.field21299.getWidthA(), var5, var7, var4);
+         Class4351 var8 = new Class4351(this, "profile" + var4, 0, var5 * var4, this.field21299.getWidthA(), var5, var7,
+               var4);
          this.field21299.addToList(var8);
          this.field21301.add(var8);
          var4++;
       }
 
-      JelloClickGUI var9 = (JelloClickGUI)this.getScreen();
+      JelloClickGUI var9 = (JelloClickGUI) this.getScreen();
       var9.method13315();
    }
 
@@ -145,48 +146,46 @@ public class ConfigButtonOnClickGui extends Class4247 {
       }
 
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
-      this.drawBackground((int)((float)this.widthA * 0.25F * (1.0F - var4)));
-      this.method13284((int)((float)this.widthA * 0.14F * (1.0F - var4)));
+      this.drawBackground((int) ((float) this.widthA * 0.25F * (1.0F - var4)));
+      this.method13284((int) ((float) this.widthA * 0.14F * (1.0F - var4)));
       super.method13224();
       super.method13225();
       byte var5 = 10;
       int var6 = MultiUtilities.applyAlpha(-723724, QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F));
       RenderUtil.drawRoundedRect(
-         (float)(this.xA + var5 / 2),
-         (float)(this.yA + var5 / 2),
-         (float)(this.widthA - var5),
-         (float)(this.heightA - var5),
-         35.0F,
-         var1
-      );
+            (float) (this.xA + var5 / 2),
+            (float) (this.yA + var5 / 2),
+            (float) (this.widthA - var5),
+            (float) (this.heightA - var5),
+            35.0F,
+            var1);
       RenderUtil.drawRect(
-         (float)(this.xA + var5 / 2),
-         (float)(this.yA + var5 / 2),
-         (float)(this.xA - var5 / 2 + this.widthA),
-         (float)(this.yA - var5 / 2 + this.heightA),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
-      );
-      RenderUtil.drawRect((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, (float)var5, var6);
-      float var7 = 0.9F + (1.0F - MathUtils.lerp(this.field21300.field20703.calcPercent(), 0.0, 0.96, 0.69, 0.99)) * 0.1F;
+            (float) (this.xA + var5 / 2),
+            (float) (this.yA + var5 / 2),
+            (float) (this.xA - var5 / 2 + this.widthA),
+            (float) (this.yA - var5 / 2 + this.heightA),
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), var1 * 0.25F));
+      RenderUtil.drawRect((float) this.xA, (float) this.yA, (float) this.widthA, (float) this.heightA, (float) var5,
+            var6);
+      float var7 = 0.9F
+            + (1.0F - MathUtils.lerp(this.field21300.field20703.calcPercent(), 0.0, 0.96, 0.69, 0.99)) * 0.1F;
       if (this.field21300.field20703.getDirection() == Direction.BACKWARDS) {
          var7 = 0.9F + (1.0F - MathUtils.lerp(this.field21300.field20703.calcPercent(), 0.61, 0.01, 0.87, 0.16)) * 0.1F;
       }
 
       this.field21299.method13279(var7, var7);
       RenderUtil.drawString(
-         ResourceRegistry.JelloLightFont25,
-         (float)(this.xA + 25),
-         (float)(this.yA + 20),
-         "Profiles",
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F * var1)
-      );
+            ResourceRegistry.JelloLightFont25,
+            (float) (this.xA + 25),
+            (float) (this.yA + 20),
+            "Profiles",
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.8F * var1));
       RenderUtil.drawRect(
-         (float)(this.xA + 25),
-         (float)(this.yA + 69),
-         (float)(this.xA + this.widthA - 25),
-         (float)(this.yA + 70),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
-      );
+            (float) (this.xA + 25),
+            (float) (this.yA + 69),
+            (float) (this.xA + this.widthA - 25),
+            (float) (this.yA + 70),
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.05F * var1));
       super.draw(var1);
    }
 }

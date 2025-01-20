@@ -25,15 +25,13 @@ public class JelloInGameOptions extends Screen {
    public JelloInGameOptions() {
       super("options");
 
-
       this.method13300(false);
-      int var3 = Math.max((int)((float)this.heightA * 0.8F), 420);
-      int var4 = (int)((float)this.widthA * 0.8F);
+      int var3 = Math.max((int) ((float) this.heightA * 0.8F), 420);
+      int var4 = (int) ((float) this.widthA * 0.8F);
       this.addToList(
-         this.field21114 = new JelloOptionsMainMenu(
-            this, "centerBlock", this.getWidthA() - var4, this.getHeightA() - var3, var4 - (this.getWidthA() - var4), var3 - (this.getHeightA() - var3)
-         )
-      );
+            this.field21114 = new JelloOptionsMainMenu(
+                  this, "centerBlock", this.getWidthA() - var4, this.getHeightA() - var3,
+                  var4 - (this.getWidthA() - var4), var3 - (this.getHeightA() - var3)));
       field21112 = new Animation(300, 100);
    }
 
@@ -55,8 +53,10 @@ public class JelloInGameOptions extends Screen {
          var5 = field21112.calcPercent();
       }
 
-      int var6 = MultiUtilities.method17690(-1072689136, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F), var5);
-      int var7 = MultiUtilities.method17690(-804253680, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F), var5);
+      int var6 = MultiUtilities.method17690(-1072689136,
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.1F), var5);
+      int var7 = MultiUtilities.method17690(-804253680,
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.1F), var5);
       RenderUtil.method11431(0, 0, this.getWidthA(), this.getHeightA(), var6, var7);
       this.method13279(var4, var4);
       this.method13224();
@@ -65,35 +65,34 @@ public class JelloInGameOptions extends Screen {
 
    private void method13437(float var1) {
       int var4 = this.getHeightO() * -1;
-      float var5 = (float)this.getWidthO() / (float)this.getWidthA() * -114.0F;
+      float var5 = (float) this.getWidthO() / (float) this.getWidthA() * -114.0F;
       if (this.field21111) {
-         this.field21109 = (int)var5;
+         this.field21109 = (int) var5;
          this.field21110 = var4;
          this.field21111 = false;
       }
 
-      float var6 = var5 - (float)this.field21109;
-      float var7 = (float)(var4 - this.field21110);
+      float var6 = var5 - (float) this.field21109;
+      float var7 = (float) (var4 - this.field21110);
       GL11.glPushMatrix();
       if (this.field21113 != null) {
          RenderUtil.method11448(
-                 (float)this.field21110,
-                 (float)this.field21109,
-                 (float)(this.getWidthA() * 2),
-                 (float)(this.getHeightA() + 114),
-                 this.field21113,
-                 MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
-         );
+               (float) this.field21110,
+               (float) this.field21109,
+               (float) (this.getWidthA() * 2),
+               (float) (this.getHeightA() + 114),
+               this.field21113,
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
       }
 
       GL11.glPopMatrix();
       float var8 = 0.5F;
-      if (var5 != (float)this.field21109) {
-         this.field21109 = (int)((float)this.field21109 + var6 * var8);
+      if (var5 != (float) this.field21109) {
+         this.field21109 = (int) ((float) this.field21109 + var6 * var8);
       }
 
       if (var4 != this.field21110) {
-         this.field21110 = (int)((float)this.field21110 + var7 * var8);
+         this.field21110 = (int) ((float) this.field21110 + var7 * var8);
       }
    }
 

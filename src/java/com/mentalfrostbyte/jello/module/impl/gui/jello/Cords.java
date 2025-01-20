@@ -51,7 +51,7 @@ public class Cords extends Module {
     private void method16579(EventRender var1) {
         if (this.isEnabled()) {
             if (mc.player != null) {
-                if (! Minecraft.getInstance().gameSettings.showDebugInfo) {
+                if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                     if (!Minecraft.getInstance().gameSettings.hideGUI) {
                         float var4 = Math.min(1.0F, 0.6F + this.field23756.calcPercent() * 4.0F);
                         String var5 = mc.player.getPosition().getX()
@@ -65,9 +65,13 @@ public class Cords extends Module {
                         float var9 = (float) ResourceRegistry.JelloLightFont18.getStringWidth(var5);
                         float var10 = Math.min(1.0F, (float) var8 / var9);
                         if (this.field23756.getDirection() != Direction.FORWARDS) {
-                            var10 *= 0.9F + QuadraticEasing.easeInQuad(Math.min(1.0F, this.field23756.calcPercent() * 8.0F), 0.0F, 1.0F, 1.0F) * 0.1F;
+                            var10 *= 0.9F
+                                    + QuadraticEasing.easeInQuad(Math.min(1.0F, this.field23756.calcPercent() * 8.0F),
+                                            0.0F, 1.0F, 1.0F) * 0.1F;
                         } else {
-                            var10 *= 0.9F + EasingFunctions.easeOutBack(Math.min(1.0F, this.field23756.calcPercent() * 7.0F), 0.0F, 1.0F, 1.0F) * 0.1F;
+                            var10 *= 0.9F
+                                    + EasingFunctions.easeOutBack(Math.min(1.0F, this.field23756.calcPercent() * 7.0F),
+                                            0.0F, 1.0F, 1.0F) * 0.1F;
                         }
 
                         GL11.glPushMatrix();
@@ -81,17 +85,15 @@ public class Cords extends Module {
                                 var5,
                                 MultiUtilities.applyAlpha(-16777216, 0.5F * var4),
                                 Class2218.field14492,
-                                Class2218.field14488
-                        );
+                                Class2218.field14488);
                         RenderUtil.method11440(
                                 ResourceRegistry.JelloLightFont18,
                                 var6,
                                 (float) var7,
                                 var5,
-                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F * var4),
+                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.8F * var4),
                                 Class2218.field14492,
-                                Class2218.field14488
-                        );
+                                Class2218.field14488);
                         GL11.glPopMatrix();
                     }
                 }

@@ -18,14 +18,14 @@ public class Class4284 extends Class4278 {
    public void draw(float var1) {
       if (this.getWidthA() != 0) {
          this.method13225();
-         float var4 = 1.0F - Math.min(1.0F, Math.max((float)this.getWidthA() / (float)this.field20768, 0.0F));
+         float var4 = 1.0F - Math.min(1.0F, Math.max((float) this.getWidthA() / (float) this.field20768, 0.0F));
          RenderUtil.renderBackgroundBox(
-            (float)this.xA, (float)this.yA, (float)this.field20768, (float)this.heightA, MultiUtilities.applyAlpha(-3254955, var1)
-         );
+               (float) this.xA, (float) this.yA, (float) this.field20768, (float) this.heightA,
+               MultiUtilities.applyAlpha(-3254955, var1));
          super.draw(var1 * (1.0F - var4));
          RenderUtil.drawImage(
-            0.0F, 0.0F, 20.0F, (float)this.heightA, ResourceList.shadowRightPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
-         );
+               0.0F, 0.0F, 20.0F, (float) this.heightA, ResourceList.shadowRightPNG,
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var4 * var1));
       }
    }
 }

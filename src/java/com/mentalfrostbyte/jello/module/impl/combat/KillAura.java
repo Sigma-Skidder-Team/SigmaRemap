@@ -73,20 +73,27 @@ public class KillAura extends Module {
     public KillAura() {
         super(ModuleCategory.COMBAT, "KillAura", "Automatically attacks entities");
         this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Single", "Switch", "Multi", "Multi2"));
-        this.registerSetting(new ModeSetting("Autoblock Mode", "Autoblock Mode", 0, "None", "NCP", "Basic1", "Basic2", "Vanilla"));
-        this.registerSetting(new ModeSetting("Sort Mode", "Sort Mode", 0, "Range", "Health", "Angle", "Armor", "Prev Range"));
-        this.registerSetting(new ModeSetting("Attack Mode", "Attacks after or before sending the movement", 0, "Pre", "Post"));
-        this.registerSetting(new ModeSetting("Rotation Mode", "The way you will look at entities", 0, "NCP", "AAC", "Smooth", "LockView", "Test", "Test2", "None"));
+        this.registerSetting(
+                new ModeSetting("Autoblock Mode", "Autoblock Mode", 0, "None", "NCP", "Basic1", "Basic2", "Vanilla"));
+        this.registerSetting(
+                new ModeSetting("Sort Mode", "Sort Mode", 0, "Range", "Health", "Angle", "Armor", "Prev Range"));
+        this.registerSetting(
+                new ModeSetting("Attack Mode", "Attacks after or before sending the movement", 0, "Pre", "Post"));
+        this.registerSetting(new ModeSetting("Rotation Mode", "The way you will look at entities", 0, "NCP", "AAC",
+                "Smooth", "LockView", "Test", "Test2", "None"));
         this.registerSetting(new NumberSetting<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
-        this.registerSetting(new NumberSetting<Float>("Block Range", "Block Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.2F));
         this.registerSetting(
-                new NumberSetting<Float>("Min CPS", "Min CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).addObserver(var1 -> this.interactAB.method36818())
-        );
+                new NumberSetting<Float>("Block Range", "Block Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.2F));
         this.registerSetting(
-                new NumberSetting<Float>("Max CPS", "Max CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).addObserver(var1 -> this.interactAB.method36818())
-        );
-        this.registerSetting(new NumberSetting<Float>("Hit box expand", "Hit Box expand", 0.05F, Float.class, 0.0F, 1.0F, 0.01F));
-        this.registerSetting(new NumberSetting<Float>("Hit Chance", "Hit Chance", 100.0F, Float.class, 25.0F, 100.0F, 1.0F));
+                new NumberSetting<Float>("Min CPS", "Min CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F)
+                        .addObserver(var1 -> this.interactAB.method36818()));
+        this.registerSetting(
+                new NumberSetting<Float>("Max CPS", "Max CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F)
+                        .addObserver(var1 -> this.interactAB.method36818()));
+        this.registerSetting(
+                new NumberSetting<Float>("Hit box expand", "Hit Box expand", 0.05F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(
+                new NumberSetting<Float>("Hit Chance", "Hit Chance", 100.0F, Float.class, 25.0F, 100.0F, 1.0F));
         this.registerSetting(new BooleanSetting("Interact autoblock", "Send interact packet when blocking", true));
         this.registerSetting(new BooleanSetting("Players", "Hit players", true));
         this.registerSetting(new BooleanSetting("Animals", "Hit animals", false));
@@ -97,10 +104,12 @@ public class KillAura extends Module {
         this.registerSetting(new BooleanSetting("No swing", "Hit without swinging", false));
         this.registerSetting(new BooleanSetting("Disable on death", "Disable on death", true));
         this.registerSetting(new BooleanSetting("Through walls", "Target entities through walls", true));
-        this.registerSetting(new BooleanSetting("Smart Reach", "Allows you to get more reach (depends on your ping)", true));
+        this.registerSetting(
+                new BooleanSetting("Smart Reach", "Allows you to get more reach (depends on your ping)", true));
         this.registerSetting(new BooleanSetting("Silent", "Silent rotations", true));
         this.registerSetting(new BooleanSetting("ESP", "ESP on targets", true));
-        this.registerSetting(new ColorSetting("ESP Color", "The render color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
+        this.registerSetting(
+                new ColorSetting("ESP Color", "The render color", ClientColors.LIGHT_GREYISH_BLUE.getColor()));
     }
 
     public static Rotations getRotations2(KillAura killaura) {
@@ -139,7 +148,8 @@ public class KillAura extends Module {
         this.rotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
         previousRotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
         this.field23957 = -1.0F;
-        interactAB.setBlocking(mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof SwordItem && mc.gameSettings.keyBindUseItem.isKeyDown());
+        interactAB.setBlocking(mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof SwordItem
+                && mc.gameSettings.keyBindUseItem.isKeyDown());
         this.field23959 = false;
         this.field23946 = -1;
         interactAB.field44349.clear();
@@ -179,7 +189,8 @@ public class KillAura extends Module {
             if (this.getBooleanValueFromSettingName("Disable on death")) {
                 if (!mc.player.isAlive()) {
                     this.toggle();
-                    Client.getInstance().notificationManager.send(new Notification("Aura", "Aura disabled due to death"));
+                    Client.getInstance().notificationManager
+                            .send(new Notification("Aura", "Aura disabled due to death"));
                 }
             }
         }
@@ -189,7 +200,8 @@ public class KillAura extends Module {
     public void onStopuseItem(StopUseItemEvent event) {
         if (this.isEnabled()) {
             if (!this.getStringSettingValueByName("Autoblock Mode").equals("None")
-                    && (mc.player.getHeldItemMainhand().getItem() instanceof SwordItem || this.currentitem != mc.player.inventory.currentItem)
+                    && (mc.player.getHeldItemMainhand().getItem() instanceof SwordItem
+                            || this.currentitem != mc.player.inventory.currentItem)
                     && target != null) {
                 event.setCancelled(true);
             } else if (mc.player.getHeldItemMainhand().getItem() instanceof SwordItem) {
@@ -212,11 +224,13 @@ public class KillAura extends Module {
                     this.field23945--;
                 }
 
-                if (target != null && interactAB.isBlocking() && MovementUtils.isMoving() && this.getStringSettingValueByName("Autoblock Mode").equals("NCP")) {
+                if (target != null && interactAB.isBlocking() && MovementUtils.isMoving()
+                        && this.getStringSettingValueByName("Autoblock Mode").equals("NCP")) {
                     interactAB.method36816();
                 }
 
-                if (interactAB.isBlocking() && (!(mc.player.getHeldItemMainhand().getItem() instanceof SwordItem) || target == null)) {
+                if (interactAB.isBlocking()
+                        && (!(mc.player.getHeldItemMainhand().getItem() instanceof SwordItem) || target == null)) {
                     interactAB.setBlocking(false);
                 }
 
@@ -233,9 +247,11 @@ public class KillAura extends Module {
                 if (entities != null && !entities.isEmpty()) {
                     this.field23939++;
                     float var4 = this.getNumberValueBySettingName("Hit box expand");
-                    ModuleWithModuleSettings var5 = (ModuleWithModuleSettings) Client.getInstance().moduleManager.getModuleByClass(Criticals.class);
+                    ModuleWithModuleSettings var5 = (ModuleWithModuleSettings) Client.getInstance().moduleManager
+                            .getModuleByClass(Criticals.class);
                     if (var5.isEnabled() && var5.getStringSettingValueByName("Type").equalsIgnoreCase("Minis")) {
-                        this.method16828(event, var5.method16726().getStringSettingValueByName("Mode"), var5.method16726().getBooleanValueFromSettingName("Avoid Fall Damage"));
+                        this.method16828(event, var5.method16726().getStringSettingValueByName("Mode"),
+                                var5.method16726().getBooleanValueFromSettingName("Avoid Fall Damage"));
                     }
 
                     this.method16831();
@@ -257,7 +273,9 @@ public class KillAura extends Module {
                     }
 
                     boolean var6 = interactAB.method36821(this.field23939);
-                    float cooldown19 = !((double) mc.player.method2973() < 1.26) && this.getBooleanValueFromSettingName("Cooldown") ? mc.player.getCooledAttackStrength(0.0F) : 1.0F;
+                    float cooldown19 = !((double) mc.player.method2973() < 1.26)
+                            && this.getBooleanValueFromSettingName("Cooldown") ? mc.player.getCooledAttackStrength(0.0F)
+                                    : 1.0F;
                     boolean var8 = field23954 == 0 && var6 && cooldown19 >= 1.0F;
                     if (var6) {
                         interactAB.setupDelay();
@@ -285,9 +303,12 @@ public class KillAura extends Module {
 
     @EventTarget
     public void on2D(EventRender var1) {
-        if (timedEntityIdk != null && !this.getBooleanValueFromSettingName("Silent") && !this.getStringSettingValueByName("Rotation Mode").equals("None")) {
-            float var4 = MathHelper.wrapDegrees(this.rotations2.yaw + (this.rotations.yaw - this.rotations2.yaw) * mc.getRenderPartialTicks());
-            float var5 = MathHelper.wrapDegrees(this.rotations2.pitch + (this.rotations.pitch - this.rotations2.pitch) * mc.getRenderPartialTicks());
+        if (timedEntityIdk != null && !this.getBooleanValueFromSettingName("Silent")
+                && !this.getStringSettingValueByName("Rotation Mode").equals("None")) {
+            float var4 = MathHelper.wrapDegrees(
+                    this.rotations2.yaw + (this.rotations.yaw - this.rotations2.yaw) * mc.getRenderPartialTicks());
+            float var5 = MathHelper.wrapDegrees(this.rotations2.pitch
+                    + (this.rotations.pitch - this.rotations2.pitch) * mc.getRenderPartialTicks());
             mc.player.rotationYaw = var4;
             mc.player.rotationPitch = var5;
         }
@@ -363,13 +384,11 @@ public class KillAura extends Module {
         GL11.glTranslated(
                 var1.lastTickPosX + (var1.getPosX() - var1.lastTickPosX) * var4,
                 var1.lastTickPosY + (var1.getPosY() - var1.lastTickPosY) * var4,
-                var1.lastTickPosZ + (var1.getPosZ() - var1.lastTickPosZ) * var4
-        );
+                var1.lastTickPosZ + (var1.getPosZ() - var1.lastTickPosZ) * var4);
         GL11.glTranslated(
                 -mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
                 -mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
-                -mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
-        );
+                -mc.gameRenderer.getActiveRenderInfo().getPos().getZ());
         GL11.glEnable(32823);
         GL11.glEnable(3008);
         GL11.glEnable(3042);
@@ -385,8 +404,7 @@ public class KillAura extends Module {
         GL11.glTranslated(
                 mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
                 mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
-                mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
-        );
+                mc.gameRenderer.getActiveRenderInfo().getPos().getZ());
         GL11.glPopMatrix();
         GL11.glEnable(3553);
         GL11.glDisable(32925);
@@ -460,28 +478,30 @@ public class KillAura extends Module {
                 this.field23940 = 1;
                 var8 = var3;
                 var6 = !var2.equals("Cubecraft") ? 0.0626 : MovementUtils.getJumpValue() / 10.0;
-                this.field23960 = new double[]{var1.getX(), var1.getY() + var6, var1.getZ()};
+                this.field23960 = new double[] { var1.getX(), var1.getY() + var6, var1.getZ() };
             }
         } else if (this.field23940 == 1) {
             this.field23940 = 0;
             var8 = false;
             if (var2.equals("Hypixel") && this.field23960 != null && mc.player.getMotion().y < 0.0) {
-                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(this.field23960[0], this.field23960[1], this.field23960[2], false));
+                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(this.field23960[0], this.field23960[1],
+                        this.field23960[2], false));
                 this.field23960 = null;
             }
         }
 
-        boolean var9 = !Jesus.isWalkingOnLiquid() && (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.001F));
+        boolean var9 = !Jesus.isWalkingOnLiquid()
+                && (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.001F));
         if (!var9) {
             this.field23941 = 0;
             this.field23940 = 0;
         } else {
             this.field23941++;
-            if ((
-                    !Client.getInstance().moduleManager.getModuleByClass(Speed.class).isEnabled()
-                            || Client.getInstance().moduleManager.getModuleByClass(Speed.class).getStringSettingValueByName("Type").equalsIgnoreCase("Cubecraft")
-                            || Client.getInstance().moduleManager.getModuleByClass(Speed.class).getStringSettingValueByName("Type").equalsIgnoreCase("Vanilla")
-            )
+            if ((!Client.getInstance().moduleManager.getModuleByClass(Speed.class).isEnabled()
+                    || Client.getInstance().moduleManager.getModuleByClass(Speed.class)
+                            .getStringSettingValueByName("Type").equalsIgnoreCase("Cubecraft")
+                    || Client.getInstance().moduleManager.getModuleByClass(Speed.class)
+                            .getStringSettingValueByName("Type").equalsIgnoreCase("Vanilla"))
                     && mc.player.collidedVertically
                     && var9
                     && !mc.player.isJumping
@@ -497,9 +517,10 @@ public class KillAura extends Module {
 
     private Entity method16829(List<TimedEntity> var1) {
         var1 = interactAB.sortEntities(var1);
-        return !var1.isEmpty() && var1.get(0).getEntity().getDistance(mc.player) <= this.getNumberValueBySettingName("Block Range")
-                ? var1.get(0).getEntity()
-                : null;
+        return !var1.isEmpty()
+                && var1.get(0).getEntity().getDistance(mc.player) <= this.getNumberValueBySettingName("Block Range")
+                        ? var1.get(0).getEntity()
+                        : null;
     }
 
     private void method16830() {
@@ -535,7 +556,8 @@ public class KillAura extends Module {
                 this.field23946 = -1;
             } else {
                 if (this.field23957 == -1.0F) {
-                    float var7 = RotationHelper.getRotationsToVector(MultiUtilities.method17751(((TimedEntity) var6.get(0)).getEntity())).yaw;
+                    float var7 = RotationHelper.getRotationsToVector(
+                            MultiUtilities.method17751(((TimedEntity) var6.get(0)).getEntity())).yaw;
                     float var8 = Math.abs(MultiUtilities.method17756(var7, previousRotations.yaw));
                     this.field23956 = var8 * 1.95F / 50.0F;
                     this.field23957++;
@@ -543,7 +565,8 @@ public class KillAura extends Module {
                 }
 
                 entities = var6;
-                float var12 = RotationHelper.getRotationsToVector(MultiUtilities.method17751(entities.get(0).getEntity())).yaw;
+                float var12 = RotationHelper
+                        .getRotationsToVector(MultiUtilities.method17751(entities.get(0).getEntity())).yaw;
                 if (!entities.isEmpty() & !mode.equals("Switch")) {
                     if (timedEntityIdk != null && timedEntityIdk.getEntity() != entities.get(0).getEntity()) {
                         float var13 = Math.abs(MultiUtilities.method17756(var12, previousRotations.yaw));
@@ -558,7 +581,8 @@ public class KillAura extends Module {
                     if (!mode.equals("Multi2")) {
                         if (mode.equals("Single")
                                 && !entities.isEmpty()
-                                && (timedEntityIdk == null || timedEntityIdk.getEntity() != entities.get(0).getEntity())) {
+                                && (timedEntityIdk == null
+                                        || timedEntityIdk.getEntity() != entities.get(0).getEntity())) {
                             timedEntityIdk = entities.get(0);
                         }
                     } else {
@@ -568,16 +592,15 @@ public class KillAura extends Module {
 
                         timedEntityIdk = entities.get(this.field23942);
                     }
-                } else if ((
-                        timedEntityIdk == null
-                                || timedEntityIdk.getTimer() == null
-                                || timedEntityIdk.isExpired()
-                                || !entities.contains(timedEntityIdk)
-                                || mc.player.getDistance(timedEntityIdk.getEntity()) > range
-                )
+                } else if ((timedEntityIdk == null
+                        || timedEntityIdk.getTimer() == null
+                        || timedEntityIdk.isExpired()
+                        || !entities.contains(timedEntityIdk)
+                        || mc.player.getDistance(timedEntityIdk.getEntity()) > range)
                         && !entities.isEmpty()) {
                     if (this.field23942 + 1 < entities.size()) {
-                        if (timedEntityIdk != null && !Client.getInstance().friendManager.isFriend(entities.get(this.field23942).getEntity())) {
+                        if (timedEntityIdk != null && !Client.getInstance().friendManager
+                                .isFriend(entities.get(this.field23942).getEntity())) {
                             this.field23942++;
                         }
                     } else {
@@ -585,12 +608,13 @@ public class KillAura extends Module {
                     }
 
                     Vector3d var14 = MultiUtilities.method17751(entities.get(this.field23942).getEntity());
-                    float var9 = Math.abs(MultiUtilities.method17756(RotationHelper.getRotationsToVector(var14).yaw, previousRotations.yaw));
+                    float var9 = Math.abs(MultiUtilities.method17756(RotationHelper.getRotationsToVector(var14).yaw,
+                            previousRotations.yaw));
                     this.field23956 = var9 * 1.95F / 50.0F;
                     this.field23955 = Math.random();
                     timedEntityIdk = new TimedEntity(
-                            entities.get(this.field23942).getEntity(), new ExpirationTimer(!this.getStringSettingValueByName("Rotation Mode").equals("NCP") ? 500L : 270L)
-                    );
+                            entities.get(this.field23942).getEntity(), new ExpirationTimer(
+                                    !this.getStringSettingValueByName("Rotation Mode").equals("NCP") ? 500L : 270L));
                 }
 
                 if (this.field23942 >= entities.size()) {
@@ -648,15 +672,16 @@ public class KillAura extends Module {
                     this.field23958 = var31;
                 } else if (Math.abs(var5) > 10.0F) {
                     Entity var27 = MultiUtilities.getEntityFromRayTrace(
-                            this.rotations.pitch, this.rotations.yaw, this.getNumberValueBySettingName("Range"), this.getNumberValueBySettingName("Hit box expand")
-                    );
+                            this.rotations.pitch, this.rotations.yaw, this.getNumberValueBySettingName("Range"),
+                            this.getNumberValueBySettingName("Hit box expand"));
                     double var11 = var27 == null ? 13.4 : 1.4;
                     this.field23958 = (float) ((double) this.field23958 * 0.5296666666666666);
                     if (Math.abs(var5) < 20.0F) {
                         this.field23958 = var5 * 0.5F;
                     }
 
-                    this.rotations.yaw = this.rotations.yaw + var5 + this.field23958 + (float) this.method16832(-var11, var11);
+                    this.rotations.yaw = this.rotations.yaw + var5 + this.field23958
+                            + (float) this.method16832(-var11, var11);
                 } else {
                     this.field23958 = (float) ((double) this.field23958 * 0.05);
                     double var13 = 0.0;
@@ -672,12 +697,13 @@ public class KillAura extends Module {
                 }
 
                 if (Math.abs(var6) > 10.0F) {
-                    this.rotations.pitch = (float) ((double) this.rotations.pitch + (double) var6 * 0.81 + this.method16832(-2.0, 2.0));
+                    this.rotations.pitch = (float) ((double) this.rotations.pitch + (double) var6 * 0.81
+                            + this.method16832(-2.0, 2.0));
                 }
 
                 Entity var28 = MultiUtilities.getEntityFromRayTrace(
-                        this.rotations2.pitch, this.rotations2.yaw, this.getNumberValueBySettingName("Range"), this.getNumberValueBySettingName("Hit box expand")
-                );
+                        this.rotations2.pitch, this.rotations2.yaw, this.getNumberValueBySettingName("Range"),
+                        this.getNumberValueBySettingName("Hit box expand"));
                 if (var28 != null && (double) this.field23947 > this.method16832(2.0, 5.0)) {
                     this.field23947 = 0;
                     MultiUtilities.swing(var28, true);
@@ -690,8 +716,9 @@ public class KillAura extends Module {
                 break;
             case "AAC":
                 if (!RotationHelper.raytraceVector(
-                        new Vector3d(targ.getPosX(), targ.getPosY() - 1.6 - this.field23955 + (double) targ.getEyeHeight(), targ.getPosZ())
-                )) {
+                        new Vector3d(targ.getPosX(),
+                                targ.getPosY() - 1.6 - this.field23955 + (double) targ.getEyeHeight(),
+                                targ.getPosZ()))) {
                 }
 
                 float var29 = this.field23957 / Math.max(1.0F, this.field23956);
@@ -714,7 +741,8 @@ public class KillAura extends Module {
                 if (var29 == 0.0F || var29 >= 1.0F || (double) var35 > 0.1 && this.field23956 < 4.0F) {
                     float var41 = Math.abs(MultiUtilities.method17756(newRots.yaw, previousRotations.yaw));
                     this.field23956 = (float) Math.round(var41 * 1.8F / 50.0F);
-                    if (this.field23956 <= 1.0F && Math.abs(MultiUtilities.method17756(newRots.yaw, this.rotations.yaw)) > 10.0F) {
+                    if (this.field23956 <= 1.0F
+                            && Math.abs(MultiUtilities.method17756(newRots.yaw, this.rotations.yaw)) > 10.0F) {
                     }
 
                     this.field23957 = 0.0F;
@@ -742,21 +770,23 @@ public class KillAura extends Module {
                 this.rotations2.yaw = this.rotations.yaw;
                 this.rotations2.pitch = this.rotations.pitch;
                 EntityRayTraceResult ray = MultiUtilities.method17714(
-                        targ, this.rotations.yaw, this.rotations.pitch, var0 -> true, this.getNumberValueBySettingName("Range")
-                );
+                        targ, this.rotations.yaw, this.rotations.pitch, var0 -> true,
+                        this.getNumberValueBySettingName("Range"));
                 if (ray == null || ray.getEntity() != targ) {
                     this.rotations = newRots;
                 }
                 break;
             case "Test2":
                 EntityRayTraceResult var24 = MultiUtilities.method17714(
-                        targ, this.rotations.yaw, this.rotations.pitch, var0 -> true, this.getNumberValueBySettingName("Range")
-                );
+                        targ, this.rotations.yaw, this.rotations.pitch, var0 -> true,
+                        this.getNumberValueBySettingName("Range"));
                 if (var24 != null && var24.getEntity() == targ) {
                     this.rotations2.yaw = this.rotations.yaw;
                     this.rotations2.pitch = this.rotations.pitch;
-                    this.rotations.yaw = (float) ((double) this.rotations.yaw + (Math.random() - 0.5) * 2.0 + (double) (var5 / 10.0F));
-                    this.rotations.pitch = (float) ((double) this.rotations.pitch + (Math.random() - 0.5) * 2.0 + (double) (var6 / 10.0F));
+                    this.rotations.yaw = (float) ((double) this.rotations.yaw + (Math.random() - 0.5) * 2.0
+                            + (double) (var5 / 10.0F));
+                    this.rotations.pitch = (float) ((double) this.rotations.pitch + (Math.random() - 0.5) * 2.0
+                            + (double) (var6 / 10.0F));
                     this.field23957 = 0.0F;
                     this.field23956 = 3.0F;
                     return;

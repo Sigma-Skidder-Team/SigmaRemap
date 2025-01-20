@@ -18,11 +18,12 @@ import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 
 public class BoxOutlineESP extends Module {
-    public int field23719 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F);
+    public int field23719 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.8F);
 
     public BoxOutlineESP() {
         super(ModuleCategory.RENDER, "Box Outline", "Draws a line arround players");
-        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
+        this.registerSetting(
+                new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.getColor()));
     }
 
     @EventTarget
@@ -115,7 +116,7 @@ public class BoxOutlineESP extends Module {
                         RenderUtil.renderWireframeBox(var17, 3.0F, MultiUtilities.applyAlpha(var10,
                                 Client.getInstance().clientMode != ClientMode.JELLO ? 0.8F : 0.35F));
                     } else {
-                        RenderUtil.render3DColoredBox(var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                        RenderUtil.render3DColoredBox(var17, ClientColors.LIGHT_GREYISH_BLUE.getColor());
                     }
 
                     GL11.glDisable(3042);

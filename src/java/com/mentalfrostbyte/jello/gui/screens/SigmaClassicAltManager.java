@@ -146,7 +146,7 @@ public class SigmaClassicAltManager extends Screen {
             (float) (this.getWidthA() / 2),
             20.0F,
             "Account Manager - " + this.method13400() + " alts",
-            ClientColors.LIGHT_GREYISH_BLUE.getColor,
+            ClientColors.LIGHT_GREYISH_BLUE.getColor(),
             Class2218.field14492,
             Class2218.field14488);
       RenderUtil.method11441(
@@ -154,7 +154,7 @@ public class SigmaClassicAltManager extends Screen {
             (float) (this.getWidthA() / 2),
             40.0F,
             this.status,
-            ClientColors.LIGHT_GREYISH_BLUE.getColor,
+            ClientColors.LIGHT_GREYISH_BLUE.getColor(),
             Class2218.field14492,
             Class2218.field14488,
             false);
@@ -178,7 +178,7 @@ public class SigmaClassicAltManager extends Screen {
       RenderUtil.method11455(0.0F, 0.0F, (float) this.getWidthA(), (float) this.getHeightA(),
             ResourceList.mainmenubackground);
       RenderUtil.renderBackgroundBox(0.0F, 0.0F, (float) this.getWidthA(), (float) this.getHeightA(),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.23F));
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.23F));
    }
 
    @Override

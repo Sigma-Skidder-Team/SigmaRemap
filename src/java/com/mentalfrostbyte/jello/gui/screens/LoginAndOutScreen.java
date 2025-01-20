@@ -60,7 +60,7 @@ public class LoginAndOutScreen extends Screen {
                   this.heightA / 2 + 120,
                   240,
                   60,
-                  new ColorHelper(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F)),
+                  new ColorHelper(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.5F)),
                   "Continue",
                   ResourceRegistry.JelloLightFont25));
       this.field21091.setEnabled(false);
@@ -139,7 +139,7 @@ public class LoginAndOutScreen extends Screen {
                (int) ((double) this.heightA - var5.getHeight()) / 2,
                (int) var5.getWidth(),
                (int) var5.getHeight(),
-               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor,
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
                      1.0F - this.field21093.calcPercent()));
       }
 
@@ -161,16 +161,16 @@ public class LoginAndOutScreen extends Screen {
                0.0F,
                (float) this.widthA,
                (float) this.heightA,
-               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.45F * this.field21093.calcPercent()));
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.45F * this.field21093.calcPercent()));
          RenderUtil.drawImage(
                (float) (var11 + 20), (float) (var12 + 40), (float) (var8 + 30), (float) (var8 + 30),
                ResourceList.sigmaPNG, this.field21093.calcPercent());
          int var13 = 165;
          int var14 = 54;
          RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, (float) (var11 + var13), (float) (var12 + var14),
-               welcomeBackSign, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+               welcomeBackSign, ClientColors.LIGHT_GREYISH_BLUE.getColor());
          RenderUtil.drawString(ResourceRegistry.JelloLightFont36, (float) (var11 + var13), (float) (var12 + var14 + 45),
-               username, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+               username, ClientColors.LIGHT_GREYISH_BLUE.getColor());
       }
 
       GL11.glPushMatrix();
@@ -203,7 +203,7 @@ public class LoginAndOutScreen extends Screen {
             (float) (this.getWidthA() * 2),
             (float) (this.getHeightA() + 114),
             this.field21087,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field21085));
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), this.field21085));
       GL11.glPopMatrix();
       float var8 = 0.5F;
       if (var4 != (float) this.field21082) {

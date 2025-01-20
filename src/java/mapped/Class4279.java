@@ -33,18 +33,19 @@ public class Class4279 extends Class4278 {
    }
 
    public void method13144(float var1, float var2) {
-      this.xA = (int)var1;
-      this.yA = (int)var2;
+      this.xA = (int) var1;
+      this.yA = (int) var2;
    }
 
    @Override
    public void draw(float var1) {
       RenderUtil.method11438(
-         (float)(this.xA + 5),
-         (float)(this.yA + 5),
-         10.0F,
-         MultiUtilities.applyAlpha(!this.method13216() ? ClientColors.DARK_GREEN.getColor : ClientColors.DARK_BLUE_GREY.getColor, var1)
-      );
+            (float) (this.xA + 5),
+            (float) (this.yA + 5),
+            10.0F,
+            MultiUtilities.applyAlpha(
+                  !this.method13216() ? ClientColors.DARK_GREEN.getColor() : ClientColors.DARK_BLUE_GREY.getColor(),
+                  var1));
       super.draw(var1);
    }
 }

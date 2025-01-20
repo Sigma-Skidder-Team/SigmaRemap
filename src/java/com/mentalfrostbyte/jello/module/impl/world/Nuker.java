@@ -40,7 +40,7 @@ public class Nuker extends Module {
         this.registerSetting(new BooleanSetting("NoSwing", "Removes the swing animation.", false));
         this.registerSetting(new BooleanListSetting("Blocks", "Blocks to destroy", true));
         this.registerSetting(
-                new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.getColor, true));
+                new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.getColor(), true));
     }
 
     public static void method16265(BlockPos var0) {

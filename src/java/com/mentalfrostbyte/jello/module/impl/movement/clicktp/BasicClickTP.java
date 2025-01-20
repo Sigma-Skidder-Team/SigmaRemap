@@ -42,8 +42,8 @@ public class BasicClickTP extends Module {
         if (this.isEnabled() && (mc.player.isSneaking() || !this.access().getBooleanValueFromSettingName("Sneak"))) {
             if (var1.getButton() == ClickEvent.Button.RIGHT) {
                 BlockRayTraceResult var4 = BlockUtil.rayTrace(
-                        mc.player.rotationYaw, mc.player.rotationPitch, this.access().getNumberValueBySettingName("Maximum range")
-                );
+                        mc.player.rotationYaw, mc.player.rotationPitch,
+                        this.access().getNumberValueBySettingName("Maximum range"));
                 BlockPos var5 = null;
                 if (var4 != null) {
                     var5 = var4.getPos();
@@ -76,7 +76,8 @@ public class BasicClickTP extends Module {
                     var32 -= var26;
                     var34 -= var28;
                     double var37 = 0.3;
-                    AxisAlignedBB var39 = new AxisAlignedBB(var30 - var37, var34, var32 - var37, var30 + var37, var34 + 1.9, var32 + var37);
+                    AxisAlignedBB var39 = new AxisAlignedBB(var30 - var37, var34, var32 - var37, var30 + var37,
+                            var34 + 1.9, var32 + var37);
                     if (mc.world.getCollisionShapes(mc.player, var39).count() == 0L) {
                         mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var30, var34, var32, true));
                     }
@@ -119,8 +120,7 @@ public class BasicClickTP extends Module {
                 GL11.glVertex3d(
                         var5.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
                         var5.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
-                        var5.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
-                );
+                        var5.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ());
             }
 
             GL11.glEnd();
@@ -134,17 +134,16 @@ public class BasicClickTP extends Module {
                         var8 - 0.3F,
                         var6 + 0.3F,
                         var12.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY() + 1.6F,
-                        var8 + 0.3F
-                );
-                RenderUtil.render3DColoredBox(var10, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.2F));
+                        var8 + 0.3F);
+                RenderUtil.render3DColoredBox(var10,
+                        MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor(), 0.2F));
             }
 
             GL11.glPushMatrix();
             GL11.glTranslated(
                     mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
                     mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
-                    mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
-            );
+                    mc.gameRenderer.getActiveRenderInfo().getPos().getZ());
             GL11.glPopMatrix();
             GL11.glDisable(3042);
             GL11.glEnable(3553);

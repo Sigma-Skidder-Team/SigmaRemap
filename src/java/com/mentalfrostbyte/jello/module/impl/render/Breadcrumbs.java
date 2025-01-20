@@ -23,7 +23,7 @@ public class Breadcrumbs extends Module {
     public Breadcrumbs() {
         super(ModuleCategory.RENDER, "Breadcrumbs", "Shows your taken path");
         this.registerSetting(new BooleanSetting("Fade Out", "Makes distant breadcrumbs fade out", true));
-        this.registerSetting(new ColorSetting("Color", "The crumbs color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
+        this.registerSetting(new ColorSetting("Color", "The crumbs color", ClientColors.LIGHT_GREYISH_BLUE.getColor()));
     }
 
     @EventTarget
@@ -52,19 +52,19 @@ public class Breadcrumbs extends Module {
                 new Vector3d(
                         -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getX(),
                         -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getY(),
-                        -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getZ()
-                )
-        );
+                        -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getZ()));
     }
 
     @EventTarget
     public void onRender3D(Render3DEvent event) {
         if (this.isEnabled()) {
             Vector3d interpolatedPlayerPosition = new Vector3d(
-                    mc.player.lastTickPosX - (mc.player.lastTickPosX - mc.player.getPosX()) * mc.getRenderPartialTicks(),
-                    mc.player.lastTickPosY - (mc.player.lastTickPosY - mc.player.getPosY()) * mc.getRenderPartialTicks(),
-                    mc.player.lastTickPosZ - (mc.player.lastTickPosZ - mc.player.getPosZ()) * mc.getRenderPartialTicks()
-            );
+                    mc.player.lastTickPosX
+                            - (mc.player.lastTickPosX - mc.player.getPosX()) * mc.getRenderPartialTicks(),
+                    mc.player.lastTickPosY
+                            - (mc.player.lastTickPosY - mc.player.getPosY()) * mc.getRenderPartialTicks(),
+                    mc.player.lastTickPosZ
+                            - (mc.player.lastTickPosZ - mc.player.getPosZ()) * mc.getRenderPartialTicks());
 
             GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
             GL11.glEnable(GL11.GL_BLEND);
@@ -73,15 +73,18 @@ public class Breadcrumbs extends Module {
             GL11.glDisable(GL11.GL_TEXTURE_2D);
             GL11.glDisable(GL11.GL_DEPTH_TEST);
             GL11.glDepthMask(false);
-            GL11.glColor4fv(MultiUtilities.method17709(MultiUtilities.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), 0.5F)));
+            GL11.glColor4fv(MultiUtilities
+                    .method17709(MultiUtilities.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), 0.5F)));
             GL11.glBegin(GL11.GL_LINE_STRIP);
 
             for (Vector3d breadcrumb : this.breadcrumbsPath) {
                 Vector3d adjustedBreadcrumb = this.adjustForRendering(breadcrumb);
                 double distance = breadcrumb.method11341(interpolatedPlayerPosition);
-                double fadeFactor = !this.getBooleanValueFromSettingName("Fade Out") ? 0.6F : 1.0 - Math.min(1.0, distance / 14.0);
+                double fadeFactor = !this.getBooleanValueFromSettingName("Fade Out") ? 0.6F
+                        : 1.0 - Math.min(1.0, distance / 14.0);
                 if (!(distance > 24.0)) {
-                    GL11.glColor4fv(MultiUtilities.method17709(MultiUtilities.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), (float) fadeFactor)));
+                    GL11.glColor4fv(MultiUtilities.method17709(MultiUtilities
+                            .applyAlpha(this.parseSettingValueToIntBySettingName("Color"), (float) fadeFactor)));
                     GL11.glVertex3d(adjustedBreadcrumb.x, adjustedBreadcrumb.y, adjustedBreadcrumb.z);
                 }
             }

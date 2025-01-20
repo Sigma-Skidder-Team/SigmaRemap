@@ -26,37 +26,34 @@ public class Class4273 extends Class4247 {
          this.method13225();
          boolean var10 = this.method13297();
 
-          if (var10) {
+         if (var10) {
             RenderUtil.drawRect(
-               (float)this.xA,
-               (float)this.yA,
-               (float)(this.xA + this.widthA),
-               (float)(this.yA + this.heightA),
-               MultiUtilities.applyAlpha(-11890462, 1.0F)
-            );
+                  (float) this.xA,
+                  (float) this.yA,
+                  (float) (this.xA + this.widthA),
+                  (float) (this.yA + this.heightA),
+                  MultiUtilities.applyAlpha(-11890462, 1.0F));
          }
 
          int var11 = 16;
          int var12 = 8;
-         int var13 = ClientColors.DEEP_TEAL.getColor;
+         int var13 = ClientColors.DEEP_TEAL.getColor();
          if (var10) {
-            var13 = ClientColors.LIGHT_GREYISH_BLUE.getColor;
+            var13 = ClientColors.LIGHT_GREYISH_BLUE.getColor();
          }
 
          RenderUtil.drawString(
-            ResourceRegistry.JelloLightFont14,
-            (float)(this.xA + var11 + 50),
-            (float)(this.yA + var12 + 5),
-            this.field20912,
-            MultiUtilities.applyAlpha(var13, var1)
-         );
+               ResourceRegistry.JelloLightFont14,
+               (float) (this.xA + var11 + 50),
+               (float) (this.yA + var12 + 5),
+               this.field20912,
+               MultiUtilities.applyAlpha(var13, var1));
          RenderUtil.drawString(
-            ResourceRegistry.JelloLightFont12,
-            (float)(this.xA + var11 + 50),
-            (float)(this.yA + var12 + 19),
-            this.field20710,
-            MultiUtilities.applyAlpha(var13, var1 * 0.5F)
-         );
+               ResourceRegistry.JelloLightFont12,
+               (float) (this.xA + var11 + 50),
+               (float) (this.yA + var12 + 19),
+               this.field20710,
+               MultiUtilities.applyAlpha(var13, var1 * 0.5F));
          super.draw(var1);
       }
    }

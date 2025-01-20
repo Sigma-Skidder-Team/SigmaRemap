@@ -80,7 +80,7 @@ public class Waypoints extends Module {
                                                 (int) var9.getPosX(),
                                                 (int) var9.getPosY(),
                                                 (int) var9.getPosZ(),
-                                                ClientColors.DARK_OLIVE.getColor));
+                                                ClientColors.DARK_OLIVE.getColor()));
                     }
                 }
             }
@@ -176,7 +176,7 @@ public class Waypoints extends Module {
             GL11.glRotatef(var4, 0.0F, 1.0F, 0.0F);
             GL11.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
             this.method16279(
-                    MultiUtilities.method17690(ClientColors.DEEP_TEAL.getColor, var1, 0.04F * (float) var4 / 90.0F));
+                    MultiUtilities.method17690(ClientColors.DEEP_TEAL.getColor(), var1, 0.04F * (float) var4 / 90.0F));
             GL11.glPopMatrix();
         }
 
@@ -184,7 +184,7 @@ public class Waypoints extends Module {
             GL11.glPushMatrix();
             GL11.glRotatef(var5, 0.0F, 1.0F, 0.0F);
             this.method16279(
-                    MultiUtilities.method17690(ClientColors.DEEP_TEAL.getColor, var1, 0.04F * (float) var5 / 90.0F));
+                    MultiUtilities.method17690(ClientColors.DEEP_TEAL.getColor(), var1, 0.04F * (float) var5 / 90.0F));
             GL11.glPopMatrix();
         }
     }
@@ -272,8 +272,8 @@ public class Waypoints extends Module {
         GL11.glPushMatrix();
         GL11.glScalef(-0.009F * var6, -0.009F * var6, -0.009F * var6);
         GL11.glTranslated(0.0, -20.0 * Math.sqrt(Math.sqrt(var6)), 0.0);
-        int var11 = MultiUtilities.applyAlpha(MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor,
-                ClientColors.DEEP_TEAL.getColor, 75.0F), 0.5F);
+        int var11 = MultiUtilities.applyAlpha(MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+                ClientColors.DEEP_TEAL.getColor(), 75.0F), 0.5F);
         RenderUtil.drawRect(
                 (float) (-var9.getStringWidth(var4) / 2 - 14), -5.0F, (float) var9.getStringWidth(var4) / 2.0F + 14.0F,
                 (float) (var9.method23952() + 7), var11);
@@ -282,7 +282,7 @@ public class Waypoints extends Module {
                 (float) (var9.method23952() + 12), 20.0F, 0.5F);
         GL11.glTranslated(-var9.getStringWidth(var4) / 2, 0.0, 0.0);
         RenderUtil.drawString(var9, 0.0F, 0.0F, var4,
-                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F));
+                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.8F));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
         GL11.glEnable(3553);

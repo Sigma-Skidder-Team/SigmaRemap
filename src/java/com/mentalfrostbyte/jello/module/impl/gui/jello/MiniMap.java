@@ -108,7 +108,8 @@ public class MiniMap extends Module {
 
                 while (var11.hasNext()) {
                     Class8444 var12 = (Class8444) var11.next();
-                    int var7 = var12.field36184.getPos().getChessboardDistance(new ChunkPos(mc.player.chunkCoordX, mc.player.chunkCoordZ));
+                    int var7 = var12.field36184.getPos()
+                            .getChessboardDistance(new ChunkPos(mc.player.chunkCoordX, mc.player.chunkCoordZ));
                     if (var7 > 7) {
                         var11.remove();
                     }
@@ -160,17 +161,20 @@ public class MiniMap extends Module {
                             String var5 = "^";
                             TrueTypeFont var6 = ResourceRegistry.JelloMediumFont20;
                             float var7 = 1.5F;
-                            RenderUtil.renderBackgroundBox((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, -7687425);
+                            RenderUtil.renderBackgroundBox((float) this.field23711, (float) this.field23712,
+                                    (float) this.field23710, (float) this.field23709, -7687425);
                             GL11.glPushMatrix();
                             float var8 = (float) (this.field23710 / this.field23715);
                             float var9 = (float) ((double) (var8 * var7) * this.field23718);
                             float var10 = (float) ((double) (-var8 * var7) * this.field23717);
-                            GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2), (float) (this.field23712 + this.field23709 / 2), 0.0F);
+                            GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2),
+                                    (float) (this.field23712 + this.field23709 / 2), 0.0F);
                             GL11.glRotatef(90.0F - mc.player.rotationYaw, 0.0F, 0.0F, 1.0F);
                             GL11.glTranslatef((float) (-this.field23710 / 2), (float) (-this.field23709 / 2), 0.0F);
                             float var11 = (float) this.field23710 * var7;
                             float var12 = (float) this.field23709 * var7;
-                            RenderUtil.drawPortalBackground(this.field23711, this.field23712, this.field23711 + this.field23710, this.field23712 + this.field23709);
+                            RenderUtil.drawPortalBackground(this.field23711, this.field23712,
+                                    this.field23711 + this.field23710, this.field23712 + this.field23709);
                             RenderUtil.method11455(0.0F, 0.0F, 0.0F, 0.0F, ResourceList.shoutIconPNG);
                             float var13 = -var11 / 2.0F + (float) (this.field23710 / 2) + var9;
                             float var14 = -var12 / 2.0F + (float) (this.field23709 / 2) + var10;
@@ -181,39 +185,43 @@ public class MiniMap extends Module {
                                     var11,
                                     var12,
                                     var4,
-                                    ClientColors.LIGHT_GREYISH_BLUE.getColor,
+                                    ClientColors.LIGHT_GREYISH_BLUE.getColor(),
                                     0.0F,
                                     0.0F,
                                     (float) (this.field23715 * 16),
                                     (float) (this.field23715 * 16),
                                     true,
-                                    false
-                            );
+                                    false);
                             RenderUtil.endScissor();
                             GL11.glPopMatrix();
                             GL11.glPushMatrix();
                             int var15 = (int) MovementUtils.otherStrafe()[0];
-                            GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2 + 1), (float) (this.field23712 + this.field23709 / 2 + 3), 0.0F);
+                            GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2 + 1),
+                                    (float) (this.field23712 + this.field23709 / 2 + 3), 0.0F);
                             GL11.glRotatef((float) (270 + var15) - mc.player.rotationYaw, 0.0F, 0.0F, 1.0F);
-                            GL11.glTranslatef((float) (-(this.field23711 + this.field23710 / 2 + 1)), (float) (-(this.field23712 + this.field23709 / 2)), 0.0F);
+                            GL11.glTranslatef((float) (-(this.field23711 + this.field23710 / 2 + 1)),
+                                    (float) (-(this.field23712 + this.field23709 / 2)), 0.0F);
                             RenderUtil.drawString(
-                                    var6, (float) (this.field23711 + this.field23710 / 2 - 4), (float) (this.field23712 + this.field23709 / 2 - 8), var5, 1879048192
-                            );
+                                    var6, (float) (this.field23711 + this.field23710 / 2 - 4),
+                                    (float) (this.field23712 + this.field23709 / 2 - 8), var5, 1879048192);
                             GL11.glPopMatrix();
                             GL11.glPushMatrix();
-                            GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2 + 1), (float) (this.field23712 + this.field23709 / 2), 0.0F);
+                            GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2 + 1),
+                                    (float) (this.field23712 + this.field23709 / 2), 0.0F);
                             GL11.glRotatef((float) (270 + var15) - mc.player.rotationYaw, 0.0F, 0.0F, 1.0F);
-                            GL11.glTranslatef((float) (-(this.field23711 + this.field23710 / 2 + 1)), (float) (-(this.field23712 + this.field23709 / 2)), 0.0F);
+                            GL11.glTranslatef((float) (-(this.field23711 + this.field23710 / 2 + 1)),
+                                    (float) (-(this.field23712 + this.field23709 / 2)), 0.0F);
                             RenderUtil.drawString(
                                     var6,
                                     (float) (this.field23711 + this.field23710 / 2 - 4),
                                     (float) (this.field23712 + this.field23709 / 2 - 8),
                                     var5,
-                                    ClientColors.LIGHT_GREYISH_BLUE.getColor
-                            );
+                                    ClientColors.LIGHT_GREYISH_BLUE.getColor());
                             GL11.glPopMatrix();
-                            RenderUtil.method11464((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, 23.0F, 0.75F);
-                            RenderUtil.drawRoundedRect((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, 8.0F, 0.7F);
+                            RenderUtil.method11464((float) this.field23711, (float) this.field23712,
+                                    (float) this.field23710, (float) this.field23709, 23.0F, 0.75F);
+                            RenderUtil.drawRoundedRect((float) this.field23711, (float) this.field23712,
+                                    (float) this.field23710, (float) this.field23709, 8.0F, 0.7F);
                         }
 
                         var1.method13962(this.field23709 + 10);

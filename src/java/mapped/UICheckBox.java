@@ -39,34 +39,34 @@ public class UICheckBox extends Class4247 {
    public void draw(float var1) {
       float var4 = !this.method13212() ? 0.43F : 0.6F;
       RenderUtil.drawRect(
-         (float)this.xA,
-         (float)this.yA,
-         (float)this.widthA,
-         (float)this.heightA,
-         10.0F,
-         MultiUtilities.applyAlpha(-4144960, var4 * this.field21370.calcPercent() * var1)
-      );
+            (float) this.xA,
+            (float) this.yA,
+            (float) this.widthA,
+            (float) this.heightA,
+            10.0F,
+            MultiUtilities.applyAlpha(-4144960, var4 * this.field21370.calcPercent() * var1));
       float var5 = (1.0F - this.field21370.calcPercent()) * var1;
       RenderUtil.drawRect(
-         (float)this.xA,
-         (float)this.yA,
-         (float)this.widthA,
-         (float)this.heightA,
-         10.0F,
-         MultiUtilities.applyAlpha(MultiUtilities.method17690(-14047489, ClientColors.DEEP_TEAL.getColor, !this.method13212() ? 1.0F : 0.9F), var5)
-      );
+            (float) this.xA,
+            (float) this.yA,
+            (float) this.widthA,
+            (float) this.heightA,
+            10.0F,
+            MultiUtilities.applyAlpha(MultiUtilities.method17690(-14047489, ClientColors.DEEP_TEAL.getColor(),
+                  !this.method13212() ? 1.0F : 0.9F), var5));
       GL11.glPushMatrix();
-      GL11.glTranslatef((float)(this.getXA() + this.getWidthA() / 2), (float)(this.getYA() + this.getHeightA() / 2), 0.0F);
+      GL11.glTranslatef((float) (this.getXA() + this.getWidthA() / 2), (float) (this.getYA() + this.getHeightA() / 2),
+            0.0F);
       GL11.glScalef(1.5F - 0.5F * var5, 1.5F - 0.5F * var5, 0.0F);
-      GL11.glTranslatef((float)(-this.getXA() - this.getWidthA() / 2), (float)(-this.getYA() - this.getHeightA() / 2), 0.0F);
+      GL11.glTranslatef((float) (-this.getXA() - this.getWidthA() / 2), (float) (-this.getYA() - this.getHeightA() / 2),
+            0.0F);
       RenderUtil.drawImage(
-         (float)this.xA,
-         (float)this.yA,
-         (float)this.widthA,
-         (float)this.heightA,
-         ResourceList.checkPNG,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
-      );
+            (float) this.xA,
+            (float) this.yA,
+            (float) this.widthA,
+            (float) this.heightA,
+            ResourceList.checkPNG,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var5));
       GL11.glPopMatrix();
       var5 *= var5;
       super.draw(var1);

@@ -19,41 +19,37 @@ public class Class4368 extends Class4247 {
       if (var7.getSettingMap().size() > 0) {
          Class4364 var11;
          this.addToList(var11 = new Class4364(this, "gear", 132, 32));
-         var11.doThis((var2x, var3x) -> ((Class4335)this.getScreen()).method13486(var7));
+         var11.doThis((var2x, var3x) -> ((Class4335) this.getScreen()).method13486(var7));
       }
    }
 
    @Override
    public void draw(float var1) {
       RenderUtil.drawString(
-              ResourceList.regular17,
-         (float)(this.xA + 10),
-         (float)(this.yA + 8),
-         this.field21351.getSuffix(),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, !this.field21351.isEnabled() ? 0.5F : 0.9F)
-      );
+            ResourceList.regular17,
+            (float) (this.xA + 10),
+            (float) (this.yA + 8),
+            this.field21351.getSuffix(),
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), !this.field21351.isEnabled() ? 0.5F : 0.9F));
       RenderUtil.drawString(
-              ResourceList.regular15,
-         (float)(this.xA + 15),
-         (float)(this.yA + 33),
-         "Bind",
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 1.0F)
-      );
+            ResourceList.regular15,
+            (float) (this.xA + 15),
+            (float) (this.yA + 33),
+            "Bind",
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 1.0F));
       RenderUtil.drawString(
-              ResourceList.regular15,
-         (float)(this.xA + 15),
-         (float)(this.yA + 52),
-         MultiUtilities.method17736(this.field21351.parseSettingValueToIntBySettingName("Keybind")),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.7F)
-      );
+            ResourceList.regular15,
+            (float) (this.xA + 15),
+            (float) (this.yA + 52),
+            MultiUtilities.method17736(this.field21351.parseSettingValueToIntBySettingName("Keybind")),
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.7F));
       if (this.field21351.getSettingMap().size() > 1) {
          RenderUtil.drawString(
-                 ResourceList.regular12,
-            (float)(this.xA + 84),
-            (float)(this.yA + 34),
-            "Settings",
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 1.0F)
-         );
+               ResourceList.regular12,
+               (float) (this.xA + 84),
+               (float) (this.yA + 34),
+               "Settings",
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 1.0F));
       }
 
       super.draw(var1);

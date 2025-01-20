@@ -18,7 +18,8 @@ public class Class4252 extends Class4247 {
       this.field20618 = var7;
       Color var11 = new Color(var7);
       float[] var12 = Color.RGBtoHSB(var11.getRed(), var11.getGreen(), var11.getBlue(), null);
-      this.addToList(this.field20620 = new Class4367(this, "block", 10, 10, var5 - 20, var6 - 50, var12[0], var12[1], var12[2]));
+      this.addToList(
+            this.field20620 = new Class4367(this, "block", 10, 10, var5 - 20, var6 - 50, var12[0], var12[1], var12[2]));
       this.addToList(this.field20621 = new Class4264(this, "slider", 14, var6 - 25, var5 - 65, 8, var12[0]));
       this.addToList(this.field20622 = new Class4371(this, "bubble", var5 - 40, var6 - 32, 25, 25, var11.getRGB()));
       this.field20620.method13036(var1x -> this.method13050());
@@ -70,13 +71,16 @@ public class Class4252 extends Class4247 {
 
    public static void method13052(int var0, int var1, int var2, float var3) {
       byte var6 = 14;
-      RenderUtil.method11438((float)var0, (float)var1, (float)var6, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F * var3));
-      RenderUtil.method11438((float)var0, (float)var1, (float)(var6 - 1), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.14F * var3));
-      RenderUtil.method11438((float)var0, (float)var1, (float)(var6 - 2), MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3));
+      RenderUtil.method11438((float) var0, (float) var1, (float) var6,
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.1F * var3));
+      RenderUtil.method11438((float) var0, (float) var1, (float) (var6 - 1),
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.14F * var3));
+      RenderUtil.method11438((float) var0, (float) var1, (float) (var6 - 2),
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var3));
       RenderUtil.method11438(
-         (float)var0, (float)var1, (float)(var6 - 6), MultiUtilities.applyAlpha(MultiUtilities.method17690(var2, ClientColors.DEEP_TEAL.getColor, 0.7F), var3)
-      );
-      RenderUtil.method11438((float)var0, (float)var1, (float)(var6 - 7), MultiUtilities.applyAlpha(var2, var3));
+            (float) var0, (float) var1, (float) (var6 - 6),
+            MultiUtilities.applyAlpha(MultiUtilities.method17690(var2, ClientColors.DEEP_TEAL.getColor(), 0.7F), var3));
+      RenderUtil.method11438((float) var0, (float) var1, (float) (var6 - 7), MultiUtilities.applyAlpha(var2, var3));
    }
 
    @Override
@@ -87,7 +91,7 @@ public class Class4252 extends Class4247 {
    @Override
    public void draw(float var1) {
       if (this.field20619) {
-         this.field20621.method13098((float)(System.currentTimeMillis() % 4000L) / 4000.0F, false);
+         this.field20621.method13098((float) (System.currentTimeMillis() % 4000L) / 4000.0F, false);
          this.method13051();
       }
 

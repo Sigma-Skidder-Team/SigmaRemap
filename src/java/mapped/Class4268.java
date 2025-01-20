@@ -34,30 +34,29 @@ public class Class4268 extends Class4247 {
    @Override
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
-      this.field20691 = Math.max(0.0F, Math.min(1.0F, this.field20691 + 0.2F * (float)(!this.method13212() && !this.field20692 ? -1 : 1)));
+      this.field20691 = Math.max(0.0F,
+            Math.min(1.0F, this.field20691 + 0.2F * (float) (!this.method13212() && !this.field20692 ? -1 : 1)));
    }
 
    @Override
    public void draw(float var1) {
       RenderUtil.method11474(
-         (float)this.xA,
-         (float)(this.yA + 5),
-         (float)this.widthA,
-         (float)this.heightA,
-         8.0F,
-         MultiUtilities.method17690(-3092272, -2171170, this.field20691)
-      );
+            (float) this.xA,
+            (float) (this.yA + 5),
+            (float) this.widthA,
+            (float) this.heightA,
+            8.0F,
+            MultiUtilities.method17690(-3092272, -2171170, this.field20691));
       RenderUtil.method11474(
-         (float)this.xA, (float)this.yA + 3.0F * this.field20691, (float)this.widthA, (float)this.heightA, 8.0F, -986896
-      );
+            (float) this.xA, (float) this.yA + 3.0F * this.field20691, (float) this.widthA, (float) this.heightA, 8.0F,
+            -986896);
       TrueTypeFont var4 = ResourceRegistry.JelloLightFont20;
       if (this.field20912.contains("Lock")) {
          RenderUtil.method11438(
-            (float)(this.xA + 14),
-            (float)(this.yA + 11) + 3.0F * this.field20691,
-            10.0F,
-            MultiUtilities.applyAlpha(ClientColors.DARK_SLATE_GREY.getColor, this.field20691)
-         );
+               (float) (this.xA + 14),
+               (float) (this.yA + 11) + 3.0F * this.field20691,
+               10.0F,
+               MultiUtilities.applyAlpha(ClientColors.DARK_SLATE_GREY.getColor(), this.field20691));
       }
 
       if (!this.field20912.equals("Return")) {
@@ -70,98 +69,95 @@ public class Class4268 extends Class4247 {
                      }
 
                      RenderUtil.drawString(
-                        var4,
-                        (float)(this.xA + (this.widthA - var4.getStringWidth(this.field20912)) / 2),
-                        (float)(this.yA + 19) + 3.0F * this.field20691,
-                        this.field20912,
-                        MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F + (!this.field20693 ? 0.0F : 0.2F))
-                     );
+                           var4,
+                           (float) (this.xA + (this.widthA - var4.getStringWidth(this.field20912)) / 2),
+                           (float) (this.yA + 19) + 3.0F * this.field20691,
+                           this.field20912,
+                           MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(),
+                                 0.4F + (!this.field20693 ? 0.0F : 0.2F)));
                   }
                } else {
                   int var5 = this.xA + 25;
-                  int var6 = this.yA + 25 + (int)(3.0F * this.field20691);
+                  int var6 = this.yA + 25 + (int) (3.0F * this.field20691);
                   RenderUtil.method11428(
-                     (float)var5,
-                     (float)var6,
-                     (float)(var5 + 14),
-                     (float)(var6 + 3),
-                     MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
-                  );
+                        (float) var5,
+                        (float) var6,
+                        (float) (var5 + 14),
+                        (float) (var6 + 3),
+                        MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(),
+                              0.3F + (!this.field20693 ? 0.0F : 0.2F)));
                   RenderUtil.drawRect(
-                     (float)var5,
-                     (float)(var6 + 4),
-                     (float)(var5 + 14),
-                     (float)(var6 + 7),
-                     MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
-                  );
+                        (float) var5,
+                        (float) (var6 + 4),
+                        (float) (var5 + 14),
+                        (float) (var6 + 7),
+                        MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(),
+                              0.3F + (!this.field20693 ? 0.0F : 0.2F)));
                   RenderUtil.method11428(
-                     (float)var5,
-                     (float)(var6 + 8),
-                     (float)(var5 + 14),
-                     (float)(var6 + 11),
-                     MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
-                  );
+                        (float) var5,
+                        (float) (var6 + 8),
+                        (float) (var5 + 14),
+                        (float) (var6 + 11),
+                        MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(),
+                              0.3F + (!this.field20693 ? 0.0F : 0.2F)));
                   RenderUtil.method11428(
-                     (float)var5,
-                     (float)(var6 + 12),
-                     (float)(var5 + 14),
-                     (float)(var6 + 15),
-                     MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
-                  );
+                        (float) var5,
+                        (float) (var6 + 12),
+                        (float) (var5 + 14),
+                        (float) (var6 + 15),
+                        MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(),
+                              0.3F + (!this.field20693 ? 0.0F : 0.2F)));
                }
             } else {
                int var7 = this.xA + 32;
-               int var10 = this.yA + 32 + (int)(3.0F * this.field20691);
+               int var10 = this.yA + 32 + (int) (3.0F * this.field20691);
                RenderUtil.method11438(
-                  (float)var7, (float)var10, 14.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
-               );
+                     (float) var7, (float) var10, 14.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(),
+                           0.3F + (!this.field20693 ? 0.0F : 0.2F)));
             }
          } else {
             int var8 = this.xA + 43;
-            int var11 = this.yA + 33 + (int)(3.0F * this.field20691);
+            int var11 = this.yA + 33 + (int) (3.0F * this.field20691);
             RenderUtil.method11434(
-               (float)var8,
-               (float)var11,
-               (float)(var8 + 6),
-               (float)(var11 - 3),
-               (float)(var8 + 6),
-               (float)(var11 + 3),
-               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
-            );
+                  (float) var8,
+                  (float) var11,
+                  (float) (var8 + 6),
+                  (float) (var11 - 3),
+                  (float) (var8 + 6),
+                  (float) (var11 + 3),
+                  MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(),
+                        0.3F + (!this.field20693 ? 0.0F : 0.2F)));
             RenderUtil.drawRect(
-               (float)(var8 + 6),
-               (float)(var11 - 1),
-               (float)(var8 + 27),
-               (float)(var11 + 1),
-               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
-            );
+                  (float) (var8 + 6),
+                  (float) (var11 - 1),
+                  (float) (var8 + 27),
+                  (float) (var11 + 1),
+                  MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(),
+                        0.3F + (!this.field20693 ? 0.0F : 0.2F)));
          }
       } else {
          int var9 = this.xA + 50;
-         int var12 = this.yA + 33 + (int)(3.0F * this.field20691);
+         int var12 = this.yA + 33 + (int) (3.0F * this.field20691);
          RenderUtil.method11434(
-            (float)var9,
-            (float)var12,
-            (float)(var9 + 6),
-            (float)(var12 - 3),
-            (float)(var9 + 6),
-            (float)(var12 + 3),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
-         );
+               (float) var9,
+               (float) var12,
+               (float) (var9 + 6),
+               (float) (var12 - 3),
+               (float) (var9 + 6),
+               (float) (var12 + 3),
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.3F + (!this.field20693 ? 0.0F : 0.2F)));
          RenderUtil.drawRect(
-            (float)(var9 + 6),
-            (float)(var12 - 1),
-            (float)(var9 + 27),
-            (float)(var12 + 1),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
-         );
+               (float) (var9 + 6),
+               (float) (var12 - 1),
+               (float) (var9 + 27),
+               (float) (var12 + 1),
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.3F + (!this.field20693 ? 0.0F : 0.2F)));
          RenderUtil.drawRect(
-            (float)(var9 + 25),
-            (float)(var12 - 8),
-            (float)(var9 + 27),
-            (float)(var12 - 1),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
-         );
+               (float) (var9 + 25),
+               (float) (var12 - 8),
+               (float) (var9 + 27),
+               (float) (var12 - 1),
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.3F + (!this.field20693 ? 0.0F : 0.2F)));
       }
 
       super.draw(var1);

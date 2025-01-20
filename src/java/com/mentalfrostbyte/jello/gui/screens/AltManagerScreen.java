@@ -76,19 +76,16 @@ public class AltManagerScreen extends Screen {
                         0,
                         114,
                         (int) ((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21014) - 4,
-                        Minecraft.getInstance().mainWindow.getHeight() - 119 - this.field21016
-                )
-        );
+                        Minecraft.getInstance().mainWindow.getHeight() - 119 - this.field21016));
         this.addToList(
                 this.field21011 = new Class4339(
                         this,
                         "altView",
                         (int) ((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21014),
                         114,
-                        (int) ((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21015) - this.field21016,
-                        Minecraft.getInstance().mainWindow.getHeight() - 119 - this.field21016
-                )
-        );
+                        (int) ((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21015)
+                                - this.field21016,
+                        Minecraft.getInstance().mainWindow.getHeight() - 119 - this.field21016));
         this.field21010.method13300(false);
         this.field21011.method13300(false);
         this.field21010.method13515(false);
@@ -97,35 +94,31 @@ public class AltManagerScreen extends Screen {
                         this.field21017 = new Class4298(
                                 this.field21011,
                                 "",
-                                (int) (
-                                        (float) Minecraft.getInstance().mainWindow.getWidth() * this.field21015
-                                                - (float) ((int) ((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21015))
-                                )
+                                (int) ((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21015
+                                        - (float) ((int) ((float) Minecraft.getInstance().mainWindow.getWidth()
+                                                * this.field21015)))
                                         / 2
                                         - 10,
                                 Minecraft.getInstance().mainWindow.getHeight() / 12,
                                 (int) ((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21015),
                                 350,
-                                "steve"
-                        )
-                );
+                                "steve"));
         this.field21011
                 .addToList(
                         this.field21018 = new Class4296(
                                 this.field21011,
                                 "info",
-                                (int) (
-                                        (float) Minecraft.getInstance().mainWindow.getWidth() * this.field21015
-                                                - (float) ((int) ((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21015))
-                                )
+                                (int) ((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21015
+                                        - (float) ((int) ((float) Minecraft.getInstance().mainWindow.getWidth()
+                                                * this.field21015)))
                                         / 2
                                         - 10,
                                 this.method13374(),
                                 (int) ((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21015),
-                                500
-                        )
-                );
-        Class4363 var9 = new Class4363(this, "drop", (int) ((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21014) - 220, 44, 200, 32, var3, 0);
+                                500));
+        Class4363 var9 = new Class4363(this, "drop",
+                (int) ((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21014) - 220, 44, 200, 32,
+                var3, 0);
         var9.method13643(var4, 1);
         var9.method13656(2);
         this.addToList(var9);
@@ -161,12 +154,11 @@ public class AltManagerScreen extends Screen {
                         UIInput.field20741,
                         "",
                         "Search...",
-                        ResourceRegistry.JelloLightFont18
-                )
-        );
+                        ResourceRegistry.JelloLightFont18));
         this.field21026.setFont(ResourceRegistry.JelloLightFont18);
         this.field21026.method13151(var1 -> this.method13372(false));
-        this.addToList(this.field21022 = new UIButton(this, "btnt", this.getWidthA() - 90, 43, 70, 30, ColorHelper.field27961, "Add +", ResourceRegistry.JelloLightFont25));
+        this.addToList(this.field21022 = new UIButton(this, "btnt", this.getWidthA() - 90, 43, 70, 30,
+                ColorHelper.field27961, "Add +", ResourceRegistry.JelloLightFont25));
         this.field21010.method13242();
         this.field21022.doThis((var1, var2) -> {
             if (this.method13369()) {
@@ -186,9 +178,7 @@ public class AltManagerScreen extends Screen {
                                 (100 + this.field21016 / 2) * this.method13370(),
                                 this.field21010.getWidthA() - this.field21016 * 2 + 4,
                                 100,
-                                var1
-                        )
-                );
+                                var1));
         if (!var2) {
             var5.field20805 = new Animation(0, 0);
         }
@@ -260,17 +250,20 @@ public class AltManagerScreen extends Screen {
         MiniAlert var7 = new MiniAlert(AlertType.SEKONDLINE, "Password", 50);
         MiniAlert var8 = new MiniAlert(AlertType.TEXTBOX, "", 15);
         MiniAlert var9 = new MiniAlert(AlertType.BUTTON, "Add alt", 50);
-        this.addToList(this.field21012 = new AlertPanel(this, "Testt", true, "Add Alt", var3, var4, var5, var6, var7, var8, var9));
+        this.addToList(this.field21012 = new AlertPanel(this, "Testt", true, "Add Alt", var3, var4, var5, var6, var7,
+                var8, var9));
         this.field21012.method13036(var1 -> {
             if (!this.field21012.method13600().get("Email").contains(":")) {
-                Account var11 = new Account(this.field21012.method13600().get("Email"), this.field21012.method13600().get("Password"));
+                Account var11 = new Account(this.field21012.method13600().get("Email"),
+                        this.field21012.method13600().get("Password"));
                 if (!this.accountManager.containsAccount(var11)) {
                     this.accountManager.updateAccount(var11);
                 }
 
                 this.method13372(false);
             } else {
-                String[] var4x = this.field21012.method13600().get("Email").replace("\r", "\n").replace("\n\n", "\n").split("\n");
+                String[] var4x = this.field21012.method13600().get("Email").replace("\r", "\n").replace("\n\n", "\n")
+                        .split("\n");
 
                 for (String var8x : var4x) {
                     String[] var9x = var8x.split(":");
@@ -303,8 +296,7 @@ public class AltManagerScreen extends Screen {
                 114,
                 (int) ((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21015) - this.field21016,
                 Minecraft.getInstance().mainWindow.getHeight() - 119 - this.field21016,
-                ClientColors.LIGHT_GREYISH_BLUE.getColor
-        );
+                ClientColors.LIGHT_GREYISH_BLUE.getColor());
         this.emptyMethod();
         this.method13367();
         this.drawTitle();
@@ -320,9 +312,10 @@ public class AltManagerScreen extends Screen {
     private void drawTitle() {
         int var3 = this.xA + this.field21016;
         int var4 = this.yA + this.field21016;
-        int var5 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F);
+        int var5 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.8F);
         RenderUtil.drawString(ResourceRegistry.JelloLightFont40, (float) var3, (float) var4, "Jello", var5);
-        RenderUtil.drawString(ResourceRegistry.JelloLightFont25, (float) (var3 + 87), (float) (var4 + 15), "Alt Manager", var5);
+        RenderUtil.drawString(ResourceRegistry.JelloLightFont25, (float) (var3 + 87), (float) (var4 + 15),
+                "Alt Manager", var5);
     }
 
     private void method13367() {
@@ -333,7 +326,8 @@ public class AltManagerScreen extends Screen {
                 for (CustomGuiScreen var7 : var5.method13241()) {
                     if (var7 instanceof Class4294) {
                         Class4294 var8 = (Class4294) var7;
-                        if (var7.getYA() <= Minecraft.getInstance().mainWindow.getHeight() && this.field21010.method13513() == 0) {
+                        if (var7.getYA() <= Minecraft.getInstance().mainWindow.getHeight()
+                                && this.field21010.method13513() == 0) {
                             if (var3 > 0.2F) {
                                 var8.field20805.changeDirection(Direction.FORWARDS);
                             }
@@ -405,7 +399,8 @@ public class AltManagerScreen extends Screen {
 
         float var5 = var4 - this.field21006;
         float var6 = (float) (var3 - this.field21005);
-        RenderUtil.method11455((float) this.field21005, this.field21006, (float) (this.getWidthA() * 2), (float) (this.getHeightA() + 114), ResourceList.panoramaPNG);
+        RenderUtil.method11455((float) this.field21005, this.field21006, (float) (this.getWidthA() * 2),
+                (float) (this.getHeightA() + 114), ResourceList.panoramaPNG);
         float var7 = 0.5F;
         if (var4 != this.field21006) {
             this.field21006 += var5 * var7;
@@ -415,7 +410,8 @@ public class AltManagerScreen extends Screen {
             this.field21005 = (int) ((float) this.field21005 + var6 * var7);
         }
 
-        RenderUtil.drawRect(0.0F, 0.0F, (float) this.getWidthA(), (float) this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.95F));
+        RenderUtil.drawRect(0.0F, 0.0F, (float) this.getWidthA(), (float) this.getHeightA(),
+                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.95F));
     }
 
     @Override
@@ -446,7 +442,8 @@ public class AltManagerScreen extends Screen {
     }
 
     public void method13372(boolean var1) {
-        List<Account> var5 = Class8270.method28878(this.accountManager.getAccounts(), this.field21023, this.field21024, this.field21026.getTypedText());
+        List<Account> var5 = Class8270.method28878(this.accountManager.getAccounts(), this.field21023, this.field21024,
+                this.field21026.getTypedText());
         this.method13222(new Class1428(this, this, var5, var1));
     }
 
@@ -454,7 +451,8 @@ public class AltManagerScreen extends Screen {
     }
 
     public int method13374() {
-        return Minecraft.getInstance().mainWindow.getHeight() / 12 + 280 + Minecraft.getInstance().mainWindow.getHeight() / 12;
+        return Minecraft.getInstance().mainWindow.getHeight() / 12 + 280
+                + Minecraft.getInstance().mainWindow.getHeight() / 12;
     }
 
     // $VF: synthetic method

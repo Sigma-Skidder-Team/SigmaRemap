@@ -44,15 +44,18 @@ public class Nametags extends Module {
                     int y = Math.round(vec.y);
                     GL11.glPushMatrix();
                     GL11.glTranslatef((float) (-width / 2), -nameBoxHeight, 0.0F);
-                    RenderUtil.renderBackgroundBox((float) x, (float) y, (float) width, 20.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
-                    RenderUtil.drawString(ResourceList.bold16, (float) (x + 3), (float) y, name, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
-                    RenderUtil.drawString(ResourceList.bold16, (float) (x + 3), (float) (y - 1), name, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                    RenderUtil.renderBackgroundBox((float) x, (float) y, (float) width, 20.0F,
+                            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.5F));
+                    RenderUtil.drawString(ResourceList.bold16, (float) (x + 3), (float) y, name,
+                            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.5F));
+                    RenderUtil.drawString(ResourceList.bold16, (float) (x + 3), (float) (y - 1), name,
+                            ClientColors.LIGHT_GREYISH_BLUE.getColor());
                     GL11.glPopMatrix();
                     List<ItemStack> validStacks = InvManagerUtils.getValidStacks(player);
                     if (!validStacks.isEmpty()) {
-                        int totalWidth  = itemStackHeight * validStacks.size();
+                        int totalWidth = itemStackHeight * validStacks.size();
                         GL11.glPushMatrix();
-                        GL11.glTranslatef((float) (-totalWidth  / 2), -nameBoxHeight - itemStackHeight - 2, 0.0F);
+                        GL11.glTranslatef((float) (-totalWidth / 2), -nameBoxHeight - itemStackHeight - 2, 0.0F);
                         GL11.glPopMatrix();
                     }
                 }
@@ -69,10 +72,12 @@ public class Nametags extends Module {
                 if (entity instanceof PlayerEntity && !(entity instanceof ClientPlayerEntity)) {
                     PlayerEntity plr = (PlayerEntity) entity;
                     Vector3D_ relativePosition = PositionUtils.getRelativePosition(plr);
-                    double[] screenCords = RenderUtil.worldToScreen(relativePosition.x, relativePosition.y + (double) plr.getHeight() + 0.3F, relativePosition.z);
+                    double[] screenCords = RenderUtil.worldToScreen(relativePosition.x,
+                            relativePosition.y + (double) plr.getHeight() + 0.3F, relativePosition.z);
 
                     if (screenCords != null && screenCords[2] >= 0.0 && screenCords[2] < 1.0) {
-                        this.playerScreenPositions.put(plr, new Vector2f((float) screenCords[0], (float) screenCords[1]));
+                        this.playerScreenPositions.put(plr,
+                                new Vector2f((float) screenCords[0], (float) screenCords[1]));
                     }
                 }
             }

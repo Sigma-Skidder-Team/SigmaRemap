@@ -18,11 +18,11 @@ public class ColorHelper {
    }
 
    public ColorHelper(int var1, int var2) {
-      this(var1, var2, ClientColors.DEEP_TEAL.getColor);
+      this(var1, var2, ClientColors.DEEP_TEAL.getColor());
    }
 
    public ColorHelper(int var1, int var2, int var3) {
-      this(var1, var2, var3, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+      this(var1, var2, var3, ClientColors.LIGHT_GREYISH_BLUE.getColor());
    }
 
    public ColorHelper(int var1, int var2, int var3, int var4) {
@@ -97,6 +97,7 @@ public class ColorHelper {
    }
 
    public ColorHelper method19415() {
-      return new ColorHelper(this.field27962, this.field27963, this.field27964, this.field27965, this.field27966, this.field27967);
+      return new ColorHelper(this.field27962, this.field27963, this.field27964, this.field27965, this.field27966,
+            this.field27967);
    }
 }

@@ -139,7 +139,7 @@ public class Class4340 extends Class4339 {
             26.0F,
             ResourceList.trashcanPNG,
             MultiUtilities.applyAlpha(
-                  !this.field21212 ? ClientColors.DEEP_TEAL.getColor : ClientColors.PALE_YELLOW.getColor,
+                  !this.field21212 ? ClientColors.DEEP_TEAL.getColor() : ClientColors.PALE_YELLOW.getColor(),
                   this.field21211.calcPercent() * 0.5F),
             false);
    }

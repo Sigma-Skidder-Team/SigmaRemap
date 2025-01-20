@@ -100,7 +100,7 @@ public class KeyStrokes extends Module {
                                 (float) (this.field23586 + var21.field42636),
                                 (float) (this.field23585 + var21.field42635 + var23.field42635),
                                 (float) (this.field23586 + var21.field42636 + var23.field42636),
-                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * var10));
+                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.5F * var10));
                         RenderUtil.drawRoundedRect(
                                 (float) (this.field23585 + var21.field42635),
                                 (float) (this.field23586 + var21.field42636),
@@ -115,7 +115,7 @@ public class KeyStrokes extends Module {
                                                 / 2),
                                 (float) (this.field23586 + var21.field42636 + 12),
                                 var12,
-                                ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                                ClientColors.LIGHT_GREYISH_BLUE.getColor());
                     }
 
                     Iterator var14 = this.field23587.iterator();

@@ -39,37 +39,37 @@ public class JelloMainMenuScreen extends Screen {
    private Animation field20975 = new Animation(800, 800);
    private static Texture field20976;
    public List<Class4306> field20977 = new ArrayList<Class4306>();
-   public static String[] field20978 = new String[]{
-      "Goodbye.",
-      "See you soon.",
-      "Bye!",
-      "Au revoir",
-      "See you!",
-      "Ciao!",
-      "Adios",
-      "Farewell",
-      "See you later!",
-      "Have a good day!",
-      "See you arround.",
-      "See you tomorrow!",
-      "Goodbye, friend.",
-      "Logging out.",
-      "Signing off!",
-      "Shutting down.",
-      "Was good to see you!"
+   public static String[] field20978 = new String[] {
+         "Goodbye.",
+         "See you soon.",
+         "Bye!",
+         "Au revoir",
+         "See you!",
+         "Ciao!",
+         "Adios",
+         "Farewell",
+         "See you later!",
+         "Have a good day!",
+         "See you arround.",
+         "See you tomorrow!",
+         "Goodbye, friend.",
+         "Logging out.",
+         "Signing off!",
+         "Shutting down.",
+         "Was good to see you!"
    };
-   public static String[] field20979 = new String[]{
-      "The two hardest things to say in life are hello for the first time and goodbye for the last.",
-      "Don’t cry because it’s over, smile because it happened.",
-      "It’s time to say goodbye, but I think goodbyes are sad and I’d much rather say hello. Hello to a new adventure.",
-      "We’ll meet again, Don’t know where, don’t know when, But I know we’ll meet again, some sunny day.",
-      "This is not a goodbye but a 'see you soon'.",
-      "You are my hardest goodbye.",
-      "Goodbyes are not forever, are not the end; it simply means I’ll miss you until we meet again.",
-      "Good friends never say goodbye. They simply say \"See you soon\".",
-      "Every goodbye always makes the next hello closer.",
-      "Where's the good in goodbye?",
-      "And I'm sorry, so sorry. But, I have to say goodbye."
+   public static String[] field20979 = new String[] {
+         "The two hardest things to say in life are hello for the first time and goodbye for the last.",
+         "Don’t cry because it’s over, smile because it happened.",
+         "It’s time to say goodbye, but I think goodbyes are sad and I’d much rather say hello. Hello to a new adventure.",
+         "We’ll meet again, Don’t know where, don’t know when, But I know we’ll meet again, some sunny day.",
+         "This is not a goodbye but a 'see you soon'.",
+         "You are my hardest goodbye.",
+         "Goodbyes are not forever, are not the end; it simply means I’ll miss you until we meet again.",
+         "Good friends never say goodbye. They simply say \"See you soon\".",
+         "Every goodbye always makes the next hello closer.",
+         "Where's the good in goodbye?",
+         "And I'm sorry, so sorry. But, I have to say goodbye."
    };
    public static String field20980;
    public static String field20981;
@@ -82,7 +82,8 @@ public class JelloMainMenuScreen extends Screen {
       this.method13300(false);
       field20965 = System.nanoTime();
       if (field20976 == null) {
-         field20976 = ResourceList.createScaledAndProcessedTexture2("com/mentalfrostbyte/gui/resources/background/panorama5.png", 0.075F, 8);
+         field20976 = ResourceList.createScaledAndProcessedTexture2(
+               "com/mentalfrostbyte/gui/resources/background/panorama5.png", 0.075F, 8);
       }
 
       this.field20974.changeDirection(Direction.BACKWARDS);
@@ -153,30 +154,30 @@ public class JelloMainMenuScreen extends Screen {
       this.field20969.method13279(1.0F - var5, 1.0F - var5);
       this.field20969.method13296(this.field20972.calcPercent() == 0.0F);
       long var6 = System.nanoTime() - field20965;
-      field20982 = Math.min(10.0F, Math.max(0.0F, (float)var6 / 1.810361E7F / 2.0F));
+      field20982 = Math.min(10.0F, Math.max(0.0F, (float) var6 / 1.810361E7F / 2.0F));
       field20965 = System.nanoTime();
       int var8 = -this.getHeightO();
-      float var9 = (float)this.getWidthO() / (float)this.getWidthA() * -114.0F;
+      float var9 = (float) this.getWidthO() / (float) this.getWidthA() * -114.0F;
       if (this.field20968) {
-         this.field20966 = (int)var9;
+         this.field20966 = (int) var9;
          this.field20967 = var8;
          this.field20968 = false;
       }
 
-      float var10 = var9 - (float)this.field20966;
-      float var11 = (float)(var8 - this.field20967);
+      float var10 = var9 - (float) this.field20966;
+      float var11 = (float) (var8 - this.field20967);
       if (Minecraft.getInstance().loadingGui != null) {
-         if (var9 != (float)this.field20966) {
-            this.field20966 = (int)((float)this.field20966 + var10 * field20982);
+         if (var9 != (float) this.field20966) {
+            this.field20966 = (int) ((float) this.field20966 + var10 * field20982);
          }
 
          if (var8 != this.field20967) {
-            this.field20967 = (int)((float)this.field20967 + var11 * field20982);
+            this.field20967 = (int) ((float) this.field20967 + var11 * field20982);
          }
       } else {
          this.field20974.changeDirection(Direction.FORWARDS);
          this.field20975.changeDirection(Direction.FORWARDS);
-         float var12 = 0.5F - (float)this.field20967 / (float) Minecraft.getInstance().mainWindow.getWidth() * -1.0F;
+         float var12 = 0.5F - (float) this.field20967 / (float) Minecraft.getInstance().mainWindow.getWidth() * -1.0F;
          float var13 = 1.0F - this.field20974.calcPercent();
          float var14 = 1.0F - this.field20975.calcPercent();
          float var15 = var14 * var14;
@@ -184,24 +185,22 @@ public class JelloMainMenuScreen extends Screen {
             var15 = 0.0F;
          }
 
-         float var16 = (float)this.getWidthA() / 1920.0F;
-         int var17 = (int)(600.0F * var16);
-         int var18 = (int)(450.0F * var16);
+         float var16 = (float) this.getWidthA() / 1920.0F;
+         int var17 = (int) (600.0F * var16);
+         int var18 = (int) (450.0F * var16);
          byte var19 = 0;
          RenderUtil.method11455(
-            (float)this.field20967 - (float)var17 * var12,
-            (float)this.field20966,
-            (float)(this.getWidthA() * 2 + var17),
-            (float)(this.getHeightA() + 114),
-            ResourceList.backgroundPNG
-         );
+               (float) this.field20967 - (float) var17 * var12,
+               (float) this.field20966,
+               (float) (this.getWidthA() * 2 + var17),
+               (float) (this.getHeightA() + 114),
+               ResourceList.backgroundPNG);
          RenderUtil.method11455(
-            (float)this.field20967 - (float)var18 * var12,
-            (float)this.field20966,
-            (float)(this.getWidthA() * 2 + var18),
-            (float)(this.getHeightA() + 114),
-            ResourceList.middlePNG
-         );
+               (float) this.field20967 - (float) var18 * var12,
+               (float) this.field20966,
+               (float) (this.getWidthA() * 2 + var18),
+               (float) (this.getHeightA() + 114),
+               ResourceList.middlePNG);
 
          for (CustomGuiScreen var21 : this.field20977) {
             GL11.glPushMatrix();
@@ -210,12 +209,11 @@ public class JelloMainMenuScreen extends Screen {
          }
 
          RenderUtil.method11455(
-            (float)this.field20967 - (float)var19 * var12,
-            (float)this.field20966,
-            (float)(this.getWidthA() * 2 + var19),
-            (float)(this.getHeightA() + 114),
-            ResourceList.foregroundPNG
-         );
+               (float) this.field20967 - (float) var19 * var12,
+               (float) this.field20966,
+               (float) (this.getWidthA() * 2 + var19),
+               (float) (this.getHeightA() + 114),
+               ResourceList.foregroundPNG);
          Texture var26 = ResourceList.logoLargePNG;
          int var28 = var26.getImageWidth();
          int var22 = var26.getImageHeight();
@@ -224,17 +222,16 @@ public class JelloMainMenuScreen extends Screen {
          }
 
          RenderUtil.method11450(
-            (float)this.field20967,
-            (float)(this.field20966 - 50),
-            (float)(this.getWidthA() * 2),
-            (float)(this.getHeightA() + 200),
-            field20976,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4),
-            false
-         );
+               (float) this.field20967,
+               (float) (this.field20966 - 50),
+               (float) (this.getWidthA() * 2),
+               (float) (this.getHeightA() + 200),
+               field20976,
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var4),
+               false);
          RenderUtil.renderBackgroundBox(
-            0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.3F)
-         );
+               0.0F, 0.0F, (float) this.getWidthA(), (float) this.getHeightA(),
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), var4 * 0.3F));
 
          for (CustomGuiScreen var24 : this.method13241()) {
             if (var24.method13287()) {
@@ -259,34 +256,33 @@ public class JelloMainMenuScreen extends Screen {
          field20982 *= 0.7F;
          field20982 = Math.min(field20982, 1.0F);
          if (!this.field20968 && (var14 == 0.0F || this.field20966 != 0 || this.field20967 != 0)) {
-            if (var9 != (float)this.field20966) {
-               this.field20966 = (int)((float)this.field20966 + var10 * field20982);
+            if (var9 != (float) this.field20966) {
+               this.field20966 = (int) ((float) this.field20966 + var10 * field20982);
             }
 
             if (var8 != this.field20967) {
-               this.field20967 = (int)((float)this.field20967 + var11 * field20982);
+               this.field20967 = (int) ((float) this.field20967 + var11 * field20982);
             }
          }
 
          if (this.field20973.getDirection() == Direction.FORWARDS) {
             RenderUtil.method11440(
-               ResourceRegistry.JelloMediumFont50,
-               (float)(this.widthA / 2),
-               (float)(this.heightA / 2 - 30),
-               field20980,
-               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent()),
-               Class2218.field14492,
-               Class2218.field14492
-            );
+                  ResourceRegistry.JelloMediumFont50,
+                  (float) (this.widthA / 2),
+                  (float) (this.heightA / 2 - 30),
+                  field20980,
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), this.field20973.calcPercent()),
+                  Class2218.field14492,
+                  Class2218.field14492);
             RenderUtil.method11440(
-               ResourceRegistry.JelloLightFont18,
-               (float)(this.widthA / 2),
-               (float)(this.heightA / 2 + 30),
-               "\"" + field20981 + "\"",
-               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent() * 0.5F),
-               Class2218.field14492,
-               Class2218.field14492
-            );
+                  ResourceRegistry.JelloLightFont18,
+                  (float) (this.widthA / 2),
+                  (float) (this.heightA / 2 + 30),
+                  "\"" + field20981 + "\"",
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+                        this.field20973.calcPercent() * 0.5F),
+                  Class2218.field14492,
+                  Class2218.field14492);
          }
       }
    }
@@ -306,12 +302,13 @@ public class JelloMainMenuScreen extends Screen {
             var3.add(new MiniAlert(AlertType.HEADER, "Agora", 45));
             var3.add(new MiniAlert(AlertType.FIRSTLINE, "Agora is not yet available...", 35));
             var3.add(new MiniAlert(AlertType.BUTTON, "Ok", 55));
-            this.method13233(this.field20983 = new AlertPanel(this, "music", true, "Dependencies.", var3.toArray(new MiniAlert[0])));
+            this.method13233(this.field20983 = new AlertPanel(this, "music", true, "Dependencies.",
+                  var3.toArray(new MiniAlert[0])));
             this.field20983.method13604(var1 -> new Thread(() -> {
-                this.method13222(() -> {
-                   this.method13236(this.field20983);
-                   this.field20983 = null;
-                });
+               this.method13222(() -> {
+                  this.method13236(this.field20983);
+                  this.field20983 = null;
+               });
             }).start());
             this.field20983.method13603(true);
          });
@@ -325,17 +322,18 @@ public class JelloMainMenuScreen extends Screen {
             alert.add(new MiniAlert(AlertType.HEADER, "Logout", 45));
             alert.add(new MiniAlert(AlertType.FIRSTLINE, "Are you sure?", 35));
             alert.add(new MiniAlert(AlertType.BUTTON, "Yes", 55));
-            this.method13233(this.alertPanel = new AlertPanel(this, "music", true, "Dependencies.", alert.toArray(new MiniAlert[0])));
+            this.method13233(this.alertPanel = new AlertPanel(this, "music", true, "Dependencies.",
+                  alert.toArray(new MiniAlert[0])));
             this.alertPanel.method13604(var1 -> new Thread(() -> {
-                this.method13222(() -> {
-                   this.method13236(this.alertPanel);
-                   this.alertPanel = null;
+               this.method13222(() -> {
+                  this.method13236(this.alertPanel);
+                  this.alertPanel = null;
 
-                   NetworkManager.premium = false;
-                   Client.getInstance().getDRPC().smallImageKey = null;
-                   Client.getInstance().getDRPC().smallImageText = null;
-                   DiscordRPC.INSTANCE.Discord_UpdatePresence(Client.getInstance().getDRPC());
-                });
+                  NetworkManager.premium = false;
+                  Client.getInstance().getDRPC().smallImageKey = null;
+                  Client.getInstance().getDRPC().smallImageText = null;
+                  DiscordRPC.INSTANCE.Discord_UpdatePresence(Client.getInstance().getDRPC());
+               });
             }).start());
             this.alertPanel.method13603(true);
          });
@@ -345,9 +343,9 @@ public class JelloMainMenuScreen extends Screen {
    static {
       Locale var4 = Locale.getDefault(Category.DISPLAY);
       if (var4 == Locale.FRANCE || var4 == Locale.FRENCH) {
-         field20979 = (String[])ArrayUtils.addAll(
-            field20979, new String[]{"Mon salut jamais dans la fuite, avant d'm'éteindre, faut m'débrancher", "Prêt à partir pour mon honneur"}
-         );
+         field20979 = (String[]) ArrayUtils.addAll(
+               field20979, new String[] { "Mon salut jamais dans la fuite, avant d'm'éteindre, faut m'débrancher",
+                     "Prêt à partir pour mon honneur" });
       }
 
       field20980 = field20978[new Random().nextInt(field20978.length)];

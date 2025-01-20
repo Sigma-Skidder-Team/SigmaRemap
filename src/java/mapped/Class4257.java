@@ -16,7 +16,8 @@ public class Class4257 extends Class4247 {
 
    public Class4257(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
       super(var1, var2, var3, var4, var5, var6, var7);
-      this.addToList(this.field20639 = new UIInput(this, "search", 50, 0, var5 - 60, var6 - 2, UIInput.field20741, "", "Search..."));
+      this.addToList(this.field20639 = new UIInput(this, "search", 50, 0, var5 - 60, var6 - 2, UIInput.field20741, "",
+            "Search..."));
       this.field20639.method13156(false);
       this.field20639.method13151(var1x -> this.field20640 = this.field20639.getTypedText());
    }
@@ -26,50 +27,45 @@ public class Class4257 extends Class4247 {
       this.field20639.method13145(true);
       byte var4 = 10;
       RenderUtil.drawRoundedRect(
-         (float)(this.xA + var4 / 2),
-         (float)(this.yA + var4 / 2),
-         (float)(this.widthA - var4),
-         (float)(this.heightA - var4),
-         9.0F,
-         var1 * 0.9F
-      );
+            (float) (this.xA + var4 / 2),
+            (float) (this.yA + var4 / 2),
+            (float) (this.widthA - var4),
+            (float) (this.heightA - var4),
+            9.0F,
+            var1 * 0.9F);
       RenderUtil.drawRoundedRect(
-         (float)(this.xA + var4 / 2),
-         (float)(this.yA + var4 / 2),
-         (float)(this.widthA - var4),
-         (float)(this.heightA - var4),
-         30.0F,
-         var1 * 0.4F
-      );
+            (float) (this.xA + var4 / 2),
+            (float) (this.yA + var4 / 2),
+            (float) (this.widthA - var4),
+            (float) (this.heightA - var4),
+            30.0F,
+            var1 * 0.4F);
       RenderUtil.drawRect(
-         (float)this.xA,
-         (float)this.yA,
-         (float)this.widthA,
-         (float)this.heightA,
-         (float)var4,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.97F)
-      );
+            (float) this.xA,
+            (float) this.yA,
+            (float) this.widthA,
+            (float) this.heightA,
+            (float) var4,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.97F));
       RenderUtil.drawImage(
-         (float)(this.xA + 20),
-         (float)(this.yA + 20),
-         20.0F,
-         20.0F,
-         ResourceList.searchPNG,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F)
-      );
+            (float) (this.xA + 20),
+            (float) (this.yA + 20),
+            20.0F,
+            20.0F,
+            ResourceList.searchPNG,
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.3F));
       ArrayList<Module> var5 = this.method13064();
-      if (!var5.isEmpty() && this.method13067(this.field20640, ((Module)var5.get(0)).getName())) {
-         String var6 = ((Module)var5.get(0)).getName();
+      if (!var5.isEmpty() && this.method13067(this.field20640, ((Module) var5.get(0)).getName())) {
+         String var6 = ((Module) var5.get(0)).getName();
          String var7 = this.field20640
-            + ((Module)var5.get(0)).getName().substring(this.field20640.length(), var6.length())
-            + (!((Module)var5.get(0)).isEnabled() ? " - Disabled" : " - Enabled");
+               + ((Module) var5.get(0)).getName().substring(this.field20640.length(), var6.length())
+               + (!((Module) var5.get(0)).isEnabled() ? " - Disabled" : " - Enabled");
          RenderUtil.drawString(
-            this.field20639.getFont(),
-            (float)(this.xA + 54),
-            (float)(this.yA + 14),
-            var7,
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.25F)
-         );
+               this.field20639.getFont(),
+               (float) (this.xA + 54),
+               (float) (this.yA + 14),
+               var7,
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.25F));
       }
 
       super.draw(var1);
@@ -96,7 +92,7 @@ public class Class4257 extends Class4247 {
       if (keyCode == 257) {
          ArrayList var4 = this.method13064();
          if (var4.size() > 0) {
-            ((Module)var4.get(0)).toggle();
+            ((Module) var4.get(0)).toggle();
          }
 
          Minecraft.getInstance().displayGuiScreen(null);

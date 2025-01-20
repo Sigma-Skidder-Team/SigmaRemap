@@ -35,44 +35,50 @@ public class Class4343 extends Class4339 implements Class4342 {
    private int method13531(CustomGuiScreen panel, Setting setting, int var3, int var4, int var5) {
       switch (Class8666.field39049[setting.getSettingType().ordinal()]) {
          case 1:
-            UITextDisplay var37 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 24, UITextDisplay.field20778, setting.getName());
-            UICheckBox var45 = new UICheckBox(panel, setting.getName() + "checkbox", panel.getWidthA() - 24 - var5, var4 + 6, 24, 24);
+            UITextDisplay var37 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 24,
+                  UITextDisplay.field20778, setting.getName());
+            UICheckBox var45 = new UICheckBox(panel, setting.getName() + "checkbox", panel.getWidthA() - 24 - var5,
+                  var4 + 6, 24, 24);
             this.field21223.put(var37, setting);
-            var45.method13705((Boolean)setting.getCurrentValue(), false);
+            var45.method13705((Boolean) setting.getCurrentValue(), false);
             setting.addObserver(var1x -> {
-               if (var45.method13703() != (Boolean)var1x.getCurrentValue()) {
-                  var45.method13705((Boolean)var1x.getCurrentValue(), false);
+               if (var45.method13703() != (Boolean) var1x.getCurrentValue()) {
+                  var45.method13705((Boolean) var1x.getCurrentValue(), false);
                }
             });
-            var45.method13036(var1x -> setting.setCurrentValue(((UICheckBox)var1x).method13703()));
+            var45.method13036(var1x -> setting.setCurrentValue(((UICheckBox) var1x).method13703()));
             var45.setSize((var1x, var2x) -> var1x.setXA(var2x.getWidthA() - 24 - var5));
             panel.addToList(var37);
             panel.addToList(var45);
             var4 += 24 + var5;
             break;
          case 2:
-            UITextDisplay var36 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 24, UITextDisplay.field20778, setting.getName());
+            UITextDisplay var36 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 24,
+                  UITextDisplay.field20778, setting.getName());
             this.field21223.put(var36, setting);
-            NumberSetting numbaSetting = (NumberSetting)setting;
-            Class4277 var47 = new Class4277(panel, setting.getName() + "slider", panel.getWidthA() - 126 - var5, var4 + 6, 126, 24);
+            NumberSetting numbaSetting = (NumberSetting) setting;
+            Class4277 var47 = new Class4277(panel, setting.getName() + "slider", panel.getWidthA() - 126 - var5,
+                  var4 + 6, 126, 24);
             var47.method13137().setFont(ResourceRegistry.JelloLightFont14);
-            var47.method13304(Float.toString((Float)setting.getCurrentValue()));
-            var47.method13140(Class4277.method13134(numbaSetting.getMin(), numbaSetting.getMax(), (Float)numbaSetting.getCurrentValue()), false);
+            var47.method13304(Float.toString((Float) setting.getCurrentValue()));
+            var47.method13140(Class4277.method13134(numbaSetting.getMin(), numbaSetting.getMax(),
+                  (Float) numbaSetting.getCurrentValue()), false);
             var47.method13143(-1.0F);
             int var13 = numbaSetting.getDecimalPlaces();
             numbaSetting.addObserver(
-               var3x -> {
-                  if (Class4277.method13135(var47.method13138(), numbaSetting.getMin(), numbaSetting.getMax(), numbaSetting.getStep(), var13)
-                     != (Float)var3x.getCurrentValue()) {
-                     var47.method13304(Float.toString((Float)var3x.getCurrentValue()));
-                     var47.method13140(Class4277.method13134(numbaSetting.getMin(), numbaSetting.getMax(), (Float)var3x.getCurrentValue()), false);
-                  }
-               }
-            );
+                  var3x -> {
+                     if (Class4277.method13135(var47.method13138(), numbaSetting.getMin(), numbaSetting.getMax(),
+                           numbaSetting.getStep(), var13) != (Float) var3x.getCurrentValue()) {
+                        var47.method13304(Float.toString((Float) var3x.getCurrentValue()));
+                        var47.method13140(Class4277.method13134(numbaSetting.getMin(), numbaSetting.getMax(),
+                              (Float) var3x.getCurrentValue()), false);
+                     }
+                  });
             var47.method13036(var4x -> {
-               float var7 = ((Class4277)var4x).method13138();
-               float var8x = Class4277.method13135(var7, numbaSetting.getMin(), numbaSetting.getMax(), numbaSetting.getStep(), var13);
-               if (var8x != (Float)setting.getCurrentValue()) {
+               float var7 = ((Class4277) var4x).method13138();
+               float var8x = Class4277.method13135(var7, numbaSetting.getMin(), numbaSetting.getMax(),
+                     numbaSetting.getStep(), var13);
+               if (var8x != (Float) setting.getCurrentValue()) {
                   var47.method13304(Float.toString(var8x));
                   setting.setCurrentValue(var8x);
                }
@@ -87,52 +93,50 @@ public class Class4343 extends Class4339 implements Class4342 {
             int var27 = 27;
             UITextDisplay var43;
             this.addToList(
-               var43 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, var27, UITextDisplay.field20778, setting.getName())
-            );
+                  var43 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, var27,
+                        UITextDisplay.field20778, setting.getName()));
             this.field21223.put(var43, setting);
             UIInput var35;
             this.addToList(
-               var35 = new UIInput(
-                  panel,
-                  setting.getName() + "txt",
-                  panel.getWidthA() - var5 - var19,
-                  var4 + var27 / 4 - 1,
-                  var19,
-                  var27,
-                  UIInput.field20741,
-                  (String)setting.getCurrentValue()
-               )
-            );
+                  var35 = new UIInput(
+                        panel,
+                        setting.getName() + "txt",
+                        panel.getWidthA() - var5 - var19,
+                        var4 + var27 / 4 - 1,
+                        var19,
+                        var27,
+                        UIInput.field20741,
+                        (String) setting.getCurrentValue()));
             var35.setFont(ResourceRegistry.JelloLightFont18);
             var35.method13151(var1x -> setting.setCurrentValue(var1x.getTypedText()));
             setting.addObserver(var2x -> {
-               if (var35.getTypedText() != ((InputSetting)setting).getCurrentValue()) {
-                  var35.method13304(((InputSetting)setting).getCurrentValue());
+               if (var35.getTypedText() != ((InputSetting) setting).getCurrentValue()) {
+                  var35.method13304(((InputSetting) setting).getCurrentValue());
                }
             });
             var4 += var27 + var5;
             break;
          case 4:
-            UITextDisplay var34 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4 + 2, this.field21222, 27, UITextDisplay.field20778, setting.getName());
+            UITextDisplay var34 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4 + 2, this.field21222,
+                  27, UITextDisplay.field20778, setting.getName());
             Class4363 var42 = new Class4363(
-               panel,
-               setting.getName() + "btn",
-               panel.getWidthA() - var5,
-               var4 + 6 - 1,
-               123,
-               27,
-               ((ModeSetting)setting).getAvailableModes(),
-               ((ModeSetting)setting).getModeIndex()
-            );
+                  panel,
+                  setting.getName() + "btn",
+                  panel.getWidthA() - var5,
+                  var4 + 6 - 1,
+                  123,
+                  27,
+                  ((ModeSetting) setting).getAvailableModes(),
+                  ((ModeSetting) setting).getModeIndex());
             this.field21223.put(var34, setting);
             setting.addObserver(var2x -> {
-               if (var42.method13655() != ((ModeSetting)setting).getModeIndex()) {
-                  var42.method13656(((ModeSetting)setting).getModeIndex());
+               if (var42.method13655() != ((ModeSetting) setting).getModeIndex()) {
+                  var42.method13656(((ModeSetting) setting).getModeIndex());
                }
             });
             var42.method13036(var2x -> {
-               ((ModeSetting)setting).setModeByIndex(((Class4363)var2x).method13655());
-               var42.method13656(((ModeSetting)setting).getModeIndex());
+               ((ModeSetting) setting).setModeByIndex(((Class4363) var2x).method13655());
+               var42.method13656(((ModeSetting) setting).getModeIndex());
             });
             var42.setSize((var2x, var3x) -> var2x.setXA(panel.getWidthA() - 123 - var5));
             panel.addToList(var34);
@@ -142,10 +146,11 @@ public class Class4343 extends Class4339 implements Class4342 {
          default:
             break;
          case 6:
-            CustomGuiScreen var17 = new CustomGuiScreen(panel, setting.getName() + "view", var3, var4, panel.getWidthA(), 0);
+            CustomGuiScreen var17 = new CustomGuiScreen(panel, setting.getName() + "view", var3, var4,
+                  panel.getWidthA(), 0);
             int var25 = 0;
 
-            for (Setting var41 : ((SubOptionSetting)setting).getSubSettings()) {
+            for (Setting var41 : ((SubOptionSetting) setting).getSubSettings()) {
                var25 = this.method13531(var17, var41, 0, var25, var5);
             }
 
@@ -155,34 +160,35 @@ public class Class4343 extends Class4339 implements Class4342 {
             var4 += var17.getHeightA() + var5;
             break;
          case 7:
-            UITextDisplay var32 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 27, UITextDisplay.field20778, setting.getName());
+            UITextDisplay var32 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 27,
+                  UITextDisplay.field20778, setting.getName());
             Class4377 var40 = new Class4377(
-               panel, setting.getName() + "btn", panel.getWidthA() - var5, var4 + 6, 123, 27, ((TextBoxSetting)setting).getOptions(), (Integer)setting.getCurrentValue()
-            );
+                  panel, setting.getName() + "btn", panel.getWidthA() - var5, var4 + 6, 123, 27,
+                  ((TextBoxSetting) setting).getOptions(), (Integer) setting.getCurrentValue());
             this.field21223.put(var32, setting);
             setting.addObserver(var1x -> {
-               if (var40.method13720() != (Integer)var1x.getCurrentValue()) {
-                  var40.method13722((Integer)var1x.getCurrentValue(), false);
+               if (var40.method13720() != (Integer) var1x.getCurrentValue()) {
+                  var40.method13722((Integer) var1x.getCurrentValue(), false);
                }
             });
-            var40.method13036(var1x -> setting.setCurrentValue(((Class4377)var1x).method13720()));
+            var40.method13036(var1x -> setting.setCurrentValue(((Class4377) var1x).method13720()));
             var40.setSize((var2x, var3x) -> var2x.setXA(panel.getWidthA() - 123 - var5));
             panel.addToList(var32);
             panel.addToList(var40);
             var4 += 27 + var5;
             break;
          case 8:
-            UITextDisplay var31 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 200, UITextDisplay.field20778, setting.getName());
+            UITextDisplay var31 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 200,
+                  UITextDisplay.field20778, setting.getName());
             Class4258 var39 = new Class4258(
-               panel,
-               setting.getName() + "picker",
-               panel.getWidthA() - var5,
-               var4 + 5,
-               175,
-               200,
-               ((BooleanListSetting)setting).isEnabled(),
-               ((BooleanListSetting)setting).getCurrentValue().<String>toArray(new String[0])
-            );
+                  panel,
+                  setting.getName() + "picker",
+                  panel.getWidthA() - var5,
+                  var4 + 5,
+                  175,
+                  200,
+                  ((BooleanListSetting) setting).isEnabled(),
+                  ((BooleanListSetting) setting).getCurrentValue().<String>toArray(new String[0]));
             this.field21223.put(var31, setting);
             var39.method13036(var2x -> setting.setCurrentValue(var39.method13072()));
             var39.setSize((var2x, var3x) -> var2x.setXA(panel.getWidthA() - 175 - var5));
@@ -191,48 +197,49 @@ public class Class4343 extends Class4339 implements Class4342 {
             var4 += 200 + var5;
             break;
          case 9:
-            ColorSetting var30 = (ColorSetting)setting;
-            UITextDisplay var38 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 24, UITextDisplay.field20778, setting.getName());
+            ColorSetting var30 = (ColorSetting) setting;
+            UITextDisplay var38 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 24,
+                  UITextDisplay.field20778, setting.getName());
             Class4252 var46 = new Class4252(
-               panel, setting.getName() + "color", panel.getWidthA() - 160 - var5 + 10, var4, 160, 114, (Integer)setting.getCurrentValue(), var30.isRainbowEnabled()
-            );
+                  panel, setting.getName() + "color", panel.getWidthA() - 160 - var5 + 10, var4, 160, 114,
+                  (Integer) setting.getCurrentValue(), var30.isRainbowEnabled());
             this.field21223.put(var38, setting);
             setting.addObserver(var3x -> {
-               var46.method13048((Integer)setting.getCurrentValue());
+               var46.method13048((Integer) setting.getCurrentValue());
                var46.method13046(var30.isRainbowEnabled());
             });
             var46.method13036(var2x -> {
-               setting.updateCurrentValue(((Class4252)var2x).method13049(), false);
-               var30.setRainbowEnabled(((Class4252)var2x).method13047());
+               setting.updateCurrentValue(((Class4252) var2x).method13049(), false);
+               var30.setRainbowEnabled(((Class4252) var2x).method13047());
             });
             panel.addToList(var38);
             panel.addToList(var46);
             var4 += 114 + var5 - 10;
             break;
          case 10:
-            SpeedRampSetting.SpeedRamp var10 = (SpeedRampSetting.SpeedRamp)setting.getCurrentValue();
-            UITextDisplay var11 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 24, UITextDisplay.field20778, setting.getName());
+            SpeedRampSetting.SpeedRamp var10 = (SpeedRampSetting.SpeedRamp) setting.getCurrentValue();
+            UITextDisplay var11 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 24,
+                  UITextDisplay.field20778, setting.getName());
             Class4250 var12 = new Class4250(
-               panel,
-               setting.getName() + "color",
-               panel.getWidthA() - 150 - var5 + 10,
-               var4,
-               150,
-               150,
-               20,
-               var10.startValue,
-               var10.middleValue,
-               var10.endValue,
-               var10.maxValue
-            );
+                  panel,
+                  setting.getName() + "color",
+                  panel.getWidthA() - 150 - var5 + 10,
+                  var4,
+                  150,
+                  150,
+                  20,
+                  var10.startValue,
+                  var10.middleValue,
+                  var10.endValue,
+                  var10.maxValue);
             this.field21223.put(var11, setting);
             setting.addObserver(var2x -> {
-               SpeedRampSetting.SpeedRamp var5x = (SpeedRampSetting.SpeedRamp)setting.getCurrentValue();
+               SpeedRampSetting.SpeedRamp var5x = (SpeedRampSetting.SpeedRamp) setting.getCurrentValue();
                var12.method13041(var5x.startValue, var5x.middleValue, var5x.endValue, var5x.maxValue);
             });
             var12.method13036(
-               var2x -> ((SpeedRampSetting)setting).updateValues(var12.method13040()[0], var12.method13040()[1], var12.method13040()[2], var12.method13040()[3])
-            );
+                  var2x -> ((SpeedRampSetting) setting).updateValues(var12.method13040()[0], var12.method13040()[1],
+                        var12.method13040()[2], var12.method13040()[3]));
             panel.addToList(var11);
             panel.addToList(var12);
             var4 += 150 + var5 - 10;
@@ -250,11 +257,12 @@ public class Class4343 extends Class4339 implements Class4342 {
 
       int var17 = var4;
       if (this.field21219 instanceof ModuleWithModuleSettings) {
-         ModuleWithModuleSettings var18 = (ModuleWithModuleSettings)this.field21219;
+         ModuleWithModuleSettings var18 = (ModuleWithModuleSettings) this.field21219;
 
          for (Module var10 : var18.moduleArray) {
             int var11 = 0;
-            CustomGuiScreen var12 = new CustomGuiScreen(this, var10.getName() + "SubView", 0, var17, this.widthA, this.heightA - var4);
+            CustomGuiScreen var12 = new CustomGuiScreen(this, var10.getName() + "SubView", 0, var17, this.widthA,
+                  this.heightA - var4);
             var12.setSize((var0, var1) -> var0.setWidthA(var1.getWidthA()));
 
             for (Setting var14 : var10.getSettingMap().values()) {
@@ -265,7 +273,7 @@ public class Class4343 extends Class4339 implements Class4342 {
 
             for (CustomGuiScreen var20 : var12.method13241()) {
                if (var20 instanceof Class4363) {
-                  Class4363 var15 = (Class4363)var20;
+                  Class4363 var15 = (Class4363) var20;
                   int var16 = var15.method13649() + var15.getYA() + var15.getHeightA() + 14;
                   var11 = Math.max(var11, var16);
                }
@@ -293,8 +301,8 @@ public class Class4343 extends Class4339 implements Class4342 {
       boolean var4 = false;
 
       for (Entry var6 : this.field21223.entrySet()) {
-         UITextDisplay var7 = (UITextDisplay)var6.getKey();
-         Setting var8 = (Setting)var6.getValue();
+         UITextDisplay var7 = (UITextDisplay) var6.getKey();
+         Setting var8 = (Setting) var6.getValue();
          if (var7.method13298() && var7.method13289()) {
             var4 = true;
             this.field21226 = var8.getDescription();
@@ -308,26 +316,26 @@ public class Class4343 extends Class4339 implements Class4342 {
       GL11.glPopMatrix();
       this.field21225.changeDirection(!var4 ? Direction.BACKWARDS : Direction.FORWARDS);
       RenderUtil.drawString(
-         ResourceRegistry.JelloLightFont14,
-         (float)(this.getXA() + 10),
-         (float)(this.getYA() + this.getHeightA() + 24),
-         this.field21227,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
-      );
+            ResourceRegistry.JelloLightFont14,
+            (float) (this.getXA() + 10),
+            (float) (this.getYA() + this.getHeightA() + 24),
+            this.field21227,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+                  0.5F * this.field21225.calcPercent()));
       RenderUtil.drawString(
-         ResourceRegistry.JelloLightFont14,
-         (float)(this.getXA() + 11),
-         (float)(this.getYA() + this.getHeightA() + 24),
-         this.field21227,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
-      );
+            ResourceRegistry.JelloLightFont14,
+            (float) (this.getXA() + 11),
+            (float) (this.getYA() + this.getHeightA() + 24),
+            this.field21227,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+                  0.5F * this.field21225.calcPercent()));
       RenderUtil.drawString(
-         ResourceRegistry.JelloLightFont14,
-         (float)(this.getXA() + 14 + ResourceRegistry.JelloLightFont14.getStringWidth(this.field21227) + 2),
-         (float)(this.getYA() + this.getHeightA() + 24),
-         this.field21226,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
-      );
+            ResourceRegistry.JelloLightFont14,
+            (float) (this.getXA() + 14 + ResourceRegistry.JelloLightFont14.getStringWidth(this.field21227) + 2),
+            (float) (this.getYA() + this.getHeightA() + 24),
+            this.field21226,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+                  0.5F * this.field21225.calcPercent()));
    }
 
    @Override

@@ -28,31 +28,29 @@ public class CreditsToCreators extends Screen {
 
       for (String var12 : var8) {
          var5.addToList(
-            new UITextDisplay(
-               var5,
-               "lbl" + var6,
-               40,
-               40 + var7 * var6++,
-               0,
-               0,
-               ColorHelper.field27961,
-               var12,
-               var12.startsWith("*") ? ResourceRegistry.JelloMediumFont20 : ResourceRegistry.JelloLightFont20
-            )
-         );
+               new UITextDisplay(
+                     var5,
+                     "lbl" + var6,
+                     40,
+                     40 + var7 * var6++,
+                     0,
+                     0,
+                     ColorHelper.field27961,
+                     var12,
+                     var12.startsWith("*") ? ResourceRegistry.JelloMediumFont20 : ResourceRegistry.JelloLightFont20));
       }
    }
 
    @Override
    public void draw(float var1) {
       RenderUtil.renderBackgroundBox(
-         0.0F,
-         0.0F,
-         (float)this.widthA,
-         (float)this.heightA,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, this.field21076.calcPercent() * 0.95F)
-      );
-      RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, 40.0F, 40.0F, "Credits and third party licensing information", ClientColors.LIGHT_GREYISH_BLUE.getColor);
+            0.0F,
+            0.0F,
+            (float) this.widthA,
+            (float) this.heightA,
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), this.field21076.calcPercent() * 0.95F));
+      RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, 40.0F, 40.0F,
+            "Credits and third party licensing information", ClientColors.LIGHT_GREYISH_BLUE.getColor());
       byte var4 = 40;
       super.draw(this.field21076.calcPercent());
    }

@@ -204,7 +204,7 @@ public class MusicManager {
                                 (float) field32143.mainWindow.getHeight() - var8,
                                 var4,
                                 var8,
-                                MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 0.2F * var6));
+                                MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor(), 0.2F * var6));
                     }
 
                     RenderUtil.method11476();
@@ -214,7 +214,7 @@ public class MusicManager {
                         float var15 = ((float) (Math.sqrt(this.field32165.get(var13)) / 12.0) - 5.0F) * var14;
                         RenderUtil.renderBackgroundBox((float) var13 * var4,
                                 (float) field32143.mainWindow.getHeight() - var15, var4, var15,
-                                ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                                ClientColors.LIGHT_GREYISH_BLUE.getColor());
                     }
 
                     RenderUtil.method11477(Class2329.field15940);
@@ -250,38 +250,38 @@ public class MusicManager {
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 70),
                                 var11[0],
-                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.5F));
                         RenderUtil.drawString(
                                 ResourceRegistry.JelloLightFont18,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 70),
                                 var11[0],
-                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F));
+                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.7F));
                     } else {
                         RenderUtil.drawString(
                                 ResourceRegistry.JelloMediumFont20_1,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 81),
                                 var11[0],
-                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F));
+                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.4F));
                         RenderUtil.drawString(
                                 ResourceRegistry.JelloLightFont18_1,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 56),
                                 var11[1],
-                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.5F));
                         RenderUtil.drawString(
                                 ResourceRegistry.JelloLightFont18,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 56),
                                 var11[1],
-                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F));
+                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.7F));
                         RenderUtil.drawString(
                                 ResourceRegistry.JelloMediumFont20,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 81),
                                 var11[0],
-                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F));
+                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.6F));
                     }
                 }
             }

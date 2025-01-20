@@ -45,8 +45,8 @@ public class Class4296 extends Class4278 {
          for (Ban var9 : var11) {
             if (var9.method31736() != null && var9.method31736().method25580() != null) {
                Class4348 var10 = new Class4348(
-                  this, ((Ban)var11.get(var13)).getServerIP(), 40, 100 + var13 * (var14 + var7), this.widthA - 90, var14, var9
-               );
+                     this, ((Ban) var11.get(var13)).getServerIP(), 40, 100 + var13 * (var14 + var7), this.widthA - 90,
+                     var14, var9);
                this.addToList(var10);
                this.field20814.add(var10);
                var13++;
@@ -60,30 +60,30 @@ public class Class4296 extends Class4278 {
    @Override
    public void draw(float var1) {
       this.method13225();
-      this.field20815 = (float)((double)this.field20815 + (this.method13287() ? 0.33 : -0.33));
+      this.field20815 = (float) ((double) this.field20815 + (this.method13287() ? 0.33 : -0.33));
       this.field20815 = Math.min(1.0F, Math.max(0.0F, this.field20815));
       if (this.field20813 == null) {
          int var4 = this.widthA - 30;
          int var5 = this.xA + 5;
          RenderUtil.method11455(
-            (float)var5,
-            (float)((Minecraft.getInstance().mainWindow.getHeight() - var4 * 342 / 460) / 2 - 60),
-            (float)var4,
-            (float)(var4 * 342 / 460),
-            ResourceList.imgPNG
-         );
+               (float) var5,
+               (float) ((Minecraft.getInstance().mainWindow.getHeight() - var4 * 342 / 460) / 2 - 60),
+               (float) var4,
+               (float) (var4 * 342 / 460),
+               ResourceList.imgPNG);
       }
 
       if (this.field20813 != null) {
-         int var6 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.2F);
-         int var7 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.7F);
+         int var6 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.2F);
+         int var7 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.7F);
          RenderUtil.drawString(
-            ResourceRegistry.JelloLightFont36,
-            (float)(this.xA + (this.widthA - ResourceRegistry.JelloLightFont36.getStringWidth(this.field20813.getKnownName())) / 2),
-            (float)this.yA,
-            this.field20813.getKnownName(),
-            var7
-         );
+               ResourceRegistry.JelloLightFont36,
+               (float) (this.xA
+                     + (this.widthA - ResourceRegistry.JelloLightFont36.getStringWidth(this.field20813.getKnownName()))
+                           / 2),
+               (float) this.yA,
+               this.field20813.getKnownName(),
+               var7);
          super.draw(var1);
       }
    }

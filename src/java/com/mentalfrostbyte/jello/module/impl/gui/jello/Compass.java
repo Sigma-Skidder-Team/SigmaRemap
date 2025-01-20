@@ -23,7 +23,7 @@ public class Compass extends Module {
     @EventTarget
     private void method16657(EventRender var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (! Minecraft.getInstance().gameSettings.hideGUI) {
+            if (!Minecraft.getInstance().gameSettings.hideGUI) {
                 int var4 = 5;
                 int var5 = 60;
                 int var6 = !Minecraft.getInstance().gameSettings.showDebugInfo ? 0 : 60;
@@ -41,16 +41,18 @@ public class Compass extends Module {
                         (float) (var4 * var5 * 2) * 1.5F,
                         (float) (220 + var6),
                         ResourceList.shadowPNG,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.25F)
-                );
+                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.25F));
                 int var12 = 0;
 
                 for (int var14 : var7) {
                     var12++;
-                    double var15 = Math.max(0.0, Math.min(((double) (var12 * var5) - var10) / (double) ((float) (var5 * var4)), 1.0));
-                    double var17 = Math.max(0.0, Math.min(2.25 - ((double) (var12 * var5) - var10) / (double) ((float) (var5 * var4)), 1.0));
+                    double var15 = Math.max(0.0,
+                            Math.min(((double) (var12 * var5) - var10) / (double) ((float) (var5 * var4)), 1.0));
+                    double var17 = Math.max(0.0,
+                            Math.min(2.25 - ((double) (var12 * var5) - var10) / (double) ((float) (var5 * var4)), 1.0));
                     float var19 = (float) Math.min(var15, var17);
-                    this.method16658(mc.mainWindow.getWidth() / 2 + var12 * var5 - (int) var10 - (var4 + 1) * var5 - 2, 30 + var6, var5, var14, var19 * 0.8F);
+                    this.method16658(mc.mainWindow.getWidth() / 2 + var12 * var5 - (int) var10 - (var4 + 1) * var5 - 2,
+                            30 + var6, var5, var14, var19 * 0.8F);
                 }
             }
         }
@@ -97,16 +99,14 @@ public class Compass extends Module {
                         (float) (var1 + (var3 - ResourceRegistry.JelloLightFont25.getStringWidth(var8)) / 2),
                         (float) (var2 + 20),
                         var8,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
-                );
+                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var5));
             } else {
                 RenderUtil.drawString(
                         ResourceRegistry.JelloMediumFont40,
                         (float) (var1 + (var3 - ResourceRegistry.JelloMediumFont40.getStringWidth(var8)) / 2),
                         (float) (var2 + 10),
                         var8,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
-                );
+                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var5));
             }
         } else {
             RenderUtil.drawRect(
@@ -114,15 +114,13 @@ public class Compass extends Module {
                     (float) (var2 + 28),
                     (float) (var1 + var3 / 2 + 1),
                     (float) (var2 + 38),
-                    MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5 * 0.5F)
-            );
+                    MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var5 * 0.5F));
             RenderUtil.drawString(
                     ResourceRegistry.JelloLightFont18,
                     (float) (var1 + (var3 - ResourceRegistry.JelloLightFont18.getStringWidth(var8)) / 2),
                     (float) (var2 + 40),
                     var8,
-                    MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
-            );
+                    MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var5));
         }
     }
 

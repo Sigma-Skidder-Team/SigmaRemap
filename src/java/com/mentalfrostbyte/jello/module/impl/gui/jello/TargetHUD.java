@@ -42,7 +42,7 @@ public class TargetHUD extends Module {
     public int field23683;
     public int field23684;
     public int field23685 = 100;
-    public int field23694 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F);
+    public int field23694 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.05F);
     private final float field23686 = 1.0F;
     private float field23687 = 0.0F;
     private float field23688 = 0.0F;
@@ -158,24 +158,29 @@ public class TargetHUD extends Module {
                                                         if (!(this.entity instanceof WolfEntity)) {
                                                             if (!(this.entity instanceof SquidEntity)) {
                                                                 if (this.entity instanceof SalmonEntity) {
-                                                                    uuidForSkin = UUID.fromString("0fd952e4-e895-4bb0-a12b-48f24cac1231");
-                                                                    //salmon skin
+                                                                    uuidForSkin = UUID.fromString(
+                                                                            "0fd952e4-e895-4bb0-a12b-48f24cac1231");
+                                                                    // salmon skin
                                                                 }
                                                             } else {
-                                                                uuidForSkin = UUID.fromString("655b9804-f385-4e11-8966-d1555bedffc6");
-                                                                //squid skin
+                                                                uuidForSkin = UUID.fromString(
+                                                                        "655b9804-f385-4e11-8966-d1555bedffc6");
+                                                                // squid skin
                                                             }
                                                         } else {
-                                                            uuidForSkin = UUID.fromString("14430053-bbf4-4141-9d3d-08ff8ec631a4");
-                                                            //doge skin
+                                                            uuidForSkin = UUID
+                                                                    .fromString("14430053-bbf4-4141-9d3d-08ff8ec631a4");
+                                                            // doge skin
                                                         }
                                                     } else {
-                                                        uuidForSkin = UUID.fromString("241d6e54-d289-4db3-999f-1d51593aca81");
-                                                        //mouse skin - probably for silverfish
+                                                        uuidForSkin = UUID
+                                                                .fromString("241d6e54-d289-4db3-999f-1d51593aca81");
+                                                        // mouse skin - probably for silverfish
                                                     }
                                                 } else {
-                                                    uuidForSkin = UUID.fromString("1b90edcf-393d-4e93-a0d6-cf737dc80999");
-                                                    //bat skin???
+                                                    uuidForSkin = UUID
+                                                            .fromString("1b90edcf-393d-4e93-a0d6-cf737dc80999");
+                                                    // bat skin???
                                                 }
                                             } else {
                                                 uuidForSkin = UUID.fromString("6a5b3d5e-07cd-449a-bf1d-c29383d1ae47");
@@ -219,9 +224,8 @@ public class TargetHUD extends Module {
             Class7735 var12 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
             RenderSystem.runAsFancy(
                     () -> var5.method17924(
-                            var9, 100.0F, 0.0F, var10, var12, 15728880, Math.min(1.0F, this.field23689.calcPercent() * 4.0F), this.field23691.calcPercent()
-                    )
-            );
+                            var9, 100.0F, 0.0F, var10, var12, 15728880,
+                            Math.min(1.0F, this.field23689.calcPercent() * 4.0F), this.field23691.calcPercent()));
 
             var12.finish();
             var4.setRenderShadow(true);
@@ -248,8 +252,8 @@ public class TargetHUD extends Module {
                 var5 = 20.0F;
             }
 
-            float[] var6 = new float[]{0.0F, 0.5F, 1.0F};
-            Color[] var7 = new Color[]{Color.RED, Color.ORANGE, Color.GREEN};
+            float[] var6 = new float[] { 0.0F, 0.5F, 1.0F };
+            Color[] var7 = new Color[] { Color.RED, Color.ORANGE, Color.GREEN };
             float var8 = var5 * 5.0F * 0.01F;
             return this.method16478(var6, var7, var8).brighter();
         } else {
@@ -268,8 +272,8 @@ public class TargetHUD extends Module {
         } else {
             int[] var7 = this.method16479(var1, var3);
             if (var7[0] >= 0 && var7[0] < var1.length && var7[1] >= 0 && var7[1] < var1.length) {
-                float[] var8 = new float[]{var1[var7[0]], var1[var7[1]]};
-                Color[] var9 = new Color[]{var2[var7[0]], var2[var7[1]]};
+                float[] var8 = new float[] { var1[var7[0]], var1[var7[1]] };
+                Color[] var9 = new Color[] { var2[var7[0]], var2[var7[1]] };
                 float var10 = var8[1] - var8[0];
                 float var11 = var3 - var8[0];
                 float var12 = var11 / var10;
@@ -314,9 +318,9 @@ public class TargetHUD extends Module {
     public static class Class1117 extends AbstractClientPlayerEntity {
         public final TargetHUD targetHUD;
 
-       public Class1117(TargetHUD var1, ClientWorld var2, GameProfile var3) {
-          super(var2, var3);
-          this.targetHUD = var1;
-       }
+        public Class1117(TargetHUD var1, ClientWorld var2, GameProfile var3) {
+            super(var2, var3);
+            this.targetHUD = var1;
+        }
     }
 }

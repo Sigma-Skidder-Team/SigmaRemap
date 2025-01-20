@@ -71,7 +71,8 @@ public class ActiveMods extends Module {
                 this.field23612.add(var4);
                 this.field23615.put(var4, new Animation(150, 150, Direction.BACKWARDS));
                 if (this.getBooleanValueFromSettingName("Animations")) {
-                    this.field23615.get(var4).changeDirection(!var4.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
+                    this.field23615.get(var4)
+                            .changeDirection(!var4.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
                 }
             }
         }
@@ -124,7 +125,8 @@ public class ActiveMods extends Module {
         if (this.isEnabled() && mc.player != null) {
             for (Module var5 : this.field23615.keySet()) {
                 if (this.getBooleanValueFromSettingName("Animations")) {
-                    this.field23615.get(var5).changeDirection(!var5.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
+                    this.field23615.get(var5)
+                            .changeDirection(!var5.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
                 }
             }
 
@@ -139,7 +141,8 @@ public class ActiveMods extends Module {
                 }
 
                 if (Minecraft.getInstance().gameSettings.showDebugInfo) {
-                    var7 = (int) ((double) (mc.ingameGUI.field6726.debugInfoRight.size() * 9) * mc.mainWindow.getGuiScaleFactor() + 7.0);
+                    var7 = (int) ((double) (mc.ingameGUI.field6726.debugInfoRight.size() * 9)
+                            * mc.mainWindow.getGuiScaleFactor() + 7.0);
                 }
 
                 int var10 = 0;
@@ -177,14 +180,15 @@ public class ActiveMods extends Module {
                             (float) var8.getStringWidth(var22) * 3.0F,
                             var8.method23952() + var21 + 40,
                             ResourceList.shadowPNG,
-                            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.36F * var15 * var19)
-                    );
+                            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+                                    0.36F * var15 * var19));
                     RenderUtil.drawString(
-                            var8, (float) (var6 - var20 - var8.getStringWidth(var22)), (float) var7, var22, var15 != 1.0F ? MultiUtilities.applyAlpha(-1, var15 * 0.95F) : var11
-                    );
+                            var8, (float) (var6 - var20 - var8.getStringWidth(var22)), (float) var7, var22,
+                            var15 != 1.0F ? MultiUtilities.applyAlpha(-1, var15 * 0.95F) : var11);
                     GL11.glPopMatrix();
                     var10 -= 100;
-                    var7 = (int) ((float) var7 + (float) (var8.method23952() + var21) * QuadraticEasing.easeInOutQuad(var15, 0.0F, 1.0F, 1.0F));
+                    var7 = (int) ((float) var7 + (float) (var8.method23952() + var21)
+                            * QuadraticEasing.easeInOutQuad(var15, 0.0F, 1.0F, 1.0F));
                 }
 
                 this.field23613 = var7;

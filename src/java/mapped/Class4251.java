@@ -65,7 +65,7 @@ public class Class4251 extends Class4247 {
                         (float) this.widthA,
                         (float) this.heightA,
                         14.0F,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5));
+                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var5));
             RenderUtil.method11474(
                         (float) (this.xA + this.field20616),
                         (float) this.yA,
@@ -76,7 +76,7 @@ public class Class4251 extends Class4247 {
             RenderUtil.method11476();
             RenderUtil.method11474(
                         (float) this.xA, (float) this.yA, (float) this.widthA, (float) this.heightA, 14.0F,
-                        ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                        ClientColors.LIGHT_GREYISH_BLUE.getColor());
             RenderUtil.method11477(Class2329.field15940);
             GL11.glPushMatrix();
             GL11.glTranslatef((float) this.getXA(), (float) this.getYA(), 0.0F);
@@ -92,9 +92,9 @@ public class Class4251 extends Class4247 {
                         (float) (this.yA + 0),
                         1.0F,
                         (float) this.heightA,
-                        MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.14F));
+                        MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.14F));
             int var6 = MultiUtilities.applyAlpha(MultiUtilities.method17691(-7687425, 0.2F), 0.8F);
-            var6 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F);
+            var6 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.6F);
             RenderUtil.drawString(ResourceRegistry.JelloLightFont25, (float) (this.xA + 30), (float) (this.yA + 25),
                         "Waypoints", var6);
             RenderUtil.drawString(
@@ -102,14 +102,14 @@ public class Class4251 extends Class4247 {
                         (float) this.xA,
                         (float) ((this.screen.getHeightA() - this.heightA) / 2 - 70),
                         "Jello Maps",
-                        ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                        ClientColors.LIGHT_GREYISH_BLUE.getColor());
             String var7 = Client.getInstance().waypointsManager.method29998().replace("/", " - ");
             RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont24,
                         (float) (this.xA + this.widthA - ResourceRegistry.JelloLightFont24.getStringWidth(var7) - 10),
                         (float) ((this.screen.getHeightA() - this.heightA) / 2 - 62),
                         var7,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
+                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.5F));
       }
 
       public final void method13043(Class9514 var1) {

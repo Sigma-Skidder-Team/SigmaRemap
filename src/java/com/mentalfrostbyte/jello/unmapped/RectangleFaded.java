@@ -35,17 +35,17 @@ public class RectangleFaded extends ButtonPanel {
             var4 = MathUtils.lerp(this.field20592.calcPercent(), 0.71, 0.18, 0.95, 0.57);
         }
 
-        RenderUtil.startScissor((float) this.getXA(), (float) this.getYA() - var4 * 3.0F, (float) this.getWidthA(), (float) this.getHeightA());
+        RenderUtil.startScissor((float) this.getXA(), (float) this.getYA() - var4 * 3.0F, (float) this.getWidthA(),
+                (float) this.getHeightA());
         int var5 = 40;
-        float var6 = - GuiSwitch.field21070 / (float) Minecraft.getInstance().mainWindow.getWidth();
-        float var7 = - GuiSwitch.field21071 / (float) Minecraft.getInstance().mainWindow.getHeight();
+        float var6 = -GuiSwitch.field21070 / (float) Minecraft.getInstance().mainWindow.getWidth();
+        float var7 = -GuiSwitch.field21071 / (float) Minecraft.getInstance().mainWindow.getHeight();
         RenderUtil.method11455(
                 (float) var5 * var6,
                 (float) var5 * var7,
                 (float) (Minecraft.getInstance().mainWindow.getWidth() + var5),
                 (float) (Minecraft.getInstance().mainWindow.getHeight() + var5),
-                CustomResourceLoadProgressGui.field6780
-        );
+                CustomResourceLoadProgressGui.field6780);
         RenderUtil.endScissor();
         if (this.field20591) {
             RenderUtil.renderBackgroundBox(
@@ -53,8 +53,7 @@ public class RectangleFaded extends ButtonPanel {
                     (float) this.getYA() - var4 * 3.0F,
                     (float) this.getWidthA(),
                     (float) this.getHeightA(),
-                    MultiUtilities.applyAlpha(-12319668, 0.5F)
-            );
+                    MultiUtilities.applyAlpha(-12319668, 0.5F));
         }
 
         RenderUtil.drawImage(
@@ -63,8 +62,7 @@ public class RectangleFaded extends ButtonPanel {
                 (float) this.getWidthA(),
                 (float) this.getHeightA(),
                 this.field20590,
-                ClientColors.LIGHT_GREYISH_BLUE.getColor
-        );
+                ClientColors.LIGHT_GREYISH_BLUE.getColor());
         GL11.glPushMatrix();
         super.method13226(var1);
         GL11.glPopMatrix();

@@ -33,7 +33,7 @@ public class Class7312 {
       this.field31344 = var6;
       this.field31352 = var7;
       this.field31353 = new Animation(var6, var6, Direction.BACKWARDS);
-      this.field31345 = (int)((float)var1.getTextureWidth() / (float)var3);
+      this.field31345 = (int) ((float) var1.getTextureWidth() / (float) var3);
       this.field31348 = Class2311.field15840;
    }
 
@@ -69,7 +69,7 @@ public class Class7312 {
       int var5 = 0;
       switch (Class8593.field38673[this.field31349.ordinal()]) {
          case 1:
-            this.field31340 = Math.round((float)(this.field31341 - 1) * this.field31353.calcPercent());
+            this.field31340 = Math.round((float) (this.field31341 - 1) * this.field31353.calcPercent());
             break;
          case 2:
             if (this.field31351 >= this.field31344) {
@@ -104,17 +104,16 @@ public class Class7312 {
       int var8 = this.field31340 % this.field31345 * this.field31342;
       int var9 = this.field31340 / this.field31345 * this.field31343;
       RenderUtil.method11451(
-         (float)var1,
-         (float)var2,
-         (float)var3,
-         (float)var4,
-         this.field31339,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5),
-         (float)var8,
-         (float)var9,
-         (float)this.field31342,
-         (float)this.field31343
-      );
+            (float) var1,
+            (float) var2,
+            (float) var3,
+            (float) var4,
+            this.field31339,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var5),
+            (float) var8,
+            (float) var9,
+            (float) this.field31342,
+            (float) this.field31343);
    }
 
    public Texture method23110() {

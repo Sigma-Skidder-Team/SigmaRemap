@@ -25,24 +25,24 @@ public class Class4330 extends CustomGuiScreen {
 
       String var7 = var3.getString("title");
       JSONArray var8 = var3.getJSONArray("changes");
-      this.addToList(new UITextDisplay(this, "title", 0, var6, 0, 0, ColorHelper.field27961, var7, ResourceRegistry.JelloMediumFont40));
+      this.addToList(new UITextDisplay(this, "title", 0, var6, 0, 0, ColorHelper.field27961, var7,
+            ResourceRegistry.JelloMediumFont40));
       var6 += 55;
 
       for (int var9 = 0; var9 < var8.length(); var9++) {
          String var10 = " - " + var8.getString(var9);
          this.addToList(
-            new UITextDisplay(
-               this,
-               "change" + var9,
-               0,
-               var6,
-               0,
-               0,
-               new ColorHelper(0, 0, 0, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)),
-               var10,
-               ResourceRegistry.JelloLightFont20
-            )
-         );
+               new UITextDisplay(
+                     this,
+                     "change" + var9,
+                     0,
+                     var6,
+                     0,
+                     0,
+                     new ColorHelper(0, 0, 0,
+                           MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.8F)),
+                     var10,
+                     ResourceRegistry.JelloLightFont20));
          var6 += 22;
       }
 
@@ -53,7 +53,7 @@ public class Class4330 extends CustomGuiScreen {
    @Override
    public void draw(float var1) {
       float var4 = MathUtils.lerp(this.animation2.calcPercent(), 0.17, 1.0, 0.51, 1.0);
-      this.drawBackground((int)((1.0F - var4) * 100.0F));
+      this.drawBackground((int) ((1.0F - var4) * 100.0F));
       this.method13225();
       var1 *= this.animation2.calcPercent();
       super.draw(var1);

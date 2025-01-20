@@ -27,7 +27,8 @@ public class FillESP extends Module {
 
     public FillESP() {
         super(ModuleCategory.RENDER, "Fill", "Fill ESP");
-        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
+        this.registerSetting(
+                new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.getColor()));
     }
 
     @EventTarget

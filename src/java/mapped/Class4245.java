@@ -26,31 +26,30 @@ public class Class4245 extends ButtonPanel {
          this.field20599.changeDirection(Direction.FORWARDS);
       }
 
-      int var4 = (int)(EasingFunctions.easeInOutCustomBack(this.field20599.calcPercent(), 0.0F, 1.0F, 1.0F, 7.0F) * 3.0F);
+      int var4 = (int) (EasingFunctions.easeInOutCustomBack(this.field20599.calcPercent(), 0.0F, 1.0F, 1.0F, 7.0F)
+            * 3.0F);
       RenderUtil.method11438(
-         (float)(this.xA + this.widthA / 2),
-         (float)(this.yA + this.heightA / 2),
-         25.0F,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.025F * var1 * this.field20599.calcPercent())
-      );
+            (float) (this.xA + this.widthA / 2),
+            (float) (this.yA + this.heightA / 2),
+            25.0F,
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(),
+                  0.025F * var1 * this.field20599.calcPercent()));
       RenderUtil.method11438(
-         (float)(this.xA + this.widthA / 2),
-         (float)(this.yA + this.heightA / 2),
-         23.0F,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1 * this.field20599.calcPercent())
-      );
+            (float) (this.xA + this.widthA / 2),
+            (float) (this.yA + this.heightA / 2),
+            23.0F,
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.05F * var1 * this.field20599.calcPercent()));
       RenderUtil.method11438(
-         (float)(this.xA + this.widthA / 2),
-         (float)(this.yA + this.heightA / 2),
-         (float)(18 + var4),
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field20599.calcPercent())
-      );
+            (float) (this.xA + this.widthA / 2),
+            (float) (this.yA + this.heightA / 2),
+            (float) (18 + var4),
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+                  var1 * this.field20599.calcPercent()));
       RenderUtil.method11438(
-         (float)(this.xA + this.widthA / 2),
-         (float)(this.yA + this.heightA / 2),
-         (float)(18 - var4),
-         MultiUtilities.applyAlpha(this.field20597.field13428, var1)
-      );
+            (float) (this.xA + this.widthA / 2),
+            (float) (this.yA + this.heightA / 2),
+            (float) (18 - var4),
+            MultiUtilities.applyAlpha(this.field20597.field13428, var1));
       GL11.glPushMatrix();
       super.method13226(var1);
       GL11.glPopMatrix();

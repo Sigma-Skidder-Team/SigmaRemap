@@ -30,7 +30,8 @@ public class AlertPanel extends Class4247 {
    private final List<Class9448> field21287 = new ArrayList<Class9448>();
 
    public AlertPanel(CustomGuiScreen var1, String var2, boolean var3, String var4, MiniAlert... var5) {
-      super(var1, var2, 0, 0, Minecraft.getInstance().mainWindow.getWidth(), Minecraft.getInstance().mainWindow.getHeight(), false);
+      super(var1, var2, 0, 0, Minecraft.getInstance().mainWindow.getWidth(),
+            Minecraft.getInstance().mainWindow.getHeight(), false);
       this.field21283 = var3;
       this.field21280 = var4;
       this.method13296(false);
@@ -45,10 +46,9 @@ public class AlertPanel extends Class4247 {
 
       this.field21285 -= 10;
       this.addToList(
-         this.field21279 = new CustomGuiScreen(
-            this, "modalContent", (this.widthA - this.field21284) / 2, (this.heightA - this.field21285) / 2, this.field21284, this.field21285
-         )
-      );
+            this.field21279 = new CustomGuiScreen(
+                  this, "modalContent", (this.widthA - this.field21284) / 2, (this.heightA - this.field21285) / 2,
+                  this.field21284, this.field21285));
       int var17 = 0;
       int var18 = 0;
 
@@ -59,44 +59,39 @@ public class AlertPanel extends Class4247 {
                if (var15.field44771 != AlertType.BUTTON) {
                   if (var15.field44771 == AlertType.HEADER) {
                      this.field21279
-                        .addToList(
-                           new UITextDisplay(
-                              this.field21279,
-                              "Item" + var17,
-                              0,
-                              var18,
-                              this.field21284,
-                              var15.field44773,
-                              new ColorHelper(
-                                 ClientColors.DEEP_TEAL.getColor,
-                                 ClientColors.DEEP_TEAL.getColor,
-                                 ClientColors.DEEP_TEAL.getColor,
-                                 ClientColors.DEEP_TEAL.getColor
-                              ),
-                              var15.field44772,
-                              ResourceRegistry.JelloLightFont36
-                           )
-                        );
+                           .addToList(
+                                 new UITextDisplay(
+                                       this.field21279,
+                                       "Item" + var17,
+                                       0,
+                                       var18,
+                                       this.field21284,
+                                       var15.field44773,
+                                       new ColorHelper(
+                                             ClientColors.DEEP_TEAL.getColor(),
+                                             ClientColors.DEEP_TEAL.getColor(),
+                                             ClientColors.DEEP_TEAL.getColor(),
+                                             ClientColors.DEEP_TEAL.getColor()),
+                                       var15.field44772,
+                                       ResourceRegistry.JelloLightFont36));
                   }
                } else {
                   ButtonPanel var16;
                   this.field21279
-                     .addToList(
-                        var16 = new ButtonPanel(
-                           this.field21279, "Item" + var17, 0, var18, this.field21284, var15.field44773, ColorHelper.field27961, var15.field44772
-                        )
-                     );
+                        .addToList(
+                              var16 = new ButtonPanel(
+                                    this.field21279, "Item" + var17, 0, var18, this.field21284, var15.field44773,
+                                    ColorHelper.field27961, var15.field44772));
                   var16.field20586 = 4;
                   var16.doThis((var1x, var2x) -> this.method13601());
                }
             } else {
                UIInput var22;
                this.field21279
-                  .addToList(
-                     var22 = new UIInput(
-                        this.field21279, "Item" + var17, 0, var18, this.field21284, var15.field44773, UIInput.field20741, "", var15.field44772
-                     )
-                  );
+                     .addToList(
+                           var22 = new UIInput(
+                                 this.field21279, "Item" + var17, 0, var18, this.field21284, var15.field44773,
+                                 UIInput.field20741, "", var15.field44772));
                if (!var15.field44772.contains("Password")) {
                   if (var15.field44772.contains("Email")) {
                      var8 = var22;
@@ -108,21 +103,19 @@ public class AlertPanel extends Class4247 {
             }
          } else {
             this.field21279
-               .addToList(
-                  new UITextDisplay(
-                     this.field21279,
-                     "Item" + var17,
-                     0,
-                     var18,
-                     this.field21284,
-                     var15.field44773,
-                     new ColorHelper(
-                        ClientColors.MID_GREY.getColor, ClientColors.MID_GREY.getColor, ClientColors.MID_GREY.getColor, ClientColors.MID_GREY.getColor
-                     ),
-                     var15.field44772,
-                     ResourceRegistry.JelloLightFont20
-                  )
-               );
+                  .addToList(
+                        new UITextDisplay(
+                              this.field21279,
+                              "Item" + var17,
+                              0,
+                              var18,
+                              this.field21284,
+                              var15.field44773,
+                              new ColorHelper(
+                                    ClientColors.MID_GREY.getColor(), ClientColors.MID_GREY.getColor(),
+                                    ClientColors.MID_GREY.getColor(), ClientColors.MID_GREY.getColor()),
+                              var15.field44772,
+                              ResourceRegistry.JelloLightFont20));
          }
 
          var18 += var15.field44773 + 10;
@@ -154,8 +147,8 @@ public class AlertPanel extends Class4247 {
       if (var1) {
          for (CustomGuiScreen var5 : this.field21279.method13241()) {
             if (var5 instanceof UIInput) {
-               ((UIInput)var5).method13304("");
-               ((UIInput)var5).method13146();
+               ((UIInput) var5).method13304("");
+               ((UIInput) var5).method13146();
             }
          }
       }
@@ -172,9 +165,9 @@ public class AlertPanel extends Class4247 {
       HashMap var3 = new HashMap();
 
       for (CustomGuiScreen var5 : this.field21279.method13241()) {
-         Class4278 var6 = (Class4278)var5;
+         Class4278 var6 = (Class4278) var5;
          if (var6 instanceof UIInput) {
-            UIInput var7 = (UIInput)var6;
+            UIInput var7 = (UIInput) var6;
             var3.put(var7.method13153(), var7.getTypedText());
          }
       }
@@ -199,8 +192,9 @@ public class AlertPanel extends Class4247 {
 
    public float method13602(float var1, float var2) {
       return this.field21282.getDirection() != Direction.BACKWARDS
-         ? (float)(Math.pow(2.0, (double)(-10.0F * var1)) * Math.sin((double)(var1 - var2 / 4.0F) * (Math.PI * 2) / (double)var2) + 1.0)
-         : 0.5F + QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F) * 0.5F;
+            ? (float) (Math.pow(2.0, (double) (-10.0F * var1))
+                  * Math.sin((double) (var1 - var2 / 4.0F) * (Math.PI * 2) / (double) var2) + 1.0)
+            : 0.5F + QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F) * 0.5F;
    }
 
    @Override
@@ -209,25 +203,25 @@ public class AlertPanel extends Class4247 {
          int var4 = this.field21284 + 60;
          int var5 = this.field21285 + 60;
          byte var6 = 30;
-         float var7 = !this.isHovered() ? this.field21282.calcPercent() : Math.min(this.field21282.calcPercent() / 0.25F, 1.0F);
+         float var7 = !this.isHovered() ? this.field21282.calcPercent()
+               : Math.min(this.field21282.calcPercent() / 0.25F, 1.0F);
          float var8 = this.method13602(this.field21282.calcPercent(), 1.0F);
-         var4 = (int)((float)var4 * var8);
-         var5 = (int)((float)var5 * var8);
+         var4 = (int) ((float) var4 * var8);
+         var5 = (int) ((float) var5 * var8);
          RenderUtil.method11448(
-            -5.0F,
-            -5.0F,
-            (float)(this.getWidthA() + 10),
-            (float)(this.getHeightA() + 10),
-            this.field21281,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
-         );
+               -5.0F,
+               -5.0F,
+               (float) (this.getWidthA() + 10),
+               (float) (this.getHeightA() + 10),
+               this.field21281,
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var7));
          RenderUtil.drawRect(
-            0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F * var7)
-         );
+               0.0F, 0.0F, (float) this.getWidthA(), (float) this.getHeightA(),
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.1F * var7));
          if (var4 > 0) {
             RenderUtil.method11465(
-               (this.widthA - var4) / 2, (this.heightA - var5) / 2, var4, var5, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
-            );
+                  (this.widthA - var4) / 2, (this.heightA - var5) / 2, var4, var5,
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var7));
          }
 
          super.method13279(var8, var8);
@@ -248,9 +242,9 @@ public class AlertPanel extends Class4247 {
          int var6 = this.field21284 + 60;
          int var7 = this.field21285 + 60;
          if (mouseX > (this.widthA - var6) / 2
-            && mouseX < (this.widthA - var6) / 2 + var6
-            && mouseY > (this.heightA - var7) / 2
-            && mouseY < (this.heightA - var7) / 2 + var7) {
+               && mouseX < (this.widthA - var6) / 2 + var6
+               && mouseY > (this.heightA - var7) / 2
+               && mouseY < (this.heightA - var7) / 2 + var7) {
             return false;
          } else {
             this.method13603(false);
@@ -269,8 +263,8 @@ public class AlertPanel extends Class4247 {
             }
 
             this.field21281 = TextureUtil.method32933(
-               "blur", ImageUtil.method35036(0, 0, this.getWidthA(), this.getHeightA(), 5, 10, ClientColors.LIGHT_GREYISH_BLUE.getColor, true)
-            );
+                  "blur", ImageUtil.method35036(0, 0, this.getWidthA(), this.getHeightA(), 5, 10,
+                        ClientColors.LIGHT_GREYISH_BLUE.getColor(), true));
          } catch (IOException var5) {
             Client.getInstance().getLogger().error(var5.getMessage());
          }

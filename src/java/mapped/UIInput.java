@@ -16,9 +16,9 @@ import java.util.List;
 
 public class UIInput extends Class4278 {
    public static final ColorHelper field20741 = new ColorHelper(
-         -892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor, Class2218.field14488,
+         -892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor(), Class2218.field14488,
          Class2218.field14492);
-   public static final ColorHelper field20742 = new ColorHelper(-1, -1, -1, ClientColors.LIGHT_GREYISH_BLUE.getColor,
+   public static final ColorHelper field20742 = new ColorHelper(-1, -1, -1, ClientColors.LIGHT_GREYISH_BLUE.getColor(),
          Class2218.field14488, Class2218.field14492);
    private String field20743 = "";
    private float field20744;

@@ -38,29 +38,26 @@ public class Class4295 extends Class4278 {
    public void draw(float var1) {
       if (!this.field20809) {
          RenderUtil.drawRect(
-            (float)this.xA,
-            (float)this.yA,
-            (float)(this.xA + this.widthA),
-            (float)(this.yA + this.heightA),
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
-         );
+               (float) this.xA,
+               (float) this.yA,
+               (float) (this.xA + this.widthA),
+               (float) (this.yA + this.heightA),
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
       } else {
          RenderUtil.drawRect(
-            (float)this.xA,
-            (float)this.yA,
-            (float)(this.xA + this.widthA),
-            (float)(this.yA + this.heightA),
-            MultiUtilities.applyAlpha(-3487030, var1 * 0.5F)
-         );
+               (float) this.xA,
+               (float) this.yA,
+               (float) (this.xA + this.widthA),
+               (float) (this.yA + this.heightA),
+               MultiUtilities.applyAlpha(-3487030, var1 * 0.5F));
       }
 
       RenderUtil.method11428(
-         (float)(this.xA - 1),
-         (float)(this.yA - 1),
-         (float)(this.xA + this.widthA),
-         (float)(this.yA + this.heightA),
-         MultiUtilities.applyAlpha(-921103, var1)
-      );
+            (float) (this.xA - 1),
+            (float) (this.yA - 1),
+            (float) (this.xA + this.widthA),
+            (float) (this.yA + this.heightA),
+            MultiUtilities.applyAlpha(-921103, var1));
       if (this.field20810.getItem() != null) {
          this.method13177();
       }
@@ -69,11 +66,11 @@ public class Class4295 extends Class4278 {
    private void method13177() {
       GL11.glPushMatrix();
       float var3 = 0.062F;
-      GL11.glTranslatef((float)this.xA, (float)this.yA, 0.0F);
+      GL11.glTranslatef((float) this.xA, (float) this.yA, 0.0F);
       GL11.glScalef(
-         (float)this.widthA * var3 - 0.25F * (float)this.widthA / 40.0F, (float)this.heightA * var3 - 0.25F * (float)this.heightA / 40.0F, 1.0F
-      );
-      GL11.glTranslatef((float)(-this.xA), (float)(-this.yA), 0.0F);
+            (float) this.widthA * var3 - 0.25F * (float) this.widthA / 40.0F,
+            (float) this.heightA * var3 - 0.25F * (float) this.heightA / 40.0F, 1.0F);
+      GL11.glTranslatef((float) (-this.xA), (float) (-this.yA), 0.0F);
       GL11.glEnable(2929);
       RenderHelper.enableStandardItemLighting();
       this.field20811.getItemRenderer().method791(this.field20810, this.xA + 1, this.yA + 1);

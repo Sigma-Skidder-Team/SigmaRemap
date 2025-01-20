@@ -102,7 +102,8 @@ public class ImageUtil {
         return new Kernel(var4, 1, var5);
     }
 
-    public static BufferedImage method35036(int var0, int var1, int var2, int var3, int var4, int var5, int var6, boolean var7) {
+    public static BufferedImage method35036(int var0, int var1, int var2, int var3, int var4, int var5, int var6,
+            boolean var7) {
         int var10 = 4;
         var1 = (int) ((float) var1 * GuiManager.portalScaleFactor);
         var0 = (int) ((float) var0 * GuiManager.portalScaleFactor);
@@ -125,7 +126,8 @@ public class ImageUtil {
                     int var16 = var11.get(var15) & 255;
                     int var17 = var11.get(var15 + 1) & 255;
                     int var18 = var11.get(var15 + 2) & 255;
-                    var12.setRGB(var13 / var4, var3 / var4 - (var14 / var4 + 1), 0xFF000000 | var16 << 16 | var17 << 8 | var18);
+                    var12.setRGB(var13 / var4, var3 / var4 - (var14 / var4 + 1),
+                            0xFF000000 | var16 << 16 | var17 << 8 | var18);
                 }
             }
         }
@@ -133,12 +135,13 @@ public class ImageUtil {
         if (var5 <= 1) {
             return var12;
         } else {
-            return !var7 ? method35032(method35040(var12, var5, var6), var5) : method35032(method35041(var12, var5), var5);
+            return !var7 ? method35032(method35040(var12, var5, var6), var5)
+                    : method35032(method35041(var12, var5), var5);
         }
     }
 
     public static BufferedImage method35037(int var0, int var1, int var2, int var3, int var4, int var5) {
-        return method35036(var0, var1, var2, var3, var4, var5, ClientColors.DEEP_TEAL.getColor, false);
+        return method35036(var0, var1, var2, var3, var4, var5, ClientColors.DEEP_TEAL.getColor(), false);
     }
 
     public static BufferedImage method35038(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
@@ -146,14 +149,14 @@ public class ImageUtil {
     }
 
     public static BufferedImage method35039(int var0, int var1, int var2, int var3, int var4, int var5, boolean var6) {
-        return method35036(var0, var1, var2, var3, var4, var5, ClientColors.DEEP_TEAL.getColor, var6);
+        return method35036(var0, var1, var2, var3, var4, var5, ClientColors.DEEP_TEAL.getColor(), var6);
     }
 
     public static BufferedImage method35040(BufferedImage var0, int var1, int var2) {
         int var5 = var0.getWidth() + var1 * 2;
         int var6 = var0.getHeight() + var1 * 2;
         BufferedImage var7 = new BufferedImage(var5, var6, var0.getType());
-        if (var2 != ClientColors.DEEP_TEAL.getColor) {
+        if (var2 != ClientColors.DEEP_TEAL.getColor()) {
             for (int var8 = 0; var8 < var5; var8++) {
                 for (int var9 = 0; var9 < var6; var9++) {
                     var7.setRGB(var8, var9, var2);
@@ -173,7 +176,8 @@ public class ImageUtil {
     public static BufferedImage method35041(BufferedImage var0, int var1) {
         int var4 = var0.getWidth() + var1 * 2;
         int var5 = var0.getHeight() + var1 * 2;
-        BufferedImage var6 = method35043(var0, (float) var4 / (float) var0.getWidth(), (float) var5 / (float) var0.getHeight());
+        BufferedImage var6 = method35043(var0, (float) var4 / (float) var0.getWidth(),
+                (float) var5 / (float) var0.getHeight());
 
         for (int var7 = 0; var7 < var0.getWidth(); var7++) {
             for (int var8 = 0; var8 < var0.getHeight(); var8++) {

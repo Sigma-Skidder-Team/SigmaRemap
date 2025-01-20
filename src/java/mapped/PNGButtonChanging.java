@@ -23,15 +23,14 @@ public class PNGButtonChanging extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      RenderUtil.startScissor((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA);
+      RenderUtil.startScissor((float) this.xA, (float) this.yA, (float) this.widthA, (float) this.heightA);
       RenderUtil.drawImage(
-         (float)(this.xA - this.field20607.field719 * this.widthA),
-         (float)this.yA,
-         (float)(this.widthA * 3),
-         (float)this.heightA,
-         ResourceList.repeatPNG,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.35F)
-      );
+            (float) (this.xA - this.field20607.field719 * this.widthA),
+            (float) this.yA,
+            (float) (this.widthA * 3),
+            (float) this.heightA,
+            ResourceList.repeatPNG,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.35F));
       RenderUtil.endScissor();
       super.draw(var1);
    }

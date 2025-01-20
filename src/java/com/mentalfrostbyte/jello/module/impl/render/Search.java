@@ -34,10 +34,12 @@ public class Search extends Module {
     public Search() {
         super(ModuleCategory.RENDER, "Search", "Searches blocks through the world");
         NumberSetting var3;
-        this.registerSetting(var3 = new NumberSetting<Float>("Chunk Range", "Range at which search scans blocks", 5.0F, Float.class, 1.0F, 12.0F, 1.0F));
+        this.registerSetting(var3 = new NumberSetting<Float>("Chunk Range", "Range at which search scans blocks", 5.0F,
+                Float.class, 1.0F, 12.0F, 1.0F));
         BooleanSetting var4;
         this.registerSetting(var4 = new BooleanSetting("Holes", "Shows 1x1 explosion protection holes", false));
-        this.registerSetting(new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.getColor, true));
+        this.registerSetting(
+                new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.getColor(), true));
         BooleanListSetting var5;
         this.registerSetting(var5 = new BooleanListSetting("Blocks", "Blocks to render", true));
         var5.addObserver(var1 -> this.field23499.clear());
@@ -115,13 +117,14 @@ public class Search extends Module {
             }
 
             if (this.getBooleanValueFromSettingName("Holes")) {
-                label57:
-                for (BlockPos var13 : this.method16166(var1)) {
+                label57: for (BlockPos var13 : this.method16166(var1)) {
                     if (mc.world.getBlockState(var13).getBlock() == Blocks.AIR) {
                         for (Direction var11 : Direction.values()) {
                             if (var11 != Direction.UP
-                                    && mc.world.getBlockState(var13.method8337(var11.getDirectionVec())).getBlock() != Blocks.field36527
-                                    && mc.world.getBlockState(var13.method8337(var11.getDirectionVec())).getBlock() != Blocks.BEDROCK) {
+                                    && mc.world.getBlockState(var13.method8337(var11.getDirectionVec()))
+                                            .getBlock() != Blocks.field36527
+                                    && mc.world.getBlockState(var13.method8337(var11.getDirectionVec()))
+                                            .getBlock() != Blocks.BEDROCK) {
                                 continue label57;
                             }
                         }
@@ -162,8 +165,7 @@ public class Search extends Module {
 
                 this.field23500.clear();
 
-                label52:
-                for (ChunkPos var8 : var5) {
+                label52: for (ChunkPos var8 : var5) {
                     for (Class7871 var10 : this.field23499) {
                         if (var10.method26390(var8)) {
                             continue label52;

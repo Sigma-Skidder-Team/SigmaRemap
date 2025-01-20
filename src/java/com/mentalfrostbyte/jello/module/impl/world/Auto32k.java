@@ -47,7 +47,8 @@ public class Auto32k extends Module {
     public void onEnable() {
         this.field23870 = null;
 
-        for (BlockPos var4 : BlockUtil.method34545(BlockUtil.method34561(mc.playerController.getBlockReachDistance()))) {
+        for (BlockPos var4 : BlockUtil
+                .method34545(BlockUtil.method34561(mc.playerController.getBlockReachDistance()))) {
             if (!(BlockUtil.method34550(mc.player, var4) < 2.0F)
                     && BlockUtil.method34535(mc.player, var4)
                     && (double) var4.getY() >= mc.player.getPosY() - 2.0
@@ -75,8 +76,7 @@ public class Auto32k extends Module {
                 Items.field37668,
                 Items.field37653,
                 Items.field37654,
-                Items.field37658
-        );
+                Items.field37658);
         this.field23871 = InvManagerUtils.method25843(Items.field37545);
         if (this.field23871 == -1) {
             this.field23871 = InvManagerUtils.findItemSlot(Items.field37545);
@@ -107,8 +107,7 @@ public class Auto32k extends Module {
                     Items.field37668,
                     Items.field37653,
                     Items.field37654,
-                    Items.field37658
-            );
+                    Items.field37658);
             if (this.field23872 != -1) {
                 if (this.field23872 >= 36 && this.field23872 <= 44) {
                     this.field23872 %= 9;
@@ -144,8 +143,8 @@ public class Auto32k extends Module {
                 double var7 = (double) var4.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
                 double var9 = (double) var4.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
                 RenderUtil.render3DColoredBox(
-                        new Box3D(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0), MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.3F)
-                );
+                        new Box3D(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0),
+                        MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor(), 0.3F));
                 GL11.glColor3f(1.0F, 1.0F, 1.0F);
                 GL11.glBlendFunc(770, 771);
                 GL11.glEnable(3042);
@@ -158,7 +157,7 @@ public class Auto32k extends Module {
                 boolean var12 = true;
                 if (var12) {
                     GL11.glPushMatrix();
-                    int var13 = MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.5F);
+                    int var13 = MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor(), 0.5F);
                     float var14 = (float) (var13 >> 24 & 0xFF) / 255.0F;
                     float var15 = (float) (var13 >> 16 & 0xFF) / 255.0F;
                     float var16 = (float) (var13 >> 8 & 0xFF) / 255.0F;
@@ -171,7 +170,7 @@ public class Auto32k extends Module {
                     GL11.glPopMatrix();
                 }
 
-                int var22 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F);
+                int var22 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.5F);
                 float var23 = (float) (var22 >> 24 & 0xFF) / 255.0F;
                 float var24 = (float) (var22 >> 16 & 0xFF) / 255.0F;
                 float var25 = (float) (var22 >> 8 & 0xFF) / 255.0F;
@@ -245,20 +244,25 @@ public class Auto32k extends Module {
                                 int var6 = mc.player.inventory.currentItem;
                                 mc.player.inventory.currentItem = this.field23871;
                                 Vector3d var7 = BlockUtil.method34572(Direction.UP, this.field23870);
-                                BlockRayTraceResult var8 = new BlockRayTraceResult(var7, Direction.UP, this.field23870, false);
-                                ActionResultType var9 = mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var8);
+                                BlockRayTraceResult var8 = new BlockRayTraceResult(var7, Direction.UP, this.field23870,
+                                        false);
+                                ActionResultType var9 = mc.playerController.func_217292_a(mc.player, mc.world,
+                                        Hand.MAIN_HAND, var8);
                                 mc.player.swingArm(Hand.MAIN_HAND);
                                 if (var9 == ActionResultType.SUCCESS) {
                                     this.field23873++;
-                                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.PRESS_SHIFT_KEY));
+                                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player,
+                                            CEntityActionPacket.Action.PRESS_SHIFT_KEY));
                                     mc.player.movementInput.sneaking = true;
                                     mc.player.inventory.currentItem = this.field23872;
                                     Vector3d var10 = BlockUtil.method34572(Direction.UP, this.field23870.up());
-                                    BlockRayTraceResult var11 = new BlockRayTraceResult(var10, Direction.UP, this.field23870.up(), false);
+                                    BlockRayTraceResult var11 = new BlockRayTraceResult(var10, Direction.UP,
+                                            this.field23870.up(), false);
                                     mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var11);
                                     mc.player.swingArm(Hand.MAIN_HAND);
                                     mc.player.movementInput.sneaking = false;
-                                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.RELEASE_SHIFT_KEY));
+                                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player,
+                                            CEntityActionPacket.Action.RELEASE_SHIFT_KEY));
                                     mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var11);
                                 }
                             }
@@ -305,7 +309,8 @@ public class Auto32k extends Module {
                 int var7 = var4.method17303();
                 if (this.field23874 == var7 && var5 == 0 && var6.getItem() != Items.AIR && !this.field23877) {
                     var1.setCancelled(true);
-                    mc.getConnection().sendPacket(new CClickWindowPacket(var7, var5, 1, ClickType.QUICK_MOVE, var6, this.field23875++));
+                    mc.getConnection().sendPacket(
+                            new CClickWindowPacket(var7, var5, 1, ClickType.QUICK_MOVE, var6, this.field23875++));
                     int var8 = -1;
 
                     for (int var9 = 44; var9 > 9; var9--) {

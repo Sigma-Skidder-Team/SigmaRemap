@@ -19,7 +19,8 @@ public class Class4290 extends Class4278 {
    private Texture field20791;
 
    public Class4290(CustomGuiScreen var1, String var2) {
-      super(var1, var2, 0, Minecraft.getInstance().mainWindow.getHeight() - 70, Minecraft.getInstance().mainWindow.getWidth(), 110, false);
+      super(var1, var2, 0, Minecraft.getInstance().mainWindow.getHeight() - 70,
+            Minecraft.getInstance().mainWindow.getWidth(), 110, false);
       this.method13292(true);
       this.method13300(false);
    }
@@ -33,13 +34,15 @@ public class Class4290 extends Class4278 {
       super.method13028(var1, var2);
       int var5 = 20;
       if (this.field20788 == Class2059.field13418
-         && Math.abs(Minecraft.getInstance().mainWindow.getHeight() - var2) < var5
-         && !this.screen.method13239(((JelloClickGUI)this.screen).blurOverlay)) {
+            && Math.abs(Minecraft.getInstance().mainWindow.getHeight() - var2) < var5
+            && !this.screen.method13239(((JelloClickGUI) this.screen).blurOverlay)) {
          this.field20788 = Class2059.field13416;
       }
 
       float var6 = 0.05F;
-      this.field20787 = this.field20787 + (this.field20788 != Class2059.field13416 ? (this.field20788 != Class2059.field13417 ? 0.0F : -var6) : var6);
+      this.field20787 = this.field20787
+            + (this.field20788 != Class2059.field13416 ? (this.field20788 != Class2059.field13417 ? 0.0F : -var6)
+                  : var6);
       if (!(this.field20787 >= 1.0F)) {
          if (this.field20787 <= 0.0F) {
             this.field20787 = 0.0F;
@@ -59,20 +62,19 @@ public class Class4290 extends Class4278 {
          var7 = EasingFunctions.easeInBack(this.field20787, 0.0F, 1.0F, 1.0F);
       }
 
-      this.setYA(Minecraft.getInstance().mainWindow.getHeight() - (int)((float)this.getHeightA() * var7));
+      this.setYA(Minecraft.getInstance().mainWindow.getHeight() - (int) ((float) this.getHeightA() * var7));
    }
 
    @Override
    public void draw(float var1) {
       int var4 = 20;
-      if (!((double)var1 < 0.6)) {
+      if (!((double) var1 < 0.6)) {
          RenderUtil.method11465(
-            this.xA + var4,
-            this.yA + var4,
-            this.widthA - var4 * 2,
-            this.heightA - var4 * 2,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * var1)
-         );
+               this.xA + var4,
+               this.yA + var4,
+               this.widthA - var4 * 2,
+               this.heightA - var4 * 2,
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.9F * var1));
          super.draw(var1);
       }
    }

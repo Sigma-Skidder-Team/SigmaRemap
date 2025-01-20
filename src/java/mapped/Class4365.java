@@ -48,7 +48,7 @@ public class Class4365 extends Class4247 {
             (float) this.yA,
             (float) (this.xA + this.getWidthA()),
             (float) (this.yA + this.getHeightA()),
-            MultiUtilities.applyAlpha(ClientColors.DULL_GREEN.getColor,
+            MultiUtilities.applyAlpha(ClientColors.DULL_GREEN.getColor(),
                   (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * var1));
       RenderUtil.drawImage(
             (float) (this.xA + this.widthA - 60 - 10),
@@ -56,14 +56,14 @@ public class Class4365 extends Class4247 {
             60.0F,
             60.0F,
             var5,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
                   (0.5F + 0.5F * this.field21334) * var1));
       RenderUtil.drawString(
             this.font,
             (float) (this.xA + this.widthA - 90 - this.font.getStringWidth(var4)),
             (float) (this.yA + 27),
             var4,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
                   (0.5F + 0.5F * this.field21334) * var1));
       super.draw(var1);
    }

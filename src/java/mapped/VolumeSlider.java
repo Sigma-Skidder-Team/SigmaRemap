@@ -20,19 +20,17 @@ public class VolumeSlider extends Class4247 {
    @Override
    public void draw(float var1) {
       RenderUtil.drawRect(
-         (float)this.xA,
-         (float)this.yA,
-         (float)(this.xA + this.widthA),
-         (float)this.yA + (float)this.heightA * this.field21372,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.2F)
-      );
+            (float) this.xA,
+            (float) this.yA,
+            (float) (this.xA + this.widthA),
+            (float) this.yA + (float) this.heightA * this.field21372,
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.2F));
       RenderUtil.drawRect(
-         (float)this.xA,
-         (float)(this.yA + this.heightA),
-         (float)(this.xA + this.widthA),
-         (float)this.yA + (float)this.heightA * this.field21372,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.2F)
-      );
+            (float) this.xA,
+            (float) (this.yA + this.heightA),
+            (float) (this.xA + this.widthA),
+            (float) this.yA + (float) this.heightA * this.field21372,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.2F));
       super.draw(var1);
    }
 
@@ -47,7 +45,7 @@ public class VolumeSlider extends Class4247 {
    }
 
    public float method13706(int var1) {
-      return (float)(var1 - this.method13272()) / (float)this.heightA;
+      return (float) (var1 - this.method13272()) / (float) this.heightA;
    }
 
    @Override

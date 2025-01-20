@@ -40,35 +40,34 @@ public class Class4358 extends Class4247 {
       byte var9 = 30;
       UIInput var10;
       this.addToList(
-         var10 = new UIInput(
-            this, "search", this.field21304 + var9, this.field21303 + var9 + 50, this.field21305 - var9 * 2, 60, UIInput.field20741, "", "Search..."
-         )
-      );
+            var10 = new UIInput(
+                  this, "search", this.field21304 + var9, this.field21303 + var9 + 50, this.field21305 - var9 * 2, 60,
+                  UIInput.field20741, "", "Search..."));
       var10.method13151(var2x -> {
          this.field21307 = var10.getTypedText();
          this.field21308.method13512(0);
       });
       var10.method13242();
       this.addToList(
-         this.field21308 = new Class4339(
-            this, "mods", this.field21304 + var9, this.field21303 + var9 + 120, this.field21305 - var9 * 2, this.field21306 - var9 * 2 - 120
-         )
-      );
+            this.field21308 = new Class4339(
+                  this, "mods", this.field21304 + var9, this.field21303 + var9 + 120, this.field21305 - var9 * 2,
+                  this.field21306 - var9 * 2 - 120));
       int var11 = 10;
 
       for (Entry var13 : GuiManager.field41338.entrySet()) {
-         Class6984 var14 = new Class6984((Class<? extends Screen>)var13.getKey());
-         ColorHelper var15 = new ColorHelper(MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.02F), -986896)
-            .method19410(MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F))
-            .method19412(Class2218.field14492);
+         Class6984 var14 = new Class6984((Class<? extends Screen>) var13.getKey());
+         ColorHelper var15 = new ColorHelper(MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.02F),
+               -986896)
+               .method19410(MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.5F))
+               .method19412(Class2218.field14492);
          ButtonPanel var16;
          this.field21308
-            .addToList(
-               var16 = new ButtonPanel(this.field21308, var14.method21596(), 0, var11++ * 55, this.field21308.getWidthA(), 55, var15, var14.method21596())
-            );
+               .addToList(
+                     var16 = new ButtonPanel(this.field21308, var14.method21596(), 0, var11++ * 55,
+                           this.field21308.getWidthA(), 55, var15, var14.method21596()));
          var16.doThis((var2x, var3x) -> {
             for (Entry var7 : GuiManager.field41338.entrySet()) {
-               Class6984 var8 = new Class6984((Class<? extends Screen>)var7.getKey());
+               Class6984 var8 = new Class6984((Class<? extends Screen>) var7.getKey());
                if (var8.method21596().equals(var16.method13257()) && !this.field21311) {
                   this.field21309 = var8;
                   this.field21311 = true;
@@ -81,14 +80,14 @@ public class Class4358 extends Class4247 {
       var11 += 50;
 
       for (Module var19 : Client.getInstance().moduleManager.getModuleMap().values()) {
-         ColorHelper var20 = new ColorHelper(16777215, -986896).method19410(ClientColors.DEEP_TEAL.getColor).method19412(Class2218.field14488);
+         ColorHelper var20 = new ColorHelper(16777215, -986896).method19410(ClientColors.DEEP_TEAL.getColor())
+               .method19412(Class2218.field14488);
          ButtonPanel var21;
          this.field21308
-            .addToList(
-               var21 = new ButtonPanel(
-                  this.field21308, var19.getName(), 0, var11++ * 40, this.field21308.getWidthA(), 40, var20, new Class6984(var19).method21596()
-               )
-            );
+               .addToList(
+                     var21 = new ButtonPanel(
+                           this.field21308, var19.getName(), 0, var11++ * 40, this.field21308.getWidthA(), 40, var20,
+                           new Class6984(var19).method21596()));
          var21.method13034(10);
          var21.doThis((var2x, var3x) -> {
             for (Module var7 : Client.getInstance().moduleManager.getModuleMap().values()) {
@@ -108,7 +107,8 @@ public class Class4358 extends Class4247 {
    @Override
    public void method13028(int var1, int var2) {
       if (this.method13212()
-         && (var1 < this.field21304 || var2 < this.field21303 || var1 > this.field21304 + this.field21305 || var2 > this.field21303 + this.field21306)) {
+            && (var1 < this.field21304 || var2 < this.field21303 || var1 > this.field21304 + this.field21305
+                  || var2 > this.field21303 + this.field21306)) {
          this.field21311 = true;
       }
 
@@ -122,7 +122,7 @@ public class Class4358 extends Class4247 {
          if (!(var10 instanceof Class4292)) {
             for (CustomGuiScreen var12 : var10.method13241()) {
                if (var12 instanceof ButtonPanel) {
-                  ButtonPanel var13 = (ButtonPanel)var12;
+                  ButtonPanel var13 = (ButtonPanel) var12;
                   boolean var14 = var13.getHeightA() != 40;
                   if (!var14 || this.field21307 != null && (this.field21307 == null || this.field21307.length() != 0)) {
                      if (!var14 && this.method13622(this.field21307, var13.getTypedText())) {
@@ -193,29 +193,26 @@ public class Class4358 extends Class4247 {
       }
 
       RenderUtil.drawRect(
-         (float)this.xA,
-         (float)this.yA,
-         (float)this.widthA,
-         (float)this.heightA,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F * var1)
-      );
+            (float) this.xA,
+            (float) this.yA,
+            (float) this.widthA,
+            (float) this.heightA,
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.3F * var1));
       super.method13224();
       RenderUtil.drawRect(
-         (float)this.field21304,
-         (float)this.field21303,
-         (float)this.field21305,
-         (float)this.field21306,
-         10.0F,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
-      );
+            (float) this.field21304,
+            (float) this.field21303,
+            (float) this.field21305,
+            (float) this.field21306,
+            10.0F,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
       byte var5 = 30;
       RenderUtil.drawString(
-         ResourceRegistry.JelloLightFont36,
-         (float)(var5 + this.field21304),
-         (float)(var5 + this.field21303),
-         "Select mod to bind",
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.7F)
-      );
+            ResourceRegistry.JelloLightFont36,
+            (float) (var5 + this.field21304),
+            (float) (var5 + this.field21303),
+            "Select mod to bind",
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), var1 * 0.7F));
       super.draw(var1);
    }
 

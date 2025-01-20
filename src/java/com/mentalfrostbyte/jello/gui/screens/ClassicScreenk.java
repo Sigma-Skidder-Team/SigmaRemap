@@ -33,7 +33,8 @@ public class ClassicScreenk extends Screen {
                 this.method13236(this.field21081);
             }
 
-            this.addToList(this.field21081 = new Class4335(this, var1, this.getWidthA() / 2, this.getHeightA() / 2, var2));
+            this.addToList(
+                    this.field21081 = new Class4335(this, var1, this.getWidthA() / 2, this.getHeightA() / 2, var2));
         });
     }
 
@@ -82,8 +83,7 @@ public class ClassicScreenk extends Screen {
                 (float) this.yA,
                 (float) (this.xA + this.widthA),
                 (float) (this.yA + this.heightA),
-                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.35F)
-        );
+                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), var4 * 0.35F));
         super.draw(var1);
     }
 }

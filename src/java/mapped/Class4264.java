@@ -20,7 +20,7 @@ public class Class4264 extends Class4247 {
    public void method13028(int var1, int var2) {
       int var5 = this.getHeightO() - this.method13271();
       if (this.field20680) {
-         this.method13097((float)var5 / (float)this.getWidthA());
+         this.method13097((float) var5 / (float) this.getWidthA());
       }
 
       super.method13028(var1, var2);
@@ -29,26 +29,24 @@ public class Class4264 extends Class4247 {
    @Override
    public void draw(float var1) {
       for (int var4 = 0; var4 < this.widthA; var4++) {
-         float var5 = (float)var4 / (float)this.widthA;
+         float var5 = (float) var4 / (float) this.widthA;
          RenderUtil.renderBackgroundBox(
-            (float)(this.xA + var4),
-            (float)this.yA,
-            1.0F,
-            (float)this.heightA,
-            MultiUtilities.applyAlpha(Color.HSBtoRGB(var5, 1.0F, 1.0F), var1)
-         );
+               (float) (this.xA + var4),
+               (float) this.yA,
+               1.0F,
+               (float) this.heightA,
+               MultiUtilities.applyAlpha(Color.HSBtoRGB(var5, 1.0F, 1.0F), var1));
       }
 
       RenderUtil.method11428(
-         (float)this.getXA(),
-         (float)this.getYA(),
-         (float)(this.getXA() + this.getWidthA()),
-         (float)(this.getYA() + this.getHeightA()),
-         MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 0.5F * var1)
-      );
+            (float) this.getXA(),
+            (float) this.getYA(),
+            (float) (this.getXA() + this.getWidthA()),
+            (float) (this.getYA() + this.getHeightA()),
+            MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor(), 0.5F * var1));
       Class4252.method13052(
-         this.xA + Math.round((float)this.widthA * this.field20679) + 1, this.yA + 4, Color.HSBtoRGB(this.field20679, 1.0F, 1.0F), var1
-      );
+            this.xA + Math.round((float) this.widthA * this.field20679) + 1, this.yA + 4,
+            Color.HSBtoRGB(this.field20679, 1.0F, 1.0F), var1);
       super.draw(var1);
    }
 
