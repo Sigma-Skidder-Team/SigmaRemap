@@ -18,6 +18,7 @@ import net.minecraft.util.SharedConstants;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
+import net.minecraft.util.math.shapes.VoxelShapePart;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -324,7 +325,7 @@ public class Class8969 {
       }
    }
 
-   public static void method32900(IWorld var0, int var1, Class7938 var2, int var3, int var4, int var5) {
+   public static void method32900(IWorld var0, int var1, VoxelShapePart var2, int var3, int var4, int var5) {
       var2.method26740((var5x, var6, var7, var8) -> {
          BlockPos var11 = new BlockPos(var3 + var6, var4 + var7, var5 + var8);
          BlockPos var12 = var11.offset(var5x);

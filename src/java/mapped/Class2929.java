@@ -68,7 +68,7 @@ public class Class2929 extends Class2898<Class4712> {
                   BlockPos var34 = var4.add(var27, var30, var32);
                   BlockState var36 = var1.getBlockState(var34);
                   if (var27 != var10 && var30 != -1 && var32 != var15 && var27 != var11 && var30 != 4 && var32 != var16) {
-                     if (!var36.isIn(Blocks.CHEST) && !var36.isIn(Blocks.field36532)) {
+                     if (!var36.isIn(Blocks.CHEST) && !var36.isIn(Blocks.SPAWNER)) {
                         var1.setBlockState(var34, field18004, 2);
                      }
                   } else if (var34.getY() >= 0 && !var1.getBlockState(var34.down()).getMaterial().isSolid()) {
@@ -108,7 +108,7 @@ public class Class2929 extends Class2898<Class4712> {
             }
          }
 
-         var1.setBlockState(var4, Blocks.field36532.getDefaultState(), 2);
+         var1.setBlockState(var4, Blocks.SPAWNER.getDefaultState(), 2);
          TileEntity var29 = var1.getTileEntity(var4);
          if (!(var29 instanceof Class960)) {
             field18002.error("Failed to fetch mob spawner entity at ({}, {}, {})", var4.getX(), var4.getY(), var4.getZ());

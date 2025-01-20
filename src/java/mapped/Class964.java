@@ -383,7 +383,7 @@ public class Class964 extends TileEntity {
             return false;
          }
 
-         var7.method32889(this.world, var4, this.field5399, !this.field5403, Blocks.field36894);
+         var7.method32889(this.world, var4, this.field5399, !this.field5403, Blocks.STRUCTURE_VOID);
          var7.method32887(this.field5396);
          if (var1) {
             try {

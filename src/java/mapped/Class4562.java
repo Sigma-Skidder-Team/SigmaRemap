@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.cache.CacheLoader;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
 
 public final class Class4562 extends CacheLoader<VoxelShape, Boolean> {
    private static String[] field21998;

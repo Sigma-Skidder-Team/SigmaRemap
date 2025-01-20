@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import mapped.Class3220;
 import mapped.Class3399;
-import mapped.VoxelShapes;
+import net.minecraft.util.math.shapes.VoxelShapes;
 
 public class AntiCactus extends Module {
     public AntiCactus() {

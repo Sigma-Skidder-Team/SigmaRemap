@@ -12,7 +12,7 @@ import net.minecraft.world.gen.ChunkGenerator;
 import java.util.Random;
 
 public class Class2951 extends Class2898<Class4728> {
-   private static final BlockState field18027 = Blocks.field37009
+   private static final BlockState field18027 = Blocks.BAMBOO
       .getDefaultState()
       .with(Class3418.field19125, Integer.valueOf(1))
       .with(Class3418.field19126, BambooLeaves.field642)
@@ -31,7 +31,7 @@ public class Class2951 extends Class2898<Class4728> {
       BlockPos.Mutable var9 = var4.method8354();
       BlockPos.Mutable var10 = var4.method8354();
       if (var1.method7007(var9)) {
-         if (Blocks.field37009.getDefaultState().isValidPosition(var1, var9)) {
+         if (Blocks.BAMBOO.getDefaultState().isValidPosition(var1, var9)) {
             int var11 = var3.nextInt(12) + 5;
             if (var3.nextFloat() < var5.field22399) {
                int var12 = var3.nextInt(4) + 1;

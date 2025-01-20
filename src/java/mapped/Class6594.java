@@ -10,7 +10,6 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLEngine;
 
 public class Class6594 extends Class6593 {
-   private static String[] field29018;
    private final String[] field29019;
    private final String[] field29020;
 

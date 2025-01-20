@@ -15,6 +15,8 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -137,7 +139,7 @@ public class FlowingFluidBlock extends Block implements Class3405 {
                   return false;
                }
 
-               if (var6 && var1.getBlockState(var11).isIn(Blocks.field37006)) {
+               if (var6 && var1.getBlockState(var11).isIn(Blocks.BLUE_ICE)) {
                   var1.setBlockState(var2, Blocks.BASALT.getDefaultState());
                   this.method12044(var1, var2);
                   return false;

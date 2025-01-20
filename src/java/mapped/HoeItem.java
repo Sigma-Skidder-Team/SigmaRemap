@@ -35,27 +35,27 @@ public class HoeItem extends ToolItem {
          Blocks.SNOW_BLOCK,
          Blocks.SNOW,
          Blocks.SOUL_SAND,
-         Blocks.field36885,
-         Blocks.field36945,
-         Blocks.field36946,
-         Blocks.field36947,
-         Blocks.field36948,
-         Blocks.field36949,
-         Blocks.field36950,
-         Blocks.field36951,
-         Blocks.field36952,
-         Blocks.field36953,
-         Blocks.field36954,
-         Blocks.field36955,
-         Blocks.field36956,
-         Blocks.field36957,
-         Blocks.field36958,
-         Blocks.field36959,
-         Blocks.field36960,
+         Blocks.GRASS_PATH,
+         Blocks.WHITE_CONCRETE_POWDER,
+         Blocks.ORANGE_CONCRETE_POWDER,
+         Blocks.MAGENTA_CONCRETE_POWDER,
+         Blocks.LIGHT_BLUE_CONCRETE_POWDER,
+         Blocks.YELLOW_CONCRETE_POWDER,
+         Blocks.LIME_CONCRETE_POWDER,
+         Blocks.PINK_CONCRETE_POWDER,
+         Blocks.GRAY_CONCRETE_POWDER,
+         Blocks.LIGHT_GRAY_CONCRETE_POWDER,
+         Blocks.CYAN_CONCRETE_POWDER,
+         Blocks.PURPLE_CONCRETE_POWDER,
+         Blocks.BLUE_CONCRETE_POWDER,
+         Blocks.BROWN_CONCRETE_POWDER,
+         Blocks.GREEN_CONCRETE_POWDER,
+         Blocks.RED_CONCRETE_POWDER,
+         Blocks.BLACK_CONCRETE_POWDER,
          Blocks.SOUL_SOIL
       }
    );
-   public static final Map<Block, BlockState> field18770 = Maps.newHashMap(ImmutableMap.of(Blocks.GRASS_BLOCK, Blocks.field36885.getDefaultState()));
+   public static final Map<Block, BlockState> field18770 = Maps.newHashMap(ImmutableMap.of(Blocks.GRASS_BLOCK, Blocks.GRASS_PATH.getDefaultState()));
 
    public HoeItem(IItemTier var1, float var2, float var3, Properties var4) {
       super(var2, var3, var1, field18769, var4);

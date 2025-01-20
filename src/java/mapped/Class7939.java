@@ -1,10 +1,11 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.VoxelShapePart;
 
-public final class Class7939 extends Class7938 {
+public final class Class7939 extends VoxelShapePart {
    private static String[] field34040;
-   private final Class7938 field34041;
+   private final VoxelShapePart field34041;
    private final int field34042;
    private final int field34043;
    private final int field34044;
@@ -12,7 +13,7 @@ public final class Class7939 extends Class7938 {
    private final int field34046;
    private final int field34047;
 
-   public Class7939(Class7938 var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   public Class7939(VoxelShapePart var1, int var2, int var3, int var4, int var5, int var6, int var7) {
       super(var5 - var2, var6 - var3, var7 - var4);
       this.field34041 = var1;
       this.field34042 = var2;

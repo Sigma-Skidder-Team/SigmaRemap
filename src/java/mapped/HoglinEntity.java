@@ -180,7 +180,7 @@ public class HoglinEntity extends AnimalEntity implements IMob, Class1092 {
    @Override
    public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
       if (!Class9069.method33790(this, var1)) {
-         return !var2.getBlockState(var1.down()).isIn(Blocks.field37083) ? 0.0F : 10.0F;
+         return !var2.getBlockState(var1.down()).isIn(Blocks.CRIMSON_NYLIUM) ? 0.0F : 10.0F;
       } else {
          return -1.0F;
       }

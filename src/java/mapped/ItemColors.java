@@ -27,7 +27,7 @@ public class ItemColors {
          Items.field37847,
          Items.field38086
       );
-      var3.method33259((var0x, var1) -> GrassColors.get(0.5, 1.0), Blocks.TALL_GRASS, Blocks.field36802);
+      var3.method33259((var0x, var1) -> GrassColors.get(0.5, 1.0), Blocks.TALL_GRASS, Blocks.LARGE_FERN);
       var3.method33259((var0x, var1) -> {
          if (var1 != 1) {
             return -1;

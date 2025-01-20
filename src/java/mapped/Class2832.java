@@ -238,7 +238,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Blocks.field36453))
+                  .method18291(Class4695.method14724(Blocks.WET_SPONGE))
                   .method18297(Class163.method492())
             )
             .method18320(
@@ -463,7 +463,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Blocks.field37009).method18296(Class140.method420(Class6871.method20919(1))))
+                  .method18291(Class4695.method14724(Blocks.BAMBOO).method18296(Class140.method420(Class6871.method20919(1))))
             )
       );
       this.method11033(
@@ -905,7 +905,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Blocks.field36703))
+                  .method18291(Class4695.method14724(Blocks.WITHER_SKELETON_SKULL))
                   .method18297(Class163.method492())
                   .method18297(Class124.method363(0.025F, 0.01F))
             )

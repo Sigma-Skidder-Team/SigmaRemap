@@ -1,5 +1,8 @@
 package net.minecraft.block;
 
+import mapped.IGrowable;
+import mapped.AbstractTreeGrower;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.block.trees.Tree;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.state.IntegerProperty;

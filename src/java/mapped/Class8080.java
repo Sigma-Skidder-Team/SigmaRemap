@@ -19,13 +19,13 @@ public class Class8080 implements IAmbientSoundHandler {
    public void tick() {
       World var3 = this.field34730.world;
       BlockState var4 = var3.method7004(this.field34730.getBoundingBox().grow(0.0, -0.4F, 0.0).shrink(0.001))
-         .filter(var0 -> var0.isIn(Blocks.field37013))
+         .filter(var0 -> var0.isIn(Blocks.BUBBLE_COLUMN))
          .findFirst()
          .orElse((BlockState)null);
       if (var4 == null) {
          this.field34731 = false;
       } else {
-         if (!this.field34731 && !this.field34732 && var4.isIn(Blocks.field37013) && !this.field34730.isSpectator()) {
+         if (!this.field34731 && !this.field34732 && var4.isIn(Blocks.BUBBLE_COLUMN) && !this.field34730.isSpectator()) {
             boolean var5 = var4.<Boolean>get(Class3406.field19084);
             if (!var5) {
                this.field34730.playSound(SoundEvents.field26423, 1.0F, 1.0F);

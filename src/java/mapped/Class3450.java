@@ -33,7 +33,7 @@ public class Class3450 extends BushBlock implements IGrowable, Class3449 {
 
    @Override
    public boolean isValidGround(BlockState state, IBlockReader var2, BlockPos var3) {
-      return state.method23454(var2, var3, Direction.UP) && !state.isIn(Blocks.field36890);
+      return state.method23454(var2, var3, Direction.UP) && !state.isIn(Blocks.MAGMA_BLOCK);
    }
 
    @Nullable

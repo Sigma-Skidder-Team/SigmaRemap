@@ -5,9 +5,9 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRenderBlocks;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class3420;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.OreBlock;
 
 public class XRay extends Module {
     public static XRay instance;
@@ -35,7 +35,7 @@ public class XRay extends Module {
     public void onRenderBlocks(EventRenderBlocks event) {
         if (this.isEnabled()) {
             AbstractBlock.AbstractBlockState blockState = event.method13970();
-            if (!(blockState.getBlock() instanceof Class3420) && blockState.getBlock() != Blocks.field37121) {
+            if (!(blockState.getBlock() instanceof OreBlock) && blockState.getBlock() != Blocks.field37121) {
                 event.setCancelled(true);
             } else {
                 event.method13972(true);

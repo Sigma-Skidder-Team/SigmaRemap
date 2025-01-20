@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
 
 public class StationaryBorderInfo implements WorldBorderIBorderInfo {
     private final double size;

@@ -22,7 +22,7 @@ public class Class2902 extends Class2898<Class4701> {
          boolean var13 = Math.abs(var9.getY() - var4.getY()) == 2;
          if (var10 && var11 && var12) {
             BlockPos var14 = var9.toImmutable();
-            this.method11217(var1, var14, Blocks.field36886.getDefaultState());
+            this.method11217(var1, var14, Blocks.END_GATEWAY.getDefaultState());
             var5.method14747().ifPresent(var3x -> {
                TileEntity var6 = var1.getTileEntity(var14);
                if (var6 instanceof Class957) {

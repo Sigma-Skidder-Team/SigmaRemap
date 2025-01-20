@@ -31,6 +31,7 @@ import net.minecraft.util.datafix.TypeReferences;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -600,7 +601,7 @@ public class EntityType<T extends Entity> {
       } else {
          return this.field41118
                || !var1.isIn(BlockTags.field32798)
-                  && !var1.isIn(Blocks.field36890)
+                  && !var1.isIn(Blocks.MAGMA_BLOCK)
                   && !Class3244.method11655(var1)
                   && !var1.isIn(Blocks.LAVA)
             ? var1.isIn(Blocks.WITHER_ROSE) || var1.isIn(Blocks.SWEET_BERRY_BUSH) || var1.isIn(Blocks.CACTUS)

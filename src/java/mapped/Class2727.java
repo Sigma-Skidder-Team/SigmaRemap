@@ -73,6 +73,6 @@ public class Class2727 extends Class2595 {
 
    private boolean method10939(IWorldReader var1, BlockPos var2) {
       BlockState var5 = var1.getBlockState(var2);
-      return (var1.getFluidState(var2).isEmpty() || var5.isIn(Blocks.field37013)) && var5.method23440(var1, var2, PathType.field12614);
+      return (var1.getFluidState(var2).isEmpty() || var5.isIn(Blocks.BUBBLE_COLUMN)) && var5.method23440(var1, var2, PathType.field12614);
    }
 }

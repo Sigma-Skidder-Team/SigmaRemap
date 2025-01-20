@@ -311,7 +311,7 @@ public class Class6763 extends Class6762 {
       if (var8 == PathNodeType.OPEN && var3 >= 1) {
          BlockState var9 = var1.getBlockState(var7.setPos(var2, var3 - 1, var4));
          PathNodeType var10 = method20635(var1, var7.setPos(var2, var3 - 1, var4));
-         if (var10 == PathNodeType.DAMAGE_FIRE || var9.isIn(Blocks.field36890) || var10 == PathNodeType.LAVA || var9.isIn(BlockTags.field32809)
+         if (var10 == PathNodeType.DAMAGE_FIRE || var9.isIn(Blocks.MAGMA_BLOCK) || var10 == PathNodeType.LAVA || var9.isIn(BlockTags.field32809)
             )
           {
             var8 = PathNodeType.DAMAGE_FIRE;
