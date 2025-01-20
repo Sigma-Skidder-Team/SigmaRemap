@@ -69,7 +69,7 @@ public class Client {
     public NotificationManager notificationManager;
     private SlotChangeTracker slotChangeTracker;
     public WaypointsManager waypointsManager;
-    private Class8795 field28989;
+    private Orientation orientation;
     public ClientMode clientMode = ClientMode.PREMIUM;
     private DiscordRichPresence discordRichPresence;
 
@@ -127,8 +127,8 @@ public class Client {
         this.waypointsManager.init();
         this.blurEngine = new BlurEngine();
         this.blurEngine.init();
-        this.field28989 = new Class8795();
-        this.field28989.init();
+        this.orientation = new Orientation();
+        this.orientation.init();
         GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Sigma 5.0");
         long var6 = System.currentTimeMillis();
         this.logger.info("Initialized.");
@@ -276,8 +276,8 @@ public class Client {
         return this.slotChangeTracker;
     }
 
-    public Class8795 method19950() {
-        return this.field28989;
+    public Orientation getOrientation() {
+        return this.orientation;
     }
 
     public JSONObject getConfig() {

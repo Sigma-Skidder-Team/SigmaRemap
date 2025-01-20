@@ -16,28 +16,33 @@ import net.minecraft.util.math.vector.Vector3d;
 public class MovementUtils {
     public static Minecraft mc = Minecraft.getInstance();
 
+   /**
+    * Calculates the player's current movement speed, taking into account various factors such as sprinting, potion effects, sneaking, and being in water.
+    *
+    * @return The calculated movement speed as a double value.
+    */
    public static double getSpeed() {
-      double var2 = 0.2873;
-      float var4 = 1.0F;
+      double speed = 0.2873;
+      float multiplier = 1.0F;
       ModifiableAttributeInstance var5 = mc.player.getAttribute(Attributes.MOVEMENT_SPEED);
-      var4 = (float)((double)var4 * ((var5.getValue() / (double) mc.player.abilities.getWalkSpeed() + 1.0) / 2.0));
+      multiplier = (float)((double)multiplier * ((var5.getValue() / (double) mc.player.abilities.getWalkSpeed() + 1.0) / 2.0));
       if (mc.player.isSprinting()) {
-         var4 = (float)((double)var4 - 0.15);
+         multiplier = (float)((double)multiplier - 0.15);
       }
 
       if (mc.player.isPotionActive(Effects.SPEED) && mc.player.isSprinting()) {
-         var4 = (float)((double)var4 - 0.03000002 * (double)(mc.player.getActivePotionEffect(Effects.SPEED).getAmplifier() + 1));
+         multiplier = (float)((double)multiplier - 0.03000002 * (double)(mc.player.getActivePotionEffect(Effects.SPEED).getAmplifier() + 1));
       }
 
       if (mc.player.isSneaking()) {
-         var2 *= 0.25;
+         speed *= 0.25;
       }
 
       if (isInWater()) {
-         var2 *= 0.3;
+         speed *= 0.3;
       }
 
-      return var2 * (double)var4;
+      return speed * (double)multiplier;
    }
 
    public static double method37076() {
@@ -79,55 +84,55 @@ public class MovementUtils {
    }
 
    public static float[] lenientStrafe() {
-      MovementInput var2 = mc.player.movementInput;
-      float var3 = var2.moveForward;
-      float var4 = var2.moveStrafe;
-      return method37084(var3, var4);
+      MovementInput input = mc.player.movementInput;
+      float forward = input.moveForward;
+      float strafe = input.moveStrafe;
+      return getAdjustedStrafe(forward, strafe);
    }
 
-   public static float[] method37083() {
-      MovementInput var2 = mc.player.movementInput;
-      float var3 = var2.moveForward;
-      float var4 = var2.moveStrafe;
-      return method37085(var3, var4);
+   public static float[] otherStrafe() {
+      MovementInput input = mc.player.movementInput;
+      float forward = input.moveForward;
+      float strafe = input.moveStrafe;
+      return getAdjustedStrafe2(forward, strafe);
    }
 
-   public static float[] method37084(float var0, float var1) {
-      float var4 = mc.player.rotationYaw + 90.0F;
-      if (Client.getInstance().method19950().method31744() != -999.0F) {
-         var4 = Client.getInstance().method19950().method31744() + 90.0F;
+   public static float[] getAdjustedStrafe(float forward, float strafe) {
+      float yaw = mc.player.rotationYaw + 90.0F;
+      if (Client.getInstance().getOrientation().getAdjustedYaw() != -999.0F) {
+         yaw = Client.getInstance().getOrientation().getAdjustedYaw() + 90.0F;
       }
 
-      if (var0 != 0.0F) {
-         if (!(var1 >= 1.0F)) {
-            if (var1 <= -1.0F) {
-               var4 += (float)(!(var0 > 0.0F) ? -45 : 45);
-               var1 = 0.0F;
+      if (forward != 0.0F) {
+         if (!(strafe >= 1.0F)) {
+            if (strafe <= -1.0F) {
+               yaw += (float)(!(forward > 0.0F) ? -45 : 45);
+               strafe = 0.0F;
             }
          } else {
-            var4 += (float)(!(var0 > 0.0F) ? 45 : -45);
-            var1 = 0.0F;
+            yaw += (float)(!(forward > 0.0F) ? 45 : -45);
+            strafe = 0.0F;
          }
 
-         if (!(var0 > 0.0F)) {
-            if (var0 < 0.0F) {
-               var0 = -1.0F;
+         if (!(forward > 0.0F)) {
+            if (forward < 0.0F) {
+               forward = -1.0F;
             }
          } else {
-            var0 = 1.0F;
+            forward = 1.0F;
          }
       }
 
-      if (Client.getInstance().method19950().method31742()
-         && !Client.getInstance().method19950().method31741()
+      if (Client.getInstance().getOrientation().method31742()
+         && !Client.getInstance().getOrientation().method31741()
          && (mc.player.moveForward != 0.0F || mc.player.moveStrafing != 0.0F)) {
-         var0 = 1.0F;
+         forward = 1.0F;
       }
 
-      return new float[]{var4, var0, var1};
+      return new float[]{yaw, forward, strafe};
    }
 
-   public static float[] method37085(float var0, float var1) {
+   public static float[] getAdjustedStrafe2(float var0, float var1) {
       float var4 = mc.player.rotationYaw + 90.0F;
       if (var0 == 0.0F) {
          if (var1 != 0.0F) {
@@ -311,33 +316,33 @@ public class MovementUtils {
    }
 
    public static void method37095(double var0) {
-      double var4 = (double) mc.player.movementInput.moveForward;
-      double var6 = (double) mc.player.movementInput.moveStrafe;
-      float var8 = mc.player.rotationYaw;
-      if (var4 != 0.0) {
-         if (!(var6 > 0.0)) {
-            if (var6 < 0.0) {
-               var8 += (float)(!(var4 > 0.0) ? -45 : 45);
+      double forward = (double) mc.player.movementInput.moveForward;
+      double strafe = (double) mc.player.movementInput.moveStrafe;
+      float yaw = mc.player.rotationYaw;
+      if (forward != 0.0) {
+         if (!(strafe > 0.0)) {
+            if (strafe < 0.0) {
+               yaw += (float)(!(forward > 0.0) ? -45 : 45);
             }
          } else {
-            var8 += (float)(!(var4 > 0.0) ? 45 : -45);
+            yaw += (float)(!(forward > 0.0) ? 45 : -45);
          }
 
-         var6 = 0.0;
-         if (!(var4 > 0.0)) {
-            if (var4 < 0.0) {
-               var4 = -1.0;
+         strafe = 0.0;
+         if (!(forward > 0.0)) {
+            if (forward < 0.0) {
+               forward = -1.0;
             }
          } else {
-            var4 = 1.0;
+            forward = 1.0;
          }
       }
 
       double var9 = mc.player.getPosX();
       double var11 = mc.player.getPosY();
       double var13 = mc.player.getPosZ();
-      double var15 = var4 * var0 * Math.cos(Math.toRadians((double)(var8 + 90.0F))) + var6 * var0 * Math.sin(Math.toRadians((double)(var8 + 90.0F)));
-      double var17 = var4 * var0 * Math.sin(Math.toRadians((double)(var8 + 90.0F))) - var6 * var0 * Math.cos(Math.toRadians((double)(var8 + 90.0F)));
+      double var15 = forward * var0 * Math.cos(Math.toRadians((double)(yaw + 90.0F))) + strafe * var0 * Math.sin(Math.toRadians((double)(yaw + 90.0F)));
+      double var17 = forward * var0 * Math.sin(Math.toRadians((double)(yaw + 90.0F))) - strafe * var0 * Math.cos(Math.toRadians((double)(yaw + 90.0F)));
       mc.player.setPosition(var9 + var15, var11, var13 + var17);
    }
 }

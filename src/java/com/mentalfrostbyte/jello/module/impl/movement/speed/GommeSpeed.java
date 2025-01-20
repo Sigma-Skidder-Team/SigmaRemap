@@ -23,13 +23,13 @@ public class GommeSpeed extends Module {
     public void onEnable() {
         this.field23581 = 0;
         this.field23582 = 0;
-        this.field23584 = MovementUtils.method37083()[0];
+        this.field23584 = MovementUtils.otherStrafe()[0];
     }
 
     @Override
     public void onDisable() {
         if (MultiUtilities.method17686()) {
-            MovementUtils.method37093(0.27, MovementUtils.method37083()[0], this.field23584, 45.0F);
+            MovementUtils.method37093(0.27, MovementUtils.otherStrafe()[0], this.field23584, 45.0F);
         } else {
             MovementUtils.strafe(0.0);
         }
@@ -78,7 +78,7 @@ public class GommeSpeed extends Module {
                     }
 
                     if (MultiUtilities.method17686()) {
-                        this.field23584 = MovementUtils.method37092(var1, Math.max(this.field23583, 0.23), MovementUtils.method37083()[0], this.field23584, 45.0F);
+                        this.field23584 = MovementUtils.method37092(var1, Math.max(this.field23583, 0.23), MovementUtils.otherStrafe()[0], this.field23584, 45.0F);
                     } else {
                         this.field23583 = 0.1;
                         MovementUtils.setSpeed(var1, 0.0);
@@ -94,7 +94,7 @@ public class GommeSpeed extends Module {
                 }
 
                 MovementUtils.setSpeed(var1, this.field23583);
-                this.field23584 = MovementUtils.method37083()[0];
+                this.field23584 = MovementUtils.otherStrafe()[0];
             }
         }
     }

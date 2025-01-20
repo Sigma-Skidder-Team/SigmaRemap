@@ -137,7 +137,7 @@ public class AutoMiner extends Module {
                break;
             }
 
-            if (!var14 && mc.player.onGround && !Client.getInstance().method19950().method31742()
+            if (!var14 && mc.player.onGround && !Client.getInstance().getOrientation().method31742()
                   && this.field23454 == null) {
                List<BlockPos> var15 = this.method16081();
                Client.getInstance().notificationManager
@@ -160,7 +160,7 @@ public class AutoMiner extends Module {
                               var12x.field31174 = true;
                               List var13x = this.field23453.method38776(var12x);
                               if (var13x.size() > 1) {
-                                 Client.getInstance().method19950().method31739(var13x);
+                                 Client.getInstance().getOrientation().method31739(var13x);
                                  Client.getInstance().notificationManager
                                        .send(
                                              new Notification(
@@ -252,7 +252,7 @@ public class AutoMiner extends Module {
       this.field23454 = null;
       this.field23451.clear();
       this.field23452.clear();
-      Client.getInstance().method19950().method31738();
+      Client.getInstance().getOrientation().method31738();
       Client.getInstance().notificationManager.send(new Notification("AutoMiner", "Scanning Terrain..."));
    }
 
@@ -265,7 +265,7 @@ public class AutoMiner extends Module {
       this.field23454 = null;
       this.field23451.clear();
       this.field23452.clear();
-      Client.getInstance().method19950().method31738();
+      Client.getInstance().getOrientation().method31738();
    }
 
    private void method16082() {

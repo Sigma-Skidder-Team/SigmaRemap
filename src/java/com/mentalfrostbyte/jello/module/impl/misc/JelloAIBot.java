@@ -38,7 +38,7 @@ public class JelloAIBot extends Module {
     @Override
     public void onDisable() {
         Client.getInstance().moduleManager.getModuleByClass(FightBot.class).setEnabled(false);
-        Client.getInstance().method19950().method31738();
+        Client.getInstance().getOrientation().method31738();
         this.field23515 = null;
     }
 
@@ -87,7 +87,7 @@ public class JelloAIBot extends Module {
                             var7.field31174 = true;
                             var7.field31175 = true;
                             this.field23512 = var4x.method38776(var7);
-                            Client.getInstance().method19950().method31739(this.field23512);
+                            Client.getInstance().getOrientation().method31739(this.field23512);
                             this.field23515 = null;
                             MultiUtilities.addChatMessage("calc" + this.field23512.size());
                         } catch (Exception var8) {

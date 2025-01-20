@@ -51,7 +51,7 @@ public class SpiderStep extends Module {
 
                     var7 = !(var7 > 0.42) ? var7 : 0.4199998;
                     var1.setY(var7);
-                    this.field23761 = MovementUtils.method37083()[0] - 90.0F;
+                    this.field23761 = MovementUtils.otherStrafe()[0] - 90.0F;
                     this.field23758 = 1;
                     this.field23759 = mc.player.getPosY();
                     var4 = var1.getHeight();

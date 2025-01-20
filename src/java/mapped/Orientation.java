@@ -22,7 +22,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import org.lwjgl.opengl.GL11;
 
-public class Class8795 {
+public class Orientation {
    private Minecraft mc = Minecraft.getInstance();
    private List<Class9510> field39613 = new ArrayList<Class9510>();
    public float field39614 = -999.0F;
@@ -69,7 +69,7 @@ public class Class8795 {
       return this.method31742() && !this.method31741();
    }
 
-   public float method31744() {
+   public float getAdjustedYaw() {
       return this.method31743() ? this.field39614 : -999.0F;
    }
 

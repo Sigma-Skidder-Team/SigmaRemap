@@ -34,13 +34,13 @@ public class AACSpeed extends Module {
       this.field23398 = -1;
       this.field23399 = 0;
       this.field23403 = mc.player.getPosY();
-      this.field23404 = MovementUtils.method37083()[0];
+      this.field23404 = MovementUtils.otherStrafe()[0];
       this.field23400 = 0;
    }
 
    @Override
    public void onDisable() {
-      MovementUtils.method37093(0.27, MovementUtils.method37083()[0], this.field23404, 45.0F);
+      MovementUtils.method37093(0.27, MovementUtils.otherStrafe()[0], this.field23404, 45.0F);
    }
 
    @EventTarget
@@ -104,7 +104,7 @@ public class AACSpeed extends Module {
          }
 
          if (this.field23398 >= 0) {
-            this.field23404 = MovementUtils.method37092(var1, this.field23401, MovementUtils.method37083()[0], this.field23404, 45.0F);
+            this.field23404 = MovementUtils.method37092(var1, this.field23401, MovementUtils.otherStrafe()[0], this.field23404, 45.0F);
          }
 
          MultiUtilities.setPlayerYMotion(var1.getY());
@@ -144,7 +144,7 @@ public class AACSpeed extends Module {
    public void method16011(JumpEvent var1) {
       this.field23398 = 0;
       this.field23400 = 0;
-      this.field23404 = MovementUtils.method37083()[0];
+      this.field23404 = MovementUtils.otherStrafe()[0];
       String var4 = this.getStringSettingValueByName("Mode");
       switch (var4) {
          case "Basic":
