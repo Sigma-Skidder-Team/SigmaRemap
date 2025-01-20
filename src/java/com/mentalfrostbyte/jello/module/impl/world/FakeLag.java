@@ -40,7 +40,7 @@ public class FakeLag extends Module {
     @Override
     public void onDisable() {
         for (IPacket<?> packet : this.packets) {
-            mc.getConnection().networkManager.sendNoEventPacket(packet);
+            mc.getConnection().getNetworkManager().sendNoEventPacket(packet);
         }
     }
 
@@ -81,7 +81,7 @@ public class FakeLag extends Module {
                 this.timerUtil.reset();
 
                 for (IPacket<?> packet : this.packets) {
-                    mc.getConnection().networkManager.sendNoEventPacket(packet);
+                    mc.getConnection().getNetworkManager().sendNoEventPacket(packet);
                 }
                 this.packets.clear();
             }

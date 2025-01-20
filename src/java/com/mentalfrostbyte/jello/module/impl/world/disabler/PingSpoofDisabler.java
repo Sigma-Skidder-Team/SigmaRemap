@@ -66,8 +66,8 @@ public class PingSpoofDisabler extends Module {
                 for (int var5 = 0; var5 < var7; var5++) {
                     Class8772 var6 = this.field23461.get(var5);
                     if (var6.method31641()) {
-                        mc.getConnection().networkManager;
-                        NetworkManager.processPacket(var6.method31642(), mc.getConnection().networkManager.packetListener);
+                        mc.getConnection().getNetworkManager();
+                        NetworkManager.processPacket(var6.method31642(), mc.getConnection().getNetworkManager().packetListener);
                         this.field23461.remove(var5);
                         var7--;
                         var5--;

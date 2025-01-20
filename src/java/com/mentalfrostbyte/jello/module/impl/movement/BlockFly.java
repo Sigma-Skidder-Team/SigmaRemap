@@ -137,7 +137,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                     mc.player.inventory.currentItem = var4;
                     if (this.getStringSettingValueByName("ItemSpoof").equals("LiteSpoof")
                             && (this.field23884 < 0 || this.field23884 != var4)) {
-                        mc.getConnection().networkManager.sendPacket(new CHeldItemChangePacket(var4));
+                        mc.getConnection().getNetworkManager().sendPacket(new CHeldItemChangePacket(var4));
                         this.field23884 = var4;
                     }
                     break;

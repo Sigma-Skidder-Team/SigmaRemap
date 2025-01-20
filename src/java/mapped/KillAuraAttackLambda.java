@@ -107,7 +107,7 @@ public class KillAuraAttackLambda implements Runnable {
                      mc.player.swingArm(Hand.MAIN_HAND);
                   }
 
-                  mc.getConnection().networkManager
+                  mc.getConnection().getNetworkManager()
                         .sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
                } else {
                   KillAura.target = null;
@@ -123,7 +123,7 @@ public class KillAuraAttackLambda implements Runnable {
                   mc.player.swingArm(Hand.MAIN_HAND);
                }
 
-               mc.getConnection().networkManager
+               mc.getConnection().getNetworkManager()
                      .sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
             }
          }

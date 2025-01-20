@@ -129,7 +129,7 @@ public class NCPStep extends Module {
             var1.setCancelled(true);
             if (this.field23994 == 0) {
                 for (IPacket var5 : this.field23993) {
-                    mc.getConnection().networkManager.sendNoEventPacket(var5);
+                    mc.getConnection().getNetworkManager().sendNoEventPacket(var5);
                 }
 
                 this.field23993.clear();

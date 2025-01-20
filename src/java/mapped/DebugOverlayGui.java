@@ -233,7 +233,7 @@ public class DebugOverlayGui extends AbstractGui {
 
    public List<String> getInfoLeft() {
       IntegratedServer var3 = this.mc.getIntegratedServer();
-      NetworkManager var4 = this.mc.getConnection().networkManager;
+      NetworkManager var4 = this.mc.getConnection().getNetworkManager();
       float var5 = var4.getPacketsSent();
       float var6 = var4.getPacketsReceived();
       String var7;
