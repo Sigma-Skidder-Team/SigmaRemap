@@ -169,7 +169,7 @@ public class Class7473 {
       if (!(var6 > 0.0)) {
          var11 = 0.5;
       } else {
-         float var13 = (float)var10.method8322(var1) + var3.field39968 / 2.0F;
+         float var13 = (float)var10.func_243648_a(var1) + var3.field39968 / 2.0F;
          var11 = MathHelper.clamp(MathHelper.method37813(var2.getCoordinate(var1) - (double)var13, 0.0, var6), 0.0, 1.0);
       }
 
@@ -178,11 +178,11 @@ public class Class7473 {
          var14 = 0.0;
       } else {
          Direction.Axis var16 = Direction.Axis.Y;
-         var14 = MathHelper.clamp(MathHelper.method37813(var2.getCoordinate(var16) - (double)var10.method8322(var16), 0.0, var8), 0.0, 1.0);
+         var14 = MathHelper.clamp(MathHelper.method37813(var2.getCoordinate(var16) - (double)var10.func_243648_a(var16), 0.0, var8), 0.0, 1.0);
       }
 
       Direction.Axis var19 = var1 != Direction.Axis.X ? Direction.Axis.X : Direction.Axis.Z;
-      double var17 = var2.getCoordinate(var19) - ((double)var10.method8322(var19) + 0.5);
+      double var17 = var2.getCoordinate(var19) - ((double)var10.func_243648_a(var19) + 0.5);
       return new Vector3d(var11, var14, var17);
    }
 

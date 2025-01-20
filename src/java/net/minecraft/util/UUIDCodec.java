@@ -8,7 +8,7 @@ import java.util.UUID;
 public final class UUIDCodec {
    private static String[] field39429;
    public static final Codec<UUID> field39430 = Codec.INT_STREAM
-      .comapFlatMap(var0 -> Util.method38530(var0, 4).map(UUIDCodec::decodeUUID), var0 -> Arrays.stream(encodeUUID(var0)));
+      .comapFlatMap(var0 -> Util.validateIntStreamSize(var0, 4).map(UUIDCodec::decodeUUID), var0 -> Arrays.stream(encodeUUID(var0)));
 
    public static UUID decodeUUID(int[] var0) {
       return new UUID((long)var0[0] << 32 | (long)var0[1] & 4294967295L, (long)var0[2] << 32 | (long)var0[3] & 4294967295L);

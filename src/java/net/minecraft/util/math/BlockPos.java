@@ -21,22 +21,22 @@ import java.util.stream.StreamSupport;
 
 @Immutable
 public class BlockPos extends Vector3i {
-   public static final Codec<BlockPos> field13030 = Codec.INT_STREAM
+   public static final Codec<BlockPos> CODEC = Codec.INT_STREAM
       .comapFlatMap(
-         var0 -> Util.method38530(var0, 3).map(var0x -> new BlockPos(var0x[0], var0x[1], var0x[2])),
+         var0 -> Util.validateIntStreamSize(var0, 3).map(var0x -> new BlockPos(var0x[0], var0x[1], var0x[2])),
          var0 -> IntStream.of(var0.getX(), var0.getY(), var0.getZ())
       )
       .stable();
-   private static final Logger field13031 = LogManager.getLogger();
+   private static final Logger LOGGER = LogManager.getLogger();
    public static final BlockPos ZERO = new BlockPos(0, 0, 0);
-   private static final int field13033 = 1 + MathHelper.method37803(MathHelper.method37800(30000000));
-   private static final int field13034 = field13033;
-   private static final int field13035 = 64 - field13033 - field13034;
-   private static final long field13036 = (1L << field13033) - 1L;
-   private static final long field13037 = (1L << field13035) - 1L;
-   private static final long field13038 = (1L << field13034) - 1L;
-   private static final int field13039 = field13035;
-   private static final int field13040 = field13035 + field13034;
+   private static final int NUM_X_BITS = 1 + MathHelper.method37803(MathHelper.method37800(30000000));
+   private static final int NUM_Z_BITS = NUM_X_BITS;
+   private static final int NUM_Y_BITS = 64 - NUM_X_BITS - NUM_Z_BITS;
+   private static final long X_MASK = (1L << NUM_X_BITS) - 1L;
+   private static final long Y_MASK = (1L << NUM_Y_BITS) - 1L;
+   private static final long Z_MASK = (1L << NUM_Z_BITS) - 1L;
+   private static final int INVERSE_START_BITS_Z = NUM_Y_BITS;
+   private static final int INVERSE_START_BITS_X = NUM_Y_BITS + NUM_Z_BITS;
 
    public BlockPos(int var1, int var2, int var3) {
       super(var1, var2, var3);
@@ -50,7 +50,7 @@ public class BlockPos extends Vector3i {
       this(var1.x, var1.y, var1.z);
    }
 
-   public BlockPos(Class2955 var1) {
+   public BlockPos(IPosition var1) {
       this(var1.getX(), var1.getY(), var1.getZ());
    }
 
@@ -67,15 +67,15 @@ public class BlockPos extends Vector3i {
    }
 
    public static int unpackX(long var0) {
-      return (int)(var0 << 64 - field13040 - field13033 >> 64 - field13033);
+      return (int)(var0 << 64 - INVERSE_START_BITS_X - NUM_X_BITS >> 64 - NUM_X_BITS);
    }
 
    public static int unpackY(long var0) {
-      return (int)(var0 << 64 - field13035 >> 64 - field13035);
+      return (int)(var0 << 64 - NUM_Y_BITS >> 64 - NUM_Y_BITS);
    }
 
    public static int unpackZ(long var0) {
-      return (int)(var0 << 64 - field13039 - field13034 >> 64 - field13034);
+      return (int)(var0 << 64 - INVERSE_START_BITS_Z - NUM_Z_BITS >> 64 - NUM_Z_BITS);
    }
 
    public static BlockPos fromLong(long var0) {
@@ -88,9 +88,9 @@ public class BlockPos extends Vector3i {
 
    public static long pack(int var0, int var1, int var2) {
       long var5 = 0L;
-      var5 |= ((long)var0 & field13036) << field13040;
-      var5 |= ((long)var1 & field13037) << 0;
-      return var5 | ((long)var2 & field13038) << field13039;
+      var5 |= ((long)var0 & X_MASK) << INVERSE_START_BITS_X;
+      var5 |= ((long)var1 & Y_MASK) << 0;
+      return var5 | ((long)var2 & Z_MASK) << INVERSE_START_BITS_Z;
    }
 
    public static long method8334(long var0) {
@@ -119,8 +119,8 @@ public class BlockPos extends Vector3i {
       return this.offset(Direction.UP);
    }
 
-   public BlockPos up(int var1) {
-      return this.method8350(Direction.UP, var1);
+   public BlockPos up(int n) {
+      return this.method8350(Direction.UP, n);
    }
 
    public BlockPos down() {
@@ -198,11 +198,11 @@ public class BlockPos extends Vector3i {
       }
    }
 
-   public BlockPos method8315(Vector3i var1) {
+   public BlockPos crossProduct(Vector3i vec) {
       return new BlockPos(
-         this.getY() * var1.getZ() - this.getZ() * var1.getY(),
-         this.getZ() * var1.getX() - this.getX() * var1.getZ(),
-         this.getX() * var1.getY() - this.getY() * var1.getX()
+         this.getY() * vec.getZ() - this.getZ() * vec.getY(),
+         this.getZ() * vec.getX() - this.getX() * vec.getZ(),
+         this.getX() * vec.getY() - this.getY() * vec.getX()
       );
    }
 
@@ -330,9 +330,9 @@ public class BlockPos extends Vector3i {
       }
 
       public Mutable setPos(int var1, int var2, int var3) {
-         this.method8307(var1);
-         this.method8308(var2);
-         this.method8309(var3);
+         this.setX(var1);
+         this.setY(var2);
+         this.setZ(var3);
          return this;
       }
 
@@ -396,18 +396,18 @@ public class BlockPos extends Vector3i {
       }
 
       @Override
-      public void method8307(int var1) {
-         super.method8307(var1);
+      public void setX(int x) {
+         super.setX(x);
       }
 
       @Override
-      public void method8308(int var1) {
-         super.method8308(var1);
+      public void setY(int y) {
+         super.setY(y);
       }
 
       @Override
-      public void method8309(int var1) {
-         super.method8309(var1);
+      public void setZ(int z) {
+         super.setZ(z);
       }
 
       @Override

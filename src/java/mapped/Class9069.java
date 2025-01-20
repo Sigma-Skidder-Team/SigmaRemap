@@ -132,7 +132,7 @@ public class Class9069 {
 
    public static boolean method33790(HoglinEntity var0, BlockPos var1) {
       Optional var4 = var0.getBrain().<BlockPos>method21410(Class8830.field39870);
-      return var4.isPresent() && ((BlockPos)var4.get()).method8316(var1, 8.0);
+      return var4.isPresent() && ((BlockPos)var4.get()).withinDistance(var1, 8.0);
    }
 
    private static boolean method33791(HoglinEntity var0) {

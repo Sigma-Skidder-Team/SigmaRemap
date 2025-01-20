@@ -31,7 +31,7 @@ public class Class2683 extends Class2595 {
    @Override
    public boolean method10806() {
       BlockPos var3 = this.field17097.method4777();
-      return !new BlockPos((double)var3.getX(), this.field17097.getPosY(), (double)var3.getZ()).method8317(this.field17097.getPositionVec(), 4.0)
+      return !new BlockPos((double)var3.getX(), this.field17097.getPosY(), (double)var3.getZ()).withinDistance(this.field17097.getPositionVec(), 4.0)
          && !this.field17098
          && this.field17097.getAir() >= 100;
    }
@@ -65,7 +65,7 @@ public class Class2683 extends Class2595 {
    @Override
    public void method10807() {
       BlockPos var3 = this.field17097.method4777();
-      if (new BlockPos((double)var3.getX(), this.field17097.getPosY(), (double)var3.getZ()).method8317(this.field17097.getPositionVec(), 4.0)
+      if (new BlockPos((double)var3.getX(), this.field17097.getPosY(), (double)var3.getZ()).withinDistance(this.field17097.getPositionVec(), 4.0)
          || this.field17098) {
          this.field17097.method4779(false);
       }

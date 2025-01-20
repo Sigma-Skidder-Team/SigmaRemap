@@ -44,7 +44,7 @@ public class Class2671<T extends Class1026> extends Class2595 {
 
    @Override
    public void method10805() {
-      if (this.field17055.method4230().method21643().method8317(this.field17055.getPositionVec(), 1.414)) {
+      if (this.field17055.method4230().method21643().withinDistance(this.field17055.getPositionVec(), 1.414)) {
          List var3 = this.field17055
             .world
             .<ItemEntity>getEntitiesInAABBexcluding(ItemEntity.class, this.field17055.getBoundingBox().grow(4.0, 4.0, 4.0), Class1026.method4566());

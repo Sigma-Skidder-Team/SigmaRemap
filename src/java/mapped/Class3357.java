@@ -135,7 +135,7 @@ public class Class3357 extends BannerBlock {
       }
    }
 
-   public static Class2955 method11934(IBlockSource var0) {
+   public static IPosition method11934(IBlockSource var0) {
       Direction var3 = var0.method11324().<Direction>get(field18899);
       double var4 = var0.getX() + 0.7 * (double)var3.getXOffset();
       double var6 = var0.getY() + 0.7 * (double)var3.getYOffset();

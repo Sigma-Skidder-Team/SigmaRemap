@@ -48,7 +48,7 @@ public class Class2643 extends Class2642 {
    public boolean method10806() {
       return this.field16982 <= this.method10852()
          && !this.method10850()
-         && this.field16975.method8317(this.field16974.getPositionVec(), 2.0)
+         && this.field16975.withinDistance(this.field16974.getPositionVec(), 2.0)
          && this.method10853(this.field16974.world.method6997());
    }
 

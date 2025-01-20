@@ -27,7 +27,7 @@ public class Class3716 extends Class3676<LivingEntity> {
       boolean var9 = (Long)var8.get() + 300L <= var3;
       if (this.field19793 <= this.field19792 && !var9) {
          BlockPos var10 = var7.<Class9378>method21410(Class8830.field39839).get().method35579();
-         if (var10.method8316(var2.getPosition(), (double)this.field19791)) {
+         if (var10.withinDistance(var2.getPosition(), (double)this.field19791)) {
             this.field19793++;
          }
       } else {

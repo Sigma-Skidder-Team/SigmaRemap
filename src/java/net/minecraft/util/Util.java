@@ -504,7 +504,7 @@ public class Util {
       return var2 -> var1.accept(var0 + var2);
    }
 
-   public static DataResult<int[]> method38530(IntStream var0, int var1) {
+   public static DataResult<int[]> validateIntStreamSize(IntStream var0, int var1) {
       int[] var4 = var0.limit((long)(var1 + 1)).toArray();
       if (var4.length == var1) {
          return DataResult.success(var4);

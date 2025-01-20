@@ -18,12 +18,12 @@ public class Class2630 extends Class2628 {
 
    @Override
    public boolean method10803() {
-      return this.field16941.method5045() && TurtleEntity.method5056(this.field16941).method8317(this.field16941.getPositionVec(), 9.0) ? super.method10803() : false;
+      return this.field16941.method5045() && TurtleEntity.method5056(this.field16941).withinDistance(this.field16941.getPositionVec(), 9.0) ? super.method10803() : false;
    }
 
    @Override
    public boolean method10806() {
-      return super.method10806() && this.field16941.method5045() && TurtleEntity.method5056(this.field16941).method8317(this.field16941.getPositionVec(), 9.0);
+      return super.method10806() && this.field16941.method5045() && TurtleEntity.method5056(this.field16941).withinDistance(this.field16941.getPositionVec(), 9.0);
    }
 
    @Override

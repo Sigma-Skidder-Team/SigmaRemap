@@ -15,7 +15,7 @@ public class Class2666 extends Class2661 {
    public boolean method10860() {
       if (this.field17022.method4432()
          && BeeEntity.method4452(this.field17022)
-         && BeeEntity.method4453(this.field17022).method8317(this.field17022.getPositionVec(), 2.0)) {
+         && BeeEntity.method4453(this.field17022).withinDistance(this.field17022.getPositionVec(), 2.0)) {
          TileEntity var3 = this.field17022.world.getTileEntity(BeeEntity.method4453(this.field17022));
          if (var3 instanceof BeehiveTileEntity) {
             BeehiveTileEntity var4 = (BeehiveTileEntity)var3;

@@ -67,7 +67,7 @@ public class Class3746 extends Class3676<VillagerEntity> {
    }
 
    private boolean method12703(VillagerEntity var1, Class9378 var2) {
-      return var2.method35579().method8321(var1.getPosition()) > this.field19889;
+      return var2.method35579().manhattanDistance(var1.getPosition()) > this.field19889;
    }
 
    private boolean method12704(ServerWorld var1, Class9378 var2) {
@@ -75,6 +75,6 @@ public class Class3746 extends Class3676<VillagerEntity> {
    }
 
    private boolean method12705(ServerWorld var1, VillagerEntity var2, Class9378 var3) {
-      return var3.method35578() == var1.getDimensionKey() && var3.method35579().method8321(var2.getPosition()) <= this.field19888;
+      return var3.method35578() == var1.getDimensionKey() && var3.method35579().manhattanDistance(var2.getPosition()) <= this.field19888;
    }
 }

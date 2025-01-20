@@ -24,7 +24,7 @@ public class Class3679 extends Class3676<LivingEntity> {
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       Brain<?> var7 = var2.getBrain();
       BlockPos var8 = var7.method21410(Class8830.field39816).get().method35579();
-      if (var8.method8316(var2.getPosition(), 3.0)) {
+      if (var8.withinDistance(var2.getPosition(), 3.0)) {
          BlockState var9 = var1.getBlockState(var8);
          if (var9.isIn(Blocks.BELL)) {
             Class3369 var10 = (Class3369)var9.getBlock();

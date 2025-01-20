@@ -9,7 +9,7 @@ import java.util.Optional;
 public class Class4701 implements Class4698 {
    public static final Codec<Class4701> field22299 = RecordCodecBuilder.create(
       var0 -> var0.group(
-               BlockPos.field13030.optionalFieldOf("exit").forGetter(var0x -> var0x.field22300),
+               BlockPos.CODEC.optionalFieldOf("exit").forGetter(var0x -> var0x.field22300),
                Codec.BOOL.fieldOf("exact").forGetter(var0x -> var0x.field22301)
             )
             .apply(var0, Class4701::new)

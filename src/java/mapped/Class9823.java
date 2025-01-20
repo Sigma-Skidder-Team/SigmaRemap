@@ -444,23 +444,23 @@ public class Class9823 {
    }
 
    public static double method38780(BlockPos var0, BlockPos var1, BlockPos var2) {
-      if (var1.field13027 == var2.field13027 && var1.field13029 == var2.field13029) {
+      if (var1.x == var2.x && var1.z == var2.z) {
          return method38779(var0, var1);
       } else {
          double var5 = (double)(
-            (var2.field13027 - var1.field13027) * (var2.field13027 - var1.field13027)
-               + (var2.field13029 - var1.field13029) * (var2.field13029 - var1.field13029)
+            (var2.x - var1.x) * (var2.x - var1.x)
+               + (var2.z - var1.z) * (var2.z - var1.z)
          );
          double var7 = (double)(
-               (var0.field13027 - var1.field13027) * (var2.field13027 - var1.field13027)
-                  + (var0.field13029 - var1.field13029) * (var2.field13029 - var1.field13029)
+               (var0.x - var1.x) * (var2.x - var1.x)
+                  + (var0.z - var1.z) * (var2.z - var1.z)
             )
             / var5;
          if (!(var7 <= 0.0)) {
             if (!(var7 >= 1.0)) {
                double var9 = (double)(
-                     (var1.field13029 - var0.field13029) * (var2.field13027 - var1.field13027)
-                        - (var1.field13027 - var0.field13027) * (var2.field13029 - var1.field13029)
+                     (var1.z - var0.z) * (var2.x - var1.x)
+                        - (var1.x - var0.x) * (var2.z - var1.z)
                   )
                   / var5;
                return Math.abs(var9) * Math.sqrt(var5);

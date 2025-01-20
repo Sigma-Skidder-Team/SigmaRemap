@@ -88,7 +88,7 @@ public class Class3725 extends Class3676<VillagerEntity> {
 
    public void method12504(ServerWorld var1, VillagerEntity var2, long var3) {
       BlockPos var7 = this.field19818.get();
-      if (var3 >= this.field19815 && var7.method8317(var2.getPositionVec(), 1.0)) {
+      if (var3 >= this.field19815 && var7.withinDistance(var2.getPositionVec(), 1.0)) {
          ItemStack var8 = ItemStack.EMPTY;
          Class927 var9 = var2.method4752();
          int var10 = var9.getSizeInventory();

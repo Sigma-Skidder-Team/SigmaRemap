@@ -55,10 +55,10 @@ public abstract class AbstractMinecartEntity extends Entity {
          Vector3i var4 = Direction.EAST.getDirectionVec();
          Vector3i var5 = Direction.NORTH.getDirectionVec();
          Vector3i var6 = Direction.SOUTH.getDirectionVec();
-         Vector3i var7 = var3.method8312();
-         Vector3i var8 = var4.method8312();
-         Vector3i var9 = var5.method8312();
-         Vector3i var10 = var6.method8312();
+         Vector3i var7 = var3.down();
+         Vector3i var8 = var4.down();
+         Vector3i var9 = var5.down();
+         Vector3i var10 = var6.down();
          var0.put(RailShape.field247, Pair.of(var5, var6));
          var0.put(RailShape.field248, Pair.of(var3, var4));
          var0.put(RailShape.field249, Pair.of(var7, var4));

@@ -26,7 +26,7 @@ public abstract class Class6990 {
    public int field30247;
    public int field30248;
    public Vector3d field30249 = Vector3d.ZERO;
-   public Vector3i field30250 = Vector3i.field13026;
+   public Vector3i field30250 = Vector3i.NULL_VECTOR;
    public long field30251;
    public long field30252;
    public double field30253;
@@ -285,7 +285,7 @@ public abstract class Class6990 {
    }
 
    private void method21663() {
-      this.field30250 = Vector3i.field13026;
+      this.field30250 = Vector3i.NULL_VECTOR;
       this.field30251 = 0L;
       this.field30253 = 0.0;
       this.field30262 = false;
@@ -354,7 +354,7 @@ public abstract class Class6990 {
             ((double)var4.field30848 + this.field30243.getPosY()) / 2.0,
             ((double)var4.field30849 + this.field30243.getPosZ()) / 2.0
          );
-         if (var1.method8317(var5, (double)(this.field30245.method28698() - this.field30245.method28699()))) {
+         if (var1.withinDistance(var5, (double)(this.field30245.method28698() - this.field30245.method28699()))) {
             this.method21647();
          }
       }

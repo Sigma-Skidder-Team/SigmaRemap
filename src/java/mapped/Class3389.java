@@ -43,8 +43,8 @@ public class Class3389 extends Block {
    );
    private static final ImmutableList<Vector3i> field19002 = new ImmutableList.Builder()
       .addAll(field19001)
-      .addAll(field19001.stream().<Vector3i>map(Vector3i::method8312).iterator())
-      .addAll(field19001.stream().<Vector3i>map(Vector3i::method8310).iterator())
+      .addAll(field19001.stream().<Vector3i>map(Vector3i::down).iterator())
+      .addAll(field19001.stream().<Vector3i>map(Vector3i::up).iterator())
       .add(new Vector3i(0, 1, 0))
       .build();
 

@@ -35,7 +35,7 @@ public class Class3756 extends Class3676<LivingEntity> {
             }
 
             BlockState var8 = var1.getBlockState(var6.method35579());
-            return var6.method35579().method8317(var2.getPositionVec(), 2.0)
+            return var6.method35579().withinDistance(var2.getPositionVec(), 2.0)
                && var8.getBlock().isIn(BlockTags.field32770)
                && !var8.<Boolean>get(BedBlock.field18714);
          } else {
@@ -53,7 +53,7 @@ public class Class3756 extends Class3676<LivingEntity> {
          BlockPos var8 = ((Class9378)var7.get()).method35579();
          return var2.getBrain().method21430(Activity.field40223)
             && var2.getPosY() > (double)var8.getY() + 0.4
-            && var8.method8317(var2.getPositionVec(), 1.14);
+            && var8.withinDistance(var2.getPositionVec(), 1.14);
       }
    }
 

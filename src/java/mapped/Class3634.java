@@ -58,7 +58,7 @@ public class Class3634 {
             var16.method8380(var5.getOpposite(), 1);
 
             for (int var19 = var17; var19 >= 0; var19--) {
-               var16.method8308(var19);
+               var16.setY(var19);
                if (this.field19668.method7007(var16)) {
                   int var20 = var19;
 
@@ -69,7 +69,7 @@ public class Class3634 {
                   if (var19 + 4 <= var13) {
                      int var21 = var20 - var19;
                      if (var21 <= 0 || var21 >= 3) {
-                        var16.method8308(var19);
+                        var16.setY(var19);
                         if (this.method12333(var16, var14, var5, 0)) {
                            double var22 = var1.distanceSq(var16);
                            if (this.method12333(var16, var14, var5, -1) && this.method12333(var16, var14, var5, 1) && (var6 == -1.0 || var6 > var22)) {

@@ -52,7 +52,7 @@ public class Class2944 extends Class2898<Class4707> {
          new BlockPos(var4.method37626() - var7, 0, var4.method37627() - var7),
          new BlockPos(var4.method37626() + var7, var4.method37629() + 10, var4.method37627() + var7)
       )) {
-         if (var9.method8320((double)var4.method37626(), (double)var9.getY(), (double)var4.method37627(), false) <= (double)(var7 * var7 + 1)
+         if (var9.distanceSq((double)var4.method37626(), (double)var9.getY(), (double)var4.method37627(), false) <= (double)(var7 * var7 + 1)
             && var9.getY() < var4.method37629()) {
             this.method11217(var1, var9, Blocks.field36527.getDefaultState());
          } else if (var9.getY() > 65) {

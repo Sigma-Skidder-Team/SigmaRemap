@@ -39,7 +39,7 @@ public class Class5123 implements Class5119 {
       this.field23303.forEach((var1x, var2x) -> {
          for (int var5x = 0; var5x < var2x.size(); var5x++) {
             Class4231 var6 = var2x.get(var5x);
-            if (var12.method8316(var6.field20563, 160.0)) {
+            if (var12.withinDistance(var6.field20563, 160.0)) {
                double var7x = (double)var6.field20563.getX() + 0.5;
                double var9 = (double)var6.field20563.getY() + 2.0 + (double)var5x * 0.25;
                double var11x = (double)var6.field20563.getZ() + 0.5;

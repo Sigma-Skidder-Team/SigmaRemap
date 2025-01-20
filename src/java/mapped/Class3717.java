@@ -135,7 +135,7 @@ public class Class3717 extends Class3676<VillagerEntity> {
    private boolean method12609(VillagerEntity var1, PlayerEntity var2) {
       BlockPos var5 = var2.getPosition();
       BlockPos var6 = var1.getPosition();
-      return var6.method8316(var5, 5.0);
+      return var6.withinDistance(var5, 5.0);
    }
 
    private static int method12610(ServerWorld var0) {

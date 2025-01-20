@@ -125,6 +125,6 @@ public class Class3735 extends Class3676<MobEntity> {
    }
 
    private boolean method12663(MobEntity var1, Class8999 var2) {
-      return var2.method33251().method26357().method8321(var1.getPosition()) <= var2.method33253();
+      return var2.method33251().method26357().manhattanDistance(var1.getPosition()) <= var2.method33253();
    }
 }

@@ -63,7 +63,7 @@ public final class Class4550 extends AbstractIterator<BlockPos> {
          return var3;
       } else {
          this.field21929 = false;
-         this.field21923.method8309(this.field21930 - (this.field21923.getZ() - this.field21930));
+         this.field21923.setZ(this.field21930 - (this.field21923.getZ() - this.field21930));
          return this.field21923;
       }
    }

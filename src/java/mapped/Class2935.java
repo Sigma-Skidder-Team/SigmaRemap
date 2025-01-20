@@ -51,7 +51,7 @@ public class Class2935 extends Class2898<Class4708> {
             var4.getY(),
             var4.getZ() + var11
          )) {
-            int var16 = var9 - var15.method8321(var4);
+            int var16 = var9 - var15.manhattanDistance(var4);
             if (var16 >= 0) {
                var13 |= this.method11272(var1, var8, var15, var16, var5.method14782().method27633(var3));
             }
@@ -69,7 +69,7 @@ public class Class2935 extends Class2898<Class4708> {
       for (BlockPos var10 : BlockPos.method8364(
          var3.getX() - var5, var3.getY(), var3.getZ() - var5, var3.getX() + var5, var3.getY(), var3.getZ() + var5
       )) {
-         int var11 = var10.method8321(var3);
+         int var11 = var10.manhattanDistance(var3);
          BlockPos var12 = !method11276(var1, var2, var10) ? method11275(var1, var10.method8354(), var11) : method11273(var1, var2, var10.method8354(), var11);
          if (var12 != null) {
             int var13 = var4 - var11 / 2;

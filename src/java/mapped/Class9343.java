@@ -16,7 +16,7 @@ public class Class9343 {
    public static Codec<Class9343> method35350(Runnable var0) {
       return RecordCodecBuilder.create(
          var1 -> var1.group(
-                  BlockPos.field13030.fieldOf("pos").forGetter(var0xx -> var0xx.field43375),
+                  BlockPos.CODEC.fieldOf("pos").forGetter(var0xx -> var0xx.field43375),
                   Registry.field16091.fieldOf("type").forGetter(var0xx -> var0xx.field43376),
                   Codec.INT.fieldOf("free_tickets").orElse(0).forGetter(var0xx -> var0xx.field43377),
                   RecordCodecBuilder.point(var0)

@@ -111,7 +111,7 @@ public class Class3697 extends Class3676<LivingEntity> {
             .get()
             .stream()
             .filter(var1x -> var1x.getType() == var1.getType())
-            .filter(var1x -> var2.method8317(var1x.getPositionVec(), 2.0))
+            .filter(var1x -> var2.withinDistance(var1x.getPositionVec(), 2.0))
             .anyMatch(var2x -> method12563(var0, var2x, var2))
          : false;
    }
@@ -136,7 +136,7 @@ public class Class3697 extends Class3676<LivingEntity> {
    }
 
    private static boolean method12564(ServerWorld var0, LivingEntity var1, Class9378 var2) {
-      return var2.method35578() != var0.getDimensionKey() || !var2.method35579().method8317(var1.getPositionVec(), 2.0);
+      return var2.method35578() != var0.getDimensionKey() || !var2.method35579().withinDistance(var1.getPositionVec(), 2.0);
    }
 
    private void method12565(ServerWorld var1, LivingEntity var2, BlockPos var3) {

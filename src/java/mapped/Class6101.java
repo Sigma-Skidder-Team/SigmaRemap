@@ -95,7 +95,7 @@ public class Class6101 {
          this.field27357.method8381((int)var10.getXSize() + 5, 0, 0);
          if (var4++ % this.field27351 == this.field27351 - 1) {
             this.field27357.method8381(0, 0, (int)var5.getZSize() + 6);
-            this.field27357.method8307(this.field27348.getX());
+            this.field27357.setX(this.field27348.getX());
             var5 = new AxisAlignedBB(this.field27357);
          }
       }

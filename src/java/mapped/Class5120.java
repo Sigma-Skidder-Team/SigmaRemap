@@ -33,7 +33,7 @@ public class Class5120 implements Class5119 {
       IVertexBuilder var15 = var2.method25597(RenderType.getLines());
       if (this.field23292.containsKey(var13)) {
          for (MutableBoundingBox var17 : this.field23292.get(var13).values()) {
-            if (var14.method8316(var17.method38401(), 500.0)) {
+            if (var14.withinDistance(var17.method38401(), 500.0)) {
                WorldRenderer.method899(
                   var1,
                   var15,
@@ -60,7 +60,7 @@ public class Class5120 implements Class5119 {
             String var18 = (String)var22.getKey();
             MutableBoundingBox var19 = (MutableBoundingBox)var22.getValue();
             Boolean var20 = this.field23294.get(var13).get(var18);
-            if (var14.method8316(var19.method38401(), 500.0)) {
+            if (var14.withinDistance(var19.method38401(), 500.0)) {
                if (!var20) {
                   WorldRenderer.method899(
                      var1,

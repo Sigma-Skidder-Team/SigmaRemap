@@ -199,7 +199,7 @@ public class Class2663 extends Class2661 {
             for (int var10 = 0; var10 <= var9; var10 = var10 <= 0 ? 1 - var10 : -var10) {
                for (int var11 = var10 < var9 && var10 > -var9 ? var9 : 0; var11 <= var9; var11 = var11 <= 0 ? 1 - var11 : -var11) {
                   var7.method8378(var6, var10, var8 - 1, var11);
-                  if (var6.method8316(var7, var2) && var1.test(this.field17031.world.getBlockState(var7))) {
+                  if (var6.withinDistance(var7, var2) && var1.test(this.field17031.world.getBlockState(var7))) {
                      return Optional.<BlockPos>of(var7);
                   }
                }

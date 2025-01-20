@@ -16,7 +16,7 @@ public class Class3678 extends Class3676<VillagerEntity> {
 
    public boolean method12508(ServerWorld var1, VillagerEntity var2) {
       BlockPos var5 = var2.getBrain().<Class9378>method21410(Class8830.field39815).get().method35579();
-      return var5.method8317(var2.getPositionVec(), 2.0) || var2.method4680();
+      return var5.withinDistance(var2.getPositionVec(), 2.0) || var2.method4680();
    }
 
    public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {

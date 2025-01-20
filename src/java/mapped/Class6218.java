@@ -19,13 +19,13 @@ public class Class6218 implements IDispenseItemBehavior {
 
    public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
       Direction var5 = var1.method11324().<Direction>get(Class3357.field18899);
-      Class2955 var6 = Class3357.method11934(var1);
+      IPosition var6 = Class3357.method11934(var1);
       ItemStack var7 = var2.split(1);
       method19197(var1.method11326(), var7, 6, var5, var6);
       return var2;
    }
 
-   public static void method19197(World var0, ItemStack var1, int var2, Direction var3, Class2955 var4) {
+   public static void method19197(World var0, ItemStack var1, int var2, Direction var3, IPosition var4) {
       double var7 = var4.getX();
       double var9 = var4.getY();
       double var11 = var4.getZ();

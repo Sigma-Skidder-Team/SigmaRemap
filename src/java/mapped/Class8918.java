@@ -17,7 +17,7 @@ public class Class8918 {
    public final int field40366;
    public final float field40367;
    public final float field40368;
-   public final Class2955 field40369;
+   public final IPosition field40369;
    public final String field40370;
    public final Class8238 field40371;
    public final boolean field40372;
@@ -29,7 +29,7 @@ public class Class8918 {
    public final Set<BlockPos> field40378 = Sets.newHashSet();
 
    public Class8918(
-      UUID var1, int var2, String var3, String var4, int var5, float var6, float var7, Class2955 var8, String var9, Class8238 var10, boolean var11
+           UUID var1, int var2, String var3, String var4, int var5, float var6, float var7, IPosition var8, String var9, Class8238 var10, boolean var11
    ) {
       this.field40362 = var1;
       this.field40363 = var2;

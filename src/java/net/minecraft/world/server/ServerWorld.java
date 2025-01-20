@@ -1070,7 +1070,7 @@ public class ServerWorld extends World implements ISeedReader {
    private boolean method6941(ServerPlayerEntity var1, boolean var2, double var3, double var5, double var7, IPacket<?> var9) {
       if (var1.getServerWorld() == this) {
          BlockPos var12 = var1.getPosition();
-         if (!var12.method8317(new Vector3d(var3, var5, var7), !var2 ? 32.0 : 512.0)) {
+         if (!var12.withinDistance(new Vector3d(var3, var5, var7), !var2 ? 32.0 : 512.0)) {
             return false;
          } else {
             var1.connection.sendPacket(var9);

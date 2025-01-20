@@ -23,8 +23,8 @@ public class Class2909 extends Class2898<Class4712> {
          new BlockPos(var4.getX() - 4, var4.getY() - 1, var4.getZ() - 4),
          new BlockPos(var4.getX() + 4, var4.getY() + 32, var4.getZ() + 4)
       )) {
-         boolean var10 = var9.method8316(var4, 2.5);
-         if (var10 || var9.method8316(var4, 3.5)) {
+         boolean var10 = var9.withinDistance(var4, 2.5);
+         if (var10 || var9.withinDistance(var4, 3.5)) {
             if (var9.getY() >= var4.getY()) {
                if (var9.getY() <= var4.getY()) {
                   if (var10) {

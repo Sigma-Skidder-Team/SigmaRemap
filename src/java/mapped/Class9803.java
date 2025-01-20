@@ -89,7 +89,7 @@ public class Class9803 {
       if (var1 != var2 && var1 != var2.getOpposite()) {
          Vector3i var8 = new Vector3i(var1.getXOffset(), var1.getYOffset(), var1.getZOffset());
          Vector3i var9 = new Vector3i(var2.getXOffset(), var2.getYOffset(), var2.getZOffset());
-         Vector3i var10 = var8.method8315(var9);
+         Vector3i var10 = var8.crossProduct(var9);
          return var0.add(
             var9.getX() * -var4 + var10.getX() * var3 + var8.getX() * var5,
             var9.getY() * -var4 + var10.getY() * var3 + var8.getY() * var5,

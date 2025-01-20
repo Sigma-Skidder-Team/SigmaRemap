@@ -25,7 +25,7 @@ public class Class3699 extends Class3676<LivingEntity> {
    @Override
    public boolean method12508(ServerWorld var1, LivingEntity var2) {
       Class9378 var5 = var2.getBrain().<Class9378>method21410(this.field19748).get();
-      return var1.getDimensionKey() == var5.method35578() && var5.method35579().method8317(var2.getPositionVec(), 16.0);
+      return var1.getDimensionKey() == var5.method35578() && var5.method35579().withinDistance(var2.getPositionVec(), 16.0);
    }
 
    @Override

@@ -34,7 +34,7 @@ public class Class3727 extends Class3676<LivingEntity> {
       return var1.method6814().nextInt(100) == 0
          && var6.isPresent()
          && var1.getDimensionKey() == ((Class9378)var6.get()).method35578()
-         && ((Class9378)var6.get()).method35579().method8317(var2.getPositionVec(), 4.0)
+         && ((Class9378)var6.get()).method35579().withinDistance(var2.getPositionVec(), 4.0)
          && var5.method21410(Class8830.field39819).get().stream().anyMatch(var0 -> EntityType.VILLAGER.equals(var0.getType()));
    }
 

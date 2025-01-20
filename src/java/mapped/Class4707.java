@@ -13,7 +13,7 @@ public class Class4707 implements Class4698 {
       var0 -> var0.group(
                Codec.BOOL.fieldOf("crystal_invulnerable").orElse(false).forGetter(var0x -> var0x.field22326),
                Class9648.field45108.listOf().fieldOf("spikes").forGetter(var0x -> var0x.field22327),
-               BlockPos.field13030.optionalFieldOf("crystal_beam_target").forGetter(var0x -> Optional.<BlockPos>ofNullable(var0x.field22328))
+               BlockPos.CODEC.optionalFieldOf("crystal_beam_target").forGetter(var0x -> Optional.<BlockPos>ofNullable(var0x.field22328))
             )
             .apply(var0, Class4707::new)
    );

@@ -44,7 +44,7 @@ public class Class2723<T extends PillagerEntity> extends Class2595 {
          List<PillagerEntity> var5 = this.method10931();
          if (this.field17212.method4579() && var5.isEmpty()) {
             this.field17212.method4580(false);
-         } else if (var3 && this.field17212.method4574().method8317(this.field17212.getPositionVec(), 10.0)) {
+         } else if (var3 && this.field17212.method4574().withinDistance(this.field17212.getPositionVec(), 10.0)) {
             this.field17212.method4578();
          } else {
             Vector3d var6 = Vector3d.method11330(this.field17212.method4574());

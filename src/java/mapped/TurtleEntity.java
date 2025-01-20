@@ -281,7 +281,7 @@ public class TurtleEntity extends AnimalEntity {
          this.moveRelative(0.1F, var1);
          this.move(MoverType.SELF, this.getMotion());
          this.setMotion(this.getMotion().scale(0.9));
-         if (this.method4232() == null && (!this.method5049() || !this.method5042().method8317(this.getPositionVec(), 20.0))) {
+         if (this.method4232() == null && (!this.method5049() || !this.method5042().withinDistance(this.getPositionVec(), 20.0))) {
             this.setMotion(this.getMotion().add(0.0, -0.005, 0.0));
          }
       } else {

@@ -114,7 +114,7 @@ public final class Class212 extends LightEngine<Class7587, Class210> {
          this.method674(var1, var14, var3, var4);
       }
 
-      long var18 = BlockPos.method8314(var1, Direction.field673);
+      long var18 = BlockPos.offset(var1, Direction.field673);
       long var20 = SectionPos.method8419(var18);
       if (var7 == var20 || this.field748.method698(var20)) {
          this.method674(var1, var18, var3, var4);

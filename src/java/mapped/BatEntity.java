@@ -119,7 +119,7 @@ public class BatEntity extends Class1113 {
             this.field6095 = null;
          }
 
-         if (this.field6095 == null || this.rand.nextInt(30) == 0 || this.field6095.method8317(this.getPositionVec(), 2.0)) {
+         if (this.field6095 == null || this.rand.nextInt(30) == 0 || this.field6095.withinDistance(this.getPositionVec(), 2.0)) {
             this.field6095 = new BlockPos(
                this.getPosX() + (double)this.rand.nextInt(7) - (double)this.rand.nextInt(7),
                this.getPosY() + (double)this.rand.nextInt(6) - 2.0,

@@ -52,6 +52,6 @@ public class Class2789 extends Class2595 {
    }
 
    private boolean method10981(BlockPos var1, double var2) {
-      return !var1.method8317(this.field17419.getPositionVec(), var2);
+      return !var1.withinDistance(this.field17419.getPositionVec(), var2);
    }
 }

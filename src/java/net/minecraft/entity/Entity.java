@@ -1119,7 +1119,7 @@ public abstract class Entity implements INameable, ICommandSource {
       if (!this.world.isBlockLoaded(var3)) {
          return 0.0F;
       } else {
-         var3.method8308(MathHelper.floor(this.getPosYEye()));
+         var3.setY(MathHelper.floor(this.getPosYEye()));
          return this.world.method7009(var3);
       }
    }

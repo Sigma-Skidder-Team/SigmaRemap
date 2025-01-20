@@ -90,18 +90,18 @@ public class Class5133 implements Class5119 {
       });
 
       for (BlockPos var11 : this.field23331.keySet()) {
-         if (var9.method8316(var11, 30.0)) {
+         if (var9.withinDistance(var11, 30.0)) {
             method15877(var11);
          }
       }
 
       this.field23331.values().forEach(var2 -> {
-         if (var9.method8316(var2.field43269, 30.0)) {
+         if (var9.withinDistance(var2.field43269, 30.0)) {
             this.method15879(var2);
          }
       });
       this.method15891().forEach((var2, var3x) -> {
-         if (var9.method8316(var2, 30.0)) {
+         if (var9.withinDistance(var2, 30.0)) {
             this.method15878(var2, (List<String>)var3x);
          }
       });
@@ -228,7 +228,7 @@ public class Class5133 implements Class5119 {
       DebugRenderer.method27462(var0, var10, var12, var14, var3, 0.02F, true, 0.0F, true);
    }
 
-   private static void method15884(Class2955 var0, int var1, String var2, int var3, float var4) {
+   private static void method15884(IPosition var0, int var1, String var2, int var3, float var4) {
       double var7 = 2.4;
       double var9 = 0.25;
       BlockPos var11 = new BlockPos(var0);
@@ -255,7 +255,7 @@ public class Class5133 implements Class5119 {
       ClientPlayerEntity var4 = this.field23330.player;
       BlockPos var5 = new BlockPos(var4.getPosX(), var1.field40369.getY(), var4.getPosZ());
       BlockPos var6 = new BlockPos(var1.field40369);
-      return var5.method8316(var6, 30.0);
+      return var5.withinDistance(var6, 30.0);
    }
 
    private Collection<UUID> method15889(BlockPos var1) {

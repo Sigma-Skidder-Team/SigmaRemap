@@ -95,7 +95,7 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
 
       if (!this.world.isRemote) {
          for (LivingEntity var5 : this.field5419) {
-            if (var5.isAlive() && !var5.removed && var3.method8317(var5.getPositionVec(), 32.0)) {
+            if (var5.isAlive() && !var5.removed && var3.withinDistance(var5.getPositionVec(), 32.0)) {
                var5.getBrain().method21406(Class8830.field39840, this.world.getGameTime());
             }
          }
@@ -106,7 +106,7 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
       BlockPos var3 = this.getPos();
 
       for (LivingEntity var5 : this.field5419) {
-         if (var5.isAlive() && !var5.removed && var3.method8317(var5.getPositionVec(), 32.0) && var5.getType().method33228(EntityTypeTags.field38735)) {
+         if (var5.isAlive() && !var5.removed && var3.withinDistance(var5.getPositionVec(), 32.0) && var5.getType().method33228(EntityTypeTags.field38735)) {
             return true;
          }
       }
@@ -124,7 +124,7 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
       if (var1.isRemote) {
          BlockPos var4 = this.getPos();
          MutableInt var5 = new MutableInt(16700985);
-         int var6 = (int)this.field5419.stream().filter(var1x -> var4.method8317(var1x.getPositionVec(), 48.0)).count();
+         int var6 = (int)this.field5419.stream().filter(var1x -> var4.withinDistance(var1x.getPositionVec(), 48.0)).count();
          this.field5419
             .stream()
             .filter(this::method3996)
@@ -154,7 +154,7 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
    private boolean method3996(LivingEntity var1) {
       return var1.isAlive()
          && !var1.removed
-         && this.getPos().method8317(var1.getPositionVec(), 48.0)
+         && this.getPos().withinDistance(var1.getPositionVec(), 48.0)
          && var1.getType().method33228(EntityTypeTags.field38735);
    }
 

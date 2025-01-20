@@ -79,7 +79,7 @@ public abstract class Class2628 extends Class2595 {
    @Override
    public void method10805() {
       BlockPos var3 = this.method10836();
-      if (var3.method8317(this.field16928.getPositionVec(), this.method10835())) {
+      if (var3.withinDistance(this.field16928.getPositionVec(), this.method10835())) {
          this.field16934 = true;
          this.field16931--;
       } else {

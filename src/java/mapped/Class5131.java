@@ -45,7 +45,7 @@ public class Class5131 implements Class5119 {
          float var19 = (float)(var17.getY() * 128 % 256) / 256.0F;
          float var20 = (float)(var17.getZ() * 128 % 256) / 256.0F;
          float var21 = this.field23324.get(var16);
-         if (var11.method8316(var16, 160.0)) {
+         if (var11.withinDistance(var16, 160.0)) {
             WorldRenderer.method900(
                var13,
                (double)((float)var16.getX() + 0.5F) - var3 - (double)var21,
@@ -63,7 +63,7 @@ public class Class5131 implements Class5119 {
       }
 
       for (BlockPos var23 : this.field23325) {
-         if (var11.method8316(var23, 160.0)) {
+         if (var11.withinDistance(var23, 160.0)) {
             WorldRenderer.method900(
                var13,
                (double)var23.getX() - var3,

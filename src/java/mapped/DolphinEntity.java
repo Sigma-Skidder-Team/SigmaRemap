@@ -338,7 +338,7 @@ public class DolphinEntity extends WaterMobEntity {
 
    public boolean method4785() {
       BlockPos var3 = this.method4230().method21643();
-      return var3 == null ? false : var3.method8317(this.getPositionVec(), 12.0);
+      return var3 == null ? false : var3.withinDistance(this.getPositionVec(), 12.0);
    }
 
    @Override

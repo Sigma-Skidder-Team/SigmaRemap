@@ -79,20 +79,20 @@ public class Class5125 implements Class5119 {
       this.method15830();
 
       for (BlockPos var5 : this.field23307.keySet()) {
-         if (var3.method8316(var5, 30.0)) {
+         if (var3.withinDistance(var5, 30.0)) {
             method15832(var5);
          }
       }
 
       Map var6 = this.method15829();
       this.field23307.values().forEach(var3x -> {
-         if (var3.method8316(var3x.field40567, 30.0)) {
+         if (var3.withinDistance(var3x.field40567, 30.0)) {
             Set var6x = (Set)var6.get(var3x.field40567);
             this.method15835(var3x, (Collection<UUID>)(var6x != null ? var6x : Sets.newHashSet()));
          }
       });
       this.method15846().forEach((var2, var3x) -> {
-         if (var3.method8316(var2, 30.0)) {
+         if (var3.withinDistance(var2, 30.0)) {
             this.method15833(var2, (List<String>)var3x);
          }
       });
@@ -230,7 +230,7 @@ public class Class5125 implements Class5119 {
       DebugRenderer.method27462(var0, var10, var12, var14, var3, 0.02F, true, 0.0F, true);
    }
 
-   private static void method15840(Class2955 var0, int var1, String var2, int var3, float var4) {
+   private static void method15840(IPosition var0, int var1, String var2, int var3, float var4) {
       double var7 = 2.4;
       double var9 = 0.25;
       BlockPos var11 = new BlockPos(var0);
@@ -246,9 +246,9 @@ public class Class5125 implements Class5119 {
    }
 
    private String method15842(Class6986 var1, BlockPos var2) {
-      float var5 = MathHelper.sqrt(var2.method8320(var1.field30221.getX(), var1.field30221.getY(), var1.field30221.getZ(), true));
+      float var5 = MathHelper.sqrt(var2.distanceSq(var1.field30221.getX(), var1.field30221.getY(), var1.field30221.getZ(), true));
       double var6 = (double)Math.round(var5 * 10.0F) / 10.0;
-      return var2.method8323() + " (dist " + var6 + ")";
+      return var2.getCoordinatesAsString() + " (dist " + var6 + ")";
    }
 
    private boolean method15843(Class6986 var1) {
@@ -259,7 +259,7 @@ public class Class5125 implements Class5119 {
       ClientPlayerEntity var4 = this.field23306.player;
       BlockPos var5 = new BlockPos(var4.getPosX(), var1.field30221.getY(), var4.getPosZ());
       BlockPos var6 = new BlockPos(var1.field30221);
-      return var5.method8316(var6, 30.0);
+      return var5.withinDistance(var6, 30.0);
    }
 
    private Collection<UUID> method15845(BlockPos var1) {

@@ -57,7 +57,7 @@ public class Search extends Module {
 
             if (var1.getPacket() instanceof SMultiBlockChangePacket) {
                 SMultiBlockChangePacket var5 = (SMultiBlockChangePacket) var1.getPacket();
-                this.method16164(new ChunkPos(var5.field24642.field13027, var5.field24642.field13029));
+                this.method16164(new ChunkPos(var5.field24642.x, var5.field24642.z));
             }
 
             if (var1.getPacket() instanceof SChunkDataPacket && Minecraft.getInstance().world != null) {

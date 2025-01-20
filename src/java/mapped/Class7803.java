@@ -164,7 +164,7 @@ public class Class7803 {
 
    @Nullable
    public static BlockPos method26061(BlockPos var0, int var1, ServerWorld var2) {
-      Comparator var5 = Comparator.<BlockPos>comparingInt(var1x -> var1x.method8321(var0));
+      Comparator var5 = Comparator.<BlockPos>comparingInt(var1x -> var1x.manhattanDistance(var0));
       Collection var6 = method26062(var0, var1, var2);
       Optional var7 = var6.stream().min(var5);
       return (BlockPos)var7.orElse((BlockPos)null);

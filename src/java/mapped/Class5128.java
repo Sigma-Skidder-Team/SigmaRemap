@@ -25,7 +25,7 @@ public class Class5128 implements Class5119 {
       BlockPos var11 = this.method15866().getBlockPos();
 
       for (BlockPos var13 : this.field23317) {
-         if (var11.method8316(var13, 160.0)) {
+         if (var11.withinDistance(var13, 160.0)) {
             method15864(var13);
          }
       }

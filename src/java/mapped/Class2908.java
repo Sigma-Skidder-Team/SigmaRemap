@@ -34,7 +34,7 @@ public class Class2908 extends Class2898<Class4738> {
       int var15 = Math.max(var13, var14);
 
       for (BlockPos var17 : BlockPos.method8356(var4, var13, 0, var14)) {
-         if (var17.method8321(var4) > var15) {
+         if (var17.manhattanDistance(var4) > var15) {
             break;
          }
 

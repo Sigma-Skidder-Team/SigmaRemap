@@ -22,7 +22,7 @@ public class Class2906 extends Class2898<Class4712> {
       for (int var9 = 64; var9 < 256; var9++) {
          var8.method8374(var4);
          var8.method8381(var3.nextInt(4) - var3.nextInt(4), 0, var3.nextInt(4) - var3.nextInt(4));
-         var8.method8308(var9);
+         var8.setY(var9);
          if (var1.method7007(var8)) {
             for (Direction var13 : field17990) {
                if (var13 != Direction.DOWN && Class3402.method12034(var1, var8, var13)) {

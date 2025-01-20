@@ -65,15 +65,15 @@ public class Class7018 implements Class7016 {
 
                            for (int var18 = 0; var18 < var17; var18++) {
                               var16++;
-                              var13.method8308(var1.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var13).getY());
+                              var13.setY(var1.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var13).getY());
                               if (var18 != 0) {
                                  this.method21749(var1, var13, var6, false);
                               } else if (!this.method21749(var1, var13, var6, true)) {
                                  break;
                               }
 
-                              var13.method8307(var13.getX() + var6.nextInt(5) - var6.nextInt(5));
-                              var13.method8309(var13.getZ() + var6.nextInt(5) - var6.nextInt(5));
+                              var13.setX(var13.getX() + var6.nextInt(5) - var6.nextInt(5));
+                              var13.setZ(var13.getZ() + var6.nextInt(5) - var6.nextInt(5));
                            }
 
                            return var16;

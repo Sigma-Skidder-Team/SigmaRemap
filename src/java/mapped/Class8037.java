@@ -93,7 +93,7 @@ public class Class8037 {
       if (!var0.method4291()) {
          var17 = false;
       } else {
-         var17 = var0.method4289().method8317(var0.getPositionVec(), (double)(var0.method4290() + (float)var1) + 1.0);
+         var17 = var0.method4289().withinDistance(var0.getPositionVec(), (double)(var0.method4290() + (float)var1) + 1.0);
       }
 
       boolean var18 = false;

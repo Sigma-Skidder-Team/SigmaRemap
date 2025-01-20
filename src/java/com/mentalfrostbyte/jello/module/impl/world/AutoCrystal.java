@@ -216,7 +216,7 @@ public class AutoCrystal extends Module {
 
             this.field23637 = this.method16377();
             this.field23637
-                    .sort(Comparator.comparing(var1x -> this.field23633.getDistanceNearest(var1x.field13027, var1x.field13028, var1x.field13029)));
+                    .sort(Comparator.comparing(var1x -> this.field23633.getDistanceNearest(var1x.x, var1x.y, var1x.z)));
             if (this.field23637 != null && !this.field23637.isEmpty()) {
                 BlockPos var6 = this.field23637
                         .stream()
@@ -227,7 +227,7 @@ public class AutoCrystal extends Module {
                         )
                         .orElse(null);
                 if (var6 != null) {
-                    Rotations rots = RotationHelper.getRotationsToVector(new Vector3d((double) var6.field13027 + 0.5, (double) var6.field13028 + 0.5, (double) var6.field13029 + 0.5));
+                    Rotations rots = RotationHelper.getRotationsToVector(new Vector3d((double) var6.x + 0.5, (double) var6.y + 0.5, (double) var6.z + 0.5));
                     Rots.rotating = true;
                     Rots.prevYaw = rots.yaw;
                     Rots.prevPitch = rots.pitch;

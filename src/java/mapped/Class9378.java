@@ -11,7 +11,7 @@ public final class Class9378 {
    public static final Codec<Class9378> field43522 = RecordCodecBuilder.create(
       var0 -> var0.group(
                World.CODEC.fieldOf("dimension").forGetter(Class9378::method35578),
-               BlockPos.field13030.fieldOf("pos").forGetter(Class9378::method35579)
+               BlockPos.CODEC.fieldOf("pos").forGetter(Class9378::method35579)
             )
             .apply(var0, Class9378::method35577)
    );

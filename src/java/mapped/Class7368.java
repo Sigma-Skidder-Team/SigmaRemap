@@ -19,7 +19,7 @@ public class Class7368 extends Class7361 {
    public void method23360() {
       if (!this.field31535 && this.field31536 != null) {
          BlockPos var3 = this.field31519.world.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994);
-         if (!var3.method8317(this.field31519.getPositionVec(), 10.0)) {
+         if (!var3.withinDistance(this.field31519.getPositionVec(), 10.0)) {
             this.field31519.method4336().method32671(Class9598.field44896);
          }
       } else {

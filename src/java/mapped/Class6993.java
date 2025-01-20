@@ -40,11 +40,11 @@ public class Class6993 extends Class6991 {
    public void method21658() {
       if (this.method21664()) {
          if (this.field30266 != null) {
-            if (!this.field30266.method8317(this.field30243.getPositionVec(), (double)this.field30243.getWidth())
+            if (!this.field30266.withinDistance(this.field30243.getPositionVec(), (double)this.field30243.getWidth())
                && (
                   !(this.field30243.getPosY() > (double)this.field30266.getY())
                      || !new BlockPos((double)this.field30266.getX(), this.field30243.getPosY(), (double)this.field30266.getZ())
-                        .method8317(this.field30243.getPositionVec(), (double)this.field30243.getWidth())
+                        .withinDistance(this.field30243.getPositionVec(), (double)this.field30243.getWidth())
                )) {
                this.field30243
                   .method4228()

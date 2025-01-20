@@ -105,7 +105,7 @@ public class Class2686 extends Class2595 {
    @Override
    public boolean method10806() {
       return !this.field17103.method4230().method21664()
-         ? !this.field17106.method8317(this.field17103.getPositionVec(), (double)(this.field17103.getWidth() + (float)this.field17109))
+         ? !this.field17106.withinDistance(this.field17103.getPositionVec(), (double)(this.field17103.getWidth() + (float)this.field17109))
          : false;
    }
 
@@ -116,7 +116,7 @@ public class Class2686 extends Class2595 {
 
    @Override
    public void method10807() {
-      if (this.field17103.method4230().method21664() || this.field17106.method8317(this.field17103.getPositionVec(), (double)this.field17109)) {
+      if (this.field17103.method4230().method21664() || this.field17106.withinDistance(this.field17103.getPositionVec(), (double)this.field17109)) {
          this.field17108.add(this.field17106);
       }
    }

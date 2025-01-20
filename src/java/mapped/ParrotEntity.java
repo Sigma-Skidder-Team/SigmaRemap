@@ -144,7 +144,7 @@ public class ParrotEntity extends ShoulderRidingEntity implements Class1016 {
    @Override
    public void livingTick() {
       if (this.field5683 == null
-         || !this.field5683.method8317(this.getPositionVec(), 3.46)
+         || !this.field5683.withinDistance(this.getPositionVec(), 3.46)
          || !this.world.getBlockState(this.field5683).isIn(Blocks.JUKEBOX)) {
          this.field5682 = false;
          this.field5683 = null;

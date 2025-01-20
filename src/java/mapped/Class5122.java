@@ -40,7 +40,7 @@ public class Class5122 implements Class5119 {
    private void method15819(double var1, double var3, double var5) {
       BlockPos var9 = new BlockPos(var1, var3, var5);
       this.field23300.forEach(var1x -> {
-         if (var9.method8316(var1x.method8422(), 60.0)) {
+         if (var9.withinDistance(var1x.method8422(), 60.0)) {
             method15820(var1x);
          }
       });

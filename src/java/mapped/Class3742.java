@@ -34,7 +34,7 @@ public class Class3742 extends Class3676<VillagerEntity> {
             this.field19876 = (Class9378)var7.get(var1.method6814().nextInt(var7.size()));
             return this.field19876 != null
                && var1.getDimensionKey() == this.field19876.method35578()
-               && ((Class9378)var6.get()).method35579().method8317(var2.getPositionVec(), (double)this.field19874);
+               && ((Class9378)var6.get()).method35579().withinDistance(var2.getPositionVec(), (double)this.field19874);
          }
       }
 

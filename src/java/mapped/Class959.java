@@ -155,7 +155,7 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
       List<PlayerEntity> var9 = this.world.<PlayerEntity>getEntitiesWithinAABB(PlayerEntity.class, var8);
       if (!var9.isEmpty()) {
          for (PlayerEntity var11 : var9) {
-            if (this.pos.method8316(var11.getPosition(), (double)var4) && var11.method3253()) {
+            if (this.pos.withinDistance(var11.getPosition(), (double)var4) && var11.method3253()) {
                var11.addPotionEffect(new EffectInstance(Effects.CONDUIT_POWER, 260, 0, true, true));
             }
          }
@@ -170,7 +170,7 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
             this.field5387 = this.method3901();
             this.field5388 = null;
          } else if (this.field5387 != null) {
-            if (!this.field5387.isAlive() || !this.pos.method8316(this.field5387.getPosition(), 8.0)) {
+            if (!this.field5387.isAlive() || !this.pos.withinDistance(this.field5387.getPosition(), 8.0)) {
                this.field5387 = null;
             }
          } else {

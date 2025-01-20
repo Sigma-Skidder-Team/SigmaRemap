@@ -54,7 +54,7 @@ public class Class2608 extends Class2595 {
    public void method10805() {
       if (this.field16862 != null) {
          Class6990 var3 = this.field16860.method4230();
-         if (var3.method21664() && !this.field16862.method8317(this.field16860.getPositionVec(), 10.0)) {
+         if (var3.method21664() && !this.field16862.withinDistance(this.field16860.getPositionVec(), 10.0)) {
             Vector3d var4 = Vector3d.method11330(this.field16862);
             Vector3d var5 = this.field16860.getPositionVec();
             Vector3d var6 = var5.subtract(var4);

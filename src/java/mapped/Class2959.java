@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class2959 implements Class2955 {
+public class Class2959 implements IPosition {
    private static String[] field18051;
    public final double field18052;
    public final double field18053;

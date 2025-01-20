@@ -154,7 +154,7 @@ public class Orientation {
 
             if (var10 < var12
                   && (var14 || var8.field44281.size() > 0
-                        && (double) this.mc.player.position.field13028 > var8.field44271.method33970())) {
+                        && (double) this.mc.player.position.y > var8.field44271.method33970())) {
                MultiUtilities.setPlayerXMotion(this.mc.player.getMotion().x * 0.5);
                MultiUtilities.setPlayerZMotion(this.mc.player.getMotion().z * 0.5);
             }
@@ -197,7 +197,7 @@ public class Orientation {
                   if (var8.field44280 == Class2285.field15126) {
                      var38 = var10 < 1.14;
                      if (this.field39618 != null) {
-                        var38 &= (double) this.mc.player.position.field13028 - var8.field44271.method33970() != 0.0;
+                        var38 &= (double) this.mc.player.position.y - var8.field44271.method33970() != 0.0;
                      }
                   }
 

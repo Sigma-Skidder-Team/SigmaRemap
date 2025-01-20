@@ -27,7 +27,7 @@ public class Class2941 extends Class2898<Class4704> {
          boolean var11 = false;
 
          for (BlockPos var13 : BlockPos.method8356(var9, var10, var10, var10)) {
-            if (var13.method8321(var9) > var10) {
+            if (var13.manhattanDistance(var9) > var10) {
                break;
             }
 

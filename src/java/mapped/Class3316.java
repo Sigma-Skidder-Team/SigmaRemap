@@ -131,7 +131,7 @@ public class Class3316 extends Class3314 {
 
                                        BlockState var40;
                                        do {
-                                          var32.method8308(var39--);
+                                          var32.setY(var39--);
                                           var40 = var24.getBlockState(var32);
                                           var28++;
                                        } while (var39 > 0 && !var40.getFluidState().isEmpty());

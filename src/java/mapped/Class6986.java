@@ -12,7 +12,7 @@ public class Class6986 {
    private static String[] field30218;
    public final UUID field30219;
    public final int field30220;
-   public final Class2955 field30221;
+   public final IPosition field30221;
    public final Class8238 field30222;
    public final BlockPos field30223;
    public final BlockPos field30224;
@@ -20,7 +20,7 @@ public class Class6986 {
    public final List<String> field30226 = Lists.newArrayList();
    public final Set<BlockPos> field30227 = Sets.newHashSet();
 
-   public Class6986(UUID var1, int var2, Class2955 var3, Class8238 var4, BlockPos var5, BlockPos var6, int var7) {
+   public Class6986(UUID var1, int var2, IPosition var3, Class8238 var4, BlockPos var5, BlockPos var6, int var7) {
       this.field30219 = var1;
       this.field30220 = var2;
       this.field30221 = var3;

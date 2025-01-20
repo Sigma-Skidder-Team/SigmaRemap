@@ -35,7 +35,7 @@ public class Class8032 extends Class8033 {
 
    @Override
    public boolean method27553(BlockPos var1, BlockPos var2, BlockPos var3, Random var4) {
-      int var7 = var2.method8321(var3);
+      int var7 = var2.manhattanDistance(var3);
       float var8 = var4.nextFloat();
       return (double)var8
          <= MathHelper.method37779(

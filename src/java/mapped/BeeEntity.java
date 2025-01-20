@@ -213,7 +213,7 @@ public class BeeEntity extends AnimalEntity implements IAngerable, Class1016 {
 
       int var8 = 6;
       int var9 = 8;
-      int var10 = var6.method8321(var1);
+      int var10 = var6.manhattanDistance(var1);
       if (var10 < 15) {
          var8 = var10 / 2;
          var9 = var10 / 2;
@@ -554,7 +554,7 @@ public class BeeEntity extends AnimalEntity implements IAngerable, Class1016 {
    }
 
    private boolean method4450(BlockPos var1, int var2) {
-      return var1.method8316(this.getPosition(), (double)var2);
+      return var1.withinDistance(this.getPosition(), (double)var2);
    }
 
    // $VF: synthetic method

@@ -6,7 +6,7 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.EnumSet;
 
-public class Vector3d implements Class2955 {
+public class Vector3d implements IPosition {
    public static final Vector3d ZERO = new Vector3d(0.0D, 0.0D, 0.0D);
    public double x;
    public double y;
@@ -82,7 +82,7 @@ public class Vector3d implements Class2955 {
       return new Vector3d(this.x + var1, this.y + var3, this.z + var5);
    }
 
-   public boolean method11340(Class2955 var1, double var2) {
+   public boolean method11340(IPosition var1, double var2) {
       return this.method11343(var1.getX(), var1.getY(), var1.getZ()) < var2 * var2;
    }
 

@@ -25,7 +25,7 @@ public class Class3700 extends Class3676<CreatureEntity> {
       Optional var5 = var2.getBrain().<Class9378>method21410(this.field19751);
       return var5.isPresent()
          && var1.getDimensionKey() == ((Class9378)var5.get()).method35578()
-         && ((Class9378)var5.get()).method35579().method8317(var2.getPositionVec(), (double)this.field19753);
+         && ((Class9378)var5.get()).method35579().withinDistance(var2.getPositionVec(), (double)this.field19753);
    }
 
    public void method12502(ServerWorld var1, CreatureEntity var2, long var3) {

@@ -119,7 +119,7 @@ public class ShulkerBulletEntity extends ProjectileEntity {
       double var9 = (double)var6.getY() + var4;
       double var11 = (double)var6.getZ() + 0.5;
       Direction var13 = null;
-      if (!var6.method8317(this.getPositionVec(), 2.0)) {
+      if (!var6.withinDistance(this.getPositionVec(), 2.0)) {
          BlockPos var22 = this.getPosition();
          ArrayList var23 = Lists.newArrayList();
          if (var1 != Direction.Axis.X) {

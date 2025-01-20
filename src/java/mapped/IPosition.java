@@ -1,6 +1,6 @@
 package mapped;
 
-public interface Class2955 {
+public interface IPosition {
    double getX();
 
    double getY();

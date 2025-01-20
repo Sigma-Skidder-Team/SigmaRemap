@@ -238,11 +238,11 @@ public class BlockFlyHypixelMode extends Module {
                         this.field23468 = var12;
                         if (var12 != null) {
                             float[] var13 = BlockUtil.method34542(this.field23468.field33646, this.field23468.field33647);
-                            if ((double) var12.field33646.field13028 - mc.player.getPosY() < 0.0) {
+                            if ((double) var12.field33646.y - mc.player.getPosY() < 0.0) {
                                 double var14 = mc.player.getPosX()
-                                        - ((double) var12.field33646.field13027 + 0.5 + (double) var12.field33647.getXOffset() / 2.0);
+                                        - ((double) var12.field33646.x + 0.5 + (double) var12.field33647.getXOffset() / 2.0);
                                 double var16 = mc.player.getPosZ()
-                                        - ((double) var12.field33646.field13029 + 0.5 + (double) var12.field33647.getZOffset() / 2.0);
+                                        - ((double) var12.field33646.z + 0.5 + (double) var12.field33647.getZOffset() / 2.0);
                                 double var18 = Math.sqrt(var14 * var14 + var16 * var16);
                                 if (var18 < 2.0) {
                                     var13[0] = mc.player.rotationYaw + 1.0F;

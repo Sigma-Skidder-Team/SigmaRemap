@@ -79,7 +79,7 @@ public class Class3749 extends Class3676<VillagerEntity> {
    }
 
    public void method12504(ServerWorld var1, VillagerEntity var2, long var3) {
-      if (this.field19897 == null || this.field19897.method8317(var2.getPositionVec(), 1.0)) {
+      if (this.field19897 == null || this.field19897.withinDistance(var2.getPositionVec(), 1.0)) {
          if (this.field19897 != null && var3 > this.field19898) {
             BlockState var7 = var1.getBlockState(this.field19897);
             Block var8 = var7.getBlock();
