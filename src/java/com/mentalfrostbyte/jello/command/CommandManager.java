@@ -108,7 +108,7 @@ public class CommandManager {
 
     @EventTarget
     private void onSendPacket(SendPacketEvent var1) {
-        if (Client.getInstance().getClientMode() != ClientMode.NOADDONS) {
+        if (Client.getInstance().clientMode != ClientMode.NOADDONS) {
             if (var1.getPacket() instanceof CChatMessagePacket) {
                 CChatMessagePacket var4 = (CChatMessagePacket) var1.getPacket();
                 String var5 = var4.getMessage();

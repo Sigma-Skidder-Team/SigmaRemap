@@ -400,7 +400,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
    private String getWindowTitle() {
       StringBuilder stringbuilder = new StringBuilder(
-            Client.getInstance().getClientMode() == ClientMode.JELLO ? "Jello for Sigma 5.0" : "Sigma 5.0");
+            Client.getInstance().clientMode == ClientMode.JELLO ? "Jello for Sigma 5.0" : "Sigma 5.0");
       stringbuilder.append(" ");
       stringbuilder.append(SharedConstants.getVersion().getName());
       ClientPlayNetHandler clientplaynethandler = this.getConnection();

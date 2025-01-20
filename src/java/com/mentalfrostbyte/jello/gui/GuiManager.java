@@ -89,7 +89,7 @@ public class GuiManager {
             Minecraft.getInstance().currentScreen = null;
             Minecraft.getInstance().displayGuiScreen(new JelloForSigmaOptions());
             return true;
-        } else if (Client.getInstance().getClientMode() == ClientMode.NOADDONS && var0 instanceof VanillaMainMenuScreen
+        } else if (Client.getInstance().clientMode == ClientMode.NOADDONS && var0 instanceof VanillaMainMenuScreen
                 && !(var0 instanceof NoAddOnnScreenMenu)) {
             Minecraft.getInstance().currentScreen = null;
             Minecraft.getInstance().displayGuiScreen(new NoAddOnnScreenMenu());
@@ -102,7 +102,7 @@ public class GuiManager {
     public static Screen handleScreen(net.minecraft.client.gui.screen.Screen var0) {
         if (var0 == null) {
             return null;
-        } else if (Client.getInstance().getClientMode() == ClientMode.PREMIUM) {
+        } else if (Client.getInstance().clientMode == ClientMode.PREMIUM) {
             return new GuiSwitch();
         } else if (method33457(var0)) {
             return null;
@@ -247,7 +247,7 @@ public class GuiManager {
                 var3 = Minecraft.getInstance().mainWindow.getWidth() / 2 - var5 / 2;
             }
 
-            if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
+            if (Client.getInstance().clientMode != ClientMode.JELLO) {
                 float var7 = 0.5F + TabGUI.animationProgress.calcPercent() * 0.5F;
                 GL11.glAlphaFunc(516, 0.1F);
                 RenderUtil.renderBackgroundBox(4.0F, 2.0F, 106.0F, 28.0F,

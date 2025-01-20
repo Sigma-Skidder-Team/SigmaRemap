@@ -50,7 +50,7 @@ public class BoxOutlineESP extends Module {
     }
 
     private void method16507() {
-        if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
+        if (Client.getInstance().clientMode == ClientMode.JELLO) {
             mc.world.entitiesById
                     .forEach(
                             (var1, var2) -> {
@@ -113,7 +113,7 @@ public class BoxOutlineESP extends Module {
                     Box3D var17 = new Box3D(var5.getBoundingBox().offset(var11, var13, var15)).expand(0.1F);
                     if (var1) {
                         RenderUtil.renderWireframeBox(var17, 3.0F, MultiUtilities.applyAlpha(var10,
-                                Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
+                                Client.getInstance().clientMode != ClientMode.JELLO ? 0.8F : 0.35F));
                     } else {
                         RenderUtil.render3DColoredBox(var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     }

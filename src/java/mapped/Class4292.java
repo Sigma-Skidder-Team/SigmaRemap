@@ -82,7 +82,7 @@ public class Class4292 extends Class4278 implements Class4293 {
       int var5 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.2F * var1);
       int var6 = this.xA;
       int var7 = this.widthA;
-      if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
+      if (Client.getInstance().clientMode != ClientMode.JELLO) {
          var4 = 0;
          var7 -= 8;
          var6 += 8;

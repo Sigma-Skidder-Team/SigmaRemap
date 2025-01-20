@@ -380,7 +380,7 @@ public class BlockFly extends ModuleWithModuleSettings {
 
     @Override
     public String getSuffix() {
-        return Client.getInstance().getClientMode() != ClientMode.CLASSIC ? super.getSuffix() : "Scaffold";
+        return Client.getInstance().clientMode != ClientMode.CLASSIC ? super.getSuffix() : "Scaffold";
     }
 
     @EventTarget
@@ -404,7 +404,7 @@ public class BlockFly extends ModuleWithModuleSettings {
         this.field23885.changeDirection(Direction.FORWARDS);
         if (this.field23885.calcPercent() != 0.0F) {
             if (this.getBooleanValueFromSettingName("Show Block Amount")) {
-                if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
+                if (Client.getInstance().clientMode != ClientMode.JELLO) {
                     this.method16744(
                             mc.mainWindow.getWidth() / 2,
                             mc.mainWindow.getHeight() / 2 + 15 - (int) (10.0F * this.field23885.calcPercent()),

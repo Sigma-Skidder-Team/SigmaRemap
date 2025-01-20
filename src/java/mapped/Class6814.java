@@ -43,7 +43,7 @@ public class Class6814 {
    }
 
    public boolean checkConfig(Configuration config) {
-      if (Client.getInstance().getClientMode() == ClientMode.CLASSIC && config.getName.equals("Classic")) {
+      if (Client.getInstance().clientMode == ClientMode.CLASSIC && config.getName.equals("Classic")) {
          return false;
       } else if (this.savedConfigs.size() <= 1) {
          return false;
@@ -156,7 +156,7 @@ public class Class6814 {
    public void loadConfig(Configuration var1) {
       Client.getInstance().saveClientData();
       RandomModuleThread.field8343 = new HashMap<>();
-      if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
+      if (Client.getInstance().clientMode != ClientMode.CLASSIC) {
          this.currentConfigs.serializedConfigData = Client.getInstance().moduleManager
                .saveCurrentConfigToJSON(new JSONObject());
          this.currentConfigs = var1;

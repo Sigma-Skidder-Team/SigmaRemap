@@ -32,7 +32,7 @@ public class JelloForSigmaOptions extends IngameMenuScreen {
 
    @Override
    public void init() {
-      if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
+      if (Client.getInstance().clientMode == ClientMode.JELLO) {
          this.addButton(
             new Button(
                this.width / 2 - 102,

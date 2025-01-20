@@ -16,7 +16,7 @@ public class ModuleKeyPress {
    private static final Minecraft field35741 = Minecraft.getInstance();
 
    public static void press(int key) {
-      if (Client.getInstance().getClientMode() != ClientMode.NOADDONS) {
+      if (Client.getInstance().clientMode != ClientMode.NOADDONS) {
          if (key != -1) {
             for (Class7957 var5 : Client.getInstance().moduleManager.getMacOSTouchBar().method13733(key)) {
                if (var5 != null && var5.method27052()) {

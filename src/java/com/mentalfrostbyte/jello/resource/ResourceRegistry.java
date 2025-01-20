@@ -46,7 +46,7 @@ public class ResourceRegistry {
             font = font.deriveFont(style, size);
             return new TrueTypeFont(font, true);
         } catch (Exception ex) {
-            return new TrueTypeFont(new Font("Arial", Font.PLAIN, (int) size), Client.getInstance().getClientMode() != ClientMode.CLASSIC);
+            return new TrueTypeFont(new Font("Arial", Font.PLAIN, (int) size), Client.getInstance().clientMode != ClientMode.CLASSIC);
         }
     }
 }

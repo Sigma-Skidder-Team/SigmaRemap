@@ -23,6 +23,6 @@ public class AntiKnockback extends ModuleWithModuleSettings {
 
     @Override
     public String getSuffix() {
-        return Client.getInstance().getClientMode() != ClientMode.CLASSIC ? super.getSuffix() : "AntiVelocity";
+        return Client.getInstance().clientMode != ClientMode.CLASSIC ? super.getSuffix() : "AntiVelocity";
     }
 }

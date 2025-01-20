@@ -79,7 +79,7 @@ public final class Class6874 {
    }
 
    static {
-      if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
+      if (Client.getInstance().clientMode == ClientMode.JELLO) {
          field29805.add("It's not Scaffold it's BlockFly in Jello for Sigma!");
       }
 

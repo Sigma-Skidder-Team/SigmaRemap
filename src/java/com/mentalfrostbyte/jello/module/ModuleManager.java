@@ -295,7 +295,7 @@ public class ModuleManager {
         } catch (JSONException ignored) {
         }
 
-        if (Client.getInstance().getClientMode() == ClientMode.CLASSIC) {
+        if (Client.getInstance().clientMode == ClientMode.CLASSIC) {
             var4 = "Classic";
         }
 

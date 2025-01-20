@@ -70,7 +70,7 @@ public class Client {
     private SlotChangeTracker slotChangeTracker;
     public WaypointsManager waypointsManager;
     private Class8795 field28989;
-    private ClientMode clientMode = ClientMode.PREMIUM;
+    public ClientMode clientMode = ClientMode.PREMIUM;
     private DiscordRichPresence discordRichPresence;
 
     private Client() {
@@ -225,7 +225,7 @@ public class Client {
             }
         }
 
-        if (getInstance().getClientMode() != ClientMode.NOADDONS) {
+        if (getInstance().clientMode != ClientMode.NOADDONS) {
             double var5 = mc.mainWindow.getGuiScaleFactor() / (double) ((float) Math.pow(mc.mainWindow.getGuiScaleFactor(), 2.0));
             GL11.glScaled(var5, var5, 1.0);
             GL11.glScaled(GuiManager.portalScaleFactor, GuiManager.portalScaleFactor, 1.0);
@@ -282,10 +282,6 @@ public class Client {
 
     public JSONObject getConfig() {
         return this.config;
-    }
-
-    public ClientMode getClientMode() {
-        return this.clientMode;
     }
 
     public DiscordRichPresence getDRPC() {

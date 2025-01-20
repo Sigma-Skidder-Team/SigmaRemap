@@ -155,7 +155,7 @@ public class MusicManager {
 
     @EventTarget
     private void method24296(EventRender var1) {
-        if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
+        if (Client.getInstance().clientMode == ClientMode.JELLO) {
             if (this.field32144 && this.field32163.size() != 0) {
                 double[] var4 = this.field32163.get(0);
                 if (this.field32165.isEmpty()) {

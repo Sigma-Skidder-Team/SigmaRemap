@@ -57,7 +57,7 @@ public class Config extends Command {
                            .getAllConfigs()) {
                         boolean isCurrentConfig = Client.getInstance().moduleManager.getConfigurationManager()
                               .getCurrentConfig() == config;
-                        if (Client.getInstance().getClientMode() != ClientMode.CLASSIC || !isCurrentConfig) {
+                        if (Client.getInstance().clientMode != ClientMode.CLASSIC || !isCurrentConfig) {
                            user.send((!isCurrentConfig ? "" : "§n") + config.getName);
                         }
                      }
@@ -105,7 +105,7 @@ public class Config extends Command {
    }
 
    public String getConfigOrProfileName() {
-      return Client.getInstance().getClientMode() != ClientMode.CLASSIC ? "Profile" : "Config";
+      return Client.getInstance().clientMode != ClientMode.CLASSIC ? "Profile" : "Config";
    }
 
    public void saveConfigToFile(String configName) {
