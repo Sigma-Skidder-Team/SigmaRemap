@@ -40,7 +40,7 @@ public class Class5824 extends Class5823 {
 
    @Override
    public boolean method18189(PlayerEntity var1, boolean var2) {
-      return (var1.abilities.isCreativeMode || var1.field4920 >= this.field25520.get()) && this.field25520.get() > 0;
+      return (var1.abilities.isCreativeMode || var1.experienceLevel >= this.field25520.get()) && this.field25520.get() > 0;
    }
 
    @Override

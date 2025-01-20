@@ -164,8 +164,8 @@ public class ExperienceOrbEntity extends Entity {
 
    @Override
    public void onCollideWithPlayer(PlayerEntity var1) {
-      if (!this.world.isRemote && this.field5557 == 0 && var1.field4910 == 0) {
-         var1.field4910 = 2;
+      if (!this.world.isRemote && this.field5557 == 0 && var1.xpCooldown == 0) {
+         var1.xpCooldown = 2;
          var1.onItemPickup(this, 1);
          Entry var4 = EnchantmentHelper.method26340(Enchantments.MENDING, var1, ItemStack::method32116);
          if (var4 != null) {

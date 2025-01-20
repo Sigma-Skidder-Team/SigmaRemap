@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class Class6462 {
+public class CooldownTracker {
    private static String[] field28397;
    private final Map<Item, Class8498> field28398 = Maps.newHashMap();
    private int field28399;

@@ -59,7 +59,7 @@ public class Class9281 {
          return false;
       } else {
          ServerPlayerEntity var4 = (ServerPlayerEntity)var1;
-         if (!this.field42698.method32015(var4.field4920)) {
+         if (!this.field42698.method32015(var4.experienceLevel)) {
             return false;
          } else if (this.field42699 != GameType.field11101 && this.field42699 != var4.interactionManager.getGameType()) {
             return false;

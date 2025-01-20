@@ -537,7 +537,7 @@ public class IngameGui extends AbstractGui {
         this.field6716.getTextureManager().bindTexture(AbstractGui.field6453);
         int var5 = this.field6716.player.method2930();
         if (var5 > 0) {
-            int var7 = (int) (this.field6716.player.field4922 * 183.0F);
+            int var7 = (int) (this.field6716.player.experience * 183.0F);
             int var8 = this.field6742 - 32 + 3;
             this.blit(var1, var2, var8, 0, 64, 182, 5);
             if (var7 > 0) {
@@ -546,14 +546,14 @@ public class IngameGui extends AbstractGui {
         }
 
         this.field6716.getProfiler().endSection();
-        if (this.field6716.player.field4920 > 0) {
+        if (this.field6716.player.experienceLevel > 0) {
             this.field6716.getProfiler().startSection("expLevel");
             int var10 = 8453920;
             if (Config.method26911()) {
                 var10 = Class9680.method37898(var10);
             }
 
-            String var11 = "" + this.field6716.player.field4920;
+            String var11 = "" + this.field6716.player.experienceLevel;
             int var12 = (this.field6741 - this.method5991().getStringWidth(var11)) / 2;
             int var9 = this.field6742 - 31 - 4;
             this.method5991().method38801(var1, var11, (float) (var12 + 1), (float) var9, 0);

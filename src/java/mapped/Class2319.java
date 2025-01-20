@@ -16,11 +16,11 @@ public enum Class2319 {
       } else {
          return false;
       }
-   }, var0 -> MathHelper.floor(var0.field4922 * (float)var0.method2930())),
+   }, var0 -> MathHelper.floor(var0.experience * (float)var0.method2930())),
    field15892("levels", ServerPlayerEntity::method2727, (var0, var1) -> {
       var0.method2726(var1);
       return true;
-   }, var0 -> var0.field4920);
+   }, var0 -> var0.experienceLevel);
 
    public final BiConsumer<ServerPlayerEntity, Integer> field15893;
    public final BiPredicate<ServerPlayerEntity, Integer> field15894;

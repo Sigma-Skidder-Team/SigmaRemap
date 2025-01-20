@@ -4,7 +4,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.network.play.server.SCooldownPacket;
 
-public class Class6461 extends Class6462 {
+public class Class6461 extends CooldownTracker {
    private static String[] field28395;
    private final ServerPlayerEntity field28396;
 

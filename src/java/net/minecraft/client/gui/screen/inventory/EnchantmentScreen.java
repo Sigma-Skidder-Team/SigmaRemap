@@ -136,7 +136,7 @@ public class EnchantmentScreen extends ContainerScreen<Class5822> {
             int var24 = 86 - this.font.getStringWidth(var23);
             ITextProperties var25 = Class6577.method19915().method19916(this.font, var24);
             int var26 = 6839882;
-            if ((var18 < var19 + 1 || this.mc.player.field4920 < var22) && !this.mc.player.abilities.isCreativeMode) {
+            if ((var18 < var19 + 1 || this.mc.player.experienceLevel < var22) && !this.mc.player.abilities.isCreativeMode) {
                this.blit(var1, var20, var8 + 14 + 19 * var19, 0, 185, 108, 19);
                this.blit(var1, var20 + 1, var8 + 15 + 19 * var19, 16 * var19, 239, 16, 16);
                this.font.method38826(var25, var21, var8 + 16 + 19 * var19, var24, (var26 & 16711422) >> 1);
@@ -182,7 +182,7 @@ public class EnchantmentScreen extends ContainerScreen<Class5822> {
             var14.add(new TranslationTextComponent("container.enchant.clue", var11.method18820(var12)).mergeStyle(TextFormatting.WHITE));
             if (!var7) {
                var14.add(StringTextComponent.EMPTY);
-               if (this.mc.player.field4920 >= var10) {
+               if (this.mc.player.experienceLevel >= var10) {
                   TranslationTextComponent var15;
                   if (var13 != 1) {
                      var15 = new TranslationTextComponent("container.enchant.lapis.many", var13);

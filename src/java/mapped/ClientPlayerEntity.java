@@ -454,9 +454,9 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public void method5402(float var1, int var2, int var3) {
-      this.field4922 = var1;
-      this.field4921 = var2;
-      this.field4920 = var3;
+      this.experience = var1;
+      this.experienceTotal = var2;
+      this.experienceLevel = var3;
    }
 
    @Override
@@ -711,15 +711,15 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       if (this.abilities.allowFlying) {
          if (!this.mc.playerController.isSpectatorMode()) {
             if (!var3 && this.movementInput.jump && !var10) {
-               if (this.field4907 != 0) {
+               if (this.flyToggleTimer != 0) {
                   if (!this.isSwimming()) {
                      this.abilities.isFlying = !this.abilities.isFlying;
                      var11 = true;
                      this.method2797();
-                     this.field4907 = 0;
+                     this.flyToggleTimer = 0;
                   }
                } else {
-                  this.field4907 = 7;
+                  this.flyToggleTimer = 7;
                }
             }
          } else if (!this.abilities.isFlying) {
@@ -1014,12 +1014,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public boolean canSwim() {
-      return this.field4918;
+      return this.eyesInWaterPlayer;
    }
 
    @Override
    public boolean method2854() {
-      boolean var3 = this.field4918;
+      boolean var3 = this.eyesInWaterPlayer;
       boolean var4 = super.method2854();
       if (!this.isSpectator()) {
          if (!var3 && var4) {
@@ -1031,9 +1031,9 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26330, SoundCategory.field14736, 1.0F, 1.0F, false);
          }
 
-         return this.field4918;
+         return this.eyesInWaterPlayer;
       } else {
-         return this.field4918;
+         return this.eyesInWaterPlayer;
       }
    }
 

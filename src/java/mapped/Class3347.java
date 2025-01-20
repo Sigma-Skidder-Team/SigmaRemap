@@ -65,7 +65,7 @@ public class Class3347 extends Class3346<Class943> implements IWaterLoggable {
 
    @Override
    public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      Class980 var9 = var4.method2942();
+      EnderChestInventory var9 = var4.method2942();
       TileEntity var10 = var2.getTileEntity(var3);
       if (var9 != null && var10 instanceof Class943) {
          BlockPos var11 = var3.up();

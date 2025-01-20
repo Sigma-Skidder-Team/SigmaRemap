@@ -56,7 +56,7 @@ public class FishingBobberEntity extends ProjectileEntity {
       super(EntityType.FISHING_BOBBER, var1);
       this.ignoreFrustumCheck = true;
       this.setShooter(var2);
-      var2.field4930 = this;
+      var2.fishingBobber = this;
       this.field5161 = Math.max(0, var3);
       this.field5162 = Math.max(0, var4);
    }
@@ -517,7 +517,7 @@ public class FishingBobberEntity extends ProjectileEntity {
       super.remove();
       PlayerEntity var3 = this.method3544();
       if (var3 != null) {
-         var3.field4930 = null;
+         var3.fishingBobber = null;
       }
    }
 

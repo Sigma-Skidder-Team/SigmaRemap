@@ -444,7 +444,7 @@ public abstract class Class6395 {
       var12.connection.method15668(var12.getPosX(), var12.getPosY(), var12.getPosZ(), var12.rotationYaw, var12.rotationPitch);
       var12.connection.sendPacket(new SWorldSpawnChangedPacket(var10.getSpawnPoint(), var10.method6948()));
       var12.connection.sendPacket(new SServerDifficultyPacket(var21.method20047(), var21.method20048()));
-      var12.connection.sendPacket(new SSetExperiencePacket(var12.field4922, var12.field4921, var12.field4920));
+      var12.connection.sendPacket(new SSetExperiencePacket(var12.experience, var12.experienceTotal, var12.experienceLevel));
       this.method19472(var12, var10);
       this.method19454(var12);
       var10.method6922(var12);

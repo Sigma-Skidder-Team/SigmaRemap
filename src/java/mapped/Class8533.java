@@ -163,7 +163,7 @@ public class Class8533 {
       }
 
       if (!this.field38345.method32004()) {
-         this.field38354 = this.field38354.and(var1 -> var1 instanceof ServerPlayerEntity ? this.field38345.method32015(((ServerPlayerEntity)var1).field4920) : false);
+         this.field38354 = this.field38354.and(var1 -> var1 instanceof ServerPlayerEntity ? this.field38345.method32015(((ServerPlayerEntity)var1).experienceLevel) : false);
       }
    }
 

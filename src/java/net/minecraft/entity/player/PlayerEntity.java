@@ -65,9 +65,9 @@ import java.util.*;
 import java.util.function.Predicate;
 
 public abstract class PlayerEntity extends LivingEntity {
-   public static final EntitySize field4893 = EntitySize.method32101(0.6F, 1.8F);
-   private static final Map<Pose, EntitySize> field4894 = ImmutableMap.<Pose, EntitySize>builder()
-      .put(Pose.STANDING, field4893)
+   public static final EntitySize STANDING_SIZE = EntitySize.method32101(0.6F, 1.8F);
+   private static final Map<Pose, EntitySize> SIZE_BY_POSE = ImmutableMap.<Pose, EntitySize>builder()
+      .put(Pose.STANDING, STANDING_SIZE)
       .put(Pose.field13621, SLEEPING_SIZE)
       .put(Pose.field13620, EntitySize.method32101(0.6F, 0.6F))
       .put(Pose.field13622, EntitySize.method32101(0.6F, 0.6F))
@@ -81,41 +81,42 @@ public abstract class PlayerEntity extends LivingEntity {
    public static final DataParameter<Byte> field4898 = EntityDataManager.<Byte>createKey(PlayerEntity.class, DataSerializers.field33390);
    public static final DataParameter<CompoundNBT> field4899 = EntityDataManager.<CompoundNBT>createKey(PlayerEntity.class, DataSerializers.field33405);
    public static final DataParameter<CompoundNBT> field4900 = EntityDataManager.<CompoundNBT>createKey(PlayerEntity.class, DataSerializers.field33405);
-   private long field4901;
+   private long timeEntitySatOnShoulder;
    public PlayerInventory inventory = new PlayerInventory(this);
-   public Class980 field4903 = new Class980();
+   // Searge typo LOL
+   public EnderChestInventory enterChestInventory = new EnderChestInventory();
    public final PlayerContainer container;
    public Container openContainer;
    public FoodStats foodStats = new FoodStats();
-   public int field4907;
+   public int flyToggleTimer;
    public float prevCameraYaw;
    public float cameraYaw;
-   public int field4910;
-   public double field4911;
-   public double field4912;
-   public double field4913;
-   public double field4914;
-   public double field4915;
-   public double field4916;
-   private int field4917;
-   public boolean field4918;
+   public int xpCooldown;
+   public double prevChasingPosX;
+   public double prevChasingPosY;
+   public double prevChasingPosZ;
+   public double chasingPosX;
+   public double chasingPosY;
+   public double chasingPosZ;
+   private int sleepTimer;
+   public boolean eyesInWaterPlayer;
    public final PlayerAbilities abilities = new PlayerAbilities();
-   public int field4920;
-   public int field4921;
-   public float field4922;
-   public int field4923;
-   public final float field4924 = 0.02F;
-   private int field4925;
-   private final GameProfile field4926;
-   private boolean field4927;
-   private ItemStack field4928 = ItemStack.EMPTY;
-   private final Class6462 field4929 = this.method2733();
-   public FishingBobberEntity field4930;
+   public int experienceLevel;
+   public int experienceTotal;
+   public float experience;
+   public int xpSeed;
+   public final float speedInAir = 0.02F;
+   private int lastXPSound;
+   private final GameProfile gameProfile;
+   private boolean hasReducedDebug;
+   private ItemStack itemStackMainHand = ItemStack.EMPTY;
+   private final CooldownTracker cooldownTracker = this.createCooldownTracker();
+   public FishingBobberEntity fishingBobber;
 
    public PlayerEntity(World var1, BlockPos var2, float var3, GameProfile var4) {
       super(EntityType.PLAYER, var1);
       this.setUniqueId(method2960(var4));
-      this.field4926 = var4;
+      this.gameProfile = var4;
       this.container = new PlayerContainer(this.inventory, !var1.isRemote, this);
       this.openContainer = this.container;
       this.setLocationAndAngles((double)var2.getX() + 0.5, (double)(var2.getY() + 1), (double)var2.getZ() + 0.5, var3, 0.0F);
@@ -163,21 +164,21 @@ public abstract class PlayerEntity extends LivingEntity {
          this.onGround = false;
       }
 
-      if (this.field4910 > 0) {
-         this.field4910--;
+      if (this.xpCooldown > 0) {
+         this.xpCooldown--;
       }
 
       if (!this.isSleeping()) {
-         if (this.field4917 > 0) {
-            this.field4917++;
-            if (this.field4917 >= 110) {
-               this.field4917 = 0;
+         if (this.sleepTimer > 0) {
+            this.sleepTimer++;
+            if (this.sleepTimer >= 110) {
+               this.sleepTimer = 0;
             }
          }
       } else {
-         this.field4917++;
-         if (this.field4917 > 100) {
-            this.field4917 = 100;
+         this.sleepTimer++;
+         if (this.sleepTimer > 100) {
+            this.sleepTimer = 100;
          }
 
          if (!this.world.isRemote && this.world.method6740()) {
@@ -217,16 +218,16 @@ public abstract class PlayerEntity extends LivingEntity {
 
       this.ticksSinceLastSwing++;
       ItemStack var8 = this.getHeldItemMainhand();
-      if (!ItemStack.areItemStacksEqual(this.field4928, var8)) {
-         if (!ItemStack.areItemsEqualIgnoreDurability(this.field4928, var8)) {
+      if (!ItemStack.areItemStacksEqual(this.itemStackMainHand, var8)) {
+         if (!ItemStack.areItemsEqualIgnoreDurability(this.itemStackMainHand, var8)) {
             this.resetCooldown();
          }
 
-         this.field4928 = var8.copy();
+         this.itemStackMainHand = var8.copy();
       }
 
       this.method2855();
-      this.field4929.method19637();
+      this.cooldownTracker.method19637();
       this.updatePose();
    }
 
@@ -243,8 +244,8 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public boolean method2854() {
-      this.field4918 = this.areEyesInFluid(FluidTags.field40469);
-      return this.field4918;
+      this.eyesInWaterPlayer = this.areEyesInFluid(FluidTags.field40469);
+      return this.eyesInWaterPlayer;
    }
 
    private void method2855() {
@@ -254,51 +255,51 @@ public abstract class PlayerEntity extends LivingEntity {
       }
    }
 
-   public Class6462 method2733() {
-      return new Class6462();
+   public CooldownTracker createCooldownTracker() {
+      return new CooldownTracker();
    }
 
    private void method2856() {
-      this.field4911 = this.field4914;
-      this.field4912 = this.field4915;
-      this.field4913 = this.field4916;
-      double var3 = this.getPosX() - this.field4914;
-      double var5 = this.getPosY() - this.field4915;
-      double var7 = this.getPosZ() - this.field4916;
+      this.prevChasingPosX = this.chasingPosX;
+      this.prevChasingPosY = this.chasingPosY;
+      this.prevChasingPosZ = this.chasingPosZ;
+      double var3 = this.getPosX() - this.chasingPosX;
+      double var5 = this.getPosY() - this.chasingPosY;
+      double var7 = this.getPosZ() - this.chasingPosZ;
       double var9 = 10.0;
       if (var3 > 10.0) {
-         this.field4914 = this.getPosX();
-         this.field4911 = this.field4914;
+         this.chasingPosX = this.getPosX();
+         this.prevChasingPosX = this.chasingPosX;
       }
 
       if (var7 > 10.0) {
-         this.field4916 = this.getPosZ();
-         this.field4913 = this.field4916;
+         this.chasingPosZ = this.getPosZ();
+         this.prevChasingPosZ = this.chasingPosZ;
       }
 
       if (var5 > 10.0) {
-         this.field4915 = this.getPosY();
-         this.field4912 = this.field4915;
+         this.chasingPosY = this.getPosY();
+         this.prevChasingPosY = this.chasingPosY;
       }
 
       if (var3 < -10.0) {
-         this.field4914 = this.getPosX();
-         this.field4911 = this.field4914;
+         this.chasingPosX = this.getPosX();
+         this.prevChasingPosX = this.chasingPosX;
       }
 
       if (var7 < -10.0) {
-         this.field4916 = this.getPosZ();
-         this.field4913 = this.field4916;
+         this.chasingPosZ = this.getPosZ();
+         this.prevChasingPosZ = this.chasingPosZ;
       }
 
       if (var5 < -10.0) {
-         this.field4915 = this.getPosY();
-         this.field4912 = this.field4915;
+         this.chasingPosY = this.getPosY();
+         this.prevChasingPosY = this.chasingPosY;
       }
 
-      this.field4914 += var3 * 0.25;
-      this.field4916 += var7 * 0.25;
-      this.field4915 += var5 * 0.25;
+      this.chasingPosX += var3 * 0.25;
+      this.chasingPosZ += var7 * 0.25;
+      this.chasingPosY += var5 * 0.25;
    }
 
    public void updatePose() {
@@ -393,10 +394,10 @@ public abstract class PlayerEntity extends LivingEntity {
                   this.method2867(ParticleTypes.field34053);
                }
             } else {
-               this.field4927 = true;
+               this.hasReducedDebug = true;
             }
          } else {
-            this.field4927 = false;
+            this.hasReducedDebug = false;
          }
       } else {
          this.onItemUseFinish();
@@ -449,8 +450,8 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public void livingTick() {
-      if (this.field4907 > 0) {
-         this.field4907--;
+      if (this.flyToggleTimer > 0) {
+         this.flyToggleTimer--;
       }
 
       if (this.world.method6997() == Difficulty.PEACEFUL && this.world.getGameRules().getBoolean(GameRules.field24231)) {
@@ -719,17 +720,17 @@ public abstract class PlayerEntity extends LivingEntity {
    @Override
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
-      this.setUniqueId(method2960(this.field4926));
+      this.setUniqueId(method2960(this.gameProfile));
       ListNBT var4 = var1.getList("Inventory", 10);
       this.inventory.method4051(var4);
       this.inventory.currentItem = var1.getInt("SelectedItemSlot");
-      this.field4917 = var1.getShort("SleepTimer");
-      this.field4922 = var1.getFloat("XpP");
-      this.field4920 = var1.getInt("XpLevel");
-      this.field4921 = var1.getInt("XpTotal");
-      this.field4923 = var1.getInt("XpSeed");
-      if (this.field4923 == 0) {
-         this.field4923 = this.rand.nextInt();
+      this.sleepTimer = var1.getShort("SleepTimer");
+      this.experience = var1.getFloat("XpP");
+      this.experienceLevel = var1.getInt("XpLevel");
+      this.experienceTotal = var1.getInt("XpTotal");
+      this.xpSeed = var1.getInt("XpSeed");
+      if (this.xpSeed == 0) {
+         this.xpSeed = this.rand.nextInt();
       }
 
       this.method2875(var1.getInt("Score"));
@@ -737,7 +738,7 @@ public abstract class PlayerEntity extends LivingEntity {
       this.abilities.read(var1);
       this.getAttribute(Attributes.MOVEMENT_SPEED).method38661((double)this.abilities.getWalkSpeed());
       if (var1.contains("EnderItems", 9)) {
-         this.field4903.method3682(var1.getList("EnderItems", 10));
+         this.enterChestInventory.method3682(var1.getList("EnderItems", 10));
       }
 
       if (var1.contains("ShoulderEntityLeft", 10)) {
@@ -755,15 +756,15 @@ public abstract class PlayerEntity extends LivingEntity {
       var1.putInt("DataVersion", SharedConstants.getVersion().getWorldVersion());
       var1.put("Inventory", this.inventory.method4050(new ListNBT()));
       var1.putInt("SelectedItemSlot", this.inventory.currentItem);
-      var1.putShort("SleepTimer", (short)this.field4917);
-      var1.putFloat("XpP", this.field4922);
-      var1.putInt("XpLevel", this.field4920);
-      var1.putInt("XpTotal", this.field4921);
-      var1.putInt("XpSeed", this.field4923);
+      var1.putShort("SleepTimer", (short)this.sleepTimer);
+      var1.putFloat("XpP", this.experience);
+      var1.putInt("XpLevel", this.experienceLevel);
+      var1.putInt("XpTotal", this.experienceTotal);
+      var1.putInt("XpSeed", this.xpSeed);
       var1.putInt("Score", this.method2874());
       this.foodStats.method37573(var1);
       this.abilities.method20712(var1);
-      var1.put("EnderItems", this.field4903.method3683());
+      var1.put("EnderItems", this.enterChestInventory.method3683());
       if (!this.method2969().isEmpty()) {
          var1.put("ShoulderEntityLeft", this.method2969());
       }
@@ -1298,12 +1299,12 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public GameProfile getGameProfile() {
-      return this.field4926;
+      return this.gameProfile;
    }
 
    public Either<Class2104, Unit> method2752(BlockPos var1) {
       this.startSleeping(var1);
-      this.field4917 = 0;
+      this.sleepTimer = 0;
       return Either.right(Unit.INSTANCE);
    }
 
@@ -1313,7 +1314,7 @@ public abstract class PlayerEntity extends LivingEntity {
          ((ServerWorld)this.world).method6902();
       }
 
-      this.field4917 = !var1 ? 100 : 0;
+      this.sleepTimer = !var1 ? 100 : 0;
    }
 
    @Override
@@ -1345,11 +1346,11 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public boolean method2909() {
-      return this.isSleeping() && this.field4917 >= 100;
+      return this.isSleeping() && this.sleepTimer >= 100;
    }
 
    public int method2910() {
-      return this.field4917;
+      return this.sleepTimer;
    }
 
    public void sendStatusMessage(ITextComponent var1, boolean var2) {
@@ -1594,63 +1595,63 @@ public abstract class PlayerEntity extends LivingEntity {
 
    public void method2781(int var1) {
       this.method2876(var1);
-      this.field4922 = this.field4922 + (float)var1 / (float)this.method2930();
-      this.field4921 = MathHelper.clamp(this.field4921 + var1, 0, Integer.MAX_VALUE);
+      this.experience = this.experience + (float)var1 / (float)this.method2930();
+      this.experienceTotal = MathHelper.clamp(this.experienceTotal + var1, 0, Integer.MAX_VALUE);
 
-      while (this.field4922 < 0.0F) {
-         float var4 = this.field4922 * (float)this.method2930();
-         if (this.field4920 <= 0) {
+      while (this.experience < 0.0F) {
+         float var4 = this.experience * (float)this.method2930();
+         if (this.experienceLevel <= 0) {
             this.method2727(-1);
-            this.field4922 = 0.0F;
+            this.experience = 0.0F;
          } else {
             this.method2727(-1);
-            this.field4922 = 1.0F + var4 / (float)this.method2930();
+            this.experience = 1.0F + var4 / (float)this.method2930();
          }
       }
 
-      while (this.field4922 >= 1.0F) {
-         this.field4922 = (this.field4922 - 1.0F) * (float)this.method2930();
+      while (this.experience >= 1.0F) {
+         this.experience = (this.experience - 1.0F) * (float)this.method2930();
          this.method2727(1);
-         this.field4922 = this.field4922 / (float)this.method2930();
+         this.experience = this.experience / (float)this.method2930();
       }
    }
 
    public int method2929() {
-      return this.field4923;
+      return this.xpSeed;
    }
 
    public void method2728(ItemStack var1, int var2) {
-      this.field4920 -= var2;
-      if (this.field4920 < 0) {
-         this.field4920 = 0;
-         this.field4922 = 0.0F;
-         this.field4921 = 0;
+      this.experienceLevel -= var2;
+      if (this.experienceLevel < 0) {
+         this.experienceLevel = 0;
+         this.experience = 0.0F;
+         this.experienceTotal = 0;
       }
 
-      this.field4923 = this.rand.nextInt();
+      this.xpSeed = this.rand.nextInt();
    }
 
    public void method2727(int var1) {
-      this.field4920 += var1;
-      if (this.field4920 < 0) {
-         this.field4920 = 0;
-         this.field4922 = 0.0F;
-         this.field4921 = 0;
+      this.experienceLevel += var1;
+      if (this.experienceLevel < 0) {
+         this.experienceLevel = 0;
+         this.experience = 0.0F;
+         this.experienceTotal = 0;
       }
 
-      if (var1 > 0 && this.field4920 % 5 == 0 && (float)this.field4925 < (float)this.ticksExisted - 100.0F) {
-         float var4 = this.field4920 <= 30 ? (float)this.field4920 / 30.0F : 1.0F;
+      if (var1 > 0 && this.experienceLevel % 5 == 0 && (float)this.lastXPSound < (float)this.ticksExisted - 100.0F) {
+         float var4 = this.experienceLevel <= 30 ? (float)this.experienceLevel / 30.0F : 1.0F;
          this.world
             .playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26965, this.getSoundCategory(), var4 * 0.75F, 1.0F);
-         this.field4925 = this.ticksExisted;
+         this.lastXPSound = this.ticksExisted;
       }
    }
 
    public int method2930() {
-      if (this.field4920 < 30) {
-         return this.field4920 < 15 ? 7 + this.field4920 * 2 : 37 + (this.field4920 - 15) * 5;
+      if (this.experienceLevel < 30) {
+         return this.experienceLevel < 15 ? 7 + this.experienceLevel * 2 : 37 + (this.experienceLevel - 15) * 5;
       } else {
-         return 112 + (this.field4920 - 30) * 9;
+         return 112 + (this.experienceLevel - 30) * 9;
       }
    }
 
@@ -1689,7 +1690,7 @@ public abstract class PlayerEntity extends LivingEntity {
    @Override
    public int getExperiencePoints(PlayerEntity var1) {
       if (!this.world.getGameRules().getBoolean(GameRules.field24225) && !this.isSpectator()) {
-         int var4 = this.field4920 * 7;
+         int var4 = this.experienceLevel * 7;
          return var4 <= 100 ? var4 : 100;
       } else {
          return 0;
@@ -1719,11 +1720,11 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public ITextComponent getName() {
-      return new StringTextComponent(this.field4926.getName());
+      return new StringTextComponent(this.gameProfile.getName());
    }
 
-   public Class980 method2942() {
-      return this.field4903;
+   public EnderChestInventory method2942() {
+      return this.enterChestInventory;
    }
 
    @Override
@@ -1777,19 +1778,19 @@ public abstract class PlayerEntity extends LivingEntity {
          return false;
       } else if (this.method2969().isEmpty()) {
          this.method2970(var1);
-         this.field4901 = this.world.getGameTime();
+         this.timeEntitySatOnShoulder = this.world.getGameTime();
          return true;
       } else if (!this.method2971().isEmpty()) {
          return false;
       } else {
          this.method2972(var1);
-         this.field4901 = this.world.getGameTime();
+         this.timeEntitySatOnShoulder = this.world.getGameTime();
          return true;
       }
    }
 
    public void method2949() {
-      if (this.field4901 + 20L < this.world.getGameTime()) {
+      if (this.timeEntitySatOnShoulder + 20L < this.world.getGameTime()) {
          this.method2950(this.method2969());
          this.method2970(new CompoundNBT());
          this.method2950(this.method2971());
@@ -1925,8 +1926,8 @@ public abstract class PlayerEntity extends LivingEntity {
          } else if (var1 != 99) {
             if (var5 == null) {
                int var6 = var1 - 200;
-               if (var6 >= 0 && var6 < this.field4903.getSizeInventory()) {
-                  this.field4903.setInventorySlotContents(var6, var2);
+               if (var6 >= 0 && var6 < this.enterChestInventory.getSizeInventory()) {
+                  this.enterChestInventory.setInventorySlotContents(var6, var2);
                   return true;
                } else {
                   return false;
@@ -1953,11 +1954,11 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public boolean hasReducedDebug() {
-      return this.field4927;
+      return this.hasReducedDebug;
    }
 
    public void method2965(boolean var1) {
-      this.field4927 = var1;
+      this.hasReducedDebug = var1;
    }
 
    @Override
@@ -2002,8 +2003,8 @@ public abstract class PlayerEntity extends LivingEntity {
       this.ticksSinceLastSwing = 0;
    }
 
-   public Class6462 method2976() {
-      return this.field4929;
+   public CooldownTracker method2976() {
+      return this.cooldownTracker;
    }
 
    @Override
@@ -2027,7 +2028,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public EntitySize getSize(Pose var1) {
-      return field4894.getOrDefault(var1, field4893);
+      return SIZE_BY_POSE.getOrDefault(var1, STANDING_SIZE);
    }
 
    @Override

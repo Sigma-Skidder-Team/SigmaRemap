@@ -5,10 +5,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
 
-public class Class980 extends Class927 {
+public class EnderChestInventory extends Class927 {
    private Class943 field5457;
 
-   public Class980() {
+   public EnderChestInventory() {
       super(27);
    }
 

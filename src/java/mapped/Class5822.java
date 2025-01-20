@@ -145,7 +145,7 @@ public class Class5822 extends Container {
          return false;
       } else if (this.field25509[var2] > 0
          && !var5.isEmpty()
-         && (var1.field4920 >= var7 && var1.field4920 >= this.field25509[var2] || var1.abilities.isCreativeMode)) {
+         && (var1.experienceLevel >= var7 && var1.experienceLevel >= this.field25509[var2] || var1.abilities.isCreativeMode)) {
          this.field25506.method31716((var6x, var7x) -> {
             ItemStack var10 = var5;
             List var11 = this.method18183(var5, var2, this.field25509[var2]);

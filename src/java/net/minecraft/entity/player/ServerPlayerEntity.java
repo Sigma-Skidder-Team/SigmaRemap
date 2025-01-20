@@ -236,12 +236,12 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    public void method2725(int var1) {
       float var4 = (float)this.method2930();
       float var5 = (var4 - 1.0F) / var4;
-      this.field4922 = MathHelper.clamp((float)var1 / var4, 0.0F, var5);
+      this.experience = MathHelper.clamp((float)var1 / var4, 0.0F, var5);
       this.field4870 = -1;
    }
 
    public void method2726(int var1) {
-      this.field4920 = var1;
+      this.experienceLevel = var1;
       this.field4870 = -1;
    }
 
@@ -279,7 +279,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    @Override
-   public Class6462 method2733() {
+   public CooldownTracker createCooldownTracker() {
       return new Class6461(this);
    }
 
@@ -375,19 +375,19 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
             this.method2736(Class9008.field41197, MathHelper.ceil((float)this.field4864));
          }
 
-         if (this.field4921 != this.field4866) {
-            this.field4866 = this.field4921;
+         if (this.experienceTotal != this.field4866) {
+            this.field4866 = this.experienceTotal;
             this.method2736(Class9008.field41198, MathHelper.ceil((float)this.field4866));
          }
 
-         if (this.field4920 != this.field4865) {
-            this.field4865 = this.field4920;
+         if (this.experienceLevel != this.field4865) {
+            this.field4865 = this.experienceLevel;
             this.method2736(Class9008.field41199, MathHelper.ceil((float)this.field4865));
          }
 
-         if (this.field4921 != this.field4870) {
-            this.field4870 = this.field4921;
-            this.connection.sendPacket(new SSetExperiencePacket(this.field4922, this.field4921, this.field4920));
+         if (this.experienceTotal != this.field4870) {
+            this.field4870 = this.experienceTotal;
+            this.connection.sendPacket(new SSetExperiencePacket(this.experience, this.experienceTotal, this.experienceLevel));
          }
 
          if (this.ticksExisted % 20 == 0) {
@@ -1038,24 +1038,24 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       if (!var2) {
          if (this.world.getGameRules().getBoolean(GameRules.field24225) || var1.isSpectator()) {
             this.inventory.method4060(var1.inventory);
-            this.field4920 = var1.field4920;
-            this.field4921 = var1.field4921;
-            this.field4922 = var1.field4922;
+            this.experienceLevel = var1.experienceLevel;
+            this.experienceTotal = var1.experienceTotal;
+            this.experience = var1.experience;
             this.method2875(var1.method2874());
          }
       } else {
          this.inventory.method4060(var1.inventory);
          this.setHealth(var1.getHealth());
          this.foodStats = var1.foodStats;
-         this.field4920 = var1.field4920;
-         this.field4921 = var1.field4921;
-         this.field4922 = var1.field4922;
+         this.experienceLevel = var1.experienceLevel;
+         this.experienceTotal = var1.experienceTotal;
+         this.experience = var1.experience;
          this.method2875(var1.method2874());
          this.field_242271_ac = var1.field_242271_ac;
       }
 
-      this.field4923 = var1.field4923;
-      this.field4903 = var1.field4903;
+      this.xpSeed = var1.xpSeed;
+      this.enterChestInventory = var1.enterChestInventory;
       this.getDataManager().method35446(field4897, var1.getDataManager().<Byte>method35445(field4897));
       this.field4870 = -1;
       this.field4867 = -1.0F;

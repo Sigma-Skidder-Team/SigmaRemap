@@ -20,7 +20,7 @@ public class Class3259 extends Item implements IVanishable {
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
-      if (var2.field4930 == null) {
+      if (var2.fishingBobber == null) {
          var1.playSound(
             (PlayerEntity)null,
             var2.getPosX(),
@@ -40,7 +40,7 @@ public class Class3259 extends Item implements IVanishable {
          var2.addStat(Stats.field40098.method172(this));
       } else {
          if (!var1.isRemote) {
-            int var9 = var2.field4930.method3542(var6);
+            int var9 = var2.fishingBobber.method3542(var6);
             var6.damageItem(var9, var2, var1x -> var1x.sendBreakAnimation(var3));
          }
 

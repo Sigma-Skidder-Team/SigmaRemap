@@ -95,7 +95,7 @@ public class Class9065 {
                var6 = false;
             }
 
-            return (var5 || var6) && var2 instanceof PlayerEntity && ((PlayerEntity)var2).field4930 != null ? 1.0F : 0.0F;
+            return (var5 || var6) && var2 instanceof PlayerEntity && ((PlayerEntity)var2).fishingBobber != null ? 1.0F : 0.0F;
          } else {
             return 0.0F;
          }
