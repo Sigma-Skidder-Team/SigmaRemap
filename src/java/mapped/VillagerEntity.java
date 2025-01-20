@@ -161,7 +161,7 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
    public void method4677(ServerWorld var1) {
       Brain var4 = this.getBrain();
       var4.method21435(var1, this);
-      this.field5011 = var4.method21431();
+      this.brain = var4.method21431();
       this.method4678(this.getBrain());
    }
 
@@ -563,7 +563,7 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
 
    private void method4698(Entity var1) {
       if (this.world instanceof ServerWorld) {
-         Optional var4 = this.field5011.<List<LivingEntity>>method21410(Class8830.field39819);
+         Optional var4 = this.brain.<List<LivingEntity>>method21410(Class8830.field39819);
          if (var4.isPresent()) {
             ServerWorld var5 = (ServerWorld)this.world;
             ((List)var4.get()).stream().filter(var0 -> var0 instanceof Class1062).forEach(var2 -> var5.method6959(Class8214.field35288, var1, (Class1062)var2));
@@ -574,7 +574,7 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
    public void method4699(Class8830<Class9378> var1) {
       if (this.world instanceof ServerWorld) {
          MinecraftServer var4 = ((ServerWorld)this.world).getServer();
-         this.field5011.<Class9378>method21410(var1).ifPresent(var3 -> {
+         this.brain.<Class9378>method21410(var1).ifPresent(var3 -> {
             ServerWorld var6 = var4.method1318(var3.method35578());
             if (var6 != null) {
                Class1653 var7 = var6.method6951();
@@ -824,7 +824,7 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
    }
 
    public boolean method4717(long var1) {
-      return this.method4726(this.world.getGameTime()) ? !this.field5011.method21404(Class8830.field39842) : false;
+      return this.method4726(this.world.getGameTime()) ? !this.brain.method21404(Class8830.field39842) : false;
    }
 
    @Nullable
@@ -921,19 +921,19 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
    @Override
    public void startSleeping(BlockPos var1) {
       super.startSleeping(var1);
-      this.field5011.method21406(Class8830.field39843, this.world.getGameTime());
-      this.field5011.method21405(Class8830.field39824);
-      this.field5011.method21405(Class8830.field39841);
+      this.brain.method21406(Class8830.field39843, this.world.getGameTime());
+      this.brain.method21405(Class8830.field39824);
+      this.brain.method21405(Class8830.field39841);
    }
 
    @Override
    public void wakeUp() {
       super.wakeUp();
-      this.field5011.method21406(Class8830.field39844, this.world.getGameTime());
+      this.brain.method21406(Class8830.field39844, this.world.getGameTime());
    }
 
    private boolean method4726(long var1) {
-      Optional var5 = this.field5011.<Long>method21410(Class8830.field39843);
+      Optional var5 = this.brain.<Long>method21410(Class8830.field39843);
       return !var5.isPresent() ? false : var1 - (Long)var5.get() < 24000L;
    }
 }

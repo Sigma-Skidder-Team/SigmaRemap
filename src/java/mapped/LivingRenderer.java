@@ -132,7 +132,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
          float var16 = 0.0F;
          if (!entityIn.isPassenger() && entityIn.isAlive()) {
             var35 = MathHelper.lerp(partialTicks, entityIn.prevLimbSwingAmount, entityIn.limbSwingAmount);
-            var16 = entityIn.field4961 - entityIn.limbSwingAmount * (1.0F - partialTicks);
+            var16 = entityIn.limbSwing - entityIn.limbSwingAmount * (1.0F - partialTicks);
             if (entityIn.isChild()) {
                var16 *= 3.0F;
             }

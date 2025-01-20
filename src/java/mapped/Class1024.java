@@ -88,7 +88,7 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Override
    public void method4537() {
-      this.field4973 = 0;
+      this.idleTime = 0;
    }
 
    @Override

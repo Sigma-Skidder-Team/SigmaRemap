@@ -146,7 +146,7 @@ public class StriderEntity extends AnimalEntity implements Class1071, Class1069 
    @Override
    public double method3310() {
       float var3 = Math.min(0.25F, this.limbSwingAmount);
-      float var4 = this.field4961;
+      float var4 = this.limbSwing;
       return (double)this.getHeight() - 0.19 + (double)(0.12F * MathHelper.cos(var4 * 1.5F) * 2.0F * var3);
    }
 

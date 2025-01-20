@@ -186,8 +186,8 @@ public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
    }
 
    private void method5100(LivingEntity var1) {
-      this.field5011.method21405(Class8830.field39841);
-      this.field5011.method21407(Class8830.field39826, var1, 200L);
+      this.brain.method21405(Class8830.field39841);
+      this.brain.method21407(Class8830.field39826, var1, 200L);
    }
 
    @Override
@@ -196,14 +196,14 @@ public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
    }
 
    public void method5101() {
-      Activity var3 = this.field5011.method21418().orElse((Activity)null);
-      this.field5011.method21423(ImmutableList.of(Activity.field40229, Activity.field40220));
-      Activity var4 = this.field5011.method21418().orElse((Activity)null);
+      Activity var3 = this.brain.method21418().orElse((Activity)null);
+      this.brain.method21423(ImmutableList.of(Activity.field40229, Activity.field40220));
+      Activity var4 = this.brain.method21418().orElse((Activity)null);
       if (var4 == Activity.field40229 && var3 != Activity.field40229) {
          this.method5102();
       }
 
-      this.method4304(this.field5011.method21404(Class8830.field39826));
+      this.method4304(this.brain.method21404(Class8830.field39826));
    }
 
    @Override
@@ -254,7 +254,7 @@ public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
    @Override
    public SoundEvent getAmbientSound() {
       if (!this.world.isRemote) {
-         return !this.field5011.method21404(Class8830.field39826) ? SoundEvents.field27276 : SoundEvents.field27277;
+         return !this.brain.method21404(Class8830.field39826) ? SoundEvents.field27276 : SoundEvents.field27277;
       } else {
          return null;
       }

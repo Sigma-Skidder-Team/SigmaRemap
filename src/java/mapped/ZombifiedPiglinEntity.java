@@ -92,7 +92,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
       }
 
       if (this.method4369()) {
-         this.field4971 = this.ticksExisted;
+         this.recentlyHit = this.ticksExisted;
       }
 
       super.updateAITasks();

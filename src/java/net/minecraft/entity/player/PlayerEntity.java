@@ -120,7 +120,7 @@ public abstract class PlayerEntity extends LivingEntity {
       this.container = new PlayerContainer(this.inventory, !var1.isRemote, this);
       this.openContainer = this.container;
       this.setLocationAndAngles((double)var2.getX() + 0.5, (double)(var2.getY() + 1), (double)var2.getZ() + 0.5, var3, 0.0F);
-      this.field4978 = 180.0F;
+      this.unused180 = 180.0F;
    }
 
    public boolean blockActionRestricted(World var1, BlockPos var2, GameType var3) {
@@ -797,7 +797,7 @@ public abstract class PlayerEntity extends LivingEntity {
          if (this.abilities.disableDamage && !source.method31135()) {
             return false;
          } else {
-            this.field4973 = 0;
+            this.idleTime = 0;
             if (!this.getShouldBeDead()) {
                this.method2949();
                if (source.method31111()) {

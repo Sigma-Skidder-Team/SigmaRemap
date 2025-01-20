@@ -67,16 +67,16 @@ public abstract class LivingEntity extends Entity {
    private static final UUID SOUL_SPEED_BOOT_ID = UUID.fromString("87f46a96-686f-4796-b035-22e16ee9e038");
    private static final AttributeModifier SPRINTING_SPEED_BOOST = new AttributeModifier(SPRINTING_SPEED_BOOST_ID, "Sprinting speed boost", 0.3F, AttributeModifier.Operation.MULTIPLY_TOTAL);
    public static final DataParameter<Byte> LIVING_FLAGS = EntityDataManager.<Byte>createKey(LivingEntity.class, DataSerializers.field33390);
-   private static final DataParameter<Float> field4935 = EntityDataManager.<Float>createKey(LivingEntity.class, DataSerializers.FLOAT);
-   private static final DataParameter<Integer> field4936 = EntityDataManager.<Integer>createKey(LivingEntity.class, DataSerializers.VARINT);
-   private static final DataParameter<Boolean> field4937 = EntityDataManager.<Boolean>createKey(LivingEntity.class, DataSerializers.field33398);
-   private static final DataParameter<Integer> field4938 = EntityDataManager.<Integer>createKey(LivingEntity.class, DataSerializers.VARINT);
-   private static final DataParameter<Integer> field4939 = EntityDataManager.<Integer>createKey(LivingEntity.class, DataSerializers.VARINT);
+   private static final DataParameter<Float> HEALTH = EntityDataManager.<Float>createKey(LivingEntity.class, DataSerializers.FLOAT);
+   private static final DataParameter<Integer> POTION_EFFECTS = EntityDataManager.<Integer>createKey(LivingEntity.class, DataSerializers.VARINT);
+   private static final DataParameter<Boolean> HIDE_PARTICLES = EntityDataManager.<Boolean>createKey(LivingEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Integer> ARROW_COUNT_IN_ENTITY = EntityDataManager.<Integer>createKey(LivingEntity.class, DataSerializers.VARINT);
+   private static final DataParameter<Integer> BEE_STING_COUNT = EntityDataManager.<Integer>createKey(LivingEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Optional<BlockPos>> field4940 = EntityDataManager.<Optional<BlockPos>>createKey(LivingEntity.class, DataSerializers.field33402);
    public static final EntitySize SLEEPING_SIZE = EntitySize.method32102(0.2F, 0.2F);
    private final AttributeModifierManager attributes;
    private final CombatTracker combatTracker = new CombatTracker(this);
-   private final Map<Effect, EffectInstance> field4944 = Maps.newHashMap();
+   private final Map<Effect, EffectInstance> activePotionsMap = Maps.newHashMap();
    private final NonNullList<ItemStack> handInventory = NonNullList.<ItemStack>method68(2, ItemStack.EMPTY);
    private final NonNullList<ItemStack> armorArray = NonNullList.<ItemStack>method68(4, ItemStack.EMPTY);
    public boolean isSwingInProgress;
@@ -93,24 +93,24 @@ public abstract class LivingEntity extends Entity {
    public int ticksSinceLastSwing;
    public float prevLimbSwingAmount;
    public float limbSwingAmount;
-   public float field4961;
-   public final int field4962 = 20;
-   public final float field4963;
-   public final float field4964;
+   public float limbSwing;
+   public final int maxHurtResistantTime = 20;
+   public final float randomUnused2;
+   public final float randomUnused1;
    public float renderYawOffset;
    public float prevRenderYawOffset;
    public float rotationYawHead;
    public float prevRotationYawHead;
    public float jumpMovementFactor = 0.02F;
    public PlayerEntity attackingPlayer;
-   public int field4971;
+   public int recentlyHit;
    public boolean dead;
-   public int field4973;
+   public int idleTime;
    public float prevOnGroundSpeedFactor;
    public float onGroundSpeedFactor;
    public float movedDistance;
    public float prevMovedDistance;
-   public float field4978;
+   public float unused180;
    public int scoreValue;
    public float lastDamage;
    public boolean isJumping;
@@ -126,42 +126,42 @@ public abstract class LivingEntity extends Entity {
    public double interpTargetHeadYaw;
    public int interpTicksHead;
    private boolean potionsNeedUpdate = true;
-   private LivingEntity field4994;
-   private int field4995;
-   private LivingEntity field4996;
-   private int field4997;
+   private LivingEntity revengeTarget;
+   private int revengeTimer;
+   private LivingEntity lastAttackedEntity;
+   private int lastAttackedEntityTime;
    private float landMovementFactor;
    public int jumpTicks;
    private float absorptionAmount;
    public ItemStack activeItemStack = ItemStack.EMPTY;
    public int activeItemStackUseCount;
-   public int field5003;
+   public int ticksElytraFlying;
    private BlockPos prevBlockpos;
-   private Optional<BlockPos> field5005 = Optional.<BlockPos>empty();
-   private DamageSource field5006;
-   private long field5007;
+   private Optional<BlockPos> field_233624_bE_ = Optional.<BlockPos>empty();
+   private DamageSource lastDamageSource;
+   private long lastDamageStamp;
    public int spinAttackDuration;
    private float swimAnimation;
    private float lastSwimAnimation;
-   public Brain<?> field5011;
+   public Brain<?> brain;
 
    public LivingEntity(EntityType<? extends LivingEntity> var1, World var2) {
       super(var1, var2);
       this.attributes = new AttributeModifierManager(GlobalEntityTypeAttributes.method37375(var1));
       this.setHealth(this.method3075());
       this.preventEntitySpawning = true;
-      this.field4964 = (float)((Math.random() + 1.0) * 0.01F);
+      this.randomUnused1 = (float)((Math.random() + 1.0) * 0.01F);
       this.recenterBoundingBox();
-      this.field4963 = (float)Math.random() * 12398.0F;
+      this.randomUnused2 = (float)Math.random() * 12398.0F;
       this.rotationYaw = (float)(Math.random() * (float) (Math.PI * 2));
       this.rotationYawHead = this.rotationYaw;
       this.stepHeight = 0.6F;
       NBTDynamicOps var5 = NBTDynamicOps.INSTANCE;
-      this.field5011 = this.createBrain(new Dynamic(var5, var5.createMap(ImmutableMap.of(var5.createString("memories"), var5.emptyMap()))));
+      this.brain = this.createBrain(new Dynamic(var5, var5.createMap(ImmutableMap.of(var5.createString("memories"), var5.emptyMap()))));
    }
 
    public Brain<?> getBrain() {
-      return this.field5011;
+      return this.brain;
    }
 
    public Class6971<?> getBrainCodec() {
@@ -184,11 +184,11 @@ public abstract class LivingEntity extends Entity {
    @Override
    public void registerData() {
       this.dataManager.register(LIVING_FLAGS, (byte)0);
-      this.dataManager.register(field4936, 0);
-      this.dataManager.register(field4937, false);
-      this.dataManager.register(field4938, 0);
-      this.dataManager.register(field4939, 0);
-      this.dataManager.register(field4935, 1.0F);
+      this.dataManager.register(POTION_EFFECTS, 0);
+      this.dataManager.register(HIDE_PARTICLES, false);
+      this.dataManager.register(ARROW_COUNT_IN_ENTITY, 0);
+      this.dataManager.register(BEE_STING_COUNT, 0);
+      this.dataManager.register(HEALTH, 1.0F);
       this.dataManager.register(field4940, Optional.<BlockPos>empty());
    }
 
@@ -329,19 +329,19 @@ public abstract class LivingEntity extends Entity {
          this.method3008();
       }
 
-      if (this.field4971 <= 0) {
+      if (this.recentlyHit <= 0) {
          this.attackingPlayer = null;
       } else {
-         this.field4971--;
+         this.recentlyHit--;
       }
 
-      if (this.field4996 != null && !this.field4996.isAlive()) {
-         this.field4996 = null;
+      if (this.lastAttackedEntity != null && !this.lastAttackedEntity.isAlive()) {
+         this.lastAttackedEntity = null;
       }
 
-      if (this.field4994 != null) {
-         if (this.field4994.isAlive()) {
-            if (this.ticksExisted - this.field4995 > 100) {
+      if (this.revengeTarget != null) {
+         if (this.revengeTarget.isAlive()) {
+            if (this.ticksExisted - this.revengeTimer > 100) {
                this.setRevengeTarget((LivingEntity)null);
             }
          } else {
@@ -502,48 +502,48 @@ public abstract class LivingEntity extends Entity {
 
    @Nullable
    public LivingEntity method3014() {
-      return this.field4994;
+      return this.revengeTarget;
    }
 
    public int method3015() {
-      return this.field4995;
+      return this.revengeTimer;
    }
 
    public void method3016(PlayerEntity var1) {
       this.attackingPlayer = var1;
-      this.field4971 = this.ticksExisted;
+      this.recentlyHit = this.ticksExisted;
    }
 
    public void setRevengeTarget(LivingEntity var1) {
-      this.field4994 = var1;
-      this.field4995 = this.ticksExisted;
+      this.revengeTarget = var1;
+      this.revengeTimer = this.ticksExisted;
    }
 
    @Nullable
    public LivingEntity getLastAttackedEntity() {
-      return this.field4996;
+      return this.lastAttackedEntity;
    }
 
    public int getLastAttackedEntityTime() {
-      return this.field4997;
+      return this.lastAttackedEntityTime;
    }
 
    public void setLastAttackedEntity(Entity var1) {
       if (!(var1 instanceof LivingEntity)) {
-         this.field4996 = null;
+         this.lastAttackedEntity = null;
       } else {
-         this.field4996 = (LivingEntity)var1;
+         this.lastAttackedEntity = (LivingEntity)var1;
       }
 
-      this.field4997 = this.ticksExisted;
+      this.lastAttackedEntityTime = this.ticksExisted;
    }
 
    public int method3021() {
-      return this.field4973;
+      return this.idleTime;
    }
 
    public void method3022(int var1) {
-      this.field4973 = var1;
+      this.idleTime = var1;
    }
 
    public void playEquipSound(ItemStack var1) {
@@ -566,14 +566,14 @@ public abstract class LivingEntity extends Entity {
    public void writeAdditional(CompoundNBT var1) {
       var1.putFloat("Health", this.getHealth());
       var1.putShort("HurtTime", (short)this.hurtTime);
-      var1.putInt("HurtByTimestamp", this.field4995);
+      var1.putInt("HurtByTimestamp", this.revengeTimer);
       var1.putShort("DeathTime", (short)this.deathTime);
       var1.putFloat("AbsorptionAmount", this.getAbsorptionAmount());
       var1.put("Attributes", this.getAttributeManager().serialize());
-      if (!this.field4944.isEmpty()) {
+      if (!this.activePotionsMap.isEmpty()) {
          ListNBT var4 = new ListNBT();
 
-         for (EffectInstance var6 : this.field4944.values()) {
+         for (EffectInstance var6 : this.activePotionsMap.values()) {
             var4.add(var6.write(new CompoundNBT()));
          }
 
@@ -586,7 +586,7 @@ public abstract class LivingEntity extends Entity {
          var1.putInt("SleepingY", var1x.getY());
          var1.putInt("SleepingZ", var1x.getZ());
       });
-      DataResult var7 = this.field5011.method21402(NBTDynamicOps.INSTANCE);
+      DataResult var7 = this.brain.method21402(NBTDynamicOps.INSTANCE);
       var7.resultOrPartial(LOGGER::error).ifPresent(var1x -> var1.put("Brain", (INBT) var1x));
    }
 
@@ -604,7 +604,7 @@ public abstract class LivingEntity extends Entity {
             CompoundNBT var6 = var4.getCompound(var5);
             EffectInstance var7 = EffectInstance.read(var6);
             if (var7 != null) {
-               this.field4944.put(var7.getPotion(), var7);
+               this.activePotionsMap.put(var7.getPotion(), var7);
             }
          }
       }
@@ -615,7 +615,7 @@ public abstract class LivingEntity extends Entity {
 
       this.hurtTime = var1.getShort("HurtTime");
       this.deathTime = var1.getShort("DeathTime");
-      this.field4995 = var1.getInt("HurtByTimestamp");
+      this.revengeTimer = var1.getInt("HurtByTimestamp");
       if (var1.contains("Team", 8)) {
          String var8 = var1.getString("Team");
          ScorePlayerTeam var10 = this.world.method6805().method20990(var8);
@@ -639,17 +639,17 @@ public abstract class LivingEntity extends Entity {
       }
 
       if (var1.contains("Brain", 10)) {
-         this.field5011 = this.createBrain(new Dynamic(NBTDynamicOps.INSTANCE, var1.get("Brain")));
+         this.brain = this.createBrain(new Dynamic(NBTDynamicOps.INSTANCE, var1.get("Brain")));
       }
    }
 
    public void updatePotionEffects() {
-      Iterator var3 = this.field4944.keySet().iterator();
+      Iterator var3 = this.activePotionsMap.keySet().iterator();
 
       try {
          while (var3.hasNext()) {
             Effect var4 = (Effect)var3.next();
-            EffectInstance var5 = this.field4944.get(var4);
+            EffectInstance var5 = this.activePotionsMap.get(var4);
             if (!var5.tick(this, () -> this.onChangedPotionEffect(var5, true))) {
                if (!this.world.isRemote) {
                   var3.remove();
@@ -670,8 +670,8 @@ public abstract class LivingEntity extends Entity {
          this.potionsNeedUpdate = false;
       }
 
-      int var14 = this.dataManager.<Integer>method35445(field4936);
-      boolean var15 = this.dataManager.<Boolean>method35445(field4937);
+      int var14 = this.dataManager.<Integer>method35445(POTION_EFFECTS);
+      boolean var15 = this.dataManager.<Boolean>method35445(HIDE_PARTICLES);
       if (var14 > 0) {
          boolean var6;
          if (this.isInvisible()) {
@@ -697,10 +697,10 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void updatePotionMetadata() {
-      if (!this.field4944.isEmpty()) {
-         Collection var3 = this.field4944.values();
-         this.dataManager.method35446(field4937, areAllPotionsAmbient(var3));
-         this.dataManager.method35446(field4936, Class9741.method38184(var3));
+      if (!this.activePotionsMap.isEmpty()) {
+         Collection var3 = this.activePotionsMap.values();
+         this.dataManager.method35446(HIDE_PARTICLES, areAllPotionsAmbient(var3));
+         this.dataManager.method35446(POTION_EFFECTS, Class9741.method38184(var3));
          this.setInvisible(this.isPotionActive(Effects.INVISIBILITY));
       } else {
          this.resetPotionEffectMetadata();
@@ -756,15 +756,15 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void resetPotionEffectMetadata() {
-      this.dataManager.method35446(field4937, false);
-      this.dataManager.method35446(field4936, 0);
+      this.dataManager.method35446(HIDE_PARTICLES, false);
+      this.dataManager.method35446(POTION_EFFECTS, 0);
    }
 
    public boolean clearActivePotions() {
       if (this.world.isRemote) {
          return false;
       } else {
-         Iterator var3 = this.field4944.values().iterator();
+         Iterator var3 = this.activePotionsMap.values().iterator();
 
          boolean var4;
          for (var4 = false; var3.hasNext(); var4 = true) {
@@ -777,25 +777,25 @@ public abstract class LivingEntity extends Entity {
    }
 
    public Collection<EffectInstance> getActivePotionEffects() {
-      return this.field4944.values();
+      return this.activePotionsMap.values();
    }
 
    public Map<Effect, EffectInstance> getActivePotionMap() {
-      return this.field4944;
+      return this.activePotionsMap;
    }
 
    public boolean isPotionActive(Effect var1) {
-      return this.field4944.containsKey(var1);
+      return this.activePotionsMap.containsKey(var1);
    }
 
    @Nullable
    public EffectInstance getActivePotionEffect(Effect var1) {
-      return this.field4944.get(var1);
+      return this.activePotionsMap.get(var1);
    }
 
    public boolean addPotionEffect(EffectInstance var1) {
       if (this.isPotionApplicable(var1)) {
-         EffectInstance var4 = this.field4944.get(var1.getPotion());
+         EffectInstance var4 = this.activePotionsMap.get(var1.getPotion());
          if (var4 != null) {
             if (!var4.combine(var1)) {
                return false;
@@ -804,7 +804,7 @@ public abstract class LivingEntity extends Entity {
                return true;
             }
          } else {
-            this.field4944.put(var1.getPotion(), var1);
+            this.activePotionsMap.put(var1.getPotion(), var1);
             this.onNewPotionEffect(var1);
             return true;
          }
@@ -826,7 +826,7 @@ public abstract class LivingEntity extends Entity {
 
    public void method3037(EffectInstance var1) {
       if (this.isPotionApplicable(var1)) {
-         EffectInstance var4 = this.field4944.put(var1.getPotion(), var1);
+         EffectInstance var4 = this.activePotionsMap.put(var1.getPotion(), var1);
          if (var4 != null) {
             this.onChangedPotionEffect(var1, true);
          } else {
@@ -841,7 +841,7 @@ public abstract class LivingEntity extends Entity {
 
    @Nullable
    public EffectInstance removeActivePotionEffect(Effect var1) {
-      return this.field4944.remove(var1);
+      return this.activePotionsMap.remove(var1);
    }
 
    public boolean removeEffects(Effect var1) {
@@ -885,11 +885,11 @@ public abstract class LivingEntity extends Entity {
    }
 
    public float getHealth() {
-      return this.dataManager.<Float>method35445(field4935);
+      return this.dataManager.<Float>method35445(HEALTH);
    }
 
    public void setHealth(float var1) {
-      this.dataManager.method35446(field4935, MathHelper.clamp(var1, 0.0F, this.method3075()));
+      this.dataManager.method35446(HEALTH, MathHelper.clamp(var1, 0.0F, this.method3075()));
    }
 
    public boolean getShouldBeDead() {
@@ -910,7 +910,7 @@ public abstract class LivingEntity extends Entity {
                this.wakeUp();
             }
 
-            this.field4973 = 0;
+            this.idleTime = 0;
             float var5 = var2;
             if ((source == DamageSource.field39008 || source == DamageSource.field39009) && !this.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty()) {
                this.getItemStackFromSlot(EquipmentSlotType.HEAD)
@@ -963,7 +963,7 @@ public abstract class LivingEntity extends Entity {
                   if (var9 instanceof WolfEntity) {
                      WolfEntity var10 = (WolfEntity)var9;
                      if (var10.method4393()) {
-                        this.field4971 = 100;
+                        this.recentlyHit = 100;
                         LivingEntity var11 = var10.method4400();
                         if (var11 != null && var11.getType() == EntityType.PLAYER) {
                            this.attackingPlayer = (PlayerEntity)var11;
@@ -973,7 +973,7 @@ public abstract class LivingEntity extends Entity {
                      }
                   }
                } else {
-                  this.field4971 = 100;
+                  this.recentlyHit = 100;
                   this.attackingPlayer = (PlayerEntity)var9;
                }
             }
@@ -1038,8 +1038,8 @@ public abstract class LivingEntity extends Entity {
 
             boolean var19 = !var6 || var2 > 0.0F;
             if (var19) {
-               this.field5006 = source;
-               this.field5007 = this.world.getGameTime();
+               this.lastDamageSource = source;
+               this.lastDamageStamp = this.world.getGameTime();
             }
 
             if (this instanceof ServerPlayerEntity) {
@@ -1104,11 +1104,11 @@ public abstract class LivingEntity extends Entity {
 
    @Nullable
    public DamageSource getLastDamageSource() {
-      if (this.world.getGameTime() - this.field5007 > 40L) {
-         this.field5006 = null;
+      if (this.world.getGameTime() - this.lastDamageStamp > 40L) {
+         this.lastDamageSource = null;
       }
 
-      return this.field5006;
+      return this.lastDamageSource;
    }
 
    public void playHurtSound(DamageSource var1) {
@@ -1221,7 +1221,7 @@ public abstract class LivingEntity extends Entity {
          var5 = EnchantmentHelper.method26330((LivingEntity)var4);
       }
 
-      boolean var6 = this.field4971 > 0;
+      boolean var6 = this.recentlyHit > 0;
       if (this.method3010() && this.world.getGameRules().getBoolean(GameRules.field24227)) {
          this.dropLoot(var1, var6);
          this.dropSpecialItems(var1, var5, var6);
@@ -1236,7 +1236,7 @@ public abstract class LivingEntity extends Entity {
 
    public void dropExperience() {
       if (!this.world.isRemote
-         && (this.isPlayer() || this.field4971 > 0 && this.canDropLoot() && this.world.getGameRules().getBoolean(GameRules.field24227))) {
+         && (this.isPlayer() || this.recentlyHit > 0 && this.canDropLoot() && this.world.getGameRules().getBoolean(GameRules.field24227))) {
          int var3 = this.getExperiencePoints(this.attackingPlayer);
 
          while (var3 > 0) {
@@ -1316,12 +1316,12 @@ public abstract class LivingEntity extends Entity {
    public void setOnGround(boolean var1) {
       super.setOnGround(var1);
       if (var1) {
-         this.field5005 = Optional.<BlockPos>empty();
+         this.field_233624_bE_ = Optional.<BlockPos>empty();
       }
    }
 
    public Optional<BlockPos> method3062() {
-      return this.field5005;
+      return this.field_233624_bE_;
    }
 
    public boolean isOnLadder() {
@@ -1331,13 +1331,13 @@ public abstract class LivingEntity extends Entity {
          Block var5 = var4.getBlock();
          if (!var5.isIn(BlockTags.field32804)) {
             if (var5 instanceof Class3206 && this.canGoThroughtTrapDoorOnLadder(var3, var4)) {
-               this.field5005 = Optional.<BlockPos>of(var3);
+               this.field_233624_bE_ = Optional.<BlockPos>of(var3);
                return true;
             } else {
                return false;
             }
          } else {
-            this.field5005 = Optional.<BlockPos>of(var3);
+            this.field_233624_bE_ = Optional.<BlockPos>of(var3);
             return true;
          }
       } else {
@@ -1487,7 +1487,7 @@ public abstract class LivingEntity extends Entity {
    public LivingEntity getAttackingEntity() {
       if (this.combatTracker.getBestAttacker() == null) {
          if (this.attackingPlayer == null) {
-            return this.field4994 == null ? null : this.field4994;
+            return this.revengeTarget == null ? null : this.revengeTarget;
          } else {
             return this.attackingPlayer;
          }
@@ -1501,19 +1501,19 @@ public abstract class LivingEntity extends Entity {
    }
 
    public final int method3076() {
-      return this.dataManager.<Integer>method35445(field4938);
+      return this.dataManager.<Integer>method35445(ARROW_COUNT_IN_ENTITY);
    }
 
    public final void method3077(int var1) {
-      this.dataManager.method35446(field4938, var1);
+      this.dataManager.method35446(ARROW_COUNT_IN_ENTITY, var1);
    }
 
    public final int method3078() {
-      return this.dataManager.<Integer>method35445(field4939);
+      return this.dataManager.<Integer>method35445(BEE_STING_COUNT);
    }
 
    public final void method3079(int var1) {
-      this.dataManager.method35446(field4939, var1);
+      this.dataManager.method35446(BEE_STING_COUNT, var1);
    }
 
    private int getArmSwingAnimationEnd() {
@@ -2039,7 +2039,7 @@ public abstract class LivingEntity extends Entity {
       }
 
       var1.limbSwingAmount = var1.limbSwingAmount + (var11 - var1.limbSwingAmount) * 0.4F;
-      var1.field4961 = var1.field4961 + var1.limbSwingAmount;
+      var1.limbSwing = var1.limbSwing + var1.limbSwingAmount;
    }
 
    public Vector3d method3109(Vector3d var1, float var2) {
@@ -2219,9 +2219,9 @@ public abstract class LivingEntity extends Entity {
       this.world.getProfiler().endSection();
       this.movedDistance += var9;
       if (!this.isElytraFlying()) {
-         this.field5003 = 0;
+         this.ticksElytraFlying = 0;
       } else {
-         this.field5003++;
+         this.ticksElytraFlying++;
       }
 
       if (this.isSleeping()) {
@@ -2468,7 +2468,7 @@ public abstract class LivingEntity extends Entity {
          ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.CHEST);
          if (var4.getItem() == Items.field38120 && Class3256.method11698(var4)) {
             var3 = true;
-            if (!this.world.isRemote && (this.field5003 + 1) % 20 == 0) {
+            if (!this.world.isRemote && (this.ticksElytraFlying + 1) % 20 == 0) {
                var4.damageItem(1, this, var0 -> var0.sendBreakAnimation(EquipmentSlotType.CHEST));
             }
          } else {
@@ -2894,7 +2894,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public int getTicksElytraFlying() {
-      return this.field5003;
+      return this.ticksElytraFlying;
    }
 
    public boolean attemptTeleport(double var1, double var3, double var5, boolean var7) {

@@ -72,7 +72,7 @@ public abstract class Class1026 extends PillagerEntity {
             if (var3 != null) {
                LivingEntity var4 = this.method4232();
                if (var4 != null && (var4.getType() == EntityType.PLAYER || var4.getType() == EntityType.IRON_GOLEM)) {
-                  this.field4973 = 0;
+                  this.idleTime = 0;
                }
             } else if (this.world.getGameTime() % 20L == 0L) {
                Raid var5 = ((ServerWorld)this.world).method6957(this.getPosition());
@@ -88,7 +88,7 @@ public abstract class Class1026 extends PillagerEntity {
 
    @Override
    public void method4338() {
-      this.field4973 += 2;
+      this.idleTime += 2;
    }
 
    @Override

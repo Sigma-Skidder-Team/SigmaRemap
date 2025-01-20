@@ -630,7 +630,7 @@ public abstract class MobEntity extends LivingEntity {
                   var3 = null;
                }
             } else {
-               this.field4973 = 0;
+               this.idleTime = 0;
                var3 = null;
             }
          }
@@ -645,20 +645,20 @@ public abstract class MobEntity extends LivingEntity {
 
             int var9 = this.getType().method33209().method523();
             int var10 = var9 * var9;
-            if (this.field4973 > 600 && this.rand.nextInt(800) == 0 && var5 > (double)var10 && this.method4254(var5)) {
+            if (this.idleTime > 600 && this.rand.nextInt(800) == 0 && var5 > (double)var10 && this.method4254(var5)) {
                this.remove();
             } else if (var5 < (double)var10) {
-               this.field4973 = 0;
+               this.idleTime = 0;
             }
          }
       } else {
-         this.field4973 = 0;
+         this.idleTime = 0;
       }
    }
 
    @Override
    public final void updateEntityActionState() {
-      this.field4973++;
+      this.idleTime++;
       this.world.getProfiler().startSection("sensing");
       this.field5603.method35459();
       this.world.getProfiler().endSection();
@@ -1471,11 +1471,11 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    private void method4313() {
-      this.field4973++;
+      this.idleTime++;
       if (this instanceof MonsterEntity) {
          float var3 = this.getBrightness();
          if (var3 > 0.5F) {
-            this.field4973 += 2;
+            this.idleTime += 2;
          }
       }
 

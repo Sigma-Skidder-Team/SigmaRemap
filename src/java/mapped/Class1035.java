@@ -107,7 +107,7 @@ public abstract class Class1035 extends MonsterEntity {
    @Nullable
    @Override
    public LivingEntity method4232() {
-      return this.field5011.<LivingEntity>method21410(Class8830.field39826).orElse((LivingEntity)null);
+      return this.brain.<LivingEntity>method21410(Class8830.field39826).orElse((LivingEntity)null);
    }
 
    public boolean method4636() {

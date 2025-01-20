@@ -298,7 +298,7 @@ public class PiglinEntity extends Class1035 implements Class1023 {
 
    @Override
    public void method4537() {
-      this.field4973 = 0;
+      this.idleTime = 0;
    }
 
    @Override

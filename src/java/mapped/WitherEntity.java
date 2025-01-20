@@ -470,7 +470,7 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
       if (this.world.method6997() == Difficulty.PEACEFUL && this.method4256()) {
          this.remove();
       } else {
-         this.field4973 = 0;
+         this.idleTime = 0;
       }
    }
 

@@ -37,7 +37,7 @@ public abstract class MonsterEntity extends CreatureEntity implements IMob {
    public void method4338() {
       float var3 = this.getBrightness();
       if (var3 > 0.5F) {
-         this.field4973 += 2;
+         this.idleTime += 2;
       }
    }
 
