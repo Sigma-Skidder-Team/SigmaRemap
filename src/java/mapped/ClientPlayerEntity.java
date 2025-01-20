@@ -45,54 +45,54 @@ import java.util.UUID;
 public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    private static String[] field6113;
    public final ClientPlayNetHandler connection;
-   private final Class8286 field6115;
-   private final ClientRecipeBook field6116;
-   private final List<IAmbientSoundHandler> field6117 = Lists.newArrayList();
-   private int field6118 = 0;
-   public double field6119;
-   public double field6120;
-   public double field6121;
-   public float rotYaw;
-   public float rotPitch;
-   public boolean field6124;
-   private boolean field6125;
-   private boolean field6126;
-   private boolean field6127;
-   private int field6128;
-   private boolean field6129;
-   private String field6130;
+   private final StatisticsManager stats;
+   private final ClientRecipeBook recipeBook;
+   private final List<IAmbientSoundHandler> ambientSoundHandlers = Lists.newArrayList();
+   private int permissionLevel = 0;
+   public double lastReportedPosX;
+   public double lastReportedPosY;
+   public double lastReportedPosZ;
+   public float lastReportedYaw;
+   public float lastReportedPitch;
+   public boolean prevOnGround;
+   private boolean isCrouching;
+   private boolean clientSneakState;
+   private boolean serverSprintState;
+   private int positionUpdateTicks;
+   private boolean hasValidHealth;
+   private String serverBrand;
    public MovementInput movementInput;
-   public final Minecraft field6132;
-   public int field6133;
-   public int field6134;
-   public float field6135;
-   public float field6136;
-   public float field6137;
-   public float field6138;
-   private int field6139;
-   public float field6140;
+   public final Minecraft mc;
+   public int sprintToggleTimer;
+   public int sprintingTicksLeft;
+   public float renderArmYaw;
+   public float renderArmPitch;
+   public float prevRenderArmYaw;
+   public float prevRenderArmPitch;
+   private int horseJumpPowerCounter;
+   public float horseJumpPower;
    public float timeInPortal;
    public float prevTimeInPortal;
-   private boolean field6143;
-   private Hand field6144;
-   private boolean field6145;
-   private boolean field6146 = true;
-   private int field6147;
-   private boolean field6148;
-   private int field6149;
-   private boolean field6150 = true;
+   private boolean handActive;
+   private Hand activeHand;
+   private boolean rowingBoat;
+   private boolean autoJumpEnabled = true;
+   private int autoJumpTime;
+   private boolean wasFallFlying;
+   private int counterInWater;
+   private boolean showDeathScreen = true;
 
-   public ClientPlayerEntity(Minecraft var1, ClientWorld var2, ClientPlayNetHandler var3, Class8286 var4, ClientRecipeBook var5, boolean var6, boolean var7) {
+   public ClientPlayerEntity(Minecraft var1, ClientWorld var2, ClientPlayNetHandler var3, StatisticsManager var4, ClientRecipeBook var5, boolean var6, boolean var7) {
       super(var2, var3.method15794());
-      this.field6132 = var1;
+      this.mc = var1;
       this.connection = var3;
-      this.field6115 = var4;
-      this.field6116 = var5;
-      this.field6126 = var6;
-      this.field6127 = var7;
-      this.field6117.add(new Class8077(this, var1.getSoundHandler()));
-      this.field6117.add(new Class8080(this));
-      this.field6117.add(new Class8079(this, var1.getSoundHandler(), var2.getBiomeManager()));
+      this.stats = var4;
+      this.recipeBook = var5;
+      this.clientSneakState = var6;
+      this.serverSprintState = var7;
+      this.ambientSoundHandlers.add(new Class8077(this, var1.getSoundHandler()));
+      this.ambientSoundHandlers.add(new Class8080(this));
+      this.ambientSoundHandlers.add(new Class8079(this, var1.getSoundHandler(), var2.getBiomeManager()));
    }
 
    @Override
@@ -108,7 +108,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    public boolean startRiding(Entity var1, boolean var2) {
       if (super.startRiding(var1, var2)) {
          if (var1 instanceof AbstractMinecartEntity) {
-            this.field6132.getSoundHandler().method1000(new Class6344(this, (AbstractMinecartEntity)var1));
+            this.mc.getSoundHandler().method1000(new Class6344(this, (AbstractMinecartEntity)var1));
          }
 
          if (var1 instanceof BoatEntity) {
@@ -126,7 +126,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    @Override
    public void dismount() {
       super.dismount();
-      this.field6145 = false;
+      this.rowingBoat = false;
    }
 
    @Override
@@ -154,14 +154,14 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             }
          }
 
-         for (IAmbientSoundHandler var4 : this.field6117) {
+         for (IAmbientSoundHandler var4 : this.ambientSoundHandlers) {
             var4.tick();
          }
       }
    }
 
    public float method5387() {
-      for (IAmbientSoundHandler var4 : this.field6117) {
+      for (IAmbientSoundHandler var4 : this.ambientSoundHandlers) {
          if (var4 instanceof Class8079) {
             return ((Class8079)var4).method27949();
          }
@@ -176,17 +176,17 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       Client.getInstance().getEventManager().call(eventItself);
       if (!eventItself.isCancelled()) {
          boolean var5 = this.isSprinting();
-         if (var5 != this.field6127) {
+         if (var5 != this.serverSprintState) {
             CEntityActionPacket.Action var6 = !var5 ? CEntityActionPacket.Action.STOP_SPRINTING : CEntityActionPacket.Action.START_SPRINTING;
             this.connection.sendPacket(new CEntityActionPacket(this, var6));
-            this.field6127 = var5;
+            this.serverSprintState = var5;
          }
 
          boolean var31 = this.isSneaking();
-         if (var31 != this.field6126) {
+         if (var31 != this.clientSneakState) {
             CEntityActionPacket.Action var7 = !var31 ? CEntityActionPacket.Action.RELEASE_SHIFT_KEY : CEntityActionPacket.Action.PRESS_SHIFT_KEY;
             this.connection.sendPacket(new CEntityActionPacket(this, var7));
-            this.field6126 = var31;
+            this.clientSneakState = var31;
          }
 
          if (this.isCurrentViewEntity()) {
@@ -196,20 +196,20 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             float eventItselfPitch = eventItself.getPitch();
             float eventItselfYaw = eventItself.getYaw() % 360.0F;
             boolean var16 = eventItself.onGround();
-            double var17 = var8 - this.field6119;
-            double var19 = var10 - this.field6120;
-            double var21 = var12 - this.field6121;
-            double fixatedYaw = (double)(eventItselfYaw - this.rotYaw % 360.0F);
-            double fixedatedPitch = (double)(eventItselfPitch - this.rotPitch);
-            this.field6128++;
-            boolean isMoving = eventItself.isMoving() || var17 * var17 + var19 * var19 + var21 * var21 > 9.0E-4 || this.field6128 >= 20;
+            double var17 = var8 - this.lastReportedPosX;
+            double var19 = var10 - this.lastReportedPosY;
+            double var21 = var12 - this.lastReportedPosZ;
+            double fixatedYaw = (double)(eventItselfYaw - this.lastReportedYaw % 360.0F);
+            double fixedatedPitch = (double)(eventItselfPitch - this.lastReportedPitch);
+            this.positionUpdateTicks++;
+            boolean isMoving = eventItself.isMoving() || var17 * var17 + var19 * var19 + var21 * var21 > 9.0E-4 || this.positionUpdateTicks >= 20;
             boolean isLooking = fixatedYaw != 0.0 || fixedatedPitch != 0.0;
             if (!this.isPassenger()) {
                if (isMoving && isLooking) {
                   this.connection.sendPacket(new CPlayerPacket.PositionRotationPacket(var8, var10, var12, eventItselfYaw, eventItselfPitch, var16));
                } else if (!isMoving) {
                   if (!isLooking) {
-                     if (this.field6124 != this.onGround) {
+                     if (this.prevOnGround != this.onGround) {
                         this.connection.sendPacket(new CPlayerPacket(var16));
                      }
                   } else {
@@ -225,19 +225,19 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             }
 
             if (isMoving) {
-               this.field6119 = var8;
-               this.field6120 = var10;
-               this.field6121 = var12;
-               this.field6128 = 0;
+               this.lastReportedPosX = var8;
+               this.lastReportedPosY = var10;
+               this.lastReportedPosZ = var12;
+               this.positionUpdateTicks = 0;
             }
 
             if (isLooking) {
-               this.rotYaw = eventItselfYaw;
-               this.rotPitch = eventItselfPitch;
+               this.lastReportedYaw = eventItselfYaw;
+               this.lastReportedPitch = eventItselfPitch;
             }
 
-            this.field6124 = this.onGround;
-            this.field6146 = this.field6132.gameSettings.field44610;
+            this.prevOnGround = this.onGround;
+            this.autoJumpEnabled = this.mc.gameSettings.field44610;
          }
 
          for (Runnable var30 : eventItself.getRunnableList()) {
@@ -305,13 +305,13 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    public void method5390() {
       this.inventory.setItemStack(ItemStack.EMPTY);
       super.method2772();
-      this.field6132.displayGuiScreen((Screen)null);
+      this.mc.displayGuiScreen((Screen)null);
    }
 
    public void method5391(float var1) {
-      if (!this.field6129) {
+      if (!this.hasValidHealth) {
          this.setHealth(var1);
-         this.field6129 = true;
+         this.hasValidHealth = true;
       } else {
          float var4 = this.getHealth() - var1;
          if (!(var4 <= 0.0F)) {
@@ -364,43 +364,43 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public void method5394(String var1) {
-      this.field6130 = var1;
+      this.serverBrand = var1;
    }
 
    public String method5395() {
-      return this.field6130;
+      return this.serverBrand;
    }
 
-   public Class8286 method5396() {
-      return this.field6115;
+   public StatisticsManager method5396() {
+      return this.stats;
    }
 
    public ClientRecipeBook getRecipeBook() {
-      return this.field6116;
+      return this.recipeBook;
    }
 
    public void method5398(IRecipe<?> var1) {
-      if (this.field6116.method21364(var1)) {
-         this.field6116.method21365(var1);
+      if (this.recipeBook.method21364(var1)) {
+         this.recipeBook.method21365(var1);
          this.connection.sendPacket(new CMarkRecipeSeenPacket(var1));
       }
    }
 
    @Override
    public int method2807() {
-      return this.field6118;
+      return this.permissionLevel;
    }
 
    public void method5399(int var1) {
-      this.field6118 = var1;
+      this.permissionLevel = var1;
    }
 
    @Override
    public void sendStatusMessage(ITextComponent var1, boolean var2) {
       if (!var2) {
-         this.field6132.ingameGUI.getChatGUI().sendChatMessage(var1);
+         this.mc.ingameGUI.getChatGUI().sendChatMessage(var1);
       } else {
-         this.field6132.ingameGUI.method5985(var1, false);
+         this.mc.ingameGUI.method5985(var1, false);
       }
    }
 
@@ -450,7 +450,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    @Override
    public void setSprinting(boolean var1) {
       super.setSprinting(var1);
-      this.field6134 = 0;
+      this.sprintingTicksLeft = 0;
    }
 
    public void method5402(float var1, int var2, int var3) {
@@ -461,7 +461,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void sendMessage(ITextComponent var1, UUID var2) {
-      this.field6132.ingameGUI.getChatGUI().sendChatMessage(var1);
+      this.mc.ingameGUI.getChatGUI().sendChatMessage(var1);
    }
 
    @Override
@@ -474,11 +474,11 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public void method5403(boolean var1) {
-      this.field6150 = var1;
+      this.showDeathScreen = var1;
    }
 
    public boolean isShowDeathScreen() {
-      return this.field6150;
+      return this.showDeathScreen;
    }
 
    @Override
@@ -501,25 +501,25 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       ItemStack var4 = this.getHeldItem(var1);
       if (!var4.isEmpty() && !this.isHandActive()) {
          super.setActiveHand(var1);
-         this.field6143 = true;
-         this.field6144 = var1;
+         this.handActive = true;
+         this.activeHand = var1;
       }
    }
 
    @Override
    public boolean isHandActive() {
-      return this.field6143;
+      return this.handActive;
    }
 
    @Override
    public void resetActiveHand() {
       super.resetActiveHand();
-      this.field6143 = false;
+      this.handActive = false;
    }
 
    @Override
    public Hand getActiveHand() {
-      return this.field6144;
+      return this.activeHand;
    }
 
    @Override
@@ -528,15 +528,15 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       if (LIVING_FLAGS.equals(var1)) {
          boolean var4 = (this.dataManager.<Byte>method35445(LIVING_FLAGS) & 1) > 0;
          Hand var5 = (this.dataManager.<Byte>method35445(LIVING_FLAGS) & 2) <= 0 ? Hand.MAIN_HAND : Hand.OFF_HAND;
-         if (var4 && !this.field6143) {
+         if (var4 && !this.handActive) {
             this.setActiveHand(var5);
-         } else if (!var4 && this.field6143) {
+         } else if (!var4 && this.handActive) {
             this.resetActiveHand();
          }
       }
 
-      if (FLAGS.equals(var1) && this.isElytraFlying() && !this.field6148) {
-         this.field6132.getSoundHandler().method1000(new Class6343(this));
+      if (FLAGS.equals(var1) && this.isElytraFlying() && !this.wasFallFlying) {
+         this.mc.getSoundHandler().method1000(new Class6343(this));
       }
    }
 
@@ -546,50 +546,50 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public float method5406() {
-      return this.field6140;
+      return this.horseJumpPower;
    }
 
    @Override
    public void method2764(Class954 var1) {
-      this.field6132.displayGuiScreen(new Class831(var1));
+      this.mc.displayGuiScreen(new Class831(var1));
    }
 
    @Override
    public void method2890(CommandBlockLogic var1) {
-      this.field6132.displayGuiScreen(new Class1327(var1));
+      this.mc.displayGuiScreen(new Class1327(var1));
    }
 
    @Override
    public void method2770(CommandBlockTileEntity var1) {
-      this.field6132.displayGuiScreen(new Class1326(var1));
+      this.mc.displayGuiScreen(new Class1326(var1));
    }
 
    @Override
    public void method2891(Class964 var1) {
-      this.field6132.displayGuiScreen(new Class1148(var1));
+      this.mc.displayGuiScreen(new Class1148(var1));
    }
 
    @Override
    public void method2892(JigsawTileEntity var1) {
-      this.field6132.displayGuiScreen(new Class1321(var1));
+      this.mc.displayGuiScreen(new Class1321(var1));
    }
 
    @Override
    public void method2769(ItemStack var1, Hand var2) {
       Item var5 = var1.getItem();
       if (var5 == Items.field38047) {
-         this.field6132.displayGuiScreen(new Class828(this, var1, var2));
+         this.mc.displayGuiScreen(new Class828(this, var1, var2));
       }
    }
 
    @Override
    public void onCriticalHit(Entity var1) {
-      this.field6132.particles.addParticleEmitter(var1, ParticleTypes.CRIT);
+      this.mc.particles.addParticleEmitter(var1, ParticleTypes.CRIT);
    }
 
    @Override
    public void onEnchantmentCritical(Entity var1) {
-      this.field6132.particles.addParticleEmitter(var1, ParticleTypes.ENCHANTED_HIT);
+      this.mc.particles.addParticleEmitter(var1, ParticleTypes.ENCHANTED_HIT);
    }
 
    @Override
@@ -599,7 +599,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public boolean isCrouching() {
-      return this.field6125;
+      return this.isCrouching;
    }
 
    public boolean method5407() {
@@ -613,47 +613,47 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          this.moveStrafing = this.movementInput.moveStrafe;
          this.moveForward = this.movementInput.moveForward;
          this.isJumping = this.movementInput.jump;
-         this.field6137 = this.field6135;
-         this.field6138 = this.field6136;
-         this.field6136 = (float)((double)this.field6136 + (double)(this.rotationPitch - this.field6136) * 0.5);
-         this.field6135 = (float)((double)this.field6135 + (double)(this.rotationYaw - this.field6135) * 0.5);
+         this.prevRenderArmYaw = this.renderArmYaw;
+         this.prevRenderArmPitch = this.renderArmPitch;
+         this.renderArmPitch = (float)((double)this.renderArmPitch + (double)(this.rotationPitch - this.renderArmPitch) * 0.5);
+         this.renderArmYaw = (float)((double)this.renderArmYaw + (double)(this.rotationYaw - this.renderArmYaw) * 0.5);
       }
    }
 
    public boolean isCurrentViewEntity() {
-      return this.field6132.getRenderViewEntity() == this;
+      return this.mc.getRenderViewEntity() == this;
    }
 
    @Override
    public void livingTick() {
-      this.field6134++;
-      if (this.field6133 > 0) {
-         this.field6133--;
+      this.sprintingTicksLeft++;
+      if (this.sprintToggleTimer > 0) {
+         this.sprintToggleTimer--;
       }
 
       this.method5409();
       boolean var3 = this.movementInput.jump;
       boolean var4 = this.movementInput.sneaking;
       boolean var5 = this.method5415();
-      this.field6125 = !this.abilities.isFlying
+      this.isCrouching = !this.abilities.isFlying
          && !this.isSwimming()
          && this.isPoseClear(Pose.field13624)
          && (this.isSneaking() || !this.isSleeping() && !this.isPoseClear(Pose.STANDING));
       this.movementInput.tickMovement(this.method5407());
-      this.field6132.getTutorial().method37023(this.movementInput);
+      this.mc.getTutorial().method37023(this.movementInput);
       if (this.isHandActive() && !this.isPassenger()) {
          EventSlowDown var6 = new EventSlowDown(0.2F);
          Client.getInstance().getEventManager().call(var6);
          if (!var6.isCancelled()) {
             this.movementInput.moveStrafe = this.movementInput.moveStrafe * var6.getSlowDown();
             this.movementInput.moveForward = this.movementInput.moveForward * var6.getSlowDown();
-            this.field6133 = 0;
+            this.sprintToggleTimer = 0;
          }
       }
 
       boolean var10 = false;
-      if (this.field6147 > 0) {
-         this.field6147--;
+      if (this.autoJumpTime > 0) {
+         this.autoJumpTime--;
          var10 = true;
          this.movementInput.jump = true;
       }
@@ -666,7 +666,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       }
 
       if (var4) {
-         this.field6133 = 0;
+         this.sprintToggleTimer = 0;
       }
 
       boolean var7 = (float)this.getFoodStats().getFoodLevel() > 6.0F || this.abilities.allowFlying;
@@ -678,8 +678,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          && var7
          && !this.isHandActive()
          && !this.isPotionActive(Effects.BLINDNESS)) {
-         if (this.field6133 <= 0 && !this.field6132.gameSettings.keyBindSprint.isKeyDown()) {
-            this.field6133 = 7;
+         if (this.sprintToggleTimer <= 0 && !this.mc.gameSettings.keyBindSprint.isKeyDown()) {
+            this.sprintToggleTimer = 7;
          } else {
             this.setSprinting(true);
          }
@@ -691,7 +691,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          && var7
          && !this.isHandActive()
          && !this.isPotionActive(Effects.BLINDNESS)
-         && this.field6132.gameSettings.keyBindSprint.isKeyDown()) {
+         && this.mc.gameSettings.keyBindSprint.isKeyDown()) {
          this.setSprinting(true);
       }
 
@@ -709,7 +709,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
       boolean var11 = false;
       if (this.abilities.allowFlying) {
-         if (!this.field6132.playerController.isSpectatorMode()) {
+         if (!this.mc.playerController.isSpectatorMode()) {
             if (!var3 && this.movementInput.jump && !var10) {
                if (this.field4907 != 0) {
                   if (!this.isSwimming()) {
@@ -736,19 +736,19 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          }
       }
 
-      this.field6148 = this.isElytraFlying();
+      this.wasFallFlying = this.isElytraFlying();
       if (this.isInWater() && this.movementInput.sneaking && this.method2897()) {
          this.handleFluidSneak();
       }
 
       if (!this.areEyesInFluid(FluidTags.field40469)) {
-         if (this.field6149 > 0) {
+         if (this.counterInWater > 0) {
             this.areEyesInFluid(FluidTags.field40469);
-            this.field6149 = MathHelper.clamp(this.field6149 - 10, 0, 600);
+            this.counterInWater = MathHelper.clamp(this.counterInWater - 10, 0, 600);
          }
       } else {
          int var13 = !this.isSpectator() ? 1 : 10;
-         this.field6149 = MathHelper.clamp(this.field6149 + var13, 0, 600);
+         this.counterInWater = MathHelper.clamp(this.counterInWater + var13, 0, 600);
       }
 
       if (this.abilities.isFlying && this.isCurrentViewEntity()) {
@@ -767,35 +767,35 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       }
 
       if (!this.method5405()) {
-         this.field6140 = 0.0F;
+         this.horseJumpPower = 0.0F;
       } else {
          IJumpingMount var15 = (IJumpingMount)this.getRidingEntity();
-         if (this.field6139 < 0) {
-            this.field6139++;
-            if (this.field6139 == 0) {
-               this.field6140 = 0.0F;
+         if (this.horseJumpPowerCounter < 0) {
+            this.horseJumpPowerCounter++;
+            if (this.horseJumpPowerCounter == 0) {
+               this.horseJumpPower = 0.0F;
             }
          }
 
          if (var3 && !this.movementInput.jump) {
-            this.field6139 = -10;
+            this.horseJumpPowerCounter = -10;
             var15.method4966(MathHelper.floor(this.method5406() * 100.0F));
             this.method5392();
          } else if (!var3 && this.movementInput.jump) {
-            this.field6139 = 0;
-            this.field6140 = 0.0F;
+            this.horseJumpPowerCounter = 0;
+            this.horseJumpPower = 0.0F;
          } else if (var3) {
-            this.field6139++;
-            if (this.field6139 >= 10) {
-               this.field6140 = 0.8F + 2.0F / (float)(this.field6139 - 9) * 0.1F;
+            this.horseJumpPowerCounter++;
+            if (this.horseJumpPowerCounter >= 10) {
+               this.horseJumpPower = 0.8F + 2.0F / (float)(this.horseJumpPowerCounter - 9) * 0.1F;
             } else {
-               this.field6140 = (float)this.field6139 * 0.1F;
+               this.horseJumpPower = (float)this.horseJumpPowerCounter * 0.1F;
             }
          }
       }
 
       super.livingTick();
-      if (this.onGround && this.abilities.isFlying && !this.field6132.playerController.isSpectatorMode()) {
+      if (this.onGround && this.abilities.isFlying && !this.mc.playerController.isSpectatorMode()) {
          this.abilities.isFlying = false;
          this.method2797();
       }
@@ -819,16 +819,16 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             }
          }
       } else {
-         if (this.field6132.currentScreen != null && !this.field6132.currentScreen.isPauseScreen()) {
-            if (this.field6132.currentScreen instanceof ContainerScreen) {
+         if (this.mc.currentScreen != null && !this.mc.currentScreen.isPauseScreen()) {
+            if (this.mc.currentScreen instanceof ContainerScreen) {
                this.method2772();
             }
 
-            this.field6132.displayGuiScreen((Screen)null);
+            this.mc.displayGuiScreen((Screen)null);
          }
 
          if (this.timeInPortal == 0.0F) {
-            this.field6132.getSoundHandler().method1000(MinecraftSoundManager.method19296(SoundEvents.field26978, this.rand.nextFloat() * 0.4F + 0.8F, 0.25F));
+            this.mc.getSoundHandler().method1000(MinecraftSoundManager.method19296(SoundEvents.field26978, this.rand.nextFloat() * 0.4F + 0.8F, 0.25F));
          }
 
          this.timeInPortal += 0.0125F;
@@ -845,16 +845,16 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    @Override
    public void updateRidden() {
       super.updateRidden();
-      this.field6145 = false;
+      this.rowingBoat = false;
       if (this.getRidingEntity() instanceof BoatEntity) {
          BoatEntity var3 = (BoatEntity)this.getRidingEntity();
          var3.method4173(this.movementInput.leftKeyDown, this.movementInput.rightKeyDown, this.movementInput.forwardKeyDown, this.movementInput.backKeyDown);
-         this.field6145 = this.field6145 | (this.movementInput.leftKeyDown || this.movementInput.rightKeyDown || this.movementInput.forwardKeyDown || this.movementInput.backKeyDown);
+         this.rowingBoat = this.rowingBoat | (this.movementInput.leftKeyDown || this.movementInput.rightKeyDown || this.movementInput.forwardKeyDown || this.movementInput.backKeyDown);
       }
    }
 
    public boolean isRowingBoat() {
-      return this.field6145;
+      return this.rowingBoat;
    }
 
    @Nullable
@@ -877,7 +877,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public boolean method5411() {
-      return this.field6146;
+      return this.autoJumpEnabled;
    }
 
    public void updateAutoJump(float var1, float var2) {
@@ -967,7 +967,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                   if (var33 != Float.MIN_VALUE) {
                      float var49 = (float)((double)var33 - this.getPosY());
                      if (!(var49 <= 0.5F) && !(var49 > var19)) {
-                        this.field6147 = 1;
+                        this.autoJumpTime = 1;
                      }
                   }
                }
@@ -978,7 +978,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    private boolean method5413() {
       return this.method5411()
-         && this.field6147 <= 0
+         && this.autoJumpTime <= 0
          && this.onGround
          && !this.method2853()
          && !this.isPassenger()
@@ -1000,9 +1000,9 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       if (this.areEyesInFluid(FluidTags.field40469)) {
          float var3 = 600.0F;
          float var4 = 100.0F;
-         if (!((float)this.field6149 >= 600.0F)) {
-            float var5 = MathHelper.clamp((float)this.field6149 / 100.0F, 0.0F, 1.0F);
-            float var6 = !((float)this.field6149 < 100.0F) ? MathHelper.clamp(((float)this.field6149 - 100.0F) / 500.0F, 0.0F, 1.0F) : 0.0F;
+         if (!((float)this.counterInWater >= 600.0F)) {
+            float var5 = MathHelper.clamp((float)this.counterInWater / 100.0F, 0.0F, 1.0F);
+            float var6 = !((float)this.counterInWater < 100.0F) ? MathHelper.clamp(((float)this.counterInWater - 100.0F) / 500.0F, 0.0F, 1.0F) : 0.0F;
             return var5 * 0.6F + var6 * 0.39999998F;
          } else {
             return 1.0F;
@@ -1024,7 +1024,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       if (!this.isSpectator()) {
          if (!var3 && var4) {
             this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26329, SoundCategory.field14736, 1.0F, 1.0F, false);
-            this.field6132.getSoundHandler().method1000(new Class6342(this));
+            this.mc.getSoundHandler().method1000(new Class6342(this));
          }
 
          if (var3 && !var4) {
@@ -1039,7 +1039,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public Vector3d getLeashPosition(float var1) {
-      if (!this.field6132.gameSettings.getPointOfView().func_243192_a()) {
+      if (!this.mc.gameSettings.getPointOfView().func_243192_a()) {
          return super.getLeashPosition(var1);
       } else {
          float var4 = MathHelper.lerp(var1 * 0.5F, this.rotationYaw, this.prevRotationYaw) * (float) (Math.PI / 180.0);

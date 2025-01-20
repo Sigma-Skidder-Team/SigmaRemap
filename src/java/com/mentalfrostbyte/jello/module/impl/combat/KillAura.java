@@ -135,7 +135,7 @@ public class KillAura extends Module {
         this.field23940 = 0;
         this.field23942 = 0;
         field23954 = 0;
-        this.rotations2 = new Rotations(mc.player.rotYaw, mc.player.rotPitch);
+        this.rotations2 = new Rotations(mc.player.lastReportedYaw, mc.player.lastReportedPitch);
         this.rotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
         previousRotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
         this.field23957 = -1.0F;

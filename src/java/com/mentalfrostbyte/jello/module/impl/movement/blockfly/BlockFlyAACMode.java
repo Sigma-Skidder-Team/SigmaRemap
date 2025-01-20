@@ -147,7 +147,7 @@ public class BlockFlyAACMode extends Module {
     }
 
     private boolean method16207() {
-        BlockRayTraceResult var3 = (BlockRayTraceResult) BlockUtil.method34569(mc.player.rotYaw, mc.player.rotPitch, BlockUtil.method34560(), 0.0F);
+        BlockRayTraceResult var3 = (BlockRayTraceResult) BlockUtil.method34569(mc.player.lastReportedYaw, mc.player.lastReportedPitch, BlockUtil.method34560(), 0.0F);
         boolean var4 = false;
         if (var3 != null && var3.getType() == RayTraceResult.Type.BLOCK) {
             if (this.access().getStringSettingValueByName("ItemSpoof").equals("None")) {

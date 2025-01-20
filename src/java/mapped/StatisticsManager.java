@@ -5,11 +5,11 @@ import it.unimi.dsi.fastutil.objects.Object2IntMaps;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.entity.player.PlayerEntity;
 
-public class Class8286 {
+public class StatisticsManager {
    private static String[] field35589;
    public final Object2IntMap<Class9007<?>> field35590 = Object2IntMaps.synchronize(new Object2IntOpenHashMap());
 
-   public Class8286() {
+   public StatisticsManager() {
       this.field35590.defaultReturnValue(0);
    }
 

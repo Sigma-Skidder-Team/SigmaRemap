@@ -167,7 +167,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23273 = new ClientWorld(this, var9, var5, var6, this.field23281, this.mc::getProfiler, this.mc.worldRenderer, var7, var1.method17288());
       this.mc.loadWorld(this.field23273);
       if (this.mc.player == null) {
-         this.mc.player = this.mc.playerController.createPlayer(this.field23273, new Class8286(), new ClientRecipeBook());
+         this.mc.player = this.mc.playerController.createPlayer(this.field23273, new StatisticsManager(), new ClientRecipeBook());
          this.mc.player.rotationYaw = -180.0F;
          if (this.mc.getIntegratedServer() != null) {
             this.mc.getIntegratedServer().method6489(this.mc.player.getUniqueID());

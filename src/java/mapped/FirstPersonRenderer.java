@@ -232,8 +232,8 @@ public class FirstPersonRenderer {
          }
       }
 
-      float var18 = MathHelper.lerp(var1, var4.field6138, var4.field6136);
-      float var20 = MathHelper.lerp(var1, var4.field6137, var4.field6135);
+      float var18 = MathHelper.lerp(var1, var4.prevRenderArmPitch, var4.renderArmPitch);
+      float var20 = MathHelper.lerp(var1, var4.prevRenderArmYaw, var4.renderArmYaw);
       var2.rotate(Vector3f.XP.rotationDegrees((var4.getPitch(var1) - var18) * 0.1F));
       var2.rotate(Vector3f.YP.rotationDegrees((var4.getYaw(var1) - var20) * 0.1F));
       if (var11) {

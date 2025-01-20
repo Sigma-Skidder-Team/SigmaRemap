@@ -32,7 +32,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class8287 extends Class8286 {
+public class Class8287 extends StatisticsManager {
    private static final Logger field35591 = LogManager.getLogger();
    private final MinecraftServer field35592;
    private final File field35593;

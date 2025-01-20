@@ -20,11 +20,11 @@ public class Class1305 extends Screen implements Class1306 {
    private Class1280 field6901;
    private Class1282 field6902;
    private Class1277 field6903;
-   private final Class8286 field6904;
+   private final StatisticsManager field6904;
    private Class1274<?> field6905;
    private boolean field6906 = true;
 
-   public Class1305(Screen var1, Class8286 var2) {
+   public Class1305(Screen var1, StatisticsManager var2) {
       super(new TranslationTextComponent("gui.stats"));
       this.field6900 = var1;
       this.field6904 = var2;
@@ -147,7 +147,7 @@ public class Class1305 extends Screen implements Class1306 {
    }
 
    // $VF: synthetic method
-   public static Class8286 method6193(Class1305 var0) {
+   public static StatisticsManager method6193(Class1305 var0) {
       return var0.field6904;
    }
 

@@ -302,11 +302,11 @@ public class PlayerController {
       }
    }
 
-   public ClientPlayerEntity createPlayer(ClientWorld var1, Class8286 var2, ClientRecipeBook var3) {
+   public ClientPlayerEntity createPlayer(ClientWorld var1, StatisticsManager var2, ClientRecipeBook var3) {
       return this.func_239167_a_(var1, var2, var3, false, false);
    }
 
-   public ClientPlayerEntity func_239167_a_(ClientWorld var1, Class8286 var2, ClientRecipeBook var3, boolean var4, boolean var5) {
+   public ClientPlayerEntity func_239167_a_(ClientWorld var1, StatisticsManager var2, ClientRecipeBook var3, boolean var4, boolean var5) {
       return new ClientPlayerEntity(this.mc, var1, this.connection, var2, var3, var4, var5);
    }
 

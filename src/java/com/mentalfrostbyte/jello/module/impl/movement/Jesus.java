@@ -139,7 +139,7 @@ public class Jesus extends Module {
 
                      double var14 = this.method16954((double)this.field24016);
                      if (var14 != -999.0) {
-                        mc.player.field6120 = 0.0;
+                        mc.player.lastReportedPosY = 0.0;
                         var1.setY(var14);
                      }
                   }
