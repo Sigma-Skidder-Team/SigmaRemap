@@ -1,7 +1,8 @@
-package mapped;
+package net.minecraft.block;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
+import mapped.BlockRenderType;
+import mapped.Class3245;
+import mapped.Class949;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

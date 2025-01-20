@@ -4,6 +4,7 @@ import com.mojang.authlib.GameProfile;
 import java.util.UUID;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.SkullBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;

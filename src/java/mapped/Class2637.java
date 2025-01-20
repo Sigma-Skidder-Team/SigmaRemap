@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BedBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.state.properties.BedPart;

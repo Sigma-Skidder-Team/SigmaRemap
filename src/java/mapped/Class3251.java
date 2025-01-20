@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BannerBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.tileentity.SkullTileEntity;

@@ -1,7 +1,8 @@
-package mapped;
+package net.minecraft.block;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
+import mapped.Class2137;
+import mapped.Class3251;
+import mapped.VoxelShapes;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;

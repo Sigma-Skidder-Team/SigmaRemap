@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BannerBlock;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;

@@ -1,7 +1,6 @@
-package mapped;
+package net.minecraft.block;
 
-import net.minecraft.block.HorizontalBlock;
-import net.minecraft.block.IWaterLoggable;
+import mapped.*;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.IInventory;
@@ -10,8 +9,6 @@ import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.Container;

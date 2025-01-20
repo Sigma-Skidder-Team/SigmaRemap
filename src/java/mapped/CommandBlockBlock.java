@@ -2,6 +2,7 @@ package mapped;
 
 import java.util.Random;
 
+import net.minecraft.block.BannerBlock;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;

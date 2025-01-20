@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRenderBlocks;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.OreBlock;
+import net.minecraft.block.OreBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
 

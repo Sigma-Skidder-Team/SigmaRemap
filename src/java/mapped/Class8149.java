@@ -6,6 +6,7 @@ import java.util.Properties;
 import java.util.Set;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.ChestBlock;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.horse.AbstractHorseEntity;

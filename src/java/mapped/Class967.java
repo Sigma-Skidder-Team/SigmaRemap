@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BedBlock;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
 

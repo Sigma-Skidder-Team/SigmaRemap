@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.command.CommandException;
 import com.mentalfrostbyte.jello.command.CommandManager;
 import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import mapped.*;
+import net.minecraft.block.BannerBlock;
 import net.minecraft.client.gui.screen.inventory.ShulkerBoxScreen;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;

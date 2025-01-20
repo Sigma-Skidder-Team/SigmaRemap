@@ -1,6 +1,6 @@
-package mapped;
+package net.minecraft.block;
 
-import net.minecraft.block.BlockState;
+import mapped.FallingBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
