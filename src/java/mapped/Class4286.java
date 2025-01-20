@@ -23,13 +23,12 @@ import java.net.URL;
 
 public class Class4286 extends Class4278 {
    public static ColorHelper field20771 = new ColorHelper(
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
-      Class2218.field14488,
-      Class2218.field14492
-   );
+         ClientColors.DEEP_TEAL.getColor,
+         ClientColors.DEEP_TEAL.getColor,
+         ClientColors.DEEP_TEAL.getColor,
+         ClientColors.DEEP_TEAL.getColor,
+         Class2218.field14488,
+         Class2218.field14492);
    public URL field20772 = null;
    public BufferedImage field20773;
    public boolean field20774 = false;
@@ -71,7 +70,7 @@ public class Class4286 extends Class4278 {
       boolean var5 = this.method13298() && this.getScreen().getScreen().method13114(var1, var2);
       this.field20777.changeDirection(!var5 ? Direction.BACKWARDS : Direction.FORWARDS);
       if (var5) {
-         Client.getInstance().getGuiManager().method33459(GuiManager.field41345);
+         Client.getInstance().guiManager.method33459(GuiManager.field41345);
       }
 
       super.method13028(var1, var2);
@@ -81,7 +80,7 @@ public class Class4286 extends Class4278 {
       if (this.getScreen() != null && this.getScreen().getScreen() != null) {
          CustomGuiScreen var3 = this.getScreen().getScreen();
          if (var3 instanceof Class4339) {
-            Class4339 var4 = (Class4339)var3;
+            Class4339 var4 = (Class4339) var3;
             int var5 = var4.method13513() + var4.getHeightA() + this.getHeightA();
             int var6 = var4.method13513() - this.getHeightA();
             return this.getYA() <= var5 && this.getYA() >= var6;
@@ -125,22 +124,23 @@ public class Class4286 extends Class4278 {
          }
 
          float var4 = this.field20777.calcPercent();
-         float var5 = (float)Math.round((float)(this.getXA() + 15) - 5.0F * var4);
-         float var6 = (float)Math.round((float)(this.getYA() + 15) - 5.0F * var4);
-         float var7 = (float)Math.round((float)(this.getWidthA() - 30) + 10.0F * var4);
-         float var8 = (float)Math.round((float)(this.getWidthA() - 30) + 10.0F * var4);
+         float var5 = (float) Math.round((float) (this.getXA() + 15) - 5.0F * var4);
+         float var6 = (float) Math.round((float) (this.getYA() + 15) - 5.0F * var4);
+         float var7 = (float) Math.round((float) (this.getWidthA() - 30) + 10.0F * var4);
+         float var8 = (float) Math.round((float) (this.getWidthA() - 30) + 10.0F * var4);
          RenderUtil.drawRoundedRect(
-            (float)(this.getXA() + 15) - 5.0F * var4,
-            (float)(this.getYA() + 15) - 5.0F * var4,
-            (float)(this.getWidthA() - 30) + 10.0F * var4,
-            (float)(this.getWidthA() - 30) + 10.0F * var4,
-            20.0F,
-            var1
-         );
+               (float) (this.getXA() + 15) - 5.0F * var4,
+               (float) (this.getYA() + 15) - 5.0F * var4,
+               (float) (this.getWidthA() - 30) + 10.0F * var4,
+               (float) (this.getWidthA() - 30) + 10.0F * var4,
+               20.0F,
+               var1);
          if (this.field20775 == null && this.field20773 == null) {
-            RenderUtil.drawImage(var5, var6, var7, var8, ResourceList.artworkPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
+            RenderUtil.drawImage(var5, var6, var7, var8, ResourceList.artworkPNG,
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
             if (this.field20776 != null) {
-               RenderUtil.drawImage(var5, var6, var7, var8, ResourceList.artworkPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
+               RenderUtil.drawImage(var5, var6, var7, var8, ResourceList.artworkPNG,
+                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
             }
          } else {
             if (this.field20775 == null) {
@@ -169,9 +169,11 @@ public class Class4286 extends Class4278 {
                this.field20776 = null;
             }
 
-            RenderUtil.drawImage(var5, var6, var7, var8, this.field20775, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
+            RenderUtil.drawImage(var5, var6, var7, var8, this.field20775,
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
             if (this.field20776 != null) {
-               RenderUtil.drawImage(var5, var6, var7, var8, this.field20776, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
+               RenderUtil.drawImage(var5, var6, var7, var8, this.field20776,
+                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
             }
          }
 
@@ -182,40 +184,36 @@ public class Class4286 extends Class4278 {
 
          float var10 = 0.5F + var4 / 2.0F;
          RenderUtil.drawImage(
-            (float)(this.getXA() + this.getWidthA() / 2) - (float)(var9 / 2) * var10,
-            (float)(this.getYA() + this.getWidthA() / 2) - (float)(var9 / 2) * var10,
-            (float)var9 * var10,
-            (float)var9 * var10,
-            ResourceList.playIconPNG,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
-         );
+               (float) (this.getXA() + this.getWidthA() / 2) - (float) (var9 / 2) * var10,
+               (float) (this.getYA() + this.getWidthA() / 2) - (float) (var9 / 2) * var10,
+               (float) var9 * var10,
+               (float) var9 * var10,
+               ResourceList.playIconPNG,
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
          TrueTypeFont var11 = ResourceRegistry.JelloLightFont12;
          if (this.field20912 != null) {
             RenderUtil.method11415(this);
             String[] var12 = this.getTypedText().replaceAll("\\(.*\\)", "").replaceAll("\\[.*\\]", "").split(" - ");
             if (var12.length > 1) {
                RenderUtil.drawString(
-                  var11,
-                  (float)(this.getXA() + (this.getWidthA() - var11.getStringWidth(var12[1])) / 2),
-                  (float)(this.getYA() + this.getWidthA() - 2),
-                  var12[1],
-                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
-               );
+                     var11,
+                     (float) (this.getXA() + (this.getWidthA() - var11.getStringWidth(var12[1])) / 2),
+                     (float) (this.getYA() + this.getWidthA() - 2),
+                     var12[1],
+                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
                RenderUtil.drawString(
-                  var11,
-                  (float)(this.getXA() + (this.getWidthA() - var11.getStringWidth(var12[0])) / 2),
-                  (float)(this.getYA() + this.getWidthA() - 2 + 13),
-                  var12[0],
-                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
-               );
+                     var11,
+                     (float) (this.getXA() + (this.getWidthA() - var11.getStringWidth(var12[0])) / 2),
+                     (float) (this.getYA() + this.getWidthA() - 2 + 13),
+                     var12[0],
+                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
             } else {
                RenderUtil.drawString(
-                  var11,
-                  (float)(this.getXA() + (this.getWidthA() - var11.getStringWidth(var12[0])) / 2),
-                  (float)(this.getYA() + this.getWidthA() - 2 + 6),
-                  var12[0],
-                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
-               );
+                     var11,
+                     (float) (this.getXA() + (this.getWidthA() - var11.getStringWidth(var12[0])) / 2),
+                     (float) (this.getYA() + this.getWidthA() - 2 + 6),
+                     var12[0],
+                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
             }
 
             RenderUtil.endScissor();

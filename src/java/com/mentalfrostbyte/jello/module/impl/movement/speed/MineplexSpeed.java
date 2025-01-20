@@ -59,7 +59,7 @@ public class MineplexSpeed extends Module {
     @HigherPriority
     public void method16250(EventMove var1) {
         if (this.isEnabled()
-                && !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()
+                && !Client.getInstance().moduleManager.getModuleByClass(BlockFly.class).isEnabled()
                 && !MultiUtilities.method17684(mc.player)) {
             double var4 = this.getNumberValueBySettingName("OnGround Speed");
             if (!mc.player.onGround) {

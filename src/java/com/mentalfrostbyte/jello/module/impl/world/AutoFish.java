@@ -26,16 +26,20 @@ public class AutoFish extends Module {
                 if (mc.player.getHeldItemMainhand() != null) {
                     if (mc.player.getHeldItemMainhand().getItem() instanceof Class3259) {
                         if (!(event.getPacket() instanceof SPlaySoundEffectPacket)) {
-                            if (event.getPacket() instanceof SPlaySoundPacket && !((SPlaySoundPacket) event.getPacket()).field24315.equals("entity.bobber.splash")) {
+                            if (event.getPacket() instanceof SPlaySoundPacket
+                                    && !((SPlaySoundPacket) event.getPacket()).field24315
+                                            .equals("entity.bobber.splash")) {
                                 return;
                             }
-                        } else if (!((SPlaySoundEffectPacket) event.getPacket()).method17549().equals(SoundEvents.field26585)) {
+                        } else if (!((SPlaySoundEffectPacket) event.getPacket()).method17549()
+                                .equals(SoundEvents.field26585)) {
                             return;
                         }
 
                         mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
                         mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
-                        Client.getInstance().getNotificationManager().send(new Notification("AutoFish", "We catched something!", ResourceList.doneIconPNG));
+                        Client.getInstance().notificationManager
+                                .send(new Notification("AutoFish", "We catched something!", ResourceList.doneIconPNG));
                     }
                 }
             }

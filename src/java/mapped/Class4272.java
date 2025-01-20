@@ -64,7 +64,7 @@ public class Class4272 extends Class4247 {
                   this.method13118(true);
                   new Thread(() -> {
                      Client.getInstance();
-                     Class6814 var5xx = Client.getInstance().getModuleManager().getConfigurationManager();
+                     Class6814 var5xx = Client.getInstance().moduleManager.getConfigurationManager();
                      Configuration var6x = var5xx.getCurrentConfig();
                      Configuration var7x = field20706.method28657(var6x, var7);
                      var5x.method13611(var7x);

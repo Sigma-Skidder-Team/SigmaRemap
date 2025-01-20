@@ -128,7 +128,7 @@ public class BlockFlyHypixelMode extends Module {
     @EventTarget
     public void method16108(SafeWalkEvent var1) {
         if (this.isEnabled()) {
-            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
                 if (mc.world
                         .getCollisionShapes(
                                 mc.player,
@@ -140,7 +140,7 @@ public class BlockFlyHypixelMode extends Module {
                     var1.setSafe(true);
                 }
             } else if (mc.player.onGround
-                    && Client.getInstance().getModuleManager().getModuleByClass(SafeWalk.class).isEnabled()
+                    && Client.getInstance().moduleManager.getModuleByClass(SafeWalk.class).isEnabled()
                     && (!this.field23474 || !this.getBooleanValueFromSettingName("Downwards"))) {
                 var1.setSafe(true);
             }
@@ -171,7 +171,7 @@ public class BlockFlyHypixelMode extends Module {
     @LowerPriority
     public void method16111(EventUpdate event) {
         if (this.isEnabled() && this.field23473.method16735() != 0) {
-            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Fly.class);
+            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().moduleManager.getModuleByClass(Fly.class);
             if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("Hypixel") || !var4.method16726().getStringSettingValueByName("Bypass").equals("Blink")) {
                 if (!event.isPre()) {
                     this.field23473.method16736();
@@ -316,7 +316,7 @@ public class BlockFlyHypixelMode extends Module {
                     if (mc.player.onGround && MultiUtilities.method17686() && !mc.player.isSneaking() && !this.field23474) {
                         this.field23475 = false;
                         mc.player.jump();
-                        ((Speed) Client.getInstance().getModuleManager().getModuleByClass(Speed.class)).method16764();
+                        ((Speed) Client.getInstance().moduleManager.getModuleByClass(Speed.class)).method16764();
                         this.field23475 = true;
                         var1.setY(mc.player.getMotion().y);
                         var1.setX(mc.player.getMotion().x);

@@ -28,22 +28,25 @@ public class SkeletonESP extends Module {
 
     private void method16089(Render3DEvent var1, PlayerEntity var2) {
         Color var5 = new Color(
-                !Client.getInstance().getFriendManager().method26998(var2.getName().getString())
-                        ? (!var2.getName().getString().equalsIgnoreCase(mc.player.getName().getString()) ? new Color(16775672).getRGB() : -6684775)
-                        : -8401409
-        );
+                !Client.getInstance().friendManager.method26998(var2.getName().getString())
+                        ? (!var2.getName().getString().equalsIgnoreCase(mc.player.getName().getString())
+                                ? new Color(16775672).getRGB()
+                                : -6684775)
+                        : -8401409);
         if (!var2.isInvisible()) {
             float[][] var6 = field23459.get(var2);
             if (var6 != null && var2.isAlive() && var2 != mc.player && !var2.isSleeping()) {
                 GL11.glPushMatrix();
                 GL11.glLineWidth(2.0F);
-                GL11.glColor4f((float) (var5.getRed() / 255), (float) (var5.getGreen() / 255), (float) (var5.getBlue() / 255), 1.0F);
+                GL11.glColor4f((float) (var5.getRed() / 255), (float) (var5.getGreen() / 255),
+                        (float) (var5.getBlue() / 255), 1.0F);
                 Vector3d var7 = this.method16090(var1, var2);
                 double var8 = var7.getX() - mc.getRenderManager().info.getPos().x;
                 double var10 = var7.getY() - mc.getRenderManager().info.getPos().y;
                 double var12 = var7.getZ() - mc.getRenderManager().info.getPos().z;
                 GL11.glTranslated(var8, var10, var12);
-                float var14 = var2.prevRenderYawOffset + (var2.renderYawOffset - var2.prevRenderYawOffset) * mc.getRenderPartialTicks();
+                float var14 = var2.prevRenderYawOffset
+                        + (var2.renderYawOffset - var2.prevRenderYawOffset) * mc.getRenderPartialTicks();
                 GL11.glRotatef(-var14, 0.0F, 1.0F, 0.0F);
                 GL11.glTranslated(0.0, 0.0, !var2.isSneaking() ? 0.0 : -0.235);
                 float var15 = !var2.isSneaking() ? 0.75F : 0.6F;
@@ -185,14 +188,17 @@ public class SkeletonESP extends Module {
     public static void method16091(PlayerEntity var0, PlayerModel<PlayerEntity> var1) {
         field23459.put(
                 var0,
-                new float[][]{
-                        {var1.bipedHead.rotateAngleX, var1.bipedHead.rotateAngleY, var1.bipedHead.rotateAngleZ},
-                        {var1.bipedRightArm.rotateAngleX, var1.bipedRightArm.rotateAngleY, var1.bipedRightArm.rotateAngleZ},
-                        {var1.bipedLeftArm.rotateAngleX, var1.bipedLeftArm.rotateAngleY, var1.bipedLeftArm.rotateAngleZ},
-                        {var1.bipedRightLeg.rotateAngleX, var1.bipedRightLeg.rotateAngleY, var1.bipedRightLeg.rotateAngleZ},
-                        {var1.bipedLeftLeg.rotateAngleX, var1.bipedLeftLeg.rotateAngleY, var1.bipedLeftLeg.rotateAngleZ}
-                }
-        );
+                new float[][] {
+                        { var1.bipedHead.rotateAngleX, var1.bipedHead.rotateAngleY, var1.bipedHead.rotateAngleZ },
+                        { var1.bipedRightArm.rotateAngleX, var1.bipedRightArm.rotateAngleY,
+                                var1.bipedRightArm.rotateAngleZ },
+                        { var1.bipedLeftArm.rotateAngleX, var1.bipedLeftArm.rotateAngleY,
+                                var1.bipedLeftArm.rotateAngleZ },
+                        { var1.bipedRightLeg.rotateAngleX, var1.bipedRightLeg.rotateAngleY,
+                                var1.bipedRightLeg.rotateAngleZ },
+                        { var1.bipedLeftLeg.rotateAngleX, var1.bipedLeftLeg.rotateAngleY,
+                                var1.bipedLeftLeg.rotateAngleZ }
+                });
     }
 
     private boolean method16092(PlayerEntity var1) {

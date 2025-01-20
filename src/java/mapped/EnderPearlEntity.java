@@ -48,15 +48,14 @@ public class EnderPearlEntity extends Class890 {
 
       for (int var5 = 0; var5 < 32; var5++) {
          this.world
-            .addParticle(
-               ParticleTypes.field34090,
-               this.getPosX(),
-               this.getPosY() + this.rand.nextDouble() * 2.0,
-               this.getPosZ(),
-               this.rand.nextGaussian(),
-               0.0,
-               this.rand.nextGaussian()
-            );
+               .addParticle(
+                     ParticleTypes.field34090,
+                     this.getPosX(),
+                     this.getPosY() + this.rand.nextDouble() * 2.0,
+                     this.getPosZ(),
+                     this.rand.nextGaussian(),
+                     0.0,
+                     this.rand.nextGaussian());
       }
 
       if (!this.world.isRemote && !this.removed) {
@@ -66,12 +65,13 @@ public class EnderPearlEntity extends Class890 {
                var4.fallDistance = 0.0F;
             }
          } else {
-            ServerPlayerEntity var7 = (ServerPlayerEntity)var4;
-            if (var7.connection.getNetworkManager().isChannelOpen() && var7.world == this.world && !var7.isSleeping()) {
+            ServerPlayerEntity var7 = (ServerPlayerEntity) var4;
+            if (var7.connection.networkManager.isChannelOpen() && var7.world == this.world && !var7.isSleeping()) {
                if (this.rand.nextFloat() < 0.05F && this.world.getGameRules().getBoolean(GameRules.field24226)) {
                   EndermiteEntity var6 = EntityType.ENDERMITE.create(this.world);
                   var6.method5298(true);
-                  var6.setLocationAndAngles(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var4.rotationYaw, var4.rotationPitch);
+                  var6.setLocationAndAngles(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var4.rotationYaw,
+                        var4.rotationPitch);
                   this.world.addEntity(var6);
                }
 
@@ -104,7 +104,7 @@ public class EnderPearlEntity extends Class890 {
    public Entity changeDimension(ServerWorld var1) {
       Entity var4 = this.method3460();
       if (var4 != null && var4.world.getDimensionKey() != var1.getDimensionKey()) {
-         this.setShooter((Entity)null);
+         this.setShooter((Entity) null);
       }
 
       return super.changeDimension(var1);

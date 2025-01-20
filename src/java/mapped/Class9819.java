@@ -25,7 +25,7 @@ public class Class9819 {
 
    public Class9819() {
       this.timer = new TimerUtil();
-      Client.getInstance().getEventManager().register(this);
+      Client.getInstance().eventManager.register(this);
    }
 
    @EventTarget
@@ -65,7 +65,7 @@ public class Class9819 {
                            this.mc.player.getPosX(), this.mc.player.getPosY(), this.mc.player.getPosZ()
                         );
                         List<Vector3d> vectors = Class8901.method32447(playerVec, entityVec);
-                        Client.getInstance().getNotificationManager().send(new Notification("Teleport", "Successfully teleported !"));
+                        Client.getInstance().notificationManager.send(new Notification("Teleport", "Successfully teleported !"));
                         Entity ridingEntity = this.mc.player.getRidingEntity();
 
                         for (Vector3d vec : vectors) {
@@ -124,7 +124,7 @@ public class Class9819 {
          event.setY(0.0);
          event.setZ(0.0);
          if (this.entity == null || !this.entity.isAlive() || !MultiUtilities.getEntitesInWorld().contains(this.entity)) {
-            Client.getInstance().getNotificationManager().send(new Notification("Teleport", "Target lost"));
+            Client.getInstance().notificationManager.send(new Notification("Teleport", "Target lost"));
             this.field45878 = 0;
             this.entity = null;
          } else if (!this.mc.player.isSneaking()) {
@@ -132,18 +132,18 @@ public class Class9819 {
             if (posY < -2.0 && MultiUtilities.method17763(this.entity) && this.entity.getPosY() - this.mc.player.getPosY() < -10.0) {
                this.field45878 = 0;
                this.entity = null;
-               Client.getInstance().getNotificationManager().send(new Notification("Teleport", "Target seems to be falling in void"));
+               Client.getInstance().notificationManager.send(new Notification("Teleport", "Target seems to be falling in void"));
             }
          } else {
             this.field45878 = 0;
             this.entity = null;
-            Client.getInstance().getNotificationManager().send(new Notification("Teleport", "Teleport canceled"));
+            Client.getInstance().notificationManager.send(new Notification("Teleport", "Teleport canceled"));
          }
 
          if (this.timer.getElapsedTime() > 7000L) {
             this.field45878 = 0;
             this.entity = null;
-            Client.getInstance().getNotificationManager().send(new Notification("Teleport", "Failed teleport !"));
+            Client.getInstance().notificationManager.send(new Notification("Teleport", "Failed teleport !"));
          }
       }
    }

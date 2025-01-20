@@ -50,7 +50,7 @@ public class FillESP extends Module {
         float var6 = (float) (var3 >> 8 & 0xFF) / 255.0F;
         float var7 = (float) (var3 & 0xFF) / 255.0F;
         GL11.glEnable(2896);
-        GL11.glLightModelfv(2899, new float[]{var5, var6, var7, var4});
+        GL11.glLightModelfv(2899, new float[] { var5, var6, var7, var4 });
         RenderSystem.enableLighting();
         GL11.glDepthFunc(519);
         GL11.glEnable(2929);
@@ -73,7 +73,8 @@ public class FillESP extends Module {
                 boolean var18 = mc.gameSettings.entityShadows;
                 RenderSystem.disableLighting();
                 RenderSystem.color4f(0.0F, 0.0F, 1.0F, 0.5F);
-                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932,
+                        GlStateManager.SourceFactor.ONE, DestFactor.field12936);
                 RenderSystem.enableBlend();
                 mc.gameSettings.entityShadows = false;
                 this.method16136(var9, var11, var13, var15, mc.timer.renderPartialTicks, var17, this.field23482);
@@ -101,12 +102,14 @@ public class FillESP extends Module {
         }
     }
 
-    public void method16136(Entity var1, double var2, double var4, double var6, float var8, MatrixStack var9, Class7733 var10) {
+    public void method16136(Entity var1, double var2, double var4, double var6, float var8, MatrixStack var9,
+            Class7733 var10) {
         double var13 = MathHelper.lerp(var8, var1.lastTickPosX, var1.getPosX());
         double var15 = MathHelper.lerp(var8, var1.lastTickPosY, var1.getPosY());
         double var17 = MathHelper.lerp(var8, var1.lastTickPosZ, var1.getPosZ());
         float var19 = MathHelper.lerp(var8, var1.prevRotationYaw, var1.rotationYaw);
-        mc.worldRenderer.renderManager.renderEntityStatic(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 255);
+        mc.worldRenderer.renderManager.renderEntityStatic(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8,
+                var9, var10, 255);
     }
 
     @EventTarget
@@ -121,7 +124,7 @@ public class FillESP extends Module {
     private boolean method16138(Entity var1) {
         if (var1 instanceof LivingEntity) {
             if (var1 instanceof PlayerEntity) {
-                return !(var1 instanceof ClientPlayerEntity) && !Client.getInstance().getCombatManager().isTargetABot(var1);
+                return !(var1 instanceof ClientPlayerEntity) && !Client.getInstance().combatManager.isTargetABot(var1);
             } else {
                 return false;
             }
@@ -156,6 +159,6 @@ public class FillESP extends Module {
         mc.getTextureManager();
         var10000.bindTexture(TextureManager.field1094);
         mc.gameRenderer.lightmapTexture.method7317();
-        GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
+        GL11.glLightModelfv(2899, new float[] { 0.4F, 0.4F, 0.4F, 1.0F });
     }
 }

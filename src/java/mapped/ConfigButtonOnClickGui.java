@@ -40,7 +40,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
 
    public void method13610() {
       Client.getInstance();
-      Class6814 var3 = Client.getInstance().getModuleManager().getConfigurationManager();
+      Class6814 var3 = Client.getInstance().moduleManager.getConfigurationManager();
       Configuration var4 = var3.getCurrentConfig();
       int var5 = 1;
 
@@ -55,7 +55,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
 
    public void method13611(Configuration var1) {
       Client.getInstance();
-      Class6814 var4 = Client.getInstance().getModuleManager().getConfigurationManager();
+      Class6814 var4 = Client.getInstance().moduleManager.getConfigurationManager();
       Configuration var5 = var4.getCurrentConfig();
       int var6 = 1;
 
@@ -70,7 +70,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
 
    public void method13612() {
       Client.getInstance();
-      Class6814 var3 = Client.getInstance().getModuleManager().getConfigurationManager();
+      Class6814 var3 = Client.getInstance().moduleManager.getConfigurationManager();
       int var4 = 1;
 
       while (var3.method20768("New Profile " + var4)) {
@@ -115,7 +115,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
       int var4 = 0;
       byte var5 = 70;
 
-      for (Configuration var7 : Client.getInstance().getModuleManager().getConfigurationManager().getAllConfigs()) {
+      for (Configuration var7 : Client.getInstance().moduleManager.getConfigurationManager().getAllConfigs()) {
          Class4351 var8 = new Class4351(this, "profile" + var4, 0, var5 * var4, this.field21299.getWidthA(), var5, var7, var4);
          this.field21299.addToList(var8);
          this.field21301.add(var8);

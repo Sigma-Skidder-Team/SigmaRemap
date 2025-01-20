@@ -25,8 +25,8 @@ public class AccountManager {
     }
 
     public void registerEvents() {
-        Client.getInstance().getEventManager().register(this);
-        Client.getInstance().getEventManager().register(this.banListener);
+        Client.getInstance().eventManager.register(this);
+        Client.getInstance().eventManager.register(this.banListener);
     }
 
     @Deprecated
@@ -76,6 +76,7 @@ public class AccountManager {
 
     /**
      * Logs into the account
+     * 
      * @param account specified account
      * @return if the login was successful
      */

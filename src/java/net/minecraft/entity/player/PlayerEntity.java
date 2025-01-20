@@ -69,20 +69,26 @@ import java.util.function.Predicate;
 public abstract class PlayerEntity extends LivingEntity {
    public static final EntitySize STANDING_SIZE = EntitySize.method32101(0.6F, 1.8F);
    private static final Map<Pose, EntitySize> SIZE_BY_POSE = ImmutableMap.<Pose, EntitySize>builder()
-      .put(Pose.STANDING, STANDING_SIZE)
-      .put(Pose.SLEEPING, SLEEPING_SIZE)
-      .put(Pose.field13620, EntitySize.method32101(0.6F, 0.6F))
-      .put(Pose.field13622, EntitySize.method32101(0.6F, 0.6F))
-      .put(Pose.field13623, EntitySize.method32101(0.6F, 0.6F))
-      .put(Pose.field13624, EntitySize.method32101(0.6F, 1.5F))
-      .put(Pose.field13625, EntitySize.method32102(0.2F, 0.2F))
-      .build();
-   private static final DataParameter<Float> field4895 = EntityDataManager.<Float>createKey(PlayerEntity.class, DataSerializers.FLOAT);
-   private static final DataParameter<Integer> field4896 = EntityDataManager.<Integer>createKey(PlayerEntity.class, DataSerializers.VARINT);
-   public static final DataParameter<Byte> field4897 = EntityDataManager.<Byte>createKey(PlayerEntity.class, DataSerializers.field33390);
-   public static final DataParameter<Byte> field4898 = EntityDataManager.<Byte>createKey(PlayerEntity.class, DataSerializers.field33390);
-   public static final DataParameter<CompoundNBT> field4899 = EntityDataManager.<CompoundNBT>createKey(PlayerEntity.class, DataSerializers.field33405);
-   public static final DataParameter<CompoundNBT> field4900 = EntityDataManager.<CompoundNBT>createKey(PlayerEntity.class, DataSerializers.field33405);
+         .put(Pose.STANDING, STANDING_SIZE)
+         .put(Pose.SLEEPING, SLEEPING_SIZE)
+         .put(Pose.field13620, EntitySize.method32101(0.6F, 0.6F))
+         .put(Pose.field13622, EntitySize.method32101(0.6F, 0.6F))
+         .put(Pose.field13623, EntitySize.method32101(0.6F, 0.6F))
+         .put(Pose.field13624, EntitySize.method32101(0.6F, 1.5F))
+         .put(Pose.field13625, EntitySize.method32102(0.2F, 0.2F))
+         .build();
+   private static final DataParameter<Float> field4895 = EntityDataManager.<Float>createKey(PlayerEntity.class,
+         DataSerializers.FLOAT);
+   private static final DataParameter<Integer> field4896 = EntityDataManager.<Integer>createKey(PlayerEntity.class,
+         DataSerializers.VARINT);
+   public static final DataParameter<Byte> field4897 = EntityDataManager.<Byte>createKey(PlayerEntity.class,
+         DataSerializers.field33390);
+   public static final DataParameter<Byte> field4898 = EntityDataManager.<Byte>createKey(PlayerEntity.class,
+         DataSerializers.field33390);
+   public static final DataParameter<CompoundNBT> field4899 = EntityDataManager
+         .<CompoundNBT>createKey(PlayerEntity.class, DataSerializers.field33405);
+   public static final DataParameter<CompoundNBT> field4900 = EntityDataManager
+         .<CompoundNBT>createKey(PlayerEntity.class, DataSerializers.field33405);
    private long timeEntitySatOnShoulder;
    public PlayerInventory inventory = new PlayerInventory(this);
    // Searge typo LOL
@@ -121,7 +127,8 @@ public abstract class PlayerEntity extends LivingEntity {
       this.gameProfile = var4;
       this.container = new PlayerContainer(this.inventory, !var1.isRemote, this);
       this.openContainer = this.container;
-      this.setLocationAndAngles((double)var2.getX() + 0.5, (double)(var2.getY() + 1), (double)var2.getZ() + 0.5, var3, 0.0F);
+      this.setLocationAndAngles((double) var2.getX() + 0.5, (double) (var2.getY() + 1), (double) var2.getZ() + 0.5,
+            var3, 0.0F);
       this.unused180 = 180.0F;
    }
 
@@ -142,10 +149,10 @@ public abstract class PlayerEntity extends LivingEntity {
 
    public static MutableAttribute method2849() {
       return LivingEntity.registerAttributes()
-         .method21849(Attributes.ATTACK_DAMAGE, 1.0)
-         .method21849(Attributes.MOVEMENT_SPEED, 0.1F)
-         .createMutableAttribute(Attributes.ATTACK_SPEED)
-         .createMutableAttribute(Attributes.LUCK);
+            .method21849(Attributes.ATTACK_DAMAGE, 1.0)
+            .method21849(Attributes.MOVEMENT_SPEED, 0.1F)
+            .createMutableAttribute(Attributes.ATTACK_SPEED)
+            .createMutableAttribute(Attributes.LUCK);
    }
 
    @Override
@@ -153,8 +160,8 @@ public abstract class PlayerEntity extends LivingEntity {
       super.registerData();
       this.dataManager.register(field4895, 0.0F);
       this.dataManager.register(field4896, 0);
-      this.dataManager.register(field4897, (byte)0);
-      this.dataManager.register(field4898, (byte)1);
+      this.dataManager.register(field4897, (byte) 0);
+      this.dataManager.register(field4898, (byte) 1);
       this.dataManager.register(field4899, new CompoundNBT());
       this.dataManager.register(field4900, new CompoundNBT());
    }
@@ -369,7 +376,8 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public void playSound(SoundEvent var1, float var2, float var3) {
-      this.world.playSound(this, this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.getSoundCategory(), var2, var3);
+      this.world.playSound(this, this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.getSoundCategory(), var2,
+            var3);
    }
 
    public void method2834(SoundEvent var1, SoundCategory var2, float var3, float var4) {
@@ -411,7 +419,8 @@ public abstract class PlayerEntity extends LivingEntity {
          double var5 = this.rand.nextGaussian() * 0.02;
          double var7 = this.rand.nextGaussian() * 0.02;
          double var9 = this.rand.nextGaussian() * 0.02;
-         this.world.addParticle(var1, this.getPosXRandom(1.0), this.getPosYRandom() + 1.0, this.getPosZRandom(1.0), var5, var7, var9);
+         this.world.addParticle(var1, this.getPosXRandom(1.0), this.getPosYRandom() + 1.0, this.getPosZRandom(1.0),
+               var5, var7, var9);
       }
    }
 
@@ -456,7 +465,8 @@ public abstract class PlayerEntity extends LivingEntity {
          this.flyToggleTimer--;
       }
 
-      if (this.world.method6997() == Difficulty.PEACEFUL && this.world.getGameRules().getBoolean(GameRules.field24231)) {
+      if (this.world.method6997() == Difficulty.PEACEFUL
+            && this.world.getGameRules().getBoolean(GameRules.field24231)) {
          if (this.getHealth() < this.method3075() && this.ticksExisted % 20 == 0) {
             this.heal(1.0F);
          }
@@ -471,10 +481,10 @@ public abstract class PlayerEntity extends LivingEntity {
       super.livingTick();
       this.jumpMovementFactor = 0.02F;
       if (this.isSprinting()) {
-         this.jumpMovementFactor = (float)((double)this.jumpMovementFactor + 0.005999999865889549);
+         this.jumpMovementFactor = (float) ((double) this.jumpMovementFactor + 0.005999999865889549);
       }
 
-      this.setAIMoveSpeed((float)this.getAttributeValue(Attributes.MOVEMENT_SPEED));
+      this.setAIMoveSpeed((float) this.getAttributeValue(Attributes.MOVEMENT_SPEED));
       float var3;
       if (this.onGround && !this.getShouldBeDead() && !this.isSwimming()) {
          var3 = Math.min(0.1F, MathHelper.sqrt(horizontalMag(this.getMotion())));
@@ -494,7 +504,7 @@ public abstract class PlayerEntity extends LivingEntity {
          List var5 = this.world.method7181(this, var4);
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
-            Entity var7 = (Entity)var5.get(var6);
+            Entity var7 = (Entity) var5.get(var6);
             if (!var7.removed) {
                this.method2873(var7);
             }
@@ -503,33 +513,33 @@ public abstract class PlayerEntity extends LivingEntity {
 
       this.method2872(this.method2969());
       this.method2872(this.method2971());
-      if (!this.world.isRemote && (this.fallDistance > 0.5F || this.isInWater()) || this.abilities.isFlying || this.isSleeping()) {
+      if (!this.world.isRemote && (this.fallDistance > 0.5F || this.isInWater()) || this.abilities.isFlying
+            || this.isSleeping()) {
          this.method2949();
       }
    }
 
    private void method2872(CompoundNBT var1) {
-      if (var1 != null && (!var1.contains("Silent") || !var1.getBoolean("Silent")) && this.world.rand.nextInt(200) == 0) {
+      if (var1 != null && (!var1.contains("Silent") || !var1.getBoolean("Silent"))
+            && this.world.rand.nextInt(200) == 0) {
          String var4 = var1.getString("id");
          EntityType.method33199(var4)
-            .filter(var0 -> var0 == EntityType.PARROT)
-            .ifPresent(
-               var1x -> {
-                  if (!ParrotEntity.method4409(this.world, this)) {
-                     this.world
-                        .playSound(
-                           (PlayerEntity)null,
-                           this.getPosX(),
-                           this.getPosY(),
-                           this.getPosZ(),
-                           ParrotEntity.method4411(this.world, this.world.rand),
-                           this.getSoundCategory(),
-                           1.0F,
-                           ParrotEntity.method4413(this.world.rand)
-                        );
-                  }
-               }
-            );
+               .filter(var0 -> var0 == EntityType.PARROT)
+               .ifPresent(
+                     var1x -> {
+                        if (!ParrotEntity.method4409(this.world, this)) {
+                           this.world
+                                 .playSound(
+                                       (PlayerEntity) null,
+                                       this.getPosX(),
+                                       this.getPosY(),
+                                       this.getPosZ(),
+                                       ParrotEntity.method4411(this.world, this.world.rand),
+                                       this.getSoundCategory(),
+                                       1.0F,
+                                       ParrotEntity.method4413(this.world.rand));
+                        }
+                     });
       }
    }
 
@@ -562,10 +572,9 @@ public abstract class PlayerEntity extends LivingEntity {
          this.setMotion(0.0, 0.1, 0.0);
       } else {
          this.setMotion(
-            (double)(-MathHelper.cos((this.attackedAtYaw + this.rotationYaw) * (float) (Math.PI / 180.0)) * 0.1F),
-            0.1F,
-            (double)(-MathHelper.sin((this.attackedAtYaw + this.rotationYaw) * (float) (Math.PI / 180.0)) * 0.1F)
-         );
+               (double) (-MathHelper.cos((this.attackedAtYaw + this.rotationYaw) * (float) (Math.PI / 180.0)) * 0.1F),
+               0.1F,
+               (double) (-MathHelper.sin((this.attackedAtYaw + this.rotationYaw) * (float) (Math.PI / 180.0)) * 0.1F));
       }
 
       this.method2911(Stats.field40134);
@@ -614,11 +623,10 @@ public abstract class PlayerEntity extends LivingEntity {
    public boolean drop(boolean var1) {
       return this.method2836(
             this.inventory
-               .decrStackSize(this.inventory.currentItem, var1 && !this.inventory.method4028().isEmpty() ? this.inventory.method4028().getCount() : 1),
+                  .decrStackSize(this.inventory.currentItem,
+                        var1 && !this.inventory.method4028().isEmpty() ? this.inventory.method4028().getCount() : 1),
             false,
-            true
-         )
-         != null;
+            true) != null;
    }
 
    @Nullable
@@ -654,14 +662,13 @@ public abstract class PlayerEntity extends LivingEntity {
             float var14 = this.rand.nextFloat() * (float) (Math.PI * 2);
             float var15 = 0.02F * this.rand.nextFloat();
             var8.setMotion(
-               (double)(-var12 * var11 * 0.3F) + Math.cos((double)var14) * (double)var15,
-               (double)(-var10 * 0.3F + 0.1F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F),
-               (double)(var13 * var11 * 0.3F) + Math.sin((double)var14) * (double)var15
-            );
+                  (double) (-var12 * var11 * 0.3F) + Math.cos((double) var14) * (double) var15,
+                  (double) (-var10 * 0.3F + 0.1F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F),
+                  (double) (var13 * var11 * 0.3F) + Math.sin((double) var14) * (double) var15);
          } else {
             float var16 = this.rand.nextFloat() * 0.5F;
             float var17 = this.rand.nextFloat() * (float) (Math.PI * 2);
-            var8.setMotion((double)(-MathHelper.sin(var17) * var16), 0.2F, (double)(MathHelper.cos(var17) * var16));
+            var8.setMotion((double) (-MathHelper.sin(var17) * var16), 0.2F, (double) (MathHelper.cos(var17) * var16));
          }
 
          return var8;
@@ -676,12 +683,12 @@ public abstract class PlayerEntity extends LivingEntity {
          int var5 = EnchantmentHelper.method26327(this);
          ItemStack var6 = this.getHeldItemMainhand();
          if (var5 > 0 && !var6.isEmpty()) {
-            var4 += (float)(var5 * var5 + 1);
+            var4 += (float) (var5 * var5 + 1);
          }
       }
 
       if (EffectUtils.method22536(this)) {
-         var4 *= 1.0F + (float)(EffectUtils.method22537(this) + 1) * 0.2F;
+         var4 *= 1.0F + (float) (EffectUtils.method22537(this) + 1) * 0.2F;
       }
 
       if (this.isPotionActive(Effects.MINING_FATIGUE)) {
@@ -738,7 +745,7 @@ public abstract class PlayerEntity extends LivingEntity {
       this.method2875(compound.getInt("Score"));
       this.foodStats.method37572(compound);
       this.abilities.read(compound);
-      this.getAttribute(Attributes.MOVEMENT_SPEED).method38661((double)this.abilities.getWalkSpeed());
+      this.getAttribute(Attributes.MOVEMENT_SPEED).method38661((double) this.abilities.getWalkSpeed());
       if (compound.contains("EnderItems", 9)) {
          this.enterChestInventory.method3682(compound.getList("EnderItems", 10));
       }
@@ -758,7 +765,7 @@ public abstract class PlayerEntity extends LivingEntity {
       compound.putInt("DataVersion", SharedConstants.getVersion().getWorldVersion());
       compound.put("Inventory", this.inventory.method4050(new ListNBT()));
       compound.putInt("SelectedItemSlot", this.inventory.currentItem);
-      compound.putShort("SleepTimer", (short)this.sleepTimer);
+      compound.putShort("SleepTimer", (short) this.sleepTimer);
       compound.putFloat("XpP", this.experience);
       compound.putInt("XpLevel", this.experienceLevel);
       compound.putInt("XpTotal", this.experienceTotal);
@@ -942,7 +949,7 @@ public abstract class PlayerEntity extends LivingEntity {
                   var5 = var6;
                }
 
-               ActionResultType var8 = var5.method32125(this, (LivingEntity)var1, var2);
+               ActionResultType var8 = var5.method32125(this, (LivingEntity) var1, var2);
                if (var8.isSuccessOrConsume()) {
                   if (var5.isEmpty() && !this.abilities.isCreativeMode) {
                      this.setHeldItem(var2, ItemStack.EMPTY);
@@ -962,7 +969,7 @@ public abstract class PlayerEntity extends LivingEntity {
          }
       } else {
          if (var1 instanceof Class949) {
-            this.method2766((Class949)var1);
+            this.method2766((Class949) var1);
          }
 
          return ActionResultType.field14820;
@@ -993,13 +1000,15 @@ public abstract class PlayerEntity extends LivingEntity {
    @Override
    public Vector3d maybeBackOffFromEdge(Vector3d var1, MoverType var2) {
       SafeWalkEvent event = new SafeWalkEvent(true);
-      Client.getInstance().getEventManager().call(event);
-      if (event.getSituation() == Situation.PLAYER || !this.abilities.isFlying && (var2 == MoverType.SELF || var2 == MoverType.PLAYER) && this.method2853() && this.method2899()) {
+      Client.getInstance().eventManager.call(event);
+      if (event.getSituation() == Situation.PLAYER || !this.abilities.isFlying
+            && (var2 == MoverType.SELF || var2 == MoverType.PLAYER) && this.method2853() && this.method2899()) {
          double var6 = var1.x;
          double var8 = var1.z;
          double var10 = 0.05;
 
-         while (var6 != 0.0 && this.world.hasNoCollisions(this, this.getBoundingBox().offset(var6, (double)(-this.stepHeight), 0.0))) {
+         while (var6 != 0.0 && this.world.hasNoCollisions(this,
+               this.getBoundingBox().offset(var6, (double) (-this.stepHeight), 0.0))) {
             if (var6 < 0.05 && var6 >= -0.05) {
                var6 = 0.0;
             } else if (!(var6 > 0.0)) {
@@ -1009,7 +1018,8 @@ public abstract class PlayerEntity extends LivingEntity {
             }
          }
 
-         while (var8 != 0.0 && this.world.hasNoCollisions(this, this.getBoundingBox().offset(0.0, (double)(-this.stepHeight), var8))) {
+         while (var8 != 0.0 && this.world.hasNoCollisions(this,
+               this.getBoundingBox().offset(0.0, (double) (-this.stepHeight), var8))) {
             if (var8 < 0.05 && var8 >= -0.05) {
                var8 = 0.0;
             } else if (!(var8 > 0.0)) {
@@ -1019,7 +1029,8 @@ public abstract class PlayerEntity extends LivingEntity {
             }
          }
 
-         while (var6 != 0.0 && var8 != 0.0 && this.world.hasNoCollisions(this, this.getBoundingBox().offset(var6, (double)(-this.stepHeight), var8))) {
+         while (var6 != 0.0 && var8 != 0.0 && this.world.hasNoCollisions(this,
+               this.getBoundingBox().offset(var6, (double) (-this.stepHeight), var8))) {
             if (var6 < 0.05 && var6 >= -0.05) {
                var6 = 0.0;
             } else if (!(var6 > 0.0)) {
@@ -1041,31 +1052,27 @@ public abstract class PlayerEntity extends LivingEntity {
       }
 
       SafeWalkEvent var12 = new SafeWalkEvent(false);
-      Client.getInstance().getEventManager().call(var12);
+      Client.getInstance().eventManager.call(var12);
       return var1;
    }
 
    private boolean method2899() {
       return this.onGround
-         || this.fallDistance < this.stepHeight
-            && !this.world.hasNoCollisions(this, this.getBoundingBox().offset(0.0, (double)(this.fallDistance - this.stepHeight), 0.0));
+            || this.fallDistance < this.stepHeight
+                  && !this.world.hasNoCollisions(this,
+                        this.getBoundingBox().offset(0.0, (double) (this.fallDistance - this.stepHeight), 0.0));
    }
 
-   public void attackTargetEntityWithCurrentItem(Entity targetEntity)
-   {
-      if (targetEntity.canBeAttackedWithItem())
-      {
-         if (!targetEntity.hitByEntity(this))
-         {
-            float f = (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
+   public void attackTargetEntityWithCurrentItem(Entity targetEntity) {
+      if (targetEntity.canBeAttackedWithItem()) {
+         if (!targetEntity.hitByEntity(this)) {
+            float f = (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE);
             float f1;
 
-            if (targetEntity instanceof LivingEntity)
-            {
-               f1 = EnchantmentHelper.getModifierForCreature(this.getHeldItemMainhand(), ((LivingEntity)targetEntity).getCreatureAttribute());
-            }
-            else
-            {
+            if (targetEntity instanceof LivingEntity) {
+               f1 = EnchantmentHelper.getModifierForCreature(this.getHeldItemMainhand(),
+                     ((LivingEntity) targetEntity).getCreatureAttribute());
+            } else {
                f1 = EnchantmentHelper.getModifierForCreature(this.getHeldItemMainhand(), CreatureAttribute.UNDEFINED);
             }
 
@@ -1074,38 +1081,36 @@ public abstract class PlayerEntity extends LivingEntity {
             f1 = f1 * f2;
             this.resetCooldown();
 
-            if (f > 0.0F || f1 > 0.0F)
-            {
+            if (f > 0.0F || f1 > 0.0F) {
                boolean flag = f2 > 0.9F;
                boolean flag1 = false;
                int i = 0;
                i = i + EnchantmentHelper.getKnockbackModifier(this);
 
-               if (this.isSprinting() && flag)
-               {
-                  this.world.playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.ENTITY_PLAYER_ATTACK_KNOCKBACK, this.getSoundCategory(), 1.0F, 1.0F);
+               if (this.isSprinting() && flag) {
+                  this.world.playSound((PlayerEntity) null, this.getPosX(), this.getPosY(), this.getPosZ(),
+                        SoundEvents.ENTITY_PLAYER_ATTACK_KNOCKBACK, this.getSoundCategory(), 1.0F, 1.0F);
                   ++i;
                   flag1 = true;
                }
 
-               boolean flag2 = flag && this.fallDistance > 0.0F && !this.onGround && !this.isOnLadder() && !this.isInWater() && !this.isPotionActive(Effects.BLINDNESS) && !this.isPassenger() && targetEntity instanceof LivingEntity;
+               boolean flag2 = flag && this.fallDistance > 0.0F && !this.onGround && !this.isOnLadder()
+                     && !this.isInWater() && !this.isPotionActive(Effects.BLINDNESS) && !this.isPassenger()
+                     && targetEntity instanceof LivingEntity;
                flag2 = flag2 && !this.isSprinting();
 
-               if (flag2)
-               {
+               if (flag2) {
                   f *= 1.5F;
                }
 
                f = f + f1;
                boolean flag3 = false;
-               double d0 = (double)(this.distanceWalkedModified - this.prevDistanceWalkedModified);
+               double d0 = (double) (this.distanceWalkedModified - this.prevDistanceWalkedModified);
 
-               if (flag && !flag2 && !flag1 && this.onGround && d0 < (double)this.getAIMoveSpeed())
-               {
+               if (flag && !flag2 && !flag1 && this.onGround && d0 < (double) this.getAIMoveSpeed()) {
                   ItemStack itemstack = this.getHeldItem(Hand.MAIN_HAND);
 
-                  if (itemstack.getItem() instanceof SwordItem)
-                  {
+                  if (itemstack.getItem() instanceof SwordItem) {
                      flag3 = true;
                   }
                }
@@ -1114,12 +1119,10 @@ public abstract class PlayerEntity extends LivingEntity {
                boolean flag4 = false;
                int j = EnchantmentHelper.getFireAspectModifier(this);
 
-               if (targetEntity instanceof LivingEntity)
-               {
-                  f4 = ((LivingEntity)targetEntity).getHealth();
+               if (targetEntity instanceof LivingEntity) {
+                  f4 = ((LivingEntity) targetEntity).getHealth();
 
-                  if (j > 0 && !targetEntity.isBurning())
-                  {
+                  if (j > 0 && !targetEntity.isBurning()) {
                      flag4 = true;
                      targetEntity.setFire(1);
                   }
@@ -1128,121 +1131,114 @@ public abstract class PlayerEntity extends LivingEntity {
                Vector3d vector3d = targetEntity.getMotion();
                boolean flag5 = targetEntity.attackEntityFrom(DamageSource.causePlayerDamage(this), f);
 
-               if (flag5)
-               {
-                  if (i > 0)
-                  {
-                     if (targetEntity instanceof LivingEntity)
-                     {
-                        ((LivingEntity)targetEntity).applyKnockback((float)i * 0.5F, (double)MathHelper.sin(this.rotationYaw * ((float)Math.PI / 180F)), (double)(-MathHelper.cos(this.rotationYaw * ((float)Math.PI / 180F))));
-                     }
-                     else
-                     {
-                        targetEntity.addVelocity((double)(-MathHelper.sin(this.rotationYaw * ((float)Math.PI / 180F)) * (float)i * 0.5F), 0.1D, (double)(MathHelper.cos(this.rotationYaw * ((float)Math.PI / 180F)) * (float)i * 0.5F));
+               if (flag5) {
+                  if (i > 0) {
+                     if (targetEntity instanceof LivingEntity) {
+                        ((LivingEntity) targetEntity).applyKnockback((float) i * 0.5F,
+                              (double) MathHelper.sin(this.rotationYaw * ((float) Math.PI / 180F)),
+                              (double) (-MathHelper.cos(this.rotationYaw * ((float) Math.PI / 180F))));
+                     } else {
+                        targetEntity.addVelocity(
+                              (double) (-MathHelper.sin(this.rotationYaw * ((float) Math.PI / 180F)) * (float) i
+                                    * 0.5F),
+                              0.1D, (double) (MathHelper.cos(this.rotationYaw * ((float) Math.PI / 180F)) * (float) i
+                                    * 0.5F));
                      }
 
                      this.setMotion(this.getMotion().mul(0.6D, 1.0D, 0.6D));
                      this.setSprinting(false);
                   }
 
-                  if (flag3)
-                  {
+                  if (flag3) {
                      float f3 = 1.0F + EnchantmentHelper.getSweepingDamageRatio(this) * f;
 
-                     for (LivingEntity livingentity : this.world.getEntitiesWithinAABB(LivingEntity.class, targetEntity.getBoundingBox().grow(1.0D, 0.25D, 1.0D)))
-                     {
-                        if (livingentity != this && livingentity != targetEntity && !this.isOnSameTeam(livingentity) && (!(livingentity instanceof ArmorStandEntity) || !((ArmorStandEntity)livingentity).hasMarker()) && this.getDistanceSq(livingentity) < 9.0D)
-                        {
-                           livingentity.applyKnockback(0.4F, (double)MathHelper.sin(this.rotationYaw * ((float)Math.PI / 180F)), (double)(-MathHelper.cos(this.rotationYaw * ((float)Math.PI / 180F))));
+                     for (LivingEntity livingentity : this.world.getEntitiesWithinAABB(LivingEntity.class,
+                           targetEntity.getBoundingBox().grow(1.0D, 0.25D, 1.0D))) {
+                        if (livingentity != this && livingentity != targetEntity && !this.isOnSameTeam(livingentity)
+                              && (!(livingentity instanceof ArmorStandEntity)
+                                    || !((ArmorStandEntity) livingentity).hasMarker())
+                              && this.getDistanceSq(livingentity) < 9.0D) {
+                           livingentity.applyKnockback(0.4F,
+                                 (double) MathHelper.sin(this.rotationYaw * ((float) Math.PI / 180F)),
+                                 (double) (-MathHelper.cos(this.rotationYaw * ((float) Math.PI / 180F))));
                            livingentity.attackEntityFrom(DamageSource.causePlayerDamage(this), f3);
                         }
                      }
 
-                     this.world.playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, this.getSoundCategory(), 1.0F, 1.0F);
+                     this.world.playSound((PlayerEntity) null, this.getPosX(), this.getPosY(), this.getPosZ(),
+                           SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, this.getSoundCategory(), 1.0F, 1.0F);
                      this.spawnSweepParticles();
                   }
 
-                  if (targetEntity instanceof ServerPlayerEntity && targetEntity.velocityChanged)
-                  {
-                     ((ServerPlayerEntity)targetEntity).connection.sendPacket(new SEntityVelocityPacket(targetEntity));
+                  if (targetEntity instanceof ServerPlayerEntity && targetEntity.velocityChanged) {
+                     ((ServerPlayerEntity) targetEntity).connection.sendPacket(new SEntityVelocityPacket(targetEntity));
                      targetEntity.velocityChanged = false;
                      targetEntity.setMotion(vector3d);
                   }
 
-                  if (flag2)
-                  {
-                     this.world.playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.ENTITY_PLAYER_ATTACK_CRIT, this.getSoundCategory(), 1.0F, 1.0F);
+                  if (flag2) {
+                     this.world.playSound((PlayerEntity) null, this.getPosX(), this.getPosY(), this.getPosZ(),
+                           SoundEvents.ENTITY_PLAYER_ATTACK_CRIT, this.getSoundCategory(), 1.0F, 1.0F);
                      this.onCriticalHit(targetEntity);
                   }
 
-                  if (!flag2 && !flag3)
-                  {
-                     if (flag)
-                     {
-                        this.world.playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.ENTITY_PLAYER_ATTACK_STRONG, this.getSoundCategory(), 1.0F, 1.0F);
-                     }
-                     else
-                     {
-                        this.world.playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.ENTITY_PLAYER_ATTACK_WEAK, this.getSoundCategory(), 1.0F, 1.0F);
+                  if (!flag2 && !flag3) {
+                     if (flag) {
+                        this.world.playSound((PlayerEntity) null, this.getPosX(), this.getPosY(), this.getPosZ(),
+                              SoundEvents.ENTITY_PLAYER_ATTACK_STRONG, this.getSoundCategory(), 1.0F, 1.0F);
+                     } else {
+                        this.world.playSound((PlayerEntity) null, this.getPosX(), this.getPosY(), this.getPosZ(),
+                              SoundEvents.ENTITY_PLAYER_ATTACK_WEAK, this.getSoundCategory(), 1.0F, 1.0F);
                      }
                   }
 
-                  if (f1 > 0.0F)
-                  {
+                  if (f1 > 0.0F) {
                      this.onEnchantmentCritical(targetEntity);
                   }
 
                   this.setLastAttackedEntity(targetEntity);
 
-                  if (targetEntity instanceof LivingEntity)
-                  {
-                     EnchantmentHelper.applyThornEnchantments((LivingEntity)targetEntity, this);
+                  if (targetEntity instanceof LivingEntity) {
+                     EnchantmentHelper.applyThornEnchantments((LivingEntity) targetEntity, this);
                   }
 
                   EnchantmentHelper.applyArthropodEnchantments(this, targetEntity);
                   ItemStack itemstack1 = this.getHeldItemMainhand();
                   Entity entity = targetEntity;
 
-                  if (targetEntity instanceof EnderDragonPartEntity)
-                  {
-                     entity = ((EnderDragonPartEntity)targetEntity).dragon;
+                  if (targetEntity instanceof EnderDragonPartEntity) {
+                     entity = ((EnderDragonPartEntity) targetEntity).dragon;
                   }
 
-                  if (!this.world.isRemote && !itemstack1.isEmpty() && entity instanceof LivingEntity)
-                  {
-                     itemstack1.hitEntity((LivingEntity)entity, this);
+                  if (!this.world.isRemote && !itemstack1.isEmpty() && entity instanceof LivingEntity) {
+                     itemstack1.hitEntity((LivingEntity) entity, this);
 
-                     if (itemstack1.isEmpty())
-                     {
+                     if (itemstack1.isEmpty()) {
                         this.setHeldItem(Hand.MAIN_HAND, ItemStack.EMPTY);
                      }
                   }
 
-                  if (targetEntity instanceof LivingEntity)
-                  {
-                     float f5 = f4 - ((LivingEntity)targetEntity).getHealth();
+                  if (targetEntity instanceof LivingEntity) {
+                     float f5 = f4 - ((LivingEntity) targetEntity).getHealth();
                      this.addStat(Stats.DAMAGE_DEALT, Math.round(f5 * 10.0F));
 
-                     if (j > 0)
-                     {
+                     if (j > 0) {
                         targetEntity.setFire(j * 4);
                      }
 
-                     if (this.world instanceof ServerWorld && f5 > 2.0F)
-                     {
-                        int k = (int)((double)f5 * 0.5D);
-                        ((ServerWorld)this.world).spawnParticle(ParticleTypes.DAMAGE_INDICATOR, targetEntity.getPosX(), targetEntity.getPosYHeight(0.5D), targetEntity.getPosZ(), k, 0.1D, 0.0D, 0.1D, 0.2D);
+                     if (this.world instanceof ServerWorld && f5 > 2.0F) {
+                        int k = (int) ((double) f5 * 0.5D);
+                        ((ServerWorld) this.world).spawnParticle(ParticleTypes.DAMAGE_INDICATOR, targetEntity.getPosX(),
+                              targetEntity.getPosYHeight(0.5D), targetEntity.getPosZ(), k, 0.1D, 0.0D, 0.1D, 0.2D);
                      }
                   }
 
                   this.addExhaustion(0.1F);
-               }
-               else
-               {
-                  this.world.playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.ENTITY_PLAYER_ATTACK_NODAMAGE, this.getSoundCategory(), 1.0F, 1.0F);
+               } else {
+                  this.world.playSound((PlayerEntity) null, this.getPosX(), this.getPosY(), this.getPosZ(),
+                        SoundEvents.ENTITY_PLAYER_ATTACK_NODAMAGE, this.getSoundCategory(), 1.0F, 1.0F);
 
-                  if (flag4)
-                  {
+                  if (flag4) {
                      targetEntity.extinguish();
                   }
                }
@@ -1265,7 +1261,7 @@ public abstract class PlayerEntity extends LivingEntity {
       if (this.rand.nextFloat() < var4) {
          this.method2976().method19638(Items.field38119, 100);
          this.resetActiveHand();
-         this.world.setEntityState(this, (byte)30);
+         this.world.setEntityState(this, (byte) 30);
       }
    }
 
@@ -1276,11 +1272,12 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public void spawnSweepParticles() {
-      double var3 = (double)(-MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)));
+      double var3 = (double) (-MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)));
       double var5 = (double) MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0));
       if (this.world instanceof ServerWorld) {
-         ((ServerWorld)this.world)
-            .spawnParticle(ParticleTypes.field34096, this.getPosX() + var3, this.getPosYHeight(0.5), this.getPosZ() + var5, 0, var3, 0.0, var5, 0.0);
+         ((ServerWorld) this.world)
+               .spawnParticle(ParticleTypes.field34096, this.getPosX() + var3, this.getPosYHeight(0.5),
+                     this.getPosZ() + var5, 0, var3, 0.0, var5, 0.0);
       }
    }
 
@@ -1313,7 +1310,7 @@ public abstract class PlayerEntity extends LivingEntity {
    public void stopSleepInBed(boolean var1, boolean var2) {
       super.wakeUp();
       if (this.world instanceof ServerWorld && var2) {
-         ((ServerWorld)this.world).method6902();
+         ((ServerWorld) this.world).method6902();
       }
 
       this.sleepTimer = !var1 ? 100 : 0;
@@ -1324,13 +1321,15 @@ public abstract class PlayerEntity extends LivingEntity {
       this.stopSleepInBed(true, true);
    }
 
-   public static Optional<Vector3d> method2908(ServerWorld var0, BlockPos var1, float var2, boolean var3, boolean var4) {
+   public static Optional<Vector3d> method2908(ServerWorld var0, BlockPos var1, float var2, boolean var3,
+         boolean var4) {
       BlockState var7 = var0.getBlockState(var1);
       Block var8 = var7.getBlock();
       if (var8 instanceof Class3389 && var7.<Integer>get(Class3389.field19000) > 0 && Class3389.method11988(var0)) {
          Optional var11 = Class3389.method11991(EntityType.PLAYER, var0, var1);
          if (!var4 && var11.isPresent()) {
-            var0.setBlockState(var1, var7.with(Class3389.field19000, Integer.valueOf(var7.<Integer>get(Class3389.field19000) - 1)), 3);
+            var0.setBlockState(var1,
+                  var7.with(Class3389.field19000, Integer.valueOf(var7.<Integer>get(Class3389.field19000) - 1)), 3);
          }
 
          return var11;
@@ -1342,8 +1341,9 @@ public abstract class PlayerEntity extends LivingEntity {
          boolean var9 = var8.method11564();
          boolean var10 = var0.getBlockState(var1.up()).getBlock().method11564();
          return var9 && var10
-            ? Optional.<Vector3d>of(new Vector3d((double)var1.getX() + 0.5, (double)var1.getY() + 0.1, (double)var1.getZ() + 0.5))
-            : Optional.<Vector3d>empty();
+               ? Optional.<Vector3d>of(
+                     new Vector3d((double) var1.getX() + 0.5, (double) var1.getY() + 0.1, (double) var1.getZ() + 0.5))
+               : Optional.<Vector3d>empty();
       }
    }
 
@@ -1407,8 +1407,9 @@ public abstract class PlayerEntity extends LivingEntity {
          double var10 = this.getLookVec().y;
          double var12 = !(var10 < -0.2) ? 0.06 : 0.085;
          if (var10 <= 0.0
-            || this.isJumping
-            || !this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() + 1.0 - 0.1, this.getPosZ())).getFluidState().isEmpty()) {
+               || this.isJumping
+               || !this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() + 1.0 - 0.1, this.getPosZ()))
+                     .getFluidState().isEmpty()) {
             Vector3d var14 = this.getMotion();
             this.setMotion(var14.add(0.0, (var10 - var14.y) * var12, 0.0));
          }
@@ -1417,7 +1418,7 @@ public abstract class PlayerEntity extends LivingEntity {
       if (this.abilities.isFlying && !this.isPassenger()) {
          double var17 = this.getMotion().y;
          float var15 = this.jumpMovementFactor;
-         this.jumpMovementFactor = this.abilities.getFlySpeed() * (float)(!this.isSprinting() ? 1 : 2);
+         this.jumpMovementFactor = this.abilities.getFlySpeed() * (float) (!this.isSprinting() ? 1 : 2);
          super.travel(var1);
          Vector3d var16 = this.getMotion();
          this.setMotion(var16.x, var17 * 0.6, var16.z);
@@ -1446,7 +1447,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public float getAIMoveSpeed() {
-      return (float)this.getAttributeValue(Attributes.MOVEMENT_SPEED);
+      return (float) this.getAttributeValue(Attributes.MOVEMENT_SPEED);
    }
 
    public void method2919(double var1, double var3, double var5) {
@@ -1471,39 +1472,39 @@ public abstract class PlayerEntity extends LivingEntity {
                            if (!this.isSprinting()) {
                               if (!this.isCrouching()) {
                                  this.addStat(Stats.field40110, var11);
-                                 this.addExhaustion(0.0F * (float)var11 * 0.01F);
+                                 this.addExhaustion(0.0F * (float) var11 * 0.01F);
                               } else {
                                  this.addStat(Stats.field40111, var11);
-                                 this.addExhaustion(0.0F * (float)var11 * 0.01F);
+                                 this.addExhaustion(0.0F * (float) var11 * 0.01F);
                               }
                            } else {
                               this.addStat(Stats.field40112, var11);
-                              this.addExhaustion(0.1F * (float)var11 * 0.01F);
+                              this.addExhaustion(0.1F * (float) var11 * 0.01F);
                            }
                         }
                      }
                   } else if (var3 > 0.0) {
-                     this.addStat(Stats.field40115, (int)Math.round(var3 * 100.0));
+                     this.addStat(Stats.field40115, (int) Math.round(var3 * 100.0));
                   }
                } else {
                   int var12 = Math.round(MathHelper.sqrt(var1 * var1 + var5 * var5) * 100.0F);
                   if (var12 > 0) {
                      this.addStat(Stats.field40113, var12);
-                     this.addExhaustion(0.01F * (float)var12 * 0.01F);
+                     this.addExhaustion(0.01F * (float) var12 * 0.01F);
                   }
                }
             } else {
                int var13 = Math.round(MathHelper.sqrt(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
                if (var13 > 0) {
                   this.addStat(Stats.field40117, var13);
-                  this.addExhaustion(0.01F * (float)var13 * 0.01F);
+                  this.addExhaustion(0.01F * (float) var13 * 0.01F);
                }
             }
          } else {
             int var14 = Math.round(MathHelper.sqrt(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
             if (var14 > 0) {
                this.addStat(Stats.field40123, var14);
-               this.addExhaustion(0.01F * (float)var14 * 0.01F);
+               this.addExhaustion(0.01F * (float) var14 * 0.01F);
             }
          }
       }
@@ -1541,7 +1542,7 @@ public abstract class PlayerEntity extends LivingEntity {
    public boolean onLivingFall(float var1, float var2) {
       if (!this.abilities.allowFlying) {
          if (var1 >= 2.0F) {
-            this.addStat(Stats.field40114, (int)Math.round((double)var1 * 100.0));
+            this.addStat(Stats.field40114, (int) Math.round((double) var1 * 100.0));
          }
 
          return super.onLivingFall(var1, var2);
@@ -1597,24 +1598,24 @@ public abstract class PlayerEntity extends LivingEntity {
 
    public void method2781(int var1) {
       this.method2876(var1);
-      this.experience = this.experience + (float)var1 / (float)this.method2930();
+      this.experience = this.experience + (float) var1 / (float) this.method2930();
       this.experienceTotal = MathHelper.clamp(this.experienceTotal + var1, 0, Integer.MAX_VALUE);
 
       while (this.experience < 0.0F) {
-         float var4 = this.experience * (float)this.method2930();
+         float var4 = this.experience * (float) this.method2930();
          if (this.experienceLevel <= 0) {
             this.method2727(-1);
             this.experience = 0.0F;
          } else {
             this.method2727(-1);
-            this.experience = 1.0F + var4 / (float)this.method2930();
+            this.experience = 1.0F + var4 / (float) this.method2930();
          }
       }
 
       while (this.experience >= 1.0F) {
-         this.experience = (this.experience - 1.0F) * (float)this.method2930();
+         this.experience = (this.experience - 1.0F) * (float) this.method2930();
          this.method2727(1);
-         this.experience = this.experience / (float)this.method2930();
+         this.experience = this.experience / (float) this.method2930();
       }
    }
 
@@ -1641,10 +1642,11 @@ public abstract class PlayerEntity extends LivingEntity {
          this.experienceTotal = 0;
       }
 
-      if (var1 > 0 && this.experienceLevel % 5 == 0 && (float)this.lastXPSound < (float)this.ticksExisted - 100.0F) {
-         float var4 = this.experienceLevel <= 30 ? (float)this.experienceLevel / 30.0F : 1.0F;
+      if (var1 > 0 && this.experienceLevel % 5 == 0 && (float) this.lastXPSound < (float) this.ticksExisted - 100.0F) {
+         float var4 = this.experienceLevel <= 30 ? (float) this.experienceLevel / 30.0F : 1.0F;
          this.world
-            .playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26965, this.getSoundCategory(), var4 * 0.75F, 1.0F);
+               .playSound((PlayerEntity) null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26965,
+                     this.getSoundCategory(), var4 * 0.75F, 1.0F);
          this.lastXPSound = this.ticksExisted;
       }
    }
@@ -1733,7 +1735,8 @@ public abstract class PlayerEntity extends LivingEntity {
    public ItemStack getItemStackFromSlot(EquipmentSlotType var1) {
       if (var1 != EquipmentSlotType.MAINHAND) {
          if (var1 != EquipmentSlotType.OFFHAND) {
-            return var1.getSlotType() != EquipmentSlotType.Group.ARMOR ? ItemStack.EMPTY : this.inventory.field5440.get(var1.getIndex());
+            return var1.getSlotType() != EquipmentSlotType.Group.ARMOR ? ItemStack.EMPTY
+                  : this.inventory.field5440.get(var1.getIndex());
          } else {
             return this.inventory.field5441.get(0);
          }
@@ -1767,7 +1770,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public Iterable<ItemStack> getHeldEquipment() {
-      return Lists.newArrayList(new ItemStack[]{this.getHeldItemMainhand(), this.getHeldItemOffhand()});
+      return Lists.newArrayList(new ItemStack[] { this.getHeldItemMainhand(), this.getHeldItemOffhand() });
    }
 
    @Override
@@ -1804,11 +1807,11 @@ public abstract class PlayerEntity extends LivingEntity {
       if (!this.world.isRemote && !var1.isEmpty()) {
          EntityType.method33217(var1, this.world).ifPresent(var1x -> {
             if (var1x instanceof TameableEntity) {
-               ((TameableEntity)var1x).method4398(this.entityUniqueID);
+               ((TameableEntity) var1x).method4398(this.entityUniqueID);
             }
 
             var1x.setPosition(this.getPosX(), this.getPosY() + 0.7F, this.getPosZ());
-            ((ServerWorld)this.world).method6917(var1x);
+            ((ServerWorld) this.world).method6917(var1x);
          });
       }
    }
@@ -1841,10 +1844,9 @@ public abstract class PlayerEntity extends LivingEntity {
    private IFormattableTextComponent method2955(IFormattableTextComponent var1) {
       String var4 = this.getGameProfile().getName();
       return var1.modifyStyle(
-         var2 -> var2.setClickEvent(new ClickEvent(ClickEvent$Action.SUGGEST_COMMAND, "/tell " + var4 + " "))
-               .setHoverEvent(this.method3388())
-               .setInsertion(var4)
-      );
+            var2 -> var2.setClickEvent(new ClickEvent(ClickEvent$Action.SUGGEST_COMMAND, "/tell " + var4 + " "))
+                  .setHoverEvent(this.method3388())
+                  .setInsertion(var4));
    }
 
    @Override
@@ -1974,7 +1976,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public void method2968(HandSide var1) {
-      this.dataManager.set(field4898, (byte)(var1 != HandSide.LEFT ? 1 : 0));
+      this.dataManager.set(field4898, (byte) (var1 != HandSide.LEFT ? 1 : 0));
    }
 
    public CompoundNBT method2969() {
@@ -1994,11 +1996,11 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public float method2973() {
-      return (float)(1.0 / this.getAttributeValue(Attributes.ATTACK_SPEED) * 20.0);
+      return (float) (1.0 / this.getAttributeValue(Attributes.ATTACK_SPEED) * 20.0);
    }
 
    public float getCooledAttackStrength(float var1) {
-      return MathHelper.clamp(((float)this.ticksSinceLastSwing + var1) / this.method2973(), 0.0F, 1.0F);
+      return MathHelper.clamp(((float) this.ticksSinceLastSwing + var1) / this.method2973(), 0.0F, 1.0F);
    }
 
    public void resetCooldown() {
@@ -2015,7 +2017,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public float method2978() {
-      return (float)this.getAttributeValue(Attributes.LUCK);
+      return (float) this.getAttributeValue(Attributes.LUCK);
    }
 
    public boolean canUseCommandBlock() {
@@ -2043,12 +2045,12 @@ public abstract class PlayerEntity extends LivingEntity {
       if (!(var1.getItem() instanceof Class3262)) {
          return ItemStack.EMPTY;
       } else {
-         Predicate var4 = ((Class3262)var1.getItem()).method11751();
+         Predicate var4 = ((Class3262) var1.getItem()).method11751();
          ItemStack var5 = Class3262.method11774(this, var4);
          if (!var5.isEmpty()) {
             return var5;
          } else {
-            var4 = ((Class3262)var1.getItem()).method11752();
+            var4 = ((Class3262) var1.getItem()).method11752();
 
             for (int var6 = 0; var6 < this.inventory.getSizeInventory(); var6++) {
                ItemStack var7 = this.inventory.getStackInSlot(var6);
@@ -2067,17 +2069,16 @@ public abstract class PlayerEntity extends LivingEntity {
       this.getFoodStats().method37570(var2.getItem(), var2);
       this.addStat(Stats.field40098.method172(var2.getItem()));
       var1.playSound(
-         (PlayerEntity)null,
-         this.getPosX(),
-         this.getPosY(),
-         this.getPosZ(),
-         SoundEvents.field26959,
-         SoundCategory.field14735,
-         0.5F,
-         var1.rand.nextFloat() * 0.1F + 0.9F
-      );
+            (PlayerEntity) null,
+            this.getPosX(),
+            this.getPosY(),
+            this.getPosZ(),
+            SoundEvents.field26959,
+            SoundCategory.field14735,
+            0.5F,
+            var1.rand.nextFloat() * 0.1F + 0.9F);
       if (this instanceof ServerPlayerEntity) {
-         CriteriaTriggers.field44490.method15174((ServerPlayerEntity)this, var2);
+         CriteriaTriggers.field44490.method15174((ServerPlayerEntity) this, var2);
       }
 
       return super.onFoodEaten(var1, var2);
@@ -2102,12 +2103,13 @@ public abstract class PlayerEntity extends LivingEntity {
          if (var21 > 0.0 && var12 > 0.0) {
             double var17 = (var9.x * var8.x + var9.z * var8.z) / Math.sqrt(var21 * var12);
             double var19 = var9.x * var8.z - var9.z * var8.x;
-            var14 = (float)(Math.signum(var19) * Math.acos(var17));
+            var14 = (float) (Math.signum(var19) * Math.acos(var17));
          } else {
             var14 = 0.0F;
          }
 
-         return this.method3288(var1).add(new Vector3d(var4, -0.11, 0.85).method11352(-var14).method11350(-var6).method11351(-var7));
+         return this.method3288(var1)
+               .add(new Vector3d(var4, -0.11, 0.85).method11352(-var14).method11350(-var6).method11351(-var7));
       } else if (!this.isActualySwimming()) {
          double var15 = this.getBoundingBox().getYSize() - 1.0;
          double var10 = !this.isCrouching() ? 0.07 : -0.2;

@@ -37,7 +37,7 @@ public class AltManagerScreen extends Screen {
     private int field21016 = 30;
     private Class4298 field21017;
     private Class4296 field21018;
-    public AccountManager accountManager = Client.getInstance().getAccountManager();
+    public AccountManager accountManager = Client.getInstance().accountManager;
     private Texture field21020;
     private float field21021;
     private UIButton field21022;
@@ -228,7 +228,7 @@ public class AltManagerScreen extends Screen {
                 var5.method13166(true);
             }
         });
-        if (Client.getInstance().getAccountManager().method36779(var1)) {
+        if (Client.getInstance().accountManager.method36779(var1)) {
             this.field21017.method13181(var5.selectedAccount);
             this.field21018.method13178(var5.selectedAccount);
             var5.method13167(true, true);
@@ -240,11 +240,11 @@ public class AltManagerScreen extends Screen {
         new Thread(() -> {
             if (!this.accountManager.login(var1.selectedAccount)) {
                 var1.method13173(114);
-                Client.getInstance().getSoundManager().play("error");
+                Client.getInstance().soundManager.play("error");
             } else {
                 this.method13368();
                 var1.method13172(true);
-                Client.getInstance().getSoundManager().play("connect");
+                Client.getInstance().soundManager.play("connect");
                 this.method13372(false);
             }
 

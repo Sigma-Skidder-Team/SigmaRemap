@@ -105,11 +105,12 @@ public class VClip extends Module {
         } else {
             mc.getConnection()
                     .sendPacket(
-                            new CPlayerPacket.PositionPacket(mc.player.getPosX(), mc.player.getPosY() + (double) var1, mc.player.getPosZ(), false)
-                    );
+                            new CPlayerPacket.PositionPacket(mc.player.getPosX(), mc.player.getPosY() + (double) var1,
+                                    mc.player.getPosZ(), false));
             mc.player
                     .setPosition(mc.player.getPosX(), mc.player.getPosY() + (double) var1, mc.player.getPosZ());
-            Client.getInstance().getNotificationManager().send(new Notification("Successfuly VCliped", var1 + " Blocks", 2000, ResourceList.directionIconPNG));
+            Client.getInstance().notificationManager.send(
+                    new Notification("Successfuly VCliped", var1 + " Blocks", 2000, ResourceList.directionIconPNG));
         }
     }
 }

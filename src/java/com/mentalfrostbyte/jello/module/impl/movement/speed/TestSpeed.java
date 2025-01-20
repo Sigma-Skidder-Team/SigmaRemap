@@ -33,7 +33,7 @@ public class TestSpeed extends Module {
 
     @EventTarget
     public void method16796(EventUpdate var1) {
-        if (this.isEnabled() && mc.player != null && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+        if (this.isEnabled() && mc.player != null && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
             if (mc.player.onGround && var1.isPre()) {
                 var1.setY(var1.getY() + 1.0E-14);
             }
@@ -78,8 +78,8 @@ public class TestSpeed extends Module {
     @EventTarget
     @LowerPriority
     public void method16798(JumpEvent var1) {
-        if (this.isEnabled() && !Jesus.isWalkingOnLiquid() && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-            if (!mc.gameSettings.keyBindJump.isKeyDown() || !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()) {
+        if (this.isEnabled() && !Jesus.isWalkingOnLiquid() && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
+            if (!mc.gameSettings.keyBindJump.isKeyDown() || !Client.getInstance().moduleManager.getModuleByClass(BlockFly.class).isEnabled()) {
                 this.field23916 = MovementUtils.method37083()[0];
                 this.field23918 = 0;
                 var1.method14003(var1.getVector().length() * 1.05F);

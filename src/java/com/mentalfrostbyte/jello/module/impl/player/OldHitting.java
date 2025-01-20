@@ -47,7 +47,7 @@ public class OldHitting extends Module {
         if (this.isEnabled() || mc.gameSettings.keyBindUseItem.isKeyDown()) {
             if (var1.isPre()) {
                 boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
-                boolean auraEnabled = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled();
+                boolean auraEnabled = Client.getInstance().moduleManager.getModuleByClass(KillAura.class).isEnabled();
                 boolean var6 = true;
                 if (!mc.player.isSneaking()
                         && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK
@@ -87,7 +87,7 @@ public class OldHitting extends Module {
                 }
 
                 //MY DUMB "FIX" - MARK
-                boolean isAutoBlockNone = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).getStringSettingValueByName("Autoblock Mode").equals("None");
+                boolean isAutoBlockNone = Client.getInstance().moduleManager.getModuleByClass(KillAura.class).getStringSettingValueByName("Autoblock Mode").equals("None");
                 field23408 = mc.gameSettings.keyBindUseItem.isKeyDown() && var4 && var6 && var6 || (auraEnabled && KillAura.target != null && !isAutoBlockNone);
                 /*
                 if (!field23408) {

@@ -19,7 +19,7 @@ public class CombatManager {
     public List<Entity> bots = new CopyOnWriteArrayList<Entity>();
 
     public void init() {
-        Client.getInstance().getEventManager().register(this);
+        Client.getInstance().eventManager.register(this);
     }
 
     public boolean isTargetABot(Entity var1) {

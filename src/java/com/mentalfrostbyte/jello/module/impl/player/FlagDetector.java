@@ -10,12 +10,13 @@ import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class FlagDetector extends Module {
     public FlagDetector() {
-        super(ModuleCategory.PLAYER,"FlagDetector", "Detects flags");
+        super(ModuleCategory.PLAYER, "FlagDetector", "Detects flags");
     }
+
     @EventTarget
     public void RecievePacketEvent(ReceivePacketEvent event) {
         if (event.getPacket() instanceof SPlayerPositionLookPacket && mc.player != null) {
-                Client.getInstance().getNotificationManager().send(new Notification("FlagDetector", "Detected Flag"));
-            }
+            Client.getInstance().notificationManager.send(new Notification("FlagDetector", "Detected Flag"));
         }
     }
+}

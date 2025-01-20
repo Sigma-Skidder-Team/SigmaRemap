@@ -46,7 +46,7 @@ public class TargetStrafe extends Module {
     public void method16151(EventMove var1) {
         if (this.isEnabled()) {
             Entity var4 = null;
-            if (Client.getInstance().getModuleManager().getModuleByClass(Speed.class).isEnabled2() || !this.getBooleanValueFromSettingName("Only speed")) {
+            if (Client.getInstance().moduleManager.getModuleByClass(Speed.class).isEnabled2() || !this.getBooleanValueFromSettingName("Only speed")) {
                 if (KillAura.timedEntityIdk != null) {
                     var4 = KillAura.timedEntityIdk.getEntity();
                 } else if (KillAura.target != null) {
@@ -116,7 +116,7 @@ public class TargetStrafe extends Module {
         );
         String var27 = this.getStringSettingValueByName("AntiVoid");
         if (!var27.equals("None")) {
-            if (!this.field23496 && this.method16153(var26) && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+            if (!this.field23496 && this.method16153(var26) && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
                 this.field23495 *= -1;
                 this.field23496 = true;
             } else if (this.field23496 && !this.method16153(var26)) {
@@ -133,7 +133,7 @@ public class TargetStrafe extends Module {
                             mc.player.getPositionVec().y + var6.getY(),
                             mc.player.getPositionVec().z + var6.getZ()
                     );
-                    if (this.method16153(var26) && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+                    if (this.method16153(var26) && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
                         MovementUtils.setSpeed(var6, 0.0);
                     }
                 }

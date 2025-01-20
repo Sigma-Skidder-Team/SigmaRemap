@@ -164,7 +164,7 @@ public class KillAura extends Module {
     @EventTarget
     public void onWorldChange(WorldLoadEvent event) {
         if (this.isEnabled() && this.getBooleanValueFromSettingName("Disable on death")) {
-            Client.getInstance().getNotificationManager().send(new Notification("Aura", "Aura disabled due to respawn"));
+            Client.getInstance().notificationManager.send(new Notification("Aura", "Aura disabled due to respawn"));
             this.toggle();
         }
     }
@@ -179,7 +179,7 @@ public class KillAura extends Module {
             if (this.getBooleanValueFromSettingName("Disable on death")) {
                 if (!mc.player.isAlive()) {
                     this.toggle();
-                    Client.getInstance().getNotificationManager().send(new Notification("Aura", "Aura disabled due to death"));
+                    Client.getInstance().notificationManager.send(new Notification("Aura", "Aura disabled due to death"));
                 }
             }
         }
@@ -233,7 +233,7 @@ public class KillAura extends Module {
                 if (entities != null && !entities.isEmpty()) {
                     this.field23939++;
                     float var4 = this.getNumberValueBySettingName("Hit box expand");
-                    ModuleWithModuleSettings var5 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Criticals.class);
+                    ModuleWithModuleSettings var5 = (ModuleWithModuleSettings) Client.getInstance().moduleManager.getModuleByClass(Criticals.class);
                     if (var5.isEnabled() && var5.getStringSettingValueByName("Type").equalsIgnoreCase("Minis")) {
                         this.method16828(event, var5.method16726().getStringSettingValueByName("Mode"), var5.method16726().getBooleanValueFromSettingName("Avoid Fall Damage"));
                     }
@@ -478,9 +478,9 @@ public class KillAura extends Module {
         } else {
             this.field23941++;
             if ((
-                    !Client.getInstance().getModuleManager().getModuleByClass(Speed.class).isEnabled()
-                            || Client.getInstance().getModuleManager().getModuleByClass(Speed.class).getStringSettingValueByName("Type").equalsIgnoreCase("Cubecraft")
-                            || Client.getInstance().getModuleManager().getModuleByClass(Speed.class).getStringSettingValueByName("Type").equalsIgnoreCase("Vanilla")
+                    !Client.getInstance().moduleManager.getModuleByClass(Speed.class).isEnabled()
+                            || Client.getInstance().moduleManager.getModuleByClass(Speed.class).getStringSettingValueByName("Type").equalsIgnoreCase("Cubecraft")
+                            || Client.getInstance().moduleManager.getModuleByClass(Speed.class).getStringSettingValueByName("Type").equalsIgnoreCase("Vanilla")
             )
                     && mc.player.collidedVertically
                     && var9
@@ -577,7 +577,7 @@ public class KillAura extends Module {
                 )
                         && !entities.isEmpty()) {
                     if (this.field23942 + 1 < entities.size()) {
-                        if (timedEntityIdk != null && !Client.getInstance().getFriendManager().isFriend(entities.get(this.field23942).getEntity())) {
+                        if (timedEntityIdk != null && !Client.getInstance().friendManager.isFriend(entities.get(this.field23942).getEntity())) {
                             this.field23942++;
                         }
                     } else {

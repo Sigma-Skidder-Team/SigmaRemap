@@ -16,7 +16,7 @@ public class NetworkManager {
     }
 
     public void init() {
-        Client.getInstance().getEventManager().register(this);
+        Client.getInstance().eventManager.register(this);
         this.field38429 = new CombatTracker();
     }
 
@@ -43,7 +43,7 @@ public class NetworkManager {
         if (this.field38418 != null && this.field38418.method36703()) {
             return this.field38418;
         } else {
-            this.field38418 = new Class9507("001"/*, false*/);
+            this.field38418 = new Class9507("001"/* , false */);
             return this.field38418;
         }
     }

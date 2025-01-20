@@ -80,7 +80,7 @@ public class Class4358 extends Class4247 {
 
       var11 += 50;
 
-      for (Module var19 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+      for (Module var19 : Client.getInstance().moduleManager.getModuleMap().values()) {
          ColorHelper var20 = new ColorHelper(16777215, -986896).method19410(ClientColors.DEEP_TEAL.getColor).method19412(Class2218.field14488);
          ButtonPanel var21;
          this.field21308
@@ -91,7 +91,7 @@ public class Class4358 extends Class4247 {
             );
          var21.method13034(10);
          var21.doThis((var2x, var3x) -> {
-            for (Module var7 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+            for (Module var7 : Client.getInstance().moduleManager.getModuleMap().values()) {
                if (var7.getName().equals(var21.getTypedText()) && !this.field21311) {
                   this.field21309 = new Class6984(var7);
                   this.field21311 = true;

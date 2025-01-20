@@ -38,8 +38,10 @@ public class Class1265 extends AbstractGui {
 
    public ITextComponent method5917(NetworkPlayerInfo var1) {
       return var1.method19979() == null
-         ? this.method5918(var1, ScorePlayerTeam.method28577(var1.method19976(), new StringTextComponent(var1.method19966().getName())))
-         : this.method5918(var1, var1.method19979().deepCopy());
+            ? this.method5918(var1,
+                  ScorePlayerTeam.method28577(var1.method19976(),
+                        new StringTextComponent(var1.method19966().getName())))
+            : this.method5918(var1, var1.method19979().deepCopy());
    }
 
    private ITextComponent method5918(NetworkPlayerInfo var1, IFormattableTextComponent var2) {
@@ -64,7 +66,8 @@ public class Class1265 extends AbstractGui {
          int var13 = this.field6692.fontRenderer.method38821(this.method5917(var12));
          var9 = Math.max(var9, var13);
          if (var4 != null && var4.method29342() != Class2316.field15869) {
-            var13 = this.field6692.fontRenderer.getStringWidth(" " + var3.method20980(var12.method19966().getName(), var4).method36050());
+            var13 = this.field6692.fontRenderer
+                  .getStringWidth(" " + var3.method20980(var12.method19966().getName(), var4).method36050());
             var10 = Math.max(var10, var13);
          }
       }
@@ -78,7 +81,8 @@ public class Class1265 extends AbstractGui {
          var40++;
       }
 
-      boolean var14 = this.field6692.isIntegratedServerRunning() || this.field6692.getConnection().getNetworkManager().isEncrypted();
+      boolean var14 = this.field6692.isIntegratedServerRunning()
+            || this.field6692.getConnection().networkManager.isEncrypted();
       int var15;
       if (var4 == null) {
          var15 = 0;
@@ -111,11 +115,12 @@ public class Class1265 extends AbstractGui {
       }
 
       if (var20 != null) {
-         fill(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var20.size() * 9, Integer.MIN_VALUE);
+         fill(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var20.size() * 9,
+               Integer.MIN_VALUE);
 
          for (Class9125 var46 : var20) {
             int var24 = this.field6692.fontRenderer.method38822(var46);
-            this.field6692.fontRenderer.method38802(var1, var46, (float)(var2 / 2 - var24 / 2), (float)var18, -1);
+            this.field6692.fontRenderer.method38802(var1, var46, (float) (var2 / 2 - var24 / 2), (float) var18, -1);
             var18 += 9;
          }
 
@@ -136,29 +141,29 @@ public class Class1265 extends AbstractGui {
          RenderSystem.enableBlend();
          RenderSystem.defaultBlendFunc();
          if (var47 < var8.size()) {
-            NetworkPlayerInfo var28 = (NetworkPlayerInfo)var8.get(var47);
+            NetworkPlayerInfo var28 = (NetworkPlayerInfo) var8.get(var47);
             GameProfile var29 = var28.method19966();
             if (var14) {
                PlayerEntity var30 = this.field6692.world.method7196(var29.getId());
                boolean var31 = var30 != null
-                  && var30.method2962(Class2318.field15879)
-                  && ("Dinnerbone".equals(var29.getName()) || "Grumm".equals(var29.getName()));
+                     && var30.method2962(Class2318.field15879)
+                     && ("Dinnerbone".equals(var29.getName()) || "Grumm".equals(var29.getName()));
                this.field6692.getTextureManager().bindTexture(var28.method19973());
                int var32 = 8 + (!var31 ? 0 : 8);
                int var33 = 8 * (!var31 ? 1 : -1);
-               AbstractGui.method5698(var1, var26, var27, 8, 8, 8.0F, (float)var32, 8, var33, 64, 64);
+               AbstractGui.method5698(var1, var26, var27, 8, 8, 8.0F, (float) var32, 8, var33, 64, 64);
                if (var30 != null && var30.method2962(Class2318.field15885)) {
                   int var34 = 8 + (!var31 ? 0 : 8);
                   int var35 = 8 * (!var31 ? 1 : -1);
-                  AbstractGui.method5698(var1, var26, var27, 8, 8, 40.0F, (float)var34, 8, var35, 64, 64);
+                  AbstractGui.method5698(var1, var26, var27, 8, 8, 40.0F, (float) var34, 8, var35, 64, 64);
                }
 
                var26 += 9;
             }
 
-            this.field6692
-               .fontRenderer
-               .method38803(var1, this.method5917(var28), (float)var26, (float)var27, var28.method19967() != GameType.SPECTATOR ? -1 : -1862270977);
+            this.field6692.fontRenderer
+                  .method38803(var1, this.method5917(var28), (float) var26, (float) var27,
+                        var28.method19967() != GameType.SPECTATOR ? -1 : -1862270977);
             if (var4 != null && var28.method19967() != GameType.SPECTATOR) {
                int var52 = var26 + var9 + 1;
                int var53 = var52 + var15;
@@ -173,11 +178,12 @@ public class Class1265 extends AbstractGui {
 
       if (var42 != null) {
          var18 = var18 + var38 * 9 + 1;
-         fill(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var42.size() * 9, Integer.MIN_VALUE);
+         fill(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var42.size() * 9,
+               Integer.MIN_VALUE);
 
          for (Class9125 var50 : var42) {
             int var51 = this.field6692.fontRenderer.method38822(var50);
-            this.field6692.fontRenderer.method38802(var1, var50, (float)(var2 / 2 - var51 / 2), (float)var18, -1);
+            this.field6692.fontRenderer.method38802(var1, var50, (float) (var2 / 2 - var51 / 2), (float) var18, -1);
             var18 += 9;
          }
       }
@@ -215,11 +221,13 @@ public class Class1265 extends AbstractGui {
       this.method5703(this.method5702() - 100);
    }
 
-   private void method5922(Class8375 var1, int var2, String var3, int var4, int var5, NetworkPlayerInfo var6, MatrixStack var7) {
+   private void method5922(Class8375 var1, int var2, String var3, int var4, int var5, NetworkPlayerInfo var6,
+         MatrixStack var7) {
       int var10 = var1.method29335().method20980(var3, var1).method36050();
       if (var1.method29342() != Class2316.field15869) {
          String var11 = TextFormatting.YELLOW + "" + var10;
-         this.field6692.fontRenderer.drawStringWithShadow(var7, var11, (float)(var5 - this.field6692.fontRenderer.getStringWidth(var11)), (float)var2, 16777215);
+         this.field6692.fontRenderer.drawStringWithShadow(var7, var11,
+               (float) (var5 - this.field6692.fontRenderer.getStringWidth(var11)), (float) var2, 16777215);
       } else {
          this.field6692.getTextureManager().bindTexture(field6453);
          long var12 = Util.milliTime();
@@ -227,11 +235,11 @@ public class Class1265 extends AbstractGui {
             if (var10 >= var6.method19980()) {
                if (var10 > var6.method19980()) {
                   var6.method19985(var12);
-                  var6.method19987((long)(this.field6693.method5990() + 10));
+                  var6.method19987((long) (this.field6693.method5990() + 10));
                }
             } else {
                var6.method19985(var12);
-               var6.method19987((long)(this.field6693.method5990() + 20));
+               var6.method19987((long) (this.field6693.method5990() + 20));
             }
          }
 
@@ -243,22 +251,25 @@ public class Class1265 extends AbstractGui {
 
          var6.method19989(this.field6696);
          var6.method19981(var10);
-         int var14 = MathHelper.ceil((float)Math.max(var10, var6.method19982()) / 2.0F);
-         int var15 = Math.max(MathHelper.ceil((float)(var10 / 2)), Math.max(MathHelper.ceil((float)(var6.method19982() / 2)), 10));
-         boolean var16 = var6.method19986() > (long)this.field6693.method5990() && (var6.method19986() - (long)this.field6693.method5990()) / 3L % 2L == 1L;
+         int var14 = MathHelper.ceil((float) Math.max(var10, var6.method19982()) / 2.0F);
+         int var15 = Math.max(MathHelper.ceil((float) (var10 / 2)),
+               Math.max(MathHelper.ceil((float) (var6.method19982() / 2)), 10));
+         boolean var16 = var6.method19986() > (long) this.field6693.method5990()
+               && (var6.method19986() - (long) this.field6693.method5990()) / 3L % 2L == 1L;
          if (var14 > 0) {
-            int var17 = MathHelper.floor(Math.min((float)(var5 - var4 - 4) / (float)var15, 9.0F));
+            int var17 = MathHelper.floor(Math.min((float) (var5 - var4 - 4) / (float) var15, 9.0F));
             if (var17 <= 3) {
-               float var18 = MathHelper.clamp((float)var10 / 20.0F, 0.0F, 1.0F);
-               int var19 = (int)((1.0F - var18) * 255.0F) << 16 | (int)(var18 * 255.0F) << 8;
-               String var20 = "" + (float)var10 / 2.0F;
+               float var18 = MathHelper.clamp((float) var10 / 20.0F, 0.0F, 1.0F);
+               int var19 = (int) ((1.0F - var18) * 255.0F) << 16 | (int) (var18 * 255.0F) << 8;
+               String var20 = "" + (float) var10 / 2.0F;
                if (var5 - this.field6692.fontRenderer.getStringWidth(var20 + "hp") >= var4) {
                   var20 = var20 + "hp";
                }
 
-               this.field6692
-                  .fontRenderer
-                  .drawStringWithShadow(var7, var20, (float)((var5 + var4) / 2 - this.field6692.fontRenderer.getStringWidth(var20) / 2), (float)var2, var19);
+               this.field6692.fontRenderer
+                     .drawStringWithShadow(var7, var20,
+                           (float) ((var5 + var4) / 2 - this.field6692.fontRenderer.getStringWidth(var20) / 2),
+                           (float) var2, var19);
             } else {
                for (int var21 = var14; var21 < var15; var21++) {
                   this.blit(var7, var4 + var21 * var17, var2, !var16 ? 16 : 25, 0, 9, 9);

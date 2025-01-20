@@ -33,7 +33,8 @@ public class NotificationManager {
     public void send(Notification var1) {
         for (Notification var5 : this.field39919) {
             if (var5.equals(var1)) {
-                var5.field43607.setElapsedTime(Math.min(var5.field43607.getElapsedTime(), (long) (this.field39922 + 1)));
+                var5.field43607
+                        .setElapsedTime(Math.min(var5.field43607.getElapsedTime(), (long) (this.field39922 + 1)));
                 var5.field43604 = var1.field43604;
                 var5.field43610++;
                 var5.field43605 = var1.field43605;
@@ -49,7 +50,8 @@ public class NotificationManager {
         if (!(var4 < (float) this.field39922 * 1.4F)) {
             return !(var4 > (float) var1.field43606 - (float) this.field39922)
                     ? 1.0F
-                    : QuadraticEasing.easeInQuad(((float) var1.field43606 - var4) / (float) this.field39922, 0.0F, 1.0F, 1.0F);
+                    : QuadraticEasing.easeInQuad(((float) var1.field43606 - var4) / (float) this.field39922, 0.0F, 1.0F,
+                            1.0F);
         } else {
             return QuadraticEasing.easeOutQuad(var4 / ((float) this.field39922 * 1.4F), 0.0F, 1.0F, 1.0F);
         }
@@ -73,42 +75,48 @@ public class NotificationManager {
             for (int var4 = 0; var4 < this.field39919.size(); var4++) {
                 Notification var5 = this.field39919.get(var4);
                 float var6 = this.method31993(var5);
-                int var7 = Minecraft.getInstance().mainWindow.getWidth() - this.field39926 - (int) ((float) this.field39923 * var6 * var6);
+                int var7 = Minecraft.getInstance().mainWindow.getWidth() - this.field39926
+                        - (int) ((float) this.field39923 * var6 * var6);
                 int var8 = this.field39918.mainWindow.getHeight()
                         - this.field39924
                         - this.field39925
-                        - var4 * (int) ((float) this.field39924 * this.method31994(var4) + (float) this.field39927 * this.method31994(var4));
+                        - var4 * (int) ((float) this.field39924 * this.method31994(var4)
+                                + (float) this.field39927 * this.method31994(var4));
                 float var9 = Math.min(1.0F, var6);
                 int var10 = new Color(0.14F, 0.14F, 0.14F, var9 * 0.93F).getRGB();
                 int var11 = new Color(0.0F, 0.0F, 0.0F, Math.min(var6 * 0.075F, 1.0F)).getRGB();
                 int var12 = new Color(1.0F, 1.0F, 1.0F, var9).getRGB();
-                RenderUtil.drawRoundedRect((float) var7, (float) var8, (float) this.field39923, (float) this.field39924, 10.0F, var9);
-                RenderUtil.drawRect((float) var7, (float) var8, (float) (var7 + this.field39923), (float) (var8 + this.field39924), var10);
-                RenderUtil.drawRect((float) var7, (float) var8, (float) (var7 + this.field39923), (float) (var8 + 1), var11);
-                RenderUtil.drawRect((float) var7, (float) (var8 + this.field39924 - 1), (float) (var7 + this.field39923), (float) (var8 + this.field39924), var11);
-                RenderUtil.drawRect((float) var7, (float) (var8 + 1), (float) (var7 + 1), (float) (var8 + this.field39924 - 1), var11);
+                RenderUtil.drawRoundedRect((float) var7, (float) var8, (float) this.field39923, (float) this.field39924,
+                        10.0F, var9);
+                RenderUtil.drawRect((float) var7, (float) var8, (float) (var7 + this.field39923),
+                        (float) (var8 + this.field39924), var10);
+                RenderUtil.drawRect((float) var7, (float) var8, (float) (var7 + this.field39923), (float) (var8 + 1),
+                        var11);
+                RenderUtil.drawRect((float) var7, (float) (var8 + this.field39924 - 1),
+                        (float) (var7 + this.field39923), (float) (var8 + this.field39924), var11);
+                RenderUtil.drawRect((float) var7, (float) (var8 + 1), (float) (var7 + 1),
+                        (float) (var8 + this.field39924 - 1), var11);
                 RenderUtil.drawRect(
-                        (float) (var7 + this.field39923 - 1), (float) (var8 + 1), (float) (var7 + this.field39923), (float) (var8 + this.field39924 - 1), var11
-                );
-                RenderUtil.drawPortalBackground(var7, var8, var7 + this.field39923 - this.field39927, var8 + this.field39924);
+                        (float) (var7 + this.field39923 - 1), (float) (var8 + 1), (float) (var7 + this.field39923),
+                        (float) (var8 + this.field39924 - 1), var11);
+                RenderUtil.drawPortalBackground(var7, var8, var7 + this.field39923 - this.field39927,
+                        var8 + this.field39924);
                 RenderUtil.drawString(
-                        this.field39929, (float) (var7 + this.field39924 + this.field39927 - 2), (float) (var8 + this.field39927), var5.field43603, var12
-                );
+                        this.field39929, (float) (var7 + this.field39924 + this.field39927 - 2),
+                        (float) (var8 + this.field39927), var5.field43603, var12);
                 RenderUtil.drawString(
                         this.field39928,
                         (float) (var7 + this.field39924 + this.field39927 - 2),
                         (float) (var8 + this.field39927 + this.field39929.method23941(var5.field43603)),
                         var5.field43604,
-                        var12
-                );
+                        var12);
                 RenderUtil.endScissor();
                 RenderUtil.method11455(
                         (float) (var7 + this.field39927 / 2),
                         (float) (var8 + this.field39927 / 2),
                         (float) (this.field39924 - this.field39927),
                         (float) (this.field39924 - this.field39927),
-                        var5.field43605
-                );
+                        var5.field43605);
             }
         }
     }
@@ -136,20 +144,24 @@ public class NotificationManager {
         for (int var3 = 0; var3 < this.field39919.size(); var3++) {
             Notification var4 = this.field39919.get(var3);
             float var5 = this.method31993(var4);
-            int var6 = Minecraft.getInstance().mainWindow.getWidth() - this.field39926 - (int) ((float) this.field39923 * var5 * var5);
+            int var6 = Minecraft.getInstance().mainWindow.getWidth() - this.field39926
+                    - (int) ((float) this.field39923 * var5 * var5);
             int var7 = this.field39918.mainWindow.getHeight()
                     - this.field39924
                     - this.field39925
-                    - var3 * (int) ((float) this.field39924 * this.method31994(var3) + (float) this.field39927 * this.method31994(var3));
+                    - var3 * (int) ((float) this.field39924 * this.method31994(var3)
+                            + (float) this.field39927 * this.method31994(var3));
 
             for (int var8 = 0; var8 < 3; var8++) {
-                var4.field43608[var8] = RenderUtil.getColorFromScreen(var6 + this.field39923 / 3 * var8, var7, var4.field43608[var8]);
-                var4.field43609[var8] = RenderUtil.getColorFromScreen(var6 + this.field39923 / 3 * var8, var7 + this.field39924, var4.field43609[var8]);
+                var4.field43608[var8] = RenderUtil.getColorFromScreen(var6 + this.field39923 / 3 * var8, var7,
+                        var4.field43608[var8]);
+                var4.field43609[var8] = RenderUtil.getColorFromScreen(var6 + this.field39923 / 3 * var8,
+                        var7 + this.field39924, var4.field43609[var8]);
             }
         }
     }
 
     public void init() {
-        Client.getInstance().getEventManager().register(this);
+        Client.getInstance().eventManager.register(this);
     }
 }

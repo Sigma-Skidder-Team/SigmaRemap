@@ -70,7 +70,7 @@ public class CakeEater extends Module {
     @HigherPriority
     private void method16320(EventUpdate event) {
         if (this.isEnabled()) {
-            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Fly.class);
+            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().moduleManager.getModuleByClass(Fly.class);
             if (var4.method16726() instanceof MineplexFly) {
                 MineplexFly var5 = (MineplexFly) var4.method16726();
                 if (var5.method16456()) {

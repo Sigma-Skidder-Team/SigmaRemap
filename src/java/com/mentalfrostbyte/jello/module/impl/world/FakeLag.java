@@ -20,8 +20,10 @@ public class FakeLag extends Module {
 
     public FakeLag() {
         super(ModuleCategory.WORLD, "FakeLag", "Other players will see you lagging !");
-        this.registerSetting(new NumberSetting<Float>("Lag duration", "The lags duration", 0.3F, Float.class, 0.1F, 2.0F, 0.01F));
-        this.registerSetting(new NumberSetting<Float>("Delay", "The lags cooldown", 0.4F, Float.class, 0.1F, 2.0F, 0.01F));
+        this.registerSetting(
+                new NumberSetting<Float>("Lag duration", "The lags duration", 0.3F, Float.class, 0.1F, 2.0F, 0.01F));
+        this.registerSetting(
+                new NumberSetting<Float>("Delay", "The lags cooldown", 0.4F, Float.class, 0.1F, 2.0F, 0.01F));
         this.registerSetting(new BooleanSetting("Combat", "Delay combat packets", true));
         this.registerSetting(new BooleanSetting("Blocks", "Delay blocks packets", true));
         this.registerSetting(new BooleanSetting("Ping", "Delay ping packets", true));
@@ -38,7 +40,7 @@ public class FakeLag extends Module {
     @Override
     public void onDisable() {
         for (IPacket<?> packet : this.packets) {
-            mc.getConnection().getNetworkManager().sendNoEventPacket(packet);
+            mc.getConnection().networkManager.sendNoEventPacket(packet);
         }
     }
 
@@ -79,7 +81,7 @@ public class FakeLag extends Module {
                 this.timerUtil.reset();
 
                 for (IPacket<?> packet : this.packets) {
-                    mc.getConnection().getNetworkManager().sendNoEventPacket(packet);
+                    mc.getConnection().networkManager.sendNoEventPacket(packet);
                 }
                 this.packets.clear();
             }
@@ -99,7 +101,8 @@ public class FakeLag extends Module {
             return this.getBooleanValueFromSettingName("Combat");
         }
 
-        if (packet instanceof CPlayerTryUseItemPacket || packet instanceof CPlayerDiggingPacket || packet instanceof CPlayerTryUseItemOnBlockPacket) {
+        if (packet instanceof CPlayerTryUseItemPacket || packet instanceof CPlayerDiggingPacket
+                || packet instanceof CPlayerTryUseItemOnBlockPacket) {
             return this.getBooleanValueFromSettingName("Blocks");
         }
 

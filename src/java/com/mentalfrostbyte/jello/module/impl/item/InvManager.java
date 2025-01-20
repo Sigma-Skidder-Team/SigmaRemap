@@ -51,7 +51,7 @@ public class InvManager extends PremiumModule {
 
     public static boolean method16431(ItemStack var0) {
         float var3 = calculateItemDamageBonus(var0);
-        Module var4 = Client.getInstance().getModuleManager().getModuleByClass(InvManager.class);
+        Module var4 = Client.getInstance().moduleManager.getModuleByClass(InvManager.class);
 
         for (int var5 = 9; var5 < 45; var5++) {
             if (mc.player.container.getSlot(var5).getHasStack()) {
@@ -332,9 +332,9 @@ public class InvManager extends PremiumModule {
             if (var5 instanceof BlockItem
                     && (this.method16436() > (int) this.getNumberValueBySettingName("Block Cap") || BlockFly.blocksToNotPlace.contains(((BlockItem) var5).method11845()))) {
                 return true;
-            } else if (var5 == Items.WATER_BUCKET && Client.getInstance().getModuleManager().getModuleByClass(AutoMLG.class).isEnabled()) {
+            } else if (var5 == Items.WATER_BUCKET && Client.getInstance().moduleManager.getModuleByClass(AutoMLG.class).isEnabled()) {
                 return method16437(Items.WATER_BUCKET) > 1;
-            } else if (var5 == Items.BUCKET && Client.getInstance().getModuleManager().getModuleByClass(AutoMLG.class).isEnabled()) {
+            } else if (var5 == Items.BUCKET && Client.getInstance().moduleManager.getModuleByClass(AutoMLG.class).isEnabled()) {
                 return method16437(Items.BUCKET) > 1;
             } else if (var5 instanceof Class3323 && InvManagerUtils.method25874(var1)) {
                 return true;

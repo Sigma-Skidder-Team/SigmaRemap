@@ -85,7 +85,8 @@ public class BowFly extends Module {
                 if (mc.player.getHeldItem(Hand.MAIN_HAND).getItem() == Items.BOW) {
                     if (InvManager.method16437(Items.field37797) == 0) {
                         if (this.field23505.getElapsedTime() > 5000L) {
-                            Client.getInstance().getNotificationManager().send(new Notification("BowFly", "You have no arrows"));
+                            Client.getInstance().notificationManager
+                                    .send(new Notification("BowFly", "You have no arrows"));
                             this.field23505.reset();
                         }
 
@@ -128,7 +129,8 @@ public class BowFly extends Module {
                             mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
                         }
                     } else {
-                        mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.RELEASE_USE_ITEM, BlockPos.ZERO, Direction.DOWN));
+                        mc.getConnection().sendPacket(new CPlayerDiggingPacket(
+                                CPlayerDiggingPacket.Action.RELEASE_USE_ITEM, BlockPos.ZERO, Direction.DOWN));
                         this.field23504 = 0;
                     }
                 }

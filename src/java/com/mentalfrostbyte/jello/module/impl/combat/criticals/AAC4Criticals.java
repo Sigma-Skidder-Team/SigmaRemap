@@ -48,7 +48,7 @@ public class AAC4Criticals extends Module {
     @EventTarget
     @HigherPriority
     private void method16707(EventUpdate var1) {
-        if (!this.isEnabled() || Client.getInstance().getModuleManager().getModuleByClass(Speed.class).isEnabled()) {
+        if (!this.isEnabled() || Client.getInstance().moduleManager.getModuleByClass(Speed.class).isEnabled()) {
             field23862 = 0;
         } else if (var1.isPre()) {
             if (mc.playerController.getIsHittingBlock()) {

@@ -98,17 +98,18 @@ public class CubecraftFly extends Module {
                         if (this.field23845 != -4) {
                             if (this.field23845 != -1) {
                                 /*
-                                if (JelloPortal.getCurrentVersionApplied() > ViaVerList._1_8_x.getVersionNumber()) {
-                                    if (mc.gameSettings.keyBindJump.isKeyDown() && !this.field23846) {
-                                        var1.setY(0.0625);
-                                        MovementUtils.setSpeed(var1, 0.0);
-                                        this.field23845 = 1;
-                                    } else if (this.field23846 && !mc.gameSettings.keyBindJump.isKeyDown()) {
-                                        var1.setY(-0.225);
-                                        MovementUtils.setSpeed(var1, 0.0);
-                                        this.field23845 = 1;
-                                    }
-                                }
+                                 * if (JelloPortal.getCurrentVersionApplied() >
+                                 * ViaVerList._1_8_x.getVersionNumber()) {
+                                 * if (mc.gameSettings.keyBindJump.isKeyDown() && !this.field23846) {
+                                 * var1.setY(0.0625);
+                                 * MovementUtils.setSpeed(var1, 0.0);
+                                 * this.field23845 = 1;
+                                 * } else if (this.field23846 && !mc.gameSettings.keyBindJump.isKeyDown()) {
+                                 * var1.setY(-0.225);
+                                 * MovementUtils.setSpeed(var1, 0.0);
+                                 * this.field23845 = 1;
+                                 * }
+                                 * }
                                  */
                             } else {
                                 if (!this.field23848) {
@@ -123,25 +124,27 @@ public class CubecraftFly extends Module {
                         }
                     }
                     /*
-                } else if (JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber()) {
-                    if (!MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
-                        var1.setY(0.0);
-                        MovementUtils.setSpeed(var1, 0.0);
-                        if (mc.player.fallDistance > 4.0F) {
-                            mc.getConnection().sendPacket(new CPlayerPacket(true));
-                            this.field23848 = true;
-                        }
-                    } else {
-                        var1.setY(MovementUtils.method37080());
-                        MovementUtils.setSpeed(var1, 0.615);
-                    }
-
-                    this.field23845 = 1;
+                     * } else if (JelloPortal.getCurrentVersionApplied() !=
+                     * ViaVerList._1_8_x.getVersionNumber()) {
+                     * if (!MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
+                     * var1.setY(0.0);
+                     * MovementUtils.setSpeed(var1, 0.0);
+                     * if (mc.player.fallDistance > 4.0F) {
+                     * mc.getConnection().sendPacket(new CPlayerPacket(true));
+                     * this.field23848 = true;
+                     * }
+                     * } else {
+                     * var1.setY(MovementUtils.method37080());
+                     * MovementUtils.setSpeed(var1, 0.615);
+                     * }
+                     * 
+                     * this.field23845 = 1;
                      */
                 } else if (!MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                     var1.setY(0.0);
                     this.field23845 = -2;
-                    Client.getInstance().getNotificationManager().send(new Notification("Cubecraft Fly", "Please start on the ground."));
+                    Client.getInstance().notificationManager
+                            .send(new Notification("Cubecraft Fly", "Please start on the ground."));
                 } else {
                     MovementUtils.setSpeed(var1, 0.0);
                     var1.setY(0.0);
@@ -174,7 +177,10 @@ public class CubecraftFly extends Module {
     public void method16689(EventUpdate var1) {
         if (var1.isPre() && MultiUtilities.isCubecraft()) {
             var1.method13908(true);
-            if (/*JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber() && */this.field23845 == 0 && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
+            if (/*
+                 * JelloPortal.getCurrentVersionApplied() ==
+                 * ViaVerList._1_8_x.getVersionNumber() &&
+                 */this.field23845 == 0 && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                 var1.setCancelled(true);
             }
 
@@ -198,20 +204,21 @@ public class CubecraftFly extends Module {
             } else {
                 SPlayerPositionLookPacket var20 = (SPlayerPositionLookPacket) var4;
                 /*
-                if (JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber()) {
-                    float[] var6 = MovementUtils.lenientStrafe();
-                    float var7 = var6[1];
-                    float var8 = var6[2];
-                    float var9 = var6[0];
-                    double var10 = Math.cos(Math.toRadians(var9));
-                    double var12 = Math.sin(Math.toRadians(var9));
-                    double var14 = MovementUtils.getSpeed();
-                    double var16 = ((double) var7 * var10 + (double) var8 * var12) * var14;
-                    double var18 = ((double) var7 * var12 - (double) var8 * var10) * var14;
-                    this.field23849 = var20.y;
-                    var20.x += var16;
-                    var20.z += var18;
-                }
+                 * if (JelloPortal.getCurrentVersionApplied() !=
+                 * ViaVerList._1_8_x.getVersionNumber()) {
+                 * float[] var6 = MovementUtils.lenientStrafe();
+                 * float var7 = var6[1];
+                 * float var8 = var6[2];
+                 * float var9 = var6[0];
+                 * double var10 = Math.cos(Math.toRadians(var9));
+                 * double var12 = Math.sin(Math.toRadians(var9));
+                 * double var14 = MovementUtils.getSpeed();
+                 * double var16 = ((double) var7 * var10 + (double) var8 * var12) * var14;
+                 * double var18 = ((double) var7 * var12 - (double) var8 * var10) * var14;
+                 * this.field23849 = var20.y;
+                 * var20.x += var16;
+                 * var20.z += var18;
+                 * }
                  */
 
                 this.field23847 = true;

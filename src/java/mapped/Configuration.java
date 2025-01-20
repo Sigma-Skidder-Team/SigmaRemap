@@ -62,7 +62,7 @@ public class Configuration {
                Client.getInstance().getLogger().warn("Invalid name in mod list config");
             }
 
-            for (Module var8 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+            for (Module var8 : Client.getInstance().moduleManager.getModuleMap().values()) {
                if (var8.getName().equals(var6) && var8.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.GUI && var8.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.RENDER) {
                   var5.put("enabled", "false");
                }

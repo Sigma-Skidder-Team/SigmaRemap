@@ -20,7 +20,7 @@ public class Class8455 {
       if (this.field36261.method29656(this.field36262)) {
          this.method29735();
          this.field36261.method29652();
-         Client.getInstance().getSoundManager().play("pop");
+         Client.getInstance().soundManager.play("pop");
       }
 
       if (this.field36261.method29654() || this.method29729()) {
@@ -30,7 +30,8 @@ public class Class8455 {
 
    public boolean method29729() {
       for (Class9108 var4 : this.field36261.method29655()) {
-         if (var4.field41839 < 0 || var4.field41840 < 0 || var4.field41839 >= this.field36259 || var4.field41840 >= this.field36260) {
+         if (var4.field41839 < 0 || var4.field41840 < 0 || var4.field41839 >= this.field36259
+               || var4.field41840 >= this.field36260) {
             return true;
          }
       }
@@ -39,7 +40,8 @@ public class Class8455 {
    }
 
    public boolean method29730(Class9108 var1) {
-      return var1.field41839 < 0 || var1.field41840 < 0 || var1.field41839 >= this.field36259 || var1.field41840 >= this.field36260;
+      return var1.field41839 < 0 || var1.field41840 < 0 || var1.field41839 >= this.field36259
+            || var1.field41840 >= this.field36260;
    }
 
    public void method29731() {
@@ -59,7 +61,8 @@ public class Class8455 {
       Class9108 var3 = null;
 
       while (this.field36261.method29656(var3) || this.method29730(var3)) {
-         var3 = new Class9108((int)Math.round(Math.random() * (double)this.field36259), (int)Math.round(Math.random() * (double)this.field36260));
+         var3 = new Class9108((int) Math.round(Math.random() * (double) this.field36259),
+               (int) Math.round(Math.random() * (double) this.field36260));
       }
 
       return var3;

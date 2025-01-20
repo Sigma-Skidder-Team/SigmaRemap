@@ -34,16 +34,20 @@ public class Nuker extends Module {
 
     public Nuker() {
         super(ModuleCategory.WORLD, "Nuker", "Destroys blocks around you");
-        this.registerSetting(new NumberSetting<Float>("Range", "Range value for nuker", 6.0F, Float.class, 2.0F, 10.0F, 1.0F));
+        this.registerSetting(
+                new NumberSetting<Float>("Range", "Range value for nuker", 6.0F, Float.class, 2.0F, 10.0F, 1.0F));
         this.registerSetting(new ModeSetting("Mode", "Mode", 0, "All", "One hit", "Bed", "Egg"));
         this.registerSetting(new BooleanSetting("NoSwing", "Removes the swing animation.", false));
         this.registerSetting(new BooleanListSetting("Blocks", "Blocks to destroy", true));
-        this.registerSetting(new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.getColor, true));
+        this.registerSetting(
+                new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.getColor, true));
     }
 
     public static void method16265(BlockPos var0) {
-        mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var0, Direction.UP));
-        mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.STOP_DESTROY_BLOCK, var0, Direction.UP));
+        mc.getConnection().sendPacket(
+                new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var0, Direction.UP));
+        mc.getConnection().sendPacket(
+                new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.STOP_DESTROY_BLOCK, var0, Direction.UP));
         mc.world.setBlockState(var0, Blocks.AIR.getDefaultState());
     }
 
@@ -57,24 +61,21 @@ public class Nuker extends Module {
                 if (this.field23566 != null) {
                     if (mc.world.getBlockState(this.field23566).isAir()
                             || Math.sqrt(
-                            mc.player
-                                    .getDistanceNearest(
-                                            (double) this.field23566.getX() + 0.5,
-                                            (double) this.field23566.getY() + 0.5,
-                                            (double) this.field23566.getZ() + 0.5
-                                    )
-                    )
-                            > 6.0) {
+                                    mc.player
+                                            .getDistanceNearest(
+                                                    (double) this.field23566.getX() + 0.5,
+                                                    (double) this.field23566.getY() + 0.5,
+                                                    (double) this.field23566.getZ() + 0.5)) > 6.0) {
                         this.field23566 = this.field23567.get(0);
                     }
 
                     float[] var4 = RotationHelper.method34144(
-                            (double) this.field23566.getX(), (double) this.field23566.getZ(), (double) this.field23566.getY()
-                    );
+                            (double) this.field23566.getX(), (double) this.field23566.getZ(),
+                            (double) this.field23566.getY());
                     var1.setYaw(var4[0]);
                     var1.setPitch(var4[1]);
                     EventKeyPress var5 = new EventKeyPress(0, false, this.field23566);
-                    Client.getInstance().getEventManager().call(var5);
+                    Client.getInstance().eventManager.call(var5);
                     mc.playerController.onPlayerDamageBlock(this.field23566, BlockUtil.method34580(this.field23566));
                     if (!this.getBooleanValueFromSettingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
@@ -84,12 +85,12 @@ public class Nuker extends Module {
                 } else {
                     this.field23566 = this.field23567.get(0);
                     float[] var6 = RotationHelper.method34144(
-                            (double) this.field23566.getX() + 0.5, (double) this.field23566.getZ(), (double) this.field23566.getY() + 0.5
-                    );
+                            (double) this.field23566.getX() + 0.5, (double) this.field23566.getZ(),
+                            (double) this.field23566.getY() + 0.5);
                     var1.setYaw(var6[0]);
                     var1.setPitch(var6[1]);
                     EventKeyPress var8 = new EventKeyPress(0, false, this.field23566);
-                    Client.getInstance().getEventManager().call(var8);
+                    Client.getInstance().eventManager.call(var8);
                     mc.playerController.onPlayerDamageBlock(this.field23566, BlockUtil.method34580(this.field23566));
                     if (!this.getBooleanValueFromSettingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
@@ -99,7 +100,8 @@ public class Nuker extends Module {
                 }
             } else {
                 for (BlockPos var9 : this.field23567) {
-                    mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var9, BlockUtil.method34580(var9)));
+                    mc.getConnection().sendPacket(new CPlayerDiggingPacket(
+                            CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var9, BlockUtil.method34580(var9)));
                     if (!this.getBooleanValueFromSettingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     } else {
@@ -119,15 +121,15 @@ public class Nuker extends Module {
             double var5 = (double) this.field23566.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
             double var7 = (double) this.field23566.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
             double var9 = (double) this.field23566.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
-            AxisAlignedBB var11 = mc.world.getBlockState(this.field23566).method23414(mc.world, this.field23566).getBoundingBox();
+            AxisAlignedBB var11 = mc.world.getBlockState(this.field23566).method23414(mc.world, this.field23566)
+                    .getBoundingBox();
             Box3D var12 = new Box3D(
                     var5 + var11.minX,
                     var7 + var11.minY,
                     var9 + var11.minZ,
                     var5 + var11.maxX,
                     var7 + var11.maxY,
-                    var9 + var11.maxZ
-            );
+                    var9 + var11.maxZ);
             RenderUtil.render3DColoredBox(var12, var4);
             GL11.glEnable(2929);
             GL11.glPopMatrix();
@@ -148,14 +150,12 @@ public class Nuker extends Module {
                     BlockPos var8 = new BlockPos(
                             mc.player.getPosX() + (double) var6,
                             mc.player.getPosY() + (double) var5,
-                            mc.player.getPosZ() + (double) var7
-                    );
+                            mc.player.getPosZ() + (double) var7);
                     if (!mc.world.getBlockState(var8).isAir()
                             && mc.world.getBlockState(var8).getFluidState().isEmpty()
                             && Math.sqrt(
-                            mc.player.getDistanceNearest((double) var8.getX() + 0.5, (double) var8.getY() + 0.5, (double) var8.getZ() + 0.5)
-                    )
-                            < (double) var1) {
+                                    mc.player.getDistanceNearest((double) var8.getX() + 0.5, (double) var8.getY() + 0.5,
+                                            (double) var8.getZ() + 0.5)) < (double) var1) {
                         String var9 = this.getStringSettingValueByName("Mode");
                         switch (var9) {
                             case "One hit":

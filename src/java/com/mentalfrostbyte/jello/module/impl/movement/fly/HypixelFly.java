@@ -115,7 +115,7 @@ public class HypixelFly extends Module {
             this.duration = 1.0F;
         }
 
-        if (!Client.getInstance().getModuleManager().getModuleByClass(Timer.class).isEnabled()) {
+        if (!Client.getInstance().moduleManager.getModuleByClass(Timer.class).isEnabled()) {
             mc.timer.timerSpeed = this.duration;
         }
 

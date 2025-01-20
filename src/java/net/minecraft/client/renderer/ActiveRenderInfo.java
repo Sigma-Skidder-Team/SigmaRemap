@@ -87,7 +87,7 @@ public class ActiveRenderInfo {
          BlockRayTraceResult var11 = this.world.rayTraceBlocks(new RayTraceContext(var9, var10, RayTraceContext.BlockMode.VISUAL, RayTraceContext.FluidMode.NONE, this.renderViewEntity));
          if (var11.getType() != RayTraceResult.Type.MISS) {
             double var12 = var11.getHitVec().method11341(this.pos);
-            if (var12 < var1 && !Client.getInstance().getModuleManager().getModuleByClass(CameraNoClip.class).isEnabled()) {
+            if (var12 < var1 && !Client.getInstance().moduleManager.getModuleByClass(CameraNoClip.class).isEnabled()) {
                var1 = var12;
             }
          }

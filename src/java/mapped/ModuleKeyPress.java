@@ -18,7 +18,7 @@ public class ModuleKeyPress {
    public static void press(int key) {
       if (Client.getInstance().getClientMode() != ClientMode.NOADDONS) {
          if (key != -1) {
-            for (Class7957 var5 : Client.getInstance().getModuleManager().getMacOSTouchBar().method13733(key)) {
+            for (Class7957 var5 : Client.getInstance().moduleManager.getMacOSTouchBar().method13733(key)) {
                if (var5 != null && var5.method27052()) {
                   switch (Class8614.field38740[var5.method27055().ordinal()]) {
                      case 1:
@@ -29,7 +29,7 @@ public class ModuleKeyPress {
                            Screen var6 = var5.method27057()
                               .getDeclaredConstructor(ITextComponent.class)
                               .newInstance(new StringTextComponent(GuiManager.field41338.get(var5.method27057())));
-                           if (Client.getInstance().getGuiManager().method33484(var6)) {
+                           if (Client.getInstance().guiManager.method33484(var6)) {
                               field35741.displayGuiScreen(var6);
                            }
                         } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException | InstantiationException var7) {
@@ -44,6 +44,6 @@ public class ModuleKeyPress {
 
    public static void method29127(int var0) {
       MouseHoverEvent var3 = new MouseHoverEvent(var0);
-      Client.getInstance().getEventManager().call(var3);
+      Client.getInstance().eventManager.call(var3);
    }
 }

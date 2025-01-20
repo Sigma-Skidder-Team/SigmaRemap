@@ -30,7 +30,7 @@ public class PathFinder extends Module {
         this.rayTraceResult = BlockUtil.rayTrace(mc.player.rotationYaw, mc.player.rotationPitch, 200.0F);
         if (this.computationThread != null && this.pathfindingClass != null) {
             Client.getInstance()
-                    .getNotificationManager()
+                    .notificationManager
                     .send(new Notification("AutoMiner", "Computing... (" + this.pathfindingClass.field45900 + ")", ResourceList.directionIconPNG));
         }
     }

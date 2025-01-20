@@ -30,7 +30,7 @@ public class Toggle extends Command {
    }
 
    public Module method18336(String var1) {
-      for (Module var5 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+      for (Module var5 : Client.getInstance().moduleManager.getModuleMap().values()) {
          if (var5.getName().replace(" ", "").equalsIgnoreCase(var1)) {
             return var5;
          }

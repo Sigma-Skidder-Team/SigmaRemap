@@ -69,8 +69,8 @@ public class TabGUI extends Module {
     @HigestPriority
     private void method16590(Render2DEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (Client.getInstance().getGuiManager().method33472()) {
-                if (! Minecraft.getInstance().gameSettings.showDebugInfo) {
+            if (Client.getInstance().guiManager.method33472()) {
+                if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                     if (!Minecraft.getInstance().gameSettings.hideGUI) {
                         BlurEngine.drawBlur(this.field23768, this.field23769, this.field23770, this.field23771);
                         if (this.field23781) {
@@ -91,10 +91,13 @@ public class TabGUI extends Module {
                     this.field23771 = 5 * this.field23778 + this.field23779;
                     float var4 = Math.abs((float) this.method16592() - this.field23787);
                     boolean var5 = (float) this.method16592() - this.field23787 < 0.0F;
-                    this.field23787 = this.field23787 + Math.min(var4, var4 * 0.14F * this.field23780) * (float) (!var5 ? 1 : -1);
+                    this.field23787 = this.field23787
+                            + Math.min(var4, var4 * 0.14F * this.field23780) * (float) (!var5 ? 1 : -1);
                     this.field23769 = var1.method13960();
-                    this.method16600(this.field23768, this.field23769, this.field23770, this.field23771, this.field23763, null, this.field23764, 1.0F);
-                    RenderUtil.startScissor((float) this.field23768, (float) this.field23769, (float) this.field23770, (float) this.field23771);
+                    this.method16600(this.field23768, this.field23769, this.field23770, this.field23771,
+                            this.field23763, null, this.field23764, 1.0F);
+                    RenderUtil.startScissor((float) this.field23768, (float) this.field23769, (float) this.field23770,
+                            (float) this.field23771);
                     this.method16596(
                             this.field23768,
                             this.field23769 - Math.round(this.field23787),
@@ -102,14 +105,15 @@ public class TabGUI extends Module {
                             this.field23770,
                             this.field23775,
                             false,
-                            1.0F
-                    );
+                            1.0F);
                     this.method16595(this.field23768, this.field23769 - Math.round(this.field23787), this.field23792);
                     RenderUtil.endScissor();
                     if (this.field23781) {
                         this.field23783 = this.method16593(this.field23782).size() * this.field23778 + this.field23779;
-                        this.method16600(170, this.field23769, this.field23786, this.field23783, this.field23765, this.field23767, this.field23766, 1.0F);
-                        this.method16596(170, this.field23769, this.field23783, this.field23786, this.field23784, true, 1.0F);
+                        this.method16600(170, this.field23769, this.field23786, this.field23783, this.field23765,
+                                this.field23767, this.field23766, 1.0F);
+                        this.method16596(170, this.field23769, this.field23783, this.field23786, this.field23784, true,
+                                1.0F);
                         this.method16594(170, this.field23769, this.method16593(this.field23782), 1.0F);
                     }
 
@@ -126,7 +130,7 @@ public class TabGUI extends Module {
     private List<Module> method16593(ModuleCategory var1) {
         ArrayList var4 = new ArrayList();
 
-        for (Module var6 : Client.getInstance().getModuleManager().getModulesByCategory(var1)) {
+        for (Module var6 : Client.getInstance().moduleManager.getModulesByCategory(var1)) {
             var4.add(var6);
         }
 
@@ -155,18 +159,18 @@ public class TabGUI extends Module {
                 RenderUtil.drawString(
                         ResourceRegistry.JelloMediumFont20,
                         (float) (var1 + 11) + this.field23774.get(var9),
-                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloMediumFont20.method23952() / 2 + 3 + var7 * this.field23778),
+                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloMediumFont20.method23952() / 2 + 3
+                                + var7 * this.field23778),
                         var9.getName(),
-                        ClientColors.LIGHT_GREYISH_BLUE.getColor
-                );
+                        ClientColors.LIGHT_GREYISH_BLUE.getColor);
             } else {
                 RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont20,
                         (float) (var1 + 11) + this.field23774.get(var9),
-                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2 + var7 * this.field23778),
+                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2
+                                + var7 * this.field23778),
                         var9.getName(),
-                        ClientColors.LIGHT_GREYISH_BLUE.getColor
-                );
+                        ClientColors.LIGHT_GREYISH_BLUE.getColor);
             }
 
             var7++;
@@ -194,10 +198,10 @@ public class TabGUI extends Module {
             RenderUtil.drawString(
                     ResourceRegistry.JelloLightFont20,
                     (float) (var1 + 11) + this.field23773.get(var8),
-                    (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2 + var6 * this.field23778),
+                    (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2
+                            + var6 * this.field23778),
                     var8.toString(),
-                    -1
-            );
+                    -1);
             var6++;
         }
     }
@@ -208,15 +212,15 @@ public class TabGUI extends Module {
             if (var6) {
                 float var11 = (float) (var5 * this.field23778 - this.field23777);
                 if (this.field23777 > var5 * this.field23778) {
-                    this.field23777 = (int) (
-                            (float) this.field23777 + (!(var11 * 0.14F * this.field23780 >= 1.0F) ? var11 * 0.14F * this.field23780 : -this.field23780)
-                    );
+                    this.field23777 = (int) ((float) this.field23777
+                            + (!(var11 * 0.14F * this.field23780 >= 1.0F) ? var11 * 0.14F * this.field23780
+                                    : -this.field23780));
                 }
 
                 if (this.field23777 < var5 * this.field23778) {
-                    this.field23777 = (int) (
-                            (float) this.field23777 + (!(var11 * 0.14F * this.field23780 <= 1.0F) ? var11 * 0.14F * this.field23780 : this.field23780)
-                    );
+                    this.field23777 = (int) ((float) this.field23777
+                            + (!(var11 * 0.14F * this.field23780 <= 1.0F) ? var11 * 0.14F * this.field23780
+                                    : this.field23780));
                 }
 
                 if (var11 > 0.0F && this.field23777 > var5 * this.field23778) {
@@ -232,11 +236,15 @@ public class TabGUI extends Module {
         } else {
             float var15 = (float) (var5 * this.field23778 - this.field23776);
             if (this.field23776 > var5 * this.field23778) {
-                this.field23776 = (int) ((float) this.field23776 + (!(var15 * 0.14F * this.field23780 >= 1.0F) ? var15 * 0.14F * this.field23780 : -this.field23780));
+                this.field23776 = (int) ((float) this.field23776
+                        + (!(var15 * 0.14F * this.field23780 >= 1.0F) ? var15 * 0.14F * this.field23780
+                                : -this.field23780));
             }
 
             if (this.field23776 < var5 * this.field23778) {
-                this.field23776 = (int) ((float) this.field23776 + (!(var15 * 0.14F * this.field23780 <= 1.0F) ? var15 * 0.14F * this.field23780 : this.field23780));
+                this.field23776 = (int) ((float) this.field23776
+                        + (!(var15 * 0.14F * this.field23780 <= 1.0F) ? var15 * 0.14F * this.field23780
+                                : this.field23780));
             }
 
             if (var15 > 0.0F && this.field23776 > var5 * this.field23778) {
@@ -258,24 +266,26 @@ public class TabGUI extends Module {
                 (float) var1,
                 var10 >= 0 ? (float) (var10 + var2) : (float) var2,
                 (float) (var1 + var4),
-                var10 + this.field23779 + this.field23778 <= var3 ? (float) (var10 + var2 + this.field23778 + this.field23779) : (float) (var2 + var3 + this.field23779),
-                this.field23790
-        );
+                var10 + this.field23779 + this.field23778 <= var3
+                        ? (float) (var10 + var2 + this.field23778 + this.field23779)
+                        : (float) (var2 + var3 + this.field23779),
+                this.field23790);
         RenderUtil.drawImage(
                 (float) var1,
-                var10 + this.field23779 + this.field23778 <= var3 ? (float) (var10 + var2 + this.field23778 - 10) : (float) (var2 + var3 - 10),
+                var10 + this.field23779 + this.field23778 <= var3 ? (float) (var10 + var2 + this.field23778 - 10)
+                        : (float) (var2 + var3 - 10),
                 (float) var4,
                 14.0F,
                 ResourceList.shadowTopPNG,
-                this.field23791
-        );
-        RenderUtil.drawImage((float) var1, var10 >= 0 ? (float) (var10 + var2) : (float) var2, (float) var4, 14.0F, ResourceList.shadowBottomPNG, this.field23791);
+                this.field23791);
+        RenderUtil.drawImage((float) var1, var10 >= 0 ? (float) (var10 + var2) : (float) var2, (float) var4, 14.0F,
+                ResourceList.shadowBottomPNG, this.field23791);
         RenderUtil.drawPortalBackground(
                 var1,
                 var10 >= 0 ? var10 + var2 : var2,
                 var1 + var4,
-                var10 + this.field23779 + this.field23778 <= var3 ? var10 + var2 + this.field23778 + this.field23779 : var2 + var3 + this.field23779
-        );
+                var10 + this.field23779 + this.field23778 <= var3 ? var10 + var2 + this.field23778 + this.field23779
+                        : var2 + var3 + this.field23779);
         Iterator var16 = this.field23789.iterator();
 
         while (var16.hasNext()) {
@@ -283,13 +293,13 @@ public class TabGUI extends Module {
             if (var12.field35322 == var6) {
                 float var13 = var12.field35323.calcPercent();
                 int var14 = MultiUtilities.applyAlpha(-5658199, (1.0F - var13 * (0.5F + var13 * 0.5F)) * 0.8F);
-                if (Client.getInstance().getGuiManager().method33472()) {
+                if (Client.getInstance().guiManager.method33472()) {
                     var14 = MultiUtilities.applyAlpha(-1, (1.0F - var13) * 0.14F);
                 }
 
                 RenderUtil.method11436(
-                        (float) var1, var10 >= 0 ? (float) (var10 + var2 + 14) : (float) var2, (float) var4 * QuadraticEasing.easeOutQuad(var13, 0.0F, 1.0F, 1.0F) + 4.0F, var14
-                );
+                        (float) var1, var10 >= 0 ? (float) (var10 + var2 + 14) : (float) var2,
+                        (float) var4 * QuadraticEasing.easeOutQuad(var13, 0.0F, 1.0F, 1.0F) + 4.0F, var14);
                 if (var12.field35323.calcPercent() == 1.0F) {
                     var16.remove();
                 }
@@ -379,8 +389,9 @@ public class TabGUI extends Module {
         }
     }
 
-    private void method16600(int var1, int var2, int var3, int var4, Color[] var5, Color[] var6, Color[] var7, float var8) {
-        boolean var11 = Client.getInstance().getGuiManager().method33472();
+    private void method16600(int var1, int var2, int var3, int var4, Color[] var5, Color[] var6, Color[] var7,
+            float var8) {
+        boolean var11 = Client.getInstance().guiManager.method33472();
         int var14 = MultiUtilities.method17682(var5).getRGB();
         int var15 = MultiUtilities.method17682(var7).getRGB();
         if (var6 != null) {
@@ -395,28 +406,31 @@ public class TabGUI extends Module {
             RenderUtil.startScissor((float) var1, (float) var2, (float) var3, (float) var4);
             BlurEngine.endBlur();
             RenderUtil.endScissor();
-            RenderUtil.drawRect((float) var1, (float) var2, (float) (var1 + var3), (float) (var2 + var4), this.field23793);
+            RenderUtil.drawRect((float) var1, (float) var2, (float) (var1 + var3), (float) (var2 + var4),
+                    this.field23793);
         }
 
         RenderUtil.drawRoundedRect((float) var1, (float) var2, (float) var3, (float) var4, 8.0F, 0.7F * var8);
     }
 
     private void method16601() {
-        if (!Client.getInstance().getGuiManager().method33472()) {
+        if (!Client.getInstance().guiManager.method33472()) {
             if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                 if (!Minecraft.getInstance().gameSettings.hideGUI) {
                     for (int var4 = 0; var4 < 3; var4++) {
-                        this.field23763[var4] = this.method16602(this.field23768 + this.field23770 / 3 * var4, this.field23769, this.field23763[var4]);
+                        this.field23763[var4] = this.method16602(this.field23768 + this.field23770 / 3 * var4,
+                                this.field23769, this.field23763[var4]);
                         this.field23764[var4] = this.method16602(
-                                this.field23768 + this.field23770 / 3 * var4, this.field23769 + this.field23771, this.field23764[var4]
-                        );
-                        this.field23765[var4] = this.method16602(this.field23768 + this.field23770 + 56 * var4, this.field23769, this.field23765[var4]);
+                                this.field23768 + this.field23770 / 3 * var4, this.field23769 + this.field23771,
+                                this.field23764[var4]);
+                        this.field23765[var4] = this.method16602(this.field23768 + this.field23770 + 56 * var4,
+                                this.field23769, this.field23765[var4]);
                         this.field23766[var4] = this.method16602(
-                                this.field23768 + this.field23770 + 56 * var4, this.field23769 + this.field23783, this.field23766[var4]
-                        );
+                                this.field23768 + this.field23770 + 56 * var4, this.field23769 + this.field23783,
+                                this.field23766[var4]);
                         this.field23767[var4] = this.method16602(
-                                this.field23768 + this.field23770 + 56 * var4, this.field23769 + this.field23783 / 2, this.field23767[var4]
-                        );
+                                this.field23768 + this.field23770 + 56 * var4, this.field23769 + this.field23783 / 2,
+                                this.field23767[var4]);
                     }
                 }
             }

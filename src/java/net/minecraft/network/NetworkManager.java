@@ -51,14 +51,14 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
    public static final Marker NETWORK_PACKETS_MARKER = MarkerManager.getMarker("NETWORK_PACKETS", NETWORK_MARKER);
    public static final AttributeKey<ProtocolType> PROTOCOL_ATTRIBUTE_KEY = AttributeKey.valueOf("protocol");
    public static final LazyValue<NioEventLoopGroup> CLIENT_NIO_EVENTLOOP = new LazyValue<NioEventLoopGroup>(
-      () -> new NioEventLoopGroup(0, new ThreadFactoryBuilder().setNameFormat("Netty Client IO #%d").setDaemon(true).build())
-   );
+         () -> new NioEventLoopGroup(0,
+               new ThreadFactoryBuilder().setNameFormat("Netty Client IO #%d").setDaemon(true).build()));
    public static final LazyValue<EpollEventLoopGroup> CLIENT_EPOLL_EVENTLOOP = new LazyValue<EpollEventLoopGroup>(
-      () -> new EpollEventLoopGroup(0, new ThreadFactoryBuilder().setNameFormat("Netty Epoll Client IO #%d").setDaemon(true).build())
-   );
+         () -> new EpollEventLoopGroup(0,
+               new ThreadFactoryBuilder().setNameFormat("Netty Epoll Client IO #%d").setDaemon(true).build()));
    public static final LazyValue<DefaultEventLoopGroup> CLIENT_LOCAL_EVENTLOOP = new LazyValue<DefaultEventLoopGroup>(
-      () -> new DefaultEventLoopGroup(0, new ThreadFactoryBuilder().setNameFormat("Netty Local Client IO #%d").setDaemon(true).build())
-   );
+         () -> new DefaultEventLoopGroup(0,
+               new ThreadFactoryBuilder().setNameFormat("Netty Local Client IO #%d").setDaemon(true).build()));
    private final PacketDirection direction;
    private final Queue<QueuedPacket> outboundPacketsQueue = Queues.newConcurrentLinkedQueue();
    private Channel channel;
@@ -104,37 +104,27 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
    }
 
    public void exceptionCaught(ChannelHandlerContext p_exceptionCaught_1_, Throwable p_exceptionCaught_2_) {
-      if (p_exceptionCaught_2_ instanceof SkipableEncoderException)
-      {
+      if (p_exceptionCaught_2_ instanceof SkipableEncoderException) {
          LOGGER.debug("Skipping packet due to errors", p_exceptionCaught_2_.getCause());
-      }
-      else
-      {
+      } else {
          boolean flag = !this.field_211399_v;
          this.field_211399_v = true;
 
-         if (this.channel.isOpen())
-         {
-            if (p_exceptionCaught_2_ instanceof TimeoutException)
-            {
+         if (this.channel.isOpen()) {
+            if (p_exceptionCaught_2_ instanceof TimeoutException) {
                LOGGER.debug("Timeout", p_exceptionCaught_2_);
                this.closeChannel(new TranslationTextComponent("disconnect.timeout"));
-            }
-            else
-            {
-               ITextComponent itextcomponent = new TranslationTextComponent("disconnect.genericReason", "Internal Exception: " + p_exceptionCaught_2_);
+            } else {
+               ITextComponent itextcomponent = new TranslationTextComponent("disconnect.genericReason",
+                     "Internal Exception: " + p_exceptionCaught_2_);
 
-               if (flag)
-               {
+               if (flag) {
                   LOGGER.debug("Failed to sent packet", p_exceptionCaught_2_);
-                  this.sendPacket(new SDisconnectPacket(itextcomponent), (p_211391_2_) ->
-                  {
+                  this.sendPacket(new SDisconnectPacket(itextcomponent), (p_211391_2_) -> {
                      this.closeChannel(itextcomponent);
                   });
                   this.disableAutoRead();
-               }
-               else
-               {
+               } else {
                   LOGGER.debug("Double fault", p_exceptionCaught_2_);
                   this.closeChannel(itextcomponent);
                }
@@ -147,7 +137,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
    public void channelRead0(ChannelHandlerContext p_channelRead0_1_, IPacket<?> p_channelRead0_2_) throws Exception {
       if (this.channel.isOpen()) {
          ReceivePacketEvent event = new ReceivePacketEvent(p_channelRead0_2_);
-         Client.getInstance().getEventManager().call(event);
+         Client.getInstance().eventManager.call(event);
          if (event.isCancelled()) {
             return;
          }
@@ -176,7 +166,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
 
    public void sendPacket(IPacket<?> packetIn, GenericFutureListener<? extends Future<? super Void>> p_201058_2_) {
       SendPacketEvent var5 = new SendPacketEvent(packetIn);
-      Client.getInstance().getEventManager().call(var5);
+      Client.getInstance().eventManager.call(var5);
       packetIn = var5.getPacket();
       if (!var5.isCancelled()) {
          if (!this.isChannelOpen()) {
@@ -197,7 +187,8 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
       }
    }
 
-   private void dispatchPacket(IPacket<?> inPacket, GenericFutureListener<? extends Future<? super Void>> futureListeners) {
+   private void dispatchPacket(IPacket<?> inPacket,
+         GenericFutureListener<? extends Future<? super Void>> futureListeners) {
       ProtocolType protocoltype = ProtocolType.getFromPacket(inPacket);
       ProtocolType protocoltype1 = this.channel.attr(PROTOCOL_ATTRIBUTE_KEY).get();
       this.field_211395_r++;
@@ -234,14 +225,11 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
    }
 
    private void flushOutboundQueue() {
-      if (this.channel != null && this.channel.isOpen())
-      {
-         synchronized (this.outboundPacketsQueue)
-         {
+      if (this.channel != null && this.channel.isOpen()) {
+         synchronized (this.outboundPacketsQueue) {
             NetworkManager.QueuedPacket networkmanager$queuedpacket;
 
-            while ((networkmanager$queuedpacket = this.outboundPacketsQueue.poll()) != null)
-            {
+            while ((networkmanager$queuedpacket = this.outboundPacketsQueue.poll()) != null) {
                this.dispatchPacket(networkmanager$queuedpacket.packet, networkmanager$queuedpacket.field_201049_b);
             }
          }
@@ -251,11 +239,11 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
    public void tick() {
       this.flushOutboundQueue();
       if (this.packetListener instanceof ServerLoginNetHandler) {
-         ((ServerLoginNetHandler)this.packetListener).tick();
+         ((ServerLoginNetHandler) this.packetListener).tick();
       }
 
       if (this.packetListener instanceof ServerPlayNetHandler) {
-         ((ServerPlayNetHandler)this.packetListener).tick();
+         ((ServerPlayNetHandler) this.packetListener).tick();
       }
 
       if (this.channel != null) {
@@ -268,8 +256,8 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
    }
 
    public void func_241877_b() {
-      this.field_211397_t = MathHelper.lerp(0.75F, (float)this.field_211395_r, this.field_211397_t);
-      this.field_211396_s = MathHelper.lerp(0.75F, (float)this.field_211394_q, this.field_211396_s);
+      this.field_211397_t = MathHelper.lerp(0.75F, (float) this.field_211395_r, this.field_211397_t);
+      this.field_211396_s = MathHelper.lerp(0.75F, (float) this.field_211394_q, this.field_211396_s);
       this.field_211395_r = 0;
       this.field_211394_q = 0;
    }
@@ -289,36 +277,35 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
       return this.channel instanceof LocalChannel || this.channel instanceof LocalServerChannel;
    }
 
-   public static NetworkManager createNetworkManagerAndConnect(InetAddress address, int serverPort, boolean useNativeTransport) {
+   public static NetworkManager createNetworkManagerAndConnect(InetAddress address, int serverPort,
+         boolean useNativeTransport) {
       final NetworkManager networkmanager = new NetworkManager(PacketDirection.CLIENTBOUND);
-      Class <? extends SocketChannel > oclass;
-      LazyValue <? extends EventLoopGroup > lazyvalue;
+      Class<? extends SocketChannel> oclass;
+      LazyValue<? extends EventLoopGroup> lazyvalue;
 
-      if (Epoll.isAvailable() && useNativeTransport)
-      {
+      if (Epoll.isAvailable() && useNativeTransport) {
          oclass = EpollSocketChannel.class;
          lazyvalue = CLIENT_EPOLL_EVENTLOOP;
-      }
-      else
-      {
+      } else {
          oclass = NioSocketChannel.class;
          lazyvalue = CLIENT_NIO_EVENTLOOP;
       }
 
-      (new Bootstrap()).group(lazyvalue.getValue()).handler(new ChannelInitializer<Channel>()
-      {
-         protected void initChannel(Channel p_initChannel_1_) throws Exception
-         {
-            try
-            {
+      (new Bootstrap()).group(lazyvalue.getValue()).handler(new ChannelInitializer<Channel>() {
+         protected void initChannel(Channel p_initChannel_1_) throws Exception {
+            try {
                p_initChannel_1_.config().setOption(ChannelOption.TCP_NODELAY, true);
-            }
-            catch (ChannelException channelexception)
-            {
+            } catch (ChannelException channelexception) {
             }
 
-            p_initChannel_1_.pipeline().addLast("timeout", new ReadTimeoutHandler(30)).addLast("splitter", new NettyVarint21FrameDecoder()).addLast("decoder", new NettyPacketDecoder(PacketDirection.CLIENTBOUND)).addLast("prepender", new NettyVarint21FrameEncoder()).addLast("encoder", new NettyPacketEncoder(PacketDirection.SERVERBOUND)).addLast("packet_handler", networkmanager);
-            if (p_initChannel_1_ instanceof SocketChannel && ViaLoadingBase.getInstance().getTargetVersion().getVersion() != ViaMCP.NATIVE_VERSION) {
+            p_initChannel_1_.pipeline().addLast("timeout", new ReadTimeoutHandler(30))
+                  .addLast("splitter", new NettyVarint21FrameDecoder())
+                  .addLast("decoder", new NettyPacketDecoder(PacketDirection.CLIENTBOUND))
+                  .addLast("prepender", new NettyVarint21FrameEncoder())
+                  .addLast("encoder", new NettyPacketEncoder(PacketDirection.SERVERBOUND))
+                  .addLast("packet_handler", networkmanager);
+            if (p_initChannel_1_ instanceof SocketChannel
+                  && ViaLoadingBase.getInstance().getTargetVersion().getVersion() != ViaMCP.NATIVE_VERSION) {
                final UserConnection user = new UserConnectionImpl(p_initChannel_1_, true);
                new ProtocolPipelineImpl(user);
 
@@ -331,10 +318,8 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
 
    public static NetworkManager provideLocalClient(SocketAddress address) {
       final NetworkManager networkmanager = new NetworkManager(PacketDirection.CLIENTBOUND);
-      (new Bootstrap()).group(CLIENT_LOCAL_EVENTLOOP.getValue()).handler(new ChannelInitializer<Channel>()
-      {
-         protected void initChannel(Channel p_initChannel_1_) throws Exception
-         {
+      (new Bootstrap()).group(CLIENT_LOCAL_EVENTLOOP.getValue()).handler(new ChannelInitializer<Channel>() {
+         protected void initChannel(Channel p_initChannel_1_) throws Exception {
             p_initChannel_1_.pipeline().addLast("packet_handler", networkmanager);
          }
       }).channel(LocalChannel.class).connect(address).syncUninterruptibly();
@@ -373,35 +358,24 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
    }
 
    public void setCompressionThreshold(int threshold) {
-      if (threshold >= 0)
-      {
-         if (this.channel.pipeline().get("decompress") instanceof NettyCompressionDecoder)
-         {
-            ((NettyCompressionDecoder)this.channel.pipeline().get("decompress")).setCompressionThreshold(threshold);
-         }
-         else
-         {
+      if (threshold >= 0) {
+         if (this.channel.pipeline().get("decompress") instanceof NettyCompressionDecoder) {
+            ((NettyCompressionDecoder) this.channel.pipeline().get("decompress")).setCompressionThreshold(threshold);
+         } else {
             this.channel.pipeline().addBefore("decoder", "decompress", new NettyCompressionDecoder(threshold));
          }
 
-         if (this.channel.pipeline().get("compress") instanceof NettyCompressionEncoder)
-         {
-            ((NettyCompressionEncoder)this.channel.pipeline().get("compress")).setCompressionThreshold(threshold);
-         }
-         else
-         {
+         if (this.channel.pipeline().get("compress") instanceof NettyCompressionEncoder) {
+            ((NettyCompressionEncoder) this.channel.pipeline().get("compress")).setCompressionThreshold(threshold);
+         } else {
             this.channel.pipeline().addBefore("encoder", "compress", new NettyCompressionEncoder(threshold));
          }
-      }
-      else
-      {
-         if (this.channel.pipeline().get("decompress") instanceof NettyCompressionDecoder)
-         {
+      } else {
+         if (this.channel.pipeline().get("decompress") instanceof NettyCompressionDecoder) {
             this.channel.pipeline().remove("decompress");
          }
 
-         if (this.channel.pipeline().get("compress") instanceof NettyCompressionEncoder)
-         {
+         if (this.channel.pipeline().get("compress") instanceof NettyCompressionEncoder) {
             this.channel.pipeline().remove("compress");
          }
       }
@@ -437,10 +411,10 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
    public static class QueuedPacket {
       private final IPacket<?> packet;
       @org.jetbrains.annotations.Nullable
-      private final GenericFutureListener <? extends Future <? super Void >> field_201049_b;
+      private final GenericFutureListener<? extends Future<? super Void>> field_201049_b;
 
-      public QueuedPacket(IPacket<?> p_i48604_1_, @org.jetbrains.annotations.Nullable GenericFutureListener <? extends Future <? super Void >> p_i48604_2_)
-      {
+      public QueuedPacket(IPacket<?> p_i48604_1_,
+            @org.jetbrains.annotations.Nullable GenericFutureListener<? extends Future<? super Void>> p_i48604_2_) {
          this.packet = p_i48604_1_;
          this.field_201049_b = p_i48604_2_;
       }

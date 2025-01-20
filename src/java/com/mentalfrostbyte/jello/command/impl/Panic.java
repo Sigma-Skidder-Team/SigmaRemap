@@ -20,7 +20,7 @@ public class Panic extends Command {
       if (var2.length > 0) {
          throw new CommandException("Too many arguments");
       } else {
-         Class6814 var6 = Client.getInstance().getModuleManager().getConfigurationManager();
+         Class6814 var6 = Client.getInstance().moduleManager.getConfigurationManager();
          if (var6.method20768("Panic")) {
             int var7 = var6.getAllConfigs().size();
 

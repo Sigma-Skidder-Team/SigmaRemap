@@ -20,7 +20,7 @@ public class XRay extends Module {
     @Override
     public void onEnable() {
         mc.worldRenderer.loadRenderers();
-        Fullbright fullbrightModule = (Fullbright) Client.getInstance().getModuleManager().getModuleByClass(Fullbright.class);
+        Fullbright fullbrightModule = (Fullbright) Client.getInstance().moduleManager.getModuleByClass(Fullbright.class);
         if (!fullbrightModule.isEnabled()) {
             fullbrightModule.setState(true);
         }

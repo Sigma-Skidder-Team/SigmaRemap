@@ -51,13 +51,15 @@ public class BoxOutlineESP extends Module {
 
     private void method16507() {
         if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
-            mc.world
-                    .entitiesById
+            mc.world.entitiesById
                     .forEach(
                             (var1, var2) -> {
-                                boolean var5 = MultiUtilities.method17744(var2) == Class2258.field14690 && this.access().getBooleanValueFromSettingName("Show Players");
-                                boolean var6 = !var2.isInvisible() || this.access().getBooleanValueFromSettingName("Show Invisibles");
-                                if (!Client.getInstance().getCombatManager().isTargetABot(var2) && var5 && var6 && var2 != mc.player) {
+                                boolean var5 = MultiUtilities.method17744(var2) == Class2258.field14690
+                                        && this.access().getBooleanValueFromSettingName("Show Players");
+                                boolean var6 = !var2.isInvisible()
+                                        || this.access().getBooleanValueFromSettingName("Show Invisibles");
+                                if (!Client.getInstance().combatManager.isTargetABot(var2) && var5 && var6
+                                        && var2 != mc.player) {
                                     double var7 = PositionUtils.getRelativePosition(var2).x;
                                     double var9 = PositionUtils.getRelativePosition(var2).y;
                                     double var11 = PositionUtils.getRelativePosition(var2).z;
@@ -75,39 +77,43 @@ public class BoxOutlineESP extends Module {
                                             var2.getHeight() * 21.0F,
                                             ResourceList.shadowPNG,
                                             this.field23719,
-                                            false
-                                    );
+                                            false);
                                     ResourceList.shoutIconPNG.bind();
                                     GL11.glPopMatrix();
                                 }
-                            }
-                    );
+                            });
         }
     }
 
     private void method16508(boolean var1) {
         for (Entity var5 : mc.world.getAllEntities()) {
-            if (!Client.getInstance().getCombatManager().isTargetABot(var5)) {
-                boolean var6 = MultiUtilities.method17744(var5) == Class2258.field14690 && this.access().getBooleanValueFromSettingName("Show Players");
-                boolean var7 = MultiUtilities.method17744(var5) == Class2258.field14689 && this.access().getBooleanValueFromSettingName("Show Mobs");
-                boolean var8 = MultiUtilities.method17744(var5) == Class2258.field14691 && this.access().getBooleanValueFromSettingName("Show Passives");
+            if (!Client.getInstance().combatManager.isTargetABot(var5)) {
+                boolean var6 = MultiUtilities.method17744(var5) == Class2258.field14690
+                        && this.access().getBooleanValueFromSettingName("Show Players");
+                boolean var7 = MultiUtilities.method17744(var5) == Class2258.field14689
+                        && this.access().getBooleanValueFromSettingName("Show Mobs");
+                boolean var8 = MultiUtilities.method17744(var5) == Class2258.field14691
+                        && this.access().getBooleanValueFromSettingName("Show Passives");
                 boolean var9 = !var5.isInvisible() || this.access().getBooleanValueFromSettingName("Show Invisibles");
                 if ((var7 || var6 || var8) && var9 && var5 != mc.player) {
                     GL11.glPushMatrix();
                     GL11.glTranslated(
                             -mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
                             -mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
-                            -mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
-                    );
+                            -mc.gameRenderer.getActiveRenderInfo().getPos().getZ());
                     GL11.glDisable(2929);
                     GL11.glEnable(3042);
                     int var10 = this.parseSettingValueToIntBySettingName("Color");
-                    double var11 = (var5.getPosX() - var5.lastTickPosX) * (double) mc.timer.renderPartialTicks - (var5.getPosX() - var5.lastTickPosX);
-                    double var13 = (var5.getPosY() - var5.lastTickPosY) * (double) mc.timer.renderPartialTicks - (var5.getPosY() - var5.lastTickPosY);
-                    double var15 = (var5.getPosZ() - var5.lastTickPosZ) * (double) mc.timer.renderPartialTicks - (var5.getPosZ() - var5.lastTickPosZ);
+                    double var11 = (var5.getPosX() - var5.lastTickPosX) * (double) mc.timer.renderPartialTicks
+                            - (var5.getPosX() - var5.lastTickPosX);
+                    double var13 = (var5.getPosY() - var5.lastTickPosY) * (double) mc.timer.renderPartialTicks
+                            - (var5.getPosY() - var5.lastTickPosY);
+                    double var15 = (var5.getPosZ() - var5.lastTickPosZ) * (double) mc.timer.renderPartialTicks
+                            - (var5.getPosZ() - var5.lastTickPosZ);
                     Box3D var17 = new Box3D(var5.getBoundingBox().offset(var11, var13, var15)).expand(0.1F);
                     if (var1) {
-                        RenderUtil.renderWireframeBox(var17, 3.0F, MultiUtilities.applyAlpha(var10, Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
+                        RenderUtil.renderWireframeBox(var17, 3.0F, MultiUtilities.applyAlpha(var10,
+                                Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
                     } else {
                         RenderUtil.render3DColoredBox(var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     }

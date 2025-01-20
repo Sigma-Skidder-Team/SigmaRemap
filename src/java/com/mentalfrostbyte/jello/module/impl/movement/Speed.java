@@ -33,13 +33,12 @@ public class Speed extends ModuleWithModuleSettings {
                 new InvadedSpeed(),
                 new MineplexSpeed(),
                 new GommeSpeed(),
-                new TestSpeed()
-        );
+                new TestSpeed());
         this.registerSetting(new BooleanSetting("Lag back checker", "Disable speed when you get lag back", true));
         tickCounter = 0;
     }
 
-    @EventTarget    
+    @EventTarget
     public void TickEvent(TickEvent event) {
         tickCounter++;
     }
@@ -48,8 +47,10 @@ public class Speed extends ModuleWithModuleSettings {
     public void RecievePacketEvent(ReceivePacketEvent event) {
         if (event.getPacket() instanceof SPlayerPositionLookPacket && mc.player != null) {
             tickCounter = 0;
-            if (this.getBooleanValueFromSettingName("Lag back checker") && this.isEnabled() && mc.player.ticksExisted > 2) {
-                Client.getInstance().getNotificationManager().send(new Notification("Speed", "Disabled speed due to lagback."));
+            if (this.getBooleanValueFromSettingName("Lag back checker") && this.isEnabled()
+                    && mc.player.ticksExisted > 2) {
+                Client.getInstance().notificationManager
+                        .send(new Notification("Speed", "Disabled speed due to lagback."));
                 this.toggle();
             }
         }

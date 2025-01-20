@@ -82,7 +82,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    private int counterInWater;
    private boolean showDeathScreen = true;
 
-   public ClientPlayerEntity(Minecraft var1, ClientWorld var2, ClientPlayNetHandler var3, StatisticsManager var4, ClientRecipeBook var5, boolean var6, boolean var7) {
+   public ClientPlayerEntity(Minecraft var1, ClientWorld var2, ClientPlayNetHandler var3, StatisticsManager var4,
+         ClientRecipeBook var5, boolean var6, boolean var7) {
       super(var2, var3.method15794());
       this.mc = var1;
       this.connection = var3;
@@ -108,7 +109,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    public boolean startRiding(Entity var1, boolean var2) {
       if (super.startRiding(var1, var2)) {
          if (var1 instanceof AbstractMinecartEntity) {
-            this.mc.getSoundHandler().method1000(new Class6344(this, (AbstractMinecartEntity)var1));
+            this.mc.getSoundHandler().method1000(new Class6344(this, (AbstractMinecartEntity) var1));
          }
 
          if (var1 instanceof BoatEntity) {
@@ -146,8 +147,10 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          if (!this.isPassenger()) {
             this.onUpdateWalkingPlayer();
          } else {
-            this.connection.sendPacket(new CPlayerPacket.RotationPacket(this.rotationYaw, this.rotationPitch, this.onGround));
-            this.connection.sendPacket(new CInputPacket(this.moveStrafing, this.moveForward, this.movementInput.jump, this.movementInput.sneaking));
+            this.connection
+                  .sendPacket(new CPlayerPacket.RotationPacket(this.rotationYaw, this.rotationPitch, this.onGround));
+            this.connection.sendPacket(new CInputPacket(this.moveStrafing, this.moveForward, this.movementInput.jump,
+                  this.movementInput.sneaking));
             Entity var3 = this.method3415();
             if (var3 != this && var3.canPassengerSteer()) {
                this.connection.sendPacket(new CMoveVehiclePacket(var3));
@@ -163,7 +166,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    public float method5387() {
       for (IAmbientSoundHandler var4 : this.ambientSoundHandlers) {
          if (var4 instanceof Class8079) {
-            return ((Class8079)var4).method27949();
+            return ((Class8079) var4).method27949();
          }
       }
 
@@ -172,19 +175,22 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    public void onUpdateWalkingPlayer() {
       AxisAlignedBB bounds = this.getBoundingBox();
-      EventUpdate eventItself = new EventUpdate(this.getPosX(), bounds.minY, this.getPosZ(), this.rotationPitch, this.rotationYaw, this.onGround);
-      Client.getInstance().getEventManager().call(eventItself);
+      EventUpdate eventItself = new EventUpdate(this.getPosX(), bounds.minY, this.getPosZ(), this.rotationPitch,
+            this.rotationYaw, this.onGround);
+      Client.getInstance().eventManager.call(eventItself);
       if (!eventItself.isCancelled()) {
          boolean var5 = this.isSprinting();
          if (var5 != this.serverSprintState) {
-            CEntityActionPacket.Action var6 = !var5 ? CEntityActionPacket.Action.STOP_SPRINTING : CEntityActionPacket.Action.START_SPRINTING;
+            CEntityActionPacket.Action var6 = !var5 ? CEntityActionPacket.Action.STOP_SPRINTING
+                  : CEntityActionPacket.Action.START_SPRINTING;
             this.connection.sendPacket(new CEntityActionPacket(this, var6));
             this.serverSprintState = var5;
          }
 
          boolean var31 = this.isSneaking();
          if (var31 != this.clientSneakState) {
-            CEntityActionPacket.Action var7 = !var31 ? CEntityActionPacket.Action.RELEASE_SHIFT_KEY : CEntityActionPacket.Action.PRESS_SHIFT_KEY;
+            CEntityActionPacket.Action var7 = !var31 ? CEntityActionPacket.Action.RELEASE_SHIFT_KEY
+                  : CEntityActionPacket.Action.PRESS_SHIFT_KEY;
             this.connection.sendPacket(new CEntityActionPacket(this, var7));
             this.clientSneakState = var31;
          }
@@ -199,28 +205,32 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             double var17 = var8 - this.lastReportedPosX;
             double var19 = var10 - this.lastReportedPosY;
             double var21 = var12 - this.lastReportedPosZ;
-            double fixatedYaw = (double)(eventItselfYaw - this.lastReportedYaw % 360.0F);
-            double fixedatedPitch = (double)(eventItselfPitch - this.lastReportedPitch);
+            double fixatedYaw = (double) (eventItselfYaw - this.lastReportedYaw % 360.0F);
+            double fixedatedPitch = (double) (eventItselfPitch - this.lastReportedPitch);
             this.positionUpdateTicks++;
-            boolean isMoving = eventItself.isMoving() || var17 * var17 + var19 * var19 + var21 * var21 > 9.0E-4 || this.positionUpdateTicks >= 20;
+            boolean isMoving = eventItself.isMoving() || var17 * var17 + var19 * var19 + var21 * var21 > 9.0E-4
+                  || this.positionUpdateTicks >= 20;
             boolean isLooking = fixatedYaw != 0.0 || fixedatedPitch != 0.0;
             if (!this.isPassenger()) {
                if (isMoving && isLooking) {
-                  this.connection.sendPacket(new CPlayerPacket.PositionRotationPacket(var8, var10, var12, eventItselfYaw, eventItselfPitch, var16));
+                  this.connection.sendPacket(new CPlayerPacket.PositionRotationPacket(var8, var10, var12,
+                        eventItselfYaw, eventItselfPitch, var16));
                } else if (!isMoving) {
                   if (!isLooking) {
                      if (this.prevOnGround != this.onGround) {
                         this.connection.sendPacket(new CPlayerPacket(var16));
                      }
                   } else {
-                     this.connection.sendPacket(new CPlayerPacket.RotationPacket(eventItselfYaw, eventItselfPitch, var16));
+                     this.connection
+                           .sendPacket(new CPlayerPacket.RotationPacket(eventItselfYaw, eventItselfPitch, var16));
                   }
                } else {
                   this.connection.sendPacket(new CPlayerPacket.PositionPacket(var8, var10, var12, var16));
                }
             } else {
                Vector3d var29 = this.getMotion();
-               this.connection.sendPacket(new CPlayerPacket.PositionRotationPacket(var29.x, -999.0, var29.z, eventItselfYaw, eventItselfPitch, var16));
+               this.connection.sendPacket(new CPlayerPacket.PositionRotationPacket(var29.x, -999.0, var29.z,
+                     eventItselfYaw, eventItselfPitch, var16));
                isMoving = false;
             }
 
@@ -245,7 +255,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          }
 
          eventItself.postUpdate();
-         Client.getInstance().getEventManager().call(eventItself);
+         Client.getInstance().eventManager.call(eventItself);
       }
    }
 
@@ -267,11 +277,13 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public boolean drop(boolean var1) {
-      CPlayerDiggingPacket.Action var4 = !var1 ? CPlayerDiggingPacket.Action.DROP_ITEM : CPlayerDiggingPacket.Action.DROP_ALL_ITEMS;
+      CPlayerDiggingPacket.Action var4 = !var1 ? CPlayerDiggingPacket.Action.DROP_ITEM
+            : CPlayerDiggingPacket.Action.DROP_ALL_ITEMS;
       this.connection.sendPacket(new CPlayerDiggingPacket(var4, BlockPos.ZERO, net.minecraft.util.Direction.DOWN));
       return this.inventory
-            .decrStackSize(this.inventory.currentItem, var1 && !this.inventory.method4028().isEmpty() ? this.inventory.method4028().getCount() : 1)
-         != ItemStack.EMPTY;
+            .decrStackSize(this.inventory.currentItem,
+                  var1 && !this.inventory.method4028().isEmpty() ? this.inventory.method4028().getCount()
+                        : 1) != ItemStack.EMPTY;
    }
 
    public void method5389(String var1) {
@@ -305,7 +317,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    public void method5390() {
       this.inventory.setItemStack(ItemStack.EMPTY);
       super.method2772();
-      this.mc.displayGuiScreen((Screen)null);
+      this.mc.displayGuiScreen((Screen) null);
    }
 
    public void method5391(float var1) {
@@ -356,7 +368,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public void method5392() {
-      this.connection.sendPacket(new CEntityActionPacket(this, CEntityActionPacket.Action.START_RIDING_JUMP, MathHelper.floor(this.method5406() * 100.0F)));
+      this.connection.sendPacket(new CEntityActionPacket(this, CEntityActionPacket.Action.START_RIDING_JUMP,
+            MathHelper.floor(this.method5406() * 100.0F)));
    }
 
    public void sendHorseInventory() {
@@ -407,15 +420,18 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    private void setPlayerOffsetMotion(double var1, double var3) {
       BlockPos var7 = new BlockPos(var1, this.getPosY(), var3);
       if (this.method5401(var7)) {
-         double var8 = var1 - (double)var7.getX();
-         double var10 = var3 - (double)var7.getZ();
+         double var8 = var1 - (double) var7.getX();
+         double var10 = var3 - (double) var7.getZ();
          net.minecraft.util.Direction var12 = null;
          double var13 = Double.MAX_VALUE;
-         net.minecraft.util.Direction[] var15 = new net.minecraft.util.Direction[]{net.minecraft.util.Direction.WEST, net.minecraft.util.Direction.EAST, net.minecraft.util.Direction.NORTH, net.minecraft.util.Direction.SOUTH};
+         net.minecraft.util.Direction[] var15 = new net.minecraft.util.Direction[] { net.minecraft.util.Direction.WEST,
+               net.minecraft.util.Direction.EAST, net.minecraft.util.Direction.NORTH,
+               net.minecraft.util.Direction.SOUTH };
 
          for (net.minecraft.util.Direction var19 : var15) {
             double var20 = var19.getAxis().getCoordinate(var8, 0.0, var10);
-            double var22 = var19.getAxisDirection() != net.minecraft.util.Direction.AxisDirection.POSITIVE ? var20 : 1.0 - var20;
+            double var22 = var19.getAxisDirection() != net.minecraft.util.Direction.AxisDirection.POSITIVE ? var20
+                  : 1.0 - var20;
             if (var22 < var13 && !this.method5401(var7.offset(var19))) {
                var13 = var22;
                var12 = var19;
@@ -425,9 +441,9 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          if (var12 != null) {
             Vector3d var24 = this.getMotion();
             if (var12.getAxis() != Direction.Axis.X) {
-               this.setMotion(var24.x, var24.y, 0.1 * (double)var12.getZOffset());
+               this.setMotion(var24.x, var24.y, 0.1 * (double) var12.getZOffset());
             } else {
-               this.setMotion(0.1 * (double)var12.getXOffset(), var24.y, var24.z);
+               this.setMotion(0.1 * (double) var12.getXOffset(), var24.y, var24.z);
             }
          }
       }
@@ -436,14 +452,13 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    private boolean method5401(BlockPos var1) {
       AxisAlignedBB var4 = this.getBoundingBox();
       AxisAlignedBB var5 = new AxisAlignedBB(
-            (double)var1.getX(),
+            (double) var1.getX(),
             var4.minY,
-            (double)var1.getZ(),
-            (double)var1.getX() + 1.0,
+            (double) var1.getZ(),
+            (double) var1.getX() + 1.0,
             var4.maxY,
-            (double)var1.getZ() + 1.0
-         )
-         .shrink(1.0E-7);
+            (double) var1.getZ() + 1.0)
+            .shrink(1.0E-7);
       return !this.world.func_242405_a(this, var5, (var1x, var2) -> var1x.method23437(this.world, var2));
    }
 
@@ -483,7 +498,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void playSound(SoundEvent var1, float var2, float var3) {
-      this.world.playSound(this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.getSoundCategory(), var2, var3, false);
+      this.world.playSound(this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.getSoundCategory(), var2, var3,
+            false);
    }
 
    @Override
@@ -542,7 +558,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    public boolean method5405() {
       Entity var3 = this.getRidingEntity();
-      return this.isPassenger() && var3 instanceof IJumpingMount && ((IJumpingMount)var3).canJump();
+      return this.isPassenger() && var3 instanceof IJumpingMount && ((IJumpingMount) var3).canJump();
    }
 
    public float method5406() {
@@ -615,8 +631,10 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          this.isJumping = this.movementInput.jump;
          this.prevRenderArmYaw = this.renderArmYaw;
          this.prevRenderArmPitch = this.renderArmPitch;
-         this.renderArmPitch = (float)((double)this.renderArmPitch + (double)(this.rotationPitch - this.renderArmPitch) * 0.5);
-         this.renderArmYaw = (float)((double)this.renderArmYaw + (double)(this.rotationYaw - this.renderArmYaw) * 0.5);
+         this.renderArmPitch = (float) ((double) this.renderArmPitch
+               + (double) (this.rotationPitch - this.renderArmPitch) * 0.5);
+         this.renderArmYaw = (float) ((double) this.renderArmYaw
+               + (double) (this.rotationYaw - this.renderArmYaw) * 0.5);
       }
    }
 
@@ -636,14 +654,14 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       boolean var4 = this.movementInput.sneaking;
       boolean var5 = this.method5415();
       this.isCrouching = !this.abilities.isFlying
-         && !this.isSwimming()
-         && this.isPoseClear(Pose.field13624)
-         && (this.isSneaking() || !this.isSleeping() && !this.isPoseClear(Pose.STANDING));
+            && !this.isSwimming()
+            && this.isPoseClear(Pose.field13624)
+            && (this.isSneaking() || !this.isSleeping() && !this.isPoseClear(Pose.STANDING));
       this.movementInput.tickMovement(this.method5407());
       this.mc.getTutorial().method37023(this.movementInput);
       if (this.isHandActive() && !this.isPassenger()) {
          EventSlowDown var6 = new EventSlowDown(0.2F);
-         Client.getInstance().getEventManager().call(var6);
+         Client.getInstance().eventManager.call(var6);
          if (!var6.isCancelled()) {
             this.movementInput.moveStrafe = this.movementInput.moveStrafe * var6.getSlowDown();
             this.movementInput.moveForward = this.movementInput.moveForward * var6.getSlowDown();
@@ -659,25 +677,29 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       }
 
       if (!this.noClip) {
-         this.setPlayerOffsetMotion(this.getPosX() - (double)this.getWidth() * 0.35, this.getPosZ() + (double)this.getWidth() * 0.35);
-         this.setPlayerOffsetMotion(this.getPosX() - (double)this.getWidth() * 0.35, this.getPosZ() - (double)this.getWidth() * 0.35);
-         this.setPlayerOffsetMotion(this.getPosX() + (double)this.getWidth() * 0.35, this.getPosZ() - (double)this.getWidth() * 0.35);
-         this.setPlayerOffsetMotion(this.getPosX() + (double)this.getWidth() * 0.35, this.getPosZ() + (double)this.getWidth() * 0.35);
+         this.setPlayerOffsetMotion(this.getPosX() - (double) this.getWidth() * 0.35,
+               this.getPosZ() + (double) this.getWidth() * 0.35);
+         this.setPlayerOffsetMotion(this.getPosX() - (double) this.getWidth() * 0.35,
+               this.getPosZ() - (double) this.getWidth() * 0.35);
+         this.setPlayerOffsetMotion(this.getPosX() + (double) this.getWidth() * 0.35,
+               this.getPosZ() - (double) this.getWidth() * 0.35);
+         this.setPlayerOffsetMotion(this.getPosX() + (double) this.getWidth() * 0.35,
+               this.getPosZ() + (double) this.getWidth() * 0.35);
       }
 
       if (var4) {
          this.sprintToggleTimer = 0;
       }
 
-      boolean var7 = (float)this.getFoodStats().getFoodLevel() > 6.0F || this.abilities.allowFlying;
+      boolean var7 = (float) this.getFoodStats().getFoodLevel() > 6.0F || this.abilities.allowFlying;
       if ((this.onGround || this.canSwim())
-         && !var4
-         && !var5
-         && this.method5415()
-         && !this.isSprinting()
-         && var7
-         && !this.isHandActive()
-         && !this.isPotionActive(Effects.BLINDNESS)) {
+            && !var4
+            && !var5
+            && this.method5415()
+            && !this.isSprinting()
+            && var7
+            && !this.isHandActive()
+            && !this.isPotionActive(Effects.BLINDNESS)) {
          if (this.sprintToggleTimer <= 0 && !this.mc.gameSettings.keyBindSprint.isKeyDown()) {
             this.sprintToggleTimer = 7;
          } else {
@@ -686,12 +708,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       }
 
       if (!this.isSprinting()
-         && (!this.isInWater() || this.canSwim())
-         && this.method5415()
-         && var7
-         && !this.isHandActive()
-         && !this.isPotionActive(Effects.BLINDNESS)
-         && this.mc.gameSettings.keyBindSprint.isKeyDown()) {
+            && (!this.isInWater() || this.canSwim())
+            && this.method5415()
+            && var7
+            && !this.isHandActive()
+            && !this.isPotionActive(Effects.BLINDNESS)
+            && this.mc.gameSettings.keyBindSprint.isKeyDown()) {
          this.setSprinting(true);
       }
 
@@ -729,7 +751,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          }
       }
 
-      if (this.movementInput.jump && !var11 && !var3 && !this.abilities.isFlying && !this.isPassenger() && !this.isOnLadder()) {
+      if (this.movementInput.jump && !var11 && !var3 && !this.abilities.isFlying && !this.isPassenger()
+            && !this.isOnLadder()) {
          ItemStack var12 = this.getItemStackFromSlot(EquipmentSlotType.CHEST);
          if (var12.getItem() == Items.ELYTRA && Class3256.method11698(var12) && this.tryToStartFallFlying()) {
             this.connection.sendPacket(new CEntityActionPacket(this, CEntityActionPacket.Action.START_FALL_FLYING));
@@ -762,14 +785,15 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          }
 
          if (var14 != 0) {
-            this.setMotion(this.getMotion().add(0.0, (double)((float)var14 * this.abilities.getFlySpeed() * 3.0F), 0.0));
+            this.setMotion(
+                  this.getMotion().add(0.0, (double) ((float) var14 * this.abilities.getFlySpeed() * 3.0F), 0.0));
          }
       }
 
       if (!this.method5405()) {
          this.horseJumpPower = 0.0F;
       } else {
-         IJumpingMount var15 = (IJumpingMount)this.getRidingEntity();
+         IJumpingMount var15 = (IJumpingMount) this.getRidingEntity();
          if (this.horseJumpPowerCounter < 0) {
             this.horseJumpPowerCounter++;
             if (this.horseJumpPowerCounter == 0) {
@@ -787,9 +811,9 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          } else if (var3) {
             this.horseJumpPowerCounter++;
             if (this.horseJumpPowerCounter >= 10) {
-               this.horseJumpPower = 0.8F + 2.0F / (float)(this.horseJumpPowerCounter - 9) * 0.1F;
+               this.horseJumpPower = 0.8F + 2.0F / (float) (this.horseJumpPowerCounter - 9) * 0.1F;
             } else {
-               this.horseJumpPower = (float)this.horseJumpPowerCounter * 0.1F;
+               this.horseJumpPower = (float) this.horseJumpPowerCounter * 0.1F;
             }
          }
       }
@@ -824,11 +848,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                this.method2772();
             }
 
-            this.mc.displayGuiScreen((Screen)null);
+            this.mc.displayGuiScreen((Screen) null);
          }
 
          if (this.timeInPortal == 0.0F) {
-            this.mc.getSoundHandler().method1000(MinecraftSoundManager.method19296(SoundEvents.field26978, this.rand.nextFloat() * 0.4F + 0.8F, 0.25F));
+            this.mc.getSoundHandler().method1000(MinecraftSoundManager.method19296(SoundEvents.field26978,
+                  this.rand.nextFloat() * 0.4F + 0.8F, 0.25F));
          }
 
          this.timeInPortal += 0.0125F;
@@ -847,9 +872,11 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       super.updateRidden();
       this.rowingBoat = false;
       if (this.getRidingEntity() instanceof BoatEntity) {
-         BoatEntity var3 = (BoatEntity)this.getRidingEntity();
-         var3.method4173(this.movementInput.leftKeyDown, this.movementInput.rightKeyDown, this.movementInput.forwardKeyDown, this.movementInput.backKeyDown);
-         this.rowingBoat = this.rowingBoat | (this.movementInput.leftKeyDown || this.movementInput.rightKeyDown || this.movementInput.forwardKeyDown || this.movementInput.backKeyDown);
+         BoatEntity var3 = (BoatEntity) this.getRidingEntity();
+         var3.method4173(this.movementInput.leftKeyDown, this.movementInput.rightKeyDown,
+               this.movementInput.forwardKeyDown, this.movementInput.backKeyDown);
+         this.rowingBoat = this.rowingBoat | (this.movementInput.leftKeyDown || this.movementInput.rightKeyDown
+               || this.movementInput.forwardKeyDown || this.movementInput.backKeyDown);
       }
    }
 
@@ -873,7 +900,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       double var5 = this.getPosX();
       double var7 = this.getPosZ();
       super.move(var1, var2);
-      this.updateAutoJump((float)(this.getPosX() - var5), (float)(this.getPosZ() - var7));
+      this.updateAutoJump((float) (this.getPosX() - var5), (float) (this.getPosZ() - var7));
    }
 
    public boolean method5411() {
@@ -883,27 +910,28 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    public void updateAutoJump(float var1, float var2) {
       if (this.method5413()) {
          Vector3d var5 = this.getPositionVec();
-         Vector3d var6 = var5.add((double)var1, 0.0, (double)var2);
-         Vector3d var7 = new Vector3d((double)var1, 0.0, (double)var2);
+         Vector3d var6 = var5.add((double) var1, 0.0, (double) var2);
+         Vector3d var7 = new Vector3d((double) var1, 0.0, (double) var2);
          float var8 = this.getAIMoveSpeed();
-         float var9 = (float)var7.lengthSquared();
+         float var9 = (float) var7.lengthSquared();
          if (var9 <= 0.001F) {
             Vector2f var10 = this.movementInput.getMoveVector();
             float var11 = var8 * var10.x;
             float var12 = var8 * var10.y;
             float var13 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0));
             float var14 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0));
-            var7 = new Vector3d((double)(var11 * var14 - var12 * var13), var7.y, (double)(var12 * var14 + var11 * var13));
-            var9 = (float)var7.lengthSquared();
+            var7 = new Vector3d((double) (var11 * var14 - var12 * var13), var7.y,
+                  (double) (var12 * var14 + var11 * var13));
+            var9 = (float) var7.lengthSquared();
             if (var9 <= 0.001F) {
                return;
             }
          }
 
          float var42 = MathHelper.method37815(var9);
-         Vector3d var43 = var7.scale((double)var42);
+         Vector3d var43 = var7.scale((double) var42);
          Vector3d var44 = this.getForward();
-         float var45 = (float)(var44.x * var43.x + var44.z * var43.z);
+         float var45 = (float) (var44.x * var43.x + var44.z * var43.z);
          if (!(var45 < -0.15F)) {
             ISelectionContext var46 = ISelectionContext.forEntity(this);
             BlockPos var15 = new BlockPos(this.getPosX(), this.getBoundingBox().maxY, this.getPosZ());
@@ -915,39 +943,41 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                   float var18 = 7.0F;
                   float var19 = 1.2F;
                   if (this.isPotionActive(Effects.JUMP_BOOST)) {
-                     var19 += (float)(this.getActivePotionEffect(Effects.JUMP_BOOST).getAmplifier() + 1) * 0.75F;
+                     var19 += (float) (this.getActivePotionEffect(Effects.JUMP_BOOST).getAmplifier() + 1) * 0.75F;
                   }
 
                   float var20 = Math.max(var8 * 7.0F, 1.0F / var42);
-                  Vector3d var21 = var6.add(var43.scale((double)var20));
+                  Vector3d var21 = var6.add(var43.scale((double) var20));
                   float var22 = this.getWidth();
                   float var23 = this.getHeight();
-                  AxisAlignedBB var24 = new AxisAlignedBB(var5, var21.add(0.0, (double)var23, 0.0)).grow((double)var22, 0.0, (double)var22);
+                  AxisAlignedBB var24 = new AxisAlignedBB(var5, var21.add(0.0, (double) var23, 0.0))
+                        .grow((double) var22, 0.0, (double) var22);
                   Vector3d var25 = var5.add(0.0, 0.51F, 0.0);
                   var21 = var21.add(0.0, 0.51F, 0.0);
                   Vector3d var26 = var43.method11335(new Vector3d(0.0, 1.0, 0.0));
-                  Vector3d var27 = var26.scale((double)(var22 * 0.5F));
+                  Vector3d var27 = var26.scale((double) (var22 * 0.5F));
                   Vector3d var28 = var25.subtract(var27);
                   Vector3d var29 = var21.subtract(var27);
                   Vector3d var30 = var25.add(var27);
                   Vector3d var31 = var21.add(var27);
-                  Iterator var32 = this.world.func_234867_d_(this, var24, var0 -> true).<AxisAlignedBB>flatMap(var0 -> var0.method19521().stream()).iterator();
+                  Iterator var32 = this.world.func_234867_d_(this, var24, var0 -> true)
+                        .<AxisAlignedBB>flatMap(var0 -> var0.method19521().stream()).iterator();
                   float var33 = Float.MIN_VALUE;
 
                   while (var32.hasNext()) {
-                     AxisAlignedBB var34 = (AxisAlignedBB)var32.next();
+                     AxisAlignedBB var34 = (AxisAlignedBB) var32.next();
                      if (var34.intersects(var28, var29) || var34.intersects(var30, var31)) {
-                        var33 = (float)var34.maxY;
+                        var33 = (float) var34.maxY;
                         Vector3d var35 = var34.getCenter();
                         BlockPos var36 = new BlockPos(var35);
 
-                        for (int var37 = 1; (float)var37 < var19; var37++) {
+                        for (int var37 = 1; (float) var37 < var19; var37++) {
                            BlockPos var38 = var36.up(var37);
                            BlockState var39 = this.world.getBlockState(var38);
                            VoxelShape var40;
                            if (!(var40 = var39.getCollisionShape(this.world, var38, var46)).isEmpty()) {
-                              var33 = (float)var40.getEnd(Direction.Axis.Y) + (float)var38.getY();
-                              if ((double)var33 - this.getPosY() > (double)var19) {
+                              var33 = (float) var40.getEnd(Direction.Axis.Y) + (float) var38.getY();
+                              if ((double) var33 - this.getPosY() > (double) var19) {
                                  return;
                               }
                            }
@@ -965,7 +995,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                   }
 
                   if (var33 != Float.MIN_VALUE) {
-                     float var49 = (float)((double)var33 - this.getPosY());
+                     float var49 = (float) ((double) var33 - this.getPosY());
                      if (!(var49 <= 0.5F) && !(var49 > var19)) {
                         this.autoJumpTime = 1;
                      }
@@ -978,12 +1008,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    private boolean method5413() {
       return this.method5411()
-         && this.autoJumpTime <= 0
-         && this.onGround
-         && !this.method2853()
-         && !this.isPassenger()
-         && this.method5414()
-         && (double)this.getJumpFactor() >= 1.0;
+            && this.autoJumpTime <= 0
+            && this.onGround
+            && !this.method2853()
+            && !this.isPassenger()
+            && this.method5414()
+            && (double) this.getJumpFactor() >= 1.0;
    }
 
    private boolean method5414() {
@@ -993,16 +1023,18 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    private boolean method5415() {
       double var3 = 0.8;
-      return !this.canSwim() ? (double)this.movementInput.moveForward >= 0.8 : this.movementInput.isMovingForward();
+      return !this.canSwim() ? (double) this.movementInput.moveForward >= 0.8 : this.movementInput.isMovingForward();
    }
 
    public float method5416() {
       if (this.areEyesInFluid(FluidTags.WATER)) {
          float var3 = 600.0F;
          float var4 = 100.0F;
-         if (!((float)this.counterInWater >= 600.0F)) {
-            float var5 = MathHelper.clamp((float)this.counterInWater / 100.0F, 0.0F, 1.0F);
-            float var6 = !((float)this.counterInWater < 100.0F) ? MathHelper.clamp(((float)this.counterInWater - 100.0F) / 500.0F, 0.0F, 1.0F) : 0.0F;
+         if (!((float) this.counterInWater >= 600.0F)) {
+            float var5 = MathHelper.clamp((float) this.counterInWater / 100.0F, 0.0F, 1.0F);
+            float var6 = !((float) this.counterInWater < 100.0F)
+                  ? MathHelper.clamp(((float) this.counterInWater - 100.0F) / 500.0F, 0.0F, 1.0F)
+                  : 0.0F;
             return var5 * 0.6F + var6 * 0.39999998F;
          } else {
             return 1.0F;
@@ -1023,12 +1055,14 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       boolean var4 = super.method2854();
       if (!this.isSpectator()) {
          if (!var3 && var4) {
-            this.world.playSound(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26329, SoundCategory.field14736, 1.0F, 1.0F, false);
+            this.world.playSound(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26329,
+                  SoundCategory.field14736, 1.0F, 1.0F, false);
             this.mc.getSoundHandler().method1000(new Class6342(this));
          }
 
          if (var3 && !var4) {
-            this.world.playSound(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26330, SoundCategory.field14736, 1.0F, 1.0F, false);
+            this.world.playSound(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26330,
+                  SoundCategory.field14736, 1.0F, 1.0F, false);
          }
 
          return this.eyesInWaterPlayer;
@@ -1043,7 +1077,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          return super.getLeashPosition(var1);
       } else {
          float var4 = MathHelper.lerp(var1 * 0.5F, this.rotationYaw, this.prevRotationYaw) * (float) (Math.PI / 180.0);
-         float var5 = MathHelper.lerp(var1 * 0.5F, this.rotationPitch, this.prevRotationPitch) * (float) (Math.PI / 180.0);
+         float var5 = MathHelper.lerp(var1 * 0.5F, this.rotationPitch, this.prevRotationPitch)
+               * (float) (Math.PI / 180.0);
          double var6 = this.getPrimaryHand() != HandSide.RIGHT ? 1.0 : -1.0;
          Vector3d var8 = new Vector3d(0.39 * var6, -0.6, 0.3);
          return var8.method11350(-var5).method11351(-var4).add(this.getEyePosition(var1));

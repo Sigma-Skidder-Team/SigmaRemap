@@ -56,9 +56,9 @@ public class TP extends Command {
                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var9, var11 + 0.2, var13, false));
                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var9, var11 + 0.1, var13, false));
                this.field25710.field45878 = 1;
-               Client.getInstance()
-                  .getNotificationManager()
-                  .send(new Notification("Teleport", "Teleporting to \"" + this.field25710.entity.getName().getString() + "\"...", 10000));
+               Client.getInstance().notificationManager
+                     .send(new Notification("Teleport",
+                           "Teleporting to \"" + this.field25710.entity.getName().getString() + "\"...", 10000));
                this.field25710.timer.start();
             }
          } else {
@@ -68,7 +68,7 @@ public class TP extends Command {
    }
 
    public static class Class3596 implements Comparator<Entity> {
-       public final TP tp;
+      public final TP tp;
 
       public Class3596(TP tp) {
          this.tp = tp;
@@ -77,7 +77,7 @@ public class TP extends Command {
       public int compare(Entity ent1, Entity var2) {
          float distToEnt1 = mc.player.getDistance(ent1);
          float distToEnt2 = mc.player.getDistance(var2);
-         return (int)(distToEnt1 - distToEnt2);
+         return (int) (distToEnt1 - distToEnt2);
       }
    }
 }

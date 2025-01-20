@@ -40,7 +40,7 @@ public class NCPSpeed extends Module {
         if (this.isEnabled()
                 && mc.player != null
                 && !Jesus.isWalkingOnLiquid()
-                && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+                && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
             if (var1.isPre() && Speed.tickCounter > 1) {
                 double var4 = mc.player.getPosX() - mc.player.lastReportedPosX;
                 double var6 = mc.player.getPosZ() - mc.player.lastReportedPosZ;
@@ -97,7 +97,7 @@ public class NCPSpeed extends Module {
                 var1.setCancelled(true);
             }
 
-            if (!mc.gameSettings.keyBindJump.isKeyDown() || !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()) {
+            if (!mc.gameSettings.keyBindJump.isKeyDown() || !Client.getInstance().moduleManager.getModuleByClass(BlockFly.class).isEnabled()) {
                 double var4 = 0.56 + (double) MovementUtils.getSpeedBoost() * 0.1;
                 var1.method14002(0.407 + (double) MovementUtils.getJumpBoost() * 0.1 + Math.random() * 1.0E-5);
                 if (Speed.tickCounter< 2) {

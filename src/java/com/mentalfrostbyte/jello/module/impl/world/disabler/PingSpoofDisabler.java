@@ -26,15 +26,18 @@ public class PingSpoofDisabler extends Module {
 
     public PingSpoofDisabler() {
         super(ModuleCategory.EXPLOIT, "PingSpoof", "Makes you lagggy.");
-        this.registerSetting(new NumberSetting<Float>("Lag", "Your ping (ms)", 1000.0F, Float.class, 50.0F, 2000.0F, 10.0F));
+        this.registerSetting(
+                new NumberSetting<Float>("Lag", "Your ping (ms)", 1000.0F, Float.class, 50.0F, 2000.0F, 10.0F));
         this.registerSetting(new BooleanSetting("Inv Bypass", "Avoid inventory glitchs on some servers", false));
     }
 
     @EventTarget
     public void method16100(WorldLoadEvent var1) {
         if (!this.isEnabled()) {
-            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Disabler.class);
-            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSettingName("Ping spoof")) {
+            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().moduleManager
+                    .getModuleByClass(Disabler.class);
+            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP")
+                    || !var4.method16726().getBooleanValueFromSettingName("Ping spoof")) {
                 return;
             }
         }
@@ -45,7 +48,7 @@ public class PingSpoofDisabler extends Module {
     @EventTarget
     public void method16101(TickEvent var1) {
         if (!this.isEnabled()) {
-            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Disabler.class);
+            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().moduleManager.getModuleByClass(Disabler.class);
             if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSettingName("Ping spoof")) {
                 return;
             }
@@ -63,8 +66,8 @@ public class PingSpoofDisabler extends Module {
                 for (int var5 = 0; var5 < var7; var5++) {
                     Class8772 var6 = this.field23461.get(var5);
                     if (var6.method31641()) {
-                        mc.getConnection().getNetworkManager();
-                        NetworkManager.processPacket(var6.method31642(), mc.getConnection().getNetworkManager().packetListener);
+                        mc.getConnection().networkManager;
+                        NetworkManager.processPacket(var6.method31642(), mc.getConnection().networkManager.packetListener);
                         this.field23461.remove(var5);
                         var7--;
                         var5--;
@@ -86,8 +89,10 @@ public class PingSpoofDisabler extends Module {
     @EventTarget
     public void method16103(ReceivePacketEvent var1) {
         if (!this.isEnabled()) {
-            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Disabler.class);
-            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSettingName("Ping spoof")) {
+            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().moduleManager
+                    .getModuleByClass(Disabler.class);
+            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP")
+                    || !var4.method16726().getBooleanValueFromSettingName("Ping spoof")) {
                 return;
             }
         }
@@ -99,7 +104,8 @@ public class PingSpoofDisabler extends Module {
                     if (var7 instanceof SPlayerPositionLookPacket && this.field23462 > 0) {
                         SPlayerPositionLookPacket var5 = (SPlayerPositionLookPacket) var7;
                     } else if (!(var7 instanceof SWorldSpawnChangedPacket)) {
-                        if (!(var7 instanceof SPlayerAbilitiesPacket) && !(var7 instanceof SSetSlotPacket) && !(var7 instanceof SOpenWindowPacket) && !(var7 instanceof SWindowItemsPacket)) {
+                        if (!(var7 instanceof SPlayerAbilitiesPacket) && !(var7 instanceof SSetSlotPacket)
+                                && !(var7 instanceof SOpenWindowPacket) && !(var7 instanceof SWindowItemsPacket)) {
                         }
                     } else {
                         this.field23462 = 0;

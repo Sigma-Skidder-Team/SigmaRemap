@@ -69,7 +69,7 @@ public class JelloKeyboardScreen extends Screen {
    public static ArrayList<Class6984> method13328() {
       ArrayList var2 = new ArrayList();
 
-      for (Module var4 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+      for (Module var4 : Client.getInstance().moduleManager.getModuleMap().values()) {
          var2.add(new Class6984(var4));
       }
 

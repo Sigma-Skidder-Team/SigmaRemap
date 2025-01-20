@@ -103,7 +103,7 @@ public class InfiniteAura extends Module {
                                 ArrayList var11 = Class8901.method32447(var10, var9);
                                 this.field23900.add(var11);
                                 Collections.reverse(var11);
-                                this.method16773(var11, Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled());
+                                this.method16773(var11, Client.getInstance().moduleManager.getModuleByClass(Criticals.class).isEnabled());
                                 MultiUtilities.swing(var8, !this.getBooleanValueFromSettingName("No Swing"));
                                 Collections.reverse(var11);
                                 this.method16773(var11, false);
@@ -204,7 +204,7 @@ public class InfiniteAura extends Module {
         while (var7.hasNext()) {
             Entity var8 = ((TimedEntity) var7.next()).getEntity();
             if (var8 != mc.player) {
-                if (!Client.getInstance().getFriendManager().method26997(var8)) {
+                if (!Client.getInstance().friendManager.method26997(var8)) {
                     if (var8 instanceof LivingEntity) {
                         if (((LivingEntity) var8).getHealth() != 0.0F) {
                             if (!(mc.player.getDistance(var8) > var1)) {
@@ -212,7 +212,7 @@ public class InfiniteAura extends Module {
                                     if (!(var8 instanceof ArmorStandEntity)) {
                                         if (!this.getBooleanValueFromSettingName("Players") && var8 instanceof PlayerEntity) {
                                             var7.remove();
-                                        } else if (var8 instanceof PlayerEntity && Client.getInstance().getCombatManager().isTargetABot(var8)) {
+                                        } else if (var8 instanceof PlayerEntity && Client.getInstance().combatManager.isTargetABot(var8)) {
                                             var7.remove();
                                         } else if (!this.getBooleanValueFromSettingName("Invisible") && var8.isInvisible()) {
                                             var7.remove();
@@ -223,7 +223,7 @@ public class InfiniteAura extends Module {
                                         } else if (!var8.method3362()) {
                                             if (var8 instanceof PlayerEntity
                                                     && Class8781.method31662((PlayerEntity) var8)
-                                                    && Client.getInstance().getModuleManager().getModuleByClass(Teams.class).isEnabled()) {
+                                                    && Client.getInstance().moduleManager.getModuleByClass(Teams.class).isEnabled()) {
                                                 var7.remove();
                                             }
                                         } else {

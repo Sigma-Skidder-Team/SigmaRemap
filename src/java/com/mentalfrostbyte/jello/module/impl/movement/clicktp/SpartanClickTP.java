@@ -43,8 +43,8 @@ public class SpartanClickTP extends Module {
         if (this.isEnabled() && (mc.player.isSneaking() || !this.access().getBooleanValueFromSettingName("Sneak"))) {
             if (var1.getButton() == ClickEvent.Button.RIGHT) {
                 BlockRayTraceResult var4 = BlockUtil.rayTrace(
-                        mc.player.rotationYaw, mc.player.rotationPitch, this.access().getNumberValueBySettingName("Maximum range")
-                );
+                        mc.player.rotationYaw, mc.player.rotationPitch,
+                        this.access().getNumberValueBySettingName("Maximum range"));
                 BlockPos var5 = null;
                 if (var4 != null) {
                     var5 = var4.getPos();
@@ -58,9 +58,8 @@ public class SpartanClickTP extends Module {
                 mc.getConnection()
                         .sendPacket(
                                 new CPlayerPacket.PositionPacket(
-                                        (double) this.field23465.getX() + 0.5, this.field23465.getY() + 1, (double) this.field23465.getZ() + 0.5, true
-                                )
-                        );
+                                        (double) this.field23465.getX() + 0.5, this.field23465.getY() + 1,
+                                        (double) this.field23465.getZ() + 0.5, true));
                 this.field23464 = 0;
             }
         }
@@ -74,7 +73,8 @@ public class SpartanClickTP extends Module {
                 if (var4.x == (double) this.field23465.getX() + 0.5
                         && var4.y == (double) (this.field23465.getY() + 1)
                         && var4.z == (double) this.field23465.getZ() + 0.5) {
-                    Client.getInstance().getNotificationManager().send(new Notification("ClickTP", "Successfully teleported"));
+                    Client.getInstance().notificationManager
+                            .send(new Notification("ClickTP", "Successfully teleported"));
                     if (!this.access().getBooleanValueFromSettingName("Auto Disable")) {
                         this.field23464 = -1;
                         this.field23465 = null;
@@ -103,13 +103,13 @@ public class SpartanClickTP extends Module {
                 }
 
                 mc.getConnection()
-                        .sendPacket(new CPlayerPacket.PositionPacket(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ(), true));
+                        .sendPacket(new CPlayerPacket.PositionPacket(mc.player.getPosX(), mc.player.getPosY(),
+                                mc.player.getPosZ(), true));
                 mc.getConnection()
                         .sendPacket(
                                 new CPlayerPacket.PositionPacket(
-                                        (double) this.field23465.getX() + 0.5, this.field23465.getY() + 1, (double) this.field23465.getZ() + 0.5, true
-                                )
-                        );
+                                        (double) this.field23465.getX() + 0.5, this.field23465.getY() + 1,
+                                        (double) this.field23465.getZ() + 0.5, true));
             }
         }
     }

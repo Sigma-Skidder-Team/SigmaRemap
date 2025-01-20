@@ -75,16 +75,17 @@ public class ClientWorld extends World {
    private final Map<String, MapData> maps = Maps.newHashMap();
    private int timeLightningFlash;
    private final Object2ObjectArrayMap<ColorResolver, ColorCache> colorCaches = Util.make(
-      new Object2ObjectArrayMap<>(3),      p_lambda$new$0_0_ -> {
-              p_lambda$new$0_0_.put(BiomeColors.GRASS_COLOR, new ColorCache());
-              p_lambda$new$0_0_.put(BiomeColors.FOLIAGE_COLOR, new ColorCache());
-              p_lambda$new$0_0_.put(BiomeColors.WATER_COLOR, new ColorCache());
-      }
-   );
+         new Object2ObjectArrayMap<>(3), p_lambda$new$0_0_ -> {
+            p_lambda$new$0_0_.put(BiomeColors.GRASS_COLOR, new ColorCache());
+            p_lambda$new$0_0_.put(BiomeColors.FOLIAGE_COLOR, new ColorCache());
+            p_lambda$new$0_0_.put(BiomeColors.WATER_COLOR, new ColorCache());
+         });
    private ClientChunkProvider field_239129_E_;
    private boolean playerUpdate = false;
 
-   public ClientWorld(ClientPlayNetHandler p_i242067_1_, ClientWorldInfo p_i242067_2_, RegistryKey<World> p_i242067_3_, DimensionType p_i242067_4_, int p_i242067_5_, Supplier<IProfiler> p_i242067_6_, WorldRenderer p_i242067_7_, boolean p_i242067_8_, long p_i242067_9_) {
+   public ClientWorld(ClientPlayNetHandler p_i242067_1_, ClientWorldInfo p_i242067_2_, RegistryKey<World> p_i242067_3_,
+         DimensionType p_i242067_4_, int p_i242067_5_, Supplier<IProfiler> p_i242067_6_, WorldRenderer p_i242067_7_,
+         boolean p_i242067_8_, long p_i242067_9_) {
       super(p_i242067_2_, p_i242067_3_, p_i242067_4_, p_i242067_6_, true, p_i242067_8_, p_i242067_9_);
       this.connection = p_i242067_1_;
       this.field_239130_d_ = p_i242067_2_;
@@ -99,16 +100,14 @@ public class ClientWorld extends World {
       this.calculateInitialSkylight();
       this.calculateInitialWeather();
 
-      if (Reflector.CapabilityProvider_gatherCapabilities.exists())
-      {
+      if (Reflector.CapabilityProvider_gatherCapabilities.exists()) {
          Reflector.call(this, Reflector.CapabilityProvider_gatherCapabilities);
       }
 
       Reflector.postForgeBusEvent(Reflector.WorldEvent_Load_Constructor, this);
-      if (this.mc.playerController != null && this.mc.playerController.getClass() == PlayerController.class)
-      {
+      if (this.mc.playerController != null && this.mc.playerController.getClass() == PlayerController.class) {
          this.mc.playerController = new PlayerControllerOF(this.mc, this.connection);
-         CustomGuis.setPlayerControllerOF((PlayerControllerOF)this.mc.playerController);
+         CustomGuis.setPlayerControllerOF((PlayerControllerOF) this.mc.playerController);
       }
    }
 
@@ -136,14 +135,11 @@ public class ClientWorld extends World {
    }
 
    public void setDayTime(long time) {
-      if (time < 0L)
-      {
+      if (time < 0L) {
          time = -time;
-         this.getGameRules().get(GameRules.DO_DAYLIGHT_CYCLE).set(false, (MinecraftServer)null);
-      }
-      else
-      {
-         this.getGameRules().get(GameRules.DO_DAYLIGHT_CYCLE).set(true, (MinecraftServer)null);
+         this.getGameRules().get(GameRules.DO_DAYLIGHT_CYCLE).set(false, (MinecraftServer) null);
+      } else {
+         this.getGameRules().get(GameRules.DO_DAYLIGHT_CYCLE).set(true, (MinecraftServer) null);
       }
 
       this.field_239130_d_.setDayTime(time);
@@ -158,8 +154,7 @@ public class ClientWorld extends World {
       iprofiler.startSection("entities");
       ObjectIterator<Entry<Entity>> objectiterator = this.entitiesById.int2ObjectEntrySet().iterator();
 
-      while (objectiterator.hasNext())
-      {
+      while (objectiterator.hasNext()) {
          Entry<Entity> entry = objectiterator.next();
          Entity entity = entry.getValue();
 
@@ -262,12 +257,9 @@ public class ClientWorld extends World {
    public void onChunkUnloaded(Chunk chunkIn) {
       Collection collection;
 
-      if (Reflector.ForgeWorld_tileEntitiesToBeRemoved.exists())
-      {
-         collection = (Collection)Reflector.getFieldValue(this, Reflector.ForgeWorld_tileEntitiesToBeRemoved);
-      }
-      else
-      {
+      if (Reflector.ForgeWorld_tileEntitiesToBeRemoved.exists()) {
+         collection = (Collection) Reflector.getFieldValue(this, Reflector.ForgeWorld_tileEntitiesToBeRemoved);
+      } else {
          collection = this.tileEntitiesToBeRemoved;
       }
 
@@ -301,14 +293,16 @@ public class ClientWorld extends World {
    }
 
    private void addEntityImpl(int entityIdIn, Entity entityToSpawn) {
-      if (!Reflector.EntityJoinWorldEvent_Constructor.exists() || !Reflector.postForgeBusEvent(Reflector.EntityJoinWorldEvent_Constructor, entityToSpawn, this))
-      {
+      if (!Reflector.EntityJoinWorldEvent_Constructor.exists()
+            || !Reflector.postForgeBusEvent(Reflector.EntityJoinWorldEvent_Constructor, entityToSpawn, this)) {
          this.removeEntityFromWorld(entityIdIn);
          this.entitiesById.put(entityIdIn, entityToSpawn);
-         this.getChunkProvider().getChunk(MathHelper.floor(entityToSpawn.getPosX() / 16.0D), MathHelper.floor(entityToSpawn.getPosZ() / 16.0D), ChunkStatus.FULL, true).addEntity(entityToSpawn);
+         this.getChunkProvider()
+               .getChunk(MathHelper.floor(entityToSpawn.getPosX() / 16.0D),
+                     MathHelper.floor(entityToSpawn.getPosZ() / 16.0D), ChunkStatus.FULL, true)
+               .addEntity(entityToSpawn);
 
-         if (Reflector.IForgeEntity_onAddedToWorld.exists())
-         {
+         if (Reflector.IForgeEntity_onAddedToWorld.exists()) {
             Reflector.call(entityToSpawn, Reflector.IForgeEntity_onAddedToWorld);
          }
 
@@ -343,14 +337,12 @@ public class ClientWorld extends World {
    }
 
    public void addEntitiesToChunk(Chunk chunkIn) {
-      for (Entry<Entity> entry : this.entitiesById.int2ObjectEntrySet())
-      {
+      for (Entry<Entity> entry : this.entitiesById.int2ObjectEntrySet()) {
          Entity entity = entry.getValue();
          int i = MathHelper.floor(entity.getPosX() / 16.0D);
          int j = MathHelper.floor(entity.getPosZ() / 16.0D);
 
-         if (i == chunkIn.getPos().x && j == chunkIn.getPos().z)
-         {
+         if (i == chunkIn.getPos().x && j == chunkIn.getPos().z) {
             chunkIn.addEntity(entity);
          }
       }
@@ -358,7 +350,7 @@ public class ClientWorld extends World {
 
    @Nullable
    public Entity getEntityByID(int var1) {
-      return (Entity)this.entitiesById.get(var1);
+      return (Entity) this.entitiesById.get(var1);
    }
 
    public void method6851(BlockPos var1, BlockState var2) {
@@ -366,7 +358,7 @@ public class ClientWorld extends World {
    }
 
    public void sendQuittingDisconnectingPacket() {
-      this.connection.getNetworkManager().closeChannel(new TranslationTextComponent("multiplayer.status.quitting"));
+      this.connection.networkManager.closeChannel(new TranslationTextComponent("multiplayer.status.quitting"));
    }
 
    public void animateTick(int posX, int posY, int posZ) {
@@ -374,12 +366,9 @@ public class ClientWorld extends World {
       Random random = new Random();
       boolean flag = false;
 
-      if (this.mc.playerController.getCurrentGameType() == GameType.CREATIVE)
-      {
-         for (ItemStack itemstack : this.mc.player.getHeldEquipment())
-         {
-            if (itemstack.getItem() == Blocks.BARRIER.asItem())
-            {
+      if (this.mc.playerController.getCurrentGameType() == GameType.CREATIVE) {
+         for (ItemStack itemstack : this.mc.player.getHeldEquipment()) {
+            if (itemstack.getItem() == Blocks.BARRIER.asItem()) {
                flag = true;
                break;
             }
@@ -388,8 +377,7 @@ public class ClientWorld extends World {
 
       BlockPos.Mutable blockpos$mutable = new BlockPos.Mutable();
 
-      for (int j = 0; j < 667; ++j)
-      {
+      for (int j = 0; j < 667; ++j) {
          this.animateTick(posX, posY, posZ, 16, random, flag, blockpos$mutable);
          this.animateTick(posX, posY, posZ, 32, random, flag, blockpos$mutable);
       }
@@ -414,27 +402,26 @@ public class ClientWorld extends World {
       }
 
       if (var6 && var13.isIn(Blocks.BARRIER)) {
-         this.addParticle(ParticleTypes.BARRIER, (double)var10 + 0.5, (double)var11 + 0.5, (double)var12 + 0.5, 0.0, 0.0, 0.0);
+         this.addParticle(ParticleTypes.BARRIER, (double) var10 + 0.5, (double) var11 + 0.5, (double) var12 + 0.5, 0.0,
+               0.0, 0.0);
       }
 
       if (!var13.method23456(this, var7)) {
          this.getBiome(var7)
-            .getAmbientParticle()
-            .ifPresent(
-               var2x -> {
-                  if (var2x.method25615(this.rand)) {
-                     this.addParticle(
-                        var2x.method25614(),
-                        (double)var7.getX() + this.rand.nextDouble(),
-                        (double)var7.getY() + this.rand.nextDouble(),
-                        (double)var7.getZ() + this.rand.nextDouble(),
-                        0.0,
-                        0.0,
-                        0.0
-                     );
-                  }
-               }
-            );
+               .getAmbientParticle()
+               .ifPresent(
+                     var2x -> {
+                        if (var2x.method25615(this.rand)) {
+                           this.addParticle(
+                                 var2x.method25614(),
+                                 (double) var7.getX() + this.rand.nextDouble(),
+                                 (double) var7.getY() + this.rand.nextDouble(),
+                                 (double) var7.getZ() + this.rand.nextDouble(),
+                                 0.0,
+                                 0.0,
+                                 0.0);
+                        }
+                     });
       }
    }
 
@@ -451,54 +438,51 @@ public class ClientWorld extends World {
                   VoxelShape var14 = var13.method23414(this, var12);
                   double var15 = var14.getEnd(Direction.Axis.Y);
                   if (var15 < 1.0 && var13.getFluidState().isEmpty()) {
-                     this.method6855(var1, var3, var7, (double)var1.getY() - 0.05);
+                     this.method6855(var1, var3, var7, (double) var1.getY() - 0.05);
                   }
                } else {
-                  this.method6855(var1, var3, var7, (double)var1.getY() + var10 - 0.05);
+                  this.method6855(var1, var3, var7, (double) var1.getY() + var10 - 0.05);
                }
             }
          } else if (var4) {
             this.method6856(
-               (double)var1.getX(),
-               (double)(var1.getX() + 1),
-               (double)var1.getZ(),
-               (double)(var1.getZ() + 1),
-               (double)(var1.getY() + 1) - 0.05,
-               var3
-            );
+                  (double) var1.getX(),
+                  (double) (var1.getX() + 1),
+                  (double) var1.getZ(),
+                  (double) (var1.getZ() + 1),
+                  (double) (var1.getY() + 1) - 0.05,
+                  var3);
          }
       }
    }
 
    private void method6855(BlockPos var1, IParticleData var2, VoxelShape var3, double var4) {
       this.method6856(
-         (double)var1.getX() + var3.getStart(Direction.Axis.X),
-         (double)var1.getX() + var3.getEnd(Direction.Axis.X),
-         (double)var1.getZ() + var3.getStart(Direction.Axis.Z),
-         (double)var1.getZ() + var3.getEnd(Direction.Axis.Z),
-         var4,
-         var2
-      );
+            (double) var1.getX() + var3.getStart(Direction.Axis.X),
+            (double) var1.getX() + var3.getEnd(Direction.Axis.X),
+            (double) var1.getZ() + var3.getStart(Direction.Axis.Z),
+            (double) var1.getZ() + var3.getEnd(Direction.Axis.Z),
+            var4,
+            var2);
    }
 
    private void method6856(double var1, double var3, double var5, double var7, double var9, IParticleData var11) {
       this.addParticle(
-         var11,
-         MathHelper.lerp(this.rand.nextDouble(), var1, var3),
-         var9,
-         MathHelper.lerp(this.rand.nextDouble(), var5, var7),
-         0.0,
-         0.0,
-         0.0
-      );
+            var11,
+            MathHelper.lerp(this.rand.nextDouble(), var1, var3),
+            var9,
+            MathHelper.lerp(this.rand.nextDouble(), var5, var7),
+            0.0,
+            0.0,
+            0.0);
    }
 
    public void method6857() {
       ObjectIterator var3 = this.entitiesById.int2ObjectEntrySet().iterator();
 
       while (var3.hasNext()) {
-         Entry var4 = (Entry)var3.next();
-         Entity var5 = (Entity)var4.getValue();
+         Entry var4 = (Entry) var3.next();
+         Entity var5 = (Entity) var4.getValue();
          if (var5.removed) {
             var3.remove();
             this.removeEntity(var5);
@@ -510,15 +494,18 @@ public class ClientWorld extends World {
    public CrashReportCategory fillCrashReport(CrashReport var1) {
       CrashReportCategory var4 = super.fillCrashReport(var1);
       var4.addDetail("Server brand", () -> this.mc.player.method5395());
-      var4.addDetail("Server type", () -> this.mc.getIntegratedServer() != null ? "Integrated singleplayer server" : "Non-integrated multiplayer server");
+      var4.addDetail("Server type", () -> this.mc.getIntegratedServer() != null ? "Integrated singleplayer server"
+            : "Non-integrated multiplayer server");
       return var4;
    }
 
    @Override
-   public void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, SoundCategory var9, float var10, float var11) {
+   public void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, SoundCategory var9,
+         float var10, float var11) {
       if (Reflector.field42848.exists()) {
          Object var14 = Reflector.field42848.call(var1, var8, var9, var10, var11);
-         if (Reflector.method35064(var14, Reflector.field42809) || Reflector.call(var14, Reflector.field42980) == null) {
+         if (Reflector.method35064(var14, Reflector.field42809)
+               || Reflector.call(var14, Reflector.field42980) == null) {
             return;
          }
 
@@ -533,7 +520,8 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void playSoundFromEntity(PlayerEntity var1, Entity var2, SoundEvent var3, SoundCategory var4, float var5, float var6) {
+   public void playSoundFromEntity(PlayerEntity var1, Entity var2, SoundEvent var3, SoundCategory var4, float var5,
+         float var6) {
       if (Reflector.field42848.exists()) {
          Object var9 = Reflector.field42848.call(var1, var3, var4, var5, var6);
          if (Reflector.method35064(var9, Reflector.field42809) || Reflector.call(var9, Reflector.field42980) == null) {
@@ -551,22 +539,25 @@ public class ClientWorld extends World {
    }
 
    public void method6858(BlockPos var1, SoundEvent var2, SoundCategory var3, float var4, float var5, boolean var6) {
-      this.playSound((double)var1.getX() + 0.5, (double)var1.getY() + 0.5, (double)var1.getZ() + 0.5, var2, var3, var4, var5, var6);
+      this.playSound((double) var1.getX() + 0.5, (double) var1.getY() + 0.5, (double) var1.getZ() + 0.5, var2, var3,
+            var4, var5, var6);
    }
 
    @Override
-   public void playSound(double var1, double var3, double var5, SoundEvent var7, SoundCategory var8, float var9, float var10, boolean var11) {
+   public void playSound(double var1, double var3, double var5, SoundEvent var7, SoundCategory var8, float var9,
+         float var10, boolean var11) {
       double var14 = this.mc.gameRenderer.getActiveRenderInfo().getPos().method11343(var1, var3, var5);
       MinecraftSoundManager var16 = new MinecraftSoundManager(var7, var8, var9, var10, var1, var3, var5);
       if (var11 && var14 > 100.0) {
          double var17 = Math.sqrt(var14) / 40.0;
-         this.mc.getSoundHandler().method1001(var16, (int)(var17 * 20.0));
+         this.mc.getSoundHandler().method1001(var16, (int) (var17 * 20.0));
       } else {
          this.mc.getSoundHandler().method1000(var16);
       }
    }
 
-   public void method6804(double var1, double var3, double var5, double var7, double var9, double var11, CompoundNBT var13) {
+   public void method6804(double var1, double var3, double var5, double var7, double var9, double var11,
+         CompoundNBT var13) {
       this.mc.particles.method1199(new Class4591(this, var1, var3, var5, var7, var9, var11, this.mc.particles, var13));
    }
 
@@ -605,7 +596,7 @@ public class ClientWorld extends World {
       if (!(this.mc.playerController instanceof PlayerControllerOF)) {
          return false;
       } else {
-         PlayerControllerOF var3 = (PlayerControllerOF)this.mc.playerController;
+         PlayerControllerOF var3 = (PlayerControllerOF) this.mc.playerController;
          return var3.method23162();
       }
    }
@@ -699,23 +690,28 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void addParticle(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public void addParticle(IParticleData var1, double var2, double var4, double var6, double var8, double var10,
+         double var12) {
       this.worldRenderer.method911(var1, var1.getType().method24006(), var2, var4, var6, var8, var10, var12);
    }
 
    @Override
-   public void method6747(IParticleData var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
+   public void method6747(IParticleData var1, boolean var2, double var3, double var5, double var7, double var9,
+         double var11, double var13) {
       this.worldRenderer.method911(var1, var1.getType().method24006() || var2, var3, var5, var7, var9, var11, var13);
    }
 
    @Override
-   public void method6748(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public void method6748(IParticleData var1, double var2, double var4, double var6, double var8, double var10,
+         double var12) {
       this.worldRenderer.method912(var1, false, true, var2, var4, var6, var8, var10, var12);
    }
 
    @Override
-   public void method6749(IParticleData var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
-      this.worldRenderer.method912(var1, var1.getType().method24006() || var2, true, var3, var5, var7, var9, var11, var13);
+   public void method6749(IParticleData var1, boolean var2, double var3, double var5, double var7, double var9,
+         double var11, double var13) {
+      this.worldRenderer.method912(var1, var1.getType().method24006() || var2, true, var3, var5, var7, var9, var11,
+            var13);
    }
 
    @Override
@@ -733,8 +729,8 @@ public class ClientWorld extends World {
       float var5 = 1.0F - (MathHelper.cos(var4 * (float) (Math.PI * 2)) * 2.0F + 0.2F);
       var5 = MathHelper.clamp(var5, 0.0F, 1.0F);
       var5 = 1.0F - var5;
-      var5 = (float)((double)var5 * (1.0 - (double)(this.method6792(var1) * 5.0F) / 16.0));
-      var5 = (float)((double)var5 * (1.0 - (double)(this.method6790(var1) * 5.0F) / 16.0));
+      var5 = (float) ((double) var5 * (1.0 - (double) (this.method6792(var1) * 5.0F) / 16.0));
+      var5 = (float) ((double) var5 * (1.0 - (double) (this.method6790(var1) * 5.0F) / 16.0));
       return var5 * 0.8F + 0.2F;
    }
 
@@ -744,9 +740,9 @@ public class ClientWorld extends World {
       var6 = MathHelper.clamp(var6, 0.0F, 1.0F);
       Biome var7 = this.getBiome(var1);
       int var8 = var7.getSkyColor();
-      float var9 = (float)(var8 >> 16 & 0xFF) / 255.0F;
-      float var10 = (float)(var8 >> 8 & 0xFF) / 255.0F;
-      float var11 = (float)(var8 & 0xFF) / 255.0F;
+      float var9 = (float) (var8 >> 16 & 0xFF) / 255.0F;
+      float var10 = (float) (var8 >> 8 & 0xFF) / 255.0F;
+      float var11 = (float) (var8 & 0xFF) / 255.0F;
       var9 *= var6;
       var10 *= var6;
       var11 *= var6;
@@ -769,7 +765,7 @@ public class ClientWorld extends World {
       }
 
       if (this.timeLightningFlash > 0) {
-         float var22 = (float)this.timeLightningFlash - var2;
+         float var22 = (float) this.timeLightningFlash - var2;
          if (var22 > 1.0F) {
             var22 = 1.0F;
          }
@@ -780,7 +776,7 @@ public class ClientWorld extends World {
          var11 = var11 * (1.0F - var22) + 1.0F * var22;
       }
 
-      return new Vector3d((double)var9, (double)var10, (double)var11);
+      return new Vector3d((double) var9, (double) var10, (double) var11);
    }
 
    public Vector3d method6874(float var1) {
@@ -811,7 +807,7 @@ public class ClientWorld extends World {
          var8 = var8 * var12 + var18 * (1.0F - var12);
       }
 
-      return new Vector3d((double)var6, (double)var7, (double)var8);
+      return new Vector3d((double) var6, (double) var7, (double) var8);
    }
 
    public float method6875(float var1) {
@@ -864,27 +860,27 @@ public class ClientWorld extends World {
 
    @Override
    public int getBlockColor(BlockPos var1, ColorResolver var2) {
-      ColorCache var5 = (ColorCache)this.colorCaches.get(var2);
+      ColorCache var5 = (ColorCache) this.colorCaches.get(var2);
       return var5.method32731(var1, () -> this.method6879(var1, var2));
    }
 
    public int method6879(BlockPos var1, ColorResolver var2) {
       int var5 = Minecraft.getInstance().gameSettings.biomeBlendRadius;
       if (var5 == 0) {
-         return var2.method32943(this.getBiome(var1), (double)var1.getX(), (double)var1.getZ());
+         return var2.method32943(this.getBiome(var1), (double) var1.getX(), (double) var1.getZ());
       } else {
          int var6 = (var5 * 2 + 1) * (var5 * 2 + 1);
          int var7 = 0;
          int var8 = 0;
          int var9 = 0;
          Class8893 var10 = new Class8893(
-            var1.getX() - var5, var1.getY(), var1.getZ() - var5, var1.getX() + var5, var1.getY(), var1.getZ() + var5
-         );
+               var1.getX() - var5, var1.getY(), var1.getZ() - var5, var1.getX() + var5, var1.getY(),
+               var1.getZ() + var5);
          BlockPos.Mutable var11 = new BlockPos.Mutable();
 
          while (var10.method32365()) {
             var11.setPos(var10.method32366(), var10.method32367(), var10.method32368());
-            int var12 = var2.method32943(this.getBiome(var11), (double)var11.getX(), (double)var11.getZ());
+            int var12 = var2.method32943(this.getBiome(var11), (double) var11.getX(), (double) var11.getZ());
             var7 += (var12 & 0xFF0000) >> 16;
             var8 += (var12 & 0xFF00) >> 8;
             var9 += var12 & 0xFF;
@@ -897,7 +893,8 @@ public class ClientWorld extends World {
    public BlockPos method6880() {
       BlockPos var3 = new BlockPos(this.worldInfo.getSpawnX(), this.worldInfo.getSpawnY(), this.worldInfo.getSpawnZ());
       if (!this.getWorldBorder().contains(var3)) {
-         var3 = this.getTopPosition(Heightmap.Type.MOTION_BLOCKING, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
+         var3 = this.getTopPosition(Heightmap.Type.MOTION_BLOCKING,
+               new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
       }
 
       return var3;

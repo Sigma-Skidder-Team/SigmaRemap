@@ -52,9 +52,9 @@ public class AntiVoid extends Module {
             }
 
             if (this.disableTimer <= 0) {
-                Module flyModule = Client.getInstance().getModuleManager().getModuleByClass(Fly.class);
+                Module flyModule = Client.getInstance().moduleManager.getModuleByClass(Fly.class);
                 String flyMode = flyModule.getStringSettingValueByName("Type");
-                Module highJumpModule = Client.getInstance().getModuleManager().getModuleByClass(HighJump.class);
+                Module highJumpModule = Client.getInstance().moduleManager.getModuleByClass(HighJump.class);
                 String highJumpMode = highJumpModule.getStringSettingValueByName("Type");
                 boolean shouldFly = flyModule.isEnabled();
 
@@ -140,7 +140,7 @@ public class AntiVoid extends Module {
             case "Cubecraft":
                 double highPosition = 3.2E7;
                 mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(posX, highPosition, posZ, false));
-                Client.getInstance().getModuleManager().getModuleByClass(Fly.class).setEnabled(false);
+                Client.getInstance().moduleManager.getModuleByClass(Fly.class).setEnabled(false);
                 break;
             case "Legit":
                 this.disableTimer = 200;

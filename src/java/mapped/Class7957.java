@@ -35,13 +35,13 @@ public class Class7957 {
                String var4 = var1.getString("type");
                switch (var4) {
                   case "mod":
-                     for (Module var7 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+                     for (Module var7 : Client.getInstance().moduleManager.getModuleMap().values()) {
                         if (var1.getString("target").equals(var7.getName())) {
                            this.field34205 = var7;
                         }
                      }
                   case "screen":
-                     Class var8 = Client.getInstance().getGuiManager().method33477(var1.getString("target"));
+                     Class var8 = Client.getInstance().guiManager.method33477(var1.getString("target"));
                      if (var8 != null) {
                         this.field34205 = var8;
                      }
@@ -55,18 +55,18 @@ public class Class7957 {
 
    public JSONObject method27051() {
       JSONObject var3 = new JSONObject();
-       switch (Class8251.field35450[this.method27055().ordinal()]) {
-          case 1:
-             var3.put("type", "mod");
-             var3.put("target", ((Module)this.field34205).getName());
-             break;
-          case 2:
-             var3.put("type", "screen");
-             var3.put("target", Client.getInstance().getGuiManager().method33478((Class<? extends Screen>)this.field34205));
-       }
+      switch (Class8251.field35450[this.method27055().ordinal()]) {
+         case 1:
+            var3.put("type", "mod");
+            var3.put("target", ((Module) this.field34205).getName());
+            break;
+         case 2:
+            var3.put("type", "screen");
+            var3.put("target", Client.getInstance().guiManager.method33478((Class<? extends Screen>) this.field34205));
+      }
 
-       var3.put("key", this.field34204);
-       return var3;
+      var3.put("key", this.field34204);
+      return var3;
    }
 
    public boolean method27052() {
@@ -90,18 +90,18 @@ public class Class7957 {
    }
 
    public Class<? extends Screen> method27057() {
-      return (Class<? extends Screen>)this.field34205;
+      return (Class<? extends Screen>) this.field34205;
    }
 
    public Module method27058() {
-      return (Module)this.field34205;
+      return (Module) this.field34205;
    }
 
    @Override
    public boolean equals(Object var1) {
       if (var1 != this) {
          if (var1 instanceof Class7957) {
-            Class7957 var4 = (Class7957)var1;
+            Class7957 var4 = (Class7957) var1;
             return this.method27056().equals(var4.method27056());
          } else {
             return false;

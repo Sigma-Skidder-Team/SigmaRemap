@@ -75,11 +75,13 @@ public class PlayerController {
       if (!this.mc.player.blockActionRestricted(this.mc.world, var1, this.currentGameType)) {
          ClientWorld var4 = this.mc.world;
          BlockState var5 = var4.getBlockState(var1);
-         if (!this.mc.player.getHeldItemMainhand().getItem().canPlayerBreakBlockWhileHolding(var5, var4, var1, this.mc.player)) {
+         if (!this.mc.player.getHeldItemMainhand().getItem().canPlayerBreakBlockWhileHolding(var5, var4, var1,
+               this.mc.player)) {
             return false;
          } else {
             Block var6 = var5.getBlock();
-            if ((var6 instanceof CommandBlockBlock || var6 instanceof StructureBlock || var6 instanceof JigsawBlock) && !this.mc.player.canUseCommandBlock()) {
+            if ((var6 instanceof CommandBlockBlock || var6 instanceof StructureBlock || var6 instanceof JigsawBlock)
+                  && !this.mc.player.canUseCommandBlock()) {
                return false;
             } else if (!var5.isAir()) {
                var6.onBlockHarvested(var4, var1, var5, this.mc.player);
@@ -126,7 +128,8 @@ public class PlayerController {
                      this.field31361 = this.mc.player.getHeldItemMainhand();
                      this.field31362 = 0.0F;
                      this.field31363 = 0.0F;
-                     this.mc.world.sendBlockBreakProgress(this.mc.player.getEntityId(), this.field31360, (int)(this.field31362 * 10.0F) - 1);
+                     this.mc.world.sendBlockBreakProgress(this.mc.player.getEntityId(), this.field31360,
+                           (int) (this.field31362 * 10.0F) - 1);
                   }
                }
             } else {
@@ -175,12 +178,14 @@ public class PlayerController {
                if (this.field31363 % 4.0F == 0.0F) {
                   SoundType var6 = var5.getSoundType();
                   this.mc
-                     .getSoundHandler()
-                     .method1000(new MinecraftSoundManager(var6.getHitSound(), SoundCategory.field14732, (var6.getVolume() + 1.0F) / 8.0F, var6.getPitch() * 0.5F, var1));
+                        .getSoundHandler()
+                        .method1000(new MinecraftSoundManager(var6.getHitSound(), SoundCategory.field14732,
+                              (var6.getVolume() + 1.0F) / 8.0F, var6.getPitch() * 0.5F, var1));
                }
 
                this.field31363++;
-               this.mc.getTutorial().method37026(this.mc.world, var1, var5, MathHelper.clamp(this.field31362, 0.0F, 1.0F));
+               this.mc.getTutorial().method37026(this.mc.world, var1, var5,
+                     MathHelper.clamp(this.field31362, 0.0F, 1.0F));
                if (this.field31362 >= 1.0F) {
                   this.field31365 = false;
                   this.sendDiggingPacket(CPlayerDiggingPacket.Action.STOP_DESTROY_BLOCK, var1, var2);
@@ -190,7 +195,8 @@ public class PlayerController {
                   this.field31364 = 5;
                }
 
-               this.mc.world.sendBlockBreakProgress(this.mc.player.getEntityId(), this.field31360, (int)(this.field31362 * 10.0F) - 1);
+               this.mc.world.sendBlockBreakProgress(this.mc.player.getEntityId(), this.field31360,
+                     (int) (this.field31362 * 10.0F) - 1);
                return true;
             } else {
                this.field31365 = false;
@@ -212,10 +218,10 @@ public class PlayerController {
 
    public void tick() {
       this.syncCurrentPlayItem();
-      if (!this.connection.getNetworkManager().isChannelOpen()) {
-         this.connection.getNetworkManager().handleDisconnection();
+      if (!this.connection.networkManager.isChannelOpen()) {
+         this.connection.networkManager.handleDisconnection();
       } else {
-         this.connection.getNetworkManager().tick();
+         this.connection.networkManager.tick();
       }
    }
 
@@ -224,8 +230,8 @@ public class PlayerController {
       boolean var5 = this.field31361.isEmpty() && var4.isEmpty();
       if (!this.field31361.isEmpty() && !var4.isEmpty()) {
          var5 = var4.getItem() == this.field31361.getItem()
-            && ItemStack.method32127(var4, this.field31361)
-            && (var4.method32115() || var4.method32117() == this.field31361.method32117());
+               && ItemStack.method32127(var4, this.field31361)
+               && (var4.method32115() || var4.method32117() == this.field31361.method32117());
       }
 
       return var1.equals(this.field31360) && var5;
@@ -239,7 +245,8 @@ public class PlayerController {
       }
    }
 
-   public ActionResultType func_217292_a(ClientPlayerEntity var1, ClientWorld var2, Hand var3, BlockRayTraceResult var4) {
+   public ActionResultType func_217292_a(ClientPlayerEntity var1, ClientWorld var2, Hand var3,
+         BlockRayTraceResult var4) {
       this.syncCurrentPlayItem();
       BlockPos var7 = var4.getPos();
       if (this.mc.world.getWorldBorder().contains(var7)) {
@@ -288,7 +295,7 @@ public class PlayerController {
          if (!var1.method2976().method19635(var6.getItem())) {
             int var7 = var6.getCount();
             Class6794 var8 = var6.method32110(var2, var1, var3);
-            ItemStack var9 = (ItemStack)var8.method20695();
+            ItemStack var9 = (ItemStack) var8.method20695();
             if (var9 != var6) {
                var1.setHeldItem(var3, var9);
             }
@@ -306,7 +313,8 @@ public class PlayerController {
       return this.func_239167_a_(var1, var2, var3, false, false);
    }
 
-   public ClientPlayerEntity func_239167_a_(ClientWorld var1, StatisticsManager var2, ClientRecipeBook var3, boolean var4, boolean var5) {
+   public ClientPlayerEntity func_239167_a_(ClientWorld var1, StatisticsManager var2, ClientRecipeBook var3,
+         boolean var4, boolean var5) {
       return new ClientPlayerEntity(this.mc, var1, this.connection, var2, var3, var4, var5);
    }
 
@@ -329,7 +337,8 @@ public class PlayerController {
       this.syncCurrentPlayItem();
       Vector3d var7 = var3.getHitVec().method11337(var2.getPosX(), var2.getPosY(), var2.getPosZ());
       this.connection.sendPacket(new CUseEntityPacket(var2, var4, var7, var1.isSneaking()));
-      return this.currentGameType != GameType.SPECTATOR ? var2.applyPlayerInteraction(var1, var7, var4) : ActionResultType.field14820;
+      return this.currentGameType != GameType.SPECTATOR ? var2.applyPlayerInteraction(var1, var7, var4)
+            : ActionResultType.field14820;
    }
 
    public ItemStack windowClick(int windowId, int slotId, int mouseButton, ClickType type, PlayerEntity player) {
@@ -361,7 +370,8 @@ public class PlayerController {
 
    public void onStoppedUsingItem(PlayerEntity var1) {
       this.syncCurrentPlayItem();
-      this.connection.sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.RELEASE_USE_ITEM, BlockPos.ZERO, Direction.DOWN));
+      this.connection.sendPacket(
+            new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.RELEASE_USE_ITEM, BlockPos.ZERO, Direction.DOWN));
       var1.stopActiveHand();
    }
 
@@ -411,10 +421,12 @@ public class PlayerController {
       this.connection.sendPacket(new CPlayerDiggingPacket(var1, var2, var3));
    }
 
-   public void acknowledgePlayerDiggingReceived(ClientWorld var1, BlockPos var2, BlockState var3, CPlayerDiggingPacket.Action var4, boolean var5) {
-      Vector3d var8 = (Vector3d)this.field31368.remove(Pair.of(var2, var4));
+   public void acknowledgePlayerDiggingReceived(ClientWorld var1, BlockPos var2, BlockState var3,
+         CPlayerDiggingPacket.Action var4, boolean var5) {
+      Vector3d var8 = (Vector3d) this.field31368.remove(Pair.of(var2, var4));
       BlockState var9 = var1.getBlockState(var2);
-      if ((var8 == null || !var5 || var4 != CPlayerDiggingPacket.Action.START_DESTROY_BLOCK && var9 != var3) && var9 != var3) {
+      if ((var8 == null || !var5 || var4 != CPlayerDiggingPacket.Action.START_DESTROY_BLOCK && var9 != var3)
+            && var9 != var3) {
          var1.method6851(var2, var3);
          ClientPlayerEntity var10 = this.mc.player;
          if (var8 != null && var1 == var10.world && var10.func_242278_a(var2, var3)) {
@@ -423,7 +435,7 @@ public class PlayerController {
       }
 
       while (this.field31368.size() >= 50) {
-         Pair var11 = (Pair)this.field31368.firstKey();
+         Pair var11 = (Pair) this.field31368.firstKey();
          this.field31368.removeFirst();
          field31357.error("Too many unacked block actions, dropping " + var11);
       }

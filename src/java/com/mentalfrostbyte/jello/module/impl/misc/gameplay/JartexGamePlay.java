@@ -36,11 +36,9 @@ public class JartexGamePlay extends Module {
                 String var7 = mc.player.getName().getString().toLowerCase();
                 String var8 = var5.getChatComponent().getString();
                 if (this.field23527.getBooleanValueFromSettingName("AutoL")
-                        && (
-                        var8.toLowerCase().contains("§r§7 has been killed by §r§a§l" + var7)
+                        && (var8.toLowerCase().contains("§r§7 has been killed by §r§a§l" + var7)
                                 || var8.toLowerCase().contains("§r§7 was shot by §r§a§l" + var7)
-                                || var6.toLowerCase().contains("§r§7 was killed with dynamite by §r§a§l" + var7)
-                )) {
+                                || var6.toLowerCase().contains("§r§7 was killed with dynamite by §r§a§l" + var7))) {
                     this.field23527.method16761(var6);
                 }
 
@@ -53,14 +51,15 @@ public class JartexGamePlay extends Module {
                         for (ITextComponent var10 : var5.getChatComponent().getSiblings()) {
                             ClickEvent var11 = var10.getStyle().getClickEvent();
                             if (var11 != null && var11.getAction() == ClickEvent$Action.RUN_COMMAND) {
-                                this.field23527.method16759(new Class7200(var11.getValue(), (long) this.field23527.getNumberValueBySettingName("Auto Join delay") * 1000L));
-                                Client.getInstance()
-                                        .getNotificationManager()
+                                this.field23527.method16759(new Class7200(var11.getValue(),
+                                        (long) this.field23527.getNumberValueBySettingName("Auto Join delay") * 1000L));
+                                Client.getInstance().notificationManager
                                         .send(
                                                 new Notification(
-                                                        "Auto Join", "Joining a new game in 3 seconds.", (int) (this.field23527.getNumberValueBySettingName("Auto Join delay") - 1.0F) * 1000
-                                                )
-                                        );
+                                                        "Auto Join", "Joining a new game in 3 seconds.",
+                                                        (int) (this.field23527
+                                                                .getNumberValueBySettingName("Auto Join delay") - 1.0F)
+                                                                * 1000));
                                 break;
                             }
                         }

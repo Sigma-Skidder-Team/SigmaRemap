@@ -15,7 +15,7 @@ public class ClassicEditAlt extends Screen {
    public SigmaClassicTextBox field21028;
    public Class4300 field21029;
    public Class4300 field21030;
-   public AccountManager field21031 = Client.getInstance().getAccountManager();
+   public AccountManager field21031 = Client.getInstance().accountManager;
    private String field21032 = "§7Waiting...";
 
    public ClassicEditAlt(Account var1) {
@@ -46,7 +46,7 @@ public class ClassicEditAlt extends Screen {
          var1.setPassword(this.field21028.getTypedText());
          this.field21032 = "Edited!";
       });
-      this.field21030.doThis((var0, var1x) -> Client.getInstance().getGuiManager().method33482(new SigmaClassicAltManager()));
+      this.field21030.doThis((var0, var1x) -> Client.getInstance().guiManager.method33482(new SigmaClassicAltManager()));
    }
 
    @Override
@@ -74,7 +74,7 @@ public class ClassicEditAlt extends Screen {
    public void keyPressed(int keyCode) {
       super.keyPressed(keyCode);
       if (keyCode == 256) {
-         Client.getInstance().getGuiManager().method33482(new SigmaClassicAltManager());
+         Client.getInstance().guiManager.method33482(new SigmaClassicAltManager());
       }
    }
 }

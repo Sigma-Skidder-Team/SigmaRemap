@@ -78,7 +78,7 @@ public class Class4257 extends Class4247 {
    public ArrayList<Module> method13064() {
       ArrayList<Module> var3 = new ArrayList<>();
       if (this.field20640 != null && !this.field20640.isEmpty()) {
-         for (Module var5 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+         for (Module var5 : Client.getInstance().moduleManager.getModuleMap().values()) {
             if (this.method13067(this.field20640, var5.getName())) {
                var3.add(var5);
             }

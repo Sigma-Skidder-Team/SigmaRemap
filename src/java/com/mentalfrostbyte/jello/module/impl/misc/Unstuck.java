@@ -20,7 +20,8 @@ public class Unstuck extends Module {
 
     public Unstuck() {
         super(ModuleCategory.MISC, "Unstuck", "Toggle this when an anticheat freeze you mid-air");
-        this.registerSetting(new NumberSetting<Float>("Flags", "Maximum flag before trying to unstuck", 5.0F, Float.class, 2.0F, 20.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("Flags", "Maximum flag before trying to unstuck", 5.0F,
+                Float.class, 2.0F, 20.0F, 1.0F));
     }
 
     @Override
@@ -52,7 +53,8 @@ public class Unstuck extends Module {
             if (!mc.player.onGround && !MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                 if ((float) this.field23574 >= this.getNumberValueBySettingName("Flags") && this.field23575 == 0) {
                     this.field23575 = 60;
-                    Client.getInstance().getNotificationManager().send(new Notification("Unstuck", "Trying to unstuck you.."));
+                    Client.getInstance().notificationManager
+                            .send(new Notification("Unstuck", "Trying to unstuck you.."));
                 }
 
                 if (this.field23575 > 0) {
@@ -73,7 +75,8 @@ public class Unstuck extends Module {
     public void method16288(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (mc.player != null) {
-                if (var1.getPacket() instanceof SPlayerPositionLookPacket && !MultiUtilities.isAboveBounds(mc.player, 0.3F) && mc.player.ticksExisted > 10) {
+                if (var1.getPacket() instanceof SPlayerPositionLookPacket
+                        && !MultiUtilities.isAboveBounds(mc.player, 0.3F) && mc.player.ticksExisted > 10) {
                     this.field23574++;
                     if ((float) this.field23574 > this.getNumberValueBySettingName("Flags")) {
                         var1.setCancelled(true);

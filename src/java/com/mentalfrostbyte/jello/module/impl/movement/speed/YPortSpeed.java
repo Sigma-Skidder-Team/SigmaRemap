@@ -27,7 +27,7 @@ public class YPortSpeed extends Module {
 
     @EventTarget
     public void method16235(EventUpdate var1) {
-        if (this.isEnabled() && mc.player != null && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+        if (this.isEnabled() && mc.player != null && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
             if (mc.player.onGround && var1.isPre() && MultiUtilities.isHypixel()) {
                 var1.setY(var1.getY() + 1.0E-14);
             }
@@ -53,7 +53,7 @@ public class YPortSpeed extends Module {
 
     @EventTarget
     public void method16236(EventMove var1) {
-        if (this.isEnabled() && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+        if (this.isEnabled() && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
             if (!mc.player.isJumping) {
                 String var4 = this.getStringSettingValueByName("Mode");
                 switch (var4) {
@@ -121,7 +121,7 @@ public class YPortSpeed extends Module {
     private void method16237(EventWalkingUpdate var1) {
         if (this.isEnabled()
                 && !this.getStringSettingValueByName("Mode").equalsIgnoreCase("NCP")
-                && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+                && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
             if (!mc.player.isInWater() && !mc.player.isInLava() && !mc.player.isOnLadder()) {
                 if (!mc.gameSettings.keyBindJump.pressed
                         && !mc.player.isOnLadder()
@@ -147,7 +147,7 @@ public class YPortSpeed extends Module {
                 && !((double) mc.player.fallDistance > 0.09)
                 && this.getBooleanValueFromSettingName("OnGround")
                 && !mc.gameSettings.keyBindJump.pressed
-                && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+                && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
             if (mc.player.onGround && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                 this.field23542 = mc.player.getPosY();
             }

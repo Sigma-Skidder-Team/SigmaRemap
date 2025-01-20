@@ -117,7 +117,7 @@ public class BlockFlySmoothMode extends Module {
     @EventTarget
     public void method16885(SafeWalkEvent var1) {
         if (this.isEnabled()) {
-            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
                 if (mc.world
                         .getCollisionShapes(
                                 mc.player,
@@ -128,7 +128,7 @@ public class BlockFlySmoothMode extends Module {
                         && mc.player.fallDistance < 1.0F) {
                     var1.setSafe(true);
                 }
-            } else if (mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(SafeWalk.class).isEnabled()) {
+            } else if (mc.player.onGround && Client.getInstance().moduleManager.getModuleByClass(SafeWalk.class).isEnabled()) {
                 var1.setSafe(true);
             }
         }
@@ -281,7 +281,7 @@ public class BlockFlySmoothMode extends Module {
                     if (mc.player.onGround && MultiUtilities.method17686() && !mc.player.isSneaking() && !this.field23977) {
                         this.field23978 = false;
                         mc.player.jump();
-                        ((Speed) Client.getInstance().getModuleManager().getModuleByClass(Speed.class)).method16764();
+                        ((Speed) Client.getInstance().moduleManager.getModuleByClass(Speed.class)).method16764();
                         this.field23978 = true;
                         var1.setY(mc.player.getMotion().y);
                         var1.setX(mc.player.getMotion().x);

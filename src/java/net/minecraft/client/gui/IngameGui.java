@@ -120,7 +120,8 @@ public class IngameGui extends AbstractGui {
 
         Client.getInstance().method19926();
         ItemStack var6 = this.field6716.player.inventory.method4052(3);
-        if (this.field6716.gameSettings.getPointOfView().func_243192_a() && var6.getItem() == Blocks.field36589.asItem()) {
+        if (this.field6716.gameSettings.getPointOfView().func_243192_a()
+                && var6.getItem() == Blocks.field36589.asItem()) {
             this.method5978();
         }
 
@@ -165,7 +166,8 @@ public class IngameGui extends AbstractGui {
                 this.method5967(var1, var8);
             }
 
-            if (this.field6716.gameSettings.field44594 && this.field6716.playerController.getCurrentGameType() != GameType.SPECTATOR) {
+            if (this.field6716.gameSettings.field44594
+                    && this.field6716.playerController.getCurrentGameType() != GameType.SPECTATOR) {
                 this.method5969(var1);
             } else if (this.field6716.player.isSpectator()) {
                 this.field6728.method5723(var1);
@@ -285,14 +287,14 @@ public class IngameGui extends AbstractGui {
             Class8375 var28 = var21 == null ? var17.method20989(1) : var21;
             if (var28 != null) {
                 EventRenderGUI var31 = new EventRenderGUI(true);
-                Client.getInstance().getEventManager().call(var31);
+                Client.getInstance().eventManager.call(var31);
                 if (var31.isCancelled()) {
                     return;
                 }
 
                 this.method5971(var1, var28);
                 EventRenderGUI var13 = new EventRenderGUI(false);
-                Client.getInstance().getEventManager().call(var13);
+                Client.getInstance().eventManager.call(var13);
             }
 
             RenderSystem.enableBlend();
@@ -306,7 +308,8 @@ public class IngameGui extends AbstractGui {
             RenderSystem.popMatrix();
             var28 = var17.method20989(0);
             if (this.field6716.gameSettings.keyBindTablist.isKeyDown()
-                    && (!this.field6716.isIntegratedServerRunning() || this.field6716.player.connection.method15790().size() > 1 || var28 != null)) {
+                    && (!this.field6716.isIntegratedServerRunning()
+                            || this.field6716.player.connection.method15790().size() > 1 || var28 != null)) {
                 this.field6729.method5919(true);
                 this.field6729.method5920(var1, this.field6741, var17, var28);
             } else {
@@ -328,10 +331,14 @@ public class IngameGui extends AbstractGui {
 
     private void method5963(MatrixStack var1) {
         GameSettings var4 = this.field6716.gameSettings;
-        if (var4.getPointOfView().func_243192_a() && (this.field6716.playerController.getCurrentGameType() != GameType.SPECTATOR || this.method5964(this.field6716.objectMouseOver))) {
-            if (var4.showDebugInfo && !var4.hideGUI && !this.field6716.player.hasReducedDebug() && !var4.reducedDebugInfo) {
+        if (var4.getPointOfView().func_243192_a()
+                && (this.field6716.playerController.getCurrentGameType() != GameType.SPECTATOR
+                        || this.method5964(this.field6716.objectMouseOver))) {
+            if (var4.showDebugInfo && !var4.hideGUI && !this.field6716.player.hasReducedDebug()
+                    && !var4.reducedDebugInfo) {
                 RenderSystem.pushMatrix();
-                RenderSystem.translatef((float) (this.field6741 / 2), (float) (this.field6742 / 2), (float) this.method5702());
+                RenderSystem.translatef((float) (this.field6741 / 2), (float) (this.field6742 / 2),
+                        (float) this.method5702());
                 ActiveRenderInfo var11 = this.field6716.gameRenderer.getActiveRenderInfo();
                 RenderSystem.rotatef(var11.getPitch(), -1.0F, 0.0F, 0.0F);
                 RenderSystem.rotatef(var11.getYaw(), 0.0F, 1.0F, 0.0F);
@@ -339,12 +346,14 @@ public class IngameGui extends AbstractGui {
                 RenderSystem.renderCrosshair(10);
                 RenderSystem.popMatrix();
             } else {
-                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR, DestFactor.field12933, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR, DestFactor.field12933,
+                        GlStateManager.SourceFactor.ONE, DestFactor.field12936);
                 this.blit(var1, (this.field6741 - 15) / 2, (this.field6742 - 15) / 2, 0, 0, 15, 15);
                 if (this.field6716.gameSettings.field44603 == Class2207.field14426) {
                     float var6 = this.field6716.player.getCooledAttackStrength(0.0F);
                     boolean var7 = false;
-                    if (this.field6716.pointedEntity != null && this.field6716.pointedEntity instanceof LivingEntity && var6 >= 1.0F) {
+                    if (this.field6716.pointedEntity != null && this.field6716.pointedEntity instanceof LivingEntity
+                            && var6 >= 1.0F) {
                         var7 = this.field6716.player.method2973() > 5.0F;
                         var7 &= this.field6716.pointedEntity.isAlive();
                     }
@@ -427,7 +436,7 @@ public class IngameGui extends AbstractGui {
                             int var15 = 10 - var10.getDuration() / 20;
                             var14 = MathHelper.clamp((float) var10.getDuration() / 10.0F / 5.0F * 0.5F, 0.0F, 0.5F)
                                     + MathHelper.cos((float) var10.getDuration() * (float) Math.PI / 5.0F)
-                                    * MathHelper.clamp((float) var15 / 10.0F * 0.25F, 0.0F, 0.25F);
+                                            * MathHelper.clamp((float) var15 / 10.0F * 0.25F, 0.0F, 0.25F);
                         }
                     } else {
                         this.blit(var1, var12, var13, 165, 166, 24, 24);
@@ -443,7 +452,8 @@ public class IngameGui extends AbstractGui {
                         method5695(var1, var16 + 3, var17 + 3, this.method5702(), 18, 18, var20);
                     });
                     if (Reflector.field42936.exists()) {
-                        Reflector.call(var10, Reflector.field42936, this, var1, var12, Integer.valueOf(var13), this.method5702(), var14);
+                        Reflector.call(var10, Reflector.field42936, this, var1, var12, Integer.valueOf(var13),
+                                this.method5702(), var14);
                     }
                 }
             }
@@ -568,7 +578,8 @@ public class IngameGui extends AbstractGui {
     public void method5969(MatrixStack var1) {
         this.field6716.getProfiler().startSection("selectedItemName");
         if (this.field6724 > 0 && !this.field6725.isEmpty()) {
-            IFormattableTextComponent var4 = new StringTextComponent("").append(this.field6725.method32149()).mergeStyle(this.field6725.method32160().field12889);
+            IFormattableTextComponent var4 = new StringTextComponent("").append(this.field6725.method32149())
+                    .mergeStyle(this.field6725.method32160().field12889);
             if (this.field6725.method32152()) {
                 var4.mergeStyle(TextFormatting.ITALIC);
             }
@@ -594,17 +605,21 @@ public class IngameGui extends AbstractGui {
                 RenderSystem.pushMatrix();
                 RenderSystem.enableBlend();
                 RenderSystem.defaultBlendFunc();
-                fill(var1, var7 - 2, var8 - 2, var7 + var6 + 2, var8 + 9 + 2, this.field6716.gameSettings.method37141(0));
+                fill(var1, var7 - 2, var8 - 2, var7 + var6 + 2, var8 + 9 + 2,
+                        this.field6716.gameSettings.method37141(0));
                 FontRenderer var10 = null;
                 if (Reflector.field42912.exists()) {
-                    var10 = (FontRenderer) Reflector.call(this.field6725.getItem(), Reflector.field42912, this.field6725);
+                    var10 = (FontRenderer) Reflector.call(this.field6725.getItem(), Reflector.field42912,
+                            this.field6725);
                 }
 
                 if (var10 == null) {
-                    this.method5991().method38803(var1, (ITextComponent) var5, (float) var7, (float) var8, 16777215 + (var9 << 24));
+                    this.method5991().method38803(var1, (ITextComponent) var5, (float) var7, (float) var8,
+                            16777215 + (var9 << 24));
                 } else {
                     var6 = (this.field6741 - var10.method38821((ITextProperties) var5)) / 2;
-                    var10.method38804(var1, ((ITextComponent) var5).func_241878_f(), (float) var7, (float) var8, 16777215 + (var9 << 24));
+                    var10.method38804(var1, ((ITextComponent) var5).func_241878_f(), (float) var7, (float) var8,
+                            16777215 + (var9 << 24));
                 }
 
                 RenderSystem.disableBlend();
@@ -619,20 +634,23 @@ public class IngameGui extends AbstractGui {
         this.field6716.getProfiler().startSection("demo");
         Object var4;
         if (this.field6716.world.getGameTime() < 120500L) {
-            var4 = new TranslationTextComponent("demo.remainingTime", StringUtils.ticksToElapsedTime((int) (120500L - this.field6716.world.getGameTime())));
+            var4 = new TranslationTextComponent("demo.remainingTime",
+                    StringUtils.ticksToElapsedTime((int) (120500L - this.field6716.world.getGameTime())));
         } else {
             var4 = field6714;
         }
 
         int var5 = this.method5991().method38821((ITextProperties) var4);
-        this.method5991().method38803(var1, (ITextComponent) var4, (float) (this.field6741 - var5 - 10), 5.0F, 16777215);
+        this.method5991().method38803(var1, (ITextComponent) var4, (float) (this.field6741 - var5 - 10), 5.0F,
+                16777215);
         this.field6716.getProfiler().endSection();
     }
 
     private void method5971(MatrixStack var1, Class8375 var2) {
         Scoreboard var5 = var2.method29335();
         Collection<Class9411> var6 = var5.method20981(var2);
-        List var7 = var6.stream().filter(var0 -> var0.method36054() != null && !var0.method36054().startsWith("#")).collect(Collectors.toList());
+        List var7 = var6.stream().filter(var0 -> var0.method36054() != null && !var0.method36054().startsWith("#"))
+                .collect(Collectors.toList());
         if (var7.size() <= 15) {
             var6 = var7;
         } else {
@@ -647,9 +665,11 @@ public class IngameGui extends AbstractGui {
 
         for (Class9411 var14 : var6) {
             ScorePlayerTeam var15 = var5.method20998(var14.method36054());
-            IFormattableTextComponent var16 = ScorePlayerTeam.method28577(var15, new StringTextComponent(var14.method36054()));
+            IFormattableTextComponent var16 = ScorePlayerTeam.method28577(var15,
+                    new StringTextComponent(var14.method36054()));
             var8.add(Pair.of(var14, var16));
-            var11 = Math.max(var11, this.method5991().method38821(var16) + var12 + this.method5991().getStringWidth(Integer.toString(var14.method36050())));
+            var11 = Math.max(var11, this.method5991().method38821(var16) + var12
+                    + this.method5991().getStringWidth(Integer.toString(var14.method36050())));
         }
 
         int var28 = var6.size() * 9;
@@ -668,17 +688,21 @@ public class IngameGui extends AbstractGui {
             int var26 = this.field6741 - 3 + 2;
             fill(var1, var31 - 2, var25, var26, var25 + 9, var18);
             this.method5991().func_243248_b(var1, var23, (float) var31, (float) var25, -1);
-            this.method5991().method38801(var1, var24, (float) (var26 - this.method5991().getStringWidth(var24)), (float) var25, -1);
+            this.method5991().method38801(var1, var24, (float) (var26 - this.method5991().getStringWidth(var24)),
+                    (float) var25, -1);
             if (var17 == var6.size()) {
                 fill(var1, var31 - 2, var25 - 9 - 1, var26, var25 - 1, var19);
                 fill(var1, var31 - 2, var25 - 1, var26, var25, var18);
-                this.method5991().func_243248_b(var1, var9, (float) (var31 + var11 / 2 - var10 / 2), (float) (var25 - 9), -1);
+                this.method5991().func_243248_b(var1, var9, (float) (var31 + var11 / 2 - var10 / 2),
+                        (float) (var25 - 9), -1);
             }
         }
     }
 
     private PlayerEntity method5972() {
-        return this.field6716.getRenderViewEntity() instanceof PlayerEntity ? (PlayerEntity) this.field6716.getRenderViewEntity() : null;
+        return this.field6716.getRenderViewEntity() instanceof PlayerEntity
+                ? (PlayerEntity) this.field6716.getRenderViewEntity()
+                : null;
     }
 
     private LivingEntity method5973() {
@@ -719,7 +743,8 @@ public class IngameGui extends AbstractGui {
         PlayerEntity var4 = this.method5972();
         if (var4 != null) {
             int var5 = MathHelper.ceil(var4.getHealth());
-            boolean var6 = this.field6740 > (long) this.field6719 && (this.field6740 - (long) this.field6719) / 3L % 2L == 1L;
+            boolean var6 = this.field6740 > (long) this.field6719
+                    && (this.field6740 - (long) this.field6719) / 3L % 2L == 1L;
             long var7 = Util.milliTime();
             if (var5 < this.field6737 && var4.hurtResistantTime > 0) {
                 this.field6739 = var7;
@@ -957,7 +982,8 @@ public class IngameGui extends AbstractGui {
         if (Config.method26883()) {
             WorldBorder var4 = this.field6716.world.getWorldBorder();
             float var5 = (float) var4.getClosestDistance(var1);
-            double var6 = Math.min(var4.method24550() * (double) var4.method24551() * 1000.0, Math.abs(var4.method24539() - var4.method24537()));
+            double var6 = Math.min(var4.method24550() * (double) var4.method24551() * 1000.0,
+                    Math.abs(var4.method24539() - var4.method24537()));
             double var8 = Math.max((double) var4.method24553(), var6);
             if (!((double) var5 < var8)) {
                 var5 = 0.0F;
@@ -967,7 +993,8 @@ public class IngameGui extends AbstractGui {
 
             RenderSystem.disableDepthTest();
             RenderSystem.depthMask(false);
-            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ZERO, DestFactor.field12933, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ZERO, DestFactor.field12933,
+                    GlStateManager.SourceFactor.ONE, DestFactor.field12936);
             if (!(var5 > 0.0F)) {
                 RenderSystem.color4f(this.field6723, this.field6723, this.field6723, 1.0F);
             } else {
@@ -989,7 +1016,8 @@ public class IngameGui extends AbstractGui {
             RenderSystem.defaultBlendFunc();
         } else {
             RenderSystem.enableDepthTest();
-            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932,
+                    GlStateManager.SourceFactor.ONE, DestFactor.field12936);
         }
     }
 
@@ -1006,7 +1034,8 @@ public class IngameGui extends AbstractGui {
         RenderSystem.defaultBlendFunc();
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, var1);
         this.field6716.getTextureManager().bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
-        TextureAtlasSprite var4 = this.field6716.getBlockRendererDispatcher().getBlockModelShapes().getTexture(Blocks.field36588.getDefaultState());
+        TextureAtlasSprite var4 = this.field6716.getBlockRendererDispatcher().getBlockModelShapes()
+                .getTexture(Blocks.field36588.getDefaultState());
         float var5 = var4.getMinU();
         float var6 = var4.getMinV();
         float var7 = var4.getMaxU();
@@ -1073,7 +1102,8 @@ public class IngameGui extends AbstractGui {
             boolean var5 = true;
             if (Reflector.field42924.exists()) {
                 ITextComponent var6 = (ITextComponent) Reflector.call(var4, Reflector.field42924, var4.method32149());
-                ITextComponent var7 = (ITextComponent) Reflector.call(this.field6725, Reflector.field42924, this.field6725.method32149());
+                ITextComponent var7 = (ITextComponent) Reflector.call(this.field6725, Reflector.field42924,
+                        this.field6725.method32149());
                 var5 = Config.equals(var6, var7);
             }
 
@@ -1142,7 +1172,8 @@ public class IngameGui extends AbstractGui {
     }
 
     public void method5988(ChatType var1, ITextComponent var2, UUID var3) {
-        if (!this.field6716.cannotSendChatMessages(var3) && (!this.field6716.gameSettings.field44631 || !this.field6716.cannotSendChatMessages(this.method5987(var2)))) {
+        if (!this.field6716.cannotSendChatMessages(var3) && (!this.field6716.gameSettings.field44631
+                || !this.field6716.cannotSendChatMessages(this.method5987(var2)))) {
             for (Class6687 var7 : this.field6743.get(var1)) {
                 var7.method20400(var1, var2, var3);
             }

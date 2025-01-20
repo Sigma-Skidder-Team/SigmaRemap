@@ -31,7 +31,7 @@ public class BlurEngine {
    public static int screenHeight = 0;
 
    public void init() {
-      Client.getInstance().getEventManager().register(this);
+      Client.getInstance().eventManager.register(this);
    }
 
    public static void drawBlur(int var0, int var1, int var2, int var3) {
@@ -51,7 +51,7 @@ public class BlurEngine {
    @EventTarget
    @LowestPriority
    public void on3DRender(Render3DEvent event) {
-      if (Client.getInstance().getGuiManager().method33472() && frameBuffWidth < screenWidth && frameBuffHeight < screenHeight) {
+      if (Client.getInstance().guiManager.method33472() && frameBuffWidth < screenWidth && frameBuffHeight < screenHeight) {
          if (frameBuff == null) {
             try {
                blurShader = new ShaderGroup(mc.getTextureManager(), new SigmaBlurShader(), mc.getFramebuffer(), new ResourceLocation("jelloblur"));

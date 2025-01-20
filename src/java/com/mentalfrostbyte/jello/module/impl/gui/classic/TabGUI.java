@@ -99,7 +99,7 @@ public class TabGUI extends Module {
                   } else if (categoryState == 2 && category != null) {
                      CategoryDrawPart drawPart = categoryDrawParts.get(0);
                      ModuleCategory modCategory = this.categories.get(drawPart.index);
-                     Module module = Client.getInstance().getModuleManager().getModulesByCategory(modCategory).get(category.index);
+                     Module module = Client.getInstance().moduleManager.getModulesByCategory(modCategory).get(category.index);
                      this.method15963(module);
                   } else if (categoryState == 3) {
                      this.method15970(true);
@@ -109,7 +109,7 @@ public class TabGUI extends Module {
                   if (categoryState == 2 && category != null) {
                      CategoryDrawPart drawPart = categoryDrawParts.get(0);
                      ModuleCategory modCat = this.categories.get(drawPart.index);
-                     Module mod = Client.getInstance().getModuleManager().getModulesByCategory(modCat).get(category.index);
+                     Module mod = Client.getInstance().moduleManager.getModulesByCategory(modCat).get(category.index);
                      mod.setEnabled(!mod.isEnabled());
                   }
                   break;
@@ -123,7 +123,7 @@ public class TabGUI extends Module {
       CategoryDrawPart moduleIndex = categoryDrawParts.get(1);
       CategoryDrawPart settingIndex = categoryDrawParts.get(2);
       ModuleCategory category = this.categories.get(categoryIndex.index);
-      Module var8 = Client.getInstance().getModuleManager().getModulesByCategory(category).get(moduleIndex.index);
+      Module var8 = Client.getInstance().moduleManager.getModulesByCategory(category).get(moduleIndex.index);
       Setting<?> setting = this.getModuleSettings(var8).get(settingIndex.index);
       if (!(setting instanceof ModeSetting)) {
          if (!(setting instanceof BooleanSetting)) {
@@ -207,7 +207,7 @@ public class TabGUI extends Module {
          ModuleCategory var5 = this.categories.get(var4.index);
          int var6 = 0;
 
-         for (Module var8 : Client.getInstance().getModuleManager().getModulesByCategory(var5)) {
+         for (Module var8 : Client.getInstance().moduleManager.getModulesByCategory(var5)) {
             var3.method24727(var6++, (!var8.isEnabled() ? "§7" : "") + var8.getSuffix());
          }
       }
@@ -233,7 +233,7 @@ public class TabGUI extends Module {
          }
 
          ModuleCategory currentCategory = this.categories.get(firstCategoryPart.index);
-         Module currentModule = Client.getInstance().getModuleManager().getModulesByCategory(currentCategory).get(secondCategoryPart.index);
+         Module currentModule = Client.getInstance().moduleManager.getModulesByCategory(currentCategory).get(secondCategoryPart.index);
          String description = currentModule.getDescription();
          if (drawState == 3) {
             Setting<?> currentSetting = this.getModuleSettings(currentModule).get(thirdCategoryPart.index);
@@ -299,7 +299,7 @@ public class TabGUI extends Module {
    public void method15962(ModuleCategory var1) {
       ArrayList var4 = new ArrayList();
 
-      for (Module var6 : Client.getInstance().getModuleManager().getModulesByCategory(var1)) {
+      for (Module var6 : Client.getInstance().moduleManager.getModulesByCategory(var1)) {
          var4.add(var6.getSuffix());
       }
 

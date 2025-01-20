@@ -71,11 +71,12 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
             if (var8 != null) {
                this.field35190.setPos(var4, var5, var6);
                BlockState var9 = var8.getBlockState(this.field35190);
-               if (this.field35194.test(var9, this.field35190) && (var7 != 1 || var9.method23390()) && (var7 != 2 || var9.isIn(Blocks.MOVING_PISTON))) {
+               if (this.field35194.test(var9, this.field35190) && (var7 != 1 || var9.method23390())
+                     && (var7 != 2 || var9.isIn(Blocks.MOVING_PISTON))) {
                   VoxelShape var10 = var9.getCollisionShape(this.field35192, this.field35190, this.field35188);
                   if (this.field35186 instanceof PlayerEntity) {
                      EventBlockCollision var11 = new EventBlockCollision(this.field35190, var10);
-                     Client.getInstance().getEventManager().call(var11);
+                     Client.getInstance().eventManager.call(var11);
                      var10 = var11.getVoxelShape();
                      if (var11.isCancelled()) {
                         return false;
@@ -83,13 +84,14 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
                   }
 
                   if (var10 != VoxelShapes.method27426()) {
-                     VoxelShape var12 = var10.withOffset((double)var4, (double)var5, (double)var6);
+                     VoxelShape var12 = var10.withOffset((double) var4, (double) var5, (double) var6);
                      if (VoxelShapes.compare(var12, this.field35191, IBooleanFunction.AND)) {
                         var1.accept(var12);
                         return true;
                      }
-                  } else if (this.field35187.intersects((double)var4, (double)var5, (double)var6, (double)var4 + 1.0, (double)var5 + 1.0, (double)var6 + 1.0)) {
-                     var1.accept(var10.withOffset((double)var4, (double)var5, (double)var6));
+                  } else if (this.field35187.intersects((double) var4, (double) var5, (double) var6,
+                        (double) var4 + 1.0, (double) var5 + 1.0, (double) var6 + 1.0)) {
+                     var1.accept(var10.withOffset((double) var4, (double) var5, (double) var6));
                      return true;
                   }
                }
@@ -137,12 +139,12 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
       double var8 = (double) MathHelper.method37774(var0.method24532());
       double var10 = (double) MathHelper.method37774(var0.method24533());
       return var1.minX > var4
-         && var1.minX < var8
-         && var1.minZ > var6
-         && var1.minZ < var10
-         && var1.maxX > var4
-         && var1.maxX < var8
-         && var1.maxZ > var6
-         && var1.maxZ < var10;
+            && var1.minX < var8
+            && var1.minZ > var6
+            && var1.minZ < var10
+            && var1.maxX > var4
+            && var1.maxX < var8
+            && var1.maxZ > var6
+            && var1.maxZ < var10;
    }
 }

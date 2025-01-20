@@ -150,7 +150,7 @@ public class ActiveMods extends Module {
         if (this.field23962.isEmpty()) {
             this.field23962.clear();
 
-            for (Module var4 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+            for (Module var4 : Client.getInstance().moduleManager.getModuleMap().values()) {
                 if (var4 != this && var4.getCategory() != ModuleCategory.GUI) {
                     Animation var5 = new Animation(200, 200, !var4.isEnabled() ? Direction.FORWARDS : Direction.BACKWARDS);
                     var5.method25318(!var4.isEnabled() ? 1.0F : 0.0F);

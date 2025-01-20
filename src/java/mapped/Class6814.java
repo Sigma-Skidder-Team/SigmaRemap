@@ -107,7 +107,7 @@ public class Class6814 {
          this.savedConfigs.add(this.currentConfigs = new Configuration(name, new JSONObject()));
       }
 
-      Client.getInstance().getModuleManager().load(this.currentConfigs.serializedConfigData);
+      Client.getInstance().moduleManager.load(this.currentConfigs.serializedConfigData);
    }
 
    public boolean method20768(String var1) {
@@ -121,7 +121,7 @@ public class Class6814 {
    }
 
    public void saveAndReplaceConfigs() throws IOException {
-      this.currentConfigs.serializedConfigData = Client.getInstance().getModuleManager().saveCurrentConfigToJSON(new JSONObject());
+      this.currentConfigs.serializedConfigData = Client.getInstance().moduleManager.saveCurrentConfigToJSON(new JSONObject());
       File configFolderFolder = new File(Client.getInstance().getFile() + configFolder);
       if (!configFolderFolder.exists()) {
          configFolderFolder.mkdirs();
@@ -153,15 +153,15 @@ public class Class6814 {
       Client.getInstance().saveClientData();
       RandomModuleThread.field8343 = new HashMap<>();
        if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
-          this.currentConfigs.serializedConfigData = Client.getInstance().getModuleManager().saveCurrentConfigToJSON(new JSONObject());
+          this.currentConfigs.serializedConfigData = Client.getInstance().moduleManager.saveCurrentConfigToJSON(new JSONObject());
           this.currentConfigs = var1;
           Client.getInstance().getConfig().put("profile", var1.getName);
-          Client.getInstance().getModuleManager().load(var1.serializedConfigData);
+          Client.getInstance().moduleManager.load(var1.serializedConfigData);
           Client.getInstance().saveClientData();
        } else {
           this.currentConfigs.serializedConfigData = var1.method22986();
           Client.getInstance().getConfig().put("profile", "Classic");
-          Client.getInstance().getModuleManager().load(var1.serializedConfigData);
+          Client.getInstance().moduleManager.load(var1.serializedConfigData);
           Client.getInstance().saveClientData();
        }
    }

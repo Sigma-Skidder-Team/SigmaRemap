@@ -36,35 +36,39 @@ public class CubecraftGamePlay extends Module {
                 String var7 = var5.getChatComponent().getString();
                 String var8 = mc.player.getName().getString().toLowerCase();
                 if (this.field23580.getBooleanValueFromSettingName("AutoL")
-                        && (
-                        var6.toLowerCase().contains("was slain by " + var8)
+                        && (var6.toLowerCase().contains("was slain by " + var8)
                                 || var6.toLowerCase().contains("burned to death while fighting " + var8)
                                 || var6.toLowerCase().contains("was shot by " + var8)
                                 || var6.toLowerCase().contains("burnt to a crisp while fighting " + var8)
                                 || var6.toLowerCase().contains("couldn't fly while escaping " + var8)
-                                || var6.toLowerCase().contains("thought they could survive in the void while escaping " + var8)
+                                || var6.toLowerCase()
+                                        .contains("thought they could survive in the void while escaping " + var8)
                                 || var6.toLowerCase().contains("fell to their death while escaping " + var8)
-                                || var6.toLowerCase().contains("died in the void while escaping " + var8)
-                )) {
+                                || var6.toLowerCase().contains("died in the void while escaping " + var8))) {
                     this.field23580.method16761(var6);
                 }
 
-                if (var7.contains("§a§lPlay Again §r§8• §r§6§lAuto Mode §r§8• §r§c§lLeave") && this.field23580.getBooleanValueFromSettingName("Auto Join")) {
+                if (var7.contains("§a§lPlay Again §r§8• §r§6§lAuto Mode §r§8• §r§c§lLeave")
+                        && this.field23580.getBooleanValueFromSettingName("Auto Join")) {
                     for (ITextComponent var10 : var5.getChatComponent().getSiblings()) {
                         ClickEvent var11 = var10.getStyle().getClickEvent();
-                        if (var11 != null && var11.getAction() == ClickEvent$Action.RUN_COMMAND && var11.getValue().contains("playagain")) {
-                            this.field23580.method16759(new Class7200(var11.getValue(), (long) this.field23580.getNumberValueBySettingName("Auto Join delay") * 1000L));
-                            Client.getInstance()
-                                    .getNotificationManager()
+                        if (var11 != null && var11.getAction() == ClickEvent$Action.RUN_COMMAND
+                                && var11.getValue().contains("playagain")) {
+                            this.field23580.method16759(new Class7200(var11.getValue(),
+                                    (long) this.field23580.getNumberValueBySettingName("Auto Join delay") * 1000L));
+                            Client.getInstance().notificationManager
                                     .send(
-                                            new Notification("Auto Join", "Joining a new game in 3 seconds.", (int) (this.field23580.getNumberValueBySettingName("Auto Join delay") - 1.0F) * 1000)
-                                    );
+                                            new Notification("Auto Join", "Joining a new game in 3 seconds.",
+                                                    (int) (this.field23580
+                                                            .getNumberValueBySettingName("Auto Join delay") - 1.0F)
+                                                            * 1000));
                             break;
                         }
                     }
                 }
 
-                if (this.field23580.getBooleanValueFromSettingName("AutoGG") && var7.equalsIgnoreCase("§e" + mc.player.getName().getString() + "§r§a won the game!§r")) {
+                if (this.field23580.getBooleanValueFromSettingName("AutoGG")
+                        && var7.equalsIgnoreCase("§e" + mc.player.getName().getString() + "§r§a won the game!§r")) {
                     this.field23580.method16760();
                 }
             }

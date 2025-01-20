@@ -346,13 +346,13 @@ public class Test extends Module {
         while (var5.hasNext()) {
             Entity var6 = (Entity) var5.next();
             if (var6 != mc.player) {
-                if (!Client.getInstance().getFriendManager().method26997(var6)) {
+                if (!Client.getInstance().friendManager.method26997(var6)) {
                     if (var6 instanceof LivingEntity) {
                         if (((LivingEntity) var6).getHealth() != 0.0F) {
                             if (!(mc.player.getDistance(var6) > var1)) {
                                 if (mc.player.canAttack((LivingEntity) var6)) {
                                     if (!(var6 instanceof ArmorStandEntity) && !(var6 instanceof PlayerEntity)) {
-                                        if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().isTargetABot(var6)) {
+                                        if (var6 instanceof PlayerEntity && Client.getInstance().combatManager.isTargetABot(var6)) {
                                             var5.remove();
                                         } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var6)) {
                                             var5.remove();
@@ -398,13 +398,13 @@ public class Test extends Module {
         while (var6.hasNext()) {
             Entity var7 = (Entity) var6.next();
             if (var7 != mc.player) {
-                if (!Client.getInstance().getFriendManager().method26997(var7)) {
+                if (!Client.getInstance().friendManager.method26997(var7)) {
                     if (var7 instanceof LivingEntity) {
                         if (((LivingEntity) var7).getHealth() != 0.0F) {
                             if (!(mc.player.getDistance(var7) > var1)) {
                                 if (mc.player.canAttack((LivingEntity) var7)) {
                                     if (!(var7 instanceof ArmorStandEntity)) {
-                                        if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().isTargetABot(var7)) {
+                                        if (var7 instanceof PlayerEntity && Client.getInstance().combatManager.isTargetABot(var7)) {
                                             var6.remove();
                                         } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var7)) {
                                             var6.remove();

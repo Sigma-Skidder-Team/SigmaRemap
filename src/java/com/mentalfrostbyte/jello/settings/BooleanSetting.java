@@ -29,7 +29,7 @@ public class BooleanSetting extends Setting<Boolean> {
 
    public void updateCurrentValue(Boolean value, boolean notify) {
       if (this.premiumMode && notify) {
-         Client.getInstance().getNotificationManager().send(new Notification("Premium", "Not yet available for free version"));
+         Client.getInstance().notificationManager.send(new Notification("Premium", "Not yet available for free version"));
       }
 
       super.updateCurrentValue(value, notify);

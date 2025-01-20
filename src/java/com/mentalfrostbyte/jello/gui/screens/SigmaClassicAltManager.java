@@ -31,7 +31,7 @@ public class SigmaClassicAltManager extends Screen {
    private float field21058 = 0.65F;
    private float field21059 = 1.0F - this.field21058;
    private int field21060 = 30;
-   public AccountManager field21061 = Client.getInstance().getAccountManager();
+   public AccountManager field21061 = Client.getInstance().accountManager;
    private Texture field21062;
    private float field21063;
    private Class2209 field21064 = Class2209.field14448;
@@ -60,25 +60,23 @@ public class SigmaClassicAltManager extends Screen {
 
       short var9 = 790;
       this.addToList(
-         this.field21066 = new SigmaClassicTextBox(
-            this,
-            "textbox",
-            (Minecraft.getInstance().mainWindow.getWidth() - var9) / 2 - 140,
-            this.getHeightA() - 40,
-            140,
-            32,
-            UIInput.field20741,
-            "",
-            "Search...",
-            ResourceRegistry.JelloLightFont18
-         )
-      );
+            this.field21066 = new SigmaClassicTextBox(
+                  this,
+                  "textbox",
+                  (Minecraft.getInstance().mainWindow.getWidth() - var9) / 2 - 140,
+                  this.getHeightA() - 40,
+                  140,
+                  32,
+                  UIInput.field20741,
+                  "",
+                  "Search...",
+                  ResourceRegistry.JelloLightFont18));
       this.field21066.setFont(ResourceRegistry.DefaultClientFont);
       this.field21066.method13151(var1 -> this.method13402());
       this.method13403();
       this.addToList(
-         this.field21067 = new ClassicAltManager(this, "toolbar", (Minecraft.getInstance().mainWindow.getWidth() - var9) / 2 + 16, this.getHeightA() - 94)
-      );
+            this.field21067 = new ClassicAltManager(this, "toolbar",
+                  (Minecraft.getInstance().mainWindow.getWidth() - var9) / 2 + 16, this.getHeightA() - 94));
       this.field21067.method13296(false);
    }
 
@@ -86,9 +84,9 @@ public class SigmaClassicAltManager extends Screen {
       byte var4 = 52;
       Class4349 var5;
       this.field21055
-         .addToList(
-            var5 = new Class4349(this.field21055, var1.getEmail(), 4, var4 * this.method13400() + 4, this.field21055.getWidthA() - 8, var4, var1)
-         );
+            .addToList(
+                  var5 = new Class4349(this.field21055, var1.getEmail(), 4, var4 * this.method13400() + 4,
+                        this.field21055.getWidthA() - 8, var4, var1));
       var5.doThis((var2, var3) -> {
          if (var3 == 0) {
             Class4349 var6 = this.method13406();
@@ -131,7 +129,8 @@ public class SigmaClassicAltManager extends Screen {
          if (!this.field21061.login(var1)) {
             this.status = "§cLogin Failed!";
          } else {
-            this.status = "§aLogged in. (" + var1.getName() + (!var1.isEmailAValidEmailFormat() ? "" : " - offline name") + ")";
+            this.status = "§aLogged in. (" + var1.getName()
+                  + (!var1.isEmailAValidEmailFormat() ? "" : " - offline name") + ")";
          }
       }).start();
    }
@@ -140,26 +139,25 @@ public class SigmaClassicAltManager extends Screen {
    public void draw(float var1) {
       this.method13401();
       super.draw(var1);
-      RenderUtil.drawString(ResourceRegistry.DefaultClientFont, 20.0F, 20.0F, Minecraft.getInstance().getSession().getUsername(), -2236963);
+      RenderUtil.drawString(ResourceRegistry.DefaultClientFont, 20.0F, 20.0F,
+            Minecraft.getInstance().getSession().getUsername(), -2236963);
       RenderUtil.method11440(
-         ResourceRegistry.DefaultClientFont,
-         (float)(this.getWidthA() / 2),
-         20.0F,
-         "Account Manager - " + this.method13400() + " alts",
-         ClientColors.LIGHT_GREYISH_BLUE.getColor,
-         Class2218.field14492,
-         Class2218.field14488
-      );
+            ResourceRegistry.DefaultClientFont,
+            (float) (this.getWidthA() / 2),
+            20.0F,
+            "Account Manager - " + this.method13400() + " alts",
+            ClientColors.LIGHT_GREYISH_BLUE.getColor,
+            Class2218.field14492,
+            Class2218.field14488);
       RenderUtil.method11441(
-         ResourceRegistry.DefaultClientFont,
-         (float)(this.getWidthA() / 2),
-         40.0F,
-         this.status,
-         ClientColors.LIGHT_GREYISH_BLUE.getColor,
-         Class2218.field14492,
-         Class2218.field14488,
-         false
-      );
+            ResourceRegistry.DefaultClientFont,
+            (float) (this.getWidthA() / 2),
+            40.0F,
+            this.status,
+            ClientColors.LIGHT_GREYISH_BLUE.getColor,
+            Class2218.field14492,
+            Class2218.field14488,
+            false);
    }
 
    private int method13400() {
@@ -177,8 +175,10 @@ public class SigmaClassicAltManager extends Screen {
    }
 
    private void method13401() {
-      RenderUtil.method11455(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ResourceList.mainmenubackground);
-      RenderUtil.renderBackgroundBox(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.23F));
+      RenderUtil.method11455(0.0F, 0.0F, (float) this.getWidthA(), (float) this.getHeightA(),
+            ResourceList.mainmenubackground);
+      RenderUtil.renderBackgroundBox(0.0F, 0.0F, (float) this.getWidthA(), (float) this.getHeightA(),
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.23F));
    }
 
    @Override
@@ -213,7 +213,8 @@ public class SigmaClassicAltManager extends Screen {
    }
 
    public void method13403() {
-      List<Account> var4 = Class8270.method28878(this.field21061.getAccounts(), Class2209.field14448, "", this.field21066.getTypedText());
+      List<Account> var4 = Class8270.method28878(this.field21061.getAccounts(), Class2209.field14448, "",
+            this.field21066.getTypedText());
       int var5 = 0;
       if (this.field21055 != null) {
          var5 = this.field21055.method13513();
@@ -227,7 +228,8 @@ public class SigmaClassicAltManager extends Screen {
 
       int var7 = Minecraft.getInstance().mainWindow.getWidth() - 200;
       int var8 = this.getWidthA() - var7;
-      this.method13233(this.field21055 = new Class4344(this, "alts", var8 / 2, 69, var7, Minecraft.getInstance().mainWindow.getHeight() - 169));
+      this.method13233(this.field21055 = new Class4344(this, "alts", var8 / 2, 69, var7,
+            Minecraft.getInstance().mainWindow.getHeight() - 169));
 
       for (Account var10 : var4) {
          this.method13395(var10);
@@ -243,7 +245,8 @@ public class SigmaClassicAltManager extends Screen {
    }
 
    public int method13405() {
-      return Minecraft.getInstance().mainWindow.getHeight() / 12 + 280 + Minecraft.getInstance().mainWindow.getHeight() / 12;
+      return Minecraft.getInstance().mainWindow.getHeight() / 12 + 280
+            + Minecraft.getInstance().mainWindow.getHeight() / 12;
    }
 
    public Class4349 method13406() {
@@ -251,7 +254,7 @@ public class SigmaClassicAltManager extends Screen {
          if (!(var4 instanceof Class4292)) {
             for (CustomGuiScreen var6 : var4.method13241()) {
                if (var6 instanceof Class4349) {
-                  Class4349 var7 = (Class4349)var6;
+                  Class4349 var7 = (Class4349) var6;
                   if (var7.method13582()) {
                      return var7;
                   }

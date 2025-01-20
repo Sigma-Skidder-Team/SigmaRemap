@@ -23,25 +23,33 @@ public class Class4337 extends CustomGuiScreen {
    public Class4337(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       int var9 = 0;
-      this.addToList(this.field21186 = new Class4254(this, "Singleplayer", this.method13497(var9++), this.method13496(), 114, 140, ResourceList.singlePlayer));
-      this.addToList(this.field21191 = new Class4254(this, "Multiplayer", this.method13497(var9++), this.method13496(), 114, 140, ResourceList.multiplayer));
-      this.addToList(this.field21189 = new Class4254(this, "Options", this.method13497(var9++), this.method13496(), 114, 140, ResourceList.options));
-      this.addToList(this.field21188 = new Class4254(this, "Language", this.method13497(var9++), this.method13496(), 114, 140, ResourceList.language));
+      this.addToList(this.field21186 = new Class4254(this, "Singleplayer", this.method13497(var9++), this.method13496(),
+            114, 140, ResourceList.singlePlayer));
+      this.addToList(this.field21191 = new Class4254(this, "Multiplayer", this.method13497(var9++), this.method13496(),
+            114, 140, ResourceList.multiplayer));
+      this.addToList(this.field21189 = new Class4254(this, "Options", this.method13497(var9++), this.method13496(), 114,
+            140, ResourceList.options));
+      this.addToList(this.field21188 = new Class4254(this, "Language", this.method13497(var9++), this.method13496(),
+            114, 140, ResourceList.language));
       this.addToList(
-         this.field21190 = new Class4254(this, "Accounts", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ResourceList.accounts)
-      );
-      this.addToList(this.field21192 = new Class4254(this, "Agora", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ResourceList.agora));
-      this.addToList(this.field21187 = new Class4254(this, "Exit", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ResourceList.exit));
-      this.field21186.doThis((var1x, var2x) -> this.method13493(new WorldSelectionScreen(Minecraft.getInstance().currentScreen)));
-      this.field21191.doThis((var1x, var2x) -> this.method13493(new JelloPortalScreen(Minecraft.getInstance().currentScreen)));
-      this.field21189.doThis((var1x, var2x) -> this.method13493(new OptionsScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
+            this.field21190 = new Class4254(this, "Accounts", this.method13497(var9++), this.method13496() + 140 + 10,
+                  114, 140, ResourceList.accounts));
+      this.addToList(this.field21192 = new Class4254(this, "Agora", this.method13497(var9++),
+            this.method13496() + 140 + 10, 114, 140, ResourceList.agora));
+      this.addToList(this.field21187 = new Class4254(this, "Exit", this.method13497(var9++),
+            this.method13496() + 140 + 10, 114, 140, ResourceList.exit));
+      this.field21186.doThis(
+            (var1x, var2x) -> this.method13493(new WorldSelectionScreen(Minecraft.getInstance().currentScreen)));
+      this.field21191
+            .doThis((var1x, var2x) -> this.method13493(new JelloPortalScreen(Minecraft.getInstance().currentScreen)));
+      this.field21189.doThis((var1x, var2x) -> this.method13493(
+            new OptionsScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
       this.field21190.doThis((var1x, var2x) -> this.method13494(new SigmaClassicAltManager()));
       this.field21188
-         .doThis(
-            (var1x, var2x) -> this.method13493(
-                  new LanguageScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings, Minecraft.getInstance().getLanguageManager())
-               )
-         );
+            .doThis(
+                  (var1x, var2x) -> this.method13493(
+                        new LanguageScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings,
+                              Minecraft.getInstance().getLanguageManager())));
       this.field21187.doThis((var0, var1x) -> Minecraft.getInstance().shutdown());
    }
 
@@ -51,12 +59,13 @@ public class Class4337 extends CustomGuiScreen {
    }
 
    public void method13494(Screen var1) {
-      Client.getInstance().getGuiManager().method33482(var1);
+      Client.getInstance().guiManager.method33482(var1);
       this.method13495();
    }
 
    public void method13495() {
-      Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
+      Minecraft.getInstance().getSoundHandler()
+            .method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
    }
 
    private int method13496() {
@@ -81,7 +90,8 @@ public class Class4337 extends CustomGuiScreen {
    @Override
    public void draw(float var1) {
       this.method13225();
-      RenderUtil.method11455((float)(this.xA + (this.getWidthA() - 300) / 2), (float)(this.yA + 30), 300.0F, 97.0F, ResourceList.big);
+      RenderUtil.method11455((float) (this.xA + (this.getWidthA() - 300) / 2), (float) (this.yA + 30), 300.0F, 97.0F,
+            ResourceList.big);
       super.draw(var1);
    }
 }

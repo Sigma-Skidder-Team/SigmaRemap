@@ -19,7 +19,7 @@ public abstract class Class7249 implements Class7251 {
       this.field31121 = var1;
       this.field31122 = var2;
       this.field31123 = var3;
-      Client.getInstance().getEventManager().register(this);
+      Client.getInstance().eventManager.register(this);
    }
 
    public String method22759() {

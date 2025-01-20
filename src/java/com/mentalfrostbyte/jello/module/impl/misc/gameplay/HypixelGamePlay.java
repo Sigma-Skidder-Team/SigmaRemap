@@ -54,7 +54,7 @@ public class HypixelGamePlay extends Module {
                 }
 
                 String var7 = mc.player.getName().getString().toLowerCase();
-                if (Client.getInstance().getModuleManager().getModuleByClass(NameProtect.class).isEnabled()) {
+                if (Client.getInstance().moduleManager.getModuleByClass(NameProtect.class).isEnabled()) {
                 }
 
                 if (this.field23626.getBooleanValueFromSettingName("AutoL")) {

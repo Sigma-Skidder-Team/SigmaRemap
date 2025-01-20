@@ -16,17 +16,19 @@ public class PacketThreadUtil {
    private static final Logger field39629 = LogManager.getLogger();
    public static RegistryKey<World> field39630 = null;
 
-   public static <T extends INetHandler> void checkThreadAndEnqueue(IPacket<T> var0, T var1, ServerWorld var2) throws ThreadQuickExitException {
+   public static <T extends INetHandler> void checkThreadAndEnqueue(IPacket<T> var0, T var1, ServerWorld var2)
+         throws ThreadQuickExitException {
       checkThreadAndEnqueue(var0, var1, var2.getServer());
    }
 
-   public static <T extends INetHandler> void checkThreadAndEnqueue(IPacket<T> var0, T var1, Class318<?> var2) throws ThreadQuickExitException {
+   public static <T extends INetHandler> void checkThreadAndEnqueue(IPacket<T> var0, T var1, Class318<?> var2)
+         throws ThreadQuickExitException {
       if (var2.isOnExecutionThread()) {
          method31781(var0);
       } else {
          var2.execute(() -> {
             method31781(var0);
-            if (!var1.getNetworkManager().isChannelOpen()) {
+            if (!var1.networkManager.isChannelOpen()) {
                field39629.debug("Ignoring packet due to disconnection: " + var0);
             } else {
                var0.processPacket(var1);
@@ -45,11 +47,11 @@ public class PacketThreadUtil {
          if (!(var0 instanceof SJoinGamePacket)) {
             field39630 = null;
          } else {
-            SJoinGamePacket var3 = (SJoinGamePacket)var0;
+            SJoinGamePacket var3 = (SJoinGamePacket) var0;
             field39630 = var3.method17295();
          }
       } else {
-         SRespawnPacket var4 = (SRespawnPacket)var0;
+         SRespawnPacket var4 = (SRespawnPacket) var0;
          field39630 = var4.method17433();
       }
    }

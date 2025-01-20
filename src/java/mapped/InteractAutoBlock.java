@@ -156,7 +156,7 @@ public class InteractAutoBlock {
       }
 
       Iterator<TimedEntity> entities = timedEntityList.iterator();
-      ModuleWithModuleSettings disabler = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Disabler.class);
+      ModuleWithModuleSettings disabler = (ModuleWithModuleSettings) Client.getInstance().moduleManager.getModuleByClass(Disabler.class);
       float ping = 150.0F;
       if (disabler.isEnabled() && disabler.getStringSettingValueByName("Type").equalsIgnoreCase("PingSpoof")) {
          ping += disabler.method16726().getNumberValueBySettingName("Lag");
@@ -167,7 +167,7 @@ public class InteractAutoBlock {
          Entity ent = timedEntity.getEntity();
          if (ent == this.mc.player || ent == Blink.clientPlayerEntity) {
             entities.remove();
-         } else if (Client.getInstance().getFriendManager().method26997(ent)) {
+         } else if (Client.getInstance().friendManager.method26997(ent)) {
             entities.remove();
          } else if (!(ent instanceof LivingEntity)) {
             entities.remove();
@@ -179,7 +179,7 @@ public class InteractAutoBlock {
             entities.remove();
          } else if (!this.parent.getBooleanValueFromSettingName("Players") && ent instanceof PlayerEntity) {
             entities.remove();
-         } else if (ent instanceof PlayerEntity && Client.getInstance().getCombatManager().isTargetABot(ent)) {
+         } else if (ent instanceof PlayerEntity && Client.getInstance().combatManager.isTargetABot(ent)) {
             entities.remove();
          } else if (!this.parent.getBooleanValueFromSettingName("Invisible") && ent.isInvisible()) {
             entities.remove();
@@ -193,7 +193,7 @@ public class InteractAutoBlock {
             entities.remove();
          } else if (!(ent instanceof PlayerEntity)
             || !Class8781.method31662((PlayerEntity)ent)
-            || !Client.getInstance().getModuleManager().getModuleByClass(Teams.class).isEnabled()) {
+            || !Client.getInstance().moduleManager.getModuleByClass(Teams.class).isEnabled()) {
             Vector3d var10 = MultiUtilities.method17751(ent);
             if (!(this.mc.player.getDistance(ent) < 40.0F)) {
                if (this.field44349.containsKey(ent)) {

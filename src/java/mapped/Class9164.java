@@ -10,7 +10,7 @@ public class Class9164 {
    private Minecraft field42071 = Minecraft.getInstance();
 
    public void method34210() {
-      Client.getInstance().getEventManager().register(this);
+      Client.getInstance().eventManager.register(this);
    }
 
    @EventTarget

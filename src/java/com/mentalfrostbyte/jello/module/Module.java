@@ -235,52 +235,52 @@ public abstract class Module {
     public void setState(boolean enabled) {
         if (this.enabled != enabled) {
             if (!(this.enabled = enabled)) {
-                Client.getInstance().getEventManager().unsubscribe(this);
+                Client.getInstance().eventManager.unsubscribe(this);
                 this.onDisable();
             } else {
-                Client.getInstance().getEventManager().subscribe(this);
+                Client.getInstance().eventManager.subscribe(this);
                 this.onEnable();
             }
         }
 
-        Client.getInstance().getModuleManager().getMacOSTouchBar().method13737(this);
+        Client.getInstance().moduleManager.getMacOSTouchBar().method13737(this);
     }
 
     public void setEnabledBasic(boolean enabled) {
         this.enabled = enabled;
         if (!this.enabled) {
-            Client.getInstance().getEventManager().unsubscribe(this);
+            Client.getInstance().eventManager.unsubscribe(this);
         } else {
-            Client.getInstance().getEventManager().subscribe(this);
+            Client.getInstance().eventManager.subscribe(this);
         }
     }
 
     public void setEnabled(boolean newEnabled) {
         if (this.enabled != newEnabled) {
             if (!(this.enabled = newEnabled)) {
-                Client.getInstance().getEventManager().unsubscribe(this);
+                Client.getInstance().eventManager.unsubscribe(this);
                 if (!(this instanceof ModuleWithModuleSettings)) {
                     if (Client.getInstance().getClientMode() == ClientMode.JELLO
-                            && Client.getInstance().getModuleManager().getModuleByClass(com.mentalfrostbyte.jello.module.impl.gui.jello.ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
-                        Client.getInstance().getSoundManager().play("deactivate");
+                            && Client.getInstance().moduleManager.getModuleByClass(com.mentalfrostbyte.jello.module.impl.gui.jello.ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
+                        Client.getInstance().soundManager.play("deactivate");
                     }
 
                     if (Client.getInstance().getClientMode() == ClientMode.CLASSIC
-                            && Client.getInstance().getModuleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
+                            && Client.getInstance().moduleManager.getModuleByClass(ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
                         Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.STONE_BUTTON_CLICK_ON, 0.6F));
                     }
                 }
 
                 this.onDisable();
             } else {
-                Client.getInstance().getEventManager().subscribe(this);
+                Client.getInstance().eventManager.subscribe(this);
                 if (Client.getInstance().getClientMode() == ClientMode.JELLO
-                        && Client.getInstance().getModuleManager().getModuleByClass(com.mentalfrostbyte.jello.module.impl.gui.jello.ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
-                    Client.getInstance().getSoundManager().play("activate");
+                        && Client.getInstance().moduleManager.getModuleByClass(com.mentalfrostbyte.jello.module.impl.gui.jello.ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
+                    Client.getInstance().soundManager.play("activate");
                 }
 
                 if (Client.getInstance().getClientMode() == ClientMode.CLASSIC
-                        && Client.getInstance().getModuleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
+                        && Client.getInstance().moduleManager.getModuleByClass(ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
                     Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.STONE_BUTTON_CLICK_ON, 0.7F));
                 }
 
@@ -289,7 +289,7 @@ public abstract class Module {
             }
         }
 
-        Client.getInstance().getModuleManager().getMacOSTouchBar().method13737(this);
+        Client.getInstance().moduleManager.getMacOSTouchBar().method13737(this);
     }
 
     public void toggle() {

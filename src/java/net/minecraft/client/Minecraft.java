@@ -123,8 +123,10 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    public static final ResourceLocation DEFAULT_FONT_RENDERER_NAME = new ResourceLocation("default");
    public static final ResourceLocation UNIFORM_FONT_RENDERER_NAME = new ResourceLocation("uniform");
    public static final ResourceLocation standardGalacticFontRenderer = new ResourceLocation("alt");
-   private static final CompletableFuture<Unit> RESOURCE_RELOAD_INIT_TASK = CompletableFuture.completedFuture(Unit.INSTANCE);
-   private static final ITextComponent field_244596_I = new TranslationTextComponent("multiplayer.socialInteractions.not_available");
+   private static final CompletableFuture<Unit> RESOURCE_RELOAD_INIT_TASK = CompletableFuture
+         .completedFuture(Unit.INSTANCE);
+   private static final ITextComponent field_244596_I = new TranslationTextComponent(
+         "multiplayer.socialInteractions.not_available");
    private final File fileResourcepacks;
    private final PropertyMap profileProperties;
    private final TextureManager textureManager;
@@ -237,8 +239,10 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.launchedVersion = gameConfig.gameInfo.version;
       this.versionType = gameConfig.gameInfo.versionType;
       this.profileProperties = gameConfig.userInfo.profileProperties;
-      this.packFinder = new DownloadingPackFinder(new File(this.gameDir, "server-resource-packs"), gameConfig.folderInfo.getAssetsIndex());
-      this.resourcePackRepository = new ResourcePackList(Minecraft::makePackInfo, this.packFinder, new FolderPackFinder(this.fileResourcepacks, IPackNameDecorator.PLAIN));
+      this.packFinder = new DownloadingPackFinder(new File(this.gameDir, "server-resource-packs"),
+            gameConfig.folderInfo.getAssetsIndex());
+      this.resourcePackRepository = new ResourcePackList(Minecraft::makePackInfo, this.packFinder,
+            new FolderPackFinder(this.fileResourcepacks, IPackNameDecorator.PLAIN));
       this.proxy = gameConfig.userInfo.proxy;
       YggdrasilAuthenticationService yggdrasilauthenticationservice = new YggdrasilAuthenticationService(this.proxy);
       this.sessionService = yggdrasilauthenticationservice.createMinecraftSessionService();
@@ -272,20 +276,24 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       ScreenSize screensize;
       if (this.gameSettings.overrideHeight > 0 && this.gameSettings.overrideWidth > 0) {
          screensize = new ScreenSize(
-            this.gameSettings.overrideWidth, this.gameSettings.overrideHeight, gameConfig.displayInfo.fullscreenWidth, gameConfig.displayInfo.fullscreenHeight, gameConfig.displayInfo.fullscreen
-         );
+               this.gameSettings.overrideWidth, this.gameSettings.overrideHeight,
+               gameConfig.displayInfo.fullscreenWidth, gameConfig.displayInfo.fullscreenHeight,
+               gameConfig.displayInfo.fullscreen);
       } else {
          screensize = gameConfig.displayInfo;
       }
 
       Util.nanoTimeSupplier = RenderSystem.initBackendSystem();
       this.virtualScreen = new VirtualScreen(this);
-      this.mainWindow = this.virtualScreen.create(screensize, this.gameSettings.fullscreenResolution, this.getWindowTitle());
+      this.mainWindow = this.virtualScreen.create(screensize, this.gameSettings.fullscreenResolution,
+            this.getWindowTitle());
       this.setGameFocused(true);
 
       try {
-         InputStream var7 = this.getPackFinder().getVanillaPack().getResourceStream(ResourcePackType.CLIENT_RESOURCES, new ResourceLocation("icons/icon_16x16.png"));
-         InputStream var8 = this.getPackFinder().getVanillaPack().getResourceStream(ResourcePackType.CLIENT_RESOURCES, new ResourceLocation("icons/icon_32x32.png"));
+         InputStream var7 = this.getPackFinder().getVanillaPack().getResourceStream(ResourcePackType.CLIENT_RESOURCES,
+               new ResourceLocation("icons/icon_16x16.png"));
+         InputStream var8 = this.getPackFinder().getVanillaPack().getResourceStream(ResourcePackType.CLIENT_RESOURCES,
+               new ResourceLocation("icons/icon_32x32.png"));
          this.mainWindow.setWindowIcon(var7, var8);
       } catch (IOException var9) {
          LOGGER.error("Couldn't set icon", var9);
@@ -297,7 +305,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.keyboardListener = new KeyboardListener(this);
       this.keyboardListener.setupCallbacks(this.mainWindow.getHandle());
       RenderSystem.initRenderer(this.gameSettings.glDebugVerbosity, false);
-      this.framebuffer = new Framebuffer(this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight(), true, IS_RUNNING_ON_MAC);
+      this.framebuffer = new Framebuffer(this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight(),
+            true, IS_RUNNING_ON_MAC);
       this.framebuffer.setFramebufferColor(0.0F, 0.0F, 0.0F, 0.0F);
       this.resourceManager = new SimpleReloadableResourceManager(ResourcePackType.CLIENT_RESOURCES);
       this.resourcePackRepository.reloadPacksFromFinders();
@@ -307,7 +316,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.textureManager = new TextureManager(this.resourceManager);
       this.resourceManager.addReloadListener(this.textureManager);
       this.skinManager = new SkinManager(this.textureManager, new File(file1, "skins"), this.sessionService);
-      this.saveFormat = new SaveFormat(this.gameDir.toPath().resolve("saves"), this.gameDir.toPath().resolve("backups"), this.dataFixer);
+      this.saveFormat = new SaveFormat(this.gameDir.toPath().resolve("saves"), this.gameDir.toPath().resolve("backups"),
+            this.dataFixer);
       this.soundHandler = new SoundHandler(this.resourceManager, this.gameSettings);
       this.resourceManager.addReloadListener(this.soundHandler);
       this.splashes = new Splashes(this.session);
@@ -320,14 +330,16 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.resourceManager.addReloadListener(new GrassColorReloadListener());
       this.resourceManager.addReloadListener(new FoliageColorReloadListener());
       this.mainWindow.setRenderPhase("Startup");
-      RenderSystem.setupDefaultState(0, 0, this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight());
+      RenderSystem.setupDefaultState(0, 0, this.mainWindow.getFramebufferWidth(),
+            this.mainWindow.getFramebufferHeight());
       this.mainWindow.setRenderPhase("Post startup");
       this.blockColors = BlockColors.init();
       this.itemColors = ItemColors.init(this.blockColors);
       this.modelManager = new ModelManager(this.textureManager, this.blockColors, this.gameSettings.field44600);
       this.resourceManager.addReloadListener(this.modelManager);
       this.itemRenderer = new ItemRenderer(this.textureManager, this.modelManager, this.itemColors);
-      this.renderManager = new EntityRendererManager(this.textureManager, this.itemRenderer, this.resourceManager, this.fontRenderer, this.gameSettings);
+      this.renderManager = new EntityRendererManager(this.textureManager, this.itemRenderer, this.resourceManager,
+            this.fontRenderer, this.gameSettings);
       this.firstPersonRenderer = new FirstPersonRenderer(this);
       this.resourceManager.addReloadListener(this.itemRenderer);
       this.renderTypeBuffers = new RenderTypeBuffers();
@@ -372,14 +384,14 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       ResourceLoadProgressGui.loadLogoTexture(this);
       List<IResourcePack> list = this.resourcePackRepository.func_232623_f_();
       this.setLoadingGui(
-         new CustomResourceLoadProgressGui(
-            this, this.resourceManager.reloadResources(Util.getServerExecutor(), this, RESOURCE_RELOAD_INIT_TASK, list), var1x -> Util.acceptOrElse(var1x, this::restoreResourcePacks, () -> {
-                  if (SharedConstants.developmentMode) {
-                     this.checkMissingData();
-                  }
-               }), false
-         )
-      );
+            new CustomResourceLoadProgressGui(
+                  this,
+                  this.resourceManager.reloadResources(Util.getServerExecutor(), this, RESOURCE_RELOAD_INIT_TASK, list),
+                  var1x -> Util.acceptOrElse(var1x, this::restoreResourcePacks, () -> {
+                     if (SharedConstants.developmentMode) {
+                        this.checkMissingData();
+                     }
+                  }), false));
    }
 
    public void setDefaultMinecraftTitle() {
@@ -387,17 +399,19 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    }
 
    private String getWindowTitle() {
-      StringBuilder stringbuilder = new StringBuilder(Client.getInstance().getClientMode() == ClientMode.JELLO ? "Jello for Sigma 5.0" : "Sigma 5.0");
+      StringBuilder stringbuilder = new StringBuilder(
+            Client.getInstance().getClientMode() == ClientMode.JELLO ? "Jello for Sigma 5.0" : "Sigma 5.0");
       stringbuilder.append(" ");
       stringbuilder.append(SharedConstants.getVersion().getName());
       ClientPlayNetHandler clientplaynethandler = this.getConnection();
-      if (clientplaynethandler != null && clientplaynethandler.getNetworkManager().isChannelOpen()) {
+      if (clientplaynethandler != null && clientplaynethandler.networkManager.isChannelOpen()) {
          stringbuilder.append(" - ");
          if (this.integratedServer != null && !this.integratedServer.getPublic()) {
             stringbuilder.append(I18n.format("title.singleplayer"));
          } else if (this.isConnectedToRealms()) {
             stringbuilder.append(I18n.format("title.multiplayer.realms"));
-         } else if (this.integratedServer != null || this.currentServerData != null && this.currentServerData.isOnLAN()) {
+         } else if (this.integratedServer != null
+               || this.currentServerData != null && this.currentServerData.isOnLAN()) {
             stringbuilder.append(I18n.format("title.multiplayer.lan"));
          } else {
             stringbuilder.append(I18n.format("title.multiplayer.other"));
@@ -407,7 +421,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       return stringbuilder.toString();
    }
 
-   private SocialInteractionsService func_244735_a(YggdrasilAuthenticationService p_244735_1_, GameConfiguration p_244735_2_) {
+   private SocialInteractionsService func_244735_a(YggdrasilAuthenticationService p_244735_1_,
+         GameConfiguration p_244735_2_) {
       try {
          return p_244735_1_.createSocialInteractionsService(p_244735_2_.userInfo.session.getToken());
       } catch (AuthenticationException var4) {
@@ -424,7 +439,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       if (this.resourcePackRepository.func_232621_d_().size() > 1) {
          StringTextComponent itextcomponent;
          if (throwableIn instanceof SimpleReloadableResourceManager.FailedPackException) {
-            itextcomponent = new StringTextComponent(((SimpleReloadableResourceManager.FailedPackException)throwableIn).method10488().getName());
+            itextcomponent = new StringTextComponent(
+                  ((SimpleReloadableResourceManager.FailedPackException) throwableIn).method10488().getName());
          } else {
             itextcomponent = null;
          }
@@ -443,7 +459,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.gameSettings.saveOptions();
       this.reloadResources().thenRun(() -> {
          ToastGui toastgui = this.getToastGui();
-         SystemToast.method24907(toastgui, SystemToast.Type.PACK_LOAD_FAILURE, new TranslationTextComponent("resourcePack.load_fail"), errorMessage);
+         SystemToast.method24907(toastgui, SystemToast.Type.PACK_LOAD_FAILURE,
+               new TranslationTextComponent("resourcePack.load_fail"), errorMessage);
       });
    }
 
@@ -494,18 +511,19 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    }
 
    public void forceUnicodeFont(boolean forced) {
-      this.fontResourceMananger.method6706(forced ? ImmutableMap.of(DEFAULT_FONT_RENDERER_NAME, UNIFORM_FONT_RENDERER_NAME) : ImmutableMap.of());
+      this.fontResourceMananger.method6706(
+            forced ? ImmutableMap.of(DEFAULT_FONT_RENDERER_NAME, UNIFORM_FONT_RENDERER_NAME) : ImmutableMap.of());
    }
 
    private void populateSearchTreeManager() {
       SearchTree<ItemStack> var1 = new SearchTree<ItemStack>(
-         var0 -> var0.getTooltip((PlayerEntity)null, TooltipFlags.NORMAL)
-               .stream()
-               .<String>map(var0x -> TextFormatting.getTextWithoutFormattingCodes(var0x.getString()).trim())
-               .filter(var0x -> !var0x.isEmpty()),
-         var0 -> Stream.<ResourceLocation>of(Registry.ITEM.getKey(var0.getItem()))
-      );
-      SearchTreeReloadable<ItemStack> var2 = new SearchTreeReloadable<ItemStack>(var0 -> ItemTags.method18561().method27138(var0.getItem()).stream());
+            var0 -> var0.getTooltip((PlayerEntity) null, TooltipFlags.NORMAL)
+                  .stream()
+                  .<String>map(var0x -> TextFormatting.getTextWithoutFormattingCodes(var0x.getString()).trim())
+                  .filter(var0x -> !var0x.isEmpty()),
+            var0 -> Stream.<ResourceLocation>of(Registry.ITEM.getKey(var0.getItem())));
+      SearchTreeReloadable<ItemStack> var2 = new SearchTreeReloadable<ItemStack>(
+            var0 -> ItemTags.method18561().method27138(var0.getItem()).stream());
       NonNullList<ItemStack> var3 = NonNullList.create();
 
       for (Item var5 : Registry.ITEM) {
@@ -517,13 +535,15 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          var2.func_217872_a(var2x);
       });
       SearchTree<RecipeList> var6 = new SearchTree<RecipeList>(
-              recipeList ->      recipeList.getRecipes()
-               .stream()
-               .<ITextComponent>flatMap(recipe -> recipe.getRecipeOutput().getTooltip((PlayerEntity)null, TooltipFlags.NORMAL).stream())
-               .<String>map(textComponent -> TextFormatting.getTextWithoutFormattingCodes(textComponent.getString()).trim())
-               .filter(name -> !name.isEmpty()),
-              recipeList ->      recipeList.getRecipes().stream().<ResourceLocation>map(recipe -> Registry.ITEM.getKey(recipe.getRecipeOutput().getItem()))
-      );
+            recipeList -> recipeList.getRecipes()
+                  .stream()
+                  .<ITextComponent>flatMap(recipe -> recipe.getRecipeOutput()
+                        .getTooltip((PlayerEntity) null, TooltipFlags.NORMAL).stream())
+                  .<String>map(
+                        textComponent -> TextFormatting.getTextWithoutFormattingCodes(textComponent.getString()).trim())
+                  .filter(name -> !name.isEmpty()),
+            recipeList -> recipeList.getRecipes().stream()
+                  .<ResourceLocation>map(recipe -> Registry.ITEM.getKey(recipe.getRecipeOutput().getItem())));
       this.searchTreeManager.add(SearchTreeManager.ITEMS, var1);
       this.searchTreeManager.add(SearchTreeManager.TAGS, var2);
       this.searchTreeManager.add(SearchTreeManager.RECIPES, var6);
@@ -535,7 +555,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    }
 
    private static boolean isJvm64bit() {
-      String[] astring = new String[]{"sun.arch.data.model", "com.ibm.vm.bitmode", "os.arch"};
+      String[] astring = new String[] { "sun.arch.data.model", "com.ibm.vm.bitmode", "os.arch" };
 
       for (String s : astring) {
          String s1 = System.getProperty(s);
@@ -565,7 +585,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
    public static void displayCrashReport(CrashReport report) {
       File file1 = new File(getInstance().gameDir, "crash-reports");
-      File file2 = new File(file1, "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-client.txt");
+      File file2 = new File(file1,
+            "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-client.txt");
       Bootstrap.printToSYSOUT(report.getCompleteReport());
       if (report.getFile() != null) {
          Bootstrap.printToSYSOUT("#@!@# Game crashed! Crash report saved to: #@!@# " + report.getFile());
@@ -595,16 +616,15 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
             this.resourcePackRepository.reloadPacksFromFinders();
             List<IResourcePack> var2 = this.resourcePackRepository.func_232623_f_();
             this.setLoadingGui(
-               new CustomResourceLoadProgressGui(
-                  this,
-                  this.resourceManager.reloadResources(Util.getServerExecutor(), this, RESOURCE_RELOAD_INIT_TASK, var2),
-                  var2x -> Util.acceptOrElse(var2x, this::restoreResourcePacks, () -> {
-                        this.worldRenderer.loadRenderers();
-                        var1.complete((Void)null);
-                     }),
-                  true
-               )
-            );
+                  new CustomResourceLoadProgressGui(
+                        this,
+                        this.resourceManager.reloadResources(Util.getServerExecutor(), this, RESOURCE_RELOAD_INIT_TASK,
+                              var2),
+                        var2x -> Util.acceptOrElse(var2x, this::restoreResourcePacks, () -> {
+                           this.worldRenderer.loadRenderers();
+                           var1.complete((Void) null);
+                        }),
+                        true));
             return var1;
          }
       }
@@ -616,27 +636,27 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       IBakedModel var3 = var2.getModelManager().getMissingModel();
 
       for (Block var5 : Registry.BLOCK) {
-          for (BlockState var7 : var5.getStateContainer().getValidStates()) {
-              if (var7.getRenderType() == BlockRenderType.MODEL) {
-                  IBakedModel var8 = var2.method38153(var7);
-                  if (var8 == var3) {
-                      LOGGER.debug("Missing model for: {}", var7);
-                      flag = true;
-                  }
-              }
-          }
+         for (BlockState var7 : var5.getStateContainer().getValidStates()) {
+            if (var7.getRenderType() == BlockRenderType.MODEL) {
+               IBakedModel var8 = var2.method38153(var7);
+               if (var8 == var3) {
+                  LOGGER.debug("Missing model for: {}", var7);
+                  flag = true;
+               }
+            }
+         }
       }
 
       TextureAtlasSprite var13 = var3.getParticleTexture();
 
       for (Block var16 : Registry.BLOCK) {
-          for (BlockState var20 : var16.getStateContainer().getValidStates()) {
-              TextureAtlasSprite var9 = var2.getTexture(var20);
-              if (! var20.isAir() && var9 == var13) {
-                  LOGGER.debug("Missing particle icon for: {}", var20);
-                  flag = true;
-              }
-          }
+         for (BlockState var20 : var16.getStateContainer().getValidStates()) {
+            TextureAtlasSprite var9 = var2.getTexture(var20);
+            if (!var20.isAir() && var9 == var13) {
+               LOGGER.debug("Missing particle icon for: {}", var20);
+               flag = true;
+            }
+         }
       }
 
       NonNullList<ItemStack> var15 = NonNullList.create();
@@ -665,12 +685,9 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    }
 
    private void openChatScreen(String defaultText) {
-      if (!this.isIntegratedServerRunning() && !this.isChatEnabled())
-      {
+      if (!this.isIntegratedServerRunning() && !this.isChatEnabled()) {
          this.displayGuiScreen(new ChatScreen(defaultText));
-      }
-      else
-      {
+      } else {
          this.displayGuiScreen(new ChatScreen(defaultText));
       }
    }
@@ -696,12 +713,12 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       }
 
       this.currentScreen = guiScreenIn;
-       try {
-           Client.getInstance().getGuiManager().method33481();
-       } catch (JSONException e) {
-           throw new RuntimeException(e);
-       }
-       if (guiScreenIn != null) {
+      try {
+         Client.getInstance().guiManager.method33481();
+      } catch (JSONException e) {
+         throw new RuntimeException(e);
+      }
+      if (guiScreenIn != null) {
          this.mouseHelper.ungrabMouse();
          KeyBinding.unPressAllKeys();
          guiScreenIn.init(this, this.mainWindow.getScaledWidth(), this.mainWindow.getScaledHeight());
@@ -782,33 +799,28 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          this.shutdown();
       }
 
-      if (this.futureRefreshResources != null && !(this.loadingGui instanceof ResourceLoadProgressGui))
-      {
+      if (this.futureRefreshResources != null && !(this.loadingGui instanceof ResourceLoadProgressGui)) {
          CompletableFuture<Void> completablefuture = this.futureRefreshResources;
          this.futureRefreshResources = null;
-         this.reloadResources().thenRun(() ->
-         {
-            completablefuture.complete((Void)null);
+         this.reloadResources().thenRun(() -> {
+            completablefuture.complete((Void) null);
          });
       }
 
       Runnable runnable;
 
-      while ((runnable = this.queueChunkTracking.poll()) != null)
-      {
+      while ((runnable = this.queueChunkTracking.poll()) != null) {
          runnable.run();
       }
 
-      if (renderWorldIn)
-      {
+      if (renderWorldIn) {
          int j = this.timer.getPartialTicks(Util.milliTime());
          this.profiler.startSection("scheduledExecutables");
          this.drainTasks();
          this.profiler.endSection();
          this.profiler.startSection("tick");
 
-         for (int k = 0; k < Math.min(10, j); ++k)
-         {
+         for (int k = 0; k < Math.min(10, j); ++k) {
             this.profiler.func_230035_c_("clientTick");
             this.runTick();
          }
@@ -831,17 +843,16 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       RenderSystem.enableCull();
       this.profiler.endSection();
 
-      if (!this.skipRenderWorld)
-      {
+      if (!this.skipRenderWorld) {
          this.profiler.endStartSection("gameRenderer");
-         this.gameRenderer.updateCameraAndRender(this.isGamePaused ? this.renderPartialTicksPaused : this.timer.renderPartialTicks, i, renderWorldIn);
+         this.gameRenderer.updateCameraAndRender(
+               this.isGamePaused ? this.renderPartialTicksPaused : this.timer.renderPartialTicks, i, renderWorldIn);
          this.profiler.endStartSection("toasts");
          this.toastGui.func_238541_a_(new MatrixStack());
          this.profiler.endSection();
       }
 
-      if (this.profilerResult != null)
-      {
+      if (this.profilerResult != null) {
          this.profiler.startSection("fpsPie");
          this.func_238183_a_(new MatrixStack(), this.profilerResult);
          this.profiler.endSection();
@@ -857,8 +868,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.mainWindow.flipFrame();
       int i1 = this.getFramerateLimit();
 
-      if ((double)i1 < AbstractOption.FRAMERATE_LIMIT.getMaxValue())
-      {
+      if ((double) i1 < AbstractOption.FRAMERATE_LIMIT.getMaxValue()) {
          RenderSystem.limitDisplayFPS(i1);
       }
 
@@ -867,16 +877,13 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.profiler.endSection();
       this.mainWindow.setRenderPhase("Post render");
       ++this.fpsCounter;
-      boolean flag = this.isSingleplayer() && (this.currentScreen != null && this.currentScreen.isPauseScreen() || this.loadingGui != null && this.loadingGui.isPauseScreen()) && !this.integratedServer.getPublic();
+      boolean flag = this.isSingleplayer() && (this.currentScreen != null && this.currentScreen.isPauseScreen()
+            || this.loadingGui != null && this.loadingGui.isPauseScreen()) && !this.integratedServer.getPublic();
 
-      if (this.isGamePaused != flag)
-      {
-         if (this.isGamePaused)
-         {
+      if (this.isGamePaused != flag) {
+         if (this.isGamePaused) {
             this.renderPartialTicksPaused = this.timer.renderPartialTicks;
-         }
-         else
-         {
+         } else {
             this.timer.renderPartialTicks = this.renderPartialTicksPaused;
          }
 
@@ -888,16 +895,20 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.startNanoTime = l;
       this.profiler.startSection("fpsUpdate");
 
-      while (Util.milliTime() >= this.debugUpdateTime + 1000L)
-      {
+      while (Util.milliTime() >= this.debugUpdateTime + 1000L) {
          debugFPS = this.fpsCounter;
-         this.debug = String.format("%d fps T: %s%s%s%s B: %d", debugFPS, (double)this.gameSettings.framerateLimit == AbstractOption.FRAMERATE_LIMIT.getMaxValue() ? "inf" : this.gameSettings.framerateLimit, this.gameSettings.vsync ? " vsync" : "", this.gameSettings.graphicFanciness.toString(), this.gameSettings.cloudOption == CloudOption.OFF ? "" : (this.gameSettings.cloudOption == CloudOption.FAST ? " fast-clouds" : " fancy-clouds"), this.gameSettings.biomeBlendRadius);
+         this.debug = String.format("%d fps T: %s%s%s%s B: %d", debugFPS,
+               (double) this.gameSettings.framerateLimit == AbstractOption.FRAMERATE_LIMIT.getMaxValue() ? "inf"
+                     : this.gameSettings.framerateLimit,
+               this.gameSettings.vsync ? " vsync" : "", this.gameSettings.graphicFanciness.toString(),
+               this.gameSettings.cloudOption == CloudOption.OFF ? ""
+                     : (this.gameSettings.cloudOption == CloudOption.FAST ? " fast-clouds" : " fancy-clouds"),
+               this.gameSettings.biomeBlendRadius);
          this.debugUpdateTime += 1000L;
          this.fpsCounter = 0;
          this.snooper.addMemoryStatsToSnooper();
 
-         if (!this.snooper.isSnooperRunning())
-         {
+         if (!this.snooper.isSnooperRunning()) {
             this.snooper.start();
          }
       }
@@ -941,19 +952,21 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    @Override
    public void updateWindowSize() {
       int i = this.mainWindow.calcGuiScale(this.gameSettings.guiScale, this.getForceUnicodeFont());
-      this.mainWindow.setGuiScale((double)i);
+      this.mainWindow.setGuiScale((double) i);
       if (this.currentScreen != null) {
          this.currentScreen.resize(this, this.mainWindow.getScaledWidth(), this.mainWindow.getScaledHeight());
-          try {
-              Client.getInstance().getGuiManager().onResize();
-          } catch (JSONException e) {
-              throw new RuntimeException(e);
-          }
+         try {
+            Client.getInstance().guiManager.onResize();
+         } catch (JSONException e) {
+            throw new RuntimeException(e);
+         }
       }
 
       Framebuffer framebuffer = this.getFramebuffer();
-      framebuffer.resize(this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight(), IS_RUNNING_ON_MAC);
-      this.gameRenderer.updateShaderGroupSize(this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight());
+      framebuffer.resize(this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight(),
+            IS_RUNNING_ON_MAC);
+      this.gameRenderer.updateShaderGroupSize(this.mainWindow.getFramebufferWidth(),
+            this.mainWindow.getFramebufferHeight());
       this.mouseHelper.setIgnoreFirstMove();
       framebuffer.unbindFramebuffer();
       framebuffer.bindFramebuffer(IS_RUNNING_ON_MAC);
@@ -966,8 +979,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
    private int getFramerateLimit() {
       return this.world == null && (this.currentScreen != null || this.loadingGui != null)
-         ? Math.min(120, Math.max(this.mainWindow.getLimitFramerate(), 60))
-         : this.mainWindow.getLimitFramerate();
+            ? Math.min(120, Math.max(this.mainWindow.getLimitFramerate(), 60))
+            : this.mainWindow.getLimitFramerate();
    }
 
    public void freeMemory() {
@@ -994,7 +1007,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       if (this.profilerResult != null) {
          List var2 = this.profilerResult.getDataPoints(this.debugProfilerName);
          if (!var2.isEmpty()) {
-            DataPoint var3 = (DataPoint)var2.remove(0);
+            DataPoint var3 = (DataPoint) var2.remove(0);
             if (keyCount == 0) {
                if (!var3.name.isEmpty()) {
                   int var4 = this.debugProfilerName.lastIndexOf(30);
@@ -1004,12 +1017,12 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                }
             } else {
                keyCount--;
-               if (keyCount < var2.size() && !"unspecified".equals(((DataPoint)var2.get(keyCount)).name)) {
+               if (keyCount < var2.size() && !"unspecified".equals(((DataPoint) var2.get(keyCount)).name)) {
                   if (!this.debugProfilerName.isEmpty()) {
                      this.debugProfilerName = this.debugProfilerName + '\u001e';
                   }
 
-                  this.debugProfilerName = this.debugProfilerName + ((DataPoint)var2.get(keyCount)).name;
+                  this.debugProfilerName = this.debugProfilerName + ((DataPoint) var2.get(keyCount)).name;
                }
             }
          }
@@ -1018,11 +1031,12 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
    private void func_238183_a_(MatrixStack matrixStack, IProfileResult profilerResult) {
       List<DataPoint> var3 = profilerResult.getDataPoints(this.debugProfilerName);
-      DataPoint var4 = (DataPoint)var3.remove(0);
+      DataPoint var4 = (DataPoint) var3.remove(0);
       RenderSystem.clear(256, IS_RUNNING_ON_MAC);
       RenderSystem.matrixMode(5889);
       RenderSystem.loadIdentity();
-      RenderSystem.ortho(0.0, (double)this.mainWindow.getFramebufferWidth(), (double)this.mainWindow.getFramebufferHeight(), 0.0, 1000.0, 3000.0);
+      RenderSystem.ortho(0.0, (double) this.mainWindow.getFramebufferWidth(),
+            (double) this.mainWindow.getFramebufferHeight(), 0.0, 1000.0, 3000.0);
       RenderSystem.matrixMode(5888);
       RenderSystem.loadIdentity();
       RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
@@ -1034,10 +1048,12 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       int var9 = this.mainWindow.getFramebufferHeight() - 320;
       RenderSystem.enableBlend();
       var6.begin(7, DefaultVertexFormats.POSITION_COLOR);
-      var6.pos((double)((float)var8 - 176.0F), (double)((float)var9 - 96.0F - 16.0F), 0.0).color(200, 0, 0, 0).endVertex();
-      var6.pos((double)((float)var8 - 176.0F), (double)(var9 + 320), 0.0).color(200, 0, 0, 0).endVertex();
-      var6.pos((double)((float)var8 + 176.0F), (double)(var9 + 320), 0.0).color(200, 0, 0, 0).endVertex();
-      var6.pos((double)((float)var8 + 176.0F), (double)((float)var9 - 96.0F - 16.0F), 0.0).color(200, 0, 0, 0).endVertex();
+      var6.pos((double) ((float) var8 - 176.0F), (double) ((float) var9 - 96.0F - 16.0F), 0.0).color(200, 0, 0, 0)
+            .endVertex();
+      var6.pos((double) ((float) var8 - 176.0F), (double) (var9 + 320), 0.0).color(200, 0, 0, 0).endVertex();
+      var6.pos((double) ((float) var8 + 176.0F), (double) (var9 + 320), 0.0).color(200, 0, 0, 0).endVertex();
+      var6.pos((double) ((float) var8 + 176.0F), (double) ((float) var9 - 96.0F - 16.0F), 0.0).color(200, 0, 0, 0)
+            .endVertex();
       var5.draw();
       RenderSystem.disableBlend();
       double var10 = 0.0;
@@ -1049,29 +1065,32 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          int var16 = var15 >> 16 & 0xFF;
          int var17 = var15 >> 8 & 0xFF;
          int var18 = var15 & 0xFF;
-         var6.pos((double)var8, (double)var9, 0.0).color(var16, var17, var18, 255).endVertex();
+         var6.pos((double) var8, (double) var9, 0.0).color(var16, var17, var18, 255).endVertex();
 
          for (int var19 = var14; var19 >= 0; var19--) {
-            float var20 = (float)((var10 + var13.relTime * (double)var19 / (double)var14) * (float) (Math.PI * 2) / 100.0);
+            float var20 = (float) ((var10 + var13.relTime * (double) var19 / (double) var14) * (float) (Math.PI * 2)
+                  / 100.0);
             float var21 = MathHelper.sin(var20) * 160.0F;
             float var22 = MathHelper.cos(var20) * 160.0F * 0.5F;
-            var6.pos((double)((float)var8 + var21), (double)((float)var9 - var22), 0.0).color(var16, var17, var18, 255).endVertex();
+            var6.pos((double) ((float) var8 + var21), (double) ((float) var9 - var22), 0.0)
+                  .color(var16, var17, var18, 255).endVertex();
          }
 
          var5.draw();
          var6.begin(5, DefaultVertexFormats.POSITION_COLOR);
 
          for (int var32 = var14; var32 >= 0; var32--) {
-            float var36 = (float)((var10 + var13.relTime * (double)var32 / (double)var14) * (float) (Math.PI * 2) / 100.0);
+            float var36 = (float) ((var10 + var13.relTime * (double) var32 / (double) var14) * (float) (Math.PI * 2)
+                  / 100.0);
             float var37 = MathHelper.sin(var36) * 160.0F;
             float var38 = MathHelper.cos(var36) * 160.0F * 0.5F;
             if (!(var38 > 0.0F)) {
-               var6.pos((double)((float)var8 + var37), (double)((float)var9 - var38), 0.0)
-                  .color(var16 >> 1, var17 >> 1, var18 >> 1, 255)
-                  .endVertex();
-               var6.pos((double)((float)var8 + var37), (double)((float)var9 - var38 + 10.0F), 0.0)
-                  .color(var16 >> 1, var17 >> 1, var18 >> 1, 255)
-                  .endVertex();
+               var6.pos((double) ((float) var8 + var37), (double) ((float) var9 - var38), 0.0)
+                     .color(var16 >> 1, var17 >> 1, var18 >> 1, 255)
+                     .endVertex();
+               var6.pos((double) ((float) var8 + var37), (double) ((float) var9 - var38 + 10.0F), 0.0)
+                     .color(var16 >> 1, var17 >> 1, var18 >> 1, 255)
+                     .endVertex();
             }
          }
 
@@ -1095,12 +1114,14 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       }
 
       int var28 = 16777215;
-      this.fontRenderer.drawStringWithShadow(matrixStack, var25, (float)(var8 - 160), (float)(var9 - 80 - 16), 16777215);
+      this.fontRenderer.drawStringWithShadow(matrixStack, var25, (float) (var8 - 160), (float) (var9 - 80 - 16),
+            16777215);
       var25 = var23.format(var4.field13083) + "%";
-      this.fontRenderer.drawStringWithShadow(matrixStack, var25, (float)(var8 + 160 - this.fontRenderer.getStringWidth(var25)), (float)(var9 - 80 - 16), 16777215);
+      this.fontRenderer.drawStringWithShadow(matrixStack, var25,
+            (float) (var8 + 160 - this.fontRenderer.getStringWidth(var25)), (float) (var9 - 80 - 16), 16777215);
 
       for (int var29 = 0; var29 < var3.size(); var29++) {
-         DataPoint var30 = (DataPoint)var3.get(var29);
+         DataPoint var30 = (DataPoint) var3.get(var29);
          StringBuilder var31 = new StringBuilder();
          if ("unspecified".equals(var30.name)) {
             var31.append("[?] ");
@@ -1109,13 +1130,17 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          }
 
          String var33 = var31.append(var30.name).toString();
-         this.fontRenderer.drawStringWithShadow(matrixStack, var33, (float)(var8 - 160), (float)(var9 + 80 + var29 * 8 + 20), var30.getTextColor());
+         this.fontRenderer.drawStringWithShadow(matrixStack, var33, (float) (var8 - 160),
+               (float) (var9 + 80 + var29 * 8 + 20), var30.getTextColor());
          var33 = var23.format(var30.relTime) + "%";
          this.fontRenderer
-            .drawStringWithShadow(matrixStack, var33, (float)(var8 + 160 - 50 - this.fontRenderer.getStringWidth(var33)), (float)(var9 + 80 + var29 * 8 + 20), var30.getTextColor());
+               .drawStringWithShadow(matrixStack, var33,
+                     (float) (var8 + 160 - 50 - this.fontRenderer.getStringWidth(var33)),
+                     (float) (var9 + 80 + var29 * 8 + 20), var30.getTextColor());
          var33 = var23.format(var30.field13083) + "%";
          this.fontRenderer
-            .drawStringWithShadow(matrixStack, var33, (float)(var8 + 160 - this.fontRenderer.getStringWidth(var33)), (float)(var9 + 80 + var29 * 8 + 20), var30.getTextColor());
+               .drawStringWithShadow(matrixStack, var33, (float) (var8 + 160 - this.fontRenderer.getStringWidth(var33)),
+                     (float) (var9 + 80 + var29 * 8 + 20), var30.getTextColor());
       }
    }
 
@@ -1150,7 +1175,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
       if (this.leftClickCounter <= 0 && !this.player.isHandActive()) {
          if (leftClick && this.objectMouseOver != null && this.objectMouseOver.getType() == RayTraceResult.Type.BLOCK) {
-            BlockRayTraceResult var2 = (BlockRayTraceResult)this.objectMouseOver;
+            BlockRayTraceResult var2 = (BlockRayTraceResult) this.objectMouseOver;
             BlockPos var3 = var2.getPos();
             if (!this.world.getBlockState(var3).isAir()) {
                Direction var4 = var2.getFace();
@@ -1167,7 +1192,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
    private void clickMouse() {
       ClickEvent var1 = new ClickEvent(ClickEvent.Button.LEFT);
-      Client.getInstance().getEventManager().call(var1);
+      Client.getInstance().eventManager.call(var1);
 
       if (!var1.isCancelled()) {
          if (this.leftClickCounter <= 0) {
@@ -1179,8 +1204,9 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
             } else if (!this.player.isRowingBoat()) {
                EventRayTraceResult rayTraceEvent = null;
                if (this.objectMouseOver.getType() == RayTraceResult.Type.ENTITY) {
-                  rayTraceEvent = new EventRayTraceResult(((EntityRayTraceResult)this.objectMouseOver).getEntity(), true);
-                  Client.getInstance().getEventManager().call(rayTraceEvent);
+                  rayTraceEvent = new EventRayTraceResult(((EntityRayTraceResult) this.objectMouseOver).getEntity(),
+                        true);
+                  Client.getInstance().eventManager.call(rayTraceEvent);
 
                   if (rayTraceEvent.isCancelled()) {
                      return;
@@ -1189,14 +1215,15 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
                switch (this.objectMouseOver.getType()) {
                   case ENTITY:
-                     AttackOrder.sendFixedAttack(this.player, ((EntityRayTraceResult)this.objectMouseOver).getEntity(), Hand.MAIN_HAND);
+                     AttackOrder.sendFixedAttack(this.player, ((EntityRayTraceResult) this.objectMouseOver).getEntity(),
+                           Hand.MAIN_HAND);
                      if (rayTraceEvent != null) {
                         rayTraceEvent.unhover();
-                        Client.getInstance().getEventManager().call(rayTraceEvent);
+                        Client.getInstance().eventManager.call(rayTraceEvent);
                      }
                      break;
                   case BLOCK:
-                     BlockRayTraceResult blockraytraceresult = (BlockRayTraceResult)this.objectMouseOver;
+                     BlockRayTraceResult blockraytraceresult = (BlockRayTraceResult) this.objectMouseOver;
                      BlockPos blockpos = blockraytraceresult.getPos();
                      if (!this.world.getBlockState(blockpos).isAir()) {
                         this.playerController.clickBlock(blockpos, blockraytraceresult.getFace());
@@ -1216,10 +1243,9 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       }
    }
 
-
    private void rightClickMouse() {
       ClickEvent var1 = new ClickEvent(ClickEvent.Button.RIGHT);
-      Client.getInstance().getEventManager().call(var1);
+      Client.getInstance().eventManager.call(var1);
       if (!var1.isCancelled()) {
          if (!this.playerController.getIsHittingBlock()) {
             this.rightClickDelayTimer = 4;
@@ -1233,9 +1259,10 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                   if (this.objectMouseOver != null) {
                      switch (this.objectMouseOver.getType()) {
                         case ENTITY:
-                           EntityRayTraceResult var7 = (EntityRayTraceResult)this.objectMouseOver;
+                           EntityRayTraceResult var7 = (EntityRayTraceResult) this.objectMouseOver;
                            Entity var8 = var7.getEntity();
-                           ActionResultType var9 = this.playerController.interactWithEntity(this.player, var8, var7, var5);
+                           ActionResultType var9 = this.playerController.interactWithEntity(this.player, var8, var7,
+                                 var5);
                            if (!var9.isSuccessOrConsume()) {
                               var9 = this.playerController.interactWithEntity(this.player, var8, var5);
                            }
@@ -1249,13 +1276,15 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                            }
                            break;
                         case BLOCK:
-                           BlockRayTraceResult var10 = (BlockRayTraceResult)this.objectMouseOver;
+                           BlockRayTraceResult var10 = (BlockRayTraceResult) this.objectMouseOver;
                            int var11 = var6.getCount();
-                           ActionResultType var12 = this.playerController.func_217292_a(this.player, this.world, var5, var10);
+                           ActionResultType var12 = this.playerController.func_217292_a(this.player, this.world, var5,
+                                 var10);
                            if (var12.isSuccessOrConsume()) {
                               if (var12.isSuccess()) {
                                  this.player.swingArm(var5);
-                                 if (!var6.isEmpty() && (var6.getCount() != var11 || this.playerController.isInCreativeMode())) {
+                                 if (!var6.isEmpty()
+                                       && (var6.getCount() != var11 || this.playerController.isInCreativeMode())) {
                                     this.gameRenderer.itemRenderer.resetEquippedProgress(var5);
                                  }
                               }
@@ -1315,12 +1344,13 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
       if (this.currentScreen == null && this.player != null) {
          if (this.player.getShouldBeDead() && !(this.currentScreen instanceof DeathScreen)) {
-            this.displayGuiScreen((Screen)null);
+            this.displayGuiScreen((Screen) null);
          } else if (this.player.isSleeping() && this.world != null) {
             this.displayGuiScreen(new SleepInMultiplayerScreen());
          }
-      } else if (this.currentScreen != null && this.currentScreen instanceof SleepInMultiplayerScreen && !this.player.isSleeping()) {
-         this.displayGuiScreen((Screen)null);
+      } else if (this.currentScreen != null && this.currentScreen instanceof SleepInMultiplayerScreen
+            && !this.player.isSleeping()) {
+         this.displayGuiScreen((Screen) null);
       }
 
       if (this.currentScreen != null) {
@@ -1328,7 +1358,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       }
 
       if (this.currentScreen != null) {
-         Screen.wrapScreenError(() -> this.currentScreen.tick(), "Ticking screen", this.currentScreen.getClass().getCanonicalName());
+         Screen.wrapScreenError(() -> this.currentScreen.tick(), "Ticking screen",
+               this.currentScreen.getClass().getCanonicalName());
       }
 
       if (!this.gameSettings.showDebugInfo) {
@@ -1376,8 +1407,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
             if (!this.gameSettings.field_244601_E && this.func_244600_aM()) {
                TranslationTextComponent var1 = new TranslationTextComponent("tutorial.socialInteractions.title");
                TranslationTextComponent var2 = new TranslationTextComponent(
-                  "tutorial.socialInteractions.description", Tutorial.createKeybindComponent("socialInteractions")
-               );
+                     "tutorial.socialInteractions.description", Tutorial.createKeybindComponent("socialInteractions"));
                this.field_244598_aV = new TutorialToast(TutorialToast.Icons.SOCIAL_INTERACTIONS, var1, var2, true);
                this.tutorial.func_244698_a(this.field_244598_aV, 160);
                this.gameSettings.field_244601_E = true;
@@ -1404,11 +1434,10 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          this.profiler.endStartSection("animateTick");
          if (!this.isGamePaused && this.world != null) {
             this.world
-               .animateTick(
-                  MathHelper.floor(this.player.getPosX()),
-                  MathHelper.floor(this.player.getPosY()),
-                  MathHelper.floor(this.player.getPosZ())
-               );
+                  .animateTick(
+                        MathHelper.floor(this.player.getPosX()),
+                        MathHelper.floor(this.player.getPosY()),
+                        MathHelper.floor(this.player.getPosZ()));
          }
 
          this.profiler.endStartSection("particles");
@@ -1434,7 +1463,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          PointOfView var1 = this.gameSettings.getPointOfView();
          this.gameSettings.setPointOfView(this.gameSettings.getPointOfView().method8248());
          if (var1.func_243192_a() != this.gameSettings.getPointOfView().func_243192_a()) {
-            this.gameRenderer.loadEntityShader(this.gameSettings.getPointOfView().func_243192_a() ? this.getRenderViewEntity() : null);
+            this.gameRenderer.loadEntityShader(
+                  this.gameSettings.getPointOfView().func_243192_a() ? this.getRenderViewEntity() : null);
          }
 
          this.worldRenderer.setDisplayListEntitiesDirty();
@@ -1487,7 +1517,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
       while (this.gameSettings.keyBindSwapHands.isPressed()) {
          if (!this.player.isSpectator()) {
-            this.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.SWAP_ITEM_WITH_OFFHAND, BlockPos.ZERO, Direction.DOWN));
+            this.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.SWAP_ITEM_WITH_OFFHAND,
+                  BlockPos.ZERO, Direction.DOWN));
          }
       }
 
@@ -1511,7 +1542,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       if (this.player.isHandActive()) {
          if (!this.gameSettings.keyBindUseItem.isKeyDown()) {
             StopUseItemEvent var6 = new StopUseItemEvent();
-            Client.getInstance().getEventManager().call(var6);
+            Client.getInstance().eventManager.call(var6);
             if (!var6.isCancelled()) {
                this.playerController.onStoppedUsingItem(this.player);
             }
@@ -1539,11 +1570,13 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          }
       }
 
-      if (this.gameSettings.keyBindUseItem.isKeyDown() && this.rightClickDelayTimer == 0 && !this.player.isHandActive()) {
+      if (this.gameSettings.keyBindUseItem.isKeyDown() && this.rightClickDelayTimer == 0
+            && !this.player.isHandActive()) {
          this.rightClickMouse();
       }
 
-      this.sendClickBlockToController(this.currentScreen == null && this.gameSettings.keyBindAttack.isKeyDown() && this.mouseHelper.isMouseGrabbed());
+      this.sendClickBlockToController(this.currentScreen == null && this.gameSettings.keyBindAttack.isKeyDown()
+            && this.mouseHelper.isMouseGrabbed());
    }
 
    public static DatapackCodec loadDataPackCodec(SaveFormat.LevelSave worldStorage) {
@@ -1556,7 +1589,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       }
    }
 
-   public static IServerConfiguration loadWorld(SaveFormat.LevelSave var0, DynamicRegistriesImpl var1, IResourceManager var2, DatapackCodec var3) {
+   public static IServerConfiguration loadWorld(SaveFormat.LevelSave var0, DynamicRegistriesImpl var1,
+         IResourceManager var2, DatapackCodec var3) {
       WorldSettingsImport var4 = WorldSettingsImport.create(NBTDynamicOps.INSTANCE, var2, var1);
       IServerConfiguration var5 = var0.readServerConfiguration(var4, var3);
       if (var5 == null) {
@@ -1567,45 +1601,47 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    }
 
    public void loadWorld(String worldName) {
-      this.loadWorld(worldName, DynamicRegistries.func_239770_b_(), Minecraft::loadDataPackCodec, Minecraft::loadWorld, false, WorldSelectionType.BACKUP);
+      this.loadWorld(worldName, DynamicRegistries.func_239770_b_(), Minecraft::loadDataPackCodec, Minecraft::loadWorld,
+            false, WorldSelectionType.BACKUP);
    }
 
-   public void createWorld(String var1, WorldSettings var2, DynamicRegistriesImpl var3, DimensionGeneratorSettings var4) {
+   public void createWorld(String var1, WorldSettings var2, DynamicRegistriesImpl var3,
+         DimensionGeneratorSettings var4) {
       this.loadWorld(
-         var1,
-         var3,
-         var1x -> var2.getDatapackCodec(),
-         (var3x, var4x, var5, var6) -> {
-            WorldGenSettingsExport var7 = WorldGenSettingsExport.create(JsonOps.INSTANCE, var3);
-            WorldSettingsImport var8 = WorldSettingsImport.create(JsonOps.INSTANCE, var5, var3);
-            DataResult var9 = DimensionGeneratorSettings.field_236201_a_
-               .encodeStart(var7, var4)
-               .setLifecycle(Lifecycle.stable())
-               .flatMap(var1xx -> DimensionGeneratorSettings.field_236201_a_.parse(var8, var1xx));
-            DimensionGeneratorSettings var10 = (DimensionGeneratorSettings) var9.resultOrPartial(Util.func_240982_a_("Error reading worldgen settings after loading data packs: ", LOGGER::error))
-               .orElse(var4);
-            return new ServerWorldInfo(var2, var10, var9.lifecycle());
-         },
-         false,
-         WorldSelectionType.CREATE
-      );
+            var1,
+            var3,
+            var1x -> var2.getDatapackCodec(),
+            (var3x, var4x, var5, var6) -> {
+               WorldGenSettingsExport var7 = WorldGenSettingsExport.create(JsonOps.INSTANCE, var3);
+               WorldSettingsImport var8 = WorldSettingsImport.create(JsonOps.INSTANCE, var5, var3);
+               DataResult var9 = DimensionGeneratorSettings.field_236201_a_
+                     .encodeStart(var7, var4)
+                     .setLifecycle(Lifecycle.stable())
+                     .flatMap(var1xx -> DimensionGeneratorSettings.field_236201_a_.parse(var8, var1xx));
+               DimensionGeneratorSettings var10 = (DimensionGeneratorSettings) var9
+                     .resultOrPartial(Util.func_240982_a_("Error reading worldgen settings after loading data packs: ",
+                           LOGGER::error))
+                     .orElse(var4);
+               return new ServerWorldInfo(var2, var10, var9.lifecycle());
+            },
+            false,
+            WorldSelectionType.CREATE);
    }
 
    private void loadWorld(
-      String var1,
-      DynamicRegistriesImpl var2,
-      Function<SaveFormat.LevelSave, DatapackCodec> var3,
-      Function4<SaveFormat.LevelSave, DynamicRegistriesImpl, IResourceManager, DatapackCodec, IServerConfiguration> var4,
-      boolean var5,
-      WorldSelectionType var6
-   ) {
+         String var1,
+         DynamicRegistriesImpl var2,
+         Function<SaveFormat.LevelSave, DatapackCodec> var3,
+         Function4<SaveFormat.LevelSave, DynamicRegistriesImpl, IResourceManager, DatapackCodec, IServerConfiguration> var4,
+         boolean var5,
+         WorldSelectionType var6) {
       SaveFormat.LevelSave var7;
       try {
          var7 = this.saveFormat.getLevelSave(var1);
       } catch (IOException var21) {
          LOGGER.warn("Failed to read level {} data", var1, var21);
          SystemToast.func_238535_a_(this, var1);
-         this.displayGuiScreen((Screen)null);
+         this.displayGuiScreen((Screen) null);
          return;
       }
 
@@ -1630,15 +1666,18 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       boolean var11 = var9.getLifecycle() != Lifecycle.stable();
       if (var6 == WorldSelectionType.NONE || !var10 && !var11) {
          this.unloadWorld();
-         this.refChunkStatusListener.set((TrackingChunkStatusListener)null);
+         this.refChunkStatusListener.set((TrackingChunkStatusListener) null);
 
          try {
             var7.saveLevel(var2, var9);
             var8.getDataPackRegistries().updateTags();
-            YggdrasilAuthenticationService yggdrasilauthenticationservice = new YggdrasilAuthenticationService(this.proxy);
-            MinecraftSessionService minecraftsessionservice = yggdrasilauthenticationservice.createMinecraftSessionService();
+            YggdrasilAuthenticationService yggdrasilauthenticationservice = new YggdrasilAuthenticationService(
+                  this.proxy);
+            MinecraftSessionService minecraftsessionservice = yggdrasilauthenticationservice
+                  .createMinecraftSessionService();
             GameProfileRepository gameprofilerepository = yggdrasilauthenticationservice.createProfileRepository();
-            PlayerProfileCache playerprofilecache = new PlayerProfileCache(gameprofilerepository, new File(this.gameDir, MinecraftServer.USER_CACHE_FILE.getName()));
+            PlayerProfileCache playerprofilecache = new PlayerProfileCache(gameprofilerepository,
+                  new File(this.gameDir, MinecraftServer.USER_CACHE_FILE.getName()));
             SkullTileEntity.setProfileCache(playerprofilecache);
             SkullTileEntity.setSessionService(minecraftsessionservice);
             PlayerProfileCache.setOnlineMode(false);
@@ -1660,15 +1699,17 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
             }
 
             this.integratedServer = MinecraftServer.func_240784_a_(
-               var8x -> new IntegratedServer(var8x, this, var2, var7, var8.getResourcePacks(), var8.getDataPackRegistries(), var9, minecraftsessionservice, gameprofilerepository, playerprofilecache, radius -> {
-                     TrackingChunkStatusListener refChunkStatusListener = new TrackingChunkStatusListener(radius + 0);
-                     refChunkStatusListener.startTracking();
-                     this.refChunkStatusListener.set(refChunkStatusListener);
+                  var8x -> new IntegratedServer(var8x, this, var2, var7, var8.getResourcePacks(),
+                        var8.getDataPackRegistries(), var9, minecraftsessionservice, gameprofilerepository,
+                        playerprofilecache, radius -> {
+                           TrackingChunkStatusListener refChunkStatusListener = new TrackingChunkStatusListener(
+                                 radius + 0);
+                           refChunkStatusListener.startTracking();
+                           this.refChunkStatusListener.set(refChunkStatusListener);
 
-                     System.out.println("[LINE1648] are we doing something? yes");
-                     return new ChainedChunkStatusListener(refChunkStatusListener, this.queueChunkTracking::add);
-                  })
-            );
+                           System.out.println("[LINE1648] are we doing something? yes");
+                           return new ChainedChunkStatusListener(refChunkStatusListener, this.queueChunkTracking::add);
+                        }));
             if (this.integratedServer == null) {
                System.out.println("INTEGRATED SERVER IS NULL");
             }
@@ -1685,7 +1726,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
             Thread.yield();
          }
 
-         WorldLoadProgressScreen worldloadprogressscreen = new WorldLoadProgressScreen(this.refChunkStatusListener.get());
+         WorldLoadProgressScreen worldloadprogressscreen = new WorldLoadProgressScreen(
+               this.refChunkStatusListener.get());
          this.displayGuiScreen(worldloadprogressscreen);
          this.profiler.startSection("waitForServer");
 
@@ -1693,12 +1735,9 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
             worldloadprogressscreen.tick();
             this.runGameLoop(false);
 
-            try
-            {
+            try {
                Thread.sleep(16L);
-            }
-            catch (InterruptedException interruptedexception)
-            {
+            } catch (InterruptedException interruptedexception) {
             }
 
             if (this.crashReporter != null) {
@@ -1710,15 +1749,18 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          this.profiler.endSection();
          SocketAddress socketaddress = this.integratedServer.getNetworkSystem().addLocalEndpoint();
          NetworkManager networkmanager = NetworkManager.provideLocalClient(socketaddress);
-         networkmanager.setNetHandler(new ClientLoginNetHandler(networkmanager, this, null, var0 -> {}));
+         networkmanager.setNetHandler(new ClientLoginNetHandler(networkmanager, this, null, var0 -> {
+         }));
          networkmanager.sendPacket(new CHandshakePacket(socketaddress.toString(), 0, ProtocolType.LOGIN));
          networkmanager.sendPacket(new CLoginStartPacket(this.getSession().getProfile()));
          this.networkManager = networkmanager;
          System.out.println(networkmanager == null ? " yes I am null" : "no I am not");
-         System.out.println(this.integratedServer.getNetworkSystem().addLocalEndpoint() == null ? " yes I am null x2" : "no I am notx2");
+         System.out.println(this.integratedServer.getNetworkSystem().addLocalEndpoint() == null ? " yes I am null x2"
+               : "no I am notx2");
       } else {
          System.out.println("[LINE1688] wtf?");
-         this.deleteWorld(var6, var1, var10, () -> this.loadWorld(var1, var2, var3, var4, var5, WorldSelectionType.NONE));
+         this.deleteWorld(var6, var1, var10,
+               () -> this.loadWorld(var1, var2, var3, var4, var5, WorldSelectionType.NONE));
          var8.close();
 
          try {
@@ -1750,41 +1792,42 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          }, var5, var6, false));
       } else {
          this.displayGuiScreen(
-            new ConfirmScreen(
-               var3x -> {
-                  if (var3x) {
-                     var4.run();
-                  } else {
-                     this.displayGuiScreen(null);
+               new ConfirmScreen(
+                     var3x -> {
+                        if (var3x) {
+                           var4.run();
+                        } else {
+                           this.displayGuiScreen(null);
 
-                     try (SaveFormat.LevelSave var4x = this.saveFormat.getLevelSave(var2)) {
-                        var4x.deleteSave();
-                     } catch (IOException var17) {
-                        SystemToast.func_238538_b_(this, var2);
-                        LOGGER.error("Failed to delete world {}", var2, var17);
-                     }
-                  }
-               },
-               new TranslationTextComponent("selectWorld.backupQuestion.experimental"),
-               new TranslationTextComponent("selectWorld.backupWarning.experimental"),
-               DialogTexts.GUI_PROCEED,
-               DialogTexts.GUI_CANCEL
-            )
-         );
+                           try (SaveFormat.LevelSave var4x = this.saveFormat.getLevelSave(var2)) {
+                              var4x.deleteSave();
+                           } catch (IOException var17) {
+                              SystemToast.func_238538_b_(this, var2);
+                              LOGGER.error("Failed to delete world {}", var2, var17);
+                           }
+                        }
+                     },
+                     new TranslationTextComponent("selectWorld.backupQuestion.experimental"),
+                     new TranslationTextComponent("selectWorld.backupWarning.experimental"),
+                     DialogTexts.GUI_PROCEED,
+                     DialogTexts.GUI_CANCEL));
       }
    }
 
    public PackManager reloadDatapacks(
-           DynamicRegistriesImpl var1, Function<SaveFormat.LevelSave, DatapackCodec> var2, Function4<SaveFormat.LevelSave, DynamicRegistriesImpl, IResourceManager, DatapackCodec, IServerConfiguration> var3, boolean var4, SaveFormat.LevelSave var5
-   ) throws InterruptedException, ExecutionException {
-      DatapackCodec var6 = (DatapackCodec)var2.apply(var5);
-      ResourcePackList var7 = new ResourcePackList(new ServerPackFinder(), new FolderPackFinder(var5.resolveFilePath(FolderName.DATAPACKS).toFile(), IPackNameDecorator.WORLD));
+         DynamicRegistriesImpl var1, Function<SaveFormat.LevelSave, DatapackCodec> var2,
+         Function4<SaveFormat.LevelSave, DynamicRegistriesImpl, IResourceManager, DatapackCodec, IServerConfiguration> var3,
+         boolean var4, SaveFormat.LevelSave var5) throws InterruptedException, ExecutionException {
+      DatapackCodec var6 = (DatapackCodec) var2.apply(var5);
+      ResourcePackList var7 = new ResourcePackList(new ServerPackFinder(),
+            new FolderPackFinder(var5.resolveFilePath(FolderName.DATAPACKS).toFile(), IPackNameDecorator.WORLD));
 
       try {
          DatapackCodec var8 = MinecraftServer.func_240772_a_(var7, var6, var4);
-         CompletableFuture var9 = DataPackRegistries.func_240961_a_(var7.func_232623_f_(), Commands.EnvironmentType.INTEGRATED, 2, Util.getServerExecutor(), this);
+         CompletableFuture var9 = DataPackRegistries.func_240961_a_(var7.func_232623_f_(),
+               Commands.EnvironmentType.INTEGRATED, 2, Util.getServerExecutor(), this);
          this.driveUntil(var9::isDone);
-         DataPackRegistries var10 = (DataPackRegistries)var9.get();
+         DataPackRegistries var10 = (DataPackRegistries) var9.get();
          IServerConfiguration var11 = var3.apply(var5, var1, var10.getResourceManager(), var8);
          return new PackManager(var7, var10, var11);
       } catch (InterruptedException | ExecutionException var12) {
@@ -1799,12 +1842,13 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.updateScreenTick(var2);
       this.world = var1;
       this.updateWorldRenderer(var1);
-      Client.getInstance().getEventManager().call(new WorldLoadEvent());
+      Client.getInstance().eventManager.call(new WorldLoadEvent());
       if (!this.integratedServerIsRunning) {
          YggdrasilAuthenticationService var3 = new YggdrasilAuthenticationService(this.proxy);
          MinecraftSessionService var4 = var3.createMinecraftSessionService();
          GameProfileRepository var5 = var3.createProfileRepository();
-         PlayerProfileCache var6 = new PlayerProfileCache(var5, new File(this.gameDir, MinecraftServer.USER_CACHE_FILE.getName()));
+         PlayerProfileCache var6 = new PlayerProfileCache(var5,
+               new File(this.gameDir, MinecraftServer.USER_CACHE_FILE.getName()));
          SkullTileEntity.setProfileCache(var6);
          SkullTileEntity.setSessionService(var4);
          PlayerProfileCache.setOnlineMode(false);
@@ -1847,7 +1891,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       }
 
       this.world = null;
-      this.updateWorldRenderer((ClientWorld)null);
+      this.updateWorldRenderer((ClientWorld) null);
       this.player = null;
    }
 
@@ -1881,8 +1925,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
    public boolean cannotSendChatMessages(UUID var1) {
       return this.isChatEnabled()
-         ? this.field_244597_aC.func_244756_c(var1)
-         : (this.player == null || !var1.equals(this.player.getUniqueID())) && !var1.equals(Util.DUMMY_UUID);
+            ? this.field_244597_aC.func_244756_c(var1)
+            : (this.player == null || !var1.equals(this.player.getUniqueID())) && !var1.equals(Util.DUMMY_UUID);
    }
 
    public boolean isChatEnabled() {
@@ -1899,7 +1943,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    }
 
    public static boolean isGuiEnabled() {
-      return ! instance.gameSettings.hideGUI;
+      return !instance.gameSettings.hideGUI;
    }
 
    public static boolean isFancyGraphicsEnabled() {
@@ -1916,7 +1960,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
    private void middleClickMouse() {
       ClickEvent var1 = new ClickEvent(ClickEvent.Button.MID);
-      Client.getInstance().getEventManager().call(var1);
+      Client.getInstance().eventManager.call(var1);
       if (!var1.isCancelled()) {
          if (this.objectMouseOver != null && this.objectMouseOver.getType() != RayTraceResult.Type.MISS) {
             boolean var2 = this.player.abilities.isCreativeMode;
@@ -1924,7 +1968,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
             RayTraceResult.Type var4 = this.objectMouseOver.getType();
             ItemStack var5;
             if (var4 == RayTraceResult.Type.BLOCK) {
-               BlockPos var6 = ((BlockRayTraceResult)this.objectMouseOver).getPos();
+               BlockPos var6 = ((BlockRayTraceResult) this.objectMouseOver).getPos();
                BlockState var7 = this.world.getBlockState(var6);
                Block var8 = var7.getBlock();
                if (var7.isAir()) {
@@ -1944,13 +1988,13 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                   return;
                }
 
-               Entity var9 = ((EntityRayTraceResult)this.objectMouseOver).getEntity();
+               Entity var9 = ((EntityRayTraceResult) this.objectMouseOver).getEntity();
                if (var9 instanceof PaintingEntity) {
                   var5 = new ItemStack(Items.PAINTING);
                } else if (var9 instanceof LeashKnotEntity) {
                   var5 = new ItemStack(Items.LEAD);
                } else if (var9 instanceof ItemFrameEntity) {
-                  ItemFrameEntity var12 = (ItemFrameEntity)var9;
+                  ItemFrameEntity var12 = (ItemFrameEntity) var9;
                   ItemStack var16 = var12.method4090();
                   if (var16.isEmpty()) {
                      var5 = new ItemStack(Items.ITEM_FRAME);
@@ -1958,10 +2002,9 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                      var5 = var16.copy();
                   }
                } else if (var9 instanceof AbstractMinecartEntity) {
-                  AbstractMinecartEntity var13 = (AbstractMinecartEntity)var9;
+                  AbstractMinecartEntity var13 = (AbstractMinecartEntity) var9;
                   Item var17;
-                  switch (var13.getMinecartType())
-                  {
+                  switch (var13.getMinecartType()) {
                      case FURNACE:
                         var17 = Items.FURNACE_MINECART;
                         break;
@@ -1988,7 +2031,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
                   var5 = new ItemStack(var17);
                } else if (var9 instanceof BoatEntity) {
-                  var5 = new ItemStack(((BoatEntity)var9).getItemBoat());
+                  var5 = new ItemStack(((BoatEntity) var9).getItemBoat());
                } else if (var9 instanceof ArmorStandEntity) {
                   var5 = new ItemStack(Items.ARMOR_STAND);
                } else if (var9 instanceof EnderCrystalEntity) {
@@ -2006,9 +2049,12 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
             if (var5.isEmpty()) {
                String var10 = "";
                if (var4 == RayTraceResult.Type.BLOCK) {
-                  var10 = Registry.BLOCK.getKey(this.world.getBlockState(((BlockRayTraceResult)this.objectMouseOver).getPos()).getBlock()).toString();
+                  var10 = Registry.BLOCK.getKey(
+                        this.world.getBlockState(((BlockRayTraceResult) this.objectMouseOver).getPos()).getBlock())
+                        .toString();
                } else if (var4 == RayTraceResult.Type.ENTITY) {
-                  var10 = Registry.ENTITY_TYPE.getKey(((EntityRayTraceResult)this.objectMouseOver).getEntity().getType()).toString();
+                  var10 = Registry.ENTITY_TYPE
+                        .getKey(((EntityRayTraceResult) this.objectMouseOver).getEntity().getType()).toString();
                }
 
                LOGGER.warn("Picking on: [{}] {} gave null item", var4, var10);
@@ -2021,7 +2067,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                int var15 = playerinventory.getSlotFor(var5);
                if (var2) {
                   playerinventory.setPickedItemStack(var5);
-                  this.playerController.sendSlotPacket(this.player.getHeldItem(Hand.MAIN_HAND), 36 + playerinventory.currentItem);
+                  this.playerController.sendSlotPacket(this.player.getHeldItem(Hand.MAIN_HAND),
+                        36 + playerinventory.currentItem);
                } else if (var15 != -1) {
                   if (PlayerInventory.isHotbar(var15)) {
                      playerinventory.currentItem = var15;
@@ -2068,18 +2115,17 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       var4.addDetail("GL Caps", RenderSystem::getCapsString);
       var4.addDetail("Using VBOs", () -> "Yes");
       var4.addDetail(
-         "Is Modded",
-         () -> {
-            String var0x = ClientBrandRetriever.getClientModName();
-            if (!"vanilla".equals(var0x)) {
-               return "Definitely; Client brand changed to '" + var0x + "'";
-            } else {
-               return Minecraft.class.getSigners() == null
-                  ? "Very likely; Jar signature invalidated"
-                  : "Probably not. Jar signature remains and client brand is untouched.";
-            }
-         }
-      );
+            "Is Modded",
+            () -> {
+               String var0x = ClientBrandRetriever.getClientModName();
+               if (!"vanilla".equals(var0x)) {
+                  return "Definitely; Client brand changed to '" + var0x + "'";
+               } else {
+                  return Minecraft.class.getSigners() == null
+                        ? "Very likely; Jar signature invalidated"
+                        : "Probably not. Jar signature remains and client brand is untouched.";
+               }
+            });
       var4.addDetail("Type", "Client (map_client.txt)");
       if (var2 != null) {
          if (instance != null) {
@@ -2120,7 +2166,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    }
 
    public CompletableFuture<Void> scheduleResourcesRefresh() {
-      return this.<CompletableFuture<Void>>supplyAsync(this::reloadResources).<Void>thenCompose(var0 -> (CompletionStage<Void>)var0);
+      return this.<CompletableFuture<Void>>supplyAsync(this::reloadResources)
+            .<Void>thenCompose(var0 -> (CompletionStage<Void>) var0);
    }
 
    @Override
@@ -2252,15 +2299,18 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          return BackgroundMusicTracks.CREDITS_MUSIC;
       } else if (this.player != null) {
          if (this.player.world.getDimensionKey() == World.THE_END) {
-            return this.ingameGUI.getBossOverlay().shouldPlayEndBossMusic() ? BackgroundMusicTracks.DRAGON_FIGHT_MUSIC : BackgroundMusicTracks.END_MUSIC;
+            return this.ingameGUI.getBossOverlay().shouldPlayEndBossMusic() ? BackgroundMusicTracks.DRAGON_FIGHT_MUSIC
+                  : BackgroundMusicTracks.END_MUSIC;
          } else {
             Biome.Category var1 = this.player.world.getBiome(this.player.getPosition()).getCategory();
-            if (!this.musicTicker.isBackgroundMusicPlaying(BackgroundMusicTracks.UNDER_WATER_MUSIC) && (!this.player.canSwim() || var1 != Biome.Category.OCEAN && var1 != Biome.Category.RIVER)) {
+            if (!this.musicTicker.isBackgroundMusicPlaying(BackgroundMusicTracks.UNDER_WATER_MUSIC)
+                  && (!this.player.canSwim() || var1 != Biome.Category.OCEAN && var1 != Biome.Category.RIVER)) {
                return this.player.world.getDimensionKey() != World.THE_NETHER
                      && this.player.abilities.isCreativeMode
                      && this.player.abilities.allowFlying
-                  ? BackgroundMusicTracks.CREATIVE_MODE_MUSIC
-                  : this.world.getBiomeManager().getBiomeAtPosition(this.player.getPosition()).getBackgroundMusic().orElse(BackgroundMusicTracks.WORLD_MUSIC);
+                           ? BackgroundMusicTracks.CREATIVE_MODE_MUSIC
+                           : this.world.getBiomeManager().getBiomeAtPosition(this.player.getPosition())
+                                 .getBackgroundMusic().orElse(BackgroundMusicTracks.WORLD_MUSIC);
             } else {
                return BackgroundMusicTracks.UNDER_WATER_MUSIC;
             }
@@ -2290,7 +2340,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
    public boolean isEntityGlowing(Entity var1) {
       return var1.isGlowing()
-         || this.player != null && this.player.isSpectator() && this.gameSettings.keyBindSpectatorOutlines.isKeyDown() && var1.getType() == EntityType.PLAYER;
+            || this.player != null && this.player.isSpectator()
+                  && this.gameSettings.keyBindSpectatorOutlines.isKeyDown() && var1.getType() == EntityType.PLAYER;
    }
 
    @Override
@@ -2426,18 +2477,17 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       return this.renderTypeBuffers;
    }
 
-   private static ResourcePackInfo makePackInfo(String name, boolean isAlwaysEnabled, Supplier<IResourcePack> resourceSupplier, IResourcePack resourcePack, PackMetadataSection resourcePackMeta, ResourcePackInfo.Priority priority, IPackNameDecorator decorator)
-   {
+   private static ResourcePackInfo makePackInfo(String name, boolean isAlwaysEnabled,
+         Supplier<IResourcePack> resourceSupplier, IResourcePack resourcePack, PackMetadataSection resourcePackMeta,
+         ResourcePackInfo.Priority priority, IPackNameDecorator decorator) {
       int i = resourcePackMeta.getPackFormat();
       Supplier<IResourcePack> supplier = resourceSupplier;
 
-      if (i <= 3)
-      {
+      if (i <= 3) {
          supplier = wrapV3(resourceSupplier);
       }
 
-      if (i <= 4)
-      {
+      if (i <= 4) {
          supplier = wrapV4(supplier);
       }
 
@@ -2445,11 +2495,12 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    }
 
    private static Supplier<IResourcePack> wrapV3(Supplier<IResourcePack> var0) {
-      return () -> new LegacyResourcePackWrapper((IResourcePack)var0.get(), LegacyResourcePackWrapper.NEW_TO_LEGACY_MAP);
+      return () -> new LegacyResourcePackWrapper((IResourcePack) var0.get(),
+            LegacyResourcePackWrapper.NEW_TO_LEGACY_MAP);
    }
 
    private static Supplier<IResourcePack> wrapV4(Supplier<IResourcePack> var0) {
-      return () -> new LegacyResourcePackWrapperV4((IResourcePack)var0.get());
+      return () -> new LegacyResourcePackWrapperV4((IResourcePack) var0.get());
    }
 
    public void setMipmapLevels(int var1) {
@@ -2460,44 +2511,37 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       return debugFPS;
    }
 
-
-   public static final class PackManager implements AutoCloseable
-   {
+   public static final class PackManager implements AutoCloseable {
       private final ResourcePackList resourcePackList;
       private final DataPackRegistries datapackRegistries;
       private final IServerConfiguration serverConfiguration;
 
-      private PackManager(ResourcePackList resourcePackList, DataPackRegistries datapackRegistries, IServerConfiguration serverConfiguration)
-      {
+      private PackManager(ResourcePackList resourcePackList, DataPackRegistries datapackRegistries,
+            IServerConfiguration serverConfiguration) {
          this.resourcePackList = resourcePackList;
          this.datapackRegistries = datapackRegistries;
          this.serverConfiguration = serverConfiguration;
       }
 
-      public ResourcePackList getResourcePacks()
-      {
+      public ResourcePackList getResourcePacks() {
          return this.resourcePackList;
       }
 
-      public DataPackRegistries getDataPackRegistries()
-      {
+      public DataPackRegistries getDataPackRegistries() {
          return this.datapackRegistries;
       }
 
-      public IServerConfiguration getServerConfiguration()
-      {
+      public IServerConfiguration getServerConfiguration() {
          return this.serverConfiguration;
       }
 
-      public void close()
-      {
+      public void close() {
          this.resourcePackList.close();
          this.datapackRegistries.close();
       }
    }
 
-   static enum WorldSelectionType
-   {
+   static enum WorldSelectionType {
       NONE,
       CREATE,
       BACKUP;

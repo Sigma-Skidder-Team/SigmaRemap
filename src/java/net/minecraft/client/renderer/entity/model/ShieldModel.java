@@ -31,7 +31,7 @@ public class ShieldModel extends Class2828 {
    }
 
    public void render(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
-      if (!Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).enabled) {
+      if (!Client.getInstance().moduleManager.getModuleByClass(OldHitting.class).enabled) {
          this.plate.render(var1, var2, var3, var4, var5, var6, var7, var8);
          this.handle.render(var1, var2, var3, var4, var5, var6, var7, var8);
       }

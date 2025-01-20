@@ -12,13 +12,13 @@ public class SlotChangeTracker {
    private HashMap<Integer, Date> field41141 = new HashMap<Integer, Date>();
 
    public void init() {
-      Client.getInstance().getEventManager().register(this);
+      Client.getInstance().eventManager.register(this);
    }
 
    @EventTarget
    private void method33237(ReceivePacketEvent var1) {
       if (var1.getPacket() instanceof SSetSlotPacket) {
-         SSetSlotPacket var4 = (SSetSlotPacket)var1.getPacket();
+         SSetSlotPacket var4 = (SSetSlotPacket) var1.getPacket();
          if (var4.method17303() != 0) {
             return;
          }

@@ -12,8 +12,8 @@ public class TextProcessing {
 
    private static boolean func_238344_a_(Style p_238344_0_, Class2545 p_238344_1_, int p_238344_2_, char p_238344_3_) {
       return Character.isSurrogate(p_238344_3_)
-         ? p_238344_1_.method10739(p_238344_2_, p_238344_0_, 65533)
-         : p_238344_1_.method10739(p_238344_2_, p_238344_0_, p_238344_3_);
+            ? p_238344_1_.method10739(p_238344_2_, p_238344_0_, 65533)
+            : p_238344_1_.method10739(p_238344_2_, p_238344_0_, p_238344_3_);
    }
 
    public static boolean func_238341_a_(String p_238341_0_, Style p_238341_1_, Class2545 p_238341_2_) {
@@ -84,9 +84,10 @@ public class TextProcessing {
       return drawString(p_238339_0_, p_238339_1_, p_238339_2_, p_238339_2_, p_238339_3_);
    }
 
-   public static boolean drawString(String p_238340_0_, int p_238340_1_, Style p_238340_2_, Style p_238340_3_, Class2545 p_238340_4_) {
+   public static boolean drawString(String p_238340_0_, int p_238340_1_, Style p_238340_2_, Style p_238340_3_,
+         Class2545 p_238340_4_) {
       TextReplaceEvent i = new TextReplaceEvent(p_238340_0_);
-      Client.getInstance().getEventManager().call(i);
+      Client.getInstance().eventManager.call(i);
       p_238340_0_ = i.setText();
       int style = p_238340_0_.length();
       Style j = p_238340_2_;
@@ -133,9 +134,10 @@ public class TextProcessing {
 
    public static boolean func_238343_a_(ITextProperties p_238343_0_, Style p_238343_1_, Class2545 p_238343_2_) {
       return !p_238343_0_.func_230439_a_(
-            (p_238337_1_, p_238337_2_) -> func_238339_a_(p_238337_2_, 0, p_238337_1_, p_238343_2_) ? Optional.empty() : field_238336_a_, p_238343_1_
-         )
-         .isPresent();
+            (p_238337_1_, p_238337_2_) -> func_238339_a_(p_238337_2_, 0, p_238337_1_, p_238343_2_) ? Optional.empty()
+                  : field_238336_a_,
+            p_238343_1_)
+            .isPresent();
    }
 
    public static String func_238338_a_(String p_238338_0_) {

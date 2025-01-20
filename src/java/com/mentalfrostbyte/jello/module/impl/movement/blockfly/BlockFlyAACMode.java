@@ -92,7 +92,7 @@ public class BlockFlyAACMode extends Module {
     @EventTarget
     public void method16204(SafeWalkEvent var1) {
         if (this.isEnabled()) {
-            if (mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(SafeWalk.class).isEnabled()) {
+            if (mc.player.onGround && Client.getInstance().moduleManager.getModuleByClass(SafeWalk.class).isEnabled()) {
                 var1.setSafe(true);
             }
         }

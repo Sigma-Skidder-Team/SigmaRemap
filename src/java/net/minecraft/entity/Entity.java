@@ -117,13 +117,20 @@ public abstract class Entity implements INameable, ICommandSource {
    public int hurtResistantTime;
    public boolean firstUpdate = true;
    public final EntityDataManager dataManager;
-   public static final DataParameter<Byte> FLAGS = EntityDataManager.<Byte>createKey(Entity.class, DataSerializers.field33390);
-   private static final DataParameter<Integer> AIR = EntityDataManager.<Integer>createKey(Entity.class, DataSerializers.VARINT);
-   private static final DataParameter<Optional<ITextComponent>> CUSTOM_NAME = EntityDataManager.<Optional<ITextComponent>>createKey(Entity.class, DataSerializers.field33395);
-   public static final DataParameter<Boolean> CUSTOM_NAME_VISIBLE = EntityDataManager.<Boolean>createKey(Entity.class, DataSerializers.BOOLEAN);
-   private static final DataParameter<Boolean> SILENT = EntityDataManager.<Boolean>createKey(Entity.class, DataSerializers.BOOLEAN);
-   private static final DataParameter<Boolean> NO_GRAVITY = EntityDataManager.<Boolean>createKey(Entity.class, DataSerializers.BOOLEAN);
-   public static final DataParameter<Pose> POSE = EntityDataManager.<Pose>createKey(Entity.class, DataSerializers.field33408);
+   public static final DataParameter<Byte> FLAGS = EntityDataManager.<Byte>createKey(Entity.class,
+         DataSerializers.field33390);
+   private static final DataParameter<Integer> AIR = EntityDataManager.<Integer>createKey(Entity.class,
+         DataSerializers.VARINT);
+   private static final DataParameter<Optional<ITextComponent>> CUSTOM_NAME = EntityDataManager
+         .<Optional<ITextComponent>>createKey(Entity.class, DataSerializers.field33395);
+   public static final DataParameter<Boolean> CUSTOM_NAME_VISIBLE = EntityDataManager.<Boolean>createKey(Entity.class,
+         DataSerializers.BOOLEAN);
+   private static final DataParameter<Boolean> SILENT = EntityDataManager.<Boolean>createKey(Entity.class,
+         DataSerializers.BOOLEAN);
+   private static final DataParameter<Boolean> NO_GRAVITY = EntityDataManager.<Boolean>createKey(Entity.class,
+         DataSerializers.BOOLEAN);
+   public static final DataParameter<Pose> POSE = EntityDataManager.<Pose>createKey(Entity.class,
+         DataSerializers.field33408);
    public boolean addedToChunk;
    public int chunkCoordX;
    public int chunkCoordY;
@@ -142,7 +149,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public boolean glowing;
    private final Set<String> tags = Sets.newHashSet();
    private boolean isPositionDirty;
-   private final double[] pistonDeltas = new double[]{0.0, 0.0, 0.0};
+   private final double[] pistonDeltas = new double[] { 0.0, 0.0, 0.0 };
    private long pistonDeltasGameTime;
    private EntitySize size;
    public float eyeHeight;
@@ -156,7 +163,7 @@ public abstract class Entity implements INameable, ICommandSource {
       this.field_242272_av = Vector3d.ZERO;
       this.setPosition(0.0, 0.0, 0.0);
       this.dataManager = new EntityDataManager(this);
-      this.dataManager.register(FLAGS, (byte)0);
+      this.dataManager.register(FLAGS, (byte) 0);
       this.dataManager.register(AIR, this.getMaxAir());
       this.dataManager.register(CUSTOM_NAME_VISIBLE, false);
       this.dataManager.register(CUSTOM_NAME, Optional.<ITextComponent>empty());
@@ -169,7 +176,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public boolean func_242278_a(BlockPos var1, BlockState var2) {
       VoxelShape var5 = var2.getCollisionShape(this.world, var1, ISelectionContext.forEntity(this));
-      VoxelShape var6 = var5.withOffset((double)var1.getX(), (double)var1.getY(), (double)var1.getZ());
+      VoxelShape var6 = var5.withOffset((double) var1.getX(), (double) var1.getY(), (double) var1.getZ());
       return VoxelShapes.compare(var6, VoxelShapes.create(this.getBoundingBox()), IBooleanFunction.AND);
    }
 
@@ -240,7 +247,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    @Override
    public boolean equals(Object var1) {
-      return !(var1 instanceof Entity) ? false : ((Entity)var1).entityId == this.entityId;
+      return !(var1 instanceof Entity) ? false : ((Entity) var1).entityId == this.entityId;
    }
 
    @Override
@@ -298,11 +305,11 @@ public abstract class Entity implements INameable, ICommandSource {
    public void rotateTowards(double var1, double var3) {
       double var7 = var3 * 0.15;
       double var9 = var1 * 0.15;
-      this.rotationPitch = (float)((double)this.rotationPitch + var7);
-      this.rotationYaw = (float)((double)this.rotationYaw + var9);
+      this.rotationPitch = (float) ((double) this.rotationPitch + var7);
+      this.rotationYaw = (float) ((double) this.rotationYaw + var9);
       this.rotationPitch = MathHelper.clamp(this.rotationPitch, -90.0F, 90.0F);
-      this.prevRotationPitch = (float)((double)this.prevRotationPitch + var7);
-      this.prevRotationYaw = (float)((double)this.prevRotationYaw + var9);
+      this.prevRotationPitch = (float) ((double) this.prevRotationPitch + var7);
+      this.prevRotationYaw = (float) ((double) this.prevRotationYaw + var9);
       this.prevRotationPitch = MathHelper.clamp(this.prevRotationPitch, -90.0F, 90.0F);
       if (this.ridingEntity != null) {
          this.ridingEntity.applyOrientationToEntity(this);
@@ -402,7 +409,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public void setFire(int var1) {
       int var4 = var1 * 20;
       if (this instanceof LivingEntity) {
-         var4 = ProtectionEnchantment.getFireTimeForEntity((LivingEntity)this, var4);
+         var4 = ProtectionEnchantment.getFireTimeForEntity((LivingEntity) this, var4);
       }
 
       if (this.fire < var4) {
@@ -444,10 +451,10 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public void move(MoverType var1, Vector3d var2) {
       if (Minecraft.getInstance().player != null
-         && Minecraft.getInstance().player.getRidingEntity() != null
-         && Minecraft.getInstance().player.getRidingEntity().getEntityId() == this.getEntityId()) {
+            && Minecraft.getInstance().player.getRidingEntity() != null
+            && Minecraft.getInstance().player.getRidingEntity().getEntityId() == this.getEntityId()) {
          EventMoveRideable var5 = new EventMoveRideable(var2.x, var2.y, var2.z);
-         Client.getInstance().getEventManager().call(var5);
+         Client.getInstance().eventManager.call(var5);
          if (var5.isCancelled()) {
             return;
          }
@@ -482,7 +489,8 @@ public abstract class Entity implements INameable, ICommandSource {
 
          this.world.getProfiler().endSection();
          this.world.getProfiler().startSection("rest");
-         this.collidedHorizontally = !MathHelper.method37787(var2.x, var25.x) || !MathHelper.method37787(var2.z, var25.z);
+         this.collidedHorizontally = !MathHelper.method37787(var2.x, var25.x)
+               || !MathHelper.method37787(var2.z, var25.z);
          this.collidedVertically = var2.y != var25.y;
          this.onGround = this.collidedVertically && var2.y < 0.0;
          BlockPos var6 = this.getOnPosition();
@@ -514,8 +522,10 @@ public abstract class Entity implements INameable, ICommandSource {
                var12 = 0.0;
             }
 
-            this.distanceWalkedModified = (float)((double)this.distanceWalkedModified + (double) MathHelper.sqrt(horizontalMag(var25)) * 0.6);
-            this.distanceWalkedOnStepModified = (float)((double)this.distanceWalkedOnStepModified + (double) MathHelper.sqrt(var10 * var10 + var12 * var12 + var14 * var14) * 0.6);
+            this.distanceWalkedModified = (float) ((double) this.distanceWalkedModified
+                  + (double) MathHelper.sqrt(horizontalMag(var25)) * 0.6);
+            this.distanceWalkedOnStepModified = (float) ((double) this.distanceWalkedOnStepModified
+                  + (double) MathHelper.sqrt(var10 * var10 + var12 * var12 + var14 * var14) * 0.6);
             if (this.distanceWalkedOnStepModified > this.nextStepDistance && !var7.isAir()) {
                this.nextStepDistance = this.determineNextStepDistance();
                if (!this.isInWater()) {
@@ -525,9 +535,8 @@ public abstract class Entity implements INameable, ICommandSource {
                   float var17 = var16 == this ? 0.35F : 0.4F;
                   Vector3d var18 = var16.getMotion();
                   float var19 = MathHelper.sqrt(
-                        var18.x * var18.x * 0.2F + var18.y * var18.y + var18.z * var18.z * 0.2F
-                     )
-                     * var17;
+                        var18.x * var18.x * 0.2F + var18.y * var18.y + var18.z * var18.z * 0.2F)
+                        * var17;
                   if (var19 > 1.0F) {
                      var19 = 1.0F;
                   }
@@ -549,11 +558,11 @@ public abstract class Entity implements INameable, ICommandSource {
          }
 
          float var20 = this.getSpeedFactor();
-         this.setMotion(this.getMotion().mul((double)var20, 1.0, (double)var20));
+         this.setMotion(this.getMotion().mul((double) var20, 1.0, (double) var20));
          if (this.world
                .method7004(this.getBoundingBox().shrink(0.001))
                .noneMatch(var0 -> var0.isIn(BlockTags.field32798) || var0.isIn(Blocks.LAVA))
-            && this.fire <= 0) {
+               && this.fire <= 0) {
             this.forceFireTicks(-this.getFireImmuneTicks());
          }
 
@@ -586,14 +595,15 @@ public abstract class Entity implements INameable, ICommandSource {
    public float getJumpFactor() {
       float var3 = this.world.getBlockState(this.getPosition()).getBlock().method11573();
       float var4 = this.world.getBlockState(this.getPositionUnderneath()).getBlock().method11573();
-      return (double)var3 != 1.0 ? var3 : var4;
+      return (double) var3 != 1.0 ? var3 : var4;
    }
 
    public float getSpeedFactor() {
       Block var3 = this.world.getBlockState(this.getPosition()).getBlock();
       float var4 = var3.method11572();
       if (var3 != Blocks.WATER && var3 != Blocks.field37013) {
-         return (double)var4 != 1.0 ? var4 : this.world.getBlockState(this.getPositionUnderneath()).getBlock().method11572();
+         return (double) var4 != 1.0 ? var4
+               : this.world.getBlockState(this.getPositionUnderneath()).getBlock().method11572();
       } else {
          return var4;
       }
@@ -648,43 +658,48 @@ public abstract class Entity implements INameable, ICommandSource {
       AxisAlignedBB var4 = this.getBoundingBox();
       ISelectionContext var5 = ISelectionContext.forEntity(this);
       VoxelShape var6 = this.world.getWorldBorder().getShape();
-      Stream var7 = ! VoxelShapes.compare(var6, VoxelShapes.create(var4.shrink(1.0E-7)), IBooleanFunction.AND)
-         ? Stream.<VoxelShape>of(var6)
-         : Stream.empty();
+      Stream var7 = !VoxelShapes.compare(var6, VoxelShapes.create(var4.shrink(1.0E-7)), IBooleanFunction.AND)
+            ? Stream.<VoxelShape>of(var6)
+            : Stream.empty();
       Stream var8 = this.world.getEntityCollisions(this, var4.expand(var1), var0 -> true);
       Class8544 var9 = new Class8544(Stream.concat(var8, var7));
-      Vector3d var10 = var1.lengthSquared() != 0.0 ? collideBoundingBoxHeuristically(this, var1, var4, this.world, var5, var9) : var1;
+      Vector3d var10 = var1.lengthSquared() != 0.0
+            ? collideBoundingBoxHeuristically(this, var1, var4, this.world, var5, var9)
+            : var1;
       boolean var11 = var1.x != var10.x;
       boolean var12 = var1.y != var10.y;
       boolean var13 = var1.z != var10.z;
       boolean var14 = this.onGround || var12 && var1.y < 0.0;
       if (this.stepHeight > 0.0F && var14 && (var11 || var13)) {
-         Vector3d var15 = collideBoundingBoxHeuristically(this, new Vector3d(var1.x, (double)this.stepHeight, var1.z), var4, this.world, var5, var9);
+         Vector3d var15 = collideBoundingBoxHeuristically(this, new Vector3d(var1.x, (double) this.stepHeight, var1.z),
+               var4, this.world, var5, var9);
          Vector3d var16 = collideBoundingBoxHeuristically(
-            this, new Vector3d(0.0, (double)this.stepHeight, 0.0), var4.expand(var1.x, 0.0, var1.z), this.world, var5, var9
-         );
-         if (var16.y < (double)this.stepHeight) {
-            Vector3d var17 = collideBoundingBoxHeuristically(this, new Vector3d(var1.x, 0.0, var1.z), var4.offset(var16), this.world, var5, var9)
-               .add(var16);
+               this, new Vector3d(0.0, (double) this.stepHeight, 0.0), var4.expand(var1.x, 0.0, var1.z), this.world,
+               var5, var9);
+         if (var16.y < (double) this.stepHeight) {
+            Vector3d var17 = collideBoundingBoxHeuristically(this, new Vector3d(var1.x, 0.0, var1.z),
+                  var4.offset(var16), this.world, var5, var9)
+                  .add(var16);
             if (horizontalMag(var17) > horizontalMag(var15)) {
                var15 = var17;
             }
          }
 
          double var18 = !(this instanceof ClientPlayerEntity)
-            ? 0.0
-            : collideBoundingBoxHeuristically(this, new Vector3d(0.0, -var15.y, 0.0), var4.offset(var15), this.world, var5, var9).y + var15.y;
+               ? 0.0
+               : collideBoundingBoxHeuristically(this, new Vector3d(0.0, -var15.y, 0.0), var4.offset(var15), this.world,
+                     var5, var9).y + var15.y;
          boolean var20 = false;
          if (var18 != 0.0) {
             EventStep var21 = new EventStep(var18, var10);
-            Client.getInstance().getEventManager().call(var21);
+            Client.getInstance().eventManager.call(var21);
             var20 = var21.isCancelled();
          }
 
          if (horizontalMag(var15) > horizontalMag(var10) && !var20) {
             return var15.add(
-               collideBoundingBoxHeuristically(this, new Vector3d(0.0, -var15.y + var1.y, 0.0), var4.offset(var15), this.world, var5, var9)
-            );
+                  collideBoundingBoxHeuristically(this, new Vector3d(0.0, -var15.y + var1.y, 0.0), var4.offset(var15),
+                        this.world, var5, var9));
          }
       }
 
@@ -695,7 +710,8 @@ public abstract class Entity implements INameable, ICommandSource {
       return var0.x * var0.x + var0.z * var0.z;
    }
 
-   public static Vector3d collideBoundingBoxHeuristically(Entity var0, Vector3d var1, AxisAlignedBB var2, World var3, ISelectionContext var4, Class8544<VoxelShape> var5) {
+   public static Vector3d collideBoundingBoxHeuristically(Entity var0, Vector3d var1, AxisAlignedBB var2, World var3,
+         ISelectionContext var4, Class8544<VoxelShape> var5) {
       boolean var8 = var1.x == 0.0;
       boolean var9 = var1.y == 0.0;
       boolean var10 = var1.z == 0.0;
@@ -703,7 +719,8 @@ public abstract class Entity implements INameable, ICommandSource {
          boolean var12 = var0 != null && var0 instanceof ClientPlayerEntity;
          return collideBoundingBox(var1, var2, var3, var4, var5, var12);
       } else {
-         Class8544 var11 = new Class8544<VoxelShape>(Stream.<VoxelShape>concat(var5.method30440(), var3.getCollisionShapes(var0, var2.expand(var1))));
+         Class8544 var11 = new Class8544<VoxelShape>(
+               Stream.<VoxelShape>concat(var5.method30440(), var3.getCollisionShapes(var0, var2.expand(var1))));
          return getAllowedMovement(var1, var2, var11);
       }
    }
@@ -741,7 +758,8 @@ public abstract class Entity implements INameable, ICommandSource {
       return new Vector3d(var5, var7, var9);
    }
 
-   public static Vector3d collideBoundingBox(Vector3d var0, AxisAlignedBB var1, IWorldReader var2, ISelectionContext var3, Class8544<VoxelShape> var4, boolean var5) {
+   public static Vector3d collideBoundingBox(Vector3d var0, AxisAlignedBB var1, IWorldReader var2,
+         ISelectionContext var3, Class8544<VoxelShape> var4, boolean var5) {
       double var8 = var0.x;
       double var10 = var0.y;
       double var12 = var0.z;
@@ -775,7 +793,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public float determineNextStepDistance() {
-      return (float)((int)this.distanceWalkedOnStepModified + 1);
+      return (float) ((int) this.distanceWalkedOnStepModified + 1);
    }
 
    public void resetPositionToBB() {
@@ -847,7 +865,8 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public void playSound(SoundEvent var1, float var2, float var3) {
       if (!this.isSilent()) {
-         this.world.playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.getSoundCategory(), var2, var3);
+         this.world.playSound((PlayerEntity) null, this.getPosX(), this.getPosY(), this.getPosZ(), var1,
+               this.getSoundCategory(), var2, var3);
       }
    }
 
@@ -874,7 +893,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public void updateFallState(double var1, boolean var3, BlockState var4, BlockPos var5) {
       if (!var3) {
          if (var1 < 0.0) {
-            this.fallDistance = (float)((double)this.fallDistance - var1);
+            this.fallDistance = (float) ((double) this.fallDistance - var1);
          }
       } else {
          if (this.fallDistance > 0.0F) {
@@ -906,7 +925,8 @@ public abstract class Entity implements INameable, ICommandSource {
    private boolean isInRain() {
       BlockPos var3 = this.getPosition();
       return this.world.isRainingAt(var3)
-         || this.world.isRainingAt(new BlockPos((double)var3.getX(), this.getBoundingBox().maxY, (double)var3.getZ()));
+            || this.world
+                  .isRainingAt(new BlockPos((double) var3.getX(), this.getBoundingBox().maxY, (double) var3.getZ()));
    }
 
    private boolean isInBubbleColumn() {
@@ -969,7 +989,7 @@ public abstract class Entity implements INameable, ICommandSource {
       double var3 = this.getPosYEye() - 0.11111111F;
       Entity var5 = this.getRidingEntity();
       if (var5 instanceof BoatEntity) {
-         BoatEntity var6 = (BoatEntity)var5;
+         BoatEntity var6 = (BoatEntity) var5;
          if (!var6.canSwim() && var6.getBoundingBox().maxY >= var3 && var6.getBoundingBox().minY <= var3) {
             return;
          }
@@ -980,7 +1000,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
       for (ITag var9 : FluidTags.method32717()) {
          if (var7.method23486(var9)) {
-            double var10 = (double)((float)var12.getY() + var7.method23475(this.world, var12));
+            double var10 = (double) ((float) var12.getY() + var7.method23475(this.world, var12));
             if (var10 > var3) {
                this.field_241335_O_ = var9;
             }
@@ -995,14 +1015,13 @@ public abstract class Entity implements INameable, ICommandSource {
       float var4 = var3 != this ? 0.9F : 0.2F;
       Vector3d var5 = var3.getMotion();
       float var6 = MathHelper.sqrt(
-            var5.x * var5.x * 0.2F + var5.y * var5.y + var5.z * var5.z * 0.2F
-         )
-         * var4;
+            var5.x * var5.x * 0.2F + var5.y * var5.y + var5.z * var5.z * 0.2F)
+            * var4;
       if (var6 > 1.0F) {
          var6 = 1.0F;
       }
 
-      if (!((double)var6 < 0.25)) {
+      if (!((double) var6 < 0.25)) {
          this.playSound(this.getSplashSound(), var6, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.4F);
       } else {
          this.playSound(this.method2860(), var6, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.4F);
@@ -1010,34 +1029,32 @@ public abstract class Entity implements INameable, ICommandSource {
 
       float var7 = (float) MathHelper.floor(this.getPosY());
 
-      for (int var8 = 0; (float)var8 < 1.0F + this.size.field39968 * 20.0F; var8++) {
-         double var9 = (this.rand.nextDouble() * 2.0 - 1.0) * (double)this.size.field39968;
-         double var11 = (this.rand.nextDouble() * 2.0 - 1.0) * (double)this.size.field39968;
+      for (int var8 = 0; (float) var8 < 1.0F + this.size.field39968 * 20.0F; var8++) {
+         double var9 = (this.rand.nextDouble() * 2.0 - 1.0) * (double) this.size.field39968;
+         double var11 = (this.rand.nextDouble() * 2.0 - 1.0) * (double) this.size.field39968;
          this.world
-            .addParticle(
-               ParticleTypes.BUBBLE,
-               this.getPosX() + var9,
-               (double)(var7 + 1.0F),
-               this.getPosZ() + var11,
-               var5.x,
-               var5.y - this.rand.nextDouble() * 0.2F,
-               var5.z
-            );
+               .addParticle(
+                     ParticleTypes.BUBBLE,
+                     this.getPosX() + var9,
+                     (double) (var7 + 1.0F),
+                     this.getPosZ() + var11,
+                     var5.x,
+                     var5.y - this.rand.nextDouble() * 0.2F,
+                     var5.z);
       }
 
-      for (int var13 = 0; (float)var13 < 1.0F + this.size.field39968 * 20.0F; var13++) {
-         double var14 = (this.rand.nextDouble() * 2.0 - 1.0) * (double)this.size.field39968;
-         double var15 = (this.rand.nextDouble() * 2.0 - 1.0) * (double)this.size.field39968;
+      for (int var13 = 0; (float) var13 < 1.0F + this.size.field39968 * 20.0F; var13++) {
+         double var14 = (this.rand.nextDouble() * 2.0 - 1.0) * (double) this.size.field39968;
+         double var15 = (this.rand.nextDouble() * 2.0 - 1.0) * (double) this.size.field39968;
          this.world
-            .addParticle(
-               ParticleTypes.field34099,
-               this.getPosX() + var14,
-               (double)(var7 + 1.0F),
-               this.getPosZ() + var15,
-               var5.x,
-               var5.y,
-               var5.z
-            );
+               .addParticle(
+                     ParticleTypes.field34099,
+                     this.getPosX() + var14,
+                     (double) (var7 + 1.0F),
+                     this.getPosZ() + var15,
+                     var5.x,
+                     var5.y,
+                     var5.z);
       }
    }
 
@@ -1046,7 +1063,8 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public boolean method3261() {
-      return this.isSprinting() && !this.isInWater() && !this.isSpectator() && !this.isCrouching() && !this.isInLava() && this.isAlive();
+      return this.isSprinting() && !this.isInWater() && !this.isSpectator() && !this.isCrouching() && !this.isInLava()
+            && this.isAlive();
    }
 
    public void method3262() {
@@ -1058,15 +1076,14 @@ public abstract class Entity implements INameable, ICommandSource {
       if (var7.getRenderType() != BlockRenderType.field9885) {
          Vector3d var8 = this.getMotion();
          this.world
-            .addParticle(
-               new BlockParticleData(ParticleTypes.BLOCK, var7),
-               this.getPosX() + (this.rand.nextDouble() - 0.5) * (double)this.size.field39968,
-               this.getPosY() + 0.1,
-               this.getPosZ() + (this.rand.nextDouble() - 0.5) * (double)this.size.field39968,
-               var8.x * -4.0,
-               1.5,
-               var8.z * -4.0
-            );
+               .addParticle(
+                     new BlockParticleData(ParticleTypes.BLOCK, var7),
+                     this.getPosX() + (this.rand.nextDouble() - 0.5) * (double) this.size.field39968,
+                     this.getPosY() + 0.1,
+                     this.getPosZ() + (this.rand.nextDouble() - 0.5) * (double) this.size.field39968,
+                     var8.x * -4.0,
+                     1.5,
+                     var8.z * -4.0);
       }
    }
 
@@ -1086,12 +1103,12 @@ public abstract class Entity implements INameable, ICommandSource {
    private static Vector3d getAbsoluteMotion(Vector3d var0, float var1, float var2) {
       double var5 = var0.lengthSquared();
       if (!(var5 < 1.0E-7)) {
-         Vector3d var7 = (!(var5 > 1.0) ? var0 : var0.method11333()).scale((double)var1);
+         Vector3d var7 = (!(var5 > 1.0) ? var0 : var0.method11333()).scale((double) var1);
          float var8 = MathHelper.sin(var2 * (float) (Math.PI / 180.0));
          float var9 = MathHelper.cos(var2 * (float) (Math.PI / 180.0));
          return new Vector3d(
-            var7.x * (double)var9 - var7.z * (double)var8, var7.y, var7.z * (double)var9 + var7.x * (double)var8
-         );
+               var7.x * (double) var9 - var7.z * (double) var8, var7.y,
+               var7.z * (double) var9 + var7.x * (double) var8);
       } else {
          return Vector3d.ZERO;
       }
@@ -1137,7 +1154,8 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public void moveToBlockPosAndAngles(BlockPos var1, float var2, float var3) {
-      this.setLocationAndAngles((double)var1.getX() + 0.5, (double)var1.getY(), (double)var1.getZ() + 0.5, var2, var3);
+      this.setLocationAndAngles((double) var1.getX() + 0.5, (double) var1.getY(), (double) var1.getZ() + 0.5, var2,
+            var3);
    }
 
    public void setLocationAndAngles(double var1, double var3, double var5, float var7, float var8) {
@@ -1158,9 +1176,9 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public float getDistance(Entity var1) {
-      float var4 = (float)(this.getPosX() - var1.getPosX());
-      float var5 = (float)(this.getPosY() - var1.getPosY());
-      float var6 = (float)(this.getPosZ() - var1.getPosZ());
+      float var4 = (float) (this.getPosX() - var1.getPosX());
+      float var5 = (float) (this.getPosY() - var1.getPosY());
+      float var6 = (float) (this.getPosZ() - var1.getPosZ());
       return MathHelper.sqrt(var4 * var4 + var5 * var5 + var6 * var6);
    }
 
@@ -1203,8 +1221,8 @@ public abstract class Entity implements INameable, ICommandSource {
             var6 *= var10;
             var4 *= 0.05F;
             var6 *= 0.05F;
-            var4 *= (double)(1.0F - this.entityCollisionReduction);
-            var6 *= (double)(1.0F - this.entityCollisionReduction);
+            var4 *= (double) (1.0F - this.entityCollisionReduction);
+            var6 *= (double) (1.0F - this.entityCollisionReduction);
             if (!this.isBeingRidden()) {
                this.addVelocity(-var4, 0.0, -var6);
             }
@@ -1237,35 +1255,34 @@ public abstract class Entity implements INameable, ICommandSource {
    /**
     * interpolated look vector
     */
-   public Vector3d getLook(float partialTicks)
-   {
+   public Vector3d getLook(float partialTicks) {
       return this.getVectorForRotation(this.getPitch(partialTicks), this.getYaw(partialTicks));
    }
 
    /**
     * Gets the current pitch of the entity.
     */
-   public float getPitch(float partialTicks)
-   {
-      return partialTicks == 1.0F ? this.rotationPitch : MathHelper.lerp(partialTicks, this.prevRotationPitch, this.rotationPitch);
+   public float getPitch(float partialTicks) {
+      return partialTicks == 1.0F ? this.rotationPitch
+            : MathHelper.lerp(partialTicks, this.prevRotationPitch, this.rotationPitch);
    }
 
    /**
     * Gets the current yaw of the entity
     */
-   public float getYaw(float partialTicks)
-   {
-      return partialTicks == 1.0F ? this.rotationYaw : MathHelper.lerp(partialTicks, this.prevRotationYaw, this.rotationYaw);
+   public float getYaw(float partialTicks) {
+      return partialTicks == 1.0F ? this.rotationYaw
+            : MathHelper.lerp(partialTicks, this.prevRotationYaw, this.rotationYaw);
    }
 
    public final Vector3d getVectorForRotation(float pitch, float yaw) {
-      float f = pitch * ((float)Math.PI / 180F);
-      float f1 = -yaw * ((float)Math.PI / 180F);
+      float f = pitch * ((float) Math.PI / 180F);
+      float f1 = -yaw * ((float) Math.PI / 180F);
       float f2 = MathHelper.cos(f1);
       float f3 = MathHelper.sin(f1);
       float f4 = MathHelper.cos(f);
       float f5 = MathHelper.sin(f);
-      return new Vector3d((double)(f3 * f4), (double)(-f5), (double)(f2 * f4));
+      return new Vector3d((double) (f3 * f4), (double) (-f5), (double) (f2 * f4));
    }
 
    public final Vector3d getUpVector(float var1) {
@@ -1278,9 +1295,10 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public final Vector3d getEyePosition(float partialTicks) {
       if (partialTicks != 1.0F) {
-         double var4 = MathHelper.lerp((double)partialTicks, this.prevPosX, this.getPosX());
-         double var6 = MathHelper.lerp((double)partialTicks, this.prevPosY, this.getPosY()) + (double)this.getEyeHeight();
-         double var8 = MathHelper.lerp((double)partialTicks, this.prevPosZ, this.getPosZ());
+         double var4 = MathHelper.lerp((double) partialTicks, this.prevPosX, this.getPosX());
+         double var6 = MathHelper.lerp((double) partialTicks, this.prevPosY, this.getPosY())
+               + (double) this.getEyeHeight();
+         double var8 = MathHelper.lerp((double) partialTicks, this.prevPosZ, this.getPosZ());
          return new Vector3d(var4, var6, var8);
       } else {
          return new Vector3d(this.getPosX(), this.getPosYEye(), this.getPosZ());
@@ -1292,9 +1310,9 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public final Vector3d method3288(float var1) {
-      double var4 = MathHelper.lerp((double)var1, this.prevPosX, this.getPosX());
-      double var6 = MathHelper.lerp((double)var1, this.prevPosY, this.getPosY());
-      double var8 = MathHelper.lerp((double)var1, this.prevPosZ, this.getPosZ());
+      double var4 = MathHelper.lerp((double) var1, this.prevPosX, this.getPosX());
+      double var6 = MathHelper.lerp((double) var1, this.prevPosY, this.getPosY());
+      double var8 = MathHelper.lerp((double) var1, this.prevPosZ, this.getPosZ());
       return new Vector3d(var4, var6, var8);
    }
 
@@ -1302,7 +1320,8 @@ public abstract class Entity implements INameable, ICommandSource {
       Vector3d var7 = this.getEyePosition(partialTicks);
       Vector3d var8 = this.getLook(partialTicks);
       Vector3d var9 = var7.add(var8.x * rayTraceDistance, var8.y * rayTraceDistance, var8.z * rayTraceDistance);
-      return this.world.rayTraceBlocks(new RayTraceContext(var7, var9, RayTraceContext.BlockMode.OUTLINE, !p_213324_4_ ? RayTraceContext.FluidMode.NONE : RayTraceContext.FluidMode.ANY, this));
+      return this.world.rayTraceBlocks(new RayTraceContext(var7, var9, RayTraceContext.BlockMode.OUTLINE,
+            !p_213324_4_ ? RayTraceContext.FluidMode.NONE : RayTraceContext.FluidMode.ANY, this));
    }
 
    public boolean canBeCollidedWith() {
@@ -1315,7 +1334,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public void awardKillScore(Entity var1, int var2, DamageSource var3) {
       if (var1 instanceof ServerPlayerEntity) {
-         CriteriaTriggers.field44467.method15158((ServerPlayerEntity)var1, this, var3);
+         CriteriaTriggers.field44467.method15158((ServerPlayerEntity) var1, this, var3);
       }
    }
 
@@ -1355,7 +1374,8 @@ public abstract class Entity implements INameable, ICommandSource {
    public CompoundNBT writeWithoutTypeId(CompoundNBT var1) {
       try {
          if (this.ridingEntity != null) {
-            var1.put("Pos", this.newDoubleNBTList(this.ridingEntity.getPosX(), this.getPosY(), this.ridingEntity.getPosZ()));
+            var1.put("Pos",
+                  this.newDoubleNBTList(this.ridingEntity.getPosX(), this.getPosY(), this.ridingEntity.getPosZ()));
          } else {
             var1.put("Pos", this.newDoubleNBTList(this.getPosX(), this.getPosY(), this.getPosZ()));
          }
@@ -1364,8 +1384,8 @@ public abstract class Entity implements INameable, ICommandSource {
          var1.put("Motion", this.newDoubleNBTList(var4.x, var4.y, var4.z));
          var1.put("Rotation", this.newFloatNBTList(this.rotationYaw, this.rotationPitch));
          var1.putFloat("FallDistance", this.fallDistance);
-         var1.putShort("Fire", (short)this.fire);
-         var1.putShort("Air", (short)this.getAir());
+         var1.putShort("Fire", (short) this.fire);
+         var1.putShort("Air", (short) this.getAir());
          var1.putBoolean("OnGround", this.onGround);
          var1.putBoolean("Invulnerable", this.invulnerable);
          var1.putInt("PortalCooldown", this.field_242273_aw);
@@ -1434,7 +1454,8 @@ public abstract class Entity implements INameable, ICommandSource {
          double var7 = var18.getDouble(0);
          double var9 = var18.getDouble(1);
          double var11 = var18.getDouble(2);
-         this.setMotion(Math.abs(var7) > 10.0 ? 0.0 : var7, Math.abs(var9) > 10.0 ? 0.0 : var9, Math.abs(var11) > 10.0 ? 0.0 : var11);
+         this.setMotion(Math.abs(var7) > 10.0 ? 0.0 : var7, Math.abs(var9) > 10.0 ? 0.0 : var9,
+               Math.abs(var11) > 10.0 ? 0.0 : var11);
          this.setLocationAndAngles(var4.getDouble(0), var4.getDouble(1), var4.getDouble(2));
          this.rotationYaw = var19.getFloat(0);
          this.rotationPitch = var19.getFloat(1);
@@ -1455,7 +1476,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
          if (!Double.isFinite(this.getPosX()) || !Double.isFinite(this.getPosY()) || !Double.isFinite(this.getPosZ())) {
             throw new IllegalStateException("Entity has invalid position");
-         } else if (Double.isFinite((double)this.rotationYaw) && Double.isFinite((double)this.rotationPitch)) {
+         } else if (Double.isFinite((double) this.rotationYaw) && Double.isFinite((double) this.rotationPitch)) {
             this.recenterBoundingBox();
             this.setRotation(this.rotationYaw, this.rotationPitch);
             if (var1.contains("CustomName", 8)) {
@@ -1539,7 +1560,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    @Nullable
    public ItemEntity entityDropItem(IItemProvider var1, int var2) {
-      return this.method3303(new ItemStack(var1), (float)var2);
+      return this.method3303(new ItemStack(var1), (float) var2);
    }
 
    @Nullable
@@ -1551,7 +1572,8 @@ public abstract class Entity implements INameable, ICommandSource {
    public ItemEntity method3303(ItemStack var1, float var2) {
       if (!var1.isEmpty()) {
          if (!this.world.isRemote) {
-            ItemEntity var5 = new ItemEntity(this.world, this.getPosX(), this.getPosY() + (double)var2, this.getPosZ(), var1);
+            ItemEntity var5 = new ItemEntity(this.world, this.getPosX(), this.getPosY() + (double) var2, this.getPosZ(),
+                  var1);
             var5.setDefaultPickupDelay();
             this.world.addEntity(var5);
             return var5;
@@ -1571,8 +1593,10 @@ public abstract class Entity implements INameable, ICommandSource {
       if (!this.noClip) {
          float var3 = 0.1F;
          float var4 = this.size.field39968 * 0.8F;
-         AxisAlignedBB var5 = AxisAlignedBB.withSizeAtOrigin((double)var4, 0.1F, (double)var4).offset(this.getPosX(), this.getPosYEye(), this.getPosZ());
-         return this.world.func_241457_a_(this, var5, (var1, var2) -> var1.method23437(this.world, var2)).findAny().isPresent();
+         AxisAlignedBB var5 = AxisAlignedBB.withSizeAtOrigin((double) var4, 0.1F, (double) var4).offset(this.getPosX(),
+               this.getPosYEye(), this.getPosZ());
+         return this.world.func_241457_a_(this, var5, (var1, var2) -> var1.method23437(this.world, var2)).findAny()
+               .isPresent();
       } else {
          return false;
       }
@@ -1617,7 +1641,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public double method3310() {
-      return (double)this.size.field39969 * 0.75;
+      return (double) this.size.field39969 * 0.75;
    }
 
    public boolean method3311(Entity var1) {
@@ -1700,7 +1724,8 @@ public abstract class Entity implements INameable, ICommandSource {
       return this.getPassengers().size() < 1;
    }
 
-   public void setPositionAndRotationDirect(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
+   public void setPositionAndRotationDirect(double var1, double var3, double var5, float var7, float var8, int var9,
+         boolean var10) {
       this.setPosition(var1, var3, var5);
       this.setRotation(var7, var8);
    }
@@ -1740,7 +1765,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public void updatePortal() {
       if (this.world instanceof ServerWorld) {
          int var3 = this.method2858();
-         ServerWorld var4 = (ServerWorld)this.world;
+         ServerWorld var4 = (ServerWorld) this.world;
          if (!this.inPortal) {
             if (this.portalCounter > 0) {
                this.portalCounter -= 4;
@@ -1890,7 +1915,8 @@ public abstract class Entity implements INameable, ICommandSource {
          return false;
       } else {
          Team var4 = this.getTeam();
-         return var4 != null && var1 != null && var1.getTeam() == var4 && var4.method28580() ? false : this.isInvisible();
+         return var4 != null && var1 != null && var1.getTeam() == var4 && var4.method28580() ? false
+               : this.isInvisible();
       }
    }
 
@@ -1918,9 +1944,9 @@ public abstract class Entity implements INameable, ICommandSource {
    public void setFlag(int var1, boolean var2) {
       byte var5 = this.dataManager.<Byte>method35445(FLAGS);
       if (!var2) {
-         this.dataManager.set(FLAGS, (byte)(var5 & ~(1 << var1)));
+         this.dataManager.set(FLAGS, (byte) (var5 & ~(1 << var1)));
       } else {
-         this.dataManager.set(FLAGS, (byte)(var5 | 1 << var1));
+         this.dataManager.set(FLAGS, (byte) (var5 | 1 << var1));
       }
    }
 
@@ -1975,12 +2001,14 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public void pushOutOfBlocks(double var1, double var3, double var5) {
       BlockPos var9 = new BlockPos(var1, var3, var5);
-      Vector3d var10 = new Vector3d(var1 - (double)var9.getX(), var3 - (double)var9.getY(), var5 - (double)var9.getZ());
+      Vector3d var10 = new Vector3d(var1 - (double) var9.getX(), var3 - (double) var9.getY(),
+            var5 - (double) var9.getZ());
       BlockPos.Mutable var11 = new BlockPos.Mutable();
       Direction var12 = Direction.UP;
       double var13 = Double.MAX_VALUE;
 
-      for (Direction var18 : new Direction[]{Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST, Direction.UP}) {
+      for (Direction var18 : new Direction[] { Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST,
+            Direction.UP }) {
          var11.method8377(var9, var18);
          if (!this.world.getBlockState(var11).method23456(this.world, var11)) {
             double var19 = var10.getCoordinate(var18.getAxis());
@@ -1993,18 +2021,18 @@ public abstract class Entity implements INameable, ICommandSource {
       }
 
       float var23 = this.rand.nextFloat() * 0.2F + 0.1F;
-      float var24 = (float)var12.getAxisDirection().getOffset();
+      float var24 = (float) var12.getAxisDirection().getOffset();
       Vector3d var25 = this.getMotion().scale(0.75);
       if (var12.getAxis() != Direction.Axis.X) {
          if (var12.getAxis() != Direction.Axis.Y) {
             if (var12.getAxis() == Direction.Axis.Z) {
-               this.setMotion(var25.x, var25.y, (double)(var24 * var23));
+               this.setMotion(var25.x, var25.y, (double) (var24 * var23));
             }
          } else {
-            this.setMotion(var25.x, (double)(var24 * var23), var25.z);
+            this.setMotion(var25.x, (double) (var24 * var23), var25.z);
          }
       } else {
-         this.setMotion((double)(var24 * var23), var25.y, var25.z);
+         this.setMotion((double) (var24 * var23), var25.y, var25.z);
       }
    }
 
@@ -2014,7 +2042,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    private static ITextComponent method3357(ITextComponent var0) {
-      IFormattableTextComponent var3 = var0.copyRaw().setStyle(var0.getStyle().setClickEvent((ClickEvent)null));
+      IFormattableTextComponent var3 = var0.copyRaw().setStyle(var0.getStyle().setClickEvent((ClickEvent) null));
 
       for (ITextComponent var5 : var0.getSiblings()) {
          var3.append(method3357(var5));
@@ -2058,16 +2086,15 @@ public abstract class Entity implements INameable, ICommandSource {
    @Override
    public String toString() {
       return String.format(
-         Locale.ROOT,
-         "%s['%s'/%d, l='%s', x=%.2f, y=%.2f, z=%.2f]",
-         this.getClass().getSimpleName(),
-         this.getName().getString(),
-         this.entityId,
-         this.world != null ? this.world.toString() : "~NULL~",
-         this.getPosX(),
-         this.getPosY(),
-         this.getPosZ()
-      );
+            Locale.ROOT,
+            "%s['%s'/%d, l='%s', x=%.2f, y=%.2f, z=%.2f]",
+            this.getClass().getSimpleName(),
+            this.getName().getString(),
+            this.entityId,
+            this.world != null ? this.world.toString() : "~NULL~",
+            this.getPosX(),
+            this.getPosY(),
+            this.getPosZ());
    }
 
    public boolean isInvulnerableTo(DamageSource var1) {
@@ -2106,7 +2133,8 @@ public abstract class Entity implements INameable, ICommandSource {
             Entity var5 = this.getType().create(var1);
             if (var5 != null) {
                var5.method3365(this);
-               var5.setLocationAndAngles(var4.field45665.x, var4.field45665.y, var4.field45665.z, var4.field45667, var5.rotationPitch);
+               var5.setLocationAndAngles(var4.field45665.x, var4.field45665.y, var4.field45665.z, var4.field45667,
+                     var5.rotationPitch);
                var5.setMotion(var4.field45666);
                var1.method6918(var5);
                if (var1.getDimensionKey() == World.THE_END) {
@@ -2116,7 +2144,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
             this.setDead();
             this.world.getProfiler().endSection();
-            ((ServerWorld)this.world).resetUpdateEntityTick();
+            ((ServerWorld) this.world).resetUpdateEntityTick();
             var1.resetUpdateEntityTick();
             this.world.getProfiler().endSection();
             return var5;
@@ -2146,10 +2174,11 @@ public abstract class Entity implements INameable, ICommandSource {
             double var10 = Math.max(-2.9999872E7, var7.method24531() + 16.0);
             double var12 = Math.min(2.9999872E7, var7.method24532() - 16.0);
             double var14 = Math.min(2.9999872E7, var7.method24533() - 16.0);
-            double var16 = DimensionType.getCoordinateDifference(this.world.getDimensionType(), var1.getDimensionType());
+            double var16 = DimensionType.getCoordinateDifference(this.world.getDimensionType(),
+                  var1.getDimensionType());
             BlockPos var18 = new BlockPos(
-               MathHelper.clamp(this.getPosX() * var16, var8, var12), this.getPosY(), MathHelper.clamp(this.getPosZ() * var16, var10, var14)
-            );
+                  MathHelper.clamp(this.getPosX() * var16, var8, var12), this.getPosY(),
+                  MathHelper.clamp(this.getPosZ() * var16, var10, var14));
             return this.method2747(var1, var18, var19).<PortalInfo>map(var2 -> {
                BlockState var5x = this.world.getBlockState(this.field_242271_ac);
                Direction.Axis var6x;
@@ -2159,12 +2188,14 @@ public abstract class Entity implements INameable, ICommandSource {
                   var7x = new Vector3d(0.5, 0.0, 0.0);
                } else {
                   var6x = var5x.<Direction.Axis>get(BlockStateProperties.HORIZONTAL_AXIS);
-                  TeleportationRepositioner var8x = Class7215.method22658(this.field_242271_ac, var6x, 21, Direction.Axis.Y, 21, var2x -> this.world.getBlockState(var2x) == var5x);
+                  TeleportationRepositioner var8x = Class7215.method22658(this.field_242271_ac, var6x, 21,
+                        Direction.Axis.Y, 21, var2x -> this.world.getBlockState(var2x) == var5x);
                   var7x = this.func_241839_a(var6x, var8x);
                }
 
-               return Class7473.method24207(var1, var2, var6x, var7x, this.getSize(this.getPose()), this.getMotion(), this.rotationYaw, this.rotationPitch);
-            }).orElse((PortalInfo)null);
+               return Class7473.method24207(var1, var2, var6x, var7x, this.getSize(this.getPose()), this.getMotion(),
+                     this.rotationYaw, this.rotationPitch);
+            }).orElse((PortalInfo) null);
          }
       } else {
          BlockPos var6;
@@ -2175,11 +2206,10 @@ public abstract class Entity implements INameable, ICommandSource {
          }
 
          return new PortalInfo(
-            new Vector3d((double)var6.getX() + 0.5, (double)var6.getY(), (double)var6.getZ() + 0.5),
-            this.getMotion(),
-            this.rotationYaw,
-            this.rotationPitch
-         );
+               new Vector3d((double) var6.getX() + 0.5, (double) var6.getY(), (double) var6.getZ() + 0.5),
+               this.getMotion(),
+               this.rotationYaw,
+               this.rotationPitch);
       }
    }
 
@@ -2195,7 +2225,8 @@ public abstract class Entity implements INameable, ICommandSource {
       return true;
    }
 
-   public float getExplosionResistance(Explosion var1, IBlockReader var2, BlockPos var3, BlockState var4, FluidState var5, float var6) {
+   public float getExplosionResistance(Explosion var1, IBlockReader var2, BlockPos var3, BlockState var4,
+         FluidState var5, float var6) {
       return var6;
    }
 
@@ -2212,14 +2243,16 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public void fillCrashReport(CrashReportCategory var1) {
-      var1.addDetail("Entity Type", () -> EntityType.method33198(this.getType()) + " (" + this.getClass().getCanonicalName() + ")");
+      var1.addDetail("Entity Type",
+            () -> EntityType.method33198(this.getType()) + " (" + this.getClass().getCanonicalName() + ")");
       var1.addDetail("Entity ID", this.entityId);
       var1.addDetail("Entity Name", () -> this.getName().getString());
-      var1.addDetail("Entity's Exact location", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", this.getPosX(), this.getPosY(), this.getPosZ()));
+      var1.addDetail("Entity's Exact location",
+            String.format(Locale.ROOT, "%.2f, %.2f, %.2f", this.getPosX(), this.getPosY(), this.getPosZ()));
       var1.addDetail(
-         "Entity's Block location",
-         CrashReportCategory.method32805(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY()), MathHelper.floor(this.getPosZ()))
-      );
+            "Entity's Block location",
+            CrashReportCategory.method32805(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY()),
+                  MathHelper.floor(this.getPosZ())));
       Vector3d var4 = this.getMotion();
       var1.addDetail("Entity's Momentum", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", var4.x, var4.y, var4.z));
       var1.addDetail("Entity's Passengers", () -> this.getPassengers().toString());
@@ -2262,7 +2295,7 @@ public abstract class Entity implements INameable, ICommandSource {
    @Override
    public ITextComponent getDisplayName() {
       return ScorePlayerTeam.method28577(this.getTeam(), this.getName())
-         .modifyStyle(var1 -> var1.setHoverEvent(this.method3388()).setInsertion(this.getCachedUniqueIdString()));
+            .modifyStyle(var1 -> var1.setHoverEvent(this.method3388()).setInsertion(this.getCachedUniqueIdString()));
    }
 
    public void method3379(ITextComponent var1) {
@@ -2272,7 +2305,7 @@ public abstract class Entity implements INameable, ICommandSource {
    @Nullable
    @Override
    public ITextComponent method3380() {
-      return this.dataManager.<Optional<ITextComponent>>method35445(CUSTOM_NAME).orElse((ITextComponent)null);
+      return this.dataManager.<Optional<ITextComponent>>method35445(CUSTOM_NAME).orElse((ITextComponent) null);
    }
 
    @Override
@@ -2291,7 +2324,8 @@ public abstract class Entity implements INameable, ICommandSource {
    public final void teleportKeepLoaded(double var1, double var3, double var5) {
       if (this.world instanceof ServerWorld) {
          ChunkPos var9 = new ChunkPos(new BlockPos(var1, var3, var5));
-         ((ServerWorld)this.world).getChunkProvider().registerTicket(TicketType.POST_TELEPORT, var9, 0, this.getEntityId());
+         ((ServerWorld) this.world).getChunkProvider().registerTicket(TicketType.POST_TELEPORT, var9, 0,
+               this.getEntityId());
          this.world.getChunk(var9.x, var9.z);
          this.setPositionAndUpdate(var1, var3, var5);
       }
@@ -2299,7 +2333,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public void setPositionAndUpdate(double var1, double var3, double var5) {
       if (this.world instanceof ServerWorld) {
-         ServerWorld var9 = (ServerWorld)this.world;
+         ServerWorld var9 = (ServerWorld) this.world;
          this.setLocationAndAngles(var1, var3, var5, this.rotationYaw, this.rotationPitch);
          this.method3412().forEach(var1x -> {
             var9.method6909(var1x);
@@ -2331,36 +2365,32 @@ public abstract class Entity implements INameable, ICommandSource {
       if (!(var5.field39968 < var3.field39968)) {
          AxisAlignedBB var6 = this.getBoundingBox();
          this.setBoundingBox(
-            new AxisAlignedBB(
-               var6.minX,
-               var6.minY,
-               var6.minZ,
-               var6.minX + (double)var5.field39968,
-               var6.minY + (double)var5.field39969,
-               var6.minZ + (double)var5.field39968
-            )
-         );
+               new AxisAlignedBB(
+                     var6.minX,
+                     var6.minY,
+                     var6.minZ,
+                     var6.minX + (double) var5.field39968,
+                     var6.minY + (double) var5.field39969,
+                     var6.minZ + (double) var5.field39968));
          if (var5.field39968 > var3.field39968 && !this.firstUpdate && !this.world.isRemote) {
             float var9 = var3.field39968 - var5.field39968;
-            this.move(MoverType.SELF, new Vector3d((double)var9, 0.0, (double)var9));
+            this.move(MoverType.SELF, new Vector3d((double) var9, 0.0, (double) var9));
          }
       } else {
-         double var7 = (double)var5.field39968 / 2.0;
+         double var7 = (double) var5.field39968 / 2.0;
          this.setBoundingBox(
-            new AxisAlignedBB(
-               this.getPosX() - var7,
-               this.getPosY(),
-               this.getPosZ() - var7,
-               this.getPosX() + var7,
-               this.getPosY() + (double)var5.field39969,
-               this.getPosZ() + var7
-            )
-         );
+               new AxisAlignedBB(
+                     this.getPosX() - var7,
+                     this.getPosY(),
+                     this.getPosZ() - var7,
+                     this.getPosX() + var7,
+                     this.getPosY() + (double) var5.field39969,
+                     this.getPosZ() + var7));
       }
    }
 
    public Direction getHorizontalFacing() {
-      return Direction.fromAngle((double)this.rotationYaw);
+      return Direction.fromAngle((double) this.rotationYaw);
    }
 
    public Direction method3387() {
@@ -2368,7 +2398,8 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public HoverEvent method3388() {
-      return new HoverEvent(HoverEvent.Action.SHOW_ENTITY, new HoverEvent.EntityHover(this.getType(), this.getUniqueID(), this.getName()));
+      return new HoverEvent(HoverEvent.Action.SHOW_ENTITY,
+            new HoverEvent.EntityHover(this.getType(), this.getUniqueID(), this.getName()));
    }
 
    public boolean isSpectatedByPlayer(ServerPlayerEntity var1) {
@@ -2386,8 +2417,9 @@ public abstract class Entity implements INameable, ICommandSource {
    public AxisAlignedBB getBoundingBox(Pose var1) {
       EntitySize var4 = this.getSize(var1);
       float var5 = var4.field39968 / 2.0F;
-      Vector3d var6 = new Vector3d(this.getPosX() - (double)var5, this.getPosY(), this.getPosZ() - (double)var5);
-      Vector3d var7 = new Vector3d(this.getPosX() + (double)var5, this.getPosY() + (double)var4.field39969, this.getPosZ() + (double)var5);
+      Vector3d var6 = new Vector3d(this.getPosX() - (double) var5, this.getPosY(), this.getPosZ() - (double) var5);
+      Vector3d var7 = new Vector3d(this.getPosX() + (double) var5, this.getPosY() + (double) var4.field39969,
+            this.getPosZ() + (double) var5);
       return new AxisAlignedBB(var6, var7);
    }
 
@@ -2408,7 +2440,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public Vector3d func_241205_ce_() {
-      return new Vector3d(0.0, (double)this.getEyeHeight(), (double)(this.getWidth() * 0.4F));
+      return new Vector3d(0.0, (double) this.getEyeHeight(), (double) (this.getWidth() * 0.4F));
    }
 
    public boolean method2963(int var1, ItemStack var2) {
@@ -2438,7 +2470,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public void applyEnchantments(LivingEntity var1, Entity var2) {
       if (var2 instanceof LivingEntity) {
-         EnchantmentHelper.applyThornEnchantments((LivingEntity)var2, var1);
+         EnchantmentHelper.applyThornEnchantments((LivingEntity) var2, var1);
       }
 
       EnchantmentHelper.applyArthropodEnchantments(var1, var2);
@@ -2498,7 +2530,8 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public List<Entity> getPassengers() {
-      return (List<Entity>)(!this.passengers.isEmpty() ? Lists.newArrayList(this.passengers) : Collections.<Entity>emptyList());
+      return (List<Entity>) (!this.passengers.isEmpty() ? Lists.newArrayList(this.passengers)
+            : Collections.<Entity>emptyList());
    }
 
    public boolean method3409(Entity var1) {
@@ -2582,7 +2615,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public boolean canPassengerSteer() {
       Entity var3 = this.method3407();
-      return !(var3 instanceof PlayerEntity) ? !this.world.isRemote : ((PlayerEntity)var3).method2905();
+      return !(var3 instanceof PlayerEntity) ? !this.world.isRemote : ((PlayerEntity) var3).method2905();
    }
 
    public static Vector3d method3419(double var0, double var2, float var4) {
@@ -2590,7 +2623,7 @@ public abstract class Entity implements INameable, ICommandSource {
       float var9 = -MathHelper.sin(var4 * (float) (Math.PI / 180.0));
       float var10 = MathHelper.cos(var4 * (float) (Math.PI / 180.0));
       float var11 = Math.max(Math.abs(var9), Math.abs(var10));
-      return new Vector3d((double)var9 * var7 / (double)var11, 0.0, (double)var10 * var7 / (double)var11);
+      return new Vector3d((double) var9 * var7 / (double) var11, 0.0, (double) var10 * var7 / (double) var11);
    }
 
    public Vector3d method3420(LivingEntity var1) {
@@ -2616,16 +2649,15 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public CommandSource getCommandSource() {
       return new CommandSource(
-         this,
-         this.getPositionVec(),
-         this.getPitchYaw(),
-         !(this.world instanceof ServerWorld) ? null : (ServerWorld)this.world,
-         this.method2807(),
-         this.getName().getString(),
-         this.getDisplayName(),
-         this.world.getServer(),
-         this
-      );
+            this,
+            this.getPositionVec(),
+            this.getPitchYaw(),
+            !(this.world instanceof ServerWorld) ? null : (ServerWorld) this.world,
+            this.method2807(),
+            this.getName().getString(),
+            this.getDisplayName(),
+            this.world.getServer(),
+            this);
    }
 
    public int method2807() {
@@ -2657,8 +2689,10 @@ public abstract class Entity implements INameable, ICommandSource {
       double var8 = var2.y - var5.y;
       double var10 = var2.z - var5.z;
       double var12 = (double) MathHelper.sqrt(var6 * var6 + var10 * var10);
-      this.rotationPitch = MathHelper.wrapDegrees((float)(-(MathHelper.method37814(var8, var12) * 180.0F / (float)Math.PI)));
-      this.rotationYaw = MathHelper.wrapDegrees((float)(MathHelper.method37814(var10, var6) * 180.0F / (float)Math.PI) - 90.0F);
+      this.rotationPitch = MathHelper
+            .wrapDegrees((float) (-(MathHelper.method37814(var8, var12) * 180.0F / (float) Math.PI)));
+      this.rotationYaw = MathHelper
+            .wrapDegrees((float) (MathHelper.method37814(var10, var6) * 180.0F / (float) Math.PI) - 90.0F);
       this.setRotationYawHead(this.rotationYaw);
       this.prevRotationPitch = this.rotationPitch;
       this.prevRotationYaw = this.rotationYaw;
@@ -2688,7 +2722,7 @@ public abstract class Entity implements INameable, ICommandSource {
                   var19.setPos(var20, var21, var22);
                   FluidState var23 = this.world.getFluidState(var19);
                   if (var23.method23486(var1)) {
-                     double var24 = (double)((float)var21 + var23.method23475(this.world, var19));
+                     double var24 = (double) ((float) var21 + var23.method23475(this.world, var19));
                      if (var24 >= var6.minY) {
                         var16 = true;
                         var13 = Math.max(var24 - var6.minY, var13);
@@ -2709,7 +2743,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
          if (var17.length() > 0.0) {
             if (var18 > 0) {
-               var17 = var17.scale(1.0 / (double)var18);
+               var17 = var17.scale(1.0 / (double) var18);
             }
 
             if (!(this instanceof PlayerEntity)) {
@@ -2736,7 +2770,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public double func_233579_cu_() {
-      return !((double)this.getEyeHeight() < 0.4) ? 0.4 : 0.0;
+      return !((double) this.getEyeHeight() < 0.4) ? 0.4 : 0.0;
    }
 
    public final float getWidth() {
@@ -2778,7 +2812,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public double getPosXWidth(double var1) {
-      return this.positionVec.x + (double)this.getWidth() * var1;
+      return this.positionVec.x + (double) this.getWidth() * var1;
    }
 
    public double getPosXRandom(double var1) {
@@ -2790,7 +2824,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public double getPosYHeight(double var1) {
-      return this.positionVec.y + (double)this.getHeight() * var1;
+      return this.positionVec.y + (double) this.getHeight() * var1;
    }
 
    public double getPosYRandom() {
@@ -2798,7 +2832,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public double getPosYEye() {
-      return this.positionVec.y + (double)this.eyeHeight;
+      return this.positionVec.y + (double) this.eyeHeight;
    }
 
    public final double getPosZ() {
@@ -2806,7 +2840,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public double getPosZWidth(double var1) {
-      return this.positionVec.z + (double)this.getWidth() * var1;
+      return this.positionVec.z + (double) this.getWidth() * var1;
    }
 
    public double getPosZRandom(double var1) {
@@ -2831,6 +2865,6 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public Vector3d getLeashPosition(float var1) {
-      return this.method3288(var1).add(0.0, (double)this.eyeHeight * 0.7, 0.0);
+      return this.method3288(var1).add(0.0, (double) this.eyeHeight * 0.7, 0.0);
    }
 }

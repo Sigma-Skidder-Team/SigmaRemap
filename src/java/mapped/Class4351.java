@@ -28,25 +28,33 @@ public class Class4351 extends Class4278 {
    public final int field21271;
    public boolean field21272 = false;
 
-   public Class4351(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Configuration config, int var8) {
+   public Class4351(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Configuration config,
+         int var8) {
       super(var1, var2, var3, var4, var5, var6, false);
-      this.field21270 = (int)((float)var5 * 0.8F);
+      this.field21270 = (int) ((float) var5 * 0.8F);
       this.currentConfig = config;
       this.field21271 = var6;
 
       /*
-      File profileDirectory = new File(Client.getInstance().getFile() + "/profiles/");
-      if (profileDirectory.listFiles() != null) {
-         boolean profileExists = Files.exists(new File(profileDirectory, config.getName + ".profile").toPath());
-
-         if (Client.getInstance().getModuleManager().getConfigurationManager().checkConfig(config) && !profileExists) {
-            Client.getInstance().getModuleManager().getConfigurationManager().removeConfig(config);
-            return;
-         } else if (Client.getInstance().getModuleManager().getConfigurationManager().checkConfig(config) && profileExists) {
-            Client.getInstance().getModuleManager().getConfigurationManager().listOnly(config);
-         }
-      }
-
+       * File profileDirectory = new File(Client.getInstance().getFile() +
+       * "/profiles/");
+       * if (profileDirectory.listFiles() != null) {
+       * boolean profileExists = Files.exists(new File(profileDirectory,
+       * config.getName + ".profile").toPath());
+       * 
+       * if (Client.getInstance().moduleManager.getConfigurationManager().checkConfig(
+       * config) && !profileExists) {
+       * Client.getInstance().moduleManager.getConfigurationManager().removeConfig(
+       * config);
+       * return;
+       * } else if
+       * (Client.getInstance().moduleManager.getConfigurationManager().checkConfig(
+       * config) && profileExists) {
+       * Client.getInstance().moduleManager.getConfigurationManager().listOnly(config)
+       * ;
+       * }
+       * }
+       * 
        */
 
       ColorHelper var11 = ColorHelper.field27961.method19415();
@@ -59,12 +67,16 @@ public class Class4351 extends Class4278 {
       var12.method19410(ClientColors.LIGHT_GREYISH_BLUE.getColor);
       this.addToList(this.buttonList = new Class4284(this, "edit", var5 - this.field21270, 0, this.field21270, var6));
       ConfigScreenButton var13;
-      this.buttonList.addToList(var13 = new ConfigScreenButton(this.buttonList, "rename", 0, 0, this.field21270 / 2, var6, var11, "Rename"));
+      this.buttonList.addToList(var13 = new ConfigScreenButton(this.buttonList, "rename", 0, 0, this.field21270 / 2,
+            var6, var11, "Rename"));
       ConfigScreenButton deleteButton;
-      this.buttonList.addToList(deleteButton = new ConfigScreenButton(this.buttonList, "remove", this.field21270 / 2, 0, this.field21270 / 2, var6, var12, "Delete"));
+      this.buttonList.addToList(deleteButton = new ConfigScreenButton(this.buttonList, "remove", this.field21270 / 2, 0,
+            this.field21270 / 2, var6, var12, "Delete"));
       this.buttonList.method13296(false);
-      ColorHelper var15 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor, Class2218.field14488, Class2218.field14492);
-      this.addToList(this.profileName = new UIInput(this, "profileName", 16, 8, this.getWidthA() - 60, 50, var15, config.getName));
+      ColorHelper var15 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor,
+            Class2218.field14488, Class2218.field14492);
+      this.addToList(this.profileName = new UIInput(this, "profileName", 16, 8, this.getWidthA() - 60, 50, var15,
+            config.getName));
       this.profileName.method13156(false);
       this.profileName.setFont(ResourceRegistry.JelloLightFont24);
       this.profileName.setEnabled(false);
@@ -72,7 +84,8 @@ public class Class4351 extends Class4278 {
          if (this.profileName.method13297() && var3x == 257) {
             this.profileName.setEnabled(false);
             this.profileName.method13145(false);
-            if (Client.getInstance().getModuleManager().getConfigurationManager().method20768(this.profileName.getTypedText())) {
+            if (Client.getInstance().moduleManager.getConfigurationManager()
+                  .method20768(this.profileName.getTypedText())) {
                return;
             }
 
@@ -80,35 +93,37 @@ public class Class4351 extends Class4278 {
 
             try {
                System.out.println("Saving and replacing old configs with new names.");
-               Client.getInstance().getModuleManager().getConfigurationManager().saveAndReplaceConfigs();
+               Client.getInstance().moduleManager.getConfigurationManager().saveAndReplaceConfigs();
             } catch (IOException ignored) {
             }
          }
       });
       var13.setFont(ResourceRegistry.JelloLightFont18);
       deleteButton.setFont(ResourceRegistry.JelloLightFont18);
-      var13.setSize((var0, var1x) -> var0.setWidthA(Math.round((float)var1x.getWidthA() / 2.0F)));
+      var13.setSize((var0, var1x) -> var0.setWidthA(Math.round((float) var1x.getWidthA() / 2.0F)));
       deleteButton.setSize((var0, var1x) -> {
-         var0.setXA(Math.round((float)var1x.getWidthA() / 2.0F));
-         var0.setWidthA(Math.round((float)var1x.getWidthA() / 2.0F));
+         var0.setXA(Math.round((float) var1x.getWidthA() / 2.0F));
+         var0.setWidthA(Math.round((float) var1x.getWidthA() / 2.0F));
       });
       deleteButton.doThis((var1x, var2x) -> {
          this.animation.changeDirection(Direction.FORWARDS);
-          try {
-             boolean profileDeleted = Files.deleteIfExists(new File(Client.getInstance().getFile() + "/profiles/" + this.profileName.getTypedText() + ".profile").toPath());
+         try {
+            boolean profileDeleted = Files.deleteIfExists(
+                  new File(Client.getInstance().getFile() + "/profiles/" + this.profileName.getTypedText() + ".profile")
+                        .toPath());
 
-             if (!profileDeleted) {
-                File profilesFolder = new File(Client.getInstance().getFile() + "/profiles/");
-                File[] filesInProfiles = profilesFolder.listFiles();
-                if (filesInProfiles == null || filesInProfiles.length == 0) {
-                   System.out.println("Removing " + this.currentConfig.getName);
-                   Client.getInstance().getModuleManager().getConfigurationManager().removeConfig(this.currentConfig);
-                   this.currentConfig.getName = "";
-                }
-             }
-          } catch (IOException e) {
-              System.out.println("Failed to delete " + this.profileName.getTypedText() + " - " + e.getMessage());
-          }
+            if (!profileDeleted) {
+               File profilesFolder = new File(Client.getInstance().getFile() + "/profiles/");
+               File[] filesInProfiles = profilesFolder.listFiles();
+               if (filesInProfiles == null || filesInProfiles.length == 0) {
+                  System.out.println("Removing " + this.currentConfig.getName);
+                  Client.getInstance().moduleManager.getConfigurationManager().removeConfig(this.currentConfig);
+                  this.currentConfig.getName = "";
+               }
+            }
+         } catch (IOException e) {
+            System.out.println("Failed to delete " + this.profileName.getTypedText() + " - " + e.getMessage());
+         }
 
       });
       var13.doThis((var1x, var2x) -> {
@@ -125,13 +140,13 @@ public class Class4351 extends Class4278 {
          if (var2x != 1) {
             this.field21265.changeDirection(Direction.BACKWARDS);
             if (this.field21265.calcPercent() == 0.0F) {
-               Client.getInstance().getModuleManager().getConfigurationManager().loadConfig(this.currentConfig);
-               Client.getInstance().getSoundManager().play("switch");
-               ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getScreen().getScreen().getScreen();
+               Client.getInstance().moduleManager.getConfigurationManager().loadConfig(this.currentConfig);
+               Client.getInstance().soundManager.play("switch");
+               ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui) this.getScreen().getScreen().getScreen();
                var5x.method13222(() -> var5x.method13615());
 
-               for (Module module : Client.getInstance().getModuleManager().getModuleMap().values()) {
-                  if (!Client.getInstance().getNetworkManager().isPremium()) {
+               for (Module module : Client.getInstance().moduleManager.getModuleMap().values()) {
+                  if (!Client.getInstance().networkManager.isPremium()) {
                      module.setEnabledBasic(false);
                   }
                }
@@ -151,7 +166,7 @@ public class Class4351 extends Class4278 {
 
          try {
             System.out.println("Saving and replacing old configs with new names.");
-            Client.getInstance().getModuleManager().getConfigurationManager().saveAndReplaceConfigs();
+            Client.getInstance().moduleManager.getConfigurationManager().saveAndReplaceConfigs();
          } catch (IOException var6) {
          }
       }
@@ -168,13 +183,13 @@ public class Class4351 extends Class4278 {
    public void draw(float var1) {
       if (this.animation.calcPercent() == 1.0F && !this.field21272) {
          this.field21272 = true;
-         ConfigButtonOnClickGui var4 = (ConfigButtonOnClickGui)this.getScreen().getScreen().getScreen();
-         Client.getInstance().getModuleManager().getConfigurationManager().checkConfig(this.currentConfig);
+         ConfigButtonOnClickGui var4 = (ConfigButtonOnClickGui) this.getScreen().getScreen().getScreen();
+         Client.getInstance().moduleManager.getConfigurationManager().checkConfig(this.currentConfig);
          var4.method13222(() -> var4.method13615());
       }
 
       float var8 = MathUtils.lerp(this.animation.calcPercent(), 0.1, 0.81, 0.14, 1.0);
-      this.setHeightA(Math.round((1.0F - var8) * (float)this.field21271));
+      this.setHeightA(Math.round((1.0F - var8) * (float) this.field21271));
       var1 *= 1.0F - this.animation.calcPercent();
       float var5 = MathUtils.lerp(this.field21265.calcPercent(), 0.28, 1.26, 0.33, 1.04);
       if (this.field21265.getDirection().equals(Direction.BACKWARDS)) {
@@ -182,37 +197,35 @@ public class Class4351 extends Class4278 {
       }
 
       this.buttonList.method13296(this.field21265.calcPercent() == 1.0F);
-      this.buttonList.setWidthA(Math.max(0, (int)((float)this.field21270 * var5)));
-      this.buttonList.method13284((int)((float)this.field21270 * (1.0F - var5)));
+      this.buttonList.setWidthA(Math.max(0, (int) ((float) this.field21270 * var5)));
+      this.buttonList.method13284((int) ((float) this.field21270 * (1.0F - var5)));
       RenderUtil.method11415(this);
       float var6 = this.method13212() && this.field21265.getDirection().equals(Direction.BACKWARDS) ? 0.03F : 0.0F;
       RenderUtil.renderBackgroundBox(
-         (float)this.xA,
-         (float)this.yA,
-         (float)this.widthA,
-         (float)this.heightA,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F * this.field21264.calcPercent() + var6)
-      );
+            (float) this.xA,
+            (float) this.yA,
+            (float) this.widthA,
+            (float) this.heightA,
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F * this.field21264.calcPercent() + var6));
       if (!this.profileName.method13297()) {
          RenderUtil.drawString(
-            ResourceRegistry.JelloLightFont24,
-            (float)(this.xA + 20) - var5 * (float)this.widthA,
-            (float)(this.yA + 18),
-            this.currentConfig.getName,
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.9F * var1)
-         );
+               ResourceRegistry.JelloLightFont24,
+               (float) (this.xA + 20) - var5 * (float) this.widthA,
+               (float) (this.yA + 18),
+               this.currentConfig.getName,
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.9F * var1));
       }
 
-      this.profileName.method13284(Math.round(-var5 * (float)this.widthA));
-      if (Client.getInstance().getModuleManager().getConfigurationManager().getCurrentConfig() == this.currentConfig) {
+      this.profileName.method13284(Math.round(-var5 * (float) this.widthA));
+      if (Client.getInstance().moduleManager.getConfigurationManager().getCurrentConfig() == this.currentConfig) {
          RenderUtil.drawImage(
-            (float)(this.getXA() + this.getWidthA() - 35) - var5 * (float)this.widthA,
-            (float)(this.getYA() + 27),
-            17.0F,
-            13.0F,
-            ResourceList.activePNG,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (1.0F - this.field21265.calcPercent()) * var1)
-         );
+               (float) (this.getXA() + this.getWidthA() - 35) - var5 * (float) this.widthA,
+               (float) (this.getYA() + 27),
+               17.0F,
+               13.0F,
+               ResourceList.activePNG,
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor,
+                     (1.0F - this.field21265.calcPercent()) * var1));
       }
 
       super.draw(var1);

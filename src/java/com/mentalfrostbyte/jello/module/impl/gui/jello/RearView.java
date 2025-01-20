@@ -36,14 +36,16 @@ public class RearView extends Module {
         this.animation = new Animation(230, 200, Direction.BACKWARDS);
         this.registerSetting(new BooleanSetting("Show in GUI", "Makes the Rear View visible in guis", false));
         this.registerSetting(new BooleanSetting("Smart Visibility", "Only pops up when a player is behind you", false));
-        this.registerSetting(new NumberSetting<Integer>("Size", "The rear view width", 400.0F, Integer.class, 120.0F, 1000.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Integer>("Size", "The rear view width", 400.0F, Integer.class, 120.0F,
+                1000.0F, 1.0F));
         this.method16005(false);
     }
 
     @EventTarget
     public void onTick(TickEvent event) {
         if (this.isEnabled()) {
-            if (framebuffer != null && (framebuffer.framebufferWidth != mc.mainWindow.getFramebufferWidth() || framebuffer.framebufferHeight != mc.mainWindow.getFramebufferHeight())) {
+            if (framebuffer != null && (framebuffer.framebufferWidth != mc.mainWindow.getFramebufferWidth()
+                    || framebuffer.framebufferHeight != mc.mainWindow.getFramebufferHeight())) {
                 this.onEnable();
             }
 
@@ -55,8 +57,7 @@ public class RearView extends Module {
                                 var1x -> var1x.getDistance(mc.player) < 12.0F
                                         && !this.isEntityWithinViewAngle(var1x)
                                         && mc.player != var1x
-                                        && !Client.getInstance().getCombatManager().isTargetABot(var1x)
-                        );
+                                        && !Client.getInstance().combatManager.isTargetABot(var1x));
                 if (entities.isEmpty()) {
                     if (this.visibilityTimer > 0) {
                         this.visibilityTimer--;
@@ -69,7 +70,8 @@ public class RearView extends Module {
     }
 
     public boolean isEntityWithinViewAngle(LivingEntity targetEntity) {
-        float rotations = RotationHelper.calculateEntityRotations(targetEntity, mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ())[0];
+        float rotations = RotationHelper.calculateEntityRotations(targetEntity, mc.player.getPosX(),
+                mc.player.getPosY(), mc.player.getPosZ())[0];
         return this.calculateAngleDifference(mc.player.rotationYaw, rotations) <= 90.0F;
     }
 
@@ -82,15 +84,19 @@ public class RearView extends Module {
     public void onRender(EventRender onRender) {
         if (framebuffer != null) {
             if (this.isEnabled()) {
-                if (! Minecraft.getInstance().gameSettings.hideGUI) {
+                if (!Minecraft.getInstance().gameSettings.hideGUI) {
                     if (!this.getBooleanValueFromSettingName("Smart Visibility")) {
-                        this.animation.changeDirection(mc.currentScreen != null && !this.getBooleanValueFromSettingName("Show in GUI") ? Direction.BACKWARDS : Direction.FORWARDS);
+                        this.animation.changeDirection(
+                                mc.currentScreen != null && !this.getBooleanValueFromSettingName("Show in GUI")
+                                        ? Direction.BACKWARDS
+                                        : Direction.FORWARDS);
                     } else {
-                        this.animation.changeDirection(this.visibilityTimer <= 0 ? Direction.BACKWARDS : Direction.FORWARDS);
+                        this.animation
+                                .changeDirection(this.visibilityTimer <= 0 ? Direction.BACKWARDS : Direction.FORWARDS);
                     }
 
                     float aspectRatio = (float) mc.mainWindow.getWidth() / (float) mc.mainWindow.getHeight();
-                    int rearViewWidth    = (int) this.getNumberValueBySettingName("Size");
+                    int rearViewWidth = (int) this.getNumberValueBySettingName("Size");
                     int rearViewHeight = (int) ((float) rearViewWidth / aspectRatio);
                     int offset = 10;
                     int positionY = -offset - rearViewHeight;
@@ -99,27 +105,37 @@ public class RearView extends Module {
                             return;
                         }
                     } else if (this.animation.getDirection() != Direction.FORWARDS) {
-                        positionY = (int) ((float) positionY * MathUtils.lerp(this.animation.calcPercent(), 0.49, 0.59, 0.16, 1.04));
+                        positionY = (int) ((float) positionY
+                                * MathUtils.lerp(this.animation.calcPercent(), 0.49, 0.59, 0.16, 1.04));
                     } else {
-                        positionY = (int) ((float) positionY * MathUtils.lerp(this.animation.calcPercent(), 0.3, 0.88, 0.47, 1.0));
+                        positionY = (int) ((float) positionY
+                                * MathUtils.lerp(this.animation.calcPercent(), 0.3, 0.88, 0.47, 1.0));
                     }
 
-                    RenderUtil.drawRoundedRect((float) (mc.mainWindow.getWidth() - offset - rearViewWidth), (float) (mc.mainWindow.getHeight() + positionY), (float) rearViewWidth, (float) (rearViewHeight - 1), 14.0F, this.animation.calcPercent());
+                    RenderUtil.drawRoundedRect((float) (mc.mainWindow.getWidth() - offset - rearViewWidth),
+                            (float) (mc.mainWindow.getHeight() + positionY), (float) rearViewWidth,
+                            (float) (rearViewHeight - 1), 14.0F, this.animation.calcPercent());
                     rearViewWidth = (int) ((float) rearViewWidth * GuiManager.portalScaleFactor);
                     rearViewHeight = (int) ((float) rearViewHeight * GuiManager.portalScaleFactor);
                     offset = (int) ((float) offset * GuiManager.portalScaleFactor);
                     positionY = (int) ((float) positionY * GuiManager.portalScaleFactor);
                     RenderSystem.pushMatrix();
-                    this.renderFramebuffer(framebuffer, rearViewWidth, rearViewHeight, mc.mainWindow.getFramebufferWidth() - offset - rearViewWidth, mc.mainWindow.getFramebufferHeight() + positionY);
+                    this.renderFramebuffer(framebuffer, rearViewWidth, rearViewHeight,
+                            mc.mainWindow.getFramebufferWidth() - offset - rearViewWidth,
+                            mc.mainWindow.getFramebufferHeight() + positionY);
                     RenderSystem.popMatrix();
                     RenderSystem.clear(256, Minecraft.IS_RUNNING_ON_MAC);
                     RenderSystem.matrixMode(5889);
                     RenderSystem.loadIdentity();
-                    RenderSystem.ortho(0.0, (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.getGuiScaleFactor(), (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.getGuiScaleFactor(), 0.0, 1000.0, 3000.0);
+                    RenderSystem.ortho(0.0,
+                            (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.getGuiScaleFactor(),
+                            (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.getGuiScaleFactor(), 0.0,
+                            1000.0, 3000.0);
                     RenderSystem.matrixMode(5888);
                     RenderSystem.loadIdentity();
                     RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
-                    GL11.glScaled(1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor, 1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor, 1.0);
+                    GL11.glScaled(1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor,
+                            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor, 1.0);
                     framebuffer.unbindFramebuffer();
                     mc.getFramebuffer().bindFramebuffer(true);
                 }
@@ -154,7 +170,8 @@ public class RearView extends Module {
         BufferBuilder buffer = tezz.getBuffer();
         buffer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
         buffer.pos(posX, (double) var11 + posY, 0.0).tex(0.0F, 0.0F).color(255, 255, 255, 255).endVertex();
-        buffer.pos((double) var10 + posX, (double) var11 + posY, 0.0).tex(var12, 0.0F).color(255, 255, 255, 255).endVertex();
+        buffer.pos((double) var10 + posX, (double) var11 + posY, 0.0).tex(var12, 0.0F).color(255, 255, 255, 255)
+                .endVertex();
         buffer.pos((double) var10 + posX, posY, 0.0).tex(var12, var13).color(255, 255, 255, 255).endVertex();
         buffer.pos(posX, posY, 0.0).tex(0.0F, var13).color(255, 255, 255, 255).endVertex();
         tezz.draw();
@@ -167,7 +184,8 @@ public class RearView extends Module {
     public void on2D(Render2DEvent event) {
         if (this.isEnabled()) {
             if (framebuffer != null) {
-                if (mc.currentScreen == null || this.getBooleanValueFromSettingName("Show in GUI") || this.visibilityTimer != 0) {
+                if (mc.currentScreen == null || this.getBooleanValueFromSettingName("Show in GUI")
+                        || this.visibilityTimer != 0) {
                     RenderSystem.pushMatrix();
                     RenderSystem.clear(16640, false);
                     framebuffer.bindFramebuffer(true);
@@ -200,7 +218,8 @@ public class RearView extends Module {
 
     @Override
     public void onEnable() {
-        framebuffer = new Framebuffer(mc.mainWindow.getFramebufferWidth(), mc.mainWindow.getFramebufferHeight(), true, Minecraft.IS_RUNNING_ON_MAC);
+        framebuffer = new Framebuffer(mc.mainWindow.getFramebufferWidth(), mc.mainWindow.getFramebufferHeight(), true,
+                Minecraft.IS_RUNNING_ON_MAC);
         framebuffer.setFramebufferColor(1.0F, 1.0F, 1.0F, 1.0F);
     }
 

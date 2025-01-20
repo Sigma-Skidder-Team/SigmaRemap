@@ -183,8 +183,8 @@ public class AutoPotion extends Module {
             } else {
                 this.field23808 = 0;
                 int var7 = mc.player.inventory.currentItem;
-                boolean var8 = Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()
-                        && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).getStringSettingValueByName("Type").equalsIgnoreCase("NoGround");
+                boolean var8 = Client.getInstance().moduleManager.getModuleByClass(Criticals.class).isEnabled()
+                        && Client.getInstance().moduleManager.getModuleByClass(Criticals.class).getStringSettingValueByName("Type").equalsIgnoreCase("NoGround");
                 float[] var9 = this.method16630();
                 mc.player.inventory.currentItem = var6 - 36;
                 mc.playerController.syncCurrentPlayItem();

@@ -46,7 +46,7 @@ public class ModuleManager {
         this.modules.sort(Comparator.comparing(Module::getSuffix));
 
         for (Module mod : this.modules) {
-            Client.getInstance().getEventManager().register(mod);
+            Client.getInstance().eventManager.register(mod);
             this.moduleMap.put(mod.getClass(), mod);
         }
     }
@@ -239,7 +239,8 @@ public class ModuleManager {
                         } catch (JSONException2 | JSONException var12) {
                             Client.getInstance()
                                     .getLogger()
-                                    .warn("Could not initialize mod " + module.getName() + " from config. All settings for this mod have been erased.");
+                                    .warn("Could not initialize mod " + module.getName()
+                                            + " from config. All settings for this mod have been erased.");
                         }
                         break;
                     }
@@ -251,20 +252,20 @@ public class ModuleManager {
 
         for (Module module : this.moduleMap.values()) {
             if (module.isEnabled()) {
-                Client.getInstance().getEventManager().subscribe(module);
+                Client.getInstance().eventManager.subscribe(module);
                 if (module instanceof ModuleWithModuleSettings) {
                     ModuleWithModuleSettings moduleWithSettings = (ModuleWithModuleSettings) module;
                     if (moduleWithSettings.parentModule != null) {
-                        Client.getInstance().getEventManager().subscribe(moduleWithSettings.parentModule);
+                        Client.getInstance().eventManager.subscribe(moduleWithSettings.parentModule);
                     }
                 }
             } else {
-                Client.getInstance().getEventManager().unsubscribe(module);
+                Client.getInstance().eventManager.unsubscribe(module);
                 if (module instanceof ModuleWithModuleSettings) {
                     ModuleWithModuleSettings moduleWithSettings = (ModuleWithModuleSettings) module;
 
                     for (Module module1 : moduleWithSettings.moduleArray) {
-                        Client.getInstance().getEventManager().unsubscribe(module1);
+                        Client.getInstance().eventManager.unsubscribe(module1);
                     }
                 }
             }
@@ -291,7 +292,8 @@ public class ModuleManager {
 
         try {
             var4 = var1.getString("profile");
-        } catch (JSONException ignored) {}
+        } catch (JSONException ignored) {
+        }
 
         if (Client.getInstance().getClientMode() == ClientMode.CLASSIC) {
             var4 = "Classic";

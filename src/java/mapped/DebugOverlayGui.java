@@ -47,15 +47,14 @@ import java.util.stream.Stream;
 
 public class DebugOverlayGui extends AbstractGui {
    private static final Map<Heightmap.Type, String> HEIGHTMAP_NAMES = Util.make(
-           new EnumMap<>(Heightmap.Type.class), var0 -> {
-         var0.put(Heightmap.Type.WORLD_SURFACE_WG, "SW");
-         var0.put(Heightmap.Type.WORLD_SURFACE, "S");
-         var0.put(Heightmap.Type.OCEAN_FLOOR_WG, "OW");
-         var0.put(Heightmap.Type.OCEAN_FLOOR, "O");
-         var0.put(Heightmap.Type.MOTION_BLOCKING, "M");
-         var0.put(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, "ML");
-      }
-   );
+         new EnumMap<>(Heightmap.Type.class), var0 -> {
+            var0.put(Heightmap.Type.WORLD_SURFACE_WG, "SW");
+            var0.put(Heightmap.Type.WORLD_SURFACE, "S");
+            var0.put(Heightmap.Type.OCEAN_FLOOR_WG, "OW");
+            var0.put(Heightmap.Type.OCEAN_FLOOR, "O");
+            var0.put(Heightmap.Type.MOTION_BLOCKING, "M");
+            var0.put(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, "ML");
+         });
    private final Minecraft mc;
    private final FontRenderer fontRenderer;
    private RayTraceResult rayTraceBlock;
@@ -107,12 +106,11 @@ public class DebugOverlayGui extends AbstractGui {
          var4.add("");
          boolean var5 = this.mc.getIntegratedServer() != null;
          var4.add(
-            "Debug: Pie [shift]: "
-               + (!this.mc.gameSettings.showDebugProfilerChart ? "hidden" : "visible")
-               + (!var5 ? " FPS" : " FPS + TPS")
-               + " [alt]: "
-               + (!this.mc.gameSettings.showLagometer ? "hidden" : "visible")
-         );
+               "Debug: Pie [shift]: "
+                     + (!this.mc.gameSettings.showDebugProfilerChart ? "hidden" : "visible")
+                     + (!var5 ? " FPS" : " FPS + TPS")
+                     + " [alt]: "
+                     + (!this.mc.gameSettings.showLagometer ? "hidden" : "visible"));
          var4.add("For help: press F3 + Q");
          this.debugInfoLeft = var4;
          this.updateInfoLeftTimeMs = System.currentTimeMillis() + 100L;
@@ -122,7 +120,7 @@ public class DebugOverlayGui extends AbstractGui {
       GuiRect[] var6 = new GuiRect[var4.size()];
 
       for (int var7 = 0; var7 < var4.size(); var7++) {
-         String var8 = (String)var4.get(var7);
+         String var8 = (String) var4.get(var7);
          if (!Strings.isNullOrEmpty(var8)) {
             byte var9 = 9;
             int var10 = this.fontRenderer.getStringWidth(var8);
@@ -134,7 +132,8 @@ public class DebugOverlayGui extends AbstractGui {
       }
 
       GuiUtils.fill(var1.getLast().getMatrix(), var6, -1873784752);
-      this.fontRenderer.renderStrings(var4, var13, 14737632, var1.getLast().getMatrix(), false, this.fontRenderer.method38829());
+      this.fontRenderer.renderStrings(var4, var13, 14737632, var1.getLast().getMatrix(), false,
+            this.fontRenderer.method38829());
    }
 
    public void renderDebugInfoRight(MatrixStack var1) {
@@ -149,7 +148,7 @@ public class DebugOverlayGui extends AbstractGui {
       GuiRect[] var6 = new GuiRect[var4.size()];
 
       for (int var7 = 0; var7 < var4.size(); var7++) {
-         String var8 = (String)var4.get(var7);
+         String var8 = (String) var4.get(var7);
          if (!Strings.isNullOrEmpty(var8)) {
             byte var9 = 9;
             int var10 = this.fontRenderer.getStringWidth(var8);
@@ -161,7 +160,8 @@ public class DebugOverlayGui extends AbstractGui {
       }
 
       GuiUtils.fill(var1.getLast().getMatrix(), var6, -1873784752);
-      this.fontRenderer.renderStrings(var4, var5, 14737632, var1.getLast().getMatrix(), false, this.fontRenderer.method38829());
+      this.fontRenderer.renderStrings(var4, var5, 14737632, var1.getLast().getMatrix(), false,
+            this.fontRenderer.method38829());
    }
 
    public List<String> getDebugInfoLeft() {
@@ -220,7 +220,7 @@ public class DebugOverlayGui extends AbstractGui {
       String var12 = var10.toString();
 
       for (int var13 = 0; var13 < var9.size(); var13++) {
-         String var8 = (String)var9.get(var13);
+         String var8 = (String) var9.get(var13);
          if (var8 != null && var8.startsWith("P: ")) {
             var8 = var8 + var12;
             var9.set(var13, var8);
@@ -233,7 +233,7 @@ public class DebugOverlayGui extends AbstractGui {
 
    public List<String> getInfoLeft() {
       IntegratedServer var3 = this.mc.getIntegratedServer();
-      NetworkManager var4 = this.mc.getConnection().getNetworkManager();
+      NetworkManager var4 = this.mc.getConnection().networkManager;
       float var5 = var4.getPacketsSent();
       float var6 = var4.getPacketsReceived();
       String var7;
@@ -248,15 +248,15 @@ public class DebugOverlayGui extends AbstractGui {
 
       if (this.mc.isReducedDebug()) {
          return Lists.newArrayList(
-                 "Minecraft " + var9 + " (" + this.mc.getVersion() + "/" + ClientBrandRetriever.getClientModName() + ")",
-                 this.mc.debug,
-                 var7,
-                 this.mc.worldRenderer.getDebugInfoRenders(),
-                 this.mc.worldRenderer.getDebugInfoEntities(),
-                 "P: " + this.mc.particles.getStatistics() + ". T: " + this.mc.world.getCountLoadedEntities(),
-                 this.mc.world.getProviderName(),
-                 "",
-                 String.format("Chunk-relative: %d %d %d", var8.getX() & 15, var8.getY() & 15, var8.getZ() & 15));
+               "Minecraft " + var9 + " (" + this.mc.getVersion() + "/" + ClientBrandRetriever.getClientModName() + ")",
+               this.mc.debug,
+               var7,
+               this.mc.worldRenderer.getDebugInfoRenders(),
+               this.mc.worldRenderer.getDebugInfoEntities(),
+               "P: " + this.mc.particles.getStatistics() + ". T: " + this.mc.world.getCountLoadedEntities(),
+               this.mc.world.getProviderName(),
+               "",
+               String.format("Chunk-relative: %d %d %d", var8.getX() & 15, var8.getY() & 15, var8.getZ() & 15));
       } else {
          Entity var10 = this.mc.getRenderViewEntity();
          Direction var11 = var10.getHorizontalFacing();
@@ -285,25 +285,25 @@ public class DebugOverlayGui extends AbstractGui {
          }
 
          World var14 = this.getWorld();
-         LongSet var15 = var14 instanceof ServerWorld ? ((ServerWorld)var14).method6949() : LongSets.EMPTY_SET;
+         LongSet var15 = var14 instanceof ServerWorld ? ((ServerWorld) var14).method6949() : LongSets.EMPTY_SET;
          List<String> var16 = Lists.newArrayList(
-            new String[]{
-               "Minecraft "
-                  + SharedConstants.getVersion().getName()
-                  + " ("
-                  + this.mc.getVersion()
-                  + "/"
-                  + ClientBrandRetriever.getClientModName()
-                  + ("release".equalsIgnoreCase(this.mc.getVersionType()) ? "" : "/" + this.mc.getVersionType())
-                  + ")",
-               this.mc.debug,
-               var7,
-               this.mc.worldRenderer.getDebugInfoRenders(),
-               this.mc.worldRenderer.getDebugInfoEntities(),
-               "P: " + this.mc.particles.getStatistics() + ". T: " + this.mc.world.getCountLoadedEntities(),
-               this.mc.world.getProviderName()
-            }
-         );
+               new String[] {
+                     "Minecraft "
+                           + SharedConstants.getVersion().getName()
+                           + " ("
+                           + this.mc.getVersion()
+                           + "/"
+                           + ClientBrandRetriever.getClientModName()
+                           + ("release".equalsIgnoreCase(this.mc.getVersionType()) ? ""
+                                 : "/" + this.mc.getVersionType())
+                           + ")",
+                     this.mc.debug,
+                     var7,
+                     this.mc.worldRenderer.getDebugInfoRenders(),
+                     this.mc.worldRenderer.getDebugInfoEntities(),
+                     "P: " + this.mc.particles.getStatistics() + ". T: " + this.mc.world.getCountLoadedEntities(),
+                     this.mc.world.getProviderName()
+               });
          String var17 = this.getServerChunkStats();
          if (var17 != null) {
             var16.add(var17);
@@ -312,31 +312,26 @@ public class DebugOverlayGui extends AbstractGui {
          var16.add(this.mc.world.getDimensionKey().getLocation() + " FC: " + var15.size());
          var16.add("");
          var16.add(
-            String.format(
-               Locale.ROOT,
-               "XYZ: %.3f / %.5f / %.3f",
-               this.mc.getRenderViewEntity().getPosX(),
-               this.mc.getRenderViewEntity().getPosY(),
-               this.mc.getRenderViewEntity().getPosZ()
-            )
-         );
+               String.format(
+                     Locale.ROOT,
+                     "XYZ: %.3f / %.5f / %.3f",
+                     this.mc.getRenderViewEntity().getPosX(),
+                     this.mc.getRenderViewEntity().getPosY(),
+                     this.mc.getRenderViewEntity().getPosZ()));
          var16.add(String.format("Block: %d %d %d", var8.getX(), var8.getY(), var8.getZ()));
          var16.add(
-            String.format(
-               "Chunk: %d %d %d in %d %d %d",
-               var8.getX() & 15,
-               var8.getY() & 15,
-               var8.getZ() & 15,
-               var8.getX() >> 4,
-               var8.getY() >> 4,
-               var8.getZ() >> 4
-            )
-         );
+               String.format(
+                     "Chunk: %d %d %d in %d %d %d",
+                     var8.getX() & 15,
+                     var8.getY() & 15,
+                     var8.getZ() & 15,
+                     var8.getX() >> 4,
+                     var8.getY() >> 4,
+                     var8.getZ() >> 4));
          var16.add(
-            String.format(
-               Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", var11, var12, MathHelper.wrapDegrees(var10.rotationYaw), MathHelper.wrapDegrees(var10.rotationPitch)
-            )
-         );
+               String.format(
+                     Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", var11, var12,
+                     MathHelper.wrapDegrees(var10.rotationYaw), MathHelper.wrapDegrees(var10.rotationPitch)));
          if (this.mc.world != null) {
             if (this.mc.world.isBlockLoaded(var8)) {
                Chunk var18 = this.getChunk();
@@ -351,12 +346,11 @@ public class DebugOverlayGui extends AbstractGui {
                   if (var22 != null) {
                      WorldLightManager var23 = var14.getChunkProvider().getLightManager();
                      var16.add(
-                        "Server Light: ("
-                           + var23.getLightEngine(LightType.SKY).method643(var8)
-                           + " sky, "
-                           + var23.getLightEngine(LightType.BLOCK).method643(var8)
-                           + " block)"
-                     );
+                           "Server Light: ("
+                                 + var23.getLightEngine(LightType.SKY).method643(var8)
+                                 + " sky, "
+                                 + var23.getLightEngine(LightType.BLOCK).method643(var8)
+                                 + " block)");
                   } else {
                      var16.add("Server Light: (?? sky, ?? block)");
                   }
@@ -365,7 +359,8 @@ public class DebugOverlayGui extends AbstractGui {
 
                   for (Heightmap.Type var27 : Heightmap.Type.values()) {
                      if (var27.method284()) {
-                        var35.append(" ").append(HEIGHTMAP_NAMES.get(var27)).append(": ").append(var18.getTopBlockY(var27, var8.getX(), var8.getZ()));
+                        var35.append(" ").append(HEIGHTMAP_NAMES.get(var27)).append(": ")
+                              .append(var18.getTopBlockY(var27, var8.getX(), var8.getZ()));
                      }
                   }
 
@@ -387,13 +382,11 @@ public class DebugOverlayGui extends AbstractGui {
                   var16.add(var35.toString());
                   if (var8.getY() >= 0 && var8.getY() < 256) {
                      var16.add(
-                        "Biome: "
-                           + this.mc
-                              .world
-                              .func_241828_r()
-                              .<Biome>getRegistry(Registry.BIOME_KEY)
-                              .getKey(this.mc.world.getBiome(var8))
-                     );
+                           "Biome: "
+                                 + this.mc.world
+                                       .func_241828_r()
+                                       .<Biome>getRegistry(Registry.BIOME_KEY)
+                                       .getKey(this.mc.world.getBiome(var8)));
                      long var28 = 0L;
                      float var39 = 0.0F;
                      if (var22 != null) {
@@ -403,14 +396,12 @@ public class DebugOverlayGui extends AbstractGui {
 
                      Class9755 var41 = new Class9755(var14.method6997(), var14.method6784(), var28, var39);
                      var16.add(
-                        String.format(
-                           Locale.ROOT,
-                           "Local Difficulty: %.2f // %.2f (Day %d)",
-                           var41.method38328(),
-                           var41.method38330(),
-                           this.mc.world.method6784() / 24000L
-                        )
-                     );
+                           String.format(
+                                 Locale.ROOT,
+                                 "Local Difficulty: %.2f // %.2f (Day %d)",
+                                 var41.method38328(),
+                                 var41.method38330(),
+                                 this.mc.world.method6784() / 24000L));
                   }
                }
             } else {
@@ -427,13 +418,13 @@ public class DebugOverlayGui extends AbstractGui {
                Object2IntMap var33 = var31.method23091();
                int var34 = var31.method23090();
                var16.add(
-                  "SC: "
-                     + var34
-                     + ", "
-                     + Stream.<EntityClassification>of(EntityClassification.values())
-                        .<CharSequence>map(var1 -> Character.toUpperCase(var1.method517().charAt(0)) + ": " + var33.getInt(var1))
-                        .collect(Collectors.joining(", "))
-               );
+                     "SC: "
+                           + var34
+                           + ", "
+                           + Stream.<EntityClassification>of(EntityClassification.values())
+                                 .<CharSequence>map(var1 -> Character.toUpperCase(var1.method517().charAt(0)) + ": "
+                                       + var33.getInt(var1))
+                                 .collect(Collectors.joining(", ")));
             } else {
                var16.add("SC: N/A");
             }
@@ -444,7 +435,8 @@ public class DebugOverlayGui extends AbstractGui {
             var16.add("ShaderGroup: " + var32.method6527());
          }
 
-         var16.add(this.mc.getSoundHandler().method1014() + String.format(" (Mood %d%%)", Math.round(this.mc.player.method5387() * 100.0F)));
+         var16.add(this.mc.getSoundHandler().method1014()
+               + String.format(" (Mood %d%%)", Math.round(this.mc.player.method5387() * 100.0F)));
          return var16;
       }
    }
@@ -462,11 +454,10 @@ public class DebugOverlayGui extends AbstractGui {
    }
 
    private World getWorld() {
-      return (World)DataFixUtils.orElse(
-         Optional.<IntegratedServer>ofNullable(this.mc.getIntegratedServer())
-            .<ServerWorld>flatMap(var1 -> Optional.ofNullable(var1.method1318(this.mc.world.getDimensionKey()))),
-         this.mc.world
-      );
+      return (World) DataFixUtils.orElse(
+            Optional.<IntegratedServer>ofNullable(this.mc.getIntegratedServer())
+                  .<ServerWorld>flatMap(var1 -> Optional.ofNullable(var1.method1318(this.mc.world.getDimensionKey()))),
+            this.mc.world);
    }
 
    @Nullable
@@ -475,8 +466,8 @@ public class DebugOverlayGui extends AbstractGui {
          ServerWorld var3 = this.method5883();
          if (var3 != null) {
             this.futureChunk = var3.getChunkProvider()
-               .method7358(this.chunkPos.x, this.chunkPos.z, ChunkStatus.FULL, false)
-               .<Chunk>thenApply(var0 -> (Chunk)var0.map(var0x -> (Chunk)var0x, var0x -> null));
+                  .method7358(this.chunkPos.x, this.chunkPos.z, ChunkStatus.FULL, false)
+                  .<Chunk>thenApply(var0 -> (Chunk) var0.map(var0x -> (Chunk) var0x, var0x -> null));
          }
 
          if (this.futureChunk == null) {
@@ -484,7 +475,7 @@ public class DebugOverlayGui extends AbstractGui {
          }
       }
 
-      return this.futureChunk.getNow((Chunk)null);
+      return this.futureChunk.getNow((Chunk) null);
    }
 
    private Chunk getChunk() {
@@ -501,20 +492,20 @@ public class DebugOverlayGui extends AbstractGui {
       long var7 = Runtime.getRuntime().freeMemory();
       long var9 = var5 - var7;
       ArrayList var11 = Lists.newArrayList(
-         new String[]{
-            String.format("Java: %s %dbit", System.getProperty("java.version"), !this.mc.isJava64bit() ? 32 : 64),
-            String.format("Mem: % 2d%% %03d/%03dMB", var9 * 100L / var3, method5893(var9), method5893(var3)),
-            String.format("Allocated: % 2d%% %03dMB", var5 * 100L / var3, method5893(var5)),
-            "",
-            String.format("CPU: %s", PlatformDescriptors.getCpuInfo()),
-            "",
-            String.format(
-               "Display: %dx%d (%s)", Minecraft.getInstance().getMainWindow().getFramebufferWidth(), Minecraft.getInstance().getMainWindow().getFramebufferHeight(), PlatformDescriptors.method33485()
-            ),
-            PlatformDescriptors.method33487(),
-            PlatformDescriptors.method33488()
-         }
-      );
+            new String[] {
+                  String.format("Java: %s %dbit", System.getProperty("java.version"), !this.mc.isJava64bit() ? 32 : 64),
+                  String.format("Mem: % 2d%% %03d/%03dMB", var9 * 100L / var3, method5893(var9), method5893(var3)),
+                  String.format("Allocated: % 2d%% %03dMB", var5 * 100L / var3, method5893(var5)),
+                  "",
+                  String.format("CPU: %s", PlatformDescriptors.getCpuInfo()),
+                  "",
+                  String.format(
+                        "Display: %dx%d (%s)", Minecraft.getInstance().getMainWindow().getFramebufferWidth(),
+                        Minecraft.getInstance().getMainWindow().getFramebufferHeight(),
+                        PlatformDescriptors.method33485()),
+                  PlatformDescriptors.method33487(),
+                  PlatformDescriptors.method33488()
+            });
       long var12 = Class9323.method35236();
       long var14 = Class9323.method35237();
       long var16 = Class9323.method35240();
@@ -535,15 +526,16 @@ public class DebugOverlayGui extends AbstractGui {
          return var11;
       } else {
          if (this.rayTraceBlock.getType() == RayTraceResult.Type.BLOCK) {
-            BlockPos var24 = ((BlockRayTraceResult)this.rayTraceBlock).getPos();
+            BlockPos var24 = ((BlockRayTraceResult) this.rayTraceBlock).getPos();
             BlockState var27 = this.mc.world.getBlockState(var24);
             var11.add("");
-            var11.add(TextFormatting.UNDERLINE + "Targeted Block: " + var24.getX() + ", " + var24.getY() + ", " + var24.getZ());
+            var11.add(TextFormatting.UNDERLINE + "Targeted Block: " + var24.getX() + ", " + var24.getY() + ", "
+                  + var24.getZ());
             var11.add(String.valueOf(Registry.BLOCK.getKey(var27.getBlock())));
             UnmodifiableIterator var21 = var27.getValues().entrySet().iterator();
 
             while (var21.hasNext()) {
-               Entry var22 = (Entry)var21.next();
+               Entry var22 = (Entry) var21.next();
                var11.add(this.method5889(var22));
             }
 
@@ -560,15 +552,16 @@ public class DebugOverlayGui extends AbstractGui {
          }
 
          if (this.rayTraceFluid.getType() == RayTraceResult.Type.BLOCK) {
-            BlockPos var25 = ((BlockRayTraceResult)this.rayTraceFluid).getPos();
+            BlockPos var25 = ((BlockRayTraceResult) this.rayTraceFluid).getPos();
             FluidState var28 = this.mc.world.getFluidState(var25);
             var11.add("");
-            var11.add(TextFormatting.UNDERLINE + "Targeted Fluid: " + var25.getX() + ", " + var25.getY() + ", " + var25.getZ());
+            var11.add(TextFormatting.UNDERLINE + "Targeted Fluid: " + var25.getX() + ", " + var25.getY() + ", "
+                  + var25.getZ());
             var11.add(String.valueOf(Registry.FLUID.getKey(var28.getFluid())));
             UnmodifiableIterator var31 = var28.getValues().entrySet().iterator();
 
             while (var31.hasNext()) {
-               Entry var34 = (Entry)var31.next();
+               Entry var34 = (Entry) var31.next();
                var11.add(this.method5889(var34));
             }
 
@@ -616,7 +609,7 @@ public class DebugOverlayGui extends AbstractGui {
 
    private void func_238509_a_(MatrixStack var1, FrameTimer var2, int var3, int var4, boolean var5) {
       if (!var5) {
-         int var8 = (int)(512.0 / this.mc.getMainWindow().getGuiScaleFactor());
+         int var8 = (int) (512.0 / this.mc.getMainWindow().getGuiScaleFactor());
          var3 = Math.max(var3, var8);
          var4 = this.mc.getMainWindow().getScaledWidth() - var3;
          RenderSystem.disableDepthTest();
@@ -632,10 +625,10 @@ public class DebugOverlayGui extends AbstractGui {
          int var19 = Integer.MIN_VALUE;
 
          for (int var20 = 0; var20 < var14; var20++) {
-            int var21 = (int)(var11[var2.method38596(var15 + var20)] / 1000000L);
+            int var21 = (int) (var11[var2.method38596(var15 + var20)] / 1000000L);
             var18 = Math.min(var18, var21);
             var19 = Math.max(var19, var21);
-            var16 += (long)var21;
+            var16 += (long) var21;
          }
 
          int var32 = this.mc.getMainWindow().getScaledHeight();
@@ -646,7 +639,8 @@ public class DebugOverlayGui extends AbstractGui {
          RenderSystem.defaultBlendFunc();
          var33.begin(7, DefaultVertexFormats.POSITION_COLOR);
 
-         for (Matrix4f var22 = Class6979.method21542().method21548(); var15 != var10; var15 = var2.method38596(var15 + 1)) {
+         for (Matrix4f var22 = Class6979.method21542().method21548(); var15 != var10; var15 = var2
+               .method38596(var15 + 1)) {
             int var23 = var2.method38593(var11[var15], !var5 ? 60 : 30, !var5 ? 20 : 60);
             int var24 = !var5 ? 60 : 100;
             int var25 = this.method5891(MathHelper.clamp(var23, 0, var24), 0, var24 / 2, var24);
@@ -654,10 +648,12 @@ public class DebugOverlayGui extends AbstractGui {
             int var27 = var25 >> 16 & 0xFF;
             int var28 = var25 >> 8 & 0xFF;
             int var29 = var25 & 0xFF;
-            var33.pos(var22, (float)(var12 + 1), (float)var32, 0.0F).color(var27, var28, var29, var26).endVertex();
-            var33.pos(var22, (float)(var12 + 1), (float)(var32 - var23 + 1), 0.0F).color(var27, var28, var29, var26).endVertex();
-            var33.pos(var22, (float)var12, (float)(var32 - var23 + 1), 0.0F).color(var27, var28, var29, var26).endVertex();
-            var33.pos(var22, (float)var12, (float)var32, 0.0F).color(var27, var28, var29, var26).endVertex();
+            var33.pos(var22, (float) (var12 + 1), (float) var32, 0.0F).color(var27, var28, var29, var26).endVertex();
+            var33.pos(var22, (float) (var12 + 1), (float) (var32 - var23 + 1), 0.0F).color(var27, var28, var29, var26)
+                  .endVertex();
+            var33.pos(var22, (float) var12, (float) (var32 - var23 + 1), 0.0F).color(var27, var28, var29, var26)
+                  .endVertex();
+            var33.pos(var22, (float) var12, (float) var32, 0.0F).color(var27, var28, var29, var26).endVertex();
             var12++;
          }
 
@@ -667,14 +663,14 @@ public class DebugOverlayGui extends AbstractGui {
          RenderSystem.disableBlend();
          if (!var5) {
             fill(var1, var3 + 1, var32 - 60 + 1, var3 + 14, var32 - 60 + 10, -1873784752);
-            this.fontRenderer.method38801(var1, "20 TPS", (float)(var3 + 2), (float)(var32 - 60 + 2), 14737632);
+            this.fontRenderer.method38801(var1, "20 TPS", (float) (var3 + 2), (float) (var32 - 60 + 2), 14737632);
             this.method5684(var1, var3, var3 + var14 - 1, var32 - 60, -1);
          } else {
             fill(var1, var3 + 1, var32 - 30 + 1, var3 + 14, var32 - 30 + 10, -1873784752);
-            this.fontRenderer.method38801(var1, "60 FPS", (float)(var3 + 2), (float)(var32 - 30 + 2), 14737632);
+            this.fontRenderer.method38801(var1, "60 FPS", (float) (var3 + 2), (float) (var32 - 30 + 2), 14737632);
             this.method5684(var1, var3, var3 + var14 - 1, var32 - 30, -1);
             fill(var1, var3 + 1, var32 - 60 + 1, var3 + 14, var32 - 60 + 10, -1873784752);
-            this.fontRenderer.method38801(var1, "30 FPS", (float)(var3 + 2), (float)(var32 - 60 + 2), 14737632);
+            this.fontRenderer.method38801(var1, "30 FPS", (float) (var3 + 2), (float) (var32 - 60 + 2), 14737632);
             this.method5684(var1, var3, var3 + var14 - 1, var32 - 60, -1);
          }
 
@@ -682,23 +678,27 @@ public class DebugOverlayGui extends AbstractGui {
          this.method5685(var1, var3, var32 - 60, var32, -1);
          this.method5685(var1, var3 + var14 - 1, var32 - 60, var32, -1);
          if (var5 && this.mc.gameSettings.framerateLimit > 0 && this.mc.gameSettings.framerateLimit <= 250) {
-            this.method5684(var1, var3, var3 + var14 - 1, var32 - 1 - (int)(1800.0 / (double)this.mc.gameSettings.framerateLimit), -16711681);
+            this.method5684(var1, var3, var3 + var14 - 1,
+                  var32 - 1 - (int) (1800.0 / (double) this.mc.gameSettings.framerateLimit), -16711681);
          }
 
          String var34 = var18 + " ms min";
-         String var35 = var16 / (long)var14 + " ms avg";
+         String var35 = var16 / (long) var14 + " ms avg";
          String var36 = var19 + " ms max";
-         this.fontRenderer.drawStringWithShadow(var1, var34, (float)(var3 + 2), (float)(var32 - 60 - 9), 14737632);
-         this.fontRenderer.drawStringWithShadow(var1, var35, (float)(var3 + var14 / 2 - this.fontRenderer.getStringWidth(var35) / 2), (float)(var32 - 60 - 9), 14737632);
-         this.fontRenderer.drawStringWithShadow(var1, var36, (float)(var3 + var14 - this.fontRenderer.getStringWidth(var36)), (float)(var32 - 60 - 9), 14737632);
+         this.fontRenderer.drawStringWithShadow(var1, var34, (float) (var3 + 2), (float) (var32 - 60 - 9), 14737632);
+         this.fontRenderer.drawStringWithShadow(var1, var35,
+               (float) (var3 + var14 / 2 - this.fontRenderer.getStringWidth(var35) / 2), (float) (var32 - 60 - 9),
+               14737632);
+         this.fontRenderer.drawStringWithShadow(var1, var36,
+               (float) (var3 + var14 - this.fontRenderer.getStringWidth(var36)), (float) (var32 - 60 - 9), 14737632);
          RenderSystem.enableDepthTest();
       }
    }
 
    private int method5891(int var1, int var2, int var3, int var4) {
       return var1 >= var3
-         ? this.method5892(-256, -65536, (float)(var1 - var3) / (float)(var4 - var3))
-         : this.method5892(-16711936, -256, (float)var1 / (float)var3);
+            ? this.method5892(-256, -65536, (float) (var1 - var3) / (float) (var4 - var3))
+            : this.method5892(-16711936, -256, (float) var1 / (float) var3);
    }
 
    private int method5892(int var1, int var2, float var3) {
@@ -710,10 +710,10 @@ public class DebugOverlayGui extends AbstractGui {
       int var11 = var2 >> 16 & 0xFF;
       int var12 = var2 >> 8 & 0xFF;
       int var13 = var2 & 0xFF;
-      int var14 = MathHelper.clamp((int) MathHelper.lerp(var3, (float)var6, (float)var10), 0, 255);
-      int var15 = MathHelper.clamp((int) MathHelper.lerp(var3, (float)var7, (float)var11), 0, 255);
-      int var16 = MathHelper.clamp((int) MathHelper.lerp(var3, (float)var8, (float)var12), 0, 255);
-      int var17 = MathHelper.clamp((int) MathHelper.lerp(var3, (float)var9, (float)var13), 0, 255);
+      int var14 = MathHelper.clamp((int) MathHelper.lerp(var3, (float) var6, (float) var10), 0, 255);
+      int var15 = MathHelper.clamp((int) MathHelper.lerp(var3, (float) var7, (float) var11), 0, 255);
+      int var16 = MathHelper.clamp((int) MathHelper.lerp(var3, (float) var8, (float) var12), 0, 255);
+      int var17 = MathHelper.clamp((int) MathHelper.lerp(var3, (float) var9, (float) var13), 0, 255);
       return var14 << 24 | var15 << 16 | var16 << 8 | var17;
    }
 

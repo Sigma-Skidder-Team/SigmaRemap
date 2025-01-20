@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class Friend extends Command {
    public Friend() {
       super("friend", "Manage friends", "friends", "f");
-      this.registerSubCommands(new String[]{"add/remove/list/clear"});
+      this.registerSubCommands(new String[] { "add/remove/list/clear" });
    }
 
    @Override
@@ -31,7 +31,7 @@ public class Friend extends Command {
                   Pattern var14 = Pattern.compile("[a-zA-Z0-9_]{2,16}");
                   boolean var15 = var14.matcher(var2[1].getArguments()).matches();
                   if (var15) {
-                     boolean var16 = Client.getInstance().getFriendManager().method27001(var2[1].getArguments());
+                     boolean var16 = Client.getInstance().friendManager.method27001(var2[1].getArguments());
                      if (!var16) {
                         var3.send("\"" + var2[1].getArguments() + "\" is already your friend.");
                      } else {
@@ -46,7 +46,7 @@ public class Friend extends Command {
                if (var2.length != 2) {
                   var3.send("Usage : .friend remove <name>");
                } else {
-                  boolean var13 = Client.getInstance().getFriendManager().method27005(var2[1].getArguments());
+                  boolean var13 = Client.getInstance().friendManager.method27005(var2[1].getArguments());
                   if (!var13) {
                      var3.send("\"" + var2[1].getArguments() + "\" is not your friend :(.");
                   } else {
@@ -55,7 +55,7 @@ public class Friend extends Command {
                }
                break;
             case "list":
-               List<String> var9 = Client.getInstance().getFriendManager().method27003();
+               List<String> var9 = Client.getInstance().friendManager.method27003();
                if (var9.isEmpty()) {
                   var3.send("You have no friends :(");
                } else {
@@ -74,7 +74,7 @@ public class Friend extends Command {
                }
                break;
             case "clear":
-               if (Client.getInstance().getFriendManager().method27007()) {
+               if (Client.getInstance().friendManager.method27007()) {
                   var3.send("Cleared all your friends.");
                } else {
                   var3.send("You have no friends :(.");

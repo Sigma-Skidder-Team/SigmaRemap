@@ -66,7 +66,7 @@ public class ActiveMods extends Module {
     public void initialize() {
         this.field23612.clear();
 
-        for (Module var4 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+        for (Module var4 : Client.getInstance().moduleManager.getModuleMap().values()) {
             if (var4.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.GUI) {
                 this.field23612.add(var4);
                 this.field23615.put(var4, new Animation(150, 150, Direction.BACKWARDS));

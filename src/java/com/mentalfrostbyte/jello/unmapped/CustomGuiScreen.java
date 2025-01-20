@@ -62,15 +62,18 @@ public class CustomGuiScreen implements IGuiEventListener {
         this(screen, name, var3, var4, var5, var6, ColorHelper.field27961);
     }
 
-    public CustomGuiScreen(CustomGuiScreen screen, String name, int var3, int var4, int var5, int var6, ColorHelper var7) {
+    public CustomGuiScreen(CustomGuiScreen screen, String name, int var3, int var4, int var5, int var6,
+            ColorHelper var7) {
         this(screen, name, var3, var4, var5, var6, var7, null);
     }
 
-    public CustomGuiScreen(CustomGuiScreen screen, String name, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
+    public CustomGuiScreen(CustomGuiScreen screen, String name, int var3, int var4, int var5, int var6,
+            ColorHelper var7, String var8) {
         this(screen, name, var3, var4, var5, var6, var7, var8, ResourceRegistry.JelloLightFont25);
     }
 
-    public CustomGuiScreen(CustomGuiScreen screenIn, String nameIn, int x, int y, int width, int height, ColorHelper color, String var8, TrueTypeFont font) {
+    public CustomGuiScreen(CustomGuiScreen screenIn, String nameIn, int x, int y, int width, int height,
+            ColorHelper color, String var8, TrueTypeFont font) {
         this.name = nameIn;
         this.screen = screenIn;
         this.xA = x;
@@ -146,7 +149,6 @@ public class CustomGuiScreen implements IGuiEventListener {
         this.field20925 = var1;
         this.field20908 = this.method13289() && this.method13229(var1, var2);
 
-
         for (Runnable var6 : this.field20915) {
             if (var6 != null) {
                 var6.run();
@@ -161,7 +163,7 @@ public class CustomGuiScreen implements IGuiEventListener {
                 var10.method13028(var1, var2);
             }
         } catch (ConcurrentModificationException var7) {
-            Client.getClientLogger().error("FUCK! Why does this shit happen"); //What happens?
+            Client.getClientLogger().error("FUCK! Why does this shit happen"); // What happens?
         }
 
         this.field20909 = this.field20909 & this.field20908;
@@ -177,9 +179,11 @@ public class CustomGuiScreen implements IGuiEventListener {
     }
 
     public void method13224() {
-        GL11.glTranslatef((float) (this.getXA() + this.getWidthA() / 2), (float) (this.getYA() + this.getHeightA() / 2), 0.0F);
+        GL11.glTranslatef((float) (this.getXA() + this.getWidthA() / 2), (float) (this.getYA() + this.getHeightA() / 2),
+                0.0F);
         GL11.glScalef(this.method13273(), this.method13275(), 0.0F);
-        GL11.glTranslatef((float) (-this.getXA() - this.getWidthA() / 2), (float) (-this.getYA() - this.getHeightA() / 2), 0.0F);
+        GL11.glTranslatef((float) (-this.getXA() - this.getWidthA() / 2),
+                (float) (-this.getYA() - this.getHeightA() / 2), 0.0F);
     }
 
     public void method13225() {
@@ -356,7 +360,8 @@ public class CustomGuiScreen implements IGuiEventListener {
         if (var1 != null) {
             for (CustomGuiScreen var5 : this.method13241()) {
                 if (var5.method13257().equals(var1.method13257())) {
-                    System.out.println("Children with duplicate IDs! Child with id \"" + var5.method13257() + "\" already exists in view \"" + this.method13257() + "\"!");
+                    System.out.println("Children with duplicate IDs! Child with id \"" + var5.method13257()
+                            + "\" already exists in view \"" + this.method13257() + "\"!");
                     return;
                 }
             }
@@ -510,7 +515,7 @@ public class CustomGuiScreen implements IGuiEventListener {
         return var1;
     }
 
-    public void method13161(JSONObject var1){
+    public void method13161(JSONObject var1) {
         if (this.method13299()) {
             this.xA = CJsonUtils.getIntOrDefault(var1, "x", this.xA);
             this.yA = CJsonUtils.getIntOrDefault(var1, "y", this.yA);
@@ -559,7 +564,8 @@ public class CustomGuiScreen implements IGuiEventListener {
                 return false;
             } else {
                 CustomGuiScreen var4 = (CustomGuiScreen) var1;
-                return this.name.equals(var4.name) && (this.getScreen() == null || this.getScreen().equals(var4.getScreen()));
+                return this.name.equals(var4.name)
+                        && (this.getScreen() == null || this.getScreen().equals(var4.getScreen()));
             }
         } else {
             return true;
@@ -599,7 +605,7 @@ public class CustomGuiScreen implements IGuiEventListener {
 
     public void method13252(int var1) {
         if (name.equals("Item3") && field20912.equals("Yes")) {
-            Client.getInstance().getNetworkManager().account = null; // This is so fucking bad code but who cares :trol:
+            Client.getInstance().networkManager.account = null; // This is so fucking bad code but who cares :trol:
         }
         for (Class9781 var5 : this.field20922) {
             var5.method38555(this, var1);

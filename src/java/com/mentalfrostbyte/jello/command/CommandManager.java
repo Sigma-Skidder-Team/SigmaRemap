@@ -26,7 +26,7 @@ public class CommandManager {
     }
 
     public void init() {
-        Client.getInstance().getEventManager().register(this);
+        Client.getInstance().eventManager.register(this);
         this.register(new VClip());
         this.register(new HClip());
         this.register(new Damage());
@@ -136,13 +136,17 @@ public class CommandManager {
                     MultiUtilities.addChatMessage(" ");
 
                     try {
-                        var7.run(var5, (ChatCommandArguments[]) var8.<ChatCommandArguments>toArray(new ChatCommandArguments[0]), var1x -> MultiUtilities.addChatMessage(this.getPrefix() + " " + var1x));
+                        var7.run(var5,
+                                (ChatCommandArguments[]) var8
+                                        .<ChatCommandArguments>toArray(new ChatCommandArguments[0]),
+                                var1x -> MultiUtilities.addChatMessage(this.getPrefix() + " " + var1x));
                     } catch (CommandException var10) {
                         if (var10.field16621.length() > 0) {
                             MultiUtilities.addChatMessage(this.getPrefix() + " Error: " + var10.field16621);
                         }
 
-                        MultiUtilities.addChatMessage(this.getPrefix() + " Usage: " + "." + var7.getName() + " " + var7.method18326());
+                        MultiUtilities.addChatMessage(
+                                this.getPrefix() + " Usage: " + "." + var7.getName() + " " + var7.method18326());
                     }
 
                     MultiUtilities.addChatMessage(" ");

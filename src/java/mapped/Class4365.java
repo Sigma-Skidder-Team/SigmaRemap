@@ -29,7 +29,7 @@ public class Class4365 extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      this.account = Client.getInstance().getNetworkManager().account;
+      this.account = Client.getInstance().networkManager.account;
       String var4 = "Log in";
       Texture var5 = ResourceList.accountPNG;
       if (this.account != null) {
@@ -41,30 +41,30 @@ public class Class4365 extends Class4247 {
       boolean var6 = this.field21337 >= this.xA && this.field21338 <= this.yA + this.getHeightA();
       this.field21334 = Math.max(0.0F, Math.min(1.0F, this.field21334 + (!var6 ? -0.1F : 0.1F)));
       RenderUtil.drawRoundedRect(
-         (float)this.xA, (float)this.yA, (float)this.getWidthA(), (float)this.getHeightA(), 20.0F, this.field21334 * 0.2F * var1
-      );
+            (float) this.xA, (float) this.yA, (float) this.getWidthA(), (float) this.getHeightA(), 20.0F,
+            this.field21334 * 0.2F * var1);
       RenderUtil.drawRect(
-         (float)this.xA,
-         (float)this.yA,
-         (float)(this.xA + this.getWidthA()),
-         (float)(this.yA + this.getHeightA()),
-         MultiUtilities.applyAlpha(ClientColors.DULL_GREEN.getColor, (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * var1)
-      );
+            (float) this.xA,
+            (float) this.yA,
+            (float) (this.xA + this.getWidthA()),
+            (float) (this.yA + this.getHeightA()),
+            MultiUtilities.applyAlpha(ClientColors.DULL_GREEN.getColor,
+                  (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * var1));
       RenderUtil.drawImage(
-         (float)(this.xA + this.widthA - 60 - 10),
-         (float)(this.yA + 10),
-         60.0F,
-         60.0F,
-         var5,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
-      );
+            (float) (this.xA + this.widthA - 60 - 10),
+            (float) (this.yA + 10),
+            60.0F,
+            60.0F,
+            var5,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor,
+                  (0.5F + 0.5F * this.field21334) * var1));
       RenderUtil.drawString(
-         this.font,
-         (float)(this.xA + this.widthA - 90 - this.font.getStringWidth(var4)),
-         (float)(this.yA + 27),
-         var4,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
-      );
+            this.font,
+            (float) (this.xA + this.widthA - 90 - this.font.getStringWidth(var4)),
+            (float) (this.yA + 27),
+            var4,
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor,
+                  (0.5F + 0.5F * this.field21334) * var1));
       super.draw(var1);
    }
 }

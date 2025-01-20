@@ -21,7 +21,7 @@ public class JelloForSigmaOptions extends IngameMenuScreen {
          Client.getInstance().getLogger().info("Saving profiles...");
 
          try {
-            Client.getInstance().getModuleManager().getConfigurationManager().saveAndReplaceConfigs();
+            Client.getInstance().moduleManager.getConfigurationManager().saveAndReplaceConfigs();
             Client.getInstance().saveClientData();
          } catch (IOException var4) {
             var4.printStackTrace();

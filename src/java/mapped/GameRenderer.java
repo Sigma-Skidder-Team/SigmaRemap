@@ -490,7 +490,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
 
          this.lightmapTexture.method7316();
          RenderFireEvent var11 = new RenderFireEvent();
-         Client.getInstance().getEventManager().call(var11);
+         Client.getInstance().eventManager.call(var11);
          if (this.mc.gameSettings.getPointOfView().func_243192_a() && !var10 && !var11.isCancelled()) {
             OverlayRenderer.method18789(this.mc, var1);
             this.hurtCameraEffect(var1, var3);
@@ -563,7 +563,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          );
          if (var4 && this.mc.world != null && !Config.method26988()) {
             this.mc.getProfiler().startSection("level");
-            Client.getInstance().getEventManager().call(new Render2DEvent(var1, var2));
+            Client.getInstance().eventManager.call(new Render2DEvent(var1, var2));
             this.renderWorld(var1, var2, new MatrixStack());
             if (this.mc.isSingleplayer() && this.field816 < Util.milliTime() - 1000L) {
                this.field816 = Util.milliTime();
@@ -656,13 +656,13 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
                var13.addDetail("Overlay name", () -> this.mc.loadingGui.getClass().getCanonicalName());
                throw new ReportedException(var12);
             }
-         } else if (this.mc.currentScreen != null && Client.getInstance().getGuiManager().method33480() == null) {
+         } else if (this.mc.currentScreen != null && Client.getInstance().guiManager.method33480() == null) {
             try {
                if (Reflector.field42867.exists()) {
                   Reflector.callVoid(Reflector.field42867, this.mc.currentScreen, var10, var7, var8, this.mc.getTickLength());
                } else {
                   this.mc.currentScreen.render(var10, var7, var8, this.mc.getTickLength());
-                  Client.getInstance().getEventManager().call(new EventRenderShulker());
+                  Client.getInstance().eventManager.call(new EventRenderShulker());
                }
             } catch (Throwable var14) {
                CrashReport var17 = CrashReport.makeCrashReport(var14, "Rendering screen");

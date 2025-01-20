@@ -296,8 +296,8 @@ public class ChestStealer extends Module {
                     if (var4 instanceof BlockItem) {
                         return !BlockFly.method16733(var4);
                     } else if (!(var4 instanceof Class3308)
-                            && (!(var4 instanceof BowItem) || !Client.getInstance().getModuleManager().getModuleByClass(InvManager.class).getBooleanValueFromSettingName("Archery"))) {
-                        if (var4 == Items.WATER_BUCKET && Client.getInstance().getModuleManager().getModuleByClass(AutoMLG.class).isEnabled()) {
+                            && (!(var4 instanceof BowItem) || !Client.getInstance().moduleManager.getModuleByClass(InvManager.class).getBooleanValueFromSettingName("Archery"))) {
+                        if (var4 == Items.WATER_BUCKET && Client.getInstance().moduleManager.getModuleByClass(AutoMLG.class).isEnabled()) {
                             return false;
                         } else {
                             ArrayList var5 = new ArrayList<Item>(

@@ -22,7 +22,7 @@ public class PlayerStateTracker {
    private Minecraft mc = Minecraft.getInstance();
 
    public void init() {
-      Client.getInstance().getEventManager().register(this);
+      Client.getInstance().eventManager.register(this);
    }
 
    @EventTarget
@@ -60,7 +60,7 @@ public class PlayerStateTracker {
    private void method31326(ReceivePacketEvent var1) {
       if (var1.getPacket() instanceof SKeepAlivePacket) {
          long var4 = System.currentTimeMillis() - this.lastMilis;
-         this.ping = Math.min(1.05F, Math.max(0.0F, 15000.0F / (float)var4));
+         this.ping = Math.min(1.05F, Math.max(0.0F, 15000.0F / (float) var4));
          this.lastMilis = System.currentTimeMillis();
       }
    }

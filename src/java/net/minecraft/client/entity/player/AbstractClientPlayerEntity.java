@@ -48,13 +48,12 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
       Class7749.method25668(this);
    }
-   public ResourceLocation getLocationOfCape()
-   {
+
+   public ResourceLocation getLocationOfCape() {
       return this.locationOfCape;
    }
 
-   public void setLocationOfCape(ResourceLocation p_setLocationOfCape_1_)
-   {
+   public void setLocationOfCape(ResourceLocation p_setLocationOfCape_1_) {
       this.locationOfCape = p_setLocationOfCape_1_;
    }
 
@@ -127,16 +126,15 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
       Object var5 = var4.getTexture(var0);
       if (var5 == null) {
          var5 = new DownloadingTexture(
-            (File)null,
-            String.format("http://skins.minecraft.net/MinecraftSkins/%s.png", StringUtils.stripControlCodes(var1)),
-            DefaultPlayerSkin.getDefaultSkin(method2961(var1)),
-            true,
-            (Runnable)null
-         );
-         var4.loadTexture(var0, (Texture)var5);
+               (File) null,
+               String.format("http://skins.minecraft.net/MinecraftSkins/%s.png", StringUtils.stripControlCodes(var1)),
+               DefaultPlayerSkin.getDefaultSkin(method2961(var1)),
+               true,
+               (Runnable) null);
+         var4.loadTexture(var0, (Texture) var5);
       }
 
-      return (DownloadingTexture)var5;
+      return (DownloadingTexture) var5;
    }
 
    public static ResourceLocation method5376(String var0) {
@@ -155,14 +153,16 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
          f *= 1.1F;
       }
 
-      f = (float)((double)f * ((this.getAttributeValue(Attributes.MOVEMENT_SPEED) / (double)this.abilities.getWalkSpeed() + 1.0) / 2.0));
+      f = (float) ((double) f
+            * ((this.getAttributeValue(Attributes.MOVEMENT_SPEED) / (double) this.abilities.getWalkSpeed() + 1.0)
+                  / 2.0));
 
       if (this.abilities.getWalkSpeed() == 0.0F || Float.isNaN(f) || Float.isInfinite(f)) {
          f = 1.0F;
       }
 
       if (this.isHandActive() && this.getActiveItemStack().getItem() instanceof BowItem) {
-         float f1 = (float)this.getItemInUseMaxCount() / 20.0F;
+         float f1 = (float) this.getItemInUseMaxCount() / 20.0F;
          if (!(f1 > 1.0F)) {
             f1 *= f1;
          } else {
@@ -172,9 +172,11 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
          f *= 1.0F - f1 * 0.15F;
       }
 
-      float fov = Reflector.ForgeHooksClient_getOffsetFOV.exists() ? Reflector.callFloat(Reflector.ForgeHooksClient_getOffsetFOV, this, f) : f;
+      float fov = Reflector.ForgeHooksClient_getOffsetFOV.exists()
+            ? Reflector.callFloat(Reflector.ForgeHooksClient_getOffsetFOV, this, f)
+            : f;
       EventFOV eventSomething = new EventFOV(fov);
-      Client.getInstance().getEventManager().call(eventSomething);
+      Client.getInstance().eventManager.call(eventSomething);
       return eventSomething.fovModifier;
    }
 

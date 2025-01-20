@@ -65,7 +65,7 @@ public class SpiderStep extends Module {
         if (this.isEnabled() && mc.player != null && var1.isPre()) {
             if (this.field23758 != 1) {
                 if (this.field23758 == 3) {
-                    Module var4 = Client.getInstance().getModuleManager().getModuleByClass(Criticals.class);
+                    Module var4 = Client.getInstance().moduleManager.getModuleByClass(Criticals.class);
                     if (var4.isEnabled() && var4.getStringSettingValueByName("Type").equals("NoGround")) {
                         var1.setY(var1.getY() + 1.0E-14);
                     } else {

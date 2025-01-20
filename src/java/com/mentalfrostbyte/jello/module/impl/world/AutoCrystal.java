@@ -320,7 +320,7 @@ public class AutoCrystal extends Module {
         while (var5.hasNext()) {
             Entity var6 = (Entity) var5.next();
             if (var6 != mc.player) {
-                if (!Client.getInstance().getFriendManager().method26997(var6)) {
+                if (!Client.getInstance().friendManager.method26997(var6)) {
                     if (var6 instanceof LivingEntity) {
                         if (((LivingEntity) var6).getHealth() != 0.0F) {
                             if (!(mc.player.getDistance(var6) > var1)) {
@@ -328,7 +328,7 @@ public class AutoCrystal extends Module {
                                     if (!(var6 instanceof ArmorStandEntity)) {
                                         if (!this.getBooleanValueFromSettingName("Players") && var6 instanceof PlayerEntity) {
                                             var5.remove();
-                                        } else if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().isTargetABot(var6)) {
+                                        } else if (var6 instanceof PlayerEntity && Client.getInstance().combatManager.isTargetABot(var6)) {
                                             var5.remove();
                                         } else if (!this.getBooleanValueFromSettingName("Invisible") && var6.isInvisible()) {
                                             var5.remove();
@@ -339,7 +339,7 @@ public class AutoCrystal extends Module {
                                         } else if (!var6.method3362()) {
                                             if (var6 instanceof PlayerEntity
                                                     && Class8781.method31662((PlayerEntity) var6)
-                                                    && Client.getInstance().getModuleManager().getModuleByClass(Teams.class).isEnabled()) {
+                                                    && Client.getInstance().moduleManager.getModuleByClass(Teams.class).isEnabled()) {
                                                 var5.remove();
                                             }
                                         } else {

@@ -32,10 +32,10 @@ public class RandomModuleThread implements Runnable {
             if (Minecraft.getInstance().world != null) {
                 boolean var3 = false;
                 boolean var4 = false;
-                if (Client.getInstance().getModuleManager() != null) {
-                    List<Module> var5 = new ArrayList<>(Client.getInstance().getModuleManager().getModuleMap().values());
+                if (Client.getInstance().moduleManager != null) {
+                    List<Module> var5 = new ArrayList<>(Client.getInstance().moduleManager.getModuleMap().values());
 
-                    for (Module var7 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+                    for (Module var7 : Client.getInstance().moduleManager.getModuleMap().values()) {
                         if (var7 instanceof ModuleWithModuleSettings) {
                             var5.addAll(Arrays.asList(((ModuleWithModuleSettings) var7).moduleArray));
                         }

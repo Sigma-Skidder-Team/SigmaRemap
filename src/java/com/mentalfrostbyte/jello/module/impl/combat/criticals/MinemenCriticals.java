@@ -25,7 +25,7 @@ public class MinemenCriticals extends Module {
     @HigherPriority
     private void method16861(EventUpdate var1) {
         if (var1.isPre()) {
-            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(AntiKnockback.class);
+            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().moduleManager.getModuleByClass(AntiKnockback.class);
             if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("Minemen")) {
                 if (!mc.player.onGround) {
                     this.field23966 = 0;

@@ -54,17 +54,18 @@ public class MusicParticles extends Module {
     @EventTarget
     private void method16463(EventRender var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (Client.getInstance().getMusicManager().method24319() && !Client.getInstance().getMusicManager().field32163.isEmpty()) {
+            if (Client.getInstance().musicManager.method24319()
+                    && !Client.getInstance().musicManager.field32163.isEmpty()) {
                 long var4 = System.nanoTime() - this.field23676;
                 float var6 = Math.min(10.0F, Math.max(0.0F, (float) var4 / 1.810361E7F));
                 double var7 = 0.0;
                 double var9 = 4750;
-                if (Client.getInstance().getMusicManager().field32165.isEmpty()) {
+                if (Client.getInstance().musicManager.field32165.isEmpty()) {
                     return;
                 }
 
                 for (int var10 = 0; var10 < 3; var10++) {
-                    var7 = Math.max(var7, Math.sqrt(Client.getInstance().getMusicManager().field32165.get(var10)) - 1000.0);
+                    var7 = Math.max(var7, Math.sqrt(Client.getInstance().musicManager.field32165.get(var10)) - 1000.0);
                 }
 
                 float var14 = 0.7F + (float) (var7 / (double) (var9 - 1000)) * 8.14F;

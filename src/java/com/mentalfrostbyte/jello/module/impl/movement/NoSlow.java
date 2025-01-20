@@ -30,7 +30,7 @@ public class NoSlow extends Module {
     private void onUpdate(EventUpdate event) {
         if (!this.isEnabled()) return;
 
-        boolean auraEnabled = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled2();
+        boolean auraEnabled = Client.getInstance().moduleManager.getModuleByClass(KillAura.class).isEnabled2();
         boolean isSwordEquipped = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
 
         if (!event.isPre()) {

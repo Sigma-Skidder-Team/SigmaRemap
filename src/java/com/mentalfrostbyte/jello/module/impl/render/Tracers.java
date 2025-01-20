@@ -36,7 +36,7 @@ public class Tracers extends Module {
 
             for (Entity entity : MultiUtilities.method17680()) {
                 if (entity != mc.player && entity.isAlive() && entity.boundingBox.getAverageEdgeLength() > 0.8
-                        && entity.ticksExisted > 30 && !Client.getInstance().getCombatManager().isTargetABot(entity)) {
+                        && entity.ticksExisted > 30 && !Client.getInstance().combatManager.isTargetABot(entity)) {
                     this.method16522(entity);
                 }
             }

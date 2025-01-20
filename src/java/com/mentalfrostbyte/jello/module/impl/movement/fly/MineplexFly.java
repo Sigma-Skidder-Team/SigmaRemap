@@ -188,7 +188,7 @@ public class MineplexFly extends Module {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23675 = true;
-                Client.getInstance().getNotificationManager().send(new Notification("Mineplex fly", "Please try again"));
+                Client.getInstance().notificationManager.send(new Notification("Mineplex fly", "Please try again"));
             }
         }
     }
@@ -225,7 +225,8 @@ public class MineplexFly extends Module {
 
             InvManagerUtils.fixedClick(mc.player.container.windowId, 42, 0, ClickType.QUICK_MOVE, mc.player, true);
             if (!mc.player.container.getSlot(42).getStack().isEmpty()) {
-                Client.getInstance().getNotificationManager().send(new Notification("Mineplex Fly", "Please empty a slot in your inventory"));
+                Client.getInstance().notificationManager
+                        .send(new Notification("Mineplex Fly", "Please empty a slot in your inventory"));
             } else if (mc.player.inventory.currentItem != 6 && this.field23670 != 6) {
                 mc.getConnection().sendPacket(new CHeldItemChangePacket(6));
                 this.field23670 = 6;
@@ -238,7 +239,8 @@ public class MineplexFly extends Module {
 
     @EventTarget
     public void method16462(Render2DEvent var1) {
-        if (this.isEnabled() && this.getBooleanValueFromSettingName("Fake") && !(this.field23673 < 0.0) && !(mc.player.getPosY() < this.field23673)) {
+        if (this.isEnabled() && this.getBooleanValueFromSettingName("Fake") && !(this.field23673 < 0.0)
+                && !(mc.player.getPosY() < this.field23673)) {
             mc.player.positionVec.y = this.field23673;
             mc.player.lastTickPosY = this.field23673;
             mc.player.chasingPosY = this.field23673;

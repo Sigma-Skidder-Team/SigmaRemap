@@ -112,7 +112,7 @@ public class MusicManager {
     }
 
     public void init(){
-        Client.getInstance().getEventManager().register(this);
+        Client.getInstance().eventManager.register(this);
         try {
             this.method24295();
         } catch (JSONException e) {
@@ -306,7 +306,7 @@ public class MusicManager {
 
                 this.field32153 = TextureUtil.method32933("picture", this.field32152);
                 this.field32151 = TextureUtil.method32933("picture", this.field32149);
-                Client.getInstance().getNotificationManager().send(new Notification("Now Playing", this.field32150, 7000, this.field32151));
+                Client.getInstance().notificationManager.send(new Notification("Now Playing", this.field32150, 7000, this.field32151));
                 this.field32154 = false;
             }
         } catch (IOException var5) {
@@ -385,7 +385,7 @@ public class MusicManager {
                                     this.field32147 = (long) var11.method30680();
                                     if (this.field32147 > 1300L) {
                                         var9.close();
-                                        Client.getInstance().getNotificationManager().send(new Notification("Now Playing", "Music is too long."));
+                                        Client.getInstance().notificationManager.send(new Notification("Now Playing", "Music is too long."));
                                     }
 
                                     Class6542 var15 = new Class6542(var13.method23320());
@@ -592,7 +592,7 @@ public class MusicManager {
             String var8 = var7.getOut();
             return new URL(var8);
         } catch (YoutubeDLException var9) {
-            Client.getInstance().getNotificationManager().send(
+            Client.getInstance().notificationManager.send(
                     new Notification("Failed to Play Song", "Check the logs for more details.")
             );
 
@@ -603,7 +603,7 @@ public class MusicManager {
             MultiUtilities.addChatMessage("URL Error: " + var10.toString());
             var10.printStackTrace();
 
-            Client.getInstance().getNotificationManager().send(
+            Client.getInstance().notificationManager.send(
                     new Notification("Failed to Play Song", "Invalid URL encountered.")
             );
 

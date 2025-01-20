@@ -51,7 +51,7 @@ public class Class8233 {
            throw new RuntimeException(e);
        }
 
-       for (Module var8 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+       for (Module var8 : Client.getInstance().moduleManager.getModuleMap().values()) {
          JSONObject var9 = var6.method22990(var8);
          if (var9 != null) {
             var5.method22989(var9, var8);

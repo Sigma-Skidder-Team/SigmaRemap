@@ -14,14 +14,15 @@ import java.util.UUID;
 public class HookedClientPlayerEntity extends ClientPlayerEntity {
    private static UUID field6151 = UUID.fromString("8667ba71-b85a-4004-af54-457a9734eed7");
 
-   public HookedClientPlayerEntity(Minecraft var1, ClientWorld var2, ClientPlayNetHandler var3, StatisticsManager var4, ClientRecipeBook var5, boolean var6, boolean var7) {
+   public HookedClientPlayerEntity(Minecraft var1, ClientWorld var2, ClientPlayNetHandler var3, StatisticsManager var4,
+         ClientRecipeBook var5, boolean var6, boolean var7) {
       super(var1, var2, var3, var4, var5, var6, var7);
    }
 
    @Override
    public void onUpdateWalkingPlayer() {
       EventWalkingUpdate var3 = new EventWalkingUpdate();
-      Client.getInstance().getEventManager().call(var3);
+      Client.getInstance().eventManager.call(var3);
       if (!var3.isCancelled()) {
          super.onUpdateWalkingPlayer();
       }
@@ -30,7 +31,7 @@ public class HookedClientPlayerEntity extends ClientPlayerEntity {
    @Override
    public void move(MoverType var1, Vector3d var2) {
       EventMove var5 = new EventMove(var2);
-      Client.getInstance().getEventManager().call(var5);
+      Client.getInstance().eventManager.call(var5);
       if (!var5.isCancelled()) {
          super.move(var1, new Vector3d(var5.getX(), var5.getY(), var5.getZ()));
       }
@@ -39,7 +40,7 @@ public class HookedClientPlayerEntity extends ClientPlayerEntity {
    @Override
    public void pushOutOfBlocks(double var1, double var3, double var5) {
       EventPushBlock var9 = new EventPushBlock();
-      Client.getInstance().getEventManager().call(var9);
+      Client.getInstance().eventManager.call(var9);
       if (!var9.isCancelled()) {
          super.pushOutOfBlocks(var1, var3, var5);
       }
@@ -52,7 +53,7 @@ public class HookedClientPlayerEntity extends ClientPlayerEntity {
 
       }
 
-      Client.getInstance().getEventManager().call(var3);
+      Client.getInstance().eventManager.call(var3);
       if (!var3.isCancelled()) {
          super.tick();
       }
@@ -61,6 +62,6 @@ public class HookedClientPlayerEntity extends ClientPlayerEntity {
    @Override
    public void updateEntityActionState() {
       super.updateEntityActionState();
-      Client.getInstance().getEventManager().call(new EventEntityActionState());
+      Client.getInstance().eventManager.call(new EventEntityActionState());
    }
 }

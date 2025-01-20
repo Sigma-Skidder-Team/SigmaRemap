@@ -71,7 +71,8 @@ public final class MainWindow implements AutoCloseable {
       Optional var8 = VideoMode.method31535(var4);
       if (!var8.isPresent()) {
          if (var3.fullscreenWidth.isPresent() && var3.fullscreenHeight.isPresent()) {
-            this.videoMode = Optional.<VideoMode>of(new VideoMode(var3.fullscreenWidth.getAsInt(), var3.fullscreenHeight.getAsInt(), 8, 8, 8, 60));
+            this.videoMode = Optional.<VideoMode>of(
+                  new VideoMode(var3.fullscreenWidth.getAsInt(), var3.fullscreenHeight.getAsInt(), 8, 8, 8, 60));
          } else {
             this.videoMode = Optional.<VideoMode>empty();
          }
@@ -95,17 +96,17 @@ public final class MainWindow implements AutoCloseable {
       GLFW.glfwWindowHint(139267, 0);
       GLFW.glfwWindowHint(139272, 0);
       if (!Reflector.field42792.exists()) {
-         this.handle = GLFW.glfwCreateWindow(this.width, this.height, var5, this.fullscreen && var9 != null ? var9.getMonitorPointer() : 0L, 0L);
+         this.handle = GLFW.glfwCreateWindow(this.width, this.height, var5,
+               this.fullscreen && var9 != null ? var9.getMonitorPointer() : 0L, 0L);
       } else {
          Object var10 = Reflector.method35071(Reflector.field42791);
          this.handle = Reflector.method35066(
-            var10,
-            Reflector.field42792,
-            (IntSupplier)() -> this.width,
-            (IntSupplier)() -> this.height,
-            (Supplier<String>)() -> var5,
-            (LongSupplier)() -> this.fullscreen && var9 != null ? var9.getMonitorPointer() : 0L
-         );
+               var10,
+               Reflector.field42792,
+               (IntSupplier) () -> this.width,
+               (IntSupplier) () -> this.height,
+               (Supplier<String>) () -> var5,
+               (LongSupplier) () -> this.fullscreen && var9 != null ? var9.getMonitorPointer() : 0L);
       }
 
       if (var9 == null) {
@@ -215,7 +216,6 @@ public final class MainWindow implements AutoCloseable {
             var10.pixels(var12);
             var10.position(0);
 
-
             GLFW.glfwSetWindowIcon(this.handle, var10);
             STBImage.stbi_image_free(var11);
             STBImage.stbi_image_free(var12);
@@ -248,7 +248,7 @@ public final class MainWindow implements AutoCloseable {
       ByteBuffer var8;
       try {
          var7 = TextureUtil.method30373(var1);
-         ((java.nio.Buffer)var7).rewind();
+         ((java.nio.Buffer) var7).rewind();
          var8 = STBImage.stbi_load_from_memory(var7, var2, var3, var4, 0);
       } finally {
          if (var7 != null) {
@@ -275,8 +275,9 @@ public final class MainWindow implements AutoCloseable {
       RenderSystem.assertThread(RenderSystem::isInInitPhase);
       String var5 = "GLFW error " + var0 + ": " + MemoryUtil.memUTF8(var1);
       TinyFileDialogs.tinyfd_messageBox(
-         "Minecraft", var5 + ".\n\nPlease make sure you have up-to-date drivers (see aka.ms/mcdriver for instructions).", "ok", "error", false
-      );
+            "Minecraft",
+            var5 + ".\n\nPlease make sure you have up-to-date drivers (see aka.ms/mcdriver for instructions).", "ok",
+            "error", false);
       throw new Class2473(var5);
    }
 
@@ -326,11 +327,11 @@ public final class MainWindow implements AutoCloseable {
             this.framebufferWidth = framebufferWidth;
             this.framebufferHeight = framebufferHeight;
             if (this.getFramebufferWidth() != var7 || this.getFramebufferHeight() != var8) {
-                try {
-                    this.mc.updateWindowSize();
-                } catch (JSONException e) {
-                    throw new RuntimeException(e);
-                }
+               try {
+                  this.mc.updateWindowSize();
+               } catch (JSONException e) {
+                  throw new RuntimeException(e);
+               }
             }
          }
       }
@@ -348,11 +349,11 @@ public final class MainWindow implements AutoCloseable {
    private void onWindowSizeUpdate(long windowPointer, int windowWidthIn, int windowHeightIn) {
       this.width = windowWidthIn;
       this.height = windowHeightIn;
-       try {
-           Client.getInstance().getGuiManager().onResize();
-       } catch (JSONException e) {
-           throw new RuntimeException(e);
-       }
+      try {
+         Client.getInstance().guiManager.onResize();
+      } catch (JSONException e) {
+         throw new RuntimeException(e);
+      }
    }
 
    private void onWindowFocusUpdate(long windowPointer, boolean hasFocus) {
@@ -391,8 +392,7 @@ public final class MainWindow implements AutoCloseable {
       boolean flag = !fullscreenModeIn.equals(this.videoMode);
       this.videoMode = fullscreenModeIn;
 
-      if (flag)
-      {
+      if (flag) {
          this.videoModeChanged = true;
       }
    }
@@ -401,11 +401,11 @@ public final class MainWindow implements AutoCloseable {
       if (this.fullscreen && this.videoModeChanged) {
          this.videoModeChanged = false;
          this.updateVideoMode();
-          try {
-              this.mc.updateWindowSize();
-          } catch (JSONException e) {
-              throw new RuntimeException(e);
-          }
+         try {
+            this.mc.updateWindowSize();
+         } catch (JSONException e) {
+            throw new RuntimeException(e);
+         }
       }
    }
 
@@ -433,7 +433,8 @@ public final class MainWindow implements AutoCloseable {
             this.windowY = 0;
             this.width = videomode.getWidth();
             this.height = videomode.getHeight();
-            GLFW.glfwSetWindowMonitor(this.handle, monitor.getMonitorPointer(), this.windowX, this.windowY, this.width, this.height, videomode.getRefreshRate());
+            GLFW.glfwSetWindowMonitor(this.handle, monitor.getMonitorPointer(), this.windowX, this.windowY, this.width,
+                  this.height, videomode.getRefreshRate());
          } else {
             LOGGER.warn("Failed to find suitable monitor for fullscreen mode");
             this.fullscreen = false;
@@ -461,12 +462,11 @@ public final class MainWindow implements AutoCloseable {
    public int calcGuiScale(int guiScaleIn, boolean forceUnicode) {
       int i;
 
-      for (i = 1; i != guiScaleIn && i < this.framebufferWidth && i < this.framebufferHeight && this.framebufferWidth / (i + 1) >= 320 && this.framebufferHeight / (i + 1) >= 240; ++i)
-      {
+      for (i = 1; i != guiScaleIn && i < this.framebufferWidth && i < this.framebufferHeight
+            && this.framebufferWidth / (i + 1) >= 320 && this.framebufferHeight / (i + 1) >= 240; ++i) {
       }
 
-      if (forceUnicode && i % 2 != 0)
-      {
+      if (forceUnicode && i % 2 != 0) {
          ++i;
       }
 
@@ -475,10 +475,10 @@ public final class MainWindow implements AutoCloseable {
 
    public void setGuiScale(double scaleFactor) {
       this.guiScaleFactor = scaleFactor;
-      int i = (int)((double)this.framebufferWidth / scaleFactor);
-      this.scaledWidth = (double)this.framebufferWidth / scaleFactor > (double)i ? i + 1 : i;
-      int j = (int)((double)this.framebufferHeight / scaleFactor);
-      this.scaledHeight = (double)this.framebufferHeight / scaleFactor > (double)j ? j + 1 : j;
+      int i = (int) ((double) this.framebufferWidth / scaleFactor);
+      this.scaledWidth = (double) this.framebufferWidth / scaleFactor > (double) i ? i + 1 : i;
+      int j = (int) ((double) this.framebufferHeight / scaleFactor);
+      this.scaledHeight = (double) this.framebufferHeight / scaleFactor > (double) j ? j + 1 : j;
    }
 
    public void setWindowTitle(String title) {

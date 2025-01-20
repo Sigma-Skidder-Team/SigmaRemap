@@ -89,7 +89,7 @@ public class AutoMLG extends PremiumModule {
             }
 
             int var7 = this.method16424();
-            if (!Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()
+            if (!Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()
                     && var7 != -1
                     && !mc.player.onGround
                     && mc.player.fallDistance > 3.0F) {

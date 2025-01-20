@@ -31,13 +31,13 @@ public class JelloAIBot extends Module {
 
     @Override
     public void onEnable() {
-        Client.getInstance().getModuleManager().getModuleByClass(FightBot.class).setEnabled(true);
+        Client.getInstance().moduleManager.getModuleByClass(FightBot.class).setEnabled(true);
         super.onEnable();
     }
 
     @Override
     public void onDisable() {
-        Client.getInstance().getModuleManager().getModuleByClass(FightBot.class).setEnabled(false);
+        Client.getInstance().moduleManager.getModuleByClass(FightBot.class).setEnabled(false);
         Client.getInstance().method19950().method31738();
         this.field23515 = null;
     }
@@ -49,7 +49,8 @@ public class JelloAIBot extends Module {
 
         while (var4.hasNext()) {
             Entity var5 = (Entity) var4.next();
-            if (!(var5 instanceof PlayerEntity) || Client.getInstance().getCombatManager().isTargetABot(var5) || !MultiUtilities.isAboveBounds(var5, 2.0F)) {
+            if (!(var5 instanceof PlayerEntity) || Client.getInstance().combatManager.isTargetABot(var5)
+                    || !MultiUtilities.isAboveBounds(var5, 2.0F)) {
                 var4.remove();
             }
         }
@@ -68,7 +69,8 @@ public class JelloAIBot extends Module {
             if (mc.player.ticksExisted % 14 == 0) {
                 Entity var4 = this.method16193();
                 if (this.field23515 == null
-                        && (this.field23512 == null || this.field23512.isEmpty() || (var4 != this.targetEntity || this.method16194()) && var4 != null)) {
+                        && (this.field23512 == null || this.field23512.isEmpty()
+                                || (var4 != this.targetEntity || this.method16194()) && var4 != null)) {
                     this.field23515 = new Thread(() -> {
                         MultiUtilities.addChatMessage("calc");
                         this.field23516 = true;

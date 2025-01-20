@@ -37,14 +37,15 @@ public class GamePlay extends ModuleWithModuleSettings {
                 new CubecraftGamePlay(),
                 new MineplexGamePlay(),
                 new FuncraftGameplay(),
-                new JartexGamePlay()
-        );
+                new JartexGamePlay());
         this.registerSetting(new BooleanSetting("AutoL", "Automatically says L when you kill a player", true));
-        this.registerSetting(new ModeSetting("AutoL Mode", "AutoL Mode", 0, "Basic", "Sigmeme", "Penshen").addObserver(var1 -> this.field23888.clear()));
+        this.registerSetting(new ModeSetting("AutoL Mode", "AutoL Mode", 0, "Basic", "Sigmeme", "Penshen")
+                .addObserver(var1 -> this.field23888.clear()));
         this.registerSetting(new InputSetting("First character", "The characters your sentences will start with.", ""));
         this.registerSetting(new BooleanSetting("AutoGG", "Automatically say gg at the end of the game", true));
         this.registerSetting(new BooleanSetting("Auto Join", "Automatically joins another game", true));
-        this.registerSetting(new NumberSetting<Float>("Auto Join delay", "Seconds before joining a new game", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("Auto Join delay", "Seconds before joining a new game", 4.0F,
+                Float.class, 1.0F, 10.0F, 1.0F));
         this.field23891 = new TimerUtil();
     }
 
@@ -72,17 +73,17 @@ public class GamePlay extends ModuleWithModuleSettings {
             if (this.field23890 != null) {
                 if (mc.currentScreen instanceof ChatScreen) {
                     this.method16759(null);
-                    Client.getInstance().getNotificationManager().send(new Notification("Auto Join", "Auto join was canceled.", 2500));
+                    Client.getInstance().notificationManager
+                            .send(new Notification("Auto Join", "Auto join was canceled.", 2500));
                 } else if (this.field23890.method22616()) {
                     MultiUtilities.sendChatMessage(this.field23890.method22618());
                     this.method16759(null);
                 } else if ((int) (this.field23890.method22617() / 1000L) + 1 < this.field23892) {
                     this.field23892 = (int) (this.field23890.method22617() / 1000L) + 1;
-                    Client.getInstance()
-                            .getNotificationManager()
+                    Client.getInstance().notificationManager
                             .send(
-                                    new Notification("Auto Join", "Joining a new game in " + this.field23892 + " second" + (this.field23892 > 1 ? "s" : "") + ".", 2000)
-                            );
+                                    new Notification("Auto Join", "Joining a new game in " + this.field23892 + " second"
+                                            + (this.field23892 > 1 ? "s" : "") + ".", 2000));
                 }
             }
 
@@ -141,7 +142,8 @@ public class GamePlay extends ModuleWithModuleSettings {
     public void method16761(String var1) {
         String[] var4 = var1.split(" ");
         String var5 = var4[0];
-        if (this.getStringSettingValueByName("Type").equals("Mineplex") || this.getStringSettingValueByName("Type").equals("Funcraft")) {
+        if (this.getStringSettingValueByName("Type").equals("Mineplex")
+                || this.getStringSettingValueByName("Type").equals("Funcraft")) {
             var5 = var4[1];
         }
 

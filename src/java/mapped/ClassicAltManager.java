@@ -42,9 +42,9 @@ public class ClassicAltManager extends CustomGuiScreen {
          .doThis(
             (var1x, var2x) -> {
                Account var5 = Client.getInstance()
-                  .getAccountManager()
+                  .accountManager
                   .getAccounts()
-                  .get(new Random().nextInt(Client.getInstance().getAccountManager().getAccounts().size()));
+                  .get(new Random().nextInt(Client.getInstance().accountManager.getAccounts().size()));
                var10.method13399(var5);
             }
          );
@@ -54,11 +54,11 @@ public class ClassicAltManager extends CustomGuiScreen {
       this.field21146.doThis((var1x, var2x) -> {
          Class4349 var5 = var10.method13406();
          if (var5 != null) {
-            Client.getInstance().getGuiManager().method33482(new ClassicEditAlt(var5.field21249));
+            Client.getInstance().guiManager.method33482(new ClassicEditAlt(var5.field21249));
          }
       });
-      this.field21147.doThis((var0, var1x) -> Client.getInstance().getGuiManager().method33482(new ClassicAddAlt()));
-      this.field21145.doThis((var0, var1x) -> Client.getInstance().getGuiManager().method33482(new ClassicDirectLogin()));
+      this.field21147.doThis((var0, var1x) -> Client.getInstance().guiManager.method33482(new ClassicAddAlt()));
+      this.field21145.doThis((var0, var1x) -> Client.getInstance().guiManager.method33482(new ClassicDirectLogin()));
    }
 
    @Override

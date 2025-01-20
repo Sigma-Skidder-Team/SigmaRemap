@@ -16,9 +16,10 @@ import java.util.List;
 
 public class UIInput extends Class4278 {
    public static final ColorHelper field20741 = new ColorHelper(
-      -892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor, Class2218.field14488, Class2218.field14492
-   );
-   public static final ColorHelper field20742 = new ColorHelper(-1, -1, -1, ClientColors.LIGHT_GREYISH_BLUE.getColor, Class2218.field14488, Class2218.field14492);
+         -892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor, Class2218.field14488,
+         Class2218.field14492);
+   public static final ColorHelper field20742 = new ColorHelper(-1, -1, -1, ClientColors.LIGHT_GREYISH_BLUE.getColor,
+         Class2218.field14488, Class2218.field14492);
    private String field20743 = "";
    private float field20744;
    private final float field20745 = 2.0F;
@@ -46,18 +47,21 @@ public class UIInput extends Class4278 {
       this.field20756.start();
    }
 
-   public UIInput(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
+   public UIInput(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
+         String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.field20756.start();
    }
 
-   public UIInput(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, String var9) {
+   public UIInput(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
+         String var8, String var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, ResourceRegistry.JelloLightFont25, false);
       this.field20743 = var9;
       this.field20756.start();
    }
 
-   public UIInput(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, String var9, TrueTypeFont var10) {
+   public UIInput(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
+         String var8, String var9, TrueTypeFont var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.field20743 = var9;
       this.field20756.start();
@@ -72,13 +76,13 @@ public class UIInput extends Class4278 {
       }
 
       if (this.method13298() && this.field20905) {
-         Client.getInstance().getGuiManager().method33459(GuiManager.field41346);
+         Client.getInstance().guiManager.method33459(GuiManager.field41346);
       }
 
       this.field20744 = this.field20744 + ((!this.field20905 ? 0.0F : 1.0F) - this.field20744) / 2.0F;
       if (this.field20905) {
          if (this.field20752) {
-            this.field20749 = Class8906.method32494(var5, this.font, (float)this.method13271(), var1, this.field20746);
+            this.field20749 = Class8906.method32494(var5, this.font, (float) this.method13271(), var1, this.field20746);
          }
       } else {
          this.field20749 = 0;
@@ -107,9 +111,9 @@ public class UIInput extends Class4278 {
          }
 
          this.field20752 = true;
-         this.field20749 = Class8906.method32494(var6, this.font, (float)this.method13271(), mouseX, this.field20746);
+         this.field20749 = Class8906.method32494(var6, this.font, (float) this.method13271(), mouseX, this.field20746);
          if (!InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 340)
-            && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
+               && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
             this.field20750 = this.field20749;
          }
 
@@ -147,9 +151,9 @@ public class UIInput extends Class4278 {
             case 67:
                if (this.method13149() && this.field20750 != this.field20751) {
                   GLFW.glfwSetClipboardString(
-                     Minecraft.getInstance().mainWindow.getHandle(),
-                     this.field20912.substring(Math.min(this.field20750, this.field20751), Math.max(this.field20750, this.field20751))
-                  );
+                        Minecraft.getInstance().mainWindow.getHandle(),
+                        this.field20912.substring(Math.min(this.field20750, this.field20751),
+                              Math.max(this.field20750, this.field20751)));
                }
                break;
             case 86:
@@ -166,9 +170,11 @@ public class UIInput extends Class4278 {
 
                   if (var12 != "") {
                      if (this.field20750 != this.field20751) {
-                        this.field20912 = Class8906.method32493(this.field20912, var12, this.field20750, this.field20751);
+                        this.field20912 = Class8906.method32493(this.field20912, var12, this.field20750,
+                              this.field20751);
                         if (this.field20749 > this.field20750) {
-                           this.field20749 = this.field20749 - (Math.max(this.field20750, this.field20751) - Math.min(this.field20750, this.field20751));
+                           this.field20749 = this.field20749 - (Math.max(this.field20750, this.field20751)
+                                 - Math.min(this.field20750, this.field20751));
                         }
 
                         this.field20749 = this.field20749 + var12.length();
@@ -186,12 +192,13 @@ public class UIInput extends Class4278 {
             case 88:
                if (this.method13149() && this.field20750 != this.field20751) {
                   GLFW.glfwSetClipboardString(
-                     Minecraft.getInstance().mainWindow.getHandle(),
-                     this.field20912.substring(Math.min(this.field20750, this.field20751), Math.max(this.field20750, this.field20751))
-                  );
+                        Minecraft.getInstance().mainWindow.getHandle(),
+                        this.field20912.substring(Math.min(this.field20750, this.field20751),
+                              Math.max(this.field20750, this.field20751)));
                   this.field20912 = Class8906.method32493(this.field20912, "", this.field20750, this.field20751);
                   if (this.field20749 > this.field20750) {
-                     this.field20749 = this.field20749 - (Math.max(this.field20750, this.field20751) - Math.min(this.field20750, this.field20751));
+                     this.field20749 = this.field20749
+                           - (Math.max(this.field20750, this.field20751) - Math.min(this.field20750, this.field20751));
                   }
 
                   this.field20750 = this.field20749;
@@ -207,13 +214,15 @@ public class UIInput extends Class4278 {
                   if (this.field20750 != this.field20751) {
                      this.field20912 = Class8906.method32493(this.field20912, "", this.field20750, this.field20751);
                      if (this.field20749 > this.field20750) {
-                        this.field20749 = this.field20749 - (Math.max(this.field20750, this.field20751) - Math.min(this.field20750, this.field20751));
+                        this.field20749 = this.field20749 - (Math.max(this.field20750, this.field20751)
+                              - Math.min(this.field20750, this.field20751));
                      }
                   } else if (this.method13149()) {
                      int var11 = -1;
 
                      for (int var14 = Math.max(this.field20749 - 1, 0); var14 >= 0; var14--) {
-                        if ((String.valueOf(this.field20912.charAt(var14)).equalsIgnoreCase(" ") || var14 == 0) && Math.abs(this.field20749 - var14) > 1) {
+                        if ((String.valueOf(this.field20912.charAt(var14)).equalsIgnoreCase(" ") || var14 == 0)
+                              && Math.abs(this.field20749 - var14) > 1) {
                            var11 = var14 + (var14 == 0 ? 0 : 1);
                            break;
                         }
@@ -241,8 +250,9 @@ public class UIInput extends Class4278 {
 
                   for (int var13 = this.field20749; var13 < this.field20912.length(); var13++) {
                      try {
-                        if ((String.valueOf(this.field20912.charAt(var13)).equalsIgnoreCase(" ") || var13 == this.field20912.length() - 1)
-                           && (Math.abs(this.field20749 - var13) > 1 || var13 == this.field20912.length() - 1)) {
+                        if ((String.valueOf(this.field20912.charAt(var13)).equalsIgnoreCase(" ")
+                              || var13 == this.field20912.length() - 1)
+                              && (Math.abs(this.field20749 - var13) > 1 || var13 == this.field20912.length() - 1)) {
                            var10 = var13 + 1;
                            break;
                         }
@@ -257,7 +267,7 @@ public class UIInput extends Class4278 {
                }
 
                if (!InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 340)
-                  && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
+                     && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
                   this.field20750 = this.field20749;
                }
                break;
@@ -269,7 +279,8 @@ public class UIInput extends Class4278 {
 
                   for (int var5 = Math.max(this.field20749 - 1, 0); var5 >= 0; var5--) {
                      try {
-                        if ((String.valueOf(this.field20912.charAt(var5)).equalsIgnoreCase(" ") || var5 == 0) && Math.abs(this.field20749 - var5) > 1) {
+                        if ((String.valueOf(this.field20912.charAt(var5)).equalsIgnoreCase(" ") || var5 == 0)
+                              && Math.abs(this.field20749 - var5) > 1) {
                            var4 = var5;
                            break;
                         }
@@ -284,21 +295,21 @@ public class UIInput extends Class4278 {
                }
 
                if (!InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 340)
-                  && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
+                     && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
                   this.field20750 = this.field20749;
                }
                break;
             case 268:
                this.field20749 = 0;
                if (!InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 340)
-                  && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
+                     && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
                   this.field20750 = this.field20749;
                }
                break;
             case 269:
                this.field20749 = this.field20912.length();
                if (!InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 340)
-                  && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
+                     && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
                   this.field20750 = this.field20749;
                }
          }
@@ -307,8 +318,8 @@ public class UIInput extends Class4278 {
 
    public boolean method13149() {
       return InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 341)
-         || InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 345)
-         || InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 343);
+            || InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 345)
+            || InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 343);
    }
 
    @Override
@@ -318,7 +329,8 @@ public class UIInput extends Class4278 {
          if (this.field20750 == this.field20751) {
             this.field20912 = Class8906.method32492(this.field20912, Character.toString(typed), this.field20749);
          } else {
-            this.field20912 = Class8906.method32493(this.field20912, Character.toString(typed), this.field20750, this.field20751);
+            this.field20912 = Class8906.method32493(this.field20912, Character.toString(typed), this.field20750,
+                  this.field20751);
          }
 
          this.field20749++;
@@ -331,8 +343,8 @@ public class UIInput extends Class4278 {
    public void draw(float var1) {
       this.method13225();
       float var4 = 1000.0F;
-      boolean var5 = !this.field20905 ? false : (float)this.field20756.getElapsedTime() > var4 / 2.0F;
-      if ((float)this.field20756.getElapsedTime() > var4) {
+      boolean var5 = !this.field20905 ? false : (float) this.field20756.getElapsedTime() > var4 / 2.0F;
+      if ((float) this.field20756.getElapsedTime() > var4) {
          this.field20756.reset();
       }
 
@@ -344,58 +356,58 @@ public class UIInput extends Class4278 {
       RenderUtil.method11421(this.getXA(), this.getYA(), this.getXA() + this.widthA, this.getYA() + this.heightA, true);
       int var7 = this.xA + 4;
       int var8 = this.widthA - 4;
-      float var9 = (float)var7 + this.field20746 + (float)this.font.getStringWidth(var6.substring(0, this.field20749));
+      float var9 = (float) var7 + this.field20746
+            + (float) this.font.getStringWidth(var6.substring(0, this.field20749));
       if (this.method13297()) {
          RenderUtil.drawRect(
-            var9 + (float)(var6.isEmpty() ? 0 : -1),
-            (float)(this.yA + this.heightA / 2 - this.font.method23941(var6) / 2 + 2),
-            var9 + (float)(var6.isEmpty() ? 1 : 0),
-            (float)(this.yA + this.heightA / 2 + this.font.method23941(var6) / 2 - 1),
-            MultiUtilities.applyAlpha(this.textColor.getTextColor(), !var5 ? 0.1F * var1 : 0.8F)
-         );
-         float var10 = (float)(var7 + this.font.getStringWidth(var6.substring(0, this.field20749))) + this.field20747;
-         if (var10 < (float)var7) {
-            this.field20747 += (float)var7 - var10;
-            this.field20747 = this.field20747 - Math.min((float)var8, this.field20747);
+               var9 + (float) (var6.isEmpty() ? 0 : -1),
+               (float) (this.yA + this.heightA / 2 - this.font.method23941(var6) / 2 + 2),
+               var9 + (float) (var6.isEmpty() ? 1 : 0),
+               (float) (this.yA + this.heightA / 2 + this.font.method23941(var6) / 2 - 1),
+               MultiUtilities.applyAlpha(this.textColor.getTextColor(), !var5 ? 0.1F * var1 : 0.8F));
+         float var10 = (float) (var7 + this.font.getStringWidth(var6.substring(0, this.field20749))) + this.field20747;
+         if (var10 < (float) var7) {
+            this.field20747 += (float) var7 - var10;
+            this.field20747 = this.field20747 - Math.min((float) var8, this.field20747);
          }
 
-         if (var10 > (float)(var7 + var8)) {
-            this.field20747 += (float)(var7 + var8) - var10;
+         if (var10 > (float) (var7 + var8)) {
+            this.field20747 += (float) (var7 + var8) - var10;
          }
       }
 
       this.field20746 = this.field20746 + (this.field20747 - this.field20746) / 2.0F;
       this.field20750 = Math.min(Math.max(0, this.field20750), var6.length());
       this.field20751 = Math.min(Math.max(0, this.field20751), var6.length());
-      float var14 = (float)var7 + this.field20746 + (float)this.font.getStringWidth(var6.substring(0, this.field20750));
-      float var11 = (float)var7 + this.field20746 + (float)this.font.getStringWidth(var6.substring(0, this.field20751));
+      float var14 = (float) var7 + this.field20746
+            + (float) this.font.getStringWidth(var6.substring(0, this.field20750));
+      float var11 = (float) var7 + this.field20746
+            + (float) this.font.getStringWidth(var6.substring(0, this.field20751));
       RenderUtil.drawRect(
-         var14,
-         (float)(this.yA + this.heightA / 2 - this.font.method23941(var6) / 2),
-         var11,
-         (float)(this.yA + this.heightA / 2 + this.font.method23941(var6) / 2),
-         MultiUtilities.applyAlpha(-5516546, var1)
-      );
+            var14,
+            (float) (this.yA + this.heightA / 2 - this.font.method23941(var6) / 2),
+            var11,
+            (float) (this.yA + this.heightA / 2 + this.font.method23941(var6) / 2),
+            MultiUtilities.applyAlpha(-5516546, var1));
       Class2218 var12 = this.textColor.method19411();
       Class2218 var13 = this.textColor.method19413();
       RenderUtil.method11440(
-         this.font,
-         (float)var7 + this.field20746,
-         (float)(this.yA + this.heightA / 2),
-         var6.length() == 0 && (!this.field20905 || var6.length() <= 0) ? this.field20743 : var6,
-         MultiUtilities.applyAlpha(this.textColor.getTextColor(), (this.field20744 / 2.0F + 0.4F) * var1 * (this.field20905 && var6.length() > 0 ? 1.0F : 0.5F)),
-         var12,
-         var13
-      );
+            this.font,
+            (float) var7 + this.field20746,
+            (float) (this.yA + this.heightA / 2),
+            var6.length() == 0 && (!this.field20905 || var6.length() <= 0) ? this.field20743 : var6,
+            MultiUtilities.applyAlpha(this.textColor.getTextColor(),
+                  (this.field20744 / 2.0F + 0.4F) * var1 * (this.field20905 && var6.length() > 0 ? 1.0F : 0.5F)),
+            var12,
+            var13);
       RenderUtil.endScissor();
       if (this.field20758) {
          RenderUtil.drawRect(
-            (float)this.xA,
-            (float)(this.yA + this.heightA - 2),
-            (float)(this.xA + this.widthA),
-            (float)(this.yA + this.heightA),
-            MultiUtilities.applyAlpha(this.textColor.method19405(), (this.field20744 / 2.0F + 0.5F) * var1)
-         );
+               (float) this.xA,
+               (float) (this.yA + this.heightA - 2),
+               (float) (this.xA + this.widthA),
+               (float) (this.yA + this.heightA),
+               MultiUtilities.applyAlpha(this.textColor.method19405(), (this.field20744 / 2.0F + 0.5F) * var1));
       }
 
       super.draw(var1);

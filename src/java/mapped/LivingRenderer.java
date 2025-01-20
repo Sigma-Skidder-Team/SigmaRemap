@@ -26,7 +26,8 @@ import org.apache.logging.log4j.Logger;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827<T>> extends EntityRenderer<T> implements Class5714<T, M> {
+public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827<T>> extends EntityRenderer<T>
+      implements Class5714<T, M> {
    private static final Logger field25085 = LogManager.getLogger();
    public M entityModel;
    public final List<Class219<T, M>> field25087 = Lists.newArrayList();
@@ -42,7 +43,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
 
    public LivingRenderer(EntityRendererManager var1, M var2, float var3) {
       super(var1);
-      this.entityModel = (M)var2;
+      this.entityModel = (M) var2;
       this.shadowSize = var3;
    }
 
@@ -56,22 +57,24 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
    }
 
    public void render(T entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
-      if (!Reflector.field42990.exists() || !Reflector.postForgeBusEvent(Reflector.field42990, entityIn, this, partialTicks, matrixStackIn, var5, var6)) {
+      if (!Reflector.field42990.exists() || !Reflector.postForgeBusEvent(Reflector.field42990, entityIn, this,
+            partialTicks, matrixStackIn, var5, var6)) {
          if (animateModelLiving) {
             entityIn.limbSwingAmount = 1.0F;
          }
 
          matrixStackIn.push();
-         this.entityModel.swingProgress = this.getSwingProgress((T)entityIn, partialTicks);
+         this.entityModel.swingProgress = this.getSwingProgress((T) entityIn, partialTicks);
          this.entityModel.isSitting = entityIn.isPassenger();
          if (Reflector.IForgeEntity_shouldRiderSit.exists()) {
-            this.entityModel.isSitting = entityIn.isPassenger() && entityIn.getRidingEntity() != null && Reflector.method35064(entityIn.getRidingEntity(), Reflector.IForgeEntity_shouldRiderSit);
+            this.entityModel.isSitting = entityIn.isPassenger() && entityIn.getRidingEntity() != null
+                  && Reflector.method35064(entityIn.getRidingEntity(), Reflector.IForgeEntity_shouldRiderSit);
          }
 
          this.entityModel.isChild = entityIn.isChild();
 
          float yaw = entityIn.rotationYawHead;
-         if(entityIn.equals(Minecraft.getInstance().player) && Rots.rotating) {
+         if (entityIn.equals(Minecraft.getInstance().player) && Rots.rotating) {
             yaw = Rots.yaw;
          }
 
@@ -79,8 +82,9 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
          float f1 = MathHelper.interpolateAngle(partialTicks, entityIn.prevRotationYawHead, yaw);
          float f2 = f1 - f;
          if (this.entityModel.isSitting && entityIn.getRidingEntity() instanceof LivingEntity) {
-            LivingEntity livingentity = (LivingEntity)entityIn.getRidingEntity();
-            f = MathHelper.interpolateAngle(partialTicks, livingentity.prevRenderYawOffset, livingentity.renderYawOffset);
+            LivingEntity livingentity = (LivingEntity) entityIn.getRidingEntity();
+            f = MathHelper.interpolateAngle(partialTicks, livingentity.prevRenderYawOffset,
+                  livingentity.renderYawOffset);
             f2 = f1 - f;
             float f3 = MathHelper.wrapDegrees(f2);
             if (f3 < -85.0F) {
@@ -105,7 +109,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
             f7 = MathHelper.lerp(partialTicks, Rots.prevPitch, Rots.pitch);
 
          EventRenderEntity var33 = new EventRenderEntity(f, f1, f2, f7, partialTicks, entityIn);
-         Client.getInstance().getEventManager().call(var33);
+         Client.getInstance().eventManager.call(var33);
          if (var33.isCancelled()) {
             matrixStackIn.pop();
             return;
@@ -119,14 +123,15 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
             Direction var14 = entityIn.getBedDirection();
             if (var14 != null) {
                float var15 = entityIn.getEyeHeight(Pose.STANDING) - 0.1F;
-               matrixStackIn.translate((double)((float)(-var14.getXOffset()) * var15), 0.0, (double)((float)(-var14.getZOffset()) * var15));
+               matrixStackIn.translate((double) ((float) (-var14.getXOffset()) * var15), 0.0,
+                     (double) ((float) (-var14.getZOffset()) * var15));
             }
          }
 
-         float var34 = this.method17871((T)entityIn, partialTicks);
-         this.method17842((T)entityIn, matrixStackIn, var34, f, partialTicks);
+         float var34 = this.method17871((T) entityIn, partialTicks);
+         this.method17842((T) entityIn, matrixStackIn, var34, f, partialTicks);
          matrixStackIn.scale(-1.0F, -1.0F, 1.0F);
-         this.method17857((T)entityIn, matrixStackIn, partialTicks);
+         this.method17857((T) entityIn, matrixStackIn, partialTicks);
          matrixStackIn.translate(0.0, -1.501F, 0.0);
          float var35 = 0.0F;
          float var16 = 0.0F;
@@ -143,9 +148,9 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
          }
 
          var33.setState(RenderState.field13213);
-         Client.getInstance().getEventManager().call(var33);
-         this.entityModel.setLivingAnimations((T)entityIn, var16, var35, partialTicks);
-         this.entityModel.setRotationAngles((T)entityIn, var16, var35, var34, f2, f7);
+         Client.getInstance().eventManager.call(var33);
+         this.entityModel.setLivingAnimations((T) entityIn, var16, var35, partialTicks);
+         this.entityModel.setRotationAngles((T) entityIn, var16, var35, var34, f2, f7);
          if (CustomEntityModels.isActive()) {
             this.field25088 = entityIn;
             this.field25089 = var16;
@@ -158,13 +163,13 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
 
          boolean var17 = Config.isShaders();
          Minecraft var18 = Minecraft.getInstance();
-         boolean var19 = this.method17869((T)entityIn);
+         boolean var19 = this.method17869((T) entityIn);
          boolean var20 = !var19 && !entityIn.isInvisibleToPlayer(var18.player);
          boolean var21 = var18.isEntityGlowing(entityIn);
-         RenderType var22 = this.method17882((T)entityIn, var19, var20, var21);
+         RenderType var22 = this.method17882((T) entityIn, var19, var20, var21);
          if (var22 != null) {
             IVertexBuilder var23 = var5.method25597(var22);
-            float var24 = this.method17879((T)entityIn, partialTicks);
+            float var24 = this.method17879((T) entityIn, partialTicks);
             if (var17) {
                if (entityIn.hurtTime > 0 || entityIn.deathTime > 0) {
                   Shaders.method33086(1.0F, 0.0F, 0.0F, 0.3F);
@@ -176,7 +181,8 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
             }
 
             int var25 = method17883(entityIn, var24);
-            this.entityModel.render(matrixStackIn, var23, var6, var25, 1.0F, 1.0F, 1.0F, (!var20 ? 1.0F : 0.15F) * this.field25096);
+            this.entityModel.render(matrixStackIn, var23, var6, var25, 1.0F, 1.0F, 1.0F,
+                  (!var20 ? 1.0F : 0.15F) * this.field25096);
          }
 
          if (!entityIn.isSpectator() && var33.method13954()) {
@@ -194,9 +200,9 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
          }
 
          var33.setState(RenderState.field13214);
-         Client.getInstance().getEventManager().call(var33);
+         Client.getInstance().eventManager.call(var33);
          matrixStackIn.pop();
-         super.render((T)entityIn, var2, partialTicks, matrixStackIn, var5, var6);
+         super.render((T) entityIn, var2, partialTicks, matrixStackIn, var5, var6);
          if (Reflector.field42992.exists()) {
             Reflector.postForgeBusEvent(Reflector.field42992, entityIn, this, partialTicks, matrixStackIn, var5, var6);
          }
@@ -205,7 +211,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
 
    @Nullable
    public RenderType method17882(T var1, boolean var2, boolean var3, boolean var4) {
-      ResourceLocation var7 = this.method17843((T)var1);
+      ResourceLocation var7 = this.method17843((T) var1);
       if (this.method17900() != null) {
          var7 = this.method17900();
       }
@@ -226,7 +232,8 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
    }
 
    public static int method17883(LivingEntity var0, float var1) {
-      return OverlayTexture.method730(OverlayTexture.method728(var1), OverlayTexture.method729(var0.hurtTime > 0 || var0.deathTime > 0));
+      return OverlayTexture.method730(OverlayTexture.method728(var1),
+            OverlayTexture.method729(var0.hurtTime > 0 || var0.deathTime > 0));
    }
 
    public boolean method17869(T var1) {
@@ -253,8 +260,8 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
    }
 
    public void method17842(T var1, MatrixStack var2, float var3, float var4, float var5) {
-      if (this.method17860((T)var1)) {
-         var4 += (float)(Math.cos((double)var1.ticksExisted * 3.25) * Math.PI * 0.4F);
+      if (this.method17860((T) var1)) {
+         var4 += (float) (Math.cos((double) var1.ticksExisted * 3.25) * Math.PI * 0.4F);
       }
 
       Pose var8 = var1.getPose();
@@ -267,10 +274,9 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
             if (var8 != Pose.SLEEPING) {
                if (var1.method3381() || var1 instanceof PlayerEntity) {
                   String var9 = TextFormatting.getTextWithoutFormattingCodes(var1.getName().getString());
-                  if (("Dinnerbone".equals(var9) || "Grumm".equals(var9)) && (!(var1 instanceof PlayerEntity) || ((PlayerEntity)var1).method2962(Class2318.field15879))
-                     )
-                   {
-                     var2.translate(0.0, (double)(var1.getHeight() + 0.1F), 0.0);
+                  if (("Dinnerbone".equals(var9) || "Grumm".equals(var9)) && (!(var1 instanceof PlayerEntity)
+                        || ((PlayerEntity) var1).method2962(Class2318.field15879))) {
+                     var2.translate(0.0, (double) (var1.getHeight() + 0.1F), 0.0);
                      var2.rotate(Vector3f.ZP.rotationDegrees(180.0F));
                   }
                }
@@ -278,21 +284,21 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
                Direction var11 = var1.getBedDirection();
                float var10 = var11 == null ? var4 : method17884(var11);
                var2.rotate(Vector3f.YP.rotationDegrees(var10));
-               var2.rotate(Vector3f.ZP.rotationDegrees(this.method17865((T)var1)));
+               var2.rotate(Vector3f.ZP.rotationDegrees(this.method17865((T) var1)));
                var2.rotate(Vector3f.YP.rotationDegrees(270.0F));
             }
          } else {
             var2.rotate(Vector3f.XP.rotationDegrees(-90.0F - var1.rotationPitch));
-            var2.rotate(Vector3f.YP.rotationDegrees(((float)var1.ticksExisted + var5) * -75.0F));
+            var2.rotate(Vector3f.YP.rotationDegrees(((float) var1.ticksExisted + var5) * -75.0F));
          }
       } else {
-         float var12 = ((float)var1.deathTime + var5 - 1.0F) / 20.0F * 1.6F;
+         float var12 = ((float) var1.deathTime + var5 - 1.0F) / 20.0F * 1.6F;
          var12 = MathHelper.sqrt(var12);
          if (var12 > 1.0F) {
             var12 = 1.0F;
          }
 
-         var2.rotate(Vector3f.ZP.rotationDegrees(var12 * this.method17865((T)var1)));
+         var2.rotate(Vector3f.ZP.rotationDegrees(var12 * this.method17865((T) var1)));
       }
    }
 
@@ -301,7 +307,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
    }
 
    public float method17871(T var1, float var2) {
-      return (float)var1.ticksExisted + var2;
+      return (float) var1.ticksExisted + var2;
    }
 
    public float method17865(T var1) {
@@ -317,13 +323,13 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
 
    public boolean method17852(T var1) {
       EventRenderNameTag var4 = new EventRenderNameTag(var1);
-      Client.getInstance().getEventManager().call(var4);
+      Client.getInstance().eventManager.call(var4);
       if (var4.isCancelled()) {
          return false;
       } else {
          double var5 = this.field25097.method32228(var1);
          float var7 = var1.isDiscrete() ? 32.0F : 64.0F;
-         if (var5 >= (double)(var7 * var7)) {
+         if (var5 >= (double) (var7 * var7)) {
             return false;
          } else {
             Minecraft var8 = Minecraft.getInstance();

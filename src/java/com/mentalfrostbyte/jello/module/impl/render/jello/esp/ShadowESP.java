@@ -60,8 +60,7 @@ public class ShadowESP extends Module {
 
     private void method16606() {
         int var3 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F);
-        mc.world
-                .entitiesById
+        mc.world.entitiesById
                 .forEach(
                         (var2, var3x) -> {
                             if (this.method16611(var3x)) {
@@ -82,13 +81,11 @@ public class ShadowESP extends Module {
                                         var3x.getHeight() * 21.0F,
                                         ResourceList.shadowPNG,
                                         var3,
-                                        false
-                                );
+                                        false);
                                 ResourceList.shoutIconPNG.bind();
                                 GL11.glPopMatrix();
                             }
-                        }
-                );
+                        });
     }
 
     private void method16607(Class2191 var1) {
@@ -100,7 +97,7 @@ public class ShadowESP extends Module {
         float var7 = (float) (var4 >> 8 & 0xFF) / 255.0F;
         float var8 = (float) (var4 & 0xFF) / 255.0F;
         GL11.glEnable(2896);
-        GL11.glLightModelfv(2899, new float[]{var6, var7, var8, var5});
+        GL11.glLightModelfv(2899, new float[] { var6, var7, var8, var5 });
         RenderSystem.enableLighting();
         if (field23794 == Class2191.field14329) {
             GL11.glEnable(10754);
@@ -122,7 +119,8 @@ public class ShadowESP extends Module {
                 boolean var19 = mc.gameSettings.entityShadows;
                 RenderSystem.disableLighting();
                 RenderSystem.color4f(0.0F, 0.0F, 1.0F, 0.5F);
-                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932,
+                        GlStateManager.SourceFactor.ONE, DestFactor.field12936);
                 RenderSystem.enableBlend();
                 mc.gameSettings.entityShadows = false;
                 int var20 = var10.getFireTimer();
@@ -152,12 +150,14 @@ public class ShadowESP extends Module {
         GL11.glDepthFunc(515);
     }
 
-    public void method16608(Entity var1, double var2, double var4, double var6, float var8, MatrixStack var9, Class7733 var10) {
+    public void method16608(Entity var1, double var2, double var4, double var6, float var8, MatrixStack var9,
+            Class7733 var10) {
         double var13 = MathHelper.lerp(var8, var1.lastTickPosX, var1.getPosX());
         double var15 = MathHelper.lerp(var8, var1.lastTickPosY, var1.getPosY());
         double var17 = MathHelper.lerp(var8, var1.lastTickPosZ, var1.getPosZ());
         float var19 = MathHelper.lerp(var8, var1.prevRotationYaw, var1.rotationYaw);
-        mc.worldRenderer.renderManager.renderEntityStatic(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
+        mc.worldRenderer.renderManager.renderEntityStatic(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8,
+                var9, var10, 238);
     }
 
     @EventTarget
@@ -180,7 +180,7 @@ public class ShadowESP extends Module {
         if (var1 instanceof LivingEntity) {
             if (var1 instanceof PlayerEntity) {
                 if (!(var1 instanceof ClientPlayerEntity)) {
-                    return !var1.isInvisible() && !Client.getInstance().getCombatManager().isTargetABot(var1);
+                    return !var1.isInvisible() && !Client.getInstance().combatManager.isTargetABot(var1);
                 } else {
                     return false;
                 }
@@ -218,7 +218,7 @@ public class ShadowESP extends Module {
         mc.getTextureManager();
         var10000.bindTexture(TextureManager.field1094);
         mc.gameRenderer.lightmapTexture.method7317();
-        GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
+        GL11.glLightModelfv(2899, new float[] { 0.4F, 0.4F, 0.4F, 1.0F });
         field23794 = Class2191.field14327;
     }
 }

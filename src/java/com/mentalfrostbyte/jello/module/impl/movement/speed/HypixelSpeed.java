@@ -52,7 +52,7 @@ public class HypixelSpeed extends Module {
         }
 
         if (Math.abs((double) mc.timer.timerSpeed - 1.4123) < 0.001
-                && !Client.getInstance().getModuleManager().getModuleByClass(Timer.class).isEnabled()) {
+                && !Client.getInstance().moduleManager.getModuleByClass(Timer.class).isEnabled()) {
             mc.timer.timerSpeed = 1.0F;
         }
     }
@@ -61,7 +61,7 @@ public class HypixelSpeed extends Module {
     @LowerPriority
     public void method16037(EventUpdate var1) {
         if (mc.player.onGround) {
-            if (!Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled2()
+            if (!Client.getInstance().moduleManager.getModuleByClass(Criticals.class).isEnabled2()
                     || KillAura.target == null && KillAura.timedEntityIdk == null
                     || this.field23418 != Class2094.field13641) {
                 this.field23417 = 0.0;
@@ -88,7 +88,7 @@ public class HypixelSpeed extends Module {
             mc.player.jumpTicks = 0;
             if (mc.player.onGround) {
                 this.field23416 = mc.player.getPosY();
-                if (!Client.getInstance().getModuleManager().getModuleByClass(Timer.class).isEnabled()) {
+                if (!Client.getInstance().moduleManager.getModuleByClass(Timer.class).isEnabled()) {
                     mc.timer.timerSpeed = 1.0F;
                 }
 
@@ -97,7 +97,7 @@ public class HypixelSpeed extends Module {
                         mc.player.jump();
                         var1.setY(MovementUtils.getJumpValue());
                         MovementUtils.setSpeed(var1, 0.644348756324588 + Math.random() * 1.0E-6 + (double) MovementUtils.getSpeedBoost() * 0.13);
-                        if (this.getBooleanValueFromSettingName("Timer") && !Client.getInstance().getModuleManager().getModuleByClass(Timer.class).isEnabled()) {
+                        if (this.getBooleanValueFromSettingName("Timer") && !Client.getInstance().moduleManager.getModuleByClass(Timer.class).isEnabled()) {
                             mc.timer.timerSpeed = 1.4123F;
                         }
 
@@ -109,7 +109,7 @@ public class HypixelSpeed extends Module {
                         var1.setY(0.399 + (double) MovementUtils.getJumpBoost() * 0.1 + 1.0E-14);
                         MovementUtils.setSpeed(var1, 0.51 + Math.random() * 1.0E-6 + (double) MovementUtils.getSpeedBoost() * 0.098);
                         this.field23414 = 0;
-                        if (this.getBooleanValueFromSettingName("Timer") && !Client.getInstance().getModuleManager().getModuleByClass(Timer.class).isEnabled()) {
+                        if (this.getBooleanValueFromSettingName("Timer") && !Client.getInstance().moduleManager.getModuleByClass(Timer.class).isEnabled()) {
                             mc.timer.timerSpeed = 1.1123F;
                         }
 
@@ -125,7 +125,7 @@ public class HypixelSpeed extends Module {
                 }
             } else if (this.field23414 >= 0) {
                 double var4 = MovementUtils.getSpeed();
-                if (!Client.getInstance().getModuleManager().getModuleByClass(Timer.class).isEnabled()) {
+                if (!Client.getInstance().moduleManager.getModuleByClass(Timer.class).isEnabled()) {
                     mc.timer.timerSpeed = 1.0F;
                 }
 
@@ -138,7 +138,7 @@ public class HypixelSpeed extends Module {
                             this.field23415 *= var8;
                         }
 
-                        if (MovementUtils.getJumpBoost() == 0 && !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()) {
+                        if (MovementUtils.getJumpBoost() == 0 && !Client.getInstance().moduleManager.getModuleByClass(BlockFly.class).isEnabled()) {
                             this.method16043(var1, this.field23414);
                         }
 
@@ -180,7 +180,7 @@ public class HypixelSpeed extends Module {
     @EventTarget
     @LowerPriority
     public void method16039(JumpEvent var1) {
-        if (!Jesus.isWalkingOnLiquid() && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+        if (!Jesus.isWalkingOnLiquid() && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
             if (this.getBooleanValueFromSettingName("Auto Jump") || mc.player.isJumping) {
                 if (this.field23414 < 0) {
                     var1.setCancelled(true);

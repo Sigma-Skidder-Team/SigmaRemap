@@ -45,7 +45,7 @@ public class CubecraftSpeed extends Module {
     @EventTarget
     public void method16361(EventMove var1) {
         if (this.isEnabled()
-                && !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()
+                && !Client.getInstance().moduleManager.getModuleByClass(BlockFly.class).isEnabled()
                 && !MultiUtilities.method17684(mc.player)) {
             String var4 = this.getStringSettingValueByName("Mode");
             switch (var4) {
@@ -115,7 +115,7 @@ public class CubecraftSpeed extends Module {
                         }
 
                         this.field23620 = mc.player.getPosY();
-                        if (!Client.getInstance().getModuleManager().getModuleByClass(Timer.class).isEnabled()) {
+                        if (!Client.getInstance().moduleManager.getModuleByClass(Timer.class).isEnabled()) {
                             mc.timer.timerSpeed = 1.0F;
                         }
                     } else {

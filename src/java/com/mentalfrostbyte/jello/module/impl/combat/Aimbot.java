@@ -38,7 +38,7 @@ public class Aimbot extends ModuleWithModuleSettings {
         while (var6.hasNext()) {
             Entity var7 = (Entity) var6.next();
             if (var7 != mc.player) {
-                if (!Client.getInstance().getFriendManager().method26997(var7)) {
+                if (!Client.getInstance().friendManager.method26997(var7)) {
                     if (var7 instanceof LivingEntity) {
                         if (((LivingEntity) var7).getHealth() != 0.0F) {
                             if (!(mc.player.getDistance(var7) > var1)) {
@@ -46,7 +46,7 @@ public class Aimbot extends ModuleWithModuleSettings {
                                     if (!(var7 instanceof ArmorStandEntity)) {
                                         if (!this.getBooleanValueFromSettingName("Players") && var7 instanceof PlayerEntity) {
                                             var6.remove();
-                                        } else if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().isTargetABot(var7)) {
+                                        } else if (var7 instanceof PlayerEntity && Client.getInstance().combatManager.isTargetABot(var7)) {
                                             var6.remove();
                                         } else if (!this.getBooleanValueFromSettingName("Invisible") && var7.isInvisible()) {
                                             var6.remove();
@@ -57,7 +57,7 @@ public class Aimbot extends ModuleWithModuleSettings {
                                         } else if (!var7.method3362()) {
                                             if (var7 instanceof PlayerEntity
                                                     && Class8781.method31662((PlayerEntity) var7)
-                                                    && Client.getInstance().getModuleManager().getModuleByClass(Teams.class).isEnabled()) {
+                                                    && Client.getInstance().moduleManager.getModuleByClass(Teams.class).isEnabled()) {
                                                 var6.remove();
                                             } else if (var5 == null || mc.player.getDistance(var7) < mc.player.getDistance(var5)) {
                                                 var5 = var7;

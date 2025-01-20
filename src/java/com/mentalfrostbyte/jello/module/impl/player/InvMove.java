@@ -30,8 +30,10 @@ public class InvMove extends Module {
     @EventTarget
     private void method16583(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.getKey() == mc.gameSettings.keyBindInventory.inputMappingsInput.keyCode && mc.player.isSprinting()) {
-                mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.STOP_SPRINTING));
+            if (var1.getKey() == mc.gameSettings.keyBindInventory.inputMappingsInput.keyCode
+                    && mc.player.isSprinting()) {
+                mc.getConnection()
+                        .sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.STOP_SPRINTING));
             }
         }
     }
@@ -39,7 +41,8 @@ public class InvMove extends Module {
     @EventTarget
     private void method16584(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (this.field23757 && var1.getPacket() instanceof CEntityActionPacket && this.getBooleanValueFromSettingName("AACP")) {
+            if (this.field23757 && var1.getPacket() instanceof CEntityActionPacket
+                    && this.getBooleanValueFromSettingName("AACP")) {
                 CEntityActionPacket var4 = (CEntityActionPacket) var1.getPacket();
                 if (var4.getAction() == CEntityActionPacket.Action.START_SPRINTING) {
                     var1.setCancelled(true);
@@ -52,21 +55,25 @@ public class InvMove extends Module {
     private void method16585(TickEvent var1) {
         if (this.isEnabled()) {
             if (this.getBooleanValueFromSettingName("AACP")) {
-                boolean var4 = !(mc.currentScreen instanceof InventoryScreen) || !(mc.currentScreen instanceof ChestScreen);
+                boolean var4 = !(mc.currentScreen instanceof InventoryScreen)
+                        || !(mc.currentScreen instanceof ChestScreen);
                 if (this.field23757 && !var4) {
                     this.field23757 = !this.field23757;
                     if (mc.player.isSprinting()) {
-                        mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.START_SPRINTING));
+                        mc.getConnection().sendPacket(
+                                new CEntityActionPacket(mc.player, CEntityActionPacket.Action.START_SPRINTING));
                     }
                 } else if (!this.field23757 && var4) {
                     this.field23757 = !this.field23757;
                     if (mc.player.isSprinting()) {
-                        mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.STOP_SPRINTING));
+                        mc.getConnection().sendPacket(
+                                new CEntityActionPacket(mc.player, CEntityActionPacket.Action.STOP_SPRINTING));
                     }
                 }
             }
 
-            if (mc.currentScreen instanceof ContainerScreen || Client.getInstance().getPlayerTracker().focusGameTicks() <= 1) {
+            if (mc.currentScreen instanceof ContainerScreen
+                    || Client.getInstance().getPlayerTracker().focusGameTicks() <= 1) {
                 if (mc.currentScreen instanceof ChatScreen) {
                     return;
                 }
@@ -86,7 +93,8 @@ public class InvMove extends Module {
                     }
                 }
 
-                if (Client.getInstance().getGuiManager().method33480() != null && Client.getInstance().getGuiManager().method33480().method13227()) {
+                if (Client.getInstance().guiManager.method33480() != null
+                        && Client.getInstance().guiManager.method33480().method13227()) {
                     for (KeyBinding var14 : Minecraft.getInstance().gameSettings.field44658) {
                         var14.pressed = false;
                     }

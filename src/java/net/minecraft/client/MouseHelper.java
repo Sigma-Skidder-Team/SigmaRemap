@@ -39,14 +39,14 @@ public class MouseHelper {
    }
 
    private void method36730(long var1, int var3, int var4, int var5) {
-      if (Client.getInstance().getGuiManager().method33480() != null) {
-         Client.getInstance().getGuiManager().method33456(var3, var4);
+      if (Client.getInstance().guiManager.method33480() != null) {
+         Client.getInstance().guiManager.method33456(var3, var4);
       } else {
          if (this.field44285.currentScreen == null) {
             if (var4 != 1 && var4 != 2) {
                if (var4 == 0) {
                   MouseHoverEvent var15 = new MouseHoverEvent(var3);
-                  Client.getInstance().getEventManager().call(var15);
+                  Client.getInstance().eventManager.call(var15);
                   if (var15.isCancelled()) {
                      return;
                   }
@@ -57,7 +57,7 @@ public class MouseHelper {
                }
 
                EventKeyPress var8 = new EventKeyPress(var3, var4 == 2, null);
-               Client.getInstance().getEventManager().call(var8);
+               Client.getInstance().eventManager.call(var8);
                if (var8.isCancelled()) {
                   return;
                }
@@ -146,9 +146,9 @@ public class MouseHelper {
    }
 
    private void method36731(long var1, double var3, double var5) {
-      if (Client.getInstance().getGuiManager().method33480() == null) {
+      if (Client.getInstance().guiManager.method33480() == null) {
          EventMouse var9 = new EventMouse(var5);
-         Client.getInstance().getEventManager().call(var9);
+         Client.getInstance().eventManager.call(var9);
          if (!var9.isCancelled()) {
             if (var1 == Minecraft.getInstance().getMainWindow().getHandle()) {
                double var10 = (!this.field44285.gameSettings.field44619 ? var5 : Math.signum(var5)) * this.field44285.gameSettings.field44607;
@@ -184,7 +184,7 @@ public class MouseHelper {
             }
          }
       } else {
-         Client.getInstance().getGuiManager().method33455(var3, var5);
+         Client.getInstance().guiManager.method33455(var3, var5);
       }
    }
 

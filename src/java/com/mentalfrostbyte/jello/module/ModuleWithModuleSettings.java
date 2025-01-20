@@ -26,12 +26,13 @@ public class ModuleWithModuleSettings extends Module {
         this.moduleArray = modules;
 
         for (Module moduleFromArray : this.moduleArray) {
-            Client.getInstance().getEventManager().register(moduleFromArray);
+            Client.getInstance().eventManager.register(moduleFromArray);
             this.stringList.add(moduleFromArray.getName());
             moduleFromArray.method16003(this);
         }
 
-        this.registerSetting(this.modeSetting = new ModeSetting("Type", type + " mode", 0, this.stringList.toArray(new String[0])));
+        this.registerSetting(
+                this.modeSetting = new ModeSetting("Type", type + " mode", 0, this.stringList.toArray(new String[0])));
         this.modeSetting.addObserver(var1x -> this.method16724());
         this.method16724();
     }
@@ -107,7 +108,8 @@ public class ModuleWithModuleSettings extends Module {
                                 } catch (JSONException2 var16) {
                                     Client.getInstance()
                                             .getLogger()
-                                            .warn("Could not initialize settings of " + var8.getName() + "." + var14.getName() + " from config.");
+                                            .warn("Could not initialize settings of " + var8.getName() + "."
+                                                    + var14.getName() + " from config.");
                                 } catch (JSONException e) {
                                     throw new RuntimeException(e);
                                 }

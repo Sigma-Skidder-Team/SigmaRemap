@@ -32,24 +32,25 @@ public class CombatTracker {
     private final List<UUID> field36053 = new ArrayList<>();
 
     public CombatTracker() {
-        Client.getInstance().getEventManager().register(this);
+        Client.getInstance().eventManager.register(this);
         this.field36055 = HttpClients.createDefault();
         this.field36058 = new Class8930(this);
-        RandomModuleThread.field8342 = RandomModuleThread.field8342 | Client.getInstance().getNetworkManager().field38425 != null;
+        RandomModuleThread.field8342 = RandomModuleThread.field8342
+                | Client.getInstance().networkManager.field38425 != null;
     }
 
     public static Minecraft method29522(CombatTracker var0) {
         return var0.field36050;
     }
 
-    public static void method29523(CombatTracker var0, GameProfile var1, String var2) throws AuthenticationException, IOException {
+    public static void method29523(CombatTracker var0, GameProfile var1, String var2)
+            throws AuthenticationException, IOException {
         var0.method29520(var1, var2);
     }
 
     public HashMap<UUID, Class8433> method29510() {
         return this.field36054;
     }
-
 
     public Class8433 method29512(Entity var1) {
         return this.field36054.get(var1.getUniqueID());
@@ -62,7 +63,7 @@ public class CombatTracker {
             List<AbstractClientPlayerEntity> var4 = this.field36050.world.method6870();
 
             var4.removeIf(var6 -> this.field36053.contains(var6.getUniqueID())
-                    || Client.getInstance().getCombatManager().isTargetABot(var6)
+                    || Client.getInstance().combatManager.isTargetABot(var6)
                     || var6.getName().getUnformattedComponentText().isEmpty());
 
             if (!var4.isEmpty()) {
@@ -118,6 +119,7 @@ public class CombatTracker {
         Client.getInstance();
         Client.getClientLogger().info("Jello Connect: successfully reached out mojangs servers " + var2);
         System.out
-                .println("https://sessionserver.mojang.com/session/minecraft/hasJoined?serverId=" + var2 + "&username=" + this.field36050.session.getUsername());
+                .println("https://sessionserver.mojang.com/session/minecraft/hasJoined?serverId=" + var2 + "&username="
+                        + this.field36050.session.getUsername());
     }
 }

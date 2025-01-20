@@ -76,7 +76,8 @@ public class GuiManager {
         field41345 = GLFW.glfwCreateStandardCursor(221188);
         field41346 = GLFW.glfwCreateStandardCursor(221186);
         GLFW.glfwSetCursor(Minecraft.getInstance().mainWindow.getHandle(), field41344);
-        portalScaleFactor = (float) (Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.getHeight());
+        portalScaleFactor = (float) (Minecraft.getInstance().mainWindow.getFramebufferHeight()
+                / Minecraft.getInstance().mainWindow.getHeight());
     }
 
     public static boolean method33457(net.minecraft.client.gui.screen.Screen var0) {
@@ -88,7 +89,8 @@ public class GuiManager {
             Minecraft.getInstance().currentScreen = null;
             Minecraft.getInstance().displayGuiScreen(new JelloForSigmaOptions());
             return true;
-        } else if (Client.getInstance().getClientMode() == ClientMode.NOADDONS && var0 instanceof VanillaMainMenuScreen && !(var0 instanceof NoAddOnnScreenMenu)) {
+        } else if (Client.getInstance().getClientMode() == ClientMode.NOADDONS && var0 instanceof VanillaMainMenuScreen
+                && !(var0 instanceof NoAddOnnScreenMenu)) {
             Minecraft.getInstance().currentScreen = null;
             Minecraft.getInstance().displayGuiScreen(new NoAddOnnScreenMenu());
             return true;
@@ -171,8 +173,10 @@ public class GuiManager {
 
     public void endTick() {
         if (this.screen != null) {
-            this.field41354[0] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getWidth(), (int) Minecraft.getInstance().mouseHelper.method36738()));
-            this.field41354[1] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getHeight(), (int) Minecraft.getInstance().mouseHelper.method36739()));
+            this.field41354[0] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getWidth(),
+                    (int) Minecraft.getInstance().mouseHelper.method36738()));
+            this.field41354[1] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getHeight(),
+                    (int) Minecraft.getInstance().mouseHelper.method36739()));
 
             for (Integer var4 : this.field41339) {
                 this.method33463(var4);
@@ -246,20 +250,27 @@ public class GuiManager {
             if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
                 float var7 = 0.5F + TabGUI.animationProgress.calcPercent() * 0.5F;
                 GL11.glAlphaFunc(516, 0.1F);
-                RenderUtil.renderBackgroundBox(4.0F, 2.0F, 106.0F, 28.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F * var7));
-                RenderUtil.drawString(ResourceList.bold22, 9.0F, 2.0F, "Sigma", MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * var7));
+                RenderUtil.renderBackgroundBox(4.0F, 2.0F, 106.0F, 28.0F,
+                        MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F * var7));
+                RenderUtil.drawString(ResourceList.bold22, 9.0F, 2.0F, "Sigma",
+                        MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * var7));
                 RenderUtil.drawString(
-                        ResourceList.bold22, 8.0F, 1.0F, "Sigma", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var7 * 1.2F))
-                );
-                int var8 = Color.getHSBColor((float) (System.currentTimeMillis() % 4000L) / 4000.0F, 1.0F, 1.0F).getRGB();
-                RenderUtil.drawString(ResourceList.bold14, 73.0F, 2.0F, "5.0.0", MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
-                RenderUtil.drawString(ResourceList.bold14, 72.0F, 1.0F, "5.0.0", MultiUtilities.applyAlpha(var8, Math.min(1.0F, var7 * 1.4F)));
+                        ResourceList.bold22, 8.0F, 1.0F, "Sigma", MultiUtilities
+                                .applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var7 * 1.2F)));
+                int var8 = Color.getHSBColor((float) (System.currentTimeMillis() % 4000L) / 4000.0F, 1.0F, 1.0F)
+                        .getRGB();
+                RenderUtil.drawString(ResourceList.bold14, 73.0F, 2.0F, "5.0.0",
+                        MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                RenderUtil.drawString(ResourceList.bold14, 72.0F, 1.0F, "5.0.0",
+                        MultiUtilities.applyAlpha(var8, Math.min(1.0F, var7 * 1.4F)));
             } else {
                 GL11.glAlphaFunc(519, 0.0F);
-                RenderUtil.method11455((float) var3, var4, 170.0F, 104.0F, !(portalScaleFactor > 1.0F) ? ResourceList.jelloWatermarkPNG : ResourceList.jelloWatermark2xPNG);
+                RenderUtil.method11455((float) var3, var4, 170.0F, 104.0F,
+                        !(portalScaleFactor > 1.0F) ? ResourceList.jelloWatermarkPNG
+                                : ResourceList.jelloWatermark2xPNG);
             }
 
-            Client.getInstance().getEventManager().call(new EventRender());
+            Client.getInstance().eventManager.call(new EventRender());
         }
 
         if (this.screen != null && Minecraft.getInstance().loadingGui == null) {
@@ -384,9 +395,10 @@ public class GuiManager {
 
         if (Minecraft.getInstance().mainWindow.getWidth() != 0 && Minecraft.getInstance().mainWindow.getHeight() != 0) {
             portalScaleFactor = (float) Math.max(
-                    Minecraft.getInstance().mainWindow.getFramebufferWidth() / Minecraft.getInstance().mainWindow.getWidth(),
-                    Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.getHeight()
-            );
+                    Minecraft.getInstance().mainWindow.getFramebufferWidth()
+                            / Minecraft.getInstance().mainWindow.getWidth(),
+                    Minecraft.getInstance().mainWindow.getFramebufferHeight()
+                            / Minecraft.getInstance().mainWindow.getHeight());
         }
     }
 
@@ -410,8 +422,8 @@ public class GuiManager {
             this.screen.method13028(this.field41354[0], this.field41354[1]);
         }
 
-        if (Client.getInstance().getModuleManager() != null) {
-            Client.getInstance().getModuleManager().getMacOSTouchBar().method13734(null);
+        if (Client.getInstance().moduleManager != null) {
+            Client.getInstance().moduleManager.getMacOSTouchBar().method13734(null);
         }
     }
 

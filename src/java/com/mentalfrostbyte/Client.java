@@ -53,22 +53,22 @@ public class Client {
     private JSONObject config;
     private boolean field28968 = true;
     private Logger logger;
-    private EventManager eventManager;
-    private ModuleManager moduleManager;
-    private CommandManager commandManager;
-    private GuiManager guiManager;
-    private FriendManager friendManager;
-    private CombatManager combatManager;
-    private MusicManager musicManager;
+    public EventManager eventManager;
+    public ModuleManager moduleManager;
+    public CommandManager commandManager;
+    public GuiManager guiManager;
+    public FriendManager friendManager;
+    public CombatManager combatManager;
+    public MusicManager musicManager;
     private PlayerStateTracker playerStateTracker;
-    private AccountManager accountManager;
+    public AccountManager accountManager;
     private BlurEngine blurEngine;
     private CombatTracker combatTracker;
-    private NetworkManager networkManager;
-    private SoundManager soundManager;
-    private NotificationManager notificationManager;
+    public NetworkManager networkManager;
+    public SoundManager soundManager;
+    public NotificationManager notificationManager;
     private SlotChangeTracker slotChangeTracker;
-    private WaypointsManager waypointsManager;
+    public WaypointsManager waypointsManager;
     private Class8795 field28989;
     private ClientMode clientMode = ClientMode.PREMIUM;
     private DiscordRichPresence discordRichPresence;
@@ -200,7 +200,7 @@ public class Client {
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         GL11.glDisable(2896);
         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
-        getInstance().getEventManager().call(new EventRender2D());
+        getInstance().eventManager.call(new EventRender2D());
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.enableCull();
         RenderSystem.disableDepthTest();
@@ -296,20 +296,8 @@ public class Client {
         return this.slotChangeTracker;
     }
 
-    public SoundManager getSoundManager() {
-        return this.soundManager;
-    }
-
     public NotificationManager getNotificationManager() {
         return this.notificationManager;
-    }
-
-    public AccountManager getAccountManager() {
-        return this.accountManager;
-    }
-
-    public MusicManager getMusicManager() {
-        return this.musicManager;
     }
 
     public WaypointsManager getWaypointsManager() {
@@ -352,7 +340,7 @@ public class Client {
                 GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Jello for Sigma 5.0");
             }
         } else {
-            getInstance().getGuiManager().method33452();
+            getInstance().guiManager.method33452();
             GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Classic Sigma 5.0");
         }
 

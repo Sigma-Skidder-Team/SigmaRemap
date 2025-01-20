@@ -14,7 +14,7 @@ public class Class4335 extends Class4333 {
    public Class4335(CustomGuiScreen var1, String var2, int var3, int var4, ModuleCategory[] var5) {
       super(var1, var2, var3 - 296, var4 - 346, 592, 692);
 
-      for (Module var9 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+      for (Module var9 : Client.getInstance().moduleManager.getModuleMap().values()) {
          if (var9.method16006()) {
             for (ModuleCategory var13 : var5) {
                if (var9.getAdjustedCategoryBasedOnClientMode().equals(var13)) {

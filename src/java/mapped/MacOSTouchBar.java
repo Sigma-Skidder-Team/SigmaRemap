@@ -29,7 +29,7 @@ public class MacOSTouchBar {
    public HashMap<Module, TouchBarButton> field21389 = new HashMap<Module, TouchBarButton>();
 
    public MacOSTouchBar() {
-      Client.getInstance().getEventManager().register(this);
+      Client.getInstance().eventManager.register(this);
       if (FileUtil.field25727) {
          this.field21387.add(new Class7957(344, ClickGui.class));
       }
@@ -57,7 +57,7 @@ public class MacOSTouchBar {
       Iterator var4 = this.field21387.iterator();
 
       while (var4.hasNext()) {
-         if (((Class7957)var4.next()).method27056().equals(var1)) {
+         if (((Class7957) var4.next()).method27056().equals(var1)) {
             var4.remove();
          }
       }
@@ -150,14 +150,12 @@ public class MacOSTouchBar {
 
    public boolean isValidMacOS() {
       return Minecraft.IS_RUNNING_ON_MAC
-         && Client.getInstance().getClientMode() == ClientMode.JELLO
-         && (
-            System.getProperty("os.version").startsWith("10.14")
-               || System.getProperty("os.version").startsWith("10.15")
-               || System.getProperty("os.version").startsWith("10.16")
-               || System.getProperty("os.version").startsWith("10.17")
-               || System.getProperty("os.version").startsWith("11.")
-         );
+            && Client.getInstance().getClientMode() == ClientMode.JELLO
+            && (System.getProperty("os.version").startsWith("10.14")
+                  || System.getProperty("os.version").startsWith("10.15")
+                  || System.getProperty("os.version").startsWith("10.16")
+                  || System.getProperty("os.version").startsWith("10.17")
+                  || System.getProperty("os.version").startsWith("11."));
    }
 
    public void displayKeybindsInfo() {
@@ -184,11 +182,11 @@ public class MacOSTouchBar {
       if (this.touchBar != null) {
          for (TouchBarItem var5 : this.touchBar.getItems()) {
             if (var5.getView() instanceof TouchBarButton && var1.getName().equals(var5.getIdentifier())) {
-               ((TouchBarButton)var5.getView()).setBezelColor(this.method13740(var1));
+               ((TouchBarButton) var5.getView()).setBezelColor(this.method13740(var1));
                new Thread(() -> {
                   try {
                      Thread.sleep(200L);
-                     ((TouchBarButton)var5.getView()).setBezelColor(this.method13740(var1));
+                     ((TouchBarButton) var5.getView()).setBezelColor(this.method13740(var1));
                   } catch (InterruptedException ignored) {
                   }
                }).start();
@@ -282,10 +280,10 @@ public class MacOSTouchBar {
       }
 
       int var12 = java.awt.Color.HSBtoRGB(var9, var10, var11);
-      float var13 = (float)(var12 >> 24 & 0xFF) / 255.0F;
-      float var14 = (float)(var12 >> 16 & 0xFF) / 255.0F;
-      float var15 = (float)(var12 >> 8 & 0xFF) / 255.0F;
-      float var16 = (float)(var12 & 0xFF) / 255.0F;
+      float var13 = (float) (var12 >> 24 & 0xFF) / 255.0F;
+      float var14 = (float) (var12 >> 16 & 0xFF) / 255.0F;
+      float var15 = (float) (var12 >> 8 & 0xFF) / 255.0F;
+      float var16 = (float) (var12 & 0xFF) / 255.0F;
       return new Color(var14, var15, var16, var13);
    }
 }

@@ -290,15 +290,15 @@ public class KeyboardListener {
 
    public void onKeyEvent(long windowPointer, int key, int scanCode, int action, int modifiers) {
       if (windowPointer == this.mc.getMainWindow().getHandle()) {
-         if (Client.getInstance().getGuiManager().method33480() != null) {
-            Client.getInstance().getGuiManager().method33453(key, action);
+         if (Client.getInstance().guiManager.method33480() != null) {
+            Client.getInstance().guiManager.method33453(key, action);
             return;
          }
 
          if (this.mc.currentScreen != null) {
             if (this.mc.currentScreen instanceof ChatScreen && key == 258) { //TAB KEY
                EventKeyPress keyPress = new EventKeyPress(key, action == 2, null);
-               Client.getInstance().getEventManager().call(keyPress);
+               Client.getInstance().eventManager.call(keyPress);
                if (keyPress.isCancelled()) {
                   return;
                }
@@ -306,7 +306,7 @@ public class KeyboardListener {
          } else if (action == 1 || action == 2) {
             ModuleKeyPress.press(key);
             EventKeyPress eventKeyPress = new EventKeyPress(key, action == 2, null);
-            Client.getInstance().getEventManager().call(eventKeyPress);
+            Client.getInstance().eventManager.call(eventKeyPress);
             if (eventKeyPress.isCancelled()) {
                return;
             }
@@ -461,8 +461,8 @@ public class KeyboardListener {
 
    private void method36346(long var1, int var3, int var4) {
       if (var1 == this.mc.getMainWindow().getHandle()) {
-         if (Client.getInstance().getGuiManager().method33480() != null) {
-            Client.getInstance().getGuiManager().method33454(var3, var4);
+         if (Client.getInstance().guiManager.method33480() != null) {
+            Client.getInstance().guiManager.method33454(var3, var4);
             return;
          }
 
