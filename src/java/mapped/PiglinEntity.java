@@ -92,25 +92,25 @@ public class PiglinEntity extends Class1035 implements Class1023 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       if (this.isChild()) {
-         var1.putBoolean("IsBaby", true);
+         compound.putBoolean("IsBaby", true);
       }
 
       if (this.field5747) {
-         var1.putBoolean("CannotHunt", true);
+         compound.putBoolean("CannotHunt", true);
       }
 
-      var1.put("Inventory", this.field5746.method3683());
+      compound.put("Inventory", this.field5746.method3683());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4308(var1.getBoolean("IsBaby"));
-      this.method4617(var1.getBoolean("CannotHunt"));
-      this.field5746.method3682(var1.getList("Inventory", 10));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4308(compound.getBoolean("IsBaby"));
+      this.method4617(compound.getBoolean("CannotHunt"));
+      this.field5746.method3682(compound.getList("Inventory", 10));
    }
 
    @Override
@@ -198,12 +198,12 @@ public class PiglinEntity extends Class1035 implements Class1023 {
 
    @Override
    public Class6971<PiglinEntity> getBrainCodec() {
-      return Brain.<PiglinEntity>method21400(field5749, field5748);
+      return Brain.<PiglinEntity>createCodec(field5749, field5748);
    }
 
    @Override
    public Brain<?> createBrain(Dynamic<?> var1) {
-      return Class4388.method13798(this, this.getBrainCodec().method21513(var1));
+      return Class4388.method13798(this, this.getBrainCodec().deserialize(var1));
    }
 
    @Override
@@ -238,7 +238,7 @@ public class PiglinEntity extends Class1035 implements Class1023 {
 
    @Override
    public void method4308(boolean var1) {
-      this.getDataManager().method35446(field5741, var1);
+      this.getDataManager().set(field5741, var1);
       if (!this.world.isRemote) {
          ModifiableAttributeInstance var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
          var4.removeModifier(field5745);
@@ -272,7 +272,7 @@ public class PiglinEntity extends Class1035 implements Class1023 {
    }
 
    @Override
-   public int getExperiencePoints(PlayerEntity var1) {
+   public int getExperiencePoints(PlayerEntity player) {
       return this.field5594;
    }
 
@@ -293,7 +293,7 @@ public class PiglinEntity extends Class1035 implements Class1023 {
 
    @Override
    public void method4535(boolean var1) {
-      this.dataManager.method35446(field5742, var1);
+      this.dataManager.set(field5742, var1);
    }
 
    @Override
@@ -323,7 +323,7 @@ public class PiglinEntity extends Class1035 implements Class1023 {
    }
 
    public void method4624(boolean var1) {
-      this.dataManager.method35446(field5743, var1);
+      this.dataManager.set(field5743, var1);
    }
 
    @Override

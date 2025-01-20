@@ -64,7 +64,7 @@ public abstract class Class1082 extends MonsterEntity implements Class1022 {
 
    @Override
    public CreatureAttribute getCreatureAttribute() {
-      return CreatureAttribute.field33506;
+      return CreatureAttribute.UNDEAD;
    }
 
    @Override
@@ -170,8 +170,8 @@ public abstract class Class1082 extends MonsterEntity implements Class1022 {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
       this.method5031();
    }
 

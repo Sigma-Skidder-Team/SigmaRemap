@@ -119,32 +119,32 @@ public interface IEntityReader {
    }
 
    @Nullable
-   default PlayerEntity method7188(Class8522 var1, LivingEntity var2) {
+   default PlayerEntity method7188(EntityPredicate var1, LivingEntity var2) {
       return this.<PlayerEntity>method7193(this.method6870(), var1, var2, var2.getPosX(), var2.getPosY(), var2.getPosZ());
    }
 
    @Nullable
-   default PlayerEntity method7189(Class8522 var1, LivingEntity var2, double var3, double var5, double var7) {
+   default PlayerEntity method7189(EntityPredicate var1, LivingEntity var2, double var3, double var5, double var7) {
       return this.<PlayerEntity>method7193(this.method6870(), var1, var2, var3, var5, var7);
    }
 
    @Nullable
-   default PlayerEntity method7190(Class8522 var1, double var2, double var4, double var6) {
+   default PlayerEntity method7190(EntityPredicate var1, double var2, double var4, double var6) {
       return this.<PlayerEntity>method7193(this.method6870(), var1, (LivingEntity)null, var2, var4, var6);
    }
 
    @Nullable
-   default <T extends LivingEntity> T method7191(Class<? extends T> var1, Class8522 var2, LivingEntity var3, double var4, double var6, double var8, AxisAlignedBB var10) {
+   default <T extends LivingEntity> T method7191(Class<? extends T> var1, EntityPredicate var2, LivingEntity var3, double var4, double var6, double var8, AxisAlignedBB var10) {
       return this.<T>method7193(this.getEntitiesInAABBexcluding(var1, var10, (Predicate<? super T>)null), var2, var3, var4, var6, var8);
    }
 
    @Nullable
-   default <T extends LivingEntity> T method7192(Class<? extends T> var1, Class8522 var2, LivingEntity var3, double var4, double var6, double var8, AxisAlignedBB var10) {
+   default <T extends LivingEntity> T method7192(Class<? extends T> var1, EntityPredicate var2, LivingEntity var3, double var4, double var6, double var8, AxisAlignedBB var10) {
       return this.<T>method7193(this.method6773(var1, var10, (Predicate<? super T>)null), var2, var3, var4, var6, var8);
    }
 
    @Nullable
-   default <T extends LivingEntity> T method7193(List<? extends T> var1, Class8522 var2, LivingEntity var3, double var4, double var6, double var8) {
+   default <T extends LivingEntity> T method7193(List<? extends T> var1, EntityPredicate var2, LivingEntity var3, double var4, double var6, double var8) {
       double var12 = -1.0;
       LivingEntity var14 = null;
 
@@ -161,7 +161,7 @@ public interface IEntityReader {
       return (T)var14;
    }
 
-   default List<PlayerEntity> method7194(Class8522 var1, LivingEntity var2, AxisAlignedBB var3) {
+   default List<PlayerEntity> method7194(EntityPredicate var1, LivingEntity var2, AxisAlignedBB var3) {
       ArrayList var6 = Lists.newArrayList();
 
       for (PlayerEntity var8 : this.method6870()) {
@@ -173,7 +173,7 @@ public interface IEntityReader {
       return var6;
    }
 
-   default <T extends LivingEntity> List<T> method7195(Class<? extends T> var1, Class8522 var2, LivingEntity var3, AxisAlignedBB var4) {
+   default <T extends LivingEntity> List<T> method7195(Class<? extends T> var1, EntityPredicate var2, LivingEntity var3, AxisAlignedBB var4) {
       List<LivingEntity> var7 = this.getEntitiesInAABBexcluding(var1, var4, null);
       ArrayList var8 = Lists.newArrayList();
 

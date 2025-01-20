@@ -18,7 +18,7 @@ public class Class2726 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      LivingEntity var3 = this.field17232.method3014();
+      LivingEntity var3 = this.field17232.getRevengeTarget();
       return this.field17232.isInWater() && var3 != null ? this.field17232.getDistanceSq(var3) < 100.0 : false;
    }
 
@@ -30,7 +30,7 @@ public class Class2726 extends Class2595 {
    @Override
    public void method10805() {
       this.field17231++;
-      LivingEntity var3 = this.field17232.method3014();
+      LivingEntity var3 = this.field17232.getRevengeTarget();
       if (var3 != null) {
          Vector3d var4 = new Vector3d(
             this.field17232.getPosX() - var3.getPosX(),
@@ -55,7 +55,7 @@ public class Class2726 extends Class2595 {
                   this.field17232.getPosZ() + var4.z
                )
             );
-         if (var6.method23486(FluidTags.field40469) || var5.isAir()) {
+         if (var6.method23486(FluidTags.WATER) || var5.isAir()) {
             double var7 = var4.length();
             if (var7 > 0.0) {
                var4.method11333();
@@ -79,7 +79,7 @@ public class Class2726 extends Class2595 {
          if (this.field17231 % 10 == 5) {
             this.field17232
                .world
-               .addParticle(ParticleTypes.field34052, this.field17232.getPosX(), this.field17232.getPosY(), this.field17232.getPosZ(), 0.0, 0.0, 0.0);
+               .addParticle(ParticleTypes.BUBBLE, this.field17232.getPosX(), this.field17232.getPosY(), this.field17232.getPosZ(), 0.0, 0.0, 0.0);
          }
       }
    }

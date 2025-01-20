@@ -137,7 +137,7 @@ public class Class8243 {
 
    private static int method28742(CommandSource var0, float var1) throws CommandSyntaxException {
       WorldBorder var4 = var0.method20172().getWorldBorder();
-      if (var4.method24546() != (double)var1) {
+      if (var4.getDamageBuffer() != (double)var1) {
          var4.method24547((double)var1);
          var0.sendFeedback(new TranslationTextComponent("commands.worldborder.damage.buffer.success", String.format(Locale.ROOT, "%.2f", var1)), true);
          return (int)var1;
@@ -148,7 +148,7 @@ public class Class8243 {
 
    private static int method28743(CommandSource var0, float var1) throws CommandSyntaxException {
       WorldBorder var4 = var0.method20172().getWorldBorder();
-      if (var4.method24548() != (double)var1) {
+      if (var4.getDamagePerBlock() != (double)var1) {
          var4.method24549((double)var1);
          var0.sendFeedback(new TranslationTextComponent("commands.worldborder.damage.amount.success", String.format(Locale.ROOT, "%.2f", var1)), true);
          return (int)var1;

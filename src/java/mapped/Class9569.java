@@ -47,6 +47,6 @@ public class Class9569 {
    }
 
    public float method37106() {
-      return this.field44557 != DamageSource.field39004 ? this.field44562 : Float.MAX_VALUE;
+      return this.field44557 != DamageSource.OUT_OF_WORLD ? this.field44562 : Float.MAX_VALUE;
    }
 }

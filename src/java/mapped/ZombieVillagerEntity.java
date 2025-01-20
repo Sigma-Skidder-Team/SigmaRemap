@@ -51,50 +51,50 @@ public class ZombieVillagerEntity extends ZombieEntity implements Class1041 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       Class7921.field33913
          .encodeStart(NBTDynamicOps.INSTANCE, this.method4674())
          .resultOrPartial(LOGGER::error)
-         .ifPresent(var1x -> var1.put("VillagerData", var1x));
+         .ifPresent(var1x -> compound.put("VillagerData", var1x));
       if (this.field5774 != null) {
-         var1.put("Offers", this.field5774);
+         compound.put("Offers", this.field5774);
       }
 
       if (this.field5773 != null) {
-         var1.put("Gossips", this.field5773);
+         compound.put("Gossips", this.field5773);
       }
 
-      var1.putInt("ConversionTime", !this.method4667() ? -1 : this.field5771);
+      compound.putInt("ConversionTime", !this.method4667() ? -1 : this.field5771);
       if (this.field5772 != null) {
-         var1.putUniqueID("ConversionPlayer", this.field5772);
+         compound.putUniqueID("ConversionPlayer", this.field5772);
       }
 
-      var1.putInt("Xp", this.field5775);
+      compound.putInt("Xp", this.field5775);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("VillagerData", 10)) {
-         DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(NBTDynamicOps.INSTANCE, var1.get("VillagerData")));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("VillagerData", 10)) {
+         DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(NBTDynamicOps.INSTANCE, compound.get("VillagerData")));
          var4.resultOrPartial(LOGGER::error).ifPresent(this::method4673);
       }
 
-      if (var1.contains("Offers", 10)) {
-         this.field5774 = var1.getCompound("Offers");
+      if (compound.contains("Offers", 10)) {
+         this.field5774 = compound.getCompound("Offers");
       }
 
-      if (var1.contains("Gossips", 10)) {
-         this.field5773 = var1.getList("Gossips", 10);
+      if (compound.contains("Gossips", 10)) {
+         this.field5773 = compound.getList("Gossips", 10);
       }
 
-      if (var1.contains("ConversionTime", 99) && var1.getInt("ConversionTime") > -1) {
-         this.method4668(!var1.hasUniqueID("ConversionPlayer") ? null : var1.getUniqueID("ConversionPlayer"), var1.getInt("ConversionTime"));
+      if (compound.contains("ConversionTime", 99) && compound.getInt("ConversionTime") > -1) {
+         this.method4668(!compound.hasUniqueID("ConversionPlayer") ? null : compound.getUniqueID("ConversionPlayer"), compound.getInt("ConversionTime"));
       }
 
-      if (var1.contains("Xp", 3)) {
-         this.field5775 = var1.getInt("Xp");
+      if (compound.contains("Xp", 3)) {
+         this.field5775 = compound.getInt("Xp");
       }
    }
 
@@ -148,7 +148,7 @@ public class ZombieVillagerEntity extends ZombieEntity implements Class1041 {
    private void method4668(UUID var1, int var2) {
       this.field5772 = var1;
       this.field5771 = var2;
-      this.getDataManager().method35446(field5769, true);
+      this.getDataManager().set(field5769, true);
       this.removeEffects(Effects.WEAKNESS);
       this.addPotionEffect(new EffectInstance(Effects.STRENGTH, var2, Math.min(this.world.method6997().getId() - 1, 0)));
       this.world.setEntityState(this, (byte)16);
@@ -160,7 +160,7 @@ public class ZombieVillagerEntity extends ZombieEntity implements Class1041 {
          super.handleStatusUpdate(var1);
       } else if (!this.isSilent()) {
          this.world
-            .method6745(
+            .playSound(
                this.getPosX(),
                this.getPosYEye(),
                this.getPosZ(),
@@ -293,7 +293,7 @@ public class ZombieVillagerEntity extends ZombieEntity implements Class1041 {
          this.field5774 = null;
       }
 
-      this.dataManager.method35446(field5770, var1);
+      this.dataManager.set(field5770, var1);
    }
 
    @Override

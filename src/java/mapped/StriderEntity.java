@@ -86,15 +86,15 @@ public class StriderEntity extends AnimalEntity implements Class1071, Class1069 
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      this.field5908.method19691(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      this.field5908.method19691(compound);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.field5908.method19692(var1);
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.field5908.method19692(compound);
    }
 
    @Override
@@ -131,7 +131,7 @@ public class StriderEntity extends AnimalEntity implements Class1071, Class1069 
    }
 
    public void method4977(boolean var1) {
-      this.dataManager.method35446(field5906, var1);
+      this.dataManager.set(field5906, var1);
    }
 
    public boolean method4978() {
@@ -253,10 +253,10 @@ public class StriderEntity extends AnimalEntity implements Class1071, Class1069 
    }
 
    @Override
-   public void updateFallState(double var1, boolean var3, BlockState var4, BlockPos var5) {
+   public void updateFallState(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
       this.doBlockCollisions();
       if (!this.isInLava()) {
-         super.updateFallState(var1, var3, var4, var5);
+         super.updateFallState(y, onGroundIn, state, pos);
       } else {
          this.fallDistance = 0.0F;
       }

@@ -45,13 +45,13 @@ public abstract class LavaFluid extends FlowingFluid {
             double var10 = (double)var2.getY() + 1.0;
             double var12 = (double)var2.getZ() + var4.nextDouble();
             var1.addParticle(ParticleTypes.field34086, var8, var10, var12, 0.0, 0.0, 0.0);
-            var1.method6745(
+            var1.playSound(
                var8, var10, var12, SoundEvents.field26727, SoundCategory.field14732, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
             );
          }
 
          if (var4.nextInt(200) == 0) {
-            var1.method6745(
+            var1.playSound(
                (double)var2.getX(),
                (double)var2.getY(),
                (double)var2.getZ(),
@@ -150,7 +150,7 @@ public abstract class LavaFluid extends FlowingFluid {
 
    @Override
    public boolean method25055(FluidState var1, IBlockReader var2, BlockPos var3, Fluid var4, Direction var5) {
-      return var1.method23475(var2, var3) >= 0.44444445F && var4.method25067(FluidTags.field40469);
+      return var1.method23475(var2, var3) >= 0.44444445F && var4.method25067(FluidTags.WATER);
    }
 
    @Override
@@ -186,7 +186,7 @@ public abstract class LavaFluid extends FlowingFluid {
    public void method25080(IWorld var1, BlockPos var2, BlockState var3, Direction var4, FluidState var5) {
       if (var4 == Direction.DOWN) {
          FluidState var8 = var1.getFluidState(var2);
-         if (this.method25067(FluidTags.field40470) && var8.method23486(FluidTags.field40469)) {
+         if (this.method25067(FluidTags.field40470) && var8.method23486(FluidTags.WATER)) {
             if (var3.getBlock() instanceof FlowingFluidBlock) {
                var1.setBlockState(var2, Blocks.STONE.getDefaultState(), 3);
             }

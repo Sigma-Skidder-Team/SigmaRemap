@@ -172,7 +172,7 @@ public class BoatEntity extends Entity {
          );
       if (this.rand.nextInt(20) == 0) {
          this.world
-            .method6745(
+            .playSound(
                this.getPosX(),
                this.getPosY(),
                this.getPosZ(),
@@ -409,8 +409,8 @@ public class BoatEntity extends Entity {
    }
 
    public void method4151(boolean var1, boolean var2) {
-      this.dataManager.method35446(field5528, var1);
-      this.dataManager.method35446(field5529, var2);
+      this.dataManager.set(field5528, var1);
+      this.dataManager.set(field5529, var2);
    }
 
    public float method4152(int var1, float var2) {
@@ -457,7 +457,7 @@ public class BoatEntity extends Entity {
             for (int var14 = var8; var14 < var9; var14++) {
                var10.setPos(var13, var11, var14);
                FluidState var15 = this.world.getFluidState(var10);
-               if (var15.method23486(FluidTags.field40469)) {
+               if (var15.method23486(FluidTags.WATER)) {
                   var12 = Math.max(var12, var15.method23475(this.world, var10));
                }
 
@@ -530,7 +530,7 @@ public class BoatEntity extends Entity {
             for (int var14 = var8; var14 < var9; var14++) {
                var11.setPos(var12, var13, var14);
                FluidState var15 = this.world.getFluidState(var11);
-               if (var15.method23486(FluidTags.field40469)) {
+               if (var15.method23486(FluidTags.WATER)) {
                   float var16 = (float)var13 + var15.method23475(this.world, var11);
                   this.field5545 = Math.max((double)var16, this.field5545);
                   var10 |= var3.minY < (double)var16;
@@ -560,7 +560,7 @@ public class BoatEntity extends Entity {
             for (int var16 = var10; var16 < var11; var16++) {
                var13.setPos(var14, var15, var16);
                FluidState var17 = this.world.getFluidState(var13);
-               if (var17.method23486(FluidTags.field40469) && var4 < (double)((float)var13.getY() + var17.method23475(this.world, var13))) {
+               if (var17.method23486(FluidTags.WATER) && var4 < (double)((float)var13.getY() + var17.method23475(this.world, var13))) {
                   if (!var17.isSource()) {
                      return Class2096.field13657;
                   }
@@ -766,7 +766,7 @@ public class BoatEntity extends Entity {
       this.field5549 = this.getMotion().y;
       if (!this.isPassenger()) {
          if (!var3) {
-            if (!this.world.getFluidState(this.getPosition().down()).method23486(FluidTags.field40469) && var1 < 0.0) {
+            if (!this.world.getFluidState(this.getPosition().down()).method23486(FluidTags.WATER) && var1 < 0.0) {
                this.fallDistance = (float)((double)this.fallDistance - var1);
             }
          } else {
@@ -801,7 +801,7 @@ public class BoatEntity extends Entity {
    }
 
    public void method4162(float var1) {
-      this.dataManager.method35446(field5526, var1);
+      this.dataManager.set(field5526, var1);
    }
 
    public float method4163() {
@@ -809,7 +809,7 @@ public class BoatEntity extends Entity {
    }
 
    public void method4164(int var1) {
-      this.dataManager.method35446(field5524, var1);
+      this.dataManager.set(field5524, var1);
    }
 
    public int method4165() {
@@ -817,7 +817,7 @@ public class BoatEntity extends Entity {
    }
 
    private void method4166(int var1) {
-      this.dataManager.method35446(field5530, var1);
+      this.dataManager.set(field5530, var1);
    }
 
    private int method4167() {
@@ -829,7 +829,7 @@ public class BoatEntity extends Entity {
    }
 
    public void method4169(int var1) {
-      this.dataManager.method35446(field5525, var1);
+      this.dataManager.set(field5525, var1);
    }
 
    public int method4170() {
@@ -837,7 +837,7 @@ public class BoatEntity extends Entity {
    }
 
    public void method4171(Class2099 var1) {
-      this.dataManager.method35446(field5527, var1.ordinal());
+      this.dataManager.set(field5527, var1.ordinal());
    }
 
    public Class2099 method4172() {
@@ -846,7 +846,7 @@ public class BoatEntity extends Entity {
 
    @Override
    public boolean canFitPassenger(Entity var1) {
-      return this.getPassengers().size() < 2 && !this.areEyesInFluid(FluidTags.field40469);
+      return this.getPassengers().size() < 2 && !this.areEyesInFluid(FluidTags.WATER);
    }
 
    @Nullable

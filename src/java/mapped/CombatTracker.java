@@ -84,7 +84,7 @@ public class CombatTracker {
          Object var7;
          if (var3 != null && var4.method37101() == DamageSource.field39002) {
             ITextComponent var8 = var3.method37105();
-            if (var3.method37101() == DamageSource.field39002 || var3.method37101() == DamageSource.field39004) {
+            if (var3.method37101() == DamageSource.field39002 || var3.method37101() == DamageSource.OUT_OF_WORLD) {
                var7 = new TranslationTextComponent("death.fell.accident." + this.method27603(var3), this.field34542.getDisplayName());
             } else if (var8 != null && (var5 == null || !var8.equals(var5))) {
                Entity var11 = var3.method37101().getTrueSource();
@@ -144,7 +144,7 @@ public class CombatTracker {
       for (int var7 = 0; var7 < this.field34541.size(); var7++) {
          Class9569 var8 = this.field34541.get(var7);
          Class9569 var9 = var7 <= 0 ? null : this.field34541.get(var7 - 1);
-         if ((var8.method37101() == DamageSource.field39002 || var8.method37101() == DamageSource.field39004)
+         if ((var8.method37101() == DamageSource.field39002 || var8.method37101() == DamageSource.OUT_OF_WORLD)
             && var8.method37106() > 0.0F
             && (var3 == null || var8.method37106() > var6)) {
             if (var7 <= 0) {

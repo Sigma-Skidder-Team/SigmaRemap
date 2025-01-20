@@ -83,7 +83,7 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Override
    public void method4535(boolean var1) {
-      this.dataManager.method35446(field5710, var1);
+      this.dataManager.set(field5710, var1);
    }
 
    @Override
@@ -92,8 +92,8 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       ListNBT var4 = new ListNBT();
 
       for (int var5 = 0; var5 < this.field5711.getSizeInventory(); var5++) {
@@ -103,7 +103,7 @@ public class Class1024 extends Class1025 implements Class1023 {
          }
       }
 
-      var1.put("Inventory", var4);
+      compound.put("Inventory", var4);
    }
 
    @Override
@@ -120,9 +120,9 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      ListNBT var4 = var1.getList("Inventory", 10);
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      ListNBT var4 = compound.getList("Inventory", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
          ItemStack var6 = ItemStack.read(var4.getCompound(var5));

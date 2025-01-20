@@ -141,7 +141,7 @@ public class Class5826 extends Container {
          Entity var3 = (Entity)this.field25526;
          this.field25526
             .method4753()
-            .method6745(var3.getPosX(), var3.getPosY(), var3.getPosZ(), this.field25526.method4748(), SoundCategory.field14734, 1.0F, 1.0F, false);
+            .playSound(var3.getPosX(), var3.getPosY(), var3.getPosZ(), this.field25526.method4748(), SoundCategory.field14734, 1.0F, 1.0F, false);
       }
    }
 

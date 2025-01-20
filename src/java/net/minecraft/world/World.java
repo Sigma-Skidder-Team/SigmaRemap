@@ -379,7 +379,7 @@ public abstract class World implements IWorld, AutoCloseable {
 
    public abstract void playSoundFromEntity(PlayerEntity var1, Entity var2, SoundEvent var3, SoundCategory var4, float var5, float var6);
 
-   public void method6745(double var1, double var3, double var5, SoundEvent var7, SoundCategory var8, float var9, float var10, boolean var11) {
+   public void playSound(double var1, double var3, double var5, SoundEvent var7, SoundCategory var8, float var9, float var10, boolean var11) {
    }
 
    @Override
@@ -943,7 +943,7 @@ public abstract class World implements IWorld, AutoCloseable {
    public void method6804(double var1, double var3, double var5, double var7, double var9, double var11, CompoundNBT var13) {
    }
 
-   public abstract Scoreboard method6805();
+   public abstract Scoreboard getScoreboard();
 
    public void updateComparatorOutputLevel(BlockPos var1, Block var2) {
       for (Direction var6 : Direction.Plane.HORIZONTAL) {

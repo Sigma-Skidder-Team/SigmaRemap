@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 
 public class Class7372 extends Class7361 {
    private static String[] field31549;
-   private static final Class8522 field31550 = new Class8522().method30203(128.0);
+   private static final EntityPredicate field31550 = new EntityPredicate().method30203(128.0);
    private Class8238 field31551;
    private Vector3d field31552;
 

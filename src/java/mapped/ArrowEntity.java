@@ -41,11 +41,11 @@ public class ArrowEntity extends AbstractArrowEntity {
          if (var1.getItem() == Items.field37797) {
             this.field5117 = Class8137.field34976;
             this.field5118.clear();
-            this.dataManager.method35446(field5116, -1);
+            this.dataManager.set(field5116, -1);
          }
       } else {
-         this.field5117 = Class9741.method38185(var1);
-         List<EffectInstance> var4 = Class9741.method38179(var1);
+         this.field5117 = PotionUtils.method38185(var1);
+         List<EffectInstance> var4 = PotionUtils.method38179(var1);
          if (!var4.isEmpty()) {
             for (EffectInstance var6 : var4) {
                this.field5118.add(new EffectInstance(var6));
@@ -69,15 +69,15 @@ public class ArrowEntity extends AbstractArrowEntity {
    private void method3499() {
       this.field5119 = false;
       if (this.field5117 == Class8137.field34976 && this.field5118.isEmpty()) {
-         this.dataManager.method35446(field5116, -1);
+         this.dataManager.set(field5116, -1);
       } else {
-         this.dataManager.method35446(field5116, Class9741.method38184(Class9741.method38177(this.field5117, this.field5118)));
+         this.dataManager.set(field5116, PotionUtils.getPotionColorFromEffectList(PotionUtils.method38177(this.field5117, this.field5118)));
       }
    }
 
    public void method3500(EffectInstance var1) {
       this.field5118.add(var1);
-      this.getDataManager().method35446(field5116, Class9741.method38184(Class9741.method38177(this.field5117, this.field5118)));
+      this.getDataManager().set(field5116, PotionUtils.getPotionColorFromEffectList(PotionUtils.method38177(this.field5117, this.field5118)));
    }
 
    @Override
@@ -94,7 +94,7 @@ public class ArrowEntity extends AbstractArrowEntity {
             this.world.setEntityState(this, (byte)0);
             this.field5117 = Class8137.field34976;
             this.field5118.clear();
-            this.dataManager.method35446(field5116, -1);
+            this.dataManager.set(field5116, -1);
          }
       } else if (!this.field5100) {
          this.method3501(2);
@@ -122,7 +122,7 @@ public class ArrowEntity extends AbstractArrowEntity {
 
    private void method3503(int var1) {
       this.field5119 = true;
-      this.dataManager.method35446(field5116, var1);
+      this.dataManager.set(field5116, var1);
    }
 
    @Override
@@ -151,10 +151,10 @@ public class ArrowEntity extends AbstractArrowEntity {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       if (var1.contains("Potion", 8)) {
-         this.field5117 = Class9741.method38186(var1);
+         this.field5117 = PotionUtils.method38186(var1);
       }
 
-      for (EffectInstance var5 : Class9741.method38180(var1)) {
+      for (EffectInstance var5 : PotionUtils.method38180(var1)) {
          this.method3500(var5);
       }
 
@@ -186,8 +186,8 @@ public class ArrowEntity extends AbstractArrowEntity {
          return new ItemStack(Items.field37797);
       } else {
          ItemStack var3 = new ItemStack(Items.field38117);
-         Class9741.method38187(var3, this.field5117);
-         Class9741.method38188(var3, this.field5118);
+         PotionUtils.method38187(var3, this.field5117);
+         PotionUtils.method38188(var3, this.field5118);
          if (this.field5119) {
             var3.getOrCreateTag().putInt("CustomPotionColor", this.method3502());
          }

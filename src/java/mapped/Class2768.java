@@ -16,7 +16,7 @@ public class Class2768 extends Class2595 {
    @Override
    public boolean method10803() {
       LivingEntity var3 = this.field17345.method4232();
-      return var3 == null ? false : this.field17345.canAttack(this.field17345.method4232(), Class8522.field38240);
+      return var3 == null ? false : this.field17345.canAttack(this.field17345.method4232(), EntityPredicate.field38240);
    }
 
    @Override

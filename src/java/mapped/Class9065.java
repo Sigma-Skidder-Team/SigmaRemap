@@ -86,7 +86,7 @@ public class Class9065 {
          new ResourceLocation("firework"),
          (var0, var1, var2) -> var2 != null && CrossbowItem.isCharged(var0) && CrossbowItem.method11760(var0, Items.field38068) ? 1.0F : 0.0F
       );
-      method33751(Items.field38120, new ResourceLocation("broken"), (var0, var1, var2) -> !Class3256.method11698(var0) ? 1.0F : 0.0F);
+      method33751(Items.ELYTRA, new ResourceLocation("broken"), (var0, var1, var2) -> !Class3256.method11698(var0) ? 1.0F : 0.0F);
       method33751(Items.field37906, new ResourceLocation("cast"), (var0, var1, var2) -> {
          if (var2 != null) {
             boolean var5 = var2.getHeldItemMainhand() == var0;

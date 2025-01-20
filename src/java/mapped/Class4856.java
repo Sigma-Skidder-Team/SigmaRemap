@@ -43,8 +43,8 @@ public class Class4856 extends Class4837 {
       ItemStack var4 = var1.getStackInSlot(1 + var1.method3671());
       if (var4.getItem() == Items.field38118) {
          ItemStack var5 = new ItemStack(Items.field38117, 8);
-         Class9741.method38187(var5, Class9741.method38185(var4));
-         Class9741.method38188(var5, Class9741.method38179(var4));
+         PotionUtils.method38187(var5, PotionUtils.method38185(var4));
+         PotionUtils.method38188(var5, PotionUtils.method38179(var4));
          return var5;
       } else {
          return ItemStack.EMPTY;

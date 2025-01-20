@@ -160,7 +160,7 @@ public class ItemFrameEntity extends Class995 {
             return false;
          }
       } else {
-         return var1 != DamageSource.field39004 && !var1.method31146() ? false : super.attackEntityFrom(var1, var2);
+         return var1 != DamageSource.OUT_OF_WORLD && !var1.method31146() ? false : super.attackEntityFrom(var1, var2);
       }
    }
 
@@ -247,7 +247,7 @@ public class ItemFrameEntity extends Class995 {
          var1.method32166(this);
       }
 
-      this.getDataManager().method35446(field5492, var1);
+      this.getDataManager().set(field5492, var1);
       if (!var1.isEmpty()) {
          this.playSound(SoundEvents.field26708, 1.0F, 1.0F);
       }
@@ -286,7 +286,7 @@ public class ItemFrameEntity extends Class995 {
    }
 
    private void method4095(int var1, boolean var2) {
-      this.getDataManager().method35446(field5493, var1 % 8);
+      this.getDataManager().set(field5493, var1 % 8);
       if (var2 && this.field5488 != null) {
          this.world.updateComparatorOutputLevel(this.field5488, Blocks.AIR);
       }

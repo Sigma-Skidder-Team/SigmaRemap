@@ -19,7 +19,7 @@ public class MutableAttribute {
       return var4;
    }
 
-   public MutableAttribute method21848(Attribute var1) {
+   public MutableAttribute createMutableAttribute(Attribute var1) {
       this.method21847(var1);
       return this;
    }

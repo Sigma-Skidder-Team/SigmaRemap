@@ -113,7 +113,7 @@ public class Class7535 extends WorldSavedData {
 
    public void method24631(ScorePlayerTeam var1, ListNBT var2) {
       for (int var5 = 0; var5 < var2.size(); var5++) {
-         this.field32341.method20993(var2.getString(var5), var1);
+         this.field32341.addPlayerToTeam(var2.getString(var5), var1);
       }
    }
 

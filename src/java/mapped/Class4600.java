@@ -18,7 +18,7 @@ public class Class4600 extends Class4599 {
          this.method14518();
          this.field22037.addParticle(this.field22093, this.field22041, this.field22042, this.field22043, 0.0, 0.0, 0.0);
          this.field22037
-            .method6745(
+            .playSound(
                this.field22041 + 0.5,
                this.field22042,
                this.field22043 + 0.5,

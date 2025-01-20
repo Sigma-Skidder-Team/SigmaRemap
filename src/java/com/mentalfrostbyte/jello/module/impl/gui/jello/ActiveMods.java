@@ -85,7 +85,7 @@ public class ActiveMods extends Module {
             if (!var1.method13939()) {
                 GlStateManager.translatef(0.0F, (float) (-this.field23614), 0.0F);
             } else {
-                Scoreboard var4 = mc.world.method6805();
+                Scoreboard var4 = mc.world.getScoreboard();
                 Class8375 var5 = null;
                 ScorePlayerTeam var6 = var4.method20998(mc.player.method2956());
                 if (var6 != null) {

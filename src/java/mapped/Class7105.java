@@ -83,7 +83,7 @@ public class Class7105 {
    }
 
    public static boolean method22138(ItemStack var0, ItemStack var1) {
-      Class8812 var4 = Class9741.method38185(var0);
+      Class8812 var4 = PotionUtils.method38185(var0);
       int var5 = 0;
 
       for (int var6 = field30617.size(); var5 < var6; var5++) {
@@ -98,14 +98,14 @@ public class Class7105 {
 
    public static ItemStack method22139(ItemStack var0, ItemStack var1) {
       if (!var1.isEmpty()) {
-         Class8812 var4 = Class9741.method38185(var1);
+         Class8812 var4 = PotionUtils.method38185(var1);
          Item var5 = var1.getItem();
          int var6 = 0;
 
          for (int var7 = field30618.size(); var6 < var7; var6++) {
             Class9127 var8 = field30618.get(var6);
             if (Class9127.method34061(var8) == var5 && Class9127.method34059(var8).test(var0)) {
-               return Class9741.method38187(new ItemStack((IItemProvider)Class9127.method34060(var8)), var4);
+               return PotionUtils.method38187(new ItemStack((IItemProvider)Class9127.method34060(var8)), var4);
             }
          }
 
@@ -114,7 +114,7 @@ public class Class7105 {
          for (int var10 = field30617.size(); var6 < var10; var6++) {
             Class9127 var11 = field30617.get(var6);
             if (Class9127.method34061(var11) == var4 && Class9127.method34059(var11).test(var0)) {
-               return Class9741.method38187(new ItemStack(var5), (Class8812)Class9127.method34060(var11));
+               return PotionUtils.method38187(new ItemStack(var5), (Class8812)Class9127.method34060(var11));
             }
          }
       }

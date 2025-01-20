@@ -28,7 +28,7 @@ import java.util.Random;
 
 public class BatEntity extends Class1113 {
    private static final DataParameter<Byte> field6093 = EntityDataManager.<Byte>createKey(BatEntity.class, DataSerializers.field33390);
-   private static final Class8522 field6094 = new Class8522().method30203(4.0).method30205();
+   private static final EntityPredicate field6094 = new EntityPredicate().method30203(4.0).method30205();
    private BlockPos field6095;
 
    public BatEntity(EntityType<? extends BatEntity> var1, World var2) {
@@ -92,9 +92,9 @@ public class BatEntity extends Class1113 {
    public void method5365(boolean var1) {
       int var4 = this.dataManager.<Byte>method35445(field6093);
       if (!var1) {
-         this.dataManager.method35446(field6093, (byte)(var4 & -2));
+         this.dataManager.set(field6093, (byte)(var4 & -2));
       } else {
-         this.dataManager.method35446(field6093, (byte)(var4 | 1));
+         this.dataManager.set(field6093, (byte)(var4 | 1));
       }
    }
 
@@ -177,7 +177,7 @@ public class BatEntity extends Class1113 {
    }
 
    @Override
-   public void updateFallState(double var1, boolean var3, BlockState var4, BlockPos var5) {
+   public void updateFallState(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
    }
 
    @Override
@@ -199,15 +199,15 @@ public class BatEntity extends Class1113 {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.dataManager.method35446(field6093, var1.getByte("BatFlags"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.dataManager.set(field6093, compound.getByte("BatFlags"));
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putByte("BatFlags", this.dataManager.<Byte>method35445(field6093));
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putByte("BatFlags", this.dataManager.<Byte>method35445(field6093));
    }
 
    public static boolean canSpawn(EntityType<BatEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {

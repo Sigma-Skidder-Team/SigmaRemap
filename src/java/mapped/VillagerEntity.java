@@ -148,12 +148,12 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
 
    @Override
    public Class6971<VillagerEntity> getBrainCodec() {
-      return Brain.<VillagerEntity>method21400(field5791, field5792);
+      return Brain.<VillagerEntity>createCodec(field5791, field5792);
    }
 
    @Override
    public Brain<?> createBrain(Dynamic<?> var1) {
-      Brain var4 = this.getBrainCodec().method21513(var1);
+      Brain var4 = this.getBrainCodec().deserialize(var1);
       this.method4678(var4);
       return var4;
    }
@@ -416,55 +416,55 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       Class7921.field33913
          .encodeStart(NBTDynamicOps.INSTANCE, this.method4674())
          .resultOrPartial(LOGGER::error)
-         .ifPresent(var1x -> var1.put("VillagerData", var1x));
-      var1.putByte("FoodLevel", this.field5782);
-      var1.put("Gossips", (INBT)this.field5783.method25528(NBTDynamicOps.INSTANCE).getValue());
-      var1.putInt("Xp", this.field5786);
-      var1.putLong("LastRestock", this.field5787);
-      var1.putLong("LastGossipDecay", this.field5785);
-      var1.putInt("RestocksToday", this.field5788);
+         .ifPresent(var1x -> compound.put("VillagerData", var1x));
+      compound.putByte("FoodLevel", this.field5782);
+      compound.put("Gossips", (INBT)this.field5783.method25528(NBTDynamicOps.INSTANCE).getValue());
+      compound.putInt("Xp", this.field5786);
+      compound.putLong("LastRestock", this.field5787);
+      compound.putLong("LastGossipDecay", this.field5785);
+      compound.putInt("RestocksToday", this.field5788);
       if (this.field5790) {
-         var1.putBoolean("AssignProfessionWhenSpawned", true);
+         compound.putBoolean("AssignProfessionWhenSpawned", true);
       }
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("VillagerData", 10)) {
-         DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(NBTDynamicOps.INSTANCE, var1.get("VillagerData")));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("VillagerData", 10)) {
+         DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(NBTDynamicOps.INSTANCE, compound.get("VillagerData")));
          var4.resultOrPartial(LOGGER::error).ifPresent(this::method4695);
       }
 
-      if (var1.contains("Offers", 10)) {
-         this.field5796 = new Class46(var1.getCompound("Offers"));
+      if (compound.contains("Offers", 10)) {
+         this.field5796 = new Class46(compound.getCompound("Offers"));
       }
 
-      if (var1.contains("FoodLevel", 1)) {
-         this.field5782 = var1.getByte("FoodLevel");
+      if (compound.contains("FoodLevel", 1)) {
+         this.field5782 = compound.getByte("FoodLevel");
       }
 
-      ListNBT var5 = var1.getList("Gossips", 10);
+      ListNBT var5 = compound.getList("Gossips", 10);
       this.field5783.method25529(new Dynamic(NBTDynamicOps.INSTANCE, var5));
-      if (var1.contains("Xp", 3)) {
-         this.field5786 = var1.getInt("Xp");
+      if (compound.contains("Xp", 3)) {
+         this.field5786 = compound.getInt("Xp");
       }
 
-      this.field5787 = var1.getLong("LastRestock");
-      this.field5785 = var1.getLong("LastGossipDecay");
+      this.field5787 = compound.getLong("LastRestock");
+      this.field5785 = compound.getLong("LastGossipDecay");
       this.method4281(true);
       if (this.world instanceof ServerWorld) {
          this.method4677((ServerWorld)this.world);
       }
 
-      this.field5788 = var1.getInt("RestocksToday");
-      if (var1.contains("AssignProfessionWhenSpawned")) {
-         this.field5790 = var1.getBoolean("AssignProfessionWhenSpawned");
+      this.field5788 = compound.getInt("RestocksToday");
+      if (compound.contains("AssignProfessionWhenSpawned")) {
+         this.field5790 = compound.getBoolean("AssignProfessionWhenSpawned");
       }
    }
 
@@ -506,7 +506,7 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
          this.field5796 = null;
       }
 
-      this.dataManager.method35446(field5776, var1);
+      this.dataManager.set(field5776, var1);
    }
 
    @Override
@@ -531,15 +531,15 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
    }
 
    @Override
-   public void setRevengeTarget(LivingEntity var1) {
-      if (var1 != null && this.world instanceof ServerWorld) {
-         ((ServerWorld)this.world).method6959(Class8214.field35287, var1, this);
-         if (this.isAlive() && var1 instanceof PlayerEntity) {
+   public void setRevengeTarget(LivingEntity livingBase) {
+      if (livingBase != null && this.world instanceof ServerWorld) {
+         ((ServerWorld)this.world).method6959(Class8214.field35287, livingBase, this);
+         if (this.isAlive() && livingBase instanceof PlayerEntity) {
             this.world.setEntityState(this, (byte)13);
          }
       }
 
-      super.setRevengeTarget(var1);
+      super.setRevengeTarget(livingBase);
    }
 
    @Override

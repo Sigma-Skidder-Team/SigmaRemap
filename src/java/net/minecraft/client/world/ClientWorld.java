@@ -528,7 +528,7 @@ public class ClientWorld extends World {
       }
 
       if (var1 == this.mc.player) {
-         this.method6745(var2, var4, var6, var8, var9, var10, var11, false);
+         this.playSound(var2, var4, var6, var8, var9, var10, var11, false);
       }
    }
 
@@ -551,11 +551,11 @@ public class ClientWorld extends World {
    }
 
    public void method6858(BlockPos var1, SoundEvent var2, SoundCategory var3, float var4, float var5, boolean var6) {
-      this.method6745((double)var1.getX() + 0.5, (double)var1.getY() + 0.5, (double)var1.getZ() + 0.5, var2, var3, var4, var5, var6);
+      this.playSound((double)var1.getX() + 0.5, (double)var1.getY() + 0.5, (double)var1.getZ() + 0.5, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public void method6745(double var1, double var3, double var5, SoundEvent var7, SoundCategory var8, float var9, float var10, boolean var11) {
+   public void playSound(double var1, double var3, double var5, SoundEvent var7, SoundCategory var8, float var9, float var10, boolean var11) {
       double var14 = this.mc.gameRenderer.getActiveRenderInfo().getPos().method11343(var1, var3, var5);
       MinecraftSoundManager var16 = new MinecraftSoundManager(var7, var8, var9, var10, var1, var3, var5);
       if (var11 && var14 > 100.0) {
@@ -645,7 +645,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public Scoreboard method6805() {
+   public Scoreboard getScoreboard() {
       return this.scoreboard;
    }
 

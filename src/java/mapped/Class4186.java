@@ -57,7 +57,7 @@ public class Class4186 extends Class4180 {
          if (!var1.startsWith("Sentry")) {
             if (var1.startsWith("Elytra")) {
                ItemFrameEntity var8 = new ItemFrameEntity(var3.method6970(), var2, this.field20474.rotate(Direction.SOUTH));
-               var8.method4092(new ItemStack(Items.field38120), false);
+               var8.method4092(new ItemStack(Items.ELYTRA), false);
                var3.addEntity(var8);
             }
          } else {

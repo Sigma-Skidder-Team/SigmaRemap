@@ -524,7 +524,7 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32800).method31560(Blocks.field36891, Blocks.field37076);
       this.method14014(BlockTags.field32801)
          .method31560(Blocks.field37121, Blocks.EMERALD_BLOCK, Blocks.field36537, Blocks.field36521, Blocks.field36522);
-      this.method14014(BlockTags.field32802).method31560(Blocks.SOUL_SAND, Blocks.SOUL_SOIL);
+      this.method14014(BlockTags.SOUL_SPEED_BLOCKS).method31560(Blocks.SOUL_SAND, Blocks.SOUL_SOIL);
       this.method14014(BlockTags.field32803)
          .method31560(Blocks.TORCH, Blocks.field36585, Blocks.field36568, Blocks.TRIPWIRE)
          .method31559(BlockTags.field32790)

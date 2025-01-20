@@ -39,7 +39,7 @@ import java.util.List;
 public class EnderDragonEntity extends MobEntity implements IMob {
    private static final Logger field5618 = LogManager.getLogger();
    public static final DataParameter<Integer> field5619 = EntityDataManager.<Integer>createKey(EnderDragonEntity.class, DataSerializers.VARINT);
-   private static final Class8522 field5620 = new Class8522().method30203(64.0);
+   private static final EntityPredicate field5620 = new EntityPredicate().method30203(64.0);
    public final double[][] field5621 = new double[64][3];
    public int field5622 = -1;
    private final EnderDragonPartEntity[] field5623;
@@ -128,7 +128,7 @@ public class EnderDragonEntity extends MobEntity implements IMob {
             float var4 = MathHelper.cos(this.field5632 * (float) (Math.PI * 2));
             if (var4 <= -0.3F && var3 >= -0.3F) {
                this.world
-                  .method6745(
+                  .playSound(
                      this.getPosX(),
                      this.getPosY(),
                      this.getPosZ(),
@@ -142,7 +142,7 @@ public class EnderDragonEntity extends MobEntity implements IMob {
 
             if (!this.field5639.method32672().method23358() && --this.field5640 < 0) {
                this.world
-                  .method6745(
+                  .playSound(
                      this.getPosX(),
                      this.getPosY(),
                      this.getPosZ(),
@@ -404,7 +404,7 @@ public class EnderDragonEntity extends MobEntity implements IMob {
             double var12 = var9.getPosZ() - var6;
             double var14 = Math.max(var10 * var10 + var12 * var12, 0.1);
             var9.addVelocity(var10 / var14 * 4.0, 0.2F, var12 / var14 * 4.0);
-            if (!this.field5639.method32672().method23358() && ((LivingEntity)var9).method3015() < var9.ticksExisted - 2) {
+            if (!this.field5639.method32672().method23358() && ((LivingEntity)var9).getRevengeTiemr() < var9.ticksExisted - 2) {
                var9.attackEntityFrom(DamageSource.method31115(this), 5.0F);
                this.applyEnchantments(this, var9);
             }
@@ -519,7 +519,7 @@ public class EnderDragonEntity extends MobEntity implements IMob {
    }
 
    @Override
-   public void method3008() {
+   public void onDeathUpdate() {
       if (this.field5638 != null) {
          this.field5638.method26124(this);
       }
@@ -752,16 +752,16 @@ public class EnderDragonEntity extends MobEntity implements IMob {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("DragonPhase", this.field5639.method32672().method23368().method37259());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("DragonPhase", this.field5639.method32672().method23368().method37259());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("DragonPhase")) {
-         this.field5639.method32671(Class9598.method37260(var1.getInt("DragonPhase")));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("DragonPhase")) {
+         this.field5639.method32671(Class9598.method37260(compound.getInt("DragonPhase")));
       }
    }
 

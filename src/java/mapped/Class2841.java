@@ -113,7 +113,7 @@ public class Class2841 implements Consumer<Consumer<Advancement>> {
       Class7999.method27304()
          .method27305(var7)
          .method27308(
-            Items.field38120,
+            Items.ELYTRA,
             new TranslationTextComponent("advancements.end.elytra.title"),
             new TranslationTextComponent("advancements.end.elytra.description"),
             (ResourceLocation)null,
@@ -122,7 +122,7 @@ public class Class2841 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("elytra", Class4491.method14164(Items.field38120))
+         .method27312("elytra", Class4491.method14164(Items.ELYTRA))
          .method27317(var1, "end/elytra");
       Class7999.method27304()
          .method27305(var5)

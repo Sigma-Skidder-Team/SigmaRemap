@@ -57,7 +57,7 @@ public class SlimeEntity extends MobEntity implements IMob {
    }
 
    public void method5318(int var1, boolean var2) {
-      this.dataManager.method35446(field6081, var1);
+      this.dataManager.set(field6081, var1);
       this.recenterBoundingBox();
       this.recalculateSize();
       this.getAttribute(Attributes.MAX_HEALTH).method38661((double)(var1 * var1));
@@ -75,22 +75,22 @@ public class SlimeEntity extends MobEntity implements IMob {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("Size", this.method5319() - 1);
-      var1.putBoolean("wasOnGround", this.field6085);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("Size", this.method5319() - 1);
+      compound.putBoolean("wasOnGround", this.field6085);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      int var4 = var1.getInt("Size");
+   public void readAdditional(CompoundNBT compound) {
+      int var4 = compound.getInt("Size");
       if (var4 < 0) {
          var4 = 0;
       }
 
       this.method5318(var4 + 1, false);
-      super.readAdditional(var1);
-      this.field6085 = var1.getBoolean("wasOnGround");
+      super.readAdditional(compound);
+      this.field6085 = compound.getBoolean("wasOnGround");
    }
 
    public boolean method5320() {

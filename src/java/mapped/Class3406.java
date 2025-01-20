@@ -55,7 +55,7 @@ public class Class3406 extends Block implements Class3405 {
                   1.0
                );
                var8.spawnParticle(
-                  ParticleTypes.field34052,
+                  ParticleTypes.BUBBLE,
                   (double)var3.getX() + var2.rand.nextDouble(),
                   (double)(var3.getY() + 1),
                   (double)var3.getZ() + var2.rand.nextDouble(),
@@ -112,14 +112,14 @@ public class Class3406 extends Block implements Class3405 {
             ParticleTypes.field34103, var7 + (double)var4.nextFloat(), var9 + (double)var4.nextFloat(), var11 + (double)var4.nextFloat(), 0.0, 0.04, 0.0
          );
          if (var4.nextInt(200) == 0) {
-            var2.method6745(
+            var2.playSound(
                var7, var9, var11, SoundEvents.field26422, SoundCategory.field14732, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
             );
          }
       } else {
          var2.method6748(ParticleTypes.field34102, var7 + 0.5, var9 + 0.8, var11, 0.0, 0.0, 0.0);
          if (var4.nextInt(200) == 0) {
-            var2.method6745(
+            var2.playSound(
                var7, var9, var11, SoundEvents.field26424, SoundCategory.field14732, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
             );
          }

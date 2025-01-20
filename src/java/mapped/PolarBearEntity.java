@@ -84,15 +84,15 @@ public class PolarBearEntity extends AnimalEntity implements IAngerable {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4365((ServerWorld)this.world, var1);
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4365((ServerWorld)this.world, compound);
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      this.method4364(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      this.method4364(compound);
    }
 
    @Override
@@ -204,7 +204,7 @@ public class PolarBearEntity extends AnimalEntity implements IAngerable {
    }
 
    public void method5184(boolean var1) {
-      this.dataManager.method35446(field6010, var1);
+      this.dataManager.set(field6010, var1);
    }
 
    public float method5185(float var1) {

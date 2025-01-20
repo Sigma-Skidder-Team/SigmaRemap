@@ -215,7 +215,7 @@ public abstract class Class7195<C extends Class4729> {
 
    public boolean method22610(BlockState var1, BlockState var2) {
       return this.method22609(var1)
-         || (var1.isIn(Blocks.SAND) || var1.isIn(Blocks.GRAVEL)) && !var2.getFluidState().method23486(FluidTags.field40469);
+         || (var1.isIn(Blocks.SAND) || var1.isIn(Blocks.GRAVEL)) && !var2.getFluidState().method23486(FluidTags.WATER);
    }
 
    public boolean method22611(IChunk var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {

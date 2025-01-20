@@ -20,7 +20,7 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, PlayerModel<A
    public void method820(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (var4.method5368() && !var4.isInvisible() && var4.method2962(Class2318.field15879) && var4.method5372() != null) {
          ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.CHEST);
-         if (var13.getItem() != Items.field38120) {
+         if (var13.getItem() != Items.ELYTRA) {
             var1.push();
             var1.translate(0.0, 0.0, 0.125);
             double var14 = MathHelper.lerp((double)var7, var4.prevChasingPosX, var4.chasingPosX)

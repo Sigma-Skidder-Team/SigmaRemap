@@ -65,7 +65,7 @@ public class FallingBlockEntity extends Entity {
    }
 
    public void method3552(BlockPos var1) {
-      this.dataManager.method35446(field5184, var1);
+      this.dataManager.set(field5184, var1);
    }
 
    public BlockPos method3553() {
@@ -111,7 +111,7 @@ public class FallingBlockEntity extends Entity {
          if (!this.world.isRemote) {
             BlockPos var18 = this.getPosition();
             boolean var5 = this.field5176.getBlock() instanceof Class3217;
-            boolean var6 = var5 && this.world.getFluidState(var18).method23486(FluidTags.field40469);
+            boolean var6 = var5 && this.world.getFluidState(var18).method23486(FluidTags.WATER);
             double var7 = this.getMotion().lengthSquared();
             if (var5 && var7 > 1.0) {
                BlockRayTraceResult var9 = this.world
@@ -120,7 +120,7 @@ public class FallingBlockEntity extends Entity {
                         new Vector3d(this.prevPosX, this.prevPosY, this.prevPosZ), this.getPositionVec(), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.SOURCE_ONLY, this
                      )
                   );
-               if (var9.getType() != RayTraceResult.Type.MISS && this.world.getFluidState(var9.getPos()).method23486(FluidTags.field40469)) {
+               if (var9.getType() != RayTraceResult.Type.MISS && this.world.getFluidState(var9.getPos()).method23486(FluidTags.WATER)) {
                   var18 = var9.getPos();
                   var6 = true;
                }

@@ -41,7 +41,7 @@ public class Class3224 extends Block implements IWaterLoggable {
          return true;
       } else {
          for (Direction var8 : Direction.values()) {
-            if (var1.getFluidState(var2.offset(var8)).method23486(FluidTags.field40469)) {
+            if (var1.getFluidState(var2.offset(var8)).method23486(FluidTags.WATER)) {
                return true;
             }
          }
@@ -54,7 +54,7 @@ public class Class3224 extends Block implements IWaterLoggable {
    @Override
    public BlockState getStateForPlacement(BlockItemUseContext var1) {
       FluidState var4 = var1.getWorld().getFluidState(var1.getPos());
-      return this.getDefaultState().with(field18663, Boolean.valueOf(var4.method23486(FluidTags.field40469) && var4.method23477() == 8));
+      return this.getDefaultState().with(field18663, Boolean.valueOf(var4.method23486(FluidTags.WATER) && var4.method23477() == 8));
    }
 
    @Override

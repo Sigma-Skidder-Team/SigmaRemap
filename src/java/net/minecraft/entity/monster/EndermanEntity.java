@@ -77,14 +77,14 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
       ModifiableAttributeInstance var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
       if (var1 != null) {
          this.field5652 = this.ticksExisted;
-         this.dataManager.method35446(field5648, true);
+         this.dataManager.set(field5648, true);
          if (!var4.method38665(field5646)) {
             var4.applyNonPersistentModifier(field5646);
          }
       } else {
          this.field5652 = 0;
-         this.dataManager.method35446(field5648, false);
-         this.dataManager.method35446(field5649, false);
+         this.dataManager.set(field5648, false);
+         this.dataManager.set(field5649, false);
          var4.removeModifier(field5646);
       }
    }
@@ -126,7 +126,7 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
       if (this.ticksExisted >= this.field5651 + 400) {
          this.field5651 = this.ticksExisted;
          if (!this.isSilent()) {
-            this.world.method6745(this.getPosX(), this.getPosYEye(), this.getPosZ(), SoundEvents.field26549, this.getSoundCategory(), 2.5F, 1.0F, false);
+            this.world.playSound(this.getPosX(), this.getPosYEye(), this.getPosZ(), SoundEvents.field26549, this.getSoundCategory(), 2.5F, 1.0F, false);
          }
       }
    }
@@ -141,29 +141,29 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       BlockState var4 = this.method4357();
       if (var4 != null) {
-         var1.put("carriedBlockState", NBTUtil.writeBlockState(var4));
+         compound.put("carriedBlockState", NBTUtil.writeBlockState(var4));
       }
 
-      this.method4364(var1);
+      this.method4364(compound);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
       BlockState var4 = null;
-      if (var1.contains("carriedBlockState", 10)) {
-         var4 = NBTUtil.readBlockState(var1.getCompound("carriedBlockState"));
+      if (compound.contains("carriedBlockState", 10)) {
+         var4 = NBTUtil.readBlockState(compound.getCompound("carriedBlockState"));
          if (var4.isAir()) {
             var4 = null;
          }
       }
 
       this.method4356(var4);
-      this.method4365((ServerWorld)this.world, var1);
+      this.method4365((ServerWorld)this.world, compound);
    }
 
    private boolean method4352(PlayerEntity var1) {
@@ -258,7 +258,7 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
 
       BlockState var10 = this.world.getBlockState(var9);
       boolean var11 = var10.getMaterial().blocksMovement();
-      boolean var12 = var10.getFluidState().method23486(FluidTags.field40469);
+      boolean var12 = var10.getFluidState().method23486(FluidTags.WATER);
       if (var11 && !var12) {
          boolean var13 = this.attemptTeleport(var1, var3, var5, true);
          if (var13 && !this.isSilent()) {
@@ -297,7 +297,7 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
    }
 
    public void method4356(BlockState var1) {
-      this.dataManager.method35446(field5647, Optional.<BlockState>ofNullable(var1));
+      this.dataManager.set(field5647, Optional.<BlockState>ofNullable(var1));
    }
 
    @Nullable
@@ -336,7 +336,7 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
    }
 
    public void method4360() {
-      this.dataManager.method35446(field5649, true);
+      this.dataManager.set(field5649, true);
    }
 
    @Override

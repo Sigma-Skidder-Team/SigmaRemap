@@ -152,41 +152,41 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("playerGameType", 99)) {
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("playerGameType", 99)) {
          if (!this.method3396().method1380()) {
             this.interactionManager
                .method33862(
-                  GameType.getByID(var1.getInt("playerGameType")),
-                  !var1.contains("previousPlayerGameType", 3) ? GameType.field11101 : GameType.getByID(var1.getInt("previousPlayerGameType"))
+                  GameType.getByID(compound.getInt("playerGameType")),
+                  !compound.contains("previousPlayerGameType", 3) ? GameType.field11101 : GameType.getByID(compound.getInt("previousPlayerGameType"))
                );
          } else {
             this.interactionManager.method33862(this.method3396().method1286(), GameType.field11101);
          }
       }
 
-      if (var1.contains("enteredNetherPosition", 10)) {
-         CompoundNBT var4 = var1.getCompound("enteredNetherPosition");
+      if (compound.contains("enteredNetherPosition", 10)) {
+         CompoundNBT var4 = compound.getCompound("enteredNetherPosition");
          this.field4882 = new Vector3d(var4.getDouble("x"), var4.getDouble("y"), var4.getDouble("z"));
       }
 
-      this.field4877 = var1.getBoolean("seenCredits");
-      if (var1.contains("recipeBook", 10)) {
-         this.field4878.method21380(var1.getCompound("recipeBook"), this.field4856.method1407());
+      this.field4877 = compound.getBoolean("seenCredits");
+      if (compound.contains("recipeBook", 10)) {
+         this.field4878.method21380(compound.getCompound("recipeBook"), this.field4856.method1407());
       }
 
       if (this.isSleeping()) {
          this.wakeUp();
       }
 
-      if (var1.contains("SpawnX", 99) && var1.contains("SpawnY", 99) && var1.contains("SpawnZ", 99)) {
-         this.field4885 = new BlockPos(var1.getInt("SpawnX"), var1.getInt("SpawnY"), var1.getInt("SpawnZ"));
-         this.field4886 = var1.getBoolean("SpawnForced");
-         this.field4887 = var1.getFloat("SpawnAngle");
-         if (var1.contains("SpawnDimension")) {
+      if (compound.contains("SpawnX", 99) && compound.contains("SpawnY", 99) && compound.contains("SpawnZ", 99)) {
+         this.field4885 = new BlockPos(compound.getInt("SpawnX"), compound.getInt("SpawnY"), compound.getInt("SpawnZ"));
+         this.field4886 = compound.getBoolean("SpawnForced");
+         this.field4887 = compound.getFloat("SpawnAngle");
+         if (compound.contains("SpawnDimension")) {
             this.field4884 = World.CODEC
-               .parse(NBTDynamicOps.INSTANCE, var1.get("SpawnDimension"))
+               .parse(NBTDynamicOps.INSTANCE, compound.get("SpawnDimension"))
                .resultOrPartial(field4854::error)
                .orElse(World.OVERWORLD);
          }
@@ -194,17 +194,17 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("playerGameType", this.interactionManager.getGameType().getID());
-      var1.putInt("previousPlayerGameType", this.interactionManager.method33864().getID());
-      var1.putBoolean("seenCredits", this.field4877);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("playerGameType", this.interactionManager.getGameType().getID());
+      compound.putInt("previousPlayerGameType", this.interactionManager.method33864().getID());
+      compound.putBoolean("seenCredits", this.field4877);
       if (this.field4882 != null) {
          CompoundNBT var4 = new CompoundNBT();
          var4.putDouble("x", this.field4882.x);
          var4.putDouble("y", this.field4882.y);
          var4.putDouble("z", this.field4882.z);
-         var1.put("enteredNetherPosition", var4);
+         compound.put("enteredNetherPosition", var4);
       }
 
       Entity var8 = this.method3415();
@@ -215,21 +215,21 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
          var8.writeUnlessPassenger(var7);
          var6.putUniqueID("Attach", var5.getUniqueID());
          var6.put("Entity", var7);
-         var1.put("RootVehicle", var6);
+         compound.put("RootVehicle", var6);
       }
 
-      var1.put("recipeBook", this.field4878.method21379());
-      var1.putString("Dimension", this.world.getDimensionKey().getLocation().toString());
+      compound.put("recipeBook", this.field4878.method21379());
+      compound.putString("Dimension", this.world.getDimensionKey().getLocation().toString());
       if (this.field4885 != null) {
-         var1.putInt("SpawnX", this.field4885.getX());
-         var1.putInt("SpawnY", this.field4885.getY());
-         var1.putInt("SpawnZ", this.field4885.getZ());
-         var1.putBoolean("SpawnForced", this.field4886);
-         var1.putFloat("SpawnAngle", this.field4887);
+         compound.putInt("SpawnX", this.field4885.getX());
+         compound.putInt("SpawnY", this.field4885.getY());
+         compound.putInt("SpawnZ", this.field4885.getZ());
+         compound.putBoolean("SpawnForced", this.field4886);
+         compound.putFloat("SpawnAngle", this.field4887);
          ResourceLocation.CODEC
             .encodeStart(NBTDynamicOps.INSTANCE, this.field4884.getLocation())
             .resultOrPartial(field4854::error)
-            .ifPresent(var1x -> var1.put("SpawnDimension", var1x));
+            .ifPresent(var1x -> compound.put("SpawnDimension", var1x));
       }
    }
 
@@ -511,7 +511,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
          return false;
       } else {
          boolean var5 = this.field4856.isDedicatedServer() && this.method2743() && "fall".equals(source.field39022);
-         if (!var5 && this.field4871 > 0 && source != DamageSource.field39004) {
+         if (!var5 && this.field4871 > 0 && source != DamageSource.OUT_OF_WORLD) {
             return false;
          } else {
             if (source instanceof EntityDamageSource) {
@@ -806,7 +806,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    @Override
-   public void updateFallState(double var1, boolean var3, BlockState var4, BlockPos var5) {
+   public void updateFallState(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
    }
 
    @Override
@@ -1056,7 +1056,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
       this.xpSeed = var1.xpSeed;
       this.enterChestInventory = var1.enterChestInventory;
-      this.getDataManager().method35446(field4897, var1.getDataManager().<Byte>method35445(field4897));
+      this.getDataManager().set(field4897, var1.getDataManager().<Byte>method35445(field4897));
       this.field4870 = -1;
       this.field4867 = -1.0F;
       this.field4868 = -1;
@@ -1189,8 +1189,8 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    public void method2804(CClientSettingsPacket var1) {
       this.field4872 = var1.getChatVisibility();
       this.field4873 = var1.isColorsEnabled();
-      this.getDataManager().method35446(field4897, (byte)var1.getModelPartFlags());
-      this.getDataManager().method35446(field4898, (byte)(var1.getMainHand() != HandSide.LEFT ? 1 : 0));
+      this.getDataManager().set(field4897, (byte)var1.getModelPartFlags());
+      this.getDataManager().set(field4898, (byte)(var1.getMainHand() != HandSide.LEFT ? 1 : 0));
    }
 
    public ChatVisibility getChatVisibility() {

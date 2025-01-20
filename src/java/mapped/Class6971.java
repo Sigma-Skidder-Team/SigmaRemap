@@ -19,7 +19,7 @@ public final class Class6971<E extends LivingEntity> {
       this.field30183 = Brain.<E>method21401(var1, var2);
    }
 
-   public Brain<E> method21513(Dynamic<?> var1) {
+   public Brain<E> deserialize(Dynamic<?> var1) {
       return this.field30183
          .parse(var1)
          .resultOrPartial(Brain.method21445()::error)

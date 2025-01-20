@@ -31,7 +31,7 @@ public class Class6500 {
          this.field28463 = true;
          this.field28464 = 0;
          this.field28465 = var1.nextInt(841) + 140;
-         this.field28460.method35446(this.field28461, this.field28465);
+         this.field28460.set(this.field28461, this.field28465);
          return true;
       } else {
          return false;
@@ -47,7 +47,7 @@ public class Class6500 {
    }
 
    public void method19693(boolean var1) {
-      this.field28460.method35446(this.field28462, var1);
+      this.field28460.set(this.field28462, var1);
    }
 
    public boolean method19694() {

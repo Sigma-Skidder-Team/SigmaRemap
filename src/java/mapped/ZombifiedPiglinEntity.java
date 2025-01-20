@@ -143,7 +143,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
       }
 
       if (var1 instanceof PlayerEntity) {
-         this.method3016((PlayerEntity)var1);
+         this.func_230246_e_((PlayerEntity)var1);
       }
 
       super.method4233(var1);
@@ -166,15 +166,15 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      this.method4364(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      this.method4364(compound);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4365((ServerWorld)this.world, var1);
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4365((ServerWorld)this.world, compound);
    }
 
    @Override

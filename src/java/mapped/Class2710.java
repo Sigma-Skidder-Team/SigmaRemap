@@ -12,13 +12,13 @@ public class Class2710 extends NearestAttackableTargetGoal<PlayerEntity> {
    private PlayerEntity field17193;
    private int field17194;
    private int field17195;
-   private final Class8522 field17196;
-   private final Class8522 field17197 = new Class8522().method30206();
+   private final EntityPredicate field17196;
+   private final EntityPredicate field17197 = new EntityPredicate().method30206();
 
    public Class2710(EndermanEntity var1, Predicate<LivingEntity> var2) {
       super(var1, PlayerEntity.class, 10, false, false, var2);
       this.field17192 = var1;
-      this.field17196 = new Class8522().method30203(this.method10914()).method30209(var1x -> EndermanEntity.method4362(var1, (PlayerEntity)var1x));
+      this.field17196 = new EntityPredicate().method30203(this.method10914()).method30209(var1x -> EndermanEntity.method4362(var1, (PlayerEntity)var1x));
    }
 
    @Override

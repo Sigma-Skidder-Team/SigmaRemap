@@ -402,7 +402,7 @@ public class Raid {
                   var4.add(var7);
                }
 
-               if (!this.field32978.method6952(var8) && var7.method3021() > 2400) {
+               if (!this.field32978.method6952(var8) && var7.getIdleTime() > 2400) {
                   var7.method4558(var7.method4557() + 1);
                }
 

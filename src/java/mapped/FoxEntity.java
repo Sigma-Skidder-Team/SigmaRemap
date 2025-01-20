@@ -297,7 +297,7 @@ public class FoxEntity extends AnimalEntity {
    }
 
    private void method5126(Class186 var1) {
-      this.dataManager.method35446(field5993, var1.method568());
+      this.dataManager.set(field5993, var1.method568());
    }
 
    private List<UUID> method5127() {
@@ -309,15 +309,15 @@ public class FoxEntity extends AnimalEntity {
 
    private void method5128(UUID var1) {
       if (!this.dataManager.<Optional<UUID>>method35445(field5995).isPresent()) {
-         this.dataManager.method35446(field5995, Optional.<UUID>ofNullable(var1));
+         this.dataManager.set(field5995, Optional.<UUID>ofNullable(var1));
       } else {
-         this.dataManager.method35446(field5996, Optional.<UUID>ofNullable(var1));
+         this.dataManager.set(field5996, Optional.<UUID>ofNullable(var1));
       }
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       List<UUID> var4 = this.method5127();
       ListNBT var5 = new ListNBT();
 
@@ -327,26 +327,26 @@ public class FoxEntity extends AnimalEntity {
          }
       }
 
-      var1.put("Trusted", var5);
-      var1.putBoolean("Sleeping", this.isSleeping());
-      var1.putString("Type", this.method5125().method567());
-      var1.putBoolean("Sitting", this.method5129());
-      var1.putBoolean("Crouching", this.isCrouching());
+      compound.put("Trusted", var5);
+      compound.putBoolean("Sleeping", this.isSleeping());
+      compound.putString("Type", this.method5125().method567());
+      compound.putBoolean("Sitting", this.method5129());
+      compound.putBoolean("Crouching", this.isCrouching());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      ListNBT var4 = var1.getList("Trusted", 11);
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      ListNBT var4 = compound.getList("Trusted", 11);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
          this.method5128(NBTUtil.readUniqueID(var4.get(var5)));
       }
 
-      this.method5135(var1.getBoolean("Sleeping"));
-      this.method5126(Class186.method569(var1.getString("Type")));
-      this.method5130(var1.getBoolean("Sitting"));
-      this.method5143(var1.getBoolean("Crouching"));
+      this.method5135(compound.getBoolean("Sleeping"));
+      this.method5126(Class186.method569(compound.getString("Type")));
+      this.method5130(compound.getBoolean("Sitting"));
+      this.method5143(compound.getBoolean("Crouching"));
       if (this.world instanceof ServerWorld) {
          this.method5124();
       }
@@ -387,9 +387,9 @@ public class FoxEntity extends AnimalEntity {
 
    private void method5136(int var1, boolean var2) {
       if (!var2) {
-         this.dataManager.method35446(field5994, (byte)(this.dataManager.<Byte>method35445(field5994) & ~var1));
+         this.dataManager.set(field5994, (byte)(this.dataManager.<Byte>method35445(field5994) & ~var1));
       } else {
-         this.dataManager.method35446(field5994, (byte)(this.dataManager.<Byte>method35445(field5994) | var1));
+         this.dataManager.set(field5994, (byte)(this.dataManager.<Byte>method35445(field5994) | var1));
       }
    }
 
@@ -765,8 +765,8 @@ public class FoxEntity extends AnimalEntity {
                   if (var5 instanceof LivingEntity) {
                      LivingEntity var6 = (LivingEntity)var5;
                      this.field17202 = var6;
-                     this.field17201 = var6.method3014();
-                     int var7 = var6.method3015();
+                     this.field17201 = var6.getRevengeTarget();
+                     int var7 = var6.getRevengeTiemr();
                      return var7 != this.field17203 && this.method10915(this.field17201, this.field17191);
                   }
                }
@@ -781,7 +781,7 @@ public class FoxEntity extends AnimalEntity {
          this.method10923(this.field17201);
          this.field17190 = this.field17201;
          if (this.field17202 != null) {
-            this.field17203 = this.field17202.method3015();
+            this.field17203 = this.field17202.getRevengeTiemr();
          }
 
          FoxEntity.this.playSound(SoundEvents.field26588, 1.0F, 1.0F);

@@ -81,7 +81,7 @@ public class ZombieEntity extends MonsterEntity {
          .method21849(Attributes.MOVEMENT_SPEED, 0.23F)
          .method21849(Attributes.ATTACK_DAMAGE, 3.0)
          .method21849(Attributes.ARMOR, 2.0)
-         .method21848(Attributes.ZOMBIE_SPAWN_REINFORCEMENTS);
+         .createMutableAttribute(Attributes.ZOMBIE_SPAWN_REINFORCEMENTS);
    }
 
    @Override
@@ -127,17 +127,17 @@ public class ZombieEntity extends MonsterEntity {
    }
 
    @Override
-   public int getExperiencePoints(PlayerEntity var1) {
+   public int getExperiencePoints(PlayerEntity player) {
       if (this.isChild()) {
          this.field5594 = (int)((float)this.field5594 * 2.5F);
       }
 
-      return super.getExperiencePoints(var1);
+      return super.getExperiencePoints(player);
    }
 
    @Override
    public void method4308(boolean var1) {
-      this.getDataManager().method35446(field5760, var1);
+      this.getDataManager().set(field5760, var1);
       if (this.world != null && !this.world.isRemote) {
          ModifiableAttributeInstance var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
          var4.removeModifier(field5759);
@@ -165,7 +165,7 @@ public class ZombieEntity extends MonsterEntity {
       if (!this.world.isRemote && this.isAlive() && !this.method4305()) {
          if (!this.method4654()) {
             if (this.shouldDrown()) {
-               if (!this.areEyesInFluid(FluidTags.field40469)) {
+               if (!this.areEyesInFluid(FluidTags.WATER)) {
                   this.field5766 = -1;
                } else {
                   this.field5766++;
@@ -214,7 +214,7 @@ public class ZombieEntity extends MonsterEntity {
 
    private void method4657(int var1) {
       this.field5767 = var1;
-      this.getDataManager().method35446(field5762, true);
+      this.getDataManager().set(field5762, true);
    }
 
    public void method4658() {
@@ -326,7 +326,7 @@ public class ZombieEntity extends MonsterEntity {
 
    @Override
    public CreatureAttribute getCreatureAttribute() {
-      return CreatureAttribute.field33506;
+      return CreatureAttribute.UNDEAD;
    }
 
    @Override
@@ -343,22 +343,22 @@ public class ZombieEntity extends MonsterEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putBoolean("IsBaby", this.isChild());
-      var1.putBoolean("CanBreakDoors", this.method4655());
-      var1.putInt("InWaterTime", !this.isInWater() ? -1 : this.field5766);
-      var1.putInt("DrownedConversionTime", !this.method4654() ? -1 : this.field5767);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putBoolean("IsBaby", this.isChild());
+      compound.putBoolean("CanBreakDoors", this.method4655());
+      compound.putInt("InWaterTime", !this.isInWater() ? -1 : this.field5766);
+      compound.putInt("DrownedConversionTime", !this.method4654() ? -1 : this.field5767);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4308(var1.getBoolean("IsBaby"));
-      this.method4656(var1.getBoolean("CanBreakDoors"));
-      this.field5766 = var1.getInt("InWaterTime");
-      if (var1.contains("DrownedConversionTime", 99) && var1.getInt("DrownedConversionTime") > -1) {
-         this.method4657(var1.getInt("DrownedConversionTime"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4308(compound.getBoolean("IsBaby"));
+      this.method4656(compound.getBoolean("CanBreakDoors"));
+      this.field5766 = compound.getInt("InWaterTime");
+      if (compound.contains("DrownedConversionTime", 99) && compound.getInt("DrownedConversionTime") > -1) {
+         this.method4657(compound.getInt("DrownedConversionTime"));
       }
    }
 

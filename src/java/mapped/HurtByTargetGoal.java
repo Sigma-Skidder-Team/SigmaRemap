@@ -12,7 +12,7 @@ import java.util.List;
 
 public class HurtByTargetGoal extends Class2699 {
    private static String[] field17178;
-   private static final Class8522 field17179 = new Class8522().method30206().method30208();
+   private static final EntityPredicate field17179 = new EntityPredicate().method30206().method30208();
    private boolean field17180;
    private int field17181;
    private final Class<?>[] field17182;
@@ -26,8 +26,8 @@ public class HurtByTargetGoal extends Class2699 {
 
    @Override
    public boolean method10803() {
-      int var3 = this.field17153.method3015();
-      LivingEntity var4 = this.field17153.method3014();
+      int var3 = this.field17153.getRevengeTiemr();
+      LivingEntity var4 = this.field17153.getRevengeTarget();
       if (var3 != this.field17181 && var4 != null) {
          if (var4.getType() == EntityType.PLAYER && this.field17153.world.getGameRules().getBoolean(GameRules.field24255)) {
             return false;
@@ -53,9 +53,9 @@ public class HurtByTargetGoal extends Class2699 {
 
    @Override
    public void method10804() {
-      this.field17153.method4233(this.field17153.method3014());
+      this.field17153.method4233(this.field17153.getRevengeTarget());
       this.field17159 = this.field17153.method4232();
-      this.field17181 = this.field17153.method3015();
+      this.field17181 = this.field17153.getRevengeTiemr();
       this.field17160 = 300;
       if (this.field17180) {
          this.method10919();
@@ -81,7 +81,7 @@ public class HurtByTargetGoal extends Class2699 {
             if (this.field17153 != var8
                && var8.method4232() == null
                && (!(this.field17153 instanceof TameableEntity) || ((TameableEntity)this.field17153).method4400() == ((TameableEntity)var8).method4400())
-               && !var8.isOnSameTeam(this.field17153.method3014())) {
+               && !var8.isOnSameTeam(this.field17153.getRevengeTarget())) {
                if (this.field17183 == null) {
                   break;
                }
@@ -101,7 +101,7 @@ public class HurtByTargetGoal extends Class2699 {
             }
          }
 
-         this.method10920(var8, this.field17153.method3014());
+         this.method10920(var8, this.field17153.getRevengeTarget());
       }
    }
 

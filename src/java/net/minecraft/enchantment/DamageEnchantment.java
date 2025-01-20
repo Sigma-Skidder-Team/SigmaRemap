@@ -39,7 +39,7 @@ public class DamageEnchantment extends Enchantment {
    @Override
    public float method18815(int var1, CreatureAttribute var2) {
       if (this.field27320 != 0) {
-         if (this.field27320 == 1 && var2 == CreatureAttribute.field33506) {
+         if (this.field27320 == 1 && var2 == CreatureAttribute.UNDEAD) {
             return (float)var1 * 2.5F;
          } else {
             return this.field27320 == 2 && var2 == CreatureAttribute.field33507 ? (float)var1 * 2.5F : 0.0F;

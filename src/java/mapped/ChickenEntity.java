@@ -114,24 +114,24 @@ public class ChickenEntity extends AnimalEntity {
    }
 
    @Override
-   public int getExperiencePoints(PlayerEntity var1) {
-      return !this.method5070() ? super.getExperiencePoints(var1) : 10;
+   public int getExperiencePoints(PlayerEntity player) {
+      return !this.method5070() ? super.getExperiencePoints(player) : 10;
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.field5971 = var1.getBoolean("IsChickenJockey");
-      if (var1.contains("EggLayTime")) {
-         this.field5970 = var1.getInt("EggLayTime");
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.field5971 = compound.getBoolean("IsChickenJockey");
+      if (compound.contains("EggLayTime")) {
+         this.field5970 = compound.getInt("EggLayTime");
       }
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putBoolean("IsChickenJockey", this.field5971);
-      var1.putInt("EggLayTime", this.field5970);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putBoolean("IsChickenJockey", this.field5971);
+      compound.putInt("EggLayTime", this.field5970);
    }
 
    @Override

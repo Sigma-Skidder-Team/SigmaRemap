@@ -45,7 +45,7 @@ public class GhastEntity extends Class1111 implements IMob {
    }
 
    public void method5358(boolean var1) {
-      this.dataManager.method35446(field6091, var1);
+      this.dataManager.set(field6091, var1);
    }
 
    public int method5359() {
@@ -116,16 +116,16 @@ public class GhastEntity extends Class1111 implements IMob {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("ExplosionPower", this.field6092);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("ExplosionPower", this.field6092);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("ExplosionPower", 99)) {
-         this.field6092 = var1.getInt("ExplosionPower");
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("ExplosionPower", 99)) {
+         this.field6092 = compound.getInt("ExplosionPower");
       }
    }
 

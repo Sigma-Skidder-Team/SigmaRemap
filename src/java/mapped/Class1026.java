@@ -176,27 +176,27 @@ public abstract class Class1026 extends PillagerEntity {
    }
 
    public void method4556(boolean var1) {
-      this.dataManager.method35446(field5712, var1);
+      this.dataManager.set(field5712, var1);
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("Wave", this.field5715);
-      var1.putBoolean("CanJoinRaid", this.field5716);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("Wave", this.field5715);
+      compound.putBoolean("CanJoinRaid", this.field5716);
       if (this.field5714 != null) {
-         var1.putInt("RaidId", this.field5714.method25430());
+         compound.putInt("RaidId", this.field5714.method25430());
       }
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.field5715 = var1.getInt("Wave");
-      this.field5716 = var1.getBoolean("CanJoinRaid");
-      if (var1.contains("RaidId", 3)) {
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.field5715 = compound.getInt("Wave");
+      this.field5716 = compound.getBoolean("CanJoinRaid");
+      if (compound.contains("RaidId", 3)) {
          if (this.world instanceof ServerWorld) {
-            this.field5714 = ((ServerWorld)this.world).method6956().method24610(var1.getInt("RaidId"));
+            this.field5714 = ((ServerWorld)this.world).method6956().method24610(compound.getInt("RaidId"));
          }
 
          if (this.field5714 != null) {

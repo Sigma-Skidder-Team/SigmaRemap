@@ -9,12 +9,12 @@ public class Class2759 extends Class2595 {
    private static String[] field17313;
    private final Class1026 field17314;
    private final float field17315;
-   public final Class8522 field17316;
+   public final EntityPredicate field17316;
    public final Class1026 field17317;
 
    public Class2759(Class1026 var1, Class1025 var2, float var3) {
       this.field17317 = var1;
-      this.field17316 = new Class8522().method30203(8.0).method30207().method30204().method30205().method30206().method30208();
+      this.field17316 = new EntityPredicate().method30203(8.0).method30207().method30204().method30205().method30206().method30208();
       this.field17314 = var2;
       this.field17315 = var3 * var3;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
@@ -22,7 +22,7 @@ public class Class2759 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      LivingEntity var3 = this.field17314.method3014();
+      LivingEntity var3 = this.field17314.getRevengeTarget();
       return this.field17314.method4551() == null
          && this.field17314.method4579()
          && this.field17314.method4232() != null

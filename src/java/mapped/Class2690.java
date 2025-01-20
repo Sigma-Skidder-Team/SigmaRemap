@@ -9,13 +9,13 @@ import java.util.List;
 
 public class Class2690 extends Class2595 {
    private static String[] field17119;
-   private final Class8522 field17120;
+   private final EntityPredicate field17120;
    private int field17121;
    public final PhantomEntity field17122;
 
    public Class2690(PhantomEntity var1) {
       this.field17122 = var1;
-      this.field17120 = new Class8522().method30203(64.0);
+      this.field17120 = new EntityPredicate().method30203(64.0);
       this.field17121 = 20;
    }
 
@@ -31,7 +31,7 @@ public class Class2690 extends Class2595 {
             var3.sort(Comparator.<Entity, Double>comparing(Entity::getPosY).reversed());
 
             for (PlayerEntity var5 : var3) {
-               if (this.field17122.canAttack(var5, Class8522.field38240)) {
+               if (this.field17122.canAttack(var5, EntityPredicate.field38240)) {
                   this.field17122.method4233(var5);
                   return true;
                }
@@ -45,6 +45,6 @@ public class Class2690 extends Class2595 {
    @Override
    public boolean method10806() {
       LivingEntity var3 = this.field17122.method4232();
-      return var3 == null ? false : this.field17122.canAttack(var3, Class8522.field38240);
+      return var3 == null ? false : this.field17122.canAttack(var3, EntityPredicate.field38240);
    }
 }

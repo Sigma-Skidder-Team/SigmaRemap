@@ -230,17 +230,17 @@ public class SheepEntity extends AnimalEntity implements Class1020 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putBoolean("Sheared", this.method4519());
-      var1.putByte("Color", (byte)this.method4517().method309());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putBoolean("Sheared", this.method4519());
+      compound.putByte("Color", (byte)this.method4517().method309());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4520(var1.getBoolean("Sheared"));
-      this.method4518(Class112.method315(var1.getByte("Color")));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4520(compound.getBoolean("Sheared"));
+      this.method4518(Class112.method315(compound.getByte("Color")));
    }
 
    @Override
@@ -269,7 +269,7 @@ public class SheepEntity extends AnimalEntity implements Class1020 {
 
    public void method4518(Class112 var1) {
       byte var4 = this.dataManager.<Byte>method35445(field5704);
-      this.dataManager.method35446(field5704, (byte)(var4 & 240 | var1.method309() & 15));
+      this.dataManager.set(field5704, (byte)(var4 & 240 | var1.method309() & 15));
    }
 
    public boolean method4519() {
@@ -279,9 +279,9 @@ public class SheepEntity extends AnimalEntity implements Class1020 {
    public void method4520(boolean var1) {
       byte var4 = this.dataManager.<Byte>method35445(field5704);
       if (!var1) {
-         this.dataManager.method35446(field5704, (byte)(var4 & -17));
+         this.dataManager.set(field5704, (byte)(var4 & -17));
       } else {
-         this.dataManager.method35446(field5704, (byte)(var4 | 16));
+         this.dataManager.set(field5704, (byte)(var4 | 16));
       }
    }
 

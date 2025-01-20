@@ -49,13 +49,13 @@ public class Class6617 implements ISuggestionProvider {
    @Override
    public Collection<String> getTargetEntity() {
       return (Collection<String>)(this.field29119.objectMouseOver != null && this.field29119.objectMouseOver.getType() == RayTraceResult.Type.ENTITY
-         ? Collections.<String>singleton(((EntityRayTraceResult)this.field29119.objectMouseOver).getEntity().method3376())
+         ? Collections.<String>singleton(((EntityRayTraceResult)this.field29119.objectMouseOver).getEntity().getCachedUniqueIdString())
          : Collections.<String>emptyList());
    }
 
    @Override
    public Collection<String> getTeamNames() {
-      return this.field29118.method15797().method6805().method20996();
+      return this.field29118.method15797().getScoreboard().method20996();
    }
 
    @Override

@@ -18,7 +18,7 @@ public class Class7227 implements Class7226, Class7222 {
    public Class7227() {
       Minecraft var3 = Minecraft.getInstance();
 
-      for (ScorePlayerTeam var5 : var3.world.method6805().method20997()) {
+      for (ScorePlayerTeam var5 : var3.world.getScoreboard().method20997()) {
          this.field31066.add(new Class7224(this, var5));
       }
    }

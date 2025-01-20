@@ -20,7 +20,7 @@ public class Class2790 extends Class2595 {
    public boolean method10803() {
       if (!this.field17424.getItemStackFromSlot(EquipmentSlotType.MAINHAND).isEmpty()) {
          return false;
-      } else if (this.field17424.method4232() != null || this.field17424.method3014() != null) {
+      } else if (this.field17424.method4232() != null || this.field17424.getRevengeTarget() != null) {
          return false;
       } else if (FoxEntity.method5165(this.field17424)) {
          if (this.field17424.getRNG().nextInt(10) != 0) {

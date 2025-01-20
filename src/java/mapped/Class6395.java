@@ -154,7 +154,7 @@ public abstract class Class6395 {
       this.method19454(var2);
       var2.method2809().method28969();
       var2.method2810().method21382(var2);
-      this.method19446(var12.method6805(), var2);
+      this.method19446(var12.getScoreboard(), var2);
       this.field27990.method1388();
       TranslationTextComponent var19;
       if (!var2.getGameProfile().getName().equalsIgnoreCase(var8)) {

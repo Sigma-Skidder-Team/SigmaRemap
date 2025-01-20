@@ -284,7 +284,7 @@ public class ParrotEntity extends ShoulderRidingEntity implements Class1016 {
    }
 
    @Override
-   public void updateFallState(double var1, boolean var3, BlockState var4, BlockPos var5) {
+   public void updateFallState(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
    }
 
    @Override
@@ -389,7 +389,7 @@ public class ParrotEntity extends ShoulderRidingEntity implements Class1016 {
    }
 
    public void method4415(int var1) {
-      this.dataManager.method35446(field5672, var1);
+      this.dataManager.set(field5672, var1);
    }
 
    @Override
@@ -399,15 +399,15 @@ public class ParrotEntity extends ShoulderRidingEntity implements Class1016 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("Variant", this.method4414());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("Variant", this.method4414());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4415(var1.getInt("Variant"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4415(compound.getInt("Variant"));
    }
 
    public boolean method4416() {

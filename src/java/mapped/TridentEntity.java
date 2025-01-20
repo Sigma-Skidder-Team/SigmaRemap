@@ -39,8 +39,8 @@ public class TridentEntity extends AbstractArrowEntity {
    public TridentEntity(World var1, LivingEntity var2, ItemStack var3) {
       super(EntityType.TRIDENT, var2, var1);
       this.field5113 = var3.copy();
-      this.dataManager.method35446(field5111, (byte) EnchantmentHelper.method26336(var3));
-      this.dataManager.method35446(field5112, var3.method32159());
+      this.dataManager.set(field5111, (byte) EnchantmentHelper.method26336(var3));
+      this.dataManager.set(field5112, var3.method32159());
    }
 
    public TridentEntity(World var1, double var2, double var4, double var6) {
@@ -177,7 +177,7 @@ public class TridentEntity extends AbstractArrowEntity {
       }
 
       this.field5114 = var1.getBoolean("DealtDamage");
-      this.dataManager.method35446(field5111, (byte) EnchantmentHelper.method26336(this.field5113));
+      this.dataManager.set(field5111, (byte) EnchantmentHelper.method26336(this.field5113));
    }
 
    @Override

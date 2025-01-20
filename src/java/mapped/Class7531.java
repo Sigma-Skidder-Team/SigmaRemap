@@ -65,7 +65,7 @@ public class Class7531 extends WorldSavedData {
 
    public static boolean method24612(Class1026 var0, Raid var1) {
       return var0 != null && var1 != null && var1.method25394() != null
-         ? var0.isAlive() && var0.method4547() && var0.method3021() <= 2400 && var0.world.getDimensionType() == var1.method25394().getDimensionType()
+         ? var0.isAlive() && var0.method4547() && var0.getIdleTime() <= 2400 && var0.world.getDimensionType() == var1.method25394().getDimensionType()
          : false;
    }
 

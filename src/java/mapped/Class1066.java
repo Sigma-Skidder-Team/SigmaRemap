@@ -46,7 +46,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
    }
 
    public void method4928(boolean var1) {
-      this.dataManager.method35446(field5877, var1);
+      this.dataManager.set(field5877, var1);
    }
 
    @Override
@@ -72,9 +72,9 @@ public abstract class Class1066 extends AbstractHorseEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putBoolean("ChestedHorse", this.method4927());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putBoolean("ChestedHorse", this.method4927());
       if (this.method4927()) {
          ListNBT var4 = new ListNBT();
 
@@ -88,16 +88,16 @@ public abstract class Class1066 extends AbstractHorseEntity {
             }
          }
 
-         var1.put("Items", var4);
+         compound.put("Items", var4);
       }
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4928(var1.getBoolean("ChestedHorse"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4928(compound.getBoolean("ChestedHorse"));
       if (this.method4927()) {
-         ListNBT var4 = var1.getList("Items", 10);
+         ListNBT var4 = compound.getList("Items", 10);
          this.method4948();
 
          for (int var5 = 0; var5 < var4.size(); var5++) {

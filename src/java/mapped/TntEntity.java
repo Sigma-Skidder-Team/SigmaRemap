@@ -100,7 +100,7 @@ public class TntEntity extends Entity {
    }
 
    public void method4182(int var1) {
-      this.dataManager.method35446(field5562, var1);
+      this.dataManager.set(field5562, var1);
       this.field5564 = var1;
    }
 

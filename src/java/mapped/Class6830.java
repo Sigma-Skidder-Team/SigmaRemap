@@ -15,7 +15,7 @@ public class Class6830 extends Class6829 {
 
    @Override
    public void method20810() {
-      if (this.field29715.areEyesInFluid(FluidTags.field40469)) {
+      if (this.field29715.areEyesInFluid(FluidTags.WATER)) {
          this.field29715.setMotion(this.field29715.getMotion().add(0.0, 0.005, 0.0));
       }
 

@@ -281,8 +281,8 @@ public final class Class8170 {
          BlockPos var9 = var2.down();
          switch (Class8470.field36295[var0.ordinal()]) {
             case 1:
-               return var7.method23486(FluidTags.field40469)
-                  && var1.getFluidState(var9).method23486(FluidTags.field40469)
+               return var7.method23486(FluidTags.WATER)
+                  && var1.getFluidState(var9).method23486(FluidTags.WATER)
                   && !var1.getBlockState(var8).method23400(var1, var8);
             case 2:
                return var7.method23486(FluidTags.field40470);

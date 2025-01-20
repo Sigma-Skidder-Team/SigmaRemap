@@ -4,7 +4,7 @@ import java.util.EnumSet;
 
 public class Class2777 extends Class2595 {
    private static String[] field17370;
-   private static final Class8522 field17371 = new Class8522().method30203(6.0).method30205().method30204();
+   private static final EntityPredicate field17371 = new EntityPredicate().method30203(6.0).method30205().method30204();
    private final IronGolemEntity field17372;
    private VillagerEntity field17373;
    private int field17374;

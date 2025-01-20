@@ -80,7 +80,7 @@ public class HypixelGamePlay extends Module {
                             || var6.toLowerCase().contains("was thrown off a cliff by " + var7 + ".")
                             || var6.toLowerCase().contains("was struck down by " + var7 + ".")
                             || var6.toLowerCase().contains("be sent to davy jones' locker by " + var7 + ".")) {
-                        Scoreboard var34 = mc.world.method6805();
+                        Scoreboard var34 = mc.world.getScoreboard();
                         Class8375 var11 = null;
                         ScorePlayerTeam var12 = var34.method20998(mc.player.method2956());
                         if (var12 != null) {

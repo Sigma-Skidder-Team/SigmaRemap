@@ -59,8 +59,8 @@ public class ParticleManager implements Class268 {
       this.method1192(ParticleTypes.field34048, Class3531::new);
       this.method1192(ParticleTypes.field34049, Class3506::new);
       this.method1191(ParticleTypes.BARRIER, new Class3516());
-      this.method1191(ParticleTypes.field34051, new Class3554());
-      this.method1192(ParticleTypes.field34052, Class3542::new);
+      this.method1191(ParticleTypes.BLOCK, new Class3554());
+      this.method1192(ParticleTypes.BUBBLE, Class3542::new);
       this.method1192(ParticleTypes.field34103, Class3547::new);
       this.method1192(ParticleTypes.field34101, Class3568::new);
       this.method1192(ParticleTypes.field34106, Class3544::new);
@@ -104,7 +104,7 @@ public class ParticleManager implements Class268 {
       this.method1192(ParticleTypes.field34087, Class3560::new);
       this.method1192(ParticleTypes.field34104, Class3559::new);
       this.method1192(ParticleTypes.field34088, Class3515::new);
-      this.method1192(ParticleTypes.field34089, Class3502::new);
+      this.method1192(ParticleTypes.POOF, Class3502::new);
       this.method1192(ParticleTypes.field34090, Class3536::new);
       this.method1192(ParticleTypes.field34091, Class3526::new);
       this.method1192(ParticleTypes.field34092, Class3532::new);
@@ -337,7 +337,7 @@ public class ParticleManager implements Class268 {
          }
       };
       FluidState var10 = var4.method37512();
-      boolean var11 = var10.method23486(FluidTags.field40469);
+      boolean var11 = var10.method23486(FluidTags.WATER);
       RenderSystem.pushMatrix();
       RenderSystem.multMatrix(var1.getLast().getMatrix());
       Collection<Class6843> var12 = field1167;

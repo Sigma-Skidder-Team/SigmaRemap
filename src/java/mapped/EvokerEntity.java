@@ -53,8 +53,8 @@ public class EvokerEntity extends Class1031 {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
    }
 
    @Override
@@ -63,8 +63,8 @@ public class EvokerEntity extends Class1031 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
    }
 
    @Override

@@ -52,7 +52,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    }
 
    public void method4739(int var1) {
-      this.dataManager.method35446(field5794, var1);
+      this.dataManager.set(field5794, var1);
    }
 
    @Override
@@ -143,24 +143,24 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       Class46 var4 = this.method4742();
       if (!var4.isEmpty()) {
-         var1.put("Offers", var4.method166());
+         compound.put("Offers", var4.method166());
       }
 
-      var1.put("Inventory", this.field5797.method3683());
+      compound.put("Inventory", this.field5797.method3683());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("Offers", 10)) {
-         this.field5796 = new Class46(var1.getCompound("Offers"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("Offers", 10)) {
+         this.field5796 = new Class46(compound.getCompound("Offers"));
       }
 
-      this.field5797.method3682(var1.getList("Inventory", 10));
+      this.field5797.method3682(compound.getList("Inventory", 10));
    }
 
    @Nullable

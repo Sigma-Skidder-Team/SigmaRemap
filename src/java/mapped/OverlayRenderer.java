@@ -43,7 +43,7 @@ public class OverlayRenderer {
       }
 
       if (!var0.player.isSpectator()) {
-         if (var0.player.areEyesInFluid(FluidTags.field40469) && !Reflector.field42851.method20218(var4, var1)) {
+         if (var0.player.areEyesInFluid(FluidTags.WATER) && !Reflector.field42851.method20218(var4, var1)) {
             renderUnderwater(var0, var1);
          }
 

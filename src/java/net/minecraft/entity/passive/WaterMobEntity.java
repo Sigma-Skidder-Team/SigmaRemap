@@ -36,7 +36,7 @@ public abstract class WaterMobEntity extends CreatureEntity {
    }
 
    @Override
-   public int getExperiencePoints(PlayerEntity var1) {
+   public int getExperiencePoints(PlayerEntity player) {
       return 1 + this.world.rand.nextInt(3);
    }
 
@@ -45,7 +45,7 @@ public abstract class WaterMobEntity extends CreatureEntity {
          this.setAir(var1 - 1);
          if (this.getAir() == -20) {
             this.setAir(0);
-            this.attackEntityFrom(DamageSource.field38999, 2.0F);
+            this.attackEntityFrom(DamageSource.DROWN, 2.0F);
          }
       } else {
          this.setAir(300);

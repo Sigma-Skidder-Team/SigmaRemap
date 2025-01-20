@@ -40,8 +40,8 @@ public class CommandBlockMinecartEntity extends AbstractMinecartEntity {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       this.field5234.method3561(var1);
-      this.getDataManager().method35446(field5232, this.method3614().method3563());
-      this.getDataManager().method35446(field5233, this.method3614().method3559());
+      this.getDataManager().set(field5232, this.method3614().method3563());
+      this.getDataManager().set(field5233, this.method3614().method3559());
    }
 
    @Override

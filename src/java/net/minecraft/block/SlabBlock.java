@@ -122,7 +122,7 @@ public class SlabBlock extends Block implements IWaterLoggable {
          case 1:
             return false;
          case 2:
-            return var2.getFluidState(var3).method23486(FluidTags.field40469);
+            return var2.getFluidState(var3).method23486(FluidTags.WATER);
          case 3:
             return false;
          default:

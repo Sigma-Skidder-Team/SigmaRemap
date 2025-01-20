@@ -71,7 +71,7 @@ public class DrownedEntity extends ZombieEntity implements Class1022 {
       Optional var7 = var1.method7178(var3);
       boolean var8 = var1.method6997() != Difficulty.PEACEFUL
          && method4340(var1, var3, var4)
-         && (var2 == SpawnReason.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));
+         && (var2 == SpawnReason.field14393 || var1.getFluidState(var3).method23486(FluidTags.WATER));
       return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.RIVER))
             && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.FROZEN_RIVER))
          ? var4.nextInt(40) == 0 && method4641(var1, var3) && var8

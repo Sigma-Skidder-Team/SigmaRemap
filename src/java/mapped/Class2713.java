@@ -17,6 +17,6 @@ public class Class2713 extends NearestAttackableTargetGoal<LivingEntity> {
    @Override
    public void method10804() {
       super.method10804();
-      this.field17153.method3022(0);
+      this.field17153.setIdleTime(0);
    }
 }

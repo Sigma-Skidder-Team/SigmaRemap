@@ -11,6 +11,6 @@ public final class Class7402 extends ItemGroup {
 
    @Override
    public ItemStack method23640() {
-      return Class9741.method38187(new ItemStack(Items.field37971), Class8137.field34977);
+      return PotionUtils.method38187(new ItemStack(Items.field37971), Class8137.field34977);
    }
 }

@@ -17,7 +17,7 @@ public abstract class Class1111 extends MobEntity {
    }
 
    @Override
-   public void updateFallState(double var1, boolean var3, BlockState var4, BlockPos var5) {
+   public void updateFallState(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
    }
 
    @Override

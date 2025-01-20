@@ -87,11 +87,11 @@ public class CatEntity extends TameableEntity {
          var1 = this.rand.nextInt(10);
       }
 
-      this.dataManager.method35446(field6037, var1);
+      this.dataManager.set(field6037, var1);
    }
 
    public void method5252(boolean var1) {
-      this.dataManager.method35446(field6038, var1);
+      this.dataManager.set(field6038, var1);
    }
 
    public boolean method5253() {
@@ -99,7 +99,7 @@ public class CatEntity extends TameableEntity {
    }
 
    public void method5254(boolean var1) {
-      this.dataManager.method35446(field6039, var1);
+      this.dataManager.set(field6039, var1);
    }
 
    public boolean method5255() {
@@ -111,7 +111,7 @@ public class CatEntity extends TameableEntity {
    }
 
    public void method5257(Class112 var1) {
-      this.dataManager.method35446(field6040, var1.method309());
+      this.dataManager.set(field6040, var1.method309());
    }
 
    @Override
@@ -124,18 +124,18 @@ public class CatEntity extends TameableEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("CatType", this.method5250());
-      var1.putByte("CollarColor", (byte)this.method5256().method309());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("CatType", this.method5250());
+      compound.putByte("CollarColor", (byte)this.method5256().method309());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method5251(var1.getInt("CatType"));
-      if (var1.contains("CollarColor", 99)) {
-         this.method5257(Class112.method315(var1.getInt("CollarColor")));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method5251(compound.getInt("CatType"));
+      if (compound.contains("CollarColor", 99)) {
+         this.method5257(Class112.method315(compound.getInt("CollarColor")));
       }
    }
 

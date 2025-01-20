@@ -22,7 +22,7 @@ public class Class8942 {
 
          this.field40439 = this.method32673(var1);
          if (!this.field40437.world.isRemote) {
-            this.field40437.getDataManager().method35446(EnderDragonEntity.field5619, var1.method37259());
+            this.field40437.getDataManager().set(EnderDragonEntity.field5619, var1.method37259());
          }
 
          field40436.debug("Dragon is now in phase {} on the {}", var1, !this.field40437.world.isRemote ? "server" : "client");

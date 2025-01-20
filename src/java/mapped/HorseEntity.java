@@ -43,11 +43,11 @@ public class HorseEntity extends AbstractHorseEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("Variant", this.method4993());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("Variant", this.method4993());
       if (!this.field5890.getStackInSlot(1).isEmpty()) {
-         var1.put("ArmorItem", this.field5890.getStackInSlot(1).method32112(new CompoundNBT()));
+         compound.put("ArmorItem", this.field5890.getStackInSlot(1).method32112(new CompoundNBT()));
       }
    }
 
@@ -61,11 +61,11 @@ public class HorseEntity extends AbstractHorseEntity {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4992(var1.getInt("Variant"));
-      if (var1.contains("ArmorItem", 10)) {
-         ItemStack var4 = ItemStack.read(var1.getCompound("ArmorItem"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4992(compound.getInt("Variant"));
+      if (compound.contains("ArmorItem", 10)) {
+         ItemStack var4 = ItemStack.read(compound.getCompound("ArmorItem"));
          if (!var4.isEmpty() && this.method4900(var4)) {
             this.field5890.setInventorySlotContents(1, var4);
          }
@@ -75,7 +75,7 @@ public class HorseEntity extends AbstractHorseEntity {
    }
 
    private void method4992(int var1) {
-      this.dataManager.method35446(field5917, var1);
+      this.dataManager.set(field5917, var1);
    }
 
    private int method4993() {

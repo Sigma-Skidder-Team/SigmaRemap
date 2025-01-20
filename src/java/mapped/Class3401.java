@@ -85,7 +85,7 @@ public class Class3401 extends Block {
    @Override
    public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var4.nextInt(100) == 0) {
-         var2.method6745(
+         var2.playSound(
             (double)var3.getX() + 0.5,
             (double)var3.getY() + 0.5,
             (double)var3.getZ() + 0.5,

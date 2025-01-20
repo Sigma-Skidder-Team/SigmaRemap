@@ -291,7 +291,7 @@ public class InvManagerUtils {
 
    public static List<EffectInstance> getPotionEffects(ItemStack var0) {
       if (var0 != null) {
-         return var0.getItem() instanceof Class3323 ? Class9741.method38176(var0) : null;
+         return var0.getItem() instanceof Class3323 ? PotionUtils.method38176(var0) : null;
       } else {
          return null;
       }

@@ -39,23 +39,23 @@ public abstract class TameableEntity extends AnimalEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       if (this.method4397() != null) {
-         var1.putUniqueID("Owner", this.method4397());
+         compound.putUniqueID("Owner", this.method4397());
       }
 
-      var1.putBoolean("Sitting", this.field5670);
+      compound.putBoolean("Sitting", this.field5670);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
       UUID var4;
-      if (var1.hasUniqueID("Owner")) {
-         var4 = var1.getUniqueID("Owner");
+      if (compound.hasUniqueID("Owner")) {
+         var4 = compound.getUniqueID("Owner");
       } else {
-         String var5 = var1.getString("Owner");
+         String var5 = compound.getString("Owner");
          var4 = PreYggdrasilConverter.method33732(this.method3396(), var5);
       }
 
@@ -68,7 +68,7 @@ public abstract class TameableEntity extends AnimalEntity {
          }
       }
 
-      this.field5670 = var1.getBoolean("Sitting");
+      this.field5670 = compound.getBoolean("Sitting");
       this.method4396(this.field5670);
    }
 
@@ -111,9 +111,9 @@ public abstract class TameableEntity extends AnimalEntity {
    public void method4379(boolean var1) {
       byte var4 = this.dataManager.<Byte>method35445(field5668);
       if (!var1) {
-         this.dataManager.method35446(field5668, (byte)(var4 & -5));
+         this.dataManager.set(field5668, (byte)(var4 & -5));
       } else {
-         this.dataManager.method35446(field5668, (byte)(var4 | 4));
+         this.dataManager.set(field5668, (byte)(var4 | 4));
       }
 
       this.method4394();
@@ -129,9 +129,9 @@ public abstract class TameableEntity extends AnimalEntity {
    public void method4396(boolean var1) {
       byte var4 = this.dataManager.<Byte>method35445(field5668);
       if (!var1) {
-         this.dataManager.method35446(field5668, (byte)(var4 & -2));
+         this.dataManager.set(field5668, (byte)(var4 & -2));
       } else {
-         this.dataManager.method35446(field5668, (byte)(var4 | 1));
+         this.dataManager.set(field5668, (byte)(var4 | 1));
       }
    }
 
@@ -141,7 +141,7 @@ public abstract class TameableEntity extends AnimalEntity {
    }
 
    public void method4398(UUID var1) {
-      this.dataManager.method35446(field5669, Optional.<UUID>ofNullable(var1));
+      this.dataManager.set(field5669, Optional.<UUID>ofNullable(var1));
    }
 
    public void method4399(PlayerEntity var1) {
@@ -163,8 +163,8 @@ public abstract class TameableEntity extends AnimalEntity {
    }
 
    @Override
-   public boolean canAttack(LivingEntity var1) {
-      return !this.method4401(var1) ? super.canAttack(var1) : false;
+   public boolean canAttack(LivingEntity target) {
+      return !this.method4401(target) ? super.canAttack(target) : false;
    }
 
    public boolean method4401(LivingEntity var1) {

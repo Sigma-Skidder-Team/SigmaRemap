@@ -34,7 +34,7 @@ public class WanderingTraderEntity extends Class1043 {
             0,
             new Class2596<WanderingTraderEntity>(
                this,
-               Class9741.method38187(new ItemStack(Items.field37971), Class8137.field34983),
+               PotionUtils.method38187(new ItemStack(Items.field37971), Class8137.field34983),
                SoundEvents.field27217,
                var1 -> this.world.method6741() && !var1.isInvisible()
             )
@@ -112,23 +112,23 @@ public class WanderingTraderEntity extends Class1043 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("DespawnDelay", this.field5799);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("DespawnDelay", this.field5799);
       if (this.field5798 != null) {
-         var1.put("WanderTarget", NBTUtil.writeBlockPos(this.field5798));
+         compound.put("WanderTarget", NBTUtil.writeBlockPos(this.field5798));
       }
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("DespawnDelay", 99)) {
-         this.field5799 = var1.getInt("DespawnDelay");
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("DespawnDelay", 99)) {
+         this.field5799 = compound.getInt("DespawnDelay");
       }
 
-      if (var1.contains("WanderTarget")) {
-         this.field5798 = NBTUtil.readBlockPos(var1.getCompound("WanderTarget"));
+      if (compound.contains("WanderTarget")) {
+         this.field5798 = NBTUtil.readBlockPos(compound.getCompound("WanderTarget"));
       }
 
       this.method4770(Math.max(0, this.method4767()));

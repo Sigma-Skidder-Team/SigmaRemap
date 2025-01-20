@@ -18,7 +18,7 @@ public class Class2770<T extends LivingEntity> extends Class2595 {
    public final Class<T> field17356;
    public final Predicate<LivingEntity> field17357;
    public final Predicate<LivingEntity> field17358;
-   private final Class8522 field17359;
+   private final EntityPredicate field17359;
 
    public Class2770(CreatureEntity var1, Class<T> var2, float var3, double var4, double var6) {
       this(var1, var2, var0 -> true, var3, var4, var6, EntityPredicates.field34761::test);
@@ -34,7 +34,7 @@ public class Class2770<T extends LivingEntity> extends Class2595 {
       this.field17358 = var9;
       this.field17355 = var1.method4230();
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657));
-      this.field17359 = new Class8522().method30203((double)var4).method30209(var9.and(var3));
+      this.field17359 = new EntityPredicate().method30203((double)var4).method30209(var9.and(var3));
    }
 
    public Class2770(CreatureEntity var1, Class<T> var2, float var3, double var4, double var6, Predicate<LivingEntity> var8) {

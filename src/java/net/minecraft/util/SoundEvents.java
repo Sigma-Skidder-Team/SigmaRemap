@@ -40,8 +40,8 @@ public class SoundEvents {
    public static final SoundEvent field26347 = register("block.anvil.use");
    public static final SoundEvent field26348 = register("item.armor.equip_chain");
    public static final SoundEvent field26349 = register("item.armor.equip_diamond");
-   public static final SoundEvent field26350 = register("item.armor.equip_elytra");
-   public static final SoundEvent field26351 = register("item.armor.equip_generic");
+   public static final SoundEvent ITEM_ARMOR_EQUIP_ELYTRA = register("item.armor.equip_elytra");
+   public static final SoundEvent ITEM_ARMOR_EQUIP_GENERIC = register("item.armor.equip_generic");
    public static final SoundEvent field26352 = register("item.armor.equip_gold");
    public static final SoundEvent field26353 = register("item.armor.equip_iron");
    public static final SoundEvent field26354 = register("item.armor.equip_leather");
@@ -403,7 +403,7 @@ public class SoundEvents {
    public static final SoundEvent field26710 = register("entity.item_frame.place");
    public static final SoundEvent field26711 = register("entity.item_frame.remove_item");
    public static final SoundEvent field26712 = register("entity.item_frame.rotate_item");
-   public static final SoundEvent field26713 = register("entity.item.break");
+   public static final SoundEvent ENTITY_ITEM_BREAK = register("entity.item.break");
    public static final SoundEvent field26714 = register("entity.item.pickup");
    public static final SoundEvent LADDER_BREAK = register("block.ladder.break");
    public static final SoundEvent LADDER_FALL = register("block.ladder.fall");

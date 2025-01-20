@@ -84,7 +84,7 @@ public class ItemEntity extends Entity {
          this.prevPosZ = this.getPosZ();
          Vector3d var3 = this.getMotion();
          float var4 = this.getEyeHeight() - 0.11111111F;
-         if (this.isInWater() && this.method3427(FluidTags.field40469) > (double)var4) {
+         if (this.isInWater() && this.method3427(FluidTags.WATER) > (double)var4) {
             this.method4115();
          } else if (this.isInLava() && this.method3427(FluidTags.field40470) > (double)var4) {
             this.method4116();
@@ -338,7 +338,7 @@ public class ItemEntity extends Entity {
    }
 
    public void method4125(ItemStack var1) {
-      this.getDataManager().method35446(field5514, var1);
+      this.getDataManager().set(field5514, var1);
    }
 
    @Override

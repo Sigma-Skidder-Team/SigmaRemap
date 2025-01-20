@@ -108,12 +108,12 @@ public class HoglinEntity extends AnimalEntity implements IMob, Class1092 {
 
    @Override
    public Class6971<HoglinEntity> getBrainCodec() {
-      return Brain.<HoglinEntity>method21400(field5981, field5980);
+      return Brain.<HoglinEntity>createCodec(field5981, field5980);
    }
 
    @Override
    public Brain<?> createBrain(Dynamic<?> var1) {
-      return Class9069.method33778(this.getBrainCodec().method21513(var1));
+      return Class9069.method33778(this.getBrainCodec().deserialize(var1));
    }
 
    @Override
@@ -222,7 +222,7 @@ public class HoglinEntity extends AnimalEntity implements IMob, Class1092 {
    }
 
    @Override
-   public int getExperiencePoints(PlayerEntity var1) {
+   public int getExperiencePoints(PlayerEntity player) {
       return this.field5594;
    }
 
@@ -249,28 +249,28 @@ public class HoglinEntity extends AnimalEntity implements IMob, Class1092 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       if (this.method5086()) {
-         var1.putBoolean("IsImmuneToZombification", true);
+         compound.putBoolean("IsImmuneToZombification", true);
       }
 
-      var1.putInt("TimeInOverworld", this.field5978);
+      compound.putInt("TimeInOverworld", this.field5978);
       if (this.field5979) {
-         var1.putBoolean("CannotBeHunted", true);
+         compound.putBoolean("CannotBeHunted", true);
       }
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method5085(var1.getBoolean("IsImmuneToZombification"));
-      this.field5978 = var1.getInt("TimeInOverworld");
-      this.method5088(var1.getBoolean("CannotBeHunted"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method5085(compound.getBoolean("IsImmuneToZombification"));
+      this.field5978 = compound.getInt("TimeInOverworld");
+      this.method5088(compound.getBoolean("CannotBeHunted"));
    }
 
    public void method5085(boolean var1) {
-      this.getDataManager().method35446(field5976, var1);
+      this.getDataManager().set(field5976, var1);
    }
 
    private boolean method5086() {

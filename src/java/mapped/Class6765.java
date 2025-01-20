@@ -66,7 +66,7 @@ public class Class6765 extends Class6764 {
       if (var8.isEmpty() && var9.method23440(var1, var7.down(), PathType.field12615) && var9.isAir()) {
          return PathNodeType.BREACH;
       } else {
-         return var8.method23486(FluidTags.field40469) && var9.method23440(var1, var7, PathType.field12615) ? PathNodeType.WATER : PathNodeType.BLOCKED;
+         return var8.method23486(FluidTags.WATER) && var9.method23440(var1, var7, PathType.field12615) ? PathNodeType.WATER : PathNodeType.BLOCKED;
       }
    }
 
@@ -106,7 +106,7 @@ public class Class6765 extends Class6764 {
                   return PathNodeType.BREACH;
                }
 
-               if (!var10.method23486(FluidTags.field40469)) {
+               if (!var10.method23486(FluidTags.WATER)) {
                   return PathNodeType.BLOCKED;
                }
             }

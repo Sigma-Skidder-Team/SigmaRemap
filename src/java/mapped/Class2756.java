@@ -42,7 +42,7 @@ public class Class2756 extends Class2754 {
 
    private boolean method10959(BlockPos var1, int var2, int var3, int var4) {
       BlockPos var7 = var1.add(var2 * var4, 0, var3 * var4);
-      return this.field17298.world.getFluidState(var7).method23486(FluidTags.field40469)
+      return this.field17298.world.getFluidState(var7).method23486(FluidTags.WATER)
          && !this.field17298.world.getBlockState(var7).getMaterial().blocksMovement();
    }
 
@@ -80,7 +80,7 @@ public class Class2756 extends Class2754 {
       boolean var3 = this.field17300;
       if (!var3) {
          FluidState var4 = this.field17298.world.getFluidState(this.field17298.getPosition());
-         this.field17300 = var4.method23486(FluidTags.field40469);
+         this.field17300 = var4.method23486(FluidTags.WATER);
       }
 
       if (this.field17300 && !var3) {

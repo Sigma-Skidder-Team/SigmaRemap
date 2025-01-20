@@ -14,7 +14,7 @@ public class Class2612 extends Class2595 {
    private int field16884;
    public final float field16885;
    public final Class<? extends LivingEntity> field16886;
-   public final Class8522 field16887;
+   public final EntityPredicate field16887;
 
    public Class2612(MobEntity var1, Class<? extends LivingEntity> var2, float var3) {
       this(var1, var2, var3, 0.02F);
@@ -27,9 +27,9 @@ public class Class2612 extends Class2595 {
       this.field16885 = var4;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14658));
       if (var2 != PlayerEntity.class) {
-         this.field16887 = new Class8522().method30203((double)var3).method30205().method30204().method30207();
+         this.field16887 = new EntityPredicate().method30203((double)var3).method30205().method30204().method30207();
       } else {
-         this.field16887 = new Class8522()
+         this.field16887 = new EntityPredicate()
             .method30203((double)var3)
             .method30205()
             .method30204()

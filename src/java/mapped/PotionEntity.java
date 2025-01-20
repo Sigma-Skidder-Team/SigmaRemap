@@ -52,8 +52,8 @@ public class PotionEntity extends Class890 implements Class889 {
       super.method3466(var1);
       if (!this.world.isRemote) {
          ItemStack var4 = this.method3509();
-         Class8812 var5 = Class9741.method38185(var4);
-         List var6 = Class9741.method38176(var4);
+         Class8812 var5 = PotionUtils.method38185(var4);
+         List var6 = PotionUtils.method38176(var4);
          boolean var7 = var5 == Class8137.field34977 && var6.isEmpty();
          Direction var8 = var1.getFace();
          BlockPos var9 = var1.getPos();
@@ -74,8 +74,8 @@ public class PotionEntity extends Class890 implements Class889 {
       super.method3464(var1);
       if (!this.world.isRemote) {
          ItemStack var4 = this.method3509();
-         Class8812 var5 = Class9741.method38185(var4);
-         List var6 = Class9741.method38176(var4);
+         Class8812 var5 = PotionUtils.method38185(var4);
+         List var6 = PotionUtils.method38176(var4);
          boolean var7 = var5 == Class8137.field34977 && var6.isEmpty();
          if (!var7) {
             if (!var6.isEmpty()) {
@@ -90,7 +90,7 @@ public class PotionEntity extends Class890 implements Class889 {
          }
 
          int var8 = !var5.method31817() ? 2002 : 2007;
-         this.world.playEvent(var8, this.getPosition(), Class9741.method38182(var4));
+         this.world.playEvent(var8, this.getPosition(), PotionUtils.method38182(var4));
          this.remove();
       }
    }
@@ -151,7 +151,7 @@ public class PotionEntity extends Class890 implements Class889 {
       var5.method4111(-var5.method4098() / (float)var5.method4108());
       var5.method4099(var2);
 
-      for (EffectInstance var8 : Class9741.method38179(var1)) {
+      for (EffectInstance var8 : PotionUtils.method38179(var1)) {
          var5.method4101(new EffectInstance(var8));
       }
 

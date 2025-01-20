@@ -11,8 +11,8 @@ public class ParticleTypes {
    public static final Class7435 field34048 = method26742("ambient_entity_effect", false);
    public static final Class7435 field34049 = method26742("angry_villager", false);
    public static final Class7435 BARRIER = method26742("barrier", false);
-   public static final ParticleType<BlockParticleData> field34051 = method26743("block", BlockParticleData.field32010, BlockParticleData::method24025);
-   public static final Class7435 field34052 = method26742("bubble", false);
+   public static final ParticleType<BlockParticleData> BLOCK = method26743("block", BlockParticleData.field32010, BlockParticleData::method24025);
+   public static final Class7435 BUBBLE = method26742("bubble", false);
    public static final Class7435 field34053 = method26742("cloud", false);
    public static final Class7435 CRIT = method26742("crit", false);
    public static final Class7435 DAMAGE_INDICATOR = method26742("damage_indicator", true);
@@ -49,7 +49,7 @@ public class ParticleTypes {
    public static final Class7435 field34086 = method26742("lava", false);
    public static final Class7435 field34087 = method26742("mycelium", false);
    public static final Class7435 field34088 = method26742("note", false);
-   public static final Class7435 field34089 = method26742("poof", true);
+   public static final Class7435 POOF = method26742("poof", true);
    public static final Class7435 field34090 = method26742("portal", false);
    public static final Class7435 field34091 = method26742("rain", false);
    public static final Class7435 field34092 = method26742("smoke", false);

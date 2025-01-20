@@ -125,7 +125,7 @@ public class EntityDataManager {
       return this.<T>method35444(var1).method38449();
    }
 
-   public <T> void method35446(DataParameter<T> var1, T var2) {
+   public <T> void set(DataParameter<T> var1, T var2) {
       DataEntry var5 = this.method35444(var1);
       if (ObjectUtils.notEqual(var2, var5.method38449())) {
          var5.method38448(var2);

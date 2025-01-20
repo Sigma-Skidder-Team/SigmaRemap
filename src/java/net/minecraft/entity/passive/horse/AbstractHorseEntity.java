@@ -36,7 +36,7 @@ import java.util.function.Predicate;
 
 public abstract class AbstractHorseEntity extends AnimalEntity implements Class1073, IJumpingMount, Class1069 {
    private static final Predicate<LivingEntity> field5879 = var0 -> var0 instanceof AbstractHorseEntity && ((AbstractHorseEntity)var0).method4940();
-   private static final Class8522 field5880 = new Class8522().method30203(16.0).method30204().method30205().method30206().method30209(field5879);
+   private static final EntityPredicate field5880 = new EntityPredicate().method30203(16.0).method30204().method30205().method30206().method30209(field5879);
    private static final Class120 field5881 = Class120.method339(
       Items.field37842,
       Items.field37936,
@@ -103,9 +103,9 @@ public abstract class AbstractHorseEntity extends AnimalEntity implements Class1
    public void method4931(int var1, boolean var2) {
       byte var5 = this.dataManager.<Byte>method35445(field5882);
       if (!var2) {
-         this.dataManager.method35446(field5882, (byte)(var5 & ~var1));
+         this.dataManager.set(field5882, (byte)(var5 & ~var1));
       } else {
-         this.dataManager.method35446(field5882, (byte)(var5 | var1));
+         this.dataManager.set(field5882, (byte)(var5 | var1));
       }
    }
 
@@ -119,7 +119,7 @@ public abstract class AbstractHorseEntity extends AnimalEntity implements Class1
    }
 
    public void method4934(UUID var1) {
-      this.dataManager.method35446(field5883, Optional.<UUID>ofNullable(var1));
+      this.dataManager.set(field5883, Optional.<UUID>ofNullable(var1));
    }
 
    public boolean method4935() {
@@ -349,7 +349,7 @@ public abstract class AbstractHorseEntity extends AnimalEntity implements Class1
    }
 
    public static MutableAttribute method4951() {
-      return MobEntity.method4220().method21848(Attributes.HORSE_JUMP_STRENGTH).method21849(Attributes.MAX_HEALTH, 53.0).method21849(Attributes.MOVEMENT_SPEED, 0.225F);
+      return MobEntity.method4220().createMutableAttribute(Attributes.HORSE_JUMP_STRENGTH).method21849(Attributes.MAX_HEALTH, 53.0).method21849(Attributes.MOVEMENT_SPEED, 0.225F);
    }
 
    @Override
@@ -737,42 +737,42 @@ public abstract class AbstractHorseEntity extends AnimalEntity implements Class1
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putBoolean("EatingHaystack", this.method4938());
-      var1.putBoolean("Bred", this.method4940());
-      var1.putInt("Temper", this.method4944());
-      var1.putBoolean("Tame", this.method4932());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putBoolean("EatingHaystack", this.method4938());
+      compound.putBoolean("Bred", this.method4940());
+      compound.putInt("Temper", this.method4944());
+      compound.putBoolean("Tame", this.method4932());
       if (this.method4933() != null) {
-         var1.putUniqueID("Owner", this.method4933());
+         compound.putUniqueID("Owner", this.method4933());
       }
 
       if (!this.field5890.getStackInSlot(0).isEmpty()) {
-         var1.put("SaddleItem", this.field5890.getStackInSlot(0).method32112(new CompoundNBT()));
+         compound.put("SaddleItem", this.field5890.getStackInSlot(0).method32112(new CompoundNBT()));
       }
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4956(var1.getBoolean("EatingHaystack"));
-      this.method4941(var1.getBoolean("Bred"));
-      this.method4945(var1.getInt("Temper"));
-      this.method4936(var1.getBoolean("Tame"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4956(compound.getBoolean("EatingHaystack"));
+      this.method4941(compound.getBoolean("Bred"));
+      this.method4945(compound.getInt("Temper"));
+      this.method4936(compound.getBoolean("Tame"));
       UUID var5;
-      if (!var1.hasUniqueID("Owner")) {
-         String var4 = var1.getString("Owner");
+      if (!compound.hasUniqueID("Owner")) {
+         String var4 = compound.getString("Owner");
          var5 = PreYggdrasilConverter.method33732(this.method3396(), var4);
       } else {
-         var5 = var1.getUniqueID("Owner");
+         var5 = compound.getUniqueID("Owner");
       }
 
       if (var5 != null) {
          this.method4934(var5);
       }
 
-      if (var1.contains("SaddleItem", 10)) {
-         ItemStack var6 = ItemStack.read(var1.getCompound("SaddleItem"));
+      if (compound.contains("SaddleItem", 10)) {
+         ItemStack var6 = ItemStack.read(compound.getCompound("SaddleItem"));
          if (var6.getItem() == Items.field37886) {
             this.field5890.setInventorySlotContents(0, var6);
          }

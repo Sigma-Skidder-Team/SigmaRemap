@@ -68,7 +68,7 @@ public class Class2610 extends Class2595 {
    @Override
    public void method10804() {
       super.method10804();
-      this.field16865.method3022(0);
+      this.field16865.setIdleTime(0);
       this.field16865
          .method4230()
          .method21654((double)this.field16867.getX(), (double)this.field16867.getY(), (double)this.field16867.getZ(), this.field16866);

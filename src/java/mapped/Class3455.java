@@ -50,7 +50,7 @@ public class Class3455 extends Class3456 implements Class3449 {
       BlockState var4 = super.getStateForPlacement(var1);
       if (var4 != null) {
          FluidState var5 = var1.getWorld().getFluidState(var1.getPos().up());
-         if (var5.method23486(FluidTags.field40469) && var5.method23477() == 8) {
+         if (var5.method23486(FluidTags.WATER) && var5.method23477() == 8) {
             return var4;
          }
       }
@@ -62,7 +62,7 @@ public class Class3455 extends Class3456 implements Class3449 {
    public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       if (var1.<DoubleBlockHalf>get(field19274) != DoubleBlockHalf.field209) {
          FluidState var7 = var2.getFluidState(var3);
-         return super.isValidPosition(var1, var2, var3) && var7.method23486(FluidTags.field40469) && var7.method23477() == 8;
+         return super.isValidPosition(var1, var2, var3) && var7.method23486(FluidTags.WATER) && var7.method23477() == 8;
       } else {
          BlockState var6 = var2.getBlockState(var3.down());
          return var6.isIn(this) && var6.<DoubleBlockHalf>get(field19274) == DoubleBlockHalf.field210;

@@ -90,20 +90,20 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putByte("CollarColor", (byte)this.method4382().method309());
-      this.method4364(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putByte("CollarColor", (byte)this.method4382().method309());
+      this.method4364(compound);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("CollarColor", 99)) {
-         this.method4383(Class112.method315(var1.getInt("CollarColor")));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("CollarColor", 99)) {
+         this.method4383(Class112.method315(compound.getInt("CollarColor")));
       }
 
-      this.method4365((ServerWorld)this.world, var1);
+      this.method4365((ServerWorld)this.world, compound);
    }
 
    @Override
@@ -399,7 +399,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
 
    @Override
    public void method4347(int var1) {
-      this.dataManager.method35446(field5658, var1);
+      this.dataManager.set(field5658, var1);
    }
 
    @Override
@@ -423,7 +423,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    public void method4383(Class112 var1) {
-      this.dataManager.method35446(field5657, var1.method309());
+      this.dataManager.set(field5657, var1.method309());
    }
 
    public WolfEntity method4389(ServerWorld var1, Class1045 var2) {
@@ -438,7 +438,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    public void method4385(boolean var1) {
-      this.dataManager.method35446(field5656, var1);
+      this.dataManager.set(field5656, var1);
    }
 
    @Override

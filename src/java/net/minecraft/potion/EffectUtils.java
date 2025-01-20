@@ -1,11 +1,11 @@
-package mapped;
+package net.minecraft.potion;
 
+import mapped.Effects;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.StringUtils;
 import net.minecraft.util.math.MathHelper;
 
-public final class Class7182 {
+public final class EffectUtils {
    public static String method22535(EffectInstance var0, float var1) {
       if (!var0.isPotionDurationMax()) {
          int var4 = MathHelper.floor((float)var0.getDuration() * var1);
@@ -33,7 +33,7 @@ public final class Class7182 {
       return Math.max(var3, var4);
    }
 
-   public static boolean method22538(LivingEntity var0) {
+   public static boolean canBreatheUnderwater(LivingEntity var0) {
       return var0.isPotionActive(Effects.WATER_BREATHING) || var0.isPotionActive(Effects.CONDUIT_POWER);
    }
 }

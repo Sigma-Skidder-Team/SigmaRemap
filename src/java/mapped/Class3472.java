@@ -30,7 +30,7 @@ public abstract class Class3472 extends PodzolBlock {
 
    private static boolean method12161(BlockState var0, IWorldReader var1, BlockPos var2) {
       BlockPos var5 = var2.up();
-      return method12160(var0, var1, var2) && !var1.getFluidState(var5).method23486(FluidTags.field40469);
+      return method12160(var0, var1, var2) && !var1.getFluidState(var5).method23486(FluidTags.WATER);
    }
 
    @Override

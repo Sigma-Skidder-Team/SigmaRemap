@@ -72,8 +72,8 @@ public class IronGolemEntity extends Class1056 implements IAngerable {
    }
 
    @Override
-   public int decreaseAirSupply(int var1) {
-      return var1;
+   public int decreaseAirSupply(int air) {
+      return air;
    }
 
    @Override
@@ -104,7 +104,7 @@ public class IronGolemEntity extends Class1056 implements IAngerable {
          if (!var6.isAir()) {
             this.world
                .addParticle(
-                  new BlockParticleData(ParticleTypes.field34051, var6),
+                  new BlockParticleData(ParticleTypes.BLOCK, var6),
                   this.getPosX() + ((double)this.rand.nextFloat() - 0.5) * (double)this.getWidth(),
                   this.getPosY() + 0.1,
                   this.getPosZ() + ((double)this.rand.nextFloat() - 0.5) * (double)this.getWidth(),
@@ -130,17 +130,17 @@ public class IronGolemEntity extends Class1056 implements IAngerable {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putBoolean("PlayerCreated", this.method4869());
-      this.method4364(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putBoolean("PlayerCreated", this.method4869());
+      this.method4364(compound);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4870(var1.getBoolean("PlayerCreated"));
-      this.method4365((ServerWorld)this.world, var1);
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4870(compound.getBoolean("PlayerCreated"));
+      this.method4365((ServerWorld)this.world, compound);
    }
 
    @Override
@@ -284,9 +284,9 @@ public class IronGolemEntity extends Class1056 implements IAngerable {
    public void method4870(boolean var1) {
       byte var4 = this.dataManager.<Byte>method35445(field5849);
       if (!var1) {
-         this.dataManager.method35446(field5849, (byte)(var4 & -2));
+         this.dataManager.set(field5849, (byte)(var4 & -2));
       } else {
-         this.dataManager.method35446(field5849, (byte)(var4 | 1));
+         this.dataManager.set(field5849, (byte)(var4 | 1));
       }
    }
 

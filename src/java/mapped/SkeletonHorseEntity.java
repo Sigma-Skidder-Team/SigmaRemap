@@ -39,7 +39,7 @@ public class SkeletonHorseEntity extends AbstractHorseEntity {
    @Override
    public SoundEvent getAmbientSound() {
       super.getAmbientSound();
-      return !this.areEyesInFluid(FluidTags.field40469) ? SoundEvents.field27061 : SoundEvents.field27065;
+      return !this.areEyesInFluid(FluidTags.WATER) ? SoundEvents.field27061 : SoundEvents.field27065;
    }
 
    @Override
@@ -94,7 +94,7 @@ public class SkeletonHorseEntity extends AbstractHorseEntity {
 
    @Override
    public CreatureAttribute getCreatureAttribute() {
-      return CreatureAttribute.field33506;
+      return CreatureAttribute.UNDEAD;
    }
 
    @Override
@@ -111,21 +111,21 @@ public class SkeletonHorseEntity extends AbstractHorseEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putBoolean("SkeletonTrap", this.method5000());
-      var1.putInt("SkeletonTrapTime", this.field5921);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putBoolean("SkeletonTrap", this.method5000());
+      compound.putInt("SkeletonTrapTime", this.field5921);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method5001(var1.getBoolean("SkeletonTrap"));
-      this.field5921 = var1.getInt("SkeletonTrapTime");
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method5001(compound.getBoolean("SkeletonTrap"));
+      this.field5921 = compound.getInt("SkeletonTrapTime");
    }
 
    @Override
-   public boolean onDeathUpdate() {
+   public boolean onEntityDeathUpdate() {
       return true;
    }
 

@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import java.util.EnumSet;
 
 public class Class2680 extends Class2595 {
-   private static final Class8522 field17078 = new Class8522().method30203(10.0).method30204().method30205().method30207().method30206();
+   private static final EntityPredicate field17078 = new EntityPredicate().method30203(10.0).method30204().method30205().method30207().method30206();
    public final CreatureEntity field17079;
    private final double field17080;
    private double field17081;

@@ -58,7 +58,7 @@ public class Class3451 extends Class3452 implements Class3449 {
    @Override
    public BlockState getStateForPlacement(BlockItemUseContext var1) {
       FluidState var4 = var1.getWorld().getFluidState(var1.getPos());
-      return var4.method23486(FluidTags.field40469) && var4.method23477() == 8 ? super.getStateForPlacement(var1) : null;
+      return var4.method23486(FluidTags.WATER) && var4.method23477() == 8 ? super.getStateForPlacement(var1) : null;
    }
 
    @Override

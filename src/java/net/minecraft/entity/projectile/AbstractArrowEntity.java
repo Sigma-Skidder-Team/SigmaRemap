@@ -222,7 +222,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
          if (this.isInWater()) {
             for (int var29 = 0; var29 < 4; var29++) {
                float var30 = 0.25F;
-               this.world.addParticle(ParticleTypes.field34052, var16 - var10 * 0.25, var18 - var12 * 0.25, var20 - var14 * 0.25, var10, var12, var14);
+               this.world.addParticle(ParticleTypes.BUBBLE, var16 - var10 * 0.25, var18 - var12 * 0.25, var20 - var14 * 0.25, var10, var12, var14);
             }
 
             var27 = this.method3491();
@@ -530,15 +530,15 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    }
 
    public void method3485(byte var1) {
-      this.dataManager.method35446(PIERCE_LEVEL, var1);
+      this.dataManager.set(PIERCE_LEVEL, var1);
    }
 
    private void method3486(int var1, boolean var2) {
       byte var5 = this.dataManager.<Byte>method35445(CRITICAL);
       if (!var2) {
-         this.dataManager.method35446(CRITICAL, (byte)(var5 & ~var1));
+         this.dataManager.set(CRITICAL, (byte)(var5 & ~var1));
       } else {
-         this.dataManager.method35446(CRITICAL, (byte)(var5 | var1));
+         this.dataManager.set(CRITICAL, (byte)(var5 | var1));
       }
    }
 

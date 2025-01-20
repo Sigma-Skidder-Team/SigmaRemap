@@ -76,19 +76,19 @@ public abstract class AbstractFishEntity extends WaterMobEntity {
    }
 
    public void method4794(boolean var1) {
-      this.dataManager.method35446(field5809, var1);
+      this.dataManager.set(field5809, var1);
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putBoolean("FromBucket", this.method4793());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putBoolean("FromBucket", this.method4793());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4794(var1.getBoolean("FromBucket"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4794(compound.getBoolean("FromBucket"));
    }
 
    @Override

@@ -24,7 +24,7 @@ import org.apache.logging.log4j.Logger;
 public class GlobalEntityTypeAttributes {
    private static final Logger LOGGER = LogManager.getLogger();
    private static final Map<EntityType<? extends LivingEntity>, AttributeModifierMap> VANILLA_ATTRIBUTES = ImmutableMap.<EntityType<? extends LivingEntity>, AttributeModifierMap>builder()
-      .put(EntityType.ARMOR_STAND, LivingEntity.method2997().method21850())
+      .put(EntityType.ARMOR_STAND, LivingEntity.registerAttributes().method21850())
       .put(EntityType.BAT, BatEntity.method5363().method21850())
       .put(EntityType.BEE, BeeEntity.method4447().method21850())
       .put(EntityType.BLAZE, BlazeEntity.method5292().method21850())

@@ -29,7 +29,7 @@ public class FogRenderer {
 
    public static void method32584(ActiveRenderInfo var0, float var1, ClientWorld var2, int var3, float var4) {
       FluidState var7 = var0.method37512();
-      if (!var7.method23486(FluidTags.field40469)) {
+      if (!var7.method23486(FluidTags.WATER)) {
          if (!var7.method23486(FluidTags.field40470)) {
             float var8 = 0.25F + 0.75F * (float)var3 / 32.0F;
             var8 = 1.0F - (float)Math.pow((double)var8, 0.25);
@@ -150,7 +150,7 @@ public class FogRenderer {
          field40350 = field40350 * (1.0F - var4) + field40350 * 0.6F * var4;
       }
 
-      if (!var7.method23486(FluidTags.field40469)) {
+      if (!var7.method23486(FluidTags.WATER)) {
          if (var0.getRenderViewEntity() instanceof LivingEntity && ((LivingEntity)var0.getRenderViewEntity()).isPotionActive(Effects.NIGHT_VISION)) {
             float var27 = GameRenderer.method750((LivingEntity)var0.getRenderViewEntity(), var1);
             float var33 = Math.min(1.0F / field40348, Math.min(1.0F / field40349, 1.0F / field40350));
@@ -179,7 +179,7 @@ public class FogRenderer {
          field40350 = field40350 * (1.0F - var28) + field40350 * var35 * var28;
       }
 
-      if (!var7.method23486(FluidTags.field40469)) {
+      if (!var7.method23486(FluidTags.WATER)) {
          if (var7.method23486(FluidTags.field40470)) {
             Entity var29 = var0.getRenderViewEntity();
             Vector3d var36 = Class9680.method37872(var2, var29.getPosX(), var29.getPosY() + 1.0, var29.getPosZ());
@@ -230,7 +230,7 @@ public class FogRenderer {
       }
 
       if (!(var9 >= 0.0F)) {
-         if (!var7.method23486(FluidTags.field40469)) {
+         if (!var7.method23486(FluidTags.WATER)) {
             float var10;
             float var11;
             if (!var7.method23486(FluidTags.field40470)) {

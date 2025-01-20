@@ -97,7 +97,7 @@ public class GuardianEntity extends MonsterEntity {
    }
 
    private void method5302(boolean var1) {
-      this.dataManager.method35446(field6066, var1);
+      this.dataManager.set(field6066, var1);
    }
 
    public int method5303() {
@@ -105,7 +105,7 @@ public class GuardianEntity extends MonsterEntity {
    }
 
    private void method5304(int var1) {
-      this.dataManager.method35446(field6067, var1);
+      this.dataManager.set(field6067, var1);
    }
 
    public boolean method5305() {
@@ -174,7 +174,7 @@ public class GuardianEntity extends MonsterEntity {
 
    @Override
    public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
-      return !var2.getFluidState(var1).method23486(FluidTags.field40469) ? super.getBlockPathWeight(var1, var2) : 10.0F + var2.method7009(var1) - 0.5F;
+      return !var2.getFluidState(var1).method23486(FluidTags.WATER) ? super.getBlockPathWeight(var1, var2) : 10.0F + var2.method7009(var1) - 0.5F;
    }
 
    @Override
@@ -194,7 +194,7 @@ public class GuardianEntity extends MonsterEntity {
                this.field6070 = 2.0F;
                Vector3d var3 = this.getMotion();
                if (var3.y > 0.0 && this.field6075 && !this.isSilent()) {
-                  this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), this.method5307(), this.getSoundCategory(), 1.0F, 1.0F, false);
+                  this.world.playSound(this.getPosX(), this.getPosY(), this.getPosZ(), this.method5307(), this.getSoundCategory(), 1.0F, 1.0F, false);
                }
 
                this.field6075 = var3.y < 0.0 && this.world.method6765(this.getPosition().down(), this);
@@ -218,7 +218,7 @@ public class GuardianEntity extends MonsterEntity {
                for (int var4 = 0; var4 < 2; var4++) {
                   this.world
                      .addParticle(
-                        ParticleTypes.field34052,
+                        ParticleTypes.BUBBLE,
                         this.getPosXRandom(0.5) - var17.x * 1.5,
                         this.getPosYRandom() - var17.y * 1.5,
                         this.getPosZRandom(0.5) - var17.z * 1.5,
@@ -252,7 +252,7 @@ public class GuardianEntity extends MonsterEntity {
                      var15 += 1.8 - var5 + this.rand.nextDouble() * (1.7 - var5);
                      this.world
                         .addParticle(
-                           ParticleTypes.field34052,
+                           ParticleTypes.BUBBLE,
                            this.getPosX() + var7 * var15,
                            this.getPosYEye() + var9 * var15,
                            this.getPosZ() + var11 * var15,
@@ -311,7 +311,7 @@ public class GuardianEntity extends MonsterEntity {
    public static boolean canSpawn(EntityType<? extends GuardianEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return (var4.nextInt(20) == 0 || !var1.method7008(var3))
          && var1.method6997() != Difficulty.PEACEFUL
-         && (var2 == SpawnReason.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));
+         && (var2 == SpawnReason.field14393 || var1.getFluidState(var3).method23486(FluidTags.WATER));
    }
 
    @Override

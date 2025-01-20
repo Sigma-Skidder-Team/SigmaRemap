@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Class2785 extends Class2595 {
    private static String[] field17405;
-   private static final Class8522 field17406 = new Class8522().method30203(8.0).method30204().method30205().method30206();
+   private static final EntityPredicate field17406 = new EntityPredicate().method30203(8.0).method30204().method30205().method30206();
    public final AnimalEntity field17407;
    private final Class<? extends AnimalEntity> field17408;
    public final World field17409;

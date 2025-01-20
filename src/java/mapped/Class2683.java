@@ -83,7 +83,7 @@ public class Class2683 extends Class2595 {
 
          if (var5 != null) {
             BlockPos var6 = new BlockPos(var5);
-            if (!var3.getFluidState(var6).method23486(FluidTags.field40469) || !var3.getBlockState(var6).method23440(var3, var6, PathType.field12615)) {
+            if (!var3.getFluidState(var6).method23486(FluidTags.WATER) || !var3.getBlockState(var6).method23440(var3, var6, PathType.field12615)) {
                var5 = Class8037.method27587(this.field17097, 8, 5, var4);
             }
          }

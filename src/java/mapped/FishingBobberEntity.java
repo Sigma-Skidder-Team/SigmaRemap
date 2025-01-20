@@ -148,7 +148,7 @@ public class FishingBobberEntity extends ProjectileEntity {
             float var4 = 0.0F;
             BlockPos var5 = this.getPosition();
             FluidState var6 = this.world.getFluidState(var5);
-            if (var6.method23486(FluidTags.field40469)) {
+            if (var6.method23486(FluidTags.WATER)) {
                var4 = var6.method23475(this.world, var5);
             }
 
@@ -210,7 +210,7 @@ public class FishingBobberEntity extends ProjectileEntity {
                this.method3535();
             }
 
-            if (!var6.method23486(FluidTags.field40469)) {
+            if (!var6.method23486(FluidTags.WATER)) {
                this.setMotion(this.getMotion().add(0.0, -0.03, 0.0));
             }
 
@@ -268,7 +268,7 @@ public class FishingBobberEntity extends ProjectileEntity {
    }
 
    private void method3536() {
-      this.getDataManager().method35446(field5151, this.field5159.getEntityId() + 1);
+      this.getDataManager().set(field5151, this.field5159.getEntityId() + 1);
    }
 
    private void method3537(BlockPos var1) {
@@ -326,7 +326,7 @@ public class FishingBobberEntity extends ProjectileEntity {
                this.playSound(SoundEvents.field26585, 0.25F, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.4F);
                double var7 = this.getPosY() + 0.5;
                var4.spawnParticle(
-                  ParticleTypes.field34052,
+                  ParticleTypes.BUBBLE,
                   this.getPosX(),
                   var7,
                   this.getPosZ(),
@@ -348,7 +348,7 @@ public class FishingBobberEntity extends ProjectileEntity {
                   0.2F
                );
                this.field5154 = MathHelper.method37782(this.rand, 20, 40);
-               this.getDataManager().method35446(field5152, true);
+               this.getDataManager().set(field5152, true);
             } else {
                this.field5157 = (float)((double)this.field5157 + this.rand.nextGaussian() * 4.0);
                float var21 = this.field5157 * (float) (Math.PI / 180.0);
@@ -360,7 +360,7 @@ public class FishingBobberEntity extends ProjectileEntity {
                BlockState var27 = var4.getBlockState(new BlockPos(var24, var25 - 1.0, var26));
                if (var27.isIn(Blocks.WATER)) {
                   if (this.rand.nextFloat() < 0.15F) {
-                     var4.spawnParticle(ParticleTypes.field34052, var24, var25 - 0.1F, var26, 1, (double)var22, 0.1, (double)var23, 0.0);
+                     var4.spawnParticle(ParticleTypes.BUBBLE, var24, var25 - 0.1F, var26, 1, (double)var22, 0.1, (double)var23, 0.0);
                   }
 
                   float var19 = var22 * 0.04F;
@@ -375,7 +375,7 @@ public class FishingBobberEntity extends ProjectileEntity {
          if (this.field5154 <= 0) {
             this.field5155 = 0;
             this.field5156 = 0;
-            this.getDataManager().method35446(field5152, false);
+            this.getDataManager().set(field5152, false);
          }
       }
    }
@@ -416,7 +416,7 @@ public class FishingBobberEntity extends ProjectileEntity {
       BlockState var4 = this.world.getBlockState(var1);
       if (!var4.isAir() && !var4.isIn(Blocks.LILY_PAD)) {
          FluidState var5 = var4.getFluidState();
-         return var5.method23486(FluidTags.field40469) && var5.isSource() && var4.method23414(this.world, var1).isEmpty()
+         return var5.method23486(FluidTags.WATER) && var5.isSource() && var4.method23414(this.world, var1).isEmpty()
             ? Class2331.field15948
             : Class2331.field15949;
       } else {

@@ -81,8 +81,8 @@ public class ServerScoreboard extends Scoreboard {
    }
 
    @Override
-   public boolean method20993(String var1, ScorePlayerTeam var2) {
-      if (!super.method20993(var1, var2)) {
+   public boolean addPlayerToTeam(String var1, ScorePlayerTeam var2) {
+      if (!super.addPlayerToTeam(var1, var2)) {
          return false;
       } else {
          this.field29848.getPlayerList().method19456(new STeamsPacket(var2, Arrays.<String>asList(var1), 3));

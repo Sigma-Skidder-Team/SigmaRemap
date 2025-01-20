@@ -120,7 +120,7 @@ public class EnderCrystalEntity extends Entity {
    }
 
    public void method4142(BlockPos var1) {
-      this.getDataManager().method35446(field5521, Optional.<BlockPos>ofNullable(var1));
+      this.getDataManager().set(field5521, Optional.<BlockPos>ofNullable(var1));
    }
 
    @Nullable
@@ -129,7 +129,7 @@ public class EnderCrystalEntity extends Entity {
    }
 
    public void method4144(boolean var1) {
-      this.getDataManager().method35446(field5522, var1);
+      this.getDataManager().set(field5522, var1);
    }
 
    public boolean method4145() {

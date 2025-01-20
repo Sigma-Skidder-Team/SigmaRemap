@@ -55,12 +55,12 @@ public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
 
    @Override
    public Class6971<ZoglinEntity> getBrainCodec() {
-      return Brain.<ZoglinEntity>method21400(field5985, field5984);
+      return Brain.<ZoglinEntity>createCodec(field5985, field5984);
    }
 
    @Override
    public Brain<?> createBrain(Dynamic<?> var1) {
-      Brain var4 = this.getBrainCodec().method21513(var1);
+      Brain var4 = this.getBrainCodec().deserialize(var1);
       method5093(var4);
       method5094(var4);
       method5095(var4);
@@ -216,7 +216,7 @@ public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
 
    @Override
    public void method4308(boolean var1) {
-      this.getDataManager().method35446(field5982, var1);
+      this.getDataManager().set(field5982, var1);
       if (!this.world.isRemote && var1) {
          this.getAttribute(Attributes.ATTACK_DAMAGE).method38661(0.5);
       }
@@ -287,21 +287,21 @@ public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
 
    @Override
    public CreatureAttribute getCreatureAttribute() {
-      return CreatureAttribute.field33506;
+      return CreatureAttribute.UNDEAD;
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       if (this.isChild()) {
-         var1.putBoolean("IsBaby", true);
+         compound.putBoolean("IsBaby", true);
       }
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.getBoolean("IsBaby")) {
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.getBoolean("IsBaby")) {
          this.method4308(true);
       }
    }

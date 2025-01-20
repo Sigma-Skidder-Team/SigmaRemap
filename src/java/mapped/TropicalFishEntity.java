@@ -97,19 +97,19 @@ public class TropicalFishEntity extends AbstractGroupFishEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("Variant", this.method4818());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("Variant", this.method4818());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4817(var1.getInt("Variant"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4817(compound.getInt("Variant"));
    }
 
    public void method4817(int var1) {
-      this.dataManager.method35446(field5813, var1);
+      this.dataManager.set(field5813, var1);
    }
 
    @Override

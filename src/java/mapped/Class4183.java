@@ -83,7 +83,7 @@ public class Class4183 extends Class4180 {
       } else {
          var3.setBlockState(
             var2,
-            Blocks.CHEST.getDefaultState().with(ChestBlock.field18867, Boolean.valueOf(var3.getFluidState(var2).method23486(FluidTags.field40469))),
+            Blocks.CHEST.getDefaultState().with(ChestBlock.field18867, Boolean.valueOf(var3.getFluidState(var2).method23486(FluidTags.WATER))),
             2
          );
          TileEntity var9 = var3.getTileEntity(var2);
@@ -123,7 +123,7 @@ public class Class4183 extends Class4180 {
          BlockState var16 = var2.getBlockState(var15);
 
          for (FluidState var17 = var2.getFluidState(var15);
-              (var16.isAir() || var17.method23486(FluidTags.field40469) || var16.getBlock().isIn(BlockTags.field32779)) && var14 > 1;
+              (var16.isAir() || var17.method23486(FluidTags.WATER) || var16.getBlock().isIn(BlockTags.field32779)) && var14 > 1;
               var17 = var2.getFluidState(var15)
          ) {
             var15.setPos(var12, --var14, var13);

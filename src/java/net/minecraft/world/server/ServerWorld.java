@@ -493,7 +493,7 @@ public class ServerWorld extends World implements ISeedReader {
       }
    }
 
-   public ServerScoreboard method6805() {
+   public ServerScoreboard getScoreboard() {
       return this.field9045.method1409();
    }
 
@@ -840,7 +840,7 @@ public class ServerWorld extends World implements ISeedReader {
          this.field9042.remove(var8);
       }
 
-      this.method6805().method21011(var1);
+      this.getScoreboard().method21011(var1);
       if (var1 instanceof MobEntity) {
          this.field9053.remove(((MobEntity)var1).method4230());
       }

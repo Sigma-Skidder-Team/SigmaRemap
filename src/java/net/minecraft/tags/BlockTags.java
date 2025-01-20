@@ -75,7 +75,7 @@ public final class BlockTags {
    public static final ITag.INamedTag<Block> field32799 = method25114("nylium");
    public static final ITag.INamedTag<Block> field32800 = method25114("wart_blocks");
    public static final ITag.INamedTag<Block> field32801 = method25114("beacon_base_blocks");
-   public static final ITag.INamedTag<Block> field32802 = method25114("soul_speed_blocks");
+   public static final ITag.INamedTag<Block> SOUL_SPEED_BLOCKS = method25114("soul_speed_blocks");
    public static final ITag.INamedTag<Block> field32803 = method25114("wall_post_override");
    public static final ITag.INamedTag<Block> field32804 = method25114("climbable");
    public static final ITag.INamedTag<Block> field32805 = method25114("shulker_boxes");

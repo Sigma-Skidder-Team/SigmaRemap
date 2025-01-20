@@ -17,14 +17,14 @@ public class DamageSource {
    public static final DamageSource field38994 = new DamageSource("onFire").method31137().method31140();
    public static final DamageSource field38995 = new DamageSource("lava").method31140();
    public static final DamageSource field38996 = new DamageSource("hotFloor").method31140();
-   public static final DamageSource field38997 = new DamageSource("inWall").method31137();
+   public static final DamageSource IN_WALL = new DamageSource("inWall").method31137();
    public static final DamageSource field38998 = new DamageSource("cramming").method31137();
-   public static final DamageSource field38999 = new DamageSource("drown").method31137();
+   public static final DamageSource DROWN = new DamageSource("drown").method31137();
    public static final DamageSource field39000 = new DamageSource("starve").method31137().method31139();
    public static final DamageSource field39001 = new DamageSource("cactus");
    public static final DamageSource field39002 = new DamageSource("fall").method31137();
    public static final DamageSource field39003 = new DamageSource("flyIntoWall").method31137();
-   public static final DamageSource field39004 = new DamageSource("outOfWorld").method31137().method31138();
+   public static final DamageSource OUT_OF_WORLD = new DamageSource("outOfWorld").method31137().method31138();
    public static final DamageSource field39005 = new DamageSource("generic").method31137();
    public static final DamageSource field39006 = new DamageSource("magic").method31137().method31145();
    public static final DamageSource field39007 = new DamageSource("wither").method31137();

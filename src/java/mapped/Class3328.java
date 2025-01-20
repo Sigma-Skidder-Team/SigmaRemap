@@ -36,10 +36,10 @@ public class Class3328 extends Item {
                   return Class6794.<ItemStack>method20698(var7);
                }
 
-               if (var1.getFluidState(var9).method23486(FluidTags.field40469)) {
+               if (var1.getFluidState(var9).method23486(FluidTags.WATER)) {
                   var1.playSound(var2, var2.getPosX(), var2.getPosY(), var2.getPosZ(), SoundEvents.field26418, SoundCategory.field14734, 1.0F, 1.0F);
                   return Class6794.<ItemStack>method20700(
-                     this.method11878(var7, var2, Class9741.method38187(new ItemStack(Items.field37971), Class8137.field34977)), var1.isRemote()
+                     this.method11878(var7, var2, PotionUtils.method38187(new ItemStack(Items.field37971), Class8137.field34977)), var1.isRemote()
                   );
                }
             }

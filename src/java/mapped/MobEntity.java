@@ -87,7 +87,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    public static MutableAttribute method4220() {
-      return LivingEntity.method2997().method21849(Attributes.FOLLOW_RANGE, 16.0).method21848(Attributes.ATTACK_KNOCKBACK);
+      return LivingEntity.registerAttributes().method21849(Attributes.FOLLOW_RANGE, 16.0).createMutableAttribute(Attributes.ATTACK_KNOCKBACK);
    }
 
    public Class6990 method4221(World var1) {
@@ -214,7 +214,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    @Override
-   public int getExperiencePoints(PlayerEntity var1) {
+   public int getExperiencePoints(PlayerEntity player) {
       if (this.field5594 <= 0) {
          return this.field5594;
       } else {
@@ -247,7 +247,7 @@ public abstract class MobEntity extends LivingEntity {
             double var10 = 10.0;
             this.world
                .addParticle(
-                  ParticleTypes.field34089,
+                  ParticleTypes.POOF,
                   this.getPosXWidth(1.0) - var4 * 10.0,
                   this.getPosYRandom() - var6 * 10.0,
                   this.getPosZRandom(1.0) - var8 * 10.0,
@@ -303,10 +303,10 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putBoolean("CanPickUpLoot", this.method4280());
-      var1.putBoolean("PersistenceRequired", this.field5609);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putBoolean("CanPickUpLoot", this.method4280());
+      compound.putBoolean("PersistenceRequired", this.field5609);
       ListNBT var4 = new ListNBT();
 
       for (ItemStack var6 : this.field5606) {
@@ -318,7 +318,7 @@ public abstract class MobEntity extends LivingEntity {
          var4.add(var7);
       }
 
-      var1.put("ArmorItems", var4);
+      compound.put("ArmorItems", var4);
       ListNBT var12 = new ListNBT();
 
       for (ItemStack var15 : this.field5604) {
@@ -330,24 +330,24 @@ public abstract class MobEntity extends LivingEntity {
          var12.add(var8);
       }
 
-      var1.put("HandItems", var12);
+      compound.put("HandItems", var12);
       ListNBT var14 = new ListNBT();
 
       for (float var10 : this.field5607) {
          var14.add(FloatNBT.valueOf(var10));
       }
 
-      var1.put("ArmorDropChances", var14);
+      compound.put("ArmorDropChances", var14);
       ListNBT var17 = new ListNBT();
 
       for (float var11 : this.field5605) {
          var17.add(FloatNBT.valueOf(var11));
       }
 
-      var1.put("HandDropChances", var17);
+      compound.put("HandDropChances", var17);
       if (this.field5613 == null) {
          if (this.field5615 != null) {
-            var1.put("Leash", this.field5615.copy());
+            compound.put("Leash", this.field5615.copy());
          }
       } else {
          CompoundNBT var20 = new CompoundNBT();
@@ -363,73 +363,73 @@ public abstract class MobEntity extends LivingEntity {
             var20.putUniqueID("UUID", var23);
          }
 
-         var1.put("Leash", var20);
+         compound.put("Leash", var20);
       }
 
-      var1.putBoolean("LeftHanded", this.method4306());
+      compound.putBoolean("LeftHanded", this.method4306());
       if (this.field5611 != null) {
-         var1.putString("DeathLootTable", this.field5611.toString());
+         compound.putString("DeathLootTable", this.field5611.toString());
          if (this.field5612 != 0L) {
-            var1.putLong("DeathLootTableSeed", this.field5612);
+            compound.putLong("DeathLootTableSeed", this.field5612);
          }
       }
 
       if (this.method4305()) {
-         var1.putBoolean("NoAI", this.method4305());
+         compound.putBoolean("NoAI", this.method4305());
       }
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("CanPickUpLoot", 1)) {
-         this.method4281(var1.getBoolean("CanPickUpLoot"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("CanPickUpLoot", 1)) {
+         this.method4281(compound.getBoolean("CanPickUpLoot"));
       }
 
-      this.field5609 = var1.getBoolean("PersistenceRequired");
-      if (var1.contains("ArmorItems", 9)) {
-         ListNBT var4 = var1.getList("ArmorItems", 10);
+      this.field5609 = compound.getBoolean("PersistenceRequired");
+      if (compound.contains("ArmorItems", 9)) {
+         ListNBT var4 = compound.getList("ArmorItems", 10);
 
          for (int var5 = 0; var5 < this.field5606.size(); var5++) {
             this.field5606.set(var5, ItemStack.read(var4.getCompound(var5)));
          }
       }
 
-      if (var1.contains("HandItems", 9)) {
-         ListNBT var6 = var1.getList("HandItems", 10);
+      if (compound.contains("HandItems", 9)) {
+         ListNBT var6 = compound.getList("HandItems", 10);
 
          for (int var9 = 0; var9 < this.field5604.size(); var9++) {
             this.field5604.set(var9, ItemStack.read(var6.getCompound(var9)));
          }
       }
 
-      if (var1.contains("ArmorDropChances", 9)) {
-         ListNBT var7 = var1.getList("ArmorDropChances", 5);
+      if (compound.contains("ArmorDropChances", 9)) {
+         ListNBT var7 = compound.getList("ArmorDropChances", 5);
 
          for (int var10 = 0; var10 < var7.size(); var10++) {
             this.field5607[var10] = var7.getFloat(var10);
          }
       }
 
-      if (var1.contains("HandDropChances", 9)) {
-         ListNBT var8 = var1.getList("HandDropChances", 5);
+      if (compound.contains("HandDropChances", 9)) {
+         ListNBT var8 = compound.getList("HandDropChances", 5);
 
          for (int var11 = 0; var11 < var8.size(); var11++) {
             this.field5605[var11] = var8.getFloat(var11);
          }
       }
 
-      if (var1.contains("Leash", 10)) {
-         this.field5615 = var1.getCompound("Leash");
+      if (compound.contains("Leash", 10)) {
+         this.field5615 = compound.getCompound("Leash");
       }
 
-      this.method4303(var1.getBoolean("LeftHanded"));
-      if (var1.contains("DeathLootTable", 8)) {
-         this.field5611 = new ResourceLocation(var1.getString("DeathLootTable"));
-         this.field5612 = var1.getLong("DeathLootTableSeed");
+      this.method4303(compound.getBoolean("LeftHanded"));
+      if (compound.contains("DeathLootTable", 8)) {
+         this.field5611 = new ResourceLocation(compound.getString("DeathLootTable"));
+         this.field5612 = compound.getLong("DeathLootTableSeed");
       }
 
-      this.method4302(var1.getBoolean("NoAI"));
+      this.method4302(compound.getBoolean("NoAI"));
    }
 
    @Override
@@ -892,7 +892,7 @@ public abstract class MobEntity extends LivingEntity {
       if (var4 != Blocks.field36589.asItem() && (!(var4 instanceof BlockItem) || !(((BlockItem)var4).method11845() instanceof Class3251))) {
          if (var4 instanceof ArmorItem) {
             return ((ArmorItem)var4).getType();
-         } else if (var4 != Items.field38120) {
+         } else if (var4 != Items.ELYTRA) {
             return !ReflectorForge.method37052(var0, (PlayerEntity)null) ? EquipmentSlotType.MAINHAND : EquipmentSlotType.OFFHAND;
          } else {
             return EquipmentSlotType.CHEST;
@@ -1311,17 +1311,17 @@ public abstract class MobEntity extends LivingEntity {
 
    public void method4302(boolean var1) {
       byte var4 = this.dataManager.<Byte>method35445(field5592);
-      this.dataManager.method35446(field5592, !var1 ? (byte)(var4 & -2) : (byte)(var4 | 1));
+      this.dataManager.set(field5592, !var1 ? (byte)(var4 & -2) : (byte)(var4 | 1));
    }
 
    public void method4303(boolean var1) {
       byte var4 = this.dataManager.<Byte>method35445(field5592);
-      this.dataManager.method35446(field5592, !var1 ? (byte)(var4 & -3) : (byte)(var4 | 2));
+      this.dataManager.set(field5592, !var1 ? (byte)(var4 & -3) : (byte)(var4 | 2));
    }
 
    public void method4304(boolean var1) {
       byte var4 = this.dataManager.<Byte>method35445(field5592);
-      this.dataManager.method35446(field5592, !var1 ? (byte)(var4 & -5) : (byte)(var4 | 4));
+      this.dataManager.set(field5592, !var1 ? (byte)(var4 & -5) : (byte)(var4 | 4));
    }
 
    public boolean method4305() {
@@ -1345,8 +1345,8 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    @Override
-   public boolean canAttack(LivingEntity var1) {
-      return var1.getType() == EntityType.PLAYER && ((PlayerEntity)var1).abilities.disableDamage ? false : super.canAttack(var1);
+   public boolean canAttack(LivingEntity target) {
+      return target.getType() == EntityType.PLAYER && ((PlayerEntity) target).abilities.disableDamage ? false : super.canAttack(target);
    }
 
    @Override

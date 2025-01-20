@@ -52,7 +52,7 @@ public class PhantomEntity extends Class1111 implements IMob {
    }
 
    public void method5336(int var1) {
-      this.dataManager.method35446(field6087, MathHelper.clamp(var1, 0, 64));
+      this.dataManager.set(field6087, MathHelper.clamp(var1, 0, 64));
    }
 
    private void method5337() {
@@ -91,7 +91,7 @@ public class PhantomEntity extends Class1111 implements IMob {
          float var4 = MathHelper.cos((float)(this.getEntityId() * 3 + this.ticksExisted + 1) * 0.13F + (float) Math.PI);
          if (var3 > 0.0F && var4 <= 0.0F) {
             this.world
-               .method6745(
+               .playSound(
                   this.getPosX(),
                   this.getPosY(),
                   this.getPosZ(),
@@ -140,22 +140,22 @@ public class PhantomEntity extends Class1111 implements IMob {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("AX")) {
-         this.field6089 = new BlockPos(var1.getInt("AX"), var1.getInt("AY"), var1.getInt("AZ"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("AX")) {
+         this.field6089 = new BlockPos(compound.getInt("AX"), compound.getInt("AY"), compound.getInt("AZ"));
       }
 
-      this.method5336(var1.getInt("Size"));
+      this.method5336(compound.getInt("Size"));
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("AX", this.field6089.getX());
-      var1.putInt("AY", this.field6089.getY());
-      var1.putInt("AZ", this.field6089.getZ());
-      var1.putInt("Size", this.method5338());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("AX", this.field6089.getX());
+      compound.putInt("AY", this.field6089.getY());
+      compound.putInt("AZ", this.field6089.getZ());
+      compound.putInt("Size", this.method5338());
    }
 
    @Override
@@ -185,7 +185,7 @@ public class PhantomEntity extends Class1111 implements IMob {
 
    @Override
    public CreatureAttribute getCreatureAttribute() {
-      return CreatureAttribute.field33506;
+      return CreatureAttribute.UNDEAD;
    }
 
    @Override

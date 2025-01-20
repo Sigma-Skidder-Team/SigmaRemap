@@ -112,7 +112,7 @@ public class Class2632 extends Class2628 {
                   double var12 = var6.nextGaussian() * 0.02;
                   ((ServerWorld)var3)
                      .spawnParticle(
-                        ParticleTypes.field34089,
+                        ParticleTypes.POOF,
                         (double)var5.getX() + 0.5,
                         (double)var5.getY(),
                         (double)var5.getZ() + 0.5,

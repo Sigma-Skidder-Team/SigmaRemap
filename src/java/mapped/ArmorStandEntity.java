@@ -175,8 +175,8 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       ListNBT var4 = new ListNBT();
 
       for (ItemStack var6 : this.field5582) {
@@ -188,7 +188,7 @@ public class ArmorStandEntity extends LivingEntity {
          var4.add(var7);
       }
 
-      var1.put("ArmorItems", var4);
+      compound.put("ArmorItems", var4);
       ListNBT var9 = new ListNBT();
 
       for (ItemStack var11 : this.field5581) {
@@ -200,46 +200,46 @@ public class ArmorStandEntity extends LivingEntity {
          var9.add(var8);
       }
 
-      var1.put("HandItems", var9);
-      var1.putBoolean("Invisible", this.isInvisible());
-      var1.putBoolean("Small", this.method4197());
-      var1.putBoolean("ShowArms", this.method4199());
-      var1.putInt("DisabledSlots", this.field5585);
-      var1.putBoolean("NoBasePlate", this.method4201());
+      compound.put("HandItems", var9);
+      compound.putBoolean("Invisible", this.isInvisible());
+      compound.putBoolean("Small", this.method4197());
+      compound.putBoolean("ShowArms", this.method4199());
+      compound.putInt("DisabledSlots", this.field5585);
+      compound.putBoolean("NoBasePlate", this.method4201());
       if (this.hasMarker()) {
-         var1.putBoolean("Marker", this.hasMarker());
+         compound.putBoolean("Marker", this.hasMarker());
       }
 
-      var1.put("Pose", this.method4187());
+      compound.put("Pose", this.method4187());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("ArmorItems", 9)) {
-         ListNBT var4 = var1.getList("ArmorItems", 10);
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("ArmorItems", 9)) {
+         ListNBT var4 = compound.getList("ArmorItems", 10);
 
          for (int var5 = 0; var5 < this.field5582.size(); var5++) {
             this.field5582.set(var5, ItemStack.read(var4.getCompound(var5)));
          }
       }
 
-      if (var1.contains("HandItems", 9)) {
-         ListNBT var6 = var1.getList("HandItems", 10);
+      if (compound.contains("HandItems", 9)) {
+         ListNBT var6 = compound.getList("HandItems", 10);
 
          for (int var8 = 0; var8 < this.field5581.size(); var8++) {
             this.field5581.set(var8, ItemStack.read(var6.getCompound(var8)));
          }
       }
 
-      this.setInvisible(var1.getBoolean("Invisible"));
-      this.method4196(var1.getBoolean("Small"));
-      this.method4198(var1.getBoolean("ShowArms"));
-      this.field5585 = var1.getInt("DisabledSlots");
-      this.method4200(var1.getBoolean("NoBasePlate"));
-      this.method4202(var1.getBoolean("Marker"));
+      this.setInvisible(compound.getBoolean("Invisible"));
+      this.method4196(compound.getBoolean("Small"));
+      this.method4198(compound.getBoolean("ShowArms"));
+      this.field5585 = compound.getInt("DisabledSlots");
+      this.method4200(compound.getBoolean("NoBasePlate"));
+      this.method4202(compound.getBoolean("Marker"));
       this.noClip = !this.method4185();
-      CompoundNBT var7 = var1.getCompound("Pose");
+      CompoundNBT var7 = compound.getCompound("Pose");
       this.method4186(var7);
    }
 
@@ -397,7 +397,7 @@ public class ArmorStandEntity extends LivingEntity {
    public boolean attackEntityFrom(DamageSource source, float var2) {
       if (this.world.isRemote || this.removed) {
          return false;
-      } else if (DamageSource.field39004.equals(source)) {
+      } else if (DamageSource.OUT_OF_WORLD.equals(source)) {
          this.remove();
          return false;
       } else if (this.isInvulnerableTo(source) || this.field5583 || this.hasMarker()) {
@@ -453,7 +453,7 @@ public class ArmorStandEntity extends LivingEntity {
       if (var1 != 32) {
          super.handleStatusUpdate(var1);
       } else if (this.world.isRemote) {
-         this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26359, this.getSoundCategory(), 0.3F, 1.0F, false);
+         this.world.playSound(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26359, this.getSoundCategory(), 0.3F, 1.0F, false);
          this.field5584 = this.world.getGameTime();
       }
    }
@@ -473,7 +473,7 @@ public class ArmorStandEntity extends LivingEntity {
       if (this.world instanceof ServerWorld) {
          ((ServerWorld)this.world)
             .spawnParticle(
-               new BlockParticleData(ParticleTypes.field34051, Blocks.OAK_PLANKS.getDefaultState()),
+               new BlockParticleData(ParticleTypes.BLOCK, Blocks.OAK_PLANKS.getDefaultState()),
                this.getPosX(),
                this.getPosYHeight(0.6666666666666666),
                this.getPosZ(),
@@ -629,7 +629,7 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    private void method4196(boolean var1) {
-      this.dataManager.method35446(field5573, this.method4204(this.dataManager.<Byte>method35445(field5573), 1, var1));
+      this.dataManager.set(field5573, this.method4204(this.dataManager.<Byte>method35445(field5573), 1, var1));
    }
 
    public boolean method4197() {
@@ -637,7 +637,7 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    private void method4198(boolean var1) {
-      this.dataManager.method35446(field5573, this.method4204(this.dataManager.<Byte>method35445(field5573), 4, var1));
+      this.dataManager.set(field5573, this.method4204(this.dataManager.<Byte>method35445(field5573), 4, var1));
    }
 
    public boolean method4199() {
@@ -645,7 +645,7 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    private void method4200(boolean var1) {
-      this.dataManager.method35446(field5573, this.method4204(this.dataManager.<Byte>method35445(field5573), 8, var1));
+      this.dataManager.set(field5573, this.method4204(this.dataManager.<Byte>method35445(field5573), 8, var1));
    }
 
    public boolean method4201() {
@@ -653,7 +653,7 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    private void method4202(boolean var1) {
-      this.dataManager.method35446(field5573, this.method4204(this.dataManager.<Byte>method35445(field5573), 16, var1));
+      this.dataManager.set(field5573, this.method4204(this.dataManager.<Byte>method35445(field5573), 16, var1));
    }
 
    public boolean hasMarker() {
@@ -672,32 +672,32 @@ public class ArmorStandEntity extends LivingEntity {
 
    public void method4205(Class7087 var1) {
       this.field5586 = var1;
-      this.dataManager.method35446(field5574, var1);
+      this.dataManager.set(field5574, var1);
    }
 
    public void method4206(Class7087 var1) {
       this.field5587 = var1;
-      this.dataManager.method35446(field5575, var1);
+      this.dataManager.set(field5575, var1);
    }
 
    public void method4207(Class7087 var1) {
       this.field5588 = var1;
-      this.dataManager.method35446(field5576, var1);
+      this.dataManager.set(field5576, var1);
    }
 
    public void method4208(Class7087 var1) {
       this.field5589 = var1;
-      this.dataManager.method35446(field5577, var1);
+      this.dataManager.set(field5577, var1);
    }
 
    public void method4209(Class7087 var1) {
       this.field5590 = var1;
-      this.dataManager.method35446(field5578, var1);
+      this.dataManager.set(field5578, var1);
    }
 
    public void method4210(Class7087 var1) {
       this.field5591 = var1;
-      this.dataManager.method35446(field5579, var1);
+      this.dataManager.set(field5579, var1);
    }
 
    public Class7087 method4211() {

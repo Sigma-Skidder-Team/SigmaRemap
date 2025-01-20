@@ -49,7 +49,7 @@ public class PufferfishEntity extends AbstractFishEntity {
    }
 
    public void method4829(int var1) {
-      this.dataManager.method35446(field5820, var1);
+      this.dataManager.set(field5820, var1);
    }
 
    @Override
@@ -62,15 +62,15 @@ public class PufferfishEntity extends AbstractFishEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("PuffState", this.method4828());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("PuffState", this.method4828());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4829(var1.getInt("PuffState"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4829(compound.getInt("PuffState"));
    }
 
    @Override

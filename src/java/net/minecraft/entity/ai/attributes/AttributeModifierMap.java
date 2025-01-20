@@ -53,7 +53,7 @@ public class AttributeModifierMap {
       }
    }
 
-   public static MutableAttribute method38416() {
+   public static MutableAttribute createMutableAttribute() {
       return new MutableAttribute();
    }
 

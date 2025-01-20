@@ -26,7 +26,7 @@ public class Class2703 extends Class2699 {
          } else {
             this.field17176 = var3.getLastAttackedEntity();
             int var4 = var3.getLastAttackedEntityTime();
-            return var4 != this.field17177 && this.method10915(this.field17176, Class8522.field38240) && this.field17175.method4388(this.field17176, var3);
+            return var4 != this.field17177 && this.method10915(this.field17176, EntityPredicate.field38240) && this.field17175.method4388(this.field17176, var3);
          }
       } else {
          return false;

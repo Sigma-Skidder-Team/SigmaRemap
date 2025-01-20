@@ -79,7 +79,7 @@ public class WitchEntity extends Class1026 implements Class1022 {
    }
 
    public void method4567(boolean var1) {
-      this.getDataManager().method35446(field5720, var1);
+      this.getDataManager().set(field5720, var1);
    }
 
    public boolean method4568() {
@@ -102,7 +102,7 @@ public class WitchEntity extends Class1026 implements Class1022 {
 
          if (!this.method4568()) {
             Class8812 var7 = null;
-            if (this.rand.nextFloat() < 0.15F && this.areEyesInFluid(FluidTags.field40469) && !this.isPotionActive(Effects.WATER_BREATHING)) {
+            if (this.rand.nextFloat() < 0.15F && this.areEyesInFluid(FluidTags.WATER) && !this.isPotionActive(Effects.WATER_BREATHING)) {
                var7 = Class8137.field34999;
             } else if (this.rand.nextFloat() < 0.15F
                && (this.isBurning() || this.getLastDamageSource() != null && this.getLastDamageSource().method31141())
@@ -118,7 +118,7 @@ public class WitchEntity extends Class1026 implements Class1022 {
             }
 
             if (var7 != null) {
-               this.setItemStackToSlot(EquipmentSlotType.MAINHAND, Class9741.method38187(new ItemStack(Items.field37971), var7));
+               this.setItemStackToSlot(EquipmentSlotType.MAINHAND, PotionUtils.method38187(new ItemStack(Items.field37971), var7));
                this.field5721 = this.getHeldItemMainhand().getUseDuration();
                this.method4567(true);
                if (!this.isSilent()) {
@@ -144,7 +144,7 @@ public class WitchEntity extends Class1026 implements Class1022 {
             ItemStack var3 = this.getHeldItemMainhand();
             this.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
             if (var3.getItem() == Items.field37971) {
-               List<EffectInstance> var4 = Class9741.method38176(var3);
+               List<EffectInstance> var4 = PotionUtils.method38176(var3);
                if (var4 != null) {
                   for (EffectInstance var6 : var4) {
                      this.addPotionEffect(new EffectInstance(var6));
@@ -230,7 +230,7 @@ public class WitchEntity extends Class1026 implements Class1022 {
          }
 
          PotionEntity var14 = new PotionEntity(this.world, this);
-         var14.method3511(Class9741.method38187(new ItemStack(Items.SPLASH_POTION), var13));
+         var14.method3511(PotionUtils.method38187(new ItemStack(Items.SPLASH_POTION), var13));
          var14.rotationPitch -= -20.0F;
          var14.shoot(var6, var8 + (double)(var12 * 0.2F), var10, 0.75F, 8.0F);
          if (!this.isSilent()) {

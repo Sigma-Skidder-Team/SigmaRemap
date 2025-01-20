@@ -209,7 +209,7 @@ public class Explosion {
    public void method25785(boolean var1) {
       if (this.field33373.isRemote) {
          this.field33373
-            .method6745(
+            .playSound(
                this.field33374,
                this.field33375,
                this.field33376,

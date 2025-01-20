@@ -48,7 +48,7 @@ public class TurtleEntity extends AnimalEntity {
    }
 
    public void method5041(BlockPos var1) {
-      this.dataManager.method35446(field5956, var1);
+      this.dataManager.set(field5956, var1);
    }
 
    private BlockPos method5042() {
@@ -56,7 +56,7 @@ public class TurtleEntity extends AnimalEntity {
    }
 
    private void method5043(BlockPos var1) {
-      this.dataManager.method35446(field5959, var1);
+      this.dataManager.set(field5959, var1);
    }
 
    private BlockPos method5044() {
@@ -68,7 +68,7 @@ public class TurtleEntity extends AnimalEntity {
    }
 
    private void method5046(boolean var1) {
-      this.dataManager.method35446(field5957, var1);
+      this.dataManager.set(field5957, var1);
    }
 
    public boolean method5047() {
@@ -77,7 +77,7 @@ public class TurtleEntity extends AnimalEntity {
 
    private void method5048(boolean var1) {
       this.field5962 = !var1 ? 0 : 1;
-      this.dataManager.method35446(field5958, var1);
+      this.dataManager.set(field5958, var1);
    }
 
    private boolean method5049() {
@@ -85,7 +85,7 @@ public class TurtleEntity extends AnimalEntity {
    }
 
    private void method5050(boolean var1) {
-      this.dataManager.method35446(field5960, var1);
+      this.dataManager.set(field5960, var1);
    }
 
    private boolean method5051() {
@@ -93,7 +93,7 @@ public class TurtleEntity extends AnimalEntity {
    }
 
    private void method5052(boolean var1) {
-      this.dataManager.method35446(field5961, var1);
+      this.dataManager.set(field5961, var1);
    }
 
    @Override
@@ -108,28 +108,28 @@ public class TurtleEntity extends AnimalEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("HomePosX", this.method5042().getX());
-      var1.putInt("HomePosY", this.method5042().getY());
-      var1.putInt("HomePosZ", this.method5042().getZ());
-      var1.putBoolean("HasEgg", this.method5045());
-      var1.putInt("TravelPosX", this.method5044().getX());
-      var1.putInt("TravelPosY", this.method5044().getY());
-      var1.putInt("TravelPosZ", this.method5044().getZ());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("HomePosX", this.method5042().getX());
+      compound.putInt("HomePosY", this.method5042().getY());
+      compound.putInt("HomePosZ", this.method5042().getZ());
+      compound.putBoolean("HasEgg", this.method5045());
+      compound.putInt("TravelPosX", this.method5044().getX());
+      compound.putInt("TravelPosY", this.method5044().getY());
+      compound.putInt("TravelPosZ", this.method5044().getZ());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      int var4 = var1.getInt("HomePosX");
-      int var5 = var1.getInt("HomePosY");
-      int var6 = var1.getInt("HomePosZ");
+   public void readAdditional(CompoundNBT compound) {
+      int var4 = compound.getInt("HomePosX");
+      int var5 = compound.getInt("HomePosY");
+      int var6 = compound.getInt("HomePosZ");
       this.method5041(new BlockPos(var4, var5, var6));
-      super.readAdditional(var1);
-      this.method5046(var1.getBoolean("HasEgg"));
-      int var7 = var1.getInt("TravelPosX");
-      int var8 = var1.getInt("TravelPosY");
-      int var9 = var1.getInt("TravelPosZ");
+      super.readAdditional(compound);
+      this.method5046(compound.getBoolean("HasEgg"));
+      int var7 = compound.getInt("TravelPosX");
+      int var8 = compound.getInt("TravelPosY");
+      int var9 = compound.getInt("TravelPosZ");
       this.method5043(new BlockPos(var7, var8, var9));
    }
 
@@ -249,7 +249,7 @@ public class TurtleEntity extends AnimalEntity {
 
    @Override
    public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
-      if (!this.method5049() && var2.getFluidState(var1).method23486(FluidTags.field40469)) {
+      if (!this.method5049() && var2.getFluidState(var1).method23486(FluidTags.WATER)) {
          return 10.0F;
       } else {
          return !Class3441.method12114(var2, var1) ? var2.method7009(var1) - 0.5F : 10.0F;

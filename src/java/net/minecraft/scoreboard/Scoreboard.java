@@ -172,13 +172,13 @@ public class Scoreboard {
       return this.field29843[var1];
    }
 
-   public ScorePlayerTeam method20990(String var1) {
+   public ScorePlayerTeam getTeam(String var1) {
       return this.field29844.get(var1);
    }
 
    public ScorePlayerTeam method20991(String var1) {
       if (var1.length() <= 16) {
-         ScorePlayerTeam var4 = this.method20990(var1);
+         ScorePlayerTeam var4 = this.getTeam(var1);
          if (var4 == null) {
             var4 = new ScorePlayerTeam(this, var1);
             this.field29844.put(var1, var4);
@@ -202,7 +202,7 @@ public class Scoreboard {
       this.method21007(var1);
    }
 
-   public boolean method20993(String var1, ScorePlayerTeam var2) {
+   public boolean addPlayerToTeam(String var1, ScorePlayerTeam var2) {
       if (var1.length() <= 40) {
          if (this.method20998(var1) != null) {
             this.method20994(var1);
@@ -332,7 +332,7 @@ public class Scoreboard {
 
    public void method21011(Entity var1) {
       if (var1 != null && !(var1 instanceof PlayerEntity) && !var1.isAlive()) {
-         String var4 = var1.method3376();
+         String var4 = var1.getCachedUniqueIdString();
          this.method20985(var4, (Class8375)null);
          this.method20994(var4);
       }

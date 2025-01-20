@@ -107,7 +107,7 @@ public class WitherSkeletonEntity extends Class1082 {
    }
 
    @Override
-   public boolean isPotionApplicable(EffectInstance var1) {
-      return var1.getPotion() != Effects.WITHER ? super.isPotionApplicable(var1) : false;
+   public boolean isPotionApplicable(EffectInstance potion) {
+      return potion.getPotion() != Effects.WITHER ? super.isPotionApplicable(potion) : false;
    }
 }

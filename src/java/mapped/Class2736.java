@@ -36,7 +36,7 @@ public class Class2736 extends Class2595 {
    public boolean method10803() {
       if (!this.field17258.isBeingRidden()) {
          if (!this.field17264) {
-            if (this.field17265 && this.field17258.method3021() >= 100) {
+            if (this.field17265 && this.field17258.getIdleTime() >= 100) {
                return false;
             }
 

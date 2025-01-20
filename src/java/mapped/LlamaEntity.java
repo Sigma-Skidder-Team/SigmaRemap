@@ -47,7 +47,7 @@ public class LlamaEntity extends Class1066 implements Class1022 {
    }
 
    private void method4885(int var1) {
-      this.dataManager.method35446(field5870, Math.max(1, Math.min(5, var1)));
+      this.dataManager.set(field5870, Math.max(1, Math.min(5, var1)));
    }
 
    private void method4886() {
@@ -60,22 +60,22 @@ public class LlamaEntity extends Class1066 implements Class1022 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("Variant", this.method4889());
-      var1.putInt("Strength", this.method4887());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("Variant", this.method4889());
+      compound.putInt("Strength", this.method4887());
       if (!this.field5890.getStackInSlot(1).isEmpty()) {
-         var1.put("DecorItem", this.field5890.getStackInSlot(1).method32112(new CompoundNBT()));
+         compound.put("DecorItem", this.field5890.getStackInSlot(1).method32112(new CompoundNBT()));
       }
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      this.method4885(var1.getInt("Strength"));
-      super.readAdditional(var1);
-      this.method4890(var1.getInt("Variant"));
-      if (var1.contains("DecorItem", 10)) {
-         this.field5890.setInventorySlotContents(1, ItemStack.read(var1.getCompound("DecorItem")));
+   public void readAdditional(CompoundNBT compound) {
+      this.method4885(compound.getInt("Strength"));
+      super.readAdditional(compound);
+      this.method4890(compound.getInt("Variant"));
+      if (compound.contains("DecorItem", 10)) {
+         this.field5890.setInventorySlotContents(1, ItemStack.read(compound.getCompound("DecorItem")));
       }
 
       this.method4903();
@@ -114,7 +114,7 @@ public class LlamaEntity extends Class1066 implements Class1022 {
    }
 
    public void method4890(int var1) {
-      this.dataManager.method35446(field5872, var1);
+      this.dataManager.set(field5872, var1);
    }
 
    @Override
@@ -323,7 +323,7 @@ public class LlamaEntity extends Class1066 implements Class1022 {
    }
 
    private void method4904(Class112 var1) {
-      this.dataManager.method35446(field5871, var1 != null ? var1.method309() : -1);
+      this.dataManager.set(field5871, var1 != null ? var1.method309() : -1);
    }
 
    @Nullable

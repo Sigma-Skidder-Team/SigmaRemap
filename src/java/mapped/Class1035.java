@@ -37,7 +37,7 @@ public abstract class Class1035 extends MonsterEntity {
    public abstract boolean method4618();
 
    public void method4632(boolean var1) {
-      this.getDataManager().method35446(field5750, var1);
+      this.getDataManager().set(field5750, var1);
    }
 
    public boolean method4633() {
@@ -51,13 +51,13 @@ public abstract class Class1035 extends MonsterEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       if (this.method4633()) {
-         var1.putBoolean("IsImmuneToZombification", true);
+         compound.putBoolean("IsImmuneToZombification", true);
       }
 
-      var1.putInt("TimeInOverworld", this.field5751);
+      compound.putInt("TimeInOverworld", this.field5751);
    }
 
    @Override
@@ -66,10 +66,10 @@ public abstract class Class1035 extends MonsterEntity {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4632(var1.getBoolean("IsImmuneToZombification"));
-      this.field5751 = var1.getInt("TimeInOverworld");
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4632(compound.getBoolean("IsImmuneToZombification"));
+      this.field5751 = compound.getInt("TimeInOverworld");
    }
 
    @Override

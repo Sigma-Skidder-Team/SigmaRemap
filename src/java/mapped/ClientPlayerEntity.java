@@ -483,12 +483,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void playSound(SoundEvent var1, float var2, float var3) {
-      this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.getSoundCategory(), var2, var3, false);
+      this.world.playSound(this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.getSoundCategory(), var2, var3, false);
    }
 
    @Override
    public void method2834(SoundEvent var1, SoundCategory var2, float var3, float var4) {
-      this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), var1, var2, var3, var4, false);
+      this.world.playSound(this.getPosX(), this.getPosY(), this.getPosZ(), var1, var2, var3, var4, false);
    }
 
    @Override
@@ -731,19 +731,19 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
       if (this.movementInput.jump && !var11 && !var3 && !this.abilities.isFlying && !this.isPassenger() && !this.isOnLadder()) {
          ItemStack var12 = this.getItemStackFromSlot(EquipmentSlotType.CHEST);
-         if (var12.getItem() == Items.field38120 && Class3256.method11698(var12) && this.tryToStartFallFlying()) {
+         if (var12.getItem() == Items.ELYTRA && Class3256.method11698(var12) && this.tryToStartFallFlying()) {
             this.connection.sendPacket(new CEntityActionPacket(this, CEntityActionPacket.Action.START_FALL_FLYING));
          }
       }
 
       this.wasFallFlying = this.isElytraFlying();
-      if (this.isInWater() && this.movementInput.sneaking && this.method2897()) {
+      if (this.isInWater() && this.movementInput.sneaking && this.func_241208_cS_()) {
          this.handleFluidSneak();
       }
 
-      if (!this.areEyesInFluid(FluidTags.field40469)) {
+      if (!this.areEyesInFluid(FluidTags.WATER)) {
          if (this.counterInWater > 0) {
-            this.areEyesInFluid(FluidTags.field40469);
+            this.areEyesInFluid(FluidTags.WATER);
             this.counterInWater = MathHelper.clamp(this.counterInWater - 10, 0, 600);
          }
       } else {
@@ -997,7 +997,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public float method5416() {
-      if (this.areEyesInFluid(FluidTags.field40469)) {
+      if (this.areEyesInFluid(FluidTags.WATER)) {
          float var3 = 600.0F;
          float var4 = 100.0F;
          if (!((float)this.counterInWater >= 600.0F)) {
@@ -1023,12 +1023,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       boolean var4 = super.method2854();
       if (!this.isSpectator()) {
          if (!var3 && var4) {
-            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26329, SoundCategory.field14736, 1.0F, 1.0F, false);
+            this.world.playSound(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26329, SoundCategory.field14736, 1.0F, 1.0F, false);
             this.mc.getSoundHandler().method1000(new Class6342(this));
          }
 
          if (var3 && !var4) {
-            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26330, SoundCategory.field14736, 1.0F, 1.0F, false);
+            this.world.playSound(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26330, SoundCategory.field14736, 1.0F, 1.0F, false);
          }
 
          return this.eyesInWaterPlayer;

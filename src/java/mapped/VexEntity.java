@@ -77,28 +77,28 @@ public class VexEntity extends MonsterEntity {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("BoundX")) {
-         this.field6053 = new BlockPos(var1.getInt("BoundX"), var1.getInt("BoundY"), var1.getInt("BoundZ"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("BoundX")) {
+         this.field6053 = new BlockPos(compound.getInt("BoundX"), compound.getInt("BoundY"), compound.getInt("BoundZ"));
       }
 
-      if (var1.contains("LifeTicks")) {
-         this.method5278(var1.getInt("LifeTicks"));
+      if (compound.contains("LifeTicks")) {
+         this.method5278(compound.getInt("LifeTicks"));
       }
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       if (this.field6053 != null) {
-         var1.putInt("BoundX", this.field6053.getX());
-         var1.putInt("BoundY", this.field6053.getY());
-         var1.putInt("BoundZ", this.field6053.getZ());
+         compound.putInt("BoundX", this.field6053.getX());
+         compound.putInt("BoundY", this.field6053.getY());
+         compound.putInt("BoundZ", this.field6053.getZ());
       }
 
       if (this.field6054) {
-         var1.putInt("LifeTicks", this.field6055);
+         compound.putInt("LifeTicks", this.field6055);
       }
    }
 
@@ -128,7 +128,7 @@ public class VexEntity extends MonsterEntity {
          var5 |= var1;
       }
 
-      this.dataManager.method35446(field6051, (byte)(var5 & 0xFF));
+      this.dataManager.set(field6051, (byte)(var5 & 0xFF));
    }
 
    public boolean method5275() {

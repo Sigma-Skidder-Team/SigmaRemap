@@ -712,7 +712,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       if (var4 != null) {
          if (!(var4 instanceof ExperienceOrbEntity)) {
             this.field23273
-               .method6745(
+               .playSound(
                   var4.getPosX(),
                   var4.getPosY(),
                   var4.getPosZ(),
@@ -724,7 +724,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                );
          } else {
             this.field23273
-               .method6745(
+               .playSound(
                   var4.getPosX(),
                   var4.getPosY(),
                   var4.getPosZ(),
@@ -900,7 +900,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             } else {
                byte var5 = 40;
                this.mc.particles.method1196(var4, ParticleTypes.field34097, 30);
-               this.field23273.method6745(var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field27147, var4.getSoundCategory(), 1.0F, 1.0F, false);
+               this.field23273.playSound(var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field27147, var4.getSoundCategory(), 1.0F, 1.0F, false);
                if (var4 == this.mc.player) {
                   this.mc.gameRenderer.displayItemActivation(method15785(this.mc.player));
                }
@@ -934,7 +934,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       int var7 = var6.getEntityId();
       this.field23275 = false;
       if (var4 != var6.world.getDimensionKey()) {
-         Scoreboard var8 = this.field23273.method6805();
+         Scoreboard var8 = this.field23273.getScoreboard();
          boolean var9 = var1.method17437();
          boolean var10 = var1.method17438();
          ClientWorld.ClientWorldInfo var11 = new ClientWorld.ClientWorldInfo(this.field23274.method20047(), this.field23274.isHardcore(), var10);
@@ -1437,7 +1437,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          if (var5 != null) {
             EffectInstance var6 = new EffectInstance(var5, var1.method17410(), var1.method17409(), var1.method17412(), var1.method17411(), var1.method17413());
             var6.setIsPotionDurationMax(var1.method17406());
-            ((LivingEntity)var4).method3037(var6);
+            ((LivingEntity)var4).func_233646_e_(var6);
          }
       }
    }
@@ -1990,7 +1990,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleScoreboardObjective(SScoreboardObjectivePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
-      Scoreboard var4 = this.field23273.method6805();
+      Scoreboard var4 = this.field23273.getScoreboard();
       String var5 = var1.method17510();
       if (var1.method17512() != 0) {
          if (var4.method20974(var5)) {
@@ -2012,7 +2012,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleUpdateScore(SUpdateScorePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
-      Scoreboard var4 = this.field23273.method6805();
+      Scoreboard var4 = this.field23273.getScoreboard();
       String var5 = var1.method17474();
       switch (Class8047.field34567[var1.method17476().ordinal()]) {
          case 1:
@@ -2028,7 +2028,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleDisplayObjective(SDisplayObjectivePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
-      Scoreboard var4 = this.field23273.method6805();
+      Scoreboard var4 = this.field23273.getScoreboard();
       String var5 = var1.method17647();
       Class8375 var6 = var5 != null ? var4.method20975(var5) : null;
       var4.method20988(var1.method17646(), var6);
@@ -2037,10 +2037,10 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleTeams(STeamsPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
-      Scoreboard var4 = this.field23273.method6805();
+      Scoreboard var4 = this.field23273.getScoreboard();
       ScorePlayerTeam var5;
       if (var1.getAction() != 0) {
-         var5 = var4.method20990(var1.getName());
+         var5 = var4.getTeam(var1.getName());
       } else {
          var5 = var4.method20991(var1.getName());
       }
@@ -2065,7 +2065,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
       if (var1.getAction() == 0 || var1.getAction() == 3) {
          for (String var10 : var1.getPlayers()) {
-            var4.method20993(var10, var5);
+            var4.addPlayerToTeam(var10, var5);
          }
       }
 

@@ -77,11 +77,11 @@ public abstract class AnimalEntity extends Class1045 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("InLove", this.field5702);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("InLove", this.field5702);
       if (this.field5703 != null) {
-         var1.putUniqueID("LoveCause", this.field5703);
+         compound.putUniqueID("LoveCause", this.field5703);
       }
    }
 
@@ -91,10 +91,10 @@ public abstract class AnimalEntity extends Class1045 {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.field5702 = var1.getInt("InLove");
-      this.field5703 = !var1.hasUniqueID("LoveCause") ? null : var1.getUniqueID("LoveCause");
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.field5702 = compound.getInt("InLove");
+      this.field5703 = !compound.hasUniqueID("LoveCause") ? null : compound.getUniqueID("LoveCause");
    }
 
    public static boolean canAnimalSpawn(EntityType<? extends AnimalEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
@@ -112,7 +112,7 @@ public abstract class AnimalEntity extends Class1045 {
    }
 
    @Override
-   public int getExperiencePoints(PlayerEntity var1) {
+   public int getExperiencePoints(PlayerEntity player) {
       return 1 + this.world.rand.nextInt(3);
    }
 

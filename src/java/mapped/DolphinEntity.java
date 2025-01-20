@@ -35,7 +35,7 @@ public class DolphinEntity extends WaterMobEntity {
    private static final DataParameter<BlockPos> field5804 = EntityDataManager.<BlockPos>createKey(DolphinEntity.class, DataSerializers.field33401);
    private static final DataParameter<Boolean> field5805 = EntityDataManager.<Boolean>createKey(DolphinEntity.class, DataSerializers.field33398);
    private static final DataParameter<Integer> field5806 = EntityDataManager.<Integer>createKey(DolphinEntity.class, DataSerializers.VARINT);
-   private static final Class8522 field5807 = new Class8522().method30203(10.0).method30205().method30204().method30206();
+   private static final EntityPredicate field5807 = new EntityPredicate().method30203(10.0).method30205().method30204().method30206();
    public static final Predicate<ItemEntity> field5808 = var0 -> !var0.method4135() && var0.isAlive() && var0.isInWater();
 
    public DolphinEntity(EntityType<? extends DolphinEntity> var1, World var2) {
@@ -63,7 +63,7 @@ public class DolphinEntity extends WaterMobEntity {
    }
 
    public void method4776(BlockPos var1) {
-      this.dataManager.method35446(field5804, var1);
+      this.dataManager.set(field5804, var1);
    }
 
    public BlockPos method4777() {
@@ -75,7 +75,7 @@ public class DolphinEntity extends WaterMobEntity {
    }
 
    public void method4779(boolean var1) {
-      this.dataManager.method35446(field5805, var1);
+      this.dataManager.set(field5805, var1);
    }
 
    public int method4780() {
@@ -83,7 +83,7 @@ public class DolphinEntity extends WaterMobEntity {
    }
 
    public void method4781(int var1) {
-      this.dataManager.method35446(field5806, var1);
+      this.dataManager.set(field5806, var1);
    }
 
    @Override
@@ -95,24 +95,24 @@ public class DolphinEntity extends WaterMobEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("TreasurePosX", this.method4777().getX());
-      var1.putInt("TreasurePosY", this.method4777().getY());
-      var1.putInt("TreasurePosZ", this.method4777().getZ());
-      var1.putBoolean("GotFish", this.method4778());
-      var1.putInt("Moistness", this.method4780());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("TreasurePosX", this.method4777().getX());
+      compound.putInt("TreasurePosY", this.method4777().getY());
+      compound.putInt("TreasurePosZ", this.method4777().getZ());
+      compound.putBoolean("GotFish", this.method4778());
+      compound.putInt("Moistness", this.method4780());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      int var4 = var1.getInt("TreasurePosX");
-      int var5 = var1.getInt("TreasurePosY");
-      int var6 = var1.getInt("TreasurePosZ");
+   public void readAdditional(CompoundNBT compound) {
+      int var4 = compound.getInt("TreasurePosX");
+      int var5 = compound.getInt("TreasurePosY");
+      int var6 = compound.getInt("TreasurePosZ");
       this.method4776(new BlockPos(var4, var5, var6));
-      super.readAdditional(var1);
-      this.method4779(var1.getBoolean("GotFish"));
-      this.method4781(var1.getInt("Moistness"));
+      super.readAdditional(compound);
+      this.method4779(compound.getBoolean("GotFish"));
+      this.method4781(compound.getInt("Moistness"));
    }
 
    @Override
@@ -158,7 +158,7 @@ public class DolphinEntity extends WaterMobEntity {
    }
 
    @Override
-   public int determineNextAir(int var1) {
+   public int determineNextAir(int currentAir) {
       return this.getMaxAir();
    }
 
@@ -303,7 +303,7 @@ public class DolphinEntity extends WaterMobEntity {
                !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.OCEAN))
                   || !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.DEEP_OCEAN))
             )
-            && var1.getFluidState(var3).method23486(FluidTags.field40469);
+            && var1.getFluidState(var3).method23486(FluidTags.WATER);
       } else {
          return false;
       }
@@ -376,7 +376,7 @@ public class DolphinEntity extends WaterMobEntity {
    }
 
    // $VF: synthetic method
-   public static Class8522 method4790() {
+   public static EntityPredicate method4790() {
       return field5807;
    }
 }

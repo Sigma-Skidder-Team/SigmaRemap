@@ -267,7 +267,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public void setPose(Pose var1) {
-      this.dataManager.method35446(POSE, var1);
+      this.dataManager.set(POSE, var1);
    }
 
    public Pose getPose() {
@@ -856,7 +856,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public void method3246(boolean var1) {
-      this.dataManager.method35446(SILENT, var1);
+      this.dataManager.set(SILENT, var1);
    }
 
    public boolean method3247() {
@@ -864,7 +864,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public void method3248(boolean var1) {
-      this.dataManager.method35446(NO_GRAVITY, var1);
+      this.dataManager.set(NO_GRAVITY, var1);
    }
 
    public boolean canTriggerWalking() {
@@ -939,15 +939,15 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public boolean method3257() {
       this.eyesFluidLevel.clear();
-      this.method3258();
+      this.func_233567_aH_();
       double var3 = !this.world.getDimensionType().isUltrawarm() ? 0.0023333333333333335 : 0.007;
       boolean var5 = this.handleFluidAcceleration(FluidTags.field40470, var3);
       return this.isInWater() || var5;
    }
 
-   public void method3258() {
+   public void func_233567_aH_() {
       if (!(this.getRidingEntity() instanceof BoatEntity)) {
-         if (!this.handleFluidAcceleration(FluidTags.field40469, 0.014)) {
+         if (!this.handleFluidAcceleration(FluidTags.WATER, 0.014)) {
             this.inWater = false;
          } else {
             if (!this.inWater && !this.firstUpdate) {
@@ -964,7 +964,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    private void updateEyesInWater() {
-      this.eyesInWater = this.areEyesInFluid(FluidTags.field40469);
+      this.eyesInWater = this.areEyesInFluid(FluidTags.WATER);
       this.field_241335_O_ = null;
       double var3 = this.getPosYEye() - 0.11111111F;
       Entity var5 = this.getRidingEntity();
@@ -1015,7 +1015,7 @@ public abstract class Entity implements INameable, ICommandSource {
          double var11 = (this.rand.nextDouble() * 2.0 - 1.0) * (double)this.size.field39968;
          this.world
             .addParticle(
-               ParticleTypes.field34052,
+               ParticleTypes.BUBBLE,
                this.getPosX() + var9,
                (double)(var7 + 1.0F),
                this.getPosZ() + var11,
@@ -1059,7 +1059,7 @@ public abstract class Entity implements INameable, ICommandSource {
          Vector3d var8 = this.getMotion();
          this.world
             .addParticle(
-               new BlockParticleData(ParticleTypes.field34051, var7),
+               new BlockParticleData(ParticleTypes.BLOCK, var7),
                this.getPosX() + (this.rand.nextDouble() - 0.5) * (double)this.size.field39968,
                this.getPosY() + 0.1,
                this.getPosZ() + (this.rand.nextDouble() - 0.5) * (double)this.size.field39968,
@@ -1814,7 +1814,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return !this.getPassengers().isEmpty();
    }
 
-   public boolean onDeathUpdate() {
+   public boolean onEntityDeathUpdate() {
       return true;
    }
 
@@ -1896,7 +1896,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    @Nullable
    public Team getTeam() {
-      return this.world.method6805().method20998(this.method2956());
+      return this.world.getScoreboard().method20998(this.method2956());
    }
 
    public boolean isOnSameTeam(Entity var1) {
@@ -1918,9 +1918,9 @@ public abstract class Entity implements INameable, ICommandSource {
    public void setFlag(int var1, boolean var2) {
       byte var5 = this.dataManager.<Byte>method35445(FLAGS);
       if (!var2) {
-         this.dataManager.method35446(FLAGS, (byte)(var5 & ~(1 << var1)));
+         this.dataManager.set(FLAGS, (byte)(var5 & ~(1 << var1)));
       } else {
-         this.dataManager.method35446(FLAGS, (byte)(var5 | 1 << var1));
+         this.dataManager.set(FLAGS, (byte)(var5 | 1 << var1));
       }
    }
 
@@ -1933,7 +1933,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public void setAir(int var1) {
-      this.dataManager.method35446(AIR, var1);
+      this.dataManager.set(AIR, var1);
    }
 
    public void method3353(ServerWorld var1, LightningBoltEntity var2) {
@@ -2071,7 +2071,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public boolean isInvulnerableTo(DamageSource var1) {
-      return this.invulnerable && var1 != DamageSource.field39004 && !var1.method31146();
+      return this.invulnerable && var1 != DamageSource.OUT_OF_WORLD && !var1.method31146();
    }
 
    public boolean method3362() {
@@ -2239,7 +2239,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return this.entityUniqueID;
    }
 
-   public String method3376() {
+   public String getCachedUniqueIdString() {
       return this.cachedUniqueIdString;
    }
 
@@ -2262,11 +2262,11 @@ public abstract class Entity implements INameable, ICommandSource {
    @Override
    public ITextComponent getDisplayName() {
       return ScorePlayerTeam.method28577(this.getTeam(), this.getName())
-         .modifyStyle(var1 -> var1.setHoverEvent(this.method3388()).setInsertion(this.method3376()));
+         .modifyStyle(var1 -> var1.setHoverEvent(this.method3388()).setInsertion(this.getCachedUniqueIdString()));
    }
 
    public void method3379(ITextComponent var1) {
-      this.dataManager.method35446(CUSTOM_NAME, Optional.<ITextComponent>ofNullable(var1));
+      this.dataManager.set(CUSTOM_NAME, Optional.<ITextComponent>ofNullable(var1));
    }
 
    @Nullable
@@ -2281,7 +2281,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public void method3382(boolean var1) {
-      this.dataManager.method35446(CUSTOM_NAME_VISIBLE, var1);
+      this.dataManager.set(CUSTOM_NAME_VISIBLE, var1);
    }
 
    public boolean method3383() {

@@ -85,7 +85,7 @@ public enum Class1889 implements Class1884 {
                      case 2:
                         return (float)var5.hurtTime;
                      case 3:
-                        return (float)var5.method3021();
+                        return (float)var5.getIdleTime();
                      case 4:
                         return var5.method3075();
                      case 5:
@@ -99,7 +99,7 @@ public enum Class1889 implements Class1884 {
                      case 9:
                         return (float)var5.getPosZ();
                      case 10:
-                        return (float)var5.method3015();
+                        return (float)var5.getRevengeTiemr();
                      case 11:
                         return var5.getSwingProgress(var4.field25094);
                   }

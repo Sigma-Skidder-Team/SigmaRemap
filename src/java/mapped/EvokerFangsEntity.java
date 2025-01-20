@@ -129,7 +129,7 @@ public class EvokerFangsEntity extends Entity {
          this.field5210 = true;
          if (!this.isSilent()) {
             this.world
-               .method6745(
+               .playSound(
                   this.getPosX(),
                   this.getPosY(),
                   this.getPosZ(),

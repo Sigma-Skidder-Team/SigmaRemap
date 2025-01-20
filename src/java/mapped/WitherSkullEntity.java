@@ -116,7 +116,7 @@ public class WitherSkullEntity extends Class901 {
    }
 
    public void method3533(boolean var1) {
-      this.dataManager.method35446(field5145, var1);
+      this.dataManager.set(field5145, var1);
    }
 
    @Override

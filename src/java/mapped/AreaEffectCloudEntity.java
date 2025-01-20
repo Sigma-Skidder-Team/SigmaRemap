@@ -66,7 +66,7 @@ public class AreaEffectCloudEntity extends Entity {
 
    public void method4097(float var1) {
       if (!this.world.isRemote) {
-         this.getDataManager().method35446(field5498, var1);
+         this.getDataManager().set(field5498, var1);
       }
    }
 
@@ -92,9 +92,9 @@ public class AreaEffectCloudEntity extends Entity {
 
    private void method4100() {
       if (this.field5502 == Class8137.field34976 && this.field5503.isEmpty()) {
-         this.getDataManager().method35446(field5499, 0);
+         this.getDataManager().set(field5499, 0);
       } else {
-         this.getDataManager().method35446(field5499, Class9741.method38184(Class9741.method38177(this.field5502, this.field5503)));
+         this.getDataManager().set(field5499, PotionUtils.getPotionColorFromEffectList(PotionUtils.method38177(this.field5502, this.field5503)));
       }
    }
 
@@ -111,7 +111,7 @@ public class AreaEffectCloudEntity extends Entity {
 
    public void method4103(int var1) {
       this.field5508 = true;
-      this.getDataManager().method35446(field5499, var1);
+      this.getDataManager().set(field5499, var1);
    }
 
    public IParticleData method4104() {
@@ -119,11 +119,11 @@ public class AreaEffectCloudEntity extends Entity {
    }
 
    public void method4105(IParticleData var1) {
-      this.getDataManager().method35446(field5501, var1);
+      this.getDataManager().set(field5501, var1);
    }
 
    public void method4106(boolean var1) {
-      this.getDataManager().method35446(field5500, var1);
+      this.getDataManager().set(field5500, var1);
    }
 
    public boolean method4107() {
@@ -352,7 +352,7 @@ public class AreaEffectCloudEntity extends Entity {
       }
 
       if (var1.contains("Potion", 8)) {
-         this.method4099(Class9741.method38186(var1));
+         this.method4099(PotionUtils.method38186(var1));
       }
 
       if (var1.contains("Effects", 9)) {

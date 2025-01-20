@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.EffectUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -23,7 +24,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.optifine.Config;
 
-public class Class9741 {
+public class PotionUtils {
    private static final IFormattableTextComponent field45485 = new TranslationTextComponent("effect.none").mergeStyle(TextFormatting.GRAY);
 
    public static List<EffectInstance> method38176(ItemStack var0) {
@@ -73,15 +74,15 @@ public class Class9741 {
       if (var3 != null && var3.contains("CustomPotionColor", 99)) {
          return var3.getInt("CustomPotionColor");
       } else {
-         return method38185(var0) != Class8137.field34976 ? method38184(method38176(var0)) : 16253176;
+         return method38185(var0) != Class8137.field34976 ? getPotionColorFromEffectList(method38176(var0)) : 16253176;
       }
    }
 
    public static int method38183(Class8812 var0) {
-      return var0 != Class8137.field34976 ? method38184(var0.method31816()) : 16253176;
+      return var0 != Class8137.field34976 ? getPotionColorFromEffectList(var0.method31816()) : 16253176;
    }
 
-   public static int method38184(Collection<EffectInstance> var0) {
+   public static int getPotionColorFromEffectList(Collection<EffectInstance> var0) {
       int var3 = 3694022;
       if (!var0.isEmpty()) {
          float var4 = 0.0F;
@@ -173,7 +174,7 @@ public class Class9741 {
             }
 
             if (var8.getDuration() > 20) {
-               var9 = new TranslationTextComponent("potion.withDuration", var9, Class7182.method22535(var8, var2));
+               var9 = new TranslationTextComponent("potion.withDuration", var9, EffectUtils.method22535(var8, var2));
             }
 
             var1.add(var9.mergeStyle(var10.getEffectType().method8849()));

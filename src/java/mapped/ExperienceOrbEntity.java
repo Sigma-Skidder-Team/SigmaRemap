@@ -59,7 +59,7 @@ public class ExperienceOrbEntity extends Entity {
       this.prevPosX = this.getPosX();
       this.prevPosY = this.getPosY();
       this.prevPosZ = this.getPosZ();
-      if (!this.areEyesInFluid(FluidTags.field40469)) {
+      if (!this.areEyesInFluid(FluidTags.WATER)) {
          if (!this.method3247()) {
             this.setMotion(this.getMotion().add(0.0, -0.03, 0.0));
          }

@@ -4,9 +4,9 @@ import net.minecraft.entity.LivingEntity;
 
 import java.util.function.Predicate;
 
-public class Class8522 {
+public class EntityPredicate {
    private static String[] field38239;
-   public static final Class8522 field38240 = new Class8522();
+   public static final EntityPredicate field38240 = new EntityPredicate();
    private double field38241 = -1.0;
    private boolean field38242;
    private boolean field38243;
@@ -15,37 +15,37 @@ public class Class8522 {
    private boolean field38246 = true;
    private Predicate<LivingEntity> field38247;
 
-   public Class8522 method30203(double var1) {
+   public EntityPredicate method30203(double var1) {
       this.field38241 = var1;
       return this;
    }
 
-   public Class8522 method30204() {
+   public EntityPredicate method30204() {
       this.field38242 = true;
       return this;
    }
 
-   public Class8522 method30205() {
+   public EntityPredicate method30205() {
       this.field38243 = true;
       return this;
    }
 
-   public Class8522 method30206() {
+   public EntityPredicate method30206() {
       this.field38244 = true;
       return this;
    }
 
-   public Class8522 method30207() {
+   public EntityPredicate method30207() {
       this.field38245 = true;
       return this;
    }
 
-   public Class8522 method30208() {
+   public EntityPredicate method30208() {
       this.field38246 = false;
       return this;
    }
 
-   public Class8522 method30209(Predicate<LivingEntity> var1) {
+   public EntityPredicate method30209(Predicate<LivingEntity> var1) {
       this.field38247 = var1;
       return this;
    }

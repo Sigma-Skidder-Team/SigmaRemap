@@ -66,7 +66,7 @@ public class Class4591 extends Class4588 {
          }
 
          this.field22037
-            .method6745(this.field22041, this.field22042, this.field22043, var19, SoundCategory.field14736, 20.0F, 0.95F + this.field22054.nextFloat() * 0.1F, true);
+            .playSound(this.field22041, this.field22042, this.field22043, var19, SoundCategory.field14736, 20.0F, 0.95F + this.field22054.nextFloat() * 0.1F, true);
       }
 
       if (this.field22073 % 2 == 0 && this.field22075 != null && this.field22073 / 2 < this.field22075.size()) {
@@ -149,7 +149,7 @@ public class Class4591 extends Class4588 {
             boolean var16 = this.method14527();
             SoundEvent var18 = var16 ? SoundEvents.field26580 : SoundEvents.field26579;
             this.field22037
-               .method6745(
+               .playSound(
                   this.field22041, this.field22042, this.field22043, var18, SoundCategory.field14736, 20.0F, 0.9F + this.field22054.nextFloat() * 0.15F, true
                );
          }

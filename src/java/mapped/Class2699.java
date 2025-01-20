@@ -87,7 +87,7 @@ public abstract class Class2699 extends Class2595 {
       this.field17159 = null;
    }
 
-   public boolean method10915(LivingEntity var1, Class8522 var2) {
+   public boolean method10915(LivingEntity var1, EntityPredicate var2) {
       if (var1 != null) {
          if (var2.canTarget(this.field17153, var1)) {
             if (this.field17153.method4287(var1.getPosition())) {

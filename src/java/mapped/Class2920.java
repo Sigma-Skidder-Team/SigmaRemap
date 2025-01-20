@@ -40,10 +40,10 @@ public class Class2920 extends Class2898<Class4703> {
             && !var5.field22309.contains(var14)
             && (
                !var5.field22316
-                  || var1.getFluidState(var13.west()).method23486(FluidTags.field40469)
-                  || var1.getFluidState(var13.east()).method23486(FluidTags.field40469)
-                  || var1.getFluidState(var13.north()).method23486(FluidTags.field40469)
-                  || var1.getFluidState(var13.south()).method23486(FluidTags.field40469)
+                  || var1.getFluidState(var13.west()).method23486(FluidTags.WATER)
+                  || var1.getFluidState(var13.east()).method23486(FluidTags.WATER)
+                  || var1.getFluidState(var13.north()).method23486(FluidTags.WATER)
+                  || var1.getFluidState(var13.south()).method23486(FluidTags.WATER)
             )) {
             var5.field22307.method19061(var1, var11, var8, var3);
             var10++;

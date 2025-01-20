@@ -28,7 +28,7 @@ public class Class9062 implements ArgumentType<String> {
    public static ScorePlayerTeam method33747(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       String var4 = (String)var0.getArgument(var1, String.class);
       ServerScoreboard var5 = ((CommandSource)var0.getSource()).getServer().method1409();
-      ScorePlayerTeam var6 = var5.method20990(var4);
+      ScorePlayerTeam var6 = var5.getTeam(var4);
       if (var6 != null) {
          return var6;
       } else {

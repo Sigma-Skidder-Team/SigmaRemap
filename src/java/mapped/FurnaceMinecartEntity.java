@@ -152,7 +152,7 @@ public class FurnaceMinecartEntity extends AbstractMinecartEntity {
    }
 
    public void method4076(boolean var1) {
-      this.dataManager.method35446(field5481, var1);
+      this.dataManager.set(field5481, var1);
    }
 
    @Override

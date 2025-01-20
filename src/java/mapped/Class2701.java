@@ -27,9 +27,9 @@ public class Class2701 extends Class2699 {
             return false;
          } else {
             WanderingTraderEntity var4 = (WanderingTraderEntity)var3;
-            this.field17167 = var4.method3014();
-            int var5 = var4.method3015();
-            return var5 != this.field17168 && this.method10915(this.field17167, Class8522.field38240);
+            this.field17167 = var4.getRevengeTarget();
+            int var5 = var4.getRevengeTiemr();
+            return var5 != this.field17168 && this.method10915(this.field17167, EntityPredicate.field38240);
          }
       } else {
          return false;
@@ -41,7 +41,7 @@ public class Class2701 extends Class2699 {
       this.field17153.method4233(this.field17167);
       Entity var3 = this.field17166.method4297();
       if (var3 instanceof WanderingTraderEntity) {
-         this.field17168 = ((WanderingTraderEntity)var3).method3015();
+         this.field17168 = ((WanderingTraderEntity)var3).getRevengeTiemr();
       }
 
       super.method10804();

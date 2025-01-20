@@ -18,7 +18,7 @@ public class Class2694 extends Class2692 {
 
    @Override
    public boolean method10803() {
-      return this.field17133.method3014() == null
+      return this.field17133.getRevengeTarget() == null
          && this.field17133.getRNG().nextFloat() < 0.02F
          && !this.field17133.isSleeping()
          && this.field17133.method4232() == null

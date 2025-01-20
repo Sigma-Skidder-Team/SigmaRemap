@@ -491,7 +491,7 @@ public class Class6762 extends Class6764 {
                      return PathNodeType.DANGER_FIRE;
                   }
 
-                  if (var0.getFluidState(var1).method23486(FluidTags.field40469)) {
+                  if (var0.getFluidState(var1).method23486(FluidTags.WATER)) {
                      return PathNodeType.WATER_BORDER;
                   }
                }
@@ -520,7 +520,7 @@ public class Class6762 extends Class6764 {
          return PathNodeType.COCOA;
       } else {
          FluidState var7 = var0.getFluidState(var1);
-         if (var7.method23486(FluidTags.field40469)) {
+         if (var7.method23486(FluidTags.WATER)) {
             return PathNodeType.WATER;
          } else if (var7.method23486(FluidTags.field40470)) {
             return PathNodeType.LAVA;

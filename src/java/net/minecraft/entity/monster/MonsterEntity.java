@@ -99,7 +99,7 @@ public abstract class MonsterEntity extends CreatureEntity implements IMob {
    }
 
    public static MutableAttribute method4343() {
-      return MobEntity.method4220().method21848(Attributes.ATTACK_DAMAGE);
+      return MobEntity.method4220().createMutableAttribute(Attributes.ATTACK_DAMAGE);
    }
 
    @Override
@@ -108,7 +108,7 @@ public abstract class MonsterEntity extends CreatureEntity implements IMob {
    }
 
    @Override
-   public boolean method3010() {
+   public boolean func_230282_cS_() {
       return true;
    }
 

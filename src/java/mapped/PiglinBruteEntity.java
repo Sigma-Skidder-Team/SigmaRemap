@@ -73,12 +73,12 @@ public class PiglinBruteEntity extends Class1035 {
 
    @Override
    public Class6971<PiglinBruteEntity> getBrainCodec() {
-      return Brain.<PiglinBruteEntity>method21400(field5753, field5752);
+      return Brain.<PiglinBruteEntity>createCodec(field5753, field5752);
    }
 
    @Override
    public Brain<?> createBrain(Dynamic<?> var1) {
-      return Class9743.method38192(this, this.getBrainCodec().method21513(var1));
+      return Class9743.method38192(this, this.getBrainCodec().deserialize(var1));
    }
 
    @Override

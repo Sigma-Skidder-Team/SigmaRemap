@@ -81,7 +81,7 @@ public class Class3371 extends Class3241 implements IWaterLoggable {
    @Override
    public BlockState getStateForPlacement(BlockItemUseContext var1) {
       FluidState var4 = var1.getWorld().getFluidState(var1.getPos());
-      return this.getDefaultState().with(field18960, Boolean.valueOf(var4.method23486(FluidTags.field40469) && var4.method23477() == 8));
+      return this.getDefaultState().with(field18960, Boolean.valueOf(var4.method23486(FluidTags.WATER) && var4.method23477() == 8));
    }
 
    @Override

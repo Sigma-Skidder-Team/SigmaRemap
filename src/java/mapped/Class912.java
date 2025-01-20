@@ -19,8 +19,8 @@ public class Class912 extends CommandBlockLogic {
 
    @Override
    public void method3568() {
-      this.field5201.getDataManager().method35446(CommandBlockMinecartEntity.method3615(), this.method3563());
-      this.field5201.getDataManager().method35446(CommandBlockMinecartEntity.method3616(), this.method3559());
+      this.field5201.getDataManager().set(CommandBlockMinecartEntity.method3615(), this.method3563());
+      this.field5201.getDataManager().set(CommandBlockMinecartEntity.method3616(), this.method3559());
    }
 
    @Override

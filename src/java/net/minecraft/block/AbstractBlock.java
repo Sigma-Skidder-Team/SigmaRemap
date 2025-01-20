@@ -85,7 +85,7 @@ public abstract class AbstractBlock {
          case 1:
             return !var1.method23456(var2, var3);
          case 2:
-            return var2.getFluidState(var3).method23486(FluidTags.field40469);
+            return var2.getFluidState(var3).method23486(FluidTags.WATER);
          case 3:
             return !var1.method23456(var2, var3);
          default:

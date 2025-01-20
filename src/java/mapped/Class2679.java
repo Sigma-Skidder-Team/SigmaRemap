@@ -20,7 +20,7 @@ public class Class2679 extends Class2595 {
 
    @Override
    public void method10805() {
-      int var3 = this.field17076.method3021();
+      int var3 = this.field17076.getIdleTime();
       if (var3 <= 100) {
          if (this.field17076.getRNG().nextInt(50) == 0 || !SquidEntity.method4842(this.field17076) || !this.field17076.method4841()) {
             float var4 = this.field17076.getRNG().nextFloat() * (float) (Math.PI * 2);

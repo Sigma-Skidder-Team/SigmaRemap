@@ -36,6 +36,7 @@ import net.minecraft.network.play.client.PlayerAbilities;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.EffectUtils;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.scoreboard.Team;
@@ -68,7 +69,7 @@ public abstract class PlayerEntity extends LivingEntity {
    public static final EntitySize STANDING_SIZE = EntitySize.method32101(0.6F, 1.8F);
    private static final Map<Pose, EntitySize> SIZE_BY_POSE = ImmutableMap.<Pose, EntitySize>builder()
       .put(Pose.STANDING, STANDING_SIZE)
-      .put(Pose.field13621, SLEEPING_SIZE)
+      .put(Pose.SLEEPING, SLEEPING_SIZE)
       .put(Pose.field13620, EntitySize.method32101(0.6F, 0.6F))
       .put(Pose.field13622, EntitySize.method32101(0.6F, 0.6F))
       .put(Pose.field13623, EntitySize.method32101(0.6F, 0.6F))
@@ -139,11 +140,11 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public static MutableAttribute method2849() {
-      return LivingEntity.method2997()
+      return LivingEntity.registerAttributes()
          .method21849(Attributes.ATTACK_DAMAGE, 1.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.1F)
-         .method21848(Attributes.ATTACK_SPEED)
-         .method21848(Attributes.LUCK);
+         .createMutableAttribute(Attributes.ATTACK_SPEED)
+         .createMutableAttribute(Attributes.LUCK);
    }
 
    @Override
@@ -244,13 +245,13 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public boolean method2854() {
-      this.eyesInWaterPlayer = this.areEyesInFluid(FluidTags.field40469);
+      this.eyesInWaterPlayer = this.areEyesInFluid(FluidTags.WATER);
       return this.eyesInWaterPlayer;
    }
 
    private void method2855() {
       ItemStack var3 = this.getItemStackFromSlot(EquipmentSlotType.HEAD);
-      if (var3.getItem() == Items.field37792 && !this.areEyesInFluid(FluidTags.field40469)) {
+      if (var3.getItem() == Items.field37792 && !this.areEyesInFluid(FluidTags.WATER)) {
          this.addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, 200, 0, false, false, true));
       }
    }
@@ -321,7 +322,7 @@ public abstract class PlayerEntity extends LivingEntity {
                   var3 = Pose.field13622;
                }
             } else {
-               var3 = Pose.field13621;
+               var3 = Pose.SLEEPING;
             }
          } else {
             var3 = Pose.field13620;
@@ -540,12 +541,12 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public void method2875(int var1) {
-      this.dataManager.method35446(field4896, var1);
+      this.dataManager.set(field4896, var1);
    }
 
    public void method2876(int var1) {
       int var4 = this.method2874();
-      this.dataManager.method35446(field4896, var4 + var1);
+      this.dataManager.set(field4896, var4 + var1);
    }
 
    @Override
@@ -594,7 +595,7 @@ public abstract class PlayerEntity extends LivingEntity {
    @Override
    public SoundEvent getHurtSound(DamageSource var1) {
       if (var1 != DamageSource.field38994) {
-         if (var1 != DamageSource.field38999) {
+         if (var1 != DamageSource.DROWN) {
             return var1 != DamageSource.field39012 ? SoundEvents.field26961 : SoundEvents.field26964;
          } else {
             return SoundEvents.field26962;
@@ -678,8 +679,8 @@ public abstract class PlayerEntity extends LivingEntity {
          }
       }
 
-      if (Class7182.method22536(this)) {
-         var4 *= 1.0F + (float)(Class7182.method22537(this) + 1) * 0.2F;
+      if (EffectUtils.method22536(this)) {
+         var4 *= 1.0F + (float)(EffectUtils.method22537(this) + 1) * 0.2F;
       }
 
       if (this.isPotionActive(Effects.MINING_FATIGUE)) {
@@ -702,7 +703,7 @@ public abstract class PlayerEntity extends LivingEntity {
          var4 *= var7;
       }
 
-      if (this.areEyesInFluid(FluidTags.field40469) && !EnchantmentHelper.method26331(this)) {
+      if (this.areEyesInFluid(FluidTags.WATER) && !EnchantmentHelper.method26331(this)) {
          var4 /= 5.0F;
       }
 
@@ -718,66 +719,66 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
       this.setUniqueId(method2960(this.gameProfile));
-      ListNBT var4 = var1.getList("Inventory", 10);
+      ListNBT var4 = compound.getList("Inventory", 10);
       this.inventory.method4051(var4);
-      this.inventory.currentItem = var1.getInt("SelectedItemSlot");
-      this.sleepTimer = var1.getShort("SleepTimer");
-      this.experience = var1.getFloat("XpP");
-      this.experienceLevel = var1.getInt("XpLevel");
-      this.experienceTotal = var1.getInt("XpTotal");
-      this.xpSeed = var1.getInt("XpSeed");
+      this.inventory.currentItem = compound.getInt("SelectedItemSlot");
+      this.sleepTimer = compound.getShort("SleepTimer");
+      this.experience = compound.getFloat("XpP");
+      this.experienceLevel = compound.getInt("XpLevel");
+      this.experienceTotal = compound.getInt("XpTotal");
+      this.xpSeed = compound.getInt("XpSeed");
       if (this.xpSeed == 0) {
          this.xpSeed = this.rand.nextInt();
       }
 
-      this.method2875(var1.getInt("Score"));
-      this.foodStats.method37572(var1);
-      this.abilities.read(var1);
+      this.method2875(compound.getInt("Score"));
+      this.foodStats.method37572(compound);
+      this.abilities.read(compound);
       this.getAttribute(Attributes.MOVEMENT_SPEED).method38661((double)this.abilities.getWalkSpeed());
-      if (var1.contains("EnderItems", 9)) {
-         this.enterChestInventory.method3682(var1.getList("EnderItems", 10));
+      if (compound.contains("EnderItems", 9)) {
+         this.enterChestInventory.method3682(compound.getList("EnderItems", 10));
       }
 
-      if (var1.contains("ShoulderEntityLeft", 10)) {
-         this.method2970(var1.getCompound("ShoulderEntityLeft"));
+      if (compound.contains("ShoulderEntityLeft", 10)) {
+         this.method2970(compound.getCompound("ShoulderEntityLeft"));
       }
 
-      if (var1.contains("ShoulderEntityRight", 10)) {
-         this.method2972(var1.getCompound("ShoulderEntityRight"));
+      if (compound.contains("ShoulderEntityRight", 10)) {
+         this.method2972(compound.getCompound("ShoulderEntityRight"));
       }
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("DataVersion", SharedConstants.getVersion().getWorldVersion());
-      var1.put("Inventory", this.inventory.method4050(new ListNBT()));
-      var1.putInt("SelectedItemSlot", this.inventory.currentItem);
-      var1.putShort("SleepTimer", (short)this.sleepTimer);
-      var1.putFloat("XpP", this.experience);
-      var1.putInt("XpLevel", this.experienceLevel);
-      var1.putInt("XpTotal", this.experienceTotal);
-      var1.putInt("XpSeed", this.xpSeed);
-      var1.putInt("Score", this.method2874());
-      this.foodStats.method37573(var1);
-      this.abilities.method20712(var1);
-      var1.put("EnderItems", this.enterChestInventory.method3683());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("DataVersion", SharedConstants.getVersion().getWorldVersion());
+      compound.put("Inventory", this.inventory.method4050(new ListNBT()));
+      compound.putInt("SelectedItemSlot", this.inventory.currentItem);
+      compound.putShort("SleepTimer", (short)this.sleepTimer);
+      compound.putFloat("XpP", this.experience);
+      compound.putInt("XpLevel", this.experienceLevel);
+      compound.putInt("XpTotal", this.experienceTotal);
+      compound.putInt("XpSeed", this.xpSeed);
+      compound.putInt("Score", this.method2874());
+      this.foodStats.method37573(compound);
+      this.abilities.method20712(compound);
+      compound.put("EnderItems", this.enterChestInventory.method3683());
       if (!this.method2969().isEmpty()) {
-         var1.put("ShoulderEntityLeft", this.method2969());
+         compound.put("ShoulderEntityLeft", this.method2969());
       }
 
       if (!this.method2971().isEmpty()) {
-         var1.put("ShoulderEntityRight", this.method2971());
+         compound.put("ShoulderEntityRight", this.method2971());
       }
    }
 
    @Override
    public boolean isInvulnerableTo(DamageSource var1) {
       if (!super.isInvulnerableTo(var1)) {
-         if (var1 != DamageSource.field38999) {
+         if (var1 != DamageSource.DROWN) {
             if (var1 != DamageSource.field39002) {
                return !var1.method31141() ? false : !this.world.getGameRules().getBoolean(GameRules.field24251);
             } else {
@@ -897,8 +898,8 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public boolean method2889() {
-      return !this.abilities.isFlying && super.method2889();
+   public boolean func_230296_cM_() {
+      return !this.abilities.isFlying && super.func_230296_cM_();
    }
 
    public void method2764(Class954 var1) {
@@ -984,7 +985,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public boolean method2897() {
+   public boolean func_241208_cS_() {
       return !this.abilities.isFlying;
    }
 
@@ -1450,7 +1451,7 @@ public abstract class PlayerEntity extends LivingEntity {
    public void method2919(double var1, double var3, double var5) {
       if (!this.isPassenger()) {
          if (!this.isSwimming()) {
-            if (!this.areEyesInFluid(FluidTags.field40469)) {
+            if (!this.areEyesInFluid(FluidTags.WATER)) {
                if (!this.isInWater()) {
                   if (!this.isOnLadder()) {
                      if (!this.onGround) {
@@ -1551,7 +1552,7 @@ public abstract class PlayerEntity extends LivingEntity {
    public boolean tryToStartFallFlying() {
       if (!this.onGround && !this.isElytraFlying() && !this.isInWater() && !this.isPotionActive(Effects.LEVITATION)) {
          ItemStack var3 = this.getItemStackFromSlot(EquipmentSlotType.CHEST);
-         if (var3.getItem() == Items.field38120 && Class3256.method11698(var3)) {
+         if (var3.getItem() == Items.ELYTRA && Class3256.method11698(var3)) {
             this.method2923();
             return true;
          }
@@ -1688,7 +1689,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public int getExperiencePoints(PlayerEntity var1) {
+   public int getExperiencePoints(PlayerEntity player) {
       if (!this.world.getGameRules().getBoolean(GameRules.field24225) && !this.isSpectator()) {
          int var4 = this.experienceLevel * 7;
          return var4 <= 100 ? var4 : 100;
@@ -1827,7 +1828,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public Scoreboard method2953() {
-      return this.world.method6805();
+      return this.world.getScoreboard();
    }
 
    @Override
@@ -1870,7 +1871,7 @@ public abstract class PlayerEntity extends LivingEntity {
          var1 = 0.0F;
       }
 
-      this.getDataManager().method35446(field4895, var1);
+      this.getDataManager().set(field4895, var1);
    }
 
    @Override
@@ -1972,7 +1973,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public void method2968(HandSide var1) {
-      this.dataManager.method35446(field4898, (byte)(var1 != HandSide.LEFT ? 1 : 0));
+      this.dataManager.set(field4898, (byte)(var1 != HandSide.LEFT ? 1 : 0));
    }
 
    public CompoundNBT method2969() {
@@ -1980,7 +1981,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public void method2970(CompoundNBT var1) {
-      this.dataManager.method35446(field4899, var1);
+      this.dataManager.set(field4899, var1);
    }
 
    public CompoundNBT method2971() {
@@ -1988,7 +1989,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public void method2972(CompoundNBT var1) {
-      this.dataManager.method35446(field4900, var1);
+      this.dataManager.set(field4900, var1);
    }
 
    public float method2973() {
@@ -2082,8 +2083,8 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public boolean method2985(BlockState var1) {
-      return this.abilities.isFlying || super.method2985(var1);
+   public boolean func_230295_b_(BlockState var1) {
+      return this.abilities.isFlying || super.func_230295_b_(var1);
    }
 
    @Override

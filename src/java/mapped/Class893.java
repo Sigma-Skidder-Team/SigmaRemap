@@ -81,7 +81,7 @@ public abstract class Class893 extends ProjectileEntity {
             float var16 = 0.25F;
             this.world
                .addParticle(
-                  ParticleTypes.field34052,
+                  ParticleTypes.BUBBLE,
                   var6 - var17.x * 0.25,
                   var8 - var17.y * 0.25,
                   var10 - var17.z * 0.25,

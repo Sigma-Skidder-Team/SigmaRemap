@@ -98,43 +98,43 @@ public class BeeEntity extends AnimalEntity implements IAngerable, Class1016 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       if (this.method4432()) {
-         var1.put("HivePos", NBTUtil.writeBlockPos(this.method4433()));
+         compound.put("HivePos", NBTUtil.writeBlockPos(this.method4433()));
       }
 
       if (this.method4422()) {
-         var1.put("FlowerPos", NBTUtil.writeBlockPos(this.method4421()));
+         compound.put("FlowerPos", NBTUtil.writeBlockPos(this.method4421()));
       }
 
-      var1.putBoolean("HasNectar", this.method4438());
-      var1.putBoolean("HasStung", this.method4440());
-      var1.putInt("TicksSincePollination", this.field5691);
-      var1.putInt("CannotEnterHiveTicks", this.field5692);
-      var1.putInt("CropsGrownSincePollination", this.field5693);
-      this.method4364(var1);
+      compound.putBoolean("HasNectar", this.method4438());
+      compound.putBoolean("HasStung", this.method4440());
+      compound.putInt("TicksSincePollination", this.field5691);
+      compound.putInt("CannotEnterHiveTicks", this.field5692);
+      compound.putInt("CropsGrownSincePollination", this.field5693);
+      this.method4364(compound);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT compound) {
       this.field5697 = null;
-      if (var1.contains("HivePos")) {
-         this.field5697 = NBTUtil.readBlockPos(var1.getCompound("HivePos"));
+      if (compound.contains("HivePos")) {
+         this.field5697 = NBTUtil.readBlockPos(compound.getCompound("HivePos"));
       }
 
       this.field5696 = null;
-      if (var1.contains("FlowerPos")) {
-         this.field5696 = NBTUtil.readBlockPos(var1.getCompound("FlowerPos"));
+      if (compound.contains("FlowerPos")) {
+         this.field5696 = NBTUtil.readBlockPos(compound.getCompound("FlowerPos"));
       }
 
-      super.readAdditional(var1);
-      this.method4439(var1.getBoolean("HasNectar"));
-      this.method4441(var1.getBoolean("HasStung"));
-      this.field5691 = var1.getInt("TicksSincePollination");
-      this.field5692 = var1.getInt("CannotEnterHiveTicks");
-      this.field5693 = var1.getInt("CropsGrownSincePollination");
-      this.method4365((ServerWorld)this.world, var1);
+      super.readAdditional(compound);
+      this.method4439(compound.getBoolean("HasNectar"));
+      this.method4441(compound.getBoolean("HasStung"));
+      this.field5691 = compound.getInt("TicksSincePollination");
+      this.field5692 = compound.getInt("CannotEnterHiveTicks");
+      this.field5693 = compound.getInt("CropsGrownSincePollination");
+      this.method4365((ServerWorld)this.world, compound);
    }
 
    @Override
@@ -279,7 +279,7 @@ public class BeeEntity extends AnimalEntity implements IAngerable, Class1016 {
       }
 
       if (this.field5701 > 20) {
-         this.attackEntityFrom(DamageSource.field38999, 1.0F);
+         this.attackEntityFrom(DamageSource.DROWN, 1.0F);
       }
 
       if (var3) {
@@ -318,7 +318,7 @@ public class BeeEntity extends AnimalEntity implements IAngerable, Class1016 {
 
    @Override
    public void method4347(int var1) {
-      this.dataManager.method35446(field5685, var1);
+      this.dataManager.set(field5685, var1);
    }
 
    @Override
@@ -435,9 +435,9 @@ public class BeeEntity extends AnimalEntity implements IAngerable, Class1016 {
 
    private void method4445(int var1, boolean var2) {
       if (!var2) {
-         this.dataManager.method35446(field5684, (byte)(this.dataManager.<Byte>method35445(field5684) & ~var1));
+         this.dataManager.set(field5684, (byte)(this.dataManager.<Byte>method35445(field5684) & ~var1));
       } else {
-         this.dataManager.method35446(field5684, (byte)(this.dataManager.<Byte>method35445(field5684) | var1));
+         this.dataManager.set(field5684, (byte)(this.dataManager.<Byte>method35445(field5684) | var1));
       }
    }
 
@@ -511,7 +511,7 @@ public class BeeEntity extends AnimalEntity implements IAngerable, Class1016 {
    }
 
    @Override
-   public void updateFallState(double var1, boolean var3, BlockState var4, BlockPos var5) {
+   public void updateFallState(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
    }
 
    @Override

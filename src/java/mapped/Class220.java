@@ -53,7 +53,7 @@ public class Class220<T extends LivingEntity, M extends Class2827<T>> extends Cl
    }
 
    public boolean method827(ItemStack var1, T var2) {
-      return var1.getItem() == Items.field38120;
+      return var1.getItem() == Items.ELYTRA;
    }
 
    public ResourceLocation method828(ItemStack var1, T var2) {

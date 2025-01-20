@@ -108,32 +108,32 @@ public class ShulkerEntity extends Class1056 implements IMob {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.dataManager.method35446(field5841, Direction.byIndex(var1.getByte("AttachFace")));
-      this.dataManager.method35446(field5843, var1.getByte("Peek"));
-      this.dataManager.method35446(field5844, var1.getByte("Color"));
-      if (!var1.contains("APX")) {
-         this.dataManager.method35446(field5842, Optional.<BlockPos>empty());
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.dataManager.set(field5841, Direction.byIndex(compound.getByte("AttachFace")));
+      this.dataManager.set(field5843, compound.getByte("Peek"));
+      this.dataManager.set(field5844, compound.getByte("Color"));
+      if (!compound.contains("APX")) {
+         this.dataManager.set(field5842, Optional.<BlockPos>empty());
       } else {
-         int var4 = var1.getInt("APX");
-         int var5 = var1.getInt("APY");
-         int var6 = var1.getInt("APZ");
-         this.dataManager.method35446(field5842, Optional.<BlockPos>of(new BlockPos(var4, var5, var6)));
+         int var4 = compound.getInt("APX");
+         int var5 = compound.getInt("APY");
+         int var6 = compound.getInt("APZ");
+         this.dataManager.set(field5842, Optional.<BlockPos>of(new BlockPos(var4, var5, var6)));
       }
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putByte("AttachFace", (byte)this.dataManager.<Direction>method35445(field5841).getIndex());
-      var1.putByte("Peek", this.dataManager.<Byte>method35445(field5843));
-      var1.putByte("Color", this.dataManager.<Byte>method35445(field5844));
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putByte("AttachFace", (byte)this.dataManager.<Direction>method35445(field5841).getIndex());
+      compound.putByte("Peek", this.dataManager.<Byte>method35445(field5843));
+      compound.putByte("Color", this.dataManager.<Byte>method35445(field5844));
       BlockPos var4 = this.method4849();
       if (var4 != null) {
-         var1.putInt("APX", var4.getX());
-         var1.putInt("APY", var4.getY());
-         var1.putInt("APZ", var4.getZ());
+         compound.putInt("APX", var4.getX());
+         compound.putInt("APY", var4.getY());
+         compound.putInt("APZ", var4.getZ());
       }
    }
 
@@ -143,7 +143,7 @@ public class ShulkerEntity extends Class1056 implements IMob {
       BlockPos var3 = this.dataManager.<Optional<BlockPos>>method35445(field5842).orElse((BlockPos)null);
       if (var3 == null && !this.world.isRemote) {
          var3 = this.getPosition();
-         this.dataManager.method35446(field5842, Optional.<BlockPos>of(var3));
+         this.dataManager.set(field5842, Optional.<BlockPos>of(var3));
       }
 
       if (!this.isPassenger()) {
@@ -159,7 +159,7 @@ public class ShulkerEntity extends Class1056 implements IMob {
                         this.method4846();
                      } else {
                         var3 = var3.offset(var5);
-                        this.dataManager.method35446(field5842, Optional.<BlockPos>of(var3));
+                        this.dataManager.set(field5842, Optional.<BlockPos>of(var3));
                      }
                   }
                } else {
@@ -168,7 +168,7 @@ public class ShulkerEntity extends Class1056 implements IMob {
                      this.method4846();
                   } else {
                      var3 = var3.offset(var19);
-                     this.dataManager.method35446(field5842, Optional.<BlockPos>of(var3));
+                     this.dataManager.set(field5842, Optional.<BlockPos>of(var3));
                   }
                }
             }
@@ -179,7 +179,7 @@ public class ShulkerEntity extends Class1056 implements IMob {
                if (var6 == null) {
                   this.method4846();
                } else {
-                  this.dataManager.method35446(field5841, var6);
+                  this.dataManager.set(field5841, var6);
                }
             }
          }
@@ -259,8 +259,8 @@ public class ShulkerEntity extends Class1056 implements IMob {
          Optional var9 = this.dataManager.method35445(field5842);
          Optional var10 = Optional.<BlockPos>of(new BlockPos(var1, var3, var5));
          if (!var10.equals(var9)) {
-            this.dataManager.method35446(field5842, var10);
-            this.dataManager.method35446(field5843, (byte)0);
+            this.dataManager.set(field5842, var10);
+            this.dataManager.set(field5843, (byte)0);
             this.isAirBorne = true;
          }
       }
@@ -294,10 +294,10 @@ public class ShulkerEntity extends Class1056 implements IMob {
                && this.world.hasNoCollisions(this, new AxisAlignedBB(var5))) {
                Direction var6 = this.method4844(var5);
                if (var6 != null) {
-                  this.dataManager.method35446(field5841, var6);
+                  this.dataManager.set(field5841, var6);
                   this.playSound(SoundEvents.field27054, 1.0F, 1.0F);
-                  this.dataManager.method35446(field5842, Optional.<BlockPos>of(var5));
-                  this.dataManager.method35446(field5843, (byte)0);
+                  this.dataManager.set(field5842, Optional.<BlockPos>of(var5));
+                  this.dataManager.set(field5843, (byte)0);
                   this.method4233((LivingEntity)null);
                   return true;
                }
@@ -382,7 +382,7 @@ public class ShulkerEntity extends Class1056 implements IMob {
    }
 
    public void method4850(BlockPos var1) {
-      this.dataManager.method35446(field5842, Optional.<BlockPos>ofNullable(var1));
+      this.dataManager.set(field5842, Optional.<BlockPos>ofNullable(var1));
    }
 
    public int method4851() {
@@ -400,7 +400,7 @@ public class ShulkerEntity extends Class1056 implements IMob {
          }
       }
 
-      this.dataManager.method35446(field5843, (byte)var1);
+      this.dataManager.set(field5843, (byte)var1);
    }
 
    public float method4853(float var1) {

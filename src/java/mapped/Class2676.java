@@ -8,13 +8,13 @@ import java.util.List;
 
 public class Class2676 extends Class2672 {
    private static String[] field17068;
-   private final Class8522 field17069;
+   private final EntityPredicate field17069;
    public final EvokerEntity field17070;
 
    public Class2676(EvokerEntity var1) {
       super(var1);
       this.field17070 = var1;
-      this.field17069 = new Class8522().method30203(16.0).method30204().method30209(var0 -> ((SheepEntity)var0).method4517() == Class112.field397);
+      this.field17069 = new EntityPredicate().method30203(16.0).method30204().method30209(var0 -> ((SheepEntity)var0).method4517() == Class112.field397);
    }
 
    @Override

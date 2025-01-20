@@ -22,7 +22,7 @@ public class Class3323 extends Item {
 
    @Override
    public ItemStack method11742() {
-      return Class9741.method38187(super.method11742(), Class8137.field34977);
+      return PotionUtils.method38187(super.method11742(), Class8137.field34977);
    }
 
    @Override
@@ -33,7 +33,7 @@ public class Class3323 extends Item {
       }
 
       if (!var2.isRemote) {
-         for (EffectInstance var8 : Class9741.method38176(var1)) {
+         for (EffectInstance var8 : PotionUtils.method38176(var1)) {
             if (!var8.getPotion().isInstant()) {
                var3.addPotionEffect(new EffectInstance(var8));
             } else {
@@ -79,17 +79,17 @@ public class Class3323 extends Item {
 
    @Override
    public String method11720(ItemStack var1) {
-      return Class9741.method38185(var1).method31815(this.getTranslationKey() + ".effect.");
+      return PotionUtils.method38185(var1).method31815(this.getTranslationKey() + ".effect.");
    }
 
    @Override
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
-      Class9741.method38189(var1, var3, 1.0F);
+      PotionUtils.method38189(var1, var3, 1.0F);
    }
 
    @Override
    public boolean method11732(ItemStack var1) {
-      return super.method11732(var1) || !Class9741.method38176(var1).isEmpty();
+      return super.method11732(var1) || !PotionUtils.method38176(var1).isEmpty();
    }
 
    @Override
@@ -97,7 +97,7 @@ public class Class3323 extends Item {
       if (this.method11738(var1)) {
          for (Class8812 var6 : Registry.field16076) {
             if (var6 != Class8137.field34976) {
-               var2.add(Class9741.method38187(new ItemStack(this), var6));
+               var2.add(PotionUtils.method38187(new ItemStack(this), var6));
             }
          }
       }

@@ -42,6 +42,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.*;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.EffectUtils;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
@@ -72,7 +73,7 @@ public abstract class LivingEntity extends Entity {
    private static final DataParameter<Boolean> HIDE_PARTICLES = EntityDataManager.<Boolean>createKey(LivingEntity.class, DataSerializers.field33398);
    private static final DataParameter<Integer> ARROW_COUNT_IN_ENTITY = EntityDataManager.<Integer>createKey(LivingEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Integer> BEE_STING_COUNT = EntityDataManager.<Integer>createKey(LivingEntity.class, DataSerializers.VARINT);
-   private static final DataParameter<Optional<BlockPos>> field4940 = EntityDataManager.<Optional<BlockPos>>createKey(LivingEntity.class, DataSerializers.field33402);
+   private static final DataParameter<Optional<BlockPos>> BED_POSITION = EntityDataManager.<Optional<BlockPos>>createKey(LivingEntity.class, DataSerializers.field33402);
    public static final EntitySize SLEEPING_SIZE = EntitySize.method32102(0.2F, 0.2F);
    private final AttributeModifierManager attributes;
    private final CombatTracker combatTracker = new CombatTracker(this);
@@ -165,16 +166,16 @@ public abstract class LivingEntity extends Entity {
    }
 
    public Class6971<?> getBrainCodec() {
-      return Brain.method21400(ImmutableList.of(), ImmutableList.of());
+      return Brain.createCodec(ImmutableList.of(), ImmutableList.of());
    }
 
    public Brain<?> createBrain(Dynamic<?> var1) {
-      return this.getBrainCodec().method21513(var1);
+      return this.getBrainCodec().deserialize(var1);
    }
 
    @Override
    public void onKillCommand() {
-      this.attackEntityFrom(DamageSource.field39004, Float.MAX_VALUE);
+      this.attackEntityFrom(DamageSource.OUT_OF_WORLD, Float.MAX_VALUE);
    }
 
    public boolean canAttack(EntityType<?> var1) {
@@ -189,48 +190,48 @@ public abstract class LivingEntity extends Entity {
       this.dataManager.register(ARROW_COUNT_IN_ENTITY, 0);
       this.dataManager.register(BEE_STING_COUNT, 0);
       this.dataManager.register(HEALTH, 1.0F);
-      this.dataManager.register(field4940, Optional.<BlockPos>empty());
+      this.dataManager.register(BED_POSITION, Optional.<BlockPos>empty());
    }
 
-   public static MutableAttribute method2997() {
-      return AttributeModifierMap.method38416()
-         .method21848(Attributes.MAX_HEALTH)
-         .method21848(Attributes.KNOCKBACK_RESISTANCE)
-         .method21848(Attributes.MOVEMENT_SPEED)
-         .method21848(Attributes.ARMOR)
-         .method21848(Attributes.ARMOR_TOUGHNESS);
+   public static MutableAttribute registerAttributes() {
+      return AttributeModifierMap.createMutableAttribute()
+         .createMutableAttribute(Attributes.MAX_HEALTH)
+         .createMutableAttribute(Attributes.KNOCKBACK_RESISTANCE)
+         .createMutableAttribute(Attributes.MOVEMENT_SPEED)
+         .createMutableAttribute(Attributes.ARMOR)
+         .createMutableAttribute(Attributes.ARMOR_TOUGHNESS);
    }
 
    @Override
-   public void updateFallState(double var1, boolean var3, BlockState var4, BlockPos var5) {
+   public void updateFallState(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
       if (!this.isInWater()) {
-         this.method3258();
+         this.func_233567_aH_();
       }
 
-      if (!this.world.isRemote && var3 && this.fallDistance > 0.0F) {
-         this.method3003();
-         this.method3004();
+      if (!this.world.isRemote && onGroundIn && this.fallDistance > 0.0F) {
+         this.func_233641_cN_();
+         this.func_233642_cO_();
       }
 
-      if (!this.world.isRemote && this.fallDistance > 3.0F && var3) {
+      if (!this.world.isRemote && this.fallDistance > 3.0F && onGroundIn) {
          float var8 = (float) MathHelper.ceil(this.fallDistance - 3.0F);
-         if (!var4.isAir()) {
+         if (!state.isAir()) {
             double var9 = Math.min((double)(0.2F + var8 / 15.0F), 2.5);
             int var11 = (int)(150.0 * var9);
             ((ServerWorld)this.world)
-               .spawnParticle(new BlockParticleData(ParticleTypes.field34051, var4), this.getPosX(), this.getPosY(), this.getPosZ(), var11, 0.0, 0.0, 0.0, 0.15F);
+               .spawnParticle(new BlockParticleData(ParticleTypes.BLOCK, state), this.getPosX(), this.getPosY(), this.getPosZ(), var11, 0.0, 0.0, 0.0, 0.15F);
          }
       }
 
-      super.updateFallState(var1, var3, var4, var5);
+      super.updateFallState(y, onGroundIn, state, pos);
    }
 
    public boolean canBreatheUnderwater() {
-      return this.getCreatureAttribute() == CreatureAttribute.field33506;
+      return this.getCreatureAttribute() == CreatureAttribute.UNDEAD;
    }
 
-   public float getSwimAnimation(float var1) {
-      return MathHelper.lerp(var1, this.lastSwimAnimation, this.swimAnimation);
+   public float getSwimAnimation(float partialTicks) {
+      return MathHelper.lerp(partialTicks, this.lastSwimAnimation, this.swimAnimation);
    }
 
    @Override
@@ -249,17 +250,17 @@ public abstract class LivingEntity extends Entity {
       boolean var3 = this instanceof PlayerEntity;
       if (this.isAlive()) {
          if (!this.isEntityInsideOpaqueBlock()) {
-            if (var3 && !this.world.getWorldBorder().method24525(this.getBoundingBox())) {
-               double var4 = this.world.getWorldBorder().method24526(this) + this.world.getWorldBorder().method24546();
+            if (var3 && !this.world.getWorldBorder().contains(this.getBoundingBox())) {
+               double var4 = this.world.getWorldBorder().getClosestDistance(this) + this.world.getWorldBorder().getDamageBuffer();
                if (var4 < 0.0) {
-                  double var6 = this.world.getWorldBorder().method24548();
+                  double var6 = this.world.getWorldBorder().getDamagePerBlock();
                   if (var6 > 0.0) {
-                     this.attackEntityFrom(DamageSource.field38997, (float)Math.max(1, MathHelper.floor(-var4 * var6)));
+                     this.attackEntityFrom(DamageSource.IN_WALL, (float)Math.max(1, MathHelper.floor(-var4 * var6)));
                   }
                }
             }
          } else {
-            this.attackEntityFrom(DamageSource.field38997, 1.0F);
+            this.attackEntityFrom(DamageSource.IN_WALL, 1.0F);
          }
       }
 
@@ -269,9 +270,9 @@ public abstract class LivingEntity extends Entity {
 
       boolean var8 = var3 && ((PlayerEntity)this).abilities.disableDamage;
       if (this.isAlive()) {
-         if (this.areEyesInFluid(FluidTags.field40469)
+         if (this.areEyesInFluid(FluidTags.WATER)
             && !this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosYEye(), this.getPosZ())).isIn(Blocks.field37013)) {
-            if (!this.canBreatheUnderwater() && !Class7182.method22538(this) && !var8) {
+            if (!this.canBreatheUnderwater() && !EffectUtils.canBreatheUnderwater(this) && !var8) {
                this.setAir(this.decreaseAirSupply(this.getAir()));
                if (this.getAir() == -20) {
                   this.setAir(0);
@@ -283,7 +284,7 @@ public abstract class LivingEntity extends Entity {
                      double var15 = this.rand.nextDouble() - this.rand.nextDouble();
                      this.world
                         .addParticle(
-                           ParticleTypes.field34052,
+                           ParticleTypes.BUBBLE,
                            this.getPosX() + var11,
                            this.getPosY() + var13,
                            this.getPosZ() + var15,
@@ -293,11 +294,11 @@ public abstract class LivingEntity extends Entity {
                         );
                   }
 
-                  this.attackEntityFrom(DamageSource.field38999, 2.0F);
+                  this.attackEntityFrom(DamageSource.DROWN, 2.0F);
                }
             }
 
-            if (!this.world.isRemote && this.isPassenger() && this.getRidingEntity() != null && !this.getRidingEntity().onDeathUpdate()) {
+            if (!this.world.isRemote && this.isPassenger() && this.getRidingEntity() != null && !this.getRidingEntity().onEntityDeathUpdate()) {
                this.stopRiding();
             }
          } else if (this.getAir() < this.getMaxAir()) {
@@ -326,7 +327,7 @@ public abstract class LivingEntity extends Entity {
       }
 
       if (this.getShouldBeDead()) {
-         this.method3008();
+         this.onDeathUpdate();
       }
 
       if (this.recentlyHit <= 0) {
@@ -370,7 +371,7 @@ public abstract class LivingEntity extends Entity {
          && this.getMotion().z != 0.0
          && !this.isSpectator()
          && EnchantmentHelper.method26333(this)
-         && this.method2889();
+         && this.func_230296_cM_();
    }
 
    public void addSprintingEffect() {
@@ -389,30 +390,30 @@ public abstract class LivingEntity extends Entity {
       this.playSound(SoundEvents.field27092, var4, 0.6F + this.rand.nextFloat() * 0.4F);
    }
 
-   public boolean method2889() {
-      return this.world.getBlockState(this.getPositionUnderneath()).isIn(BlockTags.field32802);
+   public boolean func_230296_cM_() {
+      return this.world.getBlockState(this.getPositionUnderneath()).isIn(BlockTags.SOUL_SPEED_BLOCKS);
    }
 
    @Override
    public float getSpeedFactor() {
-      return this.method2889() && EnchantmentHelper.method26322(Enchantments.SOUL_SPEED, this) > 0 ? 1.0F : super.getSpeedFactor();
+      return this.func_230296_cM_() && EnchantmentHelper.method26322(Enchantments.SOUL_SPEED, this) > 0 ? 1.0F : super.getSpeedFactor();
    }
 
-   public boolean method2985(BlockState var1) {
+   public boolean func_230295_b_(BlockState var1) {
       return !var1.isAir() || this.isElytraFlying();
    }
 
-   public void method3003() {
+   public void func_233641_cN_() {
       ModifiableAttributeInstance var3 = this.getAttribute(Attributes.MOVEMENT_SPEED);
       if (var3 != null && var3.getModifier(SOUL_SPEED_BOOT_ID) != null) {
          var3.method38671(SOUL_SPEED_BOOT_ID);
       }
    }
 
-   public void method3004() {
+   public void func_233642_cO_() {
       if (!this.getStateBelow().isAir()) {
          int var3 = EnchantmentHelper.method26322(Enchantments.SOUL_SPEED, this);
-         if (var3 > 0 && this.method2889()) {
+         if (var3 > 0 && this.func_230296_cM_()) {
             ModifiableAttributeInstance var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
             if (var4 == null) {
                return;
@@ -433,11 +434,11 @@ public abstract class LivingEntity extends Entity {
          FrostWalkerEnchantment.method18829(this, this.world, var1, var4);
       }
 
-      if (this.method2985(this.getStateBelow())) {
-         this.method3003();
+      if (this.func_230295_b_(this.getStateBelow())) {
+         this.func_233641_cN_();
       }
 
-      this.method3004();
+      this.func_233642_cO_();
    }
 
    public boolean isChild() {
@@ -448,25 +449,25 @@ public abstract class LivingEntity extends Entity {
       return !this.isChild() ? 1.0F : 0.5F;
    }
 
-   public boolean method2897() {
+   public boolean func_241208_cS_() {
       return true;
    }
 
    @Override
-   public boolean onDeathUpdate() {
+   public boolean onEntityDeathUpdate() {
       return false;
    }
 
-   public void method3008() {
+   public void onDeathUpdate() {
       this.deathTime++;
       if (this.deathTime == 20) {
          this.remove();
 
-         for (int var3 = 0; var3 < 20; var3++) {
+         for (int i = 0; i < 20; i++) {
             double var4 = this.rand.nextGaussian() * 0.02;
             double var6 = this.rand.nextGaussian() * 0.02;
             double var8 = this.rand.nextGaussian() * 0.02;
-            this.world.addParticle(ParticleTypes.field34089, this.getPosXRandom(1.0), this.getPosYRandom(), this.getPosZRandom(1.0), var4, var6, var8);
+            this.world.addParticle(ParticleTypes.POOF, this.getPosXRandom(1.0), this.getPosYRandom(), this.getPosZRandom(1.0), var4, var6, var8);
          }
       }
    }
@@ -475,20 +476,20 @@ public abstract class LivingEntity extends Entity {
       return !this.isChild();
    }
 
-   public boolean method3010() {
+   public boolean func_230282_cS_() {
       return !this.isChild();
    }
 
-   public int decreaseAirSupply(int var1) {
+   public int decreaseAirSupply(int air) {
       int var4 = EnchantmentHelper.method26325(this);
-      return var4 > 0 && this.rand.nextInt(var4 + 1) > 0 ? var1 : var1 - 1;
+      return var4 > 0 && this.rand.nextInt(var4 + 1) > 0 ? air : air - 1;
    }
 
-   public int determineNextAir(int var1) {
-      return Math.min(var1 + 4, this.getMaxAir());
+   public int determineNextAir(int currentAir) {
+      return Math.min(currentAir + 4, this.getMaxAir());
    }
 
-   public int getExperiencePoints(PlayerEntity var1) {
+   public int getExperiencePoints(PlayerEntity player) {
       return 0;
    }
 
@@ -501,21 +502,26 @@ public abstract class LivingEntity extends Entity {
    }
 
    @Nullable
-   public LivingEntity method3014() {
+   public LivingEntity getRevengeTarget() {
       return this.revengeTarget;
    }
 
-   public int method3015() {
+   public int getRevengeTiemr() {
       return this.revengeTimer;
    }
 
-   public void method3016(PlayerEntity var1) {
+   public void func_230246_e_(PlayerEntity var1) {
       this.attackingPlayer = var1;
       this.recentlyHit = this.ticksExisted;
    }
 
-   public void setRevengeTarget(LivingEntity var1) {
-      this.revengeTarget = var1;
+
+   /**
+    * Hint to AI tasks that we were attacked by the passed EntityLivingBase and should retaliate. Is not guaranteed to
+    * change our actual active target (for example if we are currently busy attacking someone else)
+    */
+   public void setRevengeTarget(@Nullable LivingEntity livingBase) {
+      this.revengeTarget = livingBase;
       this.revengeTimer = this.ticksExisted;
    }
 
@@ -528,48 +534,48 @@ public abstract class LivingEntity extends Entity {
       return this.lastAttackedEntityTime;
    }
 
-   public void setLastAttackedEntity(Entity var1) {
-      if (!(var1 instanceof LivingEntity)) {
+   public void setLastAttackedEntity(Entity entityIn) {
+      if (!(entityIn instanceof LivingEntity)) {
          this.lastAttackedEntity = null;
       } else {
-         this.lastAttackedEntity = (LivingEntity)var1;
+         this.lastAttackedEntity = (LivingEntity)entityIn;
       }
 
       this.lastAttackedEntityTime = this.ticksExisted;
    }
 
-   public int method3021() {
+   public int getIdleTime() {
       return this.idleTime;
    }
 
-   public void method3022(int var1) {
+   public void setIdleTime(int var1) {
       this.idleTime = var1;
    }
 
-   public void playEquipSound(ItemStack var1) {
-      if (!var1.isEmpty()) {
-         SoundEvent var4 = SoundEvents.field26351;
-         Item var5 = var1.getItem();
+   public void playEquipSound(ItemStack stack) {
+      if (!stack.isEmpty()) {
+         SoundEvent soundEvent = SoundEvents.ITEM_ARMOR_EQUIP_GENERIC;
+         Item var5 = stack.getItem();
          if (!(var5 instanceof ArmorItem)) {
-            if (var5 == Items.field38120) {
-               var4 = SoundEvents.field26350;
+            if (var5 == Items.ELYTRA) {
+               soundEvent = SoundEvents.ITEM_ARMOR_EQUIP_ELYTRA;
             }
          } else {
-            var4 = ((ArmorItem)var5).getArmorMaterial().getSoundEvent();
+            soundEvent = ((ArmorItem)var5).getArmorMaterial().getSoundEvent();
          }
 
-         this.playSound(var4, 1.0F, 1.0F);
+         this.playSound(soundEvent, 1.0F, 1.0F);
       }
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      var1.putFloat("Health", this.getHealth());
-      var1.putShort("HurtTime", (short)this.hurtTime);
-      var1.putInt("HurtByTimestamp", this.revengeTimer);
-      var1.putShort("DeathTime", (short)this.deathTime);
-      var1.putFloat("AbsorptionAmount", this.getAbsorptionAmount());
-      var1.put("Attributes", this.getAttributeManager().serialize());
+   public void writeAdditional(CompoundNBT compound) {
+      compound.putFloat("Health", this.getHealth());
+      compound.putShort("HurtTime", (short)this.hurtTime);
+      compound.putInt("HurtByTimestamp", this.revengeTimer);
+      compound.putShort("DeathTime", (short)this.deathTime);
+      compound.putFloat("AbsorptionAmount", this.getAbsorptionAmount());
+      compound.put("Attributes", this.getAttributeManager().serialize());
       if (!this.activePotionsMap.isEmpty()) {
          ListNBT var4 = new ListNBT();
 
@@ -577,28 +583,28 @@ public abstract class LivingEntity extends Entity {
             var4.add(var6.write(new CompoundNBT()));
          }
 
-         var1.put("ActiveEffects", var4);
+         compound.put("ActiveEffects", var4);
       }
 
-      var1.putBoolean("FallFlying", this.isElytraFlying());
+      compound.putBoolean("FallFlying", this.isElytraFlying());
       this.getBedPosition().ifPresent(var1x -> {
-         var1.putInt("SleepingX", var1x.getX());
-         var1.putInt("SleepingY", var1x.getY());
-         var1.putInt("SleepingZ", var1x.getZ());
+         compound.putInt("SleepingX", var1x.getX());
+         compound.putInt("SleepingY", var1x.getY());
+         compound.putInt("SleepingZ", var1x.getZ());
       });
-      DataResult var7 = this.brain.method21402(NBTDynamicOps.INSTANCE);
-      var7.resultOrPartial(LOGGER::error).ifPresent(var1x -> var1.put("Brain", (INBT) var1x));
+      DataResult var7 = this.brain.encode(NBTDynamicOps.INSTANCE);
+      var7.resultOrPartial(LOGGER::error).ifPresent(var1x -> compound.put("Brain", (INBT) var1x));
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      this.setAbsorptionAmount(var1.getFloat("AbsorptionAmount"));
-      if (var1.contains("Attributes", 9) && this.world != null && !this.world.isRemote) {
-         this.getAttributeManager().deserialize(var1.getList("Attributes", 10));
+   public void readAdditional(CompoundNBT compound) {
+      this.setAbsorptionAmount(compound.getFloat("AbsorptionAmount"));
+      if (compound.contains("Attributes", 9) && this.world != null && !this.world.isRemote) {
+         this.getAttributeManager().deserialize(compound.getList("Attributes", 10));
       }
 
-      if (var1.contains("ActiveEffects", 9)) {
-         ListNBT var4 = var1.getList("ActiveEffects", 10);
+      if (compound.contains("ActiveEffects", 9)) {
+         ListNBT var4 = compound.getList("ActiveEffects", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
             CompoundNBT var6 = var4.getCompound(var5);
@@ -609,37 +615,37 @@ public abstract class LivingEntity extends Entity {
          }
       }
 
-      if (var1.contains("Health", 99)) {
-         this.setHealth(var1.getFloat("Health"));
+      if (compound.contains("Health", 99)) {
+         this.setHealth(compound.getFloat("Health"));
       }
 
-      this.hurtTime = var1.getShort("HurtTime");
-      this.deathTime = var1.getShort("DeathTime");
-      this.revengeTimer = var1.getInt("HurtByTimestamp");
-      if (var1.contains("Team", 8)) {
-         String var8 = var1.getString("Team");
-         ScorePlayerTeam var10 = this.world.method6805().method20990(var8);
-         boolean var11 = var10 != null && this.world.method6805().method20993(this.method3376(), var10);
+      this.hurtTime = compound.getShort("HurtTime");
+      this.deathTime = compound.getShort("DeathTime");
+      this.revengeTimer = compound.getInt("HurtByTimestamp");
+      if (compound.contains("Team", 8)) {
+         String s = compound.getString("Team");
+         ScorePlayerTeam var10 = this.world.getScoreboard().getTeam(s);
+         boolean var11 = var10 != null && this.world.getScoreboard().addPlayerToTeam(this.getCachedUniqueIdString(), var10);
          if (!var11) {
-            LOGGER.warn("Unable to add mob to team \"{}\" (that team probably doesn't exist)", var8);
+            LOGGER.warn("Unable to add mob to team \"{}\" (that team probably doesn't exist)", s);
          }
       }
 
-      if (var1.getBoolean("FallFlying")) {
+      if (compound.getBoolean("FallFlying")) {
          this.setFlag(7, true);
       }
 
-      if (var1.contains("SleepingX", 99) && var1.contains("SleepingY", 99) && var1.contains("SleepingZ", 99)) {
-         BlockPos var9 = new BlockPos(var1.getInt("SleepingX"), var1.getInt("SleepingY"), var1.getInt("SleepingZ"));
+      if (compound.contains("SleepingX", 99) && compound.contains("SleepingY", 99) && compound.contains("SleepingZ", 99)) {
+         BlockPos var9 = new BlockPos(compound.getInt("SleepingX"), compound.getInt("SleepingY"), compound.getInt("SleepingZ"));
          this.setBedPosition(var9);
-         this.dataManager.method35446(POSE, Pose.field13621);
+         this.dataManager.set(POSE, Pose.SLEEPING);
          if (!this.firstUpdate) {
             this.setSleepingPosition(var9);
          }
       }
 
-      if (var1.contains("Brain", 10)) {
-         this.brain = this.createBrain(new Dynamic(NBTDynamicOps.INSTANCE, var1.get("Brain")));
+      if (compound.contains("Brain", 10)) {
+         this.brain = this.createBrain(new Dynamic(NBTDynamicOps.INSTANCE, compound.get("Brain")));
       }
    }
 
@@ -699,8 +705,8 @@ public abstract class LivingEntity extends Entity {
    public void updatePotionMetadata() {
       if (!this.activePotionsMap.isEmpty()) {
          Collection var3 = this.activePotionsMap.values();
-         this.dataManager.method35446(HIDE_PARTICLES, areAllPotionsAmbient(var3));
-         this.dataManager.method35446(POTION_EFFECTS, Class9741.method38184(var3));
+         this.dataManager.set(HIDE_PARTICLES, areAllPotionsAmbient(var3));
+         this.dataManager.set(POTION_EFFECTS, PotionUtils.getPotionColorFromEffectList(var3));
          this.setInvisible(this.isPotionActive(Effects.INVISIBILITY));
       } else {
          this.resetPotionEffectMetadata();
@@ -708,7 +714,7 @@ public abstract class LivingEntity extends Entity {
       }
    }
 
-   public double getVisibilityMultiplier(Entity var1) {
+   public double getVisibilityMultiplier(@Nullable Entity lookingEntity) {
       double var4 = 1.0;
       if (this.isDiscrete()) {
          var4 *= 0.8;
@@ -723,10 +729,10 @@ public abstract class LivingEntity extends Entity {
          var4 *= 0.7 * (double)var6;
       }
 
-      if (var1 != null) {
+      if (lookingEntity != null) {
          ItemStack var9 = this.getItemStackFromSlot(EquipmentSlotType.HEAD);
          Item var7 = var9.getItem();
-         EntityType var8 = var1.getType();
+         EntityType var8 = lookingEntity.getType();
          if (var8 == EntityType.SKELETON && var7 == Items.field38058
             || var8 == EntityType.ZOMBIE && var7 == Items.field38061
             || var8 == EntityType.CREEPER && var7 == Items.field38062) {
@@ -737,17 +743,17 @@ public abstract class LivingEntity extends Entity {
       return var4;
    }
 
-   public boolean canAttack(LivingEntity var1) {
+   public boolean canAttack(LivingEntity target) {
       return true;
    }
 
-   public boolean canAttack(LivingEntity var1, Class8522 var2) {
-      return var2.canTarget(this, var1);
+   public boolean canAttack(LivingEntity target, EntityPredicate var2) {
+      return var2.canTarget(this, target);
    }
 
-   public static boolean areAllPotionsAmbient(Collection<EffectInstance> var0) {
-      for (EffectInstance var4 : var0) {
-         if (!var4.isAmbient()) {
+   public static boolean areAllPotionsAmbient(Collection<EffectInstance> potionEffects) {
+      for (EffectInstance effectInstance : potionEffects) {
+         if (!effectInstance.isAmbient()) {
             return false;
          }
       }
@@ -756,8 +762,8 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void resetPotionEffectMetadata() {
-      this.dataManager.method35446(HIDE_PARTICLES, false);
-      this.dataManager.method35446(POTION_EFFECTS, 0);
+      this.dataManager.set(HIDE_PARTICLES, false);
+      this.dataManager.set(POTION_EFFECTS, 0);
    }
 
    public boolean clearActivePotions() {
@@ -813,10 +819,10 @@ public abstract class LivingEntity extends Entity {
       }
    }
 
-   public boolean isPotionApplicable(EffectInstance var1) {
-      if (this.getCreatureAttribute() == CreatureAttribute.field33506) {
-         Effect var4 = var1.getPotion();
-         if (var4 == Effects.REGENERATION || var4 == Effects.POISON) {
+   public boolean isPotionApplicable(EffectInstance potion) {
+      if (this.getCreatureAttribute() == CreatureAttribute.UNDEAD) {
+         Effect effect = potion.getPotion();
+         if (effect == Effects.REGENERATION || effect == Effects.POISON) {
             return false;
          }
       }
@@ -824,19 +830,19 @@ public abstract class LivingEntity extends Entity {
       return true;
    }
 
-   public void method3037(EffectInstance var1) {
-      if (this.isPotionApplicable(var1)) {
-         EffectInstance var4 = this.activePotionsMap.put(var1.getPotion(), var1);
+   public void func_233646_e_(EffectInstance p_233646_1_) {
+      if (this.isPotionApplicable(p_233646_1_)) {
+         EffectInstance var4 = this.activePotionsMap.put(p_233646_1_.getPotion(), p_233646_1_);
          if (var4 != null) {
-            this.onChangedPotionEffect(var1, true);
+            this.onChangedPotionEffect(p_233646_1_, true);
          } else {
-            this.onNewPotionEffect(var1);
+            this.onNewPotionEffect(p_233646_1_);
          }
       }
    }
 
    public boolean isEntityUndead() {
-      return this.getCreatureAttribute() == CreatureAttribute.field33506;
+      return this.getCreatureAttribute() == CreatureAttribute.UNDEAD;
    }
 
    @Nullable
@@ -889,7 +895,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void setHealth(float var1) {
-      this.dataManager.method35446(HEALTH, MathHelper.clamp(var1, 0.0F, this.method3075()));
+      this.dataManager.set(HEALTH, MathHelper.clamp(var1, 0.0F, this.method3075()));
    }
 
    public boolean getShouldBeDead() {
@@ -984,7 +990,7 @@ public abstract class LivingEntity extends Entity {
                      this.world.setEntityState(this, (byte)33);
                   } else {
                      byte var17;
-                     if (source != DamageSource.field38999) {
+                     if (source != DamageSource.DROWN) {
                         if (!source.method31141()) {
                            if (source != DamageSource.field39012) {
                               var17 = 2;
@@ -1004,7 +1010,7 @@ public abstract class LivingEntity extends Entity {
                   this.world.setEntityState(this, (byte)29);
                }
 
-               if (source != DamageSource.field38999 && (!var6 || var2 > 0.0F)) {
+               if (source != DamageSource.DROWN && (!var6 || var2 > 0.0F)) {
                   this.markVelocityChanged();
                }
 
@@ -1147,11 +1153,11 @@ public abstract class LivingEntity extends Entity {
       if (!var1.isEmpty()) {
          if (!this.isSilent()) {
             this.world
-               .method6745(
+               .playSound(
                   this.getPosX(),
                   this.getPosY(),
                   this.getPosZ(),
-                  SoundEvents.field26713,
+                  SoundEvents.ENTITY_ITEM_BREAK,
                   this.getSoundCategory(),
                   0.8F,
                   0.8F + this.world.rand.nextFloat() * 0.4F,
@@ -1222,7 +1228,7 @@ public abstract class LivingEntity extends Entity {
       }
 
       boolean var6 = this.recentlyHit > 0;
-      if (this.method3010() && this.world.getGameRules().getBoolean(GameRules.field24227)) {
+      if (this.func_230282_cS_() && this.world.getGameRules().getBoolean(GameRules.field24227)) {
          this.dropLoot(var1, var6);
          this.dropSpecialItems(var1, var5, var6);
       }
@@ -1426,7 +1432,7 @@ public abstract class LivingEntity extends Entity {
 
    public float applyPotionDamageCalculations(DamageSource var1, float var2) {
       if (!var1.method31136()) {
-         if (this.isPotionActive(Effects.RESISTANCE) && var1 != DamageSource.field39004) {
+         if (this.isPotionActive(Effects.RESISTANCE) && var1 != DamageSource.OUT_OF_WORLD) {
             int var5 = (this.getActivePotionEffect(Effects.RESISTANCE).getAmplifier() + 1) * 5;
             int var6 = 25 - var5;
             float var7 = var2 * (float)var6;
@@ -1505,7 +1511,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public final void method3077(int var1) {
-      this.dataManager.method35446(ARROW_COUNT_IN_ENTITY, var1);
+      this.dataManager.set(ARROW_COUNT_IN_ENTITY, var1);
    }
 
    public final int method3078() {
@@ -1513,14 +1519,14 @@ public abstract class LivingEntity extends Entity {
    }
 
    public final void method3079(int var1) {
-      this.dataManager.method35446(BEE_STING_COUNT, var1);
+      this.dataManager.set(BEE_STING_COUNT, var1);
    }
 
    private int getArmSwingAnimationEnd() {
-      if (!Class7182.method22536(this)) {
+      if (!EffectUtils.method22536(this)) {
          return !this.isPotionActive(Effects.MINING_FATIGUE) ? 6 : 6 + (1 + this.getActivePotionEffect(Effects.MINING_FATIGUE).getAmplifier()) * 2;
       } else {
-         return 6 - (1 + Class7182.method22537(this));
+         return 6 - (1 + EffectUtils.method22537(this));
       }
    }
 
@@ -1570,7 +1576,7 @@ public abstract class LivingEntity extends Entity {
             if (var6) {
                var8 = DamageSource.field38994;
             } else if (var5) {
-               var8 = DamageSource.field38999;
+               var8 = DamageSource.DROWN;
             } else if (var7) {
                var8 = DamageSource.field39012;
             } else {
@@ -1690,7 +1696,7 @@ public abstract class LivingEntity extends Entity {
 
    @Override
    public void outOfWorld() {
-      this.attackEntityFrom(DamageSource.field39004, 4.0F);
+      this.attackEntityFrom(DamageSource.OUT_OF_WORLD, 4.0F);
    }
 
    public void updateArmSwingProgress() {
@@ -1900,7 +1906,7 @@ public abstract class LivingEntity extends Entity {
          }
 
          FluidState var7 = this.world.getFluidState(this.getPosition());
-         if (this.isInWater() && this.method2897() && !this.method3107(var7.getFluid())) {
+         if (this.isInWater() && this.func_241208_cS_() && !this.method3107(var7.getFluid())) {
             double var34 = this.getPosY();
             float f5 = this.isSprinting() ? 0.9F : this.getWaterSlowDown();
             float f6 = 0.02F;
@@ -1935,7 +1941,7 @@ public abstract class LivingEntity extends Entity {
             if (this.collidedHorizontally && this.isOffsetPositionInLiquid(var16.x, var16.y + 0.6F - this.getPosY() + var34, var16.z)) {
                this.setMotion(var16.x, 0.3F, var16.z);
             }
-         } else if (this.isInLava() && this.method2897() && !this.method3107(var7.getFluid())) {
+         } else if (this.isInLava() && this.func_241208_cS_() && !this.method3107(var7.getFluid())) {
             double var10 = this.getPosY();
             this.moveRelative(0.02F, var1);
             this.move(MoverType.SELF, this.getMotion());
@@ -2411,10 +2417,10 @@ public abstract class LivingEntity extends Entity {
 
       this.world.getProfiler().endSection();
       this.world.getProfiler().startSection("jump");
-      if (this.isJumping && this.method2897()) {
+      if (this.isJumping && this.func_241208_cS_()) {
          double var18;
          if (!this.isInLava()) {
-            var18 = this.method3427(FluidTags.field40469);
+            var18 = this.method3427(FluidTags.WATER);
          } else {
             var18 = this.method3427(FluidTags.field40470);
          }
@@ -2431,7 +2437,7 @@ public abstract class LivingEntity extends Entity {
                this.handleFluidJump(FluidTags.field40470);
             }
          } else {
-            this.handleFluidJump(FluidTags.field40469);
+            this.handleFluidJump(FluidTags.WATER);
          }
       } else {
          this.jumpTicks = 0;
@@ -2454,7 +2460,7 @@ public abstract class LivingEntity extends Entity {
       this.collideWithNearbyEntities();
       this.world.getProfiler().endSection();
       if (!this.world.isRemote && this.method3124() && this.isInWaterRainOrBubbleColumn()) {
-         this.attackEntityFrom(DamageSource.field38999, 1.0F);
+         this.attackEntityFrom(DamageSource.DROWN, 1.0F);
       }
    }
 
@@ -2466,7 +2472,7 @@ public abstract class LivingEntity extends Entity {
       boolean var3 = this.getFlag(7);
       if (var3 && !this.onGround && !this.isPassenger() && !this.isPotionActive(Effects.LEVITATION)) {
          ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.CHEST);
-         if (var4.getItem() == Items.field38120 && Class3256.method11698(var4)) {
+         if (var4.getItem() == Items.ELYTRA && Class3256.method11698(var4)) {
             var3 = true;
             if (!this.world.isRemote && (this.ticksElytraFlying + 1) % 20 == 0) {
                var4.damageItem(1, this, var0 -> var0.sendBreakAnimation(EquipmentSlotType.CHEST));
@@ -2741,7 +2747,7 @@ public abstract class LivingEntity extends Entity {
          var5 |= var1;
       }
 
-      this.dataManager.method35446(LIVING_FLAGS, (byte)var5);
+      this.dataManager.set(LIVING_FLAGS, (byte)var5);
    }
 
    public void setActiveHand(Hand var1) {
@@ -2759,7 +2765,7 @@ public abstract class LivingEntity extends Entity {
    @Override
    public void notifyDataManagerChange(DataParameter<?> var1) {
       super.notifyDataManagerChange(var1);
-      if (!field4940.equals(var1)) {
+      if (!BED_POSITION.equals(var1)) {
          if (LIVING_FLAGS.equals(var1) && this.world.isRemote) {
             if (this.isHandActive() && this.activeItemStack.isEmpty()) {
                this.activeItemStack = this.getHeldItem(this.getActiveHand());
@@ -2965,7 +2971,7 @@ public abstract class LivingEntity extends Entity {
 
    @Override
    public EntitySize getSize(Pose var1) {
-      return var1 != Pose.field13621 ? super.getSize(var1).method32099(this.getRenderScale()) : SLEEPING_SIZE;
+      return var1 != Pose.SLEEPING ? super.getSize(var1).method32099(this.getRenderScale()) : SLEEPING_SIZE;
    }
 
    public ImmutableList<Pose> getAvailablePoses() {
@@ -2985,15 +2991,15 @@ public abstract class LivingEntity extends Entity {
    }
 
    public Optional<BlockPos> getBedPosition() {
-      return this.dataManager.<Optional<BlockPos>>method35445(field4940);
+      return this.dataManager.<Optional<BlockPos>>method35445(BED_POSITION);
    }
 
    public void setBedPosition(BlockPos var1) {
-      this.dataManager.method35446(field4940, Optional.<BlockPos>of(var1));
+      this.dataManager.set(BED_POSITION, Optional.<BlockPos>of(var1));
    }
 
    public void clearBedPosition() {
-      this.dataManager.method35446(field4940, Optional.<BlockPos>empty());
+      this.dataManager.set(BED_POSITION, Optional.<BlockPos>empty());
    }
 
    public boolean isSleeping() {
@@ -3010,7 +3016,7 @@ public abstract class LivingEntity extends Entity {
          this.world.setBlockState(var1, var4.with(Class3250.field18714, Boolean.valueOf(true)), 3);
       }
 
-      this.setPose(Pose.field13621);
+      this.setPose(Pose.SLEEPING);
       this.setSleepingPosition(var1);
       this.setBedPosition(var1);
       this.setMotion(Vector3d.ZERO);
@@ -3060,7 +3066,7 @@ public abstract class LivingEntity extends Entity {
 
    @Override
    public final float getEyeHeight(Pose var1, EntitySize var2) {
-      return var1 != Pose.field13621 ? this.getStandingEyeHeight(var1, var2) : 0.2F;
+      return var1 != Pose.SLEEPING ? this.getStandingEyeHeight(var1, var2) : 0.2F;
    }
 
    public float getStandingEyeHeight(Pose var1, EntitySize var2) {

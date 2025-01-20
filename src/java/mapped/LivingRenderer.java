@@ -115,7 +115,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
          f1 = var33.method13945();
          f2 = var33.method13946();
          f7 = var33.method13947();
-         if (entityIn.getPose() == Pose.field13621) {
+         if (entityIn.getPose() == Pose.SLEEPING) {
             Direction var14 = entityIn.getBedDirection();
             if (var14 != null) {
                float var15 = entityIn.getEyeHeight(Pose.STANDING) - 0.1F;
@@ -258,13 +258,13 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
       }
 
       Pose var8 = var1.getPose();
-      if (var8 != Pose.field13621) {
+      if (var8 != Pose.SLEEPING) {
          var2.rotate(Vector3f.YP.rotationDegrees(180.0F - var4));
       }
 
       if (var1.deathTime <= 0) {
          if (!var1.isSpinAttacking()) {
-            if (var8 != Pose.field13621) {
+            if (var8 != Pose.SLEEPING) {
                if (var1.method3381() || var1 instanceof PlayerEntity) {
                   String var9 = TextFormatting.getTextWithoutFormattingCodes(var1.getName().getString());
                   if (("Dinnerbone".equals(var9) || "Grumm".equals(var9)) && (!(var1 instanceof PlayerEntity) || ((PlayerEntity)var1).method2962(Class2318.field15879))

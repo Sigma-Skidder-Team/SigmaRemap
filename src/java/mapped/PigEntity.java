@@ -88,15 +88,15 @@ public class PigEntity extends AnimalEntity implements Class1071, Class1069 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      this.field5915.method19691(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      this.field5915.method19691(compound);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.field5915.method19692(var1);
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.field5915.method19692(compound);
    }
 
    @Override

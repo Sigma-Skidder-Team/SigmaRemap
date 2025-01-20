@@ -14,7 +14,7 @@ public class Class4440 extends Class4441<Fluid> {
 
    @Override
    public void method14010() {
-      this.method14014(FluidTags.field40469).method31560(Fluids.WATER, Fluids.FLOWING_WATER);
+      this.method14014(FluidTags.WATER).method31560(Fluids.WATER, Fluids.FLOWING_WATER);
       this.method14014(FluidTags.field40470).method31560(Fluids.LAVA, Fluids.FLOWING_LAVA);
    }
 

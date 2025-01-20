@@ -16,13 +16,13 @@ public class Class2618 extends Class2595 {
    private final World field16896;
    private final float field16897;
    private int field16898;
-   private final Class8522 field16899;
+   private final EntityPredicate field16899;
 
    public Class2618(WolfEntity var1, float var2) {
       this.field16894 = var1;
       this.field16896 = var1.world;
       this.field16897 = var2;
-      this.field16899 = new Class8522().method30203((double)var2).method30204().method30205().method30207();
+      this.field16899 = new EntityPredicate().method30203((double)var2).method30204().method30205().method30207();
       this.method10809(EnumSet.<Class2240>of(Class2240.field14658));
    }
 

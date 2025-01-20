@@ -73,10 +73,10 @@ public class VindicatorEntity extends Class1025 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       if (this.field5732) {
-         var1.putBoolean("Johnny", true);
+         compound.putBoolean("Johnny", true);
       }
    }
 
@@ -90,10 +90,10 @@ public class VindicatorEntity extends Class1025 {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("Johnny", 99)) {
-         this.field5732 = var1.getBoolean("Johnny");
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("Johnny", 99)) {
+         this.field5732 = compound.getBoolean("Johnny");
       }
    }
 

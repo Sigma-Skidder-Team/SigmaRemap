@@ -78,30 +78,30 @@ public class CreeperEntity extends MonsterEntity implements Class1080 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       if (this.dataManager.<Boolean>method35445(field5939)) {
-         var1.putBoolean("powered", true);
+         compound.putBoolean("powered", true);
       }
 
-      var1.putShort("Fuse", (short)this.field5943);
-      var1.putByte("ExplosionRadius", (byte)this.field5944);
-      var1.putBoolean("ignited", this.method5024());
+      compound.putShort("Fuse", (short)this.field5943);
+      compound.putByte("ExplosionRadius", (byte)this.field5944);
+      compound.putBoolean("ignited", this.method5024());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.dataManager.method35446(field5939, var1.getBoolean("powered"));
-      if (var1.contains("Fuse", 99)) {
-         this.field5943 = var1.getShort("Fuse");
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.dataManager.set(field5939, compound.getBoolean("powered"));
+      if (compound.contains("Fuse", 99)) {
+         this.field5943 = compound.getShort("Fuse");
       }
 
-      if (var1.contains("ExplosionRadius", 99)) {
-         this.field5944 = var1.getByte("ExplosionRadius");
+      if (compound.contains("ExplosionRadius", 99)) {
+         this.field5944 = compound.getByte("ExplosionRadius");
       }
 
-      if (var1.getBoolean("ignited")) {
+      if (compound.getBoolean("ignited")) {
          this.method5025();
       }
    }
@@ -175,13 +175,13 @@ public class CreeperEntity extends MonsterEntity implements Class1080 {
    }
 
    public void method5021(int var1) {
-      this.dataManager.method35446(field5938, var1);
+      this.dataManager.set(field5938, var1);
    }
 
    @Override
    public void method3353(ServerWorld var1, LightningBoltEntity var2) {
       super.method3353(var1, var2);
-      this.dataManager.method35446(field5939, true);
+      this.dataManager.set(field5939, true);
    }
 
    @Override
@@ -244,7 +244,7 @@ public class CreeperEntity extends MonsterEntity implements Class1080 {
    }
 
    public void method5025() {
-      this.dataManager.method35446(field5940, true);
+      this.dataManager.set(field5940, true);
    }
 
    public boolean method5026() {

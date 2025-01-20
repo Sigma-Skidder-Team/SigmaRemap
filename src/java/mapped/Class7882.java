@@ -8,8 +8,8 @@ import java.util.Set;
 
 public abstract class Class7882<E extends LivingEntity> {
    private static final Random field33825 = new Random();
-   private static final Class8522 field33826 = new Class8522().method30203(16.0).method30205().method30207();
-   private static final Class8522 field33827 = new Class8522().method30203(16.0).method30205().method30207().method30208();
+   private static final EntityPredicate field33826 = new EntityPredicate().method30203(16.0).method30205().method30207();
+   private static final EntityPredicate field33827 = new EntityPredicate().method30203(16.0).method30205().method30207().method30208();
    private final int field33828;
    private long field33829;
 

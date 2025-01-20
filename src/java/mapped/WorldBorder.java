@@ -36,14 +36,14 @@ public class WorldBorder {
          && (double)var1.getZ() < this.method24533();
    }
 
-   public boolean method24525(AxisAlignedBB var1) {
+   public boolean contains(AxisAlignedBB var1) {
       return var1.maxX > this.method24530()
          && var1.minX < this.method24532()
          && var1.maxZ > this.method24531()
          && var1.minZ < this.method24533();
    }
 
-   public double method24526(Entity var1) {
+   public double getClosestDistance(Entity var1) {
       return this.method24528(var1.getPosX(), var1.getPosZ());
    }
 
@@ -144,7 +144,7 @@ public class WorldBorder {
       return this.worldSize;
    }
 
-   public double method24546() {
+   public double getDamageBuffer() {
       return this.field32260;
    }
 
@@ -156,7 +156,7 @@ public class WorldBorder {
       }
    }
 
-   public double method24548() {
+   public double getDamagePerBlock() {
       return this.field32259;
    }
 

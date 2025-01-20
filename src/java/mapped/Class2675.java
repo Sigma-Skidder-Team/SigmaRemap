@@ -9,13 +9,13 @@ import net.minecraft.world.server.ServerWorld;
 
 public class Class2675 extends Class2672 {
    private static String[] field17065;
-   private final Class8522 field17066;
+   private final EntityPredicate field17066;
    public final EvokerEntity field17067;
 
    Class2675(EvokerEntity var1) {
       super(var1);
       this.field17067 = var1;
-      this.field17066 = new Class8522().method30203(16.0).method30206().method30208().method30204().method30205();
+      this.field17066 = new EntityPredicate().method30203(16.0).method30206().method30208().method30204().method30205();
    }
 
    @Override

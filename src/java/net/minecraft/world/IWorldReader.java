@@ -121,7 +121,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
    }
 
    default boolean hasWater(BlockPos var1) {
-      return this.getFluidState(var1).method23486(FluidTags.field40469);
+      return this.getFluidState(var1).method23486(FluidTags.WATER);
    }
 
    default boolean method7014(AxisAlignedBB var1) {

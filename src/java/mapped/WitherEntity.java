@@ -48,8 +48,8 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
    private final int[] field5933 = new int[2];
    private int field5934;
    private final ServerBossInfo field5935 = (ServerBossInfo)new ServerBossInfo(this.getDisplayName(), BossInfo.Color.PURPLE, BossInfo.Overlay.PROGRESS).setDarkenSky(true);
-   private static final Predicate<LivingEntity> field5936 = var0 -> var0.getCreatureAttribute() != CreatureAttribute.field33506 && var0.attackable();
-   private static final Class8522 field5937 = new Class8522().method30203(20.0).method30209(field5936);
+   private static final Predicate<LivingEntity> field5936 = var0 -> var0.getCreatureAttribute() != CreatureAttribute.UNDEAD && var0.attackable();
+   private static final EntityPredicate field5937 = new EntityPredicate().method30203(20.0).method30209(field5936);
 
    public WitherEntity(EntityType<? extends WitherEntity> var1, World var2) {
       super(var1, var2);
@@ -79,15 +79,15 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("Invul", this.method5012());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("Invul", this.method5012());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method5013(var1.getInt("Invul"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method5013(compound.getInt("Invul"));
       if (this.method3381()) {
          this.field5935.setName(this.getDisplayName());
       }
@@ -427,9 +427,9 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
    public boolean attackEntityFrom(DamageSource source, float var2) {
       if (this.isInvulnerableTo(source)) {
          return false;
-      } else if (source == DamageSource.field38999 || source.getTrueSource() instanceof WitherEntity) {
+      } else if (source == DamageSource.DROWN || source.getTrueSource() instanceof WitherEntity) {
          return false;
-      } else if (this.method5012() > 0 && source != DamageSource.field39004) {
+      } else if (this.method5012() > 0 && source != DamageSource.OUT_OF_WORLD) {
          return false;
       } else {
          if (this.method5016()) {
@@ -505,7 +505,7 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
    }
 
    public void method5013(int var1) {
-      this.dataManager.method35446(field5927, var1);
+      this.dataManager.set(field5927, var1);
    }
 
    public int method5014(int var1) {
@@ -513,7 +513,7 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
    }
 
    public void method5015(int var1, int var2) {
-      this.dataManager.method35446(field5926.get(var1), var2);
+      this.dataManager.set(field5926.get(var1), var2);
    }
 
    @Override
@@ -523,7 +523,7 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
 
    @Override
    public CreatureAttribute getCreatureAttribute() {
-      return CreatureAttribute.field33506;
+      return CreatureAttribute.UNDEAD;
    }
 
    @Override
@@ -537,7 +537,7 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
    }
 
    @Override
-   public boolean isPotionApplicable(EffectInstance var1) {
-      return var1.getPotion() != Effects.WITHER ? super.isPotionApplicable(var1) : false;
+   public boolean isPotionApplicable(EffectInstance potion) {
+      return potion.getPotion() != Effects.WITHER ? super.isPotionApplicable(potion) : false;
    }
 }

@@ -41,7 +41,7 @@ public abstract class WaterFluid extends FlowingFluid {
    public void method25051(World var1, BlockPos var2, FluidState var3, Random var4) {
       if (!var3.isSource() && !var3.<Boolean>get(field32712)) {
          if (var4.nextInt(64) == 0) {
-            var1.method6745(
+            var1.playSound(
                (double)var2.getX() + 0.5,
                (double)var2.getY() + 0.5,
                (double)var2.getZ() + 0.5,
@@ -109,7 +109,7 @@ public abstract class WaterFluid extends FlowingFluid {
 
    @Override
    public boolean method25055(FluidState var1, IBlockReader var2, BlockPos var3, Fluid var4, Direction var5) {
-      return var5 == Direction.DOWN && !var4.method25067(FluidTags.field40469);
+      return var5 == Direction.DOWN && !var4.method25067(FluidTags.WATER);
    }
 
    @Override

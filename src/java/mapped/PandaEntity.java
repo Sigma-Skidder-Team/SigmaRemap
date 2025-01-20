@@ -35,7 +35,7 @@ public class PandaEntity extends AnimalEntity {
    private static final DataParameter<Byte> field6020 = EntityDataManager.<Byte>createKey(PandaEntity.class, DataSerializers.field33390);
    private static final DataParameter<Byte> field6021 = EntityDataManager.<Byte>createKey(PandaEntity.class, DataSerializers.field33390);
    private static final DataParameter<Byte> field6022 = EntityDataManager.<Byte>createKey(PandaEntity.class, DataSerializers.field33390);
-   private static final Class8522 field6023 = new Class8522().method30203(8.0).method30205().method30204();
+   private static final EntityPredicate field6023 = new EntityPredicate().method30203(8.0).method30205().method30204();
    private boolean field6024;
    private boolean field6025;
    public int field6026;
@@ -71,7 +71,7 @@ public class PandaEntity extends AnimalEntity {
    }
 
    public void method5187(int var1) {
-      this.dataManager.method35446(field6017, var1);
+      this.dataManager.set(field6017, var1);
    }
 
    public boolean method5188() {
@@ -99,7 +99,7 @@ public class PandaEntity extends AnimalEntity {
    }
 
    public void method5194(boolean var1) {
-      this.dataManager.method35446(field6019, !var1 ? 0 : 1);
+      this.dataManager.set(field6019, !var1 ? 0 : 1);
    }
 
    private int method5195() {
@@ -107,7 +107,7 @@ public class PandaEntity extends AnimalEntity {
    }
 
    private void method5196(int var1) {
-      this.dataManager.method35446(field6019, var1);
+      this.dataManager.set(field6019, var1);
    }
 
    public void method5197(boolean var1) {
@@ -122,7 +122,7 @@ public class PandaEntity extends AnimalEntity {
    }
 
    public void method5199(int var1) {
-      this.dataManager.method35446(field6018, var1);
+      this.dataManager.set(field6018, var1);
    }
 
    public Class2293 method5200() {
@@ -134,7 +134,7 @@ public class PandaEntity extends AnimalEntity {
          var1 = Class2293.method9048(this.rand);
       }
 
-      this.dataManager.method35446(field6020, (byte)var1.method9042());
+      this.dataManager.set(field6020, (byte)var1.method9042());
    }
 
    public Class2293 method5202() {
@@ -146,7 +146,7 @@ public class PandaEntity extends AnimalEntity {
          var1 = Class2293.method9048(this.rand);
       }
 
-      this.dataManager.method35446(field6021, (byte)var1.method9042());
+      this.dataManager.set(field6021, (byte)var1.method9042());
    }
 
    public boolean method5204() {
@@ -175,24 +175,24 @@ public class PandaEntity extends AnimalEntity {
    private void method5207(int var1, boolean var2) {
       byte var5 = this.dataManager.<Byte>method35445(field6022);
       if (!var2) {
-         this.dataManager.method35446(field6022, (byte)(var5 & ~var1));
+         this.dataManager.set(field6022, (byte)(var5 & ~var1));
       } else {
-         this.dataManager.method35446(field6022, (byte)(var5 | var1));
+         this.dataManager.set(field6022, (byte)(var5 | var1));
       }
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putString("MainGene", this.method5200().method9043());
-      var1.putString("HiddenGene", this.method5202().method9043());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putString("MainGene", this.method5200().method9043());
+      compound.putString("HiddenGene", this.method5202().method9043());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method5201(Class2293.method9047(var1.getString("MainGene")));
-      this.method5203(Class2293.method9047(var1.getString("HiddenGene")));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method5201(Class2293.method9047(compound.getString("MainGene")));
+      this.method5203(Class2293.method9047(compound.getString("HiddenGene")));
    }
 
    @Nullable
@@ -672,7 +672,7 @@ public class PandaEntity extends AnimalEntity {
    }
 
    // $VF: synthetic method
-   public static Class8522 method5237() {
+   public static EntityPredicate method5237() {
       return field6023;
    }
 

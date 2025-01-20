@@ -25,15 +25,15 @@ public abstract class Class1031 extends Class1025 {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.field5734 = var1.getInt("SpellTicks");
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.field5734 = compound.getInt("SpellTicks");
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("SpellTicks", this.field5734);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("SpellTicks", this.field5734);
    }
 
    @Override
@@ -51,7 +51,7 @@ public abstract class Class1031 extends Class1025 {
 
    public void method4595(Class2031 var1) {
       this.field5735 = var1;
-      this.dataManager.method35446(field5733, (byte)Class2031.method8665(var1));
+      this.dataManager.set(field5733, (byte)Class2031.method8665(var1));
    }
 
    public Class2031 method4596() {

@@ -523,7 +523,7 @@ public class Class8090 {
          return false;
       } else if (this.field34770 != 0) {
          if (this.field34770 == 4 && this.field34771 == null) {
-            this.field34771 = new int[]{Item.getIdFromItem(Items.field38120)};
+            this.field34771 = new int[]{Item.getIdFromItem(Items.ELYTRA)};
          }
 
          if (this.field34770 == 1 || this.field34770 == 3 || this.field34770 == 4) {

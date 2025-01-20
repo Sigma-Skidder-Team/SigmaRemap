@@ -772,7 +772,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    }
 
    public void method3596(float var1) {
-      this.dataManager.method35446(field5215, var1);
+      this.dataManager.set(field5215, var1);
    }
 
    public float method3597() {
@@ -780,7 +780,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    }
 
    public void method3598(int var1) {
-      this.dataManager.method35446(field5213, var1);
+      this.dataManager.set(field5213, var1);
    }
 
    public int method3599() {
@@ -788,7 +788,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    }
 
    public void method3600(int var1) {
-      this.dataManager.method35446(field5214, var1);
+      this.dataManager.set(field5214, var1);
    }
 
    public int method3601() {
@@ -814,12 +814,12 @@ public abstract class AbstractMinecartEntity extends Entity {
    }
 
    public void method3607(BlockState var1) {
-      this.getDataManager().method35446(field5216, Block.getStateId(var1));
+      this.getDataManager().set(field5216, Block.getStateId(var1));
       this.method3610(true);
    }
 
    public void method3608(int var1) {
-      this.getDataManager().method35446(field5217, var1);
+      this.getDataManager().set(field5217, var1);
       this.method3610(true);
    }
 
@@ -828,7 +828,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    }
 
    public void method3610(boolean var1) {
-      this.getDataManager().method35446(field5218, var1);
+      this.getDataManager().set(field5218, var1);
    }
 
    @Override

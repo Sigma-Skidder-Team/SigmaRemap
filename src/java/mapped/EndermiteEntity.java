@@ -73,17 +73,17 @@ public class EndermiteEntity extends MonsterEntity {
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.field6063 = var1.getInt("Lifetime");
-      this.field6064 = var1.getBoolean("PlayerSpawned");
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.field6063 = compound.getInt("Lifetime");
+      this.field6064 = compound.getBoolean("PlayerSpawned");
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("Lifetime", this.field6063);
-      var1.putBoolean("PlayerSpawned", this.field6064);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("Lifetime", this.field6063);
+      compound.putBoolean("PlayerSpawned", this.field6064);
    }
 
    @Override

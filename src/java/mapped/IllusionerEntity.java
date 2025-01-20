@@ -99,7 +99,7 @@ public class IllusionerEntity extends Class1031 implements Class1022 {
                this.world.addParticle(ParticleTypes.field34053, this.getPosXRandom(0.5), this.getPosYRandom(), this.getPosZWidth(0.5), 0.0, 0.0, 0.0);
             }
 
-            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26695, this.getSoundCategory(), 1.0F, 1.0F, false);
+            this.world.playSound(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26695, this.getSoundCategory(), 1.0F, 1.0F, false);
          } else if (this.hurtTime == this.maxHurtTime - 1) {
             this.field5739 = 3;
 

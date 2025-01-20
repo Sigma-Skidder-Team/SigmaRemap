@@ -13,7 +13,7 @@ public class NearestAttackableTargetGoal<T extends LivingEntity> extends Class26
    public final Class<T> field17188;
    public final int field17189;
    public LivingEntity field17190;
-   public Class8522 field17191;
+   public EntityPredicate field17191;
 
    public NearestAttackableTargetGoal(MobEntity var1, Class<T> var2, boolean var3) {
       this(var1, var2, var3, false);
@@ -28,7 +28,7 @@ public class NearestAttackableTargetGoal<T extends LivingEntity> extends Class26
       this.field17188 = var2;
       this.field17189 = var3;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14660));
-      this.field17191 = new Class8522().method30203(this.method10914()).method30209(var6);
+      this.field17191 = new EntityPredicate().method30203(this.method10914()).method30209(var6);
    }
 
    @Override

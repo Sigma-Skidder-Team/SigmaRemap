@@ -31,7 +31,7 @@ public class ZombieHorseEntity extends AbstractHorseEntity {
 
    @Override
    public CreatureAttribute getCreatureAttribute() {
-      return CreatureAttribute.field33506;
+      return CreatureAttribute.UNDEAD;
    }
 
    @Override

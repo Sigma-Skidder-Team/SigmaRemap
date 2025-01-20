@@ -336,7 +336,7 @@ public class Class7697 {
       ServerScoreboard var5 = var0.getServer().method1409();
 
       for (String var7 : var2) {
-         var5.method20993(var7, var1);
+         var5.addPlayerToTeam(var7, var1);
       }
 
       if (var2.size() != 1) {
@@ -452,7 +452,7 @@ public class Class7697 {
 
    private static int method25339(CommandSource var0, String var1, ITextComponent var2) throws CommandSyntaxException {
       ServerScoreboard var5 = var0.getServer().method1409();
-      if (var5.method20990(var1) == null) {
+      if (var5.getTeam(var1) == null) {
          if (var1.length() <= 16) {
             ScorePlayerTeam var6 = var5.method20991(var1);
             var6.method28570(var2);

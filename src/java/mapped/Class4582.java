@@ -37,7 +37,7 @@ public class Class4582 extends Class4566 {
          this.field22044 *= 0.07;
          this.field22046 *= 0.07;
          this.method14511(this.field22044, this.field22045, this.field22046);
-         if (!this.field22037.getFluidState(new BlockPos(this.field22041, this.field22042, this.field22043)).method23486(FluidTags.field40469) || this.field22048
+         if (!this.field22037.getFluidState(new BlockPos(this.field22041, this.field22042, this.field22043)).method23486(FluidTags.WATER) || this.field22048
             )
           {
             this.method14518();

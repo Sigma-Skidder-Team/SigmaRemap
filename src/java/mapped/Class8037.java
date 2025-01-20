@@ -135,7 +135,7 @@ public class Class8037 {
                   );
                }
 
-               if (var5 || !var0.world.getFluidState(var31).method23486(FluidTags.field40469)) {
+               if (var5 || !var0.world.getFluidState(var31).method23486(FluidTags.WATER)) {
                   PathNodeType var28 = Class6762.method20633(var0.world, var31.method8354());
                   if (var0.method4223(var28) == 0.0F) {
                      double var29 = var8.applyAsDouble(var31);

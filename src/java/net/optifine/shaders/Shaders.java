@@ -3250,7 +3250,7 @@ public class Shaders {
                 field40657 = field40657 * var10 + (float) (field40656 & 65535) * (1.0F - var10);
                 field40658 = field40658 * var10 + (float) (field40656 >> 16) * (1.0F - var10);
                 FluidState var11 = var1.method37512();
-                if (var11.method23486(FluidTags.field40469)) {
+                if (var11.method23486(FluidTags.WATER)) {
                     field40655 = 1;
                 } else if (var11.method23486(FluidTags.field40470)) {
                     field40655 = 2;

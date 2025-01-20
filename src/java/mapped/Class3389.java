@@ -108,12 +108,12 @@ public class Class3389 extends Block {
 
    private static boolean method11986(BlockPos var0, World var1) {
       FluidState var4 = var1.getFluidState(var0);
-      if (var4.method23486(FluidTags.field40469)) {
+      if (var4.method23486(FluidTags.WATER)) {
          if (!var4.isSource()) {
             float var5 = (float)var4.method23477();
             if (!(var5 < 2.0F)) {
                FluidState var6 = var1.getFluidState(var0.down());
-               return !var6.method23486(FluidTags.field40469);
+               return !var6.method23486(FluidTags.WATER);
             } else {
                return false;
             }
@@ -128,7 +128,7 @@ public class Class3389 extends Block {
    private void method11987(BlockState var1, World var2, BlockPos var3) {
       var2.removeBlock(var3, false);
       boolean var6 = Direction.Plane.HORIZONTAL.method248().<BlockPos>map(var3::offset).anyMatch(var1x -> method11986(var1x, var2));
-      boolean var7 = var6 || var2.getFluidState(var3.up()).method23486(FluidTags.field40469);
+      boolean var7 = var6 || var2.getFluidState(var3.up()).method23486(FluidTags.WATER);
       Class5925 var8 = new Class5925(this, var7);
       var2.method6757(
          (Entity)null,

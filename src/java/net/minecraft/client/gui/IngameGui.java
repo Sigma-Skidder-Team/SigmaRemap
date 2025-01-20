@@ -272,7 +272,7 @@ public class IngameGui extends AbstractGui {
             }
 
             this.field6727.method5999(var1);
-            Scoreboard var17 = this.field6716.world.method6805();
+            Scoreboard var17 = this.field6716.world.getScoreboard();
             Class8375 var21 = null;
             ScorePlayerTeam var25 = var17.method20998(this.field6716.player.method2956());
             if (var25 != null) {
@@ -871,7 +871,7 @@ public class IngameGui extends AbstractGui {
             this.field6716.getProfiler().endStartSection("air");
             int var38 = var4.getMaxAir();
             int var40 = Math.min(var4.getAir(), var38);
-            if (var4.areEyesInFluid(FluidTags.field40469) || var40 < var38) {
+            if (var4.areEyesInFluid(FluidTags.WATER) || var40 < var38) {
                 int var42 = this.method5975(var36) - 1;
                 var20 -= var42 * 10;
                 int var44 = MathHelper.method37774((double) (var40 - 2) * 10.0 / (double) var38);
@@ -956,7 +956,7 @@ public class IngameGui extends AbstractGui {
     private void method5980(Entity var1) {
         if (Config.method26883()) {
             WorldBorder var4 = this.field6716.world.getWorldBorder();
-            float var5 = (float) var4.method24526(var1);
+            float var5 = (float) var4.getClosestDistance(var1);
             double var6 = Math.min(var4.method24550() * (double) var4.method24551() * 1000.0, Math.abs(var4.method24539() - var4.method24537()));
             double var8 = Math.max((double) var4.method24553(), var6);
             if (!((double) var5 < var8)) {

@@ -29,8 +29,8 @@ public class Class7235 {
    public Class7235(WorldBorder var1) {
       this.field31079 = var1.getCenterX();
       this.field31080 = var1.getCenterZ();
-      this.field31081 = var1.method24548();
-      this.field31082 = var1.method24546();
+      this.field31081 = var1.getDamagePerBlock();
+      this.field31082 = var1.getDamageBuffer();
       this.field31083 = var1.method24553();
       this.field31084 = var1.method24551();
       this.field31085 = var1.method24537();

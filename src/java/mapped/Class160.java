@@ -34,7 +34,7 @@ public class Class160 implements ILootCondition {
       if (var4 == null) {
          return false;
       } else {
-         Scoreboard var5 = var4.world.method6805();
+         Scoreboard var5 = var4.world.getScoreboard();
 
          for (Entry var7 : this.field520.entrySet()) {
             if (!this.method483(var4, var5, (String)var7.getKey(), (Class6872)var7.getValue())) {

@@ -189,25 +189,25 @@ public class MooshroomEntity extends CowEntity implements Class1020 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putString("Type", Class2210.method8936(this.method5037()));
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putString("Type", Class2210.method8936(this.method5037()));
       if (this.field5952 != null) {
-         var1.putByte("EffectId", (byte) Effect.getId(this.field5952));
-         var1.putInt("EffectDuration", this.field5953);
+         compound.putByte("EffectId", (byte) Effect.getId(this.field5952));
+         compound.putInt("EffectDuration", this.field5953);
       }
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method5036(Class2210.method8938(var1.getString("Type")));
-      if (var1.contains("EffectId", 1)) {
-         this.field5952 = Effect.get(var1.getByte("EffectId"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method5036(Class2210.method8938(compound.getString("Type")));
+      if (compound.contains("EffectId", 1)) {
+         this.field5952 = Effect.get(compound.getByte("EffectId"));
       }
 
-      if (var1.contains("EffectDuration", 3)) {
-         this.field5953 = var1.getInt("EffectDuration");
+      if (compound.contains("EffectDuration", 3)) {
+         this.field5953 = compound.getInt("EffectDuration");
       }
    }
 
@@ -225,7 +225,7 @@ public class MooshroomEntity extends CowEntity implements Class1020 {
    }
 
    private void method5036(Class2210 var1) {
-      this.dataManager.method35446(field5951, Class2210.method8936(var1));
+      this.dataManager.set(field5951, Class2210.method8936(var1));
    }
 
    public Class2210 method5037() {

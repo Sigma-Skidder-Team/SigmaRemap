@@ -224,17 +224,17 @@ public class RabbitEntity extends AnimalEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("RabbitType", this.method5114());
-      var1.putInt("MoreCarrotTicks", this.field5992);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("RabbitType", this.method5114());
+      compound.putInt("MoreCarrotTicks", this.field5992);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method5115(var1.getInt("RabbitType"));
-      this.field5992 = var1.getInt("MoreCarrotTicks");
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method5115(compound.getInt("RabbitType"));
+      this.field5992 = compound.getInt("MoreCarrotTicks");
    }
 
    public SoundEvent method5112() {
@@ -316,7 +316,7 @@ public class RabbitEntity extends AnimalEntity {
          }
       }
 
-      this.dataManager.method35446(field5986, var1);
+      this.dataManager.set(field5986, var1);
    }
 
    @Nullable

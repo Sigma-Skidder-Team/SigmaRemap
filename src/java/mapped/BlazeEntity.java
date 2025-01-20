@@ -81,7 +81,7 @@ public class BlazeEntity extends MonsterEntity {
       if (this.world.isRemote) {
          if (this.rand.nextInt(24) == 0 && !this.isSilent()) {
             this.world
-               .method6745(
+               .playSound(
                   this.getPosX() + 0.5,
                   this.getPosY() + 0.5,
                   this.getPosZ() + 0.5,
@@ -146,7 +146,7 @@ public class BlazeEntity extends MonsterEntity {
          var4 = (byte)(var4 | 1);
       }
 
-      this.dataManager.method35446(field6062, var4);
+      this.dataManager.set(field6062, var4);
    }
 
    // $VF: synthetic method

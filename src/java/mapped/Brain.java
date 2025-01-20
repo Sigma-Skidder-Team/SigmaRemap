@@ -40,7 +40,7 @@ public class Brain<E extends LivingEntity> {
    private Activity field30108 = Activity.field40220;
    private long field30109 = -9999L;
 
-   public static <E extends LivingEntity> Class6971<E> method21400(
+   public static <E extends LivingEntity> Class6971<E> createCodec(
       Collection<? extends Class8830<?>> var0, Collection<? extends Class7963<? extends Class7882<? super E>>> var1
    ) {
       return new Class6971<E>(var0, var1, null);
@@ -84,7 +84,7 @@ public class Brain<E extends LivingEntity> {
       }
    }
 
-   public <T> DataResult<T> method21402(DynamicOps<T> var1) {
+   public <T> DataResult<T> encode(DynamicOps<T> var1) {
       return this.field30099.get().encodeStart(var1, this);
    }
 

@@ -44,7 +44,7 @@ public class FireworkRocketEntity extends ProjectileEntity implements Class889 {
       this.setPosition(var2, var4, var6);
       int var11 = 1;
       if (!var8.isEmpty() && var8.method32141()) {
-         this.dataManager.method35446(field5120, var8.copy());
+         this.dataManager.set(field5120, var8.copy());
          var11 += var8.method32144("Fireworks").getByte("Flight");
       }
 
@@ -59,13 +59,13 @@ public class FireworkRocketEntity extends ProjectileEntity implements Class889 {
 
    public FireworkRocketEntity(World var1, ItemStack var2, LivingEntity var3) {
       this(var1, var3, var3.getPosX(), var3.getPosY(), var3.getPosZ(), var2);
-      this.dataManager.method35446(field5121, OptionalInt.of(var3.getEntityId()));
+      this.dataManager.set(field5121, OptionalInt.of(var3.getEntityId()));
       this.field5125 = var3;
    }
 
    public FireworkRocketEntity(World var1, ItemStack var2, double var3, double var5, double var7, boolean var9) {
       this(var1, var3, var5, var7, var2);
-      this.dataManager.method35446(field5122, var9);
+      this.dataManager.set(field5122, var9);
    }
 
    public FireworkRocketEntity(World var1, ItemStack var2, Entity var3, double var4, double var6, double var8, boolean var10) {
@@ -255,7 +255,7 @@ public class FireworkRocketEntity extends ProjectileEntity implements Class889 {
             for (int var7 = 0; var7 < this.rand.nextInt(3) + 2; var7++) {
                this.world
                   .addParticle(
-                     ParticleTypes.field34089,
+                     ParticleTypes.POOF,
                      this.getPosX(),
                      this.getPosY(),
                      this.getPosZ(),
@@ -290,11 +290,11 @@ public class FireworkRocketEntity extends ProjectileEntity implements Class889 {
       this.field5124 = var1.getInt("LifeTime");
       ItemStack var4 = ItemStack.read(var1.getCompound("FireworksItem"));
       if (!var4.isEmpty()) {
-         this.dataManager.method35446(field5120, var4);
+         this.dataManager.set(field5120, var4);
       }
 
       if (var1.contains("ShotAtAngle")) {
-         this.dataManager.method35446(field5122, var1.getBoolean("ShotAtAngle"));
+         this.dataManager.set(field5122, var1.getBoolean("ShotAtAngle"));
       }
    }
 

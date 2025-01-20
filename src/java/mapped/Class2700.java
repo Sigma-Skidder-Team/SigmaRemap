@@ -11,7 +11,7 @@ public class Class2700 extends Class2699 {
    private static String[] field17161;
    private final IronGolemEntity field17162;
    private LivingEntity field17163;
-   private final Class8522 field17164 = new Class8522().method30203(64.0);
+   private final EntityPredicate field17164 = new EntityPredicate().method30203(64.0);
 
    public Class2700(IronGolemEntity var1) {
       super(var1, false, true);

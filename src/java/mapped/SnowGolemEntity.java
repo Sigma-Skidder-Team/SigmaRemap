@@ -52,16 +52,16 @@ public class SnowGolemEntity extends Class1056 implements Class1020, Class1022 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putBoolean("Pumpkin", this.method4531());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putBoolean("Pumpkin", this.method4531());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("Pumpkin")) {
-         this.method4532(var1.getBoolean("Pumpkin"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("Pumpkin")) {
+         this.method4532(compound.getBoolean("Pumpkin"));
       }
    }
 
@@ -155,9 +155,9 @@ public class SnowGolemEntity extends Class1056 implements Class1020, Class1022 {
    public void method4532(boolean var1) {
       byte var4 = this.dataManager.<Byte>method35445(field5709);
       if (!var1) {
-         this.dataManager.method35446(field5709, (byte)(var4 & -17));
+         this.dataManager.set(field5709, (byte)(var4 & -17));
       } else {
-         this.dataManager.method35446(field5709, (byte)(var4 | 16));
+         this.dataManager.set(field5709, (byte)(var4 | 16));
       }
    }
 

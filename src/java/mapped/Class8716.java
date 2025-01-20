@@ -27,10 +27,10 @@ public class Class8716 {
    public void method31441(PlayerEntity var1) {
       try {
          CompoundNBT var4 = var1.writeWithoutTypeId(new CompoundNBT());
-         File var5 = File.createTempFile(var1.method3376() + "-", ".dat", this.field39330);
+         File var5 = File.createTempFile(var1.getCachedUniqueIdString() + "-", ".dat", this.field39330);
          CompressedStreamTools.writeCompressed(var4, var5);
-         File var6 = new File(this.field39330, var1.method3376() + ".dat");
-         File var7 = new File(this.field39330, var1.method3376() + ".dat_old");
+         File var6 = new File(this.field39330, var1.getCachedUniqueIdString() + ".dat");
+         File var7 = new File(this.field39330, var1.getCachedUniqueIdString() + ".dat_old");
          Util.backupThenUpdate(var6, var5, var7);
       } catch (Exception var8) {
          field39329.warn("Failed to save player data for {}", var1.getName().getString());
@@ -42,7 +42,7 @@ public class Class8716 {
       CompoundNBT var4 = null;
 
       try {
-         File var5 = new File(this.field39330, var1.method3376() + ".dat");
+         File var5 = new File(this.field39330, var1.getCachedUniqueIdString() + ".dat");
          if (var5.exists() && var5.isFile()) {
             var4 = CompressedStreamTools.readCompressed(var5);
          }

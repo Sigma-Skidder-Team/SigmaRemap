@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class Class2731 extends Class2595 {
    private static String[] field17242;
-   private static final Class8522 field17243 = new Class8522().method30203(10.0).method30205().method30204();
+   private static final EntityPredicate field17243 = new EntityPredicate().method30203(10.0).method30205().method30204();
    private final TurtleEntity field17244;
    private final double field17245;
    private PlayerEntity field17246;

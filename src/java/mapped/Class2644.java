@@ -25,6 +25,6 @@ public class Class2644 extends Class2643 {
    @Override
    public void method10804() {
       super.method10804();
-      this.field16974.method3022(0);
+      this.field16974.setIdleTime(0);
    }
 }

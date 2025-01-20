@@ -85,23 +85,23 @@ public abstract class Class1045 extends CreatureEntity {
       int var4 = this.field5801;
       this.field5801 = var1;
       if (var4 < 0 && var1 >= 0 || var4 >= 0 && var1 < 0) {
-         this.dataManager.method35446(field5800, var1 < 0);
+         this.dataManager.set(field5800, var1 < 0);
          this.method4679();
       }
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("Age", this.method4767());
-      var1.putInt("ForcedAge", this.field5802);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("Age", this.method4767());
+      compound.putInt("ForcedAge", this.field5802);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method4770(var1.getInt("Age"));
-      this.field5802 = var1.getInt("ForcedAge");
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method4770(compound.getInt("Age"));
+      this.field5802 = compound.getInt("ForcedAge");
    }
 
    @Override

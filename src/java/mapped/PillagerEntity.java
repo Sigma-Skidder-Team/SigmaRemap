@@ -30,25 +30,25 @@ public abstract class PillagerEntity extends MonsterEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
       if (this.field5724 != null) {
-         var1.put("PatrolTarget", NBTUtil.writeBlockPos(this.field5724));
+         compound.put("PatrolTarget", NBTUtil.writeBlockPos(this.field5724));
       }
 
-      var1.putBoolean("PatrolLeader", this.field5725);
-      var1.putBoolean("Patrolling", this.field5726);
+      compound.putBoolean("PatrolLeader", this.field5725);
+      compound.putBoolean("Patrolling", this.field5726);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("PatrolTarget")) {
-         this.field5724 = NBTUtil.readBlockPos(var1.getCompound("PatrolTarget"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("PatrolTarget")) {
+         this.field5724 = NBTUtil.readBlockPos(compound.getCompound("PatrolTarget"));
       }
 
-      this.field5725 = var1.getBoolean("PatrolLeader");
-      this.field5726 = var1.getBoolean("Patrolling");
+      this.field5725 = compound.getBoolean("PatrolLeader");
+      this.field5726 = compound.getBoolean("Patrolling");
    }
 
    @Override

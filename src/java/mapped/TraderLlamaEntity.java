@@ -26,16 +26,16 @@ public class TraderLlamaEntity extends LlamaEntity {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("DespawnDelay", this.field5876);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("DespawnDelay", this.field5876);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      if (var1.contains("DespawnDelay", 99)) {
-         this.field5876 = var1.getInt("DespawnDelay");
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      if (compound.contains("DespawnDelay", 99)) {
+         this.field5876 = compound.getInt("DespawnDelay");
       }
    }
 

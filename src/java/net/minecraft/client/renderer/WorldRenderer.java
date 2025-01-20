@@ -2986,7 +2986,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             return null;
          } else if (var1 == ParticleTypes.field34070 && !Config.method26842()) {
             return null;
-         } else if (var1 == ParticleTypes.field34089 && !Config.method26842()) {
+         } else if (var1 == ParticleTypes.POOF && !Config.method26842()) {
             return null;
          } else if (var1 == ParticleTypes.field34098 && !Config.method26846()) {
             return null;
@@ -3035,7 +3035,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             }
 
             Class4587 var20 = this.mc.particles.method1197(var1, var4, var6, var8, var10, var12, var14);
-            if (var1 == ParticleTypes.field34052) {
+            if (var1 == ParticleTypes.BUBBLE) {
                Class9680.method37864(var20, this.world, var4, var6, var8, this.renderEnv);
             }
 
@@ -3103,11 +3103,11 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                }
 
                if (var1 == 1023) {
-                  this.world.method6745(var13, var15, var17, SoundEvents.field27248, SoundCategory.field14733, 1.0F, 1.0F, false);
+                  this.world.playSound(var13, var15, var17, SoundEvents.field27248, SoundCategory.field14733, 1.0F, 1.0F, false);
                } else if (var1 == 1038) {
-                  this.world.method6745(var13, var15, var17, SoundEvents.field26558, SoundCategory.field14733, 1.0F, 1.0F, false);
+                  this.world.playSound(var13, var15, var17, SoundEvents.field26558, SoundCategory.field14733, 1.0F, 1.0F, false);
                } else {
-                  this.world.method6745(var13, var15, var17, SoundEvents.field26537, SoundCategory.field14733, 5.0F, 1.0F, false);
+                  this.world.playSound(var13, var15, var17, SoundEvents.field26537, SoundCategory.field14733, 5.0F, 1.0F, false);
                }
             }
       }

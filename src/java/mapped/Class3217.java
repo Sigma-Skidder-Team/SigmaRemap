@@ -57,7 +57,7 @@ public class Class3217 extends FallingBlock {
    }
 
    private static boolean method11606(BlockState var0) {
-      return var0.getFluidState().method23486(FluidTags.field40469);
+      return var0.getFluidState().method23486(FluidTags.WATER);
    }
 
    @Override

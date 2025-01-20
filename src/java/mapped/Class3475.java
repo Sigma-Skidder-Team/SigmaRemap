@@ -141,7 +141,7 @@ public class Class3475 extends Block implements Class3476 {
 
    public static void method12164(World var0, BlockPos var1, boolean var2) {
       BlockState var5 = var0.getBlockState(var1);
-      var0.method6745(
+      var0.playSound(
          (double)var1.getX(),
          (double)var1.getY(),
          (double)var1.getZ(),

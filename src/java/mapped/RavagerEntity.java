@@ -72,19 +72,19 @@ public class RavagerEntity extends Class1026 {
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putInt("AttackTick", this.field5728);
-      var1.putInt("StunTick", this.field5729);
-      var1.putInt("RoarTick", this.field5730);
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putInt("AttackTick", this.field5728);
+      compound.putInt("StunTick", this.field5729);
+      compound.putInt("RoarTick", this.field5730);
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.field5728 = var1.getInt("AttackTick");
-      this.field5729 = var1.getInt("StunTick");
-      this.field5730 = var1.getInt("RoarTick");
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.field5728 = compound.getInt("AttackTick");
+      this.field5729 = compound.getInt("StunTick");
+      this.field5730 = compound.getInt("RoarTick");
    }
 
    @Override
@@ -231,7 +231,7 @@ public class RavagerEntity extends Class1026 {
             double var5 = this.rand.nextGaussian() * 0.2;
             double var7 = this.rand.nextGaussian() * 0.2;
             double var9 = this.rand.nextGaussian() * 0.2;
-            this.world.addParticle(ParticleTypes.field34089, var11.x, var11.y, var11.z, var5, var7, var9);
+            this.world.addParticle(ParticleTypes.POOF, var11.x, var11.y, var11.z, var5, var7, var9);
          }
       }
    }

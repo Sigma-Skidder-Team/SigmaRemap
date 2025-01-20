@@ -213,7 +213,7 @@ public class NameTags extends Module {
                         scale,
                         null
                 );
-                entity.getDataManager().method35446(Entity.CUSTOM_NAME_VISIBLE, false);
+                entity.getDataManager().set(Entity.CUSTOM_NAME_VISIBLE, false);
             }
 
             for (Entry var11 : this.field24000.entrySet()) {
@@ -260,7 +260,7 @@ public class NameTags extends Module {
                                         var8,
                                         this.field24007.get(var14)
                                 );
-                                var12.getDataManager().method35446(Entity.CUSTOM_NAME_VISIBLE, false);
+                                var12.getDataManager().set(Entity.CUSTOM_NAME_VISIBLE, false);
                             }
                         }
                     }

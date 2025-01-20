@@ -7,6 +7,7 @@ import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.EffectUtils;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.Collection;
@@ -94,7 +95,7 @@ public abstract class Class860<T extends Container> extends ContainerScreen<T> {
          }
 
          this.font.drawStringWithShadow(var1, var10, (float)(var2 + 10 + 18), (float)(var7 + 6), 16777215);
-         String var11 = Class7182.method22535(var9, 1.0F);
+         String var11 = EffectUtils.method22535(var9, 1.0F);
          this.font.drawStringWithShadow(var1, var11, (float)(var2 + 10 + 18), (float)(var7 + 6 + 10), 8355711);
          var7 += var3;
       }

@@ -117,7 +117,7 @@ public class HoneyBlock extends Class3231 {
          BlockState var4 = Blocks.field37119.getDefaultState();
 
          for (int var5 = 0; var5 < var1; var5++) {
-            var0.world.addParticle(new BlockParticleData(ParticleTypes.field34051, var4), var0.getPosX(), var0.getPosY(), var0.getPosZ(), 0.0, 0.0, 0.0);
+            var0.world.addParticle(new BlockParticleData(ParticleTypes.BLOCK, var4), var0.getPosX(), var0.getPosY(), var0.getPosZ(), 0.0, 0.0, 0.0);
          }
       }
    }

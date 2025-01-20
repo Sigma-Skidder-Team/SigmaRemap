@@ -111,8 +111,8 @@ public class SpiderEntity extends MonsterEntity {
    }
 
    @Override
-   public boolean isPotionApplicable(EffectInstance var1) {
-      return var1.getPotion() != Effects.POISON ? super.isPotionApplicable(var1) : false;
+   public boolean isPotionApplicable(EffectInstance potion) {
+      return potion.getPotion() != Effects.POISON ? super.isPotionApplicable(potion) : false;
    }
 
    public boolean method5289() {
@@ -127,7 +127,7 @@ public class SpiderEntity extends MonsterEntity {
          var4 = (byte)(var4 | 1);
       }
 
-      this.dataManager.method35446(field6057, var4);
+      this.dataManager.set(field6057, var4);
    }
 
    @Nullable

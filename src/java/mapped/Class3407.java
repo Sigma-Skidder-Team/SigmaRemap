@@ -57,7 +57,7 @@ public class Class3407 extends Block {
             BlockState var15 = var1.getBlockState(var14);
             FluidState var16 = var1.getFluidState(var14);
             Material var17 = var15.getMaterial();
-            if (var16.method23486(FluidTags.field40469)) {
+            if (var16.method23486(FluidTags.WATER)) {
                if (var15.getBlock() instanceof Class3405 && ((Class3405)var15.getBlock()).method11533(var1, var14, var15) != Fluids.EMPTY) {
                   var6++;
                   if (var9 < 6) {

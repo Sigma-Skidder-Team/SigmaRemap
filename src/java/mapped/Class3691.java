@@ -13,7 +13,7 @@ public class Class3691 extends Class3676<MobEntity> {
    }
 
    public boolean method12508(ServerWorld var1, MobEntity var2) {
-      return var2.isInWater() && var2.method3427(FluidTags.field40469) > var2.func_233579_cu_() || var2.isInLava();
+      return var2.isInWater() && var2.method3427(FluidTags.WATER) > var2.func_233579_cu_() || var2.isInLava();
    }
 
    public boolean method12499(ServerWorld var1, MobEntity var2, long var3) {

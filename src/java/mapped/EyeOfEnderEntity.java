@@ -38,7 +38,7 @@ public class EyeOfEnderEntity extends Entity implements Class889 {
 
    public void method3522(ItemStack var1) {
       if (var1.getItem() != Items.field37979 || var1.method32141()) {
-         this.getDataManager().method35446(field5132, Util.<ItemStack>make(var1.copy(), var0 -> var0.setCount(1)));
+         this.getDataManager().set(field5132, Util.<ItemStack>make(var1.copy(), var0 -> var0.setCount(1)));
       }
    }
 
@@ -144,7 +144,7 @@ public class EyeOfEnderEntity extends Entity implements Class889 {
          for (int var23 = 0; var23 < 4; var23++) {
             this.world
                .addParticle(
-                  ParticleTypes.field34052,
+                  ParticleTypes.BUBBLE,
                   var4 - var3.x * 0.25,
                   var6 - var3.y * 0.25,
                   var8 - var3.z * 0.25,

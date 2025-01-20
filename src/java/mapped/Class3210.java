@@ -50,7 +50,7 @@ public class Class3210 extends Block {
    @Override
    public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       BlockPos var7 = var3.up();
-      if (var2.getFluidState(var3).method23486(FluidTags.field40469)) {
+      if (var2.getFluidState(var3).method23486(FluidTags.WATER)) {
          var2.playSound(
             (PlayerEntity)null, var3, SoundEvents.field26582, SoundCategory.field14732, 0.5F, 2.6F + (var2.rand.nextFloat() - var2.rand.nextFloat()) * 0.8F
          );

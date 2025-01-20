@@ -42,20 +42,20 @@ public class OcelotEntity extends AnimalEntity {
    }
 
    private void method5073(boolean var1) {
-      this.dataManager.method35446(field5973, var1);
+      this.dataManager.set(field5973, var1);
       this.method5077();
    }
 
    @Override
-   public void writeAdditional(CompoundNBT var1) {
-      super.writeAdditional(var1);
-      var1.putBoolean("Trusting", this.method5072());
+   public void writeAdditional(CompoundNBT compound) {
+      super.writeAdditional(compound);
+      compound.putBoolean("Trusting", this.method5072());
    }
 
    @Override
-   public void readAdditional(CompoundNBT var1) {
-      super.readAdditional(var1);
-      this.method5073(var1.getBoolean("Trusting"));
+   public void readAdditional(CompoundNBT compound) {
+      super.readAdditional(compound);
+      this.method5073(compound.getBoolean("Trusting"));
    }
 
    @Override

@@ -14,7 +14,7 @@ public class Class7364 extends Class7362 {
    public void method23359() {
       this.field31519
          .world
-         .method6745(
+         .playSound(
             this.field31519.getPosX(),
             this.field31519.getPosY(),
             this.field31519.getPosZ(),

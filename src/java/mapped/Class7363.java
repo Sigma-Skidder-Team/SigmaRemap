@@ -6,13 +6,13 @@ import net.minecraft.util.math.vector.Vector3d;
 
 public class Class7363 extends Class7362 {
    private static String[] field31520;
-   private static final Class8522 field31521 = new Class8522().method30203(150.0);
-   private final Class8522 field31522;
+   private static final EntityPredicate field31521 = new EntityPredicate().method30203(150.0);
+   private final EntityPredicate field31522;
    private int field31523;
 
    public Class7363(EnderDragonEntity var1) {
       super(var1);
-      this.field31522 = new Class8522().method30203(20.0).method30209(var1x -> Math.abs(var1x.getPosY() - var1.getPosY()) <= 10.0);
+      this.field31522 = new EntityPredicate().method30203(20.0).method30209(var1x -> Math.abs(var1x.getPosY() - var1.getPosY()) <= 10.0);
    }
 
    @Override
