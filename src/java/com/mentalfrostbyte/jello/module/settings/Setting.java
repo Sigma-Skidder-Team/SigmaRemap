@@ -1,6 +1,5 @@
-package com.mentalfrostbyte.jello.settings;
+package com.mentalfrostbyte.jello.module.settings;
 
-import com.mentalfrostbyte.jello.settings.interfaces.SettingObserver;
 import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 

@@ -2,10 +2,10 @@ package com.mentalfrostbyte.jello.module;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
-import com.mentalfrostbyte.jello.settings.Setting;
+import com.mentalfrostbyte.jello.module.settings.Setting;
 import mapped.Class6547;
 import totalcross.json.*;
-import com.mentalfrostbyte.jello.settings.ModeSetting;
+import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 
 import java.util.ArrayList;
 import java.util.List;

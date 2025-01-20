@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.item.SwordItem;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
-import com.mentalfrostbyte.jello.settings.ModeSetting;
+import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 
 public class NoSlow extends Module {
     private boolean isBlocking;

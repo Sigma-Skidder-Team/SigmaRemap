@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.longjump.NCPLongJump;
 import com.mentalfrostbyte.jello.module.impl.movement.longjump.MineplexLongJump;
 import com.mentalfrostbyte.jello.module.impl.movement.longjump.RedeskyLongJump;
 import com.mentalfrostbyte.jello.module.impl.movement.longjump.CubecraftLongJump;
-import com.mentalfrostbyte.jello.settings.BooleanSetting;
+import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class LongJump extends ModuleWithModuleSettings {

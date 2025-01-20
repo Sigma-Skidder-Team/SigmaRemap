@@ -1,5 +1,7 @@
-package com.mentalfrostbyte.jello.settings;
+package com.mentalfrostbyte.jello.module.settings.impl;
 
+import com.mentalfrostbyte.jello.module.settings.Setting;
+import com.mentalfrostbyte.jello.module.settings.SettingType;
 import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONException;

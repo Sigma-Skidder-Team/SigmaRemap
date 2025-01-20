@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.settings.Setting;
+import com.mentalfrostbyte.jello.module.settings.Setting;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 
 public class Class4248 extends Class4247 {

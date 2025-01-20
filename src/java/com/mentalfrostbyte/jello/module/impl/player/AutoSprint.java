@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.blockfly.BlockFlyAACMode;
-import com.mentalfrostbyte.jello.settings.BooleanSetting;
+import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import net.minecraft.entity.ai.attributes.Attributes;
 import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;

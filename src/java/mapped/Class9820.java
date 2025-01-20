@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.settings.SettingType;
+import com.mentalfrostbyte.jello.module.settings.SettingType;
 
 // $VF: synthetic class
 public class Class9820 {

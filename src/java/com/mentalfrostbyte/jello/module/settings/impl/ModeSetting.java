@@ -1,6 +1,8 @@
-package com.mentalfrostbyte.jello.settings;
+package com.mentalfrostbyte.jello.module.settings.impl;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.module.settings.Setting;
+import com.mentalfrostbyte.jello.module.settings.SettingType;
 import com.mentalfrostbyte.jello.notification.Notification;
 import net.minecraft.client.Minecraft;
 import totalcross.json.CJsonUtils;

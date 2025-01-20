@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.impl.render.classic.esp.SkeletonESP;
 import com.mentalfrostbyte.jello.module.impl.render.classic.esp.VanillaESP;
 import com.mentalfrostbyte.jello.module.impl.render.jello.esp.ShadowESP;
 import com.mentalfrostbyte.jello.module.impl.render.jello.esp.SimsESP;
-import com.mentalfrostbyte.jello.settings.BooleanSetting;
+import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 
 public class ESP extends ModuleWithModuleSettings {
     public ESP() {

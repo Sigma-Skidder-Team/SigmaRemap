@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.antibot.HypixelAntiBot;
 import com.mentalfrostbyte.jello.module.impl.combat.antibot.MovementAntiBot;
-import com.mentalfrostbyte.jello.settings.ModeSetting;
+import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 
 public class AntiBot extends Module {
     public AntiBot() {

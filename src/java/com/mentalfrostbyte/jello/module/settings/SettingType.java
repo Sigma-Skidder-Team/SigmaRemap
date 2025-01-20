@@ -1,4 +1,4 @@
-package com.mentalfrostbyte.jello.settings;
+package com.mentalfrostbyte.jello.module.settings;
 
 public enum SettingType {
     BOOLEAN,

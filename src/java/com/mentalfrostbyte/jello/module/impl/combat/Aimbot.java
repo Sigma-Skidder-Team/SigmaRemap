@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.combat.aimbot.BasicAimbot;
 import com.mentalfrostbyte.jello.module.impl.combat.aimbot.CandCAimbot;
 import com.mentalfrostbyte.jello.module.impl.combat.aimbot.SmoothAimbot;
-import com.mentalfrostbyte.jello.settings.BooleanSetting;
+import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.ArmorStandEntity;
 import mapped.Class8781;

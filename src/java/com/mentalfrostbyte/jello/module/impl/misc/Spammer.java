@@ -4,8 +4,8 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.settings.InputSetting;
-import com.mentalfrostbyte.jello.settings.NumberSetting;
+import com.mentalfrostbyte.jello.module.settings.impl.InputSetting;
+import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class Spammer extends Module {

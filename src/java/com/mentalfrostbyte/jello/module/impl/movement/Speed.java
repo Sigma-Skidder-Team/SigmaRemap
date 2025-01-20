@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.movement.speed.*;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.settings.BooleanSetting;
+import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class Speed extends ModuleWithModuleSettings {
