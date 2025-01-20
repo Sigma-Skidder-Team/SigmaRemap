@@ -30,8 +30,8 @@ import org.lwjgl.opengl.GL30;
 public class ShadersRender {
    private static final ResourceLocation field24257 = new ResourceLocation("textures/entity/end_portal.png");
 
-   public static void method17147(Class7624 var0, double var1, double var3, double var5) {
-      var0.method24979(var1, var3, var5);
+   public static void method17147(ICamera var0, double var1, double var3, double var5) {
+      var0.setCameraPosition(var1, var3, var5);
    }
 
    public static void method17148() {

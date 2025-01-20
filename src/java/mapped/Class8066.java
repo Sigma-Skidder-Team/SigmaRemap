@@ -18,6 +18,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.optifine.Config;
+import net.optifine.render.AabbFrame;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -53,7 +54,7 @@ public class Class8066 {
    private Class8066[] field34633;
    private boolean field34634;
    private Class7002 field34635;
-   public Class6487 field34636;
+   public AabbFrame field34636;
    public final Class9016 field34637;
 
    public Class8066(Class9016 var1) {
@@ -430,11 +431,11 @@ public class Class8066 {
       this.field34634 = true;
    }
 
-   public boolean method27748(Class7624 var1, int var2) {
-      return !this.method27749().method19655(var1, var2) ? var1.method24980(this.field34614) : true;
+   public boolean method27748(ICamera var1, int var2) {
+      return !this.method27749().isBoundingBoxInFrustumFully(var1, var2) ? var1.isBoundingBoxInFrustum(this.field34614) : true;
    }
 
-   public Class6487 method27749() {
+   public AabbFrame method27749() {
       if (this.field34636 == null) {
          BlockPos var3 = this.method27718();
          int var4 = var3.getX();
@@ -445,7 +446,7 @@ public class Class8066 {
          int var9 = var5 >> var7 << var7;
          int var10 = var6 >> var7 << var7;
          if (var8 != var4 || var9 != var5 || var10 != var6) {
-            Class6487 var11 = Class9016.method33346(this.field34637).method929(new BlockPos(var8, var9, var10)).method27749();
+            AabbFrame var11 = Class9016.method33346(this.field34637).method929(new BlockPos(var8, var9, var10)).method27749();
             if (var11 != null && var11.minX == (double)var8 && var11.minY == (double)var9 && var11.minZ == (double)var10) {
                this.field34636 = var11;
             }
@@ -453,7 +454,7 @@ public class Class8066 {
 
          if (this.field34636 == null) {
             int var12 = 1 << var7;
-            this.field34636 = new Class6487((double)var8, (double)var9, (double)var10, (double)(var8 + var12), (double)(var9 + var12), (double)(var10 + var12));
+            this.field34636 = new AabbFrame((double)var8, (double)var9, (double)var10, (double)(var8 + var12), (double)(var9 + var12), (double)(var10 + var12));
          }
       }
 
