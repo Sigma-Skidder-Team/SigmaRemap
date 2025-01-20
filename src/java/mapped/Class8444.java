@@ -28,18 +28,19 @@ public class Class8444 {
       for (int var5 = 0; var5 < 16; var5++) {
          for (int var6 = 0; var6 < 16; var6++) {
             BlockPos var7 = new BlockPos(var3 + var5, 64, var4 + var6);
-            int var8 = Client.getInstance()
-               .getWaypointsManager()
-               .method30006(
-                  new BlockPos(var7.getX(), this.field36184.getHeightmap(Heightmap.Type.WORLD_SURFACE).getHeight(var5, var6) - 1, var7.getZ()), true
-               );
-            this.field36185.put((byte)(var8 >> 16 & 0xFF));
-            this.field36185.put((byte)(var8 >> 8 & 0xFF));
-            this.field36185.put((byte)(var8 & 0xFF));
+            int var8 = Client.getInstance().waypointsManager
+                  .method30006(
+                        new BlockPos(var7.getX(),
+                              this.field36184.getHeightmap(Heightmap.Type.WORLD_SURFACE).getHeight(var5, var6) - 1,
+                              var7.getZ()),
+                        true);
+            this.field36185.put((byte) (var8 >> 16 & 0xFF));
+            this.field36185.put((byte) (var8 >> 8 & 0xFF));
+            this.field36185.put((byte) (var8 & 0xFF));
          }
       }
 
-      ((Buffer)this.field36185).flip();
+      ((Buffer) this.field36185).flip();
       this.field36186 = this.method29697();
    }
 

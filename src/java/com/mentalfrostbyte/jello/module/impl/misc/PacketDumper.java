@@ -22,7 +22,7 @@ public class PacketDumper extends Module {
         super(ModuleCategory.MISC, "Packet dumper", "Dumps packets sent to and fro from the client and server");
 
         try {
-            File packetLog = new File(Client.getInstance().getFile() + "/latest_packets.txt");
+            File packetLog = new File(Client.getInstance().file + "/latest_packets.txt");
             if (!packetLog.exists()) {
                 packetLog.createNewFile();
             }
@@ -33,7 +33,8 @@ public class PacketDumper extends Module {
         }
     }
 
-    private String extractFieldValue(Field field, Object packetInstance) throws IllegalArgumentException, IllegalAccessException {
+    private String extractFieldValue(Field field, Object packetInstance)
+            throws IllegalArgumentException, IllegalAccessException {
         field.setAccessible(true);
         if (field.getType() == int.class) {
             return Integer.toString(field.getInt(packetInstance));

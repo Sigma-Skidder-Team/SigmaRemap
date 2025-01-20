@@ -20,8 +20,8 @@ import javax.annotation.Nullable;
 import java.util.function.Function;
 
 public class Class954 extends TileEntity {
-   private final ITextComponent[] field5356 = new ITextComponent[]{
-      StringTextComponent.EMPTY, StringTextComponent.EMPTY, StringTextComponent.EMPTY, StringTextComponent.EMPTY
+   private final ITextComponent[] field5356 = new ITextComponent[] {
+         StringTextComponent.EMPTY, StringTextComponent.EMPTY, StringTextComponent.EMPTY, StringTextComponent.EMPTY
    };
    private boolean field5357 = true;
    private PlayerEntity field5358;
@@ -53,10 +53,12 @@ public class Class954 extends TileEntity {
 
       for (int var5 = 0; var5 < 4; var5++) {
          String var6 = var2.getString("Text" + (var5 + 1));
-         IFormattableTextComponent var7 = ITextComponent.Serializer.getComponentFromJson(var6.isEmpty() ? "\"\"" : var6);
+         IFormattableTextComponent var7 = ITextComponent.Serializer
+               .getComponentFromJson(var6.isEmpty() ? "\"\"" : var6);
          if (this.world instanceof ServerWorld) {
             try {
-               this.field5356[var5] = TextComponentUtils.func_240645_a_(this.method3843((ServerPlayerEntity)null), var7, (Entity)null, 0);
+               this.field5356[var5] = TextComponentUtils.func_240645_a_(this.method3843((ServerPlayerEntity) null),
+                     var7, (Entity) null, 0);
             } catch (CommandSyntaxException var9) {
                this.field5356[var5] = var7;
             }
@@ -80,7 +82,7 @@ public class Class954 extends TileEntity {
    @Nullable
    public Class9125 method3837(int var1, Function<ITextComponent, Class9125> var2) {
       if (this.field5359[var1] == null && this.field5356[var1] != null) {
-         this.field5359[var1] = (Class9125)var2.apply(this.field5356[var1]);
+         this.field5359[var1] = (Class9125) var2.apply(this.field5356[var1]);
       }
 
       return this.field5359[var1];
@@ -127,7 +129,8 @@ public class Class954 extends TileEntity {
          if (var8 != null && var8.getClickEvent() != null) {
             ClickEvent var9 = var8.getClickEvent();
             if (var9.getAction() == ClickEvent$Action.RUN_COMMAND) {
-               var1.method3396().getCommandManager().handleCommand(this.method3843((ServerPlayerEntity)var1), var9.getValue());
+               var1.method3396().commandManager.handleCommand(this.method3843((ServerPlayerEntity) var1),
+                     var9.getValue());
             }
          }
       }
@@ -139,16 +142,15 @@ public class Class954 extends TileEntity {
       String var4 = var1 != null ? var1.getName().getString() : "Sign";
       Object var5 = var1 != null ? var1.getDisplayName() : new StringTextComponent("Sign");
       return new CommandSource(
-         ICommandSource.field5189,
-         Vector3d.method11328(this.pos),
-         Vector2f.ZERO,
-         (ServerWorld)this.world,
-         2,
-         var4,
-         (ITextComponent)var5,
-         this.world.getServer(),
-         var1
-      );
+            ICommandSource.field5189,
+            Vector3d.method11328(this.pos),
+            Vector2f.ZERO,
+            (ServerWorld) this.world,
+            2,
+            var4,
+            (ITextComponent) var5,
+            this.world.getServer(),
+            var1);
    }
 
    public Class112 method3844() {

@@ -147,7 +147,7 @@ public class Block extends AbstractBlock implements IItemProvider {
       BlockPos var6 = var2.offset(var3);
       BlockState var7 = var1.getBlockState(var6);
       EventRenderBlocks var8 = new EventRenderBlocks(var0);
-      Client.getInstance().getEventManager().call(var8);
+      Client.getInstance().eventManager.call(var8);
       if (!var8.isCancelled()) {
          if (!var8.method13971()) {
             if (!var0.method23411(var7, var3)) {

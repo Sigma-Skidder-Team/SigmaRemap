@@ -22,16 +22,16 @@ public class Class6814 {
    private static final String configFileExtension = ".profile";
 
    public void saveConfig(Configuration config) {
-       try {
-          this.savedConfigs.add(0, config);
-          File configItself = new File(Client.getInstance().getFile() + configFolder + config.getName + configFileExtension);
-          if (!configItself.exists()) {
-             configItself.createNewFile();
-          }
-           IOUtils.write(config.method22985(new JSONObject()).toString(0), Files.newOutputStream(configItself.toPath()));
-       } catch (IOException e) {
-           throw new RuntimeException(e);
-       }
+      try {
+         this.savedConfigs.add(0, config);
+         File configItself = new File(Client.getInstance().file + configFolder + config.getName + configFileExtension);
+         if (!configItself.exists()) {
+            configItself.createNewFile();
+         }
+         IOUtils.write(config.method22985(new JSONObject()).toString(0), Files.newOutputStream(configItself.toPath()));
+      } catch (IOException e) {
+         throw new RuntimeException(e);
+      }
    }
 
    public void listOnly(Configuration config) {
@@ -78,12 +78,13 @@ public class Class6814 {
    }
 
    public void loadProfile(String name) throws IOException {
-      File configFolderFolder = new File(Client.getInstance().getFile() + configFolder);
+      File configFolderFolder = new File(Client.getInstance().file + configFolder);
       if (!configFolderFolder.exists()) {
          configFolderFolder.mkdirs();
       }
 
-      File[] configsFound = configFolderFolder.listFiles((var0, var1x) -> var1x.toLowerCase().endsWith(configFileExtension));
+      File[] configsFound = configFolderFolder
+            .listFiles((var0, var1x) -> var1x.toLowerCase().endsWith(configFileExtension));
 
       for (File config : configsFound) {
          try {
@@ -121,8 +122,9 @@ public class Class6814 {
    }
 
    public void saveAndReplaceConfigs() throws IOException {
-      this.currentConfigs.serializedConfigData = Client.getInstance().moduleManager.saveCurrentConfigToJSON(new JSONObject());
-      File configFolderFolder = new File(Client.getInstance().getFile() + configFolder);
+      this.currentConfigs.serializedConfigData = Client.getInstance().moduleManager
+            .saveCurrentConfigToJSON(new JSONObject());
+      File configFolderFolder = new File(Client.getInstance().file + configFolder);
       if (!configFolderFolder.exists()) {
          configFolderFolder.mkdirs();
       }
@@ -136,12 +138,14 @@ public class Class6814 {
 
       // Create new config files for each saved configuration
       for (Configuration savedConfig : this.savedConfigs) {
-         File configItself = new File(Client.getInstance().getFile() + configFolder + savedConfig.getName + configFileExtension);
+         File configItself = new File(
+               Client.getInstance().file + configFolder + savedConfig.getName + configFileExtension);
          if (!configItself.exists()) {
             configItself.createNewFile();
          }
 
-         IOUtils.write(savedConfig.method22985(new JSONObject()).toString(0), Files.newOutputStream(configItself.toPath()));
+         IOUtils.write(savedConfig.method22985(new JSONObject()).toString(0),
+               Files.newOutputStream(configItself.toPath()));
       }
    }
 
@@ -152,18 +156,19 @@ public class Class6814 {
    public void loadConfig(Configuration var1) {
       Client.getInstance().saveClientData();
       RandomModuleThread.field8343 = new HashMap<>();
-       if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
-          this.currentConfigs.serializedConfigData = Client.getInstance().moduleManager.saveCurrentConfigToJSON(new JSONObject());
-          this.currentConfigs = var1;
-          Client.getInstance().getConfig().put("profile", var1.getName);
-          Client.getInstance().moduleManager.load(var1.serializedConfigData);
-          Client.getInstance().saveClientData();
-       } else {
-          this.currentConfigs.serializedConfigData = var1.method22986();
-          Client.getInstance().getConfig().put("profile", "Classic");
-          Client.getInstance().moduleManager.load(var1.serializedConfigData);
-          Client.getInstance().saveClientData();
-       }
+      if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
+         this.currentConfigs.serializedConfigData = Client.getInstance().moduleManager
+               .saveCurrentConfigToJSON(new JSONObject());
+         this.currentConfigs = var1;
+         Client.getInstance().getConfig().put("profile", var1.getName);
+         Client.getInstance().moduleManager.load(var1.serializedConfigData);
+         Client.getInstance().saveClientData();
+      } else {
+         this.currentConfigs.serializedConfigData = var1.method22986();
+         Client.getInstance().getConfig().put("profile", "Classic");
+         Client.getInstance().moduleManager.load(var1.serializedConfigData);
+         Client.getInstance().saveClientData();
+      }
    }
 
    public List<Configuration> getAllConfigs() {

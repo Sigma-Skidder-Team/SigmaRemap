@@ -80,9 +80,7 @@ public class Waypoints extends Module {
                                                 (int) var9.getPosX(),
                                                 (int) var9.getPosY(),
                                                 (int) var9.getPosZ(),
-                                                ClientColors.DARK_OLIVE.getColor
-                                        )
-                                );
+                                                ClientColors.DARK_OLIVE.getColor));
                     }
                 }
             }
@@ -105,23 +103,21 @@ public class Waypoints extends Module {
         }
 
         var4.sort(
-                (var0, var1x) -> !(
-                        mc.player.getDistanceNearest((double) var0.field35890, (double) var0.field35893, (double) var0.field35891)
-                                < mc.player.getDistanceNearest((double) var1x.field35890, (double) var1x.field35893, (double) var1x.field35891)
-                )
-                        ? -1
-                        : 1
-        );
+                (var0, var1x) -> !(mc.player.getDistanceNearest((double) var0.field35890, (double) var0.field35893,
+                        (double) var0.field35891) < mc.player.getDistanceNearest((double) var1x.field35890,
+                                (double) var1x.field35893, (double) var1x.field35891))
+                                        ? -1
+                                        : 1);
         return var4;
     }
 
     @EventTarget
     public void method16277(Render3DEvent var1) {
         if (this.isEnabled()) {
-            for (Class8351 var5 : this.method16276(Client.getInstance().getWaypointsManager().method29989())) {
+            for (Class8351 var5 : this.method16276(Client.getInstance().waypointsManager.method29989())) {
                 BlockPos var6 = new BlockPos(
-                        var5.field35890 - (var5.field35890 <= 0 ? 1 : 0), var5.field35893, var5.field35891 - (var5.field35891 <= 0 ? 1 : 0)
-                );
+                        var5.field35890 - (var5.field35890 <= 0 ? 1 : 0), var5.field35893,
+                        var5.field35891 - (var5.field35891 <= 0 ? 1 : 0));
                 double var7 = Math.sqrt(PositionUtils.calculateDistanceSquared(var6));
                 if (!(var7 > 300.0)) {
                     if (mc.world.getChunk(var6) != null && var5.field35894) {
@@ -135,7 +131,8 @@ public class Waypoints extends Module {
                             var9 += 16;
                         }
 
-                        int var11 = mc.world.getChunk(var6).getHeightmap(Heightmap.Type.WORLD_SURFACE).getHeight(var9, var10);
+                        int var11 = mc.world.getChunk(var6).getHeightmap(Heightmap.Type.WORLD_SURFACE).getHeight(var9,
+                                var10);
                         if (var11 == 0) {
                             var11 = 64;
                         }
@@ -145,9 +142,12 @@ public class Waypoints extends Module {
                         }
                     }
 
-                    float var13 = (float) ((double) var5.field35893 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getY());
-                    float var14 = (float) ((double) var5.field35890 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getX());
-                    float var15 = (float) ((double) var5.field35891 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getZ());
+                    float var13 = (float) ((double) var5.field35893
+                            - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getY());
+                    float var14 = (float) ((double) var5.field35890
+                            - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getX());
+                    float var15 = (float) ((double) var5.field35891
+                            - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getZ());
                     if (var5.field35890 < 0) {
                         var14--;
                     }
@@ -175,14 +175,16 @@ public class Waypoints extends Module {
             GL11.glPushMatrix();
             GL11.glRotatef(var4, 0.0F, 1.0F, 0.0F);
             GL11.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
-            this.method16279(MultiUtilities.method17690(ClientColors.DEEP_TEAL.getColor, var1, 0.04F * (float) var4 / 90.0F));
+            this.method16279(
+                    MultiUtilities.method17690(ClientColors.DEEP_TEAL.getColor, var1, 0.04F * (float) var4 / 90.0F));
             GL11.glPopMatrix();
         }
 
         for (int var5 = 0; var5 <= 270; var5 += 90) {
             GL11.glPushMatrix();
             GL11.glRotatef(var5, 0.0F, 1.0F, 0.0F);
-            this.method16279(MultiUtilities.method17690(ClientColors.DEEP_TEAL.getColor, var1, 0.04F * (float) var5 / 90.0F));
+            this.method16279(
+                    MultiUtilities.method17690(ClientColors.DEEP_TEAL.getColor, var1, 0.04F * (float) var5 / 90.0F));
             GL11.glPopMatrix();
         }
     }
@@ -270,15 +272,17 @@ public class Waypoints extends Module {
         GL11.glPushMatrix();
         GL11.glScalef(-0.009F * var6, -0.009F * var6, -0.009F * var6);
         GL11.glTranslated(0.0, -20.0 * Math.sqrt(Math.sqrt(var6)), 0.0);
-        int var11 = MultiUtilities.applyAlpha(MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 75.0F), 0.5F);
+        int var11 = MultiUtilities.applyAlpha(MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor,
+                ClientColors.DEEP_TEAL.getColor, 75.0F), 0.5F);
         RenderUtil.drawRect(
-                (float) (-var9.getStringWidth(var4) / 2 - 14), -5.0F, (float) var9.getStringWidth(var4) / 2.0F + 14.0F, (float) (var9.method23952() + 7), var11
-        );
+                (float) (-var9.getStringWidth(var4) / 2 - 14), -5.0F, (float) var9.getStringWidth(var4) / 2.0F + 14.0F,
+                (float) (var9.method23952() + 7), var11);
         RenderUtil.drawRoundedRect(
-                (float) (-var9.getStringWidth(var4) / 2 - 14), -5.0F, (float) (var9.getStringWidth(var4) + 28), (float) (var9.method23952() + 12), 20.0F, 0.5F
-        );
+                (float) (-var9.getStringWidth(var4) / 2 - 14), -5.0F, (float) (var9.getStringWidth(var4) + 28),
+                (float) (var9.method23952() + 12), 20.0F, 0.5F);
         GL11.glTranslated(-var9.getStringWidth(var4) / 2, 0.0, 0.0);
-        RenderUtil.drawString(var9, 0.0F, 0.0F, var4, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F));
+        RenderUtil.drawString(var9, 0.0F, 0.0F, var4,
+                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
         GL11.glEnable(3553);

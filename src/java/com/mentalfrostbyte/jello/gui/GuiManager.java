@@ -123,7 +123,7 @@ public class GuiManager {
         Minecraft.getInstance();
         if (Minecraft.IS_RUNNING_ON_MAC) {
             try {
-                JSONObject var2 = FileUtil.readFile(new File(Client.getInstance().getFile() + "/config.json"));
+                JSONObject var2 = FileUtil.readFile(new File(Client.getInstance().file + "/config.json"));
                 if (var2.has("hidpicocoa")) {
                     field41351 = var2.getBoolean("hidpicocoa");
                 }

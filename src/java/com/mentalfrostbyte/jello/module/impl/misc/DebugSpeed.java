@@ -49,8 +49,8 @@ public class DebugSpeed extends Module {
                 }
 
                 MultiUtilities.addChatMessage(
-                        Client.getInstance().getCommandManager().getPrefix() + "(" + var15 + "x faster " + (!var7 ? "jumping" : "walking") + ")  Speed: " + var5
-                );
+                        Client.getInstance().commandManager.getPrefix() + "(" + var15 + "x faster "
+                                + (!var7 ? "jumping" : "walking") + ")  Speed: " + var5);
             }
 
             this.field23557 = !mc.player.onGround ? this.field23557++ : 1;

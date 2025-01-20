@@ -39,7 +39,7 @@ public class NoteblockPlayer extends Module {
 
     public NoteblockPlayer() {
         super(ModuleCategory.MISC, "NoteblockPlayer", "Plays noteblocks! Needs NBS files in sigma5/nbs");
-        File var3 = new File(Client.getInstance().getFile() + "/nbs");
+        File var3 = new File(Client.getInstance().file + "/nbs");
         if (var3.exists()) {
             this.field23640 = new ArrayList<>(Arrays.asList(var3.list()));
 
@@ -59,9 +59,12 @@ public class NoteblockPlayer extends Module {
     }
 
     public static void method16410(BlockPos var0) {
-        double var3 = (double) ((float) var0.getX() + 0.5F) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getX();
-        double var5 = (double) ((float) var0.getY() + 1.0F) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getY();
-        double var7 = (double) ((float) var0.getZ() + 0.5F) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getZ();
+        double var3 = (double) ((float) var0.getX() + 0.5F)
+                - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getX();
+        double var5 = (double) ((float) var0.getY() + 1.0F)
+                - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getY();
+        double var7 = (double) ((float) var0.getZ() + 0.5F)
+                - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getZ();
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);
@@ -116,9 +119,13 @@ public class NoteblockPlayer extends Module {
                                 Class8255 var6 = var5.method37433(this.field23638);
                                 if (var6 != null) {
                                     for (Class6463 var8 : this.field23641) {
-                                        if ((var6.method28780() != 3 && this.method16414(var8) == 0 || var8.method19640() == var6.method28780())
-                                                && Class2121.method8807(var8.field28402) == (float) (var6.method28782() - 33)
-                                                && Math.sqrt(mc.player.getPosition().distanceSq(var8.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
+                                        if ((var6.method28780() != 3 && this.method16414(var8) == 0
+                                                || var8.method19640() == var6.method28780())
+                                                && Class2121.method8807(
+                                                        var8.field28402) == (float) (var6.method28782() - 33)
+                                                && Math.sqrt(mc.player.getPosition()
+                                                        .distanceSq(var8.field28401)) < (double) mc.playerController
+                                                                .getBlockReachDistance()) {
                                             float[] var9 = BlockUtil.method34542(var8.field28401, Direction.UP);
                                             if ((double) var8.field28401.getY() > mc.player.getPosY() + 1.0) {
                                                 var9 = BlockUtil.method34542(var8.field28401, Direction.DOWN);
@@ -134,7 +141,10 @@ public class NoteblockPlayer extends Module {
                                             mc.player.rotationYawHead = var9[0];
                                             mc.player.renderYawOffset = var9[0];
 
-                                            mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var8.field28401, Direction.UP));
+                                            mc.getConnection()
+                                                    .sendPacket(new CPlayerDiggingPacket(
+                                                            CPlayerDiggingPacket.Action.START_DESTROY_BLOCK,
+                                                            var8.field28401, Direction.UP));
                                             mc.player.swingArm(Hand.MAIN_HAND);
                                             this.field23642.add(var8.field28401);
                                         }
@@ -153,7 +163,8 @@ public class NoteblockPlayer extends Module {
     public boolean method16406(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
             if ((var5.field28402 == -1.0F || this.method16411(var5.field28402, var5.field28403))
-                    && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
+                    && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController
+                            .getBlockReachDistance()) {
                 return false;
             }
         }
@@ -163,7 +174,8 @@ public class NoteblockPlayer extends Module {
 
     public boolean method16407(List<Class6463> var1, EventUpdate event) {
         for (Class6463 var5 : var1) {
-            if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
+            if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition()
+                    .distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
                 float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
                 Rots.rotating = true;
                 Rots.prevYaw = var6[0];
@@ -175,7 +187,8 @@ public class NoteblockPlayer extends Module {
 
                 mc.player.rotationYawHead = var6[0];
                 mc.player.renderYawOffset = var6[0];
-                mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var5.field28401, Direction.UP));
+                mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK,
+                        var5.field28401, Direction.UP));
                 mc.player.swingArm(Hand.MAIN_HAND);
                 this.field23642.clear();
                 this.field23642.add(var5.field28401);
@@ -188,7 +201,8 @@ public class NoteblockPlayer extends Module {
 
     public void method16407(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
-            if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
+            if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition()
+                    .distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
                 float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
                 Rots.rotating = true;
                 Rots.prevYaw = var6[0];
@@ -199,7 +213,8 @@ public class NoteblockPlayer extends Module {
 
                 mc.player.rotationYawHead = var6[0];
                 mc.player.renderYawOffset = var6[0];
-                mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var5.field28401, Direction.UP));
+                mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK,
+                        var5.field28401, Direction.UP));
                 mc.player.swingArm(Hand.MAIN_HAND);
                 this.field23642.clear();
                 this.field23642.add(var5.field28401);
@@ -212,7 +227,8 @@ public class NoteblockPlayer extends Module {
     public void method16408(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
             if (this.method16411(var5.field28402, var5.field28403)
-                    && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
+                    && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController
+                            .getBlockReachDistance()) {
                 float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
                 mc.player.swingArm(Hand.MAIN_HAND);
                 Rots.rotating = true;
@@ -224,7 +240,8 @@ public class NoteblockPlayer extends Module {
 
                 mc.player.rotationYawHead = var6[0];
                 mc.player.renderYawOffset = var6[0];
-                mc.getConnection().sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, BlockUtil.rayTrace(var6[0], var6[1], mc.playerController.getBlockReachDistance() + 1.0F)));
+                mc.getConnection().sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND,
+                        BlockUtil.rayTrace(var6[0], var6[1], mc.playerController.getBlockReachDistance() + 1.0F)));
                 this.field23642.clear();
                 this.field23642.add(var5.field28401);
 
@@ -237,7 +254,8 @@ public class NoteblockPlayer extends Module {
     public void method16408(List<Class6463> var1, EventUpdate event) {
         for (Class6463 var5 : var1) {
             if (this.method16411(var5.field28402, var5.field28403)
-                    && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
+                    && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController
+                            .getBlockReachDistance()) {
                 float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
                 mc.player.swingArm(Hand.MAIN_HAND);
                 Rots.rotating = true;
@@ -250,7 +268,8 @@ public class NoteblockPlayer extends Module {
 
                 mc.player.rotationYawHead = var6[0];
                 mc.player.renderYawOffset = var6[0];
-                mc.getConnection().sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, BlockUtil.rayTrace(var6[0], var6[1], mc.playerController.getBlockReachDistance() + 1.0F)));
+                mc.getConnection().sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND,
+                        BlockUtil.rayTrace(var6[0], var6[1], mc.playerController.getBlockReachDistance() + 1.0F)));
                 this.field23642.clear();
                 this.field23642.add(var5.field28401);
 
@@ -292,7 +311,8 @@ public class NoteblockPlayer extends Module {
 
                     for (int var5 = 0; var5 < this.field23641.size(); var5++) {
                         Class6463 var6 = this.field23641.get(var5);
-                        if (var6.field28401.equals(new BlockPos(var4.method17551(), var4.method17552(), var4.method17553()))) {
+                        if (var6.field28401
+                                .equals(new BlockPos(var4.method17551(), var4.method17552(), var4.method17553()))) {
                             var6.field28402 = var4.method17555();
                             this.field23641.set(var5, var6);
                         }
@@ -304,7 +324,8 @@ public class NoteblockPlayer extends Module {
 
                     for (int var8 = 0; var8 < this.field23641.size(); var8++) {
                         Class6463 var9 = this.field23641.get(var8);
-                        if (var9.field28401.equals(new BlockPos(var7.method17224(), var7.method17225(), var7.method17226()))) {
+                        if (var9.field28401
+                                .equals(new BlockPos(var7.method17224(), var7.method17225(), var7.method17226()))) {
                             var9.field28402 = var7.method17228();
                             this.field23641.set(var8, var9);
                         }
@@ -318,16 +339,18 @@ public class NoteblockPlayer extends Module {
     public void onEnable() {
         if (!mc.playerController.isInCreativeMode()) {
             if (this.field23640.isEmpty()) {
-                MultiUtilities.addChatMessage("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
+                MultiUtilities.addChatMessage(
+                        "§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
                 MultiUtilities.addChatMessage("§cPlaying the only integrated demo song!");
-                this.field23639 = Class8471.method29870(ResourceList.readInputStream("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
+                this.field23639 = Class8471.method29870(
+                        ResourceList.readInputStream("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
                 if (this.field23639 == null) {
                     MultiUtilities.addChatMessage("§cError loading included song, wtf!");
                     this.setEnabled(false);
                     return;
                 }
             } else {
-                File var3 = new File(Client.getInstance().getFile() + "/nbs/" + this.getStringSettingValueByName("Song"));
+                File var3 = new File(Client.getInstance().file + "/nbs/" + this.getStringSettingValueByName("Song"));
                 this.field23639 = Class8471.method29869(var3);
                 if (this.field23639 == null) {
                     MultiUtilities.addChatMessage("§cError loading song! Make sure song is saved as <= V3 format");
@@ -339,7 +362,8 @@ public class NoteblockPlayer extends Module {
             System.out.println(this.field23639.method9953());
             MultiUtilities.addChatMessage("Now Playing: " + this.field23639.method9953());
             if (Math.floor(20.0F / this.field23639.method9958()) != (double) (20.0F / this.field23639.method9958())) {
-                MultiUtilities.addChatMessage("§cNBS Error! Invalid tempo! (" + this.field23639.method9958() + ") Unpredictable results!");
+                MultiUtilities.addChatMessage(
+                        "§cNBS Error! Invalid tempo! (" + this.field23639.method9958() + ") Unpredictable results!");
             }
 
             this.field23638 = 0;

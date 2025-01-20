@@ -699,7 +699,7 @@ public abstract class AbstractBlock {
 
        public int getLightValue() {
           EventRenderBlocks var3 = new EventRenderBlocks(this);
-          Client.getInstance().getEventManager().call(var3);
+          Client.getInstance().eventManager.call(var3);
           return !var3.method13971() ? this.field31564 : 1;
        }
 

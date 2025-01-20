@@ -32,7 +32,7 @@ public class FriendManager {
         if (var1.getKey() == this.field34179.gameSettings.keyBindPickBlock.inputMappingsInput.keyCode
                 && this.field34179.pointedEntity != null
                 && this.field34179.pointedEntity.getName() != null) {
-            CommandManager var4 = Client.getInstance().getCommandManager();
+            CommandManager var4 = Client.getInstance().commandManager;
             var4.method30236();
             if (this.method26997(this.field34179.pointedEntity)) {
                 this.method27005(this.field34179.pointedEntity.getName().getUnformattedComponentText());

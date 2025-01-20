@@ -24,7 +24,8 @@ public class Config extends Command {
    private static final String configFileExtension = ".profile";
 
    private final ArrayList<String> saveCommands = new ArrayList<String>(Arrays.asList("add", "create", "new", "save"));
-   private final ArrayList<String> deleteCommands = new ArrayList<String>(Arrays.asList("remove", "delete", "del", "rem"));
+   private final ArrayList<String> deleteCommands = new ArrayList<String>(
+         Arrays.asList("remove", "delete", "del", "rem"));
 
    public Config() {
       super("config", "Manage configs", "configs", "profiles", "profile");
@@ -48,10 +49,14 @@ public class Config extends Command {
                         throw new CommandException();
                      }
 
-                     user.send("§l" + Client.getInstance().moduleManager.getConfigurationManager().getAllConfigs().size() + " " + this.getConfigOrProfileName() + " :");
+                     user.send(
+                           "§l" + Client.getInstance().moduleManager.getConfigurationManager().getAllConfigs().size()
+                                 + " " + this.getConfigOrProfileName() + " :");
 
-                     for (Configuration config : Client.getInstance().moduleManager.getConfigurationManager().getAllConfigs()) {
-                        boolean isCurrentConfig = Client.getInstance().moduleManager.getConfigurationManager().getCurrentConfig() == config;
+                     for (Configuration config : Client.getInstance().moduleManager.getConfigurationManager()
+                           .getAllConfigs()) {
+                        boolean isCurrentConfig = Client.getInstance().moduleManager.getConfigurationManager()
+                              .getCurrentConfig() == config;
                         if (Client.getInstance().getClientMode() != ClientMode.CLASSIC || !isCurrentConfig) {
                            user.send((!isCurrentConfig ? "" : "§n") + config.getName);
                         }
@@ -69,17 +74,21 @@ public class Config extends Command {
                } else if (args.length != 1) {
                   String name = args[1].getArguments().toLowerCase();
                   String ogName = args[1].getArguments();
-                  Configuration currentConfig = Client.getInstance().moduleManager.getConfigurationManager().getCurrentConfig();
-                  currentConfig.serializedConfigData = Client.getInstance().moduleManager.saveCurrentConfigToJSON(new JSONObject());
+                  Configuration currentConfig = Client.getInstance().moduleManager.getConfigurationManager()
+                        .getCurrentConfig();
+                  currentConfig.serializedConfigData = Client.getInstance().moduleManager
+                        .saveCurrentConfigToJSON(new JSONObject());
                   Client.getInstance().moduleManager.getConfigurationManager().removeConfig(name);
-                  Client.getInstance().moduleManager.getConfigurationManager().saveConfig(new Configuration(name, currentConfig.serializedConfigData));
+                  Client.getInstance().moduleManager.getConfigurationManager()
+                        .saveConfig(new Configuration(name, currentConfig.serializedConfigData));
                   user.send("Saved " + this.getConfigOrProfileName());
                } else {
                   user.send("Usage : .config save <name>");
                }
             } else if (args.length != 1) {
                String name = args[1].getArguments().toLowerCase();
-               Configuration config = Client.getInstance().moduleManager.getConfigurationManager().getConfigByName(name);
+               Configuration config = Client.getInstance().moduleManager.getConfigurationManager()
+                     .getConfigByName(name);
                if (config == null) {
                   user.send(this.getConfigOrProfileName() + " not found!");
                } else {
@@ -100,13 +109,13 @@ public class Config extends Command {
    }
 
    public void saveConfigToFile(String configName) {
-      JSONObject jsonConfig  = Client.getInstance().moduleManager.saveCurrentConfigToJSON(new JSONObject());
-      File configFolder = new File(Client.getInstance().getFile() + this.configFolder);
+      JSONObject jsonConfig = Client.getInstance().moduleManager.saveCurrentConfigToJSON(new JSONObject());
+      File configFolder = new File(Client.getInstance().file + this.configFolder);
       if (!configFolder.exists()) {
          configFolder.mkdirs();
       }
 
-      File configFile = new File(Client.getInstance().getFile() + this.configFolder + configName + this.configFileExtension);
+      File configFile = new File(Client.getInstance().file + this.configFolder + configName + this.configFileExtension);
       if (!configFile.exists()) {
          try {
             configFile.createNewFile();

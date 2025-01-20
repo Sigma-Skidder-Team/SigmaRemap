@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class AccountManager {
     public ArrayList<Account> accounts = new ArrayList<Account>();
-    public File altsFile = new File(Client.getInstance().getFile() + "/alts.json");
+    public File altsFile = new File(Client.getInstance().file + "/alts.json");
     private String email;
     private final BanListener banListener = new BanListener();
 
@@ -125,7 +125,7 @@ public class AccountManager {
         jsonObject.put("alts", jsonArray);
 
         try {
-            FileUtil.save(jsonObject, new File(Client.getInstance().getFile() + "/alts.json"));
+            FileUtil.save(jsonObject, new File(Client.getInstance().file + "/alts.json"));
         } catch (IOException | JSONException2 var6) {
             Client.getInstance().getLogger().error(var6.getMessage());
         }

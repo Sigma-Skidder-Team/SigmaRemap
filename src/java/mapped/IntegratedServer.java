@@ -39,18 +39,17 @@ public class IntegratedServer extends MinecraftServer {
    public Class9755 field8927 = null;
 
    public IntegratedServer(
-      Thread var1,
-      Minecraft var2,
-      DynamicRegistriesImpl var3,
-      SaveFormat.LevelSave var4,
-      ResourcePackList var5,
-      DataPackRegistries var6,
-      IServerConfiguration var7,
-      MinecraftSessionService var8,
-      GameProfileRepository var9,
-      PlayerProfileCache var10,
-      Class8216 var11
-   ) {
+         Thread var1,
+         Minecraft var2,
+         DynamicRegistriesImpl var3,
+         SaveFormat.LevelSave var4,
+         ResourcePackList var5,
+         DataPackRegistries var6,
+         IServerConfiguration var7,
+         MinecraftSessionService var8,
+         GameProfileRepository var9,
+         PlayerProfileCache var10,
+         Class8216 var11) {
       super(var1, var3, var4, var7, var5, var2.getProxy(), var2.getDataFixer(), var6, var8, var9, var10, var11);
       this.setServerOwner(var2.getSession().getUsername());
       this.setDemo(var2.isDemo());
@@ -66,15 +65,15 @@ public class IntegratedServer extends MinecraftServer {
       this.setAllowFlight(true);
       this.func_244801_P();
 
-      if (Reflector.ServerLifecycleHooks_handleServerAboutToStart.exists() && !Reflector.callBoolean(Reflector.ServerLifecycleHooks_handleServerAboutToStart, this))
-      {
+      if (Reflector.ServerLifecycleHooks_handleServerAboutToStart.exists()
+            && !Reflector.callBoolean(Reflector.ServerLifecycleHooks_handleServerAboutToStart, this)) {
          return false;
-      }
-      else
-      {
+      } else {
          this.func_240800_l__();
          this.setMOTD(this.getServerOwner() + " - " + this.func_240793_aU_().getWorldName());
-         return Reflector.ServerLifecycleHooks_handleServerStarting.exists() ? Reflector.callBoolean(Reflector.ServerLifecycleHooks_handleServerStarting, this) : true;
+         return Reflector.ServerLifecycleHooks_handleServerStarting.exists()
+               ? Reflector.callBoolean(Reflector.ServerLifecycleHooks_handleServerStarting, this)
+               : true;
       }
    }
 
@@ -141,7 +140,8 @@ public class IntegratedServer extends MinecraftServer {
       var1 = super.method1326(var1);
       var1.getCategory().addDetail("Type", "Integrated Server (map_client.txt)");
       var1.getCategory()
-         .addDetail("Is Modded", () -> this.func_230045_q_().orElse("Probably not. Jar signature remains and both client + server brands are untouched."));
+            .addDetail("Is Modded", () -> this.func_230045_q_()
+                  .orElse("Probably not. Jar signature remains and both client + server brands are untouched."));
       return var1;
    }
 
@@ -151,7 +151,8 @@ public class IntegratedServer extends MinecraftServer {
       if (var3.equals("vanilla")) {
          var3 = this.getServerModName();
          if ("vanilla".equals(var3)) {
-            return Minecraft.class.getSigners() != null ? Optional.<String>empty() : Optional.<String>of("Very likely; Jar signature invalidated");
+            return Minecraft.class.getSigners() != null ? Optional.<String>empty()
+                  : Optional.<String>of("Very likely; Jar signature invalidated");
          } else {
             return Optional.<String>of("Definitely; Server brand changed to '" + var3 + "'");
          }
@@ -169,7 +170,7 @@ public class IntegratedServer extends MinecraftServer {
    @Override
    public boolean method1374(GameType var1, boolean var2, int var3) {
       try {
-         this.getNetworkSystem().addEndpoint((InetAddress)null, var3);
+         this.getNetworkSystem().addEndpoint((InetAddress) null, var3);
          LOGGER.info("Started serving on {}", var3);
          this.field1223 = var3;
          this.field8922 = new Class384(this.method1362(), var3 + "");
@@ -180,7 +181,7 @@ public class IntegratedServer extends MinecraftServer {
          this.field8920.player.method5399(var6);
 
          for (ServerPlayerEntity var8 : this.getPlayerList().getPlayers()) {
-            this.getCommandManager().method18837(var8);
+            this.commandManager.method18837(var8);
          }
 
          return true;
@@ -259,7 +260,7 @@ public class IntegratedServer extends MinecraftServer {
 
    @Override
    public int method1337(int var1) {
-      return (int)(this.field8920.gameSettings.field44575 * (float)var1);
+      return (int) (this.field8920.gameSettings.field44575 * (float) var1);
    }
 
    @Override
@@ -332,11 +333,11 @@ public class IntegratedServer extends MinecraftServer {
       if (var1) {
          int var6 = this.method1375();
          int var7 = this.field8920.gameSettings.field44696;
-         if ((long)var6 < this.field8924 + (long)var7) {
+         if ((long) var6 < this.field8924 + (long) var7) {
             return false;
          }
 
-         this.field8924 = (long)var6;
+         this.field8924 = (long) var6;
       }
 
       return super.method1291(var1, var2, var3);

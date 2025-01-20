@@ -36,7 +36,7 @@ public class Class4351 extends Class4278 {
       this.field21271 = var6;
 
       /*
-       * File profileDirectory = new File(Client.getInstance().getFile() +
+       * File profileDirectory = new File(Client.getInstance().file +
        * "/profiles/");
        * if (profileDirectory.listFiles() != null) {
        * boolean profileExists = Files.exists(new File(profileDirectory,
@@ -109,11 +109,11 @@ public class Class4351 extends Class4278 {
          this.animation.changeDirection(Direction.FORWARDS);
          try {
             boolean profileDeleted = Files.deleteIfExists(
-                  new File(Client.getInstance().getFile() + "/profiles/" + this.profileName.getTypedText() + ".profile")
+                  new File(Client.getInstance().file + "/profiles/" + this.profileName.getTypedText() + ".profile")
                         .toPath());
 
             if (!profileDeleted) {
-               File profilesFolder = new File(Client.getInstance().getFile() + "/profiles/");
+               File profilesFolder = new File(Client.getInstance().file + "/profiles/");
                File[] filesInProfiles = profilesFolder.listFiles();
                if (filesInProfiles == null || filesInProfiles.length == 0) {
                   System.out.println("Removing " + this.currentConfig.getName);

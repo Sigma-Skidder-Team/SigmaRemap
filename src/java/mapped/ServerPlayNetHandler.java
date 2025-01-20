@@ -402,10 +402,9 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          var4.skip();
       }
 
-      ParseResults<CommandSource> var5 = this.server.getCommandManager().method18842().parse(var4,
+      ParseResults<CommandSource> var5 = this.server.commandManager.method18842().parse(var4,
             this.player.getCommandSource());
-      this.server
-            .getCommandManager()
+      this.server.commandManager
             .method18842()
             .getCompletionSuggestions(var5)
             .thenAccept(var2 -> this.netManager.sendPacket(new STabCompletePacket(var1.getTransactionId(), var2)));
@@ -1126,7 +1125,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    private void handleSlashCommand(String command) {
-      this.server.getCommandManager().handleCommand(this.player.getCommandSource(), command);
+      this.server.commandManager.handleCommand(this.player.getCommandSource(), command);
    }
 
    @Override

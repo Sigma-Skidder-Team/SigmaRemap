@@ -49,7 +49,7 @@ public class Client {
     public static List<Texture> textureList = new ArrayList<Texture>();
     public static boolean dontRenderHand = false;
     private static Client instance;
-    private File file = new File("sigma5");
+    public File file = new File("sigma5");
     private JSONObject config;
     private boolean field28968 = true;
     private Logger logger;
@@ -268,26 +268,6 @@ public class Client {
         return this.logger;
     }
 
-    public EventManager getEventManager() {
-        return this.eventManager;
-    }
-
-    public ModuleManager getModuleManager() {
-        return this.moduleManager;
-    }
-
-    public FriendManager getFriendManager() {
-        return this.friendManager;
-    }
-
-    public CombatManager getCombatManager() {
-        return this.combatManager;
-    }
-
-    public GuiManager getGuiManager() {
-        return this.guiManager;
-    }
-
     public PlayerStateTracker getPlayerTracker() {
         return this.playerStateTracker;
     }
@@ -296,32 +276,12 @@ public class Client {
         return this.slotChangeTracker;
     }
 
-    public NotificationManager getNotificationManager() {
-        return this.notificationManager;
-    }
-
-    public WaypointsManager getWaypointsManager() {
-        return this.waypointsManager;
-    }
-
-    public NetworkManager getNetworkManager() {
-        return this.networkManager;
-    }
-
-    public CommandManager getCommandManager() {
-        return this.commandManager;
-    }
-
     public Class8795 method19950() {
         return this.field28989;
     }
 
     public JSONObject getConfig() {
         return this.config;
-    }
-
-    public File getFile() {
-        return this.file;
     }
 
     public ClientMode getClientMode() {

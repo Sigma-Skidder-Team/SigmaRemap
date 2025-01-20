@@ -54,7 +54,8 @@ import java.util.regex.Pattern;
 public class DedicatedServer extends MinecraftServer implements Class1646 {
    private static final Logger LOGGER = LogManager.getLogger();
    private static final Pattern field8928 = Pattern.compile("^[a-fA-F0-9]{40}$");
-   private final List<PendingCommand> pendingCommandList = Collections.<PendingCommand>synchronizedList(Lists.newArrayList());
+   private final List<PendingCommand> pendingCommandList = Collections
+         .<PendingCommand>synchronizedList(Lists.newArrayList());
    private QueryThread rconQueryThread;
    private final Class914 rconConsoleSource;
    private MainThread rconThread;
@@ -63,19 +64,18 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
    private final ChatFilterClient field8935;
 
    public DedicatedServer(
-      Thread var1,
-      DynamicRegistriesImpl var2,
-      SaveFormat.LevelSave var3,
-      ResourcePackList var4,
-      DataPackRegistries var5,
-      IServerConfiguration var6,
-      Class6816 var7,
-      DataFixer var8,
-      MinecraftSessionService var9,
-      GameProfileRepository var10,
-      PlayerProfileCache var11,
-      Class8216 var12
-   ) {
+         Thread var1,
+         DynamicRegistriesImpl var2,
+         SaveFormat.LevelSave var3,
+         ResourcePackList var4,
+         DataPackRegistries var5,
+         IServerConfiguration var6,
+         Class6816 var7,
+         DataFixer var8,
+         MinecraftSessionService var9,
+         GameProfileRepository var10,
+         PlayerProfileCache var11,
+         Class8216 var12) {
       super(var1, var2, var3, var6, var4, Proxy.NO_PROXY, var8, var5, var9, var10, var11, var12);
       this.settings = var7;
       this.rconConsoleSource = new Class914(this);
@@ -84,23 +84,19 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
 
    @Override
    public boolean init() throws IOException {
-      Thread thread = new Thread("Server console handler")
-      {
-         public void run()
-         {
-            BufferedReader bufferedreader = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));
+      Thread thread = new Thread("Server console handler") {
+         public void run() {
+            BufferedReader bufferedreader = new BufferedReader(
+                  new InputStreamReader(System.in, StandardCharsets.UTF_8));
             String s1;
 
-            try
-            {
-               while (!DedicatedServer.this.isServerStopped() && DedicatedServer.this.isServerRunning() && (s1 = bufferedreader.readLine()) != null)
-               {
+            try {
+               while (!DedicatedServer.this.isServerStopped() && DedicatedServer.this.isServerRunning()
+                     && (s1 = bufferedreader.readLine()) != null) {
                   DedicatedServer.this.handleConsoleInput(s1, DedicatedServer.this.getCommandSource());
                }
-            }
-            catch (IOException ioexception1)
-            {
-               DedicatedServer.LOGGER.error("Exception handling console input", (Throwable)ioexception1);
+            } catch (IOException ioexception1) {
+               DedicatedServer.LOGGER.error("Exception handling console input", (Throwable) ioexception1);
             }
          }
       };
@@ -109,7 +105,8 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
       thread.start();
       LOGGER.info("Starting minecraft server version " + SharedConstants.getVersion().getName());
       if (Runtime.getRuntime().maxMemory() / 1024L / 1024L < 512L) {
-         LOGGER.warn("To start the server with more ram, launch it as \"java -Xmx1024M -Xms1024M -jar minecraft_server.jar\"");
+         LOGGER.warn(
+               "To start the server with more ram, launch it as \"java -Xmx1024M -Xms1024M -jar minecraft_server.jar\"");
       }
 
       LOGGER.info("Loading properties");
@@ -141,7 +138,8 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
       }
 
       this.func_244801_P();
-      LOGGER.info("Starting Minecraft server on {}:{}", this.getServerHostname().isEmpty() ? "*" : this.getServerHostname(), this.getServerPort());
+      LOGGER.info("Starting Minecraft server on {}:{}",
+            this.getServerHostname().isEmpty() ? "*" : this.getServerHostname(), this.getServerPort());
 
       try {
          this.getNetworkSystem().addEndpoint(inetaddress, this.getServerPort());
@@ -156,8 +154,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
          LOGGER.warn("**** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!");
          LOGGER.warn("The server will make no attempt to authenticate usernames. Beware.");
          LOGGER.warn(
-            "While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose."
-         );
+               "While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.");
          LOGGER.warn("To change this, set \"online-mode\" to \"true\" in the server.properties file.");
       }
 
@@ -177,7 +174,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
          LOGGER.info("Preparing level \"{}\"", this.func_230542_k__());
          this.func_240800_l__();
          long j = Util.nanoTime() - i;
-         String s = String.format(Locale.ROOT, "%.3fs", (double)j / 1.0E9);
+         String s = String.format(Locale.ROOT, "%.3fs", (double) j / 1.0E9);
          LOGGER.info("Done ({})! For help, type \"help\"", s);
          if (serverproperties.announceAdvancements != null) {
             this.getGameRules().get(GameRules.ANNOUNCE_ADVANCEMENTS).set(serverproperties.announceAdvancements, this);
@@ -238,7 +235,8 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
       } else {
          var4 = var3.field43808;
          if (!Strings.isNullOrEmpty(var3.field43807)) {
-            LOGGER.warn("resource-pack-hash is deprecated and found along side resource-pack-sha1. resource-pack-hash will be ignored.");
+            LOGGER.warn(
+                  "resource-pack-hash is deprecated and found along side resource-pack-sha1. resource-pack-hash will be ignored.");
          }
       }
 
@@ -248,8 +246,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
 
       if (!var3.resourcePack.isEmpty() && var4.isEmpty()) {
          LOGGER.warn(
-            "You specified a resource pack without providing a sha1 hash. Pack will be updated on the client only if you change the name of the pack."
-         );
+               "You specified a resource pack without providing a sha1 hash. Pack will be updated on the client only if you change the name of the pack.");
       }
 
       return var4;
@@ -281,7 +278,8 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
    @Override
    public Optional<String> func_230045_q_() {
       String var3 = this.getServerModName();
-      return "vanilla".equals(var3) ? Optional.<String>empty() : Optional.<String>of("Definitely; Server brand changed to '" + var3 + "'");
+      return "vanilla".equals(var3) ? Optional.<String>empty()
+            : Optional.<String>of("Definitely; Server brand changed to '" + var3 + "'");
    }
 
    @Override
@@ -328,7 +326,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
    public void executePendingCommands() {
       while (!this.pendingCommandList.isEmpty()) {
          PendingCommand var3 = this.pendingCommandList.remove(0);
-         this.getCommandManager().handleCommand(var3.field43317, var3.field43316);
+         this.commandManager.handleCommand(var3.field43317, var3.field43316);
       }
    }
 
@@ -348,7 +346,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
    }
 
    public DedicatedPlayerList getPlayerList() {
-      return (DedicatedPlayerList)super.getPlayerList();
+      return (DedicatedPlayerList) super.getPlayerList();
    }
 
    @Override
@@ -440,7 +438,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
    @Override
    public void setPlayerIdleTimeout(int var1) {
       super.setPlayerIdleTimeout(var1);
-      this.settings.method20781(var2 -> (ServerProperties)var2.playerIdleTimeout.method15917(this.method1437(), var1));
+      this.settings.method20781(var2 -> (ServerProperties) var2.playerIdleTimeout.method15917(this.method1437(), var1));
    }
 
    @Override
@@ -537,12 +535,12 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
 
    public String handleRConCommand(String var1) {
       this.rconConsoleSource.resetLog();
-      this.runImmediately(() -> this.getCommandManager().handleCommand(this.rconConsoleSource.getCommandSource(), var1));
+      this.runImmediately(() -> this.commandManager.handleCommand(this.rconConsoleSource.getCommandSource(), var1));
       return this.rconConsoleSource.getLogContents();
    }
 
    public void method6510(boolean var1) {
-      this.settings.method20781(var2 -> (ServerProperties)var2.field43832.method15917(this.method1437(), var1));
+      this.settings.method20781(var2 -> (ServerProperties) var2.field43832.method15917(this.method1437(), var1));
    }
 
    @Override

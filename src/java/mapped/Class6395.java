@@ -93,8 +93,9 @@ public abstract class Class6395 {
       var6.method31790(var5);
       CompoundNBT var9 = this.method19448(var2);
       RegistryKey var10 = var9 == null
-         ? World.OVERWORLD
-         : DimensionType.decodeWorldKey(new Dynamic(NBTDynamicOps.INSTANCE, var9.get("Dimension"))).resultOrPartial(field27988::error).orElse(World.OVERWORLD);
+            ? World.OVERWORLD
+            : DimensionType.decodeWorldKey(new Dynamic(NBTDynamicOps.INSTANCE, var9.get("Dimension")))
+                  .resultOrPartial(field27988::error).orElse(World.OVERWORLD);
       ServerWorld var11 = this.field27990.method1318(var10);
       ServerWorld var12;
       if (var11 != null) {
@@ -105,47 +106,45 @@ public abstract class Class6395 {
       }
 
       var2.setWorld(var12);
-      var2.interactionManager.method33871((ServerWorld)var2.world);
+      var2.interactionManager.method33871((ServerWorld) var2.world);
       String var13 = "local";
       if (var1.getRemoteAddress() != null) {
          var13 = var1.getRemoteAddress().toString();
       }
 
       field27988.info(
-         "{}[{}] logged in with entity id {} at ({}, {}, {})",
-         var2.getName().getString(),
-         var13,
-         var2.getEntityId(),
-         var2.getPosX(),
-         var2.getPosY(),
-         var2.getPosZ()
-      );
+            "{}[{}] logged in with entity id {} at ({}, {}, {})",
+            var2.getName().getString(),
+            var13,
+            var2.getEntityId(),
+            var2.getPosX(),
+            var2.getPosY(),
+            var2.getPosZ());
       Class6612 var14 = var12.getWorldInfo();
-      this.method19481(var2, (ServerPlayerEntity)null, var12);
+      this.method19481(var2, (ServerPlayerEntity) null, var12);
       ServerPlayNetHandler var15 = new ServerPlayNetHandler(this.field27990, var1, var2);
       GameRules var16 = var12.getGameRules();
       boolean var17 = var16.getBoolean(GameRules.field24248);
       boolean var18 = var16.getBoolean(GameRules.field24237);
       var15.sendPacket(
-         new SJoinGamePacket(
-            var2.getEntityId(),
-            var2.interactionManager.getGameType(),
-            var2.interactionManager.method33864(),
-            BiomeManager.getHashedSeed(var12.getSeed()),
-            var14.isHardcore(),
-            this.field27990.method1319(),
-            this.field28001,
-            var12.getDimensionType(),
-            var12.getDimensionKey(),
-            this.method19475(),
-            this.field28003,
-            var18,
-            !var17,
-            var12.isDebug(),
-            var12.method6966()
-         )
-      );
-      var15.sendPacket(new SCustomPayloadPlayPacket(SCustomPayloadPlayPacket.field24537, new PacketBuffer(Unpooled.buffer()).writeString(this.method19444().getServerModName())));
+            new SJoinGamePacket(
+                  var2.getEntityId(),
+                  var2.interactionManager.getGameType(),
+                  var2.interactionManager.method33864(),
+                  BiomeManager.getHashedSeed(var12.getSeed()),
+                  var14.isHardcore(),
+                  this.field27990.method1319(),
+                  this.field28001,
+                  var12.getDimensionType(),
+                  var12.getDimensionKey(),
+                  this.method19475(),
+                  this.field28003,
+                  var18,
+                  !var17,
+                  var12.isDebug(),
+                  var12.method6966()));
+      var15.sendPacket(new SCustomPayloadPlayPacket(SCustomPayloadPlayPacket.field24537,
+            new PacketBuffer(Unpooled.buffer()).writeString(this.method19444().getServerModName())));
       var15.sendPacket(new SServerDifficultyPacket(var14.method20047(), var14.method20048()));
       var15.sendPacket(new SPlayerAbilitiesPacket(var2.abilities));
       var15.sendPacket(new SHeldItemChangePacket(var2.inventory.currentItem));
@@ -170,7 +169,8 @@ public abstract class Class6395 {
       this.method19456(new SPlayerListItemPacket(SPlayerListItemPacket.Action.ADD_PLAYER, var2));
 
       for (int var20 = 0; var20 < this.field27991.size(); var20++) {
-         var2.connection.sendPacket(new SPlayerListItemPacket(SPlayerListItemPacket.Action.ADD_PLAYER, this.field27991.get(var20)));
+         var2.connection.sendPacket(
+               new SPlayerListItemPacket(SPlayerListItemPacket.Action.ADD_PLAYER, this.field27991.get(var20)));
       }
 
       var12.method6921(var2);
@@ -186,7 +186,8 @@ public abstract class Class6395 {
 
       if (var9 != null && var9.contains("RootVehicle", 10)) {
          CompoundNBT var26 = var9.getCompound("RootVehicle");
-         Entity var27 = EntityType.method33223(var26.getCompound("Entity"), var12, var1x -> var12.method6917(var1x) ? var1x : null);
+         Entity var27 = EntityType.method33223(var26.getCompound("Entity"), var12,
+               var1x -> var12.method6917(var1x) ? var1x : null);
          if (var27 != null) {
             UUID var22;
             if (!var26.hasUniqueID("Attach")) {
@@ -312,25 +313,29 @@ public abstract class Class6395 {
    public ITextComponent method19451(SocketAddress var1, GameProfile var2) {
       if (this.field27993.method14431(var2)) {
          Class6786 var7 = this.field27993.method14437(var2);
-         TranslationTextComponent var8 = new TranslationTextComponent("multiplayer.disconnect.banned.reason", var7.method20683());
+         TranslationTextComponent var8 = new TranslationTextComponent("multiplayer.disconnect.banned.reason",
+               var7.method20683());
          if (var7.method20682() != null) {
-            var8.append(new TranslationTextComponent("multiplayer.disconnect.banned.expiration", field27989.format(var7.method20682())));
+            var8.append(new TranslationTextComponent("multiplayer.disconnect.banned.expiration",
+                  field27989.format(var7.method20682())));
          }
 
          return var8;
       } else if (this.method19441(var2)) {
          if (this.field27994.method14449(var1)) {
             Class6788 var5 = this.field27994.method14451(var1);
-            TranslationTextComponent var6 = new TranslationTextComponent("multiplayer.disconnect.banned_ip.reason", var5.method20683());
+            TranslationTextComponent var6 = new TranslationTextComponent("multiplayer.disconnect.banned_ip.reason",
+                  var5.method20683());
             if (var5.method20682() != null) {
-               var6.append(new TranslationTextComponent("multiplayer.disconnect.banned_ip.expiration", field27989.format(var5.method20682())));
+               var6.append(new TranslationTextComponent("multiplayer.disconnect.banned_ip.expiration",
+                     field27989.format(var5.method20682())));
             }
 
             return var6;
          } else {
             return this.field27991.size() >= this.field28002 && !this.method19443(var2)
-               ? new TranslationTextComponent("multiplayer.disconnect.server_full")
-               : null;
+                  ? new TranslationTextComponent("multiplayer.disconnect.server_full")
+                  : null;
          }
       } else {
          return new TranslationTextComponent("multiplayer.disconnect.not_whitelisted");
@@ -365,7 +370,7 @@ public abstract class Class6395 {
          var12 = new Class9080(var11);
       }
 
-      return new ServerPlayerEntity(this.field27990, var11, var1, (Class9081)var12);
+      return new ServerPlayerEntity(this.field27990, var11, var1, (Class9081) var12);
    }
 
    public ServerPlayerEntity func_232644_a_(ServerPlayerEntity var1, boolean var2) {
@@ -390,7 +395,8 @@ public abstract class Class6395 {
          var11 = new Class9080(var10);
       }
 
-      ServerPlayerEntity var12 = new ServerPlayerEntity(this.field27990, var10, var1.getGameProfile(), (Class9081)var11);
+      ServerPlayerEntity var12 = new ServerPlayerEntity(this.field27990, var10, var1.getGameProfile(),
+            (Class9081) var11);
       var12.connection = var1.connection;
       var12.method2789(var1, var2);
       var12.setEntityId(var1.getEntityId());
@@ -409,13 +415,14 @@ public abstract class Class6395 {
       } else {
          BlockState var20 = var10.getBlockState(var5);
          boolean var15 = var20.isIn(Blocks.field37124);
-         Vector3d var16 = (Vector3d)var9.get();
+         Vector3d var16 = (Vector3d) var9.get();
          float var18;
          if (!var20.isIn(BlockTags.field32770) && !var15) {
             var18 = var6;
          } else {
             Vector3d var17 = Vector3d.method11330(var5).subtract(var16).method11333();
-            var18 = (float) MathHelper.wrapDegrees(MathHelper.method37814(var17.z, var17.x) * 180.0F / (float)Math.PI - 90.0);
+            var18 = (float) MathHelper
+                  .wrapDegrees(MathHelper.method37814(var17.z, var17.x) * 180.0F / (float) Math.PI - 90.0);
          }
 
          var12.setLocationAndAngles(var16.x, var16.y, var16.z, var18, 0.0F);
@@ -429,22 +436,22 @@ public abstract class Class6395 {
 
       Class6612 var21 = var12.world.getWorldInfo();
       var12.connection
-         .sendPacket(
-            new SRespawnPacket(
-               var12.world.getDimensionType(),
-               var12.world.getDimensionKey(),
-               BiomeManager.getHashedSeed(var12.getServerWorld().getSeed()),
-               var12.interactionManager.getGameType(),
-               var12.interactionManager.method33864(),
-               var12.getServerWorld().isDebug(),
-               var12.getServerWorld().method6966(),
-               var2
-            )
-         );
-      var12.connection.method15668(var12.getPosX(), var12.getPosY(), var12.getPosZ(), var12.rotationYaw, var12.rotationPitch);
+            .sendPacket(
+                  new SRespawnPacket(
+                        var12.world.getDimensionType(),
+                        var12.world.getDimensionKey(),
+                        BiomeManager.getHashedSeed(var12.getServerWorld().getSeed()),
+                        var12.interactionManager.getGameType(),
+                        var12.interactionManager.method33864(),
+                        var12.getServerWorld().isDebug(),
+                        var12.getServerWorld().method6966(),
+                        var2));
+      var12.connection.method15668(var12.getPosX(), var12.getPosY(), var12.getPosZ(), var12.rotationYaw,
+            var12.rotationPitch);
       var12.connection.sendPacket(new SWorldSpawnChangedPacket(var10.getSpawnPoint(), var10.method6948()));
       var12.connection.sendPacket(new SServerDifficultyPacket(var21.method20047(), var21.method20048()));
-      var12.connection.sendPacket(new SSetExperiencePacket(var12.experience, var12.experienceTotal, var12.experienceLevel));
+      var12.connection
+            .sendPacket(new SSetExperiencePacket(var12.experience, var12.experienceTotal, var12.experienceLevel));
       this.method19472(var12, var10);
       this.method19454(var12);
       var10.method6922(var12);
@@ -454,11 +461,10 @@ public abstract class Class6395 {
       var12.setHealth(var12.getHealth());
       if (var19) {
          var12.connection
-            .sendPacket(
-               new SPlaySoundEffectPacket(
-                  SoundEvents.field27014, SoundCategory.field14732, (double)var5.getX(), (double)var5.getY(), (double)var5.getZ(), 1.0F, 1.0F
-               )
-            );
+               .sendPacket(
+                     new SPlaySoundEffectPacket(
+                           SoundEvents.field27014, SoundCategory.field14732, (double) var5.getX(), (double) var5.getY(),
+                           (double) var5.getZ(), 1.0F, 1.0F));
       }
 
       return var12;
@@ -557,7 +563,7 @@ public abstract class Class6395 {
          byte var5;
          if (var2 > 0) {
             if (var2 < 4) {
-               var5 = (byte)(24 + var2);
+               var5 = (byte) (24 + var2);
             } else {
                var5 = 28;
             }
@@ -568,7 +574,7 @@ public abstract class Class6395 {
          var1.connection.sendPacket(new SEntityStatusPacket(var1, var5));
       }
 
-      this.field27990.getCommandManager().method18837(var1);
+      this.field27990.commandManager.method18837(var1);
    }
 
    public boolean method19441(GameProfile var1) {
@@ -576,7 +582,8 @@ public abstract class Class6395 {
    }
 
    public boolean canSendCommands(GameProfile var1) {
-      return this.field27995.method14441(var1) || this.field27990.method1421(var1) && this.field27990.func_240793_aU_().method20072() || this.field28005;
+      return this.field27995.method14441(var1)
+            || this.field27990.method1421(var1) && this.field27990.func_240793_aU_().method20072() || this.field28005;
    }
 
    @Nullable
@@ -590,7 +597,8 @@ public abstract class Class6395 {
       return null;
    }
 
-   public void method19466(PlayerEntity var1, double var2, double var4, double var6, double var8, RegistryKey<World> var10, IPacket<?> var11) {
+   public void method19466(PlayerEntity var1, double var2, double var4, double var6, double var8,
+         RegistryKey<World> var10, IPacket<?> var11) {
       for (int var14 = 0; var14 < this.field27991.size(); var14++) {
          ServerPlayerEntity var15 = this.field27991.get(var14);
          if (var15 != var1 && var15.world.getDimensionKey() == var10) {
@@ -632,12 +640,15 @@ public abstract class Class6395 {
    public void method19472(ServerPlayerEntity var1, ServerWorld var2) {
       WorldBorder var5 = this.field27990.getServerWorld().getWorldBorder();
       var1.connection.sendPacket(new SWorldBorderPacket(var5, Class1864.field10036));
-      var1.connection.sendPacket(new SUpdateTimePacket(var2.getGameTime(), var2.method6784(), var2.getGameRules().getBoolean(GameRules.DO_DAYLIGHT_CYCLE)));
+      var1.connection.sendPacket(new SUpdateTimePacket(var2.getGameTime(), var2.method6784(),
+            var2.getGameRules().getBoolean(GameRules.DO_DAYLIGHT_CYCLE)));
       var1.connection.sendPacket(new SWorldSpawnChangedPacket(var2.getSpawnPoint(), var2.method6948()));
       if (var2.method6795()) {
          var1.connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24561, 0.0F));
-         var1.connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24567, var2.method6792(1.0F)));
-         var1.connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24568, var2.method6790(1.0F)));
+         var1.connection
+               .sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24567, var2.method6792(1.0F)));
+         var1.connection
+               .sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24568, var2.method6790(1.0F)));
       }
    }
 
@@ -697,7 +708,8 @@ public abstract class Class6395 {
             var1.interactionManager.method33862(this.field28004, GameType.field11101);
          }
       } else {
-         var1.interactionManager.method33862(var2.interactionManager.getGameType(), var2.interactionManager.method33864());
+         var1.interactionManager.method33862(var2.interactionManager.getGameType(),
+               var2.interactionManager.method33864());
       }
 
       var1.interactionManager.method33867(var3.getServer().func_240793_aU_().method20067());
@@ -709,7 +721,8 @@ public abstract class Class6395 {
 
    public void method19483() {
       for (int var3 = 0; var3 < this.field27991.size(); var3++) {
-         this.field27991.get(var3).connection.disconnect(new TranslationTextComponent("multiplayer.disconnect.server_shutdown"));
+         this.field27991.get(var3).connection
+               .disconnect(new TranslationTextComponent("multiplayer.disconnect.server_shutdown"));
       }
    }
 
