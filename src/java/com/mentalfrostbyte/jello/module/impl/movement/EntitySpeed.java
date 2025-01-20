@@ -13,6 +13,7 @@ import mapped.*;
 import net.minecraft.block.Blocks;
 import net.minecraft.network.play.client.CMoveVehiclePacket;
 import net.minecraft.network.play.server.SMoveVehiclePacket;
+import net.minecraft.util.MovementInput;
 
 public class EntitySpeed extends Module {
     public float field23546 = 3.0F;
@@ -33,8 +34,8 @@ public class EntitySpeed extends Module {
             }
 
             MovementInput var4 = mc.player.movementInput;
-            float var5 = var4.field43908;
-            float var6 = var4.field43907;
+            float var5 = var4.moveForward;
+            float var6 = var4.moveStrafe;
             if (!mc.player.getRidingEntity().collidedHorizontally
                     && !mc.player.getRidingEntity().onGround
                     && MultiUtilities.isAboveBounds(mc.player.getRidingEntity(), 5.0F)

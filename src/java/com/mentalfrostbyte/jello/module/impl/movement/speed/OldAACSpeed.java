@@ -63,7 +63,7 @@ public class OldAACSpeed extends Module {
                 var1.setX(mc.player.getMotion().x);
                 var1.setY(mc.player.getMotion().y);
                 var1.setZ(mc.player.getMotion().z);
-            } else if (var1.getY() != 0.4 + (double) MovementUtils.method37079() * 0.1) {
+            } else if (var1.getY() != 0.4 + (double) MovementUtils.getJumpBoost() * 0.1) {
                 this.field23537 = 0;
             } else {
                 MovementUtils.setSpeed(var1, this.field23534);
@@ -88,7 +88,7 @@ public class OldAACSpeed extends Module {
 
             this.field23535 = MovementUtils.method37083()[0];
             var1.method14003(this.field23534);
-            var1.method14002(0.4 + (double) MovementUtils.method37079() * 0.1);
+            var1.method14002(0.4 + (double) MovementUtils.getJumpBoost() * 0.1);
             this.field23536 = 0;
         }
     }

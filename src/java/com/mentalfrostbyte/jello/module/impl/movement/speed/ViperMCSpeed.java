@@ -28,10 +28,10 @@ public class ViperMCSpeed extends Module {
     public void EventMove(EventMove event) {
         if (this.isEnabled()) {
             this.tickCounter++;
-            float speed = 0.28F + (float) MovementUtils.method37078() * 0.05F;
+            float speed = 0.28F + (float) MovementUtils.getSpeedBoost() * 0.05F;
             if (this.tickCounter >= 4) {
                 this.tickCounter = 0;
-                speed = 1.15F + (float) MovementUtils.method37078() * 0.04F;
+                speed = 1.15F + (float) MovementUtils.getSpeedBoost() * 0.04F;
             }
 
             if (mc.gameSettings.keyBindBack.pressed) {

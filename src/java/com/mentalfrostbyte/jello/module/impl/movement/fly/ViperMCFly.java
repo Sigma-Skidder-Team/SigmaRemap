@@ -76,7 +76,7 @@ public class ViperMCFly extends Module {
                 if (this.field23594 != -1) {
                     if (this.field23594 == 0) {
                         if (!mc.gameSettings.keyBindJump.isKeyDown() && var1.getY() > 0.0) {
-                            var1.setY(-MovementUtils.method37080());
+                            var1.setY(-MovementUtils.getJumpValue());
                         }
 
                         MultiUtilities.setPlayerYMotion(var1.getY());
@@ -84,11 +84,11 @@ public class ViperMCFly extends Module {
                     }
                 } else {
                     if (mc.gameSettings.keyBindJump.isKeyDown()) {
-                        var1.setY(!this.field23598 ? var4 / 2.0 : MovementUtils.method37080());
+                        var1.setY(!this.field23598 ? var4 / 2.0 : MovementUtils.getJumpValue());
                         this.field23597 = this.field23596;
                         this.field23596 = !this.field23598 ? mc.player.getPosY() + var1.getY() : this.field23596;
                     } else {
-                        var1.setY(this.field23598 && !MultiUtilities.isAboveBounds(mc.player, 0.01F) ? -var4 / 2.0 : MovementUtils.method37080());
+                        var1.setY(this.field23598 && !MultiUtilities.isAboveBounds(mc.player, 0.01F) ? -var4 / 2.0 : MovementUtils.getJumpValue());
                         this.field23597 = this.field23596;
                         this.field23596 = this.field23598 && !MultiUtilities.isAboveBounds(mc.player, 0.01F)
                                 ? mc.player.getPosY() + var1.getY()

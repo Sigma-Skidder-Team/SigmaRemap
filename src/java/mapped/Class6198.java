@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.MovementInput;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.GameType;
@@ -99,7 +100,7 @@ public class Class6198 implements Class6196 {
 
    @Override
    public void method19100(MovementInput var1) {
-      if (var1.field43909 || var1.field43910 || var1.field43911 || var1.field43912 || var1.field43913) {
+      if (var1.forwardKeyDown || var1.backKeyDown || var1.leftKeyDown || var1.rightKeyDown || var1.jump) {
          this.field27661 = true;
       }
    }

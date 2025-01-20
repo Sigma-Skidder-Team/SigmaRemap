@@ -98,8 +98,8 @@ public class NCPSpeed extends Module {
             }
 
             if (!mc.gameSettings.keyBindJump.isKeyDown() || !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()) {
-                double var4 = 0.56 + (double) MovementUtils.method37078() * 0.1;
-                var1.method14002(0.407 + (double) MovementUtils.method37079() * 0.1 + Math.random() * 1.0E-5);
+                double var4 = 0.56 + (double) MovementUtils.getSpeedBoost() * 0.1;
+                var1.method14002(0.407 + (double) MovementUtils.getJumpBoost() * 0.1 + Math.random() * 1.0E-5);
                 if (Speed.tickCounter< 2) {
                     var4 /= 2.5;
                 }

@@ -44,7 +44,7 @@ public class AutoSprint extends Module {
                 && !((BlockFly) Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class)).method16732()) {
             ModifiableAttributeInstance getAttribute = mc.player.getAttribute(Attributes.MOVEMENT_SPEED);
             float BlockFly = (float) (
-                    (getAttribute.getBaseValue() + 0.03F + (double) (0.015F * (float) MovementUtils.method37078())) / (double) mc.player.abilities.getWalkSpeed() + 1.0
+                    (getAttribute.getBaseValue() + 0.03F + (double) (0.015F * (float) MovementUtils.getSpeedBoost())) / (double) mc.player.abilities.getWalkSpeed() + 1.0
             )
                     / 2.0F;
             event.fovModifier = BlockFly;

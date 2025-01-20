@@ -46,7 +46,7 @@ public class YPortSpeed extends Module {
     public void onDisable() {
         this.field23541 = false;
         if (mc.player.getMotion().y > 0.33) {
-            MultiUtilities.setPlayerYMotion(-0.43 + (double) MovementUtils.method37079() * 0.1);
+            MultiUtilities.setPlayerYMotion(-0.43 + (double) MovementUtils.getJumpBoost() * 0.1);
             MovementUtils.strafe(MovementUtils.getSpeed());
         }
     }
@@ -65,10 +65,10 @@ public class YPortSpeed extends Module {
                             this.field23541 = true;
                             mc.player.stepHeight = 0.5F;
                         } else if (this.field23541
-                                && MultiUtilities.isAboveBounds(mc.player, (float) (MovementUtils.method37080() + (double) MovementUtils.method37079() * 0.1 + 0.001F))) {
+                                && MultiUtilities.isAboveBounds(mc.player, (float) (MovementUtils.getJumpValue() + (double) MovementUtils.getJumpBoost() * 0.1 + 0.001F))) {
                             this.field23541 = !this.field23541;
                             MovementUtils.setSpeed(var1, 0.312);
-                            var1.setY(-0.43 + (double) MovementUtils.method37079() * 0.1);
+                            var1.setY(-0.43 + (double) MovementUtils.getJumpBoost() * 0.1);
                             MultiUtilities.setPlayerYMotion(var1.getY());
                             mc.player.stepHeight = 0.0F;
                         } else if (this.field23541) {
@@ -87,7 +87,7 @@ public class YPortSpeed extends Module {
                         } else if (this.field23545 == 2) {
                             this.field23545 = 3;
                             double var8 = 0.401448482 + 0.002 * Math.random();
-                            var8 *= 1.0 + Math.sqrt((float) MovementUtils.method37079() / 2.0F) / 2.0;
+                            var8 *= 1.0 + Math.sqrt((float) MovementUtils.getJumpBoost() / 2.0F) / 2.0;
                             var1.setY(var8);
                             this.field23543 *= 2.149;
                         } else if (this.field23545 == 3) {

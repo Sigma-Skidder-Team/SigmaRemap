@@ -77,8 +77,8 @@ public class NCPLongJump extends Module {
                 if (this.field23479) {
                     double var5 = MovementUtils.method37076() * 0.95;
                     if (this.field23478 == 1) {
-                        this.field23480 = (double) this.getNumberValueBySettingName("Boost") * 0.4 + (double) MovementUtils.method37078() * 0.05;
-                    } else if ((float) this.field23478 > this.getNumberValueBySettingName("Duration") + (float) MovementUtils.method37078()) {
+                        this.field23480 = (double) this.getNumberValueBySettingName("Boost") * 0.4 + (double) MovementUtils.getSpeedBoost() * 0.05;
+                    } else if ((float) this.field23478 > this.getNumberValueBySettingName("Duration") + (float) MovementUtils.getSpeedBoost()) {
                         this.field23480 = var5;
                     } else if (this.field23480 > var5) {
                         String var7 = this.getStringSettingValueByName("Speed Mode");
@@ -103,7 +103,7 @@ public class NCPLongJump extends Module {
                     }
 
                     MovementUtils.setSpeed(var1, this.field23480);
-                    if (MovementUtils.method37079() == 0) {
+                    if (MovementUtils.getJumpBoost() == 0) {
                         String var13 = this.getStringSettingValueByName("Glide Mode");
                         switch (var13) {
                             case "Basic":
@@ -144,12 +144,12 @@ public class NCPLongJump extends Module {
             this.field23479 = true;
             this.field23480 = MovementUtils.method37076();
             var1.method14003(this.field23480);
-            var1.method14002(0.425 + (double) MovementUtils.method37079() * 0.1);
-            if (this.getStringSettingValueByName("Glide Mode").equals("High") && MovementUtils.method37079() == 0) {
+            var1.method14002(0.425 + (double) MovementUtils.getJumpBoost() * 0.1);
+            if (this.getStringSettingValueByName("Glide Mode").equals("High") && MovementUtils.getJumpBoost() == 0) {
                 var1.method14002(0.599);
                 var1.method14003(0.0);
                 if ((double) this.getNumberValueBySettingName("Boost") > 1.5) {
-                    var1.method14003(0.28 + (double) this.getNumberValueBySettingName("Boost") * 0.1 + (double) MovementUtils.method37078() * 0.05);
+                    var1.method14003(0.28 + (double) this.getNumberValueBySettingName("Boost") * 0.1 + (double) MovementUtils.getSpeedBoost() * 0.05);
                 }
 
                 if (this.getStringSettingValueByName("Speed Mode").equals("Hypixel") && (double) this.getNumberValueBySettingName("Boost") > 1.75) {

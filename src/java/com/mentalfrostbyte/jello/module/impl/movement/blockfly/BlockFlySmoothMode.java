@@ -402,8 +402,8 @@ public class BlockFlySmoothMode extends Module {
     public double[] method16891() {
         double var3 = mc.player.getPosX();
         double var5 = mc.player.getPosZ();
-        double var7 = mc.player.movementInput.field43908;
-        double var9 = mc.player.movementInput.field43907;
+        double var7 = mc.player.movementInput.moveForward;
+        double var9 = mc.player.movementInput.moveStrafe;
         float var11 = mc.player.rotationYaw;
         BlockPos var12 = new BlockPos(var3, mc.player.getPosY() - 1.0, var5);
         double var13 = var3;

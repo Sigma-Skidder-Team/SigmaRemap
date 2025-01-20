@@ -55,7 +55,7 @@ public class SlowHopSpeed extends Module {
     @EventTarget
     public void method16339(JumpEvent var1) {
         if (this.isEnabled()) {
-            var1.method14002(0.407 + 0.1 * (double) MovementUtils.method37079());
+            var1.method14002(0.407 + 0.1 * (double) MovementUtils.getJumpBoost());
             this.field23599 = 0;
             var1.method14003(1.8);
         }

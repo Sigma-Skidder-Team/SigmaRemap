@@ -130,19 +130,19 @@ public class HypixelFly extends Module {
                     this.grounded = !this.grounded;
                     break;
                 case "Fast":
-                    event.setY(MovementUtils.method37080());
+                    event.setY(MovementUtils.getJumpValue());
                     MovementUtils.setSpeed(event, var28);
                     this.grounded = !this.grounded;
-                    this.flySpeed = 0.51 + (double) this.getNumberValueBySettingName("Speed") + 0.015 * (double) MovementUtils.method37078();
+                    this.flySpeed = 0.51 + (double) this.getNumberValueBySettingName("Speed") + 0.015 * (double) MovementUtils.getSpeedBoost();
                     break;
                 case "NoDmg":
-                    event.setY(MovementUtils.method37080());
+                    event.setY(MovementUtils.getJumpValue());
                     MovementUtils.setSpeed(event, var28);
                     this.grounded = !this.grounded;
                     this.flySpeed = var28 * 0.987;
                     break;
                 case "Funcraft":
-                    event.setY(MovementUtils.method37080());
+                    event.setY(MovementUtils.getJumpValue());
                     MovementUtils.setSpeed(event, var28);
                     this.grounded = !this.grounded;
                     this.flySpeed = 0.51 + (double) this.getNumberValueBySettingName("Speed");

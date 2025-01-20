@@ -288,7 +288,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                 switch (var4) {
                     case "NCP":
                         if (var1.getY() > 0.0) {
-                            if (MovementUtils.method37079() == 0) {
+                            if (MovementUtils.getJumpBoost() == 0) {
                                 if (var1.getY() > 0.247 && var1.getY() < 0.249) {
                                     var1.setY((double) ((int) (mc.player.getPosY() + var1.getY())) - mc.player.getPosY());
                                 }
@@ -308,7 +308,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                                     MovementUtils.setSpeed(var1, 0.0);
                                 }
 
-                                var1.setY(MovementUtils.method37080());
+                                var1.setY(MovementUtils.getJumpValue());
                             } else {
                                 var1.setY(-1.0E-5);
                             }
@@ -346,7 +346,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                     && MultiUtilities.isAboveBounds(mc.player, 0.001F)
                     && mc.gameSettings.keyBindJump.pressed) {
                 mc.player.jumpTicks = 20;
-                var1.setY(MovementUtils.method37080());
+                var1.setY(MovementUtils.getJumpValue());
             }
         } else if (!MultiUtilities.method17686() || this.getBooleanValueFromSettingName("Tower while moving")) {
             mc.player.jumpTicks = 0;

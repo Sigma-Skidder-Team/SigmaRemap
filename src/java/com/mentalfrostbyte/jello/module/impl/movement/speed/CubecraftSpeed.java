@@ -90,7 +90,7 @@ public class CubecraftSpeed extends Module {
                     if (!mc.player.collidedVertically || !MultiUtilities.isAboveBounds(mc.player, 0.001F) || !MovementUtils.isMoving()) {
                         this.field23618++;
                         if (this.field23618 == 1) {
-                            this.field23619 = 0.4 + (double) MovementUtils.method37078() * 0.1;
+                            this.field23619 = 0.4 + (double) MovementUtils.getSpeedBoost() * 0.1;
                         }
 
                         this.field23619 -= 0.015;
@@ -155,7 +155,7 @@ public class CubecraftSpeed extends Module {
     public void method16363(JumpEvent var1) {
         if (this.isEnabled()) {
             var1.method14002(0.4);
-            this.field23619 = 0.6 + (double) MovementUtils.method37078() * 0.1;
+            this.field23619 = 0.6 + (double) MovementUtils.getSpeedBoost() * 0.1;
             this.field23618 = 0;
             var1.method14003(this.field23619);
         }

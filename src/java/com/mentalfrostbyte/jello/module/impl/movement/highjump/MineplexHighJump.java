@@ -82,8 +82,8 @@ public class MineplexHighJump extends Module {
             double var4 = mc.player.getPosX();
             double var6 = mc.player.getPosZ();
             double var8 = mc.player.getPosY();
-            double var10 = (double) mc.player.movementInput.field43908;
-            double var12 = (double) mc.player.movementInput.field43907;
+            double var10 = (double) mc.player.movementInput.moveForward;
+            double var12 = (double) mc.player.movementInput.moveStrafe;
             float var14 = mc.player.rotationYaw;
             double var15 = 0.1;
             double var17 = var4

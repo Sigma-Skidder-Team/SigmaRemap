@@ -16,9 +16,9 @@ public class MinemenSpeed extends Module {
     @HigherPriority
     public void EventMove(EventMove event) {
         if (mc.player.onGround) {
-            double calculatedSpeed = 0.3399 + (double) MovementUtils.method37078() * 0.06;
+            double calculatedSpeed = 0.3399 + (double) MovementUtils.getSpeedBoost() * 0.06;
             if (mc.player.ticksExisted % 3 == 0) {
-                calculatedSpeed = 0.679 + (double) MovementUtils.method37078() * 0.12;
+                calculatedSpeed = 0.679 + (double) MovementUtils.getSpeedBoost() * 0.12;
             }
 
             MovementUtils.setSpeed(event, calculatedSpeed);

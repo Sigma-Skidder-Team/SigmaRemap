@@ -716,7 +716,7 @@ public class MultiUtilities {
       double var3 = mc.player.getPosX();
       double var5 = mc.player.getPosY();
       double var7 = mc.player.getPosZ();
-      int var9 = 49 + MovementUtils.method37079() * 17;
+      int var9 = 49 + MovementUtils.getJumpBoost() * 17;
 
       for (int var10 = 0; var10 < var9; var10++) {
          double var11 = !var0 ? 0.0 : method17750();

@@ -119,7 +119,7 @@ public class BlockFlyAACMode extends Module {
                 } else {
                     this.field23524 = 0;
                     mc.player.jump();
-                    var1.setY(0.419998 + (double) MovementUtils.method37079() * 0.1);
+                    var1.setY(0.419998 + (double) MovementUtils.getJumpBoost() * 0.1);
                     if (this.field23525 < 3) {
                         this.field23525++;
                     }

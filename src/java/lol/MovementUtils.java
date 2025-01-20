@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.entity.ai.attributes.Attributes;
 import mapped.Effects;
-import mapped.MovementInput;
+import net.minecraft.util.MovementInput;
 import mapped.RotationHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
@@ -41,7 +41,7 @@ public class MovementUtils {
    }
 
    public static double method37076() {
-      double var2 = 0.2873 + (double)method37078() * 0.057;
+      double var2 = 0.2873 + (double) getSpeedBoost() * 0.057;
       if (mc.player.isSneaking()) {
          var2 *= 0.25;
       }
@@ -62,16 +62,16 @@ public class MovementUtils {
       return var2;
    }
 
-   public static int method37078() {
+   public static int getSpeedBoost() {
       return ! mc.player.isPotionActive(Effects.SPEED) ? 0 : mc.player.getActivePotionEffect(Effects.SPEED).getAmplifier() + 1;
    }
 
-   public static int method37079() {
+   public static int getJumpBoost() {
       return ! mc.player.isPotionActive(Effects.JUMP_BOOST) ? 0 : mc.player.getActivePotionEffect(Effects.JUMP_BOOST).getAmplifier() + 1;
    }
 
-   public static double method37080() {
-      return 0.42F + (double)method37079() * 0.1;
+   public static double getJumpValue() {
+      return 0.42F + (double) getJumpBoost() * 0.1;
    }
 
    public static boolean isInWater() {
@@ -80,15 +80,15 @@ public class MovementUtils {
 
    public static float[] lenientStrafe() {
       MovementInput var2 = mc.player.movementInput;
-      float var3 = var2.field43908;
-      float var4 = var2.field43907;
+      float var3 = var2.moveForward;
+      float var4 = var2.moveStrafe;
       return method37084(var3, var4);
    }
 
    public static float[] method37083() {
       MovementInput var2 = mc.player.movementInput;
-      float var3 = var2.field43908;
-      float var4 = var2.field43907;
+      float var3 = var2.moveForward;
+      float var4 = var2.moveStrafe;
       return method37085(var3, var4);
    }
 
@@ -257,7 +257,7 @@ public class MovementUtils {
       double var4 = mc.player.getPosY();
       double var6 = mc.player.getPosZ();
 
-      for (int var8 = 0; var8 < 49 + method37079() * 17; var8++) {
+      for (int var8 = 0; var8 < 49 + getJumpBoost() * 17; var8++) {
          mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var2, var4 + 0.06248, var6, false));
          mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var2, var4, var6, false));
       }
@@ -311,8 +311,8 @@ public class MovementUtils {
    }
 
    public static void method37095(double var0) {
-      double var4 = (double) mc.player.movementInput.field43908;
-      double var6 = (double) mc.player.movementInput.field43907;
+      double var4 = (double) mc.player.movementInput.moveForward;
+      double var6 = (double) mc.player.movementInput.moveStrafe;
       float var8 = mc.player.rotationYaw;
       if (var4 != 0.0) {
          if (!(var6 > 0.0)) {

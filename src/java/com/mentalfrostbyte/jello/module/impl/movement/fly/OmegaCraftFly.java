@@ -93,7 +93,7 @@ public class OmegaCraftFly extends Module {
         if (this.field23700 != 1) {
             if (this.field23700 > 1) {
                 mc.player.setPosition(mc.player.getPositionVec().x, this.field23702, mc.player.getPositionVec().z);
-                double var4 = !mc.gameSettings.keyBindSneak.isKeyDown() ? 0.405 + (double) MovementUtils.method37078() * 0.02 : 0.25;
+                double var4 = !mc.gameSettings.keyBindSneak.isKeyDown() ? 0.405 + (double) MovementUtils.getSpeedBoost() * 0.02 : 0.25;
                 MovementUtils.setSpeed(var1, var4);
                 this.field23700 = 0;
             }

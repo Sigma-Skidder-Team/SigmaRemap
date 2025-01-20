@@ -54,7 +54,7 @@ public class CubecraftLongJump extends Module {
                 double var4 = mc.player.getPosX();
                 double var6 = mc.player.getPosY();
                 double var8 = mc.player.getPosZ();
-                int var10 = 49 + MovementUtils.method37079() * 17;
+                int var10 = 49 + MovementUtils.getJumpBoost() * 17;
 
                 for (int var11 = 0; var11 < var10; var11++) {
                     mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var4, var6 + 0.06248, var8, false));
@@ -62,7 +62,7 @@ public class CubecraftLongJump extends Module {
                 }
 
                 mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var4, var6, var8, true));
-                MultiUtilities.setPlayerYMotion(MovementUtils.method37080());
+                MultiUtilities.setPlayerYMotion(MovementUtils.getJumpValue());
                 this.field23501 = 0;
                 this.field23502 = this.getNumberValueBySettingName("Boost") / 2.0F;
                 MovementUtils.strafe(this.field23502);

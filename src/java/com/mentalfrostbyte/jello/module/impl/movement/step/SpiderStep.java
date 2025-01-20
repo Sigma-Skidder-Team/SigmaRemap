@@ -44,7 +44,7 @@ public class SpiderStep extends Module {
             } else if (var6 != Class2131.field13905) {
                 if (!MovementUtils.isInWater() && var4 >= 0.625) {
                     this.field23760 = var4;
-                    double var7 = MovementUtils.method37080();
+                    double var7 = MovementUtils.getJumpValue();
                     if (var4 < 1.1) {
                         var7 *= var4;
                     }
@@ -82,7 +82,7 @@ public class SpiderStep extends Module {
     private void method16588(EventMove var1) {
         if (this.isEnabled() && mc.player != null) {
             if (this.field23758 == 1) {
-                double var4 = MovementUtils.method37080();
+                double var4 = MovementUtils.getJumpValue();
                 if (this.field23760 < 1.1) {
                     var4 *= this.field23760;
                 }

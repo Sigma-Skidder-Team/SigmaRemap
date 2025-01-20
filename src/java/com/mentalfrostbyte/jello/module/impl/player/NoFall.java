@@ -39,7 +39,7 @@ public class NoFall extends Module {
     private void method16187(EventMove var1) {
         if (this.isEnabled()) {
             if (var1.getY() < -0.5
-                    && (double) mc.player.fallDistance > 2.0 + (double) MovementUtils.method37079() * 0.5
+                    && (double) mc.player.fallDistance > 2.0 + (double) MovementUtils.getJumpBoost() * 0.5
                     && !mc.player.onGround
                     && this.getStringSettingValueByName("Mode").equals("Hypixel")
                     && MultiUtilities.isHypixel()) {
@@ -51,7 +51,7 @@ public class NoFall extends Module {
                     double var13 = (double) ((int) (var11 + var1.getY())) - var11 - var1.getY() + var9;
                     double var15 = 0.02;
                     double var17 = -0.05;
-                    if (var1.getY() > -0.5 + (double) (MovementUtils.method37079())) {
+                    if (var1.getY() > -0.5 + (double) (MovementUtils.getJumpBoost())) {
                         var15 = 0.0;
                     }
 

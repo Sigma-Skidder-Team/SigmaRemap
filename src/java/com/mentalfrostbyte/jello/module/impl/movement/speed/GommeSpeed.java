@@ -86,7 +86,7 @@ public class GommeSpeed extends Module {
                 }
             } else if (MultiUtilities.method17686()) {
                 this.field23581 = 0;
-                var1.setY(MovementUtils.method37080());
+                var1.setY(MovementUtils.getJumpValue());
                 double[] var9 = new double[]{0.549, 0.625};
                 this.field23583 = var9[Math.min(this.field23582, var9.length - 1)];
                 if (this.field23582 < var9.length) {

@@ -118,7 +118,7 @@ public class Jesus extends Module {
                }
             }
          } else {
-            if (isWalkingOnLiquid() && var1.getY() != -0.0784000015258789 && var1.getY() != MovementUtils.method37080()) {
+            if (isWalkingOnLiquid() && var1.getY() != -0.0784000015258789 && var1.getY() != MovementUtils.getJumpValue()) {
                var1.setY(-0.078);
             }
 
@@ -133,7 +133,7 @@ public class Jesus extends Module {
                      }
 
                      if (this.field24016 > 0) {
-                        MovementUtils.setSpeed(var1, 0.25 + (double) MovementUtils.method37078() * 0.05);
+                        MovementUtils.setSpeed(var1, 0.25 + (double) MovementUtils.getSpeedBoost() * 0.05);
                         this.field24016++;
                      }
 
