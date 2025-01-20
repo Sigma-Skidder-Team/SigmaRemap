@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.notification;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;

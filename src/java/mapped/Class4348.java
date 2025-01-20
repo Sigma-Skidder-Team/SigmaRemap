@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.account.Ban;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;

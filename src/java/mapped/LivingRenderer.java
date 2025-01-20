@@ -1,7 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.EventRenderEntity;
 import com.mentalfrostbyte.jello.event.impl.EventRenderNameTag;
 import com.mentalfrostbyte.jello.util.Rots;

@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.unmapped.RandomModuleThread;
 import net.minecraft.client.Minecraft;

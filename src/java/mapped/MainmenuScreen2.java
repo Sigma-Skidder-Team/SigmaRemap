@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.gui.screens.AltManagerScreen;
 import com.mentalfrostbyte.jello.gui.screens.JelloMainMenuScreen;

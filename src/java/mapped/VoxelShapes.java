@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.math.DoubleMath;
 import com.google.common.math.IntMath;
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.EventBlockCollision;
 import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import it.unimi.dsi.fastutil.doubles.DoubleList;

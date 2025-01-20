@@ -1,7 +1,7 @@
 package net.minecraft.block;
 
 import com.google.common.collect.ImmutableMap;
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.EventRenderBlocks;
 import com.mojang.serialization.MapCodec;
 import mapped.*;

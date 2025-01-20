@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.settings;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.notification.Notification;
 import totalcross.json.CJsonUtils;
 import totalcross.json.JSONObject;

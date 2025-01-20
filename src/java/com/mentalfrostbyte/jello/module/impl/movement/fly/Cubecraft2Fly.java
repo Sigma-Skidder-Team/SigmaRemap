@@ -1,10 +1,9 @@
 package com.mentalfrostbyte.jello.module.impl.movement.fly;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
-import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.notification.Notification;

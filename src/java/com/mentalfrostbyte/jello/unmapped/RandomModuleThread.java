@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.unmapped;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import net.minecraft.client.Minecraft;

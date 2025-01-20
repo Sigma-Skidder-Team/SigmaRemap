@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

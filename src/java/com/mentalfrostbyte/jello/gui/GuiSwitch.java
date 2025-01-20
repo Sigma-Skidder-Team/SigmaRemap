@@ -1,13 +1,12 @@
 package com.mentalfrostbyte.jello.gui;
 
-import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.ClientMode;
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.ClientMode;
 import com.mentalfrostbyte.jello.unmapped.*;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
-import de.florianmichael.viamcp.ViaMCP;
 import lol.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;

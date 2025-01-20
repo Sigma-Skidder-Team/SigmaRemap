@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.network;
 
 import club.minnced.discord.rpc.DiscordRPC;
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.util.tracker.CombatTracker;
 
 public class NetworkManager {

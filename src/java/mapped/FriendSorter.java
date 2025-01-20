@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import net.minecraft.entity.Entity;
 
 import java.util.Comparator;

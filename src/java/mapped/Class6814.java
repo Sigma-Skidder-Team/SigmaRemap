@@ -7,11 +7,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.ClientMode;
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.ClientMode;
 import com.mentalfrostbyte.jello.unmapped.RandomModuleThread;
 import org.apache.commons.io.IOUtils;
-import totalcross.json.JSONException;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
 

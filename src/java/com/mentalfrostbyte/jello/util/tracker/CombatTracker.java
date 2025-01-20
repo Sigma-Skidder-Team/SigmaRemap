@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.util.tracker;
 
 import com.google.gson.JsonArray;
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.network.Class8930;

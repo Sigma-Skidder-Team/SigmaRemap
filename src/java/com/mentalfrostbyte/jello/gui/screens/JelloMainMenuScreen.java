@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.gui.screens;
 
 import club.minnced.discord.rpc.DiscordRPC;
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.network.NetworkManager;

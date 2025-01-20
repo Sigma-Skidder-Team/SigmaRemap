@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.gui.screens.ClassicDirectLogin;
 import com.mentalfrostbyte.jello.gui.screens.ClassicEditAlt;

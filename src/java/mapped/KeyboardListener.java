@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Locale;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.AbstractOption;

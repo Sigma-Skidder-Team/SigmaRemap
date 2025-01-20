@@ -2,7 +2,7 @@ package net.minecraft.block;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.LoadingCache;
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.EventRenderBlocks;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import mapped.*;

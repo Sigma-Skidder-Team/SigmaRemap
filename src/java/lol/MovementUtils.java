@@ -1,6 +1,6 @@
 package lol;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.entity.ai.attributes.Attributes;

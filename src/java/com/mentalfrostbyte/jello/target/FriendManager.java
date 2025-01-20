@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.target;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.command.CommandManager;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventKeyPress;

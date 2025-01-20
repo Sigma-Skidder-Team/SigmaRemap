@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.module;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
 import com.mentalfrostbyte.jello.settings.Setting;
 import mapped.Class6547;

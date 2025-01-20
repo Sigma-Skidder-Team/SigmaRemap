@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.network;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import lol.Texture;
 

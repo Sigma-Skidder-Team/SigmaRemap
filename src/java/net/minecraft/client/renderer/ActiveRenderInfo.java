@@ -1,6 +1,6 @@
 package net.minecraft.client.renderer;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.module.impl.render.CameraNoClip;
 import mapped.*;
 import net.minecraft.block.BlockState;

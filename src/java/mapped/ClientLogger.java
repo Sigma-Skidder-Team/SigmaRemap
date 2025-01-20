@@ -3,7 +3,7 @@ package mapped;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import org.apache.commons.io.IOUtils;
 
 public class ClientLogger implements Logger {

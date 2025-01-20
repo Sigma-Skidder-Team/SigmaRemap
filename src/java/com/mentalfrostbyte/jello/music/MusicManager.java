@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.music;
 
-import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.ClientMode;
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.ClientMode;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.EventRender2D;

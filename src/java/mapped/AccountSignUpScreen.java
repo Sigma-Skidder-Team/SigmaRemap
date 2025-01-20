@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.gui.screens.LoginAndOutScreen;
 import com.mentalfrostbyte.jello.network.Class9507;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;

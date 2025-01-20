@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.misc;
 
 import com.google.common.collect.Lists;
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;

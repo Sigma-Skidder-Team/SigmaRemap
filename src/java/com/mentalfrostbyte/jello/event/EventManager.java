@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.event;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.priority.*;
 import com.mentalfrostbyte.jello.module.Module;
 import mapped.Class5631;

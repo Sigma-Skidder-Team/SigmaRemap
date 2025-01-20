@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.module.impl.combat.criticals;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;

@@ -1,13 +1,12 @@
 package net.minecraft.client.renderer.entity.model;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.module.impl.player.OldHitting;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import mapped.Class2828;
 import mapped.IVertexBuilder;
 import mapped.ModelRenderer;
 import mapped.RenderType;
-import net.minecraft.client.Minecraft;
 
 public class ShieldModel extends Class2828 {
    private final ModelRenderer plate;

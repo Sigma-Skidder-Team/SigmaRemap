@@ -1,7 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonSyntaxException;
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.EventRenderShulker;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.impl.RenderFireEvent;

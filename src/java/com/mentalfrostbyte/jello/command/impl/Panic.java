@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.command.impl;
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import mapped.Class6814;
 import mapped.Configuration;

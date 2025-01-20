@@ -1,7 +1,7 @@
 package mapped;
 
 import com.google.common.base.Predicate;
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.vector.Vector3d;

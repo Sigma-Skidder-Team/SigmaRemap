@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.movement;
 
-import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.ClientMode;
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.ClientMode;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;

@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.render.classic.esp;
 
-import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.ClientMode;
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.ClientMode;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;

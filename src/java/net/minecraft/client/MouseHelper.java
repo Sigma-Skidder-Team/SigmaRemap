@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.MouseHoverEvent;
 import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.event.impl.EventMouse;

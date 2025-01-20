@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.command.*;
 
 import java.util.Map.Entry;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import mapped.*;
 import net.minecraft.util.text.StringTextComponent;

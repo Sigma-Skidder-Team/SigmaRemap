@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.module.impl.movement.speed;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.impl.EventMove;

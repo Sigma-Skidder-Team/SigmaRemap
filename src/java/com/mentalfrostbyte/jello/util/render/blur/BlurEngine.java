@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.util.render.blur;
 import com.google.gson.JsonSyntaxException;
 import java.io.IOException;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;

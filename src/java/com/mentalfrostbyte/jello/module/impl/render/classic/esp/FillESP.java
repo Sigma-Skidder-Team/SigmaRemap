@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.module.impl.render.classic.esp;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRenderEntity;
 import com.mentalfrostbyte.jello.event.impl.EventRenderNameTag;

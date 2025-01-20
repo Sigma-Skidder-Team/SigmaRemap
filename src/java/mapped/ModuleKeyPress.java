@@ -2,8 +2,8 @@ package mapped;
 
 import java.lang.reflect.InvocationTargetException;
 
-import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.ClientMode;
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.ClientMode;
 import com.mentalfrostbyte.jello.event.impl.MouseHoverEvent;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import net.minecraft.client.Minecraft;

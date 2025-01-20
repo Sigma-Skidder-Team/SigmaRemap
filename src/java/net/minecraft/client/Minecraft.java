@@ -2,8 +2,8 @@ package net.minecraft.client;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Queues;
-import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.ClientMode;
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.ClientMode;
 import com.mentalfrostbyte.jello.event.impl.EventRayTraceResult;
 import com.mentalfrostbyte.jello.event.impl.StopUseItemEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;

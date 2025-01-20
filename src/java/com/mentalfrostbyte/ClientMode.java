@@ -1,4 +1,4 @@
-package com.mentalfrostbyte.jello;
+package com.mentalfrostbyte;
 
 public enum ClientMode {
    PREMIUM,

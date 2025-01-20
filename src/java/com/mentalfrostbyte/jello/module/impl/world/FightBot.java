@@ -1,10 +1,9 @@
 package com.mentalfrostbyte.jello.module.impl.world;
 
 import com.google.common.collect.Lists;
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
-import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.misc.JelloAIBot;
@@ -15,7 +14,6 @@ import mapped.Rotations;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Hand;
-import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.List;
 

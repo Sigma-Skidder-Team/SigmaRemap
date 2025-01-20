@@ -1,7 +1,7 @@
 package mapped;
 
 import com.google.common.base.MoreObjects;
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.EventHandAnimation;
 import com.mentalfrostbyte.jello.module.impl.player.OldHitting;
 import com.mojang.blaze3d.matrix.MatrixStack;

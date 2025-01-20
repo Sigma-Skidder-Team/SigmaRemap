@@ -3,7 +3,7 @@ package mapped;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;

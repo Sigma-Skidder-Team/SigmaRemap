@@ -3,7 +3,7 @@ package net.minecraft.entity;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.EventMoveRideable;
 import com.mentalfrostbyte.jello.event.impl.EventStep;
 import it.unimi.dsi.fastutil.objects.Object2DoubleArrayMap;

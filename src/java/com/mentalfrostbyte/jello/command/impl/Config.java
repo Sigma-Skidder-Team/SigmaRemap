@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.command.impl;
 
-import com.mentalfrostbyte.jello.ClientMode;
+import com.mentalfrostbyte.ClientMode;
 import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.command.CommandType;
 import mapped.Configuration;
 import mapped.ChatCommandArguments;

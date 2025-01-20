@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module;
 
-import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.ClientMode;
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.ClientMode;
 import com.mentalfrostbyte.jello.module.impl.combat.*;
 import com.mentalfrostbyte.jello.module.impl.exploit.BedRockFinder;
 import com.mentalfrostbyte.jello.module.impl.exploit.Dumper;

@@ -3,7 +3,7 @@ package mapped;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.module.impl.gui.jello.MiniMap;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.BufferUtils;

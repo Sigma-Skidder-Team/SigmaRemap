@@ -1,7 +1,7 @@
 package net.minecraft.client.entity.player;
 
 import com.google.common.hash.Hashing;
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.EventFOV;
 import com.mojang.authlib.GameProfile;
 import mapped.*;

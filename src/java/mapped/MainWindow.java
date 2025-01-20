@@ -12,7 +12,7 @@ import java.util.function.LongSupplier;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mojang.blaze3d.platform.GLX;
 import com.mojang.blaze3d.systems.RenderSystem;

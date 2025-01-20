@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.unmapped;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.ImageUtil;

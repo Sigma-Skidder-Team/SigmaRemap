@@ -1,6 +1,6 @@
 package net.minecraft.util.text;
 
-import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.TextReplaceEvent;
 import net.minecraft.util.Unit;
 import mapped.Class2545;

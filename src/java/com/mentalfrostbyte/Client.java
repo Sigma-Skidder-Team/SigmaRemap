@@ -1,4 +1,4 @@
-package com.mentalfrostbyte.jello;
+package com.mentalfrostbyte;
 
 import club.minnced.discord.rpc.DiscordEventHandlers;
 import club.minnced.discord.rpc.DiscordRPC;
@@ -25,7 +25,6 @@ import com.mentalfrostbyte.jello.util.tracker.PlayerStateTracker;
 import com.mentalfrostbyte.jello.util.tracker.SlotChangeTracker;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import de.florianmichael.viamcp.ViaMCP;
 import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
