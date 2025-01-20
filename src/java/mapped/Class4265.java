@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 
 public class Class4265 extends Class4247 {
    private static String[] field20681;

@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import mapped.Class8906;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;

@@ -14,7 +14,7 @@ import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import lol.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.BlockPos;
 

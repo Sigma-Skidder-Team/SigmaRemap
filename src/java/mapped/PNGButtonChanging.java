@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 
 public class PNGButtonChanging extends Class4247 {
    public Class189 field20607;

@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.vector.Vector3i;
 

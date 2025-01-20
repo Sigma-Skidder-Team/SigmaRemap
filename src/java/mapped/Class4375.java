@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 

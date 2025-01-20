@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 
 public class Class4368 extends Class4247 {
    public Module field21351;

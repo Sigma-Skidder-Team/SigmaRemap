@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Util;

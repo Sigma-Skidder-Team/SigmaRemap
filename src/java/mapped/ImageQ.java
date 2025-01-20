@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import lol.Texture;
 
 public class ImageQ extends Class4278 {

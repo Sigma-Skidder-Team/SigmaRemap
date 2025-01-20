@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ColorSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;

@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;

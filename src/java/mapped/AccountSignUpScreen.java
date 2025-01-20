@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 
 public class AccountSignUpScreen extends Class4247 {
    private UITextDisplay stringPanel;

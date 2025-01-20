@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.impl.gui.classic.TabGUI;
 import com.mentalfrostbyte.jello.unmapped.*;
 import com.mentalfrostbyte.jello.util.FileUtil;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.MultiplayerScreen;

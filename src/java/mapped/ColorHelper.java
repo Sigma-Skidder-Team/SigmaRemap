@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 
 public class ColorHelper {
    private static String[] field27960;

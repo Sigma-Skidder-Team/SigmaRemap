@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Direction;

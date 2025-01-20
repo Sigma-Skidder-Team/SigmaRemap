@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.ColorSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.PositionUtils;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.vector.Vector3d;

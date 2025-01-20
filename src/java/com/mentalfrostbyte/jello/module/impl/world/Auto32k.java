@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.inventory.container.ClickType;

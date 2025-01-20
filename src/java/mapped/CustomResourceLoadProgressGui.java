@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.matrix.MatrixStack;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import lol.Texture;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Util;

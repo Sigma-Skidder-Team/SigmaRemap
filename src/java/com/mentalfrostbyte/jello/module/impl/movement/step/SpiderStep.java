@@ -13,7 +13,7 @@ import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.movement.Step;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import mapped.*;
 import net.minecraft.util.math.MathHelper;
 

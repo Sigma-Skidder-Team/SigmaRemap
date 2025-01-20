@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.gui.screens.JelloClickGUI;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import lol.Texture;
 import net.minecraft.client.Minecraft;
 

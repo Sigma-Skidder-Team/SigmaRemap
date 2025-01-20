@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ColorSetting;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.PlayerModel;
 import mapped.Vector3d;
 import net.minecraft.entity.LivingEntity;

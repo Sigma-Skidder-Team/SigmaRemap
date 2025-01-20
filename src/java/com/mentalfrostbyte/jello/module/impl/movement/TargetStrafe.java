@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import lol.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;

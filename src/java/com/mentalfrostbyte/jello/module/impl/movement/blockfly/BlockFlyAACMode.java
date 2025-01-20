@@ -14,7 +14,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import lol.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;

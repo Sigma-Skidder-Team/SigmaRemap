@@ -17,7 +17,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import com.mojang.blaze3d.systems.RenderSystem;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import lol.Texture;
 import lol.TextureImpl;
 import mapped.*;

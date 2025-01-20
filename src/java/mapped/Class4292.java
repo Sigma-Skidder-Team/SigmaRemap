@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import totalcross.json.CJsonUtils;
 import totalcross.json.JSONObject;
 

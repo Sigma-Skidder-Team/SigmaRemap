@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import lol.Texture;
 import mapped.EasingFunctions;
 import mapped.JelloOptionsMainMenu;

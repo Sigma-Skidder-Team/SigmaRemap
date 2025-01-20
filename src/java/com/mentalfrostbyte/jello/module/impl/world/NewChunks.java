@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.Box3D;
 import net.minecraft.util.math.ChunkPos;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.RenderUtil;
 import net.minecraft.network.play.server.SChunkDataPacket;
 import org.lwjgl.opengl.GL11;

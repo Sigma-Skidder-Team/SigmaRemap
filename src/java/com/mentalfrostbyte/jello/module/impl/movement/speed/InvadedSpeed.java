@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import lol.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 
 public class InvadedSpeed extends Module {

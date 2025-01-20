@@ -7,7 +7,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 import de.florianmichael.vialoadingbase.ViaLoadingBase;
 import de.florianmichael.viamcp.protocolinfo.ProtocolInfo;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.MultiplayerScreen;

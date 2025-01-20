@@ -1,4 +1,4 @@
-package lol;
+package com.mentalfrostbyte.jello.util.player;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.EventMove;

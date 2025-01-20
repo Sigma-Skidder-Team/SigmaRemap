@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.item.InvManager;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
-import lol.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;

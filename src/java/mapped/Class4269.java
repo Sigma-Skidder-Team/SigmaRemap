@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.gui.screens.JelloChatPanel;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 
 public class Class4269 extends Class4247 {
    public UIInput field20694;

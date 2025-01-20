@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.gui.screens.JelloInGameOptions;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.util.text.StringTextComponent;
 
 public class JelloOptionsMainMenu extends CustomGuiScreen {

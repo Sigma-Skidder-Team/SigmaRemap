@@ -14,7 +14,7 @@ import com.mentalfrostbyte.jello.util.render.blur.BlurEngine;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.Class8224;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.QuadraticEasing;
 import mapped.RenderUtil;
 import net.minecraft.client.Minecraft;

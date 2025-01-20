@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.music.MusicManager;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 
 public class Class4359 extends Class4247 {
    private static String[] field21313;

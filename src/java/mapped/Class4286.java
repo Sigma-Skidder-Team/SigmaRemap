@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import lol.Texture;
 
 import javax.imageio.ImageIO;

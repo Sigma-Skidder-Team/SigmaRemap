@@ -4,7 +4,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.ClientMode;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 
 public class Class4288 extends Class4278 {
    private final Class4339 field20780;

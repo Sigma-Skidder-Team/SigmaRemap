@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.EasingFunctions;
 import mapped.RenderUtil;
 import mapped.VanillaMainMenuScreen;

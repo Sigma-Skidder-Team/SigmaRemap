@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.AxisAlignedBB;

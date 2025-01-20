@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import org.lwjgl.opengl.GL11;
 
 import java.util.HashMap;

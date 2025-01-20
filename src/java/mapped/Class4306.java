@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.gui.screens.JelloMainMenuScreen;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.client.Minecraft;
 
 public class Class4306 extends CustomGuiScreen {

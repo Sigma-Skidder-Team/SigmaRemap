@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.MovementUtils;
+import com.mentalfrostbyte.jello.util.player.MovementUtils;
 import mapped.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3d;

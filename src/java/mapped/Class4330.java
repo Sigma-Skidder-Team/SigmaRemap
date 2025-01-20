@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import totalcross.json.JSONArray;
 import org.lwjgl.opengl.GL11;
 import totalcross.json.JSONException;

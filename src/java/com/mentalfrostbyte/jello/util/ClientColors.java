@@ -1,4 +1,4 @@
-package lol;
+package com.mentalfrostbyte.jello.util;
 
 public enum ClientColors {
    DEEP_TEAL(-16711423),

@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;

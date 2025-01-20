@@ -1,7 +1,6 @@
 package com.mentalfrostbyte.jello.util;
 
 import com.mentalfrostbyte.jello.gui.GuiManager;
-import lol.ClientColors;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;

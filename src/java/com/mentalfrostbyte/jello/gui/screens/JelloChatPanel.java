@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.unmapped.Class8433;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;

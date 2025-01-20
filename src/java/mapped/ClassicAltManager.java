@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.gui.screens.ClassicEditAlt;
 import com.mentalfrostbyte.jello.gui.screens.ClassicAddAlt;
 import com.mentalfrostbyte.jello.gui.screens.SigmaClassicAltManager;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import lol.ClientColors;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.client.Minecraft;
 
 import java.util.Random;
