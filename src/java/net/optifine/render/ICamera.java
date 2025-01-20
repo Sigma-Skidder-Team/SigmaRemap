@@ -1,4 +1,4 @@
-package mapped;
+package net.optifine.render;
 
 import net.minecraft.util.math.AxisAlignedBB;
 

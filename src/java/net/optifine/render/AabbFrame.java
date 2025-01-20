@@ -1,6 +1,5 @@
 package net.optifine.render;
 
-import mapped.ICamera;
 import net.minecraft.util.math.AxisAlignedBB;
 
 public class AabbFrame extends AxisAlignedBB {

@@ -22,6 +22,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3i;
 import net.optifine.render.GlBlendState;
 import net.optifine.render.GlCullState;
+import net.optifine.render.ICamera;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;

@@ -19,6 +19,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.optifine.Config;
 import net.optifine.render.AabbFrame;
+import net.optifine.render.ICamera;
 
 import java.util.HashSet;
 import java.util.Map;
