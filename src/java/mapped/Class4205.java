@@ -58,9 +58,9 @@ public class Class4205 extends Class4194 {
       this.method12927(var1, var5, 10, 1, 4, 10, 3, 6, field20443, field20443, false);
       switch (this.field20512) {
          case 0:
-            this.method12923(var1, Blocks.field36615.getDefaultState(), 5, 1, 5, var5);
-            this.method12923(var1, Blocks.field36615.getDefaultState(), 5, 2, 5, var5);
-            this.method12923(var1, Blocks.field36615.getDefaultState(), 5, 3, 5, var5);
+            this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 5, 1, 5, var5);
+            this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 5, 2, 5, var5);
+            this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 5, 3, 5, var5);
             this.method12923(var1, Blocks.WALL_TORCH.getDefaultState().with(Class3382.field18985, Direction.WEST), 4, 3, 5, var5);
             this.method12923(var1, Blocks.WALL_TORCH.getDefaultState().with(Class3382.field18985, Direction.EAST), 6, 3, 5, var5);
             this.method12923(var1, Blocks.WALL_TORCH.getDefaultState().with(Class3382.field18985, Direction.SOUTH), 5, 3, 4, var5);
@@ -76,15 +76,15 @@ public class Class4205 extends Class4194 {
             break;
          case 1:
             for (int var15 = 0; var15 < 5; var15++) {
-               this.method12923(var1, Blocks.field36615.getDefaultState(), 3, 1, 3 + var15, var5);
-               this.method12923(var1, Blocks.field36615.getDefaultState(), 7, 1, 3 + var15, var5);
-               this.method12923(var1, Blocks.field36615.getDefaultState(), 3 + var15, 1, 3, var5);
-               this.method12923(var1, Blocks.field36615.getDefaultState(), 3 + var15, 1, 7, var5);
+               this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 3, 1, 3 + var15, var5);
+               this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 7, 1, 3 + var15, var5);
+               this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 3 + var15, 1, 3, var5);
+               this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 3 + var15, 1, 7, var5);
             }
 
-            this.method12923(var1, Blocks.field36615.getDefaultState(), 5, 1, 5, var5);
-            this.method12923(var1, Blocks.field36615.getDefaultState(), 5, 2, 5, var5);
-            this.method12923(var1, Blocks.field36615.getDefaultState(), 5, 3, 5, var5);
+            this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 5, 1, 5, var5);
+            this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 5, 2, 5, var5);
+            this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 5, 3, 5, var5);
             this.method12923(var1, Blocks.WATER.getDefaultState(), 5, 4, 5, var5);
             break;
          case 2:

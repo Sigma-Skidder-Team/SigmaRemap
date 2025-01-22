@@ -29,7 +29,7 @@ public class Class7097 extends Class7092 {
       BlockState var10 = var5.field35531;
       BlockPos var11 = var5.field35530;
       BlockState var12 = null;
-      if (var10.isIn(Blocks.field36615) || var10.isIn(Blocks.STONE) || var10.isIn(Blocks.field36618)) {
+      if (var10.isIn(Blocks.STONE_BRICKS) || var10.isIn(Blocks.STONE) || var10.isIn(Blocks.CHISELED_STONE_BRICKS)) {
          var12 = this.method22076(var9);
       } else if (!var10.isIn(BlockTags.field32762)) {
          if (!var10.isIn(BlockTags.field32763)) {
@@ -53,8 +53,8 @@ public class Class7097 extends Class7092 {
    @Nullable
    private BlockState method22076(Random var1) {
       if (!(var1.nextFloat() >= 0.5F)) {
-         BlockState[] var4 = new BlockState[]{Blocks.field36617.getDefaultState(), method22081(var1, Blocks.STONE_BRICK_STAIRS)};
-         BlockState[] var5 = new BlockState[]{Blocks.field36616.getDefaultState(), method22081(var1, Blocks.field37016)};
+         BlockState[] var4 = new BlockState[]{Blocks.CRACKED_STONE_BRICKS.getDefaultState(), method22081(var1, Blocks.STONE_BRICK_STAIRS)};
+         BlockState[] var5 = new BlockState[]{Blocks.MOSSY_STONE_BRICKS.getDefaultState(), method22081(var1, Blocks.field37016)};
          return this.method22082(var1, var4, var5);
       } else {
          return null;

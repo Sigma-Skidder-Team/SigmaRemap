@@ -52,9 +52,9 @@ public class Class4203 extends Class4194 {
          this.method12923(var1, var10, 2, 6 - var11, 1 + var11, var5);
          this.method12923(var1, var10, 3, 6 - var11, 1 + var11, var5);
          if (var11 < 5) {
-            this.method12923(var1, Blocks.field36615.getDefaultState(), 1, 5 - var11, 1 + var11, var5);
-            this.method12923(var1, Blocks.field36615.getDefaultState(), 2, 5 - var11, 1 + var11, var5);
-            this.method12923(var1, Blocks.field36615.getDefaultState(), 3, 5 - var11, 1 + var11, var5);
+            this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 1, 5 - var11, 1 + var11, var5);
+            this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 2, 5 - var11, 1 + var11, var5);
+            this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 3, 5 - var11, 1 + var11, var5);
          }
       }
 

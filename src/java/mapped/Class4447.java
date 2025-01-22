@@ -141,7 +141,7 @@ public class Class4447 implements Class4442 {
       method14057(var0, Blocks.BIRCH_PRESSURE_PLATE, Blocks.BIRCH_PLANKS);
       method14058(var0, Blocks.field36841, Blocks.BIRCH_PLANKS);
       method14059(var0, Blocks.field36662, Blocks.BIRCH_PLANKS);
-      method14060(var0, Blocks.field36611, Blocks.BIRCH_PLANKS);
+      method14060(var0, Blocks.BIRCH_TRAPDOOR, Blocks.BIRCH_PLANKS);
       method14061(var0, Blocks.BIRCH_SIGN, Blocks.BIRCH_PLANKS);
       method14053(var0, Blocks.CRIMSON_BUTTON, Blocks.CRIMSON_PLANKS);
       method14054(var0, Blocks.CRIMSON_DOOR, Blocks.CRIMSON_PLANKS);
@@ -159,7 +159,7 @@ public class Class4447 implements Class4442 {
       method14057(var0, Blocks.DARK_OAK_PRESSURE_PLATE, Blocks.DARK_OAK_PLANKS);
       method14058(var0, Blocks.field36844, Blocks.DARK_OAK_PLANKS);
       method14059(var0, Blocks.field36763, Blocks.DARK_OAK_PLANKS);
-      method14060(var0, Blocks.field36614, Blocks.DARK_OAK_PLANKS);
+      method14060(var0, Blocks.DARK_OAK_TRAPDOOR, Blocks.DARK_OAK_PLANKS);
       method14061(var0, Blocks.DARK_OAK_SIGN, Blocks.DARK_OAK_PLANKS);
       method14053(var0, Blocks.field36698, Blocks.JUNGLE_PLANKS);
       method14054(var0, Blocks.field36874, Blocks.JUNGLE_PLANKS);
@@ -168,7 +168,7 @@ public class Class4447 implements Class4442 {
       method14057(var0, Blocks.JUNGLE_PRESSURE_PLATE, Blocks.JUNGLE_PLANKS);
       method14058(var0, Blocks.field36842, Blocks.JUNGLE_PLANKS);
       method14059(var0, Blocks.field36663, Blocks.JUNGLE_PLANKS);
-      method14060(var0, Blocks.field36612, Blocks.JUNGLE_PLANKS);
+      method14060(var0, Blocks.JUNGLE_TRAPDOOR, Blocks.JUNGLE_PLANKS);
       method14061(var0, Blocks.JUNGLE_SIGN, Blocks.JUNGLE_PLANKS);
       method14053(var0, Blocks.field36695, Blocks.OAK_PLANKS);
       method14054(var0, Blocks.OAK_DOOR, Blocks.OAK_PLANKS);
@@ -186,7 +186,7 @@ public class Class4447 implements Class4442 {
       method14057(var0, Blocks.SPRUCE_PRESSURE_PLATE, Blocks.SPRUCE_PLANKS);
       method14058(var0, Blocks.field36840, Blocks.SPRUCE_PLANKS);
       method14059(var0, Blocks.SPRUCE_STAIRS, Blocks.SPRUCE_PLANKS);
-      method14060(var0, Blocks.field36610, Blocks.SPRUCE_PLANKS);
+      method14060(var0, Blocks.SPRUCE_TRAPDOOR, Blocks.SPRUCE_PLANKS);
       method14061(var0, Blocks.SPRUCE_SIGN, Blocks.SPRUCE_PLANKS);
       method14053(var0, Blocks.WARPED_BUTTON, Blocks.WARPED_PLANKS);
       method14054(var0, Blocks.WARPED_DOOR, Blocks.WARPED_PLANKS);
@@ -637,7 +637,7 @@ public class Class4447 implements Class4442 {
          .method30253("has_quartz_block", method14075(Blocks.field36724))
          .method30253("has_quartz_pillar", method14075(Blocks.field36726))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36618)
+      Class8528.method30247(Blocks.CHISELED_STONE_BRICKS)
          .method30250('#', Blocks.field36852)
          .method30252("#")
          .method30252("#")
@@ -1538,8 +1538,8 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_mossy_cobblestone", method14075(Blocks.MOSSY_COBBLESTONE))
          .method30255(var0);
-      Class8888.method32341(Blocks.field36616)
-         .method32344(Blocks.field36615)
+      Class8888.method32341(Blocks.MOSSY_STONE_BRICKS)
+         .method32344(Blocks.STONE_BRICKS)
          .method32344(Blocks.VINE)
          .method32348("has_mossy_cobblestone", method14075(Blocks.MOSSY_COBBLESTONE))
          .method32350(var0);
@@ -2036,7 +2036,7 @@ public class Class4447 implements Class4442 {
          .method30252("P")
          .method30253("has_slime_ball", method14075(Items.field37901))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36615, 4)
+      Class8528.method30248(Blocks.STONE_BRICKS, 4)
          .method30250('#', Blocks.STONE)
          .method30252("##")
          .method30252("##")
@@ -2051,12 +2051,12 @@ public class Class4447 implements Class4442 {
          .method30253("has_cobblestone", method14076(ItemTags.field26122))
          .method30255(var0);
       Class8528.method30248(Blocks.field36852, 6)
-         .method30250('#', Blocks.field36615)
+         .method30250('#', Blocks.STONE_BRICKS)
          .method30252("###")
          .method30253("has_stone_bricks", method14076(ItemTags.field26072))
          .method30255(var0);
       Class8528.method30248(Blocks.STONE_BRICK_STAIRS, 4)
-         .method30250('#', Blocks.field36615)
+         .method30250('#', Blocks.STONE_BRICKS)
          .method30252("#  ")
          .method30252("## ")
          .method30252("###")
@@ -2315,11 +2315,11 @@ public class Class4447 implements Class4442 {
          .method30253("has_smooth_red_sandstone", method14075(Blocks.field36861))
          .method30255(var0);
       Class8528.method30248(Blocks.field37016, 4)
-         .method30250('#', Blocks.field36616)
+         .method30250('#', Blocks.MOSSY_STONE_BRICKS)
          .method30252("#  ")
          .method30252("## ")
          .method30252("###")
-         .method30253("has_mossy_stone_bricks", method14075(Blocks.field36616))
+         .method30253("has_mossy_stone_bricks", method14075(Blocks.MOSSY_STONE_BRICKS))
          .method30255(var0);
       Class8528.method30248(Blocks.field37017, 4)
          .method30250('#', Blocks.POLISHED_DIORITE)
@@ -2409,9 +2409,9 @@ public class Class4447 implements Class4442 {
          .method30253("has_smooth_red_sandstone", method14075(Blocks.field36861))
          .method30255(var0);
       Class8528.method30248(Blocks.field37030, 6)
-         .method30250('#', Blocks.field36616)
+         .method30250('#', Blocks.MOSSY_STONE_BRICKS)
          .method30252("###")
-         .method30253("has_mossy_stone_bricks", method14075(Blocks.field36616))
+         .method30253("has_mossy_stone_bricks", method14075(Blocks.MOSSY_STONE_BRICKS))
          .method30255(var0);
       Class8528.method30248(Blocks.field37031, 6)
          .method30250('#', Blocks.POLISHED_DIORITE)
@@ -2482,10 +2482,10 @@ public class Class4447 implements Class4442 {
          .method30253("has_red_sandstone", method14075(Blocks.field36835))
          .method30255(var0);
       Class8528.method30248(Blocks.field37044, 6)
-         .method30250('#', Blocks.field36616)
+         .method30250('#', Blocks.MOSSY_STONE_BRICKS)
          .method30252("###")
          .method30252("###")
-         .method30253("has_mossy_stone_bricks", method14075(Blocks.field36616))
+         .method30253("has_mossy_stone_bricks", method14075(Blocks.MOSSY_STONE_BRICKS))
          .method30255(var0);
       Class8528.method30248(Blocks.field37045, 6)
          .method30250('#', Blocks.GRANITE)
@@ -2494,10 +2494,10 @@ public class Class4447 implements Class4442 {
          .method30253("has_granite", method14075(Blocks.GRANITE))
          .method30255(var0);
       Class8528.method30248(Blocks.field37046, 6)
-         .method30250('#', Blocks.field36615)
+         .method30250('#', Blocks.STONE_BRICKS)
          .method30252("###")
          .method30252("###")
-         .method30253("has_stone_bricks", method14075(Blocks.field36615))
+         .method30253("has_stone_bricks", method14075(Blocks.STONE_BRICKS))
          .method30255(var0);
       Class8528.method30248(Blocks.field37047, 6)
          .method30250('#', Blocks.NETHER_BRICKS)
@@ -2913,8 +2913,8 @@ public class Class4447 implements Class4442 {
       Class5625.method17666(Class120.method339(Blocks.field36724), Blocks.field36860.asItem(), 0.1F, 200)
          .method17667("has_quartz_block", method14075(Blocks.field36724))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36615), Blocks.field36617.asItem(), 0.1F, 200)
-         .method17667("has_stone_bricks", method14075(Blocks.field36615))
+      Class5625.method17666(Class120.method339(Blocks.STONE_BRICKS), Blocks.CRACKED_STONE_BRICKS.asItem(), 0.1F, 200)
+         .method17667("has_stone_bricks", method14075(Blocks.STONE_BRICKS))
          .method17668(var0);
       Class5625.method17666(Class120.method339(Blocks.field36745), Blocks.field36928.asItem(), 0.1F, 200)
          .method17667("has_black_terracotta", method14075(Blocks.field36745))
@@ -3072,7 +3072,7 @@ public class Class4447 implements Class4442 {
       Class9067.method33769(Class120.method339(Blocks.STONE), Blocks.field37020)
          .method33771("has_stone", method14075(Blocks.STONE))
          .method33772(var0, "stone_stairs_from_stone_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.STONE), Blocks.field36615)
+      Class9067.method33769(Class120.method339(Blocks.STONE), Blocks.STONE_BRICKS)
          .method33771("has_stone", method14075(Blocks.STONE))
          .method33772(var0, "stone_bricks_from_stone_stonecutting");
       Class9067.method33770(Class120.method339(Blocks.STONE), Blocks.field36852, 2)
@@ -3081,7 +3081,7 @@ public class Class4447 implements Class4442 {
       Class9067.method33769(Class120.method339(Blocks.STONE), Blocks.STONE_BRICK_STAIRS)
          .method33771("has_stone", method14075(Blocks.STONE))
          .method33772(var0, "stone_brick_stairs_from_stone_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.STONE), Blocks.field36618)
+      Class9067.method33769(Class120.method339(Blocks.STONE), Blocks.CHISELED_STONE_BRICKS)
          .method33771("has_stone", method14075(Blocks.STONE))
          .method33772(var0, "chiseled_stone_bricks_stone_from_stonecutting");
       Class9067.method33769(Class120.method339(Blocks.STONE), Blocks.field37046)
@@ -3153,17 +3153,17 @@ public class Class4447 implements Class4442 {
       Class9067.method33769(Class120.method339(Blocks.COBBLESTONE), Blocks.COBBLESTONE_WALL)
          .method33771("has_cobblestone", method14075(Blocks.COBBLESTONE))
          .method33772(var0, "cobblestone_wall_from_cobblestone_stonecutting");
-      Class9067.method33770(Class120.method339(Blocks.field36615), Blocks.field36852, 2)
-         .method33771("has_stone_bricks", method14075(Blocks.field36615))
+      Class9067.method33770(Class120.method339(Blocks.STONE_BRICKS), Blocks.field36852, 2)
+         .method33771("has_stone_bricks", method14075(Blocks.STONE_BRICKS))
          .method33772(var0, "stone_brick_slab_from_stone_bricks_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36615), Blocks.STONE_BRICK_STAIRS)
-         .method33771("has_stone_bricks", method14075(Blocks.field36615))
+      Class9067.method33769(Class120.method339(Blocks.STONE_BRICKS), Blocks.STONE_BRICK_STAIRS)
+         .method33771("has_stone_bricks", method14075(Blocks.STONE_BRICKS))
          .method33772(var0, "stone_brick_stairs_from_stone_bricks_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36615), Blocks.field37046)
-         .method33771("has_stone_bricks", method14075(Blocks.field36615))
+      Class9067.method33769(Class120.method339(Blocks.STONE_BRICKS), Blocks.field37046)
+         .method33771("has_stone_bricks", method14075(Blocks.STONE_BRICKS))
          .method33772(var0, "stone_brick_wall_from_stone_bricks_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36615), Blocks.field36618)
-         .method33771("has_stone_bricks", method14075(Blocks.field36615))
+      Class9067.method33769(Class120.method339(Blocks.STONE_BRICKS), Blocks.CHISELED_STONE_BRICKS)
+         .method33771("has_stone_bricks", method14075(Blocks.STONE_BRICKS))
          .method33772(var0, "chiseled_stone_bricks_from_stone_bricks_stonecutting");
       Class9067.method33770(Class120.method339(Blocks.BRICKS), Blocks.field36851, 2)
          .method33771("has_bricks", method14075(Blocks.BRICKS))
@@ -3300,14 +3300,14 @@ public class Class4447 implements Class4442 {
       Class9067.method33769(Class120.method339(Blocks.POLISHED_DIORITE), Blocks.field37017)
          .method33771("has_polished_diorite", method14075(Blocks.POLISHED_DIORITE))
          .method33772(var0, "polished_diorite_stairs_from_polished_diorite_stonecutting");
-      Class9067.method33770(Class120.method339(Blocks.field36616), Blocks.field37030, 2)
-         .method33771("has_mossy_stone_bricks", method14075(Blocks.field36616))
+      Class9067.method33770(Class120.method339(Blocks.MOSSY_STONE_BRICKS), Blocks.field37030, 2)
+         .method33771("has_mossy_stone_bricks", method14075(Blocks.MOSSY_STONE_BRICKS))
          .method33772(var0, "mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36616), Blocks.field37016)
-         .method33771("has_mossy_stone_bricks", method14075(Blocks.field36616))
+      Class9067.method33769(Class120.method339(Blocks.MOSSY_STONE_BRICKS), Blocks.field37016)
+         .method33771("has_mossy_stone_bricks", method14075(Blocks.MOSSY_STONE_BRICKS))
          .method33772(var0, "mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36616), Blocks.field37044)
-         .method33771("has_mossy_stone_bricks", method14075(Blocks.field36616))
+      Class9067.method33769(Class120.method339(Blocks.MOSSY_STONE_BRICKS), Blocks.field37044)
+         .method33771("has_mossy_stone_bricks", method14075(Blocks.MOSSY_STONE_BRICKS))
          .method33772(var0, "mossy_stone_brick_wall_from_mossy_stone_brick_stonecutting");
       Class9067.method33770(Class120.method339(Blocks.MOSSY_COBBLESTONE), Blocks.field37032, 2)
          .method33771("has_mossy_cobblestone", method14075(Blocks.MOSSY_COBBLESTONE))

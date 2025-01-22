@@ -42,9 +42,9 @@ public class Class2753 extends Class2595 {
                   BlockPos var9 = var5.add(var7, var6, var8);
                   BlockState var10 = var3.getBlockState(var9);
                   Block var11 = var10.getBlock();
-                  if (var11 instanceof Class3442) {
+                  if (var11 instanceof InfestedBlock) {
                      if (!var3.getGameRules().getBoolean(GameRules.field24224)) {
-                        var3.setBlockState(var9, ((Class3442)var11).method12118().getDefaultState(), 3);
+                        var3.setBlockState(var9, ((InfestedBlock)var11).method12118().getDefaultState(), 3);
                      } else {
                         var3.destroyBlock(var9, true, this.field17292);
                      }

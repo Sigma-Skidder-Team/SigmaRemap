@@ -81,7 +81,7 @@ public final class Class7700 {
    public static final BlockState field33059 = Blocks.LAPIS_ORE.getDefaultState();
    public static final BlockState field33060 = Blocks.STONE.getDefaultState();
    public static final BlockState field33061 = Blocks.EMERALD_ORE.getDefaultState();
-   public static final BlockState field33062 = Blocks.field36619.getDefaultState();
+   public static final BlockState field33062 = Blocks.INFESTED_STONE.getDefaultState();
    public static final BlockState field33063 = Blocks.SAND.getDefaultState();
    public static final BlockState field33064 = Blocks.CLAY.getDefaultState();
    public static final BlockState field33065 = Blocks.MOSSY_COBBLESTONE.getDefaultState();

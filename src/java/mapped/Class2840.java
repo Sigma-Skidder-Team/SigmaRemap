@@ -854,7 +854,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Items.field37897).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
                   .method18291(Class4695.method14724(Items.field38051).method18299(1))
                   .method18291(Class4695.method14724(Blocks.STONE).method18299(2))
-                  .method18291(Class4695.method14724(Blocks.field36615).method18299(2))
+                  .method18291(Class4695.method14724(Blocks.STONE_BRICKS).method18299(2))
                   .method18291(Class4695.method14724(Items.field37843).method18299(4).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37922).method18299(1))
                   .method18291(Class4695.method14724(Blocks.field36858).method18299(1))

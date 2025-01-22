@@ -58,25 +58,25 @@ public class Class4208 extends Class4194 {
    @Override
    public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       for (int var10 = 0; var10 < this.field20515; var10++) {
-         this.method12923(var1, Blocks.field36615.getDefaultState(), 0, 0, var10, var5);
-         this.method12923(var1, Blocks.field36615.getDefaultState(), 1, 0, var10, var5);
-         this.method12923(var1, Blocks.field36615.getDefaultState(), 2, 0, var10, var5);
-         this.method12923(var1, Blocks.field36615.getDefaultState(), 3, 0, var10, var5);
-         this.method12923(var1, Blocks.field36615.getDefaultState(), 4, 0, var10, var5);
+         this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 0, 0, var10, var5);
+         this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 1, 0, var10, var5);
+         this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 2, 0, var10, var5);
+         this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 3, 0, var10, var5);
+         this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 4, 0, var10, var5);
 
          for (int var11 = 1; var11 <= 3; var11++) {
-            this.method12923(var1, Blocks.field36615.getDefaultState(), 0, var11, var10, var5);
+            this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 0, var11, var10, var5);
             this.method12923(var1, Blocks.field37012.getDefaultState(), 1, var11, var10, var5);
             this.method12923(var1, Blocks.field37012.getDefaultState(), 2, var11, var10, var5);
             this.method12923(var1, Blocks.field37012.getDefaultState(), 3, var11, var10, var5);
-            this.method12923(var1, Blocks.field36615.getDefaultState(), 4, var11, var10, var5);
+            this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 4, var11, var10, var5);
          }
 
-         this.method12923(var1, Blocks.field36615.getDefaultState(), 0, 4, var10, var5);
-         this.method12923(var1, Blocks.field36615.getDefaultState(), 1, 4, var10, var5);
-         this.method12923(var1, Blocks.field36615.getDefaultState(), 2, 4, var10, var5);
-         this.method12923(var1, Blocks.field36615.getDefaultState(), 3, 4, var10, var5);
-         this.method12923(var1, Blocks.field36615.getDefaultState(), 4, 4, var10, var5);
+         this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 0, 4, var10, var5);
+         this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 1, 4, var10, var5);
+         this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 2, 4, var10, var5);
+         this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 3, 4, var10, var5);
+         this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 4, 4, var10, var5);
       }
 
       return true;

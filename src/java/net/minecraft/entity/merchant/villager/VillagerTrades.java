@@ -446,7 +446,7 @@ public class VillagerTrades {
                   1,
                   new Class5391[]{new Class5396(Items.field37897, 10, 16, 2), new Class5395(Items.field37896, 1, 10, 16, 1)},
                   2,
-                  new Class5391[]{new Class5396(Blocks.STONE, 20, 16, 10), new Class5395(Blocks.field36618, 1, 4, 16, 5)},
+                  new Class5391[]{new Class5396(Blocks.STONE, 20, 16, 10), new Class5395(Blocks.CHISELED_STONE_BRICKS, 1, 4, 16, 5)},
                   3,
                   new Class5391[]{
                      new Class5396(Blocks.GRANITE, 16, 16, 20),

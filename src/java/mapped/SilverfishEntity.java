@@ -103,7 +103,7 @@ public class SilverfishEntity extends MonsterEntity {
 
    @Override
    public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
-      return !Class3442.method12119(var2.getBlockState(var1.down())) ? super.getBlockPathWeight(var1, var2) : 10.0F;
+      return !InfestedBlock.method12119(var2.getBlockState(var1.down())) ? super.getBlockPathWeight(var1, var2) : 10.0F;
    }
 
    public static boolean method5317(EntityType<SilverfishEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {

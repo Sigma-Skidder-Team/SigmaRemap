@@ -322,9 +322,9 @@ public class Class4212 extends Class4209 {
          this.method12923(var1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 8, -3, 5, var5);
          this.method12928(var1, var5, 9, -1, 1, 9, -1, 5, false, var4, field20527);
          this.method12926(var1, var5, 8, -3, 8, 10, -1, 10);
-         this.method12923(var1, Blocks.field36618.getDefaultState(), 8, -2, 11, var5);
-         this.method12923(var1, Blocks.field36618.getDefaultState(), 9, -2, 11, var5);
-         this.method12923(var1, Blocks.field36618.getDefaultState(), 10, -2, 11, var5);
+         this.method12923(var1, Blocks.CHISELED_STONE_BRICKS.getDefaultState(), 8, -2, 11, var5);
+         this.method12923(var1, Blocks.CHISELED_STONE_BRICKS.getDefaultState(), 9, -2, 11, var5);
+         this.method12923(var1, Blocks.CHISELED_STONE_BRICKS.getDefaultState(), 10, -2, 11, var5);
          BlockState var15 = Blocks.LEVER
             .getDefaultState()
             .with(Class3201.HORIZONTAL_FACING, Direction.NORTH)

@@ -14,12 +14,12 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Map;
 
-public class Class3442 extends Block {
+public class InfestedBlock extends Block {
    private static String[] field19245;
    private final Block field19246;
    private static final Map<Block, Block> field19247 = Maps.newIdentityHashMap();
 
-   public Class3442(Block var1, Properties var2) {
+   public InfestedBlock(Block var1, Properties var2) {
       super(var2);
       this.field19246 = var1;
       field19247.put(var1, this);

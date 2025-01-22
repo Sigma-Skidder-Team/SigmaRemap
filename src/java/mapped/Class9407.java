@@ -3496,8 +3496,8 @@ public class Class9407 {
    private void method35956() {
       ResourceLocation var3 = Class9060.method33723(Blocks.STONE);
       ResourceLocation var4 = Class9060.method33722(Blocks.STONE, "_mirrored");
-      this.field43642.accept(method35816(Blocks.field36619, var3, var4));
-      this.method35805(Blocks.field36619, var3);
+      this.field43642.accept(method35816(Blocks.INFESTED_STONE, var3, var4));
+      this.method35805(Blocks.INFESTED_STONE, var3);
    }
 
    private void method35957(Block var1, Block var2) {
@@ -3632,7 +3632,7 @@ public class Class9407 {
       this.method35841(Blocks.CLAY, Class7524.field32271);
       this.method35841(Blocks.COARSE_DIRT, Class7524.field32271);
       this.method35841(Blocks.field37148, Class7524.field32271);
-      this.method35841(Blocks.field36617, Class7524.field32271);
+      this.method35841(Blocks.CRACKED_STONE_BRICKS, Class7524.field32271);
       this.method35841(Blocks.CRYING_OBSIDIAN, Class7524.field32271);
       this.method35841(Blocks.field36651, Class7524.field32271);
       this.method35841(Blocks.GLOWSTONE, Class7524.field32271);
@@ -3663,7 +3663,7 @@ public class Class9407 {
       this.method35841(
          Blocks.field36725, Class7524.field32273.method25593(var0 -> var0.method22991(Class9588.field44833, Class7287.method23041(Blocks.field36725)))
       );
-      this.method35841(Blocks.field36618, Class7524.field32271);
+      this.method35841(Blocks.CHISELED_STONE_BRICKS, Class7524.field32271);
       this.method35901(Blocks.CHISELED_SANDSTONE, Blocks.SANDSTONE);
       this.method35901(Blocks.field36836, Blocks.field36835);
       this.method35841(Blocks.field37137, Class7524.field32271);
@@ -4067,7 +4067,7 @@ public class Class9407 {
          .method31173(Blocks.field36841)
          .method31174(Blocks.field36662);
       this.method35847(Blocks.field36873);
-      this.method35848(Blocks.field36611);
+      this.method35848(Blocks.BIRCH_TRAPDOOR);
       this.method35850(Blocks.BIRCH_LOG).method36613(Blocks.BIRCH_LOG).method36611(Blocks.BIRCH_WOOD);
       this.method35850(Blocks.STRIPPED_BIRCH_LOG).method36613(Blocks.STRIPPED_BIRCH_LOG).method36611(Blocks.STRIPPED_BIRCH_WOOD);
       this.method35857(Blocks.BIRCH_SAPLING, Blocks.POTTED_BIRCH_SAPLING, Class1958.field12763);
@@ -4096,7 +4096,7 @@ public class Class9407 {
          .method31173(Blocks.field36840)
          .method31174(Blocks.SPRUCE_STAIRS);
       this.method35847(Blocks.field36872);
-      this.method35848(Blocks.field36610);
+      this.method35848(Blocks.SPRUCE_TRAPDOOR);
       this.method35850(Blocks.SPRUCE_LOG).method36613(Blocks.SPRUCE_LOG).method36611(Blocks.SPRUCE_WOOD);
       this.method35850(Blocks.STRIPPED_SPRUCE_LOG).method36613(Blocks.STRIPPED_SPRUCE_LOG).method36611(Blocks.STRIPPED_SPRUCE_WOOD);
       this.method35857(Blocks.SPRUCE_SAPLING, Blocks.POTTED_SPRUCE_SAPLING, Class1958.field12763);
@@ -4110,7 +4110,7 @@ public class Class9407 {
          .method31173(Blocks.field36844)
          .method31174(Blocks.field36763);
       this.method35847(Blocks.field36876);
-      this.method35849(Blocks.field36614);
+      this.method35849(Blocks.DARK_OAK_TRAPDOOR);
       this.method35850(Blocks.DARK_OAK_LOG).method36613(Blocks.DARK_OAK_LOG).method36611(Blocks.DARK_OAK_WOOD);
       this.method35850(Blocks.STRIPPED_DARK_OAK_LOG).method36613(Blocks.STRIPPED_DARK_OAK_LOG).method36611(Blocks.STRIPPED_DARK_OAK_WOOD);
       this.method35857(Blocks.DARK_OAK_SAPLING, Blocks.POTTED_DARK_OAK_SAPLING, Class1958.field12763);
@@ -4124,7 +4124,7 @@ public class Class9407 {
          .method31173(Blocks.field36842)
          .method31174(Blocks.field36663);
       this.method35847(Blocks.field36874);
-      this.method35848(Blocks.field36612);
+      this.method35848(Blocks.JUNGLE_TRAPDOOR);
       this.method35850(Blocks.JUNGLE_LOG).method36613(Blocks.JUNGLE_LOG).method36611(Blocks.JUNGLE_WOOD);
       this.method35850(Blocks.STRIPPED_JUNGLE_LOG).method36613(Blocks.STRIPPED_JUNGLE_LOG).method36611(Blocks.STRIPPED_JUNGLE_WOOD);
       this.method35857(Blocks.JUNGLE_SAPLING, Blocks.POTTED_JUNGLE_SAPLING, Class1958.field12763);
@@ -4167,8 +4167,8 @@ public class Class9407 {
       }).method31173(Blocks.field36845).method31171(Blocks.STONE_PRESSURE_PLATE).method31167(Blocks.STONE_BUTTON).method31174(Blocks.field37020);
       this.method35847(Blocks.IRON_DOOR);
       this.method35849(Blocks.field36766);
-      this.method35845(Blocks.field36615).method31168(Blocks.field37046).method31174(Blocks.STONE_BRICK_STAIRS).method31173(Blocks.field36852);
-      this.method35845(Blocks.field36616).method31168(Blocks.field37044).method31174(Blocks.field37016).method31173(Blocks.field37030);
+      this.method35845(Blocks.STONE_BRICKS).method31168(Blocks.field37046).method31174(Blocks.STONE_BRICK_STAIRS).method31173(Blocks.field36852);
+      this.method35845(Blocks.MOSSY_STONE_BRICKS).method31168(Blocks.field37044).method31174(Blocks.field37016).method31173(Blocks.field37030);
       this.method35845(Blocks.COBBLESTONE).method31168(Blocks.COBBLESTONE_WALL).method31174(Blocks.COBBLESTONE_STAIRS).method31173(Blocks.field36850);
       this.method35845(Blocks.MOSSY_COBBLESTONE).method31168(Blocks.MOSSY_COBBLESTONE_WALL).method31174(Blocks.field37018).method31173(Blocks.field37032);
       this.method35845(Blocks.field36767).method31168(Blocks.field37042).method31174(Blocks.field36770).method31173(Blocks.field36773);
@@ -4251,12 +4251,12 @@ public class Class9407 {
       this.method35886(Blocks.SMOKER, Class7524.field32278);
       this.method35889();
       this.method35958();
-      this.method35925(Blocks.field36618, Blocks.field36624);
-      this.method35925(Blocks.COBBLESTONE, Blocks.field36620);
-      this.method35925(Blocks.field36617, Blocks.field36623);
-      this.method35925(Blocks.field36616, Blocks.field36622);
+      this.method35925(Blocks.CHISELED_STONE_BRICKS, Blocks.INFESTED_CHISELED_STONE_BRICKS);
+      this.method35925(Blocks.COBBLESTONE, Blocks.INFESTED_COBBLESTONE);
+      this.method35925(Blocks.CRACKED_STONE_BRICKS, Blocks.INFESTED_CRACKED_STONE_BRICKS);
+      this.method35925(Blocks.MOSSY_STONE_BRICKS, Blocks.INFESTED_MOSSY_STONE_BRICKS);
       this.method35956();
-      this.method35925(Blocks.field36615, Blocks.field36621);
+      this.method35925(Blocks.STONE_BRICKS, Blocks.INFESTED_STONE_BRICKS);
       SpawnEggItem.method11854().forEach(var1 -> this.method35806(var1, Class9060.method33721("template_spawn_egg")));
    }
 

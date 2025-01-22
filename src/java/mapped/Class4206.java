@@ -50,7 +50,7 @@ public class Class4206 extends Class4194 {
       this.method12928(var1, var5, 0, 0, 0, 4, 4, 6, true, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, this.field20495, 1, 1, 0);
       this.method12984(var1, var4, var5, Class2213.field14470, 1, 1, 6);
-      this.method12927(var1, var5, 3, 1, 2, 3, 1, 4, Blocks.field36615.getDefaultState(), Blocks.field36615.getDefaultState(), false);
+      this.method12927(var1, var5, 3, 1, 2, 3, 1, 4, Blocks.STONE_BRICKS.getDefaultState(), Blocks.STONE_BRICKS.getDefaultState(), false);
       this.method12923(var1, Blocks.field36852.getDefaultState(), 3, 1, 1, var5);
       this.method12923(var1, Blocks.field36852.getDefaultState(), 3, 1, 5, var5);
       this.method12923(var1, Blocks.field36852.getDefaultState(), 3, 2, 2, var5);

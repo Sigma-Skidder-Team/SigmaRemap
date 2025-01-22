@@ -29,7 +29,7 @@ public class Class2744 extends Class2736 {
                BlockPos var4 = new BlockPos(this.field17258.getPosX(), this.field17258.getPosY() + 0.5, this.field17258.getPosZ())
                   .offset(this.field17271);
                BlockState var5 = this.field17258.world.getBlockState(var4);
-               if (Class3442.method12119(var5)) {
+               if (InfestedBlock.method12119(var5)) {
                   this.field17272 = true;
                   return true;
                }
@@ -57,8 +57,8 @@ public class Class2744 extends Class2736 {
          BlockPos var4 = new BlockPos(this.field17258.getPosX(), this.field17258.getPosY() + 0.5, this.field17258.getPosZ())
             .offset(this.field17271);
          BlockState var5 = var3.getBlockState(var4);
-         if (Class3442.method12119(var5)) {
-            var3.setBlockState(var4, Class3442.method12121(var5.getBlock()), 3);
+         if (InfestedBlock.method12119(var5)) {
+            var3.setBlockState(var4, InfestedBlock.method12121(var5.getBlock()), 3);
             this.field17258.method4239();
             this.field17258.remove();
          }

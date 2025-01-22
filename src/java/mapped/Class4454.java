@@ -45,7 +45,7 @@ public class Class4454 extends Class4441<Block> {
             Blocks.CRIMSON_PLANKS,
             Blocks.WARPED_PLANKS
          );
-      this.method14014(BlockTags.field32736).method31560(Blocks.field36615, Blocks.field36616, Blocks.field36617, Blocks.field36618);
+      this.method14014(BlockTags.field32736).method31560(Blocks.STONE_BRICKS, Blocks.MOSSY_STONE_BRICKS, Blocks.CRACKED_STONE_BRICKS, Blocks.CHISELED_STONE_BRICKS);
       this.method14014(BlockTags.field32737)
          .method31560(
             Blocks.field36695,
@@ -393,11 +393,11 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32747)
          .method31560(
             Blocks.ACACIA_TRAPDOOR,
-            Blocks.field36611,
-            Blocks.field36614,
-            Blocks.field36612,
+            Blocks.BIRCH_TRAPDOOR,
+            Blocks.DARK_OAK_TRAPDOOR,
+            Blocks.JUNGLE_TRAPDOOR,
             Blocks.OAK_TRAPDOOR,
-            Blocks.field36610,
+            Blocks.SPRUCE_TRAPDOOR,
             Blocks.CRIMSON_TRAPDOOR,
             Blocks.WARPED_TRAPDOOR
          );

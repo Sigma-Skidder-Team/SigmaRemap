@@ -99,11 +99,11 @@ public class Class8928 {
       var0.put(Blocks.SUGAR_CANE, var5);
       var0.put(Blocks.REPEATER, var5);
       var0.put(Blocks.OAK_TRAPDOOR, var5);
-      var0.put(Blocks.field36610, var5);
-      var0.put(Blocks.field36611, var5);
-      var0.put(Blocks.field36612, var5);
+      var0.put(Blocks.SPRUCE_TRAPDOOR, var5);
+      var0.put(Blocks.BIRCH_TRAPDOOR, var5);
+      var0.put(Blocks.JUNGLE_TRAPDOOR, var5);
       var0.put(Blocks.ACACIA_TRAPDOOR, var5);
-      var0.put(Blocks.field36614, var5);
+      var0.put(Blocks.DARK_OAK_TRAPDOOR, var5);
       var0.put(Blocks.CRIMSON_TRAPDOOR, var5);
       var0.put(Blocks.WARPED_TRAPDOOR, var5);
       var0.put(Blocks.ATTACHED_PUMPKIN_STEM, var5);
