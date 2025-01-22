@@ -428,7 +428,7 @@ public class Items {
    public static final Item field37628 = method30154(Blocks.BLUE_STAINED_GLASS_PANE, ItemGroup.field31666);
    public static final Item field37629 = method30154(Blocks.BROWN_STAINED_GLASS_PANE, ItemGroup.field31666);
    public static final Item field37630 = method30154(Blocks.GREEN_STAINED_GLASS_PANE, ItemGroup.field31666);
-   public static final Item field37631 = method30154(Blocks.field36760, ItemGroup.field31666);
+   public static final Item field37631 = method30154(Blocks.RED_STAINED_GLASS_PANE, ItemGroup.field31666);
    public static final Item field37632 = method30154(Blocks.BLACK_STAINED_GLASS_PANE, ItemGroup.field31666);
    public static final Item field37633 = method30154(Blocks.PRISMARINE, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37634 = method30154(Blocks.PRISMARINE_BRICKS, ItemGroup.BUILDING_BLOCKS);

@@ -330,8 +330,8 @@ public class Class4447 implements Class4442 {
       method14069(var0, Blocks.PURPLE_STAINED_GLASS_PANE, Blocks.PURPLE_STAINED_GLASS);
       method14070(var0, Blocks.PURPLE_STAINED_GLASS_PANE, Items.field37928);
       method14068(var0, Blocks.RED_STAINED_GLASS, Items.field37932);
-      method14069(var0, Blocks.field36760, Blocks.RED_STAINED_GLASS);
-      method14070(var0, Blocks.field36760, Items.field37932);
+      method14069(var0, Blocks.RED_STAINED_GLASS_PANE, Blocks.RED_STAINED_GLASS);
+      method14070(var0, Blocks.RED_STAINED_GLASS_PANE, Items.field37932);
       method14068(var0, Blocks.WHITE_STAINED_GLASS, Items.field37918);
       method14069(var0, Blocks.WHITE_STAINED_GLASS_PANE, Blocks.WHITE_STAINED_GLASS);
       method14070(var0, Blocks.WHITE_STAINED_GLASS_PANE, Items.field37918);

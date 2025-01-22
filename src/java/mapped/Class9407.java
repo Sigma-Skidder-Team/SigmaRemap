@@ -3913,7 +3913,7 @@ public class Class9407 {
       this.method35874(Blocks.BLUE_STAINED_GLASS, Blocks.BLUE_STAINED_GLASS_PANE);
       this.method35874(Blocks.BROWN_STAINED_GLASS, Blocks.BROWN_STAINED_GLASS_PANE);
       this.method35874(Blocks.GREEN_STAINED_GLASS, Blocks.GREEN_STAINED_GLASS_PANE);
-      this.method35874(Blocks.RED_STAINED_GLASS, Blocks.field36760);
+      this.method35874(Blocks.RED_STAINED_GLASS, Blocks.RED_STAINED_GLASS_PANE);
       this.method35874(Blocks.BLACK_STAINED_GLASS, Blocks.BLACK_STAINED_GLASS_PANE);
       this.method35873(
          Class7524.field32280,

@@ -254,7 +254,7 @@ public class Class8928 {
       var0.put(Blocks.BLUE_STAINED_GLASS_PANE, var6);
       var0.put(Blocks.BROWN_STAINED_GLASS_PANE, var6);
       var0.put(Blocks.GREEN_STAINED_GLASS_PANE, var6);
-      var0.put(Blocks.field36760, var6);
+      var0.put(Blocks.RED_STAINED_GLASS_PANE, var6);
       var0.put(Blocks.BLACK_STAINED_GLASS_PANE, var6);
       var0.put(Blocks.SLIME_BLOCK, var6);
       var0.put(Blocks.HONEY_BLOCK, var6);
