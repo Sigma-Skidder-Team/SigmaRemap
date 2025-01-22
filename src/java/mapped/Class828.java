@@ -19,6 +19,7 @@ import net.minecraft.network.play.client.CEditBookPacket;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SharedConstants;
 import net.minecraft.util.text.*;
+import net.minecraft.util.text.TextFormatting;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 import org.apache.commons.lang3.mutable.MutableInt;

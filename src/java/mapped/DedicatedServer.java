@@ -326,7 +326,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
    public void executePendingCommands() {
       while (!this.pendingCommandList.isEmpty()) {
          PendingCommand var3 = this.pendingCommandList.remove(0);
-         this.commandManager.handleCommand(var3.field43317, var3.field43316);
+         this.getCommandManager().handleCommand(var3.field43317, var3.field43316);
       }
    }
 
@@ -535,7 +535,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
 
    public String handleRConCommand(String var1) {
       this.rconConsoleSource.resetLog();
-      this.runImmediately(() -> this.commandManager.handleCommand(this.rconConsoleSource.getCommandSource(), var1));
+      this.runImmediately(() -> this.getCommandManager().handleCommand(this.rconConsoleSource.getCommandSource(), var1));
       return this.rconConsoleSource.getLogContents();
    }
 

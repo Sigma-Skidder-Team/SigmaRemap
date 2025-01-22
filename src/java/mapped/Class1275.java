@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.*;
+import net.minecraft.util.text.TextFormatting;
 
 public class Class1275 extends Class1274<Class1175> {
    private static final ResourceLocation field6801 = new ResourceLocation("textures/gui/resource_packs.png");
