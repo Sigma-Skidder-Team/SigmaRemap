@@ -47,8 +47,8 @@ public class ArrowEntity extends AbstractArrowEntity {
             this.dataManager.set(field5116, -1);
          }
       } else {
-         this.field5117 = PotionUtils.method38185(var1);
-         List<EffectInstance> var4 = PotionUtils.method38179(var1);
+         this.field5117 = PotionUtils.getPotionFromItem(var1);
+         List<EffectInstance> var4 = PotionUtils.getFullEffectsFromItem(var1);
          if (!var4.isEmpty()) {
             for (EffectInstance var6 : var4) {
                this.field5118.add(new EffectInstance(var6));
@@ -74,13 +74,13 @@ public class ArrowEntity extends AbstractArrowEntity {
       if (this.field5117 == Potions.EMPTY && this.field5118.isEmpty()) {
          this.dataManager.set(field5116, -1);
       } else {
-         this.dataManager.set(field5116, PotionUtils.getPotionColorFromEffectList(PotionUtils.method38177(this.field5117, this.field5118)));
+         this.dataManager.set(field5116, PotionUtils.getPotionColorFromEffectList(PotionUtils.mergeEffects(this.field5117, this.field5118)));
       }
    }
 
    public void method3500(EffectInstance var1) {
       this.field5118.add(var1);
-      this.getDataManager().set(field5116, PotionUtils.getPotionColorFromEffectList(PotionUtils.method38177(this.field5117, this.field5118)));
+      this.getDataManager().set(field5116, PotionUtils.getPotionColorFromEffectList(PotionUtils.mergeEffects(this.field5117, this.field5118)));
    }
 
    @Override
@@ -154,10 +154,10 @@ public class ArrowEntity extends AbstractArrowEntity {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       if (var1.contains("Potion", 8)) {
-         this.field5117 = PotionUtils.method38186(var1);
+         this.field5117 = PotionUtils.getPotionTypeFromNBT(var1);
       }
 
-      for (EffectInstance var5 : PotionUtils.method38180(var1)) {
+      for (EffectInstance var5 : PotionUtils.getFullEffectsFromTag(var1)) {
          this.method3500(var5);
       }
 
@@ -172,7 +172,7 @@ public class ArrowEntity extends AbstractArrowEntity {
    public void method3478(LivingEntity var1) {
       super.method3478(var1);
 
-      for (EffectInstance var5 : this.field5117.method31816()) {
+      for (EffectInstance var5 : this.field5117.getEffects()) {
          var1.addPotionEffect(new EffectInstance(var5.getPotion(), Math.max(var5.getDuration() / 8, 1), var5.getAmplifier(), var5.isAmbient(), var5.doesShowParticles()));
       }
 
@@ -189,7 +189,7 @@ public class ArrowEntity extends AbstractArrowEntity {
          return new ItemStack(Items.field37797);
       } else {
          ItemStack var3 = new ItemStack(Items.field38117);
-         PotionUtils.method38187(var3, this.field5117);
+         PotionUtils.addPotionToItemStack(var3, this.field5117);
          PotionUtils.method38188(var3, this.field5118);
          if (this.field5119) {
             var3.getOrCreateTag().putInt("CustomPotionColor", this.method3502());

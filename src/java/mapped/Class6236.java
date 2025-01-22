@@ -43,7 +43,7 @@ public final class Class6236 extends Class6230 {
          return super.dispenseStack(var1, var2);
       } else {
          this.method19204(true);
-         return this.method19208(var1, var2, PotionUtils.method38187(new ItemStack(Items.field37971), Potions.WATER));
+         return this.method19208(var1, var2, PotionUtils.addPotionToItemStack(new ItemStack(Items.field37971), Potions.WATER));
       }
    }
 }

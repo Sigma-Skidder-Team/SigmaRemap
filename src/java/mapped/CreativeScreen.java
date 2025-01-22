@@ -633,7 +633,7 @@ public class CreativeScreen extends Class860<Class5820> {
          }
       }
 
-      this.mc.getTextureManager().bindTexture(new ResourceLocation("textures/gui/container/creative_inventory/tab_" + var7.getBackgroundTextureImageName()));
+      this.mc.getTextureManager().bindTexture(new ResourceLocation("textures/gui/container/creative_inventory/tab_" + var7.getBackgroundImageName()));
       this.blit(var1, this.field4734, this.field4735, 0, 0, this.xSize, this.ySize);
       this.field4779.render(var1, var3, var4, var2);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);

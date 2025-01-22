@@ -19,15 +19,15 @@ public class Class3309 extends Class3308 {
 
    @Override
    public ItemStack method11742() {
-      return PotionUtils.method38187(super.method11742(), Potions.POISON);
+      return PotionUtils.addPotionToItemStack(super.method11742(), Potions.POISON);
    }
 
    @Override
    public void fillItemGroup(ItemGroup var1, NonNullList<ItemStack> var2) {
       if (this.method11738(var1)) {
          for (Potion var6 : Registry.POTION) {
-            if (!var6.method31816().isEmpty()) {
-               var2.add(PotionUtils.method38187(new ItemStack(this), var6));
+            if (!var6.getEffects().isEmpty()) {
+               var2.add(PotionUtils.addPotionToItemStack(new ItemStack(this), var6));
             }
          }
       }
@@ -40,6 +40,6 @@ public class Class3309 extends Class3308 {
 
    @Override
    public String method11720(ItemStack var1) {
-      return PotionUtils.method38185(var1).method31815(this.getTranslationKey() + ".effect.");
+      return PotionUtils.getPotionFromItem(var1).method31815(this.getTranslationKey() + ".effect.");
    }
 }

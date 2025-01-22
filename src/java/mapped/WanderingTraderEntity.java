@@ -36,7 +36,7 @@ public class WanderingTraderEntity extends Class1043 {
             0,
             new Class2596<WanderingTraderEntity>(
                this,
-               PotionUtils.method38187(new ItemStack(Items.field37971), Potions.INVISIBILITY),
+               PotionUtils.addPotionToItemStack(new ItemStack(Items.field37971), Potions.INVISIBILITY),
                SoundEvents.field27217,
                var1 -> this.world.method6741() && !var1.isInvisible()
             )

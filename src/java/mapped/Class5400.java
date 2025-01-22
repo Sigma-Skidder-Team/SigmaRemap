@@ -37,9 +37,9 @@ public class Class5400 implements Class5391 {
    @Override
    public Class9346 method16977(Entity var1, Random var2) {
       ItemStack var5 = new ItemStack(Items.EMERALD, this.field24079);
-      List var6 = Registry.POTION.stream().filter(var0 -> !var0.method31816().isEmpty() && Class7105.method22135(var0)).collect(Collectors.toList());
+      List var6 = Registry.POTION.stream().filter(var0 -> !var0.getEffects().isEmpty() && Class7105.method22135(var0)).collect(Collectors.toList());
       Potion var7 = (Potion)var6.get(var2.nextInt(var6.size()));
-      ItemStack var8 = PotionUtils.method38187(new ItemStack(this.field24077.getItem(), this.field24078), var7);
+      ItemStack var8 = PotionUtils.addPotionToItemStack(new ItemStack(this.field24077.getItem(), this.field24078), var7);
       return new Class9346(var5, new ItemStack(this.field24082, this.field24083), var8, this.field24080, this.field24081, this.field24084);
    }
 }

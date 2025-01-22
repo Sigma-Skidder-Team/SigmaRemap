@@ -55,7 +55,7 @@ public class PotionEntity extends Class890 implements Class889 {
       super.method3466(var1);
       if (!this.world.isRemote) {
          ItemStack var4 = this.method3509();
-         Potion var5 = PotionUtils.method38185(var4);
+         Potion var5 = PotionUtils.getPotionFromItem(var4);
          List var6 = PotionUtils.method38176(var4);
          boolean var7 = var5 == Potions.WATER && var6.isEmpty();
          Direction var8 = var1.getFace();
@@ -77,7 +77,7 @@ public class PotionEntity extends Class890 implements Class889 {
       super.method3464(var1);
       if (!this.world.isRemote) {
          ItemStack var4 = this.method3509();
-         Potion var5 = PotionUtils.method38185(var4);
+         Potion var5 = PotionUtils.getPotionFromItem(var4);
          List var6 = PotionUtils.method38176(var4);
          boolean var7 = var5 == Potions.WATER && var6.isEmpty();
          if (!var7) {
@@ -93,7 +93,7 @@ public class PotionEntity extends Class890 implements Class889 {
          }
 
          int var8 = !var5.method31817() ? 2002 : 2007;
-         this.world.playEvent(var8, this.getPosition(), PotionUtils.method38182(var4));
+         this.world.playEvent(var8, this.getPosition(), PotionUtils.getColor(var4));
          this.remove();
       }
    }
@@ -154,7 +154,7 @@ public class PotionEntity extends Class890 implements Class889 {
       var5.method4111(-var5.method4098() / (float)var5.method4108());
       var5.method4099(var2);
 
-      for (EffectInstance var8 : PotionUtils.method38179(var1)) {
+      for (EffectInstance var8 : PotionUtils.getFullEffectsFromItem(var1)) {
          var5.method4101(new EffectInstance(var8));
       }
 

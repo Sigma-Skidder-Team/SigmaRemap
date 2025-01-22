@@ -25,7 +25,7 @@ public class Class3323 extends Item {
 
    @Override
    public ItemStack method11742() {
-      return PotionUtils.method38187(super.method11742(), Potions.WATER);
+      return PotionUtils.addPotionToItemStack(super.method11742(), Potions.WATER);
    }
 
    @Override
@@ -82,7 +82,7 @@ public class Class3323 extends Item {
 
    @Override
    public String method11720(ItemStack var1) {
-      return PotionUtils.method38185(var1).method31815(this.getTranslationKey() + ".effect.");
+      return PotionUtils.getPotionFromItem(var1).method31815(this.getTranslationKey() + ".effect.");
    }
 
    @Override
@@ -100,7 +100,7 @@ public class Class3323 extends Item {
       if (this.method11738(var1)) {
          for (Potion var6 : Registry.POTION) {
             if (var6 != Potions.EMPTY) {
-               var2.add(PotionUtils.method38187(new ItemStack(this), var6));
+               var2.add(PotionUtils.addPotionToItemStack(new ItemStack(this), var6));
             }
          }
       }

@@ -59,7 +59,7 @@ public class ItemColors {
             }
          }
       }, Items.field38069);
-      var3.method33259((var0x, var1) -> var1 <= 0 ? PotionUtils.method38182(var0x) : -1, Items.field37971, Items.SPLASH_POTION, Items.field38118);
+      var3.method33259((var0x, var1) -> var1 <= 0 ? PotionUtils.getColor(var0x) : -1, Items.field37971, Items.SPLASH_POTION, Items.field38118);
 
       for (SpawnEggItem var5 : SpawnEggItem.method11854()) {
          var3.method33259((var1, var2) -> var5.method11852(var2), var5);
@@ -82,7 +82,7 @@ public class ItemColors {
          Blocks.DARK_OAK_LEAVES,
          Blocks.LILY_PAD
       );
-      var3.method33259((var0x, var1) -> var1 != 0 ? -1 : PotionUtils.method38182(var0x), Items.field38117);
+      var3.method33259((var0x, var1) -> var1 != 0 ? -1 : PotionUtils.getColor(var0x), Items.field38117);
       var3.method33259((var0x, var1) -> var1 != 0 ? Class3316.method11871(var0x) : -1, Items.field37955);
       return var3;
    }

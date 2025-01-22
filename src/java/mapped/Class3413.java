@@ -75,7 +75,7 @@ public class Class3413 extends Block {
          if (var11 != Items.WATER_BUCKET) {
             if (var11 != Items.BUCKET) {
                if (var11 != Items.field37972) {
-                  if (var11 == Items.field37971 && PotionUtils.method38185(var9) == Potions.WATER) {
+                  if (var11 == Items.field37971 && PotionUtils.getPotionFromItem(var9) == Potions.WATER) {
                      if (var10 < 3 && !var2.isRemote) {
                         if (!var4.abilities.isCreativeMode) {
                            ItemStack var17 = new ItemStack(Items.field37972);
@@ -149,7 +149,7 @@ public class Class3413 extends Block {
                } else {
                   if (var10 > 0 && !var2.isRemote) {
                      if (!var4.abilities.isCreativeMode) {
-                        ItemStack var12 = PotionUtils.method38187(new ItemStack(Items.field37971), Potions.WATER);
+                        ItemStack var12 = PotionUtils.addPotionToItemStack(new ItemStack(Items.field37971), Potions.WATER);
                         var4.method2911(Stats.field40143);
                         var9.shrink(1);
                         if (!var9.isEmpty()) {

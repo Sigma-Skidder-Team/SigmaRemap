@@ -97,7 +97,7 @@ public class AreaEffectCloudEntity extends Entity {
       if (this.field5502 == Potions.EMPTY && this.field5503.isEmpty()) {
          this.getDataManager().set(field5499, 0);
       } else {
-         this.getDataManager().set(field5499, PotionUtils.getPotionColorFromEffectList(PotionUtils.method38177(this.field5502, this.field5503)));
+         this.getDataManager().set(field5499, PotionUtils.getPotionColorFromEffectList(PotionUtils.mergeEffects(this.field5502, this.field5503)));
       }
    }
 
@@ -183,7 +183,7 @@ public class AreaEffectCloudEntity extends Entity {
 
            List<EffectInstance> var27 = Lists.newArrayList();
 
-            for (EffectInstance var9 : this.field5502.method31816()) {
+            for (EffectInstance var9 : this.field5502.getEffects()) {
                var27.add(new EffectInstance(var9.getPotion(), var9.getDuration() / 4, var9.getAmplifier(), var9.isAmbient(), var9.doesShowParticles()));
             }
 
@@ -355,7 +355,7 @@ public class AreaEffectCloudEntity extends Entity {
       }
 
       if (var1.contains("Potion", 8)) {
-         this.method4099(PotionUtils.method38186(var1));
+         this.method4099(PotionUtils.getPotionTypeFromNBT(var1));
       }
 
       if (var1.contains("Effects", 9)) {

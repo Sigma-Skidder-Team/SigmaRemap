@@ -29,7 +29,7 @@ public class Potion {
       return var1 + (this.field39648 != null ? this.field39648 : Registry.POTION.getKey(this).getPath());
    }
 
-   public List<EffectInstance> method31816() {
+   public List<EffectInstance> getEffects() {
       return this.field39649;
    }
 

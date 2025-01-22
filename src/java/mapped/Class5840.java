@@ -29,7 +29,7 @@ public class Class5840 extends Slot {
 
    @Override
    public ItemStack onTake(PlayerEntity var1, ItemStack var2) {
-      Potion var5 = PotionUtils.method38185(var2);
+      Potion var5 = PotionUtils.getPotionFromItem(var2);
       if (var1 instanceof ServerPlayerEntity) {
          CriteriaTriggers.field44475.method15071((ServerPlayerEntity)var1, var5);
       }

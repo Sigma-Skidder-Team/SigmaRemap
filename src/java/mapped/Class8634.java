@@ -87,7 +87,7 @@ public class Class8634 {
                   }
                }
 
-               Potion var10 = PotionUtils.method38185(var1);
+               Potion var10 = PotionUtils.getPotionFromItem(var1);
                return this.field38846 == null || this.field38846 == var10;
             }
          } else {

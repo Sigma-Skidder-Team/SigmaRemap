@@ -24,73 +24,75 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.optifine.Config;
 
+import javax.annotation.Nullable;
+
 public class PotionUtils {
    private static final IFormattableTextComponent field45485 = new TranslationTextComponent("effect.none").mergeStyle(TextFormatting.GRAY);
 
    public static List<EffectInstance> method38176(ItemStack var0) {
-      return method38178(var0.getTag());
+      return getEffectsFromTag(var0.getTag());
    }
 
-   public static List<EffectInstance> method38177(Potion var0, Collection<EffectInstance> var1) {
-      ArrayList var4 = Lists.newArrayList();
-      var4.addAll(var0.method31816());
-      var4.addAll(var1);
-      return var4;
+   public static List<EffectInstance> mergeEffects(Potion potionIn, Collection<EffectInstance> effects) {
+      ArrayList<EffectInstance> list = Lists.newArrayList();
+      list.addAll(potionIn.getEffects());
+      list.addAll(effects);
+      return list;
    }
 
-   public static List<EffectInstance> method38178(CompoundNBT var0) {
-      ArrayList var3 = Lists.newArrayList();
-      var3.addAll(method38186(var0).method31816());
-      method38181(var0, var3);
-      return var3;
+   public static List<EffectInstance> getEffectsFromTag(@Nullable CompoundNBT tag) {
+      ArrayList list = Lists.newArrayList();
+      list.addAll(getPotionTypeFromNBT(tag).getEffects());
+      addCustomPotionEffectToList(tag, list);
+      return list;
    }
 
-   public static List<EffectInstance> method38179(ItemStack var0) {
-      return method38180(var0.getTag());
+   public static List<EffectInstance> getFullEffectsFromItem(ItemStack itemIn) {
+      return getFullEffectsFromTag(itemIn.getTag());
    }
 
-   public static List<EffectInstance> method38180(CompoundNBT var0) {
-      ArrayList var3 = Lists.newArrayList();
-      method38181(var0, var3);
-      return var3;
+   public static List<EffectInstance> getFullEffectsFromTag(CompoundNBT tag) {
+      ArrayList list = Lists.newArrayList();
+      addCustomPotionEffectToList(tag, list);
+      return list;
    }
 
-   public static void method38181(CompoundNBT var0, List<EffectInstance> var1) {
-      if (var0 != null && var0.contains("CustomPotionEffects", 9)) {
-         ListNBT var4 = var0.getList("CustomPotionEffects", 10);
+   public static void addCustomPotionEffectToList(@Nullable CompoundNBT tag, List<EffectInstance> effectList) {
+      if (tag != null && tag.contains("CustomPotionEffects", 9)) {
+         ListNBT var4 = tag.getList("CustomPotionEffects", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
             CompoundNBT var6 = var4.getCompound(var5);
             EffectInstance var7 = EffectInstance.read(var6);
             if (var7 != null) {
-               var1.add(var7);
+               effectList.add(var7);
             }
          }
       }
    }
 
-   public static int method38182(ItemStack var0) {
-      CompoundNBT var3 = var0.getTag();
-      if (var3 != null && var3.contains("CustomPotionColor", 99)) {
-         return var3.getInt("CustomPotionColor");
+   public static int getColor(ItemStack itemStackIn) {
+      CompoundNBT nbt = itemStackIn.getTag();
+      if (nbt != null && nbt.contains("CustomPotionColor", 99)) {
+         return nbt.getInt("CustomPotionColor");
       } else {
-         return method38185(var0) != Potions.EMPTY ? getPotionColorFromEffectList(method38176(var0)) : 16253176;
+         return getPotionFromItem(itemStackIn) != Potions.EMPTY ? getPotionColorFromEffectList(method38176(itemStackIn)) : 16253176;
       }
    }
 
-   public static int method38183(Potion var0) {
-      return var0 != Potions.EMPTY ? getPotionColorFromEffectList(var0.method31816()) : 16253176;
+   public static int getPotionColor(Potion potionIn) {
+      return potionIn != Potions.EMPTY ? getPotionColorFromEffectList(potionIn.getEffects()) : 16253176;
    }
 
-   public static int getPotionColorFromEffectList(Collection<EffectInstance> var0) {
+   public static int getPotionColorFromEffectList(Collection<EffectInstance> effects) {
       int var3 = 3694022;
-      if (!var0.isEmpty()) {
+      if (!effects.isEmpty()) {
          float var4 = 0.0F;
          float var5 = 0.0F;
          float var6 = 0.0F;
          int var7 = 0;
 
-         for (EffectInstance var9 : var0) {
+         for (EffectInstance var9 : effects) {
             if (var9.doesShowParticles()) {
                int var10 = var9.getPotion().getLiquidColor();
                if (Config.method26911()) {
@@ -118,23 +120,23 @@ public class PotionUtils {
       }
    }
 
-   public static Potion method38185(ItemStack var0) {
-      return method38186(var0.getTag());
+   public static Potion getPotionFromItem(ItemStack itemIn) {
+      return getPotionTypeFromNBT(itemIn.getTag());
    }
 
-   public static Potion method38186(CompoundNBT var0) {
-      return var0 != null ? Potion.method31814(var0.getString("Potion")) : Potions.EMPTY;
+   public static Potion getPotionTypeFromNBT(@Nullable CompoundNBT tag) {
+      return tag != null ? Potion.method31814(tag.getString("Potion")) : Potions.EMPTY;
    }
 
-   public static ItemStack method38187(ItemStack var0, Potion var1) {
-      ResourceLocation var4 = Registry.POTION.getKey(var1);
-      if (var1 != Potions.EMPTY) {
-         var0.getOrCreateTag().putString("Potion", var4.toString());
+   public static ItemStack addPotionToItemStack(ItemStack itemIn, Potion potion) {
+      ResourceLocation var4 = Registry.POTION.getKey(potion);
+      if (potion != Potions.EMPTY) {
+         itemIn.getOrCreateTag().putString("Potion", var4.toString());
       } else {
-         var0.method32146("Potion");
+         itemIn.method32146("Potion");
       }
 
-      return var0;
+      return itemIn;
    }
 
    public static ItemStack method38188(ItemStack var0, Collection<EffectInstance> var1) {
