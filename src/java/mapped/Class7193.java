@@ -36,7 +36,7 @@ public class Class7193 extends Class7194 {
             Blocks.NETHER_WART_BLOCK,
             Blocks.WARPED_WART_BLOCK,
             Blocks.BASALT,
-            Blocks.field37130
+            Blocks.BLACKSTONE
          }
       );
       this.field30898 = ImmutableSet.of(Fluids.LAVA, Fluids.WATER);

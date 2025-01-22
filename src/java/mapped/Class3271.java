@@ -63,7 +63,7 @@ public class Class3271 extends Item implements IVanishable {
    public ActionResultType onItemUse(ItemUseContext var1) {
       BlockPos var4 = var1.getPos();
       World var5 = var1.getWorld();
-      if (!var5.getBlockState(var4).isIn(Blocks.field37129)) {
+      if (!var5.getBlockState(var4).isIn(Blocks.LODESTONE)) {
          return super.onItemUse(var1);
       } else {
          var5.playSound((PlayerEntity)null, var4, SoundEvents.field26749, SoundCategory.field14735, 1.0F, 1.0F);

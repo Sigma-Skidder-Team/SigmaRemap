@@ -9,10 +9,10 @@ import net.minecraft.util.registry.WorldGenRegistries;
 
 public class Class8523 {
    private static final Class7872 field38248 = new Class7872(
-      new Class6439(Blocks.field37130, 0.01F), Class6435.field28275, Blocks.field37141.getDefaultState()
+      new Class6439(Blocks.BLACKSTONE, 0.01F), Class6435.field28275, Blocks.GILDED_BLACKSTONE.getDefaultState()
    );
    private static final Class7872 field38249 = new Class7872(
-      new Class6439(Blocks.field37141, 0.5F), Class6435.field28275, Blocks.field37130.getDefaultState()
+      new Class6439(Blocks.GILDED_BLACKSTONE, 0.5F), Class6435.field28275, Blocks.BLACKSTONE.getDefaultState()
    );
    public static final Class3622 field38250 = method30211("empty", ImmutableList.of());
    public static final Class3622 field38251 = method30211(
@@ -345,8 +345,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.MAGMA_BLOCK, 0.75F), Class6435.field28275, Blocks.field37136.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37136, 0.15F), Class6435.field28275, Blocks.field37135.getDefaultState()),
+               new Class7872(new Class6439(Blocks.MAGMA_BLOCK, 0.75F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS, 0.15F), Class6435.field28275, Blocks.POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
                field38249,
                field38248
             )
@@ -358,8 +358,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field37135, 0.35F), Class6435.field28275, Blocks.field37136.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37137, 0.1F), Class6435.field28275, Blocks.field37136.getDefaultState()),
+               new Class7872(new Class6439(Blocks.POLISHED_BLACKSTONE_BRICKS, 0.35F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.CHISELED_POLISHED_BLACKSTONE, 0.1F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
                field38249,
                field38248
             )
@@ -371,8 +371,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field37135, 0.3F), Class6435.field28275, Blocks.field37136.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37130, 1.0E-4F), Class6435.field28275, Blocks.AIR.getDefaultState()),
+               new Class7872(new Class6439(Blocks.POLISHED_BLACKSTONE_BRICKS, 0.3F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.BLACKSTONE, 1.0E-4F), Class6435.field28275, Blocks.AIR.getDefaultState()),
                field38249,
                field38248
             )
@@ -384,8 +384,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field37137, 0.5F), Class6435.field28275, Blocks.AIR.getDefaultState()),
-               new Class7872(new Class6439(Blocks.GOLD_BLOCK, 0.1F), Class6435.field28275, Blocks.field37136.getDefaultState()),
+               new Class7872(new Class6439(Blocks.CHISELED_POLISHED_BLACKSTONE, 0.5F), Class6435.field28275, Blocks.AIR.getDefaultState()),
+               new Class7872(new Class6439(Blocks.GOLD_BLOCK, 0.1F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
                field38249,
                field38248
             )
@@ -397,8 +397,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field37135, 0.1F), Class6435.field28275, Blocks.field37136.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37130, 1.0E-4F), Class6435.field28275, Blocks.AIR.getDefaultState()),
+               new Class7872(new Class6439(Blocks.POLISHED_BLACKSTONE_BRICKS, 0.1F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.BLACKSTONE, 1.0E-4F), Class6435.field28275, Blocks.AIR.getDefaultState()),
                field38249,
                field38248
             )
@@ -410,9 +410,9 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field37135, 0.3F), Class6435.field28275, Blocks.field37136.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37130, 1.0E-4F), Class6435.field28275, Blocks.AIR.getDefaultState()),
-               new Class7872(new Class6439(Blocks.GOLD_BLOCK, 0.3F), Class6435.field28275, Blocks.field37136.getDefaultState()),
+               new Class7872(new Class6439(Blocks.POLISHED_BLACKSTONE_BRICKS, 0.3F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.BLACKSTONE, 1.0E-4F), Class6435.field28275, Blocks.AIR.getDefaultState()),
+               new Class7872(new Class6439(Blocks.GOLD_BLOCK, 0.3F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
                field38249,
                field38248
             )
@@ -424,11 +424,11 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field37135, 0.4F), Class6435.field28275, Blocks.field37136.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37130, 0.01F), Class6435.field28275, Blocks.field37136.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37135, 1.0E-4F), Class6435.field28275, Blocks.AIR.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37130, 1.0E-4F), Class6435.field28275, Blocks.AIR.getDefaultState()),
-               new Class7872(new Class6439(Blocks.GOLD_BLOCK, 0.3F), Class6435.field28275, Blocks.field37136.getDefaultState()),
+               new Class7872(new Class6439(Blocks.POLISHED_BLACKSTONE_BRICKS, 0.4F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.BLACKSTONE, 0.01F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.POLISHED_BLACKSTONE_BRICKS, 1.0E-4F), Class6435.field28275, Blocks.AIR.getDefaultState()),
+               new Class7872(new Class6439(Blocks.BLACKSTONE, 1.0E-4F), Class6435.field28275, Blocks.AIR.getDefaultState()),
+               new Class7872(new Class6439(Blocks.GOLD_BLOCK, 0.3F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
                field38249,
                field38248
             )
@@ -440,8 +440,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field37137, 0.5F), Class6435.field28275, Blocks.AIR.getDefaultState()),
-               new Class7872(new Class6439(Blocks.GOLD_BLOCK, 0.6F), Class6435.field28275, Blocks.field37136.getDefaultState()),
+               new Class7872(new Class6439(Blocks.CHISELED_POLISHED_BLACKSTONE, 0.5F), Class6435.field28275, Blocks.AIR.getDefaultState()),
+               new Class7872(new Class6439(Blocks.GOLD_BLOCK, 0.6F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
                field38249,
                field38248
             )
@@ -453,8 +453,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field37135, 0.3F), Class6435.field28275, Blocks.field37136.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37130, 1.0E-4F), Class6435.field28275, Blocks.AIR.getDefaultState())
+               new Class7872(new Class6439(Blocks.POLISHED_BLACKSTONE_BRICKS, 0.3F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.BLACKSTONE, 1.0E-4F), Class6435.field28275, Blocks.AIR.getDefaultState())
             )
          )
       )
@@ -464,9 +464,9 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field37135, 0.3F), Class6435.field28275, Blocks.field37136.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37135, 0.15F), Class6435.field28275, Blocks.AIR.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37135, 0.3F), Class6435.field28275, Blocks.field37130.getDefaultState())
+               new Class7872(new Class6439(Blocks.POLISHED_BLACKSTONE_BRICKS, 0.3F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.POLISHED_BLACKSTONE_BRICKS, 0.15F), Class6435.field28275, Blocks.AIR.getDefaultState()),
+               new Class7872(new Class6439(Blocks.POLISHED_BLACKSTONE_BRICKS, 0.3F), Class6435.field28275, Blocks.BLACKSTONE.getDefaultState())
             )
          )
       )
@@ -476,9 +476,9 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field37135, 0.01F), Class6435.field28275, Blocks.AIR.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37135, 0.5F), Class6435.field28275, Blocks.field37136.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37135, 0.3F), Class6435.field28275, Blocks.field37130.getDefaultState()),
+               new Class7872(new Class6439(Blocks.POLISHED_BLACKSTONE_BRICKS, 0.01F), Class6435.field28275, Blocks.AIR.getDefaultState()),
+               new Class7872(new Class6439(Blocks.POLISHED_BLACKSTONE_BRICKS, 0.5F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.POLISHED_BLACKSTONE_BRICKS, 0.3F), Class6435.field28275, Blocks.BLACKSTONE.getDefaultState()),
                field38249
             )
          )
@@ -489,7 +489,7 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.GOLD_BLOCK, 0.3F), Class6435.field28275, Blocks.field37136.getDefaultState()),
+               new Class7872(new Class6439(Blocks.GOLD_BLOCK, 0.3F), Class6435.field28275, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState()),
                new Class7872(
                   Class6435.field28275, Class6435.field28275, new Class8035(0.0F, 0.05F, 0, 100, Direction.Axis.Y), Blocks.AIR.getDefaultState()
                ),

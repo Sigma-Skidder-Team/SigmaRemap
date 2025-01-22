@@ -55,7 +55,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Blocks.field37129).method18296(Class140.method420(Class6871.method20919(1))))
+                  .method18291(Class4695.method14724(Blocks.LODESTONE).method18296(Class140.method420(Class6871.method20919(1))))
             )
             .method18320(
                Class8894.method32373()
@@ -66,7 +66,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                         .method18296(Class134.method392())
                   )
                   .method18291(Class4695.method14724(Items.field38116).method18296(Class140.method420(Class6872.method20921(10.0F, 28.0F))))
-                  .method18291(Class4695.method14724(Blocks.field37141).method18296(Class140.method420(Class6872.method20921(8.0F, 12.0F))))
+                  .method18291(Class4695.method14724(Blocks.GILDED_BLACKSTONE).method18296(Class140.method420(Class6872.method20921(8.0F, 12.0F))))
                   .method18291(Class4695.method14724(Blocks.CRYING_OBSIDIAN).method18296(Class140.method420(Class6872.method20921(3.0F, 8.0F))))
                   .method18291(Class4695.method14724(Blocks.GOLD_BLOCK).method18296(Class140.method420(Class6871.method20919(1))))
                   .method18291(Class4695.method14724(Items.field37802).method18296(Class140.method420(Class6872.method20921(4.0F, 9.0F))))
@@ -133,7 +133,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   )
                   .method18291(Class4695.method14724(Blocks.CRYING_OBSIDIAN).method18296(Class140.method420(Class6872.method20921(1.0F, 5.0F))))
                   .method18291(Class4695.method14724(Blocks.GLOWSTONE).method18296(Class140.method420(Class6872.method20921(3.0F, 6.0F))))
-                  .method18291(Class4695.method14724(Blocks.field37141).method18296(Class140.method420(Class6872.method20921(2.0F, 5.0F))))
+                  .method18291(Class4695.method14724(Blocks.GILDED_BLACKSTONE).method18296(Class140.method420(Class6872.method20921(2.0F, 5.0F))))
                   .method18291(Class4695.method14724(Blocks.SOUL_SAND).method18296(Class140.method420(Class6872.method20921(2.0F, 7.0F))))
                   .method18291(Class4695.method14724(Blocks.CRIMSON_NYLIUM).method18296(Class140.method420(Class6872.method20921(2.0F, 7.0F))))
                   .method18291(Class4695.method14724(Items.field37969).method18296(Class140.method420(Class6872.method20921(2.0F, 8.0F))))
@@ -207,7 +207,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6872.method20921(3.0F, 4.0F))
-                  .method18291(Class4695.method14724(Blocks.field37141).method18299(2).method18296(Class140.method420(Class6872.method20921(1.0F, 5.0F))))
+                  .method18291(Class4695.method14724(Blocks.GILDED_BLACKSTONE).method18299(2).method18296(Class140.method420(Class6872.method20921(1.0F, 5.0F))))
                   .method18291(Class4695.method14724(Blocks.CHAIN).method18296(Class140.method420(Class6872.method20921(2.0F, 10.0F))))
                   .method18291(Class4695.method14724(Items.field37976).method18299(2).method18296(Class140.method420(Class6872.method20921(2.0F, 6.0F))))
                   .method18291(Class4695.method14724(Blocks.BONE_BLOCK).method18296(Class140.method420(Class6872.method20921(3.0F, 6.0F))))
@@ -277,7 +277,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Items.field37801).method18296(Class140.method420(Class6872.method20921(3.0F, 9.0F))))
                   .method18291(Class4695.method14724(Blocks.CRYING_OBSIDIAN).method18296(Class140.method420(Class6872.method20921(3.0F, 5.0F))))
                   .method18291(Class4695.method14724(Items.field38072).method18296(Class140.method420(Class6872.method20921(8.0F, 23.0F))))
-                  .method18291(Class4695.method14724(Blocks.field37141).method18296(Class140.method420(Class6872.method20921(5.0F, 15.0F))))
+                  .method18291(Class4695.method14724(Blocks.GILDED_BLACKSTONE).method18296(Class140.method420(Class6872.method20921(5.0F, 15.0F))))
                   .method18291(Class4695.method14724(Items.field37976).method18296(Class140.method420(Class6872.method20921(3.0F, 8.0F))))
             )
       );

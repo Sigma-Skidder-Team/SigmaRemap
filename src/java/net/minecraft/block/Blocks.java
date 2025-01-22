@@ -1103,79 +1103,79 @@ public class Blocks {
    public static final Block COBBLESTONE_WALL = register("cobblestone_wall", new WallBlock(AbstractBlock.Properties.method26613(COBBLESTONE)));
    public static final Block MOSSY_COBBLESTONE_WALL = register("mossy_cobblestone_wall", new WallBlock(AbstractBlock.Properties.method26613(COBBLESTONE)));
    public static final Block FLOWER_POT = register(
-      "flower_pot", new Class3460(AIR, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "flower_pot", new PottedWarpedRoots(AIR, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_OAK_SAPLING = register(
-      "potted_oak_sapling", new Class3460(OAK_SAPLING, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_oak_sapling", new PottedWarpedRoots(OAK_SAPLING, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_SPRUCE_SAPLING = register(
-      "potted_spruce_sapling", new Class3460(SPRUCE_SAPLING, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_spruce_sapling", new PottedWarpedRoots(SPRUCE_SAPLING, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_BIRCH_SAPLING = register(
-      "potted_birch_sapling", new Class3460(BIRCH_SAPLING, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_birch_sapling", new PottedWarpedRoots(BIRCH_SAPLING, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_JUNGLE_SAPLING = register(
-      "potted_jungle_sapling", new Class3460(JUNGLE_SAPLING, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_jungle_sapling", new PottedWarpedRoots(JUNGLE_SAPLING, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_ACACIA_SAPLING = register(
-      "potted_acacia_sapling", new Class3460(ACACIA_SAPLING, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_acacia_sapling", new PottedWarpedRoots(ACACIA_SAPLING, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_DARK_OAK_SAPLING = register(
-      "potted_dark_oak_sapling", new Class3460(DARK_OAK_SAPLING, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_dark_oak_sapling", new PottedWarpedRoots(DARK_OAK_SAPLING, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_FERN = register(
-      "potted_fern", new Class3460(FERN, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_fern", new PottedWarpedRoots(FERN, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_DANDELION = register(
-      "potted_dandelion", new Class3460(DANDELION, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_dandelion", new PottedWarpedRoots(DANDELION, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_POPPY = register(
-      "potted_poppy", new Class3460(POPPY, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_poppy", new PottedWarpedRoots(POPPY, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_BLUE_ORCHID = register(
-      "potted_blue_orchid", new Class3460(BLUE_ORCHID, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_blue_orchid", new PottedWarpedRoots(BLUE_ORCHID, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_ALLIUM = register(
-      "potted_allium", new Class3460(ALLIUM, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_allium", new PottedWarpedRoots(ALLIUM, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_AZURE_BLUET = register(
-      "potted_azure_bluet", new Class3460(AZURE_BLUET, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_azure_bluet", new PottedWarpedRoots(AZURE_BLUET, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_RED_TULIP = register(
-      "potted_red_tulip", new Class3460(RED_TULIP, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_red_tulip", new PottedWarpedRoots(RED_TULIP, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_ORANGE_TULIP = register(
-      "potted_orange_tulip", new Class3460(ORANGE_TULIP, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_orange_tulip", new PottedWarpedRoots(ORANGE_TULIP, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_WHITE_TULIP = register(
-      "potted_white_tulip", new Class3460(WHITE_TULIP, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_white_tulip", new PottedWarpedRoots(WHITE_TULIP, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_PINK_TULIP = register(
-      "potted_pink_tulip", new Class3460(PINK_TULIP, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_pink_tulip", new PottedWarpedRoots(PINK_TULIP, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_OXEYE_DAISY = register(
-      "potted_oxeye_daisy", new Class3460(OXEYE_DAISY, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_oxeye_daisy", new PottedWarpedRoots(OXEYE_DAISY, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_CORNFLOWER = register(
-      "potted_cornflower", new Class3460(CORNFLOWER, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_cornflower", new PottedWarpedRoots(CORNFLOWER, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_LILY_OF_THE_VALLEY = register(
-      "potted_lily_of_the_valley", new Class3460(LILY_OF_THE_VALLEY, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_lily_of_the_valley", new PottedWarpedRoots(LILY_OF_THE_VALLEY, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_WITHER_ROSE = register(
-      "potted_wither_rose", new Class3460(WITHER_ROSE, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_wither_rose", new PottedWarpedRoots(WITHER_ROSE, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_RED_MUSHROOM = register(
-      "potted_red_mushroom", new Class3460(RED_MUSHROOM, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_red_mushroom", new PottedWarpedRoots(RED_MUSHROOM, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_BROWN_MUSHROOM = register(
-      "potted_brown_mushroom", new Class3460(BROWN_MUSHROOM, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_brown_mushroom", new PottedWarpedRoots(BROWN_MUSHROOM, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_DEAD_BUSH = register(
-      "potted_dead_bush", new Class3460(DEAD_BUSH, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_dead_bush", new PottedWarpedRoots(DEAD_BUSH, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_CACTUS = register(
-      "potted_cactus", new Class3460(CACTUS, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_cactus", new PottedWarpedRoots(CACTUS, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block CARROTS = register(
       "carrots", new Class3483(AbstractBlock.Properties.withMaterial(Material.PLANTS).method26614().method26624().method26622().method26619(SoundType.CROP))
@@ -2419,7 +2419,7 @@ public class Blocks {
       )
    );
    public static final Block POTTED_BAMBOO = register(
-      "potted_bamboo", new Class3460(BAMBOO, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_bamboo", new PottedWarpedRoots(BAMBOO, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block VOID_AIR = register(
       "void_air", new AirBlock(AbstractBlock.Properties.withMaterial(Material.AIR).method26614().method26626().method26628())
@@ -2812,68 +2812,68 @@ public class Blocks {
       )
    );
    public static final Block POTTED_CRIMSON_FUNGUS = register(
-      "potted_crimson_fungus", new Class3460(CRIMSON_FUNGUS, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_crimson_fungus", new PottedWarpedRoots(CRIMSON_FUNGUS, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_WARPED_FUNGUS = register(
-      "potted_warped_fungus", new Class3460(WARPED_FUNGUS, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_warped_fungus", new PottedWarpedRoots(WARPED_FUNGUS, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block POTTED_CRIMSON_ROOTS = register(
-      "potted_crimson_roots", new Class3460(CRIMSON_ROOTS, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_crimson_roots", new PottedWarpedRoots(CRIMSON_ROOTS, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
-   public static final Block field37128 = register(
-      "potted_warped_roots", new Class3460(WARPED_ROOTS, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+   public static final Block POTTED_WARPED_ROOTS = register(
+      "potted_warped_roots", new PottedWarpedRoots(WARPED_ROOTS, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
-   public static final Block field37129 = register(
+   public static final Block LODESTONE = register(
       "lodestone", new Block(AbstractBlock.Properties.withMaterial(Material.ANVIL).method26635().method26623(3.5F).method26619(SoundType.CHAIN))
    );
-   public static final Block field37130 = register(
+   public static final Block BLACKSTONE = register(
       "blackstone", new Block(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30976).method26635().method26621(1.5F, 6.0F))
    );
-   public static final Block field37131 = register("blackstone_stairs", new StairsBlock(field37130.getDefaultState(), AbstractBlock.Properties.method26613(field37130)));
-   public static final Block field37132 = register("blackstone_wall", new WallBlock(AbstractBlock.Properties.method26613(field37130)));
-   public static final Block field37133 = register("blackstone_slab", new SlabBlock(AbstractBlock.Properties.method26613(field37130).method26621(2.0F, 6.0F)));
-   public static final Block field37134 = register("polished_blackstone", new Block(AbstractBlock.Properties.method26613(field37130).method26621(2.0F, 6.0F)));
-   public static final Block field37135 = register(
-      "polished_blackstone_bricks", new Block(AbstractBlock.Properties.method26613(field37134).method26621(1.5F, 6.0F))
+   public static final Block BLACKSTONE_STAIRS = register("blackstone_stairs", new StairsBlock(BLACKSTONE.getDefaultState(), AbstractBlock.Properties.method26613(BLACKSTONE)));
+   public static final Block BLACKSTONE_WALL = register("blackstone_wall", new WallBlock(AbstractBlock.Properties.method26613(BLACKSTONE)));
+   public static final Block BLACKSTONE_SLAB = register("blackstone_slab", new SlabBlock(AbstractBlock.Properties.method26613(BLACKSTONE).method26621(2.0F, 6.0F)));
+   public static final Block POLISHED_BLACKSTONE = register("polished_blackstone", new Block(AbstractBlock.Properties.method26613(BLACKSTONE).method26621(2.0F, 6.0F)));
+   public static final Block POLISHED_BLACKSTONE_BRICKS = register(
+      "polished_blackstone_bricks", new Block(AbstractBlock.Properties.method26613(POLISHED_BLACKSTONE).method26621(1.5F, 6.0F))
    );
-   public static final Block field37136 = register("cracked_polished_blackstone_bricks", new Block(AbstractBlock.Properties.method26613(field37135)));
-   public static final Block field37137 = register(
-      "chiseled_polished_blackstone", new Block(AbstractBlock.Properties.method26613(field37134).method26621(1.5F, 6.0F))
+   public static final Block CRACKED_POLISHED_BLACKSTONE_BRICKS = register("cracked_polished_blackstone_bricks", new Block(AbstractBlock.Properties.method26613(POLISHED_BLACKSTONE_BRICKS)));
+   public static final Block CHISELED_POLISHED_BLACKSTONE = register(
+      "chiseled_polished_blackstone", new Block(AbstractBlock.Properties.method26613(POLISHED_BLACKSTONE).method26621(1.5F, 6.0F))
    );
-   public static final Block field37138 = register(
-      "polished_blackstone_brick_slab", new SlabBlock(AbstractBlock.Properties.method26613(field37135).method26621(2.0F, 6.0F))
+   public static final Block POLISHED_BLACKSTONE_BRICK_SLAB = register(
+      "polished_blackstone_brick_slab", new SlabBlock(AbstractBlock.Properties.method26613(POLISHED_BLACKSTONE_BRICKS).method26621(2.0F, 6.0F))
    );
-   public static final Block field37139 = register(
-      "polished_blackstone_brick_stairs", new StairsBlock(field37135.getDefaultState(), AbstractBlock.Properties.method26613(field37135))
+   public static final Block POLISHED_BLACKSTONE_BRICK_STAIRS = register(
+      "polished_blackstone_brick_stairs", new StairsBlock(POLISHED_BLACKSTONE_BRICKS.getDefaultState(), AbstractBlock.Properties.method26613(POLISHED_BLACKSTONE_BRICKS))
    );
-   public static final Block field37140 = register("polished_blackstone_brick_wall", new WallBlock(AbstractBlock.Properties.method26613(field37135)));
-   public static final Block field37141 = register(
-      "gilded_blackstone", new Block(AbstractBlock.Properties.method26613(field37130).method26619(SoundType.field36246))
+   public static final Block POLISHED_BLACKSTONE_BRICK_WALL = register("polished_blackstone_brick_wall", new WallBlock(AbstractBlock.Properties.method26613(POLISHED_BLACKSTONE_BRICKS)));
+   public static final Block GILDED_BLACKSTONE = register(
+      "gilded_blackstone", new Block(AbstractBlock.Properties.method26613(BLACKSTONE).method26619(SoundType.field36246))
    );
-   public static final Block field37142 = register(
-      "polished_blackstone_stairs", new StairsBlock(field37134.getDefaultState(), AbstractBlock.Properties.method26613(field37134))
+   public static final Block POLISHED_BLACKSTONE_STAIRS = register(
+      "polished_blackstone_stairs", new StairsBlock(POLISHED_BLACKSTONE.getDefaultState(), AbstractBlock.Properties.method26613(POLISHED_BLACKSTONE))
    );
-   public static final Block field37143 = register("polished_blackstone_slab", new SlabBlock(AbstractBlock.Properties.method26613(field37134)));
-   public static final Block field37144 = register(
+   public static final Block POLISHED_BLACKSTONE_SLAB = register("polished_blackstone_slab", new SlabBlock(AbstractBlock.Properties.method26613(POLISHED_BLACKSTONE)));
+   public static final Block POLISHED_BLACKSTONE_PRESSURE_PLATE = register(
       "polished_blackstone_pressure_plate",
       new PressurePlateBlock(Class2275.field14824, AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30976).method26635().method26614().method26623(0.5F))
    );
-   public static final Block field37145 = register(
+   public static final Block POLISHED_BLACKSTONE_BUTTON = register(
       "polished_blackstone_button", new StoneButtonBlock(AbstractBlock.Properties.withMaterial(Material.field38946).method26614().method26623(0.5F))
    );
-   public static final Block field37146 = register("polished_blackstone_wall", new WallBlock(AbstractBlock.Properties.method26613(field37134)));
-   public static final Block field37147 = register(
+   public static final Block POLISHED_BLACKSTONE_WALL = register("polished_blackstone_wall", new WallBlock(AbstractBlock.Properties.method26613(POLISHED_BLACKSTONE)));
+   public static final Block CHISELED_NETHER_BRICKS = register(
       "chiseled_nether_bricks",
       new Block(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30982).method26635().method26621(2.0F, 6.0F).method26619(SoundType.NETHER_SPROUTS))
    );
-   public static final Block field37148 = register(
+   public static final Block CRACKED_NETHER_BRICKS = register(
       "cracked_nether_bricks",
       new Block(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30982).method26635().method26621(2.0F, 6.0F).method26619(SoundType.NETHER_SPROUTS))
    );
-   public static final Block field37149 = register("quartz_bricks", new Block(AbstractBlock.Properties.method26613(QUARTZ_BLOCK)));
+   public static final Block QUARTZ_BRICKS = register("quartz_bricks", new Block(AbstractBlock.Properties.method26613(QUARTZ_BLOCK)));
 
    private static ToIntFunction<BlockState> method30011(int var0) {
-      return var1 -> !var1.<Boolean>get(BlockStateProperties.LIT) ? 0 : var0;
+      return var1 -> !var1.get(BlockStateProperties.LIT) ? 0 : var0;
    }
 
    private static Boolean method30012(BlockState var0, IBlockReader var1, BlockPos var2, EntityType<?> var3) {

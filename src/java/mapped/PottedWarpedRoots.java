@@ -23,13 +23,13 @@ import net.minecraft.world.World;
 
 import java.util.Map;
 
-public class Class3460 extends Block {
+public class PottedWarpedRoots extends Block {
    private static String[] field19288;
    private static final Map<Block, Block> field19289 = Maps.newHashMap();
    public static final VoxelShape field19290 = Block.makeCuboidShape(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
    private final Block field19291;
 
-   public Class3460(Block var1, Properties var2) {
+   public PottedWarpedRoots(Block var1, Properties var2) {
       super(var2);
       this.field19291 = var1;
       field19289.put(var1, this);

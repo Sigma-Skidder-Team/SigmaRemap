@@ -218,7 +218,7 @@ public class Class8928 {
       var0.put(Blocks.POTTED_CRIMSON_FUNGUS, var5);
       var0.put(Blocks.POTTED_WARPED_FUNGUS, var5);
       var0.put(Blocks.POTTED_CRIMSON_ROOTS, var5);
-      var0.put(Blocks.field37128, var5);
+      var0.put(Blocks.POTTED_WARPED_ROOTS, var5);
       var0.put(Blocks.CRIMSON_DOOR, var5);
       var0.put(Blocks.WARPED_DOOR, var5);
       RenderType var6 = RenderType.method14304();

@@ -339,7 +339,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
          .method27312(
             "use_lodestone",
             Class4458.method14095(
-               Class8912.method32576().method32578(Class8831.method31929().method31930(Blocks.field37129).method31933()),
+               Class8912.method32576().method32578(Class8831.method31929().method31930(Blocks.LODESTONE).method31933()),
                Class9735.method38146().method38147(Items.COMPASS)
             )
          )

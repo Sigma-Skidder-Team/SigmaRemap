@@ -7,7 +7,7 @@ import net.minecraft.block.Blocks;
 
 public class Class6779 extends Class6777 {
    private static final BlockState field29568 = Blocks.BASALT.getDefaultState();
-   private static final BlockState field29569 = Blocks.field37130.getDefaultState();
+   private static final BlockState field29569 = Blocks.BLACKSTONE.getDefaultState();
    private static final BlockState field29570 = Blocks.GRAVEL.getDefaultState();
    private static final ImmutableList<BlockState> field29571 = ImmutableList.of(field29568, field29569);
    private static final ImmutableList<BlockState> field29572 = ImmutableList.of(field29568);

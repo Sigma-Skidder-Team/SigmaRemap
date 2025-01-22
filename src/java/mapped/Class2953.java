@@ -20,7 +20,7 @@ public class Class2953 extends Class2898<Class4712> {
          return false;
       } else {
          BlockState var8 = var1.getBlockState(var4.up());
-         if (!var8.isIn(Blocks.NETHERRACK) && !var8.isIn(Blocks.BASALT) && !var8.isIn(Blocks.field37130)) {
+         if (!var8.isIn(Blocks.NETHERRACK) && !var8.isIn(Blocks.BASALT) && !var8.isIn(Blocks.BLACKSTONE)) {
             return false;
          } else {
             var1.setBlockState(var4, Blocks.GLOWSTONE.getDefaultState(), 2);

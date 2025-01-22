@@ -779,7 +779,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.HONEY_BLOCK);
       this.method11096(Blocks.HONEYCOMB_BLOCK);
       this.method11096(Blocks.RESPAWN_ANCHOR);
-      this.method11096(Blocks.field37129);
+      this.method11096(Blocks.LODESTONE);
       this.method11096(Blocks.WARPED_STEM);
       this.method11096(Blocks.WARPED_HYPHAE);
       this.method11096(Blocks.WARPED_FUNGUS);
@@ -806,22 +806,22 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.CRIMSON_SIGN);
       this.method11096(Blocks.NETHERITE_BLOCK);
       this.method11096(Blocks.ANCIENT_DEBRIS);
-      this.method11096(Blocks.field37130);
-      this.method11096(Blocks.field37135);
-      this.method11096(Blocks.field37139);
-      this.method11096(Blocks.field37131);
-      this.method11096(Blocks.field37132);
-      this.method11096(Blocks.field37140);
-      this.method11096(Blocks.field37137);
-      this.method11096(Blocks.field37136);
-      this.method11096(Blocks.field37134);
-      this.method11096(Blocks.field37142);
-      this.method11096(Blocks.field37144);
-      this.method11096(Blocks.field37145);
-      this.method11096(Blocks.field37146);
-      this.method11096(Blocks.field37147);
-      this.method11096(Blocks.field37148);
-      this.method11096(Blocks.field37149);
+      this.method11096(Blocks.BLACKSTONE);
+      this.method11096(Blocks.POLISHED_BLACKSTONE_BRICKS);
+      this.method11096(Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS);
+      this.method11096(Blocks.BLACKSTONE_STAIRS);
+      this.method11096(Blocks.BLACKSTONE_WALL);
+      this.method11096(Blocks.POLISHED_BLACKSTONE_BRICK_WALL);
+      this.method11096(Blocks.CHISELED_POLISHED_BLACKSTONE);
+      this.method11096(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS);
+      this.method11096(Blocks.POLISHED_BLACKSTONE);
+      this.method11096(Blocks.POLISHED_BLACKSTONE_STAIRS);
+      this.method11096(Blocks.POLISHED_BLACKSTONE_PRESSURE_PLATE);
+      this.method11096(Blocks.POLISHED_BLACKSTONE_BUTTON);
+      this.method11096(Blocks.POLISHED_BLACKSTONE_WALL);
+      this.method11096(Blocks.CHISELED_NETHER_BRICKS);
+      this.method11096(Blocks.CRACKED_NETHER_BRICKS);
+      this.method11096(Blocks.QUARTZ_BRICKS);
       this.method11096(Blocks.CHAIN);
       this.method11096(Blocks.WARPED_ROOTS);
       this.method11096(Blocks.CRIMSON_ROOTS);
@@ -874,7 +874,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11092(Blocks.POTTED_CRIMSON_FUNGUS);
       this.method11092(Blocks.POTTED_WARPED_FUNGUS);
       this.method11092(Blocks.POTTED_CRIMSON_ROOTS);
-      this.method11092(Blocks.field37128);
+      this.method11092(Blocks.POTTED_WARPED_ROOTS);
       this.method11097(Blocks.ACACIA_SLAB, Class2838::method11071);
       this.method11097(Blocks.BIRCH_SLAB, Class2838::method11071);
       this.method11097(Blocks.BRICK_SLAB, Class2838::method11071);
@@ -912,9 +912,9 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11097(Blocks.DIORITE_SLAB, Class2838::method11071);
       this.method11097(Blocks.CRIMSON_SLAB, Class2838::method11071);
       this.method11097(Blocks.WARPED_SLAB, Class2838::method11071);
-      this.method11097(Blocks.field37133, Class2838::method11071);
-      this.method11097(Blocks.field37138, Class2838::method11071);
-      this.method11097(Blocks.field37143, Class2838::method11071);
+      this.method11097(Blocks.BLACKSTONE_SLAB, Class2838::method11071);
+      this.method11097(Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, Class2838::method11071);
+      this.method11097(Blocks.POLISHED_BLACKSTONE_SLAB, Class2838::method11071);
       this.method11097(Blocks.ACACIA_DOOR, Class2838::method11091);
       this.method11097(Blocks.BIRCH_DOOR, Class2838::method11091);
       this.method11097(Blocks.DARK_OAK_DOOR, Class2838::method11091);
@@ -1353,7 +1353,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11097(
-         Blocks.field37141,
+         Blocks.GILDED_BLACKSTONE,
          var0 -> method11063(
                var0,
                method11060(
@@ -1474,7 +1474,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
    }
 
    public void method11092(Block var1) {
-      this.method11097(var1, var0 -> method11070(((Class3460)var0).method12137()));
+      this.method11097(var1, var0 -> method11070(((PottedWarpedRoots)var0).method12137()));
    }
 
    public void method11093(Block var1, Block var2) {

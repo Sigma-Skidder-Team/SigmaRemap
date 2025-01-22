@@ -57,7 +57,7 @@ public class Class4454 extends Class4441<Block> {
             Blocks.CRIMSON_BUTTON,
             Blocks.WARPED_BUTTON
          );
-      this.method14014(BlockTags.field32738).method31559(BlockTags.field32737).method31558(Blocks.STONE_BUTTON).method31558(Blocks.field37145);
+      this.method14014(BlockTags.field32738).method31559(BlockTags.field32737).method31558(Blocks.STONE_BUTTON).method31558(Blocks.POLISHED_BLACKSTONE_BUTTON);
       this.method14014(BlockTags.field32739)
          .method31560(
             Blocks.WHITE_CARPET,
@@ -214,7 +214,7 @@ public class Class4454 extends Class4441<Block> {
             Blocks.POTTED_CRIMSON_FUNGUS,
             Blocks.POTTED_WARPED_FUNGUS,
             Blocks.POTTED_CRIMSON_ROOTS,
-            Blocks.field37128
+            Blocks.POTTED_WARPED_ROOTS
          );
       this.method14014(BlockTags.field32760)
          .method31560(
@@ -262,7 +262,7 @@ public class Class4454 extends Class4441<Block> {
             Blocks.CRIMSON_PRESSURE_PLATE,
             Blocks.WARPED_PRESSURE_PLATE
          );
-      this.method14014(BlockTags.field32746).method31560(Blocks.STONE_PRESSURE_PLATE, Blocks.field37144);
+      this.method14014(BlockTags.field32746).method31560(Blocks.STONE_PRESSURE_PLATE, Blocks.POLISHED_BLACKSTONE_PRESSURE_PLATE);
       this.method14014(BlockTags.field32744)
          .method31560(Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE, Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE)
          .method31559(BlockTags.field32745)
@@ -295,9 +295,9 @@ public class Class4454 extends Class4441<Block> {
             Blocks.RED_NETHER_BRICK_STAIRS,
             Blocks.POLISHED_ANDESITE_STAIRS,
             Blocks.DIORITE_STAIRS,
-            Blocks.field37131,
-            Blocks.field37139,
-            Blocks.field37142
+            Blocks.BLACKSTONE_STAIRS,
+            Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS,
+            Blocks.POLISHED_BLACKSTONE_STAIRS
          );
       this.method14014(BlockTags.field32763)
          .method31559(BlockTags.field32742)
@@ -331,9 +331,9 @@ public class Class4454 extends Class4441<Block> {
             Blocks.DIORITE_SLAB,
             Blocks.CUT_SANDSTONE_SLAB,
             Blocks.CUT_RED_SANDSTONE_SLAB,
-            Blocks.field37133,
-            Blocks.field37138,
-            Blocks.field37143
+            Blocks.BLACKSTONE_SLAB,
+            Blocks.POLISHED_BLACKSTONE_BRICK_SLAB,
+            Blocks.POLISHED_BLACKSTONE_SLAB
          );
       this.method14014(BlockTags.field32764)
          .method31560(
@@ -351,9 +351,9 @@ public class Class4454 extends Class4441<Block> {
             Blocks.SANDSTONE_WALL,
             Blocks.END_STONE_BRICK_WALL,
             Blocks.DIORITE_WALL,
-            Blocks.field37132,
-            Blocks.field37140,
-            Blocks.field37146
+            Blocks.BLACKSTONE_WALL,
+            Blocks.POLISHED_BLACKSTONE_BRICK_WALL,
+            Blocks.POLISHED_BLACKSTONE_WALL
          );
       this.method14014(BlockTags.field32785)
          .method31560(Blocks.TUBE_CORAL, Blocks.BRAIN_CORAL, Blocks.BUBBLE_CORAL, Blocks.FIRE_CORAL, Blocks.HORN_CORAL);
@@ -589,7 +589,7 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32808).method31558(Blocks.LAVA);
       this.method14014(BlockTags.field32809).method31560(Blocks.CAMPFIRE, Blocks.SOUL_CAMPFIRE);
       this.method14014(BlockTags.field32810)
-         .method31560(Blocks.GOLD_BLOCK, Blocks.BARREL, Blocks.CHEST, Blocks.ENDER_CHEST, Blocks.field37141, Blocks.TRAPPED_CHEST)
+         .method31560(Blocks.GOLD_BLOCK, Blocks.BARREL, Blocks.CHEST, Blocks.ENDER_CHEST, Blocks.GILDED_BLACKSTONE, Blocks.TRAPPED_CHEST)
          .method31559(BlockTags.field32805)
          .method31559(BlockTags.field32775);
       this.method14014(BlockTags.field32811).method31559(BlockTags.field32766);
@@ -618,7 +618,7 @@ public class Class4454 extends Class4441<Block> {
          .method31558(Blocks.GRANITE)
          .method31558(Blocks.DIORITE)
          .method31558(Blocks.ANDESITE);
-      this.method14014(BlockTags.field32819).method31558(Blocks.NETHERRACK).method31558(Blocks.BASALT).method31558(Blocks.field37130);
+      this.method14014(BlockTags.field32819).method31558(Blocks.NETHERRACK).method31558(Blocks.BASALT).method31558(Blocks.BLACKSTONE);
    }
 
    @Override
