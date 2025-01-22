@@ -210,7 +210,7 @@ public class Class3222 extends Block {
          if (var11 != RedstoneSide.field267 && !var2.getBlockState(var8.method8377(var3, var10)).isIn(this)) {
             var8.method8379(Direction.DOWN);
             BlockState var12 = var2.getBlockState(var8);
-            if (!var12.isIn(Blocks.field36895)) {
+            if (!var12.isIn(Blocks.OBSERVER)) {
                BlockPos var13 = var8.offset(var10.getOpposite());
                BlockState var14 = var12.method23439(var10.getOpposite(), var2.getBlockState(var13), var2, var8, var13);
                method11544(var12, var14, var2, var8, var4, var5);
@@ -218,7 +218,7 @@ public class Class3222 extends Block {
 
             var8.method8377(var3, var10).method8379(Direction.UP);
             BlockState var16 = var2.getBlockState(var8);
-            if (!var16.isIn(Blocks.field36895)) {
+            if (!var16.isIn(Blocks.OBSERVER)) {
                BlockPos var17 = var8.offset(var10.getOpposite());
                BlockState var15 = var16.method23439(var10.getOpposite(), var2.getBlockState(var17), var2, var8, var17);
                method11544(var16, var15, var2, var8, var4, var5);
@@ -401,7 +401,7 @@ public class Class3222 extends Block {
       if (var0.isIn(Blocks.REDSTONE_WIRE)) {
          return true;
       } else if (!var0.isIn(Blocks.REPEATER)) {
-         return var0.isIn(Blocks.field36895) ? var1 == var0.<Direction>get(Class3434.field19198) : var0.method23401() && var1 != null;
+         return var0.isIn(Blocks.OBSERVER) ? var1 == var0.<Direction>get(ObserverBlock.field19198) : var0.method23401() && var1 != null;
       } else {
          Direction var4 = var0.<Direction>get(RepeaterBlock.HORIZONTAL_FACING);
          return var4 == var1 || var4.getOpposite() == var1;

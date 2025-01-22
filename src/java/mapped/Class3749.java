@@ -99,7 +99,7 @@ public class Class3749 extends Class3676<VillagerEntity> {
                         if (var12.getItem() != Items.field38053) {
                            if (var12.getItem() != Items.field38052) {
                               if (var12.getItem() == Items.field38112) {
-                                 var1.setBlockState(this.field19897, Blocks.field36884.getDefaultState(), 3);
+                                 var1.setBlockState(this.field19897, Blocks.BEETROOTS.getDefaultState(), 3);
                                  var13 = true;
                               }
                            } else {

@@ -210,7 +210,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Blocks.field37141).method18299(2).method18296(Class140.method420(Class6872.method20921(1.0F, 5.0F))))
                   .method18291(Class4695.method14724(Blocks.CHAIN).method18296(Class140.method420(Class6872.method20921(2.0F, 10.0F))))
                   .method18291(Class4695.method14724(Items.field37976).method18299(2).method18296(Class140.method420(Class6872.method20921(2.0F, 6.0F))))
-                  .method18291(Class4695.method14724(Blocks.field36893).method18296(Class140.method420(Class6872.method20921(3.0F, 6.0F))))
+                  .method18291(Class4695.method14724(Blocks.BONE_BLOCK).method18296(Class140.method420(Class6872.method20921(3.0F, 6.0F))))
                   .method18291(Class4695.method14724(Items.field38128).method18296(Class140.method420(Class6872.method20921(2.0F, 8.0F))))
                   .method18291(Class4695.method14724(Blocks.OBSIDIAN).method18296(Class140.method420(Class6872.method20921(4.0F, 6.0F))))
                   .method18291(Class4695.method14724(Items.field37969).method18296(Class140.method420(Class6872.method20921(2.0F, 8.0F))))

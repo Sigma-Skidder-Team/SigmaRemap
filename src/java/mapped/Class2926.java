@@ -19,8 +19,8 @@ public class Class2926 extends Class2898<Class4712> {
       int var9 = var1.method6736(Heightmap.Type.OCEAN_FLOOR, var4.getX(), var4.getZ());
       BlockPos var10 = new BlockPos(var4.getX(), var9, var4.getZ());
       if (var1.getBlockState(var10).isIn(Blocks.WATER)) {
-         BlockState var11 = Blocks.field36961.getDefaultState();
-         BlockState var12 = Blocks.field36962.getDefaultState();
+         BlockState var11 = Blocks.KELP.getDefaultState();
+         BlockState var12 = Blocks.KELP_PLANT.getDefaultState();
          int var13 = 1 + var3.nextInt(10);
 
          for (int var14 = 0; var14 <= var13; var14++) {
@@ -30,13 +30,13 @@ public class Class2926 extends Class2898<Class4712> {
                if (var14 != var13) {
                   var1.setBlockState(var10, var12, 2);
                } else {
-                  var1.setBlockState(var10, var11.with(Class3451.field19267, Integer.valueOf(var3.nextInt(4) + 20)), 2);
+                  var1.setBlockState(var10, var11.with(KelpBlock.field19267, Integer.valueOf(var3.nextInt(4) + 20)), 2);
                   var8++;
                }
             } else if (var14 > 0) {
                BlockPos var15 = var10.down();
-               if (var11.isValidPosition(var1, var15) && !var1.getBlockState(var15.down()).isIn(Blocks.field36961)) {
-                  var1.setBlockState(var15, var11.with(Class3451.field19267, Integer.valueOf(var3.nextInt(4) + 20)), 2);
+               if (var11.isValidPosition(var1, var15) && !var1.getBlockState(var15.down()).isIn(Blocks.KELP)) {
+                  var1.setBlockState(var15, var11.with(KelpBlock.field19267, Integer.valueOf(var3.nextInt(4) + 20)), 2);
                   var8++;
                }
                break;

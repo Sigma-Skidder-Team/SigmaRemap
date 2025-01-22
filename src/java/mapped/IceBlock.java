@@ -15,11 +15,11 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3378 extends Class3377 {
+public class IceBlock extends Class3377 {
    private static String[] field18977;
    public static final IntegerProperty field18978 = BlockStateProperties.AGE3;
 
-   public Class3378(Properties var1) {
+   public IceBlock(Properties var1) {
       super(var1);
       this.setDefaultState(this.stateContainer.getBaseState().with(field18978, Integer.valueOf(0)));
    }

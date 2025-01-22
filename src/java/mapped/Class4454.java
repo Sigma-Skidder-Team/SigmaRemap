@@ -365,8 +365,8 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32761).method31560(Blocks.SAND, Blocks.RED_SAND);
       this.method14014(BlockTags.field32766).method31560(Blocks.RAIL, Blocks.POWERED_RAIL, Blocks.DETECTOR_RAIL, Blocks.ACTIVATOR_RAIL);
       this.method14014(BlockTags.field32783)
-         .method31560(Blocks.field36970, Blocks.field36971, Blocks.field36972, Blocks.field36973, Blocks.field36974);
-      this.method14014(BlockTags.field32779).method31560(Blocks.ICE, Blocks.PACKED_ICE, Blocks.field37006, Blocks.field36889);
+         .method31560(Blocks.TUBE_CORAL_BLOCK, Blocks.BRAIN_CORAL_BLOCK, Blocks.field36972, Blocks.field36973, Blocks.field36974);
+      this.method14014(BlockTags.field32779).method31560(Blocks.ICE, Blocks.PACKED_ICE, Blocks.field37006, Blocks.FROSTED_ICE);
       this.method14014(BlockTags.VALID_SPAWN).method31560(Blocks.GRASS_BLOCK, Blocks.PODZOL);
       this.method14014(BlockTags.LEAVES)
          .method31560(Blocks.JUNGLE_LEAVES, Blocks.OAK_LEAVES, Blocks.SPRUCE_LEAVES, Blocks.DARK_OAK_LEAVES, Blocks.ACACIA_LEAVES, Blocks.BIRCH_LEAVES);
@@ -464,10 +464,10 @@ public class Class4454 extends Class4441<Block> {
             Blocks.BEDROCK,
             Blocks.END_PORTAL,
             Blocks.END_PORTAL_FRAME,
-            Blocks.field36886,
+            Blocks.END_GATEWAY,
             Blocks.COMMAND_BLOCK,
-            Blocks.field36887,
-            Blocks.field36888,
+            Blocks.REPEATING_COMMAND_BLOCK,
+            Blocks.CHAIN_COMMAND_BLOCK,
             Blocks.STRUCTURE_BLOCK,
             Blocks.JIGSAW,
             Blocks.MOVING_PISTON,
@@ -483,10 +483,10 @@ public class Class4454 extends Class4441<Block> {
             Blocks.BEDROCK,
             Blocks.END_PORTAL,
             Blocks.END_PORTAL_FRAME,
-            Blocks.field36886,
+            Blocks.END_GATEWAY,
             Blocks.COMMAND_BLOCK,
-            Blocks.field36887,
-            Blocks.field36888,
+            Blocks.REPEATING_COMMAND_BLOCK,
+            Blocks.CHAIN_COMMAND_BLOCK,
             Blocks.STRUCTURE_BLOCK,
             Blocks.JIGSAW,
             Blocks.MOVING_PISTON
@@ -496,32 +496,32 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32773).method31559(BlockTags.field32769).method31559(BlockTags.field32772);
       this.method14014(BlockTags.field32794).method31560(Blocks.BEE_NEST, Blocks.BEEHIVE);
       this.method14014(BlockTags.field32795)
-         .method31560(Blocks.field36884, Blocks.CARROTS, Blocks.POTATOES, Blocks.WHEAT, Blocks.MELON_STEM, Blocks.PUMPKIN_STEM);
+         .method31560(Blocks.BEETROOTS, Blocks.CARROTS, Blocks.POTATOES, Blocks.WHEAT, Blocks.MELON_STEM, Blocks.PUMPKIN_STEM);
       this.method14014(BlockTags.field32796).method31559(BlockTags.field32795).method31558(Blocks.SWEET_BERRY_BUSH);
       this.method14014(BlockTags.field32805)
          .method31560(
-            Blocks.field36896,
-            Blocks.field36912,
-            Blocks.field36908,
-            Blocks.field36909,
-            Blocks.field36906,
-            Blocks.field36904,
-            Blocks.field36910,
-            Blocks.field36900,
-            Blocks.field36905,
-            Blocks.field36902,
-            Blocks.field36899,
-            Blocks.field36898,
-            Blocks.field36903,
-            Blocks.field36907,
-            Blocks.field36911,
-            Blocks.field36897,
-            Blocks.field36901
+            Blocks.SHULKER_BOX,
+            Blocks.BLACK_SHULKER_BOX,
+            Blocks.BLUE_SHULKER_BOX,
+            Blocks.BROWN_SHULKER_BOX,
+            Blocks.CYAN_SHULKER_BOX,
+            Blocks.GRAY_SHULKER_BOX,
+            Blocks.GREEN_SHULKER_BOX,
+            Blocks.LIGHT_BLUE_SHULKER_BOX,
+            Blocks.LIGHT_GRAY_SHULKER_BOX,
+            Blocks.LIME_SHULKER_BOX,
+            Blocks.MAGENTA_SHULKER_BOX,
+            Blocks.ORANGE_SHULKER_BOX,
+            Blocks.PINK_SHULKER_BOX,
+            Blocks.PURPLE_SHULKER_BOX,
+            Blocks.RED_SHULKER_BOX,
+            Blocks.WHITE_SHULKER_BOX,
+            Blocks.YELLOW_SHULKER_BOX
          );
-      this.method14014(BlockTags.field32797).method31560(Blocks.NETHER_PORTAL, Blocks.END_PORTAL, Blocks.field36886);
+      this.method14014(BlockTags.field32797).method31560(Blocks.NETHER_PORTAL, Blocks.END_PORTAL, Blocks.END_GATEWAY);
       this.method14014(BlockTags.field32798).method31560(Blocks.FIRE, Blocks.SOUL_FIRE);
       this.method14014(BlockTags.field32799).method31560(Blocks.CRIMSON_NYLIUM, Blocks.WARPED_NYLIUM);
-      this.method14014(BlockTags.field32800).method31560(Blocks.field36891, Blocks.WARPED_WART_BLOCK);
+      this.method14014(BlockTags.field32800).method31560(Blocks.NETHER_WART_BLOCK, Blocks.WARPED_WART_BLOCK);
       this.method14014(BlockTags.field32801)
          .method31560(Blocks.NETHERITE_BLOCK, Blocks.EMERALD_BLOCK, Blocks.DIAMOND_BLOCK, Blocks.GOLD_BLOCK, Blocks.IRON_BLOCK);
       this.method14014(BlockTags.SOUL_SPEED_BLOCKS).method31560(Blocks.SOUL_SAND, Blocks.SOUL_SOIL);
@@ -610,7 +610,7 @@ public class Class4454 extends Class4441<Block> {
          .method31558(Blocks.PODZOL)
          .method31558(Blocks.CRIMSON_NYLIUM)
          .method31558(Blocks.WARPED_NYLIUM);
-      this.method14014(BlockTags.INFINIBURN_OVERWORLD).method31560(Blocks.NETHERRACK, Blocks.field36890);
+      this.method14014(BlockTags.INFINIBURN_OVERWORLD).method31560(Blocks.NETHERRACK, Blocks.MAGMA_BLOCK);
       this.method14014(BlockTags.INFINIBURN_NETHER).method31559(BlockTags.INFINIBURN_OVERWORLD);
       this.method14014(BlockTags.INFINIBURN_END).method31559(BlockTags.INFINIBURN_OVERWORLD).method31558(Blocks.BEDROCK);
       this.method14014(BlockTags.field32818)

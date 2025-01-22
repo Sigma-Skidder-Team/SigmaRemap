@@ -160,10 +160,10 @@ public class Class8928 {
       var0.put(Blocks.END_ROD, var5);
       var0.put(Blocks.CHORUS_PLANT, var5);
       var0.put(Blocks.CHORUS_FLOWER, var5);
-      var0.put(Blocks.field36884, var5);
-      var0.put(Blocks.field36961, var5);
-      var0.put(Blocks.field36962, var5);
-      var0.put(Blocks.field36964, var5);
+      var0.put(Blocks.BEETROOTS, var5);
+      var0.put(Blocks.KELP, var5);
+      var0.put(Blocks.KELP_PLANT, var5);
+      var0.put(Blocks.TURTLE_EGG, var5);
       var0.put(Blocks.field36975, var5);
       var0.put(Blocks.field36976, var5);
       var0.put(Blocks.field36977, var5);
@@ -258,7 +258,7 @@ public class Class8928 {
       var0.put(Blocks.BLACK_STAINED_GLASS_PANE, var6);
       var0.put(Blocks.SLIME_BLOCK, var6);
       var0.put(Blocks.HONEY_BLOCK, var6);
-      var0.put(Blocks.field36889, var6);
+      var0.put(Blocks.FROSTED_ICE, var6);
       var0.put(Blocks.field37013, var6);
    });
    private static final Map<Fluid, RenderType> field40408 = Util.<Map<Fluid, RenderType>>make(Maps.newHashMap(), var0 -> {

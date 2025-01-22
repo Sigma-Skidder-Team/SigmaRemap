@@ -132,8 +132,8 @@ public class CommandBlockTileEntity extends TileEntity {
    public Mode method4020() {
       BlockState var3 = this.getBlockState();
       if (!var3.isIn(Blocks.COMMAND_BLOCK)) {
-         if (!var3.isIn(Blocks.field36887)) {
-            return !var3.isIn(Blocks.field36888) ? Mode.field13325 : Mode.field13323;
+         if (!var3.isIn(Blocks.REPEATING_COMMAND_BLOCK)) {
+            return !var3.isIn(Blocks.CHAIN_COMMAND_BLOCK) ? Mode.field13325 : Mode.field13323;
          } else {
             return Mode.field13324;
          }

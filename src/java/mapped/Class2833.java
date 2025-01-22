@@ -108,7 +108,7 @@ public class Class2833 implements Consumer<Consumer<Advancement>> {
          .method27312("wheat", Class4486.method14152(Blocks.WHEAT))
          .method27312("pumpkin_stem", Class4486.method14152(Blocks.PUMPKIN_STEM))
          .method27312("melon_stem", Class4486.method14152(Blocks.MELON_STEM))
-         .method27312("beetroots", Class4486.method14152(Blocks.field36884))
+         .method27312("beetroots", Class4486.method14152(Blocks.BEETROOTS))
          .method27312("nether_wart", Class4486.method14152(Blocks.NETHER_WART))
          .method27317(var1, "husbandry/plant_seed");
       Advancement var6 = Class7999.method27304()

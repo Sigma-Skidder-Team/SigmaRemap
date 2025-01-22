@@ -414,7 +414,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                double var20 = var19.method19522(Direction.Axis.Y, var13, var15);
                double var22 = (double)var18.method23475(var4, var11);
                double var24 = Math.max(var20, var22);
-               Class7435 var26 = !var18.method23486(FluidTags.field40470) && !var17.isIn(Blocks.field36890) && !Class3244.method11655(var17)
+               Class7435 var26 = !var18.method23486(FluidTags.field40470) && !var17.isIn(Blocks.MAGMA_BLOCK) && !Class3244.method11655(var17)
                   ? ParticleTypes.field34091
                   : ParticleTypes.field34092;
                this.mc

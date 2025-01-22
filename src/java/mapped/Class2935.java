@@ -18,7 +18,7 @@ public class Class2935 extends Class2898<Class4708> {
    private static final ImmutableList<Block> field18005 = ImmutableList.of(
       Blocks.LAVA,
       Blocks.BEDROCK,
-      Blocks.field36890,
+      Blocks.MAGMA_BLOCK,
       Blocks.SOUL_SAND,
       Blocks.NETHER_BRICKS,
       Blocks.NETHER_BRICK_FENCE,

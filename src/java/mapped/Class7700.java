@@ -86,7 +86,7 @@ public final class Class7700 {
    public static final BlockState field33064 = Blocks.CLAY.getDefaultState();
    public static final BlockState field33065 = Blocks.MOSSY_COBBLESTONE.getDefaultState();
    public static final BlockState field33066 = Blocks.SEAGRASS.getDefaultState();
-   public static final BlockState field33067 = Blocks.field36890.getDefaultState();
+   public static final BlockState field33067 = Blocks.MAGMA_BLOCK.getDefaultState();
    public static final BlockState field33068 = Blocks.SOUL_SAND.getDefaultState();
    public static final BlockState field33069 = Blocks.NETHER_GOLD_ORE.getDefaultState();
    public static final BlockState field33070 = Blocks.NETHER_QUARTZ_ORE.getDefaultState();

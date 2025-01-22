@@ -17,7 +17,7 @@ public class Class4709 implements Class4698 {
             .apply(var0, Class4709::new)
    );
    public static final Class4709 field22333 = new Class4709(
-      Blocks.CRIMSON_NYLIUM.getDefaultState(), Blocks.CRIMSON_STEM.getDefaultState(), Blocks.field36891.getDefaultState(), Blocks.SHROOMLIGHT.getDefaultState(), true
+      Blocks.CRIMSON_NYLIUM.getDefaultState(), Blocks.CRIMSON_STEM.getDefaultState(), Blocks.NETHER_WART_BLOCK.getDefaultState(), Blocks.SHROOMLIGHT.getDefaultState(), true
    );
    public static final Class4709 field22334;
    public static final Class4709 field22335 = new Class4709(

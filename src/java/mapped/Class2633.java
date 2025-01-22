@@ -13,7 +13,7 @@ public class Class2633 extends Class2632 {
    public final ZombieEntity field16948;
 
    public Class2633(ZombieEntity var1, CreatureEntity var2, double var3, int var5) {
-      super(Blocks.field36964, var2, var3, var5);
+      super(Blocks.TURTLE_EGG, var2, var3, var5);
       this.field16948 = var1;
    }
 

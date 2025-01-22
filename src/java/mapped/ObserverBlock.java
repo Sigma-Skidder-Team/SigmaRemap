@@ -17,11 +17,11 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3434 extends Class3433 {
+public class ObserverBlock extends Class3433 {
    private static String[] field19199;
    public static final BooleanProperty field19200 = BlockStateProperties.POWERED;
 
-   public Class3434(Properties var1) {
+   public ObserverBlock(Properties var1) {
       super(var1);
       this.setDefaultState(this.stateContainer.getBaseState().with(field19198, Direction.SOUTH).with(field19200, Boolean.valueOf(false)));
    }

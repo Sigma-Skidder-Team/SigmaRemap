@@ -78,7 +78,7 @@ public class Class4184 extends Class4180 {
       var6.add(method12960(Blocks.GOLD_BLOCK, 0.3F, Blocks.AIR));
       var6.add(this.method12950());
       if (!this.field20470.field35674) {
-         var6.add(method12960(Blocks.NETHERRACK, 0.07F, Blocks.field36890));
+         var6.add(method12960(Blocks.NETHERRACK, 0.07F, Blocks.MAGMA_BLOCK));
       }
 
       Class9463 var7 = new Class9463()
@@ -99,10 +99,10 @@ public class Class4184 extends Class4180 {
    private Class7872 method12950() {
       if (this.field20469 != Class2219.field14496) {
          return !this.field20470.field35674
-            ? method12960(Blocks.LAVA, 0.2F, Blocks.field36890)
+            ? method12960(Blocks.LAVA, 0.2F, Blocks.MAGMA_BLOCK)
             : method12961(Blocks.LAVA, Blocks.NETHERRACK);
       } else {
-         return method12961(Blocks.LAVA, Blocks.field36890);
+         return method12961(Blocks.LAVA, Blocks.MAGMA_BLOCK);
       }
    }
 
@@ -223,7 +223,7 @@ public class Class4184 extends Class4180 {
 
    private void method12957(Random var1, IWorld var2, BlockPos var3) {
       if (!this.field20470.field35674 && var1.nextFloat() < 0.07F) {
-         var2.setBlockState(var3, Blocks.field36890.getDefaultState(), 3);
+         var2.setBlockState(var3, Blocks.MAGMA_BLOCK.getDefaultState(), 3);
       } else {
          var2.setBlockState(var3, Blocks.NETHERRACK.getDefaultState(), 3);
       }

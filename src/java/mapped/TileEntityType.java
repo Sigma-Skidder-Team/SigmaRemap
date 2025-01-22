@@ -114,31 +114,31 @@ public class TileEntityType<T extends TileEntity> {
       )
    );
    public static final TileEntityType<Class964> field21440 = method13794("structure_block", Class9785.<Class964>method38569(Class964::new, Blocks.STRUCTURE_BLOCK));
-   public static final TileEntityType<Class957> field21441 = method13794("end_gateway", Class9785.<Class957>method38569(Class957::new, Blocks.field36886));
+   public static final TileEntityType<Class957> field21441 = method13794("end_gateway", Class9785.<Class957>method38569(Class957::new, Blocks.END_GATEWAY));
    public static final TileEntityType<CommandBlockTileEntity> COMMAND_BLOCK = method13794(
-      "command_block", Class9785.<CommandBlockTileEntity>method38569(CommandBlockTileEntity::new, Blocks.COMMAND_BLOCK, Blocks.field36888, Blocks.field36887)
+      "command_block", Class9785.<CommandBlockTileEntity>method38569(CommandBlockTileEntity::new, Blocks.COMMAND_BLOCK, Blocks.CHAIN_COMMAND_BLOCK, Blocks.REPEATING_COMMAND_BLOCK)
    );
    public static final TileEntityType<Class940> field21443 = method13794(
       "shulker_box",
       Class9785.<Class940>method38569(
          Class940::new,
-         Blocks.field36896,
-         Blocks.field36912,
-         Blocks.field36908,
-         Blocks.field36909,
-         Blocks.field36906,
-         Blocks.field36904,
-         Blocks.field36910,
-         Blocks.field36900,
-         Blocks.field36905,
-         Blocks.field36902,
-         Blocks.field36899,
-         Blocks.field36898,
-         Blocks.field36903,
-         Blocks.field36907,
-         Blocks.field36911,
-         Blocks.field36897,
-         Blocks.field36901
+         Blocks.SHULKER_BOX,
+         Blocks.BLACK_SHULKER_BOX,
+         Blocks.BLUE_SHULKER_BOX,
+         Blocks.BROWN_SHULKER_BOX,
+         Blocks.CYAN_SHULKER_BOX,
+         Blocks.GRAY_SHULKER_BOX,
+         Blocks.GREEN_SHULKER_BOX,
+         Blocks.LIGHT_BLUE_SHULKER_BOX,
+         Blocks.LIGHT_GRAY_SHULKER_BOX,
+         Blocks.LIME_SHULKER_BOX,
+         Blocks.MAGENTA_SHULKER_BOX,
+         Blocks.ORANGE_SHULKER_BOX,
+         Blocks.PINK_SHULKER_BOX,
+         Blocks.PURPLE_SHULKER_BOX,
+         Blocks.RED_SHULKER_BOX,
+         Blocks.WHITE_SHULKER_BOX,
+         Blocks.YELLOW_SHULKER_BOX
       )
    );
    public static final TileEntityType<Class967> field21444 = method13794(

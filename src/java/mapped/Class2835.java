@@ -53,7 +53,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
    public void accept(Consumer<Advancement> var1) {
       Advancement var4 = Class7999.method27304()
          .method27308(
-            Blocks.field36892,
+            Blocks.RED_NETHER_BRICKS,
             new TranslationTextComponent("advancements.nether.root.title"),
             new TranslationTextComponent("advancements.nether.root.description"),
             new ResourceLocation("textures/gui/advancements/backgrounds/nether.png"),

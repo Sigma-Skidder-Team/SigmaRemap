@@ -68,7 +68,7 @@ public enum NoteBlockInstrument implements IStringSerializable {
          } else if (!var0.isIn(BlockTags.field32734)) {
             if (var0.isIn(Blocks.PACKED_ICE)) {
                return field355;
-            } else if (!var0.isIn(Blocks.field36893)) {
+            } else if (!var0.isIn(Blocks.BONE_BLOCK)) {
                if (var0.isIn(Blocks.IRON_BLOCK)) {
                   return field357;
                } else if (!var0.isIn(Blocks.SOUL_SAND)) {

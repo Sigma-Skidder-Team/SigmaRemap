@@ -241,42 +241,42 @@ public class Class3368 extends BannerBlock {
 
    public static Block method11956(Class112 var0) {
       if (var0 == null) {
-         return Blocks.field36896;
+         return Blocks.SHULKER_BOX;
       } else {
          switch (Class7797.field33491[var0.ordinal()]) {
             case 1:
-               return Blocks.field36897;
+               return Blocks.WHITE_SHULKER_BOX;
             case 2:
-               return Blocks.field36898;
+               return Blocks.ORANGE_SHULKER_BOX;
             case 3:
-               return Blocks.field36899;
+               return Blocks.MAGENTA_SHULKER_BOX;
             case 4:
-               return Blocks.field36900;
+               return Blocks.LIGHT_BLUE_SHULKER_BOX;
             case 5:
-               return Blocks.field36901;
+               return Blocks.YELLOW_SHULKER_BOX;
             case 6:
-               return Blocks.field36902;
+               return Blocks.LIME_SHULKER_BOX;
             case 7:
-               return Blocks.field36903;
+               return Blocks.PINK_SHULKER_BOX;
             case 8:
-               return Blocks.field36904;
+               return Blocks.GRAY_SHULKER_BOX;
             case 9:
-               return Blocks.field36905;
+               return Blocks.LIGHT_GRAY_SHULKER_BOX;
             case 10:
-               return Blocks.field36906;
+               return Blocks.CYAN_SHULKER_BOX;
             case 11:
             default:
-               return Blocks.field36907;
+               return Blocks.PURPLE_SHULKER_BOX;
             case 12:
-               return Blocks.field36908;
+               return Blocks.BLUE_SHULKER_BOX;
             case 13:
-               return Blocks.field36909;
+               return Blocks.BROWN_SHULKER_BOX;
             case 14:
-               return Blocks.field36910;
+               return Blocks.GREEN_SHULKER_BOX;
             case 15:
-               return Blocks.field36911;
+               return Blocks.RED_SHULKER_BOX;
             case 16:
-               return Blocks.field36912;
+               return Blocks.BLACK_SHULKER_BOX;
          }
       }
    }

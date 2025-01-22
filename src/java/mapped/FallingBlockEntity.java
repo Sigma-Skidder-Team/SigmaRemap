@@ -110,7 +110,7 @@ public class FallingBlockEntity extends Entity {
          this.move(MoverType.SELF, this.getMotion());
          if (!this.world.isRemote) {
             BlockPos var18 = this.getPosition();
-            boolean var5 = this.field5176.getBlock() instanceof Class3217;
+            boolean var5 = this.field5176.getBlock() instanceof ConcretePowderBlock;
             boolean var6 = var5 && this.world.getFluidState(var18).method23486(FluidTags.WATER);
             double var7 = this.getMotion().lengthSquared();
             if (var5 && var7 > 1.0) {

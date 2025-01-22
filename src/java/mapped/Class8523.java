@@ -61,7 +61,7 @@ public class Class8523 {
                   ),
                   new Class7872(new Class6439(Blocks.WHEAT, 0.3F), Class6435.field28275, Blocks.CARROTS.getDefaultState()),
                   new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.POTATOES.getDefaultState()),
-                  new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.field36884.getDefaultState())
+                  new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.BEETROOTS.getDefaultState())
                }
             )
          )
@@ -225,7 +225,7 @@ public class Class8523 {
                new Class7872(new Class6439(Blocks.TERRACOTTA, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field37021, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field37034, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.field36884.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.BEETROOTS.getDefaultState()),
                new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.MELON_STEM.getDefaultState())
             )
          )
@@ -254,8 +254,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6438(Blocks.field36885), new Class6438(Blocks.WATER), Blocks.OAK_PLANKS.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36885, 0.1F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
+               new Class7872(new Class6438(Blocks.GRASS_PATH), new Class6438(Blocks.WATER), Blocks.OAK_PLANKS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.GRASS_PATH, 0.1F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
                new Class7872(new Class6438(Blocks.GRASS_BLOCK), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
                new Class7872(new Class6438(Blocks.DIRT), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())
             )
@@ -267,8 +267,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6438(Blocks.field36885), new Class6438(Blocks.WATER), Blocks.ACACIA_PLANKS.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36885, 0.2F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
+               new Class7872(new Class6438(Blocks.GRASS_PATH), new Class6438(Blocks.WATER), Blocks.ACACIA_PLANKS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.GRASS_PATH, 0.2F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
                new Class7872(new Class6438(Blocks.GRASS_BLOCK), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
                new Class7872(new Class6438(Blocks.DIRT), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())
             )
@@ -280,8 +280,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6438(Blocks.field36885), new Class6438(Blocks.WATER), Blocks.SPRUCE_PLANKS.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36885, 0.2F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
+               new Class7872(new Class6438(Blocks.GRASS_PATH), new Class6438(Blocks.WATER), Blocks.SPRUCE_PLANKS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.GRASS_PATH, 0.2F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
                new Class7872(new Class6438(Blocks.GRASS_BLOCK), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
                new Class7872(new Class6438(Blocks.DIRT), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())
             )
@@ -295,7 +295,7 @@ public class Class8523 {
             ImmutableList.of(
                new Class7872(new Class6439(Blocks.WHEAT, 0.3F), Class6435.field28275, Blocks.CARROTS.getDefaultState()),
                new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.POTATOES.getDefaultState()),
-               new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.field36884.getDefaultState())
+               new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.BEETROOTS.getDefaultState())
             )
          )
       )
@@ -333,7 +333,7 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.field36884.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.BEETROOTS.getDefaultState()),
                new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.MELON_STEM.getDefaultState())
             )
          )
@@ -345,7 +345,7 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field36890, 0.75F), Class6435.field28275, Blocks.field37136.getDefaultState()),
+               new Class7872(new Class6439(Blocks.MAGMA_BLOCK, 0.75F), Class6435.field28275, Blocks.field37136.getDefaultState()),
                new Class7872(new Class6439(Blocks.field37136, 0.15F), Class6435.field28275, Blocks.field37135.getDefaultState()),
                field38249,
                field38248

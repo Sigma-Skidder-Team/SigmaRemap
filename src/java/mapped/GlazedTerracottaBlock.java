@@ -7,10 +7,10 @@ import net.minecraft.block.material.PushReaction;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.StateContainer;
 
-public class Class3477 extends HorizontalBlock {
+public class GlazedTerracottaBlock extends HorizontalBlock {
    private static String[] field19330;
 
-   public Class3477(Properties var1) {
+   public GlazedTerracottaBlock(Properties var1) {
       super(var1);
    }
 

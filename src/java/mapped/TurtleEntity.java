@@ -142,7 +142,7 @@ public class TurtleEntity extends AnimalEntity {
    }
 
    public static boolean method5053(EntityType<TurtleEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
-      return var3.getY() < var1.getSeaLevel() + 4 && Class3441.method12114(var1, var3) && var1.method7021(var3, 0) > 8;
+      return var3.getY() < var1.getSeaLevel() + 4 && TurtleEggBlock.method12114(var1, var3) && var1.method7021(var3, 0) > 8;
    }
 
    @Override
@@ -252,7 +252,7 @@ public class TurtleEntity extends AnimalEntity {
       if (!this.method5049() && var2.getFluidState(var1).method23486(FluidTags.WATER)) {
          return 10.0F;
       } else {
-         return !Class3441.method12114(var2, var1) ? var2.method7009(var1) - 0.5F : 10.0F;
+         return !TurtleEggBlock.method12114(var2, var1) ? var2.method7009(var1) - 0.5F : 10.0F;
       }
    }
 
@@ -261,7 +261,7 @@ public class TurtleEntity extends AnimalEntity {
       super.livingTick();
       if (this.isAlive() && this.method5047() && this.field5962 >= 1 && this.field5962 % 5 == 0) {
          BlockPos var3 = this.getPosition();
-         if (Class3441.method12114(this.world, var3)) {
+         if (TurtleEggBlock.method12114(this.world, var3)) {
             this.world.playEvent(2001, var3, Block.getStateId(Blocks.SAND.getDefaultState()));
          }
       }

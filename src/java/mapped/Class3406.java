@@ -147,7 +147,7 @@ public class Class3406 extends Block implements Class3405 {
    @Override
    public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.down());
-      return var6.isIn(Blocks.field37013) || var6.isIn(Blocks.field36890) || var6.isIn(Blocks.SOUL_SAND);
+      return var6.isIn(Blocks.field37013) || var6.isIn(Blocks.MAGMA_BLOCK) || var6.isIn(Blocks.SOUL_SAND);
    }
 
    @Override

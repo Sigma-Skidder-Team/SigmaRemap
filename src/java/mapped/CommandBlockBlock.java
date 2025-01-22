@@ -39,7 +39,7 @@ public class CommandBlockBlock extends BannerBlock {
    @Override
    public TileEntity method11646(IBlockReader var1) {
       CommandBlockTileEntity var4 = new CommandBlockTileEntity();
-      var4.method4013(this == Blocks.field36888);
+      var4.method4013(this == Blocks.CHAIN_COMMAND_BLOCK);
       return var4;
    }
 
@@ -143,7 +143,7 @@ public class CommandBlockBlock extends BannerBlock {
          if (!var1.isRemote) {
             if (var5.method32145("BlockEntityTag") == null) {
                var10.method3570(var1.getGameRules().getBoolean(GameRules.field24236));
-               var9.method4013(this == Blocks.field36888);
+               var9.method4013(this == Blocks.CHAIN_COMMAND_BLOCK);
             }
 
             if (var9.method4020() == CommandBlockTileEntity.Mode.field13323) {
@@ -188,7 +188,7 @@ public class CommandBlockBlock extends BannerBlock {
          var5.method8379(var2);
          BlockState var8 = var0.getBlockState(var5);
          Block var9 = var8.getBlock();
-         if (!var8.isIn(Blocks.field36888)) {
+         if (!var8.isIn(Blocks.CHAIN_COMMAND_BLOCK)) {
             break;
          }
 

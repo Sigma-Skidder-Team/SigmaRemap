@@ -98,7 +98,7 @@ public class Class5941 extends Class5942<Class964> {
       for (BlockPos var12 : BlockPos.method8359(var10, var10.method8337(var1.method3942()).add(-1, -1, -1))) {
          BlockState var13 = var8.getBlockState(var12);
          boolean var14 = var13.isAir();
-         boolean var15 = var13.isIn(Blocks.field36894);
+         boolean var15 = var13.isIn(Blocks.STRUCTURE_VOID);
          if (var14 || var15) {
             float var16 = !var14 ? 0.0F : 0.05F;
             double var17 = (double)((float)(var12.getX() - var9.getX()) + 0.45F - var16);

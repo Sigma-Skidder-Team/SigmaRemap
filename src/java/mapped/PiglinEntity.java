@@ -148,7 +148,7 @@ public class PiglinEntity extends Class1035 implements Class1023 {
    }
 
    public static boolean method4615(EntityType<PiglinEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
-      return !var1.getBlockState(var3.down()).isIn(Blocks.field36891);
+      return !var1.getBlockState(var3.down()).isIn(Blocks.NETHER_WART_BLOCK);
    }
 
    @Nullable

@@ -17,10 +17,10 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3210 extends Block {
+public class MagmaBlock extends Block {
    private static String[] field18617;
 
-   public Class3210(Properties var1) {
+   public MagmaBlock(Properties var1) {
       super(var1);
    }
 

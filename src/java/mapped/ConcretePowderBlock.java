@@ -9,11 +9,11 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class Class3217 extends FallingBlock {
+public class ConcretePowderBlock extends FallingBlock {
    private static String[] field18622;
    private final BlockState field18626;
 
-   public Class3217(Block var1, Properties var2) {
+   public ConcretePowderBlock(Block var1, Properties var2) {
       super(var2);
       this.field18626 = var1.getDefaultState();
    }

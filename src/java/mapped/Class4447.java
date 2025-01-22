@@ -354,22 +354,22 @@ public class Class4447 implements Class4442 {
       method14071(var0, Blocks.RED_TERRACOTTA, Items.field37932);
       method14071(var0, Blocks.WHITE_TERRACOTTA, Items.field37918);
       method14071(var0, Blocks.YELLOW_TERRACOTTA, Items.field37922);
-      method14072(var0, Blocks.field36960, Items.field37933);
-      method14072(var0, Blocks.field36956, Items.field37929);
-      method14072(var0, Blocks.field36957, Items.field37930);
-      method14072(var0, Blocks.field36954, Items.field37927);
-      method14072(var0, Blocks.field36952, Items.field37925);
-      method14072(var0, Blocks.field36958, Items.field37931);
-      method14072(var0, Blocks.field36948, Items.field37921);
-      method14072(var0, Blocks.field36953, Items.field37926);
-      method14072(var0, Blocks.field36950, Items.field37923);
-      method14072(var0, Blocks.field36947, Items.field37920);
-      method14072(var0, Blocks.field36946, Items.field37919);
-      method14072(var0, Blocks.field36951, Items.field37924);
-      method14072(var0, Blocks.field36955, Items.field37928);
-      method14072(var0, Blocks.field36959, Items.field37932);
-      method14072(var0, Blocks.field36945, Items.field37918);
-      method14072(var0, Blocks.field36949, Items.field37922);
+      method14072(var0, Blocks.BLACK_CONCRETE_POWDER, Items.field37933);
+      method14072(var0, Blocks.BLUE_CONCRETE_POWDER, Items.field37929);
+      method14072(var0, Blocks.BROWN_CONCRETE_POWDER, Items.field37930);
+      method14072(var0, Blocks.CYAN_CONCRETE_POWDER, Items.field37927);
+      method14072(var0, Blocks.GRAY_CONCRETE_POWDER, Items.field37925);
+      method14072(var0, Blocks.GREEN_CONCRETE_POWDER, Items.field37931);
+      method14072(var0, Blocks.LIGHT_BLUE_CONCRETE_POWDER, Items.field37921);
+      method14072(var0, Blocks.LIGHT_GRAY_CONCRETE_POWDER, Items.field37926);
+      method14072(var0, Blocks.LIME_CONCRETE_POWDER, Items.field37923);
+      method14072(var0, Blocks.MAGENTA_CONCRETE_POWDER, Items.field37920);
+      method14072(var0, Blocks.ORANGE_CONCRETE_POWDER, Items.field37919);
+      method14072(var0, Blocks.PINK_CONCRETE_POWDER, Items.field37924);
+      method14072(var0, Blocks.PURPLE_CONCRETE_POWDER, Items.field37928);
+      method14072(var0, Blocks.RED_CONCRETE_POWDER, Items.field37932);
+      method14072(var0, Blocks.WHITE_CONCRETE_POWDER, Items.field37918);
+      method14072(var0, Blocks.YELLOW_CONCRETE_POWDER, Items.field37922);
       Class8528.method30248(Blocks.ACTIVATOR_RAIL, 6)
          .method30250('#', Blocks.REDSTONE_TORCH)
          .method30250('S', Items.field37835)
@@ -472,7 +472,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_packed_ice", method14075(Blocks.PACKED_ICE))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36893)
+      Class8528.method30247(Blocks.BONE_BLOCK)
          .method30250('X', Items.field37934)
          .method30252("XXX")
          .method30252("XXX")
@@ -485,9 +485,9 @@ public class Class4447 implements Class4442 {
          .method32348("has_bone", method14075(Items.field37935))
          .method32350(var0);
       Class8888.method32342(Items.field37934, 9)
-         .method32344(Blocks.field36893)
+         .method32344(Blocks.BONE_BLOCK)
          .method32349("bonemeal")
-         .method32348("has_bone_block", method14075(Blocks.field36893))
+         .method32348("has_bone_block", method14075(Blocks.BONE_BLOCK))
          .method32351(var0, "bone_meal_from_bone_block");
       Class8888.method32341(Items.field37900)
          .method32345(Items.field37899, 3)
@@ -1491,7 +1491,7 @@ public class Class4447 implements Class4442 {
          .method32348("has_pink_dye", method14075(Items.field37924))
          .method32348("has_purple_dye", method14075(Items.field37928))
          .method32351(var0, "magenta_dye_from_purple_and_pink");
-      Class8528.method30247(Blocks.field36890)
+      Class8528.method30247(Blocks.MAGMA_BLOCK)
          .method30250('#', Items.field37976)
          .method30252("##")
          .method30252("##")
@@ -1577,7 +1577,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_nether_brick", method14075(Blocks.NETHER_BRICKS))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36891)
+      Class8528.method30247(Blocks.NETHER_WART_BLOCK)
          .method30250('#', Items.field37970)
          .method30252("###")
          .method30252("###")
@@ -1592,7 +1592,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_redstone", method14075(Items.REDSTONE_DUST))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36895)
+      Class8528.method30247(Blocks.OBSERVER)
          .method30250('Q', Items.field38072)
          .method30250('R', Items.REDSTONE_DUST)
          .method30250('#', Blocks.COBBLESTONE)
@@ -1734,7 +1734,7 @@ public class Class4447 implements Class4442 {
          .method32348("has_blue_dye", method14075(Items.field37929))
          .method32348("has_red_dye", method14075(Items.field37932))
          .method32350(var0);
-      Class8528.method30247(Blocks.field36896)
+      Class8528.method30247(Blocks.SHULKER_BOX)
          .method30250('#', Blocks.CHEST)
          .method30250('-', Items.field38127)
          .method30252("-")
@@ -1866,7 +1866,7 @@ public class Class4447 implements Class4442 {
          .method32349("red_dye")
          .method32348("has_red_flower", method14075(Blocks.RED_TULIP))
          .method32351(var0, "red_dye_from_tulip");
-      Class8528.method30247(Blocks.field36892)
+      Class8528.method30247(Blocks.RED_NETHER_BRICKS)
          .method30250('W', Items.field37970)
          .method30250('N', Items.field38071)
          .method30252("NW")
@@ -2284,10 +2284,10 @@ public class Class4447 implements Class4442 {
          .method32348("has_double_plant", method14075(Blocks.SUNFLOWER))
          .method32351(var0, "yellow_dye_from_sunflower");
       Class8888.method32342(Items.field37958, 9)
-         .method32344(Blocks.field36963)
-         .method32348("has_dried_kelp_block", method14075(Blocks.field36963))
+         .method32344(Blocks.DRIED_KELP_BLOCK)
+         .method32348("has_dried_kelp_block", method14075(Blocks.DRIED_KELP_BLOCK))
          .method32350(var0);
-      Class8888.method32341(Blocks.field36963)
+      Class8888.method32341(Blocks.DRIED_KELP_BLOCK)
          .method32345(Items.field37958, 9)
          .method32348("has_dried_kelp", method14075(Items.field37958))
          .method32350(var0);
@@ -2378,11 +2378,11 @@ public class Class4447 implements Class4442 {
          .method30253("has_andesite", method14075(Blocks.ANDESITE))
          .method30255(var0);
       Class8528.method30248(Blocks.field37025, 4)
-         .method30250('#', Blocks.field36892)
+         .method30250('#', Blocks.RED_NETHER_BRICKS)
          .method30252("#  ")
          .method30252("## ")
          .method30252("###")
-         .method30253("has_red_nether_bricks", method14075(Blocks.field36892))
+         .method30253("has_red_nether_bricks", method14075(Blocks.RED_NETHER_BRICKS))
          .method30255(var0);
       Class8528.method30248(Blocks.field37026, 4)
          .method30250('#', Blocks.POLISHED_ANDESITE)
@@ -2449,9 +2449,9 @@ public class Class4447 implements Class4442 {
          .method30253("has_andesite", method14075(Blocks.ANDESITE))
          .method30255(var0);
       Class8528.method30248(Blocks.field37038, 6)
-         .method30250('#', Blocks.field36892)
+         .method30250('#', Blocks.RED_NETHER_BRICKS)
          .method30252("###")
-         .method30253("has_red_nether_bricks", method14075(Blocks.field36892))
+         .method30253("has_red_nether_bricks", method14075(Blocks.RED_NETHER_BRICKS))
          .method30255(var0);
       Class8528.method30248(Blocks.field37039, 6)
          .method30250('#', Blocks.POLISHED_ANDESITE)
@@ -2512,10 +2512,10 @@ public class Class4447 implements Class4442 {
          .method30253("has_andesite", method14075(Blocks.ANDESITE))
          .method30255(var0);
       Class8528.method30248(Blocks.field37049, 6)
-         .method30250('#', Blocks.field36892)
+         .method30250('#', Blocks.RED_NETHER_BRICKS)
          .method30252("###")
          .method30252("###")
-         .method30253("has_red_nether_bricks", method14075(Blocks.field36892))
+         .method30253("has_red_nether_bricks", method14075(Blocks.RED_NETHER_BRICKS))
          .method30255(var0);
       Class8528.method30248(Blocks.field37050, 6)
          .method30250('#', Blocks.SANDSTONE)
@@ -2780,8 +2780,8 @@ public class Class4447 implements Class4442 {
       Class5625.method17666(Class120.method339(Items.field37909), Items.field37913, 0.35F, 200)
          .method17667("has_cod", method14075(Items.field37909))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36961), Items.field37958, 0.1F, 200)
-         .method17667("has_kelp", method14075(Blocks.field36961))
+      Class5625.method17666(Class120.method339(Blocks.KELP), Items.field37958, 0.1F, 200)
+         .method17667("has_kelp", method14075(Blocks.KELP))
          .method17669(var0, "dried_kelp_from_smelting");
       Class5625.method17666(Class120.method339(Items.field37910), Items.field37914, 0.35F, 200)
          .method17667("has_salmon", method14075(Items.field37910))
@@ -2916,52 +2916,52 @@ public class Class4447 implements Class4442 {
       Class5625.method17666(Class120.method339(Blocks.STONE_BRICKS), Blocks.CRACKED_STONE_BRICKS.asItem(), 0.1F, 200)
          .method17667("has_stone_bricks", method14075(Blocks.STONE_BRICKS))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.BLACK_TERRACOTTA), Blocks.field36928.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.BLACK_TERRACOTTA), Blocks.BLACK_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_black_terracotta", method14075(Blocks.BLACK_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.BLUE_TERRACOTTA), Blocks.field36924.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.BLUE_TERRACOTTA), Blocks.BLUE_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_blue_terracotta", method14075(Blocks.BLUE_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.BROWN_TERRACOTTA), Blocks.field36925.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.BROWN_TERRACOTTA), Blocks.BROWN_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_brown_terracotta", method14075(Blocks.BROWN_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.CYAN_TERRACOTTA), Blocks.field36922.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.CYAN_TERRACOTTA), Blocks.CYAN_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_cyan_terracotta", method14075(Blocks.CYAN_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.GRAY_TERRACOTTA), Blocks.field36920.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.GRAY_TERRACOTTA), Blocks.GRAY_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_gray_terracotta", method14075(Blocks.GRAY_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.GREEN_TERRACOTTA), Blocks.field36926.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.GREEN_TERRACOTTA), Blocks.GREEN_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_green_terracotta", method14075(Blocks.GREEN_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.LIGHT_BLUE_TERRACOTTA), Blocks.field36916.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.LIGHT_BLUE_TERRACOTTA), Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_light_blue_terracotta", method14075(Blocks.LIGHT_BLUE_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.LIGHT_GRAY_TERRACOTTA), Blocks.field36921.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.LIGHT_GRAY_TERRACOTTA), Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_light_gray_terracotta", method14075(Blocks.LIGHT_GRAY_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.LIME_TERRACOTTA), Blocks.field36918.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.LIME_TERRACOTTA), Blocks.LIME_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_lime_terracotta", method14075(Blocks.LIME_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.MAGENTA_TERRACOTTA), Blocks.field36915.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.MAGENTA_TERRACOTTA), Blocks.MAGENTA_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_magenta_terracotta", method14075(Blocks.MAGENTA_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.ORANGE_TERRACOTTA), Blocks.field36914.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.ORANGE_TERRACOTTA), Blocks.ORANGE_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_orange_terracotta", method14075(Blocks.ORANGE_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.PINK_TERRACOTTA), Blocks.field36919.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.PINK_TERRACOTTA), Blocks.PINK_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_pink_terracotta", method14075(Blocks.PINK_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.PURPLE_TERRACOTTA), Blocks.field36923.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.PURPLE_TERRACOTTA), Blocks.PURPLE_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_purple_terracotta", method14075(Blocks.PURPLE_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.RED_TERRACOTTA), Blocks.field36927.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.RED_TERRACOTTA), Blocks.RED_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_red_terracotta", method14075(Blocks.RED_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.WHITE_TERRACOTTA), Blocks.field36913.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.WHITE_TERRACOTTA), Blocks.WHITE_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_white_terracotta", method14075(Blocks.WHITE_TERRACOTTA))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.YELLOW_TERRACOTTA), Blocks.field36917.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.YELLOW_TERRACOTTA), Blocks.YELLOW_GLAZED_TERRACOTTA.asItem(), 0.1F, 200)
          .method17667("has_yellow_terracotta", method14075(Blocks.YELLOW_TERRACOTTA))
          .method17668(var0);
       Class5625.method17666(Class120.method339(Blocks.ANCIENT_DEBRIS), Items.field37804, 2.0F, 200)
@@ -3186,14 +3186,14 @@ public class Class4447 implements Class4442 {
       Class9067.method33769(Class120.method339(Blocks.NETHER_BRICKS), Blocks.field37147)
          .method33771("has_nether_bricks", method14075(Blocks.NETHER_BRICKS))
          .method33772(var0, "chiseled_nether_bricks_from_nether_bricks_stonecutting");
-      Class9067.method33770(Class120.method339(Blocks.field36892), Blocks.field37038, 2)
-         .method33771("has_nether_bricks", method14075(Blocks.field36892))
+      Class9067.method33770(Class120.method339(Blocks.RED_NETHER_BRICKS), Blocks.field37038, 2)
+         .method33771("has_nether_bricks", method14075(Blocks.RED_NETHER_BRICKS))
          .method33772(var0, "red_nether_brick_slab_from_red_nether_bricks_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36892), Blocks.field37025)
-         .method33771("has_nether_bricks", method14075(Blocks.field36892))
+      Class9067.method33769(Class120.method339(Blocks.RED_NETHER_BRICKS), Blocks.field37025)
+         .method33771("has_nether_bricks", method14075(Blocks.RED_NETHER_BRICKS))
          .method33772(var0, "red_nether_brick_stairs_from_red_nether_bricks_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36892), Blocks.field37049)
-         .method33771("has_nether_bricks", method14075(Blocks.field36892))
+      Class9067.method33769(Class120.method339(Blocks.RED_NETHER_BRICKS), Blocks.field37049)
+         .method33771("has_nether_bricks", method14075(Blocks.RED_NETHER_BRICKS))
          .method33772(var0, "red_nether_brick_wall_from_red_nether_bricks_stonecutting");
       Class9067.method33770(Class120.method339(Blocks.PURPUR_BLOCK), Blocks.PURPUR_SLAB, 2)
          .method33771("has_purpur_block", method14075(Blocks.PURPUR_BLOCK))
@@ -3702,8 +3702,8 @@ public class Class4447 implements Class4442 {
       Class5625.method17664(Class120.method339(Items.field37909), Items.field37913, 0.35F, var3, var2)
          .method17667("has_cod", method14075(Items.field37909))
          .method17669(var0, "cooked_cod_from_" + var1);
-      Class5625.method17664(Class120.method339(Blocks.field36961), Items.field37958, 0.1F, var3, var2)
-         .method17667("has_kelp", method14075(Blocks.field36961))
+      Class5625.method17664(Class120.method339(Blocks.KELP), Items.field37958, 0.1F, var3, var2)
+         .method17667("has_kelp", method14075(Blocks.KELP))
          .method17669(var0, "dried_kelp_from_" + var1);
       Class5625.method17664(Class120.method339(Items.field37910), Items.field37914, 0.35F, var3, var2)
          .method17667("has_salmon", method14075(Items.field37910))

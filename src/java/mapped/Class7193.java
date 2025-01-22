@@ -33,7 +33,7 @@ public class Class7193 extends Class7194 {
             Blocks.SOUL_SOIL,
             Blocks.CRIMSON_NYLIUM,
             Blocks.WARPED_NYLIUM,
-            Blocks.field36891,
+            Blocks.NETHER_WART_BLOCK,
             Blocks.WARPED_WART_BLOCK,
             Blocks.BASALT,
             Blocks.field37130

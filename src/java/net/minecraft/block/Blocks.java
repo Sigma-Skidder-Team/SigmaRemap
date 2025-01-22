@@ -1904,10 +1904,10 @@ public class Blocks {
    public static final Block END_STONE_BRICKS = register(
       "end_stone_bricks", new Block(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30949).method26635().method26621(3.0F, 9.0F))
    );
-   public static final Block field36884 = register(
+   public static final Block BEETROOTS = register(
       "beetroots", new Class3482(AbstractBlock.Properties.withMaterial(Material.PLANTS).method26614().method26624().method26622().method26619(SoundType.CROP))
    );
-   public static final Block field36885 = register(
+   public static final Block GRASS_PATH = register(
       "grass_path",
       new Class3411(
          AbstractBlock.Properties.withMaterial(Material.DIRT)
@@ -1917,23 +1917,23 @@ public class Blocks {
             .method26631(Blocks::method30018)
       )
    );
-   public static final Block field36886 = register(
+   public static final Block END_GATEWAY = register(
       "end_gateway",
       new Class3243(
          AbstractBlock.Properties.withMaterialAndColor(Material.field38934, MaterialColor.field30976).method26614().method26620(var0 -> 15).method26621(-1.0F, 3600000.0F).method26626()
       )
    );
-   public static final Block field36887 = register(
+   public static final Block REPEATING_COMMAND_BLOCK = register(
       "repeating_command_block",
       new CommandBlockBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38967, MaterialColor.field30971).method26635().method26621(-1.0F, 3600000.0F).method26626())
    );
-   public static final Block field36888 = register(
+   public static final Block CHAIN_COMMAND_BLOCK = register(
       "chain_command_block",
       new CommandBlockBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38967, MaterialColor.field30974).method26635().method26621(-1.0F, 3600000.0F).method26626())
    );
-   public static final Block field36889 = register(
+   public static final Block FROSTED_ICE = register(
       "frosted_ice",
-      new Class3378(
+      new IceBlock(
          AbstractBlock.Properties.withMaterial(Material.ICE)
             .method26616(0.98F)
             .method26624()
@@ -1943,9 +1943,9 @@ public class Blocks {
             .method26629((var0, var1, var2, var3) -> var3 == EntityType.POLAR_BEAR)
       )
    );
-   public static final Block field36890 = register(
+   public static final Block MAGMA_BLOCK = register(
       "magma_block",
-      new Class3210(
+      new MagmaBlock(
          AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30982)
             .method26635()
             .method26620(var0 -> 3)
@@ -1956,291 +1956,291 @@ public class Blocks {
             .method26634(Blocks::method30018)
       )
    );
-   public static final Block field36891 = register(
+   public static final Block NETHER_WART_BLOCK = register(
       "nether_wart_block", new Block(AbstractBlock.Properties.withMaterialAndColor(Material.GRASS, MaterialColor.field30975).method26623(1.0F).method26619(SoundType.NETHERRACK))
    );
-   public static final Block field36892 = register(
+   public static final Block RED_NETHER_BRICKS = register(
       "red_nether_bricks",
       new Block(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30982).method26635().method26621(2.0F, 6.0F).method26619(SoundType.NETHER_SPROUTS))
    );
-   public static final Block field36893 = register(
+   public static final Block BONE_BLOCK = register(
       "bone_block",
       new WoodBlock(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30949).method26635().method26623(2.0F).method26619(SoundType.NETHERITE))
    );
-   public static final Block field36894 = register(
-      "structure_void", new Class3391(AbstractBlock.Properties.withMaterial(Material.field38933).method26614().method26626())
+   public static final Block STRUCTURE_VOID = register(
+      "structure_void", new StructureVoid(AbstractBlock.Properties.withMaterial(Material.field38933).method26614().method26626())
    );
-   public static final Block field36895 = register(
-      "observer", new Class3434(AbstractBlock.Properties.withMaterial(Material.STONE).method26623(3.0F).method26635().method26630(Blocks::method30019))
+   public static final Block OBSERVER = register(
+      "observer", new ObserverBlock(AbstractBlock.Properties.withMaterial(Material.STONE).method26623(3.0F).method26635().method26630(Blocks::method30019))
    );
-   public static final Block field36896 = register("shulker_box", method30022((Class112)null, AbstractBlock.Properties.withMaterial(Material.field38955)));
-   public static final Block field36897 = register(
-      "white_shulker_box", method30022(Class112.field386, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.SNOW))
+   public static final Block SHULKER_BOX = register("shulker_box", makeShulkerBox((Class112)null, AbstractBlock.Properties.withMaterial(Material.field38955)));
+   public static final Block WHITE_SHULKER_BOX = register(
+      "white_shulker_box", makeShulkerBox(Class112.field386, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.SNOW))
    );
-   public static final Block field36898 = register(
-      "orange_shulker_box", method30022(Class112.field387, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30962))
+   public static final Block ORANGE_SHULKER_BOX = register(
+      "orange_shulker_box", makeShulkerBox(Class112.field387, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30962))
    );
-   public static final Block field36899 = register(
-      "magenta_shulker_box", method30022(Class112.field388, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30963))
+   public static final Block MAGENTA_SHULKER_BOX = register(
+      "magenta_shulker_box", makeShulkerBox(Class112.field388, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30963))
    );
-   public static final Block field36900 = register(
-      "light_blue_shulker_box", method30022(Class112.field389, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30964))
+   public static final Block LIGHT_BLUE_SHULKER_BOX = register(
+      "light_blue_shulker_box", makeShulkerBox(Class112.field389, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30964))
    );
-   public static final Block field36901 = register(
-      "yellow_shulker_box", method30022(Class112.field390, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30965))
+   public static final Block YELLOW_SHULKER_BOX = register(
+      "yellow_shulker_box", makeShulkerBox(Class112.field390, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30965))
    );
-   public static final Block field36902 = register(
-      "lime_shulker_box", method30022(Class112.field391, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30966))
+   public static final Block LIME_SHULKER_BOX = register(
+      "lime_shulker_box", makeShulkerBox(Class112.field391, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30966))
    );
-   public static final Block field36903 = register(
-      "pink_shulker_box", method30022(Class112.field392, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30967))
+   public static final Block PINK_SHULKER_BOX = register(
+      "pink_shulker_box", makeShulkerBox(Class112.field392, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30967))
    );
-   public static final Block field36904 = register(
-      "gray_shulker_box", method30022(Class112.field393, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30968))
+   public static final Block GRAY_SHULKER_BOX = register(
+      "gray_shulker_box", makeShulkerBox(Class112.field393, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30968))
    );
-   public static final Block field36905 = register(
-      "light_gray_shulker_box", method30022(Class112.field394, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30969))
+   public static final Block LIGHT_GRAY_SHULKER_BOX = register(
+      "light_gray_shulker_box", makeShulkerBox(Class112.field394, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30969))
    );
-   public static final Block field36906 = register(
-      "cyan_shulker_box", method30022(Class112.field395, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30970))
+   public static final Block CYAN_SHULKER_BOX = register(
+      "cyan_shulker_box", makeShulkerBox(Class112.field395, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30970))
    );
-   public static final Block field36907 = register(
-      "purple_shulker_box", method30022(Class112.field396, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30993))
+   public static final Block PURPLE_SHULKER_BOX = register(
+      "purple_shulker_box", makeShulkerBox(Class112.field396, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30993))
    );
-   public static final Block field36908 = register(
-      "blue_shulker_box", method30022(Class112.field397, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30972))
+   public static final Block BLUE_SHULKER_BOX = register(
+      "blue_shulker_box", makeShulkerBox(Class112.field397, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30972))
    );
-   public static final Block field36909 = register(
-      "brown_shulker_box", method30022(Class112.field398, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30973))
+   public static final Block BROWN_SHULKER_BOX = register(
+      "brown_shulker_box", makeShulkerBox(Class112.field398, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30973))
    );
-   public static final Block field36910 = register(
-      "green_shulker_box", method30022(Class112.field399, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30974))
+   public static final Block GREEN_SHULKER_BOX = register(
+      "green_shulker_box", makeShulkerBox(Class112.field399, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30974))
    );
-   public static final Block field36911 = register(
-      "red_shulker_box", method30022(Class112.field400, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30975))
+   public static final Block RED_SHULKER_BOX = register(
+      "red_shulker_box", makeShulkerBox(Class112.field400, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30975))
    );
-   public static final Block field36912 = register(
-      "black_shulker_box", method30022(Class112.field401, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30976))
+   public static final Block BLACK_SHULKER_BOX = register(
+      "black_shulker_box", makeShulkerBox(Class112.field401, AbstractBlock.Properties.withMaterialAndColor(Material.field38955, MaterialColor.field30976))
    );
-   public static final Block field36913 = register(
-      "white_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field386).method26635().method26623(1.4F))
+   public static final Block WHITE_GLAZED_TERRACOTTA = register(
+      "white_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field386).method26635().method26623(1.4F))
    );
-   public static final Block field36914 = register(
-      "orange_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field387).method26635().method26623(1.4F))
+   public static final Block ORANGE_GLAZED_TERRACOTTA = register(
+      "orange_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field387).method26635().method26623(1.4F))
    );
-   public static final Block field36915 = register(
-      "magenta_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field388).method26635().method26623(1.4F))
+   public static final Block MAGENTA_GLAZED_TERRACOTTA = register(
+      "magenta_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field388).method26635().method26623(1.4F))
    );
-   public static final Block field36916 = register(
-      "light_blue_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field389).method26635().method26623(1.4F))
+   public static final Block LIGHT_BLUE_GLAZED_TERRACOTTA = register(
+      "light_blue_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field389).method26635().method26623(1.4F))
    );
-   public static final Block field36917 = register(
-      "yellow_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field390).method26635().method26623(1.4F))
+   public static final Block YELLOW_GLAZED_TERRACOTTA = register(
+      "yellow_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field390).method26635().method26623(1.4F))
    );
-   public static final Block field36918 = register(
-      "lime_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field391).method26635().method26623(1.4F))
+   public static final Block LIME_GLAZED_TERRACOTTA = register(
+      "lime_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field391).method26635().method26623(1.4F))
    );
-   public static final Block field36919 = register(
-      "pink_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field392).method26635().method26623(1.4F))
+   public static final Block PINK_GLAZED_TERRACOTTA = register(
+      "pink_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field392).method26635().method26623(1.4F))
    );
-   public static final Block field36920 = register(
-      "gray_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field393).method26635().method26623(1.4F))
+   public static final Block GRAY_GLAZED_TERRACOTTA = register(
+      "gray_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field393).method26635().method26623(1.4F))
    );
-   public static final Block field36921 = register(
-      "light_gray_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field394).method26635().method26623(1.4F))
+   public static final Block LIGHT_GRAY_GLAZED_TERRACOTTA = register(
+      "light_gray_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field394).method26635().method26623(1.4F))
    );
-   public static final Block field36922 = register(
-      "cyan_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field395).method26635().method26623(1.4F))
+   public static final Block CYAN_GLAZED_TERRACOTTA = register(
+      "cyan_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field395).method26635().method26623(1.4F))
    );
-   public static final Block field36923 = register(
-      "purple_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field396).method26635().method26623(1.4F))
+   public static final Block PURPLE_GLAZED_TERRACOTTA = register(
+      "purple_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field396).method26635().method26623(1.4F))
    );
-   public static final Block field36924 = register(
-      "blue_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field397).method26635().method26623(1.4F))
+   public static final Block BLUE_GLAZED_TERRACOTTA = register(
+      "blue_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field397).method26635().method26623(1.4F))
    );
-   public static final Block field36925 = register(
-      "brown_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field398).method26635().method26623(1.4F))
+   public static final Block BROWN_GLAZED_TERRACOTTA = register(
+      "brown_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field398).method26635().method26623(1.4F))
    );
-   public static final Block field36926 = register(
-      "green_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field399).method26635().method26623(1.4F))
+   public static final Block GREEN_GLAZED_TERRACOTTA = register(
+      "green_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field399).method26635().method26623(1.4F))
    );
-   public static final Block field36927 = register(
-      "red_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field400).method26635().method26623(1.4F))
+   public static final Block RED_GLAZED_TERRACOTTA = register(
+      "red_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field400).method26635().method26623(1.4F))
    );
-   public static final Block field36928 = register(
-      "black_glazed_terracotta", new Class3477(AbstractBlock.Properties.method26610(Material.STONE, Class112.field401).method26635().method26623(1.4F))
+   public static final Block BLACK_GLAZED_TERRACOTTA = register(
+      "black_glazed_terracotta", new GlazedTerracottaBlock(AbstractBlock.Properties.method26610(Material.STONE, Class112.field401).method26635().method26623(1.4F))
    );
-   public static final Block field36929 = register(
+   public static final Block WHITE_CONCRETE = register(
       "white_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field386).method26635().method26623(1.8F))
    );
-   public static final Block field36930 = register(
+   public static final Block ORANGE_CONCRETE = register(
       "orange_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field387).method26635().method26623(1.8F))
    );
-   public static final Block field36931 = register(
+   public static final Block MAGENTA_CONCRETE = register(
       "magenta_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field388).method26635().method26623(1.8F))
    );
-   public static final Block field36932 = register(
+   public static final Block LIGHT_BLUE_CONCRETE = register(
       "light_blue_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field389).method26635().method26623(1.8F))
    );
-   public static final Block field36933 = register(
+   public static final Block YELLOW_CONCRETE = register(
       "yellow_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field390).method26635().method26623(1.8F))
    );
-   public static final Block field36934 = register(
+   public static final Block LIME_CONCRETE = register(
       "lime_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field391).method26635().method26623(1.8F))
    );
-   public static final Block field36935 = register(
+   public static final Block PINK_CONCRETE = register(
       "pink_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field392).method26635().method26623(1.8F))
    );
-   public static final Block field36936 = register(
+   public static final Block GRAY_CONCRETE = register(
       "gray_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field393).method26635().method26623(1.8F))
    );
-   public static final Block field36937 = register(
+   public static final Block LIGHT_GRAY_CONCRETE = register(
       "light_gray_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field394).method26635().method26623(1.8F))
    );
-   public static final Block field36938 = register(
+   public static final Block CYAN_CONCRETE = register(
       "cyan_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field395).method26635().method26623(1.8F))
    );
-   public static final Block field36939 = register(
+   public static final Block PURPLE_CONCRETE = register(
       "purple_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field396).method26635().method26623(1.8F))
    );
-   public static final Block field36940 = register(
+   public static final Block BLUE_CONCRETE = register(
       "blue_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field397).method26635().method26623(1.8F))
    );
-   public static final Block field36941 = register(
+   public static final Block BROWN_CONCRETE = register(
       "brown_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field398).method26635().method26623(1.8F))
    );
-   public static final Block field36942 = register(
+   public static final Block GREEN_CONCRETE = register(
       "green_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field399).method26635().method26623(1.8F))
    );
-   public static final Block field36943 = register(
+   public static final Block RED_CONCRETE = register(
       "red_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field400).method26635().method26623(1.8F))
    );
-   public static final Block field36944 = register(
+   public static final Block BLACK_CONCRETE = register(
       "black_concrete", new Block(AbstractBlock.Properties.method26610(Material.STONE, Class112.field401).method26635().method26623(1.8F))
    );
-   public static final Block field36945 = register(
+   public static final Block WHITE_CONCRETE_POWDER = register(
       "white_concrete_powder",
-      new Class3217(field36929, AbstractBlock.Properties.method26610(Material.field38953, Class112.field386).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(WHITE_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field386).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36946 = register(
+   public static final Block ORANGE_CONCRETE_POWDER = register(
       "orange_concrete_powder",
-      new Class3217(field36930, AbstractBlock.Properties.method26610(Material.field38953, Class112.field387).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(ORANGE_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field387).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36947 = register(
+   public static final Block MAGENTA_CONCRETE_POWDER = register(
       "magenta_concrete_powder",
-      new Class3217(field36931, AbstractBlock.Properties.method26610(Material.field38953, Class112.field388).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(MAGENTA_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field388).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36948 = register(
+   public static final Block LIGHT_BLUE_CONCRETE_POWDER = register(
       "light_blue_concrete_powder",
-      new Class3217(field36932, AbstractBlock.Properties.method26610(Material.field38953, Class112.field389).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(LIGHT_BLUE_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field389).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36949 = register(
+   public static final Block YELLOW_CONCRETE_POWDER = register(
       "yellow_concrete_powder",
-      new Class3217(field36933, AbstractBlock.Properties.method26610(Material.field38953, Class112.field390).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(YELLOW_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field390).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36950 = register(
+   public static final Block LIME_CONCRETE_POWDER = register(
       "lime_concrete_powder",
-      new Class3217(field36934, AbstractBlock.Properties.method26610(Material.field38953, Class112.field391).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(LIME_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field391).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36951 = register(
+   public static final Block PINK_CONCRETE_POWDER = register(
       "pink_concrete_powder",
-      new Class3217(field36935, AbstractBlock.Properties.method26610(Material.field38953, Class112.field392).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(PINK_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field392).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36952 = register(
+   public static final Block GRAY_CONCRETE_POWDER = register(
       "gray_concrete_powder",
-      new Class3217(field36936, AbstractBlock.Properties.method26610(Material.field38953, Class112.field393).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(GRAY_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field393).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36953 = register(
+   public static final Block LIGHT_GRAY_CONCRETE_POWDER = register(
       "light_gray_concrete_powder",
-      new Class3217(field36937, AbstractBlock.Properties.method26610(Material.field38953, Class112.field394).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(LIGHT_GRAY_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field394).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36954 = register(
+   public static final Block CYAN_CONCRETE_POWDER = register(
       "cyan_concrete_powder",
-      new Class3217(field36938, AbstractBlock.Properties.method26610(Material.field38953, Class112.field395).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(CYAN_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field395).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36955 = register(
+   public static final Block PURPLE_CONCRETE_POWDER = register(
       "purple_concrete_powder",
-      new Class3217(field36939, AbstractBlock.Properties.method26610(Material.field38953, Class112.field396).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(PURPLE_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field396).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36956 = register(
+   public static final Block BLUE_CONCRETE_POWDER = register(
       "blue_concrete_powder",
-      new Class3217(field36940, AbstractBlock.Properties.method26610(Material.field38953, Class112.field397).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(BLUE_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field397).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36957 = register(
+   public static final Block BROWN_CONCRETE_POWDER = register(
       "brown_concrete_powder",
-      new Class3217(field36941, AbstractBlock.Properties.method26610(Material.field38953, Class112.field398).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(BROWN_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field398).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36958 = register(
+   public static final Block GREEN_CONCRETE_POWDER = register(
       "green_concrete_powder",
-      new Class3217(field36942, AbstractBlock.Properties.method26610(Material.field38953, Class112.field399).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(GREEN_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field399).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36959 = register(
+   public static final Block RED_CONCRETE_POWDER = register(
       "red_concrete_powder",
-      new Class3217(field36943, AbstractBlock.Properties.method26610(Material.field38953, Class112.field400).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(RED_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field400).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36960 = register(
+   public static final Block BLACK_CONCRETE_POWDER = register(
       "black_concrete_powder",
-      new Class3217(field36944, AbstractBlock.Properties.method26610(Material.field38953, Class112.field401).method26623(0.5F).method26619(SoundType.SAND))
+      new ConcretePowderBlock(BLACK_CONCRETE, AbstractBlock.Properties.method26610(Material.field38953, Class112.field401).method26623(0.5F).method26619(SoundType.SAND))
    );
-   public static final Block field36961 = register(
-      "kelp", new Class3451(AbstractBlock.Properties.withMaterial(Material.field38937).method26614().method26624().method26622().method26619(SoundType.WET_GRASS))
+   public static final Block KELP = register(
+      "kelp", new KelpBlock(AbstractBlock.Properties.withMaterial(Material.field38937).method26614().method26624().method26622().method26619(SoundType.WET_GRASS))
    );
-   public static final Block field36962 = register(
-      "kelp_plant", new Class3448(AbstractBlock.Properties.withMaterial(Material.field38937).method26614().method26622().method26619(SoundType.WET_GRASS))
+   public static final Block KELP_PLANT = register(
+      "kelp_plant", new KelpPlantBlock(AbstractBlock.Properties.withMaterial(Material.field38937).method26614().method26622().method26619(SoundType.WET_GRASS))
    );
-   public static final Block field36963 = register(
+   public static final Block DRIED_KELP_BLOCK = register(
       "dried_kelp_block",
       new Block(AbstractBlock.Properties.withMaterialAndColor(Material.GRASS, MaterialColor.field30974).method26621(0.5F, 2.5F).method26619(SoundType.GRASS))
    );
-   public static final Block field36964 = register(
+   public static final Block TURTLE_EGG = register(
       "turtle_egg",
-      new Class3441(
+      new TurtleEggBlock(
          AbstractBlock.Properties.withMaterialAndColor(Material.DRAGON_EGG, MaterialColor.field30949).method26623(0.5F).method26619(SoundType.METAL).method26624().method26615()
       )
    );
-   public static final Block field36965 = register(
+   public static final Block DEAD_TUBE_CORAL_BLOCK = register(
       "dead_tube_coral_block", new Block(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30968).method26635().method26621(1.5F, 6.0F))
    );
-   public static final Block field36966 = register(
+   public static final Block DEAD_BRAIN_CORAL_BLOCK = register(
       "dead_brain_coral_block", new Block(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30968).method26635().method26621(1.5F, 6.0F))
    );
-   public static final Block field36967 = register(
+   public static final Block BUBBLE_CORAL_BLOCK = register(
       "dead_bubble_coral_block", new Block(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30968).method26635().method26621(1.5F, 6.0F))
    );
-   public static final Block field36968 = register(
+   public static final Block DEAD_FIRE_CORAL_BLOCK = register(
       "dead_fire_coral_block", new Block(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30968).method26635().method26621(1.5F, 6.0F))
    );
-   public static final Block field36969 = register(
+   public static final Block DEAD_HORN_CORAL_BLOCK = register(
       "dead_horn_coral_block", new Block(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30968).method26635().method26621(1.5F, 6.0F))
    );
-   public static final Block field36970 = register(
+   public static final Block TUBE_CORAL_BLOCK = register(
       "tube_coral_block",
       new Class3414(
-         field36965, AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30972).method26635().method26621(1.5F, 6.0F).method26619(SoundType.CORAL)
+              DEAD_TUBE_CORAL_BLOCK, AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30972).method26635().method26621(1.5F, 6.0F).method26619(SoundType.CORAL)
       )
    );
-   public static final Block field36971 = register(
+   public static final Block BRAIN_CORAL_BLOCK = register(
       "brain_coral_block",
       new Class3414(
-         field36966, AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30967).method26635().method26621(1.5F, 6.0F).method26619(SoundType.CORAL)
+              DEAD_BRAIN_CORAL_BLOCK, AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30967).method26635().method26621(1.5F, 6.0F).method26619(SoundType.CORAL)
       )
    );
    public static final Block field36972 = register(
       "bubble_coral_block",
       new Class3414(
-         field36967, AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30971).method26635().method26621(1.5F, 6.0F).method26619(SoundType.CORAL)
+              BUBBLE_CORAL_BLOCK, AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30971).method26635().method26621(1.5F, 6.0F).method26619(SoundType.CORAL)
       )
    );
    public static final Block field36973 = register(
       "fire_coral_block",
       new Class3414(
-         field36968, AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30975).method26635().method26621(1.5F, 6.0F).method26619(SoundType.CORAL)
+              DEAD_FIRE_CORAL_BLOCK, AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30975).method26635().method26621(1.5F, 6.0F).method26619(SoundType.CORAL)
       )
    );
    public static final Block field36974 = register(
       "horn_coral_block",
       new Class3414(
-         field36969, AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30965).method26635().method26621(1.5F, 6.0F).method26619(SoundType.CORAL)
+              DEAD_HORN_CORAL_BLOCK, AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30965).method26635().method26621(1.5F, 6.0F).method26619(SoundType.CORAL)
       )
    );
    public static final Block field36975 = register(
@@ -2447,7 +2447,7 @@ public class Blocks {
    public static final Block field37022 = register("smooth_quartz_stairs", new StairsBlock(SMOOTH_QUARTZ.getDefaultState(), AbstractBlock.Properties.method26613(SMOOTH_QUARTZ)));
    public static final Block field37023 = register("granite_stairs", new StairsBlock(GRANITE.getDefaultState(), AbstractBlock.Properties.method26613(GRANITE)));
    public static final Block field37024 = register("andesite_stairs", new StairsBlock(ANDESITE.getDefaultState(), AbstractBlock.Properties.method26613(ANDESITE)));
-   public static final Block field37025 = register("red_nether_brick_stairs", new StairsBlock(field36892.getDefaultState(), AbstractBlock.Properties.method26613(field36892)));
+   public static final Block field37025 = register("red_nether_brick_stairs", new StairsBlock(RED_NETHER_BRICKS.getDefaultState(), AbstractBlock.Properties.method26613(RED_NETHER_BRICKS)));
    public static final Block field37026 = register(
       "polished_andesite_stairs", new StairsBlock(POLISHED_ANDESITE.getDefaultState(), AbstractBlock.Properties.method26613(POLISHED_ANDESITE))
    );
@@ -2462,7 +2462,7 @@ public class Blocks {
    public static final Block field37035 = register("smooth_quartz_slab", new SlabBlock(AbstractBlock.Properties.method26613(SMOOTH_QUARTZ)));
    public static final Block field37036 = register("granite_slab", new SlabBlock(AbstractBlock.Properties.method26613(GRANITE)));
    public static final Block field37037 = register("andesite_slab", new SlabBlock(AbstractBlock.Properties.method26613(ANDESITE)));
-   public static final Block field37038 = register("red_nether_brick_slab", new SlabBlock(AbstractBlock.Properties.method26613(field36892)));
+   public static final Block field37038 = register("red_nether_brick_slab", new SlabBlock(AbstractBlock.Properties.method26613(RED_NETHER_BRICKS)));
    public static final Block field37039 = register("polished_andesite_slab", new SlabBlock(AbstractBlock.Properties.method26613(POLISHED_ANDESITE)));
    public static final Block field37040 = register("diorite_slab", new SlabBlock(AbstractBlock.Properties.method26613(DIORITE)));
    public static final Block field37041 = register("brick_wall", new Class3415(AbstractBlock.Properties.method26613(BRICKS)));
@@ -2473,7 +2473,7 @@ public class Blocks {
    public static final Block field37046 = register("stone_brick_wall", new Class3415(AbstractBlock.Properties.method26613(STONE_BRICKS)));
    public static final Block field37047 = register("nether_brick_wall", new Class3415(AbstractBlock.Properties.method26613(NETHER_BRICKS)));
    public static final Block field37048 = register("andesite_wall", new Class3415(AbstractBlock.Properties.method26613(ANDESITE)));
-   public static final Block field37049 = register("red_nether_brick_wall", new Class3415(AbstractBlock.Properties.method26613(field36892)));
+   public static final Block field37049 = register("red_nether_brick_wall", new Class3415(AbstractBlock.Properties.method26613(RED_NETHER_BRICKS)));
    public static final Block field37050 = register("sandstone_wall", new Class3415(AbstractBlock.Properties.method26613(SANDSTONE)));
    public static final Block field37051 = register("end_stone_brick_wall", new Class3415(AbstractBlock.Properties.method26613(END_STONE_BRICKS)));
    public static final Block field37052 = register("diorite_wall", new Class3415(AbstractBlock.Properties.method26613(DIORITE)));
@@ -2947,7 +2947,7 @@ public class Blocks {
       );
    }
 
-   private static Class3368 method30022(Class112 var0, AbstractBlock.Properties var1) {
+   private static Class3368 makeShulkerBox(Class112 var0, AbstractBlock.Properties var1) {
       Class8609 var4 = (var0x, var1x, var2) -> {
          TileEntity var5 = var1x.getTileEntity(var2);
          if (var5 instanceof Class940) {

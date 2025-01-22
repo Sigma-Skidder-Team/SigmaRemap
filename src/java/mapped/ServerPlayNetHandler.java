@@ -434,13 +434,13 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             Direction var11 = this.player.world.getBlockState(var6).<Direction>get(CommandBlockBlock.field18893);
             switch (Class9703.field45356[var1.getMode().ordinal()]) {
                case 1:
-                  BlockState var12 = Blocks.field36888.getDefaultState();
+                  BlockState var12 = Blocks.CHAIN_COMMAND_BLOCK.getDefaultState();
                   this.player.world
                         .setBlockState(var6, var12.with(CommandBlockBlock.field18893, var11)
                               .with(CommandBlockBlock.field18894, Boolean.valueOf(var1.isConditional())), 2);
                   break;
                case 2:
-                  BlockState var13 = Blocks.field36887.getDefaultState();
+                  BlockState var13 = Blocks.REPEATING_COMMAND_BLOCK.getDefaultState();
                   this.player.world
                         .setBlockState(var6, var13.with(CommandBlockBlock.field18893, var11)
                               .with(CommandBlockBlock.field18894, Boolean.valueOf(var1.isConditional())), 2);

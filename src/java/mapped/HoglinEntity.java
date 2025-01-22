@@ -159,7 +159,7 @@ public class HoglinEntity extends AnimalEntity implements IMob, Class1092 {
    }
 
    public static boolean method5081(EntityType<HoglinEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
-      return !var1.getBlockState(var3.down()).isIn(Blocks.field36891);
+      return !var1.getBlockState(var3.down()).isIn(Blocks.NETHER_WART_BLOCK);
    }
 
    @Nullable

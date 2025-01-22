@@ -294,7 +294,7 @@ public class Class4829 {
                         var122 = this.field22604;
                      }
 
-                     if (var67 == Blocks.FARMLAND || var67 == Blocks.field36885) {
+                     if (var67 == Blocks.FARMLAND || var67 == Blocks.GRASS_PATH) {
                         var123 = 0.9375F;
                         var125 = 0.9375F;
                      }

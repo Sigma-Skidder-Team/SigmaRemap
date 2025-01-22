@@ -90,7 +90,7 @@ public class Class2927 extends Class2898<Class4709> {
 
    private void method11259(IWorld var1, Random var2, Class4709 var3, BlockPos var4, int var5, boolean var6) {
       BlockPos.Mutable var9 = new BlockPos.Mutable();
-      boolean var10 = var3.field22339.isIn(Blocks.field36891);
+      boolean var10 = var3.field22339.isIn(Blocks.NETHER_WART_BLOCK);
       int var11 = Math.min(var2.nextInt(1 + var5 / 3) + 5, var5);
       int var12 = var5 - var11;
 

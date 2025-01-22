@@ -47,10 +47,10 @@ public class AutoFarm extends Module {
                             }
                         } else if (!(var6.getBlock() instanceof FarmlandBlock)) {
                             if (!(var6.getBlock() instanceof Class3408)) {
-                                if (var6.getBlock() instanceof Class3448) {
+                                if (var6.getBlock() instanceof KelpPlantBlock) {
                                     BlockState var7 = mc.world.getBlockState(var5.down());
                                     BlockState var8 = mc.world.getBlockState(var5.up());
-                                    if (!(var7.getBlock() instanceof Class3448) && var8.getBlock() instanceof Class3448) {
+                                    if (!(var7.getBlock() instanceof KelpPlantBlock) && var8.getBlock() instanceof KelpPlantBlock) {
                                         float[] var9 = BlockUtil.method34541(var5.up());
                                         var1.setYaw(var9[0]);
                                         var1.setPitch(var9[1]);

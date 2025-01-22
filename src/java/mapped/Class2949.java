@@ -22,7 +22,7 @@ public class Class2949 extends Class2898<Class4712> {
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
       if (var1.method7007(var4)) {
          BlockState var8 = var1.getBlockState(var4.up());
-         if (!var8.isIn(Blocks.NETHERRACK) && !var8.isIn(Blocks.field36891)) {
+         if (!var8.isIn(Blocks.NETHERRACK) && !var8.isIn(Blocks.NETHER_WART_BLOCK)) {
             return false;
          } else {
             this.method11289(var1, var3, var4);
@@ -35,7 +35,7 @@ public class Class2949 extends Class2898<Class4712> {
    }
 
    private void method11289(IWorld var1, Random var2, BlockPos var3) {
-      var1.setBlockState(var3, Blocks.field36891.getDefaultState(), 2);
+      var1.setBlockState(var3, Blocks.NETHER_WART_BLOCK.getDefaultState(), 2);
       BlockPos.Mutable var6 = new BlockPos.Mutable();
       BlockPos.Mutable var7 = new BlockPos.Mutable();
 
@@ -46,7 +46,7 @@ public class Class2949 extends Class2898<Class4712> {
 
             for (Direction var13 : field18026) {
                BlockState var14 = var1.getBlockState(var7.method8377(var6, var13));
-               if (var14.isIn(Blocks.NETHERRACK) || var14.isIn(Blocks.field36891)) {
+               if (var14.isIn(Blocks.NETHERRACK) || var14.isIn(Blocks.NETHER_WART_BLOCK)) {
                   var9++;
                }
 
@@ -56,7 +56,7 @@ public class Class2949 extends Class2898<Class4712> {
             }
 
             if (var9 == 1) {
-               var1.setBlockState(var6, Blocks.field36891.getDefaultState(), 2);
+               var1.setBlockState(var6, Blocks.NETHER_WART_BLOCK.getDefaultState(), 2);
             }
          }
       }
@@ -69,7 +69,7 @@ public class Class2949 extends Class2898<Class4712> {
          var6.method8378(var3, var2.nextInt(8) - var2.nextInt(8), var2.nextInt(2) - var2.nextInt(7), var2.nextInt(8) - var2.nextInt(8));
          if (var1.method7007(var6)) {
             BlockState var8 = var1.getBlockState(var6.up());
-            if (var8.isIn(Blocks.NETHERRACK) || var8.isIn(Blocks.field36891)) {
+            if (var8.isIn(Blocks.NETHERRACK) || var8.isIn(Blocks.NETHER_WART_BLOCK)) {
                int var9 = MathHelper.method37782(var2, 1, 8);
                if (var2.nextInt(6) == 0) {
                   var9 *= 2;

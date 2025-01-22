@@ -261,7 +261,7 @@ public class Features {
                true,
                4,
                1,
-               ImmutableSet.of(Blocks.NETHERRACK, Blocks.SOUL_SAND, Blocks.GRAVEL, Blocks.field36890, Blocks.field37130)
+               ImmutableSet.of(Blocks.NETHERRACK, Blocks.SOUL_SAND, Blocks.GRAVEL, Blocks.MAGMA_BLOCK, Blocks.field37130)
             )
          )
          .method26510(Class9006.field41180)

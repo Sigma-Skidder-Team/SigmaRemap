@@ -27,11 +27,11 @@ public abstract class SurfaceBuilder<C extends ISurfaceBuilderConfig> {
    private static final BlockState field29499 = Blocks.END_STONE.getDefaultState();
    private static final BlockState field29500 = Blocks.CRIMSON_NYLIUM.getDefaultState();
    private static final BlockState field29501 = Blocks.WARPED_NYLIUM.getDefaultState();
-   private static final BlockState field29502 = Blocks.field36891.getDefaultState();
+   private static final BlockState field29502 = Blocks.NETHER_WART_BLOCK.getDefaultState();
    private static final BlockState field29503 = Blocks.WARPED_WART_BLOCK.getDefaultState();
    private static final BlockState field29504 = Blocks.field37130.getDefaultState();
    private static final BlockState field29505 = Blocks.BASALT.getDefaultState();
-   private static final BlockState field29506 = Blocks.field36890.getDefaultState();
+   private static final BlockState field29506 = Blocks.MAGMA_BLOCK.getDefaultState();
    public static final Class8278 field29507 = new Class8278(field29489, field29487, field29490);
    public static final Class8278 field29508 = new Class8278(field29490, field29490, field29490);
    public static final Class8278 field29509 = new Class8278(field29488, field29487, field29490);

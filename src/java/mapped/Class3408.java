@@ -87,7 +87,7 @@ public class Class3408 extends Block {
             for (Direction var9 : Direction.Plane.HORIZONTAL) {
                BlockState var10 = var2.getBlockState(var7.offset(var9));
                FluidState var11 = var2.getFluidState(var7.offset(var9));
-               if (var11.method23486(FluidTags.WATER) || var10.isIn(Blocks.field36889)) {
+               if (var11.method23486(FluidTags.WATER) || var10.isIn(Blocks.FROSTED_ICE)) {
                   return true;
                }
             }

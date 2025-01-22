@@ -27,14 +27,14 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3441 extends Block {
+public class TurtleEggBlock extends Block {
    private static String[] field19240;
    private static final VoxelShape field19241 = Block.makeCuboidShape(3.0, 0.0, 3.0, 12.0, 7.0, 12.0);
    private static final VoxelShape field19242 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 7.0, 15.0);
    public static final IntegerProperty field19243 = BlockStateProperties.HATCH;
    public static final IntegerProperty field19244 = BlockStateProperties.EGGS;
 
-   public Class3441(Properties var1) {
+   public TurtleEggBlock(Properties var1) {
       super(var1);
       this.setDefaultState(this.stateContainer.getBaseState().with(field19243, Integer.valueOf(0)).with(field19244, Integer.valueOf(1)));
    }
@@ -57,7 +57,7 @@ public class Class3441 extends Block {
    private void method12112(World var1, BlockPos var2, Entity var3, int var4) {
       if (this.method12117(var1, var3) && !var1.isRemote && var1.rand.nextInt(var4) == 0) {
          BlockState var7 = var1.getBlockState(var2);
-         if (var7.isIn(Blocks.field36964)) {
+         if (var7.isIn(Blocks.TURTLE_EGG)) {
             this.method12113(var1, var2, var7);
          }
       }

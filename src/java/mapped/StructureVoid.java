@@ -8,11 +8,11 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 
-public class Class3391 extends Block {
+public class StructureVoid extends Block {
    private static String[] field19015;
    private static final VoxelShape field19016 = Block.makeCuboidShape(5.0, 5.0, 5.0, 11.0, 11.0, 11.0);
 
-   public Class3391(Properties var1) {
+   public StructureVoid(Properties var1) {
       super(var1);
    }
 

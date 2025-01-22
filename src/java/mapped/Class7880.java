@@ -90,7 +90,7 @@ public class Class7880 {
             } else if (var5 instanceof Class3201) {
                return true;
             } else {
-               return !(var5 instanceof Class3441) ? var5 instanceof Class3402 : true;
+               return !(var5 instanceof TurtleEggBlock) ? var5 instanceof Class3402 : true;
             }
          } else {
             return true;

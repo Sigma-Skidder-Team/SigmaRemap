@@ -16,11 +16,11 @@ import net.minecraft.world.IWorld;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3451 extends Class3452 implements Class3449 {
+public class KelpBlock extends Class3452 implements Class3449 {
    private static String[] field19265;
    public static final VoxelShape field19266 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
 
-   public Class3451(Properties var1) {
+   public KelpBlock(Properties var1) {
       super(var1, Direction.UP, field19266, true, 0.14);
    }
 
@@ -31,12 +31,12 @@ public class Class3451 extends Class3452 implements Class3449 {
 
    @Override
    public Block method12125() {
-      return Blocks.field36962;
+      return Blocks.KELP_PLANT;
    }
 
    @Override
    public boolean method12123(Block var1) {
-      return var1 != Blocks.field36890;
+      return var1 != Blocks.MAGMA_BLOCK;
    }
 
    @Override

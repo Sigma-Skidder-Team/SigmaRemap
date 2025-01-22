@@ -39,7 +39,7 @@ public class Class6197 implements Class6196 {
          Blocks.JUNGLE_LEAVES,
          Blocks.ACACIA_LEAVES,
          Blocks.DARK_OAK_LEAVES,
-         Blocks.field36891,
+         Blocks.NETHER_WART_BLOCK,
          Blocks.WARPED_WART_BLOCK
       }
    );

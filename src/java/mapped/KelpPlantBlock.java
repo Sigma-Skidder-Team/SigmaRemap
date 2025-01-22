@@ -10,16 +10,16 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 
-public class Class3448 extends Class3445 implements Class3449 {
+public class KelpPlantBlock extends Class3445 implements Class3449 {
    private static String[] field19263;
 
-   public Class3448(Properties var1) {
+   public KelpPlantBlock(Properties var1) {
       super(var1, Direction.UP, VoxelShapes.method27426(), true);
    }
 
    @Override
    public Class3452 method12124() {
-      return (Class3452) Blocks.field36961;
+      return (Class3452) Blocks.KELP;
    }
 
    @Override

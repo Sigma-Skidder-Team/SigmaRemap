@@ -21,10 +21,10 @@ import java.util.Set;
 public class Class3269 extends ToolItem {
    private static String[] field18765;
    private static final Set<Block> field18766 = ImmutableSet.of(
-      Blocks.field36891,
+      Blocks.NETHER_WART_BLOCK,
       Blocks.WARPED_WART_BLOCK,
       Blocks.HAY_BLOCK,
-      Blocks.field36963,
+      Blocks.DRIED_KELP_BLOCK,
       Blocks.TARGET,
       Blocks.SHROOMLIGHT,
       new Block[]{
@@ -42,7 +42,7 @@ public class Class3269 extends ToolItem {
       ImmutableMap.of(
          Blocks.GRASS_BLOCK,
          Blocks.FARMLAND.getDefaultState(),
-         Blocks.field36885,
+         Blocks.GRASS_PATH,
          Blocks.FARMLAND.getDefaultState(),
          Blocks.DIRT,
          Blocks.FARMLAND.getDefaultState(),
