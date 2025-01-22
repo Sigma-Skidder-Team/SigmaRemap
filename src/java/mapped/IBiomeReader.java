@@ -14,8 +14,8 @@ import java.util.stream.Stream;
 
 public interface IBiomeReader extends IEntityReader, IWorldReader, IWorldGenerationReader {
    @Override
-   default Stream<VoxelShape> getEntityCollisions(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
-      return IEntityReader.super.getEntityCollisions(var1, var2, var3);
+   default Stream<VoxelShape> func_230318_c_(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
+      return IEntityReader.super.func_230318_c_(var1, var2, var3);
    }
 
    @Override

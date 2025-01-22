@@ -661,7 +661,7 @@ public abstract class Entity implements INameable, ICommandSource {
       Stream var7 = !VoxelShapes.compare(var6, VoxelShapes.create(var4.shrink(1.0E-7)), IBooleanFunction.AND)
             ? Stream.<VoxelShape>of(var6)
             : Stream.empty();
-      Stream var8 = this.world.getEntityCollisions(this, var4.expand(var1), var0 -> true);
+      Stream var8 = this.world.func_230318_c_(this, var4.expand(var1), var0 -> true);
       Class8544 var9 = new Class8544(Stream.concat(var8, var7));
       Vector3d var10 = var1.lengthSquared() != 0.0
             ? collideBoundingBoxHeuristically(this, var1, var4, this.world, var5, var9)
