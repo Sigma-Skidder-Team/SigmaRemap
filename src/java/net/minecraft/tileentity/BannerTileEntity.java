@@ -91,7 +91,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
       if (!this.method3770()) {
          this.field5377 = null;
       } else {
-         this.field5377 = ((Class3359)this.getBlockState().getBlock()).method11936();
+         this.field5377 = ((AbstractBannerBlock)this.getBlockState().getBlock()).method11936();
       }
 
       this.field5378 = var2.getList("Patterns", 10);
@@ -168,7 +168,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
 
    public DyeColor method3894(Supplier<BlockState> var1) {
       if (this.field5377 == null) {
-         this.field5377 = ((Class3359)((BlockState)var1.get()).getBlock()).method11936();
+         this.field5377 = ((AbstractBannerBlock)((BlockState)var1.get()).getBlock()).method11936();
       }
 
       return this.field5377;

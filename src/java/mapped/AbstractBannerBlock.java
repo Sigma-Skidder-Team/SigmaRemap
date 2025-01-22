@@ -10,10 +10,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public abstract class Class3359 extends ContainerBlock {
+public abstract class AbstractBannerBlock extends ContainerBlock {
    private final DyeColor field18904;
 
-   public Class3359(DyeColor var1, Properties var2) {
+   public AbstractBannerBlock(DyeColor var1, Properties var2) {
       super(var2);
       this.field18904 = var1;
    }

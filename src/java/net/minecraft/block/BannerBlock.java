@@ -1,7 +1,7 @@
 package net.minecraft.block;
 
 import com.google.common.collect.Maps;
-import mapped.Class3359;
+import mapped.AbstractBannerBlock;
 import mapped.DyeColor;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.IntegerProperty;
@@ -20,7 +20,7 @@ import net.minecraft.world.IWorldReader;
 
 import java.util.Map;
 
-public class BannerBlock extends Class3359 {
+public class BannerBlock extends AbstractBannerBlock {
    private static String[] field18905;
    public static final IntegerProperty field18906 = BlockStateProperties.ROTATION;
    private static final Map<DyeColor, Block> field18907 = Maps.newHashMap();

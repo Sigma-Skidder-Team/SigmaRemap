@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 
 import java.util.Map;
 
-public class WallBanner extends Class3359 {
+public class WallBanner extends AbstractBannerBlock {
    private static String[] field18909;
    public static final DirectionProperty field18910 = HorizontalBlock.HORIZONTAL_FACING;
    private static final Map<Direction, VoxelShape> field18911 = Maps.newEnumMap(

@@ -86,7 +86,7 @@ public class Class9809 {
          Block var14 = ((BlockItem)var8).method11845();
          if (!(var14 instanceof Class3251)) {
             Object var17;
-            if (!(var14 instanceof Class3359)) {
+            if (!(var14 instanceof AbstractBannerBlock)) {
                if (!(var14 instanceof BedBlock)) {
                   if (var14 != Blocks.CONDUIT) {
                      if (var14 != Blocks.CHEST) {
@@ -119,7 +119,7 @@ public class Class9809 {
                   var17 = this.field45849;
                }
             } else {
-               this.field45848.method3887(var1, ((Class3359)var14).method11936());
+               this.field45848.method3887(var1, ((AbstractBannerBlock)var14).method11936());
                var17 = this.field45848;
             }
 

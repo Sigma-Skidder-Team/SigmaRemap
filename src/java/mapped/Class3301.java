@@ -15,8 +15,8 @@ import org.apache.commons.lang3.Validate;
 public class Class3301 extends Class3298 {
    public Class3301(Block var1, Block var2, Properties var3) {
       super(var1, var2, var3);
-      Validate.isInstanceOf(Class3359.class, var1);
-      Validate.isInstanceOf(Class3359.class, var2);
+      Validate.isInstanceOf(AbstractBannerBlock.class, var1);
+      Validate.isInstanceOf(AbstractBannerBlock.class, var2);
    }
 
    public static void method11848(ItemStack var0, List<ITextComponent> var1) {
@@ -36,7 +36,7 @@ public class Class3301 extends Class3298 {
    }
 
    public DyeColor method11849() {
-      return ((Class3359)this.method11845()).method11936();
+      return ((AbstractBannerBlock)this.method11845()).method11936();
    }
 
    @Override
