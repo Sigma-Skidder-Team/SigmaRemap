@@ -142,9 +142,9 @@ public class Class7105 {
       method22143(Potions.WATER, Items.REDSTONE_DUST, Potions.MUNDANE);
       method22143(Potions.WATER, Items.field37970, Potions.AWKWARD);
       method22143(Potions.AWKWARD, Items.field38057, Potions.NIGHT_VISION);
-      method22143(Potions.NIGHT_VISION, Items.REDSTONE_DUST, Potions.REGISTER);
+      method22143(Potions.NIGHT_VISION, Items.REDSTONE_DUST, Potions.LONG_NIGHT_VISION);
       method22143(Potions.NIGHT_VISION, Items.field37974, Potions.INVISIBILITY);
-      method22143(Potions.REGISTER, Items.field37974, Potions.LONG_INVISIBILITY);
+      method22143(Potions.LONG_NIGHT_VISION, Items.field37974, Potions.LONG_INVISIBILITY);
       method22143(Potions.INVISIBILITY, Items.REDSTONE_DUST, Potions.LONG_INVISIBILITY);
       method22143(Potions.AWKWARD, Items.field37976, Potions.FIRE_RESISTANCE);
       method22143(Potions.FIRE_RESISTANCE, Items.REDSTONE_DUST, Potions.LONG_FIRE_RESISTANCE);
