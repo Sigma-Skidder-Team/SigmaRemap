@@ -129,7 +129,7 @@ public class Class954 extends TileEntity {
          if (var8 != null && var8.getClickEvent() != null) {
             ClickEvent var9 = var8.getClickEvent();
             if (var9.getAction() == ClickEvent$Action.RUN_COMMAND) {
-               var1.method3396().commandManager.handleCommand(this.method3843((ServerPlayerEntity) var1),
+               var1.method3396().getCommandManager().handleCommand(this.method3843((ServerPlayerEntity) var1),
                      var9.getValue());
             }
          }

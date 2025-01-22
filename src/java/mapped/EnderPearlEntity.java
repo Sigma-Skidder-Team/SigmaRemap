@@ -66,7 +66,7 @@ public class EnderPearlEntity extends Class890 {
             }
          } else {
             ServerPlayerEntity var7 = (ServerPlayerEntity) var4;
-            if (var7.connection.networkManager.isChannelOpen() && var7.world == this.world && !var7.isSleeping()) {
+            if (var7.connection.getNetworkManager().isChannelOpen() && var7.world == this.world && !var7.isSleeping()) {
                if (this.rand.nextFloat() < 0.05F && this.world.getGameRules().getBoolean(GameRules.field24226)) {
                   EndermiteEntity var6 = EntityType.ENDERMITE.create(this.world);
                   var6.method5298(true);

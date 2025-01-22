@@ -34,7 +34,7 @@ public class FunctionManager {
    }
 
    public CommandDispatcher<CommandSource> method22822() {
-      return this.field31181.commandManager.method18842();
+      return this.field31181.getCommandManager().method18842();
    }
 
    public void method22823() {

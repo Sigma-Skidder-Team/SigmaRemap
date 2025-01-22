@@ -181,7 +181,7 @@ public class IntegratedServer extends MinecraftServer {
          this.field8920.player.method5399(var6);
 
          for (ServerPlayerEntity var8 : this.getPlayerList().getPlayers()) {
-            this.commandManager.method18837(var8);
+            this.getCommandManager().method18837(var8);
          }
 
          return true;

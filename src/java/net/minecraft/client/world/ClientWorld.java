@@ -358,7 +358,7 @@ public class ClientWorld extends World {
    }
 
    public void sendQuittingDisconnectingPacket() {
-      this.connection.networkManager.closeChannel(new TranslationTextComponent("multiplayer.status.quitting"));
+      this.connection.getNetworkManager().closeChannel(new TranslationTextComponent("multiplayer.status.quitting"));
    }
 
    public void animateTick(int posX, int posY, int posZ) {

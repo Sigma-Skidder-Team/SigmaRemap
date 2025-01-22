@@ -574,7 +574,7 @@ public abstract class Class6395 {
          var1.connection.sendPacket(new SEntityStatusPacket(var1, var5));
       }
 
-      this.field27990.commandManager.method18837(var1);
+      this.field27990.getCommandManager().method18837(var1);
    }
 
    public boolean method19441(GameProfile var1) {

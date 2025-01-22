@@ -42,6 +42,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.*;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.*;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.filter.IChatFilter;
 import net.minecraft.world.GameRules;

@@ -27,6 +27,7 @@ import com.mojang.serialization.Lifecycle;
 import de.florianmichael.viamcp.ViaMCP;
 import de.florianmichael.viamcp.fixes.AttackOrder;
 import mapped.*;
+import mapped.TextFormatting;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.audio.BackgroundMusicSelector;
@@ -404,7 +405,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       stringbuilder.append(" ");
       stringbuilder.append(SharedConstants.getVersion().getName());
       ClientPlayNetHandler clientplaynethandler = this.getConnection();
-      if (clientplaynethandler != null && clientplaynethandler.networkManager.isChannelOpen()) {
+      if (clientplaynethandler != null && clientplaynethandler.getNetworkManager().isChannelOpen()) {
          stringbuilder.append(" - ");
          if (this.integratedServer != null && !this.integratedServer.getPublic()) {
             stringbuilder.append(I18n.format("title.singleplayer"));

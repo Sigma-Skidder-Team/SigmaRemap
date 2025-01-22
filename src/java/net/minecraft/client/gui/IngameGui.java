@@ -37,6 +37,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.*;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.GameType;
 import net.optifine.Config;
 

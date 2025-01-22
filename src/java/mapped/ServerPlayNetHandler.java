@@ -226,7 +226,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          BiFunction<IChatFilter, T, CompletableFuture<Optional<T>>> var3) {
       MinecraftServer var6 = this.player.getServerWorld().getServer();
       Consumer<T> var7 = var2x -> {
-         if (!this.networkManager.isChannelOpen()) {
+         if (!this.getNetworkManager().isChannelOpen()) {
             LOGGER.debug("Ignoring packet due to disconnection");
          } else {
             var2.accept(var2x);
@@ -403,9 +403,9 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          var4.skip();
       }
 
-      ParseResults<CommandSource> var5 = this.server.commandManager.method18842().parse(var4,
+      ParseResults<CommandSource> var5 = this.server.getCommandManager().method18842().parse(var4,
             this.player.getCommandSource());
-      this.server.commandManager
+      this.server.getCommandManager()
             .method18842()
             .getCompletionSuggestions(var5)
             .thenAccept(var2 -> this.netManager.sendPacket(new STabCompletePacket(var1.getTransactionId(), var2)));
@@ -1126,7 +1126,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    private void handleSlashCommand(String command) {
-      this.server.commandManager.handleCommand(this.player.getCommandSource(), command);
+      this.server.getCommandManager().handleCommand(this.player.getCommandSource(), command);
    }
 
    @Override

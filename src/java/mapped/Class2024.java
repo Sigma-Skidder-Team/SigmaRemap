@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.util.SharedConstants;
 import net.minecraft.util.StringUtils;
 import net.minecraft.util.text.*;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.GameType;
 
 import java.io.File;

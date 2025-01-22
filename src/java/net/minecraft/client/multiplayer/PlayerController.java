@@ -218,10 +218,10 @@ public class PlayerController {
 
    public void tick() {
       this.syncCurrentPlayItem();
-      if (!this.connection.networkManager.isChannelOpen()) {
-         this.connection.networkManager.handleDisconnection();
+      if (!this.connection.getNetworkManager().isChannelOpen()) {
+         this.connection.getNetworkManager().handleDisconnection();
       } else {
-         this.connection.networkManager.tick();
+         this.connection.getNetworkManager().tick();
       }
    }
 

@@ -118,7 +118,7 @@ public abstract class CommandBlockLogic implements ICommandSource {
                      this.field5195++;
                   }
                });
-               var4.commandManager.handleCommand(var5, this.field5198);
+               var4.getCommandManager().handleCommand(var5, this.field5198);
             } catch (Throwable var8) {
                CrashReport var6 = CrashReport.makeCrashReport(var8, "Executing command block");
                CrashReportCategory var7 = var6.makeCategory("Command to be executed");

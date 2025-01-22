@@ -21,6 +21,7 @@ import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
+import mapped.BannerBlock;
 import net.minecraft.block.*;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.BlockItem;
