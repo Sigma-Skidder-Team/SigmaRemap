@@ -31,7 +31,7 @@ public abstract class ItemGroup
    {
       public ItemStack createIcon()
       {
-         return new ItemStack(Items.REDSTONE);
+         return new ItemStack(Items.REDSTONE_DUST);
       }
    };
    public static final ItemGroup TRANSPORTATION = new ItemGroup(3, "transportation")
@@ -80,7 +80,7 @@ public abstract class ItemGroup
    {
       public ItemStack createIcon()
       {
-         return PotionUtils.addPotionToItemStack(new ItemStack(Items.POTION), Potions.WATER);
+         return PotionUtils.addPotionToItemStack(new ItemStack(Items.SPLASH_POTION), Potions.WATER);
       }
    };
    public static final ItemGroup MATERIALS = MISC;
