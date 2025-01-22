@@ -46,7 +46,7 @@ public class Class4258 extends Class4247 {
          }
 
          var5.add(new BlockItem(Blocks.NETHER_PORTAL, new Item.Properties().method17779(ItemGroup.field31669)));
-         var5.add(new BlockItem(Blocks.field36649, new Item.Properties().method17779(ItemGroup.field31669)));
+         var5.add(new BlockItem(Blocks.END_PORTAL, new Item.Properties().method17779(ItemGroup.field31669)));
 
          for (Item var13 : method13070(var5, var1)) {
             if (var13 != Items.AIR && (!this.field20644 || var13 instanceof BlockItem)) {

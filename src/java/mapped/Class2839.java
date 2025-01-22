@@ -234,7 +234,7 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
       Class7999.method27304()
          .method27305(var14)
          .method27308(
-            Blocks.field36651,
+            Blocks.END_STONE,
             new TranslationTextComponent("advancements.story.enter_the_end.title"),
             new TranslationTextComponent("advancements.story.enter_the_end.description"),
             (ResourceLocation)null,

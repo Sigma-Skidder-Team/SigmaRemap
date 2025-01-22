@@ -34,7 +34,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
    private static final Class7519 field17631 = field17630.method24516(field17628);
    private static final Class7519 field17632 = field17631.method24518();
    private static final Set<Item> field17633 = Stream.<Block>of(
-         Blocks.field36652,
+         Blocks.DRAGON_EGG,
          Blocks.BEACON,
          Blocks.field37007,
          Blocks.field36701,
@@ -580,9 +580,9 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.NETHER_BRICKS);
       this.method11096(Blocks.NETHER_BRICK_FENCE);
       this.method11096(Blocks.NETHER_BRICK_STAIRS);
-      this.method11096(Blocks.field36648);
-      this.method11096(Blocks.field36651);
-      this.method11096(Blocks.field36653);
+      this.method11096(Blocks.CAULDRON);
+      this.method11096(Blocks.END_STONE);
+      this.method11096(Blocks.REDSTONE_LAMP);
       this.method11096(Blocks.SANDSTONE_STAIRS);
       this.method11096(Blocks.TRIPWIRE_HOOK);
       this.method11096(Blocks.EMERALD_BLOCK);
@@ -746,7 +746,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.field36968);
       this.method11096(Blocks.field36969);
       this.method11096(Blocks.field37007);
-      this.method11096(Blocks.field36652);
+      this.method11096(Blocks.DRAGON_EGG);
       this.method11096(Blocks.field37009);
       this.method11096(Blocks.field37014);
       this.method11096(Blocks.field37015);
@@ -1014,7 +1014,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                )
       );
       this.method11097(Blocks.BEACON, Class2838::method11073);
-      this.method11097(Blocks.field36647, Class2838::method11073);
+      this.method11097(Blocks.BREWING_STAND, Class2838::method11073);
       this.method11097(Blocks.CHEST, Class2838::method11073);
       this.method11097(Blocks.DISPENSER, Class2838::method11073);
       this.method11097(Blocks.DROPPER, Class2838::method11073);

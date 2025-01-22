@@ -523,7 +523,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_wheat", method14075(Items.field37842))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36647)
+      Class8528.method30247(Blocks.BREWING_STAND)
          .method30250('B', Items.field37967)
          .method30249('#', ItemTags.field26123)
          .method30252(" B ")
@@ -593,7 +593,7 @@ public class Class4447 implements Class4442 {
          .method30252(" X")
          .method30253("has_warped_fungus", method14075(Items.field37349))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36648)
+      Class8528.method30247(Blocks.CAULDRON)
          .method30250('#', Items.field37801)
          .method30252("# #")
          .method30252("# #")
@@ -937,10 +937,10 @@ public class Class4447 implements Class4442 {
          .method32348("has_blaze_powder", method14075(Items.field37975))
          .method32350(var0);
       Class8528.method30248(Blocks.field36883, 4)
-         .method30250('#', Blocks.field36651)
+         .method30250('#', Blocks.END_STONE)
          .method30252("##")
          .method30252("##")
-         .method30253("has_end_stone", method14075(Blocks.field36651))
+         .method30253("has_end_stone", method14075(Blocks.END_STONE))
          .method30255(var0);
       Class8528.method30247(Items.END_CRYSTAL)
          .method30250('T', Items.field37968)
@@ -1831,7 +1831,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_redstone", method14075(Items.REDSTONE_DUST))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36653)
+      Class8528.method30247(Blocks.REDSTONE_LAMP)
          .method30250('R', Items.REDSTONE_DUST)
          .method30250('G', Blocks.GLOWSTONE)
          .method30252(" R ")
@@ -3345,17 +3345,17 @@ public class Class4447 implements Class4442 {
       Class9067.method33769(Class120.method339(Blocks.field36883), Blocks.field37051)
          .method33771("has_end_stone_brick", method14075(Blocks.field36883))
          .method33772(var0, "end_stone_brick_wall_from_end_stone_brick_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36651), Blocks.field36883)
-         .method33771("has_end_stone", method14075(Blocks.field36651))
+      Class9067.method33769(Class120.method339(Blocks.END_STONE), Blocks.field36883)
+         .method33771("has_end_stone", method14075(Blocks.END_STONE))
          .method33772(var0, "end_stone_bricks_from_end_stone_stonecutting");
-      Class9067.method33770(Class120.method339(Blocks.field36651), Blocks.field37033, 2)
-         .method33771("has_end_stone", method14075(Blocks.field36651))
+      Class9067.method33770(Class120.method339(Blocks.END_STONE), Blocks.field37033, 2)
+         .method33771("has_end_stone", method14075(Blocks.END_STONE))
          .method33772(var0, "end_stone_brick_slab_from_end_stone_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36651), Blocks.field37019)
-         .method33771("has_end_stone", method14075(Blocks.field36651))
+      Class9067.method33769(Class120.method339(Blocks.END_STONE), Blocks.field37019)
+         .method33771("has_end_stone", method14075(Blocks.END_STONE))
          .method33772(var0, "end_stone_brick_stairs_from_end_stone_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36651), Blocks.field37051)
-         .method33771("has_end_stone", method14075(Blocks.field36651))
+      Class9067.method33769(Class120.method339(Blocks.END_STONE), Blocks.field37051)
+         .method33771("has_end_stone", method14075(Blocks.END_STONE))
          .method33772(var0, "end_stone_brick_wall_from_end_stone_stonecutting");
       Class9067.method33770(Class120.method339(Blocks.field36858), Blocks.field36846, 2)
          .method33771("has_smooth_stone", method14075(Blocks.field36858))

@@ -50,7 +50,7 @@ public class Class3211 extends Block {
             boolean var10 = false;
             BlockState var11 = var2.getBlockState(var3.down());
             Block var12 = var11.getBlock();
-            if (var12 == Blocks.field36651) {
+            if (var12 == Blocks.END_STONE) {
                var9 = true;
             } else if (var12 != this.field18620) {
                if (var11.isAir()) {
@@ -62,7 +62,7 @@ public class Class3211 extends Block {
                for (int var14 = 0; var14 < 4; var14++) {
                   Block var15 = var2.getBlockState(var3.method8340(var13 + 1)).getBlock();
                   if (var15 != this.field18620) {
-                     if (var15 == Blocks.field36651) {
+                     if (var15 == Blocks.END_STONE) {
                         var10 = true;
                      }
                      break;
@@ -140,7 +140,7 @@ public class Class3211 extends Block {
    @Override
    public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.down());
-      if (var6.getBlock() != this.field18620 && !var6.isIn(Blocks.field36651)) {
+      if (var6.getBlock() != this.field18620 && !var6.isIn(Blocks.END_STONE)) {
          if (var6.isAir()) {
             boolean var7 = false;
 

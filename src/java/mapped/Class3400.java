@@ -82,7 +82,7 @@ public class Class3400 extends Block {
             .method37707(
                '^',
                CachedBlockInfo.method37552(
-                  Class166.method497(Blocks.field36650)
+                  Class166.method497(Blocks.END_PORTAL_FRAME)
                      .method499(field19054, Predicates.equalTo(true))
                      .method499(field19053, Predicates.equalTo(Direction.SOUTH))
                )
@@ -90,7 +90,7 @@ public class Class3400 extends Block {
             .method37707(
                '>',
                CachedBlockInfo.method37552(
-                  Class166.method497(Blocks.field36650)
+                  Class166.method497(Blocks.END_PORTAL_FRAME)
                      .method499(field19054, Predicates.equalTo(true))
                      .method499(field19053, Predicates.equalTo(Direction.WEST))
                )
@@ -98,7 +98,7 @@ public class Class3400 extends Block {
             .method37707(
                'v',
                CachedBlockInfo.method37552(
-                  Class166.method497(Blocks.field36650)
+                  Class166.method497(Blocks.END_PORTAL_FRAME)
                      .method499(field19054, Predicates.equalTo(true))
                      .method499(field19053, Predicates.equalTo(Direction.NORTH))
                )
@@ -106,7 +106,7 @@ public class Class3400 extends Block {
             .method37707(
                '<',
                CachedBlockInfo.method37552(
-                  Class166.method497(Blocks.field36650)
+                  Class166.method497(Blocks.END_PORTAL_FRAME)
                      .method499(field19054, Predicates.equalTo(true))
                      .method499(field19053, Predicates.equalTo(Direction.EAST))
                )

@@ -1025,19 +1025,19 @@ public class Blocks {
    public static final Block ENCHANTING_TABLE = register(
       "enchanting_table", new Class3363(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30975).method26635().method26621(5.0F, 1200.0F))
    );
-   public static final Block field36647 = register(
+   public static final Block BREWING_STAND = register(
       "brewing_stand", new Class3376(AbstractBlock.Properties.withMaterial(Material.field38967).method26635().method26623(0.5F).method26620(var0 -> 1).method26615())
    );
-   public static final Block field36648 = register(
+   public static final Block CAULDRON = register(
       "cauldron", new Class3413(AbstractBlock.Properties.withMaterialAndColor(Material.field38967, MaterialColor.STONE).method26635().method26623(2.0F).method26615())
    );
-   public static final Block field36649 = register(
+   public static final Block END_PORTAL = register(
       "end_portal",
       new Class3365(
          AbstractBlock.Properties.withMaterialAndColor(Material.field38934, MaterialColor.field30976).method26614().method26620(var0 -> 15).method26621(-1.0F, 3600000.0F).method26626()
       )
    );
-   public static final Block field36650 = register(
+   public static final Block END_PORTAL_FRAME = register(
       "end_portal_frame",
       new Class3400(
          AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30974)
@@ -1047,14 +1047,14 @@ public class Blocks {
             .method26626()
       )
    );
-   public static final Block field36651 = register(
+   public static final Block END_STONE = register(
       "end_stone", new Block(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30949).method26635().method26621(3.0F, 9.0F))
    );
-   public static final Block field36652 = register(
+   public static final Block DRAGON_EGG = register(
       "dragon_egg",
       new Class3214(AbstractBlock.Properties.withMaterialAndColor(Material.DRAGON_EGG, MaterialColor.field30976).method26621(3.0F, 9.0F).method26620(var0 -> 1).method26615())
    );
-   public static final Block field36653 = register(
+   public static final Block REDSTONE_LAMP = register(
       "redstone_lamp",
       new Class3223(
          AbstractBlock.Properties.withMaterial(Material.field38948)

@@ -94,10 +94,10 @@ public class Class4204 extends Class4194 {
          this.method12923(var1, var24, var14, 3, 6, var5);
       }
 
-      BlockState var25 = Blocks.field36650.getDefaultState().with(Class3400.field19053, Direction.NORTH);
-      BlockState var15 = Blocks.field36650.getDefaultState().with(Class3400.field19053, Direction.SOUTH);
-      BlockState var16 = Blocks.field36650.getDefaultState().with(Class3400.field19053, Direction.EAST);
-      BlockState var17 = Blocks.field36650.getDefaultState().with(Class3400.field19053, Direction.WEST);
+      BlockState var25 = Blocks.END_PORTAL_FRAME.getDefaultState().with(Class3400.field19053, Direction.NORTH);
+      BlockState var15 = Blocks.END_PORTAL_FRAME.getDefaultState().with(Class3400.field19053, Direction.SOUTH);
+      BlockState var16 = Blocks.END_PORTAL_FRAME.getDefaultState().with(Class3400.field19053, Direction.EAST);
+      BlockState var17 = Blocks.END_PORTAL_FRAME.getDefaultState().with(Class3400.field19053, Direction.WEST);
       boolean var18 = true;
       boolean[] var19 = new boolean[12];
 
@@ -119,7 +119,7 @@ public class Class4204 extends Class4194 {
       this.method12923(var1, var17.with(Class3400.field19054, Boolean.valueOf(var19[10])), 7, 3, 10, var5);
       this.method12923(var1, var17.with(Class3400.field19054, Boolean.valueOf(var19[11])), 7, 3, 11, var5);
       if (var18) {
-         BlockState var26 = Blocks.field36649.getDefaultState();
+         BlockState var26 = Blocks.END_PORTAL.getDefaultState();
          this.method12923(var1, var26, 4, 3, 9, var5);
          this.method12923(var1, var26, 5, 3, 9, var5);
          this.method12923(var1, var26, 6, 3, 9, var5);

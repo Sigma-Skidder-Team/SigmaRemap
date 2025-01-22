@@ -1684,31 +1684,31 @@ public class Class9407 {
       this.method35807(Items.field37977);
       this.field43642
          .accept(
-            Class5147.method15932(Blocks.field36647)
-               .method15934(Class5138.method15912().method15911(Class6891.field29864, Class7287.method23041(Blocks.field36647)))
+            Class5147.method15932(Blocks.BREWING_STAND)
+               .method15934(Class5138.method15912().method15911(Class6891.field29864, Class7287.method23041(Blocks.BREWING_STAND)))
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.HAS_BOTTLE_0, true),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_bottle0"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_bottle0"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.HAS_BOTTLE_1, true),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_bottle1"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_bottle1"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.HAS_BOTTLE_2, true),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_bottle2"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_bottle2"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.HAS_BOTTLE_0, false),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_empty0"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_empty0"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.HAS_BOTTLE_1, false),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_empty1"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_empty1"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.HAS_BOTTLE_2, false),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_empty2"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_empty2"))
                )
          );
    }
@@ -1858,13 +1858,13 @@ public class Class9407 {
       this.method35807(Items.field37978);
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field36648)
+            Class5148.method15941(Blocks.CAULDRON)
                .method15939(
                   Class3629.<Integer>method12310(BlockStateProperties.LEVEL_2)
-                     .method12320(0, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.field36648)))
-                     .method12320(1, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36648, "_level1")))
-                     .method12320(2, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36648, "_level2")))
-                     .method12320(3, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36648, "_level3")))
+                     .method12320(0, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.CAULDRON)))
+                     .method12320(1, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAULDRON, "_level1")))
+                     .method12320(2, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAULDRON, "_level2")))
+                     .method12320(3, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAULDRON, "_level3")))
                )
          );
    }
@@ -1921,11 +1921,11 @@ public class Class9407 {
    }
 
    private void method35904() {
-      ResourceLocation var3 = Class9060.method33723(Blocks.field36650);
-      ResourceLocation var4 = Class9060.method33722(Blocks.field36650, "_filled");
+      ResourceLocation var3 = Class9060.method33723(Blocks.END_PORTAL_FRAME);
+      ResourceLocation var4 = Class9060.method33722(Blocks.END_PORTAL_FRAME, "_filled");
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field36650)
+            Class5148.method15941(Blocks.END_PORTAL_FRAME)
                .method15939(
                   Class3629.<Boolean>method12310(BlockStateProperties.EYE)
                      .method12320(false, Class5138.method15912().method15911(Class6891.field29864, var3))
@@ -2657,9 +2657,9 @@ public class Class9407 {
    }
 
    private void method35937() {
-      ResourceLocation var3 = Class7524.field32271.method25591(Blocks.field36653, this.field43643);
-      ResourceLocation var4 = this.method35837(Blocks.field36653, "_on", Class9756.field45537, Class7287::method22999);
-      this.field43642.accept(Class5148.method15941(Blocks.field36653).method15939(method35817(BlockStateProperties.LIT, var4, var3)));
+      ResourceLocation var3 = Class7524.field32271.method25591(Blocks.REDSTONE_LAMP, this.field43643);
+      ResourceLocation var4 = this.method35837(Blocks.REDSTONE_LAMP, "_on", Class9756.field45537, Class7287::method22999);
+      this.field43642.accept(Class5148.method15941(Blocks.REDSTONE_LAMP).method15939(method35817(BlockStateProperties.LIT, var4, var3)));
    }
 
    private void method35938(Block var1, Block var2) {
@@ -3591,7 +3591,7 @@ public class Class9407 {
       this.method35851(Blocks.BEACON);
       this.method35851(Blocks.CACTUS);
       this.method35852(Blocks.field37013, Blocks.WATER);
-      this.method35851(Blocks.field36652);
+      this.method35851(Blocks.DRAGON_EGG);
       this.method35851(Blocks.field36963);
       this.method35851(Blocks.ENCHANTING_TABLE);
       this.method35851(Blocks.FLOWER_POT);
@@ -3634,7 +3634,7 @@ public class Class9407 {
       this.method35841(Blocks.field37148, Class7524.field32271);
       this.method35841(Blocks.CRACKED_STONE_BRICKS, Class7524.field32271);
       this.method35841(Blocks.CRYING_OBSIDIAN, Class7524.field32271);
-      this.method35841(Blocks.field36651, Class7524.field32271);
+      this.method35841(Blocks.END_STONE, Class7524.field32271);
       this.method35841(Blocks.GLOWSTONE, Class7524.field32271);
       this.method35841(Blocks.GRAVEL, Class7524.field32271);
       this.method35841(Blocks.HONEYCOMB_BLOCK, Class7524.field32271);
@@ -3845,7 +3845,7 @@ public class Class9407 {
       this.method35804(Blocks.field37007);
       this.method35867(Class9060.method33720("chest"), Blocks.OAK_PLANKS).method26607(Blocks.CHEST, Blocks.TRAPPED_CHEST);
       this.method35867(Class9060.method33720("ender_chest"), Blocks.OBSIDIAN).method26607(Blocks.ENDER_CHEST);
-      this.method35868(Blocks.field36649, Blocks.OBSIDIAN).method26606(Blocks.field36649, Blocks.field36886);
+      this.method35868(Blocks.END_PORTAL, Blocks.OBSIDIAN).method26606(Blocks.END_PORTAL, Blocks.field36886);
       this.method35840(Blocks.field36929);
       this.method35840(Blocks.field36930);
       this.method35840(Blocks.field36931);

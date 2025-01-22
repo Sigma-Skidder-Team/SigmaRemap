@@ -250,7 +250,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
          BlockState var12 = var0.getBlockState(var11);
          BlockPos var13 = var11.up();
          BlockPos var14 = var11.up(2);
-         if (var12.isIn(Blocks.field36651) && !var0.getBlockState(var13).method23456(var0, var13) && !var0.getBlockState(var14).method23456(var0, var14)) {
+         if (var12.isIn(Blocks.END_STONE) && !var0.getBlockState(var13).method23456(var0, var13) && !var0.getBlockState(var14).method23456(var0, var14)) {
             double var15 = var11.distanceSq(0.0, 0.0, 0.0, true);
             if (var7 == null || var15 < var8) {
                var7 = var11;

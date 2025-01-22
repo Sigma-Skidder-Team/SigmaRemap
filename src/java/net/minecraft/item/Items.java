@@ -287,11 +287,11 @@ public class Items {
    public static final Item field37489 = method30154(Blocks.NETHER_BRICK_FENCE, ItemGroup.field31666);
    public static final Item field37490 = method30154(Blocks.NETHER_BRICK_STAIRS, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37491 = method30154(Blocks.ENCHANTING_TABLE, ItemGroup.field31666);
-   public static final Item field37492 = method30154(Blocks.field36650, ItemGroup.field31666);
-   public static final Item field37493 = method30154(Blocks.field36651, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37492 = method30154(Blocks.END_PORTAL_FRAME, ItemGroup.field31666);
+   public static final Item field37493 = method30154(Blocks.END_STONE, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37494 = method30154(Blocks.field36883, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37495 = method30155(new BlockItem(Blocks.field36652, new Item.Properties().method17780(Class1978.field12888)));
-   public static final Item field37496 = method30154(Blocks.field36653, ItemGroup.REDSTONE);
+   public static final Item field37495 = method30155(new BlockItem(Blocks.DRAGON_EGG, new Item.Properties().method17780(Class1978.field12888)));
+   public static final Item field37496 = method30154(Blocks.REDSTONE_LAMP, ItemGroup.REDSTONE);
    public static final Item field37497 = method30154(Blocks.SANDSTONE_STAIRS, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37498 = method30154(Blocks.EMERALD_ORE, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37499 = method30154(Blocks.ENDER_CHEST, ItemGroup.field31666);
@@ -993,8 +993,8 @@ public class Items {
    public static final Item field37974 = method30157("fermented_spider_eye", new Item(new Item.Properties().method17779(ItemGroup.field31674)));
    public static final Item field37975 = method30157("blaze_powder", new Item(new Item.Properties().method17779(ItemGroup.field31674)));
    public static final Item field37976 = method30157("magma_cream", new Item(new Item.Properties().method17779(ItemGroup.field31674)));
-   public static final Item field37977 = method30154(Blocks.field36647, ItemGroup.field31674);
-   public static final Item field37978 = method30154(Blocks.field36648, ItemGroup.field31674);
+   public static final Item field37977 = method30154(Blocks.BREWING_STAND, ItemGroup.field31674);
+   public static final Item field37978 = method30154(Blocks.CAULDRON, ItemGroup.field31674);
    public static final Item field37979 = method30157("ender_eye", new Class3341(new Item.Properties().method17779(ItemGroup.field31669)));
    public static final Item field37980 = method30157("glistering_melon_slice", new Item(new Item.Properties().method17779(ItemGroup.field31674)));
    public static final Item field37981 = method30157(

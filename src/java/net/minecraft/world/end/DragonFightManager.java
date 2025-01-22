@@ -339,7 +339,7 @@ public class DragonFightManager {
          this.method26122(true);
          this.method26120();
          if (!this.field33546) {
-            this.field33538.setBlockState(this.field33538.getTopPosition(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994), Blocks.field36652.getDefaultState());
+            this.field33538.setBlockState(this.field33538.getTopPosition(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994), Blocks.DRAGON_EGG.getDefaultState());
          }
 
          this.field33546 = true;
@@ -458,8 +458,8 @@ public class DragonFightManager {
                for (int var6 = 0; var6 < this.field33540.method38653(); var6++) {
                   for (int var7 = 0; var7 < this.field33540.method38652(); var7++) {
                      CachedBlockInfo var8 = var4.method33881(var5, var6, var7);
-                     if (var8.method37548().isIn(Blocks.BEDROCK) || var8.method37548().isIn(Blocks.field36649)) {
-                        this.field33538.setBlockState(var8.method37551(), Blocks.field36651.getDefaultState());
+                     if (var8.method37548().isIn(Blocks.BEDROCK) || var8.method37548().isIn(Blocks.END_PORTAL)) {
+                        this.field33538.setBlockState(var8.method37551(), Blocks.END_STONE.getDefaultState());
                      }
                   }
                }

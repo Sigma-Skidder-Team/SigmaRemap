@@ -61,7 +61,7 @@ public class Class4210 extends Class4209 {
          this.method12923(var1, Blocks.AIR.getDefaultState(), 5, 3, 5, var5);
          this.method12923(var1, Blocks.field36689.getDefaultState(), 1, 3, 5, var5);
          this.method12923(var1, Blocks.CRAFTING_TABLE.getDefaultState(), 3, 2, 6, var5);
-         this.method12923(var1, Blocks.field36648.getDefaultState(), 4, 2, 6, var5);
+         this.method12923(var1, Blocks.CAULDRON.getDefaultState(), 4, 2, 6, var5);
          this.method12923(var1, Blocks.OAK_FENCE.getDefaultState(), 1, 2, 1, var5);
          this.method12923(var1, Blocks.OAK_FENCE.getDefaultState(), 5, 2, 1, var5);
          BlockState var10 = Blocks.SPRUCE_STAIRS.getDefaultState().with(StairsBlock.FACING, Direction.NORTH);

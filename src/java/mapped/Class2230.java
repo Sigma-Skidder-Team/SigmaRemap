@@ -37,7 +37,7 @@ public enum Class2230 implements Class2234 {
       Blocks.ANVIL,
       Blocks.CHIPPED_ANVIL,
       Blocks.DAMAGED_ANVIL,
-      Blocks.field36652,
+      Blocks.DRAGON_EGG,
       Blocks.GRAVEL,
       Blocks.SAND,
       Blocks.RED_SAND,

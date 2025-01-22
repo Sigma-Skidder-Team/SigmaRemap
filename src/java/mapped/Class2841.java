@@ -14,7 +14,7 @@ public class Class2841 implements Consumer<Consumer<Advancement>> {
    public void accept(Consumer<Advancement> var1) {
       Advancement var4 = Class7999.method27304()
          .method27308(
-            Blocks.field36651,
+            Blocks.END_STONE,
             new TranslationTextComponent("advancements.end.root.title"),
             new TranslationTextComponent("advancements.end.root.description"),
             new ResourceLocation("textures/gui/advancements/backgrounds/end.png"),
@@ -127,7 +127,7 @@ public class Class2841 implements Consumer<Consumer<Advancement>> {
       Class7999.method27304()
          .method27305(var5)
          .method27308(
-            Blocks.field36652,
+            Blocks.DRAGON_EGG,
             new TranslationTextComponent("advancements.end.dragon_egg.title"),
             new TranslationTextComponent("advancements.end.dragon_egg.description"),
             (ResourceLocation)null,
@@ -136,7 +136,7 @@ public class Class2841 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("dragon_egg", Class4491.method14164(Blocks.field36652))
+         .method27312("dragon_egg", Class4491.method14164(Blocks.DRAGON_EGG))
          .method27317(var1, "end/dragon_egg");
    }
 }

@@ -50,9 +50,9 @@ public class TileEntityType<T extends TileEntity> {
    );
    public static final TileEntityType<Class960> field21429 = method13794("mob_spawner", Class9785.<Class960>method38569(Class960::new, Blocks.SPAWNER));
    public static final TileEntityType<Class955> field21430 = method13794("piston", Class9785.<Class955>method38569(Class955::new, Blocks.MOVING_PISTON));
-   public static final TileEntityType<Class931> field21431 = method13794("brewing_stand", Class9785.<Class931>method38569(Class931::new, Blocks.field36647));
+   public static final TileEntityType<Class931> field21431 = method13794("brewing_stand", Class9785.<Class931>method38569(Class931::new, Blocks.BREWING_STAND));
    public static final TileEntityType<Class934> field21432 = method13794("enchanting_table", Class9785.<Class934>method38569(Class934::new, Blocks.ENCHANTING_TABLE));
-   public static final TileEntityType<Class956> field21433 = method13794("end_portal", Class9785.<Class956>method38569(Class956::new, Blocks.field36649));
+   public static final TileEntityType<Class956> field21433 = method13794("end_portal", Class9785.<Class956>method38569(Class956::new, Blocks.END_PORTAL));
    public static final TileEntityType<Class950> field21434 = method13794("beacon", Class9785.<Class950>method38569(Class950::new, Blocks.BEACON));
    public static final TileEntityType<SkullTileEntity> field21435 = method13794(
       "skull",

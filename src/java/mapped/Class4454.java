@@ -462,8 +462,8 @@ public class Class4454 extends Class4441<Block> {
          .method31560(
             Blocks.BARRIER,
             Blocks.BEDROCK,
-            Blocks.field36649,
-            Blocks.field36650,
+            Blocks.END_PORTAL,
+            Blocks.END_PORTAL_FRAME,
             Blocks.field36886,
             Blocks.COMMAND_BLOCK,
             Blocks.field36887,
@@ -473,7 +473,7 @@ public class Class4454 extends Class4441<Block> {
             Blocks.MOVING_PISTON,
             Blocks.OBSIDIAN,
             Blocks.CRYING_OBSIDIAN,
-            Blocks.field36651,
+            Blocks.END_STONE,
             Blocks.IRON_BARS,
             Blocks.RESPAWN_ANCHOR
          );
@@ -481,8 +481,8 @@ public class Class4454 extends Class4441<Block> {
          .method31560(
             Blocks.BARRIER,
             Blocks.BEDROCK,
-            Blocks.field36649,
-            Blocks.field36650,
+            Blocks.END_PORTAL,
+            Blocks.END_PORTAL_FRAME,
             Blocks.field36886,
             Blocks.COMMAND_BLOCK,
             Blocks.field36887,
@@ -518,7 +518,7 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36897,
             Blocks.field36901
          );
-      this.method14014(BlockTags.field32797).method31560(Blocks.NETHER_PORTAL, Blocks.field36649, Blocks.field36886);
+      this.method14014(BlockTags.field32797).method31560(Blocks.NETHER_PORTAL, Blocks.END_PORTAL, Blocks.field36886);
       this.method14014(BlockTags.field32798).method31560(Blocks.FIRE, Blocks.SOUL_FIRE);
       this.method14014(BlockTags.field32799).method31560(Blocks.CRIMSON_NYLIUM, Blocks.WARPED_NYLIUM);
       this.method14014(BlockTags.field32800).method31560(Blocks.field36891, Blocks.WARPED_WART_BLOCK);

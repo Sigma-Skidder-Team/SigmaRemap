@@ -171,7 +171,7 @@ public final class DimensionSettings {
       );
       method35169(
               field_242737_f,
-         method35171(new DimensionStructuresSettings(false), Blocks.field36651.getDefaultState(), Blocks.AIR.getDefaultState(), field_242737_f.getLocation(), true, true)
+         method35171(new DimensionStructuresSettings(false), Blocks.END_STONE.getDefaultState(), Blocks.AIR.getDefaultState(), field_242737_f.getLocation(), true, true)
       );
       method35169(
          field43234, method35172(new DimensionStructuresSettings(true), Blocks.STONE.getDefaultState(), Blocks.WATER.getDefaultState(), field43234.getLocation())

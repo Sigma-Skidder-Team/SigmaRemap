@@ -113,7 +113,7 @@ public class Class8928 {
       var0.put(Blocks.VINE, var5);
       var0.put(Blocks.LILY_PAD, var5);
       var0.put(Blocks.NETHER_WART, var5);
-      var0.put(Blocks.field36647, var5);
+      var0.put(Blocks.BREWING_STAND, var5);
       var0.put(Blocks.COCOA, var5);
       var0.put(Blocks.BEACON, var5);
       var0.put(Blocks.FLOWER_POT, var5);

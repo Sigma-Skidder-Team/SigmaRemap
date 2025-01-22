@@ -45,7 +45,7 @@ public class Class3393 extends Class3392 {
       Block var9 = var1.getBlockState(var2.south()).getBlock();
       Block var10 = var1.getBlockState(var2.west()).getBlock();
       return this.getDefaultState()
-         .with(field19024, Boolean.valueOf(var5 == this || var5 == Blocks.field36879 || var5 == Blocks.field36651))
+         .with(field19024, Boolean.valueOf(var5 == this || var5 == Blocks.field36879 || var5 == Blocks.END_STONE))
          .with(field19023, Boolean.valueOf(var6 == this || var6 == Blocks.field36879))
          .with(field19019, Boolean.valueOf(var7 == this || var7 == Blocks.field36879))
          .with(field19020, Boolean.valueOf(var8 == this || var8 == Blocks.field36879))
@@ -61,7 +61,7 @@ public class Class3393 extends Class3392 {
       } else {
          boolean var9 = var3.getBlock() == this
             || var3.isIn(Blocks.field36879)
-            || var2 == Direction.DOWN && var3.isIn(Blocks.field36651);
+            || var2 == Direction.DOWN && var3.isIn(Blocks.END_STONE);
          return var1.with(field19025.get(var2), Boolean.valueOf(var9));
       }
    }
@@ -87,14 +87,14 @@ public class Class3393 extends Class3392 {
             }
 
             Block var12 = var2.getBlockState(var10.down()).getBlock();
-            if (var12 == this || var12 == Blocks.field36651) {
+            if (var12 == this || var12 == Blocks.END_STONE) {
                return true;
             }
          }
       }
 
       Block var13 = var6.getBlock();
-      return var13 == this || var13 == Blocks.field36651;
+      return var13 == this || var13 == Blocks.END_STONE;
    }
 
    @Override
