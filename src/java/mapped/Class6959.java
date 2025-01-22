@@ -23,11 +23,11 @@ public class Class6959 implements LoadableImageData {
 
    @Override
    public ByteBuffer method21468(InputStream var1, boolean var2, int[] var3) throws IOException {
-      return this.method21469(var1, var2, false, var3);
+      return this.loadImage(var1, var2, false, var3);
    }
 
    @Override
-   public ByteBuffer method21469(InputStream var1, boolean var2, boolean var3, int[] var4) throws IOException {
+   public ByteBuffer loadImage(InputStream var1, boolean var2, boolean var3, int[] var4) throws IOException {
       Class2462 var7 = new Class2462();
       ByteBuffer var8 = null;
       BufferedInputStream var9 = new BufferedInputStream(var1, var1.available());
@@ -38,7 +38,7 @@ public class Class6959 implements LoadableImageData {
 
          try {
             LoadableImageData var11 = (LoadableImageData)this.field30149.get(var10);
-            var8 = var11.method21469(var9, var2, var3, var4);
+            var8 = var11.loadImage(var9, var2, var3, var4);
             this.field30150 = var11;
             break;
          } catch (Exception ignored) {
@@ -65,9 +65,9 @@ public class Class6959 implements LoadableImageData {
    }
 
    @Override
-   public int method21457() {
+   public int getHeight() {
       this.method21473();
-      return this.field30150.method21457();
+      return this.field30150.getHeight();
    }
 
    @Override
@@ -89,9 +89,9 @@ public class Class6959 implements LoadableImageData {
    }
 
    @Override
-   public int method21456() {
+   public int getWidth() {
       this.method21473();
-      return this.field30150.method21456();
+      return this.field30150.getWidth();
    }
 
    @Override

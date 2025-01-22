@@ -11,5 +11,5 @@ public interface LoadableImageData extends ImageData {
 
    ByteBuffer method21468(InputStream var1, boolean var2, int[] var3) throws IOException;
 
-   ByteBuffer method21469(InputStream var1, boolean var2, boolean var3, int[] var4) throws IOException;
+   ByteBuffer loadImage(InputStream var1, boolean var2, boolean var3, int[] var4) throws IOException;
 }

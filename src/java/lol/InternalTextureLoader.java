@@ -141,8 +141,8 @@ public class InternalTextureLoader {
       int var12 = method35789();
       TextureImpl var13 = new TextureImpl(var2, var3, var12);
       field43633.method18370(var3, var12);
-      int var14 = var10.method21456();
-      int var15 = var10.method21457();
+      int var14 = var10.getWidth();
+      int var15 = var10.getHeight();
       boolean var16 = var10.method21455() == 32;
       var13.method36184(var10.method21458());
       var13.method36183(var10.method21459());
@@ -182,8 +182,8 @@ public class InternalTextureLoader {
       TextureImpl var8 = new TextureImpl("generated:" + var1, var5, var7);
       boolean var11 = false;
       field43633.method18370(var5, var7);
-      int var12 = var1.method21456();
-      int var13 = var1.method21457();
+      int var12 = var1.getWidth();
+      int var13 = var1.getHeight();
       boolean var14 = var1.method21455() == 32;
       var8.method36184(var1.method21458());
       var8.method36183(var1.method21459());

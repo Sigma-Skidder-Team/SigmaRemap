@@ -5,9 +5,9 @@ import java.nio.ByteBuffer;
 public interface ImageData {
    int method21455();
 
-   int method21456();
+   int getWidth();
 
-   int method21457();
+   int getHeight();
 
    int method21458();
 

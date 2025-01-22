@@ -33,7 +33,7 @@ public class Class6958 implements LoadableImageData {
    }
 
    @Override
-   public int method21457() {
+   public int getHeight() {
       return this.field30144;
    }
 
@@ -48,7 +48,7 @@ public class Class6958 implements LoadableImageData {
    }
 
    @Override
-   public int method21456() {
+   public int getWidth() {
       return this.field30145;
    }
 
@@ -59,11 +59,11 @@ public class Class6958 implements LoadableImageData {
 
    @Override
    public ByteBuffer method21468(InputStream var1, boolean var2, int[] var3) throws IOException {
-      return this.method21469(var1, var2, false, var3);
+      return this.loadImage(var1, var2, false, var3);
    }
 
    @Override
-   public ByteBuffer method21469(InputStream var1, boolean var2, boolean var3, int[] var4) throws IOException {
+   public ByteBuffer loadImage(InputStream var1, boolean var2, boolean var3, int[] var4) throws IOException {
       if (var4 != null) {
          var3 = true;
       }

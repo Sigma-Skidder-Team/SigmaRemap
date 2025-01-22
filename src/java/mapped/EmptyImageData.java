@@ -22,7 +22,7 @@ public class EmptyImageData implements ImageData {
    }
 
    @Override
-   public int method21457() {
+   public int getHeight() {
       return this.field30127;
    }
 
@@ -42,7 +42,7 @@ public class EmptyImageData implements ImageData {
    }
 
    @Override
-   public int method21456() {
+   public int getWidth() {
       return this.field30126;
    }
 }

@@ -65,8 +65,8 @@ public class Class7390 extends Image {
    private void method23605(LoadableImageData var1, ByteBuffer var2, int var3, int var4) {
       int var7 = var1.method21458();
       int var8 = var1.method21459();
-      this.field31648 = this.field31610 = var1.method21456();
-      this.field31649 = this.field31611 = var1.method21457();
+      this.field31648 = this.field31610 = var1.getWidth();
+      this.field31649 = this.field31611 = var1.getHeight();
       if (var7 <= var4 && var8 <= var4) {
          this.field31645 = new Image[1][1];
          Class6953 var23 = new Class6953(this, var1, var8, var2, var7);

@@ -27,7 +27,7 @@ public class Class6953 implements ImageData {
    }
 
    @Override
-   public int method21457() {
+   public int getHeight() {
       return this.field30121;
    }
 
@@ -47,7 +47,7 @@ public class Class6953 implements ImageData {
    }
 
    @Override
-   public int method21456() {
+   public int getWidth() {
       return this.field30123;
    }
 }

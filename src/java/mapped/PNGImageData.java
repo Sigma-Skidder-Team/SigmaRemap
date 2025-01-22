@@ -9,32 +9,32 @@ import lol.LoadableImageData;
 import org.lwjgl.BufferUtils;
 
 public class PNGImageData implements LoadableImageData {
-   private int field30156;
-   private int field30157;
-   private int field30158;
-   private int field30159;
+   private int width;
+   private int height;
+   private int texHeight;
+   private int texWidth;
    private PNGDecoder field30160;
-   private int field30161;
-   private ByteBuffer field30162;
+   private int bitDepth;
+   private ByteBuffer scratch;
 
    @Override
    public int method21455() {
-      return this.field30161;
+      return this.bitDepth;
    }
 
    @Override
    public ByteBuffer method21460() {
-      return this.field30162;
+      return this.scratch;
    }
 
    @Override
    public int method21459() {
-      return this.field30158;
+      return this.texHeight;
    }
 
    @Override
    public int method21458() {
-      return this.field30159;
+      return this.texWidth;
    }
 
    @Override
@@ -44,101 +44,101 @@ public class PNGImageData implements LoadableImageData {
 
    @Override
    public ByteBuffer method21468(InputStream var1, boolean var2, int[] var3) throws IOException {
-      return this.method21469(var1, var2, false, var3);
+      return this.loadImage(var1, var2, false, var3);
    }
 
    @Override
-   public ByteBuffer method21469(InputStream var1, boolean var2, boolean var3, int[] var4) throws IOException {
-      if (var4 != null) {
-         var3 = true;
+   public ByteBuffer loadImage(InputStream fis, boolean flipped, boolean forceAlpha, int[] transparent) throws IOException {
+      if (transparent != null) {
+         forceAlpha = true;
          throw new IOException("Transparent color not support in custom PNG Decoder");
       } else {
-         PNGDecoder var7 = new PNGDecoder(var1);
-         if (var7.method22403()) {
-            this.field30156 = var7.method22401();
-            this.field30157 = var7.method22400();
-            this.field30159 = this.method21477(this.field30156);
-            this.field30158 = this.method21477(this.field30157);
-            int var8 = !var7.method22402() ? 3 : 4;
-            this.field30161 = !var7.method22402() ? 24 : 32;
-            this.field30162 = BufferUtils.createByteBuffer(this.field30159 * this.field30158 * var8);
-            var7.method22405(this.field30162, this.field30159 * var8, var8 != 4 ? PNGDecoder.field30765 : PNGDecoder.field30766);
-            if (this.field30157 < this.field30158 - 1) {
-               int var9 = (this.field30158 - 1) * this.field30159 * var8;
-               int var10 = (this.field30157 - 1) * this.field30159 * var8;
+         PNGDecoder decoder = new PNGDecoder(fis);
+         if (decoder.isRGB()) {
+            this.width = decoder.getWidth();
+            this.height = decoder.getHeight();
+            this.texWidth = this.get2Fold(this.width);
+            this.texHeight = this.get2Fold(this.height);
+            int perPixel = !decoder.hasAlpha() ? 3 : 4;
+            this.bitDepth = !decoder.hasAlpha() ? 24 : 32;
+            this.scratch = BufferUtils.createByteBuffer(this.texWidth * this.texHeight * perPixel);
+            decoder.decode(this.scratch, this.texWidth * perPixel, perPixel != 4 ? PNGDecoder.RGB : PNGDecoder.RGBA);
+            if (this.height < this.texHeight - 1) {
+               int topOffset = (this.texHeight - 1) * this.texWidth * perPixel;
+               int bottomOffset = (this.height - 1) * this.texWidth * perPixel;
 
-               for (int var11 = 0; var11 < this.field30159; var11++) {
-                  for (int var12 = 0; var12 < var8; var12++) {
-                     this.field30162.put(var9 + var11 + var12, this.field30162.get(var11 + var12));
-                     this.field30162.put(var10 + this.field30159 * var8 + var11 + var12, this.field30162.get(var10 + var11 + var12));
+               for (int x = 0; x < this.texWidth; x++) {
+                  for (int i = 0; i < perPixel; i++) {
+                     this.scratch.put(topOffset + x + i, this.scratch.get(x + i));
+                     this.scratch.put(bottomOffset + this.texWidth * perPixel + x + i, this.scratch.get(bottomOffset + x + i));
                   }
                }
             }
 
-            if (this.field30156 < this.field30159 - 1) {
-               for (int var15 = 0; var15 < this.field30158; var15++) {
-                  for (int var18 = 0; var18 < var8; var18++) {
-                     this.field30162.put((var15 + 1) * this.field30159 * var8 - var8 + var18, this.field30162.get(var15 * this.field30159 * var8 + var18));
-                     this.field30162
+            if (this.width < this.texWidth - 1) {
+               for (int y = 0; y < this.texHeight; y++) {
+                  for (int i = 0; i < perPixel; i++) {
+                     this.scratch.put((y + 1) * this.texWidth * perPixel - perPixel + i, this.scratch.get(y * this.texWidth * perPixel + i));
+                     this.scratch
                         .put(
-                           var15 * this.field30159 * var8 + this.field30156 * var8 + var18,
-                           this.field30162.get(var15 * this.field30159 * var8 + (this.field30156 - 1) * var8 + var18)
+                           y * this.texWidth * perPixel + this.width * perPixel + i,
+                           this.scratch.get(y * this.texWidth * perPixel + (this.width - 1) * perPixel + i)
                         );
                   }
                }
             }
 
-            if (!var7.method22402() && var3) {
-               ByteBuffer var16 = BufferUtils.createByteBuffer(this.field30159 * this.field30158 * 4);
+            if (!decoder.hasAlpha() && forceAlpha) {
+               ByteBuffer temp = BufferUtils.createByteBuffer(this.texWidth * this.texHeight * 4);
 
-               for (int var19 = 0; var19 < this.field30159; var19++) {
-                  for (int var21 = 0; var21 < this.field30158; var21++) {
-                     int var23 = var21 * 3 + var19 * this.field30158 * 3;
-                     int var13 = var21 * 4 + var19 * this.field30158 * 4;
-                     var16.put(var13, this.field30162.get(var23));
-                     var16.put(var13 + 1, this.field30162.get(var23 + 1));
-                     var16.put(var13 + 2, this.field30162.get(var23 + 2));
-                     if (var19 < this.method21457() && var21 < this.method21456()) {
-                        var16.put(var13 + 3, (byte)-1);
+               for (int x = 0; x < this.texWidth; x++) {
+                  for (int y = 0; y < this.texHeight; y++) {
+                     int srcOffset = y * 3 + x * this.texHeight * 3;
+                     int dstOffset = y * 4 + x * this.texHeight * 4;
+                     temp.put(dstOffset, this.scratch.get(srcOffset));
+                     temp.put(dstOffset + 1, this.scratch.get(srcOffset + 1));
+                     temp.put(dstOffset + 2, this.scratch.get(srcOffset + 2));
+                     if (x < this.getHeight() && y < this.getWidth()) {
+                        temp.put(dstOffset + 3, (byte)-1);
                      } else {
-                        var16.put(var13 + 3, (byte)0);
+                        temp.put(dstOffset + 3, (byte)0);
                      }
                   }
                }
 
-               this.field30161 = 32;
-               this.field30162 = var16;
+               this.bitDepth = 32;
+               this.scratch = temp;
             }
 
-            if (var4 != null) {
-               for (int var17 = 0; var17 < this.field30159 * this.field30158 * 4; var17 += 4) {
-                  boolean var20 = true;
+            if (transparent != null) {
+               for (int i = 0; i < this.texWidth * this.texHeight * 4; i += 4) {
+                  boolean match = true;
 
-                  for (int var22 = 0; var22 < 3; var22++) {
-                     if (this.method21476(this.field30162.get(var17 + var22)) != var4[var22]) {
-                        var20 = false;
+                  for (int c = 0; c < 3; c++) {
+                     if (this.toInt(this.scratch.get(i + c)) != transparent[c]) {
+                        match = false;
                      }
                   }
 
-                  if (var20) {
-                     this.field30162.put(var17 + 3, (byte)0);
+                  if (match) {
+                     this.scratch.put(i + 3, (byte)0);
                   }
                }
             }
 
-            ((Buffer)this.field30162).position(0);
-            return this.field30162;
+            this.scratch.position(0);
+            return this.scratch;
          } else {
             throw new IOException("Only RGB formatted images are supported by the PNGLoader");
          }
       }
    }
 
-   private int method21476(byte var1) {
+   private int toInt(byte var1) {
       return var1 >= 0 ? var1 : 256 + var1;
    }
 
-   private int method21477(int var1) {
+   private int get2Fold(int var1) {
       int var4 = 2;
 
       while (var4 < var1) {
@@ -153,12 +153,12 @@ public class PNGImageData implements LoadableImageData {
    }
 
    @Override
-   public int method21456() {
-      return this.field30156;
+   public int getWidth() {
+      return this.width;
    }
 
    @Override
-   public int method21457() {
-      return this.field30157;
+   public int getHeight() {
+      return this.height;
    }
 }

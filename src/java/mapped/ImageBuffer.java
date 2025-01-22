@@ -31,7 +31,7 @@ public class ImageBuffer implements ImageData {
    }
 
    @Override
-   public int method21457() {
+   public int getHeight() {
       return this.field30129;
    }
 
@@ -46,7 +46,7 @@ public class ImageBuffer implements ImageData {
    }
 
    @Override
-   public int method21456() {
+   public int getWidth() {
       return this.field30128;
    }
 

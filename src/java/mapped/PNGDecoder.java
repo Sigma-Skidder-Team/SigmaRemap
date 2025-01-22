@@ -11,14 +11,14 @@ import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 
 public class PNGDecoder {
-   public static Class7768 field30762 = new Class7768(1, true);
-   public static Class7768 field30763 = new Class7768(1, false);
-   public static Class7768 field30764 = new Class7768(2, true);
-   public static Class7768 field30765 = new Class7768(3, false);
-   public static Class7768 field30766 = new Class7768(4, true);
-   public static Class7768 field30767 = new Class7768(4, true);
-   public static Class7768 field30768 = new Class7768(4, true);
-   private static final byte[] field30769 = new byte[]{-119, 80, 78, 71, 13, 10, 26, 10};
+   public static Format ALPHA = new Format(1, true);
+   public static Format LUMINANCE = new Format(1, false);
+   public static Format LUMINANCE_ALPHA = new Format(2, true);
+   public static Format RGB = new Format(3, false);
+   public static Format RGBA = new Format(4, true);
+   public static Format BGRA = new Format(4, true);
+   public static Format ABGR = new Format(4, true);
+   private static final byte[] SIGNATURE = new byte[]{-119, 80, 78, 71, 13, 10, 26, 10};
    private static final int field30770 = 1229472850;
    private static final int field30771 = 1347179589;
    private static final int field30772 = 1951551059;
@@ -29,75 +29,75 @@ public class PNGDecoder {
    private static final byte field30777 = 3;
    private static final byte field30778 = 4;
    private static final byte field30779 = 6;
-   private final InputStream field30780;
-   private final CRC32 field30781;
-   private final byte[] field30782;
-   private int field30783;
-   private int field30784;
-   private int field30785;
-   private int field30786;
-   private int field30787;
-   private int field30788;
-   private int field30789;
-   private int field30790;
-   private byte[] field30791;
-   private byte[] field30792;
-   private byte[] field30793;
+   private final InputStream input;
+   private final CRC32 crc;
+   private final byte[] buffer;
+   private int chunkLength;
+   private int chunkType;
+   private int chunkRemaining;
+   private int width;
+   private int height;
+   private int bitdepth;
+   private int colorType;
+   private int bytesPerPixel;
+   private byte[] palette;
+   private byte[] paletteA;
+   private byte[] transPixel;
 
    public PNGDecoder(InputStream var1) throws IOException {
-      this.field30780 = var1;
-      this.field30781 = new CRC32();
-      this.field30782 = new byte[4096];
-      this.method22434(this.field30782, 0, field30769.length);
-      if (!method22437(this.field30782)) {
+      this.input = var1;
+      this.crc = new CRC32();
+      this.buffer = new byte[4096];
+      this.readFully(this.buffer, 0, SIGNATURE.length);
+      if (!checkSignature(this.buffer)) {
          throw new IOException("Not a valid PNG file");
       } else {
-         this.method22429(1229472850);
-         this.method22424();
-         this.method22427();
+         this.openChunk(1229472850);
+         this.readIHDR();
+         this.closeChunk();
 
          while (true) {
-            this.method22428();
-            switch (this.field30784) {
+            this.openChunk();
+            switch (this.chunkType) {
                case 1229209940:
-                  if (this.field30789 == 3 && this.field30791 == null) {
+                  if (this.colorType == 3 && this.palette == null) {
                      throw new IOException("Missing PLTE chunk");
                   }
 
                   return;
                case 1347179589:
-                  this.method22425();
+                  this.readPLTE();
                   break;
                case 1951551059:
-                  this.method22426();
+                  this.readtRNS();
             }
 
-            this.method22427();
+            this.closeChunk();
          }
       }
    }
 
-   public int method22400() {
-      return this.field30787;
+   public int getHeight() {
+      return this.height;
    }
 
-   public int method22401() {
-      return this.field30786;
+   public int getWidth() {
+      return this.width;
    }
 
-   public boolean method22402() {
-      return this.field30789 == 6 || this.field30792 != null || this.field30793 != null;
+   public boolean hasAlpha() {
+      return this.colorType == 6 || this.paletteA != null || this.transPixel != null;
    }
 
-   public boolean method22403() {
-      return this.field30789 == 6 || this.field30789 == 2 || this.field30789 == 3;
+   public boolean isRGB() {
+      return this.colorType == 6 || this.colorType == 2 || this.colorType == 3;
    }
 
-   public Class7768 method22404(Class7768 var1) {
-      switch (this.field30789) {
+   public Format method22404(Format var1) {
+      switch (this.colorType) {
          case 0:
-            if (var1 != field30763 && var1 != field30762) {
-               return field30763;
+            if (var1 != LUMINANCE && var1 != ALPHA) {
+               return LUMINANCE;
             }
 
             return var1;
@@ -106,40 +106,40 @@ public class PNGDecoder {
          default:
             throw new UnsupportedOperationException("Not yet implemented");
          case 2:
-            if (var1 != field30768 && var1 != field30766 && var1 != field30767 && var1 != field30765) {
-               return field30765;
+            if (var1 != ABGR && var1 != RGBA && var1 != BGRA && var1 != RGB) {
+               return RGB;
             }
 
             return var1;
          case 3:
-            if (var1 != field30768 && var1 != field30766 && var1 != field30767) {
-               return field30766;
+            if (var1 != ABGR && var1 != RGBA && var1 != BGRA) {
+               return RGBA;
             }
 
             return var1;
          case 4:
-            return field30764;
+            return LUMINANCE_ALPHA;
          case 6:
-            return var1 != field30768 && var1 != field30766 && var1 != field30767 && var1 != field30765 ? field30766 : var1;
+            return var1 != ABGR && var1 != RGBA && var1 != BGRA && var1 != RGB ? RGBA : var1;
       }
    }
 
-   public void method22405(ByteBuffer var1, int var2, Class7768 var3) throws IOException {
+   public void decode(ByteBuffer var1, int var2, Format var3) throws IOException {
       int var6 = var1.position();
-      int var7 = (this.field30786 * this.field30788 + 7) / 8 * this.field30790;
+      int var7 = (this.width * this.bitdepth + 7) / 8 * this.bytesPerPixel;
       byte[] var8 = new byte[var7 + 1];
       byte[] var9 = new byte[var7 + 1];
-      byte[] var10 = this.field30788 < 8 ? new byte[this.field30786 + 1] : null;
+      byte[] var10 = this.bitdepth < 8 ? new byte[this.width + 1] : null;
       Inflater var11 = new Inflater();
 
       try {
-         for (int var12 = 0; var12 < this.field30787; var12++) {
+         for (int var12 = 0; var12 < this.height; var12++) {
             this.method22433(var11, var8, 0, var8.length);
             this.method22419(var8, var9);
             ((Buffer)var1).position(var6 + var12 * var2);
-            switch (this.field30789) {
+            switch (this.colorType) {
                case 0:
-                  if (var3 != field30763 && var3 != field30762) {
+                  if (var3 != LUMINANCE && var3 != ALPHA) {
                      throw new UnsupportedOperationException("Unsupported format for this image");
                   }
 
@@ -150,14 +150,14 @@ public class PNGDecoder {
                default:
                   throw new UnsupportedOperationException("Not yet implemented");
                case 2:
-                  if (var3 == field30768) {
+                  if (var3 == ABGR) {
                      this.method22407(var1, var8);
-                  } else if (var3 == field30766) {
+                  } else if (var3 == RGBA) {
                      this.method22408(var1, var8);
-                  } else if (var3 == field30767) {
+                  } else if (var3 == BGRA) {
                      this.method22409(var1, var8);
                   } else {
-                     if (var3 != field30765) {
+                     if (var3 != RGB) {
                         throw new UnsupportedOperationException("Unsupported format for this image");
                      }
 
@@ -165,7 +165,7 @@ public class PNGDecoder {
                   }
                   break;
                case 3:
-                  switch (this.field30788) {
+                  switch (this.bitdepth) {
                      case 1:
                         this.method22418(var8, var10);
                         break;
@@ -185,12 +185,12 @@ public class PNGDecoder {
                         var10 = var8;
                   }
 
-                  if (var3 == field30768) {
+                  if (var3 == ABGR) {
                      this.method22413(var1, var10);
-                  } else if (var3 == field30766) {
+                  } else if (var3 == RGBA) {
                      this.method22414(var1, var10);
                   } else {
-                     if (var3 != field30767) {
+                     if (var3 != BGRA) {
                         throw new UnsupportedOperationException("Unsupported format for this image");
                      }
 
@@ -198,21 +198,21 @@ public class PNGDecoder {
                   }
                   break;
                case 4:
-                  if (var3 != field30764) {
+                  if (var3 != LUMINANCE_ALPHA) {
                      throw new UnsupportedOperationException("Unsupported format for this image");
                   }
 
                   this.method22406(var1, var8);
                   break;
                case 6:
-                  if (var3 == field30768) {
+                  if (var3 == ABGR) {
                      this.method22410(var1, var8);
-                  } else if (var3 == field30766) {
+                  } else if (var3 == RGBA) {
                      this.method22406(var1, var8);
-                  } else if (var3 == field30767) {
+                  } else if (var3 == BGRA) {
                      this.method22411(var1, var8);
                   } else {
-                     if (var3 != field30765) {
+                     if (var3 != RGB) {
                         throw new UnsupportedOperationException("Unsupported format for this image");
                      }
 
@@ -234,16 +234,16 @@ public class PNGDecoder {
    }
 
    private void method22407(ByteBuffer var1, byte[] var2) {
-      if (this.field30793 == null) {
+      if (this.transPixel == null) {
          int var5 = 1;
 
          for (int var6 = var2.length; var5 < var6; var5 += 3) {
             var1.put((byte)-1).put(var2[var5 + 2]).put(var2[var5 + 1]).put(var2[var5]);
          }
       } else {
-         byte var14 = this.field30793[1];
-         byte var15 = this.field30793[3];
-         byte var7 = this.field30793[5];
+         byte var14 = this.transPixel[1];
+         byte var15 = this.transPixel[3];
+         byte var7 = this.transPixel[5];
          int var8 = 1;
 
          for (int var9 = var2.length; var8 < var9; var8 += 3) {
@@ -261,16 +261,16 @@ public class PNGDecoder {
    }
 
    private void method22408(ByteBuffer var1, byte[] var2) {
-      if (this.field30793 == null) {
+      if (this.transPixel == null) {
          int var5 = 1;
 
          for (int var6 = var2.length; var5 < var6; var5 += 3) {
             var1.put(var2[var5]).put(var2[var5 + 1]).put(var2[var5 + 2]).put((byte)-1);
          }
       } else {
-         byte var14 = this.field30793[1];
-         byte var15 = this.field30793[3];
-         byte var7 = this.field30793[5];
+         byte var14 = this.transPixel[1];
+         byte var15 = this.transPixel[3];
+         byte var7 = this.transPixel[5];
          int var8 = 1;
 
          for (int var9 = var2.length; var8 < var9; var8 += 3) {
@@ -288,16 +288,16 @@ public class PNGDecoder {
    }
 
    private void method22409(ByteBuffer var1, byte[] var2) {
-      if (this.field30793 == null) {
+      if (this.transPixel == null) {
          int var5 = 1;
 
          for (int var6 = var2.length; var5 < var6; var5 += 3) {
             var1.put(var2[var5 + 2]).put(var2[var5 + 1]).put(var2[var5]).put((byte)-1);
          }
       } else {
-         byte var14 = this.field30793[1];
-         byte var15 = this.field30793[3];
-         byte var7 = this.field30793[5];
+         byte var14 = this.transPixel[1];
+         byte var15 = this.transPixel[3];
+         byte var7 = this.transPixel[5];
          int var8 = 1;
 
          for (int var9 = var2.length; var8 < var9; var8 += 3) {
@@ -339,14 +339,14 @@ public class PNGDecoder {
    }
 
    private void method22413(ByteBuffer var1, byte[] var2) {
-      if (this.field30792 == null) {
+      if (this.paletteA == null) {
          int var5 = 1;
 
          for (int var6 = var2.length; var5 < var6; var5++) {
             int var7 = var2[var5] & 255;
-            byte var8 = this.field30791[var7 * 3 + 0];
-            byte var9 = this.field30791[var7 * 3 + 1];
-            byte var10 = this.field30791[var7 * 3 + 2];
+            byte var8 = this.palette[var7 * 3 + 0];
+            byte var9 = this.palette[var7 * 3 + 1];
+            byte var10 = this.palette[var7 * 3 + 2];
             byte var11 = -1;
             var1.put(var11).put(var10).put(var9).put(var8);
          }
@@ -355,24 +355,24 @@ public class PNGDecoder {
 
          for (int var13 = var2.length; var12 < var13; var12++) {
             int var14 = var2[var12] & 255;
-            byte var15 = this.field30791[var14 * 3 + 0];
-            byte var16 = this.field30791[var14 * 3 + 1];
-            byte var17 = this.field30791[var14 * 3 + 2];
-            byte var18 = this.field30792[var14];
+            byte var15 = this.palette[var14 * 3 + 0];
+            byte var16 = this.palette[var14 * 3 + 1];
+            byte var17 = this.palette[var14 * 3 + 2];
+            byte var18 = this.paletteA[var14];
             var1.put(var18).put(var17).put(var16).put(var15);
          }
       }
    }
 
    private void method22414(ByteBuffer var1, byte[] var2) {
-      if (this.field30792 == null) {
+      if (this.paletteA == null) {
          int var5 = 1;
 
          for (int var6 = var2.length; var5 < var6; var5++) {
             int var7 = var2[var5] & 255;
-            byte var8 = this.field30791[var7 * 3 + 0];
-            byte var9 = this.field30791[var7 * 3 + 1];
-            byte var10 = this.field30791[var7 * 3 + 2];
+            byte var8 = this.palette[var7 * 3 + 0];
+            byte var9 = this.palette[var7 * 3 + 1];
+            byte var10 = this.palette[var7 * 3 + 2];
             byte var11 = -1;
             var1.put(var8).put(var9).put(var10).put(var11);
          }
@@ -381,24 +381,24 @@ public class PNGDecoder {
 
          for (int var13 = var2.length; var12 < var13; var12++) {
             int var14 = var2[var12] & 255;
-            byte var15 = this.field30791[var14 * 3 + 0];
-            byte var16 = this.field30791[var14 * 3 + 1];
-            byte var17 = this.field30791[var14 * 3 + 2];
-            byte var18 = this.field30792[var14];
+            byte var15 = this.palette[var14 * 3 + 0];
+            byte var16 = this.palette[var14 * 3 + 1];
+            byte var17 = this.palette[var14 * 3 + 2];
+            byte var18 = this.paletteA[var14];
             var1.put(var15).put(var16).put(var17).put(var18);
          }
       }
    }
 
    private void method22415(ByteBuffer var1, byte[] var2) {
-      if (this.field30792 == null) {
+      if (this.paletteA == null) {
          int var5 = 1;
 
          for (int var6 = var2.length; var5 < var6; var5++) {
             int var7 = var2[var5] & 255;
-            byte var8 = this.field30791[var7 * 3 + 0];
-            byte var9 = this.field30791[var7 * 3 + 1];
-            byte var10 = this.field30791[var7 * 3 + 2];
+            byte var8 = this.palette[var7 * 3 + 0];
+            byte var9 = this.palette[var7 * 3 + 1];
+            byte var10 = this.palette[var7 * 3 + 2];
             byte var11 = -1;
             var1.put(var10).put(var9).put(var8).put(var11);
          }
@@ -407,10 +407,10 @@ public class PNGDecoder {
 
          for (int var13 = var2.length; var12 < var13; var12++) {
             int var14 = var2[var12] & 255;
-            byte var15 = this.field30791[var14 * 3 + 0];
-            byte var16 = this.field30791[var14 * 3 + 1];
-            byte var17 = this.field30791[var14 * 3 + 2];
-            byte var18 = this.field30792[var14];
+            byte var15 = this.palette[var14 * 3 + 0];
+            byte var16 = this.palette[var14 * 3 + 1];
+            byte var17 = this.palette[var14 * 3 + 2];
+            byte var18 = this.paletteA[var14];
             var1.put(var17).put(var16).put(var15).put(var18);
          }
       }
@@ -496,7 +496,7 @@ public class PNGDecoder {
    }
 
    private void method22420(byte[] var1) {
-      int var4 = this.field30790;
+      int var4 = this.bytesPerPixel;
       int var5 = var4 + 1;
 
       for (int var6 = var1.length; var5 < var6; var5++) {
@@ -505,7 +505,7 @@ public class PNGDecoder {
    }
 
    private void method22421(byte[] var1, byte[] var2) {
-      int var5 = this.field30790;
+      int var5 = this.bytesPerPixel;
       int var6 = 1;
 
       for (int var7 = var1.length; var6 < var7; var6++) {
@@ -514,7 +514,7 @@ public class PNGDecoder {
    }
 
    private void method22422(byte[] var1, byte[] var2) {
-      int var5 = this.field30790;
+      int var5 = this.bytesPerPixel;
 
       int var6;
       for (var6 = 1; var6 <= var5; var6++) {
@@ -527,7 +527,7 @@ public class PNGDecoder {
    }
 
    private void method22423(byte[] var1, byte[] var2) {
-      int var5 = this.field30790;
+      int var5 = this.bytesPerPixel;
 
       int var6;
       for (var6 = 1; var6 <= var5; var6++) {
@@ -564,165 +564,165 @@ public class PNGDecoder {
       }
    }
 
-   private void method22424() throws IOException {
-      this.method22430(13);
-      this.method22431(this.field30782, 0, 13);
-      this.field30786 = this.method22435(this.field30782, 0);
-      this.field30787 = this.method22435(this.field30782, 4);
-      this.field30788 = this.field30782[8] & 255;
-      this.field30789 = this.field30782[9] & 255;
+   private void readIHDR() throws IOException {
+      this.checkChunkLength(13);
+      this.readChunk(this.buffer, 0, 13);
+      this.width = this.readInt(this.buffer, 0);
+      this.height = this.readInt(this.buffer, 4);
+      this.bitdepth = this.buffer[8] & 255;
+      this.colorType = this.buffer[9] & 255;
       label59:
-      switch (this.field30789) {
+      switch (this.colorType) {
          case 0:
-            if (this.field30788 != 8) {
-               throw new IOException("Unsupported bit depth: " + this.field30788);
+            if (this.bitdepth != 8) {
+               throw new IOException("Unsupported bit depth: " + this.bitdepth);
             }
 
-            this.field30790 = 1;
+            this.bytesPerPixel = 1;
             break;
          case 1:
          case 5:
          default:
-            throw new IOException("unsupported color format: " + this.field30789);
+            throw new IOException("unsupported color format: " + this.colorType);
          case 2:
-            if (this.field30788 != 8) {
-               throw new IOException("Unsupported bit depth: " + this.field30788);
+            if (this.bitdepth != 8) {
+               throw new IOException("Unsupported bit depth: " + this.bitdepth);
             }
 
-            this.field30790 = 3;
+            this.bytesPerPixel = 3;
             break;
          case 3:
-            switch (this.field30788) {
+            switch (this.bitdepth) {
                case 1:
                case 2:
                case 4:
                case 8:
-                  this.field30790 = 1;
+                  this.bytesPerPixel = 1;
                   break label59;
                case 3:
                case 5:
                case 6:
                case 7:
                default:
-                  throw new IOException("Unsupported bit depth: " + this.field30788);
+                  throw new IOException("Unsupported bit depth: " + this.bitdepth);
             }
          case 4:
-            if (this.field30788 != 8) {
-               throw new IOException("Unsupported bit depth: " + this.field30788);
+            if (this.bitdepth != 8) {
+               throw new IOException("Unsupported bit depth: " + this.bitdepth);
             }
 
-            this.field30790 = 2;
+            this.bytesPerPixel = 2;
             break;
          case 6:
-            if (this.field30788 != 8) {
-               throw new IOException("Unsupported bit depth: " + this.field30788);
+            if (this.bitdepth != 8) {
+               throw new IOException("Unsupported bit depth: " + this.bitdepth);
             }
 
-            this.field30790 = 4;
+            this.bytesPerPixel = 4;
       }
 
-      if (this.field30782[10] != 0) {
+      if (this.buffer[10] != 0) {
          throw new IOException("unsupported compression method");
-      } else if (this.field30782[11] != 0) {
+      } else if (this.buffer[11] != 0) {
          throw new IOException("unsupported filtering method");
-      } else if (this.field30782[12] != 0) {
+      } else if (this.buffer[12] != 0) {
          throw new IOException("unsupported interlace method");
       }
    }
 
-   private void method22425() throws IOException {
-      int var3 = this.field30783 / 3;
-      if (var3 >= 1 && var3 <= 256 && this.field30783 % 3 == 0) {
-         this.field30791 = new byte[var3 * 3];
-         this.method22431(this.field30791, 0, this.field30791.length);
+   private void readPLTE() throws IOException {
+      int var3 = this.chunkLength / 3;
+      if (var3 >= 1 && var3 <= 256 && this.chunkLength % 3 == 0) {
+         this.palette = new byte[var3 * 3];
+         this.readChunk(this.palette, 0, this.palette.length);
       } else {
          throw new IOException("PLTE chunk has wrong length");
       }
    }
 
-   private void method22426() throws IOException {
-      switch (this.field30789) {
+   private void readtRNS() throws IOException {
+      switch (this.colorType) {
          case 0:
-            this.method22430(2);
-            this.field30793 = new byte[2];
-            this.method22431(this.field30793, 0, 2);
+            this.checkChunkLength(2);
+            this.transPixel = new byte[2];
+            this.readChunk(this.transPixel, 0, 2);
          case 1:
          default:
             break;
          case 2:
-            this.method22430(6);
-            this.field30793 = new byte[6];
-            this.method22431(this.field30793, 0, 6);
+            this.checkChunkLength(6);
+            this.transPixel = new byte[6];
+            this.readChunk(this.transPixel, 0, 6);
             break;
          case 3:
-            if (this.field30791 == null) {
+            if (this.palette == null) {
                throw new IOException("tRNS chunk without PLTE chunk");
             }
 
-            this.field30792 = new byte[this.field30791.length / 3];
-            Arrays.fill(this.field30792, (byte)-1);
-            this.method22431(this.field30792, 0, this.field30792.length);
+            this.paletteA = new byte[this.palette.length / 3];
+            Arrays.fill(this.paletteA, (byte)-1);
+            this.readChunk(this.paletteA, 0, this.paletteA.length);
       }
    }
 
-   private void method22427() throws IOException {
-      if (this.field30785 <= 0) {
-         this.method22434(this.field30782, 0, 4);
-         int var3 = this.method22435(this.field30782, 0);
-         int var4 = (int)this.field30781.getValue();
+   private void closeChunk() throws IOException {
+      if (this.chunkRemaining <= 0) {
+         this.readFully(this.buffer, 0, 4);
+         int var3 = this.readInt(this.buffer, 0);
+         int var4 = (int)this.crc.getValue();
          if (var4 != var3) {
             throw new IOException("Invalid CRC");
          }
       } else {
-         this.method22436((long)(this.field30785 + 4));
+         this.method22436((long)(this.chunkRemaining + 4));
       }
 
-      this.field30785 = 0;
-      this.field30783 = 0;
-      this.field30784 = 0;
+      this.chunkRemaining = 0;
+      this.chunkLength = 0;
+      this.chunkType = 0;
    }
 
-   private void method22428() throws IOException {
-      this.method22434(this.field30782, 0, 8);
-      this.field30783 = this.method22435(this.field30782, 0);
-      this.field30784 = this.method22435(this.field30782, 4);
-      this.field30785 = this.field30783;
-      this.field30781.reset();
-      this.field30781.update(this.field30782, 4, 4);
+   private void openChunk() throws IOException {
+      this.readFully(this.buffer, 0, 8);
+      this.chunkLength = this.readInt(this.buffer, 0);
+      this.chunkType = this.readInt(this.buffer, 4);
+      this.chunkRemaining = this.chunkLength;
+      this.crc.reset();
+      this.crc.update(this.buffer, 4, 4);
    }
 
-   private void method22429(int var1) throws IOException {
-      this.method22428();
-      if (this.field30784 != var1) {
+   private void openChunk(int var1) throws IOException {
+      this.openChunk();
+      if (this.chunkType != var1) {
          throw new IOException("Expected chunk: " + Integer.toHexString(var1));
       }
    }
 
-   private void method22430(int var1) throws IOException {
-      if (this.field30783 != var1) {
+   private void checkChunkLength(int var1) throws IOException {
+      if (this.chunkLength != var1) {
          throw new IOException("Chunk has wrong size");
       }
    }
 
-   private int method22431(byte[] var1, int var2, int var3) throws IOException {
-      if (var3 > this.field30785) {
-         var3 = this.field30785;
+   private int readChunk(byte[] var1, int var2, int var3) throws IOException {
+      if (var3 > this.chunkRemaining) {
+         var3 = this.chunkRemaining;
       }
 
-      this.method22434(var1, var2, var3);
-      this.field30781.update(var1, var2, var3);
-      this.field30785 -= var3;
+      this.readFully(var1, var2, var3);
+      this.crc.update(var1, var2, var3);
+      this.chunkRemaining -= var3;
       return var3;
    }
 
    private void method22432(Inflater var1) throws IOException {
-      while (this.field30785 == 0) {
-         this.method22427();
-         this.method22429(1229209940);
+      while (this.chunkRemaining == 0) {
+         this.closeChunk();
+         this.openChunk(1229209940);
       }
 
-      int var4 = this.method22431(this.field30782, 0, this.field30782.length);
-      var1.setInput(this.field30782, 0, var4);
+      int var4 = this.readChunk(this.buffer, 0, this.buffer.length);
+      var1.setInput(this.buffer, 0, var4);
    }
 
    private void method22433(Inflater var1, byte[] var2, int var3, int var4) throws IOException {
@@ -749,9 +749,9 @@ public class PNGDecoder {
       }
    }
 
-   private void method22434(byte[] var1, int var2, int var3) throws IOException {
+   private void readFully(byte[] var1, int var2, int var3) throws IOException {
       while (true) {
-         int var6 = this.field30780.read(var1, var2, var3);
+         int var6 = this.input.read(var1, var2, var3);
          if (var6 >= 0) {
             var2 += var6;
             var3 -= var6;
@@ -766,13 +766,13 @@ public class PNGDecoder {
       }
    }
 
-   private int method22435(byte[] var1, int var2) {
+   private int readInt(byte[] var1, int var2) {
       return var1[var2] << 24 | (var1[var2 + 1] & 0xFF) << 16 | (var1[var2 + 2] & 0xFF) << 8 | var1[var2 + 3] & 0xFF;
    }
 
    private void method22436(long var1) throws IOException {
       while (var1 > 0L) {
-         long var5 = this.field30780.skip(var1);
+         long var5 = this.input.skip(var1);
          if (var5 < 0L) {
             throw new EOFException();
          }
@@ -781,9 +781,9 @@ public class PNGDecoder {
       }
    }
 
-   private static boolean method22437(byte[] var0) {
-      for (int var3 = 0; var3 < field30769.length; var3++) {
-         if (var0[var3] != field30769[var3]) {
+   private static boolean checkSignature(byte[] var0) {
+      for (int var3 = 0; var3 < SIGNATURE.length; var3++) {
+         if (var0[var3] != SIGNATURE[var3]) {
             return false;
          }
       }
