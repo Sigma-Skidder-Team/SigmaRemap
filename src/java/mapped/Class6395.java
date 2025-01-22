@@ -229,7 +229,7 @@ public abstract class Class6395 {
       }
 
       for (int var10 = 0; var10 < 19; var10++) {
-         Class8375 var11 = var1.method20989(var10);
+         ScoreObjective var11 = var1.getObjectiveInDisplaySlot(var10);
          if (var11 != null && !var5.contains(var11)) {
             for (IPacket var9 : var1.method21023(var11)) {
                var2.connection.sendPacket(var9);

@@ -87,17 +87,17 @@ public class ActiveMods extends Module {
                 GlStateManager.translatef(0.0F, (float) (-this.field23614), 0.0F);
             } else {
                 Scoreboard var4 = mc.world.getScoreboard();
-                Class8375 var5 = null;
-                ScorePlayerTeam var6 = var4.method20998(mc.player.method2956());
+                ScoreObjective var5 = null;
+                ScorePlayerTeam var6 = var4.getPlayersTeam(mc.player.getScoreboardName());
                 if (var6 != null) {
                     int var7 = var6.getColor().getColorIndex();
                     if (var7 >= 0) {
-                        var5 = var4.method20989(3 + var7);
+                        var5 = var4.getObjectiveInDisplaySlot(3 + var7);
                     }
                 }
 
-                Class8375 var14 = var5 == null ? var4.method20989(1) : var5;
-                Collection var8 = var4.method20981(var14);
+                ScoreObjective var14 = var5 == null ? var4.getObjectiveInDisplaySlot(1) : var5;
+                Collection var8 = var4.getSortedScores(var14);
                 int var9 = 0;
 
                 for (Module var11 : this.field23612) {

@@ -1838,7 +1838,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public ITextComponent getDisplayName() {
-      IFormattableTextComponent var3 = ScorePlayerTeam.method28577(this.getTeam(), this.getName());
+      IFormattableTextComponent var3 = ScorePlayerTeam.func_237500_a_(this.getTeam(), this.getName());
       return this.method2955(var3);
    }
 
@@ -1851,7 +1851,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public String method2956() {
+   public String getScoreboardName() {
       return this.getGameProfile().getName();
    }
 

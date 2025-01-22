@@ -93,7 +93,7 @@ public class Class9008 {
       return this.field41202;
    }
 
-   public boolean method33281() {
+   public boolean isReadOnly() {
       return this.field41203;
    }
 

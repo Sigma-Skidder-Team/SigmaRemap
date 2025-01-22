@@ -136,11 +136,11 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
       var3.push();
       if (var8 < 100.0) {
          Scoreboard var10 = var1.method2953();
-         Class8375 var11 = var10.method20989(2);
+         ScoreObjective var11 = var10.getObjectiveInDisplaySlot(2);
          if (var11 != null) {
-            Class9411 var12 = var10.method20980(var1.method2956(), var11);
+            Score var12 = var10.method20980(var1.getScoreboardName(), var11);
             super.method17893(
-               var1, new StringTextComponent(Integer.toString(var12.method36050())).appendString(" ").append(var11.method29338()), var3, var4, var5
+               var1, new StringTextComponent(Integer.toString(var12.getScorePoints())).appendString(" ").append(var11.method29338()), var3, var4, var5
             );
             var3.translate(0.0, 0.25875F, 0.0);
          }

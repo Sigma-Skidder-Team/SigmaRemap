@@ -336,10 +336,10 @@ public class Class9748 {
             if (!var4.isEmpty()) {
                var0.method30278(var1 -> {
                   ServerScoreboard var4x = var1.method3396().method1409();
-                  String var5x = var1.method2956();
+                  String var5x = var1.getScoreboardName();
 
                   for (Entry var7 : var4.entrySet()) {
-                     Class8375 var8 = var4x.method20976((String)var7.getKey());
+                     ScoreObjective var8 = var4x.method20976((String)var7.getKey());
                      if (var8 == null) {
                         return false;
                      }
@@ -348,8 +348,8 @@ public class Class9748 {
                         return false;
                      }
 
-                     Class9411 var9 = var4x.method20980(var5x, var8);
-                     int var10 = var9.method36050();
+                     Score var9 = var4x.method20980(var5x, var8);
+                     int var10 = var9.getScorePoints();
                      if (!((Class8840)var7.getValue()).method32015(var10)) {
                         return false;
                      }

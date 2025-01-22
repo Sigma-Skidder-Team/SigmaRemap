@@ -277,16 +277,16 @@ public class IngameGui extends AbstractGui {
 
             this.field6727.method5999(var1);
             Scoreboard var17 = this.field6716.world.getScoreboard();
-            Class8375 var21 = null;
-            ScorePlayerTeam var25 = var17.method20998(this.field6716.player.method2956());
+            ScoreObjective var21 = null;
+            ScorePlayerTeam var25 = var17.getPlayersTeam(this.field6716.player.getScoreboardName());
             if (var25 != null) {
                 int var27 = var25.getColor().getColorIndex();
                 if (var27 >= 0) {
-                    var21 = var17.method20989(3 + var27);
+                    var21 = var17.getObjectiveInDisplaySlot(3 + var27);
                 }
             }
 
-            Class8375 var28 = var21 == null ? var17.method20989(1) : var21;
+            ScoreObjective var28 = var21 == null ? var17.getObjectiveInDisplaySlot(1) : var21;
             if (var28 != null) {
                 EventRenderGUI var31 = new EventRenderGUI(true);
                 Client.getInstance().eventManager.call(var31);
@@ -308,7 +308,7 @@ public class IngameGui extends AbstractGui {
             this.field6718.method5926(var1, this.field6719);
             this.field6716.getProfiler().endSection();
             RenderSystem.popMatrix();
-            var28 = var17.method20989(0);
+            var28 = var17.getObjectiveInDisplaySlot(0);
             if (this.field6716.gameSettings.keyBindTablist.isKeyDown()
                     && (!this.field6716.isIntegratedServerRunning()
                             || this.field6716.player.connection.method15790().size() > 1 || var28 != null)) {
@@ -648,10 +648,10 @@ public class IngameGui extends AbstractGui {
         this.field6716.getProfiler().endSection();
     }
 
-    private void method5971(MatrixStack var1, Class8375 var2) {
+    private void method5971(MatrixStack var1, ScoreObjective var2) {
         Scoreboard var5 = var2.method29335();
-        Collection<Class9411> var6 = var5.method20981(var2);
-        List var7 = var6.stream().filter(var0 -> var0.method36054() != null && !var0.method36054().startsWith("#"))
+        Collection<Score> var6 = var5.getSortedScores(var2);
+        List var7 = var6.stream().filter(var0 -> var0.getPlayerName() != null && !var0.getPlayerName().startsWith("#"))
                 .collect(Collectors.toList());
         if (var7.size() <= 15) {
             var6 = var7;
@@ -665,13 +665,13 @@ public class IngameGui extends AbstractGui {
         int var11 = var10;
         int var12 = this.method5991().getStringWidth(": ");
 
-        for (Class9411 var14 : var6) {
-            ScorePlayerTeam var15 = var5.method20998(var14.method36054());
-            IFormattableTextComponent var16 = ScorePlayerTeam.method28577(var15,
-                    new StringTextComponent(var14.method36054()));
+        for (Score var14 : var6) {
+            ScorePlayerTeam var15 = var5.getPlayersTeam(var14.getPlayerName());
+            IFormattableTextComponent var16 = ScorePlayerTeam.func_237500_a_(var15,
+                    new StringTextComponent(var14.getPlayerName()));
             var8.add(Pair.of(var14, var16));
             var11 = Math.max(var11, this.method5991().method38821(var16) + var12
-                    + this.method5991().getStringWidth(Integer.toString(var14.method36050())));
+                    + this.method5991().getStringWidth(Integer.toString(var14.getScorePoints())));
         }
 
         int var28 = var6.size() * 9;
@@ -683,9 +683,9 @@ public class IngameGui extends AbstractGui {
 
         for (Pair var21 : var8) {
             var17++;
-            Class9411 var22 = (Class9411) var21.getFirst();
+            Score var22 = (Score) var21.getFirst();
             ITextComponent var23 = (ITextComponent) var21.getSecond();
-            String var24 = TextFormatting.RED + "" + var22.method36050();
+            String var24 = TextFormatting.RED + "" + var22.getScorePoints();
             int var25 = var29 - var17 * 9;
             int var26 = this.field6741 - 3 + 2;
             fill(var1, var31 - 2, var25, var26, var25 + 9, var18);

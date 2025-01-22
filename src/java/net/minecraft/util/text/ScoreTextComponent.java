@@ -50,7 +50,7 @@ public class ScoreTextComponent extends TextComponent implements ITargetedTextCo
                throw Class8700.field39260.create();
             }
 
-            return ((Entity)var4.get(0)).method2956();
+            return ((Entity)var4.get(0)).getScoreboardName();
          }
       }
 
@@ -61,10 +61,10 @@ public class ScoreTextComponent extends TextComponent implements ITargetedTextCo
       MinecraftServer scoreboard = p_240706_2_.getServer();
       if (scoreboard != null) {
          ServerScoreboard scoreobjective = scoreboard.method1409();
-         Class8375 score = scoreobjective.method20976(this.objective);
+         ScoreObjective score = scoreobjective.method20976(this.objective);
          if (scoreobjective.method20979(p_240706_1_, score)) {
-            Class9411 var8 = scoreobjective.method20980(p_240706_1_, score);
-            return Integer.toString(var8.method36050());
+            Score var8 = scoreobjective.method20980(p_240706_1_, score);
+            return Integer.toString(var8.getScorePoints());
          }
       }
 
@@ -81,7 +81,7 @@ public class ScoreTextComponent extends TextComponent implements ITargetedTextCo
          return new StringTextComponent("");
       } else {
          String s1 = this.func_240705_a_(p_230535_1_);
-         String var7 = p_230535_2_ != null && s1.equals("*") ? p_230535_2_.method2956() : s1;
+         String var7 = p_230535_2_ != null && s1.equals("*") ? p_230535_2_.getScoreboardName() : s1;
          return new StringTextComponent(this.func_240706_a_(var7, p_230535_1_));
       }
    }

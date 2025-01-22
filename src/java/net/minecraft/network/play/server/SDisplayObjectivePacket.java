@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.Class8375;
+import mapped.ScoreObjective;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.IPacket;
@@ -16,7 +16,7 @@ public class SDisplayObjectivePacket implements IPacket<IClientPlayNetHandler> {
    public SDisplayObjectivePacket() {
    }
 
-   public SDisplayObjectivePacket(int var1, Class8375 var2) {
+   public SDisplayObjectivePacket(int var1, ScoreObjective var2) {
       this.field24916 = var1;
       if (var2 != null) {
          this.field24917 = var2.method29336();

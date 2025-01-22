@@ -3,7 +3,7 @@ package net.minecraft.network.play.server;
 import java.io.IOException;
 
 import mapped.Class2316;
-import mapped.Class8375;
+import mapped.ScoreObjective;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.IPacket;
@@ -19,7 +19,7 @@ public class SScoreboardObjectivePacket implements IPacket<IClientPlayNetHandler
    public SScoreboardObjectivePacket() {
    }
 
-   public SScoreboardObjectivePacket(Class8375 var1, int var2) {
+   public SScoreboardObjectivePacket(ScoreObjective var1, int var2) {
       this.field24730 = var1.method29336();
       this.field24731 = var1.method29338();
       this.field24732 = var1.method29342();

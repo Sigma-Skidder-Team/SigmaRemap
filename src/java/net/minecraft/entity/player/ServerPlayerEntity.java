@@ -404,7 +404,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    private void method2736(Class9008 var1, int var2) {
-      this.method2953().method20978(var1, this.method2956(), var1x -> var1x.method36052(var2));
+      this.method2953().method20978(var1, this.getScoreboardName(), var1x -> var1x.setScorePoints(var2));
    }
 
    @Override
@@ -450,7 +450,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
          this.spawnDrops(var1);
       }
 
-      this.method2953().method20978(Class9008.field41191, this.method2956(), Class9411::method36049);
+      this.method2953().method20978(Class9008.field41191, this.getScoreboardName(), Score::incrementScore);
       LivingEntity var7 = this.getAttackingEntity();
       if (var7 != null) {
          this.addStat(Stats.field40103.method172(var7.getType()));
@@ -481,14 +481,14 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       if (var1 != this) {
          super.awardKillScore(var1, var2, var3);
          this.method2876(var2);
-         String var6 = this.method2956();
-         String var7 = var1.method2956();
-         this.method2953().method20978(Class9008.field41193, var6, Class9411::method36049);
+         String var6 = this.getScoreboardName();
+         String var7 = var1.getScoreboardName();
+         this.method2953().method20978(Class9008.field41193, var6, Score::incrementScore);
          if (!(var1 instanceof PlayerEntity)) {
             this.method2911(Stats.field40135);
          } else {
             this.method2911(Stats.field40137);
-            this.method2953().method20978(Class9008.field41192, var6, Class9411::method36049);
+            this.method2953().method20978(Class9008.field41192, var6, Score::incrementScore);
          }
 
          this.method2740(var6, var7, Class9008.field41200);
@@ -498,11 +498,11 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    private void method2740(String var1, String var2, Class9008[] var3) {
-      ScorePlayerTeam var6 = this.method2953().method20998(var2);
+      ScorePlayerTeam var6 = this.method2953().getPlayersTeam(var2);
       if (var6 != null) {
          int var7 = var6.getColor().getColorIndex();
          if (var7 >= 0 && var7 < var3.length) {
-            this.method2953().method20978(var3[var7], var1, Class9411::method36049);
+            this.method2953().method20978(var3[var7], var1, Score::incrementScore);
          }
       }
    }
@@ -959,13 +959,13 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    @Override
    public void method2776(Class9007<?> var1, int var2) {
       this.field4860.method28958(this, var1, var2);
-      this.method2953().method20978(var1, this.method2956(), var1x -> var1x.method36048(var2));
+      this.method2953().method20978(var1, this.getScoreboardName(), var1x -> var1x.increaseScore(var2));
    }
 
    @Override
    public void method2777(Class9007<?> var1) {
       this.field4860.method28959(this, var1, 0);
-      this.method2953().method20978(var1, this.method2956(), Class9411::method36051);
+      this.method2953().method20978(var1, this.getScoreboardName(), Score::reset);
    }
 
    @Override

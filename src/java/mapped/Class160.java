@@ -47,10 +47,10 @@ public class Class160 implements ILootCondition {
    }
 
    public boolean method483(Entity var1, Scoreboard var2, String var3, Class6872 var4) {
-      Class8375 var7 = var2.method20976(var3);
+      ScoreObjective var7 = var2.method20976(var3);
       if (var7 != null) {
-         String var8 = var1.method2956();
-         return var2.method20979(var8, var7) ? var4.method20925(var2.method20980(var8, var7).method36050()) : false;
+         String var8 = var1.getScoreboardName();
+         return var2.method20979(var8, var7) ? var4.method20925(var2.method20980(var8, var7).getScorePoints()) : false;
       } else {
          return false;
       }

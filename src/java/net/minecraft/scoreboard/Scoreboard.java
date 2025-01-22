@@ -19,10 +19,10 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 
 public class Scoreboard {
-   private final Map<String, Class8375> field29840 = Maps.newHashMap();
-   private final Map<Class9008, List<Class8375>> field29841 = Maps.newHashMap();
-   private final Map<String, Map<Class8375, Class9411>> field29842 = Maps.newHashMap();
-   private final Class8375[] field29843 = new Class8375[19];
+   private final Map<String, ScoreObjective> field29840 = Maps.newHashMap();
+   private final Map<Class9008, List<ScoreObjective>> field29841 = Maps.newHashMap();
+   private final Map<String, Map<ScoreObjective, Score>> field29842 = Maps.newHashMap();
+   private final ScoreObjective[] field29843 = new ScoreObjective[19];
    private final Map<String, ScorePlayerTeam> field29844 = Maps.newHashMap();
    private final Map<String, ScorePlayerTeam> field29845 = Maps.newHashMap();
    private static String[] field29846;
@@ -31,19 +31,19 @@ public class Scoreboard {
       return this.field29840.containsKey(var1);
    }
 
-   public Class8375 method20975(String var1) {
+   public ScoreObjective method20975(String var1) {
       return this.field29840.get(var1);
    }
 
    @Nullable
-   public Class8375 method20976(String var1) {
+   public ScoreObjective method20976(String var1) {
       return this.field29840.get(var1);
    }
 
-   public Class8375 method20977(String var1, Class9008 var2, ITextComponent var3, Class2316 var4) {
+   public ScoreObjective method20977(String var1, Class9008 var2, ITextComponent var3, Class2316 var4) {
       if (var1.length() <= 16) {
          if (!this.field29840.containsKey(var1)) {
-            Class8375 var7 = new Class8375(this, var1, var2, var3, var4);
+            ScoreObjective var7 = new ScoreObjective(this, var1, var2, var3, var4);
             this.field29841.computeIfAbsent(var2, var0 -> Lists.newArrayList()).add(var7);
             this.field29840.put(var1, var7);
             this.method20999(var7);
@@ -56,26 +56,26 @@ public class Scoreboard {
       }
    }
 
-   public final void method20978(Class9008 var1, String var2, Consumer<Class9411> var3) {
-      this.field29841.getOrDefault(var1, Collections.<Class8375>emptyList()).forEach(var3x -> var3.accept(this.method20980(var2, var3x)));
+   public final void method20978(Class9008 var1, String var2, Consumer<Score> var3) {
+      this.field29841.getOrDefault(var1, Collections.<ScoreObjective>emptyList()).forEach(var3x -> var3.accept(this.method20980(var2, var3x)));
    }
 
-   public boolean method20979(String var1, Class8375 var2) {
+   public boolean method20979(String var1, ScoreObjective var2) {
       Map var5 = this.field29842.get(var1);
       if (var5 != null) {
-         Class9411 var6 = (Class9411)var5.get(var2);
+         Score var6 = (Score)var5.get(var2);
          return var6 != null;
       } else {
          return false;
       }
    }
 
-   public Class9411 method20980(String var1, Class8375 var2) {
+   public Score method20980(String var1, ScoreObjective var2) {
       if (var1.length() <= 40) {
-         Map<Class8375, Class9411> var5 = this.field29842.computeIfAbsent(var1, var0 -> Maps.newHashMap());
+         Map<ScoreObjective, Score> var5 = this.field29842.computeIfAbsent(var1, var0 -> Maps.newHashMap());
          return var5.computeIfAbsent(var2, var2x -> {
-            Class9411 var5x = new Class9411(this, var2x, var1);
-            var5x.method36052(0);
+            Score var5x = new Score(this, var2x, var1);
+            var5x.setScorePoints(0);
             return var5x;
          });
       } else {
@@ -83,21 +83,21 @@ public class Scoreboard {
       }
    }
 
-   public Collection<Class9411> method20981(Class8375 var1) {
+   public Collection<Score> getSortedScores(ScoreObjective var1) {
       ArrayList var4 = Lists.newArrayList();
 
       for (Map var6 : this.field29842.values()) {
-         Class9411 var7 = (Class9411)var6.get(var1);
+         Score var7 = (Score)var6.get(var1);
          if (var7 != null) {
             var4.add(var7);
          }
       }
 
-      var4.sort(Class9411.field43668);
+      var4.sort(Score.SCORE_COMPARATOR);
       return var4;
    }
 
-   public Collection<Class8375> method20982() {
+   public Collection<ScoreObjective> method20982() {
       return this.field29840.values();
    }
 
@@ -109,11 +109,11 @@ public class Scoreboard {
       return Lists.newArrayList(this.field29842.keySet());
    }
 
-   public void method20985(String var1, Class8375 var2) {
+   public void method20985(String var1, ScoreObjective var2) {
       if (var2 != null) {
          Map var5 = this.field29842.get(var1);
          if (var5 != null) {
-            Class9411 var6 = (Class9411)var5.remove(var2);
+            Score var6 = (Score)var5.remove(var2);
             if (var5.size() >= 1) {
                if (var6 != null) {
                   this.method21004(var1, var2);
@@ -133,25 +133,25 @@ public class Scoreboard {
       }
    }
 
-   public Map<Class8375, Class9411> method20986(String var1) {
+   public Map<ScoreObjective, Score> method20986(String var1) {
       Object var4 = this.field29842.get(var1);
       if (var4 == null) {
          var4 = Maps.newHashMap();
       }
 
-      return (Map<Class8375, Class9411>)var4;
+      return (Map<ScoreObjective, Score>)var4;
    }
 
-   public void method20987(Class8375 var1) {
+   public void method20987(ScoreObjective var1) {
       this.field29840.remove(var1.method29336());
 
       for (int var4 = 0; var4 < 19; var4++) {
-         if (this.method20989(var4) == var1) {
-            this.method20988(var4, (Class8375)null);
+         if (this.getObjectiveInDisplaySlot(var4) == var1) {
+            this.method20988(var4, (ScoreObjective)null);
          }
       }
 
-      List var7 = this.field29841.get(var1.method29337());
+      List var7 = this.field29841.get(var1.getCriteria());
       if (var7 != null) {
          var7.remove(var1);
       }
@@ -163,12 +163,12 @@ public class Scoreboard {
       this.method21001(var1);
    }
 
-   public void method20988(int var1, Class8375 var2) {
+   public void method20988(int var1, ScoreObjective var2) {
       this.field29843[var1] = var2;
    }
 
    @Nullable
-   public Class8375 method20989(int var1) {
+   public ScoreObjective getObjectiveInDisplaySlot(int var1) {
       return this.field29843[var1];
    }
 
@@ -204,7 +204,7 @@ public class Scoreboard {
 
    public boolean addPlayerToTeam(String var1, ScorePlayerTeam var2) {
       if (var1.length() <= 40) {
-         if (this.method20998(var1) != null) {
+         if (this.getPlayersTeam(var1) != null) {
             this.method20994(var1);
          }
 
@@ -216,7 +216,7 @@ public class Scoreboard {
    }
 
    public boolean method20994(String var1) {
-      ScorePlayerTeam var4 = this.method20998(var1);
+      ScorePlayerTeam var4 = this.getPlayersTeam(var1);
       if (var4 == null) {
          return false;
       } else {
@@ -226,7 +226,7 @@ public class Scoreboard {
    }
 
    public void method20995(String var1, ScorePlayerTeam var2) {
-      if (this.method20998(var1) == var2) {
+      if (this.getPlayersTeam(var1) == var2) {
          this.field29845.remove(var1);
          var2.method28575().remove(var1);
       } else {
@@ -243,26 +243,26 @@ public class Scoreboard {
    }
 
    @Nullable
-   public ScorePlayerTeam method20998(String var1) {
+   public ScorePlayerTeam getPlayersTeam(String var1) {
       return this.field29845.get(var1);
    }
 
-   public void method20999(Class8375 var1) {
+   public void method20999(ScoreObjective var1) {
    }
 
-   public void method21000(Class8375 var1) {
+   public void method21000(ScoreObjective var1) {
    }
 
-   public void method21001(Class8375 var1) {
+   public void method21001(ScoreObjective var1) {
    }
 
-   public void method21002(Class9411 var1) {
+   public void onScoreChanged(Score var1) {
    }
 
    public void method21003(String var1) {
    }
 
-   public void method21004(String var1, Class8375 var2) {
+   public void method21004(String var1, ScoreObjective var2) {
    }
 
    public void method21005(ScorePlayerTeam var1) {
@@ -333,7 +333,7 @@ public class Scoreboard {
    public void method21011(Entity var1) {
       if (var1 != null && !(var1 instanceof PlayerEntity) && !var1.isAlive()) {
          String var4 = var1.getCachedUniqueIdString();
-         this.method20985(var4, (Class8375)null);
+         this.method20985(var4, (ScoreObjective)null);
          this.method20994(var4);
       }
    }
@@ -344,12 +344,12 @@ public class Scoreboard {
          .values()
          .stream()
          .map(Map::values)
-         .forEach(var1 -> var1.stream().filter(var0x -> var0x.method36053() != null).forEach(var1x -> {
+         .forEach(var1 -> var1.stream().filter(var0x -> var0x.getObjective() != null).forEach(var1x -> {
                CompoundNBT var4 = new CompoundNBT();
-               var4.putString("Name", var1x.method36054());
-               var4.putString("Objective", var1x.method36053().method29336());
-               var4.putInt("Score", var1x.method36050());
-               var4.putBoolean("Locked", var1x.method36056());
+               var4.putString("Name", var1x.getPlayerName());
+               var4.putString("Objective", var1x.getObjective().method29336());
+               var4.putInt("Score", var1x.getScorePoints());
+               var4.putBoolean("Locked", var1x.isLocked());
                var3.add(var4);
             }));
       return var3;
@@ -358,16 +358,16 @@ public class Scoreboard {
    public void method21013(ListNBT var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
          CompoundNBT var5 = var1.getCompound(var4);
-         Class8375 var6 = this.method20975(var5.getString("Objective"));
+         ScoreObjective var6 = this.method20975(var5.getString("Objective"));
          String var7 = var5.getString("Name");
          if (var7.length() > 40) {
             var7 = var7.substring(0, 40);
          }
 
-         Class9411 var8 = this.method20980(var7, var6);
-         var8.method36052(var5.getInt("Score"));
+         Score var8 = this.method20980(var7, var6);
+         var8.setScorePoints(var5.getInt("Score"));
          if (var5.contains("Locked")) {
-            var8.method36057(var5.getBoolean("Locked"));
+            var8.setLocked(var5.getBoolean("Locked"));
          }
       }
    }

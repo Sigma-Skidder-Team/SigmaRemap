@@ -1922,7 +1922,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    @Nullable
    public Team getTeam() {
-      return this.world.getScoreboard().method20998(this.method2956());
+      return this.world.getScoreboard().getPlayersTeam(this.getScoreboardName());
    }
 
    public boolean isOnSameTeam(Entity var1) {
@@ -2276,7 +2276,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return this.cachedUniqueIdString;
    }
 
-   public String method2956() {
+   public String getScoreboardName() {
       return this.cachedUniqueIdString;
    }
 
@@ -2294,7 +2294,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    @Override
    public ITextComponent getDisplayName() {
-      return ScorePlayerTeam.method28577(this.getTeam(), this.getName())
+      return ScorePlayerTeam.func_237500_a_(this.getTeam(), this.getName())
             .modifyStyle(var1 -> var1.setHoverEvent(this.method3388()).setInsertion(this.getCachedUniqueIdString()));
    }
 

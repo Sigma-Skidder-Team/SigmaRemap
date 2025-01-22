@@ -32,10 +32,10 @@ public class Class9263 implements ArgumentType<String> {
       return new Class9263();
    }
 
-   public static Class8375 method34861(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
+   public static ScoreObjective method34861(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       String var4 = (String)var0.getArgument(var1, String.class);
       ServerScoreboard var5 = ((CommandSource)var0.getSource()).getServer().method1409();
-      Class8375 var6 = var5.method20976(var4);
+      ScoreObjective var6 = var5.method20976(var4);
       if (var6 != null) {
          return var6;
       } else {
@@ -43,9 +43,9 @@ public class Class9263 implements ArgumentType<String> {
       }
    }
 
-   public static Class8375 method34862(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
-      Class8375 var4 = method34861(var0, var1);
-      if (!var4.method29337().method33281()) {
+   public static ScoreObjective method34862(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
+      ScoreObjective var4 = method34861(var0, var1);
+      if (!var4.getCriteria().isReadOnly()) {
          return var4;
       } else {
          throw field42600.create(var4.method29336());

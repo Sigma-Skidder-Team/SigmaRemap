@@ -3,8 +3,8 @@ package net.minecraft.scoreboard;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import mapped.Class2073;
-import mapped.Class8375;
-import mapped.Class9411;
+import mapped.ScoreObjective;
+import mapped.Score;
 import mapped.MinecraftServer;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.IPacket;
@@ -21,7 +21,7 @@ import java.util.Set;
 public class ServerScoreboard extends Scoreboard {
    private static String[] field29847;
    private final MinecraftServer field29848;
-   private final Set<Class8375> field29849 = Sets.newHashSet();
+   private final Set<ScoreObjective> field29849 = Sets.newHashSet();
    private Runnable[] field29850 = new Runnable[0];
 
    public ServerScoreboard(MinecraftServer var1) {
@@ -29,12 +29,12 @@ public class ServerScoreboard extends Scoreboard {
    }
 
    @Override
-   public void method21002(Class9411 var1) {
-      super.method21002(var1);
-      if (this.field29849.contains(var1.method36053())) {
+   public void onScoreChanged(Score var1) {
+      super.onScoreChanged(var1);
+      if (this.field29849.contains(var1.getObjective())) {
          this.field29848
             .getPlayerList()
-            .method19456(new SUpdateScorePacket(Class2073.field13503, var1.method36053().method29336(), var1.method36054(), var1.method36050()));
+            .method19456(new SUpdateScorePacket(Class2073.field13503, var1.getObjective().method29336(), var1.getPlayerName(), var1.getScorePoints()));
       }
 
       this.method21022();
@@ -48,7 +48,7 @@ public class ServerScoreboard extends Scoreboard {
    }
 
    @Override
-   public void method21004(String var1, Class8375 var2) {
+   public void method21004(String var1, ScoreObjective var2) {
       super.method21004(var1, var2);
       if (this.field29849.contains(var2)) {
          this.field29848.getPlayerList().method19456(new SUpdateScorePacket(Class2073.field13504, var2.method29336(), var1, 0));
@@ -58,8 +58,8 @@ public class ServerScoreboard extends Scoreboard {
    }
 
    @Override
-   public void method20988(int var1, Class8375 var2) {
-      Class8375 var5 = this.method20989(var1);
+   public void method20988(int var1, ScoreObjective var2) {
+      ScoreObjective var5 = this.getObjectiveInDisplaySlot(var1);
       super.method20988(var1, var2);
       if (var5 != var2 && var5 != null) {
          if (this.method21027(var5) <= 0) {
@@ -99,13 +99,13 @@ public class ServerScoreboard extends Scoreboard {
    }
 
    @Override
-   public void method20999(Class8375 var1) {
+   public void method20999(ScoreObjective var1) {
       super.method20999(var1);
       this.method21022();
    }
 
    @Override
-   public void method21000(Class8375 var1) {
+   public void method21000(ScoreObjective var1) {
       super.method21000(var1);
       if (this.field29849.contains(var1)) {
          this.field29848.getPlayerList().method19456(new SScoreboardObjectivePacket(var1, 2));
@@ -115,7 +115,7 @@ public class ServerScoreboard extends Scoreboard {
    }
 
    @Override
-   public void method21001(Class8375 var1) {
+   public void method21001(ScoreObjective var1) {
       super.method21001(var1);
       if (this.field29849.contains(var1)) {
          this.method21026(var1);
@@ -156,24 +156,24 @@ public class ServerScoreboard extends Scoreboard {
       }
    }
 
-   public List<IPacket<?>> method21023(Class8375 var1) {
+   public List<IPacket<?>> method21023(ScoreObjective var1) {
       ArrayList var4 = Lists.newArrayList();
       var4.add(new SScoreboardObjectivePacket(var1, 0));
 
       for (int var5 = 0; var5 < 19; var5++) {
-         if (this.method20989(var5) == var1) {
+         if (this.getObjectiveInDisplaySlot(var5) == var1) {
             var4.add(new SDisplayObjectivePacket(var5, var1));
          }
       }
 
-      for (Class9411 var6 : this.method20981(var1)) {
-         var4.add(new SUpdateScorePacket(Class2073.field13503, var6.method36053().method29336(), var6.method36054(), var6.method36050()));
+      for (Score var6 : this.getSortedScores(var1)) {
+         var4.add(new SUpdateScorePacket(Class2073.field13503, var6.getObjective().method29336(), var6.getPlayerName(), var6.getScorePoints()));
       }
 
       return var4;
    }
 
-   public void method21024(Class8375 var1) {
+   public void method21024(ScoreObjective var1) {
       List<IPacket<?>> var4 = this.method21023(var1);
 
       for (ServerPlayerEntity var6 : this.field29848.getPlayerList().getPlayers()) {
@@ -185,12 +185,12 @@ public class ServerScoreboard extends Scoreboard {
       this.field29849.add(var1);
    }
 
-   public List<IPacket<?>> method21025(Class8375 var1) {
+   public List<IPacket<?>> method21025(ScoreObjective var1) {
       ArrayList var4 = Lists.newArrayList();
       var4.add(new SScoreboardObjectivePacket(var1, 1));
 
       for (int var5 = 0; var5 < 19; var5++) {
-         if (this.method20989(var5) == var1) {
+         if (this.getObjectiveInDisplaySlot(var5) == var1) {
             var4.add(new SDisplayObjectivePacket(var5, var1));
          }
       }
@@ -198,7 +198,7 @@ public class ServerScoreboard extends Scoreboard {
       return var4;
    }
 
-   public void method21026(Class8375 var1) {
+   public void method21026(ScoreObjective var1) {
       List<IPacket<?>> var4 = this.method21025(var1);
 
       for (ServerPlayerEntity var6 : this.field29848.getPlayerList().getPlayers()) {
@@ -210,11 +210,11 @@ public class ServerScoreboard extends Scoreboard {
       this.field29849.remove(var1);
    }
 
-   public int method21027(Class8375 var1) {
+   public int method21027(ScoreObjective var1) {
       int var4 = 0;
 
       for (int var5 = 0; var5 < 19; var5++) {
-         if (this.method20989(var5) == var1) {
+         if (this.getObjectiveInDisplaySlot(var5) == var1) {
             var4++;
          }
       }

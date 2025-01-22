@@ -53,9 +53,9 @@ public class Class6888 implements ArgumentType<Class8420> {
 
    private static Class8420 method21030(String var0) throws CommandSyntaxException {
       return (!var0.equals("><") ? method21031(var0) : (var0x, var1) -> {
-         int var4 = var0x.method36050();
-         var0x.method36052(var1.method36050());
-         var1.method36052(var4);
+         int var4 = var0x.getScorePoints();
+         var0x.setScorePoints(var1.getScorePoints());
+         var1.setScorePoints(var4);
       });
    }
 

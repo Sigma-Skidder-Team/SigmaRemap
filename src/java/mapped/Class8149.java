@@ -386,7 +386,7 @@ public class Class8149 {
          return false;
       } else {
          if (this.field35050 != null) {
-            String var6 = var2.method2956();
+            String var6 = var2.getScoreboardName();
             if (!this.field35050.method23084(var6)) {
                return false;
             }

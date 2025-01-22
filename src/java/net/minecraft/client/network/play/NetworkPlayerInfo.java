@@ -84,7 +84,7 @@ public class NetworkPlayerInfo {
 
    @Nullable
    public ScorePlayerTeam method19976() {
-      return Minecraft.getInstance().world.getScoreboard().method20998(this.method19966().getName());
+      return Minecraft.getInstance().world.getScoreboard().getPlayersTeam(this.method19966().getName());
    }
 
    public void method19977() {

@@ -121,7 +121,7 @@ public class Class7535 extends WorldSavedData {
       for (int var4 = 0; var4 < 19; var4++) {
          if (var1.contains("slot_" + var4, 8)) {
             String var5 = var1.getString("slot_" + var4);
-            Class8375 var6 = this.field32341.method20976(var5);
+            ScoreObjective var6 = this.field32341.method20976(var5);
             this.field32341.method20988(var4, var6);
          }
       }
@@ -193,7 +193,7 @@ public class Class7535 extends WorldSavedData {
       boolean var5 = false;
 
       for (int var6 = 0; var6 < 19; var6++) {
-         Class8375 var7 = this.field32341.method20989(var6);
+         ScoreObjective var7 = this.field32341.getObjectiveInDisplaySlot(var6);
          if (var7 != null) {
             var4.putString("slot_" + var6, var7.method29336());
             var5 = true;
@@ -208,11 +208,11 @@ public class Class7535 extends WorldSavedData {
    public ListNBT method24636() {
       ListNBT var3 = new ListNBT();
 
-      for (Class8375 var5 : this.field32341.method20982()) {
-         if (var5.method29337() != null) {
+      for (ScoreObjective var5 : this.field32341.method20982()) {
+         if (var5.getCriteria() != null) {
             CompoundNBT var6 = new CompoundNBT();
             var6.putString("Name", var5.method29336());
-            var6.putString("CriteriaName", var5.method29337().method33280());
+            var6.putString("CriteriaName", var5.getCriteria().method33280());
             var6.putString("DisplayName", ITextComponent.Serializer.toJson(var5.method29338()));
             var6.putString("RenderType", var5.method29342().method9088());
             var3.add(var6);

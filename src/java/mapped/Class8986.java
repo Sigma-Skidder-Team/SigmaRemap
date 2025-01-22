@@ -27,7 +27,7 @@ public class Class8986 implements Class8985 {
          ArrayList var6 = Lists.newArrayList();
 
          for (Entity var8 : var5) {
-            var6.add(var8.method2956());
+            var6.add(var8.getScoreboardName());
          }
 
          return var6;

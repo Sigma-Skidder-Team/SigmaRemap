@@ -110,7 +110,7 @@ public class Class7697 {
                                     var0x -> method25328(
                                           (CommandSource)var0x.getSource(),
                                           Class9062.method33747(var0x, "team"),
-                                          Collections.<String>singleton(((CommandSource)var0x.getSource()).method20174().method2956())
+                                          Collections.<String>singleton(((CommandSource)var0x.getSource()).method20174().getScoreboardName())
                                        )
                                  ))
                               .then(

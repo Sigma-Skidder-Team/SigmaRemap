@@ -1994,7 +1994,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       String var5 = var1.method17510();
       if (var1.method17512() != 0) {
          if (var4.method20974(var5)) {
-            Class8375 var6 = var4.method20976(var5);
+            ScoreObjective var6 = var4.method20976(var5);
             if (var1.method17512() != 1) {
                if (var1.method17512() == 2) {
                   var6.method29343(var1.method17513());
@@ -2016,9 +2016,9 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       String var5 = var1.method17474();
       switch (Class8047.field34567[var1.method17476().ordinal()]) {
          case 1:
-            Class8375 var6 = var4.method20975(var5);
-            Class9411 var7 = var4.method20980(var1.method17473(), var6);
-            var7.method36052(var1.method17475());
+            ScoreObjective var6 = var4.method20975(var5);
+            Score var7 = var4.method20980(var1.method17473(), var6);
+            var7.setScorePoints(var1.method17475());
             break;
          case 2:
             var4.method20985(var1.method17473(), var4.method20976(var5));
@@ -2030,7 +2030,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Scoreboard var4 = this.field23273.getScoreboard();
       String var5 = var1.method17647();
-      Class8375 var6 = var5 != null ? var4.method20975(var5) : null;
+      ScoreObjective var6 = var5 != null ? var4.method20975(var5) : null;
       var4.method20988(var1.method17646(), var6);
    }
 

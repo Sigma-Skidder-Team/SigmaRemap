@@ -96,7 +96,7 @@ public class ScorePlayerTeam extends Team {
       return var4;
    }
 
-   public static IFormattableTextComponent method28577(Team var0, ITextComponent var1) {
+   public static IFormattableTextComponent func_237500_a_(Team var0, ITextComponent var1) {
       return var0 != null ? var0.method28576(var1) : var1.deepCopy();
    }
 

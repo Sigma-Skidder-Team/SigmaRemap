@@ -39,7 +39,7 @@ public class Class1265 extends AbstractGui {
    public ITextComponent method5917(NetworkPlayerInfo var1) {
       return var1.method19979() == null
             ? this.method5918(var1,
-                  ScorePlayerTeam.method28577(var1.method19976(),
+                  ScorePlayerTeam.func_237500_a_(var1.method19976(),
                         new StringTextComponent(var1.method19966().getName())))
             : this.method5918(var1, var1.method19979().deepCopy());
    }
@@ -56,7 +56,7 @@ public class Class1265 extends AbstractGui {
       this.field6697 = var1;
    }
 
-   public void method5920(MatrixStack var1, int var2, Scoreboard var3, Class8375 var4) {
+   public void method5920(MatrixStack var1, int var2, Scoreboard var3, ScoreObjective var4) {
       ClientPlayNetHandler var7 = this.field6692.player.connection;
       List<NetworkPlayerInfo> var8 = field6691.sortedCopy(var7.method15790());
       int var9 = 0;
@@ -67,7 +67,7 @@ public class Class1265 extends AbstractGui {
          var9 = Math.max(var9, var13);
          if (var4 != null && var4.method29342() != Class2316.field15869) {
             var13 = this.field6692.fontRenderer
-                  .getStringWidth(" " + var3.method20980(var12.method19966().getName(), var4).method36050());
+                  .getStringWidth(" " + var3.method20980(var12.method19966().getName(), var4).getScorePoints());
             var10 = Math.max(var10, var13);
          }
       }
@@ -221,9 +221,9 @@ public class Class1265 extends AbstractGui {
       this.method5703(this.method5702() - 100);
    }
 
-   private void method5922(Class8375 var1, int var2, String var3, int var4, int var5, NetworkPlayerInfo var6,
-         MatrixStack var7) {
-      int var10 = var1.method29335().method20980(var3, var1).method36050();
+   private void method5922(ScoreObjective var1, int var2, String var3, int var4, int var5, NetworkPlayerInfo var6,
+                           MatrixStack var7) {
+      int var10 = var1.method29335().method20980(var3, var1).getScorePoints();
       if (var1.method29342() != Class2316.field15869) {
          String var11 = TextFormatting.YELLOW + "" + var10;
          this.field6692.fontRenderer.drawStringWithShadow(var7, var11,

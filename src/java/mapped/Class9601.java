@@ -301,12 +301,12 @@ public class Class9601 {
       ArrayList var5 = Lists.newArrayList();
       ServerScoreboard var6 = var0.getServer().method1409();
 
-      for (Class8375 var8 : var6.method20982()) {
-         if (var8.method29337() == Class9008.field41190) {
+      for (ScoreObjective var8 : var6.method20982()) {
+         if (var8.getCriteria() == Class9008.field41190) {
             boolean var9 = false;
 
             for (String var11 : var1) {
-               if (!var6.method20979(var11, var8) || var6.method20980(var11, var8).method36056()) {
+               if (!var6.method20979(var11, var8) || var6.method20980(var11, var8).isLocked()) {
                   var9 = true;
                   break;
                }
@@ -321,30 +321,30 @@ public class Class9601 {
       return ISuggestionProvider.suggest(var5, var2);
    }
 
-   private static int method37274(CommandSource var0, String var1, Class8375 var2) throws CommandSyntaxException {
+   private static int method37274(CommandSource var0, String var1, ScoreObjective var2) throws CommandSyntaxException {
       ServerScoreboard var5 = var0.getServer().method1409();
       if (var5.method20979(var1, var2)) {
-         Class9411 var6 = var5.method20980(var1, var2);
-         var0.sendFeedback(new TranslationTextComponent("commands.scoreboard.players.get.success", var1, var6.method36050(), var2.method29340()), false);
-         return var6.method36050();
+         Score var6 = var5.method20980(var1, var2);
+         var0.sendFeedback(new TranslationTextComponent("commands.scoreboard.players.get.success", var1, var6.getScorePoints(), var2.method29340()), false);
+         return var6.getScorePoints();
       } else {
          throw field44917.create(var2.method29336(), var1);
       }
    }
 
-   private static int method37275(CommandSource var0, Collection<String> var1, Class8375 var2, Class8420 var3, Collection<String> var4, Class8375 var5) throws CommandSyntaxException {
+   private static int method37275(CommandSource var0, Collection<String> var1, ScoreObjective var2, Class8420 var3, Collection<String> var4, ScoreObjective var5) throws CommandSyntaxException {
       ServerScoreboard var8 = var0.getServer().method1409();
       int var9 = 0;
 
       for (String var11 : var1) {
-         Class9411 var12 = var8.method20980(var11, var2);
+         Score var12 = var8.method20980(var11, var2);
 
          for (String var14 : var4) {
-            Class9411 var15 = var8.method20980(var14, var5);
+            Score var15 = var8.method20980(var14, var5);
             var3.method29592(var12, var15);
          }
 
-         var9 += var12.method36050();
+         var9 += var12.getScorePoints();
       }
 
       if (var1.size() != 1) {
@@ -358,15 +358,15 @@ public class Class9601 {
       return var9;
    }
 
-   private static int method37276(CommandSource var0, Collection<String> var1, Class8375 var2) throws CommandSyntaxException {
-      if (var2.method29337() == Class9008.field41190) {
+   private static int method37276(CommandSource var0, Collection<String> var1, ScoreObjective var2) throws CommandSyntaxException {
+      if (var2.getCriteria() == Class9008.field41190) {
          ServerScoreboard var5 = var0.getServer().method1409();
          int var6 = 0;
 
          for (String var8 : var1) {
-            Class9411 var9 = var5.method20980(var8, var2);
-            if (var9.method36056()) {
-               var9.method36057(false);
+            Score var9 = var5.method20980(var8, var2);
+            if (var9.isLocked()) {
+               var9.setLocked(false);
                var6++;
             }
          }
@@ -393,7 +393,7 @@ public class Class9601 {
       ServerScoreboard var4 = var0.getServer().method1409();
 
       for (String var6 : var1) {
-         var4.method20985(var6, (Class8375)null);
+         var4.method20985(var6, (ScoreObjective)null);
       }
 
       if (var1.size() != 1) {
@@ -405,7 +405,7 @@ public class Class9601 {
       return var1.size();
    }
 
-   private static int method37278(CommandSource var0, Collection<String> var1, Class8375 var2) {
+   private static int method37278(CommandSource var0, Collection<String> var1, ScoreObjective var2) {
       ServerScoreboard var5 = var0.getServer().method1409();
 
       for (String var7 : var1) {
@@ -421,12 +421,12 @@ public class Class9601 {
       return var1.size();
    }
 
-   private static int method37279(CommandSource var0, Collection<String> var1, Class8375 var2, int var3) {
+   private static int method37279(CommandSource var0, Collection<String> var1, ScoreObjective var2, int var3) {
       ServerScoreboard var6 = var0.getServer().method1409();
 
       for (String var8 : var1) {
-         Class9411 var9 = var6.method20980(var8, var2);
-         var9.method36052(var3);
+         Score var9 = var6.method20980(var8, var2);
+         var9.setScorePoints(var3);
       }
 
       if (var1.size() != 1) {
@@ -440,14 +440,14 @@ public class Class9601 {
       return var3 * var1.size();
    }
 
-   private static int method37280(CommandSource var0, Collection<String> var1, Class8375 var2, int var3) {
+   private static int method37280(CommandSource var0, Collection<String> var1, ScoreObjective var2, int var3) {
       ServerScoreboard var6 = var0.getServer().method1409();
       int var7 = 0;
 
       for (String var9 : var1) {
-         Class9411 var10 = var6.method20980(var9, var2);
-         var10.method36052(var10.method36050() + var3);
-         var7 += var10.method36050();
+         Score var10 = var6.method20980(var9, var2);
+         var10.setScorePoints(var10.getScorePoints() + var3);
+         var7 += var10.getScorePoints();
       }
 
       if (var1.size() != 1) {
@@ -461,14 +461,14 @@ public class Class9601 {
       return var7;
    }
 
-   private static int method37281(CommandSource var0, Collection<String> var1, Class8375 var2, int var3) {
+   private static int method37281(CommandSource var0, Collection<String> var1, ScoreObjective var2, int var3) {
       ServerScoreboard var6 = var0.getServer().method1409();
       int var7 = 0;
 
       for (String var9 : var1) {
-         Class9411 var10 = var6.method20980(var9, var2);
-         var10.method36052(var10.method36050() - var3);
-         var7 += var10.method36050();
+         Score var10 = var6.method20980(var9, var2);
+         var10.setScorePoints(var10.getScorePoints() - var3);
+         var7 += var10.getScorePoints();
       }
 
       if (var1.size() != 1) {
@@ -496,14 +496,14 @@ public class Class9601 {
    }
 
    private static int method37283(CommandSource var0, String var1) {
-      Map<Class8375, Class9411> var4 = var0.getServer().method1409().method20986(var1);
+      Map<ScoreObjective, Score> var4 = var0.getServer().method1409().method20986(var1);
       if (!var4.isEmpty()) {
          var0.sendFeedback(new TranslationTextComponent("commands.scoreboard.players.list.entity.success", var1, var4.size()), false);
 
          for (Entry var6 : var4.entrySet()) {
             var0.sendFeedback(
                new TranslationTextComponent(
-                  "commands.scoreboard.players.list.entity.entry", ((Class8375)var6.getKey()).method29340(), ((Class9411)var6.getValue()).method36050()
+                  "commands.scoreboard.players.list.entity.entry", ((ScoreObjective)var6.getKey()).method29340(), ((Score)var6.getValue()).getScorePoints()
                ),
                false
             );
@@ -517,8 +517,8 @@ public class Class9601 {
 
    private static int method37284(CommandSource var0, int var1) throws CommandSyntaxException {
       ServerScoreboard var4 = var0.getServer().method1409();
-      if (var4.method20989(var1) != null) {
-         var4.method20988(var1, (Class8375)null);
+      if (var4.getObjectiveInDisplaySlot(var1) != null) {
+         var4.method20988(var1, (ScoreObjective)null);
          var0.sendFeedback(new TranslationTextComponent("commands.scoreboard.objectives.display.cleared", Scoreboard.method21010()[var1]), true);
          return 0;
       } else {
@@ -526,9 +526,9 @@ public class Class9601 {
       }
    }
 
-   private static int method37285(CommandSource var0, int var1, Class8375 var2) throws CommandSyntaxException {
+   private static int method37285(CommandSource var0, int var1, ScoreObjective var2) throws CommandSyntaxException {
       ServerScoreboard var5 = var0.getServer().method1409();
-      if (var5.method20989(var1) != var2) {
+      if (var5.getObjectiveInDisplaySlot(var1) != var2) {
          var5.method20988(var1, var2);
          var0.sendFeedback(new TranslationTextComponent("commands.scoreboard.objectives.display.set", Scoreboard.method21010()[var1], var2.method29338()), true);
          return 0;
@@ -537,7 +537,7 @@ public class Class9601 {
       }
    }
 
-   private static int method37286(CommandSource var0, Class8375 var1, ITextComponent var2) {
+   private static int method37286(CommandSource var0, ScoreObjective var1, ITextComponent var2) {
       if (!var1.method29338().equals(var2)) {
          var1.method29341(var2);
          var0.sendFeedback(new TranslationTextComponent("commands.scoreboard.objectives.modify.displayname", var1.method29336(), var1.method29340()), true);
@@ -546,7 +546,7 @@ public class Class9601 {
       return 0;
    }
 
-   private static int method37287(CommandSource var0, Class8375 var1, Class2316 var2) {
+   private static int method37287(CommandSource var0, ScoreObjective var1, Class2316 var2) {
       if (var1.method29342() != var2) {
          var1.method29343(var2);
          var0.sendFeedback(new TranslationTextComponent("commands.scoreboard.objectives.modify.rendertype", var1.method29340()), true);
@@ -555,7 +555,7 @@ public class Class9601 {
       return 0;
    }
 
-   private static int method37288(CommandSource var0, Class8375 var1) {
+   private static int method37288(CommandSource var0, ScoreObjective var1) {
       ServerScoreboard var4 = var0.getServer().method1409();
       var4.method20987(var1);
       var0.sendFeedback(new TranslationTextComponent("commands.scoreboard.objectives.remove.success", var1.method29340()), true);
@@ -567,7 +567,7 @@ public class Class9601 {
       if (var6.method20976(var1) == null) {
          if (var1.length() <= 16) {
             var6.method20977(var1, var2, var3, var2.method33282());
-            Class8375 var7 = var6.method20976(var1);
+            ScoreObjective var7 = var6.method20976(var1);
             var0.sendFeedback(new TranslationTextComponent("commands.scoreboard.objectives.add.success", var7.method29340()), true);
             return var6.method20982().size();
          } else {
@@ -583,7 +583,7 @@ public class Class9601 {
       if (!var3.isEmpty()) {
          var0.sendFeedback(
             new TranslationTextComponent(
-               "commands.scoreboard.objectives.list.success", var3.size(), TextComponentUtils.func_240649_b_(var3, Class8375::method29340)
+               "commands.scoreboard.objectives.list.success", var3.size(), TextComponentUtils.func_240649_b_(var3, ScoreObjective::method29340)
             ),
             false
          );

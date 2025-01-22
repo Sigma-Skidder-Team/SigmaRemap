@@ -6,7 +6,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextComponentUtils;
 import net.minecraft.util.text.event.HoverEvent;
 
-public class Class8375 {
+public class ScoreObjective {
    private static String[] field35938;
    private final Scoreboard field35939;
    private final String field35940;
@@ -15,7 +15,7 @@ public class Class8375 {
    private ITextComponent field35943;
    private Class2316 field35944;
 
-   public Class8375(Scoreboard var1, String var2, Class9008 var3, ITextComponent var4, Class2316 var5) {
+   public ScoreObjective(Scoreboard var1, String var2, Class9008 var3, ITextComponent var4, Class2316 var5) {
       this.field35939 = var1;
       this.field35940 = var2;
       this.field35941 = var3;
@@ -32,7 +32,7 @@ public class Class8375 {
       return this.field35940;
    }
 
-   public Class9008 method29337() {
+   public Class9008 getCriteria() {
       return this.field35941;
    }
 

@@ -10,8 +10,8 @@ import com.mentalfrostbyte.jello.module.impl.render.NameProtect;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.Class7200;
-import mapped.Class8375;
-import mapped.Class9411;
+import mapped.ScoreObjective;
+import mapped.Score;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SChatPacket;
 import net.minecraft.network.play.server.STeamsPacket;
@@ -81,23 +81,23 @@ public class HypixelGamePlay extends Module {
                             || var6.toLowerCase().contains("was struck down by " + var7 + ".")
                             || var6.toLowerCase().contains("be sent to davy jones' locker by " + var7 + ".")) {
                         Scoreboard var34 = mc.world.getScoreboard();
-                        Class8375 var11 = null;
-                        ScorePlayerTeam var12 = var34.method20998(mc.player.method2956());
+                        ScoreObjective var11 = null;
+                        ScorePlayerTeam var12 = var34.getPlayersTeam(mc.player.getScoreboardName());
                         if (var12 != null) {
                             int var13 = var12.getColor().getColorIndex();
                             if (var13 >= 0) {
-                                var11 = var34.method20989(3 + var13);
+                                var11 = var34.getObjectiveInDisplaySlot(3 + var13);
                             }
                         }
 
-                        Class8375 var38 = var11 != null ? var11 : var34.method20989(1);
-                        Collection<Class9411> var14 = var34.method20981(var38);
+                        ScoreObjective var38 = var11 != null ? var11 : var34.getObjectiveInDisplaySlot(1);
+                        Collection<Score> var14 = var34.getSortedScores(var38);
                         int var15 = -1;
 
                         label155:
-                        for (Class9411 var17 : var14) {
-                            ScorePlayerTeam var18 = var34.method20998(var17.method36054());
-                            String var19 = ScorePlayerTeam.method28577(var18, new StringTextComponent(var17.method36054())).getString().replaceAll("§t", "");
+                        for (Score var17 : var14) {
+                            ScorePlayerTeam var18 = var34.getPlayersTeam(var17.getPlayerName());
+                            String var19 = ScorePlayerTeam.func_237500_a_(var18, new StringTextComponent(var17.getPlayerName())).getString().replaceAll("§t", "");
 
                             for (String var22 : new ArrayList<String>(Arrays.asList("players left", "joueurs restants", "spieler verbleibend"))) {
                                 if (var19.toLowerCase().contains(var22 + ":")) {

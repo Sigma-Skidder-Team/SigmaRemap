@@ -342,13 +342,13 @@ public class Class6137 {
       return var1;
    }
 
-   private static CommandSource method18960(CommandSource var0, Collection<String> var1, Class8375 var2, boolean var3) {
+   private static CommandSource method18960(CommandSource var0, Collection<String> var1, ScoreObjective var2, boolean var3) {
       ServerScoreboard var6 = var0.getServer().method1409();
       return var0.method20161((var4, var5, var6x) -> {
          for (String var10 : var1) {
-            Class9411 var11 = var6.method20980(var10, var2);
+            Score var11 = var6.method20980(var10, var2);
             int var12 = !var3 ? (!var5 ? 0 : 1) : var6x;
-            var11.method36052(var12);
+            var11.setScorePoints(var12);
          }
       }, field27534);
    }
@@ -566,14 +566,14 @@ public class Class6137 {
 
    private static boolean method18966(CommandContext<CommandSource> var0, BiPredicate<Integer, Integer> var1) throws CommandSyntaxException {
       String var4 = Class7591.method24858(var0, "target");
-      Class8375 var5 = Class9263.method34861(var0, "targetObjective");
+      ScoreObjective var5 = Class9263.method34861(var0, "targetObjective");
       String var6 = Class7591.method24858(var0, "source");
-      Class8375 var7 = Class9263.method34861(var0, "sourceObjective");
+      ScoreObjective var7 = Class9263.method34861(var0, "sourceObjective");
       ServerScoreboard var8 = ((CommandSource)var0.getSource()).getServer().method1409();
       if (var8.method20979(var4, var5) && var8.method20979(var6, var7)) {
-         Class9411 var9 = var8.method20980(var4, var5);
-         Class9411 var10 = var8.method20980(var6, var7);
-         return var1.test(var9.method36050(), var10.method36050());
+         Score var9 = var8.method20980(var4, var5);
+         Score var10 = var8.method20980(var6, var7);
+         return var1.test(var9.getScorePoints(), var10.getScorePoints());
       } else {
          return false;
       }
@@ -581,9 +581,9 @@ public class Class6137 {
 
    private static boolean method18967(CommandContext<CommandSource> var0, Class8840 var1) throws CommandSyntaxException {
       String var4 = Class7591.method24858(var0, "target");
-      Class8375 var5 = Class9263.method34861(var0, "targetObjective");
+      ScoreObjective var5 = Class9263.method34861(var0, "targetObjective");
       ServerScoreboard var6 = ((CommandSource)var0.getSource()).getServer().method1409();
-      return var6.method20979(var4, var5) ? var1.method32015(var6.method20980(var4, var5).method36050()) : false;
+      return var6.method20979(var4, var5) ? var1.method32015(var6.method20980(var4, var5).getScorePoints()) : false;
    }
 
    private static boolean method18968(CommandSource var0, ILootCondition var1) {
