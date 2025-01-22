@@ -149,6 +149,11 @@ public class IronGolemEntity extends Class1056 implements IAngerable {
    }
 
    @Override
+   public void method3016(PlayerEntity var1) {
+
+   }
+
+   @Override
    public void method4347(int var1) {
       this.field5853 = var1;
    }

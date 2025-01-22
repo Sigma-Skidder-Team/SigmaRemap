@@ -17,6 +17,7 @@ import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.*;
+import net.minecraft.util.text.TextFormatting;
 import net.optifine.Config;
 import net.optifine.config.IteratableOptionOF;
 

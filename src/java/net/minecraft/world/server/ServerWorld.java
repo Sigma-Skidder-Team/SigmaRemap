@@ -1429,4 +1429,9 @@ public class ServerWorld extends World implements ISeedReader {
          .forEach(var1 -> var0.setBlockState(var1, Blocks.AIR.getDefaultState()));
       BlockPos.method8364(var4 - 2, var5, var6 - 2, var4 + 2, var5, var6 + 2).forEach(var1 -> var0.setBlockState(var1, Blocks.OBSIDIAN.getDefaultState()));
    }
+
+   @Override
+   public BlockPos method7006(Heightmap.Type var1, BlockPos var2) {
+      return null;
+   }
 }

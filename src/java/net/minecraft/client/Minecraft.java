@@ -27,7 +27,6 @@ import com.mojang.serialization.Lifecycle;
 import de.florianmichael.viamcp.ViaMCP;
 import de.florianmichael.viamcp.fixes.AttackOrder;
 import mapped.*;
-import mapped.TextFormatting;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.audio.BackgroundMusicSelector;

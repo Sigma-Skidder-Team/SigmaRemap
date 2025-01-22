@@ -362,6 +362,11 @@ public class WorldGenRegion implements ISeedReader {
    }
 
    @Override
+   public BlockPos method7006(Heightmap.Type var1, BlockPos var2) {
+      return null;
+   }
+
+   @Override
    public <T extends Entity> List<T> getEntitiesInAABBexcluding(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       return Collections.<T>emptyList();
    }

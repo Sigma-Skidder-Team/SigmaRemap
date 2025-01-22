@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.base.Preconditions;
+import net.minecraft.util.text.TextFormatting;
+
 import java.util.ArrayList;
 import java.util.List;
 

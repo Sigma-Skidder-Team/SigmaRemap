@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.text.TextFormatting;
+
 // $VF: synthetic class
 public class Class8362 {
    private static String[] field35912;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.text.TextFormatting;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

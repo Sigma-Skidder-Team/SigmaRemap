@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -335,6 +336,11 @@ public class BeeEntity extends AnimalEntity implements IAngerable, Class1016 {
    @Override
    public void method4346() {
       this.method4347(field5686.method29319(this.rand));
+   }
+
+   @Override
+   public void method3016(PlayerEntity var1) {
+
    }
 
    private boolean method4431(BlockPos var1) {
