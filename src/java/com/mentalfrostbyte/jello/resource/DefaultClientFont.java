@@ -31,22 +31,22 @@ public class DefaultClientFont extends TrueTypeFont {
    }
 
    @Override
-   public int method23941(String var1) {
+   public int getHeight(String var1) {
       return 9 * this.field31945;
    }
 
    @Override
-   public int method23943() {
+   public int getLineHeight() {
       return 9 * this.field31945;
    }
 
    @Override
-   public void method23937(float var1, float var2, String var3, Color var4) {
-      this.method23938(var1, var2, var3, var4, 0, var3.length() - 1);
+   public void drawString(float var1, float var2, String var3, Color var4) {
+      this.drawString(var1, var2, var3, var4, 0, var3.length() - 1);
    }
 
    @Override
-   public void method23938(float var1, float var2, String var3, Color var4, int var5, int var6) {
+   public void drawString(float var1, float var2, String var3, Color var4, int var5, int var6) {
       GL11.glPushMatrix();
       GL11.glScalef((float)this.field31945, (float)this.field31945, 0.0F);
       GL11.glTranslatef(-var1 / (float)this.field31945, -var2 / (float)this.field31945 + 1.0F, 0.0F);
@@ -65,7 +65,7 @@ public class DefaultClientFont extends TrueTypeFont {
    }
 
    @Override
-   public void method23936(float var1, float var2, String var3) {
-      this.method23937(var1, var2, var3, Color.field16442);
+   public void drawString(float var1, float var2, String var3) {
+      this.drawString(var1, var2, var3, Color.field16442);
    }
 }

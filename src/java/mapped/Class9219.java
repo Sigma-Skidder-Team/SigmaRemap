@@ -654,7 +654,7 @@ public class Class9219 {
 
    public void method34648(String var1, float var2, float var3) {
       this.method34591();
-      this.field42432.method23937(var2, var3, var1, this.field42433);
+      this.field42432.drawString(var2, var3, var1, this.field42433);
       this.method34592();
    }
 

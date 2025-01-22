@@ -107,7 +107,7 @@ public class NotificationManager {
                 RenderUtil.drawString(
                         this.field39928,
                         (float) (var7 + this.field39924 + this.field39927 - 2),
-                        (float) (var8 + this.field39927 + this.field39929.method23941(var5.field43603)),
+                        (float) (var8 + this.field39927 + this.field39929.getHeight(var5.field43603)),
                         var5.field43604,
                         var12);
                 RenderUtil.endScissor();

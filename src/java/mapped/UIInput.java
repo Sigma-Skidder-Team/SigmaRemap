@@ -361,9 +361,9 @@ public class UIInput extends Class4278 {
       if (this.method13297()) {
          RenderUtil.drawRect(
                var9 + (float) (var6.isEmpty() ? 0 : -1),
-               (float) (this.yA + this.heightA / 2 - this.font.method23941(var6) / 2 + 2),
+               (float) (this.yA + this.heightA / 2 - this.font.getHeight(var6) / 2 + 2),
                var9 + (float) (var6.isEmpty() ? 1 : 0),
-               (float) (this.yA + this.heightA / 2 + this.font.method23941(var6) / 2 - 1),
+               (float) (this.yA + this.heightA / 2 + this.font.getHeight(var6) / 2 - 1),
                MultiUtilities.applyAlpha(this.textColor.getTextColor(), !var5 ? 0.1F * var1 : 0.8F));
          float var10 = (float) (var7 + this.font.getStringWidth(var6.substring(0, this.field20749))) + this.field20747;
          if (var10 < (float) var7) {
@@ -385,9 +385,9 @@ public class UIInput extends Class4278 {
             + (float) this.font.getStringWidth(var6.substring(0, this.field20751));
       RenderUtil.drawRect(
             var14,
-            (float) (this.yA + this.heightA / 2 - this.font.method23941(var6) / 2),
+            (float) (this.yA + this.heightA / 2 - this.font.getHeight(var6) / 2),
             var11,
-            (float) (this.yA + this.heightA / 2 + this.font.method23941(var6) / 2),
+            (float) (this.yA + this.heightA / 2 + this.font.getHeight(var6) / 2),
             MultiUtilities.applyAlpha(-5516546, var1));
       Class2218 var12 = this.textColor.method19411();
       Class2218 var13 = this.textColor.method19413();

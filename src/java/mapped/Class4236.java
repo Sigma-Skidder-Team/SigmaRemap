@@ -120,9 +120,9 @@ public class Class4236 extends PNGIconButton implements Class4238 {
          RenderUtil.drawImage(
                (1.0F - var13) * (float) font.getStringWidth(var14) / 2.0F + 1.0F
                      - (float) font.getStringWidth(var14) / 2.0F,
-               (float) font.method23941(var14) / 3.0F,
+               (float) font.getHeight(var14) / 3.0F,
                (float) (font.getStringWidth(var14) * 2),
-               (float) font.method23941(var14) * 3.0F,
+               (float) font.getHeight(var14) * 3.0F,
                ResourceList.shadowPNG,
                var5 * 0.6F * var1);
          RenderUtil.drawString(

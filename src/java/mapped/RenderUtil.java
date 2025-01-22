@@ -461,10 +461,10 @@ public class RenderUtil {
 
       switch (Class7820.field33554[var6.ordinal()]) {
          case 1:
-            var11 = -var0.method23941(var3) / 2;
+            var11 = -var0.getHeight(var3) / 2;
             break;
          case 3:
-            var11 = -var0.method23941(var3);
+            var11 = -var0.getHeight(var3);
       }
 
       float var12 = (float) (var4 >> 24 & 0xFF) / 255.0F;
@@ -510,12 +510,12 @@ public class RenderUtil {
       RenderSystem.enableBlend();
       GL11.glBlendFunc(770, 771);
       if (var7) {
-         var0.method23937((float) Math.round(var1 + (float) var10), (float) (Math.round(var2 + (float) var11) + 2),
+         var0.drawString((float) Math.round(var1 + (float) var10), (float) (Math.round(var2 + (float) var11) + 2),
                var3, new Color(0.0F, 0.0F, 0.0F, 0.35F));
       }
 
       if (var3 != null) {
-         var0.method23937((float) Math.round(var1 + (float) var10), (float) Math.round(var2 + (float) var11), var3,
+         var0.drawString((float) Math.round(var1 + (float) var10), (float) Math.round(var2 + (float) var11), var3,
                new Color(var13, var14, var15, var12));
       }
 
@@ -548,10 +548,10 @@ public class RenderUtil {
 
       switch (Class7820.field33554[var6.ordinal()]) {
          case 1:
-            var11 = -var0.method23941(var3) / 2;
+            var11 = -var0.getHeight(var3) / 2;
             break;
          case 3:
-            var11 = -var0.method23941(var3);
+            var11 = -var0.getHeight(var3);
       }
 
       float var12 = (float) (var4 >> 24 & 0xFF) / 255.0F;
@@ -561,7 +561,7 @@ public class RenderUtil {
       RenderSystem.enableBlend();
       GL11.glBlendFunc(770, 771);
       TextureImpl.bindNone();
-      var0.method23937((float) Math.round(var1 + (float) var10), (float) Math.round(var2 + (float) var11), var3,
+      var0.drawString((float) Math.round(var1 + (float) var10), (float) Math.round(var2 + (float) var11), var3,
             new Color(var13, var14, var15, var12));
       RenderSystem.disableBlend();
    }

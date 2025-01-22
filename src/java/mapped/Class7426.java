@@ -168,17 +168,17 @@ public class Class7426 implements Font {
    }
 
    @Override
-   public void method23936(float var1, float var2, String var3) {
-      this.method23937(var1, var2, var3, Color.field16442);
+   public void drawString(float var1, float var2, String var3) {
+      this.drawString(var1, var2, var3, Color.field16442);
    }
 
    @Override
-   public void method23937(float var1, float var2, String var3, Color var4) {
-      this.method23938(var1, var2, var3, var4, 0, var3.length() - 1);
+   public void drawString(float var1, float var2, String var3, Color var4) {
+      this.drawString(var1, var2, var3, var4, 0, var3.length() - 1);
    }
 
    @Override
-   public void method23938(float var1, float var2, String var3, Color var4, int var5, int var6) {
+   public void drawString(float var1, float var2, String var3, Color var4, int var5, int var6) {
       this.field31920.method23522();
       var4.method10392();
       field31916.method18400(var1, var2, 0.0F);
@@ -236,7 +236,7 @@ public class Class7426 implements Font {
             }
          } else {
             var6 = 0;
-            var7 += this.method23943();
+            var7 += this.getLineHeight();
          }
       }
 
@@ -275,7 +275,7 @@ public class Class7426 implements Font {
    }
 
    @Override
-   public int method23941(String var1) {
+   public int getHeight(String var1) {
       Class9685 var4 = null;
       if (this.field31919) {
          var4 = (Class9685)this.field31926.get(var1);
@@ -302,7 +302,7 @@ public class Class7426 implements Font {
          }
       }
 
-      var6 += var5 * this.method23943();
+      var6 += var5 * this.getLineHeight();
       if (var4 != null) {
          var4.field45291 = new Short((short)var6);
       }
@@ -358,7 +358,7 @@ public class Class7426 implements Font {
    }
 
    @Override
-   public int method23943() {
+   public int getLineHeight() {
       return this.field31922;
    }
 

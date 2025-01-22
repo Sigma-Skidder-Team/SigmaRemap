@@ -79,7 +79,7 @@ public class ActiveMods extends Module {
                     var9 = java.awt.Color.HSBtoRGB(var12, 1.0F, 1.0F);
                     var10 = java.awt.Color.HSBtoRGB(var12, 1.0F, 1.0F);
                     int var19 = this.method16857(var16);
-                    int var20 = this.field23963.method23941(var16.getSuffix()) + var8;
+                    int var20 = this.field23963.getHeight(var16.getSuffix()) + var8;
                     float var21 = 1.0F - QuadraticEasing.easeOutQuad(var15.calcPercent(), 0.0F, 1.0F, 1.0F);
                     if (var4.equalsIgnoreCase("Smooth") || var4.equalsIgnoreCase("Both")) {
                         var20 = (int) ((float) var20 * var21);
@@ -120,9 +120,9 @@ public class ActiveMods extends Module {
                             (float) var7,
                             (float) (var6 + var20) - QuadraticEasing.easeOutQuad(var15.calcPercent(), 0.0F, 1.0F, 1.0F)
                     );
-                    this.field23963.method23937((float) (var7 - var19), (float) var6, var16.getSuffix(), new Color(var9));
+                    this.field23963.drawString((float) (var7 - var19), (float) var6, var16.getSuffix(), new Color(var9));
                     this.field23964
-                            .method23937(
+                            .drawString(
                                     (float) (var7 - this.field23964.getStringWidth(this.method16856(var16))),
                                     (float) var6 + 1.6F,
                                     this.method16856(var16),

@@ -74,7 +74,7 @@ public class Class4350 extends Class4278 {
                (float) var4 + var10,
                (float) (this.getYA() + var4 + var9 * var5.method23952()),
                (float) var4 + var10 + 1.0F,
-               (float) (this.getYA() + var4 + var5.method23941(this.field20912) + var9 * var5.method23952()),
+               (float) (this.getYA() + var4 + var5.getHeight(this.field20912) + var9 * var5.method23952()),
                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
          super.draw(var1);
       }
