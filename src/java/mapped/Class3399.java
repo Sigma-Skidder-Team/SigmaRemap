@@ -326,9 +326,9 @@ public class Class3399 extends AbstractFireBlock {
       var2.method12025(Blocks.field36871, 5, 20);
       var2.method12025(Blocks.field36870, 5, 20);
       var2.method12025(Blocks.OAK_STAIRS, 5, 20);
-      var2.method12025(Blocks.field36662, 5, 20);
+      var2.method12025(Blocks.BIRCH_STAIRS, 5, 20);
       var2.method12025(Blocks.SPRUCE_STAIRS, 5, 20);
-      var2.method12025(Blocks.field36663, 5, 20);
+      var2.method12025(Blocks.JUNGLE_STAIRS, 5, 20);
       var2.method12025(Blocks.field36762, 5, 20);
       var2.method12025(Blocks.field36763, 5, 20);
       var2.method12025(Blocks.OAK_LOG, 5, 5);

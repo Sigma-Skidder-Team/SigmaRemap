@@ -298,8 +298,8 @@ public class Items {
    public static final Item field37500 = method30154(Blocks.TRIPWIRE_HOOK, ItemGroup.REDSTONE);
    public static final Item field37501 = method30154(Blocks.EMERALD_BLOCK, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37502 = method30154(Blocks.SPRUCE_STAIRS, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37503 = method30154(Blocks.field36662, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37504 = method30154(Blocks.field36663, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37503 = method30154(Blocks.BIRCH_STAIRS, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37504 = method30154(Blocks.JUNGLE_STAIRS, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37505 = method30154(Blocks.CRIMSON_STAIRS, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37506 = method30154(Blocks.WARPED_STAIRS, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37507 = method30155(new Class3293(Blocks.COMMAND_BLOCK, new Item.Properties().method17780(Class1978.field12888)));

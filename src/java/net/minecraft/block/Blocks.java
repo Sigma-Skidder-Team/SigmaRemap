@@ -1083,8 +1083,8 @@ public class Blocks {
       new Block(AbstractBlock.Properties.withMaterialAndColor(Material.field38967, MaterialColor.field30980).method26635().method26621(5.0F, 6.0F).method26619(SoundType.METAL))
    );
    public static final Block SPRUCE_STAIRS = register("spruce_stairs", new StairsBlock(SPRUCE_PLANKS.getDefaultState(), AbstractBlock.Properties.method26613(SPRUCE_PLANKS)));
-   public static final Block field36662 = register("birch_stairs", new StairsBlock(BIRCH_PLANKS.getDefaultState(), AbstractBlock.Properties.method26613(BIRCH_PLANKS)));
-   public static final Block field36663 = register("jungle_stairs", new StairsBlock(JUNGLE_PLANKS.getDefaultState(), AbstractBlock.Properties.method26613(JUNGLE_PLANKS)));
+   public static final Block BIRCH_STAIRS = register("birch_stairs", new StairsBlock(BIRCH_PLANKS.getDefaultState(), AbstractBlock.Properties.method26613(BIRCH_PLANKS)));
+   public static final Block JUNGLE_STAIRS = register("jungle_stairs", new StairsBlock(JUNGLE_PLANKS.getDefaultState(), AbstractBlock.Properties.method26613(JUNGLE_PLANKS)));
    public static final Block COMMAND_BLOCK = register(
       "command_block",
       new CommandBlockBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38967, MaterialColor.field30973).method26635().method26621(-1.0F, 3600000.0F).method26626())

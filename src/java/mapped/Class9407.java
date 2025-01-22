@@ -4065,7 +4065,7 @@ public class Class9407 {
          .method31171(Blocks.BIRCH_PRESSURE_PLATE)
          .method31172(Blocks.BIRCH_SIGN, Blocks.BIRCH_WALL_SIGN)
          .method31173(Blocks.field36841)
-         .method31174(Blocks.field36662);
+         .method31174(Blocks.BIRCH_STAIRS);
       this.method35847(Blocks.field36873);
       this.method35848(Blocks.BIRCH_TRAPDOOR);
       this.method35850(Blocks.BIRCH_LOG).method36613(Blocks.BIRCH_LOG).method36611(Blocks.BIRCH_WOOD);
@@ -4122,7 +4122,7 @@ public class Class9407 {
          .method31171(Blocks.JUNGLE_PRESSURE_PLATE)
          .method31172(Blocks.JUNGLE_SIGN, Blocks.JUNGLE_WALL_SIGN)
          .method31173(Blocks.field36842)
-         .method31174(Blocks.field36663);
+         .method31174(Blocks.JUNGLE_STAIRS);
       this.method35847(Blocks.field36874);
       this.method35848(Blocks.JUNGLE_TRAPDOOR);
       this.method35850(Blocks.JUNGLE_LOG).method36613(Blocks.JUNGLE_LOG).method36611(Blocks.JUNGLE_WOOD);

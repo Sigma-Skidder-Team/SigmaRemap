@@ -140,7 +140,7 @@ public class Class4447 implements Class4442 {
       method14056(var0, Blocks.field36863, Blocks.BIRCH_PLANKS);
       method14057(var0, Blocks.BIRCH_PRESSURE_PLATE, Blocks.BIRCH_PLANKS);
       method14058(var0, Blocks.field36841, Blocks.BIRCH_PLANKS);
-      method14059(var0, Blocks.field36662, Blocks.BIRCH_PLANKS);
+      method14059(var0, Blocks.BIRCH_STAIRS, Blocks.BIRCH_PLANKS);
       method14060(var0, Blocks.BIRCH_TRAPDOOR, Blocks.BIRCH_PLANKS);
       method14061(var0, Blocks.BIRCH_SIGN, Blocks.BIRCH_PLANKS);
       method14053(var0, Blocks.CRIMSON_BUTTON, Blocks.CRIMSON_PLANKS);
@@ -167,7 +167,7 @@ public class Class4447 implements Class4442 {
       method14056(var0, Blocks.field36864, Blocks.JUNGLE_PLANKS);
       method14057(var0, Blocks.JUNGLE_PRESSURE_PLATE, Blocks.JUNGLE_PLANKS);
       method14058(var0, Blocks.field36842, Blocks.JUNGLE_PLANKS);
-      method14059(var0, Blocks.field36663, Blocks.JUNGLE_PLANKS);
+      method14059(var0, Blocks.JUNGLE_STAIRS, Blocks.JUNGLE_PLANKS);
       method14060(var0, Blocks.JUNGLE_TRAPDOOR, Blocks.JUNGLE_PLANKS);
       method14061(var0, Blocks.JUNGLE_SIGN, Blocks.JUNGLE_PLANKS);
       method14053(var0, Blocks.field36695, Blocks.OAK_PLANKS);

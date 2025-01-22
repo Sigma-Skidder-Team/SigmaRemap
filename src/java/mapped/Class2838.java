@@ -587,8 +587,8 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.TRIPWIRE_HOOK);
       this.method11096(Blocks.EMERALD_BLOCK);
       this.method11096(Blocks.SPRUCE_STAIRS);
-      this.method11096(Blocks.field36662);
-      this.method11096(Blocks.field36663);
+      this.method11096(Blocks.BIRCH_STAIRS);
+      this.method11096(Blocks.JUNGLE_STAIRS);
       this.method11096(Blocks.COBBLESTONE_WALL);
       this.method11096(Blocks.MOSSY_COBBLESTONE_WALL);
       this.method11096(Blocks.FLOWER_POT);

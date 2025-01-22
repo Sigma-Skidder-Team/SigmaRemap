@@ -92,8 +92,8 @@ public class Class4454 extends Class4441<Block> {
          .method31560(
             Blocks.OAK_STAIRS,
             Blocks.SPRUCE_STAIRS,
-            Blocks.field36662,
-            Blocks.field36663,
+            Blocks.BIRCH_STAIRS,
+            Blocks.JUNGLE_STAIRS,
             Blocks.field36762,
             Blocks.field36763,
             Blocks.CRIMSON_STAIRS,
