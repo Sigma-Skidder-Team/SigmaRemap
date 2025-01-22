@@ -186,10 +186,8 @@ public class MusicPlayer extends Class4278 {
    }
 
    private void method13190(MusicPlayerVideo var1, YoutubeVideoData var2) {
-      if (!((JelloClickGUI) this.getScreen()).method13314()) {
-         this.field20854.method24317(var1, var2);
-         field20857 = var1;
-      }
+      this.field20854.method24317(var1, var2);
+      field20857 = var1;
    }
 
    @Override
