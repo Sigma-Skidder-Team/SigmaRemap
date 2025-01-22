@@ -39,7 +39,7 @@ public class BlockColors {
          Blocks.GRASS_BLOCK,
          Blocks.FERN,
          Blocks.GRASS,
-         Blocks.field36675
+         Blocks.POTTED_FERN
       );
       var2.method29466((var0, var1, var2x, var3) -> FoliageColors.method36293(), Blocks.SPRUCE_LEAVES);
       var2.method29466((var0, var1, var2x, var3) -> FoliageColors.method36294(), Blocks.BIRCH_LEAVES);

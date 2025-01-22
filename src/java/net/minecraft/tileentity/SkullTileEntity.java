@@ -65,7 +65,7 @@ public class SkullTileEntity extends TileEntity implements ITickableTileEntity {
    @Override
    public void tick() {
       BlockState var3 = this.getBlockState();
-      if (var3.isIn(Blocks.DRAGON_HEAD) || var3.isIn(Blocks.DRAGON_WALL_HEAD)) {
+      if (var3.isIn(Blocks.HEAD) || var3.isIn(Blocks.DRAGON_WALL_HEAD)) {
          if (!this.world.method6780(this.pos)) {
             this.field5428 = false;
          } else {

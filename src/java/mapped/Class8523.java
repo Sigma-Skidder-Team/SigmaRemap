@@ -59,8 +59,8 @@ public class Class8523 {
                         .with(Class3237.field18681, Boolean.valueOf(true))
                         .with(Class3237.field18683, Boolean.valueOf(true))
                   ),
-                  new Class7872(new Class6439(Blocks.WHEAT, 0.3F), Class6435.field28275, Blocks.field36693.getDefaultState()),
-                  new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.field36694.getDefaultState()),
+                  new Class7872(new Class6439(Blocks.WHEAT, 0.3F), Class6435.field28275, Blocks.CARROTS.getDefaultState()),
+                  new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.POTATOES.getDefaultState()),
                   new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.field36884.getDefaultState())
                }
             )
@@ -156,8 +156,8 @@ public class Class8523 {
                      .with(Class3237.field18681, Boolean.valueOf(true))
                      .with(Class3237.field18683, Boolean.valueOf(true))
                ),
-               new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.field36693.getDefaultState()),
-               new Class7872[]{new Class7872(new Class6439(Blocks.WHEAT, 0.8F), Class6435.field28275, Blocks.field36694.getDefaultState())}
+               new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.CARROTS.getDefaultState()),
+               new Class7872[]{new Class7872(new Class6439(Blocks.WHEAT, 0.8F), Class6435.field28275, Blocks.POTATOES.getDefaultState())}
             )
          )
       )
@@ -206,7 +206,7 @@ public class Class8523 {
                      .with(Class3237.field18683, Boolean.valueOf(true))
                ),
                new Class7872(new Class6439(Blocks.WHEAT, 0.3F), Class6435.field28275, Blocks.PUMPKIN_STEM.getDefaultState()),
-               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.field36694.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.POTATOES.getDefaultState()),
                new Class7872[0]
             )
          )
@@ -293,8 +293,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.WHEAT, 0.3F), Class6435.field28275, Blocks.field36693.getDefaultState()),
-               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.field36694.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHEAT, 0.3F), Class6435.field28275, Blocks.CARROTS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.POTATOES.getDefaultState()),
                new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.field36884.getDefaultState())
             )
          )
@@ -311,8 +311,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.field36693.getDefaultState()),
-               new Class7872(new Class6439(Blocks.WHEAT, 0.8F), Class6435.field28275, Blocks.field36694.getDefaultState())
+               new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.CARROTS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHEAT, 0.8F), Class6435.field28275, Blocks.POTATOES.getDefaultState())
             )
          )
       )
@@ -323,7 +323,7 @@ public class Class8523 {
          new Class7093(
             ImmutableList.of(
                new Class7872(new Class6439(Blocks.WHEAT, 0.3F), Class6435.field28275, Blocks.PUMPKIN_STEM.getDefaultState()),
-               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.field36694.getDefaultState())
+               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.POTATOES.getDefaultState())
             )
          )
       )

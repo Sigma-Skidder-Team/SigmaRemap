@@ -3602,7 +3602,7 @@ public class Class9407 {
       this.method35851(Blocks.field36764);
       this.method35807(Items.field37470);
       this.method35851(Blocks.field37010);
-      this.method35851(Blocks.field36692);
+      this.method35851(Blocks.POTTED_CACTUS);
       this.method35869(Blocks.BARRIER, Items.BARRIER);
       this.method35807(Items.BARRIER);
       this.method35869(Blocks.field36894, Items.field37651);
@@ -3743,9 +3743,9 @@ public class Class9407 {
       this.method35882(Blocks.BEE_NEST, Class7287::method23031);
       this.method35882(Blocks.BEEHIVE, Class7287::method23033);
       this.method35883(Blocks.field36884, BlockStateProperties.AGE3, 0, 1, 2, 3);
-      this.method35883(Blocks.field36693, BlockStateProperties.AGE5, 0, 0, 1, 1, 2, 2, 2, 3);
+      this.method35883(Blocks.CARROTS, BlockStateProperties.AGE5, 0, 0, 1, 1, 2, 2, 2, 3);
       this.method35883(Blocks.NETHER_WART, BlockStateProperties.AGE3, 0, 1, 1, 2);
-      this.method35883(Blocks.field36694, BlockStateProperties.AGE5, 0, 0, 1, 1, 2, 2, 2, 3);
+      this.method35883(Blocks.POTATOES, BlockStateProperties.AGE5, 0, 0, 1, 1, 2, 2, 2, 3);
       this.method35883(Blocks.WHEAT, BlockStateProperties.AGE5, 0, 1, 2, 3, 4, 5, 6, 7);
       this.method35867(Class9060.method33720("banner"), Blocks.OAK_PLANKS)
          .method26608(
@@ -3821,9 +3821,9 @@ public class Class9407 {
       this.method35955(Blocks.RED_BED, Blocks.RED_WOOL);
       this.method35955(Blocks.BLACK_BED, Blocks.BLACK_WOOL);
       this.method35867(Class9060.method33720("skull"), Blocks.SOUL_SAND)
-         .method26608(Class9756.field45629, Blocks.field36709, Blocks.field36707, Blocks.field36705, Blocks.field36701, Blocks.field36703)
-         .method26606(Blocks.DRAGON_HEAD)
-         .method26607(Blocks.field36710, Blocks.DRAGON_WALL_HEAD, Blocks.field36708, Blocks.field36706, Blocks.field36702, Blocks.field36704);
+         .method26608(Class9756.field45629, Blocks.CREEPER_HEAD, Blocks.PLAYER_HEAD, Blocks.ZOMBIE_HEAD, Blocks.SKELETON_SKULL, Blocks.WITHER_SKELETON_SKULL)
+         .method26606(Blocks.HEAD)
+         .method26607(Blocks.CREEPER_WALL_HEAD, Blocks.DRAGON_WALL_HEAD, Blocks.PLAYER_WALL_HEAD, Blocks.ZOMBIE_WALL_HEAD, Blocks.SKELETON_WALL_SKULL, Blocks.WITHER_SKELETON_WALL_SKULL);
       this.method35953(Blocks.field36896);
       this.method35953(Blocks.field36897);
       this.method35953(Blocks.field36898);
@@ -3950,23 +3950,23 @@ public class Class9407 {
       this.method35871(Blocks.GREEN_WOOL, Blocks.GREEN_CARPET);
       this.method35871(Blocks.RED_WOOL, Blocks.RED_CARPET);
       this.method35871(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET);
-      this.method35857(Blocks.FERN, Blocks.field36675, Class1958.field12762);
-      this.method35857(Blocks.DANDELION, Blocks.field36676, Class1958.field12763);
-      this.method35857(Blocks.POPPY, Blocks.field36677, Class1958.field12763);
-      this.method35857(Blocks.BLUE_ORCHID, Blocks.field36678, Class1958.field12763);
-      this.method35857(Blocks.ALLIUM, Blocks.field36679, Class1958.field12763);
-      this.method35857(Blocks.AZURE_BLUET, Blocks.field36680, Class1958.field12763);
-      this.method35857(Blocks.RED_TULIP, Blocks.field36681, Class1958.field12763);
-      this.method35857(Blocks.ORANGE_TULIP, Blocks.field36682, Class1958.field12763);
-      this.method35857(Blocks.WHITE_TULIP, Blocks.field36683, Class1958.field12763);
-      this.method35857(Blocks.PINK_TULIP, Blocks.field36684, Class1958.field12763);
-      this.method35857(Blocks.OXEYE_DAISY, Blocks.field36685, Class1958.field12763);
-      this.method35857(Blocks.CORNFLOWER, Blocks.field36686, Class1958.field12763);
-      this.method35857(Blocks.LILY_OF_THE_VALLEY, Blocks.field36687, Class1958.field12763);
-      this.method35857(Blocks.WITHER_ROSE, Blocks.field36688, Class1958.field12763);
-      this.method35857(Blocks.RED_MUSHROOM, Blocks.field36689, Class1958.field12763);
-      this.method35857(Blocks.BROWN_MUSHROOM, Blocks.field36690, Class1958.field12763);
-      this.method35857(Blocks.DEAD_BUSH, Blocks.field36691, Class1958.field12763);
+      this.method35857(Blocks.FERN, Blocks.POTTED_FERN, Class1958.field12762);
+      this.method35857(Blocks.DANDELION, Blocks.POTTED_DANDELION, Class1958.field12763);
+      this.method35857(Blocks.POPPY, Blocks.POTTED_POPPY, Class1958.field12763);
+      this.method35857(Blocks.BLUE_ORCHID, Blocks.POTTED_BLUE_ORCHID, Class1958.field12763);
+      this.method35857(Blocks.ALLIUM, Blocks.POTTED_ALLIUM, Class1958.field12763);
+      this.method35857(Blocks.AZURE_BLUET, Blocks.POTTED_AZURE_BLUET, Class1958.field12763);
+      this.method35857(Blocks.RED_TULIP, Blocks.POTTED_RED_TULIP, Class1958.field12763);
+      this.method35857(Blocks.ORANGE_TULIP, Blocks.POTTED_ORANGE_TULIP, Class1958.field12763);
+      this.method35857(Blocks.WHITE_TULIP, Blocks.POTTED_WHITE_TULIP, Class1958.field12763);
+      this.method35857(Blocks.PINK_TULIP, Blocks.POTTED_PINK_TULIP, Class1958.field12763);
+      this.method35857(Blocks.OXEYE_DAISY, Blocks.POTTED_OXEYE_DAISY, Class1958.field12763);
+      this.method35857(Blocks.CORNFLOWER, Blocks.POTTED_CORNFLOWER, Class1958.field12763);
+      this.method35857(Blocks.LILY_OF_THE_VALLEY, Blocks.POTTED_LILY_OF_THE_VALLEY, Class1958.field12763);
+      this.method35857(Blocks.WITHER_ROSE, Blocks.POTTED_WITHER_ROSE, Class1958.field12763);
+      this.method35857(Blocks.RED_MUSHROOM, Blocks.POTTED_RED_MUSHROOM, Class1958.field12763);
+      this.method35857(Blocks.BROWN_MUSHROOM, Blocks.POTTED_BROWN_MUSHROOM, Class1958.field12763);
+      this.method35857(Blocks.DEAD_BUSH, Blocks.POTTED_DEAD_BUSH, Class1958.field12763);
       this.method35893(Blocks.BROWN_MUSHROOM_BLOCK);
       this.method35893(Blocks.RED_MUSHROOM_BLOCK);
       this.method35893(Blocks.MUSHROOM_STEM);
@@ -4045,7 +4045,7 @@ public class Class9407 {
       this.method35859(Blocks.MELON_STEM, Blocks.ATTACHED_MELON_STEM);
       this.method35859(Blocks.PUMPKIN_STEM, Blocks.ATTACHED_PUMPKIN_STEM);
       this.method35845(Blocks.ACACIA_PLANKS)
-         .method31167(Blocks.field36699)
+         .method31167(Blocks.ACACIA_BUTTON)
          .method31169(Blocks.field36870)
          .method31170(Blocks.field36865)
          .method31171(Blocks.ACACIA_PRESSURE_PLATE)
@@ -4056,10 +4056,10 @@ public class Class9407 {
       this.method35848(Blocks.ACACIA_TRAPDOOR);
       this.method35850(Blocks.ACACIA_LOG).method36613(Blocks.ACACIA_LOG).method36611(Blocks.ACACIA_WOOD);
       this.method35850(Blocks.STRIPPED_ACACIA_LOG).method36613(Blocks.STRIPPED_ACACIA_LOG).method36611(Blocks.STRIPPED_ACACIA_WOOD);
-      this.method35857(Blocks.ACACIA_SAPLING, Blocks.field36673, Class1958.field12763);
+      this.method35857(Blocks.ACACIA_SAPLING, Blocks.POTTED_ACACIA_SAPLING, Class1958.field12763);
       this.method35841(Blocks.ACACIA_LEAVES, Class7524.field32284);
       this.method35845(Blocks.BIRCH_PLANKS)
-         .method31167(Blocks.field36697)
+         .method31167(Blocks.BIRCH_BUTTON)
          .method31169(Blocks.field36868)
          .method31170(Blocks.field36863)
          .method31171(Blocks.BIRCH_PRESSURE_PLATE)
@@ -4073,7 +4073,7 @@ public class Class9407 {
       this.method35857(Blocks.BIRCH_SAPLING, Blocks.POTTED_BIRCH_SAPLING, Class1958.field12763);
       this.method35841(Blocks.BIRCH_LEAVES, Class7524.field32284);
       this.method35845(Blocks.OAK_PLANKS)
-         .method31167(Blocks.field36695)
+         .method31167(Blocks.OAK_BUTTON)
          .method31169(Blocks.OAK_FENCE)
          .method31170(Blocks.OAK_FENCE_GATE)
          .method31171(Blocks.OAK_PRESSURE_PLATE)
@@ -4088,7 +4088,7 @@ public class Class9407 {
       this.method35857(Blocks.OAK_SAPLING, Blocks.POTTED_OAK_SAPLING, Class1958.field12763);
       this.method35841(Blocks.OAK_LEAVES, Class7524.field32284);
       this.method35845(Blocks.SPRUCE_PLANKS)
-         .method31167(Blocks.field36696)
+         .method31167(Blocks.SPRUCE_BUTTON)
          .method31169(Blocks.field36867)
          .method31170(Blocks.field36862)
          .method31171(Blocks.SPRUCE_PRESSURE_PLATE)
@@ -4102,7 +4102,7 @@ public class Class9407 {
       this.method35857(Blocks.SPRUCE_SAPLING, Blocks.POTTED_SPRUCE_SAPLING, Class1958.field12763);
       this.method35841(Blocks.SPRUCE_LEAVES, Class7524.field32284);
       this.method35845(Blocks.DARK_OAK_PLANKS)
-         .method31167(Blocks.field36700)
+         .method31167(Blocks.DARK_OAK_BUTTON)
          .method31169(Blocks.field36871)
          .method31170(Blocks.field36866)
          .method31171(Blocks.DARK_OAK_PRESSURE_PLATE)
@@ -4116,7 +4116,7 @@ public class Class9407 {
       this.method35857(Blocks.DARK_OAK_SAPLING, Blocks.POTTED_DARK_OAK_SAPLING, Class1958.field12763);
       this.method35841(Blocks.DARK_OAK_LEAVES, Class7524.field32284);
       this.method35845(Blocks.JUNGLE_PLANKS)
-         .method31167(Blocks.field36698)
+         .method31167(Blocks.JUNGLE_BUTTON)
          .method31169(Blocks.field36869)
          .method31170(Blocks.field36864)
          .method31171(Blocks.JUNGLE_PRESSURE_PLATE)

@@ -58,18 +58,18 @@ public class TileEntityType<T extends TileEntity> {
       "skull",
       Class9785.<SkullTileEntity>method38569(
          SkullTileEntity::new,
-         Blocks.field36701,
-         Blocks.field36702,
-         Blocks.field36709,
-         Blocks.field36710,
-         Blocks.DRAGON_HEAD,
+         Blocks.SKELETON_SKULL,
+         Blocks.SKELETON_WALL_SKULL,
+         Blocks.CREEPER_HEAD,
+         Blocks.CREEPER_WALL_HEAD,
+         Blocks.HEAD,
          Blocks.DRAGON_WALL_HEAD,
-         Blocks.field36705,
-         Blocks.field36706,
-         Blocks.field36703,
-         Blocks.field36704,
-         Blocks.field36707,
-         Blocks.field36708
+         Blocks.ZOMBIE_HEAD,
+         Blocks.ZOMBIE_WALL_HEAD,
+         Blocks.WITHER_SKELETON_SKULL,
+         Blocks.WITHER_SKELETON_WALL_SKULL,
+         Blocks.PLAYER_HEAD,
+         Blocks.PLAYER_WALL_HEAD
       )
    );
    public static final TileEntityType<Class961> field21436 = method13794("daylight_detector", Class9785.<Class961>method38569(Class961::new, Blocks.field36720));

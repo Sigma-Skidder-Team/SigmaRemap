@@ -125,7 +125,7 @@ public class Class4447 implements Class4442 {
       method14052(var0, Items.field38123, Blocks.JUNGLE_PLANKS);
       method14052(var0, Items.OAK_BOAT, Blocks.OAK_PLANKS);
       method14052(var0, Items.field38121, Blocks.SPRUCE_PLANKS);
-      method14053(var0, Blocks.field36699, Blocks.ACACIA_PLANKS);
+      method14053(var0, Blocks.ACACIA_BUTTON, Blocks.ACACIA_PLANKS);
       method14054(var0, Blocks.field36875, Blocks.ACACIA_PLANKS);
       method14055(var0, Blocks.field36870, Blocks.ACACIA_PLANKS);
       method14056(var0, Blocks.field36865, Blocks.ACACIA_PLANKS);
@@ -134,7 +134,7 @@ public class Class4447 implements Class4442 {
       method14059(var0, Blocks.field36762, Blocks.ACACIA_PLANKS);
       method14060(var0, Blocks.ACACIA_TRAPDOOR, Blocks.ACACIA_PLANKS);
       method14061(var0, Blocks.ACACIA_SIGN, Blocks.ACACIA_PLANKS);
-      method14053(var0, Blocks.field36697, Blocks.BIRCH_PLANKS);
+      method14053(var0, Blocks.BIRCH_BUTTON, Blocks.BIRCH_PLANKS);
       method14054(var0, Blocks.field36873, Blocks.BIRCH_PLANKS);
       method14055(var0, Blocks.field36868, Blocks.BIRCH_PLANKS);
       method14056(var0, Blocks.field36863, Blocks.BIRCH_PLANKS);
@@ -152,7 +152,7 @@ public class Class4447 implements Class4442 {
       method14059(var0, Blocks.CRIMSON_STAIRS, Blocks.CRIMSON_PLANKS);
       method14060(var0, Blocks.CRIMSON_TRAPDOOR, Blocks.CRIMSON_PLANKS);
       method14061(var0, Blocks.CRIMSON_SIGN, Blocks.CRIMSON_PLANKS);
-      method14053(var0, Blocks.field36700, Blocks.DARK_OAK_PLANKS);
+      method14053(var0, Blocks.DARK_OAK_BUTTON, Blocks.DARK_OAK_PLANKS);
       method14054(var0, Blocks.field36876, Blocks.DARK_OAK_PLANKS);
       method14055(var0, Blocks.field36871, Blocks.DARK_OAK_PLANKS);
       method14056(var0, Blocks.field36866, Blocks.DARK_OAK_PLANKS);
@@ -161,7 +161,7 @@ public class Class4447 implements Class4442 {
       method14059(var0, Blocks.field36763, Blocks.DARK_OAK_PLANKS);
       method14060(var0, Blocks.DARK_OAK_TRAPDOOR, Blocks.DARK_OAK_PLANKS);
       method14061(var0, Blocks.DARK_OAK_SIGN, Blocks.DARK_OAK_PLANKS);
-      method14053(var0, Blocks.field36698, Blocks.JUNGLE_PLANKS);
+      method14053(var0, Blocks.JUNGLE_BUTTON, Blocks.JUNGLE_PLANKS);
       method14054(var0, Blocks.field36874, Blocks.JUNGLE_PLANKS);
       method14055(var0, Blocks.field36869, Blocks.JUNGLE_PLANKS);
       method14056(var0, Blocks.field36864, Blocks.JUNGLE_PLANKS);
@@ -170,7 +170,7 @@ public class Class4447 implements Class4442 {
       method14059(var0, Blocks.JUNGLE_STAIRS, Blocks.JUNGLE_PLANKS);
       method14060(var0, Blocks.JUNGLE_TRAPDOOR, Blocks.JUNGLE_PLANKS);
       method14061(var0, Blocks.JUNGLE_SIGN, Blocks.JUNGLE_PLANKS);
-      method14053(var0, Blocks.field36695, Blocks.OAK_PLANKS);
+      method14053(var0, Blocks.OAK_BUTTON, Blocks.OAK_PLANKS);
       method14054(var0, Blocks.OAK_DOOR, Blocks.OAK_PLANKS);
       method14055(var0, Blocks.OAK_FENCE, Blocks.OAK_PLANKS);
       method14056(var0, Blocks.OAK_FENCE_GATE, Blocks.OAK_PLANKS);
@@ -179,7 +179,7 @@ public class Class4447 implements Class4442 {
       method14059(var0, Blocks.OAK_STAIRS, Blocks.OAK_PLANKS);
       method14060(var0, Blocks.OAK_TRAPDOOR, Blocks.OAK_PLANKS);
       method14061(var0, Blocks.OAK_SIGN, Blocks.OAK_PLANKS);
-      method14053(var0, Blocks.field36696, Blocks.SPRUCE_PLANKS);
+      method14053(var0, Blocks.SPRUCE_BUTTON, Blocks.SPRUCE_PLANKS);
       method14054(var0, Blocks.field36872, Blocks.SPRUCE_PLANKS);
       method14055(var0, Blocks.field36867, Blocks.SPRUCE_PLANKS);
       method14056(var0, Blocks.field36862, Blocks.SPRUCE_PLANKS);

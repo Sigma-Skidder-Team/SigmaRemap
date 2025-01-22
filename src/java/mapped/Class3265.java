@@ -28,12 +28,12 @@ public class Class3265 extends ToolItem {
       new Block[]{
          Blocks.LADDER,
          Blocks.field37053,
-         Blocks.field36695,
-         Blocks.field36696,
-         Blocks.field36697,
-         Blocks.field36698,
-         Blocks.field36700,
-         Blocks.field36699,
+         Blocks.OAK_BUTTON,
+         Blocks.SPRUCE_BUTTON,
+         Blocks.BIRCH_BUTTON,
+         Blocks.JUNGLE_BUTTON,
+         Blocks.DARK_OAK_BUTTON,
+         Blocks.ACACIA_BUTTON,
          Blocks.CRIMSON_BUTTON,
          Blocks.WARPED_BUTTON
       }

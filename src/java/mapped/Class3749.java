@@ -103,11 +103,11 @@ public class Class3749 extends Class3676<VillagerEntity> {
                                  var13 = true;
                               }
                            } else {
-                              var1.setBlockState(this.field19897, Blocks.field36693.getDefaultState(), 3);
+                              var1.setBlockState(this.field19897, Blocks.CARROTS.getDefaultState(), 3);
                               var13 = true;
                            }
                         } else {
-                           var1.setBlockState(this.field19897, Blocks.field36694.getDefaultState(), 3);
+                           var1.setBlockState(this.field19897, Blocks.POTATOES.getDefaultState(), 3);
                            var13 = true;
                         }
                      } else {

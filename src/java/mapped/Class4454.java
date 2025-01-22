@@ -48,12 +48,12 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32736).method31560(Blocks.STONE_BRICKS, Blocks.MOSSY_STONE_BRICKS, Blocks.CRACKED_STONE_BRICKS, Blocks.CHISELED_STONE_BRICKS);
       this.method14014(BlockTags.field32737)
          .method31560(
-            Blocks.field36695,
-            Blocks.field36696,
-            Blocks.field36697,
-            Blocks.field36698,
-            Blocks.field36699,
-            Blocks.field36700,
+            Blocks.OAK_BUTTON,
+            Blocks.SPRUCE_BUTTON,
+            Blocks.BIRCH_BUTTON,
+            Blocks.JUNGLE_BUTTON,
+            Blocks.ACACIA_BUTTON,
+            Blocks.DARK_OAK_BUTTON,
             Blocks.CRIMSON_BUTTON,
             Blocks.WARPED_BUTTON
          );
@@ -186,30 +186,30 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32777)
          .method31560(
             Blocks.FLOWER_POT,
-            Blocks.field36677,
-            Blocks.field36678,
-            Blocks.field36679,
-            Blocks.field36680,
-            Blocks.field36681,
-            Blocks.field36682,
-            Blocks.field36683,
-            Blocks.field36684,
-            Blocks.field36685,
-            Blocks.field36676,
+            Blocks.POTTED_POPPY,
+            Blocks.POTTED_BLUE_ORCHID,
+            Blocks.POTTED_ALLIUM,
+            Blocks.POTTED_AZURE_BLUET,
+            Blocks.POTTED_RED_TULIP,
+            Blocks.POTTED_ORANGE_TULIP,
+            Blocks.POTTED_WHITE_TULIP,
+            Blocks.POTTED_PINK_TULIP,
+            Blocks.POTTED_OXEYE_DAISY,
+            Blocks.POTTED_DANDELION,
             Blocks.POTTED_OAK_SAPLING,
             Blocks.POTTED_SPRUCE_SAPLING,
             Blocks.POTTED_BIRCH_SAPLING,
             Blocks.POTTED_JUNGLE_SAPLING,
-            Blocks.field36673,
+            Blocks.POTTED_ACACIA_SAPLING,
             Blocks.POTTED_DARK_OAK_SAPLING,
-            Blocks.field36689,
-            Blocks.field36690,
-            Blocks.field36691,
-            Blocks.field36675,
-            Blocks.field36692,
-            Blocks.field36686,
-            Blocks.field36687,
-            Blocks.field36688,
+            Blocks.POTTED_RED_MUSHROOM,
+            Blocks.POTTED_BROWN_MUSHROOM,
+            Blocks.POTTED_DEAD_BUSH,
+            Blocks.POTTED_FERN,
+            Blocks.POTTED_CACTUS,
+            Blocks.POTTED_CORNFLOWER,
+            Blocks.POTTED_LILY_OF_THE_VALLEY,
+            Blocks.POTTED_WITHER_ROSE,
             Blocks.field37010,
             Blocks.POTTED_CRIMSON_FUNGUS,
             Blocks.POTTED_WARPED_FUNGUS,
@@ -496,7 +496,7 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32773).method31559(BlockTags.field32769).method31559(BlockTags.field32772);
       this.method14014(BlockTags.field32794).method31560(Blocks.BEE_NEST, Blocks.BEEHIVE);
       this.method14014(BlockTags.field32795)
-         .method31560(Blocks.field36884, Blocks.field36693, Blocks.field36694, Blocks.WHEAT, Blocks.MELON_STEM, Blocks.PUMPKIN_STEM);
+         .method31560(Blocks.field36884, Blocks.CARROTS, Blocks.POTATOES, Blocks.WHEAT, Blocks.MELON_STEM, Blocks.PUMPKIN_STEM);
       this.method14014(BlockTags.field32796).method31559(BlockTags.field32795).method31558(Blocks.SWEET_BERRY_BUSH);
       this.method14014(BlockTags.field32805)
          .method31560(

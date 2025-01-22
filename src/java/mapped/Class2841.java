@@ -28,7 +28,7 @@ public class Class2841 implements Consumer<Consumer<Advancement>> {
       Advancement var5 = Class7999.method27304()
          .method27305(var4)
          .method27308(
-            Blocks.DRAGON_HEAD,
+            Blocks.HEAD,
             new TranslationTextComponent("advancements.end.kill_dragon.title"),
             new TranslationTextComponent("advancements.end.kill_dragon.description"),
             (ResourceLocation)null,

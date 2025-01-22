@@ -15,8 +15,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.apache.commons.lang3.StringUtils;
 
-public class Class3345 extends SkullBlock {
-   public Class3345(Properties var1) {
+public class PlayerHeadBlock extends SkullBlock {
+   public PlayerHeadBlock(Properties var1) {
       super(Class2136.field13991, var1);
    }
 

@@ -37,12 +37,12 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
          Blocks.DRAGON_EGG,
          Blocks.BEACON,
          Blocks.field37007,
-         Blocks.field36701,
-         Blocks.field36703,
-         Blocks.field36707,
-         Blocks.field36705,
-         Blocks.field36709,
-         Blocks.DRAGON_HEAD,
+         Blocks.SKELETON_SKULL,
+         Blocks.WITHER_SKELETON_SKULL,
+         Blocks.PLAYER_HEAD,
+         Blocks.ZOMBIE_HEAD,
+         Blocks.CREEPER_HEAD,
+         Blocks.HEAD,
          Blocks.field36896,
          Blocks.field36912,
          Blocks.field36908,
@@ -592,17 +592,17 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.COBBLESTONE_WALL);
       this.method11096(Blocks.MOSSY_COBBLESTONE_WALL);
       this.method11096(Blocks.FLOWER_POT);
-      this.method11096(Blocks.field36695);
-      this.method11096(Blocks.field36696);
-      this.method11096(Blocks.field36697);
-      this.method11096(Blocks.field36698);
-      this.method11096(Blocks.field36699);
-      this.method11096(Blocks.field36700);
-      this.method11096(Blocks.field36701);
-      this.method11096(Blocks.field36703);
-      this.method11096(Blocks.field36705);
-      this.method11096(Blocks.field36709);
-      this.method11096(Blocks.DRAGON_HEAD);
+      this.method11096(Blocks.OAK_BUTTON);
+      this.method11096(Blocks.SPRUCE_BUTTON);
+      this.method11096(Blocks.BIRCH_BUTTON);
+      this.method11096(Blocks.JUNGLE_BUTTON);
+      this.method11096(Blocks.ACACIA_BUTTON);
+      this.method11096(Blocks.DARK_OAK_BUTTON);
+      this.method11096(Blocks.SKELETON_SKULL);
+      this.method11096(Blocks.WITHER_SKELETON_SKULL);
+      this.method11096(Blocks.ZOMBIE_HEAD);
+      this.method11096(Blocks.CREEPER_HEAD);
+      this.method11096(Blocks.HEAD);
       this.method11096(Blocks.ANVIL);
       this.method11096(Blocks.CHIPPED_ANVIL);
       this.method11096(Blocks.DAMAGED_ANVIL);
@@ -850,26 +850,26 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11092(Blocks.POTTED_SPRUCE_SAPLING);
       this.method11092(Blocks.POTTED_BIRCH_SAPLING);
       this.method11092(Blocks.POTTED_JUNGLE_SAPLING);
-      this.method11092(Blocks.field36673);
+      this.method11092(Blocks.POTTED_ACACIA_SAPLING);
       this.method11092(Blocks.POTTED_DARK_OAK_SAPLING);
-      this.method11092(Blocks.field36675);
-      this.method11092(Blocks.field36676);
-      this.method11092(Blocks.field36677);
-      this.method11092(Blocks.field36678);
-      this.method11092(Blocks.field36679);
-      this.method11092(Blocks.field36680);
-      this.method11092(Blocks.field36681);
-      this.method11092(Blocks.field36682);
-      this.method11092(Blocks.field36683);
-      this.method11092(Blocks.field36684);
-      this.method11092(Blocks.field36685);
-      this.method11092(Blocks.field36686);
-      this.method11092(Blocks.field36687);
-      this.method11092(Blocks.field36688);
-      this.method11092(Blocks.field36689);
-      this.method11092(Blocks.field36690);
-      this.method11092(Blocks.field36691);
-      this.method11092(Blocks.field36692);
+      this.method11092(Blocks.POTTED_FERN);
+      this.method11092(Blocks.POTTED_DANDELION);
+      this.method11092(Blocks.POTTED_POPPY);
+      this.method11092(Blocks.POTTED_BLUE_ORCHID);
+      this.method11092(Blocks.POTTED_ALLIUM);
+      this.method11092(Blocks.POTTED_AZURE_BLUET);
+      this.method11092(Blocks.POTTED_RED_TULIP);
+      this.method11092(Blocks.POTTED_ORANGE_TULIP);
+      this.method11092(Blocks.POTTED_WHITE_TULIP);
+      this.method11092(Blocks.POTTED_PINK_TULIP);
+      this.method11092(Blocks.POTTED_OXEYE_DAISY);
+      this.method11092(Blocks.POTTED_CORNFLOWER);
+      this.method11092(Blocks.POTTED_LILY_OF_THE_VALLEY);
+      this.method11092(Blocks.POTTED_WITHER_ROSE);
+      this.method11092(Blocks.POTTED_RED_MUSHROOM);
+      this.method11092(Blocks.POTTED_BROWN_MUSHROOM);
+      this.method11092(Blocks.POTTED_DEAD_BUSH);
+      this.method11092(Blocks.POTTED_CACTUS);
       this.method11092(Blocks.field37010);
       this.method11092(Blocks.POTTED_CRIMSON_FUNGUS);
       this.method11092(Blocks.POTTED_WARPED_FUNGUS);
@@ -1068,7 +1068,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11097(Blocks.field36803, Class2838::method11075);
       this.method11097(Blocks.field36807, Class2838::method11075);
       this.method11097(
-         Blocks.field36707,
+         Blocks.PLAYER_HEAD,
          var0 -> Class7318.method23188()
                .method18320(
                   method11060(
@@ -1091,11 +1091,11 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11098(Blocks.field36884, method11086(Blocks.field36884, Items.field38111, Items.field38112, var4));
       Class7520 var5 = Class161.method486(Blocks.WHEAT).method24519(Class9178.method34325().method34327(WheatBlock.field19334, 7));
       this.method11098(Blocks.WHEAT, method11086(Blocks.WHEAT, Items.field37842, Items.field37841, var5));
-      Class7520 var6 = Class161.method486(Blocks.field36693).method24519(Class9178.method34325().method34327(Class3483.field19334, 7));
+      Class7520 var6 = Class161.method486(Blocks.CARROTS).method24519(Class9178.method34325().method34327(Class3483.field19334, 7));
       this.method11098(
-         Blocks.field36693,
+         Blocks.CARROTS,
          method11059(
-            Blocks.field36693,
+            Blocks.CARROTS,
             Class7318.method23188()
                .method18320(Class8894.method32373().method18291(Class4695.method14724(Items.field38052)))
                .method18320(
@@ -1105,11 +1105,11 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                )
          )
       );
-      Class7520 var7 = Class161.method486(Blocks.field36694).method24519(Class9178.method34325().method34327(Class3481.field19334, 7));
+      Class7520 var7 = Class161.method486(Blocks.POTATOES).method24519(Class9178.method34325().method34327(Class3481.field19334, 7));
       this.method11098(
-         Blocks.field36694,
+         Blocks.POTATOES,
          method11059(
-            Blocks.field36694,
+            Blocks.POTATOES,
             Class7318.method23188()
                .method18320(Class8894.method32373().method18291(Class4695.method14724(Items.field38053)))
                .method18320(
