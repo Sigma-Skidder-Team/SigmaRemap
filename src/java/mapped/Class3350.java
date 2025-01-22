@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
@@ -20,7 +20,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
-public abstract class Class3350 extends BannerBlock {
+public abstract class Class3350 extends ContainerBlock {
    public static final DirectionProperty field18875 = HorizontalBlock.HORIZONTAL_FACING;
    public static final BooleanProperty field18876 = BlockStateProperties.LIT;
 

@@ -161,7 +161,7 @@ public class FallingBlockEntity extends Entity {
                               ((FallingBlock)var3).method11599(this.world, var18, this.field5176, var19, this);
                            }
 
-                           if (this.field5183 != null && var3 instanceof Class3245) {
+                           if (this.field5183 != null && var3 instanceof ITileEntityProvider) {
                               TileEntity var13 = this.world.getTileEntity(var18);
                               if (var13 != null) {
                                  CompoundNBT var14 = var13.write(new CompoundNBT());

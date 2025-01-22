@@ -118,6 +118,6 @@ public class Class7881 extends Class7882<LivingEntity> {
    private static boolean method26427(ServerWorld var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
       boolean var5 = var4.isIn(BlockTags.field32774);
-      return var5 && var4.isIn(Blocks.SOUL_CAMPFIRE) ? Class3244.method11655(var4) : var5;
+      return var5 && var4.isIn(Blocks.SOUL_CAMPFIRE) ? CampfireBlock.method11655(var4) : var5;
    }
 }

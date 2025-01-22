@@ -3,7 +3,7 @@ package mapped;
 import java.util.List;
 import javax.annotation.Nullable;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -34,7 +34,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class ShulkerBoxBlock extends BannerBlock {
+public class ShulkerBoxBlock extends ContainerBlock {
    public static final EnumProperty<Direction> field18939 = Class3433.field19198;
    public static final ResourceLocation field18940 = new ResourceLocation("contents");
    private final DyeColor field18941;

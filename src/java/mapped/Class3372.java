@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,7 +21,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 
-public class Class3372 extends BannerBlock {
+public class Class3372 extends ContainerBlock {
    private static String[] field18962;
    public static final IntegerProperty field18963 = BlockStateProperties.POWER;
    public static final BooleanProperty field18964 = BlockStateProperties.INVERTED;

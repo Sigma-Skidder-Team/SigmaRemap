@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 
 import java.util.function.Supplier;
 
-public abstract class Class3346<E extends TileEntity> extends BannerBlock {
+public abstract class Class3346<E extends TileEntity> extends ContainerBlock {
    public final Supplier<TileEntityType<? extends E>> field18859;
 
    public Class3346(Properties var1, Supplier<TileEntityType<? extends E>> var2) {

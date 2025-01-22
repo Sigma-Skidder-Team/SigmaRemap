@@ -278,7 +278,7 @@ public class Chunk implements IChunk {
          }
 
          if (this.field9116.isRemote) {
-            if (var13 != var12 && var13 instanceof Class3245) {
+            if (var13 != var12 && var13 instanceof ITileEntityProvider) {
                this.field9116.method6762(var1);
             }
          } else {
@@ -286,7 +286,7 @@ public class Chunk implements IChunk {
          }
 
          if (var9.method21852(var6, var7 & 15, var8).isIn(var12)) {
-            if (var13 instanceof Class3245) {
+            if (var13 instanceof ITileEntityProvider) {
                TileEntity var15 = this.method7029(var1, Class2206.field14423);
                if (var15 != null) {
                   var15.method3780();
@@ -297,12 +297,12 @@ public class Chunk implements IChunk {
                var2.method23428(this.field9116, var1, var11, var3);
             }
 
-            if (var12 instanceof Class3245) {
+            if (var12 instanceof ITileEntityProvider) {
                TileEntity var16 = this.method7029(var1, Class2206.field14423);
                if (var16 != null) {
                   var16.method3780();
                } else {
-                  var16 = ((Class3245)var12).method11646(this.field9116);
+                  var16 = ((ITileEntityProvider)var12).method11646(this.field9116);
                   this.field9116.method6761(var1, var16);
                }
             }
@@ -377,7 +377,7 @@ public class Chunk implements IChunk {
    private TileEntity method7134(BlockPos var1) {
       BlockState var4 = this.getBlockState(var1);
       Block var5 = var4.getBlock();
-      return var5.isTileEntityProvider() ? ((Class3245)var5).method11646(this.field9116) : null;
+      return var5.isTileEntityProvider() ? ((ITileEntityProvider)var5).method11646(this.field9116) : null;
    }
 
    @Nullable
@@ -421,7 +421,7 @@ public class Chunk implements IChunk {
 
    @Override
    public void addTileEntity(BlockPos var1, TileEntity var2) {
-      if (this.getBlockState(var1).getBlock() instanceof Class3245) {
+      if (this.getBlockState(var1).getBlock() instanceof ITileEntityProvider) {
          var2.method3769(this.field9116, var1);
          var2.method3779();
          TileEntity var5 = this.field9119.put(var1.toImmutable(), var2);
@@ -740,11 +740,11 @@ public class Chunk implements IChunk {
          var6 = TileEntity.method3772(var5, var2);
       } else {
          Block var7 = var5.getBlock();
-         if (!(var7 instanceof Class3245)) {
+         if (!(var7 instanceof ITileEntityProvider)) {
             var6 = null;
             field9110.warn("Tried to load a DUMMY block entity @ {} but found not block entity block {} at location", var1, var5);
          } else {
-            var6 = ((Class3245)var7).method11646(this.field9116);
+            var6 = ((ITileEntityProvider)var7).method11646(this.field9116);
          }
       }
 

@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
@@ -20,7 +20,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public class StructureBlock extends BannerBlock {
+public class StructureBlock extends ContainerBlock {
    private static String[] field18937;
    public static final EnumProperty<StructureMode> field18938 = BlockStateProperties.STRUCTURE_MODE;
 

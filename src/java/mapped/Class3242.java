@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
@@ -25,7 +25,7 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class3242 extends BannerBlock {
+public class Class3242 extends ContainerBlock {
    private static String[] field18692;
    public static final DirectionProperty field18693 = BlockStateProperties.FACING;
    public static final BooleanProperty field18694 = BlockStateProperties.OPEN;

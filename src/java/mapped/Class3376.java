@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
@@ -24,7 +24,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class3376 extends BannerBlock {
+public class Class3376 extends ContainerBlock {
    private static String[] field18974;
    public static final BooleanProperty[] field18975 = new BooleanProperty[]{BlockStateProperties.HAS_BOTTLE_0, BlockStateProperties.HAS_BOTTLE_1, BlockStateProperties.HAS_BOTTLE_2};
    public static final VoxelShape field18976 = VoxelShapes.or(

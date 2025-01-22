@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -16,7 +16,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3365 extends BannerBlock {
+public class Class3365 extends ContainerBlock {
    private static String[] field18932;
    public static final VoxelShape field18933 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
 

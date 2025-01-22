@@ -18,7 +18,7 @@ import net.minecraft.world.gen.feature.jigsaw.JigsawOrientation;
 
 import javax.annotation.Nullable;
 
-public class JigsawBlock extends Block implements Class3245 {
+public class JigsawBlock extends Block implements ITileEntityProvider {
    public static final EnumProperty<JigsawOrientation> field18712 = BlockStateProperties.ORIENTATION;
 
    public JigsawBlock(Properties var1) {

@@ -304,7 +304,7 @@ public abstract class AbstractBlock {
    }
 
    public final boolean isTileEntityProvider() {
-      return this instanceof Class3245;
+      return this instanceof ITileEntityProvider;
    }
 
    public final ResourceLocation getLootTable() {

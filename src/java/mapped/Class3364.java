@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
@@ -20,7 +20,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class Class3364 extends BannerBlock {
+public class Class3364 extends ContainerBlock {
    public static final BooleanProperty field18931 = BlockStateProperties.HAS_RECORD;
 
    public Class3364(Properties var1) {

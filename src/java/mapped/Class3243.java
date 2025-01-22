@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class3243 extends BannerBlock {
+public class Class3243 extends ContainerBlock {
    private static String[] field18695;
 
    public Class3243(Properties var1) {

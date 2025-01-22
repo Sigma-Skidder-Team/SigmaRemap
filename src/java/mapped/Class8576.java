@@ -130,7 +130,7 @@ public class Class8576 {
                return false;
             } else if (this.field38563 == null || var8 && this.field38563 == var9.get()) {
                if (this.field38564 == null || var8 && var1.func_241112_a_().method24345(var7, true, this.field38564).method17117()) {
-                  if (this.field38566 == null || var8 && this.field38566 == Class3244.method11654(var1, var7)) {
+                  if (this.field38566 == null || var8 && this.field38566 == CampfireBlock.method11654(var1, var7)) {
                      if (!this.field38567.method22704(var1, var7)) {
                         return false;
                      } else {

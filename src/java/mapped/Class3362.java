@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
@@ -24,7 +24,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class Class3362 extends BannerBlock {
+public class Class3362 extends ContainerBlock {
    private static String[] field18912;
    public static final DirectionProperty field18913 = BlockStateProperties.FACING_EXCEPT_UP;
    public static final BooleanProperty field18914 = BlockStateProperties.ENABLED;

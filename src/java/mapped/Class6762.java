@@ -550,6 +550,6 @@ public class Class6762 extends Class6764 {
       return var0.isIn(BlockTags.field32798)
          || var0.isIn(Blocks.LAVA)
          || var0.isIn(Blocks.MAGMA_BLOCK)
-         || Class3244.method11655(var0);
+         || CampfireBlock.method11655(var0);
    }
 }

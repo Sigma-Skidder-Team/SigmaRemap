@@ -37,7 +37,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Optional;
 
-public class BedBlock extends HorizontalBlock implements Class3245 {
+public class BedBlock extends HorizontalBlock implements ITileEntityProvider {
    public static final EnumProperty<BedPart> PART = BlockStateProperties.PART;
    public static final BooleanProperty field18714 = BlockStateProperties.OCCUPIED;
    public static final VoxelShape field18715 = Block.makeCuboidShape(0.0, 3.0, 0.0, 16.0, 9.0, 16.0);

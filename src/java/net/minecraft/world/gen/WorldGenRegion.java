@@ -198,11 +198,11 @@ public class WorldGenRegion implements ISeedReader {
                var5 = TileEntity.method3772(var7, var6);
             } else {
                Block var8 = var7.getBlock();
-               if (!(var8 instanceof Class3245)) {
+               if (!(var8 instanceof ITileEntityProvider)) {
                   return null;
                }
 
-               var5 = ((Class3245)var8).method11646(this.field9205);
+               var5 = ((ITileEntityProvider)var8).method11646(this.field9205);
             }
 
             if (var5 != null) {
@@ -211,7 +211,7 @@ public class WorldGenRegion implements ISeedReader {
             }
          }
 
-         if (var7.getBlock() instanceof Class3245) {
+         if (var7.getBlock() instanceof ITileEntityProvider) {
             field9200.warn("Tried to access a block entity before it was created. {}", var1);
          }
 
@@ -242,7 +242,7 @@ public class WorldGenRegion implements ISeedReader {
          var10.putString("id", "DUMMY");
          var7.addTileEntity(var10);
       } else {
-         var7.addTileEntity(var1, ((Class3245)var9).method11646(this));
+         var7.addTileEntity(var1, ((ITileEntityProvider)var9).method11646(this));
       }
 
       if (var2.method23444(this, var1)) {

@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
@@ -25,7 +25,7 @@ import java.util.Collections;
 import java.util.List;
 import javax.annotation.Nullable;
 
-public class Class3356 extends BannerBlock {
+public class Class3356 extends ContainerBlock {
    private static String[] field18895;
    public static final DirectionProperty field18896 = Class3436.field19198;
    public static final EnumProperty<PistonType> field18897 = Class3436.field19211;

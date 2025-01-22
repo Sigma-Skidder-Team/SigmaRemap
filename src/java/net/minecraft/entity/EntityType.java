@@ -601,7 +601,7 @@ public class EntityType<T extends Entity> {
          return this.field41118
                || !var1.isIn(BlockTags.field32798)
                   && !var1.isIn(Blocks.MAGMA_BLOCK)
-                  && !Class3244.method11655(var1)
+                  && !CampfireBlock.method11655(var1)
                   && !var1.isIn(Blocks.LAVA)
             ? var1.isIn(Blocks.WITHER_ROSE) || var1.isIn(Blocks.SWEET_BERRY_BUSH) || var1.isIn(Blocks.CACTUS)
             : true;

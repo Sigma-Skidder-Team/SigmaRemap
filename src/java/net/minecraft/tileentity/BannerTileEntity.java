@@ -3,6 +3,7 @@ package net.minecraft.tileentity;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
 import mapped.*;
+import net.minecraft.block.BannerBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;

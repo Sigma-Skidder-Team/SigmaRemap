@@ -29,7 +29,7 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
 
    @Override
    public void tick() {
-      boolean var3 = this.getBlockState().<Boolean>get(Class3244.field18698);
+      boolean var3 = this.getBlockState().<Boolean>get(CampfireBlock.field18698);
       boolean var4 = this.world.isRemote;
       if (!var4) {
          if (!var3) {
@@ -74,11 +74,11 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
          Random var5 = var3.rand;
          if (var5.nextFloat() < 0.11F) {
             for (int var6 = 0; var6 < var5.nextInt(2) + 2; var6++) {
-               Class3244.method11653(var3, var4, this.getBlockState().<Boolean>get(Class3244.field18699), false);
+               CampfireBlock.method11653(var3, var4, this.getBlockState().<Boolean>get(CampfireBlock.field18699), false);
             }
          }
 
-         int var17 = this.getBlockState().<Direction>get(Class3244.field18701).getHorizontalIndex();
+         int var17 = this.getBlockState().<Direction>get(CampfireBlock.field18701).getHorizontalIndex();
 
          for (int var7 = 0; var7 < this.field5329.size(); var7++) {
             if (!this.field5329.get(var7).isEmpty() && var5.nextFloat() < 0.2F) {

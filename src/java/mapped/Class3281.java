@@ -26,7 +26,7 @@ public class Class3281 extends Item {
       World var5 = var1.getWorld();
       BlockPos var6 = var1.getPos();
       BlockState var7 = var5.getBlockState(var6);
-      if (!Class3244.method11656(var7)) {
+      if (!CampfireBlock.method11656(var7)) {
          BlockPos var8 = var6.offset(var1.getFace());
          if (!AbstractFireBlock.method12012(var5, var8, var1.getPlacementHorizontalFacing())) {
             return ActionResultType.FAIL;

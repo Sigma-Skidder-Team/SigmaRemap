@@ -95,7 +95,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
    }
 
    public boolean method3920() {
-      return Class3244.method11654(this.world, this.getPos());
+      return CampfireBlock.method11654(this.world, this.getPos());
    }
 
    public void method3921() {

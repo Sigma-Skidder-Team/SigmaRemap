@@ -1,7 +1,6 @@
 package net.minecraft.block;
 
 import mapped.*;
-import mapped.BannerBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.trees.AcaciaTree;
 import net.minecraft.block.trees.OakTree;
@@ -2530,7 +2529,7 @@ public class Blocks {
    );
    public static final Block CAMPFIRE = register(
       "campfire",
-      new Class3244(
+      new CampfireBlock(
          true,
          1,
          AbstractBlock.Properties.withMaterialAndColor(Material.WOOD, MaterialColor.PODZOL)
@@ -2542,7 +2541,7 @@ public class Blocks {
    );
    public static final Block SOUL_CAMPFIRE = register(
       "soul_campfire",
-      new Class3244(
+      new CampfireBlock(
          false,
          2,
          AbstractBlock.Properties.withMaterialAndColor(Material.WOOD, MaterialColor.PODZOL)

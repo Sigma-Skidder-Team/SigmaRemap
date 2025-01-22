@@ -173,10 +173,10 @@ public class PotionEntity extends Class890 implements Class889 {
    private void method3521(BlockPos var1, Direction var2) {
       BlockState var5 = this.world.getBlockState(var1);
       if (!var5.isIn(BlockTags.field32798)) {
-         if (Class3244.method11655(var5)) {
+         if (CampfireBlock.method11655(var5)) {
             this.world.method6869((PlayerEntity)null, 1009, var1, 0);
-            Class3244.method11652(this.world, var1, var5);
-            this.world.setBlockState(var1, var5.with(Class3244.field18698, Boolean.valueOf(false)));
+            CampfireBlock.method11652(this.world, var1, var5);
+            this.world.setBlockState(var1, var5.with(CampfireBlock.field18698, Boolean.valueOf(false)));
          }
       } else {
          this.world.removeBlock(var1, false);

@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.tileentity.SkullTileEntity;
@@ -8,7 +8,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
-public abstract class Class3251 extends BannerBlock implements Class3255 {
+public abstract class Class3251 extends ContainerBlock implements Class3255 {
    private final Class2137 field18725;
 
    public Class3251(Class2137 var1, Properties var2) {

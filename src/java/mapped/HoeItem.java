@@ -80,13 +80,13 @@ public class HoeItem extends ToolItem {
          if (var8 != null && var4.getBlockState(var5.up()).isAir()) {
             var4.playSound(var7, var5, SoundEvents.field27042, SoundCategory.field14732, 1.0F, 1.0F);
             var9 = var8;
-         } else if (var6.getBlock() instanceof Class3244 && var6.<Boolean>get(Class3244.field18698)) {
+         } else if (var6.getBlock() instanceof CampfireBlock && var6.<Boolean>get(CampfireBlock.field18698)) {
             if (!var4.isRemote()) {
                var4.method6869((PlayerEntity)null, 1009, var5, 0);
             }
 
-            Class3244.method11652(var4, var5, var6);
-            var9 = var6.with(Class3244.field18698, Boolean.valueOf(false));
+            CampfireBlock.method11652(var4, var5, var6);
+            var9 = var6.with(CampfireBlock.field18698, Boolean.valueOf(false));
          }
 
          if (var9 == null) {

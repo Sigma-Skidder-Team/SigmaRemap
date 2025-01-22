@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Random;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
@@ -26,7 +26,7 @@ import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class CommandBlockBlock extends BannerBlock {
+public class CommandBlockBlock extends ContainerBlock {
    private static final Logger field18892 = LogManager.getLogger();
    public static final DirectionProperty field18893 = Class3433.field19198;
    public static final BooleanProperty field18894 = BlockStateProperties.CONDITIONAL;

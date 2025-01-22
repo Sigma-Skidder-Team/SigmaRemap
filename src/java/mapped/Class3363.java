@@ -3,7 +3,7 @@ package mapped;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -22,7 +22,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class Class3363 extends BannerBlock {
+public class Class3363 extends ContainerBlock {
    private static String[] field18929;
    public static final VoxelShape field18930 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
 

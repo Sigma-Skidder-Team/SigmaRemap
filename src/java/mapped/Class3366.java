@@ -1,7 +1,7 @@
 package mapped;
 
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.DirectionProperty;
@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3366 extends BannerBlock {
+public class Class3366 extends ContainerBlock {
    private static final Direction[] field18934 = new Direction[]{Direction.WEST, Direction.EAST, Direction.SOUTH};
    public static final DirectionProperty field18935 = HorizontalBlock.HORIZONTAL_FACING;
    public static final IntegerProperty field18936 = BlockStateProperties.HONEY_LEVEL;
@@ -124,7 +124,7 @@ public class Class3366 extends BannerBlock {
       if (!var11) {
          return super.onBlockActivated(var1, var2, var3, var4, var5, var6);
       } else {
-         if (Class3244.method11654(var2, var3)) {
+         if (CampfireBlock.method11654(var2, var3)) {
             this.method11947(var2, var1, var3);
          } else {
             if (this.method11945(var2, var3)) {

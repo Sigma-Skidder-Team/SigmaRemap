@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.pathfinding.PathType;
@@ -29,7 +29,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3354 extends BannerBlock {
+public class Class3354 extends ContainerBlock {
    public static final DirectionProperty field18880 = HorizontalBlock.HORIZONTAL_FACING;
    public static final BooleanProperty field18881 = BlockStateProperties.POWERED;
    public static final BooleanProperty field18882 = BlockStateProperties.HAS_BOOK;

@@ -21,7 +21,7 @@ public final class Class6234 extends Class6230 {
       BlockPos var7 = var1.method11323().offset(var6);
       BlockState var8 = var5.getBlockState(var7);
       if (!AbstractFireBlock.method12012(var5, var7, var6)) {
-         if (!Class3244.method11656(var8)) {
+         if (!CampfireBlock.method11656(var8)) {
             if (!(var8.getBlock() instanceof Class3458)) {
                this.method19204(false);
             } else {

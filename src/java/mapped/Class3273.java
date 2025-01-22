@@ -22,7 +22,7 @@ public class Class3273 extends Item {
       BlockPos var5 = var1.getPos();
       BlockState var6 = var4.getBlockState(var5);
       boolean var7 = false;
-      if (!Class3244.method11656(var6)) {
+      if (!CampfireBlock.method11656(var6)) {
          var5 = var5.offset(var1.getFace());
          if (AbstractFireBlock.method12012(var4, var5, var1.getPlacementHorizontalFacing())) {
             this.method11796(var4, var5);
@@ -31,7 +31,7 @@ public class Class3273 extends Item {
          }
       } else {
          this.method11796(var4, var5);
-         var4.setBlockState(var5, var6.with(Class3244.field18698, Boolean.valueOf(true)));
+         var4.setBlockState(var5, var6.with(CampfireBlock.field18698, Boolean.valueOf(true)));
          var7 = true;
       }
 

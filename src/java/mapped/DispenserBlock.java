@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BannerBlock;
+import net.minecraft.block.ContainerBlock;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.Item;
 import net.minecraft.state.BooleanProperty;
@@ -30,7 +30,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Map;
 import java.util.Random;
 
-public class DispenserBlock extends BannerBlock {
+public class DispenserBlock extends ContainerBlock {
    private static String[] field18898;
    public static final DirectionProperty field18899 = Class3433.field19198;
    public static final BooleanProperty field18900 = BlockStateProperties.TRIGGERED;

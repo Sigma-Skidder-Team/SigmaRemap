@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public class Class3246 extends Class3247 implements Class3245 {
+public class Class3246 extends Class3247 implements ITileEntityProvider {
    private static String[] field18705;
    public static final EnumProperty<ComparatorMode> field18706 = BlockStateProperties.COMPARATOR_MODE;
 

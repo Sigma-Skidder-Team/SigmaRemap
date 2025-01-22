@@ -3,6 +3,7 @@ package net.minecraft.client.renderer.tileentity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.datafixers.util.Pair;
 import mapped.*;
+import net.minecraft.block.BannerBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.util.Direction;

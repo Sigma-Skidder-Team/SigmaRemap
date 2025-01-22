@@ -34,7 +34,7 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.Random;
 
-public class Class3244 extends BannerBlock implements IWaterLoggable {
+public class CampfireBlock extends ContainerBlock implements IWaterLoggable {
    private static String[] field18696;
    public static final VoxelShape field18697 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 7.0, 16.0);
    public static final BooleanProperty field18698 = BlockStateProperties.LIT;
@@ -45,7 +45,7 @@ public class Class3244 extends BannerBlock implements IWaterLoggable {
    private final boolean field18703;
    private final int field18704;
 
-   public Class3244(boolean var1, int var2, Properties var3) {
+   public CampfireBlock(boolean var1, int var2, Properties var3) {
       super(var3);
       this.field18703 = var1;
       this.field18704 = var2;
