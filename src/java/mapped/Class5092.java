@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.potion.Effects;
+
 import java.util.Random;
 
 public class Class5092 implements Class5093 {

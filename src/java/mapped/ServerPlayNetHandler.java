@@ -29,6 +29,7 @@ import net.minecraft.crash.ReportedException;
 import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.crash.CrashReport;

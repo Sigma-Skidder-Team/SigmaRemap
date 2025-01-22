@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.function.BiConsumer;

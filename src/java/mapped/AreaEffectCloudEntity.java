@@ -15,6 +15,9 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionUtils;
+import net.minecraft.potion.Potions;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
@@ -32,7 +35,7 @@ public class AreaEffectCloudEntity extends Entity {
    private static final DataParameter<Integer> field5499 = EntityDataManager.<Integer>createKey(AreaEffectCloudEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field5500 = EntityDataManager.<Boolean>createKey(AreaEffectCloudEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<IParticleData> field5501 = EntityDataManager.<IParticleData>createKey(AreaEffectCloudEntity.class, DataSerializers.field33399);
-   private Class8812 field5502 = Class8137.field34976;
+   private Potion field5502 = Potions.EMPTY;
    private final List<EffectInstance> field5503 = Lists.newArrayList();
    private final Map<Entity, Integer> field5504 = Maps.newHashMap();
    private int field5505 = 600;
@@ -83,7 +86,7 @@ public class AreaEffectCloudEntity extends Entity {
       return this.getDataManager().<Float>method35445(field5498);
    }
 
-   public void method4099(Class8812 var1) {
+   public void method4099(Potion var1) {
       this.field5502 = var1;
       if (!this.field5508) {
          this.method4100();
@@ -91,7 +94,7 @@ public class AreaEffectCloudEntity extends Entity {
    }
 
    private void method4100() {
-      if (this.field5502 == Class8137.field34976 && this.field5503.isEmpty()) {
+      if (this.field5502 == Potions.EMPTY && this.field5503.isEmpty()) {
          this.getDataManager().set(field5499, 0);
       } else {
          this.getDataManager().set(field5499, PotionUtils.getPotionColorFromEffectList(PotionUtils.method38177(this.field5502, this.field5503)));
@@ -387,8 +390,8 @@ public class AreaEffectCloudEntity extends Entity {
          var1.putInt("Color", this.method4102());
       }
 
-      if (this.field5502 != Class8137.field34976 && this.field5502 != null) {
-         var1.putString("Potion", Registry.field16076.getKey(this.field5502).toString());
+      if (this.field5502 != Potions.EMPTY && this.field5502 != null) {
+         var1.putString("Potion", Registry.POTION.getKey(this.field5502).toString());
       }
 
       if (!this.field5503.isEmpty()) {

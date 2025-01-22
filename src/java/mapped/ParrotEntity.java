@@ -6,6 +6,7 @@ import com.google.common.collect.Sets;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;

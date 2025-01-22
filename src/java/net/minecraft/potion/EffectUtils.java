@@ -1,6 +1,5 @@
 package net.minecraft.potion;
 
-import mapped.Effects;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.StringUtils;
 import net.minecraft.util.math.MathHelper;

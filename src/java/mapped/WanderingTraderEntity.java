@@ -9,6 +9,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
+import net.minecraft.potion.PotionUtils;
+import net.minecraft.potion.Potions;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -34,7 +36,7 @@ public class WanderingTraderEntity extends Class1043 {
             0,
             new Class2596<WanderingTraderEntity>(
                this,
-               PotionUtils.method38187(new ItemStack(Items.field37971), Class8137.field34983),
+               PotionUtils.method38187(new ItemStack(Items.field37971), Potions.INVISIBILITY),
                SoundEvents.field27217,
                var1 -> this.world.method6741() && !var1.isInvisible()
             )

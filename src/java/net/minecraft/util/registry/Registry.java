@@ -17,6 +17,9 @@ import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipeType;
+import net.minecraft.potion.Effects;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.Potions;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SharedConstants;
@@ -57,7 +60,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Enchantment>> field16040 = createKey("enchantment");
    public static final RegistryKey<Registry<EntityType<?>>> field16041 = createKey("entity_type");
    public static final RegistryKey<Registry<Item>> field16042 = createKey("item");
-   public static final RegistryKey<Registry<Class8812>> field16043 = createKey("potion");
+   public static final RegistryKey<Registry<Potion>> field16043 = createKey("potion");
    public static final RegistryKey<Registry<ParticleType<?>>> field16044 = createKey("particle_type");
    public static final RegistryKey<Registry<TileEntityType<?>>> field16045 = createKey("block_entity_type");
    public static final RegistryKey<Registry<Class9078>> field16046 = createKey("motive");
@@ -90,7 +93,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Enchantment> ENCHANTMENT = method9175(field16040, () -> Enchantments.FORTUNE);
    public static final Class2351<EntityType<?>> ENTITY_TYPE = method9176(field16041, "pig", () -> EntityType.PIG);
    public static final Class2351<Item> ITEM = method9176(field16042, "air", () -> Items.AIR);
-   public static final Class2351<Class8812> field16076 = method9176(field16043, "empty", () -> Class8137.field34976);
+   public static final Class2351<Potion> POTION = method9176(field16043, "empty", () -> Potions.EMPTY);
    public static final Registry<ParticleType<?>> PARTICLE_TYPE = method9175(field16044, () -> ParticleTypes.BLOCK);
    public static final Registry<TileEntityType<?>> field16078 = method9175(field16045, () -> TileEntityType.field21421);
    public static final Class2351<Class9078> field16079 = method9176(field16046, "kebab", () -> Class9078.field41530);

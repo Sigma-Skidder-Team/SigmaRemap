@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.Util;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.LivingEntity;

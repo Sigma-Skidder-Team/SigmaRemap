@@ -6,6 +6,7 @@ import java.util.UUID;
 import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
+import net.minecraft.potion.Effects;
 import net.minecraft.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;

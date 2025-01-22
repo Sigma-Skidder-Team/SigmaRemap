@@ -3,6 +3,8 @@ package mapped;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.potion.PotionUtils;
+import net.minecraft.potion.Potions;
 
 public final class BrewingGroup extends ItemGroup {
    public BrewingGroup(int var1, String var2) {
@@ -11,6 +13,6 @@ public final class BrewingGroup extends ItemGroup {
 
    @Override
    public ItemStack createIcon() {
-      return PotionUtils.method38187(new ItemStack(Items.field37971), Class8137.field34977);
+      return PotionUtils.method38187(new ItemStack(Items.field37971), Potions.WATER);
    }
 }

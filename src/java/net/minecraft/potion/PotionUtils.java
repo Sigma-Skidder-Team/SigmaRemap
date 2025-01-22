@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.potion;
 
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
@@ -8,13 +8,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import mapped.Class9680;
+import mapped.Effect;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.EffectUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -31,7 +31,7 @@ public class PotionUtils {
       return method38178(var0.getTag());
    }
 
-   public static List<EffectInstance> method38177(Class8812 var0, Collection<EffectInstance> var1) {
+   public static List<EffectInstance> method38177(Potion var0, Collection<EffectInstance> var1) {
       ArrayList var4 = Lists.newArrayList();
       var4.addAll(var0.method31816());
       var4.addAll(var1);
@@ -74,12 +74,12 @@ public class PotionUtils {
       if (var3 != null && var3.contains("CustomPotionColor", 99)) {
          return var3.getInt("CustomPotionColor");
       } else {
-         return method38185(var0) != Class8137.field34976 ? getPotionColorFromEffectList(method38176(var0)) : 16253176;
+         return method38185(var0) != Potions.EMPTY ? getPotionColorFromEffectList(method38176(var0)) : 16253176;
       }
    }
 
-   public static int method38183(Class8812 var0) {
-      return var0 != Class8137.field34976 ? getPotionColorFromEffectList(var0.method31816()) : 16253176;
+   public static int method38183(Potion var0) {
+      return var0 != Potions.EMPTY ? getPotionColorFromEffectList(var0.method31816()) : 16253176;
    }
 
    public static int getPotionColorFromEffectList(Collection<EffectInstance> var0) {
@@ -118,17 +118,17 @@ public class PotionUtils {
       }
    }
 
-   public static Class8812 method38185(ItemStack var0) {
+   public static Potion method38185(ItemStack var0) {
       return method38186(var0.getTag());
    }
 
-   public static Class8812 method38186(CompoundNBT var0) {
-      return var0 != null ? Class8812.method31814(var0.getString("Potion")) : Class8137.field34976;
+   public static Potion method38186(CompoundNBT var0) {
+      return var0 != null ? Potion.method31814(var0.getString("Potion")) : Potions.EMPTY;
    }
 
-   public static ItemStack method38187(ItemStack var0, Class8812 var1) {
-      ResourceLocation var4 = Registry.field16076.getKey(var1);
-      if (var1 != Class8137.field34976) {
+   public static ItemStack method38187(ItemStack var0, Potion var1) {
+      ResourceLocation var4 = Registry.POTION.getKey(var1);
+      if (var1 != Potions.EMPTY) {
          var0.getOrCreateTag().putString("Potion", var4.toString());
       } else {
          var0.method32146("Potion");

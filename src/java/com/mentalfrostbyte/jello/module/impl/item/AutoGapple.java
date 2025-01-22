@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.item.autogapple.BasicAutoGapple;
 import com.mentalfrostbyte.jello.module.impl.item.autogapple.HypixelAutoGapple;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
-import mapped.Effects;
+import net.minecraft.potion.Effects;
 import mapped.InvManagerUtils;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;

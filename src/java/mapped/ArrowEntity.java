@@ -12,6 +12,9 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionUtils;
+import net.minecraft.potion.Potions;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
@@ -20,7 +23,7 @@ import java.util.Set;
 
 public class ArrowEntity extends AbstractArrowEntity {
    private static final DataParameter<Integer> field5116 = EntityDataManager.<Integer>createKey(ArrowEntity.class, DataSerializers.VARINT);
-   private Class8812 field5117 = Class8137.field34976;
+   private Potion field5117 = Potions.EMPTY;
    private final Set<EffectInstance> field5118 = Sets.newHashSet();
    private boolean field5119;
 
@@ -39,7 +42,7 @@ public class ArrowEntity extends AbstractArrowEntity {
    public void method3497(ItemStack var1) {
       if (var1.getItem() != Items.field38117) {
          if (var1.getItem() == Items.field37797) {
-            this.field5117 = Class8137.field34976;
+            this.field5117 = Potions.EMPTY;
             this.field5118.clear();
             this.dataManager.set(field5116, -1);
          }
@@ -68,7 +71,7 @@ public class ArrowEntity extends AbstractArrowEntity {
 
    private void method3499() {
       this.field5119 = false;
-      if (this.field5117 == Class8137.field34976 && this.field5118.isEmpty()) {
+      if (this.field5117 == Potions.EMPTY && this.field5118.isEmpty()) {
          this.dataManager.set(field5116, -1);
       } else {
          this.dataManager.set(field5116, PotionUtils.getPotionColorFromEffectList(PotionUtils.method38177(this.field5117, this.field5118)));
@@ -92,7 +95,7 @@ public class ArrowEntity extends AbstractArrowEntity {
       if (!this.world.isRemote) {
          if (this.field5100 && this.field5101 != 0 && !this.field5118.isEmpty() && this.field5101 >= 600) {
             this.world.setEntityState(this, (byte)0);
-            this.field5117 = Class8137.field34976;
+            this.field5117 = Potions.EMPTY;
             this.field5118.clear();
             this.dataManager.set(field5116, -1);
          }
@@ -128,8 +131,8 @@ public class ArrowEntity extends AbstractArrowEntity {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
-      if (this.field5117 != Class8137.field34976 && this.field5117 != null) {
-         var1.putString("Potion", Registry.field16076.getKey(this.field5117).toString());
+      if (this.field5117 != Potions.EMPTY && this.field5117 != null) {
+         var1.putString("Potion", Registry.POTION.getKey(this.field5117).toString());
       }
 
       if (this.field5119) {
@@ -182,7 +185,7 @@ public class ArrowEntity extends AbstractArrowEntity {
 
    @Override
    public ItemStack method3480() {
-      if (this.field5118.isEmpty() && this.field5117 == Class8137.field34976) {
+      if (this.field5118.isEmpty() && this.field5117 == Potions.EMPTY) {
          return new ItemStack(Items.field37797);
       } else {
          ItemStack var3 = new ItemStack(Items.field38117);

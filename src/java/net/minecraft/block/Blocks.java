@@ -7,6 +7,7 @@ import net.minecraft.block.trees.AcaciaTree;
 import net.minecraft.block.trees.OakTree;
 import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.potion.Effects;
 import net.minecraft.state.properties.BedPart;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;

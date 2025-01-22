@@ -2,7 +2,7 @@ package net.minecraft.enchantment;
 
 import mapped.Class3265;
 import mapped.CreatureAttribute;
-import mapped.Effects;
+import net.minecraft.potion.Effects;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.inventory.EquipmentSlotType;

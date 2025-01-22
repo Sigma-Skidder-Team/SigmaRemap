@@ -7,6 +7,8 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionUtils;
 
 public class Class5840 extends Slot {
    private static String[] field25582;
@@ -27,7 +29,7 @@ public class Class5840 extends Slot {
 
    @Override
    public ItemStack onTake(PlayerEntity var1, ItemStack var2) {
-      Class8812 var5 = PotionUtils.method38185(var2);
+      Potion var5 = PotionUtils.method38185(var2);
       if (var1 instanceof ServerPlayerEntity) {
          CriteriaTriggers.field44475.method15071((ServerPlayerEntity)var1, var5);
       }

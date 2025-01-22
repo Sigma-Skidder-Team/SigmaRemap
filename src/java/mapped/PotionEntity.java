@@ -10,6 +10,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionUtils;
+import net.minecraft.potion.Potions;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
@@ -52,9 +55,9 @@ public class PotionEntity extends Class890 implements Class889 {
       super.method3466(var1);
       if (!this.world.isRemote) {
          ItemStack var4 = this.method3509();
-         Class8812 var5 = PotionUtils.method38185(var4);
+         Potion var5 = PotionUtils.method38185(var4);
          List var6 = PotionUtils.method38176(var4);
-         boolean var7 = var5 == Class8137.field34977 && var6.isEmpty();
+         boolean var7 = var5 == Potions.WATER && var6.isEmpty();
          Direction var8 = var1.getFace();
          BlockPos var9 = var1.getPos();
          BlockPos var10 = var9.offset(var8);
@@ -74,9 +77,9 @@ public class PotionEntity extends Class890 implements Class889 {
       super.method3464(var1);
       if (!this.world.isRemote) {
          ItemStack var4 = this.method3509();
-         Class8812 var5 = PotionUtils.method38185(var4);
+         Potion var5 = PotionUtils.method38185(var4);
          List var6 = PotionUtils.method38176(var4);
-         boolean var7 = var5 == Class8137.field34977 && var6.isEmpty();
+         boolean var7 = var5 == Potions.WATER && var6.isEmpty();
          if (!var7) {
             if (!var6.isEmpty()) {
                if (!this.method3520()) {
@@ -138,7 +141,7 @@ public class PotionEntity extends Class890 implements Class889 {
       }
    }
 
-   private void method3519(ItemStack var1, Class8812 var2) {
+   private void method3519(ItemStack var1, Potion var2) {
       AreaEffectCloudEntity var5 = new AreaEffectCloudEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ());
       Entity var6 = this.method3460();
       if (var6 instanceof LivingEntity) {

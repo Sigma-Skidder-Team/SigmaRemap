@@ -41,6 +41,8 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.EffectUtils;
+import net.minecraft.potion.Effects;
+import net.minecraft.potion.PotionUtils;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;

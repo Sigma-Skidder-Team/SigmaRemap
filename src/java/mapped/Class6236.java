@@ -5,6 +5,8 @@ import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.potion.PotionUtils;
+import net.minecraft.potion.Potions;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -41,7 +43,7 @@ public final class Class6236 extends Class6230 {
          return super.dispenseStack(var1, var2);
       } else {
          this.method19204(true);
-         return this.method19208(var1, var2, PotionUtils.method38187(new ItemStack(Items.field37971), Class8137.field34977));
+         return this.method19208(var1, var2, PotionUtils.method38187(new ItemStack(Items.field37971), Potions.WATER));
       }
    }
 }

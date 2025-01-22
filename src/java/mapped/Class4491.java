@@ -6,6 +6,7 @@ import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
 import net.minecraft.tags.ITag;
 import net.minecraft.util.IItemProvider;
 
@@ -40,7 +41,7 @@ public class Class4491 extends Class4457 {
             Class8840.field39936,
             Class8605.field38716,
             Class8605.field38716,
-            (Class8812)null,
+            (Potion)null,
             Class8811.field39645
          );
       }

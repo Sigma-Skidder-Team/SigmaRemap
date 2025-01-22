@@ -9,6 +9,8 @@ import com.google.gson.JsonSyntaxException;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionUtils;
 import net.minecraft.tags.ITag;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
@@ -24,7 +26,7 @@ public class Class8634 {
    private final Class8840 field38843;
    private final Class8605[] field38844;
    private final Class8605[] field38845;
-   private final Class8812 field38846;
+   private final Potion field38846;
    private final Class8811 field38847;
 
    public Class8634() {
@@ -39,7 +41,7 @@ public class Class8634 {
    }
 
    public Class8634(
-           ITag<Item> var1, Item var2, Class8840 var3, Class8840 var4, Class8605[] var5, Class8605[] var6, Class8812 var7, Class8811 var8
+           ITag<Item> var1, Item var2, Class8840 var3, Class8840 var4, Class8605[] var5, Class8605[] var6, Potion var7, Class8811 var8
    ) {
       this.field38840 = var1;
       this.field38841 = var2;
@@ -85,7 +87,7 @@ public class Class8634 {
                   }
                }
 
-               Class8812 var10 = PotionUtils.method38185(var1);
+               Potion var10 = PotionUtils.method38185(var1);
                return this.field38846 == null || this.field38846 == var10;
             }
          } else {
@@ -118,10 +120,10 @@ public class Class8634 {
                }
             }
 
-            Class8812 var13 = null;
+            Potion var13 = null;
             if (var3.has("potion")) {
                ResourceLocation var10 = new ResourceLocation(JSONUtils.getString(var3, "potion"));
-               var13 = Registry.field16076.method9187(var10).orElseThrow(() -> new JsonSyntaxException("Unknown potion '" + var10 + "'"));
+               var13 = Registry.POTION.method9187(var10).orElseThrow(() -> new JsonSyntaxException("Unknown potion '" + var10 + "'"));
             }
 
             Class8605[] var14 = Class8605.method30838(var3.get("enchantments"));
@@ -172,7 +174,7 @@ public class Class8634 {
          }
 
          if (this.field38846 != null) {
-            var3.addProperty("potion", Registry.field16076.getKey(this.field38846).toString());
+            var3.addProperty("potion", Registry.POTION.getKey(this.field38846).toString());
          }
 
          return var3;

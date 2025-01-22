@@ -4,7 +4,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.entity.ai.attributes.Attributes;
-import mapped.Effects;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.MovementInput;
 import mapped.RotationHelper;
 import net.minecraft.client.Minecraft;

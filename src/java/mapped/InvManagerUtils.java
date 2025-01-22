@@ -11,6 +11,8 @@ import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.*;
 import net.minecraft.network.play.client.CClickWindowPacket;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
+import net.minecraft.potion.PotionUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;

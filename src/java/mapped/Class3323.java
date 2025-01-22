@@ -8,6 +8,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionUtils;
+import net.minecraft.potion.Potions;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.NonNullList;
@@ -22,7 +25,7 @@ public class Class3323 extends Item {
 
    @Override
    public ItemStack method11742() {
-      return PotionUtils.method38187(super.method11742(), Class8137.field34977);
+      return PotionUtils.method38187(super.method11742(), Potions.WATER);
    }
 
    @Override
@@ -95,8 +98,8 @@ public class Class3323 extends Item {
    @Override
    public void fillItemGroup(ItemGroup var1, NonNullList<ItemStack> var2) {
       if (this.method11738(var1)) {
-         for (Class8812 var6 : Registry.field16076) {
-            if (var6 != Class8137.field34976) {
+         for (Potion var6 : Registry.POTION) {
+            if (var6 != Potions.EMPTY) {
                var2.add(PotionUtils.method38187(new ItemStack(this), var6));
             }
          }

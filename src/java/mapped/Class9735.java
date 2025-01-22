@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.potion.Potion;
 import net.minecraft.tags.ITag;
 import net.minecraft.util.IItemProvider;
 
@@ -16,7 +17,7 @@ public class Class9735 {
    private ITag<Item> field45462;
    private Class8840 field45463 = Class8840.field39936;
    private Class8840 field45464 = Class8840.field39936;
-   private Class8812 field45465;
+   private Potion field45465;
    private Class8811 field45466 = Class8811.field39645;
 
    private Class9735() {

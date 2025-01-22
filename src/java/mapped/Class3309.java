@@ -4,6 +4,9 @@ import java.util.List;
 
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionUtils;
+import net.minecraft.potion.Potions;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
@@ -16,13 +19,13 @@ public class Class3309 extends Class3308 {
 
    @Override
    public ItemStack method11742() {
-      return PotionUtils.method38187(super.method11742(), Class8137.field35005);
+      return PotionUtils.method38187(super.method11742(), Potions.POISON);
    }
 
    @Override
    public void fillItemGroup(ItemGroup var1, NonNullList<ItemStack> var2) {
       if (this.method11738(var1)) {
-         for (Class8812 var6 : Registry.field16076) {
+         for (Potion var6 : Registry.POTION) {
             if (!var6.method31816().isEmpty()) {
                var2.add(PotionUtils.method38187(new ItemStack(this), var6));
             }

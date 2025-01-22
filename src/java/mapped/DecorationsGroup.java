@@ -5,11 +5,8 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
 public final class DecorationsGroup extends ItemGroup {
-   public DecorationsGroup(int var1, String var2) {
-      super(var1, var2);
-   }
 
-   @Override
+    @Override
    public ItemStack createIcon() {
       return new ItemStack(Blocks.PEONY);
    }

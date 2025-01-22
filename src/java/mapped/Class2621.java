@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.potion.Effects;
+
 import java.util.EnumSet;
 
 public class Class2621 extends Class2595 {

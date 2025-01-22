@@ -1,5 +1,6 @@
-package mapped;
+package net.minecraft.potion;
 
+import mapped.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.util.registry.Registry;
