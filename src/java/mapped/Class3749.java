@@ -61,7 +61,7 @@ public class Class3749 extends Class3676<VillagerEntity> {
       BlockState var5 = var2.getBlockState(var1);
       Block var6 = var5.getBlock();
       Block var7 = var2.getBlockState(var1.down()).getBlock();
-      return var6 instanceof Class3480 && ((Class3480)var6).method12179(var5) || var5.isAir() && var7 instanceof Class3221;
+      return var6 instanceof WheatBlock && ((WheatBlock)var6).method12179(var5) || var5.isAir() && var7 instanceof FarmlandBlock;
    }
 
    public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
@@ -84,11 +84,11 @@ public class Class3749 extends Class3676<VillagerEntity> {
             BlockState var7 = var1.getBlockState(this.field19897);
             Block var8 = var7.getBlock();
             Block var9 = var1.getBlockState(this.field19897.down()).getBlock();
-            if (var8 instanceof Class3480 && ((Class3480)var8).method12179(var7)) {
+            if (var8 instanceof WheatBlock && ((WheatBlock)var8).method12179(var7)) {
                var1.destroyBlock(this.field19897, true, var2);
             }
 
-            if (var7.isAir() && var9 instanceof Class3221 && var2.method4712()) {
+            if (var7.isAir() && var9 instanceof FarmlandBlock && var2.method4712()) {
                Class927 var10 = var2.method4752();
 
                for (int var11 = 0; var11 < var10.getSizeInventory(); var11++) {
@@ -111,7 +111,7 @@ public class Class3749 extends Class3676<VillagerEntity> {
                            var13 = true;
                         }
                      } else {
-                        var1.setBlockState(this.field19897, Blocks.field36539.getDefaultState(), 3);
+                        var1.setBlockState(this.field19897, Blocks.WHEAT.getDefaultState(), 3);
                         var13 = true;
                      }
                   }
@@ -136,7 +136,7 @@ public class Class3749 extends Class3676<VillagerEntity> {
                }
             }
 
-            if (var8 instanceof Class3480 && !((Class3480)var8).method12179(var7)) {
+            if (var8 instanceof WheatBlock && !((WheatBlock)var8).method12179(var7)) {
                this.field19900.remove(this.field19897);
                this.field19897 = this.method12710(var1);
                if (this.field19897 != null) {

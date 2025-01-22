@@ -73,12 +73,12 @@ public class ItemColors {
          Blocks.GRASS,
          Blocks.FERN,
          Blocks.VINE,
-         Blocks.field36446,
-         Blocks.field36447,
-         Blocks.field36448,
-         Blocks.field36449,
-         Blocks.field36450,
-         Blocks.field36451,
+         Blocks.OAK_LEAVES,
+         Blocks.SPRUCE_LEAVES,
+         Blocks.BIRCH_LEAVES,
+         Blocks.JUNGLE_LEAVES,
+         Blocks.ACACIA_LEAVES,
+         Blocks.DARK_OAK_LEAVES,
          Blocks.LILY_PAD
       );
       var3.method33259((var0x, var1) -> var1 != 0 ? -1 : PotionUtils.method38182(var0x), Items.field38117);

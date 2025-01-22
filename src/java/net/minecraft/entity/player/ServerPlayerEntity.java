@@ -633,7 +633,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       for (int var6 = -2; var6 <= 2; var6++) {
          for (int var7 = -2; var7 <= 2; var7++) {
             for (int var8 = -1; var8 < 3; var8++) {
-               BlockState var9 = var8 != -1 ? Blocks.AIR.getDefaultState() : Blocks.field36527.getDefaultState();
+               BlockState var9 = var8 != -1 ? Blocks.AIR.getDefaultState() : Blocks.OBSIDIAN.getDefaultState();
                var1.setBlockState(var5.method8374(var2).method8381(var7, var8, var6), var9);
             }
          }
@@ -644,7 +644,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    public Optional<TeleportationRepositioner> method2747(ServerWorld var1, BlockPos var2, boolean var3) {
       Optional var6 = super.method2747(var1, var2, var3);
       if (!var6.isPresent()) {
-         Direction.Axis var7 = this.world.getBlockState(this.field_242271_ac).<Direction.Axis>method23464(Class3401.field19060).orElse(Direction.Axis.X);
+         Direction.Axis var7 = this.world.getBlockState(this.field_242271_ac).<Direction.Axis>method23464(NetherPortalBlock.field19060).orElse(Direction.Axis.X);
          Optional var8 = var1.method6937().method12332(var2, var7);
          if (!var8.isPresent()) {
             field4854.error("Unable to create a portal, likely target out of worldborder");

@@ -15,10 +15,10 @@ import net.minecraft.world.World;
 
 import java.util.LinkedList;
 
-public class Class3407 extends Block {
+public class SpongeBlock extends Block {
    private static String[] field19085;
 
-   public Class3407(Properties var1) {
+   public SpongeBlock(Properties var1) {
       super(var1);
    }
 
@@ -37,7 +37,7 @@ public class Class3407 extends Block {
 
    public void method12048(World var1, BlockPos var2) {
       if (this.method12049(var1, var2)) {
-         var1.setBlockState(var2, Blocks.field36453.getDefaultState(), 2);
+         var1.setBlockState(var2, Blocks.WET_SPONGE.getDefaultState(), 2);
          var1.playEvent(2001, var2, Block.getStateId(Blocks.WATER.getDefaultState()));
       }
    }

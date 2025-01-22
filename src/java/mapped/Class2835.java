@@ -380,7 +380,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
                         .method31932(Class9178.method34325().method34327(Class3389.field19000, 4).method34330())
                         .method31933()
                   ),
-               Class9735.method38146().method38147(Blocks.field36587)
+               Class9735.method38146().method38147(Blocks.GLOWSTONE)
             )
          )
          .method27317(var1, "nether/charge_respawn_anchor");

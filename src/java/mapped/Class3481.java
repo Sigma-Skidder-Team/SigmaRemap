@@ -9,7 +9,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 
-public class Class3481 extends Class3480 {
+public class Class3481 extends WheatBlock {
    private static String[] field19333;
    private static final VoxelShape[] field19336 = new VoxelShape[]{
       Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),

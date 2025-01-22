@@ -889,7 +889,7 @@ public abstract class MobEntity extends LivingEntity {
       }
 
       Item var4 = var0.getItem();
-      if (var4 != Blocks.field36589.asItem() && (!(var4 instanceof BlockItem) || !(((BlockItem)var4).method11845() instanceof Class3251))) {
+      if (var4 != Blocks.CARVED_PUMPKIN.asItem() && (!(var4 instanceof BlockItem) || !(((BlockItem)var4).method11845() instanceof Class3251))) {
          if (var4 instanceof ArmorItem) {
             return ((ArmorItem)var4).getType();
          } else if (var4 != Items.ELYTRA) {

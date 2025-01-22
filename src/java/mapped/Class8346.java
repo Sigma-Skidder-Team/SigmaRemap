@@ -13,7 +13,7 @@ public class Class8346 extends Class8347 {
    @Override
    public void method29258(Random var1, int var2, int var3, int var4, boolean var5) {
       if (!(var1.nextFloat() < 0.4F)) {
-         this.field35874 = Blocks.field36526.getDefaultState();
+         this.field35874 = Blocks.MOSSY_COBBLESTONE.getDefaultState();
       } else {
          this.field35874 = Blocks.COBBLESTONE.getDefaultState();
       }

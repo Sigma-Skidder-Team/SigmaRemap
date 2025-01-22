@@ -285,7 +285,7 @@ public class AutoCrystal extends Module {
         BlockPos var5 = var1.add(0, 2, 0);
         return (
                 mc.world.getBlockState(var1).getBlock() == Blocks.BEDROCK
-                        || mc.world.getBlockState(var1).getBlock() == Blocks.field36527
+                        || mc.world.getBlockState(var1).getBlock() == Blocks.OBSIDIAN
         )
                 && mc.world.getBlockState(var4).getBlock() == Blocks.AIR
                 && mc.world.getBlockState(var5).getBlock() == Blocks.AIR

@@ -27,7 +27,7 @@ public class AutoFarm extends Module {
                 for (BlockPos var5 : BlockUtil.method34545(BlockUtil.method34561(mc.playerController.getBlockReachDistance()))) {
                     if (BlockUtil.method34535(mc.player, var5)) {
                         BlockState var6 = mc.world.getBlockState(var5);
-                        if (var6.getBlock() instanceof Class3480 || var6.getBlock() instanceof Class3481 || var6.getBlock() instanceof Class3483) {
+                        if (var6.getBlock() instanceof WheatBlock || var6.getBlock() instanceof Class3481 || var6.getBlock() instanceof Class3483) {
                             ItemStack var14 = mc.player.getHeldItem(Hand.MAIN_HAND);
                             if (var14 != null && var14.getItem() instanceof Class3321) {
                                 if (var6.<Integer>get(BlockStateProperties.AGE5) != 7) {
@@ -45,7 +45,7 @@ public class AutoFarm extends Module {
                                 mc.world.method7179(var5, false);
                                 return;
                             }
-                        } else if (!(var6.getBlock() instanceof Class3221)) {
+                        } else if (!(var6.getBlock() instanceof FarmlandBlock)) {
                             if (!(var6.getBlock() instanceof Class3408)) {
                                 if (var6.getBlock() instanceof Class3448) {
                                     BlockState var7 = mc.world.getBlockState(var5.down());
@@ -98,7 +98,7 @@ public class AutoFarm extends Module {
                                 var1.setPitch(var20[1]);
                                 var1.attackPost(new Class649(this, var16, var20));
                                 mc.rightClickDelayTimer = 2;
-                                BlockState var11 = Blocks.field36539.getDefaultState();
+                                BlockState var11 = Blocks.WHEAT.getDefaultState();
                                 mc.world.setBlockState(var5.up(), var11);
                                 return;
                             }

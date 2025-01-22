@@ -48,7 +48,7 @@ public class TileEntityType<T extends TileEntity> {
          Blocks.WARPED_WALL_SIGN
       )
    );
-   public static final TileEntityType<Class960> field21429 = method13794("mob_spawner", Class9785.<Class960>method38569(Class960::new, Blocks.field36532));
+   public static final TileEntityType<Class960> field21429 = method13794("mob_spawner", Class9785.<Class960>method38569(Class960::new, Blocks.SPAWNER));
    public static final TileEntityType<Class955> field21430 = method13794("piston", Class9785.<Class955>method38569(Class955::new, Blocks.MOVING_PISTON));
    public static final TileEntityType<Class931> field21431 = method13794("brewing_stand", Class9785.<Class931>method38569(Class931::new, Blocks.field36647));
    public static final TileEntityType<Class934> field21432 = method13794("enchanting_table", Class9785.<Class934>method38569(Class934::new, Blocks.ENCHANTING_TABLE));

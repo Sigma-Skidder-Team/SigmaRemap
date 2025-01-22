@@ -132,8 +132,8 @@ public class Block extends AbstractBlock implements IItemProvider {
    public static boolean method11545(Block var0) {
       return var0 instanceof Class3465
          || var0 == Blocks.BARRIER
-         || var0 == Blocks.field36589
-         || var0 == Blocks.field36590
+         || var0 == Blocks.CARVED_PUMPKIN
+         || var0 == Blocks.JACK_O_LANTERN
          || var0 == Blocks.MELON
          || var0 == Blocks.PUMPKIN
          || var0.isIn(BlockTags.field32805);

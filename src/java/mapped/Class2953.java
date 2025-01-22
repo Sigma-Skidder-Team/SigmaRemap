@@ -23,7 +23,7 @@ public class Class2953 extends Class2898<Class4712> {
          if (!var8.isIn(Blocks.NETHERRACK) && !var8.isIn(Blocks.BASALT) && !var8.isIn(Blocks.field37130)) {
             return false;
          } else {
-            var1.setBlockState(var4, Blocks.field36587.getDefaultState(), 2);
+            var1.setBlockState(var4, Blocks.GLOWSTONE.getDefaultState(), 2);
 
             for (int var9 = 0; var9 < 1500; var9++) {
                BlockPos var10 = var4.add(var3.nextInt(8) - var3.nextInt(8), -var3.nextInt(12), var3.nextInt(8) - var3.nextInt(8));
@@ -31,7 +31,7 @@ public class Class2953 extends Class2898<Class4712> {
                   int var11 = 0;
 
                   for (Direction var15 : Direction.values()) {
-                     if (var1.getBlockState(var10.offset(var15)).isIn(Blocks.field36587)) {
+                     if (var1.getBlockState(var10.offset(var15)).isIn(Blocks.GLOWSTONE)) {
                         var11++;
                      }
 
@@ -41,7 +41,7 @@ public class Class2953 extends Class2898<Class4712> {
                   }
 
                   if (var11 == 1) {
-                     var1.setBlockState(var10, Blocks.field36587.getDefaultState(), 2);
+                     var1.setBlockState(var10, Blocks.GLOWSTONE.getDefaultState(), 2);
                   }
                }
             }

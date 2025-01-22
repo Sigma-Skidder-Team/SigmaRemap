@@ -136,7 +136,7 @@ public class Class4204 extends Class4194 {
          BlockPos var27 = new BlockPos(this.method12920(5, 6), var10, this.method12922(5, 6));
          if (var5.method38396(var27)) {
             this.field20511 = true;
-            var1.setBlockState(var27, Blocks.field36532.getDefaultState(), 2);
+            var1.setBlockState(var27, Blocks.SPAWNER.getDefaultState(), 2);
             TileEntity var21 = var1.getTileEntity(var27);
             if (var21 instanceof Class960) {
                ((Class960)var21).method3911().method24790(EntityType.SILVERFISH);

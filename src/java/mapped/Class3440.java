@@ -11,7 +11,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
-public class Class3440 extends Class3438 {
+public class Class3440 extends CraftingTableBlock {
    private static final ITextComponent field19239 = new TranslationTextComponent("container.upgrade");
 
    public Class3440(Properties var1) {

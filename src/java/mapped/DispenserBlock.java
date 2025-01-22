@@ -30,7 +30,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Map;
 import java.util.Random;
 
-public class Class3357 extends BannerBlock {
+public class DispenserBlock extends BannerBlock {
    private static String[] field18898;
    public static final DirectionProperty field18899 = Class3433.field19198;
    public static final BooleanProperty field18900 = BlockStateProperties.TRIGGERED;
@@ -42,7 +42,7 @@ public class Class3357 extends BannerBlock {
       field18901.put(var0.asItem(), var1);
    }
 
-   public Class3357(Properties var1) {
+   public DispenserBlock(Properties var1) {
       super(var1);
       this.setDefaultState(this.stateContainer.getBaseState().with(field18899, Direction.NORTH).with(field18900, Boolean.valueOf(false)));
    }

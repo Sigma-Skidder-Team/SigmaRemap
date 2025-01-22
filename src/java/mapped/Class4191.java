@@ -292,7 +292,7 @@ public class Class4191 extends Class4188 {
                BlockPos var22 = new BlockPos(var20, var18, var21);
                if (var5.method38396(var22) && this.method12925(var1, 1, 0, var19, var5)) {
                   this.field20485 = true;
-                  var1.setBlockState(var22, Blocks.field36532.getDefaultState(), 2);
+                  var1.setBlockState(var22, Blocks.SPAWNER.getDefaultState(), 2);
                   TileEntity var23 = var1.getTileEntity(var22);
                   if (var23 instanceof Class960) {
                      ((Class960)var23).method3911().method24790(EntityType.CAVE_SPIDER);

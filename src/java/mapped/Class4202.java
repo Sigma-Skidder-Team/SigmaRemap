@@ -64,11 +64,11 @@ public class Class4202 extends Class4194 {
 
       for (int var13 = 1; var13 <= 13; var13++) {
          if ((var13 - 1) % 4 != 0) {
-            this.method12927(var1, var5, 1, 1, var13, 1, 4, var13, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
-            this.method12927(var1, var5, 12, 1, var13, 12, 4, var13, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
+            this.method12927(var1, var5, 1, 1, var13, 1, 4, var13, Blocks.BOOKSHELF.getDefaultState(), Blocks.BOOKSHELF.getDefaultState(), false);
+            this.method12927(var1, var5, 12, 1, var13, 12, 4, var13, Blocks.BOOKSHELF.getDefaultState(), Blocks.BOOKSHELF.getDefaultState(), false);
             if (this.field20509) {
-               this.method12927(var1, var5, 1, 6, var13, 1, 9, var13, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
-               this.method12927(var1, var5, 12, 6, var13, 12, 9, var13, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
+               this.method12927(var1, var5, 1, 6, var13, 1, 9, var13, Blocks.BOOKSHELF.getDefaultState(), Blocks.BOOKSHELF.getDefaultState(), false);
+               this.method12927(var1, var5, 12, 6, var13, 12, 9, var13, Blocks.BOOKSHELF.getDefaultState(), Blocks.BOOKSHELF.getDefaultState(), false);
             }
          } else {
             this.method12927(var1, var5, 1, 1, var13, 1, 4, var13, Blocks.OAK_PLANKS.getDefaultState(), Blocks.OAK_PLANKS.getDefaultState(), false);
@@ -83,9 +83,9 @@ public class Class4202 extends Class4194 {
       }
 
       for (int var22 = 3; var22 < 12; var22 += 2) {
-         this.method12927(var1, var5, 3, 1, var22, 4, 3, var22, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
-         this.method12927(var1, var5, 6, 1, var22, 7, 3, var22, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
-         this.method12927(var1, var5, 9, 1, var22, 10, 3, var22, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
+         this.method12927(var1, var5, 3, 1, var22, 4, 3, var22, Blocks.BOOKSHELF.getDefaultState(), Blocks.BOOKSHELF.getDefaultState(), false);
+         this.method12927(var1, var5, 6, 1, var22, 7, 3, var22, Blocks.BOOKSHELF.getDefaultState(), Blocks.BOOKSHELF.getDefaultState(), false);
+         this.method12927(var1, var5, 9, 1, var22, 10, 3, var22, Blocks.BOOKSHELF.getDefaultState(), Blocks.BOOKSHELF.getDefaultState(), false);
       }
 
       if (this.field20509) {

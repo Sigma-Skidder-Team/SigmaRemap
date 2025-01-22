@@ -1427,6 +1427,6 @@ public class ServerWorld extends World implements ISeedReader {
       int var6 = var3.getZ();
       BlockPos.method8364(var4 - 2, var5 + 1, var6 - 2, var4 + 2, var5 + 3, var6 + 2)
          .forEach(var1 -> var0.setBlockState(var1, Blocks.AIR.getDefaultState()));
-      BlockPos.method8364(var4 - 2, var5, var6 - 2, var4 + 2, var5, var6 + 2).forEach(var1 -> var0.setBlockState(var1, Blocks.field36527.getDefaultState()));
+      BlockPos.method8364(var4 - 2, var5, var6 - 2, var4 + 2, var5, var6 + 2).forEach(var1 -> var0.setBlockState(var1, Blocks.OBSIDIAN.getDefaultState()));
    }
 }

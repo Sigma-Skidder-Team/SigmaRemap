@@ -28,14 +28,14 @@ public class Class3269 extends ToolItem {
       Blocks.TARGET,
       Blocks.SHROOMLIGHT,
       new Block[]{
-         Blocks.field36452,
-         Blocks.field36453,
-         Blocks.field36449,
-         Blocks.field36446,
-         Blocks.field36447,
-         Blocks.field36451,
-         Blocks.field36450,
-         Blocks.field36448
+         Blocks.SPONGE,
+         Blocks.WET_SPONGE,
+         Blocks.JUNGLE_LEAVES,
+         Blocks.OAK_LEAVES,
+         Blocks.SPRUCE_LEAVES,
+         Blocks.DARK_OAK_LEAVES,
+         Blocks.ACACIA_LEAVES,
+         Blocks.BIRCH_LEAVES
       }
    );
    public static final Map<Block, BlockState> field18767 = Maps.newHashMap(

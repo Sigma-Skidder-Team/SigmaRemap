@@ -13,8 +13,8 @@ public final class Class6222 extends Class6218 {
 
    @Override
    public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
-      Direction var5 = var1.method11324().<Direction>get(Class3357.field18899);
-      IPosition var6 = Class3357.method11934(var1);
+      Direction var5 = var1.method11324().<Direction>get(DispenserBlock.field18899);
+      IPosition var6 = DispenserBlock.method11934(var1);
       double var7 = var6.getX() + (double)((float)var5.getXOffset() * 0.3F);
       double var9 = var6.getY() + (double)((float)var5.getYOffset() * 0.3F);
       double var11 = var6.getZ() + (double)((float)var5.getZOffset() * 0.3F);

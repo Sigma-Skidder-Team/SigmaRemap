@@ -11,17 +11,17 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class3417 extends Block {
+public class WetSpongeBlock extends Block {
    private static String[] field19120;
 
-   public Class3417(Properties var1) {
+   public WetSpongeBlock(Properties var1) {
       super(var1);
    }
 
    @Override
    public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (var2.getDimensionType().isUltrawarm()) {
-         var2.setBlockState(var3, Blocks.field36452.getDefaultState(), 3);
+         var2.setBlockState(var3, Blocks.SPONGE.getDefaultState(), 3);
          var2.playEvent(2009, var3, 0);
          var2.playSound((PlayerEntity)null, var3, SoundEvents.field26582, SoundCategory.field14732, 1.0F, (1.0F + var2.method6814().nextFloat() * 0.2F) * 0.7F);
       }

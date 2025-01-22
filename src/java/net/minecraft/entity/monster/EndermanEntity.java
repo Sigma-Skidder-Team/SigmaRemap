@@ -168,7 +168,7 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
 
    private boolean method4352(PlayerEntity var1) {
       ItemStack var4 = var1.inventory.field5440.get(3);
-      if (var4.getItem() != Blocks.field36589.asItem()) {
+      if (var4.getItem() != Blocks.CARVED_PUMPKIN.asItem()) {
          Vector3d var5 = var1.getLook(1.0F).method11333();
          Vector3d var6 = new Vector3d(this.getPosX() - var1.getPosX(), this.getPosYEye() - var1.getPosYEye(), this.getPosZ() - var1.getPosZ());
          double var7 = var6.length();

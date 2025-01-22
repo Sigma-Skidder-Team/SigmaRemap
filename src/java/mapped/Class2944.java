@@ -54,7 +54,7 @@ public class Class2944 extends Class2898<Class4707> {
       )) {
          if (var9.distanceSq((double)var4.method37626(), (double)var9.getY(), (double)var4.method37627(), false) <= (double)(var7 * var7 + 1)
             && var9.getY() < var4.method37629()) {
-            this.method11217(var1, var9, Blocks.field36527.getDefaultState());
+            this.method11217(var1, var9, Blocks.OBSIDIAN.getDefaultState());
          } else if (var9.getY() > 65) {
             this.method11217(var1, var9, Blocks.AIR.getDefaultState());
          }

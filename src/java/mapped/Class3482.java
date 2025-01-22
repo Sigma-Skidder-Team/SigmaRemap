@@ -16,7 +16,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3482 extends Class3480 {
+public class Class3482 extends WheatBlock {
    private static String[] field19333;
    public static final IntegerProperty field19337 = BlockStateProperties.AGE3;
    private static final VoxelShape[] field19338 = new VoxelShape[]{

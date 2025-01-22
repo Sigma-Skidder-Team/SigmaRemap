@@ -14,7 +14,7 @@ public final class Class6237 extends Class6230 {
 
    @Override
    public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
-      BlockPos var5 = var1.method11323().offset(var1.method11324().<Direction>get(Class3357.field18899));
+      BlockPos var5 = var1.method11323().offset(var1.method11324().<Direction>get(DispenserBlock.field18899));
       List var6 = var1.method11326().<LivingEntity>getEntitiesInAABBexcluding(LivingEntity.class, new AxisAlignedBB(var5), var0 -> {
          if (!(var0 instanceof Class1069)) {
             return false;

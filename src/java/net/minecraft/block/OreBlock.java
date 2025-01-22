@@ -16,12 +16,12 @@ public class OreBlock extends Block {
    }
 
    public int method12068(Random var1) {
-      if (this != Blocks.field36420) {
-         if (this != Blocks.field36536) {
+      if (this != Blocks.COAL_ORE) {
+         if (this != Blocks.DIAMOND_ORE) {
             if (this != Blocks.EMERALD_ORE) {
-               if (this != Blocks.field36455) {
+               if (this != Blocks.LAPIS_ORE) {
                   if (this != Blocks.field36722) {
-                     return this != Blocks.field36421 ? 0 : MathHelper.method37782(var1, 0, 1);
+                     return this != Blocks.NETHER_GOLD_ORE ? 0 : MathHelper.method37782(var1, 0, 1);
                   } else {
                      return MathHelper.method37782(var1, 2, 5);
                   }

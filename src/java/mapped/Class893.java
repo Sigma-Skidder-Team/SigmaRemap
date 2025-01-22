@@ -48,7 +48,7 @@ public abstract class Class893 extends ProjectileEntity {
       if (var3.getType() == RayTraceResult.Type.BLOCK) {
          BlockPos var5 = ((BlockRayTraceResult)var3).getPos();
          BlockState var13 = this.world.getBlockState(var5);
-         if (!var13.isIn(Blocks.field36588)) {
+         if (!var13.isIn(Blocks.NETHER_PORTAL)) {
             if (var13.isIn(Blocks.field36886)) {
                TileEntity var14 = this.world.getTileEntity(var5);
                if (var14 instanceof Class957 && Class957.method3871(this)) {

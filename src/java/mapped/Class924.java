@@ -72,7 +72,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3643(var2, Blocks.field36866, 300);
       method3643(var2, Blocks.field36865, 300);
       method3643(var2, Blocks.NOTE_BLOCK, 300);
-      method3643(var2, Blocks.field36525, 300);
+      method3643(var2, Blocks.BOOKSHELF, 300);
       method3643(var2, Blocks.LECTERN, 300);
       method3643(var2, Blocks.JUKEBOX, 300);
       method3643(var2, Blocks.CHEST, 300);
@@ -263,7 +263,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
             this.method3636(var1);
          }
 
-         if (var4.getItem() == Blocks.field36453.asItem()
+         if (var4.getItem() == Blocks.WET_SPONGE.asItem()
             && !this.field5247.get(1).isEmpty()
             && this.field5247.get(1).getItem() == Items.BUCKET) {
             this.field5247.set(1, new ItemStack(Items.WATER_BUCKET));

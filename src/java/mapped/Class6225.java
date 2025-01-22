@@ -18,7 +18,7 @@ public class Class6225 extends Class6218 {
 
    @Override
    public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
-      Direction var5 = var1.method11324().<Direction>get(Class3357.field18899);
+      Direction var5 = var1.method11324().<Direction>get(DispenserBlock.field18899);
       ServerWorld var6 = var1.method11326();
       double var7 = var1.getX() + (double)((float)var5.getXOffset() * 1.125F);
       double var9 = var1.getY() + (double)((float)var5.getYOffset() * 1.125F);

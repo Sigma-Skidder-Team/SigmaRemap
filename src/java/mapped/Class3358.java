@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class3358 extends Class3357 {
+public class Class3358 extends DispenserBlock {
    private static String[] field18902;
    private static final IDispenseItemBehavior field18903 = new Class6218();
 

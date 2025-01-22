@@ -53,7 +53,7 @@ public class Class7198 extends Class7194 {
             Blocks.GRAVEL,
             Blocks.WATER,
             Blocks.LAVA,
-            Blocks.field36527,
+            Blocks.OBSIDIAN,
             Blocks.AIR,
             Blocks.field37012,
             Blocks.PACKED_ICE
@@ -118,7 +118,7 @@ public class Class7198 extends Class7194 {
             } else if (var11 == 10) {
                float var22 = var3.nextFloat();
                if (!((double)var22 < 0.25)) {
-                  var1.setBlockState(var4, Blocks.field36527.getDefaultState(), false);
+                  var1.setBlockState(var4, Blocks.OBSIDIAN.getDefaultState(), false);
                } else {
                   var1.setBlockState(var4, Blocks.field36890.getDefaultState(), false);
                   var1.getBlocksToBeTicked().scheduleTick(var4, Blocks.field36890, 0);

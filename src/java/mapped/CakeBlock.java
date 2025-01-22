@@ -22,7 +22,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
-public class Class3394 extends Block {
+public class CakeBlock extends Block {
    private static String[] field19028;
    public static final IntegerProperty field19029 = BlockStateProperties.BITES;
    public static final VoxelShape[] field19030 = new VoxelShape[]{
@@ -35,7 +35,7 @@ public class Class3394 extends Block {
       Block.makeCuboidShape(13.0, 0.0, 1.0, 15.0, 8.0, 15.0)
    };
 
-   public Class3394(Properties var1) {
+   public CakeBlock(Properties var1) {
       super(var1);
       this.setDefaultState(this.stateContainer.getBaseState().with(field19029, Integer.valueOf(0)));
    }

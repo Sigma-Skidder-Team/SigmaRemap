@@ -13,13 +13,13 @@ public class Class6218 implements IDispenseItemBehavior {
    public final ItemStack method19196(IBlockSource var1, ItemStack var2) {
       ItemStack var5 = this.dispenseStack(var1, var2);
       this.method19193(var1);
-      this.method19198(var1, var1.method11324().<Direction>get(Class3357.field18899));
+      this.method19198(var1, var1.method11324().<Direction>get(DispenserBlock.field18899));
       return var5;
    }
 
    public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
-      Direction var5 = var1.method11324().<Direction>get(Class3357.field18899);
-      IPosition var6 = Class3357.method11934(var1);
+      Direction var5 = var1.method11324().<Direction>get(DispenserBlock.field18899);
+      IPosition var6 = DispenserBlock.method11934(var1);
       ItemStack var7 = var2.split(1);
       method19197(var1.method11326(), var7, 6, var5, var6);
       return var2;

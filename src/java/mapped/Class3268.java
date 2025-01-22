@@ -15,22 +15,22 @@ public class Class3268 extends ToolItem {
    private static String[] field18763;
    private static final Set<Block> field18764 = ImmutableSet.of(
       Blocks.field36728,
-      Blocks.field36420,
+      Blocks.COAL_ORE,
       Blocks.COBBLESTONE,
       Blocks.DETECTOR_RAIL,
-      Blocks.field36537,
-      Blocks.field36536,
+      Blocks.DIAMOND_BLOCK,
+      Blocks.DIAMOND_ORE,
       new Block[]{
          Blocks.POWERED_RAIL,
-         Blocks.field36521,
-         Blocks.field36418,
-         Blocks.field36421,
+         Blocks.GOLD_BLOCK,
+         Blocks.GOLD_ORE,
+         Blocks.NETHER_GOLD_ORE,
          Blocks.ICE,
-         Blocks.field36522,
-         Blocks.field36419,
-         Blocks.field36456,
-         Blocks.field36455,
-         Blocks.field36526,
+         Blocks.IRON_BLOCK,
+         Blocks.IRON_ORE,
+         Blocks.LAPIS_BLOCK,
+         Blocks.LAPIS_ORE,
+         Blocks.MOSSY_COBBLESTONE,
          Blocks.NETHERRACK,
          Blocks.PACKED_ICE,
          Blocks.field37006,
@@ -65,7 +65,7 @@ public class Class3268 extends ToolItem {
          Blocks.field36859,
          Blocks.field36858,
          Blocks.STONE_BUTTON,
-         Blocks.field36559,
+         Blocks.STONE_PRESSURE_PLATE,
          Blocks.field37028,
          Blocks.field37029,
          Blocks.field37030,
@@ -109,26 +109,26 @@ public class Class3268 extends ToolItem {
    @Override
    public boolean canHarvestBlock(BlockState var1) {
       int var4 = this.method11783().method9013();
-      if (var1.isIn(Blocks.field36527)
+      if (var1.isIn(Blocks.OBSIDIAN)
          || var1.isIn(Blocks.CRYING_OBSIDIAN)
          || var1.isIn(Blocks.NETHERITE_BLOCK)
          || var1.isIn(Blocks.RESPAWN_ANCHOR)
          || var1.isIn(Blocks.ANCIENT_DEBRIS)) {
          return var4 >= 3;
-      } else if (var1.isIn(Blocks.field36537)
-         || var1.isIn(Blocks.field36536)
+      } else if (var1.isIn(Blocks.DIAMOND_BLOCK)
+         || var1.isIn(Blocks.DIAMOND_ORE)
          || var1.isIn(Blocks.EMERALD_ORE)
          || var1.isIn(Blocks.EMERALD_BLOCK)
-         || var1.isIn(Blocks.field36521)
-         || var1.isIn(Blocks.field36418)
+         || var1.isIn(Blocks.GOLD_BLOCK)
+         || var1.isIn(Blocks.GOLD_ORE)
          || var1.isIn(Blocks.REDSTONE_ORE)) {
          return var4 >= 2;
-      } else if (!var1.isIn(Blocks.field36522)
-         && !var1.isIn(Blocks.field36419)
-         && !var1.isIn(Blocks.field36456)
-         && !var1.isIn(Blocks.field36455)) {
+      } else if (!var1.isIn(Blocks.IRON_BLOCK)
+         && !var1.isIn(Blocks.IRON_ORE)
+         && !var1.isIn(Blocks.LAPIS_BLOCK)
+         && !var1.isIn(Blocks.LAPIS_ORE)) {
          Material var5 = var1.getMaterial();
-         return var5 == Material.STONE || var5 == Material.field38967 || var5 == Material.ANVIL || var1.isIn(Blocks.field36421);
+         return var5 == Material.STONE || var5 == Material.field38967 || var5 == Material.ANVIL || var1.isIn(Blocks.NETHER_GOLD_ORE);
       } else {
          return var4 >= 1;
       }

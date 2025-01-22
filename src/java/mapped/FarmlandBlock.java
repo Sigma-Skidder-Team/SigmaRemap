@@ -21,12 +21,12 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3221 extends Block {
+public class FarmlandBlock extends Block {
    private static String[] field18643;
    public static final IntegerProperty field18644 = BlockStateProperties.MOISTURE;
    public static final VoxelShape field18645 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 15.0, 16.0);
 
-   public Class3221(Properties var1) {
+   public FarmlandBlock(Properties var1) {
       super(var1);
       this.setDefaultState(this.stateContainer.getBaseState().with(field18644, Integer.valueOf(0)));
    }
@@ -103,7 +103,7 @@ public class Class3221 extends Block {
 
    private static boolean method11611(IBlockReader var0, BlockPos var1) {
       Block var4 = var0.getBlockState(var1.up()).getBlock();
-      return var4 instanceof Class3480 || var4 instanceof Class3486 || var4 instanceof Class3493;
+      return var4 instanceof WheatBlock || var4 instanceof Class3486 || var4 instanceof Class3493;
    }
 
    private static boolean method11612(IWorldReader var0, BlockPos var1) {

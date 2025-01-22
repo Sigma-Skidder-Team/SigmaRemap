@@ -242,7 +242,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
       Class7999.method27304()
          .method27305(var6)
          .method27308(
-            Blocks.field36589,
+            Blocks.CARVED_PUMPKIN,
             new TranslationTextComponent("advancements.adventure.summon_iron_golem.title"),
             new TranslationTextComponent("advancements.adventure.summon_iron_golem.description"),
             (ResourceLocation)null,

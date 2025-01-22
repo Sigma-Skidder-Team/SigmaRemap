@@ -429,7 +429,7 @@ public abstract class Class4178 {
    public boolean method12936(ISeedReader var1, MutableBoundingBox var2, Random var3, int var4, int var5, int var6, Direction var7, ResourceLocation var8) {
       BlockPos var11 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
       if (var2.method38396(var11) && !var1.getBlockState(var11).isIn(Blocks.DISPENSER)) {
-         this.method12923(var1, Blocks.DISPENSER.getDefaultState().with(Class3357.field18899, var7), var4, var5, var6, var2);
+         this.method12923(var1, Blocks.DISPENSER.getDefaultState().with(DispenserBlock.field18899, var7), var4, var5, var6, var2);
          TileEntity var12 = var1.getTileEntity(var11);
          if (var12 instanceof Class971) {
             ((Class971)var12).method3744(var8, var3.nextLong());

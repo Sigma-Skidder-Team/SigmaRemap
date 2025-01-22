@@ -601,9 +601,9 @@ public class Class9680 {
                      }
 
                      var10 = field45270;
-                  } else if (var7 != Blocks.field36446) {
-                     if (var7 != Blocks.field36447) {
-                        if (var7 != Blocks.field36448) {
+                  } else if (var7 != Blocks.OAK_LEAVES) {
+                     if (var7 != Blocks.SPRUCE_LEAVES) {
+                        if (var7 != Blocks.BIRCH_LEAVES) {
                            var10 = field45270;
                         } else {
                            var10 = field45272;

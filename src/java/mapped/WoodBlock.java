@@ -9,11 +9,11 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 
-public class Class3386 extends Block {
+public class WoodBlock extends Block {
    private static String[] field18993;
    public static final EnumProperty<Direction.Axis> field18994 = BlockStateProperties.AXIS;
 
-   public Class3386(Properties var1) {
+   public WoodBlock(Properties var1) {
       super(var1);
       this.setDefaultState(this.getDefaultState().with(field18994, Direction.Axis.Y));
    }

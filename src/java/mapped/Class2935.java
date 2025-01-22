@@ -25,7 +25,7 @@ public class Class2935 extends Class2898<Class4708> {
       Blocks.NETHER_BRICK_STAIRS,
       Blocks.NETHER_WART,
       Blocks.CHEST,
-      Blocks.field36532
+      Blocks.SPAWNER
    );
 
    public Class2935(Codec<Class4708> var1) {

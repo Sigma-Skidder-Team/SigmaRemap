@@ -12,10 +12,10 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class3353 extends Class3350 {
+public class FurnaceBlock extends Class3350 {
    private static String[] field18879;
 
-   public Class3353(Properties var1) {
+   public FurnaceBlock(Properties var1) {
       super(var1);
    }
 

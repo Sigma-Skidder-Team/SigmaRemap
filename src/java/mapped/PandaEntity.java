@@ -49,7 +49,7 @@ public class PandaEntity extends AnimalEntity {
    private Class2616 field6034;
    private static final Predicate<ItemEntity> field6035 = var0 -> {
       Item var3 = var0.method4124().getItem();
-      return (var3 == Blocks.field37009.asItem() || var3 == Blocks.field36591.asItem()) && var0.isAlive() && !var0.method4135();
+      return (var3 == Blocks.field37009.asItem() || var3 == Blocks.CAKE.asItem()) && var0.isAlive() && !var0.method4135();
    };
 
    public PandaEntity(EntityType<? extends PandaEntity> var1, World var2) {
@@ -627,7 +627,7 @@ public class PandaEntity extends AnimalEntity {
    }
 
    private boolean method5229(ItemStack var1) {
-      return this.method4381(var1) || var1.getItem() == Blocks.field36591.asItem();
+      return this.method4381(var1) || var1.getItem() == Blocks.CAKE.asItem();
    }
 
    @Nullable

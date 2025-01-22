@@ -105,7 +105,7 @@ public class Class3634 {
          for (int var27 = -1; var27 < 2; var27++) {
             for (int var30 = 0; var30 < 2; var30++) {
                for (int var32 = -1; var32 < 3; var32++) {
-                  BlockState var33 = var32 >= 0 ? Blocks.AIR.getDefaultState() : Blocks.field36527.getDefaultState();
+                  BlockState var33 = var32 >= 0 ? Blocks.AIR.getDefaultState() : Blocks.OBSIDIAN.getDefaultState();
                   var14.method8378(var8, var30 * var5.getXOffset() + var27 * var24.getXOffset(), var32, var30 * var5.getZOffset() + var27 * var24.getZOffset());
                   this.field19668.setBlockState(var14, var33);
                }
@@ -117,12 +117,12 @@ public class Class3634 {
          for (int var28 = -1; var28 < 4; var28++) {
             if (var25 == -1 || var25 == 2 || var28 == -1 || var28 == 3) {
                var14.method8378(var8, var25 * var5.getXOffset(), var28, var25 * var5.getZOffset());
-               this.field19668.setBlockState(var14, Blocks.field36527.getDefaultState(), 3);
+               this.field19668.setBlockState(var14, Blocks.OBSIDIAN.getDefaultState(), 3);
             }
          }
       }
 
-      BlockState var26 = Blocks.field36588.getDefaultState().with(Class3401.field19060, var2);
+      BlockState var26 = Blocks.NETHER_PORTAL.getDefaultState().with(NetherPortalBlock.field19060, var2);
 
       for (int var29 = 0; var29 < 2; var29++) {
          for (int var31 = 0; var31 < 3; var31++) {

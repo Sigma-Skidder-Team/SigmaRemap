@@ -28,7 +28,7 @@ public class Class5947 extends Class5942<Class954> {
       BlockState var9 = var1.getBlockState();
       var3.push();
       float var10 = 0.6666667F;
-      if (!(var9.getBlock() instanceof Class3374)) {
+      if (!(var9.getBlock() instanceof SignBlock)) {
          var3.translate(0.5, 0.5, 0.5);
          float var11 = -var9.<Direction>get(Class3375.field18972).getHorizontalAngle();
          var3.rotate(Vector3f.YP.rotationDegrees(var11));
@@ -36,7 +36,7 @@ public class Class5947 extends Class5942<Class954> {
          this.field25938.field17651.showModel = false;
       } else {
          var3.translate(0.5, 0.5, 0.5);
-         float var26 = -((float)(var9.<Integer>get(Class3374.field18970) * 360) / 16.0F);
+         float var26 = -((float)(var9.<Integer>get(SignBlock.field18970) * 360) / 16.0F);
          var3.rotate(Vector3f.YP.rotationDegrees(var26));
          this.field25938.field17651.showModel = true;
       }

@@ -18,7 +18,7 @@ public class Class7091 extends Class7092 {
    public static final Class7091 field30519 = new Class7091();
    private final Map<Block, Block> field30520 = Util.<Map<Block, Block>>make(Maps.newHashMap(), var0 -> {
       var0.put(Blocks.COBBLESTONE, Blocks.field37130);
-      var0.put(Blocks.field36526, Blocks.field37130);
+      var0.put(Blocks.MOSSY_COBBLESTONE, Blocks.field37130);
       var0.put(Blocks.STONE, Blocks.field37134);
       var0.put(Blocks.field36615, Blocks.field37135);
       var0.put(Blocks.field36616, Blocks.field37135);

@@ -26,7 +26,7 @@ public class Class3340 extends Item {
       World var4 = var1.getWorld();
       BlockPos var5 = var1.getPos();
       BlockState var6 = var4.getBlockState(var5);
-      if (!var6.isIn(Blocks.field36527) && !var6.isIn(Blocks.BEDROCK)) {
+      if (!var6.isIn(Blocks.OBSIDIAN) && !var6.isIn(Blocks.BEDROCK)) {
          return ActionResultType.FAIL;
       } else {
          BlockPos var7 = var5.up();

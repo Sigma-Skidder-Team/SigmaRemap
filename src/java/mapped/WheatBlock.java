@@ -20,7 +20,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3480 extends BushBlock implements IGrowable {
+public class WheatBlock extends BushBlock implements IGrowable {
    private static String[] field19333;
    public static final IntegerProperty field19334 = BlockStateProperties.AGE5;
    private static final VoxelShape[] field19335 = new VoxelShape[]{
@@ -34,7 +34,7 @@ public class Class3480 extends BushBlock implements IGrowable {
       Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 16.0)
    };
 
-   public Class3480(Properties var1) {
+   public WheatBlock(Properties var1) {
       super(var1);
       this.setDefaultState(this.stateContainer.getBaseState().with(this.method12175(), Integer.valueOf(0)));
    }
@@ -111,7 +111,7 @@ public class Class3480 extends BushBlock implements IGrowable {
             BlockState var10 = var1.getBlockState(var6.add(var7, 0, var8));
             if (var10.isIn(Blocks.FARMLAND)) {
                var9 = 1.0F;
-               if (var10.<Integer>get(Class3221.field18644) > 0) {
+               if (var10.<Integer>get(FarmlandBlock.field18644) > 0) {
                   var9 = 3.0F;
                }
             }

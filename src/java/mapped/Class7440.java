@@ -86,7 +86,7 @@ public class Class7440 {
       for (int var9 = -1; var9 <= 1; var9++) {
          for (int var10 = -1; var10 <= 1; var10++) {
             BlockPos var11 = var7.add(var9, -1, var10);
-            var4.setBlockState(var11, Blocks.field36522.getDefaultState());
+            var4.setBlockState(var11, Blocks.IRON_BLOCK.getDefaultState());
          }
       }
    }

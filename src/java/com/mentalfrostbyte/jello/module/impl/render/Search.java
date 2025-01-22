@@ -122,7 +122,7 @@ public class Search extends Module {
                         for (Direction var11 : Direction.values()) {
                             if (var11 != Direction.UP
                                     && mc.world.getBlockState(var13.method8337(var11.getDirectionVec()))
-                                            .getBlock() != Blocks.field36527
+                                            .getBlock() != Blocks.OBSIDIAN
                                     && mc.world.getBlockState(var13.method8337(var11.getDirectionVec()))
                                             .getBlock() != Blocks.BEDROCK) {
                                 continue label57;

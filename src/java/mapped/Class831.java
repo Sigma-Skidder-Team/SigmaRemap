@@ -105,7 +105,7 @@ public class Class831 extends Screen {
       var1.scale(93.75F, -93.75F, 93.75F);
       var1.translate(0.0, -1.3125, 0.0);
       BlockState var8 = this.field4611.getBlockState();
-      boolean var9 = var8.getBlock() instanceof Class3374;
+      boolean var9 = var8.getBlock() instanceof SignBlock;
       if (!var9) {
          var1.translate(0.0, -0.3125, 0.0);
       }

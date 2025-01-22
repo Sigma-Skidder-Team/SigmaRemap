@@ -8,7 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
 
-public class Class3439 extends Class3438 {
+public class Class3439 extends CraftingTableBlock {
    private static String[] field19238;
 
    public Class3439(Properties var1) {

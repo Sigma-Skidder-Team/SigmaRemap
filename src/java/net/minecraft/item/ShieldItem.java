@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 public class ShieldItem extends Item {
    public ShieldItem(Properties var1) {
       super(var1);
-      Class3357.method11931(this, ArmorItem.DISPENSER_BEHAVIOR);
+      DispenserBlock.method11931(this, ArmorItem.DISPENSER_BEHAVIOR);
    }
 
    @Override

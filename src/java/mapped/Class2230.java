@@ -17,7 +17,7 @@ import java.util.List;
 public enum Class2230 implements Class2234 {
    field14618(
       Blocks.field36895,
-      Blocks.field36588,
+      Blocks.NETHER_PORTAL,
       Blocks.field36945,
       Blocks.field36946,
       Blocks.field36947,
@@ -93,7 +93,7 @@ public enum Class2230 implements Class2234 {
          return var1;
       }
    },
-   field14621(true, Blocks.field36450, Blocks.field36448, Blocks.field36451, Blocks.field36449, Blocks.field36446, Blocks.field36447) {
+   field14621(true, Blocks.ACACIA_LEAVES, Blocks.BIRCH_LEAVES, Blocks.DARK_OAK_LEAVES, Blocks.JUNGLE_LEAVES, Blocks.OAK_LEAVES, Blocks.SPRUCE_LEAVES) {
       private final ThreadLocal<List<ObjectSet<BlockPos>>> field14625 = ThreadLocal.withInitial(() -> Lists.newArrayListWithCapacity(7));
       @Override
       public BlockState method8970(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {

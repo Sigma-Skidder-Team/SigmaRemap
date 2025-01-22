@@ -19,7 +19,7 @@ import net.minecraft.world.IWorld;
 
 import javax.annotation.Nullable;
 
-public class Class3387 extends Class3386 implements IWaterLoggable {
+public class Class3387 extends WoodBlock implements IWaterLoggable {
    private static String[] field18993;
    public static final BooleanProperty field18995 = BlockStateProperties.WATERLOGGED;
    public static final VoxelShape field18996 = Block.makeCuboidShape(6.5, 0.0, 6.5, 9.5, 16.0, 9.5);

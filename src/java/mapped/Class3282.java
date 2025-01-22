@@ -19,7 +19,7 @@ public class Class3282 extends Item {
    public Class3282(MinecartType var1, Properties var2) {
       super(var2);
       this.field18792 = var1;
-      Class3357.method11931(this, field18791);
+      DispenserBlock.method11931(this, field18791);
    }
 
    @Override

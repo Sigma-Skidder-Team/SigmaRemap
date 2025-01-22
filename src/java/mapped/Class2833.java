@@ -105,7 +105,7 @@ public class Class2833 implements Consumer<Consumer<Advancement>> {
             false
          )
          .method27314(Class9014.field41221)
-         .method27312("wheat", Class4486.method14152(Blocks.field36539))
+         .method27312("wheat", Class4486.method14152(Blocks.WHEAT))
          .method27312("pumpkin_stem", Class4486.method14152(Blocks.PUMPKIN_STEM))
          .method27312("melon_stem", Class4486.method14152(Blocks.MELON_STEM))
          .method27312("beetroots", Class4486.method14152(Blocks.field36884))

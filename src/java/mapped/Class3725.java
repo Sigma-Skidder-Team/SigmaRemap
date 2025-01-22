@@ -63,7 +63,7 @@ public class Class3725 extends Class3676<VillagerEntity> {
    private boolean method12626(BlockPos var1, ServerWorld var2) {
       BlockState var5 = var2.getBlockState(var1);
       Block var6 = var5.getBlock();
-      return var6 instanceof Class3480 && !((Class3480)var6).method12179(var5);
+      return var6 instanceof WheatBlock && !((WheatBlock)var6).method12179(var5);
    }
 
    public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {

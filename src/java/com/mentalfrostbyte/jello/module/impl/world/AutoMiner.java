@@ -87,7 +87,7 @@ public class AutoMiner extends Module {
          for (float var12 = (float) var5; var12 <= (float) var8; var12++) {
             for (float var13 = (float) var6; var13 <= (float) var9; var13++) {
                BlockPos var14 = new BlockPos((double) var12, (double) var11, (double) var13);
-               if (mc.world.getBlockState(var14).getBlock() == Blocks.field36536) {
+               if (mc.world.getBlockState(var14).getBlock() == Blocks.DIAMOND_ORE) {
                   var4.add(var14);
                }
             }

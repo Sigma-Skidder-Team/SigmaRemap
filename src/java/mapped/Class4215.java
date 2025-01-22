@@ -54,7 +54,7 @@ public class Class4215 extends Class4213 {
       }
 
       this.method12927(var1, var5, 6, 3, 6, 9, 6, 9, field20530, field20530, false);
-      this.method12927(var1, var5, 7, 4, 7, 8, 5, 8, Blocks.field36521.getDefaultState(), Blocks.field36521.getDefaultState(), false);
+      this.method12927(var1, var5, 7, 4, 7, 8, 5, 8, Blocks.GOLD_BLOCK.getDefaultState(), Blocks.GOLD_BLOCK.getDefaultState(), false);
 
       for (int var15 = 3; var15 <= 6; var15 += 3) {
          for (int var16 = 6; var16 <= 9; var16 += 3) {

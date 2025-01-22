@@ -79,7 +79,7 @@ public class NameTags extends Module {
 
                 while (var4.hasNext()) {
                     Entry<BlockPos, Class7070> var5 = var4.next();
-                    if (!(mc.world.getBlockState(var5.getKey()).getBlock() instanceof Class3353)) {
+                    if (!(mc.world.getBlockState(var5.getKey()).getBlock() instanceof FurnaceBlock)) {
                         var4.remove();
                     }
 
@@ -106,7 +106,7 @@ public class NameTags extends Module {
         if (this.isEnabled()) {
             if (event.getPacket() instanceof CPlayerTryUseItemOnBlockPacket) {
                 CPlayerTryUseItemOnBlockPacket var4 = (CPlayerTryUseItemOnBlockPacket) event.getPacket();
-                if (mc.world.getBlockState(var4.func_218794_c().getPos()).getBlock() instanceof Class3353) {
+                if (mc.world.getBlockState(var4.func_218794_c().getPos()).getBlock() instanceof FurnaceBlock) {
                     this.field24001 = var4.func_218794_c().getPos();
                 }
             }

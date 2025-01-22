@@ -75,7 +75,7 @@ public class Class4184 extends Class4180 {
    private void method12949(Class8969 var1, BlockPos var2) {
       Class7095 var5 = !this.field20470.field35676 ? Class7095.field30528 : Class7095.field30526;
       ArrayList var6 = Lists.newArrayList();
-      var6.add(method12960(Blocks.field36521, 0.3F, Blocks.AIR));
+      var6.add(method12960(Blocks.GOLD_BLOCK, 0.3F, Blocks.AIR));
       var6.add(this.method12950());
       if (!this.field20470.field35674) {
          var6.add(method12960(Blocks.NETHERRACK, 0.07F, Blocks.field36890));
@@ -150,7 +150,7 @@ public class Class4184 extends Class4180 {
 
    private void method12952(Random var1, IWorld var2, BlockPos var3) {
       if (var1.nextFloat() < 0.5F && var2.getBlockState(var3).isIn(Blocks.NETHERRACK) && var2.getBlockState(var3.up()).isAir()) {
-         var2.setBlockState(var3.up(), Blocks.field36449.getDefaultState().with(Class3465.field19306, Boolean.valueOf(true)), 3);
+         var2.setBlockState(var3.up(), Blocks.JUNGLE_LEAVES.getDefaultState().with(Class3465.field19306, Boolean.valueOf(true)), 3);
       }
    }
 
@@ -216,7 +216,7 @@ public class Class4184 extends Class4180 {
    private boolean method12956(IWorld var1, BlockPos var2) {
       BlockState var5 = var1.getBlockState(var2);
       return !var5.isIn(Blocks.AIR)
-         && !var5.isIn(Blocks.field36527)
+         && !var5.isIn(Blocks.OBSIDIAN)
          && !var5.isIn(Blocks.CHEST)
          && (this.field20469 == Class2219.field14499 || !var5.isIn(Blocks.LAVA));
    }

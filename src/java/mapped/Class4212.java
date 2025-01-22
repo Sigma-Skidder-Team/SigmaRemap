@@ -217,7 +217,7 @@ public class Class4212 extends Class4209 {
             1,
             var5
          );
-         this.method12923(var1, Blocks.field36526.getDefaultState(), 3, -3, 1, var5);
+         this.method12923(var1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 3, -3, 1, var5);
          if (!this.field20525) {
             this.field20525 = this.method12936(var1, var5, var4, 3, -2, 1, Direction.NORTH, Class8793.field39560);
          }
@@ -299,7 +299,7 @@ public class Class4212 extends Class4209 {
             5,
             var5
          );
-         this.method12923(var1, Blocks.field36526.getDefaultState(), 9, -3, 4, var5);
+         this.method12923(var1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 9, -3, 4, var5);
          this.method12923(var1, var21, 9, -2, 4, var5);
          if (!this.field20526) {
             this.field20526 = this.method12936(var1, var5, var4, 9, -2, 3, Direction.WEST, Class8793.field39560);
@@ -311,15 +311,15 @@ public class Class4212 extends Class4209 {
             this.field20523 = this.method12933(var1, var5, var4, 8, -3, 3, Class8793.field39559);
          }
 
-         this.method12923(var1, Blocks.field36526.getDefaultState(), 9, -3, 2, var5);
-         this.method12923(var1, Blocks.field36526.getDefaultState(), 8, -3, 1, var5);
-         this.method12923(var1, Blocks.field36526.getDefaultState(), 4, -3, 5, var5);
-         this.method12923(var1, Blocks.field36526.getDefaultState(), 5, -2, 5, var5);
-         this.method12923(var1, Blocks.field36526.getDefaultState(), 5, -1, 5, var5);
-         this.method12923(var1, Blocks.field36526.getDefaultState(), 6, -3, 5, var5);
-         this.method12923(var1, Blocks.field36526.getDefaultState(), 7, -2, 5, var5);
-         this.method12923(var1, Blocks.field36526.getDefaultState(), 7, -1, 5, var5);
-         this.method12923(var1, Blocks.field36526.getDefaultState(), 8, -3, 5, var5);
+         this.method12923(var1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 9, -3, 2, var5);
+         this.method12923(var1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 8, -3, 1, var5);
+         this.method12923(var1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 4, -3, 5, var5);
+         this.method12923(var1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 5, -2, 5, var5);
+         this.method12923(var1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 5, -1, 5, var5);
+         this.method12923(var1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 6, -3, 5, var5);
+         this.method12923(var1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 7, -2, 5, var5);
+         this.method12923(var1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 7, -1, 5, var5);
+         this.method12923(var1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 8, -3, 5, var5);
          this.method12928(var1, var5, 9, -1, 1, 9, -1, 5, false, var4, field20527);
          this.method12926(var1, var5, 8, -3, 8, 10, -1, 10);
          this.method12923(var1, Blocks.field36618.getDefaultState(), 8, -2, 11, var5);
@@ -334,7 +334,7 @@ public class Class4212 extends Class4209 {
          this.method12923(var1, var15, 10, -2, 12, var5);
          this.method12928(var1, var5, 8, -3, 8, 8, -3, 10, false, var4, field20527);
          this.method12928(var1, var5, 10, -3, 8, 10, -3, 10, false, var4, field20527);
-         this.method12923(var1, Blocks.field36526.getDefaultState(), 10, -2, 9, var5);
+         this.method12923(var1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 10, -2, 9, var5);
          this.method12923(var1, var21, 8, -2, 9, var5);
          this.method12923(var1, var21, 8, -2, 10, var5);
          this.method12923(
@@ -353,7 +353,7 @@ public class Class4212 extends Class4209 {
          this.method12923(var1, Blocks.STICKY_PISTON.getDefaultState().with(Class3435.field19198, Direction.UP), 9, -2, 8, var5);
          this.method12923(var1, Blocks.STICKY_PISTON.getDefaultState().with(Class3435.field19198, Direction.WEST), 10, -2, 8, var5);
          this.method12923(var1, Blocks.STICKY_PISTON.getDefaultState().with(Class3435.field19198, Direction.WEST), 10, -1, 8, var5);
-         this.method12923(var1, Blocks.REPEATER.getDefaultState().with(Class3248.HORIZONTAL_FACING, Direction.NORTH), 10, -2, 10, var5);
+         this.method12923(var1, Blocks.REPEATER.getDefaultState().with(RepeaterBlock.HORIZONTAL_FACING, Direction.NORTH), 10, -2, 10, var5);
          if (!this.field20524) {
             this.field20524 = this.method12933(var1, var5, var4, 9, -3, 10, Class8793.field39559);
          }

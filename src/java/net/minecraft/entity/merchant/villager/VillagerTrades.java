@@ -40,7 +40,7 @@ public class VillagerTrades {
                   new Class5391[]{new Class5395(Items.field37954, 3, 18, 10), new Class5396(Blocks.MELON, 4, 12, 20)},
                   4,
                   new Class5391[]{
-                     new Class5395(Blocks.field36591, 1, 1, 12, 15),
+                     new Class5395(Blocks.CAKE, 1, 1, 12, 15),
                      new Class5393(Effects.NIGHT_VISION, 100, 15),
                      new Class5393(Effects.JUMP_BOOST, 160, 15),
                      new Class5393(Effects.WEAKNESS, 140, 15),
@@ -230,7 +230,7 @@ public class VillagerTrades {
             Class8395.field36020,
             method38080(
                ImmutableMap.<Integer, Class5391[]>builder()
-                  .put(1, new Class5391[]{new Class5396(Items.field37899, 24, 16, 2), new Class5399(1), new Class5395(Blocks.field36525, 9, 1, 12, 1)})
+                  .put(1, new Class5391[]{new Class5396(Items.field37899, 24, 16, 2), new Class5399(1), new Class5395(Blocks.BOOKSHELF, 9, 1, 12, 1)})
                   .put(2, new Class5391[]{new Class5396(Items.field37900, 4, 12, 10), new Class5399(5), new Class5395(Items.field38168, 1, 1, 5)})
                   .put(3, new Class5391[]{new Class5396(Items.field37915, 5, 12, 20), new Class5399(10), new Class5395(Items.field37299, 1, 4, 10)})
                   .put(
@@ -290,7 +290,7 @@ public class VillagerTrades {
                   2,
                   new Class5391[]{new Class5396(Items.field37802, 3, 12, 10), new Class5395(Items.field37917, 1, 1, 5)},
                   3,
-                  new Class5391[]{new Class5396(Items.field38080, 2, 12, 20), new Class5395(Blocks.field36587, 4, 1, 12, 10)},
+                  new Class5391[]{new Class5396(Items.field38080, 2, 12, 20), new Class5395(Blocks.GLOWSTONE, 4, 1, 12, 10)},
                   4,
                   new Class5391[]{
                      new Class5396(Items.field37793, 4, 12, 30),

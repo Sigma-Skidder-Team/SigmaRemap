@@ -144,7 +144,7 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
       Advancement var12 = Class7999.method27304()
          .method27305(var10)
          .method27308(
-            Blocks.field36527,
+            Blocks.OBSIDIAN,
             new TranslationTextComponent("advancements.story.form_obsidian.title"),
             new TranslationTextComponent("advancements.story.form_obsidian.description"),
             (ResourceLocation)null,
@@ -153,7 +153,7 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("obsidian", Class4491.method14164(Blocks.field36527))
+         .method27312("obsidian", Class4491.method14164(Blocks.OBSIDIAN))
          .method27317(var1, "story/form_obsidian");
       Class7999.method27304()
          .method27305(var11)

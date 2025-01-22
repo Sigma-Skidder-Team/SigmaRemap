@@ -13,8 +13,8 @@ public final class Class6235 extends Class6230 {
    @Override
    public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
       ServerWorld var5 = var1.method11326();
-      BlockPos var6 = var1.method11323().offset(var1.method11324().<Direction>get(Class3357.field18899));
-      Class3342 var7 = (Class3342) Blocks.field36589;
+      BlockPos var6 = var1.method11323().offset(var1.method11324().<Direction>get(DispenserBlock.field18899));
+      PumpkinBlock var7 = (PumpkinBlock) Blocks.CARVED_PUMPKIN;
       if (var5.method7007(var6) && var7.method11891(var5, var6)) {
          if (!var5.isRemote) {
             var5.setBlockState(var6, var7.getDefaultState(), 3);

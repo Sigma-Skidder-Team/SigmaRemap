@@ -30,7 +30,7 @@ public class Class3464 extends Class3462 {
             Direction var10 = var6.getFace();
             Direction var11 = var10.getAxis() != Direction.Axis.Y ? var10 : var4.getHorizontalFacing().getOpposite();
             var2.playSound((PlayerEntity)null, var3, SoundEvents.field26986, SoundCategory.field14732, 1.0F, 1.0F);
-            var2.setBlockState(var3, Blocks.field36589.getDefaultState().with(Class3342.field18848, var11), 11);
+            var2.setBlockState(var3, Blocks.CARVED_PUMPKIN.getDefaultState().with(PumpkinBlock.field18848, var11), 11);
             ItemEntity var12 = new ItemEntity(
                var2,
                (double)var3.getX() + 0.5 + (double)var11.getXOffset() * 0.65,

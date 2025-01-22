@@ -51,7 +51,7 @@ public class Class7197 extends Class7196 {
             Blocks.GRAVEL,
             Blocks.WATER,
             Blocks.LAVA,
-            Blocks.field36527,
+            Blocks.OBSIDIAN,
             Blocks.AIR,
             Blocks.field37012
          }

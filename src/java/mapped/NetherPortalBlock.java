@@ -26,13 +26,13 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class3401 extends Block {
+public class NetherPortalBlock extends Block {
    private static String[] field19059;
    public static final EnumProperty<Direction.Axis> field19060 = BlockStateProperties.HORIZONTAL_AXIS;
    public static final VoxelShape field19061 = Block.makeCuboidShape(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
    public static final VoxelShape field19062 = Block.makeCuboidShape(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
 
-   public Class3401(Properties var1) {
+   public NetherPortalBlock(Properties var1) {
       super(var1);
       this.setDefaultState(this.stateContainer.getBaseState().with(field19060, Direction.Axis.X));
    }

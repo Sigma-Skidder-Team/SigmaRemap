@@ -17,11 +17,11 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 
-public class Class3374 extends Class3373 {
+public class SignBlock extends Class3373 {
    private static String[] field18969;
    public static final IntegerProperty field18970 = BlockStateProperties.ROTATION;
 
-   public Class3374(Properties var1, Class9673 var2) {
+   public SignBlock(Properties var1, Class9673 var2) {
       super(var1, var2);
       this.setDefaultState(this.stateContainer.getBaseState().with(field18970, Integer.valueOf(0)).with(field18966, Boolean.valueOf(false)));
    }

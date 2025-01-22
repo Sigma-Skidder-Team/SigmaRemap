@@ -5,7 +5,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class Class3388 extends Class3386 {
+public class Class3388 extends WoodBlock {
    private static String[] field18993;
 
    public Class3388(Properties var1) {

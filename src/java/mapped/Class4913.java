@@ -66,7 +66,7 @@ public class Class4913 {
    public static final Class4913 field22767 = method15184("meeting", method15180(Blocks.BELL), 32, 6);
    public static final Class4913 field22768 = method15184("beehive", method15180(Blocks.BEEHIVE), 0, 1);
    public static final Class4913 field22769 = method15184("bee_nest", method15180(Blocks.BEE_NEST), 0, 1);
-   public static final Class4913 field22770 = method15184("nether_portal", method15180(Blocks.field36588), 0, 1);
+   public static final Class4913 field22770 = method15184("nether_portal", method15180(Blocks.NETHER_PORTAL), 0, 1);
    public static final Class4913 field22771 = method15184("lodestone", method15180(Blocks.field37129), 0, 1);
    public static final Set<BlockState> field22772 = new ObjectOpenHashSet(field22750.keySet());
    private final String field22773;

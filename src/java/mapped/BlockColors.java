@@ -41,14 +41,14 @@ public class BlockColors {
          Blocks.GRASS,
          Blocks.field36675
       );
-      var2.method29466((var0, var1, var2x, var3) -> FoliageColors.method36293(), Blocks.field36447);
-      var2.method29466((var0, var1, var2x, var3) -> FoliageColors.method36294(), Blocks.field36448);
+      var2.method29466((var0, var1, var2x, var3) -> FoliageColors.method36293(), Blocks.SPRUCE_LEAVES);
+      var2.method29466((var0, var1, var2x, var3) -> FoliageColors.method36294(), Blocks.BIRCH_LEAVES);
       var2.method29466(
          (var0, var1, var2x, var3) -> var1 != null && var2x != null ? BiomeColors.getFoliageColor(var1, var2x) : FoliageColors.method36295(),
-         Blocks.field36446,
-         Blocks.field36449,
-         Blocks.field36450,
-         Blocks.field36451,
+         Blocks.OAK_LEAVES,
+         Blocks.JUNGLE_LEAVES,
+         Blocks.ACACIA_LEAVES,
+         Blocks.DARK_OAK_LEAVES,
          Blocks.VINE
       );
       var2.method29466(

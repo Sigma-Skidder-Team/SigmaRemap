@@ -34,7 +34,7 @@ public class Class7097 extends Class7092 {
       } else if (!var10.isIn(BlockTags.field32762)) {
          if (!var10.isIn(BlockTags.field32763)) {
             if (!var10.isIn(BlockTags.field32764)) {
-               if (var10.isIn(Blocks.field36527)) {
+               if (var10.isIn(Blocks.OBSIDIAN)) {
                   var12 = this.method22080(var9);
                }
             } else {

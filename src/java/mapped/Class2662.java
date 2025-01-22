@@ -40,7 +40,7 @@ public class Class2662 extends Class2661 {
             boolean var7 = false;
             IntegerProperty var8 = null;
             if (var6.isIn(BlockTags.field32796)) {
-               if (!(var6 instanceof Class3480)) {
+               if (!(var6 instanceof WheatBlock)) {
                   if (!(var6 instanceof Class3486)) {
                      if (var6 == Blocks.SWEET_BERRY_BUSH) {
                         int var9 = var5.<Integer>get(Class3484.field19342);
@@ -57,7 +57,7 @@ public class Class2662 extends Class2661 {
                      }
                   }
                } else {
-                  Class3480 var11 = (Class3480)var6;
+                  WheatBlock var11 = (WheatBlock)var6;
                   if (!var11.method12179(var5)) {
                      var7 = true;
                      var8 = var11.method12175();

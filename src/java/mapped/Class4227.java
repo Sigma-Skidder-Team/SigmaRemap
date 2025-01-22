@@ -111,7 +111,7 @@ public class Class4227 extends Class4167 {
          BlockPos var12 = new BlockPos(this.method12920(3, 5), this.method12921(5), this.method12922(3, 5));
          if (var5.method38396(var12)) {
             this.field20558 = true;
-            var1.setBlockState(var12, Blocks.field36532.getDefaultState(), 2);
+            var1.setBlockState(var12, Blocks.SPAWNER.getDefaultState(), 2);
             TileEntity var13 = var1.getTileEntity(var12);
             if (var13 instanceof Class960) {
                ((Class960)var13).method3911().method24790(EntityType.BLAZE);

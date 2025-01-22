@@ -13,7 +13,7 @@ public class Class3256 extends Item implements Class3255 {
 
    public Class3256(Properties var1) {
       super(var1);
-      Class3357.method11931(this, ArmorItem.DISPENSER_BEHAVIOR);
+      DispenserBlock.method11931(this, ArmorItem.DISPENSER_BEHAVIOR);
    }
 
    public static boolean method11698(ItemStack var0) {

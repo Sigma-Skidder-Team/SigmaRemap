@@ -39,7 +39,7 @@ public class ArmorItem extends Item implements Class3255 {
    private final Multimap<Attribute, AttributeModifier> field_234656_m_;
 
    public static boolean func_226626_a_(IBlockSource var0, ItemStack var1) {
-      BlockPos var4 = var0.method11323().offset(var0.method11324().<Direction>get(Class3357.field18899));
+      BlockPos var4 = var0.method11323().offset(var0.method11324().<Direction>get(DispenserBlock.field18899));
       List var5 = var0.method11326().<Entity>getEntitiesInAABBexcluding(LivingEntity.class, new AxisAlignedBB(var4), EntityPredicates.field34763.and(new Class165(var1)));
       if (!var5.isEmpty()) {
          LivingEntity var6 = (LivingEntity)var5.get(0);
@@ -64,7 +64,7 @@ public class ArmorItem extends Item implements Class3255 {
       this.damageReduceAmount = var1.method8786(var2);
       this.toughness = var1.method8791();
       this.knockbackResistance = var1.method8792();
-      Class3357.method11931(this, DISPENSER_BEHAVIOR);
+      DispenserBlock.method11931(this, DISPENSER_BEHAVIOR);
       Builder var6 = ImmutableMultimap.builder();
       UUID var7 = ARMOR_MODIFIERS[var2.getIndex()];
       var6.put(Attributes.ARMOR, new AttributeModifier(var7, "Armor modifier", (double)this.damageReduceAmount, AttributeModifier.Operation.ADDITION));

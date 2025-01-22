@@ -53,7 +53,7 @@ public class Class3486 extends BushBlock implements IGrowable {
    @Override
    public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method7021(var3, 0) >= 9) {
-         float var7 = Class3480.method12182(this, var2, var3);
+         float var7 = WheatBlock.method12182(this, var2, var3);
          if (var4.nextInt((int)(25.0F / var7) + 1) == 0) {
             int var8 = var1.<Integer>get(field19347);
             if (var8 >= 7) {

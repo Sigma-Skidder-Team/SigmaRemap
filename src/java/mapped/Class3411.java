@@ -19,7 +19,7 @@ import java.util.Random;
 
 public class Class3411 extends Block {
    private static String[] field19094;
-   public static final VoxelShape field19095 = Class3221.field18645;
+   public static final VoxelShape field19095 = FarmlandBlock.field18645;
 
    public Class3411(Properties var1) {
       super(var1);
@@ -48,7 +48,7 @@ public class Class3411 extends Block {
 
    @Override
    public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      Class3221.method11610(var1, var2, var3);
+      FarmlandBlock.method11610(var1, var2, var3);
    }
 
    @Override

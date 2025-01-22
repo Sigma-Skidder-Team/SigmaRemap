@@ -26,7 +26,7 @@ public class SpawnerMinecartEntity extends AbstractMinecartEntity {
 
    @Override
    public BlockState method3604() {
-      return Blocks.field36532.getDefaultState();
+      return Blocks.SPAWNER.getDefaultState();
    }
 
    @Override

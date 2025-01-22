@@ -12,7 +12,7 @@ public final class Class7406 extends ItemGroup {
 
    @Override
    public ItemStack method23640() {
-      return new ItemStack(Blocks.field36525);
+      return new ItemStack(Blocks.BOOKSHELF);
    }
 
    @Override

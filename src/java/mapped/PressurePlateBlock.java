@@ -18,12 +18,12 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class Class3469 extends AbstractPressurePlateBlock {
+public class PressurePlateBlock extends AbstractPressurePlateBlock {
    private static String[] field19316;
    public static final BooleanProperty field19317 = BlockStateProperties.POWERED;
    private final Class2275 field19318;
 
-   public Class3469(Class2275 var1, Properties var2) {
+   public PressurePlateBlock(Class2275 var1, Properties var2) {
       super(var2);
       this.setDefaultState(this.stateContainer.getBaseState().with(field19317, Boolean.valueOf(false)));
       this.field19318 = var1;

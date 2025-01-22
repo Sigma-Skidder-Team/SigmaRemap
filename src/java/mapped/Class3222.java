@@ -403,7 +403,7 @@ public class Class3222 extends Block {
       } else if (!var0.isIn(Blocks.REPEATER)) {
          return var0.isIn(Blocks.field36895) ? var1 == var0.<Direction>get(Class3434.field19198) : var0.method23401() && var1 != null;
       } else {
-         Direction var4 = var0.<Direction>get(Class3248.HORIZONTAL_FACING);
+         Direction var4 = var0.<Direction>get(RepeaterBlock.HORIZONTAL_FACING);
          return var4 == var1 || var4.getOpposite() == var1;
       }
    }

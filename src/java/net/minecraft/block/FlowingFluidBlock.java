@@ -131,7 +131,7 @@ public class FlowingFluidBlock extends Block implements Class3405 {
             if (var10 != Direction.DOWN) {
                BlockPos var11 = var2.offset(var10);
                if (var1.getFluidState(var11).method23486(FluidTags.WATER)) {
-                  Block var12 = !var1.getFluidState(var2).isSource() ? Blocks.COBBLESTONE : Blocks.field36527;
+                  Block var12 = !var1.getFluidState(var2).isSource() ? Blocks.COBBLESTONE : Blocks.OBSIDIAN;
                   var1.setBlockState(var2, var12.getDefaultState());
                   this.method12044(var1, var2);
                   return false;

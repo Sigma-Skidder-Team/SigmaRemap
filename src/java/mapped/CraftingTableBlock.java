@@ -12,10 +12,10 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
-public class Class3438 extends Block {
+public class CraftingTableBlock extends Block {
    private static final ITextComponent field19237 = new TranslationTextComponent("container.crafting");
 
-   public Class3438(Properties var1) {
+   public CraftingTableBlock(Properties var1) {
       super(var1);
    }
 

@@ -19,16 +19,16 @@ import net.minecraft.world.World;
 
 import java.util.function.Predicate;
 
-public class Class3342 extends HorizontalBlock implements Class3255 {
+public class PumpkinBlock extends HorizontalBlock implements Class3255 {
    public static final DirectionProperty field18848 = HorizontalBlock.HORIZONTAL_FACING;
    private Class9803 field18849;
    private Class9803 field18850;
    private Class9803 field18851;
    private Class9803 field18852;
    private static final Predicate<BlockState> field18853 = var0 -> var0 != null
-         && (var0.isIn(Blocks.field36589) || var0.isIn(Blocks.field36590));
+         && (var0.isIn(Blocks.CARVED_PUMPKIN) || var0.isIn(Blocks.JACK_O_LANTERN));
 
-   public Class3342(Properties var1) {
+   public PumpkinBlock(Properties var1) {
       super(var1);
       this.setDefaultState(this.stateContainer.getBaseState().with(field18848, Direction.NORTH));
    }
@@ -134,7 +134,7 @@ public class Class3342 extends HorizontalBlock implements Class3255 {
       if (this.field18851 == null) {
          this.field18851 = Class9659.method37706()
             .method37705("~ ~", "###", "~#~")
-            .method37707('#', CachedBlockInfo.method37552(Class166.method497(Blocks.field36522)))
+            .method37707('#', CachedBlockInfo.method37552(Class166.method497(Blocks.IRON_BLOCK)))
             .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.AIR)))
             .method37708();
       }
@@ -147,7 +147,7 @@ public class Class3342 extends HorizontalBlock implements Class3255 {
          this.field18852 = Class9659.method37706()
             .method37705("~^~", "###", "~#~")
             .method37707('^', CachedBlockInfo.method37552(field18853))
-            .method37707('#', CachedBlockInfo.method37552(Class166.method497(Blocks.field36522)))
+            .method37707('#', CachedBlockInfo.method37552(Class166.method497(Blocks.IRON_BLOCK)))
             .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.AIR)))
             .method37708();
       }

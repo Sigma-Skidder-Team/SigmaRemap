@@ -247,7 +247,7 @@ public class Class4211 extends Class4209 {
       this.method12927(var1, var5, 8, -9, 8, 12, -9, 12, Blocks.CUT_SANDSTONE.getDefaultState(), Blocks.CUT_SANDSTONE.getDefaultState(), false);
       this.method12927(var1, var5, 8, -8, 8, 12, -1, 12, Blocks.SANDSTONE.getDefaultState(), Blocks.SANDSTONE.getDefaultState(), false);
       this.method12927(var1, var5, 9, -11, 9, 11, -1, 11, Blocks.AIR.getDefaultState(), Blocks.AIR.getDefaultState(), false);
-      this.method12923(var1, Blocks.field36559.getDefaultState(), 10, -11, 10, var5);
+      this.method12923(var1, Blocks.STONE_PRESSURE_PLATE.getDefaultState(), 10, -11, 10, var5);
       this.method12927(var1, var5, 9, -13, 9, 11, -13, 11, Blocks.TNT.getDefaultState(), Blocks.AIR.getDefaultState(), false);
       this.method12923(var1, Blocks.AIR.getDefaultState(), 8, -11, 10, var5);
       this.method12923(var1, Blocks.AIR.getDefaultState(), 8, -10, 10, var5);

@@ -63,13 +63,13 @@ public enum NoteBlockInstrument implements IStringSerializable {
 
    public static NoteBlockInstrument method300(BlockState var0) {
       if (!var0.isIn(Blocks.CLAY)) {
-         if (var0.isIn(Blocks.field36521)) {
+         if (var0.isIn(Blocks.GOLD_BLOCK)) {
             return field353;
          } else if (!var0.isIn(BlockTags.field32734)) {
             if (var0.isIn(Blocks.PACKED_ICE)) {
                return field355;
             } else if (!var0.isIn(Blocks.field36893)) {
-               if (var0.isIn(Blocks.field36522)) {
+               if (var0.isIn(Blocks.IRON_BLOCK)) {
                   return field357;
                } else if (!var0.isIn(Blocks.SOUL_SAND)) {
                   if (var0.isIn(Blocks.PUMPKIN)) {
@@ -77,7 +77,7 @@ public enum NoteBlockInstrument implements IStringSerializable {
                   } else if (!var0.isIn(Blocks.EMERALD_BLOCK)) {
                      if (var0.isIn(Blocks.field36777)) {
                         return field361;
-                     } else if (!var0.isIn(Blocks.field36587)) {
+                     } else if (!var0.isIn(Blocks.GLOWSTONE)) {
                         Material var3 = var0.getMaterial();
                         if (var3 == Material.STONE) {
                            return field348;

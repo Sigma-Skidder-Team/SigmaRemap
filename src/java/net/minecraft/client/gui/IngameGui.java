@@ -121,7 +121,7 @@ public class IngameGui extends AbstractGui {
         Client.getInstance().method19926();
         ItemStack var6 = this.field6716.player.inventory.method4052(3);
         if (this.field6716.gameSettings.getPointOfView().func_243192_a()
-                && var6.getItem() == Blocks.field36589.asItem()) {
+                && var6.getItem() == Blocks.CARVED_PUMPKIN.asItem()) {
             this.method5978();
         }
 
@@ -1035,7 +1035,7 @@ public class IngameGui extends AbstractGui {
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, var1);
         this.field6716.getTextureManager().bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
         TextureAtlasSprite var4 = this.field6716.getBlockRendererDispatcher().getBlockModelShapes()
-                .getTexture(Blocks.field36588.getDefaultState());
+                .getTexture(Blocks.NETHER_PORTAL.getDefaultState());
         float var5 = var4.getMinU();
         float var6 = var4.getMinV();
         float var7 = var4.getMaxU();

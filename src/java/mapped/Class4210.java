@@ -50,10 +50,10 @@ public class Class4210 extends Class4209 {
          this.method12927(var1, var5, 1, 2, 3, 1, 3, 6, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
          this.method12927(var1, var5, 5, 2, 3, 5, 3, 6, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
          this.method12927(var1, var5, 2, 2, 7, 4, 3, 7, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
-         this.method12927(var1, var5, 1, 0, 2, 1, 3, 2, Blocks.field36422.getDefaultState(), Blocks.field36422.getDefaultState(), false);
-         this.method12927(var1, var5, 5, 0, 2, 5, 3, 2, Blocks.field36422.getDefaultState(), Blocks.field36422.getDefaultState(), false);
-         this.method12927(var1, var5, 1, 0, 7, 1, 3, 7, Blocks.field36422.getDefaultState(), Blocks.field36422.getDefaultState(), false);
-         this.method12927(var1, var5, 5, 0, 7, 5, 3, 7, Blocks.field36422.getDefaultState(), Blocks.field36422.getDefaultState(), false);
+         this.method12927(var1, var5, 1, 0, 2, 1, 3, 2, Blocks.OAK_LOG.getDefaultState(), Blocks.OAK_LOG.getDefaultState(), false);
+         this.method12927(var1, var5, 5, 0, 2, 5, 3, 2, Blocks.OAK_LOG.getDefaultState(), Blocks.OAK_LOG.getDefaultState(), false);
+         this.method12927(var1, var5, 1, 0, 7, 1, 3, 7, Blocks.OAK_LOG.getDefaultState(), Blocks.OAK_LOG.getDefaultState(), false);
+         this.method12927(var1, var5, 5, 0, 7, 5, 3, 7, Blocks.OAK_LOG.getDefaultState(), Blocks.OAK_LOG.getDefaultState(), false);
          this.method12923(var1, Blocks.OAK_FENCE.getDefaultState(), 2, 3, 2, var5);
          this.method12923(var1, Blocks.OAK_FENCE.getDefaultState(), 3, 3, 7, var5);
          this.method12923(var1, Blocks.AIR.getDefaultState(), 1, 3, 4, var5);
@@ -79,7 +79,7 @@ public class Class4210 extends Class4209 {
 
          for (int var14 = 2; var14 <= 7; var14 += 5) {
             for (int var15 = 1; var15 <= 5; var15 += 4) {
-               this.method12932(var1, Blocks.field36422.getDefaultState(), var15, -1, var14, var5);
+               this.method12932(var1, Blocks.OAK_LOG.getDefaultState(), var15, -1, var14, var5);
             }
          }
 

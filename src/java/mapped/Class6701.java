@@ -29,6 +29,6 @@ public class Class6701 extends Class6698 {
    @Override
    public BlockState method20424(Random var1, BlockPos var2) {
       Direction.Axis var5 = Direction.Axis.method325(var1);
-      return this.field29336.getDefaultState().with(Class3386.field18994, var5);
+      return this.field29336.getDefaultState().with(WoodBlock.field18994, var5);
    }
 }
