@@ -144,7 +144,7 @@ public class WitchEntity extends Class1026 implements Class1022 {
             ItemStack var3 = this.getHeldItemMainhand();
             this.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
             if (var3.getItem() == Items.field37971) {
-               List<EffectInstance> var4 = PotionUtils.method38176(var3);
+               List<EffectInstance> var4 = PotionUtils.getEffectsFromStack(var3);
                if (var4 != null) {
                   for (EffectInstance var6 : var4) {
                      this.addPotionEffect(new EffectInstance(var6));

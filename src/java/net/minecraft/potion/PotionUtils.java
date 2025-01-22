@@ -27,10 +27,10 @@ import net.optifine.Config;
 import javax.annotation.Nullable;
 
 public class PotionUtils {
-   private static final IFormattableTextComponent field45485 = new TranslationTextComponent("effect.none").mergeStyle(TextFormatting.GRAY);
+   private static final IFormattableTextComponent field_242400_a = new TranslationTextComponent("effect.none").mergeStyle(TextFormatting.GRAY);
 
-   public static List<EffectInstance> method38176(ItemStack var0) {
-      return getEffectsFromTag(var0.getTag());
+   public static List<EffectInstance> getEffectsFromStack(ItemStack stack) {
+      return getEffectsFromTag(stack.getTag());
    }
 
    public static List<EffectInstance> mergeEffects(Potion potionIn, Collection<EffectInstance> effects) {
@@ -76,7 +76,7 @@ public class PotionUtils {
       if (nbt != null && nbt.contains("CustomPotionColor", 99)) {
          return nbt.getInt("CustomPotionColor");
       } else {
-         return getPotionFromItem(itemStackIn) != Potions.EMPTY ? getPotionColorFromEffectList(method38176(itemStackIn)) : 16253176;
+         return getPotionFromItem(itemStackIn) != Potions.EMPTY ? getPotionColorFromEffectList(getEffectsFromStack(itemStackIn)) : 16253176;
       }
    }
 
@@ -156,7 +156,7 @@ public class PotionUtils {
    }
 
    public static void method38189(ItemStack var0, List<ITextComponent> var1, float var2) {
-      List<EffectInstance> var5 = method38176(var0);
+      List<EffectInstance> var5 = getEffectsFromStack(var0);
       ArrayList<Pair> var6 = Lists.newArrayList();
       if (!var5.isEmpty()) {
          for (EffectInstance var8 : var5) {
@@ -182,7 +182,7 @@ public class PotionUtils {
             var1.add(var9.mergeStyle(var10.getEffectType().method8849()));
          }
       } else {
-         var1.add(field45485);
+         var1.add(field_242400_a);
       }
 
       if (!var6.isEmpty()) {

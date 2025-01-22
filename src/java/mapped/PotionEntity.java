@@ -56,7 +56,7 @@ public class PotionEntity extends Class890 implements Class889 {
       if (!this.world.isRemote) {
          ItemStack var4 = this.method3509();
          Potion var5 = PotionUtils.getPotionFromItem(var4);
-         List var6 = PotionUtils.method38176(var4);
+         List var6 = PotionUtils.getEffectsFromStack(var4);
          boolean var7 = var5 == Potions.WATER && var6.isEmpty();
          Direction var8 = var1.getFace();
          BlockPos var9 = var1.getPos();
@@ -78,7 +78,7 @@ public class PotionEntity extends Class890 implements Class889 {
       if (!this.world.isRemote) {
          ItemStack var4 = this.method3509();
          Potion var5 = PotionUtils.getPotionFromItem(var4);
-         List var6 = PotionUtils.method38176(var4);
+         List var6 = PotionUtils.getEffectsFromStack(var4);
          boolean var7 = var5 == Potions.WATER && var6.isEmpty();
          if (!var7) {
             if (!var6.isEmpty()) {

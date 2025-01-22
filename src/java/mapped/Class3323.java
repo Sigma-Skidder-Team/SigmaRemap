@@ -36,7 +36,7 @@ public class Class3323 extends Item {
       }
 
       if (!var2.isRemote) {
-         for (EffectInstance var8 : PotionUtils.method38176(var1)) {
+         for (EffectInstance var8 : PotionUtils.getEffectsFromStack(var1)) {
             if (!var8.getPotion().isInstant()) {
                var3.addPotionEffect(new EffectInstance(var8));
             } else {
@@ -92,7 +92,7 @@ public class Class3323 extends Item {
 
    @Override
    public boolean method11732(ItemStack var1) {
-      return super.method11732(var1) || !PotionUtils.method38176(var1).isEmpty();
+      return super.method11732(var1) || !PotionUtils.getEffectsFromStack(var1).isEmpty();
    }
 
    @Override
