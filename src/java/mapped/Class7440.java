@@ -133,7 +133,7 @@ public class Class7440 {
       var2.method26416();
       BlockPos var6 = var1.add(-var3, 0, -var3);
       BlockPos var7 = var1.add(var3, 0, var3);
-      BlockPos.method8360(var6, var7).filter(var1x -> var0.getBlockState(var1x).isIn(Blocks.field37113)).forEach(var1x -> {
+      BlockPos.method8360(var6, var7).filter(var1x -> var0.getBlockState(var1x).isIn(Blocks.STRUCTURE_BLOCK)).forEach(var1x -> {
          Class964 var4 = (Class964)var0.getTileEntity(var1x);
          BlockPos var5 = var4.getPos();
          MutableBoundingBox var6x = Class7803.method26053(var4);

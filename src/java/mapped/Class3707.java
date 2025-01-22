@@ -22,7 +22,7 @@ public class Class3707 extends Class3706 {
       if (var5.isPresent()) {
          Class9378 var6 = (Class9378)var5.get();
          BlockState var7 = var1.getBlockState(var6.method35579());
-         if (var7.isIn(Blocks.field37115)) {
+         if (var7.isIn(Blocks.COMPOSTER)) {
             this.method12589(var2);
             this.method12587(var1, var2, var6, var7);
          }

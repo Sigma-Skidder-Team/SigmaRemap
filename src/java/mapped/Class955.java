@@ -199,7 +199,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    }
 
    private boolean method3859() {
-      return this.field5361.isIn(Blocks.field37119);
+      return this.field5361.isIn(Blocks.HONEY_BLOCK);
    }
 
    public Direction method3860() {

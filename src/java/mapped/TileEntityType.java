@@ -42,10 +42,10 @@ public class TileEntityType<T extends TileEntity> {
          Blocks.ACACIA_WALL_SIGN,
          Blocks.JUNGLE_WALL_SIGN,
          Blocks.DARK_OAK_WALL_SIGN,
-         Blocks.field37109,
-         Blocks.field37111,
-         Blocks.field37110,
-         Blocks.field37112
+         Blocks.CRIMSON_SIGN,
+         Blocks.CRIMSON_WALL_SIGN,
+         Blocks.WARPED_SIGN,
+         Blocks.WARPED_WALL_SIGN
       )
    );
    public static final TileEntityType<Class960> field21429 = method13794("mob_spawner", Class9785.<Class960>method38569(Class960::new, Blocks.field36532));
@@ -113,7 +113,7 @@ public class TileEntityType<T extends TileEntity> {
          Blocks.field36834
       )
    );
-   public static final TileEntityType<Class964> field21440 = method13794("structure_block", Class9785.<Class964>method38569(Class964::new, Blocks.field37113));
+   public static final TileEntityType<Class964> field21440 = method13794("structure_block", Class9785.<Class964>method38569(Class964::new, Blocks.STRUCTURE_BLOCK));
    public static final TileEntityType<Class957> field21441 = method13794("end_gateway", Class9785.<Class957>method38569(Class957::new, Blocks.field36886));
    public static final TileEntityType<CommandBlockTileEntity> COMMAND_BLOCK = method13794(
       "command_block", Class9785.<CommandBlockTileEntity>method38569(CommandBlockTileEntity::new, Blocks.COMMAND_BLOCK, Blocks.field36888, Blocks.field36887)
@@ -169,12 +169,12 @@ public class TileEntityType<T extends TileEntity> {
    public static final TileEntityType<Class987> field21448 = method13794("blast_furnace", Class9785.<Class987>method38569(Class987::new, Blocks.BLAST_FURNACE));
    public static final TileEntityType<Class948> field21449 = method13794("lectern", Class9785.<Class948>method38569(Class948::new, Blocks.LECTERN));
    public static final TileEntityType<Class966> field21450 = method13794("bell", Class9785.<Class966>method38569(Class966::new, Blocks.BELL));
-   public static final TileEntityType<JigsawTileEntity> field21451 = method13794("jigsaw", Class9785.<JigsawTileEntity>method38569(JigsawTileEntity::new, Blocks.field37114));
+   public static final TileEntityType<JigsawTileEntity> field21451 = method13794("jigsaw", Class9785.<JigsawTileEntity>method38569(JigsawTileEntity::new, Blocks.JIGSAW));
    public static final TileEntityType<Class945> field21452 = method13794(
       "campfire", Class9785.<Class945>method38569(Class945::new, Blocks.CAMPFIRE, Blocks.SOUL_CAMPFIRE)
    );
    public static final TileEntityType<BeehiveTileEntity> field21453 = method13794(
-      "beehive", Class9785.<BeehiveTileEntity>method38569(BeehiveTileEntity::new, Blocks.field37117, Blocks.field37118)
+      "beehive", Class9785.<BeehiveTileEntity>method38569(BeehiveTileEntity::new, Blocks.BEE_NEST, Blocks.BEEHIVE)
    );
    private final Supplier<? extends T> field21454;
    private final Set<Block> field21455;

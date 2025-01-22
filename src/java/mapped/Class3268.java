@@ -110,10 +110,10 @@ public class Class3268 extends ToolItem {
    public boolean canHarvestBlock(BlockState var1) {
       int var4 = this.method11783().method9013();
       if (var1.isIn(Blocks.field36527)
-         || var1.isIn(Blocks.field37123)
-         || var1.isIn(Blocks.field37121)
-         || var1.isIn(Blocks.field37124)
-         || var1.isIn(Blocks.field37122)) {
+         || var1.isIn(Blocks.CRYING_OBSIDIAN)
+         || var1.isIn(Blocks.NETHERITE_BLOCK)
+         || var1.isIn(Blocks.RESPAWN_ANCHOR)
+         || var1.isIn(Blocks.ANCIENT_DEBRIS)) {
          return var4 >= 3;
       } else if (var1.isIn(Blocks.field36537)
          || var1.isIn(Blocks.field36536)

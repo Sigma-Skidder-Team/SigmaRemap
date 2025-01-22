@@ -52,7 +52,7 @@ public class Class4913 {
    public static final Class4913 field22753 = method15184("butcher", method15180(Blocks.SMOKER), 1, 1);
    public static final Class4913 field22754 = method15184("cartographer", method15180(Blocks.CARTOGRAPHY_TABLE), 1, 1);
    public static final Class4913 field22755 = method15184("cleric", method15180(Blocks.field36647), 1, 1);
-   public static final Class4913 field22756 = method15184("farmer", method15180(Blocks.field37115), 1, 1);
+   public static final Class4913 field22756 = method15184("farmer", method15180(Blocks.COMPOSTER), 1, 1);
    public static final Class4913 field22757 = method15184("fisherman", method15180(Blocks.BARREL), 1, 1);
    public static final Class4913 field22758 = method15184("fletcher", method15180(Blocks.FLETCHING_TABLE), 1, 1);
    public static final Class4913 field22759 = method15184("leatherworker", method15180(Blocks.field36648), 1, 1);
@@ -64,8 +64,8 @@ public class Class4913 {
    public static final Class4913 field22765 = method15184("weaponsmith", method15180(Blocks.GRINDSTONE), 1, 1);
    public static final Class4913 field22766 = method15184("home", field22749, 1, 1);
    public static final Class4913 field22767 = method15184("meeting", method15180(Blocks.BELL), 32, 6);
-   public static final Class4913 field22768 = method15184("beehive", method15180(Blocks.field37118), 0, 1);
-   public static final Class4913 field22769 = method15184("bee_nest", method15180(Blocks.field37117), 0, 1);
+   public static final Class4913 field22768 = method15184("beehive", method15180(Blocks.BEEHIVE), 0, 1);
+   public static final Class4913 field22769 = method15184("bee_nest", method15180(Blocks.BEE_NEST), 0, 1);
    public static final Class4913 field22770 = method15184("nether_portal", method15180(Blocks.field36588), 0, 1);
    public static final Class4913 field22771 = method15184("lodestone", method15180(Blocks.field37129), 0, 1);
    public static final Set<BlockState> field22772 = new ObjectOpenHashSet(field22750.keySet());

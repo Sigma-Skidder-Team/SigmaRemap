@@ -19,9 +19,9 @@ public class Class7095 extends Class7092 {
       .fieldOf("blocks")
       .xmap(Class7095::new, var0 -> var0.field30529)
       .codec();
-   public static final Class7095 field30526 = new Class7095(ImmutableList.of(Blocks.field37113));
+   public static final Class7095 field30526 = new Class7095(ImmutableList.of(Blocks.STRUCTURE_BLOCK));
    public static final Class7095 field30527 = new Class7095(ImmutableList.of(Blocks.AIR));
-   public static final Class7095 field30528 = new Class7095(ImmutableList.of(Blocks.AIR, Blocks.field37113));
+   public static final Class7095 field30528 = new Class7095(ImmutableList.of(Blocks.AIR, Blocks.STRUCTURE_BLOCK));
    private final ImmutableList<Block> field30529;
 
    public Class7095(List<Block> var1) {

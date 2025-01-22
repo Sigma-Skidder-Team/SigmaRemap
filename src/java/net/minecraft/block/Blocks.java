@@ -2717,91 +2717,91 @@ public class Blocks {
       "crimson_door",
       new DoorBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, CRIMSON_PLANKS.method12000()).method26623(3.0F).method26619(SoundType.WOOD).method26615())
    );
-   public static final Block field37108 = register(
+   public static final Block WARPED_DOOR = register(
       "warped_door",
       new DoorBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, WARPED_PLANKS.method12000()).method26623(3.0F).method26619(SoundType.WOOD).method26615())
    );
-   public static final Block field37109 = register(
+   public static final Block CRIMSON_SIGN = register(
       "crimson_sign",
       new Class3374(
          AbstractBlock.Properties.withMaterialAndColor(Material.field38957, CRIMSON_PLANKS.method12000()).method26614().method26623(1.0F).method26619(SoundType.WOOD),
          Class9673.field45172
       )
    );
-   public static final Block field37110 = register(
+   public static final Block WARPED_SIGN = register(
       "warped_sign",
       new Class3374(
          AbstractBlock.Properties.withMaterialAndColor(Material.field38957, WARPED_PLANKS.method12000()).method26614().method26623(1.0F).method26619(SoundType.WOOD),
          Class9673.field45173
       )
    );
-   public static final Block field37111 = register(
+   public static final Block CRIMSON_WALL_SIGN = register(
       "crimson_wall_sign",
       new Class3375(
          AbstractBlock.Properties.withMaterialAndColor(Material.field38957, CRIMSON_PLANKS.method12000())
             .method26614()
             .method26623(1.0F)
             .method26619(SoundType.WOOD)
-            .method26627(field37109),
+            .method26627(CRIMSON_SIGN),
          Class9673.field45172
       )
    );
-   public static final Block field37112 = register(
+   public static final Block WARPED_WALL_SIGN = register(
       "warped_wall_sign",
       new Class3375(
          AbstractBlock.Properties.withMaterialAndColor(Material.field38957, WARPED_PLANKS.method12000())
             .method26614()
             .method26623(1.0F)
             .method26619(SoundType.WOOD)
-            .method26627(field37110),
+            .method26627(WARPED_SIGN),
          Class9673.field45173
       )
    );
-   public static final Block field37113 = register(
+   public static final Block STRUCTURE_BLOCK = register(
       "structure_block",
       new StructureBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38967, MaterialColor.field30969).method26635().method26621(-1.0F, 3600000.0F).method26626())
    );
-   public static final Block field37114 = register(
+   public static final Block JIGSAW = register(
       "jigsaw", new JigsawBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38967, MaterialColor.field30969).method26635().method26621(-1.0F, 3600000.0F).method26626())
    );
-   public static final Block field37115 = register(
+   public static final Block COMPOSTER = register(
       "composter", new Class3475(AbstractBlock.Properties.withMaterial(Material.PLANKS).method26623(0.6F).method26619(SoundType.WOOD))
    );
-   public static final Block field37116 = register(
+   public static final Block TARGET = register(
       "target", new Class3395(AbstractBlock.Properties.withMaterialAndColor(Material.GRASS, MaterialColor.DIORITE).method26623(0.5F).method26619(SoundType.GRASS))
    );
-   public static final Block field37117 = register(
+   public static final Block BEE_NEST = register(
       "bee_nest", new Class3366(AbstractBlock.Properties.withMaterialAndColor(Material.PLANKS, MaterialColor.field30965).method26623(0.3F).method26619(SoundType.WOOD))
    );
-   public static final Block field37118 = register(
+   public static final Block BEEHIVE = register(
       "beehive", new Class3366(AbstractBlock.Properties.withMaterial(Material.PLANKS).method26623(0.6F).method26619(SoundType.WOOD))
    );
-   public static final Block field37119 = register(
+   public static final Block HONEY_BLOCK = register(
       "honey_block",
       new HoneyBlock(
          AbstractBlock.Properties.withMaterialAndColor(Material.field38949, MaterialColor.field30962).method26617(0.4F).method26618(0.5F).method26615().method26619(SoundType.HONEY)
       )
    );
-   public static final Block field37120 = register(
+   public static final Block HONEYCOMB_BLOCK = register(
       "honeycomb_block", new Block(AbstractBlock.Properties.withMaterialAndColor(Material.field38949, MaterialColor.field30962).method26623(0.6F).method26619(SoundType.CORAL))
    );
-   public static final Block field37121 = register(
+   public static final Block NETHERITE_BLOCK = register(
       "netherite_block",
       new Block(
          AbstractBlock.Properties.withMaterialAndColor(Material.field38967, MaterialColor.field30976).method26635().method26621(50.0F, 1200.0F).method26619(SoundType.ANCIENT_DEBRIS)
       )
    );
-   public static final Block field37122 = register(
+   public static final Block ANCIENT_DEBRIS = register(
       "ancient_debris",
       new Block(
          AbstractBlock.Properties.withMaterialAndColor(Material.field38967, MaterialColor.field30976).method26635().method26621(30.0F, 1200.0F).method26619(SoundType.LODESTONE)
       )
    );
-   public static final Block field37123 = register(
+   public static final Block CRYING_OBSIDIAN = register(
       "crying_obsidian",
       new Class3427(AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30976).method26635().method26621(50.0F, 1200.0F).method26620(var0 -> 10))
    );
-   public static final Block field37124 = register(
+   public static final Block RESPAWN_ANCHOR = register(
       "respawn_anchor",
       new Class3389(
          AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30976)

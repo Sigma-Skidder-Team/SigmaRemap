@@ -107,7 +107,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3643(var2, Blocks.CARTOGRAPHY_TABLE, 300);
       method3643(var2, Blocks.FLETCHING_TABLE, 300);
       method3643(var2, Blocks.SMITHING_TABLE, 300);
-      method3643(var2, Blocks.field37115, 300);
+      method3643(var2, Blocks.COMPOSTER, 300);
       return var2;
    }
 

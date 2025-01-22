@@ -25,7 +25,7 @@ public class Class3269 extends ToolItem {
       Blocks.WARPED_WART_BLOCK,
       Blocks.field36777,
       Blocks.field36963,
-      Blocks.field37116,
+      Blocks.TARGET,
       Blocks.SHROOMLIGHT,
       new Block[]{
          Blocks.field36452,

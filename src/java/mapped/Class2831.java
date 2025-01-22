@@ -381,7 +381,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
       Class7999.method27304()
          .method27305(var4)
          .method27308(
-            Blocks.field37119.asItem(),
+            Blocks.HONEY_BLOCK.asItem(),
             new TranslationTextComponent("advancements.adventure.honey_block_slide.title"),
             new TranslationTextComponent("advancements.adventure.honey_block_slide.description"),
             (ResourceLocation)null,
@@ -390,12 +390,12 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("honey_block_slide", Class4468.method14118(Blocks.field37119))
+         .method27312("honey_block_slide", Class4468.method14118(Blocks.HONEY_BLOCK))
          .method27317(var1, "adventure/honey_block_slide");
       Class7999.method27304()
          .method27305(var8)
          .method27308(
-            Blocks.field37116.asItem(),
+            Blocks.TARGET.asItem(),
             new TranslationTextComponent("advancements.adventure.bullseye.title"),
             new TranslationTextComponent("advancements.adventure.bullseye.description"),
             (ResourceLocation)null,

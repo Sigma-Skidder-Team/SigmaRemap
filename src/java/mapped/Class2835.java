@@ -376,7 +376,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
                Class8912.method32576()
                   .method32578(
                      Class8831.method31929()
-                        .method31930(Blocks.field37124)
+                        .method31930(Blocks.RESPAWN_ANCHOR)
                         .method31932(Class9178.method34325().method34327(Class3389.field19000, 4).method34330())
                         .method31933()
                   ),

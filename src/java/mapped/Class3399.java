@@ -404,7 +404,7 @@ public class Class3399 extends AbstractFireBlock {
       var2.method12025(Blocks.VINE, 15, 100);
       var2.method12025(Blocks.field36795, 5, 5);
       var2.method12025(Blocks.field36777, 60, 20);
-      var2.method12025(Blocks.field37116, 15, 20);
+      var2.method12025(Blocks.TARGET, 15, 20);
       var2.method12025(Blocks.WHITE_CARPET, 60, 20);
       var2.method12025(Blocks.ORANGE_CARPET, 60, 20);
       var2.method12025(Blocks.MAGENTA_CARPET, 60, 20);
@@ -425,9 +425,9 @@ public class Class3399 extends AbstractFireBlock {
       var2.method12025(Blocks.field37009, 60, 60);
       var2.method12025(Blocks.field37053, 60, 60);
       var2.method12025(Blocks.LECTERN, 30, 20);
-      var2.method12025(Blocks.field37115, 5, 20);
+      var2.method12025(Blocks.COMPOSTER, 5, 20);
       var2.method12025(Blocks.SWEET_BERRY_BUSH, 60, 100);
-      var2.method12025(Blocks.field37118, 5, 20);
-      var2.method12025(Blocks.field37117, 30, 20);
+      var2.method12025(Blocks.BEEHIVE, 5, 20);
+      var2.method12025(Blocks.BEE_NEST, 30, 20);
    }
 }

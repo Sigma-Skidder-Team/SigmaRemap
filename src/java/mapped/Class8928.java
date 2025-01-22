@@ -220,7 +220,7 @@ public class Class8928 {
       var0.put(Blocks.field37127, var5);
       var0.put(Blocks.field37128, var5);
       var0.put(Blocks.CRIMSON_DOOR, var5);
-      var0.put(Blocks.field37108, var5);
+      var0.put(Blocks.WARPED_DOOR, var5);
       RenderType var6 = RenderType.method14304();
       var0.put(Blocks.ICE, var6);
       var0.put(Blocks.field36588, var6);
@@ -257,7 +257,7 @@ public class Class8928 {
       var0.put(Blocks.field36760, var6);
       var0.put(Blocks.field36761, var6);
       var0.put(Blocks.field36764, var6);
-      var0.put(Blocks.field37119, var6);
+      var0.put(Blocks.HONEY_BLOCK, var6);
       var0.put(Blocks.field36889, var6);
       var0.put(Blocks.field37013, var6);
    });

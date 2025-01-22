@@ -129,7 +129,7 @@ public class Class964 extends TileEntity {
       if (this.world != null) {
          BlockPos var3 = this.getPos();
          BlockState var4 = this.world.getBlockState(var3);
-         if (var4.isIn(Blocks.field37113)) {
+         if (var4.isIn(Blocks.STRUCTURE_BLOCK)) {
             this.world.setBlockState(var3, var4.with(StructureBlock.field18938, this.field5402), 2);
          }
       }
@@ -229,7 +229,7 @@ public class Class964 extends TileEntity {
    public void method3951(StructureMode var1) {
       this.field5402 = var1;
       BlockState var4 = this.world.getBlockState(this.getPos());
-      if (var4.isIn(Blocks.field37113)) {
+      if (var4.isIn(Blocks.STRUCTURE_BLOCK)) {
          this.world.setBlockState(this.getPos(), var4.with(StructureBlock.field18938, var1), 2);
       }
    }
@@ -316,7 +316,7 @@ public class Class964 extends TileEntity {
 
       for (BlockPos var7 : BlockPos.method8359(var1, var2)) {
          BlockState var8 = this.world.getBlockState(var7);
-         if (var8.isIn(Blocks.field37113)) {
+         if (var8.isIn(Blocks.STRUCTURE_BLOCK)) {
             TileEntity var9 = this.world.getTileEntity(var7);
             if (var9 != null && var9 instanceof Class964) {
                var5.add((Class964)var9);

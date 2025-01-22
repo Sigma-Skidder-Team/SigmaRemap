@@ -250,13 +250,13 @@ public class Class2833 implements Consumer<Consumer<Advancement>> {
          .method27312(
             "silk_touch_nest",
             Class4479.method14139(
-               Blocks.field37117,
+               Blocks.BEE_NEST,
                Class9735.method38146().method38150(new Class8605(Enchantments.SILK_TOUCH, Class8840.method32014(1))),
                Class8840.method32013(3)
             )
          )
          .method27308(
-            Blocks.field37117,
+            Blocks.BEE_NEST,
             new TranslationTextComponent("advancements.husbandry.silk_touch_nest.title"),
             new TranslationTextComponent("advancements.husbandry.silk_touch_nest.description"),
             (ResourceLocation)null,

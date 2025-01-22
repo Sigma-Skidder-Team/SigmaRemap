@@ -40,7 +40,7 @@ public class Class7141 extends Class7139 {
             BlockPos var12 = (BlockPos)var11.get(var2.nextInt(var11.size()));
             BlockPos var13 = var12.offset(var9);
             if (Class2898.method11221(var1, var13) && Class2898.method11221(var1, var13.offset(Direction.SOUTH))) {
-               BlockState var14 = Blocks.field37117.getDefaultState().with(Class3366.field18935, Direction.SOUTH);
+               BlockState var14 = Blocks.BEE_NEST.getDefaultState().with(Class3366.field18935, Direction.SOUTH);
                this.method22274(var1, var13, var14, var5, var6);
                TileEntity var15 = var1.getTileEntity(var13);
                if (var15 instanceof BeehiveTileEntity) {

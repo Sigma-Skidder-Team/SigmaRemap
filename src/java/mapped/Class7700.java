@@ -91,7 +91,7 @@ public final class Class7700 {
    public static final BlockState field33069 = Blocks.field36421.getDefaultState();
    public static final BlockState field33070 = Blocks.field36722.getDefaultState();
    public static final BlockState field33071 = Blocks.field37130.getDefaultState();
-   public static final BlockState field33072 = Blocks.field37122.getDefaultState();
+   public static final BlockState field33072 = Blocks.ANCIENT_DEBRIS.getDefaultState();
    public static final BlockState field33073 = Blocks.BASALT.getDefaultState();
    public static final BlockState field33074 = Blocks.CRIMSON_FUNGUS.getDefaultState();
    public static final BlockState field33075 = Blocks.WARPED_FUNGUS.getDefaultState();

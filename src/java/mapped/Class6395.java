@@ -414,7 +414,7 @@ public abstract class Class6395 {
          }
       } else {
          BlockState var20 = var10.getBlockState(var5);
-         boolean var15 = var20.isIn(Blocks.field37124);
+         boolean var15 = var20.isIn(Blocks.RESPAWN_ANCHOR);
          Vector3d var16 = (Vector3d) var9.get();
          float var18;
          if (!var20.isIn(BlockTags.field32770) && !var15) {

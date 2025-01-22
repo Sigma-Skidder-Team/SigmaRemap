@@ -86,7 +86,7 @@ public class Class3410 extends Block {
       if (var6.isIn(Blocks.ICE) || var6.isIn(Blocks.PACKED_ICE) || var6.isIn(Blocks.BARRIER)) {
          return false;
       } else {
-         return !var6.isIn(Blocks.field37119) && !var6.isIn(Blocks.SOUL_SAND)
+         return !var6.isIn(Blocks.HONEY_BLOCK) && !var6.isIn(Blocks.SOUL_SAND)
             ? Block.method11549(var6.method23414(var2, var3.down()), Direction.UP)
                || var6.getBlock() == this && var6.<Integer>get(field19092) == 8
             : true;

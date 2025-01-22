@@ -82,7 +82,7 @@ public class Class7803 {
    public static void method26055(String var0, BlockPos var1, BlockPos var2, Rotation var3, ServerWorld var4) {
       MutableBoundingBox var7 = method26059(var1, var2, var3);
       method26058(var7, var1.getY(), var4);
-      var4.setBlockState(var1, Blocks.field37113.getDefaultState());
+      var4.setBlockState(var1, Blocks.STRUCTURE_BLOCK.getDefaultState());
       Class964 var8 = (Class964)var4.getTileEntity(var1);
       var8.method3954(false);
       var8.method3938(new ResourceLocation(var0));
@@ -180,7 +180,7 @@ public class Class7803 {
             for (int var9 = (int)var6.minZ; var9 <= (int)var6.maxZ; var9++) {
                BlockPos var10 = new BlockPos(var7, var8, var9);
                BlockState var11 = var2.getBlockState(var10);
-               if (var11.isIn(Blocks.field37113)) {
+               if (var11.isIn(Blocks.STRUCTURE_BLOCK)) {
                   var5.add(var10);
                }
             }
@@ -208,7 +208,7 @@ public class Class7803 {
    }
 
    private static Class964 method26064(String var0, BlockPos var1, Rotation var2, ServerWorld var3, boolean var4) {
-      var3.setBlockState(var1, Blocks.field37113.getDefaultState());
+      var3.setBlockState(var1, Blocks.STRUCTURE_BLOCK.getDefaultState());
       Class964 var7 = (Class964)var3.getTileEntity(var1);
       var7.method3951(StructureMode.field319);
       var7.method3947(var2);

@@ -514,7 +514,7 @@ public class Class6762 extends Class6764 {
          return PathNodeType.DAMAGE_CACTUS;
       } else if (var4.isIn(Blocks.SWEET_BERRY_BUSH)) {
          return PathNodeType.DAMAGE_OTHER;
-      } else if (var4.isIn(Blocks.field37119)) {
+      } else if (var4.isIn(Blocks.HONEY_BLOCK)) {
          return PathNodeType.STICKY_HONEY;
       } else if (var4.isIn(Blocks.COCOA)) {
          return PathNodeType.COCOA;

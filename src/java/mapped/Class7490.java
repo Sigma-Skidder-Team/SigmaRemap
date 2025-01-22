@@ -56,7 +56,7 @@ public class Class7490 extends Class7487 {
       var7.add(
          new Class8266(
             var2,
-            Blocks.field37114.getDefaultState().with(JigsawBlock.field18712, JigsawOrientation.method526(Direction.DOWN, Direction.SOUTH)),
+            Blocks.JIGSAW.getDefaultState().with(JigsawBlock.field18712, JigsawOrientation.method526(Direction.DOWN, Direction.SOUTH)),
             this.field32192
          )
       );
