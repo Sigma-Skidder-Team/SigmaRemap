@@ -42,8 +42,8 @@ public class Class4454 extends Class4441<Block> {
             Blocks.JUNGLE_PLANKS,
             Blocks.ACACIA_PLANKS,
             Blocks.DARK_OAK_PLANKS,
-            Blocks.field37091,
-            Blocks.field37092
+            Blocks.CRIMSON_PLANKS,
+            Blocks.WARPED_PLANKS
          );
       this.method14014(BlockTags.field32736).method31560(Blocks.field36615, Blocks.field36616, Blocks.field36617, Blocks.field36618);
       this.method14014(BlockTags.field32737)
@@ -54,8 +54,8 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36698,
             Blocks.field36699,
             Blocks.field36700,
-            Blocks.field37105,
-            Blocks.field37106
+            Blocks.CRIMSON_BUTTON,
+            Blocks.WARPED_BUTTON
          );
       this.method14014(BlockTags.field32738).method31559(BlockTags.field32737).method31558(Blocks.STONE_BUTTON).method31558(Blocks.field37145);
       this.method14014(BlockTags.field32739)
@@ -85,7 +85,7 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36874,
             Blocks.field36875,
             Blocks.field36876,
-            Blocks.field37107,
+            Blocks.CRIMSON_DOOR,
             Blocks.field37108
          );
       this.method14014(BlockTags.field32741)
@@ -96,8 +96,8 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36663,
             Blocks.field36762,
             Blocks.field36763,
-            Blocks.field37103,
-            Blocks.field37104
+            Blocks.CRIMSON_STAIRS,
+            Blocks.WARPED_STAIRS
          );
       this.method14014(BlockTags.field32742)
          .method31560(
@@ -107,8 +107,8 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36842,
             Blocks.field36843,
             Blocks.field36844,
-            Blocks.field37093,
-            Blocks.field37094
+            Blocks.CRIMSON_SLAB,
+            Blocks.WARPED_SLAB
          );
       this.method14014(BlockTags.field32743)
          .method31560(
@@ -118,8 +118,8 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36867,
             Blocks.field36868,
             Blocks.field36869,
-            Blocks.field37097,
-            Blocks.field37098
+            Blocks.CRIMSON_FENCE,
+            Blocks.WARPED_FENCE
          );
       this.method14014(BlockTags.field32748).method31559(BlockTags.field32740).method31558(Blocks.IRON_DOOR);
       this.method14014(BlockTags.field32749)
@@ -130,7 +130,7 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32754).method31560(Blocks.field36424, Blocks.field36436, Blocks.field36429, Blocks.field36442);
       this.method14014(BlockTags.field32756).method31560(Blocks.field36425, Blocks.field36437, Blocks.field36430, Blocks.field36443);
       this.method14014(BlockTags.field32757).method31560(Blocks.field36423, Blocks.field36435, Blocks.field36428, Blocks.field36441);
-      this.method14014(BlockTags.field32758).method31560(Blocks.field37079, Blocks.field37080, Blocks.field37081, Blocks.field37082);
+      this.method14014(BlockTags.field32758).method31560(Blocks.CRIMSON_STEM, Blocks.STRIPPED_CRIMSON_STEM, Blocks.CRIMSON_HYPHAE, Blocks.STRIPPED_CRIMSON_HYPHAE);
       this.method14014(BlockTags.field32759).method31560(Blocks.WARPED_STEM, Blocks.STRIPPED_WARPED_STEM, Blocks.WARPED_HYPHAE, Blocks.STRIPPED_WARPED_HYPHAE);
       this.method14014(BlockTags.field32750)
          .method31559(BlockTags.field32752)
@@ -176,12 +176,12 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36589,
             Blocks.MELON,
             Blocks.MYCELIUM,
-            Blocks.field37084,
-            Blocks.field37083,
-            Blocks.field37090,
-            Blocks.field37075,
-            Blocks.field37074,
-            Blocks.field37077
+            Blocks.CRIMSON_FUNGUS,
+            Blocks.CRIMSON_NYLIUM,
+            Blocks.CRIMSON_ROOTS,
+            Blocks.WARPED_FUNGUS,
+            Blocks.WARPED_NYLIUM,
+            Blocks.WARPED_ROOTS
          );
       this.method14014(BlockTags.field32777)
          .method31560(
@@ -259,8 +259,8 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36564,
             Blocks.field36565,
             Blocks.field36566,
-            Blocks.field37095,
-            Blocks.field37096
+            Blocks.CRIMSON_PRESSURE_PLATE,
+            Blocks.WARPED_PRESSURE_PLATE
          );
       this.method14014(BlockTags.field32746).method31560(Blocks.field36559, Blocks.field37144);
       this.method14014(BlockTags.field32744)
@@ -398,8 +398,8 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36612,
             Blocks.field36609,
             Blocks.field36610,
-            Blocks.field37099,
-            Blocks.field37100
+            Blocks.CRIMSON_TRAPDOOR,
+            Blocks.WARPED_TRAPDOOR
          );
       this.method14014(BlockTags.field32768).method31559(BlockTags.field32747).method31558(Blocks.field36766);
       this.method14014(BlockTags.field32782).method31558(Blocks.SEAGRASS).method31559(BlockTags.field32786).method31559(BlockTags.field32784);
@@ -520,8 +520,8 @@ public class Class4454 extends Class4441<Block> {
          );
       this.method14014(BlockTags.field32797).method31560(Blocks.field36588, Blocks.field36649, Blocks.field36886);
       this.method14014(BlockTags.field32798).method31560(Blocks.FIRE, Blocks.field36531);
-      this.method14014(BlockTags.field32799).method31560(Blocks.field37083, Blocks.field37074);
-      this.method14014(BlockTags.field32800).method31560(Blocks.field36891, Blocks.field37076);
+      this.method14014(BlockTags.field32799).method31560(Blocks.CRIMSON_NYLIUM, Blocks.WARPED_NYLIUM);
+      this.method14014(BlockTags.field32800).method31560(Blocks.field36891, Blocks.WARPED_WART_BLOCK);
       this.method14014(BlockTags.field32801)
          .method31560(Blocks.field37121, Blocks.EMERALD_BLOCK, Blocks.field36537, Blocks.field36521, Blocks.field36522);
       this.method14014(BlockTags.SOUL_SPEED_BLOCKS).method31560(Blocks.SOUL_SAND, Blocks.SOUL_SOIL);
@@ -535,10 +535,10 @@ public class Class4454 extends Class4441<Block> {
             Blocks.LADDER,
             Blocks.VINE,
             Blocks.field37053,
-            Blocks.field37086,
-            Blocks.field37087,
-            Blocks.field37088,
-            Blocks.field37089
+            Blocks.WEEPING_VINES,
+            Blocks.WEEPING_VINES_PLANT,
+            Blocks.TWISTING_VINES,
+            Blocks.TWISTING_VINES_PLANT
          );
       this.method14014(BlockTags.field32774)
          .method31558(Blocks.field36531)
@@ -547,7 +547,7 @@ public class Class4454 extends Class4441<Block> {
          .method31558(Blocks.field36586)
          .method31558(Blocks.SOUL_CAMPFIRE);
       this.method14014(BlockTags.field32806)
-         .method31558(Blocks.field37075)
+         .method31558(Blocks.WARPED_FUNGUS)
          .method31558(Blocks.field37126)
          .method31558(Blocks.field36588)
          .method31558(Blocks.field37124);
@@ -559,27 +559,27 @@ public class Class4454 extends Class4441<Block> {
             Blocks.STRIPPED_WARPED_STEM,
             Blocks.WARPED_HYPHAE,
             Blocks.STRIPPED_WARPED_HYPHAE,
-            Blocks.field37079,
-            Blocks.field37080,
-            Blocks.field37081,
-            Blocks.field37082,
-            Blocks.field37091,
-            Blocks.field37092,
-            Blocks.field37093,
-            Blocks.field37094,
-            Blocks.field37095,
-            Blocks.field37096,
-            Blocks.field37097,
-            Blocks.field37098,
-            Blocks.field37099,
-            Blocks.field37100,
-            Blocks.field37101,
-            Blocks.field37102,
-            Blocks.field37103,
-            Blocks.field37104,
-            Blocks.field37105,
-            Blocks.field37106,
-            Blocks.field37107,
+            Blocks.CRIMSON_STEM,
+            Blocks.STRIPPED_CRIMSON_STEM,
+            Blocks.CRIMSON_HYPHAE,
+            Blocks.STRIPPED_CRIMSON_HYPHAE,
+            Blocks.CRIMSON_PLANKS,
+            Blocks.WARPED_PLANKS,
+            Blocks.CRIMSON_SLAB,
+            Blocks.WARPED_SLAB,
+            Blocks.CRIMSON_PRESSURE_PLATE,
+            Blocks.WARPED_PRESSURE_PLATE,
+            Blocks.CRIMSON_FENCE,
+            Blocks.WARPED_FENCE,
+            Blocks.CRIMSON_TRAPDOOR,
+            Blocks.WARPED_TRAPDOOR,
+            Blocks.CRIMSON_FENCE_GATE,
+            Blocks.WARPED_FENCE_GATE,
+            Blocks.CRIMSON_STAIRS,
+            Blocks.WARPED_STAIRS,
+            Blocks.CRIMSON_BUTTON,
+            Blocks.WARPED_BUTTON,
+            Blocks.CRIMSON_DOOR,
             Blocks.field37108,
             Blocks.field37109,
             Blocks.field37110,
@@ -601,15 +601,15 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36864,
             Blocks.OAK_FENCE_GATE,
             Blocks.field36862,
-            Blocks.field37101,
-            Blocks.field37102
+            Blocks.CRIMSON_FENCE_GATE,
+            Blocks.WARPED_FENCE_GATE
          );
       this.method14014(BlockTags.field32813).method31559(BlockTags.field32812);
       this.method14014(BlockTags.field32814)
          .method31558(Blocks.MYCELIUM)
          .method31558(Blocks.PODZOL)
-         .method31558(Blocks.field37083)
-         .method31558(Blocks.field37074);
+         .method31558(Blocks.CRIMSON_NYLIUM)
+         .method31558(Blocks.WARPED_NYLIUM);
       this.method14014(BlockTags.INFINIBURN_OVERWORLD).method31560(Blocks.NETHERRACK, Blocks.field36890);
       this.method14014(BlockTags.INFINIBURN_NETHER).method31559(BlockTags.INFINIBURN_OVERWORLD);
       this.method14014(BlockTags.INFINIBURN_END).method31559(BlockTags.INFINIBURN_OVERWORLD).method31558(Blocks.BEDROCK);

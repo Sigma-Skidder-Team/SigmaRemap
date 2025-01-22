@@ -49,8 +49,8 @@ public class Class3219 extends Block implements IGrowable {
    public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
       BlockState var7 = var1.getBlockState(var3);
       BlockPos var8 = var3.up();
-      if (!var7.isIn(Blocks.field37083)) {
-         if (var7.isIn(Blocks.field37074)) {
+      if (!var7.isIn(Blocks.CRIMSON_NYLIUM)) {
+         if (var7.isIn(Blocks.WARPED_NYLIUM)) {
             Class2946.method11288(var1, var2, var8, Class8529.field38323, 3, 1);
             Class2946.method11288(var1, var2, var8, Class8529.field38324, 3, 1);
             if (var2.nextInt(8) == 0) {

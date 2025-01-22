@@ -22,11 +22,11 @@ public class Class3269 extends ToolItem {
    private static String[] field18765;
    private static final Set<Block> field18766 = ImmutableSet.of(
       Blocks.field36891,
-      Blocks.field37076,
+      Blocks.WARPED_WART_BLOCK,
       Blocks.field36777,
       Blocks.field36963,
       Blocks.field37116,
-      Blocks.field37085,
+      Blocks.SHROOMLIGHT,
       new Block[]{
          Blocks.field36452,
          Blocks.field36453,

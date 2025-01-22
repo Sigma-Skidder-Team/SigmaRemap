@@ -26,7 +26,7 @@ public class Class5957<T extends Class956> extends Class5942<T> {
    public void method18462(T var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       if (!Config.isShaders() || !ShadersRender.method17174(var1, var2, this.method18490(), var3, var4, var5, var6)) {
          field25980.setSeed(31100L);
-         double var9 = var1.getPos().method8319(this.field25928.field34748.getPos(), true);
+         double var9 = var1.getPos().distanceSq(this.field25928.field34748.getPos(), true);
          int var11 = this.method18489(var9);
          float var12 = this.method18490();
          Matrix4f var13 = var3.getLast().getMatrix();

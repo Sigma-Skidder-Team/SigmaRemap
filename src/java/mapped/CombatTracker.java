@@ -43,9 +43,9 @@ public class CombatTracker {
          if (var4.isIn(Blocks.LADDER) || var4.isIn(BlockTags.field32768)) {
             this.field34548 = "ladder";
          } else if (!var4.isIn(Blocks.VINE)) {
-            if (var4.isIn(Blocks.field37086) || var4.isIn(Blocks.field37087)) {
+            if (var4.isIn(Blocks.WEEPING_VINES) || var4.isIn(Blocks.WEEPING_VINES_PLANT)) {
                this.field34548 = "weeping_vines";
-            } else if (var4.isIn(Blocks.field37088) || var4.isIn(Blocks.field37089)) {
+            } else if (var4.isIn(Blocks.TWISTING_VINES) || var4.isIn(Blocks.TWISTING_VINES_PLANT)) {
                this.field34548 = "twisting_vines";
             } else if (!var4.isIn(Blocks.field37053)) {
                this.field34548 = "other_climbable";

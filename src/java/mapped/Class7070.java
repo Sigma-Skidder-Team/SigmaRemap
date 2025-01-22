@@ -105,15 +105,15 @@ public class Class7070 {
    }
 
    public ItemStack method21987() {
-      if (this.field30455 != null && this.field30455.getItem() instanceof Class3280) {
+      if (this.field30455 != null && this.field30455.getItem() instanceof AirItem) {
          this.field30455 = null;
       }
 
-      if (this.field30453 != null && this.field30453.getItem() instanceof Class3280) {
+      if (this.field30453 != null && this.field30453.getItem() instanceof AirItem) {
          this.field30453 = null;
       }
 
-      if (this.field30454 != null && this.field30454.getItem() instanceof Class3280) {
+      if (this.field30454 != null && this.field30454.getItem() instanceof AirItem) {
          this.field30454 = null;
       }
 

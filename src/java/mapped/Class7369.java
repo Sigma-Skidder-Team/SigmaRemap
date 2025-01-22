@@ -58,7 +58,7 @@ public class Class7369 extends Class7361 {
          double var5 = 64.0;
          PlayerEntity var7 = this.field31519.world.method7190(field31539, (double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
          if (var7 != null) {
-            var5 = var3.method8319(var7.getPositionVec(), true) / 512.0;
+            var5 = var3.distanceSq(var7.getPositionVec(), true) / 512.0;
          }
 
          if (var7 != null

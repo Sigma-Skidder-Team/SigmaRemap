@@ -135,15 +135,15 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Blocks.field36587).method18296(Class140.method420(Class6872.method20921(3.0F, 6.0F))))
                   .method18291(Class4695.method14724(Blocks.field37141).method18296(Class140.method420(Class6872.method20921(2.0F, 5.0F))))
                   .method18291(Class4695.method14724(Blocks.SOUL_SAND).method18296(Class140.method420(Class6872.method20921(2.0F, 7.0F))))
-                  .method18291(Class4695.method14724(Blocks.field37083).method18296(Class140.method420(Class6872.method20921(2.0F, 7.0F))))
+                  .method18291(Class4695.method14724(Blocks.CRIMSON_NYLIUM).method18296(Class140.method420(Class6872.method20921(2.0F, 7.0F))))
                   .method18291(Class4695.method14724(Items.field37969).method18296(Class140.method420(Class6872.method20921(2.0F, 8.0F))))
                   .method18291(Class4695.method14724(Items.LEATHER).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
                   .method18291(Class4695.method14724(Items.field37797).method18296(Class140.method420(Class6872.method20921(5.0F, 17.0F))))
                   .method18291(Class4695.method14724(Items.field37838).method18296(Class140.method420(Class6872.method20921(3.0F, 8.0F))))
                   .method18291(Class4695.method14724(Items.PORKCHOP).method18296(Class140.method420(Class6872.method20921(2.0F, 5.0F))))
                   .method18291(Class4695.method14724(Items.field37870).method18296(Class140.method420(Class6872.method20921(2.0F, 5.0F))))
-                  .method18291(Class4695.method14724(Blocks.field37084).method18296(Class140.method420(Class6872.method20921(2.0F, 7.0F))))
-                  .method18291(Class4695.method14724(Blocks.field37090).method18296(Class140.method420(Class6872.method20921(2.0F, 7.0F))))
+                  .method18291(Class4695.method14724(Blocks.CRIMSON_FUNGUS).method18296(Class140.method420(Class6872.method20921(2.0F, 7.0F))))
+                  .method18291(Class4695.method14724(Blocks.CRIMSON_ROOTS).method18296(Class140.method420(Class6872.method20921(2.0F, 7.0F))))
             )
       );
       var1.accept(

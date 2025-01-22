@@ -129,7 +129,7 @@ public class Vector3i implements Comparable<Vector3i> {
       return this.distanceSq((double)to.getX(), (double)to.getY(), (double)to.getZ(), true);
    }
 
-   public double method8319(IPosition position, boolean useCenter) {
+   public double distanceSq(IPosition position, boolean useCenter) {
       return this.distanceSq(position.getX(), position.getY(), position.getZ(), useCenter);
    }
 

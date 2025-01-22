@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.ChatScreen;
-import mapped.Class3280;
+import mapped.AirItem;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.RenderUtil;
 import net.minecraft.client.Minecraft;
@@ -84,7 +84,7 @@ public class InfoHUD extends Module {
 
         for (int var6 = 0; var6 < mc.player.inventory.field5440.size(); var6++) {
             ItemStack var7 = mc.player.inventory.field5440.get(var6);
-            if (!(var7.getItem() instanceof Class3280)) {
+            if (!(var7.getItem() instanceof AirItem)) {
                 var5++;
                 int var8 = var2 - 32 * var5;
                 RenderUtil.method11479(var7, var1, var8, 32, 32);

@@ -569,7 +569,7 @@ public class VillagerTrades {
             new Class5395(Items.field37590, 3, 1, 6, 1),
             new Class5395(Items.field37749, 6, 1, 6, 1),
             new Class5395(Items.field37840, 1, 1, 8, 1),
-            new Class5395(Items.field37233, 3, 3, 6, 1)
+            new Class5395(Items.PODZOL, 3, 3, 6, 1)
          }
       )
    );

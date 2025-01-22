@@ -2563,182 +2563,182 @@ public class Blocks {
       "stripped_warped_hyphae",
       new Class3386(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, MaterialColor.field31004).method26623(2.0F).method26619(SoundType.STEM))
    );
-   public static final Block field37074 = register(
+   public static final Block WARPED_NYLIUM = register(
       "warped_nylium",
       new Class3219(
          AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field31002).method26635().method26623(0.4F).method26619(SoundType.NYLIUM).method26624()
       )
    );
-   public static final Block field37075 = register(
+   public static final Block WARPED_FUNGUS = register(
       "warped_fungus",
       new Class3485(
          AbstractBlock.Properties.withMaterialAndColor(Material.PLANTS, MaterialColor.field30970).method26622().method26614().method26619(SoundType.FUNGUS),
          () -> Features.field41767
       )
    );
-   public static final Block field37076 = register(
+   public static final Block WARPED_WART_BLOCK = register(
       "warped_wart_block", new Block(AbstractBlock.Properties.withMaterialAndColor(Material.GRASS, MaterialColor.field31005).method26623(1.0F).method26619(SoundType.NETHERRACK))
    );
-   public static final Block field37077 = register(
+   public static final Block WARPED_ROOTS = register(
       "warped_roots",
       new Class3495(AbstractBlock.Properties.withMaterialAndColor(Material.field38939, MaterialColor.field30970).method26614().method26622().method26619(SoundType.ROOTS))
    );
-   public static final Block field37078 = register(
+   public static final Block NETHER_SPROUTS = register(
       "nether_sprouts",
       new Class3488(AbstractBlock.Properties.withMaterialAndColor(Material.field38939, MaterialColor.field30970).method26614().method26622().method26619(SoundType.NETHER_ORE))
    );
-   public static final Block field37079 = register("crimson_stem", method30017(MaterialColor.field31000));
-   public static final Block field37080 = register("stripped_crimson_stem", method30017(MaterialColor.field31000));
-   public static final Block field37081 = register(
+   public static final Block CRIMSON_STEM = register("crimson_stem", method30017(MaterialColor.field31000));
+   public static final Block STRIPPED_CRIMSON_STEM = register("stripped_crimson_stem", method30017(MaterialColor.field31000));
+   public static final Block CRIMSON_HYPHAE = register(
       "crimson_hyphae", new Class3386(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, MaterialColor.field31001).method26623(2.0F).method26619(SoundType.STEM))
    );
-   public static final Block field37082 = register(
+   public static final Block STRIPPED_CRIMSON_HYPHAE = register(
       "stripped_crimson_hyphae",
       new Class3386(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, MaterialColor.field31001).method26623(2.0F).method26619(SoundType.STEM))
    );
-   public static final Block field37083 = register(
+   public static final Block CRIMSON_NYLIUM = register(
       "crimson_nylium",
       new Class3219(
          AbstractBlock.Properties.withMaterialAndColor(Material.STONE, MaterialColor.field30999).method26635().method26623(0.4F).method26619(SoundType.NYLIUM).method26624()
       )
    );
-   public static final Block field37084 = register(
+   public static final Block CRIMSON_FUNGUS = register(
       "crimson_fungus",
       new Class3485(
          AbstractBlock.Properties.withMaterialAndColor(Material.PLANTS, MaterialColor.field30982).method26622().method26614().method26619(SoundType.FUNGUS),
          () -> Features.field41765
       )
    );
-   public static final Block field37085 = register(
+   public static final Block SHROOMLIGHT = register(
       "shroomlight",
       new Block(
          AbstractBlock.Properties.withMaterialAndColor(Material.GRASS, MaterialColor.field30975).method26623(1.0F).method26619(SoundType.WEEPING_VINES).method26620(var0 -> 15)
       )
    );
-   public static final Block field37086 = register(
+   public static final Block WEEPING_VINES = register(
       "weeping_vines",
       new Class3454(
          AbstractBlock.Properties.withMaterialAndColor(Material.PLANTS, MaterialColor.field30982).method26624().method26614().method26622().method26619(SoundType.TWISTING_VINES)
       )
    );
-   public static final Block field37087 = register(
+   public static final Block WEEPING_VINES_PLANT = register(
       "weeping_vines_plant",
       new Class3446(AbstractBlock.Properties.withMaterialAndColor(Material.PLANTS, MaterialColor.field30982).method26614().method26622().method26619(SoundType.TWISTING_VINES))
    );
-   public static final Block field37088 = register(
+   public static final Block TWISTING_VINES = register(
       "twisting_vines",
       new Class3453(
          AbstractBlock.Properties.withMaterialAndColor(Material.PLANTS, MaterialColor.field30970).method26624().method26614().method26622().method26619(SoundType.TWISTING_VINES)
       )
    );
-   public static final Block field37089 = register(
+   public static final Block TWISTING_VINES_PLANT = register(
       "twisting_vines_plant",
       new Class3447(AbstractBlock.Properties.withMaterialAndColor(Material.PLANTS, MaterialColor.field30970).method26614().method26622().method26619(SoundType.TWISTING_VINES))
    );
-   public static final Block field37090 = register(
+   public static final Block CRIMSON_ROOTS = register(
       "crimson_roots",
       new Class3495(AbstractBlock.Properties.withMaterialAndColor(Material.field38939, MaterialColor.field30982).method26614().method26622().method26619(SoundType.ROOTS))
    );
-   public static final Block field37091 = register(
+   public static final Block CRIMSON_PLANKS = register(
       "crimson_planks",
       new Block(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, MaterialColor.field31000).method26621(2.0F, 3.0F).method26619(SoundType.WOOD))
    );
-   public static final Block field37092 = register(
+   public static final Block WARPED_PLANKS = register(
       "warped_planks",
       new Block(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, MaterialColor.field31003).method26621(2.0F, 3.0F).method26619(SoundType.WOOD))
    );
-   public static final Block field37093 = register(
+   public static final Block CRIMSON_SLAB = register(
       "crimson_slab",
-      new SlabBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37091.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.WOOD))
+      new SlabBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, CRIMSON_PLANKS.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.WOOD))
    );
-   public static final Block field37094 = register(
+   public static final Block WARPED_SLAB = register(
       "warped_slab",
-      new SlabBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37092.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.WOOD))
+      new SlabBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, WARPED_PLANKS.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.WOOD))
    );
-   public static final Block field37095 = register(
+   public static final Block CRIMSON_PRESSURE_PLATE = register(
       "crimson_pressure_plate",
       new Class3469(
          Class2275.field14823,
-         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37091.method12000()).method26614().method26623(0.5F).method26619(SoundType.WOOD)
+         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, CRIMSON_PLANKS.method12000()).method26614().method26623(0.5F).method26619(SoundType.WOOD)
       )
    );
-   public static final Block field37096 = register(
+   public static final Block WARPED_PRESSURE_PLATE = register(
       "warped_pressure_plate",
       new Class3469(
          Class2275.field14823,
-         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37092.method12000()).method26614().method26623(0.5F).method26619(SoundType.WOOD)
+         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, WARPED_PLANKS.method12000()).method26614().method26623(0.5F).method26619(SoundType.WOOD)
       )
    );
-   public static final Block field37097 = register(
+   public static final Block CRIMSON_FENCE = register(
       "crimson_fence",
-      new Class3239(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37091.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.WOOD))
+      new Class3239(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, CRIMSON_PLANKS.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.WOOD))
    );
-   public static final Block field37098 = register(
+   public static final Block WARPED_FENCE = register(
       "warped_fence",
-      new Class3239(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37092.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.WOOD))
+      new Class3239(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, WARPED_PLANKS.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.WOOD))
    );
-   public static final Block field37099 = register(
+   public static final Block CRIMSON_TRAPDOOR = register(
       "crimson_trapdoor",
       new TrapDoorBlock(
-         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37091.method12000())
+         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, CRIMSON_PLANKS.method12000())
             .method26623(3.0F)
             .method26619(SoundType.WOOD)
             .method26615()
             .method26629(Blocks::method30012)
       )
    );
-   public static final Block field37100 = register(
+   public static final Block WARPED_TRAPDOOR = register(
       "warped_trapdoor",
       new TrapDoorBlock(
-         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37092.method12000())
+         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, WARPED_PLANKS.method12000())
             .method26623(3.0F)
             .method26619(SoundType.WOOD)
             .method26615()
             .method26629(Blocks::method30012)
       )
    );
-   public static final Block field37101 = register(
+   public static final Block CRIMSON_FENCE_GATE = register(
       "crimson_fence_gate",
-      new FenceGateBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37091.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.WOOD))
+      new FenceGateBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, CRIMSON_PLANKS.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.WOOD))
    );
-   public static final Block field37102 = register(
+   public static final Block WARPED_FENCE_GATE = register(
       "warped_fence_gate",
-      new FenceGateBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37092.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.WOOD))
+      new FenceGateBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, WARPED_PLANKS.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.WOOD))
    );
-   public static final Block field37103 = register("crimson_stairs", new StairsBlock(field37091.getDefaultState(), AbstractBlock.Properties.method26613(field37091)));
-   public static final Block field37104 = register("warped_stairs", new StairsBlock(field37092.getDefaultState(), AbstractBlock.Properties.method26613(field37092)));
-   public static final Block field37105 = register(
+   public static final Block CRIMSON_STAIRS = register("crimson_stairs", new StairsBlock(CRIMSON_PLANKS.getDefaultState(), AbstractBlock.Properties.method26613(CRIMSON_PLANKS)));
+   public static final Block WARPED_STAIRS = register("warped_stairs", new StairsBlock(WARPED_PLANKS.getDefaultState(), AbstractBlock.Properties.method26613(WARPED_PLANKS)));
+   public static final Block CRIMSON_BUTTON = register(
       "crimson_button", new WoodButtonBlock(AbstractBlock.Properties.withMaterial(Material.field38946).method26614().method26623(0.5F).method26619(SoundType.WOOD))
    );
-   public static final Block field37106 = register(
+   public static final Block WARPED_BUTTON = register(
       "warped_button", new WoodButtonBlock(AbstractBlock.Properties.withMaterial(Material.field38946).method26614().method26623(0.5F).method26619(SoundType.WOOD))
    );
-   public static final Block field37107 = register(
+   public static final Block CRIMSON_DOOR = register(
       "crimson_door",
-      new DoorBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37091.method12000()).method26623(3.0F).method26619(SoundType.WOOD).method26615())
+      new DoorBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, CRIMSON_PLANKS.method12000()).method26623(3.0F).method26619(SoundType.WOOD).method26615())
    );
    public static final Block field37108 = register(
       "warped_door",
-      new DoorBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37092.method12000()).method26623(3.0F).method26619(SoundType.WOOD).method26615())
+      new DoorBlock(AbstractBlock.Properties.withMaterialAndColor(Material.field38957, WARPED_PLANKS.method12000()).method26623(3.0F).method26619(SoundType.WOOD).method26615())
    );
    public static final Block field37109 = register(
       "crimson_sign",
       new Class3374(
-         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37091.method12000()).method26614().method26623(1.0F).method26619(SoundType.WOOD),
+         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, CRIMSON_PLANKS.method12000()).method26614().method26623(1.0F).method26619(SoundType.WOOD),
          Class9673.field45172
       )
    );
    public static final Block field37110 = register(
       "warped_sign",
       new Class3374(
-         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37092.method12000()).method26614().method26623(1.0F).method26619(SoundType.WOOD),
+         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, WARPED_PLANKS.method12000()).method26614().method26623(1.0F).method26619(SoundType.WOOD),
          Class9673.field45173
       )
    );
    public static final Block field37111 = register(
       "crimson_wall_sign",
       new Class3375(
-         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37091.method12000())
+         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, CRIMSON_PLANKS.method12000())
             .method26614()
             .method26623(1.0F)
             .method26619(SoundType.WOOD)
@@ -2749,7 +2749,7 @@ public class Blocks {
    public static final Block field37112 = register(
       "warped_wall_sign",
       new Class3375(
-         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, field37092.method12000())
+         AbstractBlock.Properties.withMaterialAndColor(Material.field38957, WARPED_PLANKS.method12000())
             .method26614()
             .method26623(1.0F)
             .method26619(SoundType.WOOD)
@@ -2811,16 +2811,16 @@ public class Blocks {
       )
    );
    public static final Block field37125 = register(
-      "potted_crimson_fungus", new Class3460(field37084, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_crimson_fungus", new Class3460(CRIMSON_FUNGUS, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block field37126 = register(
-      "potted_warped_fungus", new Class3460(field37075, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_warped_fungus", new Class3460(WARPED_FUNGUS, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block field37127 = register(
-      "potted_crimson_roots", new Class3460(field37090, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_crimson_roots", new Class3460(CRIMSON_ROOTS, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block field37128 = register(
-      "potted_warped_roots", new Class3460(field37077, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
+      "potted_warped_roots", new Class3460(WARPED_ROOTS, AbstractBlock.Properties.withMaterial(Material.field38946).method26622().method26615())
    );
    public static final Block field37129 = register(
       "lodestone", new Block(AbstractBlock.Properties.withMaterial(Material.ANVIL).method26635().method26623(3.5F).method26619(SoundType.CHAIN))

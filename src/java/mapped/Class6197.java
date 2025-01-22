@@ -24,7 +24,7 @@ public class Class6197 implements Class6196 {
          Blocks.field36426,
          Blocks.field36427,
          Blocks.WARPED_STEM,
-         Blocks.field37079,
+         Blocks.CRIMSON_STEM,
          Blocks.field36434,
          Blocks.field36435,
          Blocks.field36436,
@@ -32,7 +32,7 @@ public class Class6197 implements Class6196 {
          Blocks.field36438,
          Blocks.field36439,
          Blocks.WARPED_HYPHAE,
-         Blocks.field37081,
+         Blocks.CRIMSON_HYPHAE,
          Blocks.field36446,
          Blocks.field36447,
          Blocks.field36448,
@@ -40,7 +40,7 @@ public class Class6197 implements Class6196 {
          Blocks.field36450,
          Blocks.field36451,
          Blocks.field36891,
-         Blocks.field37076
+         Blocks.WARPED_WART_BLOCK
       }
    );
    private static final ITextComponent field27646 = new TranslationTextComponent("tutorial.find_tree.title");

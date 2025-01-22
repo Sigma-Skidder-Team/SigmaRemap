@@ -34,8 +34,8 @@ public class Class3265 extends ToolItem {
          Blocks.field36698,
          Blocks.field36700,
          Blocks.field36699,
-         Blocks.field37105,
-         Blocks.field37106
+         Blocks.CRIMSON_BUTTON,
+         Blocks.WARPED_BUTTON
       }
    );
    public static final Map<Block, Block> field18758 = new Builder()
@@ -53,8 +53,8 @@ public class Class3265 extends ToolItem {
       .put(Blocks.field36423, Blocks.field36428)
       .put(Blocks.WARPED_STEM, Blocks.STRIPPED_WARPED_STEM)
       .put(Blocks.WARPED_HYPHAE, Blocks.STRIPPED_WARPED_HYPHAE)
-      .put(Blocks.field37079, Blocks.field37080)
-      .put(Blocks.field37081, Blocks.field37082)
+      .put(Blocks.CRIMSON_STEM, Blocks.STRIPPED_CRIMSON_STEM)
+      .put(Blocks.CRIMSON_HYPHAE, Blocks.STRIPPED_CRIMSON_HYPHAE)
       .build();
 
    public Class3265(IItemTier var1, float var2, float var3, Properties var4) {

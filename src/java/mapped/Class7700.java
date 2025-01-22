@@ -48,7 +48,7 @@ public final class Class7700 {
    public static final BlockState field33032 = Blocks.field36531.getDefaultState();
    public static final BlockState field33033 = Blocks.NETHERRACK.getDefaultState();
    public static final BlockState field33034 = Blocks.SOUL_SOIL.getDefaultState();
-   public static final BlockState field33035 = Blocks.field37090.getDefaultState();
+   public static final BlockState field33035 = Blocks.CRIMSON_ROOTS.getDefaultState();
    public static final BlockState field33036 = Blocks.LILY_PAD.getDefaultState();
    public static final BlockState field33037 = Blocks.SNOW.getDefaultState();
    public static final BlockState field33038 = Blocks.field36590.getDefaultState();
@@ -93,8 +93,8 @@ public final class Class7700 {
    public static final BlockState field33071 = Blocks.field37130.getDefaultState();
    public static final BlockState field33072 = Blocks.field37122.getDefaultState();
    public static final BlockState field33073 = Blocks.BASALT.getDefaultState();
-   public static final BlockState field33074 = Blocks.field37084.getDefaultState();
-   public static final BlockState field33075 = Blocks.field37075.getDefaultState();
-   public static final BlockState field33076 = Blocks.field37077.getDefaultState();
-   public static final BlockState field33077 = Blocks.field37078.getDefaultState();
+   public static final BlockState field33074 = Blocks.CRIMSON_FUNGUS.getDefaultState();
+   public static final BlockState field33075 = Blocks.WARPED_FUNGUS.getDefaultState();
+   public static final BlockState field33076 = Blocks.WARPED_ROOTS.getDefaultState();
+   public static final BlockState field33077 = Blocks.NETHER_SPROUTS.getDefaultState();
 }

@@ -24,7 +24,7 @@ public class InvManagerUtils {
 
    public static boolean method25819(int var0) {
       ItemStack var3 = mc.player.container.getSlot(var0).getStack();
-      return var3 == null || var3.getItem() instanceof Class3280;
+      return var3 == null || var3.getItem() instanceof AirItem;
    }
 
    public static int findItemSlot(Item var0) {

@@ -127,7 +127,7 @@ public class AutoArmor extends Module {
                                         || Client.getInstance().getSlotChangeTracker().method33238(var12) >= 1500L
                         )) {
                             this.method16617(var1);
-                            if (!(mc.player.inventory.getStackInSlot(36 + var7.getIndex()).getItem() instanceof Class3280)) {
+                            if (!(mc.player.inventory.getStackInSlot(36 + var7.getIndex()).getItem() instanceof AirItem)) {
                                 InvManagerUtils.click(8 - var7.getIndex(), 0, true);
                             }
 
@@ -155,7 +155,7 @@ public class AutoArmor extends Module {
                             this.method16617(var1);
                             Item var11 = mc.player.inventory.getStackInSlot(36 + var10.getType().getIndex()).getItem();
                             if (!(var11 instanceof Class3256)) {
-                                if (!(var11 instanceof Class3280)) {
+                                if (!(var11 instanceof AirItem)) {
                                     InvManagerUtils.method25871(8 - var10.getType().getIndex());
                                 }
                             } else {

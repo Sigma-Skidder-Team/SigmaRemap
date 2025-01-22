@@ -3648,7 +3648,7 @@ public class Class9407 {
       this.method35841(Blocks.field36527, Class7524.field32271);
       this.method35841(Blocks.field37149, Class7524.field32271);
       this.method35841(Blocks.field36776, Class7524.field32271);
-      this.method35841(Blocks.field37085, Class7524.field32271);
+      this.method35841(Blocks.SHROOMLIGHT, Class7524.field32271);
       this.method35841(Blocks.SOUL_SAND, Class7524.field32271);
       this.method35841(Blocks.SOUL_SOIL, Class7524.field32271);
       this.method35841(Blocks.field36532, Class7524.field32271);
@@ -3657,7 +3657,7 @@ public class Class9407 {
       this.method35807(Items.field37314);
       this.method35841(Blocks.TNT, Class7524.field32275);
       this.method35841(Blocks.field37116, Class7524.field32273);
-      this.method35841(Blocks.field37076, Class7524.field32271);
+      this.method35841(Blocks.WARPED_WART_BLOCK, Class7524.field32271);
       this.method35841(Blocks.field36453, Class7524.field32271);
       this.method35841(Blocks.field37136, Class7524.field32271);
       this.method35841(
@@ -3721,8 +3721,8 @@ public class Class9407 {
       this.method35938(Blocks.field36585, Blocks.field36586);
       this.method35897(Blocks.CRAFTING_TABLE, Blocks.OAK_PLANKS, Class7287::method23035);
       this.method35897(Blocks.FLETCHING_TABLE, Blocks.BIRCH_PLANKS, Class7287::method23036);
-      this.method35907(Blocks.field37083);
-      this.method35907(Blocks.field37074);
+      this.method35907(Blocks.CRIMSON_NYLIUM);
+      this.method35907(Blocks.WARPED_NYLIUM);
       this.method35903(Blocks.DISPENSER);
       this.method35903(Blocks.DROPPER);
       this.method35917(Blocks.LANTERN);
@@ -3976,12 +3976,12 @@ public class Class9407 {
       this.method35954(Blocks.field36961, Blocks.field36962, Class1958.field12762);
       this.method35807(Items.field37356);
       this.method35804(Blocks.field36962);
-      this.method35954(Blocks.field37086, Blocks.field37087, Class1958.field12763);
-      this.method35954(Blocks.field37088, Blocks.field37089, Class1958.field12763);
-      this.method35809(Blocks.field37086, "_plant");
-      this.method35804(Blocks.field37087);
-      this.method35809(Blocks.field37088, "_plant");
-      this.method35804(Blocks.field37089);
+      this.method35954(Blocks.WEEPING_VINES, Blocks.WEEPING_VINES_PLANT, Class1958.field12763);
+      this.method35954(Blocks.TWISTING_VINES, Blocks.TWISTING_VINES_PLANT, Class1958.field12763);
+      this.method35809(Blocks.WEEPING_VINES, "_plant");
+      this.method35804(Blocks.WEEPING_VINES_PLANT);
+      this.method35809(Blocks.TWISTING_VINES, "_plant");
+      this.method35804(Blocks.TWISTING_VINES_PLANT);
       this.method35854(Blocks.field37008, Class1958.field12762, Class7287.method23001(Class7287.method23042(Blocks.field37009, "_stage0")));
       this.method35878();
       this.method35853(Blocks.COBWEB, Class1958.field12763);
@@ -4129,35 +4129,35 @@ public class Class9407 {
       this.method35850(Blocks.field36430).method36613(Blocks.field36430).method36611(Blocks.field36443);
       this.method35857(Blocks.JUNGLE_SAPLING, Blocks.POTTED_JUNGLE_SAPLING, Class1958.field12763);
       this.method35841(Blocks.field36449, Class7524.field32284);
-      this.method35845(Blocks.field37091)
-         .method31167(Blocks.field37105)
-         .method31169(Blocks.field37097)
-         .method31170(Blocks.field37101)
-         .method31171(Blocks.field37095)
+      this.method35845(Blocks.CRIMSON_PLANKS)
+         .method31167(Blocks.CRIMSON_BUTTON)
+         .method31169(Blocks.CRIMSON_FENCE)
+         .method31170(Blocks.CRIMSON_FENCE_GATE)
+         .method31171(Blocks.CRIMSON_PRESSURE_PLATE)
          .method31172(Blocks.field37109, Blocks.field37111)
-         .method31173(Blocks.field37093)
-         .method31174(Blocks.field37103);
-      this.method35847(Blocks.field37107);
-      this.method35848(Blocks.field37099);
-      this.method35850(Blocks.field37079).method36612(Blocks.field37079).method36611(Blocks.field37081);
-      this.method35850(Blocks.field37080).method36612(Blocks.field37080).method36611(Blocks.field37082);
-      this.method35857(Blocks.field37084, Blocks.field37125, Class1958.field12763);
-      this.method35957(Blocks.field37090, Blocks.field37127);
-      this.method35845(Blocks.field37092)
-         .method31167(Blocks.field37106)
-         .method31169(Blocks.field37098)
-         .method31170(Blocks.field37102)
-         .method31171(Blocks.field37096)
+         .method31173(Blocks.CRIMSON_SLAB)
+         .method31174(Blocks.CRIMSON_STAIRS);
+      this.method35847(Blocks.CRIMSON_DOOR);
+      this.method35848(Blocks.CRIMSON_TRAPDOOR);
+      this.method35850(Blocks.CRIMSON_STEM).method36612(Blocks.CRIMSON_STEM).method36611(Blocks.CRIMSON_HYPHAE);
+      this.method35850(Blocks.STRIPPED_CRIMSON_STEM).method36612(Blocks.STRIPPED_CRIMSON_STEM).method36611(Blocks.STRIPPED_CRIMSON_HYPHAE);
+      this.method35857(Blocks.CRIMSON_FUNGUS, Blocks.field37125, Class1958.field12763);
+      this.method35957(Blocks.CRIMSON_ROOTS, Blocks.field37127);
+      this.method35845(Blocks.WARPED_PLANKS)
+         .method31167(Blocks.WARPED_BUTTON)
+         .method31169(Blocks.WARPED_FENCE)
+         .method31170(Blocks.WARPED_FENCE_GATE)
+         .method31171(Blocks.WARPED_PRESSURE_PLATE)
          .method31172(Blocks.field37110, Blocks.field37112)
-         .method31173(Blocks.field37094)
-         .method31174(Blocks.field37104);
+         .method31173(Blocks.WARPED_SLAB)
+         .method31174(Blocks.WARPED_STAIRS);
       this.method35847(Blocks.field37108);
-      this.method35848(Blocks.field37100);
+      this.method35848(Blocks.WARPED_TRAPDOOR);
       this.method35850(Blocks.WARPED_STEM).method36612(Blocks.WARPED_STEM).method36611(Blocks.WARPED_HYPHAE);
       this.method35850(Blocks.STRIPPED_WARPED_STEM).method36612(Blocks.STRIPPED_WARPED_STEM).method36611(Blocks.STRIPPED_WARPED_HYPHAE);
-      this.method35857(Blocks.field37075, Blocks.field37126, Class1958.field12763);
-      this.method35957(Blocks.field37077, Blocks.field37128);
-      this.method35855(Blocks.field37078, Class1958.field12763);
+      this.method35857(Blocks.WARPED_FUNGUS, Blocks.field37126, Class1958.field12763);
+      this.method35957(Blocks.WARPED_ROOTS, Blocks.field37128);
+      this.method35855(Blocks.NETHER_SPROUTS, Class1958.field12763);
       this.method35807(Items.field37352);
       this.method35846(Class7287.method22996(Blocks.STONE)).method31166(var1 -> {
          ResourceLocation var4 = Class9756.field45537.method34805(Blocks.STONE, var1, this.field43643);

@@ -31,10 +31,10 @@ public class Class7193 extends Class7194 {
             Blocks.NETHERRACK,
             Blocks.SOUL_SAND,
             Blocks.SOUL_SOIL,
-            Blocks.field37083,
-            Blocks.field37074,
+            Blocks.CRIMSON_NYLIUM,
+            Blocks.WARPED_NYLIUM,
             Blocks.field36891,
-            Blocks.field37076,
+            Blocks.WARPED_WART_BLOCK,
             Blocks.BASALT,
             Blocks.field37130
          }

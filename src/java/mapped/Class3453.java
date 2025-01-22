@@ -23,7 +23,7 @@ public class Class3453 extends Class3452 {
 
    @Override
    public Block method12125() {
-      return Blocks.field37089;
+      return Blocks.TWISTING_VINES_PLANT;
    }
 
    @Override

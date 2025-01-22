@@ -8,11 +8,11 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class Class3280 extends Item {
+public class AirItem extends Item {
    private static String[] field18787;
    private final Block field18788;
 
-   public Class3280(Block var1, Properties var2) {
+   public AirItem(Block var1, Properties var2) {
       super(var2);
       this.field18788 = var1;
    }
