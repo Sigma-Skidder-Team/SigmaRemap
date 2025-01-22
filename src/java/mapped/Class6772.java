@@ -13,7 +13,7 @@ import net.minecraft.world.gen.OctavesNoiseGenerator;
 import java.util.Random;
 
 public class Class6772 extends SurfaceBuilder<Class8278> {
-   private static final BlockState field29546 = Blocks.field37012.getDefaultState();
+   private static final BlockState field29546 = Blocks.CAVE_AIR.getDefaultState();
    public long field29547;
    private OctavesNoiseGenerator field29548;
 

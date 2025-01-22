@@ -31,7 +31,7 @@ public abstract class Class2914 extends Class2898<Class4712> {
          var1.setBlockState(var3, var4, 3);
          if (!(var2.nextFloat() < 0.25F)) {
             if (var2.nextFloat() < 0.05F) {
-               var1.setBlockState(var7, Blocks.field37005.getDefaultState().with(Class3195.field18472, Integer.valueOf(var2.nextInt(4) + 1)), 2);
+               var1.setBlockState(var7, Blocks.SEA_PICKLE.getDefaultState().with(Class3195.field18472, Integer.valueOf(var2.nextInt(4) + 1)), 2);
             }
          } else {
             var1.setBlockState(var7, BlockTags.field32786.getRandomElement(var2).getDefaultState(), 2);

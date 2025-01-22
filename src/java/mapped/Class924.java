@@ -99,9 +99,9 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3642(var2, ItemTags.field26075, 67);
       method3643(var2, Blocks.DRIED_KELP_BLOCK, 4001);
       method3643(var2, Items.CROSSBOW, 300);
-      method3643(var2, Blocks.field37009, 50);
+      method3643(var2, Blocks.BAMBOO, 50);
       method3643(var2, Blocks.DEAD_BUSH, 100);
-      method3643(var2, Blocks.field37053, 400);
+      method3643(var2, Blocks.SCAFFOLDING, 400);
       method3643(var2, Blocks.LOOM, 300);
       method3643(var2, Blocks.BARREL, 300);
       method3643(var2, Blocks.CARTOGRAPHY_TABLE, 300);

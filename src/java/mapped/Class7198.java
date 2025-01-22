@@ -55,7 +55,7 @@ public class Class7198 extends Class7194 {
             Blocks.LAVA,
             Blocks.OBSIDIAN,
             Blocks.AIR,
-            Blocks.field37012,
+            Blocks.CAVE_AIR,
             Blocks.PACKED_ICE
          }
       );

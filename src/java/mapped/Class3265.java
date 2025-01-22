@@ -27,7 +27,7 @@ public class Class3265 extends ToolItem {
    private static final Set<Block> field18757 = Sets.newHashSet(
       new Block[]{
          Blocks.LADDER,
-         Blocks.field37053,
+         Blocks.SCAFFOLDING,
          Blocks.OAK_BUTTON,
          Blocks.SPRUCE_BUTTON,
          Blocks.BIRCH_BUTTON,

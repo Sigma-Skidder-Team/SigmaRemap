@@ -47,8 +47,8 @@ public abstract class Class4194 extends Class4178 {
             this.method12923(var1, Blocks.OAK_DOOR.getDefaultState().with(DoorBlock.DOUBLE_BLOCK_HALF, DoubleBlockHalf.field209), var5 + 1, var6 + 1, var7, var3);
             break;
          case 3:
-            this.method12923(var1, Blocks.field37012.getDefaultState(), var5 + 1, var6, var7, var3);
-            this.method12923(var1, Blocks.field37012.getDefaultState(), var5 + 1, var6 + 1, var7, var3);
+            this.method12923(var1, Blocks.CAVE_AIR.getDefaultState(), var5 + 1, var6, var7, var3);
+            this.method12923(var1, Blocks.CAVE_AIR.getDefaultState(), var5 + 1, var6 + 1, var7, var3);
             this.method12923(var1, Blocks.IRON_BARS.getDefaultState().with(Class3237.field18683, Boolean.valueOf(true)), var5, var6, var7, var3);
             this.method12923(var1, Blocks.IRON_BARS.getDefaultState().with(Class3237.field18683, Boolean.valueOf(true)), var5, var6 + 1, var7, var3);
             this.method12923(

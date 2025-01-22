@@ -25,7 +25,7 @@ import net.minecraft.world.World;
 
 import java.util.Map;
 
-public class Class3415 extends Block implements IWaterLoggable {
+public class WallBlock extends Block implements IWaterLoggable {
    private static String[] field19105;
    public static final BooleanProperty field19106 = BlockStateProperties.UP;
    public static final EnumProperty<WallHeight> field19107 = BlockStateProperties.WALLHEIGHT_EAST;
@@ -41,7 +41,7 @@ public class Class3415 extends Block implements IWaterLoggable {
    private static final VoxelShape field19117 = Block.makeCuboidShape(0.0, 0.0, 7.0, 9.0, 16.0, 9.0);
    private static final VoxelShape field19118 = Block.makeCuboidShape(7.0, 0.0, 7.0, 16.0, 16.0, 9.0);
 
-   public Class3415(Properties var1) {
+   public WallBlock(Properties var1) {
       super(var1);
       this.setDefaultState(
          this.stateContainer
@@ -203,7 +203,7 @@ public class Class3415 extends Block implements IWaterLoggable {
    }
 
    private boolean method12061(BlockState var1, BlockState var2, VoxelShape var3) {
-      boolean var6 = var2.getBlock() instanceof Class3415 && var2.<Boolean>get(field19106);
+      boolean var6 = var2.getBlock() instanceof WallBlock && var2.<Boolean>get(field19106);
       if (!var6) {
          WallHeight var7 = var1.<WallHeight>get(field19108);
          WallHeight var8 = var1.<WallHeight>get(field19109);

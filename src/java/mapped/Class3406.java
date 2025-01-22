@@ -87,7 +87,7 @@ public class Class3406 extends Block implements Class3405 {
 
    public static void method12045(IWorld var0, BlockPos var1, boolean var2) {
       if (method12046(var0, var1)) {
-         var0.setBlockState(var1, Blocks.field37013.getDefaultState().with(field19084, Boolean.valueOf(var2)), 2);
+         var0.setBlockState(var1, Blocks.BUBBLE_COLUMN.getDefaultState().with(field19084, Boolean.valueOf(var2)), 2);
       }
    }
 
@@ -98,7 +98,7 @@ public class Class3406 extends Block implements Class3405 {
 
    private static boolean method12047(IBlockReader var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
-      return !var4.isIn(Blocks.field37013) ? !var4.isIn(Blocks.SOUL_SAND) : var4.<Boolean>get(field19084);
+      return !var4.isIn(Blocks.BUBBLE_COLUMN) ? !var4.isIn(Blocks.SOUL_SAND) : var4.<Boolean>get(field19084);
    }
 
    @Override
@@ -130,11 +130,11 @@ public class Class3406 extends Block implements Class3405 {
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var1.isValidPosition(var4, var5)) {
          if (var2 != Direction.DOWN) {
-            if (var2 == Direction.UP && !var3.isIn(Blocks.field37013) && method12046(var4, var6)) {
+            if (var2 == Direction.UP && !var3.isIn(Blocks.BUBBLE_COLUMN) && method12046(var4, var6)) {
                var4.getBlockTickScheduler().scheduleTick(var5, this, 5);
             }
          } else {
-            var4.setBlockState(var5, Blocks.field37013.getDefaultState().with(field19084, Boolean.valueOf(method12047(var4, var6))), 2);
+            var4.setBlockState(var5, Blocks.BUBBLE_COLUMN.getDefaultState().with(field19084, Boolean.valueOf(method12047(var4, var6))), 2);
          }
 
          var4.getPendingFluidTicks().scheduleTick(var5, Fluids.WATER, Fluids.WATER.getTickRate(var4));
@@ -147,7 +147,7 @@ public class Class3406 extends Block implements Class3405 {
    @Override
    public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.down());
-      return var6.isIn(Blocks.field37013) || var6.isIn(Blocks.MAGMA_BLOCK) || var6.isIn(Blocks.SOUL_SAND);
+      return var6.isIn(Blocks.BUBBLE_COLUMN) || var6.isIn(Blocks.MAGMA_BLOCK) || var6.isIn(Blocks.SOUL_SAND);
    }
 
    @Override

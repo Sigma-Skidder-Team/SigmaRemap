@@ -7,11 +7,11 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 
-public class Class3225 extends Class3224 {
+public class CoralFanBlock extends Class3224 {
    private static String[] field18662;
-   public static final VoxelShape field18664 = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 15.0, 14.0);
+   private static final VoxelShape field18664 = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 4.0, 14.0);
 
-   public Class3225(Properties var1) {
+   public CoralFanBlock(Properties var1) {
       super(var1);
    }
 

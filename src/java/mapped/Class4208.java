@@ -66,9 +66,9 @@ public class Class4208 extends Class4194 {
 
          for (int var11 = 1; var11 <= 3; var11++) {
             this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 0, var11, var10, var5);
-            this.method12923(var1, Blocks.field37012.getDefaultState(), 1, var11, var10, var5);
-            this.method12923(var1, Blocks.field37012.getDefaultState(), 2, var11, var10, var5);
-            this.method12923(var1, Blocks.field37012.getDefaultState(), 3, var11, var10, var5);
+            this.method12923(var1, Blocks.CAVE_AIR.getDefaultState(), 1, var11, var10, var5);
+            this.method12923(var1, Blocks.CAVE_AIR.getDefaultState(), 2, var11, var10, var5);
+            this.method12923(var1, Blocks.CAVE_AIR.getDefaultState(), 3, var11, var10, var5);
             this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 4, var11, var10, var5);
          }
 

@@ -223,8 +223,8 @@ public class Class8523 {
                new Class7872(new Class6439(Blocks.SMOOTH_SANDSTONE, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.CUT_SANDSTONE, 0.1F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.TERRACOTTA, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37021, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field37034, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.SMOOTH_SANDSTONE_STAIRS, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.SMOOTH_SANDSTONE_SLAB, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.BEETROOTS.getDefaultState()),
                new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.MELON_STEM.getDefaultState())
             )

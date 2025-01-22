@@ -13,7 +13,7 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Class6781 extends SurfaceBuilder<Class8278> {
-   private static final BlockState field29573 = Blocks.field37012.getDefaultState();
+   private static final BlockState field29573 = Blocks.CAVE_AIR.getDefaultState();
    private static final BlockState field29490 = Blocks.GRAVEL.getDefaultState();
    private static final BlockState field29574 = Blocks.SOUL_SAND.getDefaultState();
    public long field29575;

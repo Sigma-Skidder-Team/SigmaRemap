@@ -29,7 +29,7 @@ public abstract class Class7195<C extends Class4729> {
    public static final Class7195<Class4728> field30891 = method22604("underwater_canyon", new Class7197(Class4728.field22398));
    public static final Class7195<Class4728> field30892 = method22604("underwater_cave", new Class7198(Class4728.field22398));
    public static final BlockState field30893 = Blocks.AIR.getDefaultState();
-   public static final BlockState field30894 = Blocks.field37012.getDefaultState();
+   public static final BlockState field30894 = Blocks.CAVE_AIR.getDefaultState();
    public static final FluidState field30895 = Fluids.WATER.method25049();
    public static final FluidState field30896 = Fluids.LAVA.method25049();
    public Set<Block> field30897 = ImmutableSet.of(

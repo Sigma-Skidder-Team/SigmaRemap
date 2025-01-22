@@ -163,7 +163,7 @@ public class TileEntityType<T extends TileEntity> {
          Blocks.YELLOW_BED
       )
    );
-   public static final TileEntityType<Class959> field21445 = method13794("conduit", Class9785.<Class959>method38569(Class959::new, Blocks.field37007));
+   public static final TileEntityType<Class959> field21445 = method13794("conduit", Class9785.<Class959>method38569(Class959::new, Blocks.CONDUIT));
    public static final TileEntityType<Class973> field21446 = method13794("barrel", Class9785.<Class973>method38569(Class973::new, Blocks.BARREL));
    public static final TileEntityType<Class985> field21447 = method13794("smoker", Class9785.<Class985>method38569(Class985::new, Blocks.SMOKER));
    public static final TileEntityType<Class987> field21448 = method13794("blast_furnace", Class9785.<Class987>method38569(Class987::new, Blocks.BLAST_FURNACE));

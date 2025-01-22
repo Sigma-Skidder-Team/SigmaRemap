@@ -14,7 +14,7 @@ import net.minecraft.world.gen.ChunkGenerator;
 import java.util.Random;
 
 public class Class2943 extends Class2898<Class4705> {
-   private static final BlockState field18006 = Blocks.field37012.getDefaultState();
+   private static final BlockState field18006 = Blocks.CAVE_AIR.getDefaultState();
 
    public Class2943(Codec<Class4705> var1) {
       super(var1);

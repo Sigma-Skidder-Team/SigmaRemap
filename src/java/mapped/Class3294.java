@@ -30,7 +30,7 @@ public class Class3294 extends BlockItem {
       BlockState var6 = var5.getBlockState(var4);
       Block var7 = this.method11845();
       if (!var6.isIn(var7)) {
-         return Class3428.method12085(var5, var4) != 7 ? var1 : null;
+         return ScaffoldingBlock.method12085(var5, var4) != 7 ? var1 : null;
       } else {
          Direction var8;
          if (!var1.method18351()) {

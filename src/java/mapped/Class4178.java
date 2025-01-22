@@ -28,7 +28,7 @@ import java.util.Random;
 import java.util.Set;
 
 public abstract class Class4178 {
-   public static final BlockState field20443 = Blocks.field37012.getDefaultState();
+   public static final BlockState field20443 = Blocks.CAVE_AIR.getDefaultState();
    public MutableBoundingBox field20444;
    private Direction field20445;
    private Mirror field20446;

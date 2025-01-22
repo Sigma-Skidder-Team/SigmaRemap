@@ -23,7 +23,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3428 extends Block implements IWaterLoggable {
+public class ScaffoldingBlock extends Block implements IWaterLoggable {
    private static String[] field19179;
    private static final VoxelShape field19180;
    private static final VoxelShape field19181;
@@ -33,7 +33,7 @@ public class Class3428 extends Block implements IWaterLoggable {
    public static final BooleanProperty field19185 = BlockStateProperties.WATERLOGGED;
    public static final BooleanProperty field19186 = BlockStateProperties.BOTTOM;
 
-   public Class3428(Properties var1) {
+   public ScaffoldingBlock(Properties var1) {
       super(var1);
       this.setDefaultState(
          this.stateContainer
@@ -151,7 +151,7 @@ public class Class3428 extends Block implements IWaterLoggable {
       BlockPos.Mutable var4 = var1.method8354().method8379(Direction.DOWN);
       BlockState var5 = var0.getBlockState(var4);
       int var6 = 7;
-      if (!var5.isIn(Blocks.field37053)) {
+      if (!var5.isIn(Blocks.SCAFFOLDING)) {
          if (var5.method23454(var0, var4, Direction.UP)) {
             return 0;
          }
@@ -161,7 +161,7 @@ public class Class3428 extends Block implements IWaterLoggable {
 
       for (Direction var8 : Direction.Plane.HORIZONTAL) {
          BlockState var9 = var0.getBlockState(var4.method8377(var1, var8));
-         if (var9.isIn(Blocks.field37053)) {
+         if (var9.isIn(Blocks.SCAFFOLDING)) {
             var6 = Math.min(var6, var9.<Integer>get(field19184) + 1);
             if (var6 != 1) {
                continue;
@@ -184,6 +184,6 @@ public class Class3428 extends Block implements IWaterLoggable {
       VoxelShape var8 = Block.makeCuboidShape(14.0, 0.0, 0.0, 16.0, 2.0, 16.0);
       VoxelShape var9 = Block.makeCuboidShape(0.0, 0.0, 14.0, 16.0, 2.0, 16.0);
       VoxelShape var10 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 2.0, 2.0);
-      field19181 = VoxelShapes.method27432(Class3428.field19182, field19180, var8, var7, var10, var9);
+      field19181 = VoxelShapes.method27432(ScaffoldingBlock.field19182, field19180, var8, var7, var10, var9);
    }
 }

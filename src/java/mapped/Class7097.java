@@ -54,7 +54,7 @@ public class Class7097 extends Class7092 {
    private BlockState method22076(Random var1) {
       if (!(var1.nextFloat() >= 0.5F)) {
          BlockState[] var4 = new BlockState[]{Blocks.CRACKED_STONE_BRICKS.getDefaultState(), method22081(var1, Blocks.STONE_BRICK_STAIRS)};
-         BlockState[] var5 = new BlockState[]{Blocks.MOSSY_STONE_BRICKS.getDefaultState(), method22081(var1, Blocks.field37016)};
+         BlockState[] var5 = new BlockState[]{Blocks.MOSSY_STONE_BRICKS.getDefaultState(), method22081(var1, Blocks.MOSSY_STONE_BRICK_STAIRS)};
          return this.method22082(var1, var4, var5);
       } else {
          return null;
@@ -68,8 +68,8 @@ public class Class7097 extends Class7092 {
       if (!(var1.nextFloat() >= 0.5F)) {
          BlockState[] var7 = new BlockState[]{Blocks.STONE_SLAB.getDefaultState(), Blocks.STONE_BRICK_SLAB.getDefaultState()};
          BlockState[] var8 = new BlockState[]{
-            Blocks.field37016.getDefaultState().with(StairsBlock.FACING, var5).with(StairsBlock.HALF, var6),
-            Blocks.field37030.getDefaultState()
+            Blocks.MOSSY_STONE_BRICK_STAIRS.getDefaultState().with(StairsBlock.FACING, var5).with(StairsBlock.HALF, var6),
+            Blocks.MOSSY_STONE_BRICK_SLAB.getDefaultState()
          };
          return this.method22082(var1, var7, var8);
       } else {
@@ -79,12 +79,12 @@ public class Class7097 extends Class7092 {
 
    @Nullable
    private BlockState method22078(Random var1) {
-      return !(var1.nextFloat() < this.field30534) ? null : Blocks.field37030.getDefaultState();
+      return !(var1.nextFloat() < this.field30534) ? null : Blocks.MOSSY_STONE_BRICK_SLAB.getDefaultState();
    }
 
    @Nullable
    private BlockState method22079(Random var1) {
-      return !(var1.nextFloat() < this.field30534) ? null : Blocks.field37044.getDefaultState();
+      return !(var1.nextFloat() < this.field30534) ? null : Blocks.MOSSY_STONE_BRICK_WALL.getDefaultState();
    }
 
    @Nullable

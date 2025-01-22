@@ -53,7 +53,7 @@ public class Class7197 extends Class7196 {
             Blocks.LAVA,
             Blocks.OBSIDIAN,
             Blocks.AIR,
-            Blocks.field37012
+            Blocks.CAVE_AIR
          }
       );
    }

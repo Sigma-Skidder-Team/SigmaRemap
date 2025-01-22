@@ -35,7 +35,7 @@ public final class Class7700 {
    public static final BlockState field33019 = Blocks.BROWN_MUSHROOM.getDefaultState();
    public static final BlockState field33020 = Blocks.RED_MUSHROOM.getDefaultState();
    public static final BlockState field33021 = Blocks.PACKED_ICE.getDefaultState();
-   public static final BlockState field33022 = Blocks.field37006.getDefaultState();
+   public static final BlockState field33022 = Blocks.BLUE_ICE.getDefaultState();
    public static final BlockState field33023 = Blocks.LILY_OF_THE_VALLEY.getDefaultState();
    public static final BlockState field33024 = Blocks.BLUE_ORCHID.getDefaultState();
    public static final BlockState field33025 = Blocks.POPPY.getDefaultState();

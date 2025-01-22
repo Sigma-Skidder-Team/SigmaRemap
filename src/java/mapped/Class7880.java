@@ -73,7 +73,7 @@ public class Class7880 {
                || var5 instanceof Class3460
                || var5 instanceof Class3238
                || var5 instanceof Class3408
-               || var5 instanceof Class3415) {
+               || var5 instanceof WallBlock) {
                return true;
             } else if (var5 instanceof Class3383) {
                return true;

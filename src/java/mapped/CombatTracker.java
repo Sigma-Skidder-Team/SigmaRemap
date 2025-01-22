@@ -47,7 +47,7 @@ public class CombatTracker {
                this.field34548 = "weeping_vines";
             } else if (var4.isIn(Blocks.TWISTING_VINES) || var4.isIn(Blocks.TWISTING_VINES_PLANT)) {
                this.field34548 = "twisting_vines";
-            } else if (!var4.isIn(Blocks.field37053)) {
+            } else if (!var4.isIn(Blocks.SCAFFOLDING)) {
                this.field34548 = "other_climbable";
             } else {
                this.field34548 = "scaffolding";

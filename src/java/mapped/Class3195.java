@@ -137,7 +137,7 @@ public class Class3195 extends BushBlock implements IGrowable, IWaterLoggable {
                   if (var17 != var3 && var2.nextInt(6) == 0 && var1.getBlockState(var17).isIn(Blocks.WATER)) {
                      BlockState var18 = var1.getBlockState(var17.down());
                      if (var18.isIn(BlockTags.field32783)) {
-                        var1.setBlockState(var17, Blocks.field37005.getDefaultState().with(field18472, Integer.valueOf(var2.nextInt(4) + 1)), 3);
+                        var1.setBlockState(var17, Blocks.SEA_PICKLE.getDefaultState().with(field18472, Integer.valueOf(var2.nextInt(4) + 1)), 3);
                      }
                   }
                }

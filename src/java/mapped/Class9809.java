@@ -88,7 +88,7 @@ public class Class9809 {
             Object var17;
             if (!(var14 instanceof Class3359)) {
                if (!(var14 instanceof BedBlock)) {
-                  if (var14 != Blocks.field37007) {
+                  if (var14 != Blocks.CONDUIT) {
                      if (var14 != Blocks.CHEST) {
                         if (var14 != Blocks.ENDER_CHEST) {
                            if (var14 != Blocks.TRAPPED_CHEST) {

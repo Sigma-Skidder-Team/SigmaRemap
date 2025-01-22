@@ -19,7 +19,7 @@ import java.util.Random;
 public class Class2929 extends Class2898<Class4712> {
    private static final Logger field18002 = LogManager.getLogger();
    private static final EntityType<?>[] field18003 = new EntityType[]{EntityType.SKELETON, EntityType.ZOMBIE, EntityType.ZOMBIE, EntityType.SPIDER};
-   private static final BlockState field18004 = Blocks.field37012.getDefaultState();
+   private static final BlockState field18004 = Blocks.CAVE_AIR.getDefaultState();
 
    public Class2929(Codec<Class4712> var1) {
       super(var1);

@@ -57,8 +57,8 @@ public class Class3424 extends Block implements IGrowable {
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var1.isValidPosition(var4, var5)) {
-         if (var2 == Direction.UP && var3.isIn(Blocks.field37009)) {
-            var4.setBlockState(var5, Blocks.field37009.getDefaultState(), 2);
+         if (var2 == Direction.UP && var3.isIn(Blocks.BAMBOO)) {
+            var4.setBlockState(var5, Blocks.BAMBOO.getDefaultState(), 2);
          }
 
          return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
@@ -93,6 +93,6 @@ public class Class3424 extends Block implements IGrowable {
    }
 
    public void method12079(World var1, BlockPos var2) {
-      var1.setBlockState(var2.up(), Blocks.field37009.getDefaultState().with(Class3418.field19126, BambooLeaves.field643), 3);
+      var1.setBlockState(var2.up(), Blocks.BAMBOO.getDefaultState().with(BambooBlock.field19126, BambooLeaves.field643), 3);
    }
 }

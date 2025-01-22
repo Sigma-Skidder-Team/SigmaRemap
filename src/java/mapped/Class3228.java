@@ -12,7 +12,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3228 extends Class3227 {
+public class Class3228 extends CoralFanBlock {
    private static String[] field18666;
    private final Block field18667;
 

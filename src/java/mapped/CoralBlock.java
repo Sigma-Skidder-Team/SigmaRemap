@@ -13,11 +13,11 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3414 extends Block {
+public class CoralBlock extends Block {
    private static String[] field19103;
    private final Block field19104;
 
-   public Class3414(Block var1, Properties var2) {
+   public CoralBlock(Block var1, Properties var2) {
       super(var2);
       this.field19104 = var1;
    }

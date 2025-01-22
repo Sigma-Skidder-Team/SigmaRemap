@@ -12,15 +12,15 @@ import net.minecraft.world.gen.ChunkGenerator;
 import java.util.Random;
 
 public class Class2951 extends Class2898<Class4728> {
-   private static final BlockState field18027 = Blocks.field37009
+   private static final BlockState field18027 = Blocks.BAMBOO
       .getDefaultState()
-      .with(Class3418.field19125, Integer.valueOf(1))
-      .with(Class3418.field19126, BambooLeaves.field642)
-      .with(Class3418.field19127, Integer.valueOf(0));
-   private static final BlockState field18028 = field18027.with(Class3418.field19126, BambooLeaves.field644)
-      .with(Class3418.field19127, Integer.valueOf(1));
-   private static final BlockState field18029 = field18027.with(Class3418.field19126, BambooLeaves.field644);
-   private static final BlockState field18030 = field18027.with(Class3418.field19126, BambooLeaves.field643);
+      .with(BambooBlock.field19125, Integer.valueOf(1))
+      .with(BambooBlock.field19126, BambooLeaves.field642)
+      .with(BambooBlock.field19127, Integer.valueOf(0));
+   private static final BlockState field18028 = field18027.with(BambooBlock.field19126, BambooLeaves.field644)
+      .with(BambooBlock.field19127, Integer.valueOf(1));
+   private static final BlockState field18029 = field18027.with(BambooBlock.field19126, BambooLeaves.field644);
+   private static final BlockState field18030 = field18027.with(BambooBlock.field19126, BambooLeaves.field643);
 
    public Class2951(Codec<Class4728> var1) {
       super(var1);
@@ -31,7 +31,7 @@ public class Class2951 extends Class2898<Class4728> {
       BlockPos.Mutable var9 = var4.method8354();
       BlockPos.Mutable var10 = var4.method8354();
       if (var1.method7007(var9)) {
-         if (Blocks.field37009.getDefaultState().isValidPosition(var1, var9)) {
+         if (Blocks.BAMBOO.getDefaultState().isValidPosition(var1, var9)) {
             int var11 = var3.nextInt(12) + 5;
             if (var3.nextFloat() < var5.field22399) {
                int var12 = var3.nextInt(4) + 1;

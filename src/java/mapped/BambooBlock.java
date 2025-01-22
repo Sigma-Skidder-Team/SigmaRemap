@@ -29,7 +29,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3418 extends Block implements IGrowable {
+public class BambooBlock extends Block implements IGrowable {
    private static String[] field19121;
    public static final VoxelShape field19122 = Block.makeCuboidShape(5.0, 0.0, 5.0, 11.0, 16.0, 11.0);
    public static final VoxelShape field19123 = Block.makeCuboidShape(3.0, 0.0, 3.0, 13.0, 16.0, 13.0);
@@ -38,7 +38,7 @@ public class Class3418 extends Block implements IGrowable {
    public static final EnumProperty<BambooLeaves> field19126 = BlockStateProperties.LEAVES;
    public static final IntegerProperty field19127 = BlockStateProperties.STAGE;
 
-   public Class3418(Properties var1) {
+   public BambooBlock(Properties var1) {
       super(var1);
       this.setDefaultState(
          this.stateContainer
@@ -90,14 +90,14 @@ public class Class3418 extends Block implements IGrowable {
          BlockState var5 = var1.getWorld().getBlockState(var1.getPos().down());
          if (!var5.isIn(BlockTags.field32787)) {
             return null;
-         } else if (!var5.isIn(Blocks.field37008)) {
-            if (var5.isIn(Blocks.field37009)) {
+         } else if (!var5.isIn(Blocks.BAMBOO_SAPLING)) {
+            if (var5.isIn(Blocks.BAMBOO)) {
                int var7 = var5.<Integer>get(field19125) <= 0 ? 0 : 1;
                return this.getDefaultState().with(field19125, Integer.valueOf(var7));
             } else {
                BlockState var6 = var1.getWorld().getBlockState(var1.getPos().up());
-               return !var6.isIn(Blocks.field37009) && !var6.isIn(Blocks.field37008)
-                  ? Blocks.field37008.getDefaultState()
+               return !var6.isIn(Blocks.BAMBOO) && !var6.isIn(Blocks.BAMBOO_SAPLING)
+                  ? Blocks.BAMBOO_SAPLING.getDefaultState()
                   : this.getDefaultState().with(field19125, var6.<Integer>get(field19125));
             }
          } else {
@@ -144,7 +144,7 @@ public class Class3418 extends Block implements IGrowable {
          var4.getBlockTickScheduler().scheduleTick(var5, this, 1);
       }
 
-      if (var2 == Direction.UP && var3.isIn(Blocks.field37009) && var3.<Integer>get(field19125) > var1.<Integer>get(field19125)) {
+      if (var2 == Direction.UP && var3.isIn(Blocks.BAMBOO) && var3.<Integer>get(field19125) > var1.<Integer>get(field19125)) {
          var4.setBlockState(var5, var1.method23459(field19125), 2);
       }
 
@@ -194,18 +194,18 @@ public class Class3418 extends Block implements IGrowable {
       BlockState var10 = var2.getBlockState(var9);
       BambooLeaves var11 = BambooLeaves.field642;
       if (var5 >= 1) {
-         if (!var8.isIn(Blocks.field37009) || var8.<BambooLeaves>get(field19126) == BambooLeaves.field642) {
+         if (!var8.isIn(Blocks.BAMBOO) || var8.<BambooLeaves>get(field19126) == BambooLeaves.field642) {
             var11 = BambooLeaves.field643;
-         } else if (var8.isIn(Blocks.field37009) && var8.<BambooLeaves>get(field19126) != BambooLeaves.field642) {
+         } else if (var8.isIn(Blocks.BAMBOO) && var8.<BambooLeaves>get(field19126) != BambooLeaves.field642) {
             var11 = BambooLeaves.field644;
-            if (var10.isIn(Blocks.field37009)) {
+            if (var10.isIn(Blocks.BAMBOO)) {
                var2.setBlockState(var3.down(), var8.with(field19126, BambooLeaves.field643), 3);
                var2.setBlockState(var9, var10.with(field19126, BambooLeaves.field642), 3);
             }
          }
       }
 
-      int var12 = var1.<Integer>get(field19125) != 1 && !var10.isIn(Blocks.field37009) ? 0 : 1;
+      int var12 = var1.<Integer>get(field19125) != 1 && !var10.isIn(Blocks.BAMBOO) ? 0 : 1;
       int var13 = (var5 < 11 || !(var4.nextFloat() < 0.25F)) && var5 != 15 ? 0 : 1;
       var2.setBlockState(
          var3.up(),
@@ -217,7 +217,7 @@ public class Class3418 extends Block implements IGrowable {
    public int method12066(IBlockReader var1, BlockPos var2) {
       int var5 = 0;
 
-      while (var5 < 16 && var1.getBlockState(var2.up(var5 + 1)).isIn(Blocks.field37009)) {
+      while (var5 < 16 && var1.getBlockState(var2.up(var5 + 1)).isIn(Blocks.BAMBOO)) {
          var5++;
       }
 
@@ -227,7 +227,7 @@ public class Class3418 extends Block implements IGrowable {
    public int method12067(IBlockReader var1, BlockPos var2) {
       int var5 = 0;
 
-      while (var5 < 16 && var1.getBlockState(var2.method8340(var5 + 1)).isIn(Blocks.field37009)) {
+      while (var5 < 16 && var1.getBlockState(var2.method8340(var5 + 1)).isIn(Blocks.BAMBOO)) {
          var5++;
       }
 

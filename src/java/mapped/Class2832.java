@@ -463,7 +463,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Blocks.field37009).method18296(Class140.method420(Class6871.method20919(1))))
+                  .method18291(Class4695.method14724(Blocks.BAMBOO).method18296(Class140.method420(Class6871.method20919(1))))
             )
       );
       this.method11033(

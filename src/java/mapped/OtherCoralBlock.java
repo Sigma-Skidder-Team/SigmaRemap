@@ -15,12 +15,12 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3226 extends Class3224 {
+public class OtherCoralBlock extends Class3224 {
    private static String[] field18662;
    private final Block field18665;
    public static final VoxelShape field18664 = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 15.0, 14.0);
 
-   public Class3226(Block var1, Properties var2) {
+   public OtherCoralBlock(Block var1, Properties var2) {
       super(var2);
       this.field18665 = var1;
    }

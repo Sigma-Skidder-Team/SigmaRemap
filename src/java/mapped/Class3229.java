@@ -24,7 +24,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.Map;
 
-public class Class3229 extends Class3227 {
+public class Class3229 extends CoralFanBlock {
    private static String[] field18668;
    public static final DirectionProperty field18669 = HorizontalBlock.HORIZONTAL_FACING;
    private static final Map<Direction, VoxelShape> field18670 = Maps.newEnumMap(

@@ -13,7 +13,7 @@ public class Class8348 extends Class8347 {
    @Override
    public void method29258(Random var1, int var2, int var3, int var4, boolean var5) {
       if (!var5) {
-         this.field35874 = Blocks.field37012.getDefaultState();
+         this.field35874 = Blocks.CAVE_AIR.getDefaultState();
       } else {
          float var8 = var1.nextFloat();
          if (!(var8 < 0.2F)) {

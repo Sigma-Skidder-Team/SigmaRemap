@@ -137,7 +137,7 @@ public class FlowingFluidBlock extends Block implements Class3405 {
                   return false;
                }
 
-               if (var6 && var1.getBlockState(var11).isIn(Blocks.field37006)) {
+               if (var6 && var1.getBlockState(var11).isIn(Blocks.BLUE_ICE)) {
                   var1.setBlockState(var2, Blocks.BASALT.getDefaultState());
                   this.method12044(var1, var2);
                   return false;
