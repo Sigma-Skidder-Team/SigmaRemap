@@ -917,6 +917,11 @@ public class ClientWorld extends World {
       return this.field_239130_d_;
    }
 
+   @Override
+   public BlockPos method7006(Heightmap.Type var1, BlockPos var2) {
+      return null;
+   }
+
    public static class ClientWorldInfo implements ISpawnWorldInfo {
       private final boolean field29049;
       private final GameRules field29050;
