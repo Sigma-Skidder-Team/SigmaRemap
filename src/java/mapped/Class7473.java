@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 
 public class Class7473 {
    private static String[] field32110;
-   private static final Class8609 field32111 = (var0, var1, var2) -> var0.isIn(Blocks.OBSIDIAN);
+   private static final AbstractBlock$IPositionPredicate field32111 = (var0, var1, var2) -> var0.isIn(Blocks.OBSIDIAN);
    private final IWorld field32112;
    private final Direction.Axis field32113;
    private final Direction field32114;

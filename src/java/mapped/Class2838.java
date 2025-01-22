@@ -191,7 +191,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                               .method18308("LootTable", "BlockEntityTag.LootTable")
                               .method18308("LootTableSeed", "BlockEntityTag.LootTableSeed")
                         )
-                        .method18296(Class146.method446().method18319(Class4696.method14727(Class3368.field18940)))
+                        .method18296(Class146.method446().method18319(Class4696.method14727(ShulkerBoxBlock.field18940)))
                   )
             )
          );
@@ -924,22 +924,22 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11097(Blocks.SPRUCE_DOOR, Class2838::method11091);
       this.method11097(Blocks.WARPED_DOOR, Class2838::method11091);
       this.method11097(Blocks.CRIMSON_DOOR, Class2838::method11091);
-      this.method11097(Blocks.BLACK_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.BLUE_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.BROWN_RED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.CYAN_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.GRAY_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.GREEN_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.LIGHT_BLUE_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.LIGHT_GRAY_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.LIME_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.MAGENTA_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.PURPLE_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.ORANGE_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.PINK_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.RED_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.WHITE_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
-      this.method11097(Blocks.YELLOW_BED, var0 -> method11072(var0, BedBlock.field18713, BedPart.HEAD));
+      this.method11097(Blocks.BLACK_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.BLUE_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.BROWN_RED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.CYAN_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.GRAY_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.GREEN_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.LIGHT_BLUE_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.LIGHT_GRAY_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.LIME_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.MAGENTA_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.PURPLE_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.ORANGE_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.PINK_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.RED_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.WHITE_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
+      this.method11097(Blocks.YELLOW_BED, var0 -> method11072(var0, BedBlock.PART, BedPart.HEAD));
       this.method11097(Blocks.LILAC, var0 -> method11072(var0, Class3456.field19276, DoubleBlockHalf.field210));
       this.method11097(Blocks.SUNFLOWER, var0 -> method11072(var0, Class3456.field19276, DoubleBlockHalf.field210));
       this.method11097(Blocks.PEONY, var0 -> method11072(var0, Class3456.field19276, DoubleBlockHalf.field210));
@@ -1447,7 +1447,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       HashSet var8 = Sets.newHashSet();
 
       for (Block var10 : Registry.BLOCK) {
-         ResourceLocation var11 = var10.method11999();
+         ResourceLocation var11 = var10.getLootTable();
          if (var11 != Class8793.field39533 && var8.add(var11)) {
             Class5888 var12 = this.field17636.remove(var11);
             if (var12 == null) {
@@ -1498,6 +1498,6 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
    }
 
    private void method11098(Block var1, Class5888 var2) {
-      this.field17636.put(var1.method11999(), var2);
+      this.field17636.put(var1.getLootTable(), var2);
    }
 }

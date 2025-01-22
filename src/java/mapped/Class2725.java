@@ -126,7 +126,7 @@ public class Class2725 extends Class2595 {
       PathNodeType var4 = Class6762.method20633(this.field17222, var1.method8354());
       if (var4 == PathNodeType.WALKABLE) {
          BlockState var5 = this.field17222.getBlockState(var1.down());
-         if (!this.field17229 && var5.getBlock() instanceof Class3465) {
+         if (!this.field17229 && var5.getBlock() instanceof LeavesBlock) {
             return false;
          } else {
             BlockPos var6 = var1.method8338(this.field17220.getPosition());

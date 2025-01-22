@@ -22,8 +22,8 @@ public class Class3240 extends BannerBlock implements Class3235 {
    }
 
    @Override
-   public Class112 method11637() {
-      return Class112.field386;
+   public DyeColor method11637() {
+      return DyeColor.field386;
    }
 
    @Override

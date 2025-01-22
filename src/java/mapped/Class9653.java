@@ -423,7 +423,7 @@ public class Class9653 {
          .method36455(Class9525.field44330, var6.method20173())
          .method36454(Class9525.field44338, var2);
       List var11 = var8.method23434(var10);
-      return var3.method32583(var0, var11, var2x -> method37670(var6, var2x, var8.getBlock().method11999()));
+      return var3.method32583(var0, var11, var2x -> method37670(var6, var2x, var8.getBlock().getLootTable()));
    }
 
    private static int method37673(CommandContext<CommandSource> var0, Entity var1, Class8914 var2) throws CommandSyntaxException {

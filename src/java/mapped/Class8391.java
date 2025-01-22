@@ -168,7 +168,7 @@ public class Class8391 {
 
    public boolean method29427() {
       if (this.field35985 == -1) {
-         if (Config.method26827() && this.field35980.getBlock() instanceof Class3465) {
+         if (Config.method26827() && this.field35980.getBlock() instanceof LeavesBlock) {
             this.field35985 = 1;
          } else {
             this.field35985 = 0;

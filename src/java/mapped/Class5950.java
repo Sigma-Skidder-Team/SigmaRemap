@@ -54,7 +54,7 @@ public class Class5950 extends Class5942<Class967> {
          this.method18480(
             var3,
             var4,
-            var11.<BedPart>get(BedBlock.field18713) == BedPart.HEAD,
+            var11.<BedPart>get(BedBlock.PART) == BedPart.HEAD,
             var11.<Direction>get(BedBlock.HORIZONTAL_FACING),
             var9,
             var13,

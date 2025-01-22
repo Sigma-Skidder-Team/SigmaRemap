@@ -553,14 +553,14 @@ public class Raid {
       ItemStack var2 = new ItemStack(Items.field38092);
       CompoundNBT var3 = var2.method32144("BlockEntityTag");
       ListNBT var4 = new Class7291()
-         .method23058(Class2154.field14107, Class112.field395)
-         .method23058(Class2154.field14087, Class112.field394)
-         .method23058(Class2154.field14091, Class112.field393)
-         .method23058(Class2154.field14112, Class112.field394)
-         .method23058(Class2154.field14092, Class112.field401)
-         .method23058(Class2154.field14109, Class112.field394)
-         .method23058(Class2154.field14106, Class112.field394)
-         .method23058(Class2154.field14112, Class112.field401)
+         .method23058(Class2154.field14107, DyeColor.field395)
+         .method23058(Class2154.field14087, DyeColor.field394)
+         .method23058(Class2154.field14091, DyeColor.field393)
+         .method23058(Class2154.field14112, DyeColor.field394)
+         .method23058(Class2154.field14092, DyeColor.field401)
+         .method23058(Class2154.field14109, DyeColor.field394)
+         .method23058(Class2154.field14106, DyeColor.field394)
+         .method23058(Class2154.field14112, DyeColor.field401)
          .method23059();
       var3.put("Patterns", var4);
       var2.method32156(Class2304.field15735);

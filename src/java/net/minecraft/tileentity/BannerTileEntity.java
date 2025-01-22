@@ -18,16 +18,16 @@ import java.util.function.Supplier;
 
 public class BannerTileEntity extends TileEntity implements INameable {
    private ITextComponent field5376;
-   private Class112 field5377 = Class112.field386;
+   private DyeColor field5377 = DyeColor.field386;
    private ListNBT field5378;
    private boolean field5379;
-   private List<Pair<Class2154, Class112>> field5380;
+   private List<Pair<Class2154, DyeColor>> field5380;
 
    public BannerTileEntity() {
       super(TileEntityType.field21439);
    }
 
-   public BannerTileEntity(Class112 var1) {
+   public BannerTileEntity(DyeColor var1) {
       this();
       this.field5377 = var1;
    }
@@ -43,7 +43,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
       return var3;
    }
 
-   public void method3887(ItemStack var1, Class112 var2) {
+   public void method3887(ItemStack var1, DyeColor var2) {
       this.field5378 = method3886(var1);
       this.field5377 = var2;
       this.field5380 = null;
@@ -114,7 +114,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
       return var3 != null && var3.contains("Patterns") ? var3.getList("Patterns", 10).size() : 0;
    }
 
-   public List<Pair<Class2154, Class112>> method3890() {
+   public List<Pair<Class2154, DyeColor>> method3890() {
       if (this.field5380 == null && this.field5379) {
          this.field5380 = getPatternColorData(this.method3894(this::getBlockState), this.field5378);
       }
@@ -122,7 +122,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
       return this.field5380;
    }
 
-   public static List<Pair<Class2154, Class112>> getPatternColorData(Class112 var0, ListNBT var1) {
+   public static List<Pair<Class2154, DyeColor>> getPatternColorData(DyeColor var0, ListNBT var1) {
       ArrayList var4 = Lists.newArrayList();
       var4.add(Pair.of(Class2154.field14082, var0));
       if (var1 != null) {
@@ -131,7 +131,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
             Class2154 var7 = Class2154.method8872(var6.getString("Pattern"));
             if (var7 != null) {
                int var8 = var6.getInt("Color");
-               var4.add(Pair.of(var7, Class112.method315(var8)));
+               var4.add(Pair.of(var7, DyeColor.method315(var8)));
             }
          }
       }
@@ -165,7 +165,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
       return var4;
    }
 
-   public Class112 method3894(Supplier<BlockState> var1) {
+   public DyeColor method3894(Supplier<BlockState> var1) {
       if (this.field5377 == null) {
          this.field5377 = ((Class3359)((BlockState)var1.get()).getBlock()).method11936();
       }

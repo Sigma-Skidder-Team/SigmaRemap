@@ -20,7 +20,7 @@ public class Class246 extends Class219<ShulkerEntity, Class2887<ShulkerEntity>> 
       var1.rotate(var13);
       var1.scale(-1.0F, -1.0F, 1.0F);
       var1.translate(0.0, -1.0, 0.0);
-      Class112 var14 = var4.method4857();
+      DyeColor var14 = var4.method4857();
       ResourceLocation var15 = var14 != null ? Class5683.field25049[var14.method309()] : Class5683.field25048;
       IVertexBuilder var16 = var2.method25597(RenderType.getEntitySolid(var15));
       this.method825().method11204().render(var1, var16, var3, LivingRenderer.method17883(var4, 0.0F));

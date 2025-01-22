@@ -144,7 +144,7 @@ public class RavagerEntity extends Class1026 {
             )) {
                BlockState var11 = this.world.getBlockState(var10);
                Block var12 = var11.getBlock();
-               if (var12 instanceof Class3465) {
+               if (var12 instanceof LeavesBlock) {
                   var7 = this.world.destroyBlock(var10, true, this) || var7;
                }
             }

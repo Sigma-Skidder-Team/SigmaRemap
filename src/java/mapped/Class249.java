@@ -19,15 +19,15 @@ public class Class249 extends Class219<SheepEntity, Class2869<SheepEntity>> {
          float var16;
          if (var4.method3381() && "jeb_".equals(var4.getName().getUnformattedComponentText())) {
             int var17 = var4.ticksExisted / 25 + var4.getEntityId();
-            int var18 = Class112.values().length;
+            int var18 = DyeColor.values().length;
             int var19 = var17 % var18;
             int var20 = (var17 + 1) % var18;
             float var21 = ((float)(var4.ticksExisted % 25) + var7) / 25.0F;
-            float[] var22 = SheepEntity.method4511(Class112.method315(var19));
-            float[] var23 = SheepEntity.method4511(Class112.method315(var20));
+            float[] var22 = SheepEntity.method4511(DyeColor.method315(var19));
+            float[] var23 = SheepEntity.method4511(DyeColor.method315(var20));
             if (Config.method26911()) {
-               var22 = Class9680.method37884(Class112.method315(var19), var22);
-               var23 = Class9680.method37884(Class112.method315(var20), var23);
+               var22 = Class9680.method37884(DyeColor.method315(var19), var22);
+               var23 = Class9680.method37884(DyeColor.method315(var20), var23);
             }
 
             var14 = var22[0] * (1.0F - var21) + var23[0] * var21;

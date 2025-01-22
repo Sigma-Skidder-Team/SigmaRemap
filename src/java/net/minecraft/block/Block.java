@@ -130,7 +130,7 @@ public class Block extends AbstractBlock implements IItemProvider {
    }
 
    public static boolean method11545(Block var0) {
-      return var0 instanceof Class3465
+      return var0 instanceof LeavesBlock
          || var0 == Blocks.BARRIER
          || var0 == Blocks.CARVED_PUMPKIN
          || var0 == Blocks.JACK_O_LANTERN

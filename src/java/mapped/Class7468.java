@@ -14,10 +14,10 @@ import net.minecraft.world.IBlockReader;
 
 public class Class7468 {
    private final BlockPos field32104;
-   private final Class112 field32105;
+   private final DyeColor field32105;
    private final ITextComponent field32106;
 
-   public Class7468(BlockPos var1, Class112 var2, ITextComponent var3) {
+   public Class7468(BlockPos var1, DyeColor var2, ITextComponent var3) {
       this.field32104 = var1;
       this.field32105 = var2;
       this.field32106 = var3;
@@ -25,7 +25,7 @@ public class Class7468 {
 
    public static Class7468 method24183(CompoundNBT var0) {
       BlockPos var3 = NBTUtil.readBlockPos(var0.getCompound("Pos"));
-      Class112 var4 = Class112.method316(var0.getString("Color"), Class112.field386);
+      DyeColor var4 = DyeColor.method316(var0.getString("Color"), DyeColor.field386);
       IFormattableTextComponent var5 = !var0.contains("Name") ? null : ITextComponent.Serializer.getComponentFromJson(var0.getString("Name"));
       return new Class7468(var3, var4, var5);
    }
@@ -37,7 +37,7 @@ public class Class7468 {
          return null;
       } else {
          BannerTileEntity var5 = (BannerTileEntity)var4;
-         Class112 var6 = var5.method3894(() -> var0.getBlockState(var1));
+         DyeColor var6 = var5.method3894(() -> var0.getBlockState(var1));
          ITextComponent var7 = !var5.method3381() ? null : var5.method3380();
          return new Class7468(var1, var6, var7);
       }

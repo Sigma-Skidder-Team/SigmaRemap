@@ -14,7 +14,7 @@ public class Class2676 extends Class2672 {
    public Class2676(EvokerEntity var1) {
       super(var1);
       this.field17070 = var1;
-      this.field17069 = new EntityPredicate().method30203(16.0).method30204().method30209(var0 -> ((SheepEntity)var0).method4517() == Class112.field397);
+      this.field17069 = new EntityPredicate().method30203(16.0).method30204().method30209(var0 -> ((SheepEntity)var0).method4517() == DyeColor.field397);
    }
 
    @Override
@@ -61,7 +61,7 @@ public class Class2676 extends Class2672 {
    public void method10890() {
       SheepEntity var3 = EvokerEntity.method4603(this.field17070);
       if (var3 != null && var3.isAlive()) {
-         var3.method4518(Class112.field400);
+         var3.method4518(DyeColor.field400);
       }
    }
 

@@ -106,11 +106,11 @@ public class CatEntity extends TameableEntity {
       return this.dataManager.<Boolean>method35445(field6039);
    }
 
-   public Class112 method5256() {
-      return Class112.method315(this.dataManager.<Integer>method35445(field6040));
+   public DyeColor method5256() {
+      return DyeColor.method315(this.dataManager.<Integer>method35445(field6040));
    }
 
-   public void method5257(Class112 var1) {
+   public void method5257(DyeColor var1) {
       this.dataManager.set(field6040, var1.method309());
    }
 
@@ -120,7 +120,7 @@ public class CatEntity extends TameableEntity {
       this.dataManager.register(field6037, 1);
       this.dataManager.register(field6038, false);
       this.dataManager.register(field6039, false);
-      this.dataManager.register(field6040, Class112.field400.method309());
+      this.dataManager.register(field6040, DyeColor.field400.method309());
    }
 
    @Override
@@ -135,7 +135,7 @@ public class CatEntity extends TameableEntity {
       super.readAdditional(compound);
       this.method5251(compound.getInt("CatType"));
       if (compound.contains("CollarColor", 99)) {
-         this.method5257(Class112.method315(compound.getInt("CollarColor")));
+         this.method5257(DyeColor.method315(compound.getInt("CollarColor")));
       }
    }
 
@@ -362,7 +362,7 @@ public class CatEntity extends TameableEntity {
                return var9;
             }
 
-            Class112 var7 = ((Class3321)var6).method11876();
+            DyeColor var7 = ((Class3321)var6).method11876();
             if (var7 != this.method5256()) {
                this.method5257(var7);
                if (!var1.abilities.isCreativeMode) {

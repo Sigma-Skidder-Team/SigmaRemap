@@ -15,7 +15,7 @@ public class Class4861 extends Class4837 {
    }
 
    public boolean matches(Class926 var1, World var2) {
-      Class112 var5 = null;
+      DyeColor var5 = null;
       ItemStack var6 = null;
       ItemStack var7 = null;
 

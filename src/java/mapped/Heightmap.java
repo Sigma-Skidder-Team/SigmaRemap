@@ -137,7 +137,7 @@ public class Heightmap {
       MOTION_BLOCKING_NO_LEAVES(
          "MOTION_BLOCKING_NO_LEAVES",
          Class2029.field13171,
-         var0 -> (var0.getMaterial().blocksMovement() || !var0.getFluidState().isEmpty()) && !(var0.getBlock() instanceof Class3465)
+         var0 -> (var0.getMaterial().blocksMovement() || !var0.getFluidState().isEmpty()) && !(var0.getBlock() instanceof LeavesBlock)
       );
 
       public static final Codec<Type> field301 = IStringSerializable.<Type>createEnumCodec(Type::values, Type::method286);

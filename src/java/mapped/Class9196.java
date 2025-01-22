@@ -41,7 +41,7 @@ public class Class9196 {
       this.field42242.clear();
       this.field42243.clear();
       BlockState var3 = this.field42237.getBlockState(this.field42240);
-      if (Class3435.method12104(var3, this.field42237, this.field42240, this.field42241, false, this.field42244)) {
+      if (PistonBlock.method12104(var3, this.field42237, this.field42240, this.field42241, false, this.field42244)) {
          if (this.method34467(this.field42240, this.field42241)) {
             for (int var4 = 0; var4 < this.field42242.size(); var4++) {
                BlockPos var5 = this.field42242.get(var4);
@@ -79,7 +79,7 @@ public class Class9196 {
       Block var6 = var5.getBlock();
       if (var5.isAir()) {
          return true;
-      } else if (!Class3435.method12104(var5, this.field42237, var1, this.field42241, false, var2)) {
+      } else if (!PistonBlock.method12104(var5, this.field42237, var1, this.field42241, false, var2)) {
          return true;
       } else if (var1.equals(this.field42238)) {
          return true;
@@ -97,7 +97,7 @@ public class Class9196 {
                var6 = var5.getBlock();
                if (var5.isAir()
                   || !method34466(var9, var6)
-                  || !Class3435.method12104(var5, this.field42237, var8, this.field42241, false, this.field42241.getOpposite())
+                  || !PistonBlock.method12104(var5, this.field42237, var8, this.field42241, false, this.field42241.getOpposite())
                   || var8.equals(this.field42238)) {
                   break;
                }
@@ -137,7 +137,7 @@ public class Class9196 {
                   return true;
                }
 
-               if (!Class3435.method12104(var5, this.field42237, var10, this.field42241, true, this.field42241) || var10.equals(this.field42238)) {
+               if (!PistonBlock.method12104(var5, this.field42237, var10, this.field42241, true, this.field42241) || var10.equals(this.field42238)) {
                   return false;
                }
 

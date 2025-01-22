@@ -3,86 +3,86 @@ package mapped;
 // $VF: synthetic class
 public class Class7797 {
    private static String[] field33490;
-   public static final int[] field33491 = new int[Class112.values().length];
+   public static final int[] field33491 = new int[DyeColor.values().length];
 
    static {
       try {
-         field33491[Class112.field386.ordinal()] = 1;
+         field33491[DyeColor.field386.ordinal()] = 1;
       } catch (NoSuchFieldError var18) {
       }
 
       try {
-         field33491[Class112.field387.ordinal()] = 2;
+         field33491[DyeColor.field387.ordinal()] = 2;
       } catch (NoSuchFieldError var17) {
       }
 
       try {
-         field33491[Class112.field388.ordinal()] = 3;
+         field33491[DyeColor.field388.ordinal()] = 3;
       } catch (NoSuchFieldError var16) {
       }
 
       try {
-         field33491[Class112.field389.ordinal()] = 4;
+         field33491[DyeColor.field389.ordinal()] = 4;
       } catch (NoSuchFieldError var15) {
       }
 
       try {
-         field33491[Class112.field390.ordinal()] = 5;
+         field33491[DyeColor.field390.ordinal()] = 5;
       } catch (NoSuchFieldError var14) {
       }
 
       try {
-         field33491[Class112.field391.ordinal()] = 6;
+         field33491[DyeColor.field391.ordinal()] = 6;
       } catch (NoSuchFieldError var13) {
       }
 
       try {
-         field33491[Class112.field392.ordinal()] = 7;
+         field33491[DyeColor.field392.ordinal()] = 7;
       } catch (NoSuchFieldError var12) {
       }
 
       try {
-         field33491[Class112.field393.ordinal()] = 8;
+         field33491[DyeColor.field393.ordinal()] = 8;
       } catch (NoSuchFieldError var11) {
       }
 
       try {
-         field33491[Class112.field394.ordinal()] = 9;
+         field33491[DyeColor.field394.ordinal()] = 9;
       } catch (NoSuchFieldError var10) {
       }
 
       try {
-         field33491[Class112.field395.ordinal()] = 10;
+         field33491[DyeColor.field395.ordinal()] = 10;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field33491[Class112.field396.ordinal()] = 11;
+         field33491[DyeColor.field396.ordinal()] = 11;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field33491[Class112.field397.ordinal()] = 12;
+         field33491[DyeColor.field397.ordinal()] = 12;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field33491[Class112.field398.ordinal()] = 13;
+         field33491[DyeColor.field398.ordinal()] = 13;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field33491[Class112.field399.ordinal()] = 14;
+         field33491[DyeColor.field399.ordinal()] = 14;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field33491[Class112.field400.ordinal()] = 15;
+         field33491[DyeColor.field400.ordinal()] = 15;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field33491[Class112.field401.ordinal()] = 16;
+         field33491[DyeColor.field401.ordinal()] = 16;
       } catch (NoSuchFieldError var3) {
       }
    }

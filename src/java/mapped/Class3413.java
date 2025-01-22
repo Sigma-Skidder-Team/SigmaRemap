@@ -127,7 +127,7 @@ public class Class3413 extends Block {
                         return ActionResultType.method9002(var2.isRemote);
                      } else if (var10 > 0 && var11 instanceof BlockItem) {
                         Block var15 = ((BlockItem)var11).method11845();
-                        if (var15 instanceof Class3368 && !var2.isRemote()) {
+                        if (var15 instanceof ShulkerBoxBlock && !var2.isRemote()) {
                            ItemStack var13 = new ItemStack(Blocks.SHULKER_BOX, 1);
                            if (var9.method32141()) {
                               var13.setTag(var9.getTag().copy());

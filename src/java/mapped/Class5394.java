@@ -49,6 +49,6 @@ public class Class5394 implements Class5391 {
    }
 
    private static Class3321 method16980(Random var0) {
-      return Class3321.method11877(Class112.method315(var0.nextInt(16)));
+      return Class3321.method11877(DyeColor.method315(var0.nextInt(16)));
    }
 }

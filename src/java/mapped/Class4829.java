@@ -290,7 +290,7 @@ public class Class4829 {
                         var68 = Reflector.method35064(var66, Reflector.field42831, var1, var121, var4);
                      }
 
-                     if (var68 || var67 instanceof Class3231 || var67 instanceof Class3465 || var67 == Blocks.BEACON) {
+                     if (var68 || var67 instanceof Class3231 || var67 instanceof LeavesBlock || var67 == Blocks.BEACON) {
                         var122 = this.field22604;
                      }
 

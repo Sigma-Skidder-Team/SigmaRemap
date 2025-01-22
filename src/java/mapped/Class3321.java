@@ -12,10 +12,10 @@ import java.util.Map;
 
 public class Class3321 extends Item {
    private static String[] field18829;
-   private static final Map<Class112, Class3321> field18830 = Maps.newEnumMap(Class112.class);
-   private final Class112 field18831;
+   private static final Map<DyeColor, Class3321> field18830 = Maps.newEnumMap(DyeColor.class);
+   private final DyeColor field18831;
 
-   public Class3321(Class112 var1, Properties var2) {
+   public Class3321(DyeColor var1, Properties var2) {
       super(var2);
       this.field18831 = var1;
       field18830.put(var1, this);
@@ -38,11 +38,11 @@ public class Class3321 extends Item {
       return ActionResultType.field14820;
    }
 
-   public Class112 method11876() {
+   public DyeColor method11876() {
       return this.field18831;
    }
 
-   public static Class3321 method11877(Class112 var0) {
+   public static Class3321 method11877(DyeColor var0) {
       return field18830.get(var0);
    }
 }

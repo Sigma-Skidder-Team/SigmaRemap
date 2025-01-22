@@ -80,7 +80,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    public void registerData() {
       super.registerData();
       this.dataManager.register(field5656, false);
-      this.dataManager.register(field5657, Class112.field400.method309());
+      this.dataManager.register(field5657, DyeColor.field400.method309());
       this.dataManager.register(field5658, 0);
    }
 
@@ -100,7 +100,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    public void readAdditional(CompoundNBT compound) {
       super.readAdditional(compound);
       if (compound.contains("CollarColor", 99)) {
-         this.method4383(Class112.method315(compound.getInt("CollarColor")));
+         this.method4383(DyeColor.method315(compound.getInt("CollarColor")));
       }
 
       this.method4365((ServerWorld)this.world, compound);
@@ -340,7 +340,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
                return var9;
             }
 
-            Class112 var8 = ((Class3321)var6).method11876();
+            DyeColor var8 = ((Class3321)var6).method11876();
             if (var8 != this.method4382()) {
                this.method4383(var8);
                if (!var1.abilities.isCreativeMode) {
@@ -418,11 +418,11 @@ public class WolfEntity extends TameableEntity implements IAngerable {
       this.field5667 = var1;
    }
 
-   public Class112 method4382() {
-      return Class112.method315(this.dataManager.<Integer>method35445(field5657));
+   public DyeColor method4382() {
+      return DyeColor.method315(this.dataManager.<Integer>method35445(field5657));
    }
 
-   public void method4383(Class112 var1) {
+   public void method4383(DyeColor var1) {
       this.dataManager.set(field5657, var1.method309());
    }
 

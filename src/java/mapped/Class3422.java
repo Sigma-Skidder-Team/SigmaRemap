@@ -14,14 +14,14 @@ import net.minecraft.world.IWorldReader;
 public class Class3422 extends Block {
    private static String[] field19150;
    public static final VoxelShape field19151 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
-   private final Class112 field19152;
+   private final DyeColor field19152;
 
-   public Class3422(Class112 var1, Properties var2) {
+   public Class3422(DyeColor var1, Properties var2) {
       super(var2);
       this.field19152 = var1;
    }
 
-   public Class112 method12077() {
+   public DyeColor method12077() {
       return this.field19152;
    }
 

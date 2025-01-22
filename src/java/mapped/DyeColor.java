@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 
-public enum Class112 implements IStringSerializable {
+public enum DyeColor implements IStringSerializable {
    field386(0, "white", 16383998, MaterialColor.SNOW, 15790320, 16777215),
    field387(1, "orange", 16351261, MaterialColor.field30962, 15435844, 16738335),
    field388(2, "magenta", 13061821, MaterialColor.field30963, 12801229, 16711935),
@@ -26,11 +26,11 @@ public enum Class112 implements IStringSerializable {
    field400(14, "red", 11546150, MaterialColor.field30975, 11743532, 16711680),
    field401(15, "black", 1908001, MaterialColor.field30976, 1973019, 0);
 
-   private static final Class112[] field402 = Arrays.<Class112>stream(values())
-      .sorted(Comparator.comparingInt(Class112::method309))
-      .<Class112>toArray(Class112[]::new);
-   private static final Int2ObjectOpenHashMap<Class112> field403 = new Int2ObjectOpenHashMap(
-      Arrays.<Class112>stream(values()).collect(Collectors.toMap(var0 -> var0.field410, var0 -> (Class112)var0))
+   private static final DyeColor[] field402 = Arrays.<DyeColor>stream(values())
+      .sorted(Comparator.comparingInt(DyeColor::method309))
+      .<DyeColor>toArray(DyeColor[]::new);
+   private static final Int2ObjectOpenHashMap<DyeColor> field403 = new Int2ObjectOpenHashMap(
+      Arrays.<DyeColor>stream(values()).collect(Collectors.toMap(var0 -> var0.field410, var0 -> (DyeColor)var0))
    );
    private final int field404;
    private final String field405;
@@ -40,7 +40,7 @@ public enum Class112 implements IStringSerializable {
    private final float[] field409;
    private final int field410;
    private final int field411;
-   private static final Class112[] field412 = new Class112[]{
+   private static final DyeColor[] field412 = new DyeColor[]{
       field386,
       field387,
       field388,
@@ -59,7 +59,7 @@ public enum Class112 implements IStringSerializable {
       field401
    };
 
-   private Class112(int var3, String var4, int var5, MaterialColor var6, int var7, int var8) {
+   private DyeColor(int var3, String var4, int var5, MaterialColor var6, int var7, int var8) {
       this.field404 = var3;
       this.field405 = var4;
       this.field407 = var5;
@@ -97,7 +97,7 @@ public enum Class112 implements IStringSerializable {
       return this.field411;
    }
 
-   public static Class112 method315(int var0) {
+   public static DyeColor method315(int var0) {
       if (var0 < 0 || var0 >= field402.length) {
          var0 = 0;
       }
@@ -105,8 +105,8 @@ public enum Class112 implements IStringSerializable {
       return field402[var0];
    }
 
-   public static Class112 method316(String var0, Class112 var1) {
-      for (Class112 var7 : values()) {
+   public static DyeColor method316(String var0, DyeColor var1) {
+      for (DyeColor var7 : values()) {
          if (var7.field405.equals(var0)) {
             return var7;
          }
@@ -116,8 +116,8 @@ public enum Class112 implements IStringSerializable {
    }
 
    @Nullable
-   public static Class112 method317(int var0) {
-      return (Class112)field403.get(var0);
+   public static DyeColor method317(int var0) {
+      return (DyeColor)field403.get(var0);
    }
 
    @Override

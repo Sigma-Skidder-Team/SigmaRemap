@@ -43,7 +43,7 @@ public class Class3677 extends Class3676<VillagerEntity> {
       }
 
       if (var7.nextInt(200) == 0 && Class3686.method12533(var1, var2, var2.getPosition())) {
-         Class112 var8 = Util.<Class112>getRandomObject(Class112.values(), var7);
+         DyeColor var8 = Util.<DyeColor>getRandomObject(DyeColor.values(), var7);
          int var9 = var7.nextInt(3);
          ItemStack var10 = this.method12510(var8, var9);
          FireworkRocketEntity var11 = new FireworkRocketEntity(var2.world, var2, var2.getPosX(), var2.getPosYEye(), var2.getPosZ(), var10);
@@ -51,7 +51,7 @@ public class Class3677 extends Class3676<VillagerEntity> {
       }
    }
 
-   private ItemStack method12510(Class112 var1, int var2) {
+   private ItemStack method12510(DyeColor var1, int var2) {
       ItemStack var5 = new ItemStack(Items.field38068, 1);
       ItemStack var6 = new ItemStack(Items.field38069);
       CompoundNBT var7 = var6.method32144("Explosion");

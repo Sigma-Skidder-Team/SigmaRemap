@@ -595,7 +595,7 @@ public class Class9680 {
                if (var7 == Blocks.GRASS_BLOCK || var7 == Blocks.TALL_GRASS || var7 instanceof Class3456) {
                   var10 = field45269;
                } else if (!(var7 instanceof Class3456)) {
-                  if (!(var7 instanceof Class3465)) {
+                  if (!(var7 instanceof LeavesBlock)) {
                      if (var7 != Blocks.VINE) {
                         return -1;
                      }
@@ -1074,16 +1074,16 @@ public class Class9680 {
    }
 
    private static float[][] method37881(Properties var0, String var1, String var2, String var3) {
-      Class112[] var6 = Class112.values();
+      DyeColor[] var6 = DyeColor.values();
       HashMap var7 = new HashMap();
 
       for (int var8 = 0; var8 < var6.length; var8++) {
-         Class112 var9 = var6[var8];
+         DyeColor var9 = var6[var8];
          var7.put(var9.getString(), var9);
       }
 
-      var7.put("lightBlue", Class112.field389);
-      var7.put("silver", Class112.field394);
+      var7.put("lightBlue", DyeColor.field389);
+      var7.put("silver", DyeColor.field394);
       float[][] var17 = new float[var6.length][];
       int var18 = 0;
 
@@ -1091,7 +1091,7 @@ public class Class9680 {
          String var12 = var0.getProperty(var11);
          if (var11.startsWith(var2)) {
             String var13 = Class9402.method35762(var11, var2);
-            Class112 var14 = (Class112)var7.get(var13);
+            DyeColor var14 = (DyeColor)var7.get(var13);
             int var15 = method37845(var12);
             if (var14 != null && var15 >= 0) {
                float[] var16 = new float[]{(float)(var15 >> 16 & 0xFF) / 255.0F, (float)(var15 >> 8 & 0xFF) / 255.0F, (float)(var15 & 0xFF) / 255.0F};
@@ -1111,7 +1111,7 @@ public class Class9680 {
       }
    }
 
-   private static float[] method37882(Class112 var0, float[][] var1, float[] var2) {
+   private static float[] method37882(DyeColor var0, float[][] var1, float[] var2) {
       if (var1 != null) {
          if (var0 != null) {
             float[] var5 = var1[var0.ordinal()];
@@ -1124,11 +1124,11 @@ public class Class9680 {
       }
    }
 
-   public static float[] method37883(Class112 var0, float[] var1) {
+   public static float[] method37883(DyeColor var0, float[] var1) {
       return method37882(var0, field45261, var1);
    }
 
-   public static float[] method37884(Class112 var0, float[] var1) {
+   public static float[] method37884(DyeColor var0, float[] var1) {
       return method37882(var0, field45262, var1);
    }
 
@@ -1385,7 +1385,7 @@ public class Class9680 {
                         return MaterialColor.field30951.field31007;
                      }
                   } else {
-                     return MaterialColor.field30950.field31007;
+                     return MaterialColor.WOOL.field31007;
                   }
                } else {
                   return MaterialColor.field30949.field31007;

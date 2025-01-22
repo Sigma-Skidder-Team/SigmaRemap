@@ -9,13 +9,13 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 
-public class WoodBlock extends Block {
+public class RotatedPillarBlock extends Block {
    private static String[] field18993;
-   public static final EnumProperty<Direction.Axis> field18994 = BlockStateProperties.AXIS;
+   public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
 
-   public WoodBlock(Properties var1) {
+   public RotatedPillarBlock(Properties var1) {
       super(var1);
-      this.setDefaultState(this.getDefaultState().with(field18994, Direction.Axis.Y));
+      this.setDefaultState(this.getDefaultState().with(AXIS, Direction.Axis.Y));
    }
 
    @Override
@@ -23,11 +23,11 @@ public class WoodBlock extends Block {
       switch (Class9779.field45746[var2.ordinal()]) {
          case 1:
          case 2:
-            switch (Class9779.field45745[var1.<Direction.Axis>get(field18994).ordinal()]) {
+            switch (Class9779.field45745[var1.<Direction.Axis>get(AXIS).ordinal()]) {
                case 1:
-                  return var1.with(field18994, Direction.Axis.Z);
+                  return var1.with(AXIS, Direction.Axis.Z);
                case 2:
-                  return var1.with(field18994, Direction.Axis.X);
+                  return var1.with(AXIS, Direction.Axis.X);
                default:
                   return var1;
             }
@@ -38,11 +38,11 @@ public class WoodBlock extends Block {
 
    @Override
    public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
-      var1.add(field18994);
+      var1.add(AXIS);
    }
 
    @Override
    public BlockState getStateForPlacement(BlockItemUseContext var1) {
-      return this.getDefaultState().with(field18994, var1.getFace().getAxis());
+      return this.getDefaultState().with(AXIS, var1.getFace().getAxis());
    }
 }

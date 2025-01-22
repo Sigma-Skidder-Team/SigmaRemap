@@ -47,7 +47,7 @@ public class ShieldItem extends Item {
       return ItemTags.field26071.contains(var2.getItem()) || super.method11699(var1, var2);
    }
 
-   public static Class112 getColor(ItemStack var0) {
-      return Class112.method315(var0.method32144("BlockEntityTag").getInt("Base"));
+   public static DyeColor getColor(ItemStack var0) {
+      return DyeColor.method315(var0.method32144("BlockEntityTag").getInt("Base"));
    }
 }

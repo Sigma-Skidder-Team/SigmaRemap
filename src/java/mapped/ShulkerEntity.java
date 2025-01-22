@@ -163,7 +163,7 @@ public class ShulkerEntity extends Class1056 implements IMob {
                      }
                   }
                } else {
-                  Direction var19 = var4.<Direction>get(Class3435.field19198);
+                  Direction var19 = var4.<Direction>get(PistonBlock.field19198);
                   if (!this.world.method7007(var3.offset(var19))) {
                      this.method4846();
                   } else {
@@ -444,9 +444,9 @@ public class ShulkerEntity extends Class1056 implements IMob {
    }
 
    @Nullable
-   public Class112 method4857() {
+   public DyeColor method4857() {
       Byte var3 = this.dataManager.<Byte>method35445(field5844);
-      return var3 != 16 && var3 <= 15 ? Class112.method315(var3) : null;
+      return var3 != 16 && var3 <= 15 ? DyeColor.method315(var3) : null;
    }
 
    // $VF: synthetic method

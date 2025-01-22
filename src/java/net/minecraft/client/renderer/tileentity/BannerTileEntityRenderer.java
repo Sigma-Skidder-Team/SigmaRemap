@@ -75,19 +75,19 @@ public class BannerTileEntityRenderer extends Class5942<BannerTileEntity> {
    }
 
    public static void method18478(
-           MatrixStack var0, Class7733 var1, int var2, int var3, ModelRenderer var4, Class7826 var5, boolean var6, List<Pair<Class2154, Class112>> var7
+           MatrixStack var0, Class7733 var1, int var2, int var3, ModelRenderer var4, Class7826 var5, boolean var6, List<Pair<Class2154, DyeColor>> var7
    ) {
       func_241717_a_(var0, var1, var2, var3, var4, var5, var6, var7, false);
    }
 
    public static void func_241717_a_(
-           MatrixStack var0, Class7733 var1, int var2, int var3, ModelRenderer var4, Class7826 var5, boolean var6, List<Pair<Class2154, Class112>> var7, boolean var8
+           MatrixStack var0, Class7733 var1, int var2, int var3, ModelRenderer var4, Class7826 var5, boolean var6, List<Pair<Class2154, DyeColor>> var7, boolean var8
    ) {
       var4.render(var0, var5.method26201(var1, RenderType::getEntitySolid, var8), var2, var3);
 
       for (int var11 = 0; var11 < 17 && var11 < var7.size(); var11++) {
          Pair var12 = (Pair)var7.get(var11);
-         float[] var13 = ((Class112)var12.getSecond()).method311();
+         float[] var13 = ((DyeColor)var12.getSecond()).method311();
          Class7826 var14 = new Class7826(!var6 ? Class8624.field38769 : Class8624.field38768, ((Class2154)var12.getFirst()).method8869(var6));
          var4.render(var0, var14.method26200(var1, RenderType::method14322), var2, var3, var13[0], var13[1], var13[2], 1.0F);
       }

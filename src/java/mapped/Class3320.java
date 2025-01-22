@@ -60,7 +60,7 @@ public class Class3320 extends Item {
    }
 
    private static ITextComponent method11875(int var0) {
-      Class112 var3 = Class112.method317(var0);
+      DyeColor var3 = DyeColor.method317(var0);
       return var3 != null
          ? new TranslationTextComponent("item.minecraft.firework_star." + var3.method310())
          : new TranslationTextComponent("item.minecraft.firework_star.custom_color");

@@ -185,7 +185,7 @@ public abstract class AbstractBlock {
 
    @Deprecated
    public List<ItemStack> method11697(BlockState var1, Class9464 var2) {
-      ResourceLocation var5 = this.method11999();
+      ResourceLocation var5 = this.getLootTable();
       if (var5 != Class8793.field39533) {
          LootContext var6 = var2.method36454(Class9525.field44336, var1).method36460(Class8524.field38292);
          ServerWorld var7 = var6.method26090();
@@ -307,7 +307,7 @@ public abstract class AbstractBlock {
       return this instanceof Class3245;
    }
 
-   public final ResourceLocation method11999() {
+   public final ResourceLocation getLootTable() {
       if (this.field19014 == null) {
          ResourceLocation var3 = Registry.BLOCK.getKey(this.method11584());
          this.field19014 = new ResourceLocation(var3.getNamespace(), "blocks/" + var3.getPath());
@@ -346,11 +346,11 @@ public abstract class AbstractBlock {
       private boolean field33977 = true;
       private boolean field33978;
       private Class9817<EntityType<?>> field33979 = (var0, var1x, var2x, var3) -> var0.method23454(var1x, var2x, Direction.UP) && var0.getLightValue() < 14;
-      private Class8609 field33980 = (var0, var1x, var2x) -> var0.getMaterial().isOpaque() && var0.method23456(var1x, var2x);
-      private Class8609 field33981 = (var1x, var2x, var3) -> this.field33964.blocksMovement() && var1x.method23456(var2x, var3);
-      private Class8609 field33982 = this.field33981;
-      private Class8609 field33983 = (var0, var1x, var2x) -> false;
-      private Class8609 field33984 = (var0, var1x, var2x) -> false;
+      private AbstractBlock$IPositionPredicate field33980 = (var0, var1x, var2x) -> var0.getMaterial().isOpaque() && var0.method23456(var1x, var2x);
+      private AbstractBlock$IPositionPredicate field33981 = (var1x, var2x, var3) -> this.field33964.blocksMovement() && var1x.method23456(var2x, var3);
+      private AbstractBlock$IPositionPredicate field33982 = this.field33981;
+      private AbstractBlock$IPositionPredicate field33983 = (var0, var1x, var2x) -> false;
+      private AbstractBlock$IPositionPredicate field33984 = (var0, var1x, var2x) -> false;
       private boolean field33985;
 
       private Properties(Material var1, MaterialColor var2) {
@@ -366,7 +366,7 @@ public abstract class AbstractBlock {
          return withMaterialAndColor(var0, var0.getColor());
       }
 
-      public static Properties method26610(Material var0, Class112 var1) {
+      public static Properties method26610(Material var0, DyeColor var1) {
          return withMaterialAndColor(var0, var1.method312());
       }
 
@@ -374,7 +374,7 @@ public abstract class AbstractBlock {
          return new Properties(var0, var1);
       }
 
-      public static Properties method26612(Material var0, Function<BlockState, MaterialColor> var1) {
+      public static Properties create(Material var0, Function<BlockState, MaterialColor> var1) {
          return new Properties(var0, var1);
       }
 
@@ -403,7 +403,7 @@ public abstract class AbstractBlock {
          return this;
       }
 
-      public Properties method26615() {
+      public Properties notSolid() {
          this.field33977 = false;
          return this;
       }
@@ -423,7 +423,7 @@ public abstract class AbstractBlock {
          return this;
       }
 
-      public Properties method26619(SoundType var1) {
+      public Properties sound(SoundType var1) {
          this.field33967 = var1;
          return this;
       }
@@ -440,20 +440,20 @@ public abstract class AbstractBlock {
       }
 
       public Properties method26622() {
-         return this.method26623(0.0F);
+         return this.hardnessAndResistance(0.0F);
       }
 
-      public Properties method26623(float var1) {
+      public Properties hardnessAndResistance(float var1) {
          this.method26621(var1, var1);
          return this;
       }
 
-      public Properties method26624() {
+      public Properties tickRandomly() {
          this.field33972 = true;
          return this;
       }
 
-      public Properties method26625() {
+      public Properties variableOpacity() {
          this.field33985 = true;
          return this;
       }
@@ -464,7 +464,7 @@ public abstract class AbstractBlock {
       }
 
       public Properties method26627(Block var1) {
-         this.field33976 = var1.method11999();
+         this.field33976 = var1.getLootTable();
          return this;
       }
 
@@ -473,32 +473,32 @@ public abstract class AbstractBlock {
          return this;
       }
 
-      public Properties method26629(Class9817<EntityType<?>> var1) {
+      public Properties setAllowsSpawn(Class9817<EntityType<?>> var1) {
          this.field33979 = var1;
          return this;
       }
 
-      public Properties method26630(Class8609 var1) {
+      public Properties setOpaque(AbstractBlock$IPositionPredicate var1) {
          this.field33980 = var1;
          return this;
       }
 
-      public Properties method26631(Class8609 var1) {
+      public Properties setSuffocates(AbstractBlock$IPositionPredicate var1) {
          this.field33981 = var1;
          return this;
       }
 
-      public Properties method26632(Class8609 var1) {
+      public Properties setBlocksVision(AbstractBlock$IPositionPredicate var1) {
          this.field33982 = var1;
          return this;
       }
 
-      public Properties method26633(Class8609 var1) {
+      public Properties method26633(AbstractBlock$IPositionPredicate var1) {
          this.field33983 = var1;
          return this;
       }
 
-      public Properties method26634(Class8609 var1) {
+      public Properties method26634(AbstractBlock$IPositionPredicate var1) {
          this.field33984 = var1;
          return this;
       }
@@ -589,27 +589,27 @@ public abstract class AbstractBlock {
       }
 
       // $VF: synthetic method
-      public static Class8609 method26659(Properties var0) {
+      public static AbstractBlock$IPositionPredicate method26659(Properties var0) {
          return var0.field33980;
       }
 
       // $VF: synthetic method
-      public static Class8609 method26660(Properties var0) {
+      public static AbstractBlock$IPositionPredicate method26660(Properties var0) {
          return var0.field33981;
       }
 
       // $VF: synthetic method
-      public static Class8609 method26661(Properties var0) {
+      public static AbstractBlock$IPositionPredicate method26661(Properties var0) {
          return var0.field33982;
       }
 
       // $VF: synthetic method
-      public static Class8609 method26662(Properties var0) {
+      public static AbstractBlock$IPositionPredicate method26662(Properties var0) {
          return var0.field33983;
       }
 
       // $VF: synthetic method
-      public static Class8609 method26663(Properties var0) {
+      public static AbstractBlock$IPositionPredicate method26663(Properties var0) {
          return var0.field33984;
       }
 
@@ -628,11 +628,11 @@ public abstract class AbstractBlock {
        private final float field31569;
        private final boolean field31570;
        private final boolean field31571;
-       private final Class8609 field31572;
-       private final Class8609 field31573;
-       private final Class8609 field31574;
-       private final Class8609 field31575;
-       private final Class8609 field31576;
+       private final AbstractBlock$IPositionPredicate field31572;
+       private final AbstractBlock$IPositionPredicate field31573;
+       private final AbstractBlock$IPositionPredicate field31574;
+       private final AbstractBlock$IPositionPredicate field31575;
+       private final AbstractBlock$IPositionPredicate field31576;
        public Class6486 field31577;
 
        public AbstractBlockState(Block var1, ImmutableMap<Property<?>, Comparable<?>> var2, MapCodec<BlockState> var3) {
@@ -653,7 +653,7 @@ public abstract class AbstractBlock {
           this.field31576 = Properties.method26663(var6);
        }
 
-       public void method23382() {
+       public void cacheState() {
           if (!this.getBlock().method11582()) {
              this.field31577 = new Class6486(this.method23457());
           }

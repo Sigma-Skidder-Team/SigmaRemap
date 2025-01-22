@@ -17,7 +17,7 @@ public class Class5958 extends Class5957<Class957> {
          double var10 = !var1.method3872() ? 50.0 : 256.0;
          var9 = MathHelper.sin(var9 * (float) Math.PI);
          int var12 = MathHelper.floor((double)var9 * var10);
-         float[] var13 = !var1.method3872() ? Class112.field396.method311() : Class112.field388.method311();
+         float[] var13 = !var1.method3872() ? DyeColor.field396.method311() : DyeColor.field388.method311();
          long var14 = var1.method3734().getGameTime();
          Class5946.method18469(var3, var4, field25982, var2, var9, var14, 0, var12, var13, 0.15F, 0.175F);
          Class5946.method18469(var3, var4, field25982, var2, var9, var14, 0, -var12, var13, 0.15F, 0.175F);

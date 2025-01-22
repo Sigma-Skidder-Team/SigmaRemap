@@ -39,8 +39,8 @@ public class Class8624 {
       .collect(ImmutableList.toImmutableList());
    public static final Map<Class9673, Class7826> field38784 = Class9673.method37736()
       .collect(Collectors.toMap(Function.<Class9673>identity(), Class8624::method30911));
-   public static final Class7826[] field38785 = Arrays.<Class112>stream(Class112.values())
-      .sorted(Comparator.comparingInt(Class112::method309))
+   public static final Class7826[] field38785 = Arrays.<DyeColor>stream(DyeColor.values())
+      .sorted(Comparator.comparingInt(DyeColor::method309))
       .<Class7826>map(var0 -> new Class7826(field38767, new ResourceLocation("entity/bed/" + var0.method310())))
       .<Class7826>toArray(Class7826[]::new);
    public static final Class7826 field38786 = method30912("trapped");

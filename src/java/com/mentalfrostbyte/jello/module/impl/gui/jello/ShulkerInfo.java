@@ -62,7 +62,7 @@ public class ShulkerInfo extends Module {
                 if (var5 instanceof ItemEntity) {
                     ItemEntity var6 = (ItemEntity) var5;
                     if (!(var6.method4124().getItem() instanceof BlockItem)
-                            || !(((BlockItem) var6.method4124().getItem()).method11845() instanceof Class3368)) {
+                            || !(((BlockItem) var6.method4124().getItem()).method11845() instanceof ShulkerBoxBlock)) {
                         return;
                     }
 
@@ -176,7 +176,7 @@ public class ShulkerInfo extends Module {
                 if (var5 != null
                         && var5.getHasStack()
                         && var5.getStack().getItem() instanceof BlockItem
-                        && ((BlockItem) var5.getStack().getItem()).method11845() instanceof Class3368) {
+                        && ((BlockItem) var5.getStack().getItem()).method11845() instanceof ShulkerBoxBlock) {
                     ItemStack var6 = var5.getStack();
                     List var7 = this.method16678(var6);
                     int var8 = Math.max(-1, Math.min(1, this.method16670()));

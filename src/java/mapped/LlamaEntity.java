@@ -306,9 +306,9 @@ public class LlamaEntity extends Class1066 implements Class1022 {
 
    @Override
    public void method4902(IInventory var1) {
-      Class112 var4 = this.method4906();
+      DyeColor var4 = this.method4906();
       super.method4902(var1);
-      Class112 var5 = this.method4906();
+      DyeColor var5 = this.method4906();
       if (this.ticksExisted > 20 && var5 != null && var5 != var4) {
          this.playSound(SoundEvents.field26742, 0.5F, 1.0F);
       }
@@ -322,20 +322,20 @@ public class LlamaEntity extends Class1066 implements Class1022 {
       }
    }
 
-   private void method4904(Class112 var1) {
+   private void method4904(DyeColor var1) {
       this.dataManager.set(field5871, var1 != null ? var1.method309() : -1);
    }
 
    @Nullable
-   private static Class112 method4905(ItemStack var0) {
+   private static DyeColor method4905(ItemStack var0) {
       Block var3 = Block.method11537(var0.getItem());
       return !(var3 instanceof Class3422) ? null : ((Class3422)var3).method12077();
    }
 
    @Nullable
-   public Class112 method4906() {
+   public DyeColor method4906() {
       int var3 = this.dataManager.<Integer>method35445(field5871);
-      return var3 != -1 ? Class112.method315(var3) : null;
+      return var3 != -1 ? DyeColor.method315(var3) : null;
    }
 
    @Override

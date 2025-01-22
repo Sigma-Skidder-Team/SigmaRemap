@@ -19,7 +19,7 @@ import net.minecraft.world.IWorld;
 
 import javax.annotation.Nullable;
 
-public class Class3387 extends WoodBlock implements IWaterLoggable {
+public class Class3387 extends RotatedPillarBlock implements IWaterLoggable {
    private static String[] field18993;
    public static final BooleanProperty field18995 = BlockStateProperties.WATERLOGGED;
    public static final VoxelShape field18996 = Block.makeCuboidShape(6.5, 0.0, 6.5, 9.5, 16.0, 9.5);
@@ -28,12 +28,12 @@ public class Class3387 extends WoodBlock implements IWaterLoggable {
 
    public Class3387(Properties var1) {
       super(var1);
-      this.setDefaultState(this.stateContainer.getBaseState().with(field18995, Boolean.valueOf(false)).with(field18994, Direction.Axis.Y));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18995, Boolean.valueOf(false)).with(AXIS, Direction.Axis.Y));
    }
 
    @Override
    public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      switch (Class9607.field44929[var1.<Direction.Axis>get(field18994).ordinal()]) {
+      switch (Class9607.field44929[var1.<Direction.Axis>get(AXIS).ordinal()]) {
          case 1:
          default:
             return field18998;
@@ -63,7 +63,7 @@ public class Class3387 extends WoodBlock implements IWaterLoggable {
 
    @Override
    public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
-      var1.add(field18995).add(field18994);
+      var1.add(field18995).add(AXIS);
    }
 
    @Override

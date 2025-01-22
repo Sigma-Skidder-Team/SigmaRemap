@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class Class3435 extends Class3433 {
+public class PistonBlock extends Class3433 {
    private static String[] field19201;
    public static final BooleanProperty field19202 = BlockStateProperties.EXTENDED;
    public static final VoxelShape field19203 = Block.makeCuboidShape(0.0, 0.0, 0.0, 12.0, 16.0, 16.0);
@@ -43,7 +43,7 @@ public class Class3435 extends Class3433 {
    public static final VoxelShape field19208 = Block.makeCuboidShape(0.0, 4.0, 0.0, 16.0, 16.0, 16.0);
    private final boolean field19209;
 
-   public Class3435(boolean var1, Properties var2) {
+   public PistonBlock(boolean var1, Properties var2) {
       super(var2);
       this.setDefaultState(this.stateContainer.getBaseState().with(field19198, Direction.NORTH).with(field19202, Boolean.valueOf(false)));
       this.field19209 = var1;

@@ -350,9 +350,9 @@ public class Class4212 extends Class4209 {
             9,
             var5
          );
-         this.method12923(var1, Blocks.STICKY_PISTON.getDefaultState().with(Class3435.field19198, Direction.UP), 9, -2, 8, var5);
-         this.method12923(var1, Blocks.STICKY_PISTON.getDefaultState().with(Class3435.field19198, Direction.WEST), 10, -2, 8, var5);
-         this.method12923(var1, Blocks.STICKY_PISTON.getDefaultState().with(Class3435.field19198, Direction.WEST), 10, -1, 8, var5);
+         this.method12923(var1, Blocks.STICKY_PISTON.getDefaultState().with(PistonBlock.field19198, Direction.UP), 9, -2, 8, var5);
+         this.method12923(var1, Blocks.STICKY_PISTON.getDefaultState().with(PistonBlock.field19198, Direction.WEST), 10, -2, 8, var5);
+         this.method12923(var1, Blocks.STICKY_PISTON.getDefaultState().with(PistonBlock.field19198, Direction.WEST), 10, -1, 8, var5);
          this.method12923(var1, Blocks.REPEATER.getDefaultState().with(RepeaterBlock.HORIZONTAL_FACING, Direction.NORTH), 10, -2, 10, var5);
          if (!this.field20524) {
             this.field20524 = this.method12933(var1, var5, var4, 9, -3, 10, Class8793.field39559);

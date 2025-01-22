@@ -87,12 +87,12 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    }
 
    private BlockState method3854() {
-      return !this.method3846() && this.method3848() && this.field5361.getBlock() instanceof Class3435
+      return !this.method3846() && this.method3848() && this.field5361.getBlock() instanceof PistonBlock
          ? Blocks.PISTON_HEAD
             .getDefaultState()
             .with(Class3436.field19212, Boolean.valueOf(this.field5366 > 0.25F))
             .with(Class3436.field19211, !this.field5361.isIn(Blocks.STICKY_PISTON) ? PistonType.field638 : PistonType.field639)
-            .with(Class3436.field19198, this.field5361.<Direction>get(Class3435.field19198))
+            .with(Class3436.field19198, this.field5361.<Direction>get(PistonBlock.field19198))
          : this.field5361;
    }
 
@@ -330,7 +330,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    public VoxelShape method3866(IBlockReader var1, BlockPos var2) {
       VoxelShape var5;
       if (!this.field5363 && this.field5364) {
-         var5 = this.field5361.with(Class3435.field19202, Boolean.valueOf(true)).method23414(var1, var2);
+         var5 = this.field5361.with(PistonBlock.field19202, Boolean.valueOf(true)).method23414(var1, var2);
       } else {
          var5 = VoxelShapes.empty();
       }

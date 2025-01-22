@@ -534,7 +534,7 @@ public class Class6762 extends Class6764 {
             return PathNodeType.DOOR_OPEN;
          } else if (var5 instanceof Class3429) {
             return PathNodeType.RAIL;
-         } else if (var5 instanceof Class3465) {
+         } else if (var5 instanceof LeavesBlock) {
             return PathNodeType.LEAVES;
          } else if (!var5.isIn(BlockTags.field32771)
             && !var5.isIn(BlockTags.field32764)

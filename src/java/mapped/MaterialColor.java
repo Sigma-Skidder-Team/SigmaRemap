@@ -5,7 +5,7 @@ public class MaterialColor {
    public static final MaterialColor AIR = new MaterialColor(0, 0);
    public static final MaterialColor field30948 = new MaterialColor(1, 8368696);
    public static final MaterialColor field30949 = new MaterialColor(2, 16247203);
-   public static final MaterialColor field30950 = new MaterialColor(3, 13092807);
+   public static final MaterialColor WOOL = new MaterialColor(3, 13092807);
    public static final MaterialColor field30951 = new MaterialColor(4, 16711680);
    public static final MaterialColor field30952 = new MaterialColor(5, 10526975);
    public static final MaterialColor IRON = new MaterialColor(6, 10987431);

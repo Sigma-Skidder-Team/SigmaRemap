@@ -92,8 +92,8 @@ public class Class9619 {
 
          Block var9 = var8.getBlock();
          if (var5 instanceof Class3236 && var9 instanceof Class3236) {
-            Class112 var10 = ((Class3236)var5).method11637();
-            Class112 var11 = ((Class3236)var9).method11637();
+            DyeColor var10 = ((Class3236)var5).method11637();
+            DyeColor var11 = ((Class3236)var9).method11637();
             if (var10 != var11) {
                return false;
             }
@@ -340,7 +340,7 @@ public class Class9619 {
       int var8 = 0;
       int var9 = var2.method23491();
       Block var10 = var2.getBlock();
-      if (var10 instanceof WoodBlock) {
+      if (var10 instanceof RotatedPillarBlock) {
          var8 = method37455(var2);
       }
 
@@ -455,7 +455,7 @@ public class Class9619 {
    }
 
    private static int method37455(BlockState var0) {
-      Direction.Axis var1 = var0.<Direction.Axis>get(WoodBlock.field18994);
+      Direction.Axis var1 = var0.<Direction.Axis>get(RotatedPillarBlock.AXIS);
       switch (Class9621.field44998[var1.ordinal()]) {
          case 1:
             return 2;
@@ -1155,7 +1155,7 @@ public class Class9619 {
          return true;
       } else {
          Block var3 = var0.getBlock();
-         return var3 instanceof GlassBlock ? true : var3 instanceof Class3234;
+         return var3 instanceof GlassBlock ? true : var3 instanceof StainedGlassBlock;
       }
    }
 

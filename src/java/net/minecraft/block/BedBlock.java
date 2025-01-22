@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class BedBlock extends HorizontalBlock implements Class3245 {
-   public static final EnumProperty<BedPart> field18713 = BlockStateProperties.PART;
+   public static final EnumProperty<BedPart> PART = BlockStateProperties.PART;
    public static final BooleanProperty field18714 = BlockStateProperties.OCCUPIED;
    public static final VoxelShape field18715 = Block.makeCuboidShape(0.0, 3.0, 0.0, 16.0, 9.0, 16.0);
    public static final VoxelShape field18716 = Block.makeCuboidShape(0.0, 0.0, 0.0, 3.0, 3.0, 3.0);
@@ -49,12 +49,12 @@ public class BedBlock extends HorizontalBlock implements Class3245 {
    public static final VoxelShape field18721 = VoxelShapes.method27432(field18715, field18717, field18719);
    public static final VoxelShape field18722 = VoxelShapes.method27432(field18715, field18716, field18717);
    public static final VoxelShape field18723 = VoxelShapes.method27432(field18715, field18718, field18719);
-   private final Class112 field18724;
+   private final DyeColor field18724;
 
-   public BedBlock(Class112 var1, Properties var2) {
+   public BedBlock(DyeColor var1, Properties var2) {
       super(var2);
       this.field18724 = var1;
-      this.setDefaultState(this.stateContainer.getBaseState().with(field18713, BedPart.FOOT).with(field18714, Boolean.valueOf(false)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(PART, BedPart.FOOT).with(field18714, Boolean.valueOf(false)));
    }
 
    @Nullable
@@ -66,7 +66,7 @@ public class BedBlock extends HorizontalBlock implements Class3245 {
    @Override
    public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote) {
-         if (var1.<BedPart>get(field18713) != BedPart.HEAD) {
+         if (var1.<BedPart>get(PART) != BedPart.HEAD) {
             var3 = var3.offset(var1.<Direction>get(HORIZONTAL_FACING));
             var1 = var2.getBlockState(var3);
             if (!var1.isIn(this)) {
@@ -152,10 +152,10 @@ public class BedBlock extends HorizontalBlock implements Class3245 {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (var2 != method11682(var1.<BedPart>get(field18713), var1.<Direction>get(HORIZONTAL_FACING))) {
+      if (var2 != method11682(var1.<BedPart>get(PART), var1.<Direction>get(HORIZONTAL_FACING))) {
          return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
       } else {
-         return var3.isIn(this) && var3.get(field18713) != var1.get(field18713)
+         return var3.isIn(this) && var3.get(PART) != var1.get(PART)
             ? var1.with(field18714, var3.<Boolean>get(field18714))
             : Blocks.AIR.getDefaultState();
       }
@@ -168,11 +168,11 @@ public class BedBlock extends HorizontalBlock implements Class3245 {
    @Override
    public void onBlockHarvested(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
       if (!var1.isRemote && var4.isCreative()) {
-         BedPart var7 = var3.<BedPart>get(field18713);
+         BedPart var7 = var3.<BedPart>get(PART);
          if (var7 == BedPart.FOOT) {
             BlockPos var8 = var2.offset(method11682(var7, var3.<Direction>get(HORIZONTAL_FACING)));
             BlockState var9 = var1.getBlockState(var8);
-            if (var9.getBlock() == this && var9.<BedPart>get(field18713) == BedPart.HEAD) {
+            if (var9.getBlock() == this && var9.<BedPart>get(PART) == BedPart.HEAD) {
                var1.setBlockState(var8, Blocks.AIR.getDefaultState(), 35);
                var1.method6869(var4, 2001, var8, Block.getStateId(var9));
             }
@@ -208,11 +208,11 @@ public class BedBlock extends HorizontalBlock implements Class3245 {
 
    public static Direction method11683(BlockState var0) {
       Direction var3 = var0.<Direction>get(HORIZONTAL_FACING);
-      return var0.get(field18713) != BedPart.HEAD ? var3 : var3.getOpposite();
+      return var0.get(PART) != BedPart.HEAD ? var3 : var3.getOpposite();
    }
 
    public static Class1895 method11684(BlockState var0) {
-      BedPart var3 = var0.<BedPart>get(field18713);
+      BedPart var3 = var0.<BedPart>get(PART);
       return var3 != BedPart.HEAD ? Class1895.field11111 : Class1895.field11110;
    }
 
@@ -287,7 +287,7 @@ public class BedBlock extends HorizontalBlock implements Class3245 {
 
    @Override
    public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
-      var1.add(HORIZONTAL_FACING, field18713, field18714);
+      var1.add(HORIZONTAL_FACING, PART, field18714);
    }
 
    @Override
@@ -300,19 +300,19 @@ public class BedBlock extends HorizontalBlock implements Class3245 {
       super.method11563(var1, var2, var3, var4, var5);
       if (!var1.isRemote) {
          BlockPos var8 = var2.offset(var3.<Direction>get(HORIZONTAL_FACING));
-         var1.setBlockState(var8, var3.with(field18713, BedPart.HEAD), 3);
+         var1.setBlockState(var8, var3.with(PART, BedPart.HEAD), 3);
          var1.func_230547_a_(var2, Blocks.AIR);
          var3.method23424(var1, var2, 3);
       }
    }
 
-   public Class112 method11690() {
+   public DyeColor method11690() {
       return this.field18724;
    }
 
    @Override
    public long method11691(BlockState var1, BlockPos var2) {
-      BlockPos var5 = var2.method8350(var1.<Direction>get(HORIZONTAL_FACING), var1.get(field18713) != BedPart.HEAD ? 1 : 0);
+      BlockPos var5 = var2.method8350(var1.<Direction>get(HORIZONTAL_FACING), var1.get(PART) != BedPart.HEAD ? 1 : 0);
       return MathHelper.method37810(var5.getX(), var2.getY(), var5.getZ());
    }
 

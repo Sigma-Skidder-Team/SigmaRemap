@@ -21,7 +21,7 @@ public class Class4838 extends Class4837 {
       for (int var7 = 0; var7 < var1.getSizeInventory(); var7++) {
          ItemStack var8 = var1.getStackInSlot(var7);
          if (!var8.isEmpty()) {
-            if (!(Block.method11537(var8.getItem()) instanceof Class3368)) {
+            if (!(Block.method11537(var8.getItem()) instanceof ShulkerBoxBlock)) {
                if (!(var8.getItem() instanceof Class3321)) {
                   return false;
                }
@@ -48,7 +48,7 @@ public class Class4838 extends Class4837 {
          ItemStack var7 = var1.getStackInSlot(var6);
          if (!var7.isEmpty()) {
             Item var8 = var7.getItem();
-            if (!(Block.method11537(var8) instanceof Class3368)) {
+            if (!(Block.method11537(var8) instanceof ShulkerBoxBlock)) {
                if (var8 instanceof Class3321) {
                   var5 = (Class3321)var8;
                }
@@ -58,7 +58,7 @@ public class Class4838 extends Class4837 {
          }
       }
 
-      ItemStack var9 = Class3368.method11958(var5.method11876());
+      ItemStack var9 = ShulkerBoxBlock.method11958(var5.method11876());
       if (var4.method32141()) {
          var9.setTag(var4.getTag().copy());
       }

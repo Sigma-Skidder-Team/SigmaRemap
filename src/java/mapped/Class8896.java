@@ -19,10 +19,10 @@ import java.util.*;
 public class Class8896 {
    private String field40258 = null;
    public static final Class9710[] field40259 = new Class9710[0];
-   public static final Class112[] field40260 = new Class112[0];
+   public static final DyeColor[] field40260 = new DyeColor[0];
    private static Map<ResourceLocation, BiomeId> field40261 = null;
    private static final Class7855<Enum> field40262 = new Class7856();
-   private static final Class7855<Class112> field40263 = new Class7857();
+   private static final Class7855<DyeColor> field40263 = new Class7857();
 
    public Class8896(String var1) {
       this.field40258 = var1;
@@ -683,8 +683,8 @@ public class Class8896 {
       return this.<Enum>method32412(var1, var2, field40262, var3, var4);
    }
 
-   public Class112[] method32415(String var1, String var2, Class112[] var3) {
-      return this.<Class112>method32412(var1, Class112.values(), field40263, var2, var3);
+   public DyeColor[] method32415(String var1, String var2, DyeColor[] var3) {
+      return this.<DyeColor>method32412(var1, DyeColor.values(), field40263, var2, var3);
    }
 
    public Class1989[] method32416(String var1, String var2, Class1989[] var3) {

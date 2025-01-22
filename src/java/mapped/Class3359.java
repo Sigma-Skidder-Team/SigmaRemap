@@ -11,9 +11,9 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public abstract class Class3359 extends BannerBlock {
-   private final Class112 field18904;
+   private final DyeColor field18904;
 
-   public Class3359(Class112 var1, Properties var2) {
+   public Class3359(DyeColor var1, Properties var2) {
       super(var2);
       this.field18904 = var1;
    }
@@ -44,7 +44,7 @@ public abstract class Class3359 extends BannerBlock {
       return !(var6 instanceof BannerTileEntity) ? super.getItem(var1, var2, var3) : ((BannerTileEntity)var6).method3893(var3);
    }
 
-   public Class112 method11936() {
+   public DyeColor method11936() {
       return this.field18904;
    }
 }

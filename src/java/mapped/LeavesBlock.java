@@ -18,12 +18,12 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3465 extends Block {
+public class LeavesBlock extends Block {
    private static String[] field19304;
    public static final IntegerProperty field19305 = BlockStateProperties.DISTANCE;
    public static final BooleanProperty field19306 = BlockStateProperties.PERSISTENT;
 
-   public Class3465(Properties var1) {
+   public LeavesBlock(Properties var1) {
       super(var1);
       this.setDefaultState(this.stateContainer.getBaseState().with(field19305, Integer.valueOf(7)).with(field19306, Boolean.valueOf(false)));
    }
@@ -83,7 +83,7 @@ public class Class3465 extends Block {
 
    private static int method12150(BlockState var0) {
       if (!BlockTags.field32751.contains(var0.getBlock())) {
-         return !(var0.getBlock() instanceof Class3465) ? 7 : var0.<Integer>get(field19305);
+         return !(var0.getBlock() instanceof LeavesBlock) ? 7 : var0.<Integer>get(field19305);
       } else {
          return 0;
       }

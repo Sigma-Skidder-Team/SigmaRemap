@@ -26,7 +26,7 @@ public class Class6810 {
    public int[] field29652 = null;
    public int field29653 = 1;
    private Class9710[] field29654 = null;
-   private Class112[] field29655 = null;
+   private DyeColor[] field29655 = null;
    private Boolean field29656 = null;
    private Class9532 field29657 = null;
    private Class9532 field29658 = null;
@@ -238,7 +238,7 @@ public class Class6810 {
                   return false;
                }
 
-               Class112 var27 = var24.method4382();
+               DyeColor var27 = var24.method4382();
                if (!Config.method26943(var27, this.field29655)) {
                   return false;
                }
@@ -250,7 +250,7 @@ public class Class6810 {
                   return false;
                }
 
-               Class112 var28 = var25.method5256();
+               DyeColor var28 = var25.method5256();
                if (!Config.method26943(var28, this.field29655)) {
                   return false;
                }

@@ -1,9 +1,9 @@
 package mapped;
 
-public final class Class7857 implements Class7855<Class112> {
+public final class Class7857 implements Class7855<DyeColor> {
    private static String[] field33667;
 
-   public String method26310(Class112 var1) {
+   public String method26310(DyeColor var1) {
       return var1.getString();
    }
 }

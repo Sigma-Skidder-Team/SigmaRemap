@@ -22,7 +22,7 @@ import java.util.Set;
 public class Class3265 extends ToolItem {
    private static String[] field18755;
    private static final Set<Material> field18756 = Sets.newHashSet(
-      new Material[]{Material.PLANKS, Material.field38957, Material.PLANTS, Material.TALL_PLANTS, Material.field38959, Material.GOURD}
+      new Material[]{Material.WOOD, Material.NETHER_WOOD, Material.PLANTS, Material.TALL_PLANTS, Material.field38959, Material.GOURD}
    );
    private static final Set<Block> field18757 = Sets.newHashSet(
       new Block[]{
@@ -79,7 +79,7 @@ public class Class3265 extends ToolItem {
          PlayerEntity var8 = var1.method18358();
          var4.playSound(var8, var5, SoundEvents.field26364, SoundCategory.field14732, 1.0F, 1.0F);
          if (!var4.isRemote) {
-            var4.setBlockState(var5, var7.getDefaultState().with(WoodBlock.field18994, var6.<Direction.Axis>get(WoodBlock.field18994)), 11);
+            var4.setBlockState(var5, var7.getDefaultState().with(RotatedPillarBlock.AXIS, var6.<Direction.Axis>get(RotatedPillarBlock.AXIS)), 11);
             if (var8 != null) {
                var1.method18357().damageItem(1, var8, var1x -> var1x.sendBreakAnimation(var1.method18359()));
             }

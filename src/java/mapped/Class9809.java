@@ -23,11 +23,11 @@ import net.minecraft.util.Direction;
 import org.apache.commons.lang3.StringUtils;
 
 public class Class9809 {
-   private static final Class940[] field45842 = Arrays.<Class112>stream(Class112.values())
-      .sorted(Comparator.comparingInt(Class112::method309))
+   private static final Class940[] field45842 = Arrays.<DyeColor>stream(DyeColor.values())
+      .sorted(Comparator.comparingInt(DyeColor::method309))
       .<Class940>map(Class940::new)
       .<Class940>toArray(Class940[]::new);
-   private static final Class940 field45843 = new Class940((Class112)null);
+   private static final Class940 field45843 = new Class940((DyeColor)null);
    public static final Class9809 field45844 = new Class9809();
    private final ChestTileEntity field45845 = new ChestTileEntity();
    private final ChestTileEntity field45846 = new Class970();
@@ -92,11 +92,11 @@ public class Class9809 {
                      if (var14 != Blocks.CHEST) {
                         if (var14 != Blocks.ENDER_CHEST) {
                            if (var14 != Blocks.TRAPPED_CHEST) {
-                              if (!(var14 instanceof Class3368)) {
+                              if (!(var14 instanceof ShulkerBoxBlock)) {
                                  return;
                               }
 
-                              Class112 var15 = Class3368.method11954(var8);
+                              DyeColor var15 = ShulkerBoxBlock.method11954(var8);
                               if (var15 != null) {
                                  var17 = field45842[var15.method309()];
                               } else {

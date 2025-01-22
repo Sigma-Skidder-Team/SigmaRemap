@@ -95,7 +95,7 @@ public class Class3436 extends Class3433 {
    private boolean method12108(BlockState var1, BlockState var2) {
       Block var5 = var1.get(field19211) != PistonType.field638 ? Blocks.STICKY_PISTON : Blocks.PISTON;
       return var2.isIn(var5)
-         && var2.<Boolean>get(Class3435.field19202)
+         && var2.<Boolean>get(PistonBlock.field19202)
          && var2.<Direction>get(field19198) == var1.<Direction>get(field19198);
    }
 

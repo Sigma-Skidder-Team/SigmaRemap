@@ -34,33 +34,33 @@ import java.util.stream.Collectors;
 
 public class SheepEntity extends AnimalEntity implements Class1020 {
    private static final DataParameter<Byte> field5704 = EntityDataManager.<Byte>createKey(SheepEntity.class, DataSerializers.field33390);
-   private static final Map<Class112, IItemProvider> field5705 = Util.<Map<Class112, IItemProvider>>make(Maps.newEnumMap(Class112.class), var0 -> {
-      var0.put(Class112.field386, Blocks.WHITE_WOOL);
-      var0.put(Class112.field387, Blocks.ORANGE_WOOL);
-      var0.put(Class112.field388, Blocks.MAGENTA_WOOL);
-      var0.put(Class112.field389, Blocks.LIGHT_BLUE_WOOL);
-      var0.put(Class112.field390, Blocks.YELLOW_WOOL);
-      var0.put(Class112.field391, Blocks.LIME_WOOL);
-      var0.put(Class112.field392, Blocks.PINK_WOOL);
-      var0.put(Class112.field393, Blocks.GRAY_WOOL);
-      var0.put(Class112.field394, Blocks.LIGHT_GRAY_WOOL);
-      var0.put(Class112.field395, Blocks.CYAN_WOOL);
-      var0.put(Class112.field396, Blocks.PURPLE_WOOL);
-      var0.put(Class112.field397, Blocks.BLUE_WOOL);
-      var0.put(Class112.field398, Blocks.BROWN_WOOL);
-      var0.put(Class112.field399, Blocks.GREEN_WOOL);
-      var0.put(Class112.field400, Blocks.RED_WOOL);
-      var0.put(Class112.field401, Blocks.BLACK_WOOL);
+   private static final Map<DyeColor, IItemProvider> field5705 = Util.<Map<DyeColor, IItemProvider>>make(Maps.newEnumMap(DyeColor.class), var0 -> {
+      var0.put(DyeColor.field386, Blocks.WHITE_WOOL);
+      var0.put(DyeColor.field387, Blocks.ORANGE_WOOL);
+      var0.put(DyeColor.field388, Blocks.MAGENTA_WOOL);
+      var0.put(DyeColor.field389, Blocks.LIGHT_BLUE_WOOL);
+      var0.put(DyeColor.field390, Blocks.YELLOW_WOOL);
+      var0.put(DyeColor.field391, Blocks.LIME_WOOL);
+      var0.put(DyeColor.field392, Blocks.PINK_WOOL);
+      var0.put(DyeColor.field393, Blocks.GRAY_WOOL);
+      var0.put(DyeColor.field394, Blocks.LIGHT_GRAY_WOOL);
+      var0.put(DyeColor.field395, Blocks.CYAN_WOOL);
+      var0.put(DyeColor.field396, Blocks.PURPLE_WOOL);
+      var0.put(DyeColor.field397, Blocks.BLUE_WOOL);
+      var0.put(DyeColor.field398, Blocks.BROWN_WOOL);
+      var0.put(DyeColor.field399, Blocks.GREEN_WOOL);
+      var0.put(DyeColor.field400, Blocks.RED_WOOL);
+      var0.put(DyeColor.field401, Blocks.BLACK_WOOL);
    });
 
-   private static final Map<Class112, float[]> field5706 = Maps.newEnumMap(Arrays.stream(Class112.values())
-           .collect(Collectors.toMap((Class112 p_200204_0_) -> p_200204_0_, SheepEntity::method4510)));
+   private static final Map<DyeColor, float[]> field5706 = Maps.newEnumMap(Arrays.stream(DyeColor.values())
+           .collect(Collectors.toMap((DyeColor p_200204_0_) -> p_200204_0_, SheepEntity::method4510)));
 
    private int field5707;
    private Class2597 field5708;
 
-   private static float[] method4510(Class112 var0) {
-      if (var0 != Class112.field386) {
+   private static float[] method4510(DyeColor var0) {
+      if (var0 != DyeColor.field386) {
          float[] var3 = var0.method311();
          float var4 = 0.75F;
          return new float[]{var3[0] * 0.75F, var3[1] * 0.75F, var3[2] * 0.75F};
@@ -69,7 +69,7 @@ public class SheepEntity extends AnimalEntity implements Class1020 {
       }
    }
 
-   public static float[] method4511(Class112 var0) {
+   public static float[] method4511(DyeColor var0) {
       return field5706.get(var0);
    }
 
@@ -240,7 +240,7 @@ public class SheepEntity extends AnimalEntity implements Class1020 {
    public void readAdditional(CompoundNBT compound) {
       super.readAdditional(compound);
       this.method4520(compound.getBoolean("Sheared"));
-      this.method4518(Class112.method315(compound.getByte("Color")));
+      this.method4518(DyeColor.method315(compound.getByte("Color")));
    }
 
    @Override
@@ -263,11 +263,11 @@ public class SheepEntity extends AnimalEntity implements Class1020 {
       this.playSound(SoundEvents.field27034, 0.15F, 1.0F);
    }
 
-   public Class112 method4517() {
-      return Class112.method315(this.dataManager.<Byte>method35445(field5704) & 15);
+   public DyeColor method4517() {
+      return DyeColor.method315(this.dataManager.<Byte>method35445(field5704) & 15);
    }
 
-   public void method4518(Class112 var1) {
+   public void method4518(DyeColor var1) {
       byte var4 = this.dataManager.<Byte>method35445(field5704);
       this.dataManager.set(field5704, (byte)(var4 & 240 | var1.method309() & 15));
    }
@@ -285,24 +285,24 @@ public class SheepEntity extends AnimalEntity implements Class1020 {
       }
    }
 
-   public static Class112 method4521(Random var0) {
+   public static DyeColor method4521(Random var0) {
       int var3 = var0.nextInt(100);
       if (var3 >= 5) {
          if (var3 >= 10) {
             if (var3 >= 15) {
                if (var3 >= 18) {
-                  return var0.nextInt(500) != 0 ? Class112.field386 : Class112.field392;
+                  return var0.nextInt(500) != 0 ? DyeColor.field386 : DyeColor.field392;
                } else {
-                  return Class112.field398;
+                  return DyeColor.field398;
                }
             } else {
-               return Class112.field394;
+               return DyeColor.field394;
             }
          } else {
-            return Class112.field393;
+            return DyeColor.field393;
          }
       } else {
-         return Class112.field401;
+         return DyeColor.field401;
       }
    }
 
@@ -328,9 +328,9 @@ public class SheepEntity extends AnimalEntity implements Class1020 {
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
-   private Class112 method4522(AnimalEntity var1, AnimalEntity var2) {
-      Class112 var5 = ((SheepEntity)var1).method4517();
-      Class112 var6 = ((SheepEntity)var2).method4517();
+   private DyeColor method4522(AnimalEntity var1, AnimalEntity var2) {
+      DyeColor var5 = ((SheepEntity)var1).method4517();
+      DyeColor var6 = ((SheepEntity)var2).method4517();
       Class926 var7 = method4523(var5, var6);
       return this.world
          .getRecipeManager()
@@ -339,11 +339,11 @@ public class SheepEntity extends AnimalEntity implements Class1020 {
          .<Item>map(ItemStack::getItem)
          .filter(Class3321.class::isInstance)
          .<Class3321>map(Class3321.class::cast)
-         .<Class112>map(Class3321::method11876)
+         .<DyeColor>map(Class3321::method11876)
          .orElseGet(() -> !this.world.rand.nextBoolean() ? var6 : var5);
    }
 
-   private static Class926 method4523(Class112 var0, Class112 var1) {
+   private static Class926 method4523(DyeColor var0, DyeColor var1) {
       Class926 var4 = new Class926(new Class5835((ContainerType)null, -1), 2, 1);
       var4.setInventorySlotContents(0, new ItemStack(Class3321.method11877(var0)));
       var4.setInventorySlotContents(1, new ItemStack(Class3321.method11877(var1)));

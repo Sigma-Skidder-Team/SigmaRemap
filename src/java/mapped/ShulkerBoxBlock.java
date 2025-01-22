@@ -34,12 +34,12 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class Class3368 extends BannerBlock {
+public class ShulkerBoxBlock extends BannerBlock {
    public static final EnumProperty<Direction> field18939 = Class3433.field19198;
    public static final ResourceLocation field18940 = new ResourceLocation("contents");
-   private final Class112 field18941;
+   private final DyeColor field18941;
 
-   public Class3368(Class112 var1, Properties var2) {
+   public ShulkerBoxBlock(DyeColor var1, Properties var2) {
       super(var2);
       this.field18941 = var1;
       this.setDefaultState(this.stateContainer.getBaseState().with(field18939, Direction.UP));
@@ -230,16 +230,16 @@ public class Class3368 extends BannerBlock {
    }
 
    @Nullable
-   public static Class112 method11954(Item var0) {
+   public static DyeColor method11954(Item var0) {
       return method11955(Block.method11537(var0));
    }
 
    @Nullable
-   public static Class112 method11955(Block var0) {
-      return !(var0 instanceof Class3368) ? null : ((Class3368)var0).method11957();
+   public static DyeColor method11955(Block var0) {
+      return !(var0 instanceof ShulkerBoxBlock) ? null : ((ShulkerBoxBlock)var0).method11957();
    }
 
-   public static Block method11956(Class112 var0) {
+   public static Block method11956(DyeColor var0) {
       if (var0 == null) {
          return Blocks.SHULKER_BOX;
       } else {
@@ -282,11 +282,11 @@ public class Class3368 extends BannerBlock {
    }
 
    @Nullable
-   public Class112 method11957() {
+   public DyeColor method11957() {
       return this.field18941;
    }
 
-   public static ItemStack method11958(Class112 var0) {
+   public static ItemStack method11958(DyeColor var0) {
       return new ItemStack(method11956(var0));
    }
 

@@ -150,7 +150,7 @@ public class Class4184 extends Class4180 {
 
    private void method12952(Random var1, IWorld var2, BlockPos var3) {
       if (var1.nextFloat() < 0.5F && var2.getBlockState(var3).isIn(Blocks.NETHERRACK) && var2.getBlockState(var3.up()).isAir()) {
-         var2.setBlockState(var3.up(), Blocks.JUNGLE_LEAVES.getDefaultState().with(Class3465.field19306, Boolean.valueOf(true)), 3);
+         var2.setBlockState(var3.up(), Blocks.JUNGLE_LEAVES.getDefaultState().with(LeavesBlock.field19306, Boolean.valueOf(true)), 3);
       }
    }
 

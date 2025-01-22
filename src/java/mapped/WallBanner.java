@@ -38,7 +38,7 @@ public class WallBanner extends Class3359 {
       )
    );
 
-   public WallBanner(Class112 var1, Properties var2) {
+   public WallBanner(DyeColor var1, Properties var2) {
       super(var1, var2);
       this.setDefaultState(this.stateContainer.getBaseState().with(field18910, Direction.NORTH));
    }

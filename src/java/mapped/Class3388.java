@@ -5,12 +5,12 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class Class3388 extends WoodBlock {
+public class Class3388 extends RotatedPillarBlock {
    private static String[] field18993;
 
    public Class3388(Properties var1) {
       super(var1);
-      this.setDefaultState(this.stateContainer.getBaseState().with(field18994, Direction.Axis.Y));
+      this.setDefaultState(this.stateContainer.getBaseState().with(AXIS, Direction.Axis.Y));
    }
 
    @Override

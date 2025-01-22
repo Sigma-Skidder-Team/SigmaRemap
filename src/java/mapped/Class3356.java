@@ -59,7 +59,7 @@ public class Class3356 extends BannerBlock {
    public void onPlayerDestroy(IWorld var1, BlockPos var2, BlockState var3) {
       BlockPos var6 = var2.offset(var3.<Direction>get(field18896).getOpposite());
       BlockState var7 = var1.getBlockState(var6);
-      if (var7.getBlock() instanceof Class3435 && var7.<Boolean>get(Class3435.field19202)) {
+      if (var7.getBlock() instanceof PistonBlock && var7.<Boolean>get(PistonBlock.field19202)) {
          var1.removeBlock(var6, false);
       }
    }

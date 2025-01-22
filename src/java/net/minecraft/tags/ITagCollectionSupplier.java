@@ -24,7 +24,7 @@ public interface ITagCollectionSupplier {
 
    default void method32661() {
       TagRegistryManager.fetchTags(this);
-      Blocks.method30025();
+      Blocks.cacheBlockStates();
    }
 
    default void method32662(PacketBuffer var1) {

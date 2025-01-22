@@ -36,13 +36,13 @@ public class Class5945 extends Class5942<Class955> {
                BlockState var13 = Blocks.PISTON_HEAD
                   .getDefaultState()
                   .with(Class3436.field19211, var12)
-                  .with(Class3436.field19198, var11.<Direction>get(Class3435.field19198));
+                  .with(Class3436.field19198, var11.<Direction>get(PistonBlock.field19198));
                var13 = var13.with(Class3436.field19212, Boolean.valueOf(var1.method3849(var2) >= 0.5F));
                this.method18467(var10, var13, var3, var4, var9, false, var6);
                BlockPos var14 = var10.offset(var1.method3860());
                var3.pop();
                var3.push();
-               var11 = var11.with(Class3435.field19202, Boolean.valueOf(true));
+               var11 = var11.with(PistonBlock.field19202, Boolean.valueOf(true));
                this.method18467(var14, var11, var3, var4, var9, true, var6);
             } else {
                this.method18467(var10, var11, var3, var4, var9, false, var6);

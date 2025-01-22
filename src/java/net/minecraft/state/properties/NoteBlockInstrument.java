@@ -85,7 +85,7 @@ public enum NoteBlockInstrument implements IStringSerializable {
                            if (var3 == Material.field38963) {
                               return field350;
                            } else {
-                              return var3 != Material.PLANKS && var3 != Material.field38957 ? field347 : field351;
+                              return var3 != Material.WOOD && var3 != Material.NETHER_WOOD ? field347 : field351;
                            }
                         } else {
                            return field349;

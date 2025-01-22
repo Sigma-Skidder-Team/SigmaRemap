@@ -16,7 +16,7 @@ public final class Material {
       .method30886()
       .pushBlocks()
       .build();
-   public static final Material field38935 = Builder.method30894(new Builder(MaterialColor.field30950).method30887())
+   public static final Material field38935 = Builder.method30894(new Builder(MaterialColor.WOOL).method30887())
       .method30886()
       .notOpaque()
       .build();
@@ -76,7 +76,7 @@ public final class Material {
       .method30886()
       .pushDestroys()
       .build();
-   public static final Material field38947 = Builder.method30894(new Builder(MaterialColor.field30950).method30887()).pushDestroys().build();
+   public static final Material field38947 = Builder.method30894(new Builder(MaterialColor.WOOL).method30887()).pushDestroys().build();
    public static final Material field38948 = new Builder(MaterialColor.AIR).build();
    public static final Material field38949 = new Builder(MaterialColor.field30956).build();
    public static final Material DIRT = new Builder(MaterialColor.GRANITE).build();
@@ -85,11 +85,11 @@ public final class Material {
    public static final Material field38953 = new Builder(MaterialColor.field30949).build();
    public static final Material field38954 = new Builder(MaterialColor.field30965).build();
    public static final Material field38955 = new Builder(MaterialColor.field30971).build();
-   public static final Material PLANKS = new Builder(MaterialColor.OAK_PLANK).notOpaque().build();
-   public static final Material field38957 = new Builder(MaterialColor.OAK_PLANK).build();
+   public static final Material WOOD = new Builder(MaterialColor.OAK_PLANK).notOpaque().build();
+   public static final Material NETHER_WOOD = new Builder(MaterialColor.OAK_PLANK).build();
    public static final Material field38958 = new Builder(MaterialColor.OAK_PLANK).notOpaque().pushDestroys().method30887().build();
    public static final Material field38959 = new Builder(MaterialColor.OAK_PLANK).notOpaque().pushDestroys().build();
-   public static final Material field38960 = new Builder(MaterialColor.field30950).notOpaque().build();
+   public static final Material WOOL = new Builder(MaterialColor.WOOL).notOpaque().build();
    public static final Material field38961 = Builder.method30894(new Builder(MaterialColor.field30951).notOpaque()).build();
    public static final Material field38962 = Builder.method30894(new Builder(MaterialColor.FOLIAGE).notOpaque()).pushDestroys().build();
    public static final Material field38963 = Builder.method30894(new Builder(MaterialColor.AIR)).build();

@@ -39,32 +39,32 @@ public class TropicalFishEntity extends AbstractGroupFishEntity {
       new ResourceLocation("textures/entity/fish/tropical_b_pattern_6.png")
    };
    public static final int[] field5817 = new int[]{
-      method4812(Class1964.field12805, Class112.field387, Class112.field393),
-      method4812(Class1964.field12804, Class112.field393, Class112.field393),
-      method4812(Class1964.field12804, Class112.field393, Class112.field397),
-      method4812(Class1964.field12809, Class112.field386, Class112.field393),
-      method4812(Class1964.field12799, Class112.field397, Class112.field393),
-      method4812(Class1964.field12798, Class112.field387, Class112.field386),
-      method4812(Class1964.field12803, Class112.field392, Class112.field389),
-      method4812(Class1964.field12807, Class112.field396, Class112.field390),
-      method4812(Class1964.field12809, Class112.field386, Class112.field400),
-      method4812(Class1964.field12803, Class112.field386, Class112.field390),
-      method4812(Class1964.field12806, Class112.field386, Class112.field393),
-      method4812(Class1964.field12809, Class112.field386, Class112.field387),
-      method4812(Class1964.field12801, Class112.field395, Class112.field392),
-      method4812(Class1964.field12802, Class112.field391, Class112.field389),
-      method4812(Class1964.field12808, Class112.field400, Class112.field386),
-      method4812(Class1964.field12800, Class112.field393, Class112.field400),
-      method4812(Class1964.field12807, Class112.field400, Class112.field386),
-      method4812(Class1964.field12804, Class112.field386, Class112.field390),
-      method4812(Class1964.field12798, Class112.field400, Class112.field386),
-      method4812(Class1964.field12799, Class112.field393, Class112.field386),
-      method4812(Class1964.field12801, Class112.field395, Class112.field390),
-      method4812(Class1964.field12804, Class112.field390, Class112.field390)
+      method4812(Class1964.field12805, DyeColor.field387, DyeColor.field393),
+      method4812(Class1964.field12804, DyeColor.field393, DyeColor.field393),
+      method4812(Class1964.field12804, DyeColor.field393, DyeColor.field397),
+      method4812(Class1964.field12809, DyeColor.field386, DyeColor.field393),
+      method4812(Class1964.field12799, DyeColor.field397, DyeColor.field393),
+      method4812(Class1964.field12798, DyeColor.field387, DyeColor.field386),
+      method4812(Class1964.field12803, DyeColor.field392, DyeColor.field389),
+      method4812(Class1964.field12807, DyeColor.field396, DyeColor.field390),
+      method4812(Class1964.field12809, DyeColor.field386, DyeColor.field400),
+      method4812(Class1964.field12803, DyeColor.field386, DyeColor.field390),
+      method4812(Class1964.field12806, DyeColor.field386, DyeColor.field393),
+      method4812(Class1964.field12809, DyeColor.field386, DyeColor.field387),
+      method4812(Class1964.field12801, DyeColor.field395, DyeColor.field392),
+      method4812(Class1964.field12802, DyeColor.field391, DyeColor.field389),
+      method4812(Class1964.field12808, DyeColor.field400, DyeColor.field386),
+      method4812(Class1964.field12800, DyeColor.field393, DyeColor.field400),
+      method4812(Class1964.field12807, DyeColor.field400, DyeColor.field386),
+      method4812(Class1964.field12804, DyeColor.field386, DyeColor.field390),
+      method4812(Class1964.field12798, DyeColor.field400, DyeColor.field386),
+      method4812(Class1964.field12799, DyeColor.field393, DyeColor.field386),
+      method4812(Class1964.field12801, DyeColor.field395, DyeColor.field390),
+      method4812(Class1964.field12804, DyeColor.field390, DyeColor.field390)
    };
    private boolean field5818 = true;
 
-   private static int method4812(Class1964 var0, Class112 var1, Class112 var2) {
+   private static int method4812(Class1964 var0, DyeColor var1, DyeColor var2) {
       return var0.method8237() & 0xFF | (var0.method8238() & 0xFF) << 8 | (var1.method309() & 0xFF) << 16 | (var2.method309() & 0xFF) << 24;
    }
 
@@ -76,12 +76,12 @@ public class TropicalFishEntity extends AbstractGroupFishEntity {
       return "entity.minecraft.tropical_fish.predefined." + var0;
    }
 
-   public static Class112 method4814(int var0) {
-      return Class112.method315(method4819(var0));
+   public static DyeColor method4814(int var0) {
+      return DyeColor.method315(method4819(var0));
    }
 
-   public static Class112 method4815(int var0) {
-      return Class112.method315(method4821(var0));
+   public static DyeColor method4815(int var0) {
+      return DyeColor.method315(method4821(var0));
    }
 
    public static String method4816(int var0) {
@@ -158,7 +158,7 @@ public class TropicalFishEntity extends AbstractGroupFishEntity {
    }
 
    public float[] method4820() {
-      return Class112.method315(method4819(this.method4818())).method311();
+      return DyeColor.method315(method4819(this.method4818())).method311();
    }
 
    private static int method4821(int var0) {
@@ -166,7 +166,7 @@ public class TropicalFishEntity extends AbstractGroupFishEntity {
    }
 
    public float[] method4822() {
-      return Class112.method315(method4821(this.method4818())).method311();
+      return DyeColor.method315(method4821(this.method4818())).method311();
    }
 
    public static int method4823(int var0) {

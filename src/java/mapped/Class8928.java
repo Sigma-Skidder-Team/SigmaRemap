@@ -270,7 +270,7 @@ public class Class8928 {
 
    public static RenderType method32630(BlockState var0) {
       Block var3 = var0.getBlock();
-      if (!(var3 instanceof Class3465)) {
+      if (!(var3 instanceof LeavesBlock)) {
          RenderType var4 = field40407.get(var3);
          return var4 == null ? RenderType.method14300() : var4;
       } else {
@@ -280,7 +280,7 @@ public class Class8928 {
 
    public static RenderType method32631(BlockState var0) {
       Block var3 = var0.getBlock();
-      if (!(var3 instanceof Class3465)) {
+      if (!(var3 instanceof LeavesBlock)) {
          RenderType var4 = field40407.get(var3);
          if (var4 == null) {
             return RenderType.method14300();

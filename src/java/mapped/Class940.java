@@ -29,16 +29,16 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    private Class2126 field5307 = Class2126.field13872;
    private float field5308;
    private float field5309;
-   private Class112 field5310;
+   private DyeColor field5310;
    private boolean field5311;
 
-   public Class940(Class112 var1) {
+   public Class940(DyeColor var1) {
       super(TileEntityType.field21443);
       this.field5310 = var1;
    }
 
    public Class940() {
-      this((Class112)null);
+      this((DyeColor)null);
       this.field5311 = true;
    }
 
@@ -83,7 +83,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    }
 
    public AxisAlignedBB method3747(BlockState var1) {
-      return this.method3748(var1.<Direction>get(Class3368.field18939));
+      return this.method3748(var1.<Direction>get(ShulkerBoxBlock.field18939));
    }
 
    public AxisAlignedBB method3748(Direction var1) {
@@ -102,8 +102,8 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
 
    private void method3750() {
       BlockState var3 = this.world.getBlockState(this.getPos());
-      if (var3.getBlock() instanceof Class3368) {
-         Direction var4 = var3.<Direction>get(Class3368.field18939);
+      if (var3.getBlock() instanceof ShulkerBoxBlock) {
+         Direction var4 = var3.<Direction>get(ShulkerBoxBlock.field18939);
          AxisAlignedBB var5 = this.method3749(var4).offset(this.pos);
          List var6 = this.world.method7181((Entity)null, var5);
          if (!var6.isEmpty()) {
@@ -258,7 +258,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
 
    @Override
    public boolean method3654(int var1, ItemStack var2, Direction var3) {
-      return !(Block.method11537(var2.getItem()) instanceof Class3368);
+      return !(Block.method11537(var2.getItem()) instanceof ShulkerBoxBlock);
    }
 
    @Override
@@ -271,9 +271,9 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    }
 
    @Nullable
-   public Class112 method3756() {
+   public DyeColor method3756() {
       if (this.field5311) {
-         this.field5310 = Class3368.method11955(this.getBlockState().getBlock());
+         this.field5310 = ShulkerBoxBlock.method11955(this.getBlockState().getBlock());
          this.field5311 = false;
       }
 

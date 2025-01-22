@@ -18,12 +18,12 @@ public class Class5954 extends Class5942<Class940> {
       Direction var9 = Direction.UP;
       if (var1.method3770()) {
          BlockState var10 = var1.method3734().getBlockState(var1.getPos());
-         if (var10.getBlock() instanceof Class3368) {
-            var9 = var10.<Direction>get(Class3368.field18939);
+         if (var10.getBlock() instanceof ShulkerBoxBlock) {
+            var9 = var10.<Direction>get(ShulkerBoxBlock.field18939);
          }
       }
 
-      Class112 var14 = var1.method3756();
+      DyeColor var14 = var1.method3756();
       Class7826 var11;
       if (var14 != null) {
          var11 = Class8624.field38783.get(var14.method309());

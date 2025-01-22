@@ -26,7 +26,7 @@ public class Class3301 extends Class3298 {
 
          for (int var6 = 0; var6 < var5.size() && var6 < 6; var6++) {
             CompoundNBT var7 = var5.getCompound(var6);
-            Class112 var8 = Class112.method315(var7.getInt("Color"));
+            DyeColor var8 = DyeColor.method315(var7.getInt("Color"));
             Class2154 var9 = Class2154.method8872(var7.getString("Pattern"));
             if (var9 != null) {
                var1.add(new TranslationTextComponent("block.minecraft.banner." + var9.method8870() + '.' + var8.method310()).mergeStyle(TextFormatting.GRAY));
@@ -35,7 +35,7 @@ public class Class3301 extends Class3298 {
       }
    }
 
-   public Class112 method11849() {
+   public DyeColor method11849() {
       return ((Class3359)this.method11845()).method11936();
    }
 

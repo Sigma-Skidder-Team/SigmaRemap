@@ -13,6 +13,6 @@ public class Class5861 extends Slot {
 
    @Override
    public boolean isItemValid(ItemStack var1) {
-      return !(Block.method11537(var1.getItem()) instanceof Class3368);
+      return !(Block.method11537(var1.getItem()) instanceof ShulkerBoxBlock);
    }
 }

@@ -37,11 +37,11 @@ public class Class8149 {
    private Class9532 field35057 = null;
    private Class9710[] field35058 = null;
    private Class2224[] field35059 = null;
-   private Class112[] field35060 = null;
+   private DyeColor[] field35060 = null;
    private static final Class2224[] field35061 = new Class2224[]{Class2224.field14547, Class2224.field14548, Class2224.field14549, Class2224.field14550};
    private static final Class2224[] field35062 = new Class2224[]{Class2224.field14551, Class2224.field14552};
    private static final Class2224[] field35063 = new Class2224[0];
-   private static final Class112[] field35064 = new Class112[0];
+   private static final DyeColor[] field35064 = new DyeColor[0];
    private static final ResourceLocation field35065 = new ResourceLocation("textures/gui/container/anvil.png");
    private static final ResourceLocation field35066 = new ResourceLocation("textures/gui/container/beacon.png");
    private static final ResourceLocation field35067 = new ResourceLocation("textures/gui/container/brewing_stand.png");
@@ -84,17 +84,17 @@ public class Class8149 {
       }
    }
 
-   private static Class112[] method28254(String var0) {
+   private static DyeColor[] method28254(String var0) {
       if (var0 == null) {
          return null;
       } else {
          var0 = var0.toLowerCase();
          String[] var3 = Config.method26903(var0, " ");
-         Class112[] var4 = new Class112[var3.length];
+         DyeColor[] var4 = new DyeColor[var3.length];
 
          for (int var5 = 0; var5 < var3.length; var5++) {
             String var6 = var3[var5];
-            Class112 var7 = method28255(var6);
+            DyeColor var7 = method28255(var6);
             if (var7 == null) {
                method28260("Invalid color: " + var6);
                return field35064;
@@ -107,14 +107,14 @@ public class Class8149 {
       }
    }
 
-   private static Class112 method28255(String var0) {
+   private static DyeColor method28255(String var0) {
       if (var0 == null) {
          return null;
       } else {
-         Class112[] var3 = Class112.values();
+         DyeColor[] var3 = DyeColor.values();
 
          for (int var4 = 0; var4 < var3.length; var4++) {
-            Class112 var5 = var3[var4];
+            DyeColor var5 = var3[var4];
             if (var5.getString().equals(var0)) {
                return var5;
             }
@@ -369,7 +369,7 @@ public class Class8149 {
       if (var5 instanceof Class940) {
          Class940 var6 = (Class940)var5;
          if (this.field35060 != null) {
-            Class112 var7 = var6.method3756();
+            DyeColor var7 = var6.method3756();
             if (!Config.method26943(var7, this.field35060)) {
                return false;
             }
@@ -433,7 +433,7 @@ public class Class8149 {
 
          if (this.field35060 != null && var5 instanceof LlamaEntity) {
             LlamaEntity var8 = (LlamaEntity)var5;
-            Class112 var7 = var8.method4906();
+            DyeColor var7 = var8.method4906();
             if (!Config.method26943(var7, this.field35060)) {
                return false;
             }

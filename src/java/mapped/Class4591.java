@@ -78,7 +78,7 @@ public class Class4591 extends Class4588 {
          int[] var8 = var17.getIntArray("Colors");
          int[] var9 = var17.getIntArray("FadeColors");
          if (var8.length == 0) {
-            var8 = new int[]{Class112.field401.method313()};
+            var8 = new int[]{DyeColor.field401.method313()};
          }
 
          switch (Class7868.field33682[var20.ordinal()]) {

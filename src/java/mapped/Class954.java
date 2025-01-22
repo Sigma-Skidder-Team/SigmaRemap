@@ -26,7 +26,7 @@ public class Class954 extends TileEntity {
    private boolean field5357 = true;
    private PlayerEntity field5358;
    private final Class9125[] field5359 = new Class9125[4];
-   private Class112 field5360 = Class112.field401;
+   private DyeColor field5360 = DyeColor.field401;
 
    public Class954() {
       super(TileEntityType.field21428);
@@ -49,7 +49,7 @@ public class Class954 extends TileEntity {
    public void read(BlockState var1, CompoundNBT var2) {
       this.field5357 = false;
       super.read(var1, var2);
-      this.field5360 = Class112.method316(var2.getString("Color"), Class112.field401);
+      this.field5360 = DyeColor.method316(var2.getString("Color"), DyeColor.field401);
 
       for (int var5 = 0; var5 < 4; var5++) {
          String var6 = var2.getString("Text" + (var5 + 1));
@@ -153,11 +153,11 @@ public class Class954 extends TileEntity {
             var1);
    }
 
-   public Class112 method3844() {
+   public DyeColor method3844() {
       return this.field5360;
    }
 
-   public boolean method3845(Class112 var1) {
+   public boolean method3845(DyeColor var1) {
       if (var1 == this.method3844()) {
          return false;
       } else {

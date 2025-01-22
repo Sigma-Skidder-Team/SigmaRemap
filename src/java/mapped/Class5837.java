@@ -172,7 +172,7 @@ public class Class5837 extends Container {
             var5 = var3.copy();
             var5.setCount(1);
             Class2154 var6 = Class2154.values()[this.field25565.get()];
-            Class112 var7 = ((Class3321)var4.getItem()).method11876();
+            DyeColor var7 = ((Class3321)var4.getItem()).method11876();
             CompoundNBT var8 = var5.method32144("BlockEntityTag");
             ListNBT var9;
             if (!var8.contains("Patterns", 9)) {

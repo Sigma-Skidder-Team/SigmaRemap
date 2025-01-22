@@ -24,7 +24,7 @@ public class LoomScreen extends ContainerScreen<Class5837> {
    private static final ResourceLocation field4801 = new ResourceLocation("textures/gui/container/loom.png");
    private static final int field4802 = (Class2154.field14124 - Class2154.field14125 - 1 + 4 - 1) / 4;
    private final ModelRenderer field4803;
-   private List<Pair<Class2154, Class112>> field4804;
+   private List<Pair<Class2154, DyeColor>> field4804;
    private ItemStack field4805 = ItemStack.EMPTY;
    private ItemStack field4806 = ItemStack.EMPTY;
    private ItemStack field4807 = ItemStack.EMPTY;
@@ -131,8 +131,8 @@ public class LoomScreen extends ContainerScreen<Class5837> {
       ItemStack var6 = new ItemStack(Items.field38099);
       CompoundNBT var7 = var6.method32144("BlockEntityTag");
       ListNBT var8 = new Class7291()
-         .method23058(Class2154.field14082, Class112.field393)
-         .method23058(Class2154.values()[var1], Class112.field386)
+         .method23058(Class2154.field14082, DyeColor.field393)
+         .method23058(Class2154.values()[var1], DyeColor.field386)
          .method23059();
       var7.put("Patterns", var8);
       MatrixStack var9 = new MatrixStack();
@@ -146,7 +146,7 @@ public class LoomScreen extends ContainerScreen<Class5837> {
       Class7735 var11 = this.mc.getRenderTypeBuffers().getBufferSource();
       this.field4803.rotateAngleX = 0.0F;
       this.field4803.rotationPointY = -32.0F;
-      List var12 = BannerTileEntity.getPatternColorData(Class112.field393, BannerTileEntity.method3886(var6));
+      List var12 = BannerTileEntity.getPatternColorData(DyeColor.field393, BannerTileEntity.method3886(var6));
       BannerTileEntityRenderer.method18478(var9, var11, 15728880, OverlayTexture.NO_OVERLAY, this.field4803, ModelBakery.field40513, true, var12);
       var9.pop();
       var11.finish();

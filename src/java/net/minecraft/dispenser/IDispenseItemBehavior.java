@@ -80,8 +80,8 @@ public interface IDispenseItemBehavior {
       DispenserBlock.method11931(Blocks.CARVED_PUMPKIN, new Class6235());
       DispenserBlock.method11931(Blocks.SHULKER_BOX.asItem(), new Class6240());
 
-      for (Class112 var9 : Class112.values()) {
-         DispenserBlock.method11931(Class3368.method11956(var9).asItem(), new Class6240());
+      for (DyeColor var9 : DyeColor.values()) {
+         DispenserBlock.method11931(ShulkerBoxBlock.method11956(var9).asItem(), new Class6240());
       }
 
       DispenserBlock.method11931(Items.field37972.asItem(), new Class6236());
