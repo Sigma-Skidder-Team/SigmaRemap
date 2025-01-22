@@ -235,7 +235,7 @@ public class HoglinEntity extends AnimalEntity implements IMob, Class1092 {
 
    @Override
    public boolean method4381(ItemStack var1) {
-      return var1.getItem() == Items.field37348;
+      return var1.getItem() == Items.CRIMSON_FUNGUS;
    }
 
    public boolean method5084() {

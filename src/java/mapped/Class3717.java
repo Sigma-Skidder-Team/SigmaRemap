@@ -116,7 +116,7 @@ public class Class3717 extends Class3676<VillagerEntity> {
             return var5.method23182(var6.method36460(Class8524.field38287));
          }
       } else {
-         return ImmutableList.of(new ItemStack(Items.field37334));
+         return ImmutableList.of(new ItemStack(Items.POPPY));
       }
    }
 

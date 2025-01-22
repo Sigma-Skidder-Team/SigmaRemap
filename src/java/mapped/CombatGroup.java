@@ -4,13 +4,13 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
-public final class Class7404 extends ItemGroup {
-   public Class7404(int var1, String var2) {
+public final class CombatGroup extends ItemGroup {
+   public CombatGroup(int var1, String var2) {
       super(var1, var2);
    }
 
    @Override
-   public ItemStack method23640() {
+   public ItemStack createIcon() {
       return new ItemStack(Items.GOLDEN_SWORD);
    }
 }

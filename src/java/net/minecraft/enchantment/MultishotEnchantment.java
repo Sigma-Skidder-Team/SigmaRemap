@@ -6,7 +6,7 @@ public class MultishotEnchantment extends Enchantment {
    private static String[] field27326;
 
    public MultishotEnchantment(Rarity var1, EquipmentSlotType... var2) {
-      super(var1, EnchantmentType.field14682, var2);
+      super(var1, EnchantmentType.CROSSBOW, var2);
    }
 
    @Override

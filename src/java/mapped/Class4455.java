@@ -110,7 +110,7 @@ public class Class4455 extends Class4441<Item> {
       this.method14014(ItemTags.field26109)
          .method31559(ItemTags.field26110)
          .method31560(
-            Items.field37358,
+            Items.GOLD_BLOCK,
             Items.field38188,
             Items.field37540,
             Items.field37802,
@@ -133,18 +133,18 @@ public class Class4455 extends Class4441<Item> {
          );
       this.method14014(ItemTags.field26111)
          .method31560(
-            Items.field37266,
-            Items.field37274,
-            Items.field37290,
-            Items.field37282,
-            Items.field37265,
-            Items.field37273,
-            Items.field37289,
-            Items.field37281,
-            Items.field37243,
-            Items.field37244,
-            Items.field37366,
-            Items.field37367,
+            Items.WARPED_STEM,
+            Items.STRIPPED_WARPED_STEM,
+            Items.WARPED_HYPHAE,
+            Items.STRIPPED_WARP_HYPHAE,
+            Items.CRIMSON_STEM,
+            Items.STRIPPED_CRIMSON_STEM,
+            Items.CRIMSON_HYPHAE,
+            Items.STRIPPED_CRIMSON_HYPHAE,
+            Items.CRIMSON_PLANKS,
+            Items.WARPED_PLANKS,
+            Items.CRIMSON_SLAB,
+            Items.WARPED_SLAB,
             Items.field37419,
             Items.field37420,
             Items.field37436,
@@ -162,8 +162,8 @@ public class Class4455 extends Class4441<Item> {
             Items.field37880,
             Items.field37881
          );
-      this.method14014(ItemTags.field26122).method31560(Items.field37236, Items.field38185);
-      this.method14014(ItemTags.field26123).method31560(Items.field37236, Items.field38185);
+      this.method14014(ItemTags.field26122).method31560(Items.COBBLESTONE, Items.field38185);
+      this.method14014(ItemTags.field26123).method31560(Items.COBBLESTONE, Items.field38185);
    }
 
    public void method14089(ITag.INamedTag<Block> var1, ITag.INamedTag<Item> var2) {

@@ -8,31 +8,31 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolItem;
 
 public enum EnchantmentType {
-   field14670 {
+   ARMOR {
       @Override
       public boolean method8990(Item var1) {
          return var1 instanceof ArmorItem;
       }
    },
-   field14671 {
+   ARMOR_FEET {
       @Override
       public boolean method8990(Item var1) {
          return var1 instanceof ArmorItem && ((ArmorItem)var1).getType() == EquipmentSlotType.FEET;
       }
    },
-   field14672 {
+   ARMOR_LEGS {
       @Override
       public boolean method8990(Item var1) {
          return var1 instanceof ArmorItem && ((ArmorItem)var1).getType() == EquipmentSlotType.LEGS;
       }
    },
-   field14673 {
+   ARMOR_CHEST {
       @Override
       public boolean method8990(Item var1) {
          return var1 instanceof ArmorItem && ((ArmorItem)var1).getType() == EquipmentSlotType.CHEST;
       }
    },
-   field14674 {
+   ARMOR_HEAD {
       @Override
       public boolean method8990(Item var1) {
          return var1 instanceof ArmorItem && ((ArmorItem)var1).getType() == EquipmentSlotType.HEAD;
@@ -56,58 +56,58 @@ public enum EnchantmentType {
          return var1 instanceof Class3259;
       }
    },
-   field14678 {
+   TRIDENT {
       @Override
       public boolean method8990(Item var1) {
          return var1 instanceof Class3272;
       }
    },
-   field14679 {
+   BREAKABLE {
       @Override
       public boolean method8990(Item var1) {
          return var1.isDamageable();
       }
    },
-   field14680 {
+   BOW {
       @Override
       public boolean method8990(Item var1) {
          return var1 instanceof BowItem;
       }
    },
-   field14681 {
+   WEARABLE {
       @Override
       public boolean method8990(Item var1) {
          return var1 instanceof Class3255 || Block.method11537(var1) instanceof Class3255;
       }
    },
-   field14682 {
+   CROSSBOW {
       @Override
       public boolean method8990(Item var1) {
          return var1 instanceof CrossbowItem;
       }
    },
-   field14683 {
+   VANISHABLE {
       @Override
       public boolean method8990(Item var1) {
-         return var1 instanceof IVanishable || Block.method11537(var1) instanceof IVanishable || field14679.method8990(var1);
+         return var1 instanceof IVanishable || Block.method11537(var1) instanceof IVanishable || BREAKABLE.method8990(var1);
       }
    };
 
    private static final EnchantmentType[] field14684 = new EnchantmentType[]{
-      field14670,
-      field14671,
-      field14672,
-      field14673,
-      field14674,
+           ARMOR,
+           ARMOR_FEET,
+           ARMOR_LEGS,
+           ARMOR_CHEST,
+           ARMOR_HEAD,
            WEAPON,
            DIGGER,
            FISHING_ROD,
-      field14678,
-      field14679,
-      field14680,
-      field14681,
-      field14682,
-      field14683
+           TRIDENT,
+           BREAKABLE,
+           BOW,
+           WEARABLE,
+           CROSSBOW,
+           VANISHABLE
    };
 
    private EnchantmentType() {

@@ -6,7 +6,7 @@ public class PunchEnchantment extends Enchantment {
    private static String[] field27315;
 
    public PunchEnchantment(Rarity var1, EquipmentSlotType... var2) {
-      super(var1, EnchantmentType.field14680, var2);
+      super(var1, EnchantmentType.BOW, var2);
    }
 
    @Override

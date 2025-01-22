@@ -4,13 +4,13 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
-public final class Class7402 extends ItemGroup {
-   public Class7402(int var1, String var2) {
+public final class BrewingGroup extends ItemGroup {
+   public BrewingGroup(int var1, String var2) {
       super(var1, var2);
    }
 
    @Override
-   public ItemStack method23640() {
+   public ItemStack createIcon() {
       return PotionUtils.method38187(new ItemStack(Items.field37971), Class8137.field34977);
    }
 }

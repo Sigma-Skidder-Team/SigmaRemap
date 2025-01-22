@@ -15,7 +15,7 @@ public class FrostWalkerEnchantment extends Enchantment {
    private static String[] field27333;
 
    public FrostWalkerEnchantment(Rarity var1, EquipmentSlotType... var2) {
-      super(var1, EnchantmentType.field14671, var2);
+      super(var1, EnchantmentType.ARMOR_FEET, var2);
    }
 
    @Override

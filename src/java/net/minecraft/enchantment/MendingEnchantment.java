@@ -6,7 +6,7 @@ public class MendingEnchantment extends Enchantment {
    private static String[] field27330;
 
    public MendingEnchantment(Rarity var1, EquipmentSlotType... var2) {
-      super(var1, EnchantmentType.field14679, var2);
+      super(var1, EnchantmentType.BREAKABLE, var2);
    }
 
    @Override

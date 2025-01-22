@@ -308,7 +308,7 @@ public class ChestStealer extends Module {
                                             Items.EGG,
                                             Items.field37838,
                                             Items.field37835,
-                                            Items.field37389,
+                                            Items.TNT,
                                             Items.BUCKET,
                                             Items.LAVA_BUCKET,
                                             Items.WATER_BUCKET,
@@ -324,7 +324,7 @@ public class ChestStealer extends Module {
                                             Items.field37841,
                                             Items.LEATHER,
                                             Items.field37972,
-                                            Items.field37316,
+                                            Items.PISTON,
                                             Items.SNOWBALL,
                                             Items.field37906
                                     )

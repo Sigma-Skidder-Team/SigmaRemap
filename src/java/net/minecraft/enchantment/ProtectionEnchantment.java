@@ -10,7 +10,7 @@ public class ProtectionEnchantment extends Enchantment {
    public final Type field27341;
 
    public ProtectionEnchantment(Rarity var1, Type var2, EquipmentSlotType... var3) {
-      super(var1, var2 != Type.FALL ? EnchantmentType.field14670 : EnchantmentType.field14671, var3);
+      super(var1, var2 != Type.FALL ? EnchantmentType.ARMOR : EnchantmentType.ARMOR_FEET, var3);
       this.field27341 = var2;
    }
 

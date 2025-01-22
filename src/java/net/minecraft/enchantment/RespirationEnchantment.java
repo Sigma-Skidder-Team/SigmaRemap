@@ -6,7 +6,7 @@ public class RespirationEnchantment extends Enchantment {
    private static String[] field27311;
 
    public RespirationEnchantment(Rarity var1, EquipmentSlotType... var2) {
-      super(var1, EnchantmentType.field14674, var2);
+      super(var1, EnchantmentType.ARMOR_HEAD, var2);
    }
 
    @Override

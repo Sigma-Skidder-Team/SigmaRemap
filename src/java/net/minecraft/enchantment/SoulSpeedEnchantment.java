@@ -6,7 +6,7 @@ public class SoulSpeedEnchantment extends Enchantment {
    private static String[] field27342;
 
    public SoulSpeedEnchantment(Rarity var1, EquipmentSlotType... var2) {
-      super(var1, EnchantmentType.field14671, var2);
+      super(var1, EnchantmentType.ARMOR_FEET, var2);
    }
 
    @Override

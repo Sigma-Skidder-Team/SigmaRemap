@@ -588,10 +588,10 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
       Class8528.method30247(Items.field38065)
          .method30250('#', Items.field37906)
-         .method30250('X', Items.field37349)
+         .method30250('X', Items.WARPED_FUNGUS)
          .method30252("# ")
          .method30252(" X")
-         .method30253("has_warped_fungus", method14075(Items.field37349))
+         .method30253("has_warped_fungus", method14075(Items.WARPED_FUNGUS))
          .method30255(var0);
       Class8528.method30247(Blocks.CAULDRON)
          .method30250('#', Items.field37801)

@@ -2715,7 +2715,7 @@ public class Class9407 {
    }
 
    private void method35941() {
-      this.method35807(Items.field37315);
+      this.method35807(Items.SEA_PICKLE);
       this.field43642
          .accept(
             Class5148.method15941(Blocks.SEA_PICKLE)
@@ -3654,7 +3654,7 @@ public class Class9407 {
       this.method35841(Blocks.SPAWNER, Class7524.field32271);
       this.method35841(Blocks.SPONGE, Class7524.field32271);
       this.method35841(Blocks.SEAGRASS, Class7524.field32287);
-      this.method35807(Items.field37314);
+      this.method35807(Items.SEAGRASS);
       this.method35841(Blocks.TNT, Class7524.field32275);
       this.method35841(Blocks.TARGET, Class7524.field32273);
       this.method35841(Blocks.WARPED_WART_BLOCK, Class7524.field32271);
@@ -3972,9 +3972,9 @@ public class Class9407 {
       this.method35893(Blocks.MUSHROOM_STEM);
       this.method35853(Blocks.GRASS, Class1958.field12762);
       this.method35855(Blocks.SUGAR_CANE, Class1958.field12762);
-      this.method35807(Items.field37355);
+      this.method35807(Items.SUGAR_CANE);
       this.method35954(Blocks.KELP, Blocks.KELP_PLANT, Class1958.field12762);
-      this.method35807(Items.field37356);
+      this.method35807(Items.KELP);
       this.method35804(Blocks.KELP_PLANT);
       this.method35954(Blocks.WEEPING_VINES, Blocks.WEEPING_VINES_PLANT, Class1958.field12763);
       this.method35954(Blocks.TWISTING_VINES, Blocks.TWISTING_VINES_PLANT, Class1958.field12763);
@@ -4158,7 +4158,7 @@ public class Class9407 {
       this.method35857(Blocks.WARPED_FUNGUS, Blocks.POTTED_WARPED_FUNGUS, Class1958.field12763);
       this.method35957(Blocks.WARPED_ROOTS, Blocks.POTTED_WARPED_ROOTS);
       this.method35855(Blocks.NETHER_SPROUTS, Class1958.field12763);
-      this.method35807(Items.field37352);
+      this.method35807(Items.NETHER_SPROUTS);
       this.method35846(Class7287.method22996(Blocks.STONE)).method31166(var1 -> {
          ResourceLocation var4 = Class9756.field45537.method34805(Blocks.STONE, var1, this.field43643);
          ResourceLocation var5 = Class9756.field45538.method34805(Blocks.STONE, var1, this.field43643);

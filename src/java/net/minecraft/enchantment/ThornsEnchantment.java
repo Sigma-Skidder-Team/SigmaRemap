@@ -14,7 +14,7 @@ public class ThornsEnchantment extends Enchantment {
    private static String[] field27337;
 
    public ThornsEnchantment(Rarity var1, EquipmentSlotType... var2) {
-      super(var1, EnchantmentType.field14673, var2);
+      super(var1, EnchantmentType.ARMOR_CHEST, var2);
    }
 
    @Override

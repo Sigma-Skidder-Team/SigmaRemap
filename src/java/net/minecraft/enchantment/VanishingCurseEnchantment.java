@@ -6,7 +6,7 @@ public class VanishingCurseEnchantment extends Enchantment {
    private static String[] field27338;
 
    public VanishingCurseEnchantment(Rarity var1, EquipmentSlotType... var2) {
-      super(var1, EnchantmentType.field14683, var2);
+      super(var1, EnchantmentType.VANISHABLE, var2);
    }
 
    @Override

@@ -969,8 +969,8 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6872.method20921(3.0F, 8.0F))
                   .method18291(Class4695.method14724(Items.field37969).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
-                  .method18291(Class4695.method14724(Items.field37333).method18299(2))
-                  .method18291(Class4695.method14724(Items.field37334).method18299(1))
+                  .method18291(Class4695.method14724(Items.DANDELION).method18299(2))
+                  .method18291(Class4695.method14724(Items.POPPY).method18299(1))
                   .method18291(Class4695.method14724(Items.field38053).method18299(10).method18296(Class140.method420(Class6872.method20921(1.0F, 7.0F))))
                   .method18291(Class4695.method14724(Items.field37843).method18299(10).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.APPLE).method18299(10).method18296(Class140.method420(Class6872.method20921(1.0F, 5.0F))))
@@ -987,7 +987,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6872.method20921(3.0F, 8.0F))
                   .method18291(Class4695.method14724(Items.field38128).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 5.0F))))
-                  .method18291(Class4695.method14724(Items.field37312).method18299(2))
+                  .method18291(Class4695.method14724(Items.FERN).method18299(2))
                   .method18291(Class4695.method14724(Items.field37600).method18299(2))
                   .method18291(Class4695.method14724(Items.field38053).method18299(10).method18296(Class140.method420(Class6872.method20921(1.0F, 7.0F))))
                   .method18291(Class4695.method14724(Items.field38170).method18299(5).method18296(Class140.method420(Class6872.method20921(1.0F, 7.0F))))
@@ -997,7 +997,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Items.EMERALD).method18299(2).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Blocks.SPRUCE_SAPLING).method18299(5).method18296(Class140.method420(Class6872.method20921(1.0F, 5.0F))))
                   .method18291(Class4695.method14724(Items.SPRUCE_SIGN).method18299(1))
-                  .method18291(Class4695.method14724(Items.field37260).method18299(10).method18296(Class140.method420(Class6872.method20921(1.0F, 5.0F))))
+                  .method18291(Class4695.method14724(Items.SPRUCE_LOG).method18299(10).method18296(Class140.method420(Class6872.method20921(1.0F, 5.0F))))
             )
       );
       var1.accept(
@@ -1007,7 +1007,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6872.method20921(3.0F, 8.0F))
                   .method18291(Class4695.method14724(Items.field37969).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
-                  .method18291(Class4695.method14724(Items.field37311).method18299(5))
+                  .method18291(Class4695.method14724(Items.GRASS).method18299(5))
                   .method18291(Class4695.method14724(Items.field37599).method18299(5))
                   .method18291(Class4695.method14724(Items.field37843).method18299(10).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37841).method18299(10).method18296(Class140.method420(Class6872.method20921(1.0F, 5.0F))))
@@ -1098,7 +1098,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6872.method20921(4.0F, 8.0F))
-                  .method18291(Class4695.method14724(Items.field37392).method18299(40).method18296(Class140.method420(Class6872.method20921(1.0F, 2.0F))))
+                  .method18291(Class4695.method14724(Items.OBSIDIAN).method18299(40).method18296(Class140.method420(Class6872.method20921(1.0F, 2.0F))))
                   .method18291(Class4695.method14724(Items.field37868).method18299(40).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field38128).method18299(40).method18296(Class140.method420(Class6872.method20921(9.0F, 18.0F))))
                   .method18291(Class4695.method14724(Items.field37794).method18299(40))
@@ -1122,7 +1122,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Items.field37802).method18299(5).method18296(Class140.method420(Class6872.method20921(2.0F, 8.0F))))
                   .method18291(Class4695.method14724(Items.field38167).method18299(1))
                   .method18291(Class4695.method14724(Items.ENCHANTED_GOLDEN_APPLE).method18299(1))
-                  .method18291(Class4695.method14724(Items.field37358).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 2.0F))))
+                  .method18291(Class4695.method14724(Items.GOLD_BLOCK).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 2.0F))))
             )
       );
    }

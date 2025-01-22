@@ -69,7 +69,7 @@ public class Class3424 extends Block implements IGrowable {
 
    @Override
    public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
-      return new ItemStack(Items.field37357);
+      return new ItemStack(Items.BAMBOO);
    }
 
    @Override

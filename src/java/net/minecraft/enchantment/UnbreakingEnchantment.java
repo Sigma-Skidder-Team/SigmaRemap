@@ -10,7 +10,7 @@ public class UnbreakingEnchantment extends Enchantment {
    private static String[] field27339;
 
    public UnbreakingEnchantment(Rarity var1, EquipmentSlotType... var2) {
-      super(var1, EnchantmentType.field14679, var2);
+      super(var1, EnchantmentType.BREAKABLE, var2);
    }
 
    @Override

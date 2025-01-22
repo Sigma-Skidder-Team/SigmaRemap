@@ -1232,7 +1232,7 @@ public abstract class LivingEntity extends Entity {
 
             if (!var4) {
                ItemEntity var7 = new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(),
-                     new ItemStack(Items.field37345));
+                     new ItemStack(Items.WITHER_ROSE));
                this.world.addEntity(var7);
             }
          }

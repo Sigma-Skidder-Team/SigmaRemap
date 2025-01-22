@@ -60,7 +60,7 @@ public class Class9067 {
             this.field41489,
             this.field41491,
             this.field41492,
-            new ResourceLocation(var2.getNamespace(), "recipes/" + this.field41489.getGroup().method23642() + "/" + var2.getPath())
+            new ResourceLocation(var2.getNamespace(), "recipes/" + this.field41489.getGroup().getPath() + "/" + var2.getPath())
          )
       );
    }

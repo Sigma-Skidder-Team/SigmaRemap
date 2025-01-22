@@ -7,135 +7,134 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
+import javax.annotation.Nullable;
+
 public abstract class ItemGroup {
-   public static final ItemGroup[] field31664 = new ItemGroup[12];
-   public static final ItemGroup BUILDING_BLOCKS = new Class7411(0, "buildingBlocks").method23647("building_blocks");
-   public static final ItemGroup field31666 = new Class7408(1, "decorations");
-   public static final ItemGroup REDSTONE = new Class7405(2, "redstone");
-   public static final ItemGroup field31668 = new Class7400(3, "transportation");
-   public static final ItemGroup field31669 = new Class7409(6, "misc");
-   public static final ItemGroup SEARCH = new Class7410(5, "search").method23646("item_search.png");
-   public static final ItemGroup field31671 = new Class7407(7, "food");
-   public static final ItemGroup TOOLS = new Class7412(8, "tools")
-      .method23656(new EnchantmentType[]{EnchantmentType.field14683, EnchantmentType.DIGGER, EnchantmentType.FISHING_ROD, EnchantmentType.field14679});
-   public static final ItemGroup COMBAT = new Class7404(9, "combat")
-      .method23656(
-         new EnchantmentType[]{
-            EnchantmentType.field14683,
-            EnchantmentType.field14670,
-            EnchantmentType.field14671,
-            EnchantmentType.field14674,
-            EnchantmentType.field14672,
-            EnchantmentType.field14673,
-            EnchantmentType.field14680,
-            EnchantmentType.WEAPON,
-            EnchantmentType.field14681,
-            EnchantmentType.field14679,
-            EnchantmentType.field14678,
-            EnchantmentType.field14682
-         }
-      );
-   public static final ItemGroup field31674 = new Class7402(10, "brewing");
-   public static final ItemGroup field31675 = field31669;
-   public static final ItemGroup field31676 = new Class7406(4, "hotbar");
-   public static final ItemGroup field31677 = new Class7403(11, "inventory").method23646("inventory.png").method23651().method23649();
-   private final int field31678;
-   private final String field31679;
-   private final ITextComponent field31680;
-   private String field31681;
-   private String field31682 = "items.png";
-   private boolean field31683 = true;
-   private boolean field31684 = true;
-   private EnchantmentType[] field31685 = new EnchantmentType[0];
-   private ItemStack field31686;
+   public static final ItemGroup[] GROUPS = new ItemGroup[12];
+   public static final ItemGroup BUILDING_BLOCKS = new BuildingBlocksGroup(0, "buildingBlocks").setTabPath("building_blocks");
+   public static final ItemGroup DECORATIONS = new DecorationsGroup(1, "decorations");
+   public static final ItemGroup REDSTONE = new RedstoneGroup(2, "redstone");
+   public static final ItemGroup TRANSPORTATION = new TransportationGroup(3, "transportation");
+   public static final ItemGroup MISC = new MiscGroup(6, "misc");
+   public static final ItemGroup SEARCH = new SearchGroup(5, "search").setBackgroundImageName("item_search.png");
+   public static final ItemGroup FOOD = new FoodGroup(7, "food");
+   public static final ItemGroup TOOLS = new ToolsGroup(8, "tools")
+      .setRelevantEnchantmentTypes(EnchantmentType.VANISHABLE, EnchantmentType.DIGGER, EnchantmentType.FISHING_ROD, EnchantmentType.BREAKABLE);
+   public static final ItemGroup COMBAT = new CombatGroup(9, "combat")
+      .setRelevantEnchantmentTypes(
+              EnchantmentType.VANISHABLE,
+              EnchantmentType.ARMOR,
+              EnchantmentType.ARMOR_FEET,
+              EnchantmentType.ARMOR_HEAD,
+              EnchantmentType.ARMOR_LEGS,
+              EnchantmentType.ARMOR_CHEST,
+              EnchantmentType.BOW,
+              EnchantmentType.WEAPON,
+              EnchantmentType.WEARABLE,
+              EnchantmentType.BREAKABLE,
+              EnchantmentType.TRIDENT,
+              EnchantmentType.CROSSBOW);
+   public static final ItemGroup BREWING = new BrewingGroup(10, "brewing");
+   public static final ItemGroup MATERIALS = MISC;
+   public static final ItemGroup HOTBAR = new HotbarGroup(4, "hotbar");
+   public static final ItemGroup INVENTORY = new InventoryGroup(11, "inventory").setBackgroundImageName("inventory.png").setNoScrollbar().setNoTitle();
+   private final int index;
+   private final String tabLabel;
+   private final ITextComponent groupName;
+   private String tabPath;
+   private String backgroundTexture = "items.png";
+   private boolean hasScrollbar = true;
+   private boolean drawTitle = true;
+   private EnchantmentType[] enchantmentTypes = new EnchantmentType[0];
+   private ItemStack icon;
 
-   public ItemGroup(int var1, String var2) {
-      this.field31678 = var1;
-      this.field31679 = var2;
-      this.field31680 = new TranslationTextComponent("itemGroup." + var2);
-      this.field31686 = ItemStack.EMPTY;
-      field31664[var1] = this;
+   public ItemGroup(int index, String label) {
+      this.index = index;
+      this.tabLabel = label;
+      this.groupName = new TranslationTextComponent("itemGroup." + label);
+      this.icon = ItemStack.EMPTY;
+      GROUPS[index] = this;
    }
 
-   public int method23641() {
-      return this.field31678;
+   public int getIndex() {
+      return this.index;
    }
 
-   public String method23642() {
-      return this.field31681 != null ? this.field31681 : this.field31679;
+   public String getPath() {
+      return this.tabPath != null ? this.tabPath : this.tabLabel;
    }
 
-   public ITextComponent method23643() {
-      return this.field31680;
+   public ITextComponent getGroupName() {
+      return this.groupName;
    }
 
-   public ItemStack method23644() {
-      if (this.field31686.isEmpty()) {
-         this.field31686 = this.method23640();
+   public ItemStack getIcon() {
+      if (this.icon.isEmpty()) {
+         this.icon = this.createIcon();
       }
 
-      return this.field31686;
+      return this.icon;
    }
 
-   public abstract ItemStack method23640();
+   public abstract ItemStack createIcon();
 
-   public String method23645() {
-      return this.field31682;
+   public String getBackgroundTextureImageName() {
+      return this.backgroundTexture;
    }
 
-   public ItemGroup method23646(String var1) {
-      this.field31682 = var1;
+   public ItemGroup setBackgroundImageName(String pathIn) {
+      this.backgroundTexture = pathIn;
       return this;
    }
 
-   public ItemGroup method23647(String var1) {
-      this.field31681 = var1;
+   public ItemGroup setTabPath(String var1) {
+      this.tabPath = var1;
       return this;
    }
 
-   public boolean method23648() {
-      return this.field31684;
+   public boolean drawInForegroundOfTab() {
+      return this.drawTitle;
    }
 
-   public ItemGroup method23649() {
-      this.field31684 = false;
+   public ItemGroup setNoTitle() {
+      this.drawTitle = false;
       return this;
    }
 
-   public boolean method23650() {
-      return this.field31683;
+   public boolean hasScrollbar() {
+      return this.hasScrollbar;
    }
 
-   public ItemGroup method23651() {
-      this.field31683 = false;
+   public ItemGroup setNoScrollbar() {
+      this.hasScrollbar = false;
       return this;
    }
 
-   public int method23652() {
-      return this.field31678 % 6;
+   public int getColumn() {
+      return this.index % 6;
    }
 
-   public boolean method23653() {
-      return this.field31678 < 6;
+   public boolean isOnTopRow() {
+      return this.index < 6;
    }
 
-   public boolean method23654() {
-      return this.method23652() == 5;
+   public boolean isAlignedRight() {
+      return this.getColumn() == 5;
    }
 
-   public EnchantmentType[] method23655() {
-      return this.field31685;
+   public EnchantmentType[] getRelevantEnchantmentTypes() {
+      return this.enchantmentTypes;
    }
 
-   public ItemGroup method23656(EnchantmentType... var1) {
-      this.field31685 = var1;
+   public ItemGroup setRelevantEnchantmentTypes(EnchantmentType... var1) {
+      this.enchantmentTypes = var1;
       return this;
    }
 
-   public boolean method23657(EnchantmentType var1) {
-      if (var1 != null) {
-         for (EnchantmentType var7 : this.field31685) {
-            if (var7 == var1) {
+   public boolean hasRelevantEnchantmentType(@Nullable EnchantmentType enchantmentType) {
+      if (enchantmentType != null) {
+         for (EnchantmentType type : this.enchantmentTypes) {
+            if (type == enchantmentType) {
                return true;
             }
          }
@@ -144,9 +143,9 @@ public abstract class ItemGroup {
       return false;
    }
 
-   public void method23658(NonNullList<ItemStack> var1) {
-      for (Item var5 : Registry.ITEM) {
-         var5.fillItemGroup(this, var1);
+   public void fill(NonNullList<ItemStack> items) {
+      for (Item item : Registry.ITEM) {
+         item.fillItemGroup(this, items);
       }
    }
 }

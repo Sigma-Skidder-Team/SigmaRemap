@@ -78,9 +78,9 @@ public class Class3290 extends Item {
    @Override
    public void fillItemGroup(ItemGroup var1, NonNullList<ItemStack> var2) {
       if (var1 != ItemGroup.SEARCH) {
-         if (var1.method23655().length != 0) {
+         if (var1.getRelevantEnchantmentTypes().length != 0) {
             for (Enchantment var6 : Registry.ENCHANTMENT) {
-               if (var1.method23657(var6.type)) {
+               if (var1.hasRelevantEnchantmentType(var6.type)) {
                   var2.add(method11832(new Class6694(var6, var6.method18809())));
                }
             }

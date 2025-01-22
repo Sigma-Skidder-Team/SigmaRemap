@@ -99,7 +99,7 @@ public class Class8888 {
             this.field40214 != null ? this.field40214 : "",
             this.field40212,
             this.field40213,
-            new ResourceLocation(var2.getNamespace(), "recipes/" + this.field40210.getGroup().method23642() + "/" + var2.getPath())
+            new ResourceLocation(var2.getNamespace(), "recipes/" + this.field40210.getGroup().getPath() + "/" + var2.getPath())
          )
       );
    }

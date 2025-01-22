@@ -4,13 +4,13 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
-public final class Class7412 extends ItemGroup {
-   public Class7412(int var1, String var2) {
+public final class SearchGroup extends ItemGroup {
+   public SearchGroup(int var1, String var2) {
       super(var1, var2);
    }
 
    @Override
-   public ItemStack method23640() {
-      return new ItemStack(Items.IRON_AXE);
+   public ItemStack createIcon() {
+      return new ItemStack(Items.COMPASS);
    }
 }

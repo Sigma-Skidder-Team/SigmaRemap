@@ -33,7 +33,7 @@ public class Class7810 {
       this.method26074(Items.ARMOR_STAND, Class9756.field45623);
       this.method26074(Items.field37797, Class9756.field45623);
       this.method26074(Items.field38054, Class9756.field45623);
-      this.method26074(Items.field37357, Class9756.field45624);
+      this.method26074(Items.BAMBOO, Class9756.field45624);
       this.method26074(Items.field37961, Class9756.field45623);
       this.method26074(Items.field38111, Class9756.field45623);
       this.method26074(Items.field38113, Class9756.field45623);

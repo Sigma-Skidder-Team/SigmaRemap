@@ -6,7 +6,7 @@ public class BindingCurseEnchantment extends Enchantment {
    private static String[] field27321;
 
    public BindingCurseEnchantment(Rarity var1, EquipmentSlotType... var2) {
-      super(var1, EnchantmentType.field14681, var2);
+      super(var1, EnchantmentType.WEARABLE, var2);
    }
 
    @Override

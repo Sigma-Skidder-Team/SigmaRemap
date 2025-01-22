@@ -1023,7 +1023,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             boolean var7 = false;
             if (this.mc.currentScreen instanceof CreativeScreen) {
                CreativeScreen var8 = (CreativeScreen)this.mc.currentScreen;
-               var7 = var8.method2654() != ItemGroup.field31677.method23641();
+               var7 = var8.method2654() != ItemGroup.INVENTORY.getIndex();
             }
 
             if (var1.method17303() == 0 && var1.method17304() >= 36 && var6 < 45) {

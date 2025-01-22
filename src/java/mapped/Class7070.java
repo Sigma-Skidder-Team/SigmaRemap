@@ -74,7 +74,7 @@ public class Class7070 {
          return null;
       } else {
          if (!Minecraft.getInstance().getConnection().getRecipeManager()
-            .method1030(IRecipeType.SMELTING, new Class927(new ItemStack(Items.field37236)), Minecraft.getInstance().world)
+            .method1030(IRecipeType.SMELTING, new Class927(new ItemStack(Items.COBBLESTONE)), Minecraft.getInstance().world)
             .isPresent()) {
             SimpleReloadableResourceManager var3 = new SimpleReloadableResourceManager(ResourcePackType.SERVER_DATA);
 

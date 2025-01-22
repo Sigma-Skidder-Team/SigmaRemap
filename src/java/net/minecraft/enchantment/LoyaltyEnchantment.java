@@ -6,7 +6,7 @@ public class LoyaltyEnchantment extends Enchantment {
    private static String[] field27328;
 
    public LoyaltyEnchantment(Rarity var1, EquipmentSlotType... var2) {
-      super(var1, EnchantmentType.field14678, var2);
+      super(var1, EnchantmentType.TRIDENT, var2);
    }
 
    @Override

@@ -35,7 +35,7 @@ public class CreativeScreen extends Class860<Class5820> {
    private static final ResourceLocation field4773 = new ResourceLocation("textures/gui/container/creative_inventory/tabs.png");
    private static final Class927 field4774 = new Class927(45);
    private static final ITextComponent field4775 = new TranslationTextComponent("inventory.binSlot");
-   private static int field4776 = ItemGroup.BUILDING_BLOCKS.method23641();
+   private static int field4776 = ItemGroup.BUILDING_BLOCKS.getIndex();
    private float field4777;
    private boolean field4778;
    private TextFieldWidget field4779;
@@ -74,7 +74,7 @@ public class CreativeScreen extends Class860<Class5820> {
 
       boolean var7 = var4 == ClickType.QUICK_MOVE;
       var4 = var2 == -999 && var4 == ClickType.PICKUP ? ClickType.THROW : var4;
-      if (var1 == null && field4776 != ItemGroup.field31677.method23641() && var4 != ClickType.QUICK_CRAFT) {
+      if (var1 == null && field4776 != ItemGroup.INVENTORY.getIndex() && var4 != ClickType.QUICK_CRAFT) {
          PlayerInventory var16 = this.mc.player.inventory;
          if (!var16.getItemStack().isEmpty() && this.field4784) {
             if (var3 == 0) {
@@ -98,7 +98,7 @@ public class CreativeScreen extends Class860<Class5820> {
             for (int var15 = 0; var15 < this.mc.player.container.getInventory().size(); var15++) {
                this.mc.playerController.sendSlotPacket(ItemStack.EMPTY, var15);
             }
-         } else if (field4776 != ItemGroup.field31677.method23641()) {
+         } else if (field4776 != ItemGroup.INVENTORY.getIndex()) {
             if (var4 != ClickType.QUICK_CRAFT && var1.field25578 == field4774) {
                PlayerInventory var13 = this.mc.player.inventory;
                ItemStack var18 = var13.getItemStack();
@@ -235,7 +235,7 @@ public class CreativeScreen extends Class860<Class5820> {
          this.children.add(this.field4779);
          int var3 = field4776;
          field4776 = -1;
-         this.method2648(ItemGroup.field31664[var3]);
+         this.method2648(ItemGroup.GROUPS[var3]);
          this.mc.player.container.removeListener(this.field4782);
          this.field4782 = new Class877(this.mc);
          this.mc.player.container.addListener(this.field4782);
@@ -265,7 +265,7 @@ public class CreativeScreen extends Class860<Class5820> {
    @Override
    public boolean charTyped(char var1, int var2) {
       if (!this.field4783) {
-         if (field4776 == ItemGroup.SEARCH.method23641()) {
+         if (field4776 == ItemGroup.SEARCH.getIndex()) {
             String var5 = this.field4779.getText();
             if (!this.field4779.charTyped(var1, var2)) {
                return false;
@@ -287,7 +287,7 @@ public class CreativeScreen extends Class860<Class5820> {
    @Override
    public boolean keyPressed(int var1, int var2, int var3) {
       this.field4783 = false;
-      if (field4776 != ItemGroup.SEARCH.method23641()) {
+      if (field4776 != ItemGroup.SEARCH.getIndex()) {
          if (!this.mc.gameSettings.keyBindChat.matchesKey(var1, var2)) {
             return super.keyPressed(var1, var2, var3);
          } else {
@@ -366,10 +366,10 @@ public class CreativeScreen extends Class860<Class5820> {
 
    @Override
    public void method2617(MatrixStack var1, int var2, int var3) {
-      ItemGroup var6 = ItemGroup.field31664[field4776];
-      if (var6.method23648()) {
+      ItemGroup var6 = ItemGroup.GROUPS[field4776];
+      if (var6.drawInForegroundOfTab()) {
          RenderSystem.disableBlend();
-         this.font.func_243248_b(var1, var6.method23643(), 8.0F, 6.0F, 4210752);
+         this.font.func_243248_b(var1, var6.getGroupName(), 8.0F, 6.0F, 4210752);
       }
    }
 
@@ -379,13 +379,13 @@ public class CreativeScreen extends Class860<Class5820> {
          double var8 = var1 - (double)this.field4734;
          double var10 = var3 - (double)this.field4735;
 
-         for (ItemGroup var15 : ItemGroup.field31664) {
+         for (ItemGroup var15 : ItemGroup.GROUPS) {
             if (this.method2651(var15, var8, var10)) {
                return true;
             }
          }
 
-         if (field4776 != ItemGroup.field31677.method23641() && this.method2650(var1, var3)) {
+         if (field4776 != ItemGroup.INVENTORY.getIndex() && this.method2650(var1, var3)) {
             this.field4778 = this.method2647();
             return true;
          }
@@ -401,7 +401,7 @@ public class CreativeScreen extends Class860<Class5820> {
          double var10 = var3 - (double)this.field4735;
          this.field4778 = false;
 
-         for (ItemGroup var15 : ItemGroup.field31664) {
+         for (ItemGroup var15 : ItemGroup.GROUPS) {
             if (this.method2651(var15, var8, var10)) {
                this.method2648(var15);
                return true;
@@ -413,17 +413,17 @@ public class CreativeScreen extends Class860<Class5820> {
    }
 
    private boolean method2647() {
-      return field4776 != ItemGroup.field31677.method23641() && ItemGroup.field31664[field4776].method23650() && this.field4727.method18177();
+      return field4776 != ItemGroup.INVENTORY.getIndex() && ItemGroup.GROUPS[field4776].hasScrollbar() && this.field4727.method18177();
    }
 
    private void method2648(ItemGroup var1) {
       int var4 = field4776;
-      field4776 = var1.method23641();
+      field4776 = var1.getIndex();
       this.field4743.clear();
       this.field4727.field25498.clear();
-      if (var1 != ItemGroup.field31676) {
+      if (var1 != ItemGroup.HOTBAR) {
          if (var1 != ItemGroup.SEARCH) {
-            var1.method23658(this.field4727.field25498);
+            var1.fill(this.field4727.field25498);
          }
       } else {
          CreativeSettings var5 = this.mc.getCreativeSettings();
@@ -449,8 +449,8 @@ public class CreativeScreen extends Class860<Class5820> {
          }
       }
 
-      if (var1 != ItemGroup.field31677) {
-         if (var4 == ItemGroup.field31677.method23641()) {
+      if (var1 != ItemGroup.INVENTORY) {
+         if (var4 == ItemGroup.INVENTORY.getIndex()) {
             this.field4727.inventorySlots.clear();
             this.field4727.inventorySlots.addAll(this.field4780);
             this.field4780 = null;
@@ -508,7 +508,7 @@ public class CreativeScreen extends Class860<Class5820> {
             this.field4779.method5671(true);
             this.field4779.method5669(false);
             this.field4779.method5654(true);
-            if (var4 != var1.method23641()) {
+            if (var4 != var1.getIndex()) {
                this.field4779.method5635("");
             }
 
@@ -536,7 +536,7 @@ public class CreativeScreen extends Class860<Class5820> {
    @Override
    public boolean method2623(double var1, double var3, int var5, int var6, int var7) {
       boolean var10 = var1 < (double)var5 || var3 < (double)var6 || var1 >= (double)(var5 + this.xSize) || var3 >= (double)(var6 + this.ySize);
-      this.field4784 = var10 && !this.method2651(ItemGroup.field31664[field4776], var1, var3);
+      this.field4784 = var10 && !this.method2651(ItemGroup.GROUPS[field4776], var1, var3);
       return this.field4784;
    }
 
@@ -569,14 +569,14 @@ public class CreativeScreen extends Class860<Class5820> {
       this.renderBackground(var1);
       super.render(var1, var2, var3, var4);
 
-      for (ItemGroup var10 : ItemGroup.field31664) {
+      for (ItemGroup var10 : ItemGroup.GROUPS) {
          if (this.method2652(var1, var10, var2, var3)) {
             break;
          }
       }
 
       if (this.field4781 != null
-         && field4776 == ItemGroup.field31677.method23641()
+         && field4776 == ItemGroup.INVENTORY.getIndex()
          && this.method2625(this.field4781.field25580, this.field4781.field25581, 16, 16, (double)var2, (double)var3)) {
          this.method2459(var1, field4775, var2, var3);
       }
@@ -587,7 +587,7 @@ public class CreativeScreen extends Class860<Class5820> {
 
    @Override
    public void method2457(MatrixStack var1, ItemStack var2, int var3, int var4) {
-      if (field4776 != ItemGroup.SEARCH.method23641()) {
+      if (field4776 != ItemGroup.SEARCH.getIndex()) {
          super.method2457(var1, var2, var3, var4);
       } else {
          List var7 = var2.getTooltip(this.mc.player, !this.mc.gameSettings.field44588 ? TooltipFlags.NORMAL : TooltipFlags.field14481);
@@ -599,8 +599,8 @@ public class CreativeScreen extends Class860<Class5820> {
             if (var11.size() == 1) {
                Enchantment var12 = (Enchantment)var11.keySet().iterator().next();
 
-               for (ItemGroup var16 : ItemGroup.field31664) {
-                  if (var16.method23657(var12.type)) {
+               for (ItemGroup var16 : ItemGroup.GROUPS) {
+                  if (var16.hasRelevantEnchantmentType(var12.type)) {
                      var10 = var16;
                      break;
                   }
@@ -614,7 +614,7 @@ public class CreativeScreen extends Class860<Class5820> {
             }
          });
          if (var10 != null) {
-            var8.add(1, var10.method23643().deepCopy().mergeStyle(TextFormatting.BLUE));
+            var8.add(1, var10.getGroupName().deepCopy().mergeStyle(TextFormatting.BLUE));
          }
 
          this.method2460(var1, var8, var3, var4);
@@ -624,16 +624,16 @@ public class CreativeScreen extends Class860<Class5820> {
    @Override
    public void drawGuiContainerBackgroundLayer(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-      ItemGroup var7 = ItemGroup.field31664[field4776];
+      ItemGroup var7 = ItemGroup.GROUPS[field4776];
 
-      for (ItemGroup var11 : ItemGroup.field31664) {
+      for (ItemGroup var11 : ItemGroup.GROUPS) {
          this.mc.getTextureManager().bindTexture(field4773);
-         if (var11.method23641() != field4776) {
+         if (var11.getIndex() != field4776) {
             this.method2653(var1, var11);
          }
       }
 
-      this.mc.getTextureManager().bindTexture(new ResourceLocation("textures/gui/container/creative_inventory/tab_" + var7.method23645()));
+      this.mc.getTextureManager().bindTexture(new ResourceLocation("textures/gui/container/creative_inventory/tab_" + var7.getBackgroundTextureImageName()));
       this.blit(var1, this.field4734, this.field4735, 0, 0, this.xSize, this.ySize);
       this.field4779.render(var1, var3, var4, var2);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -641,12 +641,12 @@ public class CreativeScreen extends Class860<Class5820> {
       int var13 = this.field4735 + 18;
       int var14 = var13 + 112;
       this.mc.getTextureManager().bindTexture(field4773);
-      if (var7.method23650()) {
+      if (var7.hasScrollbar()) {
          this.blit(var1, var12, var13 + (int)((float)(var14 - var13 - 17) * this.field4777), 232 + (!this.method2647() ? 12 : 0), 0, 12, 15);
       }
 
       this.method2653(var1, var7);
-      if (var7 == ItemGroup.field31677) {
+      if (var7 == ItemGroup.INVENTORY) {
          InventoryScreen.drawEntityOnScreen(
             this.field4734 + 88,
             this.field4735 + 45,
@@ -659,10 +659,10 @@ public class CreativeScreen extends Class860<Class5820> {
    }
 
    public boolean method2651(ItemGroup var1, double var2, double var4) {
-      int var8 = var1.method23652();
+      int var8 = var1.getColumn();
       int var9 = 28 * var8;
       int var10 = 0;
-      if (!var1.method23654()) {
+      if (!var1.isAlignedRight()) {
          if (var8 > 0) {
             var9 += var8;
          }
@@ -670,7 +670,7 @@ public class CreativeScreen extends Class860<Class5820> {
          var9 = this.xSize - 28 * (6 - var8) + 2;
       }
 
-      if (!var1.method23653()) {
+      if (!var1.isOnTopRow()) {
          var10 += this.ySize;
       } else {
          var10 -= 32;
@@ -680,10 +680,10 @@ public class CreativeScreen extends Class860<Class5820> {
    }
 
    public boolean method2652(MatrixStack var1, ItemGroup var2, int var3, int var4) {
-      int var7 = var2.method23652();
+      int var7 = var2.getColumn();
       int var8 = 28 * var7;
       int var9 = 0;
-      if (!var2.method23654()) {
+      if (!var2.isAlignedRight()) {
          if (var7 > 0) {
             var8 += var7;
          }
@@ -691,7 +691,7 @@ public class CreativeScreen extends Class860<Class5820> {
          var8 = this.xSize - 28 * (6 - var7) + 2;
       }
 
-      if (!var2.method23653()) {
+      if (!var2.isOnTopRow()) {
          var9 += this.ySize;
       } else {
          var9 -= 32;
@@ -700,15 +700,15 @@ public class CreativeScreen extends Class860<Class5820> {
       if (!this.method2625(var8 + 3, var9 + 3, 23, 27, (double)var3, (double)var4)) {
          return false;
       } else {
-         this.method2459(var1, var2.method23643(), var3, var4);
+         this.method2459(var1, var2.getGroupName(), var3, var4);
          return true;
       }
    }
 
    public void method2653(MatrixStack var1, ItemGroup var2) {
-      boolean var5 = var2.method23641() == field4776;
-      boolean var6 = var2.method23653();
-      int var7 = var2.method23652();
+      boolean var5 = var2.getIndex() == field4776;
+      boolean var6 = var2.isOnTopRow();
+      int var7 = var2.getColumn();
       int var8 = var7 * 28;
       byte var9 = 0;
       int var10 = this.field4734 + 28 * var7;
@@ -718,7 +718,7 @@ public class CreativeScreen extends Class860<Class5820> {
          var9 += 32;
       }
 
-      if (!var2.method23654()) {
+      if (!var2.isAlignedRight()) {
          if (var7 > 0) {
             var10 += var7;
          }
@@ -738,7 +738,7 @@ public class CreativeScreen extends Class860<Class5820> {
       var10 += 6;
       var11 = var11 + 8 + (!var6 ? -1 : 1);
       RenderSystem.enableRescaleNormal();
-      ItemStack var13 = var2.method23644();
+      ItemStack var13 = var2.getIcon();
       this.field4563.method793(var13, var10, var11);
       this.field4563.method797(this.font, var13, var10, var11);
       this.field4563.field847 = 0.0F;
