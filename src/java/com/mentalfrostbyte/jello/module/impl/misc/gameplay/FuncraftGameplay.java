@@ -30,7 +30,7 @@ public class FuncraftGameplay extends Module {
                 String var7 = mc.player.getName().getString().toLowerCase();
                 if (this.field23579.getBooleanValueFromSettingName("AutoL")
                         && (var6.toLowerCase().contains("a été tué par " + var7) || var6.toLowerCase().contains("a été tué par le vide et " + var7))) {
-                    this.field23579.method16761(var6);
+                    this.field23579.processAutoLMessage(var6);
                 }
             }
         }

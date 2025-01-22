@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.misc.GamePlay;
 import com.mentalfrostbyte.jello.notification.Notification;
-import mapped.Class7200;
+import mapped.TimedMessage;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SChatPacket;
 import net.minecraft.util.text.ITextComponent;
@@ -45,7 +45,7 @@ public class CubecraftGamePlay extends Module {
                                         .contains("thought they could survive in the void while escaping " + var8)
                                 || var6.toLowerCase().contains("fell to their death while escaping " + var8)
                                 || var6.toLowerCase().contains("died in the void while escaping " + var8))) {
-                    this.field23580.method16761(var6);
+                    this.field23580.processAutoLMessage(var6);
                 }
 
                 if (var7.contains("§a§lPlay Again §r§8• §r§6§lAuto Mode §r§8• §r§c§lLeave")
@@ -54,7 +54,7 @@ public class CubecraftGamePlay extends Module {
                         ClickEvent var11 = var10.getStyle().getClickEvent();
                         if (var11 != null && var11.getAction() == ClickEvent$Action.RUN_COMMAND
                                 && var11.getValue().contains("playagain")) {
-                            this.field23580.method16759(new Class7200(var11.getValue(),
+                            this.field23580.updateTimedMessage(new TimedMessage(var11.getValue(),
                                     (long) this.field23580.getNumberValueBySettingName("Auto Join delay") * 1000L));
                             Client.getInstance().notificationManager
                                     .send(
@@ -69,7 +69,7 @@ public class CubecraftGamePlay extends Module {
 
                 if (this.field23580.getBooleanValueFromSettingName("AutoGG")
                         && var7.equalsIgnoreCase("§e" + mc.player.getName().getString() + "§r§a won the game!§r")) {
-                    this.field23580.method16760();
+                    this.field23580.initializeAutoL();
                 }
             }
         }

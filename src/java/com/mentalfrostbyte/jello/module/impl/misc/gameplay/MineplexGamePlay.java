@@ -39,7 +39,7 @@ public class MineplexGamePlay extends Module {
                 String var6 = var5.getChatComponent().getString();
                 String var7 = mc.player.getName().getString().toLowerCase();
                 if (this.field23602.getBooleanValueFromSettingName("AutoL") && var6.toLowerCase().contains("killed by " + var7 + " ")) {
-                    this.field23602.method16761(var6);
+                    this.field23602.processAutoLMessage(var6);
                 }
 
                 String[] var8 = new String[]{"Green", "Red", "Blue", "Yellow"};
@@ -67,7 +67,7 @@ public class MineplexGamePlay extends Module {
             if (this.getBooleanValueFromSettingName("AutoGG") && this.field23604.getElapsedTime() > 5000L && this.field23603) {
                 this.field23603 = false;
                 this.field23604.reset();
-                this.field23602.method16760();
+                this.field23602.initializeAutoL();
             }
         }
     }

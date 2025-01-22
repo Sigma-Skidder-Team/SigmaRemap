@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.impl.misc.GamePlay;
 import com.mentalfrostbyte.jello.module.impl.render.NameProtect;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.Class7200;
+import mapped.TimedMessage;
 import mapped.ScoreObjective;
 import mapped.Score;
 import net.minecraft.network.IPacket;
@@ -71,7 +71,7 @@ public class HypixelGamePlay extends Module {
                     if (var9) {
                         String[] var33 = var6.split(" ");
                         if (var33.length > 3) {
-                            this.field23626.method16761(var33[3]);
+                            this.field23626.processAutoLMessage(var33[3]);
                         }
                     }
 
@@ -114,7 +114,7 @@ public class HypixelGamePlay extends Module {
                         }
 
                         if (var15 > 2) {
-                            this.field23626.method16761(var6);
+                            this.field23626.processAutoLMessage(var6);
                         }
                     }
                 }
@@ -133,14 +133,14 @@ public class HypixelGamePlay extends Module {
                         for (ITextComponent var32 : var5.getChatComponent().getSiblings()) {
                             ClickEvent var36 = var32.getStyle().getClickEvent();
                             if (var36 != null && var36.getAction() == ClickEvent$Action.RUN_COMMAND) {
-                                Class7200 var37 = new Class7200(var36.getValue(), (long) this.field23626.getNumberValueBySettingName("Auto Join delay") * 1000L);
-                                this.field23626.method16759(var37);
+                                TimedMessage var37 = new TimedMessage(var36.getValue(), (long) this.field23626.getNumberValueBySettingName("Auto Join delay") * 1000L);
+                                this.field23626.updateTimedMessage(var37);
                             }
                         }
                     }
 
                     if (this.field23626.getBooleanValueFromSettingName("AutoGG")) {
-                        this.field23626.method16760();
+                        this.field23626.initializeAutoL();
                     }
                 }
             } else if (var4 instanceof STeamsPacket && this.getBooleanValueFromSettingName("Hide infos")) {
