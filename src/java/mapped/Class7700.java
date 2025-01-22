@@ -27,11 +27,11 @@ public final class Class7700 {
    public static final BlockState field33011 = Blocks.DARK_OAK_LOG.getDefaultState();
    public static final BlockState field33012 = Blocks.DARK_OAK_LEAVES.getDefaultState();
    public static final BlockState field33013 = Blocks.GRASS_BLOCK.getDefaultState();
-   public static final BlockState field33014 = Blocks.field36802.getDefaultState();
+   public static final BlockState field33014 = Blocks.LARGE_FERN.getDefaultState();
    public static final BlockState field33015 = Blocks.TALL_GRASS.getDefaultState();
    public static final BlockState field33016 = Blocks.LILAC.getDefaultState();
    public static final BlockState field33017 = Blocks.ROSE_BUSH.getDefaultState();
-   public static final BlockState field33018 = Blocks.field36800.getDefaultState();
+   public static final BlockState field33018 = Blocks.PEONY.getDefaultState();
    public static final BlockState field33019 = Blocks.BROWN_MUSHROOM.getDefaultState();
    public static final BlockState field33020 = Blocks.RED_MUSHROOM.getDefaultState();
    public static final BlockState field33021 = Blocks.PACKED_ICE.getDefaultState();
@@ -89,7 +89,7 @@ public final class Class7700 {
    public static final BlockState field33067 = Blocks.field36890.getDefaultState();
    public static final BlockState field33068 = Blocks.SOUL_SAND.getDefaultState();
    public static final BlockState field33069 = Blocks.NETHER_GOLD_ORE.getDefaultState();
-   public static final BlockState field33070 = Blocks.field36722.getDefaultState();
+   public static final BlockState field33070 = Blocks.NETHER_QUARTZ_ORE.getDefaultState();
    public static final BlockState field33071 = Blocks.field37130.getDefaultState();
    public static final BlockState field33072 = Blocks.ANCIENT_DEBRIS.getDefaultState();
    public static final BlockState field33073 = Blocks.BASALT.getDefaultState();

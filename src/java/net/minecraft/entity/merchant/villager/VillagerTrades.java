@@ -459,22 +459,22 @@ public class VillagerTrades {
                   4,
                   new Class5391[]{
                      new Class5396(Items.field38072, 12, 12, 30),
-                     new Class5395(Blocks.field36731, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36730, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36741, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36733, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36737, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36738, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36745, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36744, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36736, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36732, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36735, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36743, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36739, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36740, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36734, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36742, 1, 1, 12, 15),
+                     new Class5395(Blocks.ORANGE_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.WHITE_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.BLUE_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.LIGHT_BLUE_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.GRAY_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.LIGHT_GRAY_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.BLACK_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.RED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.PINK_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.MAGENTA_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.LIME_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.GREEN_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.CYAN_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.PURPLE_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.YELLOW_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.BROWN_TERRACOTTA, 1, 1, 12, 15),
                      new Class5395(Blocks.field36914, 1, 1, 12, 15),
                      new Class5395(Blocks.field36913, 1, 1, 12, 15),
                      new Class5395(Blocks.field36924, 1, 1, 12, 15),
@@ -493,7 +493,7 @@ public class VillagerTrades {
                      new Class5395(Blocks.field36925, 1, 1, 12, 15)
                   },
                   5,
-                  new Class5391[]{new Class5395(Blocks.field36726, 1, 1, 12, 30), new Class5395(Blocks.field36724, 1, 1, 12, 30)}
+                  new Class5391[]{new Class5395(Blocks.QUARTZ_PILLAR, 1, 1, 12, 30), new Class5395(Blocks.QUARTZ_BLOCK, 1, 1, 12, 30)}
                )
             )
          );

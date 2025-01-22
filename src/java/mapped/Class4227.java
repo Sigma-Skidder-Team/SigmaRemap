@@ -58,17 +58,17 @@ public class Class4227 extends Class4167 {
       this.method12927(var1, var5, 1, 5, 8, 5, 5, 8, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
       BlockState var10 = Blocks.NETHER_BRICK_FENCE
          .getDefaultState()
-         .with(Class3239.field18683, Boolean.valueOf(true))
-         .with(Class3239.field18681, Boolean.valueOf(true));
+         .with(FenceBlock.field18683, Boolean.valueOf(true))
+         .with(FenceBlock.field18681, Boolean.valueOf(true));
       BlockState var11 = Blocks.NETHER_BRICK_FENCE
          .getDefaultState()
-         .with(Class3239.field18680, Boolean.valueOf(true))
-         .with(Class3239.field18682, Boolean.valueOf(true));
-      this.method12923(var1, Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18683, Boolean.valueOf(true)), 1, 6, 3, var5);
-      this.method12923(var1, Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18681, Boolean.valueOf(true)), 5, 6, 3, var5);
+         .with(FenceBlock.field18680, Boolean.valueOf(true))
+         .with(FenceBlock.field18682, Boolean.valueOf(true));
+      this.method12923(var1, Blocks.NETHER_BRICK_FENCE.getDefaultState().with(FenceBlock.field18683, Boolean.valueOf(true)), 1, 6, 3, var5);
+      this.method12923(var1, Blocks.NETHER_BRICK_FENCE.getDefaultState().with(FenceBlock.field18681, Boolean.valueOf(true)), 5, 6, 3, var5);
       this.method12923(
          var1,
-         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18681, Boolean.valueOf(true)).with(Class3239.field18680, Boolean.valueOf(true)),
+         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(FenceBlock.field18681, Boolean.valueOf(true)).with(FenceBlock.field18680, Boolean.valueOf(true)),
          0,
          6,
          3,
@@ -76,7 +76,7 @@ public class Class4227 extends Class4167 {
       );
       this.method12923(
          var1,
-         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18683, Boolean.valueOf(true)).with(Class3239.field18680, Boolean.valueOf(true)),
+         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(FenceBlock.field18683, Boolean.valueOf(true)).with(FenceBlock.field18680, Boolean.valueOf(true)),
          6,
          6,
          3,
@@ -86,7 +86,7 @@ public class Class4227 extends Class4167 {
       this.method12927(var1, var5, 6, 6, 4, 6, 6, 7, var11, var11, false);
       this.method12923(
          var1,
-         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18681, Boolean.valueOf(true)).with(Class3239.field18682, Boolean.valueOf(true)),
+         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(FenceBlock.field18681, Boolean.valueOf(true)).with(FenceBlock.field18682, Boolean.valueOf(true)),
          0,
          6,
          8,
@@ -94,19 +94,19 @@ public class Class4227 extends Class4167 {
       );
       this.method12923(
          var1,
-         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18683, Boolean.valueOf(true)).with(Class3239.field18682, Boolean.valueOf(true)),
+         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(FenceBlock.field18683, Boolean.valueOf(true)).with(FenceBlock.field18682, Boolean.valueOf(true)),
          6,
          6,
          8,
          var5
       );
       this.method12927(var1, var5, 1, 6, 8, 5, 6, 8, var10, var10, false);
-      this.method12923(var1, Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18681, Boolean.valueOf(true)), 1, 7, 8, var5);
+      this.method12923(var1, Blocks.NETHER_BRICK_FENCE.getDefaultState().with(FenceBlock.field18681, Boolean.valueOf(true)), 1, 7, 8, var5);
       this.method12927(var1, var5, 2, 7, 8, 4, 7, 8, var10, var10, false);
-      this.method12923(var1, Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18683, Boolean.valueOf(true)), 5, 7, 8, var5);
-      this.method12923(var1, Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18681, Boolean.valueOf(true)), 2, 8, 8, var5);
+      this.method12923(var1, Blocks.NETHER_BRICK_FENCE.getDefaultState().with(FenceBlock.field18683, Boolean.valueOf(true)), 5, 7, 8, var5);
+      this.method12923(var1, Blocks.NETHER_BRICK_FENCE.getDefaultState().with(FenceBlock.field18681, Boolean.valueOf(true)), 2, 8, 8, var5);
       this.method12923(var1, var10, 3, 8, 8, var5);
-      this.method12923(var1, Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18683, Boolean.valueOf(true)), 4, 8, 8, var5);
+      this.method12923(var1, Blocks.NETHER_BRICK_FENCE.getDefaultState().with(FenceBlock.field18683, Boolean.valueOf(true)), 4, 8, 8, var5);
       if (!this.field20558) {
          BlockPos var12 = new BlockPos(this.method12920(3, 5), this.method12921(5), this.method12922(3, 5));
          if (var5.method38396(var12)) {

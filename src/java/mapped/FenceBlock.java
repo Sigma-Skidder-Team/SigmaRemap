@@ -23,11 +23,11 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class Class3239 extends Class3238 {
+public class FenceBlock extends Class3238 {
    private static String[] field18689;
    private final VoxelShape[] field18690;
 
-   public Class3239(Properties var1) {
+   public FenceBlock(Properties var1) {
       super(2.0F, 2.0F, 16.0F, 16.0F, 24.0F, var1);
       this.setDefaultState(
          this.stateContainer

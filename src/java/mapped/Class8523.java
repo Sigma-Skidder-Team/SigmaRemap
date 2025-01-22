@@ -26,7 +26,7 @@ public class Class8523 {
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6439(Blocks.COBBLESTONE, 0.07F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.MOSSY_COBBLESTONE, 0.07F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36730, 0.07F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHITE_TERRACOTTA, 0.07F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.OAK_LOG, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.OAK_PLANKS, 0.1F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.OAK_STAIRS, 0.1F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
@@ -41,7 +41,7 @@ public class Class8523 {
                            .with(Class3237.field18682, Boolean.valueOf(true))
                      ),
                      Class6435.field28275,
-                     Blocks.field36758
+                     Blocks.BROWN_STAINED_GLASS_PANE
                         .getDefaultState()
                         .with(Class3237.field18680, Boolean.valueOf(true))
                         .with(Class3237.field18682, Boolean.valueOf(true))
@@ -54,7 +54,7 @@ public class Class8523 {
                            .with(Class3237.field18683, Boolean.valueOf(true))
                      ),
                      Class6435.field28275,
-                     Blocks.field36758
+                     Blocks.BROWN_STAINED_GLASS_PANE
                         .getDefaultState()
                         .with(Class3237.field18681, Boolean.valueOf(true))
                         .with(Class3237.field18683, Boolean.valueOf(true))
@@ -76,12 +76,12 @@ public class Class8523 {
                new Class7872(new Class6438(Blocks.TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6439(Blocks.ACACIA_PLANKS, 0.2F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36762, 0.2F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.ACACIA_STAIRS, 0.2F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.ACACIA_LOG, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.ACACIA_WOOD, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36731, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36734, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36744, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.ORANGE_TERRACOTTA, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.YELLOW_TERRACOTTA, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.RED_TERRACOTTA, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.GLASS_PANE, 0.5F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(
                   new Class6433(
@@ -91,7 +91,7 @@ public class Class8523 {
                         .with(Class3237.field18682, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Blocks.field36758
+                  Blocks.BROWN_STAINED_GLASS_PANE
                      .getDefaultState()
                      .with(Class3237.field18680, Boolean.valueOf(true))
                      .with(Class3237.field18682, Boolean.valueOf(true))
@@ -105,7 +105,7 @@ public class Class8523 {
                            .with(Class3237.field18683, Boolean.valueOf(true))
                      ),
                      Class6435.field28275,
-                     Blocks.field36758
+                     Blocks.BROWN_STAINED_GLASS_PANE
                         .getDefaultState()
                         .with(Class3237.field18681, Boolean.valueOf(true))
                         .with(Class3237.field18683, Boolean.valueOf(true))
@@ -126,7 +126,7 @@ public class Class8523 {
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6438(Blocks.LANTERN), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6439(Blocks.SPRUCE_PLANKS, 0.2F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36840, 0.4F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.SPRUCE_SLAB, 0.4F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.STRIPPED_SPRUCE_LOG, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.STRIPPED_SPRUCE_WOOD, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.GLASS_PANE, 0.5F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
@@ -138,7 +138,7 @@ public class Class8523 {
                         .with(Class3237.field18682, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Blocks.field36758
+                  Blocks.BROWN_STAINED_GLASS_PANE
                      .getDefaultState()
                      .with(Class3237.field18680, Boolean.valueOf(true))
                      .with(Class3237.field18682, Boolean.valueOf(true))
@@ -151,7 +151,7 @@ public class Class8523 {
                         .with(Class3237.field18683, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Blocks.field36758
+                  Blocks.BROWN_STAINED_GLASS_PANE
                      .getDefaultState()
                      .with(Class3237.field18681, Boolean.valueOf(true))
                      .with(Class3237.field18683, Boolean.valueOf(true))
@@ -187,7 +187,7 @@ public class Class8523 {
                         .with(Class3237.field18682, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Blocks.field36758
+                  Blocks.BROWN_STAINED_GLASS_PANE
                      .getDefaultState()
                      .with(Class3237.field18680, Boolean.valueOf(true))
                      .with(Class3237.field18682, Boolean.valueOf(true))
@@ -200,7 +200,7 @@ public class Class8523 {
                         .with(Class3237.field18683, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Blocks.field36758
+                  Blocks.BROWN_STAINED_GLASS_PANE
                      .getDefaultState()
                      .with(Class3237.field18681, Boolean.valueOf(true))
                      .with(Class3237.field18683, Boolean.valueOf(true))
@@ -220,9 +220,9 @@ public class Class8523 {
                new Class7872(new Class6437(BlockTags.field32748), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6438(Blocks.TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36859, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.SMOOTH_SANDSTONE, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.CUT_SANDSTONE, 0.1F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36794, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.TERRACOTTA, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field37021, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field37034, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.field36884.getDefaultState()),

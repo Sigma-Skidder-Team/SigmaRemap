@@ -40,7 +40,7 @@ public abstract class AbstractHorseEntity extends AnimalEntity implements Class1
    private static final Class120 field5881 = Class120.method339(
       Items.field37842,
       Items.field37936,
-      Blocks.field36777.asItem(),
+      Blocks.HAY_BLOCK.asItem(),
       Items.APPLE,
       Items.field38057,
       Items.GOLDEN_APPLE,
@@ -398,7 +398,7 @@ public abstract class AbstractHorseEntity extends AnimalEntity implements Class1
       Item var9 = var2.getItem();
       if (var9 != Items.field37842) {
          if (var9 != Items.field37936) {
-            if (var9 != Blocks.field36777.asItem()) {
+            if (var9 != Blocks.HAY_BLOCK.asItem()) {
                if (var9 != Items.APPLE) {
                   if (var9 != Items.field38057) {
                      if (var9 == Items.GOLDEN_APPLE || var9 == Items.ENCHANTED_GOLDEN_APPLE) {

@@ -30,10 +30,10 @@ public class BlockColors {
          (var0, var1, var2x, var3) -> var1 != null && var2x != null
                ? BiomeColors.getGrassColor(var1, var0.get(Class3456.field19276) != DoubleBlockHalf.field209 ? var2x : var2x.down())
                : -1,
-         Blocks.field36802,
+         Blocks.LARGE_FERN,
          Blocks.TALL_GRASS
       );
-      var2.method29468(Class3456.field19276, Blocks.field36802, Blocks.TALL_GRASS);
+      var2.method29468(Class3456.field19276, Blocks.LARGE_FERN, Blocks.TALL_GRASS);
       var2.method29466(
          (var0, var1, var2x, var3) -> var1 != null && var2x != null ? BiomeColors.getGrassColor(var1, var2x) : GrassColors.get(0.5, 1.0),
          Blocks.GRASS_BLOCK,

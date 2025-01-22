@@ -45,7 +45,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Blocks.RAIL).method18299(20).method18296(Class140.method420(Class6872.method20921(4.0F, 8.0F))))
                   .method18291(Class4695.method14724(Blocks.POWERED_RAIL).method18299(5).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Blocks.DETECTOR_RAIL).method18299(5).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
-                  .method18291(Class4695.method14724(Blocks.field36728).method18299(5).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
+                  .method18291(Class4695.method14724(Blocks.ACTIVATOR_RAIL).method18299(5).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Blocks.TORCH).method18299(15).method18296(Class140.method420(Class6872.method20921(1.0F, 16.0F))))
             )
       );
@@ -857,7 +857,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Blocks.STONE_BRICKS).method18299(2))
                   .method18291(Class4695.method14724(Items.field37843).method18299(4).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37922).method18299(1))
-                  .method18291(Class4695.method14724(Blocks.field36858).method18299(1))
+                  .method18291(Class4695.method14724(Blocks.SMOOTH_STONE).method18299(1))
                   .method18291(Class4695.method14724(Items.EMERALD).method18299(1))
             )
       );

@@ -72,45 +72,45 @@ public class TileEntityType<T extends TileEntity> {
          Blocks.PLAYER_WALL_HEAD
       )
    );
-   public static final TileEntityType<Class961> field21436 = method13794("daylight_detector", Class9785.<Class961>method38569(Class961::new, Blocks.field36720));
+   public static final TileEntityType<Class961> field21436 = method13794("daylight_detector", Class9785.<Class961>method38569(Class961::new, Blocks.DAYLIGHT_DETECTOR));
    public static final TileEntityType<Class936> field21437 = method13794("hopper", Class9785.<Class936>method38569(Class936::new, Blocks.HOPPER));
    public static final TileEntityType<Class963> field21438 = method13794("comparator", Class9785.<Class963>method38569(Class963::new, Blocks.COMPARATOR));
    public static final TileEntityType<BannerTileEntity> field21439 = method13794(
       "banner",
       Class9785.<BannerTileEntity>method38569(
          BannerTileEntity::new,
-         Blocks.field36803,
-         Blocks.field36804,
-         Blocks.field36805,
-         Blocks.field36806,
-         Blocks.field36807,
-         Blocks.field36808,
-         Blocks.field36809,
-         Blocks.field36810,
-         Blocks.field36811,
-         Blocks.field36812,
-         Blocks.field36813,
-         Blocks.field36814,
-         Blocks.field36815,
-         Blocks.field36816,
-         Blocks.field36817,
-         Blocks.field36818,
-         Blocks.field36819,
-         Blocks.field36820,
-         Blocks.field36821,
-         Blocks.field36822,
-         Blocks.field36823,
-         Blocks.field36824,
-         Blocks.field36825,
-         Blocks.field36826,
-         Blocks.field36827,
-         Blocks.field36828,
-         Blocks.field36829,
-         Blocks.field36830,
-         Blocks.field36831,
-         Blocks.field36832,
-         Blocks.field36833,
-         Blocks.field36834
+         Blocks.WHITE_BANNER,
+         Blocks.ORANGE_BANNER,
+         Blocks.MAGENTA_BANNER,
+         Blocks.LIGHT_BLUE_BANNER,
+         Blocks.YELLOW_BANNER,
+         Blocks.LIME_BANNER,
+         Blocks.PINK_BANNER,
+         Blocks.GRAY_BANNER,
+         Blocks.LIGHT_GRAY_BANNER,
+         Blocks.CYAN_BANNER,
+         Blocks.PURPLE_BANNER,
+         Blocks.BLUE_BANNER,
+         Blocks.BROWN_BANNER,
+         Blocks.GREEN_BANNER,
+         Blocks.RED_BANNER,
+         Blocks.BLACK_BANNER,
+         Blocks.WHITE_WALL_BANNER,
+         Blocks.ORANGE_WALL_BANNER,
+         Blocks.MAGENTA_WALL_BANNER,
+         Blocks.LIGHT_BLUE_WALL_BANNER,
+         Blocks.YELLOW_WALL_BANNER,
+         Blocks.LIME_WALL_BANNER,
+         Blocks.PINK_WALL_BANNER,
+         Blocks.GRAY_WALL_BANNER,
+         Blocks.LIGHT_GRAY_WALL_BANNER,
+         Blocks.CYAN_WALL_BANNER,
+         Blocks.PURPLE_WALL_BANNER,
+         Blocks.BLUE_WALL_BANNER,
+         Blocks.BROWN_WALL_BANNER,
+         Blocks.GREEN_WALL_BANNER,
+         Blocks.RED_WALL_BANNER,
+         Blocks.BLACK_WALL_BANNER
       )
    );
    public static final TileEntityType<Class964> field21440 = method13794("structure_block", Class9785.<Class964>method38569(Class964::new, Blocks.STRUCTURE_BLOCK));

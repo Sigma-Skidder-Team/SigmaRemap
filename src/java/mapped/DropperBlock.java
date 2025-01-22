@@ -9,11 +9,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class3358 extends DispenserBlock {
+public class DropperBlock extends DispenserBlock {
    private static String[] field18902;
    private static final IDispenseItemBehavior field18903 = new Class6218();
 
-   public Class3358(Properties var1) {
+   public DropperBlock(Properties var1) {
       super(var1);
    }
 

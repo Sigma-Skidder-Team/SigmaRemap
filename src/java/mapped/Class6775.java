@@ -11,9 +11,9 @@ import net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig;
 import java.util.Random;
 
 public class Class6775 extends Class6773 {
-   private static final BlockState field29495 = Blocks.field36730.getDefaultState();
-   private static final BlockState field29549 = Blocks.field36731.getDefaultState();
-   private static final BlockState field29550 = Blocks.field36794.getDefaultState();
+   private static final BlockState field29495 = Blocks.WHITE_TERRACOTTA.getDefaultState();
+   private static final BlockState field29549 = Blocks.ORANGE_TERRACOTTA.getDefaultState();
+   private static final BlockState field29550 = Blocks.TERRACOTTA.getDefaultState();
 
    public Class6775(Codec<Class8278> var1) {
       super(var1);

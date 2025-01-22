@@ -14,11 +14,11 @@ import net.minecraft.world.ISeedReader;
 import java.util.Set;
 
 public abstract class Class4213 extends Class4178 {
-   public static final BlockState field20528 = Blocks.field36767.getDefaultState();
-   public static final BlockState field20529 = Blocks.field36768.getDefaultState();
-   public static final BlockState field20530 = Blocks.field36769.getDefaultState();
+   public static final BlockState field20528 = Blocks.PRISMARINE.getDefaultState();
+   public static final BlockState field20529 = Blocks.PRISMARINE_BRICKS.getDefaultState();
+   public static final BlockState field20530 = Blocks.DARK_PRISMARINE.getDefaultState();
    public static final BlockState field20531 = field20529;
-   public static final BlockState field20532 = Blocks.field36776.getDefaultState();
+   public static final BlockState field20532 = Blocks.SEA_LANTERN.getDefaultState();
    public static final BlockState field20533 = Blocks.WATER.getDefaultState();
    public static final Set<Block> field20534 = ImmutableSet.<Block>builder()
       .add(Blocks.ICE)

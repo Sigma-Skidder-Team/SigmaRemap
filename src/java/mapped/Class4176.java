@@ -44,8 +44,8 @@ public class Class4176 extends Class4167 {
       BlockState var10 = Blocks.NETHER_BRICK_STAIRS.getDefaultState().with(StairsBlock.FACING, Direction.SOUTH);
       BlockState var11 = Blocks.NETHER_BRICK_FENCE
          .getDefaultState()
-         .with(Class3239.field18680, Boolean.valueOf(true))
-         .with(Class3239.field18682, Boolean.valueOf(true));
+         .with(FenceBlock.field18680, Boolean.valueOf(true))
+         .with(FenceBlock.field18682, Boolean.valueOf(true));
 
       for (int var12 = 0; var12 <= 9; var12++) {
          int var13 = Math.max(1, 7 - var12);

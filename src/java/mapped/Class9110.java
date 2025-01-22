@@ -123,7 +123,7 @@ public class Class9110 {
       if (field41868.world.getBlockState(this.method33979()).getBlock() == Blocks.LAVA) {
          return false;
       } else if (field41868.world.getBlockState(this.method33979()).getFluidState().isEmpty()) {
-         return field41868.world.getBlockState(this.method33979().down()).getBlock() instanceof Class3239
+         return field41868.world.getBlockState(this.method33979().down()).getBlock() instanceof FenceBlock
             ? false
             : this.method33988(this.method33979()) && this.method33988(this.method33979().up());
       } else {

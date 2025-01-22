@@ -27,11 +27,11 @@ public class Class7091 extends Class7092 {
       var0.put(Blocks.field37020, Blocks.field37142);
       var0.put(Blocks.STONE_BRICK_STAIRS, Blocks.field37139);
       var0.put(Blocks.field37016, Blocks.field37139);
-      var0.put(Blocks.field36850, Blocks.field37133);
+      var0.put(Blocks.COBBLESTONE_SLAB, Blocks.field37133);
       var0.put(Blocks.field37032, Blocks.field37133);
-      var0.put(Blocks.field36846, Blocks.field37143);
-      var0.put(Blocks.field36845, Blocks.field37143);
-      var0.put(Blocks.field36852, Blocks.field37138);
+      var0.put(Blocks.SMOOTH_STONE_SLAB, Blocks.field37143);
+      var0.put(Blocks.STONE_SLAB, Blocks.field37143);
+      var0.put(Blocks.STONE_BRICK_SLAB, Blocks.field37138);
       var0.put(Blocks.field37030, Blocks.field37138);
       var0.put(Blocks.field37046, Blocks.field37140);
       var0.put(Blocks.field37044, Blocks.field37140);

@@ -75,7 +75,7 @@ public enum NoteBlockInstrument implements IStringSerializable {
                   if (var0.isIn(Blocks.PUMPKIN)) {
                      return field359;
                   } else if (!var0.isIn(Blocks.EMERALD_BLOCK)) {
-                     if (var0.isIn(Blocks.field36777)) {
+                     if (var0.isIn(Blocks.HAY_BLOCK)) {
                         return field361;
                      } else if (!var0.isIn(Blocks.GLOWSTONE)) {
                         Material var3 = var0.getMaterial();

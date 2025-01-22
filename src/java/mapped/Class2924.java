@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class Class2924 extends Class2898<Class4712> {
    private static final Class166 field17998 = Class166.method497(Blocks.SAND);
-   private final BlockState field17999 = Blocks.field36847.getDefaultState();
+   private final BlockState field17999 = Blocks.SANDSTONE_SLAB.getDefaultState();
    private final BlockState field18000 = Blocks.SANDSTONE.getDefaultState();
    private final BlockState field18001 = Blocks.WATER.getDefaultState();
 

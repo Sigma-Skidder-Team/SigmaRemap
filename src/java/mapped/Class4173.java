@@ -49,12 +49,12 @@ public class Class4173 extends Class4167 {
    public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       BlockState var10 = Blocks.NETHER_BRICK_FENCE
          .getDefaultState()
-         .with(Class3239.field18680, Boolean.valueOf(true))
-         .with(Class3239.field18682, Boolean.valueOf(true));
+         .with(FenceBlock.field18680, Boolean.valueOf(true))
+         .with(FenceBlock.field18682, Boolean.valueOf(true));
       BlockState var11 = Blocks.NETHER_BRICK_FENCE
          .getDefaultState()
-         .with(Class3239.field18683, Boolean.valueOf(true))
-         .with(Class3239.field18681, Boolean.valueOf(true));
+         .with(FenceBlock.field18683, Boolean.valueOf(true))
+         .with(FenceBlock.field18681, Boolean.valueOf(true));
       this.method12927(var1, var5, 0, 0, 0, 8, 1, 8, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
       this.method12927(var1, var5, 0, 2, 0, 8, 5, 8, Blocks.AIR.getDefaultState(), Blocks.AIR.getDefaultState(), false);
       this.method12927(var1, var5, 0, 6, 0, 8, 6, 5, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
@@ -68,7 +68,7 @@ public class Class4173 extends Class4167 {
       this.method12927(var1, var5, 1, 3, 8, 7, 3, 8, var11, var11, false);
       this.method12923(
          var1,
-         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18681, Boolean.valueOf(true)).with(Class3239.field18682, Boolean.valueOf(true)),
+         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(FenceBlock.field18681, Boolean.valueOf(true)).with(FenceBlock.field18682, Boolean.valueOf(true)),
          0,
          3,
          8,
@@ -76,7 +76,7 @@ public class Class4173 extends Class4167 {
       );
       this.method12923(
          var1,
-         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18683, Boolean.valueOf(true)).with(Class3239.field18682, Boolean.valueOf(true)),
+         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(FenceBlock.field18683, Boolean.valueOf(true)).with(FenceBlock.field18682, Boolean.valueOf(true)),
          8,
          3,
          8,

@@ -58,10 +58,10 @@ public class Class4168 extends Class4167 {
 
       BlockState var13 = Blocks.NETHER_BRICK_FENCE
          .getDefaultState()
-         .with(Class3239.field18680, Boolean.valueOf(true))
-         .with(Class3239.field18682, Boolean.valueOf(true));
-      BlockState var14 = var13.with(Class3239.field18681, Boolean.valueOf(true));
-      BlockState var12 = var13.with(Class3239.field18683, Boolean.valueOf(true));
+         .with(FenceBlock.field18680, Boolean.valueOf(true))
+         .with(FenceBlock.field18682, Boolean.valueOf(true));
+      BlockState var14 = var13.with(FenceBlock.field18681, Boolean.valueOf(true));
+      BlockState var12 = var13.with(FenceBlock.field18683, Boolean.valueOf(true));
       this.method12927(var1, var5, 0, 1, 1, 0, 4, 1, var14, var14, false);
       this.method12927(var1, var5, 0, 3, 4, 0, 4, 4, var14, var14, false);
       this.method12927(var1, var5, 0, 3, 14, 0, 4, 14, var14, var14, false);

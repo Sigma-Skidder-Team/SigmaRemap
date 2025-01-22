@@ -125,7 +125,7 @@ public class Class3244 extends BannerBlock implements IWaterLoggable {
    }
 
    private boolean method11651(BlockState var1) {
-      return var1.isIn(Blocks.field36777);
+      return var1.isIn(Blocks.HAY_BLOCK);
    }
 
    @Override

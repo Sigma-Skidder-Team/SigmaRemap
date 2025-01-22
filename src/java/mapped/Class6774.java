@@ -12,9 +12,9 @@ import net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig;
 import java.util.Random;
 
 public class Class6774 extends Class6773 {
-   private static final BlockState field29495 = Blocks.field36730.getDefaultState();
-   private static final BlockState field29549 = Blocks.field36731.getDefaultState();
-   private static final BlockState field29550 = Blocks.field36794.getDefaultState();
+   private static final BlockState field29495 = Blocks.WHITE_TERRACOTTA.getDefaultState();
+   private static final BlockState field29549 = Blocks.ORANGE_TERRACOTTA.getDefaultState();
+   private static final BlockState field29550 = Blocks.TERRACOTTA.getDefaultState();
 
    public Class6774(Codec<Class8278> var1) {
       super(var1);
@@ -100,22 +100,22 @@ public class Class6774 extends Class6773 {
                   if (var39 < var11 - 1) {
                      var2.setBlockState(var38, var27, false);
                      Block var41 = var27.getBlock();
-                     if (var41 == Blocks.field36730
-                        || var41 == Blocks.field36731
-                        || var41 == Blocks.field36732
-                        || var41 == Blocks.field36733
-                        || var41 == Blocks.field36734
-                        || var41 == Blocks.field36735
-                        || var41 == Blocks.field36736
-                        || var41 == Blocks.field36737
-                        || var41 == Blocks.field36738
-                        || var41 == Blocks.field36739
-                        || var41 == Blocks.field36740
-                        || var41 == Blocks.field36741
-                        || var41 == Blocks.field36742
-                        || var41 == Blocks.field36743
-                        || var41 == Blocks.field36744
-                        || var41 == Blocks.field36745) {
+                     if (var41 == Blocks.WHITE_TERRACOTTA
+                        || var41 == Blocks.ORANGE_TERRACOTTA
+                        || var41 == Blocks.MAGENTA_TERRACOTTA
+                        || var41 == Blocks.LIGHT_BLUE_TERRACOTTA
+                        || var41 == Blocks.YELLOW_TERRACOTTA
+                        || var41 == Blocks.LIME_TERRACOTTA
+                        || var41 == Blocks.PINK_TERRACOTTA
+                        || var41 == Blocks.GRAY_TERRACOTTA
+                        || var41 == Blocks.LIGHT_GRAY_TERRACOTTA
+                        || var41 == Blocks.CYAN_TERRACOTTA
+                        || var41 == Blocks.PURPLE_TERRACOTTA
+                        || var41 == Blocks.BLUE_TERRACOTTA
+                        || var41 == Blocks.BROWN_TERRACOTTA
+                        || var41 == Blocks.GREEN_TERRACOTTA
+                        || var41 == Blocks.RED_TERRACOTTA
+                        || var41 == Blocks.BLACK_TERRACOTTA) {
                         var2.setBlockState(var38, field29549, false);
                      }
                   } else if (var39 > var11 + 3 + var28) {

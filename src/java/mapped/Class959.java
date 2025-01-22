@@ -25,7 +25,7 @@ import java.util.Random;
 import java.util.UUID;
 
 public class Class959 extends TileEntity implements ITickableTileEntity {
-   private static final Block[] field5381 = new Block[]{Blocks.field36767, Blocks.field36768, Blocks.field36776, Blocks.field36769};
+   private static final Block[] field5381 = new Block[]{Blocks.PRISMARINE, Blocks.PRISMARINE_BRICKS, Blocks.SEA_LANTERN, Blocks.DARK_PRISMARINE};
    public int field5382;
    private float field5383;
    private boolean field5384;

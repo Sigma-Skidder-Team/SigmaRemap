@@ -153,7 +153,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
    }
 
    public ItemStack method3893(BlockState var1) {
-      ItemStack var4 = new ItemStack(Class3360.method11937(this.method3894(() -> var1)));
+      ItemStack var4 = new ItemStack(BannerBlock.method11937(this.method3894(() -> var1)));
       if (this.field5378 != null && !this.field5378.isEmpty()) {
          var4.method32144("BlockEntityTag").put("Patterns", this.field5378.copy());
       }

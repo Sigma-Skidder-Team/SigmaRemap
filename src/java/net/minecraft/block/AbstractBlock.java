@@ -324,7 +324,7 @@ public abstract class AbstractBlock {
 
    public abstract Block method11584();
 
-   public MaterialColor method12000() {
+   public MaterialColor getColor() {
       return (MaterialColor) Properties.method26653(this.field19013).apply(this.method11584().getDefaultState());
    }
 

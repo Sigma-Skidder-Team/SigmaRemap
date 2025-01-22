@@ -15,10 +15,10 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3393 extends Class3392 {
+public class ChorusPlantBlock extends Class3392 {
    private static String[] field19027;
 
-   public Class3393(Properties var1) {
+   public ChorusPlantBlock(Properties var1) {
       super(0.3125F, var1);
       this.setDefaultState(
          this.stateContainer
@@ -45,12 +45,12 @@ public class Class3393 extends Class3392 {
       Block var9 = var1.getBlockState(var2.south()).getBlock();
       Block var10 = var1.getBlockState(var2.west()).getBlock();
       return this.getDefaultState()
-         .with(field19024, Boolean.valueOf(var5 == this || var5 == Blocks.field36879 || var5 == Blocks.END_STONE))
-         .with(field19023, Boolean.valueOf(var6 == this || var6 == Blocks.field36879))
-         .with(field19019, Boolean.valueOf(var7 == this || var7 == Blocks.field36879))
-         .with(field19020, Boolean.valueOf(var8 == this || var8 == Blocks.field36879))
-         .with(field19021, Boolean.valueOf(var9 == this || var9 == Blocks.field36879))
-         .with(field19022, Boolean.valueOf(var10 == this || var10 == Blocks.field36879));
+         .with(field19024, Boolean.valueOf(var5 == this || var5 == Blocks.CHORUS_FLOWER || var5 == Blocks.END_STONE))
+         .with(field19023, Boolean.valueOf(var6 == this || var6 == Blocks.CHORUS_FLOWER))
+         .with(field19019, Boolean.valueOf(var7 == this || var7 == Blocks.CHORUS_FLOWER))
+         .with(field19020, Boolean.valueOf(var8 == this || var8 == Blocks.CHORUS_FLOWER))
+         .with(field19021, Boolean.valueOf(var9 == this || var9 == Blocks.CHORUS_FLOWER))
+         .with(field19022, Boolean.valueOf(var10 == this || var10 == Blocks.CHORUS_FLOWER));
    }
 
    @Override
@@ -60,7 +60,7 @@ public class Class3393 extends Class3392 {
          return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
       } else {
          boolean var9 = var3.getBlock() == this
-            || var3.isIn(Blocks.field36879)
+            || var3.isIn(Blocks.CHORUS_FLOWER)
             || var2 == Direction.DOWN && var3.isIn(Blocks.END_STONE);
          return var1.with(field19025.get(var2), Boolean.valueOf(var9));
       }

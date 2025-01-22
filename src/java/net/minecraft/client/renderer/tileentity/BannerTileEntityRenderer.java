@@ -41,15 +41,15 @@ public class BannerTileEntityRenderer extends Class5942<BannerTileEntity> {
          if (!var11) {
             var12 = var1.method3734().getGameTime();
             BlockState var14 = var1.getBlockState();
-            if (!(var14.getBlock() instanceof Class3360)) {
+            if (!(var14.getBlock() instanceof BannerBlock)) {
                var3.translate(0.5, -0.16666667F, 0.5);
-               float var15 = -var14.<Direction>get(Class3361.field18910).getHorizontalAngle();
+               float var15 = -var14.<Direction>get(WallBanner.field18910).getHorizontalAngle();
                var3.rotate(Vector3f.YP.rotationDegrees(var15));
                var3.translate(0.0, -0.3125, -0.4375);
                this.field25942.showModel = false;
             } else {
                var3.translate(0.5, 0.5, 0.5);
-               float var18 = (float)(-var14.<Integer>get(Class3360.field18906) * 360) / 16.0F;
+               float var18 = (float)(-var14.<Integer>get(BannerBlock.field18906) * 360) / 16.0F;
                var3.rotate(Vector3f.YP.rotationDegrees(var18));
                this.field25942.showModel = true;
             }

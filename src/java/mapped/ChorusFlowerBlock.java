@@ -17,12 +17,12 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3211 extends Block {
+public class ChorusFlowerBlock extends Block {
    private static String[] field18618;
    public static final IntegerProperty field18619 = BlockStateProperties.AGE4;
-   private final Class3393 field18620;
+   private final ChorusPlantBlock field18620;
 
-   public Class3211(Class3393 var1, Properties var2) {
+   public ChorusFlowerBlock(ChorusPlantBlock var1, Properties var2) {
       super(var2);
       this.field18620 = var1;
       this.setDefaultState(this.stateContainer.getBaseState().with(field18619, Integer.valueOf(0)));
@@ -174,12 +174,12 @@ public class Class3211 extends Block {
    }
 
    public static void method11593(IWorld var0, BlockPos var1, Random var2, int var3) {
-      var0.setBlockState(var1, ((Class3393) Blocks.field36878).method12004(var0, var1), 2);
+      var0.setBlockState(var1, ((ChorusPlantBlock) Blocks.CHORUS_PLANT).method12004(var0, var1), 2);
       method11594(var0, var1, var2, var1, var3, 0);
    }
 
    private static void method11594(IWorld var0, BlockPos var1, Random var2, BlockPos var3, int var4, int var5) {
-      Class3393 var8 = (Class3393) Blocks.field36878;
+      ChorusPlantBlock var8 = (ChorusPlantBlock) Blocks.CHORUS_PLANT;
       int var9 = var2.nextInt(4) + 1;
       if (var5 == 0) {
          var9++;
@@ -219,7 +219,7 @@ public class Class3211 extends Block {
       }
 
       if (!var15) {
-         var0.setBlockState(var1.up(var9), Blocks.field36879.getDefaultState().with(field18619, Integer.valueOf(5)), 2);
+         var0.setBlockState(var1.up(var9), Blocks.CHORUS_FLOWER.getDefaultState().with(field18619, Integer.valueOf(5)), 2);
       }
    }
 

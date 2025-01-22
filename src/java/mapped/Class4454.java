@@ -80,11 +80,11 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32740)
          .method31560(
             Blocks.OAK_DOOR,
-            Blocks.field36872,
-            Blocks.field36873,
-            Blocks.field36874,
-            Blocks.field36875,
-            Blocks.field36876,
+            Blocks.SPRUCE_DOOR,
+            Blocks.BIRCH_DOOR,
+            Blocks.JUNGLE_DOOR,
+            Blocks.ACACIA_DOOR,
+            Blocks.DARK_OAK_DOOR,
             Blocks.CRIMSON_DOOR,
             Blocks.WARPED_DOOR
          );
@@ -94,30 +94,30 @@ public class Class4454 extends Class4441<Block> {
             Blocks.SPRUCE_STAIRS,
             Blocks.BIRCH_STAIRS,
             Blocks.JUNGLE_STAIRS,
-            Blocks.field36762,
-            Blocks.field36763,
+            Blocks.ACACIA_STAIRS,
+            Blocks.DARK_OAK_STAIRS,
             Blocks.CRIMSON_STAIRS,
             Blocks.WARPED_STAIRS
          );
       this.method14014(BlockTags.field32742)
          .method31560(
-            Blocks.field36839,
-            Blocks.field36840,
-            Blocks.field36841,
-            Blocks.field36842,
-            Blocks.field36843,
-            Blocks.field36844,
+            Blocks.OAK_SLAB,
+            Blocks.SPRUCE_SLAB,
+            Blocks.BIRCH_SLAB,
+            Blocks.JUNGLE_SLAB,
+            Blocks.ACACIA_SLAB,
+            Blocks.DARK_OAK_SLAB,
             Blocks.CRIMSON_SLAB,
             Blocks.WARPED_SLAB
          );
       this.method14014(BlockTags.field32743)
          .method31560(
             Blocks.OAK_FENCE,
-            Blocks.field36870,
-            Blocks.field36871,
-            Blocks.field36867,
-            Blocks.field36868,
-            Blocks.field36869,
+            Blocks.ACACIA_FENCE,
+            Blocks.DARK_OAK_FENCE,
+            Blocks.SPRUCE_FENCE,
+            Blocks.BIRCH_FENCE,
+            Blocks.JUNGLE_FENCE,
             Blocks.CRIMSON_FENCE,
             Blocks.WARPED_FENCE
          );
@@ -218,38 +218,38 @@ public class Class4454 extends Class4441<Block> {
          );
       this.method14014(BlockTags.field32760)
          .method31560(
-            Blocks.field36803,
-            Blocks.field36804,
-            Blocks.field36805,
-            Blocks.field36806,
-            Blocks.field36807,
-            Blocks.field36808,
-            Blocks.field36809,
-            Blocks.field36810,
-            Blocks.field36811,
-            Blocks.field36812,
-            Blocks.field36813,
-            Blocks.field36814,
-            Blocks.field36815,
-            Blocks.field36816,
-            Blocks.field36817,
-            Blocks.field36818,
-            Blocks.field36819,
-            Blocks.field36820,
-            Blocks.field36821,
-            Blocks.field36822,
-            Blocks.field36823,
-            Blocks.field36824,
-            Blocks.field36825,
-            Blocks.field36826,
-            Blocks.field36827,
-            Blocks.field36828,
-            Blocks.field36829,
-            Blocks.field36830,
-            Blocks.field36831,
-            Blocks.field36832,
-            Blocks.field36833,
-            Blocks.field36834
+            Blocks.WHITE_BANNER,
+            Blocks.ORANGE_BANNER,
+            Blocks.MAGENTA_BANNER,
+            Blocks.LIGHT_BLUE_BANNER,
+            Blocks.YELLOW_BANNER,
+            Blocks.LIME_BANNER,
+            Blocks.PINK_BANNER,
+            Blocks.GRAY_BANNER,
+            Blocks.LIGHT_GRAY_BANNER,
+            Blocks.CYAN_BANNER,
+            Blocks.PURPLE_BANNER,
+            Blocks.BLUE_BANNER,
+            Blocks.BROWN_BANNER,
+            Blocks.GREEN_BANNER,
+            Blocks.RED_BANNER,
+            Blocks.BLACK_BANNER,
+            Blocks.WHITE_WALL_BANNER,
+            Blocks.ORANGE_WALL_BANNER,
+            Blocks.MAGENTA_WALL_BANNER,
+            Blocks.LIGHT_BLUE_WALL_BANNER,
+            Blocks.YELLOW_WALL_BANNER,
+            Blocks.LIME_WALL_BANNER,
+            Blocks.PINK_WALL_BANNER,
+            Blocks.GRAY_WALL_BANNER,
+            Blocks.LIGHT_GRAY_WALL_BANNER,
+            Blocks.CYAN_WALL_BANNER,
+            Blocks.PURPLE_WALL_BANNER,
+            Blocks.BLUE_WALL_BANNER,
+            Blocks.BROWN_WALL_BANNER,
+            Blocks.GREEN_WALL_BANNER,
+            Blocks.RED_WALL_BANNER,
+            Blocks.BLACK_WALL_BANNER
          );
       this.method14014(BlockTags.field32745)
          .method31560(
@@ -275,12 +275,12 @@ public class Class4454 extends Class4441<Block> {
             Blocks.NETHER_BRICK_STAIRS,
             Blocks.STONE_BRICK_STAIRS,
             Blocks.BRICK_STAIRS,
-            Blocks.field36882,
-            Blocks.field36727,
-            Blocks.field36838,
-            Blocks.field36771,
-            Blocks.field36770,
-            Blocks.field36772,
+            Blocks.PURPUR_STAIRS,
+            Blocks.QUARTZ_STAIRS,
+            Blocks.RED_SANDSTONE_STAIRS,
+            Blocks.PRISMARINE_BRICK_STAIRS,
+            Blocks.PRISMARINE_STAIRS,
+            Blocks.DARK_PRISMARINE_STAIRS,
             Blocks.field37014,
             Blocks.field37015,
             Blocks.field37016,
@@ -302,20 +302,20 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32763)
          .method31559(BlockTags.field32742)
          .method31560(
-            Blocks.field36845,
-            Blocks.field36846,
-            Blocks.field36852,
-            Blocks.field36847,
-            Blocks.field36857,
-            Blocks.field36854,
-            Blocks.field36855,
-            Blocks.field36851,
-            Blocks.field36850,
-            Blocks.field36853,
-            Blocks.field36849,
-            Blocks.field36773,
-            Blocks.field36774,
-            Blocks.field36775,
+            Blocks.STONE_SLAB,
+            Blocks.SMOOTH_STONE_SLAB,
+            Blocks.STONE_BRICK_SLAB,
+            Blocks.SANDSTONE_SLAB,
+            Blocks.PURPUR_SLAB,
+            Blocks.QUARTZ_SLAB,
+            Blocks.RED_SANDSTONE_SLAB,
+            Blocks.BRICK_SLAB,
+            Blocks.COBBLESTONE_SLAB,
+            Blocks.NETHER_BRICK_SLAB,
+            Blocks.PETRIFIED_OAK_SLAB,
+            Blocks.PRISMARINE_SLAB,
+            Blocks.PRISMARINE_BRICK_SLAB,
+            Blocks.DARK_PRISMARINE_SLAB,
             Blocks.field37028,
             Blocks.field37029,
             Blocks.field37030,
@@ -329,8 +329,8 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field37038,
             Blocks.field37039,
             Blocks.field37040,
-            Blocks.field36848,
-            Blocks.field36856,
+            Blocks.CUT_SANDSTONE_SLAB,
+            Blocks.CUT_RED_SANDSTONE_SLAB,
             Blocks.field37133,
             Blocks.field37138,
             Blocks.field37143
@@ -363,7 +363,7 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32784)
          .method31560(Blocks.field37000, Blocks.field37001, Blocks.field37002, Blocks.field37003, Blocks.field37004);
       this.method14014(BlockTags.field32761).method31560(Blocks.SAND, Blocks.RED_SAND);
-      this.method14014(BlockTags.field32766).method31560(Blocks.RAIL, Blocks.POWERED_RAIL, Blocks.DETECTOR_RAIL, Blocks.field36728);
+      this.method14014(BlockTags.field32766).method31560(Blocks.RAIL, Blocks.POWERED_RAIL, Blocks.DETECTOR_RAIL, Blocks.ACTIVATOR_RAIL);
       this.method14014(BlockTags.field32783)
          .method31560(Blocks.field36970, Blocks.field36971, Blocks.field36972, Blocks.field36973, Blocks.field36974);
       this.method14014(BlockTags.field32779).method31560(Blocks.ICE, Blocks.PACKED_ICE, Blocks.field37006, Blocks.field36889);
@@ -401,7 +401,7 @@ public class Class4454 extends Class4441<Block> {
             Blocks.CRIMSON_TRAPDOOR,
             Blocks.WARPED_TRAPDOOR
          );
-      this.method14014(BlockTags.field32768).method31559(BlockTags.field32747).method31558(Blocks.field36766);
+      this.method14014(BlockTags.field32768).method31559(BlockTags.field32747).method31558(Blocks.IRON_TRAPDOOR);
       this.method14014(BlockTags.field32782).method31558(Blocks.SEAGRASS).method31559(BlockTags.field32786).method31559(BlockTags.field32784);
       this.method14014(BlockTags.field32787)
          .method31559(BlockTags.field32761)
@@ -492,7 +492,7 @@ public class Class4454 extends Class4441<Block> {
             Blocks.MOVING_PISTON
          );
       this.method14014(BlockTags.field32793).method31560(Blocks.SOUL_SAND, Blocks.SOUL_SOIL);
-      this.method14014(BlockTags.field32772).method31560(Blocks.SUNFLOWER, Blocks.LILAC, Blocks.field36800, Blocks.ROSE_BUSH);
+      this.method14014(BlockTags.field32772).method31560(Blocks.SUNFLOWER, Blocks.LILAC, Blocks.PEONY, Blocks.ROSE_BUSH);
       this.method14014(BlockTags.field32773).method31559(BlockTags.field32769).method31559(BlockTags.field32772);
       this.method14014(BlockTags.field32794).method31560(Blocks.BEE_NEST, Blocks.BEEHIVE);
       this.method14014(BlockTags.field32795)
@@ -595,12 +595,12 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32811).method31559(BlockTags.field32766);
       this.method14014(BlockTags.field32812)
          .method31560(
-            Blocks.field36865,
-            Blocks.field36863,
-            Blocks.field36866,
-            Blocks.field36864,
+            Blocks.ACACIA_FENCE_GATE,
+            Blocks.BIRCH_FENCE_GATE,
+            Blocks.DARK_OAK_FENCE_GATE,
+            Blocks.JUNGLE_FENCE_GATE,
             Blocks.OAK_FENCE_GATE,
-            Blocks.field36862,
+            Blocks.SPRUCE_FENCE_GATE,
             Blocks.CRIMSON_FENCE_GATE,
             Blocks.WARPED_FENCE_GATE
          );

@@ -103,7 +103,7 @@ public class Class6771 extends SurfaceBuilder<Class8278> {
                      var2.setBlockState(var21, var30, false);
                      if (var33 == 0 && var30.isIn(Blocks.SAND) && var32 > 1) {
                         var33 = var1.nextInt(4) + Math.max(0, var37 - 63);
-                        var30 = !var30.isIn(Blocks.RED_SAND) ? Blocks.SANDSTONE.getDefaultState() : Blocks.field36835.getDefaultState();
+                        var30 = !var30.isIn(Blocks.RED_SAND) ? Blocks.SANDSTONE.getDefaultState() : Blocks.RED_SANDSTONE.getDefaultState();
                      }
                   }
                } else {

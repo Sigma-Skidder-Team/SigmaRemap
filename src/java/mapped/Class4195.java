@@ -73,21 +73,21 @@ public class Class4195 extends Class4194 {
       this.method12984(var1, var4, var5, Class2213.field14470, 1, 1, 4);
       this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 2, 6, 1, var5);
       this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 1, 5, 1, var5);
-      this.method12923(var1, Blocks.field36846.getDefaultState(), 1, 6, 1, var5);
+      this.method12923(var1, Blocks.SMOOTH_STONE_SLAB.getDefaultState(), 1, 6, 1, var5);
       this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 1, 5, 2, var5);
       this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 1, 4, 3, var5);
-      this.method12923(var1, Blocks.field36846.getDefaultState(), 1, 5, 3, var5);
+      this.method12923(var1, Blocks.SMOOTH_STONE_SLAB.getDefaultState(), 1, 5, 3, var5);
       this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 2, 4, 3, var5);
       this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 3, 3, 3, var5);
-      this.method12923(var1, Blocks.field36846.getDefaultState(), 3, 4, 3, var5);
+      this.method12923(var1, Blocks.SMOOTH_STONE_SLAB.getDefaultState(), 3, 4, 3, var5);
       this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 3, 3, 2, var5);
       this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 3, 2, 1, var5);
-      this.method12923(var1, Blocks.field36846.getDefaultState(), 3, 3, 1, var5);
+      this.method12923(var1, Blocks.SMOOTH_STONE_SLAB.getDefaultState(), 3, 3, 1, var5);
       this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 2, 2, 1, var5);
       this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 1, 1, 1, var5);
-      this.method12923(var1, Blocks.field36846.getDefaultState(), 1, 2, 1, var5);
+      this.method12923(var1, Blocks.SMOOTH_STONE_SLAB.getDefaultState(), 1, 2, 1, var5);
       this.method12923(var1, Blocks.STONE_BRICKS.getDefaultState(), 1, 1, 2, var5);
-      this.method12923(var1, Blocks.field36846.getDefaultState(), 1, 1, 3, var5);
+      this.method12923(var1, Blocks.SMOOTH_STONE_SLAB.getDefaultState(), 1, 1, 3, var5);
       return true;
    }
 }

@@ -307,7 +307,7 @@ public abstract class AbstractMinecartEntity extends Entity {
             this.method3590();
          } else {
             this.method3591(var6, var7);
-            if (var7.isIn(Blocks.field36728)) {
+            if (var7.isIn(Blocks.ACTIVATOR_RAIL)) {
                this.method3589(var3, var4, var5, var7.<Boolean>get(Class3432.field19197));
             }
          }

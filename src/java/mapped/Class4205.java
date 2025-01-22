@@ -65,14 +65,14 @@ public class Class4205 extends Class4194 {
             this.method12923(var1, Blocks.WALL_TORCH.getDefaultState().with(Class3382.field18985, Direction.EAST), 6, 3, 5, var5);
             this.method12923(var1, Blocks.WALL_TORCH.getDefaultState().with(Class3382.field18985, Direction.SOUTH), 5, 3, 4, var5);
             this.method12923(var1, Blocks.WALL_TORCH.getDefaultState().with(Class3382.field18985, Direction.NORTH), 5, 3, 6, var5);
-            this.method12923(var1, Blocks.field36846.getDefaultState(), 4, 1, 4, var5);
-            this.method12923(var1, Blocks.field36846.getDefaultState(), 4, 1, 5, var5);
-            this.method12923(var1, Blocks.field36846.getDefaultState(), 4, 1, 6, var5);
-            this.method12923(var1, Blocks.field36846.getDefaultState(), 6, 1, 4, var5);
-            this.method12923(var1, Blocks.field36846.getDefaultState(), 6, 1, 5, var5);
-            this.method12923(var1, Blocks.field36846.getDefaultState(), 6, 1, 6, var5);
-            this.method12923(var1, Blocks.field36846.getDefaultState(), 5, 1, 4, var5);
-            this.method12923(var1, Blocks.field36846.getDefaultState(), 5, 1, 6, var5);
+            this.method12923(var1, Blocks.SMOOTH_STONE_SLAB.getDefaultState(), 4, 1, 4, var5);
+            this.method12923(var1, Blocks.SMOOTH_STONE_SLAB.getDefaultState(), 4, 1, 5, var5);
+            this.method12923(var1, Blocks.SMOOTH_STONE_SLAB.getDefaultState(), 4, 1, 6, var5);
+            this.method12923(var1, Blocks.SMOOTH_STONE_SLAB.getDefaultState(), 6, 1, 4, var5);
+            this.method12923(var1, Blocks.SMOOTH_STONE_SLAB.getDefaultState(), 6, 1, 5, var5);
+            this.method12923(var1, Blocks.SMOOTH_STONE_SLAB.getDefaultState(), 6, 1, 6, var5);
+            this.method12923(var1, Blocks.SMOOTH_STONE_SLAB.getDefaultState(), 5, 1, 4, var5);
+            this.method12923(var1, Blocks.SMOOTH_STONE_SLAB.getDefaultState(), 5, 1, 6, var5);
             break;
          case 1:
             for (int var15 = 0; var15 < 5; var15++) {

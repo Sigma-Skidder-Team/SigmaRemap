@@ -295,7 +295,7 @@ public class Features {
          .method26514(50)
    );
    public static final ConfiguredFeature<?, ?> field41691 = method33941(
-      "pile_hay", Class2898.field17941.method11216(new Class4710(new Class6701(Blocks.field36777)))
+      "pile_hay", Class2898.field17941.method11216(new Class4710(new Class6701(Blocks.HAY_BLOCK)))
    );
    public static final ConfiguredFeature<?, ?> field41692 = method33941(
       "pile_melon", Class2898.field17941.method11216(new Class4710(new Class6700(Class7700.field33028)))

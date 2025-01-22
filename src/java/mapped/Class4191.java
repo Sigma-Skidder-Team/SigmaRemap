@@ -334,8 +334,8 @@ public class Class4191 extends Class4188 {
       if (this.method12969(var1, var2, var3, var7, var6, var5)) {
          BlockState var11 = this.method12967();
          BlockState var12 = this.method12968();
-         this.method12927(var1, var2, var3, var4, var5, var3, var6 - 1, var5, var12.with(Class3239.field18683, Boolean.valueOf(true)), field20443, false);
-         this.method12927(var1, var2, var7, var4, var5, var7, var6 - 1, var5, var12.with(Class3239.field18681, Boolean.valueOf(true)), field20443, false);
+         this.method12927(var1, var2, var3, var4, var5, var3, var6 - 1, var5, var12.with(FenceBlock.field18683, Boolean.valueOf(true)), field20443, false);
+         this.method12927(var1, var2, var7, var4, var5, var7, var6 - 1, var5, var12.with(FenceBlock.field18681, Boolean.valueOf(true)), field20443, false);
          if (var8.nextInt(4) != 0) {
             this.method12927(var1, var2, var3, var6, var5, var7, var6, var5, var11, field20443, false);
             this.method12930(

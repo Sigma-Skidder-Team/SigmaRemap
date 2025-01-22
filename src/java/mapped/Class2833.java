@@ -81,7 +81,7 @@ public class Class2833 implements Consumer<Consumer<Advancement>> {
    public void accept(Consumer<Advancement> var1) {
       Advancement var4 = Class7999.method27304()
          .method27308(
-            Blocks.field36777,
+            Blocks.HAY_BLOCK,
             new TranslationTextComponent("advancements.husbandry.root.title"),
             new TranslationTextComponent("advancements.husbandry.root.description"),
             new ResourceLocation("textures/gui/advancements/backgrounds/husbandry.png"),

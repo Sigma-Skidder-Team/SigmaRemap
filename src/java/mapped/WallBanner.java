@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 
 import java.util.Map;
 
-public class Class3361 extends Class3359 {
+public class WallBanner extends Class3359 {
    private static String[] field18909;
    public static final DirectionProperty field18910 = HorizontalBlock.HORIZONTAL_FACING;
    private static final Map<Direction, VoxelShape> field18911 = Maps.newEnumMap(
@@ -38,7 +38,7 @@ public class Class3361 extends Class3359 {
       )
    );
 
-   public Class3361(Class112 var1, Properties var2) {
+   public WallBanner(Class112 var1, Properties var2) {
       super(var1, var2);
       this.setDefaultState(this.stateContainer.getBaseState().with(field18910, Direction.NORTH));
    }

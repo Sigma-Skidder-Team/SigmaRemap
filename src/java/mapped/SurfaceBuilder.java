@@ -20,7 +20,7 @@ public abstract class SurfaceBuilder<C extends ISurfaceBuilderConfig> {
    private static final BlockState field29492 = Blocks.COARSE_DIRT.getDefaultState();
    private static final BlockState field29493 = Blocks.SAND.getDefaultState();
    private static final BlockState field29494 = Blocks.RED_SAND.getDefaultState();
-   private static final BlockState field29495 = Blocks.field36730.getDefaultState();
+   private static final BlockState field29495 = Blocks.WHITE_TERRACOTTA.getDefaultState();
    private static final BlockState field29496 = Blocks.MYCELIUM.getDefaultState();
    private static final BlockState field29497 = Blocks.SOUL_SAND.getDefaultState();
    private static final BlockState field29498 = Blocks.NETHERRACK.getDefaultState();

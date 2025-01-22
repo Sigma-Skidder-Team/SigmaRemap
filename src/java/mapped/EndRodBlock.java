@@ -17,13 +17,13 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class3437 extends Class3433 {
+public class EndRodBlock extends Class3433 {
    private static String[] field19233;
    public static final VoxelShape field19234 = Block.makeCuboidShape(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
    public static final VoxelShape field19235 = Block.makeCuboidShape(6.0, 6.0, 0.0, 10.0, 10.0, 16.0);
    public static final VoxelShape field19236 = Block.makeCuboidShape(0.0, 6.0, 6.0, 16.0, 10.0, 10.0);
 
-   public Class3437(Properties var1) {
+   public EndRodBlock(Properties var1) {
       super(var1);
       this.setDefaultState(this.stateContainer.getBaseState().with(field19198, Direction.UP));
    }

@@ -17,13 +17,13 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Class6773 extends SurfaceBuilder<Class8278> {
-   private static final BlockState field29495 = Blocks.field36730.getDefaultState();
-   private static final BlockState field29549 = Blocks.field36731.getDefaultState();
-   private static final BlockState field29550 = Blocks.field36794.getDefaultState();
-   private static final BlockState field29551 = Blocks.field36734.getDefaultState();
-   private static final BlockState field29552 = Blocks.field36742.getDefaultState();
-   private static final BlockState field29553 = Blocks.field36744.getDefaultState();
-   private static final BlockState field29554 = Blocks.field36738.getDefaultState();
+   private static final BlockState field29495 = Blocks.WHITE_TERRACOTTA.getDefaultState();
+   private static final BlockState field29549 = Blocks.ORANGE_TERRACOTTA.getDefaultState();
+   private static final BlockState field29550 = Blocks.TERRACOTTA.getDefaultState();
+   private static final BlockState field29551 = Blocks.YELLOW_TERRACOTTA.getDefaultState();
+   private static final BlockState field29552 = Blocks.BROWN_TERRACOTTA.getDefaultState();
+   private static final BlockState field29553 = Blocks.RED_TERRACOTTA.getDefaultState();
+   private static final BlockState field29554 = Blocks.LIGHT_GRAY_TERRACOTTA.getDefaultState();
    public BlockState[] field29555;
    public long field29556;
    public PerlinNoiseGenerator field29557;
@@ -97,22 +97,22 @@ public class Class6773 extends SurfaceBuilder<Class8278> {
                      if (var30 < var11 - 1) {
                         var2.setBlockState(var29, var23, false);
                         Block var33 = var23.getBlock();
-                        if (var33 == Blocks.field36730
-                           || var33 == Blocks.field36731
-                           || var33 == Blocks.field36732
-                           || var33 == Blocks.field36733
-                           || var33 == Blocks.field36734
-                           || var33 == Blocks.field36735
-                           || var33 == Blocks.field36736
-                           || var33 == Blocks.field36737
-                           || var33 == Blocks.field36738
-                           || var33 == Blocks.field36739
-                           || var33 == Blocks.field36740
-                           || var33 == Blocks.field36741
-                           || var33 == Blocks.field36742
-                           || var33 == Blocks.field36743
-                           || var33 == Blocks.field36744
-                           || var33 == Blocks.field36745) {
+                        if (var33 == Blocks.WHITE_TERRACOTTA
+                           || var33 == Blocks.ORANGE_TERRACOTTA
+                           || var33 == Blocks.MAGENTA_TERRACOTTA
+                           || var33 == Blocks.LIGHT_BLUE_TERRACOTTA
+                           || var33 == Blocks.YELLOW_TERRACOTTA
+                           || var33 == Blocks.LIME_TERRACOTTA
+                           || var33 == Blocks.PINK_TERRACOTTA
+                           || var33 == Blocks.GRAY_TERRACOTTA
+                           || var33 == Blocks.LIGHT_GRAY_TERRACOTTA
+                           || var33 == Blocks.CYAN_TERRACOTTA
+                           || var33 == Blocks.PURPLE_TERRACOTTA
+                           || var33 == Blocks.BLUE_TERRACOTTA
+                           || var33 == Blocks.BROWN_TERRACOTTA
+                           || var33 == Blocks.GREEN_TERRACOTTA
+                           || var33 == Blocks.RED_TERRACOTTA
+                           || var33 == Blocks.BLACK_TERRACOTTA) {
                            var2.setBlockState(var29, field29549, false);
                         }
                      } else if (var30 <= var11 + 3 + var24) {

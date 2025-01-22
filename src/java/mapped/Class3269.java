@@ -23,7 +23,7 @@ public class Class3269 extends ToolItem {
    private static final Set<Block> field18766 = ImmutableSet.of(
       Blocks.field36891,
       Blocks.WARPED_WART_BLOCK,
-      Blocks.field36777,
+      Blocks.HAY_BLOCK,
       Blocks.field36963,
       Blocks.TARGET,
       Blocks.SHROOMLIGHT,

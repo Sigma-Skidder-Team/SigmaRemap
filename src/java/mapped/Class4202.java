@@ -98,12 +98,12 @@ public class Class4202 extends Class4194 {
          this.method12923(var1, Blocks.OAK_PLANKS.getDefaultState(), 9, 5, 10, var5);
          BlockState var23 = Blocks.OAK_FENCE
             .getDefaultState()
-            .with(Class3239.field18683, Boolean.valueOf(true))
-            .with(Class3239.field18681, Boolean.valueOf(true));
+            .with(FenceBlock.field18683, Boolean.valueOf(true))
+            .with(FenceBlock.field18681, Boolean.valueOf(true));
          BlockState var14 = Blocks.OAK_FENCE
             .getDefaultState()
-            .with(Class3239.field18680, Boolean.valueOf(true))
-            .with(Class3239.field18682, Boolean.valueOf(true));
+            .with(FenceBlock.field18680, Boolean.valueOf(true))
+            .with(FenceBlock.field18682, Boolean.valueOf(true));
          this.method12927(var1, var5, 3, 6, 3, 3, 6, 11, var14, var14, false);
          this.method12927(var1, var5, 10, 6, 3, 10, 6, 9, var14, var14, false);
          this.method12927(var1, var5, 4, 6, 2, 9, 6, 2, var23, var23, false);
@@ -112,8 +112,8 @@ public class Class4202 extends Class4194 {
             var1,
             Blocks.OAK_FENCE
                .getDefaultState()
-               .with(Class3239.field18680, Boolean.valueOf(true))
-               .with(Class3239.field18681, Boolean.valueOf(true)),
+               .with(FenceBlock.field18680, Boolean.valueOf(true))
+               .with(FenceBlock.field18681, Boolean.valueOf(true)),
             3,
             6,
             2,
@@ -123,8 +123,8 @@ public class Class4202 extends Class4194 {
             var1,
             Blocks.OAK_FENCE
                .getDefaultState()
-               .with(Class3239.field18682, Boolean.valueOf(true))
-               .with(Class3239.field18681, Boolean.valueOf(true)),
+               .with(FenceBlock.field18682, Boolean.valueOf(true))
+               .with(FenceBlock.field18681, Boolean.valueOf(true)),
             3,
             6,
             12,
@@ -134,8 +134,8 @@ public class Class4202 extends Class4194 {
             var1,
             Blocks.OAK_FENCE
                .getDefaultState()
-               .with(Class3239.field18680, Boolean.valueOf(true))
-               .with(Class3239.field18683, Boolean.valueOf(true)),
+               .with(FenceBlock.field18680, Boolean.valueOf(true))
+               .with(FenceBlock.field18683, Boolean.valueOf(true)),
             10,
             6,
             2,
@@ -147,8 +147,8 @@ public class Class4202 extends Class4194 {
                var1,
                Blocks.OAK_FENCE
                   .getDefaultState()
-                  .with(Class3239.field18682, Boolean.valueOf(true))
-                  .with(Class3239.field18683, Boolean.valueOf(true)),
+                  .with(FenceBlock.field18682, Boolean.valueOf(true))
+                  .with(FenceBlock.field18683, Boolean.valueOf(true)),
                8 + var15,
                6,
                12 - var15,
@@ -159,8 +159,8 @@ public class Class4202 extends Class4194 {
                   var1,
                   Blocks.OAK_FENCE
                      .getDefaultState()
-                     .with(Class3239.field18680, Boolean.valueOf(true))
-                     .with(Class3239.field18681, Boolean.valueOf(true)),
+                     .with(FenceBlock.field18680, Boolean.valueOf(true))
+                     .with(FenceBlock.field18681, Boolean.valueOf(true)),
                   8 + var15,
                   6,
                   11 - var15,
@@ -179,21 +179,21 @@ public class Class4202 extends Class4194 {
          this.method12923(var1, var24, 10, 7, 13, var5);
          byte var16 = 7;
          byte var17 = 7;
-         BlockState var18 = Blocks.OAK_FENCE.getDefaultState().with(Class3239.field18681, Boolean.valueOf(true));
+         BlockState var18 = Blocks.OAK_FENCE.getDefaultState().with(FenceBlock.field18681, Boolean.valueOf(true));
          this.method12923(var1, var18, 6, 9, 7, var5);
-         BlockState var19 = Blocks.OAK_FENCE.getDefaultState().with(Class3239.field18683, Boolean.valueOf(true));
+         BlockState var19 = Blocks.OAK_FENCE.getDefaultState().with(FenceBlock.field18683, Boolean.valueOf(true));
          this.method12923(var1, var19, 7, 9, 7, var5);
          this.method12923(var1, var18, 6, 8, 7, var5);
          this.method12923(var1, var19, 7, 8, 7, var5);
-         BlockState var20 = var14.with(Class3239.field18683, Boolean.valueOf(true)).with(Class3239.field18681, Boolean.valueOf(true));
+         BlockState var20 = var14.with(FenceBlock.field18683, Boolean.valueOf(true)).with(FenceBlock.field18681, Boolean.valueOf(true));
          this.method12923(var1, var20, 6, 7, 7, var5);
          this.method12923(var1, var20, 7, 7, 7, var5);
          this.method12923(var1, var18, 5, 7, 7, var5);
          this.method12923(var1, var19, 8, 7, 7, var5);
-         this.method12923(var1, var18.with(Class3239.field18680, Boolean.valueOf(true)), 6, 7, 6, var5);
-         this.method12923(var1, var18.with(Class3239.field18682, Boolean.valueOf(true)), 6, 7, 8, var5);
-         this.method12923(var1, var19.with(Class3239.field18680, Boolean.valueOf(true)), 7, 7, 6, var5);
-         this.method12923(var1, var19.with(Class3239.field18682, Boolean.valueOf(true)), 7, 7, 8, var5);
+         this.method12923(var1, var18.with(FenceBlock.field18680, Boolean.valueOf(true)), 6, 7, 6, var5);
+         this.method12923(var1, var18.with(FenceBlock.field18682, Boolean.valueOf(true)), 6, 7, 8, var5);
+         this.method12923(var1, var19.with(FenceBlock.field18680, Boolean.valueOf(true)), 7, 7, 6, var5);
+         this.method12923(var1, var19.with(FenceBlock.field18682, Boolean.valueOf(true)), 7, 7, 8, var5);
          BlockState var21 = Blocks.TORCH.getDefaultState();
          this.method12923(var1, var21, 5, 8, 7, var5);
          this.method12923(var1, var21, 8, 8, 7, var5);

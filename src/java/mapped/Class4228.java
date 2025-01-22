@@ -49,12 +49,12 @@ public class Class4228 extends Class4167 {
       this.method12927(var1, var5, 1, 2, 6, 5, 8, 6, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
       BlockState var10 = Blocks.NETHER_BRICK_FENCE
          .getDefaultState()
-         .with(Class3239.field18683, Boolean.valueOf(true))
-         .with(Class3239.field18681, Boolean.valueOf(true));
+         .with(FenceBlock.field18683, Boolean.valueOf(true))
+         .with(FenceBlock.field18681, Boolean.valueOf(true));
       BlockState var11 = Blocks.NETHER_BRICK_FENCE
          .getDefaultState()
-         .with(Class3239.field18680, Boolean.valueOf(true))
-         .with(Class3239.field18682, Boolean.valueOf(true));
+         .with(FenceBlock.field18680, Boolean.valueOf(true))
+         .with(FenceBlock.field18682, Boolean.valueOf(true));
       this.method12927(var1, var5, 0, 3, 2, 0, 5, 4, var11, var11, false);
       this.method12927(var1, var5, 6, 3, 2, 6, 5, 2, var11, var11, false);
       this.method12927(var1, var5, 6, 3, 4, 6, 5, 4, var11, var11, false);

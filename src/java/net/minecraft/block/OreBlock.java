@@ -20,7 +20,7 @@ public class OreBlock extends Block {
          if (this != Blocks.DIAMOND_ORE) {
             if (this != Blocks.EMERALD_ORE) {
                if (this != Blocks.LAPIS_ORE) {
-                  if (this != Blocks.field36722) {
+                  if (this != Blocks.NETHER_QUARTZ_ORE) {
                      return this != Blocks.NETHER_GOLD_ORE ? 0 : MathHelper.method37782(var1, 0, 1);
                   } else {
                      return MathHelper.method37782(var1, 2, 5);

@@ -134,7 +134,7 @@ public abstract class Class3247 extends HorizontalBlock {
       BlockState var6 = var1.getBlockState(var2);
       if (!this.method11671(var6)) {
          return 0;
-      } else if (!var6.isIn(Blocks.field36721)) {
+      } else if (!var6.isIn(Blocks.REDSTONE_BLOCK)) {
          return !var6.isIn(Blocks.REDSTONE_WIRE) ? var1.method7010(var2, var3) : var6.<Integer>get(Class3222.field18651);
       } else {
          return 15;

@@ -21,13 +21,13 @@ import net.minecraft.world.IWorldReader;
 
 import java.util.Map;
 
-public class Class3360 extends Class3359 {
+public class BannerBlock extends Class3359 {
    private static String[] field18905;
    public static final IntegerProperty field18906 = BlockStateProperties.ROTATION;
    private static final Map<Class112, Block> field18907 = Maps.newHashMap();
    private static final VoxelShape field18908 = Block.makeCuboidShape(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
 
-   public Class3360(Class112 var1, Properties var2) {
+   public BannerBlock(Class112 var1, Properties var2) {
       super(var1, var2);
       this.setDefaultState(this.stateContainer.getBaseState().with(field18906, Integer.valueOf(0)));
       field18907.put(var1, this);
@@ -72,6 +72,6 @@ public class Class3360 extends Class3359 {
    }
 
    public static Block method11937(Class112 var0) {
-      return field18907.getOrDefault(var0, Blocks.field36803);
+      return field18907.getOrDefault(var0, Blocks.WHITE_BANNER);
    }
 }

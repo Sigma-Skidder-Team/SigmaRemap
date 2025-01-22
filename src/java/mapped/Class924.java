@@ -49,7 +49,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    public static Map<Item, Integer> method3640() {
       LinkedHashMap var2 = Maps.newLinkedHashMap();
       method3643(var2, Items.LAVA_BUCKET, 20000);
-      method3643(var2, Blocks.field36795, 16000);
+      method3643(var2, Blocks.COAL_BLOCK, 16000);
       method3643(var2, Items.field37967, 2400);
       method3643(var2, Items.field37798, 1600);
       method3643(var2, Items.field37799, 1600);
@@ -60,17 +60,17 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3642(var2, ItemTags.field26081, 300);
       method3642(var2, ItemTags.field26080, 300);
       method3643(var2, Blocks.OAK_FENCE, 300);
-      method3643(var2, Blocks.field36868, 300);
-      method3643(var2, Blocks.field36867, 300);
-      method3643(var2, Blocks.field36869, 300);
-      method3643(var2, Blocks.field36871, 300);
-      method3643(var2, Blocks.field36870, 300);
+      method3643(var2, Blocks.BIRCH_FENCE, 300);
+      method3643(var2, Blocks.SPRUCE_FENCE, 300);
+      method3643(var2, Blocks.JUNGLE_FENCE, 300);
+      method3643(var2, Blocks.DARK_OAK_FENCE, 300);
+      method3643(var2, Blocks.ACACIA_FENCE, 300);
       method3643(var2, Blocks.OAK_FENCE_GATE, 300);
-      method3643(var2, Blocks.field36863, 300);
-      method3643(var2, Blocks.field36862, 300);
-      method3643(var2, Blocks.field36864, 300);
-      method3643(var2, Blocks.field36866, 300);
-      method3643(var2, Blocks.field36865, 300);
+      method3643(var2, Blocks.BIRCH_FENCE_GATE, 300);
+      method3643(var2, Blocks.SPRUCE_FENCE_GATE, 300);
+      method3643(var2, Blocks.JUNGLE_FENCE_GATE, 300);
+      method3643(var2, Blocks.DARK_OAK_FENCE_GATE, 300);
+      method3643(var2, Blocks.ACACIA_FENCE_GATE, 300);
       method3643(var2, Blocks.NOTE_BLOCK, 300);
       method3643(var2, Blocks.BOOKSHELF, 300);
       method3643(var2, Blocks.LECTERN, 300);
@@ -78,7 +78,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3643(var2, Blocks.CHEST, 300);
       method3643(var2, Blocks.TRAPPED_CHEST, 300);
       method3643(var2, Blocks.CRAFTING_TABLE, 300);
-      method3643(var2, Blocks.field36720, 300);
+      method3643(var2, Blocks.DAYLIGHT_DETECTOR, 300);
       method3642(var2, ItemTags.field26094, 300);
       method3643(var2, Items.BOW, 300);
       method3643(var2, Items.field37906, 300);

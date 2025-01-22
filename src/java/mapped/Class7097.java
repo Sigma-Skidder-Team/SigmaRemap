@@ -66,7 +66,7 @@ public class Class7097 extends Class7092 {
       Direction var5 = var2.<Direction>get(StairsBlock.FACING);
       Half var6 = var2.<Half>get(StairsBlock.HALF);
       if (!(var1.nextFloat() >= 0.5F)) {
-         BlockState[] var7 = new BlockState[]{Blocks.field36845.getDefaultState(), Blocks.field36852.getDefaultState()};
+         BlockState[] var7 = new BlockState[]{Blocks.STONE_SLAB.getDefaultState(), Blocks.STONE_BRICK_SLAB.getDefaultState()};
          BlockState[] var8 = new BlockState[]{
             Blocks.field37016.getDefaultState().with(StairsBlock.FACING, var5).with(StairsBlock.HALF, var6),
             Blocks.field37030.getDefaultState()

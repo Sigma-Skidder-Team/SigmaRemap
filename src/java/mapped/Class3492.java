@@ -27,23 +27,23 @@ public class Class3492 extends BushBlock {
       Block var6 = state.getBlock();
       return var6 == Blocks.SAND
          || var6 == Blocks.RED_SAND
-         || var6 == Blocks.field36794
-         || var6 == Blocks.field36730
-         || var6 == Blocks.field36731
-         || var6 == Blocks.field36732
-         || var6 == Blocks.field36733
-         || var6 == Blocks.field36734
-         || var6 == Blocks.field36735
-         || var6 == Blocks.field36736
-         || var6 == Blocks.field36737
-         || var6 == Blocks.field36738
-         || var6 == Blocks.field36739
-         || var6 == Blocks.field36740
-         || var6 == Blocks.field36741
-         || var6 == Blocks.field36742
-         || var6 == Blocks.field36743
-         || var6 == Blocks.field36744
-         || var6 == Blocks.field36745
+         || var6 == Blocks.TERRACOTTA
+         || var6 == Blocks.WHITE_TERRACOTTA
+         || var6 == Blocks.ORANGE_TERRACOTTA
+         || var6 == Blocks.MAGENTA_TERRACOTTA
+         || var6 == Blocks.LIGHT_BLUE_TERRACOTTA
+         || var6 == Blocks.YELLOW_TERRACOTTA
+         || var6 == Blocks.LIME_TERRACOTTA
+         || var6 == Blocks.PINK_TERRACOTTA
+         || var6 == Blocks.GRAY_TERRACOTTA
+         || var6 == Blocks.LIGHT_GRAY_TERRACOTTA
+         || var6 == Blocks.CYAN_TERRACOTTA
+         || var6 == Blocks.PURPLE_TERRACOTTA
+         || var6 == Blocks.BLUE_TERRACOTTA
+         || var6 == Blocks.BROWN_TERRACOTTA
+         || var6 == Blocks.GREEN_TERRACOTTA
+         || var6 == Blocks.RED_TERRACOTTA
+         || var6 == Blocks.BLACK_TERRACOTTA
          || var6 == Blocks.DIRT
          || var6 == Blocks.COARSE_DIRT
          || var6 == Blocks.PODZOL;
