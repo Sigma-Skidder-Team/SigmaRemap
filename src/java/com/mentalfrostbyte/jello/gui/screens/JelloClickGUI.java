@@ -35,7 +35,6 @@ public class JelloClickGUI extends Screen {
    public ConfigButtonOnClickGui configButton;
    public ModuleSettingUI field20949;
    public AlertPanel field20950;
-   private static boolean field20951 = true;
    public JelloClickGUIPanels jelloClickGUIPanels = null;
 
    public JelloClickGUI() {
@@ -75,7 +74,7 @@ public class JelloClickGUI extends Screen {
             ResourceList.optionsPNG1));
       var9.getTextColor().method19406(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.3F));
       var9.method13300(false);
-      this.musicPlayer.setEnabled(field20951);
+      this.musicPlayer.setEnabled(true);
       var9.doThis((var1, var2) -> this.method13222(() -> {
          if (this.configButton != null && this.method13239(this.configButton)) {
             this.method13234(this.configButton);
