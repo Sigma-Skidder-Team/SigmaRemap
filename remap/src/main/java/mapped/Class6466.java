@@ -27,7 +27,7 @@ public class Class6466
     public HttpClient field25685;
     public Class8773 field25686;
     public Class7994 field25687;
-    public String field25688;
+    public String mainURL;
     public String field25689;
     public String field25690;
     public String field25691;
@@ -39,11 +39,11 @@ public class Class6466
     public Class9198 field25697;
     
     public Class6466() {
-        this.field25688 = "https://jelloprg.sigmaclient.info/";
-        this.field25689 = this.field25688 + "/login";
-        this.field25690 = this.field25688 + "/register";
-        this.field25691 = this.field25688 + "/claim_premium";
-        this.field25692 = this.field25688 + "/challenge";
+        this.mainURL = "https://jelloprg.sigmaclient.info/";
+        this.field25689 = this.mainURL + "/login";
+        this.field25690 = this.mainURL + "/register";
+        this.field25691 = this.mainURL + "/claim_premium";
+        this.field25692 = this.mainURL + "/challenge";
         this.field25694 = UUID.randomUUID().toString().replaceAll("-", "");
         this.field25685 = (HttpClient)HttpClients.createDefault();
         if (!Class6466.field25695) {}
