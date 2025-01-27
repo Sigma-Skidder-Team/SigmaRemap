@@ -5,7 +5,6 @@
 package mapped;
 
 import java.net.URISyntaxException;
-import java.util.Map;
 import java.net.URI;
 import java.util.HashMap;
 
@@ -25,11 +24,11 @@ public class Class959 extends Class956
     
     @Override
     public void method5481(final String s) {
-        final Class4405 class4405 = new Class4405(s);
-        if (class4405.method13269("action")) {
-            switch (class4405.method13262("action")) {
+        final JSONObject JSONObject = new JSONObject(s);
+        if (JSONObject.has("action")) {
+            switch (JSONObject.method13262("action")) {
                 case 1: {
-                    this.field5102.method17552(Class7679.method24379(String.valueOf(class4405.method13253("variation"))));
+                    this.field5102.method17552(Class7679.method24379(String.valueOf(JSONObject.getBoolean("variation"))));
                     break;
                 }
                 case 2: {

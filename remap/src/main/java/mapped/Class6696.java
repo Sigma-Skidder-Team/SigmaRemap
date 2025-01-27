@@ -27,7 +27,7 @@ public class Class6696 extends Class6693
                     }
                 }
             }
-            final Class8241 class6430 = new Class8241("Panic", new Class4405());
+            final Class8241 class6430 = new Class8241("Panic", new JSONObject());
             method21556.method32700(class6430);
             method21556.method32708(class6430);
             class6428.method19104("All modules disabled.");

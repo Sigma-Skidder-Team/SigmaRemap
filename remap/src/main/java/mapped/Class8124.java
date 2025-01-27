@@ -32,30 +32,30 @@ public class Class8124
         this.field33473 = false;
     }
     
-    public Class8124(final Class4405 class4405) {
+    public Class8124(final JSONObject JSONObject) {
         this.field33472 = 64.0f;
-        if (class4405.method13269("name")) {
-            this.field33468 = class4405.method13268("name");
+        if (JSONObject.has("name")) {
+            this.field33468 = JSONObject.getString("name");
         }
-        if (class4405.method13269("color")) {
-            this.field33471 = class4405.method13262("color");
+        if (JSONObject.has("color")) {
+            this.field33471 = JSONObject.method13262("color");
         }
-        if (class4405.method13269("x")) {
-            this.field33469 = class4405.method13262("x");
+        if (JSONObject.has("x")) {
+            this.field33469 = JSONObject.method13262("x");
         }
-        if (class4405.method13269("z")) {
-            this.field33470 = class4405.method13262("z");
+        if (JSONObject.has("z")) {
+            this.field33470 = JSONObject.method13262("z");
         }
         this.field33473 = true;
     }
     
-    public Class4405 method26749() {
-        final Class4405 class4405 = new Class4405();
-        class4405.method13301("name", this.field33468);
-        class4405.method13298("color", this.field33471);
-        class4405.method13298("x", this.field33469);
-        class4405.method13298("z", this.field33470);
-        return class4405;
+    public JSONObject method26749() {
+        final JSONObject JSONObject = new JSONObject();
+        JSONObject.method13301("name", this.field33468);
+        JSONObject.method13298("color", this.field33471);
+        JSONObject.method13298("x", this.field33469);
+        JSONObject.method13298("z", this.field33470);
+        return JSONObject;
     }
     
     @Override

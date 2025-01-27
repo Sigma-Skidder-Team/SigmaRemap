@@ -269,17 +269,17 @@ public class Class9000
         }
     }
     
-    public Class4405 method32142(final Class4405 class4405) {
+    public JSONObject method32142(final JSONObject JSONObject) {
         if (this.field37997 != null) {
-            final Class4405 method14202 = this.field37997.method14202(new Class4405());
+            final JSONObject method14202 = this.field37997.method14202(new JSONObject());
             if (method14202.method13274() != 0) {
-                class4405.method13301(this.field37997.method14266(), method14202);
+                JSONObject.method13301(this.field37997.method14266(), method14202);
             }
         }
-        class4405.method13295("guiBlur", this.field37994);
-        class4405.method13295("hqIngameBlur", this.field37995);
-        class4405.method13295("hidpicocoa", Class9000.field37996);
-        return class4405;
+        JSONObject.method13295("guiBlur", this.field37994);
+        JSONObject.method13295("hqIngameBlur", this.field37995);
+        JSONObject.method13295("hidpicocoa", Class9000.field37996);
+        return JSONObject;
     }
     
     public void method32143(final boolean field37994) {
@@ -312,9 +312,9 @@ public class Class9000
             return;
         }
         try {
-            final Class4405 method35586 = Class9532.method35586(new File(Client.method35173().method35208() + "/config.json"));
-            if (method35586.method13269("hidpicocoa")) {
-                Class9000.field37996 = method35586.method13253("hidpicocoa");
+            final JSONObject method35586 = Class9532.method35586(new File(Client.method35173().method35208() + "/config.json"));
+            if (method35586.has("hidpicocoa")) {
+                Class9000.field37996 = method35586.getBoolean("hidpicocoa");
             }
             GLFW.glfwWindowHint(143361, (int)(Class9000.field37996 ? 1 : 0));
         }
@@ -323,24 +323,24 @@ public class Class9000
         }
     }
     
-    public void method32150(final Class4405 class4405) {
+    public void method32150(final JSONObject JSONObject) {
         if (this.field37997 != null) {
-            Class4405 method13264 = null;
+            JSONObject method13264 = null;
             try {
                 method13264 = Client.method35173().method35206().method13264(this.field37997.method14266());
             }
             catch (final Exception ex) {
-                method13264 = new Class4405();
+                method13264 = new JSONObject();
             }
             finally {
                 this.field37997.method14203(method13264);
             }
         }
-        if (class4405.method13269("guiBlur")) {
-            this.field37994 = class4405.method13253("guiBlur");
+        if (JSONObject.has("guiBlur")) {
+            this.field37994 = JSONObject.getBoolean("guiBlur");
         }
-        if (class4405.method13269("hqIngameBlur")) {
-            this.field37995 = class4405.method13253("hqIngameBlur");
+        if (JSONObject.has("hqIngameBlur")) {
+            this.field37995 = JSONObject.getBoolean("hqIngameBlur");
         }
     }
     

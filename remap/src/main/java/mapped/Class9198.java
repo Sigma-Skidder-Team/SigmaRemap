@@ -119,11 +119,11 @@ public class Class9198
     }
     
     public void method33660(final String s, final String s2) {
-        final Class4405 class4405 = new Class4405();
-        class4405.method13301("target", s);
-        class4405.method13301("message", s2);
+        final JSONObject JSONObject = new JSONObject();
+        JSONObject.method13301("target", s);
+        JSONObject.method13301("message", s2);
         if (this.field38989 != null) {
-            this.field38989.method14942("message", class4405);
+            this.field38989.method14942("message", JSONObject);
         }
     }
     

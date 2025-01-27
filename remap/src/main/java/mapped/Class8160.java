@@ -34,12 +34,12 @@ public class Class8160
         return sb.toString();
     }
     
-    public static Class4405 method26950(final String s) throws JSONException {
-        final Class4405 class4405 = new Class4405();
-        final Class8826 class4406 = new Class8826(s);
-        class4405.method13301("name", class4406.method30790('='));
+    public static JSONObject method26950(final String s) throws JSONException {
+        final JSONObject JSONObject = new JSONObject();
+        final JSONTokener class4406 = new JSONTokener(s);
+        JSONObject.method13301("name", class4406.method30790('='));
         class4406.method30786('=');
-        class4405.method13301("value", class4406.method30790(';'));
+        JSONObject.method13301("value", class4406.method30790(';'));
         class4406.method30785();
         while (class4406.method30784()) {
             final String method26951 = method26951(class4406.method30791("=;"));
@@ -50,33 +50,33 @@ public class Class8160
             }
             else {
                 if (!method26951.equals("secure")) {
-                    throw class4406.method30794("Missing '=' in cookie parameter.");
+                    throw class4406.syntaxError("Missing '=' in cookie parameter.");
                 }
                 s2 = Boolean.TRUE;
             }
-            class4405.method13301(method26951, s2);
+            JSONObject.method13301(method26951, s2);
         }
-        return class4405;
+        return JSONObject;
     }
     
-    public static String toString(final Class4405 class4405) throws JSONException {
+    public static String toString(final JSONObject JSONObject) throws JSONException {
         final StringBuilder sb = new StringBuilder();
-        sb.append(method26949(class4405.method13268("name")));
+        sb.append(method26949(JSONObject.getString("name")));
         sb.append("=");
-        sb.append(method26949(class4405.method13268("value")));
-        if (class4405.method13269("expires")) {
+        sb.append(method26949(JSONObject.getString("value")));
+        if (JSONObject.has("expires")) {
             sb.append(";expires=");
-            sb.append(class4405.method13268("expires"));
+            sb.append(JSONObject.getString("expires"));
         }
-        if (class4405.method13269("domain")) {
+        if (JSONObject.has("domain")) {
             sb.append(";domain=");
-            sb.append(method26949(class4405.method13268("domain")));
+            sb.append(method26949(JSONObject.getString("domain")));
         }
-        if (class4405.method13269("path")) {
+        if (JSONObject.has("path")) {
             sb.append(";path=");
-            sb.append(method26949(class4405.method13268("path")));
+            sb.append(method26949(JSONObject.getString("path")));
         }
-        if (class4405.method13280("secure")) {
+        if (JSONObject.method13280("secure")) {
             sb.append(";secure");
         }
         return sb.toString();
@@ -90,8 +90,8 @@ public class Class8160
             if (char1 != '+') {
                 if (char1 == '%') {
                     if (i + 2 < length) {
-                        final int method30782 = Class8826.method30782(s.charAt(i + 1));
-                        final int method30783 = Class8826.method30782(s.charAt(i + 2));
+                        final int method30782 = JSONTokener.method30782(s.charAt(i + 1));
+                        final int method30783 = JSONTokener.method30782(s.charAt(i + 2));
                         if (method30782 >= 0) {
                             if (method30783 >= 0) {
                                 char1 = (char)(method30782 * 16 + method30783);

@@ -43,8 +43,8 @@ public class Class4812 extends Class4803
             return;
         }
         if (this.method14304() && this.method14296()) {
-            for (final Class4805 class4805 : this.field20582.method14396().method14250()) {
-                class4805.field20522.method35855(Class2186.field12964);
+            for (final Class4803 class4805 : this.field20582.method14396().method14250()) {
+                class4805.field20497.method35855(Class2186.field12964);
                 if (class4805.field20522.method35858() >= 0.5) {
                     continue;
                 }

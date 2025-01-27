@@ -17,28 +17,28 @@ public class Class8848
         this.field37204 = field37204;
     }
     
-    public Class8848(final Class4405 class4405) {
+    public Class8848(final JSONObject JSONObject) {
         final Calendar instance = Calendar.getInstance();
         long timeInMillis;
-        if (!(class4405.method13257("until") instanceof Integer)) {
-            timeInMillis = (long)class4405.method13257("until");
+        if (!(JSONObject.get("until") instanceof Integer)) {
+            timeInMillis = (long) JSONObject.get("until");
         }
         else {
-            timeInMillis = (long)class4405.method13257("until");
+            timeInMillis = (long) JSONObject.get("until");
         }
         if (timeInMillis == 1L) {
             timeInMillis = 9223372036854775806L;
         }
         instance.setTimeInMillis(timeInMillis);
-        this.field37203 = class4405.method13268("server");
+        this.field37203 = JSONObject.getString("server");
         this.field37204 = instance.getTime();
     }
     
-    public Class4405 method30979() {
-        final Class4405 class4405 = new Class4405();
-        class4405.method13301("server", this.field37203);
-        class4405.method13299("until", this.field37204.getTime());
-        return class4405;
+    public JSONObject method30979() {
+        final JSONObject JSONObject = new JSONObject();
+        JSONObject.method13301("server", this.field37203);
+        JSONObject.method13299("until", this.field37204.getTime());
+        return JSONObject;
     }
     
     public String method30980() {

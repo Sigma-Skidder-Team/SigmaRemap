@@ -7,7 +7,6 @@ package mapped;
 import org.apache.commons.lang3.StringUtils;
 import java.text.Normalizer;
 import java.net.URLConnection;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.nio.charset.StandardCharsets;
 import org.json.JSONException;
@@ -40,18 +39,18 @@ public class Class5031
         return sb.toString();
     }
     
-    public static Class4405 method15314(final String spec) throws IOException, JSONException {
+    public static JSONObject method15314(final String spec) throws IOException, JSONException {
         final InputStream openStream = new URL(spec).openStream();
         try {
-            return new Class4405(method15313(new BufferedReader(new InputStreamReader(openStream, Charset.forName("UTF-8")))));
+            return new JSONObject(method15313(new BufferedReader(new InputStreamReader(openStream, Charset.forName("UTF-8")))));
         }
         finally {
             openStream.close();
         }
     }
     
-    public static Class4405 method15315(final String s) {
-        return new Class4405(s);
+    public static JSONObject method15315(final String s) {
+        return new JSONObject(s);
     }
     
     public static String method15316(final String spec, final boolean b) throws IOException {

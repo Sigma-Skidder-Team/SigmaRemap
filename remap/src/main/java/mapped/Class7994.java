@@ -10,8 +10,6 @@ import javax.crypto.NoSuchPaddingException;
 import java.security.NoSuchAlgorithmException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
-import java.security.spec.AlgorithmParameterSpec;
-import java.security.Key;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
@@ -36,18 +34,19 @@ public class Class7994
         try {
             final Cipher instance = Cipher.getInstance("AES/CBC/PKCS5PADDING");
             instance.init(2, key, new IvParameterSpec(bytes));
-            final Class4405 class4405 = new Class4405(new String(instance.doFinal(input)));
-            if (class4405.method13269("username")) {
-                this.field32930 = class4405.method13268("username");
+            final JSONObject JSONObject = new JSONObject(new String(instance.doFinal(input)));
+            if (JSONObject.has("username")) {
+                this.field32930 = JSONObject.getString("username");
             }
-            if (class4405.method13269("authToken")) {
-                this.field32931 = class4405.method13268("authToken");
+            if (JSONObject.has("authToken")) {
+                this.field32931 = JSONObject.getString("authToken");
             }
-            if (class4405.method13269("agoraToken")) {
-                this.field32932 = class4405.method13268("agoraToken");
+            if (JSONObject.has("agoraToken")) {
+                this.field32932 = JSONObject.getString("agoraToken");
             }
         }
-        catch (final InvalidKeyException | InvalidAlgorithmParameterException | NoSuchAlgorithmException | NoSuchPaddingException | Class2381 | IllegalBlockSizeException | BadPaddingException ex) {}
+        catch (final InvalidKeyException | InvalidAlgorithmParameterException | NoSuchAlgorithmException | NoSuchPaddingException |
+                     JSONException | IllegalBlockSizeException | BadPaddingException ex) {}
     }
     
     public byte[] method26158() {
@@ -65,11 +64,11 @@ public class Class7994
         }
     }
     
-    public Class4405 method26159() {
-        final Class4405 class4405 = new Class4405();
-        class4405.method13301("username", this.field32930);
-        class4405.method13301("authToken", this.field32931);
-        class4405.method13301("agoraToken", this.field32932);
-        return class4405;
+    public JSONObject method26159() {
+        final JSONObject JSONObject = new JSONObject();
+        JSONObject.method13301("username", this.field32930);
+        JSONObject.method13301("authToken", this.field32931);
+        JSONObject.method13301("agoraToken", this.field32932);
+        return JSONObject;
     }
 }

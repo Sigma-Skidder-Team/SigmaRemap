@@ -12,7 +12,7 @@ import javax.imageio.ImageIO;
 import java.net.URL;
 import java.awt.image.BufferedImage;
 
-public class Class8773
+public class CaptchaChecker
 {
     private String field36881;
     private boolean field36882;
@@ -22,16 +22,15 @@ public class Class8773
     private BufferedImage field36886;
     private Texture field36887;
     
-    public Class8773(final String field36881, final boolean field36882) {
+    public CaptchaChecker(final String field36881, final boolean field36882) {
         this.field36883 = System.currentTimeMillis();
         this.field36884 = true;
         this.field36885 = "";
         this.field36881 = field36881;
-        if (this.field36882 = field36882) {
+        if (this.field36882 == field36882) {
             new Thread(() -> {
                 try {
-                    new URL("https://jelloprg.sigmaclient.info/captcha/" + str + ".png");
-                    final URL input;
+                    final URL input = new URL("https://jelloprg.sigmaclient.info/captcha/" + field36881 + ".png");
                     this.field36886 = ImageIO.read(input);
                 }
                 catch (final IOException ex) {}
@@ -66,7 +65,7 @@ public class Class8773
         return this.field36882;
     }
     
-    public boolean method30472() {
+    public boolean isCompleted() {
         return this.field36884 && this.field36883 > System.currentTimeMillis() - 300000L;
     }
     

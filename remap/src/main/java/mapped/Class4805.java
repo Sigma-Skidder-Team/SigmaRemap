@@ -11,15 +11,15 @@ public class Class4805 extends Class4803
 {
     public Class9572 field20522;
     
-    public Class4805(final Class4803 class4803, final String s, final Class4405 class4804) {
+    public Class4805(final Class4803 class4803, final String s, final JSONObject class4804) {
         super(class4803, s);
         this.field20522 = new Class9572(370, 150, Class2186.field12965);
         this.method14277(this.method14267().method14276());
         int n = 0;
-        if (class4804.method13269("deprecated")) {
+        if (class4804.has("deprecated")) {
             GL11.glTexEnvi(8960, 8704, 260);
         }
-        final String method13268 = class4804.method13268("title");
+        final String method13268 = class4804.getString("title");
         final Class88 method13269 = class4804.method13263("changes");
         this.addVisualThing(new Class4834(this, "title", 0, n, 0, 0, Class6523.field25964, method13268, ClientFonts.JelloMedium40));
         n += 55;

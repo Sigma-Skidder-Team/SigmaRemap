@@ -17,8 +17,8 @@ public abstract class Class4800 extends Class4803
     }
     
     @Override
-    public void method14203(final Class4405 class4405) {
-        super.method14203(class4405);
+    public void method14203(final JSONObject JSONObject) {
+        super.method14203(JSONObject);
         this.method14277(Minecraft.method5277().field4632.method7694());
         this.method14279(Minecraft.method5277().field4632.method7695());
     }

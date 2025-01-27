@@ -31,17 +31,17 @@ public class Class5255
             return null;
         }
         if (o instanceof byte[]) {
-            final Class4405 class4405 = new Class4405();
+            final JSONObject JSONObject = new JSONObject();
             try {
-                class4405.method13295("_placeholder", true);
-                class4405.method13298("num", list.size());
+                JSONObject.method13295("_placeholder", true);
+                JSONObject.method13298("num", list.size());
             }
-            catch (final Class2381 thrown) {
+            catch (final JSONException thrown) {
                 Class5255.field22286.log(Level.WARNING, "An error occured while putting data to JSONObject", thrown);
                 return null;
             }
             list.add((byte[])o);
-            return class4405;
+            return JSONObject;
         }
         if (o instanceof Class88) {
             final Class88 class4406 = new Class88();
@@ -50,23 +50,23 @@ public class Class5255
                 try {
                     class4406.method493(i, method16359(class4407.method449(i), list));
                 }
-                catch (final Class2381 thrown2) {
+                catch (final JSONException thrown2) {
                     Class5255.field22286.log(Level.WARNING, "An error occured while putting packet data to JSONObject", thrown2);
                     return null;
                 }
             }
             return class4406;
         }
-        if (o instanceof Class4405) {
-            final Class4405 class4408 = new Class4405();
-            final Class4405 class4409 = (Class4405)o;
+        if (o instanceof JSONObject) {
+            final JSONObject class4408 = new JSONObject();
+            final JSONObject class4409 = (JSONObject)o;
             final Iterator<String> method463 = class4409.method13272();
             while (method463.hasNext()) {
                 final String s = method463.next();
                 try {
-                    class4408.method13301(s, method16359(class4409.method13257(s), list));
+                    class4408.method13301(s, method16359(class4409.get(s), list));
                 }
-                catch (final Class2381 thrown3) {
+                catch (final JSONException thrown3) {
                     Class5255.field22286.log(Level.WARNING, "An error occured while putting data to JSONObject", thrown3);
                     return null;
                 }
@@ -89,17 +89,17 @@ public class Class5255
                 try {
                     class88.method493(i, method16361(class88.method449(i), array));
                 }
-                catch (final Class2381 thrown) {
+                catch (final JSONException thrown) {
                     Class5255.field22286.log(Level.WARNING, "An error occured while putting packet data to JSONObject", thrown);
                     return null;
                 }
             }
             return class88;
         }
-        if (!(o instanceof Class4405)) {
+        if (!(o instanceof JSONObject)) {
             return o;
         }
-        final Class4405 class89 = (Class4405)o;
+        final JSONObject class89 = (JSONObject)o;
         if (class89.method13280("_placeholder")) {
             final int method463 = class89.method13287("num", -1);
             return (method463 >= 0 && method463 < array.length) ? array[method463] : null;
@@ -108,9 +108,9 @@ public class Class5255
         while (method464.hasNext()) {
             final String s = method464.next();
             try {
-                class89.method13301(s, method16361(class89.method13257(s), array));
+                class89.method13301(s, method16361(class89.get(s), array));
             }
-            catch (final Class2381 thrown2) {
+            catch (final JSONException thrown2) {
                 Class5255.field22286.log(Level.WARNING, "An error occured while putting data to JSONObject", thrown2);
                 return null;
             }

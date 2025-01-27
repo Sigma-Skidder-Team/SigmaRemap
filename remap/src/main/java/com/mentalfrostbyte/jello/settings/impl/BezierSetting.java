@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
-import mapped.Class4405;
+import mapped.JSONObject;
 import mapped.Class8105;
 import mapped.Class8531;
 
@@ -16,16 +16,16 @@ public class BezierSetting extends Setting<Class8531> {
     }
 
     @Override
-    public Class4405 method15186(final Class4405 class4405) {
-        this.currentValue = new Class8531(Class8105.method26638(class4405, "value"));
-        return class4405;
+    public JSONObject method15186(final JSONObject JSONObject) {
+        this.currentValue = new Class8531(Class8105.method26638(JSONObject, "value"));
+        return JSONObject;
     }
 
     @Override
-    public Class4405 method15193(final Class4405 class4405) {
-        class4405.method13301("name", this.method15204());
-        class4405.method13301("value", this.method15198().method28615());
-        return class4405;
+    public JSONObject method15193(final JSONObject JSONObject) {
+        JSONObject.method13301("name", this.method15204());
+        JSONObject.method13301("value", this.method15198().method28615());
+        return JSONObject;
     }
 
     public void method15216(final float n, final float n2, final float n3, final float n4) {

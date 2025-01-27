@@ -90,24 +90,24 @@ public class Class7643
     }
     
     public void method24159() {
-        final Class4405 class4405 = new Class4405();
-        class4405.method13298("volume", this.field30335);
-        class4405.method13295("spectrum", this.field30350);
-        class4405.method13298("repeat", this.field30351.field1232);
-        Client.method35173().method35206().method13301("music", class4405);
+        final JSONObject JSONObject = new JSONObject();
+        JSONObject.method13298("volume", this.field30335);
+        JSONObject.method13295("spectrum", this.field30350);
+        JSONObject.method13298("repeat", this.field30351.field1232);
+        Client.method35173().method35206().method13301("music", JSONObject);
     }
     
     private void method24160() {
-        if (Client.method35173().method35206().method13269("music")) {
-            final Class4405 method13264 = Client.method35173().method35206().method13264("music");
+        if (Client.method35173().method35206().has("music")) {
+            final JSONObject method13264 = Client.method35173().method35206().method13264("music");
             if (method13264 != null) {
-                if (method13264.method13269("volume")) {
+                if (method13264.has("volume")) {
                     this.field30335 = Math.max(0, Math.min(100, method13264.method13262("volume")));
                 }
-                if (method13264.method13269("spectrum")) {
-                    this.field30350 = method13264.method13253("spectrum");
+                if (method13264.has("spectrum")) {
+                    this.field30350 = method13264.getBoolean("spectrum");
                 }
-                if (method13264.method13269("repeat")) {
+                if (method13264.has("repeat")) {
                     this.field30351 = Class258.method897(method13264.method13262("repeat"));
                 }
             }

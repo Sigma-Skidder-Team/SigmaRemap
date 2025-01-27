@@ -11,16 +11,17 @@ import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Class1607 implements Runnable
 {
-    public static Thread field8976;
+    public static Thread thread;
     public static boolean field8977;
     public static HashMap<Object, Integer> field8978;
     
     @Override
     public void run() {
-        Class1607.field8978 = new HashMap<Object, Integer>();
+        Class1607.field8978 = new HashMap<>();
         while (!Thread.currentThread().isInterrupted()) {
             try {
                 Thread.sleep(150000L);
@@ -33,7 +34,7 @@ public class Class1607 implements Runnable
                     if (Client.method35173().method35189() == null) {
                         continue;
                     }
-                    final ArrayList list = new ArrayList(Client.method35173().method35189().method21553().values());
+                    final List<Module> list = new ArrayList(Client.method35173().method35189().method21553().values());
                     for (final Module class3167 : Client.method35173().method35189().method21553().values()) {
                         if (class3167 instanceof ModuleWithSettings) {
                             list.addAll(Arrays.asList(((ModuleWithSettings)class3167).field15742));
@@ -64,8 +65,8 @@ public class Class1607 implements Runnable
     }
     
     static {
-        Class1607.field8976 = new Thread(new Class1607());
+        Class1607.thread = new Thread(new Class1607());
         Class1607.field8977 = false;
-        Class1607.field8976.start();
+        Class1607.thread.start();
     }
 }

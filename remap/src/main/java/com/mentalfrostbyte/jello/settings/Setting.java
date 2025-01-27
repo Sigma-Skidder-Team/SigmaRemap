@@ -4,7 +4,7 @@
 
 package com.mentalfrostbyte.jello.settings;
 
-import mapped.Class4405;
+import mapped.JSONObject;
 import mapped.Class7655;
 
 import java.util.Iterator;
@@ -29,12 +29,12 @@ public abstract class Setting<T>
         this.field21514 = field21514;
     }
     
-    public abstract Class4405 method15186(final Class4405 p0);
+    public abstract JSONObject method15186(final JSONObject p0);
     
-    public Class4405 method15193(final Class4405 class4405) {
-        class4405.method13301("name", this.method15204());
-        class4405.method13301("value", this.currentValue);
-        return class4405;
+    public JSONObject method15193(final JSONObject JSONObject) {
+        JSONObject.method13301("name", this.method15204());
+        JSONObject.method13301("value", this.currentValue);
+        return JSONObject;
     }
     
     public void method15194() {

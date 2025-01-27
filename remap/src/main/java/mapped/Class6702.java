@@ -72,7 +72,7 @@ public class Class6702 extends Class6693
             else if (array.length != 1) {
                 final String lowerCase2 = array[1].method26314().toLowerCase();
                 final Class8241 method32707 = Client.method35173().method35189().method21556().method32707();
-                method32707.field33838 = Client.method35173().method35189().method21546(new Class4405());
+                method32707.field33838 = Client.method35173().method35189().method21546(new JSONObject());
                 Client.method35173().method35189().method21556().method32702(lowerCase2);
                 Client.method35173().method35189().method21556().method32700(new Class8241(lowerCase2, method32707.field33838));
                 class6428.method19104("Saved " + this.method20356());
@@ -104,7 +104,7 @@ public class Class6702 extends Class6693
     }
     
     public void method20357(final String str) {
-        Client.method35173().method35189().method21546(new Class4405());
+        Client.method35173().method35189().method21546(new JSONObject());
         final File file = new File(Client.method35173().method35208() + "/configs/");
         if (!file.exists()) {
             file.mkdirs();
@@ -119,9 +119,9 @@ public class Class6702 extends Class6693
             }
         }
         try {
-            IOUtils.write(new Class4405().toString(0), (OutputStream)new FileOutputStream(file2));
+            IOUtils.write(new JSONObject().toString(0), (OutputStream)new FileOutputStream(file2));
         }
-        catch (final Class2381 | IOException ex2) {
+        catch (final JSONException | IOException ex2) {
             ((Throwable)ex2).printStackTrace();
         }
     }

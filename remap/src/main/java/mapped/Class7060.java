@@ -190,24 +190,24 @@ public class Class7060
         this.method21543();
     }
     
-    public Class4405 method21545(final Class4405 class4405) {
+    public JSONObject method21545(final JSONObject JSONObject) {
         Class88 method26638 = null;
         try {
-            method26638 = Class8105.method26638(class4405, "mods");
+            method26638 = Class8105.method26638(JSONObject, "mods");
         }
-        catch (final Class2381 class4406) {}
+        catch (final JSONException class4406) {}
         final Iterator<Module> iterator = this.field27468.values().iterator();
         while (iterator.hasNext()) {
             iterator.next().method9894();
         }
         if (method26638 != null) {
             for (int i = 0; i < method26638.method462(); ++i) {
-                final Class4405 method26639 = method26638.method457(i);
+                final JSONObject method26639 = method26638.method457(i);
                 Object method26640 = null;
                 try {
                     method26640 = Class8105.method26636(method26639, "name", null);
                 }
-                catch (final Class2381 class4407) {
+                catch (final JSONException class4407) {
                     Client.method35173().method35187().method20241("Invalid name in mod list config");
                 }
                 for (final Module class4408 : this.field27468.values()) {
@@ -215,7 +215,7 @@ public class Class7060
                         try {
                             class4408.method9895(method26639);
                         }
-                        catch (final Class2381 class4409) {
+                        catch (final JSONException class4409) {
                             Client.method35173().method35187().method20241("Could not initialize mod " + class4408.getName() + " from config. All settings for this mod have been erased.");
                         }
                         break;
@@ -247,17 +247,17 @@ public class Class7060
             }
             class4410.method9917();
         }
-        return class4405;
+        return JSONObject;
     }
     
-    public Class4405 method21546(final Class4405 class4405) {
+    public JSONObject method21546(final JSONObject JSONObject) {
         final Class88 class4406 = new Class88();
         final Iterator<Module> iterator = this.field27468.values().iterator();
         while (iterator.hasNext()) {
-            class4406.method486(iterator.next().method9896(new Class4405()));
+            class4406.method486(iterator.next().method9896(new JSONObject()));
         }
-        class4405.method13301("mods", class4406);
-        return class4405;
+        JSONObject.method13301("mods", class4406);
+        return JSONObject;
     }
     
     public void method21547() {
@@ -285,12 +285,12 @@ public class Class7060
         }
     }
     
-    public void method21548(final Class4405 class4405) {
+    public void method21548(final JSONObject JSONObject) {
         String method13268 = null;
         try {
-            method13268 = class4405.method13268("profile");
+            method13268 = JSONObject.getString("profile");
         }
-        catch (final Class2381 class4406) {}
+        catch (final JSONException class4406) {}
         if (Client.method35173().method35209() == Class2209.field13465) {
             method13268 = "Classic";
         }
@@ -298,7 +298,7 @@ public class Class7060
         this.field27470 = new JelloTouch();
         try {
             this.field27469.method32704(method13268);
-            this.field27470.method21963(class4405);
+            this.field27470.method21963(JSONObject);
         }
         catch (final IOException ex) {
             Client.method35173().method35187().method20242("Could not load profiles!");
@@ -308,12 +308,12 @@ public class Class7060
         this.field27470.method21969();
     }
     
-    public void method21549(final Class4405 class4405) {
-        class4405.method13301("profile", this.field27469.method32707().field33839);
-        this.field27469.method32707().field33838 = this.method21546(new Class4405());
+    public void method21549(final JSONObject JSONObject) {
+        JSONObject.method13301("profile", this.field27469.method32707().field33839);
+        this.field27469.method32707().field33838 = this.method21546(new JSONObject());
         try {
             this.field27469.method32706();
-            this.field27470.method21962(class4405);
+            this.field27470.method21962(JSONObject);
         }
         catch (final IOException ex) {
             ex.printStackTrace();

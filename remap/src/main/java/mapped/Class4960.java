@@ -257,11 +257,11 @@ public class Class4960 extends Class4961
             try {
                 method463 = class88.method449(i);
             }
-            catch (final Class2381 thrown) {
+            catch (final JSONException thrown) {
                 Class4960.field21268.log(Level.WARNING, "An error occured while retrieving data from JSONArray", thrown);
                 method463 = null;
             }
-            array[i] = (Class4405.field19729.equals(method463) ? null : method463);
+            array[i] = (JSONObject.field19729.equals(method463) ? null : method463);
         }
         return array;
     }

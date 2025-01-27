@@ -21,24 +21,24 @@ public class Class8718
     public static URL method29940(final String s, final String s2, final String spec) {
         try {
             final URL url = new URL(spec);
-            final Class4405 method29941 = method29941(s, s2);
-            if (!method29941.method13269("releases")) {
+            final JSONObject method29941 = method29941(s, s2);
+            if (!method29941.has("releases")) {
                 return url;
             }
             final Class88 method29942 = method29941.method13263("releases");
             if (method29942.method460(0)) {
                 return url;
             }
-            final Class4405 method29943 = method29942.method457(0).method13264("release-group");
-            if (!method29943.method13269("id")) {
+            final JSONObject method29943 = method29942.method457(0).method13264("release-group");
+            if (!method29943.has("id")) {
                 return url;
             }
-            final Class4405 method29944 = Class5031.method15315(Class5031.method15316("http://coverartarchive.org/release-group/" + method29943.method13268("id"), true));
+            final JSONObject method29944 = Class5031.method15315(Class5031.method15316("http://coverartarchive.org/release-group/" + method29943.getString("id"), true));
             System.out.println(method29944);
-            if (!method29944.method13269("images")) {
+            if (!method29944.has("images")) {
                 return url;
             }
-            return new URL(method29944.method13263("images").method457(0).method13264("thumbnails").method13268("small"));
+            return new URL(method29944.method13263("images").method457(0).method13264("thumbnails").getString("small"));
         }
         catch (final IOException ex) {
             ex.printStackTrace();
@@ -46,7 +46,7 @@ public class Class8718
         }
     }
     
-    public static Class4405 method29941(final String s, final String s2) throws JSONException, IOException {
+    public static JSONObject method29941(final String s, final String s2) throws JSONException, IOException {
         final StringBuffer sb = new StringBuffer();
         sb.append("http://musicbrainz.org/ws/2/");
         sb.append("release/?query=");

@@ -42,9 +42,9 @@ public class Class4887 extends Class4841
         this.addVisualThing(this.field20890 = new Class4831(this, "CaptchaBox", 228, n7 + 135, 84, n5, class4804, "", "Captcha"));
         this.field20890.method14317(ClientFonts.JelloLight20);
         this.field20890.method14297(false);
-        this.field20891.method14260((class4803, n) -> this.method14630());
-        this.field20892.method14260((class4803, n) -> ((Class4926)this.method14267()).method14779());
-        this.field20893.method14260((class4803, n) -> Util.method27845().method980("https://sigmaclient.info/pwdreset.php"));
+        this.field20891.method14260((a, b) -> this.method14630());
+        this.field20892.method14260((a, b) -> ((Class4926)this.method14267()).method14779());
+        this.field20893.method14260((a, b) -> Util.method27845().method980("https://sigmaclient.info/pwdreset.php"));
     }
     
     @Override
@@ -53,7 +53,7 @@ public class Class4887 extends Class4841
         super.method14228();
         final int n2 = 28;
         Class8154.method26904((float)(this.field20478 + n2), (float)(this.field20479 + n2 + 10), 160.0f, 160.0f, ClientAssets.sigma, n);
-        final Class8773 method19344 = Client.method35173().method35201().method19344();
+        final CaptchaChecker method19344 = Client.method35173().method35201().getChallengeResponse();
         if (method19344 != null) {
             this.field20890.method14297(method19344.method30471());
             if (method19344.method30471()) {
@@ -72,14 +72,14 @@ public class Class4887 extends Class4841
         new Thread(() -> {
             this.field20894.method14305(true);
             this.field20891.method14297(false);
-            Client.method35173().method35201().method19344();
-            final Class8773 class8773;
-            if (class8773 != null) {
-                class8773.method30475(this.field20890.method14314());
+            Client.method35173().method35201().getChallengeResponse();
+            final CaptchaChecker captchaChecker = new CaptchaChecker("", true);
+            if (captchaChecker != null) {
+                captchaChecker.method30475(this.field20890.method14314());
             }
             Client.method35173().method35201().method19348();
-            Client.method35173().method35201().method19339(this.field20888.method14314(), this.field20889.method14314(), class8773);
-            final String s;
+            Client.method35173().method35201().method19339(this.field20888.method14314(), this.field20889.method14314(), captchaChecker);
+            final String s = "asd";
             if (s != null) {
                 ((Class4926)this.method14267()).method14781("Error", s);
                 this.field20890.method14315("");

@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
-import mapped.Class4405;
+import mapped.JSONObject;
 import mapped.Class8105;
 
 import java.awt.Color;
@@ -26,10 +26,10 @@ public class ColorSetting extends Setting<Integer> {
     }
 
     @Override
-    public Class4405 method15186(final Class4405 class4405) {
-        this.currentValue = Integer.valueOf(Class8105.method26632(class4405, "value", this.method15203()));
-        this.field21520 = Class8105.method26630(class4405, "rainbow", false);
-        return class4405;
+    public JSONObject method15186(final JSONObject JSONObject) {
+        this.currentValue = Integer.valueOf(Class8105.method26632(JSONObject, "value", this.method15203()));
+        this.field21520 = Class8105.method26630(JSONObject, "rainbow", false);
+        return JSONObject;
     }
 
     public boolean method15219() {
@@ -41,11 +41,11 @@ public class ColorSetting extends Setting<Integer> {
     }
 
     @Override
-    public Class4405 method15193(final Class4405 class4405) {
-        class4405.method13301("name", this.method15204());
-        class4405.method13301("value", this.method15222());
-        class4405.method13295("rainbow", this.field21520);
-        return class4405;
+    public JSONObject method15193(final JSONObject JSONObject) {
+        JSONObject.method13301("name", this.method15204());
+        JSONObject.method13301("value", this.method15222());
+        JSONObject.method13295("rainbow", this.field21520);
+        return JSONObject;
     }
 
     public Integer method15221() {

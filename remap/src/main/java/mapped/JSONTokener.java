@@ -6,13 +6,12 @@ package mapped;
 
 import java.io.IOException;
 import java.io.StringReader;
-import org.json.JSONException;
 import java.io.InputStreamReader;
 import java.io.InputStream;
 import java.io.BufferedReader;
 import java.io.Reader;
 
-public class Class8826
+public class JSONTokener
 {
     private long field37106;
     private boolean field37107;
@@ -22,7 +21,7 @@ public class Class8826
     private Reader field37111;
     private boolean field37112;
     
-    public Class8826(final Reader in) {
+    public JSONTokener(final Reader in) {
         this.field37111 = (in.markSupported() ? in : new BufferedReader(in));
         this.field37107 = false;
         this.field37112 = false;
@@ -32,15 +31,15 @@ public class Class8826
         this.field37109 = 1L;
     }
     
-    public Class8826(final InputStream in) throws JSONException {
+    public JSONTokener(final InputStream in) throws org.json.JSONException {
         this(new InputStreamReader(in));
     }
     
-    public Class8826(final String s) {
+    public JSONTokener(final String s) {
         this(new StringReader(s));
     }
     
-    public void method30781() throws JSONException {
+    public void back() throws org.json.JSONException {
         if (!this.field37112 && this.field37108 > 0L) {
             --this.field37108;
             --this.field37106;
@@ -48,7 +47,7 @@ public class Class8826
             this.field37107 = false;
             return;
         }
-        throw new Class2381("Stepping back two steps is not supported");
+        throw new JSONException("Stepping back two steps is not supported");
     }
     
     public static int method30782(final char c) {
@@ -68,16 +67,16 @@ public class Class8826
         return this.field37107 && !this.field37112;
     }
     
-    public boolean method30784() throws JSONException {
+    public boolean method30784() throws org.json.JSONException {
         this.method30785();
         if (!this.method30783()) {
-            this.method30781();
+            this.back();
             return true;
         }
         return false;
     }
     
-    public char method30785() throws JSONException {
+    public char method30785() throws org.json.JSONException {
         int n;
         if (this.field37112) {
             this.field37112 = false;
@@ -88,7 +87,7 @@ public class Class8826
                 n = this.field37111.read();
             }
             catch (final IOException ex) {
-                throw new Class2381(ex);
+                throw new JSONException(ex);
             }
             if (n <= 0) {
                 this.field37107 = true;
@@ -110,21 +109,21 @@ public class Class8826
         return this.field37110 = (char)n;
     }
     
-    public char method30786(final char c) throws JSONException {
+    public char method30786(final char c) throws org.json.JSONException {
         final char method30785 = this.method30785();
         if (method30785 == c) {
             return method30785;
         }
-        throw this.method30794("Expected '" + c + "' and instead saw '" + method30785 + "'");
+        throw this.syntaxError("Expected '" + c + "' and instead saw '" + method30785 + "'");
     }
     
-    public String method30787(final int n) throws JSONException {
+    public String method30787(final int n) throws org.json.JSONException {
         if (n != 0) {
             final char[] value = new char[n];
             for (int i = 0; i < n; ++i) {
                 value[i] = this.method30785();
                 if (this.method30783()) {
-                    throw this.method30794("Substring bounds error");
+                    throw this.syntaxError("Substring bounds error");
                 }
             }
             return new String(value);
@@ -132,7 +131,7 @@ public class Class8826
         return "";
     }
     
-    public char method30788() throws JSONException {
+    public char nextClean() throws org.json.JSONException {
         char method30785;
         do {
             method30785 = this.method30785();
@@ -140,7 +139,7 @@ public class Class8826
         return method30785;
     }
     
-    public String method30789(final char c) throws JSONException {
+    public String method30789(final char c) throws org.json.JSONException {
         final StringBuilder sb = new StringBuilder();
         while (true) {
             final char method30785 = this.method30785();
@@ -148,7 +147,7 @@ public class Class8826
                 case 0:
                 case 10:
                 case 13: {
-                    throw this.method30794("Unterminated string");
+                    throw this.syntaxError("Unterminated string");
                 }
                 case 92: {
                     final char method30786 = this.method30785();
@@ -185,7 +184,7 @@ public class Class8826
                             continue;
                         }
                         default: {
-                            throw this.method30794("Illegal escape.");
+                            throw this.syntaxError("Illegal escape.");
                         }
                     }
                     break;
@@ -201,7 +200,7 @@ public class Class8826
         }
     }
     
-    public String method30790(final char c) throws JSONException {
+    public String method30790(final char c) throws org.json.JSONException {
         final StringBuilder sb = new StringBuilder();
         char method30785;
         while (true) {
@@ -222,14 +221,14 @@ public class Class8826
         }
         while (true) {
             if (method30785 != '\0') {
-                this.method30781();
+                this.back();
             }
             return sb.toString().trim();
             continue;
         }
     }
     
-    public String method30791(final String s) throws JSONException {
+    public String method30791(final String s) throws org.json.JSONException {
         final StringBuilder sb = new StringBuilder();
         char method30785;
         while (true) {
@@ -250,26 +249,26 @@ public class Class8826
         }
         while (true) {
             if (method30785 != '\0') {
-                this.method30781();
+                this.back();
             }
             return sb.toString().trim();
             continue;
         }
     }
     
-    public Object method30792() throws JSONException {
-        char c = this.method30788();
+    public Object nextValue() throws org.json.JSONException {
+        char c = this.nextClean();
         switch (c) {
             case 34:
             case 39: {
                 return this.method30789(c);
             }
             case 123: {
-                this.method30781();
-                return new Class4405(this);
+                this.back();
+                return new JSONObject(this);
             }
             case 91: {
-                this.method30781();
+                this.back();
                 return new Class88(this);
             }
             default: {
@@ -278,17 +277,17 @@ public class Class8826
                     sb.append(c);
                     c = this.method30785();
                 }
-                this.method30781();
+                this.back();
                 final String trim = sb.toString().trim();
                 if ("".equals(trim)) {
-                    throw this.method30794("Missing value");
+                    throw this.syntaxError("Missing value");
                 }
-                return Class4405.method13308(trim);
+                return JSONObject.method13308(trim);
             }
         }
     }
     
-    public char method30793(final char c) throws JSONException {
+    public char method30793(final char c) throws org.json.JSONException {
         char method30785;
         try {
             final long field37108 = this.field37108;
@@ -307,14 +306,14 @@ public class Class8826
             } while (method30785 != c);
         }
         catch (final IOException ex) {
-            throw new Class2381(ex);
+            throw new JSONException(ex);
         }
-        this.method30781();
+        this.back();
         return method30785;
     }
     
-    public Class2381 method30794(final String str) {
-        return new Class2381(str + this.toString());
+    public JSONException syntaxError(final String str) {
+        return new JSONException(str + this.toString());
     }
     
     @Override

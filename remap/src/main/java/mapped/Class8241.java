@@ -7,18 +7,17 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
-import org.json.JSONException;
 
 public class Class8241
 {
-    private Class4405 field33837;
-    public Class4405 field33838;
+    private JSONObject field33837;
+    public JSONObject field33838;
     public String field33839;
     
     public Class8241() {
     }
     
-    public Class8241(final String field33839, final Class4405 field33840) {
+    public Class8241(final String field33839, final JSONObject field33840) {
         this.field33839 = field33839;
         this.field33838 = field33840;
     }
@@ -28,19 +27,19 @@ public class Class8241
         this.field33838 = class8241.field33838;
     }
     
-    public Class8241 method27288(final Class4405 class4405) throws JSONException {
-        this.field33838 = class4405.method13264("modConfig");
-        this.field33839 = class4405.method13268("name");
+    public Class8241 method27288(final JSONObject JSONObject) throws org.json.JSONException {
+        this.field33838 = JSONObject.method13264("modConfig");
+        this.field33839 = JSONObject.getString("name");
         return this;
     }
     
-    public Class4405 method27289(final Class4405 class4405) {
-        class4405.method13301("modConfig", this.field33838);
-        class4405.method13301("name", this.field33839);
-        return class4405;
+    public JSONObject method27289(final JSONObject JSONObject) {
+        JSONObject.method13301("modConfig", this.field33838);
+        JSONObject.method13301("name", this.field33839);
+        return JSONObject;
     }
     
-    public Class4405 method27290() {
+    public JSONObject method27290() {
         return this.field33837;
     }
     
@@ -53,15 +52,15 @@ public class Class8241
         try {
             method26638 = Class8105.method26638(this.field33838, "mods");
         }
-        catch (final Class2381 class2381) {}
+        catch (final JSONException JSONException) {}
         if (method26638 != null) {
             for (int i = 0; i < method26638.method462(); ++i) {
-                final Class4405 method26639 = method26638.method457(i);
+                final JSONObject method26639 = method26638.method457(i);
                 Object method26640 = null;
                 try {
                     method26640 = Class8105.method26636(method26639, "name", null);
                 }
-                catch (final Class2381 class2382) {
+                catch (final JSONException class2382) {
                     Client.method35173().method35187().method20241("Invalid name in mod list config");
                 }
                 for (final Module class2383 : Client.method35173().method35189().method21553().values()) {
@@ -73,50 +72,50 @@ public class Class8241
         }
     }
     
-    public void method27293(final Class4405 class4405, final Module class4406) {
+    public void method27293(final JSONObject JSONObject, final Module class4406) {
         Class88 method26638 = null;
         try {
             method26638 = Class8105.method26638(this.field33838, "mods");
         }
-        catch (final Class2381 class4407) {}
+        catch (final JSONException class4407) {}
         boolean b = false;
         if (method26638 != null) {
             for (int i = 0; i < method26638.method462(); ++i) {
-                final Class4405 method26639 = method26638.method457(i);
+                final JSONObject method26639 = method26638.method457(i);
                 Object method26640 = null;
                 try {
                     method26640 = Class8105.method26636(method26639, "name", null);
                 }
-                catch (final Class2381 class4408) {
+                catch (final JSONException class4408) {
                     Client.method35173().method35187().method20241("Invalid name in mod list config");
                 }
                 if (class4406.getName().equals(method26640)) {
                     if (class4406.getCategory2() != Category.GUI && class4406.getCategory2() != Category.RENDER) {
-                        method26638.method493(i, class4405);
+                        method26638.method493(i, JSONObject);
                     }
                     b = true;
                 }
             }
         }
         if (!b) {
-            method26638.method486(class4405);
+            method26638.method486(JSONObject);
         }
     }
     
-    public Class4405 method27294(final Module class3167) {
+    public JSONObject method27294(final Module class3167) {
         Class88 method26638 = null;
         try {
             method26638 = Class8105.method26638(this.field33838, "mods");
         }
-        catch (final Class2381 class3168) {}
+        catch (final JSONException class3168) {}
         if (method26638 != null) {
             for (int i = 0; i < method26638.method462(); ++i) {
-                final Class4405 method26639 = method26638.method457(i);
+                final JSONObject method26639 = method26638.method457(i);
                 Object method26640 = null;
                 try {
                     method26640 = Class8105.method26636(method26639, "name", null);
                 }
-                catch (final Class2381 class3169) {
+                catch (final JSONException class3169) {
                     Client.method35173().method35187().method20241("Invalid name in mod list config");
                 }
                 if (class3167.getName().equals(method26640)) {

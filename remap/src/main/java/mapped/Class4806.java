@@ -27,12 +27,12 @@ public class Class4806 extends Class4803
         this.field20526.method14317(ClientFonts.JelloLight18);
         this.field20526.method14297(false);
         class4805.method14260((class4832, n) -> new Thread(() -> {
-            Client.method35173().method35201().method19344();
-            final Class8773 class4834;
+            Client.method35173().method35201().getChallengeResponse();
+            final CaptchaChecker class4834;
             if (class4834 != null) {
                 class4834.method30475(this.field20526.method14314());
             }
-            this.field20523 = Client.method35173().method35201().method19343(class4833.method14314(), Client.method35173().method35201().method19344());
+            this.field20523 = Client.method35173().method35201().method19343(class4833.method14314(), Client.method35173().method35201().getChallengeResponse());
             if (this.field20523 == null) {
                 this.field20523 = "";
             }
@@ -47,7 +47,7 @@ public class Class4806 extends Class4803
         this.field20524.method35855(this.method14304() ? Class2186.field12964 : Class2186.field12965);
         n = 1.0f;
         n *= this.field20524.method35858();
-        final Class8773 method19344 = Client.method35173().method35201().method19344();
+        final CaptchaChecker method19344 = Client.method35173().method35201().getChallengeResponse();
         if (method19344 != null) {
             this.field20526.method14297(method19344.method30471());
             if (method19344.method30470() != null) {

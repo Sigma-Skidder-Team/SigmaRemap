@@ -4,20 +4,20 @@
 
 package mapped;
 
-public class Class2381 extends RuntimeException
+public class JSONException extends RuntimeException
 {
     private static String[] field14180;
     private static final long field14181 = 0L;
     
-    public Class2381(final String message) {
+    public JSONException(final String message) {
         super(message);
     }
     
-    public Class2381(final String message, final Throwable cause) {
+    public JSONException(final String message, final Throwable cause) {
         super(message, cause);
     }
     
-    public Class2381(final Throwable cause) {
+    public JSONException(final Throwable cause) {
         super(cause.getMessage(), cause);
     }
 }

@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Map;
 import java.util.Date;
 import java.util.TreeMap;
 
@@ -24,7 +23,7 @@ public class Class8502
         this.field34902.put(new Date(value), value2);
     }
     
-    public Class4405 method28416() {
-        return new Class4405(this.field34902);
+    public JSONObject method28416() {
+        return new JSONObject(this.field34902);
     }
 }

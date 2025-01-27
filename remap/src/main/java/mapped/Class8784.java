@@ -7,7 +7,6 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Module;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Collections;
@@ -41,9 +40,9 @@ public class Class8784
         }
     }
     
-    public Class4405 method30569(final String string1) {
+    public JSONObject method30569(final String string1) {
         System.out.println("Changelog");
-        return new Class4405();
+        return new JSONObject();
     }
     
     public Class8241 method30570(final Class8241 class8241, final String string1) {
@@ -51,7 +50,7 @@ public class Class8784
         class8242.method27292();
         final Class8241 class8243 = new Class8241("settings", this.method30569(string1).method13264("modConfig"));
         for (final Module class8244 : Client.method35173().method35189().method21553().values()) {
-            final Class4405 method27294 = class8243.method27294(class8244);
+            final JSONObject method27294 = class8243.method27294(class8244);
             if (method27294 == null) {
                 continue;
             }

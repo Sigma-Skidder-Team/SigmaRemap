@@ -5,57 +5,56 @@
 package mapped;
 
 import java.util.Iterator;
-import org.json.JSONException;
 
 public class Class9308
 {
     public static final String field39947 = "\r\n";
     
-    public static Class4405 method34426(final String s) throws JSONException {
-        final Class4405 class4405 = new Class4405();
+    public static JSONObject method34426(final String s) throws org.json.JSONException {
+        final JSONObject JSONObject = new JSONObject();
         final Class8825 class4406 = new Class8825(s);
         final String method30780 = class4406.method30780();
         if (!method30780.toUpperCase().startsWith("HTTP")) {
-            class4405.method13301("Method", method30780);
-            class4405.method13301("Request-URI", class4406.method30780());
-            class4405.method13301("HTTP-Version", class4406.method30780());
+            JSONObject.method13301("Method", method30780);
+            JSONObject.method13301("Request-URI", class4406.method30780());
+            JSONObject.method13301("HTTP-Version", class4406.method30780());
         }
         else {
-            class4405.method13301("HTTP-Version", method30780);
-            class4405.method13301("Status-Code", class4406.method30780());
-            class4405.method13301("Reason-Phrase", class4406.method30790('\0'));
+            JSONObject.method13301("HTTP-Version", method30780);
+            JSONObject.method13301("Status-Code", class4406.method30780());
+            JSONObject.method13301("Reason-Phrase", class4406.method30790('\0'));
             class4406.method30785();
         }
         while (class4406.method30784()) {
             final String method30781 = class4406.method30790(':');
             class4406.method30786(':');
-            class4405.method13301(method30781, class4406.method30790('\0'));
+            JSONObject.method13301(method30781, class4406.method30790('\0'));
             class4406.method30785();
         }
-        return class4405;
+        return JSONObject;
     }
     
-    public static String toString(final Class4405 class4405) throws JSONException {
-        final Iterator<String> method13272 = class4405.method13272();
+    public static String toString(final JSONObject JSONObject) throws org.json.JSONException {
+        final Iterator<String> method13272 = JSONObject.method13272();
         final StringBuilder sb = new StringBuilder();
-        if (class4405.method13269("Status-Code") && class4405.method13269("Reason-Phrase")) {
-            sb.append(class4405.method13268("HTTP-Version"));
+        if (JSONObject.has("Status-Code") && JSONObject.has("Reason-Phrase")) {
+            sb.append(JSONObject.getString("HTTP-Version"));
             sb.append(' ');
-            sb.append(class4405.method13268("Status-Code"));
+            sb.append(JSONObject.getString("Status-Code"));
             sb.append(' ');
-            sb.append(class4405.method13268("Reason-Phrase"));
+            sb.append(JSONObject.getString("Reason-Phrase"));
         }
         else {
-            if (!class4405.method13269("Method") || !class4405.method13269("Request-URI")) {
-                throw new Class2381("Not enough material for an HTTP header.");
+            if (!JSONObject.has("Method") || !JSONObject.has("Request-URI")) {
+                throw new JSONException("Not enough material for an HTTP header.");
             }
-            sb.append(class4405.method13268("Method"));
+            sb.append(JSONObject.getString("Method"));
             sb.append(' ');
             sb.append('\"');
-            sb.append(class4405.method13268("Request-URI"));
+            sb.append(JSONObject.getString("Request-URI"));
             sb.append('\"');
             sb.append(' ');
-            sb.append(class4405.method13268("HTTP-Version"));
+            sb.append(JSONObject.getString("HTTP-Version"));
         }
         sb.append("\r\n");
         while (method13272.hasNext()) {
@@ -75,12 +74,12 @@ public class Class9308
             if ("Request-URI".equals(s)) {
                 continue;
             }
-            if (class4405.method13271(s)) {
+            if (JSONObject.method13271(s)) {
                 continue;
             }
             sb.append(s);
             sb.append(": ");
-            sb.append(class4405.method13268(s));
+            sb.append(JSONObject.getString(s));
             sb.append("\r\n");
         }
         sb.append("\r\n");

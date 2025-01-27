@@ -90,42 +90,42 @@ public class Class7971
         this(s, s2, null, null);
     }
     
-    public Class7971(final Class4405 class4405) {
+    public Class7971(final JSONObject JSONObject) {
         this.field32787 = "Unknown name";
         this.field32788 = "steve";
         this.field32791 = new ArrayList<Class8848>();
-        if (class4405.method13269("email")) {
-            this.field32789 = class4405.method13268("email");
+        if (JSONObject.has("email")) {
+            this.field32789 = JSONObject.getString("email");
         }
-        if (class4405.method13269("password")) {
-            this.field32790 = method25907(class4405.method13268("password"));
+        if (JSONObject.has("password")) {
+            this.field32790 = method25907(JSONObject.getString("password"));
         }
-        if (class4405.method13269("bans")) {
-            final Iterator<Object> iterator = class4405.method13263("bans").iterator();
+        if (JSONObject.has("bans")) {
+            final Iterator<Object> iterator = JSONObject.method13263("bans").iterator();
             while (iterator.hasNext()) {
                 this.field32791.add(new Class8848(iterator.next()));
             }
         }
-        if (class4405.method13269("knownName")) {
-            this.field32787 = class4405.method13268("knownName");
+        if (JSONObject.has("knownName")) {
+            this.field32787 = JSONObject.getString("knownName");
         }
-        if (class4405.method13269("knownUUID")) {
-            this.field32788 = class4405.method13268("knownUUID");
+        if (JSONObject.has("knownUUID")) {
+            this.field32788 = JSONObject.getString("knownUUID");
         }
-        if (class4405.method13269("dateAdded")) {
-            this.field32793 = class4405.method13265("dateAdded");
+        if (JSONObject.has("dateAdded")) {
+            this.field32793 = JSONObject.method13265("dateAdded");
         }
         else {
             this.field32793 = System.currentTimeMillis();
         }
-        if (class4405.method13269("lastUsed")) {
-            this.field32792 = class4405.method13265("lastUsed");
+        if (JSONObject.has("lastUsed")) {
+            this.field32792 = JSONObject.method13265("lastUsed");
         }
-        if (class4405.method13269("useCount")) {
-            this.field32794 = class4405.method13262("useCount");
+        if (JSONObject.has("useCount")) {
+            this.field32794 = JSONObject.method13262("useCount");
         }
-        if (class4405.method13269("skin")) {
-            final byte[] base64Binary = DatatypeConverter.parseBase64Binary(class4405.method13268("skin"));
+        if (JSONObject.has("skin")) {
+            final byte[] base64Binary = DatatypeConverter.parseBase64Binary(JSONObject.getString("skin"));
             try {
                 this.field32795 = ImageIO.read(new ByteArrayInputStream(base64Binary));
             }
@@ -279,16 +279,16 @@ public class Class7971
         return new Class9212(this.method25888(), "", "", "mojang");
     }
     
-    public Class4405 method25904() {
-        final Class4405 class4405 = new Class4405();
-        class4405.method13301("bans", this.method25905());
-        class4405.method13301("email", this.field32789);
-        class4405.method13301("password", method25906(this.field32790));
-        class4405.method13301("knownName", this.field32787);
-        class4405.method13301("knownUUID", this.field32788);
-        class4405.method13298("useCount", this.field32794);
-        class4405.method13299("lastUsed", this.field32792);
-        class4405.method13299("dateAdded", this.field32793);
+    public JSONObject method25904() {
+        final JSONObject JSONObject = new JSONObject();
+        JSONObject.method13301("bans", this.method25905());
+        JSONObject.method13301("email", this.field32789);
+        JSONObject.method13301("password", method25906(this.field32790));
+        JSONObject.method13301("knownName", this.field32787);
+        JSONObject.method13301("knownUUID", this.field32788);
+        JSONObject.method13298("useCount", this.field32794);
+        JSONObject.method13299("lastUsed", this.field32792);
+        JSONObject.method13299("dateAdded", this.field32793);
         if (this.field32795 != null) {
             final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             final Base64OutputStream output = new Base64OutputStream((OutputStream)byteArrayOutputStream);
@@ -300,9 +300,9 @@ public class Class7971
             catch (final IOException ex) {
                 ex.printStackTrace();
             }
-            class4405.method13301("skin", string);
+            JSONObject.method13301("skin", string);
         }
-        return class4405;
+        return JSONObject;
     }
     
     public Class88 method25905() {

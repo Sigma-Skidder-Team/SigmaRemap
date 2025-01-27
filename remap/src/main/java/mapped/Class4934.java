@@ -339,13 +339,13 @@ public class Class4934 extends Class4800
     }
     
     @Override
-    public Class4405 method14202(final Class4405 class4405) {
+    public JSONObject method14202(final JSONObject JSONObject) {
         this.field21148.method25467();
-        return class4405;
+        return JSONObject;
     }
     
     @Override
-    public void method14203(final Class4405 class4405) {
+    public void method14203(final JSONObject JSONObject) {
         for (final Class4803 class4406 : this.field21139.method14250()) {
             if (!(class4406 instanceof Class4827)) {
                 final Iterator<Class4803> iterator2 = class4406.method14250().iterator();

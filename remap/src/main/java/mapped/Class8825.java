@@ -6,7 +6,7 @@ package mapped;
 
 import org.json.JSONException;
 
-public class Class8825 extends Class8826
+public class Class8825 extends JSONTokener
 {
     public Class8825(final String s) {
         super(s);
@@ -29,7 +29,7 @@ public class Class8825 extends Class8826
         while (true) {
             final char method30785 = this.method30785();
             if (method30785 < ' ') {
-                throw this.method30794("Unterminated string.");
+                throw this.syntaxError("Unterminated string.");
             }
             if (method30785 == c2) {
                 return sb.toString();

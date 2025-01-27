@@ -12,9 +12,9 @@ public class Class8879
     private int field37347;
     private Object field37348;
     
-    public Class8879(final Class4405 class4405) {
+    public Class8879(final JSONObject JSONObject) {
         this.field37347 = -1;
-        this.method31226(class4405);
+        this.method31226(JSONObject);
     }
     
     public Class8879(final int field37347, final Module field37348) {
@@ -29,25 +29,25 @@ public class Class8879
         this.field37348 = field37348;
     }
     
-    public void method31226(final Class4405 class4405) {
-        if (!class4405.method13269("target")) {
+    public void method31226(final JSONObject JSONObject) {
+        if (!JSONObject.has("target")) {
             return;
         }
-        if (class4405.method13269("key")) {
-            this.field37347 = class4405.method13262("key");
+        if (JSONObject.has("key")) {
+            this.field37347 = JSONObject.method13262("key");
         }
-        if (class4405.method13269("type")) {
-            final String method13268 = class4405.method13268("type");
+        if (JSONObject.has("type")) {
+            final String method13268 = JSONObject.getString("type");
             switch (method13268) {
                 case "mod": {
                     for (final Module field37348 : Client.method35173().method35189().method21553().values()) {
-                        if (class4405.method13268("target").equals(field37348.getName())) {
+                        if (JSONObject.getString("target").equals(field37348.getName())) {
                             this.field37348 = field37348;
                         }
                     }
                 }
                 case "screen": {
-                    final Class<? extends Screen> method13269 = Client.method35173().method35193().method32151(class4405.method13268("target"));
+                    final Class<? extends Screen> method13269 = Client.method35173().method35193().method32151(JSONObject.getString("target"));
                     if (method13269 != null) {
                         this.field37348 = method13269;
                         break;
@@ -58,22 +58,22 @@ public class Class8879
         }
     }
     
-    public Class4405 method31227() {
-        final Class4405 class4405 = new Class4405();
+    public JSONObject method31227() {
+        final JSONObject JSONObject = new JSONObject();
         switch (Class8623.field36188[this.method31231().ordinal()]) {
             case 1: {
-                class4405.method13301("type", "mod");
-                class4405.method13301("target", ((Module)this.field37348).getName());
+                JSONObject.method13301("type", "mod");
+                JSONObject.method13301("target", ((Module)this.field37348).getName());
                 break;
             }
             case 2: {
-                class4405.method13301("type", "screen");
-                class4405.method13301("target", Client.method35173().method35193().method32152((Class<? extends Screen>)this.field37348));
+                JSONObject.method13301("type", "screen");
+                JSONObject.method13301("target", Client.method35173().method35193().method32152((Class<? extends Screen>)this.field37348));
                 break;
             }
         }
-        class4405.method13298("key", this.field37347);
-        return class4405;
+        JSONObject.method13298("key", this.field37347);
+        return JSONObject;
     }
     
     public boolean method31228() {

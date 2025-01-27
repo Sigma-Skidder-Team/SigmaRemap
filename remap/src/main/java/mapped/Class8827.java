@@ -7,7 +7,7 @@ package mapped;
 import org.json.JSONException;
 import java.util.HashMap;
 
-public class Class8827 extends Class8826
+public class Class8827 extends JSONTokener
 {
     public static final HashMap<String, Character> field37113;
     
@@ -20,7 +20,7 @@ public class Class8827 extends Class8826
         while (true) {
             final char method30785 = this.method30785();
             if (this.method30783()) {
-                throw this.method30794("Unclosed CDATA");
+                throw this.syntaxError("Unclosed CDATA");
             }
             sb.append(method30785);
             final int length = sb.length() - 3;
@@ -60,7 +60,7 @@ public class Class8827 extends Class8826
                 }
                 c = this.method30785();
             }
-            this.method30781();
+            this.back();
             return sb.toString().trim();
         }
         return Class8782.field36927;
@@ -77,7 +77,7 @@ public class Class8827 extends Class8826
             obj.append(Character.toLowerCase(method30785));
         }
         if (method30785 != ';') {
-            throw this.method30794("Missing ';' in XML entity: &" + (Object)obj);
+            throw this.syntaxError("Missing ';' in XML entity: &" + (Object)obj);
         }
         final String string = obj.toString();
         final Character value = Class8827.field37113.get(string);
@@ -91,7 +91,7 @@ public class Class8827 extends Class8826
         } while (Character.isWhitespace(method30785));
         switch (method30785) {
             case '\0': {
-                throw this.method30794("Misshaped meta tag");
+                throw this.syntaxError("Misshaped meta tag");
             }
             case '<': {
                 return Class8782.field36927;
@@ -117,7 +117,7 @@ public class Class8827 extends Class8826
                 do {
                     method30786 = this.method30785();
                     if (method30786 == '\0') {
-                        throw this.method30794("Unterminated string");
+                        throw this.syntaxError("Unterminated string");
                     }
                 } while (method30786 != method30785);
                 return Boolean.TRUE;
@@ -138,7 +138,7 @@ public class Class8827 extends Class8826
                         case '=':
                         case '>':
                         case '?': {
-                            this.method30781();
+                            this.back();
                             return Boolean.TRUE;
                         }
                         default: {
@@ -158,10 +158,10 @@ public class Class8827 extends Class8826
         } while (Character.isWhitespace(ch));
         switch (ch) {
             case '\0': {
-                throw this.method30794("Misshaped element");
+                throw this.syntaxError("Misshaped element");
             }
             case '<': {
-                throw this.method30794("Misplaced '<'");
+                throw this.syntaxError("Misplaced '<'");
             }
             case '>': {
                 return Class8782.field36926;
@@ -185,7 +185,7 @@ public class Class8827 extends Class8826
                 while (true) {
                     final char method30785 = this.method30785();
                     if (method30785 == '\0') {
-                        throw this.method30794("Unterminated string");
+                        throw this.syntaxError("Unterminated string");
                     }
                     if (method30785 == c) {
                         return sb.toString();
@@ -218,13 +218,13 @@ public class Class8827 extends Class8826
                         case '?':
                         case '[':
                         case ']': {
-                            this.method30781();
+                            this.back();
                             return sb2.toString();
                         }
                         case '\"':
                         case '\'':
                         case '<': {
-                            throw this.method30794("Bad character in a name");
+                            throw this.syntaxError("Bad character in a name");
                         }
                         default: {
                             continue;

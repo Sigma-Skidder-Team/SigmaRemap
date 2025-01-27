@@ -13,27 +13,27 @@ public class Class7672
 {
     private static String[] field30467;
     
-    public static Class4405 method24354(final Properties properties) throws JSONException {
-        final Class4405 class4405 = new Class4405();
+    public static JSONObject method24354(final Properties properties) throws JSONException {
+        final JSONObject JSONObject = new JSONObject();
         if (properties != null) {
             if (!properties.isEmpty()) {
                 final Enumeration<?> propertyNames = properties.propertyNames();
                 while (propertyNames.hasMoreElements()) {
                     final String key = (String)propertyNames.nextElement();
-                    class4405.method13301(key, properties.getProperty(key));
+                    JSONObject.method13301(key, properties.getProperty(key));
                 }
             }
         }
-        return class4405;
+        return JSONObject;
     }
     
-    public static Properties method24355(final Class4405 class4405) throws JSONException {
+    public static Properties method24355(final JSONObject JSONObject) throws JSONException {
         final Properties properties = new Properties();
-        if (class4405 != null) {
-            final Iterator<String> method13272 = class4405.method13272();
+        if (JSONObject != null) {
+            final Iterator<String> method13272 = JSONObject.method13272();
             while (method13272.hasNext()) {
                 final String key = method13272.next();
-                properties.put(key, class4405.method13268(key));
+                properties.put(key, JSONObject.getString(key));
             }
         }
         return properties;

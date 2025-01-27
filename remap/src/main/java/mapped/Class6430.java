@@ -248,7 +248,7 @@ public class Class6430
             string += line;
         }
         bufferedReader.close();
-        return new Class4405(string).method13268("id");
+        return new JSONObject(string).getString("id");
     }
     
     public static String method19128(final String s) throws Exception {
@@ -260,21 +260,21 @@ public class Class6430
             string += line;
         }
         String method13269 = "";
-        for (final Class4405 class4405 : new Class4405(string).method13263("properties")) {
-            if (!class4405.method13269("value")) {
+        for (final JSONObject JSONObject : new JSONObject(string).method13263("properties")) {
+            if (!JSONObject.has("value")) {
                 continue;
             }
-            if (!class4405.method13269("name")) {
+            if (!JSONObject.has("name")) {
                 continue;
             }
-            method13269 = class4405.method13268("value");
+            method13269 = JSONObject.getString("value");
         }
         if (Base64.isBase64(method13269)) {
-            final Class4405 class4406 = new Class4405(new String(Base64.decodeBase64(method13269)));
-            if (class4406.method13269("textures")) {
-                final Class4405 method13270 = class4406.method13264("textures");
-                if (method13270.method13269("SKIN")) {
-                    method13268 = method13270.method13264("SKIN").method13268("url");
+            final JSONObject class4406 = new JSONObject(new String(Base64.decodeBase64(method13269)));
+            if (class4406.has("textures")) {
+                final JSONObject method13270 = class4406.method13264("textures");
+                if (method13270.has("SKIN")) {
+                    method13268 = method13270.method13264("SKIN").getString("url");
                 }
             }
             return method13268;
@@ -291,22 +291,22 @@ public class Class6430
             string += line;
         }
         String method13269 = "";
-        for (final Class4405 class4405 : new Class4405(string).method13263("properties")) {
-            if (!class4405.method13269("value")) {
+        for (final JSONObject JSONObject : new JSONObject(string).method13263("properties")) {
+            if (!JSONObject.has("value")) {
                 continue;
             }
-            if (!class4405.method13269("name")) {
+            if (!JSONObject.has("name")) {
                 continue;
             }
-            method13269 = class4405.method13268("value");
+            method13269 = JSONObject.getString("value");
         }
         if (Base64.isBase64(method13269)) {
-            final Class4405 class4406 = new Class4405(new String(Base64.decodeBase64(method13269)));
-            if (class4406.method13269("textures")) {
-                final Class4405 method13270 = class4406.method13264("textures");
+            final JSONObject class4406 = new JSONObject(new String(Base64.decodeBase64(method13269)));
+            if (class4406.has("textures")) {
+                final JSONObject method13270 = class4406.method13264("textures");
                 System.out.println("tex");
-                if (method13270.method13269("SKIN")) {
-                    method13268 = method13270.method13264("SKIN").method13268("url");
+                if (method13270.has("SKIN")) {
+                    method13268 = method13270.method13264("SKIN").getString("url");
                 }
             }
             System.out.println(method13268);
@@ -333,7 +333,7 @@ public class Class6430
         }
         final Class88 class88 = new Class88(string);
         for (int i = 0; i < class88.method462(); ++i) {
-            list.add(new Class4405(class88.method449(i).toString()).method13268("name"));
+            list.add(new JSONObject(class88.method449(i).toString()).getString("name"));
         }
         return list;
     }

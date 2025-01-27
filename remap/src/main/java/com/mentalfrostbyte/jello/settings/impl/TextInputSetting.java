@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
-import mapped.Class4405;
+import mapped.JSONObject;
 import mapped.Class8105;
 
 public class TextInputSetting extends Setting<String> {
@@ -15,8 +15,8 @@ public class TextInputSetting extends Setting<String> {
     }
 
     @Override
-    public Class4405 method15186(final Class4405 class4405) {
-        this.currentValue = Class8105.method26636(class4405, "value", this.method15203());
-        return class4405;
+    public JSONObject method15186(final JSONObject JSONObject) {
+        this.currentValue = Class8105.method26636(JSONObject, "value", this.method15203());
+        return JSONObject;
     }
 }

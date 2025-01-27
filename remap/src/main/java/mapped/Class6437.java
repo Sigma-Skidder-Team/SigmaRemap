@@ -33,7 +33,7 @@ public class Class6437
                 try {
                     o2 = (class88.method460(i) ? null : class88.method449(i));
                 }
-                catch (final Class2381 thrown) {
+                catch (final JSONException thrown) {
                     Class6437.field25565.log(Level.WARNING, "An error occured while retrieving data from JSONArray", thrown);
                     return false;
                 }
@@ -42,16 +42,16 @@ public class Class6437
                 }
             }
         }
-        else if (o instanceof Class4405) {
-            final Class4405 class89 = (Class4405)o;
+        else if (o instanceof JSONObject) {
+            final JSONObject class89 = (JSONObject)o;
             final Iterator<String> method463 = class89.method13272();
             while (method463.hasNext()) {
                 final String s = method463.next();
                 Object method464;
                 try {
-                    method464 = class89.method13257(s);
+                    method464 = class89.get(s);
                 }
-                catch (final Class2381 thrown2) {
+                catch (final JSONException thrown2) {
                     Class6437.field25565.log(Level.WARNING, "An error occured while retrieving data from JSONObject", thrown2);
                     return false;
                 }

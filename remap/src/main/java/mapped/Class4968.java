@@ -8,7 +8,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.Iterator;
 import java.util.logging.Level;
-import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -260,7 +259,7 @@ public class Class4968 extends Class4961
                 try {
                     this.method15107(new Class7987((String)class8437.field34679));
                 }
-                catch (final Class2381 class8438) {
+                catch (final JSONException class8438) {
                     this.method14942("error", new Class2347(class8438));
                 }
             }

@@ -61,7 +61,7 @@ public class Class4889 extends Class4841
         Class9076 method21556;
         int n;
         for (method21556 = Client.method35173().method35189().method21556(), n = 1; method21556.method32705("New Profile " + n); ++n) {}
-        method21556.method32700(new Class8241("New Profile " + n, new Class4405()));
+        method21556.method32700(new Class8241("New Profile " + n, new JSONObject()));
         this.method14225(() -> this.method14640());
         this.field20901.method14706(false);
     }

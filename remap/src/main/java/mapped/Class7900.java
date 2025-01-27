@@ -5,7 +5,6 @@
 package mapped;
 
 import java.io.IOException;
-import java.io.Reader;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.DataOutputStream;
@@ -23,7 +22,7 @@ public class Class7900
     private static final int field32422 = 15000;
     private static final String field32423;
     
-    public static Class4405 method25569(final String spec, final String s) throws IOException {
+    public static JSONObject method25569(final String spec, final String s) throws IOException {
         final HttpURLConnection httpURLConnection = (HttpURLConnection)new URL(spec).openConnection();
         httpURLConnection.setRequestMethod("GET");
         httpURLConnection.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/604.4.7 (KHTML, like Gecko) Version/11.0.2 Safari/604.4.7");

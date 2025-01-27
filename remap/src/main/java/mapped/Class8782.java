@@ -5,7 +5,6 @@
 package mapped;
 
 import java.util.Iterator;
-import org.json.JSONException;
 
 public class Class8782
 {
@@ -53,20 +52,20 @@ public class Class8782
         return sb.toString();
     }
     
-    public static void method30563(final String str) throws JSONException {
+    public static void method30563(final String str) throws org.json.JSONException {
         final int length = str.length();
         if (length != 0) {
             for (int i = 0; i < length; ++i) {
                 if (Character.isWhitespace(str.charAt(i))) {
-                    throw new Class2381("'" + str + "' contains a space character.");
+                    throw new JSONException("'" + str + "' contains a space character.");
                 }
             }
             return;
         }
-        throw new Class2381("Empty string.");
+        throw new JSONException("Empty string.");
     }
     
-    private static boolean method30564(final Class8827 class8827, final Class4405 class8828, final String s) throws JSONException {
+    private static boolean method30564(final Class8827 class8827, final JSONObject class8828, final String s) throws org.json.JSONException {
         final Object method30799 = class8827.method30799();
         if (method30799 != Class8782.field36924) {
             if (method30799 == Class8782.field36928) {
@@ -75,11 +74,11 @@ public class Class8782
             }
             if (method30799 != Class8782.field36930) {
                 if (method30799 instanceof Character) {
-                    throw class8827.method30794("Misshaped tag");
+                    throw class8827.syntaxError("Misshaped tag");
                 }
                 final String str = (String)method30799;
                 Object o = null;
-                final Class4405 class8829 = new Class4405();
+                final JSONObject class8829 = new JSONObject();
                 while (true) {
                     if (o == null) {
                         o = class8827.method30799();
@@ -87,7 +86,7 @@ public class Class8782
                     if (!(o instanceof String)) {
                         if (o != Class8782.field36930) {
                             if (o != Class8782.field36926) {
-                                throw class8827.method30794("Misshaped tag");
+                                throw class8827.syntaxError("Misshaped tag");
                             }
                             while (true) {
                                 final Object method30800 = class8827.method30796();
@@ -100,8 +99,8 @@ public class Class8782
                                             continue;
                                         }
                                         if (class8829.method13274() != 0) {
-                                            if (class8829.method13274() == 1 && class8829.method13277("content") != null) {
-                                                class8828.method13254(str, class8829.method13277("content"));
+                                            if (class8829.method13274() == 1 && class8829.opt("content") != null) {
+                                                class8828.method13254(str, class8829.opt("content"));
                                             }
                                             else {
                                                 class8828.method13254(str, class8829);
@@ -124,7 +123,7 @@ public class Class8782
                                     if (str == null) {
                                         return false;
                                     }
-                                    throw class8827.method30794("Unclosed tag " + str);
+                                    throw class8827.syntaxError("Unclosed tag " + str);
                                 }
                             }
                         }
@@ -138,7 +137,7 @@ public class Class8782
                                 }
                                 return false;
                             }
-                            throw class8827.method30794("Misshaped tag");
+                            throw class8827.syntaxError("Misshaped tag");
                         }
                     }
                     else {
@@ -150,7 +149,7 @@ public class Class8782
                         else {
                             final Object method30801 = class8827.method30799();
                             if (!(method30801 instanceof String)) {
-                                throw class8827.method30794("Missing value");
+                                throw class8827.syntaxError("Missing value");
                             }
                             class8829.method13254(s3, method30565((String)method30801));
                             o = null;
@@ -161,15 +160,15 @@ public class Class8782
             else {
                 final Object method30802 = class8827.method30799();
                 if (s == null) {
-                    throw class8827.method30794("Mismatched close tag " + method30802);
+                    throw class8827.syntaxError("Mismatched close tag " + method30802);
                 }
                 if (!method30802.equals(s)) {
-                    throw class8827.method30794("Mismatched " + s + " and " + method30802);
+                    throw class8827.syntaxError("Mismatched " + s + " and " + method30802);
                 }
                 if (class8827.method30799() == Class8782.field36926) {
                     return true;
                 }
-                throw class8827.method30794("Misshaped close tag");
+                throw class8827.syntaxError("Misshaped close tag");
             }
         }
         else {
@@ -183,7 +182,7 @@ public class Class8782
                         }
                         return false;
                     }
-                    throw class8827.method30794("Expected 'CDATA['");
+                    throw class8827.syntaxError("Expected 'CDATA['");
                 }
             }
             else {
@@ -191,13 +190,13 @@ public class Class8782
                     class8827.method30800("-->");
                     return false;
                 }
-                class8827.method30781();
+                class8827.back();
             }
             int n = 1;
             while (true) {
                 final Object method30805 = class8827.method30798();
                 if (method30805 == null) {
-                    throw class8827.method30794("Missing '>' after '<!'.");
+                    throw class8827.syntaxError("Missing '>' after '<!'.");
                 }
                 if (method30805 != Class8782.field36927) {
                     if (method30805 == Class8782.field36926) {
@@ -223,7 +222,7 @@ public class Class8782
             return Boolean.FALSE;
         }
         if ("null".equalsIgnoreCase(anObject)) {
-            return Class4405.field19729;
+            return JSONObject.field19729;
         }
         try {
             final char char1 = anObject.charAt(0);
@@ -247,22 +246,22 @@ public class Class8782
         return anObject;
     }
     
-    public static Class4405 method30566(final String s) throws JSONException {
-        final Class4405 class4405 = new Class4405();
+    public static JSONObject method30566(final String s) throws org.json.JSONException {
+        final JSONObject JSONObject = new JSONObject();
         final Class8827 class4406 = new Class8827(s);
         while (class4406.method30784() && class4406.method30800("<")) {
-            method30564(class4406, class4405, null);
+            method30564(class4406, JSONObject, null);
         }
-        return class4405;
+        return JSONObject;
     }
     
-    public static String toString(final Object o) throws JSONException {
+    public static String toString(final Object o) throws org.json.JSONException {
         return toString(o, null);
     }
     
-    public static String toString(Object o, final String str) throws JSONException {
+    public static String toString(Object o, final String str) throws org.json.JSONException {
         final StringBuilder sb = new StringBuilder();
-        if (!(o instanceof Class4405)) {
+        if (!(o instanceof JSONObject)) {
             if (o != null) {
                 if (o.getClass().isArray()) {
                     o = new Class88(o);
@@ -283,11 +282,11 @@ public class Class8782
             sb.append(str);
             sb.append('>');
         }
-        final Class4405 class89 = (Class4405)o;
+        final JSONObject class89 = (JSONObject)o;
         final Iterator<String> method463 = class89.method13272();
         while (method463.hasNext()) {
             final String s2 = method463.next();
-            Object method464 = class89.method13277(s2);
+            Object method464 = class89.opt(s2);
             if (method464 == null) {
                 method464 = "";
             }

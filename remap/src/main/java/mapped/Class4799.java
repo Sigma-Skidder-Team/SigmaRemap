@@ -54,14 +54,14 @@ public class Class4799 extends Class4800
     }
     
     @Override
-    public Class4405 method14202(final Class4405 class4405) {
+    public JSONObject method14202(final JSONObject JSONObject) {
         Class6430.method19172();
-        return super.method14202(class4405);
+        return super.method14202(JSONObject);
     }
     
     @Override
-    public void method14203(final Class4405 class4405) {
-        super.method14203(class4405);
+    public void method14203(final JSONObject JSONObject) {
+        super.method14203(JSONObject);
     }
     
     @Override

@@ -101,9 +101,9 @@ public final class Class6746 implements Class6747
         if (length > n + 1) {
             try {
                 s.charAt(++n);
-                class9041.field38266 = (T)new Class8826(s.substring(n)).method30792();
+                class9041.field38266 = (T)new JSONTokener(s.substring(n)).nextValue();
             }
-            catch (final Class2381 thrown) {
+            catch (final JSONException thrown) {
                 Class8171.method27013().log(Level.WARNING, "An error occured while retrieving data from JSONTokener", thrown);
                 return Class8171.method27014();
             }

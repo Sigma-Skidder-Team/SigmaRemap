@@ -75,14 +75,14 @@ public class Class9076
         }
         for (final File file2 : file.listFiles((p0, s2) -> s2.toLowerCase().endsWith(".profile"))) {
             try {
-                final Class8241 method27288 = new Class8241().method27288(new Class4405(IOUtils.toString((InputStream)new FileInputStream(file2))));
+                final Class8241 method27288 = new Class8241().method27288(new JSONObject(IOUtils.toString((InputStream)new FileInputStream(file2))));
                 method27288.field33839 = file2.getName().substring(0, file2.getName().length() - ".profile".length());
                 this.field38428.add(method27288);
                 if (s != null && method27288.field33839.toLowerCase().equals(s.toLowerCase())) {
                     this.field38429 = method27288;
                 }
             }
-            catch (final Class2381 class2381) {
+            catch (final JSONException JSONException) {
                 Client.method35173().method35187().method20241("Unable to load profile from " + file2.getName());
             }
         }
@@ -90,7 +90,7 @@ public class Class9076
             if (s == null || s.length() == 0) {
                 s = "Default";
             }
-            this.field38428.add(this.field38429 = new Class8241(s, new Class4405()));
+            this.field38428.add(this.field38429 = new Class8241(s, new JSONObject()));
         }
         Client.method35173().method35189().method21545(this.field38429.field33838);
     }
@@ -107,7 +107,7 @@ public class Class9076
     }
     
     public void method32706() throws IOException {
-        this.field38429.field33838 = Client.method35173().method35189().method21546(new Class4405());
+        this.field38429.field33838 = Client.method35173().method35189().method21546(new JSONObject());
         final File file = new File(Client.method35173().method35208() + "/profiles/");
         if (!file.exists()) {
             file.mkdirs();
@@ -121,7 +121,7 @@ public class Class9076
             if (!file2.exists()) {
                 file2.createNewFile();
             }
-            IOUtils.write(class8241.method27289(new Class4405()).toString(0), (OutputStream)new FileOutputStream(file2));
+            IOUtils.write(class8241.method27289(new JSONObject()).toString(0), (OutputStream)new FileOutputStream(file2));
         }
     }
     
@@ -133,7 +133,7 @@ public class Class9076
         Client.method35173().method35179();
         Class1607.field8978 = new HashMap<Object, Integer>();
         if (Client.method35173().method35209() != Class2209.field13465) {
-            this.field38429.field33838 = Client.method35173().method35189().method21546(new Class4405());
+            this.field38429.field33838 = Client.method35173().method35189().method21546(new JSONObject());
             this.field38429 = field38429;
             Client.method35173().method35206().method13301("profile", field38429.field33839);
             Client.method35173().method35189().method21545(field38429.field33838);

@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
-import mapped.Class4405;
+import mapped.JSONObject;
 import mapped.Class8105;
 import mapped.Class88;
 
@@ -27,12 +27,12 @@ public abstract class SubOptionSetting extends Setting<Boolean> {
     }
 
     @Override
-    public Class4405 method15186(final Class4405 class4405) {
-        final Class88 method26638 = Class8105.method26638(class4405, this.method15204());
+    public JSONObject method15186(final JSONObject JSONObject) {
+        final Class88 method26638 = Class8105.method26638(JSONObject, this.method15204());
         if (method26638 != null) {
             for (int i = 0; i < method26638.method462(); ++i) {
-                final Class4405 method26639 = method26638.method457(i);
-                final String method26640 = Class8105.method26636(class4405, "name", null);
+                final JSONObject method26639 = method26638.method457(i);
+                final String method26640 = Class8105.method26636(JSONObject, "name", null);
                 for (final Setting class4406 : this.method15224()) {
                     if (!class4406.method15204().equals(method26640)) {
                         continue;
@@ -42,20 +42,20 @@ public abstract class SubOptionSetting extends Setting<Boolean> {
                 }
             }
         }
-        this.currentValue = Boolean.valueOf(Class8105.method26630(class4405, "value", this.method15203()));
-        return class4405;
+        this.currentValue = Boolean.valueOf(Class8105.method26630(JSONObject, "value", this.method15203()));
+        return JSONObject;
     }
 
     @Override
-    public Class4405 method15193(final Class4405 class4405) {
+    public JSONObject method15193(final JSONObject JSONObject) {
         final Class88 class4406 = new Class88();
         final Iterator<Setting> iterator = (Iterator<Setting>) this.method15224().iterator();
         while (iterator.hasNext()) {
-            class4406.method486(iterator.next().method15193(new Class4405()));
+            class4406.method486(iterator.next().method15193(new JSONObject()));
         }
-        class4405.method13301("children", class4406);
-        class4405.method13301("name", this.method15204());
-        return super.method15193(class4405);
+        JSONObject.method13301("children", class4406);
+        JSONObject.method13301("name", this.method15204());
+        return super.method15193(JSONObject);
     }
 
     public List<Setting> method15224() {

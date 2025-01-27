@@ -543,51 +543,51 @@ public class Class4803 implements Class4925
         this.field20476.clear();
     }
     
-    public Class4405 method14202(final Class4405 class4405) {
+    public JSONObject method14202(final JSONObject JSONObject) {
         if (this.method14310()) {
-            class4405.method13301("id", this.method14266());
-            class4405.method13298("x", this.method14272());
-            class4405.method13298("y", this.method14274());
+            JSONObject.method13301("id", this.method14266());
+            JSONObject.method13298("x", this.method14272());
+            JSONObject.method13298("y", this.method14274());
             if (this.method14312()) {
-                class4405.method13298("width", this.method14276());
-                class4405.method13298("height", this.method14278());
+                JSONObject.method13298("width", this.method14276());
+                JSONObject.method13298("height", this.method14278());
             }
-            class4405.method13298("index", (this.field20475 == null) ? 0 : this.field20475.method14249(this));
-            return this.method14254(class4405);
+            JSONObject.method13298("index", (this.field20475 == null) ? 0 : this.field20475.method14249(this));
+            return this.method14254(JSONObject);
         }
-        return class4405;
+        return JSONObject;
     }
     
-    public final Class4405 method14254(final Class4405 class4405) {
+    public final JSONObject method14254(final JSONObject JSONObject) {
         final Class88 class4406 = new Class88();
         for (final Class4803 class4407 : this.field20476) {
             if (!class4407.method14310()) {
                 continue;
             }
-            final Class4405 method14202 = class4407.method14202(new Class4405());
+            final JSONObject method14202 = class4407.method14202(new JSONObject());
             if (method14202.method13274() <= 0) {
                 continue;
             }
             class4406.method486(method14202);
         }
-        class4405.method13301("children", class4406);
-        return class4405;
+        JSONObject.method13301("children", class4406);
+        return JSONObject;
     }
     
-    public void method14203(final Class4405 class4405) {
+    public void method14203(final JSONObject JSONObject) {
         if (this.method14310()) {
-            this.field20478 = Class8105.method26632(class4405, "x", this.field20478);
-            this.field20479 = Class8105.method26632(class4405, "y", this.field20479);
+            this.field20478 = Class8105.method26632(JSONObject, "x", this.field20478);
+            this.field20479 = Class8105.method26632(JSONObject, "y", this.field20479);
             if (this.method14312()) {
-                this.field20480 = Class8105.method26632(class4405, "width", this.field20480);
-                this.field20481 = Class8105.method26632(class4405, "height", this.field20481);
+                this.field20480 = Class8105.method26632(JSONObject, "width", this.field20480);
+                this.field20481 = Class8105.method26632(JSONObject, "height", this.field20481);
             }
-            final Class88 method26638 = Class8105.method26638(class4405, "children");
-            class4405.method13273().iterator();
+            final Class88 method26638 = Class8105.method26638(JSONObject, "children");
+            JSONObject.method13273().iterator();
             if (method26638 != null) {
                 final ArrayList list = new ArrayList((Collection<? extends E>)this.field20476);
                 for (int i = 0; i < method26638.method462(); ++i) {
-                    final Class4405 method26639 = method26638.method457(i);
+                    final JSONObject method26639 = method26638.method457(i);
                     final String method26640 = Class8105.method26636(method26639, "id", null);
                     final int method26641 = Class8105.method26632(method26639, "index", -1);
                     for (final Class4803 class4406 : list) {

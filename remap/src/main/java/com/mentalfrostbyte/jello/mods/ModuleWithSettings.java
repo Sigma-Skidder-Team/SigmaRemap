@@ -87,25 +87,25 @@ public class ModuleWithSettings extends Module
     }
     
     @Override
-    public Class4405 method9895(final Class4405 class4405) {
-        final Class4405 method26637 = Class8105.method26637(class4405, "sub-options");
+    public JSONObject method9895(final JSONObject JSONObject) {
+        final JSONObject method26637 = Class8105.method26637(JSONObject, "sub-options");
         if (method26637 != null) {
             for (final Module class4406 : this.field15742) {
                 final Class88 method26638 = Class8105.method26638(method26637, class4406.getName());
                 if (method26638 != null) {
                     for (int j = 0; j < method26638.method462(); ++j) {
-                        final Class4405 method26639 = method26638.method457(j);
+                        final JSONObject method26639 = method26638.method457(j);
                         Object method26640 = null;
                         try {
                             method26640 = Class8105.method26636(method26639, "name", null);
                         }
-                        catch (final Class2381 class4407) {}
+                        catch (final JSONException class4407) {}
                         for (final Setting class4408 : class4406.field15525.values()) {
                             if (class4408.method15204().equals(method26640)) {
                                 try {
                                     class4408.method15186(method26639);
                                 }
-                                catch (final Class2381 class4409) {
+                                catch (final JSONException class4409) {
                                     Client.method35173().method35187().method20241("Could not initialize settings of " + class4406.getName() + "." + class4408.method15204() + " from config.");
                                 }
                                 break;
@@ -115,7 +115,7 @@ public class ModuleWithSettings extends Module
                 }
             }
         }
-        final Class4405 method26641 = super.method9895(class4405);
+        final JSONObject method26641 = super.method9895(JSONObject);
         if (this.enabled) {
             this.method10258();
         }
@@ -123,18 +123,18 @@ public class ModuleWithSettings extends Module
     }
     
     @Override
-    public Class4405 method9896(final Class4405 class4405) {
-        final Class4405 class4406 = new Class4405();
+    public JSONObject method9896(final JSONObject JSONObject) {
+        final JSONObject class4406 = new JSONObject();
         for (final Module class4407 : this.field15742) {
             final Class88 class4408 = new Class88();
             final Iterator<Setting> iterator = class4407.field15525.values().iterator();
             while (iterator.hasNext()) {
-                class4408.method486(iterator.next().method15193(new Class4405()));
+                class4408.method486(iterator.next().method15193(new JSONObject()));
             }
             class4406.method13301(class4407.getName(), class4408);
         }
-        class4405.method13301("sub-options", class4406);
-        return super.method9896(class4405);
+        JSONObject.method13301("sub-options", class4406);
+        return super.method9896(JSONObject);
     }
     
     @Override

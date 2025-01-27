@@ -141,30 +141,30 @@ public abstract class Module
         }
     }
     
-    public Class4405 method9895(final Class4405 class4405) {
-        final Class88 method26638 = Class8105.method26638(class4405, "options");
+    public JSONObject method9895(final JSONObject JSONObject) {
+        final Class88 method26638 = Class8105.method26638(JSONObject, "options");
         try {
-            this.enabled = class4405.method13253("enabled");
+            this.enabled = JSONObject.getBoolean("enabled");
         }
-        catch (final Class2381 class4406) {}
+        catch (final JSONException class4406) {}
         try {
-            this.field15519 = class4405.method13253("allowed");
+            this.field15519 = JSONObject.getBoolean("allowed");
         }
-        catch (final Class2381 class4407) {}
+        catch (final JSONException class4407) {}
         if (method26638 != null) {
             for (int i = 0; i < method26638.method462(); ++i) {
-                final Class4405 method26639 = method26638.method457(i);
+                final JSONObject method26639 = method26638.method457(i);
                 Object method26640 = null;
                 try {
                     method26640 = Class8105.method26636(method26639, "name", null);
                 }
-                catch (final Class2381 class4408) {}
+                catch (final JSONException class4408) {}
                 for (final Setting class4409 : this.field15525.values()) {
                     if (class4409.method15204().equals(method26640)) {
                         try {
                             class4409.method15186(method26639);
                         }
-                        catch (final Class2381 class4410) {
+                        catch (final JSONException class4410) {
                             Client.method35173().method35187().method20241("Could not initialize settings of " + this.getName() + "." + class4409.method15204() + " from config.");
                         }
                         break;
@@ -175,20 +175,20 @@ public abstract class Module
         if (this.enabled && Module.mc.world != null) {
             this.method9879();
         }
-        return class4405;
+        return JSONObject;
     }
     
-    public Class4405 method9896(final Class4405 class4405) {
-        class4405.method13301("name", this.getName());
-        class4405.method13295("enabled", this.enabled);
-        class4405.method13295("allowed", this.method9911());
+    public JSONObject method9896(final JSONObject JSONObject) {
+        JSONObject.method13301("name", this.getName());
+        JSONObject.method13295("enabled", this.enabled);
+        JSONObject.method13295("allowed", this.method9911());
         final Class88 class4406 = new Class88();
         final Iterator<Setting> iterator = this.field15525.values().iterator();
         while (iterator.hasNext()) {
-            class4406.method486(iterator.next().method15193(new Class4405()));
+            class4406.method486(iterator.next().method15193(new JSONObject()));
         }
-        class4405.method13301("options", class4406);
-        return class4405;
+        JSONObject.method13301("options", class4406);
+        return JSONObject;
     }
     
     public void method9879() {

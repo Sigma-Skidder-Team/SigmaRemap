@@ -110,20 +110,20 @@ public class Class7861
         while (iterator.hasNext()) {
             class88.method486(iterator.next().method25904());
         }
-        final Class4405 class89 = new Class4405();
+        final JSONObject class89 = new JSONObject();
         class89.method13301("alts", class88);
         try {
             Class9532.method35585(class89, new File(Client.method35173().method35208() + "/alts.json"));
         }
-        catch (final Class2381 | IOException ex) {
+        catch (final JSONException | IOException ex) {
             Client.method35173().method35187().method20242(((Throwable)ex).getMessage());
         }
     }
     
     private void method25468() {
         try {
-            final Class4405 method35586 = Class9532.method35586(this.field32297);
-            if (!method35586.method13269("alts")) {
+            final JSONObject method35586 = Class9532.method35586(this.field32297);
+            if (!method35586.has("alts")) {
                 method35586.method13301("alts", new Class88());
             }
             final Iterator<Object> iterator = method35586.method13263("alts").iterator();

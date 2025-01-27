@@ -135,13 +135,13 @@ public class Class8706
     }
     
     private void method29892() {
-        if (Client.method35173().method35206().method13269("friends")) {
+        if (Client.method35173().method35206().has("friends")) {
             final Class88 method13263 = Client.method35173().method35206().method13263("friends");
             if (method13263 != null) {
                 method13263.forEach(o -> this.field36582.add((String)o));
             }
         }
-        if (Client.method35173().method35206().method13269("enemies")) {
+        if (Client.method35173().method35206().has("enemies")) {
             final Class88 method13264 = Client.method35173().method35206().method13263("enemies");
             if (method13264 != null) {
                 method13264.forEach(o2 -> this.field36583.add((String)o2));

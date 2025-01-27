@@ -28,7 +28,7 @@ public class Client
     private static Client field40682;
     private static Minecraft field40683;
     private final File field40684;
-    private Class4405 field40685;
+    private JSONObject field40685;
     private boolean field40686;
     private Class6658 field40687;
     private Class8678 field40688;
@@ -336,12 +336,12 @@ public class Client
         return this.field40707;
     }
     
-    public Class4405 method35206() {
+    public JSONObject method35206() {
         return this.field40685;
     }
     
     public void method35207() {
-        this.field40685 = new Class4405();
+        this.field40685 = new JSONObject();
     }
     
     public File method35208() {
@@ -366,7 +366,7 @@ public class Client
             GLFW.glfwSetWindowTitle(Client.field40683.field4632.method7690(), (CharSequence)"Jello for Sigma 5.0");
         }
         if (this.field40690 == null) {
-            if (Class1607.field8976 != null) {
+            if (Class1607.thread != null) {
                 (this.field40690 = new Class7060()).method21544(this.field40709);
                 this.field40690.method21548(this.field40685);
                 this.field40690.method21547();

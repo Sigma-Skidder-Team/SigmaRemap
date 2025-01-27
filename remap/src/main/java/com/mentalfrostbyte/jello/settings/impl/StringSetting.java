@@ -77,8 +77,8 @@ public class StringSetting extends Setting<String> {
     }
 
     @Override
-    public Class4405 method15186(final Class4405 class4405) {
-        this.currentValue = Class8105.method26636(class4405, "value", this.method15203());
+    public JSONObject method15186(final JSONObject JSONObject) {
+        this.currentValue = Class8105.method26636(JSONObject, "value", this.method15203());
         int n = 0;
         final Iterator<String> iterator = this.field21518.iterator();
         while (iterator.hasNext()) {
@@ -90,7 +90,7 @@ public class StringSetting extends Setting<String> {
         if (n == 0) {
             this.currentValue = this.method15203();
         }
-        return class4405;
+        return JSONObject;
     }
 
     public List<String> method15215() {

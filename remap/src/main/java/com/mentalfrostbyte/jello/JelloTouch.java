@@ -96,7 +96,7 @@ public class JelloTouch
         return null;
     }
     
-    public Class4405 method21962(final Class4405 class4405) {
+    public JSONObject method21962(final JSONObject JSONObject) {
         final Class88 class4406 = new Class88();
         for (final Class8879 class4407 : this.field27849) {
             if (class4407.method31229() == -1) {
@@ -107,13 +107,13 @@ public class JelloTouch
             }
             class4406.method486(class4407.method31227());
         }
-        class4405.method13301("keybinds", class4406);
-        return class4405;
+        JSONObject.method13301("keybinds", class4406);
+        return JSONObject;
     }
     
-    public void method21963(final Class4405 class4405) {
-        if (class4405.method13269("keybinds")) {
-            final Class88 method13263 = class4405.method13263("keybinds");
+    public void method21963(final JSONObject JSONObject) {
+        if (JSONObject.has("keybinds")) {
+            final Class88 method13263 = JSONObject.method13263("keybinds");
             for (int i = 0; i < method13263.method462(); ++i) {
                 final Class8879 e = new Class8879(method13263.method457(i));
                 if (e.method31228()) {

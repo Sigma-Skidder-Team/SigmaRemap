@@ -90,12 +90,12 @@ public class Class7658
         while (iterator.hasNext()) {
             class88.method486(iterator.next().method26749());
         }
-        final Class4405 class89 = new Class4405();
+        final JSONObject class89 = new JSONObject();
         class89.method13301("waypoints", class88);
         try {
             Class9532.method35585(class89, file);
         }
-        catch (final Class2381 | IOException ex) {
+        catch (final JSONException | IOException ex) {
             Client.method35173().method35187().method20242(((Throwable)ex).getMessage());
         }
     }
@@ -103,8 +103,8 @@ public class Class7658
     private void method24265() {
         final File file = new File(this.field30402 + "/waypoints.json");
         try {
-            final Class4405 method35586 = Class9532.method35586(file);
-            if (!method35586.method13269("waypoints")) {
+            final JSONObject method35586 = Class9532.method35586(file);
+            if (!method35586.has("waypoints")) {
                 method35586.method13301("waypoints", new Class88());
             }
             final Iterator<Object> iterator = method35586.method13263("waypoints").iterator();

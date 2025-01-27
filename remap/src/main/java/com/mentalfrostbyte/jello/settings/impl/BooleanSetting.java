@@ -49,8 +49,8 @@ public class BooleanSetting extends Setting<Boolean> {
     }
 
     @Override
-    public Class4405 method15186(final Class4405 class4405) {
-        this.currentValue = Boolean.valueOf(Class8105.method26630(class4405, "value", this.method15203()));
-        return class4405;
+    public JSONObject method15186(final JSONObject JSONObject) {
+        this.currentValue = Boolean.valueOf(Class8105.method26630(JSONObject, "value", this.method15203()));
+        return JSONObject;
     }
 }
