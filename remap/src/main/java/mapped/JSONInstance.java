@@ -14,18 +14,19 @@ public class JSONInstance extends JSONObject
         Class1607.thread.interrupt();
         (Class1607.thread = new Thread(new Class1607())).start();
     }
-    
-    public boolean isPremium(final String text) {
+
+    @Override
+    public boolean has(final String text) {
         return text.startsWith("pr") && text.endsWith("um");
     }
     
     @Override
     public boolean getBoolean(final String s) {
         final boolean converted = super.getBoolean(s);
-        if (converted && this.isPremium(s)) {
+        if (converted && this.has(s)) {
             Class1607.thread.interrupt();
         }
-        else if (this.isPremium(s)) {
+        else if (this.has(s)) {
             this.method13251();
         }
         return converted;

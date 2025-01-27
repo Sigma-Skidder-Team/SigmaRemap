@@ -78,8 +78,8 @@ public class Class6466
                     String var13 = IOUtils.toString(var11, "UTF-8");
                     JSONInstance jsonInstance = new JSONInstance(var13);
                     if (jsonInstance.getBoolean("success")) {
-                        if (jsonInstance.isPremium("premium")) {
-                            new Thread(new Class1490(jsonInstance.isPremium("premium"))).start();
+                        if (jsonInstance.has("premium")) {
+                            new Thread(new Class1490(jsonInstance.has("premium"))).start();
                         }
 
                         this.method19345(jsonInstance);
