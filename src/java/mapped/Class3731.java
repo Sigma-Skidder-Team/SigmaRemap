@@ -7,13 +7,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class3731<E extends MobEntity & Class1023, T extends LivingEntity> extends Class3676<E> {
+public class Class3731<E extends MobEntity & ICrossbowUser, T extends LivingEntity> extends Class3676<E> {
    private static String[] field19839;
    private int field19840;
    private Class2276 field19841 = Class2276.field14826;
 
    public Class3731() {
-      super(ImmutableMap.of(Class8830.field39825, Class2217.field14486, Class8830.field39826, Class2217.field14484), 1200);
+      super(ImmutableMap.of(MemoryModuleType.field39825, Class2217.field14486, MemoryModuleType.ATTACK_TARGET, Class2217.field14484), 1200);
    }
 
    public boolean method12508(ServerWorld var1, E var2) {
@@ -22,7 +22,7 @@ public class Class3731<E extends MobEntity & Class1023, T extends LivingEntity> 
    }
 
    public boolean method12499(ServerWorld var1, E var2, long var3) {
-      return var2.getBrain().method21404(Class8830.field39826) && this.method12508(var1, (E)var2);
+      return var2.getBrain().method21404(MemoryModuleType.ATTACK_TARGET) && this.method12508(var1, (E)var2);
    }
 
    public void method12504(ServerWorld var1, E var2, long var3) {
@@ -37,7 +37,7 @@ public class Class3731<E extends MobEntity & Class1023, T extends LivingEntity> 
       }
 
       if (var2.method3092(Items.CROSSBOW)) {
-         ((Class1023)var2).method4535(false);
+         ((ICrossbowUser)var2).method4535(false);
          CrossbowItem.method11756(var2.getActiveItemStack(), false);
       }
    }
@@ -69,21 +69,21 @@ public class Class3731<E extends MobEntity & Class1023, T extends LivingEntity> 
                var1.stopActiveHand();
                this.field19841 = Class2276.field14828;
                this.field19840 = 20 + var1.getRNG().nextInt(20);
-               ((Class1023)var1).method4535(false);
+               ((ICrossbowUser)var1).method4535(false);
             }
          }
       } else {
          var1.setActiveHand(ProjectileHelper.method36389(var1, Items.CROSSBOW));
          this.field19841 = Class2276.field14827;
-         ((Class1023)var1).method4535(true);
+         ((ICrossbowUser)var1).method4535(true);
       }
    }
 
    private void method12657(MobEntity var1, LivingEntity var2) {
-      var1.getBrain().method21406(Class8830.field39825, new Class7865(var2, true));
+      var1.getBrain().method21406(MemoryModuleType.field39825, new Class7865(var2, true));
    }
 
    private static LivingEntity method12658(LivingEntity var0) {
-      return var0.getBrain().<LivingEntity>method21410(Class8830.field39826).get();
+      return var0.getBrain().<LivingEntity>getMemory(MemoryModuleType.ATTACK_TARGET).get();
    }
 }

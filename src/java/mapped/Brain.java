@@ -29,25 +29,25 @@ import org.apache.logging.log4j.Logger;
 public class Brain<E extends LivingEntity> {
    private static final Logger field30098 = LogManager.getLogger();
    private final Supplier<Codec<Brain<E>>> field30099;
-   private final Map<Class8830<?>, Optional<? extends Class8222<?>>> field30100 = Maps.newHashMap();
+   private final Map<MemoryModuleType<?>, Optional<? extends Class8222<?>>> field30100 = Maps.newHashMap();
    private final Map<Class7963<? extends Class7882<? super E>>, Class7882<? super E>> field30101 = Maps.newLinkedHashMap();
    private final Map<Integer, Map<Activity, Set<Class3676<? super E>>>> field30102 = Maps.newTreeMap();
    private Schedule field30103 = Schedule.field35349;
-   private final Map<Activity, Set<Pair<Class8830<?>, Class2217>>> field30104 = Maps.newHashMap();
-   private final Map<Activity, Set<Class8830<?>>> field30105 = Maps.newHashMap();
+   private final Map<Activity, Set<Pair<MemoryModuleType<?>, Class2217>>> field30104 = Maps.newHashMap();
+   private final Map<Activity, Set<MemoryModuleType<?>>> field30105 = Maps.newHashMap();
    private Set<Activity> field30106 = Sets.newHashSet();
    private final Set<Activity> field30107 = Sets.newHashSet();
    private Activity field30108 = Activity.field40220;
    private long field30109 = -9999L;
 
    public static <E extends LivingEntity> Class6971<E> createCodec(
-      Collection<? extends Class8830<?>> var0, Collection<? extends Class7963<? extends Class7882<? super E>>> var1
+           Collection<? extends MemoryModuleType<?>> var0, Collection<? extends Class7963<? extends Class7882<? super E>>> var1
    ) {
       return new Class6971<E>(var0, var1, null);
    }
 
    public static <E extends LivingEntity> Codec<Brain<E>> method21401(
-      Collection<? extends Class8830<?>> var0, Collection<? extends Class7963<? extends Class7882<? super E>>> var1
+           Collection<? extends MemoryModuleType<?>> var0, Collection<? extends Class7963<? extends Class7882<? super E>>> var1
    ) {
       MutableObject var4 = new MutableObject();
       var4.setValue(new Class9490(var0, var1, var4).fieldOf("memories").codec());
@@ -55,14 +55,14 @@ public class Brain<E extends LivingEntity> {
    }
 
    public Brain(
-      Collection<? extends Class8830<?>> var1,
+      Collection<? extends MemoryModuleType<?>> var1,
       Collection<? extends Class7963<? extends Class7882<? super E>>> var2,
       ImmutableList<Class9802<?>> var3,
       Supplier<Codec<Brain<E>>> var4
    ) {
       this.field30099 = var4;
 
-      for (Class8830 var8 : var1) {
+      for (MemoryModuleType var8 : var1) {
          this.field30100.put(var8, Optional.empty());
       }
 
@@ -72,7 +72,7 @@ public class Brain<E extends LivingEntity> {
 
       for (Class7882 var15 : this.field30101.values()) {
          for (Object var10 : var15.method26424()) {
-            this.field30100.put((Class8830<?>) var10, Optional.empty());
+            this.field30100.put((MemoryModuleType<?>) var10, Optional.empty());
          }
       }
 
@@ -92,27 +92,27 @@ public class Brain<E extends LivingEntity> {
       return this.field30100.entrySet().stream().<Class9802<?>>map(var0 -> Class9802.method38651(var0.getKey(), var0.getValue()));
    }
 
-   public boolean method21404(Class8830<?> var1) {
+   public boolean method21404(MemoryModuleType<?> var1) {
       return this.method21412(var1, Class2217.field14484);
    }
 
-   public <U> void method21405(Class8830<U> var1) {
+   public <U> void method21405(MemoryModuleType<U> var1) {
       this.method21408(var1, Optional.empty());
    }
 
-   public <U> void method21406(Class8830<U> var1, U var2) {
+   public <U> void method21406(MemoryModuleType<U> var1, U var2) {
       this.method21408(var1, Optional.ofNullable(var2));
    }
 
-   public <U> void method21407(Class8830<U> var1, U var2, long var3) {
+   public <U> void method21407(MemoryModuleType<U> var1, U var2, long var3) {
       this.method21409(var1, Optional.of(Class8222.<Object>method28603(var2, var3)));
    }
 
-   public <U> void method21408(Class8830<U> var1, Optional<? extends U> var2) {
+   public <U> void method21408(MemoryModuleType<U> var1, Optional<? extends U> var2) {
       this.method21409(var1, var2.map(Class8222::method28602));
    }
 
-   private <U> void method21409(Class8830<U> var1, Optional<? extends Class8222<?>> var2) {
+   private <U> void method21409(MemoryModuleType<U> var1, Optional<? extends Class8222<?>> var2) {
       if (this.field30100.containsKey(var1)) {
          if (var2.isPresent() && this.method21439(((Class8222)var2.get()).method28604())) {
             this.method21405(var1);
@@ -122,14 +122,14 @@ public class Brain<E extends LivingEntity> {
       }
    }
 
-   public <U> Optional<U> method21410(Class8830<U> class8830) {
-      return (Optional<U>) this.field30100.get(class8830).map(Class8222::method28604);
+   public <U> Optional<U> getMemory(MemoryModuleType<U> memoryModuleType) {
+      return (Optional<U>) this.field30100.get(memoryModuleType).map(Class8222::method28604);
    }
-   public <U> boolean method21411(Class8830<U> class8830, U u) {
-      return this.method21404(class8830) ? this.method21410(class8830).filter(object2 -> object2.equals(u)).isPresent() : false;
+   public <U> boolean method21411(MemoryModuleType<U> memoryModuleType, U u) {
+      return this.method21404(memoryModuleType) ? this.getMemory(memoryModuleType).filter(object2 -> object2.equals(u)).isPresent() : false;
    }
 
-   public boolean method21412(Class8830<?> var1, Class2217 var2) {
+   public boolean method21412(MemoryModuleType<?> var1, Class2217 var2) {
       Optional var5 = this.field30100.get(var1);
       return var5 == null
          ? false
@@ -199,9 +199,9 @@ public class Brain<E extends LivingEntity> {
    private void method21421(Activity var1) {
       for (Activity var5 : this.field30107) {
          if (var5 != var1) {
-            Set<Class8830<?>> var6 = this.field30105.get(var5);
+            Set<MemoryModuleType<?>> var6 = this.field30105.get(var5);
             if (var6 != null) {
-               for (Class8830 var8 : var6) {
+               for (MemoryModuleType var8 : var6) {
                   this.method21405(var8);
                }
             }
@@ -236,9 +236,9 @@ public class Brain<E extends LivingEntity> {
       this.method21427(var1, this.method21440(var2, var3));
    }
 
-   public void method21426(Activity var1, int var2, ImmutableList<? extends Class3676<? super E>> var3, Class8830<?> var4) {
-      ImmutableSet<Pair<Class8830<?>, Class2217>> var7 = ImmutableSet.of(Pair.of(var4, Class2217.field14484));
-      ImmutableSet<Class8830<?>> var8 = ImmutableSet.of(var4);
+   public void method21426(Activity var1, int var2, ImmutableList<? extends Class3676<? super E>> var3, MemoryModuleType<?> var4) {
+      ImmutableSet<Pair<MemoryModuleType<?>, Class2217>> var7 = ImmutableSet.of(Pair.of(var4, Class2217.field14484));
+      ImmutableSet<MemoryModuleType<?>> var8 = ImmutableSet.of(var4);
       this.method21429(var1, this.method21440(var2, var3), var7, var8);
    }
 
@@ -246,15 +246,15 @@ public class Brain<E extends LivingEntity> {
       this.method21429(var1, var2, ImmutableSet.of(), Sets.newHashSet());
    }
 
-   public void method21428(Activity var1, ImmutableList<? extends Pair<Integer, ? extends Class3676<? super E>>> var2, Set<Pair<Class8830<?>, Class2217>> var3) {
+   public void method21428(Activity var1, ImmutableList<? extends Pair<Integer, ? extends Class3676<? super E>>> var2, Set<Pair<MemoryModuleType<?>, Class2217>> var3) {
       this.method21429(var1, var2, var3, Sets.newHashSet());
    }
 
    private void method21429(
       Activity var1,
       ImmutableList<? extends Pair<Integer, ? extends Class3676<? super E>>> var2,
-      Set<Pair<Class8830<?>, Class2217>> var3,
-      Set<Class8830<?>> var4
+      Set<Pair<MemoryModuleType<?>, Class2217>> var3,
+      Set<MemoryModuleType<?>> var4
    ) {
       this.field30104.put(var1, var3);
       if (!var4.isEmpty()) {
@@ -280,7 +280,7 @@ public class Brain<E extends LivingEntity> {
       Brain var3 = new Brain<E>(this.field30100.keySet(), this.field30101.keySet(), ImmutableList.of(), this.field30099);
 
       for (Entry var5 : this.field30100.entrySet()) {
-         Class8830 var6 = (Class8830)var5.getKey();
+         MemoryModuleType var6 = (MemoryModuleType)var5.getKey();
          if (((Optional)var5.getValue()).isPresent()) {
             var3.field30100.put(var6, (Optional<? extends Class8222<?>>)var5.getValue());
          }
@@ -308,7 +308,7 @@ public class Brain<E extends LivingEntity> {
             Class8222 var5 = (Class8222)((Optional)var4.getValue()).get();
             var5.method28601();
             if (var5.method28605()) {
-               this.method21405((Class8830)var4.getKey());
+               this.method21405((MemoryModuleType)var4.getKey());
             }
          }
       }
@@ -352,7 +352,7 @@ public class Brain<E extends LivingEntity> {
          return false;
       } else {
          for (Pair var5 : this.field30104.get(var1)) {
-            Class8830 var6 = (Class8830)var5.getFirst();
+            MemoryModuleType var6 = (MemoryModuleType)var5.getFirst();
             Class2217 var7 = (Class2217)var5.getSecond();
             if (!this.method21412(var6, var7)) {
                return false;
@@ -391,7 +391,7 @@ public class Brain<E extends LivingEntity> {
    }
 
    // $VF: synthetic method
-   public static void method21447(Brain var0, Class8830 var1, Optional var2) {
+   public static void method21447(Brain var0, MemoryModuleType var1, Optional var2) {
       var0.method21409(var1, var2);
    }
 }

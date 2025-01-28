@@ -19,7 +19,7 @@ public class Class3725 extends Class3676<VillagerEntity> {
    private Optional<BlockPos> field19818 = Optional.<BlockPos>empty();
 
    public Class3725() {
-      super(ImmutableMap.of(Class8830.field39825, Class2217.field14485, Class8830.field39824, Class2217.field14485));
+      super(ImmutableMap.of(MemoryModuleType.field39825, Class2217.field14485, MemoryModuleType.field39824, Class2217.field14485));
    }
 
    public boolean method12508(ServerWorld var1, VillagerEntity var2) {
@@ -76,8 +76,8 @@ public class Class3725 extends Class3676<VillagerEntity> {
    private void method12627(VillagerEntity var1) {
       this.field19818.ifPresent(var1x -> {
          Class7863 var4 = new Class7863(var1x);
-         var1.getBrain().method21406(Class8830.field39825, var4);
-         var1.getBrain().method21406(Class8830.field39824, new Class8999(var4, 0.5F, 1));
+         var1.getBrain().method21406(MemoryModuleType.field39825, var4);
+         var1.getBrain().method21406(MemoryModuleType.field39824, new Class8999(var4, 0.5F, 1));
       });
    }
 

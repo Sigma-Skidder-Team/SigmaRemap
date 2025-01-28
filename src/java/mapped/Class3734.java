@@ -7,7 +7,7 @@ public class Class3734 extends Class3676<VillagerEntity> {
    private static String[] field19848;
 
    public Class3734() {
-      super(ImmutableMap.of(Class8830.field39814, Class2217.field14485));
+      super(ImmutableMap.of(MemoryModuleType.field39814, Class2217.field14485));
    }
 
    public boolean method12508(ServerWorld var1, VillagerEntity var2) {

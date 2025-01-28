@@ -9,11 +9,11 @@ import java.util.Collection;
 
 public final class Class6971<E extends LivingEntity> {
    private static String[] field30180;
-   private final Collection<? extends Class8830<?>> field30181;
+   private final Collection<? extends MemoryModuleType<?>> field30181;
    private final Collection<? extends Class7963<? extends Class7882<? super E>>> field30182;
    private final Codec<Brain<E>> field30183;
 
-   private Class6971(Collection<? extends Class8830<?>> var1, Collection<? extends Class7963<? extends Class7882<? super E>>> var2) {
+   private Class6971(Collection<? extends MemoryModuleType<?>> var1, Collection<? extends Class7963<? extends Class7882<? super E>>> var2) {
       this.field30181 = var1;
       this.field30182 = var2;
       this.field30183 = Brain.<E>method21401(var1, var2);

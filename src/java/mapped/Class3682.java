@@ -10,7 +10,7 @@ public class Class3682<E extends Class1045> extends Class3676<E> {
    private final float field19696;
 
    public Class3682(RangedInteger var1, float var2) {
-      super(ImmutableMap.of(Class8830.field39846, Class2217.field14484, Class8830.field39824, Class2217.field14485));
+      super(ImmutableMap.of(MemoryModuleType.field39846, Class2217.field14484, MemoryModuleType.field39824, Class2217.field14485));
       this.field19695 = var1;
       this.field19696 = var2;
    }
@@ -29,6 +29,6 @@ public class Class3682<E extends Class1045> extends Class3676<E> {
    }
 
    private Class1045 method12518(E var1) {
-      return var1.getBrain().<Class1045>method21410(Class8830.field39846).get();
+      return var1.getBrain().<Class1045>getMemory(MemoryModuleType.field39846).get();
    }
 }

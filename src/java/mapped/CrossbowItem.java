@@ -210,7 +210,7 @@ public class CrossbowItem extends Class3262 implements IVanishable {
             var13 = new FireworkRocketEntity(var0, var4, var1, var1.getPosX(), var1.getPosYEye() - 0.15F, var1.getPosZ(), true);
          }
 
-         if (!(var1 instanceof Class1023)) {
+         if (!(var1 instanceof ICrossbowUser)) {
             Vector3d var14 = var1.getUpVector(1.0F);
             Quaternion var15 = new Quaternion(new Vector3f(var14), var9, true);
             Vector3d var16 = var1.getLook(1.0F);
@@ -218,8 +218,8 @@ public class CrossbowItem extends Class3262 implements IVanishable {
             var17.method25283(var15);
             ((ProjectileEntity)var13).shoot((double)var17.method25269(), (double)var17.method25270(), (double)var17.method25271(), var7, var8);
          } else {
-            Class1023 var18 = (Class1023)var1;
-            var18.method4536(var18.method4232(), var3, (ProjectileEntity)var13, var9);
+            ICrossbowUser var18 = (ICrossbowUser)var1;
+            var18.method4536(var18.getAttackTarget(), var3, (ProjectileEntity)var13, var9);
          }
 
          var3.damageItem(!var12 ? 1 : 3, var1, var1x -> var1x.sendBreakAnimation(var2));

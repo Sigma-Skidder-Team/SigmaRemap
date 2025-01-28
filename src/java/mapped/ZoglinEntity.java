@@ -35,17 +35,17 @@ public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
    public static final ImmutableList<? extends Class7963<? extends Class7882<? super ZoglinEntity>>> field5984 = ImmutableList.of(
       Class7963.field34239, Class7963.field34240
    );
-   public static final ImmutableList<? extends Class8830<?>> field5985 = ImmutableList.of(
-      Class8830.field39818,
-      Class8830.field39819,
-      Class8830.field39822,
-      Class8830.field39823,
-      Class8830.field39825,
-      Class8830.field39824,
-      Class8830.field39841,
-      Class8830.field39831,
-      Class8830.field39826,
-      Class8830.field39827
+   public static final ImmutableList<? extends MemoryModuleType<?>> field5985 = ImmutableList.of(
+      MemoryModuleType.field39818,
+      MemoryModuleType.field39819,
+      MemoryModuleType.field39822,
+      MemoryModuleType.field39823,
+      MemoryModuleType.field39825,
+      MemoryModuleType.field39824,
+      MemoryModuleType.field39841,
+      MemoryModuleType.field39831,
+      MemoryModuleType.ATTACK_TARGET,
+      MemoryModuleType.field39827
    );
 
    public ZoglinEntity(EntityType<? extends ZoglinEntity> var1, World var2) {
@@ -97,12 +97,12 @@ public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
             new Class3740<>(ZoglinEntity::isChild, new Class3684(15)),
             new Class3685()
          ),
-         Class8830.field39826
+         MemoryModuleType.ATTACK_TARGET
       );
    }
 
    private Optional<? extends LivingEntity> method5096() {
-      return this.getBrain().<List<LivingEntity>>method21410(Class8830.field39819).orElse(ImmutableList.of()).stream().filter(ZoglinEntity::method5097).findFirst();
+      return this.getBrain().<List<LivingEntity>>getMemory(MemoryModuleType.field39819).orElse(ImmutableList.of()).stream().filter(ZoglinEntity::method5097).findFirst();
    }
 
    private static boolean method5097(LivingEntity var0) {
@@ -186,8 +186,8 @@ public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
    }
 
    private void method5100(LivingEntity var1) {
-      this.brain.method21405(Class8830.field39841);
-      this.brain.method21407(Class8830.field39826, var1, 200L);
+      this.brain.method21405(MemoryModuleType.field39841);
+      this.brain.method21407(MemoryModuleType.ATTACK_TARGET, var1, 200L);
    }
 
    @Override
@@ -203,7 +203,7 @@ public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
          this.method5102();
       }
 
-      this.method4304(this.brain.method21404(Class8830.field39826));
+      this.method4304(this.brain.method21404(MemoryModuleType.ATTACK_TARGET));
    }
 
    @Override
@@ -254,7 +254,7 @@ public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
    @Override
    public SoundEvent getAmbientSound() {
       if (!this.world.isRemote) {
-         return !this.brain.method21404(Class8830.field39826) ? SoundEvents.field27276 : SoundEvents.field27277;
+         return !this.brain.method21404(MemoryModuleType.ATTACK_TARGET) ? SoundEvents.field27276 : SoundEvents.field27277;
       } else {
          return null;
       }
@@ -280,9 +280,9 @@ public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
    }
 
    @Override
-   public void method4257() {
-      super.method4257();
-      DebugPacketSender.method23622(this);
+   public void sendDebugPackets() {
+      super.sendDebugPackets();
+      DebugPacketSender.sendLivingEntity(this);
    }
 
    @Override

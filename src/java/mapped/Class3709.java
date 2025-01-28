@@ -8,14 +8,14 @@ public class Class3709 extends Class3676<LivingEntity> {
    private static String[] field19773;
    private final int field19774;
 
-   public Class3709(Class8830<?> var1, int var2) {
-      super(ImmutableMap.of(Class8830.field39826, Class2217.field14486, Class8830.field39871, Class2217.field14485, var1, Class2217.field14484));
+   public Class3709(MemoryModuleType<?> var1, int var2) {
+      super(ImmutableMap.of(MemoryModuleType.ATTACK_TARGET, Class2217.field14486, MemoryModuleType.field39871, Class2217.field14485, var1, Class2217.field14484));
       this.field19774 = var2;
    }
 
    @Override
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
-      var2.getBrain().method21407(Class8830.field39871, true, (long)this.field19774);
-      var2.getBrain().method21405(Class8830.field39826);
+      var2.getBrain().method21407(MemoryModuleType.field39871, true, (long)this.field19774);
+      var2.getBrain().method21405(MemoryModuleType.ATTACK_TARGET);
    }
 }

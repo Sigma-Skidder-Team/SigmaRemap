@@ -563,10 +563,10 @@ public class FoxEntity extends AnimalEntity {
    }
 
    @Override
-   public void method4237() {
+   public void playAmbientSound() {
       SoundEvent var3 = this.getAmbientSound();
       if (var3 != SoundEvents.field26594) {
-         super.method4237();
+         super.playAmbientSound();
       } else {
          this.playSound(var3, 2.0F, this.getSoundPitch());
       }

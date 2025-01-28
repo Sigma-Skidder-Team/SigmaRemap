@@ -20,22 +20,22 @@ public class Class7881 extends Class7882<LivingEntity> {
    private static String[] field33824;
 
    @Override
-   public Set<Class8830<?>> method26424() {
+   public Set<MemoryModuleType<?>> method26424() {
       return ImmutableSet.of(
-         Class8830.field39819,
-         Class8830.field39818,
-         Class8830.field39848,
-         Class8830.field39860,
-         Class8830.field39868,
-         Class8830.field39858,
-         new Class8830[]{Class8830.field39859, Class8830.field39862, Class8830.field39861, Class8830.field39866, Class8830.field39867, Class8830.field39870}
+         MemoryModuleType.field39819,
+         MemoryModuleType.field39818,
+         MemoryModuleType.field39848,
+         MemoryModuleType.field39860,
+         MemoryModuleType.field39868,
+         MemoryModuleType.field39858,
+         new MemoryModuleType[]{MemoryModuleType.field39859, MemoryModuleType.field39862, MemoryModuleType.field39861, MemoryModuleType.field39866, MemoryModuleType.field39867, MemoryModuleType.field39870}
       );
    }
 
    @Override
    public void method26425(ServerWorld var1, LivingEntity var2) {
       Brain<?> var5 = var2.getBrain();
-      var5.method21408(Class8830.field39870, method26426(var1, var2));
+      var5.method21408(MemoryModuleType.field39870, method26426(var1, var2));
       Optional var6 = Optional.empty();
       Optional var7 = Optional.empty();
       Optional var8 = Optional.empty();
@@ -47,7 +47,7 @@ public class Class7881 extends Class7882<LivingEntity> {
       ArrayList var14 = Lists.newArrayList();
       ArrayList var15 = Lists.newArrayList();
 
-      for (LivingEntity var17 : var5.<List<LivingEntity>>method21410(Class8830.field39819).orElse(ImmutableList.of())) {
+      for (LivingEntity var17 : var5.<List<LivingEntity>>getMemory(MemoryModuleType.field39819).orElse(ImmutableList.of())) {
          if (!(var17 instanceof HoglinEntity)) {
             if (!(var17 instanceof PiglinBruteEntity)) {
                if (!(var17 instanceof PiglinEntity)) {
@@ -73,7 +73,7 @@ public class Class7881 extends Class7882<LivingEntity> {
                   PiglinEntity var21 = (PiglinEntity)var17;
                   if (var21.isChild() && !var9.isPresent()) {
                      var9 = Optional.<PiglinEntity>of(var21);
-                  } else if (var21.method4635()) {
+                  } else if (var21.func_242337_eM()) {
                      var14.add(var21);
                   }
                }
@@ -93,22 +93,22 @@ public class Class7881 extends Class7882<LivingEntity> {
          }
       }
 
-      for (LivingEntity var20 : var5.<List<LivingEntity>>method21410(Class8830.field39818).orElse(ImmutableList.of())) {
-         if (var20 instanceof Class1035 && ((Class1035)var20).method4635()) {
-            var15.add((Class1035)var20);
+      for (LivingEntity var20 : var5.<List<LivingEntity>>getMemory(MemoryModuleType.field39818).orElse(ImmutableList.of())) {
+         if (var20 instanceof AbstractPiglinEntity && ((AbstractPiglinEntity)var20).func_242337_eM()) {
+            var15.add((AbstractPiglinEntity)var20);
          }
       }
 
-      var5.method21408(Class8830.field39848, var6);
-      var5.method21408(Class8830.field39858, var7);
-      var5.method21408(Class8830.field39859, var8);
-      var5.method21408(Class8830.field39865, var10);
-      var5.method21408(Class8830.field39860, var11);
-      var5.method21408(Class8830.field39868, var12);
-      var5.method21406(Class8830.field39861, var15);
-      var5.method21406(Class8830.field39862, var14);
-      var5.method21406(Class8830.field39866, var14.size());
-      var5.method21406(Class8830.field39867, var13);
+      var5.method21408(MemoryModuleType.field39848, var6);
+      var5.method21408(MemoryModuleType.field39858, var7);
+      var5.method21408(MemoryModuleType.field39859, var8);
+      var5.method21408(MemoryModuleType.field39865, var10);
+      var5.method21408(MemoryModuleType.field39860, var11);
+      var5.method21408(MemoryModuleType.field39868, var12);
+      var5.method21406(MemoryModuleType.field39861, var15);
+      var5.method21406(MemoryModuleType.field39862, var14);
+      var5.method21406(MemoryModuleType.field39866, var14.size());
+      var5.method21406(MemoryModuleType.field39867, var13);
    }
 
    private static Optional<BlockPos> method26426(ServerWorld var0, LivingEntity var1) {

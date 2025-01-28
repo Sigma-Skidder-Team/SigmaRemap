@@ -35,7 +35,7 @@ import javax.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Class1024 extends Class1025 implements Class1023 {
+public class Class1024 extends Class1025 implements ICrossbowUser {
    private static final DataParameter<Boolean> field5710 = EntityDataManager.<Boolean>createKey(Class1024.class, DataSerializers.BOOLEAN);
    private final Class927 field5711 = new Class927(5);
 

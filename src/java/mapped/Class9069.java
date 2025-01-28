@@ -39,11 +39,11 @@ public class Class9069 {
          Activity.field40220,
          10,
          ImmutableList.<Class3676<? super HoglinEntity>>of(
-            new Class3709(Class8830.field39870, 200),
+            new Class3709(MemoryModuleType.field39870, 200),
             new Class3736(EntityType.HOGLIN, 0.6F),
-            Class3690.method12538(Class8830.field39870, 1.0F, 8, true),
+            Class3690.method12538(MemoryModuleType.field39870, 1.0F, 8, true),
             new Class3733<>(Class9069::method33789),
-            new Class3740<>(HoglinEntity::method5084, (Class3676<? super CreatureEntity>)Class3690.method12539(Class8830.field39864, 0.4F, 8, false)),
+            new Class3740<>(HoglinEntity::method5084, (Class3676<? super CreatureEntity>)Class3690.method12539(MemoryModuleType.field39864, 0.4F, 8, false)),
             new Class3702<LivingEntity>(new Class3738(8.0F), RangedInteger.method29318(30, 60)),
             new Class3682(field41501, 0.6F),
             method33783()
@@ -56,15 +56,15 @@ public class Class9069 {
          Activity.field40229,
          10,
               ImmutableList.<Class3676<? super HoglinEntity>>of(
-            new Class3709(Class8830.field39870, 200),
+            new Class3709(MemoryModuleType.field39870, 200),
             new Class3736(EntityType.HOGLIN, 0.6F),
             new Class3720(1.0F),
             new Class3740<>(HoglinEntity::method5084, new Class3684(40)),
             new Class3740<>(Class1045::isChild, new Class3684(15)),
             new Class3685<>(),
-            new Class3714<HoglinEntity>(Class9069::method33802, Class8830.field39826)
+            new Class3714<HoglinEntity>(Class9069::method33802, MemoryModuleType.ATTACK_TARGET)
          ),
-         Class8830.field39826
+         MemoryModuleType.ATTACK_TARGET
       );
    }
 
@@ -73,12 +73,12 @@ public class Class9069 {
          Activity.field40232,
          10,
          ImmutableList.of(
-            Class3690.method12539(Class8830.field39837, 1.3F, 15, false),
+            Class3690.method12539(MemoryModuleType.field39837, 1.3F, 15, false),
             method33783(),
             new Class3702<LivingEntity>(new Class3738(8.0F), RangedInteger.method29318(30, 60)),
-            new Class3714<HoglinEntity>(Class9069::method33791, Class8830.field39837)
+            new Class3714<HoglinEntity>(Class9069::method33791, MemoryModuleType.field39837)
          ),
-         Class8830.field39837
+         MemoryModuleType.field39837
       );
    }
 
@@ -95,7 +95,7 @@ public class Class9069 {
          method33798(var0).ifPresent(var0::method5090);
       }
 
-      var0.method4304(var3.method21404(Class8830.field39826));
+      var0.method4304(var3.method21404(MemoryModuleType.ATTACK_TARGET));
    }
 
    public static void method33785(HoglinEntity var0, LivingEntity var1) {
@@ -115,23 +115,23 @@ public class Class9069 {
 
    private static void method33787(HoglinEntity var0, LivingEntity var1) {
       Brain var4 = var0.getBrain();
-      LivingEntity var5 = Class6983.method21584(var0, var4.<LivingEntity>method21410(Class8830.field39837), var1);
-      var5 = Class6983.method21584(var0, var4.<LivingEntity>method21410(Class8830.field39826), var5);
+      LivingEntity var5 = Class6983.method21584(var0, var4.<LivingEntity>getMemory(MemoryModuleType.field39837), var1);
+      var5 = Class6983.method21584(var0, var4.<LivingEntity>getMemory(MemoryModuleType.ATTACK_TARGET), var5);
       method33788(var0, var5);
    }
 
    private static void method33788(HoglinEntity var0, LivingEntity var1) {
-      var0.getBrain().method21405(Class8830.field39826);
-      var0.getBrain().method21405(Class8830.field39824);
-      var0.getBrain().method21407(Class8830.field39837, var1, (long)field41500.method29319(var0.world.rand));
+      var0.getBrain().method21405(MemoryModuleType.ATTACK_TARGET);
+      var0.getBrain().method21405(MemoryModuleType.field39824);
+      var0.getBrain().method21407(MemoryModuleType.field39837, var1, (long)field41500.method29319(var0.world.rand));
    }
 
    private static Optional<? extends LivingEntity> method33789(HoglinEntity var0) {
-      return !method33803(var0) && !method33802(var0) ? var0.getBrain().method21410(Class8830.field39823) : Optional.empty();
+      return !method33803(var0) && !method33802(var0) ? var0.getBrain().getMemory(MemoryModuleType.field39823) : Optional.empty();
    }
 
    public static boolean method33790(HoglinEntity var0, BlockPos var1) {
-      Optional var4 = var0.getBrain().<BlockPos>method21410(Class8830.field39870);
+      Optional var4 = var0.getBrain().<BlockPos>getMemory(MemoryModuleType.field39870);
       return var4.isPresent() && ((BlockPos)var4.get()).withinDistance(var1, 8.0);
    }
 
@@ -141,8 +141,8 @@ public class Class9069 {
 
    private static boolean method33792(HoglinEntity var0) {
       if (!var0.isChild()) {
-         int var3 = var0.getBrain().<Integer>method21410(Class8830.field39866).orElse(0);
-         int var4 = var0.getBrain().<Integer>method21410(Class8830.field39867).orElse(0) + 1;
+         int var3 = var0.getBrain().<Integer>getMemory(MemoryModuleType.field39866).orElse(0);
+         int var4 = var0.getBrain().<Integer>getMemory(MemoryModuleType.field39867).orElse(0) + 1;
          return var3 > var4;
       } else {
          return false;
@@ -151,8 +151,8 @@ public class Class9069 {
 
    public static void method33793(HoglinEntity var0, LivingEntity var1) {
       Brain var4 = var0.getBrain();
-      var4.method21405(Class8830.field39871);
-      var4.method21405(Class8830.field39829);
+      var4.method21405(MemoryModuleType.field39871);
+      var4.method21405(MemoryModuleType.field39829);
       if (!var0.isChild()) {
          method33794(var0, var1);
       } else {
@@ -172,9 +172,9 @@ public class Class9069 {
 
    private static void method33795(HoglinEntity var0, LivingEntity var1) {
       Brain var4 = var0.getBrain();
-      var4.method21405(Class8830.field39841);
-      var4.method21405(Class8830.field39829);
-      var4.method21407(Class8830.field39826, var1, 200L);
+      var4.method21405(MemoryModuleType.field39841);
+      var4.method21405(MemoryModuleType.field39829);
+      var4.method21407(MemoryModuleType.ATTACK_TARGET, var1, 200L);
    }
 
    private static void method33796(HoglinEntity var0, LivingEntity var1) {
@@ -183,7 +183,7 @@ public class Class9069 {
 
    private static void method33797(HoglinEntity var0, LivingEntity var1) {
       if (!method33803(var0)) {
-         Optional var4 = var0.getBrain().<LivingEntity>method21410(Class8830.field39826);
+         Optional var4 = var0.getBrain().<LivingEntity>getMemory(MemoryModuleType.ATTACK_TARGET);
          LivingEntity var5 = Class6983.method21584(var0, var4, var1);
          method33795(var0, var5);
       }
@@ -204,18 +204,18 @@ public class Class9069 {
    }
 
    private static List<HoglinEntity> method33800(HoglinEntity var0) {
-      return var0.getBrain().<List<HoglinEntity>>method21410(Class8830.field39863).orElse(ImmutableList.of());
+      return var0.getBrain().<List<HoglinEntity>>getMemory(MemoryModuleType.field39863).orElse(ImmutableList.of());
    }
 
    private static boolean method33801(HoglinEntity var0) {
-      return var0.getBrain().method21404(Class8830.field39870);
+      return var0.getBrain().method21404(MemoryModuleType.field39870);
    }
 
    private static boolean method33802(HoglinEntity var0) {
-      return var0.getBrain().method21404(Class8830.field39829);
+      return var0.getBrain().method21404(MemoryModuleType.field39829);
    }
 
    public static boolean method33803(HoglinEntity var0) {
-      return var0.getBrain().method21404(Class8830.field39871);
+      return var0.getBrain().method21404(MemoryModuleType.field39871);
    }
 }

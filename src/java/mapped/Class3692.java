@@ -10,12 +10,12 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Class3692<E extends LivingEntity> extends Class3676<E> {
-   private final Set<Class8830<?>> field19720;
+   private final Set<MemoryModuleType<?>> field19720;
    private final Class1956 field19721;
    private final Class2111 field19722;
    private final Class7271<Class3676<? super E>> field19723 = new Class7271<Class3676<? super E>>();
 
-   public Class3692(Map<Class8830<?>, Class2217> var1, Set<Class8830<?>> var2, Class1956 var3, Class2111 var4, List<Pair<Class3676<? super E>, Integer>> var5) {
+   public Class3692(Map<MemoryModuleType<?>, Class2217> var1, Set<MemoryModuleType<?>> var2, Class1956 var3, Class2111 var4, List<Pair<Class3676<? super E>, Integer>> var5) {
       super(var1);
       this.field19720 = var2;
       this.field19721 = var3;

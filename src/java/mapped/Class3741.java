@@ -10,7 +10,7 @@ public class Class3741<E extends LivingEntity> extends Class3676<E> {
    private final float field19868;
 
    public Class3741(float var1) {
-      super(ImmutableMap.of(Class8830.field39825, Class2217.field14486, Class8830.field39824, Class2217.field14485, Class8830.field39830, Class2217.field14484));
+      super(ImmutableMap.of(MemoryModuleType.field39825, Class2217.field14486, MemoryModuleType.field39824, Class2217.field14485, MemoryModuleType.field39830, Class2217.field14484));
       this.field19868 = var1;
    }
 
@@ -33,6 +33,6 @@ public class Class3741<E extends LivingEntity> extends Class3676<E> {
    }
 
    private Entity method12700(E var1) {
-      return var1.getBrain().<Entity>method21410(Class8830.field39830).get();
+      return var1.getBrain().<Entity>getMemory(MemoryModuleType.field39830).get();
    }
 }

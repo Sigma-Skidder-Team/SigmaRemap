@@ -14,7 +14,7 @@ public class Class3683 extends Class3676<CreatureEntity> {
    private final float field19698;
 
    public Class3683(float var1) {
-      super(ImmutableMap.of(Class8830.field39824, Class2217.field14485));
+      super(ImmutableMap.of(MemoryModuleType.field39824, Class2217.field14485));
       this.field19698 = var1;
    }
 
@@ -33,6 +33,6 @@ public class Class3683 extends Class3676<CreatureEntity> {
          .filter(var2x -> var1.method6765(var2x, var2))
          .filter(var2x -> var1.hasNoCollisions(var2))
          .findFirst();
-      var9.ifPresent(var2x -> var2.getBrain().method21406(Class8830.field39824, new Class8999(var2x, this.field19698, 0)));
+      var9.ifPresent(var2x -> var2.getBrain().method21406(MemoryModuleType.field39824, new Class8999(var2x, this.field19698, 0)));
    }
 }

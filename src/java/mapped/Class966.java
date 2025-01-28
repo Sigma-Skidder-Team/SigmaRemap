@@ -98,7 +98,7 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
       if (!this.world.isRemote) {
          for (LivingEntity var5 : this.field5419) {
             if (var5.isAlive() && !var5.removed && var3.withinDistance(var5.getPositionVec(), 32.0)) {
-               var5.getBrain().method21406(Class8830.field39840, this.world.getGameTime());
+               var5.getBrain().method21406(MemoryModuleType.field39840, this.world.getGameTime());
             }
          }
       }

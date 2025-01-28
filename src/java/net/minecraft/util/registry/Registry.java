@@ -77,7 +77,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Class9564>> field16056 = createKey("villager_type");
    public static final RegistryKey<Registry<Class8395>> field16057 = createKey("villager_profession");
    public static final RegistryKey<Registry<Class4913>> field16058 = createKey("point_of_interest_type");
-   public static final RegistryKey<Registry<Class8830<?>>> field16059 = createKey("memory_module_type");
+   public static final RegistryKey<Registry<MemoryModuleType<?>>> field16059 = createKey("memory_module_type");
    public static final RegistryKey<Registry<Class7963<?>>> field16060 = createKey("sensor_type");
    public static final RegistryKey<Registry<Schedule>> field16061 = createKey("schedule");
    public static final RegistryKey<Registry<Activity>> field16062 = createKey("activity");
@@ -110,7 +110,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Class2351<Class9564> field16089 = method9176(field16056, "plains", () -> Class9564.field44542);
    public static final Class2351<Class8395> field16090 = method9176(field16057, "none", () -> Class8395.field36011);
    public static final Class2351<Class4913> field16091 = method9176(field16058, "unemployed", () -> Class4913.field22751);
-   public static final Class2351<Class8830<?>> field16092 = method9176(field16059, "dummy", () -> Class8830.field39812);
+   public static final Class2351<MemoryModuleType<?>> field16092 = method9176(field16059, "dummy", () -> MemoryModuleType.field39812);
    public static final Class2351<Class7963<?>> field16093 = method9176(field16060, "dummy", () -> Class7963.field34237);
    public static final Registry<Schedule> field16094 = method9175(field16061, () -> Schedule.field35349);
    public static final Registry<Activity> field16095 = method9175(field16062, () -> Activity.field40220);

@@ -184,7 +184,7 @@ public abstract class MobEntity extends LivingEntity {
       return 80;
    }
 
-   public void method4237() {
+   public void playAmbientSound() {
       SoundEvent var3 = this.getAmbientSound();
       if (var3 != null) {
          this.playSound(var3, this.getSoundVolume(), this.getSoundPitch());
@@ -197,7 +197,7 @@ public abstract class MobEntity extends LivingEntity {
       this.world.getProfiler().startSection("mobBaseTick");
       if (this.isAlive() && this.rand.nextInt(1000) < this.field5593++) {
          this.method4238();
-         this.method4237();
+         this.playAmbientSound();
       }
 
       this.world.getProfiler().endSection();
@@ -683,10 +683,10 @@ public abstract class MobEntity extends LivingEntity {
       this.field5597.method27048();
       this.world.getProfiler().endSection();
       this.world.getProfiler().endSection();
-      this.method4257();
+      this.sendDebugPackets();
    }
 
-   public void method4257() {
+   public void sendDebugPackets() {
       DebugPacketSender.method23620(this.world, this, this.field5600);
    }
 

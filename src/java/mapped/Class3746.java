@@ -9,14 +9,14 @@ import java.util.Optional;
 
 public class Class3746 extends Class3676<VillagerEntity> {
    private static String[] field19885;
-   private final Class8830<Class9378> field19886;
+   private final MemoryModuleType<Class9378> field19886;
    private final float field19887;
    private final int field19888;
    private final int field19889;
    private final int field19890;
 
-   public Class3746(Class8830<Class9378> var1, float var2, int var3, int var4, int var5) {
-      super(ImmutableMap.of(Class8830.field39841, Class2217.field14486, Class8830.field39824, Class2217.field14485, var1, Class2217.field14484));
+   public Class3746(MemoryModuleType<Class9378> var1, float var2, int var3, int var4, int var5) {
+      super(ImmutableMap.of(MemoryModuleType.field39841, Class2217.field14486, MemoryModuleType.field39824, Class2217.field14485, var1, Class2217.field14484));
       this.field19886 = var1;
       this.field19887 = var2;
       this.field19888 = var3;
@@ -28,19 +28,19 @@ public class Class3746 extends Class3676<VillagerEntity> {
       Brain var6 = var1.getBrain();
       var1.method4699(this.field19886);
       var6.method21405(this.field19886);
-      var6.method21406(Class8830.field39841, var2);
+      var6.method21406(MemoryModuleType.field39841, var2);
    }
 
    public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
       Brain<VillagerEntity> var7 = var2.getBrain();
-      var7.method21410(this.field19886)
+      var7.getMemory(this.field19886)
          .ifPresent(
             var6 -> {
                if (this.method12704(var1, var6) || this.method12702(var1, var2)) {
                   this.method12701(var2, var3);
                } else if (!this.method12703(var2, var6)) {
                   if (!this.method12705(var1, var2, var6)) {
-                     var7.method21406(Class8830.field39824, new Class8999(var6.method35579(), this.field19887, this.field19888));
+                     var7.method21406(MemoryModuleType.field39824, new Class8999(var6.method35579(), this.field19887, this.field19888));
                   }
                } else {
                   Vector3d var9 = null;
@@ -55,14 +55,14 @@ public class Class3746 extends Class3676<VillagerEntity> {
                      return;
                   }
 
-                  var7.method21406(Class8830.field39824, new Class8999(var9, this.field19887, this.field19888));
+                  var7.method21406(MemoryModuleType.field39824, new Class8999(var9, this.field19887, this.field19888));
                }
             }
          );
    }
 
    private boolean method12702(ServerWorld var1, VillagerEntity var2) {
-      Optional var5 = var2.getBrain().<Long>method21410(Class8830.field39841);
+      Optional var5 = var2.getBrain().<Long>getMemory(MemoryModuleType.field39841);
       return !var5.isPresent() ? false : var1.getGameTime() - (Long)var5.get() > (long)this.field19890;
    }
 

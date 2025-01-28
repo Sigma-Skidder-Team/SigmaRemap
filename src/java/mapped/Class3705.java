@@ -16,13 +16,13 @@ public class Class3705 extends Class3676<LivingEntity> {
    public Class3705(int var1, BiPredicate<LivingEntity, LivingEntity> var2) {
       super(
          ImmutableMap.of(
-            Class8830.field39826,
+            MemoryModuleType.ATTACK_TARGET,
             Class2217.field14484,
-            Class8830.field39849,
+            MemoryModuleType.field39849,
             Class2217.field14486,
-            Class8830.field39856,
+            MemoryModuleType.field39856,
             Class2217.field14485,
-            Class8830.field39857,
+            MemoryModuleType.field39857,
             Class2217.field14486
          )
       );
@@ -39,17 +39,17 @@ public class Class3705 extends Class3676<LivingEntity> {
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       LivingEntity var7 = this.method12584(var2);
       if (this.field19768.test(var2, var7)) {
-         var2.getBrain().method21407(Class8830.field39857, true, (long)this.field19767);
+         var2.getBrain().method21407(MemoryModuleType.field39857, true, (long)this.field19767);
       }
 
-      var2.getBrain().method21407(Class8830.field39856, var7.getPosition(), (long)this.field19767);
+      var2.getBrain().method21407(MemoryModuleType.field39856, var7.getPosition(), (long)this.field19767);
       if (var7.getType() != EntityType.PLAYER || var1.getGameRules().getBoolean(GameRules.field24254)) {
-         var2.getBrain().method21405(Class8830.field39826);
-         var2.getBrain().method21405(Class8830.field39849);
+         var2.getBrain().method21405(MemoryModuleType.ATTACK_TARGET);
+         var2.getBrain().method21405(MemoryModuleType.field39849);
       }
    }
 
    private LivingEntity method12584(LivingEntity var1) {
-      return var1.getBrain().<LivingEntity>method21410(Class8830.field39826).get();
+      return var1.getBrain().<LivingEntity>getMemory(MemoryModuleType.ATTACK_TARGET).get();
    }
 }

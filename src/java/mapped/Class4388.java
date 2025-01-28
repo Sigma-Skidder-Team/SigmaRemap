@@ -46,7 +46,7 @@ public class Class4388 {
 
    public static void method13799(PiglinEntity var0) {
       int var3 = field21459.method29319(var0.world.rand);
-      var0.getBrain().method21407(Class8830.field39855, true, (long)var3);
+      var0.getBrain().method21407(MemoryModuleType.field39855, true, (long)var3);
    }
 
    private static void method13800(Brain<PiglinEntity> var0) {
@@ -73,7 +73,7 @@ public class Class4388 {
          10,
          ImmutableList.of(
             new Class3738(Class4388::method13875, 14.0F),
-            new Class3733<PiglinEntity>(Class1035::method4635, Class4388::method13831),
+            new Class3733<PiglinEntity>(AbstractPiglinEntity::func_242337_eM, Class4388::method13831),
             new Class3740<PiglinEntity>(PiglinEntity::method4618, new Class3721()),
             method13809(),
             method13845(),
@@ -95,9 +95,9 @@ public class Class4388 {
             new Class3684(20),
             new Class3731<>(),
             new Class3680<>(),
-            new Class3714<PiglinEntity>(Class4388::method13830, Class8830.field39826)
+            new Class3714<PiglinEntity>(Class4388::method13830, MemoryModuleType.ATTACK_TARGET)
          ),
-         Class8830.field39826
+         MemoryModuleType.ATTACK_TARGET
       );
    }
 
@@ -108,14 +108,14 @@ public class Class4388 {
          ImmutableList.<Class3676<? super PiglinEntity>>of(
             method13809(),
                  new Class3738(Class4388::method13875, 14.0F),
-                 new Class3733<>(Class1035::method4635, Class4388::method13831),
+                 new Class3733<>(AbstractPiglinEntity::func_242337_eM, Class4388::method13831),
                  new Class3740<>(var0x -> !var0x.method4623(), new Class3748<>(2, 1.0F)),
                  new Class3740<>(PiglinEntity::method4623, new Class3748<>(4, 0.6F)),
                  new Class3693<>(
                ImmutableList.of(Pair.of(new Class3738(EntityType.PIGLIN, 8.0F), 1), Pair.of(new Class3718(0.6F, 2, 1), 1), Pair.of(new Class3675(10, 20), 1))
             )
          ),
-         Class8830.field39856
+         MemoryModuleType.field39856
       );
    }
 
@@ -124,7 +124,7 @@ public class Class4388 {
          Activity.field40231,
          10,
          ImmutableList.<Class3676<? super PiglinEntity>>of(new Class3724<>(Class4388::method13879, 1.0F, true, 9), new Class3743<>(9), new Class3732(200, 200)),
-         Class8830.field39851
+         MemoryModuleType.field39851
       );
    }
 
@@ -133,12 +133,12 @@ public class Class4388 {
          Activity.field40232,
          10,
          ImmutableList.of(
-            Class3690.method12539(Class8830.field39837, 1.0F, 12, true),
+            Class3690.method12539(MemoryModuleType.field39837, 1.0F, 12, true),
             method13807(),
             method13808(),
-            new Class3714<PiglinEntity>(Class4388::method13857, Class8830.field39837)
+            new Class3714<PiglinEntity>(Class4388::method13857, MemoryModuleType.field39837)
          ),
-         Class8830.field39837
+         MemoryModuleType.field39837
       );
    }
 
@@ -152,7 +152,7 @@ public class Class4388 {
             new Class3740<>(Entity::isPassenger, method13807()),
             new Class3755<>(8, Class4388::method13828)
          ),
-         Class8830.field39830
+         MemoryModuleType.field39830
       );
    }
 
@@ -171,7 +171,7 @@ public class Class4388 {
       return new Class3693<PiglinEntity>(
          ImmutableList.of(
             Pair.of(new Class3718(0.6F), 2),
-            Pair.of(Class3696.<LivingEntity>method12551(EntityType.PIGLIN, 8, Class8830.field39828, 0.6F, 2), 2),
+            Pair.of(Class3696.<LivingEntity>method12551(EntityType.PIGLIN, 8, MemoryModuleType.field39828, 0.6F, 2), 2),
             Pair.of(new Class3740<LivingEntity>(Class4388::method13874, new Class3694(0.6F, 3)), 2),
             Pair.of(new Class3675(30, 60), 1)
          )
@@ -179,15 +179,15 @@ public class Class4388 {
    }
 
    private static Class3690<BlockPos> method13809() {
-      return Class3690.method12538(Class8830.field39870, 1.0F, 8, false);
+      return Class3690.method12538(MemoryModuleType.field39870, 1.0F, 8, false);
    }
 
    private static Class3744<PiglinEntity, LivingEntity> method13810() {
-      return new Class3744<PiglinEntity, LivingEntity>(PiglinEntity::isChild, Class8830.field39848, Class8830.field39837, field21464);
+      return new Class3744<PiglinEntity, LivingEntity>(PiglinEntity::isChild, MemoryModuleType.field39848, MemoryModuleType.field39837, field21464);
    }
 
    private static Class3744<PiglinEntity, LivingEntity> method13811() {
-      return new Class3744<PiglinEntity, LivingEntity>(Class4388::method13830, Class8830.field39865, Class8830.field39837, field21463);
+      return new Class3744<PiglinEntity, LivingEntity>(Class4388::method13830, MemoryModuleType.field39865, MemoryModuleType.field39837, field21463);
    }
 
    public static void method13812(PiglinEntity var0) {
@@ -201,16 +201,16 @@ public class Class4388 {
          method13837(var0).ifPresent(var0::method4629);
       }
 
-      var0.method4304(var3.method21404(Class8830.field39826));
-      if (!var3.method21404(Class8830.field39830) && method13813(var0)) {
+      var0.method4304(var3.method21404(MemoryModuleType.ATTACK_TARGET));
+      if (!var3.method21404(MemoryModuleType.field39830) && method13813(var0)) {
          var0.stopRiding();
       }
 
-      if (!var3.method21404(Class8830.field39856)) {
-         var3.method21405(Class8830.field39857);
+      if (!var3.method21404(MemoryModuleType.field39856)) {
+         var3.method21405(MemoryModuleType.field39857);
       }
 
-      var0.method4624(var3.method21404(Class8830.field39857));
+      var0.method4624(var3.method21404(MemoryModuleType.field39857));
    }
 
    private static boolean method13813(PiglinEntity var0) {
@@ -245,7 +245,7 @@ public class Class4388 {
             }
          }
       } else {
-         var0.getBrain().method21405(Class8830.field39852);
+         var0.getBrain().method21405(MemoryModuleType.field39852);
          method13815(var0, var4);
          method13867(var0);
       }
@@ -274,7 +274,7 @@ public class Class4388 {
    public static void method13817(PiglinEntity var0, boolean var1) {
       ItemStack var4 = var0.getHeldItem(Hand.OFF_HAND);
       var0.setHeldItem(Hand.OFF_HAND, ItemStack.EMPTY);
-      if (!var0.method4635()) {
+      if (!var0.func_242337_eM()) {
          boolean var5 = var0.method4247(var4);
          if (!var5) {
             ItemStack var6 = var0.getHeldItemMainhand();
@@ -312,7 +312,7 @@ public class Class4388 {
    }
 
    private static void method13820(PiglinEntity var0, List<ItemStack> var1) {
-      Optional var4 = var0.getBrain().<PlayerEntity>method21410(Class8830.field39822);
+      Optional var4 = var0.getBrain().<PlayerEntity>getMemory(MemoryModuleType.field39822);
       if (!var4.isPresent()) {
          method13821(var0, var1);
       } else {
@@ -355,7 +355,7 @@ public class Class4388 {
    public static boolean method13826(PiglinEntity var0, ItemStack var1) {
       Item var4 = var1.getItem();
       if (!var4.method11743(ItemTags.field26108)) {
-         if (method13876(var0) && var0.getBrain().method21404(Class8830.field39826)) {
+         if (method13876(var0) && var0.getBrain().method21404(MemoryModuleType.ATTACK_TARGET)) {
             return false;
          } else if (!method13869(var4)) {
             boolean var5 = var0.method4613(var1);
@@ -393,10 +393,10 @@ public class Class4388 {
 
    private static boolean method13830(PiglinEntity var0) {
       Brain<PiglinEntity> var3 = var0.getBrain();
-      if (!var3.method21404(Class8830.field39865)) {
+      if (!var3.method21404(MemoryModuleType.field39865)) {
          return false;
       } else {
-         LivingEntity var4 = var3.method21410(Class8830.field39865).get();
+         LivingEntity var4 = var3.getMemory(MemoryModuleType.field39865).get();
          return var0.isEntityInRange(var4, 6.0);
       }
    }
@@ -404,22 +404,22 @@ public class Class4388 {
    private static Optional<? extends LivingEntity> method13831(PiglinEntity var0) {
       Brain var3 = var0.getBrain();
       if (!method13830(var0)) {
-         Optional var4 = Class6983.method21586(var0, Class8830.field39849);
+         Optional var4 = Class6983.method21586(var0, MemoryModuleType.field39849);
          if (var4.isPresent() && method13871((LivingEntity)var4.get())) {
             return var4;
          } else {
-            if (var3.method21404(Class8830.field39850)) {
-               Optional var5 = var3.<PlayerEntity>method21410(Class8830.field39823);
+            if (var3.method21404(MemoryModuleType.field39850)) {
+               Optional var5 = var3.<PlayerEntity>getMemory(MemoryModuleType.field39823);
                if (var5.isPresent()) {
                   return var5;
                }
             }
 
-            Optional var7 = var3.<MobEntity>method21410(Class8830.field39848);
+            Optional var7 = var3.<MobEntity>getMemory(MemoryModuleType.field39848);
             if (var7.isPresent()) {
                return var7;
             } else {
-               Optional var6 = var3.<PlayerEntity>method21410(Class8830.field39860);
+               Optional var6 = var3.<PlayerEntity>getMemory(MemoryModuleType.field39860);
                return var6.isPresent() && method13871((LivingEntity)var6.get()) ? var6 : Optional.empty();
             }
          }
@@ -430,7 +430,7 @@ public class Class4388 {
 
    public static void method13832(PlayerEntity var0, boolean var1) {
       List<PiglinEntity> var4 = var0.world.getEntitiesWithinAABB(PiglinEntity.class, var0.getBoundingBox().grow(16.0));
-      var4.stream().filter(Class4388::method13865).filter(var2 -> !var1 || Class6983.method21583(var2, var0)).forEach(var1x -> {
+      var4.stream().filter(Class4388::func_234520_i_).filter(var2 -> !var1 || Class6983.method21583(var2, var0)).forEach(var1x -> {
          if (!var1x.world.getGameRules().getBoolean(GameRules.field24255)) {
             method13849(var1x, var0);
          } else {
@@ -453,7 +453,7 @@ public class Class4388 {
    }
 
    public static boolean method13834(PiglinEntity var0, ItemStack var1) {
-      return !method13876(var0) && !method13868(var0) && var0.method4635() && method13869(var1.getItem());
+      return !method13876(var0) && !method13868(var0) && var0.func_242337_eM() && method13869(var1.getItem());
    }
 
    public static void method13835(PiglinEntity var0, LivingEntity var1) {
@@ -463,16 +463,16 @@ public class Class4388 {
          }
 
          Brain var4 = var0.getBrain();
-         var4.method21405(Class8830.field39856);
-         var4.method21405(Class8830.field39857);
-         var4.method21405(Class8830.field39851);
+         var4.method21405(MemoryModuleType.field39856);
+         var4.method21405(MemoryModuleType.field39857);
+         var4.method21405(MemoryModuleType.field39851);
          if (var1 instanceof PlayerEntity) {
-            var4.method21407(Class8830.field39854, true, 400L);
+            var4.method21407(MemoryModuleType.field39854, true, 400L);
          }
 
          method13853(var0).ifPresent(var2 -> {
             if (var2.getType() != var1.getType()) {
-               var4.method21405(Class8830.field39837);
+               var4.method21405(MemoryModuleType.field39837);
             }
          });
          if (!var0.isChild()) {
@@ -483,7 +483,7 @@ public class Class4388 {
                method13836(var0, var1);
             }
          } else {
-            var4.method21407(Class8830.field39837, var1, 100L);
+            var4.method21407(MemoryModuleType.field39837, var1, 100L);
             if (method13871(var1)) {
                method13846(var0, var1);
             }
@@ -491,7 +491,7 @@ public class Class4388 {
       }
    }
 
-   public static void method13836(Class1035 var0, LivingEntity var1) {
+   public static void method13836(AbstractPiglinEntity var0, LivingEntity var1) {
       if (!var0.getBrain().method21430(Activity.field40232) && method13871(var1) && !Class6983.method21582(var0, var1, 4.0)) {
          if (var1.getType() == EntityType.PLAYER && var0.world.getGameRules().getBoolean(GameRules.field24255)) {
             method13850(var0, var1);
@@ -535,20 +535,20 @@ public class Class4388 {
 
    private static boolean method13839(PiglinEntity var0) {
       Brain<PiglinEntity> var3 = var0.getBrain();
-      return var3.method21404(Class8830.field39837) ? var3.method21410(Class8830.field39837).get().isEntityInRange(var0, 12.0) : false;
+      return var3.method21404(MemoryModuleType.field39837) ? var3.getMemory(MemoryModuleType.field39837).get().isEntityInRange(var0, 12.0) : false;
    }
 
    public static boolean method13840(PiglinEntity var0) {
-      return var0.getBrain().method21404(Class8830.field39855)
-         || method13841(var0).stream().anyMatch(var0x -> var0x.getBrain().method21404(Class8830.field39855));
+      return var0.getBrain().method21404(MemoryModuleType.field39855)
+         || method13841(var0).stream().anyMatch(var0x -> var0x.getBrain().method21404(MemoryModuleType.field39855));
    }
 
-   private static List<Class1035> method13841(PiglinEntity var0) {
-      return var0.getBrain().<List<Class1035>>method21410(Class8830.field39862).orElse(ImmutableList.of());
+   private static List<AbstractPiglinEntity> method13841(PiglinEntity var0) {
+      return var0.getBrain().<List<AbstractPiglinEntity>>getMemory(MemoryModuleType.field39862).orElse(ImmutableList.of());
    }
 
-   private static List<Class1035> method13842(Class1035 var0) {
-      return var0.getBrain().<List<Class1035>>method21410(Class8830.field39861).orElse(ImmutableList.of());
+   private static List<AbstractPiglinEntity> method13842(AbstractPiglinEntity var0) {
+      return var0.getBrain().<List<AbstractPiglinEntity>>getMemory(MemoryModuleType.field39861).orElse(ImmutableList.of());
    }
 
    public static boolean method13843(LivingEntity var0) {
@@ -563,15 +563,15 @@ public class Class4388 {
    }
 
    private static void method13844(PiglinEntity var0) {
-      var0.getBrain().method21405(Class8830.field39824);
+      var0.getBrain().method21405(MemoryModuleType.field39824);
       var0.method4230().method21666();
    }
 
    private static Class3702<PiglinEntity> method13845() {
-      return new Class3702<PiglinEntity>(new Class3744<>(PiglinEntity::isChild, Class8830.field39859, Class8830.field39830, field21461), field21460);
+      return new Class3702<PiglinEntity>(new Class3744<>(PiglinEntity::isChild, MemoryModuleType.field39859, MemoryModuleType.field39830, field21461), field21460);
    }
 
-   public static void method13846(Class1035 var0, LivingEntity var1) {
+   public static void method13846(AbstractPiglinEntity var0, LivingEntity var1) {
       method13842(var0).forEach(var1x -> {
          if (var1.getType() != EntityType.HOGLIN || var1x.method4618() && ((HoglinEntity)var1).method5089()) {
             method13851(var1x, var1);
@@ -579,7 +579,7 @@ public class Class4388 {
       });
    }
 
-   public static void method13847(Class1035 var0) {
+   public static void method13847(AbstractPiglinEntity var0) {
       method13842(var0).forEach(var0x -> method13854(var0x).ifPresent(var1 -> method13849(var0x, var1)));
    }
 
@@ -587,21 +587,21 @@ public class Class4388 {
       method13841(var0).forEach(Class4388::method13861);
    }
 
-   public static void method13849(Class1035 var0, LivingEntity var1) {
+   public static void method13849(AbstractPiglinEntity var0, LivingEntity var1) {
       if (method13871(var1)) {
-         var0.getBrain().method21405(Class8830.field39841);
-         var0.getBrain().method21407(Class8830.field39849, var1.getUniqueID(), 600L);
+         var0.getBrain().method21405(MemoryModuleType.field39841);
+         var0.getBrain().method21407(MemoryModuleType.field39849, var1.getUniqueID(), 600L);
          if (var1.getType() == EntityType.HOGLIN && var0.method4618()) {
             method13861(var0);
          }
 
          if (var1.getType() == EntityType.PLAYER && var0.world.getGameRules().getBoolean(GameRules.field24255)) {
-            var0.getBrain().method21407(Class8830.field39850, true, 600L);
+            var0.getBrain().method21407(MemoryModuleType.field39850, true, 600L);
          }
       }
    }
 
-   private static void method13850(Class1035 var0, LivingEntity var1) {
+   private static void method13850(AbstractPiglinEntity var0, LivingEntity var1) {
       Optional var4 = method13854(var0);
       if (!var4.isPresent()) {
          method13849(var0, var1);
@@ -610,7 +610,7 @@ public class Class4388 {
       }
    }
 
-   private static void method13851(Class1035 var0, LivingEntity var1) {
+   private static void method13851(AbstractPiglinEntity var0, LivingEntity var1) {
       Optional var4 = method13852(var0);
       LivingEntity var5 = Class6983.method21584(var0, var4, var1);
       if (!var4.isPresent() || var4.get() != var5) {
@@ -618,16 +618,16 @@ public class Class4388 {
       }
    }
 
-   private static Optional<LivingEntity> method13852(Class1035 var0) {
-      return Class6983.method21586(var0, Class8830.field39849);
+   private static Optional<LivingEntity> method13852(AbstractPiglinEntity var0) {
+      return Class6983.method21586(var0, MemoryModuleType.field39849);
    }
 
    public static Optional<LivingEntity> method13853(PiglinEntity var0) {
-      return !var0.getBrain().method21404(Class8830.field39837) ? Optional.<LivingEntity>empty() : var0.getBrain().<LivingEntity>method21410(Class8830.field39837);
+      return !var0.getBrain().method21404(MemoryModuleType.field39837) ? Optional.<LivingEntity>empty() : var0.getBrain().<LivingEntity>getMemory(MemoryModuleType.field39837);
    }
 
-   public static Optional<PlayerEntity> method13854(Class1035 var0) {
-      return !var0.getBrain().method21404(Class8830.field39823) ? Optional.<PlayerEntity>empty() : var0.getBrain().<PlayerEntity>method21410(Class8830.field39823);
+   public static Optional<PlayerEntity> method13854(AbstractPiglinEntity var0) {
+      return !var0.getBrain().method21404(MemoryModuleType.field39823) ? Optional.<PlayerEntity>empty() : var0.getBrain().<PlayerEntity>getMemory(MemoryModuleType.field39823);
    }
 
    private static void method13855(PiglinEntity var0, LivingEntity var1) {
@@ -636,18 +636,18 @@ public class Class4388 {
 
    private static void method13856(PiglinEntity var0, LivingEntity var1) {
       Brain var4 = var0.getBrain();
-      LivingEntity var5 = Class6983.method21584(var0, var4.<LivingEntity>method21410(Class8830.field39837), var1);
-      var5 = Class6983.method21584(var0, var4.<LivingEntity>method21410(Class8830.field39826), var5);
+      LivingEntity var5 = Class6983.method21584(var0, var4.<LivingEntity>getMemory(MemoryModuleType.field39837), var1);
+      var5 = Class6983.method21584(var0, var4.<LivingEntity>getMemory(MemoryModuleType.ATTACK_TARGET), var5);
       method13860(var0, var5);
    }
 
    private static boolean method13857(PiglinEntity var0) {
       Brain<PiglinEntity> var3 = var0.getBrain();
-      if (var3.method21404(Class8830.field39837)) {
-         LivingEntity var4 = var3.method21410(Class8830.field39837).get();
+      if (var3.method21404(MemoryModuleType.field39837)) {
+         LivingEntity var4 = var3.getMemory(MemoryModuleType.field39837).get();
          EntityType<?> var5 = var4.getType();
          if (var5 != EntityType.HOGLIN) {
-            return !method13880(var5) ? false : !var3.method21411(Class8830.field39865, var4);
+            return !method13880(var5) ? false : !var3.method21411(MemoryModuleType.field39865, var4);
          } else {
             return method13858(var0);
          }
@@ -661,25 +661,25 @@ public class Class4388 {
    }
 
    private static boolean method13859(PiglinEntity var0) {
-      int var3 = var0.getBrain().<Integer>method21410(Class8830.field39866).orElse(0) + 1;
-      int var4 = var0.getBrain().<Integer>method21410(Class8830.field39867).orElse(0);
+      int var3 = var0.getBrain().<Integer>getMemory(MemoryModuleType.field39866).orElse(0) + 1;
+      int var4 = var0.getBrain().<Integer>getMemory(MemoryModuleType.field39867).orElse(0);
       return var4 > var3;
    }
 
    private static void method13860(PiglinEntity var0, LivingEntity var1) {
-      var0.getBrain().method21405(Class8830.field39849);
-      var0.getBrain().method21405(Class8830.field39826);
-      var0.getBrain().method21405(Class8830.field39824);
-      var0.getBrain().method21407(Class8830.field39837, var1, (long)field21462.method29319(var0.world.rand));
+      var0.getBrain().method21405(MemoryModuleType.field39849);
+      var0.getBrain().method21405(MemoryModuleType.ATTACK_TARGET);
+      var0.getBrain().method21405(MemoryModuleType.field39824);
+      var0.getBrain().method21407(MemoryModuleType.field39837, var1, (long)field21462.method29319(var0.world.rand));
       method13861(var0);
    }
 
-   public static void method13861(Class1035 var0) {
-      var0.getBrain().method21407(Class8830.field39855, true, (long)field21459.method29319(var0.world.rand));
+   public static void method13861(AbstractPiglinEntity var0) {
+      var0.getBrain().method21407(MemoryModuleType.field39855, true, (long)field21459.method29319(var0.world.rand));
    }
 
    private static void method13862(PiglinEntity var0) {
-      var0.getBrain().method21407(Class8830.field39869, true, 200L);
+      var0.getBrain().method21407(MemoryModuleType.field39869, true, 200L);
    }
 
    private static Vector3d method13863(PiglinEntity var0) {
@@ -688,10 +688,10 @@ public class Class4388 {
    }
 
    private static boolean method13864(PiglinEntity var0) {
-      return var0.getBrain().method21404(Class8830.field39869);
+      return var0.getBrain().method21404(MemoryModuleType.field39869);
    }
 
-   public static boolean method13865(Class1035 var0) {
+   public static boolean func_234520_i_(AbstractPiglinEntity var0) {
       return var0.getBrain().method21430(Activity.field40220);
    }
 
@@ -700,11 +700,11 @@ public class Class4388 {
    }
 
    private static void method13867(LivingEntity var0) {
-      var0.getBrain().method21407(Class8830.field39851, true, 120L);
+      var0.getBrain().method21407(MemoryModuleType.field39851, true, 120L);
    }
 
    private static boolean method13868(PiglinEntity var0) {
-      return var0.getBrain().method21404(Class8830.field39851);
+      return var0.getBrain().method21404(MemoryModuleType.field39851);
    }
 
    private static boolean method13869(Item var0) {
@@ -720,11 +720,11 @@ public class Class4388 {
    }
 
    private static boolean method13872(PiglinEntity var0) {
-      return var0.getBrain().method21404(Class8830.field39870);
+      return var0.getBrain().method21404(MemoryModuleType.field39870);
    }
 
    private static boolean method13873(LivingEntity var0) {
-      return var0.getBrain().method21404(Class8830.field39868);
+      return var0.getBrain().method21404(MemoryModuleType.field39868);
    }
 
    private static boolean method13874(LivingEntity var0) {
@@ -736,11 +736,11 @@ public class Class4388 {
    }
 
    private static boolean method13876(PiglinEntity var0) {
-      return var0.getBrain().method21404(Class8830.field39854);
+      return var0.getBrain().method21404(MemoryModuleType.field39854);
    }
 
    private static boolean method13877(LivingEntity var0) {
-      return var0.getBrain().method21404(Class8830.field39835);
+      return var0.getBrain().method21404(MemoryModuleType.field39835);
    }
 
    private static boolean method13878(PiglinEntity var0) {

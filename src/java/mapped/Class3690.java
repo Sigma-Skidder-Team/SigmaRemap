@@ -10,24 +10,24 @@ import java.util.function.Function;
 
 public class Class3690<T> extends Class3676<CreatureEntity> {
    private static String[] field19713;
-   private final Class8830<T> field19714;
+   private final MemoryModuleType<T> field19714;
    private final float field19715;
    private final int field19716;
    private final Function<T, Vector3d> field19717;
 
-   public Class3690(Class8830<T> var1, float var2, int var3, boolean var4, Function<T, Vector3d> var5) {
-      super(ImmutableMap.of(Class8830.field39824, !var4 ? Class2217.field14485 : Class2217.field14486, var1, Class2217.field14484));
+   public Class3690(MemoryModuleType<T> var1, float var2, int var3, boolean var4, Function<T, Vector3d> var5) {
+      super(ImmutableMap.of(MemoryModuleType.field39824, !var4 ? Class2217.field14485 : Class2217.field14486, var1, Class2217.field14484));
       this.field19714 = var1;
       this.field19715 = var2;
       this.field19716 = var3;
       this.field19717 = var5;
    }
 
-   public static Class3690<BlockPos> method12538(Class8830<BlockPos> var0, float var1, int var2, boolean var3) {
+   public static Class3690<BlockPos> method12538(MemoryModuleType<BlockPos> var0, float var1, int var2, boolean var3) {
       return new Class3690<>(var0, var1, var2, var3, Vector3d::method11330);
    }
 
-   public static Class3690<? extends Entity> method12539(Class8830<? extends Entity> var0, float var1, int var2, boolean var3) {
+   public static Class3690<? extends Entity> method12539(MemoryModuleType<? extends Entity> var0, float var1, int var2, boolean var3) {
       return new Class3690<>(var0, var1, var2, var3, Entity::getPositionVec);
    }
 
@@ -36,12 +36,12 @@ public class Class3690<T> extends Class3676<CreatureEntity> {
    }
 
    private Vector3d method12540(CreatureEntity var1) {
-      return this.field19717.apply(var1.getBrain().<T>method21410(this.field19714).get());
+      return this.field19717.apply(var1.getBrain().<T>getMemory(this.field19714).get());
    }
 
    private boolean method12541(CreatureEntity var1) {
-      if (var1.getBrain().method21404(Class8830.field39824)) {
-         Class8999 var4 = var1.getBrain().<Class8999>method21410(Class8830.field39824).get();
+      if (var1.getBrain().method21404(MemoryModuleType.field39824)) {
+         Class8999 var4 = var1.getBrain().<Class8999>getMemory(MemoryModuleType.field39824).get();
          if (var4.method33252() == this.field19715) {
             Vector3d var5 = var4.method33251().method26356().subtract(var1.getPositionVec());
             Vector3d var6 = this.method12540(var1).subtract(var1.getPositionVec());
@@ -62,7 +62,7 @@ public class Class3690<T> extends Class3676<CreatureEntity> {
       for (int var5 = 0; var5 < 10; var5++) {
          Vector3d var6 = Class8037.method27591(var0, 16, 7, var1);
          if (var6 != null) {
-            var0.getBrain().method21406(Class8830.field39824, new Class8999(var6, var2, 0));
+            var0.getBrain().method21406(MemoryModuleType.field39824, new Class8999(var6, var2, 0));
             return;
          }
       }

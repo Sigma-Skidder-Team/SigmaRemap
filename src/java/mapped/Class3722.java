@@ -8,7 +8,7 @@ public class Class3722<E extends PiglinEntity> extends Class3676<E> {
    private static String[] field19807;
 
    public Class3722() {
-      super(ImmutableMap.of(Class8830.field39851, Class2217.field14485));
+      super(ImmutableMap.of(MemoryModuleType.field39851, Class2217.field14485));
    }
 
    public boolean method12508(ServerWorld var1, E var2) {

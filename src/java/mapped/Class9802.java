@@ -8,14 +8,14 @@ import java.util.Optional;
 
 public final class Class9802<U> {
    private static String[] field45820;
-   private final Class8830<U> field45821;
+   private final MemoryModuleType<U> field45821;
    private final Optional<? extends Class8222<U>> field45822;
 
-   private static <U> Class9802<U> method38645(Class8830<U> var0, Optional<? extends Class8222<?>> var1) {
+   private static <U> Class9802<U> method38645(MemoryModuleType<U> var0, Optional<? extends Class8222<?>> var1) {
       return new Class9802(var0, var1);
    }
 
-   private Class9802(Class8830<U> var1, Optional<? extends Class8222<U>> var2) {
+   private Class9802(MemoryModuleType<U> var1, Optional<? extends Class8222<U>> var2) {
       this.field45821 = var1;
       this.field45822 = var2;
    }
@@ -31,7 +31,7 @@ public final class Class9802<U> {
    }
 
    // $VF: synthetic method
-   public Class9802(Class8830 var1, Optional var2, Class9490 var3) {
+   public Class9802(MemoryModuleType var1, Optional var2, Class9490 var3) {
       this(var1, var2);
    }
 
@@ -41,7 +41,7 @@ public final class Class9802<U> {
    }
 
    // $VF: synthetic method
-   public static Class9802 method38651(Class8830 var0, Optional var1) {
+   public static Class9802 method38651(MemoryModuleType var0, Optional var1) {
       return method38645(var0, var1);
    }
 }

@@ -15,7 +15,7 @@ public class Class3686 extends Class3676<LivingEntity> {
    private final float field19704;
 
    public Class3686(float var1) {
-      super(ImmutableMap.of(Class8830.field39824, Class2217.field14485));
+      super(ImmutableMap.of(MemoryModuleType.field39824, Class2217.field14485));
       this.field19704 = var1;
    }
 
@@ -23,7 +23,7 @@ public class Class3686 extends Class3676<LivingEntity> {
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       Optional<Vector3d> var7 = Optional.ofNullable(this.method12532(var1, var2));
       if (var7.isPresent()) {
-         var2.getBrain().method21408(Class8830.field39824, var7.map(var1x -> new Class8999(var1x, this.field19704, 0)));
+         var2.getBrain().method21408(MemoryModuleType.field39824, var7.map(var1x -> new Class8999(var1x, this.field19704, 0)));
       }
    }
 

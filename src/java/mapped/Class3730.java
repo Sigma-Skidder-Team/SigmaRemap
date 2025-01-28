@@ -16,7 +16,7 @@ public class Class3730 extends Class3676<MobEntity> {
    private int field19838;
 
    public Class3730(float var1) {
-      super(ImmutableMap.of(Class8830.field39834, Class2217.field14484, Class8830.field39824, Class2217.field14485));
+      super(ImmutableMap.of(MemoryModuleType.field39834, Class2217.field14484, MemoryModuleType.field39824, Class2217.field14485));
       this.field19834 = var1;
    }
 
@@ -73,7 +73,7 @@ public class Class3730 extends Class3676<MobEntity> {
    }
 
    private void method12647(MobEntity var1, BlockPos var2) {
-      var1.getBrain().method21406(Class8830.field39824, new Class8999(var2, this.field19834, 0));
+      var1.getBrain().method21406(MemoryModuleType.field39824, new Class8999(var2, this.field19834, 0));
    }
 
    private boolean method12648(ServerWorld var1, MobEntity var2) {
@@ -95,7 +95,7 @@ public class Class3730 extends Class3676<MobEntity> {
    }
 
    private Optional<BlockPos> method12652(MobEntity var1) {
-      return var1.getBrain().<BlockPos>method21410(Class8830.field39834);
+      return var1.getBrain().<BlockPos>getMemory(MemoryModuleType.field39834);
    }
 
    private boolean method12653(ServerWorld var1, MobEntity var2) {

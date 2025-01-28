@@ -19,7 +19,7 @@ public class Class3707 extends Class3706 {
 
    @Override
    public void method12585(ServerWorld var1, VillagerEntity var2) {
-      Optional var5 = var2.getBrain().<Class9378>method21410(Class8830.field39814);
+      Optional var5 = var2.getBrain().<Class9378>getMemory(MemoryModuleType.field39814);
       if (var5.isPresent()) {
          Class9378 var6 = (Class9378)var5.get();
          BlockState var7 = var1.getBlockState(var6.method35579());

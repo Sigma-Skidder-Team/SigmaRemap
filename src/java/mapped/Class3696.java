@@ -15,10 +15,10 @@ public class Class3696<E extends LivingEntity, T extends LivingEntity> extends C
    private final int field19733;
    private final Predicate<T> field19734;
    private final Predicate<E> field19735;
-   private final Class8830<T> field19736;
+   private final MemoryModuleType<T> field19736;
 
-   public Class3696(EntityType<? extends T> var1, int var2, Predicate<E> var3, Predicate<T> var4, Class8830<T> var5, float var6, int var7) {
-      super(ImmutableMap.of(Class8830.field39825, Class2217.field14486, Class8830.field39824, Class2217.field14485, Class8830.field39819, Class2217.field14484));
+   public Class3696(EntityType<? extends T> var1, int var2, Predicate<E> var3, Predicate<T> var4, MemoryModuleType<T> var5, float var6, int var7) {
+      super(ImmutableMap.of(MemoryModuleType.field39825, Class2217.field14486, MemoryModuleType.field39824, Class2217.field14485, MemoryModuleType.field39819, Class2217.field14484));
       this.field19732 = var1;
       this.field19731 = var6;
       this.field19733 = var2 * var2;
@@ -28,7 +28,7 @@ public class Class3696<E extends LivingEntity, T extends LivingEntity> extends C
       this.field19736 = var5;
    }
 
-   public static <T extends LivingEntity> Class3696<LivingEntity, T> method12551(EntityType<? extends T> var0, int var1, Class8830<T> var2, float var3, int var4) {
+   public static <T extends LivingEntity> Class3696<LivingEntity, T> method12551(EntityType<? extends T> var0, int var1, MemoryModuleType<T> var2, float var3, int var4) {
       return new Class3696<LivingEntity, T>(var0, var1, var0x -> true, var0x -> true, var2, var3, var4);
    }
 
@@ -38,7 +38,7 @@ public class Class3696<E extends LivingEntity, T extends LivingEntity> extends C
    }
 
    private boolean method12552(E var1) {
-      List<LivingEntity> var4 = var1.getBrain().<List<LivingEntity>>method21410(Class8830.field39819).get();
+      List<LivingEntity> var4 = var1.getBrain().<List<LivingEntity>>getMemory(MemoryModuleType.field39819).get();
       return var4.stream().anyMatch(this::method12553);
    }
 
@@ -49,7 +49,7 @@ public class Class3696<E extends LivingEntity, T extends LivingEntity> extends C
    @Override
    public void method12502(ServerWorld var1, E var2, long var3) {
       Brain<?> var7 = var2.getBrain();
-      var7.method21410(Class8830.field39819).ifPresent(
+      var7.getMemory(MemoryModuleType.field39819).ifPresent(
             var3x -> var3x.stream()
                   .filter(var1xx -> this.field19732.equals(var1xx.getType()))
                   .map(var0 -> (T) var0)
@@ -58,8 +58,8 @@ public class Class3696<E extends LivingEntity, T extends LivingEntity> extends C
                   .findFirst()
                   .ifPresent(var2xx -> {
                      var7.method21406(this.field19736, (T)var2xx);
-                     var7.method21406(Class8830.field39825, new Class7865(var2xx, true));
-                     var7.method21406(Class8830.field39824, new Class8999(new Class7865(var2xx, false), this.field19731, this.field19730));
+                     var7.method21406(MemoryModuleType.field39825, new Class7865(var2xx, true));
+                     var7.method21406(MemoryModuleType.field39824, new Class8999(new Class7865(var2xx, false), this.field19731, this.field19730));
                   })
          );
    }

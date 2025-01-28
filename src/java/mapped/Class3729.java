@@ -19,21 +19,21 @@ public class Class3729 extends Class3676<VillagerEntity> {
    private int field19832;
 
    public Class3729(int var1, int var2) {
-      super(ImmutableMap.of(Class8830.field39828, Class2217.field14484), var1, var2);
+      super(ImmutableMap.of(MemoryModuleType.field39828, Class2217.field14484), var1, var2);
    }
 
    public boolean method12508(ServerWorld var1, VillagerEntity var2) {
       Brain<VillagerEntity> var5 = var2.getBrain();
-      if (!var5.method21410(Class8830.field39828).isPresent()) {
+      if (!var5.getMemory(MemoryModuleType.field39828).isPresent()) {
          return false;
       } else {
-         LivingEntity var6 = var5.<LivingEntity>method21410(Class8830.field39828).get();
+         LivingEntity var6 = var5.<LivingEntity>getMemory(MemoryModuleType.field39828).get();
          return var6.getType() == EntityType.PLAYER && var2.isAlive() && var6.isAlive() && !var2.isChild() && var2.getDistanceSq(var6) <= 17.0;
       }
    }
 
    public boolean method12499(ServerWorld var1, VillagerEntity var2, long var3) {
-      return this.method12508(var1, var2) && this.field19832 > 0 && var2.getBrain().<LivingEntity>method21410(Class8830.field39828).isPresent();
+      return this.method12508(var1, var2) && this.field19832 > 0 && var2.getBrain().<LivingEntity>getMemory(MemoryModuleType.field39828).isPresent();
    }
 
    public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
@@ -59,7 +59,7 @@ public class Class3729 extends Class3676<VillagerEntity> {
 
    public void method12506(ServerWorld var1, VillagerEntity var2, long var3) {
       super.method12506(var1, var2, var3);
-      var2.getBrain().method21405(Class8830.field39828);
+      var2.getBrain().method21405(MemoryModuleType.field39828);
       var2.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
       this.field19828 = null;
    }
@@ -100,8 +100,8 @@ public class Class3729 extends Class3676<VillagerEntity> {
 
    private LivingEntity method12645(VillagerEntity var1) {
       Brain<VillagerEntity> var4 = var1.getBrain();
-      LivingEntity var5 = var4.method21410(Class8830.field39828).get();
-      var4.method21406(Class8830.field39825, new Class7865(var5, true));
+      LivingEntity var5 = var4.getMemory(MemoryModuleType.field39828).get();
+      var4.method21406(MemoryModuleType.field39825, new Class7865(var5, true));
       return var5;
    }
 

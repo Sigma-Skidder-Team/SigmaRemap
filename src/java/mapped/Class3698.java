@@ -16,13 +16,13 @@ import java.util.stream.Collectors;
 public class Class3698 extends Class3676<CreatureEntity> {
    private static String[] field19740;
    private final Class4913 field19741;
-   private final Class8830<Class9378> field19742;
+   private final MemoryModuleType<Class9378> field19742;
    private final boolean field19743;
    private final Optional<Byte> field19744;
    private long field19745;
    private final Long2ObjectMap<Class8341> field19746 = new Long2ObjectOpenHashMap();
 
-   public Class3698(Class4913 var1, Class8830<Class9378> var2, Class8830<Class9378> var3, boolean var4, Optional<Byte> var5) {
+   public Class3698(Class4913 var1, MemoryModuleType<Class9378> var2, MemoryModuleType<Class9378> var3, boolean var4, Optional<Byte> var5) {
       super(method12569(var2, var3));
       this.field19741 = var1;
       this.field19742 = var3;
@@ -30,11 +30,11 @@ public class Class3698 extends Class3676<CreatureEntity> {
       this.field19744 = var5;
    }
 
-   public Class3698(Class4913 var1, Class8830<Class9378> var2, boolean var3, Optional<Byte> var4) {
+   public Class3698(Class4913 var1, MemoryModuleType<Class9378> var2, boolean var3, Optional<Byte> var4) {
       this(var1, var2, var2, var3, var4);
    }
 
-   private static ImmutableMap<Class8830<?>, Class2217> method12569(Class8830<Class9378> var0, Class8830<Class9378> var1) {
+   private static ImmutableMap<MemoryModuleType<?>, Class2217> method12569(MemoryModuleType<Class9378> var0, MemoryModuleType<Class9378> var1) {
       Builder var4 = ImmutableMap.builder();
       var4.put(var0, Class2217.field14485);
       if (var1 != var0) {

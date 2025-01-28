@@ -12,7 +12,7 @@ public class Class3753 extends Class3676<VillagerEntity> {
    public final float field19908;
 
    public Class3753(float var1) {
-      super(ImmutableMap.of(Class8830.field39815, Class2217.field14484), 1200);
+      super(ImmutableMap.of(MemoryModuleType.field39815, Class2217.field14484), 1200);
       this.field19908 = var1;
    }
 
@@ -24,15 +24,15 @@ public class Class3753 extends Class3676<VillagerEntity> {
    }
 
    public boolean method12499(ServerWorld var1, VillagerEntity var2, long var3) {
-      return var2.getBrain().method21404(Class8830.field39815);
+      return var2.getBrain().method21404(MemoryModuleType.field39815);
    }
 
    public void method12504(ServerWorld var1, VillagerEntity var2, long var3) {
-      Class6983.method21577(var2, var2.getBrain().<Class9378>method21410(Class8830.field39815).get().method35579(), this.field19908, 1);
+      Class6983.method21577(var2, var2.getBrain().<Class9378>getMemory(MemoryModuleType.field39815).get().method35579(), this.field19908, 1);
    }
 
    public void method12506(ServerWorld var1, VillagerEntity var2, long var3) {
-      Optional<Class9378> var7 = var2.getBrain().<Class9378>method21410(Class8830.field39815);
+      Optional<Class9378> var7 = var2.getBrain().<Class9378>getMemory(MemoryModuleType.field39815);
       var7.ifPresent(var1x -> {
          BlockPos var4 = var1x.method35579();
          ServerWorld var5 = var1.getServer().method1318(var1x.method35578());
@@ -45,6 +45,6 @@ public class Class3753 extends Class3676<VillagerEntity> {
             DebugPacketSender.method23615(var1, var4);
          }
       });
-      var2.getBrain().method21405(Class8830.field39815);
+      var2.getBrain().method21405(MemoryModuleType.field39815);
    }
 }

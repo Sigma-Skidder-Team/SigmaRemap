@@ -32,7 +32,7 @@ public class Class7865 implements Class7864 {
       if (!(this.field33677 instanceof LivingEntity)) {
          return true;
       } else {
-         Optional var4 = var1.getBrain().<List<LivingEntity>>method21410(Class8830.field39819);
+         Optional var4 = var1.getBrain().<List<LivingEntity>>getMemory(MemoryModuleType.field39819);
          return this.field33677.isAlive() && var4.isPresent() && ((List)var4.get()).contains(this.field33677);
       }
    }

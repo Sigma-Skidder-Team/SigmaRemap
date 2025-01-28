@@ -28,13 +28,13 @@ public class Class7883 extends Class7882<LivingEntity> {
       .build();
 
    @Override
-   public Set<Class8830<?>> method26424() {
-      return ImmutableSet.of(Class8830.field39838);
+   public Set<MemoryModuleType<?>> method26424() {
+      return ImmutableSet.of(MemoryModuleType.field39838);
    }
 
    @Override
    public void method26425(ServerWorld var1, LivingEntity var2) {
-      var2.getBrain().method21408(Class8830.field39838, this.method26431(var2));
+      var2.getBrain().method21408(MemoryModuleType.field39838, this.method26431(var2));
    }
 
    private Optional<LivingEntity> method26431(LivingEntity var1) {
@@ -48,7 +48,7 @@ public class Class7883 extends Class7882<LivingEntity> {
    }
 
    private Optional<List<LivingEntity>> method26432(LivingEntity var1) {
-      return var1.getBrain().<List<LivingEntity>>method21410(Class8830.field39819);
+      return var1.getBrain().<List<LivingEntity>>getMemory(MemoryModuleType.field39819);
    }
 
    private int method26433(LivingEntity var1, LivingEntity var2, LivingEntity var3) {

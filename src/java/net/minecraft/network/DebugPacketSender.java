@@ -72,7 +72,7 @@ public class DebugPacketSender {
    public static void method23621(ServerWorld var0, Collection<Raid> var1) {
    }
 
-   public static void method23622(LivingEntity var0) {
+   public static void sendLivingEntity(LivingEntity var0) {
    }
 
    public static void method23623(BeeEntity var0) {

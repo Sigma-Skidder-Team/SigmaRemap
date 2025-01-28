@@ -15,13 +15,13 @@ public class Class3704<E extends MobEntity> extends Class3676<E> {
    public Class3704(int var1, float var2) {
       super(
          ImmutableMap.of(
-            Class8830.field39824,
+            MemoryModuleType.field39824,
             Class2217.field14485,
-            Class8830.field39825,
+            MemoryModuleType.field39825,
             Class2217.field14486,
-            Class8830.field39826,
+            MemoryModuleType.ATTACK_TARGET,
             Class2217.field14484,
-            Class8830.field39819,
+            MemoryModuleType.field39819,
             Class2217.field14484
          )
       );
@@ -34,13 +34,13 @@ public class Class3704<E extends MobEntity> extends Class3676<E> {
    }
 
    public void method12502(ServerWorld var1, E var2, long var3) {
-      var2.getBrain().method21406(Class8830.field39825, new Class7865(this.method12583((E)var2), true));
+      var2.getBrain().method21406(MemoryModuleType.field39825, new Class7865(this.method12583((E)var2), true));
       var2.method4228().method20814(-this.field19765, 0.0F);
       var2.rotationYaw = MathHelper.method37796(var2.rotationYaw, var2.rotationYawHead, 0.0F);
    }
 
    private boolean method12581(E var1) {
-      return var1.getBrain().<List<LivingEntity>>method21410(Class8830.field39819).get().contains(this.method12583((E)var1));
+      return var1.getBrain().<List<LivingEntity>>getMemory(MemoryModuleType.field39819).get().contains(this.method12583((E)var1));
    }
 
    private boolean method12582(E var1) {
@@ -48,6 +48,6 @@ public class Class3704<E extends MobEntity> extends Class3676<E> {
    }
 
    private LivingEntity method12583(E var1) {
-      return var1.getBrain().<LivingEntity>method21410(Class8830.field39826).get();
+      return var1.getBrain().<LivingEntity>getMemory(MemoryModuleType.ATTACK_TARGET).get();
    }
 }

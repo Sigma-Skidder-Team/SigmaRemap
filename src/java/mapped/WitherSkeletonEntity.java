@@ -27,7 +27,7 @@ public class WitherSkeletonEntity extends Class1082 {
 
    @Override
    public void method4219() {
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1035>(this, Class1035.class, true));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<AbstractPiglinEntity>(this, AbstractPiglinEntity.class, true));
       super.method4219();
    }
 

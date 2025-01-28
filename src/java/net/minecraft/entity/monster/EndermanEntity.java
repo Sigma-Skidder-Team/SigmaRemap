@@ -103,11 +103,6 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
    }
 
    @Override
-   public void method3016(PlayerEntity var1) {
-
-   }
-
-   @Override
    public void method4347(int var1) {
       this.field5654 = var1;
    }

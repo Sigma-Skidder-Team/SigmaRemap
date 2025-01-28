@@ -471,7 +471,7 @@ public class EntityType<T extends Entity> {
             var14.rotationYawHead = var14.rotationYaw;
             var14.renderYawOffset = var14.rotationYaw;
             var14.method4276(var1, var1.method6807(var14.getPosition()), var6, (Class5093)null, var2);
-            var14.method4237();
+            var14.playAmbientSound();
          }
 
          if (var3 != null && var11 instanceof LivingEntity) {

@@ -16,8 +16,8 @@ public class Class7893 extends Class7882<LivingEntity> {
    private static String[] field33844;
 
    @Override
-   public Set<Class8830<?>> method26424() {
-      return ImmutableSet.of(Class8830.field39821, Class8830.field39822, Class8830.field39823);
+   public Set<MemoryModuleType<?>> method26424() {
+      return ImmutableSet.of(MemoryModuleType.field39821, MemoryModuleType.field39822, MemoryModuleType.field39823);
    }
 
    @Override
@@ -29,10 +29,10 @@ public class Class7893 extends Class7882<LivingEntity> {
          .sorted(Comparator.comparingDouble(var2::getDistanceSq))
          .collect(Collectors.toList());
       Brain var6 = var2.getBrain();
-      var6.method21406(Class8830.field39821, var5);
+      var6.method21406(MemoryModuleType.field39821, var5);
       List var7 = var5.stream().filter(var1x -> method26430(var2, var1x)).collect(Collectors.toList());
-      var6.method21406(Class8830.field39822, !var7.isEmpty() ? (PlayerEntity)var7.get(0) : null);
+      var6.method21406(MemoryModuleType.field39822, !var7.isEmpty() ? (PlayerEntity)var7.get(0) : null);
       Optional var8 = var7.stream().filter(EntityPredicates.field34762).findFirst();
-      var6.method21408(Class8830.field39823, var8);
+      var6.method21408(MemoryModuleType.field39823, var8);
    }
 }

@@ -9,7 +9,7 @@ public class Class3695 extends Class3676<LivingEntity> {
    private static String[] field19728;
 
    public Class3695() {
-      super(ImmutableMap.of(Class8830.field39840, Class2217.field14484));
+      super(ImmutableMap.of(MemoryModuleType.field39840, Class2217.field14484));
    }
 
    @Override

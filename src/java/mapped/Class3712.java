@@ -19,7 +19,7 @@ public class Class3712 extends Class3676<CreatureEntity> {
    }
 
    public Class3712(float var1, int var2, int var3) {
-      super(ImmutableMap.of(Class8830.field39824, Class2217.field14485));
+      super(ImmutableMap.of(MemoryModuleType.field39824, Class2217.field14485));
       this.field19779 = var1;
       this.field19780 = var2;
       this.field19781 = var3;
@@ -42,11 +42,11 @@ public class Class3712 extends Class3676<CreatureEntity> {
 
    private void method12593(CreatureEntity var1, SectionPos var2) {
       Optional<Vector3d> var5 = Optional.<Vector3d>ofNullable(Class8037.method27587(var1, this.field19780, this.field19781, Vector3d.method11330(var2.method8422())));
-      var1.getBrain().method21408(Class8830.field39824, var5.map(var1x -> new Class8999(var1x, this.field19779, 0)));
+      var1.getBrain().method21408(MemoryModuleType.field39824, var5.map(var1x -> new Class8999(var1x, this.field19779, 0)));
    }
 
    private void method12594(CreatureEntity var1) {
       Optional<Vector3d> var4 = Optional.<Vector3d>ofNullable(Class8037.method27583(var1, this.field19780, this.field19781));
-      var1.getBrain().method21408(Class8830.field39824, var4.map(var1x -> new Class8999(var1x, this.field19779, 0)));
+      var1.getBrain().method21408(MemoryModuleType.field39824, var4.map(var1x -> new Class8999(var1x, this.field19779, 0)));
    }
 }

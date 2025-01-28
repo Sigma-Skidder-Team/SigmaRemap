@@ -26,15 +26,15 @@ public class Class6983 {
    }
 
    public static boolean method21570(Brain<?> var0, LivingEntity var1) {
-      return var0.<List<LivingEntity>>method21410(Class8830.field39819).filter(var1x -> var1x.contains(var1)).isPresent();
+      return var0.<List<LivingEntity>>getMemory(MemoryModuleType.field39819).filter(var1x -> var1x.contains(var1)).isPresent();
    }
 
-   public static boolean method21571(Brain<?> var0, Class8830<? extends LivingEntity> var1, EntityType<?> var2) {
+   public static boolean method21571(Brain<?> var0, MemoryModuleType<? extends LivingEntity> var1, EntityType<?> var2) {
       return method21572(var0, var1, var1x -> var1x.getType() == var2);
    }
 
-   private static boolean method21572(Brain<?> var0, Class8830<? extends LivingEntity> var1, Predicate<LivingEntity> var2) {
-      return var0.method21410(var1).filter(var2).filter(LivingEntity::isAlive).filter(var1x -> method21570(var0, var1x)).isPresent();
+   private static boolean method21572(Brain<?> var0, MemoryModuleType<? extends LivingEntity> var1, Predicate<LivingEntity> var2) {
+      return var0.getMemory(var1).filter(var2).filter(LivingEntity::isAlive).filter(var1x -> method21570(var0, var1x)).isPresent();
    }
 
    private static void method21573(LivingEntity var0, LivingEntity var1) {
@@ -43,7 +43,7 @@ public class Class6983 {
    }
 
    public static void method21574(LivingEntity var0, LivingEntity var1) {
-      var0.getBrain().method21406(Class8830.field39825, new Class7865(var1, true));
+      var0.getBrain().method21406(MemoryModuleType.field39825, new Class7865(var1, true));
    }
 
    private static void method21575(LivingEntity var0, LivingEntity var1, float var2) {
@@ -54,14 +54,14 @@ public class Class6983 {
 
    public static void method21576(LivingEntity var0, Entity var1, float var2, int var3) {
       Class8999 var6 = new Class8999(new Class7865(var1, false), var2, var3);
-      var0.getBrain().method21406(Class8830.field39825, new Class7865(var1, true));
-      var0.getBrain().method21406(Class8830.field39824, var6);
+      var0.getBrain().method21406(MemoryModuleType.field39825, new Class7865(var1, true));
+      var0.getBrain().method21406(MemoryModuleType.field39824, var6);
    }
 
    public static void method21577(LivingEntity var0, BlockPos var1, float var2, int var3) {
       Class8999 var6 = new Class8999(new Class7863(var1), var2, var3);
-      var0.getBrain().method21406(Class8830.field39825, new Class7863(var1));
-      var0.getBrain().method21406(Class8830.field39824, var6);
+      var0.getBrain().method21406(MemoryModuleType.field39825, new Class7863(var1));
+      var0.getBrain().method21406(MemoryModuleType.field39824, var6);
    }
 
    public static void method21578(LivingEntity var0, ItemStack var1, Vector3d var2) {
@@ -97,7 +97,7 @@ public class Class6983 {
    }
 
    public static boolean method21582(LivingEntity var0, LivingEntity var1, double var2) {
-      Optional var6 = var0.getBrain().<LivingEntity>method21410(Class8830.field39826);
+      Optional var6 = var0.getBrain().<LivingEntity>getMemory(MemoryModuleType.ATTACK_TARGET);
       if (var6.isPresent()) {
          double var7 = var0.getDistanceNearest3(((LivingEntity)var6.get()).getPositionVec());
          double var9 = var0.getDistanceNearest3(var1.getPositionVec());
@@ -109,7 +109,7 @@ public class Class6983 {
 
    public static boolean method21583(LivingEntity var0, LivingEntity var1) {
       Brain<?> var4 = var0.getBrain();
-      return var4.method21404(Class8830.field39819) ? var4.method21410(Class8830.field39819).get().contains(var1) : false;
+      return var4.method21404(MemoryModuleType.field39819) ? var4.getMemory(MemoryModuleType.field39819).get().contains(var1) : false;
    }
 
    public static LivingEntity method21584(LivingEntity var0, Optional<LivingEntity> var1, LivingEntity var2) {
@@ -122,14 +122,14 @@ public class Class6983 {
       return !(var0.getDistanceNearest3(var5) < var0.getDistanceNearest3(var6)) ? var2 : var1;
    }
 
-   public static Optional<LivingEntity> method21586(LivingEntity var0, Class8830<UUID> var1) {
-      Optional<UUID> var4 = var0.getBrain().method21410(var1);
+   public static Optional<LivingEntity> method21586(LivingEntity var0, MemoryModuleType<UUID> var1) {
+      Optional<UUID> var4 = var0.getBrain().getMemory(var1);
       return var4.map(var1x -> (LivingEntity)((ServerWorld)var0.world).getEntityByUuid(var1x));
    }
 
    public static Stream<VillagerEntity> method21587(VillagerEntity var0, Predicate<VillagerEntity> var1) {
       return var0.getBrain()
-         .<List<LivingEntity>>method21410(Class8830.field39818)
+         .<List<LivingEntity>>getMemory(MemoryModuleType.field39818)
          .<Stream<VillagerEntity>>map(
             var2 -> var2.stream()
                   .filter(var1xx -> var1xx instanceof VillagerEntity && var1xx != var0)

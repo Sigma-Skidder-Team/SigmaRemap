@@ -154,12 +154,6 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
       this.method4347(field5864.method29319(this.rand));
    }
 
-   @Override
-   public void method3016(PlayerEntity var1) {
-
-   }
-
-
    public static boolean method4879(EntityType<ZombifiedPiglinEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var1.method6997() != Difficulty.PEACEFUL && var1.getBlockState(var3.down()).getBlock() != Blocks.NETHER_WART_BLOCK;
    }

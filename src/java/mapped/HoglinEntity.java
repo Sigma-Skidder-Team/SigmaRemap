@@ -39,19 +39,19 @@ public class HoglinEntity extends AnimalEntity implements IMob, Class1092 {
    public static final ImmutableList<? extends Class7963<? extends Class7882<? super HoglinEntity>>> field5980 = ImmutableList.of(
       Class7963.field34239, Class7963.field34240, Class7963.field34250, Class7963.field34249
    );
-   public static final ImmutableList<? extends Class8830<?>> field5981 = ImmutableList.of(
-      Class8830.field39829,
-      Class8830.field39818,
-      Class8830.field39819,
-      Class8830.field39822,
-      Class8830.field39823,
-      Class8830.field39825,
-      Class8830.field39824,
-      Class8830.field39841,
-      Class8830.field39831,
-      Class8830.field39826,
-      Class8830.field39827,
-      Class8830.field39864
+   public static final ImmutableList<? extends MemoryModuleType<?>> field5981 = ImmutableList.of(
+      MemoryModuleType.field39829,
+      MemoryModuleType.field39818,
+      MemoryModuleType.field39819,
+      MemoryModuleType.field39822,
+      MemoryModuleType.field39823,
+      MemoryModuleType.field39825,
+      MemoryModuleType.field39824,
+      MemoryModuleType.field39841,
+      MemoryModuleType.field39831,
+      MemoryModuleType.ATTACK_TARGET,
+      MemoryModuleType.field39827,
+      MemoryModuleType.field39864
    );
 
    public HoglinEntity(EntityType<? extends HoglinEntity> var1, World var2) {
@@ -346,8 +346,8 @@ public class HoglinEntity extends AnimalEntity implements IMob, Class1092 {
    }
 
    @Override
-   public void method4257() {
-      super.method4257();
-      DebugPacketSender.method23622(this);
+   public void sendDebugPackets() {
+      super.sendDebugPackets();
+      DebugPacketSender.sendLivingEntity(this);
    }
 }

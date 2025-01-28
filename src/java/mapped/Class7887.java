@@ -22,8 +22,8 @@ public class Class7887 extends Class7882<MobEntity> {
    }
 
    @Override
-   public Set<Class8830<?>> method26424() {
-      return ImmutableSet.of(Class8830.field39834);
+   public Set<MemoryModuleType<?>> method26424() {
+      return ImmutableSet.of(MemoryModuleType.field39834);
    }
 
    public void method26425(ServerWorld var1, MobEntity var2) {
@@ -50,7 +50,7 @@ public class Class7887 extends Class7882<MobEntity> {
             BlockPos var9 = var8.method28712();
             Optional var10 = var5.method6676(var9);
             if (var10.isPresent()) {
-               var2.getBrain().method21406(Class8830.field39834, var9);
+               var2.getBrain().method21406(MemoryModuleType.field39834, var9);
             }
          } else if (this.field33837 < 5) {
             this.field33836.long2LongEntrySet().removeIf(var1x -> var1x.getLongValue() < this.field33838);

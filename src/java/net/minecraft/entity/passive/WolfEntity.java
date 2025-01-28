@@ -408,11 +408,6 @@ public class WolfEntity extends TameableEntity implements IAngerable {
       this.method4347(field5666.method29319(this.rand));
    }
 
-   @Override
-   public void method3016(PlayerEntity var1) {
-
-   }
-
    @Nullable
    @Override
    public UUID method4350() {

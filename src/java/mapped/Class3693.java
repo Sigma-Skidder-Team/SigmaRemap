@@ -15,7 +15,7 @@ public class Class3693<E extends LivingEntity> extends Class3692<E> {
       this(ImmutableMap.of(), var1);
    }
 
-   public Class3693(Map<Class8830<?>, Class2217> var1, List<Pair<Class3676<? super E>, Integer>> var2) {
+   public Class3693(Map<MemoryModuleType<?>, Class2217> var1, List<Pair<Class3676<? super E>, Integer>> var2) {
       super(var1, ImmutableSet.of(), Class1956.field12750, Class2111.field13770, var2);
    }
 }

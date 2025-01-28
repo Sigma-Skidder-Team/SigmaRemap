@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
-public class PiglinEntity extends Class1035 implements Class1023 {
+public class PiglinEntity extends AbstractPiglinEntity implements ICrossbowUser {
    private static final DataParameter<Boolean> field5741 = EntityDataManager.<Boolean>createKey(PiglinEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<Boolean> field5742 = EntityDataManager.<Boolean>createKey(PiglinEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<Boolean> field5743 = EntityDataManager.<Boolean>createKey(PiglinEntity.class, DataSerializers.BOOLEAN);
@@ -43,50 +43,50 @@ public class PiglinEntity extends Class1035 implements Class1023 {
    public static final ImmutableList<Class7963<? extends Class7882<? super PiglinEntity>>> field5748 = ImmutableList.of(
       Class7963.field34239, Class7963.field34240, Class7963.field34238, Class7963.field34242, Class7963.field34247
    );
-   public static final ImmutableList<Class8830<?>> field5749 = ImmutableList.of(
-      Class8830.field39825,
-      Class8830.field39833,
-      Class8830.field39818,
-      Class8830.field39819,
-      Class8830.field39822,
-      Class8830.field39823,
-      Class8830.field39862,
-      Class8830.field39861,
-      Class8830.field39847,
-      Class8830.field39835,
-      Class8830.field39836,
-      Class8830.field39824,
-      new Class8830[]{
-         Class8830.field39841,
-         Class8830.field39826,
-         Class8830.field39827,
-         Class8830.field39828,
-         Class8830.field39831,
-         Class8830.field39849,
-         Class8830.field39850,
-         Class8830.field39837,
-         Class8830.field39851,
-         Class8830.field39852,
-         Class8830.field39854,
-         Class8830.field39853,
-         Class8830.field39856,
-         Class8830.field39857,
-         Class8830.field39855,
-         Class8830.field39859,
-         Class8830.field39848,
-         Class8830.field39865,
-         Class8830.field39830,
-         Class8830.field39866,
-         Class8830.field39867,
-         Class8830.field39858,
-         Class8830.field39860,
-         Class8830.field39868,
-         Class8830.field39869,
-         Class8830.field39870
+   public static final ImmutableList<MemoryModuleType<?>> field5749 = ImmutableList.of(
+      MemoryModuleType.field39825,
+      MemoryModuleType.field39833,
+      MemoryModuleType.field39818,
+      MemoryModuleType.field39819,
+      MemoryModuleType.field39822,
+      MemoryModuleType.field39823,
+      MemoryModuleType.field39862,
+      MemoryModuleType.field39861,
+      MemoryModuleType.field39847,
+      MemoryModuleType.field39835,
+      MemoryModuleType.field39836,
+      MemoryModuleType.field39824,
+      new MemoryModuleType[]{
+         MemoryModuleType.field39841,
+         MemoryModuleType.ATTACK_TARGET,
+         MemoryModuleType.field39827,
+         MemoryModuleType.field39828,
+         MemoryModuleType.field39831,
+         MemoryModuleType.field39849,
+         MemoryModuleType.field39850,
+         MemoryModuleType.field39837,
+         MemoryModuleType.field39851,
+         MemoryModuleType.field39852,
+         MemoryModuleType.field39854,
+         MemoryModuleType.field39853,
+         MemoryModuleType.field39856,
+         MemoryModuleType.field39857,
+         MemoryModuleType.field39855,
+         MemoryModuleType.field39859,
+         MemoryModuleType.field39848,
+         MemoryModuleType.field39865,
+         MemoryModuleType.field39830,
+         MemoryModuleType.field39866,
+         MemoryModuleType.field39867,
+         MemoryModuleType.field39858,
+         MemoryModuleType.field39860,
+         MemoryModuleType.field39868,
+         MemoryModuleType.field39869,
+         MemoryModuleType.field39870
       }
    );
 
-   public PiglinEntity(EntityType<? extends Class1035> var1, World var2) {
+   public PiglinEntity(EntityType<? extends AbstractPiglinEntity> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
    }
@@ -156,7 +156,7 @@ public class PiglinEntity extends Class1035 implements Class1023 {
    public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       if (var3 != SpawnReason.field14394) {
          if (!(var1.method6814().nextFloat() < 0.2F)) {
-            if (this.method4635()) {
+            if (this.func_242337_eM()) {
                this.setItemStackToSlot(EquipmentSlotType.MAINHAND, this.method4620());
             }
          } else {
@@ -182,7 +182,7 @@ public class PiglinEntity extends Class1035 implements Class1023 {
 
    @Override
    public void method4270(Class9755 var1) {
-      if (this.method4635()) {
+      if (this.func_242337_eM()) {
          this.method4616(EquipmentSlotType.HEAD, new ItemStack(Items.field37860));
          this.method4616(EquipmentSlotType.CHEST, new ItemStack(Items.field37861));
          this.method4616(EquipmentSlotType.LEGS, new ItemStack(Items.GOLDEN_LEGGINGS));
@@ -218,7 +218,7 @@ public class PiglinEntity extends Class1035 implements Class1023 {
          if (!this.world.isRemote) {
             return Class4388.method13833(this, var1, var2);
          } else {
-            boolean var6 = Class4388.method13834(this, var1.getHeldItem(var2)) && this.method4622() != Class2172.field14262;
+            boolean var6 = Class4388.method13834(this, var1.getHeldItem(var2)) && this.func_234424_eM_() != PiglinAction.field14262;
             return !var6 ? ActionResultType.field14820 : ActionResultType.SUCCESS;
          }
       } else {
@@ -302,19 +302,19 @@ public class PiglinEntity extends Class1035 implements Class1023 {
    }
 
    @Override
-   public Class2172 method4622() {
+   public PiglinAction func_234424_eM_() {
       if (!this.method4623()) {
          if (Class4388.method13827(this.getHeldItemOffhand().getItem())) {
-            return Class2172.field14262;
-         } else if (this.method4307() && this.method4636()) {
-            return Class2172.field14259;
+            return PiglinAction.field14262;
+         } else if (this.method4307() && this.func_242338_eO()) {
+            return PiglinAction.field14259;
          } else if (this.method4621()) {
-            return Class2172.field14261;
+            return PiglinAction.field14261;
          } else {
-            return this.method4307() && this.method3092(Items.CROSSBOW) ? Class2172.field14260 : Class2172.field14264;
+            return this.method4307() && this.method3092(Items.CROSSBOW) ? PiglinAction.field14260 : PiglinAction.field14264;
          }
       } else {
-         return Class2172.field14263;
+         return PiglinAction.field14263;
       }
    }
 
@@ -391,7 +391,7 @@ public class PiglinEntity extends Class1035 implements Class1023 {
          } else if (!var5 && var6) {
             return false;
          } else {
-            return this.method4635() && var1.getItem() != Items.CROSSBOW && var2.getItem() == Items.CROSSBOW
+            return this.func_242337_eM() && var1.getItem() != Items.CROSSBOW && var2.getItem() == Items.CROSSBOW
                ? false
                : super.method4250(var1, var2);
          }
@@ -443,7 +443,7 @@ public class PiglinEntity extends Class1035 implements Class1023 {
    }
 
    @Override
-   public void method4630() {
+   public void func_241848_eP() {
       this.method4629(SoundEvents.field26938);
    }
 }

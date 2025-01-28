@@ -41,13 +41,13 @@ public class Class3717 extends Class3676<VillagerEntity> {
    public Class3717(int var1) {
       super(
          ImmutableMap.of(
-            Class8830.field39824,
+            MemoryModuleType.field39824,
             Class2217.field14486,
-            Class8830.field39825,
+            MemoryModuleType.field39825,
             Class2217.field14486,
-            Class8830.field39828,
+            MemoryModuleType.field39828,
             Class2217.field14486,
-            Class8830.field39822,
+            MemoryModuleType.field39822,
             Class2217.field14484
          ),
          var1
@@ -71,7 +71,7 @@ public class Class3717 extends Class3676<VillagerEntity> {
       this.field19797 = false;
       this.field19798 = var3;
       PlayerEntity var7 = this.method12607(var2).get();
-      var2.getBrain().method21406(Class8830.field39828, var7);
+      var2.getBrain().method21406(MemoryModuleType.field39828, var7);
       Class6983.method21574(var2, var7);
    }
 
@@ -92,9 +92,9 @@ public class Class3717 extends Class3676<VillagerEntity> {
 
    public void method12506(ServerWorld var1, VillagerEntity var2, long var3) {
       this.field19796 = method12610(var1);
-      var2.getBrain().method21405(Class8830.field39828);
-      var2.getBrain().method21405(Class8830.field39824);
-      var2.getBrain().method21405(Class8830.field39825);
+      var2.getBrain().method21405(MemoryModuleType.field39828);
+      var2.getBrain().method21405(MemoryModuleType.field39824);
+      var2.getBrain().method21405(MemoryModuleType.field39825);
    }
 
    private void method12604(VillagerEntity var1, LivingEntity var2) {
@@ -126,7 +126,7 @@ public class Class3717 extends Class3676<VillagerEntity> {
    }
 
    private Optional<PlayerEntity> method12607(VillagerEntity var1) {
-      return var1.getBrain().<PlayerEntity>method21410(Class8830.field39822).filter(this::method12608);
+      return var1.getBrain().<PlayerEntity>getMemory(MemoryModuleType.field39822).filter(this::method12608);
    }
 
    private boolean method12608(PlayerEntity var1) {

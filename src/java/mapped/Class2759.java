@@ -67,7 +67,7 @@ public class Class2759 extends Class2595 {
          } else {
             this.field17314.method4227().method28040(var3, 30.0F, 30.0F);
             if (Class1026.method4564(this.field17314).nextInt(50) == 0) {
-               this.field17314.method4237();
+               this.field17314.playAmbientSound();
             }
          }
 

@@ -13,7 +13,7 @@ public class Class3755<E extends LivingEntity, T extends Entity> extends Class36
    private final BiPredicate<E, Entity> field19913;
 
    public Class3755(int var1, BiPredicate<E, Entity> var2) {
-      super(ImmutableMap.of(Class8830.field39830, Class2217.field14486));
+      super(ImmutableMap.of(MemoryModuleType.field39830, Class2217.field14486));
       this.field19912 = var1;
       this.field19913 = var2;
    }
@@ -21,7 +21,7 @@ public class Class3755<E extends LivingEntity, T extends Entity> extends Class36
    @Override
    public boolean method12508(ServerWorld var1, E var2) {
       Entity var5 = var2.getRidingEntity();
-      Entity var6 = var2.getBrain().<Entity>method21410(Class8830.field39830).orElse((Entity)null);
+      Entity var6 = var2.getBrain().<Entity>getMemory(MemoryModuleType.field39830).orElse((Entity)null);
       if (var5 == null && var6 == null) {
          return false;
       } else {
@@ -37,6 +37,6 @@ public class Class3755<E extends LivingEntity, T extends Entity> extends Class36
    @Override
    public void method12502(ServerWorld var1, E var2, long var3) {
       var2.stopRiding();
-      var2.getBrain().method21405(Class8830.field39830);
+      var2.getBrain().method21405(MemoryModuleType.field39830);
    }
 }

@@ -14,7 +14,7 @@ public class Class3733<E extends MobEntity> extends Class3676<E> {
    private final Function<E, Optional<? extends LivingEntity>> field19847;
 
    public Class3733(Predicate<E> var1, Function<E, Optional<? extends LivingEntity>> var2) {
-      super(ImmutableMap.of(Class8830.field39826, Class2217.field14485, Class8830.field39841, Class2217.field14486));
+      super(ImmutableMap.of(MemoryModuleType.ATTACK_TARGET, Class2217.field14485, MemoryModuleType.field39841, Class2217.field14486));
       this.field19846 = var1;
       this.field19847 = var2;
    }
@@ -37,7 +37,7 @@ public class Class3733<E extends MobEntity> extends Class3676<E> {
    }
 
    private void method12659(E var1, LivingEntity var2) {
-      var1.getBrain().method21406(Class8830.field39826, var2);
-      var1.getBrain().method21405(Class8830.field39841);
+      var1.getBrain().method21406(MemoryModuleType.ATTACK_TARGET, var2);
+      var1.getBrain().method21405(MemoryModuleType.field39841);
    }
 }

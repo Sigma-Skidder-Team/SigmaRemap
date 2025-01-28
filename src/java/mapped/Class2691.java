@@ -9,7 +9,7 @@ import net.minecraft.util.RangedInteger;
 
 import java.util.EnumSet;
 
-public class Class2691<T extends MonsterEntity & Class1022 & Class1023> extends Class2595 {
+public class Class2691<T extends MonsterEntity & Class1022 & ICrossbowUser> extends Class2595 {
    private static String[] field17123;
    public static final RangedInteger field17124 = new RangedInteger(20, 40);
    private final T field17125;

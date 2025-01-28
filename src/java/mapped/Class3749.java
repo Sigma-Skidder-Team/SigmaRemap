@@ -25,7 +25,7 @@ public class Class3749 extends Class3676<VillagerEntity> {
    private final List<BlockPos> field19900 = Lists.newArrayList();
 
    public Class3749() {
-      super(ImmutableMap.of(Class8830.field39825, Class2217.field14485, Class8830.field39824, Class2217.field14485, Class8830.field39817, Class2217.field14484));
+      super(ImmutableMap.of(MemoryModuleType.field39825, Class2217.field14485, MemoryModuleType.field39824, Class2217.field14485, MemoryModuleType.field39817, Class2217.field14484));
    }
 
    public boolean method12508(ServerWorld var1, VillagerEntity var2) {
@@ -67,14 +67,14 @@ public class Class3749 extends Class3676<VillagerEntity> {
 
    public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
       if (var3 > this.field19898 && this.field19897 != null) {
-         var2.getBrain().method21406(Class8830.field39825, new Class7863(this.field19897));
-         var2.getBrain().method21406(Class8830.field39824, new Class8999(new Class7863(this.field19897), 0.5F, 1));
+         var2.getBrain().method21406(MemoryModuleType.field39825, new Class7863(this.field19897));
+         var2.getBrain().method21406(MemoryModuleType.field39824, new Class8999(new Class7863(this.field19897), 0.5F, 1));
       }
    }
 
    public void method12506(ServerWorld var1, VillagerEntity var2, long var3) {
-      var2.getBrain().method21405(Class8830.field39825);
-      var2.getBrain().method21405(Class8830.field39824);
+      var2.getBrain().method21405(MemoryModuleType.field39825);
+      var2.getBrain().method21405(MemoryModuleType.field39824);
       this.field19899 = 0;
       this.field19898 = var3 + 40L;
    }
@@ -142,8 +142,8 @@ public class Class3749 extends Class3676<VillagerEntity> {
                this.field19897 = this.method12710(var1);
                if (this.field19897 != null) {
                   this.field19898 = var3 + 20L;
-                  var2.getBrain().method21406(Class8830.field39824, new Class8999(new Class7863(this.field19897), 0.5F, 1));
-                  var2.getBrain().method21406(Class8830.field39825, new Class7863(this.field19897));
+                  var2.getBrain().method21406(MemoryModuleType.field39824, new Class8999(new Class7863(this.field19897), 0.5F, 1));
+                  var2.getBrain().method21406(MemoryModuleType.field39825, new Class7863(this.field19897));
                }
             }
          }

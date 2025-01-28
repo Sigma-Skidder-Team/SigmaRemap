@@ -13,7 +13,7 @@ public class Class3723 extends Class3676<VillagerEntity> {
    private long field19809;
 
    public Class3723() {
-      super(ImmutableMap.of(Class8830.field39829, Class2217.field14484, Class8830.field39819, Class2217.field14484), 350, 350);
+      super(ImmutableMap.of(MemoryModuleType.field39829, Class2217.field14484, MemoryModuleType.field39819, Class2217.field14484), 350, 350);
    }
 
    public boolean method12508(ServerWorld var1, VillagerEntity var2) {
@@ -25,7 +25,7 @@ public class Class3723 extends Class3676<VillagerEntity> {
    }
 
    public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
-      Class1045 var7 = var2.getBrain().<Class1045>method21410(Class8830.field39829).get();
+      Class1045 var7 = var2.getBrain().<Class1045>getMemory(MemoryModuleType.field39829).get();
       Class6983.method21569(var2, var7, 0.5F);
       var1.setEntityState(var7, (byte)18);
       var1.setEntityState(var2, (byte)18);
@@ -34,7 +34,7 @@ public class Class3723 extends Class3676<VillagerEntity> {
    }
 
    public void method12504(ServerWorld var1, VillagerEntity var2, long var3) {
-      VillagerEntity var7 = (VillagerEntity)var2.getBrain().<Class1045>method21410(Class8830.field39829).get();
+      VillagerEntity var7 = (VillagerEntity)var2.getBrain().<Class1045>getMemory(MemoryModuleType.field39829).get();
       if (!(var2.getDistanceSq(var7) > 5.0)) {
          Class6983.method21569(var2, var7, 0.5F);
          if (var3 < this.field19809) {
@@ -67,15 +67,15 @@ public class Class3723 extends Class3676<VillagerEntity> {
    }
 
    public void method12506(ServerWorld var1, VillagerEntity var2, long var3) {
-      var2.getBrain().method21405(Class8830.field39829);
+      var2.getBrain().method21405(MemoryModuleType.field39829);
    }
 
    private boolean method12616(VillagerEntity var1) {
       Brain<VillagerEntity> var4 = var1.getBrain();
-      Optional<Class1045> var5 = var4.method21410(Class8830.field39829).filter(var0 -> var0.getType() == EntityType.VILLAGER);
+      Optional<Class1045> var5 = var4.getMemory(MemoryModuleType.field39829).filter(var0 -> var0.getType() == EntityType.VILLAGER);
       return !var5.isPresent()
          ? false
-         : Class6983.method21571(var4, Class8830.field39829, EntityType.VILLAGER) && var1.method4700() && ((Class1045)var5.get()).method4700();
+         : Class6983.method21571(var4, MemoryModuleType.field39829, EntityType.VILLAGER) && var1.method4700() && ((Class1045)var5.get()).method4700();
    }
 
    private Optional<BlockPos> method12617(ServerWorld var1, VillagerEntity var2) {
@@ -104,6 +104,6 @@ public class Class3723 extends Class3676<VillagerEntity> {
 
    private void method12620(ServerWorld var1, VillagerEntity var2, BlockPos var3) {
       Class9378 var6 = Class9378.method35577(var1.getDimensionKey(), var3);
-      var2.getBrain().method21406(Class8830.field39813, var6);
+      var2.getBrain().method21406(MemoryModuleType.field39813, var6);
    }
 }

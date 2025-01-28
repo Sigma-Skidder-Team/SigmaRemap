@@ -16,7 +16,7 @@ public class Class3715 extends Class3676<LivingEntity> {
    private final Predicate<LivingEntity> field19789;
 
    public Class3715(EntityType<?> var1, int var2, Predicate<LivingEntity> var3, Predicate<LivingEntity> var4) {
-      super(ImmutableMap.of(Class8830.field39825, Class2217.field14486, Class8830.field39828, Class2217.field14485, Class8830.field39819, Class2217.field14484));
+      super(ImmutableMap.of(MemoryModuleType.field39825, Class2217.field14486, MemoryModuleType.field39828, Class2217.field14485, MemoryModuleType.field39819, Class2217.field14484));
       this.field19786 = var1;
       this.field19787 = var2 * var2;
       this.field19788 = var4;
@@ -36,15 +36,15 @@ public class Class3715 extends Class3676<LivingEntity> {
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       super.method12502(var1, var2, var3);
       Brain<?> var7 = var2.getBrain();
-      var7.<List<LivingEntity>>method21410(Class8830.field39819)
+      var7.<List<LivingEntity>>getMemory(MemoryModuleType.field39819)
          .ifPresent(
             var3x -> var3x.stream()
                   .filter(var2xx -> var2xx.getDistanceSq(var2) <= (double)this.field19787)
                   .filter(this::method12597)
                   .findFirst()
                   .ifPresent(var1xx -> {
-                     var7.method21406(Class8830.field39828, var1xx);
-                     var7.method21406(Class8830.field39825, new Class7865(var1xx, true));
+                     var7.method21406(MemoryModuleType.field39828, var1xx);
+                     var7.method21406(MemoryModuleType.field39825, new Class7865(var1xx, true));
                   })
          );
    }
@@ -54,6 +54,6 @@ public class Class3715 extends Class3676<LivingEntity> {
    }
 
    private List<LivingEntity> method12598(LivingEntity var1) {
-      return var1.getBrain().<List<LivingEntity>>method21410(Class8830.field39819).get();
+      return var1.getBrain().<List<LivingEntity>>getMemory(MemoryModuleType.field39819).get();
    }
 }

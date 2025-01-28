@@ -10,7 +10,7 @@ public class Class3684 extends Class3676<MobEntity> {
    private final int field19700;
 
    public Class3684(int var1) {
-      super(ImmutableMap.of(Class8830.field39825, Class2217.field14486, Class8830.field39826, Class2217.field14484, Class8830.field39827, Class2217.field14485));
+      super(ImmutableMap.of(MemoryModuleType.field39825, Class2217.field14486, MemoryModuleType.ATTACK_TARGET, Class2217.field14484, MemoryModuleType.field39827, Class2217.field14485));
       this.field19700 = var1;
    }
 
@@ -28,10 +28,10 @@ public class Class3684 extends Class3676<MobEntity> {
       Class6983.method21574(var2, var7);
       var2.swingArm(Hand.MAIN_HAND);
       var2.attackEntityAsMob(var7);
-      var2.getBrain().method21407(Class8830.field39827, true, (long)this.field19700);
+      var2.getBrain().method21407(MemoryModuleType.field39827, true, (long)this.field19700);
    }
 
    private LivingEntity method12524(MobEntity var1) {
-      return var1.getBrain().<LivingEntity>method21410(Class8830.field39826).get();
+      return var1.getBrain().<LivingEntity>getMemory(MemoryModuleType.ATTACK_TARGET).get();
    }
 }

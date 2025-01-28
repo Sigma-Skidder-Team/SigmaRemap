@@ -41,6 +41,6 @@ public class Class5671 extends Class5661<MobEntity, Class2895<MobEntity>> {
    }
 
    public boolean method17860(MobEntity var1) {
-      return var1 instanceof Class1035 && ((Class1035)var1).method4634();
+      return var1 instanceof AbstractPiglinEntity && ((AbstractPiglinEntity)var1).method4634();
    }
 }

@@ -10,7 +10,7 @@ public class Class3706 extends Class3676<VillagerEntity> {
    private long field19770;
 
    public Class3706() {
-      super(ImmutableMap.of(Class8830.field39814, Class2217.field14484, Class8830.field39825, Class2217.field14486));
+      super(ImmutableMap.of(MemoryModuleType.field39814, Class2217.field14484, MemoryModuleType.field39825, Class2217.field14486));
    }
 
    public boolean method12508(ServerWorld var1, VillagerEntity var2) {
@@ -19,7 +19,7 @@ public class Class3706 extends Class3676<VillagerEntity> {
             return false;
          } else {
             this.field19770 = var1.getGameTime();
-            Class9378 var5 = var2.getBrain().<Class9378>method21410(Class8830.field39814).get();
+            Class9378 var5 = var2.getBrain().<Class9378>getMemory(MemoryModuleType.field39814).get();
             return var5.method35578() == var1.getDimensionKey() && var5.method35579().withinDistance(var2.getPositionVec(), 1.73);
          }
       } else {
@@ -29,8 +29,8 @@ public class Class3706 extends Class3676<VillagerEntity> {
 
    public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
       Brain<VillagerEntity> var7 = var2.getBrain();
-      var7.method21406(Class8830.field39845, var3);
-      var7.method21410(Class8830.field39814).ifPresent(var1x -> var7.method21406(Class8830.field39825, new Class7863(var1x.method35579())));
+      var7.method21406(MemoryModuleType.field39845, var3);
+      var7.getMemory(MemoryModuleType.field39814).ifPresent(var1x -> var7.method21406(MemoryModuleType.field39825, new Class7863(var1x.method35579())));
       var2.method4694();
       this.method12585(var1, var2);
       if (var2.method4690()) {
@@ -42,7 +42,7 @@ public class Class3706 extends Class3676<VillagerEntity> {
    }
 
    public boolean method12499(ServerWorld var1, VillagerEntity var2, long var3) {
-      Optional var7 = var2.getBrain().<Class9378>method21410(Class8830.field39814);
+      Optional var7 = var2.getBrain().<Class9378>getMemory(MemoryModuleType.field39814);
       if (!var7.isPresent()) {
          return false;
       } else {

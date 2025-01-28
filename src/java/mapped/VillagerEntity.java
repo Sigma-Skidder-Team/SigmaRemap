@@ -75,37 +75,37 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
    private int field5788;
    private long field5789;
    private boolean field5790;
-   private static final ImmutableList<Class8830<?>> field5791 = ImmutableList.of(
-      Class8830.field39813,
-      Class8830.field39814,
-      Class8830.field39815,
-      Class8830.field39816,
-      Class8830.field39818,
-      Class8830.field39819,
-      Class8830.field39820,
-      Class8830.field39821,
-      Class8830.field39822,
-      Class8830.field39823,
-      Class8830.field39847,
-      Class8830.field39824,
-      new Class8830[]{
-         Class8830.field39825,
-         Class8830.field39828,
-         Class8830.field39829,
-         Class8830.field39831,
-         Class8830.field39833,
-         Class8830.field39834,
-         Class8830.field39835,
-         Class8830.field39836,
-         Class8830.field39838,
-         Class8830.field39817,
-         Class8830.field39839,
-         Class8830.field39840,
-         Class8830.field39841,
-         Class8830.field39843,
-         Class8830.field39844,
-         Class8830.field39845,
-         Class8830.field39842
+   private static final ImmutableList<MemoryModuleType<?>> field5791 = ImmutableList.of(
+      MemoryModuleType.field39813,
+      MemoryModuleType.field39814,
+      MemoryModuleType.field39815,
+      MemoryModuleType.field39816,
+      MemoryModuleType.field39818,
+      MemoryModuleType.field39819,
+      MemoryModuleType.field39820,
+      MemoryModuleType.field39821,
+      MemoryModuleType.field39822,
+      MemoryModuleType.field39823,
+      MemoryModuleType.field39847,
+      MemoryModuleType.field39824,
+      new MemoryModuleType[]{
+         MemoryModuleType.field39825,
+         MemoryModuleType.field39828,
+         MemoryModuleType.field39829,
+         MemoryModuleType.field39831,
+         MemoryModuleType.field39833,
+         MemoryModuleType.field39834,
+         MemoryModuleType.field39835,
+         MemoryModuleType.field39836,
+         MemoryModuleType.field39838,
+         MemoryModuleType.field39817,
+         MemoryModuleType.field39839,
+         MemoryModuleType.field39840,
+         MemoryModuleType.field39841,
+         MemoryModuleType.field39843,
+         MemoryModuleType.field39844,
+         MemoryModuleType.field39845,
+         MemoryModuleType.field39842
       }
    );
    private static final ImmutableList<Class7963<? extends Class7882<? super VillagerEntity>>> field5792 = ImmutableList.of(
@@ -119,14 +119,14 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
       Class7963.field34245,
       Class7963.field34246
    );
-   public static final Map<Class8830<Class9378>, BiPredicate<VillagerEntity, Class4913>> field5793 = ImmutableMap.of(
-      Class8830.field39813,
+   public static final Map<MemoryModuleType<Class9378>, BiPredicate<VillagerEntity, Class4913>> field5793 = ImmutableMap.of(
+      MemoryModuleType.field39813,
       (BiPredicate<VillagerEntity, Class4913>)(var0, var1) -> var1 == Class4913.field22766,
-      Class8830.field39814,
+      MemoryModuleType.field39814,
       (BiPredicate<VillagerEntity, Class4913>)(var0, var1) -> var0.method4674().method26571().method29457() == var1,
-      Class8830.field39815,
+      MemoryModuleType.field39815,
       (BiPredicate<VillagerEntity, Class4913>)(var0, var1) -> Class4913.field22747.test(var1),
-      Class8830.field39816,
+      MemoryModuleType.field39816,
       (BiPredicate<VillagerEntity, Class4913>)(var0, var1) -> var1 == Class4913.field22767
    );
 
@@ -170,14 +170,14 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
       Class8395 var4 = this.method4674().method26571();
       if (!this.isChild()) {
          var1.method21414(Schedule.field35352);
-         var1.method21428(Activity.field40221, Class9379.method35582(var4, 0.5F), ImmutableSet.of(Pair.of(Class8830.field39814, Class2217.field14484)));
+         var1.method21428(Activity.field40221, Class9379.method35582(var4, 0.5F), ImmutableSet.of(Pair.of(MemoryModuleType.field39814, Class2217.field14484)));
       } else {
          var1.method21414(Schedule.field35351);
          var1.method21427(Activity.field40222, Class9379.method35583(0.5F));
       }
 
       var1.method21427(Activity.field40219, Class9379.method35581(var4, 0.5F));
-      var1.method21428(Activity.field40224, Class9379.method35585(var4, 0.5F), ImmutableSet.of(Pair.of(Class8830.field39816, Class2217.field14484)));
+      var1.method21428(Activity.field40224, Class9379.method35585(var4, 0.5F), ImmutableSet.of(Pair.of(MemoryModuleType.field39816, Class2217.field14484)));
       var1.method21427(Activity.field40223, Class9379.method35584(var4, 0.5F));
       var1.method21427(Activity.field40220, Class9379.method35586(var4, 0.5F));
       var1.method21427(Activity.field40225, Class9379.method35587(var4, 0.5F));
@@ -556,15 +556,15 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
    }
 
    private void method4697() {
-      this.method4699(Class8830.field39813);
-      this.method4699(Class8830.field39814);
-      this.method4699(Class8830.field39815);
-      this.method4699(Class8830.field39816);
+      this.method4699(MemoryModuleType.field39813);
+      this.method4699(MemoryModuleType.field39814);
+      this.method4699(MemoryModuleType.field39815);
+      this.method4699(MemoryModuleType.field39816);
    }
 
    private void method4698(Entity var1) {
       if (this.world instanceof ServerWorld) {
-         Optional var4 = this.brain.<List<LivingEntity>>method21410(Class8830.field39819);
+         Optional var4 = this.brain.<List<LivingEntity>>getMemory(MemoryModuleType.field39819);
          if (var4.isPresent()) {
             ServerWorld var5 = (ServerWorld)this.world;
             ((List)var4.get()).stream().filter(var0 -> var0 instanceof Class1062).forEach(var2 -> var5.method6959(Class8214.field35288, var1, (Class1062)var2));
@@ -572,10 +572,10 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
       }
    }
 
-   public void method4699(Class8830<Class9378> var1) {
+   public void method4699(MemoryModuleType<Class9378> var1) {
       if (this.world instanceof ServerWorld) {
          MinecraftServer var4 = ((ServerWorld)this.world).getServer();
-         this.brain.<Class9378>method21410(var1).ifPresent(var3 -> {
+         this.brain.<Class9378>getMemory(var1).ifPresent(var3 -> {
             ServerWorld var6 = var4.method1318(var3.method35578());
             if (var6 != null) {
                Class1653 var7 = var6.method6951();
@@ -825,7 +825,7 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
    }
 
    public boolean method4717(long var1) {
-      return this.method4726(this.world.getGameTime()) ? !this.brain.method21404(Class8830.field39842) : false;
+      return this.method4726(this.world.getGameTime()) ? !this.brain.method21404(MemoryModuleType.field39842) : false;
    }
 
    @Nullable
@@ -914,27 +914,27 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
    }
 
    @Override
-   public void method4257() {
-      super.method4257();
-      DebugPacketSender.method23622(this);
+   public void sendDebugPackets() {
+      super.sendDebugPackets();
+      DebugPacketSender.sendLivingEntity(this);
    }
 
    @Override
    public void startSleeping(BlockPos var1) {
       super.startSleeping(var1);
-      this.brain.method21406(Class8830.field39843, this.world.getGameTime());
-      this.brain.method21405(Class8830.field39824);
-      this.brain.method21405(Class8830.field39841);
+      this.brain.method21406(MemoryModuleType.field39843, this.world.getGameTime());
+      this.brain.method21405(MemoryModuleType.field39824);
+      this.brain.method21405(MemoryModuleType.field39841);
    }
 
    @Override
    public void wakeUp() {
       super.wakeUp();
-      this.brain.method21406(Class8830.field39844, this.world.getGameTime());
+      this.brain.method21406(MemoryModuleType.field39844, this.world.getGameTime());
    }
 
    private boolean method4726(long var1) {
-      Optional var5 = this.brain.<Long>method21410(Class8830.field39843);
+      Optional var5 = this.brain.<Long>getMemory(MemoryModuleType.field39843);
       return !var5.isPresent() ? false : var1 - (Long)var5.get() < 24000L;
    }
 }

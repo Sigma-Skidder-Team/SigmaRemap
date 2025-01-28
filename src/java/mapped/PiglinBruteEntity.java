@@ -21,31 +21,31 @@ import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
-public class PiglinBruteEntity extends Class1035 {
+public class PiglinBruteEntity extends AbstractPiglinEntity {
    public static final ImmutableList<Class7963<? extends Class7882<? super PiglinBruteEntity>>> field5752 = ImmutableList.of(
       Class7963.field34239, Class7963.field34240, Class7963.field34238, Class7963.field34242, Class7963.field34248
    );
-   public static final ImmutableList<Class8830<?>> field5753 = ImmutableList.of(
-      Class8830.field39825,
-      Class8830.field39833,
-      Class8830.field39818,
-      Class8830.field39819,
-      Class8830.field39822,
-      Class8830.field39823,
-      Class8830.field39862,
-      Class8830.field39861,
-      Class8830.field39835,
-      Class8830.field39836,
-      Class8830.field39824,
-      Class8830.field39841,
-      new Class8830[]{
-         Class8830.field39826,
-         Class8830.field39827,
-         Class8830.field39828,
-         Class8830.field39831,
-         Class8830.field39849,
-         Class8830.field39848,
-         Class8830.field39813
+   public static final ImmutableList<MemoryModuleType<?>> field5753 = ImmutableList.of(
+      MemoryModuleType.field39825,
+      MemoryModuleType.field39833,
+      MemoryModuleType.field39818,
+      MemoryModuleType.field39819,
+      MemoryModuleType.field39822,
+      MemoryModuleType.field39823,
+      MemoryModuleType.field39862,
+      MemoryModuleType.field39861,
+      MemoryModuleType.field39835,
+      MemoryModuleType.field39836,
+      MemoryModuleType.field39824,
+      MemoryModuleType.field39841,
+      new MemoryModuleType[]{
+         MemoryModuleType.ATTACK_TARGET,
+         MemoryModuleType.field39827,
+         MemoryModuleType.field39828,
+         MemoryModuleType.field39831,
+         MemoryModuleType.field39849,
+         MemoryModuleType.field39848,
+         MemoryModuleType.field39813
       }
    );
 
@@ -107,8 +107,8 @@ public class PiglinBruteEntity extends Class1035 {
    }
 
    @Override
-   public Class2172 method4622() {
-      return this.method4307() && this.method4636() ? Class2172.field14259 : Class2172.field14264;
+   public PiglinAction func_234424_eM_() {
+      return this.method4307() && this.func_242338_eO() ? PiglinAction.field14259 : PiglinAction.field14264;
    }
 
    @Override
@@ -150,7 +150,7 @@ public class PiglinBruteEntity extends Class1035 {
    }
 
    @Override
-   public void method4630() {
+   public void func_241848_eP() {
       this.playSound(SoundEvents.field26944, 1.0F, this.getSoundPitch());
    }
 }

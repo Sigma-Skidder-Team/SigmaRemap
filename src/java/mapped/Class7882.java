@@ -31,9 +31,9 @@ public abstract class Class7882<E extends LivingEntity> {
 
    public abstract void method26425(ServerWorld var1, E var2);
 
-   public abstract Set<Class8830<?>> method26424();
+   public abstract Set<MemoryModuleType<?>> method26424();
 
    public static boolean method26430(LivingEntity var0, LivingEntity var1) {
-      return !var0.getBrain().method21411(Class8830.field39826, var1) ? field33826.canTarget(var0, var1) : field33827.canTarget(var0, var1);
+      return !var0.getBrain().method21411(MemoryModuleType.ATTACK_TARGET, var1) ? field33826.canTarget(var0, var1) : field33827.canTarget(var0, var1);
    }
 }

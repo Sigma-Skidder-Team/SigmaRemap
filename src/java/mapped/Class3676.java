@@ -7,21 +7,21 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public abstract class Class3676<E extends LivingEntity> {
-   public final Map<Class8830<?>, Class2217> field19684;
+   public final Map<MemoryModuleType<?>, Class2217> field19684;
    private Class2092 field19685 = Class2092.field13632;
    private long field19686;
    private final int field19687;
    private final int field19688;
 
-   public Class3676(Map<Class8830<?>, Class2217> var1) {
+   public Class3676(Map<MemoryModuleType<?>, Class2217> var1) {
       this(var1, 60);
    }
 
-   public Class3676(Map<Class8830<?>, Class2217> var1, int var2) {
+   public Class3676(Map<MemoryModuleType<?>, Class2217> var1, int var2) {
       this(var1, var2, var2);
    }
 
-   public Class3676(Map<Class8830<?>, Class2217> var1, int var2, int var3) {
+   public Class3676(Map<MemoryModuleType<?>, Class2217> var1, int var2, int var3) {
       this.field19687 = var2;
       this.field19688 = var3;
       this.field19684 = var1;
@@ -84,7 +84,7 @@ public abstract class Class3676<E extends LivingEntity> {
 
    private boolean method12509(E var1) {
       for (Entry var5 : this.field19684.entrySet()) {
-         Class8830 var6 = (Class8830)var5.getKey();
+         MemoryModuleType var6 = (MemoryModuleType)var5.getKey();
          Class2217 var7 = (Class2217)var5.getValue();
          if (!var1.getBrain().method21412(var6, var7)) {
             return false;

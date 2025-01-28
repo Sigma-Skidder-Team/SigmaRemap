@@ -49,19 +49,19 @@ public class Class2895<T extends MobEntity> extends PlayerModel<T> {
       float var11 = 0.08F + var3 * 0.4F;
       this.field17928.rotateAngleZ = (float) (-Math.PI / 6) - MathHelper.cos(var10 * 1.2F) * var11;
       this.field17929.rotateAngleZ = (float) (Math.PI / 6) + MathHelper.cos(var10) * var11;
-      if (!(var1 instanceof Class1035)) {
+      if (!(var1 instanceof AbstractPiglinEntity)) {
          if (var1.getType() == EntityType.ZOMBIFIED_PIGLIN) {
             ModelHelper.method27109(this.bipedLeftArm, this.bipedRightArm, var1.method4307(), this.swingProgress, var4);
          }
       } else {
-         Class1035 var12 = (Class1035)var1;
-         Class2172 var13 = var12.method4622();
-         if (var13 != Class2172.field14263) {
-            if (var13 == Class2172.field14259 && this.swingProgress == 0.0F) {
+         AbstractPiglinEntity var12 = (AbstractPiglinEntity)var1;
+         PiglinAction var13 = var12.func_234424_eM_();
+         if (var13 != PiglinAction.field14263) {
+            if (var13 == PiglinAction.field14259 && this.swingProgress == 0.0F) {
                this.method11211((T)var1);
-            } else if (var13 != Class2172.field14260) {
-               if (var13 != Class2172.field14261) {
-                  if (var13 == Class2172.field14262) {
+            } else if (var13 != PiglinAction.field14260) {
+               if (var13 != PiglinAction.field14261) {
+                  if (var13 == PiglinAction.field14262) {
                      this.bipedHead.rotateAngleX = 0.5F;
                      this.bipedHead.rotateAngleY = 0.0F;
                      if (!var1.method4306()) {
@@ -101,7 +101,7 @@ public class Class2895<T extends MobEntity> extends PlayerModel<T> {
    }
 
    public void func_230486_a_(T var1, float var2) {
-      if (this.swingProgress > 0.0F && var1 instanceof PiglinEntity && ((PiglinEntity)var1).method4622() == Class2172.field14259) {
+      if (this.swingProgress > 0.0F && var1 instanceof PiglinEntity && ((PiglinEntity)var1).func_234424_eM_() == PiglinAction.field14259) {
          ModelHelper.method27107(this.bipedRightArm, this.bipedLeftArm, var1, this.swingProgress, var2);
       } else {
          super.func_230486_a_((T)var1, var2);

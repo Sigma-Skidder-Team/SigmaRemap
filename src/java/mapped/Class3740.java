@@ -14,14 +14,14 @@ public class Class3740<E extends LivingEntity> extends Class3676<E> {
    private final Class3676<? super E> field19865;
    private final boolean field19866;
 
-   public Class3740(Map<Class8830<?>, Class2217> var1, Predicate<E> var2, Class3676<? super E> var3, boolean var4) {
+   public Class3740(Map<MemoryModuleType<?>, Class2217> var1, Predicate<E> var2, Class3676<? super E> var3, boolean var4) {
       super(method12698(var1, var3.field19684));
       this.field19864 = var2;
       this.field19865 = var3;
       this.field19866 = var4;
    }
 
-   private static Map<Class8830<?>, Class2217> method12698(Map<Class8830<?>, Class2217> var0, Map<Class8830<?>, Class2217> var1) {
+   private static Map<MemoryModuleType<?>, Class2217> method12698(Map<MemoryModuleType<?>, Class2217> var0, Map<MemoryModuleType<?>, Class2217> var1) {
       HashMap var4 = Maps.newHashMap();
       var4.putAll(var0);
       var4.putAll(var1);

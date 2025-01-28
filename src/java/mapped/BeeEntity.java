@@ -4,7 +4,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.MutableAttribute;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -339,11 +338,6 @@ public class BeeEntity extends AnimalEntity implements IAngerable, IFlyingAnimal
       this.method4347(field5686.method29319(this.rand));
    }
 
-   @Override
-   public void method3016(PlayerEntity var1) {
-
-   }
-
    private boolean method4431(BlockPos var1) {
       TileEntity var4 = this.world.getTileEntity(var1);
       return !(var4 instanceof BeehiveTileEntity) ? false : !((BeehiveTileEntity)var4).method3914();
@@ -359,8 +353,8 @@ public class BeeEntity extends AnimalEntity implements IAngerable, IFlyingAnimal
    }
 
    @Override
-   public void method4257() {
-      super.method4257();
+   public void sendDebugPackets() {
+      super.sendDebugPackets();
       DebugPacketSender.method23623(this);
    }
 

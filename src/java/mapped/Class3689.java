@@ -20,7 +20,7 @@ public class Class3689 extends Class3676<LivingEntity> {
    private long field19712;
 
    public Class3689(float var1) {
-      super(ImmutableMap.of(Class8830.field39824, Class2217.field14485, Class8830.field39813, Class2217.field14485));
+      super(ImmutableMap.of(MemoryModuleType.field39824, Class2217.field14485, MemoryModuleType.field39813, Class2217.field14485));
       this.field19709 = var1;
    }
 
@@ -61,7 +61,7 @@ public class Class3689 extends Class3676<LivingEntity> {
          BlockPos var12 = var11.method28712();
          Optional var13 = var8.method6676(var12);
          if (var13.isPresent()) {
-            var2.getBrain().method21406(Class8830.field39824, new Class8999(var12, this.field19709, 1));
+            var2.getBrain().method21406(MemoryModuleType.field39824, new Class8999(var12, this.field19709, 1));
             DebugPacketSender.method23615(var1, var12);
          }
       } else if (this.field19711 < 5) {

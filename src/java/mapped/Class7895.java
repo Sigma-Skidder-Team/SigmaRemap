@@ -14,7 +14,7 @@ public class Class7895 extends Class7882<LivingEntity> {
    }
 
    @Override
-   public Set<Class8830<?>> method26424() {
+   public Set<MemoryModuleType<?>> method26424() {
       return ImmutableSet.of();
    }
 }

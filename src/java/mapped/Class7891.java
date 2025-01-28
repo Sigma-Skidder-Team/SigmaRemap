@@ -34,14 +34,14 @@ public class Class7891 extends Class7882<VillagerEntity> {
 
       Brain var13 = var2.getBrain();
       if (var7.isEmpty()) {
-         var13.method21405(Class8830.field39817);
+         var13.method21405(MemoryModuleType.field39817);
       } else {
-         var13.method21406(Class8830.field39817, var7);
+         var13.method21406(MemoryModuleType.field39817, var7);
       }
    }
 
    @Override
-   public Set<Class8830<?>> method26424() {
-      return ImmutableSet.of(Class8830.field39817);
+   public Set<MemoryModuleType<?>> method26424() {
+      return ImmutableSet.of(MemoryModuleType.field39817);
    }
 }

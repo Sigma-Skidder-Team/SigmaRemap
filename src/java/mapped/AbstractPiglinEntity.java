@@ -17,11 +17,11 @@ import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
-public abstract class Class1035 extends MonsterEntity {
-   public static final DataParameter<Boolean> field5750 = EntityDataManager.<Boolean>createKey(Class1035.class, DataSerializers.BOOLEAN);
+public abstract class AbstractPiglinEntity extends MonsterEntity {
+   public static final DataParameter<Boolean> field5750 = EntityDataManager.<Boolean>createKey(AbstractPiglinEntity.class, DataSerializers.BOOLEAN);
    public int field5751 = 0;
 
-   public Class1035(EntityType<? extends Class1035> var1, World var2) {
+   public AbstractPiglinEntity(EntityType<? extends AbstractPiglinEntity> var1, World var2) {
       super(var1, var2);
       this.method4281(true);
       this.method4631();
@@ -83,7 +83,7 @@ public abstract class Class1035 extends MonsterEntity {
       }
 
       if (this.field5751 > 300) {
-         this.method4630();
+         this.func_241848_eP();
          this.method4619((ServerWorld)this.world);
       }
    }
@@ -99,34 +99,34 @@ public abstract class Class1035 extends MonsterEntity {
       }
    }
 
-   public boolean method4635() {
+   public boolean func_242337_eM() {
       return !this.isChild();
    }
 
-   public abstract Class2172 method4622();
+   public abstract PiglinAction func_234424_eM_();
 
    @Nullable
    @Override
-   public LivingEntity method4232() {
-      return this.brain.<LivingEntity>method21410(Class8830.field39826).orElse((LivingEntity)null);
+   public LivingEntity getAttackTarget() {
+      return this.brain.getMemory(MemoryModuleType.ATTACK_TARGET).orElse(null);
    }
 
-   public boolean method4636() {
+   public boolean func_242338_eO() {
       return this.getHeldItemMainhand().getItem() instanceof TieredItem;
    }
 
    @Override
-   public void method4237() {
-      if (Class4388.method13865(this)) {
-         super.method4237();
+   public void playAmbientSound() {
+      if (Class4388.func_234520_i_(this)) {
+         super.playAmbientSound();
       }
    }
 
    @Override
-   public void method4257() {
-      super.method4257();
-      DebugPacketSender.method23622(this);
+   public void sendDebugPackets() {
+      super.sendDebugPackets();
+      DebugPacketSender.sendLivingEntity(this);
    }
 
-   public abstract void method4630();
+   public abstract void func_241848_eP();
 }

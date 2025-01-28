@@ -19,11 +19,11 @@ public class Class3711 extends Class3676<VillagerEntity> {
       if (method12592(var2) || method12591(var2)) {
          Brain var7 = var2.getBrain();
          if (!var7.method21430(Activity.field40225)) {
-            var7.method21405(Class8830.field39831);
-            var7.method21405(Class8830.field39824);
-            var7.method21405(Class8830.field39825);
-            var7.method21405(Class8830.field39829);
-            var7.method21405(Class8830.field39828);
+            var7.method21405(MemoryModuleType.field39831);
+            var7.method21405(MemoryModuleType.field39824);
+            var7.method21405(MemoryModuleType.field39825);
+            var7.method21405(MemoryModuleType.field39829);
+            var7.method21405(MemoryModuleType.field39828);
          }
 
          var7.method21419(Activity.field40225);
@@ -37,10 +37,10 @@ public class Class3711 extends Class3676<VillagerEntity> {
    }
 
    public static boolean method12591(LivingEntity var0) {
-      return var0.getBrain().method21404(Class8830.field39838);
+      return var0.getBrain().method21404(MemoryModuleType.field39838);
    }
 
    public static boolean method12592(LivingEntity var0) {
-      return var0.getBrain().method21404(Class8830.field39835);
+      return var0.getBrain().method21404(MemoryModuleType.field39835);
    }
 }

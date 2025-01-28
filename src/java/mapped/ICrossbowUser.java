@@ -14,13 +14,13 @@ import net.minecraft.util.math.vector.Vector3f;
 
 import javax.annotation.Nullable;
 
-public interface Class1023 extends Class1022 {
+public interface ICrossbowUser extends Class1022 {
    void method4535(boolean var1);
 
    void method4536(LivingEntity var1, ItemStack var2, ProjectileEntity var3, float var4);
 
    @Nullable
-   LivingEntity method4232();
+   LivingEntity getAttackTarget();
 
    void method4537();
 

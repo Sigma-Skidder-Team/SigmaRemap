@@ -14,13 +14,13 @@ public class Class3748<E extends MobEntity> extends Class3676<E> {
    public Class3748(int var1, float var2) {
       super(
          ImmutableMap.of(
-            Class8830.field39856,
+            MemoryModuleType.field39856,
             Class2217.field14484,
-            Class8830.field39826,
+            MemoryModuleType.ATTACK_TARGET,
             Class2217.field14485,
-            Class8830.field39824,
+            MemoryModuleType.field39824,
             Class2217.field14485,
-            Class8830.field39825,
+            MemoryModuleType.field39825,
             Class2217.field14486
          )
       );
@@ -46,6 +46,6 @@ public class Class3748<E extends MobEntity> extends Class3676<E> {
    }
 
    private static BlockPos method12709(MobEntity var0) {
-      return var0.getBrain().<BlockPos>method21410(Class8830.field39856).get();
+      return var0.getBrain().<BlockPos>getMemory(MemoryModuleType.field39856).get();
    }
 }

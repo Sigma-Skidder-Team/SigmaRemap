@@ -12,8 +12,8 @@ public class Class7892 extends Class7882<MobEntity> {
    private static String[] field33843;
 
    @Override
-   public Set<Class8830<?>> method26424() {
-      return ImmutableSet.of(Class8830.field39847);
+   public Set<MemoryModuleType<?>> method26424() {
+      return ImmutableSet.of(MemoryModuleType.field39847);
    }
 
    public void method26425(ServerWorld var1, MobEntity var2) {
@@ -25,6 +25,6 @@ public class Class7892 extends Class7882<MobEntity> {
          .filter(var1x -> var1x.isEntityInRange(var2, 9.0))
          .filter(var2::canEntityBeSeen)
          .findFirst();
-      var5.method21408(Class8830.field39847, var7);
+      var5.method21408(MemoryModuleType.field39847, var7);
    }
 }

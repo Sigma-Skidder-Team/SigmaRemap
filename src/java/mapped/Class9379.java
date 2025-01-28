@@ -22,18 +22,18 @@ public class Class9379 {
          Pair.of(0, new Class3703()),
          Pair.of(0, new Class3695()),
          Pair.of(0, new Class3745()),
-         Pair.of(0, new Class3699(var0.method29457(), Class8830.field39814)),
-         Pair.of(0, new Class3699(var0.method29457(), Class8830.field39815)),
+         Pair.of(0, new Class3699(var0.method29457(), MemoryModuleType.field39814)),
+         Pair.of(0, new Class3699(var0.method29457(), MemoryModuleType.field39815)),
          Pair.of(1, new Class3735()),
          Pair.of(2, new Class3737(var0)),
          Pair.of(3, new Class3710(var1)),
          new Pair[]{
             Pair.of(5, new Class3724(var1, false, 4)),
-            Pair.of(6, new Class3698(var0.method29457(), Class8830.field39814, Class8830.field39815, true, Optional.<Byte>empty())),
+            Pair.of(6, new Class3698(var0.method29457(), MemoryModuleType.field39814, MemoryModuleType.field39815, true, Optional.<Byte>empty())),
             Pair.of(7, new Class3753(var1)),
             Pair.of(8, new Class3728(var1)),
-            Pair.of(10, new Class3698(Class4913.field22766, Class8830.field39813, false, Optional.<Byte>of((byte)14))),
-            Pair.of(10, new Class3698(Class4913.field22767, Class8830.field39816, true, Optional.<Byte>of((byte)14))),
+            Pair.of(10, new Class3698(Class4913.field22766, MemoryModuleType.field39813, false, Optional.<Byte>of((byte)14))),
+            Pair.of(10, new Class3698(Class4913.field22767, MemoryModuleType.field39816, true, Optional.<Byte>of((byte)14))),
             Pair.of(10, new Class3678()),
             Pair.of(10, new Class3734())
          }
@@ -55,9 +55,9 @@ public class Class9379 {
             new Class3693(
                ImmutableList.of(
                   Pair.of(var4, 7),
-                  Pair.of(new Class3726(Class8830.field39814, 0.4F, 4), 2),
-                  Pair.of(new Class3700(Class8830.field39814, 0.4F, 1, 10), 5),
-                  Pair.of(new Class3742(Class8830.field39817, var1, 1, 6, Class8830.field39814), 5),
+                  Pair.of(new Class3726(MemoryModuleType.field39814, 0.4F, 4), 2),
+                  Pair.of(new Class3700(MemoryModuleType.field39814, 0.4F, 1, 10), 5),
+                  Pair.of(new Class3742(MemoryModuleType.field39817, var1, 1, 6, MemoryModuleType.field39814), 5),
                   Pair.of(new Class3749(), var0 != Class8395.field36016 ? 5 : 2),
                   Pair.of(new Class3725(), var0 != Class8395.field36016 ? 7 : 4)
                )
@@ -65,7 +65,7 @@ public class Class9379 {
          ),
          Pair.of(10, new Class3729(400, 1600)),
          Pair.of(10, new Class3715(EntityType.PLAYER, 4)),
-         Pair.of(2, new Class3746(Class8830.field39814, var1, 9, 100, 1200)),
+         Pair.of(2, new Class3746(MemoryModuleType.field39814, var1, 9, 100, 1200)),
          Pair.of(3, new Class3717(100)),
          Pair.of(99, new Class3708())
       );
@@ -79,10 +79,10 @@ public class Class9379 {
          Pair.of(
             5,
             new Class3693(
-               ImmutableMap.of(Class8830.field39820, Class2217.field14485),
+               ImmutableMap.of(MemoryModuleType.field39820, Class2217.field14485),
                ImmutableList.of(
-                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.VILLAGER, 8, Class8830.field39828, var0, 2), 2),
-                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.CAT, 8, Class8830.field39828, var0, 2), 1),
+                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.VILLAGER, 8, MemoryModuleType.field39828, var0, 2), 2),
+                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.CAT, 8, MemoryModuleType.field39828, var0, 2), 1),
                   Pair.of(new Class3712(var0), 1),
                   Pair.of(new Class3694(var0, 2), 1),
                   Pair.of(new Class3730(var0), 2),
@@ -96,13 +96,13 @@ public class Class9379 {
 
    public static ImmutableList<Pair<Integer, ? extends Class3676<? super VillagerEntity>>> method35584(Class8395 var0, float var1) {
       return ImmutableList.of(
-         Pair.of(2, new Class3746(Class8830.field39813, var1, 1, 150, 1200)),
-         Pair.of(3, new Class3699(Class4913.field22766, Class8830.field39813)),
+         Pair.of(2, new Class3746(MemoryModuleType.field39813, var1, 1, 150, 1200)),
+         Pair.of(3, new Class3699(Class4913.field22766, MemoryModuleType.field39813)),
          Pair.of(3, new Class3756()),
          Pair.of(
             5,
             new Class3693(
-               ImmutableMap.of(Class8830.field39813, Class2217.field14485),
+               ImmutableMap.of(MemoryModuleType.field39813, Class2217.field14485),
                ImmutableList.of(
                   Pair.of(new Class3689(var1), 1), Pair.of(new Class3683(var1), 4), Pair.of(new Class3688(var1, 4), 2), Pair.of(new Class3675(20, 40), 2)
                )
@@ -115,17 +115,17 @@ public class Class9379 {
 
    public static ImmutableList<Pair<Integer, ? extends Class3676<? super VillagerEntity>>> method35585(Class8395 var0, float var1) {
       return ImmutableList.of(
-         Pair.of(2, new Class3693(ImmutableList.of(Pair.of(new Class3726(Class8830.field39816, 0.4F, 40), 2), Pair.of(new Class3727(), 2)))),
+         Pair.of(2, new Class3693(ImmutableList.of(Pair.of(new Class3726(MemoryModuleType.field39816, 0.4F, 40), 2), Pair.of(new Class3727(), 2)))),
          Pair.of(10, new Class3729(400, 1600)),
          Pair.of(10, new Class3715(EntityType.PLAYER, 4)),
-         Pair.of(2, new Class3746(Class8830.field39816, var1, 6, 100, 200)),
+         Pair.of(2, new Class3746(MemoryModuleType.field39816, var1, 6, 100, 200)),
          Pair.of(3, new Class3717(100)),
-         Pair.of(3, new Class3699(Class4913.field22767, Class8830.field39816)),
+         Pair.of(3, new Class3699(Class4913.field22767, MemoryModuleType.field39816)),
          Pair.of(
             3,
             new Class3692(
                ImmutableMap.of(),
-               ImmutableSet.of(Class8830.field39828),
+               ImmutableSet.of(MemoryModuleType.field39828),
                Class1956.field12749,
                Class2111.field13770,
                ImmutableList.of(Pair.of(new Class3754(), 1))
@@ -142,12 +142,12 @@ public class Class9379 {
             2,
             new Class3693(
                ImmutableList.of(
-                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.VILLAGER, 8, Class8830.field39828, var1, 2), 2),
+                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.VILLAGER, 8, MemoryModuleType.field39828, var1, 2), 2),
                   Pair.of(
-                     new Class3696<VillagerEntity, Class1045>(EntityType.VILLAGER, 8, Class1045::method4700, Class1045::method4700, Class8830.field39829, var1, 2),
+                     new Class3696<VillagerEntity, Class1045>(EntityType.VILLAGER, 8, Class1045::method4700, Class1045::method4700, MemoryModuleType.field39829, var1, 2),
                      1
                   ),
-                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.CAT, 8, Class8830.field39828, var1, 2), 1),
+                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.CAT, 8, MemoryModuleType.field39828, var1, 2), 1),
                   Pair.of(new Class3712(var1), 1),
                   Pair.of(new Class3694(var1, 2), 1),
                   Pair.of(new Class3730(var1), 1),
@@ -162,7 +162,7 @@ public class Class9379 {
             3,
             new Class3692(
                ImmutableMap.of(),
-               ImmutableSet.of(Class8830.field39828),
+               ImmutableSet.of(MemoryModuleType.field39828),
                Class1956.field12749,
                Class2111.field13770,
                ImmutableList.of(Pair.of(new Class3754(), 1))
@@ -172,7 +172,7 @@ public class Class9379 {
             3,
             new Class3692(
                ImmutableMap.of(),
-               ImmutableSet.of(Class8830.field39829),
+               ImmutableSet.of(MemoryModuleType.field39829),
                Class1956.field12749,
                Class2111.field13770,
                ImmutableList.of(Pair.of(new Class3723(), 1))
@@ -187,8 +187,8 @@ public class Class9379 {
       float var4 = var1 * 1.5F;
       return ImmutableList.of(
          Pair.of(0, new Class3750()),
-         Pair.of(1, Class3690.method12539(Class8830.field39838, var4, 6, false)),
-         Pair.of(1, Class3690.method12539(Class8830.field39836, var4, 6, false)),
+         Pair.of(1, Class3690.method12539(MemoryModuleType.field39838, var4, 6, false)),
+         Pair.of(1, Class3690.method12539(MemoryModuleType.field39836, var4, 6, false)),
          Pair.of(3, new Class3712(var4, 2, 2)),
          method35592()
       );
@@ -199,7 +199,7 @@ public class Class9379 {
          Pair.of(0, new Class3679()),
          Pair.of(
             0,
-            new Class3693(ImmutableList.of(Pair.of(new Class3746(Class8830.field39816, var1 * 1.5F, 2, 150, 200), 6), Pair.of(new Class3712(var1 * 1.5F), 2)))
+            new Class3693(ImmutableList.of(Pair.of(new Class3746(MemoryModuleType.field39816, var1 * 1.5F, 2, 150, 200), 6), Pair.of(new Class3712(var1 * 1.5F), 2)))
          ),
          method35592(),
          Pair.of(99, new Class3719())

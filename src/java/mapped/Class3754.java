@@ -17,11 +17,11 @@ public class Class3754 extends Class3676<VillagerEntity> {
    private Set<Item> field19910 = ImmutableSet.of();
 
    public Class3754() {
-      super(ImmutableMap.of(Class8830.field39828, Class2217.field14484, Class8830.field39819, Class2217.field14484));
+      super(ImmutableMap.of(MemoryModuleType.field39828, Class2217.field14484, MemoryModuleType.field39819, Class2217.field14484));
    }
 
    public boolean method12508(ServerWorld var1, VillagerEntity var2) {
-      return Class6983.method21571(var2.getBrain(), Class8830.field39828, EntityType.VILLAGER);
+      return Class6983.method21571(var2.getBrain(), MemoryModuleType.field39828, EntityType.VILLAGER);
    }
 
    public boolean method12499(ServerWorld var1, VillagerEntity var2, long var3) {
@@ -29,13 +29,13 @@ public class Class3754 extends Class3676<VillagerEntity> {
    }
 
    public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
-      VillagerEntity var7 = (VillagerEntity)var2.getBrain().<LivingEntity>method21410(Class8830.field39828).get();
+      VillagerEntity var7 = (VillagerEntity)var2.getBrain().<LivingEntity>getMemory(MemoryModuleType.field39828).get();
       Class6983.method21569(var2, var7, 0.5F);
       this.field19910 = method12721(var2, var7);
    }
 
    public void method12504(ServerWorld var1, VillagerEntity var2, long var3) {
-      VillagerEntity var7 = (VillagerEntity)var2.getBrain().<LivingEntity>method21410(Class8830.field39828).get();
+      VillagerEntity var7 = (VillagerEntity)var2.getBrain().<LivingEntity>getMemory(MemoryModuleType.field39828).get();
       if (!(var2.getDistanceSq(var7) > 5.0)) {
          Class6983.method21569(var2, var7, 0.5F);
          var2.method4714(var1, var7, var3);
@@ -55,7 +55,7 @@ public class Class3754 extends Class3676<VillagerEntity> {
    }
 
    public void method12506(ServerWorld var1, VillagerEntity var2, long var3) {
-      var2.getBrain().method21405(Class8830.field39828);
+      var2.getBrain().method21405(MemoryModuleType.field39828);
    }
 
    private static Set<Item> method12721(VillagerEntity var0, VillagerEntity var1) {

@@ -12,7 +12,7 @@ public class Class3685<E extends MobEntity> extends Class3676<E> {
    private final Predicate<LivingEntity> field19702;
 
    public Class3685(Predicate<LivingEntity> var1) {
-      super(ImmutableMap.of(Class8830.field39826, Class2217.field14484, Class8830.field39841, Class2217.field14486));
+      super(ImmutableMap.of(MemoryModuleType.ATTACK_TARGET, Class2217.field14484, MemoryModuleType.field39841, Class2217.field14486));
       this.field19702 = var1;
    }
 
@@ -47,20 +47,20 @@ public class Class3685<E extends MobEntity> extends Class3676<E> {
    }
 
    private LivingEntity method12527(E var1) {
-      return var1.getBrain().<LivingEntity>method21410(Class8830.field39826).get();
+      return var1.getBrain().<LivingEntity>getMemory(MemoryModuleType.ATTACK_TARGET).get();
    }
 
    private static <E extends LivingEntity> boolean method12528(E var0) {
-      Optional var3 = var0.getBrain().<Long>method21410(Class8830.field39841);
+      Optional var3 = var0.getBrain().<Long>getMemory(MemoryModuleType.field39841);
       return var3.isPresent() && var0.world.getGameTime() - (Long)var3.get() > 200L;
    }
 
    private boolean method12529(E var1) {
-      Optional var4 = var1.getBrain().<LivingEntity>method21410(Class8830.field39826);
+      Optional var4 = var1.getBrain().<LivingEntity>getMemory(MemoryModuleType.ATTACK_TARGET);
       return var4.isPresent() && !((LivingEntity)var4.get()).isAlive();
    }
 
    private void method12530(E var1) {
-      var1.getBrain().method21405(Class8830.field39826);
+      var1.getBrain().method21405(MemoryModuleType.ATTACK_TARGET);
    }
 }

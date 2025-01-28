@@ -12,7 +12,7 @@ public class Class3688 extends Class3676<VillagerEntity> {
    private final int field19707;
 
    public Class3688(float var1, int var2) {
-      super(ImmutableMap.of(Class8830.field39824, Class2217.field14485));
+      super(ImmutableMap.of(MemoryModuleType.field39824, Class2217.field14485));
       this.field19706 = var1;
       this.field19707 = var2;
    }
@@ -42,7 +42,7 @@ public class Class3688 extends Class3676<VillagerEntity> {
       }
 
       if (var9 != null) {
-         var2.getBrain().method21406(Class8830.field39824, new Class8999(var9, this.field19706, this.field19707));
+         var2.getBrain().method21406(MemoryModuleType.field39824, new Class8999(var9, this.field19706, this.field19707));
       }
    }
 }

@@ -13,13 +13,13 @@ public class Class3732<E extends PiglinEntity> extends Class3676<E> {
    public Class3732(int var1, int var2) {
       super(
          ImmutableMap.of(
-            Class8830.field39851,
+            MemoryModuleType.field39851,
             Class2217.field14484,
-            Class8830.field39847,
+            MemoryModuleType.field39847,
             Class2217.field14484,
-            Class8830.field39852,
+            MemoryModuleType.field39852,
             Class2217.field14486,
-            Class8830.field39853,
+            MemoryModuleType.field39853,
             Class2217.field14486
          )
       );
@@ -33,18 +33,18 @@ public class Class3732<E extends PiglinEntity> extends Class3676<E> {
 
    public void method12502(ServerWorld var1, E var2, long var3) {
       Brain var7 = var2.getBrain();
-      Optional var8 = var7.<Integer>method21410(Class8830.field39852);
+      Optional var8 = var7.<Integer>getMemory(MemoryModuleType.field39852);
       if (var8.isPresent()) {
          int var9 = (Integer)var8.get();
          if (var9 <= this.field19843) {
-            var7.method21406(Class8830.field39852, var9 + 1);
+            var7.method21406(MemoryModuleType.field39852, var9 + 1);
          } else {
-            var7.method21405(Class8830.field39851);
-            var7.method21405(Class8830.field39852);
-            var7.method21407(Class8830.field39853, true, (long)this.field19844);
+            var7.method21405(MemoryModuleType.field39851);
+            var7.method21405(MemoryModuleType.field39852);
+            var7.method21407(MemoryModuleType.field39853, true, (long)this.field19844);
          }
       } else {
-         var7.method21406(Class8830.field39852, 0);
+         var7.method21406(MemoryModuleType.field39852, 0);
       }
    }
 }

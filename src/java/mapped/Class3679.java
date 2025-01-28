@@ -12,7 +12,7 @@ public class Class3679 extends Class3676<LivingEntity> {
    private static String[] field19691;
 
    public Class3679() {
-      super(ImmutableMap.of(Class8830.field39816, Class2217.field14484));
+      super(ImmutableMap.of(MemoryModuleType.field39816, Class2217.field14484));
    }
 
    @Override
@@ -23,7 +23,7 @@ public class Class3679 extends Class3676<LivingEntity> {
    @Override
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       Brain<?> var7 = var2.getBrain();
-      BlockPos var8 = var7.method21410(Class8830.field39816).get().method35579();
+      BlockPos var8 = var7.getMemory(MemoryModuleType.field39816).get().method35579();
       if (var8.withinDistance(var2.getPosition(), 3.0)) {
          BlockState var9 = var1.getBlockState(var8);
          if (var9.isIn(Blocks.BELL)) {

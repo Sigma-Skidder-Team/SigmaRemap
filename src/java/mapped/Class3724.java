@@ -19,11 +19,11 @@ public class Class3724<E extends LivingEntity> extends Class3676<E> {
    public Class3724(Predicate<E> var1, float var2, boolean var3, int var4) {
       super(
          ImmutableMap.of(
-            Class8830.field39825,
+            MemoryModuleType.field39825,
             Class2217.field14486,
-            Class8830.field39824,
+            MemoryModuleType.field39824,
             !var3 ? Class2217.field14485 : Class2217.field14486,
-            Class8830.field39847,
+            MemoryModuleType.field39847,
             Class2217.field14484
          )
       );
@@ -43,6 +43,6 @@ public class Class3724<E extends LivingEntity> extends Class3676<E> {
    }
 
    private ItemEntity method12623(E var1) {
-      return var1.getBrain().<ItemEntity>method21410(Class8830.field39847).get();
+      return var1.getBrain().<ItemEntity>getMemory(MemoryModuleType.field39847).get();
    }
 }

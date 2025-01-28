@@ -18,12 +18,12 @@ public class Class3697 extends Class3676<LivingEntity> {
    private int field19739;
 
    public Class3697() {
-      super(ImmutableMap.of(Class8830.field39831, Class2217.field14484, Class8830.field39833, Class2217.field14486));
+      super(ImmutableMap.of(MemoryModuleType.field39831, Class2217.field14484, MemoryModuleType.field39833, Class2217.field14486));
    }
 
    @Override
    public boolean method12508(ServerWorld var1, LivingEntity var2) {
-      Class8238 var5 = var2.getBrain().<Class8238>method21410(Class8830.field39831).get();
+      Class8238 var5 = var2.getBrain().<Class8238>getMemory(MemoryModuleType.field39831).get();
       if (!var5.method28692() && !var5.method28693()) {
          if (Objects.equals(this.field19738, var5.method28705())) {
             if (this.field19739 > 0) {
@@ -42,7 +42,7 @@ public class Class3697 extends Class3676<LivingEntity> {
 
    @Override
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
-      Class8238 var7 = var2.getBrain().<Class8238>method21410(Class8830.field39831).get();
+      Class8238 var7 = var2.getBrain().<Class8238>getMemory(MemoryModuleType.field39831).get();
       this.field19738 = var7.method28705();
       Class7176 var8 = var7.method28706();
       Class7176 var9 = var7.method28705();
@@ -72,8 +72,8 @@ public class Class3697 extends Class3676<LivingEntity> {
 
    public static void method12561(ServerWorld var0, LivingEntity var1, Class7176 var2, Class7176 var3) {
       Brain<?> var6 = var1.getBrain();
-      if (var6.method21404(Class8830.field39833)) {
-         Iterator<Class9378> var7 = var6.method21410(Class8830.field39833).get().iterator();
+      if (var6.method21404(MemoryModuleType.field39833)) {
+         Iterator<Class9378> var7 = var6.getMemory(MemoryModuleType.field39833).get().iterator();
 
          while (var7.hasNext()) {
             Class9378 var8 = var7.next();
@@ -106,8 +106,8 @@ public class Class3697 extends Class3676<LivingEntity> {
 
    private static boolean method12562(ServerWorld var0, LivingEntity var1, BlockPos var2) {
       Brain<?> var5 = var1.getBrain();
-      return var5.method21404(Class8830.field39818)
-         ? var5.method21410(Class8830.field39818)
+      return var5.method21404(MemoryModuleType.field39818)
+         ? var5.getMemory(MemoryModuleType.field39818)
             .get()
             .stream()
             .filter(var1x -> var1x.getType() == var1.getType())
@@ -117,10 +117,10 @@ public class Class3697 extends Class3676<LivingEntity> {
    }
 
    private static boolean method12563(ServerWorld var0, LivingEntity var1, BlockPos var2) {
-      if (!var1.getBrain().method21404(Class8830.field39831)) {
+      if (!var1.getBrain().method21404(MemoryModuleType.field39831)) {
          return false;
       } else {
-         Class8238 var5 = var1.getBrain().<Class8238>method21410(Class8830.field39831).get();
+         Class8238 var5 = var1.getBrain().<Class8238>getMemory(MemoryModuleType.field39831).get();
          if (!var5.method28693()) {
             Class7176 var6 = var5.method28706();
             if (var6 == null) {
@@ -142,10 +142,10 @@ public class Class3697 extends Class3676<LivingEntity> {
    private void method12565(ServerWorld var1, LivingEntity var2, BlockPos var3) {
       Brain<?> var6 = var2.getBrain();
       Class9378 var7 = Class9378.method35577(var1.getDimensionKey(), var3);
-      if (!var6.method21410(Class8830.field39833).isPresent()) {
-         var6.method21406(Class8830.field39833, Sets.newHashSet(new Class9378[]{var7}));
+      if (!var6.getMemory(MemoryModuleType.field39833).isPresent()) {
+         var6.method21406(MemoryModuleType.field39833, Sets.newHashSet(new Class9378[]{var7}));
       } else {
-         var6.method21410(Class8830.field39833).get().add(var7);
+         var6.getMemory(MemoryModuleType.field39833).get().add(var7);
       }
    }
 }

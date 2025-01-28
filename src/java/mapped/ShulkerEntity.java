@@ -75,9 +75,9 @@ public class ShulkerEntity extends Class1056 implements IMob {
    }
 
    @Override
-   public void method4237() {
+   public void playAmbientSound() {
       if (!this.method4847()) {
-         super.method4237();
+         super.playAmbientSound();
       }
    }
 
