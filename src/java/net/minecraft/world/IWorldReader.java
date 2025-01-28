@@ -62,7 +62,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
 
    DimensionType getDimensionType();
 
-   default BlockPos getTopPosition(Heightmap.Type var1, BlockPos var2) {
+   default BlockPos getHeight(Heightmap.Type var1, BlockPos var2) {
       return new BlockPos(var2.getX(), this.method6736(var1, var2.getX(), var2.getZ()), var2.getZ());
    }
 

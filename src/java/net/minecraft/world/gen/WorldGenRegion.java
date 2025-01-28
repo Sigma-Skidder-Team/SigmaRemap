@@ -362,7 +362,7 @@ public class WorldGenRegion implements ISeedReader {
    }
 
    @Override
-   public BlockPos method7006(Heightmap.Type var1, BlockPos var2) {
+   public BlockPos getHeight(Heightmap.Type var1, BlockPos var2) {
       return null;
    }
 

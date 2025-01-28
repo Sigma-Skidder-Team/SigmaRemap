@@ -55,7 +55,7 @@ public abstract class Class4209 extends Class4178 {
             for (int var10 = this.field20444.minX; var10 <= this.field20444.maxX; var10++) {
                var8.setPos(var10, 64, var9);
                if (var2.method38396(var8)) {
-                  var6 += var1.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var8).getY();
+                  var6 += var1.getHeight(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var8).getY();
                   var7++;
                }
             }

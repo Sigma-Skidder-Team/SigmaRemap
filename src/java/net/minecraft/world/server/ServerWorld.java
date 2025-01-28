@@ -410,7 +410,7 @@ public class ServerWorld extends World implements ISeedReader {
 
       var9.endStartSection("iceandsnow");
       if (this.rand.nextInt(16) == 0) {
-         BlockPos var19 = this.getTopPosition(Heightmap.Type.MOTION_BLOCKING, this.method6818(var7, 0, var8, 15));
+         BlockPos var19 = this.getHeight(Heightmap.Type.MOTION_BLOCKING, this.method6818(var7, 0, var8, 15));
          BlockPos var21 = var19.down();
          Biome var23 = this.getBiome(var19);
          if (var23.doesWaterFreeze(this, var21)) {
@@ -455,7 +455,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public BlockPos method6900(BlockPos var1) {
-      BlockPos var4 = this.getTopPosition(Heightmap.Type.MOTION_BLOCKING, var1);
+      BlockPos var4 = this.getHeight(Heightmap.Type.MOTION_BLOCKING, var1);
       AxisAlignedBB var5 = new AxisAlignedBB(var4, new BlockPos(var4.getX(), this.method7034(), var4.getZ())).grow(3.0);
       List var6 = this.<LivingEntity>getEntitiesInAABBexcluding(LivingEntity.class, var5, var1x -> var1x != null && var1x.isAlive() && this.method7022(var1x.getPosition()));
       if (var6.isEmpty()) {
@@ -1156,7 +1156,7 @@ public class ServerWorld extends World implements ISeedReader {
    public BlockPos getSpawnPoint() {
       BlockPos var3 = new BlockPos(this.worldInfo.getSpawnX(), this.worldInfo.getSpawnY(), this.worldInfo.getSpawnZ());
       if (!this.getWorldBorder().contains(var3)) {
-         var3 = this.getTopPosition(Heightmap.Type.MOTION_BLOCKING, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
+         var3 = this.getHeight(Heightmap.Type.MOTION_BLOCKING, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
       }
 
       return var3;
@@ -1431,7 +1431,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Override
-   public BlockPos method7006(Heightmap.Type var1, BlockPos var2) {
+   public BlockPos getHeight(Heightmap.Type var1, BlockPos var2) {
       return null;
    }
 }

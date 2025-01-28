@@ -25,7 +25,7 @@ public interface IBiomeReader extends IEntityReader, IWorldReader, IWorldGenerat
 
    @Override
    default BlockPos getHeight(Heightmap.Type heightmapType, BlockPos pos) {
-      return IWorldReader.super.getTopPosition(heightmapType, pos);
+      return IWorldReader.super.getHeight(heightmapType, pos);
    }
 
    DynamicRegistries func_241828_r();

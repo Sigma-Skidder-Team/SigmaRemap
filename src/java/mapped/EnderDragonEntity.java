@@ -598,7 +598,7 @@ public class EnderDragonEntity extends MobEntity implements IMob {
             }
 
             int var9 = Math.max(
-               this.world.getSeaLevel() + 10, this.world.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, new BlockPos(var6, 0, var7)).getY() + var4
+               this.world.getSeaLevel() + 10, this.world.getHeight(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, new BlockPos(var6, 0, var7)).getY() + var4
             );
             this.field5642[var3] = new Class7176(var6, var9, var7);
          }
@@ -803,7 +803,7 @@ public class EnderDragonEntity extends MobEntity implements IMob {
       Class9598 var7 = var6.method23368();
       double var10;
       if (var7 == Class9598.field44899 || var7 == Class9598.field44900) {
-         BlockPos var8 = this.world.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994);
+         BlockPos var8 = this.world.getHeight(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994);
          float var9 = Math.max(MathHelper.sqrt(var8.distanceSq(this.getPositionVec(), true)) / 4.0F, 1.0F);
          var10 = (double)((float)var1 / var9);
       } else if (!var6.method23358()) {
@@ -824,7 +824,7 @@ public class EnderDragonEntity extends MobEntity implements IMob {
       Class9598 var5 = var4.method23368();
       Vector3d var11;
       if (var5 == Class9598.field44899 || var5 == Class9598.field44900) {
-         BlockPos var12 = this.world.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994);
+         BlockPos var12 = this.world.getHeight(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994);
          float var13 = Math.max(MathHelper.sqrt(var12.distanceSq(this.getPositionVec(), true)) / 4.0F, 1.0F);
          float var8 = 6.0F / var13;
          float var9 = this.rotationPitch;

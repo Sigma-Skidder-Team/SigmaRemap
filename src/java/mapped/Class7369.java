@@ -48,7 +48,7 @@ public class Class7369 extends Class7361 {
 
    private void method23373() {
       if (this.field31540 != null && this.field31540.method28693()) {
-         BlockPos var3 = this.field31519.world.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, new BlockPos(Class2909.field17994));
+         BlockPos var3 = this.field31519.world.getHeight(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, new BlockPos(Class2909.field17994));
          int var4 = this.field31519.method4337() != null ? this.field31519.method4337().method26125() : 0;
          if (this.field31519.getRNG().nextInt(var4 + 3) == 0) {
             this.field31519.method4336().method32671(Class9598.field44898);

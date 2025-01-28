@@ -2197,7 +2197,7 @@ public abstract class Entity implements INameable, ICommandSource {
       } else {
          BlockPos var6;
          if (!var5) {
-            var6 = var1.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var1.getSpawnPoint());
+            var6 = var1.getHeight(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var1.getSpawnPoint());
          } else {
             var6 = ServerWorld.field9038;
          }

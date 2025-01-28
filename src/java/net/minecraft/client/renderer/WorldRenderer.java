@@ -255,7 +255,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                var19.setPos(var21, 0, var20);
                Biome var27 = var10.getBiome(var19);
                if (var27.getPrecipitation() != Biome.RainType.NONE) {
-                  int var28 = var10.getTopPosition(Heightmap.Type.MOTION_BLOCKING, var19).getY();
+                  int var28 = var10.getHeight(Heightmap.Type.MOTION_BLOCKING, var19).getY();
                   int var29 = var12 - var16;
                   int var30 = var12 + var16;
                   if (var29 < var28) {
@@ -392,7 +392,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          for (int var8 = 0; var8 < var7; var8++) {
             int var9 = var3.nextInt(21) - 10;
             int var10 = var3.nextInt(21) - 10;
-            BlockPos var11 = var4.getTopPosition(Heightmap.Type.MOTION_BLOCKING, var5.add(var9, 0, var10)).down();
+            BlockPos var11 = var4.getHeight(Heightmap.Type.MOTION_BLOCKING, var5.add(var9, 0, var10)).down();
             Biome var12 = var4.getBiome(var11);
             if (var11.getY() > 0
                && var11.getY() <= var5.getY() + 10
@@ -424,7 +424,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          if (var6 != null && var3.nextInt(3) < this.field997++) {
             this.field997 = 0;
             if (var6.getY() > var5.getY() + 1
-               && var4.getTopPosition(Heightmap.Type.MOTION_BLOCKING, var5).getY() > MathHelper.floor((float)var5.getY())) {
+               && var4.getHeight(Heightmap.Type.MOTION_BLOCKING, var5).getY() > MathHelper.floor((float)var5.getY())) {
                this.mc.world.method6858(var6, SoundEvents.field27227, SoundCategory.field14731, 0.1F, 0.5F, false);
             } else {
                this.mc.world.method6858(var6, SoundEvents.field27226, SoundCategory.field14731, 0.2F, 1.0F, false);

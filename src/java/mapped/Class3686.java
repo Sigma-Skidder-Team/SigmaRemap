@@ -48,6 +48,6 @@ public class Class3686 extends Class3676<LivingEntity> {
    }
 
    public static boolean method12533(ServerWorld var0, LivingEntity var1, BlockPos var2) {
-      return var0.method7022(var2) && (double)var0.getTopPosition(Heightmap.Type.MOTION_BLOCKING, var2).getY() <= var1.getPosY();
+      return var0.method7022(var2) && (double)var0.getHeight(Heightmap.Type.MOTION_BLOCKING, var2).getY() <= var1.getPosY();
    }
 }

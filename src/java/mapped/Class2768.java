@@ -32,7 +32,7 @@ public class Class2768 extends Class2595 {
          this.field17345,
          this.field17345
             .world
-            .getTopPosition(Heightmap.Type.MOTION_BLOCKING, PhantomEntity.method5349(this.field17345))
+            .getHeight(Heightmap.Type.MOTION_BLOCKING, PhantomEntity.method5349(this.field17345))
             .up(10 + PhantomEntity.method5353(this.field17345).nextInt(20))
       );
    }
