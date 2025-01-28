@@ -1599,9 +1599,9 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          .world
          .playSound(
             this.mc.player,
-            var1.getPosX(),
-            var1.getPosY(),
-            var1.getPosZ(),
+            var1.getX(),
+            var1.getY(),
+            var1.getZ(),
             var1.getSound(),
             var1.getCategory(),
             var1.getVolume(),

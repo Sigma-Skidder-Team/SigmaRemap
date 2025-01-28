@@ -63,15 +63,15 @@ public class SPlaySoundEffectPacket implements IPacket<IClientPlayNetHandler> {
       return this.category;
    }
 
-   public double getPosX() {
+   public double getX() {
       return ((float)this.posX / 8.0F);
    }
 
-   public double getPosY() {
+   public double getY() {
       return ((float)this.posY / 8.0F);
    }
 
-   public double getPosZ() {
+   public double getZ() {
       return ((float)this.posZ / 8.0F);
    }
 
