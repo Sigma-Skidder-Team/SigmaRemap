@@ -1625,16 +1625,16 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          .getSoundHandler()
          .method1000(
             new MinecraftSoundManager(
-               var1.method17222(),
-               var1.method17223(),
-               var1.method17227(),
+               var1.getSoundName(),
+               var1.getCategory(),
+               var1.getVolume(),
                var1.method17228(),
                false,
                0,
                Class2279.field14846,
-               var1.method17224(),
-               var1.method17225(),
-               var1.method17226(),
+               var1.getX(),
+               var1.getY(),
+               var1.getZ(),
                false
             )
          );

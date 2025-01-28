@@ -27,7 +27,7 @@ public class AutoFish extends Module {
                     if (mc.player.getHeldItemMainhand().getItem() instanceof Class3259) {
                         if (!(event.getPacket() instanceof SPlaySoundEffectPacket)) {
                             if (event.getPacket() instanceof SPlaySoundPacket
-                                    && !((SPlaySoundPacket) event.getPacket()).field24315
+                                    && !((SPlaySoundPacket) event.getPacket()).soundName
                                             .equals("entity.bobber.splash")) {
                                 return;
                             }

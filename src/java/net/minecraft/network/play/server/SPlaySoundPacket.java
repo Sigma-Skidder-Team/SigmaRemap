@@ -10,79 +10,78 @@ import net.minecraft.network.IPacket;
 import java.io.IOException;
 
 public class SPlaySoundPacket implements IPacket<IClientPlayNetHandler> {
-   private static String[] field24314;
-   public ResourceLocation field24315;
-   private SoundCategory field24316;
-   private int field24317;
-   private int field24318 = Integer.MAX_VALUE;
-   private int field24319;
-   private float field24320;
-   private float field24321;
+   public ResourceLocation soundName;
+   private SoundCategory category;
+   private int x;
+   private int y = Integer.MAX_VALUE;
+   private int z;
+   private float volume;
+   private float pitch;
 
    public SPlaySoundPacket() {
    }
 
-   public SPlaySoundPacket(ResourceLocation var1, SoundCategory var2, Vector3d var3, float var4, float var5) {
-      this.field24315 = var1;
-      this.field24316 = var2;
-      this.field24317 = (int)(var3.x * 8.0);
-      this.field24318 = (int)(var3.y * 8.0);
-      this.field24319 = (int)(var3.z * 8.0);
-      this.field24320 = var4;
-      this.field24321 = var5;
+   public SPlaySoundPacket(ResourceLocation soundName, SoundCategory soundCategory, Vector3d pos, float volume, float pitch) {
+      this.soundName = soundName;
+      this.category = soundCategory;
+      this.x = (int)(pos.x * 8.0);
+      this.y = (int)(pos.y * 8.0);
+      this.z = (int)(pos.z * 8.0);
+      this.volume = volume;
+      this.pitch = pitch;
    }
 
    @Override
-   public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24315 = var1.readResourceLocation();
-      this.field24316 = var1.<SoundCategory>readEnumValue(SoundCategory.class);
-      this.field24317 = var1.readInt();
-      this.field24318 = var1.readInt();
-      this.field24319 = var1.readInt();
-      this.field24320 = var1.readFloat();
-      this.field24321 = var1.readFloat();
+   public void readPacketData(PacketBuffer buf) throws IOException {
+      this.soundName = buf.readResourceLocation();
+      this.category = buf.<SoundCategory>readEnumValue(SoundCategory.class);
+      this.x = buf.readInt();
+      this.y = buf.readInt();
+      this.z = buf.readInt();
+      this.volume = buf.readFloat();
+      this.pitch = buf.readFloat();
    }
 
    @Override
-   public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeResourceLocation(this.field24315);
-      var1.writeEnumValue(this.field24316);
-      var1.writeInt(this.field24317);
-      var1.writeInt(this.field24318);
-      var1.writeInt(this.field24319);
-      var1.writeFloat(this.field24320);
-      var1.writeFloat(this.field24321);
+   public void writePacketData(PacketBuffer buf) throws IOException {
+      buf.writeResourceLocation(this.soundName);
+      buf.writeEnumValue(this.category);
+      buf.writeInt(this.x);
+      buf.writeInt(this.y);
+      buf.writeInt(this.z);
+      buf.writeFloat(this.volume);
+      buf.writeFloat(this.pitch);
    }
 
-   public ResourceLocation method17222() {
-      return this.field24315;
+   public ResourceLocation getSoundName() {
+      return this.soundName;
    }
 
-   public SoundCategory method17223() {
-      return this.field24316;
+   public SoundCategory getCategory() {
+      return this.category;
    }
 
-   public double method17224() {
-      return (double)((float)this.field24317 / 8.0F);
+   public double getX() {
+      return ((float)this.x / 8.0F);
    }
 
-   public double method17225() {
-      return (double)((float)this.field24318 / 8.0F);
+   public double getY() {
+      return ((float)this.y / 8.0F);
    }
 
-   public double method17226() {
-      return (double)((float)this.field24319 / 8.0F);
+   public double getZ() {
+      return ((float)this.z / 8.0F);
    }
 
-   public float method17227() {
-      return this.field24320;
+   public float getVolume() {
+      return this.volume;
    }
 
    public float method17228() {
-      return this.field24321;
+      return this.pitch;
    }
 
-   public void processPacket(IClientPlayNetHandler var1) {
-      var1.handleCustomSound(this);
+   public void processPacket(IClientPlayNetHandler handler) {
+      handler.handleCustomSound(this);
    }
 }

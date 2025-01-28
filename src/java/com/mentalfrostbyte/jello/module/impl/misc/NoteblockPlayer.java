@@ -326,7 +326,7 @@ public class NoteblockPlayer extends Module {
                     for (int var8 = 0; var8 < this.field23641.size(); var8++) {
                         Class6463 var9 = this.field23641.get(var8);
                         if (var9.field28401
-                                .equals(new BlockPos(var7.method17224(), var7.method17225(), var7.method17226()))) {
+                                .equals(new BlockPos(var7.getX(), var7.getY(), var7.getZ()))) {
                             var9.field28402 = var7.method17228();
                             this.field23641.set(var8, var9);
                         }
