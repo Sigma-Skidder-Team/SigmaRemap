@@ -2,10 +2,13 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.ShulkerBoxBlock;
+import net.minecraft.item.DyeColor;
+import net.minecraft.tileentity.ShulkerBoxTileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class Class5954 extends Class5942<Class940> {
+public class Class5954 extends Class5942<ShulkerBoxTileEntity> {
    private static String[] field25965;
    private final Class2887<?> field25966;
 
@@ -14,7 +17,7 @@ public class Class5954 extends Class5942<Class940> {
       this.field25966 = var1;
    }
 
-   public void method18462(Class940 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method18462(ShulkerBoxTileEntity var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       Direction var9 = Direction.UP;
       if (var1.method3770()) {
          BlockState var10 = var1.method3734().getBlockState(var1.getPos());

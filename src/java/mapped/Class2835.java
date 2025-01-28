@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.Class3389;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Effects;

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.DyeColor;
 import net.minecraft.util.Util;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;

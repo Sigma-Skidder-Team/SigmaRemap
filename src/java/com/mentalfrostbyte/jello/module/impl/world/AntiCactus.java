@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.EventBlockCollision;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
-import mapped.Class3220;
+import net.minecraft.block.Class3220;
 import mapped.Class3399;
 import mapped.VoxelShapes;
 

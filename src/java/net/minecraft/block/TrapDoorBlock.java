@@ -1,7 +1,7 @@
 package net.minecraft.block;
 
 import mapped.Class8826;
-import net.minecraft.block.material.Material;
+import net.minecraft.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;

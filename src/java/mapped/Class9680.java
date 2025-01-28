@@ -7,10 +7,9 @@ import java.io.InputStream;
 import java.util.*;
 import javax.imageio.ImageIO;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.material.Material;
+import net.minecraft.block.*;
+import net.minecraft.item.DyeColor;
+import net.minecraft.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.world.ClientWorld;
@@ -18,6 +17,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.material.MaterialColor;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -772,8 +772,8 @@ public class Class9680 {
 
    private static int method37860(BlockState var0, int var1) {
       Block var4 = var0.getBlock();
-      if (var4 instanceof Class3222) {
-         Comparable var5 = var0.<Integer>get(Class3222.field18651);
+      if (var4 instanceof RedstoneWireBlock) {
+         Comparable var5 = var0.<Integer>get(RedstoneWireBlock.field18651);
          if (var5 instanceof Integer) {
             Integer var6 = (Integer)var5;
             return var6;

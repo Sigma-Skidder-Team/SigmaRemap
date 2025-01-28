@@ -3,6 +3,7 @@ package net.minecraft.item;
 import java.util.List;
 
 import mapped.*;
+import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Hand;

@@ -7,9 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
-import net.minecraft.block.BedBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.entity.model.ShieldModel;
 import net.minecraft.client.renderer.tileentity.BannerTileEntityRenderer;
@@ -17,17 +15,18 @@ import net.minecraft.item.*;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.tileentity.BannerTileEntity;
+import net.minecraft.tileentity.ShulkerBoxTileEntity;
 import net.minecraft.tileentity.SkullTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import org.apache.commons.lang3.StringUtils;
 
 public class Class9809 {
-   private static final Class940[] field45842 = Arrays.<DyeColor>stream(DyeColor.values())
+   private static final ShulkerBoxTileEntity[] field45842 = Arrays.<DyeColor>stream(DyeColor.values())
       .sorted(Comparator.comparingInt(DyeColor::method309))
-      .<Class940>map(Class940::new)
-      .<Class940>toArray(Class940[]::new);
-   private static final Class940 field45843 = new Class940((DyeColor)null);
+      .<ShulkerBoxTileEntity>map(ShulkerBoxTileEntity::new)
+      .<ShulkerBoxTileEntity>toArray(ShulkerBoxTileEntity[]::new);
+   private static final ShulkerBoxTileEntity field45843 = new ShulkerBoxTileEntity((DyeColor)null);
    public static final Class9809 field45844 = new Class9809();
    private final ChestTileEntity field45845 = new ChestTileEntity();
    private final ChestTileEntity field45846 = new Class970();

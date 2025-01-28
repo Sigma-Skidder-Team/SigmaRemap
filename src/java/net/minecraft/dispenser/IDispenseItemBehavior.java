@@ -2,7 +2,10 @@ package net.minecraft.dispenser;
 
 import mapped.*;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.DispenserBlock;
+import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.DyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Direction;

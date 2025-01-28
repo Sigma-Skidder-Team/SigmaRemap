@@ -4,6 +4,7 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.DyeColor;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.optifine.Config;

@@ -4,7 +4,7 @@ import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.material.Material;
+import net.minecraft.material.Material;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.math.BlockPos;

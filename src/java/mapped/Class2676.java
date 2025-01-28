@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.DyeColor;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.GameRules;

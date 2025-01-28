@@ -1,6 +1,5 @@
 package net.minecraft.tileentity;
 
-import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.nbt.CompoundNBT;

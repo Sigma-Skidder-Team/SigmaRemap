@@ -1,9 +1,6 @@
 package mapped;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.HorizontalBlock;
+import net.minecraft.block.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
@@ -117,7 +114,7 @@ public abstract class Class3247 extends HorizontalBlock {
       int var8 = var1.method6779(var7, var6);
       if (var8 < 15) {
          BlockState var9 = var1.getBlockState(var7);
-         return Math.max(var8, !var9.isIn(Blocks.REDSTONE_WIRE) ? 0 : var9.<Integer>get(Class3222.field18651));
+         return Math.max(var8, !var9.isIn(Blocks.REDSTONE_WIRE) ? 0 : var9.<Integer>get(RedstoneWireBlock.field18651));
       } else {
          return var8;
       }
@@ -135,7 +132,7 @@ public abstract class Class3247 extends HorizontalBlock {
       if (!this.method11671(var6)) {
          return 0;
       } else if (!var6.isIn(Blocks.REDSTONE_BLOCK)) {
-         return !var6.isIn(Blocks.REDSTONE_WIRE) ? var1.method7010(var2, var3) : var6.<Integer>get(Class3222.field18651);
+         return !var6.isIn(Blocks.REDSTONE_WIRE) ? var1.method7010(var2, var3) : var6.<Integer>get(RedstoneWireBlock.field18651);
       } else {
          return 15;
       }

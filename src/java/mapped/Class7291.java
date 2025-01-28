@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import java.util.List;
 
+import net.minecraft.item.DyeColor;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
 import org.apache.commons.lang3.tuple.Pair;

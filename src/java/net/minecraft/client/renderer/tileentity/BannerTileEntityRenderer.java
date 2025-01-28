@@ -5,6 +5,7 @@ import com.mojang.datafixers.util.Pair;
 import mapped.*;
 import net.minecraft.block.BannerBlock;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.DyeColor;
 import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;

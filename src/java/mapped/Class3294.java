@@ -4,6 +4,7 @@ import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.ScaffoldingBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.util.Util;
 import net.minecraft.entity.player.PlayerEntity;

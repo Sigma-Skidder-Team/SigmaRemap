@@ -5,7 +5,8 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.impl.EventRenderBlocks;
 import com.mojang.serialization.MapCodec;
 import mapped.*;
-import net.minecraft.block.material.Material;
+import net.minecraft.item.DyeColor;
+import net.minecraft.material.Material;
 import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -17,6 +18,7 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.material.MaterialColor;
 import net.minecraft.network.DebugPacketSender;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.Property;
@@ -397,7 +399,7 @@ public abstract class AbstractBlock {
          return var3;
       }
 
-      public Properties method26614() {
+      public Properties doesNotBlockMovement() {
          this.field33966 = false;
          this.field33977 = false;
          return this;

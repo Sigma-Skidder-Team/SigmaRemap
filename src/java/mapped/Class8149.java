@@ -10,7 +10,9 @@ import net.minecraft.block.ChestBlock;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.horse.AbstractHorseEntity;
+import net.minecraft.item.DyeColor;
 import net.minecraft.state.properties.ChestType;
+import net.minecraft.tileentity.ShulkerBoxTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -366,8 +368,8 @@ public class Class8149 {
 
    private boolean method28271(BlockPos var1, IBlockDisplayReader var2) {
       TileEntity var5 = var2.getTileEntity(var1);
-      if (var5 instanceof Class940) {
-         Class940 var6 = (Class940)var5;
+      if (var5 instanceof ShulkerBoxTileEntity) {
+         ShulkerBoxTileEntity var6 = (ShulkerBoxTileEntity)var5;
          if (this.field35060 != null) {
             DyeColor var7 = var6.method3756();
             if (!Config.method26943(var7, this.field35060)) {

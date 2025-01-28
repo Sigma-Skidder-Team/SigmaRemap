@@ -6,9 +6,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.UnmodifiableIterator;
 import com.mojang.datafixers.util.Pair;
 import mapped.*;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.util.Util;
 import net.minecraft.entity.*;
 import net.minecraft.entity.item.BoatEntity;
@@ -308,7 +306,7 @@ public abstract class AbstractMinecartEntity extends Entity {
          } else {
             this.method3591(var6, var7);
             if (var7.isIn(Blocks.ACTIVATOR_RAIL)) {
-               this.method3589(var3, var4, var5, var7.<Boolean>get(Class3432.field19197));
+               this.method3589(var3, var4, var5, var7.<Boolean>get(PoweredRailBlock.field19197));
             }
          }
 
@@ -409,7 +407,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       boolean var13 = false;
       Class3429 var14 = (Class3429)var2.getBlock();
       if (var14 == Blocks.POWERED_RAIL) {
-         var12 = var2.<Boolean>get(Class3432.field19197);
+         var12 = var2.<Boolean>get(PoweredRailBlock.field19197);
          var13 = !var12;
       }
 

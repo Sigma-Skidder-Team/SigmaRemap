@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Class3429;
+import net.minecraft.block.DispenserBlock;
 import net.minecraft.dispenser.IDispenseItemBehavior;
 import net.minecraft.entity.item.minecart.AbstractMinecartEntity;
 import net.minecraft.item.Item;

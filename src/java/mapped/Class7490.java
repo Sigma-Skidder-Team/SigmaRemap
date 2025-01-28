@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.JigsawBlock;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.util.Direction;

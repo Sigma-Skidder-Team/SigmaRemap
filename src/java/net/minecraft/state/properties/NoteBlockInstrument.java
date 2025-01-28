@@ -2,7 +2,7 @@ package net.minecraft.state.properties;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.material.Material;
+import net.minecraft.material.Material;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.SoundEvent;

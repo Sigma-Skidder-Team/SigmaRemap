@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
+import net.minecraft.item.DyeColor;
 import net.minecraft.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;

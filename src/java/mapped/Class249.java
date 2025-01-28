@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.item.DyeColor;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.Config;
 

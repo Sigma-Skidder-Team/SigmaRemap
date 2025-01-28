@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 
 public class Class956 extends TileEntity {

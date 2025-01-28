@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Sets;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Class3220;
+import net.minecraft.block.RedstoneWireBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
@@ -318,7 +320,7 @@ public class Class8066 {
             }
          } else if (var4 == Class9025.field41290) {
             Block var8 = var2.getBlock();
-            if (!(var8 instanceof Class3222)) {
+            if (!(var8 instanceof RedstoneWireBlock)) {
                if (!(var8 instanceof Class3220)) {
                   return Class9025.field41289;
                }

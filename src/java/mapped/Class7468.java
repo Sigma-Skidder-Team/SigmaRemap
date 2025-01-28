@@ -3,6 +3,7 @@ package mapped;
 import java.util.Objects;
 import javax.annotation.Nullable;
 
+import net.minecraft.item.DyeColor;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.tileentity.BannerTileEntity;

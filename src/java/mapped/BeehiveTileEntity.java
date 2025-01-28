@@ -11,6 +11,7 @@ import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.DebugPacketSender;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;

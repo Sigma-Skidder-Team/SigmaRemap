@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 

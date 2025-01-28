@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.SkullBlock;
 import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.item.ItemStack;

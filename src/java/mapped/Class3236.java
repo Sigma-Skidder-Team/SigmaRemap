@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.item.DyeColor;
+
 public class Class3236 extends Class3237 implements Class3235 {
    private static String[] field18676;
    private final DyeColor field18677;

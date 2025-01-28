@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Class3429;
 import net.minecraft.state.Property;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;

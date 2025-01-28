@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.tileentity.TileEntityType;
 import net.optifine.Config;
 
 public class Class4108 extends Class4057 {

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.block.Class3443;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 

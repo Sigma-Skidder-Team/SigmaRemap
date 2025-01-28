@@ -1,8 +1,10 @@
 package mapped;
 
 import net.minecraft.block.BedBlock;
+import net.minecraft.item.DyeColor;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityType;
 
 public class Class967 extends TileEntity {
    private static String[] field5422;

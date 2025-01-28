@@ -6,6 +6,7 @@ import java.util.TreeSet;
 import java.util.function.Function;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Class3475;
 import net.minecraft.dispenser.IDispenseItemBehavior;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EntityType;

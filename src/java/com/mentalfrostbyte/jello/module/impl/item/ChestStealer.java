@@ -14,6 +14,7 @@ import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.block.ChestBlock;
+import net.minecraft.block.Class3467;
 import net.minecraft.client.gui.screen.inventory.ChestScreen;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.*;

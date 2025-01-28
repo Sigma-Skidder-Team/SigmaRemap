@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.DispenserBlock;
 import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.dispenser.IDispenseItemBehavior;
 import net.minecraft.item.ItemStack;

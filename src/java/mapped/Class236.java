@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.item.DyeColor;
 import net.minecraft.util.ResourceLocation;
 
 public class Class236 extends Class219<LlamaEntity, Class2854<LlamaEntity>> {

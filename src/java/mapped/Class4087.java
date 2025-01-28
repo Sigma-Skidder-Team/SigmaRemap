@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.renderer.tileentity.BannerTileEntityRenderer;
+import net.minecraft.tileentity.TileEntityType;
 import net.optifine.Config;
 
 public class Class4087 extends Class4057 {

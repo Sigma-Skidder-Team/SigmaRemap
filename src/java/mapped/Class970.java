@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.tileentity.TileEntityType;
+
 public class Class970 extends ChestTileEntity {
    private static String[] field5434;
 

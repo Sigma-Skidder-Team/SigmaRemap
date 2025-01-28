@@ -67,7 +67,7 @@ public class Class7880 {
                && !(var5 instanceof Class3490)
                && !(var5 instanceof Class3479)
                && !(var5 instanceof SaplingBlock)
-               && !(var5 instanceof Class3487)) {
+               && !(var5 instanceof TallGrassBlock)) {
             if (var5 instanceof FenceBlock
                || var5 instanceof FenceGateBlock
                || var5 instanceof PottedWarpedRoots

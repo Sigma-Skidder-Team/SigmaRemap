@@ -19,6 +19,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import lol.TextureImpl;
 import mapped.*;
+import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.BlockItem;

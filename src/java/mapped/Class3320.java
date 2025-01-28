@@ -2,6 +2,7 @@ package mapped;
 
 import java.util.List;
 
+import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;

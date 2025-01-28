@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.JigsawBlock;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.util.IStringSerializable;

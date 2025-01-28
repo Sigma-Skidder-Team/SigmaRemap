@@ -1,7 +1,9 @@
 package mapped;
 
+import net.minecraft.block.AbstractBlock$IPositionPredicate;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.NetherPortalBlock;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;

@@ -14,6 +14,7 @@ import com.mentalfrostbyte.jello.util.player.Rots;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.NoteBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -371,7 +372,7 @@ public class NoteblockPlayer extends Module {
 
             for (BlockPos var4 : BlockUtil.method34561(mc.playerController.getBlockReachDistance())) {
                 BlockState var5 = mc.world.getBlockState(var4);
-                if (var5.getBlock() instanceof Class3426) {
+                if (var5.getBlock() instanceof NoteBlock) {
                     Class6463 var6 = new Class6463(var4);
                     if (this.method16414(var6) <= 24) {
                         this.field23641.add(new Class6463(var4));

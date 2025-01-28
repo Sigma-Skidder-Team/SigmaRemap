@@ -1,8 +1,6 @@
 package mapped;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.StairsBlock;
+import net.minecraft.block.*;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.properties.AttachFace;
 import net.minecraft.state.properties.RedstoneSide;
@@ -193,8 +191,8 @@ public class Class4212 extends Class4209 {
          );
          BlockState var21 = Blocks.REDSTONE_WIRE
             .getDefaultState()
-            .with(Class3222.field18647, RedstoneSide.field266)
-            .with(Class3222.field18649, RedstoneSide.field266);
+            .with(RedstoneWireBlock.field18647, RedstoneSide.field266)
+            .with(RedstoneWireBlock.field18649, RedstoneSide.field266);
          this.method12923(var1, var21, 5, -3, 7, var5);
          this.method12923(var1, var21, 5, -3, 6, var5);
          this.method12923(var1, var21, 5, -3, 5, var5);
@@ -203,7 +201,7 @@ public class Class4212 extends Class4209 {
          this.method12923(var1, var21, 5, -3, 2, var5);
          this.method12923(
             var1,
-            Blocks.REDSTONE_WIRE.getDefaultState().with(Class3222.field18647, RedstoneSide.field266).with(Class3222.field18650, RedstoneSide.field266),
+            Blocks.REDSTONE_WIRE.getDefaultState().with(RedstoneWireBlock.field18647, RedstoneSide.field266).with(RedstoneWireBlock.field18650, RedstoneSide.field266),
             5,
             -3,
             1,
@@ -211,7 +209,7 @@ public class Class4212 extends Class4209 {
          );
          this.method12923(
             var1,
-            Blocks.REDSTONE_WIRE.getDefaultState().with(Class3222.field18648, RedstoneSide.field266).with(Class3222.field18650, RedstoneSide.field266),
+            Blocks.REDSTONE_WIRE.getDefaultState().with(RedstoneWireBlock.field18648, RedstoneSide.field266).with(RedstoneWireBlock.field18650, RedstoneSide.field266),
             4,
             -3,
             1,
@@ -277,7 +275,7 @@ public class Class4212 extends Class4209 {
          );
          this.method12923(
             var1,
-            Blocks.REDSTONE_WIRE.getDefaultState().with(Class3222.field18648, RedstoneSide.field266).with(Class3222.field18650, RedstoneSide.field266),
+            Blocks.REDSTONE_WIRE.getDefaultState().with(RedstoneWireBlock.field18648, RedstoneSide.field266).with(RedstoneWireBlock.field18650, RedstoneSide.field266),
             8,
             -3,
             6,
@@ -285,7 +283,7 @@ public class Class4212 extends Class4209 {
          );
          this.method12923(
             var1,
-            Blocks.REDSTONE_WIRE.getDefaultState().with(Class3222.field18650, RedstoneSide.field266).with(Class3222.field18649, RedstoneSide.field266),
+            Blocks.REDSTONE_WIRE.getDefaultState().with(RedstoneWireBlock.field18650, RedstoneSide.field266).with(RedstoneWireBlock.field18649, RedstoneSide.field266),
             9,
             -3,
             6,
@@ -293,7 +291,7 @@ public class Class4212 extends Class4209 {
          );
          this.method12923(
             var1,
-            Blocks.REDSTONE_WIRE.getDefaultState().with(Class3222.field18647, RedstoneSide.field266).with(Class3222.field18649, RedstoneSide.field265),
+            Blocks.REDSTONE_WIRE.getDefaultState().with(RedstoneWireBlock.field18647, RedstoneSide.field266).with(RedstoneWireBlock.field18649, RedstoneSide.field265),
             9,
             -3,
             5,
@@ -341,10 +339,10 @@ public class Class4212 extends Class4209 {
             var1,
             Blocks.REDSTONE_WIRE
                .getDefaultState()
-               .with(Class3222.field18647, RedstoneSide.field266)
-               .with(Class3222.field18649, RedstoneSide.field266)
-               .with(Class3222.field18648, RedstoneSide.field266)
-               .with(Class3222.field18650, RedstoneSide.field266),
+               .with(RedstoneWireBlock.field18647, RedstoneSide.field266)
+               .with(RedstoneWireBlock.field18649, RedstoneSide.field266)
+               .with(RedstoneWireBlock.field18648, RedstoneSide.field266)
+               .with(RedstoneWireBlock.field18650, RedstoneSide.field266),
             10,
             -1,
             9,

@@ -2,7 +2,7 @@ package net.minecraft.block;
 
 import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.block.material.Material;
+import net.minecraft.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;

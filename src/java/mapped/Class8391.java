@@ -2,6 +2,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.longs.Long2ByteLinkedOpenHashMap;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.LeavesBlock;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.optifine.Config;

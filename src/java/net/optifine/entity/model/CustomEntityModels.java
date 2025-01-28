@@ -6,6 +6,7 @@ import it.unimi.dsi.fastutil.objects.ObjectList;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.Config;
 

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.tileentity.TileEntityType;
 
 import java.util.ArrayList;
 

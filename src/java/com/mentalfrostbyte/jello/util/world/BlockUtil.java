@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Class3410;
 import net.minecraft.block.OreBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;

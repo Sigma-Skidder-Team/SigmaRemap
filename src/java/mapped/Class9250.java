@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.tileentity.TileEntityType;
 import net.optifine.Config;
 
 import java.util.LinkedHashMap;

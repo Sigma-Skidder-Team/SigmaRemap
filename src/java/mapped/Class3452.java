@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Class3444;
 import net.minecraft.block.IGrowable;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.state.IntegerProperty;

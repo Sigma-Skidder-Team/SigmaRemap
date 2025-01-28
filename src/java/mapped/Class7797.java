@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.item.DyeColor;
+
 // $VF: synthetic class
 public class Class7797 {
    private static String[] field33490;

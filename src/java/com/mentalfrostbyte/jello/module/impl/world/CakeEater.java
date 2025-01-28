@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.movement.fly.MineplexFly;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.util.player.Rots;
-import mapped.CakeBlock;
+import net.minecraft.block.CakeBlock;
 import mapped.Class3593;
 import mapped.RotationHelper;
 import net.minecraft.client.Minecraft;

@@ -8,6 +8,7 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.block.NetherPortalBlock;
 import net.minecraft.crash.ReportedException;
 import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.inventory.IInventory;

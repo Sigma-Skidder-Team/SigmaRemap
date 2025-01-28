@@ -1,6 +1,5 @@
 package net.minecraft.block;
 
-import mapped.FallingBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 

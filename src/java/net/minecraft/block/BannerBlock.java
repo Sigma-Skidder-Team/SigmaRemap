@@ -1,8 +1,7 @@
 package net.minecraft.block;
 
 import com.google.common.collect.Maps;
-import mapped.AbstractBannerBlock;
-import mapped.DyeColor;
+import net.minecraft.item.DyeColor;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;

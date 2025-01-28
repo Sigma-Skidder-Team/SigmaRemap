@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.SoundType;
 import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.util.Util;
