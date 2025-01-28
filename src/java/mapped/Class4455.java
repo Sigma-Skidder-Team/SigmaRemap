@@ -22,7 +22,7 @@ public class Class4455 extends Class4441<Item> {
 
    @Override
    public void method14010() {
-      this.method14089(BlockTags.field32734, ItemTags.field26070);
+      this.method14089(BlockTags.WOOL, ItemTags.field26070);
       this.method14089(BlockTags.field32735, ItemTags.field26071);
       this.method14089(BlockTags.field32736, ItemTags.field26072);
       this.method14089(BlockTags.field32737, ItemTags.field26073);

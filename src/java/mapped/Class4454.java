@@ -15,7 +15,7 @@ public class Class4454 extends Class4441<Block> {
 
    @Override
    public void method14010() {
-      this.method14014(BlockTags.field32734)
+      this.method14014(BlockTags.WOOL)
          .method31560(
             Blocks.WHITE_WOOL,
             Blocks.ORANGE_WOOL,

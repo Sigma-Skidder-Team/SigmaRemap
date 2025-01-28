@@ -30,7 +30,7 @@ public class Class3331 extends Item {
             && !var3.isIn(Blocks.DEAD_BUSH)
             && !var3.isIn(Blocks.VINE)
             && !var3.isIn(Blocks.TRIPWIRE)
-            && !var3.isIn(BlockTags.field32734)
+            && !var3.isIn(BlockTags.WOOL)
          ? super.onBlockDestroyed(var1, var2, var3, var4, var5)
          : true;
    }
@@ -43,7 +43,7 @@ public class Class3331 extends Item {
    @Override
    public float getDestroySpeed(ItemStack var1, BlockState var2) {
       if (!var2.isIn(Blocks.COBWEB) && !var2.isIn(BlockTags.LEAVES)) {
-         return !var2.isIn(BlockTags.field32734) ? super.getDestroySpeed(var1, var2) : 5.0F;
+         return !var2.isIn(BlockTags.WOOL) ? super.getDestroySpeed(var1, var2) : 5.0F;
       } else {
          return 15.0F;
       }

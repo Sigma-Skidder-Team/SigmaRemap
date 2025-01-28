@@ -406,46 +406,45 @@ public class NoteblockPlayer extends Module {
 
         public Class6463(BlockPos var1) {
             this.field28401 = var1;
-            this.field28403 = NoteBlockInstrument.method300(mc.world.getBlockState(var1.down()));
+            this.field28403 = NoteBlockInstrument.byState(mc.world.getBlockState(var1.down()));
         }
 
         public int method19640() {
-            switch (Class7303.field31300[this.field28403.ordinal()]) {
-                case 1:
-                    return 0;
-                case 2:
-                    return 1;
-                case 3:
-                    return 2;
-                case 4:
-                    return 3;
-                case 5:
-                    return 4;
-                case 6:
-                    return 5;
-                case 7:
-                    return 6;
-                case 8:
-                    return 7;
-                case 9:
-                    return 8;
-                case 10:
-                    return 9;
-                case 11:
-                    return 10;
-                case 12:
-                    return 11;
-                case 13:
-                    return 12;
-                case 14:
-                    return 13;
-                case 15:
-                    return 14;
-                case 16:
-                    return 15;
-                default:
-                    return 0;
-            }
+            return this.field28403.ordinal() - 1;
+//            switch (this.field28403) {
+//                case BASS:
+//                    return 1;
+//                case BASEDRUM:
+//                    return 2;
+//                case SNARE:
+//                    return 3;
+//                case HAT:
+//                    return 4;
+//                case GUITAR:
+//                    return 5;
+//                case FLUTE:
+//                    return 6;
+//                case BELL:
+//                    return 7;
+//                case CHIME:
+//                    return 8;
+//                case XYLOPHONE:
+//                    return 9;
+//                case IRON_XYLOPHONE:
+//                    return 10;
+//                case COW_BELL:
+//                    return 11;
+//                case DIDGERIDOO:
+//                    return 12;
+//                case BIT:
+//                    return 13;
+//                case BANJO:
+//                    return 14;
+//                case PLING:
+//                    return 15;
+//                default:
+//                    return 0;
+//            }
         }
     }
 }

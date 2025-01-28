@@ -9,82 +9,82 @@ public class Class7303 {
 
    static {
       try {
-         field31300[NoteBlockInstrument.field347.ordinal()] = 1;
+         field31300[NoteBlockInstrument.HARP.ordinal()] = 1;
       } catch (NoSuchFieldError var18) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field351.ordinal()] = 2;
+         field31300[NoteBlockInstrument.BASS.ordinal()] = 2;
       } catch (NoSuchFieldError var17) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field348.ordinal()] = 3;
+         field31300[NoteBlockInstrument.BASEDRUM.ordinal()] = 3;
       } catch (NoSuchFieldError var16) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field349.ordinal()] = 4;
+         field31300[NoteBlockInstrument.SNARE.ordinal()] = 4;
       } catch (NoSuchFieldError var15) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field350.ordinal()] = 5;
+         field31300[NoteBlockInstrument.HAT.ordinal()] = 5;
       } catch (NoSuchFieldError var14) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field354.ordinal()] = 6;
+         field31300[NoteBlockInstrument.GUITAR.ordinal()] = 6;
       } catch (NoSuchFieldError var13) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field352.ordinal()] = 7;
+         field31300[NoteBlockInstrument.FLUTE.ordinal()] = 7;
       } catch (NoSuchFieldError var12) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field353.ordinal()] = 8;
+         field31300[NoteBlockInstrument.BELL.ordinal()] = 8;
       } catch (NoSuchFieldError var11) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field355.ordinal()] = 9;
+         field31300[NoteBlockInstrument.CHIME.ordinal()] = 9;
       } catch (NoSuchFieldError var10) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field356.ordinal()] = 10;
+         field31300[NoteBlockInstrument.XYLOPHONE.ordinal()] = 10;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field357.ordinal()] = 11;
+         field31300[NoteBlockInstrument.IRON_XYLOPHONE.ordinal()] = 11;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field358.ordinal()] = 12;
+         field31300[NoteBlockInstrument.COW_BELL.ordinal()] = 12;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field359.ordinal()] = 13;
+         field31300[NoteBlockInstrument.DIDGERIDOO.ordinal()] = 13;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field360.ordinal()] = 14;
+         field31300[NoteBlockInstrument.BIT.ordinal()] = 14;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field361.ordinal()] = 15;
+         field31300[NoteBlockInstrument.BANJO.ordinal()] = 15;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field31300[NoteBlockInstrument.field362.ordinal()] = 16;
+         field31300[NoteBlockInstrument.PLING.ordinal()] = 16;
       } catch (NoSuchFieldError var3) {
       }
    }

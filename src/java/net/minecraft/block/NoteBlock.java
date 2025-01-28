@@ -30,7 +30,7 @@ public class NoteBlock extends Block {
       this.setDefaultState(
          this.stateContainer
             .getBaseState()
-            .with(field19175, NoteBlockInstrument.field347)
+            .with(field19175, NoteBlockInstrument.HARP)
             .with(field19177, Integer.valueOf(0))
             .with(field19176, Boolean.valueOf(false))
       );
@@ -38,12 +38,12 @@ public class NoteBlock extends Block {
 
    @Override
    public BlockState getStateForPlacement(BlockItemUseContext var1) {
-      return this.getDefaultState().with(field19175, NoteBlockInstrument.method300(var1.getWorld().getBlockState(var1.getPos().down())));
+      return this.getDefaultState().with(field19175, NoteBlockInstrument.byState(var1.getWorld().getBlockState(var1.getPos().down())));
    }
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      return var2 != Direction.DOWN ? super.updatePostPlacement(var1, var2, var3, var4, var5, var6) : var1.with(field19175, NoteBlockInstrument.method300(var3));
+      return var2 != Direction.DOWN ? super.updatePostPlacement(var1, var2, var3, var4, var5, var6) : var1.with(field19175, NoteBlockInstrument.byState(var3));
    }
 
    @Override
@@ -89,7 +89,7 @@ public class NoteBlock extends Block {
    public boolean method11647(BlockState var1, World var2, BlockPos var3, int var4, int var5) {
       int var8 = var1.<Integer>get(field19177);
       float var9 = (float)Math.pow(2.0, (double)(var8 - 12) / 12.0);
-      var2.playSound((PlayerEntity)null, var3, var1.<NoteBlockInstrument>get(field19175).method299(), SoundCategory.field14730, 3.0F, var9);
+      var2.playSound((PlayerEntity)null, var3, var1.<NoteBlockInstrument>get(field19175).getSound(), SoundCategory.field14730, 3.0F, var9);
       var2.addParticle(
          ParticleTypes.field34088, (double)var3.getX() + 0.5, (double)var3.getY() + 1.2, (double)var3.getZ() + 0.5, (double)var8 / 24.0, 0.0, 0.0
       );

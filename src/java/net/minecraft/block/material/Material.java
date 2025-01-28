@@ -79,7 +79,7 @@ public final class Material {
    public static final Material DIRT = new Builder(MaterialColor.GRANITE).build();
    public static final Material GRASS = new Builder(MaterialColor.field30948).build();
    public static final Material field38952 = new Builder(MaterialColor.field30952).build();
-   public static final Material field38953 = new Builder(MaterialColor.field30949).build();
+   public static final Material SAND = new Builder(MaterialColor.field30949).build();
    public static final Material field38954 = new Builder(MaterialColor.field30965).build();
    public static final Material field38955 = new Builder(MaterialColor.field30971).build();
    public static final Material WOOD = new Builder(MaterialColor.OAK_PLANK).notOpaque().build();
@@ -89,10 +89,10 @@ public final class Material {
    public static final Material WOOL = new Builder(MaterialColor.WOOL).notOpaque().build();
    public static final Material field38961 = Builder.method30894(new Builder(MaterialColor.field30951).notOpaque()).build();
    public static final Material field38962 = Builder.method30894(new Builder(MaterialColor.FOLIAGE).notOpaque()).pushDestroys().build();
-   public static final Material field38963 = Builder.method30894(new Builder(MaterialColor.AIR)).build();
+   public static final Material GLASS = Builder.method30894(new Builder(MaterialColor.AIR)).build();
    public static final Material ICE = Builder.method30894(new Builder(MaterialColor.field30952)).build();
    public static final Material field38965 = Builder.method30894(new Builder(MaterialColor.FOLIAGE)).pushDestroys().build();
-   public static final Material STONE = new Builder(MaterialColor.STONE).build();
+   public static final Material ROCK = new Builder(MaterialColor.STONE).build();
    public static final Material field38967 = new Builder(MaterialColor.IRON).build();
    public static final Material SNOW_BLOCK = new Builder(MaterialColor.SNOW).build();
    public static final Material ANVIL = new Builder(MaterialColor.IRON).pushBlocks().build();

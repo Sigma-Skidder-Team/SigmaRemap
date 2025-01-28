@@ -7,7 +7,7 @@ import java.util.List;
 
 public final class BlockTags {
    public static final TagRegistry<Block> collection = TagRegistryManager.<Block>create(new ResourceLocation("block"), ITagCollectionSupplier::method32657);
-   public static final ITag.INamedTag<Block> field32734 = method25114("wool");
+   public static final ITag.INamedTag<Block> WOOL = method25114("wool");
    public static final ITag.INamedTag<Block> field32735 = method25114("planks");
    public static final ITag.INamedTag<Block> field32736 = method25114("stone_bricks");
    public static final ITag.INamedTag<Block> field32737 = method25114("wooden_buttons");
