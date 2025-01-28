@@ -436,7 +436,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       var1.putDouble("damage", this.field5105);
       var1.putBoolean("crit", this.method3487());
       var1.putByte("PierceLevel", this.method3489());
-      var1.putString("SoundEvent", Registry.field16069.getKey(this.hitSound).toString());
+      var1.putString("SoundEvent", Registry.SOUND_EVENT.getKey(this.hitSound).toString());
       var1.putBoolean("ShotFromCrossbow", this.method3488());
    }
 
@@ -465,7 +465,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       this.method3484(var1.getBoolean("crit"));
       this.method3485(var1.getByte("PierceLevel"));
       if (var1.contains("SoundEvent", 8)) {
-         this.hitSound = Registry.field16069.method9187(new ResourceLocation(var1.getString("SoundEvent"))).orElse(this.getHitEntitySound());
+         this.hitSound = Registry.SOUND_EVENT.method9187(new ResourceLocation(var1.getString("SoundEvent"))).orElse(this.getHitEntitySound());
       }
 
       this.method3494(var1.getBoolean("ShotFromCrossbow"));

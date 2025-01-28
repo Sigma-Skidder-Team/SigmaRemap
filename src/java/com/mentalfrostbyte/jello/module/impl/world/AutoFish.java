@@ -31,7 +31,7 @@ public class AutoFish extends Module {
                                             .equals("entity.bobber.splash")) {
                                 return;
                             }
-                        } else if (!((SPlaySoundEffectPacket) event.getPacket()).method17549()
+                        } else if (!((SPlaySoundEffectPacket) event.getPacket()).getSound()
                                 .equals(SoundEvents.field26585)) {
                             return;
                         }

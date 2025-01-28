@@ -11,76 +11,76 @@ import net.minecraft.util.SoundEvent;
 import org.apache.commons.lang3.Validate;
 
 public class SPlaySoundEffectPacket implements IPacket<IClientPlayNetHandler> {
-   private SoundEvent field24776;
-   private SoundCategory field24777;
-   private int field24778;
-   private int field24779;
-   private int field24780;
-   private float field24781;
-   private float field24782;
+   private SoundEvent sound;
+   private SoundCategory category;
+   private int posX;
+   private int posY;
+   private int posZ;
+   private float soundVolume;
+   private float soundPitch;
 
    public SPlaySoundEffectPacket() {
    }
 
-   public SPlaySoundEffectPacket(SoundEvent var1, SoundCategory var2, double var3, double var5, double var7, float var9, float var10) {
-      Validate.notNull(var1, "sound", new Object[0]);
-      this.field24776 = var1;
-      this.field24777 = var2;
-      this.field24778 = (int)(var3 * 8.0);
-      this.field24779 = (int)(var5 * 8.0);
-      this.field24780 = (int)(var7 * 8.0);
-      this.field24781 = var9;
-      this.field24782 = var10;
+   public SPlaySoundEffectPacket(SoundEvent soundIn, SoundCategory categoryIn, double xIn, double yIn, double zIn, float volumeIn, float pitchIn) {
+      Validate.notNull(soundIn, "sound");
+      this.sound = soundIn;
+      this.category = categoryIn;
+      this.posX = (int)(xIn * 8.0);
+      this.posY = (int)(yIn * 8.0);
+      this.posZ = (int)(zIn * 8.0);
+      this.soundVolume = volumeIn;
+      this.soundPitch = pitchIn;
    }
 
    @Override
-   public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24776 = Registry.field16069.getByValue(var1.readVarInt());
-      this.field24777 = var1.<SoundCategory>readEnumValue(SoundCategory.class);
-      this.field24778 = var1.readInt();
-      this.field24779 = var1.readInt();
-      this.field24780 = var1.readInt();
-      this.field24781 = var1.readFloat();
-      this.field24782 = var1.readFloat();
+   public void readPacketData(PacketBuffer buf) throws IOException {
+      this.sound = Registry.SOUND_EVENT.getByValue(buf.readVarInt());
+      this.category = buf.readEnumValue(SoundCategory.class);
+      this.posX = buf.readInt();
+      this.posY = buf.readInt();
+      this.posZ = buf.readInt();
+      this.soundVolume = buf.readFloat();
+      this.soundPitch = buf.readFloat();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeVarInt(Registry.field16069.getId(this.field24776));
-      var1.writeEnumValue(this.field24777);
-      var1.writeInt(this.field24778);
-      var1.writeInt(this.field24779);
-      var1.writeInt(this.field24780);
-      var1.writeFloat(this.field24781);
-      var1.writeFloat(this.field24782);
+      var1.writeVarInt(Registry.SOUND_EVENT.getId(this.sound));
+      var1.writeEnumValue(this.category);
+      var1.writeInt(this.posX);
+      var1.writeInt(this.posY);
+      var1.writeInt(this.posZ);
+      var1.writeFloat(this.soundVolume);
+      var1.writeFloat(this.soundPitch);
    }
 
-   public SoundEvent method17549() {
-      return this.field24776;
+   public SoundEvent getSound() {
+      return this.sound;
    }
 
-   public SoundCategory method17550() {
-      return this.field24777;
+   public SoundCategory getCategory() {
+      return this.category;
    }
 
-   public double method17551() {
-      return (double)((float)this.field24778 / 8.0F);
+   public double getPosX() {
+      return ((float)this.posX / 8.0F);
    }
 
-   public double method17552() {
-      return (double)((float)this.field24779 / 8.0F);
+   public double getPosY() {
+      return ((float)this.posY / 8.0F);
    }
 
-   public double method17553() {
-      return (double)((float)this.field24780 / 8.0F);
+   public double getPosZ() {
+      return ((float)this.posZ / 8.0F);
    }
 
-   public float method17554() {
-      return this.field24781;
+   public float getVolume() {
+      return this.soundVolume;
    }
 
-   public float method17555() {
-      return this.field24782;
+   public float getPitch() {
+      return this.soundPitch;
    }
 
    public void processPacket(IClientPlayNetHandler var1) {

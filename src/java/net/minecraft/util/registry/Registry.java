@@ -87,7 +87,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<DimensionType>> DIMENSION_TYPE_KEY = createKey("dimension_type");
    public static final RegistryKey<Registry<World>> WORLD_KEY = createKey("dimension");
    public static final RegistryKey<Registry<Dimension>> DIMENSION_KEY = createKey("dimension");
-   public static final Registry<SoundEvent> field16069 = method9175(field16036, () -> SoundEvents.field26714);
+   public static final Registry<SoundEvent> SOUND_EVENT = method9175(field16036, () -> SoundEvents.field26714);
    public static final Class2351<Fluid> FLUID = method9176(field16037, "empty", () -> Fluids.EMPTY);
    public static final Registry<Effect> EFFECTS = method9175(field16038, () -> Effects.LUCK);
    public static final Class2351<Block> BLOCK = method9176(field16039, "air", () -> Blocks.AIR);

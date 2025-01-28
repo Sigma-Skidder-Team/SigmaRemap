@@ -380,7 +380,7 @@ public class CommandSource implements ISuggestionProvider {
 
    @Override
    public Collection<ResourceLocation> getSoundResourceLocations() {
-      return Registry.field16069.method9190();
+      return Registry.SOUND_EVENT.method9190();
    }
 
    @Override

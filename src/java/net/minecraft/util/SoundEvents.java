@@ -997,6 +997,6 @@ public class SoundEvents {
    public static final SoundEvent field27304 = register("entity.zombie_villager.step");
 
    private static SoundEvent register(String var0) {
-      return Registry.<SoundEvent>register(Registry.field16069, var0, new SoundEvent(new ResourceLocation(var0)));
+      return Registry.<SoundEvent>register(Registry.SOUND_EVENT, var0, new SoundEvent(new ResourceLocation(var0)));
    }
 }

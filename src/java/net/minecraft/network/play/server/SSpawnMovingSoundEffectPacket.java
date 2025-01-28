@@ -32,7 +32,7 @@ public class SSpawnMovingSoundEffectPacket implements IPacket<IClientPlayNetHand
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24623 = Registry.field16069.getByValue(var1.readVarInt());
+      this.field24623 = Registry.SOUND_EVENT.getByValue(var1.readVarInt());
       this.field24624 = var1.<SoundCategory>readEnumValue(SoundCategory.class);
       this.field24625 = var1.readVarInt();
       this.field24626 = var1.readFloat();
@@ -41,7 +41,7 @@ public class SSpawnMovingSoundEffectPacket implements IPacket<IClientPlayNetHand
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeVarInt(Registry.field16069.getId(this.field24623));
+      var1.writeVarInt(Registry.SOUND_EVENT.getId(this.field24623));
       var1.writeEnumValue(this.field24624);
       var1.writeVarInt(this.field24625);
       var1.writeFloat(this.field24626);
