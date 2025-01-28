@@ -1628,7 +1628,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                var1.getSoundName(),
                var1.getCategory(),
                var1.getVolume(),
-               var1.method17228(),
+               var1.getPitch(),
                false,
                0,
                Class2279.field14846,

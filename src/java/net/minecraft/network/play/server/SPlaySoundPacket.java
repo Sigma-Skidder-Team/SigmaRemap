@@ -77,7 +77,7 @@ public class SPlaySoundPacket implements IPacket<IClientPlayNetHandler> {
       return this.volume;
    }
 
-   public float method17228() {
+   public float getPitch() {
       return this.pitch;
    }
 
