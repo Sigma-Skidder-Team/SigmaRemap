@@ -90,12 +90,12 @@ public class FoxEntity extends AnimalEntity {
          .addGoal(
             4,
             new Class2770<PlayerEntity>(
-               this, PlayerEntity.class, 16.0F, 1.6, 1.4, var1 -> field6000.test(var1) && !this.method5151(var1.getUniqueID()) && !this.method5133()
+               this, PlayerEntity.class, 16.0F, 1.6, 1.4, var1 -> field6000.test(var1) && !this.method5151(var1.getUniqueID()) && !this.isFoxAggroed()
             )
          );
       this.field5600
-         .addGoal(4, new Class2770<WolfEntity>(this, WolfEntity.class, 8.0F, 1.6, 1.4, var1 -> !((WolfEntity)var1).method4393() && !this.method5133()));
-      this.field5600.addGoal(4, new Class2770<PolarBearEntity>(this, PolarBearEntity.class, 8.0F, 1.6, 1.4, var1 -> !this.method5133()));
+         .addGoal(4, new Class2770<WolfEntity>(this, WolfEntity.class, 8.0F, 1.6, 1.4, var1 -> !((WolfEntity)var1).method4393() && !this.isFoxAggroed()));
+      this.field5600.addGoal(4, new Class2770<PolarBearEntity>(this, PolarBearEntity.class, 8.0F, 1.6, 1.4, var1 -> !this.isFoxAggroed()));
       this.field5600.addGoal(5, new Class2729(this));
       this.field5600.addGoal(6, new Class2755(this));
       this.field5600.addGoal(6, new Class2641(this, 1.25));
@@ -153,7 +153,7 @@ public class FoxEntity extends AnimalEntity {
       }
 
       super.livingTick();
-      if (this.method5133() && this.rand.nextFloat() < 0.05F) {
+      if (this.isFoxAggroed() && this.rand.nextFloat() < 0.05F) {
          this.playSound(SoundEvents.field26588, 1.0F, 1.0F);
       }
    }
@@ -368,11 +368,11 @@ public class FoxEntity extends AnimalEntity {
       this.method5136(64, var1);
    }
 
-   private boolean method5133() {
+   private boolean isFoxAggroed() {
       return this.method5137(128);
    }
 
-   private void method5134(boolean var1) {
+   private void setFoxAggroed(boolean var1) {
       this.method5136(128, var1);
    }
 
@@ -532,12 +532,12 @@ public class FoxEntity extends AnimalEntity {
    }
 
    @Override
-   public void method4233(LivingEntity var1) {
-      if (this.method5133() && var1 == null) {
-         this.method5134(false);
+   public void setAttackTarget(LivingEntity entitylivingbaseIn) {
+      if (this.isFoxAggroed() && entitylivingbaseIn == null) {
+         this.setFoxAggroed(false);
       }
 
-      super.setAttackTarget(var1);
+      super.setAttackTarget(entitylivingbaseIn);
    }
 
    @Override
@@ -554,7 +554,7 @@ public class FoxEntity extends AnimalEntity {
       this.method5143(false);
       this.method5130(false);
       this.method5135(false);
-      this.method5134(false);
+      this.setFoxAggroed(false);
       this.method5132(false);
    }
 
@@ -670,7 +670,7 @@ public class FoxEntity extends AnimalEntity {
 
    // $VF: synthetic method
    public static boolean method5168(FoxEntity var0) {
-      return var0.method5133();
+      return var0.isFoxAggroed();
    }
 
    // $VF: synthetic method
@@ -705,7 +705,7 @@ public class FoxEntity extends AnimalEntity {
 
    // $VF: synthetic method
    public static void method5175(FoxEntity var0, boolean var1) {
-      var0.method5134(var1);
+      var0.setFoxAggroed(var1);
    }
 
    // $VF: synthetic method
