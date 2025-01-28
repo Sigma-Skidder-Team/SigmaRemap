@@ -16,7 +16,7 @@ public class Class2641 extends Class2640 {
 
    @Override
    public boolean method10803() {
-      if (this.field16973.isSleeping() || this.field16966.method4232() != null) {
+      if (this.field16973.isSleeping() || this.field16966.getAttackTarget() != null) {
          return false;
       } else if (this.field16973.world.method6794()) {
          return true;

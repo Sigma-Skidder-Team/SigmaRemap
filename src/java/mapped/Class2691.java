@@ -42,14 +42,14 @@ public class Class2691<T extends MonsterEntity & Class1022 & Class1023> extends 
    }
 
    private boolean method10908() {
-      return this.field17125.method4232() != null && this.field17125.method4232().isAlive();
+      return this.field17125.getAttackTarget() != null && this.field17125.getAttackTarget().isAlive();
    }
 
    @Override
    public void method10807() {
       super.method10807();
       this.field17125.method4304(false);
-      this.field17125.method4233((LivingEntity)null);
+      this.field17125.setAttackTarget((LivingEntity)null);
       this.field17129 = 0;
       if (this.field17125.isHandActive()) {
          this.field17125.resetActiveHand();
@@ -60,7 +60,7 @@ public class Class2691<T extends MonsterEntity & Class1022 & Class1023> extends 
 
    @Override
    public void method10805() {
-      LivingEntity var3 = this.field17125.method4232();
+      LivingEntity var3 = this.field17125.getAttackTarget();
       if (var3 != null) {
          boolean var4 = this.field17125.method4231().method35460(var3);
          boolean var5 = this.field17129 > 0;

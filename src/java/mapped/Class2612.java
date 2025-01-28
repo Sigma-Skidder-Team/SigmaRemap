@@ -41,8 +41,8 @@ public class Class2612 extends Class2595 {
    @Override
    public boolean method10803() {
       if (!(this.field16881.getRNG().nextFloat() >= this.field16885)) {
-         if (this.field16881.method4232() != null) {
-            this.field16882 = this.field16881.method4232();
+         if (this.field16881.getAttackTarget() != null) {
+            this.field16882 = this.field16881.getAttackTarget();
          }
 
          if (this.field16886 != PlayerEntity.class) {

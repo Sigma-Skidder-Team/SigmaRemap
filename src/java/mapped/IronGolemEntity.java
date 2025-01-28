@@ -79,7 +79,7 @@ public class IronGolemEntity extends Class1056 implements IAngerable {
    @Override
    public void collideWithEntity(Entity var1) {
       if (var1 instanceof IMob && !(var1 instanceof CreeperEntity) && this.getRNG().nextInt(20) == 0) {
-         this.method4233((LivingEntity)var1);
+         this.setAttackTarget((LivingEntity)var1);
       }
 
       super.collideWithEntity(var1);

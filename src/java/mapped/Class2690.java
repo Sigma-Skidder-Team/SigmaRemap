@@ -32,7 +32,7 @@ public class Class2690 extends Class2595 {
 
             for (PlayerEntity var5 : var3) {
                if (this.field17122.canAttack(var5, EntityPredicate.field38240)) {
-                  this.field17122.method4233(var5);
+                  this.field17122.setAttackTarget(var5);
                   return true;
                }
             }
@@ -44,7 +44,7 @@ public class Class2690 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      LivingEntity var3 = this.field17122.method4232();
+      LivingEntity var3 = this.field17122.getAttackTarget();
       return var3 == null ? false : this.field17122.canAttack(var3, EntityPredicate.field38240);
    }
 }

@@ -285,7 +285,7 @@ public class ZombieVillagerEntity extends ZombieEntity implements Class1041 {
    @Nullable
    @Override
    public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
-      this.method4673(this.method4674().method26573(Class9564.method37068(var1.method7178(this.getPosition()))));
+      this.method4673(this.method4674().method26573(Class9564.method37068(var1.func_242406_i(this.getPosition()))));
       return super.method4276(var1, var2, var3, var4, var5);
    }
 

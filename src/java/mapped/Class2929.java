@@ -3,7 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.material.Material;
+import net.minecraft.block.material.Material;
 import net.minecraft.util.Util;
 import net.minecraft.entity.EntityType;
 import net.minecraft.tileentity.TileEntity;

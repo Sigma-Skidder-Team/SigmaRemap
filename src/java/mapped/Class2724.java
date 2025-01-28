@@ -21,33 +21,33 @@ public class Class2724 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      LivingEntity var3 = this.field17217.method4232();
+      LivingEntity var3 = this.field17217.getAttackTarget();
       return var3 != null && var3.isAlive();
    }
 
    @Override
    public boolean method10806() {
-      return super.method10806() && (this.field17219 || this.field17217.getDistanceSq(this.field17217.method4232()) > 9.0);
+      return super.method10806() && (this.field17219 || this.field17217.getDistanceSq(this.field17217.getAttackTarget()) > 9.0);
    }
 
    @Override
    public void method10804() {
       this.field17218 = -10;
       this.field17217.method4230().method21666();
-      this.field17217.method4227().method28040(this.field17217.method4232(), 90.0F, 90.0F);
+      this.field17217.method4227().method28040(this.field17217.getAttackTarget(), 90.0F, 90.0F);
       this.field17217.isAirBorne = true;
    }
 
    @Override
    public void method10807() {
       GuardianEntity.method5312(this.field17217, 0);
-      this.field17217.method4233((LivingEntity)null);
+      this.field17217.setAttackTarget((LivingEntity)null);
       this.field17217.field6076.method10944();
    }
 
    @Override
    public void method10805() {
-      LivingEntity var3 = this.field17217.method4232();
+      LivingEntity var3 = this.field17217.getAttackTarget();
       this.field17217.method4230().method21666();
       this.field17217.method4227().method28040(var3, 90.0F, 90.0F);
       if (this.field17217.canEntityBeSeen(var3)) {
@@ -65,10 +65,10 @@ public class Class2724 extends Class2595 {
 
                var3.attackEntityFrom(DamageSource.method31124(this.field17217, this.field17217), var4);
                var3.attackEntityFrom(DamageSource.method31115(this.field17217), (float)this.field17217.getAttributeValue(Attributes.ATTACK_DAMAGE));
-               this.field17217.method4233((LivingEntity)null);
+               this.field17217.setAttackTarget((LivingEntity)null);
             }
          } else {
-            GuardianEntity.method5312(this.field17217, this.field17217.method4232().getEntityId());
+            GuardianEntity.method5312(this.field17217, this.field17217.getAttackTarget().getEntityId());
             if (!this.field17217.isSilent()) {
                this.field17217.world.setEntityState(this.field17217, (byte)21);
             }
@@ -76,7 +76,7 @@ public class Class2724 extends Class2595 {
 
          super.method10805();
       } else {
-         this.field17217.method4233((LivingEntity)null);
+         this.field17217.setAttackTarget((LivingEntity)null);
       }
    }
 }

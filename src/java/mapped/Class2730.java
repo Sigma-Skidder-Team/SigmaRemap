@@ -21,7 +21,7 @@ public class Class2730<T extends Class1026> extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return this.field17241.method4232() == null
+      return this.field17241.getAttackTarget() == null
          && !this.field17241.isBeingRidden()
          && this.field17241.method4552()
          && !this.field17241.method4551().method25388()

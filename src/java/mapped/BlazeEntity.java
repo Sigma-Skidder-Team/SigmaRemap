@@ -114,7 +114,7 @@ public class BlazeEntity extends MonsterEntity {
          this.field6060 = 0.5F + (float)this.rand.nextGaussian() * 3.0F;
       }
 
-      LivingEntity var3 = this.method4232();
+      LivingEntity var3 = this.getAttackTarget();
       if (var3 != null && var3.getPosYEye() > this.getPosYEye() + (double)this.field6060 && this.canAttack(var3)) {
          Vector3d var4 = this.getMotion();
          this.setMotion(this.getMotion().add(0.0, (0.3F - var4.y) * 0.3F, 0.0));

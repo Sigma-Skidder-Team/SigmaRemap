@@ -19,7 +19,7 @@ public class Class2708 extends HurtByTargetGoal {
    @Override
    public void method10920(MobEntity var1, LivingEntity var2) {
       if (var1 instanceof BeeEntity && this.field17153.canEntityBeSeen(var2)) {
-         var1.method4233(var2);
+         var1.setAttackTarget(var2);
       }
    }
 }

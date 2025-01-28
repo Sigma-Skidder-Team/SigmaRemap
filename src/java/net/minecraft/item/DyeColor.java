@@ -1,7 +1,7 @@
 package net.minecraft.item;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import net.minecraft.material.MaterialColor;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.util.IStringSerializable;
 
 import javax.annotation.Nullable;

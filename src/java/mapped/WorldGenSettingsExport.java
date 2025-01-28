@@ -25,7 +25,7 @@ public class WorldGenSettingsExport<T> extends Class6712<T> {
       Optional var7 = this.field29419.method32452(var3);
       if (var7.isPresent()) {
          MutableRegistry var8 = (MutableRegistry)var7.get();
-         Optional var9 = var8.method9182(var1);
+         Optional var9 = var8.getOptionalKey(var1);
          if (var9.isPresent()) {
             RegistryKey var10 = (RegistryKey)var9.get();
             return ResourceLocation.CODEC.encode(var10.getLocation(), this.field29417, var2);

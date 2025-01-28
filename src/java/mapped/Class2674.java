@@ -30,7 +30,7 @@ public class Class2674 extends Class2672 {
 
    @Override
    public void method10890() {
-      LivingEntity var3 = this.field17064.method4232();
+      LivingEntity var3 = this.field17064.getAttackTarget();
       double var4 = Math.min(var3.getPosY(), this.field17064.getPosY());
       double var6 = Math.max(var3.getPosY(), this.field17064.getPosY()) + 1.0;
       float var8 = (float) MathHelper.method37814(var3.getPosZ() - this.field17064.getPosZ(), var3.getPosX() - this.field17064.getPosX());

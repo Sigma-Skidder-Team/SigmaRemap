@@ -253,7 +253,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    @Nullable
    public abstract ResourceLocation getKey(T var1);
 
-   public abstract Optional<RegistryKey<T>> method9182(T var1);
+   public abstract Optional<RegistryKey<T>> getOptionalKey(T var1);
 
    @Override
    public abstract int getId(T var1);

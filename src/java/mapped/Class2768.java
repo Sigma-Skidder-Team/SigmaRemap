@@ -15,8 +15,8 @@ public class Class2768 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      LivingEntity var3 = this.field17345.method4232();
-      return var3 == null ? false : this.field17345.canAttack(this.field17345.method4232(), EntityPredicate.field38240);
+      LivingEntity var3 = this.field17345.getAttackTarget();
+      return var3 == null ? false : this.field17345.canAttack(this.field17345.getAttackTarget(), EntityPredicate.field38240);
    }
 
    @Override
@@ -51,7 +51,7 @@ public class Class2768 extends Class2595 {
    }
 
    private void method10963() {
-      PhantomEntity.method5350(this.field17345, this.field17345.method4232().getPosition().up(20 + PhantomEntity.method5356(this.field17345).nextInt(20)));
+      PhantomEntity.method5350(this.field17345, this.field17345.getAttackTarget().getPosition().up(20 + PhantomEntity.method5356(this.field17345).nextInt(20)));
       if (PhantomEntity.method5349(this.field17345).getY() < this.field17345.world.getSeaLevel()) {
          PhantomEntity.method5350(
             this.field17345,

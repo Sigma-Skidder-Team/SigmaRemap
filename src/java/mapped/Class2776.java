@@ -21,7 +21,7 @@ public class Class2776 extends Class2595 {
    @Override
    public boolean method10803() {
       this.field17369 = this.field17367.world.method7188(DolphinEntity.method4790(), this.field17367);
-      return this.field17369 == null ? false : this.field17369.isSwimming() && this.field17367.method4232() != this.field17369;
+      return this.field17369 == null ? false : this.field17369.isSwimming() && this.field17367.getAttackTarget() != this.field17369;
    }
 
    @Override

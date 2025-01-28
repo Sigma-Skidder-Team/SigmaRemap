@@ -18,7 +18,7 @@ public class Class2728 extends Class2595 {
    @Override
    public boolean method10803() {
       Raid var3 = this.field17236.method4551();
-      return this.field17236.isAlive() && this.field17236.method4232() == null && var3 != null && var3.method25393();
+      return this.field17236.isAlive() && this.field17236.getAttackTarget() == null && var3 != null && var3.method25393();
    }
 
    @Override

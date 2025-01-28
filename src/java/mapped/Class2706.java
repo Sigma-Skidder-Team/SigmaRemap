@@ -16,7 +16,7 @@ public class Class2706 extends HurtByTargetGoal {
       if (!PandaEntity.method5239(this.field17184) && !PandaEntity.method5240(this.field17184)) {
          return super.method10806();
       } else {
-         this.field17184.method4233((LivingEntity)null);
+         this.field17184.setAttackTarget((LivingEntity)null);
          return false;
       }
    }
@@ -24,7 +24,7 @@ public class Class2706 extends HurtByTargetGoal {
    @Override
    public void method10920(MobEntity var1, LivingEntity var2) {
       if (var1 instanceof PandaEntity && ((PandaEntity)var1).method4307()) {
-         var1.method4233(var2);
+         var1.setAttackTarget(var2);
       }
    }
 }

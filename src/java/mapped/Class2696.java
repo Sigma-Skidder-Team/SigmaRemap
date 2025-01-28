@@ -30,8 +30,8 @@ public class Class2696 extends Class2595 {
 
    @Override
    public void method10805() {
-      if (this.field17147.method4232() != null) {
-         this.field17147.method4227().method28040(this.field17147.method4232(), (float)this.field17147.method4260(), (float)this.field17147.method4259());
+      if (this.field17147.getAttackTarget() != null) {
+         this.field17147.method4227().method28040(this.field17147.getAttackTarget(), (float)this.field17147.method4260(), (float)this.field17147.method4259());
       }
    }
 }

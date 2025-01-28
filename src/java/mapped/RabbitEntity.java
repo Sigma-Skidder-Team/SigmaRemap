@@ -146,7 +146,7 @@ public class RabbitEntity extends AnimalEntity {
          }
 
          if (this.method5114() == 99 && this.field5991 == 0) {
-            LivingEntity var3 = this.method4232();
+            LivingEntity var3 = this.getAttackTarget();
             if (var3 != null && this.getDistanceSq(var3) < 16.0) {
                this.method5106(var3.getPosX(), var3.getPosZ());
                this.field5596.method20813(var3.getPosX(), var3.getPosY(), var3.getPosZ(), this.field5596.method20812());

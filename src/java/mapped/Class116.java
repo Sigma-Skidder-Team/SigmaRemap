@@ -1,7 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.material.Material;
+import net.minecraft.block.material.Material;
 
 import java.util.function.Predicate;
 

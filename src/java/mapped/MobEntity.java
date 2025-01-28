@@ -153,11 +153,11 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    @Nullable
-   public LivingEntity method4232() {
+   public LivingEntity getAttackTarget() {
       return this.field5602;
    }
 
-   public void method4233(LivingEntity var1) {
+   public void setAttackTarget(LivingEntity var1) {
       this.field5602 = var1;
       Reflector.callVoid(Reflector.field42862, this, var1);
    }
@@ -759,7 +759,7 @@ public abstract class MobEntity extends LivingEntity {
 
    @Override
    public int getMaxFallHeight() {
-      if (this.method4232() != null) {
+      if (this.getAttackTarget() != null) {
          int var3 = (int)(this.getHealth() - this.method3075() * 0.33F);
          var3 -= (3 - this.world.method6997().getId()) * 4;
          if (var3 < 0) {

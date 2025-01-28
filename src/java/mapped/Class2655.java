@@ -11,11 +11,11 @@ public class Class2655 extends ZombieAttackGoal {
 
    @Override
    public boolean method10803() {
-      return super.method10803() && this.field17008.method4646(this.field17008.method4232());
+      return super.method10803() && this.field17008.method4646(this.field17008.getAttackTarget());
    }
 
    @Override
    public boolean method10806() {
-      return super.method10806() && this.field17008.method4646(this.field17008.method4232());
+      return super.method10806() && this.field17008.method4646(this.field17008.getAttackTarget());
    }
 }

@@ -21,7 +21,7 @@ public class Class2783 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      LivingEntity var3 = this.field17396.method4232();
+      LivingEntity var3 = this.field17396.getAttackTarget();
       return var3 != null && var3.isAlive() && this.field17396.canAttack(var3);
    }
 
@@ -39,7 +39,7 @@ public class Class2783 extends Class2595 {
    @Override
    public void method10805() {
       this.field17398--;
-      LivingEntity var3 = this.field17396.method4232();
+      LivingEntity var3 = this.field17396.getAttackTarget();
       if (var3 != null) {
          boolean var4 = this.field17396.method4231().method35460(var3);
          if (!var4) {

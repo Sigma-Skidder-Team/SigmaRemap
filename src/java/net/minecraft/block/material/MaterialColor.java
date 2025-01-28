@@ -1,4 +1,4 @@
-package net.minecraft.material;
+package net.minecraft.block.material;
 
 public class MaterialColor {
    public static final MaterialColor[] field30946 = new MaterialColor[64];

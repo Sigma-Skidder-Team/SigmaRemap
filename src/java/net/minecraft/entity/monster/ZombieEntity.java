@@ -242,7 +242,7 @@ public class ZombieEntity extends MonsterEntity {
          return false;
       } else if (this.world instanceof ServerWorld) {
          ServerWorld var5 = (ServerWorld)this.world;
-         LivingEntity var6 = this.method4232();
+         LivingEntity var6 = this.getAttackTarget();
          if (var6 == null && source.getTrueSource() instanceof LivingEntity) {
             var6 = (LivingEntity) source.getTrueSource();
          }
@@ -270,7 +270,7 @@ public class ZombieEntity extends MonsterEntity {
                      && this.world.checkNoEntityCollision(var10)
                      && this.world.hasNoCollisions(var10)
                      && !this.world.method7014(var10.getBoundingBox())) {
-                     var10.method4233(var6);
+                     var10.setAttackTarget(var6);
                      var10.method4276(var5, this.world.method6807(var10.getPosition()), SpawnReason.field14400, (Class5093)null, (CompoundNBT)null);
                      var5.method6995(var10);
                      this.getAttribute(Attributes.ZOMBIE_SPAWN_REINFORCEMENTS).method38668(new AttributeModifier("Zombie reinforcement caller charge", -0.05F, AttributeModifier.Operation.ADDITION));

@@ -300,7 +300,7 @@ public class ShulkerEntity extends Class1056 implements IMob {
                   this.playSound(SoundEvents.field27054, 1.0F, 1.0F);
                   this.dataManager.set(field5842, Optional.<BlockPos>of(var5));
                   this.dataManager.set(field5843, (byte)0);
-                  this.method4233((LivingEntity)null);
+                  this.setAttackTarget((LivingEntity)null);
                   return true;
                }
             }

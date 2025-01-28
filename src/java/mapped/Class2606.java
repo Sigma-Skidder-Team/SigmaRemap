@@ -19,7 +19,7 @@ public class Class2606 extends Class2605 {
 
    @Override
    public boolean method10803() {
-      return this.field16851.method4232() == null || PhantomEntity.method5340(this.field16851) == Class2143.field14028;
+      return this.field16851.getAttackTarget() == null || PhantomEntity.method5340(this.field16851) == Class2143.field14028;
    }
 
    @Override

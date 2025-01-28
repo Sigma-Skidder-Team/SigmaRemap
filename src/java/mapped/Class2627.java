@@ -16,14 +16,14 @@ public class Class2627 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      LivingEntity var3 = this.field16926.method4232();
+      LivingEntity var3 = this.field16926.getAttackTarget();
       return this.field16926.method5020() > 0 || var3 != null && this.field16926.getDistanceSq(var3) < 9.0;
    }
 
    @Override
    public void method10804() {
       this.field16926.method4230().method21666();
-      this.field16927 = this.field16926.method4232();
+      this.field16927 = this.field16926.getAttackTarget();
    }
 
    @Override

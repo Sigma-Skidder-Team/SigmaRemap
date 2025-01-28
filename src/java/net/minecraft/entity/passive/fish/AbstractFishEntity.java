@@ -110,7 +110,7 @@ public abstract class AbstractFishEntity extends WaterMobEntity {
          this.moveRelative(0.01F, var1);
          this.move(MoverType.SELF, this.getMotion());
          this.setMotion(this.getMotion().scale(0.9));
-         if (this.method4232() == null) {
+         if (this.getAttackTarget() == null) {
             this.setMotion(this.getMotion().add(0.0, -0.005, 0.0));
          }
       } else {

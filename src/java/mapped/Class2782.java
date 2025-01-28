@@ -24,7 +24,7 @@ public class Class2782 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      this.field17389 = this.field17388.method4232();
+      this.field17389 = this.field17388.getAttackTarget();
       if (this.field17389 != null) {
          if (!(this.field17389.getDistanceSq(this.field17388) > (double)(this.field17394 * this.field17394))) {
             Vector3d var3 = Class8037.method27587(this.field17388, 16, 7, this.field17389.getPositionVec());

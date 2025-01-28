@@ -18,7 +18,7 @@ public class Class2729 extends Class2595 {
       if (this.field17239.isSleeping()) {
          return false;
       } else {
-         LivingEntity var3 = this.field17239.method4232();
+         LivingEntity var3 = this.field17239.getAttackTarget();
          return var3 != null
             && var3.isAlive()
             && FoxEntity.method5169().test(var3)
@@ -37,7 +37,7 @@ public class Class2729 extends Class2595 {
 
    @Override
    public void method10807() {
-      LivingEntity var3 = this.field17239.method4232();
+      LivingEntity var3 = this.field17239.getAttackTarget();
       if (var3 != null && FoxEntity.method5152(this.field17239, var3)) {
          this.field17239.method5144(true);
          this.field17239.method5143(true);
@@ -51,7 +51,7 @@ public class Class2729 extends Class2595 {
 
    @Override
    public void method10805() {
-      LivingEntity var3 = this.field17239.method4232();
+      LivingEntity var3 = this.field17239.getAttackTarget();
       this.field17239.method4227().method28040(var3, (float)this.field17239.method4260(), (float)this.field17239.method4259());
       if (!(this.field17239.getDistanceSq(var3) <= 36.0)) {
          this.field17239.method4230().method21655(var3, 1.5);

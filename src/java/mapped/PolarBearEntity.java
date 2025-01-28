@@ -76,7 +76,7 @@ public class PolarBearEntity extends AnimalEntity implements IAngerable {
    }
 
    public static boolean method5181(EntityType<PolarBearEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
-      Optional var7 = var1.method7178(var3);
+      Optional var7 = var1.func_242406_i(var3);
       return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.FROZEN_OCEAN))
             && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.DEEP_FROZEN_OCEAN))
          ? canAnimalSpawn(var0, var1, var2, var3, var4)

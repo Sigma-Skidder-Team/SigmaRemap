@@ -20,7 +20,7 @@ public class Class2676 extends Class2672 {
 
    @Override
    public boolean method10803() {
-      if (this.field17070.method4232() == null) {
+      if (this.field17070.getAttackTarget() == null) {
          if (!this.field17070.method4594()) {
             if (this.field17070.ticksExisted >= this.field17058) {
                if (this.field17070.world.getGameRules().getBoolean(GameRules.field24224)) {

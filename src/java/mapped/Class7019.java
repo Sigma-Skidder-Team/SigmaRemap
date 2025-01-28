@@ -90,7 +90,7 @@ public class Class7019 implements Class7016 {
             BlockPos var9 = var8.orElse(var5);
             BlockPos var10 = this.method21752(var1, var9, 48);
             if (var10 != null && this.method21753(var1, var10)) {
-               if (var1.method7178(var10).equals(Optional.<RegistryKey<Biome>>of(Biomes.THE_VOID))) {
+               if (var1.func_242406_i(var10).equals(Optional.<RegistryKey<Biome>>of(Biomes.THE_VOID))) {
                   return false;
                }
 

@@ -53,8 +53,8 @@ public class HurtByTargetGoal extends Class2699 {
 
    @Override
    public void method10804() {
-      this.field17153.method4233(this.field17153.getRevengeTarget());
-      this.field17159 = this.field17153.method4232();
+      this.field17153.setAttackTarget(this.field17153.getRevengeTarget());
+      this.field17159 = this.field17153.getAttackTarget();
       this.field17181 = this.field17153.getRevengeTiemr();
       this.field17160 = 300;
       if (this.field17180) {
@@ -79,7 +79,7 @@ public class HurtByTargetGoal extends Class2699 {
 
             var8 = (MobEntity)var7.next();
             if (this.field17153 != var8
-               && var8.method4232() == null
+               && var8.getAttackTarget() == null
                && (!(this.field17153 instanceof TameableEntity) || ((TameableEntity)this.field17153).method4400() == ((TameableEntity)var8).method4400())
                && !var8.isOnSameTeam(this.field17153.getRevengeTarget())) {
                if (this.field17183 == null) {
@@ -106,6 +106,6 @@ public class HurtByTargetGoal extends Class2699 {
    }
 
    public void method10920(MobEntity var1, LivingEntity var2) {
-      var1.method4233(var2);
+      var1.setAttackTarget(var2);
    }
 }

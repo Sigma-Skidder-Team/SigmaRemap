@@ -18,7 +18,7 @@ public class Class2624 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      this.field16920 = this.field16919.method4232();
+      this.field16920 = this.field16919.getAttackTarget();
       if (this.field16920 instanceof PlayerEntity) {
          double var3 = this.field16920.getDistanceSq(this.field16919);
          return !(var3 > 256.0) ? EndermanEntity.method4362(this.field16919, (PlayerEntity)this.field16920) : false;

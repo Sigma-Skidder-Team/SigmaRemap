@@ -17,8 +17,8 @@ public class Class2766 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return this.field17340.method4232() != null && !this.field17340.method4228().method20811() && VexEntity.method5279(this.field17340).nextInt(7) == 0
-         ? this.field17340.getDistanceSq(this.field17340.method4232()) > 4.0
+      return this.field17340.getAttackTarget() != null && !this.field17340.method4228().method20811() && VexEntity.method5279(this.field17340).nextInt(7) == 0
+         ? this.field17340.getDistanceSq(this.field17340.getAttackTarget()) > 4.0
          : false;
    }
 
@@ -26,13 +26,13 @@ public class Class2766 extends Class2595 {
    public boolean method10806() {
       return this.field17340.method4228().method20811()
          && this.field17340.method5275()
-         && this.field17340.method4232() != null
-         && this.field17340.method4232().isAlive();
+         && this.field17340.getAttackTarget() != null
+         && this.field17340.getAttackTarget().isAlive();
    }
 
    @Override
    public void method10804() {
-      LivingEntity var3 = this.field17340.method4232();
+      LivingEntity var3 = this.field17340.getAttackTarget();
       Vector3d var4 = var3.getEyePosition(1.0F);
       VexEntity.method5280(this.field17340).method20813(var4.x, var4.y, var4.z, 1.0);
       this.field17340.method5276(true);
@@ -46,7 +46,7 @@ public class Class2766 extends Class2595 {
 
    @Override
    public void method10805() {
-      LivingEntity var3 = this.field17340.method4232();
+      LivingEntity var3 = this.field17340.getAttackTarget();
       if (!this.field17340.getBoundingBox().intersects(var3.getBoundingBox())) {
          double var4 = this.field17340.getDistanceSq(var3);
          if (var4 < 9.0) {

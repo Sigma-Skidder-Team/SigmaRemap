@@ -682,7 +682,7 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
       }
 
       if (var3 == SpawnReason.field14404 || var3 == SpawnReason.field14403 || var3 == SpawnReason.field14393 || var3 == SpawnReason.field14405) {
-         this.method4695(this.method4674().method26573(Class9564.method37068(var1.method7178(this.getPosition()))));
+         this.method4695(this.method4674().method26573(Class9564.method37068(var1.func_242406_i(this.getPosition()))));
       }
 
       if (var3 == SpawnReason.field14394) {
@@ -702,7 +702,7 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
             var7 = this.method4674().method26570();
          }
       } else {
-         var7 = Class9564.method37068(var1.method7178(this.getPosition()));
+         var7 = Class9564.method37068(var1.func_242406_i(this.getPosition()));
       }
 
       VillagerEntity var8 = new VillagerEntity(EntityType.VILLAGER, var1, var7);

@@ -27,7 +27,7 @@ public class Class2640 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      if (this.field16966.method4232() == null) {
+      if (this.field16966.getAttackTarget() == null) {
          if (this.field16971.method6740()) {
             if (this.field16966.isBurning()) {
                if (this.field16971.method7022(this.field16966.getPosition())) {

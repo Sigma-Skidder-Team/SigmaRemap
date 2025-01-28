@@ -14,13 +14,13 @@ public class Class2722 extends Class2699 {
    @Override
    public boolean method10803() {
       return VexEntity.method5282(this.field17210) != null
-         && VexEntity.method5282(this.field17210).method4232() != null
-         && this.method10915(VexEntity.method5282(this.field17210).method4232(), this.field17209);
+         && VexEntity.method5282(this.field17210).getAttackTarget() != null
+         && this.method10915(VexEntity.method5282(this.field17210).getAttackTarget(), this.field17209);
    }
 
    @Override
    public void method10804() {
-      this.field17210.method4233(VexEntity.method5282(this.field17210).method4232());
+      this.field17210.setAttackTarget(VexEntity.method5282(this.field17210).getAttackTarget());
       super.method10804();
    }
 }

@@ -116,7 +116,7 @@ public class SimpleRegistry<T> extends MutableRegistry<T> {
    }
 
    @Override
-   public Optional<RegistryKey<T>> method9182(T var1) {
+   public Optional<RegistryKey<T>> getOptionalKey(T var1) {
       return Optional.<RegistryKey<T>>ofNullable((RegistryKey<T>)this.field16145.inverse().get(var1));
    }
 
@@ -200,7 +200,7 @@ public class SimpleRegistry<T> extends MutableRegistry<T> {
          Builder<Class9581<T>> var3 = ImmutableList.builder();
 
          for (T var5 : var0x) {
-            var3.add(new Class9581<>(var0x.method9182(var5).get(), var0x.getId(var5), var5));
+            var3.add(new Class9581<>(var0x.getOptionalKey(var5).get(), var0x.getId(var5), var5));
          }
 
          return var3.build();

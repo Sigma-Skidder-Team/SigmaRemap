@@ -87,7 +87,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
       }
 
       this.method4366((ServerWorld)this.world, true);
-      if (this.method4232() != null) {
+      if (this.getAttackTarget() != null) {
          this.method4876();
       }
 
@@ -109,7 +109,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
 
    private void method4876() {
       if (this.field5868 <= 0) {
-         if (this.method4231().method35460(this.method4232())) {
+         if (this.method4231().method35460(this.getAttackTarget())) {
             this.method4877();
          }
 
@@ -126,9 +126,9 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
          .<ZombifiedPiglinEntity>method7183(ZombifiedPiglinEntity.class, var5)
          .stream()
          .filter(var1 -> var1 != this)
-         .filter(var0 -> var0.method4232() == null)
-         .filter(var1 -> !var1.isOnSameTeam(this.method4232()))
-         .forEach(var1 -> var1.method4233(this.method4232()));
+         .filter(var0 -> var0.getAttackTarget() == null)
+         .filter(var1 -> !var1.isOnSameTeam(this.getAttackTarget()))
+         .forEach(var1 -> var1.setAttackTarget(this.getAttackTarget()));
    }
 
    private void method4878() {
@@ -136,8 +136,8 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
    }
 
    @Override
-   public void method4233(LivingEntity var1) {
-      if (this.method4232() == null && var1 != null) {
+   public void setAttackTarget(LivingEntity var1) {
+      if (this.getAttackTarget() == null && var1 != null) {
          this.field5863 = field5862.method29319(this.rand);
          this.field5868 = field5867.method29319(this.rand);
       }
@@ -146,7 +146,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
          this.func_230246_e_((PlayerEntity)var1);
       }
 
-      super.method4233(var1);
+      super.setAttackTarget(var1);
    }
 
    @Override

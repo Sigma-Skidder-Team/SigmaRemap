@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 
 import net.minecraft.block.*;
 import net.minecraft.item.DyeColor;
-import net.minecraft.material.Material;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.world.ClientWorld;
@@ -17,7 +17,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.material.MaterialColor;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;

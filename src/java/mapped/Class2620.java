@@ -17,7 +17,7 @@ public class Class2620 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      LivingEntity var3 = this.field16905.method4232();
+      LivingEntity var3 = this.field16905.getAttackTarget();
       if (var3 != null) {
          if (!var3.isAlive()) {
             return false;
@@ -37,7 +37,7 @@ public class Class2620 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      LivingEntity var3 = this.field16905.method4232();
+      LivingEntity var3 = this.field16905.getAttackTarget();
       if (var3 != null) {
          if (var3.isAlive()) {
             return var3 instanceof PlayerEntity && ((PlayerEntity)var3).abilities.disableDamage ? false : --this.field16906 > 0;
@@ -51,7 +51,7 @@ public class Class2620 extends Class2595 {
 
    @Override
    public void method10805() {
-      this.field16905.method4262(this.field16905.method4232(), 10.0F, 10.0F);
+      this.field16905.method4262(this.field16905.getAttackTarget(), 10.0F, 10.0F);
       ((Class6841)this.field16905.method4228()).method20822(this.field16905.rotationYaw, this.field16905.method5325());
    }
 }

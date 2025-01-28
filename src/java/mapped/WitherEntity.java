@@ -273,10 +273,10 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
             }
          }
 
-         if (this.method4232() == null) {
+         if (this.getAttackTarget() == null) {
             this.method5015(0, 0);
          } else {
-            this.method5015(0, this.method4232().getEntityId());
+            this.method5015(0, this.getAttackTarget().getEntityId());
          }
 
          if (this.field5934 > 0) {

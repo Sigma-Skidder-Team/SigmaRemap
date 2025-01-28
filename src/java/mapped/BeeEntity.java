@@ -35,7 +35,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 import java.util.UUID;
 
-public class BeeEntity extends AnimalEntity implements IAngerable, Class1016 {
+public class BeeEntity extends AnimalEntity implements IAngerable, IFlyingAnimal {
    private static final DataParameter<Byte> field5684 = EntityDataManager.<Byte>createKey(BeeEntity.class, DataSerializers.field33390);
    private static final DataParameter<Integer> field5685 = EntityDataManager.<Integer>createKey(BeeEntity.class, DataSerializers.VARINT);
    private static final RangedInteger field5686 = TickRangeConverter.convertRange(20, 39);
@@ -247,7 +247,7 @@ public class BeeEntity extends AnimalEntity implements IAngerable, Class1016 {
    }
 
    private boolean method4425() {
-      if (this.field5692 <= 0 && !Class2663.method10870(this.field5698) && !this.method4440() && this.method4232() == null) {
+      if (this.field5692 <= 0 && !Class2663.method10870(this.field5698) && !this.method4440() && this.getAttackTarget() == null) {
          boolean var3 = this.method4424() || this.world.method6795() || this.world.method6741() || this.method4438();
          return var3 && !this.method4430();
       } else {
@@ -392,7 +392,7 @@ public class BeeEntity extends AnimalEntity implements IAngerable, Class1016 {
             this.field5695--;
          }
 
-         boolean var3 = this.method4369() && !this.method4440() && this.method4232() != null && this.method4232().getDistanceSq(this) < 4.0;
+         boolean var3 = this.method4369() && !this.method4440() && this.getAttackTarget() != null && this.getAttackTarget().getDistanceSq(this) < 4.0;
          this.method4443(var3);
          if (this.ticksExisted % 20 == 0 && !this.method4437()) {
             this.field5697 = null;

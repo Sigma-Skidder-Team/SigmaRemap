@@ -43,7 +43,7 @@ public class Class2700 extends Class2699 {
 
    @Override
    public void method10804() {
-      this.field17162.method4233(this.field17163);
+      this.field17162.setAttackTarget(this.field17163);
       super.method10804();
    }
 }

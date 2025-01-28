@@ -68,7 +68,7 @@ public class DrownedEntity extends ZombieEntity implements Class1022 {
    }
 
    public static boolean canSpawn(EntityType<DrownedEntity> var0, ServerWorldAccess var1, SpawnReason var2, BlockPos var3, Random var4) {
-      Optional var7 = var1.method7178(var3);
+      Optional var7 = var1.func_242406_i(var3);
       boolean var8 = var1.method6997() != Difficulty.PEACEFUL
          && method4340(var1, var3, var4)
          && (var2 == SpawnReason.field14393 || var1.getFluidState(var3).method23486(FluidTags.WATER));
@@ -165,7 +165,7 @@ public class DrownedEntity extends ZombieEntity implements Class1022 {
       if (this.field5755) {
          return true;
       } else {
-         LivingEntity var3 = this.method4232();
+         LivingEntity var3 = this.getAttackTarget();
          return var3 != null && var3.isInWater();
       }
    }

@@ -20,7 +20,7 @@ public class Class2745 extends Class2595 {
    @Override
    public boolean method10803() {
       if (!this.field17274.isBeingRidden()) {
-         this.field17275 = this.field17274.method4232();
+         this.field17275 = this.field17274.getAttackTarget();
          if (this.field17275 != null) {
             double var3 = this.field17274.getDistanceSq(this.field17275);
             if (var3 < 4.0 || var3 > 16.0) {

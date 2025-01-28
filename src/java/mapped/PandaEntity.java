@@ -284,14 +284,14 @@ public class PandaEntity extends AnimalEntity {
          }
       }
 
-      if (this.method4232() == null) {
+      if (this.getAttackTarget() == null) {
          this.field6024 = false;
          this.field6025 = false;
       }
 
       if (this.method5186() > 0) {
-         if (this.method4232() != null) {
-            this.method4262(this.method4232(), 90.0F, 90.0F);
+         if (this.getAttackTarget() != null) {
+            this.method4262(this.getAttackTarget(), 90.0F, 90.0F);
          }
 
          if (this.method5186() == 29 || this.method5186() == 14) {
@@ -571,7 +571,7 @@ public class PandaEntity extends AnimalEntity {
          } else if (!this.method4381(var5)) {
             return ActionResultType.field14820;
          } else {
-            if (this.method4232() != null) {
+            if (this.getAttackTarget() != null) {
                this.field6024 = true;
             }
 

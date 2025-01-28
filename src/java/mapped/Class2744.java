@@ -22,7 +22,7 @@ public class Class2744 extends Class2736 {
 
    @Override
    public boolean method10803() {
-      if (this.field17258.method4232() == null) {
+      if (this.field17258.getAttackTarget() == null) {
          if (this.field17258.method4230().method21664()) {
             Random var3 = this.field17258.getRNG();
             if (this.field17258.world.getGameRules().getBoolean(GameRules.field24224) && var3.nextInt(10) == 0) {

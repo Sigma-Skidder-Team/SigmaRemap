@@ -82,8 +82,8 @@ public class Class3366 extends ContainerBlock {
          int var7 = var6.size();
 
          for (BeeEntity var9 : var5) {
-            if (var9.method4232() == null) {
-               var9.method4233((LivingEntity)var6.get(var1.rand.nextInt(var7)));
+            if (var9.getAttackTarget() == null) {
+               var9.setAttackTarget((LivingEntity)var6.get(var1.rand.nextInt(var7)));
             }
          }
       }

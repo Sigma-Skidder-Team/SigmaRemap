@@ -69,7 +69,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
                   if (this.method3920()) {
                      var9.method4426(400);
                   } else {
-                     var9.method4233(var1);
+                     var9.setAttackTarget(var1);
                   }
                }
             }

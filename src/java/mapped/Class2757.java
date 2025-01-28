@@ -22,8 +22,8 @@ public class Class2757 extends Class2595 {
 
    @Override
    public void method10805() {
-      if (this.field17302.method4232() != null) {
-         LivingEntity var3 = this.field17302.method4232();
+      if (this.field17302.getAttackTarget() != null) {
+         LivingEntity var3 = this.field17302.getAttackTarget();
          double var4 = 64.0;
          if (var3.getDistanceSq(this.field17302) < 4096.0) {
             double var6 = var3.getPosX() - this.field17302.getPosX();

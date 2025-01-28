@@ -38,7 +38,7 @@ public class Class2701 extends Class2699 {
 
    @Override
    public void method10804() {
-      this.field17153.method4233(this.field17167);
+      this.field17153.setAttackTarget(this.field17167);
       Entity var3 = this.field17166.method4297();
       if (var3 instanceof WanderingTraderEntity) {
          this.field17168 = ((WanderingTraderEntity)var3).getRevengeTiemr();

@@ -88,7 +88,7 @@ public class Class3336 extends Item {
                   }
                }
 
-               Optional var11 = var1.method7178(var7);
+               Optional var11 = var1.func_242406_i(var7);
                if (Objects.equals(var11, Optional.<RegistryKey<Biome>>of(Biomes.WARM_OCEAN))
                   || Objects.equals(var11, Optional.<RegistryKey<Biome>>of(Biomes.DEEP_WARM_OCEAN))) {
                   if (var6 == 0 && var3 != null && var3.getAxis().isHorizontal()) {

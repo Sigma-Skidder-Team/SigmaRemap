@@ -55,7 +55,7 @@ public class CreeperEntity extends MonsterEntity implements Class1080 {
 
    @Override
    public int getMaxFallHeight() {
-      return this.method4232() != null ? 3 + (int)(this.getHealth() - 1.0F) : 3;
+      return this.getAttackTarget() != null ? 3 + (int)(this.getHealth() - 1.0F) : 3;
    }
 
    @Override

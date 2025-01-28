@@ -38,7 +38,7 @@ public class Class2598 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      LivingEntity var3 = this.field16826.method4232();
+      LivingEntity var3 = this.field16826.getAttackTarget();
       if (var3 != null && var3.isAlive()) {
          this.field16828 = var3;
          return true;

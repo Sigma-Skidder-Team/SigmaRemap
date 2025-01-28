@@ -17,12 +17,12 @@ public class Class2607 extends Class2605 {
 
    @Override
    public boolean method10803() {
-      return this.field16858.method4232() != null && PhantomEntity.method5340(this.field16858) == Class2143.field14029;
+      return this.field16858.getAttackTarget() != null && PhantomEntity.method5340(this.field16858) == Class2143.field14029;
    }
 
    @Override
    public boolean method10806() {
-      LivingEntity var3 = this.field16858.method4232();
+      LivingEntity var3 = this.field16858.getAttackTarget();
       if (var3 != null) {
          if (!var3.isAlive()) {
             return false;
@@ -59,13 +59,13 @@ public class Class2607 extends Class2605 {
 
    @Override
    public void method10807() {
-      this.field16858.method4233((LivingEntity)null);
+      this.field16858.setAttackTarget((LivingEntity)null);
       PhantomEntity.method5352(this.field16858, Class2143.field14028);
    }
 
    @Override
    public void method10805() {
-      LivingEntity var3 = this.field16858.method4232();
+      LivingEntity var3 = this.field16858.getAttackTarget();
       PhantomEntity.method5351(this.field16858, new Vector3d(var3.getPosX(), var3.getPosYHeight(0.5), var3.getPosZ()));
       if (!this.field16858.getBoundingBox().grow(0.2F).intersects(var3.getBoundingBox())) {
          if (this.field16858.collidedHorizontally || this.field16858.hurtTime > 0) {

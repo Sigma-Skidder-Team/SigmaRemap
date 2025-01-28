@@ -56,7 +56,7 @@ public class Class2710 extends NearestAttackableTargetGoal<PlayerEntity> {
 
    @Override
    public void method10805() {
-      if (this.field17192.method4232() == null) {
+      if (this.field17192.getAttackTarget() == null) {
          super.method10923((LivingEntity)null);
       }
 

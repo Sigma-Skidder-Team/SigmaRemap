@@ -19,8 +19,8 @@ public class Class2673 extends Class2672 {
    @Override
    public boolean method10803() {
       if (super.method10803()) {
-         if (this.field17062.method4232() != null) {
-            return this.field17062.method4232().getEntityId() != this.field17061
+         if (this.field17062.getAttackTarget() != null) {
+            return this.field17062.getAttackTarget().getEntityId() != this.field17061
                ? this.field17062.world.method6807(this.field17062.getPosition()).method38329((float) Difficulty.NORMAL.ordinal())
                : false;
          } else {
@@ -34,7 +34,7 @@ public class Class2673 extends Class2672 {
    @Override
    public void method10804() {
       super.method10804();
-      this.field17061 = this.field17062.method4232().getEntityId();
+      this.field17061 = this.field17062.getAttackTarget().getEntityId();
    }
 
    @Override
@@ -49,7 +49,7 @@ public class Class2673 extends Class2672 {
 
    @Override
    public void method10890() {
-      this.field17062.method4232().addPotionEffect(new EffectInstance(Effects.BLINDNESS, 400));
+      this.field17062.getAttackTarget().addPotionEffect(new EffectInstance(Effects.BLINDNESS, 400));
    }
 
    @Override

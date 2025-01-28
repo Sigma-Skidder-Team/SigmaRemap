@@ -17,7 +17,7 @@ public class Class2621 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return this.field16908.method4232() == null
+      return this.field16908.getAttackTarget() == null
          && (this.field16908.onGround || this.field16908.isInWater() || this.field16908.isInLava() || this.field16908.isPotionActive(Effects.LEVITATION))
          && this.field16908.method4228() instanceof Class6841;
    }

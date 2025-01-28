@@ -21,7 +21,7 @@ public class Class2694 extends Class2692 {
       return this.field17133.getRevengeTarget() == null
          && this.field17133.getRNG().nextFloat() < 0.02F
          && !this.field17133.isSleeping()
-         && this.field17133.method4232() == null
+         && this.field17133.getAttackTarget() == null
          && this.field17133.method4230().method21664()
          && !this.method10911()
          && !this.field17133.method5140()

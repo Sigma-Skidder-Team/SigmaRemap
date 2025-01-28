@@ -261,7 +261,7 @@ public class SlimeEntity extends MobEntity implements IMob {
 
    public static boolean method5328(EntityType<SlimeEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       if (var1.method6997() != Difficulty.PEACEFUL) {
-         if (Objects.equals(var1.method7178(var3), Optional.<RegistryKey<Biome>>of(Biomes.SWAMP))
+         if (Objects.equals(var1.func_242406_i(var3), Optional.<RegistryKey<Biome>>of(Biomes.SWAMP))
             && var3.getY() > 50
             && var3.getY() < 70
             && var4.nextFloat() < 0.5F

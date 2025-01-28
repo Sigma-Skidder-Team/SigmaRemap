@@ -6,7 +6,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.material.Material;
+import net.minecraft.block.material.Material;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
@@ -71,8 +71,8 @@ public class Class2903 extends Class2898<Class4733> {
       if (var7.field22414) {
          var14 = var3;
       } else {
-         int var15 = var1.method7006(Heightmap.Type.OCEAN_FLOOR, var3).getY();
-         int var16 = var1.method7006(Heightmap.Type.WORLD_SURFACE, var3).getY();
+         int var15 = var1.getHeight(Heightmap.Type.OCEAN_FLOOR, var3).getY();
+         int var16 = var1.getHeight(Heightmap.Type.WORLD_SURFACE, var3).getY();
          if (var16 - var15 > var7.field22418) {
             return false;
          }
@@ -80,7 +80,7 @@ public class Class2903 extends Class2898<Class4733> {
          int var17;
          if (var7.field22420 != Heightmap.Type.OCEAN_FLOOR) {
             if (var7.field22420 != Heightmap.Type.WORLD_SURFACE) {
-               var17 = var1.method7006(var7.field22420, var3).getY();
+               var17 = var1.getHeight(var7.field22420, var3).getY();
             } else {
                var17 = var16;
             }

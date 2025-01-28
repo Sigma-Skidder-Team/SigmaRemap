@@ -72,8 +72,8 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
    }
 
    @Override
-   public void method4233(LivingEntity var1) {
-      super.method4233(var1);
+   public void setAttackTarget(LivingEntity var1) {
+      super.setAttackTarget(var1);
       ModifiableAttributeInstance var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
       if (var1 != null) {
          this.field5652 = this.ticksExisted;
@@ -225,7 +225,7 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
       if (this.world.method6740() && this.ticksExisted >= this.field5652 + 600) {
          float var3 = this.getBrightness();
          if (var3 > 0.5F && this.world.method7022(this.getPosition()) && this.rand.nextFloat() * 30.0F < (var3 - 0.4F) * 2.0F) {
-            this.method4233((LivingEntity)null);
+            this.setAttackTarget((LivingEntity)null);
             this.method4353();
          }
       }

@@ -16,7 +16,7 @@ public abstract class Class2672 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      LivingEntity var3 = this.field17059.method4232();
+      LivingEntity var3 = this.field17059.getAttackTarget();
       if (var3 == null || !var3.isAlive()) {
          return false;
       } else {
@@ -26,7 +26,7 @@ public abstract class Class2672 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      LivingEntity var3 = this.field17059.method4232();
+      LivingEntity var3 = this.field17059.getAttackTarget();
       return var3 != null && var3.isAlive() && this.field17057 > 0;
    }
 

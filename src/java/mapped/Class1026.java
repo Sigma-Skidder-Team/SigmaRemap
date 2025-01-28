@@ -71,7 +71,7 @@ public abstract class Class1026 extends PillagerEntity {
          Raid var3 = this.method4551();
          if (this.method4547()) {
             if (var3 != null) {
-               LivingEntity var4 = this.method4232();
+               LivingEntity var4 = this.getAttackTarget();
                if (var4 != null && (var4.getType() == EntityType.PLAYER || var4.getType() == EntityType.IRON_GOLEM)) {
                   this.idleTime = 0;
                }

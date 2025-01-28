@@ -28,7 +28,7 @@ public abstract class Class2699 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      LivingEntity var3 = this.field17153.method4232();
+      LivingEntity var3 = this.field17153.getAttackTarget();
       if (var3 == null) {
          var3 = this.field17159;
       }
@@ -55,7 +55,7 @@ public abstract class Class2699 extends Class2595 {
                   if (var3 instanceof PlayerEntity && ((PlayerEntity)var3).abilities.disableDamage) {
                      return false;
                   } else {
-                     this.field17153.method4233(var3);
+                     this.field17153.setAttackTarget(var3);
                      return true;
                   }
                } else {
@@ -83,7 +83,7 @@ public abstract class Class2699 extends Class2595 {
 
    @Override
    public void method10807() {
-      this.field17153.method4233((LivingEntity)null);
+      this.field17153.setAttackTarget((LivingEntity)null);
       this.field17159 = null;
    }
 

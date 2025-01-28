@@ -15,7 +15,7 @@ public class Class6835 extends Class6829 {
 
    @Override
    public void method20810() {
-      LivingEntity var3 = this.field29722.method4232();
+      LivingEntity var3 = this.field29722.getAttackTarget();
       if (DrownedEntity.method4651(this.field29722) && this.field29722.isInWater()) {
          if (var3 != null && var3.getPosY() > this.field29722.getPosY() || DrownedEntity.method4652(this.field29722)) {
             this.field29722.setMotion(this.field29722.getMotion().add(0.0, 0.002, 0.0));

@@ -33,7 +33,7 @@ public class Class2758<T extends MonsterEntity & Class1022> extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return this.field17304.method4232() != null ? this.method10962() : false;
+      return this.field17304.getAttackTarget() != null ? this.method10962() : false;
    }
 
    public boolean method10962() {
@@ -62,7 +62,7 @@ public class Class2758<T extends MonsterEntity & Class1022> extends Class2595 {
 
    @Override
    public void method10805() {
-      LivingEntity var3 = this.field17304.method4232();
+      LivingEntity var3 = this.field17304.getAttackTarget();
       if (var3 != null) {
          double var4 = this.field17304.getDistanceNearest(var3.getPosX(), var3.getPosY(), var3.getPosZ());
          boolean var6 = this.field17304.method4231().method35460(var3);

@@ -29,7 +29,7 @@ public class Class2610 extends Class2595 {
    @Override
    public boolean method10803() {
       this.method10820();
-      return this.method10817() && this.method10818() && this.field16865.method4232() == null;
+      return this.method10817() && this.method10818() && this.field16865.getAttackTarget() == null;
    }
 
    private boolean method10817() {
@@ -53,7 +53,7 @@ public class Class2610 extends Class2595 {
    public boolean method10806() {
       return this.field16865.method4230().method21664()
          ? false
-         : this.field16865.method4232() == null
+         : this.field16865.getAttackTarget() == null
             && !this.field16867.withinDistance(this.field16865.getPositionVec(), (double)(this.field16865.getWidth() + (float)this.field16869))
             && !this.field16870;
    }

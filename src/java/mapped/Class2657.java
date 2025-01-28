@@ -18,7 +18,7 @@ public class Class2657 extends Class2647 {
    public boolean method10806() {
       float var3 = this.field16990.getBrightness();
       if (var3 >= 0.5F && this.field16990.getRNG().nextInt(100) == 0) {
-         this.field16990.method4233((LivingEntity)null);
+         this.field16990.setAttackTarget((LivingEntity)null);
          return false;
       } else {
          return super.method10806();

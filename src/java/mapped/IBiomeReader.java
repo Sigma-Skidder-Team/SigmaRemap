@@ -23,15 +23,14 @@ public interface IBiomeReader extends IEntityReader, IWorldReader, IWorldGenerat
       return IEntityReader.super.method7048(var1, var2);
    }
 
-   // Searge: func_205770_a
    @Override
-   default BlockPos getTopPosition(Heightmap.Type var1, BlockPos var2) {
-      return IWorldReader.super.getTopPosition(var1, var2);
+   default BlockPos getHeight(Heightmap.Type heightmapType, BlockPos pos) {
+      return IWorldReader.super.getTopPosition(heightmapType, pos);
    }
 
    DynamicRegistries func_241828_r();
 
-   default Optional<RegistryKey<Biome>> method7178(BlockPos var1) {
-      return this.func_241828_r().<Biome>getRegistry(Registry.BIOME_KEY).method9182(this.getBiome(var1));
+   default Optional<RegistryKey<Biome>> func_242406_i(BlockPos p_242406_1_) {
+      return this.func_241828_r().<Biome>getRegistry(Registry.BIOME_KEY).getOptionalKey(this.getBiome(p_242406_1_));
    }
 }

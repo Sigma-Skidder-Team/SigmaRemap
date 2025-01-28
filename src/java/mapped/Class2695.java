@@ -20,7 +20,7 @@ public class Class2695 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      LivingEntity var3 = this.field17143.method4232();
+      LivingEntity var3 = this.field17143.getAttackTarget();
       if (var3 != null) {
          this.field17144 = var3;
          return true;

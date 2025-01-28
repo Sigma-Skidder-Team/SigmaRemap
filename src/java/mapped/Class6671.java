@@ -126,7 +126,7 @@ public class Class6671 {
                      if (!this.field29251.method31429(var3)) {
                         return false;
                      } else if (this.field29252.method20329(var1, var2, var3.getRidingEntity())) {
-                        if (!this.field29253.method20329(var1, var2, !(var3 instanceof MobEntity) ? null : ((MobEntity)var3).method4232())) {
+                        if (!this.field29253.method20329(var1, var2, !(var3 instanceof MobEntity) ? null : ((MobEntity)var3).getAttackTarget())) {
                            return false;
                         } else {
                            if (this.field29254 != null) {

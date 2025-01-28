@@ -38,7 +38,7 @@ import javax.annotation.Nullable;
 import java.util.*;
 import java.util.function.Predicate;
 
-public class ParrotEntity extends ShoulderRidingEntity implements Class1016 {
+public class ParrotEntity extends ShoulderRidingEntity implements IFlyingAnimal {
    private static final DataParameter<Integer> field5672 = EntityDataManager.<Integer>createKey(ParrotEntity.class, DataSerializers.VARINT);
    private static final Predicate<MobEntity> field5673 = new Class119();
    private static final Item field5674 = Items.field37954;

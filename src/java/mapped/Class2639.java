@@ -16,7 +16,7 @@ public class Class2639 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return this.field16963.method4232() != null;
+      return this.field16963.getAttackTarget() != null;
    }
 
    @Override
@@ -31,7 +31,7 @@ public class Class2639 extends Class2595 {
 
    @Override
    public void method10805() {
-      LivingEntity var3 = this.field16963.method4232();
+      LivingEntity var3 = this.field16963.getAttackTarget();
       double var4 = 64.0;
       if (var3.getDistanceSq(this.field16963) < 4096.0 && this.field16963.canEntityBeSeen(var3)) {
          World var6 = this.field16963.world;

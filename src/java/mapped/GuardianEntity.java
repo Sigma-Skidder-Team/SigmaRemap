@@ -116,7 +116,7 @@ public class GuardianEntity extends MonsterEntity {
    public LivingEntity method5306() {
       if (this.method5305()) {
          if (!this.world.isRemote) {
-            return this.method4232();
+            return this.getAttackTarget();
          } else if (this.field6073 == null) {
             Entity var3 = this.world.getEntityByID(this.dataManager.<Integer>method35445(field6067));
             if (!(var3 instanceof LivingEntity)) {
@@ -341,7 +341,7 @@ public class GuardianEntity extends MonsterEntity {
          this.moveRelative(0.1F, var1);
          this.move(MoverType.SELF, this.getMotion());
          this.setMotion(this.getMotion().scale(0.9));
-         if (!this.method5301() && this.method4232() == null) {
+         if (!this.method5301() && this.getAttackTarget() == null) {
             this.setMotion(this.getMotion().add(0.0, -0.005, 0.0));
          }
       } else {

@@ -124,7 +124,7 @@ public class RavagerEntity extends Class1026 {
       super.livingTick();
       if (this.isAlive()) {
          if (!this.isMovementBlocked()) {
-            double var3 = this.method4232() == null ? 0.3 : 0.35;
+            double var3 = this.getAttackTarget() == null ? 0.3 : 0.35;
             double var5 = this.getAttribute(Attributes.MOVEMENT_SPEED).getBaseValue();
             this.getAttribute(Attributes.MOVEMENT_SPEED).method38661(MathHelper.lerp(0.1, var5, var3));
          } else {

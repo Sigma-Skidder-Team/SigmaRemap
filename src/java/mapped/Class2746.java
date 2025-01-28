@@ -18,7 +18,7 @@ public class Class2746 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      LivingEntity var3 = this.field17279.method4232();
+      LivingEntity var3 = this.field17279.getAttackTarget();
       return var3 != null && var3.isAlive() ? this.field17279.world.method6997() != Difficulty.PEACEFUL : false;
    }
 
@@ -37,11 +37,11 @@ public class Class2746 extends Class2595 {
    public void method10805() {
       if (this.field17279.world.method6997() != Difficulty.PEACEFUL) {
          this.field17278--;
-         LivingEntity var3 = this.field17279.method4232();
+         LivingEntity var3 = this.field17279.getAttackTarget();
          this.field17279.method4227().method28040(var3, 180.0F, 180.0F);
          double var4 = this.field17279.getDistanceSq(var3);
          if (!(var4 < 400.0)) {
-            this.field17279.method4233((LivingEntity)null);
+            this.field17279.setAttackTarget((LivingEntity)null);
          } else if (this.field17278 <= 0) {
             this.field17278 = 20 + ShulkerEntity.method4858(this.field17279).nextInt(10) * 20 / 2;
             this.field17279.world.addEntity(new ShulkerBulletEntity(this.field17279.world, this.field17279, var3, this.field17279.method4848().getAxis()));

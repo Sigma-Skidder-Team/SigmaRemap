@@ -142,7 +142,7 @@ public class Class9733 {
          var5.method26693(var4.method24279(field45444.get(var7.getKey())));
       }
 
-      boolean var11 = (!this.field45450 || this.field45445.method9182(var3).equals(Optional.<RegistryKey<Biome>>of(Biomes.THE_VOID))) && this.field45451;
+      boolean var11 = (!this.field45450 || this.field45445.getOptionalKey(var3).equals(Optional.<RegistryKey<Biome>>of(Biomes.THE_VOID))) && this.field45451;
       if (var11) {
          List<List<Supplier<ConfiguredFeature<?, ?>>>> var12 = var4.getFeatures();
 

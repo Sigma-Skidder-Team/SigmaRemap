@@ -25,7 +25,7 @@ public class Class2759 extends Class2595 {
       LivingEntity var3 = this.field17314.getRevengeTarget();
       return this.field17314.method4551() == null
          && this.field17314.method4579()
-         && this.field17314.method4232() != null
+         && this.field17314.getAttackTarget() != null
          && !this.field17314.method4307()
          && (var3 == null || var3.getType() != EntityType.PLAYER);
    }
@@ -38,19 +38,19 @@ public class Class2759 extends Class2595 {
       for (Class1026 var4 : this.field17314
          .world
          .<Class1026>method7195(Class1026.class, this.field17316, this.field17314, this.field17314.getBoundingBox().grow(8.0, 8.0, 8.0))) {
-         var4.method4233(this.field17314.method4232());
+         var4.setAttackTarget(this.field17314.getAttackTarget());
       }
    }
 
    @Override
    public void method10807() {
       super.method10807();
-      LivingEntity var3 = this.field17314.method4232();
+      LivingEntity var3 = this.field17314.getAttackTarget();
       if (var3 != null) {
          for (Class1026 var5 : this.field17314
             .world
             .<Class1026>method7195(Class1026.class, this.field17316, this.field17314, this.field17314.getBoundingBox().grow(8.0, 8.0, 8.0))) {
-            var5.method4233(var3);
+            var5.setAttackTarget(var3);
             var5.method4304(true);
          }
 
@@ -60,7 +60,7 @@ public class Class2759 extends Class2595 {
 
    @Override
    public void method10805() {
-      LivingEntity var3 = this.field17314.method4232();
+      LivingEntity var3 = this.field17314.getAttackTarget();
       if (var3 != null) {
          if (!(this.field17314.getDistanceSq(var3) > (double)this.field17315)) {
             this.field17314.method4304(true);

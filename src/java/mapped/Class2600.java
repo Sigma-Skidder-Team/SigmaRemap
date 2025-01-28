@@ -11,12 +11,12 @@ public class Class2600 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return this.field16840.method4232() == null && ShulkerEntity.method4861(this.field16840).nextInt(40) == 0;
+      return this.field16840.getAttackTarget() == null && ShulkerEntity.method4861(this.field16840).nextInt(40) == 0;
    }
 
    @Override
    public boolean method10806() {
-      return this.field16840.method4232() == null && this.field16839 > 0;
+      return this.field16840.getAttackTarget() == null && this.field16839 > 0;
    }
 
    @Override
@@ -27,7 +27,7 @@ public class Class2600 extends Class2595 {
 
    @Override
    public void method10807() {
-      if (this.field16840.method4232() == null) {
+      if (this.field16840.getAttackTarget() == null) {
          this.field16840.method4852(0);
       }
    }

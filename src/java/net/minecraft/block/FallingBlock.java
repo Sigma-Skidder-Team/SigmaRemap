@@ -3,7 +3,7 @@ package net.minecraft.block;
 import mapped.BlockParticleData;
 import mapped.FallingBlockEntity;
 import mapped.ParticleTypes;
-import net.minecraft.material.Material;
+import net.minecraft.block.material.Material;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;

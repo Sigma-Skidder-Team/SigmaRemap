@@ -17,7 +17,7 @@ public class Class2755 extends Class2754 {
    @Override
    public boolean method10803() {
       if (this.field17295.method5142()) {
-         LivingEntity var3 = this.field17295.method4232();
+         LivingEntity var3 = this.field17295.getAttackTarget();
          if (var3 != null && var3.isAlive()) {
             if (var3.method3387() == var3.getHorizontalFacing()) {
                boolean var4 = FoxEntity.method5152(this.field17295, var3);
@@ -41,7 +41,7 @@ public class Class2755 extends Class2754 {
 
    @Override
    public boolean method10806() {
-      LivingEntity var3 = this.field17295.method4232();
+      LivingEntity var3 = this.field17295.getAttackTarget();
       if (var3 != null && var3.isAlive()) {
          double var4 = this.field17295.getMotion().y;
          return (!(var4 * var4 < 0.05F) || !(Math.abs(this.field17295.rotationPitch) < 15.0F) || !this.field17295.onGround) && !this.field17295.method5131();
@@ -60,7 +60,7 @@ public class Class2755 extends Class2754 {
       this.field17295.setJumping(true);
       this.field17295.method5141(true);
       this.field17295.method5144(false);
-      LivingEntity var3 = this.field17295.method4232();
+      LivingEntity var3 = this.field17295.getAttackTarget();
       this.field17295.method4227().method28040(var3, 60.0F, 30.0F);
       Vector3d var4 = new Vector3d(
             var3.getPosX() - this.field17295.getPosX(),
@@ -83,7 +83,7 @@ public class Class2755 extends Class2754 {
 
    @Override
    public void method10805() {
-      LivingEntity var3 = this.field17295.method4232();
+      LivingEntity var3 = this.field17295.getAttackTarget();
       if (var3 != null) {
          this.field17295.method4227().method28040(var3, 60.0F, 30.0F);
       }
@@ -106,7 +106,7 @@ public class Class2755 extends Class2754 {
          && (float)this.field17295.getMotion().y != 0.0F
          && this.field17295.world.getBlockState(this.field17295.getPosition()).isIn(Blocks.SNOW)) {
          this.field17295.rotationPitch = 60.0F;
-         this.field17295.method4233((LivingEntity)null);
+         this.field17295.setAttackTarget((LivingEntity)null);
          FoxEntity.method5170(this.field17295, true);
       }
    }

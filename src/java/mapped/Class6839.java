@@ -21,9 +21,9 @@ public class Class6839 extends Class6829 {
          double var4 = var3.length();
          if (!(var4 < this.field29727.getBoundingBox().getAverageEdgeLength())) {
             this.field29727.setMotion(this.field29727.getMotion().add(var3.scale(this.field29711 * 0.05 / var4)));
-            if (this.field29727.method4232() != null) {
-               double var6 = this.field29727.method4232().getPosX() - this.field29727.getPosX();
-               double var8 = this.field29727.method4232().getPosZ() - this.field29727.getPosZ();
+            if (this.field29727.getAttackTarget() != null) {
+               double var6 = this.field29727.getAttackTarget().getPosX() - this.field29727.getPosX();
+               double var8 = this.field29727.getAttackTarget().getPosZ() - this.field29727.getPosZ();
                this.field29727.rotationYaw = -((float) MathHelper.method37814(var6, var8)) * (180.0F / (float)Math.PI);
                this.field29727.renderYawOffset = this.field29727.rotationYaw;
             } else {

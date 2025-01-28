@@ -298,7 +298,7 @@ public class DolphinEntity extends WaterMobEntity {
 
    public static boolean canSpawn(EntityType<DolphinEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       if (var3.getY() > 45 && var3.getY() < var1.getSeaLevel()) {
-         Optional var7 = var1.method7178(var3);
+         Optional var7 = var1.func_242406_i(var3);
          return (
                !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.OCEAN))
                   || !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.DEEP_OCEAN))
@@ -347,7 +347,7 @@ public class DolphinEntity extends WaterMobEntity {
          this.moveRelative(this.getAIMoveSpeed(), var1);
          this.move(MoverType.SELF, this.getMotion());
          this.setMotion(this.getMotion().scale(0.9));
-         if (this.method4232() == null) {
+         if (this.getAttackTarget() == null) {
             this.setMotion(this.getMotion().add(0.0, -0.005, 0.0));
          }
       } else {

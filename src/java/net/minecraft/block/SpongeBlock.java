@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import mapped.Class3405;
 import mapped.Class6793;
 import mapped.FluidTags;
-import net.minecraft.material.Material;
+import net.minecraft.block.material.Material;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.tileentity.TileEntity;

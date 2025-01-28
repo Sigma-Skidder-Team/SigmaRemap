@@ -2068,7 +2068,7 @@ public abstract class LivingEntity extends Entity {
          }
       }
 
-      this.func_233629_a_(this, this instanceof Class1016);
+      this.func_233629_a_(this, this instanceof IFlyingAnimal);
    }
 
    public void func_233629_a_(LivingEntity var1, boolean var2) {

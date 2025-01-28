@@ -111,9 +111,9 @@ public class WitchEntity extends Class1026 implements Class1022 {
             } else if (this.rand.nextFloat() < 0.05F && this.getHealth() < this.method3075()) {
                var7 = Potions.HEALING;
             } else if (this.rand.nextFloat() < 0.5F
-               && this.method4232() != null
+               && this.getAttackTarget() != null
                && !this.isPotionActive(Effects.SPEED)
-               && this.method4232().getDistanceSq(this) > 121.0) {
+               && this.getAttackTarget().getDistanceSq(this) > 121.0) {
                var7 = Potions.SWIFTNESS;
             }
 
@@ -226,7 +226,7 @@ public class WitchEntity extends Class1026 implements Class1022 {
                var13 = Potions.HEALING;
             }
 
-            this.method4233((LivingEntity)null);
+            this.setAttackTarget((LivingEntity)null);
          }
 
          PotionEntity var14 = new PotionEntity(this.world, this);

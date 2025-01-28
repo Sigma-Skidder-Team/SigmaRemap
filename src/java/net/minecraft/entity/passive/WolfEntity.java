@@ -311,7 +311,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
                } else {
                   this.method4399(var1);
                   this.field5599.method21666();
-                  this.method4233((LivingEntity)null);
+                  this.setAttackTarget((LivingEntity)null);
                   this.method4403(true);
                   this.world.setEntityState(this, (byte)7);
                }
@@ -334,7 +334,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
                   this.method4403(!this.method4402());
                   this.isJumping = false;
                   this.field5599.method21666();
-                  this.method4233((LivingEntity)null);
+                  this.setAttackTarget((LivingEntity)null);
                   return ActionResultType.SUCCESS;
                }
 
@@ -523,13 +523,13 @@ public class WolfEntity extends TameableEntity implements IAngerable {
 
       @Override
       public void method10804() {
-         WolfEntity.this.method4233(null);
+         WolfEntity.this.setAttackTarget(null);
          super.method10804();
       }
 
       @Override
       public void method10805() {
-         WolfEntity.this.method4233(null);
+         WolfEntity.this.setAttackTarget(null);
          super.method10805();
       }
    }

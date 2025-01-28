@@ -25,7 +25,7 @@ public class Class2723<T extends PillagerEntity> extends Class2595 {
    @Override
    public boolean method10803() {
       boolean var3 = this.field17212.world.getGameTime() < this.field17215;
-      return this.field17212.method4579() && this.field17212.method4232() == null && !this.field17212.isBeingRidden() && this.field17212.method4575() && !var3;
+      return this.field17212.method4579() && this.field17212.getAttackTarget() == null && !this.field17212.isBeingRidden() && this.field17212.method4575() && !var3;
    }
 
    @Override

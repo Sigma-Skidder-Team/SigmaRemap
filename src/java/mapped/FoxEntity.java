@@ -139,7 +139,7 @@ public class FoxEntity extends AnimalEntity {
             }
          }
 
-         LivingEntity var5 = this.method4232();
+         LivingEntity var5 = this.getAttackTarget();
          if (var5 == null || !var5.isAlive()) {
             this.method5143(false);
             this.method5144(false);
@@ -164,7 +164,7 @@ public class FoxEntity extends AnimalEntity {
    }
 
    private boolean method5122(ItemStack var1) {
-      return var1.getItem().isFood() && this.method4232() == null && this.onGround && !this.isSleeping();
+      return var1.getItem().isFood() && this.getAttackTarget() == null && this.onGround && !this.isSleeping();
    }
 
    @Override
@@ -241,7 +241,7 @@ public class FoxEntity extends AnimalEntity {
    @Nullable
    @Override
    public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
-      Optional var8 = var1.method7178(this.getPosition());
+      Optional var8 = var1.func_242406_i(this.getPosition());
       Class186 var9 = Class186.method571(var8);
       boolean var10 = false;
       if (!(var4 instanceof Class5100)) {
@@ -451,7 +451,7 @@ public class FoxEntity extends AnimalEntity {
       super.tick();
       if (this.isServerWorld()) {
          boolean var3 = this.isInWater();
-         if (var3 || this.method4232() != null || this.world.method6794()) {
+         if (var3 || this.getAttackTarget() != null || this.world.method6794()) {
             this.method5148();
          }
 
@@ -537,7 +537,7 @@ public class FoxEntity extends AnimalEntity {
          this.method5134(false);
       }
 
-      super.method4233(var1);
+      super.setAttackTarget(var1);
    }
 
    @Override

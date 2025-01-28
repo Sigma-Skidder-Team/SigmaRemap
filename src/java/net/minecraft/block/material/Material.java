@@ -1,9 +1,6 @@
-package net.minecraft.material;
-
-import net.minecraft.block.material.PushReaction;
+package net.minecraft.block.material;
 
 public final class Material {
-   private static String[] field38931;
    public static final Material AIR = Builder.method30894(new Builder(MaterialColor.AIR).method30887())
       .method30886()
       .method30890()

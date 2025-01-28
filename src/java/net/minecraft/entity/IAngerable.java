@@ -44,7 +44,7 @@ public interface IAngerable {
             }
 
             if (var6.getType() == EntityType.PLAYER) {
-               this.method3016((PlayerEntity)var6);
+               this.func_230246_e_((PlayerEntity)var6);
             }
          }
       } else {
@@ -53,7 +53,7 @@ public interface IAngerable {
    }
 
    default void method4366(ServerWorld var1, boolean var2) {
-      LivingEntity var5 = this.method4232();
+      LivingEntity var5 = this.getAttackTarget();
       UUID var6 = this.method4350();
       if ((var5 == null || var5.getShouldBeDead()) && var6 != null && var1.getEntityByUuid(var6) instanceof MobEntity) {
          this.method4372();
@@ -102,16 +102,16 @@ public interface IAngerable {
    default void method4372() {
       this.setRevengeTarget((LivingEntity)null);
       this.setAngerTarget((UUID)null);
-      this.method4233((LivingEntity)null);
+      this.setAttackTarget((LivingEntity)null);
       this.method4347(0);
    }
 
    void setRevengeTarget(LivingEntity var1);
 
-   void method3016(PlayerEntity var1);
+   void func_230246_e_(PlayerEntity var1);
 
-   void method4233(LivingEntity var1);
+   void setAttackTarget(LivingEntity var1);
 
    @Nullable
-   LivingEntity method4232();
+   LivingEntity getAttackTarget();
 }
