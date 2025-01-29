@@ -37,10 +37,10 @@ public class ShieldItem extends Item {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       var2.setActiveHand(var3);
-      return Class6794.<ItemStack>method20697(var6);
+      return ActionResult.<ItemStack>method20697(var6);
    }
 
    @Override

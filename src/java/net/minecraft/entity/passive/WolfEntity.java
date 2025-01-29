@@ -324,7 +324,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
                   var5.shrink(1);
                }
 
-               this.heal((float)var6.method11745().method36157());
+               this.heal((float)var6.getFood().method36157());
                return ActionResultType.SUCCESS;
             }
 
@@ -385,7 +385,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    @Override
    public boolean method4381(ItemStack var1) {
       Item var4 = var1.getItem();
-      return var4.isFood() && var4.method11745().method36159();
+      return var4.isFood() && var4.getFood().method36159();
    }
 
    @Override

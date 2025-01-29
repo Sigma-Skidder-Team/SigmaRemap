@@ -47,9 +47,9 @@ public class Class3318 extends Item {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       if (!var2.isElytraFlying()) {
-         return Class6794.<ItemStack>method20698(var2.getHeldItem(var3));
+         return ActionResult.<ItemStack>method20698(var2.getHeldItem(var3));
       } else {
          ItemStack var6 = var2.getHeldItem(var3);
          if (!var1.isRemote) {
@@ -59,7 +59,7 @@ public class Class3318 extends Item {
             }
          }
 
-         return Class6794.<ItemStack>method20700(var2.getHeldItem(var3), var1.isRemote());
+         return ActionResult.<ItemStack>method20700(var2.getHeldItem(var3), var1.isRemote());
       }
    }
 

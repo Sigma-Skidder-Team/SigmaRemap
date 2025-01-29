@@ -5,12 +5,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
-public class Class8482 {
+public class DrinkHelper {
    private static String[] field36360;
 
-   public static Class6794<ItemStack> method29977(World var0, PlayerEntity var1, Hand var2) {
+   public static ActionResult<ItemStack> method29977(World var0, PlayerEntity var1, Hand var2) {
       var1.setActiveHand(var2);
-      return Class6794.<ItemStack>method20697(var1.getHeldItem(var2));
+      return ActionResult.<ItemStack>method20697(var1.getHeldItem(var2));
    }
 
    public static ItemStack method29978(ItemStack var0, PlayerEntity var1, ItemStack var2, boolean var3) {

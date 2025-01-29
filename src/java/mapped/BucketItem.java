@@ -23,29 +23,28 @@ import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class Class3287 extends Item {
-   private static String[] field18797;
+public class BucketItem extends Item {
    private final Fluid field18798;
 
-   public Class3287(Fluid var1, Properties var2) {
+   public BucketItem(Fluid var1, Properties var2) {
       super(var2);
       this.field18798 = var1;
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       BlockRayTraceResult var7 = method11735(var1, var2, this.field18798 != Fluids.EMPTY ? RayTraceContext.FluidMode.NONE : RayTraceContext.FluidMode.SOURCE_ONLY);
       if (var7.getType() != RayTraceResult.Type.MISS) {
          if (var7.getType() != RayTraceResult.Type.BLOCK) {
-            return Class6794.<ItemStack>method20698(var6);
+            return ActionResult.<ItemStack>method20698(var6);
          } else {
             BlockRayTraceResult var8 = var7;
             BlockPos var9 = var8.getPos();
             Direction var10 = var8.getFace();
             BlockPos var11 = var9.offset(var10);
             if (!var1.method6785(var2, var9) || !var2.method2936(var11, var10, var6)) {
-               return Class6794.<ItemStack>method20699(var6);
+               return ActionResult.<ItemStack>method20699(var6);
             } else if (this.field18798 == Fluids.EMPTY) {
                BlockState var15 = var1.getBlockState(var9);
                if (var15.getBlock() instanceof Class3405) {
@@ -53,21 +52,21 @@ public class Class3287 extends Item {
                   if (var16 != Fluids.EMPTY) {
                      var2.addStat(Stats.field40098.method172(this));
                      var2.playSound(!var16.method25067(FluidTags.field40470) ? SoundEvents.field26429 : SoundEvents.field26431, 1.0F, 1.0F);
-                     ItemStack var14 = Class8482.method29979(var6, var2, new ItemStack(var16.method25050()));
+                     ItemStack var14 = DrinkHelper.method29979(var6, var2, new ItemStack(var16.method25050()));
                      if (!var1.isRemote) {
                         CriteriaTriggers.field44474.method15152((ServerPlayerEntity)var2, new ItemStack(var16.method25050()));
                      }
 
-                     return Class6794.<ItemStack>method20700(var14, var1.isRemote());
+                     return ActionResult.<ItemStack>method20700(var14, var1.isRemote());
                   }
                }
 
-               return Class6794.<ItemStack>method20699(var6);
+               return ActionResult.<ItemStack>method20699(var6);
             } else {
                BlockState var12 = var1.getBlockState(var9);
                BlockPos var13 = var12.getBlock() instanceof Class3449 && this.field18798 == Fluids.WATER ? var9 : var11;
                if (!this.method11825(var2, var1, var13, var8)) {
-                  return Class6794.<ItemStack>method20699(var6);
+                  return ActionResult.<ItemStack>method20699(var6);
                } else {
                   this.method11824(var1, var6, var13);
                   if (var2 instanceof ServerPlayerEntity) {
@@ -75,12 +74,12 @@ public class Class3287 extends Item {
                   }
 
                   var2.addStat(Stats.field40098.method172(this));
-                  return Class6794.<ItemStack>method20700(this.method11823(var6, var2), var1.isRemote());
+                  return ActionResult.<ItemStack>method20700(this.method11823(var6, var2), var1.isRemote());
                }
             }
          }
       } else {
-         return Class6794.<ItemStack>method20698(var6);
+         return ActionResult.<ItemStack>method20698(var6);
       }
    }
 

@@ -21,7 +21,7 @@ public class Class3304 extends Item {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       var1.playSound(
          (PlayerEntity)null,
@@ -45,6 +45,6 @@ public class Class3304 extends Item {
          var6.shrink(1);
       }
 
-      return Class6794.<ItemStack>method20700(var6, var1.isRemote());
+      return ActionResult.<ItemStack>method20700(var6, var1.isRemote());
    }
 }

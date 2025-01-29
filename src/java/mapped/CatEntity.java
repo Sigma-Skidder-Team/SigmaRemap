@@ -351,7 +351,7 @@ public class CatEntity extends TameableEntity {
             if (!(var6 instanceof Class3321)) {
                if (var6.isFood() && this.method4381(var5) && this.getHealth() < this.method3075()) {
                   this.method4501(var1, var5);
-                  this.heal((float)var6.method11745().method36157());
+                  this.heal((float)var6.getFood().method36157());
                   return ActionResultType.field14819;
                }
 

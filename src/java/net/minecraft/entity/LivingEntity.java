@@ -1336,11 +1336,11 @@ public abstract class LivingEntity extends Entity {
    }
 
    public SoundEvent getDrinkSound(ItemStack var1) {
-      return var1.method32185();
+      return var1.getDrinkSound();
    }
 
    public SoundEvent getEatSound(ItemStack var1) {
-      return var1.method32186();
+      return var1.getEatSound();
    }
 
    @Override
@@ -2774,7 +2774,7 @@ public abstract class LivingEntity extends Entity {
 
    private boolean shouldTriggerItemUseEffects() {
       int var3 = this.getItemInUseCount();
-      Class9427 var4 = this.activeItemStack.getItem().method11745();
+      Food var4 = this.activeItemStack.getItem().getFood();
       boolean var5 = var4 != null && var4.method36161();
       var5 |= var3 <= this.activeItemStack.getUseDuration() - 7;
       return var5 && var3 % 4 == 0;
@@ -3131,7 +3131,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public ItemStack onFoodEaten(World var1, ItemStack var2) {
-      if (var2.method32184()) {
+      if (var2.isFood()) {
          var1.playSound(
                (PlayerEntity) null,
                this.getPosX(),
@@ -3153,7 +3153,7 @@ public abstract class LivingEntity extends Entity {
    private void applyFoodEffects(ItemStack var1, World var2, LivingEntity var3) {
       Item var6 = var1.getItem();
       if (var6.isFood()) {
-         for (Pair var8 : var6.method11745().method36162()) {
+         for (Pair var8 : var6.getFood().method36162()) {
             if (!var2.isRemote && var8.getFirst() != null && var2.rand.nextFloat() < (Float) var8.getSecond()) {
                var3.addPotionEffect(new EffectInstance((EffectInstance) var8.getFirst()));
             }

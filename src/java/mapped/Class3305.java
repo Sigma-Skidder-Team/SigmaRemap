@@ -27,11 +27,11 @@ public class Class3305 extends Item {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       BlockRayTraceResult var7 = method11735(var1, var2, RayTraceContext.FluidMode.ANY);
       if (var7.getType() == RayTraceResult.Type.MISS) {
-         return Class6794.<ItemStack>method20698(var6);
+         return ActionResult.<ItemStack>method20698(var6);
       } else {
          Vector3d var8 = var2.getLook(1.0F);
          double var9 = 5.0;
@@ -42,13 +42,13 @@ public class Class3305 extends Item {
             for (Entity var14 : var11) {
                AxisAlignedBB var15 = var14.getBoundingBox().grow((double)var14.getCollisionBorderSize());
                if (var15.contains(var12)) {
-                  return Class6794.<ItemStack>method20698(var6);
+                  return ActionResult.<ItemStack>method20698(var6);
                }
             }
          }
 
          if (var7.getType() != RayTraceResult.Type.BLOCK) {
-            return Class6794.<ItemStack>method20698(var6);
+            return ActionResult.<ItemStack>method20698(var6);
          } else {
             BoatEntity var16 = new BoatEntity(var1, var7.getHitVec().x, var7.getHitVec().y, var7.getHitVec().z);
             var16.method4171(this.field18812);
@@ -62,9 +62,9 @@ public class Class3305 extends Item {
                }
 
                var2.addStat(Stats.field40098.method172(this));
-               return Class6794.<ItemStack>method20700(var6, var1.isRemote());
+               return ActionResult.<ItemStack>method20700(var6, var1.isRemote());
             } else {
-               return Class6794.<ItemStack>method20699(var6);
+               return ActionResult.<ItemStack>method20699(var6);
             }
          }
       }

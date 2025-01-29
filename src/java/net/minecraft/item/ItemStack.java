@@ -173,7 +173,7 @@ public final class ItemStack {
       return this.getItem().getDestroySpeed(this, var1);
    }
 
-   public Class6794<ItemStack> method32110(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method32110(World var1, PlayerEntity var2, Hand var3) {
       return this.getItem().method11700(var1, var2, var3);
    }
 
@@ -913,15 +913,15 @@ public final class ItemStack {
       this.getItem().method11704(var1, var2, this, var3);
    }
 
-   public boolean method32184() {
+   public boolean isFood() {
       return this.getItem().isFood();
    }
 
-   public SoundEvent method32185() {
-      return this.getItem().method11746();
+   public SoundEvent getDrinkSound() {
+      return this.getItem().getDrinkSound();
    }
 
-   public SoundEvent method32186() {
-      return this.getItem().method11747();
+   public SoundEvent getEatSound() {
+      return this.getItem().getEatSound();
    }
 }

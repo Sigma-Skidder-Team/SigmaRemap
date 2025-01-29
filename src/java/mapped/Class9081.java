@@ -273,7 +273,7 @@ public class Class9081 {
          if (!var1.method2976().method19635(var3.getItem())) {
             int var7 = var3.getCount();
             int var8 = var3.method32117();
-            Class6794 var9 = var3.method32110(var2, var1, var4);
+            ActionResult var9 = var3.method32110(var2, var1, var4);
             ItemStack var10 = (ItemStack)var9.method20695();
             if (var10 == var3 && var10.getCount() == var7 && var10.getUseDuration() <= 0 && var10.method32117() == var8) {
                return var9.method20694();

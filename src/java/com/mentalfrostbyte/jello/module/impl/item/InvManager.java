@@ -336,11 +336,11 @@ public class InvManager extends PremiumModule {
                 return method16437(Items.WATER_BUCKET) > 1;
             } else if (var5 == Items.BUCKET && Client.getInstance().moduleManager.getModuleByClass(AutoMLG.class).isEnabled()) {
                 return method16437(Items.BUCKET) > 1;
-            } else if (var5 instanceof Class3323 && InvManagerUtils.method25874(var1)) {
+            } else if (var5 instanceof PotionItem && InvManagerUtils.method25874(var1)) {
                 return true;
             } else if (var5 == Items.ENCHANTED_GOLDEN_APPLE) {
                 return false;
-            } else if (var5.isFood() && this.getBooleanValueFromSettingName("Food") && var5.method11745() != Class8672.field39078) {
+            } else if (var5.isFood() && this.getBooleanValueFromSettingName("Food") && var5.getFood() != Foods.GOLDEN_APPLE) {
                 return true;
             } else if (var5 instanceof Class3269 || var5 instanceof ToolItem || var5 instanceof SwordItem || var5 instanceof ArmorItem) {
                 return true;

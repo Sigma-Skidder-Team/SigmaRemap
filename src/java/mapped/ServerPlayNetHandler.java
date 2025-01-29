@@ -939,7 +939,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          return false;
       } else {
          Item var4 = var1.getItem();
-         return (var4 instanceof BlockItem || var4 instanceof Class3287) && !var0.method2976().method19635(var4);
+         return (var4 instanceof BlockItem || var4 instanceof BucketItem) && !var0.method2976().method19635(var4);
       }
    }
 

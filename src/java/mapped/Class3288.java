@@ -18,7 +18,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
 
-public class Class3288 extends Class3287 {
+public class Class3288 extends BucketItem {
    private final EntityType<?> field18799;
 
    public Class3288(EntityType<?> var1, Fluid var2, Properties var3) {

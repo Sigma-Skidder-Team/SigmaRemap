@@ -27,16 +27,16 @@ public class Class3256 extends Item implements Class3255 {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       EquipmentSlotType var7 = MobEntity.method4271(var6);
       ItemStack var8 = var2.getItemStackFromSlot(var7);
       if (!var8.isEmpty()) {
-         return Class6794.<ItemStack>method20699(var6);
+         return ActionResult.<ItemStack>method20699(var6);
       } else {
          var2.setItemStackToSlot(var7, var6.copy());
          var6.setCount(0);
-         return Class6794.<ItemStack>method20700(var6, var1.isRemote());
+         return ActionResult.<ItemStack>method20700(var6, var1.isRemote());
       }
    }
 }

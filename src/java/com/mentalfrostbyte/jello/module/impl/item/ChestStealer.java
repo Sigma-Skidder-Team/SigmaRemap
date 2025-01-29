@@ -293,7 +293,7 @@ public class ChestStealer extends Module {
             } else if (!(var4 instanceof Class3265)) {
                 if (var4 instanceof HoeItem) {
                     return !InvManager.isHoe(var1);
-                } else if (!(var4 instanceof Class3323)) {
+                } else if (!(var4 instanceof PotionItem)) {
                     if (var4 instanceof BlockItem) {
                         return !BlockFly.method16733(var4);
                     } else if (!(var4 instanceof Class3308)

@@ -85,7 +85,7 @@ public class SpawnEggItem extends Item {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       BlockRayTraceResult var7 = method11735(var1, var2, RayTraceContext.FluidMode.SOURCE_ONLY);
       if (var7.getType() == RayTraceResult.Type.BLOCK) {
@@ -101,21 +101,21 @@ public class SpawnEggItem extends Item {
                      }
 
                      var2.addStat(Stats.field40098.method172(this));
-                     return Class6794.<ItemStack>method20697(var6);
+                     return ActionResult.<ItemStack>method20697(var6);
                   } else {
-                     return Class6794.<ItemStack>method20698(var6);
+                     return ActionResult.<ItemStack>method20698(var6);
                   }
                } else {
-                  return Class6794.<ItemStack>method20699(var6);
+                  return ActionResult.<ItemStack>method20699(var6);
                }
             } else {
-               return Class6794.<ItemStack>method20698(var6);
+               return ActionResult.<ItemStack>method20698(var6);
             }
          } else {
-            return Class6794.<ItemStack>method20696(var6);
+            return ActionResult.<ItemStack>method20696(var6);
          }
       } else {
-         return Class6794.<ItemStack>method20698(var6);
+         return ActionResult.<ItemStack>method20698(var6);
       }
    }
 

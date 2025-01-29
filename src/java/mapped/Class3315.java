@@ -16,7 +16,7 @@ public class Class3315 extends Class3314 {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = Class3316.method11859(var1, MathHelper.floor(var2.getPosX()), MathHelper.floor(var2.getPosZ()), (byte)0, true, false);
       ItemStack var7 = var2.getHeldItem(var3);
       if (!var2.abilities.isCreativeMode) {
@@ -30,9 +30,9 @@ public class Class3315 extends Class3314 {
             var2.dropItem(var6, false);
          }
 
-         return Class6794.<ItemStack>method20700(var7, var1.isRemote());
+         return ActionResult.<ItemStack>method20700(var7, var1.isRemote());
       } else {
-         return Class6794.<ItemStack>method20700(var6, var1.isRemote());
+         return ActionResult.<ItemStack>method20700(var6, var1.isRemote());
       }
    }
 }

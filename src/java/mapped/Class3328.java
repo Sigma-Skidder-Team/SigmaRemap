@@ -24,7 +24,7 @@ public class Class3328 extends Item {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       List var6 = var1.<AreaEffectCloudEntity>getEntitiesInAABBexcluding(
          AreaEffectCloudEntity.class, var2.getBoundingBox().grow(2.0), var0 -> var0 != null && var0.isAlive() && var0.method4114() instanceof EnderDragonEntity
       );
@@ -35,31 +35,31 @@ public class Class3328 extends Item {
             if (var10.getType() == RayTraceResult.Type.BLOCK) {
                BlockPos var9 = var10.getPos();
                if (!var1.method6785(var2, var9)) {
-                  return Class6794.<ItemStack>method20698(var7);
+                  return ActionResult.<ItemStack>method20698(var7);
                }
 
                if (var1.getFluidState(var9).method23486(FluidTags.WATER)) {
                   var1.playSound(var2, var2.getPosX(), var2.getPosY(), var2.getPosZ(), SoundEvents.field26418, SoundCategory.field14734, 1.0F, 1.0F);
-                  return Class6794.<ItemStack>method20700(
+                  return ActionResult.<ItemStack>method20700(
                      this.method11878(var7, var2, PotionUtils.addPotionToItemStack(new ItemStack(Items.field37971), Potions.WATER)), var1.isRemote()
                   );
                }
             }
 
-            return Class6794.<ItemStack>method20698(var7);
+            return ActionResult.<ItemStack>method20698(var7);
          } else {
-            return Class6794.<ItemStack>method20698(var7);
+            return ActionResult.<ItemStack>method20698(var7);
          }
       } else {
          AreaEffectCloudEntity var8 = (AreaEffectCloudEntity)var6.get(0);
          var8.method4097(var8.method4098() - 0.5F);
          var1.playSound((PlayerEntity)null, var2.getPosX(), var2.getPosY(), var2.getPosZ(), SoundEvents.field26419, SoundCategory.field14734, 1.0F, 1.0F);
-         return Class6794.<ItemStack>method20700(this.method11878(var7, var2, new ItemStack(Items.field38114)), var1.isRemote());
+         return ActionResult.<ItemStack>method20700(this.method11878(var7, var2, new ItemStack(Items.field38114)), var1.isRemote());
       }
    }
 
    public ItemStack method11878(ItemStack var1, PlayerEntity var2, ItemStack var3) {
       var2.addStat(Stats.field40098.method172(this));
-      return Class8482.method29979(var1, var2, var3);
+      return DrinkHelper.method29979(var1, var2, var3);
    }
 }

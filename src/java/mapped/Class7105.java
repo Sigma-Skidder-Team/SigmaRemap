@@ -189,8 +189,8 @@ public class Class7105 {
    }
 
    private static void method22141(Item var0, Item var1, Item var2) {
-      if (var0 instanceof Class3323) {
-         if (var2 instanceof Class3323) {
+      if (var0 instanceof PotionItem) {
+         if (var2 instanceof PotionItem) {
             field30618.add(new Class9127<Item>(var0, Class120.method339(var1), var2));
          } else {
             throw new IllegalArgumentException("Expected a potion, got: " + Registry.ITEM.getKey(var2));
@@ -201,7 +201,7 @@ public class Class7105 {
    }
 
    private static void method22142(Item var0) {
-      if (var0 instanceof Class3323) {
+      if (var0 instanceof PotionItem) {
          field30619.add(Class120.method339(var0));
       } else {
          throw new IllegalArgumentException("Expected a potion, got: " + Registry.ITEM.getKey(var0));

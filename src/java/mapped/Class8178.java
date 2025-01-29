@@ -31,7 +31,7 @@ public final class Class8178 implements Class8176 {
             var2 = (ClientWorld)((Entity)var6).world;
          }
 
-         BlockPos var7 = !Class3271.method11789(var1) ? this.method28469(var2) : this.method28470(var2, var1.getOrCreateTag());
+         BlockPos var7 = !CompassItem.method11789(var1) ? this.method28469(var2) : this.method28470(var2, var1.getOrCreateTag());
          long var8 = var2.getGameTime();
          if (var7 != null
             && !(
@@ -92,7 +92,7 @@ public final class Class8178 implements Class8176 {
       boolean var5 = var2.contains("LodestonePos");
       boolean var6 = var2.contains("LodestoneDimension");
       if (var5 && var6) {
-         Optional var7 = Class3271.method11790(var2);
+         Optional var7 = CompassItem.method11790(var2);
          if (var7.isPresent() && var1.getDimensionKey() == var7.get()) {
             return NBTUtil.readBlockPos(var2.getCompound("LodestonePos"));
          }

@@ -23,10 +23,10 @@ public class Class3302 extends BlockItem {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       BlockRayTraceResult var6 = method11735(var1, var2, RayTraceContext.FluidMode.SOURCE_ONLY);
       BlockRayTraceResult var7 = var6.method31422(var6.getPos().up());
       ActionResultType var8 = super.onItemUse(new ItemUseContext(var2, var3, var7));
-      return new Class6794<ItemStack>(var8, var2.getHeldItem(var3));
+      return new ActionResult<ItemStack>(var8, var2.getHeldItem(var3));
    }
 }

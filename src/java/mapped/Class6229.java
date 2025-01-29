@@ -16,7 +16,7 @@ public final class Class6229 extends Class6218 {
 
    @Override
    public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
-      Class3287 var5 = (Class3287)var2.getItem();
+      BucketItem var5 = (BucketItem)var2.getItem();
       BlockPos var6 = var1.method11323().offset(var1.method11324().<Direction>get(DispenserBlock.field18899));
       ServerWorld var7 = var1.method11326();
       if (!var5.method11825((PlayerEntity)null, var7, var6, (BlockRayTraceResult)null)) {

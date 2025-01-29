@@ -639,7 +639,7 @@ public class Class7992 {
 
    private static int method27274(ItemStack var0) {
       Item var3 = var0.getItem();
-      return !(var3 instanceof Class3323) ? var0.method32117() : method27275(var0);
+      return !(var3 instanceof PotionItem) ? var0.method32117() : method27275(var0);
    }
 
    private static int method27275(ItemStack var0) {

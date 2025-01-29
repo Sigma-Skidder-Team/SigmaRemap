@@ -44,7 +44,7 @@ public class Item implements IItemProvider {
    private final boolean field18740;
    private final Item field18741;
    private String field18742;
-   private final Class9427 field18743;
+   private final Food food;
 
    public static int getIdFromItem(Item var0) {
       return var0 != null ? Registry.ITEM.getId(var0) : 0;
@@ -65,7 +65,7 @@ public class Item implements IItemProvider {
       this.field18741 = Properties.method17784(var1);
       this.maxDamage = Properties.method17785(var1);
       this.maxStackSize = Properties.method17786(var1);
-      this.field18743 = Properties.method17787(var1);
+      this.food = Properties.method17787(var1);
       this.field18740 = Properties.method17788(var1);
    }
 
@@ -93,16 +93,16 @@ public class Item implements IItemProvider {
       return 1.0F;
    }
 
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       if (!this.isFood()) {
-         return Class6794.<ItemStack>method20698(var2.getHeldItem(var3));
+         return ActionResult.<ItemStack>method20698(var2.getHeldItem(var3));
       } else {
          ItemStack var6 = var2.getHeldItem(var3);
-         if (!var2.method2933(this.method11745().method36160())) {
-            return Class6794.<ItemStack>method20699(var6);
+         if (!var2.method2933(this.getFood().method36160())) {
+            return ActionResult.<ItemStack>method20699(var6);
          } else {
             var2.setActiveHand(var3);
-            return Class6794.<ItemStack>method20697(var6);
+            return ActionResult.<ItemStack>method20697(var6);
          }
       }
    }
@@ -195,7 +195,7 @@ public class Item implements IItemProvider {
       if (!var1.getItem().isFood()) {
          return 0;
       } else {
-         return !this.method11745().method36161() ? 32 : 16;
+         return !this.getFood().method36161() ? 32 : 16;
       }
    }
 
@@ -290,19 +290,19 @@ public class Item implements IItemProvider {
    }
 
    public boolean isFood() {
-      return this.field18743 != null;
+      return this.food != null;
    }
 
    @Nullable
-   public Class9427 method11745() {
-      return this.field18743;
+   public Food getFood() {
+      return this.food;
    }
 
-   public SoundEvent method11746() {
+   public SoundEvent getDrinkSound() {
       return SoundEvents.field26608;
    }
 
-   public SoundEvent method11747() {
+   public SoundEvent getEatSound() {
       return SoundEvents.field26609;
    }
 
@@ -320,10 +320,10 @@ public class Item implements IItemProvider {
       private Item field24958;
       private ItemGroup field24959;
       private Class1978 field24960 = Class1978.field12885;
-      private Class9427 field24961;
+      private Food field24961;
       private boolean field24962;
 
-      public Properties method17774(Class9427 var1) {
+      public Properties method17774(Food var1) {
          this.field24961 = var1;
          return this;
       }
@@ -393,7 +393,7 @@ public class Item implements IItemProvider {
       }
 
       // $VF: synthetic method
-      public static Class9427 method17787(Properties var0) {
+      public static Food method17787(Properties var0) {
          return var0.field24961;
       }
 

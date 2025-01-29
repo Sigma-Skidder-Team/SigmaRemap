@@ -6,7 +6,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
-public class Class3324 extends Class3323 {
+public class Class3324 extends PotionItem {
    private static String[] field18833;
 
    public Class3324(Properties var1) {
@@ -14,7 +14,7 @@ public class Class3324 extends Class3323 {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       if (!var1.isRemote) {
          PotionEntity var7 = new PotionEntity(var1, var2);
@@ -28,6 +28,6 @@ public class Class3324 extends Class3323 {
          var6.shrink(1);
       }
 
-      return Class6794.<ItemStack>method20700(var6, var1.isRemote());
+      return ActionResult.<ItemStack>method20700(var6, var1.isRemote());
    }
 }

@@ -14,7 +14,7 @@ public class Class3326 extends Class3324 {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       var1.playSound(
          (PlayerEntity)null,
          var2.getPosX(),

@@ -61,17 +61,17 @@ public class Class3307 extends Item {
    }
 
    @Override
-   public SoundEvent method11746() {
+   public SoundEvent getDrinkSound() {
       return SoundEvents.field26666;
    }
 
    @Override
-   public SoundEvent method11747() {
+   public SoundEvent getEatSound() {
       return SoundEvents.field26666;
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
-      return Class8482.method29977(var1, var2, var3);
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+      return DrinkHelper.method29977(var1, var2, var3);
    }
 }

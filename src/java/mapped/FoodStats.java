@@ -26,7 +26,7 @@ public class FoodStats {
 
    public void method37570(Item var1, ItemStack var2) {
       if (var1.isFood()) {
-         Class9427 var5 = var1.method11745();
+         Food var5 = var1.getFood();
          this.method37569(var5.method36157(), var5.method36158());
       }
    }

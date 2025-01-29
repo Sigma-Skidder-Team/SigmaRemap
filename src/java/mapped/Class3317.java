@@ -22,7 +22,7 @@ public class Class3317<T extends Entity & Class1071> extends Item {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       if (!var1.isRemote) {
          Entity var7 = var2.getRidingEntity();
@@ -31,19 +31,19 @@ public class Class3317<T extends Entity & Class1071> extends Item {
             if (var8.method4982()) {
                var6.damageItem(this.field18827, var2, var1x -> var1x.sendBreakAnimation(var3));
                if (!var6.isEmpty()) {
-                  return Class6794.<ItemStack>method20696(var6);
+                  return ActionResult.<ItemStack>method20696(var6);
                }
 
                ItemStack var9 = new ItemStack(Items.field37906);
                var9.setTag(var6.getTag());
-               return Class6794.<ItemStack>method20696(var9);
+               return ActionResult.<ItemStack>method20696(var9);
             }
          }
 
          var2.addStat(Stats.field40098.method172(this));
-         return Class6794.<ItemStack>method20698(var6);
+         return ActionResult.<ItemStack>method20698(var6);
       } else {
-         return Class6794.<ItemStack>method20698(var6);
+         return ActionResult.<ItemStack>method20698(var6);
       }
    }
 }

@@ -18,7 +18,7 @@ public class Class3259 extends Item implements IVanishable {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       if (var2.fishingBobber == null) {
          var1.playSound(
@@ -56,7 +56,7 @@ public class Class3259 extends Item implements IVanishable {
          );
       }
 
-      return Class6794.<ItemStack>method20700(var6, var1.isRemote());
+      return ActionResult.<ItemStack>method20700(var6, var1.isRemote());
    }
 
    @Override

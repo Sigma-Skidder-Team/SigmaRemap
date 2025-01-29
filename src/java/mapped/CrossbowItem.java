@@ -55,11 +55,11 @@ public class CrossbowItem extends Class3262 implements IVanishable {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       if (! isCharged(var6)) {
          if (var2.findAmmo(var6).isEmpty()) {
-            return Class6794.<ItemStack>method20699(var6);
+            return ActionResult.<ItemStack>method20699(var6);
          } else {
             if (! isCharged(var6)) {
                this.field18746 = false;
@@ -67,12 +67,12 @@ public class CrossbowItem extends Class3262 implements IVanishable {
                var2.setActiveHand(var3);
             }
 
-            return Class6794.<ItemStack>method20697(var6);
+            return ActionResult.<ItemStack>method20697(var6);
          }
       } else {
          method11763(var1, var2, var3, var6, method11770(var6), 1.0F);
          method11756(var6, false);
-         return Class6794.<ItemStack>method20697(var6);
+         return ActionResult.<ItemStack>method20697(var6);
       }
    }
 

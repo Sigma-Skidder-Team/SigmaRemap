@@ -8,15 +8,14 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
-public class Class3335 extends Item {
-   private static String[] field18842;
+public class EnderPearlItem extends Item {
 
-   public Class3335(Properties var1) {
+   public EnderPearlItem(Properties var1) {
       super(var1);
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       var1.playSound(
          (PlayerEntity)null,
@@ -41,6 +40,6 @@ public class Class3335 extends Item {
          var6.shrink(1);
       }
 
-      return Class6794.<ItemStack>method20700(var6, var1.isRemote());
+      return ActionResult.<ItemStack>method20700(var6, var1.isRemote());
    }
 }

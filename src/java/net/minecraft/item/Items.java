@@ -617,7 +617,7 @@ public class Items {
    public static final Item field37793 = register("scute", new Item(new Item.Properties().method17779(ItemGroup.MATERIALS)));
    public static final Item field37794 = register("flint_and_steel", new Class3281(new Item.Properties().method17777(64).method17779(ItemGroup.TOOLS)));
    public static final Item APPLE = register(
-      "apple", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39058))
+      "apple", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39058))
    );
    public static final Item BOW = register("bow", new BowItem(new Item.Properties().method17777(384).method17779(ItemGroup.COMBAT)));
    public static final Item field37797 = register("arrow", new Class3308(new Item.Properties().method17779(ItemGroup.COMBAT)));
@@ -721,7 +721,7 @@ public class Items {
    public static final Item field37835 = register("stick", new Item(new Item.Properties().method17779(ItemGroup.MATERIALS)));
    public static final Item field37836 = register("bowl", new Item(new Item.Properties().method17779(ItemGroup.MATERIALS)));
    public static final Item field37837 = register(
-      "mushroom_stew", new Class3306(new Item.Properties().method17775(1).method17779(ItemGroup.FOOD).method17774(Class8672.field39082))
+      "mushroom_stew", new Class3306(new Item.Properties().method17775(1).method17779(ItemGroup.FOOD).method17774(Foods.field39082))
    );
    public static final Item field37838 = register("string", new Class3296(Blocks.TRIPWIRE, new Item.Properties().method17779(ItemGroup.MISC)));
    public static final Item field37839 = register("feather", new Item(new Item.Properties().method17779(ItemGroup.MATERIALS)));
@@ -729,7 +729,7 @@ public class Items {
    public static final Item field37841 = register("wheat_seeds", new Class3296(Blocks.WHEAT, new Item.Properties().method17779(ItemGroup.MATERIALS)));
    public static final Item field37842 = register("wheat", new Item(new Item.Properties().method17779(ItemGroup.MATERIALS)));
    public static final Item field37843 = register(
-      "bread", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39063))
+      "bread", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39063))
    );
    public static final Item field37844 = register(
       "leather_helmet", new Class3278(Class2114.field13773, EquipmentSlotType.HEAD, new Item.Properties().method17779(ItemGroup.COMBAT))
@@ -805,18 +805,18 @@ public class Items {
    );
    public static final Item field37868 = register("flint", new Item(new Item.Properties().method17779(ItemGroup.MATERIALS)));
    public static final Item PORKCHOP = register(
-      "porkchop", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39085))
+      "porkchop", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39085))
    );
    public static final Item field37870 = register(
-      "cooked_porkchop", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39072))
+      "cooked_porkchop", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39072))
    );
    public static final Item PAINTING = register("painting", new Class3312(EntityType.PAINTING, new Item.Properties().method17779(ItemGroup.DECORATIONS)));
    public static final Item GOLDEN_APPLE = register(
-      "golden_apple", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17780(Class1978.field12887).method17774(Class8672.field39078))
+      "golden_apple", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17780(Class1978.field12887).method17774(Foods.GOLDEN_APPLE))
    );
    public static final Item ENCHANTED_GOLDEN_APPLE = register(
       "enchanted_golden_apple",
-      new Class3322(new Item.Properties().method17779(ItemGroup.FOOD).method17780(Class1978.field12888).method17774(Class8672.field39077))
+      new Class3322(new Item.Properties().method17779(ItemGroup.FOOD).method17780(Class1978.field12888).method17774(Foods.ENCHANTED_GOLDEN_APPLE))
    );
    public static final Item OAK_SIGN = register(
       "oak_sign", new Class3300(new Item.Properties().method17775(16).method17779(ItemGroup.DECORATIONS), Blocks.OAK_SIGN, Blocks.OAK_WALL_SIGN)
@@ -843,20 +843,20 @@ public class Items {
       "warped_sign", new Class3300(new Item.Properties().method17775(16).method17779(ItemGroup.DECORATIONS), Blocks.WARPED_SIGN, Blocks.WARPED_WALL_SIGN)
    );
    public static final Item BUCKET = register(
-      "bucket", new Class3287(Fluids.EMPTY, new Item.Properties().method17775(16).method17779(ItemGroup.MISC))
+      "bucket", new BucketItem(Fluids.EMPTY, new Item.Properties().method17775(16).method17779(ItemGroup.MISC))
    );
    public static final Item WATER_BUCKET = register(
-      "water_bucket", new Class3287(Fluids.WATER, new Item.Properties().method17778(BUCKET).method17775(1).method17779(ItemGroup.MISC))
+      "water_bucket", new BucketItem(Fluids.WATER, new Item.Properties().method17778(BUCKET).method17775(1).method17779(ItemGroup.MISC))
    );
    public static final Item LAVA_BUCKET = register(
-      "lava_bucket", new Class3287(Fluids.LAVA, new Item.Properties().method17778(BUCKET).method17775(1).method17779(ItemGroup.MISC))
+      "lava_bucket", new BucketItem(Fluids.LAVA, new Item.Properties().method17778(BUCKET).method17775(1).method17779(ItemGroup.MISC))
    );
    public static final Item MINECART = register(
       "minecart", new Class3282(MinecartType.MINECART, new Item.Properties().method17775(1).method17779(ItemGroup.TRANSPORTATION))
    );
    public static final Item field37886 = register("saddle", new Class3330(new Item.Properties().method17775(1).method17779(ItemGroup.TRANSPORTATION)));
    public static final Item REDSTONE_DUST = register("redstone", new Class3296(Blocks.REDSTONE_WIRE, new Item.Properties().method17779(ItemGroup.REDSTONE)));
-   public static final Item SNOWBALL = register("snowball", new Class3333(new Item.Properties().method17775(16).method17779(ItemGroup.MISC)));
+   public static final Item SNOWBALL = register("snowball", new SnowballItem(new Item.Properties().method17775(16).method17779(ItemGroup.MISC)));
    public static final Item OAK_BOAT = register(
       "oak_boat", new Class3305(Class2099.field13680, new Item.Properties().method17775(1).method17779(ItemGroup.TRANSPORTATION))
    );
@@ -888,28 +888,28 @@ public class Items {
    public static final Item FURNACE_MINECART = register(
       "furnace_minecart", new Class3282(MinecartType.FURNACE, new Item.Properties().method17775(1).method17779(ItemGroup.TRANSPORTATION))
    );
-   public static final Item EGG = register("egg", new Class3319(new Item.Properties().method17775(16).method17779(ItemGroup.MATERIALS)));
-   public static final Item COMPASS = register("compass", new Class3271(new Item.Properties().method17779(ItemGroup.TOOLS)));
+   public static final Item EGG = register("egg", new EggItem(new Item.Properties().method17775(16).method17779(ItemGroup.MATERIALS)));
+   public static final Item COMPASS = register("compass", new CompassItem(new Item.Properties().method17779(ItemGroup.TOOLS)));
    public static final Item field37906 = register("fishing_rod", new Class3259(new Item.Properties().method17777(64).method17779(ItemGroup.TOOLS)));
    public static final Item field37907 = register("clock", new Item(new Item.Properties().method17779(ItemGroup.TOOLS)));
    public static final Item field37908 = register("glowstone_dust", new Item(new Item.Properties().method17779(ItemGroup.MATERIALS)));
    public static final Item field37909 = register(
-      "cod", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39067))
+      "cod", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39067))
    );
    public static final Item field37910 = register(
-      "salmon", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39092))
+      "salmon", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39092))
    );
    public static final Item field37911 = register(
-      "tropical_fish", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39096))
+      "tropical_fish", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39096))
    );
    public static final Item field37912 = register(
-      "pufferfish", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39087))
+      "pufferfish", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39087))
    );
    public static final Item field37913 = register(
-      "cooked_cod", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39070))
+      "cooked_cod", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39070))
    );
    public static final Item field37914 = register(
-      "cooked_salmon", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39074))
+      "cooked_salmon", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39074))
    );
    public static final Item field37915 = register("ink_sac", new Item(new Item.Properties().method17779(ItemGroup.MATERIALS)));
    public static final Item field37916 = register("cocoa_beans", new Class3296(Blocks.COCOA, new Item.Properties().method17779(ItemGroup.MATERIALS)));
@@ -951,44 +951,44 @@ public class Items {
    public static final Item field37952 = register(new Class3297(Blocks.RED_BED, new Item.Properties().method17775(1).method17779(ItemGroup.DECORATIONS)));
    public static final Item field37953 = register(new Class3297(Blocks.BLACK_BED, new Item.Properties().method17775(1).method17779(ItemGroup.DECORATIONS)));
    public static final Item field37954 = register(
-      "cookie", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39075))
+      "cookie", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39075))
    );
    public static final Item field37955 = register("filled_map", new Class3316(new Item.Properties()));
    public static final Item field37956 = register("shears", new Class3331(new Item.Properties().method17777(238).method17779(ItemGroup.TOOLS)));
    public static final Item field37957 = register(
-      "melon_slice", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39081))
+      "melon_slice", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39081))
    );
    public static final Item field37958 = register(
-      "dried_kelp", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39076))
+      "dried_kelp", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39076))
    );
    public static final Item field37959 = register(
       "pumpkin_seeds", new Class3296(Blocks.PUMPKIN_STEM, new Item.Properties().method17779(ItemGroup.MATERIALS))
    );
    public static final Item field37960 = register("melon_seeds", new Class3296(Blocks.MELON_STEM, new Item.Properties().method17779(ItemGroup.MATERIALS)));
    public static final Item field37961 = register(
-      "beef", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39060))
+      "beef", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39060))
    );
    public static final Item field37962 = register(
-      "cooked_beef", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39068))
+      "cooked_beef", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39068))
    );
    public static final Item field37963 = register(
-      "chicken", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39065))
+      "chicken", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39065))
    );
    public static final Item field37964 = register(
-      "cooked_chicken", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39069))
+      "cooked_chicken", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39069))
    );
    public static final Item field37965 = register(
-      "rotten_flesh", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39091))
+      "rotten_flesh", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39091))
    );
-   public static final Item ENDER_PEARL = register("ender_pearl", new Class3335(new Item.Properties().method17775(16).method17779(ItemGroup.MISC)));
+   public static final Item ENDER_PEARL = register("ender_pearl", new EnderPearlItem(new Item.Properties().method17775(16).method17779(ItemGroup.MISC)));
    public static final Item field37967 = register("blaze_rod", new Item(new Item.Properties().method17779(ItemGroup.MATERIALS)));
    public static final Item field37968 = register("ghast_tear", new Item(new Item.Properties().method17779(ItemGroup.BREWING)));
    public static final Item field37969 = register("gold_nugget", new Item(new Item.Properties().method17779(ItemGroup.MATERIALS)));
    public static final Item field37970 = register("nether_wart", new Class3296(Blocks.NETHER_WART, new Item.Properties().method17779(ItemGroup.MATERIALS)));
-   public static final Item field37971 = register("potion", new Class3323(new Item.Properties().method17775(1).method17779(ItemGroup.BREWING)));
+   public static final Item field37971 = register("potion", new PotionItem(new Item.Properties().method17775(1).method17779(ItemGroup.BREWING)));
    public static final Item field37972 = register("glass_bottle", new Class3328(new Item.Properties().method17779(ItemGroup.BREWING)));
    public static final Item field37973 = register(
-      "spider_eye", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39093))
+      "spider_eye", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39093))
    );
    public static final Item field37974 = register("fermented_spider_eye", new Item(new Item.Properties().method17779(ItemGroup.BREWING)));
    public static final Item field37975 = register("blaze_powder", new Item(new Item.Properties().method17779(ItemGroup.BREWING)));
@@ -1199,20 +1199,20 @@ public class Items {
    public static final Item ITEM_FRAME = register("item_frame", new Class3313(new Item.Properties().method17779(ItemGroup.DECORATIONS)));
    public static final Item field38051 = register(Blocks.FLOWER_POT, ItemGroup.DECORATIONS);
    public static final Item field38052 = register(
-      "carrot", new Class3296(Blocks.CARROTS, new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39064))
+      "carrot", new Class3296(Blocks.CARROTS, new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39064))
    );
    public static final Item field38053 = register(
-      "potato", new Class3296(Blocks.POTATOES, new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39086))
+      "potato", new Class3296(Blocks.POTATOES, new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39086))
    );
    public static final Item field38054 = register(
-      "baked_potato", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39059))
+      "baked_potato", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39059))
    );
    public static final Item field38055 = register(
-      "poisonous_potato", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39084))
+      "poisonous_potato", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39084))
    );
    public static final Item field38056 = register("map", new Class3315(new Item.Properties().method17779(ItemGroup.MISC)));
    public static final Item field38057 = register(
-      "golden_carrot", new Item(new Item.Properties().method17779(ItemGroup.BREWING).method17774(Class8672.field39079))
+      "golden_carrot", new Item(new Item.Properties().method17779(ItemGroup.BREWING).method17774(Foods.field39079))
    );
    public static final Item field38058 = register(
       new Class3298(Blocks.SKELETON_SKULL, Blocks.SKELETON_WALL_SKULL, new Item.Properties().method17779(ItemGroup.DECORATIONS).method17780(Class1978.field12886))
@@ -1242,7 +1242,7 @@ public class Items {
       "nether_star", new Class3332(new Item.Properties().method17779(ItemGroup.MATERIALS).method17780(Class1978.field12886))
    );
    public static final Item field38067 = register(
-      "pumpkin_pie", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39088))
+      "pumpkin_pie", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39088))
    );
    public static final Item field38068 = register("firework_rocket", new Class3318(new Item.Properties().method17779(ItemGroup.MISC)));
    public static final Item field38069 = register("firework_star", new Class3320(new Item.Properties().method17779(ItemGroup.MISC)));
@@ -1258,13 +1258,13 @@ public class Items {
    public static final Item field38075 = register("prismarine_shard", new Item(new Item.Properties().method17779(ItemGroup.MATERIALS)));
    public static final Item field38076 = register("prismarine_crystals", new Item(new Item.Properties().method17779(ItemGroup.MATERIALS)));
    public static final Item field38077 = register(
-      "rabbit", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39089))
+      "rabbit", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39089))
    );
    public static final Item field38078 = register(
-      "cooked_rabbit", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39073))
+      "cooked_rabbit", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39073))
    );
    public static final Item field38079 = register(
-      "rabbit_stew", new Class3306(new Item.Properties().method17775(1).method17779(ItemGroup.FOOD).method17774(Class8672.field39090))
+      "rabbit_stew", new Class3306(new Item.Properties().method17775(1).method17779(ItemGroup.FOOD).method17774(Foods.field39090))
    );
    public static final Item field38080 = register("rabbit_foot", new Item(new Item.Properties().method17779(ItemGroup.BREWING)));
    public static final Item field38081 = register("rabbit_hide", new Item(new Item.Properties().method17779(ItemGroup.MATERIALS)));
@@ -1285,10 +1285,10 @@ public class Items {
    public static final Item field38088 = register("name_tag", new Class3327(new Item.Properties().method17779(ItemGroup.TOOLS)));
    public static final Item COMMAND_BLOCK_MINECART = register("command_block_minecart", new Class3282(MinecartType.COMMAND_BLOCK, new Item.Properties().method17775(1)));
    public static final Item field38090 = register(
-      "mutton", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39083))
+      "mutton", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39083))
    );
    public static final Item field38091 = register(
-      "cooked_mutton", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39071))
+      "cooked_mutton", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39071))
    );
    public static final Item field38092 = register(
       "white_banner", new Class3301(Blocks.WHITE_BANNER, Blocks.WHITE_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.DECORATIONS))
@@ -1342,17 +1342,17 @@ public class Items {
       "end_crystal", new Class3340(new Item.Properties().method17779(ItemGroup.DECORATIONS).method17780(Class1978.field12887))
    );
    public static final Item field38109 = register(
-      "chorus_fruit", new Class3338(new Item.Properties().method17779(ItemGroup.MATERIALS).method17774(Class8672.field39066))
+      "chorus_fruit", new Class3338(new Item.Properties().method17779(ItemGroup.MATERIALS).method17774(Foods.field39066))
    );
    public static final Item field38110 = register("popped_chorus_fruit", new Item(new Item.Properties().method17779(ItemGroup.MATERIALS)));
    public static final Item field38111 = register(
-      "beetroot", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39061))
+      "beetroot", new Item(new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39061))
    );
    public static final Item field38112 = register(
       "beetroot_seeds", new Class3296(Blocks.BEETROOTS, new Item.Properties().method17779(ItemGroup.MATERIALS))
    );
    public static final Item field38113 = register(
-      "beetroot_soup", new Class3306(new Item.Properties().method17775(1).method17779(ItemGroup.FOOD).method17774(Class8672.field39062))
+      "beetroot_soup", new Class3306(new Item.Properties().method17775(1).method17779(ItemGroup.FOOD).method17774(Foods.field39062))
    );
    public static final Item field38114 = register(
       "dragon_breath", new Item(new Item.Properties().method17778(field37972).method17779(ItemGroup.BREWING).method17780(Class1978.field12886))
@@ -1448,7 +1448,7 @@ public class Items {
    public static final Item CROSSBOW = register(
       "crossbow", new CrossbowItem(new Item.Properties().method17775(1).method17779(ItemGroup.COMBAT).method17777(326))
    );
-   public static final Item field38149 = register("suspicious_stew", new Class3284(new Item.Properties().method17775(1).method17774(Class8672.field39094)));
+   public static final Item field38149 = register("suspicious_stew", new Class3284(new Item.Properties().method17775(1).method17774(Foods.field39094)));
    public static final Item field38150 = register(Blocks.LOOM, ItemGroup.DECORATIONS);
    public static final Item field38151 = register(
       "flower_banner_pattern", new Class3286(Class2154.field14120, new Item.Properties().method17775(1).method17779(ItemGroup.MISC))
@@ -1485,7 +1485,7 @@ public class Items {
    public static final Item field38168 = register(Blocks.LANTERN, ItemGroup.DECORATIONS);
    public static final Item field38169 = register(Blocks.SOUL_LANTERN, ItemGroup.DECORATIONS);
    public static final Item field38170 = register(
-      "sweet_berries", new Class3296(Blocks.SWEET_BERRY_BUSH, new Item.Properties().method17779(ItemGroup.FOOD).method17774(Class8672.field39095))
+      "sweet_berries", new Class3296(Blocks.SWEET_BERRY_BUSH, new Item.Properties().method17779(ItemGroup.FOOD).method17774(Foods.field39095))
    );
    public static final Item field38171 = register(Blocks.CAMPFIRE, ItemGroup.DECORATIONS);
    public static final Item field38172 = register(Blocks.SOUL_CAMPFIRE, ItemGroup.DECORATIONS);
@@ -1495,7 +1495,7 @@ public class Items {
    public static final Item field38176 = register(Blocks.BEEHIVE, ItemGroup.DECORATIONS);
    public static final Item field38177 = register(
       "honey_bottle",
-      new Class3307(new Item.Properties().method17778(field37972).method17774(Class8672.field39080).method17779(ItemGroup.FOOD).method17775(16))
+      new Class3307(new Item.Properties().method17778(field37972).method17774(Foods.field39080).method17779(ItemGroup.FOOD).method17775(16))
    );
    public static final Item field38178 = register(Blocks.HONEY_BLOCK, ItemGroup.DECORATIONS);
    public static final Item field38179 = register(Blocks.HONEYCOMB_BLOCK, ItemGroup.DECORATIONS);

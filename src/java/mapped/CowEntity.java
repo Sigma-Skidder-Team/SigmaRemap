@@ -67,7 +67,7 @@ public class CowEntity extends AnimalEntity {
       ItemStack var5 = var1.getHeldItem(var2);
       if (var5.getItem() == Items.BUCKET && !this.isChild()) {
          var1.playSound(SoundEvents.field26480, 1.0F, 1.0F);
-         ItemStack var6 = Class8482.method29979(var5, var1, Items.MILK_BUCKET.method11742());
+         ItemStack var6 = DrinkHelper.method29979(var5, var1, Items.MILK_BUCKET.method11742());
          var1.setHeldItem(var2, var6);
          return ActionResultType.method9002(this.world.isRemote);
       } else {

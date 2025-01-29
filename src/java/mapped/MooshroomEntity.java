@@ -79,7 +79,7 @@ public class MooshroomEntity extends CowEntity implements Class1020 {
             this.field5953 = 0;
          }
 
-         ItemStack var13 = Class8482.method29978(var5, var1, var12, false);
+         ItemStack var13 = DrinkHelper.method29978(var5, var1, var12, false);
          var1.setHeldItem(var2, var13);
          SoundEvent var9;
          if (!var11) {

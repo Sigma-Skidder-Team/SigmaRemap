@@ -117,14 +117,14 @@ public class BowItem extends Class3262 implements IVanishable {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       boolean var7 = !var2.findAmmo(var6).isEmpty();
       if (!var2.abilities.isCreativeMode && !var7) {
-         return Class6794.<ItemStack>method20699(var6);
+         return ActionResult.<ItemStack>method20699(var6);
       } else {
          var2.setActiveHand(var3);
-         return Class6794.<ItemStack>method20697(var6);
+         return ActionResult.<ItemStack>method20697(var6);
       }
    }
 

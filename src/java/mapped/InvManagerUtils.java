@@ -212,18 +212,18 @@ public class InvManagerUtils {
       if (var0 != null) {
          Item var3 = var0.getItem();
          if (!(var3 instanceof SwordItem)) {
-            if (!(var3 instanceof Class3287)) {
-               if (!(var3 instanceof Class3271)) {
+            if (!(var3 instanceof BucketItem)) {
+               if (!(var3 instanceof CompassItem)) {
                   if (!(var3 instanceof ToolItem)) {
                      if (!(var3 instanceof BowItem)) {
-                        if (!(var3 instanceof Class3323)) {
+                        if (!(var3 instanceof PotionItem)) {
                            if (!(var3 instanceof BlockItem)) {
-                              if (var0.method32184() && var0.getItem().method11745() == Class8672.field39078) {
+                              if (var0.isFood() && var0.getItem().getFood() == Foods.GOLDEN_APPLE) {
                                  return 1.0F;
-                              } else if (!(var3 instanceof Class3335)) {
-                                 if (!var0.method32184()) {
-                                    if (!(var3 instanceof Class3319)) {
-                                       return !(var3 instanceof Class3333) ? 0.0F : 0.25F;
+                              } else if (!(var3 instanceof EnderPearlItem)) {
+                                 if (!var0.isFood()) {
+                                    if (!(var3 instanceof EggItem)) {
+                                       return !(var3 instanceof SnowballItem) ? 0.0F : 0.25F;
                                     } else {
                                        return 0.25F;
                                     }
@@ -293,7 +293,7 @@ public class InvManagerUtils {
 
    public static List<EffectInstance> getPotionEffects(ItemStack var0) {
       if (var0 != null) {
-         return var0.getItem() instanceof Class3323 ? PotionUtils.getEffectsFromStack(var0) : null;
+         return var0.getItem() instanceof PotionItem ? PotionUtils.getEffectsFromStack(var0) : null;
       } else {
          return null;
       }
@@ -363,7 +363,7 @@ public class InvManagerUtils {
    }
 
    public static boolean method25874(ItemStack var0) {
-      if (var0 != null && var0.getItem() instanceof Class3323) {
+      if (var0 != null && var0.getItem() instanceof PotionItem) {
          for (EffectInstance var4 : getPotionEffects(var0)) {
             if (var4.getPotion() == Effects.POISON
                || var4.getPotion() == Effects.INSTANT_DAMAGE

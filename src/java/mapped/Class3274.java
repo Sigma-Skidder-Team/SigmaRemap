@@ -49,7 +49,7 @@ public class Class3274 extends Item {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
-      return Class8482.method29977(var1, var2, var3);
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+      return DrinkHelper.method29977(var1, var2, var3);
    }
 }

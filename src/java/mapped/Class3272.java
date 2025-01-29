@@ -114,17 +114,17 @@ public class Class3272 extends Item implements IVanishable {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+   public ActionResult<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       if (var6.method32117() < var6.method32119() - 1) {
          if (EnchantmentHelper.method26337(var6) > 0 && !var2.method3253()) {
-            return Class6794.<ItemStack>method20699(var6);
+            return ActionResult.<ItemStack>method20699(var6);
          } else {
             var2.setActiveHand(var3);
-            return Class6794.<ItemStack>method20697(var6);
+            return ActionResult.<ItemStack>method20697(var6);
          }
       } else {
-         return Class6794.<ItemStack>method20699(var6);
+         return ActionResult.<ItemStack>method20699(var6);
       }
    }
 

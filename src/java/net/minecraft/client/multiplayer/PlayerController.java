@@ -293,7 +293,7 @@ public class PlayerController {
          ItemStack var6 = var1.getHeldItem(var3);
          if (!var1.method2976().method19635(var6.getItem())) {
             int var7 = var6.getCount();
-            Class6794 var8 = var6.method32110(var2, var1, var3);
+            ActionResult var8 = var6.method32110(var2, var1, var3);
             ItemStack var9 = (ItemStack) var8.method20695();
             if (var9 != var6) {
                var1.setHeldItem(var3, var9);

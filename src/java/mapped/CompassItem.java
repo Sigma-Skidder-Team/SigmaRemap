@@ -20,10 +20,10 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 
-public class Class3271 extends Item implements IVanishable {
+public class CompassItem extends Item implements IVanishable {
    private static final Logger field18771 = LogManager.getLogger();
 
-   public Class3271(Properties var1) {
+   public CompassItem(Properties var1) {
       super(var1);
    }
 
