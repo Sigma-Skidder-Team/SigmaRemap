@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.util.TextureUtil;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthResult;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticationException;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticator;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import mapped.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Base64OutputStream;

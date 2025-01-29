@@ -9,11 +9,11 @@ import java.util.ArrayList;
 public class ResourceLoader {
    private static ArrayList field44889 = new ArrayList();
 
-   public static void method37244(Class7904 var0) {
+   public static void method37244(PathNormalizer var0) {
       field44889.add(var0);
    }
 
-   public static void method37245(Class7904 var0) {
+   public static void method37245(PathNormalizer var0) {
       field44889.remove(var0);
    }
 
@@ -25,7 +25,7 @@ public class ResourceLoader {
       InputStream var3 = null;
 
       for (int var4 = 0; var4 < field44889.size(); var4++) {
-         Class7904 var5 = (Class7904)field44889.get(var4);
+         PathNormalizer var5 = (PathNormalizer)field44889.get(var4);
          var3 = var5.method26476(var0);
          if (var3 != null) {
             break;
@@ -43,7 +43,7 @@ public class ResourceLoader {
       Object var3 = null;
 
       for (int var4 = 0; var4 < field44889.size(); var4++) {
-         Class7904 var5 = (Class7904)field44889.get(var4);
+         PathNormalizer var5 = (PathNormalizer)field44889.get(var4);
          var3 = var5.method26475(var0);
          if (var3 != null) {
             return true;
@@ -57,7 +57,7 @@ public class ResourceLoader {
       URL var3 = null;
 
       for (int var4 = 0; var4 < field44889.size(); var4++) {
-         Class7904 var5 = (Class7904)field44889.get(var4);
+         PathNormalizer var5 = (PathNormalizer)field44889.get(var4);
          var3 = var5.method26475(var0);
          if (var3 != null) {
             break;
@@ -72,7 +72,7 @@ public class ResourceLoader {
    }
 
    static {
-      field44889.add(new Class7903());
-      field44889.add(new Class7905(new File(".")));
+      field44889.add(new WindowsPathNormalizer());
+      field44889.add(new FileNormalizerThingy(new File(".")));
    }
 }

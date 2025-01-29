@@ -5,6 +5,7 @@ package mapped;
 import lol.*;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.opengl.ImageData;
+import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.renderer.Renderer;
 import org.newdawn.slick.opengl.renderer.SGL;
 import org.newdawn.slick.util.Log;
@@ -297,16 +298,16 @@ public class Image implements Renderable {
    public void method23529(float var1, float var2, float var3, float var4) {
       this.method23524();
       if (this.field31625 != null) {
-         this.field31625[0].method10392();
+         this.field31625[0].bind();
          field31605.glTexCoord2f(this.field31614, this.field31615);
          field31605.glVertex3f(var1, var2, 0.0F);
-         this.field31625[3].method10392();
+         this.field31625[3].bind();
          field31605.glTexCoord2f(this.field31614, this.field31615 + this.field31613);
          field31605.glVertex3f(var1, var2 + var4, 0.0F);
-         this.field31625[2].method10392();
+         this.field31625[2].bind();
          field31605.glTexCoord2f(this.field31614 + this.field31612, this.field31615 + this.field31613);
          field31605.glVertex3f(var1 + var3, var2 + var4, 0.0F);
-         this.field31625[1].method10392();
+         this.field31625[1].bind();
          field31605.glTexCoord2f(this.field31614 + this.field31612, this.field31615);
          field31605.glVertex3f(var1 + var3, var2, 0.0F);
       } else {
@@ -371,7 +372,7 @@ public class Image implements Renderable {
       }
 
       if (var5 != null) {
-         var5.method10392();
+         var5.bind();
       }
 
       this.field31609.bind();
@@ -413,7 +414,7 @@ public class Image implements Renderable {
       }
 
       if (var5 != null) {
-         var5.method10392();
+         var5.bind();
       }
 
       this.field31609.bind();
@@ -457,7 +458,7 @@ public class Image implements Renderable {
 
    public void method23544(float var1, float var2, float var3, float var4, Color var5) {
       this.method23524();
-      var5.method10392();
+      var5.bind();
       this.field31609.bind();
       if (field31605.canSecondaryColor()) {
          field31605.glEnable(33880);
@@ -552,7 +553,7 @@ public class Image implements Renderable {
          var9.field16458 = var9.field16458 * this.field31617;
       }
 
-      var9.method10392();
+      var9.bind();
       this.field31609.bind();
       field31605.glTranslatef(var1, var2, 0.0F);
       if (this.field31616 != 0.0F) {
@@ -579,7 +580,7 @@ public class Image implements Renderable {
 
    public void method23556(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, Color var9) {
       if (var9 != null) {
-         var9.method10392();
+         var9.bind();
       }
 
       float var12 = var3 - var1;
@@ -601,7 +602,7 @@ public class Image implements Renderable {
    }
 
    public void method23557(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8) {
-      Color.field16442.method10392();
+      Color.field16442.bind();
       this.field31609.bind();
       field31605.glTranslatef(var1, var2, 0.0F);
       if (this.field31616 != 0.0F) {
@@ -696,7 +697,7 @@ public class Image implements Renderable {
       if (field31606 == null) {
          field31606 = this;
          this.method23524();
-         Color.field16442.method10392();
+         Color.field16442.bind();
          this.field31609.bind();
          field31605.glBegin(7);
       } else {

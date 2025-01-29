@@ -93,7 +93,7 @@ public class Color implements Serializable {
       return new Color(Integer.decode(var0));
    }
 
-   public void method10392() {
+   public void bind() {
       this.field16440.glColor4f(this.field16455, this.field16456, this.field16457, this.field16458);
    }
 

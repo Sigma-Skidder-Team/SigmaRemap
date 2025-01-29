@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 

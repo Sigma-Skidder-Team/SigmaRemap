@@ -3,6 +3,7 @@ package mapped;
 import lol.*;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Font;
+import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.renderer.Renderer;
 import org.newdawn.slick.opengl.renderer.SGL;
 
@@ -247,7 +248,7 @@ public class Class7431 implements Font {
          var1 -= (float)this.field31965;
          var2 -= (float)this.field31964;
          String var9 = var3.substring(var5, var6);
-         var4.method10392();
+         var4.bind();
          TextureImpl.bindNone();
          Class8741 var10 = null;
          if (this.field31973 && this.field31962.isEmpty()) {

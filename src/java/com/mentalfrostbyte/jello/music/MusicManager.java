@@ -21,7 +21,7 @@ import com.sapher.youtubedl.YoutubeDLResponse;
 import com.sun.jna.platform.win32.Advapi32Util;
 import com.sun.jna.platform.win32.WinReg;
 import com.mentalfrostbyte.jello.util.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Util;

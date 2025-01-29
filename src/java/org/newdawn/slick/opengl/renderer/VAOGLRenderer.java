@@ -1,4 +1,4 @@
-package lol;
+package org.newdawn.slick.opengl.renderer;
 
 import java.nio.Buffer;
 import java.nio.DoubleBuffer;
@@ -6,7 +6,6 @@ import java.nio.FloatBuffer;
 
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
-import org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer;
 
 public class VAOGLRenderer extends ImmediateModeOGLRenderer {
    private static final int TOLERANCE = 20;

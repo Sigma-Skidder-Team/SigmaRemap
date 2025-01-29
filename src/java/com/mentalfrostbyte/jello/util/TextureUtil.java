@@ -3,6 +3,7 @@ package com.mentalfrostbyte.jello.util;
 import lol.*;
 import org.lwjgl.opengl.GL11;
 import org.newdawn.slick.opengl.ImageIOImageData;
+import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.renderer.Renderer;
 
 import java.awt.image.BufferedImage;

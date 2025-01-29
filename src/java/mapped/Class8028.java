@@ -1,7 +1,7 @@
 package mapped;
 
 import org.newdawn.slick.opengl.renderer.Renderer;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import lol.TextureImpl;
 import org.lwjgl.opengl.GL11;
 

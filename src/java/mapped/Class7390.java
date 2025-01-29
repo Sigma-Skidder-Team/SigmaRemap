@@ -9,6 +9,8 @@ import lol.*;
 import org.lwjgl.BufferUtils;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.opengl.ImageDataFactory;
+import org.newdawn.slick.opengl.LoadableImageData;
+import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.renderer.Renderer;
 import org.newdawn.slick.opengl.renderer.SGL;
 
@@ -59,7 +61,7 @@ public class Class7390 extends Image {
    private void method23604(String var1, int var2, int var3) throws Class2451 {
       try {
          LoadableImageData var6 = ImageDataFactory.getImageDataFor(var1);
-         ByteBuffer var7 = var6.method21468(ResourceLoader.getResourceAsStream(var1), false, null);
+         ByteBuffer var7 = var6.loadImage(ResourceLoader.getResourceAsStream(var1), false, null);
          this.method23605(var6, var7, var2, var3);
       } catch (IOException var8) {
          throw new Class2451("Failed to load: " + var1, var8);

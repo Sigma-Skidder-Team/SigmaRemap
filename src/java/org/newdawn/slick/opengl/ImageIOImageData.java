@@ -1,7 +1,5 @@
 package org.newdawn.slick.opengl;
 
-import lol.LoadableImageData;
-
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.color.ColorSpace;
@@ -55,23 +53,23 @@ public class ImageIOImageData implements LoadableImageData {
    }
 
    @Override
-   public ByteBuffer method21467(InputStream var1) throws IOException {
-      return this.method21468(var1, true, null);
+   public ByteBuffer loadImage(InputStream fis) throws IOException {
+      return this.loadImage(fis, true, null);
    }
 
    @Override
-   public ByteBuffer method21468(InputStream var1, boolean var2, int[] var3) throws IOException {
-      return this.loadImage(var1, var2, false, var3);
+   public ByteBuffer loadImage(InputStream fis, boolean flipped, int[] transparent) throws IOException {
+      return this.loadImage(fis, flipped, false, transparent);
    }
 
    @Override
-   public ByteBuffer loadImage(InputStream var1, boolean var2, boolean var3, int[] var4) throws IOException {
-      if (var4 != null) {
-         var3 = true;
+   public ByteBuffer loadImage(InputStream fis, boolean flipped, boolean forcedAlpha, int[] transparent) throws IOException {
+      if (transparent != null) {
+         forcedAlpha = true;
       }
 
-      BufferedImage var7 = ImageIO.read(var1);
-      return this.method21470(var7, var2, var3, var4);
+      BufferedImage var7 = ImageIO.read(fis);
+      return this.method21470(var7, flipped, forcedAlpha, transparent);
    }
 
    public ByteBuffer method21470(BufferedImage var1, boolean var2, boolean var3, int[] var4) {
@@ -165,7 +163,7 @@ public class ImageIOImageData implements LoadableImageData {
    }
 
    @Override
-   public void method21466(boolean var1) {
-      this.field30148 = var1;
+   public void configureEdging(boolean edging) {
+      this.field30148 = edging;
    }
 }

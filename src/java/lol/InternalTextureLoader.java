@@ -16,6 +16,8 @@ import mapped.*;
 import org.lwjgl.BufferUtils;
 import org.newdawn.slick.opengl.ImageData;
 import org.newdawn.slick.opengl.ImageDataFactory;
+import org.newdawn.slick.opengl.LoadableImageData;
+import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.renderer.Renderer;
 import org.newdawn.slick.opengl.renderer.SGL;
 
@@ -141,7 +143,7 @@ public class InternalTextureLoader {
 
    private TextureImpl method35796(InputStream var1, String var2, int var3, int var4, int var5, boolean var6, int[] var7) throws IOException {
       LoadableImageData var10 = ImageDataFactory.getImageDataFor(var2);
-      ByteBuffer var11 = var10.method21468(new BufferedInputStream(var1), var6, var7);
+      ByteBuffer var11 = var10.loadImage(new BufferedInputStream(var1), var6, var7);
       int var12 = method35789();
       TextureImpl var13 = new TextureImpl(var2, var3, var12);
       field43633.glBindTexture(var3, var12);

@@ -1,6 +1,6 @@
 package mapped;
 
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.Color;
 
 import java.io.IOException;

@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import org.lwjgl.opengl.GL11;
 
 public class PNGIconButton extends ButtonPanel {

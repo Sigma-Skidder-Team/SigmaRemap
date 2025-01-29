@@ -81,7 +81,7 @@ public class Class7301 {
          }
       }
 
-      Color.field16442.method10392();
+      Color.field16442.bind();
       this.field31293.method23522();
       int var12 = 0;
       Iterator var13 = this.method23075(var1);

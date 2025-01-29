@@ -3,7 +3,6 @@ package org.newdawn.slick.opengl;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 
-import lol.LoadableImageData;
 import mapped.PNGImageData;
 import mapped.TGAImageData;
 import org.newdawn.slick.util.Log;

@@ -8,7 +8,7 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-import lol.LoadableImageData;
+import org.newdawn.slick.opengl.LoadableImageData;
 import org.lwjgl.BufferUtils;
 
 public class TGAImageData implements LoadableImageData {
@@ -49,26 +49,26 @@ public class TGAImageData implements LoadableImageData {
    }
 
    @Override
-   public ByteBuffer method21467(InputStream var1) throws IOException {
-      return this.method21468(var1, true, null);
+   public ByteBuffer loadImage(InputStream fis) throws IOException {
+      return this.loadImage(fis, true, null);
    }
 
    @Override
-   public ByteBuffer method21468(InputStream var1, boolean var2, int[] var3) throws IOException {
-      return this.loadImage(var1, var2, false, var3);
+   public ByteBuffer loadImage(InputStream fis, boolean flipped, int[] transparent) throws IOException {
+      return this.loadImage(fis, flipped, false, transparent);
    }
 
    @Override
-   public ByteBuffer loadImage(InputStream var1, boolean var2, boolean var3, int[] var4) throws IOException {
-      if (var4 != null) {
-         var3 = true;
+   public ByteBuffer loadImage(InputStream fis, boolean flipped, boolean forcedAlpha, int[] transparent) throws IOException {
+      if (transparent != null) {
+         forcedAlpha = true;
       }
 
       byte var7 = 0;
       byte var8 = 0;
       byte var9 = 0;
       byte var10 = 0;
-      BufferedInputStream var11 = new BufferedInputStream(var1, 100000);
+      BufferedInputStream var11 = new BufferedInputStream(fis, 100000);
       DataInputStream var12 = new DataInputStream(var11);
       short var13 = (short)var12.read();
       short var14 = (short)var12.read();
@@ -83,14 +83,14 @@ public class TGAImageData implements LoadableImageData {
          this.field30154 = this.method21474(var12.readShort());
          this.field30155 = (short)var12.read();
          if (this.field30155 == 32) {
-            var3 = false;
+            forcedAlpha = false;
          }
 
          this.field30151 = this.method21475(this.field30153);
          this.field30152 = this.method21475(this.field30154);
          short var21 = (short)var12.read();
          if ((var21 & 32) == 0) {
-            var2 = !var2;
+            flipped = !flipped;
          }
 
          if (var13 > 0) {
@@ -98,7 +98,7 @@ public class TGAImageData implements LoadableImageData {
          }
 
          byte[] var22 = null;
-         if (this.field30155 != 32 && !var3) {
+         if (this.field30155 != 32 && !forcedAlpha) {
             if (this.field30155 != 24) {
                throw new RuntimeException("Only 24 and 32 bit TGAs are supported");
             }
@@ -111,13 +111,13 @@ public class TGAImageData implements LoadableImageData {
 
          if (this.field30155 != 24) {
             if (this.field30155 == 32) {
-               if (!var2) {
+               if (!flipped) {
                   for (int var23 = 0; var23 < this.field30154; var23++) {
                      for (int var24 = 0; var24 < this.field30153; var24++) {
                         var9 = var12.readByte();
                         var8 = var12.readByte();
                         var7 = var12.readByte();
-                        if (!var3) {
+                        if (!forcedAlpha) {
                            var10 = var12.readByte();
                         } else {
                            var10 = -1;
@@ -149,7 +149,7 @@ public class TGAImageData implements LoadableImageData {
                         var9 = var12.readByte();
                         var8 = var12.readByte();
                         var7 = var12.readByte();
-                        if (!var3) {
+                        if (!forcedAlpha) {
                            var10 = var12.readByte();
                         } else {
                            var10 = -1;
@@ -169,7 +169,7 @@ public class TGAImageData implements LoadableImageData {
                   }
                }
             }
-         } else if (!var2) {
+         } else if (!flipped) {
             for (int var44 = 0; var44 < this.field30154; var44++) {
                for (int var49 = 0; var49 < this.field30153; var49++) {
                   var9 = var12.readByte();
@@ -195,13 +195,13 @@ public class TGAImageData implements LoadableImageData {
             }
          }
 
-         var1.close();
-         if (var4 != null) {
+         fis.close();
+         if (transparent != null) {
             for (int var46 = 0; var46 < var22.length; var46 += 4) {
                boolean var51 = true;
 
                for (int var56 = 0; var56 < 3; var56++) {
-                  if ((var22)[var46 + var56] != var4[var56]) {
+                  if ((var22)[var46 + var56] != transparent[var56]) {
                      var51 = false;
                   }
                }
@@ -260,6 +260,6 @@ public class TGAImageData implements LoadableImageData {
    }
 
    @Override
-   public void method21466(boolean var1) {
+   public void configureEdging(boolean edging) {
    }
 }

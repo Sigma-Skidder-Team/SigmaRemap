@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.gui.screens.JelloClickGUI;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;

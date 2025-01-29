@@ -227,7 +227,7 @@ public class Class9219 {
       if (var1 != null) {
          this.field42433 = new Color(var1);
          this.method34591();
-         this.field42433.method10392();
+         this.field42433.bind();
          this.method34592();
       }
    }
@@ -267,7 +267,7 @@ public class Class9219 {
       }
 
       this.method34591();
-      this.field42433.method10392();
+      this.field42433.bind();
       TextureImpl.bindNone();
       field42420.start();
       field42420.method23242(var1, var2);
@@ -280,7 +280,7 @@ public class Class9219 {
       this.method34591();
       TextureImpl.bindNone();
       Class9247.method34776(var1, var2);
-      this.field42433.method10392();
+      this.field42433.bind();
       this.method34592();
    }
 
@@ -288,14 +288,14 @@ public class Class9219 {
       this.method34591();
       TextureImpl.bindNone();
       Class9247.method34784(var1, var2);
-      this.field42433.method10392();
+      this.field42433.bind();
       this.method34592();
    }
 
    public void method34612(Class2520 var1) {
       this.method34591();
       TextureImpl.bindNone();
-      this.field42433.method10392();
+      this.field42433.bind();
       Class9247.method34775(var1);
       this.method34592();
    }
@@ -303,7 +303,7 @@ public class Class9219 {
    public void method34613(Class2520 var1) {
       this.method34591();
       TextureImpl.bindNone();
-      this.field42433.method10392();
+      this.field42433.bind();
       Class9247.method34778(var1);
       this.method34592();
    }
@@ -331,7 +331,7 @@ public class Class9219 {
    public void method34618(Class2520 var1, Image var2, float var3, float var4, boolean var5) {
       this.method34591();
       TextureImpl.bindNone();
-      this.field42433.method10392();
+      this.field42433.bind();
       if (var5) {
          Class9247.method34783(var1, var2, var3, var4);
       }
@@ -342,7 +342,7 @@ public class Class9219 {
    public void method34619(Class2520 var1, Image var2, float var3, float var4, Class8518 var5) {
       this.method34591();
       TextureImpl.bindNone();
-      this.field42433.method10392();
+      this.field42433.bind();
       Class9247.method34785(var1, var2, var3, var4, var5);
       this.method34592();
    }
@@ -447,7 +447,7 @@ public class Class9219 {
    public void method34630(float var1, float var2, float var3, float var4) {
       this.method34591();
       TextureImpl.bindNone();
-      this.field42433.method10392();
+      this.field42433.bind();
       field42419.glBegin(7);
       field42419.glVertex2f(var1, var2);
       field42419.glVertex2f(var1 + var3, var2);
@@ -472,7 +472,7 @@ public class Class9219 {
    public void method34634(float var1, float var2, float var3, float var4, int var5, float var6, float var7) {
       this.method34591();
       TextureImpl.bindNone();
-      this.field42433.method10392();
+      this.field42433.bind();
 
       while (var7 < var6) {
          var7 += 360.0F;
@@ -513,7 +513,7 @@ public class Class9219 {
    public void method34638(float var1, float var2, float var3, float var4, int var5, float var6, float var7) {
       this.method34591();
       TextureImpl.bindNone();
-      this.field42433.method10392();
+      this.field42433.bind();
 
       while (var7 < var6) {
          var7 += 360.0F;
@@ -666,7 +666,7 @@ public class Class9219 {
    public void method34649(Image var1, float var2, float var3, Color var4) {
       this.method34591();
       var1.method23528(var2, var3, var4);
-      this.field42433.method10392();
+      this.field42433.bind();
       this.method34592();
    }
 
@@ -677,7 +677,7 @@ public class Class9219 {
    public void method34651(Class7389 var1, float var2, float var3, Color var4) {
       this.method34591();
       var1.method23528(var2, var3, var4);
-      this.field42433.method10392();
+      this.field42433.bind();
       this.method34592();
    }
 
@@ -688,7 +688,7 @@ public class Class9219 {
    public void method34653(Image var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9) {
       this.method34591();
       var1.method23553(var2, var3, var4, var5, var6, var7, var8, var9);
-      this.field42433.method10392();
+      this.field42433.bind();
       this.method34592();
    }
 
@@ -734,7 +734,7 @@ public class Class9219 {
    public void method34659(Image var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, Color var10) {
       this.method34591();
       var1.method23554(var2, var3, var4, var5, var6, var7, var8, var9, var10);
-      this.field42433.method10392();
+      this.field42433.bind();
       this.method34592();
    }
 
@@ -760,9 +760,9 @@ public class Class9219 {
       this.method34591();
       TextureImpl.bindNone();
       field42419.glBegin(1);
-      var3.method10392();
+      var3.bind();
       field42419.glVertex2f(var1, var2);
-      var6.method10392();
+      var6.bind();
       field42419.glVertex2f(var4, var5);
       field42419.glEnd();
       this.method34592();

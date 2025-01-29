@@ -5,7 +5,7 @@ import java.nio.IntBuffer;
 
 import lol.InternalTextureLoader;
 import org.newdawn.slick.util.Log;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import org.lwjgl.opengl.GL11;

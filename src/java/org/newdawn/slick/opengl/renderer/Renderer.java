@@ -1,7 +1,5 @@
 package org.newdawn.slick.opengl.renderer;
 
-import lol.*;
-
 public class Renderer {
    public static final int field35354 = 1;
    public static final int field35355 = 2;

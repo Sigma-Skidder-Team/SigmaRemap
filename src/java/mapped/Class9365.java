@@ -213,7 +213,7 @@ public class Class9365 {
             this.field43448.glBlendFunc(770, 771);
          }
 
-         Color.field16442.method10392();
+         Color.field16442.bind();
          this.field43448.glTranslatef(-var1, -var2, 0.0F);
       }
    }

@@ -53,7 +53,7 @@ public class Class9170 {
                   var9 = new Class6881(var8, var1.method25467(var4).method18493(), var7);
                }
 
-               Color.field16442.method10392();
+               Color.field16442.bind();
                Class9247.method34786(var8, var7.method24139(), (Class6880)var9);
             }
          }

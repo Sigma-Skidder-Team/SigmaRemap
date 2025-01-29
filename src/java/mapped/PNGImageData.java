@@ -2,10 +2,9 @@ package mapped;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.Buffer;
 import java.nio.ByteBuffer;
 
-import lol.LoadableImageData;
+import org.newdawn.slick.opengl.LoadableImageData;
 import org.lwjgl.BufferUtils;
 
 public class PNGImageData implements LoadableImageData {
@@ -38,19 +37,19 @@ public class PNGImageData implements LoadableImageData {
    }
 
    @Override
-   public ByteBuffer method21467(InputStream var1) throws IOException {
-      return this.method21468(var1, false, null);
+   public ByteBuffer loadImage(InputStream fis) throws IOException {
+      return this.loadImage(fis, false, null);
    }
 
    @Override
-   public ByteBuffer method21468(InputStream var1, boolean var2, int[] var3) throws IOException {
-      return this.loadImage(var1, var2, false, var3);
+   public ByteBuffer loadImage(InputStream fis, boolean flipped, int[] transparent) throws IOException {
+      return this.loadImage(fis, flipped, false, transparent);
    }
 
    @Override
-   public ByteBuffer loadImage(InputStream fis, boolean flipped, boolean forceAlpha, int[] transparent) throws IOException {
+   public ByteBuffer loadImage(InputStream fis, boolean flipped, boolean forcedAlpha, int[] transparent) throws IOException {
       if (transparent != null) {
-         forceAlpha = true;
+         forcedAlpha = true;
          throw new IOException("Transparent color not support in custom PNG Decoder");
       } else {
          PNGDecoder decoder = new PNGDecoder(fis);
@@ -88,7 +87,7 @@ public class PNGImageData implements LoadableImageData {
                }
             }
 
-            if (!decoder.hasAlpha() && forceAlpha) {
+            if (!decoder.hasAlpha() && forcedAlpha) {
                ByteBuffer temp = BufferUtils.createByteBuffer(this.texWidth * this.texHeight * 4);
 
                for (int x = 0; x < this.texWidth; x++) {
@@ -149,7 +148,7 @@ public class PNGImageData implements LoadableImageData {
    }
 
    @Override
-   public void method21466(boolean var1) {
+   public void configureEdging(boolean edging) {
    }
 
    @Override

@@ -6,18 +6,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-public class Class7905 implements Class7904 {
-   private static String[] field33860;
-   private File field33861;
+public class FileNormalizerThingy implements PathNormalizer {
+   private File file;
 
-   public Class7905(File var1) {
-      this.field33861 = var1;
+   public FileNormalizerThingy(File var1) {
+      this.file = var1;
    }
 
    @Override
    public URL method26475(String var1) {
       try {
-         File var4 = new File(this.field33861, var1);
+         File var4 = new File(this.file, var1);
          if (!var4.exists()) {
             var4 = new File(var1);
          }
@@ -31,7 +30,7 @@ public class Class7905 implements Class7904 {
    @Override
    public InputStream method26476(String var1) {
       try {
-         File var4 = new File(this.field33861, var1);
+         File var4 = new File(this.file, var1);
          if (!var4.exists()) {
             var4 = new File(var1);
          }

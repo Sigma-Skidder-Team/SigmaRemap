@@ -185,7 +185,7 @@ public class Class7426 implements Font {
    @Override
    public void drawString(float var1, float var2, String var3, Color var4, int var5, int var6) {
       this.field31920.method23522();
-      var4.method10392();
+      var4.bind();
       field31916.glTranslatef(var1, var2, 0.0F);
       if (this.field31919 && var5 == 0 && var6 == var3.length() - 1) {
          Class9685 var9 = (Class9685)this.field31926.get(var3);

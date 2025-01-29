@@ -18,7 +18,7 @@ import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mentalfrostbyte.jello.util.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import lol.TextureImpl;
 import mapped.*;
 import net.minecraft.client.gui.screen.inventory.FurnaceScreen;

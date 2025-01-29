@@ -1,7 +1,7 @@
 package mapped;
 
 import org.newdawn.slick.opengl.ImageData;
-import lol.LoadableImageData;
+import org.newdawn.slick.opengl.LoadableImageData;
 
 import java.nio.ByteBuffer;
 

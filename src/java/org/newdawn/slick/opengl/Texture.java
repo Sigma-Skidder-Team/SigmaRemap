@@ -1,4 +1,4 @@
-package lol;
+package org.newdawn.slick.opengl;
 
 public interface Texture {
    boolean hasAlpha();

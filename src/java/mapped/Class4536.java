@@ -70,7 +70,7 @@ public class Class4536 {
    public void method14471() {
       if ((!this.field21867.method35470() || this.field21871 != 1) && this.field21871 != 2) {
          if (!this.field21872 && this.field21873 == 1.0F) {
-            this.field21864.method10392();
+            this.field21864.bind();
             this.field21869
                .method23529(
                   (float)((int)(this.field21859 - this.field21863 / 2.0F)),
@@ -101,7 +101,7 @@ public class Class4536 {
          TextureImpl.bindNone();
          field21855.glEnable(2832);
          field21855.glPointSize(this.field21863 / 2.0F);
-         this.field21864.method10392();
+         this.field21864.bind();
          field21855.glBegin(0);
          field21855.glVertex2f(this.field21859, this.field21860);
          field21855.glEnd();

@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import mapped.TextureLoader;
 
 import javax.imageio.ImageIO;

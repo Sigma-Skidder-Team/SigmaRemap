@@ -1,6 +1,5 @@
 package org.newdawn.slick.opengl;
 
-import lol.LoadableImageData;
 import mapped.Class2462;
 
 import java.io.BufferedInputStream;
@@ -18,28 +17,28 @@ public class CompositeImageData implements LoadableImageData {
    }
 
    @Override
-   public ByteBuffer method21467(InputStream var1) throws IOException {
-      return this.method21468(var1, false, null);
+   public ByteBuffer loadImage(InputStream fis) throws IOException {
+      return this.loadImage(fis, false, null);
    }
 
    @Override
-   public ByteBuffer method21468(InputStream var1, boolean var2, int[] var3) throws IOException {
-      return this.loadImage(var1, var2, false, var3);
+   public ByteBuffer loadImage(InputStream fis, boolean flipped, int[] transparent) throws IOException {
+      return this.loadImage(fis, flipped, false, transparent);
    }
 
    @Override
-   public ByteBuffer loadImage(InputStream var1, boolean var2, boolean var3, int[] var4) throws IOException {
+   public ByteBuffer loadImage(InputStream fis, boolean flipped, boolean forcedAlpha, int[] transparent) throws IOException {
       Class2462 var7 = new Class2462();
       ByteBuffer var8 = null;
-      BufferedInputStream var9 = new BufferedInputStream(var1, var1.available());
-      var9.mark(var1.available());
+      BufferedInputStream var9 = new BufferedInputStream(fis, fis.available());
+      var9.mark(fis.available());
 
       for (int var10 = 0; var10 < this.field30149.size(); var10++) {
          var9.reset();
 
          try {
             LoadableImageData var11 = (LoadableImageData)this.field30149.get(var10);
-            var8 = var11.loadImage(var9, var2, var3, var4);
+            var8 = var11.loadImage(var9, flipped, forcedAlpha, transparent);
             this.field30150 = var11;
             break;
          } catch (Exception ignored) {
@@ -96,9 +95,9 @@ public class CompositeImageData implements LoadableImageData {
    }
 
    @Override
-   public void method21466(boolean var1) {
+   public void configureEdging(boolean edging) {
       for (int var4 = 0; var4 < this.field30149.size(); var4++) {
-         ((LoadableImageData)this.field30149.get(var4)).method21466(var1);
+         ((LoadableImageData)this.field30149.get(var4)).configureEdging(edging);
       }
    }
 }

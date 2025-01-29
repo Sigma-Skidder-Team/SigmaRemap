@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.TextureUtil;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;

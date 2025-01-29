@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.gui.screens.ClassicScreenk;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;

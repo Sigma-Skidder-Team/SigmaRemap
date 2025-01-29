@@ -46,17 +46,17 @@ public class DefaultClientFont extends TrueTypeFont {
    }
 
    @Override
-   public void drawString(float var1, float var2, String var3, Color var4, int var5, int var6) {
+   public void drawString(float var1, float var2, String whatchars, Color color, int var5, int var6) {
       GL11.glPushMatrix();
       GL11.glScalef((float)this.field31945, (float)this.field31945, 0.0F);
       GL11.glTranslatef(-var1 / (float)this.field31945, -var2 / (float)this.field31945 + 1.0F, 0.0F);
       this.field31946
          .fontRenderer
          .method38807(
-            var3,
+                 whatchars,
             var1,
             var2,
-            new java.awt.Color(var4.field16455, var4.field16456, var4.field16457, var4.field16458).getRGB(),
+            new java.awt.Color(color.field16455, color.field16456, color.field16457, color.field16458).getRGB(),
             new MatrixStack().getLast().getMatrix(),
             false,
             false

@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 
 public class Class4237 extends Class4236 {
    private static String[] field20579;
