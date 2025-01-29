@@ -75,8 +75,8 @@ public class InfoHUD extends Module {
                 (float) (mc.mainWindow.getHeight() - var2),
                 var6,
                 MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.8F));
-        return Math.max(ResourceRegistry.JelloLightFont20.getStringWidth(var5),
-                ResourceRegistry.JelloMediumFont20.getStringWidth(var6));
+        return Math.max(ResourceRegistry.JelloLightFont20.getWidth(var5),
+                ResourceRegistry.JelloMediumFont20.getWidth(var6));
     }
 
     public int method16695(int var1, int var2) {

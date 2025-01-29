@@ -45,7 +45,7 @@ public class CreditsScreen extends Screen {
       String var8 = "Jello by MF";
       TrueTypeFont var9 = ResourceRegistry.JelloLightFont25;
       RenderUtil.drawString(
-            var9, (float) ((this.getWidthA() - var9.getStringWidth(var8)) / 2), (float) (this.getHeightA() - 110), var8,
+            var9, (float) ((this.getWidthA() - var9.getWidth(var8)) / 2), (float) (this.getHeightA() - 110), var8,
             ClientColors.DEEP_TEAL.getColor());
       GL11.glPopMatrix();
       RenderUtil.drawImage(

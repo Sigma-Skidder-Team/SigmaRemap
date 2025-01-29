@@ -47,7 +47,7 @@ public class Class4333 extends CustomGuiScreen {
       if (!this.name.equals("Sigma")) {
          RenderUtil.drawString(
             var7,
-            (float)this.xA + (float)(this.getWidthA() - var7.getStringWidth(this.name)) / 2.0F,
+            (float)this.xA + (float)(this.getWidthA() - var7.getWidth(this.name)) / 2.0F,
             (float)(this.yA + 18),
             this.name,
             -16777216
@@ -55,7 +55,7 @@ public class Class4333 extends CustomGuiScreen {
       } else {
          RenderUtil.drawString(
             var7,
-            (float)this.xA + (float)(this.getWidthA() - var7.getStringWidth(this.name)) / 2.0F,
+            (float)this.xA + (float)(this.getWidthA() - var7.getWidth(this.name)) / 2.0F,
             (float)(this.yA + 10),
             this.name,
             -13619152

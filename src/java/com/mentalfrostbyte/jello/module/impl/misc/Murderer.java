@@ -79,11 +79,11 @@ public class Murderer extends Module {
 
                     if (this.field23834 != null) {
                         RenderUtil.drawRect(
-                                (float) (var6 - var4.getStringWidth(this.field23833) - 90), (float) (var7 - 130), (float) (var6 - 10), (float) (var7 - 10), 1342177280
+                                (float) (var6 - var4.getWidth(this.field23833) - 90), (float) (var7 - 130), (float) (var6 - 10), (float) (var7 - 10), 1342177280
                         );
-                        RenderUtil.method11455((float) (var6 - var4.getStringWidth(this.field23833) - 80), (float) (var7 - 120), 50.0F, 100.0F, this.field23834);
+                        RenderUtil.method11455((float) (var6 - var4.getWidth(this.field23833) - 80), (float) (var7 - 120), 50.0F, 100.0F, this.field23834);
                         RenderUtil.drawString(
-                                var4, (float) (var6 - var4.getStringWidth(this.field23833) - 20), (float) (var7 - var4.getHeight(this.field23833) - 60), this.field23833, -1
+                                var4, (float) (var6 - var4.getWidth(this.field23833) - 20), (float) (var7 - var4.getHeight(this.field23833) - 60), this.field23833, -1
                         );
                     }
                 }

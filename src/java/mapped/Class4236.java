@@ -113,21 +113,21 @@ public class Class4236 extends PNGIconButton implements Class4238 {
          GL11.glPushMatrix();
          String var14 = this.getTypedText() != null ? this.getTypedText() : this.name;
          GL11.glTranslatef(
-               (float) (this.getXA() + this.getWidthA() / 2 - font.getStringWidth(var14) / 2),
+               (float) (this.getXA() + this.getWidthA() / 2 - font.getWidth(var14) / 2),
                (float) (this.getYA() + this.getHeightA() - 40), 0.0F);
          GL11.glScalef(var13, var13, var13);
          GL11.glAlphaFunc(519, 0.0F);
          RenderUtil.drawImage(
-               (1.0F - var13) * (float) font.getStringWidth(var14) / 2.0F + 1.0F
-                     - (float) font.getStringWidth(var14) / 2.0F,
+               (1.0F - var13) * (float) font.getWidth(var14) / 2.0F + 1.0F
+                     - (float) font.getWidth(var14) / 2.0F,
                (float) font.getHeight(var14) / 3.0F,
-               (float) (font.getStringWidth(var14) * 2),
+               (float) (font.getWidth(var14) * 2),
                (float) font.getHeight(var14) * 3.0F,
                ResourceList.shadowPNG,
                var5 * 0.6F * var1);
          RenderUtil.drawString(
                font,
-               (1.0F - var13) * (float) font.getStringWidth(var14) / 2.0F + 1.0F,
+               (1.0F - var13) * (float) font.getWidth(var14) / 2.0F + 1.0F,
                40.0F,
                var14,
                MultiUtilities.applyAlpha(this.getTextColor().method19405(), var5 * 0.6F * var1));

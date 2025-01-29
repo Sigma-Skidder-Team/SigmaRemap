@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.resource;
 import java.awt.Font;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
-import mapped.Color;
+import org.newdawn.slick.Color;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
@@ -21,7 +21,7 @@ public class DefaultClientFont extends TrueTypeFont {
    }
 
    @Override
-   public int getStringWidth(String var1) {
+   public int getWidth(String var1) {
       return this.field31946.fontRenderer.getStringWidth(var1) * this.field31945;
    }
 

@@ -1,5 +1,7 @@
 package mapped;
 
+import org.newdawn.slick.Color;
+
 import java.util.ArrayList;
 
 public class Class7462 {

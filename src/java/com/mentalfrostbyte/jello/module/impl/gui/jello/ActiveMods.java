@@ -168,22 +168,22 @@ public class ActiveMods extends Module {
                     String var22 = var13.getSuffix();
                     GL11.glAlphaFunc(519, 0.0F);
                     GL11.glPushMatrix();
-                    int var17 = var6 - var20 - var8.getStringWidth(var22) / 2;
+                    int var17 = var6 - var20 - var8.getWidth(var22) / 2;
                     int var18 = var7 + 12;
                     GL11.glTranslatef((float) var17, (float) var18, 0.0F);
                     GL11.glScalef(var14, var14, 1.0F);
                     GL11.glTranslatef((float) (-var17), (float) (-var18), 0.0F);
-                    float var19 = (float) Math.sqrt(Math.min(1.2F, (float) var8.getStringWidth(var22) / 63.0F));
+                    float var19 = (float) Math.sqrt(Math.min(1.2F, (float) var8.getWidth(var22) / 63.0F));
                     RenderUtil.drawImage(
-                            (float) var6 - (float) var8.getStringWidth(var22) * 1.5F - (float) var20 - 20.0F,
+                            (float) var6 - (float) var8.getWidth(var22) * 1.5F - (float) var20 - 20.0F,
                             (float) (var7 - 20),
-                            (float) var8.getStringWidth(var22) * 3.0F,
+                            (float) var8.getWidth(var22) * 3.0F,
                             var8.method23952() + var21 + 40,
                             ResourceList.shadowPNG,
                             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
                                     0.36F * var15 * var19));
                     RenderUtil.drawString(
-                            var8, (float) (var6 - var20 - var8.getStringWidth(var22)), (float) var7, var22,
+                            var8, (float) (var6 - var20 - var8.getWidth(var22)), (float) var7, var22,
                             var15 != 1.0F ? MultiUtilities.applyAlpha(-1, var15 * 0.95F) : var11);
                     GL11.glPopMatrix();
                     var10 -= 100;

@@ -1,5 +1,7 @@
 package lol;
 
+import org.newdawn.slick.opengl.ImageData;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;

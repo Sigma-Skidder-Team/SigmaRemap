@@ -101,13 +101,13 @@ public class MainmenuScreen2 extends CustomGuiScreen {
                   new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor(), ClientColors.DEEP_TEAL.getColor())));
       this.addToList(
             this.field21130 = new UITextDisplay(
-                  this, "Copyright", 10, this.getHeightA() - 31, var15.getStringWidth(var20), 128,
+                  this, "Copyright", 10, this.getHeightA() - 31, var15.getWidth(var20), 128,
                   new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor()), var20, var15));
       this.addToList(
             this.field21129 = new UITextDisplay(
                   this,
                   "Version",
-                  this.getWidthA() - var15.getStringWidth(var21) - 9,
+                  this.getWidthA() - var15.getWidth(var21) - 9,
                   this.getHeightA() - 31,
                   128,
                   128,

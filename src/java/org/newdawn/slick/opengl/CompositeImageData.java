@@ -1,6 +1,7 @@
-package mapped;
+package org.newdawn.slick.opengl;
 
 import lol.LoadableImageData;
+import mapped.Class2462;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -8,11 +9,11 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
-public class Class6959 implements LoadableImageData {
+public class CompositeImageData implements LoadableImageData {
    private ArrayList field30149 = new ArrayList();
    private LoadableImageData field30150;
 
-   public void method21472(LoadableImageData var1) {
+   public void add(LoadableImageData var1) {
       this.field30149.add(var1);
    }
 
@@ -59,9 +60,9 @@ public class Class6959 implements LoadableImageData {
    }
 
    @Override
-   public int method21455() {
+   public int getDepth() {
       this.method21473();
-      return this.field30150.method21455();
+      return this.field30150.getDepth();
    }
 
    @Override
@@ -71,21 +72,21 @@ public class Class6959 implements LoadableImageData {
    }
 
    @Override
-   public ByteBuffer method21460() {
+   public ByteBuffer getImageBufferData() {
       this.method21473();
-      return this.field30150.method21460();
+      return this.field30150.getImageBufferData();
    }
 
    @Override
-   public int method21459() {
+   public int getTexHeight() {
       this.method21473();
-      return this.field30150.method21459();
+      return this.field30150.getTexHeight();
    }
 
    @Override
-   public int method21458() {
+   public int getTexWidth() {
       this.method21473();
-      return this.field30150.method21458();
+      return this.field30150.getTexWidth();
    }
 
    @Override

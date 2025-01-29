@@ -270,7 +270,7 @@ public class JelloClickGUI extends Screen {
          String var12 = Client.getInstance().moduleManager.getConfigurationManager().getCurrentConfig().getName;
          RenderUtil.drawString(
                ResourceRegistry.JelloLightFont20,
-               (float) (this.widthA - ResourceRegistry.JelloLightFont20.getStringWidth(var12) - 80),
+               (float) (this.widthA - ResourceRegistry.JelloLightFont20.getWidth(var12) - 80),
                (float) (this.heightA - 47),
                var12,
                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),

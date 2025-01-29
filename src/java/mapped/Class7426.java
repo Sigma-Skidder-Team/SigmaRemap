@@ -1,6 +1,11 @@
 package mapped;
 
 import lol.*;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.Font;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -58,7 +63,7 @@ public class Class7426 implements Font {
 
    private void method23934(InputStream var1) throws Class2451 {
       if (this.field31919) {
-         this.field31923 = field31916.method18384(200);
+         this.field31923 = field31916.glGenLists(200);
          if (this.field31923 == 0) {
             this.field31919 = false;
          }
@@ -126,7 +131,7 @@ public class Class7426 implements Font {
             this.field31921[var25].field33929 = var27;
          }
       } catch (IOException var19) {
-         Log.method25661(var19);
+         Log.error(var19);
          throw new Class2451("Failed to parse font file: " + var1);
       }
    }
@@ -181,7 +186,7 @@ public class Class7426 implements Font {
    public void drawString(float var1, float var2, String var3, Color var4, int var5, int var6) {
       this.field31920.method23522();
       var4.method10392();
-      field31916.method18400(var1, var2, 0.0F);
+      field31916.glTranslatef(var1, var2, 0.0F);
       if (this.field31919 && var5 == 0 && var6 == var3.length() - 1) {
          Class9685 var9 = (Class9685)this.field31926.get(var3);
          if (var9 == null) {
@@ -196,21 +201,21 @@ public class Class7426 implements Font {
             }
 
             this.field31926.put(var3, var9);
-            field31916.method18390(var9.field45288, 4865);
+            field31916.glNewList(var9.field45288, 4865);
             this.method23939(var3, var5, var6);
-            field31916.method18383();
+            field31916.glEndList();
          } else {
-            field31916.method18372(var9.field45288);
+            field31916.glCallList(var9.field45288);
          }
       } else {
          this.method23939(var3, var5, var6);
       }
 
-      field31916.method18400(-var1, -var2, 0.0F);
+      field31916.glTranslatef(-var1, -var2, 0.0F);
    }
 
    private void method23939(String var1, int var2, int var3) {
-      field31916.method18369(7);
+      field31916.glBegin(7);
       int var6 = 0;
       int var7 = 0;
       Class7924 var8 = null;
@@ -240,7 +245,7 @@ public class Class7426 implements Font {
          }
       }
 
-      field31916.method18382();
+      field31916.glEnd();
    }
 
    public int method23940(String var1) {
@@ -311,7 +316,7 @@ public class Class7426 implements Font {
    }
 
    @Override
-   public int getStringWidth(String var1) {
+   public int getWidth(String var1) {
       Class9685 var4 = null;
       if (this.field31919) {
          var4 = (Class9685)this.field31926.get(var1);

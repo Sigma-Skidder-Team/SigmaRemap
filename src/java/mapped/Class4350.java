@@ -39,7 +39,7 @@ public class Class4350 extends Class4278 {
          String[] var7 = this.field20912.split("(?<=" + var6 + ")");
          int var8 = this.field21260;
          int var9 = -1;
-         float var10 = (float) var5.getStringWidth(this.field20912.substring(0, this.field21260));
+         float var10 = (float) var5.getWidth(this.field20912.substring(0, this.field21260));
 
          for (int var11 = 0; var11 < var7.length; var11++) {
             List<String> var12 = this.method13587(var7[var11]);
@@ -52,7 +52,7 @@ public class Class4350 extends Class4278 {
                      (float) (this.getYA() + var4 + var11 * var5.method23952()),
                      var15,
                      MultiUtilities.applyAlpha(this.method13588(var15), var1));
-               var13 += var5.getStringWidth(var15);
+               var13 += var5.getWidth(var15);
                var8 -= var15.length();
             }
 
@@ -124,7 +124,7 @@ public class Class4350 extends Class4278 {
    public void charTyped(char typed) {
       super.charTyped(typed);
       if (this.method13297() && Class8906.method32486(typed)
-            && ResourceRegistry.JelloLightFont18.getStringWidth(Character.toString(typed)) > 1) {
+            && ResourceRegistry.JelloLightFont18.getWidth(Character.toString(typed)) > 1) {
          this.field20912 = Class8906.method32492(this.field20912, Character.toString(typed), this.field21260);
          this.field21260++;
       }

@@ -442,9 +442,9 @@ public class BlockFly extends ModuleWithModuleSettings {
 
     public void method16745(int var1, int var2, float var3) {
         int var6 = 0;
-        int var7 = ResourceRegistry.JelloLightFont18.getStringWidth(this.field23886 + "") + 3;
+        int var7 = ResourceRegistry.JelloLightFont18.getWidth(this.field23886 + "") + 3;
         var6 += var7;
-        var6 += ResourceRegistry.JelloLightFont14.getStringWidth("Blocks");
+        var6 += ResourceRegistry.JelloLightFont14.getWidth("Blocks");
         int var8 = var6 + 20;
         int var9 = 32;
         var1 -= var8 / 2;

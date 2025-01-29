@@ -15,7 +15,8 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import lol.Log;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.util.Log;
 import lol.ResourceLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -92,10 +93,10 @@ public class Class8273 {
             return var2;
          }
       } catch (IOException var15) {
-         Log.method25661(var15);
+         Log.error(var15);
          throw var15;
       } catch (Exception var16) {
-         Log.method25661(var16);
+         Log.error(var16);
          throw new IOException("Unable to load particle system config");
       }
    }
@@ -130,7 +131,7 @@ public class Class8273 {
          var10.setOutputProperty("indent", "yes");
          var10.transform(var13, var12);
       } catch (Exception var11) {
-         Log.method25661(var11);
+         Log.error(var11);
          throw new IOException("Unable to save configured particle system");
       }
    }
@@ -171,10 +172,10 @@ public class Class8273 {
             return var6;
          }
       } catch (IOException var7) {
-         Log.method25661(var7);
+         Log.error(var7);
          throw var7;
       } catch (Exception var8) {
-         Log.method25661(var8);
+         Log.error(var8);
          throw new IOException("Unable to load emitter");
       }
    }
@@ -195,7 +196,7 @@ public class Class8273 {
          var9.setOutputProperty("indent", "yes");
          var9.transform(var7, var6);
       } catch (Exception var10) {
-         Log.method25661(var10);
+         Log.error(var10);
          throw new IOException("Failed to save emitter");
       }
    }
@@ -334,7 +335,7 @@ public class Class8273 {
       if (!(var2 instanceof Class7687)) {
          if (!(var2 instanceof Class7688)) {
             if (!(var2 instanceof Class7685)) {
-               Log.method25663("unkown value type ignored: " + var2.getClass());
+               Log.warn("unkown value type ignored: " + var2.getClass());
             } else {
                var5.setAttribute("type", "linear");
                var5.setAttribute("min", "" + ((Class7685)var2).method25303());
@@ -378,7 +379,7 @@ public class Class8273 {
             if (!var4.equals("simple")) {
                if (!var4.equals("random")) {
                   if (!var4.equals("linear")) {
-                     Log.method25663("unkown type detected: " + var4);
+                     Log.warn("unkown type detected: " + var4);
                   } else {
                      String var6 = var0.getAttribute("min");
                      String var7 = var0.getAttribute("max");
@@ -406,7 +407,7 @@ public class Class8273 {
             }
          } else if (!(var1 instanceof Class7687)) {
             if (!(var1 instanceof Class7688)) {
-               Log.method25663("problems reading element, skipping: " + var0);
+               Log.warn("problems reading element, skipping: " + var0);
             } else {
                ((Class7688)var1).method25306(Float.parseFloat(var5));
             }

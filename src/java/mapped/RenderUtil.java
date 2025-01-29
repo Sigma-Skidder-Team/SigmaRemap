@@ -20,6 +20,7 @@ import net.minecraft.item.ItemStack;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import org.lwjgl.opengl.GL11;
+import org.newdawn.slick.Color;
 
 import java.awt.*;
 import java.math.BigDecimal;
@@ -453,10 +454,10 @@ public class RenderUtil {
       int var11 = 0;
       switch (Class7820.field33554[var5.ordinal()]) {
          case 1:
-            var10 = -var0.getStringWidth(var3) / 2;
+            var10 = -var0.getWidth(var3) / 2;
             break;
          case 2:
-            var10 = -var0.getStringWidth(var3);
+            var10 = -var0.getWidth(var3);
       }
 
       switch (Class7820.field33554[var6.ordinal()]) {
@@ -511,12 +512,12 @@ public class RenderUtil {
       GL11.glBlendFunc(770, 771);
       if (var7) {
          var0.drawString((float) Math.round(var1 + (float) var10), (float) (Math.round(var2 + (float) var11) + 2),
-               var3, new Color(0.0F, 0.0F, 0.0F, 0.35F));
+               var3, new org.newdawn.slick.Color(0.0F, 0.0F, 0.0F, 0.35F));
       }
 
       if (var3 != null) {
          var0.drawString((float) Math.round(var1 + (float) var10), (float) Math.round(var2 + (float) var11), var3,
-               new Color(var13, var14, var15, var12));
+               new org.newdawn.slick.Color(var13, var14, var15, var12));
       }
 
       RenderSystem.disableBlend();
@@ -540,10 +541,10 @@ public class RenderUtil {
       int var11 = 0;
       switch (Class7820.field33554[var5.ordinal()]) {
          case 1:
-            var10 = -var0.getStringWidth(var3) / 2;
+            var10 = -var0.getWidth(var3) / 2;
             break;
          case 2:
-            var10 = -var0.getStringWidth(var3);
+            var10 = -var0.getWidth(var3);
       }
 
       switch (Class7820.field33554[var6.ordinal()]) {

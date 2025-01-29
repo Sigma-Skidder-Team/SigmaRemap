@@ -2,7 +2,7 @@ package mapped;
 
 import java.nio.ByteBuffer;
 
-import lol.ImageData;
+import org.newdawn.slick.opengl.ImageData;
 import lol.InternalTextureLoader;
 import org.lwjgl.BufferUtils;
 
@@ -17,7 +17,7 @@ public class EmptyImageData implements ImageData {
    }
 
    @Override
-   public int method21455() {
+   public int getDepth() {
       return 32;
    }
 
@@ -27,17 +27,17 @@ public class EmptyImageData implements ImageData {
    }
 
    @Override
-   public ByteBuffer method21460() {
-      return BufferUtils.createByteBuffer(this.method21458() * this.method21459() * 4);
+   public ByteBuffer getImageBufferData() {
+      return BufferUtils.createByteBuffer(this.getTexWidth() * this.getTexHeight() * 4);
    }
 
    @Override
-   public int method21459() {
+   public int getTexHeight() {
       return InternalTextureLoader.method35800(this.field30127);
    }
 
    @Override
-   public int method21458() {
+   public int getTexWidth() {
       return InternalTextureLoader.method35800(this.field30126);
    }
 

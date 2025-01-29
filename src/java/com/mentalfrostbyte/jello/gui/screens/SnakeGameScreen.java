@@ -70,7 +70,7 @@ public class SnakeGameScreen extends Screen {
       String var8 = "Max: " + this.field21048 + "   |   Score: " + this.field21046.method13179();
       RenderUtil.drawString(
             ResourceRegistry.JelloLightFont20,
-            (float) (var6 + this.field21046.getWidthA() - ResourceRegistry.JelloLightFont20.getStringWidth(var8)),
+            (float) (var6 + this.field21046.getWidthA() - ResourceRegistry.JelloLightFont20.getWidth(var8)),
             (float) (var7 - 50),
             var8,
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.8F));

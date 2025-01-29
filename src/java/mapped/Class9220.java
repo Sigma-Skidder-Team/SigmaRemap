@@ -4,7 +4,7 @@ import java.nio.Buffer;
 import java.nio.IntBuffer;
 
 import lol.InternalTextureLoader;
-import lol.Log;
+import org.newdawn.slick.util.Log;
 import lol.Texture;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.EXTFramebufferObject;
@@ -19,7 +19,7 @@ public class Class9220 extends Class9219 {
    public Class9220(Image var1) throws Class2451 {
       super(var1.method23565().getTextureWidth(), var1.method23565().getTextureHeight());
       this.field42446 = var1;
-      Log.method25666("Creating FBO " + var1.method23558() + "x" + var1.method23559());
+      Log.debug("Creating FBO " + var1.method23558() + "x" + var1.method23559());
       boolean var4 = true;
       if (var4) {
          this.method34667();
@@ -83,7 +83,7 @@ public class Class9220 extends Class9219 {
 
    @Override
    public void method34595() {
-      field42419.method18403();
+      field42419.flush();
       this.method34669();
       GL11.glPopClientAttrib();
       GL11.glPopAttrib();

@@ -1,7 +1,8 @@
 package mapped;
 
-import lol.Font;
-import lol.Log;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.Font;
+import org.newdawn.slick.util.Log;
 
 import java.io.UnsupportedEncodingException;
 
@@ -49,7 +50,7 @@ public class Class7428 implements Font {
             }
          }
       } catch (UnsupportedEncodingException var14) {
-         Log.method25661(var14);
+         Log.error(var14);
       }
    }
 
@@ -59,7 +60,7 @@ public class Class7428 implements Font {
    }
 
    @Override
-   public int getStringWidth(String var1) {
+   public int getWidth(String var1) {
       return this.field31929 * var1.length();
    }
 

@@ -1,6 +1,10 @@
 package mapped;
 
 import lol.*;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.Font;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
 
 import java.awt.FontFormatException;
 import java.awt.FontMetrics;
@@ -220,7 +224,7 @@ public class Class7431 implements Font {
 
       this.field31961.clear();
       if (this.field31974 != -1) {
-         field31951.method18406(this.field31974, this.field31977.size());
+         field31951.glDeleteLists(this.field31974, this.field31977.size());
          this.field31974 = -1;
       }
 
@@ -248,7 +252,7 @@ public class Class7431 implements Font {
          Class8741 var10 = null;
          if (this.field31973 && this.field31962.isEmpty()) {
             if (this.field31974 == -1) {
-               this.field31974 = field31951.method18384(200);
+               this.field31974 = field31951.glGenLists(200);
                if (this.field31974 == 0) {
                   this.field31974 = -1;
                   this.field31973 = false;
@@ -270,9 +274,9 @@ public class Class7431 implements Font {
                }
             } else {
                if (!var10.field39413) {
-                  field31951.method18400(var1, var2, 0.0F);
-                  field31951.method18372(var10.field39414);
-                  field31951.method18400(-var1, -var2, 0.0F);
+                  field31951.glTranslatef(var1, var2, 0.0F);
+                  field31951.glCallList(var10.field39414);
+                  field31951.glTranslatef(-var1, -var2, 0.0F);
                   return var10;
                }
 
@@ -282,9 +286,9 @@ public class Class7431 implements Font {
             this.field31977.put(var9, var10);
          }
 
-         field31951.method18400(var1, var2, 0.0F);
+         field31951.glTranslatef(var1, var2, 0.0F);
          if (var10 != null) {
-            field31951.method18390(var10.field39414, 4865);
+            field31951.glNewList(var10.field39414, 4865);
          }
 
          char[] var30 = var3.substring(0, var6).toCharArray();
@@ -321,13 +325,13 @@ public class Class7431 implements Font {
                if (var26 != null) {
                   Texture var27 = var26.method23565();
                   if (var19 != null && var19 != var27) {
-                     field31951.method18382();
+                     field31951.glEnd();
                      var19 = null;
                   }
 
                   if (var19 == null) {
                      var27.bind();
-                     field31951.method18369(7);
+                     field31951.glBegin(7);
                      var19 = var27;
                   }
 
@@ -350,17 +354,17 @@ public class Class7431 implements Font {
          }
 
          if (var19 != null) {
-            field31951.method18382();
+            field31951.glEnd();
          }
 
          if (var10 != null) {
-            field31951.method18383();
+            field31951.glEndList();
             if (!this.field31962.isEmpty()) {
                var10.field39413 = true;
             }
          }
 
-         field31951.method18400(-var1, -var2, 0.0F);
+         field31951.glTranslatef(-var1, -var2, 0.0F);
          if (var10 == null) {
             var10 = new Class8741();
          }
@@ -423,7 +427,7 @@ public class Class7431 implements Font {
    }
 
    @Override
-   public int getStringWidth(String var1) {
+   public int getWidth(String var1) {
       if (var1 != null) {
          if (var1.length() != 0) {
             if (this.field31973) {

@@ -260,7 +260,7 @@ public class TabGUI extends Module {
          int descriptionX = activeCategoryPart.getStartX() + activeCategoryPart.getWidth() + 4
                + Math.round(animationProgressValue * 28.0F);
          int descriptionY = activeCategoryPart.getStartY() + 25 * activeCategoryPart.index + 4;
-         int descriptionWidth = activeCategoryPart.fontRenderer.getStringWidth(description) + 8;
+         int descriptionWidth = activeCategoryPart.fontRenderer.getWidth(description) + 8;
          float secondAnimationValue = MathHelper.calculateTransition(this.secondAnimationProgress.calcPercent(), 0.0F,
                1.0F, 1.0F);
          RenderUtil.renderBackgroundBox((float) descriptionX, (float) descriptionY,

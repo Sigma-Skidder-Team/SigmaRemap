@@ -1,7 +1,7 @@
-package mapped;
+package org.newdawn.slick;
 
-import lol.Renderer;
-import lol.SGL;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
 
 import java.io.Serializable;
 import java.nio.FloatBuffer;
@@ -94,7 +94,7 @@ public class Color implements Serializable {
    }
 
    public void method10392() {
-      this.field16440.method18376(this.field16455, this.field16456, this.field16457, this.field16458);
+      this.field16440.glColor4f(this.field16455, this.field16456, this.field16457, this.field16458);
    }
 
    @Override

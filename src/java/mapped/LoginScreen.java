@@ -29,7 +29,7 @@ public class LoginScreen extends Class4247 {
                                     "Login",
                                     228,
                                     43,
-                                    ResourceRegistry.JelloMediumFont40.getStringWidth("Login"),
+                                    ResourceRegistry.JelloMediumFont40.getWidth("Login"),
                                     50,
                                     new ColorHelper(ClientColors.DEEP_TEAL.getColor(),
                                                 ClientColors.DEEP_TEAL.getColor(),
@@ -39,12 +39,12 @@ public class LoginScreen extends Class4247 {
             this.addToList(
                         this.loginButton = new UIButton(
                                     this, "LoginButton", 468, 238,
-                                    ResourceRegistry.JelloLightFont25.getStringWidth("Login"), 70,
+                                    ResourceRegistry.JelloLightFont25.getWidth("Login"), 70,
                                     ColorHelper.field27961, "Login", ResourceRegistry.JelloLightFont25));
             this.addToList(
                         this.registerButton = new UIButton(
                                     this, "RegisterButton", 88, 250,
-                                    ResourceRegistry.JelloLightFont14.getStringWidth("Register"), 14,
+                                    ResourceRegistry.JelloLightFont14.getWidth("Register"), 14,
                                     ColorHelper.field27961, "Register", ResourceRegistry.JelloLightFont14));
             this.addToList(
                         this.forgotButton = new UIButton(
@@ -52,7 +52,7 @@ public class LoginScreen extends Class4247 {
                                     "ForgotButton",
                                     60,
                                     275,
-                                    ResourceRegistry.JelloLightFont14.getStringWidth("Forgot password?"),
+                                    ResourceRegistry.JelloLightFont14.getWidth("Forgot password?"),
                                     14,
                                     ColorHelper.field27961,
                                     "Forgot password?",

@@ -22,7 +22,7 @@ public class Class4272 extends Class4247 {
       UIButton blankButton;
       this.addToList(
             blankButton = new UIButton(this, "blankButton", 25, 0,
-                  ResourceRegistry.JelloLightFont20.getStringWidth("Blank"), 30, ColorHelper.field27961, "Blank",
+                  ResourceRegistry.JelloLightFont20.getWidth("Blank"), 30, ColorHelper.field27961, "Blank",
                   ResourceRegistry.JelloLightFont20));
       blankButton.doThis((var1x, var2x) -> {
          ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui) this.getScreen();
@@ -33,9 +33,9 @@ public class Class4272 extends Class4247 {
             var10 = new UIButton(
                   this,
                   "dupeButton",
-                  var5 - 25 - ResourceRegistry.JelloLightFont20.getStringWidth("Duplicate"),
+                  var5 - 25 - ResourceRegistry.JelloLightFont20.getWidth("Duplicate"),
                   0,
-                  ResourceRegistry.JelloLightFont20.getStringWidth("Duplicate"),
+                  ResourceRegistry.JelloLightFont20.getWidth("Duplicate"),
                   30,
                   ColorHelper.field27961,
                   "Duplicate",

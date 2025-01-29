@@ -6,6 +6,8 @@ import java.nio.ByteOrder;
 import java.nio.IntBuffer;
 
 import org.lwjgl.BufferUtils;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
 
 public class TextureImpl implements Texture {
    public static SGL field43736 = Renderer.get();
@@ -57,7 +59,7 @@ public class TextureImpl implements Texture {
 
    public static void bindNone() {
       field43737 = null;
-      field43736.method18380(3553);
+      field43736.glDisable(3553);
    }
 
    public static void method36180() {
@@ -68,8 +70,8 @@ public class TextureImpl implements Texture {
    public void bind() {
       if (field43737 != this) {
          field43737 = this;
-         field43736.method18381(3553);
-         field43736.method18370(this.field43738, this.field43739);
+         field43736.glEnable(3553);
+         field43736.glBindTexture(this.field43738, this.field43739);
       }
    }
 
@@ -140,7 +142,7 @@ public class TextureImpl implements Texture {
       IntBuffer var3 = this.method36188(1);
       var3.put(this.field43739);
       var3.flip();
-      field43736.method18379(var3);
+      field43736.glDeleteTextures(var3);
       if (field43737 == this) {
          bindNone();
       }
@@ -171,7 +173,7 @@ public class TextureImpl implements Texture {
    public byte[] getTextureData() {
       ByteBuffer var3 = BufferUtils.createByteBuffer((!this.hasAlpha() ? 3 : 4) * this.field43742 * this.field43743);
       this.bind();
-      field43736.method18387(3553, 0, !this.hasAlpha() ? 6407 : 6408, 5121, var3);
+      field43736.glGetTexImage(3553, 0, !this.hasAlpha() ? 6407 : 6408, 5121, var3);
       byte[] var4 = new byte[var3.limit()];
       var3.get(var4);
       ((Buffer)var3).clear();
@@ -181,8 +183,8 @@ public class TextureImpl implements Texture {
    @Override
    public void setTextureFilter(int var1) {
       this.bind();
-      field43736.method18404(this.field43738, 10241, var1);
-      field43736.method18404(this.field43738, 10240, var1);
+      field43736.glTexParameteri(this.field43738, 10241, var1);
+      field43736.glTexParameteri(this.field43738, 10240, var1);
    }
 
    public void method36189(int var1, int var2, int var3, int var4, ByteBuffer var5) {

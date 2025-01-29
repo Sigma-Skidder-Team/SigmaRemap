@@ -36,7 +36,7 @@ public class Class4365 extends Class4247 {
          var4 = this.account.username;
       }
 
-      this.setWidthA(this.font.getStringWidth(var4) + 50 + 60);
+      this.setWidthA(this.font.getWidth(var4) + 50 + 60);
       this.setXA(Minecraft.getInstance().mainWindow.getWidth() - this.widthA - 20);
       boolean var6 = this.field21337 >= this.xA && this.field21338 <= this.yA + this.getHeightA();
       this.field21334 = Math.max(0.0F, Math.min(1.0F, this.field21334 + (!var6 ? -0.1F : 0.1F)));
@@ -60,7 +60,7 @@ public class Class4365 extends Class4247 {
                   (0.5F + 0.5F * this.field21334) * var1));
       RenderUtil.drawString(
             this.font,
-            (float) (this.xA + this.widthA - 90 - this.font.getStringWidth(var4)),
+            (float) (this.xA + this.widthA - 90 - this.font.getWidth(var4)),
             (float) (this.yA + 27),
             var4,
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),

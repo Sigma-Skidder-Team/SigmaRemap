@@ -9,6 +9,11 @@ import java.util.ArrayList;
 
 import lol.*;
 import org.lwjgl.BufferUtils;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.Font;
+import org.newdawn.slick.opengl.renderer.LineStripRenderer;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
 
 public class Class9219 {
    public static SGL field42419 = Renderer.get();
@@ -72,38 +77,38 @@ public class Class9219 {
       this.method34591();
       this.field42442 = var1;
       if (this.field42442 == field42421) {
-         field42419.method18381(3042);
-         field42419.method18377(true, true, true, true);
-         field42419.method18371(770, 771);
+         field42419.glEnable(3042);
+         field42419.glColorMask(true, true, true, true);
+         field42419.glBlendFunc(770, 771);
       }
 
       if (this.field42442 == field42422) {
-         field42419.method18380(3042);
-         field42419.method18377(false, false, false, true);
+         field42419.glDisable(3042);
+         field42419.glColorMask(false, false, false, true);
       }
 
       if (this.field42442 == field42423) {
-         field42419.method18381(3042);
-         field42419.method18377(true, true, true, false);
-         field42419.method18371(772, 773);
+         field42419.glEnable(3042);
+         field42419.glColorMask(true, true, true, false);
+         field42419.glBlendFunc(772, 773);
       }
 
       if (this.field42442 == field42424) {
-         field42419.method18381(3042);
-         field42419.method18377(true, true, true, true);
-         field42419.method18371(769, 768);
+         field42419.glEnable(3042);
+         field42419.glColorMask(true, true, true, true);
+         field42419.glBlendFunc(769, 768);
       }
 
       if (this.field42442 == field42425) {
-         field42419.method18381(3042);
-         field42419.method18377(true, true, true, true);
-         field42419.method18371(1, 1);
+         field42419.glEnable(3042);
+         field42419.glColorMask(true, true, true, true);
+         field42419.glBlendFunc(1, 1);
       }
 
       if (this.field42442 == field42426) {
-         field42419.method18381(3042);
-         field42419.method18377(true, true, true, true);
-         field42419.method18371(1, 769);
+         field42419.glEnable(3042);
+         field42419.glColorMask(true, true, true, true);
+         field42419.glBlendFunc(1, 769);
       }
 
       this.method34592();
@@ -111,7 +116,7 @@ public class Class9219 {
 
    public void method34590() {
       this.method34663();
-      field42419.method18389();
+      field42419.glLoadIdentity();
       int var3 = this.field42442;
       this.method34589(field42422);
       this.method34607(new Color(0, 0, 0, 0));
@@ -147,21 +152,21 @@ public class Class9219 {
 
    public void method34597(Color var1) {
       this.method34591();
-      field42419.method18374(var1.field16455, var1.field16456, var1.field16457, var1.field16458);
+      field42419.glClearColor(var1.field16455, var1.field16456, var1.field16457, var1.field16458);
       this.method34592();
    }
 
    public Color method34598() {
       this.method34591();
       FloatBuffer var3 = BufferUtils.createFloatBuffer(16);
-      field42419.method18385(3106, var3);
+      field42419.glGetFloat(3106, var3);
       this.method34592();
       return new Color(var3);
    }
 
    public void method34599() {
       this.method34591();
-      field42419.method18373(16384);
+      field42419.glClear(16384);
       this.method34592();
    }
 
@@ -170,7 +175,7 @@ public class Class9219 {
       this.field42431 = 1.0F;
       if (this.field42436) {
          this.method34591();
-         field42419.method18392();
+         field42419.glPopMatrix();
          this.field42436 = false;
          this.method34592();
       }
@@ -179,7 +184,7 @@ public class Class9219 {
    private void method34601() {
       if (!this.field42436) {
          this.method34591();
-         field42419.method18393();
+         field42419.glPushMatrix();
          this.field42436 = true;
          this.method34592();
       }
@@ -190,7 +195,7 @@ public class Class9219 {
       this.field42431 *= var2;
       this.method34601();
       this.method34591();
-      field42419.method18396(var1, var2, 1.0F);
+      field42419.glScalef(var1, var2, 1.0F);
       this.method34592();
    }
 
@@ -198,7 +203,7 @@ public class Class9219 {
       this.method34601();
       this.method34591();
       this.method34604(var1, var2);
-      field42419.method18395(var3, 0.0F, 0.0F, 1.0F);
+      field42419.glRotatef(var3, 0.0F, 0.0F, 1.0F);
       this.method34604(-var1, -var2);
       this.method34592();
    }
@@ -206,7 +211,7 @@ public class Class9219 {
    public void method34604(float var1, float var2) {
       this.method34601();
       this.method34591();
-      field42419.method18400(var1, var2, 0.0F);
+      field42419.glTranslatef(var1, var2, 0.0F);
       this.method34592();
    }
 
@@ -233,7 +238,7 @@ public class Class9219 {
 
    public void method34609(float var1, float var2, float var3, float var4) {
       float var7 = this.field42443 - 1.0F;
-      if (field42420.method23239()) {
+      if (field42420.applyGLLineFixes()) {
          if (var1 == var3) {
             if (var2 > var4) {
                float var12 = var4;
@@ -264,7 +269,7 @@ public class Class9219 {
       this.method34591();
       this.field42433.method10392();
       TextureImpl.bindNone();
-      field42420.method23240();
+      field42420.start();
       field42420.method23242(var1, var2);
       field42420.method23242(var3, var4);
       field42420.method23241();
@@ -353,35 +358,35 @@ public class Class9219 {
    public void method34621() {
       this.field42437 = null;
       this.method34591();
-      field42419.method18380(3089);
+      field42419.glDisable(3089);
       this.method34592();
    }
 
    public void method34622(float var1, float var2, float var3, float var4) {
       this.method34591();
       this.field42441 = new Class2527(var1, var2, var3, var4);
-      field42419.method18381(12288);
+      field42419.glEnable(12288);
       ((Buffer)this.field42438.put(1.0).put(0.0).put(0.0).put((double)(-var1))).flip();
-      field42419.method18375(12288, this.field42438);
-      field42419.method18381(12289);
+      field42419.glClipPlane(12288, this.field42438);
+      field42419.glEnable(12289);
       ((Buffer)this.field42438.put(-1.0).put(0.0).put(0.0).put((double)(var1 + var3))).flip();
-      field42419.method18375(12289, this.field42438);
-      field42419.method18381(12290);
+      field42419.glClipPlane(12289, this.field42438);
+      field42419.glEnable(12290);
       ((Buffer)this.field42438.put(0.0).put(1.0).put(0.0).put((double)(-var2))).flip();
-      field42419.method18375(12290, this.field42438);
-      field42419.method18381(12291);
+      field42419.glClipPlane(12290, this.field42438);
+      field42419.glEnable(12291);
       ((Buffer)this.field42438.put(0.0).put(-1.0).put(0.0).put((double)(var2 + var4))).flip();
-      field42419.method18375(12291, this.field42438);
+      field42419.glClipPlane(12291, this.field42438);
       this.method34592();
    }
 
    public void method34623() {
       this.method34591();
       this.field42441 = null;
-      field42419.method18380(12288);
-      field42419.method18380(12289);
-      field42419.method18380(12290);
-      field42419.method18380(12291);
+      field42419.glDisable(12288);
+      field42419.glDisable(12289);
+      field42419.glDisable(12290);
+      field42419.glDisable(12291);
       this.method34592();
    }
 
@@ -402,11 +407,11 @@ public class Class9219 {
       if (this.field42437 != null) {
          this.field42437.method10646((float)var1, (float)var2, (float)var3, (float)var4);
       } else {
-         field42419.method18381(3089);
+         field42419.glEnable(3089);
          this.field42437 = new Class2527((float)var1, (float)var2, (float)var3, (float)var4);
       }
 
-      field42419.method18397(var1, this.field42435 - var2 - var4, var3, var4);
+      field42419.glScissor(var1, this.field42435 - var2 - var4, var3, var4);
       this.method34592();
    }
 
@@ -443,12 +448,12 @@ public class Class9219 {
       this.method34591();
       TextureImpl.bindNone();
       this.field42433.method10392();
-      field42419.method18369(7);
-      field42419.method18401(var1, var2);
-      field42419.method18401(var1 + var3, var2);
-      field42419.method18401(var1 + var3, var2 + var4);
-      field42419.method18401(var1, var2 + var4);
-      field42419.method18382();
+      field42419.glBegin(7);
+      field42419.glVertex2f(var1, var2);
+      field42419.glVertex2f(var1 + var3, var2);
+      field42419.glVertex2f(var1 + var3, var2 + var4);
+      field42419.glVertex2f(var1, var2 + var4);
+      field42419.glEnd();
       this.method34592();
    }
 
@@ -475,7 +480,7 @@ public class Class9219 {
 
       float var10 = var1 + var3 / 2.0F;
       float var11 = var2 + var4 / 2.0F;
-      field42420.method23240();
+      field42420.start();
       int var12 = 360 / var5;
 
       for (int var13 = (int)var6; var13 < (int)(var7 + (float)var12); var13 += var12) {
@@ -516,9 +521,9 @@ public class Class9219 {
 
       float var10 = var1 + var3 / 2.0F;
       float var11 = var2 + var4 / 2.0F;
-      field42419.method18369(6);
+      field42419.glBegin(6);
       int var12 = 360 / var5;
-      field42419.method18401(var10, var11);
+      field42419.glVertex2f(var10, var11);
 
       for (int var13 = (int)var6; var13 < (int)(var7 + (float)var12); var13 += var12) {
          float var14 = (float)var13;
@@ -528,13 +533,13 @@ public class Class9219 {
 
          float var15 = (float)((double)var10 + Class4835.method14957(Math.toRadians((double)var14)) * (double)var3 / 2.0);
          float var16 = (float)((double)var11 + Class4835.method14956(Math.toRadians((double)var14)) * (double)var4 / 2.0);
-         field42419.method18401(var15, var16);
+         field42419.glVertex2f(var15, var16);
       }
 
-      field42419.method18382();
+      field42419.glEnd();
       if (this.field42440) {
-         field42419.method18369(6);
-         field42419.method18401(var10, var11);
+         field42419.glBegin(6);
+         field42419.glVertex2f(var10, var11);
          if (var7 != 360.0F) {
             var7 -= 10.0F;
          }
@@ -547,10 +552,10 @@ public class Class9219 {
 
             float var19 = (float)((double)var10 + Class4835.method14957(Math.toRadians((double)(var18 + 10.0F))) * (double)var3 / 2.0);
             float var20 = (float)((double)var11 + Class4835.method14956(Math.toRadians((double)(var18 + 10.0F))) * (double)var4 / 2.0);
-            field42419.method18401(var19, var20);
+            field42419.glVertex2f(var19, var20);
          }
 
-         field42419.method18382();
+         field42419.glEnd();
       }
 
       this.method34592();
@@ -619,7 +624,7 @@ public class Class9219 {
       this.method34591();
       this.field42443 = var1;
       field42420.method23244(var1);
-      field42419.method18391(var1);
+      field42419.glPointSize(var1);
       this.method34592();
    }
 
@@ -630,8 +635,8 @@ public class Class9219 {
    public void method34645() {
       this.method34591();
       Renderer.method28671().method23244(1.0F);
-      field42419.method18388(1.0F);
-      field42419.method18391(1.0F);
+      field42419.glLineWidth(1.0F);
+      field42419.glPointSize(1.0F);
       this.method34592();
    }
 
@@ -640,9 +645,9 @@ public class Class9219 {
       this.field42440 = var1;
       field42420.method23245(var1);
       if (!var1) {
-         field42419.method18380(2881);
+         field42419.glDisable(2881);
       } else {
-         field42419.method18381(2881);
+         field42419.glEnable(2881);
       }
 
       this.method34592();
@@ -694,7 +699,7 @@ public class Class9219 {
    public void method34655(Image var1, int var2, int var3) {
       int var6 = !var1.method23565().hasAlpha() ? 6407 : 6408;
       var1.method23522();
-      field42419.method18378(
+      field42419.glCopyTexImage2D(
          3553, 0, var6, var2, this.field42435 - (var3 + var1.method23559()), var1.method23565().getTextureWidth(), var1.method23565().getTextureHeight(), 0
       );
       var1.method23563();
@@ -706,7 +711,7 @@ public class Class9219 {
 
    public Color method34657(int var1, int var2) {
       this.method34591();
-      field42419.method18394(var1, this.field42435 - var2, 1, 1, 6408, 5121, this.field42439);
+      field42419.glReadPixels(var1, this.field42435 - var2, 1, 1, 6408, 5121, this.field42439);
       this.method34592();
       return new Color(
          this.method34656(this.field42439.get(0)),
@@ -719,7 +724,7 @@ public class Class9219 {
    public void method34658(int var1, int var2, int var3, int var4, ByteBuffer var5) {
       if (var5.capacity() >= var3 * var4 * 4) {
          this.method34591();
-         field42419.method18394(var1, this.field42435 - var2 - var4, var3, var4, 6408, 5121, var5);
+         field42419.glReadPixels(var1, this.field42435 - var2 - var4, var3, var4, 6408, 5121, var5);
          this.method34592();
       } else {
          throw new IllegalArgumentException("Byte buffer provided to get area is not big enough");
@@ -742,24 +747,24 @@ public class Class9219 {
    ) {
       this.method34591();
       TextureImpl.bindNone();
-      field42419.method18369(1);
-      field42419.method18376(var3, var4, var5, var6);
-      field42419.method18401(var1, var2);
-      field42419.method18376(var9, var10, var11, var12);
-      field42419.method18401(var7, var8);
-      field42419.method18382();
+      field42419.glBegin(1);
+      field42419.glColor4f(var3, var4, var5, var6);
+      field42419.glVertex2f(var1, var2);
+      field42419.glColor4f(var9, var10, var11, var12);
+      field42419.glVertex2f(var7, var8);
+      field42419.glEnd();
       this.method34592();
    }
 
    public void method34662(float var1, float var2, Color var3, float var4, float var5, Color var6) {
       this.method34591();
       TextureImpl.bindNone();
-      field42419.method18369(1);
+      field42419.glBegin(1);
       var3.method10392();
-      field42419.method18401(var1, var2);
+      field42419.glVertex2f(var1, var2);
       var6.method10392();
-      field42419.method18401(var4, var5);
-      field42419.method18382();
+      field42419.glVertex2f(var4, var5);
+      field42419.glEnd();
       this.method34592();
    }
 
@@ -773,7 +778,7 @@ public class Class9219 {
          this.field42444.add(var3);
       }
 
-      field42419.method18385(2982, var3);
+      field42419.glGetFloat(2982, var3);
       var3.put(16, this.field42430);
       var3.put(17, this.field42431);
       this.field42445++;
@@ -785,7 +790,7 @@ public class Class9219 {
          this.method34591();
          this.field42445--;
          FloatBuffer var3 = (FloatBuffer)this.field42444.get(this.field42445);
-         field42419.method18411(var3);
+         field42419.glLoadMatrix(var3);
          this.field42430 = var3.get(16);
          this.field42431 = var3.get(17);
          this.method34592();

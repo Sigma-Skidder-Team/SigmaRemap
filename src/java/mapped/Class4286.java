@@ -197,20 +197,20 @@ public class Class4286 extends Class4278 {
             if (var12.length > 1) {
                RenderUtil.drawString(
                      var11,
-                     (float) (this.getXA() + (this.getWidthA() - var11.getStringWidth(var12[1])) / 2),
+                     (float) (this.getXA() + (this.getWidthA() - var11.getWidth(var12[1])) / 2),
                      (float) (this.getYA() + this.getWidthA() - 2),
                      var12[1],
                      MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
                RenderUtil.drawString(
                      var11,
-                     (float) (this.getXA() + (this.getWidthA() - var11.getStringWidth(var12[0])) / 2),
+                     (float) (this.getXA() + (this.getWidthA() - var11.getWidth(var12[0])) / 2),
                      (float) (this.getYA() + this.getWidthA() - 2 + 13),
                      var12[0],
                      MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
             } else {
                RenderUtil.drawString(
                      var11,
-                     (float) (this.getXA() + (this.getWidthA() - var11.getStringWidth(var12[0])) / 2),
+                     (float) (this.getXA() + (this.getWidthA() - var11.getWidth(var12[0])) / 2),
                      (float) (this.getYA() + this.getWidthA() - 2 + 6),
                      var12[0],
                      MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));

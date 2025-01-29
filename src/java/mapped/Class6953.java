@@ -1,6 +1,6 @@
 package mapped;
 
-import lol.ImageData;
+import org.newdawn.slick.opengl.ImageData;
 import lol.LoadableImageData;
 
 import java.nio.ByteBuffer;
@@ -22,8 +22,8 @@ public class Class6953 implements ImageData {
    }
 
    @Override
-   public int method21455() {
-      return this.field30120.method21455();
+   public int getDepth() {
+      return this.field30120.getDepth();
    }
 
    @Override
@@ -32,17 +32,17 @@ public class Class6953 implements ImageData {
    }
 
    @Override
-   public ByteBuffer method21460() {
+   public ByteBuffer getImageBufferData() {
       return this.field30122;
    }
 
    @Override
-   public int method21459() {
+   public int getTexHeight() {
       return this.field30121;
    }
 
    @Override
-   public int method21458() {
+   public int getTexWidth() {
       return this.field30123;
    }
 

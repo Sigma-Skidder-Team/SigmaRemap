@@ -172,7 +172,7 @@ public class Class4259 extends Class4247 {
       String var24 = var22 + "  " + var23;
       RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
-            (float) (this.xA - ResourceRegistry.JelloLightFont14.getStringWidth(var24) - 23),
+            (float) (this.xA - ResourceRegistry.JelloLightFont14.getWidth(var24) - 23),
             (float) (this.yA + 35),
             var24,
             MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.4F));

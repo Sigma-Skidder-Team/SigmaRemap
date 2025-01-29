@@ -41,7 +41,7 @@ public class CategoryDrawPart extends CategoryDrawPartBackground {
       this.field32401 = 0;
 
       for (String category : this.categoryList) {
-         this.field32401 = Math.max(this.field32401, this.fontRenderer.getStringWidth(category));
+         this.field32401 = Math.max(this.field32401, this.fontRenderer.getWidth(category));
       }
    }
 

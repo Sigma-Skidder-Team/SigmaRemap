@@ -1,7 +1,8 @@
 package mapped;
 
-import lol.Renderer;
-import lol.SGL;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
 import lol.TextureImpl;
 
 public class Class9170 {
@@ -15,13 +16,13 @@ public class Class9170 {
 
    public void method34257(Class9219 var1) {
       if (this.field42093 == -1) {
-         this.field42093 = field42091.method18384(1);
-         field42091.method18390(this.field42093, 4864);
+         this.field42093 = field42091.glGenLists(1);
+         field42091.glNewList(this.field42093, 4864);
          method34258(var1, this.field42092);
-         field42091.method18383();
+         field42091.glEndList();
       }
 
-      field42091.method18372(this.field42093);
+      field42091.glCallList(this.field42093);
       TextureImpl.bindNone();
    }
 

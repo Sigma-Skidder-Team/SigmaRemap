@@ -1,7 +1,8 @@
 package mapped;
 
-import lol.Renderer;
-import lol.SGL;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
 import lol.TextureImpl;
 
 public class Class4536 {
@@ -78,14 +79,14 @@ public class Class4536 {
                   (float)((int)this.field21863)
                );
          } else {
-            field21855.method18393();
-            field21855.method18400(this.field21859, this.field21860, 0.0F);
+            field21855.glPushMatrix();
+            field21855.glTranslatef(this.field21859, this.field21860, 0.0F);
             if (this.field21872) {
                float var3 = (float)(Math.atan2((double)this.field21860, (double)this.field21859) * 180.0 / Math.PI);
-               field21855.method18395(var3, 0.0F, 0.0F, 1.0F);
+               field21855.glRotatef(var3, 0.0F, 0.0F, 1.0F);
             }
 
-            field21855.method18396(1.0F, this.field21873, 1.0F);
+            field21855.glScalef(1.0F, this.field21873, 1.0F);
             this.field21869
                .method23539(
                   (float)((int)(-(this.field21863 / 2.0F))),
@@ -94,16 +95,16 @@ public class Class4536 {
                   (float)((int)this.field21863),
                   this.field21864
                );
-            field21855.method18392();
+            field21855.glPopMatrix();
          }
       } else {
          TextureImpl.bindNone();
-         field21855.method18381(2832);
-         field21855.method18391(this.field21863 / 2.0F);
+         field21855.glEnable(2832);
+         field21855.glPointSize(this.field21863 / 2.0F);
          this.field21864.method10392();
-         field21855.method18369(0);
-         field21855.method18401(this.field21859, this.field21860);
-         field21855.method18382();
+         field21855.glBegin(0);
+         field21855.glVertex2f(this.field21859, this.field21860);
+         field21855.glEnd();
       }
    }
 

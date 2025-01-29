@@ -25,8 +25,8 @@ public class Class5922 extends ImmediateModeOGLRenderer {
    private int field25805 = 0;
 
    @Override
-   public void method18367(int var1, int var2) {
-      super.method18367(var1, var2);
+   public void initDisplay(int var1, int var2) {
+      super.initDisplay(var1, var2);
       this.method18419();
       GL11.glEnableClientState(32884);
       GL11.glEnableClientState(32888);
@@ -78,68 +78,68 @@ public class Class5922 extends ImmediateModeOGLRenderer {
             this.method18419();
          }
 
-         super.method18376(this.field25796[0], this.field25796[1], this.field25796[2], this.field25796[3]);
+         super.glColor4f(this.field25796[0], this.field25796[1], this.field25796[2], this.field25796[3]);
       }
    }
 
    @Override
-   public void method18403() {
-      super.method18403();
+   public void flush() {
+      super.flush();
       this.method18421();
    }
 
    @Override
-   public void method18369(int var1) {
+   public void glBegin(int geomType) {
       if (this.field25805 <= 0) {
-         if (this.field25795 != var1) {
+         if (this.field25795 != geomType) {
             this.method18421();
-            this.field25795 = var1;
+            this.field25795 = geomType;
          }
       } else {
-         super.method18369(var1);
+         super.glBegin(geomType);
       }
    }
 
    @Override
-   public void method18376(float var1, float var2, float var3, float var4) {
+   public void glColor4f(float var1, float var2, float var3, float var4) {
       var4 *= this.field25737;
       this.field25796[0] = var1;
       this.field25796[1] = var2;
       this.field25796[2] = var3;
       this.field25796[3] = var4;
       if (this.field25805 > 0) {
-         super.method18376(var1, var2, var3, var4);
+         super.glColor4f(var1, var2, var3, var4);
       }
    }
 
    @Override
-   public void method18382() {
+   public void glEnd() {
       if (this.field25805 > 0) {
-         super.method18382();
+         super.glEnd();
       }
    }
 
    @Override
-   public void method18398(float var1, float var2) {
+   public void glTexCoord2f(float var1, float var2) {
       if (this.field25805 <= 0) {
          this.field25797[0] = var1;
          this.field25797[1] = var2;
       } else {
-         super.method18398(var1, var2);
+         super.glTexCoord2f(var1, var2);
       }
    }
 
    @Override
-   public void method18401(float var1, float var2) {
+   public void glVertex2f(float var1, float var2) {
       if (this.field25805 <= 0) {
-         this.method18402(var1, var2, 0.0F);
+         this.glVertex3f(var1, var2, 0.0F);
       } else {
-         super.method18401(var1, var2);
+         super.glVertex2f(var1, var2);
       }
    }
 
    @Override
-   public void method18402(float var1, float var2, float var3) {
+   public void glVertex3f(float var1, float var2, float var3) {
       if (this.field25805 <= 0) {
          this.field25799[this.field25798 * 3 + 0] = var1;
          this.field25799[this.field25798 * 3 + 1] = var2;
@@ -157,7 +157,7 @@ public class Class5922 extends ImmediateModeOGLRenderer {
             this.field25795 = var6;
          }
       } else {
-         super.method18402(var1, var2, var3);
+         super.glVertex3f(var1, var2, var3);
       }
    }
 
@@ -175,127 +175,127 @@ public class Class5922 extends ImmediateModeOGLRenderer {
    }
 
    @Override
-   public void method18370(int var1, int var2) {
+   public void glBindTexture(int var1, int var2) {
       this.method18421();
-      super.method18370(var1, var2);
+      super.glBindTexture(var1, var2);
    }
 
    @Override
-   public void method18371(int var1, int var2) {
+   public void glBlendFunc(int src, int dest) {
       this.method18421();
-      super.method18371(var1, var2);
+      super.glBlendFunc(src, dest);
    }
 
    @Override
-   public void method18372(int var1) {
+   public void glCallList(int var1) {
       this.method18421();
-      super.method18372(var1);
+      super.glCallList(var1);
    }
 
    @Override
-   public void method18373(int var1) {
+   public void glClear(int var1) {
       this.method18421();
-      super.method18373(var1);
+      super.glClear(var1);
    }
 
    @Override
-   public void method18375(int var1, DoubleBuffer var2) {
+   public void glClipPlane(int var1, DoubleBuffer var2) {
       this.method18421();
-      super.method18375(var1, var2);
+      super.glClipPlane(var1, var2);
    }
 
    @Override
-   public void method18377(boolean var1, boolean var2, boolean var3, boolean var4) {
+   public void glColorMask(boolean var1, boolean var2, boolean var3, boolean var4) {
       this.method18421();
-      super.method18377(var1, var2, var3, var4);
+      super.glColorMask(var1, var2, var3, var4);
    }
 
    @Override
-   public void method18380(int var1) {
+   public void glDisable(int var1) {
       this.method18421();
-      super.method18380(var1);
+      super.glDisable(var1);
    }
 
    @Override
-   public void method18381(int var1) {
+   public void glEnable(int var1) {
       this.method18421();
-      super.method18381(var1);
+      super.glEnable(var1);
    }
 
    @Override
-   public void method18388(float var1) {
+   public void glLineWidth(float var1) {
       this.method18421();
-      super.method18388(var1);
+      super.glLineWidth(var1);
    }
 
    @Override
-   public void method18391(float var1) {
+   public void glPointSize(float var1) {
       this.method18421();
-      super.method18391(var1);
+      super.glPointSize(var1);
    }
 
    @Override
-   public void method18392() {
+   public void glPopMatrix() {
       this.method18421();
-      super.method18392();
+      super.glPopMatrix();
    }
 
    @Override
-   public void method18393() {
+   public void glPushMatrix() {
       this.method18421();
-      super.method18393();
+      super.glPushMatrix();
    }
 
    @Override
-   public void method18395(float var1, float var2, float var3, float var4) {
+   public void glRotatef(float var1, float var2, float var3, float var4) {
       this.method18421();
-      super.method18395(var1, var2, var3, var4);
+      super.glRotatef(var1, var2, var3, var4);
    }
 
    @Override
-   public void method18396(float var1, float var2, float var3) {
+   public void glScalef(float var1, float var2, float var3) {
       this.method18421();
-      super.method18396(var1, var2, var3);
+      super.glScalef(var1, var2, var3);
    }
 
    @Override
-   public void method18397(int var1, int var2, int var3, int var4) {
+   public void glScissor(int var1, int var2, int var3, int var4) {
       this.method18421();
-      super.method18397(var1, var2, var3, var4);
+      super.glScissor(var1, var2, var3, var4);
    }
 
    @Override
-   public void method18399(int var1, int var2, int var3) {
+   public void glTexEnvi(int var1, int var2, int var3) {
       this.method18421();
-      super.method18399(var1, var2, var3);
+      super.glTexEnvi(var1, var2, var3);
    }
 
    @Override
-   public void method18400(float var1, float var2, float var3) {
+   public void glTranslatef(float var1, float var2, float var3) {
       this.method18421();
-      super.method18400(var1, var2, var3);
+      super.glTranslatef(var1, var2, var3);
    }
 
    @Override
-   public void method18383() {
+   public void glEndList() {
       this.field25805--;
-      super.method18383();
+      super.glEndList();
    }
 
    @Override
-   public void method18390(int var1, int var2) {
+   public void glNewList(int id, int option) {
       this.field25805++;
-      super.method18390(var1, var2);
+      super.glNewList(id, option);
    }
 
    @Override
-   public float[] method18405() {
+   public float[] getCurrentColor() {
       return this.field25796;
    }
 
    @Override
-   public void method18411(FloatBuffer var1) {
+   public void glLoadMatrix(FloatBuffer var1) {
       this.method18420();
-      super.method18411(var1);
+      super.glLoadMatrix(var1);
    }
 }

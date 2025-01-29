@@ -1,6 +1,6 @@
 package mapped;
 
-import lol.Renderer;
+import org.newdawn.slick.opengl.renderer.Renderer;
 import lol.Texture;
 import lol.TextureImpl;
 import org.lwjgl.opengl.GL11;
@@ -12,7 +12,7 @@ public abstract class Class8028 {
 
    public static void method27525() {
       if (!field34504) {
-         Renderer.get().method18403();
+         Renderer.get().flush();
          field34503 = TextureImpl.method36176();
          TextureImpl.bindNone();
          GL11.glPushAttrib(1048575);

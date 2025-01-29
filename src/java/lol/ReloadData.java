@@ -1,5 +1,7 @@
 package lol;
 
+import org.newdawn.slick.util.Log;
+
 import java.nio.ByteBuffer;
 
 public class ReloadData {
@@ -15,7 +17,7 @@ public class ReloadData {
    }
 
    public int method28054() {
-      Log.method25662("Reloading texture: " + TextureImpl.method36191(this.field34829));
+      Log.error("Reloading texture: " + TextureImpl.method36191(this.field34829));
       return InternalTextureLoader.get().method35803(this.field34829, this.field34824, this.field34825, this.field34826, this.field34827, this.field34828);
    }
 

@@ -79,7 +79,7 @@ public class Class4296 extends Class4278 {
          RenderUtil.drawString(
                ResourceRegistry.JelloLightFont36,
                (float) (this.xA
-                     + (this.widthA - ResourceRegistry.JelloLightFont36.getStringWidth(this.field20813.getKnownName()))
+                     + (this.widthA - ResourceRegistry.JelloLightFont36.getWidth(this.field20813.getKnownName()))
                            / 2),
                (float) this.yA,
                this.field20813.getKnownName(),

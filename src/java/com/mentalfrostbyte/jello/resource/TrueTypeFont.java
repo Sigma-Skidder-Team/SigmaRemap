@@ -3,8 +3,11 @@ package com.mentalfrostbyte.jello.resource;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import lol.*;
-import lol.Font;
-import mapped.Color;
+import org.newdawn.slick.Font;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.GLUtils;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -178,18 +181,18 @@ public class TrueTypeFont implements Font {
         float var16 = var8 - var6;
         float var17 = var15 / (float) this.textureWidth;
         float var18 = var16 / (float) this.textureHeight;
-        field31933.method18398(var13, var14);
-        field31933.method18401(var1, var2);
-        field31933.method18398(var13, var14 + var18);
-        field31933.method18401(var1, var2 + var12);
-        field31933.method18398(var13 + var17, var14 + var18);
-        field31933.method18401(var1 + var11, var2 + var12);
-        field31933.method18398(var13 + var17, var14);
-        field31933.method18401(var1 + var11, var2);
+        field31933.glTexCoord2f(var13, var14);
+        field31933.glVertex2f(var1, var2);
+        field31933.glTexCoord2f(var13, var14 + var18);
+        field31933.glVertex2f(var1, var2 + var12);
+        field31933.glTexCoord2f(var13 + var17, var14 + var18);
+        field31933.glVertex2f(var1 + var11, var2 + var12);
+        field31933.glTexCoord2f(var13 + var17, var14);
+        field31933.glVertex2f(var1 + var11, var2);
     }
 
     @Override
-    public int getStringWidth(String var1) {
+    public int getWidth(String var1) {
         int var4 = 0;
         IntObject var5 = null;
         char var6 = '\u0000';
@@ -242,7 +245,7 @@ public class TrueTypeFont implements Font {
             var1 -= (float) (this.field31944 - 1);
         }
 
-        field31933.method18369(7);
+        field31933.glBegin(7);
         int var10 = 0;
 
         for (int var11 = 0; var11 < var3.length(); var11++) {
@@ -271,7 +274,7 @@ public class TrueTypeFont implements Font {
             }
         }
 
-        field31933.method18382();
+        field31933.glEnd();
     }
 
     @Override

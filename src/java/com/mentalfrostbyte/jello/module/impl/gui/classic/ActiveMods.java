@@ -16,6 +16,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
+import org.newdawn.slick.Color;
 
 import java.util.Map.Entry;
 import java.util.TreeMap;
@@ -123,7 +124,7 @@ public class ActiveMods extends Module {
                     this.field23963.drawString((float) (var7 - var19), (float) var6, var16.getSuffix(), new Color(var9));
                     this.field23964
                             .drawString(
-                                    (float) (var7 - this.field23964.getStringWidth(this.method16856(var16))),
+                                    (float) (var7 - this.field23964.getWidth(this.method16856(var16))),
                                     (float) var6 + 1.6F,
                                     this.method16856(var16),
                                     new Color(160, 160, 160)
@@ -191,6 +192,6 @@ public class ActiveMods extends Module {
     private int method16857(Module var1) {
         String var4 = var1.getSuffix();
         String var5 = this.method16856(var1);
-        return this.field23963.getStringWidth(var4) + this.field23964.getStringWidth(var5);
+        return this.field23963.getWidth(var4) + this.field23964.getWidth(var5);
     }
 }

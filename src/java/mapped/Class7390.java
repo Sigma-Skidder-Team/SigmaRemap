@@ -7,6 +7,10 @@ import java.nio.IntBuffer;
 
 import lol.*;
 import org.lwjgl.BufferUtils;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.ImageDataFactory;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
 
 
 public class Class7390 extends Image {
@@ -20,7 +24,7 @@ public class Class7390 extends Image {
 
    public static final int method23602() {
       IntBuffer var2 = BufferUtils.createIntBuffer(16);
-      field31643.method18386(3379, var2);
+      field31643.glGetInteger(3379, var2);
       return var2.get(0);
    }
 
@@ -63,8 +67,8 @@ public class Class7390 extends Image {
    }
 
    private void method23605(LoadableImageData var1, ByteBuffer var2, int var3, int var4) {
-      int var7 = var1.method21458();
-      int var8 = var1.method21459();
+      int var7 = var1.getTexWidth();
+      int var8 = var1.getTexHeight();
       this.field31648 = this.field31610 = var1.getWidth();
       this.field31649 = this.field31611 = var1.getHeight();
       if (var7 <= var4 && var8 <= var4) {
@@ -78,7 +82,7 @@ public class Class7390 extends Image {
          this.field31646 = (this.field31648 - 1) / var4 + 1;
          this.field31647 = (this.field31649 - 1) / var4 + 1;
          this.field31645 = new Image[this.field31646][this.field31647];
-         int var9 = var1.method21455() / 8;
+         int var9 = var1.getDepth() / 8;
 
          for (int var10 = 0; var10 < this.field31646; var10++) {
             for (int var11 = 0; var11 < this.field31647; var11++) {
@@ -138,8 +142,8 @@ public class Class7390 extends Image {
    public void method23539(float var1, float var2, float var3, float var4, Color var5) {
       float var8 = var3 / (float)this.field31648;
       float var9 = var4 / (float)this.field31649;
-      field31643.method18400(var1, var2, 0.0F);
-      field31643.method18396(var8, var9, 1.0F);
+      field31643.glTranslatef(var1, var2, 0.0F);
+      field31643.glScalef(var8, var9, 1.0F);
       float var10 = 0.0F;
       float var11 = 0.0F;
 
@@ -156,8 +160,8 @@ public class Class7390 extends Image {
          }
       }
 
-      field31643.method18396(1.0F / var8, 1.0F / var9, 1.0F);
-      field31643.method18400(-var1, -var2, 0.0F);
+      field31643.glScalef(1.0F / var8, 1.0F / var9, 1.0F);
+      field31643.glTranslatef(-var1, -var2, 0.0F);
    }
 
    @Override
@@ -226,8 +230,8 @@ public class Class7390 extends Image {
    public void method23540(float var1, float var2, float var3, float var4) {
       float var7 = var3 / (float)this.field31648;
       float var8 = var4 / (float)this.field31649;
-      field31643.method18400(var1, var2, 0.0F);
-      field31643.method18396(var7, var8, 1.0F);
+      field31643.glTranslatef(var1, var2, 0.0F);
+      field31643.glScalef(var7, var8, 1.0F);
       float var9 = 0.0F;
       float var10 = 0.0F;
 
@@ -244,8 +248,8 @@ public class Class7390 extends Image {
          }
       }
 
-      field31643.method18396(1.0F / var7, 1.0F / var8, 1.0F);
-      field31643.method18400(-var1, -var2, 0.0F);
+      field31643.glScalef(1.0F / var7, 1.0F / var8, 1.0F);
+      field31643.glTranslatef(-var1, -var2, 0.0F);
    }
 
    @Override

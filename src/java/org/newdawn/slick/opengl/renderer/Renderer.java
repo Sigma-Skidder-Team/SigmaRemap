@@ -1,4 +1,6 @@
-package lol;
+package org.newdawn.slick.opengl.renderer;
+
+import lol.*;
 
 public class Renderer {
    public static final int field35354 = 1;
@@ -27,7 +29,7 @@ public class Renderer {
             method28668(new DefaultLineStripRenderer());
             return;
          case 4:
-            method28668(new Class7333());
+            method28668(new QuadBasedLineStripRenderer());
             return;
          default:
             throw new RuntimeException("Unknown line strip renderer type: " + var0);

@@ -51,7 +51,7 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
             RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont20,
                         (float) (this.xA
-                                    + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getStringWidth(var4)) / 2),
+                                    + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getWidth(var4)) / 2),
                         (float) (this.yA + 70),
                         var4,
                         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.4F * var1));
@@ -63,7 +63,7 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
             RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont20,
                         (float) (this.getXA()
-                                    + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getStringWidth(var5)) / 2),
+                                    + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getWidth(var5)) / 2),
                         (float) (this.getYA() + this.getHeightA() - 180),
                         var5,
                         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.6F * var1));
@@ -71,7 +71,7 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
             RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont14,
                         (float) (this.getXA()
-                                    + (this.getWidthA() - ResourceRegistry.JelloLightFont14.getStringWidth(var6)) / 2),
+                                    + (this.getWidthA() - ResourceRegistry.JelloLightFont14.getWidth(var6)) / 2),
                         (float) (this.getYA() + this.getHeightA() - 150),
                         var6,
                         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.4F * var1));
@@ -79,7 +79,7 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
             RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont20,
                         (float) (this.getXA()
-                                    + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getStringWidth(var7)) / 2
+                                    + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getWidth(var7)) / 2
                                     - 114),
                         (float) (this.getYA() + this.getHeightA() - 221),
                         var7,
@@ -88,7 +88,7 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
             RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont20,
                         (float) (this.getXA()
-                                    + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getStringWidth(var8)) / 2
+                                    + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getWidth(var8)) / 2
                                     + 52),
                         (float) (this.getYA() + this.getHeightA() - 221),
                         var8,

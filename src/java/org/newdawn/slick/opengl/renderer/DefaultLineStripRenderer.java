@@ -1,4 +1,4 @@
-package lol;
+package org.newdawn.slick.opengl.renderer;
 
 public class DefaultLineStripRenderer implements LineStripRenderer {
    private static String[] field31431;
@@ -6,44 +6,44 @@ public class DefaultLineStripRenderer implements LineStripRenderer {
 
    @Override
    public void method23241() {
-      this.field31432.method18382();
+      this.field31432.glEnd();
    }
 
    @Override
    public void method23245(boolean var1) {
       if (!var1) {
-         this.field31432.method18380(2848);
+         this.field31432.glDisable(2848);
       } else {
-         this.field31432.method18381(2848);
+         this.field31432.glEnable(2848);
       }
    }
 
    @Override
    public void method23244(float var1) {
-      this.field31432.method18388(var1);
+      this.field31432.glLineWidth(var1);
    }
 
    @Override
-   public void method23240() {
-      this.field31432.method18369(3);
+   public void start() {
+      this.field31432.glBegin(3);
    }
 
    @Override
    public void method23242(float var1, float var2) {
-      this.field31432.method18401(var1, var2);
+      this.field31432.glVertex2f(var1, var2);
    }
 
    @Override
-   public void method23243(float var1, float var2, float var3, float var4) {
-      this.field31432.method18376(var1, var2, var3, var4);
+   public void color(float r, float g, float b, float a) {
+      this.field31432.glColor4f(r, g, b, a);
    }
 
    @Override
-   public void method23246(boolean var1) {
+   public void setLineCaps(boolean var1) {
    }
 
    @Override
-   public boolean method23239() {
+   public boolean applyGLLineFixes() {
       return true;
    }
 }

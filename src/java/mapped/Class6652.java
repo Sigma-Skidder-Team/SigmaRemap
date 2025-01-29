@@ -2,7 +2,8 @@ package mapped;
 
 import java.util.ArrayList;
 
-import lol.Log;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.util.Log;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
@@ -25,7 +26,7 @@ public class Class6652 implements Class6650 {
             String var13 = var11.getAttributeNS("http://www.w3.org/1999/xlink", "href");
             var3.method25470(var12, var13);
          } else {
-            Log.method25663("Pattern 1981 does not specify an image. Only image patterns are supported.");
+            Log.warn("Pattern 1981 does not specify an image. Only image patterns are supported.");
          }
       }
 

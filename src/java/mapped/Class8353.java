@@ -1,6 +1,7 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
+import org.newdawn.slick.Color;
 
 public class Class8353 {
    private static String[] field35895;

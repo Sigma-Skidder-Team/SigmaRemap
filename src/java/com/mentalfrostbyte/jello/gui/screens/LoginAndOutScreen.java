@@ -152,8 +152,8 @@ public class LoginAndOutScreen extends Screen {
          String welcomeBackSign = "Welcome back";
          byte var8 = 100;
          byte var9 = 10;
-         int var10 = var8 + Math.max(ResourceRegistry.JelloMediumFont40.getStringWidth(welcomeBackSign),
-               ResourceRegistry.JelloLightFont36.getStringWidth(username)) + var9 * 10;
+         int var10 = var8 + Math.max(ResourceRegistry.JelloMediumFont40.getWidth(welcomeBackSign),
+               ResourceRegistry.JelloLightFont36.getWidth(username)) + var9 * 10;
          int var11 = (this.widthA - var10) / 2;
          int var12 = (this.heightA - var8 * 2) / 2;
          RenderUtil.drawRect(

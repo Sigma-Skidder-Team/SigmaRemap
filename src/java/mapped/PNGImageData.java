@@ -18,22 +18,22 @@ public class PNGImageData implements LoadableImageData {
    private ByteBuffer scratch;
 
    @Override
-   public int method21455() {
+   public int getDepth() {
       return this.bitDepth;
    }
 
    @Override
-   public ByteBuffer method21460() {
+   public ByteBuffer getImageBufferData() {
       return this.scratch;
    }
 
    @Override
-   public int method21459() {
+   public int getTexHeight() {
       return this.texHeight;
    }
 
    @Override
-   public int method21458() {
+   public int getTexWidth() {
       return this.texWidth;
    }
 

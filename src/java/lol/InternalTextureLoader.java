@@ -14,6 +14,10 @@ import java.util.Iterator;
 
 import mapped.*;
 import org.lwjgl.BufferUtils;
+import org.newdawn.slick.opengl.ImageData;
+import org.newdawn.slick.opengl.ImageDataFactory;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
 
 public class InternalTextureLoader {
    public static SGL field43633 = Renderer.get();
@@ -59,7 +63,7 @@ public class InternalTextureLoader {
 
    public static int method35789() {
       IntBuffer var2 = method35801(1);
-      field43633.method18412(var2);
+      field43633.glGenTextures(var2);
       return var2.get(0);
    }
 
@@ -119,7 +123,7 @@ public class InternalTextureLoader {
       }
 
       try {
-         field43633.method18413();
+         field43633.glGetError();
       } catch (NullPointerException var12) {
          throw new RuntimeException("Image based resources must be loaded as part of init() or the game loop. They cannot be loaded before initialisation.");
       }
@@ -140,16 +144,16 @@ public class InternalTextureLoader {
       ByteBuffer var11 = var10.method21468(new BufferedInputStream(var1), var6, var7);
       int var12 = method35789();
       TextureImpl var13 = new TextureImpl(var2, var3, var12);
-      field43633.method18370(var3, var12);
+      field43633.glBindTexture(var3, var12);
       int var14 = var10.getWidth();
       int var15 = var10.getHeight();
-      boolean var16 = var10.method21455() == 32;
-      var13.method36184(var10.method21458());
-      var13.method36183(var10.method21459());
+      boolean var16 = var10.getDepth() == 32;
+      var13.method36184(var10.getTexWidth());
+      var13.method36183(var10.getTexHeight());
       int var17 = var13.getTextureWidth();
       int var18 = var13.getTextureHeight();
       IntBuffer var19 = BufferUtils.createIntBuffer(16);
-      field43633.method18386(3379, var19);
+      field43633.glGetInteger(3379, var19);
       int var20 = var19.get(0);
       int var21 = !var16 ? 6407 : 6408;
       int var22 = !var16 ? 3 : 4;
@@ -160,9 +164,9 @@ public class InternalTextureLoader {
          var13.method36189(var21, var22, var5, var4, var11);
       }
 
-      field43633.method18404(var3, 10241, var5);
-      field43633.method18404(var3, 10240, var4);
-      field43633.method18414(var3, 0, this.field43637, method35800(var14), method35800(var15), 0, var21, 5121, var11);
+      field43633.glTexParameteri(var3, 10241, var5);
+      field43633.glTexParameteri(var3, 10240, var4);
+      field43633.glTexImage2D(var3, 0, this.field43637, method35800(var14), method35800(var15), 0, var21, 5121, var11);
       return var13;
    }
 
@@ -177,16 +181,16 @@ public class InternalTextureLoader {
 
    public Texture method35799(ImageData var1, int var2) throws IOException {
       short var5 = 3553;
-      ByteBuffer var6 = var1.method21460();
+      ByteBuffer var6 = var1.getImageBufferData();
       int var7 = method35789();
       TextureImpl var8 = new TextureImpl("generated:" + var1, var5, var7);
       boolean var11 = false;
-      field43633.method18370(var5, var7);
+      field43633.glBindTexture(var5, var7);
       int var12 = var1.getWidth();
       int var13 = var1.getHeight();
-      boolean var14 = var1.method21455() == 32;
-      var8.method36184(var1.method21458());
-      var8.method36183(var1.method21459());
+      boolean var14 = var1.getDepth() == 32;
+      var8.method36184(var1.getTexWidth());
+      var8.method36183(var1.getTexHeight());
       int var15 = var8.getTextureWidth();
       int var16 = var8.getTextureHeight();
       int var17 = !var14 ? 6407 : 6408;
@@ -195,16 +199,16 @@ public class InternalTextureLoader {
       var8.method36181(var13);
       var8.method36178(var14);
       IntBuffer var19 = BufferUtils.createIntBuffer(16);
-      field43633.method18386(3379, var19);
+      field43633.glGetInteger(3379, var19);
       int var20 = var19.get(0);
       if (var15 <= var20 && var16 <= var20) {
          if (this.field43639) {
             var8.method36189(var17, var18, var2, var2, var6);
          }
 
-         field43633.method18404(var5, 10241, var2);
-         field43633.method18404(var5, 10240, var2);
-         field43633.method18414(var5, 0, this.field43637, method35800(var12), method35800(var13), 0, var17, 5121, var6);
+         field43633.glTexParameteri(var5, 10241, var2);
+         field43633.glTexParameteri(var5, 10240, var2);
+         field43633.glTexImage2D(var5, 0, this.field43637, method35800(var12), method35800(var13), 0, var17, 5121, var6);
          return var8;
       } else {
          throw new IOException("Attempt to allocate a texture to big for the current hardware");
@@ -244,10 +248,10 @@ public class InternalTextureLoader {
    public int method35803(TextureImpl var1, int var2, int var3, int var4, int var5, ByteBuffer var6) {
       short var9 = 3553;
       int var10 = method35789();
-      field43633.method18370(var9, var10);
-      field43633.method18404(var9, 10241, var4);
-      field43633.method18404(var9, 10240, var5);
-      field43633.method18414(var9, 0, this.field43637, var1.getTextureWidth(), var1.getTextureHeight(), 0, var2, 5121, var6);
+      field43633.glBindTexture(var9, var10);
+      field43633.glTexParameteri(var9, 10241, var4);
+      field43633.glTexParameteri(var9, 10240, var5);
+      field43633.glTexImage2D(var9, 0, this.field43637, var1.getTextureWidth(), var1.getTextureHeight(), 0, var2, 5121, var6);
       return var10;
    }
 }

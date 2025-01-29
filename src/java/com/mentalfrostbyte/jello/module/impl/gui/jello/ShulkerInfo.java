@@ -157,7 +157,7 @@ public class ShulkerInfo extends Module {
         GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
         GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getPitch(), 1.0F, 0.0F, 0.0F);
         GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
-        GL11.glTranslated(-var11.getStringWidth(var12) / 2, 0.0, 0.0);
+        GL11.glTranslated(-var11.getWidth(var12) / 2, 0.0, 0.0);
         List var16 = this.method16678(((ItemEntity) var7).method4124());
         this.method16676(-87, -70, var16, ((ItemEntity) var7).method4124().method32149().getString(), false);
         GL11.glPopMatrix();
@@ -249,8 +249,8 @@ public class ShulkerInfo extends Module {
 
             RenderUtil.method11479(var15, var17, var16, var10, var10);
             if (var15.count > 1) {
-                int var18 = var10 - ResourceRegistry.JelloLightFont20.getStringWidth("" + var15.count);
-                int var19 = ResourceRegistry.JelloLightFont20.getStringWidth("" + var15.count);
+                int var18 = var10 - ResourceRegistry.JelloLightFont20.getWidth("" + var15.count);
+                int var19 = ResourceRegistry.JelloLightFont20.getWidth("" + var15.count);
                 GL11.glAlphaFunc(519, 0.0F);
                 RenderSystem.disableLighting();
                 RenderUtil.method11450(

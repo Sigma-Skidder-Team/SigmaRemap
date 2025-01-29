@@ -3,6 +3,11 @@ package mapped;
 
 
 import lol.*;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.ImageData;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -90,7 +95,7 @@ public class Image implements Renderable {
 
          this.field31609 = InternalTextureLoader.get().getTexture(var1, var2, this.field31626, var7);
       } catch (IOException var8) {
-         Log.method25661(var8);
+         Log.error(var8);
          throw new Class2451("Failed to load image from: " + var1, var8);
       }
    }
@@ -98,8 +103,8 @@ public class Image implements Renderable {
    public void method23511(int var1) {
       this.field31626 = var1 != 1 ? 9728 : 9729;
       this.field31609.bind();
-      field31605.method18404(3553, 10241, this.field31626);
-      field31605.method18404(3553, 10240, this.field31626);
+      field31605.glTexParameteri(3553, 10241, this.field31626);
+      field31605.glTexParameteri(3553, 10240, this.field31626);
    }
 
    public Image(int var1, int var2) throws Class2451 {
@@ -113,7 +118,7 @@ public class Image implements Renderable {
       try {
          this.field31609 = InternalTextureLoader.get().method35798(var1, var2, this.field31626);
       } catch (IOException var7) {
-         Log.method25661(var7);
+         Log.error(var7);
          throw new Class2451("Failed to create empty image " + var1 + "x" + var2);
       }
 
@@ -148,7 +153,7 @@ public class Image implements Renderable {
          this.field31609 = InternalTextureLoader.get().method35799(var1, this.field31626);
          this.field31618 = this.field31609.toString();
       } catch (IOException var6) {
-         Log.method25661(var6);
+         Log.error(var6);
       }
    }
 
@@ -206,12 +211,12 @@ public class Image implements Renderable {
    }
 
    public void method23518() {
-      if (!field31605.method18416()) {
-         field31605.method18404(3553, 10242, 10496);
-         field31605.method18404(3553, 10243, 10496);
+      if (!field31605.canTextureMirrorClamp()) {
+         field31605.glTexParameteri(3553, 10242, 10496);
+         field31605.glTexParameteri(3553, 10243, 10496);
       } else {
-         field31605.method18404(3553, 10242, 34627);
-         field31605.method18404(3553, 10243, 34627);
+         field31605.glTexParameteri(3553, 10242, 34627);
+         field31605.glTexParameteri(3553, 10243, 34627);
       }
    }
 
@@ -235,7 +240,7 @@ public class Image implements Renderable {
 
          this.field31609 = InternalTextureLoader.get().method35795(var1, var2, var3, this.field31626, var8);
       } catch (IOException var9) {
-         Log.method25661(var9);
+         Log.error(var9);
          throw new Class2451("Failed to load image from: " + var2, var9);
       }
    }
@@ -293,26 +298,26 @@ public class Image implements Renderable {
       this.method23524();
       if (this.field31625 != null) {
          this.field31625[0].method10392();
-         field31605.method18398(this.field31614, this.field31615);
-         field31605.method18402(var1, var2, 0.0F);
+         field31605.glTexCoord2f(this.field31614, this.field31615);
+         field31605.glVertex3f(var1, var2, 0.0F);
          this.field31625[3].method10392();
-         field31605.method18398(this.field31614, this.field31615 + this.field31613);
-         field31605.method18402(var1, var2 + var4, 0.0F);
+         field31605.glTexCoord2f(this.field31614, this.field31615 + this.field31613);
+         field31605.glVertex3f(var1, var2 + var4, 0.0F);
          this.field31625[2].method10392();
-         field31605.method18398(this.field31614 + this.field31612, this.field31615 + this.field31613);
-         field31605.method18402(var1 + var3, var2 + var4, 0.0F);
+         field31605.glTexCoord2f(this.field31614 + this.field31612, this.field31615 + this.field31613);
+         field31605.glVertex3f(var1 + var3, var2 + var4, 0.0F);
          this.field31625[1].method10392();
-         field31605.method18398(this.field31614 + this.field31612, this.field31615);
-         field31605.method18402(var1 + var3, var2, 0.0F);
+         field31605.glTexCoord2f(this.field31614 + this.field31612, this.field31615);
+         field31605.glVertex3f(var1 + var3, var2, 0.0F);
       } else {
-         field31605.method18398(this.field31614, this.field31615);
-         field31605.method18402(var1, var2, 0.0F);
-         field31605.method18398(this.field31614, this.field31615 + this.field31613);
-         field31605.method18402(var1, var2 + var4, 0.0F);
-         field31605.method18398(this.field31614 + this.field31612, this.field31615 + this.field31613);
-         field31605.method18402(var1 + var3, var2 + var4, 0.0F);
-         field31605.method18398(this.field31614 + this.field31612, this.field31615);
-         field31605.method18402(var1 + var3, var2, 0.0F);
+         field31605.glTexCoord2f(this.field31614, this.field31615);
+         field31605.glVertex3f(var1, var2, 0.0F);
+         field31605.glTexCoord2f(this.field31614, this.field31615 + this.field31613);
+         field31605.glVertex3f(var1, var2 + var4, 0.0F);
+         field31605.glTexCoord2f(this.field31614 + this.field31612, this.field31615 + this.field31613);
+         field31605.glVertex3f(var1 + var3, var2 + var4, 0.0F);
+         field31605.glTexCoord2f(this.field31614 + this.field31612, this.field31615);
+         field31605.glVertex3f(var1 + var3, var2, 0.0F);
       }
    }
 
@@ -370,31 +375,31 @@ public class Image implements Renderable {
       }
 
       this.field31609.bind();
-      field31605.method18400(var1, var2, 0.0F);
+      field31605.glTranslatef(var1, var2, 0.0F);
       if (this.field31616 != 0.0F) {
-         field31605.method18400(this.field31622, this.field31623, 0.0F);
-         field31605.method18395(this.field31616, 0.0F, 0.0F, 1.0F);
-         field31605.method18400(-this.field31622, -this.field31623, 0.0F);
+         field31605.glTranslatef(this.field31622, this.field31623, 0.0F);
+         field31605.glRotatef(this.field31616, 0.0F, 0.0F, 1.0F);
+         field31605.glTranslatef(-this.field31622, -this.field31623, 0.0F);
       }
 
-      field31605.method18369(7);
+      field31605.glBegin(7);
       this.method23524();
-      field31605.method18398(this.field31614, this.field31615);
-      field31605.method18402(0.0F, 0.0F, 0.0F);
-      field31605.method18398(this.field31614, this.field31615 + this.field31613);
-      field31605.method18402(var3, (float)this.field31611, 0.0F);
-      field31605.method18398(this.field31614 + this.field31612, this.field31615 + this.field31613);
-      field31605.method18402((float)this.field31610 + var3, (float)this.field31611 + var4, 0.0F);
-      field31605.method18398(this.field31614 + this.field31612, this.field31615);
-      field31605.method18402((float)this.field31610, var4, 0.0F);
-      field31605.method18382();
+      field31605.glTexCoord2f(this.field31614, this.field31615);
+      field31605.glVertex3f(0.0F, 0.0F, 0.0F);
+      field31605.glTexCoord2f(this.field31614, this.field31615 + this.field31613);
+      field31605.glVertex3f(var3, (float)this.field31611, 0.0F);
+      field31605.glTexCoord2f(this.field31614 + this.field31612, this.field31615 + this.field31613);
+      field31605.glVertex3f((float)this.field31610 + var3, (float)this.field31611 + var4, 0.0F);
+      field31605.glTexCoord2f(this.field31614 + this.field31612, this.field31615);
+      field31605.glVertex3f((float)this.field31610, var4, 0.0F);
+      field31605.glEnd();
       if (this.field31616 != 0.0F) {
-         field31605.method18400(this.field31622, this.field31623, 0.0F);
-         field31605.method18395(-this.field31616, 0.0F, 0.0F, 1.0F);
-         field31605.method18400(-this.field31622, -this.field31623, 0.0F);
+         field31605.glTranslatef(this.field31622, this.field31623, 0.0F);
+         field31605.glRotatef(-this.field31616, 0.0F, 0.0F, 1.0F);
+         field31605.glTranslatef(-this.field31622, -this.field31623, 0.0F);
       }
 
-      field31605.method18400(-var1, -var2, 0.0F);
+      field31605.glTranslatef(-var1, -var2, 0.0F);
    }
 
    public void method23539(float var1, float var2, float var3, float var4, Color var5) {
@@ -412,23 +417,23 @@ public class Image implements Renderable {
       }
 
       this.field31609.bind();
-      field31605.method18400(var1, var2, 0.0F);
+      field31605.glTranslatef(var1, var2, 0.0F);
       if (this.field31616 != 0.0F) {
-         field31605.method18400(this.field31622, this.field31623, 0.0F);
-         field31605.method18395(this.field31616, 0.0F, 0.0F, 1.0F);
-         field31605.method18400(-this.field31622, -this.field31623, 0.0F);
+         field31605.glTranslatef(this.field31622, this.field31623, 0.0F);
+         field31605.glRotatef(this.field31616, 0.0F, 0.0F, 1.0F);
+         field31605.glTranslatef(-this.field31622, -this.field31623, 0.0F);
       }
 
-      field31605.method18369(7);
+      field31605.glBegin(7);
       this.method23529(0.0F, 0.0F, var3, var4);
-      field31605.method18382();
+      field31605.glEnd();
       if (this.field31616 != 0.0F) {
-         field31605.method18400(this.field31622, this.field31623, 0.0F);
-         field31605.method18395(-this.field31616, 0.0F, 0.0F, 1.0F);
-         field31605.method18400(-this.field31622, -this.field31623, 0.0F);
+         field31605.glTranslatef(this.field31622, this.field31623, 0.0F);
+         field31605.glRotatef(-this.field31616, 0.0F, 0.0F, 1.0F);
+         field31605.glTranslatef(-this.field31622, -this.field31623, 0.0F);
       }
 
-      field31605.method18400(-var1, -var2, 0.0F);
+      field31605.glTranslatef(-var1, -var2, 0.0F);
    }
 
    public void method23540(float var1, float var2, float var3, float var4) {
@@ -454,31 +459,31 @@ public class Image implements Renderable {
       this.method23524();
       var5.method10392();
       this.field31609.bind();
-      if (field31605.method18417()) {
-         field31605.method18381(33880);
-         field31605.method18418((byte)((int)(var5.field16455 * 255.0F)), (byte)((int)(var5.field16456 * 255.0F)), (byte)((int)(var5.field16457 * 255.0F)));
+      if (field31605.canSecondaryColor()) {
+         field31605.glEnable(33880);
+         field31605.glSecondaryColor3ubEXT((byte)((int)(var5.field16455 * 255.0F)), (byte)((int)(var5.field16456 * 255.0F)), (byte)((int)(var5.field16457 * 255.0F)));
       }
 
-      field31605.method18399(8960, 8704, 8448);
-      field31605.method18400(var1, var2, 0.0F);
+      field31605.glTexEnvi(8960, 8704, 8448);
+      field31605.glTranslatef(var1, var2, 0.0F);
       if (this.field31616 != 0.0F) {
-         field31605.method18400(this.field31622, this.field31623, 0.0F);
-         field31605.method18395(this.field31616, 0.0F, 0.0F, 1.0F);
-         field31605.method18400(-this.field31622, -this.field31623, 0.0F);
+         field31605.glTranslatef(this.field31622, this.field31623, 0.0F);
+         field31605.glRotatef(this.field31616, 0.0F, 0.0F, 1.0F);
+         field31605.glTranslatef(-this.field31622, -this.field31623, 0.0F);
       }
 
-      field31605.method18369(7);
+      field31605.glBegin(7);
       this.method23529(0.0F, 0.0F, var3, var4);
-      field31605.method18382();
+      field31605.glEnd();
       if (this.field31616 != 0.0F) {
-         field31605.method18400(this.field31622, this.field31623, 0.0F);
-         field31605.method18395(-this.field31616, 0.0F, 0.0F, 1.0F);
-         field31605.method18400(-this.field31622, -this.field31623, 0.0F);
+         field31605.glTranslatef(this.field31622, this.field31623, 0.0F);
+         field31605.glRotatef(-this.field31616, 0.0F, 0.0F, 1.0F);
+         field31605.glTranslatef(-this.field31622, -this.field31623, 0.0F);
       }
 
-      field31605.method18400(-var1, -var2, 0.0F);
-      if (field31605.method18417()) {
-         field31605.method18380(33880);
+      field31605.glTranslatef(-var1, -var2, 0.0F);
+      if (field31605.canSecondaryColor()) {
+         field31605.glDisable(33880);
       }
    }
 
@@ -549,23 +554,23 @@ public class Image implements Renderable {
 
       var9.method10392();
       this.field31609.bind();
-      field31605.method18400(var1, var2, 0.0F);
+      field31605.glTranslatef(var1, var2, 0.0F);
       if (this.field31616 != 0.0F) {
-         field31605.method18400(this.field31622, this.field31623, 0.0F);
-         field31605.method18395(this.field31616, 0.0F, 0.0F, 1.0F);
-         field31605.method18400(-this.field31622, -this.field31623, 0.0F);
+         field31605.glTranslatef(this.field31622, this.field31623, 0.0F);
+         field31605.glRotatef(this.field31616, 0.0F, 0.0F, 1.0F);
+         field31605.glTranslatef(-this.field31622, -this.field31623, 0.0F);
       }
 
-      field31605.method18369(7);
+      field31605.glBegin(7);
       this.method23555(0.0F, 0.0F, var3 - var1, var4 - var2, var5, var6, var7, var8);
-      field31605.method18382();
+      field31605.glEnd();
       if (this.field31616 != 0.0F) {
-         field31605.method18400(this.field31622, this.field31623, 0.0F);
-         field31605.method18395(-this.field31616, 0.0F, 0.0F, 1.0F);
-         field31605.method18400(-this.field31622, -this.field31623, 0.0F);
+         field31605.glTranslatef(this.field31622, this.field31623, 0.0F);
+         field31605.glRotatef(-this.field31616, 0.0F, 0.0F, 1.0F);
+         field31605.glTranslatef(-this.field31622, -this.field31623, 0.0F);
       }
 
-      field31605.method18400(-var1, -var2, 0.0F);
+      field31605.glTranslatef(-var1, -var2, 0.0F);
    }
 
    public void method23555(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8) {
@@ -585,44 +590,44 @@ public class Image implements Renderable {
       float var17 = var6 / (float)this.field31611 * this.field31613 + this.field31615;
       float var18 = var14 / (float)this.field31610 * this.field31612;
       float var19 = var15 / (float)this.field31611 * this.field31613;
-      field31605.method18398(var16, var17);
-      field31605.method18402(var1, var2, 0.0F);
-      field31605.method18398(var16, var17 + var19);
-      field31605.method18402(var1, var2 + var13, 0.0F);
-      field31605.method18398(var16 + var18, var17 + var19);
-      field31605.method18402(var1 + var12, var2 + var13, 0.0F);
-      field31605.method18398(var16 + var18, var17);
-      field31605.method18402(var1 + var12, var2, 0.0F);
+      field31605.glTexCoord2f(var16, var17);
+      field31605.glVertex3f(var1, var2, 0.0F);
+      field31605.glTexCoord2f(var16, var17 + var19);
+      field31605.glVertex3f(var1, var2 + var13, 0.0F);
+      field31605.glTexCoord2f(var16 + var18, var17 + var19);
+      field31605.glVertex3f(var1 + var12, var2 + var13, 0.0F);
+      field31605.glTexCoord2f(var16 + var18, var17);
+      field31605.glVertex3f(var1 + var12, var2, 0.0F);
    }
 
    public void method23557(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8) {
       Color.field16442.method10392();
       this.field31609.bind();
-      field31605.method18400(var1, var2, 0.0F);
+      field31605.glTranslatef(var1, var2, 0.0F);
       if (this.field31616 != 0.0F) {
-         field31605.method18400(this.field31622, this.field31623, 0.0F);
-         field31605.method18395(this.field31616, 0.0F, 0.0F, 1.0F);
-         field31605.method18400(-this.field31622, -this.field31623, 0.0F);
+         field31605.glTranslatef(this.field31622, this.field31623, 0.0F);
+         field31605.glRotatef(this.field31616, 0.0F, 0.0F, 1.0F);
+         field31605.glTranslatef(-this.field31622, -this.field31623, 0.0F);
       }
 
-      field31605.method18369(7);
+      field31605.glBegin(7);
       this.method23524();
-      field31605.method18398(this.field31614, this.field31615);
-      field31605.method18402(0.0F, 0.0F, 0.0F);
-      field31605.method18398(this.field31614, this.field31615 + this.field31613);
-      field31605.method18402(var3 - var1, var4 - var2, 0.0F);
-      field31605.method18398(this.field31614 + this.field31612, this.field31615 + this.field31613);
-      field31605.method18402(var5 - var1, var6 - var2, 0.0F);
-      field31605.method18398(this.field31614 + this.field31612, this.field31615);
-      field31605.method18402(var7 - var1, var8 - var2, 0.0F);
-      field31605.method18382();
+      field31605.glTexCoord2f(this.field31614, this.field31615);
+      field31605.glVertex3f(0.0F, 0.0F, 0.0F);
+      field31605.glTexCoord2f(this.field31614, this.field31615 + this.field31613);
+      field31605.glVertex3f(var3 - var1, var4 - var2, 0.0F);
+      field31605.glTexCoord2f(this.field31614 + this.field31612, this.field31615 + this.field31613);
+      field31605.glVertex3f(var5 - var1, var6 - var2, 0.0F);
+      field31605.glTexCoord2f(this.field31614 + this.field31612, this.field31615);
+      field31605.glVertex3f(var7 - var1, var8 - var2, 0.0F);
+      field31605.glEnd();
       if (this.field31616 != 0.0F) {
-         field31605.method18400(this.field31622, this.field31623, 0.0F);
-         field31605.method18395(-this.field31616, 0.0F, 0.0F, 1.0F);
-         field31605.method18400(-this.field31622, -this.field31623, 0.0F);
+         field31605.glTranslatef(this.field31622, this.field31623, 0.0F);
+         field31605.glRotatef(-this.field31616, 0.0F, 0.0F, 1.0F);
+         field31605.glTranslatef(-this.field31622, -this.field31623, 0.0F);
       }
 
-      field31605.method18400(-var1, -var2, 0.0F);
+      field31605.glTranslatef(-var1, -var2, 0.0F);
    }
 
    public int method23558() {
@@ -681,7 +686,7 @@ public class Image implements Renderable {
    public void method23508() {
       if (field31606 == this) {
          field31606 = null;
-         field31605.method18382();
+         field31605.glEnd();
       } else {
          throw new RuntimeException("The sprite sheet is not currently in use");
       }
@@ -693,7 +698,7 @@ public class Image implements Renderable {
          this.method23524();
          Color.field16442.method10392();
          this.field31609.bind();
-         field31605.method18369(7);
+         field31605.glBegin(7);
       } else {
          throw new RuntimeException("Attempt to start use of a sprite sheet before ending use with another - see endUse()");
       }

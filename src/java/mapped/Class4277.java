@@ -88,7 +88,7 @@ public class Class4277 extends Class4247 {
          int var11 = Math.max(0, 9 - this.field20734.getXA());
          RenderUtil.drawString(
                ResourceRegistry.JelloLightFont14,
-               (float) (var8 - ResourceRegistry.JelloLightFont14.getStringWidth(this.getTypedText()) - 10 - var11),
+               (float) (var8 - ResourceRegistry.JelloLightFont14.getWidth(this.getTypedText()) - 10 - var11),
                (float) (var9 - 5),
                this.getTypedText(),
                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(),

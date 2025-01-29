@@ -70,7 +70,7 @@ public class Class4268 extends Class4247 {
 
                      RenderUtil.drawString(
                            var4,
-                           (float) (this.xA + (this.widthA - var4.getStringWidth(this.field20912)) / 2),
+                           (float) (this.xA + (this.widthA - var4.getWidth(this.field20912)) / 2),
                            (float) (this.yA + 19) + 3.0F * this.field20691,
                            this.field20912,
                            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(),

@@ -1,6 +1,7 @@
 package mapped;
 
-import lol.Log;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.util.Log;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -156,7 +157,7 @@ public class Class6134 implements Class6135 {
             this.field27510 = new Image(field27482 + this.field27509);
          } catch (Class2451 var16) {
             this.field27510 = null;
-            Log.method25661(var16);
+            Log.error(var16);
          }
       }
 
@@ -324,7 +325,7 @@ public class Class6134 implements Class6135 {
          ByteArrayInputStream var5 = new ByteArrayInputStream(var4.toByteArray());
          return Class8273.method28895(var5);
       } catch (IOException var6) {
-         Log.method25662("Slick: ConfigurableEmitter.duplicate(): caught exception " + var6.toString());
+         Log.error("Slick: ConfigurableEmitter.duplicate(): caught exception " + var6.toString());
          return null;
       }
    }

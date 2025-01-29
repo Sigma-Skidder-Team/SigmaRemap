@@ -1,6 +1,9 @@
 package mapped;
 
 import lol.*;
+import org.newdawn.slick.opengl.renderer.LineStripRenderer;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
 
 public final class Class9247 {
     private static SGL field42549 = Renderer.get();
@@ -10,7 +13,7 @@ public final class Class9247 {
       Texture var3 = TextureImpl.method36176();
       TextureImpl.bindNone();
       float[] var4 = var0.method10594();
-      field42550.method23240();
+      field42550.start();
 
       for (int var5 = 0; var5 < var4.length; var5 += 2) {
          field42550.method23242(var4[var5], var4[var5 + 1]);
@@ -33,21 +36,21 @@ public final class Class9247 {
       Texture var5 = TextureImpl.method36176();
       TextureImpl.bindNone();
       float[] var6 = var0.method10593();
-      field42549.method18369(3);
+      field42549.glBegin(3);
 
       for (int var7 = 0; var7 < var4.length; var7 += 2) {
          var1.method30178(var0, var4[var7], var4[var7 + 1]).method10392();
          Class2532 var8 = var1.method30180(var0, var4[var7], var4[var7 + 1]);
-         field42549.method18401(var4[var7] + var8.field16737, var4[var7 + 1] + var8.field16738);
+         field42549.glVertex2f(var4[var7] + var8.field16737, var4[var7 + 1] + var8.field16738);
       }
 
       if (var0.method10612()) {
          var1.method30178(var0, var4[0], var4[1]).method10392();
          Class2532 var9 = var1.method30180(var0, var4[0], var4[1]);
-         field42549.method18401(var4[0] + var9.field16737, var4[1] + var9.field16738);
+         field42549.glVertex2f(var4[0] + var9.field16737, var4[1] + var9.field16738);
       }
 
-      field42549.method18382();
+      field42549.glEnd();
       if (var5 != null) {
          var5.bind();
       } else {

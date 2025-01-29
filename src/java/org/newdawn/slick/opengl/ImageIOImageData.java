@@ -1,4 +1,6 @@
-package lol;
+package org.newdawn.slick.opengl;
+
+import lol.LoadableImageData;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -17,7 +19,7 @@ import java.nio.ByteOrder;
 import java.util.Hashtable;
 import javax.imageio.ImageIO;
 
-public class Class6958 implements LoadableImageData {
+public class ImageIOImageData implements LoadableImageData {
    private static final ColorModel field30141 = new ComponentColorModel(ColorSpace.getInstance(1000), new int[]{8, 8, 8, 8}, true, false, 3, 0);
    private static final ColorModel field30142 = new ComponentColorModel(ColorSpace.getInstance(1000), new int[]{8, 8, 8, 0}, false, false, 1, 0);
    private int field30143;
@@ -28,7 +30,7 @@ public class Class6958 implements LoadableImageData {
    private boolean field30148 = true;
 
    @Override
-   public int method21455() {
+   public int getDepth() {
       return this.field30143;
    }
 
@@ -38,12 +40,12 @@ public class Class6958 implements LoadableImageData {
    }
 
    @Override
-   public int method21459() {
+   public int getTexHeight() {
       return this.field30147;
    }
 
    @Override
-   public int method21458() {
+   public int getTexWidth() {
       return this.field30146;
    }
 
@@ -153,7 +155,7 @@ public class Class6958 implements LoadableImageData {
    }
 
    @Override
-   public ByteBuffer method21460() {
+   public ByteBuffer getImageBufferData() {
       throw new RuntimeException("ImageIOImageData doesn't store it's image.");
    }
 

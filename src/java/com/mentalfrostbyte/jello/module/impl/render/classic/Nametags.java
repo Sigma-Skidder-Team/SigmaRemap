@@ -39,7 +39,7 @@ public class Nametags extends Module {
                 if (!player.isInvisible()) {
                     Vector2f vec = entry.getValue();
                     String name = player.getName().getUnformattedComponentText();
-                    int width = ResourceList.bold16.getStringWidth(name) + 8;
+                    int width = ResourceList.bold16.getWidth(name) + 8;
                     int x = Math.round(vec.x);
                     int y = Math.round(vec.y);
                     GL11.glPushMatrix();

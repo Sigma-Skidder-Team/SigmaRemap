@@ -29,7 +29,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
       UIButton var7;
       this.addToList(
             var7 = new UIButton(
-                  this, "addButton", this.widthA - 55, 0, ResourceRegistry.JelloLightFont25.getStringWidth("Add"), 69,
+                  this, "addButton", this.widthA - 55, 0, ResourceRegistry.JelloLightFont25.getWidth("Add"), 69,
                   ColorHelper.field27961, "+", ResourceRegistry.JelloLightFont25));
       var7.doThis((var1x, var2x) -> this.field21300.method13119(true));
       this.addToList(this.field21300 = new Class4272(this, "profile", 0, 69, this.widthA, 200));

@@ -42,7 +42,7 @@ public class UIButton extends Class4247 {
                      ? 0
                      : (this.textColor.method19413() != Class2218.field14491 ? this.getHeightA() / 2
                            : this.getHeightA()));
-         int var7 = this.getFont().getStringWidth(this.getTypedText());
+         int var7 = this.getFont().getWidth(this.getTypedText());
          float var8 = 18;
          float var9 = (float) Math.pow((double) this.field20711.calcPercent(), 3.0);
          RenderUtil.method11440(

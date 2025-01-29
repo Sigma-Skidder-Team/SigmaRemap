@@ -1,8 +1,9 @@
 package mapped;
 
-import lol.Log;
-import lol.Renderer;
-import lol.SGL;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.util.Log;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
 import lol.TextureImpl;
 
 import java.io.ByteArrayInputStream;
@@ -161,13 +162,13 @@ public class Class9365 {
       }
 
       if (this.field43464) {
-         this.field43448.method18400(var1, var2, 0.0F);
+         this.field43448.glTranslatef(var1, var2, 0.0F);
          if (this.field43457 == 1) {
-            this.field43448.method18371(770, 1);
+            this.field43448.glBlendFunc(770, 1);
          }
 
          if (this.method35470()) {
-            this.field43448.method18381(2832);
+            this.field43448.glEnable(2832);
             TextureImpl.bindNone();
          }
 
@@ -175,7 +176,7 @@ public class Class9365 {
             Class6135 var6 = (Class6135)this.field43455.get(var5);
             if (var6.method18942()) {
                if (var6.method18952()) {
-                  this.field43448.method18371(770, 1);
+                  this.field43448.glBlendFunc(770, 1);
                }
 
                Class9808 var7 = (Class9808)this.field43453.get(var6);
@@ -199,21 +200,21 @@ public class Class9365 {
                }
 
                if (var6.method18952()) {
-                  this.field43448.method18371(770, 771);
+                  this.field43448.glBlendFunc(770, 771);
                }
             }
          }
 
          if (this.method35470()) {
-            this.field43448.method18380(2832);
+            this.field43448.glDisable(2832);
          }
 
          if (this.field43457 == 1) {
-            this.field43448.method18371(770, 771);
+            this.field43448.glBlendFunc(770, 771);
          }
 
          Color.field16442.method10392();
-         this.field43448.method18400(-var1, -var2, 0.0F);
+         this.field43448.glTranslatef(-var1, -var2, 0.0F);
       }
    }
 
@@ -266,7 +267,7 @@ public class Class9365 {
       Class9808 var5 = (Class9808)this.field43453.get(var1);
       ArrayList var6 = var5.field45840;
       if (var6.size() <= 0) {
-         Log.method25663("Ran out of particles (increase the limit)!");
+         Log.warn("Ran out of particles (increase the limit)!");
          return this.field43456;
       } else {
          Class4536 var7 = (Class4536)var6.remove(var6.size() - 1);
@@ -321,7 +322,7 @@ public class Class9365 {
          ByteArrayInputStream var5 = new ByteArrayInputStream(var4.toByteArray());
          return Class8273.method28886(var5);
       } catch (IOException var6) {
-         Log.method25662("Failed to duplicate particle system");
+         Log.error("Failed to duplicate particle system");
          throw new Class2451("Unable to duplicated particle system", var6);
       }
    }

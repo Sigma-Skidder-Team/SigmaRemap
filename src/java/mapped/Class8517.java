@@ -1,5 +1,7 @@
 package mapped;
 
+import org.newdawn.slick.Color;
+
 public class Class8517 implements Class8518 {
    private static String[] field38218;
    private Class2532 field38219 = new Class2532(0.0F, 0.0F);

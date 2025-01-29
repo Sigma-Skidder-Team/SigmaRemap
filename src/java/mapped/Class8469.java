@@ -1,6 +1,6 @@
 package mapped;
 
-import lol.Log;
+import org.newdawn.slick.util.Log;
 import lol.ResourceLoader;
 
 import java.io.InputStream;
@@ -120,7 +120,7 @@ public class Class8469 {
                         Object var13 = this.method29861(var12, var11.getType());
                         this.method29866(var11, var2, var13);
                      } else {
-                        Log.method25665("Unable to find property on: " + var6 + " for attribute: " + var16[var17]);
+                        Log.info("Unable to find property on: " + var6 + " for attribute: " + var16[var17]);
                      }
                   } else {
                      String var21 = var1.method32705(var16[var17]);
@@ -138,7 +138,7 @@ public class Class8469 {
                      String var24 = this.field36293;
                      Method var25 = this.method29865(var6, var24, var22.getClass());
                      if (var25 == null) {
-                        Log.method25665("Unable to find method to add: " + var22 + " to " + var6);
+                        Log.info("Unable to find method to add: " + var22 + " to " + var6);
                      } else {
                         this.method29867(var25, var2, new Object[]{var22});
                      }

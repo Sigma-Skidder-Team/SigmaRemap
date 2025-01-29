@@ -343,7 +343,7 @@ public class MusicPlayer extends Class4278 {
       RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
             (float) (this.getXA() + this.getWidthA() - 14
-                  - ResourceRegistry.JelloLightFont14.getStringWidth(Class9275.method34955(var5))),
+                  - ResourceRegistry.JelloLightFont14.getWidth(Class9275.method34955(var5))),
             (float) (this.getYA() + this.getHeightA() - 10) - 22.0F * var1,
             Class9275.method34955(var5),
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1 * var1));
@@ -439,7 +439,7 @@ public class MusicPlayer extends Class4278 {
       }
 
       var9 = QuadraticEasing.easeInOutQuad(var9, 0.0F, 1.0F, 1.0F);
-      int var10 = ResourceRegistry.JelloLightFont14.getStringWidth(var2);
+      int var10 = ResourceRegistry.JelloLightFont14.getWidth(var2);
       int var11 = Math.min(var3, var10);
       int var12 = ResourceRegistry.JelloLightFont14.method23952();
       int var13 = this.getXA() + (this.field20845 - var11) / 2;
@@ -505,14 +505,14 @@ public class MusicPlayer extends Class4278 {
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var4 * var1 * 0.2F));
       RenderUtil.drawString(
             ResourceRegistry.JelloLightFont25,
-            (float) ((this.getWidthA() - ResourceRegistry.JelloLightFont25.getStringWidth(this.field20849)
+            (float) ((this.getWidthA() - ResourceRegistry.JelloLightFont25.getWidth(this.field20849)
                   + this.field20845) / 2),
             16.0F + (1.0F - var4) * 14.0F,
             this.field20849,
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var4));
       RenderUtil.drawString(
             ResourceRegistry.JelloMediumFont25,
-            (float) ((this.getWidthA() - ResourceRegistry.JelloMediumFont25.getStringWidth(this.field20849)
+            (float) ((this.getWidthA() - ResourceRegistry.JelloMediumFont25.getWidth(this.field20849)
                   + this.field20845) / 2),
             16.0F + (1.0F - var4) * 14.0F,
             this.field20849,

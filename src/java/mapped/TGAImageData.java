@@ -11,7 +11,7 @@ import java.nio.ByteOrder;
 import lol.LoadableImageData;
 import org.lwjgl.BufferUtils;
 
-public class Class6960 implements LoadableImageData {
+public class TGAImageData implements LoadableImageData {
    private int field30151;
    private int field30152;
    private int field30153;
@@ -24,7 +24,7 @@ public class Class6960 implements LoadableImageData {
    }
 
    @Override
-   public int method21455() {
+   public int getDepth() {
       return this.field30155;
    }
 
@@ -39,12 +39,12 @@ public class Class6960 implements LoadableImageData {
    }
 
    @Override
-   public int method21458() {
+   public int getTexWidth() {
       return this.field30151;
    }
 
    @Override
-   public int method21459() {
+   public int getTexHeight() {
       return this.field30152;
    }
 
@@ -255,7 +255,7 @@ public class Class6960 implements LoadableImageData {
    }
 
    @Override
-   public ByteBuffer method21460() {
+   public ByteBuffer getImageBufferData() {
       throw new RuntimeException("TGAImageData doesn't store it's image.");
    }
 

@@ -1,6 +1,7 @@
 package mapped;
 
-import lol.Log;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.util.Log;
 
 import java.util.ArrayList;
 
@@ -101,7 +102,7 @@ public class Class7389 implements Renderable {
          this.field31629.add(new Class8385(this, var1, var2, var3));
          this.field31630 = 0;
       } else {
-         Log.method25662("Invalid duration: " + var1);
+         Log.error("Invalid duration: " + var1);
          throw new RuntimeException("Invalid duration: " + var1);
       }
    }
@@ -164,7 +165,7 @@ public class Class7389 implements Renderable {
          this.field31629.add(new Class8385(this, var1, var2));
          this.field31630 = 0;
       } else {
-         Log.method25662("Invalid duration: " + var2);
+         Log.error("Invalid duration: " + var2);
          throw new RuntimeException("Invalid duration: " + var2);
       }
    }
