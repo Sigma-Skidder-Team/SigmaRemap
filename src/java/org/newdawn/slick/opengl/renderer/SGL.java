@@ -5,6 +5,11 @@ import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 
+//import org.lwjgl.opengl.EXTSecondaryColor;
+//import org.lwjgl.opengl.EXTTextureMirrorClamp;
+//import org.lwjgl.opengl.GL11;
+//import org.lwjgl.opengl.GL12;
+
 /**
  * The description of the OpenGL functions used Slick. Any other rendering method will
  * need to emulate these.
@@ -12,161 +17,519 @@ import java.nio.IntBuffer;
  * @author kevin
  */
 public interface SGL {
-//   int GL_TEXTURE_2D = 3553;
-//   int field25739 = 6408;
-//   int field25740 = 6407;
-//   int field25741 = 5121;
-//   int field25742 = 9729;
-//   int field25743 = 9728;
-//   int field25744 = 10241;
-//   int field25745 = 10240;
-//   int field25746 = 2832;
-//   int field25747 = 2881;
-//   int field25748 = 2848;
-//   int field25749 = 3089;
-//   int field25750 = 8448;
-//   int field25751 = 8960;
-//   int field25752 = 8704;
-//   int field25753 = 7;
-//   int field25754 = 0;
-//   int field25755 = 1;
-//   int field25756 = 3;
-//   int field25757 = 4;
-//   int field25758 = 6;
-//   int field25759 = 770;
-//   int field25760 = 1;
-//   int field25761 = 773;
-//   int field25762 = 772;
-//   int field25763 = 771;
-//   int field25764 = 4864;
-//   int field25765 = 3379;
-//   int field25766 = 16384;
-//   int field25767 = 256;
-//   int field25768 = 3042;
-//   int field25769 = 3106;
-//   int field25770 = 2849;
-//   int field25771 = 12288;
-//   int field25772 = 12289;
-//   int field25773 = 12290;
-//   int field25774 = 12291;
-//   int field25775 = 4865;
-//   int field25776 = 6408;
-//   int field25777 = 32859;
-//   int field25778 = 32993;
-//   int field25779 = 34627;
-//   int field25780 = 10242;
-//   int field25781 = 10243;
-//   int field25782 = 10496;
-//   int field25783 = 33880;
-//   int field25784 = 519;
-//   int field25785 = 2929;
-//   int field25786 = 517;
-//   int field25787 = 514;
-//   int field25788 = 768;
-//   int field25789 = 769;
-//   int field25790 = 2982;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_TEXTURE_2D = GL11.GL_TEXTURE_2D;
+//
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_RGBA = GL11.GL_RGBA;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_RGB = GL11.GL_RGB;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_UNSIGNED_BYTE = GL11.GL_UNSIGNED_BYTE;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_LINEAR = GL11.GL_LINEAR;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_NEAREST = GL11.GL_NEAREST;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_TEXTURE_MIN_FILTER = GL11.GL_TEXTURE_MIN_FILTER;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_TEXTURE_MAG_FILTER = GL11.GL_TEXTURE_MAG_FILTER;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_POINT_SMOOTH = GL11.GL_POINT_SMOOTH;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_POLYGON_SMOOTH = GL11.GL_POLYGON_SMOOTH;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_LINE_SMOOTH = GL11.GL_LINE_SMOOTH;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_SCISSOR_TEST = GL11.GL_SCISSOR_TEST;
+//
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_MODULATE = GL11.GL_MODULATE;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_TEXTURE_ENV = GL11.GL_TEXTURE_ENV;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_TEXTURE_ENV_MODE = GL11.GL_TEXTURE_ENV_MODE;
+//
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_QUADS = GL11.GL_QUADS;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_POINTS = GL11.GL_POINTS;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_LINES = GL11.GL_LINES;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_LINE_STRIP = GL11.GL_LINE_STRIP;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_TRIANGLES = GL11.GL_TRIANGLES;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_TRIANGLE_FAN = GL11.GL_TRIANGLE_FAN;
+//
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_SRC_ALPHA = GL11.GL_SRC_ALPHA;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_ONE = GL11.GL_ONE;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_ONE_MINUS_DST_ALPHA = GL11.GL_ONE_MINUS_DST_ALPHA;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_DST_ALPHA = GL11.GL_DST_ALPHA;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_ONE_MINUS_SRC_ALPHA = GL11.GL_ONE_MINUS_SRC_ALPHA;
+//
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_COMPILE = GL11.GL_COMPILE;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_MAX_TEXTURE_SIZE = GL11.GL_MAX_TEXTURE_SIZE;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_COLOR_BUFFER_BIT = GL11.GL_COLOR_BUFFER_BIT;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_DEPTH_BUFFER_BIT = GL11.GL_DEPTH_BUFFER_BIT;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_BLEND = GL11.GL_BLEND;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_COLOR_CLEAR_VALUE = GL11.GL_COLOR_CLEAR_VALUE;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_LINE_WIDTH = GL11.GL_LINE_WIDTH;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_CLIP_PLANE0 = GL11.GL_CLIP_PLANE0;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_CLIP_PLANE1 = GL11.GL_CLIP_PLANE1;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_CLIP_PLANE2 = GL11.GL_CLIP_PLANE2;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_CLIP_PLANE3 = GL11.GL_CLIP_PLANE3;
+//
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_COMPILE_AND_EXECUTE = GL11.GL_COMPILE_AND_EXECUTE;
+//
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_RGBA8 = GL11.GL_RGBA;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_RGBA16 = GL11.GL_RGBA16;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_BGRA = GL12.GL_BGRA;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_MIRROR_CLAMP_TO_EDGE_EXT = EXTTextureMirrorClamp.GL_MIRROR_CLAMP_TO_EDGE_EXT;
+//
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_TEXTURE_WRAP_S = GL11.GL_TEXTURE_WRAP_S;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_TEXTURE_WRAP_T = GL11.GL_TEXTURE_WRAP_T;
+//
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_CLAMP = GL11.GL_CLAMP;
+//
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_COLOR_SUM_EXT = EXTSecondaryColor.GL_COLOR_SUM_EXT;
+//
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_ALWAYS = GL11.GL_ALWAYS;
+//
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_DEPTH_TEST = GL11.GL_DEPTH_TEST;
+//
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_NOTEQUAL = GL11.GL_NOTEQUAL;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_EQUAL = GL11.GL_EQUAL;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_SRC_COLOR = GL11.GL_SRC_COLOR;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_ONE_MINUS_SRC_COLOR = GL11.GL_ONE_MINUS_SRC_COLOR;
+//   /** OpenGL Enum - @url http://www.opengl.org/documentation */
+//   public static final int GL_MODELVIEW_MATRIX = GL11.GL_MODELVIEW_MATRIX;
 
-   void flush();
+   /**
+    * Flush the current state of the renderer down to GL
+    */
+   public void flush();
 
-   void initDisplay(int var1, int var2);
+   /**
+    * Initialise the display
+    *
+    * @param width The width of the display
+    * @param height The height of the display
+    */
+   public void initDisplay(int width, int height);
 
-   void enterOrtho(int var1, int var2);
+   /**
+    * Enter orthographic mode
+    *
+    * @param xsize The size of the ortho display
+    * @param ysize The size of the ortho display
+    */
+   public void enterOrtho(int xsize, int ysize);
 
-   void glClearColor(float var1, float var2, float var3, float var4);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param red
+    * @param green
+    * @param blue
+    * @param alpha
+    */
+   public void glClearColor(float red, float green, float blue, float alpha);
 
-   void glClipPlane(int var1, DoubleBuffer var2);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param plane
+    * @param buffer
+    */
+   public void glClipPlane(int plane, DoubleBuffer buffer);
 
-   void glScissor(int var1, int var2, int var3, int var4);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param x
+    * @param y
+    * @param width
+    * @param height
+    */
+   public void glScissor(int x, int y, int width, int height);
 
-   void glLineWidth(float var1);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param width
+    */
+   public void glLineWidth(float width);
 
-   void glClear(int var1);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param value
+    */
+   public void glClear(int value);
 
-   void glColorMask(boolean var1, boolean var2, boolean var3, boolean var4);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param red
+    * @param green
+    * @param blue
+    * @param alpha
+    */
+   public void glColorMask(boolean red, boolean green, boolean blue, boolean alpha);
 
-   void glLoadIdentity();
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    */
+   public void glLoadIdentity();
 
-   void glGetInteger(int var1, IntBuffer var2);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param id
+    * @param ret
+    */
+   public void glGetInteger(int id, IntBuffer ret);
 
-   void glGetFloat(int var1, FloatBuffer var2);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param id
+    * @param ret
+    */
+   public void glGetFloat(int id, FloatBuffer ret);
 
-   void glEnable(int var1);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param item
+    */
+   public void glEnable(int item);
 
-   void glDisable(int var1);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param item
+    */
+   public void glDisable(int item);
 
-   void glBindTexture(int var1, int var2);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param target
+    * @param id
+    */
+   public void glBindTexture(int target, int id);
 
-   void glGetTexImage(int var1, int var2, int var3, int var4, ByteBuffer var5);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param target
+    * @param level
+    * @param format
+    * @param type
+    * @param pixels
+    */
+   public void glGetTexImage(int target, int level, int format, int type, ByteBuffer pixels);
 
-   void glDeleteTextures(IntBuffer var1);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param buffer
+    */
+   public void glDeleteTextures(IntBuffer buffer);
 
-   void glColor4f(float var1, float var2, float var3, float var4);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param r
+    * @param g
+    * @param b
+    * @param a
+    */
+   public void glColor4f(float r, float g, float b, float a);
 
-   void glTexCoord2f(float var1, float var2);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param u
+    * @param v
+    */
+   public void glTexCoord2f(float u, float v);
 
-   void glVertex3f(float var1, float var2, float var3);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param x
+    * @param y
+    * @param z
+    */
+   public void glVertex3f(float x, float y, float z);
 
-   void glVertex2f(float var1, float var2);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param x
+    * @param y
+    */
+   public void glVertex2f(float x, float y);
 
-   void glRotatef(float var1, float var2, float var3, float var4);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param angle
+    * @param x
+    * @param y
+    * @param z
+    */
+   public void glRotatef(float angle, float x, float y, float z);
 
-   void glTranslatef(float var1, float var2, float var3);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param x
+    * @param y
+    * @param z
+    */
+   public void glTranslatef(float x, float y, float z);
 
-   void glBegin(int geomType);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param geomType
+    */
+   public void glBegin(int geomType);
 
-   void glEnd();
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    */
+   public void glEnd();
 
-   void glTexEnvi(int var1, int var2, int var3);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param target
+    * @param mode
+    * @param value
+    */
+   public void glTexEnvi(int target, int mode, int value);
 
-   void glPointSize(float var1);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param size
+    */
+   public void glPointSize(float size);
 
-   void glScalef(float var1, float var2, float var3);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param x
+    * @param y
+    * @param z
+    */
+   public void glScalef(float x, float y, float z);
 
-   void glPushMatrix();
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    */
+   public void glPushMatrix();
 
-   void glPopMatrix();
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    */
+   public void glPopMatrix();
 
-   void glBlendFunc(int src, int dest);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param src
+    * @param dest
+    */
+   public void glBlendFunc(int src, int dest);
 
-   int glGenLists(int count);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param count
+    * @return The index of the lists
+    */
+   public int glGenLists(int count);
 
-   void glNewList(int id, int option);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param id
+    * @param option
+    */
+   public void glNewList(int id, int option);
 
-   void glEndList();
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    */
+   public void glEndList();
 
-   void glCallList(int var1);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param id
+    */
+   public void glCallList(int id);
 
-   void glCopyTexImage2D(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param target
+    * @param level
+    * @param internalFormat
+    * @param x
+    * @param y
+    * @param width
+    * @param height
+    * @param border
+    */
+   public void glCopyTexImage2D(int	target, int level, int internalFormat,
+                                int x, int y, int width, int height, int border);
 
-   void glReadPixels(int var1, int var2, int var3, int var4, int var5, int var6, ByteBuffer var7);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param x
+    * @param y
+    * @param width
+    * @param height
+    * @param format
+    * @param type
+    * @param pixels
+    */
+   public void glReadPixels(int x, int y, int width, int height, int format, int type,
+                            ByteBuffer pixels);
 
-   void glTexParameteri(int var1, int var2, int var3);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param target
+    * @param param
+    * @param value
+    */
+   public void glTexParameteri(int target, int param, int value);
 
-   float[] getCurrentColor();
+   /**
+    * Get the current colour being rendered
+    *
+    * @return The current colour being rendered
+    */
+   public float[] getCurrentColor();
 
-   void glDeleteLists(int list, int count);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param list
+    * @param count
+    */
+   public void glDeleteLists(int list, int count);
 
-   void glDepthMask(boolean var1);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param mask
+    */
+   public void glDepthMask(boolean mask);
 
-   void glClearDepth(float var1);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param value
+    */
+   public void glClearDepth(float value);
 
-   void glDepthFunc(int func);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param func
+    */
+   public void glDepthFunc(int func);
 
-   void setGlobalAlphaScale(float var1);
+   /**
+    * Set the scaling we'll apply to any colour binds in this renderer
+    *
+    * @param alphaScale The scale to apply to any colour binds
+    */
+   public void setGlobalAlphaScale(float alphaScale);
 
-   void glLoadMatrix(FloatBuffer var1);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param buffer
+    */
+   public void glLoadMatrix(FloatBuffer buffer);
 
-   void glGenTextures(IntBuffer var1);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    *
+    * @param ids
+    */
+   public void glGenTextures(IntBuffer ids);
 
-   void glGetError();
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    */
+   public void glGetError();
 
-   void glTexImage2D(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, ByteBuffer var9);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    */
+   public void glTexImage2D(int target, int i, int dstPixelFormat,
+                            int get2Fold, int get2Fold2, int j, int srcPixelFormat,
+                            int glUnsignedByte, ByteBuffer textureBuffer);
 
-   void glTexSubImage2D(int glTexture2d, int i, int pageX, int pageY, int width, int height, int glBgra, int glUnsignedByte, ByteBuffer scratchByteBuffer);
+   /**
+    * OpenGL Method - @url http://www.opengl.org/documentation/
+    */
+   public void glTexSubImage2D(int glTexture2d, int i, int pageX, int pageY,
+                               int width, int height, int glBgra, int glUnsignedByte,
+                               ByteBuffer scratchByteBuffer);
 
-   boolean canTextureMirrorClamp();
+   /**
+    * Check if the mirror clamp extension is available
+    *
+    * @return True if the mirro clamp extension is available
+    */
+   public boolean canTextureMirrorClamp();
 
-   boolean canSecondaryColor();
+   public boolean canSecondaryColor();
 
-   void glSecondaryColor3ubEXT(byte b, byte c, byte d);
+   public void glSecondaryColor3ubEXT(byte b, byte c, byte d);
 }
