@@ -16,7 +16,7 @@ public class Renderer {
             method28669(new ImmediateModeOGLRenderer());
             return;
          case 2:
-            method28669(new Class5922());
+            method28669(new VAOGLRenderer());
             return;
          default:
             throw new RuntimeException("Unknown renderer type: " + var0);

@@ -6,27 +6,27 @@ import java.nio.FloatBuffer;
 
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
+import org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer;
 
-public class Class5922 extends ImmediateModeOGLRenderer {
-   private static String[] field25791;
-   private static final int field25792 = 20;
-   public static final int field25793 = -1;
-   public static final int field25794 = 5000;
-   private int field25795 = -1;
-   private float[] field25796 = new float[]{1.0F, 1.0F, 1.0F, 1.0F};
-   private float[] field25797 = new float[]{0.0F, 0.0F};
-   private int field25798;
-   private float[] field25799 = new float[15000];
-   private float[] field25800 = new float[20000];
-   private float[] field25801 = new float[15000];
-   private FloatBuffer field25802 = BufferUtils.createFloatBuffer(15000);
-   private FloatBuffer field25803 = BufferUtils.createFloatBuffer(20000);
-   private FloatBuffer field25804 = BufferUtils.createFloatBuffer(10000);
-   private int field25805 = 0;
+public class VAOGLRenderer extends ImmediateModeOGLRenderer {
+   private static final int TOLERANCE = 20;
+   public static final int NONE = -1;
+   public static final int MAX_VERTS = 5000;
+   private int currentType = NONE;
+   private float[] color = new float[]{1.0F, 1.0F, 1.0F, 1.0F};
+   private float[] tex = new float[]{0.0F, 0.0F};
+   private int vertIndex;
+   private float[] verts = new float[15000];
+   private float[] cols = new float[20000];
+   private float[] texs = new float[15000];
+   private FloatBuffer verticies = BufferUtils.createFloatBuffer(15000);
+   private FloatBuffer colors = BufferUtils.createFloatBuffer(20000);
+   private FloatBuffer textures = BufferUtils.createFloatBuffer(10000);
+   private int listMode = 0;
 
    @Override
-   public void initDisplay(int var1, int var2) {
-      super.initDisplay(var1, var2);
+   public void initDisplay(int width, int height) {
+      super.initDisplay(width, height);
       this.method18419();
       GL11.glEnableClientState(32884);
       GL11.glEnableClientState(32888);
@@ -34,51 +34,51 @@ public class Class5922 extends ImmediateModeOGLRenderer {
    }
 
    private void method18419() {
-      this.field25798 = 0;
+      this.vertIndex = 0;
    }
 
    private void method18420() {
-      if (this.field25798 != 0) {
-         if (this.field25795 != -1) {
-            if (this.field25798 >= 20) {
-               ((Buffer)this.field25802).clear();
-               ((Buffer)this.field25803).clear();
-               ((Buffer)this.field25804).clear();
-               this.field25802.put(this.field25799, 0, this.field25798 * 3);
-               this.field25803.put(this.field25800, 0, this.field25798 * 4);
-               this.field25804.put(this.field25801, 0, this.field25798 * 2);
-               ((Buffer)this.field25802).flip();
-               ((Buffer)this.field25803).flip();
-               ((Buffer)this.field25804).flip();
-               GL11.glVertexPointer(3, 0, 0, this.field25802);
-               GL11.glColorPointer(4, 0, 0, this.field25803);
-               GL11.glTexCoordPointer(2, 0, 0, this.field25804);
-               GL11.glDrawArrays(this.field25795, 0, this.field25798);
-               this.field25795 = -1;
+      if (this.vertIndex != 0) {
+         if (this.currentType != -1) {
+            if (this.vertIndex >= 20) {
+               ((Buffer)this.verticies).clear();
+               ((Buffer)this.colors).clear();
+               ((Buffer)this.textures).clear();
+               this.verticies.put(this.verts, 0, this.vertIndex * 3);
+               this.colors.put(this.cols, 0, this.vertIndex * 4);
+               this.textures.put(this.texs, 0, this.vertIndex * 2);
+               ((Buffer)this.verticies).flip();
+               ((Buffer)this.colors).flip();
+               ((Buffer)this.textures).flip();
+               GL11.glVertexPointer(3, 0, 0, this.verticies);
+               GL11.glColorPointer(4, 0, 0, this.colors);
+               GL11.glTexCoordPointer(2, 0, 0, this.textures);
+               GL11.glDrawArrays(this.currentType, 0, this.vertIndex);
+               this.currentType = -1;
             } else {
-               GL11.glBegin(this.field25795);
+               GL11.glBegin(this.currentType);
 
-               for (int var3 = 0; var3 < this.field25798; var3++) {
-                  GL11.glColor4f(this.field25800[var3 * 4 + 0], this.field25800[var3 * 4 + 1], this.field25800[var3 * 4 + 2], this.field25800[var3 * 4 + 3]);
-                  GL11.glTexCoord2f(this.field25801[var3 * 2 + 0], this.field25801[var3 * 2 + 1]);
-                  GL11.glVertex3f(this.field25799[var3 * 3 + 0], this.field25799[var3 * 3 + 1], this.field25799[var3 * 3 + 2]);
+               for (int var3 = 0; var3 < this.vertIndex; var3++) {
+                  GL11.glColor4f(this.cols[var3 * 4 + 0], this.cols[var3 * 4 + 1], this.cols[var3 * 4 + 2], this.cols[var3 * 4 + 3]);
+                  GL11.glTexCoord2f(this.texs[var3 * 2 + 0], this.texs[var3 * 2 + 1]);
+                  GL11.glVertex3f(this.verts[var3 * 3 + 0], this.verts[var3 * 3 + 1], this.verts[var3 * 3 + 2]);
                }
 
                GL11.glEnd();
-               this.field25795 = -1;
+               this.currentType = -1;
             }
          }
       }
    }
 
    private void method18421() {
-      if (this.field25805 <= 0) {
-         if (this.field25798 != 0) {
+      if (this.listMode <= 0) {
+         if (this.vertIndex != 0) {
             this.method18420();
             this.method18419();
          }
 
-         super.glColor4f(this.field25796[0], this.field25796[1], this.field25796[2], this.field25796[3]);
+         super.glColor4f(this.color[0], this.color[1], this.color[2], this.color[3]);
       }
    }
 
@@ -90,10 +90,10 @@ public class Class5922 extends ImmediateModeOGLRenderer {
 
    @Override
    public void glBegin(int geomType) {
-      if (this.field25805 <= 0) {
-         if (this.field25795 != geomType) {
+      if (this.listMode <= 0) {
+         if (this.currentType != geomType) {
             this.method18421();
-            this.field25795 = geomType;
+            this.currentType = geomType;
          }
       } else {
          super.glBegin(geomType);
@@ -102,28 +102,28 @@ public class Class5922 extends ImmediateModeOGLRenderer {
 
    @Override
    public void glColor4f(float var1, float var2, float var3, float var4) {
-      var4 *= this.field25737;
-      this.field25796[0] = var1;
-      this.field25796[1] = var2;
-      this.field25796[2] = var3;
-      this.field25796[3] = var4;
-      if (this.field25805 > 0) {
+      var4 *= this.alphaScale;
+      this.color[0] = var1;
+      this.color[1] = var2;
+      this.color[2] = var3;
+      this.color[3] = var4;
+      if (this.listMode > 0) {
          super.glColor4f(var1, var2, var3, var4);
       }
    }
 
    @Override
    public void glEnd() {
-      if (this.field25805 > 0) {
+      if (this.listMode > 0) {
          super.glEnd();
       }
    }
 
    @Override
    public void glTexCoord2f(float var1, float var2) {
-      if (this.field25805 <= 0) {
-         this.field25797[0] = var1;
-         this.field25797[1] = var2;
+      if (this.listMode <= 0) {
+         this.tex[0] = var1;
+         this.tex[1] = var2;
       } else {
          super.glTexCoord2f(var1, var2);
       }
@@ -131,7 +131,7 @@ public class Class5922 extends ImmediateModeOGLRenderer {
 
    @Override
    public void glVertex2f(float var1, float var2) {
-      if (this.field25805 <= 0) {
+      if (this.listMode <= 0) {
          this.glVertex3f(var1, var2, 0.0F);
       } else {
          super.glVertex2f(var1, var2);
@@ -140,21 +140,21 @@ public class Class5922 extends ImmediateModeOGLRenderer {
 
    @Override
    public void glVertex3f(float var1, float var2, float var3) {
-      if (this.field25805 <= 0) {
-         this.field25799[this.field25798 * 3 + 0] = var1;
-         this.field25799[this.field25798 * 3 + 1] = var2;
-         this.field25799[this.field25798 * 3 + 2] = var3;
-         this.field25800[this.field25798 * 4 + 0] = this.field25796[0];
-         this.field25800[this.field25798 * 4 + 1] = this.field25796[1];
-         this.field25800[this.field25798 * 4 + 2] = this.field25796[2];
-         this.field25800[this.field25798 * 4 + 3] = this.field25796[3];
-         this.field25801[this.field25798 * 2 + 0] = this.field25797[0];
-         this.field25801[this.field25798 * 2 + 1] = this.field25797[1];
-         this.field25798++;
-         if (this.field25798 > 4950 && this.method18422(this.field25798, this.field25795)) {
-            int var6 = this.field25795;
+      if (this.listMode <= 0) {
+         this.verts[this.vertIndex * 3 + 0] = var1;
+         this.verts[this.vertIndex * 3 + 1] = var2;
+         this.verts[this.vertIndex * 3 + 2] = var3;
+         this.cols[this.vertIndex * 4 + 0] = this.color[0];
+         this.cols[this.vertIndex * 4 + 1] = this.color[1];
+         this.cols[this.vertIndex * 4 + 2] = this.color[2];
+         this.cols[this.vertIndex * 4 + 3] = this.color[3];
+         this.texs[this.vertIndex * 2 + 0] = this.tex[0];
+         this.texs[this.vertIndex * 2 + 1] = this.tex[1];
+         this.vertIndex++;
+         if (this.vertIndex > 4950 && this.method18422(this.vertIndex, this.currentType)) {
+            int var6 = this.currentType;
             this.method18421();
-            this.field25795 = var6;
+            this.currentType = var6;
          }
       } else {
          super.glVertex3f(var1, var2, var3);
@@ -278,19 +278,19 @@ public class Class5922 extends ImmediateModeOGLRenderer {
 
    @Override
    public void glEndList() {
-      this.field25805--;
+      this.listMode--;
       super.glEndList();
    }
 
    @Override
    public void glNewList(int id, int option) {
-      this.field25805++;
+      this.listMode++;
       super.glNewList(id, option);
    }
 
    @Override
    public float[] getCurrentColor() {
-      return this.field25796;
+      return this.color;
    }
 
    @Override
