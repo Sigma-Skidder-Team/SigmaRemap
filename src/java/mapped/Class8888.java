@@ -16,7 +16,7 @@ public class Class8888 {
    private static final Logger field40209 = LogManager.getLogger();
    private final Item field40210;
    private final int field40211;
-   private final List<Class120> field40212 = Lists.newArrayList();
+   private final List<Ingredient> field40212 = Lists.newArrayList();
    private final Class7999 field40213 = Class7999.method27304();
    private String field40214;
 
@@ -34,7 +34,7 @@ public class Class8888 {
    }
 
    public Class8888 method32343(ITag<Item> var1) {
-      return this.method32346(Class120.method342(var1));
+      return this.method32346(Ingredient.fromTag(var1));
    }
 
    public Class8888 method32344(IItemProvider var1) {
@@ -43,17 +43,17 @@ public class Class8888 {
 
    public Class8888 method32345(IItemProvider var1, int var2) {
       for (int var5 = 0; var5 < var2; var5++) {
-         this.method32346(Class120.method339(var1));
+         this.method32346(Ingredient.fromItems(var1));
       }
 
       return this;
    }
 
-   public Class8888 method32346(Class120 var1) {
+   public Class8888 method32346(Ingredient var1) {
       return this.method32347(var1, 1);
    }
 
-   public Class8888 method32347(Class120 var1, int var2) {
+   public Class8888 method32347(Ingredient var1, int var2) {
       for (int var5 = 0; var5 < var2; var5++) {
          this.field40212.add(var1);
       }

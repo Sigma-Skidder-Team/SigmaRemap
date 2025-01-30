@@ -20,7 +20,7 @@ import net.minecraft.world.World;
 import java.util.Map;
 import java.util.Set;
 
-public class Class3265 extends ToolItem {
+public class AxeItem extends ToolItem {
    private static String[] field18755;
    private static final Set<Material> field18756 = Sets.newHashSet(
       new Material[]{Material.WOOD, Material.NETHER_WOOD, Material.PLANTS, Material.TALL_PLANTS, Material.field38959, Material.GOURD}
@@ -58,7 +58,7 @@ public class Class3265 extends ToolItem {
       .put(Blocks.CRIMSON_HYPHAE, Blocks.STRIPPED_CRIMSON_HYPHAE)
       .build();
 
-   public Class3265(IItemTier var1, float var2, float var3, Properties var4) {
+   public AxeItem(IItemTier var1, float var2, float var3, Properties var4) {
       super(var2, var3, var1, field18757, var4);
    }
 

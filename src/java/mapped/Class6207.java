@@ -95,7 +95,7 @@ public class Class6207 {
 
    public class Class8520 {
       private final IRecipe<?> field38231;
-      private final List<Class120> field38232;
+      private final List<Ingredient> field38232;
       private final int field38233;
       private final int[] field38234;
       private final int field38235;
@@ -107,7 +107,7 @@ public class Class6207 {
          this.field38232 = Lists.newArrayList();
          this.field38237 = new IntArrayList();
          this.field38232.addAll(field38231.method14969());
-         this.field38232.removeIf(Class120::method337);
+         this.field38232.removeIf(Ingredient::method337);
          this.field38233 = this.field38232.size();
          this.field38234 = this.method30188();
          this.field38235 = this.field38234.length;
@@ -150,7 +150,7 @@ public class Class6207 {
    
             this.field38236.clear(0, this.field38233 + this.field38235 + this.field38233);
             int var8 = 0;
-            NonNullList<Class120> var9 = this.field38231.method14969();
+            NonNullList<Ingredient> var9 = this.field38231.method14969();
    
             for (int var10 = 0; var10 < var9.size(); var10++) {
                if (var13 && var9.get(var10).method337()) {
@@ -177,7 +177,7 @@ public class Class6207 {
       private int[] method30188() {
          IntAVLTreeSet var3 = new IntAVLTreeSet();
    
-         for (Class120 var5 : this.field38232) {
+         for (Ingredient var5 : this.field38232) {
             var3.addAll(var5.method334());
          }
    
@@ -304,7 +304,7 @@ public class Class6207 {
       private int method30201() {
          int var3 = Integer.MAX_VALUE;
    
-         for (Class120 var5 : this.field38232) {
+         for (Ingredient var5 : this.field38232) {
             int var6 = 0;
             IntListIterator var7 = var5.method334().iterator();
    

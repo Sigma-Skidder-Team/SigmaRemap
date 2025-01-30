@@ -1,6 +1,6 @@
 package net.minecraft.item;
 
-import mapped.Class120;
+import mapped.Ingredient;
 
 public interface IItemTier {
    int method9010();
@@ -13,5 +13,5 @@ public interface IItemTier {
 
    int method9014();
 
-   Class120 method9015();
+   Ingredient method9015();
 }

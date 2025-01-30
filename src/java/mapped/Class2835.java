@@ -457,7 +457,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
          .method27305(var4)
          .method27314(Class9014.field41221)
          .method27308(
-            Items.field37802,
+            Items.GOLD_INGOT,
             new TranslationTextComponent("advancements.nether.distract_piglin.title"),
             new TranslationTextComponent("advancements.nether.distract_piglin.description"),
             (ResourceLocation)null,

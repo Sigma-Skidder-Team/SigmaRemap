@@ -1,6 +1,6 @@
 package net.minecraft.item.crafting;
 
-import mapped.Class120;
+import mapped.Ingredient;
 import mapped.Class4847;
 import mapped.Class6504;
 import net.minecraft.block.Blocks;
@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 public class BlastingRecipe extends Class4847 {
    private static String[] field22640;
 
-   public BlastingRecipe(ResourceLocation var1, String var2, Class120 var3, ItemStack var4, float var5, int var6) {
+   public BlastingRecipe(ResourceLocation var1, String var2, Ingredient var3, ItemStack var4, float var5, int var6) {
       super(IRecipeType.BLASTING, var1, var2, var3, var4, var5, var6);
    }
 

@@ -16,7 +16,7 @@ public interface IDispenseItemBehavior {
    ItemStack method19196(IBlockSource var1, ItemStack var2);
 
    static void method19200() {
-      DispenserBlock.method11931(Items.field37797, new Class6246());
+      DispenserBlock.method11931(Items.ARROW, new Class6246());
       DispenserBlock.method11931(Items.field38117, new Class6248());
       DispenserBlock.method11931(Items.field38116, new Class6216());
       DispenserBlock.method11931(Items.EGG, new Class6250());
@@ -70,7 +70,7 @@ public interface IDispenseItemBehavior {
       DispenserBlock.method11931(Items.field37892, var11);
       DispenserBlock.method11931(Items.field37895, var11);
       DispenserBlock.method11931(Items.BUCKET, new Class6243());
-      DispenserBlock.method11931(Items.field37794, new Class6234());
+      DispenserBlock.method11931(Items.FLINT_AND_STEEL, new Class6234());
       DispenserBlock.method11931(Items.field37934, new Class6241());
       DispenserBlock.method11931(Blocks.TNT, new Class6219());
       Class6239 var5 = new Class6239();

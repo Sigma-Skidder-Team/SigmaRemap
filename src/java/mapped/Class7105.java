@@ -16,9 +16,9 @@ import java.util.function.Predicate;
 public class Class7105 {
    private static final List<Class9127<Potion>> field30617 = Lists.newArrayList();
    private static final List<Class9127<Item>> field30618 = Lists.newArrayList();
-   private static final List<Class120> field30619 = Lists.newArrayList();
+   private static final List<Ingredient> field30619 = Lists.newArrayList();
    private static final Predicate<ItemStack> field30620 = var0 -> {
-      for (Class120 var4 : field30619) {
+      for (Ingredient var4 : field30619) {
          if (var4.test(var0)) {
             return true;
          }
@@ -155,7 +155,7 @@ public class Class7105 {
       method22143(Potions.LONG_LEAPING, Items.field37974, Potions.LONG_SLOWNESS);
       method22143(Potions.SLOWNESS, Items.REDSTONE_DUST, Potions.LONG_SLOWNESS);
       method22143(Potions.SLOWNESS, Items.field37908, Potions.STRONG_SLOWNESS);
-      method22143(Potions.AWKWARD, Items.field37792, Potions.TURTLE_MASTER);
+      method22143(Potions.AWKWARD, Items.TURTLE_HELMET, Potions.TURTLE_MASTER);
       method22143(Potions.TURTLE_MASTER, Items.REDSTONE_DUST, Potions.LONG_TURTLE_MASTER);
       method22143(Potions.TURTLE_MASTER, Items.field37908, Potions.STRONG_TURTLE_MASTER);
       method22143(Potions.SWIFTNESS, Items.field37974, Potions.SLOWNESS);
@@ -191,7 +191,7 @@ public class Class7105 {
    private static void method22141(Item var0, Item var1, Item var2) {
       if (var0 instanceof PotionItem) {
          if (var2 instanceof PotionItem) {
-            field30618.add(new Class9127<Item>(var0, Class120.method339(var1), var2));
+            field30618.add(new Class9127<Item>(var0, Ingredient.fromItems(var1), var2));
          } else {
             throw new IllegalArgumentException("Expected a potion, got: " + Registry.ITEM.getKey(var2));
          }
@@ -202,13 +202,13 @@ public class Class7105 {
 
    private static void method22142(Item var0) {
       if (var0 instanceof PotionItem) {
-         field30619.add(Class120.method339(var0));
+         field30619.add(Ingredient.fromItems(var0));
       } else {
          throw new IllegalArgumentException("Expected a potion, got: " + Registry.ITEM.getKey(var0));
       }
    }
 
    private static void method22143(Potion var0, Item var1, Potion var2) {
-      field30617.add(new Class9127<Potion>(var0, Class120.method339(var1), var2));
+      field30617.add(new Class9127<Potion>(var0, Ingredient.fromItems(var1), var2));
    }
 }

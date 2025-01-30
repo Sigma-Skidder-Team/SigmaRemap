@@ -11,7 +11,7 @@ import net.minecraft.item.ToolItem;
 
 import java.util.Set;
 
-public class Class3268 extends ToolItem {
+public class PickaxeItem extends ToolItem {
    private static String[] field18763;
    private static final Set<Block> field18764 = ImmutableSet.of(
       Blocks.ACTIVATOR_RAIL,
@@ -102,7 +102,7 @@ public class Class3268 extends ToolItem {
       }
    );
 
-   public Class3268(IItemTier var1, int var2, float var3, Properties var4) {
+   public PickaxeItem(IItemTier var1, int var2, float var3, Properties var4) {
       super((float)var2, var3, var1, field18764, var4);
    }
 

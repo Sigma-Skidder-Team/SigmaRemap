@@ -8,7 +8,7 @@ import java.util.List;
 public final class ItemTags {
    public static final TagRegistry<Item> collections = TagRegistryManager.<Item>create(new ResourceLocation("item"), ITagCollectionSupplier::method32658);
    public static final ITag.INamedTag<Item> field26070 = method18560("wool");
-   public static final ITag.INamedTag<Item> field26071 = method18560("planks");
+   public static final ITag.INamedTag<Item> PLANKS = method18560("planks");
    public static final ITag.INamedTag<Item> field26072 = method18560("stone_bricks");
    public static final ITag.INamedTag<Item> field26073 = method18560("wooden_buttons");
    public static final ITag.INamedTag<Item> field26074 = method18560("buttons");
@@ -59,7 +59,7 @@ public final class ItemTags {
    public static final ITag.INamedTag<Item> field26119 = method18560("arrows");
    public static final ITag.INamedTag<Item> field26120 = method18560("lectern_books");
    public static final ITag.INamedTag<Item> field26121 = method18560("beacon_payment_items");
-   public static final ITag.INamedTag<Item> field26122 = method18560("stone_tool_materials");
+   public static final ITag.INamedTag<Item> STONE_TOOL_MATERIALS = method18560("stone_tool_materials");
    public static final ITag.INamedTag<Item> field26123 = method18560("stone_crafting_materials");
 
    private static ITag.INamedTag<Item> method18560(String var0) {

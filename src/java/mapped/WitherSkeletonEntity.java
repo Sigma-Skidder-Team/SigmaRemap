@@ -66,7 +66,7 @@ public class WitherSkeletonEntity extends Class1082 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37810));
+      this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.STONE_SWORD));
    }
 
    @Override

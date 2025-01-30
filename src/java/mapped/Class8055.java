@@ -5,12 +5,12 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class8055 {
    private static String[] field34587;
-   private final Class120 field34588;
+   private final Ingredient field34588;
    private final int field34589;
    private final int field34590;
    public final Class9235 field34591;
 
-   public Class8055(Class9235 var1, Class120 var2, int var3, int var4) {
+   public Class8055(Class9235 var1, Ingredient var2, int var3, int var4) {
       this.field34591 = var1;
       this.field34588 = var2;
       this.field34589 = var3;

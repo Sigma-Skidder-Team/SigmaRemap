@@ -31,8 +31,8 @@ public interface IRecipe<C extends IInventory> {
       return var4;
    }
 
-   default NonNullList<Class120> method14969() {
-      return NonNullList.<Class120>create();
+   default NonNullList<Ingredient> method14969() {
+      return NonNullList.<Ingredient>create();
    }
 
    default boolean method14965() {

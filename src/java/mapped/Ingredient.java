@@ -18,13 +18,13 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-public final class Class120 implements Predicate<ItemStack> {
-   public static final Class120 field427 = new Class120(Stream.empty());
+public final class Ingredient implements Predicate<ItemStack> {
+   public static final Ingredient field427 = new Ingredient(Stream.empty());
    private final Class4826[] field428;
    private ItemStack[] field429;
    private IntList field430;
 
-   private Class120(Stream<? extends Class4826> var1) {
+   private Ingredient(Stream<? extends Class4826> var1) {
       this.field428 = var1.<Class4826>toArray(Class4826[]::new);
    }
 
@@ -103,33 +103,33 @@ public final class Class120 implements Predicate<ItemStack> {
       return this.field428.length == 0 && (this.field429 == null || this.field429.length == 0) && (this.field430 == null || this.field430.isEmpty());
    }
 
-   private static Class120 method338(Stream<? extends Class4826> var0) {
-      Class120 var3 = new Class120(var0);
+   private static Ingredient method338(Stream<? extends Class4826> var0) {
+      Ingredient var3 = new Ingredient(var0);
       return var3.field428.length != 0 ? var3 : field427;
    }
 
-   public static Class120 method339(IItemProvider... var0) {
+   public static Ingredient fromItems(IItemProvider... var0) {
       return method341(Arrays.<IItemProvider>stream(var0).<ItemStack>map(ItemStack::new));
    }
 
-   public static Class120 method340(ItemStack... var0) {
+   public static Ingredient method340(ItemStack... var0) {
       return method341(Arrays.<ItemStack>stream(var0));
    }
 
-   public static Class120 method341(Stream<ItemStack> var0) {
+   public static Ingredient method341(Stream<ItemStack> var0) {
       return method338(var0.filter(var0x -> !var0x.isEmpty()).map(var0x -> new Class4827(var0x)));
    }
 
-   public static Class120 method342(ITag<Item> var0) {
+   public static Ingredient fromTag(ITag<Item> var0) {
       return method338(Stream.of(new Class4828(var0)));
    }
 
-   public static Class120 method343(PacketBuffer var0) {
+   public static Ingredient method343(PacketBuffer var0) {
       int var3 = var0.readVarInt();
       return method338(Stream.<Class4826>generate(() -> new Class4827(var0.readItemStack())).limit(var3));
    }
 
-   public static Class120 method344(JsonElement var0) {
+   public static Ingredient method344(JsonElement var0) {
       if (var0 == null || var0.isJsonNull()) {
          throw new JsonSyntaxException("Item cannot be null");
       } else if (var0.isJsonObject()) {

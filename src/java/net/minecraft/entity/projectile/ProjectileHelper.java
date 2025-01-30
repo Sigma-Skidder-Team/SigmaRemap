@@ -127,7 +127,7 @@ public final class ProjectileHelper {
    }
 
    public static AbstractArrowEntity method36390(LivingEntity var0, ItemStack var1, float var2) {
-      Class3308 var5 = (Class3308)(!(var1.getItem() instanceof Class3308) ? Items.field37797 : var1.getItem());
+      ArrowItem var5 = (ArrowItem)(!(var1.getItem() instanceof ArrowItem) ? Items.ARROW : var1.getItem());
       AbstractArrowEntity var6 = var5.method11850(var0.world, var1, var0);
       var6.method3490(var0, var2);
       if (var1.getItem() == Items.field38117 && var6 instanceof ArrowEntity) {

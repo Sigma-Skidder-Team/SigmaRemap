@@ -98,13 +98,13 @@ public class InvManager extends PremiumModule {
 
     public static boolean method16442(ItemStack var0) {
         Item var3 = var0.getItem();
-        if (var3 instanceof Class3268) {
+        if (var3 instanceof PickaxeItem) {
             float var4 = method16445(var0);
 
             for (int var5 = 9; var5 < 45; var5++) {
                 if (mc.player.container.getSlot(var5).getHasStack()) {
                     ItemStack var6 = mc.player.container.getSlot(var5).getStack();
-                    if (method16445(var6) > var4 && var6.getItem() instanceof Class3268) {
+                    if (method16445(var6) > var4 && var6.getItem() instanceof PickaxeItem) {
                         return false;
                     }
                 }
@@ -118,13 +118,13 @@ public class InvManager extends PremiumModule {
 
     public static boolean isHoe(ItemStack itemStackIn) {
         Item item = itemStackIn.getItem();
-        if (item instanceof HoeItem) {
+        if (item instanceof ShovelItem) {
             float var4 = method16445(itemStackIn);
 
             for (int var5 = 9; var5 < 45; var5++) {
                 if (mc.player.container.getSlot(var5).getHasStack()) {
                     ItemStack itemStack = mc.player.container.getSlot(var5).getStack();
-                    if (method16445(itemStack) > var4 && itemStack.getItem() instanceof HoeItem) {
+                    if (method16445(itemStack) > var4 && itemStack.getItem() instanceof ShovelItem) {
                         return false;
                     }
                 }
@@ -138,13 +138,13 @@ public class InvManager extends PremiumModule {
 
     public static boolean method16444(ItemStack var0) {
         Item var3 = var0.getItem();
-        if (var3 instanceof Class3265) {
+        if (var3 instanceof AxeItem) {
             float var4 = method16445(var0);
 
             for (int var5 = 9; var5 < 45; var5++) {
                 if (mc.player.container.getSlot(var5).getHasStack()) {
                     ItemStack var6 = mc.player.container.getSlot(var5).getStack();
-                    if (method16445(var6) > var4 && var6.getItem() instanceof Class3265 && !method16431(var0)) {
+                    if (method16445(var6) > var4 && var6.getItem() instanceof AxeItem && !method16431(var0)) {
                         return false;
                     }
                 }
@@ -162,9 +162,9 @@ public class InvManager extends PremiumModule {
             String var4 = var3.method11717().getString().toLowerCase();
             ToolItem var5 = (ToolItem) var3;
             float var6 = 1.0F;
-            if (!(var3 instanceof Class3268)) {
-                if (!(var3 instanceof HoeItem)) {
-                    if (!(var3 instanceof Class3265)) {
+            if (!(var3 instanceof PickaxeItem)) {
+                if (!(var3 instanceof ShovelItem)) {
+                    if (!(var3 instanceof AxeItem)) {
                         return 1.0F;
                     }
 
@@ -342,9 +342,9 @@ public class InvManager extends PremiumModule {
                 return false;
             } else if (var5.isFood() && this.getBooleanValueFromSettingName("Food") && var5.getFood() != Foods.GOLDEN_APPLE) {
                 return true;
-            } else if (var5 instanceof Class3269 || var5 instanceof ToolItem || var5 instanceof SwordItem || var5 instanceof ArmorItem) {
+            } else if (var5 instanceof HoeItem || var5 instanceof ToolItem || var5 instanceof SwordItem || var5 instanceof ArmorItem) {
                 return true;
-            } else if ((var5 instanceof BowItem || var5 instanceof Class3308) && this.getBooleanValueFromSettingName("Archery")) {
+            } else if ((var5 instanceof BowItem || var5 instanceof ArrowItem) && this.getBooleanValueFromSettingName("Archery")) {
                 return true;
             } else {
                 return var5 instanceof SkullItem && this.getBooleanValueFromSettingName("Heads") || var5.method11717().getString().toLowerCase().contains("tnt")

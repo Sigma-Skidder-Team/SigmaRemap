@@ -20,7 +20,7 @@ public class Class6503<T extends Class4847> implements Class6504<T> {
    public T method19700(ResourceLocation var1, JsonObject var2) {
       String var5 = JSONUtils.getString(var2, "group", "");
       Object var6 = !JSONUtils.method32759(var2, "ingredient") ? JSONUtils.method32782(var2, "ingredient") : JSONUtils.method32785(var2, "ingredient");
-      Class120 var7 = Class120.method344((JsonElement)var6);
+      Ingredient var7 = Ingredient.method344((JsonElement)var6);
       String var8 = JSONUtils.getString(var2, "result");
       ResourceLocation var9 = new ResourceLocation(var8);
       ItemStack var10 = new ItemStack(Registry.ITEM.method9187(var9).orElseThrow(() -> new IllegalStateException("Item: " + var8 + " does not exist")));
@@ -32,7 +32,7 @@ public class Class6503<T extends Class4847> implements Class6504<T> {
    @Override
    public T method19699(ResourceLocation var1, PacketBuffer var2) {
       String var5 = var2.readString(32767);
-      Class120 var6 = Class120.method343(var2);
+      Ingredient var6 = Ingredient.method343(var2);
       ItemStack var7 = var2.readItemStack();
       float var8 = var2.readFloat();
       int var9 = var2.readVarInt();

@@ -5,7 +5,7 @@ import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class Class3310 extends Class3308 {
+public class Class3310 extends ArrowItem {
    private static String[] field18816;
 
    public Class3310(Properties var1) {

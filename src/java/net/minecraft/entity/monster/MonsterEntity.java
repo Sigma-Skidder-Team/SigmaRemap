@@ -123,7 +123,7 @@ public abstract class MonsterEntity extends CreatureEntity implements IMob {
       } else {
          Predicate var4 = ((Class3262)var1.getItem()).method11751();
          ItemStack var5 = Class3262.method11774(this, var4);
-         return !var5.isEmpty() ? var5 : new ItemStack(Items.field37797);
+         return !var5.isEmpty() ? var5 : new ItemStack(Items.ARROW);
       }
    }
 }

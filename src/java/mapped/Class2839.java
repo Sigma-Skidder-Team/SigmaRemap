@@ -28,7 +28,7 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
       Advancement var5 = Class7999.method27304()
          .method27305(var4)
          .method27308(
-            Items.field37807,
+            Items.WOODEN_PICKAXE,
             new TranslationTextComponent("advancements.story.mine_stone.title"),
             new TranslationTextComponent("advancements.story.mine_stone.description"),
             (ResourceLocation)null,
@@ -37,12 +37,12 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("get_stone", Class4491.method14163(Class9735.method38146().method38148(ItemTags.field26122).method38151()))
+         .method27312("get_stone", Class4491.method14163(Class9735.method38146().method38148(ItemTags.STONE_TOOL_MATERIALS).method38151()))
          .method27317(var1, "story/mine_stone");
       Advancement var6 = Class7999.method27304()
          .method27305(var5)
          .method27308(
-            Items.field37812,
+            Items.STONE_PICKAXE,
             new TranslationTextComponent("advancements.story.upgrade_tools.title"),
             new TranslationTextComponent("advancements.story.upgrade_tools.description"),
             (ResourceLocation)null,
@@ -51,7 +51,7 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("stone_pickaxe", Class4491.method14164(Items.field37812))
+         .method27312("stone_pickaxe", Class4491.method14164(Items.STONE_PICKAXE))
          .method27317(var1, "story/upgrade_tools");
       Advancement var7 = Class7999.method27304()
          .method27305(var6)
@@ -84,7 +84,7 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
       Advancement var9 = Class7999.method27304()
          .method27305(var8)
          .method27308(
-            Items.field37800,
+            Items.DIAMOND,
             new TranslationTextComponent("advancements.story.mine_diamond.title"),
             new TranslationTextComponent("advancements.story.mine_diamond.description"),
             (ResourceLocation)null,
@@ -93,7 +93,7 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("diamond", Class4491.method14164(Items.field37800))
+         .method27312("diamond", Class4491.method14164(Items.DIAMOND))
          .method27317(var1, "story/mine_diamond");
       Advancement var10 = Class7999.method27304()
          .method27305(var7)
@@ -192,7 +192,7 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
       Advancement var13 = Class7999.method27304()
          .method27305(var12)
          .method27308(
-            Items.field37794,
+            Items.FLINT_AND_STEEL,
             new TranslationTextComponent("advancements.story.enter_the_nether.title"),
             new TranslationTextComponent("advancements.story.enter_the_nether.description"),
             (ResourceLocation)null,

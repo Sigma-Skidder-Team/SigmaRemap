@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.function.Predicate;
 
 public class CatEntity extends TameableEntity {
-   private static final Class120 field6036 = Class120.method339(Items.field37909, Items.field37910);
+   private static final Ingredient field6036 = Ingredient.fromItems(Items.field37909, Items.field37910);
    private static final DataParameter<Integer> field6037 = EntityDataManager.<Integer>createKey(CatEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field6038 = EntityDataManager.<Boolean>createKey(CatEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<Boolean> field6039 = EntityDataManager.<Boolean>createKey(CatEntity.class, DataSerializers.BOOLEAN);

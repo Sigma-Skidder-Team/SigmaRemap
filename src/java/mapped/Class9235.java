@@ -25,7 +25,7 @@ public class Class9235 {
       this.field42512 = 0.0F;
    }
 
-   public void method34734(Class120 var1, int var2, int var3) {
+   public void method34734(Ingredient var1, int var2, int var3) {
       this.field42511.add(new Class8055(this, var1, var2, var3));
    }
 

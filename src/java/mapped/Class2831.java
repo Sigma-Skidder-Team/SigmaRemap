@@ -256,7 +256,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
       Class7999.method27304()
          .method27305(var8)
          .method27308(
-            Items.field37797,
+            Items.ARROW,
             new TranslationTextComponent("advancements.adventure.sniper_duel.title"),
             new TranslationTextComponent("advancements.adventure.sniper_duel.description"),
             (ResourceLocation)null,

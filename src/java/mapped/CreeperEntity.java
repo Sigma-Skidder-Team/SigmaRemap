@@ -187,7 +187,7 @@ public class CreeperEntity extends MonsterEntity implements Class1080 {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (var5.getItem() != Items.field37794) {
+      if (var5.getItem() != Items.FLINT_AND_STEEL) {
          return super.method4285(var1, var2);
       } else {
          this.world

@@ -26,7 +26,7 @@ public class FurnaceMinecartEntity extends AbstractMinecartEntity {
    private int field5482;
    public double field5483;
    public double field5484;
-   private static final Class120 field5485 = Class120.method339(Items.field37798, Items.field37799);
+   private static final Ingredient field5485 = Ingredient.fromItems(Items.COAL, Items.CHARCOAL);
 
    public FurnaceMinecartEntity(EntityType<? extends FurnaceMinecartEntity> var1, World var2) {
       super(var1, var2);

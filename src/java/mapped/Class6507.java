@@ -25,10 +25,10 @@ public class Class6507 implements Class6504<Class4852> {
       int var5 = var2.readVarInt();
       int var6 = var2.readVarInt();
       String var7 = var2.readString(32767);
-      NonNullList var8 = NonNullList.<Class120>method68(var5 * var6, Class120.field427);
+      NonNullList var8 = NonNullList.<Ingredient>method68(var5 * var6, Ingredient.field427);
 
       for (int var9 = 0; var9 < var8.size(); var9++) {
-         var8.set(var9, Class120.method343(var2));
+         var8.set(var9, Ingredient.method343(var2));
       }
 
       ItemStack var10 = var2.readItemStack();
@@ -40,7 +40,7 @@ public class Class6507 implements Class6504<Class4852> {
       var1.writeVarInt(Class4852.method14993(var2));
       var1.writeString(Class4852.method14994(var2));
 
-      for (Class120 var6 : Class4852.method14995(var2)) {
+      for (Ingredient var6 : Class4852.method14995(var2)) {
          var6.method335(var1);
       }
 

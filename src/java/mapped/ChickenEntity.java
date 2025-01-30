@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
 public class ChickenEntity extends AnimalEntity {
-   private static final Class120 field5964 = Class120.method339(Items.field37841, Items.field37960, Items.field37959, Items.field38112);
+   private static final Ingredient field5964 = Ingredient.fromItems(Items.field37841, Items.field37960, Items.field37959, Items.field38112);
    public float field5965;
    public float field5966;
    public float field5967;

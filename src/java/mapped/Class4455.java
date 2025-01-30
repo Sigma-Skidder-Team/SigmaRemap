@@ -23,7 +23,7 @@ public class Class4455 extends Class4441<Item> {
    @Override
    public void method14010() {
       this.method14089(BlockTags.WOOL, ItemTags.field26070);
-      this.method14089(BlockTags.field32735, ItemTags.field26071);
+      this.method14089(BlockTags.field32735, ItemTags.PLANKS);
       this.method14089(BlockTags.field32736, ItemTags.field26072);
       this.method14089(BlockTags.field32737, ItemTags.field26073);
       this.method14089(BlockTags.field32738, ItemTags.field26074);
@@ -101,11 +101,11 @@ public class Class4455 extends Class4441<Item> {
             Items.field38142
          );
       this.method14014(ItemTags.field26116).method31559(ItemTags.field26117).method31558(Items.field38143);
-      this.method14014(ItemTags.field26118).method31560(Items.field37798, Items.field37799);
-      this.method14014(ItemTags.field26119).method31560(Items.field37797, Items.field38117, Items.field38116);
+      this.method14014(ItemTags.field26118).method31560(Items.COAL, Items.CHARCOAL);
+      this.method14014(ItemTags.field26119).method31560(Items.ARROW, Items.field38117, Items.field38116);
       this.method14014(ItemTags.field26120).method31560(Items.field38048, Items.field38047);
       this.method14014(ItemTags.field26121)
-         .method31560(Items.field37803, Items.EMERALD, Items.field37800, Items.field37802, Items.field37801);
+         .method31560(Items.NETHERITE_INGOT, Items.EMERALD, Items.DIAMOND, Items.GOLD_INGOT, Items.field37801);
       this.method14014(ItemTags.field26108).method31558(Items.field37445).method31558(Items.field38169).method31558(Items.field38172);
       this.method14014(ItemTags.field26109)
          .method31559(ItemTags.field26110)
@@ -113,7 +113,7 @@ public class Class4455 extends Class4441<Item> {
             Items.GOLD_BLOCK,
             Items.field38188,
             Items.field37540,
-            Items.field37802,
+            Items.GOLD_INGOT,
             Items.field38167,
             Items.field37907,
             Items.field38057,
@@ -162,7 +162,7 @@ public class Class4455 extends Class4441<Item> {
             Items.field37880,
             Items.field37881
          );
-      this.method14014(ItemTags.field26122).method31560(Items.COBBLESTONE, Items.field38185);
+      this.method14014(ItemTags.STONE_TOOL_MATERIALS).method31560(Items.COBBLESTONE, Items.field38185);
       this.method14014(ItemTags.field26123).method31560(Items.COBBLESTONE, Items.field38185);
    }
 

@@ -12,7 +12,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
-public class Class3309 extends Class3308 {
+public class Class3309 extends ArrowItem {
    public Class3309(Properties var1) {
       super(var1);
    }

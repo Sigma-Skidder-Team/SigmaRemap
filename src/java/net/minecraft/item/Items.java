@@ -609,114 +609,114 @@ public class Items {
    public static final Item field37787 = register(new Class3295(Blocks.WARPED_DOOR, new Item.Properties().group(ItemGroup.REDSTONE)));
    public static final Item field37788 = register(Blocks.REPEATER, ItemGroup.REDSTONE);
    public static final Item field37789 = register(Blocks.COMPARATOR, ItemGroup.REDSTONE);
-   public static final Item field37790 = register(new Class3293(Blocks.STRUCTURE_BLOCK, new Item.Properties().rarity(Rarity.EPIC)));
-   public static final Item field37791 = register(new Class3293(Blocks.JIGSAW, new Item.Properties().rarity(Rarity.EPIC)));
-   public static final Item field37792 = register(
+   public static final Item STRUCTURE = register(new Class3293(Blocks.STRUCTURE_BLOCK, new Item.Properties().rarity(Rarity.EPIC)));
+   public static final Item JIGSAW = register(new Class3293(Blocks.JIGSAW, new Item.Properties().rarity(Rarity.EPIC)));
+   public static final Item TURTLE_HELMET = register(
       "turtle_helmet", new ArmorItem(Class2114.field13778, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT))
    );
-   public static final Item field37793 = register("scute", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
-   public static final Item field37794 = register("flint_and_steel", new Class3281(new Item.Properties().method17777(64).group(ItemGroup.TOOLS)));
+   public static final Item SCUTE = register("scute", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+   public static final Item FLINT_AND_STEEL = register("flint_and_steel", new Class3281(new Item.Properties().method17777(64).group(ItemGroup.TOOLS)));
    public static final Item APPLE = register(
       "apple", new Item(new Item.Properties().group(ItemGroup.FOOD).method17774(Foods.field39058))
    );
    public static final Item BOW = register("bow", new BowItem(new Item.Properties().method17777(384).group(ItemGroup.COMBAT)));
-   public static final Item field37797 = register("arrow", new Class3308(new Item.Properties().group(ItemGroup.COMBAT)));
-   public static final Item field37798 = register("coal", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
-   public static final Item field37799 = register("charcoal", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
-   public static final Item field37800 = register("diamond", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
-   public static final Item field37801 = register("iron_ingot", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
-   public static final Item field37802 = register("gold_ingot", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
-   public static final Item field37803 = register("netherite_ingot", new Item(new Item.Properties().group(ItemGroup.MATERIALS).method17781()));
-   public static final Item field37804 = register("netherite_scrap", new Item(new Item.Properties().group(ItemGroup.MATERIALS).method17781()));
-   public static final Item field37805 = register(
-      "wooden_sword", new SwordItem(Class2282.field15104, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT))
+   public static final Item ARROW = register("arrow", new ArrowItem(new Item.Properties().group(ItemGroup.COMBAT)));
+   public static final Item COAL = register("coal", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+   public static final Item CHARCOAL = register("charcoal", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+   public static final Item DIAMOND = register("diamond", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+   public static final Item IRON_INGOT = register("iron_ingot", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+   public static final Item GOLD_INGOT = register("gold_ingot", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+   public static final Item NETHERITE_INGOT = register("netherite_ingot", new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmunteToFire()));
+   public static final Item NETHERITE_SCRAP = register("netherite_scrap", new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmunteToFire()));
+   public static final Item WOODEN_SWORD = register(
+      "wooden_sword", new SwordItem(ItemTier.WOOD, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT))
    );
-   public static final Item field37806 = register(
-      "wooden_shovel", new HoeItem(Class2282.field15104, 1.5F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
+   public static final Item WOODEN_SHOVEL = register(
+      "wooden_shovel", new ShovelItem(ItemTier.WOOD, 1.5F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
    );
-   public static final Item field37807 = register(
-      "wooden_pickaxe", new Class3268(Class2282.field15104, 1, -2.8F, new Item.Properties().group(ItemGroup.TOOLS))
+   public static final Item WOODEN_PICKAXE = register(
+      "wooden_pickaxe", new PickaxeItem(ItemTier.WOOD, 1, -2.8F, new Item.Properties().group(ItemGroup.TOOLS))
    );
-   public static final Item field37808 = register(
-      "wooden_axe", new Class3265(Class2282.field15104, 6.0F, -3.2F, new Item.Properties().group(ItemGroup.TOOLS))
+   public static final Item WOODEN_AXE = register(
+      "wooden_axe", new AxeItem(ItemTier.WOOD, 6.0F, -3.2F, new Item.Properties().group(ItemGroup.TOOLS))
    );
-   public static final Item field37809 = register(
-      "wooden_hoe", new Class3269(Class2282.field15104, 0, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
+   public static final Item WOODEN_HOE = register(
+      "wooden_hoe", new HoeItem(ItemTier.WOOD, 0, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
    );
-   public static final Item field37810 = register(
-      "stone_sword", new SwordItem(Class2282.field15105, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT))
+   public static final Item STONE_SWORD = register(
+      "stone_sword", new SwordItem(ItemTier.STONE, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT))
    );
-   public static final Item field37811 = register(
-      "stone_shovel", new HoeItem(Class2282.field15105, 1.5F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
+   public static final Item STONE_SHOVEL = register(
+      "stone_shovel", new ShovelItem(ItemTier.STONE, 1.5F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
    );
-   public static final Item field37812 = register(
-      "stone_pickaxe", new Class3268(Class2282.field15105, 1, -2.8F, new Item.Properties().group(ItemGroup.TOOLS))
+   public static final Item STONE_PICKAXE = register(
+      "stone_pickaxe", new PickaxeItem(ItemTier.STONE, 1, -2.8F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item field37813 = register(
-      "stone_axe", new Class3265(Class2282.field15105, 7.0F, -3.2F, new Item.Properties().group(ItemGroup.TOOLS))
+      "stone_axe", new AxeItem(ItemTier.STONE, 7.0F, -3.2F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item field37814 = register(
-      "stone_hoe", new Class3269(Class2282.field15105, -1, -2.0F, new Item.Properties().group(ItemGroup.TOOLS))
+      "stone_hoe", new HoeItem(ItemTier.STONE, -1, -2.0F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item GOLDEN_SWORD = register(
-      "golden_sword", new SwordItem(Class2282.field15108, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT))
+      "golden_sword", new SwordItem(ItemTier.GOLD, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT))
    );
    public static final Item field37816 = register(
-      "golden_shovel", new HoeItem(Class2282.field15108, 1.5F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
+      "golden_shovel", new ShovelItem(ItemTier.GOLD, 1.5F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item field37817 = register(
-      "golden_pickaxe", new Class3268(Class2282.field15108, 1, -2.8F, new Item.Properties().group(ItemGroup.TOOLS))
+      "golden_pickaxe", new PickaxeItem(ItemTier.GOLD, 1, -2.8F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item field37818 = register(
-      "golden_axe", new Class3265(Class2282.field15108, 6.0F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
+      "golden_axe", new AxeItem(ItemTier.GOLD, 6.0F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item field37819 = register(
-      "golden_hoe", new Class3269(Class2282.field15108, 0, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
+      "golden_hoe", new HoeItem(ItemTier.GOLD, 0, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item field37820 = register(
-      "iron_sword", new SwordItem(Class2282.field15106, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT))
+      "iron_sword", new SwordItem(ItemTier.IRON, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT))
    );
    public static final Item IRON_SHOVEL = register(
-      "iron_shovel", new HoeItem(Class2282.field15106, 1.5F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
+      "iron_shovel", new ShovelItem(ItemTier.IRON, 1.5F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item field37822 = register(
-      "iron_pickaxe", new Class3268(Class2282.field15106, 1, -2.8F, new Item.Properties().group(ItemGroup.TOOLS))
+      "iron_pickaxe", new PickaxeItem(ItemTier.IRON, 1, -2.8F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item IRON_AXE = register(
-      "iron_axe", new Class3265(Class2282.field15106, 6.0F, -3.1F, new Item.Properties().group(ItemGroup.TOOLS))
+      "iron_axe", new AxeItem(ItemTier.IRON, 6.0F, -3.1F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item field37824 = register(
-      "iron_hoe", new Class3269(Class2282.field15106, -2, -1.0F, new Item.Properties().group(ItemGroup.TOOLS))
+      "iron_hoe", new HoeItem(ItemTier.IRON, -2, -1.0F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item field37825 = register(
-      "diamond_sword", new SwordItem(Class2282.field15107, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT))
+      "diamond_sword", new SwordItem(ItemTier.DIAMOND, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT))
    );
    public static final Item field37826 = register(
-      "diamond_shovel", new HoeItem(Class2282.field15107, 1.5F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
+      "diamond_shovel", new ShovelItem(ItemTier.DIAMOND, 1.5F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item field37827 = register(
-      "diamond_pickaxe", new Class3268(Class2282.field15107, 1, -2.8F, new Item.Properties().group(ItemGroup.TOOLS))
+      "diamond_pickaxe", new PickaxeItem(ItemTier.DIAMOND, 1, -2.8F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item field37828 = register(
-      "diamond_axe", new Class3265(Class2282.field15107, 5.0F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
+      "diamond_axe", new AxeItem(ItemTier.DIAMOND, 5.0F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item field37829 = register(
-      "diamond_hoe", new Class3269(Class2282.field15107, -3, 0.0F, new Item.Properties().group(ItemGroup.TOOLS))
+      "diamond_hoe", new HoeItem(ItemTier.DIAMOND, -3, 0.0F, new Item.Properties().group(ItemGroup.TOOLS))
    );
    public static final Item field37830 = register(
-      "netherite_sword", new SwordItem(Class2282.field15109, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT).method17781())
+      "netherite_sword", new SwordItem(ItemTier.NETHERITE, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT).isImmunteToFire())
    );
    public static final Item field37831 = register(
-      "netherite_shovel", new HoeItem(Class2282.field15109, 1.5F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS).method17781())
+      "netherite_shovel", new ShovelItem(ItemTier.NETHERITE, 1.5F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS).isImmunteToFire())
    );
    public static final Item field37832 = register(
-      "netherite_pickaxe", new Class3268(Class2282.field15109, 1, -2.8F, new Item.Properties().group(ItemGroup.TOOLS).method17781())
+      "netherite_pickaxe", new PickaxeItem(ItemTier.NETHERITE, 1, -2.8F, new Item.Properties().group(ItemGroup.TOOLS).isImmunteToFire())
    );
    public static final Item field37833 = register(
-      "netherite_axe", new Class3265(Class2282.field15109, 5.0F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS).method17781())
+      "netherite_axe", new AxeItem(ItemTier.NETHERITE, 5.0F, -3.0F, new Item.Properties().group(ItemGroup.TOOLS).isImmunteToFire())
    );
    public static final Item field37834 = register(
-      "netherite_hoe", new Class3269(Class2282.field15109, -4, 0.0F, new Item.Properties().group(ItemGroup.TOOLS).method17781())
+      "netherite_hoe", new HoeItem(ItemTier.NETHERITE, -4, 0.0F, new Item.Properties().group(ItemGroup.TOOLS).isImmunteToFire())
    );
    public static final Item field37835 = register("stick", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
    public static final Item field37836 = register("bowl", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
@@ -792,16 +792,16 @@ public class Items {
       "golden_boots", new ArmorItem(Class2114.field13776, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT))
    );
    public static final Item field37864 = register(
-      "netherite_helmet", new ArmorItem(Class2114.field13779, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT).method17781())
+      "netherite_helmet", new ArmorItem(Class2114.field13779, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT).isImmunteToFire())
    );
    public static final Item NETHERITE_CHESTPLATE = register(
-      "netherite_chestplate", new ArmorItem(Class2114.field13779, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT).method17781())
+      "netherite_chestplate", new ArmorItem(Class2114.field13779, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT).isImmunteToFire())
    );
    public static final Item field37866 = register(
-      "netherite_leggings", new ArmorItem(Class2114.field13779, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT).method17781())
+      "netherite_leggings", new ArmorItem(Class2114.field13779, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT).isImmunteToFire())
    );
    public static final Item field37867 = register(
-      "netherite_boots", new ArmorItem(Class2114.field13779, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT).method17781())
+      "netherite_boots", new ArmorItem(Class2114.field13779, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT).isImmunteToFire())
    );
    public static final Item field37868 = register("flint", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
    public static final Item PORKCHOP = register(
@@ -1500,8 +1500,8 @@ public class Items {
    public static final Item field38178 = register(Blocks.HONEY_BLOCK, ItemGroup.DECORATIONS);
    public static final Item field38179 = register(Blocks.HONEYCOMB_BLOCK, ItemGroup.DECORATIONS);
    public static final Item field38180 = register(Blocks.LODESTONE, ItemGroup.DECORATIONS);
-   public static final Item field38181 = register(new BlockItem(Blocks.NETHERITE_BLOCK, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS).method17781()));
-   public static final Item field38182 = register(new BlockItem(Blocks.ANCIENT_DEBRIS, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS).method17781()));
+   public static final Item field38181 = register(new BlockItem(Blocks.NETHERITE_BLOCK, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS).isImmunteToFire()));
+   public static final Item field38182 = register(new BlockItem(Blocks.ANCIENT_DEBRIS, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS).isImmunteToFire()));
    public static final Item field38183 = register(Blocks.TARGET, ItemGroup.REDSTONE);
    public static final Item field38184 = register(Blocks.CRYING_OBSIDIAN, ItemGroup.BUILDING_BLOCKS);
    public static final Item field38185 = register(Blocks.BLACKSTONE, ItemGroup.BUILDING_BLOCKS);

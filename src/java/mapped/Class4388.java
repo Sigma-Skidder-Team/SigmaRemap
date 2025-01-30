@@ -21,7 +21,7 @@ import java.util.*;
 
 public class Class4388 {
    private static String[] field21457;
-   public static final Item field21458 = Items.field37802;
+   public static final Item field21458 = Items.GOLD_INGOT;
    private static final RangedInteger field21459 = TickRangeConverter.convertRange(30, 120);
    private static final RangedInteger field21460 = TickRangeConverter.convertRange(10, 40);
    private static final RangedInteger field21461 = TickRangeConverter.convertRange(10, 30);

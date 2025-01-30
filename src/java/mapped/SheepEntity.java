@@ -84,7 +84,7 @@ public class SheepEntity extends AnimalEntity implements Class1020 {
       this.field5600.addGoal(0, new Class2603(this));
       this.field5600.addGoal(1, new Class2747(this, 1.25));
       this.field5600.addGoal(2, new Class2785(this, 1.0));
-      this.field5600.addGoal(3, new Class2680(this, 1.1, Class120.method339(Items.field37842), false));
+      this.field5600.addGoal(3, new Class2680(this, 1.1, Ingredient.fromItems(Items.field37842), false));
       this.field5600.addGoal(4, new Class2764(this, 1.1));
       this.field5600.addGoal(5, this.field5708);
       this.field5600.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 1.0));

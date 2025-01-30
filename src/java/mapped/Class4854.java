@@ -12,9 +12,9 @@ public class Class4854 implements ICraftingRecipe {
    private final ResourceLocation field22648;
    private final String field22649;
    private final ItemStack field22650;
-   private final NonNullList<Class120> field22651;
+   private final NonNullList<Ingredient> field22651;
 
-   public Class4854(ResourceLocation var1, String var2, ItemStack var3, NonNullList<Class120> var4) {
+   public Class4854(ResourceLocation var1, String var2, ItemStack var3, NonNullList<Ingredient> var4) {
       this.field22648 = var1;
       this.field22649 = var2;
       this.field22650 = var3;
@@ -42,7 +42,7 @@ public class Class4854 implements ICraftingRecipe {
    }
 
    @Override
-   public NonNullList<Class120> method14969() {
+   public NonNullList<Ingredient> method14969() {
       return this.field22651;
    }
 
@@ -76,7 +76,7 @@ public class Class4854 implements ICraftingRecipe {
    }
 
    // $VF: synthetic method
-   public static NonNullList<Class120> method14999(Class4854 var0) {
+   public static NonNullList<Ingredient> method14999(Class4854 var0) {
       return var0.field22651;
    }
 

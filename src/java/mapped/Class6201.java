@@ -27,12 +27,12 @@ public class Class6201 implements Class6196 {
          if (this.field27677 == 1) {
             ClientPlayerEntity var3 = this.field27675.method37035().player;
             if (var3 != null) {
-               if (var3.inventory.method4059(ItemTags.field26071)) {
+               if (var3.inventory.method4059(ItemTags.PLANKS)) {
                   this.field27675.method37034(Class2200.field14381);
                   return;
                }
 
-               if (method19106(var3, ItemTags.field26071)) {
+               if (method19106(var3, ItemTags.PLANKS)) {
                   this.field27675.method37034(Class2200.field14381);
                   return;
                }
@@ -59,7 +59,7 @@ public class Class6201 implements Class6196 {
    @Override
    public void method19104(ItemStack var1) {
       Item var4 = var1.getItem();
-      if (ItemTags.field26071.contains(var4)) {
+      if (ItemTags.PLANKS.contains(var4)) {
          this.field27675.method37034(Class2200.field14381);
       }
    }

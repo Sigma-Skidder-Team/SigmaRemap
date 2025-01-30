@@ -37,7 +37,7 @@ public abstract class Class1255 extends Class1254 {
    public void method5858(IRecipe<?> var1, List<Slot> var2) {
       ItemStack var5 = var1.getRecipeOutput();
       this.field6637.method34738(var1);
-      this.field6637.method34734(Class120.method340(var5), ((Slot)var2.get(2)).field25580, ((Slot)var2.get(2)).field25581);
+      this.field6637.method34734(Ingredient.method340(var5), ((Slot)var2.get(2)).field25580, ((Slot)var2.get(2)).field25581);
       NonNullList var6 = var1.method14969();
       this.field6652 = (Slot)var2.get(1);
       if (this.field6651 == null) {
@@ -53,7 +53,7 @@ public abstract class Class1255 extends Class1254 {
             return;
          }
 
-         Class120 var9 = (Class120)var7.next();
+         Ingredient var9 = (Ingredient)var7.next();
          if (!var9.method337()) {
             Slot var10 = (Slot)var2.get(var8);
             this.field6637.method34734(var9, var10.field25580, var10.field25581);

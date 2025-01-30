@@ -32,15 +32,15 @@ public class BowItem extends Class3262 implements IVanishable {
          ItemStack var9 = var7.findAmmo(var1);
          if (!var9.isEmpty() || var8) {
             if (var9.isEmpty()) {
-               var9 = new ItemStack(Items.field37797);
+               var9 = new ItemStack(Items.ARROW);
             }
 
             int var10 = this.method11728(var1) - var4;
             float var11 = calculateBowPower(var10);
             if (!((double)var11 < 0.1)) {
-               boolean var12 = var8 && var9.getItem() == Items.field37797;
+               boolean var12 = var8 && var9.getItem() == Items.ARROW;
                if (!var2.isRemote) {
-                  Class3308 var13 = (Class3308)(!(var9.getItem() instanceof Class3308) ? Items.field37797 : var9.getItem());
+                  ArrowItem var13 = (ArrowItem)(!(var9.getItem() instanceof ArrowItem) ? Items.ARROW : var9.getItem());
                   AbstractArrowEntity var14 = var13.method11850(var2, var9, var7);
                   var14.method3463(var7, var7.rotationPitch, var7.rotationYaw, 0.0F, var11 * 3.0F, 1.0F);
                   if (var11 == 1.0F) {

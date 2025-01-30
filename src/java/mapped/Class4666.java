@@ -14,11 +14,11 @@ public class Class4666 implements Class4664 {
    private final Item field22216;
    private final int field22217;
    private final String field22218;
-   private final List<Class120> field22219;
+   private final List<Ingredient> field22219;
    private final Class7999 field22220;
    private final ResourceLocation field22221;
 
-   public Class4666(ResourceLocation var1, Item var2, int var3, String var4, List<Class120> var5, Class7999 var6, ResourceLocation var7) {
+   public Class4666(ResourceLocation var1, Item var2, int var3, String var4, List<Ingredient> var5, Class7999 var6, ResourceLocation var7) {
       this.field22215 = var1;
       this.field22216 = var2;
       this.field22217 = var3;
@@ -36,7 +36,7 @@ public class Class4666 implements Class4664 {
 
       JsonArray var4 = new JsonArray();
 
-      for (Class120 var6 : this.field22219) {
+      for (Ingredient var6 : this.field22219) {
          var4.add(var6.method336());
       }
 

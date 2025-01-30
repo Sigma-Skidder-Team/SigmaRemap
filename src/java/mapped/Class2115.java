@@ -12,7 +12,7 @@ public interface Class2115 {
 
    SoundEvent getSoundEvent();
 
-   Class120 method8789();
+   Ingredient method8789();
 
    String method8790();
 

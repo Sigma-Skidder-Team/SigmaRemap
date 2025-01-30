@@ -41,7 +41,7 @@ public class ArrowEntity extends AbstractArrowEntity {
 
    public void method3497(ItemStack var1) {
       if (var1.getItem() != Items.field38117) {
-         if (var1.getItem() == Items.field37797) {
+         if (var1.getItem() == Items.ARROW) {
             this.field5117 = Potions.EMPTY;
             this.field5118.clear();
             this.dataManager.set(field5116, -1);
@@ -186,7 +186,7 @@ public class ArrowEntity extends AbstractArrowEntity {
    @Override
    public ItemStack method3480() {
       if (this.field5118.isEmpty() && this.field5117 == Potions.EMPTY) {
-         return new ItemStack(Items.field37797);
+         return new ItemStack(Items.ARROW);
       } else {
          ItemStack var3 = new ItemStack(Items.field38117);
          PotionUtils.addPotionToItemStack(var3, this.field5117);

@@ -25,12 +25,12 @@ import java.util.Map.Entry;
 public class Class4852 implements ICraftingRecipe {
    private final int field22641;
    private final int field22642;
-   private final NonNullList<Class120> field22643;
+   private final NonNullList<Ingredient> field22643;
    private final ItemStack field22644;
    private final ResourceLocation field22645;
    private final String field22646;
 
-   public Class4852(ResourceLocation var1, String var2, int var3, int var4, NonNullList<Class120> var5, ItemStack var6) {
+   public Class4852(ResourceLocation var1, String var2, int var3, int var4, NonNullList<Ingredient> var5, ItemStack var6) {
       this.field22645 = var1;
       this.field22646 = var2;
       this.field22641 = var3;
@@ -60,7 +60,7 @@ public class Class4852 implements ICraftingRecipe {
    }
 
    @Override
-   public NonNullList<Class120> method14969() {
+   public NonNullList<Ingredient> method14969() {
       return this.field22643;
    }
 
@@ -90,7 +90,7 @@ public class Class4852 implements ICraftingRecipe {
          for (int var8 = 0; var8 < var1.method3670(); var8++) {
             int var9 = var7 - var2;
             int var10 = var8 - var3;
-            Class120 var11 = Class120.field427;
+            Ingredient var11 = Ingredient.field427;
             if (var9 >= 0 && var10 >= 0 && var9 < this.field22641 && var10 < this.field22642) {
                if (!var4) {
                   var11 = this.field22643.get(var9 + var10 * this.field22641);
@@ -120,15 +120,15 @@ public class Class4852 implements ICraftingRecipe {
       return this.field22642;
    }
 
-   private static NonNullList<Class120> method14981(String[] var0, Map<String, Class120> var1, int var2, int var3) {
-      NonNullList var6 = NonNullList.<Class120>method68(var2 * var3, Class120.field427);
+   private static NonNullList<Ingredient> method14981(String[] var0, Map<String, Ingredient> var1, int var2, int var3) {
+      NonNullList var6 = NonNullList.<Ingredient>method68(var2 * var3, Ingredient.field427);
       HashSet var7 = Sets.newHashSet(var1.keySet());
       var7.remove(" ");
 
       for (int var8 = 0; var8 < var0.length; var8++) {
          for (int var9 = 0; var9 < var0[var8].length(); var9++) {
             String var10 = var0[var8].substring(var9, var9 + 1);
-            Class120 var11 = (Class120)var1.get(var10);
+            Ingredient var11 = (Ingredient)var1.get(var10);
             if (var11 == null) {
                throw new JsonSyntaxException("Pattern references symbol '" + var10 + "' but it's not defined in the key");
             }
@@ -225,7 +225,7 @@ public class Class4852 implements ICraftingRecipe {
       }
    }
 
-   private static Map<String, Class120> method14986(JsonObject var0) {
+   private static Map<String, Ingredient> method14986(JsonObject var0) {
       HashMap var3 = Maps.newHashMap();
 
       for (Entry var5 : var0.entrySet()) {
@@ -237,10 +237,10 @@ public class Class4852 implements ICraftingRecipe {
             throw new JsonSyntaxException("Invalid key entry: ' ' is a reserved symbol.");
          }
 
-         var3.put(var5.getKey(), Class120.method344((JsonElement)var5.getValue()));
+         var3.put(var5.getKey(), Ingredient.method344((JsonElement)var5.getValue()));
       }
 
-      var3.put(" ", Class120.field427);
+      var3.put(" ", Ingredient.field427);
       return var3;
    }
 
@@ -286,7 +286,7 @@ public class Class4852 implements ICraftingRecipe {
    }
 
    // $VF: synthetic method
-   public static NonNullList<Class120> method14995(Class4852 var0) {
+   public static NonNullList<Ingredient> method14995(Class4852 var0) {
       return var0.field22643;
    }
 

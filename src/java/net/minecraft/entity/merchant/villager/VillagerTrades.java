@@ -61,7 +61,7 @@ public class VillagerTrades {
                   1,
                   new Class5391[]{
                      new Class5396(Items.field37838, 20, 16, 2),
-                     new Class5396(Items.field37798, 10, 16, 2),
+                     new Class5396(Items.COAL, 10, 16, 2),
                      new Class5397(Items.field37909, 6, Items.field37913, 6, 16, 1),
                      new Class5395(Items.field37894, 3, 1, 16, 1)
                   },
@@ -209,7 +209,7 @@ public class VillagerTrades {
                   1,
                   new Class5391[]{
                      new Class5396(Items.field37835, 32, 16, 2),
-                     new Class5395(Items.field37797, 1, 16, 1),
+                     new Class5395(Items.ARROW, 1, 16, 1),
                      new Class5397(Blocks.GRAVEL, 10, Items.field37868, 10, 12, 1)
                   },
                   2,
@@ -222,7 +222,7 @@ public class VillagerTrades {
                   new Class5391[]{
                      new Class5396(Items.field37500, 8, 12, 30),
                      new Class5392(Items.CROSSBOW, 3, 3, 15),
-                     new Class5400(Items.field37797, 5, Items.field38117, 5, 2, 12, 30)
+                     new Class5400(Items.ARROW, 5, Items.field38117, 5, 2, 12, 30)
                   }
                )
             )
@@ -289,12 +289,12 @@ public class VillagerTrades {
                   1,
                   new Class5391[]{new Class5396(Items.field37965, 32, 16, 2), new Class5395(Items.REDSTONE_DUST, 1, 2, 1)},
                   2,
-                  new Class5391[]{new Class5396(Items.field37802, 3, 12, 10), new Class5395(Items.field37917, 1, 1, 5)},
+                  new Class5391[]{new Class5396(Items.GOLD_INGOT, 3, 12, 10), new Class5395(Items.field37917, 1, 1, 5)},
                   3,
                   new Class5391[]{new Class5396(Items.field38080, 2, 12, 20), new Class5395(Blocks.GLOWSTONE, 4, 1, 12, 10)},
                   4,
                   new Class5391[]{
-                     new Class5396(Items.field37793, 4, 12, 30),
+                     new Class5396(Items.SCUTE, 4, 12, 30),
                      new Class5396(Items.field37972, 9, 12, 30),
                      new Class5395(Items.ENDER_PEARL, 5, 1, 15)
                   },
@@ -309,7 +309,7 @@ public class VillagerTrades {
                ImmutableMap.of(
                   1,
                   new Class5391[]{
-                     new Class5396(Items.field37798, 15, 16, 2),
+                     new Class5396(Items.COAL, 15, 16, 2),
                      new Class5395(new ItemStack(Items.field37854), 7, 1, 12, 1, 0.2F),
                      new Class5395(new ItemStack(Items.field37855), 4, 1, 12, 1, 0.2F),
                      new Class5395(new ItemStack(Items.field37852), 5, 1, 12, 1, 0.2F),
@@ -325,7 +325,7 @@ public class VillagerTrades {
                   3,
                   new Class5391[]{
                      new Class5396(Items.LAVA_BUCKET, 1, 12, 20),
-                     new Class5396(Items.field37800, 1, 12, 20),
+                     new Class5396(Items.DIAMOND, 1, 12, 20),
                      new Class5395(new ItemStack(Items.field37848), 1, 1, 12, 10, 0.2F),
                      new Class5395(new ItemStack(Items.field37849), 4, 1, 12, 10, 0.2F),
                      new Class5395(new ItemStack(Items.field38119), 5, 1, 12, 10, 0.2F)
@@ -343,7 +343,7 @@ public class VillagerTrades {
                ImmutableMap.of(
                   1,
                   new Class5391[]{
-                     new Class5396(Items.field37798, 15, 16, 2),
+                     new Class5396(Items.COAL, 15, 16, 2),
                      new Class5395(new ItemStack(Items.IRON_AXE), 3, 1, 12, 1, 0.2F),
                      new Class5392(Items.field37820, 2, 3, 1)
                   },
@@ -352,7 +352,7 @@ public class VillagerTrades {
                   3,
                   new Class5391[]{new Class5396(Items.field37868, 24, 12, 20)},
                   4,
-                  new Class5391[]{new Class5396(Items.field37800, 1, 12, 30), new Class5392(Items.field37828, 12, 3, 15, 0.2F)},
+                  new Class5391[]{new Class5396(Items.DIAMOND, 1, 12, 30), new Class5392(Items.field37828, 12, 3, 15, 0.2F)},
                   5,
                   new Class5391[]{new Class5392(Items.field37825, 8, 3, 30, 0.2F)}
                )
@@ -364,10 +364,10 @@ public class VillagerTrades {
                ImmutableMap.of(
                   1,
                   new Class5391[]{
-                     new Class5396(Items.field37798, 15, 16, 2),
+                     new Class5396(Items.COAL, 15, 16, 2),
                      new Class5395(new ItemStack(Items.field37813), 1, 1, 12, 1, 0.2F),
-                     new Class5395(new ItemStack(Items.field37811), 1, 1, 12, 1, 0.2F),
-                     new Class5395(new ItemStack(Items.field37812), 1, 1, 12, 1, 0.2F),
+                     new Class5395(new ItemStack(Items.STONE_SHOVEL), 1, 1, 12, 1, 0.2F),
+                     new Class5395(new ItemStack(Items.STONE_PICKAXE), 1, 1, 12, 1, 0.2F),
                      new Class5395(new ItemStack(Items.field37814), 1, 1, 12, 1, 0.2F)
                   },
                   2,
@@ -382,7 +382,7 @@ public class VillagerTrades {
                   },
                   4,
                   new Class5391[]{
-                     new Class5396(Items.field37800, 1, 12, 30),
+                     new Class5396(Items.DIAMOND, 1, 12, 30),
                      new Class5392(Items.field37828, 12, 3, 15, 0.2F),
                      new Class5392(Items.field37826, 5, 3, 15, 0.2F)
                   },
@@ -404,7 +404,7 @@ public class VillagerTrades {
                   },
                   2,
                   new Class5391[]{
-                     new Class5396(Items.field37798, 15, 16, 2),
+                     new Class5396(Items.COAL, 15, 16, 2),
                      new Class5395(Items.field37870, 1, 5, 16, 5),
                      new Class5395(Items.field37964, 1, 8, 16, 5)
                   },
@@ -434,7 +434,7 @@ public class VillagerTrades {
                   3,
                   new Class5391[]{new Class5396(Items.field38081, 9, 12, 20), new Class5394(Items.field37845, 7)},
                   4,
-                  new Class5391[]{new Class5396(Items.field37793, 4, 12, 30), new Class5394(Items.field38086, 6, 12, 15)},
+                  new Class5391[]{new Class5396(Items.SCUTE, 4, 12, 30), new Class5394(Items.field38086, 6, 12, 15)},
                   5,
                   new Class5391[]{new Class5395(new ItemStack(Items.field37886), 6, 1, 12, 30, 0.2F), new Class5394(Items.field37844, 5, 12, 30)}
                )

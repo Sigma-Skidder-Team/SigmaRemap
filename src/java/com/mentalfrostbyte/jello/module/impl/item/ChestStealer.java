@@ -288,15 +288,15 @@ public class ChestStealer extends Module {
         if (!this.getBooleanValueFromSettingName("Ignore Junk")) {
             return false;
         } else if (!(var4 instanceof SwordItem)) {
-            if (var4 instanceof Class3268) {
+            if (var4 instanceof PickaxeItem) {
                 return !InvManager.method16442(var1);
-            } else if (!(var4 instanceof Class3265)) {
-                if (var4 instanceof HoeItem) {
+            } else if (!(var4 instanceof AxeItem)) {
+                if (var4 instanceof ShovelItem) {
                     return !InvManager.isHoe(var1);
                 } else if (!(var4 instanceof PotionItem)) {
                     if (var4 instanceof BlockItem) {
                         return !BlockFly.method16733(var4);
-                    } else if (!(var4 instanceof Class3308)
+                    } else if (!(var4 instanceof ArrowItem)
                             && (!(var4 instanceof BowItem) || !Client.getInstance().moduleManager.getModuleByClass(InvManager.class).getBooleanValueFromSettingName("Archery"))) {
                         if (var4 == Items.WATER_BUCKET && Client.getInstance().moduleManager.getModuleByClass(AutoMLG.class).isEnabled()) {
                             return false;

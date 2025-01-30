@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 
 public class Class4855 extends Class4837 {
-   private static final Class120 field22652 = Class120.method339(Items.field38069);
+   private static final Ingredient field22652 = Ingredient.fromItems(Items.field38069);
 
    public Class4855(ResourceLocation var1) {
       super(var1);

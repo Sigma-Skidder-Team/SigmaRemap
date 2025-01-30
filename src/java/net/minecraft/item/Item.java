@@ -362,7 +362,7 @@ public class Item implements IItemProvider {
          return this;
       }
 
-      public Properties method17781() {
+      public Properties isImmunteToFire() {
          this.field24962 = true;
          return this;
       }

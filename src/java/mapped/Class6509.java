@@ -9,15 +9,15 @@ import net.minecraft.util.ResourceLocation;
 
 public class Class6509 implements Class6504<SmithingRecipe> {
    public SmithingRecipe method19700(ResourceLocation var1, JsonObject var2) {
-      Class120 var5 = Class120.method344(JSONUtils.method32782(var2, "base"));
-      Class120 var6 = Class120.method344(JSONUtils.method32782(var2, "addition"));
+      Ingredient var5 = Ingredient.method344(JSONUtils.method32782(var2, "base"));
+      Ingredient var6 = Ingredient.method344(JSONUtils.method32782(var2, "addition"));
       ItemStack var7 = Class4852.method14987(JSONUtils.method32782(var2, "result"));
       return new SmithingRecipe(var1, var5, var6, var7);
    }
 
    public SmithingRecipe method19699(ResourceLocation var1, PacketBuffer var2) {
-      Class120 var5 = Class120.method343(var2);
-      Class120 var6 = Class120.method343(var2);
+      Ingredient var5 = Ingredient.method343(var2);
+      Ingredient var6 = Ingredient.method343(var2);
       ItemStack var7 = var2.readItemStack();
       return new SmithingRecipe(var1, var5, var6, var7);
    }

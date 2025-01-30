@@ -14,17 +14,17 @@ public class Class4853 extends Class4852 {
          "",
          3,
          3,
-         NonNullList.<Class120>method69(
-            Class120.field427,
-            Class120.method339(Items.field37899),
-            Class120.method339(Items.field37899),
-            Class120.method339(Items.field37899),
-            Class120.method339(Items.field37899),
-            Class120.method339(Items.field37955),
-            Class120.method339(Items.field37899),
-            Class120.method339(Items.field37899),
-            Class120.method339(Items.field37899),
-            Class120.method339(Items.field37899)
+         NonNullList.<Ingredient>method69(
+            Ingredient.field427,
+            Ingredient.fromItems(Items.field37899),
+            Ingredient.fromItems(Items.field37899),
+            Ingredient.fromItems(Items.field37899),
+            Ingredient.fromItems(Items.field37899),
+            Ingredient.fromItems(Items.field37955),
+            Ingredient.fromItems(Items.field37899),
+            Ingredient.fromItems(Items.field37899),
+            Ingredient.fromItems(Items.field37899),
+            Ingredient.fromItems(Items.field37899)
          ),
          new ItemStack(Items.field38056)
       );

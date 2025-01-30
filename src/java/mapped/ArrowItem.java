@@ -6,10 +6,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class Class3308 extends Item {
+public class ArrowItem extends Item {
    private static String[] field18815;
 
-   public Class3308(Properties var1) {
+   public ArrowItem(Properties var1) {
       super(var1);
    }
 

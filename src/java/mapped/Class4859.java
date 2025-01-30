@@ -8,9 +8,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public class Class4859 extends Class4837 {
-   private static final Class120 field22655 = Class120.method339(Items.field37899);
-   private static final Class120 field22656 = Class120.method339(Items.field37840);
-   private static final Class120 field22657 = Class120.method339(Items.field38069);
+   private static final Ingredient field22655 = Ingredient.fromItems(Items.field37899);
+   private static final Ingredient field22656 = Ingredient.fromItems(Items.field37840);
+   private static final Ingredient field22657 = Ingredient.fromItems(Items.field38069);
 
    public Class4859(ResourceLocation var1) {
       super(var1);

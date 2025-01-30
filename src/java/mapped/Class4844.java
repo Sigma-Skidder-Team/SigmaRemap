@@ -8,14 +8,14 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 
 public abstract class Class4844 implements IRecipe<IInventory> {
-   public final Class120 field22618;
+   public final Ingredient field22618;
    public final ItemStack field22619;
    private final IRecipeType<?> field22620;
    private final Class6504<?> field22621;
    public final ResourceLocation field22622;
    public final String field22623;
 
-   public Class4844(IRecipeType<?> var1, Class6504<?> var2, ResourceLocation var3, String var4, Class120 var5, ItemStack var6) {
+   public Class4844(IRecipeType<?> var1, Class6504<?> var2, ResourceLocation var3, String var4, Ingredient var5, ItemStack var6) {
       this.field22620 = var1;
       this.field22621 = var2;
       this.field22622 = var3;
@@ -50,7 +50,7 @@ public abstract class Class4844 implements IRecipe<IInventory> {
    }
 
    @Override
-   public NonNullList<Class120> method14969() {
+   public NonNullList<Ingredient> method14969() {
       NonNullList var3 = NonNullList.create();
       var3.add(this.field22618);
       return var3;

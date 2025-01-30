@@ -9,24 +9,24 @@ import java.util.function.Consumer;
 
 public class Class9067 {
    private final Item field41489;
-   private final Class120 field41490;
+   private final Ingredient field41490;
    private final int field41491;
    private final Class7999 field41492 = Class7999.method27304();
    private String field41493;
    private final Class6504<?> field41494;
 
-   public Class9067(Class6504<?> var1, Class120 var2, IItemProvider var3, int var4) {
+   public Class9067(Class6504<?> var1, Ingredient var2, IItemProvider var3, int var4) {
       this.field41494 = var1;
       this.field41489 = var3.asItem();
       this.field41490 = var2;
       this.field41491 = var4;
    }
 
-   public static Class9067 method33769(Class120 var0, IItemProvider var1) {
+   public static Class9067 method33769(Ingredient var0, IItemProvider var1) {
       return new Class9067(Class6504.field28489, var0, var1, 1);
    }
 
-   public static Class9067 method33770(Class120 var0, IItemProvider var1, int var2) {
+   public static Class9067 method33770(Ingredient var0, IItemProvider var1, int var2) {
       return new Class9067(Class6504.field28489, var0, var1, var2);
    }
 

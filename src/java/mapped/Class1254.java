@@ -25,7 +25,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-public class Class1254 extends AbstractGui implements Class1190, IGuiEventListener2, Class1259, Class1253<Class120> {
+public class Class1254 extends AbstractGui implements Class1190, IGuiEventListener2, Class1259, Class1253<Ingredient> {
    public static final ResourceLocation field6630 = new ResourceLocation("textures/gui/recipe_book.png");
    private static final ITextComponent field6631 = new TranslationTextComponent("gui.recipebook.search_hint")
       .mergeStyle(TextFormatting.ITALIC)
@@ -437,13 +437,13 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
    public void method5858(IRecipe<?> var1, List<Slot> var2) {
       ItemStack var5 = var1.getRecipeOutput();
       this.field6637.method34738(var1);
-      this.field6637.method34734(Class120.method340(var5), ((Slot)var2.get(0)).field25580, ((Slot)var2.get(0)).field25581);
+      this.field6637.method34734(Ingredient.method340(var5), ((Slot)var2.get(0)).field25580, ((Slot)var2.get(0)).field25581);
       this.method5832(this.field6641.method18224(), this.field6641.method18225(), this.field6641.method18223(), var1, var1.method14969().iterator(), 0);
    }
 
    @Override
-   public void method5830(Iterator<Class120> var1, int var2, int var3, int var4, int var5) {
-      Class120 var8 = (Class120)var1.next();
+   public void method5830(Iterator<Ingredient> var1, int var2, int var3, int var4, int var5) {
+      Ingredient var8 = (Ingredient)var1.next();
       if (!var8.method337()) {
          Slot var9 = this.field6641.inventorySlots.get(var2);
          this.field6637.method34734(var8, var9.field25580, var9.field25581);

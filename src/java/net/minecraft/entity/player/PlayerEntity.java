@@ -261,7 +261,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    private void method2855() {
       ItemStack var3 = this.getItemStackFromSlot(EquipmentSlotType.HEAD);
-      if (var3.getItem() == Items.field37792 && !this.areEyesInFluid(FluidTags.WATER)) {
+      if (var3.getItem() == Items.TURTLE_HELMET && !this.areEyesInFluid(FluidTags.WATER)) {
          this.addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, 200, 0, false, false, true));
       }
    }
@@ -838,7 +838,7 @@ public abstract class PlayerEntity extends LivingEntity {
    @Override
    public void blockUsingShield(LivingEntity var1) {
       super.blockUsingShield(var1);
-      if (var1.getHeldItemMainhand().getItem() instanceof Class3265) {
+      if (var1.getHeldItemMainhand().getItem() instanceof AxeItem) {
          this.method2901(true);
       }
    }
@@ -2061,7 +2061,7 @@ public abstract class PlayerEntity extends LivingEntity {
                }
             }
 
-            return !this.abilities.isCreativeMode ? ItemStack.EMPTY : new ItemStack(Items.field37797);
+            return !this.abilities.isCreativeMode ? ItemStack.EMPTY : new ItemStack(Items.ARROW);
          }
       }
    }

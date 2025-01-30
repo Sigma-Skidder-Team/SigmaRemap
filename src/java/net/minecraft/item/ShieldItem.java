@@ -45,7 +45,7 @@ public class ShieldItem extends Item {
 
    @Override
    public boolean method11699(ItemStack var1, ItemStack var2) {
-      return ItemTags.field26071.contains(var2.getItem()) || super.method11699(var1, var2);
+      return ItemTags.PLANKS.contains(var2.getItem()) || super.method11699(var1, var2);
    }
 
    public static DyeColor getColor(ItemStack var0) {

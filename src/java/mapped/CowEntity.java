@@ -26,7 +26,7 @@ public class CowEntity extends AnimalEntity {
       this.field5600.addGoal(0, new Class2603(this));
       this.field5600.addGoal(1, new Class2747(this, 2.0));
       this.field5600.addGoal(2, new Class2785(this, 1.0));
-      this.field5600.addGoal(3, new Class2680(this, 1.25, Class120.method339(Items.field37842), false));
+      this.field5600.addGoal(3, new Class2680(this, 1.25, Ingredient.fromItems(Items.field37842), false));
       this.field5600.addGoal(4, new Class2764(this, 1.25));
       this.field5600.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0));
       this.field5600.addGoal(6, new Class2612(this, PlayerEntity.class, 6.0F));

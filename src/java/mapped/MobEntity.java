@@ -1388,7 +1388,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    private void method4309(PlayerEntity var1, ItemStack var2, ItemStack var3) {
-      if (!var2.isEmpty() && !var3.isEmpty() && var2.getItem() instanceof Class3265 && var3.getItem() == Items.field38119) {
+      if (!var2.isEmpty() && !var3.isEmpty() && var2.getItem() instanceof AxeItem && var3.getItem() == Items.field38119) {
          float var6 = 0.25F + (float) EnchantmentHelper.method26327(this) * 0.05F;
          if (this.rand.nextFloat() < var6) {
             var1.method2976().method19638(Items.field38119, 100);

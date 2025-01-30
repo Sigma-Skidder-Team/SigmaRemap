@@ -1,6 +1,6 @@
 package net.minecraft.item.crafting;
 
-import mapped.Class120;
+import mapped.Ingredient;
 import mapped.Class6504;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.block.Blocks;
@@ -11,12 +11,12 @@ import net.minecraft.world.World;
 
 public class SmithingRecipe implements IRecipe<IInventory> {
    private static String[] field22625;
-   private final Class120 field22626;
-   private final Class120 field22627;
+   private final Ingredient field22626;
+   private final Ingredient field22627;
    private final ItemStack field22628;
    private final ResourceLocation field22629;
 
-   public SmithingRecipe(ResourceLocation var1, Class120 var2, Class120 var3, ItemStack var4) {
+   public SmithingRecipe(ResourceLocation var1, Ingredient var2, Ingredient var3, ItemStack var4) {
       this.field22629 = var1;
       this.field22626 = var2;
       this.field22627 = var3;
@@ -74,12 +74,12 @@ public class SmithingRecipe implements IRecipe<IInventory> {
    }
 
    // $VF: synthetic method
-   public static Class120 method14973(SmithingRecipe var0) {
+   public static Ingredient method14973(SmithingRecipe var0) {
       return var0.field22626;
    }
 
    // $VF: synthetic method
-   public static Class120 method14974(SmithingRecipe var0) {
+   public static Ingredient method14974(SmithingRecipe var0) {
       return var0.field22627;
    }
 

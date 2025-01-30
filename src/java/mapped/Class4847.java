@@ -12,12 +12,12 @@ public abstract class Class4847 implements IRecipe<IInventory> {
    public final IRecipeType<?> field22630;
    public final ResourceLocation field22631;
    public final String field22632;
-   public final Class120 field22633;
+   public final Ingredient field22633;
    public final ItemStack field22634;
    public final float field22635;
    public final int field22636;
 
-   public Class4847(IRecipeType<?> var1, ResourceLocation var2, String var3, Class120 var4, ItemStack var5, float var6, int var7) {
+   public Class4847(IRecipeType<?> var1, ResourceLocation var2, String var3, Ingredient var4, ItemStack var5, float var6, int var7) {
       this.field22630 = var1;
       this.field22631 = var2;
       this.field22632 = var3;
@@ -43,7 +43,7 @@ public abstract class Class4847 implements IRecipe<IInventory> {
    }
 
    @Override
-   public NonNullList<Class120> method14969() {
+   public NonNullList<Ingredient> method14969() {
       NonNullList var3 = NonNullList.create();
       var3.add(this.field22633);
       return var3;

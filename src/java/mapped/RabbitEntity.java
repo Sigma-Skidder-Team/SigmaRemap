@@ -55,7 +55,7 @@ public class RabbitEntity extends AnimalEntity {
       this.field5600.addGoal(1, new Class2603(this));
       this.field5600.addGoal(1, new Class2749(this, 2.2));
       this.field5600.addGoal(2, new Class2785(this, 0.8));
-      this.field5600.addGoal(3, new Class2680(this, 1.0, Class120.method339(Items.field38052, Items.field38057, Blocks.DANDELION), false));
+      this.field5600.addGoal(3, new Class2680(this, 1.0, Ingredient.fromItems(Items.field38052, Items.field38057, Blocks.DANDELION), false));
       this.field5600.addGoal(4, new Class2772<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.2, 2.2));
       this.field5600.addGoal(4, new Class2772<WolfEntity>(this, WolfEntity.class, 10.0F, 2.2, 2.2));
       this.field5600.addGoal(4, new Class2772<MonsterEntity>(this, MonsterEntity.class, 4.0F, 2.2, 2.2));

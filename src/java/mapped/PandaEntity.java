@@ -213,7 +213,7 @@ public class PandaEntity extends AnimalEntity {
       this.field5600.addGoal(2, new Class2748(this, 2.0));
       this.field5600.addGoal(2, new Class2788(this, this, 1.0));
       this.field5600.addGoal(3, new Class2649(this, 1.2F, true));
-      this.field5600.addGoal(4, new Class2680(this, 1.0, Class120.method339(Blocks.BAMBOO.asItem()), false));
+      this.field5600.addGoal(4, new Class2680(this, 1.0, Ingredient.fromItems(Blocks.BAMBOO.asItem()), false));
       this.field5600.addGoal(6, new Class2771<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.0, 2.0));
       this.field5600.addGoal(6, new Class2771<MonsterEntity>(this, MonsterEntity.class, 4.0F, 2.0, 2.0));
       this.field5600.addGoal(7, new Class2623(this));

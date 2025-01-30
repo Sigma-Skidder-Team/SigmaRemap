@@ -39,7 +39,7 @@ import java.util.function.Predicate;
 public abstract class AbstractHorseEntity extends AnimalEntity implements Class1073, IJumpingMount, Class1069 {
    private static final Predicate<LivingEntity> field5879 = var0 -> var0 instanceof AbstractHorseEntity && ((AbstractHorseEntity)var0).method4940();
    private static final EntityPredicate field5880 = new EntityPredicate().method30203(16.0).method30204().method30205().method30206().method30209(field5879);
-   private static final Class120 field5881 = Class120.method339(
+   private static final Ingredient field5881 = Ingredient.fromItems(
       Items.field37842,
       Items.field37936,
       Blocks.HAY_BLOCK.asItem(),

@@ -82,7 +82,7 @@ public class BeeEntity extends AnimalEntity implements IAngerable, IFlyingAnimal
       this.field5600.addGoal(0, new Class2651(this, this, 1.4F, true));
       this.field5600.addGoal(1, new Class2666(this, null));
       this.field5600.addGoal(2, new Class2785(this, 1.0));
-      this.field5600.addGoal(3, new Class2680(this, 1.25, Class120.method342(ItemTags.field26107), false));
+      this.field5600.addGoal(3, new Class2680(this, 1.25, Ingredient.fromTag(ItemTags.field26107), false));
       this.field5698 = new Class2663(this);
       this.field5600.addGoal(4, this.field5698);
       this.field5600.addGoal(5, new Class2764(this, 1.25));

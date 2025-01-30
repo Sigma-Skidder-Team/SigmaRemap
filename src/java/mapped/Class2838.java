@@ -1145,10 +1145,10 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       );
       this.method11097(Blocks.BROWN_MUSHROOM_BLOCK, var0 -> method11079(var0, Blocks.BROWN_MUSHROOM));
       this.method11097(Blocks.RED_MUSHROOM_BLOCK, var0 -> method11079(var0, Blocks.RED_MUSHROOM));
-      this.method11097(Blocks.COAL_ORE, var0 -> method11078(var0, Items.field37798));
+      this.method11097(Blocks.COAL_ORE, var0 -> method11078(var0, Items.COAL));
       this.method11097(Blocks.EMERALD_ORE, var0 -> method11078(var0, Items.EMERALD));
       this.method11097(Blocks.NETHER_QUARTZ_ORE, var0 -> method11078(var0, Items.field38072));
-      this.method11097(Blocks.DIAMOND_ORE, var0 -> method11078(var0, Items.field37800));
+      this.method11097(Blocks.DIAMOND_ORE, var0 -> method11078(var0, Items.DIAMOND));
       this.method11097(
          Blocks.NETHER_GOLD_ORE,
          var0 -> method11063(
@@ -1349,7 +1349,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11097(
          Blocks.CAMPFIRE,
          var0 -> method11063(
-               var0, (Class5873<?>)method11060(var0, Class4695.method14724(Items.field37799).method18296(Class140.method420(Class6871.method20919(2))))
+               var0, (Class5873<?>)method11060(var0, Class4695.method14724(Items.CHARCOAL).method18296(Class140.method420(Class6871.method20919(2))))
             )
       );
       this.method11097(

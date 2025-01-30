@@ -28,7 +28,7 @@ public class Class4856 extends Class4837 {
                   if (var8 != Items.field38118) {
                      return false;
                   }
-               } else if (var8 != Items.field37797) {
+               } else if (var8 != Items.ARROW) {
                   return false;
                }
             }

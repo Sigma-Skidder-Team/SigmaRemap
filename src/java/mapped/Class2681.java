@@ -4,7 +4,7 @@ public class Class2681 extends Class2680 {
    private static String[] field17091;
    private final OcelotEntity field17092;
 
-   public Class2681(OcelotEntity var1, double var2, Class120 var4, boolean var5) {
+   public Class2681(OcelotEntity var1, double var2, Ingredient var4, boolean var5) {
       super(var1, var2, var4, var5);
       this.field17092 = var1;
    }

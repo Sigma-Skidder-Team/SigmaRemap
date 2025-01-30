@@ -17,12 +17,12 @@ public class Class4663 implements Class4664 {
    private final int field22200;
    private final String field22201;
    private final List<String> field22202;
-   private final Map<Character, Class120> field22203;
+   private final Map<Character, Ingredient> field22203;
    private final Class7999 field22204;
    private final ResourceLocation field22205;
    public final Class8528 field22206;
 
-   public Class4663(Class8528 var1, ResourceLocation var2, Item var3, int var4, String var5, List<String> var6, Map<Character, Class120> var7, Class7999 var8, ResourceLocation var9
+   public Class4663(Class8528 var1, ResourceLocation var2, Item var3, int var4, String var5, List<String> var6, Map<Character, Ingredient> var7, Class7999 var8, ResourceLocation var9
    ) {
       this.field22206 = var1;
       this.field22198 = var2;
@@ -51,7 +51,7 @@ public class Class4663 implements Class4664 {
       JsonObject var8 = new JsonObject();
 
       for (Entry var7 : this.field22203.entrySet()) {
-         var8.add(String.valueOf(var7.getKey()), ((Class120)var7.getValue()).method336());
+         var8.add(String.valueOf(var7.getKey()), ((Ingredient)var7.getValue()).method336());
       }
 
       var1.add("key", var8);

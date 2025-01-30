@@ -16,11 +16,11 @@ public class Class6508<T extends Class4844> implements Class6504<T> {
 
    public T method19700(ResourceLocation var1, JsonObject var2) {
       String var5 = JSONUtils.getString(var2, "group", "");
-      Class120 var6;
+      Ingredient var6;
       if (!JSONUtils.method32759(var2, "ingredient")) {
-         var6 = Class120.method344(JSONUtils.method32782(var2, "ingredient"));
+         var6 = Ingredient.method344(JSONUtils.method32782(var2, "ingredient"));
       } else {
-         var6 = Class120.method344(JSONUtils.method32785(var2, "ingredient"));
+         var6 = Ingredient.method344(JSONUtils.method32785(var2, "ingredient"));
       }
 
       String var7 = JSONUtils.getString(var2, "result");
@@ -31,7 +31,7 @@ public class Class6508<T extends Class4844> implements Class6504<T> {
 
    public T method19699(ResourceLocation var1, PacketBuffer var2) {
       String var5 = var2.readString(32767);
-      Class120 var6 = Class120.method343(var2);
+      Ingredient var6 = Ingredient.method343(var2);
       ItemStack var7 = var2.readItemStack();
       return this.field28493.method17789(var1, var5, var6, var7);
    }

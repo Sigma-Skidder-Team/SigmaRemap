@@ -97,7 +97,7 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Items.field37797).method18299(26))
+                  .method18291(Class4695.method14724(Items.ARROW).method18299(26))
                   .method18291(
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
@@ -220,10 +220,10 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Items.field37812))
+                  .method18291(Class4695.method14724(Items.STONE_PICKAXE))
                   .method18291(Class4695.method14724(Items.field37813))
                   .method18291(Class4695.method14724(Items.field37814))
-                  .method18291(Class4695.method14724(Items.field37811))
+                  .method18291(Class4695.method14724(Items.STONE_SHOVEL))
             )
       );
       var1.accept(

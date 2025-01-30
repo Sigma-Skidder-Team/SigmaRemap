@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Class4860 extends Class4837 {
-   private static final Class120 field22658 = Class120.method339(
+   private static final Ingredient field22658 = Ingredient.fromItems(
       Items.field38046,
       Items.field37839,
       Items.field37969,
@@ -25,8 +25,8 @@ public class Class4860 extends Class4837 {
       Items.field38063,
       Items.field38061
    );
-   private static final Class120 field22659 = Class120.method339(Items.field37800);
-   private static final Class120 field22660 = Class120.method339(Items.field37908);
+   private static final Ingredient field22659 = Ingredient.fromItems(Items.DIAMOND);
+   private static final Ingredient field22660 = Ingredient.fromItems(Items.field37908);
    private static final Map<Item, Class2119> field22661 = Util.<Map<Item, Class2119>>make(Maps.newHashMap(), var0 -> {
       var0.put(Items.field38046, Class2119.field13808);
       var0.put(Items.field37839, Class2119.field13811);
@@ -38,7 +38,7 @@ public class Class4860 extends Class4837 {
       var0.put(Items.field38063, Class2119.field13810);
       var0.put(Items.field38061, Class2119.field13810);
    });
-   private static final Class120 field22662 = Class120.method339(Items.field37840);
+   private static final Ingredient field22662 = Ingredient.fromItems(Items.field37840);
 
    public Class4860(ResourceLocation var1) {
       super(var1);

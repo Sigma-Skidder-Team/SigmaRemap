@@ -21,7 +21,7 @@ public class Class8528 {
    private final Item field38305;
    private final int field38306;
    private final List<String> field38307 = Lists.newArrayList();
-   private final Map<Character, Class120> field38308 = Maps.newLinkedHashMap();
+   private final Map<Character, Ingredient> field38308 = Maps.newLinkedHashMap();
    private final Class7999 field38309 = Class7999.method27304();
    private String field38310;
 
@@ -39,14 +39,14 @@ public class Class8528 {
    }
 
    public Class8528 method30249(Character var1, ITag<Item> var2) {
-      return this.method30251(var1, Class120.method342(var2));
+      return this.method30251(var1, Ingredient.fromTag(var2));
    }
 
    public Class8528 method30250(Character var1, IItemProvider var2) {
-      return this.method30251(var1, Class120.method339(var2));
+      return this.method30251(var1, Ingredient.fromItems(var2));
    }
 
-   public Class8528 method30251(Character var1, Class120 var2) {
+   public Class8528 method30251(Character var1, Ingredient var2) {
       if (!this.field38308.containsKey(var1)) {
          if (var1 != ' ') {
             this.field38308.put(var1, var2);

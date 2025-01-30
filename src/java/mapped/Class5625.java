@@ -9,14 +9,14 @@ import java.util.function.Consumer;
 
 public class Class5625 {
    private final Item field24940;
-   private final Class120 field24941;
+   private final Ingredient field24941;
    private final float field24942;
    private final int field24943;
    private final Class7999 field24944 = Class7999.method27304();
    private String field24945;
    private final Class6503<?> field24946;
 
-   private Class5625(IItemProvider var1, Class120 var2, float var3, int var4, Class6503<?> var5) {
+   private Class5625(IItemProvider var1, Ingredient var2, float var3, int var4, Class6503<?> var5) {
       this.field24940 = var1.asItem();
       this.field24941 = var2;
       this.field24942 = var3;
@@ -24,15 +24,15 @@ public class Class5625 {
       this.field24946 = var5;
    }
 
-   public static Class5625 method17664(Class120 var0, IItemProvider var1, float var2, int var3, Class6503<?> var4) {
+   public static Class5625 method17664(Ingredient var0, IItemProvider var1, float var2, int var3, Class6503<?> var4) {
       return new Class5625(var1, var0, var2, var3, var4);
    }
 
-   public static Class5625 method17665(Class120 var0, IItemProvider var1, float var2, int var3) {
+   public static Class5625 method17665(Ingredient var0, IItemProvider var1, float var2, int var3) {
       return method17664(var0, var1, var2, var3, Class6504.field28486);
    }
 
-   public static Class5625 method17666(Class120 var0, IItemProvider var1, float var2, int var3) {
+   public static Class5625 method17666(Ingredient var0, IItemProvider var1, float var2, int var3) {
       return method17664(var0, var1, var2, var3, Class6504.field28485);
    }
 

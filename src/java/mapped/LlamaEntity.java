@@ -32,7 +32,7 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 
 public class LlamaEntity extends Class1066 implements Class1022 {
-   private static final Class120 field5869 = Class120.method339(Items.field37842, Blocks.HAY_BLOCK.asItem());
+   private static final Ingredient field5869 = Ingredient.fromItems(Items.field37842, Blocks.HAY_BLOCK.asItem());
    private static final DataParameter<Integer> field5870 = EntityDataManager.<Integer>createKey(LlamaEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Integer> field5871 = EntityDataManager.<Integer>createKey(LlamaEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Integer> field5872 = EntityDataManager.<Integer>createKey(LlamaEntity.class, DataSerializers.VARINT);

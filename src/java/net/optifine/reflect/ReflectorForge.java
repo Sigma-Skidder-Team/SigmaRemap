@@ -108,7 +108,7 @@ public class ReflectorForge {
 
    public static boolean method37051(ItemStack var0, ItemStack var1, PlayerEntity var2, MobEntity var3) {
       return !Reflector.field42921.exists()
-         ? var0.getItem() instanceof Class3265
+         ? var0.getItem() instanceof AxeItem
          : Reflector.method35064(var0, Reflector.field42921, var1, var2, var3);
    }
 

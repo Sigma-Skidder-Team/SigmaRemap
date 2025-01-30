@@ -1,6 +1,6 @@
 package net.minecraft.enchantment;
 
-import mapped.Class3265;
+import mapped.AxeItem;
 import mapped.CreatureAttribute;
 import net.minecraft.potion.Effects;
 import net.minecraft.entity.LivingEntity;
@@ -56,7 +56,7 @@ public class DamageEnchantment extends Enchantment {
 
    @Override
    public boolean method18821(ItemStack var1) {
-      return !(var1.getItem() instanceof Class3265) ? super.method18821(var1) : true;
+      return !(var1.getItem() instanceof AxeItem) ? super.method18821(var1) : true;
    }
 
    @Override

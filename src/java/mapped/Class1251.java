@@ -12,7 +12,7 @@ import net.minecraft.util.text.StringTextComponent;
 import java.util.Iterator;
 import java.util.List;
 
-public class Class1251 extends Widget implements Class1253<Class120> {
+public class Class1251 extends Widget implements Class1253<Ingredient> {
    private static String[] field6623;
    private final IRecipe<?> field6624;
    private final boolean field6625;
@@ -35,8 +35,8 @@ public class Class1251 extends Widget implements Class1253<Class120> {
    }
 
    @Override
-   public void method5830(Iterator<Class120> var1, int var2, int var3, int var4, int var5) {
-      ItemStack[] var8 = ((Class120)var1.next()).method332();
+   public void method5830(Iterator<Ingredient> var1, int var2, int var3, int var4, int var5) {
+      ItemStack[] var8 = ((Ingredient)var1.next()).method332();
       if (var8.length != 0) {
          this.field6626.add(new Class8834(this, 3 + var5 * 7, 3 + var4 * 7, var8));
       }

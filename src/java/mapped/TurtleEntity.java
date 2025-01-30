@@ -272,7 +272,7 @@ public class TurtleEntity extends AnimalEntity {
    public void method4679() {
       super.method4679();
       if (!this.isChild() && this.world.getGameRules().getBoolean(GameRules.field24227)) {
-         this.entityDropItem(Items.field37793, 1);
+         this.entityDropItem(Items.SCUTE, 1);
       }
    }
 

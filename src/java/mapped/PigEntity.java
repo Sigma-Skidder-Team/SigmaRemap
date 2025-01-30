@@ -30,7 +30,7 @@ public class PigEntity extends AnimalEntity implements Class1071, Class1069 {
    private static String[] field5911;
    private static final DataParameter<Boolean> field5912 = EntityDataManager.<Boolean>createKey(PigEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<Integer> field5913 = EntityDataManager.<Integer>createKey(PigEntity.class, DataSerializers.VARINT);
-   private static final Class120 field5914 = Class120.method339(Items.field38052, Items.field38053, Items.field38111);
+   private static final Ingredient field5914 = Ingredient.fromItems(Items.field38052, Items.field38053, Items.field38111);
    private final Class6500 field5915 = new Class6500(this.dataManager, field5913, field5912);
 
    public PigEntity(EntityType<? extends PigEntity> var1, World var2) {
@@ -42,7 +42,7 @@ public class PigEntity extends AnimalEntity implements Class1071, Class1069 {
       this.field5600.addGoal(0, new Class2603(this));
       this.field5600.addGoal(1, new Class2747(this, 1.25));
       this.field5600.addGoal(3, new Class2785(this, 1.0));
-      this.field5600.addGoal(4, new Class2680(this, 1.2, Class120.method339(Items.field38064), false));
+      this.field5600.addGoal(4, new Class2680(this, 1.2, Ingredient.fromItems(Items.field38064), false));
       this.field5600.addGoal(4, new Class2680(this, 1.2, false, field5914));
       this.field5600.addGoal(5, new Class2764(this, 1.1));
       this.field5600.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 1.0));

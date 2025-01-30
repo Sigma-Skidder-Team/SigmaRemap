@@ -109,7 +109,7 @@ public class CrossbowItem extends Class3262 implements IVanishable {
          }
 
          if (var7.isEmpty() && var6) {
-            var7 = new ItemStack(Items.field37797);
+            var7 = new ItemStack(Items.ARROW);
             var8 = var7.copy();
          }
 
@@ -125,7 +125,7 @@ public class CrossbowItem extends Class3262 implements IVanishable {
       if (var2.isEmpty()) {
          return false;
       } else {
-         boolean var7 = var4 && var2.getItem() instanceof Class3308;
+         boolean var7 = var4 && var2.getItem() instanceof ArrowItem;
          ItemStack var8;
          if (!var7 && !var4 && !var3) {
             var8 = var2.split(1);
@@ -229,7 +229,7 @@ public class CrossbowItem extends Class3262 implements IVanishable {
    }
 
    private static AbstractArrowEntity method11762(World var0, LivingEntity var1, ItemStack var2, ItemStack var3) {
-      Class3308 var6 = (Class3308)(!(var3.getItem() instanceof Class3308) ? Items.field37797 : var3.getItem());
+      ArrowItem var6 = (ArrowItem)(!(var3.getItem() instanceof ArrowItem) ? Items.ARROW : var3.getItem());
       AbstractArrowEntity var7 = var6.method11850(var0, var3, var1);
       if (var1 instanceof PlayerEntity) {
          var7.method3484(true);

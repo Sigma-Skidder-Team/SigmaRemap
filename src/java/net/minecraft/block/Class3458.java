@@ -79,13 +79,13 @@ public class Class3458 extends Block {
    public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       ItemStack var9 = var4.getHeldItem(var5);
       Item var10 = var9.getItem();
-      if (var10 != Items.field37794 && var10 != Items.field38046) {
+      if (var10 != Items.FLINT_AND_STEEL && var10 != Items.field38046) {
          return super.onBlockActivated(var1, var2, var3, var4, var5, var6);
       } else {
          method12132(var2, var3, var4);
          var2.setBlockState(var3, Blocks.AIR.getDefaultState(), 11);
          if (!var4.isCreative()) {
-            if (var10 != Items.field37794) {
+            if (var10 != Items.FLINT_AND_STEEL) {
                var9.shrink(1);
             } else {
                var9.damageItem(1, var4, var1x -> var1x.sendBreakAnimation(var5));

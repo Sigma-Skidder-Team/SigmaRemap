@@ -206,7 +206,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Items.field37802))
+                  .method18291(Class4695.method14724(Items.GOLD_INGOT))
                   .method18297(Class163.method492())
                   .method18297(Class124.method363(0.05F, 0.01F))
             )
@@ -639,7 +639,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field37797)
+                     Class4695.method14724(Items.ARROW)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )
@@ -732,7 +732,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field37797)
+                     Class4695.method14724(Items.ARROW)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )
@@ -888,7 +888,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field37798)
+                     Class4695.method14724(Items.COAL)
                         .method18296(Class140.method420(Class6872.method20921(-1.0F, 1.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )
@@ -983,7 +983,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Items.field37802))
+                  .method18291(Class4695.method14724(Items.GOLD_INGOT))
                   .method18297(Class163.method492())
                   .method18297(Class124.method363(0.025F, 0.01F))
             )

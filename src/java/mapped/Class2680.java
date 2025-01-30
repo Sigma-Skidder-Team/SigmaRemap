@@ -17,14 +17,14 @@ public class Class2680 extends Class2595 {
    public PlayerEntity field17086;
    private int field17087;
    private boolean field17088;
-   private final Class120 field17089;
+   private final Ingredient field17089;
    private final boolean field17090;
 
-   public Class2680(CreatureEntity var1, double var2, Class120 var4, boolean var5) {
+   public Class2680(CreatureEntity var1, double var2, Ingredient var4, boolean var5) {
       this(var1, var2, var5, var4);
    }
 
-   public Class2680(CreatureEntity var1, double var2, boolean var4, Class120 var5) {
+   public Class2680(CreatureEntity var1, double var2, boolean var4, Ingredient var5) {
       this.field17079 = var1;
       this.field17080 = var2;
       this.field17089 = var5;
