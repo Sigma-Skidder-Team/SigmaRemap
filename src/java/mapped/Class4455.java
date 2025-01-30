@@ -136,7 +136,7 @@ public class Class4455 extends Class4441<Item> {
             Items.WARPED_STEM,
             Items.STRIPPED_WARPED_STEM,
             Items.WARPED_HYPHAE,
-            Items.STRIPPED_WARP_HYPHAE,
+            Items.STRIPPED_WARPED_HYPHAE,
             Items.CRIMSON_STEM,
             Items.STRIPPED_CRIMSON_STEM,
             Items.CRIMSON_HYPHAE,
