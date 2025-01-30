@@ -88,7 +88,7 @@ public class Items {
    public static final Item DARK_OAK_LEAVES = register(Blocks.DARK_OAK_LEAVES, ItemGroup.DECORATIONS);
    public static final Item SPONGE = register(Blocks.SPONGE, ItemGroup.BUILDING_BLOCKS);
    public static final Item WET_SPONGE = register(Blocks.WET_SPONGE, ItemGroup.BUILDING_BLOCKS);
-   public static final Item GLASS_BLOCK = register(Blocks.GLASS_BLOCK, ItemGroup.BUILDING_BLOCKS);
+   public static final Item GLASS = register(Blocks.GLASS, ItemGroup.BUILDING_BLOCKS);
    public static final Item LAPIS_ORE = register(Blocks.LAPIS_ORE, ItemGroup.BUILDING_BLOCKS);
    public static final Item LAPIS_BLOCK = register(Blocks.LAPIS_BLOCK, ItemGroup.BUILDING_BLOCKS);
    public static final Item DISPENSER = register(Blocks.DISPENSER, ItemGroup.REDSTONE);

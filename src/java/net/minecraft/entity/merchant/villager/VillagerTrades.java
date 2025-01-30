@@ -233,7 +233,7 @@ public class VillagerTrades {
                ImmutableMap.<Integer, Class5391[]>builder()
                   .put(1, new Class5391[]{new Class5396(Items.field37899, 24, 16, 2), new Class5399(1), new Class5395(Blocks.BOOKSHELF, 9, 1, 12, 1)})
                   .put(2, new Class5391[]{new Class5396(Items.field37900, 4, 12, 10), new Class5399(5), new Class5395(Items.field38168, 1, 1, 5)})
-                  .put(3, new Class5391[]{new Class5396(Items.field37915, 5, 12, 20), new Class5399(10), new Class5395(Items.GLASS_BLOCK, 1, 4, 10)})
+                  .put(3, new Class5391[]{new Class5396(Items.field37915, 5, 12, 20), new Class5399(10), new Class5395(Items.GLASS, 1, 4, 10)})
                   .put(
                      4,
                      new Class5391[]{

@@ -372,7 +372,7 @@ public class Class4454 extends Class4441<Block> {
          .method31560(Blocks.JUNGLE_LEAVES, Blocks.OAK_LEAVES, Blocks.SPRUCE_LEAVES, Blocks.DARK_OAK_LEAVES, Blocks.ACACIA_LEAVES, Blocks.BIRCH_LEAVES);
       this.method14014(BlockTags.field32781)
          .method31560(
-            Blocks.GLASS_BLOCK,
+            Blocks.GLASS,
             Blocks.WHITE_STAINED_GLASS,
             Blocks.ORANGE_STAINED_GLASS,
             Blocks.MAGENTA_STAINED_GLASS,

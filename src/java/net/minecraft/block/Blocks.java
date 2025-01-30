@@ -94,7 +94,7 @@ public class Blocks {
     public static final Block DARK_OAK_LEAVES = register("dark_oak_leaves", createLeavesBlock());
     public static final Block SPONGE = register("sponge", new SpongeBlock(AbstractBlock.Properties.withMaterial(Material.field38954).hardnessAndResistance(0.6F).sound(SoundType.GRASS)));
     public static final Block WET_SPONGE = register("wet_sponge", new WetSpongeBlock(AbstractBlock.Properties.withMaterial(Material.field38954).hardnessAndResistance(0.6F).sound(SoundType.GRASS)));
-    public static final Block GLASS_BLOCK = register("glass", new GlassBlock(AbstractBlock.Properties.withMaterial(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(Blocks::neverAllowSpawn).setOpaque(Blocks::isntSolid).setSuffocates(Blocks::isntSolid).setBlocksVision(Blocks::isntSolid)));
+    public static final Block GLASS = register("glass", new GlassBlock(AbstractBlock.Properties.withMaterial(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(Blocks::neverAllowSpawn).setOpaque(Blocks::isntSolid).setSuffocates(Blocks::isntSolid).setBlocksVision(Blocks::isntSolid)));
     public static final Block LAPIS_ORE = register("lapis_ore", new OreBlock(AbstractBlock.Properties.withMaterial(Material.ROCK).method26635().method26621(3.0F, 3.0F)));
     public static final Block LAPIS_BLOCK = register("lapis_block", new Block(AbstractBlock.Properties.withMaterialAndColor(Material.field38967, MaterialColor.field30979).method26635().method26621(3.0F, 3.0F)));
     public static final Block DISPENSER = register("dispenser", new DispenserBlock(AbstractBlock.Properties.withMaterial(Material.ROCK).method26635().hardnessAndResistance(3.5F)));

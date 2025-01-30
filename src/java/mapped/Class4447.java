@@ -421,7 +421,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
       Class8528.method30247(Blocks.BEACON)
          .method30250('S', Items.field38066)
-         .method30250('G', Blocks.GLASS_BLOCK)
+         .method30250('G', Blocks.GLASS)
          .method30250('O', Blocks.OBSIDIAN)
          .method30252("GGG")
          .method30252("GSG")
@@ -786,7 +786,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
       Class8528.method30247(Blocks.DAYLIGHT_DETECTOR)
          .method30250('Q', Items.field38072)
-         .method30250('G', Blocks.GLASS_BLOCK)
+         .method30250('G', Blocks.GLASS)
          .method30251('W', Class120.method342(ItemTags.field26078))
          .method30252("GGG")
          .method30252("QQQ")
@@ -945,7 +945,7 @@ public class Class4447 implements Class4442 {
       Class8528.method30247(Items.END_CRYSTAL)
          .method30250('T', Items.field37968)
          .method30250('E', Items.field37979)
-         .method30250('G', Blocks.GLASS_BLOCK)
+         .method30250('G', Blocks.GLASS)
          .method30252("GGG")
          .method30252("GEG")
          .method30252("GTG")
@@ -1005,16 +1005,16 @@ public class Class4447 implements Class4442 {
          .method30253("has_minecart", method14075(Items.MINECART))
          .method30255(var0);
       Class8528.method30248(Items.field37972, 3)
-         .method30250('#', Blocks.GLASS_BLOCK)
+         .method30250('#', Blocks.GLASS)
          .method30252("# #")
          .method30252(" # ")
-         .method30253("has_glass", method14075(Blocks.GLASS_BLOCK))
+         .method30253("has_glass", method14075(Blocks.GLASS))
          .method30255(var0);
       Class8528.method30248(Blocks.GLASS_PANE, 16)
-         .method30250('#', Blocks.GLASS_BLOCK)
+         .method30250('#', Blocks.GLASS)
          .method30252("###")
          .method30252("###")
-         .method30253("has_glass", method14075(Blocks.GLASS_BLOCK))
+         .method30253("has_glass", method14075(Blocks.GLASS))
          .method30255(var0);
       Class8528.method30247(Blocks.GLOWSTONE)
          .method30250('#', Items.field37908)
@@ -2804,7 +2804,7 @@ public class Class4447 implements Class4442 {
       Class5625.method17666(Class120.method339(Blocks.EMERALD_ORE.asItem()), Items.EMERALD, 1.0F, 200)
          .method17667("has_emerald_ore", method14075(Blocks.EMERALD_ORE))
          .method17669(var0, "emerald_from_smelting");
-      Class5625.method17666(Class120.method342(ItemTags.field26095), Blocks.GLASS_BLOCK.asItem(), 0.1F, 200)
+      Class5625.method17666(Class120.method342(ItemTags.field26095), Blocks.GLASS.asItem(), 0.1F, 200)
          .method17667("has_sand", method14076(ItemTags.field26095))
          .method17668(var0);
       Class5625.method17666(Class120.method342(ItemTags.field26110), Items.field37802, 1.0F, 200)
@@ -3634,13 +3634,13 @@ public class Class4447 implements Class4442 {
 
    private static void method14068(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8528.method30248(var1, 8)
-         .method30250('#', Blocks.GLASS_BLOCK)
+         .method30250('#', Blocks.GLASS)
          .method30250('X', var2)
          .method30252("###")
          .method30252("#X#")
          .method30252("###")
          .method30254("stained_glass")
-         .method30253("has_glass", method14075(Blocks.GLASS_BLOCK))
+         .method30253("has_glass", method14075(Blocks.GLASS))
          .method30255(var0);
    }
 

@@ -41,7 +41,7 @@ public class Class8928 {
       var0.put(Blocks.JUNGLE_SAPLING, var5);
       var0.put(Blocks.ACACIA_SAPLING, var5);
       var0.put(Blocks.DARK_OAK_SAPLING, var5);
-      var0.put(Blocks.GLASS_BLOCK, var5);
+      var0.put(Blocks.GLASS, var5);
       var0.put(Blocks.WHITE_BED, var5);
       var0.put(Blocks.ORANGE_BED, var5);
       var0.put(Blocks.MAGENTA_BED, var5);

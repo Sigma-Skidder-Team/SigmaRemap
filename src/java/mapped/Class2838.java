@@ -1371,7 +1371,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                var0, (Class5873<?>)method11060(var0, Class4695.method14724(Items.field37442).method18296(Class140.method420(Class6871.method20919(1))))
             )
       );
-      this.method11095(Blocks.GLASS_BLOCK);
+      this.method11095(Blocks.GLASS);
       this.method11095(Blocks.WHITE_STAINED_GLASS);
       this.method11095(Blocks.ORANGE_STAINED_GLASS);
       this.method11095(Blocks.MAGENTA_STAINED_GLASS);

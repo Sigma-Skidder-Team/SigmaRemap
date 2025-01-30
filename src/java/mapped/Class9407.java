@@ -3898,7 +3898,7 @@ public class Class9407 {
       this.method35840(Blocks.GREEN_TERRACOTTA);
       this.method35840(Blocks.RED_TERRACOTTA);
       this.method35840(Blocks.BLACK_TERRACOTTA);
-      this.method35874(Blocks.GLASS_BLOCK, Blocks.GLASS_PANE);
+      this.method35874(Blocks.GLASS, Blocks.GLASS_PANE);
       this.method35874(Blocks.WHITE_STAINED_GLASS, Blocks.WHITE_STAINED_GLASS_PANE);
       this.method35874(Blocks.ORANGE_STAINED_GLASS, Blocks.ORANGE_STAINED_GLASS_PANE);
       this.method35874(Blocks.MAGENTA_STAINED_GLASS, Blocks.MAGENTA_STAINED_GLASS_PANE);
