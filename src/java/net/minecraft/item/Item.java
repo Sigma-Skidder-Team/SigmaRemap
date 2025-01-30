@@ -352,7 +352,7 @@ public class Item implements IItemProvider {
          return this;
       }
 
-      public Properties method17779(ItemGroup var1) {
+      public Properties group(ItemGroup var1) {
          this.field24959 = var1;
          return this;
       }

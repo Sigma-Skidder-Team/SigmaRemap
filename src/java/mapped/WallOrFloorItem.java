@@ -13,11 +13,11 @@ import net.minecraft.world.World;
 import java.util.Map;
 import javax.annotation.Nullable;
 
-public class Class3298 extends BlockItem {
+public class WallOrFloorItem extends BlockItem {
    private static String[] field18806;
    public final Block field18807;
 
-   public Class3298(Block var1, Block var2, Properties var3) {
+   public WallOrFloorItem(Block var1, Block var2, Properties var3) {
       super(var1, var3);
       this.field18807 = var2;
    }

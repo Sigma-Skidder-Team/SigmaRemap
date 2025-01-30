@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class Class3300 extends Class3298 {
+public class Class3300 extends WallOrFloorItem {
    private static String[] field18806;
 
    public Class3300(Properties var1, Block var2, Block var3) {

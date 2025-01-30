@@ -2177,7 +2177,7 @@ public class Class4447 implements Class4442 {
          .method30253("has_soul_sand", method14076(ItemTags.field26112))
          .method30255(var0);
       Class8528.method30247(Blocks.LANTERN)
-         .method30250('#', Items.field37393)
+         .method30250('#', Items.TORCH)
          .method30250('X', Items.field38128)
          .method30252("XXX")
          .method30252("X#X")

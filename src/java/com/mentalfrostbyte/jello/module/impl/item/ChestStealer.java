@@ -318,7 +318,7 @@ public class ChestStealer extends Module {
                                             Items.EXPERIENCE_BOTTLE,
                                             Items.field37956,
                                             Items.field37536,
-                                            Items.field37393,
+                                            Items.TORCH,
                                             Items.field38112,
                                             Items.field37960,
                                             Items.field37959,
