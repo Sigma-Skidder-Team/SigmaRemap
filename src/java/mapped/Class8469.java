@@ -1,7 +1,7 @@
 package mapped;
 
 import org.newdawn.slick.util.Log;
-import lol.ResourceLoader;
+import org.newdawn.slick.util.ResourceLoader;
 
 import java.io.InputStream;
 import java.lang.reflect.Field;

@@ -2,7 +2,7 @@ package mapped;
 
 import org.newdawn.slick.Color;
 import org.newdawn.slick.util.Log;
-import lol.ResourceLoader;
+import org.newdawn.slick.util.ResourceLoader;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

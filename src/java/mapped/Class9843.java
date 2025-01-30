@@ -4,7 +4,7 @@ import java.io.InputStream;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import lol.ResourceLoader;
+import org.newdawn.slick.util.ResourceLoader;
 import org.w3c.dom.Document;
 
 public class Class9843 {

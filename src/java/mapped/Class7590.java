@@ -8,7 +8,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.newdawn.slick.Color;
 import org.newdawn.slick.util.Log;
-import lol.ResourceLoader;
+import org.newdawn.slick.util.ResourceLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;

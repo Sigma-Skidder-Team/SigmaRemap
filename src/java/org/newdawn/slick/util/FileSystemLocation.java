@@ -1,4 +1,4 @@
-package lol;
+package org.newdawn.slick.util;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -6,15 +6,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-public class FileNormalizerThingy implements PathNormalizer {
+public class FileSystemLocation implements ResourceLocation {
    private File file;
 
-   public FileNormalizerThingy(File var1) {
+   public FileSystemLocation(File var1) {
       this.file = var1;
    }
 
    @Override
-   public URL method26475(String var1) {
+   public URL getResource(String var1) {
       try {
          File var4 = new File(this.file, var1);
          if (!var4.exists()) {
@@ -28,7 +28,7 @@ public class FileNormalizerThingy implements PathNormalizer {
    }
 
    @Override
-   public InputStream method26476(String var1) {
+   public InputStream getResourceAsStream(String var1) {
       try {
          File var4 = new File(this.file, var1);
          if (!var4.exists()) {

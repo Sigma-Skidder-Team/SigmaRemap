@@ -5,7 +5,6 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 
-import lol.*;
 import org.lwjgl.BufferUtils;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.opengl.ImageDataFactory;
@@ -13,6 +12,7 @@ import org.newdawn.slick.opengl.LoadableImageData;
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.renderer.Renderer;
 import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.util.ResourceLoader;
 
 
 public class Class7390 extends Image {

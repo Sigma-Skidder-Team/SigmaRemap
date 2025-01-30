@@ -6,6 +6,7 @@ import org.newdawn.slick.Font;
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.renderer.Renderer;
 import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.util.ResourceLoader;
 
 import java.awt.FontFormatException;
 import java.awt.FontMetrics;

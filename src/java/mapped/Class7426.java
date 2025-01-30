@@ -1,11 +1,11 @@
 package mapped;
 
-import lol.*;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Font;
 import org.newdawn.slick.opengl.renderer.Renderer;
 import org.newdawn.slick.opengl.renderer.SGL;
 import org.newdawn.slick.util.Log;
+import org.newdawn.slick.util.ResourceLoader;
 
 import java.io.BufferedReader;
 import java.io.IOException;
