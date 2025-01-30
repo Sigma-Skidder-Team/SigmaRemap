@@ -493,7 +493,7 @@ public final class ItemStack {
 
    public List<ITextComponent> getTooltip(PlayerEntity var1, Class2216 var2) {
       ArrayList var5 = Lists.newArrayList();
-      IFormattableTextComponent var6 = new StringTextComponent("").append(this.method32149()).mergeStyle(this.method32160().field12889);
+      IFormattableTextComponent var6 = new StringTextComponent("").append(this.method32149()).mergeStyle(this.method32160().color);
       if (this.method32152()) {
          var6.mergeStyle(TextFormatting.ITALIC);
       }
@@ -811,7 +811,7 @@ public final class ItemStack {
 
       IFormattableTextComponent var4 = TextComponentUtils.wrapWithSquareBrackets(var3);
       if (!this.isEmpty) {
-         var4.mergeStyle(this.method32160().field12889)
+         var4.mergeStyle(this.method32160().color)
             .modifyStyle(var1 -> var1.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_ITEM, new HoverEvent.ItemHover(this))));
       }
 

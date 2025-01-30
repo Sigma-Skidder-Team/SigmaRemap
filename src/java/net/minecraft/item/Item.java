@@ -220,7 +220,7 @@ public class Item implements IItemProvider {
          switch (Class9591.field44867[this.field18737.ordinal()]) {
             case 1:
             case 2:
-               return Rarity.field12887;
+               return Rarity.RARE;
             case 3:
                return Rarity.EPIC;
             case 4:
@@ -319,7 +319,7 @@ public class Item implements IItemProvider {
       private int field24957;
       private Item field24958;
       private ItemGroup field24959;
-      private Rarity field24960 = Rarity.field12885;
+      private Rarity field24960 = Rarity.COMMON;
       private Food field24961;
       private boolean field24962;
 

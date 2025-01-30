@@ -581,7 +581,7 @@ public class IngameGui extends AbstractGui {
         this.field6716.getProfiler().startSection("selectedItemName");
         if (this.field6724 > 0 && !this.field6725.isEmpty()) {
             IFormattableTextComponent var4 = new StringTextComponent("").append(this.field6725.method32149())
-                    .mergeStyle(this.field6725.method32160().field12889);
+                    .mergeStyle(this.field6725.method32160().color);
             if (this.field6725.method32152()) {
                 var4.mergeStyle(TextFormatting.ITALIC);
             }

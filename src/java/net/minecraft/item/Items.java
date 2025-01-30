@@ -304,7 +304,7 @@ public class Items {
    public static final Item field37506 = register(Blocks.WARPED_STAIRS, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37507 = register(new Class3293(Blocks.COMMAND_BLOCK, new Item.Properties().rarity(Rarity.EPIC)));
    public static final Item field37508 = register(
-      new BlockItem(Blocks.BEACON, new Item.Properties().group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new BlockItem(Blocks.BEACON, new Item.Properties().group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item field37509 = register(Blocks.COBBLESTONE_WALL, ItemGroup.DECORATIONS);
    public static final Item field37510 = register(Blocks.MOSSY_COBBLESTONE_WALL, ItemGroup.DECORATIONS);
@@ -568,7 +568,7 @@ public class Items {
    );
    public static final Item field37749 = register(Blocks.BLUE_ICE, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37750 = register(
-      new BlockItem(Blocks.CONDUIT, new Item.Properties().group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new BlockItem(Blocks.CONDUIT, new Item.Properties().group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item field37751 = register(Blocks.POLISHED_GRANITE_STAIRS, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37752 = register(Blocks.SMOOTH_RED_SANDSTONE_STAIRS, ItemGroup.BUILDING_BLOCKS);
@@ -812,7 +812,7 @@ public class Items {
    );
    public static final Item PAINTING = register("painting", new Class3312(EntityType.PAINTING, new Item.Properties().group(ItemGroup.DECORATIONS)));
    public static final Item GOLDEN_APPLE = register(
-      "golden_apple", new Item(new Item.Properties().group(ItemGroup.FOOD).rarity(Rarity.field12887).method17774(Foods.GOLDEN_APPLE))
+      "golden_apple", new Item(new Item.Properties().group(ItemGroup.FOOD).rarity(Rarity.RARE).method17774(Foods.GOLDEN_APPLE))
    );
    public static final Item ENCHANTED_GOLDEN_APPLE = register(
       "enchanted_golden_apple",
@@ -1190,7 +1190,7 @@ public class Items {
       "zombified_piglin_spawn_egg", new SpawnEggItem(EntityType.ZOMBIFIED_PIGLIN, 15373203, 5009705, new Item.Properties().group(ItemGroup.MISC))
    );
    public static final Item EXPERIENCE_BOTTLE = register(
-      "experience_bottle", new Class3304(new Item.Properties().group(ItemGroup.MISC).rarity(Rarity.field12886))
+      "experience_bottle", new Class3304(new Item.Properties().group(ItemGroup.MISC).rarity(Rarity.UNCOMMON))
    );
    public static final Item field38046 = register("fire_charge", new Class3273(new Item.Properties().group(ItemGroup.MISC)));
    public static final Item field38047 = register("writable_book", new Class3291(new Item.Properties().method17775(1).group(ItemGroup.MISC)));
@@ -1215,22 +1215,22 @@ public class Items {
       "golden_carrot", new Item(new Item.Properties().group(ItemGroup.BREWING).method17774(Foods.field39079))
    );
    public static final Item field38058 = register(
-      new WallOrFloorItem(Blocks.SKELETON_SKULL, Blocks.SKELETON_WALL_SKULL, new Item.Properties().group(ItemGroup.DECORATIONS).rarity(Rarity.field12886))
+      new WallOrFloorItem(Blocks.SKELETON_SKULL, Blocks.SKELETON_WALL_SKULL, new Item.Properties().group(ItemGroup.DECORATIONS).rarity(Rarity.UNCOMMON))
    );
    public static final Item field38059 = register(
-      new WallOrFloorItem(Blocks.WITHER_SKELETON_SKULL, Blocks.WITHER_SKELETON_WALL_SKULL, new Item.Properties().group(ItemGroup.DECORATIONS).rarity(Rarity.field12886))
+      new WallOrFloorItem(Blocks.WITHER_SKELETON_SKULL, Blocks.WITHER_SKELETON_WALL_SKULL, new Item.Properties().group(ItemGroup.DECORATIONS).rarity(Rarity.UNCOMMON))
    );
    public static final Item field38060 = register(
-      new SkullItem(Blocks.PLAYER_HEAD, Blocks.PLAYER_WALL_HEAD, new Item.Properties().group(ItemGroup.DECORATIONS).rarity(Rarity.field12886))
+      new SkullItem(Blocks.PLAYER_HEAD, Blocks.PLAYER_WALL_HEAD, new Item.Properties().group(ItemGroup.DECORATIONS).rarity(Rarity.UNCOMMON))
    );
    public static final Item field38061 = register(
-      new WallOrFloorItem(Blocks.ZOMBIE_HEAD, Blocks.ZOMBIE_WALL_HEAD, new Item.Properties().group(ItemGroup.DECORATIONS).rarity(Rarity.field12886))
+      new WallOrFloorItem(Blocks.ZOMBIE_HEAD, Blocks.ZOMBIE_WALL_HEAD, new Item.Properties().group(ItemGroup.DECORATIONS).rarity(Rarity.UNCOMMON))
    );
    public static final Item field38062 = register(
-      new WallOrFloorItem(Blocks.CREEPER_HEAD, Blocks.CREEPER_WALL_HEAD, new Item.Properties().group(ItemGroup.DECORATIONS).rarity(Rarity.field12886))
+      new WallOrFloorItem(Blocks.CREEPER_HEAD, Blocks.CREEPER_WALL_HEAD, new Item.Properties().group(ItemGroup.DECORATIONS).rarity(Rarity.UNCOMMON))
    );
    public static final Item field38063 = register(
-      new WallOrFloorItem(Blocks.HEAD, Blocks.DRAGON_WALL_HEAD, new Item.Properties().group(ItemGroup.DECORATIONS).rarity(Rarity.field12886))
+      new WallOrFloorItem(Blocks.HEAD, Blocks.DRAGON_WALL_HEAD, new Item.Properties().group(ItemGroup.DECORATIONS).rarity(Rarity.UNCOMMON))
    );
    public static final Item field38064 = register(
       "carrot_on_a_stick", new Class3317<PigEntity>(new Item.Properties().method17777(25).group(ItemGroup.TRANSPORTATION), EntityType.PIG, 7)
@@ -1239,14 +1239,14 @@ public class Items {
       "warped_fungus_on_a_stick", new Class3317<StriderEntity>(new Item.Properties().method17777(100).group(ItemGroup.TRANSPORTATION), EntityType.STRIDER, 1)
    );
    public static final Item field38066 = register(
-      "nether_star", new Class3332(new Item.Properties().group(ItemGroup.MATERIALS).rarity(Rarity.field12886))
+      "nether_star", new Class3332(new Item.Properties().group(ItemGroup.MATERIALS).rarity(Rarity.UNCOMMON))
    );
    public static final Item field38067 = register(
       "pumpkin_pie", new Item(new Item.Properties().group(ItemGroup.FOOD).method17774(Foods.field39088))
    );
    public static final Item field38068 = register("firework_rocket", new Class3318(new Item.Properties().group(ItemGroup.MISC)));
    public static final Item field38069 = register("firework_star", new Class3320(new Item.Properties().group(ItemGroup.MISC)));
-   public static final Item field38070 = register("enchanted_book", new Class3290(new Item.Properties().method17775(1).rarity(Rarity.field12886)));
+   public static final Item field38070 = register("enchanted_book", new Class3290(new Item.Properties().method17775(1).rarity(Rarity.UNCOMMON)));
    public static final Item field38071 = register("nether_brick", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
    public static final Item field38072 = register("quartz", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
    public static final Item TNT_MINECART = register(
@@ -1339,7 +1339,7 @@ public class Items {
       "black_banner", new Class3301(Blocks.BLACK_BANNER, Blocks.BLACK_WALL_BANNER, new Item.Properties().method17775(16).group(ItemGroup.DECORATIONS))
    );
    public static final Item END_CRYSTAL = register(
-      "end_crystal", new Class3340(new Item.Properties().group(ItemGroup.DECORATIONS).rarity(Rarity.field12887))
+      "end_crystal", new Class3340(new Item.Properties().group(ItemGroup.DECORATIONS).rarity(Rarity.RARE))
    );
    public static final Item field38109 = register(
       "chorus_fruit", new Class3338(new Item.Properties().group(ItemGroup.MATERIALS).method17774(Foods.field39066))
@@ -1355,7 +1355,7 @@ public class Items {
       "beetroot_soup", new Class3306(new Item.Properties().method17775(1).group(ItemGroup.FOOD).method17774(Foods.field39062))
    );
    public static final Item field38114 = register(
-      "dragon_breath", new Item(new Item.Properties().method17778(field37972).group(ItemGroup.BREWING).rarity(Rarity.field12886))
+      "dragon_breath", new Item(new Item.Properties().method17778(field37972).group(ItemGroup.BREWING).rarity(Rarity.UNCOMMON))
    );
    public static final Item SPLASH_POTION = register("splash_potion", new Class3326(new Item.Properties().method17775(1).group(ItemGroup.BREWING)));
    public static final Item field38116 = register("spectral_arrow", new Class3310(new Item.Properties().group(ItemGroup.COMBAT)));
@@ -1363,7 +1363,7 @@ public class Items {
    public static final Item field38118 = register("lingering_potion", new Class3325(new Item.Properties().method17775(1).group(ItemGroup.BREWING)));
    public static final Item field38119 = register("shield", new ShieldItem(new Item.Properties().method17777(336).group(ItemGroup.COMBAT)));
    public static final Item ELYTRA = register(
-      "elytra", new Class3256(new Item.Properties().method17777(432).group(ItemGroup.TRANSPORTATION).rarity(Rarity.field12886))
+      "elytra", new Class3256(new Item.Properties().method17777(432).group(ItemGroup.TRANSPORTATION).rarity(Rarity.UNCOMMON))
    );
    public static final Item field38121 = register(
       "spruce_boat", new Class3305(Class2099.field13681, new Item.Properties().method17775(1).group(ItemGroup.TRANSPORTATION))
@@ -1381,7 +1381,7 @@ public class Items {
       "dark_oak_boat", new Class3305(Class2099.field13685, new Item.Properties().method17775(1).group(ItemGroup.TRANSPORTATION))
    );
    public static final Item TOTEM_OF_UNDYING = register(
-      "totem_of_undying", new Item(new Item.Properties().method17775(1).group(ItemGroup.COMBAT).rarity(Rarity.field12886))
+      "totem_of_undying", new Item(new Item.Properties().method17775(1).group(ItemGroup.COMBAT).rarity(Rarity.UNCOMMON))
    );
    public static final Item field38127 = register("shulker_shell", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
    public static final Item field38128 = register("iron_nugget", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
@@ -1389,61 +1389,61 @@ public class Items {
    public static final Item field38130 = register("debug_stick", new Class3339(new Item.Properties().method17775(1)));
    public static final Item field38131 = register(
       "music_disc_13",
-      new Class3283(1, SoundEvents.field26779, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new Class3283(1, SoundEvents.field26779, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item field38132 = register(
       "music_disc_cat",
-      new Class3283(2, SoundEvents.field26781, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new Class3283(2, SoundEvents.field26781, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item field38133 = register(
       "music_disc_blocks",
-      new Class3283(3, SoundEvents.field26780, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new Class3283(3, SoundEvents.field26780, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item field38134 = register(
       "music_disc_chirp",
-      new Class3283(4, SoundEvents.field26782, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new Class3283(4, SoundEvents.field26782, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item field38135 = register(
       "music_disc_far",
-      new Class3283(5, SoundEvents.field26783, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new Class3283(5, SoundEvents.field26783, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item field38136 = register(
       "music_disc_mall",
-      new Class3283(6, SoundEvents.field26784, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new Class3283(6, SoundEvents.field26784, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item field38137 = register(
       "music_disc_mellohi",
-      new Class3283(7, SoundEvents.field26785, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new Class3283(7, SoundEvents.field26785, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item field38138 = register(
       "music_disc_stal",
-      new Class3283(8, SoundEvents.field26787, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new Class3283(8, SoundEvents.field26787, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item field38139 = register(
       "music_disc_strad",
-      new Class3283(9, SoundEvents.field26788, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new Class3283(9, SoundEvents.field26788, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item field38140 = register(
       "music_disc_ward",
-      new Class3283(10, SoundEvents.field26790, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new Class3283(10, SoundEvents.field26790, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item field38141 = register(
       "music_disc_11",
-      new Class3283(11, SoundEvents.field26778, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new Class3283(11, SoundEvents.field26778, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item field38142 = register(
       "music_disc_wait",
-      new Class3283(12, SoundEvents.field26789, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new Class3283(12, SoundEvents.field26789, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item field38143 = register(
       "music_disc_pigstep",
-      new Class3283(13, SoundEvents.field26786, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12887))
+      new Class3283(13, SoundEvents.field26786, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.RARE))
    );
    public static final Item TRIDENT = register("trident", new Class3272(new Item.Properties().method17777(250).group(ItemGroup.COMBAT)));
    public static final Item field38145 = register("phantom_membrane", new Item(new Item.Properties().group(ItemGroup.BREWING)));
    public static final Item field38146 = register("nautilus_shell", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
    public static final Item field38147 = register(
-      "heart_of_the_sea", new Item(new Item.Properties().group(ItemGroup.MATERIALS).rarity(Rarity.field12886))
+      "heart_of_the_sea", new Item(new Item.Properties().group(ItemGroup.MATERIALS).rarity(Rarity.UNCOMMON))
    );
    public static final Item CROSSBOW = register(
       "crossbow", new CrossbowItem(new Item.Properties().method17775(1).group(ItemGroup.COMBAT).method17777(326))
@@ -1455,11 +1455,11 @@ public class Items {
    );
    public static final Item field38152 = register(
       "creeper_banner_pattern",
-      new Class3286(Class2154.field14118, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12886))
+      new Class3286(Class2154.field14118, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.UNCOMMON))
    );
    public static final Item field38153 = register(
       "skull_banner_pattern",
-      new Class3286(Class2154.field14119, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.field12886))
+      new Class3286(Class2154.field14119, new Item.Properties().method17775(1).group(ItemGroup.MISC).rarity(Rarity.UNCOMMON))
    );
    public static final Item field38154 = register(
       "mojang_banner_pattern",

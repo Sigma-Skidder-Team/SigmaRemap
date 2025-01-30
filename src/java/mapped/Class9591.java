@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.item.Rarity;
+
 // $VF: synthetic class
 public class Class9591 {
    private static String[] field44866;
@@ -7,17 +9,17 @@ public class Class9591 {
 
    static {
       try {
-         field44867[Rarity.field12885.ordinal()] = 1;
+         field44867[Rarity.COMMON.ordinal()] = 1;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field44867[Rarity.field12886.ordinal()] = 2;
+         field44867[Rarity.UNCOMMON.ordinal()] = 2;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field44867[Rarity.field12887.ordinal()] = 3;
+         field44867[Rarity.RARE.ordinal()] = 3;
       } catch (NoSuchFieldError var4) {
       }
 
