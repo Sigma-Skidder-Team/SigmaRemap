@@ -559,7 +559,7 @@ public class VillagerTrades {
             new Class5395(Items.field37473, 1, 1, 12, 1),
             new Class5395(Items.BROWN_MUSHROOM, 1, 1, 12, 1),
             new Class5395(Items.RED_MUSHROOM, 1, 1, 12, 1),
-            new Class5395(Items.field37485, 1, 2, 5, 1),
+            new Class5395(Items.LILY_PAD, 1, 2, 5, 1),
             new Class5395(Items.SAND, 1, 8, 8, 1),
             new Class5395(Items.RED_SAND, 1, 4, 6, 1)
          },

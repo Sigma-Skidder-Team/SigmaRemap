@@ -707,7 +707,7 @@ public final class ItemStack {
       return this.getItem().method11732(this);
    }
 
-   public Class1978 method32160() {
+   public Rarity method32160() {
       return this.getItem().method11733(this);
    }
 

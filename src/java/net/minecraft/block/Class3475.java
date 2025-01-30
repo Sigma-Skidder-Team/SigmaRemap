@@ -79,7 +79,7 @@ public class Class3475 extends Block implements Class3476 {
       method12163(0.5F, Items.TWISTING_VINES);
       method12163(0.5F, Items.field37957);
       method12163(0.65F, Items.SEA_PICKLE);
-      method12163(0.65F, Items.field37485);
+      method12163(0.65F, Items.LILY_PAD);
       method12163(0.65F, Items.field37438);
       method12163(0.65F, Items.field37439);
       method12163(0.65F, Items.field37472);

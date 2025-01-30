@@ -38,7 +38,7 @@ public class Item implements IItemProvider {
    public static final UUID ATTACK_SPEED_MODIFIER = UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3");
    public static final Random field18735 = new Random();
    public final ItemGroup field18736;
-   private final Class1978 field18737;
+   private final Rarity field18737;
    private final int maxStackSize;
    private final int maxDamage;
    private final boolean field18740;
@@ -213,16 +213,16 @@ public class Item implements IItemProvider {
       return var1.method32163();
    }
 
-   public Class1978 method11733(ItemStack var1) {
+   public Rarity method11733(ItemStack var1) {
       if (!var1.method32163()) {
          return this.field18737;
       } else {
          switch (Class9591.field44867[this.field18737.ordinal()]) {
             case 1:
             case 2:
-               return Class1978.field12887;
+               return Rarity.field12887;
             case 3:
-               return Class1978.field12888;
+               return Rarity.EPIC;
             case 4:
             default:
                return this.field18737;
@@ -319,7 +319,7 @@ public class Item implements IItemProvider {
       private int field24957;
       private Item field24958;
       private ItemGroup field24959;
-      private Class1978 field24960 = Class1978.field12885;
+      private Rarity field24960 = Rarity.field12885;
       private Food field24961;
       private boolean field24962;
 
@@ -357,7 +357,7 @@ public class Item implements IItemProvider {
          return this;
       }
 
-      public Properties method17780(Class1978 var1) {
+      public Properties rarity(Rarity var1) {
          this.field24960 = var1;
          return this;
       }
@@ -373,7 +373,7 @@ public class Item implements IItemProvider {
       }
 
       // $VF: synthetic method
-      public static Class1978 method17783(Properties var0) {
+      public static Rarity method17783(Properties var0) {
          return var0.field24960;
       }
 

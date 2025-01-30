@@ -10,10 +10,10 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.world.World;
 
-public class Class3302 extends BlockItem {
+public class LilyPadItem extends BlockItem {
    private static String[] field18808;
 
-   public Class3302(Block var1, Properties var2) {
+   public LilyPadItem(Block var1, Properties var2) {
       super(var1, var2);
    }
 
