@@ -9,8 +9,8 @@ import java.util.List;
 public class BrainFreezeGui extends Class4278 {
    private static String[] field20736;
    private List<Class8854> field20738 = new ArrayList<Class8854>();
-   private Class9715 field20739 = new Class9715();
-   public Class2422 field20740 = new Class2422();
+   private AnimationManager field20739 = new AnimationManager();
+   public RandomIntGenerator field20740 = new RandomIntGenerator();
 
    public BrainFreezeGui(CustomGuiScreen var1, String var2) {
       super(var1, var2, 0, 0, Minecraft.getInstance().mainWindow.getWidth(), Minecraft.getInstance().mainWindow.getHeight(), false);

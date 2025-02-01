@@ -10,8 +10,8 @@ import java.util.List;
 public class ClassicParticleEngine extends Class4278 {
    private static String[] field21273;
    private List<Class9625> field21274 = new ArrayList<Class9625>();
-   private Class9715 field21275 = new Class9715();
-   public Class2422 field21276 = new Class2422();
+   private AnimationManager field21275 = new AnimationManager();
+   public RandomIntGenerator field21276 = new RandomIntGenerator();
 
    public ClassicParticleEngine(CustomGuiScreen var1, String var2) {
       super(var1, var2, 0, 0, Minecraft.getInstance().mainWindow.getWidth(), Minecraft.getInstance().mainWindow.getHeight(), false);

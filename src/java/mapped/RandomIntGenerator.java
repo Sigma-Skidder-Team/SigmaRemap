@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Random;
 
-public class Class2422 extends Random {
+public class RandomIntGenerator extends Random {
    private static String[] field16426;
    private static final long field16427 = 1L;
 

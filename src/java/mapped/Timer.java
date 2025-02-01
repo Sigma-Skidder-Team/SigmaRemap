@@ -1,13 +1,12 @@
 package mapped;
 
-public class Class8899 {
-   private static String[] field40275;
+public class Timer {
    private long field40276;
    private long field40277;
    private boolean field40278;
-   public final Class9715 field40279;
+   public final AnimationManager field40279;
 
-   public Class8899(Class9715 var1) {
+   public Timer(AnimationManager var1) {
       this.field40279 = var1;
       this.field40276 = 0L;
       this.field40277 = 0L;
