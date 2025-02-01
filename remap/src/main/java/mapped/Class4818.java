@@ -24,7 +24,7 @@ public class Class4818 extends Class4817
         super(class4803, s, n, n2, n3, n4);
         this.field20615 = new ArrayList<Class4846>();
         this.field20616 = 70;
-        (this.field20617 = new Class9572(300, 300)).method35855(Class2186.field12965);
+        (this.field20617 = new Class9572(300, 300)).changeDirection(Direction.FORWARDS);
         this.field20599 = true;
         this.method14311(false);
         this.method14390();
@@ -64,7 +64,7 @@ public class Class4818 extends Class4817
             }
         }
         for (final Class4846 class4846 : this.field20615) {
-            if (!class4846.method14386() && class4846.field20762.method35857() == Class2186.field12965) {
+            if (!class4846.method14386() && class4846.field20762.getDirection() == Direction.FORWARDS) {
                 class4846.field20760 = n3 + 5;
             }
             else {
@@ -74,7 +74,7 @@ public class Class4818 extends Class4817
         }
         for (final Class4846 field20619 : this.field20615) {
             if (field20619.method14386()) {
-                this.field20617.method35855(Class2186.field12964);
+                this.field20617.changeDirection(Direction.BACKWARDS);
                 if (n > this.method14280() + 10) {
                     if (n < this.method14280() + 50) {
                         if (n2 < this.method14281() + this.method14278() - 10) {
@@ -91,7 +91,7 @@ public class Class4818 extends Class4817
                 break;
             }
             if (!field20619.method14386()) {
-                if (this.field20617.method35857() == Class2186.field12964) {
+                if (this.field20617.getDirection() == Direction.BACKWARDS) {
                     Client.method35173().method35200().method24262().clear();
                     for (final Class4846 class4847 : this.field20615) {
                         Client.method35173().method35200().method24262().add(new Class8124(class4847.field20763, class4847.field20764.getX(), class4847.field20764.getZ(), class4847.field20765));
@@ -100,12 +100,12 @@ public class Class4818 extends Class4817
                     Client.method35173().method35200().method24264();
                 }
             }
-            this.field20617.method35855(Class2186.field12965);
+            this.field20617.changeDirection(Direction.FORWARDS);
         }
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         final float min = Math.min(1.0f, 0.21f * (60.0f / Minecraft.method5338()));
         for (final Class4846 class4846 : this.field20615) {
             if (!class4846.method14386()) {
@@ -121,7 +121,7 @@ public class Class4818 extends Class4817
                 class4846.method14275(Math.round(class4846.method14274() - n2));
             }
         }
-        super.method14205(n);
-        Class8154.method26900((float)(this.field20478 - Math.round(Class7791.method25029(1.0f - this.field20617.method35858(), 0.0f, 1.0f, 1.0f) * 30.0f) + 18), (float)(this.field20481 - 46), 22.0f, 26.0f, ClientAssets.trashcan, Class6430.method19118(this.field20618 ? Class265.field1283.field1292 : Class265.field1273.field1292, this.field20617.method35858() * 0.5f), false);
+        super.draw(n);
+        RenderUtil.method26900((float)(this.field20478 - Math.round(Class7791.method25029(1.0f - this.field20617.calcPercent(), 0.0f, 1.0f, 1.0f) * 30.0f) + 18), (float)(this.field20481 - 46), 22.0f, 26.0f, ClientAssets.trashcan, ColorUtils.applyAlpha(this.field20618 ? ClientColors.field1283.color : ClientColors.field1273.color, this.field20617.calcPercent() * 0.5f), false);
     }
 }

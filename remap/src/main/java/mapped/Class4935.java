@@ -32,7 +32,7 @@ public class Class4935 extends Class4800
         this.addVisualThing(this.field21159 = new Class4843(this, "mapView", (this.field20480 - max) / 2, (this.field20481 - max2) / 2, max, max2));
         this.field21159.field20752.method14719((class4936, n, n2, class4937) -> class4935.method14225(new Class1271(this, class4935, n, n2, class4937)));
         this.field21159.field20752.method14721(class4901 -> this.method14839());
-        Class6430.method19169();
+        ColorUtils.method19169();
     }
     
     private void method14838(final Class4862 class4862) {
@@ -68,19 +68,19 @@ public class Class4935 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Class6430.method19172();
+            ColorUtils.method19172();
             Class4935.field21156.displayGuiScreen(null);
         }
     }
     
     @Override
-    public void method14205(float n) {
+    public void draw(float n) {
         n = Math.min(200L, new Date().getTime() - this.field21158.getTime()) / 200.0f;
         final float method24584 = Class7707.method24584(n, 0.0f, 1.0f, 1.0f);
         this.method14288(0.8f + method24584 * 0.2f, 0.8f + method24584 * 0.2f);
-        Class8154.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), Class6430.method19118(Class265.field1273.field1292, 0.25f * n));
+        RenderUtil.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.25f * n));
         super.method14227();
-        super.method14205(n);
+        super.draw(n);
     }
     
     static {

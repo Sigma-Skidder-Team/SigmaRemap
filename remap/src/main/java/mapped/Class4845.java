@@ -31,7 +31,7 @@ public class Class4845 extends Class4841
         this.field20496 = ClientFonts.JelloLight18;
         for (final String s : this.field20758) {
             final Class4868 class4868;
-            this.addVisualThing(class4868 = new Class4868(this, s, 0, 0, this.method14276(), this.method14278(), new Class6523(Class265.field1278.field1292, -1381654, this.field20497.method19729(), this.field20497.method19729(), Class2056.field11734, Class2056.field11738), s, this.method14316()));
+            this.addVisualThing(class4868 = new Class4868(this, s, 0, 0, this.method14276(), this.method14278(), new Class6523(ClientColors.LIGHT_GREYISH_BLUE.color, -1381654, this.field20497.method19729(), this.field20497.method19729(), Class2056.field11734, Class2056.field11738), s, this.method14316()));
             class4868.method14603(10);
             class4868.method14260((class4803, n) -> {
                 this.method14531(this.field20758.indexOf(s));
@@ -51,12 +51,12 @@ public class Class4845 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
-        Class8154.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() + this.method14525()), Class6430.method19118(Class265.field1278.field1292, n));
-        Class8154.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14525() - 1), 6.0f, n * 0.1f);
-        Class8154.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14525() - 1), 20.0f, n * 0.2f);
+    public void draw(final float n) {
+        RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() + this.method14525()), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+        RenderUtil.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14525() - 1), 6.0f, n * 0.1f);
+        RenderUtil.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14525() - 1), 20.0f, n * 0.2f);
         GL11.glPushMatrix();
-        super.method14205(n);
+        super.draw(n);
         GL11.glPopMatrix();
     }
     
@@ -110,6 +110,6 @@ public class Class4845 extends Class4841
     }
     
     static {
-        field20757 = new Class6523(1250067, -15329770).method19734(Class265.field1273.field1292).method19738(Class2056.field11738);
+        field20757 = new Class6523(1250067, -15329770).method19734(ClientColors.field1273.color).method19738(Class2056.field11738);
     }
 }

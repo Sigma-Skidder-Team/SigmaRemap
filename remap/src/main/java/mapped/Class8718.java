@@ -25,7 +25,7 @@ public class Class8718
             if (!method29941.has("releases")) {
                 return url;
             }
-            final Class88 method29942 = method29941.method13263("releases");
+            final JSONArray method29942 = method29941.method13263("releases");
             if (method29942.method460(0)) {
                 return url;
             }

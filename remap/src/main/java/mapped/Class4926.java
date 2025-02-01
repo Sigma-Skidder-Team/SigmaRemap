@@ -37,13 +37,13 @@ public class Class4926 extends Class4800
         this.field21072 = 0.0f;
         this.field21073 = 0.0f;
         this.field21079 = false;
-        this.field21080 = new Class9572(250, 250, Class2186.field12965);
+        this.field21080 = new Class9572(250, 250, Direction.FORWARDS);
         this.method14311(false);
         this.field21074 = ClientAssets.method25396("com/mentalfrostbyte/gui/resources/" + ClientAssets.getPanorama(), 0.075f, 8);
         this.addVisualThing(this.field21075 = new Class4887(this, "login", (this.field20480 - Class4887.field20896) / 2, (this.field20481 - Class4887.field20895) / 2, Class4887.field20896, Class4887.field20895));
         this.addVisualThing(this.field21076 = new Class4866(this, "register", (this.field20480 - Class4866.field20842) / 2, (this.field20481 - Class4866.field20841) / 2, Class4866.field20842, Class4866.field20841));
         this.method14780();
-        this.addVisualThing(this.field21078 = new Class4861(this, "continue", this.field20480 / 2 - 120, this.field20481 / 2 + 120, 240, 60, new Class6523(Class6430.method19118(Class265.field1278.field1292, 0.5f)), "Continue", ClientFonts.JelloLight25));
+        this.addVisualThing(this.field21078 = new Class4861(this, "continue", this.field20480 / 2 - 120, this.field20481 / 2 + 120, 240, 60, new Class6523(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f)), "Continue", ClientFonts.JelloLight25));
         this.field21078.method14297(false);
         this.field21075.method14516(class4841 -> {
             this.field21079 = true;
@@ -67,7 +67,7 @@ public class Class4926 extends Class4800
             this.method14225(() -> {
                 final ArrayList list = new ArrayList();
                 list.add(new Class7976(Class294.field1678, s3, 45));
-                Class6430.method19175(s4, 240, ClientFonts.JelloLight20);
+                ColorUtils.method19175(s4, 240, ClientFonts.JelloLight20);
                 int i = 0;
                 final String[] array;
                 while (i < array.length) {
@@ -98,30 +98,30 @@ public class Class4926 extends Class4800
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         ClientAssets.cancel.bind();
         this.field21072 = Math.max(0.0f, Math.min(this.field21072 + 0.075f, 1.0f));
         if (this.field21079) {
-            this.field21080.method35855(Class2186.field12964);
+            this.field21080.changeDirection(Direction.BACKWARDS);
         }
         this.method14782();
         float n2 = (float)Math.sin(Class7791.method25030(this.field21072, 0.0f, 1.0f, 1.0f) * 3.141592653589793 / 2.0);
         if (this.field21079) {
-            n2 = 1.0f - (float)Math.sin(1.5707963267948966 + Class7791.method25031(1.0f - this.field21080.method35858(), 0.0f, 1.0f, 1.0f) * 1.5707963267948966) * 0.2f;
+            n2 = 1.0f - (float)Math.sin(1.5707963267948966 + Class7791.method25031(1.0f - this.field21080.calcPercent(), 0.0f, 1.0f, 1.0f) * 1.5707963267948966) * 0.2f;
         }
         this.field21075.method14286(n2);
         this.field21075.method14287(n2);
         this.field21076.method14286(n2);
         this.field21076.method14287(n2);
-        Rectangle rectangle = Class8154.method26863(Class8154.method26864(this.field21075), this.field21075.method14282(), this.field21075.method14284());
+        Rectangle rectangle = RenderUtil.method26863(RenderUtil.method26864(this.field21075), this.field21075.method14282(), this.field21075.method14284());
         if (this.field21076.method14296()) {
-            rectangle = Class8154.method26863(Class8154.method26864(this.field21076), this.field21076.method14282(), this.field21076.method14284());
+            rectangle = RenderUtil.method26863(RenderUtil.method26864(this.field21076), this.field21076.method14282(), this.field21076.method14284());
         }
         if (n2 > 0.1) {
-            Class8154.method26915((int)(this.field20480 - rectangle.getWidth()) / 2, (int)(this.field20481 - rectangle.getHeight()) / 2, (int)rectangle.getWidth(), (int)rectangle.getHeight(), Class6430.method19118(Class265.field1278.field1292, 1.0f - this.field21080.method35858()));
+            RenderUtil.method26915((int)(this.field20480 - rectangle.getWidth()) / 2, (int)(this.field20481 - rectangle.getHeight()) / 2, (int)rectangle.getWidth(), (int)rectangle.getHeight(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 1.0f - this.field21080.calcPercent()));
         }
         if (this.field21079) {
-            if (this.field21080.method35858() == 1.0f) {
+            if (this.field21080.calcPercent() == 1.0f) {
                 this.field21075.method14297(false);
             }
         }
@@ -131,17 +131,17 @@ public class Class4926 extends Class4800
             final int n3 = 100;
             final int n4 = (this.field20480 - (n3 + Math.max(ClientFonts.JelloMedium40.getWidth(s), ClientFonts.JelloLight36.getWidth(field32930)) + 10 * 10)) / 2;
             final int n5 = (this.field20481 - n3 * 2) / 2;
-            Class8154.method26876(0.0f, 0.0f, (float)this.field20480, (float)this.field20481, Class6430.method19118(Class265.field1273.field1292, 0.45f * this.field21080.method35858()));
-            Class8154.method26904((float)(n4 + 20), (float)(n5 + 40), (float)(n3 + 30), (float)(n3 + 30), ClientAssets.sigma, this.field21080.method35858());
+            RenderUtil.method26876(0.0f, 0.0f, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.45f * this.field21080.calcPercent()));
+            RenderUtil.method26904((float)(n4 + 20), (float)(n5 + 40), (float)(n3 + 30), (float)(n3 + 30), ClientAssets.sigma, this.field21080.calcPercent());
             final int n6 = 165;
             final int n7 = 54;
-            Class8154.method26889(ClientFonts.JelloMedium40, (float)(n4 + n6), (float)(n5 + n7), s, Class265.field1278.field1292);
-            Class8154.method26889(ClientFonts.JelloLight36, (float)(n4 + n6), (float)(n5 + n7 + 45), field32930, Class265.field1278.field1292);
+            RenderUtil.drawString(ClientFonts.JelloMedium40, (float)(n4 + n6), (float)(n5 + n7), s, ClientColors.LIGHT_GREYISH_BLUE.color);
+            RenderUtil.drawString(ClientFonts.JelloLight36, (float)(n4 + n6), (float)(n5 + n7 + 45), field32930, ClientColors.LIGHT_GREYISH_BLUE.color);
         }
         GL11.glPushMatrix();
-        this.field21078.method14205(this.field21080.method35858());
+        this.field21078.draw(this.field21080.calcPercent());
         GL11.glPopMatrix();
-        super.method14205(1.0f - this.field21080.method35858());
+        super.draw(1.0f - this.field21080.calcPercent());
     }
     
     private void method14782() {
@@ -160,7 +160,7 @@ public class Class4926 extends Class4800
         GL11.glTranslatef(this.field20480 / 2.0f, this.field20480 / 2.0f, 0.0f);
         GL11.glScalef(1.0f + n4 * 0.2f, 1.0f + n4 * 0.2f, 0.0f);
         GL11.glTranslatef(-this.field20480 / 2.0f, -this.field20480 / 2.0f, 0.0f);
-        Class8154.method26898((float)this.field21070, (float)this.field21069, (float)(this.method14276() * 2), (float)(this.method14278() + 114), this.field21074, Class6430.method19118(Class265.field1278.field1292, this.field21072));
+        RenderUtil.method26898((float)this.field21070, (float)this.field21069, (float)(this.method14276() * 2), (float)(this.method14278() + 114), this.field21074, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, this.field21072));
         GL11.glPopMatrix();
         final float n5 = 0.5f;
         if (n != this.field21069) {

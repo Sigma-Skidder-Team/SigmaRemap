@@ -143,15 +143,15 @@ public class JSONObject
         method13309(o);
         final Object method13277 = this.opt(s);
         if (method13277 != null) {
-            if (!(method13277 instanceof Class88)) {
-                this.method13301(s, new Class88().method486(method13277).method486(o));
+            if (!(method13277 instanceof JSONArray)) {
+                this.method13301(s, new JSONArray().method486(method13277).method486(o));
             }
             else {
-                ((Class88)method13277).method486(o);
+                ((JSONArray)method13277).method486(o);
             }
         }
         else {
-            this.method13301(s, (o instanceof Class88) ? new Class88().method486(o) : o);
+            this.method13301(s, (o instanceof JSONArray) ? new JSONArray().method486(o) : o);
         }
         return this;
     }
@@ -160,13 +160,13 @@ public class JSONObject
         method13309(o);
         final Object method13277 = this.opt(str);
         if (method13277 != null) {
-            if (!(method13277 instanceof Class88)) {
+            if (!(method13277 instanceof JSONArray)) {
                 throw new JSONException("JSONObject[" + str + "] is not a JSONArray.");
             }
-            this.method13301(str, ((Class88)method13277).method486(o));
+            this.method13301(str, ((JSONArray)method13277).method486(o));
         }
         else {
-            this.method13301(str, new Class88().method486(o));
+            this.method13301(str, new JSONArray().method486(o));
         }
         return this;
     }
@@ -261,12 +261,12 @@ public class JSONObject
         }
     }
     
-    public Class88 method13263(final String s) throws org.json.JSONException {
+    public JSONArray method13263(final String s) throws org.json.JSONException {
         final Object method13257 = this.get(s);
-        if (!(method13257 instanceof Class88)) {
+        if (!(method13257 instanceof JSONArray)) {
             throw new JSONException("JSONObject[" + quote(s) + "] is not a JSONArray.");
         }
-        return (Class88)method13257;
+        return (JSONArray)method13257;
     }
     
     public JSONObject method13264(final String s) throws org.json.JSONException {
@@ -385,13 +385,13 @@ public class JSONObject
         return this.map.size();
     }
     
-    public Class88 method13275() {
-        final Class88 class88 = new Class88();
+    public JSONArray method13275() {
+        final JSONArray JSONArray = new JSONArray();
         final Iterator<String> method13272 = this.method13272();
         while (method13272.hasNext()) {
-            class88.method486(method13272.next());
+            JSONArray.method486(method13272.next());
         }
-        return (class88.method462() != 0) ? class88 : null;
+        return (JSONArray.method462() != 0) ? JSONArray : null;
     }
     
     public static String method13276(final Number n) throws org.json.JSONException {
@@ -496,9 +496,9 @@ public class JSONObject
         }
     }
     
-    public Class88 method13288(final String s) {
+    public JSONArray method13288(final String s) {
         final Object method13277 = this.opt(s);
-        return (method13277 instanceof Class88) ? ((Class88)method13277) : null;
+        return (method13277 instanceof JSONArray) ? ((JSONArray)method13277) : null;
     }
     
     public JSONObject method13289(final String s) {
@@ -572,7 +572,7 @@ public class JSONObject
     }
     
     public JSONObject method13296(final String s, final Collection<?> collection) throws org.json.JSONException {
-        this.method13301(s, new Class88(collection));
+        this.method13301(s, new JSONArray(collection));
         return this;
     }
     
@@ -727,8 +727,8 @@ public class JSONObject
                     }
                     continue;
                 }
-                else if (method13274 instanceof Class88) {
-                    if (!((Class88)method13274).method495(method13275)) {
+                else if (method13274 instanceof JSONArray) {
+                    if (!((JSONArray)method13274).method495(method13275)) {
                         return false;
                     }
                     continue;
@@ -802,11 +802,11 @@ public class JSONObject
         }
     }
     
-    public Class88 method13310(final Class88 class88) throws org.json.JSONException {
-        if (class88 != null && class88.method462() != 0) {
-            final Class88 class89 = new Class88();
-            for (int i = 0; i < class88.method462(); ++i) {
-                class89.method486(this.opt(class88.method459(i)));
+    public JSONArray method13310(final JSONArray JSONArray) throws org.json.JSONException {
+        if (JSONArray != null && JSONArray.method462() != 0) {
+            final JSONArray class89 = new JSONArray();
+            for (int i = 0; i < JSONArray.method462(); ++i) {
+                class89.method486(this.opt(JSONArray.method459(i)));
             }
             return class89;
         }
@@ -851,17 +851,17 @@ public class JSONObject
             if (o instanceof Number) {
                 return method13276((Number)o);
             }
-            if (o instanceof Boolean || o instanceof JSONObject || o instanceof Class88) {
+            if (o instanceof Boolean || o instanceof JSONObject || o instanceof JSONArray) {
                 return o.toString();
             }
             if (o instanceof Map) {
                 return new JSONObject((Map<?, ?>)o).toString();
             }
             if (o instanceof Collection) {
-                return new Class88((Collection<?>)o).toString();
+                return new JSONArray((Collection<?>)o).toString();
             }
             if (o.getClass().isArray()) {
-                return new Class88(o).toString();
+                return new JSONArray(o).toString();
             }
             return quote(o.toString());
         }
@@ -872,14 +872,14 @@ public class JSONObject
             if (obj == null) {
                 return JSONObject.field19729;
             }
-            if (obj instanceof JSONObject || obj instanceof Class88 || JSONObject.field19729.equals(obj) || obj instanceof Class8369 || obj instanceof Byte || obj instanceof Character || obj instanceof Short || obj instanceof Integer || obj instanceof Long || obj instanceof Boolean || obj instanceof Float || obj instanceof Double || obj instanceof String || obj instanceof BigInteger || obj instanceof BigDecimal) {
+            if (obj instanceof JSONObject || obj instanceof JSONArray || JSONObject.field19729.equals(obj) || obj instanceof Class8369 || obj instanceof Byte || obj instanceof Character || obj instanceof Short || obj instanceof Integer || obj instanceof Long || obj instanceof Boolean || obj instanceof Float || obj instanceof Double || obj instanceof String || obj instanceof BigInteger || obj instanceof BigDecimal) {
                 return obj;
             }
             if (obj instanceof Collection) {
-                return new Class88((Collection<?>)obj);
+                return new JSONArray((Collection<?>)obj);
             }
             if (obj.getClass().isArray()) {
-                return new Class88(obj);
+                return new JSONArray(obj);
             }
             if (obj instanceof Map) {
                 return new JSONObject((Map<?, ?>)obj);
@@ -907,17 +907,17 @@ public class JSONObject
         else if (o instanceof JSONObject) {
             ((JSONObject)o).method13316(writer, n, n2);
         }
-        else if (o instanceof Class88) {
-            ((Class88)o).method498(writer, n, n2);
+        else if (o instanceof JSONArray) {
+            ((JSONArray)o).method498(writer, n, n2);
         }
         else if (o instanceof Map) {
             new JSONObject((Map<?, ?>)o).method13316(writer, n, n2);
         }
         else if (o instanceof Collection) {
-            new Class88((Collection<?>)o).method498(writer, n, n2);
+            new JSONArray((Collection<?>)o).method498(writer, n, n2);
         }
         else if (o.getClass().isArray()) {
-            new Class88(o).method498(writer, n, n2);
+            new JSONArray(o).method498(writer, n, n2);
         }
         else if (o instanceof Number) {
             writer.write(method13276((Number)o));

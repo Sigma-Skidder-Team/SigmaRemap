@@ -70,7 +70,7 @@ public class Class8845
     }
     
     public static float[] method30916(final LivingEntity class511, final double n, final double n2, final double n3, final float n4) {
-        if (Class6430.method19141(Class8845.field37175, Class8845.field37176, n4, 0.0) != null) {
+        if (ColorUtils.method19141(Class8845.field37175, Class8845.field37176, n4, 0.0) != null) {
             Class8845.field37177 = new Date().getTime();
             return new float[] { Class8845.field37175, Class8845.field37176 };
         }

@@ -22,7 +22,7 @@ public class Class9072
                 for (int j = 0; j < read.getWidth(); ++j) {
                     final Color color = new Color(read.getRGB(j, i), true);
                     System.out.println(color.getAlpha());
-                    bufferedImage2.setRGB(j, i, Class6430.method19118(bufferedImage.getRGB(j, i), color.getAlpha() / 255.0f));
+                    bufferedImage2.setRGB(j, i, ColorUtils.applyAlpha(bufferedImage.getRGB(j, i), color.getAlpha() / 255.0f));
                 }
             }
             return Class9399.method34928("mask", bufferedImage2);

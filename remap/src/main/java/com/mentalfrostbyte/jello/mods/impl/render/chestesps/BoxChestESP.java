@@ -28,9 +28,9 @@ public class BoxChestESP extends Module
     }
     
     private void method10087() {
-        final int method19118 = Class6430.method19118(this.method9914().method9885("Regular Color"), 0.14f);
-        final int method19119 = Class6430.method19118(this.method9914().method9885("Ender Color"), 0.14f);
-        final int method19120 = Class6430.method19118(this.method9914().method9885("Trapped Color"), 0.14f);
+        final int method19118 = ColorUtils.applyAlpha(this.method9914().method9885("Regular Color"), 0.14f);
+        final int method19119 = ColorUtils.applyAlpha(this.method9914().method9885("Ender Color"), 0.14f);
+        final int method19120 = ColorUtils.applyAlpha(this.method9914().method9885("Trapped Color"), 0.14f);
         for (final TileEntity tileEntity : BoxChestESP.mc.world.loadedTileEntityList) {
             boolean b = false;
             Label_0129: {
@@ -70,8 +70,8 @@ public class BoxChestESP extends Module
             }
             final Class7644 class437 = new Class7644(tileEntity.method2194().getShape(BoxChestESP.mc.world, tileEntity.getPos()).getBoundingBox().offset(field38854, field38855, field38856));
             GL11.glAlphaFunc(519, 0.0f);
-            Class8154.method26909(class437, n);
-            Class8154.method26912(class437, 2.0f, n);
+            RenderUtil.method26909(class437, n);
+            RenderUtil.method26912(class437, 2.0f, n);
             GL11.glDisable(3042);
         }
     }

@@ -95,8 +95,8 @@ public class Class8088
         if (equals && !b) {
             this.field33314.remove(n);
             if (this.field33314.size() == 0) {
-                Class6430.method19154(0.0);
-                Class6430.method19156(0.0);
+                ColorUtils.method19154(0.0);
+                ColorUtils.method19156(0.0);
                 this.method26555();
                 return;
             }
@@ -106,14 +106,14 @@ public class Class8088
                 final float n2 = Class8845.method30920(this.field33313.player.method1934(), class5743.field36684.method30686())[0];
                 final double n3 = Math.cos(Math.toRadians(n2 + 90.0f)) * sqrt;
                 final double n4 = Math.sin(Math.toRadians(n2 + 90.0f)) * sqrt;
-                Class6430.method19154(n3);
-                Class6430.method19156(n4);
+                ColorUtils.method19154(n3);
+                ColorUtils.method19156(n4);
             }
         }
         if (!this.field33313.player.onGround && this.method26563(class5743.field36684.method30692())) {
             this.field33313.player.field2970 = 0.0f;
             this.field33313.player.field2968 = 0.0f;
-            Class6430.method19106("STOPED");
+            ColorUtils.method19106("STOPED");
             return;
         }
         this.field33313.player.method1816(true);
@@ -166,19 +166,19 @@ public class Class8088
         }
         this.field33313.player.rotationYaw = field33316;
         if (b4 && !this.field33313.player.onGround && !Client.method35173().method35189().method21551(Fly.class).method9906()) {
-            Class6430.method19154(0.0);
-            Class6430.method19156(0.0);
+            ColorUtils.method19154(0.0);
+            ColorUtils.method19156(0.0);
             return;
         }
-        if (Client.method35173().method35189().method21551(Fly.class).method9906() && !Class6430.method19160(this.field33313.player, 5.0f)) {
+        if (Client.method35173().method35189().method21551(Fly.class).method9906() && !ColorUtils.method19160(this.field33313.player, 5.0f)) {
             b4 = true;
         }
         Client.method35173().method35189().method21551(BlockFly.class).method9907(b3);
         Client.method35173().method35189().method21551(Fly.class).method9907(b4);
         if (b && equals) {
-            Class6430.method19154(0.0);
-            Class6430.method19156(0.0);
-            Class6430.method19106("qzd: " + n5 % 1.0);
+            ColorUtils.method19154(0.0);
+            ColorUtils.method19156(0.0);
+            ColorUtils.method19106("qzd: " + n5 % 1.0);
             return;
         }
         if (this.field33317 != null) {
@@ -294,8 +294,8 @@ public class Class8088
         if (Class4609.method13694(this.field33313.player.rotationYaw, this.field33313.player.rotationPitch, 100.0f) != null) {
             if (this.field33314 != null) {
                 if (this.field33314.size() > 0) {
-                    final int method19118 = Class6430.method19118(Class265.field1285.field1292, 0.02f);
-                    final int method19119 = Class6430.method19118(Class265.field1276.field1292, 0.02f);
+                    final int method19118 = ColorUtils.applyAlpha(ClientColors.field1285.color, 0.02f);
+                    final int method19119 = ColorUtils.applyAlpha(ClientColors.field1276.color, 0.02f);
                     GL11.glPushMatrix();
                     GL11.glDisable(2929);
                     final Iterator<Long> iterator2 = this.field33314.get(0).field36694.iterator();
@@ -305,7 +305,7 @@ public class Class8088
                             final double n = method19120.getX() - this.field33313.field4644.method5833().method18161().getX();
                             final double n2 = method19120.getY() - this.field33313.field4644.method5833().method18161().getY();
                             final double n3 = method19120.getZ() - this.field33313.field4644.method5833().method18161().getZ();
-                            Class8154.method26909(new Class7644(n, n2, n3, n + 1.0, n2 + 1.0, n3 + 1.0), method19118);
+                            RenderUtil.method26909(new Class7644(n, n2, n3, n + 1.0, n2 + 1.0, n3 + 1.0), method19118);
                         }
                     }
                     final Iterator<Long> iterator3 = this.field33314.get(0).field36695.iterator();
@@ -315,7 +315,7 @@ public class Class8088
                             final double n4 = method19121.getX() - this.field33313.field4644.method5833().method18161().getX();
                             final double n5 = method19121.getY() - this.field33313.field4644.method5833().method18161().getY();
                             final double n6 = method19121.getZ() - this.field33313.field4644.method5833().method18161().getZ();
-                            Class8154.method26909(new Class7644(n4, n5, n6, n4 + 1.0, n5 + 1.0, n6 + 1.0), method19119);
+                            RenderUtil.method26909(new Class7644(n4, n5, n6, n4 + 1.0, n5 + 1.0, n6 + 1.0), method19119);
                         }
                     }
                     GL11.glEnable(2929);
@@ -342,9 +342,9 @@ public class Class8088
         final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.01f, -0.01f, -0.01f);
-        Class8154.method26876((float)(-field40314.getWidth(s) / 2 - 10), 0.0f, (float)(field40314.getWidth(s) / 2 + 10), (float)(field40314.getHeight() + 2), Class6430.method19118(Class265.field1273.field1292, 0.1f));
+        RenderUtil.method26876((float)(-field40314.getWidth(s) / 2 - 10), 0.0f, (float)(field40314.getWidth(s) / 2 + 10), (float)(field40314.getHeight() + 2), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.1f));
         GL11.glTranslated((double)(-field40314.getWidth(s) / 2), 0.0, 0.0);
-        Class8154.method26889(field40314, 0.0f, 0.0f, s, Class6430.method19118(Class265.field1278.field1292, 0.3f));
+        RenderUtil.drawString(field40314, 0.0f, 0.0f, s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
         GL11.glEnable(3553);

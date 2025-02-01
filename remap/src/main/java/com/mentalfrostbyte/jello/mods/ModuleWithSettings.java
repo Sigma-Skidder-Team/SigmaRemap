@@ -91,7 +91,7 @@ public class ModuleWithSettings extends Module
         final JSONObject method26637 = Class8105.method26637(JSONObject, "sub-options");
         if (method26637 != null) {
             for (final Module class4406 : this.field15742) {
-                final Class88 method26638 = Class8105.method26638(method26637, class4406.getName());
+                final JSONArray method26638 = Class8105.method26638(method26637, class4406.getName());
                 if (method26638 != null) {
                     for (int j = 0; j < method26638.method462(); ++j) {
                         final JSONObject method26639 = method26638.method457(j);
@@ -126,7 +126,7 @@ public class ModuleWithSettings extends Module
     public JSONObject method9896(final JSONObject JSONObject) {
         final JSONObject class4406 = new JSONObject();
         for (final Module class4407 : this.field15742) {
-            final Class88 class4408 = new Class88();
+            final JSONArray class4408 = new JSONArray();
             final Iterator<Setting> iterator = class4407.field15525.values().iterator();
             while (iterator.hasNext()) {
                 class4408.method486(iterator.next().method15193(new JSONObject()));

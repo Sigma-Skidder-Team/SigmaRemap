@@ -34,7 +34,7 @@ public class Class8707
     @EventListener
     public void method29897(final Class5723 class5723) {
         if (class5723.method16998() instanceof Class4284) {
-            Class6430.method19172();
+            ColorUtils.method19172();
         }
     }
     
@@ -73,9 +73,9 @@ public class Class8707
             RenderSystem.method30065(0.0f, 0.0f, -2000.0f);
             GL11.glScaled(1.0 / Class8707.field36586.field4632.method7700() * Class9000.field37993, 1.0 / Class8707.field36586.field4632.method7700() * Class9000.field37993, 1.0);
             final int n = 35;
-            Class8154.method26870(Class8707.field36590, Class8707.field36591 - n, Class8707.field36592, Class8707.field36593 + n);
+            RenderUtil.method26870(Class8707.field36590, Class8707.field36591 - n, Class8707.field36592, Class8707.field36593 + n);
             Class8707.field36587.method7247(Class8707.field36586.timer.field26528);
-            Class8154.method26872();
+            RenderUtil.method26872();
             GL11.glEnable(3008);
             Class8707.field36588.method18395(true);
             Class8707.field36586.field4667.method18395(true);

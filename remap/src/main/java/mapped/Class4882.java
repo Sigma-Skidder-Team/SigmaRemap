@@ -74,15 +74,15 @@ public class Class4882 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         final int n2 = 20;
         final int n3 = 14;
         final int n4 = this.field20478 - n2;
         final int n5 = this.field20479 - n2;
         final int n6 = this.field20480 + n2 * 2;
         final int n7 = this.field20481 + 5 + n2 * 2;
-        Class8154.method26913((float)(n4 + n3 / 2), (float)(n5 + n3 / 2), (float)(n6 - n3), (float)(n7 - n3), 20.0f, n * 0.5f);
-        Class8154.method26924((float)n4, (float)n5, (float)n6, (float)n7, 14.0f, Class265.field1278.field1292);
-        super.method14205(n);
+        RenderUtil.method26913((float)(n4 + n3 / 2), (float)(n5 + n3 / 2), (float)(n6 - n3), (float)(n7 - n3), 20.0f, n * 0.5f);
+        RenderUtil.method26924((float)n4, (float)n5, (float)n6, (float)n7, 14.0f, ClientColors.LIGHT_GREYISH_BLUE.color);
+        super.draw(n);
     }
 }

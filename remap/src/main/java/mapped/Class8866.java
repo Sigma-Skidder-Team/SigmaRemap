@@ -41,18 +41,18 @@ public class Class8866
     
     public void method31130(final Entity class399, final float n, final float n2) {
         if (this.field37268.method9883("Interact autoblock")) {
-            final Class7007 method19144 = Class6430.method19144(this.field37268.method9883("Raytrace") ? null : class399, n, n2, p0 -> true, this.field37268.getNumberSettingValueByName("Range"));
+            final Class7007 method19144 = ColorUtils.method19144(this.field37268.method9883("Raytrace") ? null : class399, n, n2, p0 -> true, this.field37268.getNumberSettingValueByName("Range"));
             if (method19144 != null) {
                 this.field37269.method5269().method17292(new Class4381(method19144.method21452(), Class316.field1877, method19144.getHitVec()));
                 this.field37269.method5269().method17292(new Class4381(method19144.method21452(), Class316.field1877));
             }
         }
-        Class6430.method19163();
+        ColorUtils.method19163();
         this.method31129(true);
     }
     
     public void method31131() {
-        Class6430.method19164();
+        ColorUtils.method19164();
         this.method31129(false);
     }
     
@@ -108,7 +108,7 @@ public class Class8866
     
     public List<Class8131> method31137(final float n) {
         final ArrayList list = new ArrayList();
-        for (final Entity class399 : Class6430.method19138()) {
+        for (final Entity class399 : ColorUtils.method19138()) {
             list.add(new Class8131(class399, Class8845.method30922(class399)));
         }
         final Iterator iterator2 = list.iterator();

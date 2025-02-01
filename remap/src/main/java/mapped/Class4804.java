@@ -82,10 +82,10 @@ public class Class4804 extends Class4803
     }
     
     @Override
-    public void method14205(final float n) {
-        Class8154.method26886((float)this.field20478, (float)this.field20479, (float)this.method14276(), Class6430.method19118(Class265.field1278.field1292, 0.07f + ((this.field20517 <= 0.0f) ? 0.0f : (this.field20517 * 0.3f))));
+    public void draw(final float n) {
+        RenderUtil.method26886((float)this.field20478, (float)this.field20479, (float)this.method14276(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.07f + ((this.field20517 <= 0.0f) ? 0.0f : (this.field20517 * 0.3f))));
         final float n2 = (float)(this.field20519 - this.method14280());
         final float n3 = (float)(this.field20520 - this.method14281());
-        super.method14205(n);
+        super.draw(n);
     }
 }

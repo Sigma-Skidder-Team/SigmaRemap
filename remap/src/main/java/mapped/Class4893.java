@@ -21,9 +21,9 @@ public class Class4893 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
-        Class8154.method26888((float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + this.field20481 / 2), (float)this.field20480, Class6430.method19118(Class265.field1283.field1292, (0.5f + this.field20918 * 0.3f + (this.field20492 ? 0.2f : 0.0f)) * n));
-        Class8154.method26874((float)(this.field20478 + (this.field20480 - 10) / 2), (float)(this.field20479 + this.field20481 / 2 - 1), 10.0f, 2.0f, Class6430.method19118(Class265.field1278.field1292, 0.75f * n));
-        super.method14205(n);
+    public void draw(final float n) {
+        RenderUtil.method26888((float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + this.field20481 / 2), (float)this.field20480, ColorUtils.applyAlpha(ClientColors.field1283.color, (0.5f + this.field20918 * 0.3f + (this.field20492 ? 0.2f : 0.0f)) * n));
+        RenderUtil.method26874((float)(this.field20478 + (this.field20480 - 10) / 2), (float)(this.field20479 + this.field20481 / 2 - 1), 10.0f, 2.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.75f * n));
+        super.draw(n);
     }
 }

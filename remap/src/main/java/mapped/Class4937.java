@@ -53,8 +53,8 @@ public class Class4937 extends Class4800
         this.field21192 = new Class9572(325, 325);
         this.field21193 = new Class9572(800, 800);
         this.method14311(false);
-        (this.field21192 = new Class9572(175, 325)).method35855(Class2186.field12964);
-        this.field21193.method35855(Class2186.field12965);
+        (this.field21192 = new Class9572(175, 325)).changeDirection(Direction.BACKWARDS);
+        this.field21193.changeDirection(Direction.FORWARDS);
         final TrueTypeFont field40807 = Class9493.field40807;
         final String s = "© Sigma Prod";
         final StringBuilder append = new StringBuilder().append("Sigma ");
@@ -63,18 +63,18 @@ public class Class4937 extends Class4800
         this.addVisualThing(this.field21194 = new Class4920(this, "particles"));
         final int n = 480;
         this.addVisualThing(this.field21195 = new Class4814(this, "group", (this.method14276() - n) / 2, this.method14278() / 2 - 230, n, 480));
-        this.addVisualThing(this.field21187 = new Class4834(this, "Copyright", 10, 8, field40807.getWidth(s), 140, new Class6523(Class265.field1278.field1292), s, ClientFonts.JelloLight18));
-        final Class6523 class6523 = new Class6523(Class6430.method19118(Class265.field1278.field1292, 0.5f));
-        class6523.method19734(Class6430.method19118(Class265.field1278.field1292, 0.5f));
+        this.addVisualThing(this.field21187 = new Class4834(this, "Copyright", 10, 8, field40807.getWidth(s), 140, new Class6523(ClientColors.LIGHT_GREYISH_BLUE.color), s, ClientFonts.JelloLight18));
+        final Class6523 class6523 = new Class6523(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f));
+        class6523.method19734(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f));
         final ArrayList list = new ArrayList();
         list.add("LeakedPvP");
         list.add("Tomygames");
         list.add("Omikron");
         Collections.shuffle(list);
         this.addVisualThing(new Class4834(this, "names", 130, 9, field40807.getWidth(s), 140, class6523, "by " + (String)list.get(0) + ", " + (String)list.get(1) + ", " + (String)list.get(2), Class9493.field40808));
-        this.addVisualThing(this.field21186 = new Class4834(this, "Version", this.method14276() - field40807.getWidth(string) - 9, this.method14278() - 31, 114, 140, new Class6523(Class265.field1278.field1292), string, field40807));
-        this.addVisualThing(new Class4834(this, "Hello", 10, this.method14278() - 55, 114, 140, new Class6523(Class265.field1278.field1292), "Hello,", field40807));
-        this.addVisualThing(new Class4834(this, "Latest", 10, this.method14278() - 31, 114, 140, new Class6523(Class265.field1278.field1292), "You are using the latest version", field40807));
+        this.addVisualThing(this.field21186 = new Class4834(this, "Version", this.method14276() - field40807.getWidth(string) - 9, this.method14278() - 31, 114, 140, new Class6523(ClientColors.LIGHT_GREYISH_BLUE.color), string, field40807));
+        this.addVisualThing(new Class4834(this, "Hello", 10, this.method14278() - 55, 114, 140, new Class6523(ClientColors.LIGHT_GREYISH_BLUE.color), "Hello,", field40807));
+        this.addVisualThing(new Class4834(this, "Latest", 10, this.method14278() - 31, 114, 140, new Class6523(ClientColors.LIGHT_GREYISH_BLUE.color), "You are using the latest version", field40807));
         this.field21196 = (float)(this.method14276() / 2);
         this.field21197 = (float)(this.method14278() / 2);
     }
@@ -102,17 +102,17 @@ public class Class4937 extends Class4800
     }
     
     @Override
-    public void method14205(final float n) {
-        final int round = Math.round((1.0f - Class7791.method25030(this.field21192.method35858(), 0.0f, 1.0f, 1.0f)) * 5.0f);
-        this.method14294(round);
+    public void draw(final float n) {
+        final int round = Math.round((1.0f - Class7791.method25030(this.field21192.calcPercent(), 0.0f, 1.0f, 1.0f)) * 5.0f);
+        this.drawBackground(round);
         this.method14228();
         GL11.glPushMatrix();
         GL11.glTranslated((double)(int)(-this.method14276() / 200 + this.field21196 / 200.0f), (double)((int)(-this.method14278() / 100 + this.field21197 / 100.0f) - round), 0.0);
-        Class8154.method26905(-10.0f, -10.0f, (float)(this.method14276() + 20), (float)(this.method14278() + 20), Class9493.field40801);
+        RenderUtil.method26905(-10.0f, -10.0f, (float)(this.method14276() + 20), (float)(this.method14278() + 20), Class9493.field40801);
         GL11.glPopMatrix();
         this.field21195.method14295((int)(-this.method14276() / 40 + this.field21196 / 40.0f), (int)(-this.method14278() / 40 + this.field21197 / 40.0f) + round);
         this.field21194.method14295((int)(-this.method14276() / 12 + this.field21196 / 12.0f), (int)(-this.method14278() / 12 + this.field21197 / 12.0f));
-        super.method14205(n);
+        super.draw(n);
     }
     
     static {

@@ -71,12 +71,12 @@ public class Class3335 extends Module
                         if (!Class3335.mc.player.method2747(class5735)) {
                             n6 = -256;
                         }
-                        Class8154.method26880(n4, n, n5, n2, 2.25, Class8101.method26626(0, 0, 0, 0), n6);
-                        Class8154.method26880(n4 - 0.5, n - 0.5, n5 + 0.5, n2 + 0.5, 0.9, Class8101.method26624(0, 0), Class8101.method26623(0));
-                        Class8154.method26880(n4 + 2.5, n + 2.5, n5 - 2.5, n2 - 2.5, 0.9, Class8101.method26624(0, 0), Class8101.method26623(0));
-                        Class8154.method26880(n4 - 5.0f, n - 1.0f, n4 - 1.0f, n2, 1.0, Class8101.method26624(0, 100), Class8101.method26624(0, 255));
+                        RenderUtil.method26880(n4, n, n5, n2, 2.25, Class8101.method26626(0, 0, 0, 0), n6);
+                        RenderUtil.method26880(n4 - 0.5, n - 0.5, n5 + 0.5, n2 + 0.5, 0.9, Class8101.method26624(0, 0), Class8101.method26623(0));
+                        RenderUtil.method26880(n4 + 2.5, n + 2.5, n5 - 2.5, n2 - 2.5, 0.9, Class8101.method26624(0, 0), Class8101.method26623(0));
+                        RenderUtil.method26880(n4 - 5.0f, n - 1.0f, n4 - 1.0f, n2, 1.0, Class8101.method26624(0, 100), Class8101.method26624(0, 255));
                         final float method9885 = ((PlayerEntity)class5735).method2664();
-                        Class8154.method26876(n4 - 4.0f, n2 - 1.0f, n4 - 2.0f, n2 + (n - n2) * (method9885 * 5.0f * 0.01f), method10553(new float[] { 0.0f, 0.5f, 1.0f }, new Color[] { Color.RED, Color.YELLOW, Color.GREEN }, method9885 * 5.0f * 0.01f).brighter().getRGB());
+                        RenderUtil.method26876(n4 - 4.0f, n2 - 1.0f, n4 - 2.0f, n2 + (n - n2) * (method9885 * 5.0f * 0.01f), method10553(new float[] { 0.0f, 0.5f, 1.0f }, new Color[] { Color.RED, Color.YELLOW, Color.GREEN }, method9885 * 5.0f * 0.01f).brighter().getRGB());
                         if ((int)Class6029.method17958(method9885 * 5.0f, 1.0) != 100 && method9884) {
                             RenderSystem.method30059();
                             RenderSystem.method30063(2.0f, 2.0f, 2.0f);
@@ -191,8 +191,8 @@ public class Class3335 extends Module
             final double n2 = playerEntity.lastTickPosX + (playerEntity.posX + 10.0 - (playerEntity.lastTickPosX + 10.0)) * field26528 - method16760;
             final double n3 = playerEntity.lastTickPosZ + (playerEntity.posZ + 10.0 - (playerEntity.lastTickPosZ + 10.0)) * field26528 - method16762;
             final double n4 = n + (playerEntity.method1931() + 0.2);
-            final double[] method16763 = Class8154.method26931(n2, n4, n3);
-            final double abs = Math.abs(Class8154.method26931(n2, n4 + 1.0, n3)[1] - Class8154.method26931(n2, n4, n3)[1]);
+            final double[] method16763 = RenderUtil.method26931(n2, n4, n3);
+            final double abs = Math.abs(RenderUtil.method26931(n2, n4 + 1.0, n3)[1] - RenderUtil.method26931(n2, n4, n3)[1]);
             if (!Class3335.field15936 && method16763 == null) {
                 throw new AssertionError();
             }
@@ -204,7 +204,7 @@ public class Class3335 extends Module
             }
             Class3335.field15934.put(playerEntity, new double[] { method16763[0], method16763[1], abs, method16763[2] });
             final double n5 = playerEntity.lastTickPosY + (playerEntity.posY - 2.2 - (playerEntity.lastTickPosY - 2.2)) * field26528 - method16761;
-            Class3335.field15935.put(playerEntity, new double[] { Class8154.method26931(n2, n5, n3)[0], Class8154.method26931(n2, n5, n3)[1], abs, Class8154.method26931(n2, n5, n3)[2] });
+            Class3335.field15935.put(playerEntity, new double[] { RenderUtil.method26931(n2, n5, n3)[0], RenderUtil.method26931(n2, n5, n3)[1], abs, RenderUtil.method26931(n2, n5, n3)[2] });
         }
     }
     

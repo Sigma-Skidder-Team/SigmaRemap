@@ -22,7 +22,7 @@ public class Class6704 extends Class6693
     @Override
     public void run(final String s, final Class8025[] array, final Class6428 class6428) throws CommandException {
         if (array.length <= 0) {
-            Class6430.method19107(method20358());
+            ColorUtils.method19107(method20358());
             return;
         }
         throw new Class2332("Too many arguments");

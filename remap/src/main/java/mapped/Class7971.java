@@ -249,7 +249,7 @@ public class Class7971
             if (this.field32798 == null) {
                 (this.field32798 = new Thread(() -> {
                     try {
-                        this.field32795 = ImageIO.read(new URL(Class6430.method19129(this.method25891().replaceAll("-", ""))));
+                        this.field32795 = ImageIO.read(new URL(ColorUtils.method19129(this.method25891().replaceAll("-", ""))));
                     }
                     catch (final Exception ex) {
                         ex.printStackTrace();
@@ -305,13 +305,13 @@ public class Class7971
         return JSONObject;
     }
     
-    public Class88 method25905() {
-        final Class88 class88 = new Class88();
+    public JSONArray method25905() {
+        final JSONArray JSONArray = new JSONArray();
         final Iterator<Class8848> iterator = this.field32791.iterator();
         while (iterator.hasNext()) {
-            class88.method486(iterator.next().method30979());
+            JSONArray.method486(iterator.next().method30979());
         }
-        return class88;
+        return JSONArray;
     }
     
     public static String method25906(final String s) {

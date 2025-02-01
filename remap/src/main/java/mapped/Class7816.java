@@ -40,11 +40,11 @@ public class Class7816 extends Class7814
         if (Class7816.field32015.player.ticksExisted < 10) {
             this.field32022.clear();
         }
-        for (final PlayerEntity class5744 : Class6430.method19108()) {
+        for (final PlayerEntity class5744 : ColorUtils.method19108()) {
             if (class5744 != Class7816.field32015.player) {
                 Label_0079: {
                     if (class5744 != null) {
-                        if (Class6430.method19160(class5744, 0.01f)) {
+                        if (ColorUtils.method19160(class5744, 0.01f)) {
                             if (!class5744.method1823()) {
                                 if (class5744.method1732(Class7816.field32015.player) <= 5.0f) {
                                     if (class5744.posX != class5744.lastTickPosX) {
@@ -83,7 +83,7 @@ public class Class7816 extends Class7814
                     return;
                 }
                 final Entity method13142 = class5724.getEntity(Class7816.field32015.world);
-                final boolean method13143 = Class6430.method19160(method13142, 0.5f);
+                final boolean method13143 = ColorUtils.method19160(method13142, 0.5f);
                 final short method13144 = class5724.getY();
                 if (!this.field32023.containsKey(method13142)) {
                     this.field32023.put(method13142, new ArrayList<Integer>());

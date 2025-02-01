@@ -112,7 +112,7 @@ public class Class4934 extends Class4800
         this.field21139.method14251();
         this.field21151.method14260((class4803, n) -> {
             if (this.method14820()) {
-                this.field21141.method14744(!this.field21141.method14304());
+                this.field21141.method14744(!this.field21141.isHovered());
             }
         });
     }
@@ -211,13 +211,13 @@ public class Class4934 extends Class4800
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         this.method14822();
-        Class8154.method26915((int)(Minecraft.method5277().field4632.method7694() * this.field21143), 114, (int)(Minecraft.method5277().field4632.method7694() * this.field21144) - this.field21145, Minecraft.method5277().field4632.method7695() - 119 - this.field21145, Class265.field1278.field1292);
+        RenderUtil.method26915((int)(Minecraft.method5277().field4632.method7694() * this.field21143), 114, (int)(Minecraft.method5277().field4632.method7694() * this.field21144) - this.field21145, Minecraft.method5277().field4632.method7695() - 119 - this.field21145, ClientColors.LIGHT_GREYISH_BLUE.color);
         this.method14816();
         this.method14818();
         this.method14817();
-        super.method14205(n);
+        super.draw(n);
     }
     
     private void method14815() {
@@ -232,7 +232,7 @@ public class Class4934 extends Class4800
         final float n = (this.field21150 < 25.0f) ? (this.field21150 / 25.0f) : 1.0f;
         GL11.glTexParameteri(3553, 10241, 9728);
         if (this.field21149 != null) {
-            Class8154.method26899(0.0f, 0.0f, (float)((int)(Minecraft.method5277().field4632.method7694() * this.field21143) - 15), 114.0f, this.field21149, Class6430.method19118(Class265.field1278.field1292, n));
+            RenderUtil.method26899(0.0f, 0.0f, (float)((int)(Minecraft.method5277().field4632.method7694() * this.field21143) - 15), 114.0f, this.field21149, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
         }
         this.field21150 = (float)this.field21139.method14392();
     }
@@ -243,9 +243,9 @@ public class Class4934 extends Class4800
     private void method14817() {
         final int n = this.field20478 + this.field21145;
         final int n2 = this.field20479 + this.field21145;
-        final int method19118 = Class6430.method19118(Class265.field1273.field1292, 0.8f);
-        Class8154.method26889(ClientFonts.JelloLight40, (float)n, (float)n2, "Jello", method19118);
-        Class8154.method26889(ClientFonts.JelloLight25, (float)(n + 87), (float)(n2 + 15), "Alt Manager", method19118);
+        final int method19118 = ColorUtils.applyAlpha(ClientColors.field1273.color, 0.8f);
+        RenderUtil.drawString(ClientFonts.JelloLight40, (float)n, (float)n2, "Jello", method19118);
+        RenderUtil.drawString(ClientFonts.JelloLight25, (float)(n + 87), (float)(n2 + 15), "Alt Manager", method19118);
     }
     
     private void method14818() {
@@ -259,14 +259,14 @@ public class Class4934 extends Class4800
                     final Class4917 class4805 = (Class4917)class4804;
                     if (class4804.method14274() <= Minecraft.method5277().field4632.method7695() && this.field21139.method14392() == 0) {
                         if (method35858 > 0.2f) {
-                            class4805.field21038.method35855(Class2186.field12964);
+                            class4805.field21038.changeDirection(Direction.BACKWARDS);
                         }
-                        class4805.method14293((int)(-((1.0f - Class8862.method31033(class4805.field21038.method35858(), 0.51, 0.82, 0.0, 0.99)) * (class4804.method14276() + 30))));
-                        method35858 = class4805.field21038.method35858();
+                        class4805.method14293((int)(-((1.0f - MathUtils.lerp(class4805.field21038.calcPercent(), 0.51, 0.82, 0.0, 0.99)) * (class4804.method14276() + 30))));
+                        method35858 = class4805.field21038.calcPercent();
                     }
                     else {
                         class4805.method14293(0);
-                        class4805.field21038.method35855(Class2186.field12964);
+                        class4805.field21038.changeDirection(Direction.BACKWARDS);
                     }
                 }
             }
@@ -319,7 +319,7 @@ public class Class4934 extends Class4800
         }
         final float n2 = n - this.field21135;
         final float n3 = (float)(field21134 - this.field21134);
-        Class8154.method26905((float)this.field21134, this.field21135, (float)(this.method14276() * 2), (float)(this.method14278() + 114), ClientAssets.getBlurredPanorama);
+        RenderUtil.method26905((float)this.field21134, this.field21135, (float)(this.method14276() * 2), (float)(this.method14278() + 114), ClientAssets.getBlurredPanorama);
         final float n4 = 0.5f;
         if (n != this.field21135) {
             this.field21135 += n2 * n4;
@@ -327,7 +327,7 @@ public class Class4934 extends Class4800
         if (field21134 != this.field21134) {
             this.field21134 += (int)(n3 * n4);
         }
-        Class8154.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class6430.method19118(Class265.field1278.field1292, 0.95f));
+        RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.95f));
     }
     
     @Override

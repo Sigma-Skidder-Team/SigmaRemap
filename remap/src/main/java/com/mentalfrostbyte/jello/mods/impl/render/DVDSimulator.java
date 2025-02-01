@@ -70,7 +70,7 @@ public class DVDSimulator extends Module
                     }
                     this.field15557 += this.field15559 * n;
                     this.field15558 += this.field15560 * n;
-                    Class8154.method26899(this.field15557, this.field15558, (float)this.field15561.field40723, (float)this.field15561.field40724, ClientAssets.dvd, Class6430.method19118(this.field15562, 0.8f));
+                    RenderUtil.method26899(this.field15557, this.field15558, (float)this.field15561.field40723, (float)this.field15561.field40724, ClientAssets.dvd, ColorUtils.applyAlpha(this.field15562, 0.8f));
                 }
             }
         }

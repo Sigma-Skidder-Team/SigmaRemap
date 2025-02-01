@@ -57,7 +57,7 @@ public class AACSpeed extends Module
             return;
         }
         final String method9887 = this.method9887("Mode");
-        if (Class6430.method19160(AACSpeed.mc.player, 0.01f)) {
+        if (ColorUtils.method19160(AACSpeed.mc.player, 0.01f)) {
             if (this.field15688 <= 1) {
                 ++this.field15688;
             }
@@ -65,7 +65,7 @@ public class AACSpeed extends Module
                 this.field15687 = 0;
                 this.field15686 = -1;
             }
-            if (Class6430.method19114() && this.method9883("Auto Jump")) {
+            if (ColorUtils.method19114() && this.method9883("Auto Jump")) {
                 AACSpeed.mc.player.method2725();
                 class5717.method16975(AACSpeed.mc.player.getMotion().y);
             }
@@ -95,7 +95,7 @@ public class AACSpeed extends Module
                 break;
             }
         }
-        if (!Class6430.method19114()) {
+        if (!ColorUtils.method19114()) {
             this.field15689 = 0.0;
         }
         if (AACSpeed.mc.player.collidedHorizontally) {
@@ -104,7 +104,7 @@ public class AACSpeed extends Module
         if (this.field15686 >= 0) {
             this.field15692 = Class7482.method23153(class5717, this.field15689, Class7482.method23144()[0], this.field15692, 45.0f);
         }
-        Class6430.method19155(class5717.method16974());
+        ColorUtils.method19155(class5717.method16974());
     }
     
     @EventListener
@@ -173,7 +173,7 @@ public class AACSpeed extends Module
     
     private double method10170(final int n) {
         double field22771 = AACSpeed.mc.player.getMotion().y;
-        final boolean method19160 = Class6430.method19160(AACSpeed.mc.player, 0.37f);
+        final boolean method19160 = ColorUtils.method19160(AACSpeed.mc.player, 0.37f);
         final double[] array = { 0.41, 0.309, 0.21, 0.113, 0.03, -0.05, -0.12, -0.192, -0.26, -0.33, method19160 ? -0.0 : -0.4, method19160 ? -0.13 : -0.47 };
         if (n >= 0) {
             if (n < array.length) {
@@ -184,7 +184,7 @@ public class AACSpeed extends Module
     }
     
     private double method10171(final int n, final int n2) {
-        final boolean method19160 = Class6430.method19160(AACSpeed.mc.player, 0.37f);
+        final boolean method19160 = ColorUtils.method19160(AACSpeed.mc.player, 0.37f);
         final double[] array = { 0.497, 0.671, 0.719, 0.733, 0.738 };
         final double[] array2 = { 0.303, 0.407, 0.436, 0.444, 0.447 };
         final double[] array3 = { 0.0, 0.003, 0.004, 0.004, 0.004 };
@@ -230,7 +230,7 @@ public class AACSpeed extends Module
     
     private double method10172(final int n) {
         double field22771 = AACSpeed.mc.player.getMotion().y;
-        final boolean method19160 = Class6430.method19160(AACSpeed.mc.player, 0.37f);
+        final boolean method19160 = ColorUtils.method19160(AACSpeed.mc.player, 0.37f);
         final double[] array = { 0.41, 0.309, 0.21, 0.113, 0.03, -0.06, -0.14, -0.22, -0.29, 0.0, -0.082, -0.11, 0.0, -0.18 };
         if (n >= 0) {
             if (n < array.length) {
@@ -255,7 +255,7 @@ public class AACSpeed extends Module
     }
     
     private double method10173(final int n, final int n2) {
-        final boolean method19160 = Class6430.method19160(AACSpeed.mc.player, 0.37f);
+        final boolean method19160 = ColorUtils.method19160(AACSpeed.mc.player, 0.37f);
         final double[] array = { 0.497, 0.709, 0.746, 0.753 };
         final double[] array2 = { 0.303, 0.43, 0.4525, 0.456 };
         final double[] array3 = { 0.0, 0.0036, 0.0041, 0.0042 };

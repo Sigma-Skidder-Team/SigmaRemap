@@ -87,7 +87,7 @@ public class Class8491
     public void method28369(final Class5740 class5740) {
         if (this.field34856.player != null) {
             if (this.field34856.player.method1654() == Pose.field1666) {
-                if (Class9367.method34762() < Class7906.field32463.method25613() || Class6430.method19146()) {
+                if (Class9367.method34762() < Class7906.field32463.method25613() || ColorUtils.method19146()) {
                     this.field34856.player.method1653(Pose.field1663);
                 }
             }
@@ -123,7 +123,7 @@ public class Class8491
         }
         for (int size = Class8491.field34858.size(), i = 0; i < size; ++i) {
             final Entity class5744 = Class8491.field34858.get(i);
-            if (!Class6430.method19138().contains(class5744)) {
+            if (!ColorUtils.method19138().contains(class5744)) {
                 Class8491.field34858.remove(class5744);
                 --size;
                 --i;
@@ -197,7 +197,7 @@ public class Class8491
                         else {
                             final Entity method6742 = this.field34856.world.getEntityByID(class5724.method13248());
                             if (!Class8491.field34858.contains(method6742)) {
-                                if (!Class6430.method19149()) {
+                                if (!ColorUtils.method19149()) {
                                     Class8491.field34858.add(method6742);
                                 }
                             }
@@ -210,7 +210,7 @@ public class Class8491
         if (this.method28375()) {
             Class8090.method26583(class5723, this.field34860);
             if (!(class5723.method16998() instanceof Class4388)) {
-                if (class5723.method16998() instanceof Class4288 && Class6430.method19147()) {
+                if (class5723.method16998() instanceof Class4288 && ColorUtils.method19147()) {
                     class5723.method16961(true);
                 }
                 else if (!(class5723.method16998() instanceof Class4289)) {
@@ -270,7 +270,7 @@ public class Class8491
     @EventListener
     @Class6763
     public void method28374(final Class5717 class5717) {
-        if (Class9367.method34762() < Class7906.field32463.method25613() || Class6430.method19146()) {
+        if (Class9367.method34762() < Class7906.field32463.method25613() || ColorUtils.method19146()) {
             if (this.field34856.player.method1706()) {
                 this.field34863 = true;
                 final double field2396 = this.field34856.player.posY;
@@ -321,7 +321,7 @@ public class Class8491
                 Class9379.field40222 = this.field34856.player.getMotion().y;
                 if (this.field34863) {
                     if (Class9379.method34828()) {
-                        Class6430.method19155(Class9379.field40222 = 0.20000000298023224);
+                        ColorUtils.method19155(Class9379.field40222 = 0.20000000298023224);
                     }
                 }
                 Class9379.field40221 = this.field34856.player.getMotion().x;
@@ -332,15 +332,15 @@ public class Class8491
         if (Class9367.method34762() == Class7906.field32452.method25613()) {
             if (Math.abs(class5717.method16972()) < 0.005) {
                 class5717.method16973(0.0);
-                Class6430.method19154(class5717.method16972());
+                ColorUtils.method19154(class5717.method16972());
             }
             if (Math.abs(class5717.method16974()) < 0.005) {
                 class5717.method16975(0.0);
-                Class6430.method19155(class5717.method16974());
+                ColorUtils.method19155(class5717.method16974());
             }
             if (Math.abs(class5717.method16976()) < 0.005) {
                 class5717.method16977(0.0);
-                Class6430.method19156(class5717.method16976());
+                ColorUtils.method19156(class5717.method16976());
             }
         }
     }

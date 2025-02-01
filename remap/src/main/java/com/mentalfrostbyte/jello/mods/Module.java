@@ -142,7 +142,7 @@ public abstract class Module
     }
     
     public JSONObject method9895(final JSONObject JSONObject) {
-        final Class88 method26638 = Class8105.method26638(JSONObject, "options");
+        final JSONArray method26638 = Class8105.method26638(JSONObject, "options");
         try {
             this.enabled = JSONObject.getBoolean("enabled");
         }
@@ -182,7 +182,7 @@ public abstract class Module
         JSONObject.method13301("name", this.getName());
         JSONObject.method13295("enabled", this.enabled);
         JSONObject.method13295("allowed", this.method9911());
-        final Class88 class4406 = new Class88();
+        final JSONArray class4406 = new JSONArray();
         final Iterator<Setting> iterator = this.field15525.values().iterator();
         while (iterator.hasNext()) {
             class4406.method486(iterator.next().method15193(new JSONObject()));

@@ -30,8 +30,8 @@ public class TabGUI extends Module
     
     public TabGUI() {
         super(Category.GUI, "TabGUI", "Manage mods without opening the ClickGUI");
-        this.field15638 = new Class9572(500, 0, Class2186.field12965);
-        this.field15639 = new Class9572(300, 300, Class2186.field12965);
+        this.field15638 = new Class9572(500, 0, Direction.FORWARDS);
+        this.field15639 = new Class9572(300, 300, Direction.FORWARDS);
         this.field15640 = new ArrayList<Category>();
         this.field15641 = 0;
     }
@@ -61,12 +61,12 @@ public class TabGUI extends Module
         if (method10069 == null) {
             return;
         }
-        TabGUI.field15637.method35855(Class2186.field12964);
+        TabGUI.field15637.changeDirection(Direction.BACKWARDS);
         this.field15641 = 80;
         final int method10070 = this.method10076();
         final Class8221 class5753 = TabGUI.field15642.get(method10070 - 1);
         if (method10069 != Class2164.field12876 && ((!this.method10078() && method10069 != Class2164.field12874) || method10070 != 3)) {
-            this.field15638 = new Class9572(500, 200, Class2186.field12965);
+            this.field15638 = new Class9572(500, 200, Direction.FORWARDS);
         }
         switch (Class8971.field37805[method10069.ordinal()]) {
             case 1: {
@@ -183,8 +183,8 @@ public class TabGUI extends Module
     private void method10065(final Class5743 class5743) {
         if (this.method9906()) {
             if (this.field15641 <= 0) {
-                TabGUI.field15637.method35855(Class2186.field12965);
-                this.field15638.method35855(Class2186.field12965);
+                TabGUI.field15637.changeDirection(Direction.FORWARDS);
+                this.field15638.changeDirection(Direction.FORWARDS);
             }
             else {
                 --this.field15641;
@@ -205,10 +205,10 @@ public class TabGUI extends Module
             this.method10067();
             final Iterator<Class8221> iterator = TabGUI.field15642.iterator();
             while (iterator.hasNext()) {
-                iterator.next().method27240((float)(0.5 + TabGUI.field15637.method35858() * 0.5));
+                iterator.next().method27240((float)(0.5 + TabGUI.field15637.calcPercent() * 0.5));
             }
-            this.method10068((float)(0.5 + TabGUI.field15637.method35858() * 0.5));
-            Class8154.method26874(12.0f, 30.0f, 90.0f, 1.0f, Class265.field1278.field1292);
+            this.method10068((float)(0.5 + TabGUI.field15637.calcPercent() * 0.5));
+            RenderUtil.method26874(12.0f, 30.0f, 90.0f, 1.0f, ClientColors.LIGHT_GREYISH_BLUE.color);
         }
     }
     
@@ -234,12 +234,12 @@ public class TabGUI extends Module
                 class8225 = class8224;
             }
             if (class8225.method27246()) {
-                if (TabGUI.field15637.method35857() == Class2186.field12964) {
+                if (TabGUI.field15637.getDirection() == Direction.BACKWARDS) {
                     if (this.method10076() == TabGUI.field15642.size()) {
-                        this.field15638.method35855(Class2186.field12964);
+                        this.field15638.changeDirection(Direction.BACKWARDS);
                     }
                     else if (TabGUI.field15642.get(TabGUI.field15642.size() - 1).method27238()) {
-                        this.field15638.method35855(Class2186.field12964);
+                        this.field15638.changeDirection(Direction.BACKWARDS);
                     }
                 }
             }
@@ -248,32 +248,32 @@ public class TabGUI extends Module
             if (method10076 == 3) {
                 s = this.method10075(class8226).get(class8224.field33778).method15205();
             }
-            float method10077 = Class8468.method28270(this.field15639.method35858(), 0.0f, 1.0f, 1.0f) * TabGUI.field15637.method35858();
-            if (this.field15639.method35857() == Class2186.field12965) {
-                method10077 = Class8468.method28269(this.field15639.method35858(), 0.0f, 1.0f, 1.0f);
+            float method10077 = Class8468.method28270(this.field15639.calcPercent(), 0.0f, 1.0f, 1.0f) * TabGUI.field15637.calcPercent();
+            if (this.field15639.getDirection() == Direction.FORWARDS) {
+                method10077 = Class8468.method28269(this.field15639.calcPercent(), 0.0f, 1.0f, 1.0f);
             }
             final float n2 = class8225.method27234() + (float)class8225.method27233() + 14.0f * method10077;
             final float n3 = class8225.method27235() + 16.0f;
             class8225.getClass();
-            Class8154.method26885(n2, n3 + 25 * class8225.field33778, 24.0f * method10077, Class6430.method19118(Class265.field1273.field1292, n * 0.6f), Class6430.method19118(Class265.field1273.field1292, n * 0.6f));
+            RenderUtil.method26885(n2, n3 + 25 * class8225.field33778, 24.0f * method10077, ColorUtils.applyAlpha(ClientColors.field1273.color, n * 0.6f), ColorUtils.applyAlpha(ClientColors.field1273.color, n * 0.6f));
             final int n4 = class8225.method27234() + class8225.method27233() + 4 + Math.round(method10077 * 28.0f);
             final int method10078 = class8225.method27235();
             class8225.getClass();
             final int n5 = method10078 + 25 * class8225.field33778 + 4;
             final int n6 = class8225.field33770.getWidth(s) + 8;
-            final float method10079 = Class8468.method28270(this.field15638.method35858(), 0.0f, 1.0f, 1.0f);
+            final float method10079 = Class8468.method28270(this.field15638.calcPercent(), 0.0f, 1.0f, 1.0f);
             final float n7 = (float)n4;
             final float n8 = (float)n5;
             final float n9 = n6 * method10079;
             class8225.getClass();
-            Class8154.method26874(n7, n8, n9, 25.0f, Class6430.method19118(Class265.field1273.field1292, n * 0.6f));
+            RenderUtil.method26874(n7, n8, n9, 25.0f, ColorUtils.applyAlpha(ClientColors.field1273.color, n * 0.6f));
             final float n10 = (float)n4;
             final float n11 = (float)n5;
             final float n12 = n6 * method10079;
             class8225.getClass();
-            Class8154.method26869(n10, n11, n12, 25.0f);
-            Class8154.method26889(class8225.field33770, (float)(n4 + 4), (float)(n5 + 2), s, Class6430.method19118(Class265.field1278.field1292, Math.min(1.0f, n * 1.7f)));
-            Class8154.method26872();
+            RenderUtil.method26869(n10, n11, n12, 25.0f);
+            RenderUtil.drawString(class8225.field33770, (float)(n4 + 4), (float)(n5 + 2), s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, Math.min(1.0f, n * 1.7f)));
+            RenderUtil.method26872();
         }
     }
     
@@ -338,13 +338,13 @@ public class TabGUI extends Module
     
     @Override
     public void onDisable() {
-        TabGUI.field15637.method35855(Class2186.field12965);
+        TabGUI.field15637.changeDirection(Direction.FORWARDS);
         this.field15641 = 0;
     }
     
     @Override
     public void method9879() {
-        TabGUI.field15637.method35855(Class2186.field12964);
+        TabGUI.field15637.changeDirection(Direction.BACKWARDS);
         this.field15641 = 40;
     }
     
@@ -385,15 +385,15 @@ public class TabGUI extends Module
     }
     
     private void method10077(final boolean b) {
-        this.field15639.method35855(b ? Class2186.field12964 : Class2186.field12965);
+        this.field15639.changeDirection(b ? Direction.BACKWARDS : Direction.FORWARDS);
     }
     
     private boolean method10078() {
-        return this.field15639.method35857() == Class2186.field12964;
+        return this.field15639.getDirection() == Direction.BACKWARDS;
     }
     
     static {
-        field15637 = new Class9572(200, 200, Class2186.field12965);
+        field15637 = new Class9572(200, 200, Direction.FORWARDS);
         TabGUI.field15642 = new ArrayList<Class8221>();
     }
 }

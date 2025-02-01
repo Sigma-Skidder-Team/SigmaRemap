@@ -18,7 +18,7 @@ public class Class7987
     }
     
     public Class7987(final JSONObject JSONObject) throws JSONException {
-        final Class88 method13263 = JSONObject.method13263("upgrades");
+        final JSONArray method13263 = JSONObject.method13263("upgrades");
         final int method13264 = method13263.method462();
         final String[] field32880 = new String[method13264];
         for (int i = 0; i < method13264; ++i) {

@@ -47,7 +47,7 @@ public class NewNameTags extends Module
         this.field15783 = new ArrayList<Entity>();
         this.field15784 = false;
         this.field15785 = new HashMap<UUID, String>();
-        this.field15786 = Class6430.method19118(Class6430.method19120(Class265.field1278.field1292, Class265.field1273.field1292, 75.0f), 0.5f);
+        this.field15786 = ColorUtils.applyAlpha(ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.field1273.color, 75.0f), 0.5f);
         this.addSetting(new BooleanSetting("Magnify", "Scales nametags to keep them readable", true));
         this.addSetting(new BooleanSetting("Furnaces", "Shows furnaces info once open", true));
         this.addSetting(new BooleanSetting("Mob Owners", "Shows mob owners", true));
@@ -72,7 +72,7 @@ public class NewNameTags extends Module
                 }
             }
             this.field15783.clear();
-            for (final Entity class5744 : Class4609.method13679(Class6430.method19108())) {
+            for (final Entity class5744 : Class4609.method13679(ColorUtils.method19108())) {
                 if (class5744 == NewNameTags.mc.player) {
                     continue;
                 }
@@ -222,7 +222,7 @@ public class NewNameTags extends Module
                         this.field15785.put(uuid, null);
                         new Thread(() -> {
                             try {
-                                Class6430.method19130(key.toString());
+                                ColorUtils.method19130(key.toString());
                                 final List list;
                                 if (list != null && !list.isEmpty()) {
                                     this.field15785.put(key, list.get(list.size() - 1));
@@ -304,20 +304,20 @@ public class NewNameTags extends Module
         final int n7 = 51 + max + n5 * 2;
         final int n8 = 85 + n5 * 2;
         GL11.glTranslated((double)(-n7 / 2), (double)(-n8 / 2), 0.0);
-        Class8154.method26876(0.0f, 0.0f, (float)n7, (float)n8, this.field15786);
-        Class8154.method26913(0.0f, 0.0f, (float)n7, (float)n8, 20.0f, 0.5f);
-        Class8154.method26889(field40314, (float)n5, (float)(n5 - 5), "Furnace", Class265.field1278.field1292);
+        RenderUtil.method26876(0.0f, 0.0f, (float)n7, (float)n8, this.field15786);
+        RenderUtil.method26913(0.0f, 0.0f, (float)n7, (float)n8, 20.0f, 0.5f);
+        RenderUtil.drawString(field40314, (float)n5, (float)(n5 - 5), "Furnace", ClientColors.LIGHT_GREYISH_BLUE.color);
         if (method18690 == null) {
-            Class8154.method26889(ClientFonts.JelloLight20, (float)(n5 + 15), (float)(n5 + 40), "Empty", Class6430.method19118(Class265.field1278.field1292, 0.6f));
+            RenderUtil.drawString(ClientFonts.JelloLight20, (float)(n5 + 15), (float)(n5 + 40), "Empty", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f));
         }
         final ItemStack method18691 = class355.method18690();
         if (method18691 != null) {
-            Class8154.method26929(method18691, n5, n5 + 27, 45, 45);
-            Class8154.method26889(ClientFonts.JelloLight20, (float)(n5 + 51), 40.0f, method18691.method27664().getUnformattedComponentText(), Class265.field1278.field1292);
-            Class8154.method26889(ClientFonts.JelloLight14, (float)(n5 + 51), 62.0f, "Count: " + method18691.field34176, Class265.field1278.field1292);
+            RenderUtil.method26929(method18691, n5, n5 + 27, 45, 45);
+            RenderUtil.drawString(ClientFonts.JelloLight20, (float)(n5 + 51), 40.0f, method18691.method27664().getUnformattedComponentText(), ClientColors.LIGHT_GREYISH_BLUE.color);
+            RenderUtil.drawString(ClientFonts.JelloLight14, (float)(n5 + 51), 62.0f, "Count: " + method18691.field34176, ClientColors.LIGHT_GREYISH_BLUE.color);
         }
-        Class8154.method26876(0.0f, n8 - 12.0f, Math.min(n7 * min2, (float)n7), n8 - 6.0f, Class6430.method19118(-106750, 0.3f));
-        Class8154.method26876(0.0f, n8 - 6.0f, Math.min(n7 * min, (float)n7), (float)n8, Class6430.method19118(Class265.field1278.field1292, 0.75f));
+        RenderUtil.method26876(0.0f, n8 - 12.0f, Math.min(n7 * min2, (float)n7), n8 - 6.0f, ColorUtils.applyAlpha(-106750, 0.3f));
+        RenderUtil.method26876(0.0f, n8 - 6.0f, Math.min(n7 * min, (float)n7), (float)n8, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.75f));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
         GL11.glEnable(3553);
@@ -357,25 +357,25 @@ public class NewNameTags extends Module
             int n8 = this.field15786;
             if (!Client.method35173().method35190().method29878(class399)) {
                 if (Client.method35173().method35190().method29880(class399)) {
-                    n8 = Class6430.method19118(-6750208, 0.5f);
+                    n8 = ColorUtils.applyAlpha(-6750208, 0.5f);
                 }
             }
             else {
-                n8 = Class6430.method19118(-16171506, 0.5f);
+                n8 = ColorUtils.applyAlpha(-16171506, 0.5f);
             }
-            final int method9888 = Class6430.method19118((class399 instanceof PlayerEntity) ? new Color(Class9011.method32263((PlayerEntity)class399)).getRGB() : Class265.field1278.field1292, 0.5f);
+            final int method9888 = ColorUtils.applyAlpha((class399 instanceof PlayerEntity) ? new Color(Class9011.method32263((PlayerEntity)class399)).getRGB() : ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f);
             final int n9 = field40314.getWidth(method9887) / 2;
             if (!NewNameTags.field15781.containsKey(method9887)) {
-                Class8154.method26913((float)(-n9 - 10), -25.0f, (float)(n9 * 2 + 20), (float)(field40314.getHeight() + 27), 20.0f, 0.5f);
+                RenderUtil.method26913((float)(-n9 - 10), -25.0f, (float)(n9 * 2 + 20), (float)(field40314.getHeight() + 27), 20.0f, 0.5f);
             }
             else {
-                Class8154.method26899((float)(-n9 - 10 - 31), -25.0f, (float)(field40314.getHeight() + 27), (float)(field40314.getHeight() + 27), NewNameTags.field15781.get(method9887), Class6430.method19118(Color.getHSBColor(System.currentTimeMillis() % 10000L / 10000.0f, 0.5f, 1.0f).getRGB(), 0.7f));
-                Class8154.method26899((float)(-n9 - 10 - 31 + field40314.getHeight() + 27), -25.0f, 14.0f, (float)(field40314.getHeight() + 27), ClientAssets.shadow_right, Class6430.method19118(Class265.field1278.field1292, 0.6f));
-                Class8154.method26913((float)(-n9 - 10 - 31), -25.0f, (float)(n9 * 2 + 20 + 31 + 27), (float)(field40314.getHeight() + 27), 20.0f, 0.5f);
+                RenderUtil.method26899((float)(-n9 - 10 - 31), -25.0f, (float)(field40314.getHeight() + 27), (float)(field40314.getHeight() + 27), NewNameTags.field15781.get(method9887), ColorUtils.applyAlpha(Color.getHSBColor(System.currentTimeMillis() % 10000L / 10000.0f, 0.5f, 1.0f).getRGB(), 0.7f));
+                RenderUtil.method26899((float)(-n9 - 10 - 31 + field40314.getHeight() + 27), -25.0f, 14.0f, (float)(field40314.getHeight() + 27), ClientAssets.shadow_right, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f));
+                RenderUtil.method26913((float)(-n9 - 10 - 31), -25.0f, (float)(n9 * 2 + 20 + 31 + 27), (float)(field40314.getHeight() + 27), 20.0f, 0.5f);
                 GL11.glTranslatef(27.0f, 0.0f, 0.0f);
             }
-            Class8154.method26876((float)(-n9 - 10), -25.0f, (float)(n9 + 10), (float)(field40314.getHeight() + 2), n8);
-            Class8154.method26876((float)(-n9 - 10), field40314.getHeight() - 1 - ((LivingEntity)class399).field2938 / 3.0f, Math.min((n9 * 2 + 20) * (min - 0.5f), (float)(n9 + 10)), (float)(field40314.getHeight() + 2), method9888);
+            RenderUtil.method26876((float)(-n9 - 10), -25.0f, (float)(n9 + 10), (float)(field40314.getHeight() + 2), n8);
+            RenderUtil.method26876((float)(-n9 - 10), field40314.getHeight() - 1 - ((LivingEntity)class399).field2938 / 3.0f, Math.min((n9 * 2 + 20) * (min - 0.5f), (float)(n9 + 10)), (float)(field40314.getHeight() + 2), method9888);
             GL11.glPushMatrix();
             GL11.glTranslated((double)(-field40314.getWidth(method9887) / 2), 0.0, 0.0);
             final int method9889 = ClientFonts.JelloLight14.getWidth("Health: 20.0");
@@ -383,11 +383,11 @@ public class NewNameTags extends Module
             if (method9889 > field40314.getWidth(method9887)) {
                 str = "H: ";
             }
-            Class8154.method26889(field40314, 0.0f, -20.0f, method9887, Class265.field1278.field1292);
-            Class8154.method26889(ClientFonts.JelloLight14, 0.0f, 10.0f, str + string, Class265.field1278.field1292);
+            RenderUtil.drawString(field40314, 0.0f, -20.0f, method9887, ClientColors.LIGHT_GREYISH_BLUE.color);
+            RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, 10.0f, str + string, ClientColors.LIGHT_GREYISH_BLUE.color);
             final Class6538 method9890 = Client.method35173().method35201().field25697.method33657(class399);
             if (method9890 != null) {
-                Class8154.method26889(ClientFonts.JelloLight14, 0.0f, -30.0f, method9890.field25986, Class265.field1278.field1292);
+                RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, -30.0f, method9890.field25986, ClientColors.LIGHT_GREYISH_BLUE.color);
             }
             GL11.glPopMatrix();
             GL11.glPopMatrix();

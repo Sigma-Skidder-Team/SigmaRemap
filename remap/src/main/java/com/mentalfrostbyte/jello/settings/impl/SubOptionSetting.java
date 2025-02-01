@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
 import mapped.JSONObject;
 import mapped.Class8105;
-import mapped.Class88;
+import mapped.JSONArray;
 
 import java.util.Iterator;
 import java.util.Arrays;
@@ -28,7 +28,7 @@ public abstract class SubOptionSetting extends Setting<Boolean> {
 
     @Override
     public JSONObject method15186(final JSONObject JSONObject) {
-        final Class88 method26638 = Class8105.method26638(JSONObject, this.method15204());
+        final JSONArray method26638 = Class8105.method26638(JSONObject, this.method15204());
         if (method26638 != null) {
             for (int i = 0; i < method26638.method462(); ++i) {
                 final JSONObject method26639 = method26638.method457(i);
@@ -48,7 +48,7 @@ public abstract class SubOptionSetting extends Setting<Boolean> {
 
     @Override
     public JSONObject method15193(final JSONObject JSONObject) {
-        final Class88 class4406 = new Class88();
+        final JSONArray class4406 = new JSONArray();
         final Iterator<Setting> iterator = (Iterator<Setting>) this.method15224().iterator();
         while (iterator.hasNext()) {
             class4406.method486(iterator.next().method15193(new JSONObject()));

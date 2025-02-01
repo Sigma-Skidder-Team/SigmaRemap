@@ -30,11 +30,11 @@ public class Class4938 extends Class4800
         n2 += 80;
         this.addVisualThing(this.field21200 = new Class4832(this, "password", n3, n2, n, 45, Class4832.field20670, "", "Password", ClientFonts.Default));
         n2 += 190;
-        this.addVisualThing(this.field21201 = new Class4909(this, "login", n3, n2, n, 40, "Login", Class265.field1281.field1292));
+        this.addVisualThing(this.field21201 = new Class4909(this, "login", n3, n2, n, 40, "Login", ClientColors.field1281.color));
         n2 += 50;
-        this.addVisualThing(this.field21202 = new Class4909(this, "back", n3, n2, n, 40, "Back", Class265.field1281.field1292));
+        this.addVisualThing(this.field21202 = new Class4909(this, "back", n3, n2, n, 40, "Back", ClientColors.field1281.color));
         n2 += 50;
-        this.addVisualThing(this.field21203 = new Class4909(this, "import", n3, n2, n, 40, "Import user:pass", Class265.field1281.field1292));
+        this.addVisualThing(this.field21203 = new Class4909(this, "import", n3, n2, n, 40, "Import user:pass", ClientColors.field1281.color));
         this.field21200.method14477(true);
         this.field21200.method14470("*");
         this.field21201.method14260((class4803, n) -> {
@@ -68,13 +68,13 @@ public class Class4938 extends Class4800
     }
     
     @Override
-    public void method14205(final float n) {
-        Class8154.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class9493.field40801);
-        Class8154.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class6430.method19118(Class265.field1290.field1292, 0.1f));
-        Class8154.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class6430.method19118(Class265.field1273.field1292, 0.95f));
-        Class8154.method26890(ClientFonts.Default, (float)(this.method14276() / 2), 38.0f, "Add Alt", Class265.field1278.field1292, Class2056.field11738, Class2056.field11734);
-        Class8154.method26891(ClientFonts.Default, (float)(this.method14276() / 2), 58.0f, this.field21205, Class265.field1278.field1292, Class2056.field11738, Class2056.field11734, true);
-        super.method14205(n);
+    public void draw(final float n) {
+        RenderUtil.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class9493.field40801);
+        RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.field1290.color, 0.1f));
+        RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.95f));
+        RenderUtil.method26890(ClientFonts.Default, (float)(this.method14276() / 2), 38.0f, "Add Alt", ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11734);
+        RenderUtil.method26891(ClientFonts.Default, (float)(this.method14276() / 2), 58.0f, this.field21205, ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11734, true);
+        super.draw(n);
     }
     
     @Override

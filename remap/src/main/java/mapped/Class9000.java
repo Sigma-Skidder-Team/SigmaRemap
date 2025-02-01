@@ -223,24 +223,24 @@ public class Class9000
                 n = Minecraft.method5277().field4632.method7694() / 2 - n3 / 2;
             }
             if (Client.method35173().method35209() != Class2209.field13464) {
-                final float n4 = 0.5f + TabGUI.field15637.method35858() * 0.5f;
+                final float n4 = 0.5f + TabGUI.field15637.calcPercent() * 0.5f;
                 GL11.glAlphaFunc(516, 0.1f);
-                Class8154.method26874(4.0f, 2.0f, 106.0f, 28.0f, Class6430.method19118(Class265.field1273.field1292, 0.6f * n4));
-                Class8154.method26889(Class9493.field40811, 9.0f, 2.0f, "Sigma", Class6430.method19118(Class265.field1273.field1292, 0.5f * n4));
-                Class8154.method26889(Class9493.field40811, 8.0f, 1.0f, "Sigma", Class6430.method19118(Class265.field1278.field1292, Math.min(1.0f, n4 * 1.2f)));
+                RenderUtil.method26874(4.0f, 2.0f, 106.0f, 28.0f, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.6f * n4));
+                RenderUtil.drawString(Class9493.field40811, 9.0f, 2.0f, "Sigma", ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f * n4));
+                RenderUtil.drawString(Class9493.field40811, 8.0f, 1.0f, "Sigma", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, Math.min(1.0f, n4 * 1.2f)));
                 final int rgb = Color.getHSBColor(System.currentTimeMillis() % 4000L / 4000.0f, 1.0f, 1.0f).getRGB();
-                Class8154.method26889(Class9493.field40814, 73.0f, 2.0f, "5.0.0", Class6430.method19118(Class265.field1273.field1292, 0.5f));
-                Class8154.method26889(Class9493.field40814, 72.0f, 1.0f, "5.0.0", Class6430.method19118(rgb, Math.min(1.0f, n4 * 1.4f)));
+                RenderUtil.drawString(Class9493.field40814, 73.0f, 2.0f, "5.0.0", ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
+                RenderUtil.drawString(Class9493.field40814, 72.0f, 1.0f, "5.0.0", ColorUtils.applyAlpha(rgb, Math.min(1.0f, n4 * 1.4f)));
             }
             else {
                 GL11.glAlphaFunc(519, 0.0f);
-                Class8154.method26905((float)n, (float)n2, 170.0f, 104.0f, (Class9000.field37993 <= 1.0f) ? ClientAssets.jello_watermark : ClientAssets.jello_watermark2x);
+                RenderUtil.method26905((float)n, (float)n2, 170.0f, 104.0f, (Class9000.field37993 <= 1.0f) ? ClientAssets.jello_watermark : ClientAssets.jello_watermark2x);
             }
             Client.method35173().method35188().method21097(new Class5740());
         }
         if (this.field37997 != null) {
             if (Minecraft.method5277().field4701 == null) {
-                this.field37997.method14205(1.0f);
+                this.field37997.draw(1.0f);
             }
         }
     }
@@ -381,7 +381,7 @@ public class Class9000
         if (Minecraft.method5277().field4632.method7694() != 0 && Minecraft.method5277().field4632.method7695() != 0) {
             Class9000.field37993 = (float)Math.max(Minecraft.method5277().field4632.method7692() / Minecraft.method5277().field4632.method7694(), Minecraft.method5277().field4632.method7693() / Minecraft.method5277().field4632.method7695());
         }
-        Class8154.method26861(Minecraft.method5277().field4632.method7694(), Minecraft.method5277().field4632.method7695());
+        RenderUtil.method26861(Minecraft.method5277().field4632.method7694(), Minecraft.method5277().field4632.method7695());
     }
     
     public Class4800 method32154() {

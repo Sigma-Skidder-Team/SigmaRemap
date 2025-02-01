@@ -20,22 +20,22 @@ public class Class4880 extends Class4868
     
     @Override
     public void method14200(final int n, final int n2) {
-        this.field20875.method35855(this.field20492 ? Class2186.field12964 : Class2186.field12965);
+        this.field20875.changeDirection(this.field20492 ? Direction.BACKWARDS : Direction.FORWARDS);
         super.method14200(n, n2);
     }
     
     @Override
-    public void method14205(final float n) {
-        this.method14286(1.0f + this.field20875.method35858());
-        this.method14287(1.0f + this.field20875.method35858());
+    public void draw(final float n) {
+        this.method14286(1.0f + this.field20875.calcPercent());
+        this.method14287(1.0f + this.field20875.calcPercent());
         this.method14227();
-        Class8154.method26889(this.method14316(), (float)this.method14272(), (float)this.method14274(), "" + this.field20875.method35858(), Class265.field1273.field1292);
+        RenderUtil.drawString(this.method14316(), (float)this.method14272(), (float)this.method14274(), "" + this.field20875.calcPercent(), ClientColors.field1273.color);
         GL11.glPushMatrix();
         super.method14229(n);
         GL11.glPopMatrix();
     }
     
     static {
-        field20873 = new Class6523(Class265.field1278.field1292, Class6430.method19121(Class265.field1278.field1292, 0.1f));
+        field20873 = new Class6523(ClientColors.LIGHT_GREYISH_BLUE.color, ColorUtils.method19121(ClientColors.LIGHT_GREYISH_BLUE.color, 0.1f));
     }
 }

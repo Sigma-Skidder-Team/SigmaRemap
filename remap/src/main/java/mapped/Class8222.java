@@ -47,7 +47,7 @@ public class Class8222 extends Class8221
     
     @Override
     public void method27232(final float n) {
-        Class8154.method26874((float)this.method27234(), (float)this.method27235(), (float)this.method27233(), (float)this.method27239(), Class6430.method19118(Class265.field1273.field1292, n * 0.6f));
+        RenderUtil.method26874((float)this.method27234(), (float)this.method27235(), (float)this.method27233(), (float)this.method27239(), ColorUtils.applyAlpha(ClientColors.field1273.color, n * 0.6f));
         this.field33779 += this.method27247();
         final int n2 = this.method27234() + 4;
         final int n3 = this.method27235() + this.field33779 + 4;
@@ -55,15 +55,15 @@ public class Class8222 extends Class8221
         final int n5 = 25;
         final int n6 = -15781024;
         final int n7 = -15626304;
-        Class8154.method26882(n2, n3, n2 + n4, n3 + n5, n6, n7, n7, n6);
+        RenderUtil.method26882(n2, n3, n2 + n4, n3 + n5, n6, n7, n7, n6);
         int n8 = 6;
         for (String substring : this.field33776) {
-            int n9 = Class265.field1278.field1292;
+            int n9 = ClientColors.LIGHT_GREYISH_BLUE.color;
             if (substring.startsWith("§7")) {
                 substring = substring.substring("§7".length());
-                n9 = Class265.field1281.field1292;
+                n9 = ClientColors.field1281.color;
             }
-            Class8154.method26889(this.field33770, (float)(7 + this.method27234()), (float)(this.method27235() + n8), substring, Class6430.method19118(n9, Math.min(1.0f, n * 1.7f)));
+            RenderUtil.drawString(this.field33770, (float)(7 + this.method27234()), (float)(this.method27235() + n8), substring, ColorUtils.applyAlpha(n9, Math.min(1.0f, n * 1.7f)));
             n8 += 25;
         }
     }
@@ -93,7 +93,7 @@ public class Class8222 extends Class8221
     }
     
     public boolean method27246() {
-        return this.field33774.method35858() == 1.0f;
+        return this.field33774.calcPercent() == 1.0f;
     }
     
     public int method27247() {

@@ -18,13 +18,13 @@ public class Class4906 extends Class4841
     }
     
     @Override
-    public void method14205(float n) {
-        this.field20986.method35855(this.method14308() ? Class2186.field12964 : Class2186.field12965);
-        n *= 0.09f + 0.25f * this.field20986.method35858() + (this.field20985 ? 0.0f : 0.2f);
-        Class8154.method26874((float)(this.field20478 + 10), (float)(this.field20479 + 16), 5.0f, 14.0f, Class6430.method19118(Class265.field1278.field1292, n));
-        Class8154.method26874((float)(this.field20478 + 17), (float)(this.field20479 + 10), 5.0f, 20.0f, Class6430.method19118(Class265.field1278.field1292, n));
-        Class8154.method26874((float)(this.field20478 + 24), (float)(this.field20479 + 20), 5.0f, 10.0f, Class6430.method19118(Class265.field1278.field1292, n));
-        super.method14205(n);
+    public void draw(float n) {
+        this.field20986.changeDirection(this.method14308() ? Direction.BACKWARDS : Direction.FORWARDS);
+        n *= 0.09f + 0.25f * this.field20986.calcPercent() + (this.field20985 ? 0.0f : 0.2f);
+        RenderUtil.method26874((float)(this.field20478 + 10), (float)(this.field20479 + 16), 5.0f, 14.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+        RenderUtil.method26874((float)(this.field20478 + 17), (float)(this.field20479 + 10), 5.0f, 20.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+        RenderUtil.method26874((float)(this.field20478 + 24), (float)(this.field20479 + 20), 5.0f, 10.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+        super.draw(n);
     }
     
     public void method14738(final boolean field20985) {

@@ -151,7 +151,7 @@ public class HypixelSpeed extends Module
                             }
                         }
                         else if (this.field15953 <= 0 && Step.field15758 >= 3) {
-                            if (((this.method9883("Auto Jump") || HypixelSpeed.mc.player.field2967) && Class6430.method19114()) || HypixelSpeed.mc.gameSettings.field23439.method1056()) {
+                            if (((this.method9883("Auto Jump") || HypixelSpeed.mc.player.field2967) && ColorUtils.method19114()) || HypixelSpeed.mc.gameSettings.field23439.method1056()) {
                                 this.field15951 = 0;
                                 HypixelSpeed.mc.player.method2725();
                                 class5717.method16973(HypixelSpeed.mc.player.getMotion().x);

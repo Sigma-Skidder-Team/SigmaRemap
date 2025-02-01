@@ -97,7 +97,7 @@ public class JelloTouch
     }
     
     public JSONObject method21962(final JSONObject JSONObject) {
-        final Class88 class4406 = new Class88();
+        final JSONArray class4406 = new JSONArray();
         for (final Class8879 class4407 : this.field27849) {
             if (class4407.method31229() == -1) {
                 continue;
@@ -113,7 +113,7 @@ public class JelloTouch
     
     public void method21963(final JSONObject JSONObject) {
         if (JSONObject.has("keybinds")) {
-            final Class88 method13263 = JSONObject.method13263("keybinds");
+            final JSONArray method13263 = JSONObject.method13263("keybinds");
             for (int i = 0; i < method13263.method462(); ++i) {
                 final Class8879 e = new Class8879(method13263.method457(i));
                 if (e.method31228()) {

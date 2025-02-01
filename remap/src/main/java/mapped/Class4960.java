@@ -43,12 +43,12 @@ public class Class4960 extends Class4961
     private Map<Integer, Class7873> field21290;
     private Queue<Class4248> field21291;
     private final Queue<List<Object>> field21292;
-    private final Queue<Class9041<Class88>> field21293;
+    private final Queue<Class9041<JSONArray>> field21293;
     
     public Class4960(final Class4967 field21288, final String field21289, final Class7660 class7660) {
         this.field21290 = new HashMap<Integer, Class7873>();
         this.field21292 = new LinkedList<List<Object>>();
-        this.field21293 = new LinkedList<Class9041<Class88>>();
+        this.field21293 = new LinkedList<Class9041<JSONArray>>();
         this.field21288 = field21288;
         this.field21287 = field21289;
         if (class7660 != null) {
@@ -125,19 +125,19 @@ public class Class4960 extends Class4961
                 break;
             }
             case 2: {
-                this.method14948((Class9041<Class88>)class9041);
+                this.method14948((Class9041<JSONArray>)class9041);
                 break;
             }
             case 5: {
-                this.method14948((Class9041<Class88>)class9041);
+                this.method14948((Class9041<JSONArray>)class9041);
                 break;
             }
             case 3: {
-                this.method14950((Class9041<Class88>)class9041);
+                this.method14950((Class9041<JSONArray>)class9041);
                 break;
             }
             case 6: {
-                this.method14950((Class9041<Class88>)class9041);
+                this.method14950((Class9041<JSONArray>)class9041);
                 break;
             }
             case 1: {
@@ -151,7 +151,7 @@ public class Class4960 extends Class4961
         }
     }
     
-    private void method14948(final Class9041<Class88> class9041) {
+    private void method14948(final Class9041<JSONArray> class9041) {
         final ArrayList list = new ArrayList((Collection<? extends E>)Arrays.asList(method14960(class9041.field38266)));
         if (Class4960.field21268.isLoggable(Level.FINE)) {
             Class4960.field21268.fine(String.format("emitting event %s", list));
@@ -175,7 +175,7 @@ public class Class4960 extends Class4961
         return new Class7874(this, new boolean[] { false }, n, this);
     }
     
-    private void method14950(final Class9041<Class88> class9041) {
+    private void method14950(final Class9041<JSONArray> class9041) {
         final Class7873 class9042 = this.field21290.remove(class9041.field38264);
         if (class9042 == null) {
             if (Class4960.field21268.isLoggable(Level.FINE)) {
@@ -249,13 +249,13 @@ public class Class4960 extends Class4961
         return this.field21284;
     }
     
-    private static Object[] method14960(final Class88 class88) {
-        final int method462 = class88.method462();
+    private static Object[] method14960(final JSONArray JSONArray) {
+        final int method462 = JSONArray.method462();
         final Object[] array = new Object[method462];
         for (int i = 0; i < method462; ++i) {
             Object method463;
             try {
-                method463 = class88.method449(i);
+                method463 = JSONArray.method449(i);
             }
             catch (final JSONException thrown) {
                 Class4960.field21268.log(Level.WARNING, "An error occured while retrieving data from JSONArray", thrown);

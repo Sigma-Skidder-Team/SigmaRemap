@@ -38,8 +38,8 @@ public class Class4911 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
-        Class8154.method26888((float)(this.field20478 + 5), (float)(this.field20479 + 5), 10.0f, Class6430.method19118(this.method14386() ? Class265.field1274.field1292 : Class265.field1275.field1292, n));
-        super.method14205(n);
+    public void draw(final float n) {
+        RenderUtil.method26888((float)(this.field20478 + 5), (float)(this.field20479 + 5), 10.0f, ColorUtils.applyAlpha(this.method14386() ? ClientColors.field1274.color : ClientColors.field1275.color, n));
+        super.draw(n);
     }
 }

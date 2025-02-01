@@ -44,8 +44,8 @@ public class Class9524
         }
     }
     
-    public static Class88 method35551(final JSONTokener JSONTokener) throws JSONException {
-        final Class88 class8827 = new Class88();
+    public static JSONArray method35551(final JSONTokener JSONTokener) throws JSONException {
+        final JSONArray class8827 = new JSONArray();
         char c = '\0';
         Label_0101: {
             while (true) {
@@ -81,18 +81,18 @@ public class Class9524
         return class8827;
     }
     
-    public static JSONObject method35552(final Class88 class88, final JSONTokener class89) throws JSONException {
-        final Class88 method35551 = method35551(class89);
-        return (method35551 == null) ? null : method35551.method496(class88);
+    public static JSONObject method35552(final JSONArray JSONArray, final JSONTokener class89) throws JSONException {
+        final JSONArray method35551 = method35551(class89);
+        return (method35551 == null) ? null : method35551.method496(JSONArray);
     }
     
-    public static String method35553(final Class88 class88) {
+    public static String method35553(final JSONArray JSONArray) {
         final StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < class88.method462(); ++i) {
+        for (int i = 0; i < JSONArray.method462(); ++i) {
             if (i > 0) {
                 sb.append(',');
             }
-            final Object method463 = class88.method463(i);
+            final Object method463 = JSONArray.method463(i);
             if (method463 != null) {
                 final String string = method463.toString();
                 Label_0084: {
@@ -128,25 +128,25 @@ public class Class9524
         return sb.toString();
     }
     
-    public static Class88 method35554(final String s) throws JSONException {
+    public static JSONArray method35554(final String s) throws JSONException {
         return method35555(new JSONTokener(s));
     }
     
-    public static Class88 method35555(final JSONTokener JSONTokener) throws JSONException {
+    public static JSONArray method35555(final JSONTokener JSONTokener) throws JSONException {
         return method35557(method35551(JSONTokener), JSONTokener);
     }
     
-    public static Class88 method35556(final Class88 class88, final String s) throws JSONException {
-        return method35557(class88, new JSONTokener(s));
+    public static JSONArray method35556(final JSONArray JSONArray, final String s) throws JSONException {
+        return method35557(JSONArray, new JSONTokener(s));
     }
     
-    public static Class88 method35557(final Class88 class88, final JSONTokener class89) throws JSONException {
-        if (class88 == null || class88.method462() == 0) {
+    public static JSONArray method35557(final JSONArray JSONArray, final JSONTokener class89) throws JSONException {
+        if (JSONArray == null || JSONArray.method462() == 0) {
             return null;
         }
-        final Class88 class90 = new Class88();
+        final JSONArray class90 = new JSONArray();
         while (true) {
-            final JSONObject method35552 = method35552(class88, class89);
+            final JSONObject method35552 = method35552(JSONArray, class89);
             if (method35552 == null) {
                 break;
             }
@@ -158,24 +158,24 @@ public class Class9524
         return null;
     }
     
-    public static String toString(final Class88 class88) throws JSONException {
-        final JSONObject method475 = class88.method475(0);
+    public static String toString(final JSONArray JSONArray) throws JSONException {
+        final JSONObject method475 = JSONArray.method475(0);
         if (method475 != null) {
-            final Class88 method476 = method475.method13275();
+            final JSONArray method476 = method475.method13275();
             if (method476 != null) {
-                return method35553(method476) + toString(method476, class88);
+                return method35553(method476) + toString(method476, JSONArray);
             }
         }
         return null;
     }
     
-    public static String toString(final Class88 class88, final Class88 class89) throws JSONException {
-        if (class88 != null && class88.method462() != 0) {
+    public static String toString(final JSONArray JSONArray, final JSONArray class89) throws JSONException {
+        if (JSONArray != null && JSONArray.method462() != 0) {
             final StringBuffer sb = new StringBuffer();
             for (int i = 0; i < class89.method462(); ++i) {
                 final JSONObject method475 = class89.method475(i);
                 if (method475 != null) {
-                    sb.append(method35553(method475.method13310(class88)));
+                    sb.append(method35553(method475.method13310(JSONArray)));
                 }
             }
             return sb.toString();

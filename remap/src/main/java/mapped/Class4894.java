@@ -111,7 +111,7 @@ public class Class4894 extends Class4841
         class4868.method14260((class4803, n) -> this.method14696(!this.method14695()));
         for (final String s : this.field20920) {
             final Class4868 class4869;
-            this.addVisualThing(class4869 = new Class4868(this, s, 0, this.method14278(), this.method14276(), this.method14278(), new Class6523(Class265.field1278.field1292, -1381654, this.field20497.method19729(), this.field20497.method19729(), Class2056.field11734, Class2056.field11738), s, this.method14316()));
+            this.addVisualThing(class4869 = new Class4868(this, s, 0, this.method14278(), this.method14276(), this.method14278(), new Class6523(ClientColors.LIGHT_GREYISH_BLUE.color, -1381654, this.field20497.method19729(), this.field20497.method19729(), Class2056.field11734, Class2056.field11738), s, this.method14316()));
             class4869.method14603(10);
             class4869.method14260((class4803, n) -> {
                 final int method14693 = this.method14693();
@@ -122,7 +122,7 @@ public class Class4894 extends Class4841
                 }
             });
         }
-        this.field20924.method35855(Class2186.field12965);
+        this.field20924.changeDirection(Direction.FORWARDS);
         this.method14255(new Class6803(1));
     }
     
@@ -137,9 +137,9 @@ public class Class4894 extends Class4841
     }
     
     private int method14686() {
-        float n = Class8468.method28270(this.field20924.method35858(), 0.0f, 1.0f, 1.0f);
-        if (this.field20924.method35857() != Class2186.field12964) {
-            n = Class7791.method25029(this.field20924.method35858(), 0.0f, 1.0f, 1.0f);
+        float n = Class8468.method28270(this.field20924.calcPercent(), 0.0f, 1.0f, 1.0f);
+        if (this.field20924.getDirection() != Direction.BACKWARDS) {
+            n = Class7791.method25029(this.field20924.calcPercent(), 0.0f, 1.0f, 1.0f);
         }
         return (int)((this.method14278() * this.field20920.size() + 1) * n);
     }
@@ -162,15 +162,15 @@ public class Class4894 extends Class4841
     public void method14200(final int n, final int n2) {
         super.method14200(n, n2);
         if (!this.method14236(n, n2)) {
-            if (this.field20924.method35857() == Class2186.field12964) {
+            if (this.field20924.getDirection() == Direction.BACKWARDS) {
                 this.method14696(false);
             }
         }
         final int n3 = (n2 - this.method14281()) / this.method14278() - 1;
         if (n3 >= 0) {
             if (n3 < this.field20920.size()) {
-                if (this.field20924.method35857() == Class2186.field12964) {
-                    if (this.field20924.method35858() == 1.0f) {
+                if (this.field20924.getDirection() == Direction.BACKWARDS) {
+                    if (this.field20924.calcPercent() == 1.0f) {
                         if (n - this.method14280() < this.method14276()) {
                             for (final Map.Entry<K, Class4845> entry : this.field20925.entrySet()) {
                                 entry.getValue().method14297((int)entry.getKey() == n3);
@@ -181,7 +181,7 @@ public class Class4894 extends Class4841
                 }
             }
         }
-        if (!this.method14236(n, n2) || this.field20924.method35857() == Class2186.field12965) {
+        if (!this.method14236(n, n2) || this.field20924.getDirection() == Direction.FORWARDS) {
             final Iterator<Map.Entry<Integer, Class4845>> iterator2 = this.field20925.entrySet().iterator();
             while (iterator2.hasNext()) {
                 ((Map.Entry<K, Class4845>)iterator2.next()).getValue().method14297(false);
@@ -190,12 +190,12 @@ public class Class4894 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
-        Class8154.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), Class6430.method19118(Class265.field1278.field1292, n * this.field20924.method35858()));
-        Class8154.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14686() - 1), 6.0f, n * 0.1f * this.field20924.method35858());
-        Class8154.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14686() - 1), 20.0f, n * 0.2f * this.field20924.method35858());
+    public void draw(final float n) {
+        RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * this.field20924.calcPercent()));
+        RenderUtil.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14686() - 1), 6.0f, n * 0.1f * this.field20924.calcPercent());
+        RenderUtil.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14686() - 1), 20.0f, n * 0.2f * this.field20924.calcPercent());
         if (this.method14314() != null) {
-            Class8154.method26865(this);
+            RenderUtil.method26865(this);
             String string = "";
             for (final Map.Entry<Integer, V> entry : this.field20925.entrySet()) {
                 if (this.field20921 != entry.getKey()) {
@@ -203,28 +203,28 @@ public class Class4894 extends Class4841
                 }
                 string = " (" + ((Class4845)entry.getValue()).field20758.get(((Class4845)entry.getValue()).field20759) + ")";
             }
-            Class8154.method26889(this.method14316(), (float)(this.method14272() + 10), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2 + 1), this.method14314() + string, Class6430.method19118(this.field20497.method19729(), n * 0.7f));
-            Class8154.method26872();
+            RenderUtil.drawString(this.method14316(), (float)(this.method14272() + 10), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2 + 1), this.method14314() + string, ColorUtils.applyAlpha(this.field20497.method19729(), n * 0.7f));
+            RenderUtil.method26872();
         }
-        final boolean b = this.field20924.method35858() < 1.0f;
+        final boolean b = this.field20924.calcPercent() < 1.0f;
         if (b) {
-            Class8154.method26870(this.method14280(), this.method14281(), this.method14280() + this.method14276() + 140, this.method14281() + this.method14278() + this.method14685());
+            RenderUtil.method26870(this.method14280(), this.method14281(), this.method14280() + this.method14276() + 140, this.method14281() + this.method14278() + this.method14685());
         }
         GL11.glPushMatrix();
-        if (this.field20924.method35858() > 0.0f) {
-            super.method14205(n);
+        if (this.field20924.calcPercent() > 0.0f) {
+            super.draw(n);
         }
         GL11.glPopMatrix();
         if (b) {
-            Class8154.method26872();
+            RenderUtil.method26872();
         }
         final int n2 = this.method14276() - (int)(this.method14278() / 2.0f + 0.5f);
         final int n3 = (int)(this.method14278() / 2.0f + 0.5f) + 1;
         final int n4 = (int)(this.method14278() / 6.0f + 0.5f);
         GL11.glTranslatef((float)(this.method14272() + n2), (float)(this.method14274() + n3), 0.0f);
-        GL11.glRotatef(90.0f * this.field20924.method35858(), 0.0f, 0.0f, 1.0f);
+        GL11.glRotatef(90.0f * this.field20924.calcPercent(), 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-this.method14272() - n2), (float)(-this.method14274() - n3), 0.0f);
-        Class8154.method26889(this.field20496, (float)(this.method14272() + n2 - 6), (float)(this.method14274() + n3 - 14), ">", Class6430.method19118(this.field20497.method19729(), n * 0.7f * (this.method14236(this.method14320(), this.method14321()) ? 1.0f : 0.5f)));
+        RenderUtil.drawString(this.field20496, (float)(this.method14272() + n2 - 6), (float)(this.method14274() + n3 - 14), ">", ColorUtils.applyAlpha(this.field20497.method19729(), n * 0.7f * (this.method14236(this.method14320(), this.method14321()) ? 1.0f : 0.5f)));
     }
     
     public List<String> method14689() {
@@ -261,7 +261,7 @@ public class Class4894 extends Class4841
     
     public void method14696(final boolean field20922) {
         this.field20922 = field20922;
-        this.field20924.method35855(this.method14695() ? Class2186.field12964 : Class2186.field12965);
+        this.field20924.changeDirection(this.method14695() ? Direction.BACKWARDS : Direction.FORWARDS);
     }
     
     @Override
@@ -291,6 +291,6 @@ public class Class4894 extends Class4841
     }
     
     static {
-        field20919 = new Class6523(1250067, -15329770).method19734(Class265.field1273.field1292).method19738(Class2056.field11738);
+        field20919 = new Class6523(1250067, -15329770).method19734(ClientColors.field1273.color).method19738(Class2056.field11738);
     }
 }

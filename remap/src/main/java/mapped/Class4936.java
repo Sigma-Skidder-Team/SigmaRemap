@@ -121,12 +121,12 @@ public class Class4936 extends Class4800
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         this.method14850();
-        super.method14205(n);
-        Class8154.method26889(ClientFonts.Default, 20.0f, 20.0f, Minecraft.method5277().method5287().method33692(), -2236963);
-        Class8154.method26890(ClientFonts.Default, (float)(this.method14276() / 2), 20.0f, "Account Manager - " + this.method14849() + " alts", Class265.field1278.field1292, Class2056.field11738, Class2056.field11734);
-        Class8154.method26891(ClientFonts.Default, (float)(this.method14276() / 2), 40.0f, this.field21185, Class265.field1278.field1292, Class2056.field11738, Class2056.field11734, false);
+        super.draw(n);
+        RenderUtil.drawString(ClientFonts.Default, 20.0f, 20.0f, Minecraft.method5277().method5287().method33692(), -2236963);
+        RenderUtil.method26890(ClientFonts.Default, (float)(this.method14276() / 2), 20.0f, "Account Manager - " + this.method14849() + " alts", ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11734);
+        RenderUtil.method26891(ClientFonts.Default, (float)(this.method14276() / 2), 40.0f, this.field21185, ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11734, false);
     }
     
     private int method14849() {
@@ -142,8 +142,8 @@ public class Class4936 extends Class4800
     }
     
     private void method14850() {
-        Class8154.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class9493.field40801);
-        Class8154.method26874(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class6430.method19118(Class265.field1273.field1292, 0.23f));
+        RenderUtil.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class9493.field40801);
+        RenderUtil.method26874(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.23f));
     }
     
     @Override

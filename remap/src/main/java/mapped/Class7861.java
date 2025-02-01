@@ -105,13 +105,13 @@ public class Class7861
     }
     
     public void method25467() {
-        final Class88 class88 = new Class88();
+        final JSONArray JSONArray = new JSONArray();
         final Iterator<Class7971> iterator = this.field32296.iterator();
         while (iterator.hasNext()) {
-            class88.method486(iterator.next().method25904());
+            JSONArray.method486(iterator.next().method25904());
         }
         final JSONObject class89 = new JSONObject();
-        class89.method13301("alts", class88);
+        class89.method13301("alts", JSONArray);
         try {
             Class9532.method35585(class89, new File(Client.method35173().method35208() + "/alts.json"));
         }
@@ -124,7 +124,7 @@ public class Class7861
         try {
             final JSONObject method35586 = Class9532.method35586(this.field32297);
             if (!method35586.has("alts")) {
-                method35586.method13301("alts", new Class88());
+                method35586.method13301("alts", new JSONArray());
             }
             final Iterator<Object> iterator = method35586.method13263("alts").iterator();
             while (iterator.hasNext()) {

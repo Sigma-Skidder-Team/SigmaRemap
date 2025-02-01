@@ -44,9 +44,9 @@ public class Class4855 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
-        this.field20804.method35855(Class2186.field12964);
-        if (this.field20804.method35858() == 1.0f) {
+    public void draw(final float n) {
+        this.field20804.changeDirection(Direction.BACKWARDS);
+        if (this.field20804.calcPercent() == 1.0f) {
             this.field20804 = new Class9572(1500, 0);
         }
         final float[] method14567 = this.method14567();
@@ -56,15 +56,15 @@ public class Class4855 extends Class4841
         final float n4 = method14567[1];
         final float n5 = method14567[2];
         final float n6 = method14567[3];
-        Class8154.method26925((float)(this.field20478 + field20803), (float)(this.field20479 + field20803), (float)(this.field20480 - field20803 * 2), (float)(this.field20481 - field20803 * 2), 3.0f, Class6430.method19118(Class265.field1273.field1292, 0.05f * n));
+        RenderUtil.method26925((float)(this.field20478 + field20803), (float)(this.field20479 + field20803), (float)(this.field20480 - field20803 * 2), (float)(this.field20481 - field20803 * 2), 3.0f, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.05f * n));
         final ArrayList list = new ArrayList();
         list.add(new Class7202(0.0, 0.0));
         list.add(new Class7202(n3, n4));
         list.add(new Class7202(n5, n6));
         list.add(new Class7202(1.0, 1.0));
-        final Class8862 class8862 = new Class8862(1.0f / n2 * 2.0f);
-        Class8154.method26888((float)(this.field20478 + n2 * class8862.method31031(list, Math.min(0.8f, this.field20804.method35858()) * 1.25f) + field20803), (float)(this.field20479 - field20803 / 2 + this.field20481), 14.0f, Class6430.method19118(Class265.field1274.field1292, n));
-        final List<Class7202> method14568 = class8862.method31032(list);
+        final MathUtils mathUtils = new MathUtils(1.0f / n2 * 2.0f);
+        RenderUtil.method26888((float)(this.field20478 + n2 * mathUtils.method31031(list, Math.min(0.8f, this.field20804.calcPercent()) * 1.25f) + field20803), (float)(this.field20479 - field20803 / 2 + this.field20481), 14.0f, ColorUtils.applyAlpha(ClientColors.field1274.color, n));
+        final List<Class7202> method14568 = mathUtils.method31032(list);
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(this.field20478 + field20803), (float)(this.field20479 + field20803), 0.0f);
         GL11.glLineWidth(1.0f);
@@ -94,6 +94,6 @@ public class Class4855 extends Class4841
         RenderSystem.disableBlend();
         RenderSystem.enableTexture();
         GL11.glPopMatrix();
-        super.method14205(n);
+        super.draw(n);
     }
 }

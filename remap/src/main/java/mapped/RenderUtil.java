@@ -21,7 +21,7 @@ import java.math.BigDecimal;
 import java.nio.IntBuffer;
 import java.util.Stack;
 
-public class Class8154
+public class RenderUtil
 {
     private static String[] field33580;
     private static final boolean field33581 = false;
@@ -67,7 +67,7 @@ public class Class8154
     }
     
     public static float method26867() {
-        return (float)Class8154.field33582.field4632.method7700();
+        return (float) RenderUtil.field33582.field4632.method7700();
     }
     
     public static void method26868(final float n, final float n2, final float n3, final float n4) {
@@ -100,7 +100,7 @@ public class Class8154
         if (GL11.glIsEnabled(3089)) {
             final IntBuffer intBuffer = BufferUtils.createIntBuffer(16);
             GL11.glGetIntegerv(3088, intBuffer);
-            Class8154.field33584.push(intBuffer);
+            RenderUtil.field33584.push(intBuffer);
             final int value = intBuffer.get(0);
             final int n5 = Minecraft.method5277().field4632.method7693() - intBuffer.get(1) - intBuffer.get(3);
             final int n6 = value + intBuffer.get(2);
@@ -135,17 +135,17 @@ public class Class8154
     }
     
     public static void method26872() {
-        if (Class8154.field33584.isEmpty()) {
+        if (RenderUtil.field33584.isEmpty()) {
             GL11.glDisable(3089);
         }
         else {
-            final IntBuffer intBuffer = Class8154.field33584.pop();
+            final IntBuffer intBuffer = RenderUtil.field33584.pop();
             GL11.glScissor(intBuffer.get(0), intBuffer.get(1), intBuffer.get(2), intBuffer.get(3));
         }
     }
     
     public static void method26873(final float field33585, final float field33586, final float field33587) {
-        GL11.glScalef(Class8154.field33585 = field33585, Class8154.field33586 = field33586, Class8154.field33587 = field33587);
+        GL11.glScalef(RenderUtil.field33585 = field33585, RenderUtil.field33586 = field33586, RenderUtil.field33587 = field33587);
     }
     
     public static void method26874(final float n, final float n2, final float n3, final float n4, final int n5) {
@@ -343,7 +343,7 @@ public class Class8154
         RenderSystem.enableBlend();
         RenderSystem.disableTexture();
         RenderSystem.method30016(770, 771, 1, 0);
-        GL11.glColor4fv(Class6430.method19139(n4));
+        GL11.glColor4fv(ColorUtils.method19139(n4));
         GL11.glEnable(2881);
         GL11.glBegin(4);
         GL11.glVertex2f(n + n3 / 2.0f, n2 + n3 / 2.0f);
@@ -351,7 +351,7 @@ public class Class8154
         GL11.glVertex2f(n - n3 / 2.0f, n2);
         GL11.glEnd();
         GL11.glLineWidth(2.0f);
-        GL11.glColor4fv(Class6430.method19139(n5));
+        GL11.glColor4fv(ColorUtils.method19139(n5));
         GL11.glBegin(3);
         GL11.glVertex2f(n + n3 / 2.0f, n2 + n3 / 2.0f);
         GL11.glVertex2f(n + n3 / 2.0f, n2 - n3 / 2.0f);
@@ -400,7 +400,7 @@ public class Class8154
         RenderSystem.disableBlend();
     }
     
-    public static void method26889(final TrueTypeFont class7524, final float n, final float n2, final String s, final int n3) {
+    public static void drawString(final TrueTypeFont class7524, final float n, final float n2, final String s, final int n3) {
         method26891(class7524, n, n2, s, n3, Class2056.field11734, Class2056.field11735, false);
     }
     
@@ -709,7 +709,7 @@ public class Class8154
     }
     
     public static void method26904(final float n, final float n2, final float n3, final float n4, final Texture class7776, final float n5) {
-        method26899(n, n2, n3, n4, class7776, Class6430.method19118(Class265.field1278.field1292, n5));
+        method26899(n, n2, n3, n4, class7776, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n5));
     }
     
     public static void method26905(final float n, final float n2, final float n3, final float n4, final Texture class7776) {
@@ -936,7 +936,7 @@ public class Class8154
     
     public static void method26913(final float n, final float n2, final float n3, final float n4, final float n5, final float n6) {
         GL11.glAlphaFunc(519, 0.0f);
-        final int method19118 = Class6430.method19118(Class265.field1278.field1292, n6);
+        final int method19118 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n6);
         method26899(n - n5, n2 - n5, n5, n5, ClientAssets.shadow_corner, method19118);
         method26899(n + n3, n2 - n5, n5, n5, ClientAssets.shadow_corner_2, method19118);
         method26899(n - n5, n2 + n4, n5, n5, ClientAssets.shadow_corner_3, method19118);
@@ -948,7 +948,7 @@ public class Class8154
     }
     
     public static void method26914(final float n, final float n2, final float n3, final float n4, final float n5, final float n6) {
-        final int method19118 = Class6430.method19118(Class265.field1278.field1292, n6);
+        final int method19118 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n6);
         method26900(n, n2, n5, n4, ClientAssets.shadow_right, method19118, false);
         method26900(n + n3 - n5, n2, n5, n4, ClientAssets.shadow_left, method19118, false);
         method26900(n, n2, n3, n5, ClientAssets.shadow_bottom, method19118, false);
@@ -1179,7 +1179,7 @@ public class Class8154
         GL11.glStencilOp(7681, 7680, 7680);
         GL11.glStencilMask(1);
         GL11.glClear(1024);
-        Class8154.field33583 = true;
+        RenderUtil.field33583 = true;
     }
     
     public static void method26927(final Class2225 class2225) {
@@ -1193,18 +1193,18 @@ public class Class8154
         GL11.glStencilMask(-1);
         GL11.glDisable(2960);
         GL11.glPopMatrix();
-        Class8154.field33583 = false;
+        RenderUtil.field33583 = false;
     }
     
     public static void method26929(ItemStack class8321, final int n, final int n2, final int n3, final int n4) {
         if (class8321 != null) {
-            final Class1663 method5290 = Class8154.field33582.method5290();
-            Class8154.field33582.method5290();
+            final Class1663 method5290 = RenderUtil.field33582.method5290();
+            RenderUtil.field33582.method5290();
             method5290.method5849(Class1663.field9428);
             GL11.glPushMatrix();
             GL11.glTranslatef((float)n, (float)n2, 0.0f);
             GL11.glScalef(n3 / 16.0f, n4 / 16.0f, 0.0f);
-            final ItemRenderer method5291 = Class8154.field33582.getItemRenderer();
+            final ItemRenderer method5291 = RenderUtil.field33582.getItemRenderer();
             if (class8321.field34176 == 0) {
                 class8321 = new ItemStack(class8321.getItem());
             }
@@ -1223,8 +1223,8 @@ public class Class8154
             RenderSystem.method30084(33986, 240.0f, 240.0f);
             GL11.glDisable(2929);
             Class7777.method24931();
-            final Class1663 method5292 = Class8154.field33582.method5290();
-            Class8154.field33582.method5290();
+            final Class1663 method5292 = RenderUtil.field33582.method5290();
+            RenderUtil.field33582.method5290();
             method5292.method5849(Class1663.field9428);
             RenderSystem.method30109();
         }
@@ -1247,18 +1247,18 @@ public class Class8154
         GL11.glGetFloatv(2982, floatBuffer2);
         GL11.glGetFloatv(2983, floatBuffer3);
         GL11.glGetIntegerv(2978, intBuffer);
-        if (!Class6430.method19167((float)n, (float)n2, (float)n3, floatBuffer2, floatBuffer3, intBuffer, floatBuffer)) {
+        if (!ColorUtils.method19167((float)n, (float)n2, (float)n3, floatBuffer2, floatBuffer3, intBuffer, floatBuffer)) {
             return null;
         }
-        return new double[] { floatBuffer.get(0) / Class9000.field37993, (Class8154.field33582.field4667.field24887 - floatBuffer.get(1)) / Class9000.field37993, floatBuffer.get(2) };
+        return new double[] { floatBuffer.get(0) / Class9000.field37993, (RenderUtil.field33582.field4667.field24887 - floatBuffer.get(1)) / Class9000.field37993, floatBuffer.get(2) };
     }
     
     static {
         field33582 = Minecraft.method5277();
-        Class8154.field33583 = false;
-        Class8154.field33584 = new Stack<IntBuffer>();
-        Class8154.field33585 = 1.0f;
-        Class8154.field33586 = 1.0f;
-        Class8154.field33587 = 1.0f;
+        RenderUtil.field33583 = false;
+        RenderUtil.field33584 = new Stack<IntBuffer>();
+        RenderUtil.field33585 = 1.0f;
+        RenderUtil.field33586 = 1.0f;
+        RenderUtil.field33587 = 1.0f;
     }
 }

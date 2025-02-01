@@ -38,7 +38,7 @@ public class Class8221
     
     public void method27236() {
         this.field33772 = true;
-        this.field33774.method35855(Class2186.field12965);
+        this.field33774.changeDirection(Direction.FORWARDS);
     }
     
     public boolean method27237() {
@@ -46,7 +46,7 @@ public class Class8221
     }
     
     public boolean method27238() {
-        return this.field33772 && this.field33774.method35858() == 0.0f;
+        return this.field33772 && this.field33774.calcPercent() == 0.0f;
     }
     
     public int method27239() {
@@ -54,13 +54,13 @@ public class Class8221
     }
     
     public void method27240(final float n) {
-        float n2 = Class8468.method28270(this.field33774.method35858(), 0.0f, 1.0f, 1.0f);
-        if (this.field33774.method35857() == Class2186.field12965) {
-            n2 = Class8468.method28269(this.field33774.method35858(), 0.0f, 1.0f, 1.0f);
+        float n2 = Class8468.method28270(this.field33774.calcPercent(), 0.0f, 1.0f, 1.0f);
+        if (this.field33774.getDirection() == Direction.FORWARDS) {
+            n2 = Class8468.method28269(this.field33774.calcPercent(), 0.0f, 1.0f, 1.0f);
         }
-        Class8154.method26869((float)this.method27234(), (float)this.method27235(), this.method27233() * n2, (float)this.method27239());
+        RenderUtil.method26869((float)this.method27234(), (float)this.method27235(), this.method27233() * n2, (float)this.method27239());
         this.method27232(n);
-        Class8154.method26872();
+        RenderUtil.method26872();
     }
     
     public void method27232(final float n) {

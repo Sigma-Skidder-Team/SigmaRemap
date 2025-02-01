@@ -21,7 +21,7 @@ public class AACStep extends Module
             return;
         }
         final double method17049 = class5745.method17049();
-        if (Class6430.method19160(AACStep.mc.player, 1.0E-4f)) {
+        if (ColorUtils.method19160(AACStep.mc.player, 1.0E-4f)) {
             if (!Class7482.method23142()) {
                 if (method17049 >= 0.625) {
                     final double field2395 = AACStep.mc.player.posX;

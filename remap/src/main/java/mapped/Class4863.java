@@ -41,9 +41,9 @@ public class Class4863 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         this.method14583().method25648(this.method14272(), this.method14274(), this.method14276(), this.method14278(), n);
-        super.method14205(n);
+        super.draw(n);
     }
     
     public Class7920 method14583() {

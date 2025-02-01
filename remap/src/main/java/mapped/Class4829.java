@@ -65,11 +65,11 @@ public class Class4829 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         final int n2 = 20;
         if (n >= 0.6) {
-            Class8154.method26915(this.field20478 + n2, this.field20479 + n2, this.field20480 - n2 * 2, this.field20481 - n2 * 2, Class6430.method19118(Class265.field1278.field1292, 0.9f * n));
-            super.method14205(n);
+            RenderUtil.method26915(this.field20478 + n2, this.field20479 + n2, this.field20480 - n2 * 2, this.field20481 - n2 * 2, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f * n));
+            super.draw(n);
         }
     }
 }

@@ -43,7 +43,7 @@ public class AACAntiKnockBack extends Module
                     final double n4 = (7 - AACAntiKnockBack.field15956) * this.getNumberSettingValueByName("Strengh") * 0.04 * this.field15958 * 0.2;
                     final double y = (n * cos + n2 * sin) * n4;
                     final double x = (n * sin - n2 * cos) * n4;
-                    if (Class8845.method30918(this.field15957, (float)(Math.atan2(y, x) * 180.0 / 3.141592653589793) - 90.0f) > 100.0f && Class6430.method19114()) {
+                    if (Class8845.method30918(this.field15957, (float)(Math.atan2(y, x) * 180.0 / 3.141592653589793) - 90.0f) > 100.0f && ColorUtils.method19114()) {
                         class5717.method16973(class5717.method16972() + y);
                         class5717.method16977(class5717.method16976() + x);
                     }
@@ -51,8 +51,8 @@ public class AACAntiKnockBack extends Module
                         class5717.method16973(class5717.method16972() * 0.8);
                         class5717.method16977(class5717.method16976() * 0.8);
                     }
-                    Class6430.method19154(class5717.method16972());
-                    Class6430.method19156(class5717.method16976());
+                    ColorUtils.method19154(class5717.method16972());
+                    ColorUtils.method19156(class5717.method16976());
                 }
             }
             return;
@@ -62,7 +62,7 @@ public class AACAntiKnockBack extends Module
                 if (AACAntiKnockBack.mc.player.field2938 > 0) {
                     if (AACAntiKnockBack.mc.player.fallDistance < 2.0f) {
                         AACAntiKnockBack.mc.player.method1738(0.0, -1.0, 0.0);
-                        Class6430.method19155(AACAntiKnockBack.mc.player.getMotion().getY());
+                        ColorUtils.method19155(AACAntiKnockBack.mc.player.getMotion().getY());
                         AACAntiKnockBack.mc.player.onGround = true;
                         AACAntiKnockBack.field15956 = 20;
                     }

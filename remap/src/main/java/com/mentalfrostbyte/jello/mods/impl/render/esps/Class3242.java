@@ -24,7 +24,7 @@ public class Class3242 extends Module
         super(Category.RENDER, "Fill", "Fill ESP");
         this.field15730 = false;
         this.field15731 = IRenderTypeBuffer.method25213(Class3242.mc.method5333().field16262, new BufferBuilder(256));
-        this.addSetting(new ColorSetting("Color", "The tracers color", Class265.field1278.field1292));
+        this.addSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.color));
     }
     
     @EventListener

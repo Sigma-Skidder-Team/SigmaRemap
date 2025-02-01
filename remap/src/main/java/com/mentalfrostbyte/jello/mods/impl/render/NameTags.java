@@ -41,9 +41,9 @@ public class NameTags extends Module
                     final int round2 = Math.round(class5736.y);
                     GL11.glPushMatrix();
                     GL11.glTranslatef((float)(-n3 / 2), (float)(-n), 0.0f);
-                    Class8154.method26874((float)round, (float)round2, (float)n3, 20.0f, Class6430.method19118(Class265.field1273.field1292, 0.5f));
-                    Class8154.method26889(Class9493.field40813, (float)(round + 3), (float)round2, method8459, Class6430.method19118(Class265.field1273.field1292, 0.5f));
-                    Class8154.method26889(Class9493.field40813, (float)(round + 3), (float)(round2 - 1), method8459, Class265.field1278.field1292);
+                    RenderUtil.method26874((float)round, (float)round2, (float)n3, 20.0f, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
+                    RenderUtil.drawString(Class9493.field40813, (float)(round + 3), (float)round2, method8459, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
+                    RenderUtil.drawString(Class9493.field40813, (float)(round + 3), (float)(round2 - 1), method8459, ClientColors.LIGHT_GREYISH_BLUE.color);
                     GL11.glPopMatrix();
                     final List<ItemStack> method8460 = Class8639.method29374(class5735);
                     if (method8460.size() == 0) {
@@ -103,7 +103,7 @@ public class NameTags extends Module
                 }
                 final PlayerEntity key = (PlayerEntity)class5740;
                 final Class9172 method29094 = Class8591.method29094(key);
-                final double[] method29095 = Class8154.method26931(method29094.field38854, method29094.field38855 + key.method1931() + 0.30000001192092896, method29094.field38856);
+                final double[] method29095 = RenderUtil.method26931(method29094.field38854, method29094.field38855 + key.method1931() + 0.30000001192092896, method29094.field38856);
                 if (method29095 == null) {
                     continue;
                 }

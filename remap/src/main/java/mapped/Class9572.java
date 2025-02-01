@@ -11,38 +11,38 @@ public class Class9572
     private static String[] field41602;
     public int field41603;
     public int field41604;
-    public Class2186 field41605;
+    public Direction field41605;
     public Date field41606;
     public Date field41607;
     
     public Class9572(final int n, final int n2) {
-        this(n, n2, Class2186.field12964);
+        this(n, n2, Direction.BACKWARDS);
     }
     
-    public Class9572(final int field41603, final int field41604, final Class2186 class2186) {
-        this.field41605 = Class2186.field12964;
+    public Class9572(final int field41603, final int field41604, final Direction direction) {
+        this.field41605 = Direction.BACKWARDS;
         this.field41603 = field41603;
         this.field41604 = field41604;
         this.field41606 = new Date();
         this.field41607 = new Date();
-        this.method35855(class2186);
+        this.changeDirection(direction);
     }
     
     public int method35854() {
         return this.field41603;
     }
     
-    public void method35855(final Class2186 field41605) {
+    public void changeDirection(final Direction field41605) {
         if (this.field41605 == field41605) {
             return;
         }
         switch (Class8094.field33328[field41605.ordinal()]) {
             case 1: {
-                this.field41606 = new Date(new Date().getTime() - (long)(this.method35858() * this.field41603));
+                this.field41606 = new Date(new Date().getTime() - (long)(this.calcPercent() * this.field41603));
                 break;
             }
             case 2: {
-                this.field41607 = new Date(new Date().getTime() - (long)((1.0f - this.method35858()) * this.field41604));
+                this.field41607 = new Date(new Date().getTime() - (long)((1.0f - this.calcPercent()) * this.field41604));
                 break;
             }
         }
@@ -62,12 +62,12 @@ public class Class9572
         }
     }
     
-    public Class2186 method35857() {
+    public Direction getDirection() {
         return this.field41605;
     }
     
-    public float method35858() {
-        if (this.field41605 != Class2186.field12964) {
+    public float calcPercent() {
+        if (this.field41605 != Direction.BACKWARDS) {
             return 1.0f - Math.min(this.field41604, new Date().getTime() - this.field41607.getTime()) / (float)this.field41604;
         }
         return Math.min(this.field41603, new Date().getTime() - this.field41606.getTime()) / (float)this.field41603;

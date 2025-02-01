@@ -58,13 +58,13 @@ public class NCPLongJump extends Module
             }
             final BlockPos class5718 = new BlockPos(NCPLongJump.mc.player.posX, NCPLongJump.mc.player.posY - 0.4, NCPLongJump.mc.player.posZ);
             if (Step.field15758 > 1) {
-                if (this.method9914().method9883("BorderJump") && !Class4609.method13708(class5718) && this.field15526 > 0 && Class6430.method19114()) {
+                if (this.method9914().method9883("BorderJump") && !Class4609.method13708(class5718) && this.field15526 > 0 && ColorUtils.method19114()) {
                     NCPLongJump.mc.player.method2725();
                     class5717.method16973(NCPLongJump.mc.player.getMotion().x);
                     class5717.method16975(NCPLongJump.mc.player.getMotion().y);
                     class5717.method16977(NCPLongJump.mc.player.getMotion().z);
                 }
-                else if (this.method9914().method9883("Auto Jump") && this.field15526 > (this.field15528 ? 1 : 0) && Class6430.method19114()) {
+                else if (this.method9914().method9883("Auto Jump") && this.field15526 > (this.field15528 ? 1 : 0) && ColorUtils.method19114()) {
                     NCPLongJump.mc.player.method2725();
                     class5717.method16973(NCPLongJump.mc.player.getMotion().x);
                     class5717.method16975(NCPLongJump.mc.player.getMotion().y);
@@ -103,7 +103,7 @@ public class NCPLongJump extends Module
                         this.field15529 = field15529;
                     }
                 }
-                if (NCPLongJump.mc.player.collidedHorizontally || !Class6430.method19114()) {
+                if (NCPLongJump.mc.player.collidedHorizontally || !ColorUtils.method19114()) {
                     this.field15529 = field15529;
                 }
                 Class7482.method23149(class5717, this.field15529);
@@ -116,7 +116,7 @@ public class NCPLongJump extends Module
                         }
                         case "High": {
                             class5717.method16975(((LongJump)this.method9914()).method10271(this.field15527));
-                            if (!Class6430.method19146() || !Client.method35173().method35189().method21551(NoFall.class).method9906() || (this.field15527 != 8 && this.field15527 != 21)) {
+                            if (!ColorUtils.method19146() || !Client.method35173().method35189().method21551(NoFall.class).method9906() || (this.field15527 != 8 && this.field15527 != 21)) {
                                 break;
                             }
                             final double n3 = NCPLongJump.mc.player.posY + class5717.method16974();
@@ -139,7 +139,7 @@ public class NCPLongJump extends Module
                 Class7482.method23149(class5717, Class7482.method23137() * 0.2);
             }
         }
-        Class6430.method19155(class5717.method16974());
+        ColorUtils.method19155(class5717.method16974());
     }
     
     @EventListener
@@ -157,7 +157,7 @@ public class NCPLongJump extends Module
                     }
                     if (this.method9887("Speed Mode").equals("Hypixel")) {
                         if (this.getNumberSettingValueByName("Boost") > 1.75) {
-                            Class6430.method19179(true);
+                            ColorUtils.method19179(true);
                         }
                     }
                     NCPLongJump.mc.method5269().method17292(new Class4354(NCPLongJump.mc.player.posX, NCPLongJump.mc.player.posY + 0.425, NCPLongJump.mc.player.posZ, false));

@@ -34,7 +34,7 @@ public class CubecraftLongJump extends Module
     @EventListener
     public void method10016(final Class5743 class5743) {
         if (this.method9906() && CubecraftLongJump.mc.player != null) {
-            if (!Class6430.method19160(CubecraftLongJump.mc.player, 0.001f)) {
+            if (!ColorUtils.method19160(CubecraftLongJump.mc.player, 0.001f)) {
                 ++this.field15596;
                 this.field15597 -= 0.005;
                 if (this.field15597 < 0.26 || this.field15596 > 6) {
@@ -59,7 +59,7 @@ public class CubecraftLongJump extends Module
                     CubecraftLongJump.mc.method5269().method17292(new Class4354(field2395, field2396, field2397, false));
                 }
                 CubecraftLongJump.mc.method5269().method17292(new Class4354(field2395, field2396, field2397, true));
-                Class6430.method19155(Class7482.method23141());
+                ColorUtils.method19155(Class7482.method23141());
                 this.field15596 = 0;
                 Class7482.method23151(this.field15597 = this.getNumberSettingValueByName("Boost") / 2.0f);
             }

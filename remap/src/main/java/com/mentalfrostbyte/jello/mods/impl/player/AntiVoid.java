@@ -37,7 +37,7 @@ public class AntiVoid extends Module
         this.field15662 = 0.0;
         this.field15664 = 0;
         this.field15663 = 0;
-        if (AntiVoid.mc.player.onGround || Class6430.method19160(AntiVoid.mc.player, 0.001f)) {
+        if (AntiVoid.mc.player.onGround || ColorUtils.method19160(AntiVoid.mc.player, 0.001f)) {
             this.field15665 = new Vec3d(AntiVoid.mc.player.posX, AntiVoid.mc.player.posY, AntiVoid.mc.player.posZ);
         }
     }
@@ -45,7 +45,7 @@ public class AntiVoid extends Module
     @EventListener
     private void method10134(final Class5717 class5717) {
         if (this.method9906()) {
-            if (AntiVoid.mc.player.onGround || Class6430.method19160(AntiVoid.mc.player, 0.001f)) {
+            if (AntiVoid.mc.player.onGround || ColorUtils.method19160(AntiVoid.mc.player, 0.001f)) {
                 this.field15665 = new Vec3d(AntiVoid.mc.player.posX, AntiVoid.mc.player.posY, AntiVoid.mc.player.posZ);
             }
             if (this.field15664 <= 0) {
@@ -118,7 +118,7 @@ public class AntiVoid extends Module
         final double method16760 = AntiVoid.mc.player.method1895().getX();
         AntiVoid.mc.player.method1895().getY();
         final double method16761 = AntiVoid.mc.player.method1895().getZ();
-        if (s.equals("Cubecraft") && !Class6430.method19148()) {
+        if (s.equals("Cubecraft") && !ColorUtils.method19148()) {
             s = "Motion";
         }
         final String s2 = s;
@@ -129,7 +129,7 @@ public class AntiVoid extends Module
             }
             case "Motion": {
                 class5717.method16975(0.1);
-                Class6430.method19155(class5717.method16974());
+                ColorUtils.method19155(class5717.method16974());
                 break;
             }
             case "Cubecraft": {

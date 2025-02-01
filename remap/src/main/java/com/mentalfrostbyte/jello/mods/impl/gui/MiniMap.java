@@ -150,7 +150,7 @@ public class MiniMap extends Module
                             final String s = "^";
                             final TrueTypeFont field15833 = ClientFonts.JelloMedium20;
                             final float n = 1.5f;
-                            Class8154.method26874((float)this.field15839, (float)this.field15840, (float)this.field15838, (float)this.field15837, -7687425);
+                            RenderUtil.method26874((float)this.field15839, (float)this.field15840, (float)this.field15838, (float)this.field15837, -7687425);
                             GL11.glPushMatrix();
                             final float n2 = (float)(this.field15838 / this.field15843);
                             final float n3 = (float)(n2 * n * this.field15846);
@@ -160,18 +160,18 @@ public class MiniMap extends Module
                             GL11.glTranslatef((float)(-this.field15838 / 2), (float)(-this.field15837 / 2), 0.0f);
                             final float n5 = this.field15838 * n;
                             final float n6 = this.field15837 * n;
-                            Class8154.method26870(this.field15839, this.field15840, this.field15839 + this.field15838, this.field15840 + this.field15837);
-                            Class8154.method26905(0.0f, 0.0f, 0.0f, 0.0f, ClientAssets.shout);
+                            RenderUtil.method26870(this.field15839, this.field15840, this.field15839 + this.field15838, this.field15840 + this.field15837);
+                            RenderUtil.method26905(0.0f, 0.0f, 0.0f, 0.0f, ClientAssets.shout);
                             final float n7 = -n5 / 2.0f + this.field15838 / 2 + n3;
                             final float n8 = -n6 / 2.0f + this.field15837 / 2 + n4;
-                            Class8154.method26905(0.0f, 0.0f, 0.0f, 0.0f, ClientAssets.gingerbread);
-                            Class8154.method26903(n7, n8, n5, n6, field15832, Class265.field1278.field1292, 0.0f, 0.0f, (float)(this.field15843 * 16), (float)(this.field15843 * 16), true, false);
-                            Class8154.method26872();
+                            RenderUtil.method26905(0.0f, 0.0f, 0.0f, 0.0f, ClientAssets.gingerbread);
+                            RenderUtil.method26903(n7, n8, n5, n6, field15832, ClientColors.LIGHT_GREYISH_BLUE.color, 0.0f, 0.0f, (float)(this.field15843 * 16), (float)(this.field15843 * 16), true, false);
+                            RenderUtil.method26872();
                             GL11.glPopMatrix();
-                            Class8154.method26889(field15833, (float)(this.field15839 + this.field15838 / 2 - 4), (float)(this.field15840 + this.field15837 / 2 - 8), s, Class265.field1278.field1292);
-                            Class8154.method26889(field15833, (float)(this.field15839 + this.field15838 / 2 - 4), (float)(this.field15840 + this.field15837 / 2 - 6), s, 1879048192);
-                            Class8154.method26914((float)this.field15839, (float)this.field15840, (float)this.field15838, (float)this.field15837, 23.0f, 0.75f);
-                            Class8154.method26913((float)this.field15839, (float)this.field15840, (float)this.field15838, (float)this.field15837, 8.0f, 0.7f);
+                            RenderUtil.drawString(field15833, (float)(this.field15839 + this.field15838 / 2 - 4), (float)(this.field15840 + this.field15837 / 2 - 8), s, ClientColors.LIGHT_GREYISH_BLUE.color);
+                            RenderUtil.drawString(field15833, (float)(this.field15839 + this.field15838 / 2 - 4), (float)(this.field15840 + this.field15837 / 2 - 6), s, 1879048192);
+                            RenderUtil.method26914((float)this.field15839, (float)this.field15840, (float)this.field15838, (float)this.field15837, 23.0f, 0.75f);
+                            RenderUtil.method26913((float)this.field15839, (float)this.field15840, (float)this.field15838, (float)this.field15837, 8.0f, 0.7f);
                         }
                         class5740.method17030(this.field15837 + 10);
                     }
@@ -269,15 +269,15 @@ public class MiniMap extends Module
         final Material method1142 = MiniMap.mc.world.getBlockState(method1139.method1143()).method21697();
         if (method1141 != Material.AIR && method1141 != Material.SNOW) {
             if (method1142 == Material.AIR || method1142 == Material.SNOW) {
-                rgba = Class6430.method19109(new Color(rgba, true), Color.WHITE, 0.6f).getRGB();
+                rgba = ColorUtils.method19109(new Color(rgba, true), Color.WHITE, 0.6f).getRGB();
             }
         }
         else {
-            rgba = Class6430.method19109(new Color(rgba, true), Color.BLACK, 0.6f).getRGB();
+            rgba = ColorUtils.method19109(new Color(rgba, true), Color.BLACK, 0.6f).getRGB();
         }
         int rgb;
         if (rgba != -16777216) {
-            rgb = Class6430.method19109(new Color(rgba, true), Color.BLACK, n).getRGB();
+            rgb = ColorUtils.method19109(new Color(rgba, true), Color.BLACK, n).getRGB();
         }
         else {
             rgb = -7687425;

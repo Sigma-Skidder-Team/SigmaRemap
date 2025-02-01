@@ -28,13 +28,13 @@ public class Class4903 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         for (int i = 0; i < this.field20480; ++i) {
-            Class8154.method26874((float)(this.field20478 + i), (float)this.field20479, 1.0f, (float)this.field20481, Class6430.method19118(Color.HSBtoRGB(i / (float)this.field20480, 1.0f, 1.0f), n));
+            RenderUtil.method26874((float)(this.field20478 + i), (float)this.field20479, 1.0f, (float)this.field20481, ColorUtils.applyAlpha(Color.HSBtoRGB(i / (float)this.field20480, 1.0f, 1.0f), n));
         }
-        Class8154.method26878((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), Class6430.method19118(Class265.field1281.field1292, 0.5f * n));
+        RenderUtil.method26878((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), ColorUtils.applyAlpha(ClientColors.field1281.color, 0.5f * n));
         Class4885.method14626(this.field20478 + Math.round(this.field20480 * this.field20976) + 1, this.field20479 + 4, Color.HSBtoRGB(this.field20976, 1.0f, 1.0f), n);
-        super.method14205(n);
+        super.draw(n);
     }
     
     @Override

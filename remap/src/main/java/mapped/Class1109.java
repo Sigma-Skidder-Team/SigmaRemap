@@ -23,12 +23,12 @@ public class Class1109 implements Runnable
             if (Class4960.method14969().isLoggable(Level.FINE)) {
                 Class4960.method14969().fine(String.format("sending ack %s", (Object[])((this.field5985.length == 0) ? null : this.field5985)));
             }
-            final Class88 class88 = new Class88();
+            final JSONArray JSONArray = new JSONArray();
             final Object[] field5985 = this.field5985;
             for (int length = field5985.length, i = 0; i < length; ++i) {
-                class88.method486(field5985[i]);
+                JSONArray.method486(field5985[i]);
             }
-            final Class9041 class89 = new Class9041(3, class88);
+            final Class9041 class89 = new Class9041(3, JSONArray);
             class89.field38264 = this.field5986.field32320;
             Class4960.method14972(this.field5986.field32321, class89);
         }

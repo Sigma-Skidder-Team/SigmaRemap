@@ -270,7 +270,7 @@ public class AACBlockFly extends Module
     public void method10107(final Class5722 class5722) {
         if (this.method9906()) {
             if (this.method9914().method9887("Tower Mode").equalsIgnoreCase("Cubecraft")) {
-                if (!Class6430.method19114() || this.method9914().method9883("Tower while moving")) {
+                if (!ColorUtils.method19114() || this.method9914().method9883("Tower while moving")) {
                     class5722.method16961(true);
                 }
             }

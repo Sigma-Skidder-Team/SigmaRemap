@@ -45,20 +45,20 @@ public class Class4868 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
-        final int method19118 = Class6430.method19118(Class6430.method19120(this.field20497.method19729(), this.field20497.method19727(), 1.0f - (this.method14304() ? (this.method14386() ? 0.0f : (this.method14309() ? 1.5f : Math.max(n * this.field20845, 0.0f))) : 0.3f)), (this.field20497.method19729() >> 24 & 0xFF) / 255.0f * n);
+    public void draw(final float n) {
+        final int method19118 = ColorUtils.applyAlpha(ColorUtils.method19120(this.field20497.method19729(), this.field20497.method19727(), 1.0f - (this.isHovered() ? (this.method14386() ? 0.0f : (this.method14309() ? 1.5f : Math.max(n * this.field20845, 0.0f))) : 0.3f)), (this.field20497.method19729() >> 24 & 0xFF) / 255.0f * n);
         if (this.field20847 <= 0) {
-            Class8154.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), method19118);
+            RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), method19118);
         }
         else {
-            Class8154.method26924((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), (float)this.field20847, method19118);
+            RenderUtil.method26924((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), (float)this.field20847, method19118);
         }
         final int n2 = this.method14272() + ((this.field20497.method19735() != Class2056.field11738) ? 0 : ((this.field20497.method19735() != Class2056.field11736) ? (this.method14276() / 2) : this.method14276()));
         final int n3 = this.method14274() + ((this.field20497.method19737() != Class2056.field11738) ? 0 : ((this.field20497.method19737() != Class2056.field11737) ? (this.method14278() / 2) : this.method14278()));
         if (this.method14314() != null) {
-            Class8154.method26890(this.method14316(), (float)(this.field20846 + n2), (float)n3, this.method14314(), Class6430.method19118(this.field20497.method19733(), n), this.field20497.method19735(), this.field20497.method19737());
+            RenderUtil.method26890(this.method14316(), (float)(this.field20846 + n2), (float)n3, this.method14314(), ColorUtils.applyAlpha(this.field20497.method19733(), n), this.field20497.method19735(), this.field20497.method19737());
         }
-        super.method14205(n);
+        super.draw(n);
     }
     
     public void method14603(final int field20846) {

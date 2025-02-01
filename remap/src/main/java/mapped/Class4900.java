@@ -26,10 +26,10 @@ public class Class4900 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         super.method14228();
-        Class8154.method26917(this.field20478, this.field20479, this.field20480, this.field20481, Class6430.method19118(Class265.field1278.field1292, n));
-        super.method14205(n);
+        RenderUtil.method26917(this.field20478, this.field20479, this.field20480, this.field20481, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+        super.draw(n);
     }
     
     @Override

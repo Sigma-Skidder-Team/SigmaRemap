@@ -21,25 +21,25 @@ public class Class4923 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         int n2 = this.field20478 + 20;
         final int n3 = this.field20479 + 5;
         final int method29097 = this.field21058.method29097();
         final int n4 = this.field20481 - 10 - Class4824.method14454();
-        int n5 = Class6430.method19118(this.field21059, n);
-        int n6 = Class6430.method19118(Class265.field1273.field1292, n);
+        int n5 = ColorUtils.applyAlpha(this.field21059, n);
+        int n6 = ColorUtils.applyAlpha(ClientColors.field1273.color, n);
         if (this.field21058.field36094) {
-            n5 = Class6430.method19118(-15038729, n);
+            n5 = ColorUtils.applyAlpha(-15038729, n);
             n2 += 402 - method29097;
-            n6 = Class6430.method19118(Class265.field1278.field1292, n);
+            n6 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n);
         }
-        Class8154.method26924((float)n2, (float)n3, (float)method29097, (float)n4, 9.0f, n5);
+        RenderUtil.method26924((float)n2, (float)n3, (float)method29097, (float)n4, 9.0f, n5);
         int n7 = 0;
         final String[] field36095 = this.field21058.field36095;
         for (int length = field36095.length, i = 0; i < length; ++i) {
-            Class8154.method26889(ClientFonts.JelloLight18, (float)(n2 + 10), (float)(n3 + 5 + n7 * ClientFonts.JelloLight18.getHeight()), field36095[i], n6);
+            RenderUtil.drawString(ClientFonts.JelloLight18, (float)(n2 + 10), (float)(n3 + 5 + n7 * ClientFonts.JelloLight18.getHeight()), field36095[i], n6);
             ++n7;
         }
-        super.method14205(n);
+        super.draw(n);
     }
 }

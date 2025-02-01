@@ -96,7 +96,7 @@ public class VClip extends Module
     
     private void method9948(final int i) {
         if (i == 0) {
-            Class6430.method19106("§cCouldn't VClip");
+            ColorUtils.method19106("§cCouldn't VClip");
         }
         else {
             VClip.mc.method5269().method17292(new Class4354(VClip.mc.player.posX, VClip.mc.player.posY + i, VClip.mc.player.posZ, false));

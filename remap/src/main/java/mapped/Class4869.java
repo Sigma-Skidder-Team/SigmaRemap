@@ -41,18 +41,18 @@ public class Class4869 extends Class4868 implements Class4870
     }
     
     @Override
-    public void method14205(final float n) {
-        final float n2 = this.method14304() ? (this.field20850 ? 0.0f : (this.method14309() ? 1.5f : Math.max(n * this.field20845, 0.0f))) : 0.3f;
+    public void draw(final float n) {
+        final float n2 = this.isHovered() ? (this.field20850 ? 0.0f : (this.method14309() ? 1.5f : Math.max(n * this.field20845, 0.0f))) : 0.3f;
         final int n3 = (int)(this.method14276() * this.field20849);
         final int n4 = (int)(this.method14278() * this.field20849);
         final int n5 = this.method14272() - (n3 - this.method14276()) / 2;
         final int n6 = this.method14274() - (n4 - this.method14278()) / 2;
-        Class8154.method26870(this.method14280() + n5 - this.field20478, this.method14281() + n6 - this.field20479, this.method14280() + n5 - this.field20478 + n3, this.method14281() + n6 - this.field20479 + n4);
-        Class8154.method26876((float)n5, (float)n6, (float)(n5 + n3), (float)(n6 + n4), Class6430.method19118(Class6430.method19120(this.field20497.method19729(), this.field20497.method19727(), 1.0f - n2), n));
+        RenderUtil.method26870(this.method14280() + n5 - this.field20478, this.method14281() + n6 - this.field20479, this.method14280() + n5 - this.field20478 + n3, this.method14281() + n6 - this.field20479 + n4);
+        RenderUtil.method26876((float)n5, (float)n6, (float)(n5 + n3), (float)(n6 + n4), ColorUtils.applyAlpha(ColorUtils.method19120(this.field20497.method19729(), this.field20497.method19727(), 1.0f - n2), n));
         if (this.method14314() != null) {
-            Class8154.method26890(this.method14316(), (float)(n5 + n3 / 2), (float)(n6 + n4 / 2), this.method14314(), Class6430.method19118(this.field20497.method19733(), n), this.field20497.method19735(), this.field20497.method19737());
+            RenderUtil.method26890(this.method14316(), (float)(n5 + n3 / 2), (float)(n6 + n4 / 2), this.method14314(), ColorUtils.applyAlpha(this.field20497.method19733(), n), this.field20497.method19735(), this.field20497.method19737());
         }
-        Class8154.method26872();
+        RenderUtil.method26872();
         super.method14229(n);
     }
     

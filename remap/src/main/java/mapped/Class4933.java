@@ -28,9 +28,9 @@ public class Class4933 extends Class4800
         n2 += 80;
         this.addVisualThing(this.field21129 = new Class4832(this, "password", n3, n2, n, 45, Class4832.field20670, "", "New password", ClientFonts.Default));
         n2 += 190;
-        this.addVisualThing(this.field21130 = new Class4909(this, "edit", n3, n2, n, 40, "Edit", Class265.field1281.field1292));
+        this.addVisualThing(this.field21130 = new Class4909(this, "edit", n3, n2, n, 40, "Edit", ClientColors.field1281.color));
         n2 += 50;
-        this.addVisualThing(this.field21131 = new Class4909(this, "back", n3, n2, n, 40, "Cancel", Class265.field1281.field1292));
+        this.addVisualThing(this.field21131 = new Class4909(this, "back", n3, n2, n, 40, "Cancel", ClientColors.field1281.color));
         this.field21129.method14477(true);
         this.field21129.method14470("*");
         this.field21130.method14260((class7972, n) -> {
@@ -47,13 +47,13 @@ public class Class4933 extends Class4800
     }
     
     @Override
-    public void method14205(final float n) {
-        Class8154.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class9493.field40801);
-        Class8154.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class6430.method19118(Class265.field1290.field1292, 0.1f));
-        Class8154.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class6430.method19118(Class265.field1273.field1292, 0.95f));
-        Class8154.method26890(ClientFonts.Default, (float)(this.method14276() / 2), 20.0f, "Edit Alt", Class265.field1278.field1292, Class2056.field11738, Class2056.field11734);
-        Class8154.method26891(ClientFonts.Default, (float)(this.method14276() / 2), 40.0f, this.field21133, Class265.field1278.field1292, Class2056.field11738, Class2056.field11734, true);
-        super.method14205(n);
+    public void draw(final float n) {
+        RenderUtil.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class9493.field40801);
+        RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.field1290.color, 0.1f));
+        RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.95f));
+        RenderUtil.method26890(ClientFonts.Default, (float)(this.method14276() / 2), 20.0f, "Edit Alt", ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11734);
+        RenderUtil.method26891(ClientFonts.Default, (float)(this.method14276() / 2), 40.0f, this.field21133, ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11734, true);
+        super.draw(n);
     }
     
     @Override

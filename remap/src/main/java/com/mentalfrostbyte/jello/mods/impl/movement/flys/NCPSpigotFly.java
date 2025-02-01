@@ -27,7 +27,7 @@ public class NCPSpigotFly extends Module
     public void onDisable() {
         Class7482.method23151(0.0);
         if (NCPSpigotFly.mc.player.getMotion().y > 0.0) {
-            Class6430.method19155(-0.0789);
+            ColorUtils.method19155(-0.0789);
         }
     }
     
@@ -41,18 +41,18 @@ public class NCPSpigotFly extends Module
                         if (this.field15949 == 1) {
                             class5717.method16975(-1.0E-7);
                             Class7482.method23149(class5717, Class7482.method23136());
-                            Class6430.method19155(class5717.method16974());
+                            ColorUtils.method19155(class5717.method16974());
                         }
                     }
                     else {
                         class5717.method16975(-1.0E-7);
                         Class7482.method23149(class5717, Class7482.method23136());
-                        Class6430.method19155(class5717.method16974());
+                        ColorUtils.method19155(class5717.method16974());
                     }
                 }
                 else {
                     class5717.method16975(0.0);
-                    Class6430.method19155(class5717.method16974());
+                    ColorUtils.method19155(class5717.method16974());
                     Class7482.method23149(class5717, Class7482.method23136());
                 }
             }

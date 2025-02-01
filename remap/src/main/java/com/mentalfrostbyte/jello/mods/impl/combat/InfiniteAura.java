@@ -83,7 +83,7 @@ public class InfiniteAura extends Module
                 this.field15649.add(method10096);
                 Collections.reverse(method10096);
                 this.method10092(method10096, Client.method35173().method35189().method21551(Criticals.class).method9906());
-                Class6430.method19165(method10095, !this.method9883("No Swing"));
+                ColorUtils.method19165(method10095, !this.method9883("No Swing"));
                 Collections.reverse(method10096);
                 this.method10092(method10096, false);
             }
@@ -157,7 +157,7 @@ public class InfiniteAura extends Module
     
     public List<Class8131> method10094(final float n) {
         final ArrayList list = new ArrayList();
-        for (final Entity class399 : Class6430.method19138()) {
+        for (final Entity class399 : ColorUtils.method19138()) {
             list.add(new Class8131(class399, Class8845.method30922(class399)));
         }
         final Iterator iterator2 = list.iterator();

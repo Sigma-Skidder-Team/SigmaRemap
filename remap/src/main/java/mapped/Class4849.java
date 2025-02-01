@@ -51,7 +51,7 @@ public class Class4849 extends Class4841
         while (iterator.hasNext()) {
             final Class8799 class4805 = new Class8799(((Map.Entry<Class<? extends Screen>, V>)iterator.next()).getKey());
             final Class4868 class4806;
-            this.field20780.addVisualThing(class4806 = new Class4868(this.field20780, class4805.method30702(), 0, n6++ * 55, this.field20780.method14276(), 55, new Class6523(Class6430.method19118(Class265.field1273.field1292, 0.02f), -986896).method19734(Class6430.method19118(Class265.field1273.field1292, 0.5f)).method19736(Class2056.field11738), class4805.method30702()));
+            this.field20780.addVisualThing(class4806 = new Class4868(this.field20780, class4805.method30702(), 0, n6++ * 55, this.field20780.method14276(), 55, new Class6523(ColorUtils.applyAlpha(ClientColors.field1273.color, 0.02f), -986896).method19734(ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f)).method19736(Class2056.field11738), class4805.method30702()));
             class4806.method14260((class4869, n) -> {
                 final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator = Class9000.field37983.entrySet().iterator();
                 while (iterator.hasNext()) {
@@ -67,7 +67,7 @@ public class Class4849 extends Class4841
         n6 += 50;
         for (final Module class4807 : Client.method35173().method35189().method21553().values()) {
             final Class4868 class4808;
-            this.field20780.addVisualThing(class4808 = new Class4868(this.field20780, class4807.getName(), 0, n6++ * 40, this.field20780.method14276(), 40, new Class6523(16777215, -986896).method19734(Class265.field1273.field1292).method19736(Class2056.field11734), new Class8799(class4807).method30702()));
+            this.field20780.addVisualThing(class4808 = new Class4868(this.field20780, class4807.getName(), 0, n6++ * 40, this.field20780.method14276(), 40, new Class6523(16777215, -986896).method19734(ClientColors.field1273.color).method19736(Class2056.field11734), new Class8799(class4807).method30702()));
             class4808.method14603(10);
             class4808.method14260((class4869, n) -> {
                 for (final Module class4870 : Client.method35173().method35189().method21553().values()) {
@@ -99,7 +99,7 @@ public class Class4849 extends Class4841
                 this.field20783 = true;
             }
         }
-        this.field20774.method35855(this.field20783 ? Class2186.field12965 : Class2186.field12964);
+        this.field20774.changeDirection(this.field20783 ? Direction.FORWARDS : Direction.BACKWARDS);
         final TreeMap treeMap = new TreeMap();
         final TreeMap treeMap2 = new TreeMap();
         final TreeMap treeMap3 = new TreeMap();
@@ -187,8 +187,8 @@ public class Class4849 extends Class4841
     }
     
     @Override
-    public void method14205(float method35858) {
-        method35858 = this.field20774.method35858();
+    public void draw(float method35858) {
+        method35858 = this.field20774.calcPercent();
         float n = Class7707.method24584(method35858, 0.0f, 1.0f, 1.0f);
         if (this.field20783) {
             n = Class7791.method25030(method35858, 0.0f, 1.0f, 1.0f);
@@ -199,12 +199,12 @@ public class Class4849 extends Class4841
                 this.method14544(this.field20781);
             }
         }
-        Class8154.method26876((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, Class6430.method19118(Class265.field1273.field1292, 0.3f * method35858));
+        RenderUtil.method26876((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.3f * method35858));
         super.method14227();
-        Class8154.method26925((float)this.field20776, (float)this.field20775, (float)this.field20777, (float)this.field20778, 10.0f, Class6430.method19118(Class265.field1278.field1292, method35858));
+        RenderUtil.method26925((float)this.field20776, (float)this.field20775, (float)this.field20777, (float)this.field20778, 10.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method35858));
         final int n2 = 30;
-        Class8154.method26889(ClientFonts.JelloLight36, (float)(n2 + this.field20776), (float)(n2 + this.field20775), "Select mod to bind", Class6430.method19118(Class265.field1273.field1292, method35858 * 0.7f));
-        super.method14205(method35858);
+        RenderUtil.drawString(ClientFonts.JelloLight36, (float)(n2 + this.field20776), (float)(n2 + this.field20775), "Select mod to bind", ColorUtils.applyAlpha(ClientColors.field1273.color, method35858 * 0.7f));
+        super.draw(method35858);
     }
     
     public final void method14543(final Class7390 class7390) {

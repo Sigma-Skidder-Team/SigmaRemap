@@ -28,7 +28,7 @@ public class Class4842 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         final int n2 = (int)this.field20748.method24186();
         final double method24187 = this.field20748.method24187();
         final int method24188 = this.field20748.method24192();
@@ -43,14 +43,14 @@ public class Class4842 extends Class4841
             }
         }
         if (n2 == 0 && !this.field20748.method24184()) {
-            Class8154.method26874((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), Class6430.method19118(Class265.field1273.field1292, 0.43f * n));
+            RenderUtil.method26874((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.43f * n));
         }
         else {
-            Class8154.method26874((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), Class6430.method19118(Class265.field1281.field1292, 0.075f));
-            Class8154.method26874(this.method14272() + this.method14276() * max, (float)this.method14274(), this.method14276() * (1.0f - max), (float)this.method14278(), Class6430.method19118(Class265.field1273.field1292, 0.43f * n));
-            Class8154.method26874((float)this.method14272(), (float)this.method14274(), this.method14276() * n3, (float)this.method14278(), Class6430.method19118(Class265.field1278.field1292, n * n));
+            RenderUtil.method26874((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.field1281.color, 0.075f));
+            RenderUtil.method26874(this.method14272() + this.method14276() * max, (float)this.method14274(), this.method14276() * (1.0f - max), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.43f * n));
+            RenderUtil.method26874((float)this.method14272(), (float)this.method14274(), this.method14276() * n3, (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * n));
             if (n3 != 0.0f) {
-                Class8154.method26905(this.method14272() + this.method14276() * n3, (float)this.method14274(), 5.0f, 5.0f, ClientAssets.shadow_right);
+                RenderUtil.method26905(this.method14272() + this.method14276() * n3, (float)this.method14274(), 5.0f, 5.0f, ClientAssets.shadow_right);
             }
         }
     }

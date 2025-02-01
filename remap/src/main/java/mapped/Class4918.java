@@ -66,11 +66,11 @@ public class Class4918 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         this.method14771();
-        Class8154.method26865(this);
+        RenderUtil.method26865(this);
         for (int i = 0; i < 3; ++i) {
-            Class8154.method26905((float)(this.field20478 + 288 * i), (float)this.field20479, 288.0f, 512.0f, this.field21042);
+            RenderUtil.method26905((float)(this.field20478 + 288 * i), (float)this.field20479, 288.0f, 512.0f, this.field21042);
         }
         final float n2 = 0.026f * (60.0f / Minecraft.method5338());
         this.field21048 = Math.max(Math.min(1.0f, this.field21048 + this.field21049 - n2), 0.0f);
@@ -81,8 +81,8 @@ public class Class4918 extends Class4825
         for (final Map.Entry<Long, V> entry : this.field21047.entrySet()) {
             final float n6 = (int)(entry.getKey() - System.currentTimeMillis()) / 12.0f;
             final float n7 = n4 / 12.0f;
-            Class8154.method26899(this.field20478 + n7 + n6, (float)(this.field20479 - 320 + (int)(n5 * (double)entry.getValue()) - n3 / 2), 52.0f, 320.0f, this.field21044, Class265.field1278.field1292);
-            Class8154.method26899(this.field20478 + n7 + n6, (float)(this.field20479 + (int)(n5 * (double)entry.getValue()) + n3 / 2), 52.0f, 320.0f, this.field21045, Class265.field1278.field1292);
+            RenderUtil.method26899(this.field20478 + n7 + n6, (float)(this.field20479 - 320 + (int)(n5 * (double)entry.getValue()) - n3 / 2), 52.0f, 320.0f, this.field21044, ClientColors.LIGHT_GREYISH_BLUE.color);
+            RenderUtil.method26899(this.field20478 + n7 + n6, (float)(this.field20479 + (int)(n5 * (double)entry.getValue()) + n3 / 2), 52.0f, 320.0f, this.field21045, ClientColors.LIGHT_GREYISH_BLUE.color);
             if (n6 <= -52.0f) {
                 continue;
             }
@@ -97,11 +97,11 @@ public class Class4918 extends Class4825
         final int n9 = 3400;
         final float n10 = System.currentTimeMillis() % n9 / (float)n9;
         for (int j = 0; j < 4; ++j) {
-            Class8154.method26905(this.field20478 + 288 * j - 288.0f * n10, (float)(this.field20479 + n5), 288.0f, 112.0f, this.field21043);
+            RenderUtil.method26905(this.field20478 + 288 * j - 288.0f * n10, (float)(this.field20479 + n5), 288.0f, 112.0f, this.field21043);
         }
-        Class8154.method26886(this.field20478 + n4 / 12.0f, this.field20479 + n5 * (1.0f - this.field21048), 10.0f, Class265.field1283.field1292);
-        Class8154.method26872();
+        RenderUtil.method26886(this.field20478 + n4 / 12.0f, this.field20479 + n5 * (1.0f - this.field21048), 10.0f, ClientColors.field1283.color);
+        RenderUtil.method26872();
         this.field21050 = System.currentTimeMillis();
-        super.method14205(n);
+        super.draw(n);
     }
 }

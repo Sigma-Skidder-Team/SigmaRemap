@@ -58,18 +58,18 @@ public class Class4826 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         this.method14228();
         this.field20649 += (float)(this.method14296() ? 0.33 : -0.33);
         this.field20649 = Math.min(1.0f, Math.max(0.0f, this.field20649));
         if (this.field20647 == null) {
             final int n2 = this.field20480 - 30;
-            Class8154.method26905((float)(this.field20478 + 5), (float)((Minecraft.method5277().field4632.method7695() - n2 * 342 / 460) / 2 - 60), (float)n2, (float)(n2 * 342 / 460), ClientAssets.img);
+            RenderUtil.method26905((float)(this.field20478 + 5), (float)((Minecraft.method5277().field4632.method7695() - n2 * 342 / 460) / 2 - 60), (float)n2, (float)(n2 * 342 / 460), ClientAssets.img);
         }
         if (this.field20647 != null) {
-            Class6430.method19118(Class265.field1273.field1292, 0.2f);
-            Class8154.method26889(ClientFonts.JelloLight36, (float)(this.field20478 + (this.field20480 - ClientFonts.JelloLight36.getWidth(this.field20647.method25889())) / 2), (float)this.field20479, this.field20647.method25889(), Class6430.method19118(Class265.field1273.field1292, 0.7f));
-            super.method14205(n);
+            ColorUtils.applyAlpha(ClientColors.field1273.color, 0.2f);
+            RenderUtil.drawString(ClientFonts.JelloLight36, (float)(this.field20478 + (this.field20480 - ClientFonts.JelloLight36.getWidth(this.field20647.method25889())) / 2), (float)this.field20479, this.field20647.method25889(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.7f));
+            super.draw(n);
         }
     }
 }

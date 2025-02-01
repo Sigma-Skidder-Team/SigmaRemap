@@ -22,7 +22,7 @@ public class UnfullPhase extends Module
         if (this.method9906()) {
             if ((int) UnfullPhase.mc.player.posY == this.field15944) {
                 if (!UnfullPhase.mc.player.field2967) {
-                    Class6430.method19155(-2.0);
+                    ColorUtils.method19155(-2.0);
                 }
             }
             if (UnfullPhase.mc.player.posY > this.field15944) {

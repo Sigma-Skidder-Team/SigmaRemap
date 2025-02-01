@@ -38,7 +38,7 @@ public class Class4890 extends Class4841
         class4868.method14260((class4803, n) -> this.method14657(!this.method14656()));
         for (final String s : this.field20904) {
             final Class4868 class4869;
-            this.addVisualThing(class4869 = new Class4868(this, s, 0, this.method14278(), this.method14276(), 17, new Class6523(-14540254, this.field20497.method19729(), this.field20497.method19729(), Class265.field1278.field1292, Class2056.field11734, Class2056.field11738), s, Class9493.field40810));
+            this.addVisualThing(class4869 = new Class4868(this, s, 0, this.method14278(), this.method14276(), 17, new Class6523(-14540254, this.field20497.method19729(), this.field20497.method19729(), ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11734, Class2056.field11738), s, Class9493.field40810));
             class4869.method14603(8);
             class4869.method14260((class4803, n) -> {
                 final int method14654 = this.method14654();
@@ -78,21 +78,21 @@ public class Class4890 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
-        Class8154.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), -14540254);
-        Class8154.method26878((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), Class265.field1273.field1292);
+    public void draw(final float n) {
+        RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), -14540254);
+        RenderUtil.method26878((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), ClientColors.field1273.color);
         if (this.method14236(this.method14320(), this.method14321())) {
             if (this.method14321() - this.method14281() < this.method14278()) {
-                Class8154.method26878((float)(this.method14272() + 1), (float)(this.method14274() + 1), (float)(this.method14272() + this.method14276() - 1), (float)(this.method14274() + this.method14278() - 1), Class6430.method19118(Class265.field1278.field1292, 0.25f));
+                RenderUtil.method26878((float)(this.method14272() + 1), (float)(this.method14274() + 1), (float)(this.method14272() + this.method14276() - 1), (float)(this.method14274() + this.method14278() - 1), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.25f));
             }
         }
         final int n2 = this.method14272() + this.method14276() - 11;
         final int n3 = this.method14274() + this.method14278() - 12;
         if (!this.method14656()) {
-            Class8154.method26884((float)n2, (float)n3, (float)(n2 + 6), (float)n3, (float)(n2 + 3), (float)(n3 + 3), Class265.field1281.field1292);
+            RenderUtil.method26884((float)n2, (float)n3, (float)(n2 + 6), (float)n3, (float)(n2 + 3), (float)(n3 + 3), ClientColors.field1281.color);
         }
         else {
-            Class8154.method26884((float)n2, (float)(n3 + 3), (float)(n2 + 6), (float)(n3 + 3), (float)(n2 + 3), (float)n3, Class265.field1281.field1292);
+            RenderUtil.method26884((float)n2, (float)(n3 + 3), (float)(n2 + 6), (float)(n3 + 3), (float)(n2 + 3), (float)n3, ClientColors.field1281.color);
         }
         for (final Class4803 class4803 : this.method14250()) {
             if (class4803.method14266().equals("dropdownButton")) {
@@ -101,16 +101,16 @@ public class Class4890 extends Class4841
             class4803.method14297(this.field20906);
         }
         if (this.method14314() != null) {
-            Class8154.method26865(this);
-            Class8154.method26889(this.method14316(), (float)(this.method14272() + 7), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2), this.method14314(), Class6430.method19118(Class265.field1278.field1292, n * 0.5f));
-            Class8154.method26872();
+            RenderUtil.method26865(this);
+            RenderUtil.drawString(this.method14316(), (float)(this.method14272() + 7), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2), this.method14314(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * 0.5f));
+            RenderUtil.method26872();
         }
         if (!this.method14656()) {
-            Class8154.method26865(this);
+            RenderUtil.method26865(this);
         }
-        super.method14205(n);
+        super.draw(n);
         if (!this.method14656()) {
-            Class8154.method26872();
+            RenderUtil.method26872();
         }
     }
     
@@ -172,6 +172,6 @@ public class Class4890 extends Class4841
     }
     
     static {
-        field20903 = new Class6523(1250067, -15329770).method19734(Class265.field1273.field1292).method19738(Class2056.field11738);
+        field20903 = new Class6523(1250067, -15329770).method19734(ClientColors.field1273.color).method19738(Class2056.field11738);
     }
 }

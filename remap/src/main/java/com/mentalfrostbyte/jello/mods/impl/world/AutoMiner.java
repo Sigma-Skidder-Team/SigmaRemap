@@ -282,7 +282,7 @@ public class AutoMiner extends Module
             GL11.glPushMatrix();
             GL11.glRotatef((float)j, 0.0f, 1.0f, 0.0f);
             GL11.glRotatef(180.0f, 1.0f, 0.0f, 0.0f);
-            final Color color = new Color(Class6430.method19121(array[j / 45].getRGB(), 0.2f), false);
+            final Color color = new Color(ColorUtils.method19121(array[j / 45].getRGB(), 0.2f), false);
             this.method10823(color.getRed() / 255.0f, color.getGreen() / 255.0f, color.getBlue() / 255.0f);
             GL11.glPopMatrix();
         }

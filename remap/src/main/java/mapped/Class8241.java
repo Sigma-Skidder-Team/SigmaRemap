@@ -48,7 +48,7 @@ public class Class8241
     }
     
     public void method27292() {
-        Class88 method26638 = null;
+        JSONArray method26638 = null;
         try {
             method26638 = Class8105.method26638(this.field33838, "mods");
         }
@@ -73,7 +73,7 @@ public class Class8241
     }
     
     public void method27293(final JSONObject JSONObject, final Module class4406) {
-        Class88 method26638 = null;
+        JSONArray method26638 = null;
         try {
             method26638 = Class8105.method26638(this.field33838, "mods");
         }
@@ -103,7 +103,7 @@ public class Class8241
     }
     
     public JSONObject method27294(final Module class3167) {
-        Class88 method26638 = null;
+        JSONArray method26638 = null;
         try {
             method26638 = Class8105.method26638(this.field33838, "mods");
         }

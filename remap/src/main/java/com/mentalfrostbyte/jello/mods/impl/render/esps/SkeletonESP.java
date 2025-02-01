@@ -23,7 +23,7 @@ public class SkeletonESP extends Module
     
     public SkeletonESP() {
         super(Category.RENDER, "Skeleton", "Skeleton ESP.");
-        this.addSetting(new ColorSetting("Color", "The Skeleton color", Class265.field1278.field1292));
+        this.addSetting(new ColorSetting("Color", "The Skeleton color", ClientColors.LIGHT_GREYISH_BLUE.color));
         this.addSetting(new BooleanSetting("CSGO", "Add a CSGO look.", true));
     }
     

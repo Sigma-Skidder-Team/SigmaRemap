@@ -77,10 +77,10 @@ public class NewTabGUI extends Module
         this.field15824 = 170;
         this.field15825 = 0.0f;
         this.field15827 = new ArrayList<Class8479>();
-        this.field15828 = Class6430.method19118(Class265.field1273.field1292, 0.0625f);
-        this.field15829 = Class6430.method19118(Class265.field1278.field1292, 0.3f);
+        this.field15828 = ColorUtils.applyAlpha(ClientColors.field1273.color, 0.0625f);
+        this.field15829 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f);
         this.field15830 = this.getCategories();
-        this.field15831 = Class6430.method19118(Class265.field1281.field1292, 0.05f);
+        this.field15831 = ColorUtils.applyAlpha(ClientColors.field1281.color, 0.05f);
         this.method9915(false);
         NewTabGUI.field15826 = this;
     }
@@ -120,10 +120,10 @@ public class NewTabGUI extends Module
                         this.field15825 += Math.min(abs, abs * 0.14f * this.field15818) * ((this.method10390() - this.field15825 < 0.0f) ? -1 : 1);
                         this.field15807 = class5740.method17028();
                         this.method10398(this.field15806, this.field15807, this.field15808, this.field15809, this.field15801, null, this.field15802, 1.0f);
-                        Class8154.method26869((float)this.field15806, (float)this.field15807, (float)this.field15808, (float)this.field15809);
+                        RenderUtil.method26869((float)this.field15806, (float)this.field15807, (float)this.field15808, (float)this.field15809);
                         this.method10394(this.field15806, this.field15807 - Math.round(this.field15825), this.field15830.size() * this.field15816 + this.field15817, this.field15808, this.field15813, false, 1.0f);
                         this.method10393(this.field15806, this.field15807 - Math.round(this.field15825), this.field15830);
-                        Class8154.method26872();
+                        RenderUtil.method26872();
                         if (this.field15819) {
                             this.field15821 = this.method10391(this.field15820).size() * this.field15816 + this.field15817;
                             this.method10398(170, this.field15807, this.field15824, this.field15821, this.field15803, this.field15805, this.field15804, 1.0f);
@@ -168,10 +168,10 @@ public class NewTabGUI extends Module
                 }
             }
             if (key.method9906()) {
-                Class8154.method26889(ClientFonts.JelloMedium20, n + 11 + this.field15812.get(key), (float)(n2 + this.field15816 / 2 - ClientFonts.JelloMedium20.getHeight() / 2 + 3 + n4 * this.field15816), key.getName(), Class265.field1278.field1292);
+                RenderUtil.drawString(ClientFonts.JelloMedium20, n + 11 + this.field15812.get(key), (float)(n2 + this.field15816 / 2 - ClientFonts.JelloMedium20.getHeight() / 2 + 3 + n4 * this.field15816), key.getName(), ClientColors.LIGHT_GREYISH_BLUE.color);
             }
             else {
-                Class8154.method26889(ClientFonts.JelloLight20, n + 11 + this.field15812.get(key), (float)(n2 + this.field15816 / 2 - ClientFonts.JelloLight20.getHeight() / 2 + 2 + n4 * this.field15816), key.getName(), Class265.field1278.field1292);
+                RenderUtil.drawString(ClientFonts.JelloLight20, n + 11 + this.field15812.get(key), (float)(n2 + this.field15816 / 2 - ClientFonts.JelloLight20.getHeight() / 2 + 2 + n4 * this.field15816), key.getName(), ClientColors.LIGHT_GREYISH_BLUE.color);
             }
             ++n4;
         }
@@ -194,7 +194,7 @@ public class NewTabGUI extends Module
                     this.field15811.put(class8013, this.field15811.get(class8013) - this.field15818);
                 }
             }
-            Class8154.method26889(ClientFonts.JelloLight20, n + 11 + this.field15811.get(class8013), (float)(n2 + this.field15816 / 2 - ClientFonts.JelloLight20.getHeight() / 2 + 2 + n3 * this.field15816), class8013.toString(), -1);
+            RenderUtil.drawString(ClientFonts.JelloLight20, n + 11 + this.field15811.get(class8013), (float)(n2 + this.field15816 / 2 - ClientFonts.JelloLight20.getHeight() / 2 + 2 + n3 * this.field15816), class8013.toString(), -1);
             ++n3;
         }
     }
@@ -248,27 +248,27 @@ public class NewTabGUI extends Module
                 this.field15814 = Math.max(this.field15814, 120 + Math.round(this.field15825));
             }
         }
-        Class8154.method26876((float)n, (n7 >= 0) ? ((float)(n7 + n2)) : ((float)n2), (float)(n + n4), (n7 + this.field15817 + this.field15816 <= n3) ? ((float)(n7 + n2 + this.field15816 + this.field15817)) : ((float)(n2 + n3 + this.field15817)), this.field15828);
-        Class8154.method26899((float)n, (n7 + this.field15817 + this.field15816 <= n3) ? ((float)(n7 + n2 + this.field15816 - 10)) : ((float)(n2 + n3 - 10)), (float)n4, 14.0f, ClientAssets.shadow_top, this.field15829);
-        Class8154.method26899((float)n, (n7 >= 0) ? ((float)(n7 + n2)) : ((float)n2), (float)n4, 14.0f, ClientAssets.shadow_bottom, this.field15829);
-        Class8154.method26870(n, (n7 >= 0) ? (n7 + n2) : n2, n + n4, (n7 + this.field15817 + this.field15816 <= n3) ? (n7 + n2 + this.field15816 + this.field15817) : (n2 + n3 + this.field15817));
+        RenderUtil.method26876((float)n, (n7 >= 0) ? ((float)(n7 + n2)) : ((float)n2), (float)(n + n4), (n7 + this.field15817 + this.field15816 <= n3) ? ((float)(n7 + n2 + this.field15816 + this.field15817)) : ((float)(n2 + n3 + this.field15817)), this.field15828);
+        RenderUtil.method26899((float)n, (n7 + this.field15817 + this.field15816 <= n3) ? ((float)(n7 + n2 + this.field15816 - 10)) : ((float)(n2 + n3 - 10)), (float)n4, 14.0f, ClientAssets.shadow_top, this.field15829);
+        RenderUtil.method26899((float)n, (n7 >= 0) ? ((float)(n7 + n2)) : ((float)n2), (float)n4, 14.0f, ClientAssets.shadow_bottom, this.field15829);
+        RenderUtil.method26870(n, (n7 >= 0) ? (n7 + n2) : n2, n + n4, (n7 + this.field15817 + this.field15816 <= n3) ? (n7 + n2 + this.field15816 + this.field15817) : (n2 + n3 + this.field15817));
         final Iterator<Class8479> iterator = this.field15827.iterator();
         while (iterator.hasNext()) {
             final Class8479 class8479 = iterator.next();
             if (class8479.field34795 == b) {
-                final float method35858 = class8479.field34796.method35858();
-                int n10 = Class6430.method19118(-5658199, (1.0f - method35858 * (0.5f + method35858 * 0.5f)) * 0.8f);
+                final float method35858 = class8479.field34796.calcPercent();
+                int n10 = ColorUtils.applyAlpha(-5658199, (1.0f - method35858 * (0.5f + method35858 * 0.5f)) * 0.8f);
                 if (Client.method35173().method35193().method32146()) {
-                    n10 = Class6430.method19118(-1, (1.0f - method35858) * 0.14f);
+                    n10 = ColorUtils.applyAlpha(-1, (1.0f - method35858) * 0.14f);
                 }
-                Class8154.method26886((float)n, (n7 >= 0) ? ((float)(n7 + n2 + 14)) : ((float)n2), n4 * Class7791.method25030(method35858, 0.0f, 1.0f, 1.0f) + 4.0f, n10);
-                if (class8479.field34796.method35858() != 1.0f) {
+                RenderUtil.method26886((float)n, (n7 >= 0) ? ((float)(n7 + n2 + 14)) : ((float)n2), n4 * Class7791.method25030(method35858, 0.0f, 1.0f, 1.0f) + 4.0f, n10);
+                if (class8479.field34796.calcPercent() != 1.0f) {
                     continue;
                 }
                 iterator.remove();
             }
         }
-        Class8154.method26872();
+        RenderUtil.method26872();
     }
     
     private List<Category> getCategories() {
@@ -359,23 +359,23 @@ public class NewTabGUI extends Module
     
     private void method10398(final int n, final int n2, final int n3, final int n4, final Color[] array, final Color[] array2, final Color[] array3, final float n5) {
         final boolean method32146 = Client.method35173().method35193().method32146();
-        int n6 = Class6430.method19110(array).getRGB();
-        int n7 = Class6430.method19110(array3).getRGB();
+        int n6 = ColorUtils.method19110(array).getRGB();
+        int n7 = ColorUtils.method19110(array3).getRGB();
         if (array2 != null) {
-            final int rgb = Class6430.method19110(array2).getRGB();
-            n6 = Class6430.method19120(n6, rgb, 0.75f);
-            n7 = Class6430.method19120(n7, rgb, 0.75f);
+            final int rgb = ColorUtils.method19110(array2).getRGB();
+            n6 = ColorUtils.method19120(n6, rgb, 0.75f);
+            n7 = ColorUtils.method19120(n7, rgb, 0.75f);
         }
         if (!method32146) {
-            Class8154.method26881(n, n2, n + n3, n2 + n4, n6, n7);
+            RenderUtil.method26881(n, n2, n + n3, n2 + n4, n6, n7);
         }
         else {
-            Class8154.method26869((float)n, (float)n2, (float)n3, (float)n4);
+            RenderUtil.method26869((float)n, (float)n2, (float)n3, (float)n4);
             Class8707.method29899();
-            Class8154.method26872();
-            Class8154.method26876((float)n, (float)n2, (float)(n + n3), (float)(n2 + n4), this.field15831);
+            RenderUtil.method26872();
+            RenderUtil.method26876((float)n, (float)n2, (float)(n + n3), (float)(n2 + n4), this.field15831);
         }
-        Class8154.method26913((float)n, (float)n2, (float)n3, (float)n4, 8.0f, 0.7f * n5);
+        RenderUtil.method26913((float)n, (float)n2, (float)n3, (float)n4, 8.0f, 0.7f * n5);
     }
     
     private void method10399() {
@@ -397,9 +397,9 @@ public class NewTabGUI extends Module
     }
     
     private Color method10400(final int n, final int n2, final Color color) {
-        Color color2 = Class8154.method26930(n, n2, color);
+        Color color2 = RenderUtil.method26930(n, n2, color);
         if (color != null) {
-            color2 = Class6430.method19109(color2, color, 0.08f * this.field15818);
+            color2 = ColorUtils.method19109(color2, color, 0.08f * this.field15818);
         }
         return color2;
     }

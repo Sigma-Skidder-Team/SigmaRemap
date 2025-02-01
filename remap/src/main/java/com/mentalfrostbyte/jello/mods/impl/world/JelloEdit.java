@@ -72,18 +72,18 @@ public class JelloEdit extends Module
     public void method9879() {
         final File file = new File(Client.method35173().method35208() + "/shematics/" + (String)this.method9882("Shematics"));
         if (!file.exists()) {
-            Class6430.method19106("Schematic does not exist");
+            ColorUtils.method19106("Schematic does not exist");
             this.method9910();
             return;
         }
         this.field15542 = new Class7838(file);
         if (this.field15542.method25316() && this.field15542.method25323().size() > 0) {
-            Class6430.method19106(this.field15542.method25323().size() + " blocks loaded from schematic");
+            ColorUtils.method19106(this.field15542.method25323().size() + " blocks loaded from schematic");
             this.field15543 = new BlockPos(JelloEdit.mc.player.posX + this.field15542.method25322().method7835() * 0.0, JelloEdit.mc.player.posY + this.field15542.method25322().method7839() * 0.0, JelloEdit.mc.player.posZ + this.field15542.method25322().method7843() * 0.0);
             this.method9967();
             return;
         }
-        Class6430.method19106("Unable to load schematic");
+        ColorUtils.method19106("Unable to load schematic");
         this.method9910();
     }
     
@@ -100,9 +100,9 @@ public class JelloEdit extends Module
                 final double n2 = class5741.getY() - JelloEdit.mc.field4644.method5833().method18161().getY();
                 final double n3 = class5741.getZ() - JelloEdit.mc.field4644.method5833().method18161().getZ();
                 final Class7644 class5742 = new Class7644(n, n2, n3, n + 1.0, n2 + 1.0, n3 + 1.0);
-                Class8154.method26909(class5742, Class6430.method19118(Class265.field1285.field1292, 0.02f));
+                RenderUtil.method26909(class5742, ColorUtils.applyAlpha(ClientColors.field1285.color, 0.02f));
                 GL11.glEnable(2848);
-                Class8154.method26911(class5742, Class6430.method19118(Class265.field1285.field1292, 0.03f));
+                RenderUtil.method26911(class5742, ColorUtils.applyAlpha(ClientColors.field1285.color, 0.03f));
                 GL11.glColor3f(1.0f, 1.0f, 1.0f);
             }
             final Iterator<Class9052> iterator2 = this.field15541.iterator();
@@ -112,8 +112,8 @@ public class JelloEdit extends Module
                 final double n5 = field38320.getY() - JelloEdit.mc.field4644.method5833().method18161().getY();
                 final double n6 = field38320.getZ() - JelloEdit.mc.field4644.method5833().method18161().getZ();
                 final Class7644 class5743 = new Class7644(n4, n5, n6, n4 + 1.0, n5 + 1.0, n6 + 1.0);
-                Class8154.method26909(class5743, Class6430.method19118(Class265.field1274.field1292, 0.1f));
-                Class8154.method26911(class5743, Class6430.method19118(Class265.field1274.field1292, 0.2f));
+                RenderUtil.method26909(class5743, ColorUtils.applyAlpha(ClientColors.field1274.color, 0.1f));
+                RenderUtil.method26911(class5743, ColorUtils.applyAlpha(ClientColors.field1274.color, 0.2f));
                 GL11.glColor3f(1.0f, 1.0f, 1.0f);
             }
         }

@@ -4,8 +4,8 @@
 
 package mapped;
 
-public enum Class2186
+public enum Direction
 {
-    field12964, 
-    field12965;
+    BACKWARDS,
+    FORWARDS;
 }

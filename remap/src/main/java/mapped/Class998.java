@@ -6,10 +6,10 @@ package mapped;
 
 public class Class998 implements Runnable
 {
-    public final /* synthetic */ Class88 field5328;
+    public final /* synthetic */ JSONArray field5328;
     public final /* synthetic */ Class4812 field5329;
     
-    public Class998(final Class4812 field5329, final Class88 field5330) {
+    public Class998(final Class4812 field5329, final JSONArray field5330) {
         this.field5329 = field5329;
         this.field5328 = field5330;
     }

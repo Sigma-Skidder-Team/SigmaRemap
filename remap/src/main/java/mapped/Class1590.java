@@ -25,10 +25,10 @@ public class Class1590 implements Runnable
         final boolean b = Math.round((float)Math.random() * 100.0f) < this.field8873.getNumberSettingValueByName("Hit Chance");
         Class7007 class7007;
         if (!this.field8873.method9887("Attack Mode").equals("Pre")) {
-            class7007 = Class6430.method19142(KillAura.method10765(this.field8873).field32884, KillAura.method10765(this.field8873).field32885, this.field8873.getNumberSettingValueByName("Range"), this.field8872);
+            class7007 = ColorUtils.method19142(KillAura.method10765(this.field8873).field32884, KillAura.method10765(this.field8873).field32885, this.field8873.getNumberSettingValueByName("Range"), this.field8872);
         }
         else {
-            class7007 = Class6430.method19142(KillAura.method10764(this.field8873).field32884, KillAura.method10764(this.field8873).field32885, this.field8873.getNumberSettingValueByName("Range"), this.field8872 + Math.sqrt(KillAura.method10760().field4684.method1935().field22770 * KillAura.method10761().field4684.method1935().field22770 + KillAura.method10762().field4684.method1935().field22772 * KillAura.method10763().field4684.method1935().field22772));
+            class7007 = ColorUtils.method19142(KillAura.method10764(this.field8873).field32884, KillAura.method10764(this.field8873).field32885, this.field8873.getNumberSettingValueByName("Range"), this.field8872 + Math.sqrt(KillAura.method10760().field4684.method1935().field22770 * KillAura.method10761().field4684.method1935().field22770 + KillAura.method10762().field4684.method1935().field22772 * KillAura.method10763().field4684.method1935().field22772));
         }
         if (KillAura.field16060 != null) {
             if (KillAura.method10766(this.field8873).method31128()) {
@@ -49,7 +49,7 @@ public class Class1590 implements Runnable
                 final Class5750 class7009 = new Class5750(class7008, true);
                 Client.method35173().method35188().method21097(class7009);
                 if (!class7009.method16962()) {
-                    Class6430.method19165(class7008, !this.field8873.method9883("No swing"));
+                    ColorUtils.method19165(class7008, !this.field8873.method9883("No swing"));
                 }
                 class7009.method17060();
             }

@@ -20,13 +20,13 @@ public class Class4834 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         if (this.field20495 != null) {
-            Class8154.method26889(this.method14316(), (float)this.method14272(), (float)this.method14274(), this.method14314(), Class6430.method19118(this.field20497.method19733(), n * Class6430.method19140(this.field20497.method19733())));
+            RenderUtil.drawString(this.method14316(), (float)this.method14272(), (float)this.method14274(), this.method14314(), ColorUtils.applyAlpha(this.field20497.method19733(), n * ColorUtils.method19140(this.field20497.method19733())));
         }
     }
     
     static {
-        Class4834.field20719 = new Class6523(Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292, Class2056.field11734, Class2056.field11738);
+        Class4834.field20719 = new Class6523(ClientColors.field1273.color, ClientColors.field1273.color, ClientColors.field1273.color, ClientColors.field1273.color, Class2056.field11734, Class2056.field11738);
     }
 }

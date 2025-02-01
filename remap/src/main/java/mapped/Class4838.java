@@ -24,8 +24,8 @@ public class Class4838 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
-        super.method14205(n);
+    public void draw(final float n) {
+        super.draw(n);
     }
     
     @Override

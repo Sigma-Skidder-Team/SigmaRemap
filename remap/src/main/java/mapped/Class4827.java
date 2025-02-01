@@ -91,24 +91,24 @@ public class Class4827 extends Class4825 implements Class4828
     }
     
     @Override
-    public void method14205(float n) {
+    public void draw(float n) {
         n *= this.field20651;
         final int n2 = 5;
-        final int method19118 = Class6430.method19118(Class265.field1273.field1292, 0.2f * n);
+        final int method19118 = ColorUtils.applyAlpha(ClientColors.field1273.color, 0.2f * n);
         int field20478 = this.field20478;
         int field20479 = this.field20480;
         if (Client.method35173().method35209() != Class2209.field13464) {
             final int n3 = 0;
             field20479 -= 8;
             field20478 += 8;
-            Class8154.method26876((float)field20478, (float)(this.field20479 + n3), (float)(field20478 + field20479), (float)(this.field20479 + this.field20481 - n3), Class6430.method19118(Class265.field1281.field1292, 0.1f * n));
+            RenderUtil.method26876((float)field20478, (float)(this.field20479 + n3), (float)(field20478 + field20479), (float)(this.field20479 + this.field20481 - n3), ColorUtils.applyAlpha(ClientColors.field1281.color, 0.1f * n));
         }
         else {
-            Class8154.method26904((float)field20478, (float)this.field20479, (float)field20479, 5.0f, ClientAssets.verticalscrollbartop, 0.45f * n);
-            Class8154.method26904((float)field20478, (float)(this.field20479 + this.field20481 - n2), (float)field20479, 5.0f, ClientAssets.verticalscrollbarbottom, 0.45f * n);
-            Class8154.method26876((float)field20478, (float)(this.field20479 + n2), (float)(field20478 + field20479), (float)(this.field20479 + this.field20481 - n2), method19118);
+            RenderUtil.method26904((float)field20478, (float)this.field20479, (float)field20479, 5.0f, ClientAssets.verticalscrollbartop, 0.45f * n);
+            RenderUtil.method26904((float)field20478, (float)(this.field20479 + this.field20481 - n2), (float)field20479, 5.0f, ClientAssets.verticalscrollbarbottom, 0.45f * n);
+            RenderUtil.method26876((float)field20478, (float)(this.field20479 + n2), (float)(field20478 + field20479), (float)(this.field20479 + this.field20481 - n2), method19118);
         }
-        super.method14205(n);
+        super.draw(n);
     }
     
     @Override

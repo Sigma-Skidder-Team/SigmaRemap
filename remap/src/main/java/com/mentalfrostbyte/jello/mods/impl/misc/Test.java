@@ -55,7 +55,7 @@ public class Test extends Module
     @Override
     public void method9879() {
         this.field16086 = 0.0;
-        this.field16098 = new Class9572(1000, 100000, Class2186.field12964);
+        this.field16098 = new Class9572(1000, 100000, Direction.BACKWARDS);
         this.field16092 = Test.mc.player.rotationYaw;
         this.field16093 = Test.mc.player.rotationPitch;
         final double field2395 = Test.mc.player.posX;
@@ -124,7 +124,7 @@ public class Test extends Module
                 Test.mc.player.rotationPitch = method10787[1];
                 if (this.field16099 != null) {
                     this.field16087 -= (int)this.field16087;
-                    Class6430.method19165(this.field16099, true);
+                    ColorUtils.method19165(this.field16099, true);
                 }
             }
             this.field16099 = method10786;
@@ -238,7 +238,7 @@ public class Test extends Module
     }
     
     public List<Entity> method10785(final float n) {
-        final List<Entity> method19138 = Class6430.method19138();
+        final List<Entity> method19138 = ColorUtils.method19138();
         final Iterator<Entity> iterator = method19138.iterator();
         while (iterator.hasNext()) {
             final Entity class399 = iterator.next();
@@ -301,7 +301,7 @@ public class Test extends Module
     }
     
     public Entity method10786(final float n) {
-        final List<Entity> method19138 = Class6430.method19138();
+        final List<Entity> method19138 = ColorUtils.method19138();
         Entity class399 = null;
         final Iterator<Entity> iterator = method19138.iterator();
         while (iterator.hasNext()) {

@@ -16,15 +16,15 @@ public class Class6523
     public Class2056 field25970;
     
     public Class6523(final int n) {
-        this(n, Class6430.method19121(n, 0.05f));
+        this(n, ColorUtils.method19121(n, 0.05f));
     }
     
     public Class6523(final int n, final int n2) {
-        this(n, n2, Class265.field1273.field1292);
+        this(n, n2, ClientColors.field1273.color);
     }
     
     public Class6523(final int n, final int n2, final int n3) {
-        this(n, n2, n3, Class265.field1278.field1292);
+        this(n, n2, n3, ClientColors.LIGHT_GREYISH_BLUE.color);
     }
     
     public Class6523(final int n, final int n2, final int n3, final int n4) {

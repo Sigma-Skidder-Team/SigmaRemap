@@ -90,14 +90,14 @@ public class SpiderStep extends Module
             if (this.field15787 != 1) {
                 if (this.field15787 != 2) {
                     if (this.field15787 == 3) {
-                        if (!Class6430.method19160(SpiderStep.mc.player, 0.001f)) {
+                        if (!ColorUtils.method19160(SpiderStep.mc.player, 0.001f)) {
                             Class7482.method23149(class5717, 0.25);
                         }
                         else {
                             class5717.method16975(-0.078);
                             Class7482.method23149(class5717, this.method9883("AAC") ? 0.301 : Class7482.method23136());
                         }
-                        if (!Class6430.method19114()) {
+                        if (!ColorUtils.method19114()) {
                             Class7482.method23149(class5717, 0.0);
                         }
                         this.field15787 = 0;

@@ -20,12 +20,12 @@ public class UglyClickGUICategoryIcon extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         GL11.glAlphaFunc(518, 0.1f);
-        Class8154.method26899((float)(this.field20478 + (this.field20480 - 64) / 2), (float)(this.field20479 + 10), 64.0f, 64.0f, this.method14308() ? this.field20796 : this.field20795, Class265.field1278.field1292);
+        RenderUtil.method26899((float)(this.field20478 + (this.field20480 - 64) / 2), (float)(this.field20479 + 10), 64.0f, 64.0f, this.method14308() ? this.field20796 : this.field20795, ClientColors.LIGHT_GREYISH_BLUE.color);
         final int n2 = this.method14276() / 2 + this.field20478;
         final int n3 = this.method14278() / 2 + this.field20479;
-        Class8154.method26889(Class9493.field40806, (float)(this.field20478 + (this.method14276() - Class9493.field40806.getWidth(this.field20495)) / 2), (float)(this.field20479 + this.method14278() - 50), this.field20495, this.method14308() ? -319475 : -14869219);
-        super.method14205(n);
+        RenderUtil.drawString(Class9493.field40806, (float)(this.field20478 + (this.method14276() - Class9493.field40806.getWidth(this.field20495)) / 2), (float)(this.field20479 + this.method14278() - 50), this.field20495, this.method14308() ? -319475 : -14869219);
+        super.draw(n);
     }
 }

@@ -90,8 +90,8 @@ public class Projectiles extends Module
                         final double n18 = method872.field895.lastTickPosZ + (method872.field895.posZ - method872.field895.lastTickPosZ) * Projectiles.mc.timer.field26528 - Projectiles.mc.field4644.method5833().method18161().getZ();
                         final double n19 = method872.field895.method1930() / 2.0f + 0.2f;
                         final Class7644 class5742 = new Class7644(n16 - n19, n17, n18 - n19, n16 + n19, n17 + (method872.field895.method1931() + 0.1f), n18 + n19);
-                        Class8154.method26909(class5742, Class6430.method19118(Class265.field1274.field1292, 0.1f));
-                        Class8154.method26911(class5742, Class6430.method19118(Class265.field1274.field1292, 0.1f));
+                        RenderUtil.method26909(class5742, ColorUtils.applyAlpha(ClientColors.field1274.color, 0.1f));
+                        RenderUtil.method26911(class5742, ColorUtils.applyAlpha(ClientColors.field1274.color, 0.1f));
                     }
                 }
                 else {
@@ -105,8 +105,8 @@ public class Projectiles extends Module
                     GL11.glRotatef(90.0f, this.field15659.method28124((float)method874.getZ()), this.field15659.method28125((float)method874.getY()), this.field15659.method28126((float)(-method874.getX())));
                     GL11.glTranslatef(-0.5f, 0.0f, -0.5f);
                     final Class7644 class5743 = new Class7644(0.0, 0.0, 0.0, 1.0, 0.0, 1.0);
-                    Class8154.method26909(class5743, Class6430.method19118(Class265.field1285.field1292, 0.1f));
-                    Class8154.method26911(class5743, Class6430.method19118(Class265.field1285.field1292, 0.1f));
+                    RenderUtil.method26909(class5743, ColorUtils.applyAlpha(ClientColors.field1285.color, 0.1f));
+                    RenderUtil.method26911(class5743, ColorUtils.applyAlpha(ClientColors.field1285.color, 0.1f));
                     GL11.glPopMatrix();
                 }
                 GL11.glDisable(2896);

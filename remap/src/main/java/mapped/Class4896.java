@@ -39,7 +39,7 @@ public class Class4896 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         if (this.field20941 != null) {
             final float method25030 = Class7791.method25030(Class9572.method35860(this.field20941, 150.0f), 0.0f, 1.0f, 1.0f);
             this.method14279((int)(55.0f * method25030));
@@ -54,11 +54,11 @@ public class Class4896 extends Class4841
                 this.field20939 = null;
             }
         }
-        Class8154.method26871(this.field20478, this.field20479, this.field20478 + this.field20480, this.field20479 + this.field20481, true);
-        Class8154.method26889(ClientFonts.Regular20, (float)(this.field20478 + 25), this.field20479 + this.field20481 / 2.0f - 17.5f, this.field20938.method30702(), Class6430.method19118(Class265.field1273.field1292, 0.6f * n));
-        Class8154.method26889(ClientFonts.JelloLight12, (float)(this.field20478 + 25), this.field20479 + this.field20481 / 2.0f + 7.5f, this.field20938.method30703(), Class6430.method19118(Class265.field1273.field1292, 0.6f * n));
+        RenderUtil.method26871(this.field20478, this.field20479, this.field20478 + this.field20480, this.field20479 + this.field20481, true);
+        RenderUtil.drawString(ClientFonts.Regular20, (float)(this.field20478 + 25), this.field20479 + this.field20481 / 2.0f - 17.5f, this.field20938.method30702(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.6f * n));
+        RenderUtil.drawString(ClientFonts.JelloLight12, (float)(this.field20478 + 25), this.field20479 + this.field20481 / 2.0f + 7.5f, this.field20938.method30703(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.6f * n));
         this.field20942.method14275((int)(this.field20481 / 2.0f - 7.5f));
-        super.method14205(n);
-        Class8154.method26872();
+        super.draw(n);
+        RenderUtil.method26872();
     }
 }

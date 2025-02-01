@@ -101,17 +101,17 @@ public class Class4817 extends Class4815
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         this.method14227();
         if (this.field20609 && !this.method14296()) {
             return;
         }
         if (this.field20612) {
-            Class8154.method26865(this);
+            RenderUtil.method26865(this);
         }
-        super.method14205(n);
+        super.draw(n);
         if (this.field20612) {
-            Class8154.method26872();
+            RenderUtil.method26872();
         }
     }
     

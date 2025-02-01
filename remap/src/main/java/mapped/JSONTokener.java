@@ -269,7 +269,7 @@ public class JSONTokener
             }
             case 91: {
                 this.back();
-                return new Class88(this);
+                return new JSONArray(this);
             }
             default: {
                 final StringBuilder sb = new StringBuilder();

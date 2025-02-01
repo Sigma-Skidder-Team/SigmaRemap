@@ -22,7 +22,7 @@ public class Breadcrumbs extends Module
         super(Category.RENDER, "Breadcrumbs", "Shows your taken path");
         this.field15850 = new ArrayList<Vec3d>();
         this.addSetting(new BooleanSetting("Fade Out", "Makes distant breadcrumbs fade out", true));
-        this.addSetting(new ColorSetting("Color", "The crumbs color", Class265.field1278.field1292));
+        this.addSetting(new ColorSetting("Color", "The crumbs color", ClientColors.LIGHT_GREYISH_BLUE.color));
     }
     
     @EventListener
@@ -66,14 +66,14 @@ public class Breadcrumbs extends Module
             GL11.glDisable(3553);
             GL11.glDisable(2929);
             GL11.glDepthMask(false);
-            GL11.glColor4fv(Class6430.method19139(Class6430.method19118(this.method9885("Color"), 0.5f)));
+            GL11.glColor4fv(ColorUtils.method19139(ColorUtils.applyAlpha(this.method9885("Color"), 0.5f)));
             GL11.glBegin(3);
             for (final Vec3d class5741 : this.field15850) {
                 final Vec3d method10418 = this.method10418(class5741);
                 final double method10419 = class5741.distanceTo(class5740);
                 final double n = this.method9883("Fade Out") ? (1.0 - Math.min(1.0, method10419 / 14.0)) : 0.6000000238418579;
                 if (method10419 <= 24.0) {
-                    GL11.glColor4fv(Class6430.method19139(Class6430.method19118(this.method9885("Color"), (float)n)));
+                    GL11.glColor4fv(ColorUtils.method19139(ColorUtils.applyAlpha(this.method9885("Color"), (float)n)));
                     GL11.glVertex3d(method10418.x, method10418.y, method10418.z);
                 }
             }

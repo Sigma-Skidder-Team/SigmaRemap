@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
 import mapped.JSONObject;
 import mapped.Class8105;
-import mapped.Class88;
+import mapped.JSONArray;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -26,13 +26,13 @@ public class StringListSetting extends Setting<List<String>> {
     @Override
     public JSONObject method15193(final JSONObject JSONObject) {
         JSONObject.method13301("name", this.method15204());
-        JSONObject.method13301("value", new Class88((Collection<?>) this.currentValue));
+        JSONObject.method13301("value", new JSONArray((Collection<?>) this.currentValue));
         return JSONObject;
     }
 
     @Override
     public JSONObject method15186(final JSONObject JSONObject) {
-        final Class88 method26638 = Class8105.method26638(JSONObject, "value");
+        final JSONArray method26638 = Class8105.method26638(JSONObject, "value");
         this.currentValue = new ArrayList();
         if (method26638 != null) {
             for (int i = 0; i < method26638.method462(); ++i) {

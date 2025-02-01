@@ -85,7 +85,7 @@ public class NCPSpeed extends Module
                 }
             }
             else if (this.field15848 > 1) {
-                if ((this.method9883("Auto Jump") && Class6430.method19114()) || NCPSpeed.mc.gameSettings.field23439.method1056()) {
+                if ((this.method9883("Auto Jump") && ColorUtils.method19114()) || NCPSpeed.mc.gameSettings.field23439.method1056()) {
                     this.field15847 = 0;
                     NCPSpeed.mc.player.method2725();
                     class5717.method16973(NCPSpeed.mc.player.getMotion().x);

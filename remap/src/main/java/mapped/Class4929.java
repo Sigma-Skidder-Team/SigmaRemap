@@ -37,7 +37,7 @@ public class Class4929 extends Class4800
         this.field21088 = 0;
         this.field21089 = 0;
         this.field21090 = true;
-        this.field21094 = new Class9572(200, 200, Class2186.field12965);
+        this.field21094 = new Class9572(200, 200, Direction.FORWARDS);
         this.field21095 = new Class9572(325, 325);
         this.field21096 = new Class9572(800, 800);
         this.field21098 = new ArrayList<Class4804>();
@@ -46,8 +46,8 @@ public class Class4929 extends Class4800
         if (Class4929.field21097 == null) {
             Class4929.field21097 = ClientAssets.method25396("com/mentalfrostbyte/gui/resources/" + ClientAssets.getPanorama(), 0.075f, 8);
         }
-        this.field21095.method35855(Class2186.field12965);
-        this.field21096.method35855(Class2186.field12965);
+        this.field21095.changeDirection(Direction.FORWARDS);
+        this.field21096.changeDirection(Direction.FORWARDS);
         final int n = Minecraft.method5277().field4632.method7694() * Minecraft.method5277().field4632.method7695() / 14000;
         final Random random = new Random();
         for (int i = 0; i < n; ++i) {
@@ -63,7 +63,7 @@ public class Class4929 extends Class4800
     }
     
     public void method14790() {
-        this.field21094.method35855(Class2186.field12965);
+        this.field21094.changeDirection(Direction.FORWARDS);
         this.field21092.method14305(false);
         this.field21093.method14305(false);
         this.field21093.method14301(false);
@@ -71,12 +71,12 @@ public class Class4929 extends Class4800
     }
     
     public void method14791() {
-        this.field21094.method35855(Class2186.field12964);
+        this.field21094.changeDirection(Direction.BACKWARDS);
         this.field21092.method14305(true);
     }
     
     public void method14792() {
-        this.field21094.method35855(Class2186.field12964);
+        this.field21094.changeDirection(Direction.BACKWARDS);
         this.field21093.method14305(true);
         this.field21093.method14301(true);
         this.field21093.method14303(false);
@@ -92,14 +92,14 @@ public class Class4929 extends Class4800
     }
     
     @Override
-    public void method14205(final float n) {
-        float n2 = Class8468.method28270(this.field21094.method35858(), 0.0f, 1.0f, 1.0f);
-        if (this.field21094.method35857() == Class2186.field12965) {
-            n2 = Class8468.method28269(this.field21094.method35858(), 0.0f, 1.0f, 1.0f);
+    public void draw(final float n) {
+        float n2 = Class8468.method28270(this.field21094.calcPercent(), 0.0f, 1.0f, 1.0f);
+        if (this.field21094.getDirection() == Direction.FORWARDS) {
+            n2 = Class8468.method28269(this.field21094.calcPercent(), 0.0f, 1.0f, 1.0f);
         }
         final float n3 = 0.07f * n2;
         this.field21091.method14288(1.0f - n3, 1.0f - n3);
-        this.field21091.method14305(this.field21094.method35858() == 0.0f);
+        this.field21091.method14305(this.field21094.calcPercent() == 0.0f);
         Class4929.field21099 = Math.min(10.0f, Math.max(0.0f, (System.nanoTime() - Class4929.field21087) / 1.810361E7f / 2.0f));
         Class4929.field21087 = System.nanoTime();
         final int field21089 = -this.method14320();
@@ -112,32 +112,32 @@ public class Class4929 extends Class4800
         final float n5 = n4 - this.field21088;
         final float n6 = (float)(field21089 - this.field21089);
         if (Minecraft.method5277().field4701 == null) {
-            this.field21095.method35855(Class2186.field12964);
-            this.field21096.method35855(Class2186.field12964);
+            this.field21095.changeDirection(Direction.BACKWARDS);
+            this.field21096.changeDirection(Direction.BACKWARDS);
             final float n7 = 0.5f - this.field21089 / (float) Minecraft.method5277().field4632.method7694() * -1.0f;
-            final float n8 = 1.0f - this.field21095.method35858();
-            final float n9 = 1.0f - this.field21096.method35858();
+            final float n8 = 1.0f - this.field21095.calcPercent();
+            final float n9 = 1.0f - this.field21096.calcPercent();
             if (Client.method35173().method35185()) {}
             final float n10 = this.method14276() / 1920.0f;
             final int n11 = (int)(600.0f * n10);
             final int n12 = (int)(450.0f * n10);
             final int n13 = 0;
-            Class8154.method26905(this.field21089 - n11 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n11), (float)(this.method14278() + 114), ClientAssets.background);
-            Class8154.method26905(this.field21089 - n12 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n12), (float)(this.method14278() + 114), ClientAssets.middle);
+            RenderUtil.method26905(this.field21089 - n11 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n11), (float)(this.method14278() + 114), ClientAssets.background);
+            RenderUtil.method26905(this.field21089 - n12 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n12), (float)(this.method14278() + 114), ClientAssets.middle);
             for (final Class4803 class4803 : this.field21098) {
                 GL11.glPushMatrix();
-                class4803.method14205(n);
+                class4803.draw(n);
                 GL11.glPopMatrix();
             }
-            Class8154.method26905(this.field21089 - n13 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n13), (float)(this.method14278() + 114), ClientAssets.foreground);
+            RenderUtil.method26905(this.field21089 - n13 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n13), (float)(this.method14278() + 114), ClientAssets.foreground);
             final Texture field21090 = ClientAssets.logo_large;
             field21090.method24918();
             field21090.method24917();
             if (Class9000.field37993 > 1.0f) {
                 final Texture field21091 = ClientAssets.logo_large2x;
             }
-            Class8154.method26900((float)this.field21089, (float)(this.field21088 - 50), (float)(this.method14276() * 2), (float)(this.method14278() + 200), Class4929.field21097, Class6430.method19118(Class265.field1278.field1292, n2), false);
-            Class8154.method26874(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class6430.method19118(Class265.field1273.field1292, n2 * 0.3f));
+            RenderUtil.method26900((float)this.field21089, (float)(this.field21088 - 50), (float)(this.method14276() * 2), (float)(this.method14278() + 200), Class4929.field21097, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n2), false);
+            RenderUtil.method26874(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.field1273.color, n2 * 0.3f));
             for (final Class4803 class4804 : this.method14250()) {
                 if (!class4804.method14296()) {
                     continue;
@@ -145,11 +145,11 @@ public class Class4929 extends Class4800
                 GL11.glPushMatrix();
                 if (class4804 instanceof Class4812) {
                     if (n2 > 0.0f) {
-                        class4804.method14205(n);
+                        class4804.draw(n);
                     }
                 }
                 else {
-                    class4804.method14205(n * (1.0f - n2));
+                    class4804.draw(n * (1.0f - n2));
                 }
                 GL11.glPopMatrix();
             }

@@ -46,7 +46,7 @@ public class Unstuck extends Module
     @EventListener
     public void method10544(final Class5744 class5744) {
         if (this.method9906() && class5744.method17046()) {
-            if (!Unstuck.mc.player.onGround && !Class6430.method19160(Unstuck.mc.player, 0.001f)) {
+            if (!Unstuck.mc.player.onGround && !ColorUtils.method19160(Unstuck.mc.player, 0.001f)) {
                 if (this.field15927 >= this.getNumberSettingValueByName("Flags")) {
                     if (this.field15928 == 0) {
                         this.field15928 = 60;
@@ -74,7 +74,7 @@ public class Unstuck extends Module
         }
         if (Unstuck.mc.player != null) {
             if (class5723.method16998() instanceof Class4328) {
-                if (!Class6430.method19160(Unstuck.mc.player, 0.3f)) {
+                if (!ColorUtils.method19160(Unstuck.mc.player, 0.3f)) {
                     if (Unstuck.mc.player.ticksExisted > 10) {
                         ++this.field15927;
                         if (this.field15927 > this.getNumberSettingValueByName("Flags")) {

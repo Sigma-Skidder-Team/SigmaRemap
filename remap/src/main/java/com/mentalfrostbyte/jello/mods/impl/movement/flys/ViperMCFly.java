@@ -41,7 +41,7 @@ public class ViperMCFly extends Module
     public void onDisable() {
         Class7482.method23151(0.0);
         if (ViperMCFly.mc.player.getMotion().y > 0.0) {
-            Class6430.method19155(-0.0789);
+            ColorUtils.method19155(-0.0789);
         }
     }
     
@@ -78,22 +78,22 @@ public class ViperMCFly extends Module
                                 class5717.method16975(-Class7482.method23141());
                             }
                         }
-                        Class6430.method19155(class5717.method16974());
+                        ColorUtils.method19155(class5717.method16974());
                         Class7482.method23149(class5717, Class7482.method23136());
                     }
                 }
                 else {
                     if (!ViperMCFly.mc.gameSettings.field23439.method1056()) {
-                        class5717.method16975((this.field15636 && !Class6430.method19160(ViperMCFly.mc.player, 0.01f)) ? (-n / 2.0) : Class7482.method23141());
+                        class5717.method16975((this.field15636 && !ColorUtils.method19160(ViperMCFly.mc.player, 0.01f)) ? (-n / 2.0) : Class7482.method23141());
                         this.field15635 = this.field15634;
-                        this.field15634 = ((this.field15636 && !Class6430.method19160(ViperMCFly.mc.player, 0.01f)) ? (ViperMCFly.mc.player.posY + class5717.method16974()) : this.field15634);
+                        this.field15634 = ((this.field15636 && !ColorUtils.method19160(ViperMCFly.mc.player, 0.01f)) ? (ViperMCFly.mc.player.posY + class5717.method16974()) : this.field15634);
                     }
                     else {
                         class5717.method16975(this.field15636 ? Class7482.method23141() : (n / 2.0));
                         this.field15635 = this.field15634;
                         this.field15634 = (this.field15636 ? this.field15634 : (ViperMCFly.mc.player.posY + class5717.method16974()));
                     }
-                    Class6430.method19155(class5717.method16974());
+                    ColorUtils.method19155(class5717.method16974());
                     Class7482.method23149(class5717, n);
                 }
             }

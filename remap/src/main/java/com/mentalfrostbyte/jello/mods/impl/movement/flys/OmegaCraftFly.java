@@ -39,7 +39,7 @@ public class OmegaCraftFly extends Module
     public void onDisable() {
         Class7482.method23151(0.0);
         if (OmegaCraftFly.mc.player.getMotion().y > 0.0) {
-            Class6430.method19155(-0.0789);
+            ColorUtils.method19155(-0.0789);
         }
     }
     
@@ -57,7 +57,7 @@ public class OmegaCraftFly extends Module
                                 class5717.method16975(-Class7482.method23141());
                             }
                         }
-                        Class6430.method19155(class5717.method16974());
+                        ColorUtils.method19155(class5717.method16974());
                         Class7482.method23149(class5717, max - 0.01);
                     }
                 }
@@ -68,7 +68,7 @@ public class OmegaCraftFly extends Module
                             class5717.method16975(-Class7482.method23141());
                         }
                     }
-                    Class6430.method19155(class5717.method16974());
+                    ColorUtils.method19155(class5717.method16974());
                     Class7482.method23149(class5717, max);
                 }
             }

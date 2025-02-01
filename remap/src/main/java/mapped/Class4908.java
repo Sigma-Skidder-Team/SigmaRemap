@@ -34,7 +34,7 @@ public class Class4908 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         final double max = Math.max(-1.0, Math.min(1.0, (Minecraft.method5277().field4650.method26959() - Minecraft.method5277().field4632.method7694() / 2) / (Minecraft.method5277().field4632.method7694() / 2)));
         final double max2 = Math.max(-1.0, Math.min(1.0, (Minecraft.method5277().field4650.method26960() - Minecraft.method5277().field4632.method7695() / 2) / (Minecraft.method5277().field4632.method7695() / 2)));
         GL11.glPushMatrix();
@@ -47,12 +47,12 @@ public class Class4908 extends Class4825
         GL11.glRotated(1.0 * Math.abs(max * max2), max2, max, 0.0);
         GL11.glTranslatef((float)(-this.field20478 - this.field20480 / 2), (float)(-this.field20479 - this.field20481 / 2), 0.0f);
         GL11.glDisable(2929);
-        Class8154.method26874((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, Class265.field1283.field1292);
+        RenderUtil.method26874((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, ClientColors.field1283.color);
         GL11.glPopMatrix();
-        super.method14205(n);
+        super.draw(n);
     }
     
     static {
-        Class4908.field20996 = new Class6523(Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292, Class2056.field11734, Class2056.field11738);
+        Class4908.field20996 = new Class6523(ClientColors.field1273.color, ClientColors.field1273.color, ClientColors.field1273.color, ClientColors.field1273.color, Class2056.field11734, Class2056.field11738);
     }
 }

@@ -85,13 +85,13 @@ public class Class7658
             return;
         }
         final File file = new File(this.field30402 + "/waypoints.json");
-        final Class88 class88 = new Class88();
+        final JSONArray JSONArray = new JSONArray();
         final Iterator<Class8124> iterator = this.field30399.iterator();
         while (iterator.hasNext()) {
-            class88.method486(iterator.next().method26749());
+            JSONArray.method486(iterator.next().method26749());
         }
         final JSONObject class89 = new JSONObject();
-        class89.method13301("waypoints", class88);
+        class89.method13301("waypoints", JSONArray);
         try {
             Class9532.method35585(class89, file);
         }
@@ -105,7 +105,7 @@ public class Class7658
         try {
             final JSONObject method35586 = Class9532.method35586(file);
             if (!method35586.has("waypoints")) {
-                method35586.method13301("waypoints", new Class88());
+                method35586.method13301("waypoints", new JSONArray());
             }
             final Iterator<Object> iterator = method35586.method13263("waypoints").iterator();
             while (iterator.hasNext()) {
@@ -429,11 +429,11 @@ public class Class7658
             final Material method1142 = this.field30396.world.getBlockState(method1139.method1143()).method21697();
             if (method1141 != Material.AIR && method1141 != Material.SNOW) {
                 if (method1142 == Material.AIR || method1142 == Material.SNOW) {
-                    rgba = Class6430.method19109(new Color(rgba, true), Color.WHITE, 0.6f).getRGB();
+                    rgba = ColorUtils.method19109(new Color(rgba, true), Color.WHITE, 0.6f).getRGB();
                 }
             }
             else {
-                rgba = Class6430.method19109(new Color(rgba, true), Color.BLACK, 0.6f).getRGB();
+                rgba = ColorUtils.method19109(new Color(rgba, true), Color.BLACK, 0.6f).getRGB();
             }
         }
         int rgb;

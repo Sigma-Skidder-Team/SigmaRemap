@@ -62,7 +62,7 @@ public class Class4801 extends Class4800
         this.field20465.method14385(true);
         final Class4873 class3169;
         this.addVisualThing(class3169 = new Class4873(this, "more", this.method14276() - 69, this.method14278() - 55, 55, 41, ClientAssets.options2));
-        class3169.method14318().method19730(Class6430.method19118(Class265.field1278.field1292, 0.3f));
+        class3169.method14318().method19730(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
         class3169.method14311(false);
         this.field20465.method14297(Class4801.field20470);
         class3169.method14260((class4803, n) -> this.method14225(() -> {
@@ -77,8 +77,8 @@ public class Class4801 extends Class4800
         }));
         Class4801.field20461 = new Class9572(450, 125);
         this.field20459 = new Class4919(this, this, "overlay");
-        Class6430.method19169();
-        Class6430.method19170(Class4801.field20461.method35858());
+        ColorUtils.method19169();
+        ColorUtils.method19170(Class4801.field20461.calcPercent());
     }
     
     public boolean method14208() {
@@ -138,7 +138,7 @@ public class Class4801 extends Class4800
     public void method14200(final int n, final int n2) {
         this.field20465.method14297(this.field20465.method14276() < this.method14276() && this.field20465.method14278() < this.method14278());
         super.method14200(n, n2);
-        Class6430.method19170(Math.min(1.0f, Class4801.field20461.method35858() * 4.0f));
+        ColorUtils.method19170(Math.min(1.0f, Class4801.field20461.calcPercent() * 4.0f));
         this.field20466.method14297(Client.method35173().method35189().method21551(BrainFreeze.class).method9906());
         if (this.field20467 != null) {
             final int n3 = n - this.field20467.method14280();
@@ -153,7 +153,7 @@ public class Class4801 extends Class4800
                 this.field20467 = null;
             }
         }
-        if (Class4801.field20461.method35857() == Class2186.field12965) {
+        if (Class4801.field20461.getDirection() == Direction.FORWARDS) {
             if (this.field20468 != null) {
                 if (!this.field20468.field20936) {
                     this.field20468.field20936 = true;
@@ -162,7 +162,7 @@ public class Class4801 extends Class4800
         }
         if (this.field20468 != null) {
             if (this.field20468.field20936) {
-                if (this.field20468.field20926.method35858() == 0.0f) {
+                if (this.field20468.field20926.calcPercent() == 0.0f) {
                     this.method14225(() -> {
                         this.method14245(this.field20468);
                         this.field20468 = null;
@@ -173,20 +173,20 @@ public class Class4801 extends Class4800
         }
         if (Class4801.field20463) {
             final float n5 = (float)(0.029999999329447746 * (60.0 / this.method14201()));
-            final Class2186 method35857 = Class4801.field20461.method35857();
-            Class4801.field20461.method35855(Class4801.field20462 ? Class2186.field12965 : Class2186.field12964);
-            if (Class4801.field20461.method35858() <= 0.0f && Class4801.field20462) {
+            final Direction method35857 = Class4801.field20461.getDirection();
+            Class4801.field20461.changeDirection(Class4801.field20462 ? Direction.FORWARDS : Direction.BACKWARDS);
+            if (Class4801.field20461.calcPercent() <= 0.0f && Class4801.field20462) {
                 this.method14210(Class4801.field20462 = false);
             }
-            else if (Class4801.field20461.method35858() >= 1.0f) {
-                if (Class4801.field20461.method35857() == method35857) {
+            else if (Class4801.field20461.calcPercent() >= 1.0f) {
+                if (Class4801.field20461.getDirection() == method35857) {
                     this.method14210(Class4801.field20462 = true);
                 }
             }
         }
         if (Class4801.field20463) {
             if (Class4801.field20462) {
-                Class6430.method19172();
+                ColorUtils.method19172();
             }
         }
     }
@@ -199,7 +199,7 @@ public class Class4801 extends Class4800
     
     @Override
     public JSONObject method14202(final JSONObject JSONObject) {
-        Class6430.method19172();
+        ColorUtils.method19172();
         this.method14243(this.field20459);
         return super.method14202(JSONObject);
     }
@@ -247,34 +247,34 @@ public class Class4801 extends Class4800
     }
     
     public float method14212(final float n, final float n2) {
-        if (Class4801.field20461.method35857() != Class2186.field12965) {
+        if (Class4801.field20461.getDirection() != Direction.FORWARDS) {
             return (float)(Math.pow(2.0, -10.0f * n) * Math.sin((n - n2 / 4.0f) * 6.283185307179586 / n2) + 1.0);
         }
         return Class7791.method25030(n, 0.0f, 1.0f, 1.0f);
     }
     
     @Override
-    public void method14205(final float n) {
-        float n2 = (Class4801.field20463 && !Class4801.field20462) ? (this.method14212(Class4801.field20461.method35858(), 0.8f) * 0.5f + 0.5f) : (Class4801.field20463 ? this.method14212(Class4801.field20461.method35858(), 1.0f) : 1.0f);
-        Class8154.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), Class6430.method19118(Class265.field1273.field1292, 0.2f * n * n2));
+    public void draw(final float n) {
+        float n2 = (Class4801.field20463 && !Class4801.field20462) ? (this.method14212(Class4801.field20461.calcPercent(), 0.8f) * 0.5f + 0.5f) : (Class4801.field20463 ? this.method14212(Class4801.field20461.calcPercent(), 1.0f) : 1.0f);
+        RenderUtil.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.2f * n * n2));
         float n3 = 1.0f;
         if (this.field20468 != null) {
-            float n4 = Class7707.method24584(this.field20468.field20927.method35858(), 0.0f, 1.0f, 1.0f);
-            if (this.field20468.field20927.method35857() == Class2186.field12965) {
-                n4 = Class8468.method28269(this.field20468.field20927.method35858(), 0.0f, 1.0f, 1.0f);
+            float n4 = Class7707.method24584(this.field20468.field20927.calcPercent(), 0.0f, 1.0f, 1.0f);
+            if (this.field20468.field20927.getDirection() == Direction.FORWARDS) {
+                n4 = Class8468.method28269(this.field20468.field20927.calcPercent(), 0.0f, 1.0f, 1.0f);
             }
-            n3 -= this.field20468.field20927.method35858() * 0.1f;
+            n3 -= this.field20468.field20927.calcPercent() * 0.1f;
             n2 *= 1.0f + n4 * 0.2f;
         }
         if (Client.method35173().method35189().method21556().method32707() != null) {
             final String field33839 = Client.method35173().method35189().method21556().method32707().field33839;
-            Class8154.method26889(ClientFonts.JelloLight20, (float)(this.field20480 - ClientFonts.JelloLight20.getWidth(field33839) - 80), (float)(this.field20481 - 47), field33839, Class6430.method19118(Class265.field1278.field1292, 0.5f * Math.max(0.0f, Math.min(1.0f, n2))));
+            RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.field20480 - ClientFonts.JelloLight20.getWidth(field33839) - 80), (float)(this.field20481 - 47), field33839, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * Math.max(0.0f, Math.min(1.0f, n2))));
         }
         for (final Class4803 class4803 : this.method14250()) {
             class4803.method14295((int)((class4803.method14272() + class4803.method14276() / 2 - Class4801.field20460.field4632.method7694() / 2) * (1.0f - n2) * 0.5f), (int)((class4803.method14274() + class4803.method14278() / 2 - Class4801.field20460.field4632.method7695() / 2) * (1.0f - n2) * 0.5f));
             class4803.method14288(1.5f - n2 * 0.5f, 1.5f - n2 * 0.5f);
         }
-        super.method14205(n * Math.min(1.0f, n2) * n3);
+        super.draw(n * Math.min(1.0f, n2) * n3);
         if (this.field20471 != null) {
             this.field20471.method14301(false);
         }

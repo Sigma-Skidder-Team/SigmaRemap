@@ -43,7 +43,7 @@ public class Class9096
     }
     
     public void method32867(final float n) {
-        method32868(this.field38518 * 2.0f, this.field38519 * 2.0f, this.field38520 * 2.0f, Class6430.method19118(this.field38529.getRGB(), n * this.field38527));
+        method32868(this.field38518 * 2.0f, this.field38519 * 2.0f, this.field38520 * 2.0f, ColorUtils.applyAlpha(this.field38529.getRGB(), n * this.field38527));
     }
     
     public static void method32868(float n, float n2, float n3, final int n4) {
@@ -60,7 +60,7 @@ public class Class9096
         GL11.glPushMatrix();
         GL11.glScalef(0.5f, 0.5f, 0.5f);
         GL11.glBegin(2);
-        GL11.glColor4fv(Class6430.method19139(n4));
+        GL11.glColor4fv(ColorUtils.method19139(n4));
         for (int i = 0; i < 32; ++i) {
             GL11.glVertex2f(n8 + n, n9 + n2);
             GL11.glVertex2f(n, n2);

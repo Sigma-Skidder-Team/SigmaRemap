@@ -52,7 +52,7 @@ public class MineplexLongJump extends Module
             if (!MineplexLongJump.mc.player.onGround) {
                 if (this.field16042 >= 0) {
                     if (this.field16045) {
-                        if (!Class6430.method19114()) {
+                        if (!ColorUtils.method19114()) {
                             this.field16045 = !this.field16045;
                             this.field16040 = 0.5;
                             this.field16043 = 1;
@@ -71,7 +71,7 @@ public class MineplexLongJump extends Module
                         this.field16041 -= 0.02;
                     }
                     if (this.field16042 > 6) {
-                        if (!Class6430.method19114()) {
+                        if (!ColorUtils.method19114()) {
                             this.field16041 -= 0.05;
                         }
                     }
@@ -105,9 +105,9 @@ public class MineplexLongJump extends Module
                         return;
                     }
                 }
-                this.field16045 = Class6430.method19114();
+                this.field16045 = ColorUtils.method19114();
                 final BlockPos class5718 = new BlockPos(MineplexLongJump.mc.player.posX, MineplexLongJump.mc.player.posY - 0.4, MineplexLongJump.mc.player.posZ);
-                if (Class6430.method19114()) {
+                if (ColorUtils.method19114()) {
                     if ((this.method9914().method9883("BorderJump") && !Class4609.method13708(class5718)) || this.method9914().method9883("Auto Jump")) {
                         MineplexLongJump.mc.player.method2725();
                         class5717.method16975(MineplexLongJump.mc.player.getMotion().y);

@@ -38,17 +38,17 @@ public class Class4904 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
-        final int method19118 = Class6430.method19118(Color.HSBtoRGB(this.field20979, 0.0f, 1.0f), n);
-        final int method19119 = Class6430.method19118(Color.HSBtoRGB(this.field20979, 1.0f, 1.0f), n);
-        final int method19120 = Class6430.method19118(Class265.field1273.field1292, n);
-        Class8154.method26865(this);
-        Class8154.method26882(this.method14272(), this.method14274(), this.method14272() + this.method14276(), this.method14274() + this.method14278(), method19118, method19119, method19119, method19118);
-        Class8154.method26882(this.method14272(), this.method14274(), this.method14272() + this.method14276(), this.method14274() + this.method14278(), Class6430.method19118(Class265.field1273.field1292, 0.0f), Class6430.method19118(Class265.field1273.field1292, 0.0f), method19120, method19120);
+    public void draw(final float n) {
+        final int method19118 = ColorUtils.applyAlpha(Color.HSBtoRGB(this.field20979, 0.0f, 1.0f), n);
+        final int method19119 = ColorUtils.applyAlpha(Color.HSBtoRGB(this.field20979, 1.0f, 1.0f), n);
+        final int method19120 = ColorUtils.applyAlpha(ClientColors.field1273.color, n);
+        RenderUtil.method26865(this);
+        RenderUtil.method26882(this.method14272(), this.method14274(), this.method14272() + this.method14276(), this.method14274() + this.method14278(), method19118, method19119, method19119, method19118);
+        RenderUtil.method26882(this.method14272(), this.method14274(), this.method14272() + this.method14276(), this.method14274() + this.method14278(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.0f), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.0f), method19120, method19120);
         Class4885.method14626(this.field20478 + Math.round(this.field20480 * this.method14730()), this.field20479 + Math.round(this.field20481 * (1.0f - this.method14733())), Color.HSBtoRGB(this.field20979, this.field20980, this.field20981), n);
-        Class8154.method26878((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), Class6430.method19118(Class265.field1273.field1292, 0.25f * n));
-        Class8154.method26872();
-        super.method14205(n);
+        RenderUtil.method26878((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.25f * n));
+        RenderUtil.method26872();
+        super.draw(n);
     }
     
     @Override

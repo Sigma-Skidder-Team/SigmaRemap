@@ -32,7 +32,7 @@ public class PathFinder extends Module
     }
     
     public void method10466() {
-        final int method19118 = Class6430.method19118(Class265.field1283.field1292, 0.14f);
+        final int method19118 = ColorUtils.applyAlpha(ClientColors.field1283.color, 0.14f);
         GL11.glPushMatrix();
         GL11.glDisable(2929);
         final Iterator<Class8733> iterator = this.field15879.iterator();
@@ -43,7 +43,7 @@ public class PathFinder extends Module
                 final double n = method19119.getX() - PathFinder.mc.field4644.method5833().method18161().getX();
                 final double n2 = method19119.getY() - PathFinder.mc.field4644.method5833().method18161().getY();
                 final double n3 = method19119.getZ() - PathFinder.mc.field4644.method5833().method18161().getZ();
-                Class8154.method26909(new Class7644(n, n2, n3, n + 1.0, n2 + 1.0, n3 + 1.0), method19118);
+                RenderUtil.method26909(new Class7644(n, n2, n3, n + 1.0, n2 + 1.0, n3 + 1.0), method19118);
             }
         }
         GL11.glEnable(2929);
@@ -55,7 +55,7 @@ public class PathFinder extends Module
         if (!this.method9906()) {
             return;
         }
-        Class6430.method19106("calc");
+        ColorUtils.method19106("calc");
         if (Client.method35173().method35205().method26559()) {
             Client.method35173().method35205().method26555();
             return;
@@ -89,7 +89,7 @@ public class PathFinder extends Module
             class5752.field27268 = true;
             this.field15879 = class5749.method35017(class5752);
             Client.method35173().method35205().method26556(this.field15879);
-            Class6430.method19106("calc" + this.field15879.size());
+            ColorUtils.method19106("calc" + this.field15879.size());
         }
         catch (final Exception ex) {
             ex.printStackTrace();

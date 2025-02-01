@@ -7,12 +7,12 @@ package mapped;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class8862
+public class MathUtils
 {
     private double field37251;
     public static final double field37252 = 0.10000000149011612;
     
-    public Class8862(final double field37251) {
+    public MathUtils(final double field37251) {
         if (field37251 > 0.0 && field37251 < 1.0) {
             this.field37251 = field37251;
             return;
@@ -20,7 +20,7 @@ public class Class8862
         throw new AssertionError((Object)"Smoothness must be between 0 and 1 (both non-inclusive)");
     }
     
-    public Class8862() {
+    public MathUtils() {
         this(0.10000000149011612);
     }
     
@@ -76,12 +76,12 @@ public class Class8862
         return null;
     }
     
-    public static float method31033(final float n, final double... array) {
+    public static float lerp(final float n, final double... array) {
         final ArrayList list = new ArrayList();
         list.add(new Class7202(0.0, 0.0));
         list.add(new Class7202(array[0], array[1]));
         list.add(new Class7202(array[2], array[3]));
         list.add(new Class7202(1.0, 1.0));
-        return (float)new Class8862(0.0055555556900799274).method31031(list, n);
+        return (float)new MathUtils(0.0055555556900799274).method31031(list, n);
     }
 }

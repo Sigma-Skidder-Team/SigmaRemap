@@ -21,8 +21,8 @@ public class Class4840 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
-        this.field20746 += (this.method14304() ? 0.2f : -0.2f);
+    public void draw(final float n) {
+        this.field20746 += (this.isHovered() ? 0.2f : -0.2f);
         this.field20746 = Math.min(1.0f, Math.max(0.0f, this.field20746));
         final float n2 = (float)(this.field20745.method23935() / 75L % 12L);
         if (this.field20746 != 0.0f) {
@@ -30,7 +30,7 @@ public class Class4840 extends Class4825
             GL11.glTranslatef((float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + this.field20481 / 2), 0.0f);
             GL11.glRotatef(n2 * 30.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-this.field20478 - this.field20480 / 2), (float)(-this.field20479 - this.field20481 / 2), 0.0f);
-            Class8154.method26899((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, ClientAssets.loading_indicator, Class6430.method19118(Class265.field1273.field1292, this.field20746 * n));
+            RenderUtil.method26899((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, ClientAssets.loading_indicator, ColorUtils.applyAlpha(ClientColors.field1273.color, this.field20746 * n));
             GL11.glPopMatrix();
         }
     }

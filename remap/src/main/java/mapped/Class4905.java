@@ -32,10 +32,10 @@ public class Class4905 extends Class4841
                         continue;
                     }
                     ((Class4877)class4804).field20867 = false;
-                    ((Class4877)class4804).field20868.method35855(Class2186.field12965);
+                    ((Class4877)class4804).field20868.changeDirection(Direction.FORWARDS);
                 }
                 ((Class4877)class4803).field20867 = true;
-                ((Class4877)class4803).field20868.method35855(Class2186.field12964);
+                ((Class4877)class4803).field20868.changeDirection(Direction.BACKWARDS);
                 this.field20984 = ((Class4877)class4803).field20866.field13388;
             });
             n3 = 0;

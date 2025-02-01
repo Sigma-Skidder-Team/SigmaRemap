@@ -70,11 +70,11 @@ public class Class4885 extends Class4841
     
     public static void method14626(final int n, final int n2, final int n3, final float n4) {
         final int n5 = 14;
-        Class8154.method26888((float)n, (float)n2, (float)n5, Class6430.method19118(Class265.field1273.field1292, 0.1f * n4));
-        Class8154.method26888((float)n, (float)n2, (float)(n5 - 1), Class6430.method19118(Class265.field1273.field1292, 0.14f * n4));
-        Class8154.method26888((float)n, (float)n2, (float)(n5 - 2), Class6430.method19118(Class265.field1278.field1292, n4));
-        Class8154.method26888((float)n, (float)n2, (float)(n5 - 6), Class6430.method19118(Class6430.method19120(n3, Class265.field1273.field1292, 0.7f), n4));
-        Class8154.method26888((float)n, (float)n2, (float)(n5 - 7), Class6430.method19118(n3, n4));
+        RenderUtil.method26888((float)n, (float)n2, (float)n5, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.1f * n4));
+        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 1), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.14f * n4));
+        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 2), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
+        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 6), ColorUtils.applyAlpha(ColorUtils.method19120(n3, ClientColors.field1273.color, 0.7f), n4));
+        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 7), ColorUtils.applyAlpha(n3, n4));
     }
     
     @Override
@@ -83,11 +83,11 @@ public class Class4885 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         if (this.field20882) {
             this.field20884.method14728(System.currentTimeMillis() % 4000L / 4000.0f, false);
             this.method14625();
         }
-        super.method14205(n);
+        super.draw(n);
     }
 }

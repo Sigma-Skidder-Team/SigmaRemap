@@ -63,7 +63,7 @@ public class NoteblockPlayer extends PremiumModule
             return;
         }
         if (NoteblockPlayer.mc.field4682.method27332()) {
-            Class6430.method19106("§cNoteBlockPlayer isn't available in creative mode!");
+            ColorUtils.method19106("§cNoteBlockPlayer isn't available in creative mode!");
             this.method9909(false);
             return;
         }
@@ -254,9 +254,9 @@ public class NoteblockPlayer extends PremiumModule
         final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.01f, -0.01f, -0.01f);
-        Class8154.method26876((float)(-field40314.getWidth(s) / 2 - 10), 0.0f, (float)(field40314.getWidth(s) / 2 + 10), (float)(field40314.getHeight() + 2), Class6430.method19118(Class265.field1273.field1292, 0.4f));
+        RenderUtil.method26876((float)(-field40314.getWidth(s) / 2 - 10), 0.0f, (float)(field40314.getWidth(s) / 2 + 10), (float)(field40314.getHeight() + 2), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.4f));
         GL11.glTranslated((double)(-field40314.getWidth(s) / 2), 0.0, 0.0);
-        Class8154.method26889(field40314, 0.0f, 0.0f, s, Class265.field1278.field1292);
+        RenderUtil.drawString(field40314, 0.0f, 0.0f, s, ClientColors.LIGHT_GREYISH_BLUE.color);
         GL11.glPopMatrix();
         GL11.glPopMatrix();
         GL11.glEnable(3553);
@@ -270,11 +270,11 @@ public class NoteblockPlayer extends PremiumModule
     public void method9879() {
         if (!NoteblockPlayer.mc.field4682.method27332()) {
             if (this.field16035.isEmpty()) {
-                Class6430.method19106("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
-                Class6430.method19106("§cPlaying the only integrated demo song!");
+                ColorUtils.method19106("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
+                ColorUtils.method19106("§cPlaying the only integrated demo song!");
                 this.field16034 = Class9377.method34815(ClientAssets.method25394("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
                 if (this.field16034 == null) {
-                    Class6430.method19106("§cError loading included song, wtf!");
+                    ColorUtils.method19106("§cError loading included song, wtf!");
                     this.method9909(false);
                     return;
                 }
@@ -282,15 +282,15 @@ public class NoteblockPlayer extends PremiumModule
             else {
                 this.field16034 = Class9377.method34814(new File(Client.method35173().method35208() + "/nbs/" + this.method9887("Song")));
                 if (this.field16034 == null) {
-                    Class6430.method19106("§cError loading song! Make sure song is saved as <= V3 format");
+                    ColorUtils.method19106("§cError loading song! Make sure song is saved as <= V3 format");
                     this.method9909(false);
                     return;
                 }
             }
             System.out.println(this.field16034.method9378());
-            Class6430.method19106("Now Playing: " + this.field16034.method9378());
+            ColorUtils.method19106("Now Playing: " + this.field16034.method9378());
             if (Math.floor(20.0f / this.field16034.method9383()) != 20.0f / this.field16034.method9383()) {
-                Class6430.method19106("§cNBS Error! Invalid tempo! (" + this.field16034.method9383() + ") Unpredictable results!");
+                ColorUtils.method19106("§cNBS Error! Invalid tempo! (" + this.field16034.method9383() + ") Unpredictable results!");
             }
             this.field16033 = 0;
             this.field16036.clear();
@@ -307,7 +307,7 @@ public class NoteblockPlayer extends PremiumModule
             this.method10707(this.field16036);
             return;
         }
-        Class6430.method19106("§cNoteBlockPlayer isn't available in creative mode!");
+        ColorUtils.method19106("§cNoteBlockPlayer isn't available in creative mode!");
         this.method9909(false);
     }
     

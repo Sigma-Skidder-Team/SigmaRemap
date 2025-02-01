@@ -4,14 +4,14 @@
 
 package mapped;
 
-public enum Class265
+public enum ClientColors
 {
     field1273(-16711423), 
     field1274(-16723258), 
     field1275(-15698006), 
     field1276(-9581017), 
     field1277(-11231458), 
-    field1278(-65794), 
+    LIGHT_GREYISH_BLUE(-65794),
     field1279(-14163205), 
     field1280(-16548724), 
     field1281(-6710887), 
@@ -26,9 +26,9 @@ public enum Class265
     field1290(-7864184), 
     field1291(-16724271);
     
-    public final int field1292;
+    public final int color;
     
-    private Class265(final int field1292) {
-        this.field1292 = field1292;
+    private ClientColors(final int color) {
+        this.color = color;
     }
 }

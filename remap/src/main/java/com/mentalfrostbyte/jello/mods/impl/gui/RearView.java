@@ -26,7 +26,7 @@ public class RearView extends PremiumModule
     public RearView() {
         super("RearView", "See behind you", Category.GUI);
         this.field15990 = 0;
-        this.field15985 = new Class9572(230, 200, Class2186.field12965);
+        this.field15985 = new Class9572(230, 200, Direction.FORWARDS);
         this.addSetting(new BooleanSetting("Show in GUI", "Makes the Rear View visible in guis", false));
         this.addSetting(new BooleanSetting("Smart Visibility", "Only pops up when a player is behind you", false));
         this.addSetting(new NumberSetting("Size", "The rear view width", 400.0f, Integer.class, 120.0f, 1000.0f, 1.0f));
@@ -90,28 +90,28 @@ public class RearView extends PremiumModule
         }
         if (!Minecraft.method5277().gameSettings.field23464) {
             if (!this.method9883("Smart Visibility")) {
-                this.field15985.method35855((RearView.mc.field4700 != null && !this.method9883("Show in GUI")) ? Class2186.field12965 : Class2186.field12964);
+                this.field15985.changeDirection((RearView.mc.field4700 != null && !this.method9883("Show in GUI")) ? Direction.FORWARDS : Direction.BACKWARDS);
             }
             else {
-                this.field15985.method35855((this.field15990 <= 0) ? Class2186.field12965 : Class2186.field12964);
+                this.field15985.changeDirection((this.field15990 <= 0) ? Direction.FORWARDS : Direction.BACKWARDS);
             }
             final float n = RearView.mc.field4632.method7694() / (float) RearView.mc.field4632.method7695();
             final int n2 = (int)this.getNumberSettingValueByName("Size");
             final int n3 = (int)(n2 / n);
             final int n4 = 10;
             int n5 = -n4 - n3;
-            if (this.field15985.method35858() == 0.0f && this.field15985.method35858() == 1.0f) {
-                if (this.field15985.method35858() == 0.0f) {
+            if (this.field15985.calcPercent() == 0.0f && this.field15985.calcPercent() == 1.0f) {
+                if (this.field15985.calcPercent() == 0.0f) {
                     return;
                 }
             }
-            else if (this.field15985.method35857() != Class2186.field12964) {
-                n5 *= (int)Class8862.method31033(this.field15985.method35858(), 0.49, 0.59, 0.16, 1.04);
+            else if (this.field15985.getDirection() != Direction.BACKWARDS) {
+                n5 *= (int) MathUtils.lerp(this.field15985.calcPercent(), 0.49, 0.59, 0.16, 1.04);
             }
             else {
-                n5 *= (int)Class8862.method31033(this.field15985.method35858(), 0.3, 0.88, 0.47, 1.0);
+                n5 *= (int) MathUtils.lerp(this.field15985.calcPercent(), 0.3, 0.88, 0.47, 1.0);
             }
-            Class8154.method26913((float)(RearView.mc.field4632.method7694() - n4 - n2), (float)(RearView.mc.field4632.method7695() + n5), (float)n2, (float)(n3 - 1), 14.0f, this.field15985.method35858());
+            RenderUtil.method26913((float)(RearView.mc.field4632.method7694() - n4 - n2), (float)(RearView.mc.field4632.method7695() + n5), (float)n2, (float)(n3 - 1), 14.0f, this.field15985.calcPercent());
             final int n6 = (int)(n2 * Class9000.field37993);
             final int n7 = (int)(n3 * Class9000.field37993);
             final int n8 = (int)(n4 * Class9000.field37993);
@@ -181,7 +181,7 @@ public class RearView extends PremiumModule
                     }
                 }
             }
-            Class8154.method26918();
+            RenderUtil.method26918();
             RenderSystem.method30059();
             RenderSystem.method30056(16640, false);
             RearView.field15986.method18395(true);
@@ -215,7 +215,7 @@ public class RearView extends PremiumModule
     
     @Override
     public void method9879() {
-        Class8154.method26919(RearView.mc.method5234());
+        RenderUtil.method26919(RearView.mc.method5234());
         final int method7692 = RearView.mc.field4632.method7692();
         final int method7693 = RearView.mc.field4632.method7693();
         final boolean b = true;
@@ -225,6 +225,6 @@ public class RearView extends PremiumModule
     
     @Override
     public void onDisable() {
-        this.field15985.method35855(Class2186.field12965);
+        this.field15985.changeDirection(Direction.FORWARDS);
     }
 }

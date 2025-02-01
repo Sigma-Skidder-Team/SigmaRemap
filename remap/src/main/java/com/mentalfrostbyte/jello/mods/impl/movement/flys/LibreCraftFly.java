@@ -37,7 +37,7 @@ public class LibreCraftFly extends Module
     public void onDisable() {
         Class7482.method23151(0.0);
         if (LibreCraftFly.mc.player.getMotion().y > 0.0) {
-            Class6430.method19155(-0.0789);
+            ColorUtils.method19155(-0.0789);
         }
     }
     
@@ -69,13 +69,13 @@ public class LibreCraftFly extends Module
                 if (this.field16046 != -1) {
                     if (this.field16046 == 0) {
                         class5717.method16975(0.0);
-                        Class6430.method19155(class5717.method16974());
+                        ColorUtils.method19155(class5717.method16974());
                         Class7482.method23149(class5717, 0.35);
                     }
                 }
                 else {
                     class5717.method16975(0.299);
-                    Class6430.method19155(class5717.method16974());
+                    ColorUtils.method19155(class5717.method16974());
                     Class7482.method23149(class5717, this.getNumberSettingValueByName("Speed"));
                 }
             }

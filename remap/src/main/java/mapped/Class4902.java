@@ -18,13 +18,13 @@ public class Class4902 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         final int n2 = 5;
         if (this.method14723() || this.method14308()) {
-            Class8154.method26914((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, 14.0f, this.method14723() ? (0.8f * n) : (0.3f * n));
+            RenderUtil.method26914((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, 14.0f, this.method14723() ? (0.8f * n) : (0.3f * n));
         }
-        Class8154.method26929(this.field20973, this.field20478 + n2, this.field20479 + n2, this.field20480 - n2 * 2, this.field20481 - n2 * 2);
-        super.method14205(n);
+        RenderUtil.method26929(this.field20973, this.field20478 + n2, this.field20479 + n2, this.field20480 - n2 * 2, this.field20481 - n2 * 2);
+        super.draw(n);
     }
     
     public boolean method14723() {

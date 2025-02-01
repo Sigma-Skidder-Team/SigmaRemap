@@ -63,7 +63,7 @@ public class InfoHUD extends Module
     public int method10539(final int n, final int n2) {
         final String s = "Facing South";
         final String method10538 = this.method10538(this.method9887("Cords").equals("Precise"));
-        Class8154.method26889(ClientFonts.JelloMedium20, (float)n, (float)(InfoHUD.mc.field4632.method7695() - n2), method10538, Class6430.method19118(Class265.field1278.field1292, 0.8f));
+        RenderUtil.drawString(ClientFonts.JelloMedium20, (float)n, (float)(InfoHUD.mc.field4632.method7695() - n2), method10538, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f));
         return Math.max(ClientFonts.JelloLight20.getWidth(s), ClientFonts.JelloMedium20.getWidth(method10538));
     }
     
@@ -74,12 +74,12 @@ public class InfoHUD extends Module
             if (!(class8321.getItem() instanceof Class4099)) {
                 ++n3;
                 final int n4 = n2 - 32 * n3;
-                Class8154.method26929(class8321, n, n4, 32, 32);
+                RenderUtil.method26929(class8321, n, n4, 32, 32);
                 GL11.glDisable(2896);
                 final float n5 = 1.0f - class8321.method27632() / (float)class8321.method27634();
                 if (n5 != 1.0f) {
-                    Class8154.method26874((float)(n + 2), (float)(n4 + 28), 28.0f, 5.0f, Class6430.method19118(Class265.field1273.field1292, 0.5f));
-                    Class8154.method26874((float)(n + 2), (float)(n4 + 28), 28.0f * n5, 3.0f, Class6430.method19118((n5 > 0.2) ? Class265.field1276.field1292 : Class265.field1283.field1292, 0.9f));
+                    RenderUtil.method26874((float)(n + 2), (float)(n4 + 28), 28.0f, 5.0f, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
+                    RenderUtil.method26874((float)(n + 2), (float)(n4 + 28), 28.0f * n5, 3.0f, ColorUtils.applyAlpha((n5 > 0.2) ? ClientColors.field1276.color : ClientColors.field1283.color, 0.9f));
                 }
             }
         }

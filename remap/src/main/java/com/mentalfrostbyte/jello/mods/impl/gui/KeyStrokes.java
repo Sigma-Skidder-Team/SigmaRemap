@@ -63,10 +63,10 @@ public class KeyStrokes extends Module
                 for (final Class2090 class5741 : Class2090.values()) {
                     final Class8883 method8208 = class5741.method8208();
                     final Class8883 method8209 = class5741.method8209();
-                    Class8154.method26870(this.field15538 + method8208.field37368, this.field15539 + method8208.field37369, this.field15538 + method8208.field37368 + method8209.field37368, this.field15539 + method8208.field37369 + method8209.field37369);
+                    RenderUtil.method26870(this.field15538 + method8208.field37368, this.field15539 + method8208.field37369, this.field15538 + method8208.field37368 + method8209.field37368, this.field15539 + method8208.field37369 + method8209.field37369);
                     Class8707.method29896(this.field15538 + method8208.field37368, this.field15539 + method8208.field37369, method8209.field37368, method8209.field37369);
                     Class8707.method29899();
-                    Class8154.method26872();
+                    RenderUtil.method26872();
                 }
             }
             for (final Class2090 class5742 : Class2090.values()) {
@@ -78,7 +78,7 @@ public class KeyStrokes extends Module
                     n2 = 0.5f;
                     n = 0.5f;
                 }
-                String method8212 = Class6430.method19166(class5742.field12093.field2161.field32860);
+                String method8212 = ColorUtils.method19166(class5742.field12093.field2161.field32860);
                 if (class5742.field12093 != KeyStrokes.mc.gameSettings.field23446) {
                     if (class5742.field12093 == KeyStrokes.mc.gameSettings.field23445) {
                         method8212 = "R";
@@ -87,9 +87,9 @@ public class KeyStrokes extends Module
                 else {
                     method8212 = "L";
                 }
-                Class8154.method26876((float)(this.field15538 + method8210.field37368), (float)(this.field15539 + method8210.field37369), (float)(this.field15538 + method8210.field37368 + method8211.field37368), (float)(this.field15539 + method8210.field37369 + method8211.field37369), Class6430.method19118(Class265.field1273.field1292, 0.5f * n));
-                Class8154.method26913((float)(this.field15538 + method8210.field37368), (float)(this.field15539 + method8210.field37369), (float)method8211.field37368, (float)method8211.field37369, 10.0f, 0.75f * n2);
-                Class8154.method26889(ClientFonts.JelloLight18, (float)(this.field15538 + method8210.field37368 + (method8211.field37368 - ClientFonts.JelloLight18.getWidth(method8212)) / 2), (float)(this.field15539 + method8210.field37369 + 12), method8212, Class265.field1278.field1292);
+                RenderUtil.method26876((float)(this.field15538 + method8210.field37368), (float)(this.field15539 + method8210.field37369), (float)(this.field15538 + method8210.field37368 + method8211.field37368), (float)(this.field15539 + method8210.field37369 + method8211.field37369), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f * n));
+                RenderUtil.method26913((float)(this.field15538 + method8210.field37368), (float)(this.field15539 + method8210.field37369), (float)method8211.field37368, (float)method8211.field37369, 10.0f, 0.75f * n2);
+                RenderUtil.drawString(ClientFonts.JelloLight18, (float)(this.field15538 + method8210.field37368 + (method8211.field37368 - ClientFonts.JelloLight18.getWidth(method8212)) / 2), (float)(this.field15539 + method8210.field37369 + 12), method8212, ClientColors.LIGHT_GREYISH_BLUE.color);
             }
             final Iterator<Class9151> iterator = this.field15540.iterator();
             while (iterator.hasNext()) {
@@ -97,7 +97,7 @@ public class KeyStrokes extends Module
                 final Class2090 field38781 = class5743.field38781;
                 final Class8883 method8213 = field38781.method8208();
                 final Class8883 method8214 = field38781.method8209();
-                Class8154.method26870(this.field15538 + method8213.field37368, this.field15539 + method8213.field37369, this.field15538 + method8213.field37368 + method8214.field37368, this.field15539 + method8213.field37369 + method8214.field37369);
+                RenderUtil.method26870(this.field15538 + method8213.field37368, this.field15539 + method8213.field37369, this.field15538 + method8213.field37368 + method8214.field37368, this.field15539 + method8213.field37369 + method8214.field37369);
                 final float n3 = 0.7f;
                 int n4 = 0;
                 final Iterator<Class9151> iterator2 = this.field15540.iterator();
@@ -108,20 +108,20 @@ public class KeyStrokes extends Module
                     ++n4;
                 }
                 if (field38781.method8210().method1056()) {
-                    if (class5743.field38782.method35858() >= n3) {
+                    if (class5743.field38782.calcPercent() >= n3) {
                         if (n4 < 2) {
                             class5743.field38782.method35856(n3);
                         }
                     }
                 }
-                final float method8215 = class5743.field38782.method35858();
-                int n5 = Class6430.method19118(-5658199, (1.0f - method8215 * (0.5f + method8215 * 0.5f)) * 0.8f);
+                final float method8215 = class5743.field38782.calcPercent();
+                int n5 = ColorUtils.applyAlpha(-5658199, (1.0f - method8215 * (0.5f + method8215 * 0.5f)) * 0.8f);
                 if (Client.method35173().method35193().method32146()) {
-                    n5 = Class6430.method19118(-1, (1.0f - method8215 * (0.5f + method8215 * 0.5f)) * 0.8f);
+                    n5 = ColorUtils.applyAlpha(-1, (1.0f - method8215 * (0.5f + method8215 * 0.5f)) * 0.8f);
                 }
-                Class8154.method26886((float)(this.field15538 + method8213.field37368 + method8214.method31267() / 2), (float)(this.field15539 + method8213.field37369 + method8214.field37369 / 2), (method8214.method31267() - 4) * method8215 + 4.0f, n5);
-                Class8154.method26872();
-                if (class5743.field38782.method35858() != 1.0f) {
+                RenderUtil.method26886((float)(this.field15538 + method8213.field37368 + method8214.method31267() / 2), (float)(this.field15539 + method8213.field37369 + method8214.field37369 / 2), (method8214.method31267() - 4) * method8215 + 4.0f, n5);
+                RenderUtil.method26872();
+                if (class5743.field38782.calcPercent() != 1.0f) {
                     continue;
                 }
                 iterator.remove();

@@ -81,19 +81,19 @@ public class Class4939 extends Class4800
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         if (Class568.field3391 != null) {
-            Class4939.field21206.method35855(Class2186.field12964);
+            Class4939.field21206.changeDirection(Direction.BACKWARDS);
             final int n2 = 40;
-            Class8154.method26905(n2 * (-Class4939.field21207 / Minecraft.method5277().field4632.method7694()), n2 * (-Class4939.field21208 / Minecraft.method5277().field4632.method7695()), (float)(Minecraft.method5277().field4632.method7694() + n2), (float)(Minecraft.method5277().field4632.method7695() + n2), Class568.field3391);
-            final float method31033 = Class8862.method31033(Class4939.field21206.method35858(), 0.16, 0.71, 0.0, 0.99);
+            RenderUtil.method26905(n2 * (-Class4939.field21207 / Minecraft.method5277().field4632.method7694()), n2 * (-Class4939.field21208 / Minecraft.method5277().field4632.method7695()), (float)(Minecraft.method5277().field4632.method7694() + n2), (float)(Minecraft.method5277().field4632.method7695() + n2), Class568.field3391);
+            final float method31033 = MathUtils.lerp(Class4939.field21206.calcPercent(), 0.16, 0.71, 0.0, 0.99);
             final int n3 = (Minecraft.method5277().field4632.method7694() - 455) / 2;
             final int n4 = (int)((Minecraft.method5277().field4632.method7695() - 78) / 2 - 14 - 116.0f * method31033);
-            Class8154.method26874(0.0f, 0.0f, (float) Minecraft.method5277().field4632.method7694(), (float) Minecraft.method5277().field4632.method7695(), Class6430.method19118(Class265.field1273.field1292, 0.3f));
-            super.method14205(n);
-            Class8154.method26899(0.0f, 0.0f, (float) Minecraft.method5277().field4632.method7694(), (float) Minecraft.method5277().field4632.method7695(), Class568.field3392, Class6430.method19118(Class265.field1278.field1292, 1.0f - Class4939.field21206.method35858()));
-            Class8154.method26874(0.0f, 0.0f, (float) Minecraft.method5277().field4632.method7694(), (float) Minecraft.method5277().field4632.method7695(), Class6430.method19118(0, 0.75f * (1.0f - Class4939.field21206.method35858())));
-            Class8154.method26905((float)n3, (float)n4, 455.0f, 78.0f, Class568.field3390);
+            RenderUtil.method26874(0.0f, 0.0f, (float) Minecraft.method5277().field4632.method7694(), (float) Minecraft.method5277().field4632.method7695(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.3f));
+            super.draw(n);
+            RenderUtil.method26899(0.0f, 0.0f, (float) Minecraft.method5277().field4632.method7694(), (float) Minecraft.method5277().field4632.method7695(), Class568.field3392, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 1.0f - Class4939.field21206.calcPercent()));
+            RenderUtil.method26874(0.0f, 0.0f, (float) Minecraft.method5277().field4632.method7694(), (float) Minecraft.method5277().field4632.method7695(), ColorUtils.applyAlpha(0, 0.75f * (1.0f - Class4939.field21206.calcPercent())));
+            RenderUtil.method26905((float)n3, (float)n4, 455.0f, 78.0f, Class568.field3390);
         }
     }
     
@@ -106,6 +106,6 @@ public class Class4939 extends Class4800
     }
     
     static {
-        Class4939.field21206 = new Class9572(300, 200, Class2186.field12965);
+        Class4939.field21206 = new Class9572(300, 200, Direction.FORWARDS);
     }
 }

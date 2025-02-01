@@ -195,7 +195,7 @@ public class Class4803 implements Class4925
         GL11.glTranslatef((float)this.method14289(), (float)this.method14291(), 0.0f);
     }
     
-    public void method14205(final float n) {
+    public void draw(final float n) {
         this.method14229(n);
     }
     
@@ -208,7 +208,7 @@ public class Class4803 implements Class4925
                 continue;
             }
             GL11.glPushMatrix();
-            class4803.method14205(n);
+            class4803.draw(n);
             GL11.glPopMatrix();
         }
     }
@@ -228,7 +228,7 @@ public class Class4803 implements Class4925
     
     public void method14231(final int n) {
         for (final Class4803 class4803 : this.field20476) {
-            if (!class4803.method14304()) {
+            if (!class4803.isHovered()) {
                 continue;
             }
             if (!class4803.method14296()) {
@@ -241,7 +241,7 @@ public class Class4803 implements Class4925
     @Override
     public void method14232(final char c) {
         for (final Class4803 class4803 : this.field20476) {
-            if (!class4803.method14304()) {
+            if (!class4803.isHovered()) {
                 continue;
             }
             if (!class4803.method14296()) {
@@ -255,7 +255,7 @@ public class Class4803 implements Class4925
     @Override
     public void method14204(final int n) {
         for (final Class4803 class4803 : this.field20476) {
-            if (!class4803.method14304()) {
+            if (!class4803.isHovered()) {
                 continue;
             }
             if (!class4803.method14296()) {
@@ -277,7 +277,7 @@ public class Class4803 implements Class4925
                     if (class4803.method14267() instanceof Class4817) {
                         if (class4803.method14267().method14236(n, n2)) {
                             if (class4803.method14267().method14296()) {
-                                if (class4803.method14267().method14304()) {
+                                if (class4803.method14267().isHovered()) {
                                     b2 = true;
                                     break Label_0140;
                                 }
@@ -289,7 +289,7 @@ public class Class4803 implements Class4925
             }
             final boolean b3 = b2;
             if (!b) {
-                if (class4803.method14304()) {
+                if (class4803.isHovered()) {
                     if (class4803.method14296()) {
                         if (class4803.method14236(n, n2) || b3) {
                             class4803.method14211(n, n2, n3);
@@ -323,7 +323,7 @@ public class Class4803 implements Class4925
     public void method14233(final int n, final int n2, final int n3) {
         this.field20491 = this.method14236(n, n2);
         for (final Class4803 class4803 : this.field20476) {
-            if (!class4803.method14304()) {
+            if (!class4803.isHovered()) {
                 continue;
             }
             if (!class4803.method14296()) {
@@ -348,7 +348,7 @@ public class Class4803 implements Class4925
     @Override
     public void method14235(final float n) {
         for (final Class4803 class4803 : this.field20476) {
-            if (!class4803.method14304()) {
+            if (!class4803.isHovered()) {
                 continue;
             }
             if (!class4803.method14296()) {
@@ -559,7 +559,7 @@ public class Class4803 implements Class4925
     }
     
     public final JSONObject method14254(final JSONObject JSONObject) {
-        final Class88 class4406 = new Class88();
+        final JSONArray class4406 = new JSONArray();
         for (final Class4803 class4407 : this.field20476) {
             if (!class4407.method14310()) {
                 continue;
@@ -582,7 +582,7 @@ public class Class4803 implements Class4925
                 this.field20480 = Class8105.method26632(JSONObject, "width", this.field20480);
                 this.field20481 = Class8105.method26632(JSONObject, "height", this.field20481);
             }
-            final Class88 method26638 = Class8105.method26638(JSONObject, "children");
+            final JSONArray method26638 = Class8105.method26638(JSONObject, "children");
             JSONObject.method13273().iterator();
             if (method26638 != null) {
                 final ArrayList list = new ArrayList((Collection<? extends E>)this.field20476);
@@ -800,7 +800,7 @@ public class Class4803 implements Class4925
         this.field20484 = field20484;
     }
     
-    public void method14294(final int field20485) {
+    public void drawBackground(final int field20485) {
         this.field20485 = field20485;
     }
     
@@ -844,7 +844,7 @@ public class Class4803 implements Class4925
         this.field20490 = field20490;
     }
     
-    public boolean method14304() {
+    public boolean isHovered() {
         return this.field20487;
     }
     

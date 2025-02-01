@@ -18,7 +18,7 @@ public class Class4898 extends Class4841
     
     public Class4898(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int field20950) {
         super(class4803, s, n, n2, n3, 0, Class6523.field25964, false);
-        this.field20949 = new Class9572(300, 200, Class2186.field12965);
+        this.field20949 = new Class9572(300, 200, Direction.FORWARDS);
         final Class4861 class4804;
         this.addVisualThing(class4804 = new Class4861(this, "blankButton", 25, 0, ClientFonts.JelloLight20.getWidth("Blank"), 30, Class6523.field25964, "Blank", ClientFonts.JelloLight20));
         class4804.method14260((class4803, n) -> ((Class4889)this.method14267()).method14637());
@@ -53,11 +53,11 @@ public class Class4898 extends Class4841
     }
     
     public void method14706(final boolean b) {
-        this.field20949.method35855(b ? Class2186.field12964 : Class2186.field12965);
+        this.field20949.changeDirection(b ? Direction.BACKWARDS : Direction.FORWARDS);
     }
     
     public boolean method14707() {
-        return this.field20949.method35857() == Class2186.field12964;
+        return this.field20949.getDirection() == Direction.BACKWARDS;
     }
     
     @Override
@@ -66,27 +66,27 @@ public class Class4898 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
-        float n2 = Class8862.method31033(this.field20949.method35858(), 0.1, 0.81, 0.14, 1.0);
-        if (this.field20949.method35857() == Class2186.field12965) {
-            n2 = Class8862.method31033(this.field20949.method35858(), 0.61, 0.01, 0.87, 0.16);
+    public void draw(final float n) {
+        float n2 = MathUtils.lerp(this.field20949.calcPercent(), 0.1, 0.81, 0.14, 1.0);
+        if (this.field20949.getDirection() == Direction.FORWARDS) {
+            n2 = MathUtils.lerp(this.field20949.calcPercent(), 0.61, 0.01, 0.87, 0.16);
         }
         this.method14279((int)(this.field20950 * n2));
-        if (this.field20949.method35858() != 0.0f) {
-            Class8154.method26899((float)this.field20478, (float)(this.field20479 + this.field20481), (float)this.field20480, 50.0f, ClientAssets.shadow_bottom, Class6430.method19118(Class265.field1278.field1292, this.field20949.method35858() * n * 0.3f));
-            Class8154.method26865(this);
-            Class8154.method26874((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, Class6430.method19118(-723724, n));
+        if (this.field20949.calcPercent() != 0.0f) {
+            RenderUtil.method26899((float)this.field20478, (float)(this.field20479 + this.field20481), (float)this.field20480, 50.0f, ClientAssets.shadow_bottom, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, this.field20949.calcPercent() * n * 0.3f));
+            RenderUtil.method26865(this);
+            RenderUtil.method26874((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(-723724, n));
             if (Class4898.field20952 != null) {
                 final Class8784 field20952 = Class4898.field20952;
                 if (Class8784.field36931 != null) {
                     final Class8784 field20953 = Class4898.field20952;
                     if (Class8784.field36931.isEmpty()) {
-                        Class8154.method26889(ClientFonts.JelloLight14, (float)(this.field20478 + 40), (float)(this.field20479 + 110), "No Default Profiles Available", Class265.field1281.field1292);
+                        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.field20478 + 40), (float)(this.field20479 + 110), "No Default Profiles Available", ClientColors.field1281.color);
                     }
                 }
             }
-            super.method14205(n);
-            Class8154.method26872();
+            super.draw(n);
+            RenderUtil.method26872();
         }
     }
 }

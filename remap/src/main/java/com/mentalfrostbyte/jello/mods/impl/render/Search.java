@@ -34,7 +34,7 @@ public class Search extends Module
         this.addSetting(class4996 = new NumberSetting("Chunk Range", "Range at which search scans blocks", 5.0f, (Class<? extends T>)Float.class, 1.0f, 12.0f, 1.0f));
         final BooleanSetting class4997;
         this.addSetting(class4997 = new BooleanSetting("Holes", "Shows 1x1 explosion protection holes", false));
-        this.addSetting(new ColorSetting("Color", "The rendered block color", Class265.field1281.field1292, true));
+        this.addSetting(new ColorSetting("Color", "The rendered block color", ClientColors.field1281.color, true));
         final StringListSetting class4998;
         this.addSetting(class4998 = new StringListSetting("Blocks", "Blocks to render", true, new String[0]));
         class4998.method15195(class4997 -> this.field15793.clear());
@@ -179,7 +179,7 @@ public class Search extends Module
     }
     
     public void method10377() {
-        final int method19118 = Class6430.method19118(this.method9885("Color"), 0.14f);
+        final int method19118 = ColorUtils.applyAlpha(this.method9885("Color"), 0.14f);
         GL11.glPushMatrix();
         GL11.glDisable(2929);
         final Iterator<Class6731> iterator = this.field15793.iterator();
@@ -188,7 +188,7 @@ public class Search extends Module
                 final double n = class354.getX() - Search.mc.field4644.method5833().method18161().getX();
                 final double n2 = class354.getY() - Search.mc.field4644.method5833().method18161().getY();
                 final double n3 = class354.getZ() - Search.mc.field4644.method5833().method18161().getZ();
-                Class8154.method26909(new Class7644(n, n2, n3, n + 1.0, n2 + 1.0, n3 + 1.0), method19118);
+                RenderUtil.method26909(new Class7644(n, n2, n3, n + 1.0, n2 + 1.0, n3 + 1.0), method19118);
             }
         }
         GL11.glEnable(2929);

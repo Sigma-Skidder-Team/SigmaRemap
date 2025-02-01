@@ -59,7 +59,7 @@ public class AGCFly extends Module
     public void onDisable() {
         Class7482.method23151(0.0);
         if (AGCFly.mc.player.getMotion().y > 0.0) {
-            Class6430.method19155(-0.0789);
+            ColorUtils.method19155(-0.0789);
         }
     }
     
@@ -73,7 +73,7 @@ public class AGCFly extends Module
                     if (this.field15644 != 3) {
                         Class7482.method23149(class5717, 0.32);
                     }
-                    Class6430.method19155(class5717.method16974());
+                    ColorUtils.method19155(class5717.method16974());
                 }
             }
             else {

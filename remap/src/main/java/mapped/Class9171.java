@@ -31,7 +31,7 @@ public class Class9171
         boolean field38852 = false;
         Label_0165: {
             Label_0054: {
-                if (Class6430.method19146()) {
+                if (ColorUtils.method19146()) {
                     Label_0089: {
                         if (class5733.method9887("Type").equalsIgnoreCase("Hypixel")) {
                             if (class5733.method10260().method9887("Mode").equals("Fast")) {

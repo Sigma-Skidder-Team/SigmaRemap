@@ -25,7 +25,7 @@ public class Class4856 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         if (this.method14314() != null) {
             this.method14228();
             this.field20497.method19729();
@@ -38,17 +38,17 @@ public class Class4856 extends Class4841
                 b = true;
             }
             if (b) {
-                Class8154.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), Class6430.method19118(-11890462, 1.0f));
+                RenderUtil.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), ColorUtils.applyAlpha(-11890462, 1.0f));
             }
             final int n5 = 16;
             final int n6 = 8;
-            int n7 = Class265.field1273.field1292;
+            int n7 = ClientColors.field1273.color;
             if (b) {
-                n7 = Class265.field1278.field1292;
+                n7 = ClientColors.LIGHT_GREYISH_BLUE.color;
             }
-            Class8154.method26889(ClientFonts.JelloLight14, (float)(this.field20478 + n5 + 50), (float)(this.field20479 + n6 + 5), this.field20495, Class6430.method19118(n7, n));
-            Class8154.method26889(ClientFonts.JelloLight12, (float)(this.field20478 + n5 + 50), (float)(this.field20479 + n6 + 19), this.field20806, Class6430.method19118(n7, n * 0.5f));
-            super.method14205(n);
+            RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.field20478 + n5 + 50), (float)(this.field20479 + n6 + 5), this.field20495, ColorUtils.applyAlpha(n7, n));
+            RenderUtil.drawString(ClientFonts.JelloLight12, (float)(this.field20478 + n5 + 50), (float)(this.field20479 + n6 + 19), this.field20806, ColorUtils.applyAlpha(n7, n * 0.5f));
+            super.draw(n);
         }
     }
 }

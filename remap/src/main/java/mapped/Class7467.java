@@ -8,7 +8,7 @@ import java.util.Iterator;
 
 public class Class7467
 {
-    private static Object method23005(final Class8827 class8827, final boolean b, final Class88 class8828) throws org.json.JSONException {
+    private static Object method23005(final Class8827 class8827, final boolean b, final JSONArray class8828) throws org.json.JSONException {
         while (class8827.method30784()) {
             final Object method30796 = class8827.method30796();
             if (method30796 != Class8782.field36927) {
@@ -24,7 +24,7 @@ public class Class7467
                         throw class8827.syntaxError("Bad tagName '" + method30797 + "'.");
                     }
                     final String s = (String)method30797;
-                    final Class88 class8829 = new Class88();
+                    final JSONArray class8829 = new JSONArray();
                     final JSONObject class8830 = new JSONObject();
                     if (!b) {
                         class8830.method13301("tagName", s);
@@ -169,12 +169,12 @@ public class Class7467
         throw class8827.syntaxError("Bad XML");
     }
     
-    public static Class88 method23006(final String s) throws org.json.JSONException {
+    public static JSONArray method23006(final String s) throws org.json.JSONException {
         return method23007(new Class8827(s));
     }
     
-    public static Class88 method23007(final Class8827 class8827) throws org.json.JSONException {
-        return (Class88)method23005(class8827, true, null);
+    public static JSONArray method23007(final Class8827 class8827) throws org.json.JSONException {
+        return (JSONArray)method23005(class8827, true, null);
     }
     
     public static JSONObject method23008(final Class8827 class8827) throws org.json.JSONException {
@@ -185,14 +185,14 @@ public class Class7467
         return method23008(new Class8827(s));
     }
     
-    public static String toString(final Class88 class88) throws org.json.JSONException {
+    public static String toString(final JSONArray JSONArray) throws org.json.JSONException {
         final StringBuilder sb = new StringBuilder();
-        final String method459 = class88.method459(0);
+        final String method459 = JSONArray.method459(0);
         Class8782.method30563(method459);
         final String method460 = Class8782.method30562(method459);
         sb.append('<');
         sb.append(method460);
-        final Object method461 = class88.method463(1);
+        final Object method461 = JSONArray.method463(1);
         int n;
         if (!(method461 instanceof JSONObject)) {
             n = 1;
@@ -216,20 +216,20 @@ public class Class7467
                 sb.append('\"');
             }
         }
-        final int method464 = class88.method462();
+        final int method464 = JSONArray.method462();
         if (n < method464) {
             sb.append('>');
             do {
-                final Object method465 = class88.method449(n);
+                final Object method465 = JSONArray.method449(n);
                 ++n;
                 if (method465 != null) {
                     if (!(method465 instanceof String)) {
                         if (!(method465 instanceof JSONObject)) {
-                            if (!(method465 instanceof Class88)) {
+                            if (!(method465 instanceof JSONArray)) {
                                 sb.append(method465.toString());
                             }
                             else {
-                                sb.append(toString((Class88)method465));
+                                sb.append(toString((JSONArray)method465));
                             }
                         }
                         else {
@@ -282,7 +282,7 @@ public class Class7467
                 sb.append(Class8782.method30562(method13295));
                 sb.append('\"');
             }
-            final Class88 method13296 = JSONObject.method13288("childNodes");
+            final JSONArray method13296 = JSONObject.method13288("childNodes");
             if (method13296 != null) {
                 sb.append('>');
                 for (int method13297 = method13296.method462(), i = 0; i < method13297; ++i) {
@@ -290,11 +290,11 @@ public class Class7467
                     if (method13298 != null) {
                         if (!(method13298 instanceof String)) {
                             if (!(method13298 instanceof JSONObject)) {
-                                if (!(method13298 instanceof Class88)) {
+                                if (!(method13298 instanceof JSONArray)) {
                                     sb.append(method13298.toString());
                                 }
                                 else {
-                                    sb.append(toString((Class88)method13298));
+                                    sb.append(toString((JSONArray)method13298));
                                 }
                             }
                             else {

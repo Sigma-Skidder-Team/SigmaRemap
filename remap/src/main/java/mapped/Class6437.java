@@ -26,12 +26,12 @@ public class Class6437
         if (o instanceof byte[]) {
             return true;
         }
-        if (o instanceof Class88) {
-            final Class88 class88 = (Class88)o;
-            for (int method462 = class88.method462(), i = 0; i < method462; ++i) {
+        if (o instanceof JSONArray) {
+            final JSONArray JSONArray = (JSONArray)o;
+            for (int method462 = JSONArray.method462(), i = 0; i < method462; ++i) {
                 Object o2;
                 try {
-                    o2 = (class88.method460(i) ? null : class88.method449(i));
+                    o2 = (JSONArray.method460(i) ? null : JSONArray.method449(i));
                 }
                 catch (final JSONException thrown) {
                     Class6437.field25565.log(Level.WARNING, "An error occured while retrieving data from JSONArray", thrown);

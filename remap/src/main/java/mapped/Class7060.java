@@ -191,7 +191,7 @@ public class Class7060
     }
     
     public JSONObject method21545(final JSONObject JSONObject) {
-        Class88 method26638 = null;
+        JSONArray method26638 = null;
         try {
             method26638 = Class8105.method26638(JSONObject, "mods");
         }
@@ -251,7 +251,7 @@ public class Class7060
     }
     
     public JSONObject method21546(final JSONObject JSONObject) {
-        final Class88 class4406 = new Class88();
+        final JSONArray class4406 = new JSONArray();
         final Iterator<Module> iterator = this.field27468.values().iterator();
         while (iterator.hasNext()) {
             class4406.method486(iterator.next().method9896(new JSONObject()));

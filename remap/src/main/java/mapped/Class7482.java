@@ -217,8 +217,8 @@ public class Class7482
         final double n6 = (n2 * sin - n3 * cos) * n;
         class5717.method16973(n5);
         class5717.method16977(n6);
-        Class6430.method19154(class5717.method16972());
-        Class6430.method19156(class5717.method16976());
+        ColorUtils.method19154(class5717.method16972());
+        ColorUtils.method19156(class5717.method16976());
     }
     
     public static void method23150(final Class5717 class5717, final double n, final float n2) {
@@ -237,8 +237,8 @@ public class Class7482
         final double n6 = (n3 * sin - n4 * cos) * n;
         class5717.method16973(n5);
         class5717.method16977(n6);
-        Class6430.method19154(class5717.method16972());
-        Class6430.method19156(class5717.method16976());
+        ColorUtils.method19154(class5717.method16972());
+        ColorUtils.method19156(class5717.method16976());
     }
     
     public static void method23151(final double n) {
@@ -248,16 +248,16 @@ public class Class7482
         final float n4 = method23143[0];
         if (n2 == 0.0f) {
             if (n3 == 0.0f) {
-                Class6430.method19154(0.0);
-                Class6430.method19156(0.0);
+                ColorUtils.method19154(0.0);
+                ColorUtils.method19156(0.0);
             }
         }
         final double cos = Math.cos(Math.toRadians(n4));
         final double sin = Math.sin(Math.toRadians(n4));
         final double n5 = (n2 * cos + n3 * sin) * n;
         final double n6 = (n2 * sin - n3 * cos) * n;
-        Class6430.method19154(n5);
-        Class6430.method19156(n6);
+        ColorUtils.method19154(n5);
+        ColorUtils.method19156(n6);
     }
     
     public static void method23152() {
@@ -281,8 +281,8 @@ public class Class7482
         final float n5 = (n3 - 90.0f) * 0.017453292f;
         class5717.method16973(-MathHelper.sin(n5) * n);
         class5717.method16977(MathHelper.cos(n5) * n);
-        Class6430.method19154(class5717.method16972());
-        Class6430.method19156(class5717.method16976());
+        ColorUtils.method19154(class5717.method16972());
+        ColorUtils.method19156(class5717.method16976());
         return n3;
     }
     
@@ -294,8 +294,8 @@ public class Class7482
             n3 += ((MathHelper.method35668(n2 - n3) <= 0.0f) ? (-n4) : n4);
         }
         final float n5 = (n3 - 90.0f) * 0.017453292f;
-        Class6430.method19154(-MathHelper.sin(n5) * n);
-        Class6430.method19156(MathHelper.cos(n5) * n);
+        ColorUtils.method19154(-MathHelper.sin(n5) * n);
+        ColorUtils.method19156(MathHelper.cos(n5) * n);
         return n3;
     }
     

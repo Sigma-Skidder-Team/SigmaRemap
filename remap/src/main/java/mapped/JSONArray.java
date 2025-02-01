@@ -15,15 +15,15 @@ import java.util.Iterator;
 import java.util.Collection;
 import java.util.ArrayList;
 
-public class Class88 implements Iterable<Object>
+public class JSONArray implements Iterable<Object>
 {
     private final ArrayList<Object> field201;
     
-    public Class88() {
+    public JSONArray() {
         this.field201 = new ArrayList<Object>();
     }
     
-    public Class88(final JSONTokener JSONTokener) throws org.json.JSONException {
+    public JSONArray(final JSONTokener JSONTokener) throws org.json.JSONException {
         this();
         if (JSONTokener.nextClean() != '[') {
             throw JSONTokener.syntaxError("A JSONArray text must start with '['");
@@ -59,11 +59,11 @@ public class Class88 implements Iterable<Object>
         }
     }
     
-    public Class88(final String s) throws org.json.JSONException {
+    public JSONArray(final String s) throws org.json.JSONException {
         this(new JSONTokener(s));
     }
     
-    public Class88(final Collection<?> collection) {
+    public JSONArray(final Collection<?> collection) {
         this.field201 = new ArrayList<Object>();
         if (collection != null) {
             final Iterator<?> iterator = collection.iterator();
@@ -73,7 +73,7 @@ public class Class88 implements Iterable<Object>
         }
     }
     
-    public Class88(final Object o) throws org.json.JSONException {
+    public JSONArray(final Object o) throws org.json.JSONException {
         this();
         if (!o.getClass().isArray()) {
             throw new JSONException("JSONArray initial value should be a string or collection or array.");
@@ -155,12 +155,12 @@ public class Class88 implements Iterable<Object>
         }
     }
     
-    public Class88 method456(final int i) throws org.json.JSONException {
+    public JSONArray method456(final int i) throws org.json.JSONException {
         final Object method449 = this.method449(i);
-        if (!(method449 instanceof Class88)) {
+        if (!(method449 instanceof JSONArray)) {
             throw new JSONException("JSONArray[" + i + "] is not a JSONArray.");
         }
-        return (Class88)method449;
+        return (JSONArray)method449;
     }
     
     public JSONObject method457(final int i) throws org.json.JSONException {
@@ -290,9 +290,9 @@ public class Class88 implements Iterable<Object>
         }
     }
     
-    public Class88 method474(final int n) {
+    public JSONArray method474(final int n) {
         final Object method463 = this.method463(n);
-        return (method463 instanceof Class88) ? ((Class88)method463) : null;
+        return (method463 instanceof JSONArray) ? ((JSONArray)method463) : null;
     }
     
     public JSONObject method475(final int n) {
@@ -322,74 +322,74 @@ public class Class88 implements Iterable<Object>
         return JSONObject.field19729.equals(method463) ? s : method463.toString();
     }
     
-    public Class88 method480(final boolean b) {
+    public JSONArray method480(final boolean b) {
         this.method486(b ? Boolean.TRUE : Boolean.FALSE);
         return this;
     }
     
-    public Class88 method481(final Collection<?> collection) {
-        this.method486(new Class88(collection));
+    public JSONArray method481(final Collection<?> collection) {
+        this.method486(new JSONArray(collection));
         return this;
     }
     
-    public Class88 method482(final double value) throws org.json.JSONException {
+    public JSONArray method482(final double value) throws org.json.JSONException {
         final Double n = new Double(value);
         JSONObject.method13309(n);
         this.method486(n);
         return this;
     }
     
-    public Class88 method483(final int value) {
+    public JSONArray method483(final int value) {
         this.method486(new Integer(value));
         return this;
     }
     
-    public Class88 method484(final long value) {
+    public JSONArray method484(final long value) {
         this.method486(new Long(value));
         return this;
     }
     
-    public Class88 method485(final Map<?, ?> map) {
+    public JSONArray method485(final Map<?, ?> map) {
         this.method486(new JSONObject(map));
         return this;
     }
     
-    public Class88 method486(final Object e) {
+    public JSONArray method486(final Object e) {
         this.field201.add(e);
         return this;
     }
     
-    public Class88 method487(final int n, final boolean b) throws org.json.JSONException {
+    public JSONArray method487(final int n, final boolean b) throws org.json.JSONException {
         this.method493(n, b ? Boolean.TRUE : Boolean.FALSE);
         return this;
     }
     
-    public Class88 method488(final int n, final Collection<?> collection) throws org.json.JSONException {
-        this.method493(n, new Class88(collection));
+    public JSONArray method488(final int n, final Collection<?> collection) throws org.json.JSONException {
+        this.method493(n, new JSONArray(collection));
         return this;
     }
     
-    public Class88 method489(final int n, final double value) throws org.json.JSONException {
+    public JSONArray method489(final int n, final double value) throws org.json.JSONException {
         this.method493(n, new Double(value));
         return this;
     }
     
-    public Class88 method490(final int n, final int value) throws org.json.JSONException {
+    public JSONArray method490(final int n, final int value) throws org.json.JSONException {
         this.method493(n, new Integer(value));
         return this;
     }
     
-    public Class88 method491(final int n, final long value) throws org.json.JSONException {
+    public JSONArray method491(final int n, final long value) throws org.json.JSONException {
         this.method493(n, new Long(value));
         return this;
     }
     
-    public Class88 method492(final int n, final Map<?, ?> map) throws org.json.JSONException {
+    public JSONArray method492(final int n, final Map<?, ?> map) throws org.json.JSONException {
         this.method493(n, new JSONObject(map));
         return this;
     }
     
-    public Class88 method493(final int i, final Object element) throws org.json.JSONException {
+    public JSONArray method493(final int i, final Object element) throws org.json.JSONException {
         JSONObject.method13309(element);
         if (i >= 0) {
             if (i >= this.method462()) {
@@ -411,21 +411,21 @@ public class Class88 implements Iterable<Object>
     }
     
     public boolean method495(final Object o) {
-        if (!(o instanceof Class88)) {
+        if (!(o instanceof JSONArray)) {
             return false;
         }
         final int method462 = this.method462();
-        if (method462 == ((Class88)o).method462()) {
+        if (method462 == ((JSONArray)o).method462()) {
             for (int i = 0; i < method462; ++i) {
                 final Object method463 = this.method449(i);
-                final Object method464 = ((Class88)o).method449(i);
+                final Object method464 = ((JSONArray)o).method449(i);
                 if (!(method463 instanceof JSONObject)) {
-                    if (!(method463 instanceof Class88)) {
+                    if (!(method463 instanceof JSONArray)) {
                         if (!method463.equals(method464)) {
                             return false;
                         }
                     }
-                    else if (!((Class88)method463).method495(method464)) {
+                    else if (!((JSONArray)method463).method495(method464)) {
                         return false;
                     }
                 }
@@ -438,13 +438,13 @@ public class Class88 implements Iterable<Object>
         return false;
     }
     
-    public JSONObject method496(final Class88 class88) throws org.json.JSONException {
-        if (class88 != null) {
-            if (class88.method462() != 0) {
+    public JSONObject method496(final JSONArray JSONArray) throws org.json.JSONException {
+        if (JSONArray != null) {
+            if (JSONArray.method462() != 0) {
                 if (this.method462() != 0) {
                     final JSONObject class89 = new JSONObject();
-                    for (int i = 0; i < class88.method462(); ++i) {
-                        class89.method13301(class88.method459(i), this.method463(i));
+                    for (int i = 0; i < JSONArray.method462(); ++i) {
+                        class89.method13301(JSONArray.method459(i), this.method463(i));
                     }
                     return class89;
                 }

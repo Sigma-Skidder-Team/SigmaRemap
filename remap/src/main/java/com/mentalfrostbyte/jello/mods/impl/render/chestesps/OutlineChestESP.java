@@ -22,10 +22,10 @@ public class OutlineChestESP extends Module
         }
         if (OutlineChestESP.mc.player != null && OutlineChestESP.mc.world != null) {
             this.method10424();
-            Class8154.method26926();
+            RenderUtil.method26926();
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
             this.method10423(false);
-            Class8154.method26927(Class2225.field13695);
+            RenderUtil.method26927(Class2225.field13695);
             GL11.glLineWidth(3.0f);
             RenderSystem.method30000(518, 0.0f);
             RenderSystem.enableAlphaTest();
@@ -34,15 +34,15 @@ public class OutlineChestESP extends Module
             GL11.glDisable(2896);
             this.method10423(true);
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-            Class8154.method26928();
+            RenderUtil.method26928();
             this.method10425();
         }
     }
     
     private void method10423(final boolean b) {
-        final int method19118 = Class6430.method19118(this.method9914().method9885("Regular Color"), 0.7f);
-        final int method19119 = Class6430.method19118(this.method9914().method9885("Ender Color"), 0.7f);
-        final int method19120 = Class6430.method19118(this.method9914().method9885("Trapped Color"), 0.7f);
+        final int method19118 = ColorUtils.applyAlpha(this.method9914().method9885("Regular Color"), 0.7f);
+        final int method19119 = ColorUtils.applyAlpha(this.method9914().method9885("Ender Color"), 0.7f);
+        final int method19120 = ColorUtils.applyAlpha(this.method9914().method9885("Trapped Color"), 0.7f);
         for (final TileEntity tileEntity : OutlineChestESP.mc.world.loadedTileEntityList) {
             boolean b2 = false;
             Label_0130: {
@@ -82,10 +82,10 @@ public class OutlineChestESP extends Module
             }
             final Class7644 class437 = new Class7644(tileEntity.method2194().getShape(OutlineChestESP.mc.world, tileEntity.getPos()).getBoundingBox().offset(field38854, field38855, field38856));
             if (b) {
-                Class8154.method26912(class437, 3.0f, n);
+                RenderUtil.method26912(class437, 3.0f, n);
             }
             else {
-                Class8154.method26909(class437, Class265.field1278.field1292);
+                RenderUtil.method26909(class437, ClientColors.LIGHT_GREYISH_BLUE.color);
             }
             GL11.glDisable(3042);
         }

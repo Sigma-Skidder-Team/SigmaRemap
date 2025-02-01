@@ -50,7 +50,7 @@ public class ElytraFly extends Module
     public void method10031(final Class5717 class5717) {
         if (this.method9906()) {
             double method23136 = Class7482.method23136();
-            Class6430.method19114();
+            ColorUtils.method19114();
             if (!this.method9883("NCP")) {
                 if (ElytraFly.mc.player.method1809()) {
                     method23136 *= 2.5;
@@ -65,7 +65,7 @@ public class ElytraFly extends Module
                     if (this.field15608 > 7) {
                         Class7482.method23149(class5717, method23136 * 6.300000190734863);
                     }
-                    Class6430.method19155(-0.071);
+                    ColorUtils.method19155(-0.071);
                     class5717.method16975(-1.0001000191550702E-4);
                 }
                 ++this.field15608;
@@ -167,15 +167,15 @@ public class ElytraFly extends Module
     @Override
     public void method9879() {
         if (ElytraFly.mc.player.onGround) {
-            Class6430.method19155(0.399399995803833);
+            ColorUtils.method19155(0.399399995803833);
         }
     }
     
     @Override
     public void onDisable() {
         if (!Class7482.method23148()) {
-            Class6430.method19154(0.0);
-            Class6430.method19156(0.0);
+            ColorUtils.method19154(0.0);
+            ColorUtils.method19156(0.0);
         }
     }
 }

@@ -348,7 +348,7 @@ public class Class4831 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         this.method14228();
         final float n2 = 1000.0f;
         final boolean b = this.field20488 && this.field20685.method23935() > n2 / 2.0f;
@@ -359,12 +359,12 @@ public class Class4831 extends Class4825
         if (this.field20683) {
             s = this.field20495.replaceAll(".", this.field20684);
         }
-        Class8154.method26871(this.method14272(), this.method14274(), this.method14272() + this.field20480, this.method14274() + this.field20481, true);
+        RenderUtil.method26871(this.method14272(), this.method14274(), this.method14272() + this.field20480, this.method14274() + this.field20481, true);
         final int n3 = this.field20478 + 4;
         final int n4 = this.field20480 - 4;
         final float n5 = n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20678));
         if (this.method14306()) {
-            Class8154.method26876(n5 + (s.isEmpty() ? 0 : -1), (float)(this.field20479 + this.field20481 / 2 - this.field20496.getHeight(s) / 2 + 2), n5 + (float)(s.isEmpty() ? 1 : 0), (float)(this.field20479 + this.field20481 / 2 + this.field20496.getHeight(s) / 2 - 1), Class6430.method19118(this.field20497.method19733(), b ? 0.8f : (0.1f * n)));
+            RenderUtil.method26876(n5 + (s.isEmpty() ? 0 : -1), (float)(this.field20479 + this.field20481 / 2 - this.field20496.getHeight(s) / 2 + 2), n5 + (float)(s.isEmpty() ? 1 : 0), (float)(this.field20479 + this.field20481 / 2 + this.field20496.getHeight(s) / 2 - 1), ColorUtils.applyAlpha(this.field20497.method19733(), b ? 0.8f : (0.1f * n)));
             final float n6 = n3 + this.field20496.getWidth(s.substring(0, this.field20678)) + this.field20676;
             if (n6 < n3) {
                 this.field20676 += n3 - n6;
@@ -377,13 +377,13 @@ public class Class4831 extends Class4825
         this.field20675 += (this.field20676 - this.field20675) / 2.0f;
         this.field20679 = Math.min(Math.max(0, this.field20679), s.length());
         this.field20680 = Math.min(Math.max(0, this.field20680), s.length());
-        Class8154.method26876(n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20679)), (float)(this.field20479 + this.field20481 / 2 - this.field20496.getHeight(s) / 2), n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20680)), (float)(this.field20479 + this.field20481 / 2 + this.field20496.getHeight(s) / 2), Class6430.method19118(-5516546, n));
-        Class8154.method26890(this.field20496, n3 + this.field20675, (float)(this.field20479 + this.field20481 / 2), (s.length() != 0 || (this.field20488 && s.length() > 0)) ? s : this.field20672, Class6430.method19118(this.field20497.method19733(), (this.field20673 / 2.0f + 0.4f) * n * ((this.field20488 && s.length() > 0) ? 1.0f : 0.5f)), this.field20497.method19735(), this.field20497.method19737());
-        Class8154.method26872();
+        RenderUtil.method26876(n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20679)), (float)(this.field20479 + this.field20481 / 2 - this.field20496.getHeight(s) / 2), n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20680)), (float)(this.field20479 + this.field20481 / 2 + this.field20496.getHeight(s) / 2), ColorUtils.applyAlpha(-5516546, n));
+        RenderUtil.method26890(this.field20496, n3 + this.field20675, (float)(this.field20479 + this.field20481 / 2), (s.length() != 0 || (this.field20488 && s.length() > 0)) ? s : this.field20672, ColorUtils.applyAlpha(this.field20497.method19733(), (this.field20673 / 2.0f + 0.4f) * n * ((this.field20488 && s.length() > 0) ? 1.0f : 0.5f)), this.field20497.method19735(), this.field20497.method19737());
+        RenderUtil.method26872();
         if (this.field20687) {
-            Class8154.method26876((float)this.field20478, (float)(this.field20479 + this.field20481 - 2), (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), Class6430.method19118(this.field20497.method19729(), (this.field20673 / 2.0f + 0.5f) * n));
+            RenderUtil.method26876((float)this.field20478, (float)(this.field20479 + this.field20481 - 2), (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), ColorUtils.applyAlpha(this.field20497.method19729(), (this.field20673 / 2.0f + 0.5f) * n));
         }
-        super.method14205(n);
+        super.draw(n);
     }
     
     public final void method14473(final Class8992 class8992) {
@@ -414,7 +414,7 @@ public class Class4831 extends Class4825
     }
     
     static {
-        field20670 = new Class6523(-892679478, -892679478, -892679478, Class265.field1273.field1292, Class2056.field11734, Class2056.field11738);
-        field20671 = new Class6523(-1, -1, -1, Class265.field1278.field1292, Class2056.field11734, Class2056.field11738);
+        field20670 = new Class6523(-892679478, -892679478, -892679478, ClientColors.field1273.color, Class2056.field11734, Class2056.field11738);
+        field20671 = new Class6523(-1, -1, -1, ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11734, Class2056.field11738);
     }
 }

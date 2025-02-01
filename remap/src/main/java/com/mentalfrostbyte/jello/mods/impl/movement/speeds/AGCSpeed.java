@@ -51,7 +51,7 @@ public class AGCSpeed extends Module
             this.field15591 = 0;
         }
         if (this.field15591 >= 0) {
-            if (!Class6430.method19114()) {
+            if (!ColorUtils.method19114()) {
                 if (AGCSpeed.mc.player.onGround) {
                     this.field15593 = AGCSpeed.mc.player.rotationYaw + 90.0f;
                 }
@@ -68,7 +68,7 @@ public class AGCSpeed extends Module
                 this.field15593 = Class7482.method23153(class5717, this.field15592, Class7482.method23144()[0], this.field15593, 45.0f);
                 this.field15592 = 0.39;
                 class5717.method16975(Class7482.method23141());
-                Class6430.method19155(class5717.method16974());
+                ColorUtils.method19155(class5717.method16974());
             }
         }
     }

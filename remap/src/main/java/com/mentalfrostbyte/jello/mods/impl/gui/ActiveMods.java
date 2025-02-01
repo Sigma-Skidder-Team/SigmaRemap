@@ -75,11 +75,11 @@ public class ActiveMods extends Module
         for (final Module class3167 : Client.method35173().method35189().method21553().values()) {
             if (class3167.getCategory2() != Category.GUI) {
                 this.field15890.add(class3167);
-                this.field15893.put(class3167, new Class9572(150, 150, Class2186.field12965));
+                this.field15893.put(class3167, new Class9572(150, 150, Direction.FORWARDS));
                 if (!this.method9883("Animations")) {
                     continue;
                 }
-                this.field15893.get(class3167).method35855(class3167.method9906() ? Class2186.field12964 : Class2186.field12965);
+                this.field15893.get(class3167).changeDirection(class3167.method9906() ? Direction.BACKWARDS : Direction.FORWARDS);
             }
         }
         Collections.sort(this.field15890, new Class4466(this));
@@ -135,7 +135,7 @@ public class ActiveMods extends Module
             if (!this.method9883("Animations")) {
                 continue;
             }
-            this.field15893.get(key).method35855(key.method9906() ? Class2186.field12964 : Class2186.field12965);
+            this.field15893.get(key).changeDirection(key.method9906() ? Direction.BACKWARDS : Direction.FORWARDS);
         }
         if (!Minecraft.method5277().gameSettings.field23464) {
             int n = 10;
@@ -150,7 +150,7 @@ public class ActiveMods extends Module
                 field15895 = (int)(ActiveMods.mc.field4647.field3763.field3801.size() * 9 * ActiveMods.mc.field4632.method7700() + 7.0);
             }
             int n3 = 0;
-            final int method7695 = Class6430.method19118(-1, 0.95f);
+            final int method7695 = ColorUtils.applyAlpha(-1, 0.95f);
             for (final Module key2 : this.field15890) {
                 float n4 = 1.0f;
                 float method7696 = 1.0f;
@@ -161,10 +161,10 @@ public class ActiveMods extends Module
                 }
                 else {
                     final Class9572 class5741 = this.field15893.get(key2);
-                    if (class5741.method35858() == 0.0f) {
+                    if (class5741.calcPercent() == 0.0f) {
                         continue;
                     }
-                    method7696 = class5741.method35858();
+                    method7696 = class5741.calcPercent();
                     n4 = 0.86f + 0.14f * method7696;
                 }
                 final String method7697 = key2.getName2();
@@ -175,8 +175,8 @@ public class ActiveMods extends Module
                 GL11.glTranslatef((float)n5, (float)n6, 0.0f);
                 GL11.glScalef(n4, n4, 1.0f);
                 GL11.glTranslatef((float)(-n5), (float)(-n6), 0.0f);
-                Class8154.method26899(method7694 - field15894.getWidth(method7697) * 1.5f - n - 20.0f, (float)(field15895 - 20), field15894.getWidth(method7697) * 3.0f, (float)(field15894.getHeight() + n2 + 40), ClientAssets.shadow, Class6430.method19118(Class265.field1278.field1292, 0.36f * method7696 * (float)Math.sqrt(Math.min(1.2f, field15894.getWidth(method7697) / 63.0f))));
-                Class8154.method26889(field15894, (float)(method7694 - n - field15894.getWidth(method7697)), (float)field15895, method7697, (method7696 != 1.0f) ? Class6430.method19118(-1, method7696 * 0.95f) : method7695);
+                RenderUtil.method26899(method7694 - field15894.getWidth(method7697) * 1.5f - n - 20.0f, (float)(field15895 - 20), field15894.getWidth(method7697) * 3.0f, (float)(field15894.getHeight() + n2 + 40), ClientAssets.shadow, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.36f * method7696 * (float)Math.sqrt(Math.min(1.2f, field15894.getWidth(method7697) / 63.0f))));
+                RenderUtil.drawString(field15894, (float)(method7694 - n - field15894.getWidth(method7697)), (float)field15895, method7697, (method7696 != 1.0f) ? ColorUtils.applyAlpha(-1, method7696 * 0.95f) : method7695);
                 GL11.glPopMatrix();
                 n3 -= 100;
                 field15895 += (int)((field15894.getHeight() + n2) * Class7791.method25031(method7696, 0.0f, 1.0f, 1.0f));
@@ -195,7 +195,7 @@ public class ActiveMods extends Module
         GL11.glReadPixels(n, Minecraft.method5277().field4632.method7695() - n2, 1, 1, 6407, 5120, allocateDirect);
         Color method19109 = new Color(allocateDirect.get(0) * 2, allocateDirect.get(1) * 2, allocateDirect.get(2) * 2, 1);
         if (color != null) {
-            method19109 = Class6430.method19109(method19109, color, 0.08f);
+            method19109 = ColorUtils.method19109(method19109, color, 0.08f);
         }
         return method19109;
     }

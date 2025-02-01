@@ -41,13 +41,13 @@ public class NCPPhase extends PremiumModule
                 final double field2395 = NCPPhase.mc.player.posX;
                 final double field2396 = NCPPhase.mc.player.posY;
                 final double field2397 = NCPPhase.mc.player.posZ;
-                if (!Class6430.method19114()) {
-                    if (Class6430.method19160(NCPPhase.mc.player, 0.001f) && !method10703()) {
+                if (!ColorUtils.method19114()) {
+                    if (ColorUtils.method19160(NCPPhase.mc.player, 0.001f) && !method10703()) {
                         NCPPhase.mc.player.setPosition(field2395, field2396 - 1.0, field2397);
                         class5744.method17037(field2396 - 1.0);
                         class5744.method17033(true);
                         class5744.method17043(class5744.method17042() + 10.0f);
-                        Class6430.method19155(0.0);
+                        ColorUtils.method19155(0.0);
                     }
                     else if (NCPPhase.mc.player.posY == (int) NCPPhase.mc.player.posY) {
                         NCPPhase.mc.player.setPosition(field2395, field2396 - 0.3, field2397);

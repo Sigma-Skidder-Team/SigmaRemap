@@ -58,7 +58,7 @@ public class CubecraftFly extends Module
                 this.field15695 = -2;
             }
             else {
-                Class6430.method19155(-0.078);
+                ColorUtils.method19155(-0.078);
                 Class7482.method23151(0.2);
             }
         }
@@ -67,7 +67,7 @@ public class CubecraftFly extends Module
                 this.field15695 = -2;
             }
             else {
-                Class6430.method19155(-0.078);
+                ColorUtils.method19155(-0.078);
                 Class7482.method23151(0.2);
                 this.field15695 = 0;
             }
@@ -279,10 +279,10 @@ public class CubecraftFly extends Module
                 Client.method35173().method35197().method25776(new Class6224("Cubecraft fly", "Lagbacked you to avoid ban"));
                 CubecraftFly.mc.method5269().method17292(new Class4354(CubecraftFly.mc.player.posX, 3.2E7, CubecraftFly.mc.player.posZ, false));
             }
-            if (!Class6430.method19160(CubecraftFly.mc.player, 0.01f) && (CubecraftFly.mc.method5282() == null || !CubecraftFly.mc.method5282().field41613.equalsIgnoreCase("play.cubecraft.net"))) {
+            if (!ColorUtils.method19160(CubecraftFly.mc.player, 0.01f) && (CubecraftFly.mc.method5282() == null || !CubecraftFly.mc.method5282().field41613.equalsIgnoreCase("play.cubecraft.net"))) {
                 n3 = -0.01;
             }
-            if (!Class6430.method19160(CubecraftFly.mc.player, (float)(-n3))) {
+            if (!ColorUtils.method19160(CubecraftFly.mc.player, (float)(-n3))) {
                 class5717.method16975(n3);
             }
             else {
@@ -333,7 +333,7 @@ public class CubecraftFly extends Module
         if (!this.method9906() || !this.field15694 || !this.method9883("Smooth fly")) {
             return;
         }
-        if (CubecraftFly.mc.player.onGround && Class6430.method19160(CubecraftFly.mc.player, 0.001f)) {
+        if (CubecraftFly.mc.player.onGround && ColorUtils.method19160(CubecraftFly.mc.player, 0.001f)) {
             this.field15698 = CubecraftFly.mc.player.posY;
         }
         CubecraftFly.mc.player.posY = this.field15698;
@@ -346,7 +346,7 @@ public class CubecraftFly extends Module
     }
     
     private void method10182() {
-        if (Class6430.method19150()) {
+        if (ColorUtils.method19150()) {
             return;
         }
         if (Class9367.method34762() == Class7906.field32452.method25613()) {
@@ -355,7 +355,7 @@ public class CubecraftFly extends Module
             final double field2396 = CubecraftFly.mc.player.posY;
             final double field2397 = CubecraftFly.mc.player.posZ;
             double n = this.method9883("Damage") ? (field2396 - 3.0000001192093) : 3.2E7;
-            if (!Class6430.method19148()) {
+            if (!ColorUtils.method19148()) {
                 n = field2396 - 3.0000001192093;
             }
             CubecraftFly.mc.method5269().method17292(new Class4354(field2395, n, field2397, false));

@@ -30,12 +30,12 @@ public class Class721 extends Class720
     @Override
     public void render(final int n, final int n2, final float n3) {
         super.render(n, n2, n3);
-        Class8154.method26870(0, 0, Minecraft.method5277().field4632.method7694(), (int)(30.0 * Minecraft.method5277().field4632.method7700() / Class9000.field37993));
+        RenderUtil.method26870(0, 0, Minecraft.method5277().field4632.method7694(), (int)(30.0 * Minecraft.method5277().field4632.method7700() / Class9000.field37993));
         this.renderBackground();
-        Class8154.method26872();
+        RenderUtil.method26872();
         this.field3944.render(n, n2, n3);
         this.drawString(this.font, this.title.getFormattedText(), this.width / 2 - 146, 13, 16777215);
-        this.drawString(this.font, "Jello Portal:", this.width / 2 - 30, 13, Class6430.method19118(Class265.field1278.field1292, 0.5f));
+        this.drawString(this.font, "Jello Portal:", this.width / 2 - 30, 13, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f));
     }
     
     private int method3962() {

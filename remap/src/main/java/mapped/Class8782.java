@@ -264,12 +264,12 @@ public class Class8782
         if (!(o instanceof JSONObject)) {
             if (o != null) {
                 if (o.getClass().isArray()) {
-                    o = new Class88(o);
+                    o = new JSONArray(o);
                 }
-                if (o instanceof Class88) {
-                    final Class88 class88 = (Class88)o;
-                    for (int method462 = class88.method462(), i = 0; i < method462; ++i) {
-                        sb.append(toString(class88.method463(i), (str != null) ? str : "array"));
+                if (o instanceof JSONArray) {
+                    final JSONArray JSONArray = (JSONArray)o;
+                    for (int method462 = JSONArray.method462(), i = 0; i < method462; ++i) {
+                        sb.append(toString(JSONArray.method463(i), (str != null) ? str : "array"));
                     }
                     return sb.toString();
                 }
@@ -292,7 +292,7 @@ public class Class8782
             }
             final String s3 = (method464 instanceof String) ? ((String)method464) : null;
             if (!"content".equals(s2)) {
-                if (!(method464 instanceof Class88)) {
+                if (!(method464 instanceof JSONArray)) {
                     if (!"".equals(method464)) {
                         sb.append(toString(method464, s2));
                     }
@@ -303,10 +303,10 @@ public class Class8782
                     }
                 }
                 else {
-                    final Class88 class90 = (Class88)method464;
+                    final JSONArray class90 = (JSONArray)method464;
                     for (int method465 = class90.method462(), j = 0; j < method465; ++j) {
                         final Object method466 = class90.method449(j);
-                        if (!(method466 instanceof Class88)) {
+                        if (!(method466 instanceof JSONArray)) {
                             sb.append(toString(method466, s2));
                         }
                         else {
@@ -321,11 +321,11 @@ public class Class8782
                     }
                 }
             }
-            else if (!(method464 instanceof Class88)) {
+            else if (!(method464 instanceof JSONArray)) {
                 sb.append(method30562(method464.toString()));
             }
             else {
-                final Class88 class91 = (Class88)method464;
+                final JSONArray class91 = (JSONArray)method464;
                 for (int method467 = class91.method462(), k = 0; k < method467; ++k) {
                     if (k > 0) {
                         sb.append('\n');

@@ -100,26 +100,26 @@ public class Class4850 extends Class4841
     }
     
     @Override
-    public void method14205(float method35858) {
-        method35858 = this.field20787.method35858();
+    public void draw(float method35858) {
+        method35858 = this.field20787.calcPercent();
         final float method35859 = Class7707.method24584(method35858, 0.0f, 1.0f, 1.0f);
         this.method14288(0.8f + method35859 * 0.2f, 0.8f + method35859 * 0.2f);
         this.method14293((int)(this.field20480 * 0.2f * (1.0f - method35859)) * (this.field20788 ? -1 : 1));
         super.method14227();
         final int n = 10;
-        final int method35860 = Class6430.method19118(-723724, Class7791.method25030(method35858, 0.0f, 1.0f, 1.0f));
-        Class8154.method26913((float)(this.field20478 + n / 2), (float)(this.field20479 + n / 2), (float)(this.field20480 - n), (float)(this.field20481 - n), 35.0f, method35858);
-        Class8154.method26876((float)(this.field20478 + n / 2), (float)(this.field20479 + n / 2), (float)(this.field20478 - n / 2 + this.field20480), (float)(this.field20479 - n / 2 + this.field20481), Class6430.method19118(Class265.field1273.field1292, method35858 * 0.25f));
-        Class8154.method26925((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, (float)n, method35860);
+        final int method35860 = ColorUtils.applyAlpha(-723724, Class7791.method25030(method35858, 0.0f, 1.0f, 1.0f));
+        RenderUtil.method26913((float)(this.field20478 + n / 2), (float)(this.field20479 + n / 2), (float)(this.field20480 - n), (float)(this.field20481 - n), 35.0f, method35858);
+        RenderUtil.method26876((float)(this.field20478 + n / 2), (float)(this.field20479 + n / 2), (float)(this.field20478 - n / 2 + this.field20480), (float)(this.field20479 - n / 2 + this.field20481), ColorUtils.applyAlpha(ClientColors.field1273.color, method35858 * 0.25f));
+        RenderUtil.method26925((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, (float)n, method35860);
         GL11.glPushMatrix();
         GL11.glTranslatef((float)this.field20478, (float)this.field20479, 0.0f);
         GL11.glRotatef(this.field20788 ? 90.0f : -90.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-this.field20478), (float)(-this.field20479), 0.0f);
-        Class8154.method26899((float)(this.field20478 + (this.field20788 ? this.field20481 : 0)), this.field20479 + (this.field20480 - 47) / 2 * (this.field20788 ? -1.5f : 1.0f), 18.0f, 47.0f, ClientAssets.select, method35860);
+        RenderUtil.method26899((float)(this.field20478 + (this.field20788 ? this.field20481 : 0)), this.field20479 + (this.field20480 - 47) / 2 * (this.field20788 ? -1.5f : 1.0f), 18.0f, 47.0f, ClientAssets.select, method35860);
         GL11.glPopMatrix();
-        Class8154.method26889(ClientFonts.JelloLight25, (float)(this.field20478 + 25), (float)(this.field20479 + 20), this.field20495 + " Key", Class6430.method19118(Class265.field1273.field1292, 0.8f * method35858));
-        Class8154.method26876((float)(this.field20478 + 25), (float)(this.field20479 + 68), (float)(this.field20478 + this.field20480 - 25), (float)(this.field20479 + 69), Class6430.method19118(Class265.field1273.field1292, 0.05f * method35858));
-        super.method14205(method35858);
+        RenderUtil.drawString(ClientFonts.JelloLight25, (float)(this.field20478 + 25), (float)(this.field20479 + 20), this.field20495 + " Key", ColorUtils.applyAlpha(ClientColors.field1273.color, 0.8f * method35858));
+        RenderUtil.method26876((float)(this.field20478 + 25), (float)(this.field20479 + 68), (float)(this.field20478 + this.field20480 - 25), (float)(this.field20479 + 69), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.05f * method35858));
+        super.draw(method35858);
     }
     
     public final void method14550(final Class9031 class9031) {

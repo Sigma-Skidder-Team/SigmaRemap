@@ -32,9 +32,9 @@ public class Class4851 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
-        Class8154.method26874((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, this.field20791);
-        super.method14205(n);
+    public void draw(final float n) {
+        RenderUtil.method26874((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, this.field20791);
+        super.draw(n);
     }
     
     @Override

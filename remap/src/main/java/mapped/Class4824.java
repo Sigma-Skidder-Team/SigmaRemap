@@ -75,8 +75,8 @@ public class Class4824 extends Class4817
     }
     
     @Override
-    public void method14205(final float n) {
-        super.method14205(n);
+    public void draw(final float n) {
+        super.draw(n);
     }
     
     static {

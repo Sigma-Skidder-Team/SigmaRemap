@@ -55,7 +55,7 @@ public class MineplexHighJump extends Module
                     }
                     if (Math.abs(class5717.method16974()) < n && Math.abs(this.field15706) < n) {
                         class5717.method16975(this.field15706 -= 0.04000000000001);
-                        Class6430.method19155(class5717.method16974());
+                        ColorUtils.method19155(class5717.method16974());
                     }
                     else {
                         this.field15706 = class5717.method16974();

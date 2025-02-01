@@ -16,9 +16,9 @@ public class Class4799 extends Class4800
     
     public Class4799() {
         super("ClassicScreen");
-        Class4799.field20455 = new Class9572(250, 200, Class2186.field12964);
+        Class4799.field20455 = new Class9572(250, 200, Direction.BACKWARDS);
         this.method14199();
-        Class6430.method19169();
+        ColorUtils.method19169();
     }
     
     public void method14197() {
@@ -55,7 +55,7 @@ public class Class4799 extends Class4800
     
     @Override
     public JSONObject method14202(final JSONObject JSONObject) {
-        Class6430.method19172();
+        ColorUtils.method19172();
         return super.method14202(JSONObject);
     }
     
@@ -73,9 +73,9 @@ public class Class4799 extends Class4800
     }
     
     @Override
-    public void method14205(final float n) {
-        Class8154.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), Class6430.method19118(Class265.field1273.field1292, Class4799.field20455.method35858() * 0.35f));
-        super.method14205(n);
+    public void draw(final float n) {
+        RenderUtil.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), ColorUtils.applyAlpha(ClientColors.field1273.color, Class4799.field20455.calcPercent() * 0.35f));
+        super.draw(n);
     }
     
     static {

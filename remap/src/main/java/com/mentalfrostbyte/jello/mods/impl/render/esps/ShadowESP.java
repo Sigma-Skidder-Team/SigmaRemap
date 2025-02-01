@@ -24,7 +24,7 @@ public class ShadowESP extends Module
     public ShadowESP() {
         super(Category.RENDER, "Shadow", "Draws a line arround entities");
         this.field16039 = IRenderTypeBuffer.method25213(ShadowESP.mc.method5333().field16262, new BufferBuilder(256));
-        this.addSetting(new ColorSetting("Color", "The tracers color", Class265.field1278.field1292));
+        this.addSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.color));
     }
     
     @EventListener
@@ -34,10 +34,10 @@ public class ShadowESP extends Module
         }
         if (ShadowESP.mc.player != null && ShadowESP.mc.world != null) {
             this.method10726();
-            Class8154.method26926();
+            RenderUtil.method26926();
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
             this.method10721(Class2092.field12099);
-            Class8154.method26927(Class2225.field13695);
+            RenderUtil.method26927(Class2225.field13695);
             GL11.glLineWidth(1.0f);
             this.method10720();
             this.method10721(Class2092.field12100);
@@ -47,7 +47,7 @@ public class ShadowESP extends Module
             GL11.glEnable(3042);
             GL11.glDisable(2896);
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-            Class8154.method26928();
+            RenderUtil.method26928();
             this.method10727();
             this.field16039.finish();
         }
@@ -55,7 +55,7 @@ public class ShadowESP extends Module
     
     private void method10720() {
         ShadowESP.mc.world.field10072.forEach((p1, class399) -> {
-            Class6430.method19118(Class265.field1278.field1292, 0.8f);
+            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f);
             if (!(!this.method10725(class399))) {
                 final double field38854 = Class8591.method29094(class399).field38854;
                 final double field38855 = Class8591.method29094(class399).field38855;
@@ -67,7 +67,7 @@ public class ShadowESP extends Module
                 GL11.glTranslatef(0.0f, 0.1f, 0.0f);
                 GL11.glRotatef(ShadowESP.mc.field4644.method5833().method18164(), 0.0f, -1.0f, 0.0f);
                 GL11.glScalef(-0.11f, -0.11f, -0.11f);
-                Class8154.method26900(-class399.method1930() * 22.0f, -class399.method1931() * 5.5f, class399.method1930() * 44.0f, class399.method1931() * 21.0f, ClientAssets.shadow, n, false);
+                RenderUtil.method26900(-class399.method1930() * 22.0f, -class399.method1931() * 5.5f, class399.method1930() * 44.0f, class399.method1931() * 21.0f, ClientAssets.shadow, n, false);
                 ClientAssets.shout.bind();
                 GL11.glPopMatrix();
             }

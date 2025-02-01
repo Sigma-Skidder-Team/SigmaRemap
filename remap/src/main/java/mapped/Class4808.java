@@ -58,23 +58,23 @@ public class Class4808 extends Class4807
     }
     
     @Override
-    public void method14205(final float n) {
-        super.method14205(n);
+    public void draw(final float n) {
+        super.draw(n);
         if (this.field20528 == null) {
             for (final Class4803 class4803 : this.method14250()) {
                 if (!(class4803 instanceof Class4883)) {
                     continue;
                 }
-                if (this.field20527.method35858() != 1.0f) {
+                if (this.field20527.calcPercent() != 1.0f) {
                     continue;
                 }
                 if (!class4803.method14236(this.method14320(), this.method14321())) {
                     continue;
                 }
-                Class8154.method26889(Class9493.field40808, 20.0f, (float)(this.method14278() - 26), ((Class4883)class4803).field20878.getDesc(), -14540254);
-                Class8154.method26869(5.0f, (float)(this.method14278() - 27), 12.0f, 24.0f);
-                Class8154.method26905(5.0f, (float)(this.method14278() - 27), 24.0f, 24.0f, UglyClickGUICategory.xmark);
-                Class8154.method26872();
+                RenderUtil.drawString(Class9493.field40808, 20.0f, (float)(this.method14278() - 26), ((Class4883)class4803).field20878.getDesc(), -14540254);
+                RenderUtil.method26869(5.0f, (float)(this.method14278() - 27), 12.0f, 24.0f);
+                RenderUtil.method26905(5.0f, (float)(this.method14278() - 27), 24.0f, 24.0f, UglyClickGUICategory.xmark);
+                RenderUtil.method26872();
                 break;
             }
         }

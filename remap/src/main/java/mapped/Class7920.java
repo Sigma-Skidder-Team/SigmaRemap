@@ -35,7 +35,7 @@ public class Class7920
         this.field32524 = field32518;
         this.field32519 = field32519;
         this.field32527 = field32520;
-        this.field32528 = new Class9572(field32519, field32519, Class2186.field12965);
+        this.field32528 = new Class9572(field32519, field32519, Direction.FORWARDS);
         this.field32520 = (int)(field32514.method24922() / (float)field32516);
         this.field32523 = Class226.field797;
     }
@@ -43,16 +43,16 @@ public class Class7920
     public void method25643() {
         this.field32525.method23932();
         this.field32521 = true;
-        if (this.field32528.method35857() != Class2186.field12965) {
-            this.field32528.method35855(Class2186.field12965);
+        if (this.field32528.getDirection() != Direction.FORWARDS) {
+            this.field32528.changeDirection(Direction.FORWARDS);
         }
         else {
-            this.field32528.method35855(Class2186.field12964);
+            this.field32528.changeDirection(Direction.BACKWARDS);
         }
     }
     
     public boolean method25644() {
-        return this.field32528.method35857() != Class2186.field12965;
+        return this.field32528.getDirection() != Direction.FORWARDS;
     }
     
     public void method25645() {
@@ -72,7 +72,7 @@ public class Class7920
         int field32527 = 0;
         switch (Class8600.field36112[this.field32524.ordinal()]) {
             case 1: {
-                this.field32515 = Math.round((this.field32516 - 1) * this.field32528.method35858());
+                this.field32515 = Math.round((this.field32516 - 1) * this.field32528.calcPercent());
                 break;
             }
             case 2: {
@@ -108,7 +108,7 @@ public class Class7920
     }
     
     public void method25648(final int n, final int n2, final int n3, final int n4, final float n5) {
-        Class8154.method26901((float)n, (float)n2, (float)n3, (float)n4, this.field32514, Class6430.method19118(Class265.field1278.field1292, n5), (float)(this.field32515 % this.field32520 * this.field32517), (float)(this.field32515 / this.field32520 * this.field32518), (float)this.field32517, (float)this.field32518);
+        RenderUtil.method26901((float)n, (float)n2, (float)n3, (float)n4, this.field32514, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n5), (float)(this.field32515 % this.field32520 * this.field32517), (float)(this.field32515 / this.field32520 * this.field32518), (float)this.field32517, (float)this.field32518);
     }
     
     public Texture method25649() {

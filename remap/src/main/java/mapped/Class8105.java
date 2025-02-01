@@ -80,7 +80,7 @@ public class Class8105
         }
     }
     
-    public static Class88 method26638(final JSONObject JSONObject, final String s) {
+    public static JSONArray method26638(final JSONObject JSONObject, final String s) {
         try {
             return JSONObject.method13263(s);
         }

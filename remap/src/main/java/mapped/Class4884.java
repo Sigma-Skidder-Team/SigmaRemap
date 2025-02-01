@@ -16,12 +16,12 @@ public class Class4884 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
-        Class8154.method26888(this.field20478 + this.field20480 / 2.0f, this.field20479 + this.field20480 / 2.0f, (float)this.field20480, Class6430.method19118(Class6430.method19120(this.field20880, Class265.field1273.field1292, 0.8f), n));
-        Class8154.method26888(this.field20478 + this.field20480 / 2.0f, this.field20479 + this.field20480 / 2.0f, (float)(this.field20480 - 2), Class6430.method19118(this.field20880, n));
+    public void draw(final float n) {
+        RenderUtil.method26888(this.field20478 + this.field20480 / 2.0f, this.field20479 + this.field20480 / 2.0f, (float)this.field20480, ColorUtils.applyAlpha(ColorUtils.method19120(this.field20880, ClientColors.field1273.color, 0.8f), n));
+        RenderUtil.method26888(this.field20478 + this.field20480 / 2.0f, this.field20479 + this.field20480 / 2.0f, (float)(this.field20480 - 2), ColorUtils.applyAlpha(this.field20880, n));
         if (this.method14309()) {
-            Class8154.method26888(this.field20478 + this.field20480 / 2.0f, this.field20479 + this.field20480 / 2.0f, (float)(this.field20480 - 2), Class6430.method19118(Class265.field1273.field1292, n * 0.2f));
+            RenderUtil.method26888(this.field20478 + this.field20480 / 2.0f, this.field20479 + this.field20480 / 2.0f, (float)(this.field20480 - 2), ColorUtils.applyAlpha(ClientColors.field1273.color, n * 0.2f));
         }
-        super.method14205(n);
+        super.draw(n);
     }
 }

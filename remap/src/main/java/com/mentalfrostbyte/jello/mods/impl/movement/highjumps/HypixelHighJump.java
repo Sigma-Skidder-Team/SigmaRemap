@@ -53,11 +53,11 @@ public class HypixelHighJump extends Module
                 this.field15851 = -1;
             }
             if (this.field15852) {
-                if (Class6430.method19160(HypixelHighJump.mc.player, 0.001f)) {
+                if (ColorUtils.method19160(HypixelHighJump.mc.player, 0.001f)) {
                     this.field15852 = !this.field15852;
                 }
             }
-            Class6430.method19155(class5717.method16974());
+            ColorUtils.method19155(class5717.method16974());
         }
     }
     

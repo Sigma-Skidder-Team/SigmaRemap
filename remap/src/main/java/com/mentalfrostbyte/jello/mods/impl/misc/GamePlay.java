@@ -68,7 +68,7 @@ public class GamePlay extends ModuleWithSettings
                 Client.method35173().method35197().method25776(new Class6224("Auto Join", "Auto join was canceled.", 2500));
             }
             else if (this.field15755.method24358()) {
-                Class6430.method19107(this.field15755.method24360());
+                ColorUtils.method19107(this.field15755.method24360());
                 this.method10294(null);
             }
             else if ((int)(this.field15755.method24359() / 1000L) + 1 < this.field15757) {
@@ -100,7 +100,7 @@ public class GamePlay extends ModuleWithSettings
                 }
                 if (this.field15756.method23935() > n && !this.field15754.isEmpty()) {
                     this.field15756.method23934();
-                    Class6430.method19107(this.field15754.get(0));
+                    ColorUtils.method19107(this.field15754.get(0));
                     this.field15754.remove(0);
                 }
             }

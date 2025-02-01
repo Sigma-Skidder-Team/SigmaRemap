@@ -51,14 +51,14 @@ public class MineplexSpeed extends Module
     public void method10150(final Class5717 class5717) {
         if (this.method9906()) {
             if (!Client.method35173().method35189().method21551(BlockFly.class).method9906()) {
-                if (!Class6430.method19112(MineplexSpeed.mc.player)) {
+                if (!ColorUtils.method19112(MineplexSpeed.mc.player)) {
                     final double field15678 = this.getNumberSettingValueByName("OnGround Speed");
                     if (!MineplexSpeed.mc.player.onGround) {
                         if (MineplexSpeed.mc.player.collidedHorizontally) {
                             this.field15678 = 0.35;
                             this.field15676 = 1;
                         }
-                        if (!Class6430.method19114()) {
+                        if (!ColorUtils.method19114()) {
                             this.field15678 = 0.3;
                         }
                         this.field15678 -= 0.01;
@@ -75,7 +75,7 @@ public class MineplexSpeed extends Module
                             ++this.field15675;
                         }
                         if (this.method9883("AutoJump")) {
-                            if (Class6430.method19114()) {
+                            if (ColorUtils.method19114()) {
                                 MineplexSpeed.mc.player.method2725();
                                 class5717.method16975(MineplexSpeed.mc.player.getMotion().y);
                             }

@@ -19,8 +19,8 @@ public class BoxOutlineESP extends Module
     
     public BoxOutlineESP() {
         super(Category.RENDER, "Box Outline", "Draws a line arround players");
-        this.field15532 = Class6430.method19118(Class265.field1278.field1292, 0.8f);
-        this.addSetting(new ColorSetting("Color", "The tracers color", Class265.field1278.field1292));
+        this.field15532 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f);
+        this.addSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.color));
     }
     
     @EventListener
@@ -30,10 +30,10 @@ public class BoxOutlineESP extends Module
         }
         if (BoxOutlineESP.mc.player != null && BoxOutlineESP.mc.world != null) {
             this.method9935();
-            Class8154.method26926();
+            RenderUtil.method26926();
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
             this.method9934(false);
-            Class8154.method26927(Class2225.field13695);
+            RenderUtil.method26927(Class2225.field13695);
             GL11.glLineWidth(3.0f);
             RenderSystem.method30000(518, 0.0f);
             RenderSystem.enableAlphaTest();
@@ -43,7 +43,7 @@ public class BoxOutlineESP extends Module
             GL11.glDisable(2896);
             this.method9934(true);
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-            Class8154.method26928();
+            RenderUtil.method26928();
             this.method9936();
         }
     }
@@ -51,7 +51,7 @@ public class BoxOutlineESP extends Module
     private void method9933() {
         if (Client.method35173().method35209() == Class2209.field13464) {
             BoxOutlineESP.mc.world.field10072.forEach((p0, class399) -> {
-                final boolean b = Class6430.method19174(class399) == Class2068.field11839 && this.method9914().method9883("Show Players");
+                final boolean b = ColorUtils.method19174(class399) == Class2068.field11839 && this.method9914().method9883("Show Players");
                 final boolean b2 = !class399.method1823() || this.method9914().method9883("Show Invisibles");
                 if (!Client.method35173().method35191().method31751(class399)) {
                     if (!(!b)) {
@@ -67,7 +67,7 @@ public class BoxOutlineESP extends Module
                                 GL11.glTranslatef(0.0f, 0.1f, 0.0f);
                                 GL11.glRotatef(BoxOutlineESP.mc.field4644.method5833().method18164(), 0.0f, -1.0f, 0.0f);
                                 GL11.glScalef(-0.11f, -0.11f, -0.11f);
-                                Class8154.method26900(-class399.method1930() * 22.0f, -class399.method1931() * 5.5f, class399.method1930() * 44.0f, class399.method1931() * 21.0f, ClientAssets.shadow, this.field15532, false);
+                                RenderUtil.method26900(-class399.method1930() * 22.0f, -class399.method1931() * 5.5f, class399.method1930() * 44.0f, class399.method1931() * 21.0f, ClientAssets.shadow, this.field15532, false);
                                 ClientAssets.shout.bind();
                                 GL11.glPopMatrix();
                             }
@@ -81,9 +81,9 @@ public class BoxOutlineESP extends Module
     private void method9934(final boolean b) {
         for (final Entity class399 : BoxOutlineESP.mc.world.method6806()) {
             if (!Client.method35173().method35191().method31751(class399)) {
-                final boolean b2 = Class6430.method19174(class399) == Class2068.field11839 && this.method9914().method9883("Show Players");
-                final boolean b3 = Class6430.method19174(class399) == Class2068.field11838 && this.method9914().method9883("Show Mobs");
-                final boolean b4 = Class6430.method19174(class399) == Class2068.field11840 && this.method9914().method9883("Show Passives");
+                final boolean b2 = ColorUtils.method19174(class399) == Class2068.field11839 && this.method9914().method9883("Show Players");
+                final boolean b3 = ColorUtils.method19174(class399) == Class2068.field11838 && this.method9914().method9883("Show Mobs");
+                final boolean b4 = ColorUtils.method19174(class399) == Class2068.field11840 && this.method9914().method9883("Show Passives");
                 final boolean b5 = !class399.method1823() || this.method9914().method9883("Show Invisibles");
                 if (!b3) {
                     if (!b2) {
@@ -105,10 +105,10 @@ public class BoxOutlineESP extends Module
                 final int method9885 = this.method9885("Color");
                 final Class7644 method9886 = new Class7644(class399.getBoundingBox().offset((class399.posX - class399.lastTickPosX) * BoxOutlineESP.mc.timer.field26528 - (class399.posX - class399.lastTickPosX), (class399.posY - class399.lastTickPosY) * BoxOutlineESP.mc.timer.field26528 - (class399.posY - class399.lastTickPosY), (class399.posZ - class399.lastTickPosZ) * BoxOutlineESP.mc.timer.field26528 - (class399.posZ - class399.lastTickPosZ))).method24204(0.10000000149011612);
                 if (b) {
-                    Class8154.method26912(method9886, 3.0f, Class6430.method19118(method9885, (Client.method35173().method35209() != Class2209.field13464) ? 0.8f : 0.35f));
+                    RenderUtil.method26912(method9886, 3.0f, ColorUtils.applyAlpha(method9885, (Client.method35173().method35209() != Class2209.field13464) ? 0.8f : 0.35f));
                 }
                 else {
-                    Class8154.method26909(method9886, Class265.field1278.field1292);
+                    RenderUtil.method26909(method9886, ClientColors.LIGHT_GREYISH_BLUE.color);
                 }
                 GL11.glDisable(3042);
                 GL11.glPopMatrix();

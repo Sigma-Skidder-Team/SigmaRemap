@@ -20,15 +20,15 @@ public class Class952 implements Runnable
     
     @Override
     public void run() {
-        final Class88 class88 = new Class88();
-        class88.method486(this.field5039);
+        final JSONArray JSONArray = new JSONArray();
+        JSONArray.method486(this.field5039);
         if (this.field5040 != null) {
             final Object[] field5040 = this.field5040;
             for (int length = field5040.length, i = 0; i < length; ++i) {
-                class88.method486(field5040[i]);
+                JSONArray.method486(field5040[i]);
             }
         }
-        final Class9041 class89 = new Class9041(2, class88);
+        final Class9041 class89 = new Class9041(2, JSONArray);
         if (this.field5041 != null) {
             Class4960.method14969().fine(String.format("emitting packet with ack id %d", Class4960.method14968(this.field5042)));
             Class4960.method14970(this.field5042).put(Class4960.method14968(this.field5042), this.field5041);

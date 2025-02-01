@@ -62,7 +62,7 @@ public class Class9159
     }
     
     public void method33439(final float n) {
-        Class8154.method26888(this.field38808 * 2.0f, this.field38809 * 2.0f, this.field38810 * 2.0f, Class6430.method19118(this.field38818.getRGB(), n * 0.7f));
+        RenderUtil.method26888(this.field38808 * 2.0f, this.field38809 * 2.0f, this.field38810 * 2.0f, ColorUtils.applyAlpha(this.field38818.getRGB(), n * 0.7f));
     }
     
     public void method33440(final Class8338 class8338) {

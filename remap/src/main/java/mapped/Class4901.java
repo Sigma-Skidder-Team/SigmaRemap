@@ -105,7 +105,7 @@ public class Class4901 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         final Minecraft method5277 = Minecraft.method5277();
         final ChunkPos class7859;
         final ChunkPos field20970 = class7859 = new ChunkPos(this.field20960.field32290, this.field20960.field32291);
@@ -147,14 +147,14 @@ public class Class4901 extends Class4841
         final Class1663 method5278 = method5277.method5290();
         method5277.method5290();
         method5278.method5849(Class1663.field9428);
-        Class8154.method26871(this.field20478, this.field20479, this.field20478 + this.field20480, this.field20479 + this.field20481, true);
+        RenderUtil.method26871(this.field20478, this.field20479, this.field20478 + this.field20480, this.field20479 + this.field20481, true);
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + this.field20481 / 2), 0.0f);
         GL11.glScalef(n4, n4, 0.0f);
         GL11.glRotatef(-90.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-this.field20478 - this.field20480 / 2), (float)(-this.field20479 - this.field20481 / 2), 0.0f);
         GL11.glTranslated(-n6, n7, 0.0);
-        Class8154.method26903((float)(this.field20478 + n2), (float)(this.field20479 + n3), (float)max, (float)max, this.field20966.field30451, Class265.field1278.field1292, 0.0f, 0.0f, (float)this.field20966.field30449, (float)this.field20966.field30450, true, false);
+        RenderUtil.method26903((float)(this.field20478 + n2), (float)(this.field20479 + n3), (float)max, (float)max, this.field20966.field30451, ClientColors.LIGHT_GREYISH_BLUE.color, 0.0f, 0.0f, (float)this.field20966.field30449, (float)this.field20966.field30450, true, false);
         GL11.glPopMatrix();
         for (final Class8124 class7861 : Client.method35173().method35200().method24262()) {
             final float n8 = this.field20960.field32290 * 16 - this.field20963 * 16.0f;
@@ -162,16 +162,16 @@ public class Class4901 extends Class4841
             final float n10 = class7861.field33469 - n8 + 1.0f;
             final float n11 = class7861.field33470 - n9 + 1.0f;
             final float n12 = max / ((this.field20961 - 1) * 2.0f);
-            Class8154.method26899((float)(this.field20478 + Math.round(n10 * n12 / 16.0f) + this.field20480 / 2 - 16), (float)(this.field20479 + Math.round(n11 * n12 / 16.0f) + this.field20481 / 2 - 42), 32.0f, 46.0f, ClientAssets.waypoint, class7861.field33471);
+            RenderUtil.method26899((float)(this.field20478 + Math.round(n10 * n12 / 16.0f) + this.field20480 / 2 - 16), (float)(this.field20479 + Math.round(n11 * n12 / 16.0f) + this.field20481 / 2 - 42), 32.0f, 46.0f, ClientAssets.waypoint, class7861.field33471);
         }
-        Class8154.method26872();
+        RenderUtil.method26872();
         final String string = Math.round(this.field20960.field32290 * 16 - this.field20963 * 16.0f) + "  " + Math.round(this.field20960.field32291 * 16 - this.field20962 * 16.0f);
-        Class8154.method26889(ClientFonts.JelloLight14, (float)(this.field20478 - ClientFonts.JelloLight14.getWidth(string) - 23), (float)(this.field20479 + 35), string, Class6430.method19118(Class265.field1273.field1292, 0.4f));
+        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.field20478 - ClientFonts.JelloLight14.getWidth(string) - 23), (float)(this.field20479 + 35), string, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.4f));
         this.field20968 = this.field20962;
         this.field20969 = this.field20963;
         this.field20967 = this.field20961;
         this.field20970 = field20970;
-        super.method14205(n);
+        super.draw(n);
     }
     
     public final void method14719(final Class8058 class8058) {

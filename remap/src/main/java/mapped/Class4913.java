@@ -23,10 +23,10 @@ public class Class4913 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         if (this.field20495 != null) {
-            Class8154.method26876((float)this.method14272(), (float)this.method14274(), (float)this.field20480, (float)this.field20481, -14144460);
-            Class8154.method26914((float)this.method14272(), (float)this.method14274(), (float)this.field20480, (float)(this.field20481 - this.method14274()), 114.0f, n);
+            RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)this.field20480, (float)this.field20481, -14144460);
+            RenderUtil.method26914((float)this.method14272(), (float)this.method14274(), (float)this.field20480, (float)(this.field20481 - this.method14274()), 114.0f, n);
             final int n2 = 30;
             final TrueTypeFont field40312 = ClientFonts.JelloLight18;
             final String property = System.getProperty("line.separator");
@@ -40,7 +40,7 @@ public class Class4913 extends Class4825
                 final List<String> method14753 = this.method14753(split[i]);
                 int n5 = 0;
                 for (final String s : method14753) {
-                    Class8154.method26889(field40312, (float)(this.method14272() + n5 + n2), (float)(this.method14274() + n2 + i * field40312.getHeight()), s, Class6430.method19118(this.method14754(s), n));
+                    RenderUtil.drawString(field40312, (float)(this.method14272() + n5 + n2), (float)(this.method14274() + n2 + i * field40312.getHeight()), s, ColorUtils.applyAlpha(this.method14754(s), n));
                     n5 += field40312.getWidth(s);
                     field40313 -= s.length();
                 }
@@ -73,8 +73,8 @@ public class Class4913 extends Class4825
                     continue;
                 }
             }
-            Class8154.method26876(n2 + n4, (float)(this.method14274() + n2 + n3 * field40312.getHeight()), n2 + n4 + 1.0f, (float)(this.method14274() + n2 + field40312.getHeight(this.field20495) + n3 * field40312.getHeight()), Class6430.method19118(Class265.field1278.field1292, n));
-            super.method14205(n);
+            RenderUtil.method26876(n2 + n4, (float)(this.method14274() + n2 + n3 * field40312.getHeight()), n2 + n4 + 1.0f, (float)(this.method14274() + n2 + field40312.getHeight(this.field20495) + n3 * field40312.getHeight()), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+            super.draw(n);
         }
     }
     
@@ -84,7 +84,7 @@ public class Class4913 extends Class4825
         final ArrayList list = new ArrayList();
         StringBuilder sb = new StringBuilder("");
         for (final String str : split) {
-            if (this.method14754(str) == Class265.field1278.field1292) {
+            if (this.method14754(str) == ClientColors.LIGHT_GREYISH_BLUE.color) {
                 sb.append(str);
             }
             else {
@@ -108,13 +108,13 @@ public class Class4913 extends Class4825
             return -10442018;
         }
         if (s.startsWith("if")) {
-            return Class265.field1278.field1292;
+            return ClientColors.LIGHT_GREYISH_BLUE.color;
         }
         if (s.endsWith("(")) {
             return -2774170;
         }
         if (!s.startsWith(")")) {
-            return Class265.field1278.field1292;
+            return ClientColors.LIGHT_GREYISH_BLUE.color;
         }
         return -2774170;
     }
@@ -171,6 +171,6 @@ public class Class4913 extends Class4825
     }
     
     static {
-        Class4913.field21015 = new Class6523(Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292, Class2056.field11734, Class2056.field11738);
+        Class4913.field21015 = new Class6523(ClientColors.field1273.color, ClientColors.field1273.color, ClientColors.field1273.color, ClientColors.field1273.color, Class2056.field11734, Class2056.field11738);
     }
 }

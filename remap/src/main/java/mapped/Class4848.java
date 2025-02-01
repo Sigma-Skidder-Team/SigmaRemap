@@ -57,25 +57,25 @@ public class Class4848 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
-        Class8154.method26874((float)(this.field20478 + this.field20480), (float)(this.field20479 + 1), 1.0f, (float)(this.field20481 - 2), -8882056);
-        Class8154.method26874((float)(this.field20478 + 1), (float)this.field20479, (float)(this.field20480 - 1), (float)this.field20481, -8882056);
-        Class8154.method26874((float)this.field20478, (float)(this.field20479 + 1), 1.0f, (float)(this.field20481 - 2), -6250336);
-        Class8154.method26874((float)(this.field20478 + 1), (float)this.field20479, this.field20480 * this.field20772 - 1.0f, (float)this.field20481, -6250336);
+    public void draw(final float n) {
+        RenderUtil.method26874((float)(this.field20478 + this.field20480), (float)(this.field20479 + 1), 1.0f, (float)(this.field20481 - 2), -8882056);
+        RenderUtil.method26874((float)(this.field20478 + 1), (float)this.field20479, (float)(this.field20480 - 1), (float)this.field20481, -8882056);
+        RenderUtil.method26874((float)this.field20478, (float)(this.field20479 + 1), 1.0f, (float)(this.field20481 - 2), -6250336);
+        RenderUtil.method26874((float)(this.field20478 + 1), (float)this.field20479, this.field20480 * this.field20772 - 1.0f, (float)this.field20481, -6250336);
         this.method14537(Math.round(this.field20478 + this.field20480 * this.field20772) - 2, this.field20479 - 3);
-        super.method14205(n);
+        super.draw(n);
     }
     
     public void method14537(final int n, final int n2) {
-        Class8154.method26874((float)(n + 1), (float)(n2 + 1), 4.0f, 8.0f, -3618616);
-        Class8154.method26874((float)(n + 1), (float)(n2 + 1), 1.0f, 1.0f, -4934476);
-        Class8154.method26874((float)(n + 4), (float)(n2 + 1), 1.0f, 1.0f, -4934476);
-        Class8154.method26874((float)(n + 1), (float)(n2 + 8), 1.0f, 1.0f, -4934476);
-        Class8154.method26874((float)(n + 4), (float)(n2 + 8), 1.0f, 1.0f, -4934476);
-        Class8154.method26874((float)n, (float)(n2 + 1), 1.0f, 8.0f, -4934476);
-        Class8154.method26874((float)(n + 5), (float)(n2 + 1), 1.0f, 8.0f, -4934476);
-        Class8154.method26874((float)(n + 1), (float)n2, 4.0f, 1.0f, -4934476);
-        Class8154.method26874((float)(n + 1), (float)(n2 + 9), 4.0f, 1.0f, -4934476);
+        RenderUtil.method26874((float)(n + 1), (float)(n2 + 1), 4.0f, 8.0f, -3618616);
+        RenderUtil.method26874((float)(n + 1), (float)(n2 + 1), 1.0f, 1.0f, -4934476);
+        RenderUtil.method26874((float)(n + 4), (float)(n2 + 1), 1.0f, 1.0f, -4934476);
+        RenderUtil.method26874((float)(n + 1), (float)(n2 + 8), 1.0f, 1.0f, -4934476);
+        RenderUtil.method26874((float)(n + 4), (float)(n2 + 8), 1.0f, 1.0f, -4934476);
+        RenderUtil.method26874((float)n, (float)(n2 + 1), 1.0f, 8.0f, -4934476);
+        RenderUtil.method26874((float)(n + 5), (float)(n2 + 1), 1.0f, 8.0f, -4934476);
+        RenderUtil.method26874((float)(n + 1), (float)n2, 4.0f, 1.0f, -4934476);
+        RenderUtil.method26874((float)(n + 1), (float)(n2 + 9), 4.0f, 1.0f, -4934476);
     }
     
     @Override

@@ -20,7 +20,7 @@ public class Class9134
     
     public static double[] method33308(final LivingEntity class511) {
         if (class511 != null) {
-            return new double[] { class511.posX + (class511.posX - class511.lastTickPosX) * Class6430.method19135() / 50.0, class511.posY + 0.0 * Class6430.method19135() / 50.0, class511.posZ + (class511.posZ - class511.lastTickPosZ) * Class6430.method19135() / 50.0 };
+            return new double[] { class511.posX + (class511.posX - class511.lastTickPosX) * ColorUtils.method19135() / 50.0, class511.posY + 0.0 * ColorUtils.method19135() / 50.0, class511.posZ + (class511.posZ - class511.lastTickPosZ) * ColorUtils.method19135() / 50.0 };
         }
         return new double[] { 0.0, 0.0, 0.0 };
     }

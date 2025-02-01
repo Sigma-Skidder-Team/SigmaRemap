@@ -35,14 +35,14 @@ public class Class4835 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         if (!this.field20720) {
-            Class8154.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), Class6430.method19118(Class265.field1278.field1292, n));
+            RenderUtil.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
         }
         else {
-            Class8154.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), Class6430.method19118(-3487030, n * 0.5f));
+            RenderUtil.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), ColorUtils.applyAlpha(-3487030, n * 0.5f));
         }
-        Class8154.method26878((float)(this.field20478 - 1), (float)(this.field20479 - 1), (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), Class6430.method19118(-921103, n));
+        RenderUtil.method26878((float)(this.field20478 - 1), (float)(this.field20479 - 1), (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), ColorUtils.applyAlpha(-921103, n));
         if (this.field20721.getItem() != null) {
             this.method14504();
         }

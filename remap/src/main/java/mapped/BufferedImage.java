@@ -121,7 +121,7 @@ public class BufferedImage
     }
     
     public static java.awt.image.BufferedImage method20831(final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
-        return method20830(n, n2, n3, n4, n5, n6, Class265.field1273.field1292, false);
+        return method20830(n, n2, n3, n4, n5, n6, ClientColors.field1273.color, false);
     }
     
     public static java.awt.image.BufferedImage method20832(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7) {
@@ -129,14 +129,14 @@ public class BufferedImage
     }
     
     public static java.awt.image.BufferedImage method20833(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final boolean b) {
-        return method20830(n, n2, n3, n4, n5, n6, Class265.field1273.field1292, b);
+        return method20830(n, n2, n3, n4, n5, n6, ClientColors.field1273.color, b);
     }
     
     public static java.awt.image.BufferedImage method20834(final java.awt.image.BufferedImage bufferedImage, final int n, final int rgb) {
         final int width = bufferedImage.getWidth() + n * 2;
         final int height = bufferedImage.getHeight() + n * 2;
         final java.awt.image.BufferedImage bufferedImage2 = new java.awt.image.BufferedImage(width, height, bufferedImage.getType());
-        if (rgb != Class265.field1273.field1292) {
+        if (rgb != ClientColors.field1273.color) {
             for (int i = 0; i < width; ++i) {
                 for (int j = 0; j < height; ++j) {
                     bufferedImage2.setRGB(i, j, rgb);

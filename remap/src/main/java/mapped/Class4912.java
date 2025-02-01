@@ -37,7 +37,7 @@ public class Class4912 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         final int method7696 = Minecraft.method5277().field4632.method7696();
         final int method7697 = Minecraft.method5277().field4632.method7697();
         final int n2 = method7696 / 2;
@@ -77,6 +77,6 @@ public class Class4912 extends Class4825
             }
             class9159.method33439(n);
         }
-        super.method14205(n);
+        super.draw(n);
     }
 }

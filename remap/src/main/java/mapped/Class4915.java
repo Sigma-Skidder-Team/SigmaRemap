@@ -26,20 +26,20 @@ public class Class4915 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         if (this.field21023.method23935() > 70L) {
             this.field21023.method23934();
             this.field21022.method16068();
         }
         GL11.glPushMatrix();
         GL11.glTranslatef((float)this.field20478, (float)this.field20479, 0.0f);
-        Class8154.method26874(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class265.field1273.field1292);
-        Class8154.method26924((float)(this.field21022.method16076().field40723 * this.field21024), (float)(this.field21022.method16076().field40724 * this.field21024), (float)this.field21024, (float)this.field21024, 5.0f, Class265.field1285.field1292);
+        RenderUtil.method26874(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ClientColors.field1273.color);
+        RenderUtil.method26924((float)(this.field21022.method16076().field40723 * this.field21024), (float)(this.field21022.method16076().field40724 * this.field21024), (float)this.field21024, (float)this.field21024, 5.0f, ClientColors.field1285.color);
         for (final Class9469 class9469 : this.field21022.method16077().method33123()) {
-            Class8154.method26874((float)(class9469.field40723 * this.field21024), (float)(class9469.field40724 * this.field21024), (float)this.field21024, (float)this.field21024, Class265.field1278.field1292);
+            RenderUtil.method26874((float)(class9469.field40723 * this.field21024), (float)(class9469.field40724 * this.field21024), (float)this.field21024, (float)this.field21024, ClientColors.LIGHT_GREYISH_BLUE.color);
         }
         GL11.glPopMatrix();
-        super.method14205(n);
+        super.draw(n);
     }
     
     public int method14756() {

@@ -31,7 +31,7 @@ public class Class4837 extends Class4825
     }
     
     @Override
-    public void method14205(final float n) {
+    public void draw(final float n) {
         if (this.field20738 == null) {
             return;
         }
@@ -113,6 +113,6 @@ public class Class4837 extends Class4825
     }
     
     static {
-        Class4837.field20733 = new Class6523(Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292, Class265.field1273.field1292, Class2056.field11734, Class2056.field11738);
+        Class4837.field20733 = new Class6523(ClientColors.field1273.color, ClientColors.field1273.color, ClientColors.field1273.color, ClientColors.field1273.color, Class2056.field11734, Class2056.field11738);
     }
 }

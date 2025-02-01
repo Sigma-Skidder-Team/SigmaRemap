@@ -31,8 +31,8 @@ public class Class4941 extends Class4800
     
     @Override
     public void method14200(final int n, final int n2) {
-        if (Class4941.field21224.method35857() == Class2186.field12965) {
-            if (Class4941.field21224.method35858() == 0.0f) {
+        if (Class4941.field21224.getDirection() == Direction.FORWARDS) {
+            if (Class4941.field21224.calcPercent() == 0.0f) {
                 if (Class4941.field21227 != null) {
                     Minecraft.method5277().displayGuiScreen(Class4941.field21227);
                 }
@@ -42,17 +42,17 @@ public class Class4941 extends Class4800
     }
     
     @Override
-    public void method14205(final float n) {
-        float n2 = 1.3f - Class7707.method24584(Class4941.field21224.method35858(), 0.0f, 1.0f, 1.0f) * 0.3f;
+    public void draw(final float n) {
+        float n2 = 1.3f - Class7707.method24584(Class4941.field21224.calcPercent(), 0.0f, 1.0f, 1.0f) * 0.3f;
         float method35858 = 1.0f;
-        if (Class4941.field21224.method35857() == Class2186.field12965) {
-            n2 = 0.7f + Class7791.method25030(Class4941.field21224.method35858(), 0.0f, 1.0f, 1.0f) * 0.3f;
-            method35858 = Class4941.field21224.method35858();
+        if (Class4941.field21224.getDirection() == Direction.FORWARDS) {
+            n2 = 0.7f + Class7791.method25030(Class4941.field21224.calcPercent(), 0.0f, 1.0f, 1.0f) * 0.3f;
+            method35858 = Class4941.field21224.calcPercent();
         }
-        Class8154.method26881(0, 0, this.method14276(), this.method14278(), Class6430.method19120(-1072689136, Class6430.method19118(Class265.field1273.field1292, 0.1f), method35858), Class6430.method19120(-804253680, Class6430.method19118(Class265.field1273.field1292, 0.1f), method35858));
+        RenderUtil.method26881(0, 0, this.method14276(), this.method14278(), ColorUtils.method19120(-1072689136, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.1f), method35858), ColorUtils.method19120(-804253680, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.1f), method35858));
         this.method14288(n2, n2);
         this.method14227();
-        super.method14205(Class4941.field21224.method35858());
+        super.draw(Class4941.field21224.calcPercent());
     }
     
     private void method14886(final float n) {
@@ -66,7 +66,7 @@ public class Class4941 extends Class4800
         final float n3 = n2 - this.field21221;
         final float n4 = (float)(field21222 - this.field21222);
         GL11.glPushMatrix();
-        Class8154.method26898((float)this.field21222, (float)this.field21221, (float)(this.method14276() * 2), (float)(this.method14278() + 114), this.field21225, Class6430.method19118(Class265.field1278.field1292, n));
+        RenderUtil.method26898((float)this.field21222, (float)this.field21221, (float)(this.method14276() * 2), (float)(this.method14278() + 114), this.field21225, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
         GL11.glPopMatrix();
         final float n5 = 0.5f;
         if (n2 != this.field21221) {
@@ -79,7 +79,7 @@ public class Class4941 extends Class4800
     
     public static void method14887(final Screen field21227) {
         Class4941.field21227 = field21227;
-        Class4941.field21224.method35855(Class2186.field12965);
+        Class4941.field21224.changeDirection(Direction.FORWARDS);
     }
     
     @Override

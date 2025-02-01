@@ -64,7 +64,7 @@ public class Class4921 extends Class4825
     }
     
     @Override
-    public void method14205(float n) {
+    public void draw(float n) {
         final int n2 = 5;
         n *= (this.field20593 ? 0.75f : (this.field20491 ? 0.7f : 0.3f));
         int field20478 = this.field20478;
@@ -73,13 +73,13 @@ public class Class4921 extends Class4825
             final int n3 = 0;
             field20479 -= 7;
             field20478 += 7;
-            Class8154.method26876((float)field20478, (float)(this.field20479 + n3), (float)(field20478 + field20479), (float)(this.field20479 + this.method14278() - n3), Class6430.method19118(Class265.field1281.field1292, 1.0f * n));
+            RenderUtil.method26876((float)field20478, (float)(this.field20479 + n3), (float)(field20478 + field20479), (float)(this.field20479 + this.method14278() - n3), ColorUtils.applyAlpha(ClientColors.field1281.color, 1.0f * n));
         }
         else {
-            Class8154.method26904((float)field20478, (float)this.field20479, (float)field20479, (float)n2, ClientAssets.verticalscrollbartop, n);
-            Class8154.method26904((float)field20478, (float)(this.field20479 + this.field20481 - n2), (float)field20479, (float)n2, ClientAssets.verticalscrollbarbottom, n);
-            Class8154.method26876((float)field20478, (float)(this.field20479 + n2), (float)(field20478 + field20479), (float)(this.field20479 + this.method14278() - n2), Class6430.method19118(Class265.field1273.field1292, 0.45f * n));
+            RenderUtil.method26904((float)field20478, (float)this.field20479, (float)field20479, (float)n2, ClientAssets.verticalscrollbartop, n);
+            RenderUtil.method26904((float)field20478, (float)(this.field20479 + this.field20481 - n2), (float)field20479, (float)n2, ClientAssets.verticalscrollbarbottom, n);
+            RenderUtil.method26876((float)field20478, (float)(this.field20479 + n2), (float)(field20478 + field20479), (float)(this.field20479 + this.method14278() - n2), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.45f * n));
         }
-        super.method14205(n);
+        super.draw(n);
     }
 }

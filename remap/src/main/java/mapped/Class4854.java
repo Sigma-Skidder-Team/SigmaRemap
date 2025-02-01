@@ -121,8 +121,8 @@ public class Class4854 extends Class4841
     }
     
     @Override
-    public void method14205(final float n) {
-        super.method14205(n);
+    public void draw(final float n) {
+        super.draw(n);
     }
     
     public void method14562(final String... a) {

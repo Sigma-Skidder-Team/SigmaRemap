@@ -12,7 +12,7 @@ public class Class7396
     private static String[] field28519;
     
     public static void method22720() {
-        Class8154.method26918();
+        RenderUtil.method26918();
         GL11.glPushAttrib(1048575);
         GL11.glDisable(3008);
         GL11.glDisable(3553);

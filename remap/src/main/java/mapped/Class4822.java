@@ -150,11 +150,11 @@ public class Class4822 extends Class4817
     }
     
     public void method14435() {
-        this.field20635.method35855(Class2186.field12965);
+        this.field20635.changeDirection(Direction.FORWARDS);
     }
     
     public boolean method14436() {
-        return this.field20635.method35857() == Class2186.field12965 && this.field20635.method35858() == 0.0f;
+        return this.field20635.getDirection() == Direction.FORWARDS && this.field20635.calcPercent() == 0.0f;
     }
     
     @Override
@@ -163,14 +163,14 @@ public class Class4822 extends Class4817
     }
     
     @Override
-    public void method14205(final float n) {
-        int n2 = Math.round(this.method14278() * Class8468.method28270(this.field20635.method35858(), 0.0f, 1.0f, 1.0f));
-        if (this.field20635.method35857() == Class2186.field12965) {
-            n2 = Math.round(this.method14278() * Class8468.method28269(this.field20635.method35858(), 0.0f, 1.0f, 1.0f));
+    public void draw(final float n) {
+        int n2 = Math.round(this.method14278() * Class8468.method28270(this.field20635.calcPercent(), 0.0f, 1.0f, 1.0f));
+        if (this.field20635.getDirection() == Direction.FORWARDS) {
+            n2 = Math.round(this.method14278() * Class8468.method28269(this.field20635.calcPercent(), 0.0f, 1.0f, 1.0f));
         }
-        Class8154.method26869((float)this.field20478, (float)(70 + this.method14278() - n2), (float)this.method14276(), (float)n2);
-        Class8154.method26874((float)this.field20478, (float)(70 + this.method14278() - n2), (float)this.method14276(), (float)n2, -2631721);
-        super.method14205(n);
-        Class8154.method26872();
+        RenderUtil.method26869((float)this.field20478, (float)(70 + this.method14278() - n2), (float)this.method14276(), (float)n2);
+        RenderUtil.method26874((float)this.field20478, (float)(70 + this.method14278() - n2), (float)this.method14276(), (float)n2, -2631721);
+        super.draw(n);
+        RenderUtil.method26872();
     }
 }

@@ -75,7 +75,7 @@ public class Waypoints extends Module
                             if (this.field15594.containsKey(method12990.method1865())) {
                                 this.field15594.remove(method12990.method1865());
                             }
-                            this.field15594.put(method12990.method1865(), new Class8124(method12990.getName().getUnformattedComponentText() + " Unspawn", (int)method12990.posX, (int)method12990.posY, (int)method12990.posZ, Class265.field1284.field1292));
+                            this.field15594.put(method12990.method1865(), new Class8124(method12990.getName().getUnformattedComponentText() + " Unspawn", (int)method12990.posX, (int)method12990.posY, (int)method12990.posZ, ClientColors.field1284.color));
                         }
                     }
                 }
@@ -152,19 +152,19 @@ public class Waypoints extends Module
             GL11.glPushMatrix();
             GL11.glRotatef((float)i, 0.0f, 1.0f, 0.0f);
             GL11.glRotatef(180.0f, 1.0f, 0.0f, 0.0f);
-            this.method10010(Class6430.method19120(Class265.field1273.field1292, n, 0.04f * i / 90.0f));
+            this.method10010(ColorUtils.method19120(ClientColors.field1273.color, n, 0.04f * i / 90.0f));
             GL11.glPopMatrix();
         }
         for (int j = 0; j <= 270; j += 90) {
             GL11.glPushMatrix();
             GL11.glRotatef((float)j, 0.0f, 1.0f, 0.0f);
-            this.method10010(Class6430.method19120(Class265.field1273.field1292, n, 0.04f * j / 90.0f));
+            this.method10010(ColorUtils.method19120(ClientColors.field1273.color, n, 0.04f * j / 90.0f));
             GL11.glPopMatrix();
         }
     }
     
     private void method10010(final int n) {
-        GL11.glColor4fv(Class6430.method19139(n));
+        GL11.glColor4fv(ColorUtils.method19139(n));
         GL11.glTranslatef(0.0f, 0.0f, 0.3f);
         GL11.glNormal3f(0.0f, 0.0f, 1.0f);
         GL11.glRotated(-37.0, 1.0, 0.0, 0.0);
@@ -222,7 +222,7 @@ public class Waypoints extends Module
         this.method10013(0.5f);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
-        GL11.glColor4fv(Class6430.method19139(n4));
+        GL11.glColor4fv(ColorUtils.method19139(n4));
         GL11.glTranslated(n + 0.5, (double)(n2 + 0.7f), n3 + 0.5);
         GL11.glRotatef((float)(Waypoints.mc.player.ticksExisted % 90 * 4), 0.0f, -1.0f, 0.0f);
         GL11.glLineWidth(1.4f + 1.0f / n5 * 1.4f);
@@ -242,10 +242,10 @@ public class Waypoints extends Module
         GL11.glPushMatrix();
         GL11.glScalef(-0.009f * n5, -0.009f * n5, -0.009f * n5);
         GL11.glTranslated(0.0, -20.0 * Math.sqrt(Math.sqrt(n5)), 0.0);
-        Class8154.method26876((float)(-field40314.getWidth(s) / 2 - 14), -5.0f, field40314.getWidth(s) / 2.0f + 14.0f, (float)(field40314.getHeight() + 7), Class6430.method19118(Class6430.method19120(Class265.field1278.field1292, Class265.field1273.field1292, 75.0f), 0.5f));
-        Class8154.method26913((float)(-field40314.getWidth(s) / 2 - 14), -5.0f, (float)(field40314.getWidth(s) + 28), (float)(field40314.getHeight() + 12), 20.0f, 0.5f);
+        RenderUtil.method26876((float)(-field40314.getWidth(s) / 2 - 14), -5.0f, field40314.getWidth(s) / 2.0f + 14.0f, (float)(field40314.getHeight() + 7), ColorUtils.applyAlpha(ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.field1273.color, 75.0f), 0.5f));
+        RenderUtil.method26913((float)(-field40314.getWidth(s) / 2 - 14), -5.0f, (float)(field40314.getWidth(s) + 28), (float)(field40314.getHeight() + 12), 20.0f, 0.5f);
         GL11.glTranslated((double)(-field40314.getWidth(s) / 2), 0.0, 0.0);
-        Class8154.method26889(field40314, 0.0f, 0.0f, s, Class6430.method19118(Class265.field1278.field1292, 0.8f));
+        RenderUtil.drawString(field40314, 0.0f, 0.0f, s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
         GL11.glEnable(3553);
