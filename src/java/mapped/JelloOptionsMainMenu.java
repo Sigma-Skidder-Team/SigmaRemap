@@ -43,8 +43,8 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
       }
 
       @Override
-      public void draw(float var1) {
-            this.method13463(this.xA + (this.getWidthA() - 202) / 2, this.yA + 10, var1);
+      public void draw(float partialTicks) {
+            this.method13463(this.xA + (this.getWidthA() - 202) / 2, this.yA + 10, partialTicks);
             StringBuilder var10000 = new StringBuilder().append("You're currently using Sigma ");
             Client.getInstance();
             String var4 = var10000.append(Client.VERSION).toString();
@@ -54,7 +54,7 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
                                     + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getWidth(var4)) / 2),
                         (float) (this.yA + 70),
                         var4,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.4F * var1));
+                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.4F * partialTicks));
             String var5 = "Click GUI is currently bound to: "
                         + MultiUtilities
                                     .method17736(Client.getInstance().moduleManager.getMacOSTouchBar()
@@ -66,7 +66,7 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
                                     + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getWidth(var5)) / 2),
                         (float) (this.getYA() + this.getHeightA() - 180),
                         var5,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.6F * var1));
+                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.6F * partialTicks));
             String var6 = "Configure all your keybinds in the keybind manager!";
             RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont14,
@@ -74,7 +74,7 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
                                     + (this.getWidthA() - ResourceRegistry.JelloLightFont14.getWidth(var6)) / 2),
                         (float) (this.getYA() + this.getHeightA() - 150),
                         var6,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.4F * var1));
+                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.4F * partialTicks));
             String var7 = "GUI Blur: ";
             RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont20,
@@ -83,7 +83,7 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
                                     - 114),
                         (float) (this.getYA() + this.getHeightA() - 221),
                         var7,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.5F * var1));
+                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.5F * partialTicks));
             String var8 = "GPU Accelerated: ";
             RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont20,
@@ -92,8 +92,8 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
                                     + 52),
                         (float) (this.getYA() + this.getHeightA() - 221),
                         var8,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.5F * var1));
-            super.draw(var1);
+                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.5F * partialTicks));
+            super.draw(partialTicks);
       }
 
       private void method13463(int var1, int var2, float var3) {

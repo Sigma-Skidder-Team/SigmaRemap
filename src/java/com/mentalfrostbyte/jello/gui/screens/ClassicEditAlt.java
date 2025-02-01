@@ -55,7 +55,7 @@ public class ClassicEditAlt extends Screen {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.method11455(0.0F, 0.0F, (float) this.getWidthA(), (float) this.getHeightA(),
             ResourceList.mainmenubackground);
       RenderUtil.drawRect(0.0F, 0.0F, (float) this.getWidthA(), (float) this.getHeightA(),
@@ -74,7 +74,7 @@ public class ClassicEditAlt extends Screen {
             Class2218.field14492,
             Class2218.field14488,
             true);
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 
    @Override

@@ -36,7 +36,7 @@ public class UICheckBox extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       float var4 = !this.method13212() ? 0.43F : 0.6F;
       RenderUtil.drawRect(
             (float) this.xA,
@@ -44,8 +44,8 @@ public class UICheckBox extends Class4247 {
             (float) this.widthA,
             (float) this.heightA,
             10.0F,
-            MultiUtilities.applyAlpha(-4144960, var4 * this.field21370.calcPercent() * var1));
-      float var5 = (1.0F - this.field21370.calcPercent()) * var1;
+            MultiUtilities.applyAlpha(-4144960, var4 * this.field21370.calcPercent() * partialTicks));
+      float var5 = (1.0F - this.field21370.calcPercent()) * partialTicks;
       RenderUtil.drawRect(
             (float) this.xA,
             (float) this.yA,
@@ -69,7 +69,7 @@ public class UICheckBox extends Class4247 {
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var5));
       GL11.glPopMatrix();
       var5 *= var5;
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 
    @Override

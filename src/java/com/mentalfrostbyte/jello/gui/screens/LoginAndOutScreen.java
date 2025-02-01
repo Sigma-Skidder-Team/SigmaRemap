@@ -83,7 +83,7 @@ public class LoginAndOutScreen extends Screen {
 
    public void method13424(String var1, String var2) {
       if (this.field21090 == null) {
-         this.method13222(() -> {
+         this.runThisOnDimensionUpdate(() -> {
             ArrayList<MiniAlert> var5 = new ArrayList();
             var5.add(new MiniAlert(AlertType.HEADER, var1, 45));
             String[] var6 = MultiUtilities.method17745(var2, 240, ResourceRegistry.JelloLightFont20);
@@ -94,7 +94,7 @@ public class LoginAndOutScreen extends Screen {
 
             var5.add(new MiniAlert(AlertType.BUTTON, "Ok", 55));
             this.method13233(this.field21090 = new AlertPanel(this, "modal", true, "", var5.toArray(new MiniAlert[0])));
-            this.field21090.method13604(var1xx -> new Thread(() -> this.method13222(() -> {
+            this.field21090.method13604(var1xx -> new Thread(() -> this.runThisOnDimensionUpdate(() -> {
                this.method13236(this.field21090);
                this.field21090 = null;
             })).start());
@@ -104,7 +104,7 @@ public class LoginAndOutScreen extends Screen {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       ResourceList.cancelIconPNG.bind();
       this.field21085 = Math.max(0.0F, Math.min(this.field21085 + 0.075F, 1.0F));
       if (this.field21092) {
@@ -128,7 +128,7 @@ public class LoginAndOutScreen extends Screen {
       this.field21089.method13278(var4);
       Rectangle var5 = RenderUtil.method11413(RenderUtil.method11414(this.field21088), this.field21088.method13273(),
             this.field21088.method13275());
-      if (this.field21089.method13287()) {
+      if (this.field21089.isVisible()) {
          var5 = RenderUtil.method11413(RenderUtil.method11414(this.field21089), this.field21089.method13273(),
                this.field21089.method13275());
       }

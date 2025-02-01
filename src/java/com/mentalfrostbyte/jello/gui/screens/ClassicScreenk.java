@@ -24,11 +24,11 @@ public class ClassicScreenk extends Screen {
     }
 
     public void method13417() {
-        this.method13222(() -> this.method13419());
+        this.runThisOnDimensionUpdate(() -> this.method13419());
     }
 
     public void method13418(String var1, ModuleCategory... var2) {
-        this.method13222(() -> {
+        this.runThisOnDimensionUpdate(() -> {
             if (this.field21081 != null) {
                 this.method13236(this.field21081);
             }
@@ -47,8 +47,8 @@ public class ClassicScreenk extends Screen {
     }
 
     @Override
-    public void method13028(int var1, int var2) {
-        super.method13028(var1, var2);
+    public void updatePanelDimensions(int newHeight, int newWidth) {
+        super.updatePanelDimensions(newHeight, newWidth);
     }
 
     @Override
@@ -76,7 +76,7 @@ public class ClassicScreenk extends Screen {
     }
 
     @Override
-    public void draw(float var1) {
+    public void draw(float partialTicks) {
         float var4 = field21079.calcPercent();
         RenderUtil.drawRect(
                 (float) this.xA,
@@ -84,6 +84,6 @@ public class ClassicScreenk extends Screen {
                 (float) (this.xA + this.widthA),
                 (float) (this.yA + this.heightA),
                 MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), var4 * 0.35F));
-        super.draw(var1);
+        super.draw(partialTicks);
     }
 }

@@ -23,7 +23,7 @@ public class Class4257 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       this.field20639.method13145(true);
       byte var4 = 10;
       RenderUtil.drawRoundedRect(
@@ -32,14 +32,14 @@ public class Class4257 extends Class4247 {
             (float) (this.widthA - var4),
             (float) (this.heightA - var4),
             9.0F,
-            var1 * 0.9F);
+            partialTicks * 0.9F);
       RenderUtil.drawRoundedRect(
             (float) (this.xA + var4 / 2),
             (float) (this.yA + var4 / 2),
             (float) (this.widthA - var4),
             (float) (this.heightA - var4),
             30.0F,
-            var1 * 0.4F);
+            partialTicks * 0.4F);
       RenderUtil.drawRect(
             (float) this.xA,
             (float) this.yA,
@@ -68,7 +68,7 @@ public class Class4257 extends Class4247 {
                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.25F));
       }
 
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 
    public ArrayList<Module> method13064() {

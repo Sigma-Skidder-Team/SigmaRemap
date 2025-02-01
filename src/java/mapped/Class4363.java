@@ -106,7 +106,7 @@ public class Class4363 extends Class4247 {
       int var3 = this.method13648();
 
       for (Entry var5 : this.field21331.entrySet()) {
-         if (((Class4362) var5.getValue()).method13287()) {
+         if (((Class4362) var5.getValue()).isVisible()) {
             var3 = Math.max(
                   var3,
                   (((Class4362) var5.getValue()).field21323.size() - 1) * ((Class4362) var5.getValue()).getHeightA()
@@ -131,22 +131,22 @@ public class Class4363 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
-      if (!this.method13114(var1, var2) && this.field21330.getDirection() == Direction.FORWARDS) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
+      if (!this.method13114(newHeight, newWidth) && this.field21330.getDirection() == Direction.FORWARDS) {
          this.method13658(false);
       }
 
-      int var5 = (var2 - this.method13272()) / this.getHeightA() - 1;
+      int var5 = (newWidth - this.method13272()) / this.getHeightA() - 1;
       if (var5 >= 0
             && var5 < this.values.size()
             && this.field21330.getDirection() == Direction.FORWARDS
             && this.field21330.calcPercent() == 1.0F
-            && var1 - this.method13271() < this.getWidthA()) {
+            && newHeight - this.method13271() < this.getWidthA()) {
          for (Entry var9 : this.field21331.entrySet()) {
             ((Class4362) var9.getValue()).setEnabled((Integer) var9.getKey() == var5);
          }
-      } else if (!this.method13114(var1, var2) || this.field21330.getDirection() == Direction.BACKWARDS) {
+      } else if (!this.method13114(newHeight, newWidth) || this.field21330.getDirection() == Direction.BACKWARDS) {
          for (Entry var7 : this.field21331.entrySet()) {
             ((Class4362) var7.getValue()).setEnabled(false);
          }
@@ -154,28 +154,28 @@ public class Class4363 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.drawRect(
             (float) this.getXA(),
             (float) this.getYA(),
             (float) (this.getXA() + this.getWidthA()),
             (float) (this.getYA() + this.getHeightA()),
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
-                  var1 * this.field21330.calcPercent()));
+                  partialTicks * this.field21330.calcPercent()));
       RenderUtil.drawRoundedRect(
             (float) this.getXA(),
             (float) this.getYA(),
             (float) this.getWidthA(),
             (float) (this.getHeightA() + this.method13648() - 1),
             6.0F,
-            var1 * 0.1F * this.field21330.calcPercent());
+            partialTicks * 0.1F * this.field21330.calcPercent());
       RenderUtil.drawRoundedRect(
             (float) this.getXA(),
             (float) this.getYA(),
             (float) this.getWidthA(),
             (float) (this.getHeightA() + this.method13648() - 1),
             20.0F,
-            var1 * 0.2F * this.field21330.calcPercent());
+            partialTicks * 0.2F * this.field21330.calcPercent());
       if (this.getTypedText() != null) {
          RenderUtil.method11415(this);
          String var4 = "";
@@ -192,7 +192,7 @@ public class Class4363 extends Class4247 {
                (float) (this.getXA() + 10),
                (float) (this.getYA() + (this.getHeightA() - this.getFont().method23952()) / 2 + 1),
                this.getTypedText() + var4,
-               MultiUtilities.applyAlpha(this.textColor.method19405(), var1 * 0.7F));
+               MultiUtilities.applyAlpha(this.textColor.method19405(), partialTicks * 0.7F));
          RenderUtil.endScissor();
       }
 
@@ -205,7 +205,7 @@ public class Class4363 extends Class4247 {
 
       GL11.glPushMatrix();
       if (this.field21330.calcPercent() > 0.0F) {
-         super.draw(var1);
+         super.draw(partialTicks);
       }
 
       GL11.glPopMatrix();
@@ -225,7 +225,7 @@ public class Class4363 extends Class4247 {
             (float) (this.getYA() + var10 - 14),
             ">",
             MultiUtilities.applyAlpha(this.textColor.method19405(),
-                  var1 * 0.7F * (!this.method13114(this.getHeightO(), this.getWidthO()) ? 0.5F : 1.0F)));
+                  partialTicks * 0.7F * (!this.method13114(this.getHeightO(), this.getWidthO()) ? 0.5F : 1.0F)));
    }
 
    public List<String> method13651() {
@@ -262,7 +262,7 @@ public class Class4363 extends Class4247 {
    @Override
    public boolean method13114(int var1, int var2) {
       for (Entry var6 : this.field21331.entrySet()) {
-         if (((Class4362) var6.getValue()).method13287() && ((Class4362) var6.getValue()).method13114(var1, var2)) {
+         if (((Class4362) var6.getValue()).isVisible() && ((Class4362) var6.getValue()).method13114(var1, var2)) {
             return true;
          }
       }

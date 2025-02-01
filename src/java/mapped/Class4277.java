@@ -54,18 +54,18 @@ public class Class4277 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       this.field20735
             .changeDirection(
                   !this.method13298() && !this.field20734.method13298() && !this.method13212()
                         && !this.field20734.method13216()
                               ? Direction.BACKWARDS
                               : Direction.FORWARDS);
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       byte var4 = 3;
       byte var5 = 6;
       int var6 = this.getHeightA() / 4;
@@ -75,7 +75,7 @@ public class Class4277 extends Class4247 {
       int var10 = this.field20734.getXA() + this.field20734.getWidthA() / 2 - 6;
       RenderUtil.drawRect(
             (float) var8, (float) var9, (float) var10, (float) var6, (float) (var6 / 2),
-            MultiUtilities.applyAlpha(this.textColor.method19405(), var1 * var1 * var1));
+            MultiUtilities.applyAlpha(this.textColor.method19405(), partialTicks * partialTicks * partialTicks));
       RenderUtil.drawRect(
             (float) (var8 + var10),
             (float) var9,
@@ -83,7 +83,7 @@ public class Class4277 extends Class4247 {
             (float) var6,
             (float) (var6 / 2),
             MultiUtilities.applyAlpha(MultiUtilities.method17692(this.textColor.method19405(), 0.8F),
-                  var1 * var1 * var1));
+                  partialTicks * partialTicks * partialTicks));
       if (this.getTypedText() != null) {
          int var11 = Math.max(0, 9 - this.field20734.getXA());
          RenderUtil.drawString(
@@ -92,10 +92,10 @@ public class Class4277 extends Class4247 {
                (float) (var9 - 5),
                this.getTypedText(),
                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(),
-                     0.5F * this.field20735.calcPercent() * var1));
+                     0.5F * this.field20735.calcPercent() * partialTicks));
       }
 
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 
    @Override

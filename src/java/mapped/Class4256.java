@@ -46,12 +46,12 @@ public class Class4256 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
-      super.draw(var1);
+   public void draw(float partialTicks) {
+      super.draw(partialTicks);
    }
 }

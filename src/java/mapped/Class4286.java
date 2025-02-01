@@ -66,14 +66,14 @@ public class Class4286 extends Class4278 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      boolean var5 = this.method13298() && this.getScreen().getScreen().method13114(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      boolean var5 = this.method13298() && this.getScreen().getScreen().method13114(newHeight, newWidth);
       this.field20777.changeDirection(!var5 ? Direction.BACKWARDS : Direction.FORWARDS);
       if (var5) {
          Client.getInstance().guiManager.method33459(GuiManager.field41345);
       }
 
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    public boolean method13157() {
@@ -91,7 +91,7 @@ public class Class4286 extends Class4278 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       if (!this.method13157()) {
          if (this.field20775 != null) {
             this.field20775.release();
@@ -134,13 +134,13 @@ public class Class4286 extends Class4278 {
                (float) (this.getWidthA() - 30) + 10.0F * var4,
                (float) (this.getWidthA() - 30) + 10.0F * var4,
                20.0F,
-               var1);
+                 partialTicks);
          if (this.field20775 == null && this.field20773 == null) {
             RenderUtil.drawImage(var5, var6, var7, var8, ResourceList.artworkPNG,
-                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1 * (1.0F - var4)));
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks * (1.0F - var4)));
             if (this.field20776 != null) {
                RenderUtil.drawImage(var5, var6, var7, var8, ResourceList.artworkPNG,
-                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var4 * var1));
+                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var4 * partialTicks));
             }
          } else {
             if (this.field20775 == null) {
@@ -170,10 +170,10 @@ public class Class4286 extends Class4278 {
             }
 
             RenderUtil.drawImage(var5, var6, var7, var8, this.field20775,
-                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1 * (1.0F - var4)));
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks * (1.0F - var4)));
             if (this.field20776 != null) {
                RenderUtil.drawImage(var5, var6, var7, var8, this.field20776,
-                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var4 * var1));
+                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var4 * partialTicks));
             }
          }
 
@@ -189,9 +189,9 @@ public class Class4286 extends Class4278 {
                (float) var9 * var10,
                (float) var9 * var10,
                ResourceList.playIconPNG,
-               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var4 * var1));
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var4 * partialTicks));
          TrueTypeFont var11 = ResourceRegistry.JelloLightFont12;
-         if (this.field20912 != null) {
+         if (this.typedText != null) {
             RenderUtil.method11415(this);
             String[] var12 = this.getTypedText().replaceAll("\\(.*\\)", "").replaceAll("\\[.*\\]", "").split(" - ");
             if (var12.length > 1) {
@@ -200,20 +200,20 @@ public class Class4286 extends Class4278 {
                      (float) (this.getXA() + (this.getWidthA() - var11.getWidth(var12[1])) / 2),
                      (float) (this.getYA() + this.getWidthA() - 2),
                      var12[1],
-                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
+                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
                RenderUtil.drawString(
                      var11,
                      (float) (this.getXA() + (this.getWidthA() - var11.getWidth(var12[0])) / 2),
                      (float) (this.getYA() + this.getWidthA() - 2 + 13),
                      var12[0],
-                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
+                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
             } else {
                RenderUtil.drawString(
                      var11,
                      (float) (this.getXA() + (this.getWidthA() - var11.getWidth(var12[0])) / 2),
                      (float) (this.getYA() + this.getWidthA() - 2 + 6),
                      var12[0],
-                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
+                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
             }
 
             RenderUtil.endScissor();

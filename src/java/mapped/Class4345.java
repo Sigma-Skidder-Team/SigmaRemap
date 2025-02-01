@@ -173,7 +173,7 @@ public class Class4345 extends Class4339 {
          var16.method16724();
       }
 
-      this.addToList(new UITextDisplay(this, "lbl", 5, 200, 0, 33, UITextDisplay.field20778, this.field20912));
+      this.addToList(new UITextDisplay(this, "lbl", 5, 200, 0, 33, UITextDisplay.field20778, this.typedText));
    }
 
    public void method13556() {
@@ -185,12 +185,12 @@ public class Class4345 extends Class4339 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       int var4 = Math.round((float)this.getHeightA() * MathHelper.calculateTransition(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
       if (this.field21231.getDirection() == Direction.BACKWARDS) {
          var4 = Math.round((float)this.getHeightA() * MathHelper.calculateBackwardTransition(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
@@ -198,7 +198,7 @@ public class Class4345 extends Class4339 {
 
       RenderUtil.startScissor((float)this.xA, (float)(70 + this.getHeightA() - var4), (float)this.getWidthA(), (float)var4);
       RenderUtil.renderBackgroundBox((float)this.xA, (float)(70 + this.getHeightA() - var4), (float)this.getWidthA(), (float)var4, -2631721);
-      super.draw(var1);
+      super.draw(partialTicks);
       RenderUtil.endScissor();
    }
 }

@@ -48,12 +48,12 @@ public class Class4250 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       this.field20611.changeDirection(Direction.FORWARDS);
       if (this.field20611.calcPercent() == 1.0F) {
          this.field20611 = new Animation(1500, 0);
@@ -72,7 +72,7 @@ public class Class4250 extends Class4247 {
             (float) (this.widthA - var5 * 2),
             (float) (this.heightA - var5 * 2),
             3.0F,
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.05F * var1));
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.05F * partialTicks));
       ArrayList var11 = new ArrayList();
       var11.add(new Class9778(0.0, 0.0));
       var11.add(new Class9778((double) var7, (double) var8));
@@ -84,12 +84,12 @@ public class Class4250 extends Class4247 {
             (float) ((double) this.xA + (double) var6 * var13 + (double) var5),
             (float) (this.yA - var5 / 2 + this.heightA),
             14.0F,
-            MultiUtilities.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor(), var1));
+            MultiUtilities.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor(), partialTicks));
       List<Class9778> var15 = var12.method30790(var11);
       GL11.glPushMatrix();
       GL11.glTranslatef((float) (this.xA + var5), (float) (this.yA + var5), 0.0F);
       GL11.glLineWidth(1.0F);
-      GL11.glColor4d(0.0, 0.0, 0.0, (double) (0.6F * var1));
+      GL11.glColor4d(0.0, 0.0, 0.0, (double) (0.6F * partialTicks));
       GL11.glAlphaFunc(519, 0.0F);
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
@@ -118,6 +118,6 @@ public class Class4250 extends Class4247 {
       RenderSystem.disableBlend();
       RenderSystem.enableTexture();
       GL11.glPopMatrix();
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 }

@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.module.impl.gui.jello.TabGUI;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 
 public class Class8224 {
-   private static String[] field35321;
    public boolean field35322;
    public Animation field35323;
    public final TabGUI field35324;

@@ -48,7 +48,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
       }
 
       var3.saveConfig(var4.method22987(var4.getName + " Copy " + var5));
-      this.method13222(() -> this.method13615());
+      this.runThisOnDimensionUpdate(() -> this.method13615());
       this.field21300.method13119(false);
    }
 
@@ -63,7 +63,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
       }
 
       var4.saveConfig(var1.method22987(var1.getName + " " + var6));
-      this.method13222(() -> this.method13615());
+      this.runThisOnDimensionUpdate(() -> this.method13615());
       this.field21300.method13119(false);
    }
 
@@ -77,7 +77,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
       }
 
       var3.saveConfig(new Configuration("New Profile " + var4, new JSONObject()));
-      this.method13222(this::method13615);
+      this.runThisOnDimensionUpdate(this::method13615);
       this.field21300.method13119(false);
    }
 
@@ -93,12 +93,12 @@ public class ConfigButtonOnClickGui extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      if (var2 > this.field21300.method13272() + this.field21300.getHeightA()) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      if (newWidth > this.field21300.method13272() + this.field21300.getHeightA()) {
          this.field21300.method13119(false);
       }
 
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    public void method13615() {
@@ -137,12 +137,12 @@ public class ConfigButtonOnClickGui extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
-      var1 = this.field21298.calcPercent();
+   public void draw(float partialTicks) {
+      partialTicks = this.field21298.calcPercent();
       this.method13616();
-      float var4 = MathUtils.lerp(var1, 0.37, 1.48, 0.17, 0.99);
+      float var4 = MathUtils.lerp(partialTicks, 0.37, 1.48, 0.17, 0.99);
       if (this.field21298.getDirection() == Direction.BACKWARDS) {
-         var4 = MathUtils.lerp(var1, 0.38, 0.73, 0.0, 1.0);
+         var4 = MathUtils.lerp(partialTicks, 0.38, 0.73, 0.0, 1.0);
       }
 
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
@@ -151,20 +151,20 @@ public class ConfigButtonOnClickGui extends Class4247 {
       super.method13224();
       super.method13225();
       byte var5 = 10;
-      int var6 = MultiUtilities.applyAlpha(-723724, QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F));
+      int var6 = MultiUtilities.applyAlpha(-723724, QuadraticEasing.easeOutQuad(partialTicks, 0.0F, 1.0F, 1.0F));
       RenderUtil.drawRoundedRect(
             (float) (this.xA + var5 / 2),
             (float) (this.yA + var5 / 2),
             (float) (this.widthA - var5),
             (float) (this.heightA - var5),
             35.0F,
-            var1);
+              partialTicks);
       RenderUtil.drawRect(
             (float) (this.xA + var5 / 2),
             (float) (this.yA + var5 / 2),
             (float) (this.xA - var5 / 2 + this.widthA),
             (float) (this.yA - var5 / 2 + this.heightA),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), var1 * 0.25F));
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), partialTicks * 0.25F));
       RenderUtil.drawRect((float) this.xA, (float) this.yA, (float) this.widthA, (float) this.heightA, (float) var5,
             var6);
       float var7 = 0.9F
@@ -179,13 +179,13 @@ public class ConfigButtonOnClickGui extends Class4247 {
             (float) (this.xA + 25),
             (float) (this.yA + 20),
             "Profiles",
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.8F * var1));
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.8F * partialTicks));
       RenderUtil.drawRect(
             (float) (this.xA + 25),
             (float) (this.yA + 69),
             (float) (this.xA + this.widthA - 25),
             (float) (this.yA + 70),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.05F * var1));
-      super.draw(var1);
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.05F * partialTicks));
+      super.draw(partialTicks);
    }
 }

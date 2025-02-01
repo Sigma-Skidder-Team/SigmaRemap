@@ -58,9 +58,9 @@ public class Class4271 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
-      if (!this.method13114(var1, var2) && this.method13112()) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
+      if (!this.method13114(newHeight, newWidth) && this.method13112()) {
          this.field20701 = true;
       }
 
@@ -83,24 +83,24 @@ public class Class4271 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.drawRect(
             (float) this.getXA(),
             (float) this.getYA(),
             (float) (this.getXA() + this.getWidthA()),
             (float) (this.getYA() + this.getHeightA() + this.method13108()),
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
       RenderUtil.drawRoundedRect(
             (float) this.getXA(), (float) this.getYA(), (float) this.getWidthA(),
-            (float) (this.getHeightA() + this.method13108()), 6.0F, var1 * 0.21F);
+            (float) (this.getHeightA() + this.method13108()), 6.0F, partialTicks * 0.21F);
       if (this.getTypedText() != null) {
          RenderUtil.method11415(this);
          RenderUtil.drawString(
                this.getFont(),
                (float) (this.getXA() + 10),
                (float) (this.getYA() + (this.getHeightA() - this.getFont().method23952()) / 2 + 1),
-               this.field20912,
-               MultiUtilities.applyAlpha(this.textColor.method19405(), var1 * 0.7F));
+               this.typedText,
+               MultiUtilities.applyAlpha(this.textColor.method19405(), partialTicks * 0.7F));
          RenderUtil.endScissor();
       }
 
@@ -109,7 +109,7 @@ public class Class4271 extends Class4247 {
             this.method13272() + this.getHeightA() + this.method13108());
       GL11.glPushMatrix();
       if (this.field20702 > 0.0F) {
-         super.draw(var1);
+         super.draw(partialTicks);
       }
 
       GL11.glPopMatrix();
@@ -119,7 +119,7 @@ public class Class4271 extends Class4247 {
             (float) this.getYA(),
             (float) (this.getXA() + this.getWidthA()),
             (float) (this.getYA() + this.getHeightA() + this.method13108()),
-            MultiUtilities.applyAlpha(this.textColor.method19407(), var1 * 0.08F));
+            MultiUtilities.applyAlpha(this.textColor.method19407(), partialTicks * 0.08F));
       int var4 = this.getWidthA() - (int) ((float) this.getHeightA() / 2.0F + 0.5F);
       int var5 = (int) ((float) this.getHeightA() / 2.0F + 0.5F) + 1;
       int var6 = (int) ((float) this.getHeightA() / 6.0F + 0.5F);
@@ -132,7 +132,7 @@ public class Class4271 extends Class4247 {
             (float) (this.getYA() + var5 - 14),
             ">",
             MultiUtilities.applyAlpha(this.textColor.method19405(),
-                  var1 * 0.7F * (!this.method13114(this.getHeightO(), this.getWidthO()) ? 0.5F : 1.0F)));
+                  partialTicks * 0.7F * (!this.method13114(this.getHeightO(), this.getWidthO()) ? 0.5F : 1.0F)));
    }
 
    public List<Integer> method13109() {

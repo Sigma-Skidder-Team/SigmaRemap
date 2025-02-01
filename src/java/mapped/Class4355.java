@@ -32,10 +32,10 @@ public class Class4355 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
       this.field21289.changeDirection(!this.method13216() ? Direction.BACKWARDS : Direction.FORWARDS);
-      boolean var5 = this.method13216() || var1 > this.method13271() + this.getWidthA() - 62;
+      boolean var5 = this.method13216() || newHeight > this.method13271() + this.getWidthA() - 62;
       this.method13215(var5);
       if (this.field21290.getDirection() == Direction.FORWARDS) {
          this.method13215(false);
@@ -52,7 +52,7 @@ public class Class4355 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.renderBackgroundBox(
             (float) this.xA,
             (float) this.yA,
@@ -92,7 +92,7 @@ public class Class4355 extends Class4247 {
       RenderUtil.method11438((float) (this.xA + 35), (float) (this.yA + this.heightA / 2), 17.0F, this.field21293);
       RenderUtil.drawRoundedRect(
             (float) this.xA, (float) this.yA, (float) this.widthA, (float) this.heightA, 14.0F,
-            var1 * 0.2F * this.field21289.calcPercent());
-      super.draw(var1);
+            partialTicks * 0.2F * this.field21289.calcPercent());
+      super.draw(partialTicks);
    }
 }

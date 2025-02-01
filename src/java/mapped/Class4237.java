@@ -28,8 +28,8 @@ public class Class4237 extends Class4236 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       this.field20577 = this.method13216();
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 }

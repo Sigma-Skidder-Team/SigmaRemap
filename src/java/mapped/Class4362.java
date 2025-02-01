@@ -62,34 +62,34 @@ public class Class4362 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.drawRect(
             (float) this.getXA(),
             (float) this.getYA(),
             (float) (this.getXA() + this.getWidthA()),
             (float) (this.getYA() + this.getHeightA() + this.method13635()),
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
       RenderUtil.drawRoundedRect(
             (float) this.getXA(),
             (float) this.getYA(),
             (float) this.getWidthA(),
             (float) (this.getHeightA() + this.method13635() - 1),
             6.0F,
-            var1 * 0.1F);
+            partialTicks * 0.1F);
       RenderUtil.drawRoundedRect(
             (float) this.getXA(),
             (float) this.getYA(),
             (float) this.getWidthA(),
             (float) (this.getHeightA() + this.method13635() - 1),
             20.0F,
-            var1 * 0.2F);
+            partialTicks * 0.2F);
       GL11.glPushMatrix();
-      super.draw(var1);
+      super.draw(partialTicks);
       GL11.glPopMatrix();
    }
 

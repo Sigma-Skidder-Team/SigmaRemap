@@ -27,12 +27,12 @@ public class BrainFreezeGui extends Class4278 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       int var4 = Minecraft.getInstance().mainWindow.getScaledWidth();
       int var5 = Minecraft.getInstance().mainWindow.getScaledHeight();
       int var6 = var4 / 2;
@@ -74,9 +74,9 @@ public class BrainFreezeGui extends Class4278 {
             var9.field40028 = (float)var5;
          }
 
-         var9.method32235(var1);
+         var9.method32235(partialTicks);
       }
 
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 }

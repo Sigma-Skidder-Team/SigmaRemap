@@ -25,8 +25,8 @@ public class SearchBoxButton extends Class4278 {
    }
 
    @Override
-   public void draw(float var1) {
-      super.draw(var1);
+   public void draw(float partialTicks) {
+      super.draw(partialTicks);
    }
 
    @Override
@@ -42,7 +42,7 @@ public class SearchBoxButton extends Class4278 {
                      this.field20842.add(new YoutubeVideoData(var7.videoID, var7.title, var7.fullUrl));
                   }
 
-                  this.method13222(
+                  this.runThisOnDimensionUpdate(
                         () -> {
                            this.method13236(this.field20840);
                            this.addToList(

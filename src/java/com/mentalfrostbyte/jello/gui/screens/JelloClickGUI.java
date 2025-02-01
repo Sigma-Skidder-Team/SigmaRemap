@@ -59,7 +59,7 @@ public class JelloClickGUI extends Screen {
                y += clickGUIPanels.getHeightA() - 20;
             }
 
-            clickGUIPanels.method13507(var2 -> var5.method13222(() -> {
+            clickGUIPanels.method13507(var2 -> var5.runThisOnDimensionUpdate(() -> {
                var5.addToList(
                      this.field20949 = new ModuleSettingUI(var5, "settings", 0, 0, this.widthA, this.heightA, var2));
                this.field20949.method13292(true);
@@ -75,7 +75,7 @@ public class JelloClickGUI extends Screen {
       var9.getTextColor().method19406(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.3F));
       var9.method13300(false);
       this.musicPlayer.setEnabled(true);
-      var9.doThis((var1, var2) -> this.method13222(() -> {
+      var9.doThis((var1, var2) -> this.runThisOnDimensionUpdate(() -> {
          if (this.configButton != null && this.method13239(this.configButton)) {
             this.method13234(this.configButton);
          } else {
@@ -94,7 +94,7 @@ public class JelloClickGUI extends Screen {
       if (Client.getInstance().musicManager.hasPython() && Client.getInstance().musicManager.hasVCRedist()) {
          return false;
       } else if (this.field20950 == null) {
-         this.method13222(() -> {
+         this.runThisOnDimensionUpdate(() -> {
             List<MiniAlert> var3 = new ArrayList();
             var3.add(new MiniAlert(AlertType.HEADER, "Music", 40));
             var3.add(new MiniAlert(AlertType.FIRSTLINE, "Jello Music requires:", 20));
@@ -119,7 +119,7 @@ public class JelloClickGUI extends Screen {
                }
             });
             this.field20950.method13604(var1 -> new Thread(() -> {
-               this.method13222(() -> {
+               this.runThisOnDimensionUpdate(() -> {
                   this.method13236(this.field20950);
                   this.field20950 = null;
                });
@@ -139,15 +139,15 @@ public class JelloClickGUI extends Screen {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       this.musicPlayer.setEnabled(
             this.musicPlayer.getWidthA() < this.getWidthA() && this.musicPlayer.getHeightA() < this.getHeightA());
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
       MultiUtilities.method17740(Math.min(1.0F, field20942.calcPercent() * 4.0F));
       this.brainFreeze.setEnabled(Client.getInstance().moduleManager.getModuleByClass(BrainFreeze.class).isEnabled());
       if (this.configButton != null) {
-         int var5 = var1 - this.configButton.method13271();
-         int var6 = var2 - this.configButton.method13272();
+         int var5 = newHeight - this.configButton.method13271();
+         int var6 = newWidth - this.configButton.method13272();
          boolean var7 = var5 >= -10 && var6 >= -10;
          if (!var7) {
             this.configButton.method13613();
@@ -164,7 +164,7 @@ public class JelloClickGUI extends Screen {
       }
 
       if (this.field20949 != null && this.field20949.field20671 && this.field20949.animation1.calcPercent() == 0.0F) {
-         this.method13222(() -> {
+         this.runThisOnDimensionUpdate(() -> {
             this.method13236(this.field20949);
             this.field20949 = null;
          });
@@ -243,11 +243,11 @@ public class JelloClickGUI extends Screen {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       float var4 = field20944 && !field20943
             ? this.method13317(field20942.calcPercent(), 0.8F) * 0.5F + 0.5F
             : (!field20944 ? 1.0F : this.method13317(field20942.calcPercent(), 1.0F));
-      float var5 = 0.2F * var1 * var4;
+      float var5 = 0.2F * partialTicks * var4;
       RenderUtil.drawRect(
             (float) this.xA,
             (float) this.yA,
@@ -286,7 +286,7 @@ public class JelloClickGUI extends Screen {
          var9.method13279(1.5F - var4 * 0.5F, 1.5F - var4 * 0.5F);
       }
 
-      super.draw(var1 * Math.min(1.0F, var4) * var7);
+      super.draw(partialTicks * Math.min(1.0F, var4) * var7);
       if (this.jelloClickGUIPanels != null) {
          this.jelloClickGUIPanels.method13292(false);
       }

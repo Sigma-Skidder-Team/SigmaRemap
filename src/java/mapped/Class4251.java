@@ -37,15 +37,15 @@ public class Class4251 extends Class4247 {
       }
 
       @Override
-      public void method13028(int var1, int var2) {
-            super.method13028(var1, var2);
+      public void updatePanelDimensions(int newHeight, int newWidth) {
+            super.updatePanelDimensions(newHeight, newWidth);
             if (this.field20909) {
                   Client.getInstance().waypointsManager.field36375.clear();
             }
       }
 
       @Override
-      public void draw(float var1) {
+      public void draw(float partialTicks) {
             byte var4 = 14;
             RenderUtil.drawRoundedRect(
                         (float) (this.xA + var4 / 2),
@@ -53,7 +53,7 @@ public class Class4251 extends Class4247 {
                         (float) (this.widthA - var4),
                         (float) (this.heightA - var4),
                         20.0F,
-                        var1 * 0.9F);
+                        partialTicks * 0.9F);
             float var5 = 0.88F;
             if (!Client.getInstance().guiManager.method33470()) {
                   var5 = 0.95F;
@@ -80,11 +80,11 @@ public class Class4251 extends Class4247 {
             RenderUtil.method11477(Class2329.field15940);
             GL11.glPushMatrix();
             GL11.glTranslatef((float) this.getXA(), (float) this.getYA(), 0.0F);
-            this.field20615.draw(var1);
+            this.field20615.draw(partialTicks);
             GL11.glPopMatrix();
             GL11.glPushMatrix();
             GL11.glTranslatef((float) this.getXA(), (float) this.getYA(), 0.0F);
-            this.field20614.draw(var1);
+            this.field20614.draw(partialTicks);
             GL11.glPopMatrix();
             RenderUtil.method11478();
             RenderUtil.renderBackgroundBox(

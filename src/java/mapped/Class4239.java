@@ -26,16 +26,16 @@ public class Class4239 extends ButtonPanel implements Class4238 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
       this.field20582 = this.method13298();
       this.field20581 = this.field20581 + (!this.field20582 ? -1.0F * this.method13033() : this.method13033());
       this.field20581 = Math.min(Math.max(1.0F, this.field20581), this.method13032());
    }
 
    @Override
-   public void draw(float var1) {
-      float var4 = !this.isHovered() ? 0.3F : (!this.field20582 ? (!this.method13212() ? Math.max(var1 * this.field20584, 0.0F) : 1.5F) : 0.0F);
+   public void draw(float partialTicks) {
+      float var4 = !this.isHovered() ? 0.3F : (!this.field20582 ? (!this.method13212() ? Math.max(partialTicks * this.field20584, 0.0F) : 1.5F) : 0.0F);
       int var5 = (int)((float)this.getWidthA() * this.field20581);
       int var6 = (int)((float)this.getHeightA() * this.field20581);
       int var7 = this.getXA() - (var5 - this.getWidthA()) / 2;
@@ -51,7 +51,7 @@ public class Class4239 extends ButtonPanel implements Class4238 {
          (float)var8,
          (float)(var7 + var5),
          (float)(var8 + var6),
-         MultiUtilities.applyAlpha(MultiUtilities.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4), var1)
+         MultiUtilities.applyAlpha(MultiUtilities.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4), partialTicks)
       );
       if (this.getTypedText() != null) {
          RenderUtil.method11440(
@@ -59,14 +59,14 @@ public class Class4239 extends ButtonPanel implements Class4238 {
             (float)(var7 + var5 / 2),
             (float)(var8 + var6 / 2),
             this.getTypedText(),
-            MultiUtilities.applyAlpha(this.textColor.getTextColor(), var1),
+            MultiUtilities.applyAlpha(this.textColor.getTextColor(), partialTicks),
             this.textColor.method19411(),
             this.textColor.method19413()
          );
       }
 
       RenderUtil.endScissor();
-      super.method13226(var1);
+      super.method13226(partialTicks);
    }
 
    @Override

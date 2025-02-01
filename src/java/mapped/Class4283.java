@@ -31,12 +31,12 @@ public class Class4283 extends Class4278 {
       }
 
       @Override
-      public void method13028(int var1, int var2) {
-            super.method13028(var1, var2);
+      public void updatePanelDimensions(int newHeight, int newWidth) {
+            super.updatePanelDimensions(newHeight, newWidth);
       }
 
       @Override
-      public void draw(float var1) {
+      public void draw(float partialTicks) {
             double var4 = Minecraft.getInstance().mouseHelper.method36738()
                         - (double) (Minecraft.getInstance().mainWindow.getWidth() / 2);
             var4 /= (double) (Minecraft.getInstance().mainWindow.getWidth() / 2);
@@ -54,6 +54,6 @@ public class Class4283 extends Class4278 {
             RenderUtil.renderBackgroundBox((float) this.xA, (float) this.yA, (float) this.widthA, (float) this.heightA,
                         ClientColors.PALE_YELLOW.getColor());
             GL11.glPopMatrix();
-            super.draw(var1);
+            super.draw(partialTicks);
       }
 }

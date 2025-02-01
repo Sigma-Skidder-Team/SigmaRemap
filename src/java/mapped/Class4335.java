@@ -46,7 +46,7 @@ public class Class4335 extends Class4333 {
    }
 
    public void method13486(Module var1) {
-      this.method13222(() -> {
+      this.runThisOnDimensionUpdate(() -> {
          if (this.field21181 == null) {
             this.addToList(this.field21181 = new Class4345(this, "settings", 5, 70, this.getWidthA() - 10, this.getHeightA() - 75, var1));
             this.field21181.method13292(true);
@@ -55,8 +55,8 @@ public class Class4335 extends Class4333 {
    }
 
    @Override
-   public void draw(float var1) {
-      super.draw(var1);
+   public void draw(float partialTicks) {
+      super.draw(partialTicks);
       if (this.field21181 == null) {
          for (CustomGuiScreen var5 : this.method13241()) {
             if (var5 instanceof Class4368 && this.field21149.calcPercent() == 1.0F && var5.method13114(this.getHeightO(), this.getWidthO())) {
@@ -72,10 +72,10 @@ public class Class4335 extends Class4333 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
       if (this.field21181 != null && this.field21181.method13557()) {
-         this.method13222(() -> {
+         this.runThisOnDimensionUpdate(() -> {
             this.method13236(this.field21181);
             this.field21181 = null;
          });

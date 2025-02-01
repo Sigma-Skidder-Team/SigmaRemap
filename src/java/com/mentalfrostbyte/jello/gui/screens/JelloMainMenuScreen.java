@@ -135,16 +135,16 @@ public class JelloMainMenuScreen extends Screen {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       for (CustomGuiScreen var6 : this.field20977) {
-         var6.method13028(var1, var2);
+         var6.updatePanelDimensions(newHeight, newWidth);
       }
 
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       float var4 = MathHelper.calculateTransition(this.field20972.calcPercent(), 0.0F, 1.0F, 1.0F);
       if (this.field20972.getDirection() == Direction.BACKWARDS) {
          var4 = MathHelper.calculateBackwardTransition(this.field20972.calcPercent(), 0.0F, 1.0F, 1.0F);
@@ -204,7 +204,7 @@ public class JelloMainMenuScreen extends Screen {
 
          for (CustomGuiScreen var21 : this.field20977) {
             GL11.glPushMatrix();
-            var21.draw(var1);
+            var21.draw(partialTicks);
             GL11.glPopMatrix();
          }
 
@@ -234,14 +234,14 @@ public class JelloMainMenuScreen extends Screen {
                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), var4 * 0.3F));
 
          for (CustomGuiScreen var24 : this.method13241()) {
-            if (var24.method13287()) {
+            if (var24.isVisible()) {
                GL11.glPushMatrix();
                if (var24 instanceof ChangelogScreen) {
                   if (var4 > 0.0F) {
-                     var24.draw(var1);
+                     var24.draw(partialTicks);
                   }
                } else {
-                  var24.draw(var1 * (1.0F - var4));
+                  var24.draw(partialTicks * (1.0F - var4));
                }
 
                GL11.glPopMatrix();
@@ -297,7 +297,7 @@ public class JelloMainMenuScreen extends Screen {
 
    public void warnAgora() {
       if (this.field20983 == null) {
-         this.method13222(() -> {
+         this.runThisOnDimensionUpdate(() -> {
             List<MiniAlert> var3 = new ArrayList<>();
             var3.add(new MiniAlert(AlertType.HEADER, "Agora", 45));
             var3.add(new MiniAlert(AlertType.FIRSTLINE, "Agora is not yet available...", 35));
@@ -305,7 +305,7 @@ public class JelloMainMenuScreen extends Screen {
             this.method13233(this.field20983 = new AlertPanel(this, "music", true, "Dependencies.",
                   var3.toArray(new MiniAlert[0])));
             this.field20983.method13604(var1 -> new Thread(() -> {
-               this.method13222(() -> {
+               this.runThisOnDimensionUpdate(() -> {
                   this.method13236(this.field20983);
                   this.field20983 = null;
                });
@@ -317,7 +317,7 @@ public class JelloMainMenuScreen extends Screen {
 
    public void logout() {
       if (this.alertPanel == null) {
-         this.method13222(() -> {
+         this.runThisOnDimensionUpdate(() -> {
             ArrayList<MiniAlert> alert = new ArrayList<>();
             alert.add(new MiniAlert(AlertType.HEADER, "Logout", 45));
             alert.add(new MiniAlert(AlertType.FIRSTLINE, "Are you sure?", 35));
@@ -325,7 +325,7 @@ public class JelloMainMenuScreen extends Screen {
             this.method13233(this.alertPanel = new AlertPanel(this, "music", true, "Dependencies.",
                   alert.toArray(new MiniAlert[0])));
             this.alertPanel.method13604(var1 -> new Thread(() -> {
-               this.method13222(() -> {
+               this.runThisOnDimensionUpdate(() -> {
                   this.method13236(this.alertPanel);
                   this.alertPanel = null;
 

@@ -18,7 +18,7 @@ public class Class4255 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       GL11.glAlphaFunc(518, 0.1F);
       RenderUtil.drawImage(
             (float) (this.xA + (this.widthA - 64) / 2),
@@ -30,10 +30,10 @@ public class Class4255 extends Class4247 {
 
       RenderUtil.drawString(
             ResourceList.regular25,
-            (float) (this.xA + (this.getWidthA() - ResourceList.regular25.getWidth(this.field20912)) / 2),
+            (float) (this.xA + (this.getWidthA() - ResourceList.regular25.getWidth(this.typedText)) / 2),
             (float) (this.yA + this.getHeightA() - 50),
-            this.field20912,
+            this.typedText,
             !this.method13298() ? -14869219 : -319475);
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 }

@@ -42,17 +42,17 @@ public class Class4370 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       int var5 = this.getHeightO() - this.method13271();
       if (this.field21364) {
          this.method13698((float)var5 / (float)this.getWidthA());
       }
 
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.renderBackgroundBox((float)(this.xA + this.widthA), (float)(this.yA + 1), 1.0F, (float)(this.heightA - 2), -8882056);
       RenderUtil.renderBackgroundBox((float)(this.xA + 1), (float)this.yA, (float)(this.widthA - 1), (float)this.heightA, -8882056);
       RenderUtil.renderBackgroundBox((float)this.xA, (float)(this.yA + 1), 1.0F, (float)(this.heightA - 2), -6250336);
@@ -60,7 +60,7 @@ public class Class4370 extends Class4247 {
          (float)(this.xA + 1), (float)this.yA, (float)this.widthA * this.field21363 - 1.0F, (float)this.heightA, -6250336
       );
       this.method13696(Math.round((float)this.xA + (float)this.widthA * this.field21363) - 2, this.yA - 3);
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 
    public void method13696(int var1, int var2) {

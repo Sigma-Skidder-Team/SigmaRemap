@@ -24,7 +24,7 @@ public class Class4368 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.drawString(
             ResourceList.regular17,
             (float) (this.xA + 10),
@@ -52,6 +52,6 @@ public class Class4368 extends Class4247 {
                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 1.0F));
       }
 
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 }

@@ -19,19 +19,19 @@ public class Class4360 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       int var5 = this.getHeightO() - this.method13271();
       if (this.field21319) {
          this.method13632((int)((float)var5 / (float)this.getWidthA() * 255.0F));
       }
 
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.renderBackgroundBox((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, this.field21317);
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 
    @Override

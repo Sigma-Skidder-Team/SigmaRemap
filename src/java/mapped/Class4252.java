@@ -84,17 +84,17 @@ public class Class4252 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       if (this.field20619) {
          this.field20621.method13098((float) (System.currentTimeMillis() % 4000L) / 4000.0F, false);
          this.method13051();
       }
 
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 }

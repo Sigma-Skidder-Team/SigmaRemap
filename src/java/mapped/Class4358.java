@@ -105,10 +105,10 @@ public class Class4358 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       if (this.method13212()
-            && (var1 < this.field21304 || var2 < this.field21303 || var1 > this.field21304 + this.field21305
-                  || var2 > this.field21303 + this.field21306)) {
+            && (newHeight < this.field21304 || newWidth < this.field21303 || newHeight > this.field21304 + this.field21305
+                  || newWidth > this.field21303 + this.field21306)) {
          this.field21311 = true;
       }
 
@@ -168,7 +168,7 @@ public class Class4358 extends Class4247 {
          var23.setEnabled(false);
       }
 
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    private boolean method13621(String var1, String var2) {
@@ -180,15 +180,15 @@ public class Class4358 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
-      var1 = this.field21302.calcPercent();
-      float var4 = EasingFunctions.easeOutBack(var1, 0.0F, 1.0F, 1.0F);
+   public void draw(float partialTicks) {
+      partialTicks = this.field21302.calcPercent();
+      float var4 = EasingFunctions.easeOutBack(partialTicks, 0.0F, 1.0F, 1.0F);
       if (this.field21311) {
-         var4 = QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F);
+         var4 = QuadraticEasing.easeOutQuad(partialTicks, 0.0F, 1.0F, 1.0F);
       }
 
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
-      if (var1 == 0.0F && this.field21311) {
+      if (partialTicks == 0.0F && this.field21311) {
          this.method13624(this.field21309);
       }
 
@@ -197,7 +197,7 @@ public class Class4358 extends Class4247 {
             (float) this.yA,
             (float) this.widthA,
             (float) this.heightA,
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.3F * var1));
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.3F * partialTicks));
       super.method13224();
       RenderUtil.drawRect(
             (float) this.field21304,
@@ -205,15 +205,15 @@ public class Class4358 extends Class4247 {
             (float) this.field21305,
             (float) this.field21306,
             10.0F,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
       byte var5 = 30;
       RenderUtil.drawString(
             ResourceRegistry.JelloLightFont36,
             (float) (var5 + this.field21304),
             (float) (var5 + this.field21303),
             "Select mod to bind",
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), var1 * 0.7F));
-      super.draw(var1);
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), partialTicks * 0.7F));
+      super.draw(partialTicks);
    }
 
    public final void method13623(Class7875 var1) {

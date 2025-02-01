@@ -51,15 +51,15 @@ public class AnimatedIconPanel extends CustomGuiScreen implements Class4347 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
       if (this.method13214()) {
          if (!this.field20909 && !this.field20877) {
             this.field20880 = this.getWidthA() / 2;
             this.field20881 = this.getHeightA() / 2;
          }
 
-         this.method13213(var1, var2);
+         this.method13213(newHeight, newWidth);
       }
    }
 

@@ -29,7 +29,7 @@ public class UITextDisplay extends Class4278 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       if (this.field20779) {
          GL11.glAlphaFunc(518, 0.01F);
          RenderUtil.drawString(
@@ -37,18 +37,18 @@ public class UITextDisplay extends Class4278 {
                (float) this.getXA(),
                (float) this.getYA(),
                this.getTypedText(),
-               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), var1));
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), partialTicks));
          GL11.glAlphaFunc(519, 0.0F);
       }
 
-      if (this.field20912 != null) {
+      if (this.typedText != null) {
          RenderUtil.drawString(
                this.getFont(),
                (float) this.getXA(),
                (float) this.getYA(),
                this.getTypedText(),
                MultiUtilities.applyAlpha(this.textColor.getTextColor(),
-                     var1 * MultiUtilities.method17710(this.textColor.getTextColor())));
+                     partialTicks * MultiUtilities.method17710(this.textColor.getTextColor())));
       }
    }
 }

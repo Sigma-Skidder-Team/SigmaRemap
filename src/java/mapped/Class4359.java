@@ -29,7 +29,7 @@ public class Class4359 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       int var4 = (int) this.field21314.method24321();
       double var5 = this.field21314.method24322();
       int var7 = this.field21314.method24327();
@@ -47,7 +47,7 @@ public class Class4359 extends Class4247 {
                (float) this.getYA(),
                (float) this.getWidthA(),
                (float) this.getHeightA(),
-               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.43F * var1));
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.43F * partialTicks));
       } else {
          RenderUtil.renderBackgroundBox(
                (float) this.getXA(),
@@ -60,13 +60,13 @@ public class Class4359 extends Class4247 {
                (float) this.getYA(),
                (float) this.getWidthA() * (1.0F - var9),
                (float) this.getHeightA(),
-               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.43F * var1));
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.43F * partialTicks));
          RenderUtil.renderBackgroundBox(
                (float) this.getXA(),
                (float) this.getYA(),
                (float) this.getWidthA() * var8,
                (float) this.getHeightA(),
-               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1 * var1));
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks * partialTicks));
          if (var8 != 0.0F) {
             RenderUtil.method11455((float) this.getXA() + (float) this.getWidthA() * var8, (float) this.getYA(), 5.0F,
                   5.0F, ResourceList.shadowRightPNG);

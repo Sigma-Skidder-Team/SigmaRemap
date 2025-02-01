@@ -88,12 +88,12 @@ public class LoginScreen extends Class4247 {
       }
 
       @Override
-      public void draw(float var1) {
+      public void draw(float partialTicks) {
             super.method13224();
             super.method13225();
             byte var4 = 28;
             RenderUtil.drawImage((float) (this.xA + var4), (float) (this.yA + var4 + 10), 160.0F, 160.0F,
-                        ResourceList.sigmaPNG, var1);
+                        ResourceList.sigmaPNG, partialTicks);
             Class9507 var5 = Client.getInstance().networkManager.method30452();
             if (var5 != null) {
                   this.field21355.setEnabled(var5.method36702());
@@ -111,7 +111,7 @@ public class LoginScreen extends Class4247 {
                   }
             }
 
-            super.draw(var1);
+            super.draw(partialTicks);
       }
 
       public void method13688() {

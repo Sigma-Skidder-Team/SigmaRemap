@@ -27,12 +27,12 @@ public class ClassicParticleEngine extends Class4278 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       this.method13225();
       int var4 = Minecraft.getInstance().mainWindow.getScaledWidth();
       int var5 = Minecraft.getInstance().mainWindow.getScaledHeight();
@@ -64,12 +64,12 @@ public class ClassicParticleEngine extends Class4278 {
             && !(var9.field45024 < -50.0F)
             && !(var9.field45024 > (float)(var5 + 50))
             && Class9625.method37522(var9) != 0.0F) {
-            var9.method37519(var1);
+            var9.method37519(partialTicks);
          } else {
             var10.remove();
          }
       }
 
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 }

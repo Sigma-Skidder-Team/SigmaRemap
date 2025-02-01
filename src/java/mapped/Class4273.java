@@ -14,14 +14,14 @@ public class Class4273 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
       this.field20709 = this.field20709 + (!this.method13298() ? -0.14F : 0.14F);
       this.field20709 = Math.min(Math.max(0.0F, this.field20709), 1.0F);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       if (this.getTypedText() != null) {
          this.method13225();
          boolean var10 = this.method13297();
@@ -46,15 +46,15 @@ public class Class4273 extends Class4247 {
                ResourceRegistry.JelloLightFont14,
                (float) (this.xA + var11 + 50),
                (float) (this.yA + var12 + 5),
-               this.field20912,
-               MultiUtilities.applyAlpha(var13, var1));
+               this.typedText,
+               MultiUtilities.applyAlpha(var13, partialTicks));
          RenderUtil.drawString(
                ResourceRegistry.JelloLightFont12,
                (float) (this.xA + var11 + 50),
                (float) (this.yA + var12 + 19),
                this.field20710,
-               MultiUtilities.applyAlpha(var13, var1 * 0.5F));
-         super.draw(var1);
+               MultiUtilities.applyAlpha(var13, partialTicks * 0.5F));
+         super.draw(partialTicks);
       }
    }
 }

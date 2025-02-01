@@ -81,27 +81,27 @@ public class JelloKeyboardScreen extends Screen {
    }
 
    private void method13329(Class4270 var1) {
-      this.method13222(new Class635(this, var1));
+      this.runThisOnDimensionUpdate(new Class635(this, var1));
    }
 
    private void method13330() {
-      this.method13222(new Class544(this, this));
+      this.runThisOnDimensionUpdate(new Class544(this, this));
    }
 
    private void method13331() {
-      this.method13222(new Class1533(this, this));
+      this.runThisOnDimensionUpdate(new Class1533(this, this));
    }
 
    private void method13332() {
-      this.method13222(new Class543(this, this));
+      this.runThisOnDimensionUpdate(new Class543(this, this));
    }
 
    private void method13333() {
-      this.method13222(new Class1376(this, this));
+      this.runThisOnDimensionUpdate(new Class1376(this, this));
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       if (this.method13212()) {
          this.field20957.method13242();
          this.method13244();
@@ -116,7 +116,7 @@ public class JelloKeyboardScreen extends Screen {
          this.field20956 = null;
       }
 
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
       this.method13300(false);
    }
 
@@ -135,11 +135,11 @@ public class JelloKeyboardScreen extends Screen {
    }
 
    @Override
-   public void draw(float var1) {
-      var1 = (float) Math.min(200L, new Date().getTime() - this.field20955.getTime()) / 200.0F;
-      float var4 = EasingFunctions.easeOutBack(var1, 0.0F, 1.0F, 1.0F);
+   public void draw(float partialTicks) {
+      partialTicks = (float) Math.min(200L, new Date().getTime() - this.field20955.getTime()) / 200.0F;
+      float var4 = EasingFunctions.easeOutBack(partialTicks, 0.0F, 1.0F, 1.0F);
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
-      float var5 = 0.25F * var1;
+      float var5 = 0.25F * partialTicks;
       RenderUtil.drawRect(
             (float) this.xA,
             (float) this.yA,
@@ -153,7 +153,7 @@ public class JelloKeyboardScreen extends Screen {
             (float) ((this.heightA - 357) / 2 - 90),
             "Keybind Manager",
             ClientColors.LIGHT_GREYISH_BLUE.getColor());
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 
    // $VF: synthetic method

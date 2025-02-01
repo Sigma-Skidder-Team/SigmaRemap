@@ -36,16 +36,16 @@ public class JelloInGameOptions extends Screen {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       if (field21112.getDirection() == Direction.BACKWARDS && field21112.calcPercent() == 0.0F && field21115 != null) {
          Minecraft.getInstance().displayGuiScreen(field21115);
       }
 
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       float var4 = 1.3F - EasingFunctions.easeOutBack(field21112.calcPercent(), 0.0F, 1.0F, 1.0F) * 0.3F;
       float var5 = 1.0F;
       if (field21112.getDirection() == Direction.BACKWARDS) {

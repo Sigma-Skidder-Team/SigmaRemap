@@ -13,15 +13,15 @@ public class Class4302 extends Class4278 {
    }
 
    @Override
-   public void draw(float var1) {
-      if (this.method13287()) {
+   public void draw(float partialTicks) {
+      if (this.isVisible()) {
          RenderUtil.drawImage(
                (float) (this.xA + 30),
                (float) (this.yA + 30),
                187.0F,
                36.0F,
                ResourceList.gemPNG,
-               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
       }
    }
 }

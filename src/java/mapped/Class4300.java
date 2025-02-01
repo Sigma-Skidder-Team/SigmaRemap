@@ -20,7 +20,7 @@ public class Class4300 extends Class4278 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       this.setFont(ResourceRegistry.DefaultClientFont);
       RenderUtil.drawRect(
             (float) this.xA,
@@ -40,10 +40,10 @@ public class Class4300 extends Class4278 {
             ResourceRegistry.DefaultClientFont,
             (float) (this.getXA() + this.getWidthA() / 2),
             (float) (this.getYA() + this.getHeightA() / 2),
-            this.field20912,
+            this.typedText,
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), !this.isHovered() ? 0.5F : 1.0F),
             Class2218.field14492,
             Class2218.field14492);
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 }

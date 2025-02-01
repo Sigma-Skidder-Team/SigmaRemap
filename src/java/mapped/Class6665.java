@@ -2,11 +2,11 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 
-public class Class6665 implements Class6664 {
+public class Class6665 implements IWidthSetter {
    private static String[] field29235;
 
    @Override
-   public void method20320(CustomGuiScreen var1, CustomGuiScreen var2) {
+   public void setWidth(CustomGuiScreen var1, CustomGuiScreen var2) {
       int var5 = 0;
       int var6 = 0;
 

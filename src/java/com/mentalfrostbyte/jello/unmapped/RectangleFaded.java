@@ -22,13 +22,13 @@ public class RectangleFaded extends ButtonPanel {
     }
 
     @Override
-    public void method13028(int var1, int var2) {
+    public void updatePanelDimensions(int newHeight, int newWidth) {
         this.field20591 = this.method13298();
-        super.method13028(var1, var2);
+        super.updatePanelDimensions(newHeight, newWidth);
     }
 
     @Override
-    public void draw(float var1) {
+    public void draw(float partialTicks) {
         this.field20592.changeDirection(!this.field20591 ? Direction.BACKWARDS : Direction.FORWARDS);
         float var4 = MathUtils.lerp(this.field20592.calcPercent(), 0.07, 0.73, 0.63, 1.01);
         if (this.field20592.getDirection() == Direction.BACKWARDS) {
@@ -64,7 +64,7 @@ public class RectangleFaded extends ButtonPanel {
                 this.field20590,
                 ClientColors.LIGHT_GREYISH_BLUE.getColor());
         GL11.glPushMatrix();
-        super.method13226(var1);
+        super.method13226(partialTicks);
         GL11.glPopMatrix();
     }
 }

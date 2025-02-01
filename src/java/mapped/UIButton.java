@@ -20,8 +20,8 @@ public class UIButton extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
       this.field20711.changeDirection(!this.method13298() ? Direction.BACKWARDS : Direction.FORWARDS);
       if (this.method13298()) {
          Client.getInstance().guiManager.method33459(GuiManager.field41345);
@@ -29,7 +29,7 @@ public class UIButton extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       if (this.getTypedText() != null) {
          int var4 = this.textColor.method19405();
          int var5 = this.getXA()
@@ -50,7 +50,7 @@ public class UIButton extends Class4247 {
                (float) var5,
                (float) var6,
                this.getTypedText(),
-               MultiUtilities.applyAlpha(var4, var1 * MultiUtilities.method17710(var4)),
+               MultiUtilities.applyAlpha(var4, partialTicks * MultiUtilities.method17710(var4)),
                this.textColor.method19411(),
                this.textColor.method19413());
          RenderUtil.drawRect(
@@ -58,8 +58,8 @@ public class UIButton extends Class4247 {
                var6 + var8,
                (float) var5 + (float) (var7 / 2) * var9,
                var6 + var8 + 2,
-               MultiUtilities.applyAlpha(var4, var1 * MultiUtilities.method17710(var4)));
-         super.draw(var1);
+               MultiUtilities.applyAlpha(var4, partialTicks * MultiUtilities.method17710(var4)));
+         super.draw(partialTicks);
       }
    }
 }

@@ -15,7 +15,7 @@ public class ImageQ extends Class4278 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.drawImage(
             (float) this.xA,
             (float) this.yA,
@@ -25,6 +25,6 @@ public class ImageQ extends Class4278 {
             MultiUtilities.method17690(
                   ClientColors.DEEP_TEAL.getColor(), ClientColors.LIGHT_GREYISH_BLUE.getColor(),
                   !this.method13298() ? 0.0F : (!this.method13212() ? 0.15F : 0.3F)));
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 }

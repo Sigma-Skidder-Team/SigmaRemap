@@ -38,15 +38,15 @@ public class ModuleSettingUI extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       if (this.method13212()
-            && (var1 < this.x || var2 < this.y || var1 > this.x + this.width || var2 > this.y + this.height)) {
+            && (newHeight < this.x || newWidth < this.y || newHeight > this.x + this.width || newWidth > this.y + this.height)) {
          this.field20671 = true;
       }
 
       this.animation1.changeDirection(this.field20671 ? Direction.BACKWARDS : Direction.FORWARDS);
       this.animation.changeDirection(this.field20671 ? Direction.BACKWARDS : Direction.FORWARDS);
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    private boolean method13084(String var1, String var2) {
@@ -58,11 +58,11 @@ public class ModuleSettingUI extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
-      var1 = this.animation1.calcPercent();
-      float var4 = EasingFunctions.easeOutBack(var1, 0.0F, 1.0F, 1.0F);
+   public void draw(float partialTicks) {
+      partialTicks = this.animation1.calcPercent();
+      float var4 = EasingFunctions.easeOutBack(partialTicks, 0.0F, 1.0F, 1.0F);
       if (this.field20671) {
-         var4 = QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F);
+         var4 = QuadraticEasing.easeOutQuad(partialTicks, 0.0F, 1.0F, 1.0F);
       }
 
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
@@ -71,7 +71,7 @@ public class ModuleSettingUI extends Class4247 {
             (float) this.yA,
             (float) this.widthA,
             (float) this.heightA,
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.45F * var1));
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.45F * partialTicks));
       super.method13224();
       RenderUtil.drawRect(
             (float) this.x,
@@ -79,13 +79,13 @@ public class ModuleSettingUI extends Class4247 {
             (float) this.width,
             (float) this.height,
             10.0F,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
       RenderUtil.drawString(
             ResourceRegistry.JelloMediumFont40,
             (float) this.x,
             (float) (this.y - 60),
             this.module.getName(),
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
       byte var5 = 30;
       RenderUtil.startScissor((float) this.x, (float) this.y, (float) (this.width - 30), (float) this.height);
       RenderUtil.drawString(
@@ -93,8 +93,8 @@ public class ModuleSettingUI extends Class4247 {
             (float) (var5 + this.x),
             (float) (var5 + this.y),
             this.module.getDescription(),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), var1 * 0.7F));
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), partialTicks * 0.7F));
       RenderUtil.endScissor();
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 }

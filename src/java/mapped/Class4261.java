@@ -34,14 +34,14 @@ public class Class4261 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       this.field20673.method23108();
    }
 
    @Override
-   public void draw(float var1) {
-      this.method13086().method23109(this.getXA(), this.getYA(), this.getWidthA(), this.getHeightA(), var1);
-      super.draw(var1);
+   public void draw(float partialTicks) {
+      this.method13086().method23109(this.getXA(), this.getYA(), this.getWidthA(), this.getHeightA(), partialTicks);
+      super.draw(partialTicks);
    }
 
    public Class7312 method13086() {

@@ -59,8 +59,8 @@ public class Class4340 extends Class4339 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
       this.field21209.sort((var0, var1x) -> var0.field21288 < var1x.field21288 + var0.getHeightA() / 2 ? -1 : 1);
       int var5 = 0;
       if (this.field21213 != null && !this.field21213.method13216() && this.field21212) {
@@ -82,10 +82,10 @@ public class Class4340 extends Class4339 {
       for (Class4355 var11 : this.field21209) {
          if (var11.method13216()) {
             this.field21211.changeDirection(Direction.FORWARDS);
-            if (var1 > this.method13271() + 10
-                  && var1 < this.method13271() + 50
-                  && var2 < this.method13272() + this.getHeightA() - 10
-                  && var2 > this.method13272() + this.getHeightA() - 50) {
+            if (newHeight > this.method13271() + 10
+                  && newHeight < this.method13271() + 50
+                  && newWidth < this.method13272() + this.getHeightA() - 10
+                  && newWidth > this.method13272() + this.getHeightA() - 50) {
                this.field21212 = true;
                this.field21213 = var11;
             } else {
@@ -114,7 +114,7 @@ public class Class4340 extends Class4339 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       float var4 = Math.min(1.0F, 0.21F * (60.0F / (float) Minecraft.getFps()));
 
       for (Class4355 var6 : this.field21209) {
@@ -130,7 +130,7 @@ public class Class4340 extends Class4339 {
          }
       }
 
-      super.draw(var1);
+      super.draw(partialTicks);
       int var8 = Math.round(QuadraticEasing.easeInQuad(1.0F - this.field21211.calcPercent(), 0.0F, 1.0F, 1.0F) * 30.0F);
       RenderUtil.method11450(
             (float) (this.xA - var8 + 18),

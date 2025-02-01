@@ -29,8 +29,8 @@ public class Class4253 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    public void method13056() {
@@ -39,7 +39,7 @@ public class Class4253 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       if (this.field20627 != null) {
          float var4 = Animation.method25322(this.field20627, 150.0F);
          var4 = QuadraticEasing.easeOutQuad(var4, 0.0F, 1.0F, 1.0F);
@@ -64,15 +64,15 @@ public class Class4253 extends Class4247 {
             (float) (this.xA + 25),
             (float) this.yA + (float) this.heightA / 2.0F - 17.5F,
             this.field20624.method21596(),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.6F * var1));
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.6F * partialTicks));
       RenderUtil.drawString(
             ResourceRegistry.JelloLightFont12,
             (float) (this.xA + 25),
             (float) this.yA + (float) this.heightA / 2.0F + 7.5F,
             this.field20624.method21597(),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.6F * var1));
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.6F * partialTicks));
       this.field20628.setYA((int) ((float) this.heightA / 2.0F - 7.5F));
-      super.draw(var1);
+      super.draw(partialTicks);
       RenderUtil.endScissor();
    }
 }

@@ -176,7 +176,7 @@ public class MainmenuScreen2 extends CustomGuiScreen {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       this.method13224();
       Texture largeLogo = ResourceList.logoLargePNG;
       int imageWidth = largeLogo.getImageWidth();
@@ -191,18 +191,18 @@ public class MainmenuScreen2 extends CustomGuiScreen {
             (float) imageWidth,
             (float) imageHeight,
             ResourceList.logoLargePNG,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
-      super.draw(var1);
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
+      super.draw(partialTicks);
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       this.field21128.setEnabled(!Client.getInstance().networkManager.isPremium());
       byte var5 = 30;
       byte var6 = 90;
       this.changelogButton.setXA(var6 + (!Client.getInstance().networkManager.isPremium() ? 202 : 0));
       this.field21133.setXA(var5 + (!Client.getInstance().networkManager.isPremium() ? 202 : 0));
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    public void playClickSound() {

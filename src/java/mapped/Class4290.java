@@ -30,11 +30,11 @@ public class Class4290 extends Class4278 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
       int var5 = 20;
       if (this.field20788 == Class2059.field13418
-            && Math.abs(Minecraft.getInstance().mainWindow.getHeight() - var2) < var5
+            && Math.abs(Minecraft.getInstance().mainWindow.getHeight() - newWidth) < var5
             && !this.screen.method13239(((JelloClickGUI) this.screen).blurOverlay)) {
          this.field20788 = Class2059.field13416;
       }
@@ -53,7 +53,7 @@ public class Class4290 extends Class4278 {
          this.field20788 = Class2059.field13418;
       }
 
-      if (Minecraft.getInstance().mainWindow.getHeight() - var2 > this.getHeightA()) {
+      if (Minecraft.getInstance().mainWindow.getHeight() - newWidth > this.getHeightA()) {
          this.field20788 = Class2059.field13417;
       }
 
@@ -66,16 +66,16 @@ public class Class4290 extends Class4278 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       int var4 = 20;
-      if (!((double) var1 < 0.6)) {
+      if (!((double) partialTicks < 0.6)) {
          RenderUtil.method11465(
                this.xA + var4,
                this.yA + var4,
                this.widthA - var4 * 2,
                this.heightA - var4 * 2,
-               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.9F * var1));
-         super.draw(var1);
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.9F * partialTicks));
+         super.draw(partialTicks);
       }
    }
 }

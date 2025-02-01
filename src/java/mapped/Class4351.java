@@ -143,7 +143,7 @@ public class Class4351 extends Class4278 {
                Client.getInstance().moduleManager.getConfigurationManager().loadConfig(this.currentConfig);
                Client.getInstance().soundManager.play("switch");
                ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui) this.getScreen().getScreen().getScreen();
-               var5x.method13222(() -> var5x.method13615());
+               var5x.runThisOnDimensionUpdate(() -> var5x.method13615());
 
                for (Module module : Client.getInstance().moduleManager.getModuleMap().values()) {
                   if (!Client.getInstance().networkManager.isPremium()) {
@@ -158,8 +158,8 @@ public class Class4351 extends Class4278 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      if (!this.profileName.method13297() && this.profileName.method13287()) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      if (!this.profileName.method13297() && this.profileName.isVisible()) {
          this.profileName.setEnabled(false);
          this.profileName.method13145(false);
          this.currentConfig.getName = this.profileName.getTypedText();
@@ -171,26 +171,26 @@ public class Class4351 extends Class4278 {
          }
       }
 
-      this.field21264.changeDirection(this.method13114(var1, var2) ? Direction.FORWARDS : Direction.BACKWARDS);
-      if (!this.method13114(var1, var2)) {
+      this.field21264.changeDirection(this.method13114(newHeight, newWidth) ? Direction.FORWARDS : Direction.BACKWARDS);
+      if (!this.method13114(newHeight, newWidth)) {
          this.field21265.changeDirection(Direction.BACKWARDS);
       }
 
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       if (this.animation.calcPercent() == 1.0F && !this.field21272) {
          this.field21272 = true;
          ConfigButtonOnClickGui var4 = (ConfigButtonOnClickGui) this.getScreen().getScreen().getScreen();
          Client.getInstance().moduleManager.getConfigurationManager().checkConfig(this.currentConfig);
-         var4.method13222(() -> var4.method13615());
+         var4.runThisOnDimensionUpdate(() -> var4.method13615());
       }
 
       float var8 = MathUtils.lerp(this.animation.calcPercent(), 0.1, 0.81, 0.14, 1.0);
       this.setHeightA(Math.round((1.0F - var8) * (float) this.field21271));
-      var1 *= 1.0F - this.animation.calcPercent();
+      partialTicks *= 1.0F - this.animation.calcPercent();
       float var5 = MathUtils.lerp(this.field21265.calcPercent(), 0.28, 1.26, 0.33, 1.04);
       if (this.field21265.getDirection().equals(Direction.BACKWARDS)) {
          var5 = MathHelper.calculateBackwardTransition(this.field21265.calcPercent(), 0.0F, 1.0F, 1.0F);
@@ -213,7 +213,7 @@ public class Class4351 extends Class4278 {
                (float) (this.xA + 20) - var5 * (float) this.widthA,
                (float) (this.yA + 18),
                this.currentConfig.getName,
-               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.9F * var1));
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.9F * partialTicks));
       }
 
       this.profileName.method13284(Math.round(-var5 * (float) this.widthA));
@@ -225,10 +225,10 @@ public class Class4351 extends Class4278 {
                13.0F,
                ResourceList.activePNG,
                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
-                     (1.0F - this.field21265.calcPercent()) * var1));
+                     (1.0F - this.field21265.calcPercent()) * partialTicks));
       }
 
-      super.draw(var1);
+      super.draw(partialTicks);
       RenderUtil.endScissor();
    }
 }

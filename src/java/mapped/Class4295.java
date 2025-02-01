@@ -35,21 +35,21 @@ public class Class4295 extends Class4278 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       if (!this.field20809) {
          RenderUtil.drawRect(
                (float) this.xA,
                (float) this.yA,
                (float) (this.xA + this.widthA),
                (float) (this.yA + this.heightA),
-               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
       } else {
          RenderUtil.drawRect(
                (float) this.xA,
                (float) this.yA,
                (float) (this.xA + this.widthA),
                (float) (this.yA + this.heightA),
-               MultiUtilities.applyAlpha(-3487030, var1 * 0.5F));
+               MultiUtilities.applyAlpha(-3487030, partialTicks * 0.5F));
       }
 
       RenderUtil.method11428(
@@ -57,7 +57,7 @@ public class Class4295 extends Class4278 {
             (float) (this.yA - 1),
             (float) (this.xA + this.widthA),
             (float) (this.yA + this.heightA),
-            MultiUtilities.applyAlpha(-921103, var1));
+            MultiUtilities.applyAlpha(-921103, partialTicks));
       if (this.field20810.getItem() != null) {
          this.method13177();
       }

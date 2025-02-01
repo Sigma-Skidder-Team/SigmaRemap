@@ -13,26 +13,26 @@ public class Class4371 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.method11438(
             (float) this.xA + (float) this.widthA / 2.0F,
             (float) this.yA + (float) this.widthA / 2.0F,
             (float) this.widthA,
             MultiUtilities.applyAlpha(
-                  MultiUtilities.method17690(this.field21365, ClientColors.DEEP_TEAL.getColor(), 0.8F), var1));
+                  MultiUtilities.method17690(this.field21365, ClientColors.DEEP_TEAL.getColor(), 0.8F), partialTicks));
       RenderUtil.method11438(
             (float) this.xA + (float) this.widthA / 2.0F,
             (float) this.yA + (float) this.widthA / 2.0F,
             (float) (this.widthA - 2),
-            MultiUtilities.applyAlpha(this.field21365, var1));
+            MultiUtilities.applyAlpha(this.field21365, partialTicks));
       if (this.method13212()) {
          RenderUtil.method11438(
                (float) this.xA + (float) this.widthA / 2.0F,
                (float) this.yA + (float) this.widthA / 2.0F,
                (float) (this.widthA - 2),
-               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), var1 * 0.2F));
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), partialTicks * 0.2F));
       }
 
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 }

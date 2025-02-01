@@ -24,8 +24,8 @@ public class CreditsScreen extends Screen {
    }
 
    @Override
-   public void draw(float var1) {
-      super.draw(var1);
+   public void draw(float partialTicks) {
+      super.draw(partialTicks);
       int var4 = ResourceList.mentalfrostbytePNG.getImageWidth();
       int var5 = ResourceList.mentalfrostbytePNG.getImageHeight();
       var4 = Math.min(var4, (int) ((float) Minecraft.getInstance().mainWindow.getHeight() / 1.65F));

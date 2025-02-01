@@ -18,7 +18,7 @@ public class VolumeSlider extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.drawRect(
             (float) this.xA,
             (float) this.yA,
@@ -31,7 +31,7 @@ public class VolumeSlider extends Class4247 {
             (float) (this.xA + this.widthA),
             (float) this.yA + (float) this.heightA * this.field21372,
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.2F));
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 
    @Override
@@ -49,10 +49,10 @@ public class VolumeSlider extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
       if (this.field21373) {
-         this.method13708(this.method13706(var2));
+         this.method13708(this.method13706(newWidth));
          this.method13710();
       }
    }

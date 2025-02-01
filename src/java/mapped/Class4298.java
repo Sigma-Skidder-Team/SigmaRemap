@@ -51,7 +51,7 @@ public class Class4298 extends Class4278 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       if (this.account != null) {
          GL11.glEnable(2929);
          RenderHelper.enableStandardItemLighting();

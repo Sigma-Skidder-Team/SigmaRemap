@@ -14,7 +14,7 @@ public class Class4364 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       this.field21333.changeDirection(!this.method13298() ? Direction.BACKWARDS : Direction.FORWARDS);
       if (this.field21333.calcPercent() == 1.0F && this.method13298()) {
          this.field21333 = new Animation(1200, 1200, Direction.FORWARDS);
@@ -28,6 +28,6 @@ public class Class4364 extends Class4247 {
       GL11.glTranslatef((float)(-var4), (float)(-var5), 0.0F);
       RenderUtil.method11455((float)this.xA, (float)this.yA, 20.0F, 20.0F, !this.method13298() ? Class4334.field21163 : Class4334.field21164);
       GL11.glPopMatrix();
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 }

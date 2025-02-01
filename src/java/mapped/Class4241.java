@@ -18,13 +18,13 @@ public class Class4241 extends ButtonPanel {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       this.field20589.changeDirection(!this.field20909 ? Direction.BACKWARDS : Direction.FORWARDS);
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       this.method13277(1.0F + this.field20589.calcPercent());
       this.method13278(1.0F + this.field20589.calcPercent());
       this.method13224();
@@ -32,7 +32,7 @@ public class Class4241 extends ButtonPanel {
             this.getFont(), (float) this.getXA(), (float) this.getYA(), "" + this.field20589.calcPercent(),
             ClientColors.DEEP_TEAL.getColor());
       GL11.glPushMatrix();
-      super.method13226(var1);
+      super.method13226(partialTicks);
       GL11.glPopMatrix();
    }
 }

@@ -21,8 +21,8 @@ public class Class4254 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
       if (this.method13298() && (double) this.field20630.calcPercent() < 0.1) {
          this.field20630.changeDirection(Direction.FORWARDS);
       } else if (!this.method13298() && this.field20630.calcPercent() == 1.0F) {
@@ -31,7 +31,7 @@ public class Class4254 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       float var4 = MathUtils.lerp(this.field20630.calcPercent(), 0.68, 2.32, 0.06, 0.48);
       if (this.field20630.getDirection() == Direction.BACKWARDS) {
          var4 = MathUtils.lerp(this.field20630.calcPercent(), 0.81, 0.38, 0.32, -1.53);
@@ -48,6 +48,6 @@ public class Class4254 extends Class4247 {
       RenderUtil.drawString(ResourceList.regular20, (float) var5, (float) var6, this.name,
             ClientColors.LIGHT_GREYISH_BLUE.getColor());
       GL11.glAlphaFunc(519, 0.0F);
-      super.method13226(var1);
+      super.method13226(partialTicks);
    }
 }

@@ -91,12 +91,12 @@ public class Class4272 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       float var4 = MathUtils.lerp(this.field20703.calcPercent(), 0.1, 0.81, 0.14, 1.0);
       if (this.field20703.getDirection() == Direction.BACKWARDS) {
          var4 = MathUtils.lerp(this.field20703.calcPercent(), 0.61, 0.01, 0.87, 0.16);
@@ -111,11 +111,11 @@ public class Class4272 extends Class4247 {
                50.0F,
                ResourceList.shadowBottomPNG,
                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
-                     this.field20703.calcPercent() * var1 * 0.3F));
+                     this.field20703.calcPercent() * partialTicks * 0.3F));
          RenderUtil.method11415(this);
          RenderUtil.renderBackgroundBox(
                (float) this.xA, (float) this.yA, (float) this.widthA, (float) this.heightA,
-               MultiUtilities.applyAlpha(-723724, var1));
+               MultiUtilities.applyAlpha(-723724, partialTicks));
          if (field20706 != null && Class8233.field35347 != null && Class8233.field35347.isEmpty()) {
             RenderUtil.drawString(
                   ResourceRegistry.JelloLightFont14,
@@ -125,7 +125,7 @@ public class Class4272 extends Class4247 {
                   ClientColors.MID_GREY.getColor());
          }
 
-         super.draw(var1);
+         super.draw(partialTicks);
          RenderUtil.endScissor();
       }
    }

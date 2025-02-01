@@ -13,7 +13,7 @@ public class Class4248 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.drawRect(
          (float)this.getXA(),
          (float)this.getYA(),

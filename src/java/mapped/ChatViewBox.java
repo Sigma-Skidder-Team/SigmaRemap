@@ -19,10 +19,10 @@ public class ChatViewBox extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       super.method13224();
       super.method13225();
       byte var4 = 23;
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 }

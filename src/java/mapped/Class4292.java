@@ -54,9 +54,9 @@ public class Class4292 extends Class4278 implements Class4293 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
-      this.field20908 = this.method13228(var1, var2, false);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
+      this.field20908 = this.method13228(newHeight, newWidth, false);
       this.field20794 = this.field20794
             + (this.field20796.getHeightA() >= this.getHeightA()
                   ? -1.0F
@@ -75,10 +75,10 @@ public class Class4292 extends Class4278 implements Class4293 {
    }
 
    @Override
-   public void draw(float var1) {
-      var1 *= this.field20794;
+   public void draw(float partialTicks) {
+      partialTicks *= this.field20794;
       byte var4 = 5;
-      int var5 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.2F * var1);
+      int var5 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.2F * partialTicks);
       int var6 = this.xA;
       int var7 = this.widthA;
       if (Client.getInstance().clientMode != ClientMode.JELLO) {
@@ -90,17 +90,17 @@ public class Class4292 extends Class4278 implements Class4293 {
                (float) (this.yA + var4),
                (float) (var6 + var7),
                (float) (this.yA + this.heightA - var4),
-               MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor(), 0.1F * var1));
+               MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor(), 0.1F * partialTicks));
       } else {
          RenderUtil.drawImage((float) var6, (float) this.yA, (float) var7, 5.0F, ResourceList.verticalScrollBarTopPNG,
-               0.45F * var1);
+               0.45F * partialTicks);
          RenderUtil.drawImage((float) var6, (float) (this.yA + this.heightA - var4), (float) var7, 5.0F,
-               ResourceList.verticalScrollBarBottomPNG, 0.45F * var1);
+               ResourceList.verticalScrollBarBottomPNG, 0.45F * partialTicks);
          RenderUtil.drawRect((float) var6, (float) (this.yA + var4), (float) (var6 + var7),
                (float) (this.yA + this.heightA - var4), var5);
       }
 
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 
    @Override

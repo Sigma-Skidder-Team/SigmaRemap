@@ -32,7 +32,7 @@ public class Class4258 extends Class4247 {
    }
 
    public void method13069(String var1) {
-      this.method13222(() -> {
+      this.runThisOnDimensionUpdate(() -> {
          if (this.field20642 != null) {
             this.method13236(this.field20642);
          }
@@ -111,8 +111,8 @@ public class Class4258 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
-      super.draw(var1);
+   public void draw(float partialTicks) {
+      super.draw(partialTicks);
    }
 
    public void method13071(String... var1) {

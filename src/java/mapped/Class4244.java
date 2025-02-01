@@ -15,13 +15,13 @@ public class Class4244 extends ButtonPanel {
    }
 
    @Override
-   public void draw(float var1) {
-      if (var1 != 0.0F) {
+   public void draw(float partialTicks) {
+      if (partialTicks != 0.0F) {
          if (!this.isHovered()) {
             float var10000 = 0.3F;
          } else if (!this.method13216()) {
             if (!this.method13212()) {
-               Math.max(var1 * this.field20584, 0.0F);
+               Math.max(partialTicks * this.field20584, 0.0F);
             } else {
                float var5 = 1.5F;
             }
@@ -35,20 +35,20 @@ public class Class4244 extends ButtonPanel {
                (float) this.getWidthA(),
                (float) this.getHeightA(),
                5.0F,
-               MultiUtilities.applyAlpha(this.textColor.method19405(), var1));
+               MultiUtilities.applyAlpha(this.textColor.method19405(), partialTicks));
          if (this.getTypedText() != null) {
             RenderUtil.method11440(
                   this.getFont(),
                   (float) (this.getXA() + this.getWidthA() / 2),
                   (float) (this.getYA() + this.getHeightA() / 2),
                   this.getTypedText(),
-                  MultiUtilities.applyAlpha(this.textColor.getTextColor(), var1),
+                  MultiUtilities.applyAlpha(this.textColor.getTextColor(), partialTicks),
                   this.textColor.method19411(),
                   this.textColor.method19413());
          }
 
          GL11.glPushMatrix();
-         super.method13226(var1);
+         super.method13226(partialTicks);
          GL11.glPopMatrix();
       }
    }

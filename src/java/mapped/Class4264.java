@@ -17,17 +17,17 @@ public class Class4264 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       int var5 = this.getHeightO() - this.method13271();
       if (this.field20680) {
          this.method13097((float) var5 / (float) this.getWidthA());
       }
 
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       for (int var4 = 0; var4 < this.widthA; var4++) {
          float var5 = (float) var4 / (float) this.widthA;
          RenderUtil.renderBackgroundBox(
@@ -35,7 +35,7 @@ public class Class4264 extends Class4247 {
                (float) this.yA,
                1.0F,
                (float) this.heightA,
-               MultiUtilities.applyAlpha(Color.HSBtoRGB(var5, 1.0F, 1.0F), var1));
+               MultiUtilities.applyAlpha(Color.HSBtoRGB(var5, 1.0F, 1.0F), partialTicks));
       }
 
       RenderUtil.method11428(
@@ -43,11 +43,11 @@ public class Class4264 extends Class4247 {
             (float) this.getYA(),
             (float) (this.getXA() + this.getWidthA()),
             (float) (this.getYA() + this.getHeightA()),
-            MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor(), 0.5F * var1));
+            MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor(), 0.5F * partialTicks));
       Class4252.method13052(
             this.xA + Math.round((float) this.widthA * this.field20679) + 1, this.yA + 4,
-            Color.HSBtoRGB(this.field20679, 1.0F, 1.0F), var1);
-      super.draw(var1);
+            Color.HSBtoRGB(this.field20679, 1.0F, 1.0F), partialTicks);
+      super.draw(partialTicks);
    }
 
    @Override

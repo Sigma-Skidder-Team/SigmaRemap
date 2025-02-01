@@ -49,7 +49,7 @@ public class Class4294 extends Class4278 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       this.method13225();
       this.field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
             ClientColors.DEEP_TEAL.getColor(), 2.0F);
@@ -84,7 +84,7 @@ public class Class4294 extends Class4278 {
                         !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field20808);
                }
 
-               super.draw(var1 * var7);
+               super.draw(partialTicks * var7);
                RenderUtil.endScissor();
             }
          }

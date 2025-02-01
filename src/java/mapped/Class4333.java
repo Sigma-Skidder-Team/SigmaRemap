@@ -17,7 +17,7 @@ public class Class4333 extends CustomGuiScreen {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       GL11.glAlphaFunc(518, 0.1F);
       float var4 = MathUtils.lerp(1.0F - this.field21149.calcPercent(), 0.9, 0.0, 0.9, 0.0);
       float var5 = (float)this.getWidthA() * var4 / 2.0F;
@@ -62,7 +62,7 @@ public class Class4333 extends CustomGuiScreen {
          );
       }
 
-      super.draw(var1);
+      super.draw(partialTicks);
       RenderUtil.endScissor();
    }
 }

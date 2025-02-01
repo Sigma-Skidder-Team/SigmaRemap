@@ -155,7 +155,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                var25 = this.method13531(var17, var41, 0, var25, var5);
             }
 
-            new Class6665().method20320(var17, panel);
+            new Class6665().setWidth(var17, panel);
             var17.setSize((var1x, var2x) -> var1x.setWidthA(var2x.getWidthA() - var5));
             panel.addToList(var17);
             var4 += var17.getHeightA() + var5;
@@ -293,12 +293,12 @@ public class Class4343 extends Class4339 implements Class4342 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       boolean var4 = false;
 
       for (Entry var6 : this.field21223.entrySet()) {
@@ -313,7 +313,7 @@ public class Class4343 extends Class4339 implements Class4342 {
       }
 
       GL11.glPushMatrix();
-      super.draw(var1);
+      super.draw(partialTicks);
       GL11.glPopMatrix();
       this.field21225.changeDirection(!var4 ? Direction.BACKWARDS : Direction.FORWARDS);
       RenderUtil.drawString(

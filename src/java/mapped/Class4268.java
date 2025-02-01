@@ -32,14 +32,14 @@ public class Class4268 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
       this.field20691 = Math.max(0.0F,
             Math.min(1.0F, this.field20691 + 0.2F * (float) (!this.method13212() && !this.field20692 ? -1 : 1)));
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.method11474(
             (float) this.xA,
             (float) (this.yA + 5),
@@ -51,7 +51,7 @@ public class Class4268 extends Class4247 {
             (float) this.xA, (float) this.yA + 3.0F * this.field20691, (float) this.widthA, (float) this.heightA, 8.0F,
             -986896);
       TrueTypeFont var4 = ResourceRegistry.JelloLightFont20;
-      if (this.field20912.contains("Lock")) {
+      if (this.typedText.contains("Lock")) {
          RenderUtil.method11438(
                (float) (this.xA + 14),
                (float) (this.yA + 11) + 3.0F * this.field20691,
@@ -59,20 +59,20 @@ public class Class4268 extends Class4247 {
                MultiUtilities.applyAlpha(ClientColors.DARK_SLATE_GREY.getColor(), this.field20691));
       }
 
-      if (!this.field20912.equals("Return")) {
-         if (!this.field20912.equals("Back")) {
-            if (!this.field20912.equals("Meta")) {
-               if (!this.field20912.equals("Menu")) {
-                  if (!this.field20912.equals("Space")) {
+      if (!this.typedText.equals("Return")) {
+         if (!this.typedText.equals("Back")) {
+            if (!this.typedText.equals("Meta")) {
+               if (!this.typedText.equals("Menu")) {
+                  if (!this.typedText.equals("Space")) {
                      if (this.field20693) {
                         var4 = ResourceRegistry.RegularFont20;
                      }
 
                      RenderUtil.drawString(
                            var4,
-                           (float) (this.xA + (this.widthA - var4.getWidth(this.field20912)) / 2),
+                           (float) (this.xA + (this.widthA - var4.getWidth(this.typedText)) / 2),
                            (float) (this.yA + 19) + 3.0F * this.field20691,
-                           this.field20912,
+                           this.typedText,
                            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(),
                                  0.4F + (!this.field20693 ? 0.0F : 0.2F)));
                   }
@@ -160,7 +160,7 @@ public class Class4268 extends Class4247 {
                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.3F + (!this.field20693 ? 0.0F : 0.2F)));
       }
 
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 
    @Override

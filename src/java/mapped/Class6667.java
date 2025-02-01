@@ -3,11 +3,11 @@ package mapped;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import net.minecraft.client.Minecraft;
 
-public class Class6667 implements Class6664 {
+public class Class6667 implements IWidthSetter {
    private static String[] field29237;
 
    @Override
-   public void method20320(CustomGuiScreen var1, CustomGuiScreen var2) {
+   public void setWidth(CustomGuiScreen var1, CustomGuiScreen var2) {
       var1.setYA(0);
       if (var2 == null) {
          var1.setHeightA(Minecraft.getInstance().mainWindow.getHeight());

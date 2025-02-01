@@ -35,11 +35,11 @@ public class SnakeGameScreen extends Screen {
    }
 
    @Override
-   public void draw(float var1) {
-      var1 = this.field21047.calcPercent();
-      float var4 = EasingFunctions.easeOutBack(var1, 0.0F, 1.0F, 1.0F);
+   public void draw(float partialTicks) {
+      partialTicks = this.field21047.calcPercent();
+      float var4 = EasingFunctions.easeOutBack(partialTicks, 0.0F, 1.0F, 1.0F);
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
-      float var5 = 0.25F * var1;
+      float var5 = 0.25F * partialTicks;
       RenderUtil.drawRect(
             (float) this.xA,
             (float) this.yA,
@@ -53,7 +53,7 @@ public class SnakeGameScreen extends Screen {
             (float) this.field21046.getWidthA(),
             (float) this.field21046.getHeightA(),
             40.0F,
-            var1);
+              partialTicks);
       RenderUtil.drawRect(
             (float) (this.field21046.getXA() - 20),
             (float) (this.field21046.getYA() - 20),
@@ -61,7 +61,7 @@ public class SnakeGameScreen extends Screen {
             (float) (this.field21046.getHeightA() + 40),
             14.0F,
             ClientColors.LIGHT_GREYISH_BLUE.getColor());
-      super.draw(var1);
+      super.draw(partialTicks);
       int var6 = (this.widthA - this.field21046.getWidthA()) / 2;
       int var7 = (this.heightA - this.field21046.getHeightA()) / 2;
       RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, (float) var6, (float) (var7 - 60), "Snake",

@@ -14,8 +14,8 @@ public class Class4279 extends Class4278 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
       int var5 = this.field20737.getWidthA() - this.field20737.field20610;
       int var6 = this.field20737.getHeightA() - this.getHeightA();
       int var7 = this.field20737.field20610;
@@ -38,14 +38,14 @@ public class Class4279 extends Class4278 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.method11438(
             (float) (this.xA + 5),
             (float) (this.yA + 5),
             10.0F,
             MultiUtilities.applyAlpha(
                   !this.method13216() ? ClientColors.DARK_GREEN.getColor() : ClientColors.DARK_BLUE_GREY.getColor(),
-                  var1));
-      super.draw(var1);
+                    partialTicks));
+      super.draw(partialTicks);
    }
 }

@@ -113,7 +113,7 @@ public class MusicPlayer extends Class4278 {
                field20855.put(video.id, video);
             }
 
-            this.method13222(new MusicPlayerInstance(this, video, var6, player));
+            this.runThisOnDimensionUpdate(new MusicPlayerInstance(this, video, var6, player));
          }));
          var9++;
          ((Thread) var7.get(var7.size() - 1)).start();
@@ -191,11 +191,11 @@ public class MusicPlayer extends Class4278 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       long var5 = System.nanoTime() - field20870;
       float var7 = Math.min(10.0F, Math.max(0.0F, (float) var5 / 1.810361E7F));
       field20870 = System.nanoTime();
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
       if (this.screen instanceof JelloClickGUI) {
          if (!this.method13216()) {
             if ((this.field20909 || this.field20874) && !this.method13214() && !this.method13216()) {
@@ -265,9 +265,9 @@ public class MusicPlayer extends Class4278 {
                this.method13217(false);
             }
          } else {
-            int var12 = var1 - this.field20880 - (this.screen == null ? 0 : this.screen.method13271());
+            int var12 = newHeight - this.field20880 - (this.screen == null ? 0 : this.screen.method13271());
             int var14 = 200;
-            if (var12 + this.getWidthA() > this.screen.getWidthA() + var14 && var1 - this.field20878 > 70) {
+            if (var12 + this.getWidthA() > this.screen.getWidthA() + var14 && newHeight - this.field20878 > 70) {
                int var15 = var12 - this.getXA() - var14;
                this.setXA((int) ((float) this.getXA() + (float) var15 * 0.5F));
                this.field20871 = (float) this.getXA();
@@ -278,7 +278,7 @@ public class MusicPlayer extends Class4278 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       super.method13224();
       super.method13225();
       this.field20865.setWidthA(this.getXA() + this.getWidthA() <= this.screen.getWidthA() ? 0 : 41);
@@ -286,7 +286,7 @@ public class MusicPlayer extends Class4278 {
             .changeDirection(
                   this.getXA() + this.getWidthA() > this.screen.getWidthA() && !this.field20874 ? Direction.FORWARDS
                         : Direction.BACKWARDS);
-      var1 *= 0.5F + (1.0F - this.field20873.calcPercent()) * 0.5F;
+      partialTicks *= 0.5F + (1.0F - this.field20873.calcPercent()) * 0.5F;
       if (this.field20854.method24319()) {
          this.play.setEnabled(false);
          this.pause.setEnabled(true);
@@ -300,34 +300,34 @@ public class MusicPlayer extends Class4278 {
             (float) this.getYA(),
             (float) (this.getXA() + this.getWidthA()),
             (float) (this.getYA() + this.getHeightA() - this.field20848),
-            MultiUtilities.applyAlpha(-14277082, var1 * 0.8F));
+            MultiUtilities.applyAlpha(-14277082, partialTicks * 0.8F));
       RenderUtil.drawRect(
             (float) this.getXA(),
             (float) this.getYA(),
             (float) (this.getXA() + this.field20845),
             (float) (this.getYA() + this.getHeightA() - this.field20848),
-            MultiUtilities.applyAlpha(-16777216, var1 * 0.95F));
-      this.method13193(var1);
-      this.method13194(var1);
-      this.method13192(var1);
+            MultiUtilities.applyAlpha(-16777216, partialTicks * 0.95F));
+      this.method13193(partialTicks);
+      this.method13194(partialTicks);
+      this.method13192(partialTicks);
       float var4 = 55;
       RenderUtil.drawString(
             ResourceRegistry.JelloLightFont40,
             var4 + this.getXA(),
             (float) (this.getYA() + 20),
             "Jello",
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
       RenderUtil.drawString(
             ResourceRegistry.JelloLightFont20,
             var4 + this.getXA() + 80,
             (float) (this.getYA() + 40),
             "music",
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
       RenderUtil.drawRoundedRect((float) this.getXA(), (float) this.getYA(), (float) this.getWidthA(),
-            (float) this.getHeightA(), 14.0F, var1);
-      super.draw(var1);
+            (float) this.getHeightA(), 14.0F, partialTicks);
+      super.draw(partialTicks);
       if (this.field20852 != null) {
-         this.method13196(var1);
+         this.method13196(partialTicks);
       }
    }
 

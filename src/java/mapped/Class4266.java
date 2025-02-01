@@ -31,10 +31,10 @@ public class Class4266 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      super.updatePanelDimensions(newHeight, newWidth);
       if (this.field20909 && this.field20686 <= 0) {
-         if (var2 >= this.method13272() + this.getHeightA() / 2) {
+         if (newWidth >= this.method13272() + this.getHeightA() / 2) {
             ((Class4259) this.screen).method13076(false);
             this.field20685.add(new Class7086(this, false));
          } else {
@@ -67,7 +67,7 @@ public class Class4266 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       Iterator var4 = this.field20685.iterator();
       byte var5 = 8;
 
@@ -93,14 +93,14 @@ public class Class4266 extends Class4247 {
                   (float) (this.widthA - var5 * 2),
                   (float) (this.heightA - var5 * 2),
                   20.0F,
-                  var1 * 0.5F);
+                  partialTicks * 0.5F);
             RenderUtil.drawRoundedRect(
                   (float) (this.xA + var5),
                   (float) (this.yA + var5),
                   (float) (this.widthA - var5 * 2),
                   (float) (this.heightA - var5 * 2),
                   14.0F,
-                  var1);
+                    partialTicks);
             GL11.glPushMatrix();
             RenderUtil.method11476();
             RenderUtil.method11474(
@@ -156,6 +156,6 @@ public class Class4266 extends Class4247 {
       } catch (IOException var10) {
       }
 
-      super.draw(var1);
+      super.draw(partialTicks);
    }
 }

@@ -54,16 +54,16 @@ public class RedeemKeyScreen extends CustomGuiScreen {
          }
 
          if (Client.getInstance().networkManager.isPremium()) {
-            this.method13222(() -> ((JelloMainMenuScreen) this.getScreen()).method13340());
+            this.runThisOnDimensionUpdate(() -> ((JelloMainMenuScreen) this.getScreen()).method13340());
          }
       }).start());
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       this.field21136.changeDirection(!this.isHovered() ? Direction.BACKWARDS : Direction.FORWARDS);
-      var1 = 1.0F;
-      var1 *= this.field21136.calcPercent();
+      partialTicks = 1.0F;
+      partialTicks *= this.field21136.calcPercent();
       float var4 = MathUtils.lerp(this.field21136.calcPercent(), 0.17, 1.0, 0.51, 1.0);
       if (this.field21136.getDirection() == Direction.BACKWARDS) {
          var4 = 1.0F;
@@ -82,21 +82,21 @@ public class RedeemKeyScreen extends CustomGuiScreen {
                   190.0F,
                   190.0F,
                   var5.method36701(),
-                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
             RenderUtil.endScissor();
          }
       }
 
       RenderUtil.drawString(ResourceRegistry.JelloLightFont36, 100.0F, 100.0F, "Redeem Premium",
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1));
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
       RenderUtil.drawString(
             ResourceRegistry.JelloLightFont25,
             100.0F,
             150.0F,
             "Visit http://sigmaclient.info for more info",
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.6F * var1));
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.6F * partialTicks));
       RenderUtil.drawString(ResourceRegistry.JelloLightFont18, 100.0F, 263.0F, this.field21135,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.6F * var1));
-      super.draw(var1);
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.6F * partialTicks));
+      super.draw(partialTicks);
    }
 }

@@ -84,16 +84,16 @@ public class Class4366 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
+   public void updatePanelDimensions(int newHeight, int newWidth) {
       if (!this.method13297() && this.method13673()) {
          this.method13674(false);
       }
 
-      super.method13028(var1, var2);
+      super.updatePanelDimensions(newHeight, newWidth);
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       RenderUtil.drawRect(
             (float) this.getXA(),
             (float) this.getYA(),
@@ -140,7 +140,7 @@ public class Class4366 extends Class4247 {
                (float) (this.getXA() + 7),
                (float) (this.getYA() + (this.getHeightA() - this.getFont().method23952()) / 2),
                this.getTypedText(),
-               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var1 * 0.5F));
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks * 0.5F));
          RenderUtil.endScissor();
       }
 
@@ -148,7 +148,7 @@ public class Class4366 extends Class4247 {
          RenderUtil.method11415(this);
       }
 
-      super.draw(var1);
+      super.draw(partialTicks);
       if (!this.method13673()) {
          RenderUtil.endScissor();
       }

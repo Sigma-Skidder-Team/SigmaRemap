@@ -53,14 +53,14 @@ public class Class4339 extends AnimatedIconPanel {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      if (!this.field21203 || this.method13287()) {
-         super.method13028(var1, var2);
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      if (!this.field21203 || this.isVisible()) {
+         super.updatePanelDimensions(newHeight, newWidth);
          this.buttonList.setYA(-1 * this.field21205.method13162());
 
          for (CustomGuiScreen var6 : this.getButton().method13241()) {
-            for (Class6664 var8 : var6.method13260()) {
-               var8.method20320(var6, this);
+            for (IWidthSetter var8 : var6.method13260()) {
+               var8.setWidth(var6, this);
             }
          }
       }
@@ -75,14 +75,14 @@ public class Class4339 extends AnimatedIconPanel {
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       this.method13224();
-      if (!this.field21203 || this.method13287()) {
+      if (!this.field21203 || this.isVisible()) {
          if (this.field21206) {
             RenderUtil.method11415(this);
          }
 
-         super.draw(var1);
+         super.draw(partialTicks);
          if (this.field21206) {
             RenderUtil.endScissor();
          }

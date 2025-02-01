@@ -86,27 +86,27 @@ public class Class4276 extends Class4247 {
    }
 
    @Override
-   public void draw(float var1) {
-      var1 = Animation.method25321(this.field20724, this.field20726, 250.0F, 120.0F);
-      float var4 = EasingFunctions.easeOutBack(var1, 0.0F, 1.0F, 1.0F);
+   public void draw(float partialTicks) {
+      partialTicks = Animation.method25321(this.field20724, this.field20726, 250.0F, 120.0F);
+      float var4 = EasingFunctions.easeOutBack(partialTicks, 0.0F, 1.0F, 1.0F);
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
       this.method13284((int) ((float) this.widthA * 0.2F * (1.0F - var4)) * (!this.field20725 ? 1 : -1));
       super.method13224();
       byte var5 = 10;
-      int var6 = MultiUtilities.applyAlpha(-723724, QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F));
+      int var6 = MultiUtilities.applyAlpha(-723724, QuadraticEasing.easeOutQuad(partialTicks, 0.0F, 1.0F, 1.0F));
       RenderUtil.drawRoundedRect(
             (float) (this.xA + var5 / 2),
             (float) (this.yA + var5 / 2),
             (float) (this.widthA - var5),
             (float) (this.heightA - var5),
             35.0F,
-            var1);
+              partialTicks);
       RenderUtil.drawRect(
             (float) (this.xA + var5 / 2),
             (float) (this.yA + var5 / 2),
             (float) (this.xA - var5 / 2 + this.widthA),
             (float) (this.yA - var5 / 2 + this.heightA),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), var1 * 0.25F));
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), partialTicks * 0.25F));
       RenderUtil.drawRect((float) this.xA, (float) this.yA, (float) this.widthA, (float) this.heightA, (float) var5,
             var6);
       GL11.glPushMatrix();
@@ -126,8 +126,8 @@ public class Class4276 extends Class4247 {
             (float) (this.yA + 68),
             (float) (this.xA + this.widthA - 25),
             (float) (this.yA + 69),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.05F * var1));
-      super.draw(var1);
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.05F * partialTicks));
+      super.draw(partialTicks);
    }
 
    public final void method13131(Class9073 var1) {

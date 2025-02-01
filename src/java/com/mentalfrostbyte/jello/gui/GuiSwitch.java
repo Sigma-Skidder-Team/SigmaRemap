@@ -79,16 +79,16 @@ public class GuiSwitch extends Screen {
     }
 
     @Override
-    public void method13028(int var1, int var2) {
-        float var5 = (float) var1 - field21070;
-        float var6 = (float) var2 - field21071;
+    public void updatePanelDimensions(int newHeight, int newWidth) {
+        float var5 = (float) newHeight - field21070;
+        float var6 = (float) newWidth - field21071;
         field21070 += var5 * 0.09F;
         field21071 += var6 * 0.09F;
-        super.method13028(var1, var2);
+        super.updatePanelDimensions(newHeight, newWidth);
     }
 
     @Override
-    public void draw(float var1) {
+    public void draw(float partialTicks) {
         if (CustomResourceLoadProgressGui.field6779 != null) {
             field21069.changeDirection(Direction.FORWARDS);
             int var4 = 40;
@@ -109,7 +109,7 @@ public class GuiSwitch extends Screen {
                     (float) Minecraft.getInstance().mainWindow.getWidth(),
                     (float) Minecraft.getInstance().mainWindow.getHeight(),
                     MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.3F));
-            super.draw(var1);
+            super.draw(partialTicks);
             RenderUtil.drawImage(
                     0.0F,
                     0.0F,

@@ -22,13 +22,13 @@ public class Class4365 extends Class4247 {
    }
 
    @Override
-   public void method13028(int var1, int var2) {
-      this.field21337 = var1;
-      this.field21338 = var2;
+   public void updatePanelDimensions(int newHeight, int newWidth) {
+      this.field21337 = newHeight;
+      this.field21338 = newWidth;
    }
 
    @Override
-   public void draw(float var1) {
+   public void draw(float partialTicks) {
       this.account = Client.getInstance().networkManager.account;
       String var4 = "Log in";
       Texture var5 = ResourceList.accountPNG;
@@ -42,14 +42,14 @@ public class Class4365 extends Class4247 {
       this.field21334 = Math.max(0.0F, Math.min(1.0F, this.field21334 + (!var6 ? -0.1F : 0.1F)));
       RenderUtil.drawRoundedRect(
             (float) this.xA, (float) this.yA, (float) this.getWidthA(), (float) this.getHeightA(), 20.0F,
-            this.field21334 * 0.2F * var1);
+            this.field21334 * 0.2F * partialTicks);
       RenderUtil.drawRect(
             (float) this.xA,
             (float) this.yA,
             (float) (this.xA + this.getWidthA()),
             (float) (this.yA + this.getHeightA()),
             MultiUtilities.applyAlpha(ClientColors.DULL_GREEN.getColor(),
-                  (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * var1));
+                  (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * partialTicks));
       RenderUtil.drawImage(
             (float) (this.xA + this.widthA - 60 - 10),
             (float) (this.yA + 10),
@@ -57,14 +57,14 @@ public class Class4365 extends Class4247 {
             60.0F,
             var5,
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
-                  (0.5F + 0.5F * this.field21334) * var1));
+                  (0.5F + 0.5F * this.field21334) * partialTicks));
       RenderUtil.drawString(
             this.font,
             (float) (this.xA + this.widthA - 90 - this.font.getWidth(var4)),
             (float) (this.yA + 27),
             var4,
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
-                  (0.5F + 0.5F * this.field21334) * var1));
-      super.draw(var1);
+                  (0.5F + 0.5F * this.field21334) * partialTicks));
+      super.draw(partialTicks);
    }
 }

@@ -213,7 +213,7 @@ public class GuiManager {
 
             if (this.screen != null) {
                 this.field41355 = field41344;
-                this.screen.method13028(this.field41354[0], this.field41354[1]);
+                this.screen.updatePanelDimensions(this.field41354[0], this.field41354[1]);
             }
         }
     }
@@ -419,7 +419,7 @@ public class GuiManager {
         this.field41356 = field41344;
         this.method33476(Client.getInstance().getConfig());
         if (this.screen != null) {
-            this.screen.method13028(this.field41354[0], this.field41354[1]);
+            this.screen.updatePanelDimensions(this.field41354[0], this.field41354[1]);
         }
 
         if (Client.getInstance().moduleManager != null) {
