@@ -28,15 +28,15 @@ public class OldAACSpeed extends Module
     }
     
     @Override
-    public void method9879() {
-        this.field15768 = ((Client.method35173().method35194().method29228() <= 0) ? 1 : 0);
+    public void onEnable() {
+        this.field15768 = ((Client.getInstance().playerTracker().method29228() <= 0) ? 1 : 0);
         this.field15765 = Class7482.method23136();
         this.field15766 = Class7482.method23144()[0];
     }
     
     @EventListener
     public void method10316(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!OldAACSpeed.mc.player.onGround) {
                 if (ColorUtils.method19114()) {
                     if (AACAntiKnockBack.field15956 >= 7) {
@@ -76,7 +76,7 @@ public class OldAACSpeed extends Module
     
     @EventListener
     public void method10317(final Class5722 class5722) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15768 < 2) {
                 ++this.field15768;
             }
@@ -97,7 +97,7 @@ public class OldAACSpeed extends Module
     
     @EventListener
     public void method10318(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4328) {
                 this.field15768 = 0;
                 this.field15765 = Class7482.method23136();

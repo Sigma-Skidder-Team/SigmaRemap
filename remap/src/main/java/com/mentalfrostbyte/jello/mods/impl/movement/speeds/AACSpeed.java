@@ -29,7 +29,7 @@ public class AACSpeed extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15686 = -1;
         this.field15687 = 0;
         this.field15691 = AACSpeed.mc.player.posY;
@@ -44,7 +44,7 @@ public class AACSpeed extends Module
     
     @EventListener
     public void method10166(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4328) {
                 this.field15687 = 0;
             }
@@ -53,10 +53,10 @@ public class AACSpeed extends Module
     
     @EventListener
     public void method10167(final Class5717 class5717) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
-        final String method9887 = this.method9887("Mode");
+        final String method9887 = this.getStringSettingValueByName("Mode");
         if (ColorUtils.method19160(AACSpeed.mc.player, 0.01f)) {
             if (this.field15688 <= 1) {
                 ++this.field15688;
@@ -109,7 +109,7 @@ public class AACSpeed extends Module
     
     @EventListener
     public void method10168(final Class5741 class5741) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (!this.method9883("Fluid Fix")) {
@@ -121,7 +121,7 @@ public class AACSpeed extends Module
             this.field15686 = -1;
             return;
         }
-        final String method9887 = this.method9887("Mode");
+        final String method9887 = this.getStringSettingValueByName("Mode");
         float n = 13.0f;
         if (!method9887.equals("Fast1")) {
             if (method9887.equals("Basic")) {
@@ -142,7 +142,7 @@ public class AACSpeed extends Module
         this.field15686 = 0;
         this.field15688 = 0;
         this.field15692 = Class7482.method23144()[0];
-        final String method9887 = this.method9887("Mode");
+        final String method9887 = this.getStringSettingValueByName("Mode");
         switch (method9887) {
             case "Basic": {
                 if (this.field15687 < 3) {

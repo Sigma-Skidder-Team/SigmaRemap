@@ -11,10 +11,10 @@ import net.minecraft.util.math.Vec3d;
 public class Class6571 extends Class6564
 {
     private static String[] field26089;
-    private final Class761 field26090;
+    private final GhastEntity field26090;
     private int field26091;
     
-    public Class6571(final Class761 field26090) {
+    public Class6571(final GhastEntity field26090) {
         super(field26090);
         this.field26090 = field26090;
     }

@@ -113,14 +113,14 @@ public class Class3835 extends Class3834
     }
     
     @Override
-    public void method11829(final BlockState class7096, final World class7097, BlockPos method1149, final BlockState class7098, final boolean b) {
+    public void onReplaced(final BlockState class7096, final World class7097, BlockPos method1149, final BlockState class7098, final boolean b) {
         if (class7096.getBlock() != class7098.getBlock()) {
-            super.method11829(class7096, class7097, method1149, class7098, b);
+            super.onReplaced(class7096, class7097, method1149, class7098, b);
             method1149 = method1149.method1149(class7096.get((IProperty<Direction>)Class3835.field17415).getOpposite());
             final BlockState method1150 = class7097.getBlockState(method1149);
             if (method1150.getBlock() == Blocks.field29246 || method1150.getBlock() == Blocks.field29239) {
                 if (method1150.get((IProperty<Boolean>)Class3836.field17438)) {
-                    Block.method11836(method1150, class7097, method1149);
+                    Block.spawnDrops(method1150, class7097, method1149);
                     class7097.method6690(method1149, false);
                 }
             }

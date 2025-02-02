@@ -70,7 +70,7 @@ public class StringSetting extends Setting<String> {
             return;
         }
         if (this.field21519.contains(this.field21518.get(n)) && Minecraft.method5277() != null) {
-            Client.method35173().method35197().method25776(new Class6224("Premium", "Not yet available for free version"));
+            Client.getInstance().method35197().method25776(new Class6224("Premium", "Not yet available for free version"));
             return;
         }
         this.method15199(this.field21518.get(n));

@@ -53,7 +53,7 @@ public class Class4887 extends Class4841
         super.method14228();
         final int n2 = 28;
         RenderUtil.method26904((float)(this.field20478 + n2), (float)(this.field20479 + n2 + 10), 160.0f, 160.0f, ClientAssets.sigma, n);
-        final CaptchaChecker method19344 = Client.method35173().method35201().getChallengeResponse();
+        final CaptchaChecker method19344 = Client.getInstance().method35201().getChallengeResponse();
         if (method19344 != null) {
             this.field20890.method14297(method19344.method30471());
             if (method19344.method30471()) {
@@ -72,13 +72,13 @@ public class Class4887 extends Class4841
         new Thread(() -> {
             this.field20894.method14305(true);
             this.field20891.method14297(false);
-            Client.method35173().method35201().getChallengeResponse();
+            Client.getInstance().method35201().getChallengeResponse();
             final CaptchaChecker captchaChecker = new CaptchaChecker("", true);
             if (captchaChecker != null) {
                 captchaChecker.method30475(this.field20890.method14314());
             }
-            Client.method35173().method35201().method19348();
-            Client.method35173().method35201().method19339(this.field20888.method14314(), this.field20889.method14314(), captchaChecker);
+            Client.getInstance().method35201().method19348();
+            Client.getInstance().method35201().method19339(this.field20888.method14314(), this.field20889.method14314(), captchaChecker);
             final String s = "asd";
             if (s != null) {
                 ((Class4926)this.method14267()).method14781("Error", s);

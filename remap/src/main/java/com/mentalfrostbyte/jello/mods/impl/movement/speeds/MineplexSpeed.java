@@ -32,14 +32,14 @@ public class MineplexSpeed extends Module
     @Override
     public void onDisable() {
         Class7482.method23151(Class7482.method23136() * 0.7);
-        if (MineplexSpeed.mc.player.field3006.field2743 != this.field15677) {
-            MineplexSpeed.mc.method5269().method17292(new Class4321(MineplexSpeed.mc.player.field3006.field2743));
-            this.field15677 = MineplexSpeed.mc.player.field3006.field2743;
+        if (MineplexSpeed.mc.player.inventory.field2743 != this.field15677) {
+            MineplexSpeed.mc.method5269().method17292(new Class4321(MineplexSpeed.mc.player.inventory.field2743));
+            this.field15677 = MineplexSpeed.mc.player.inventory.field2743;
         }
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15676 = 0;
         this.field15675 = 0;
         this.field15677 = -1;
@@ -49,8 +49,8 @@ public class MineplexSpeed extends Module
     @EventListener
     @Class6757
     public void method10150(final Class5717 class5717) {
-        if (this.method9906()) {
-            if (!Client.method35173().method35189().method21551(BlockFly.class).method9906()) {
+        if (this.isEnabled()) {
+            if (!Client.getInstance().method35189().method21551(BlockFly.class).isEnabled()) {
                 if (!ColorUtils.method19112(MineplexSpeed.mc.player)) {
                     final double field15678 = this.getNumberSettingValueByName("OnGround Speed");
                     if (!MineplexSpeed.mc.player.onGround) {
@@ -111,7 +111,7 @@ public class MineplexSpeed extends Module
     
     @EventListener
     public void method10151(final Class5722 class5722) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             this.field15678 = 0.81 + this.field15676 * 0.095;
             if (MineplexSpeed.mc.player.posY != (int) MineplexSpeed.mc.player.posY) {
                 this.field15678 = 0.52;
@@ -123,16 +123,16 @@ public class MineplexSpeed extends Module
             }
             class5722.method16996(0.0);
             class5722.method16995(0.4199998);
-            if (MineplexSpeed.mc.player.field3006.field2743 != this.field15677) {
-                MineplexSpeed.mc.method5269().method17292(new Class4321(MineplexSpeed.mc.player.field3006.field2743));
-                this.field15677 = MineplexSpeed.mc.player.field3006.field2743;
+            if (MineplexSpeed.mc.player.inventory.field2743 != this.field15677) {
+                MineplexSpeed.mc.method5269().method17292(new Class4321(MineplexSpeed.mc.player.inventory.field2743));
+                this.field15677 = MineplexSpeed.mc.player.inventory.field2743;
             }
         }
     }
     
     @EventListener
     public void method10152(final Class5723 class5723) {
-        if (this.method9906() && MineplexSpeed.mc.player != null) {
+        if (this.isEnabled() && MineplexSpeed.mc.player != null) {
             if (class5723.method16998() instanceof Class4328) {
                 this.field15676 = 0;
                 this.field15678 = 0.0;
@@ -142,7 +142,7 @@ public class MineplexSpeed extends Module
     
     @EventListener
     public void method10153(final Class5745 class5745) {
-        if (this.method9906() && MineplexSpeed.mc.player != null) {
+        if (this.isEnabled() && MineplexSpeed.mc.player != null) {
             if (class5745.method17049() > 0.2) {
                 this.field15678 -= this.getNumberSettingValueByName("OnGround Speed") / 4.0f;
             }
@@ -153,8 +153,8 @@ public class MineplexSpeed extends Module
         if (!MineplexSpeed.mc.player.getHeldItemMainhand().method27620()) {
             for (int i = 36; i < 45; ++i) {
                 final int field15677 = i - 36;
-                if (MineplexSpeed.mc.player.field3008.method10878(i).method20053().method27620()) {
-                    if (MineplexSpeed.mc.player.field3006.field2743 != field15677) {
+                if (MineplexSpeed.mc.player.container.getSlot(i).method20053().method27620()) {
+                    if (MineplexSpeed.mc.player.inventory.field2743 != field15677) {
                         if (this.field15677 != field15677) {
                             MineplexSpeed.mc.method5269().method17292(new Class4321(field15677));
                             this.field15677 = field15677;
@@ -163,9 +163,9 @@ public class MineplexSpeed extends Module
                     return field15677;
                 }
             }
-            Class8639.method29367(MineplexSpeed.mc.player.field3008.field16154, 42, 0, Class2133.field12438, MineplexSpeed.mc.player, true);
-            if (MineplexSpeed.mc.player.field3008.method10878(42).method20053().method27620()) {
-                if (MineplexSpeed.mc.player.field3006.field2743 != 6) {
+            InvManagerUtil.method29367(MineplexSpeed.mc.player.container.field16154, 42, 0, Class2133.field12438, MineplexSpeed.mc.player, true);
+            if (MineplexSpeed.mc.player.container.getSlot(42).method20053().method27620()) {
+                if (MineplexSpeed.mc.player.inventory.field2743 != 6) {
                     if (this.field15677 != 6) {
                         MineplexSpeed.mc.method5269().method17292(new Class4321(6));
                         return this.field15677 = 6;
@@ -174,6 +174,6 @@ public class MineplexSpeed extends Module
             }
             return -1;
         }
-        return this.field15677 = MineplexSpeed.mc.player.field3006.field2743;
+        return this.field15677 = MineplexSpeed.mc.player.inventory.field2743;
     }
 }

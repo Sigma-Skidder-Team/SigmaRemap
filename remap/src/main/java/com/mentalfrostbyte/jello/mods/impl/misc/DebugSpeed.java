@@ -29,12 +29,12 @@ public class DebugSpeed extends Module
     
     @EventListener
     public void method10042(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final Vec3d field15620 = new Vec3d(DebugSpeed.mc.player.posX, 0.0, DebugSpeed.mc.player.posZ);
             if (DebugSpeed.mc.player.onGround) {
                 if (this.field15620 != null) {
                     final double d = field15620.distanceTo(this.field15620) / this.field15619 * DebugSpeed.mc.timer.timerSpeed;
-                    final boolean b = Client.method35173().method35194().method29228() > 1 && DebugSpeed.mc.player.field2985 == 0;
+                    final boolean b = Client.getInstance().playerTracker().method29228() > 1 && DebugSpeed.mc.player.field2985 == 0;
                     float floatValue = new BigDecimal(d / (b ? 0.280616 : 0.312948)).setScale(4, RoundingMode.DOWN).floatValue();
                     if (floatValue <= 9.0E-4) {
                         floatValue = 0.0f;
@@ -44,7 +44,7 @@ public class DebugSpeed extends Module
                     }
                     String s;
                     for (s = Float.toString(floatValue); s.length() < 6; s += "0") {}
-                    ColorUtils.method19106(Client.method35173().method35204().method32671() + "(" + s + "x faster " + (b ? "walking" : "jumping") + ")  Speed: " + d);
+                    ColorUtils.method19106(Client.getInstance().method35204().method32671() + "(" + s + "x faster " + (b ? "walking" : "jumping") + ")  Speed: " + d);
                 }
             }
             int field15621;

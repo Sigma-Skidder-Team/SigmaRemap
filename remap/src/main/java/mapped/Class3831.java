@@ -23,8 +23,8 @@ public class Class3831 extends Item
     private final int field17388;
     private final EntityType<?> field17389;
     
-    public Class3831(final EntityType<?> field17389, final int field17390, final int field17391, final Class8959 class8959) {
-        super(class8959);
+    public Class3831(final EntityType<?> field17389, final int field17390, final int field17391, final Properties properties) {
+        super(properties);
         this.field17389 = field17389;
         this.field17387 = field17390;
         this.field17388 = field17391;

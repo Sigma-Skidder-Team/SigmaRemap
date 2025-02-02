@@ -6,7 +6,7 @@ package mapped;
 
 import javax.annotation.Nullable;
 
-public class Class9575
+public class ServerData
 {
     public String field41612;
     public String field41613;
@@ -21,7 +21,7 @@ public class Class9575
     private String field41622;
     private boolean field41623;
     
-    public Class9575(final String field41612, final String field41613, final boolean field41614) {
+    public ServerData(final String field41612, final String field41613, final boolean field41614) {
         this.field41617 = Class9528.method35579().getProtocolVersion();
         this.field41618 = Class9528.method35579().getName();
         this.field41621 = Class2203.field13414;
@@ -56,8 +56,8 @@ public class Class9575
         this.field41621 = field41621;
     }
     
-    public static Class9575 method35868(final CompoundNBT class51) {
-        final Class9575 class52 = new Class9575(class51.getString("name"), class51.getString("ip"), false);
+    public static ServerData method35868(final CompoundNBT class51) {
+        final ServerData class52 = new ServerData(class51.getString("name"), class51.getString("ip"), false);
         if (class51.contains("icon", 8)) {
             class52.method35870(class51.getString("icon"));
         }
@@ -86,7 +86,7 @@ public class Class9575
         return this.field41623;
     }
     
-    public void method35872(final Class9575 class9575) {
+    public void method35872(final ServerData class9575) {
         this.field41613 = class9575.field41613;
         this.field41612 = class9575.field41612;
         this.method35867(class9575.method35866());

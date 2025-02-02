@@ -25,7 +25,7 @@ public class PacketCriticals extends Module
     
     @EventListener
     private void method10157(final Class5750 class5750) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5750.method17057() != null) {
                 if (class5750.method17059()) {
                     final Entity method17057 = class5750.method17057();
@@ -58,14 +58,14 @@ public class PacketCriticals extends Module
     @EventListener
     @Class6757
     private void method10158(final Class5721 class5721) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5721.method16990() instanceof Class4353) {
                 if (!this.field15680.method23937()) {
                     this.field15680.method23932();
                 }
                 if (this.field15681) {
                     if (PacketCriticals.mc.player.onGround) {
-                        class5721.method16961(true);
+                        class5721.setCancelled(true);
                         this.field15681 = false;
                     }
                 }

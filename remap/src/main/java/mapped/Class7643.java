@@ -81,7 +81,7 @@ public class Class7643
     }
     
     public void method24158() {
-        Client.method35173().method35188().method21094(this);
+        Client.getInstance().method35188().method21094(this);
         this.method24160();
         if (!this.method24195()) {
             this.method24196();
@@ -94,12 +94,12 @@ public class Class7643
         JSONObject.method13298("volume", this.field30335);
         JSONObject.method13295("spectrum", this.field30350);
         JSONObject.method13298("repeat", this.field30351.field1232);
-        Client.method35173().method35206().method13301("music", JSONObject);
+        Client.getInstance().method35206().method13301("music", JSONObject);
     }
     
     private void method24160() {
-        if (Client.method35173().method35206().has("music")) {
-            final JSONObject method13264 = Client.method35173().method35206().method13264("music");
+        if (Client.getInstance().method35206().has("music")) {
+            final JSONObject method13264 = Client.getInstance().method35206().method13264("music");
             if (method13264 != null) {
                 if (method13264.has("volume")) {
                     this.field30335 = Math.max(0, Math.min(100, method13264.method13262("volume")));
@@ -116,7 +116,7 @@ public class Class7643
     
     @EventListener
     private void method24161(final Class5740 class5740) {
-        if (Client.method35173().method35209() == Class2209.field13464) {
+        if (Client.getInstance().method35209() == Class2209.field13464) {
             if (this.field30333) {
                 if (this.field30352.size() != 0) {
                     final double[] array = this.field30352.get(0);
@@ -227,7 +227,7 @@ public class Class7643
                 }
                 this.field30342 = Class9399.method34928("picture", this.field30341);
                 this.field30340 = Class9399.method34928("picture", this.field30338);
-                Client.method35173().method35197().method25776(new Class6224("Now Playing", this.field30339, 7000, this.field30340));
+                Client.getInstance().method35197().method25776(new Class6224("Now Playing", this.field30339, 7000, this.field30340));
                 this.field30343 = false;
             }
         }
@@ -313,7 +313,7 @@ public class Class7643
                             this.field30336 = (long)class1751.method19499();
                             if (this.field30336 > 1300L) {
                                 ((Class1750)inputStream2).close();
-                                Client.method35173().method35197().method25776(new Class6224("Now Playing", "Music is too long."));
+                                Client.getInstance().method35197().method25776(new Class6224("Now Playing", "Music is too long."));
                             }
                             final Class4206 class1753 = new Class4206(class1752.method21178());
                             final Class9157 class1754 = new Class9157();
@@ -556,7 +556,7 @@ public class Class7643
         }
         catch (final Class2333 class6463) {
             if (class6463.getMessage() != null && class6463.getMessage().contains("ERROR: This video contains content from") && class6463.getMessage().contains("who has blocked it in your country on copyright grounds")) {
-                Client.method35173().method35197().method25776(new Class6224("Now Playing", "Not available in your region."));
+                Client.getInstance().method35197().method25776(new Class6224("Now Playing", "Not available in your region."));
             }
             else {
                 class6463.printStackTrace();
@@ -608,15 +608,15 @@ public class Class7643
     }
     
     public boolean method24195() {
-        File file = new File(Client.method35173().method35208() + "/music/youtube-dl");
+        File file = new File(Client.getInstance().method35208() + "/music/youtube-dl");
         if (Util.method27845() == Class306.field1833) {
-            file = new File(Client.method35173().method35208() + "/music/youtube-dl.exe");
+            file = new File(Client.getInstance().method35208() + "/music/youtube-dl.exe");
         }
         return file.exists();
     }
     
     public void method24196() {
-        Client.method35173().method35187().method20243("Updating dependencies threaded");
+        Client.getInstance().method35187().method20243("Updating dependencies threaded");
         new Thread(() -> this.method24197()).start();
     }
     
@@ -624,10 +624,10 @@ public class Class7643
         if (this.field30353) {
             return;
         }
-        Client.method35173().method35187().method20243("Updating dependencies");
+        Client.getInstance().method35187().method20243("Updating dependencies");
         if (Util.method27845() == Class306.field1833) {
             try {
-                FileUtils.copyURLToFile(new URL("https://yt-dl.org/downloads/latest/youtube-dl.exe"), new File(Client.method35173().method35208() + "/music/youtube-dl.exe"));
+                FileUtils.copyURLToFile(new URL("https://yt-dl.org/downloads/latest/youtube-dl.exe"), new File(Client.getInstance().method35208() + "/music/youtube-dl.exe"));
             }
             catch (final IOException ex) {
                 ex.printStackTrace();
@@ -635,7 +635,7 @@ public class Class7643
         }
         else {
             try {
-                FileUtils.copyURLToFile(new URL("https://yt-dl.org/downloads/latest/youtube-dl"), new File(Client.method35173().method35208() + "/music/youtube-dl"));
+                FileUtils.copyURLToFile(new URL("https://yt-dl.org/downloads/latest/youtube-dl"), new File(Client.getInstance().method35208() + "/music/youtube-dl"));
             }
             catch (final IOException ex2) {
                 ex2.printStackTrace();
@@ -646,7 +646,7 @@ public class Class7643
     }
     
     public String method24198() {
-        String s = Client.method35173().method35208().getAbsolutePath() + "/music/youtube-dl";
+        String s = Client.getInstance().method35208().getAbsolutePath() + "/music/youtube-dl";
         if (Util.method27845() != Class306.field1833) {
             new File(s).setExecutable(true);
         }

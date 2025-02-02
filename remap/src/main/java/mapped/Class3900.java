@@ -151,8 +151,8 @@ public class Class3900 extends Class3892 implements Class3840
                 if (!class1847.isRemote) {
                     if (!class1850.method2889()) {
                         final ItemStack method1151 = class1850.getHeldItemMainhand();
-                        Block.method11838(class1849, class1847, class1848, null, class1850, method1151);
-                        Block.method11838(method1150, class1847, method1149, null, class1850, method1151);
+                        Block.spawnAsEntity(class1849, class1847, class1848, null, class1850, method1151);
+                        Block.spawnAsEntity(method1150, class1847, method1149, null, class1850, method1151);
                     }
                 }
                 class1850.method2859(Class8276.field33979.method8449(this));

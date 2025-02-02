@@ -24,28 +24,28 @@ public class Fullbright extends Module
     
     @Override
     public void method9917() {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             Fullbright.mc.gameSettings.field23472 = 1.0;
         }
     }
     
     @Override
-    public void method9879() {
-        if (this.method9887("Type").equals("Normal")) {
+    public void onEnable() {
+        if (this.getStringSettingValueByName("Type").equals("Normal")) {
             Fullbright.mc.gameSettings.field23472 = 999.0;
         }
     }
     
     @EventListener
     public void method9938(final Class5743 class5743) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         Fullbright.mc.gameSettings.field23472 = 999.0;
         if (Fullbright.mc.world == null) {
             return;
         }
-        if (this.method9887("Type").equals("Normal")) {
+        if (this.getStringSettingValueByName("Type").equals("Normal")) {
             return;
         }
         int n = 16;

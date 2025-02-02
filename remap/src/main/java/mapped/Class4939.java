@@ -32,15 +32,15 @@ public class Class4939 extends Class4800
         final Class4876 class4878;
         this.addVisualThing(class4878 = new Class4876(this, "pb3", n5 + n2 + 9, n3 + n6 + 9, n2, n4, ClientAssets.jello));
         class4876.method14260((class4803, n) -> {
-            Client.method35173().method35210(Class2209.field13466);
+            Client.getInstance().method35210(Class2209.field13466);
             Minecraft.method5277().displayGuiScreen(new Class548());
         });
         class4878.method14260((class4803, n) -> {
-            Client.method35173().method35210(Class2209.field13464);
+            Client.getInstance().method35210(Class2209.field13464);
             Minecraft.method5277().displayGuiScreen(new Class548());
         });
         class4877.method14260((class4803, n) -> {
-            Client.method35173().method35210(Class2209.field13465);
+            Client.getInstance().method35210(Class2209.field13465);
             Minecraft.method5277().displayGuiScreen(new Class548());
         });
         final Class4803 class4879 = new Class4803(this, "socialbtns", (this.method14276() - 174) / 2, this.method14278() - 70, 174, 34);

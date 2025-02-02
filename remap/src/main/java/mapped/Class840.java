@@ -186,7 +186,7 @@ public class Class840 extends Class832
             final ItemStack method2107 = class427.method2107();
             if (this.method4167(method2107)) {
                 this.method1803(Class2215.field13600, method2107);
-                this.field4119[Class2215.field13600.method8402()] = 2.0f;
+                this.field4119[Class2215.field13600.getIndex()] = 2.0f;
                 this.method2746(class427, method2107.method27690());
                 class427.method1652();
             }

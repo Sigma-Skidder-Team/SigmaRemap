@@ -15,21 +15,21 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Arrays;
 
-public class Class8639
+public class InvManagerUtil
 {
     private static String[] field36239;
-    private static final Minecraft field36240;
+    private static final Minecraft mc;
     
     public static boolean method29316(final int n) {
-        final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(n).method20053();
-        return method20053 == null || method20053.getItem() instanceof Class4099;
+        final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(n).method20053();
+        return method20053 == null || method20053.getItem() instanceof AirBlock;
     }
     
     public static int method29317() {
         float n = 0.0f;
         int n2 = -1;
         for (int i = 44; i >= 9; --i) {
-            final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+            final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (!method29316(i)) {
                 if (method20053.method27695()) {
                     final float n3 = method20053.getItem().method11744().method32745() * method20053.field34176;
@@ -47,7 +47,7 @@ public class Class8639
         int n = 0;
         int n2 = -1;
         for (int i = 44; i >= 9; --i) {
-            final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+            final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (!method29316(i)) {
                 if (clazz.isInstance(method20053.getItem())) {
                     final int field34176 = method20053.field34176;
@@ -65,7 +65,7 @@ public class Class8639
         int n = 0;
         int n2 = -1;
         for (int i = 44; i >= 9; --i) {
-            final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+            final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (!method29316(i)) {
                 if (method20053.getItem() == class3820) {
                     final int field34176 = method20053.field34176;
@@ -83,7 +83,7 @@ public class Class8639
         int n = 0;
         int n2 = -1;
         for (int i = 44; i >= 9; --i) {
-            final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+            final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (!method29316(i)) {
                 for (int length = array.length, j = 0; j < length; ++j) {
                     if (method20053.getItem() == array[j]) {
@@ -104,7 +104,7 @@ public class Class8639
         int n2 = -1;
         final List<int[]> list = Arrays.asList(new int[][] { array });
         for (int i = 44; i >= 9; --i) {
-            final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+            final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (!method29316(i)) {
                 if (clazz.isInstance(method20053.getItem())) {
                     if (!list.contains(Item.method11696(method20053.getItem()))) {
@@ -124,7 +124,7 @@ public class Class8639
         int n2 = 0;
         int n3 = -1;
         for (int i = 44; i >= 9; --i) {
-            final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+            final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (!method29316(i)) {
                 if (Item.method11696(method20053.getItem()) == n) {
                     final int field34176 = method20053.field34176;
@@ -139,11 +139,11 @@ public class Class8639
     }
     
     public static void method29323(final int n, final int n2, final boolean b) {
-        Class8639.field36240.field4682.method27324(Class8639.field36240.player.field3008.field16154, n, n2, b ? Class2133.field12438 : Class2133.field12441, Class8639.field36240.player);
+        InvManagerUtil.mc.playerController.method27324(InvManagerUtil.mc.player.container.field16154, n, n2, b ? Class2133.field12438 : Class2133.field12441, InvManagerUtil.mc.player);
     }
     
     public static void method29324(final int n) {
-        Class8639.field36240.field4682.method27324(Class8639.field36240.player.field3008.field16154, n, 1, Class2133.field12439, Class8639.field36240.player);
+        InvManagerUtil.mc.playerController.method27324(InvManagerUtil.mc.player.container.field16154, n, 1, Class2133.field12439, InvManagerUtil.mc.player);
     }
     
     public static boolean method29325(final Class4055 class4055, final byte b) {
@@ -179,7 +179,7 @@ public class Class8639
         int n = -1;
         float n2 = -1.0f;
         for (int i = 9; i <= 44; ++i) {
-            final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+            final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (!method29316(i)) {
                 if (method20053.getItem() instanceof Class4077) {
                     final float n3 = ((Class4077)method20053.getItem()).method12281() + Class8742.method30195(Class7882.field32358, method20053) + Class8742.method30195(Class7882.field32362, method20053);
@@ -215,7 +215,7 @@ public class Class8639
         int n = -1;
         float n2 = 1.0f;
         for (int i = 44; i >= 9; --i) {
-            final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+            final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (method20053 != null) {
                 float n3;
                 if (class7096 == null) {
@@ -239,7 +239,7 @@ public class Class8639
     public static int method29335(final Class<? extends Item> clazz) {
         int n = 0;
         for (int i = 44; i >= 9; --i) {
-            final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+            final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (!method29316(i)) {
                 if (clazz.isInstance(method20053.getItem())) {
                     n += method20053.field34176;
@@ -252,7 +252,7 @@ public class Class8639
     public static int method29336(final Class<? extends Item> clazz) {
         int field34176 = 64;
         for (int i = 44; i >= 9; --i) {
-            final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+            final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (!method29316(i)) {
                 if (clazz.isInstance(method20053.getItem())) {
                     if (method20053.field34176 < field34176) {
@@ -267,7 +267,7 @@ public class Class8639
     public static int method29337(final Class<? extends Item> clazz) {
         final HashSet set = new HashSet();
         for (int i = 44; i >= 9; --i) {
-            final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+            final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (!method29316(i)) {
                 if (clazz.isInstance(method20053.getItem())) {
                     set.add(i);
@@ -281,7 +281,7 @@ public class Class8639
         int n = -1;
         float n2 = -1.0f;
         for (int i = 44; i >= 9; --i) {
-            final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+            final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (!method29316(i)) {
                 if (method20053.getItem() instanceof Class4087) {
                     final float n3 = (float)Class8742.method30195(Class7882.field32369, method20053);
@@ -299,7 +299,7 @@ public class Class8639
         int n = 0;
         int n2 = -1;
         for (int i = 0; i < 9; ++i) {
-            final ItemStack method2157 = Class8639.field36240.player.field3006.getStackInSlot(i);
+            final ItemStack method2157 = InvManagerUtil.mc.player.inventory.getStackInSlot(i);
             if (method2157 != null) {
                 if (clazz.isInstance(method2157.getItem())) {
                     final int field34176 = method2157.field34176;
@@ -317,7 +317,7 @@ public class Class8639
         int n = 0;
         int n2 = -1;
         for (int i = 0; i < 9; ++i) {
-            final ItemStack method2157 = Class8639.field36240.player.field3006.getStackInSlot(i);
+            final ItemStack method2157 = InvManagerUtil.mc.player.inventory.getStackInSlot(i);
             if (method2157 != null) {
                 for (int length = array.length, j = 0; j < length; ++j) {
                     if (method2157.getItem() == array[j]) {
@@ -338,7 +338,7 @@ public class Class8639
         int n2 = -1;
         final List<int[]> list = Arrays.asList(new int[][] { array });
         for (int i = 0; i < 9; ++i) {
-            final ItemStack method2157 = Class8639.field36240.player.field3006.getStackInSlot(i);
+            final ItemStack method2157 = InvManagerUtil.mc.player.inventory.getStackInSlot(i);
             if (method2157 != null) {
                 if (clazz.isInstance(method2157.getItem())) {
                     if (!list.contains(Item.method11696(method2157.getItem()))) {
@@ -358,7 +358,7 @@ public class Class8639
         int n2 = 0;
         int n3 = -1;
         for (int i = 0; i < 9; ++i) {
-            final ItemStack method2157 = Class8639.field36240.player.field3006.getStackInSlot(i);
+            final ItemStack method2157 = InvManagerUtil.mc.player.inventory.getStackInSlot(i);
             if (method2157 != null) {
                 if (Item.method11696(method2157.getItem()) == n) {
                     final int field34176 = method2157.field34176;
@@ -374,7 +374,7 @@ public class Class8639
     
     public static int method29343() {
         for (int i = 0; i < 9; ++i) {
-            if (Class8639.field36240.player.field3006.getStackInSlot(i) == null) {
+            if (InvManagerUtil.mc.player.inventory.getStackInSlot(i) == null) {
                 return i;
             }
         }
@@ -382,7 +382,7 @@ public class Class8639
     }
     
     public static boolean method29344(final int n) {
-        return method29345(Class8639.field36240.player.field3008.method10878(n).method20053());
+        return method29345(InvManagerUtil.mc.player.container.getSlot(n).method20053());
     }
     
     public static boolean method29345(final ItemStack class8321) {
@@ -404,11 +404,11 @@ public class Class8639
     }
     
     public static int method29346(final int n) {
-        if (Class8639.field36240.player.field3008.method10878(n).method20053() == null) {
+        if (InvManagerUtil.mc.player.container.getSlot(n).method20053() == null) {
             return 0;
         }
-        if (Class8639.field36240.player.field3008.method10878(n).method20053().getItem() instanceof Class4055) {
-            return ((Class4055)Class8639.field36240.player.field3008.method10878(n).method20053().getItem()).field18149 + Class8742.method30195(Class6257.method18590(0), Class8639.field36240.player.field3008.method10878(n).method20053());
+        if (InvManagerUtil.mc.player.container.getSlot(n).method20053().getItem() instanceof Class4055) {
+            return ((Class4055) InvManagerUtil.mc.player.container.getSlot(n).method20053().getItem()).field18149 + Class8742.method30195(Class6257.method18590(0), InvManagerUtil.mc.player.container.getSlot(n).method20053());
         }
         return 0;
     }
@@ -426,7 +426,7 @@ public class Class8639
     public static int method29348(final PlayerEntity playerEntity) {
         int n = 0;
         for (int i = 5; i <= 8; i = (byte)(i + 1)) {
-            n += method29347(playerEntity.field3006.getStackInSlot(i));
+            n += method29347(playerEntity.inventory.getStackInSlot(i));
         }
         return n;
     }
@@ -492,7 +492,7 @@ public class Class8639
     public static HashMap<Integer, Float> method29352() {
         final HashMap hashMap = new HashMap();
         for (int i = 0; i < 9; ++i) {
-            hashMap.put(i, method29351(Class8639.field36240.player.field3006.getStackInSlot(i)) * ((Class8639.field36240.player.field3006.field2743 != i) ? 1 : 2));
+            hashMap.put(i, method29351(InvManagerUtil.mc.player.inventory.getStackInSlot(i)) * ((InvManagerUtil.mc.player.inventory.field2743 != i) ? 1 : 2));
         }
         return hashMap;
     }
@@ -513,7 +513,7 @@ public class Class8639
     
     public static int method29354(final int n) {
         final int method29353 = method29353();
-        method29366(Class8639.field36240.player.field3008.field16154, n, method29353, Class2133.field12439, Class8639.field36240.player);
+        method29366(InvManagerUtil.mc.player.container.field16154, n, method29353, Class2133.field12439, InvManagerUtil.mc.player);
         return method29353;
     }
     
@@ -577,7 +577,7 @@ public class Class8639
     public static HashMap<Integer, ItemStack> method29359() {
         final HashMap hashMap = new HashMap();
         for (int i = 44; i >= 9; --i) {
-            final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+            final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (!method29316(i)) {
                 if (method20053.getItem() instanceof Class4089) {
                     hashMap.put(i, method20053);
@@ -590,7 +590,7 @@ public class Class8639
     public static HashMap<Integer, ItemStack> method29360() {
         final HashMap hashMap = new HashMap();
         for (int i = 44; i >= 9; --i) {
-            hashMap.put(i, Class8639.field36240.player.field3008.method10878(i).method20053());
+            hashMap.put(i, InvManagerUtil.mc.player.container.getSlot(i).method20053());
         }
         return hashMap;
     }
@@ -612,7 +612,7 @@ public class Class8639
     }
     
     public static ItemStack method29363(final int n) {
-        return Class8639.field36240.player.field3008.method10878(n).method20053();
+        return InvManagerUtil.mc.player.container.getSlot(n).method20053();
     }
     
     public static boolean method29364(final ItemStack class8321) {
@@ -649,9 +649,9 @@ public class Class8639
     public static ItemStack method29367(final int n, final int n2, final int n3, final Class2133 class2133, final PlayerEntity class2134, final boolean b) {
         ItemStack method27641 = null;
         if (n2 >= 0) {
-            method27641 = class2134.field3009.method10878(n2).method20053().method27641();
+            method27641 = class2134.field3009.getSlot(n2).method20053().method27641();
         }
-        final short method27642 = class2134.field3009.method10885(Class8639.field36240.player.field3006);
+        final short method27642 = class2134.field3009.method10885(InvManagerUtil.mc.player.inventory);
         final ItemStack method27643 = class2134.field3009.method10879(n2, n3, class2133, class2134);
         Label_0097: {
             if (method27641 != null) {
@@ -663,20 +663,20 @@ public class Class8639
             }
             method27641 = method27643;
         }
-        Class8639.field36240.method5269().method17292(new Class4256(n, n2, n3, class2133, method27641, method27642));
+        InvManagerUtil.mc.method5269().method17292(new Class4256(n, n2, n3, class2133, method27641, method27642));
         return method27643;
     }
     
     public static void method29368(final int n) {
-        Class8639.field36240.field4682.method27324(Class8639.field36240.player.field3008.field16154, n, 1, Class2133.field12441, Class8639.field36240.player);
+        InvManagerUtil.mc.playerController.method27324(InvManagerUtil.mc.player.container.field16154, n, 1, Class2133.field12441, InvManagerUtil.mc.player);
     }
     
     public static boolean method29369(final ItemStack class8321) {
         if (class8321 != null && class8321.getItem() instanceof Class4055) {
             final float n = (float)method29347(class8321);
             for (int i = 5; i < 45; ++i) {
-                if (Class8639.field36240.player.field3008.method10878(i).method20054()) {
-                    final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+                if (InvManagerUtil.mc.player.container.getSlot(i).method20054()) {
+                    final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
                     final Item method20054 = method20053.getItem();
                     if (method20054 instanceof Class4055) {
                         final Class4055 class8322 = (Class4055)method20054;
@@ -694,7 +694,7 @@ public class Class8639
     }
     
     public static void method29370(final int n, final int n2) {
-        Class8639.field36240.field4682.method27324(Class8639.field36240.player.field3008.field16154, n, n2, Class2133.field12439, Class8639.field36240.player);
+        InvManagerUtil.mc.playerController.method27324(InvManagerUtil.mc.player.container.field16154, n, n2, Class2133.field12439, InvManagerUtil.mc.player);
     }
     
     public static boolean method29371(final ItemStack class8321) {
@@ -718,7 +718,7 @@ public class Class8639
     }
     
     public static boolean method29372() {
-        for (final Class6601 class6601 : Class8639.field36240.player.field3008.field16151) {
+        for (final Class6601 class6601 : InvManagerUtil.mc.player.container.field16151) {
             if (class6601.method20054()) {
                 continue;
             }
@@ -739,7 +739,7 @@ public class Class8639
     
     public static List<ItemStack> method29374(final PlayerEntity playerEntity) {
         final ArrayList list = new ArrayList();
-        for (final Class6601 class513 : playerEntity.field3008.field16151) {
+        for (final Class6601 class513 : playerEntity.container.field16151) {
             if (!method29373(class513.method20053())) {
                 continue;
             }
@@ -751,7 +751,7 @@ public class Class8639
     public static int method29375(final Item class3820) {
         int n = 0;
         for (int i = 44; i >= 9; --i) {
-            final ItemStack method20053 = Class8639.field36240.player.field3008.method10878(i).method20053();
+            final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (!method29316(i)) {
                 if (method20053.getItem() == class3820) {
                     n += method20053.field34176;
@@ -762,6 +762,6 @@ public class Class8639
     }
     
     static {
-        field36240 = Minecraft.method5277();
+        mc = Minecraft.method5277();
     }
 }

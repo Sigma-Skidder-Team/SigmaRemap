@@ -73,7 +73,7 @@ public class Class6623 extends Class6601
                         class515.method27692(class514.method27690());
                         this.field26204.method2160(i, class515);
                     }
-                    else if (!this.field26205.field3006.method2362(class515)) {
+                    else if (!this.field26205.inventory.method2362(class515)) {
                         this.field26205.method2822(class515, false);
                     }
                 }

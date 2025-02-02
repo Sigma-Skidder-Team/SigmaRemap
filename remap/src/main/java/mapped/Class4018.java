@@ -27,7 +27,7 @@ public class Class4018 extends Class4017
     }
     
     @Override
-    public int method11826(final Class1852 class1852) {
+    public int tickRate(final Class1852 class1852) {
         return 20;
     }
     
@@ -92,7 +92,7 @@ public class Class4018 extends Class4017
             }
         }
         if (b) {
-            class1847.method6833().method21345(class1848, this, this.method11826(class1847));
+            class1847.method6833().method21345(class1848, this, this.tickRate(class1847));
         }
         class1847.method6783(class1848, this);
     }

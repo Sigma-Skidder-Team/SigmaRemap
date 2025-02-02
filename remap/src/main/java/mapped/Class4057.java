@@ -12,12 +12,12 @@ import java.util.List;
 
 public class Class4057 extends Item
 {
-    public Class4057(final Class8959 class8959) {
-        super(class8959);
+    public Class4057(final Properties properties) {
+        super(properties);
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
         final CompoundNBT method27660 = class8321.method27660("Explosion");
         if (method27660 != null) {
             method12262(method27660, list);

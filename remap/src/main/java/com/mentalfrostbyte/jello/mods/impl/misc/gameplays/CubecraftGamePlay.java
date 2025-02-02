@@ -28,7 +28,7 @@ public class CubecraftGamePlay extends Module
     
     @EventListener
     private void method10140(final Class5723 class5723) {
-        if (this.method9906() && CubecraftGamePlay.mc.player != null) {
+        if (this.isEnabled() && CubecraftGamePlay.mc.player != null) {
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4378) {
                 final Class4378 class5724 = (Class4378)method16998;
@@ -72,7 +72,7 @@ public class CubecraftGamePlay extends Module
                                 continue;
                             }
                             this.field15666.method10294(new Class7674(method17000.method35310(), (long)this.field15666.getNumberSettingValueByName("Auto Join delay") * 1000L));
-                            Client.method35173().method35197().method25776(new Class6224("Auto Join", "Joining a new game in 3 seconds.", (int)(this.field15666.getNumberSettingValueByName("Auto Join delay") - 1.0f) * 1000));
+                            Client.getInstance().method35197().method25776(new Class6224("Auto Join", "Joining a new game in 3 seconds.", (int)(this.field15666.getNumberSettingValueByName("Auto Join delay") - 1.0f) * 1000));
                             break;
                         }
                     }

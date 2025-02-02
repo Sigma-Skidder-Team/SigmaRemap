@@ -56,17 +56,17 @@ public class Item implements Class3832
         return Item.field17355.getOrDefault(key, Items.AIR);
     }
     
-    public Item(final Class8959 class8959) {
+    public Item(final Properties properties) {
         this.field17364 = Maps.newHashMap();
         this.method11705(new ResourceLocation("lefthanded"), Item.field17358);
         this.method11705(new ResourceLocation("cooldown"), Item.field17359);
         this.method11705(new ResourceLocation("custom_model_data"), Item.field17360);
-        this.field17365 = Class8959.method31788(class8959);
-        this.field17366 = Class8959.method31789(class8959);
-        this.field17369 = Class8959.method31790(class8959);
-        this.field17368 = Class8959.method31791(class8959);
-        this.field17367 = Class8959.method31792(class8959);
-        this.field17371 = Class8959.method31793(class8959);
+        this.field17365 = Properties.method31788(properties);
+        this.field17366 = Properties.method31789(properties);
+        this.field17369 = Properties.method31790(properties);
+        this.field17368 = Properties.method31791(properties);
+        this.field17367 = Properties.method31792(properties);
+        this.field17371 = Properties.method31793(properties);
         if (this.field17368 > 0) {
             this.method11705(new ResourceLocation("damaged"), Item.field17356);
             this.method11705(new ResourceLocation("damage"), Item.field17357);
@@ -155,7 +155,7 @@ public class Item implements Class3832
     }
     
     public ITextComponent method11715() {
-        return new Class2259(this.method11717(), new Object[0]);
+        return new Class2259(this.getTranslationKey(), new Object[0]);
     }
     
     @Override
@@ -170,12 +170,12 @@ public class Item implements Class3832
         return this.field17370;
     }
     
-    public String method11717() {
+    public String getTranslationKey() {
         return this.method11716();
     }
     
     public String method11718(final ItemStack class8321) {
-        return this.method11717();
+        return this.getTranslationKey();
     }
     
     public boolean method11719() {
@@ -215,7 +215,7 @@ public class Item implements Class3832
     public void method11727(final ItemStack class8321, final World class8322, final LivingEntity class8323, final int n) {
     }
     
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
     }
     
     public ITextComponent method11729(final ItemStack class8321) {

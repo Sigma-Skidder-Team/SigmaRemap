@@ -84,7 +84,7 @@ public class Class7967 extends Class7966
             }
         }
         catch (final IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
-            Client.method35173().method35187().method20242("Unable to invoke " + this.field32737.getClass().getName() + "::" + this.field32736.getName());
+            Client.getInstance().method35187().method20242("Unable to invoke " + this.field32737.getClass().getName() + "::" + this.field32736.getName());
             ((Throwable)ex).printStackTrace();
         }
     }

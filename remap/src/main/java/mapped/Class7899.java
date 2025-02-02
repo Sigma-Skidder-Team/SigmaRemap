@@ -40,7 +40,7 @@ public class Class7899 implements RunningGame
     
     @Nullable
     public GameSession getCurrentSession() {
-        final Class1848 field4683 = this.field32413.world;
+        final ClientWorld field4683 = this.field32413.world;
         return (GameSession)((field4683 != null) ? new Class6714(field4683, this.field32413.player, this.field32413.player.field4069) : null);
     }
     

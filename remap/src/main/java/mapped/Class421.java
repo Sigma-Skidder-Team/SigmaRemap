@@ -51,7 +51,7 @@ public class Class421 extends Class419
         super.method2032(class7006);
         if (!this.world.isRemote) {
             if (class7006.getType() == RayTraceResult.Type.ENTITY) {
-                final Entity method21452 = ((Class7007)class7006).method21452();
+                final Entity method21452 = ((EntityRayTraceResult)class7006).getEntity();
                 if (this.field2527 == null) {
                     method21452.attackEntityFrom(DamageSource.field32576, 5.0f);
                 }

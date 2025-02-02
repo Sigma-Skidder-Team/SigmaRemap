@@ -26,7 +26,7 @@ public class ClickTP extends ModuleWithSettings
     
     @EventListener
     public void method10272(final Class5739 class5739) {
-        if (this.method9906() && (ClickTP.mc.player.method1809() || !this.method9883("Sneak"))) {
+        if (this.isEnabled() && (ClickTP.mc.player.method1809() || !this.method9883("Sneak"))) {
             final BlockRayTraceResult method13697 = Class4609.method13697(ClickTP.mc.player.rotationYaw, ClickTP.mc.player.rotationPitch, this.getNumberSettingValueByName("Maximum range"));
             Vec3i method13698 = null;
             if (method13697 != null) {

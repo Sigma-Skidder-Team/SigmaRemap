@@ -21,7 +21,7 @@ public class PacketDumper extends Module
     public PacketDumper() {
         super(Category.MISC, "Packet dumper", "Dumps packets sent to and fro from the client and server");
         try {
-            final File file = new File(Client.method35173().method35208() + "/latest_packets.txt");
+            final File file = new File(Client.getInstance().method35208() + "/latest_packets.txt");
             if (!file.exists()) {
                 file.createNewFile();
             }
@@ -80,14 +80,14 @@ public class PacketDumper extends Module
     
     @EventListener
     private void method10236(final Class5721 class5721) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             this.method10235(class5721.method16990(), true);
         }
     }
     
     @EventListener
     private void method10237(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             this.method10235(class5723.method16998(), false);
         }
     }

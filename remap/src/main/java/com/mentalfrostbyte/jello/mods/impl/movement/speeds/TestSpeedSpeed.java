@@ -33,9 +33,9 @@ public class TestSpeedSpeed extends Module
     
     @EventListener
     public void method10141(final Class5744 class5744) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (TestSpeedSpeed.mc.player != null) {
-                if (!Client.method35173().method35189().method21551(Fly.class).method9906()) {
+                if (!Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
                     if (TestSpeedSpeed.mc.player.onGround) {
                         if (class5744.method17046()) {
                             class5744.method17037(class5744.method17036() + 1.0E-14);
@@ -48,7 +48,7 @@ public class TestSpeedSpeed extends Module
     
     @EventListener
     public void method10142(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (TestSpeedSpeed.mc.player.onGround) {
                 if (TestSpeedSpeed.mc.player.collidedVertically) {
                     if (TestSpeedSpeed.mc.player.field2970 != 0.0f || TestSpeedSpeed.mc.player.field2968 != 0.0f) {
@@ -86,10 +86,10 @@ public class TestSpeedSpeed extends Module
     @EventListener
     @Class6759
     public void method10143(final Class5722 class5722) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!Jesus.method10433()) {
-                if (!Client.method35173().method35189().method21551(Fly.class).method9906()) {
-                    if (TestSpeedSpeed.mc.gameSettings.field23439.method1056() && Client.method35173().method35189().method21551(BlockFly.class).method9906()) {
+                if (!Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
+                    if (TestSpeedSpeed.mc.gameSettings.field23439.method1056() && Client.getInstance().method35189().method21551(BlockFly.class).isEnabled()) {
                         return;
                     }
                     this.field15671 = Class7482.method23144()[0];
@@ -102,7 +102,7 @@ public class TestSpeedSpeed extends Module
     
     @EventListener
     private void method10144(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (TestSpeedSpeed.mc.player != null) {
                 if (class5723.method16998() instanceof Class4273) {
                     if (((Class4273)class5723.method16998()).method12822() != TestSpeedSpeed.mc.player.getEntityId()) {}

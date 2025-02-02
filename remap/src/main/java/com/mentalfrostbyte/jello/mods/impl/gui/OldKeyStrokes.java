@@ -16,21 +16,21 @@ public class OldKeyStrokes extends Module
     
     @EventListener
     private void method10534(final Class5740 class5740) {
-        if (this.method9906() && OldKeyStrokes.mc.player != null) {
+        if (this.isEnabled() && OldKeyStrokes.mc.player != null) {
             return;
         }
     }
     
     @EventListener
     private void method10535(final Class5752 class5752) {
-        if (this.method9906() && OldKeyStrokes.mc.player != null) {
+        if (this.isEnabled() && OldKeyStrokes.mc.player != null) {
             return;
         }
     }
     
     @EventListener
     private void method10536(final Class5748 class5748) {
-        if (this.method9906() && OldKeyStrokes.mc.player != null) {
+        if (this.isEnabled() && OldKeyStrokes.mc.player != null) {
             if (class5748.method17055() != Class1958.field10671) {
                 if (class5748.method17055() != Class1958.field10672) {}
             }

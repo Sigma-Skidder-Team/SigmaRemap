@@ -9,8 +9,8 @@ public class Class4051 extends Item
     private final int field18142;
     private final String field18143;
     
-    public Class4051(final int field18142, final String str, final Class8959 class8959) {
-        super(class8959);
+    public Class4051(final int field18142, final String str, final Properties properties) {
+        super(properties);
         this.field18142 = field18142;
         this.field18143 = "textures/entity/horse/armor/horse_armor_" + str + ".png";
     }

@@ -36,10 +36,10 @@ public class HypixelFly extends Module {
     }
 
     @Override
-    public void method9879() {
-        String method9887 = this.method9887("Mode");
+    public void onEnable() {
+        String method9887 = this.getStringSettingValueByName("Mode");
         if ((method9887.equals("Fast") || method9887.equals("NoDmg")) && !Class9171.field38852) {
-            Client.method35173().method35197().method25776(new Class6224("Hypixel " + method9887 + " fly", "Set " + method9887 + " mode before playing"));
+            Client.getInstance().method35197().method25776(new Class6224("Hypixel " + method9887 + " fly", "Set " + method9887 + " mode before playing"));
             method9887 = "Basic";
         }
         this.field16078 = 1.0f;
@@ -106,7 +106,7 @@ public class HypixelFly extends Module {
                 {
                     if (ColorUtils.method19146()) {
                         if (HypixelFly.field16077 == 0.0 || ColorUtils.method19160(HypixelFly.mc.player, 0.001f)) {
-                            String method9887 = this.method9887("Mode");
+                            String method9887 = this.getStringSettingValueByName("Mode");
                             if (method9887.equals("Fast") || method9887.equals("NoDmg")) {
                                 if (!Class9171.field38852) {
                                     method9887 = "Basic";
@@ -167,7 +167,7 @@ public class HypixelFly extends Module {
             }
             return;
         }
-        String method19178 = this.method9887("Mode");
+        String method19178 = this.getStringSettingValueByName("Mode");
         if ((method19178.equals("Fast") || method19178.equals("NoDmg")) && !Class9171.field38852) {
             method19178 = "Basic";
         }
@@ -175,7 +175,7 @@ public class HypixelFly extends Module {
         if (this.field16078 < 2.1) {
             this.field16078 = 1.0f;
         }
-        if (!Client.method35173().method35189().method21551(Timer.class).method9906()) {
+        if (!Client.getInstance().method35189().method21551(Timer.class).isEnabled()) {
             HypixelFly.mc.timer.timerSpeed = this.field16078;
         }
         if (this.field16079) {
@@ -348,7 +348,7 @@ public class HypixelFly extends Module {
 
     @EventListener
     public void method10774(final Class5741 class5741) {
-        String method9887 = this.method9887("Mode");
+        String method9887 = this.getStringSettingValueByName("Mode");
         if (method9887.equals("Fast") || method9887.equals("NoDmg")) {
             if (!Class9171.field38852) {
                 method9887 = "Basic";

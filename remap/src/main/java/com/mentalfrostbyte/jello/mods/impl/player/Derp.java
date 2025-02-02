@@ -29,7 +29,7 @@ public class Derp extends Module
     
     @EventListener
     public void method10456(final Class5744 class5744) {
-        if (!this.method9906() || !class5744.method17046()) {
+        if (!this.isEnabled() || !class5744.method17046()) {
             return;
         }
         if (this.method9883("Sneak")) {
@@ -46,7 +46,7 @@ public class Derp extends Module
             this.field15871 = 0;
             Derp.mc.player.method2707(Class316.values()[this.field15869.nextInt(1)]);
         }
-        final String method9887 = this.method9887("Rotation Mode");
+        final String method9887 = this.getStringSettingValueByName("Rotation Mode");
         switch (method9887) {
             case "Random": {
                 class5744.method17043(this.field15869.nextFloat() * 360.0f);
@@ -65,7 +65,7 @@ public class Derp extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15872 = (int) Derp.mc.player.rotationYaw;
     }
 }

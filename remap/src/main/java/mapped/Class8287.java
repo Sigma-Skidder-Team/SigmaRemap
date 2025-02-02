@@ -42,7 +42,7 @@ public class Class8287
                     ++field34075;
                 }
             }
-            final int method5768 = Config.method28894().field4636.method5768();
+            final int method5768 = Config.method28894().worldRenderer.method5768();
             if (method5768 != Class8287.field34076) {
                 Class8287.field34075 = field34075;
                 Class8287.field34076 = method5768;

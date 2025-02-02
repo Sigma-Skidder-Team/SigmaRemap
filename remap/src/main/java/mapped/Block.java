@@ -402,22 +402,22 @@ public class Block implements Class3832
         Class9324.method34536(class7097, class7098);
     }
     
-    public int method11826(final Class1852 class1852) {
+    public int tickRate(final Class1852 class1852) {
         return 10;
     }
     
     @Nullable
     @Deprecated
-    public Class434 method11827(final BlockState class7096, final World class7097, final BlockPos class7098) {
+    public INamedContainerProvider getContainer(final BlockState class7096, final World class7097, final BlockPos class7098) {
         return null;
     }
     
     @Deprecated
-    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onBlockAdded(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
     }
     
     @Deprecated
-    public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (this.method11802()) {
             if (class7096.getBlock() != class7099.getBlock()) {
                 class7097.method6730(class7098);
@@ -426,7 +426,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public float method11830(final BlockState class7096, final PlayerEntity class7097, final IBlockReader class7098, final BlockPos class7099) {
+    public float getPlayerRelativeBlockHardness(final BlockState class7096, final PlayerEntity class7097, final IBlockReader class7098, final BlockPos class7099) {
         final float method21718 = class7096.method21718(class7098, class7099);
         if (method21718 != -1.0f) {
             return class7097.method2824(class7096) / method21718 / (class7097.method2825(class7096) ? 30 : 100);
@@ -435,10 +435,10 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public void method11831(final BlockState class7096, final World class7097, final BlockPos class7098, final ItemStack class7099) {
+    public void spawnAdditionalDrops(final BlockState class7096, final World class7097, final BlockPos class7098, final ItemStack class7099) {
     }
     
-    public ResourceLocation method11832() {
+    public ResourceLocation getLootTable() {
         if (this.field17411 == null) {
             final ResourceLocation method503 = Registry.BLOCK.getKey(this);
             this.field17411 = new ResourceLocation(method503.method7798(), "blocks/" + method503.method7797());
@@ -447,8 +447,8 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public List<ItemStack> method11833(final BlockState class7096, final Class9098 class7097) {
-        final ResourceLocation method11832 = this.method11832();
+    public List<ItemStack> getDrops(final BlockState class7096, final Class9098 class7097) {
+        final ResourceLocation method11832 = this.getLootTable();
         if (method11832 != Class9020.field38063) {
             final Class7529 method11833 = class7097.method32877(Class6683.field26368, class7096).method32883(Class7104.field27719);
             return method11833.method23588().getServer().method1581().method6402(method11832).method34485(method11833);
@@ -456,36 +456,36 @@ public class Block implements Class3832
         return Collections.emptyList();
     }
     
-    public static List<ItemStack> method11834(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final TileEntity class7099) {
+    public static List<ItemStack> getDrops(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final TileEntity class7099) {
         return class7096.method21743(new Class9098(class7097).method32873(class7097.rand).method32877(Class6683.field26367, class7098).method32877(Class6683.field26370, ItemStack.EMPTY).method32878(Class6683.field26369, class7099));
     }
     
-    public static List<ItemStack> method11835(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final TileEntity class7099, final Entity class7100, final ItemStack class7101) {
+    public static List<ItemStack> getDrops(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final TileEntity class7099, final Entity class7100, final ItemStack class7101) {
         return class7096.method21743(new Class9098(class7097).method32873(class7097.rand).method32877(Class6683.field26367, class7098).method32877(Class6683.field26370, class7101).method32878(Class6683.field26362, class7100).method32878(Class6683.field26369, class7099));
     }
     
-    public static void method11836(final BlockState class7096, final World class7097, final BlockPos class7098) {
+    public static void spawnDrops(final BlockState class7096, final World class7097, final BlockPos class7098) {
         if (class7097 instanceof Class1849) {
-            method11834(class7096, (Class1849)class7097, class7098, null).forEach(class7101 -> method11839(class7099, class7100, class7101));
+            getDrops(class7096, (Class1849)class7097, class7098, null).forEach(class7101 -> spawnAsEntity(class7099, class7100, class7101));
         }
         class7096.method21742(class7097, class7098, ItemStack.EMPTY);
     }
     
-    public static void method11837(final BlockState class7096, final World class7097, final BlockPos class7098, final TileEntity class7099) {
+    public static void spawnDrops(final BlockState class7096, final World class7097, final BlockPos class7098, final TileEntity class7099) {
         if (class7097 instanceof Class1849) {
-            method11834(class7096, (Class1849)class7097, class7098, class7099).forEach(class7102 -> method11839(class7100, class7101, class7102));
+            getDrops(class7096, (Class1849)class7097, class7098, class7099).forEach(class7102 -> spawnAsEntity(class7100, class7101, class7102));
         }
         class7096.method21742(class7097, class7098, ItemStack.EMPTY);
     }
     
-    public static void method11838(final BlockState class7096, final World class7097, final BlockPos class7098, final TileEntity class7099, final Entity class7100, final ItemStack class7101) {
+    public static void spawnAsEntity(final BlockState class7096, final World class7097, final BlockPos class7098, final TileEntity class7099, final Entity class7100, final ItemStack class7101) {
         if (class7097 instanceof Class1849) {
-            method11835(class7096, (Class1849)class7097, class7098, class7099, class7100, class7101).forEach(class7104 -> method11839(class7102, class7103, class7104));
+            getDrops(class7096, (Class1849)class7097, class7098, class7099, class7100, class7101).forEach(class7104 -> spawnAsEntity(class7102, class7103, class7104));
         }
         class7096.method21742(class7097, class7098, class7101);
     }
     
-    public static void method11839(final World class1847, final BlockPos class1848, final ItemStack class1849) {
+    public static void spawnAsEntity(final World class1847, final BlockPos class1848, final ItemStack class1849) {
         if (!class1847.isRemote) {
             if (!class1849.method27620()) {
                 if (class1847.method6765().method31216(Class8878.field37320)) {
@@ -497,7 +497,7 @@ public class Block implements Class3832
         }
     }
     
-    public void method11840(final World class1847, final BlockPos class1848, int i) {
+    public void dropXpOnBlockBreak(final World class1847, final BlockPos class1848, int i) {
         if (!class1847.isRemote) {
             if (class1847.method6765().method31216(Class8878.field37320)) {
                 while (i > 0) {
@@ -560,7 +560,7 @@ public class Block implements Class3832
     public void method11852(final World class1847, final PlayerEntity class1848, final BlockPos class1849, final BlockState class1850, final TileEntity class1851, final ItemStack class1852) {
         class1848.method2859(Class8276.field33979.method8449(this));
         class1848.method2876(0.005f);
-        method11838(class1850, class1847, class1849, class1851, class1848, class1852);
+        spawnAsEntity(class1850, class1847, class1849, class1851, class1848, class1852);
     }
     
     public void method11853(final World class1847, final BlockPos class1848, final BlockState class1849, final LivingEntity class1850, final ItemStack class1851) {
@@ -571,10 +571,10 @@ public class Block implements Class3832
     }
     
     public ITextComponent method11855() {
-        return new Class2259(this.method11856(), new Object[0]);
+        return new Class2259(this.getTranslationKey(), new Object[0]);
     }
     
-    public String method11856() {
+    public String getTranslationKey() {
         if (this.field17412 == null) {
             this.field17412 = Util.method27836("block", Registry.BLOCK.getKey(this));
         }
@@ -708,7 +708,7 @@ public class Block implements Class3832
         return "Block{" + Registry.BLOCK.getKey(this) + "}";
     }
     
-    public void method11883(final ItemStack class8321, final IBlockReader class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void addInformation(final ItemStack class8321, final IBlockReader class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
     }
     
     static {
@@ -850,7 +850,7 @@ public class Block implements Class3832
         }
 
         public Properties method34296(final Block class3833) {
-            this.field39842 = class3833.method11832();
+            this.field39842 = class3833.getLootTable();
             return this;
         }
     }

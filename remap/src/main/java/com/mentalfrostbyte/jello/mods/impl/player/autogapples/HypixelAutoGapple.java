@@ -25,7 +25,7 @@ public class HypixelAutoGapple extends PremiumModule
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field16026 = -1;
         this.field16028 = 20;
         this.field16029 = -1;
@@ -33,9 +33,9 @@ public class HypixelAutoGapple extends PremiumModule
     
     @EventListener
     public void method10697(final Class5744 class5744) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5744.method17046()) {
-                if (!(HypixelAutoGapple.mc.field4700 instanceof Class726)) {
+                if (!(HypixelAutoGapple.mc.currentScreen instanceof Class726)) {
                     if (this.field16028 < 20) {
                         ++this.field16028;
                     }
@@ -76,15 +76,15 @@ public class HypixelAutoGapple extends PremiumModule
                                     HypixelAutoGapple.mc.method5269().method17292(new Class4307(Class316.field1877));
                                     HypixelAutoGapple.mc.method5269().method17292(new Class4321(this.field16029 + ((this.field16029 != 8) ? 1 : -1)));
                                     HypixelAutoGapple.mc.method5269().method17292(new Class4321(this.field16029));
-                                    HypixelAutoGapple.mc.player.field3006.field2743 = this.field16027;
+                                    HypixelAutoGapple.mc.player.inventory.field2743 = this.field16027;
                                     this.field16027 = -1;
                                     this.field16026 = -1;
                                     this.field16029 = -1;
                                 }
                             }
                             else {
-                                this.field16027 = HypixelAutoGapple.mc.player.field3006.field2743;
-                                HypixelAutoGapple.mc.player.field3006.field2743 = this.field16029;
+                                this.field16027 = HypixelAutoGapple.mc.player.inventory.field2743;
+                                HypixelAutoGapple.mc.player.inventory.field2743 = this.field16029;
                             }
                         }
                     }

@@ -409,19 +409,19 @@ public class ColorUtils
         return (n >> 24 & 0xFF) / 255.0f;
     }
     
-    public static Entity method19141(final float n, final float n2, final float n3, final double n4) {
-        final Class7007 method19142 = method19142(n, n2, n3, n4);
+    public static Entity getEntityFromRayTrace(final float n, final float n2, final float n3, final double n4) {
+        final EntityRayTraceResult method19142 = rayTraceFromPlayer(n, n2, n3, n4);
         if (method19142 == null) {
             return null;
         }
-        return method19142.method21452();
+        return method19142.getEntity();
     }
     
-    public static Class7007 method19142(final float n, final float n2, final float n3, final double n4) {
+    public static EntityRayTraceResult rayTraceFromPlayer(final float n, final float n2, final float n3, final double n4) {
         final Vec3d class5487 = new Vec3d(ColorUtils.field25541.player.posX, ColorUtils.field25541.player.posY + ColorUtils.field25541.player.method1892(), ColorUtils.field25541.player.posZ);
         final Entity method5303 = ColorUtils.field25541.method5303();
         if (method5303 != null && ColorUtils.field25541.world != null) {
-            double n5 = ColorUtils.field25541.field4682.method27315();
+            double n5 = ColorUtils.field25541.playerController.method27315();
             if (n3 != 0.0f) {
                 n5 = n3;
             }
@@ -431,7 +431,7 @@ public class ColorUtils
         return null;
     }
     
-    public static Class7007 method19143(final World class1847, final Entity class1848, final Vec3d class1849, final Vec3d class1850, final AxisAlignedBB class1851, final Predicate<Entity> predicate, final double n, final double n2) {
+    public static EntityRayTraceResult method19143(final World class1847, final Entity class1848, final Vec3d class1849, final Vec3d class1850, final AxisAlignedBB class1851, final Predicate<Entity> predicate, final double n, final double n2) {
         double n3 = n;
         Entity class1852 = null;
         for (final Entity class1853 : class1847.method6737(class1848, class1851, predicate)) {
@@ -456,10 +456,10 @@ public class ColorUtils
                 n3 = method18498;
             }
         }
-        return (class1852 != null) ? new Class7007(class1852) : null;
+        return (class1852 != null) ? new EntityRayTraceResult(class1852) : null;
     }
     
-    public static Class7007 method19144(final Entity class399, final float n, final float n2, final Predicate<Entity> predicate, final double n3) {
+    public static EntityRayTraceResult method19144(final Entity class399, final float n, final float n2, final Predicate<Entity> predicate, final double n3) {
         double n4 = n3 * n3;
         Entity class400 = null;
         Vec3d method16742 = null;
@@ -482,7 +482,7 @@ public class ColorUtils
             class400 = class402;
             n4 = method16746;
         }
-        return (class400 != null && method16742 != null) ? new Class7007(class400, method16742) : null;
+        return (class400 != null && method16742 != null) ? new EntityRayTraceResult(class400, method16742) : null;
     }
     
     public static boolean method19145(final Vec3d class5487, final AxisAlignedBB class5488) {
@@ -646,8 +646,8 @@ public class ColorUtils
     public static void method19165(final Entity class399, final boolean b) {
         final boolean equals = Class9367.field40167.equals(Class7906.field32452);
         final Class5750 class400 = new Class5750(class399, true);
-        Client.method35173().method35188().method21097(class400);
-        if (!class400.method16962()) {
+        Client.getInstance().method35188().method21097(class400);
+        if (!class400.isCancelled()) {
             if (equals) {
                 if (b) {
                     ColorUtils.field25541.player.method2707(Class316.field1877);
@@ -682,7 +682,7 @@ public class ColorUtils
                     if (!ColorUtils.field25541.player.onGround) {
                         break Label_0330;
                     }
-                    if (!Client.method35173().method35189().method21551(Criticals.class).method9906()) {
+                    if (!Client.getInstance().method35189().method21551(Criticals.class).isEnabled()) {
                         break Label_0330;
                     }
                 }
@@ -695,7 +695,7 @@ public class ColorUtils
                 }
             }
             class400.method17060();
-            Client.method35173().method35188().method21097(class400);
+            Client.getInstance().method35188().method21097(class400);
         }
     }
     
@@ -750,7 +750,7 @@ public class ColorUtils
     
     public static void method19169() {
         if (ColorUtils.field25541.method5303() instanceof PlayerEntity) {
-            if (Client.method35173().method35193().method32144()) {
+            if (Client.getInstance().method35193().method32144()) {
                 if (ColorUtils.field25541.field4644.field9406 != null) {
                     ColorUtils.field25541.field4644.field9406.close();
                 }
@@ -793,7 +793,7 @@ public class ColorUtils
             if (!(class399 instanceof Class759)) {
                 if (!(class399 instanceof Class763)) {
                     if (!(class399 instanceof Class853)) {
-                        if (!(class399 instanceof Class760)) {
+                        if (!(class399 instanceof FlyingEntity)) {
                             return Class2068.field11840;
                         }
                     }
@@ -854,7 +854,7 @@ public class ColorUtils
         return (String[])hashMap.values().toArray(new String[hashMap.values().size()]);
     }
     
-    public static void method19176(final Class9575 class9575) {
+    public static void method19176(final ServerData class9575) {
         if (ColorUtils.field25546 = class9575.field41613.toLowerCase().contains("hypixel.net")) {
             new Thread(() -> {
                 try {
@@ -915,7 +915,7 @@ public class ColorUtils
         if (class399 == ColorUtils.field25541.player || class399 == Blink.field15771) {
             return false;
         }
-        if (Client.method35173().method35190().method29878(class399)) {
+        if (Client.getInstance().method35190().method29878(class399)) {
             return false;
         }
         if (!(class399 instanceof LivingEntity)) {
@@ -933,7 +933,7 @@ public class ColorUtils
         if (!b && class399 instanceof PlayerEntity) {
             return false;
         }
-        if (class399 instanceof PlayerEntity && Client.method35173().method35191().method31751(class399)) {
+        if (class399 instanceof PlayerEntity && Client.getInstance().method35191().method31751(class399)) {
             return false;
         }
         if (!b3 && class399.method1823()) {
@@ -948,7 +948,7 @@ public class ColorUtils
         if (!class399.method1850()) {
             if (class399 instanceof PlayerEntity) {
                 if (Class9011.method32262((PlayerEntity)class399)) {
-                    if (Client.method35173().method35189().method21551(Teams.class).method9906()) {
+                    if (Client.getInstance().method35189().method21551(Teams.class).isEnabled()) {
                         return false;
                     }
                 }

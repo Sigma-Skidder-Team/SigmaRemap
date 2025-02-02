@@ -44,7 +44,7 @@ public class BowAimbot extends Module
     
     @EventListener
     private void method10191(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             if (!(BowAimbot.mc.player.method2766().getItem() instanceof Class4087)) {
                 this.field15703.clear();
             }
@@ -63,7 +63,7 @@ public class BowAimbot extends Module
     
     @EventListener
     private void method10192(final Class5740 class5740) {
-        if (this.method9906() && !this.method9883("Silent")) {
+        if (this.isEnabled() && !this.method9883("Silent")) {
             if (!this.field15703.isEmpty()) {
                 final float[] method30921 = Class8845.method30921(this.field15703.get(0));
                 BowAimbot.mc.player.rotationYaw = method30921[0];
@@ -80,7 +80,7 @@ public class BowAimbot extends Module
             if (class399 == BowAimbot.mc.player) {
                 iterator.remove();
             }
-            else if (Client.method35173().method35190().method29878(class399)) {
+            else if (Client.getInstance().method35190().method29878(class399)) {
                 iterator.remove();
             }
             else if (!(class399 instanceof LivingEntity)) {
@@ -101,7 +101,7 @@ public class BowAimbot extends Module
             else if (!this.method9883("Players") && class399 instanceof PlayerEntity) {
                 iterator.remove();
             }
-            else if (this.method9883("Anti-Bot") && class399 instanceof PlayerEntity && Client.method35173().method35191().method31751(class399)) {
+            else if (this.method9883("Anti-Bot") && class399 instanceof PlayerEntity && Client.getInstance().method35191().method31751(class399)) {
                 iterator.remove();
             }
             else if (!this.method9883("Invisible") && class399.method1823()) {
@@ -123,7 +123,7 @@ public class BowAimbot extends Module
                 iterator.remove();
             }
         }
-        final String method19139 = this.method9887("Sort mode");
+        final String method19139 = this.getStringSettingValueByName("Sort mode");
         switch (method19139) {
             case "Range": {
                 Collections.sort((List<Object>)method19138, (Comparator<? super Object>)new Class4443(this));

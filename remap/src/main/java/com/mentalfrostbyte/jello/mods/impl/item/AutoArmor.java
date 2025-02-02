@@ -33,11 +33,11 @@ public class AutoArmor extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         if (!this.field15964.method23937()) {
             this.field15964.method23932();
         }
-        this.field15965 = (AutoArmor.mc.field4700 instanceof Class518);
+        this.field15965 = (AutoArmor.mc.currentScreen instanceof Class518);
         AutoArmor.field15966 = false;
     }
     
@@ -49,17 +49,17 @@ public class AutoArmor extends Module
     @EventListener
     @Class6757
     public void method10601(final Class5743 class5743) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (!this.field15964.method23937()) {
             this.field15964.method23932();
         }
-        if (this.method9887("Mode").equals("OpenInv") && !(AutoArmor.mc.field4700 instanceof Class518)) {
+        if (this.getStringSettingValueByName("Mode").equals("OpenInv") && !(AutoArmor.mc.currentScreen instanceof Class518)) {
             return;
         }
         final long n = (long)(this.getNumberSettingValueByName("Delay") * 1000.0f);
-        final String method9887 = this.method9887("Elytra");
+        final String method9887 = this.getStringSettingValueByName("Elytra");
         switch (method9887) {
             case "Ignore": {
                 this.field15967 = false;
@@ -82,16 +82,16 @@ public class AutoArmor extends Module
             }
         }
         this.field15968 = AutoArmor.mc.player.field2967;
-        if (AutoArmor.mc.field4700 instanceof Class518) {
+        if (AutoArmor.mc.currentScreen instanceof Class518) {
             this.field15965 = false;
         }
-        if ((AutoArmor.mc.field4700 == null || AutoArmor.mc.field4700 instanceof Class518 || AutoArmor.mc.field4700 instanceof Class535) && this.field15964.method23935() > n) {
+        if ((AutoArmor.mc.currentScreen == null || AutoArmor.mc.currentScreen instanceof Class518 || AutoArmor.mc.currentScreen instanceof ChatScreen) && this.field15964.method23935() > n) {
             AutoArmor.field15966 = false;
-            this.method10602(this.method9887("Mode").equalsIgnoreCase("FakeInv"));
+            this.method10602(this.getStringSettingValueByName("Mode").equalsIgnoreCase("FakeInv"));
         }
         for (final Class2215 class5744 : Class2215.values()) {
-            if (AutoArmor.mc.player.field3008.method10878(8 - class5744.method8402()).method20054()) {
-                if (Class8639.method29344(8 - class5744.method8402())) {
+            if (AutoArmor.mc.player.container.getSlot(8 - class5744.getIndex()).method20054()) {
+                if (InvManagerUtil.method29344(8 - class5744.getIndex())) {
                     return;
                 }
             }
@@ -99,7 +99,7 @@ public class AutoArmor extends Module
                 return;
             }
         }
-        if (!this.field15965 && !(AutoArmor.mc.field4700 instanceof Class518) && this.field15964.method23935() > 0L) {
+        if (!this.field15965 && !(AutoArmor.mc.currentScreen instanceof Class518) && this.field15964.method23935() > 0L) {
             this.field15965 = true;
             AutoArmor.mc.method5269().method17292(new Class4389(-1));
         }
@@ -108,8 +108,8 @@ public class AutoArmor extends Module
     private void method10602(final boolean b) {
         for (final Class2215 class2215 : Class2215.values()) {
             Label_0107: {
-                if (AutoArmor.mc.player.field3008.method10878(8 - class2215.method8402()).method20054()) {
-                    if (Class8639.method29369(AutoArmor.mc.player.field3008.method10878(8 - class2215.method8402()).method20053())) {
+                if (AutoArmor.mc.player.container.getSlot(8 - class2215.getIndex()).method20054()) {
+                    if (InvManagerUtil.method29369(AutoArmor.mc.player.container.getSlot(8 - class2215.getIndex()).method20053())) {
                         if (!this.field15967) {
                             break Label_0107;
                         }
@@ -119,26 +119,26 @@ public class AutoArmor extends Module
                     }
                 }
                 for (int j = 9; j < 45; ++j) {
-                    if (AutoArmor.mc.player.field3008.method10878(j).method20054()) {
-                        final ItemStack method20053 = AutoArmor.mc.player.field3008.method10878(j).method20053();
+                    if (AutoArmor.mc.player.container.getSlot(j).method20054()) {
+                        final ItemStack method20053 = AutoArmor.mc.player.container.getSlot(j).method20053();
                         if (method20053.getItem() instanceof Class4080) {
                             if (this.field15967) {
-                                if (!(AutoArmor.mc.player.field3006.getStackInSlot(36 + Class2215.field13604.method8402()).getItem() instanceof Class4080)) {
+                                if (!(AutoArmor.mc.player.inventory.getStackInSlot(36 + Class2215.field13604.getIndex()).getItem() instanceof Class4080)) {
                                     final Class4080 class2216 = (Class4080)method20053.getItem();
                                     if (Class2215.field13604 == class2215) {
-                                        if (!Client.method35173().method35189().method21551(AutoArmor.class).method9883("Fake Items") || Client.method35173().method35195().method28162(j) >= 1500L) {
+                                        if (!Client.getInstance().method35189().method21551(AutoArmor.class).method9883("Fake Items") || Client.getInstance().method35195().method28162(j) >= 1500L) {
                                             this.method10603(b);
-                                            if (!(AutoArmor.mc.player.field3006.getStackInSlot(36 + class2215.method8402()).getItem() instanceof Class4099)) {
-                                                Class8639.method29323(8 - class2215.method8402(), 0, true);
+                                            if (!(AutoArmor.mc.player.inventory.getStackInSlot(36 + class2215.getIndex()).getItem() instanceof AirBlock)) {
+                                                InvManagerUtil.method29323(8 - class2215.getIndex(), 0, true);
                                             }
-                                            Class8639.method29367(AutoArmor.mc.player.field3008.field16154, j, 0, Class2133.field12438, AutoArmor.mc.player, true);
+                                            InvManagerUtil.method29367(AutoArmor.mc.player.container.field16154, j, 0, Class2133.field12438, AutoArmor.mc.player, true);
                                             this.field15964.method23934();
                                             AutoArmor.field15966 = true;
-                                            if (this.method9887("Elytra").equals("On Use")) {
+                                            if (this.getStringSettingValueByName("Elytra").equals("On Use")) {
                                                 AutoArmor.mc.method5269().method17292(new Class4336(AutoArmor.mc.player, Class287.field1599));
                                                 AutoArmor.mc.player.setFlag(7, true);
                                             }
-                                            if (Client.method35173().method35189().method21551(AutoArmor.class).getNumberSettingValueByName("Delay") > 0.0f) {
+                                            if (Client.getInstance().method35189().method21551(AutoArmor.class).getNumberSettingValueByName("Delay") > 0.0f) {
                                                 return;
                                             }
                                         }
@@ -151,24 +151,24 @@ public class AutoArmor extends Module
                             if (!this.field15967) {
                                 final Class4055 class2217 = (Class4055)method20053.getItem();
                                 if (class2217.method12257() == class2215) {
-                                    if (Class8639.method29369(method20053)) {
-                                        if (Class8639.method29347(method20053) > 0) {
-                                            if (!Client.method35173().method35189().method21551(AutoArmor.class).method9883("Fake Items") || Client.method35173().method35195().method28162(j) >= 1500L) {
+                                    if (InvManagerUtil.method29369(method20053)) {
+                                        if (InvManagerUtil.method29347(method20053) > 0) {
+                                            if (!Client.getInstance().method35189().method21551(AutoArmor.class).method9883("Fake Items") || Client.getInstance().method35195().method28162(j) >= 1500L) {
                                                 this.method10603(b);
-                                                final Item method20054 = AutoArmor.mc.player.field3006.getStackInSlot(36 + class2217.method12257().method8402()).getItem();
+                                                final Item method20054 = AutoArmor.mc.player.inventory.getStackInSlot(36 + class2217.method12257().getIndex()).getItem();
                                                 if (!(method20054 instanceof Class4080)) {
-                                                    if (!(method20054 instanceof Class4099)) {
-                                                        Class8639.method29368(8 - class2217.method12257().method8402());
+                                                    if (!(method20054 instanceof AirBlock)) {
+                                                        InvManagerUtil.method29368(8 - class2217.method12257().getIndex());
                                                     }
                                                 }
                                                 else {
-                                                    Class8639.method29323(8 - class2215.method8402(), 0, true);
+                                                    InvManagerUtil.method29323(8 - class2215.getIndex(), 0, true);
                                                 }
                                                 System.out.println("swap" + method20054);
-                                                Class8639.method29367(AutoArmor.mc.player.field3008.field16154, j, 0, Class2133.field12438, AutoArmor.mc.player, true);
+                                                InvManagerUtil.method29367(AutoArmor.mc.player.container.field16154, j, 0, Class2133.field12438, AutoArmor.mc.player, true);
                                                 this.field15964.method23934();
                                                 AutoArmor.field15966 = true;
-                                                if (Client.method35173().method35189().method21551(AutoArmor.class).getNumberSettingValueByName("Delay") > 0.0f) {
+                                                if (Client.getInstance().method35189().method21551(AutoArmor.class).getNumberSettingValueByName("Delay") > 0.0f) {
                                                     return;
                                                 }
                                             }
@@ -186,7 +186,7 @@ public class AutoArmor extends Module
     private void method10603(final boolean b) {
         if (b) {
             if (this.field15965) {
-                if (!(AutoArmor.mc.field4700 instanceof Class518)) {
+                if (!(AutoArmor.mc.currentScreen instanceof Class518)) {
                     AutoArmor.mc.method5269().method17292(new Class4323(Class2218.field13623));
                     this.field15965 = false;
                 }
@@ -196,8 +196,8 @@ public class AutoArmor extends Module
     
     private boolean method10604(final Class2215 class2215) {
         for (int i = 9; i < 45; ++i) {
-            if (AutoArmor.mc.player.field3008.method10878(i).method20054()) {
-                final Item method27622 = AutoArmor.mc.player.field3008.method10878(i).method20053().getItem();
+            if (AutoArmor.mc.player.container.getSlot(i).method20054()) {
+                final Item method27622 = AutoArmor.mc.player.container.getSlot(i).method20053().getItem();
                 if (method27622 instanceof Class4055) {
                     if (class2215 == ((Class4055)method27622).method12257()) {
                         return true;

@@ -1680,10 +1680,10 @@ public abstract class LivingEntity extends Entity
         }
         final Vec3d method2725 = this.getMotion();
         final Class5722 class5722 = new Class5722(new Vec3d(method2725.x, method2724, method2725.z));
-        if (this instanceof Class756) {
-            Client.method35173().method35188().method21097(class5722);
+        if (this instanceof ClientPlayerEntity) {
+            Client.getInstance().method35188().method21097(class5722);
         }
-        if (!class5722.method16962()) {
+        if (!class5722.isCancelled()) {
             this.method1936(class5722.method16994());
             if (this.method1815()) {
                 if (!class5722.method16993()) {
@@ -1941,13 +1941,13 @@ public abstract class LivingEntity extends Entity
             for (final Class2215 class2215 : Class2215.values()) {
                 Label_0409: {
                     ItemStack class2216 = null;
-                    switch (Class8839.field37150[class2215.method8401().ordinal()]) {
+                    switch (Class8839.field37150[class2215.getSlotType().ordinal()]) {
                         case 1: {
-                            class2216 = this.field2931.get(class2215.method8402());
+                            class2216 = this.field2931.get(class2215.getIndex());
                             break;
                         }
                         case 2: {
-                            class2216 = this.field2932.get(class2215.method8402());
+                            class2216 = this.field2932.get(class2215.getIndex());
                             break;
                         }
                         default: {
@@ -1963,13 +1963,13 @@ public abstract class LivingEntity extends Entity
                         if (!method2704.method27620()) {
                             this.method2711().method20882(method2704.method27682(class2215));
                         }
-                        switch (Class8839.field37150[class2215.method8401().ordinal()]) {
+                        switch (Class8839.field37150[class2215.getSlotType().ordinal()]) {
                             case 1: {
-                                this.field2931.set(class2215.method8402(), method2704.method27641());
+                                this.field2931.set(class2215.getIndex(), method2704.method27641());
                                 break;
                             }
                             case 2: {
-                                this.field2932.set(class2215.method8402(), method2704.method27641());
+                                this.field2932.set(class2215.getIndex(), method2704.method27641());
                                 break;
                             }
                         }

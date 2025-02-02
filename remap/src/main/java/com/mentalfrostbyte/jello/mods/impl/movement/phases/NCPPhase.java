@@ -21,7 +21,7 @@ public class NCPPhase extends PremiumModule
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field16030 = false;
         if (!NCPPhase.mc.player.collidedHorizontally) {
             this.field16031 = -1;
@@ -36,7 +36,7 @@ public class NCPPhase extends PremiumModule
     
     @EventListener
     private void method10698(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             if (NCPPhase.mc.gameSettings.field23440.method1056()) {
                 final double field2395 = NCPPhase.mc.player.posX;
                 final double field2396 = NCPPhase.mc.player.posY;
@@ -77,7 +77,7 @@ public class NCPPhase extends PremiumModule
     
     @EventListener
     private void method10699(final Class5717 class5717) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (NCPPhase.mc.player.collidedHorizontally) {
@@ -112,14 +112,14 @@ public class NCPPhase extends PremiumModule
     
     @EventListener
     private void method10700(final Class5713 class5713) {
-        if (this.method9906()) {
-            class5713.method16961(true);
+        if (this.isEnabled()) {
+            class5713.setCancelled(true);
         }
     }
     
     @EventListener
     private void method10701(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4328) {
                 final Class4328 class5724 = (Class4328)method16998;

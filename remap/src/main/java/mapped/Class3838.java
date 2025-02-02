@@ -89,7 +89,7 @@ public class Class3838 extends Class3834
     }
     
     @Override
-    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onBlockAdded(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.getBlock() != class7099.getBlock()) {
             if (!class7097.isRemote()) {
                 if (class7096.get((IProperty<Boolean>)Class3838.field17451)) {
@@ -104,7 +104,7 @@ public class Class3838 extends Class3834
     }
     
     @Override
-    public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.getBlock() != class7099.getBlock()) {
             if (!class7097.isRemote) {
                 if (class7096.get((IProperty<Boolean>)Class3838.field17451)) {

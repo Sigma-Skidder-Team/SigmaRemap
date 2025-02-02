@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.util.text.ITextComponent;
 
-public final class Class504 implements Class434
+public final class Class504 implements INamedContainerProvider
 {
     private static String[] field2882;
     private final ITextComponent field2883;

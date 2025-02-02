@@ -15,7 +15,7 @@ import java.nio.file.Path;
 import java.util.logging.Logger;
 import io.netty.channel.Channel;
 
-public class Class9367 implements Class9366<Class756>
+public class Class9367 implements Class9366<ClientPlayerEntity>
 {
     public static Channel field40166;
     public static Class7906 field40167;
@@ -158,7 +158,7 @@ public class Class9367 implements Class9366<Class756>
     }
     
     @Override
-    public Class8948<Class756> method34755() {
+    public Class8948<ClientPlayerEntity> method34755() {
         return this.field40172;
     }
     

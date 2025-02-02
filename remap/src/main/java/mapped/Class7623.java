@@ -7,11 +7,11 @@ package mapped;
 public class Class7623 implements Class7622
 {
     private static String[] field30194;
-    private final Class756 field30195;
+    private final ClientPlayerEntity field30195;
     private final Class1784 field30196;
     private int field30197;
     
-    public Class7623(final Class756 field30195, final Class1784 field30196) {
+    public Class7623(final ClientPlayerEntity field30195, final Class1784 field30196) {
         this.field30197 = 0;
         this.field30195 = field30195;
         this.field30196 = field30196;

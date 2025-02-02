@@ -16,7 +16,7 @@ public class Class8074
     }
     
     public void method26494() {
-        Client.method35173().method35188().method21094(this);
+        Client.getInstance().method35188().method21094(this);
     }
     
     @EventListener

@@ -56,12 +56,12 @@ public class Client
     public static ArrayList<Texture> field40710;
     public static boolean field40711;
     
-    public static Client method35173() {
+    public static Client getInstance() {
         return (Client.field40682 != null) ? Client.field40682 : (Client.field40682 = new Client());
     }
     
     public static Class6658 method35174() {
-        return method35173().method35187();
+        return getInstance().method35187();
     }
     
     private Client() {
@@ -126,7 +126,7 @@ public class Client
                 discordRPC.Discord_RunCallbacks();
                 try {
                     Thread.sleep(2000L);
-                    if (method35173().method35201().method19352() && (discordRichPresence2.smallImageKey == null || discordRichPresence2.smallImageKey.equals("premium"))) {
+                    if (getInstance().method35201().method19352() && (discordRichPresence2.smallImageKey == null || discordRichPresence2.smallImageKey.equals("premium"))) {
                         discordRichPresence2.smallImageKey = "premium";
                         discordRichPresence2.smallImageText = "Premium";
                         discordRPC.Discord_UpdatePresence(discordRichPresence2);
@@ -192,7 +192,7 @@ public class Client
         GL11.glDisable(2896);
         RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
         ClientAssets.gingerbread.bind();
-        method35173().method35188().method21097(new Class5734());
+        getInstance().method35188().method21097(new Class5734());
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.method30028();
         RenderSystem.disableDepthTest();
@@ -213,7 +213,7 @@ public class Client
             }
             Client.field40710.clear();
         }
-        if (method35173().method35209() != Class2209.field13466) {
+        if (getInstance().method35209() != Class2209.field13466) {
             final double n = Client.field40683.field4632.method7700() / (float)Math.pow(Client.field40683.field4632.method7700(), 2.0);
             GL11.glScaled(n, n, 1.0);
             GL11.glScaled((double)Class9000.field37993, (double)Class9000.field37993, 1.0);
@@ -288,7 +288,7 @@ public class Client
         return this.field40692;
     }
     
-    public Class8617 method35194() {
+    public Class8617 playerTracker() {
         return this.field40697;
     }
     
@@ -362,7 +362,7 @@ public class Client
         }
         else {
             Class9493.method35323();
-            method35173().method35193().method32126();
+            getInstance().method35193().method32126();
             GLFW.glfwSetWindowTitle(Client.field40683.field4632.method7690(), (CharSequence)"Jello for Sigma 5.0");
         }
         if (this.field40690 == null) {

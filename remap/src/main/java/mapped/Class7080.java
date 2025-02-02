@@ -29,11 +29,11 @@ public class Class7080 implements Class7079
         ++this.field27579;
         if (this.field27577.method32928() == Class101.field298) {
             if (this.field27579 == 1) {
-                final Class756 field4684 = this.field27577.method32927().player;
+                final ClientPlayerEntity field4684 = this.field27577.method32927().player;
                 if (field4684 != null) {
                     final Iterator<Block> iterator = Class7080.field27574.iterator();
                     while (iterator.hasNext()) {
-                        if (!field4684.field3006.method2376(new ItemStack(iterator.next()))) {
+                        if (!field4684.inventory.method2376(new ItemStack(iterator.next()))) {
                             continue;
                         }
                         this.field27577.method32926(Class2012.field11443);
@@ -66,9 +66,9 @@ public class Class7080 implements Class7079
     }
     
     @Override
-    public void method21659(final Class1848 class1848, final RayTraceResult class1849) {
+    public void method21659(final ClientWorld clientWorld, final RayTraceResult class1849) {
         if (class1849.getType() == RayTraceResult.Type.BLOCK) {
-            if (Class7080.field27574.contains(class1848.getBlockState(((BlockRayTraceResult)class1849).getPos()).method21696())) {
+            if (Class7080.field27574.contains(clientWorld.getBlockState(((BlockRayTraceResult)class1849).getPos()).method21696())) {
                 this.field27577.method32926(Class2012.field11441);
             }
         }
@@ -85,10 +85,10 @@ public class Class7080 implements Class7079
         }
     }
     
-    public static boolean method21663(final Class756 class756) {
+    public static boolean method21663(final ClientPlayerEntity clientPlayerEntity) {
         final Iterator<Block> iterator = Class7080.field27574.iterator();
         while (iterator.hasNext()) {
-            if (class756.method4121().method23091(Class8276.field33979.method8449(iterator.next())) <= 0) {
+            if (clientPlayerEntity.method4121().method23091(Class8276.field33979.method8449(iterator.next())) <= 0) {
                 continue;
             }
             return true;

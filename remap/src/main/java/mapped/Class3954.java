@@ -45,7 +45,7 @@ public class Class3954 extends Class3841
         if (!class7097.isRemote) {
             final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class461) {
-                class7099.method2833((Class434)method6727);
+                class7099.method2833((INamedContainerProvider)method6727);
                 class7099.method2857(Class8276.field34029);
             }
             return Class2201.field13400;
@@ -75,7 +75,7 @@ public class Class3954 extends Class3841
             if (method6727 instanceof Class461) {
                 Class9193.method33638(class7097, class7098, (IInventory)method6727);
             }
-            super.method11829(class7096, class7097, class7098, class7099, b);
+            super.onReplaced(class7096, class7097, class7098, class7099, b);
         }
     }
     

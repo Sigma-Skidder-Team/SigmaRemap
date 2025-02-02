@@ -4,8 +4,6 @@
 
 package mapped;
 
-public enum Class295
+public interface IMob
 {
-    field1681, 
-    field1682;
 }

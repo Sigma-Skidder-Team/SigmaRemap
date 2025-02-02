@@ -19,11 +19,11 @@ public class Jargon extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         String str = "Error";
-        if (!this.method9887("Jargon").equals("Excuse")) {
-            if (!this.method9887("Jargon").equals("Techincal")) {
-                if (this.method9887("Jargon").equals("Audio")) {
+        if (!this.getStringSettingValueByName("Jargon").equals("Excuse")) {
+            if (!this.getStringSettingValueByName("Jargon").equals("Techincal")) {
+                if (this.getStringSettingValueByName("Jargon").equals("Audio")) {
                     str = this.method10740();
                 }
             }

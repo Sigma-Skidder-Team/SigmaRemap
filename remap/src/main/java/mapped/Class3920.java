@@ -62,7 +62,7 @@ public class Class3920 extends Block implements Class3856
     }
     
     @Override
-    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onBlockAdded(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (!class7097.isRemote) {
             class7097.method6833().method21345(class7098, this, 1);
         }

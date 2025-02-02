@@ -46,14 +46,14 @@ public class Test extends Module
     public Test() {
         super(Category.MISC, "Test", "A mod for testing things");
         this.addSetting(new BezierSetting("Bezier", "ey", 0.57f, -0.035f, 0.095f, -0.0f));
-        this.addSetting(new BooleanSetting("Test Checkbox", "A test checkbox", true).method15195(class4997 -> Client.method35173().method35187().method20240("Changed checkbox: " + class4997.method15198())));
-        this.addSetting(new NumberSetting("Test Slider", "A test slider", 0.5f, Float.class, 0.0f, 1.0f, 0.1f).method15195(class4997 -> Client.method35173().method35187().method20240("Changed slider: " + class4997.method15198())));
-        this.addSetting(new ButtonSetting("Test Type", "A test type button", 0, new String[] { "hello", "goodbye" }).method15195(class4997 -> Client.method35173().method35187().method20240("Changed type: " + class4997.method15198())));
+        this.addSetting(new BooleanSetting("Test Checkbox", "A test checkbox", true).method15195(class4997 -> Client.getInstance().method35187().method20240("Changed checkbox: " + class4997.method15198())));
+        this.addSetting(new NumberSetting("Test Slider", "A test slider", 0.5f, Float.class, 0.0f, 1.0f, 0.1f).method15195(class4997 -> Client.getInstance().method35187().method20240("Changed slider: " + class4997.method15198())));
+        this.addSetting(new ButtonSetting("Test Type", "A test type button", 0, new String[] { "hello", "goodbye" }).method15195(class4997 -> Client.getInstance().method35187().method20240("Changed type: " + class4997.method15198())));
         this.addSetting(new SubOptionSettingExtender("Test Suboptions", "A test suboption", false, new Setting[] { new BooleanSetting("Test Checkbox", "A test checkbox", true), new NumberSetting("Test Slider", "A test slider", 0.5f, Float.class, 0.0f, 1.0f, 0.1f) }));
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field16086 = 0.0;
         this.field16098 = new Class9572(1000, 100000, Direction.BACKWARDS);
         this.field16092 = Test.mc.player.rotationYaw;
@@ -72,35 +72,35 @@ public class Test extends Module
     @EventListener
     @Class6759
     public void method10775(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             return;
         }
     }
     
     @EventListener
     public void method10776(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             return;
         }
     }
     
     @EventListener
     public void method10777(final Class5740 class5740) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             return;
         }
     }
     
     @EventListener
     public void method10778(final Class5751 class5751) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             return;
         }
     }
     
     @EventListener
     public void method10779(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             final Entity method10786 = this.method10786(3.3f);
             if (this.method10786(8.0f) != null) {
                 if (this.field16087 < 1.0) {
@@ -139,7 +139,7 @@ public class Test extends Module
     @EventListener
     @Class6755
     public void method10781(final Class5752 class5752) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             return;
         }
     }
@@ -147,7 +147,7 @@ public class Test extends Module
     @EventListener
     @Class6755
     public void method10782(final Class5748 class5748) {
-        if (this.method9906() && Test.mc.field4700 == null) {
+        if (this.isEnabled() && Test.mc.currentScreen == null) {
             if (this.field16099 != null) {
                 this.field16090 = true;
             }
@@ -158,7 +158,7 @@ public class Test extends Module
     @Class6755
     public void method10783(final Class5721 class5721) {
         final IPacket method16990 = class5721.method16990();
-        if (this.method9906() && Test.mc.player != null) {
+        if (this.isEnabled() && Test.mc.player != null) {
             if (!(method16990 instanceof Class4381)) {
                 if (!(method16990 instanceof Class4353)) {
                     if (!(method16990 instanceof Class4321)) {
@@ -203,7 +203,7 @@ public class Test extends Module
                 final Entity method16991 = ((Class4381)method16990).method13170(Test.mc.world);
                 final String str = (method16991 != null) ? method16991.getName().getFormattedText() : "null";
                 if (this.field16090) {
-                    class5721.method16961(true);
+                    class5721.setCancelled(true);
                 }
                 Class9274.method34209("§chit : " + str);
             }
@@ -218,7 +218,7 @@ public class Test extends Module
     @EventListener
     public void method10784(final Class5723 class5723) {
         final IPacket method16998 = class5723.method16998();
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!(method16998 instanceof Class4396)) {
                 if (!(method16998 instanceof Class4393)) {
                     if (method16998 instanceof Class4328) {
@@ -243,13 +243,13 @@ public class Test extends Module
         while (iterator.hasNext()) {
             final Entity class399 = iterator.next();
             if (class399 != Test.mc.player) {
-                if (!Client.method35173().method35190().method29878(class399)) {
+                if (!Client.getInstance().method35190().method29878(class399)) {
                     if (class399 instanceof LivingEntity) {
                         if (((LivingEntity)class399).method2664() != 0.0f) {
                             if (Test.mc.player.method1732(class399) <= n) {
                                 if (Test.mc.player.method2646((LivingEntity)class399)) {
                                     if (!(class399 instanceof Class857) && !(class399 instanceof PlayerEntity)) {
-                                        if (class399 instanceof PlayerEntity && Client.method35173().method35191().method31751(class399)) {
+                                        if (class399 instanceof PlayerEntity && Client.getInstance().method35191().method31751(class399)) {
                                             iterator.remove();
                                         }
                                         else if (Test.mc.player.method1920() != null && Test.mc.player.method1920().equals(class399)) {
@@ -307,13 +307,13 @@ public class Test extends Module
         while (iterator.hasNext()) {
             final Entity class400 = iterator.next();
             if (class400 != Test.mc.player) {
-                if (!Client.method35173().method35190().method29878(class400)) {
+                if (!Client.getInstance().method35190().method29878(class400)) {
                     if (class400 instanceof LivingEntity) {
                         if (((LivingEntity)class400).method2664() != 0.0f) {
                             if (Test.mc.player.method1732(class400) <= n) {
                                 if (Test.mc.player.method2646((LivingEntity)class400)) {
                                     if (!(class400 instanceof Class857)) {
-                                        if (class400 instanceof PlayerEntity && Client.method35173().method35191().method31751(class400)) {
+                                        if (class400 instanceof PlayerEntity && Client.getInstance().method35191().method31751(class400)) {
                                             iterator.remove();
                                         }
                                         else if (Test.mc.player.method1920() != null && Test.mc.player.method1920().equals(class400)) {

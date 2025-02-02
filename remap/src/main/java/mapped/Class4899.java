@@ -33,7 +33,7 @@ public class Class4899 extends Class4841
         final ArrayList<Module> method14713 = this.method14713();
         if (method14713.size() > 0) {
             if (this.method14715(this.field20955, method14713.get(0).getName())) {
-                RenderUtil.drawString(this.field20954.method14316(), (float)(this.field20478 + 54), (float)(this.field20479 + 14), this.field20955 + method14713.get(0).getName().substring(this.field20955.length(), method14713.get(0).getName().length()) + (method14713.get(0).method9906() ? " - Enabled" : " - Disabled"), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.25f));
+                RenderUtil.drawString(this.field20954.method14316(), (float)(this.field20478 + 54), (float)(this.field20479 + 14), this.field20955 + method14713.get(0).getName().substring(this.field20955.length(), method14713.get(0).getName().length()) + (method14713.get(0).isEnabled() ? " - Enabled" : " - Disabled"), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.25f));
             }
         }
         super.draw(n);
@@ -42,7 +42,7 @@ public class Class4899 extends Class4841
     public ArrayList<Module> method14713() {
         final ArrayList list = new ArrayList();
         if (this.field20955 != null && this.field20955.length() != 0) {
-            for (final Module e : Client.method35173().method35189().method21553().values()) {
+            for (final Module e : Client.getInstance().method35189().method21553().values()) {
                 if (!this.method14715(this.field20955, e.getName())) {
                     continue;
                 }

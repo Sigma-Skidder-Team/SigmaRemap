@@ -47,7 +47,7 @@ public class Class418 extends Class416
                     }
                 }
                 else {
-                    final Entity method1150 = ((Class7007)class7006).method21452();
+                    final Entity method1150 = ((EntityRayTraceResult)class7006).getEntity();
                     if (!method1150.method1704()) {
                         final int method1151 = method1150.method1666();
                         method1150.setFire(5);

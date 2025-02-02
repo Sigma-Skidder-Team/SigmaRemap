@@ -27,9 +27,9 @@ public class NoGroundCriticals extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         if (ColorUtils.method19160(NoGroundCriticals.mc.player, 0.001f)) {
-            this.field15885 = this.method9887("Offset").equals("OldHypixel");
+            this.field15885 = this.getStringSettingValueByName("Offset").equals("OldHypixel");
             this.field15884 = (this.field15885 ? 2 : 1);
         }
         this.field15886 = false;
@@ -38,10 +38,10 @@ public class NoGroundCriticals extends Module
     @EventListener
     @Class6757
     private void method10469(final Class5745 class5745) {
-        if (this.method9906() && class5745.method17049() >= 0.625) {
+        if (this.isEnabled() && class5745.method17049() >= 0.625) {
             if (this.field15884 == 0) {
                 if (this.field15885) {
-                    class5745.method16961(true);
+                    class5745.setCancelled(true);
                 }
             }
         }
@@ -49,9 +49,9 @@ public class NoGroundCriticals extends Module
     
     @EventListener
     private void method10470(final Class5722 class5722) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15884 == 1) {
-                class5722.method16961(true);
+                class5722.setCancelled(true);
                 this.field15886 = true;
             }
         }
@@ -60,7 +60,7 @@ public class NoGroundCriticals extends Module
     @EventListener
     @Class6757
     private void method10471(final Class5744 class5744) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (NoGroundCriticals.mc.player.onGround) {
@@ -69,14 +69,14 @@ public class NoGroundCriticals extends Module
                 this.field15886 = !this.field15886;
                 NoGroundCriticals.mc.player.method2725();
             }
-            if (this.method9887("Offset").equals("OldHypixel") != this.field15885) {
-                this.field15885 = this.method9887("Offset").equals("OldHypixel");
+            if (this.getStringSettingValueByName("Offset").equals("OldHypixel") != this.field15885) {
+                this.field15885 = this.getStringSettingValueByName("Offset").equals("OldHypixel");
                 this.field15884 = 2;
             }
             double n = this.field15885 ? 1.0E-14 : 0.0;
             boolean b = false;
             final boolean b2 = NoGroundCriticals.mc.field4691 != null && NoGroundCriticals.mc.field4691.getType() == RayTraceResult.Type.BLOCK;
-            if (NoGroundCriticals.mc.field4682.method27337() || (NoGroundCriticals.mc.gameSettings.field23446.method1056() && b2) || Jesus.method10433()) {
+            if (NoGroundCriticals.mc.playerController.method27337() || (NoGroundCriticals.mc.gameSettings.field23446.method1056() && b2) || Jesus.method10433()) {
                 this.field15884 = 2;
                 b = true;
             }
@@ -112,8 +112,8 @@ public class NoGroundCriticals extends Module
                     }
                 }
             }
-            final Module method21551 = Client.method35173().method35189().method21551(Speed.class);
-            if (!method21551.method9906() || method21551.method9887("Type").equalsIgnoreCase("Hypixel")) {
+            final Module method21551 = Client.getInstance().method35189().method21551(Speed.class);
+            if (!method21551.isEnabled() || method21551.getStringSettingValueByName("Type").equalsIgnoreCase("Hypixel")) {
                 class5744.method17037(class5744.method17036() + n);
             }
             class5744.method17045(b);

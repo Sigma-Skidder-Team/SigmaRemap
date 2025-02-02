@@ -49,8 +49,8 @@ public class HypixelBlockFly extends Module
     }
     
     @Override
-    public void method9879() {
-        this.field15711 = HypixelBlockFly.mc.player.field3006.field2743;
+    public void onEnable() {
+        this.field15711 = HypixelBlockFly.mc.player.inventory.field2743;
         final float n = 999.0f;
         this.field15708 = n;
         this.field15709 = n;
@@ -66,18 +66,18 @@ public class HypixelBlockFly extends Module
     @Override
     public void onDisable() {
         if (this.field15711 != -1) {
-            if (this.method9914().method9887("ItemSpoof").equals("Switch")) {
-                HypixelBlockFly.mc.player.field3006.field2743 = this.field15711;
+            if (this.method9914().getStringSettingValueByName("ItemSpoof").equals("Switch")) {
+                HypixelBlockFly.mc.player.inventory.field2743 = this.field15711;
             }
         }
         this.field15711 = -1;
         if (((BlockFly)this.method9914()).field15750 >= 0) {
-            HypixelBlockFly.mc.method5269().method17292(new Class4321(HypixelBlockFly.mc.player.field3006.field2743));
+            HypixelBlockFly.mc.method5269().method17292(new Class4321(HypixelBlockFly.mc.player.inventory.field2743));
             ((BlockFly)this.method9914()).field15750 = -1;
         }
         Class7482.method23151(Class7482.method23136() * 0.9);
         HypixelBlockFly.mc.timer.timerSpeed = 1.0f;
-        if (this.method9887("Speed Mode").equals("Cubecraft")) {
+        if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft")) {
             if (this.field15713 == 0) {
                 ColorUtils.method19155(-0.0789);
             }
@@ -86,8 +86,8 @@ public class HypixelBlockFly extends Module
     
     @EventListener
     public void method10208(final Class5738 class5738) {
-        if (this.method9906()) {
-            if (this.method9887("Speed Mode").equals("Cubecraft") && !Client.method35173().method35189().method21551(Fly.class).method9906()) {
+        if (this.isEnabled()) {
+            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
                 if (HypixelBlockFly.mc.world.method6981(HypixelBlockFly.mc.player, HypixelBlockFly.mc.player.boundingBox.expand(0.0, -1.5, 0.0).contract(0.05, 0.0, 0.05).contract(-0.05, 0.0, -0.05)).count() == 0L) {
                     if (HypixelBlockFly.mc.player.fallDistance < 1.0f) {
                         class5738.method17026(true);
@@ -95,7 +95,7 @@ public class HypixelBlockFly extends Module
                 }
             }
             else if (HypixelBlockFly.mc.player.onGround) {
-                if (Client.method35173().method35189().method21551(SafeWalk.class).method9906()) {
+                if (Client.getInstance().method35189().method21551(SafeWalk.class).isEnabled()) {
                     class5738.method17026(true);
                 }
             }
@@ -105,7 +105,7 @@ public class HypixelBlockFly extends Module
     @EventListener
     @Class6759
     public void method10209(final Class5744 class5744) {
-        if (this.method9906() && this.field15715.method10281() != 0) {
+        if (this.isEnabled() && this.field15715.method10281() != 0) {
             if (!class5744.method17046()) {
                 if (this.field15709 != 999.0f) {
                     this.field15715.method10282();
@@ -121,14 +121,14 @@ public class HypixelBlockFly extends Module
                                 }
                             }
                         }
-                        final int field2743 = HypixelBlockFly.mc.player.field3006.field2743;
-                        if (!this.method9914().method9887("ItemSpoof").equals("None")) {
+                        final int field2743 = HypixelBlockFly.mc.player.inventory.field2743;
+                        if (!this.method9914().getStringSettingValueByName("ItemSpoof").equals("None")) {
                             this.field15715.method10280();
                         }
                         final ItemStack method13699 = HypixelBlockFly.mc.player.method2715(Class316.field1877);
                         final Class7075 class5745 = new Class7075(HypixelBlockFly.mc.player, Class316.field1877, method13698);
                         method13699.method27690();
-                        HypixelBlockFly.mc.field4682.method27319(HypixelBlockFly.mc.player, HypixelBlockFly.mc.world, this.field15714, method13698);
+                        HypixelBlockFly.mc.playerController.method27319(HypixelBlockFly.mc.player, HypixelBlockFly.mc.world, this.field15714, method13698);
                         this.field15710 = null;
                         if (!this.method9914().method9883("NoSwing")) {
                             HypixelBlockFly.mc.player.method2707(this.field15714);
@@ -136,8 +136,8 @@ public class HypixelBlockFly extends Module
                         else {
                             HypixelBlockFly.mc.method5269().method17292(new Class4380(this.field15714));
                         }
-                        if (this.method9914().method9887("ItemSpoof").equals("Spoof") || this.method9914().method9887("ItemSpoof").equals("LiteSpoof")) {
-                            HypixelBlockFly.mc.player.field3006.field2743 = field2743;
+                        if (this.method9914().getStringSettingValueByName("ItemSpoof").equals("Spoof") || this.method9914().getStringSettingValueByName("ItemSpoof").equals("LiteSpoof")) {
+                            HypixelBlockFly.mc.player.inventory.field2743 = field2743;
                         }
                     }
                 }
@@ -178,7 +178,7 @@ public class HypixelBlockFly extends Module
                             }
                         }
                     }
-                    if (this.method9887("Speed Mode").equals("Jump") || this.method9887("Speed Mode").equals("Cubecraft")) {
+                    if (this.getStringSettingValueByName("Speed Mode").equals("Jump") || this.getStringSettingValueByName("Speed Mode").equals("Cubecraft")) {
                         if (!HypixelBlockFly.mc.gameSettings.field23439.method1056()) {
                             n3 = this.field15718;
                         }
@@ -224,7 +224,7 @@ public class HypixelBlockFly extends Module
     @EventListener
     @Class6757
     public void method10210(final Class5717 class5717) {
-        if (!this.method9906() || this.field15715.method10281() == 0) {
+        if (!this.isEnabled() || this.field15715.method10281() == 0) {
             return;
         }
         if (HypixelBlockFly.mc.player.onGround || ColorUtils.method19160(HypixelBlockFly.mc.player, 0.01f)) {
@@ -242,13 +242,13 @@ public class HypixelBlockFly extends Module
         if (this.field15715 == null) {
             this.field15715 = (BlockFly)this.method9914();
         }
-        final String method9887 = this.method9887("Speed Mode");
+        final String method9887 = this.getStringSettingValueByName("Speed Mode");
         switch (method9887) {
             case "Jump": {
                 if (HypixelBlockFly.mc.player.onGround && ColorUtils.method19114() && !HypixelBlockFly.mc.player.method1809() && !this.field15716) {
                     this.field15717 = false;
                     HypixelBlockFly.mc.player.method2725();
-                    ((Speed) Client.method35173().method35189().method21551(Speed.class)).method10269();
+                    ((Speed) Client.getInstance().method35189().method21551(Speed.class)).method10269();
                     this.field15717 = true;
                     class5717.method16975(HypixelBlockFly.mc.player.getMotion().y);
                     class5717.method16973(HypixelBlockFly.mc.player.getMotion().x);
@@ -341,10 +341,10 @@ public class HypixelBlockFly extends Module
     @EventListener
     @Class6759
     public void method10211(final Class5721 class5721) {
-        if (this.method9906() && HypixelBlockFly.mc.player != null) {
+        if (this.isEnabled() && HypixelBlockFly.mc.player != null) {
             if (class5721.method16990() instanceof Class4321) {
                 if (((BlockFly)this.method9914()).field15750 >= 0) {
-                    class5721.method16961(true);
+                    class5721.setCancelled(true);
                 }
             }
         }
@@ -352,10 +352,10 @@ public class HypixelBlockFly extends Module
     
     @EventListener
     public void method10212(final Class5722 class5722) {
-        if (this.method9906() && this.field15717) {
-            if (this.method9914().method9887("Tower Mode").equalsIgnoreCase("Cubecraft")) {
+        if (this.isEnabled() && this.field15717) {
+            if (this.method9914().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Cubecraft")) {
                 if (!ColorUtils.method19114() || this.method9914().method9883("Tower while moving")) {
-                    class5722.method16961(true);
+                    class5722.setCancelled(true);
                 }
             }
         }
@@ -363,8 +363,8 @@ public class HypixelBlockFly extends Module
     
     @EventListener
     public void method10213(final Class5741 class5741) {
-        if (this.method9906()) {
-            if (this.method9887("Speed Mode").equals("Cubecraft")) {
+        if (this.isEnabled()) {
+            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft")) {
                 if (this.field15713 >= 0) {
                     if (HypixelBlockFly.mc.player.fallDistance > 1.2f) {
                         return;

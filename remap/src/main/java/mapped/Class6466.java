@@ -53,7 +53,7 @@ public class Class6466
     }
     
     public void method19338() {
-        Client.method35173().method35188().method21094(this);
+        Client.getInstance().method35188().method21094(this);
         this.field25697 = new Class9198(this);
     }
 

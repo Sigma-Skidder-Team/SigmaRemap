@@ -17,11 +17,11 @@ public class FastBreak extends Module
     
     @EventListener
     private void method10017(final Class5743 class5743) {
-        if (this.method9906()) {
-            if (FastBreak.mc.field4682.field33867 > 0.7f) {
-                FastBreak.mc.field4682.field33867 = 1.0f;
+        if (this.isEnabled()) {
+            if (FastBreak.mc.playerController.field33867 > 0.7f) {
+                FastBreak.mc.playerController.field33867 = 1.0f;
             }
-            FastBreak.mc.field4682.field33869 = 0;
+            FastBreak.mc.playerController.field33869 = 0;
         }
     }
 }

@@ -37,14 +37,14 @@ public class AutoPotion extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15982 = 0;
     }
     
     @EventListener
     @Class6755
     private void method10613(final Class5744 class5744) {
-        if (!this.method9906() || !class5744.method17046()) {
+        if (!this.isEnabled() || !class5744.method17046()) {
             return;
         }
         if (!this.method9883("In fight") && (KillAura.field16061 != null || KillAura.field16060 != null)) {
@@ -67,8 +67,8 @@ public class AutoPotion extends Module
         }
         if (this.field15982 != 1) {
             if (this.field15982 >= 2) {
-                AutoPotion.mc.player.field3006.field2743 = this.field15981;
-                AutoPotion.mc.field4682.method27318();
+                AutoPotion.mc.player.inventory.field2743 = this.field15981;
+                AutoPotion.mc.playerController.method27318();
                 this.field15982 = 0;
             }
             if (this.field15980 > 1) {
@@ -108,7 +108,7 @@ public class AutoPotion extends Module
     public int method10615() {
         int n = 5;
         for (int i = 36; i < 45; ++i) {
-            if (!AutoPotion.mc.player.field3008.method10878(i).method20054()) {
+            if (!AutoPotion.mc.player.container.getSlot(i).method20054()) {
                 n = i - 36;
                 break;
             }
@@ -122,10 +122,10 @@ public class AutoPotion extends Module
         int n4 = -1;
         int n5 = 0;
         for (int i = 9; i < 45; ++i) {
-            if (AutoPotion.mc.player.field3008.method10878(i).method20054()) {
-                final ItemStack method20053 = AutoPotion.mc.player.field3008.method10878(i).method20053();
+            if (AutoPotion.mc.player.container.getSlot(i).method20054()) {
+                final ItemStack method20053 = AutoPotion.mc.player.container.getSlot(i).method20053();
                 if (method20053.getItem() instanceof Class4089) {
-                    final List<Class1948> method20054 = Class8639.method29355(method20053);
+                    final List<Class1948> method20054 = InvManagerUtil.method29355(method20053);
                     final int method20055 = this.method10617(method20054);
                     if (method20054 != null) {
                         if (!method20054.isEmpty()) {
@@ -137,7 +137,7 @@ public class AutoPotion extends Module
                                     if (method20056 != n) {
                                         continue;
                                     }
-                                    if (!Class8639.method29356(method20053)) {
+                                    if (!InvManagerUtil.method29356(method20053)) {
                                         continue;
                                     }
                                     if (method20057 <= n2) {
@@ -191,15 +191,15 @@ public class AutoPotion extends Module
         final int method10616 = this.method10616(n2);
         if (method10616 != -1) {
             if (method10616 < 36) {
-                Class8639.method29370(method10616, n);
+                InvManagerUtil.method29370(method10616, n);
             }
             else {
                 this.field15979 = 0;
-                final int field2743 = AutoPotion.mc.player.field3006.field2743;
-                final boolean b = Client.method35173().method35189().method21551(Criticals.class).method9906() && Client.method35173().method35189().method21551(Criticals.class).method9887("Type").equalsIgnoreCase("NoGround");
+                final int field2743 = AutoPotion.mc.player.inventory.field2743;
+                final boolean b = Client.getInstance().method35189().method21551(Criticals.class).isEnabled() && Client.getInstance().method35189().method21551(Criticals.class).getStringSettingValueByName("Type").equalsIgnoreCase("NoGround");
                 final float[] method10617 = this.method10614();
-                AutoPotion.mc.player.field3006.field2743 = method10616 - 36;
-                AutoPotion.mc.field4682.method27318();
+                AutoPotion.mc.player.inventory.field2743 = method10616 - 36;
+                AutoPotion.mc.playerController.method27318();
                 if (!this.method9883("Instant")) {
                     this.field15982 = 1;
                     class5744.method17043(method10617[0]);
@@ -209,8 +209,8 @@ public class AutoPotion extends Module
                     AutoPotion.mc.method5269().method17292(new Class4356(method10617[0], method10617[1], !b && AutoPotion.mc.player.onGround));
                     AutoPotion.mc.method5269().method17292(new Class4307(Class316.field1877));
                     AutoPotion.mc.method5269().method17292(new Class4307(Class316.field1878));
-                    AutoPotion.mc.player.field3006.field2743 = field2743;
-                    AutoPotion.mc.field4682.method27318();
+                    AutoPotion.mc.player.inventory.field2743 = field2743;
+                    AutoPotion.mc.playerController.method27318();
                     KillAura.field16066 = 1;
                 }
                 this.field15981 = field2743;

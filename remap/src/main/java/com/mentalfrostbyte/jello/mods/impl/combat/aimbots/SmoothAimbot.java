@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.impl.combat.Aimbot;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import mapped.Class5739;
-import mapped.Class756;
+import mapped.ClientPlayerEntity;
 import mapped.EventListener;
 import mapped.Minecraft;
 import net.minecraft.entity.Entity;
@@ -27,7 +27,7 @@ public class SmoothAimbot extends Module
     
     @EventListener
     private void method10835(final Class5739 class5739) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (SmoothAimbot.mc.player.rotationPitch <= 45.0f) {
@@ -47,19 +47,19 @@ public class SmoothAimbot extends Module
                 }
                 final double n4 = 0.05 * Minecraft.method5338() * (n3 + 1.0);
                 if (SmoothAimbot.mc.player.rotationPitch > this.method10836(method10266)[1]) {
-                    final Class756 field4684 = SmoothAimbot.mc.player;
+                    final ClientPlayerEntity field4684 = SmoothAimbot.mc.player;
                     field4684.rotationPitch -= (float)(n4 * n / 90.0 + Math.min(0.5, n2));
                 }
                 if (SmoothAimbot.mc.player.rotationPitch < this.method10836(method10266)[1]) {
-                    final Class756 field4685 = SmoothAimbot.mc.player;
+                    final ClientPlayerEntity field4685 = SmoothAimbot.mc.player;
                     field4685.rotationPitch += (float)(n4 * n / 90.0 + Math.min(0.5, n2));
                 }
                 if (SmoothAimbot.mc.player.rotationYaw > this.method10836(method10266)[0]) {
-                    final Class756 field4686 = SmoothAimbot.mc.player;
+                    final ClientPlayerEntity field4686 = SmoothAimbot.mc.player;
                     field4686.rotationYaw -= (float)(n4 * n2 / 90.0 + Math.min(0.5, n));
                 }
                 if (SmoothAimbot.mc.player.rotationYaw < this.method10836(method10266)[0]) {
-                    final Class756 field4687 = SmoothAimbot.mc.player;
+                    final ClientPlayerEntity field4687 = SmoothAimbot.mc.player;
                     field4687.rotationYaw += (float)(n4 * n2 / 90.0 + Math.min(0.5, n));
                 }
                 SmoothAimbot.mc.player.field2953 = SmoothAimbot.mc.player.rotationYaw;

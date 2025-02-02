@@ -55,7 +55,7 @@ public class Class6312
             if (b2) {
                 if (b4) {
                     if (this.field25239 > 0) {
-                        this.field25237 += Client.method35173().method35194().method29226();
+                        this.field25237 += Client.getInstance().playerTracker().method29226();
                     }
                 }
             }
@@ -126,17 +126,17 @@ public class Class6312
     
     public ItemStack method18690() {
         if (this.field25242 != null) {
-            if (this.field25242.getItem() instanceof Class4099) {
+            if (this.field25242.getItem() instanceof AirBlock) {
                 this.field25242 = null;
             }
         }
         if (this.field25240 != null) {
-            if (this.field25240.getItem() instanceof Class4099) {
+            if (this.field25240.getItem() instanceof AirBlock) {
                 this.field25240 = null;
             }
         }
         if (this.field25241 != null) {
-            if (this.field25241.getItem() instanceof Class4099) {
+            if (this.field25241.getItem() instanceof AirBlock) {
                 this.field25241 = null;
             }
         }

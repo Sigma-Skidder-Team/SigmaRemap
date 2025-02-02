@@ -78,7 +78,7 @@ public class Class4012 extends Block
                     if (!class7099.field3025.field27304) {
                         method2715.method27693(1);
                         if (!method2715.method27620()) {
-                            if (!class7099.field3006.method2362(new ItemStack(Items.field31350))) {
+                            if (!class7099.inventory.method2362(new ItemStack(Items.field31350))) {
                                 class7099.method2822(new ItemStack(Items.field31350), false);
                             }
                         }
@@ -101,9 +101,9 @@ public class Class4012 extends Block
                         class7099.method2857(Class8276.field34025);
                         method2715.method27693(1);
                         if (!method2715.method27620()) {
-                            if (class7099.field3006.method2362(method2717)) {
+                            if (class7099.inventory.method2362(method2717)) {
                                 if (class7099 instanceof Class513) {
-                                    ((Class513)class7099).method2929(class7099.field3008);
+                                    ((Class513)class7099).method2929(class7099.container);
                                 }
                             }
                             else {
@@ -128,7 +128,7 @@ public class Class4012 extends Block
                         class7099.method2857(Class8276.field34025);
                         class7099.method2716(class7100, class7102);
                         if (class7099 instanceof Class513) {
-                            ((Class513)class7099).method2929(class7099.field3008);
+                            ((Class513)class7099).method2929(class7099.container);
                         }
                     }
                     class7097.method6705(null, class7098, Class8520.field35040, Class286.field1582, 1.0f, 1.0f);
@@ -162,9 +162,9 @@ public class Class4012 extends Block
                         this.method12195(class7097, class7098, class7096, intValue - 1);
                     }
                     if (!method2715.method27620()) {
-                        if (class7099.field3006.method2362(method2718)) {
+                        if (class7099.inventory.method2362(method2718)) {
                             if (class7099 instanceof Class513) {
-                                ((Class513)class7099).method2929(class7099.field3008);
+                                ((Class513)class7099).method2929(class7099.container);
                             }
                         }
                         else {

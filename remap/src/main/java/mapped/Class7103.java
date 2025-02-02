@@ -58,7 +58,7 @@ public class Class7103
     public static CompoundNBT method21808(final Entity class399) {
         final CompoundNBT method1756 = class399.method1756(new CompoundNBT());
         if (class399 instanceof PlayerEntity) {
-            final ItemStack method1757 = ((PlayerEntity)class399).field3006.method2345();
+            final ItemStack method1757 = ((PlayerEntity)class399).inventory.method2345();
             if (!method1757.method27620()) {
                 method1756.put("SelectedItem", method1757.method27627(new CompoundNBT()));
             }

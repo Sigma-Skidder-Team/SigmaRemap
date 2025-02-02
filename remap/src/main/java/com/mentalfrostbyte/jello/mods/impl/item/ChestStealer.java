@@ -44,7 +44,7 @@ public class ChestStealer extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15741 = null;
         this.field15737 = false;
         if (!this.field15738.isEmpty()) {
@@ -54,7 +54,7 @@ public class ChestStealer extends Module
     
     @EventListener
     public void method10251(final Class5744 class5744) {
-        if (!this.method9906() || !class5744.method17046()) {
+        if (!this.isEnabled() || !class5744.method17046()) {
             return;
         }
         if (this.method9883("Aura")) {
@@ -69,7 +69,7 @@ public class ChestStealer extends Module
             }
             this.method10256();
             if (this.field15741 != null) {
-                if (ChestStealer.mc.field4700 == null) {
+                if (ChestStealer.mc.currentScreen == null) {
                     if (this.field15740.method23935() > 1000L) {
                         final BlockRayTraceResult class5745 = (BlockRayTraceResult)Class4609.method13700(this.field15741.getPos());
                         if (class5745.getPos().getX() == this.field15741.getPos().getX()) {
@@ -107,7 +107,7 @@ public class ChestStealer extends Module
                 if (this.field15740.method23935() <= 1000L) {
                     continue;
                 }
-                if (ChestStealer.mc.field4700 != null) {
+                if (ChestStealer.mc.currentScreen != null) {
                     continue;
                 }
                 final BlockRayTraceResult class5746 = (BlockRayTraceResult)Class4609.method13700(field15741.getPos());
@@ -127,7 +127,7 @@ public class ChestStealer extends Module
                 n = 1;
             }
             if (n == 0) {
-                if (ChestStealer.mc.field4700 == null) {
+                if (ChestStealer.mc.currentScreen == null) {
                     if (this.field15741 != null) {
                         this.field15738.put(this.field15741, true);
                         this.field15741 = null;
@@ -146,15 +146,15 @@ public class ChestStealer extends Module
     
     @EventListener
     public void method10253(final Class5740 class5740) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
-        if (!(ChestStealer.mc.field4700 instanceof Class726)) {
+        if (!(ChestStealer.mc.currentScreen instanceof Class726)) {
             this.field15737 = false;
             this.field15739.method23933();
             this.field15739.method23934();
-            if (ChestStealer.mc.field4700 == null) {
-                if (Class8639.method29372()) {
+            if (ChestStealer.mc.currentScreen == null) {
+                if (InvManagerUtil.method29372()) {
                     this.field15740.method23934();
                 }
             }
@@ -166,13 +166,13 @@ public class ChestStealer extends Module
         if (this.field15739.method23935() < this.getNumberSettingValueByName("Delay") * 1000.0f) {
             return;
         }
-        if (Class8639.method29372()) {
+        if (InvManagerUtil.method29372()) {
             if (this.method9883("Close")) {
                 ChestStealer.mc.player.method2814();
             }
             return;
         }
-        final Class726 class5741 = (Class726) ChestStealer.mc.field4700;
+        final Class726 class5741 = (Class726) ChestStealer.mc.currentScreen;
         if (this.method10254(class5741)) {
             int n = 1;
             for (final Class6601 class5742 : ((Class3438)class5741.field3077).field16151) {
@@ -192,10 +192,10 @@ public class ChestStealer extends Module
                     this.field15737 = !this.field15737;
                 }
                 if (!this.method9883("Fix ViaVersion")) {
-                    Class8639.method29366(((Class3438)class5741.field3077).field16154, class5742.field26174, 0, Class2133.field12438, ChestStealer.mc.player);
+                    InvManagerUtil.method29366(((Class3438)class5741.field3077).field16154, class5742.field26174, 0, Class2133.field12438, ChestStealer.mc.player);
                 }
                 else {
-                    Class8639.method29367(((Class3438)class5741.field3077).field16154, class5742.field26174, 0, Class2133.field12438, ChestStealer.mc.player, true);
+                    InvManagerUtil.method29367(((Class3438)class5741.field3077).field16154, class5742.field26174, 0, Class2133.field12438, ChestStealer.mc.player, true);
                 }
                 this.field15739.method23934();
                 n = 0;
@@ -263,15 +263,15 @@ public class ChestStealer extends Module
             return !InvManager.method10679(class8321);
         }
         if (method27622 instanceof Class4089) {
-            return Class8639.method29371(class8321);
+            return InvManagerUtil.method29371(class8321);
         }
         if (method27622 instanceof Class4036) {
             return !BlockFly.method10279(method27622);
         }
-        if (method27622 instanceof Class3824 || (method27622 instanceof Class4087 && Client.method35173().method35189().method21551(InvManager.class).method9883("Archery"))) {
+        if (method27622 instanceof Class3824 || (method27622 instanceof Class4087 && Client.getInstance().method35189().method21551(InvManager.class).method9883("Archery"))) {
             return true;
         }
-        if (method27622 == Items.field31350 && Client.method35173().method35189().method21551(AutoMLG.class).method9906()) {
+        if (method27622 == Items.field31350 && Client.getInstance().method35189().method21551(AutoMLG.class).isEnabled()) {
             return false;
         }
         final ArrayList list = new ArrayList((Collection<? extends E>)Arrays.asList(Items.field31375, Items.field31307, Items.field31337, Items.field31374, Items.field31306, Items.field31299, Items.field30896, Items.field31349, Items.field31351, Items.field31350, Items.field30929, Items.field31534, Items.field31510, Items.field31426, Items.field31019, Items.field30900, Items.field31576, Items.field31430, Items.field31429, Items.field31314, Items.field31357, Items.field31442, Items.field30835, Items.field31355, Items.field31376));

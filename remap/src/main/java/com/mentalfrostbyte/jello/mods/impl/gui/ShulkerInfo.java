@@ -46,7 +46,7 @@ public class ShulkerInfo extends Module
     
     @EventListener
     public void method9924(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             RenderSystem.method30084(33986, 240.0f, 240.0f);
             for (final Entity class5740 : ColorUtils.method19138()) {
                 if (class5740 instanceof Class427) {
@@ -132,11 +132,11 @@ public class ShulkerInfo extends Module
     
     @EventListener
     private void method9928(final Class5733 class5733) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
-        if (ShulkerInfo.mc.field4700 instanceof Class516) {
-            final Class6601 field3081 = ((Class516) ShulkerInfo.mc.field4700).field3081;
+        if (ShulkerInfo.mc.currentScreen instanceof Class516) {
+            final Class6601 field3081 = ((Class516) ShulkerInfo.mc.currentScreen).field3081;
             if (field3081 != null) {
                 if (field3081.method20054()) {
                     if (field3081.method20053().getItem() instanceof Class4036) {

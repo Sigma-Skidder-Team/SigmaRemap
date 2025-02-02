@@ -22,7 +22,7 @@ public class StaffRepealer extends Module
     
     @EventListener
     private void method10812(final Class5743 class5743) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (ColorUtils.method19146()) {
@@ -32,7 +32,7 @@ public class StaffRepealer extends Module
     
     @EventListener
     private void method10813(final Class5723 class5726) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5726.method16998() instanceof SEntityPacket) {
                 final SEntityPacket class5724 = (SEntityPacket)class5726.method16998();
             }

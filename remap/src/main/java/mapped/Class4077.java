@@ -15,7 +15,7 @@ public class Class4077 extends Class4071
     private final float field18181;
     private final float field18182;
     
-    public Class4077(final Class2038 class2038, final int n, final float field18182, final Class8959 class2039) {
+    public Class4077(final Class2038 class2038, final int n, final float field18182, final Properties class2039) {
         super(class2038, class2039);
         this.field18182 = field18182;
         this.field18181 = n + class2038.method8111();

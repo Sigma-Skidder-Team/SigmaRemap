@@ -45,7 +45,7 @@ public class Class7335
         }
         switch (n) {
             case 65: {
-                this.field28331.field4636.method5701();
+                this.field28331.worldRenderer.loadRenderers();
                 this.method22497("debug.reload_chunks.message", new Object[0]);
                 return true;
             }
@@ -95,7 +95,7 @@ public class Class7335
             }
             case 76: {
                 final Minecraft method28894 = Config.method28894();
-                method28894.field4636.field9366 = 1;
+                method28894.worldRenderer.field9366 = 1;
                 method28894.field4647.method3807().method3762(new StringTextComponent(Class8822.method30773("of.message.loadingVisibleChunks", new Object[0])), 201435902);
                 return true;
             }
@@ -182,7 +182,7 @@ public class Class7335
                     break;
                 }
                 case 2: {
-                    final Entity method21450 = ((Class7007)field4691).method21452();
+                    final Entity method21450 = ((EntityRayTraceResult)field4691).getEntity();
                     final ResourceLocation method21451 = Registry.field210.getKey(method21450.getType());
                     if (!b) {
                         this.method22502(method21451, method21450.method1934(), null);
@@ -236,16 +236,16 @@ public class Class7335
     
     public void method22503(final long n, final int i, final int j, final int k, final int l) {
         if (n == this.field28331.method5332().method7690()) {
-            if (Client.method35173().method35193().method32154() != null) {
-                Client.method35173().method35193().method32127(i, k);
+            if (Client.getInstance().method35193().method32154() != null) {
+                Client.getInstance().method35193().method32127(i, k);
                 return;
             }
-            if (this.field28331.field4700 != null) {
-                if (this.field28331.field4700 instanceof Class535) {
+            if (this.field28331.currentScreen != null) {
+                if (this.field28331.currentScreen instanceof ChatScreen) {
                     if (i == 258) {
                         final Class5752 class5752 = new Class5752(i, k == 2, null);
-                        Client.method35173().method35188().method21097(class5752);
-                        if (class5752.method16962()) {
+                        Client.getInstance().method35188().method21097(class5752);
+                        if (class5752.isCancelled()) {
                             return;
                         }
                     }
@@ -259,8 +259,8 @@ public class Class7335
             else {
                 Class8004.method26199(i);
                 final Class5752 class5753 = new Class5752(i, k == 2, null);
-                Client.method35173().method35188().method21097(class5753);
-                if (class5753.method16962()) {
+                Client.getInstance().method35188().method21097(class5753);
+                if (class5753.isCancelled()) {
                     return;
                 }
             }
@@ -277,12 +277,12 @@ public class Class7335
             else if (!Class8341.method27798(Minecraft.method5277().method5332().method7690(), 67) || !Class8341.method27798(Minecraft.method5277().method5332().method7690(), 292)) {
                 this.field28334 = -1L;
             }
-            final Screen field4700 = this.field28331.field4700;
-            if (!(this.field28331.field4700 instanceof Class705) || ((Class705)field4700).field3875 <= Util.method27837() - 20L) {
+            final Screen field4700 = this.field28331.currentScreen;
+            if (!(this.field28331.currentScreen instanceof Class705) || ((Class705)field4700).field3875 <= Util.method27837() - 20L) {
                 if (k != 1) {
                     if (k == 0) {
-                        if (this.field28331.field4700 instanceof Class705) {
-                            ((Class705)this.field28331.field4700).field3874 = null;
+                        if (this.field28331.currentScreen instanceof Class705) {
+                            ((Class705)this.field28331.currentScreen).field3874 = null;
                         }
                     }
                 }
@@ -333,28 +333,28 @@ public class Class7335
                     if (n3 != 1 && (n3 != 2 || !this.field28332)) {
                         if (n3 == 0) {
                             if (!(!Class9570.field41304.method22605())) {
-                                if (!(!(array2[0] = Class9570.method35812(Class9570.field41304, this.field28331.field4700, n4, n5, n6)))) {
+                                if (!(!(array2[0] = Class9570.method35812(Class9570.field41304, this.field28331.currentScreen, n4, n5, n6)))) {
                                     return;
                                 }
                             }
                             array2[0] = class5755.method3007(n4, n5, n6);
                             if (!(!Class9570.field41305.method22605())) {
                                 if (!array2[0]) {
-                                    array2[0] = Class9570.method35812(Class9570.field41305, this.field28331.field4700, n4, n5, n6);
+                                    array2[0] = Class9570.method35812(Class9570.field41305, this.field28331.currentScreen, n4, n5, n6);
                                 }
                             }
                         }
                     }
                     else {
                         if (!(!Class9570.field41302.method22605())) {
-                            if (!(!(array2[0] = Class9570.method35812(Class9570.field41302, this.field28331.field4700, n4, n5, n6)))) {
+                            if (!(!(array2[0] = Class9570.method35812(Class9570.field41302, this.field28331.currentScreen, n4, n5, n6)))) {
                                 return;
                             }
                         }
                         array2[0] = class5755.method2972(n4, n5, n6);
                         if (!(!Class9570.field41303.method22605())) {
                             if (!array2[0]) {
-                                array2[0] = Class9570.method35812(Class9570.field41303, this.field28331.field4700, n4, n5, n6);
+                                array2[0] = Class9570.method35812(Class9570.field41303, this.field28331.currentScreen, n4, n5, n6);
                             }
                         }
                     }
@@ -364,7 +364,7 @@ public class Class7335
                     return;
                 }
             }
-            if (this.field28331.field4700 == null || this.field28331.field4700.passEvents) {
+            if (this.field28331.currentScreen == null || this.field28331.currentScreen.passEvents) {
                 final Class7985 method27796 = Class8341.method27796(i, j);
                 if (k != 0) {
                     if (i == 293) {
@@ -373,7 +373,7 @@ public class Class7335
                         }
                     }
                     boolean b3 = false;
-                    if (this.field28331.field4700 == null) {
+                    if (this.field28331.currentScreen == null) {
                         if (i == 256) {
                             this.field28331.method5255(Class8341.method27798(Minecraft.method5277().method5332().method7690(), 292));
                         }

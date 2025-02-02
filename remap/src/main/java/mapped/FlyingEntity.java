@@ -10,9 +10,9 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public abstract class Class760 extends Class759
+public abstract class FlyingEntity extends Class759
 {
-    public Class760(final EntityType<? extends Class760> class7499, final World class7500) {
+    public FlyingEntity(final EntityType<? extends FlyingEntity> class7499, final World class7500) {
         super(class7499, class7500);
     }
     

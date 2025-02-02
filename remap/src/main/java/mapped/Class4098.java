@@ -18,8 +18,8 @@ public class Class4098 extends Item
     private static final Predicate<Entity> field18199;
     private final Class241 field18200;
     
-    public Class4098(final Class241 field18200, final Class8959 class8959) {
-        super(class8959);
+    public Class4098(final Class241 field18200, final Properties properties) {
+        super(properties);
         this.field18200 = field18200;
     }
     

@@ -108,12 +108,12 @@ public class Class857 extends LivingEntity
     
     @Override
     public ItemStack method2718(final Class2215 class2215) {
-        switch (Class8831.field37129[class2215.method8401().ordinal()]) {
+        switch (Class8831.field37129[class2215.getSlotType().ordinal()]) {
             case 1: {
-                return this.field4579.get(class2215.method8402());
+                return this.field4579.get(class2215.getIndex());
             }
             case 2: {
-                return this.field4580.get(class2215.method8402());
+                return this.field4580.get(class2215.getIndex());
             }
             default: {
                 return ItemStack.EMPTY;
@@ -123,15 +123,15 @@ public class Class857 extends LivingEntity
     
     @Override
     public void method1803(final Class2215 class2215, final ItemStack class2216) {
-        switch (Class8831.field37129[class2215.method8401().ordinal()]) {
+        switch (Class8831.field37129[class2215.getSlotType().ordinal()]) {
             case 1: {
                 this.method2642(class2216);
-                this.field4579.set(class2215.method8402(), class2216);
+                this.field4579.set(class2215.getIndex(), class2216);
                 break;
             }
             case 2: {
                 this.method2642(class2216);
-                this.field4580.set(class2215.method8402(), class2216);
+                this.field4580.set(class2215.getIndex(), class2216);
                 break;
             }
         }
@@ -142,10 +142,10 @@ public class Class857 extends LivingEntity
         Class2215 class8322;
         if (n != 98) {
             if (n != 99) {
-                if (n != 100 + Class2215.field13605.method8402()) {
-                    if (n != 100 + Class2215.field13604.method8402()) {
-                        if (n != 100 + Class2215.field13603.method8402()) {
-                            if (n != 100 + Class2215.field13602.method8402()) {
+                if (n != 100 + Class2215.field13605.getIndex()) {
+                    if (n != 100 + Class2215.field13604.getIndex()) {
+                        if (n != 100 + Class2215.field13603.getIndex()) {
+                            if (n != 100 + Class2215.field13602.getIndex()) {
                                 return false;
                             }
                             class8322 = Class2215.field13602;
@@ -316,7 +316,7 @@ public class Class857 extends LivingEntity
                 if (this.method5152(method2716)) {
                     return Class2201.field13403;
                 }
-                if (method2716.method8401() == Class295.field1681 && !this.method5162()) {
+                if (method2716.getSlotType() == Group.field1681 && !this.method5162()) {
                     return Class2201.field13403;
                 }
                 if (this.method5153(playerEntity, method2716, method2715, class514)) {
@@ -376,7 +376,7 @@ public class Class857 extends LivingEntity
     }
     
     private boolean method5152(final Class2215 class2215) {
-        return (this.field4583 & 1 << class2215.method8403()) != 0x0 || (class2215.method8401() == Class295.field1681 && !this.method5162());
+        return (this.field4583 & 1 << class2215.method8403()) != 0x0 || (class2215.getSlotType() == Group.field1681 && !this.method5162());
     }
     
     private boolean method5153(final PlayerEntity playerEntity, final Class2215 class513, final ItemStack class514, final Class316 class515) {
@@ -512,7 +512,7 @@ public class Class857 extends LivingEntity
     }
     
     private void method5156(final DamageSource class7929) {
-        Block.method11839(this.world, new BlockPos(this), new ItemStack(Items.field31546));
+        Block.spawnAsEntity(this.world, new BlockPos(this), new ItemStack(Items.field31546));
         this.method5157(class7929);
     }
     
@@ -522,14 +522,14 @@ public class Class857 extends LivingEntity
         for (int i = 0; i < this.field4579.size(); ++i) {
             final ItemStack class7930 = this.field4579.get(i);
             if (!class7930.method27620()) {
-                Block.method11839(this.world, new BlockPos(this).method1137(), class7930);
+                Block.spawnAsEntity(this.world, new BlockPos(this).method1137(), class7930);
                 this.field4579.set(i, ItemStack.EMPTY);
             }
         }
         for (int j = 0; j < this.field4580.size(); ++j) {
             final ItemStack class7931 = this.field4580.get(j);
             if (!class7931.method27620()) {
-                Block.method11839(this.world, new BlockPos(this).method1137(), class7931);
+                Block.spawnAsEntity(this.world, new BlockPos(this).method1137(), class7931);
                 this.field4580.set(j, ItemStack.EMPTY);
             }
         }

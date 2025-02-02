@@ -21,14 +21,14 @@ public class Class7861
     
     public Class7861() {
         this.field32296 = new ArrayList<Class7971>();
-        this.field32297 = new File(Client.method35173().method35208() + "/alts.json");
+        this.field32297 = new File(Client.getInstance().method35208() + "/alts.json");
         this.field32299 = new Class8327();
         this.method25468();
     }
     
     public void method25457() {
-        Client.method35173().method35188().method21094(this);
-        Client.method35173().method35188().method21094(this.field32299);
+        Client.getInstance().method35188().method21094(this);
+        Client.getInstance().method35188().method21094(this.field32299);
     }
     
     @Deprecated
@@ -113,10 +113,10 @@ public class Class7861
         final JSONObject class89 = new JSONObject();
         class89.method13301("alts", JSONArray);
         try {
-            Class9532.method35585(class89, new File(Client.method35173().method35208() + "/alts.json"));
+            Class9532.method35585(class89, new File(Client.getInstance().method35208() + "/alts.json"));
         }
         catch (final JSONException | IOException ex) {
-            Client.method35173().method35187().method20242(((Throwable)ex).getMessage());
+            Client.getInstance().method35187().method20242(((Throwable)ex).getMessage());
         }
     }
     
@@ -132,7 +132,7 @@ public class Class7861
             }
         }
         catch (final IOException ex) {
-            Client.method35173().method35187().method20242(ex.getMessage());
+            Client.getInstance().method35187().method20242(ex.getMessage());
         }
     }
     

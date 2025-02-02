@@ -34,9 +34,9 @@ public class TargetStrafe extends Module
     
     @EventListener
     public void method10227(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             Entity class5740 = null;
-            if ((Client.method35173().method35189().method21551(Speed.class).method9906() && !HypixelSpeed.field15955) || !this.method9883("Only speed")) {
+            if ((Client.getInstance().method35189().method21551(Speed.class).isEnabled() && !HypixelSpeed.field15955) || !this.method9883("Only speed")) {
                 if (KillAura.field16061 == null) {
                     if (KillAura.field16060 != null) {
                         class5740 = KillAura.field16060;
@@ -53,11 +53,11 @@ public class TargetStrafe extends Module
     @EventListener
     @Class6759
     public void method10228(final Class5717 class5717) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         Entity class5718 = null;
-        if ((Client.method35173().method35189().method21551(Speed.class).method9906() || !this.method9883("Only speed")) && !HypixelSpeed.field15955) {
+        if ((Client.getInstance().method35189().method21551(Speed.class).isEnabled() || !this.method9883("Only speed")) && !HypixelSpeed.field15955) {
             if (KillAura.field16061 != null) {
                 class5718 = KillAura.field16061.method26798();
             }
@@ -68,7 +68,7 @@ public class TargetStrafe extends Module
         if (class5718 != null) {
             final double sqrt = Math.sqrt(class5717.method16972() * class5717.method16972() + class5717.method16976() * class5717.method16976());
             final float method9886 = this.getNumberSettingValueByName("Radius");
-            final String method9887 = this.method9887("Mode");
+            final String method9887 = this.getStringSettingValueByName("Mode");
             switch (method9887) {
                 case "Basic": {
                     this.method10229(class5718, sqrt, method9886, class5717);

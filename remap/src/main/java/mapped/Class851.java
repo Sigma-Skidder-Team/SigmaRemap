@@ -15,7 +15,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class Class851 extends Class760 implements Class762
+public class Class851 extends FlyingEntity implements IMob
 {
     private static final DataParameter<Integer> field4526;
     private Vec3d field4527;

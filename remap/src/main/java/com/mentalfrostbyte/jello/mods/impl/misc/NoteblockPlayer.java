@@ -38,7 +38,7 @@ public class NoteblockPlayer extends PremiumModule
         this.field16035 = new ArrayList<String>();
         this.field16036 = new ArrayList<Class9486>();
         this.field16037 = new ArrayList<BlockPos>();
-        final File file = new File(Client.method35173().method35208() + "/nbs");
+        final File file = new File(Client.getInstance().method35208() + "/nbs");
         if (file.exists()) {
             this.field16035 = new ArrayList<String>(Arrays.asList(file.list()));
             for (int i = 0; i < this.field16035.size(); ++i) {
@@ -56,13 +56,13 @@ public class NoteblockPlayer extends PremiumModule
     
     @EventListener
     private void method10704(final Class5743 class5743) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (this.field16034 == null) {
             return;
         }
-        if (NoteblockPlayer.mc.field4682.method27332()) {
+        if (NoteblockPlayer.mc.playerController.method27332()) {
             ColorUtils.method19106("§cNoteBlockPlayer isn't available in creative mode!");
             this.method9909(false);
             return;
@@ -93,7 +93,7 @@ public class NoteblockPlayer extends PremiumModule
                         if (Class2059.method8149(class5744.field40774) != method35385.method32950() - 33) {
                             continue;
                         }
-                        if (Math.sqrt(NoteblockPlayer.mc.player.method1894().distanceSq(class5744.field40773)) >= NoteblockPlayer.mc.field4682.method27315()) {
+                        if (Math.sqrt(NoteblockPlayer.mc.player.method1894().distanceSq(class5744.field40773)) >= NoteblockPlayer.mc.playerController.method27315()) {
                             continue;
                         }
                         float[] array = Class4609.method13672(class5744.field40773, Direction.UP);
@@ -116,7 +116,7 @@ public class NoteblockPlayer extends PremiumModule
             if (class9486.field40774 != -1.0f && !this.method10710(class9486.field40774, class9486.field40775)) {
                 continue;
             }
-            if (Math.sqrt(NoteblockPlayer.mc.player.method1894().distanceSq(class9486.field40773)) >= NoteblockPlayer.mc.field4682.method27315()) {
+            if (Math.sqrt(NoteblockPlayer.mc.player.method1894().distanceSq(class9486.field40773)) >= NoteblockPlayer.mc.playerController.method27315()) {
                 continue;
             }
             return false;
@@ -126,7 +126,7 @@ public class NoteblockPlayer extends PremiumModule
     
     public boolean method10706(final List<Class9486> list) {
         for (final Class9486 class9486 : list) {
-            if (class9486.field40774 == -1.0f && Math.sqrt(NoteblockPlayer.mc.player.method1894().distanceSq(class9486.field40773)) < NoteblockPlayer.mc.field4682.method27315()) {
+            if (class9486.field40774 == -1.0f && Math.sqrt(NoteblockPlayer.mc.player.method1894().distanceSq(class9486.field40773)) < NoteblockPlayer.mc.playerController.method27315()) {
                 final float[] method13672 = Class4609.method13672(class9486.field40773, Direction.UP);
                 NoteblockPlayer.mc.method5269().method17292(new Class4356(method13672[0], method13672[1], NoteblockPlayer.mc.player.onGround));
                 NoteblockPlayer.mc.method5269().method17292(new Class4399(Class2003.field11240, class9486.field40773, Direction.UP));
@@ -140,12 +140,12 @@ public class NoteblockPlayer extends PremiumModule
     
     public boolean method10707(final List<Class9486> list) {
         for (final Class9486 class9486 : list) {
-            if (this.method10710(class9486.field40774, class9486.field40775) && Math.sqrt(NoteblockPlayer.mc.player.method1894().distanceSq(class9486.field40773)) < NoteblockPlayer.mc.field4682.method27315()) {
+            if (this.method10710(class9486.field40774, class9486.field40775) && Math.sqrt(NoteblockPlayer.mc.player.method1894().distanceSq(class9486.field40773)) < NoteblockPlayer.mc.playerController.method27315()) {
                 if (NoteblockPlayer.mc.player.ticksExisted % 1 == 0) {
                     final float[] method13672 = Class4609.method13672(class9486.field40773, Direction.UP);
                     NoteblockPlayer.mc.player.method2707(Class316.field1877);
                     NoteblockPlayer.mc.method5269().method17292(new Class4356(method13672[0], method13672[1], NoteblockPlayer.mc.player.onGround));
-                    NoteblockPlayer.mc.method5269().method17292(new Class4329(Class316.field1877, Class4609.method13697(method13672[0], method13672[1], NoteblockPlayer.mc.field4682.method27315() + 1.0f)));
+                    NoteblockPlayer.mc.method5269().method17292(new Class4329(Class316.field1877, Class4609.method13697(method13672[0], method13672[1], NoteblockPlayer.mc.playerController.method27315() + 1.0f)));
                     this.field16037.clear();
                     this.field16037.add(class9486.field40773);
                 }
@@ -157,7 +157,7 @@ public class NoteblockPlayer extends PremiumModule
     
     @EventListener
     private void method10708(final Class5739 class5739) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (this.field16036 != null) {
@@ -212,7 +212,7 @@ public class NoteblockPlayer extends PremiumModule
     
     @EventListener
     private void method10711(final Class5723 class5723) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (this.field16036 != null) {
@@ -267,8 +267,8 @@ public class NoteblockPlayer extends PremiumModule
     }
     
     @Override
-    public void method9879() {
-        if (!NoteblockPlayer.mc.field4682.method27332()) {
+    public void onEnable() {
+        if (!NoteblockPlayer.mc.playerController.method27332()) {
             if (this.field16035.isEmpty()) {
                 ColorUtils.method19106("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
                 ColorUtils.method19106("§cPlaying the only integrated demo song!");
@@ -280,7 +280,7 @@ public class NoteblockPlayer extends PremiumModule
                 }
             }
             else {
-                this.field16034 = Class9377.method34814(new File(Client.method35173().method35208() + "/nbs/" + this.method9887("Song")));
+                this.field16034 = Class9377.method34814(new File(Client.getInstance().method35208() + "/nbs/" + this.getStringSettingValueByName("Song")));
                 if (this.field16034 == null) {
                     ColorUtils.method19106("§cError loading song! Make sure song is saved as <= V3 format");
                     this.method9909(false);
@@ -294,7 +294,7 @@ public class NoteblockPlayer extends PremiumModule
             }
             this.field16033 = 0;
             this.field16036.clear();
-            for (final BlockPos class354 : Class4609.method13691(NoteblockPlayer.mc.field4682.method27315())) {
+            for (final BlockPos class354 : Class4609.method13691(NoteblockPlayer.mc.playerController.method27315())) {
                 if (!(NoteblockPlayer.mc.world.getBlockState(class354).method21696() instanceof Class3984)) {
                     continue;
                 }

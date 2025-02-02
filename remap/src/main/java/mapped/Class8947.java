@@ -5,16 +5,15 @@
 package mapped;
 
 import java.util.Map;
-import java.util.Collection;
 import java.util.TreeSet;
 import java.util.SortedSet;
 import io.netty.buffer.ByteBuf;
 import java.util.UUID;
 
-public class Class8947 implements Class8948<Class756>
+public class Class8947 implements Class8948<ClientPlayerEntity>
 {
-    public int method31738(final Class756 class756) {
-        if (class756 != null) {
+    public int method31738(final ClientPlayerEntity clientPlayerEntity) {
+        if (clientPlayerEntity != null) {
             return Class9367.method34761();
         }
         throw new NullPointerException("player is marked non-null but is null");
@@ -48,9 +47,9 @@ public class Class8947 implements Class8948<Class756>
         throw new IllegalArgumentException("This player is not controlled by ViaVersion!");
     }
     
-    public void method31743(final Class756 class756, final ByteBuf byteBuf) throws IllegalArgumentException {
+    public void method31743(final ClientPlayerEntity clientPlayerEntity, final ByteBuf byteBuf) throws IllegalArgumentException {
         System.out.println("sendRawPacket");
-        this.method31742(class756.method1865(), byteBuf);
+        this.method31742(clientPlayerEntity.method1865(), byteBuf);
     }
     
     @Override

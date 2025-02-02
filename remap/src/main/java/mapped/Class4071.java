@@ -11,8 +11,8 @@ public class Class4071 extends Item
     private static String[] field18165;
     private final Class2038 field18166;
     
-    public Class4071(final Class2038 field18166, final Class8959 class8959) {
-        super(class8959.method31783(field18166.method8109()));
+    public Class4071(final Class2038 field18166, final Properties properties) {
+        super(properties.method31783(field18166.method8109()));
         this.field18166 = field18166;
     }
     

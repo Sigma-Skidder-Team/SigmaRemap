@@ -13,8 +13,8 @@ import java.util.List;
 
 public class Class4096 extends Item
 {
-    public Class4096(final Class8959 class8959) {
-        super(class8959);
+    public Class4096(final Properties properties) {
+        super(properties);
     }
     
     public static boolean method12339(final CompoundNBT class51) {
@@ -42,7 +42,7 @@ public class Class4096 extends Item
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
         if (class8321.method27656()) {
             final CompoundNBT method27657 = class8321.method27657();
             final String method27658 = method27657.getString("author");

@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 
 public class Class4037 extends Class4036
 {
-    public Class4037(final Block class3833, final Class8959 class3834) {
+    public Class4037(final Block class3833, final Properties class3834) {
         super(class3833, class3834);
     }
     

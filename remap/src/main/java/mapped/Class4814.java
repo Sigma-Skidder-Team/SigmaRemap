@@ -26,11 +26,11 @@ public class Class4814 extends Class4803
         this.addVisualThing(this.field20588 = new Class4859(this, "Accounts", this.method14376(n5++), this.method14375() + 140 + 10, 114, 140, Class9493.field40799));
         this.addVisualThing(this.field20590 = new Class4859(this, "Agora", this.method14376(n5++), this.method14375() + 140 + 10, 114, 140, Class9493.field40803));
         this.addVisualThing(this.field20585 = new Class4859(this, "Exit", this.method14376(n5++), this.method14375() + 140 + 10, 114, 140, Class9493.field40800));
-        this.field20584.method14260((class4803, n) -> this.method14372(new Class544(Minecraft.method5277().field4700)));
-        this.field20589.method14260((class4803, n) -> this.method14372(new Class721(Minecraft.method5277().field4700)));
-        this.field20587.method14260((class4803, n) -> this.method14372(new Class550(Minecraft.method5277().field4700, Minecraft.method5277().gameSettings)));
+        this.field20584.method14260((class4803, n) -> this.method14372(new Class544(Minecraft.method5277().currentScreen)));
+        this.field20589.method14260((class4803, n) -> this.method14372(new Class721(Minecraft.method5277().currentScreen)));
+        this.field20587.method14260((class4803, n) -> this.method14372(new Class550(Minecraft.method5277().currentScreen, Minecraft.method5277().gameSettings)));
         this.field20588.method14260((class4803, n) -> this.method14373(new Class4936()));
-        this.field20586.method14260((class4803, n) -> this.method14372(new Class704(Minecraft.method5277().field4700, Minecraft.method5277().gameSettings, Minecraft.method5277().method5295())));
+        this.field20586.method14260((class4803, n) -> this.method14372(new Class704(Minecraft.method5277().currentScreen, Minecraft.method5277().gameSettings, Minecraft.method5277().method5295())));
         this.field20585.method14260((class4803, n) -> Minecraft.method5277().method5253());
     }
     
@@ -40,7 +40,7 @@ public class Class4814 extends Class4803
     }
     
     public void method14373(final Class4800 class4800) {
-        Client.method35173().method35193().method32156(class4800);
+        Client.getInstance().method35193().method32156(class4800);
         this.method14374();
     }
     

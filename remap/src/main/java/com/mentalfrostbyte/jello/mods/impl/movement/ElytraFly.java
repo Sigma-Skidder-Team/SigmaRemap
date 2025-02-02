@@ -29,7 +29,7 @@ public class ElytraFly extends Module
     
     @EventListener
     public void method10030(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             ElytraFly.mc.gameSettings.field23440.field2162 = false;
             if (ElytraFly.mc.player.getMotion().y < 0.08 && !ElytraFly.mc.player.onGround) {
                 if (!ElytraFly.mc.player.method2773()) {
@@ -48,7 +48,7 @@ public class ElytraFly extends Module
     
     @EventListener
     public void method10031(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             double method23136 = Class7482.method23136();
             ColorUtils.method19114();
             if (!this.method9883("NCP")) {
@@ -95,7 +95,7 @@ public class ElytraFly extends Module
     
     @EventListener
     private void method10032(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (ElytraFly.mc.player != null) {
                 if (class5723.method16998() instanceof Class4273) {
                     final Class4273 class5724 = (Class4273)class5723.method16998();
@@ -118,7 +118,7 @@ public class ElytraFly extends Module
     
     @EventListener
     private void method10033(final Class5744 class5744) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final int field15613 = 65;
             if (this.field15613 != field15613 - 1) {
                 if (this.field15613 <= 0) {
@@ -128,14 +128,14 @@ public class ElytraFly extends Module
                 }
             }
             else {
-                final int method29340 = Class8639.method29340(Items.field31532);
+                final int method29340 = InvManagerUtil.method29340(Items.field31532);
                 if (method29340 >= 0) {
-                    if (method29340 != ElytraFly.mc.player.field3006.field2743) {
+                    if (method29340 != ElytraFly.mc.player.inventory.field2743) {
                         ElytraFly.mc.method5269().method17292(new Class4321(method29340));
                     }
                     ElytraFly.mc.method5269().method17292(new Class4307(Class316.field1877));
-                    if (method29340 != ElytraFly.mc.player.field3006.field2743) {
-                        ElytraFly.mc.method5269().method17292(new Class4321(ElytraFly.mc.player.field3006.field2743));
+                    if (method29340 != ElytraFly.mc.player.inventory.field2743) {
+                        ElytraFly.mc.method5269().method17292(new Class4321(ElytraFly.mc.player.inventory.field2743));
                     }
                 }
             }
@@ -152,20 +152,20 @@ public class ElytraFly extends Module
     @EventListener
     @Class6757
     private void method10034(final Class5721 class5721) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             return;
         }
     }
     
     @EventListener
     private void method10035(final Class5715 class5715) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             return;
         }
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         if (ElytraFly.mc.player.onGround) {
             ColorUtils.method19155(0.399399995803833);
         }

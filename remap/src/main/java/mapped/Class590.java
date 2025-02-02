@@ -29,10 +29,10 @@ public class Class590<C extends IInventory> implements Class587<Integer>
     public void method3458(final Class513 class513, final IRecipe<C> class514, final boolean b) {
         if (class514 != null) {
             if (class513.method2948().method19695(class514)) {
-                this.field3492 = class513.field3006;
+                this.field3492 = class513.inventory;
                 if (this.method3464() || class513.method2889()) {
                     this.field3491.method15254();
-                    class513.field3006.method2379(this.field3491);
+                    class513.inventory.method2379(this.field3491);
                     this.field3493.method10934(this.field3491);
                     if (!this.field3491.method15249(class514, null)) {
                         this.method3459();
@@ -41,7 +41,7 @@ public class Class590<C extends IInventory> implements Class587<Integer>
                     else {
                         this.method3461(class514, b);
                     }
-                    class513.field3006.method2161();
+                    class513.inventory.method2161();
                 }
             }
         }
@@ -63,7 +63,7 @@ public class Class590<C extends IInventory> implements Class587<Integer>
     }
     
     public void method3460(final int n) {
-        final ItemStack method20053 = this.field3493.method10878(n).method20053();
+        final ItemStack method20053 = this.field3493.getSlot(n).method20053();
         if (!method20053.method27620()) {
             while (method20053.method27690() > 0) {
                 int n2 = this.field3492.method2360(method20053);
@@ -75,7 +75,7 @@ public class Class590<C extends IInventory> implements Class587<Integer>
                 if (!this.field3492.method2363(n2, method20054)) {
                     Class590.field3490.error("Can't find any space for item in the inventory");
                 }
-                this.field3493.method10878(n).method20060(1);
+                this.field3493.getSlot(n).method20060(1);
             }
         }
     }
@@ -86,7 +86,7 @@ public class Class590<C extends IInventory> implements Class587<Integer>
         if (method10936) {
             for (int i = 0; i < this.field3493.method10939() * this.field3493.method10938() + 1; ++i) {
                 if (i != this.field3493.method10937()) {
-                    final ItemStack method10938 = this.field3493.method10878(i).method20053();
+                    final ItemStack method10938 = this.field3493.getSlot(i).method20053();
                     if (!method10938.method27620()) {
                         if (Math.min(method10937, method10938.method27628()) < method10938.method27690() + 1) {
                             return;
@@ -116,7 +116,7 @@ public class Class590<C extends IInventory> implements Class587<Integer>
     
     @Override
     public void method3440(final Iterator<Integer> iterator, final int n, final int n2, final int n3, final int n4) {
-        final Class6601 method10878 = this.field3493.method10878(n);
+        final Class6601 method10878 = this.field3493.getSlot(n);
         final ItemStack method10879 = Class5024.method15253(iterator.next());
         if (!method10879.method27620()) {
             for (int i = 0; i < n2; ++i) {
@@ -132,7 +132,7 @@ public class Class590<C extends IInventory> implements Class587<Integer>
                 method27690 = 64;
                 for (int i = 0; i < this.field3493.method10938() * this.field3493.method10939() + 1; ++i) {
                     if (i != this.field3493.method10937()) {
-                        final ItemStack method27691 = this.field3493.method10878(i).method20053();
+                        final ItemStack method27691 = this.field3493.getSlot(i).method20053();
                         if (!method27691.method27620()) {
                             if (method27690 > method27691.method27690()) {
                                 method27690 = method27691.method27690();
@@ -178,7 +178,7 @@ public class Class590<C extends IInventory> implements Class587<Integer>
         final int method3465 = this.method3465();
         for (int i = 0; i < this.field3493.method10938() * this.field3493.method10939() + 1; ++i) {
             if (i != this.field3493.method10937()) {
-                final ItemStack method3466 = this.field3493.method10878(i).method20053().method27641();
+                final ItemStack method3466 = this.field3493.getSlot(i).method20053().method27641();
                 if (!method3466.method27620()) {
                     final int method3467 = this.field3492.method2360(method3466);
                     if (method3467 == -1 && arrayList.size() <= method3465) {

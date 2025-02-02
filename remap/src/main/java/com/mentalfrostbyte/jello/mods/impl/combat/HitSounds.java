@@ -20,7 +20,7 @@ public class HitSounds extends Module
     @EventListener
     @Class6759
     private void method10580(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4264) {
                 final Class4264 class5724 = (Class4264)class5723.method16998();
                 if (class5724.method12799(HitSounds.mc.world) != null) {

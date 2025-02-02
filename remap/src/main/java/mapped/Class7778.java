@@ -99,7 +99,7 @@ public class Class7778
         }
     }
     
-    public static void method24952(final Class9458 class9458, final float n, final MatrixStack class9459, final IRenderTypeBuffer.Impl class9460, final Class756 class9461, final int n2, final boolean b) {
+    public static void method24952(final Class9458 class9458, final float n, final MatrixStack class9459, final IRenderTypeBuffer.Impl class9460, final ClientPlayerEntity class9461, final int n2, final boolean b) {
         Class8933.method31517(true);
         if (b) {
             Class8933.method31516(519);
@@ -147,7 +147,7 @@ public class Class7778
             if (--Class9216.field39232 <= 0) {
                 final Minecraft method5277 = Minecraft.method5277();
                 method5277.method5327().method15300("shadow pass");
-                final Class1656 field4636 = method5277.field4636;
+                final Class1656 field4636 = method5277.worldRenderer;
                 Class9216.field39049 = true;
                 Class9216.field39232 = Class9216.field39222;
                 Class9216.method33739("pre shadow");
@@ -191,7 +191,7 @@ public class Class7778
                 method5277.method5327().method15300("shadow prepareterrain");
                 method5277.method5290().method5849(Class1774.field9853);
                 method5277.method5327().method15300("shadow setupterrain");
-                field4636.method5707(class1661, class1663, false, method5277.field4636.method5769(), method5277.player.isSpectator());
+                field4636.method5707(class1661, class1663, false, method5277.worldRenderer.method5769(), method5277.player.isSpectator());
                 method5277.method5327().method15300("shadow updatechunks");
                 method5277.method5327().method15300("shadow terrain");
                 final double method5279 = method5278.getX();
@@ -215,7 +215,7 @@ public class Class7778
                 Class8933.method31636();
                 Class8933.method31635();
                 method5277.method5327().method15300("shadow entities");
-                final Class1656 field4637 = method5277.field4636;
+                final Class1656 field4637 = method5277.worldRenderer;
                 final Class8551 method5282 = method5277.method5306();
                 final IRenderTypeBuffer.Impl method5283 = field4637.method5770().method11006();
                 for (final Entity field4638 : method5277.world.method6806()) {
@@ -234,7 +234,7 @@ public class Class7778
                             }
                         }
                     }
-                    if (field4638 instanceof Class756 && class1661.method18166() != field4638) {
+                    if (field4638 instanceof ClientPlayerEntity && class1661.method18166() != field4638) {
                         continue;
                     }
                     Class9216.method33835(field4637.field9343 = field4638);

@@ -20,10 +20,10 @@ public class SimsESP extends Module
     
     @EventListener
     public void method10797(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             for (final Entity class5740 : Class4609.method13679(ColorUtils.method19108())) {
                 if (class5740 != SimsESP.mc.player) {
-                    if (Client.method35173().method35191().method31751(class5740)) {
+                    if (Client.getInstance().method35191().method31751(class5740)) {
                         continue;
                     }
                     method10800(class5740.lastTickPosX + (class5740.posX - class5740.lastTickPosX) * Minecraft.method5277().timer.field26528, class5740.lastTickPosY + class5740.method1931() + (class5740.posY - class5740.lastTickPosY) * Minecraft.method5277().timer.field26528, class5740.lastTickPosZ + (class5740.posZ - class5740.lastTickPosZ) * Minecraft.method5277().timer.field26528, class5740);

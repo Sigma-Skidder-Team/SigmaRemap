@@ -84,7 +84,7 @@ public class Class392 implements AutoCloseable
         if (this.field2282) {
             this.field2282 = false;
             this.field2285.method5327().startSection("lightTex");
-            final Class1848 field4683 = this.field2285.world;
+            final ClientWorld field4683 = this.field2285.world;
             if (field4683 != null) {
                 this.field2287 = false;
                 if (Config.method28945() && Class8763.method30361(field4683, this.field2283, this.field2280, this.field2285.player.method2653(Class9439.field40489) || this.field2285.player.method2653(Class9439.field40502), f)) {

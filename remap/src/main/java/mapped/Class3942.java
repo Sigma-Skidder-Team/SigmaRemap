@@ -116,7 +116,7 @@ public class Class3942 extends Class3841
                 }
             });
         }
-        return super.method11833(class7096, method32879);
+        return super.getDrops(class7096, method32879);
     }
     
     @Override
@@ -135,13 +135,13 @@ public class Class3942 extends Class3841
             if (class7097.getTileEntity(class7098) instanceof Class440) {
                 class7097.method6783(class7098, class7096.method21696());
             }
-            super.method11829(class7096, class7097, class7098, class7099, b);
+            super.onReplaced(class7096, class7097, class7098, class7099, b);
         }
     }
     
     @Override
-    public void method11883(final ItemStack class8321, final IBlockReader class8322, final List<ITextComponent> list, final Class1981 class8323) {
-        super.method11883(class8321, class8322, list, class8323);
+    public void addInformation(final ItemStack class8321, final IBlockReader class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
+        super.addInformation(class8321, class8322, list, class8323);
         final CompoundNBT method27660 = class8321.method27660("BlockEntityTag");
         if (method27660 != null) {
             if (method27660.contains("LootTable", 8)) {

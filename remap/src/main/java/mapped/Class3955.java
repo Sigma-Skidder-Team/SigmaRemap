@@ -33,7 +33,7 @@ public class Class3955 extends Class3841
     }
     
     @Override
-    public int method11826(final Class1852 class1852) {
+    public int tickRate(final Class1852 class1852) {
         return 4;
     }
     
@@ -42,7 +42,7 @@ public class Class3955 extends Class3841
         if (!class7097.isRemote) {
             final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class458) {
-                class7099.method2833((Class434)method6727);
+                class7099.method2833((INamedContainerProvider)method6727);
                 if (!(method6727 instanceof Class459)) {
                     class7099.method2857(Class8276.field34033);
                 }
@@ -80,7 +80,7 @@ public class Class3955 extends Class3841
         final boolean b2 = class7097.method6749(class7098) || class7097.method6749(class7098.method1137());
         final boolean booleanValue = class7096.method21772((IProperty<Boolean>)Class3955.field17860);
         if (b2 && !booleanValue) {
-            class7097.method6833().method21345(class7098, this, this.method11826(class7097));
+            class7097.method6833().method21345(class7098, this, this.tickRate(class7097));
             class7097.setBlockState(class7098, ((StateHolder<O, Class7096>)class7096).with((IProperty<Comparable>)Class3955.field17860, true), 4);
         }
         else if (!b2) {
@@ -123,7 +123,7 @@ public class Class3955 extends Class3841
                 Class9193.method33638(class7097, class7098, (IInventory)method6727);
                 class7097.method6783(class7098, this);
             }
-            super.method11829(class7096, class7097, class7098, class7099, b);
+            super.onReplaced(class7096, class7097, class7098, class7099, b);
         }
     }
     

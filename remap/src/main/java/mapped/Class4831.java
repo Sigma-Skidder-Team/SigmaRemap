@@ -100,7 +100,7 @@ public class Class4831 extends Class4825
             s = this.field20495.replaceAll(".", this.field20684);
         }
         if (this.method14308() && this.field20488) {
-            Client.method35173().method35193().method32133(Class9000.field37991);
+            Client.getInstance().method35193().method32133(Class9000.field37991);
         }
         this.field20673 += ((this.field20488 ? 1.0f : 0.0f) - this.field20673) / 2.0f;
         if (!this.field20488) {

@@ -828,7 +828,7 @@ public class Config
     }
     
     public static Class1656 method28908() {
-        return Config.field36028.field4636;
+        return Config.field36028.worldRenderer;
     }
     
     public static Class1660 method28909() {
@@ -1345,7 +1345,7 @@ public class Config
     }
     
     public static void method28988() {
-        Config.field36028.fontRenderer.method6610("" + Class9570.method35833(Class9570.field41444, -1) + "/" + method28989() + " fps, C: " + Config.field36028.field4636.method5757() + ", E: " + Config.field36028.field4636.method5758() + "+" + Config.field36028.field4636.method5759() + ", U: " + method28990(Config.field36028.field4707), 2.0f, 2.0f, -2039584);
+        Config.field36028.fontRenderer.method6610("" + Class9570.method35833(Class9570.field41444, -1) + "/" + method28989() + " fps, C: " + Config.field36028.worldRenderer.method5757() + ", E: " + Config.field36028.worldRenderer.method5758() + "+" + Config.field36028.worldRenderer.method5759() + ", U: " + method28990(Config.field36028.field4707), 2.0f, 2.0f, -2039584);
     }
     
     public static int method28989() {
@@ -1413,7 +1413,7 @@ public class Config
     }
     
     public static void method28996(final String s, final String s2) {
-        Config.field36028.displayGuiScreen(new Class715(Config.field36028.field4700, s, s2));
+        Config.field36028.displayGuiScreen(new Class715(Config.field36028.currentScreen, s, s2));
     }
     
     public static int[] method28997(final int[] array, final int n) {

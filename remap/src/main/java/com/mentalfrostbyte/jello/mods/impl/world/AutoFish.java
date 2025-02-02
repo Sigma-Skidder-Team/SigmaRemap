@@ -18,7 +18,7 @@ public class AutoFish extends Module
     
     @EventListener
     public void method10301(final Class5723 class5723) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (!(class5723.method16998() instanceof Class4282) && !(class5723.method16998() instanceof Class4342)) {
@@ -40,7 +40,7 @@ public class AutoFish extends Module
             }
             AutoFish.mc.method5269().method17292(new Class4307(Class316.field1877));
             AutoFish.mc.method5269().method17292(new Class4307(Class316.field1877));
-            Client.method35173().method35197().method25776(new Class6224("AutoFish", "We catched something!", ClientAssets.done));
+            Client.getInstance().method35197().method25776(new Class6224("AutoFish", "We catched something!", ClientAssets.done));
         }
     }
 }

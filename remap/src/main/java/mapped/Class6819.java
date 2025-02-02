@@ -14,10 +14,10 @@ public class Class6819 extends ChannelInitializer<Channel>
 {
     private static String[] field26767;
     public final /* synthetic */ Class7872 field26768;
-    public final /* synthetic */ Class9575 field26769;
+    public final /* synthetic */ ServerData field26769;
     public final /* synthetic */ Class8115 field26770;
     
-    public Class6819(final Class8115 field26770, final Class7872 field26771, final Class9575 field26772) {
+    public Class6819(final Class8115 field26770, final Class7872 field26771, final ServerData field26772) {
         this.field26770 = field26770;
         this.field26768 = field26771;
         this.field26769 = field26772;

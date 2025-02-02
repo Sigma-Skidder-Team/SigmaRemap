@@ -17,7 +17,7 @@ public class NoHurtCam extends Module
     
     @EventListener
     private void method10176(final Class5741 class5741) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             NoHurtCam.mc.player.field2938 = 0;
         }
     }

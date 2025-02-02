@@ -23,7 +23,7 @@ public class InvMove extends Module
     
     @EventListener
     private void method9978(final Class5752 class5752) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5752.method17061() == InvMove.mc.gameSettings.field23442.field2161.field32860) {
                 if (InvMove.mc.player.method1815()) {
                     InvMove.mc.method5269().method17292(new Class4336(InvMove.mc.player, Class287.field1595));
@@ -34,12 +34,12 @@ public class InvMove extends Module
     
     @EventListener
     private void method9979(final Class5721 class5721) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15567) {
                 if (class5721.method16990() instanceof Class4336) {
                     if (this.method9883("AACP")) {
                         if (((Class4336)class5721.method16990()).method13018() == Class287.field1594) {
-                            class5721.method16961(true);
+                            class5721.setCancelled(true);
                         }
                     }
                 }
@@ -49,9 +49,9 @@ public class InvMove extends Module
     
     @EventListener
     private void method9980(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.method9883("AACP")) {
-                final boolean b = !(InvMove.mc.field4700 instanceof Class518) || !(InvMove.mc.field4700 instanceof Class726);
+                final boolean b = !(InvMove.mc.currentScreen instanceof Class518) || !(InvMove.mc.currentScreen instanceof Class726);
                 if (this.field15567 && !b) {
                     this.field15567 = !this.field15567;
                     if (InvMove.mc.player.method1815()) {
@@ -67,20 +67,20 @@ public class InvMove extends Module
                     }
                 }
             }
-            if (InvMove.mc.field4700 instanceof Class516 || Client.method35173().method35194().method29231() <= 1) {
-                if (InvMove.mc.field4700 instanceof Class535) {
+            if (InvMove.mc.currentScreen instanceof Class516 || Client.getInstance().playerTracker().focusGameTicks() <= 1) {
+                if (InvMove.mc.currentScreen instanceof ChatScreen) {
                     return;
                 }
-                if (InvMove.mc.field4700 instanceof Class515) {
+                if (InvMove.mc.currentScreen instanceof AnvilScreen) {
                     return;
                 }
-                if (InvMove.mc.field4700 instanceof Class531) {
+                if (InvMove.mc.currentScreen instanceof Class531) {
                     return;
                 }
-                if (InvMove.mc.field4700 instanceof Class525 && ((Class525) InvMove.mc.field4700).method3018() == 5) {
+                if (InvMove.mc.currentScreen instanceof Class525 && ((Class525) InvMove.mc.currentScreen).method3018() == 5) {
                     return;
                 }
-                if (Client.method35173().method35193().method32154() != null && Client.method35173().method35193().method32154().method14230()) {
+                if (Client.getInstance().method35193().method32154() != null && Client.getInstance().method35193().method32154().method14230()) {
                     final Class350[] field23460 = Minecraft.method5277().gameSettings.field23460;
                     for (int length = field23460.length, i = 0; i < length; ++i) {
                         field23460[i].field2162 = false;

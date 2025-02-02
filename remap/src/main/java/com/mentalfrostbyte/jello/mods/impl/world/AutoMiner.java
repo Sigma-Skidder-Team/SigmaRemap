@@ -43,7 +43,7 @@ public class AutoMiner extends Module
     
     @EventListener
     public void method10815(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4271) {
                 this.method10816(AutoMiner.mc.world.method6685(((Class4271)class5723.method16998()).method12818()).method7019());
             }
@@ -97,7 +97,7 @@ public class AutoMiner extends Module
     
     @EventListener
     public void method10819(final Class5743 class5743) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (AutoMiner.mc.player.ticksExisted >= 20) {
@@ -133,10 +133,10 @@ public class AutoMiner extends Module
             }
             if (n2 == 0) {
                 if (AutoMiner.mc.player.onGround) {
-                    if (!Client.method35173().method35205().method26559()) {
+                    if (!Client.getInstance().method35205().method26559()) {
                         if (this.field16106 == null) {
                             this.method10821();
-                            Client.method35173().method35197().method25776(new Class6224("AutoMiner", "Computing...", ClientAssets.direction));
+                            Client.getInstance().method35197().method25776(new Class6224("AutoMiner", "Computing...", ClientAssets.direction));
                             (this.field16106 = new Thread(() -> {
                                 list2.iterator();
                                 final Iterator iterator4;
@@ -157,8 +157,8 @@ public class AutoMiner extends Module
                                         this.field16105.method35017(class5750);
                                         final List list3;
                                         if (list3.size() > 1) {
-                                            Client.method35173().method35205().method26556(list3);
-                                            Client.method35173().method35197();
+                                            Client.getInstance().method35205().method26556(list3);
+                                            Client.getInstance().method35197();
                                             new Class6224("AutoMiner", "Solved in " + list3.size() + " steps! (" + this.field16105.field40407 + ":" + n3 + ")", ClientAssets.direction);
                                             final Class6224 class5751;
                                             final Object o2;
@@ -176,7 +176,7 @@ public class AutoMiner extends Module
                                 try {
                                     final boolean b;
                                     if (!b) {
-                                        Client.method35173().method35197();
+                                        Client.getInstance().method35197();
                                         new Class6224("AutoMiner", "Could not fin any safe path. (" + list2.size() + ")", ClientAssets.direction);
                                         final Class6224 class5752;
                                         final Object o3;
@@ -192,14 +192,14 @@ public class AutoMiner extends Module
                     }
                 }
             }
-            if (this.method9906()) {
+            if (this.isEnabled()) {
                 if (this.field16105 != null) {
                     if (this.field16106 != null) {
                         if (AutoMiner.mc.player.ticksExisted % 20 == 0) {
                             this.field16110 = this.field16109;
                             this.field16109 = this.method10825();
                         }
-                        Client.method35173().method35197().method25776(new Class6224("AutoMiner", "Computing... (" + this.field16105.field40407 + ")", ClientAssets.direction));
+                        Client.getInstance().method35197().method25776(new Class6224("AutoMiner", "Computing... (" + this.field16105.field40407 + ")", ClientAssets.direction));
                     }
                 }
             }
@@ -246,15 +246,15 @@ public class AutoMiner extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         if (this.field16106 != null) {
             this.field16106.interrupt();
         }
         this.field16106 = null;
         this.field16103.clear();
         this.field16104.clear();
-        Client.method35173().method35205().method26555();
-        Client.method35173().method35197().method25776(new Class6224("AutoMiner", "Scanning Terrain..."));
+        Client.getInstance().method35205().method26555();
+        Client.getInstance().method35197().method25776(new Class6224("AutoMiner", "Scanning Terrain..."));
     }
     
     @Override
@@ -265,7 +265,7 @@ public class AutoMiner extends Module
         this.field16106 = null;
         this.field16103.clear();
         this.field16104.clear();
-        Client.method35173().method35205().method26555();
+        Client.getInstance().method35205().method26555();
     }
     
     private void method10822() {
@@ -302,7 +302,7 @@ public class AutoMiner extends Module
     
     @EventListener
     public void method10824(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             this.method10826();
         }
     }
@@ -317,7 +317,7 @@ public class AutoMiner extends Module
     }
     
     public void method10826() {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field16105 != null) {
                 if (this.field16106 != null) {
                     GL11.glPushMatrix();

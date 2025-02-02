@@ -16,8 +16,8 @@ public class Class3829 extends Item
     private static final Map<Class181, Class3829> field17383;
     private final Class181 field17384;
     
-    public Class3829(final Class181 field17384, final Class8959 class8959) {
-        super(class8959);
+    public Class3829(final Class181 field17384, final Properties properties) {
+        super(properties);
         this.field17384 = field17384;
         Class3829.field17383.put(field17384, this);
     }

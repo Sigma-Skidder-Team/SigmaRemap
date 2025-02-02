@@ -238,7 +238,7 @@ public class Class425 extends Entity
                 this.field2584 = true;
             }
             else {
-                this.field2592 = ((Class7007)method23093).method21452();
+                this.field2592 = ((EntityRayTraceResult)method23093).getEntity();
                 this.method2075();
             }
         }

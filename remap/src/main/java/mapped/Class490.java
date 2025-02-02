@@ -21,7 +21,7 @@ import net.minecraft.util.text.ITextComponent;
 import java.util.List;
 import java.util.Set;
 
-public class Class490 extends TileEntity implements Class434, Class439
+public class Class490 extends TileEntity implements INamedContainerProvider, Class439
 {
     public static final Class5328[][] field2807;
     private static final Set<Class5328> field2808;

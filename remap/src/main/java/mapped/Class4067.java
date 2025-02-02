@@ -10,8 +10,8 @@ public class Class4067 extends Item
 {
     private static String[] field18160;
     
-    public Class4067(final Class8959 class8959) {
-        super(class8959);
+    public Class4067(final Properties properties) {
+        super(properties);
     }
     
     @Override

@@ -19,7 +19,7 @@ public class Class694 extends Screen
     private ITextComponent field3821;
     private long field3822;
     
-    public Class694(final Screen field3820, final Minecraft field3821, final Class9575 class9575) {
+    public Class694(final Screen field3820, final Minecraft field3821, final ServerData class9575) {
         super(NarratorChatListener.EMPTY);
         this.field3821 = new Class2259("connect.connecting", new Object[0]);
         this.field3822 = -1L;

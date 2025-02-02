@@ -33,7 +33,7 @@ public class AutoMLG extends PremiumModule
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         AutoMLG.field16007 = -1;
     }
     
@@ -44,7 +44,7 @@ public class AutoMLG extends PremiumModule
     
     @EventListener
     private void method10646(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (AutoMLG.field16007 > 0) {
                 if (!AutoMLG.mc.player.onGround) {
                     Class7482.method23149(class5717, 0.0);
@@ -56,7 +56,7 @@ public class AutoMLG extends PremiumModule
     @EventListener
     @Class6759
     private void method10647(final Class5744 class5744) {
-        if (this.method9906() && AutoMLG.mc.field4682.method27330()) {
+        if (this.isEnabled() && AutoMLG.mc.playerController.method27330()) {
             if (class5744.method17046()) {
                 if (AutoMLG.field16007 >= 0) {
                     ++AutoMLG.field16007;
@@ -66,16 +66,16 @@ public class AutoMLG extends PremiumModule
                 }
             }
             if (AutoMLG.field16007 == (this.method9883("Cubecraft") ? 5 : 3)) {
-                if (AutoMLG.mc.player.field3006.field2743 != this.field16005) {
-                    this.field16006 = AutoMLG.mc.player.field3006.field2743;
-                    AutoMLG.mc.player.field3006.field2743 = this.field16005;
-                    AutoMLG.mc.field4682.method27318();
+                if (AutoMLG.mc.player.inventory.field2743 != this.field16005) {
+                    this.field16006 = AutoMLG.mc.player.inventory.field2743;
+                    AutoMLG.mc.player.inventory.field2743 = this.field16005;
+                    AutoMLG.mc.playerController.method27318();
                 }
                 AutoMLG.mc.method5269().method17292(new Class4380(Class316.field1877));
                 AutoMLG.mc.method5269().method17292(new Class4307(Class316.field1877));
                 AutoMLG.field16007 = -1;
                 this.field16008 = null;
-                AutoMLG.mc.player.field3006.field2743 = this.field16006;
+                AutoMLG.mc.player.inventory.field2743 = this.field16006;
             }
             final int method30920 = this.method10648();
             if (!CubecraftFly.method10177()) {
@@ -88,10 +88,10 @@ public class AutoMLG extends PremiumModule
                                     final float[] method30922 = Class8845.method30919(method30921.getX() + 0.5, method30921.getZ() + 0.5, method30921.getY() + 0.5);
                                     class5744.method17043(method30922[0]);
                                     class5744.method17041(method30922[1]);
-                                    if (method30920 != AutoMLG.mc.player.field3006.field2743) {
-                                        this.field16006 = AutoMLG.mc.player.field3006.field2743;
-                                        AutoMLG.mc.player.field3006.field2743 = method30920;
-                                        AutoMLG.mc.field4682.method27318();
+                                    if (method30920 != AutoMLG.mc.player.inventory.field2743) {
+                                        this.field16006 = AutoMLG.mc.player.inventory.field2743;
+                                        AutoMLG.mc.player.inventory.field2743 = method30920;
+                                        AutoMLG.mc.playerController.method27318();
                                     }
                                     this.field16005 = method30920;
                                     this.field16008 = method30921;
@@ -112,14 +112,14 @@ public class AutoMLG extends PremiumModule
     
     public int method10648() {
         for (int i = 36; i < 45; ++i) {
-            if (AutoMLG.mc.player.field3008.method10878(i).method20054() && AutoMLG.mc.player.field3008.method10878(i).method20053().getItem() == Items.field31350) {
+            if (AutoMLG.mc.player.container.getSlot(i).method20054() && AutoMLG.mc.player.container.getSlot(i).method20053().getItem() == Items.field31350) {
                 return i - 36;
             }
         }
         for (int j = 9; j < 36; ++j) {
-            if (AutoMLG.mc.player.field3008.method10878(j).method20054() && AutoMLG.mc.player.field3008.method10878(j).method20053().getItem() == Items.field31350) {
+            if (AutoMLG.mc.player.container.getSlot(j).method20054() && AutoMLG.mc.player.container.getSlot(j).method20053().getItem() == Items.field31350) {
                 AutoMLG.mc.method5269().method17292(new Class4323(Class2218.field13623));
-                Class8639.method29370(j, 6);
+                InvManagerUtil.method29370(j, 6);
                 AutoMLG.mc.method5269().method17292(new Class4389(-1));
                 return 6;
             }

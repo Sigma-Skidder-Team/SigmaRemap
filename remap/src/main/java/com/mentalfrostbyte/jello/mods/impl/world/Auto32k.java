@@ -34,9 +34,9 @@ public class Auto32k extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15568 = null;
-        for (final BlockPos field15568 : Class4609.method13675(Class4609.method13691(Auto32k.mc.field4682.method27315()))) {
+        for (final BlockPos field15568 : Class4609.method13675(Class4609.method13691(Auto32k.mc.playerController.method27315()))) {
             if (Class4609.method13680(Auto32k.mc.player, field15568) >= 2.0f) {
                 if (!Class4609.method13665(Auto32k.mc.player, field15568)) {
                     continue;
@@ -54,27 +54,27 @@ public class Auto32k extends Module
                 continue;
             }
         }
-        this.field15570 = Class8639.method29340(Items.field31150, Items.field31146, Items.field31147, Items.field31144, Items.field31142, Items.field31148, Items.field31138, Items.field31143, Items.field31140, Items.field31137, Items.field31136, Items.field31141, Items.field31145, Items.field31149, Items.field31134, Items.field31135, Items.field31139);
-        this.field15569 = Class8639.method29340(Items.field31028);
+        this.field15570 = InvManagerUtil.method29340(Items.field31150, Items.field31146, Items.field31147, Items.field31144, Items.field31142, Items.field31148, Items.field31138, Items.field31143, Items.field31140, Items.field31137, Items.field31136, Items.field31141, Items.field31145, Items.field31149, Items.field31134, Items.field31135, Items.field31139);
+        this.field15569 = InvManagerUtil.method29340(Items.field31028);
         if (this.field15569 == -1) {
-            this.field15569 = Class8639.method29319(Items.field31028);
+            this.field15569 = InvManagerUtil.method29319(Items.field31028);
             if (this.field15569 != -1) {
                 if (this.field15569 >= 36 && this.field15569 <= 44) {
                     this.field15569 %= 9;
                 }
                 else {
-                    this.field15569 = Class8639.method29354(this.field15569);
+                    this.field15569 = InvManagerUtil.method29354(this.field15569);
                 }
             }
         }
         if (this.field15570 == -1) {
-            this.field15570 = Class8639.method29320(Items.field31150, Items.field31146, Items.field31147, Items.field31144, Items.field31142, Items.field31148, Items.field31138, Items.field31143, Items.field31140, Items.field31137, Items.field31136, Items.field31141, Items.field31145, Items.field31149, Items.field31134, Items.field31135, Items.field31139);
+            this.field15570 = InvManagerUtil.method29320(Items.field31150, Items.field31146, Items.field31147, Items.field31144, Items.field31142, Items.field31148, Items.field31138, Items.field31143, Items.field31140, Items.field31137, Items.field31136, Items.field31141, Items.field31145, Items.field31149, Items.field31134, Items.field31135, Items.field31139);
             if (this.field15570 != -1) {
                 if (this.field15570 >= 36 && this.field15570 <= 44) {
                     this.field15570 %= 9;
                 }
                 else {
-                    this.field15570 = Class8639.method29354(this.field15570);
+                    this.field15570 = InvManagerUtil.method29354(this.field15570);
                 }
             }
         }
@@ -101,7 +101,7 @@ public class Auto32k extends Module
     
     @EventListener
     private void method9982(final Class5739 class5739) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (this.field15568 != null) {
@@ -176,7 +176,7 @@ public class Auto32k extends Module
     
     @EventListener
     private void method9984(final Class5744 class5744) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (this.field15569 == -1) {
@@ -192,21 +192,21 @@ public class Auto32k extends Module
                     final float n2 = Class4609.method13673(this.field15568.method1137(), Direction.UP)[1];
                     class5744.method17043(n);
                     class5744.method17041(n2);
-                    final int field2743 = Auto32k.mc.player.field3006.field2743;
-                    Auto32k.mc.player.field3006.field2743 = this.field15569;
-                    final Class2201 method27319 = Auto32k.mc.field4682.method27319(Auto32k.mc.player, Auto32k.mc.world, Class316.field1877, new BlockRayTraceResult(Class4609.method13702(Direction.UP, this.field15568), Direction.UP, this.field15568, false));
+                    final int field2743 = Auto32k.mc.player.inventory.field2743;
+                    Auto32k.mc.player.inventory.field2743 = this.field15569;
+                    final Class2201 method27319 = Auto32k.mc.playerController.method27319(Auto32k.mc.player, Auto32k.mc.world, Class316.field1877, new BlockRayTraceResult(Class4609.method13702(Direction.UP, this.field15568), Direction.UP, this.field15568, false));
                     Auto32k.mc.player.method2707(Class316.field1877);
                     if (method27319 == Class2201.field13400) {
                         ++this.field15571;
                         Auto32k.mc.method5269().method17292(new Class4336(Auto32k.mc.player, Class287.field1591));
                         Auto32k.mc.player.field4085.field24728 = true;
-                        Auto32k.mc.player.field3006.field2743 = this.field15570;
+                        Auto32k.mc.player.inventory.field2743 = this.field15570;
                         final BlockRayTraceResult class5745 = new BlockRayTraceResult(Class4609.method13702(Direction.UP, this.field15568.method1137()), Direction.UP, this.field15568.method1137(), false);
-                        Auto32k.mc.field4682.method27319(Auto32k.mc.player, Auto32k.mc.world, Class316.field1877, class5745);
+                        Auto32k.mc.playerController.method27319(Auto32k.mc.player, Auto32k.mc.world, Class316.field1877, class5745);
                         Auto32k.mc.player.method2707(Class316.field1877);
                         Auto32k.mc.player.field4085.field24728 = false;
                         Auto32k.mc.method5269().method17292(new Class4336(Auto32k.mc.player, Class287.field1592));
-                        Auto32k.mc.field4682.method27319(Auto32k.mc.player, Auto32k.mc.world, Class316.field1877, class5745);
+                        Auto32k.mc.playerController.method27319(Auto32k.mc.player, Auto32k.mc.world, Class316.field1877, class5745);
                     }
                 }
             }
@@ -222,12 +222,12 @@ public class Auto32k extends Module
     
     @EventListener
     private void method9985(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4308) {
                 this.field15574 = (Class4308)class5723.method16998();
-                if (this.method9906()) {
+                if (this.isEnabled()) {
                     if (this.field15574.method12952() == Class8471.field34770) {
-                        class5723.method16961(true);
+                        class5723.setCancelled(true);
                     }
                 }
                 this.field15572 = this.field15574.method12951();
@@ -242,7 +242,7 @@ public class Auto32k extends Module
                     if (method12820 == 0) {
                         if (method12821.getItem() != Items.AIR) {
                             if (!this.field15575) {
-                                class5723.method16961(true);
+                                class5723.setCancelled(true);
                                 final Class5799 method12823 = Auto32k.mc.method5269();
                                 final int n = method12822;
                                 final int n2 = method12820;
@@ -254,15 +254,15 @@ public class Auto32k extends Module
                                 method12823.method17292(new Class4256(n, n2, n3, field12438, class5725, field12439));
                                 int n4 = -1;
                                 for (int i = 44; i > 9; --i) {
-                                    if (Auto32k.mc.player.field3008.method10878(i).method20053().method27620()) {
+                                    if (Auto32k.mc.player.container.getSlot(i).method20053().method27620()) {
                                         n4 = i;
                                         break;
                                     }
                                 }
                                 if (n4 != -1) {
-                                    Auto32k.mc.player.field3008.method10878(n4).method20055(method12821);
+                                    Auto32k.mc.player.container.getSlot(n4).method20055(method12821);
                                     if (n4 >= 36) {
-                                        Auto32k.mc.player.field3006.field2743 = n4 % 9;
+                                        Auto32k.mc.player.inventory.field2743 = n4 % 9;
                                     }
                                 }
                                 this.field15575 = true;
@@ -279,9 +279,9 @@ public class Auto32k extends Module
     
     @EventListener
     private void method9986(final Class5721 class5721) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5721.method16990() instanceof Class4389) {
-                class5721.method16961(true);
+                class5721.setCancelled(true);
             }
             if (class5721.method16990() instanceof Class4381) {
                 final float n = Class4609.method13673(this.field15568.method1137(), Direction.UP)[0];

@@ -41,10 +41,10 @@ public class Class8866
     
     public void method31130(final Entity class399, final float n, final float n2) {
         if (this.field37268.method9883("Interact autoblock")) {
-            final Class7007 method19144 = ColorUtils.method19144(this.field37268.method9883("Raytrace") ? null : class399, n, n2, p0 -> true, this.field37268.getNumberSettingValueByName("Range"));
+            final EntityRayTraceResult method19144 = ColorUtils.method19144(this.field37268.method9883("Raytrace") ? null : class399, n, n2, p0 -> true, this.field37268.getNumberSettingValueByName("Range"));
             if (method19144 != null) {
-                this.field37269.method5269().method17292(new Class4381(method19144.method21452(), Class316.field1877, method19144.getHitVec()));
-                this.field37269.method5269().method17292(new Class4381(method19144.method21452(), Class316.field1877));
+                this.field37269.method5269().method17292(new Class4381(method19144.getEntity(), Class316.field1877, method19144.getHitVec()));
+                this.field37269.method5269().method17292(new Class4381(method19144.getEntity(), Class316.field1877));
             }
         }
         ColorUtils.method19163();
@@ -57,7 +57,7 @@ public class Class8866
     }
     
     public boolean method31132() {
-        if (!this.field37268.method9887("Autoblock Mode").equals("None")) {
+        if (!this.field37268.getStringSettingValueByName("Autoblock Mode").equals("None")) {
             if (this.field37269.player.getHeldItemMainhand().getItem() instanceof Class4077) {
                 if (!this.method31128()) {
                     return true;
@@ -116,7 +116,7 @@ public class Class8866
             final Class8131 class400 = (Class8131)iterator2.next();
             final Entity method26798 = class400.method26798();
             if (method26798 != this.field37269.player && method26798 != Blink.field15771) {
-                if (!Client.method35173().method35190().method29878(method26798)) {
+                if (!Client.getInstance().method35190().method29878(method26798)) {
                     if (method26798 instanceof LivingEntity) {
                         if (((LivingEntity)method26798).method2664() != 0.0f) {
                             if (this.field37269.player.method1732(method26798) <= n) {
@@ -125,7 +125,7 @@ public class Class8866
                                         if (!this.field37268.method9883("Players") && method26798 instanceof PlayerEntity) {
                                             iterator2.remove();
                                         }
-                                        else if (method26798 instanceof PlayerEntity && Client.method35173().method35191().method31751(method26798)) {
+                                        else if (method26798 instanceof PlayerEntity && Client.getInstance().method35191().method31751(method26798)) {
                                             iterator2.remove();
                                         }
                                         else if (!this.field37268.method9883("Invisible") && method26798.method1823()) {
@@ -140,7 +140,7 @@ public class Class8866
                                         else if (!method26798.method1850()) {
                                             if (method26798 instanceof PlayerEntity) {
                                                 if (Class9011.method32262((PlayerEntity)method26798)) {
-                                                    if (Client.method35173().method35189().method21551(Teams.class).method9906()) {
+                                                    if (Client.getInstance().method35189().method21551(Teams.class).isEnabled()) {
                                                         iterator2.remove();
                                                         continue;
                                                     }
@@ -194,7 +194,7 @@ public class Class8866
     }
     
     public List<Class8131> method31138(final List<Class8131> list) {
-        final String method9887 = this.field37268.method9887("Sort Mode");
+        final String method9887 = this.field37268.getStringSettingValueByName("Sort Mode");
         switch (method9887) {
             case "Range": {
                 Collections.sort((List<Object>)list, (Comparator<? super Object>)new Class4464(this));

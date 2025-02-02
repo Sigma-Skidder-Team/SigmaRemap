@@ -449,7 +449,7 @@ public final class ItemStack
         return method27660 != null && method27660.contains("Name", 8);
     }
     
-    public List<ITextComponent> method27668(final PlayerEntity playerEntity, final Class1981 class513) {
+    public List<ITextComponent> method27668(final PlayerEntity playerEntity, final ITooltipFlag class513) {
         final ArrayList arrayList = Lists.newArrayList();
         final ITextComponent method8469 = new StringTextComponent("").appendSibling(this.method27664()).applyTextStyle(this.method27672().field11190);
         if (this.method27667()) {
@@ -464,7 +464,7 @@ public final class ItemStack
             method8470 = this.field34179.getInt("HideFlags");
         }
         if ((method8470 & 0x20) == 0x0) {
-            this.getItem().method11728(this, (playerEntity == null) ? null : playerEntity.world, arrayList, class513);
+            this.getItem().addInformation(this, (playerEntity == null) ? null : playerEntity.world, arrayList, class513);
         }
         if (this.method27656()) {
             if ((method8470 & 0x1) == 0x0) {

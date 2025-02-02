@@ -81,7 +81,7 @@ public class Class8974
     }
     
     public boolean method31864() {
-        if (Math.sqrt(this.method31868()) <= Minecraft.method5277().gameSettings.field23382 * 16 && Client.method35173().method35192().method28375()) {
+        if (Math.sqrt(this.method31868()) <= Minecraft.method5277().gameSettings.field23382 * 16 && Client.getInstance().method35192().method28375()) {
             return true;
         }
         if (this.method31868() > 576.0) {
@@ -259,7 +259,7 @@ public class Class8974
     }
     
     private boolean method31885() {
-        return Class7520.method23478(this.field37833) instanceof Class1848 && ((Class1848)Class7520.method23478(this.field37833)).method6837();
+        return Class7520.method23478(this.field37833) instanceof ClientWorld && ((ClientWorld)Class7520.method23478(this.field37833)).method6837();
     }
     
     public boolean method31886() {

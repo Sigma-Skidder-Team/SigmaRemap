@@ -58,7 +58,7 @@ public class Class8897
         method31327(EntityType.field28977, Class2194.field13354, HeightmapType.field11526, Class763::method4230);
         method31327(EntityType.field28978, Class2194.field13354, HeightmapType.field11526, Class842::method5035);
         method31327(EntityType.field28976, Class2194.field13354, HeightmapType.field11526, Class759::method4178);
-        method31327(EntityType.field28986, Class2194.field13354, HeightmapType.field11526, Class761::method4225);
+        method31327(EntityType.field28986, Class2194.field13354, HeightmapType.field11526, GhastEntity::method4225);
         method31327(EntityType.field28987, Class2194.field13354, HeightmapType.field11526, Class763::method4230);
         method31327(EntityType.field28989, Class2194.field13354, HeightmapType.field11526, Class789::method4356);
         method31327(EntityType.field28990, Class2194.field13354, HeightmapType.field11526, Class829::method4941);

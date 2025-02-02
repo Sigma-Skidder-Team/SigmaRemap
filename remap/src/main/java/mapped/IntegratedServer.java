@@ -22,7 +22,7 @@ import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
 import java.util.UUID;
 import org.apache.logging.log4j.Logger;
 
-public class Class1655 extends MinecraftServer
+public class IntegratedServer extends MinecraftServer
 {
     private static final Logger field9268;
     private final Minecraft field9269;
@@ -36,7 +36,7 @@ public class Class1655 extends MinecraftServer
     public BlockPos field9277;
     public Class9592 field9278;
     
-    public Class1655(final Minecraft field9269, final String s, final String s2, final Class8511 class8511, final YggdrasilAuthenticationService yggdrasilAuthenticationService, final MinecraftSessionService minecraftSessionService, final GameProfileRepository gameProfileRepository, final Class8608 class8512, final Class6906 class8513) {
+    public IntegratedServer(final Minecraft field9269, final String s, final String s2, final Class8511 class8511, final YggdrasilAuthenticationService yggdrasilAuthenticationService, final MinecraftSessionService minecraftSessionService, final GameProfileRepository gameProfileRepository, final Class8608 class8512, final Class6906 class8513) {
         super(new File(field9269.field4652, "saves"), field9269.method5289(), field9269.method5313(), new Class7788(false), yggdrasilAuthenticationService, minecraftSessionService, gameProfileRepository, class8512, class8513, s);
         this.field9272 = -1;
         this.field9275 = 0L;
@@ -77,13 +77,13 @@ public class Class1655 extends MinecraftServer
     
     @Override
     public boolean method1435() throws IOException {
-        Class1655.field9268.info("Starting integrated minecraft server version " + Class9528.method35579().getName());
+        IntegratedServer.field9268.info("Starting integrated minecraft server version " + Class9528.method35579().getName());
         this.method1519(true);
         this.method1523(true);
         this.method1526(true);
         this.method1528(true);
         this.method1530(true);
-        Class1655.field9268.info("Generating keypair");
+        IntegratedServer.field9268.info("Generating keypair");
         this.method1504(Class9359.method34698());
         if (Class9570.field41424.method22605() && !Class9570.method35812(Class9570.field41424, this)) {
             return false;
@@ -102,7 +102,7 @@ public class Class1655 extends MinecraftServer
         if (!field9271) {
             if (this.field9271) {
                 method1590.startSection("autoSave");
-                Class1655.field9268.info("Saving and pausing game...");
+                IntegratedServer.field9268.info("Saving and pausing game...");
                 this.method1537().method20600();
                 this.method1451(false, false, false);
                 method1590.endSection();
@@ -112,7 +112,7 @@ public class Class1655 extends MinecraftServer
             super.method1469(booleanSupplier);
             final int max = Math.max(2, this.field9269.gameSettings.field23382 - 1);
             if (max != this.method1537().method20613()) {
-                Class1655.field9268.info("Changing view distance to {}, from {}", (Object)max, (Object)this.method1537().method20613());
+                IntegratedServer.field9268.info("Changing view distance to {}, from {}", (Object)max, (Object)this.method1537().method20613());
                 this.method1537().method20622(max);
             }
         }
@@ -199,7 +199,7 @@ public class Class1655 extends MinecraftServer
     public boolean method1544(final Class101 class101, final boolean b, final int i) {
         try {
             this.method1541().method24060(null, i);
-            Class1655.field9268.info("Started serving on {}", (Object)i);
+            IntegratedServer.field9268.info("Started serving on {}", (Object)i);
             this.field9272 = i;
             (this.field9273 = new Class917(this.method1532(), i + "")).start();
             this.method1537().method20614(class101);

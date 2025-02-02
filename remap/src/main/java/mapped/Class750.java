@@ -35,8 +35,8 @@ public class Class750 extends Class516<Class3440>
         final int n4 = (this.width - this.field3075) / 2;
         final int n5 = (this.height - this.field3076) / 2;
         this.blit(n4, n5, 0, 0, this.field3075, this.field3076);
-        if (this.field3077.method10878(0).method20054() || this.field3077.method10878(1).method20054()) {
-            if (!this.field3077.method10878(2).method20054()) {
+        if (this.field3077.getSlot(0).method20054() || this.field3077.getSlot(1).method20054()) {
+            if (!this.field3077.getSlot(2).method20054()) {
                 this.blit(n4 + 92, n5 + 31, this.field3075, 0, 28, 21);
             }
         }

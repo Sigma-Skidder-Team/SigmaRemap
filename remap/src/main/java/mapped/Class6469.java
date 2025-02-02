@@ -144,7 +144,7 @@ public abstract class Class6469
     static {
         field25705 = new Class6470("options.biomeBlendRadius", 0.0, 7.0, 1.0f, class5760 -> Double.valueOf(class5760.field23410), (class5762, n) -> {
             class5762.field23410 = MathHelper.method35651(n.intValue(), 0, 7);
-            Minecraft.method5277().field4636.method5701();
+            Minecraft.method5277().worldRenderer.loadRenderers();
             return;
         }, (class5763, class5765) -> class5765.method19365() + Class8822.method30773("options.biomeBlendRadius." + ((int)class5765.method19476(class5763) * 2 + 1), new Object[0]));
         field25706 = new Class6470("options.chat.height.focused", 0.0, 1.0, 0.0f, class5767 -> class5767.field23404, (class5769, n2) -> {
@@ -301,7 +301,7 @@ public abstract class Class6469
         });
         field25717 = new Class6470("options.renderDistance", 2.0, 16.0, 1.0f, class5832 -> Double.valueOf(class5832.field23382), (class5834, n17) -> {
             class5834.field23382 = n17.intValue();
-            Minecraft.method5277().field4636.method5755();
+            Minecraft.method5277().worldRenderer.method5755();
             return;
         }, (class5835, class5837) -> {
             class5837.method19476(class5835);
@@ -336,7 +336,7 @@ public abstract class Class6469
         }, (class5847, class5849) -> class5849.method19365() + (int)(class5849.method19469(class5849.method19476(class5847)) * 100.0) + "%");
         field25720 = new Class6474("options.ao", (class5851, n22) -> {
             class5851.field23386 = Class2007.method8041(class5851.field23386.method8039() + n22);
-            Minecraft.method5277().field4636.method5701();
+            Minecraft.method5277().worldRenderer.loadRenderers();
             return;
         }, (class5852, class5854) -> class5854.method19365() + Class8822.method30773(class5852.field23386.method8040(), new Object[0]));
         field25721 = new Class6474("options.attackIndicator", (class5856, n23) -> class5856.field23408 = Class323.method996(class5856.field23408.method994() + n23), (class5857, class5859) -> class5859.method19365() + Class8822.method30773(class5857.field23408.method995(), new Object[0]));
@@ -344,7 +344,7 @@ public abstract class Class6469
         field25723 = new Class6474("options.graphics", (class5866, p1) -> {
             class5866.field23385 = !class5866.field23385;
             class5866.method17136();
-            Minecraft.method5277().field4636.method5701();
+            Minecraft.method5277().worldRenderer.loadRenderers();
             return;
         }, (class5867, class5869) -> {
             String s8;

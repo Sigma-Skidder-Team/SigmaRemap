@@ -21,7 +21,7 @@ public class InvadedSpeed extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
     }
     
     @Override
@@ -32,7 +32,7 @@ public class InvadedSpeed extends Module
     
     @EventListener
     public void method10041(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             ++this.field15617;
             if (this.field15617 != 1) {
                 if (this.field15617 != 2) {

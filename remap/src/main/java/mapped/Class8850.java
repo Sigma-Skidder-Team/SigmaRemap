@@ -135,7 +135,7 @@ public class Class8850
     }
     
     private static void method30989(final Class1656 class1656) {
-        final Class1848 method5763 = class1656.method5763();
+        final ClientWorld method5763 = class1656.method5763();
         if (method5763 != null) {
             for (final Entity class1657 : method5763.method6806()) {
                 if (method30995(class1657) <= 0) {

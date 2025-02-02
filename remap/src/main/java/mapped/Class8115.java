@@ -28,7 +28,7 @@ public class Class8115
         this.field33450 = Collections.synchronizedList((List<NetworkManager>)Lists.newArrayList());
     }
     
-    public void method26694(final Class9575 class9575) throws UnknownHostException {
+    public void method26694(final ServerData class9575) throws UnknownHostException {
         final Class7872 method25494 = Class7872.method25494(class9575.field41613);
         final NetworkManager method25495 = NetworkManager.method11183(InetAddress.getByName(method25494.method25492()), method25494.method25493(), false);
         this.field33450.add(method25495);
@@ -45,7 +45,7 @@ public class Class8115
         }
     }
     
-    private void method26695(final Class9575 class9575) {
+    private void method26695(final ServerData class9575) {
         final Class7872 method25494 = Class7872.method25494(class9575.field41613);
         ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup) NetworkManager.field16894.method29528())).handler((ChannelHandler)new Class6819(this, method25494, class9575))).channel((Class)NioSocketChannel.class)).connect(method25494.method25492(), method25494.method25493());
     }

@@ -266,8 +266,8 @@ public class Class3441 extends Class3418
     
     public void method10997(final String field16258) {
         this.field16258 = field16258;
-        if (this.method10878(2).method20054()) {
-            final ItemStack method20053 = this.method10878(2).method20053();
+        if (this.getSlot(2).method20054()) {
+            final ItemStack method20053 = this.getSlot(2).method20053();
             if (!StringUtils.isBlank((CharSequence)field16258)) {
                 method20053.method27665(new StringTextComponent(this.field16258));
             }

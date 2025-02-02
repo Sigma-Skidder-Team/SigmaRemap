@@ -35,16 +35,16 @@ public class RearView extends PremiumModule
     
     @EventListener
     public void method10622(final Class5743 class5743) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (Config.method28955()) {
-            Client.method35173().method35197().method25776(new Class6224("RearView", "Not compatible with Shaders"));
+            Client.getInstance().method35197().method25776(new Class6224("RearView", "Not compatible with Shaders"));
             this.method9909(false);
         }
         if (RearView.field15986 != null) {
             if (RearView.field15986.field24886 != RearView.mc.field4632.method7692() || RearView.field15986.field24887 != RearView.mc.field4632.method7693()) {
-                this.method9879();
+                this.onEnable();
             }
         }
         if (this.method9883("Smart Visibility")) {
@@ -53,7 +53,7 @@ public class RearView extends PremiumModule
                 if (class5744.method1732(RearView.mc.player) < 12.0f) {
                     if (!this.method10623(class5744)) {
                         if (RearView.mc.player != class5744) {
-                            if (!Client.method35173().method35191().method31751(class5744)) {
+                            if (!Client.getInstance().method35191().method31751(class5744)) {
                                 return b;
                             }
                         }
@@ -85,12 +85,12 @@ public class RearView extends PremiumModule
         if (RearView.field15986 == null) {
             return;
         }
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (!Minecraft.method5277().gameSettings.field23464) {
             if (!this.method9883("Smart Visibility")) {
-                this.field15985.changeDirection((RearView.mc.field4700 != null && !this.method9883("Show in GUI")) ? Direction.FORWARDS : Direction.BACKWARDS);
+                this.field15985.changeDirection((RearView.mc.currentScreen != null && !this.method9883("Show in GUI")) ? Direction.FORWARDS : Direction.BACKWARDS);
             }
             else {
                 this.field15985.changeDirection((this.field15990 <= 0) ? Direction.FORWARDS : Direction.BACKWARDS);
@@ -170,11 +170,11 @@ public class RearView extends PremiumModule
     
     @EventListener
     public void method10627(final Class5741 class5741) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (RearView.field15986 != null) {
-            if (RearView.mc.field4700 != null) {
+            if (RearView.mc.currentScreen != null) {
                 if (!this.method9883("Show in GUI")) {
                     if (this.field15990 == 0) {
                         return;
@@ -190,7 +190,7 @@ public class RearView extends PremiumModule
             Math.max(Math.min(Minecraft.method5338(), RearView.mc.gameSettings.field23383), 60);
             final long n = Util.method27838() - class5741.field23313;
             final float field2399 = RearView.mc.player.rotationYaw;
-            final Class756 field2400 = RearView.mc.player;
+            final ClientPlayerEntity field2400 = RearView.mc.player;
             field2400.rotationYaw += 180.0f;
             RenderSystem.enableDepthTest();
             GL11.glAlphaFunc(519, 0.0f);
@@ -198,10 +198,10 @@ public class RearView extends PremiumModule
             RearView.mc.gameSettings.field23471 = 114.0;
             RearView.mc.field4644.field9392 = false;
             Client.field40711 = true;
-            final Class6153 field2402 = RearView.mc.field4636.field9308;
-            RearView.mc.field4636.field9308 = null;
+            final Class6153 field2402 = RearView.mc.worldRenderer.field9308;
+            RearView.mc.worldRenderer.field9308 = null;
             RearView.mc.field4644.method5820(class5741.field23312, Util.method27838(), new MatrixStack());
-            RearView.mc.field4636.field9308 = field2402;
+            RearView.mc.worldRenderer.field9308 = field2402;
             Client.field40711 = false;
             RearView.mc.field4644.field9392 = true;
             RearView.mc.gameSettings.field23471 = field2401;
@@ -210,11 +210,11 @@ public class RearView extends PremiumModule
             RearView.mc.method5234().method18395(true);
             return;
         }
-        this.method9879();
+        this.onEnable();
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         RenderUtil.method26919(RearView.mc.method5234());
         final int method7692 = RearView.mc.field4632.method7692();
         final int method7693 = RearView.mc.field4632.method7693();

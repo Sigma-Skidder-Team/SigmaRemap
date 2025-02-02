@@ -22,20 +22,20 @@ public class ServerCrasher extends PremiumModule
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15991 = 0;
     }
     
     @EventListener
     private void method10629(final Class5743 class5743) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (ServerCrasher.mc.method5284()) {
             this.method9910();
             return;
         }
-        final String method9887 = this.method9887("Mode");
+        final String method9887 = this.getStringSettingValueByName("Mode");
         switch (method9887) {
             case "Flying Enabled": {
                 final double field2395 = ServerCrasher.mc.player.posX;

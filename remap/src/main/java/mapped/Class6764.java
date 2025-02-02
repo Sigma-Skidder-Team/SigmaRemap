@@ -13,7 +13,7 @@ public class Class6764 extends Class6765
 {
     private CompoundNBT field26555;
     
-    public Class6764(final Class1655 class1655) {
+    public Class6764(final IntegratedServer class1655) {
         super(class1655, 8);
         this.method20622(10);
     }
@@ -31,8 +31,8 @@ public class Class6764 extends Class6765
         return (gameProfile.getName().equalsIgnoreCase(this.method20574().method1498()) && this.method20598(gameProfile.getName()) != null) ? new Class2259("multiplayer.disconnect.name_taken", new Object[0]) : super.method20573(socketAddress, gameProfile);
     }
     
-    public Class1655 method20574() {
-        return (Class1655)super.method20576();
+    public IntegratedServer method20574() {
+        return (IntegratedServer)super.method20576();
     }
     
     @Override

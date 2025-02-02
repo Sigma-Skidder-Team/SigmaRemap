@@ -21,7 +21,7 @@ public class Compass extends Module
     
     @EventListener
     private void method10804(final Class5740 class5740) {
-        if (!this.method9906() || Compass.mc.player == null) {
+        if (!this.isEnabled() || Compass.mc.player == null) {
             return;
         }
         if (!Minecraft.method5277().gameSettings.field23464) {

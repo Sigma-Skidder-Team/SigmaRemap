@@ -405,8 +405,8 @@ public abstract class Entity implements INameable, ICommandSource {
     public void method1671(final Class2160 class2160, Vec3d class2161) {
         if (Minecraft.method5277().player != null && Minecraft.method5277().player.method1920() != null && Minecraft.method5277().player.method1920().getEntityId() == this.getEntityId()) {
             final Class5718 class2162 = new Class5718(class2161.x, class2161.y, class2161.z);
-            Client.method35173().method35188().method21097(class2162);
-            if (class2162.method16962()) {
+            Client.getInstance().method35188().method21097(class2162);
+            if (class2162.isCancelled()) {
                 return;
             }
             class2161 = new Vec3d(class2162.method16980(), class2162.method16982(), class2162.method16984());
@@ -637,7 +637,7 @@ public abstract class Entity implements INameable, ICommandSource {
                 }
             }
         }
-        return getAllowedMovement(class400, class401, class402, class403, class404, class399 != null && class399 instanceof Class756);
+        return getAllowedMovement(class400, class401, class402, class403, class404, class399 != null && class399 instanceof ClientPlayerEntity);
     }
 
     public static Vec3d collideBoundingBox(final Vec3d class5487, AxisAlignedBB class5488, final ReuseableStream<VoxelShape> class5489) {

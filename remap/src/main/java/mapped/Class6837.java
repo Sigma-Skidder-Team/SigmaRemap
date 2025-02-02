@@ -7,10 +7,10 @@ package mapped;
 public class Class6837 extends Class6831
 {
     private static String[] field26846;
-    private final Class756 field26847;
+    private final ClientPlayerEntity field26847;
     private int field26848;
     
-    public Class6837(final Class756 field26847) {
+    public Class6837(final ClientPlayerEntity field26847) {
         super(Class8520.field34967, Class286.field1586);
         this.field26847 = field26847;
         this.field26840 = true;

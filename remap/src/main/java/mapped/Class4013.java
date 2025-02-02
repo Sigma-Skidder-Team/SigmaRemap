@@ -19,7 +19,7 @@ public class Class4013 extends Block
     }
     
     @Override
-    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onBlockAdded(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7097.method6789().method20502()) {
             class7097.setBlockState(class7098, Blocks.field29211.getDefaultState(), 3);
             class7097.method6955(2009, class7098, 0);

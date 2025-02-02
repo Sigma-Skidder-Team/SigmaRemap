@@ -36,12 +36,12 @@ public enum Class2034 implements Class2035
     
     @Override
     public int method8096(final Class2215 class2215) {
-        return Class2034.field11598[class2215.method8402()] * this.field11600;
+        return Class2034.field11598[class2215.getIndex()] * this.field11600;
     }
     
     @Override
     public int method8097(final Class2215 class2215) {
-        return this.field11601[class2215.method8402()];
+        return this.field11601[class2215.getIndex()];
     }
     
     @Override

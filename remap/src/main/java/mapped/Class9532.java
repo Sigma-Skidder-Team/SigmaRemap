@@ -38,20 +38,20 @@ public class Class9532
                     JSONObject = new JSONObject(string);
                 }
                 catch (final JSONException class4406) {
-                    if (Client.method35173().method35187() != null) {
-                        Client.method35173().method35187().method20241("Error when reading json from config. Continuing, but no preferences will be loaded.");
+                    if (Client.getInstance().method35187() != null) {
+                        Client.getInstance().method35187().method20241("Error when reading json from config. Continuing, but no preferences will be loaded.");
                     }
                     class4406.printStackTrace();
                 }
             }
-            else if (Client.method35173().method35187() != null) {
-                Client.method35173().method35187().method20241("Empty config file");
+            else if (Client.getInstance().method35187() != null) {
+                Client.getInstance().method35187().method20241("Empty config file");
             }
             fileInputStream.close();
         }
         else {
-            if (Client.method35173().method35187() != null) {
-                Client.method35173().method35187().method20240("Config does not exist... creating new config file...");
+            if (Client.getInstance().method35187() != null) {
+                Client.getInstance().method35187().method20240("Config does not exist... creating new config file...");
             }
             Class9532.field41028 = true;
             file.createNewFile();

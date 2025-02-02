@@ -97,7 +97,7 @@ public class Class4827 extends Class4825 implements Class4828
         final int method19118 = ColorUtils.applyAlpha(ClientColors.field1273.color, 0.2f * n);
         int field20478 = this.field20478;
         int field20479 = this.field20480;
-        if (Client.method35173().method35209() != Class2209.field13464) {
+        if (Client.getInstance().method35209() != Class2209.field13464) {
             final int n3 = 0;
             field20479 -= 8;
             field20478 += 8;

@@ -19,7 +19,7 @@ public class NCPStep extends Module
     @EventListener
     @Class6759
     private void method10532(final Class5745 class5745) {
-        if (!this.method9906() || class5745.method16962()) {
+        if (!this.isEnabled() || class5745.isCancelled()) {
             return;
         }
         final double method17049 = class5745.method17049();
@@ -60,12 +60,12 @@ public class NCPStep extends Module
             }
             return;
         }
-        class5745.method16961(true);
+        class5745.setCancelled(true);
     }
     
     @EventListener
     private void method10533(final Class5738 class5738) {
-        if (this.method9906() && NCPStep.mc.player != null) {
+        if (this.isEnabled() && NCPStep.mc.player != null) {
             if (!class5738.method17027()) {
                 NCPStep.mc.player.stepHeight = this.getNumberSettingValueByName("Maximum heigh");
             }

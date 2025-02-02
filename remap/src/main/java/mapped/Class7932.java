@@ -10,6 +10,6 @@ import com.mentalfrostbyte.jello.mods.impl.misc.FakeForge;
 public class Class7932
 {
     public static String method25729() {
-        return (Client.method35173().method35189() != null && Client.method35173().method35189().method21551(FakeForge.class).method9906()) ? Client.method35173().method35189().method21551(FakeForge.class).method9887("Client Brand") : "vanilla";
+        return (Client.getInstance().method35189() != null && Client.getInstance().method35189().method21551(FakeForge.class).isEnabled()) ? Client.getInstance().method35189().method21551(FakeForge.class).getStringSettingValueByName("Client Brand") : "vanilla";
     }
 }

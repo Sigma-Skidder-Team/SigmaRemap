@@ -41,7 +41,7 @@ public class Class412 extends Class409
     public void method2016(final RayTraceResult class7006) {
         final LivingEntity method2019 = this.method2019();
         if (class7006.getType() == RayTraceResult.Type.ENTITY) {
-            final Entity method2020 = ((Class7007)class7006).method21452();
+            final Entity method2020 = ((EntityRayTraceResult)class7006).getEntity();
             if (method2020 == this.field2510) {
                 return;
             }

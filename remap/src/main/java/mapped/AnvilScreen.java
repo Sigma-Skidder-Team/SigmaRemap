@@ -8,12 +8,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class515 extends Class516<Class3441> implements Class514
+public class AnvilScreen extends Class516<Class3441> implements Class514
 {
     private static final ResourceLocation field3072;
     private Class576 field3073;
     
-    public Class515(final Class3441 class3441, final Class464 class3442, final ITextComponent class3443) {
+    public AnvilScreen(final Class3441 class3441, final Class464 class3442, final ITextComponent class3443) {
         super(class3441, class3442, class3443);
     }
     
@@ -68,8 +68,8 @@ public class Class515 extends Class516<Class3441> implements Class514
                 s = Class8822.method30773("container.repair.expensive", new Object[0]);
                 n3 = 16736352;
             }
-            else if (this.field3077.method10878(2).method20054()) {
-                if (!this.field3077.method10878(2).method20061(this.field3078.field2744)) {
+            else if (this.field3077.getSlot(2).method20054()) {
+                if (!this.field3077.getSlot(2).method20061(this.field3078.field2744)) {
                     n3 = 16736352;
                 }
             }
@@ -87,7 +87,7 @@ public class Class515 extends Class516<Class3441> implements Class514
     private void method2974(final String s) {
         if (!s.isEmpty()) {
             String s2 = s;
-            final Class6601 method10878 = this.field3077.method10878(0);
+            final Class6601 method10878 = this.field3077.getSlot(0);
             if (method10878 != null) {
                 if (method10878.method20054()) {
                     if (!method10878.method20053().method27667()) {
@@ -114,13 +114,13 @@ public class Class515 extends Class516<Class3441> implements Class514
     @Override
     public void method2976(final float n, final int n2, final int n3) {
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        this.minecraft.method5290().method5849(Class515.field3072);
+        this.minecraft.method5290().method5849(AnvilScreen.field3072);
         final int n4 = (this.width - this.field3075) / 2;
         final int n5 = (this.height - this.field3076) / 2;
         this.blit(n4, n5, 0, 0, this.field3075, this.field3076);
-        this.blit(n4 + 59, n5 + 20, 0, this.field3076 + (this.field3077.method10878(0).method20054() ? 0 : 16), 110, 16);
-        if (this.field3077.method10878(0).method20054() || this.field3077.method10878(1).method20054()) {
-            if (!this.field3077.method10878(2).method20054()) {
+        this.blit(n4 + 59, n5 + 20, 0, this.field3076 + (this.field3077.getSlot(0).method20054() ? 0 : 16), 110, 16);
+        if (this.field3077.getSlot(0).method20054() || this.field3077.getSlot(1).method20054()) {
+            if (!this.field3077.getSlot(2).method20054()) {
                 this.blit(n4 + 99, n5 + 45, this.field3075, 0, 28, 21);
             }
         }
@@ -128,7 +128,7 @@ public class Class515 extends Class516<Class3441> implements Class514
     
     @Override
     public void method2930(final Class3418 class3418, final NonNullList<ItemStack> class3419) {
-        this.method2928(class3418, 0, class3418.method10878(0).method20053());
+        this.method2928(class3418, 0, class3418.getSlot(0).method20053());
     }
     
     @Override

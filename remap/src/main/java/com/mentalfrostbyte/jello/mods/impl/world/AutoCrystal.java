@@ -42,7 +42,7 @@ public class AutoCrystal extends PremiumModule
     
     @EventListener
     private void method10650(final Class5744 class5744) {
-        if (!this.method9906() || AutoCrystal.mc.world == null) {
+        if (!this.isEnabled() || AutoCrystal.mc.world == null) {
             return;
         }
         if (class5744.method17046()) {
@@ -185,8 +185,8 @@ public class AutoCrystal extends PremiumModule
                 }
                 else {
                     final float[] method10659 = Class8845.method30912(method10658.get(0));
-                    final Class7007 method10660 = ColorUtils.method19142(class5744.method17042(), class5744.method17040(), 5.0f, 0.0);
-                    if (method10660 == null || !method10658.get(0).equals(method10660.method21452())) {
+                    final EntityRayTraceResult method10660 = ColorUtils.rayTraceFromPlayer(class5744.method17042(), class5744.method17040(), 5.0f, 0.0);
+                    if (method10660 == null || !method10658.get(0).equals(method10660.getEntity())) {
                         class5744.method17043(method10659[0]);
                         class5744.method17041(method10659[1]);
                     }
@@ -235,11 +235,11 @@ public class AutoCrystal extends PremiumModule
     
     private void method10662() {
         if (this.field16011 != null && this.field16012 != null) {
-            final int method29340 = Class8639.method29340(Items.field31572);
+            final int method29340 = InvManagerUtil.method29340(Items.field31572);
             if (method29340 >= 0) {
-                AutoCrystal.mc.player.field3006.field2743 = method29340;
-                AutoCrystal.mc.field4682.method27318();
-                AutoCrystal.mc.field4682.method27319(AutoCrystal.mc.player, AutoCrystal.mc.world, Class316.field1877, this.field16012);
+                AutoCrystal.mc.player.inventory.field2743 = method29340;
+                AutoCrystal.mc.playerController.method27318();
+                AutoCrystal.mc.playerController.method27319(AutoCrystal.mc.player, AutoCrystal.mc.world, Class316.field1877, this.field16012);
             }
         }
     }

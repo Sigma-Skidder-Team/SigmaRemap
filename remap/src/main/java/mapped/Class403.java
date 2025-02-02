@@ -102,13 +102,13 @@ public class Class403 extends Class402
     
     @Nullable
     @Override
-    public Class7007 method1971(final Vec3d class5487, final Vec3d class5488) {
+    public EntityRayTraceResult method1971(final Vec3d class5487, final Vec3d class5488) {
         return this.field2487 ? null : super.method1971(class5487, class5488);
     }
     
     @Override
-    public void method1967(final Class7007 class7007) {
-        final Entity method21452 = class7007.method21452();
+    public void method1967(final EntityRayTraceResult class7007) {
+        final Entity method21452 = class7007.getEntity();
         float n = 8.0f;
         if (method21452 instanceof LivingEntity) {
             n += Class8742.method30202(this.field2486, ((LivingEntity)method21452).method2712());

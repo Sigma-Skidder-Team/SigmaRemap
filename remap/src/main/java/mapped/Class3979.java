@@ -34,7 +34,7 @@ public class Class3979 extends Block
     
     @Override
     public void method11831(final Class7096 class7096, final World class7097, final BlockPos class7098, final ItemStack class7099) {
-        super.method11831(class7096, class7097, class7098, class7099);
+        super.spawnAdditionalDrops(class7096, class7097, class7098, class7099);
         if (!class7097.isRemote) {
             if (class7097.method6765().method31216(Class8878.field37320)) {
                 if (Class8742.method30195(Class7882.field32366, class7099) == 0) {

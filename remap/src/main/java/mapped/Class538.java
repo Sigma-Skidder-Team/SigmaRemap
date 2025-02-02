@@ -12,14 +12,14 @@ public class Class538 extends Screen
 {
     private Class654 field3197;
     private final BooleanConsumer field3198;
-    private final Class9575 field3199;
+    private final ServerData field3199;
     private Class576 field3200;
     private Class576 field3201;
     private Class654 field3202;
     private final Screen field3203;
     private final Predicate<String> field3204;
     
-    public Class538(final Screen field3203, final BooleanConsumer field3204, final Class9575 field3205) {
+    public Class538(final Screen field3203, final BooleanConsumer field3204, final ServerData field3205) {
         super(new Class2259("addServer.title", new Object[0]));
         this.field3204 = (s -> {
             if (Class8272.method27500(s)) {

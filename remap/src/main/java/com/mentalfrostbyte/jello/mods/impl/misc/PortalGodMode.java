@@ -18,9 +18,9 @@ public class PortalGodMode extends Module
     
     @EventListener
     private void method10002(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4348) {
-                class5723.method16961(true);
+                class5723.setCancelled(true);
             }
         }
     }

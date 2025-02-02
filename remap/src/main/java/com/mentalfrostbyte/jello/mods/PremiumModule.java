@@ -14,45 +14,45 @@ public class PremiumModule extends Module
     }
     
     @Override
-    public boolean method9906() {
-        return Client.method35173().method35201().method19352() && super.method9906();
+    public boolean isEnabled() {
+        return Client.getInstance().method35201().method19352() && super.isEnabled();
     }
     
     @Override
     public void method9907(final boolean enabled) {
-        if (Client.method35173().method35201().method19352()) {
+        if (Client.getInstance().method35201().method19352()) {
             super.method9907(enabled);
             return;
         }
         if (this.enabled != enabled) {
-            Client.method35173().method35197().method25776(new Class6224("Premium", this.getName() + " Not yet available for free version"));
-            Client.method35173().method35196().method32830("error");
+            Client.getInstance().method35197().method25776(new Class6224("Premium", this.getName() + " Not yet available for free version"));
+            Client.getInstance().method35196().method32830("error");
         }
     }
     
     @Override
     public void method9908(final boolean b) {
-        if (Client.method35173().method35201().method19352()) {
+        if (Client.getInstance().method35201().method19352()) {
             super.method9908(b);
             return;
         }
         if (this.enabled != b) {
             if (b) {
-                Client.method35173().method35197().method25776(new Class6224("Premium", this.getName() + " Not yet available for free version"));
-                Client.method35173().method35196().method32830("error");
+                Client.getInstance().method35197().method25776(new Class6224("Premium", this.getName() + " Not yet available for free version"));
+                Client.getInstance().method35196().method32830("error");
             }
         }
     }
     
     @Override
     public void method9909(final boolean enabled) {
-        if (Client.method35173().method35201().method19352()) {
+        if (Client.getInstance().method35201().method19352()) {
             super.method9909(enabled);
             return;
         }
-        if (this.method9906() != enabled) {
-            Client.method35173().method35197().method25776(new Class6224("Premium", this.getName() + " Not yet available for free version"));
-            Client.method35173().method35196().method32830("error");
+        if (this.isEnabled() != enabled) {
+            Client.getInstance().method35197().method25776(new Class6224("Premium", this.getName() + " Not yet available for free version"));
+            Client.getInstance().method35196().method32830("error");
         }
     }
 }

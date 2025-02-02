@@ -41,7 +41,7 @@ public class Class4936 extends Class4800
         this.field21175 = 0.65f;
         this.field21176 = 1.0f - this.field21175;
         this.field21177 = 30;
-        this.field21178 = Client.method35173().method35198();
+        this.field21178 = Client.getInstance().method35198();
         this.field21181 = Class225.field793;
         this.field21182 = false;
         this.field21185 = "§7Idle...";
@@ -53,7 +53,7 @@ public class Class4936 extends Class4800
         final Class9295 class4921 = new Class9295(Minecraft.method5277());
         class4921.method34331();
         for (int method34336 = class4921.method34336(), i = 0; i < method34336; ++i) {
-            final Class9575 method34337 = class4921.method34333(i);
+            final ServerData method34337 = class4921.method34333(i);
             if (!list.contains(method34337.field41613)) {
                 list.add(method34337.field41613);
             }

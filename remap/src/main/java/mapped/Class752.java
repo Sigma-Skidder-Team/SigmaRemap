@@ -22,7 +22,7 @@ public class Class752 implements Class514
     
     @Override
     public void method2928(final Class3418 class3418, final int n, final ItemStack class3419) {
-        this.field4053.field4682.method27327(class3419, n);
+        this.field4053.playerController.method27327(class3419, n);
     }
     
     @Override

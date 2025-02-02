@@ -18,7 +18,7 @@ public class NoViewReset extends Module
     
     @EventListener
     private void method10803(final Class5723 class5723) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (NoViewReset.mc.player == null) {

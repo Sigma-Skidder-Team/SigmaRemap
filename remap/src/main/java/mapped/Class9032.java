@@ -50,7 +50,7 @@ public class Class9032
             }
         }
         if (n != 0) {
-            class513.field3008.method10876();
+            class513.container.method10876();
         }
         if (this.field38196.length > 0) {
             class513.method2863(this.field38196);

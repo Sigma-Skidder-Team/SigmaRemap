@@ -125,8 +125,8 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
     public void channelRead0(final ChannelHandlerContext channelHandlerContext, final IPacket<?> class4252) throws Exception {
         if (this.field16899.isOpen()) {
             final Class5723 class4253 = new Class5723(class4252);
-            Client.method35173().method35188().method21097(class4253);
-            if (class4253.method16962()) {
+            Client.getInstance().method35188().method21097(class4253);
+            if (class4253.isCancelled()) {
                 return;
             }
             try {
@@ -153,9 +153,9 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
     
     public void method11175(final IPacket<?> class4252, final GenericFutureListener<? extends Future<? super Void>> genericFutureListener) {
         final Class5721 class4253 = new Class5721(class4252);
-        Client.method35173().method35188().method21097(class4253);
+        Client.getInstance().method35188().method21097(class4253);
         final IPacket method16990 = class4253.method16990();
-        if (!class4253.method16962()) {
+        if (!class4253.isCancelled()) {
             if (!this.method11187()) {
                 this.field16898.add(new Class8043(method16990, genericFutureListener));
             }

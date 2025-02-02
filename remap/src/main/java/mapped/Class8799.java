@@ -36,17 +36,17 @@ public class Class8799
     
     public void method30704(final int n) {
         if (this.field36994 == null) {
-            Client.method35173().method35189().method21557().method21957(n, this.field36995);
+            Client.getInstance().method35189().method21557().method21957(n, this.field36995);
         }
         else {
-            Client.method35173().method35189().method21557().method21956(n, this.field36994);
+            Client.getInstance().method35189().method21557().method21956(n, this.field36994);
         }
     }
     
     public int method30705() {
         if (this.field36994 == null) {
-            return Client.method35173().method35189().method21557().method21959(this.field36995);
+            return Client.getInstance().method35189().method21557().method21959(this.field36995);
         }
-        return Client.method35173().method35189().method21557().method21960(this.field36994);
+        return Client.getInstance().method35189().method21557().method21960(this.field36994);
     }
 }

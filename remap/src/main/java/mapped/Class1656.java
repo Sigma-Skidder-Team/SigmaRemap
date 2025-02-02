@@ -75,7 +75,7 @@ public class Class1656 implements AutoCloseable, Class1657
     private final Class1663 field9289;
     public final Class8551 field9290;
     private final Class3442 field9291;
-    private Class1848 field9292;
+    private ClientWorld field9292;
     private Set<Class8974> field9293;
     private ObjectList<Class9071> field9294;
     private final Set<TileEntity> field9295;
@@ -249,7 +249,7 @@ public class Class1656 implements AutoCloseable, Class1657
                 return;
             }
             class392.method1418();
-            final Class1848 field4683 = this.field9288.world;
+            final ClientWorld field4683 = this.field9288.world;
             final int method35828 = MathHelper.floor(n);
             final int method35829 = MathHelper.floor(n2);
             final int method35830 = MathHelper.floor(n3);
@@ -361,7 +361,7 @@ public class Class1656 implements AutoCloseable, Class1657
         }
         if (method6768 != 0.0f && Config.method28881()) {
             final Random random = new Random(this.field9304 * 312987231L);
-            final Class1848 field4683 = this.field9288.world;
+            final ClientWorld field4683 = this.field9288.world;
             final BlockPos class6093 = new BlockPos(class6092.method18161());
             double n = 0.0;
             double n2 = 0.0;
@@ -563,7 +563,7 @@ public class Class1656 implements AutoCloseable, Class1657
         }
     }
     
-    public void method5700(final Class1848 field9292) {
+    public void method5700(final ClientWorld field9292) {
         this.field9310 = Double.MIN_VALUE;
         this.field9311 = Double.MIN_VALUE;
         this.field9312 = Double.MIN_VALUE;
@@ -579,7 +579,7 @@ public class Class1656 implements AutoCloseable, Class1657
         this.field9361.method33373(null, null);
         Class9216.method33798(this.field9292);
         if (field9292 != null) {
-            this.method5701();
+            this.loadRenderers();
         }
         else {
             this.field9293.clear();
@@ -597,7 +597,7 @@ public class Class1656 implements AutoCloseable, Class1657
         }
     }
     
-    public void method5701() {
+    public void loadRenderers() {
         if (this.field9292 != null) {
             this.field9292.method6813();
             if (this.field9326 == null) {
@@ -675,7 +675,7 @@ public class Class1656 implements AutoCloseable, Class1657
     public void method5707(final Class6092 class6092, final Class6664 class6093, final boolean b, final int n, final boolean b2) {
         final Vec3d method18161 = class6092.method18161();
         if (this.field9288.gameSettings.field23382 != this.field9328) {
-            this.method5701();
+            this.loadRenderers();
         }
         this.field9292.method6796().startSection("camera");
         final double n2 = this.field9288.player.getPosX() - this.field9310;
@@ -876,7 +876,7 @@ public class Class1656 implements AutoCloseable, Class1657
     }
     
     private Set<Direction> method5708(final BlockPos class354) {
-        if (XRay.field15720.method9906()) {
+        if (XRay.xrayModule.isEnabled()) {
             return new HashSet<Direction>(Arrays.asList(Direction.values()));
         }
         final Class8388 class355 = new Class8388();
@@ -1048,7 +1048,7 @@ public class Class1656 implements AutoCloseable, Class1657
         boolean b4 = false;
         final IRenderTypeBuffer.Impl method6805 = this.field9291.method11006();
         for (final Entity field9334 : this.field9292.method6806()) {
-            if ((this.field9290.method28705(field9334, field9332, method6798, method6799, method6800) || field9334.method1917(this.field9288.player)) && (field9334 != class7352.method18166() || Class9216.field39049 || class7352.method18168() || (class7352.method18166() instanceof LivingEntity && ((LivingEntity)class7352.method18166()).method2783())) && (!(field9334 instanceof Class756) || class7352.method18166() == field9334)) {
+            if ((this.field9290.method28705(field9334, field9332, method6798, method6799, method6800) || field9334.method1917(this.field9288.player)) && (field9334 != class7352.method18166() || Class9216.field39049 || class7352.method18168() || (class7352.method18166() instanceof LivingEntity && ((LivingEntity)class7352.method18166()).method2783())) && (!(field9334 instanceof ClientPlayerEntity) || class7352.method18166() == field9334)) {
                 ++this.field9329;
                 if (field9334.ticksExisted == 0) {
                     field9334.lastTickPosX = field9334.getPosX();
@@ -2771,7 +2771,7 @@ public class Class1656 implements AutoCloseable, Class1657
         return this.field9296.method32963(class354);
     }
     
-    public Class1848 method5763() {
+    public ClientWorld method5763() {
         return this.field9292;
     }
     
@@ -2790,7 +2790,7 @@ public class Class1656 implements AutoCloseable, Class1657
     
     public void method5765() {
         if (this.field9364) {
-            this.method5701();
+            this.loadRenderers();
             this.field9364 = false;
         }
     }

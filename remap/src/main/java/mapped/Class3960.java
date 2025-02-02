@@ -38,7 +38,7 @@ public class Class3960 extends Class3841
     }
     
     @Override
-    public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.getBlock() != class7099.getBlock()) {
             final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class491) {
@@ -78,7 +78,7 @@ public class Class3960 extends Class3841
     }
     
     @Override
-    public List<ItemStack> method11833(final BlockState class7096, final Class9098 class7097) {
+    public List<ItemStack> getDrops(final BlockState class7096, final Class9098 class7097) {
         final Class491 method12081 = this.method12081(class7097.method32880(), class7097.method32881(Class6683.field26367));
         return (method12081 != null) ? method12081.method2481().method21743(class7097) : Collections.emptyList();
     }

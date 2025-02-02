@@ -235,7 +235,7 @@ public final class VoxelShapes
                                                 VoxelShape class6226 = method24558.getCollisionShape(class6222, class6225, class6223);
                                                 if (b) {
                                                     final Class5753 class6227 = new Class5753(class6225, class6226);
-                                                    Client.method35173().method35188().method21097(class6227);
+                                                    Client.getInstance().method35188().method21097(class6227);
                                                     class6226 = class6227.method17065();
                                                 }
                                                 method24553 = class6226.getAllowedOffset(method24557, class6221.offset(-class6225.getX(), -class6225.getY(), -class6225.getZ()), method24553);

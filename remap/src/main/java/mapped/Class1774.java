@@ -471,7 +471,7 @@ public class Class1774 extends Class1666 implements Class1664
             }
         }
         if (this.field9873) {
-            final int method5768 = Config.method28894().field4636.method5768();
+            final int method5768 = Config.method28894().worldRenderer.method5768();
             if (method5768 != this.field9872) {
                 this.field9871 = field9871;
                 this.field9872 = method5768;

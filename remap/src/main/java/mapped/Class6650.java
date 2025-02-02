@@ -11,14 +11,14 @@ import java.util.List;
 
 public class Class6650 extends Class6635
 {
-    private Class756 field26285;
+    private ClientPlayerEntity field26285;
     private String field26286;
     private List<UUID> field26287;
     private static Method field26288;
     private static Class<?> field26289;
     private static Method field26290;
     
-    public Class6650(final Class6108 class6108, final Class756 field26285) {
+    public Class6650(final Class6108 class6108, final ClientPlayerEntity field26285) {
         super(class6108);
         this.field26285 = field26285;
         this.field26286 = "";

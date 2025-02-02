@@ -17,7 +17,7 @@ public class AACStep extends Module
     @EventListener
     @Class6759
     private void method10530(final Class5745 class5745) {
-        if (!this.method9906() || class5745.method16962()) {
+        if (!this.isEnabled() || class5745.isCancelled()) {
             return;
         }
         final double method17049 = class5745.method17049();
@@ -37,12 +37,12 @@ public class AACStep extends Module
             }
             return;
         }
-        class5745.method16961(true);
+        class5745.setCancelled(true);
     }
     
     @EventListener
     private void method10531(final Class5738 class5738) {
-        if (this.method9906() && AACStep.mc.player != null) {
+        if (this.isEnabled() && AACStep.mc.player != null) {
             if (!class5738.method17027()) {
                 AACStep.mc.player.stepHeight = 1.0f;
             }

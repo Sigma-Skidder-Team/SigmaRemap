@@ -29,7 +29,7 @@ public class Class9158
     private static int method33428(final Class7492 class7492, final Collection<Class513> collection, final Predicate<ItemStack> predicate, final int n) throws CommandSyntaxException {
         int n2 = 0;
         for (final Class513 class7493 : collection) {
-            n2 += class7493.field3006.method2357(predicate, n);
+            n2 += class7493.inventory.method2357(predicate, n);
             class7493.field3009.method10876();
             class7493.method2932();
         }

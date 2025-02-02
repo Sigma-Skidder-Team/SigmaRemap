@@ -21,9 +21,9 @@ public class Phase extends ModuleWithSettings
     
     @EventListener
     private void method10265(final Class5746 class5746) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             class5746.method17053(0.0f);
-            class5746.method16961(true);
+            class5746.setCancelled(true);
         }
     }
 }

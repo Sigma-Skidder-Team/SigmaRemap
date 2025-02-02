@@ -305,7 +305,7 @@ public class ItemRenderer implements Class1657
                 RenderSystem.enableTexture();
                 RenderSystem.enableDepthTest();
             }
-            final Class756 field4684 = Minecraft.method5277().player;
+            final ClientPlayerEntity field4684 = Minecraft.method5277().player;
             final float n7 = (field4684 != null) ? field4684.method2906().method25770(class1845.getItem(), Minecraft.method5277().method5314()) : 0.0f;
             if (n7 > 0.0f) {
                 RenderSystem.disableDepthTest();

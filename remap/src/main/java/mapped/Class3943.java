@@ -82,7 +82,7 @@ public class Class3943 extends Class3841
     
     @Nullable
     @Override
-    public Class434 method11827(final Class7096 class7096, final World class7097, final BlockPos class7098) {
+    public INamedContainerProvider method11827(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         final TileEntity method6727 = class7097.getTileEntity(class7098);
         if (!(method6727 instanceof Class463)) {
             return null;

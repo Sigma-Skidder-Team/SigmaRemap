@@ -136,7 +136,7 @@ public abstract class Class833 extends Class832
                 Class7770.field31784.method13862((Class513) playerEntity, method2716);
             }
             if (!method2715.method27620()) {
-                if (!playerEntity.field3006.method2362(method2716)) {
+                if (!playerEntity.inventory.method2362(method2716)) {
                     playerEntity.method2822(method2716, false);
                 }
             }

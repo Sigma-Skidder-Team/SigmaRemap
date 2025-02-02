@@ -22,15 +22,15 @@ public class Class6695 extends Class6693
         }
         final Module method20352 = this.method20352(array[0].method26314());
         if (method20352 != null) {
-            method20352.method9909(!method20352.method9906());
-            class6428.method19104(method20352.getName() + " was " + (method20352.method9906() ? "enabled" : "disabled"));
+            method20352.method9909(!method20352.isEnabled());
+            class6428.method19104(method20352.getName() + " was " + (method20352.isEnabled() ? "enabled" : "disabled"));
             return;
         }
         throw new Class2332("Module \"" + array[0].method26314() + "\" not found");
     }
     
     public Module method20352(final String anotherString) {
-        for (final Module class3167 : Client.method35173().method35189().method21553().values()) {
+        for (final Module class3167 : Client.getInstance().method35189().method21553().values()) {
             if (!class3167.getName().replace(" ", "").equalsIgnoreCase(anotherString)) {
                 continue;
             }

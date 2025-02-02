@@ -221,7 +221,7 @@ public class Explosion
                 this.world.method6796().endSection();
             }
             for (final Pair pair : list) {
-                Block.method11839(this.world, (BlockPos)pair.getSecond(), (ItemStack)pair.getFirst());
+                Block.spawnAsEntity(this.world, (BlockPos)pair.getSecond(), (ItemStack)pair.getFirst());
             }
         }
         if (this.causesFire) {

@@ -13,14 +13,14 @@ public class Class634 extends Class633
 {
     private final Class720 field3622;
     private final Minecraft field3623;
-    private final Class9575 field3624;
+    private final ServerData field3624;
     private final ResourceLocation field3625;
     private String field3626;
     private Class1773 field3627;
     private long field3628;
     public final /* synthetic */ Class612 field3629;
     
-    public Class634(final Class612 field3629, final Class720 field3630, final Class9575 field3631) {
+    public Class634(final Class612 field3629, final Class720 field3630, final ServerData field3631) {
         this.field3629 = field3629;
         this.field3622 = field3630;
         this.field3624 = field3631;
@@ -295,7 +295,7 @@ public class Class634 extends Class633
         return false;
     }
     
-    public Class9575 method3658() {
+    public ServerData method3658() {
         return this.field3624;
     }
 }

@@ -13,7 +13,7 @@ import org.apache.commons.lang3.Validate;
 
 public class Class4044 extends Class4043
 {
-    public Class4044(final Block class3833, final Block class3834, final Class8959 class3835) {
+    public Class4044(final Block class3833, final Block class3834, final Properties class3835) {
         super(class3833, class3834, class3835);
         Validate.isInstanceOf((Class)Class3944.class, (Object)class3833);
         Validate.isInstanceOf((Class)Class3944.class, (Object)class3834);
@@ -44,7 +44,7 @@ public class Class4044 extends Class4043
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
         method12243(class8321, list);
     }
 }

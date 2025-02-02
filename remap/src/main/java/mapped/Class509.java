@@ -311,7 +311,7 @@ public class Class509 extends Entity
             this.method1695(Class8520.field35551, 1.0f, 1.0f);
         }
         else {
-            final Entity method21452 = ((Class7007)class7006).method21452();
+            final Entity method21452 = ((EntityRayTraceResult)class7006).getEntity();
             if (method21452.attackEntityFrom(DamageSource.method25694(this, this.field2904).method25706(), 4.0f)) {
                 this.method1900(this.field2904, method21452);
                 if (method21452 instanceof LivingEntity) {

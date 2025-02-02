@@ -19,7 +19,7 @@ public class GameIdler extends Module
     
     @EventListener
     private void method10090(final Class5740 class5740) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (GLFW.glfwGetWindowAttrib(GameIdler.mc.field4632.method7690(), 131073) == 1) {
                 Minecraft.method5277().field4632.method7678(GameIdler.mc.gameSettings.field23383);
             }

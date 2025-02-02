@@ -141,6 +141,6 @@ public class Class7951
     }
     
     public void method25783() {
-        Client.method35173().method35188().method21094(this);
+        Client.getInstance().method35188().method21094(this);
     }
 }

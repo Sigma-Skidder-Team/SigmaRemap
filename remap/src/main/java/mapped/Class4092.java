@@ -14,12 +14,12 @@ public class Class4092 extends Class4090
 {
     private static String[] field18194;
     
-    public Class4092(final Class8959 class8959) {
-        super(class8959);
+    public Class4092(final Properties properties) {
+        super(properties);
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
         Class5333.method16478(class8321, list, 0.25f);
     }
     

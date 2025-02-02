@@ -69,13 +69,13 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     @Override
-    public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.getBlock() != class7099.getBlock()) {
             final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class448) {
                 Class9193.method33641(class7097, class7098, ((Class448)method6727).method2270());
             }
-            super.method11829(class7096, class7097, class7098, class7099, b);
+            super.onReplaced(class7096, class7097, class7098, class7099, b);
         }
     }
     

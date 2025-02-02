@@ -34,7 +34,7 @@ public class Class4026 extends Block
     
     @Override
     public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
-        class7097.method6833().method21345(class7098, this, this.method11826(class7097));
+        class7097.method6833().method21345(class7098, this, this.tickRate(class7097));
     }
     
     @Override
@@ -43,13 +43,13 @@ public class Class4026 extends Block
     }
     
     @Override
-    public int method11826(final Class1852 class1852) {
+    public int tickRate(final Class1852 class1852) {
         return 20;
     }
     
     @Override
     public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
-        class7097.method6833().method21345(class7098, this, this.method11826(class7097));
+        class7097.method6833().method21345(class7098, this, this.tickRate(class7097));
     }
     
     @Override

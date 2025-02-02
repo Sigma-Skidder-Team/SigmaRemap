@@ -38,10 +38,10 @@ public class CakeEater extends Module
     
     @EventListener
     private void method10145(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4378) {
                 if (((Class4378)class5723.method16998()).method13164().getFormattedText().equals("§9Game> §r§7You cannot eat your own cake!§r")) {
-                    class5723.method16961(true);
+                    class5723.setCancelled(true);
                 }
             }
         }
@@ -50,10 +50,10 @@ public class CakeEater extends Module
     @EventListener
     @Class6757
     private void method10146(final Class5744 class5744) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
-        final ModuleWithSettings class5745 = (ModuleWithSettings) Client.method35173().method35189().method21551(Fly.class);
+        final ModuleWithSettings class5745 = (ModuleWithSettings) Client.getInstance().method35189().method21551(Fly.class);
         if (class5745.method10260() instanceof MineplexFly && ((MineplexFly)class5745.method10260()).method10632()) {
             return;
         }
@@ -69,7 +69,7 @@ public class CakeEater extends Module
             }
         }
         else {
-            final List<BlockPos> method10147 = this.method10147(this.method9883("Mineplex") ? 6.0f : CakeEater.mc.field4682.method27315());
+            final List<BlockPos> method10147 = this.method10147(this.method9883("Mineplex") ? 6.0f : CakeEater.mc.playerController.method27315());
             if (method10147.isEmpty()) {
                 CakeEater.field15674 = null;
             }

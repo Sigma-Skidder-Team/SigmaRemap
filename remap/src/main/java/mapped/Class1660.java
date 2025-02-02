@@ -192,7 +192,7 @@ public class Class1660 implements AutoCloseable, Class1657
         this.field9411.method18155();
         ++this.field9387;
         this.field9384.method35155();
-        this.field9380.field4636.method5690(this.field9411);
+        this.field9380.worldRenderer.method5690(this.field9411);
         this.field9391 = this.field9390;
         if (!this.field9380.field4647.method3813().method3335()) {
             if (this.field9390 > 0.0f) {
@@ -222,7 +222,7 @@ public class Class1660 implements AutoCloseable, Class1657
         if (this.field9406 != null) {
             this.field9406.method7246(n, n2);
         }
-        this.field9380.field4636.method5703(n, n2);
+        this.field9380.worldRenderer.method5703(n, n2);
     }
     
     public void method5807(final float n) {
@@ -231,13 +231,13 @@ public class Class1660 implements AutoCloseable, Class1657
             if (this.field9380.world != null) {
                 this.field9380.method5327().startSection("pick");
                 this.field9380.field4690 = null;
-                final double n2 = this.field9380.field4682.method27315();
+                final double n2 = this.field9380.playerController.method27315();
                 this.field9380.field4691 = method5303.method1748(n2, n, false);
                 final Vec3d method5304 = method5303.method1747(n);
                 boolean b = false;
                 double n3 = n2;
                 double n4;
-                if (!this.field9380.field4682.method27333()) {
+                if (!this.field9380.playerController.method27333()) {
                     if (n2 > 3.0) {
                         b = true;
                     }
@@ -251,9 +251,9 @@ public class Class1660 implements AutoCloseable, Class1657
                     method5305 = this.field9380.field4691.getHitVec().squareDistanceTo(method5304);
                 }
                 final Vec3d method5306 = method5303.method1741(1.0f);
-                final Class7007 method5307 = Class7476.method23096(method5303, method5304, method5304.add(method5306.x * n4, method5306.y * n4, method5306.z * n4), method5303.getBoundingBox().expand(method5306.scale(n4)).grow(1.0, 1.0, 1.0), class399 -> !class399.isSpectator() && class399.method1749(), method5305);
+                final EntityRayTraceResult method5307 = Class7476.method23096(method5303, method5304, method5304.add(method5306.x * n4, method5306.y * n4, method5306.z * n4), method5303.getBoundingBox().expand(method5306.scale(n4)).grow(1.0, 1.0, 1.0), class399 -> !class399.isSpectator() && class399.method1749(), method5305);
                 if (method5307 != null) {
-                    final Entity method5308 = method5307.method21452();
+                    final Entity method5308 = method5307.getEntity();
                     final Vec3d method5309 = method5307.getHitVec();
                     final double method5310 = method5304.squareDistanceTo(method5309);
                     if (b && method5310 > 9.0) {
@@ -296,21 +296,21 @@ public class Class1660 implements AutoCloseable, Class1657
                 }
             }
             boolean method1056 = false;
-            if (this.field9380.field4700 == null) {
+            if (this.field9380.currentScreen == null) {
                 method1056 = this.field9380.gameSettings.field23563.method1056();
             }
             if (!method1056) {
                 if (Config.field36033) {
                     Config.field36033 = false;
                     this.field9380.gameSettings.field23470 = false;
-                    this.field9380.field4636.method5755();
+                    this.field9380.worldRenderer.method5755();
                 }
             }
             else {
                 if (!Config.field36033) {
                     Config.field36033 = true;
                     this.field9380.gameSettings.field23470 = true;
-                    this.field9380.field4636.method5755();
+                    this.field9380.worldRenderer.method5755();
                 }
                 if (Config.field36033) {
                     field23471 /= 4.0;
@@ -381,7 +381,7 @@ public class Class1660 implements AutoCloseable, Class1657
                 if (this.field9380.gameSettings.field23465 == 0) {
                     if (!b4) {
                         if (!this.field9380.gameSettings.field23464) {
-                            if (this.field9380.field4682.method27336() != Class101.field301) {
+                            if (this.field9380.playerController.method27336() != Class101.field301) {
                                 this.field9396.method1418();
                                 if (!Config.method28955()) {
                                     this.field9384.method35153(n, class7351, this.field9386.method11006(), this.field9380.player, this.field9380.method5306().method28695(this.field9380.player, n));
@@ -402,10 +402,10 @@ public class Class1660 implements AutoCloseable, Class1657
             }
             this.field9396.method1417();
             final Class5746 class7353 = new Class5746();
-            Client.method35173().method35188().method21097(class7353);
+            Client.getInstance().method35188().method21097(class7353);
             if (this.field9380.gameSettings.field23465 == 0) {
                 if (!b4) {
-                    if (!class7353.method16962()) {
+                    if (!class7353.isCancelled()) {
                         Class9316.method34477(this.field9380, class7351);
                         this.method5810(class7351, n);
                     }
@@ -465,7 +465,7 @@ public class Class1660 implements AutoCloseable, Class1657
             final MatrixStack class7351 = new MatrixStack();
             if (b && this.field9380.world != null && !Config.method29020()) {
                 this.field9380.method5327().startSection("level");
-                Client.method35173().method35188().method21097(new Class5741(n, n2));
+                Client.getInstance().method35188().method21097(new Class5741(n, n2));
                 this.method5820(n, n2, class7351);
                 if (this.field9380.method5284() && this.field9394 < Util.method27837() - 1000L) {
                     this.field9394 = Util.method27837();
@@ -473,7 +473,7 @@ public class Class1660 implements AutoCloseable, Class1657
                         this.method5818();
                     }
                 }
-                this.field9380.field4636.method5693();
+                this.field9380.worldRenderer.method5693();
                 if (this.field9406 != null && this.field9410) {
                     RenderSystem.disableBlend();
                     RenderSystem.disableDepthTest();
@@ -504,10 +504,10 @@ public class Class1660 implements AutoCloseable, Class1657
             }
             if (b && this.field9380.world != null) {
                 this.field9380.method5327().method15300("gui");
-                if (!this.field9380.gameSettings.field23464 || this.field9380.field4700 != null) {
+                if (!this.field9380.gameSettings.field23464 || this.field9380.currentScreen != null) {
                     RenderSystem.method30118();
                     this.method5830(this.field9380.method5332().method7696(), this.field9380.method5332().method7697(), n);
-                    Client.method35173().method35181();
+                    Client.getInstance().method35181();
                     this.field9380.field4647.method3779(n);
                     if (this.field9380.gameSettings.field23498 && !this.field9380.gameSettings.field23466) {
                         Config.method28988();
@@ -520,7 +520,7 @@ public class Class1660 implements AutoCloseable, Class1657
                 this.field9380.method5327().endSection();
             }
             RenderSystem.method30059();
-            Client.method35173().method35183();
+            Client.getInstance().method35183();
             RenderSystem.method30060();
             if (this.field9422 != (this.field9380.field4701 != null)) {
                 if (this.field9380.field4701 != null) {
@@ -543,19 +543,19 @@ public class Class1660 implements AutoCloseable, Class1657
                         throw new ReportedException(method5333);
                     }
                 }
-                if (this.field9380.field4700 != null && Client.method35173().method35193().method32154() == null) {
+                if (this.field9380.currentScreen != null && Client.getInstance().method35193().method32154() == null) {
                     try {
                         if (Class9570.field41284.method22605()) {
-                            Class9570.method35811(Class9570.field41284, this.field9380.field4700, i, j, this.field9380.method5315());
+                            Class9570.method35811(Class9570.field41284, this.field9380.currentScreen, i, j, this.field9380.method5315());
                         }
                         else {
-                            this.field9380.field4700.render(i, j, this.field9380.method5315());
+                            this.field9380.currentScreen.render(i, j, this.field9380.method5315());
                         }
                     }
                     catch (final Throwable t2) {
                         final CrashReport method5334 = CrashReport.makeCrashReport(t2, "Rendering screen");
                         final CrashReportCategory method5335 = method5334.makeCategory("Screen render details");
-                        method5335.addDetail("Screen name", () -> this.field9380.field4700.getClass().getCanonicalName());
+                        method5335.addDetail("Screen name", () -> this.field9380.currentScreen.getClass().getCanonicalName());
                         method5335.addDetail("Mouse location", () -> String.format(Locale.ROOT, "Scaled: (%d, %d). Absolute: (%f, %f)", k, l, this.field9380.field4650.method26959(), this.field9380.field4650.method26960()));
                         method5335.addDetail("Screen size", () -> String.format(Locale.ROOT, "Scaled: (%d, %d). Absolute: (%d, %d). Scale factor of %f", this.field9380.method5332().method7696(), this.field9380.method5332().method7697(), this.field9380.method5332().method7692(), this.field9380.method5332().method7693(), this.field9380.method5332().method7700()));
                         throw new ReportedException(method5334);
@@ -574,8 +574,8 @@ public class Class1660 implements AutoCloseable, Class1657
     }
     
     private void method5818() {
-        if (this.field9380.field4636.method5705() > 10) {
-            if (this.field9380.field4636.method5754()) {
+        if (this.field9380.worldRenderer.method5705() > 10) {
+            if (this.field9380.worldRenderer.method5754()) {
                 if (!this.field9380.method5285().method1464()) {
                     Class1673.field9460.execute(() -> {
                         Class8283.method27527(this.field9380.method5332().method7692(), this.field9380.method5332().method7693(), this.field9380.method5234());
@@ -640,7 +640,7 @@ public class Class1660 implements AutoCloseable, Class1657
                         if (field4691.getType() == RayTraceResult.Type.BLOCK) {
                             final BlockPos method5305 = ((BlockRayTraceResult)field4691).getPos();
                             final BlockState method5306 = this.field9380.world.getBlockState(method5305);
-                            if (this.field9380.field4682.method27336() != Class101.field301) {
+                            if (this.field9380.playerController.method27336() != Class101.field301) {
                                 final Class7990 class7990 = new Class7990(this.field9380.world, method5305, false);
                                 b = (!method5304.method27620() && (method5304.method27686(this.field9380.world.method6793(), class7990) || method5304.method27687(this.field9380.world.method6793(), class7990)));
                             }
@@ -719,10 +719,10 @@ public class Class1660 implements AutoCloseable, Class1657
         }
         class7351.method22566(Vector3f.XP.rotationDegrees(field9411.method18163()));
         class7351.method22566(Vector3f.YP.rotationDegrees(field9411.method18164() + 180.0f));
-        this.field9380.field4636.method5711(class7351, n, l, method28956, field9411, this, this.field9396, method28958);
+        this.field9380.worldRenderer.method5711(class7351, n, l, method28956, field9411, this, this.field9396, method28958);
         if (Class9570.field41283.method22605()) {
             this.field9380.method5327().method15300("forge_render_last");
-            Class9570.method35811(Class9570.field41283, this.field9380.field4636, class7351, n, method28958, l);
+            Class9570.method35811(Class9570.field41283, this.field9380.worldRenderer, class7351, n, method28958, l);
         }
         this.field9380.method5327().method15300("hand");
         if (this.field9392) {
@@ -734,7 +734,7 @@ public class Class1660 implements AutoCloseable, Class1657
                 RenderSystem.method30056(256, Minecraft.field4623);
                 RenderSystem.method30059();
                 RenderSystem.method30067(class7351.getLast().getMatrix());
-                Client.method35173().method35184();
+                Client.getInstance().method35184();
                 RenderSystem.method30060();
                 if (!method28955) {
                     this.method5812(class7351, field9411, n);
@@ -764,9 +764,9 @@ public class Class1660 implements AutoCloseable, Class1657
         this.field9418 = 0;
         if (Config.method28972() && Config.method28971()) {
             if (this.field9380.method5283()) {
-                final Class1655 method5285 = this.field9380.method5285();
+                final IntegratedServer method5285 = this.field9380.method5285();
                 if (method5285 != null) {
-                    if (!this.field9380.method5298() && !(this.field9380.field4700 instanceof Class556)) {
+                    if (!this.field9380.method5298() && !(this.field9380.currentScreen instanceof Class556)) {
                         if (this.field9417 > 0) {
                             Class9036.field38226.method26344();
                             Config.method28919(this.field9417);
@@ -809,7 +809,7 @@ public class Class1660 implements AutoCloseable, Class1657
                         }
                     }
                     else {
-                        if (this.field9380.field4700 instanceof Class556) {
+                        if (this.field9380.currentScreen instanceof Class556) {
                             Config.method28919(20L);
                         }
                         this.field9415 = 0L;
@@ -835,7 +835,7 @@ public class Class1660 implements AutoCloseable, Class1657
             }
             this.field9412 = true;
         }
-        final Class1848 field4683 = this.field9380.world;
+        final ClientWorld field4683 = this.field9380.world;
         if (field4683 != null) {
             if (Config.method28963() != null) {
                 final StringTextComponent class2260 = new StringTextComponent(Class8822.method30773("of.message.newVersion", "§n" + ("HD_U".replace("HD_U", "HD Ultra").replace("L", "Light") + " " + Config.method28963()) + "§r"));
@@ -848,8 +848,8 @@ public class Class1660 implements AutoCloseable, Class1657
                 this.field9380.field4647.method3807().method3761(new StringTextComponent(Class8822.method30773("of.message.java64Bit", new Object[0])));
             }
         }
-        if (this.field9380.field4700 instanceof Class548) {
-            this.method5826((Class548)this.field9380.field4700);
+        if (this.field9380.currentScreen instanceof Class548) {
+            this.method5826((Class548)this.field9380.currentScreen);
         }
         if (this.field9413 != field4683) {
             Class9066.method32642(this.field9413, field4683);
@@ -861,9 +861,9 @@ public class Class1660 implements AutoCloseable, Class1657
         if (!this.method5827(Class9216.field39317)) {
             Class9216.field39317 = 0;
         }
-        if (this.field9380.field4700 != null) {
-            if (this.field9380.field4700.getClass() == Class535.class) {
-                this.field9380.displayGuiScreen(new Class537((Class535)this.field9380.field4700));
+        if (this.field9380.currentScreen != null) {
+            if (this.field9380.currentScreen.getClass() == ChatScreen.class) {
+                this.field9380.displayGuiScreen(new Class537((ChatScreen)this.field9380.currentScreen));
             }
         }
     }

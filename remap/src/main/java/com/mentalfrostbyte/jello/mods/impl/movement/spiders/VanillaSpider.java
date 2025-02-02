@@ -19,7 +19,7 @@ public class VanillaSpider extends Module
     
     @EventListener
     private void method10468(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (VanillaSpider.mc.player.collidedHorizontally) {
                 class5717.method16975(this.getNumberSettingValueByName("Motion"));
             }

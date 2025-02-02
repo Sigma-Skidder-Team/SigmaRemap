@@ -22,7 +22,7 @@ public class Class5745 extends Class5714
     }
     
     public void method17050(final double field22771) {
-        this.method16961(true);
+        this.setCancelled(true);
         this.field23333.y = field22771;
     }
     

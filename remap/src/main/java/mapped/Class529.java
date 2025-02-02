@@ -9,12 +9,12 @@ import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 public class Class529 extends Screen
 {
     private Class654 field3163;
-    private final Class9575 field3164;
+    private final ServerData field3164;
     private Class576 field3165;
     private final BooleanConsumer field3166;
     private final Screen field3167;
     
-    public Class529(final Screen field3167, final BooleanConsumer field3168, final Class9575 field3169) {
+    public Class529(final Screen field3167, final BooleanConsumer field3168, final ServerData field3169) {
         super(new Class2259("selectServer.direct", new Object[0]));
         this.field3167 = field3167;
         this.field3164 = field3169;

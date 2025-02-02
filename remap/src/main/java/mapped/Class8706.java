@@ -25,7 +25,7 @@ public class Class8706
     }
     
     public void method29876() {
-        Client.method35173().method35188().method21094(this);
+        Client.getInstance().method35188().method21094(this);
         this.method29892();
     }
     
@@ -34,7 +34,7 @@ public class Class8706
         if (class5752.method17061() == this.field36585.gameSettings.field23447.field2161.field32860) {
             if (this.field36585.field4690 != null) {
                 if (this.field36585.field4690.getName() != null) {
-                    final Class9070 method35204 = Client.method35173().method35204();
+                    final Class9070 method35204 = Client.getInstance().method35204();
                     method35204.method32672();
                     if (this.method29878(this.field36585.field4690)) {
                         this.method29886(this.field36585.field4690.getName().getUnformattedComponentText());
@@ -127,22 +127,22 @@ public class Class8706
     }
     
     public void method29890() {
-        Client.method35173().method35206().method13296("friends", this.field36582);
+        Client.getInstance().method35206().method13296("friends", this.field36582);
     }
     
     public void method29891() {
-        Client.method35173().method35206().method13296("enemies", this.field36583);
+        Client.getInstance().method35206().method13296("enemies", this.field36583);
     }
     
     private void method29892() {
-        if (Client.method35173().method35206().has("friends")) {
-            final JSONArray method13263 = Client.method35173().method35206().method13263("friends");
+        if (Client.getInstance().method35206().has("friends")) {
+            final JSONArray method13263 = Client.getInstance().method35206().method13263("friends");
             if (method13263 != null) {
                 method13263.forEach(o -> this.field36582.add((String)o));
             }
         }
-        if (Client.method35173().method35206().has("enemies")) {
-            final JSONArray method13264 = Client.method35173().method35206().method13263("enemies");
+        if (Client.getInstance().method35206().has("enemies")) {
+            final JSONArray method13264 = Client.getInstance().method35206().method13263("enemies");
             if (method13264 != null) {
                 method13264.forEach(o2 -> this.field36583.add((String)o2));
             }

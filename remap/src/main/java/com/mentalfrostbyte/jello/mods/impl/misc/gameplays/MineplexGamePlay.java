@@ -26,13 +26,13 @@ public class MineplexGamePlay extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15565 = false;
     }
     
     @EventListener
     private void method9975(final Class5723 class5723) {
-        if (this.method9906() && MineplexGamePlay.mc.player != null) {
+        if (this.isEnabled() && MineplexGamePlay.mc.player != null) {
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4378) {
                 final String string = ((Class4378)method16998).method13164().getString();
@@ -55,14 +55,14 @@ public class MineplexGamePlay extends Module
     
     @EventListener
     private void method9976(final Class5732 class5732) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             this.field15565 = false;
         }
     }
     
     @EventListener
     private void method9977(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.method9883("AutoGG")) {
                 if (this.field15566.method23935() > 5000L) {
                     if (this.field15565) {

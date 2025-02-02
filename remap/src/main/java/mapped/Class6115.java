@@ -258,7 +258,7 @@ public class Class6115 implements Class6113
     }
     
     private boolean method18297(final Class8665 class8665) {
-        final Class756 field4684 = this.field24824.player;
+        final ClientPlayerEntity field4684 = this.field24824.player;
         return new BlockPos(field4684.getPosX(), class8665.field36434.getY(), field4684.getPosZ()).withinDistance(new BlockPos(class8665.field36434), 30.0);
     }
     

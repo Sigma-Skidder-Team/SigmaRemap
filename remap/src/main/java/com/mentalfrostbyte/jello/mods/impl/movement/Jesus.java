@@ -33,7 +33,7 @@ public class Jesus extends Module
     
     @EventListener
     public void method10426(final Class5753 class5753) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (Jesus.mc.world != null) {
                 if (!AutoMLG.method10645()) {
                     if (Jesus.mc.world.getBlockState(class5753.method17064()).method21697() != Material.SEA_GRASS) {
@@ -70,7 +70,7 @@ public class Jesus extends Module
     
     @EventListener
     public void method10427(final Class5744 class5744) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (Jesus.mc.world != null) {
                 if (class5744.method17046()) {
                     if (Jesus.mc.method5282() != null) {
@@ -100,7 +100,7 @@ public class Jesus extends Module
     @EventListener
     @Class6759
     public void method10428(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (Jesus.mc.world != null) {
                 if (!AutoMLG.method10645()) {
                     if (this.method10432(Jesus.mc.player.boundingBox) && !Jesus.mc.player.method1809()) {
@@ -128,7 +128,7 @@ public class Jesus extends Module
                             }
                         }
                     }
-                    if (this.method9887("Mode").equals("Dolphin")) {
+                    if (this.getStringSettingValueByName("Mode").equals("Dolphin")) {
                         if (this.field15855 > 0) {
                             if (ColorUtils.method19160(Jesus.mc.player, 0.001f)) {
                                 this.field15855 = 0;
@@ -168,12 +168,12 @@ public class Jesus extends Module
     
     @EventListener
     public void method10429(final Class5722 class5722) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (Jesus.mc.world != null) {
                 if (Jesus.mc.method5282() != null) {
                     if (method10433()) {
                         if (this.field15854 % 2 != 0) {
-                            class5722.method16961(true);
+                            class5722.setCancelled(true);
                         }
                         class5722.method16996(0.2);
                     }
@@ -184,16 +184,16 @@ public class Jesus extends Module
     
     @EventListener
     public void method10430(final Class5745 class5745) {
-        if (this.method9906() && class5745.method17049() >= 0.2) {
+        if (this.isEnabled() && class5745.method17049() >= 0.2) {
             if (method10433()) {
-                class5745.method16961(true);
+                class5745.setCancelled(true);
             }
         }
     }
     
     @Override
     public boolean method9898() {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (method10433()) {
                 if (!this.method10431()) {
                     return true;

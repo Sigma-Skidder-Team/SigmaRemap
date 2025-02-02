@@ -17,7 +17,7 @@ public class Class6118 implements Class6113
     
     @Override
     public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
-        final Class1848 field4683 = this.field24835.world;
+        final ClientWorld field4683 = this.field24835.world;
         RenderSystem.method30059();
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();

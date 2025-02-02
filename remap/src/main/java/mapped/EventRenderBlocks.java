@@ -4,18 +4,18 @@
 
 package mapped;
 
-public class Class5719 extends Class5714
+public class EventRenderBlocks extends Class5714
 {
     private static String[] field23263;
     private BlockState field23264;
     private boolean field23265;
     
-    public Class5719(final BlockState field23264) {
+    public EventRenderBlocks(final BlockState field23264) {
         this.field23265 = false;
         this.field23264 = field23264;
     }
     
-    public BlockState method16986() {
+    public BlockState getBlockState() {
         return this.field23264;
     }
     

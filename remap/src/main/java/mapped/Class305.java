@@ -214,7 +214,7 @@ public enum Class305
             }
             case 32: {
                 final Minecraft method975 = Minecraft.method5277();
-                final Class1848 field4683 = method975.world;
+                final ClientWorld field4683 = method975.world;
                 if (field4683 == null) {
                     return 0.0f;
                 }

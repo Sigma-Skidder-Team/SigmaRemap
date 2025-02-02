@@ -14,7 +14,7 @@ public class Class4073 extends Class4072
     private static String[] field18171;
     private static final Set<Block> field18172;
     
-    public Class4073(final Class2038 class2038, final int n, final float n2, final Class8959 class2039) {
+    public Class4073(final Class2038 class2038, final int n, final float n2, final Properties class2039) {
         super((float)n, n2, class2038, Class4073.field18172, class2039);
     }
     

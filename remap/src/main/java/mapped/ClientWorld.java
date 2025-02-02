@@ -34,7 +34,7 @@ import net.minecraft.world.dimension.DimensionType;
 
 import java.util.List;
 
-public class Class1848 extends World
+public class ClientWorld extends World
 {
     private final List<Entity> field10071;
     public final Int2ObjectMap<Entity> field10072;
@@ -49,8 +49,8 @@ public class Class1848 extends World
     private final Object2ObjectArrayMap<Class8895, Class8141> field10081;
     private boolean field10082;
     
-    public Class1848(final Class5799 field10073, final Class8511 class8511, final DimensionType class8512, final int n, final IProfiler class8513, final Class1656 field10074) {
-        super(new WorldInfo(class8511, "MpServer"), class8512, (class8515, p2) -> new Class1907((Class1848)class8515, n2), class8513, true);
+    public ClientWorld(final Class5799 field10073, final Class8511 class8511, final DimensionType class8512, final int n, final IProfiler class8513, final Class1656 field10074) {
+        super(new WorldInfo(class8511, "MpServer"), class8512, (class8515, p2) -> new Class1907((ClientWorld)class8515, n2), class8513, true);
         this.field10071 = Lists.newArrayList();
         this.field10072 = (Int2ObjectMap<Entity>)new Int2ObjectOpenHashMap();
         this.field10075 = Minecraft.method5277();
@@ -74,10 +74,10 @@ public class Class1848 extends World
             Class9570.method35826(this, Class9570.field41185, Class9570.method35826(this.dimension, Class9570.field41366, new Object[0]));
         }
         Class9570.method35840(Class9570.field41427, this);
-        if (this.field10075.field4682 != null) {
-            if (this.field10075.field4682.getClass() == Class8245.class) {
-                this.field10075.field4682 = new Class8246(this.field10075, this.field10073);
-                Class7890.method25550((Class8246)this.field10075.field4682);
+        if (this.field10075.playerController != null) {
+            if (this.field10075.playerController.getClass() == PlayerController.class) {
+                this.field10075.playerController = new Class8246(this.field10075, this.field10073);
+                Class7890.method25550((Class8246)this.field10075.playerController);
             }
         }
     }
@@ -346,7 +346,7 @@ public class Class1848 extends World
     public void method6825(final int n, final int n2, final int n3) {
         final Random random = new Random();
         boolean b = false;
-        if (this.field10075.field4682.method27336() == Class101.field299) {
+        if (this.field10075.playerController.method27336() == Class101.field299) {
             final Iterator<ItemStack> iterator = this.field10075.player.method1800().iterator();
             while (iterator.hasNext()) {
                 if (iterator.next().getItem() != Blocks.field29517.method11704()) {
@@ -545,7 +545,7 @@ public class Class1848 extends World
     }
     
     private boolean method6836() {
-        return this.field10075.field4682 instanceof Class8246 && ((Class8246)this.field10075.field4682).method27341();
+        return this.field10075.playerController instanceof Class8246 && ((Class8246)this.field10075.playerController).method27341();
     }
     
     public boolean method6837() {

@@ -20,7 +20,7 @@ public class Weather extends Module
         this.addSetting(new BooleanSetting("Custom time", "Set the world time", true));
         this.addSetting(new NumberSetting("Time", "Time to set the world to", 12000.0f, Float.class, 0.0f, 24000.0f, 1.0f).method15195(class4997 -> {
             if (this.method9883("Custom time")) {
-                if (this.method9906()) {
+                if (this.isEnabled()) {
                     Weather.mc.world.method6756(-(long)this.getNumberSettingValueByName("Time"));
                 }
             }
@@ -29,7 +29,7 @@ public class Weather extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15983 = Weather.mc.world.method6768(1.0f);
         if (Weather.mc.world.method6768(1.0f) != 1.0f) {
             if (Weather.mc.world.method6768(1.0f) == 0.0f) {
@@ -44,7 +44,7 @@ public class Weather extends Module
     
     @EventListener
     private void method10619(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!this.method9883("Disable rain")) {
                 if (this.field15984) {
                     if (this.field15983 >= 1.0f) {
@@ -72,7 +72,7 @@ public class Weather extends Module
     
     @EventListener
     private void method10620(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!(class5723.method16998() instanceof Class4345)) {
                 if (class5723.method16998() instanceof Class4306) {
                     final Class4306 class5724 = (Class4306)class5723.method16998();

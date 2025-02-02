@@ -11,11 +11,11 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class3992 extends Block
+public class BlockThing extends Block
 {
     private static String[] field18011;
     
-    public Class3992(final Properties class9288) {
+    public BlockThing(final Properties class9288) {
         super(class9288);
     }
     
@@ -36,12 +36,12 @@ public class Class3992 extends Block
     }
     
     @Override
-    public void method11831(final BlockState class7096, final World class7097, final BlockPos class7098, final ItemStack class7099) {
-        super.method11831(class7096, class7097, class7098, class7099);
+    public void spawnAdditionalDrops(final BlockState class7096, final World class7097, final BlockPos class7098, final ItemStack class7099) {
+        super.spawnAdditionalDrops(class7096, class7097, class7098, class7099);
         if (Class8742.method30195(Class7882.field32366, class7099) == 0) {
             final int method12141 = this.method12141(class7097.rand);
             if (method12141 > 0) {
-                this.method11840(class7097, class7098, method12141);
+                this.dropXpOnBlockBreak(class7097, class7098, method12141);
             }
         }
     }

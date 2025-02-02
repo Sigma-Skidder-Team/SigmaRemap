@@ -17,7 +17,7 @@ public class LowFire extends Module
     
     @EventListener
     public void method10802(final Class5746 class5746) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             class5746.method17053(0.14f);
         }
     }

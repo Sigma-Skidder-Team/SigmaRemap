@@ -26,9 +26,9 @@ public class Class7082 implements Class7079
         ++this.field27589;
         if (this.field27587.method32928() == Class101.field298) {
             if (this.field27589 == 1) {
-                final Class756 field4684 = this.field27587.method32927().player;
+                final ClientPlayerEntity field4684 = this.field27587.method32927().player;
                 if (field4684 != null) {
-                    if (field4684.field3006.method2377(Class7855.field32250)) {
+                    if (field4684.inventory.method2377(Class7855.field32250)) {
                         this.field27587.method32926(Class2012.field11443);
                         return;
                     }
@@ -59,7 +59,7 @@ public class Class7082 implements Class7079
     }
     
     @Override
-    public void method21660(final Class1848 class1848, final BlockPos class1849, final BlockState class1850, final float n) {
+    public void method21660(final ClientWorld clientWorld, final BlockPos class1849, final BlockState class1850, final float n) {
         final boolean method21755 = class1850.method21755(Class7188.field27893);
         if (method21755 && n > 0.0f) {
             if (this.field27588 != null) {

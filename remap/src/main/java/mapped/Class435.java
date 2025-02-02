@@ -10,7 +10,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class435 extends TileEntity implements Class447, Class434
+public class Class435 extends TileEntity implements Class447, INamedContainerProvider
 {
     private final IInventory field2649;
     private final Class7604 field2650;

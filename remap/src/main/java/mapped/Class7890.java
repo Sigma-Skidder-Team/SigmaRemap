@@ -25,7 +25,7 @@ public class Class7890
         if (Class7890.field32396 == null) {
             return class1932;
         }
-        final Screen field4700 = Class7890.field32394.field4700;
+        final Screen field4700 = Class7890.field32394.currentScreen;
         if (!(field4700 instanceof Class516)) {
             return class1932;
         }
@@ -35,7 +35,7 @@ public class Class7890
         if (Class7890.field32395 == null) {
             return class1932;
         }
-        final Class1848 field4701 = Class7890.field32394.world;
+        final ClientWorld field4701 = Class7890.field32394.world;
         if (field4701 == null) {
             return class1932;
         }
@@ -45,7 +45,7 @@ public class Class7890
         if (!(field4700 instanceof Class518)) {
             final BlockPos method27342 = Class7890.field32395.method27342();
             if (method27342 != null) {
-                if (field4700 instanceof Class515) {
+                if (field4700 instanceof AnvilScreen) {
                     return method25543(Class2005.field11255, method27342, field4701, class1932, field4700);
                 }
                 if (field4700 instanceof Class748) {

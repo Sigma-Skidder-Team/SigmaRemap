@@ -39,10 +39,10 @@ public class Freecam extends Module
     
     @EventListener
     public void method10497(final Class5729 class5729) {
-        if (this.method9906()) {
-            if (class5729.method17016() instanceof Class756) {
+        if (this.isEnabled()) {
+            if (class5729.method17016() instanceof ClientPlayerEntity) {
                 if (class5729.method17016() != Freecam.field15901) {
-                    class5729.method16961(true);
+                    class5729.setCancelled(true);
                 }
             }
         }
@@ -50,9 +50,9 @@ public class Freecam extends Module
     
     @EventListener
     public void method10498(final Class5741 class5741) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (Freecam.field15901 == null) {
-                this.method9879();
+                this.onEnable();
             }
             Freecam.mc.player.field4078 = Freecam.mc.player.rotationPitch;
             final AxisAlignedBB field2403 = Freecam.mc.player.boundingBox;
@@ -80,21 +80,21 @@ public class Freecam extends Module
     
     @EventListener
     public void method10499(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             Freecam.field15901.method1685();
             Freecam.field15901.boundingBox = new AxisAlignedBB(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
         }
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15902 = Freecam.mc.player.posX;
         this.field15903 = Freecam.mc.player.posY;
         this.field15904 = Freecam.mc.player.posZ;
         this.field15908 = Freecam.mc.player.rotationYaw;
         this.field15909 = Freecam.mc.player.rotationPitch;
         Freecam.field15901 = new Class755(Freecam.mc.world, new GameProfile(Freecam.mc.player.method2844().getId(), Freecam.mc.player.getName().getFormattedText()));
-        Freecam.field15901.field3006 = Freecam.mc.player.field3006;
+        Freecam.field15901.inventory = Freecam.mc.player.inventory;
         Freecam.field15901.method1728(this.field15902, this.field15903, this.field15904, this.field15908, this.field15909);
         Freecam.field15901.noClip = true;
         Freecam.field15901.entityCollisionReduction = Freecam.mc.player.entityCollisionReduction;
@@ -137,46 +137,46 @@ public class Freecam extends Module
     
     @EventListener
     private void method10500(final Class5713 class5713) {
-        if (this.method9906()) {
-            class5713.method16961(true);
+        if (this.isEnabled()) {
+            class5713.setCancelled(true);
         }
     }
     
     @EventListener
     private void method10501(final Class5752 class5752) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5752.method17061() != Freecam.mc.gameSettings.field23440.field2161.field32860) {
                 if (class5752.method17061() != Freecam.mc.gameSettings.field23439.field2161.field32860) {
                     if (class5752.method17061() != Freecam.mc.gameSettings.field23435.field2161.field32860) {
                         if (class5752.method17061() != Freecam.mc.gameSettings.field23437.field2161.field32860) {
                             if (class5752.method17061() != Freecam.mc.gameSettings.field23436.field2161.field32860) {
                                 if (class5752.method17061() == Freecam.mc.gameSettings.field23438.field2161.field32860) {
-                                    class5752.method16961(true);
+                                    class5752.setCancelled(true);
                                     this.field15916 = true;
                                 }
                             }
                             else {
-                                class5752.method16961(true);
+                                class5752.setCancelled(true);
                                 this.field15915 = true;
                             }
                         }
                         else {
-                            class5752.method16961(true);
+                            class5752.setCancelled(true);
                             this.field15914 = true;
                         }
                     }
                     else {
-                        class5752.method16961(true);
+                        class5752.setCancelled(true);
                         this.field15913 = true;
                     }
                 }
                 else {
-                    class5752.method16961(true);
+                    class5752.setCancelled(true);
                     this.field15917 = true;
                 }
             }
             else {
-                class5752.method16961(true);
+                class5752.setCancelled(true);
                 this.field15918 = true;
             }
             this.field15912 = ((this.field15913 != this.field15914) ? ((float)(this.field15913 ? 1 : -1)) : 0.0f);
@@ -186,39 +186,39 @@ public class Freecam extends Module
     
     @EventListener
     private void method10502(final Class5715 class5715) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5715.method16963() != Freecam.mc.gameSettings.field23440.field2161.field32860) {
                 if (class5715.method16963() != Freecam.mc.gameSettings.field23439.field2161.field32860) {
                     if (class5715.method16963() != Freecam.mc.gameSettings.field23435.field2161.field32860) {
                         if (class5715.method16963() != Freecam.mc.gameSettings.field23437.field2161.field32860) {
                             if (class5715.method16963() != Freecam.mc.gameSettings.field23436.field2161.field32860) {
                                 if (class5715.method16963() == Freecam.mc.gameSettings.field23438.field2161.field32860) {
-                                    class5715.method16961(true);
+                                    class5715.setCancelled(true);
                                     this.field15916 = false;
                                 }
                             }
                             else {
-                                class5715.method16961(true);
+                                class5715.setCancelled(true);
                                 this.field15915 = false;
                             }
                         }
                         else {
-                            class5715.method16961(true);
+                            class5715.setCancelled(true);
                             this.field15914 = false;
                         }
                     }
                     else {
-                        class5715.method16961(true);
+                        class5715.setCancelled(true);
                         this.field15913 = false;
                     }
                 }
                 else {
-                    class5715.method16961(true);
+                    class5715.setCancelled(true);
                     this.field15917 = false;
                 }
             }
             else {
-                class5715.method16961(true);
+                class5715.setCancelled(true);
                 this.field15918 = false;
             }
             this.field15912 = ((this.field15913 != this.field15914) ? ((float)(this.field15913 ? 1 : -1)) : 0.0f);
@@ -228,14 +228,14 @@ public class Freecam extends Module
     
     @EventListener
     public void method10503(final Class5722 class5722) {
-        if (this.method9906()) {
-            class5722.method16961(true);
+        if (this.isEnabled()) {
+            class5722.setCancelled(true);
         }
     }
     
     @EventListener
     public void method10504(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             class5744.method17043(this.field15908 % 360.0f);
             class5744.method17041(this.field15909);
             Freecam.mc.player.field4077 = this.field15908;
@@ -263,7 +263,7 @@ public class Freecam extends Module
     
     @EventListener
     private void method10505(final Class5723 class5723) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (Freecam.mc.player != null) {
@@ -278,7 +278,7 @@ public class Freecam extends Module
                 final double field19379 = class5724.field19379;
                 final float field19380 = PlayerEntity.field2997.field34097;
                 Freecam.mc.player.method1889(new AxisAlignedBB(field19377 - field19380, field19378, field19379 - field19380, field19377 + field19380, field19378 + PlayerEntity.field2997.field34098, field19379 + field19380));
-                class5723.method16961(true);
+                class5723.setCancelled(true);
                 Freecam.field15901.setMotion(0.0, 0.0, 0.0);
             }
         }
@@ -286,13 +286,13 @@ public class Freecam extends Module
     
     @EventListener
     private void method10506(final Class5721 class5721) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5721.method16990() instanceof Class4380) {
                 Freecam.field15901.method2707(Class316.field1877);
             }
             if (class5721.method16990() instanceof Class4381) {
                 if (((Class4381)class5721.method16990()).method13170(Freecam.mc.world) == null) {
-                    class5721.method16961(true);
+                    class5721.setCancelled(true);
                 }
             }
         }
@@ -300,14 +300,14 @@ public class Freecam extends Module
     
     @EventListener
     private void method10507(final Class5746 class5746) {
-        if (this.method9906()) {
-            class5746.method16961(true);
+        if (this.isEnabled()) {
+            class5746.setCancelled(true);
         }
     }
     
     @EventListener
     private void method10508(final Class5732 class5732) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             this.method9907(false);
         }
     }

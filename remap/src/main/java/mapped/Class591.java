@@ -24,7 +24,7 @@ public class Class591<C extends IInventory> extends Class590<C>
         this.field3495 = this.field3493.method10936(class3662);
         final int method15251 = this.field3491.method15251(class3662, null);
         if (this.field3495) {
-            final ItemStack method15252 = this.field3493.method10878(0).method20053();
+            final ItemStack method15252 = this.field3493.getSlot(0).method20053();
             if (method15252.method27620() || method15251 <= method15252.method27690()) {
                 return;
             }
@@ -48,7 +48,7 @@ public class Class591<C extends IInventory> extends Class590<C>
     
     public void method3466(final int b, final IntList list) {
         final IntListIterator iterator = list.iterator();
-        final Class6601 method10878 = this.field3493.method10878(0);
+        final Class6601 method10878 = this.field3493.getSlot(0);
         final ItemStack method10879 = Class5024.method15253(((Iterator<Integer>)iterator).next());
         if (!method10879.method27620()) {
             int min = Math.min(method10879.method27628(), b);

@@ -295,7 +295,7 @@ public final class Class1925 implements AutoCloseable
     private void method7676(final long n, final int field10490, final int field10491) {
         this.field10490 = field10490;
         this.field10491 = field10491;
-        Client.method35173().method35193().method32153();
+        Client.getInstance().method35193().method32153();
     }
     
     private void method7677(final long n, final boolean b) {

@@ -84,7 +84,7 @@ public class Class415 extends Class414 implements Class407
             if (!b) {
                 if (!method2007.isEmpty()) {
                     if (!this.method2026()) {
-                        this.method2024(method2007, (class7006.getType() != RayTraceResult.Type.ENTITY) ? null : ((Class7007)class7006).method21452());
+                        this.method2024(method2007, (class7006.getType() != RayTraceResult.Type.ENTITY) ? null : ((EntityRayTraceResult)class7006).getEntity());
                     }
                     else {
                         this.method2025(method2005, method2006);

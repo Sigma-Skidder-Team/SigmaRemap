@@ -25,7 +25,7 @@ public class Class6122 implements Class6113
         final double field24851 = (double) Util.method27838();
         if (field24851 - this.field24851 > 3.0E9) {
             this.field24851 = field24851;
-            final Class1655 method5285 = this.field24850.method5285();
+            final IntegratedServer method5285 = this.field24850.method5285();
             if (method5285 == null) {
                 this.field24853 = null;
             }

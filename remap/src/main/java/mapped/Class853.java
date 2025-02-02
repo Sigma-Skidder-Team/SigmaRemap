@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class853 extends Class759 implements Class762
+public class Class853 extends Class759 implements IMob
 {
     private static final DataParameter<Integer> field4556;
     public float field4557;

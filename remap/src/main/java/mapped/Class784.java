@@ -32,7 +32,7 @@ public class Class784 extends Class785 implements Class768
         this.field4114.method22062(2, new Class3517(this, 1.0, 1.0000001E-5f));
         this.field4114.method22062(3, new Class3628(this, PlayerEntity.class, 6.0f));
         this.field4114.method22062(4, new Class3503(this));
-        this.field4115.method22062(1, new Class3555<Object>(this, Class759.class, 10, true, false, class511 -> class511 instanceof Class762));
+        this.field4115.method22062(1, new Class3555<Object>(this, Class759.class, 10, true, false, class511 -> class511 instanceof IMob));
     }
     
     @Override

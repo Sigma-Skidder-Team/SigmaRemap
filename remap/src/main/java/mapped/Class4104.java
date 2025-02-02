@@ -11,8 +11,8 @@ public class Class4104 extends Item
 {
     private static String[] field18204;
     
-    public Class4104(final Class8959 class8959) {
-        super(class8959);
+    public Class4104(final Properties properties) {
+        super(properties);
     }
     
     @Override

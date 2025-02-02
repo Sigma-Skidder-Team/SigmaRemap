@@ -34,7 +34,7 @@ public class DVDSimulator extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15557 = (float)((DVDSimulator.mc.field4632.method7694() - this.field15561.field40723) * Math.random());
         this.field15558 = (float)((DVDSimulator.mc.field4632.method7695() - this.field15561.field40724) * Math.random());
         this.method9973();
@@ -42,7 +42,7 @@ public class DVDSimulator extends Module
     
     @EventListener
     private void method9972(final Class5740 class5740) throws IOException {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (DVDSimulator.mc.player != null) {
                 if (DVDSimulator.mc.world != null) {
                     final int method7695 = DVDSimulator.mc.field4632.method7695();

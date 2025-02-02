@@ -12,8 +12,8 @@ public class Class4095 extends Class4093
 {
     private static String[] field18196;
     
-    public Class4095(final Class8959 class8959) {
-        super(class8959);
+    public Class4095(final Properties properties) {
+        super(properties);
     }
     
     @Override
@@ -24,7 +24,7 @@ public class Class4095 extends Class4093
             method12327.method27693(1);
         }
         if (!method12327.method27620()) {
-            if (!class1848.field3006.method2362(method12326.method27641())) {
+            if (!class1848.inventory.method2362(method12326.method27641())) {
                 class1848.method2822(method12326, false);
             }
             class1848.method2859(Class8276.field33981.method8449(this));

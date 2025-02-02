@@ -120,9 +120,9 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
     }
 
     public int getLightValue() {
-        final Class5719 class5719 = new Class5719(this);
-        Client.method35173().method35188().method21097(class5719);
-        if (!class5719.method16987()) {
+        final EventRenderBlocks eventRenderBlocks = new EventRenderBlocks(this);
+        Client.getInstance().method35188().method21097(eventRenderBlocks);
+        if (!eventRenderBlocks.method16987()) {
             return this.lightLevel;
         }
         return 1;
@@ -185,7 +185,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
     }
 
     public float method21719(final PlayerEntity playerEntity, final IBlockReader class513, final BlockPos class514) {
-        return this.getBlock().method11830(this, playerEntity, class513, class514);
+        return this.getBlock().getPlayerRelativeBlockHardness(this, playerEntity, class513, class514);
     }
 
     public int method21720(final IBlockReader class1855, final BlockPos class1856, final Direction class1857) {
@@ -257,11 +257,11 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
     }
 
     public void method21737(final World class1847, final BlockPos class1848, final BlockState class1849, final boolean b) {
-        this.getBlock().method11828(this, class1847, class1848, class1849, b);
+        this.getBlock().onBlockAdded(this, class1847, class1848, class1849, b);
     }
 
     public void method21738(final World class1847, final BlockPos class1848, final BlockState class1849, final boolean b) {
-        this.getBlock().method11829(this, class1847, class1848, class1849, b);
+        this.getBlock().onReplaced(this, class1847, class1848, class1849, b);
     }
 
     public void method21739(final Class1849 class1849, final BlockPos class1850, final Random random) {
@@ -277,11 +277,11 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
     }
 
     public void method21742(final World class1847, final BlockPos class1848, final ItemStack class1849) {
-        this.getBlock().method11831(this, class1847, class1848, class1849);
+        this.getBlock().spawnAdditionalDrops(this, class1847, class1848, class1849);
     }
 
     public List<ItemStack> method21743(final Class9098 class9098) {
-        return this.getBlock().method11833(this, class9098);
+        return this.getBlock().getDrops(this, class9098);
     }
 
     public Class2201 method21744(final World class1847, final PlayerEntity class1848, final Class316 class1849, final BlockRayTraceResult class1850) {
@@ -325,8 +325,8 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
     }
 
     @Nullable
-    public Class434 method21754(final World class1847, final BlockPos class1848) {
-        return this.getBlock().method11827(this, class1847, class1848);
+    public INamedContainerProvider method21754(final World class1847, final BlockPos class1848) {
+        return this.getBlock().getContainer(this, class1847, class1848);
     }
 
     public boolean method21755(final Class7909<Block> class7909) {

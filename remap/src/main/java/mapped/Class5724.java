@@ -6,7 +6,7 @@ package mapped;
 
 public interface Class5724
 {
-    boolean method16961(final boolean p0);
+    boolean setCancelled(final boolean p0);
     
-    boolean method16962();
+    boolean isCancelled();
 }

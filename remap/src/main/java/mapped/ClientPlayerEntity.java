@@ -26,7 +26,7 @@ import net.minecraft.world.dimension.DimensionType;
 
 import java.util.List;
 
-public class Class756 extends Class754
+public class ClientPlayerEntity extends Class754
 {
     private static String[] field4068;
     public final Class5799 field4069;
@@ -66,8 +66,8 @@ public class Class756 extends Class754
     private int field4103;
     private boolean field4104;
     
-    public Class756(final Minecraft field4086, final Class1848 class1848, final Class5799 field4087, final Class7474 field4088, final Class6520 field4089) {
-        super(class1848, field4087.method17373());
+    public ClientPlayerEntity(final Minecraft field4086, final ClientWorld clientWorld, final Class5799 field4087, final Class7474 field4088, final Class6520 field4089) {
+        super(clientWorld, field4087.method17373());
         this.field4072 = Lists.newArrayList();
         this.field4073 = 0;
         this.field4100 = true;
@@ -153,8 +153,8 @@ public class Class756 extends Class754
     
     public void method4113() {
         final Class5744 class5744 = new Class5744(this.posX, this.getBoundingBox().minY, this.posZ, this.rotationPitch, this.rotationYaw, this.onGround);
-        Client.method35173().method35188().method21097(class5744);
-        if (!class5744.method16962()) {
+        Client.getInstance().method35188().method21097(class5744);
+        if (!class5744.isCancelled()) {
             final boolean method1815 = this.method1815();
             if (method1815 != this.field4081) {
                 this.field4069.method17292(new Class4336(this, method1815 ? Class287.field1594 : Class287.field1595));
@@ -233,14 +233,14 @@ public class Class756 extends Class754
                 iterator.next().run();
             }
             class5744.method17031();
-            Client.method35173().method35188().method21097(class5744);
+            Client.getInstance().method35188().method21097(class5744);
         }
     }
     
     @Override
     public boolean method2821(final boolean b) {
         this.field4069.method17292(new Class4399(b ? Class2003.field11243 : Class2003.field11244, BlockPos.ZERO, Direction.DOWN));
-        return this.field3006.method2158(this.field3006.field2743, (b && !this.field3006.method2345().method27620()) ? this.field3006.method2345().method27690() : 1) != ItemStack.EMPTY;
+        return this.inventory.method2158(this.inventory.field2743, (b && !this.inventory.method2345().method27620()) ? this.inventory.method2345().method27690() : 1) != ItemStack.EMPTY;
     }
     
     public void method4114(final String s) {
@@ -272,7 +272,7 @@ public class Class756 extends Class754
     }
     
     public void method4115() {
-        this.field3006.method2374(ItemStack.EMPTY);
+        this.inventory.method2374(ItemStack.EMPTY);
         super.method2814();
         this.field4086.displayGuiScreen(null);
     }
@@ -500,9 +500,9 @@ public class Class756 extends Class754
     @Override
     public void method1880(final DataParameter<?> class8810) {
         super.method1880(class8810);
-        if (Class756.field2920.equals(class8810)) {
-            final boolean b = (this.dataManager.get(Class756.field2920) & 0x1) > 0;
-            final Class316 class8811 = ((this.dataManager.get(Class756.field2920) & 0x2) <= 0) ? Class316.field1877 : Class316.field1878;
+        if (ClientPlayerEntity.field2920.equals(class8810)) {
+            final boolean b = (this.dataManager.get(ClientPlayerEntity.field2920) & 0x1) > 0;
+            final Class316 class8811 = ((this.dataManager.get(ClientPlayerEntity.field2920) & 0x2) <= 0) ? Class316.field1877 : Class316.field1878;
             if (b && !this.field4097) {
                 this.method2762(class8811);
             }
@@ -512,7 +512,7 @@ public class Class756 extends Class754
                 }
             }
         }
-        if (Class756.FLAGS.equals(class8810)) {
+        if (ClientPlayerEntity.FLAGS.equals(class8810)) {
             if (this.method2773()) {
                 if (!this.field4102) {
                     this.field4086.method5299().method6422(new Class6832(this));
@@ -633,8 +633,8 @@ public class Class756 extends Class754
         if (this.method2756()) {
             if (!this.isPassenger()) {
                 final Class5728 class5728 = new Class5728(0.2f);
-                Client.method35173().method35188().method21097(class5728);
-                if (!class5728.method16962()) {
+                Client.getInstance().method35188().method21097(class5728);
+                if (!class5728.isCancelled()) {
                     final Class6093 field24729 = this.field4085;
                     field24729.field24721 *= class5728.method17003();
                     final Class6093 field24730 = this.field4085;
@@ -733,7 +733,7 @@ public class Class756 extends Class754
         }
         boolean b6 = false;
         if (this.field3025.field27303) {
-            if (!this.field4086.field4682.method27335()) {
+            if (!this.field4086.playerController.method27335()) {
                 if (!field24727) {
                     if (this.field4085.field24727) {
                         if (!b) {
@@ -840,7 +840,7 @@ public class Class756 extends Class754
         super.method2736();
         if (this.onGround) {
             if (this.field3025.field27302) {
-                if (!this.field4086.field4682.method27335()) {
+                if (!this.field4086.playerController.method27335()) {
                     this.field3025.field27302 = false;
                     this.method2882();
                 }
@@ -867,9 +867,9 @@ public class Class756 extends Class754
             }
         }
         else {
-            if (this.field4086.field4700 != null) {
-                if (!this.field4086.field4700.method2991()) {
-                    if (this.field4086.field4700 instanceof Class516) {
+            if (this.field4086.currentScreen != null) {
+                if (!this.field4086.currentScreen.method2991()) {
+                    if (this.field4086.currentScreen instanceof Class516) {
                         this.method2814();
                     }
                     this.field4086.displayGuiScreen(null);

@@ -33,34 +33,34 @@ public class Class8265
         this.field33936 = field33936;
     }
     
-    public boolean method27449(final Class1848 class1848, final float n, final Class1846 class1849, final boolean b, final float n2) {
+    public boolean method27449(final ClientWorld clientWorld, final float n, final Class1846 class1849, final boolean b, final float n2) {
         final int n3 = class1849.method6644() * class1849.method6645();
         if (this.field33939.length != n3) {
             this.field33939 = new int[n3];
         }
         class1849.method6674().get(this.field33939);
-        final boolean method27450 = this.method27450(class1848, n, this.field33939, b, n2);
+        final boolean method27450 = this.method27450(clientWorld, n, this.field33939, b, n2);
         if (method27450) {
             class1849.method6674().put(this.field33939);
         }
         return method27450;
     }
     
-    public boolean method27450(final Class1848 class1848, final float n, final int[] array, final boolean b, final float n2) {
+    public boolean method27450(final ClientWorld clientWorld, final float n, final int[] array, final boolean b, final float n2) {
         if (this.field33935 == null && this.field33936 == null) {
-            return this.field33934.method35053(class1848, n, array, b);
+            return this.field33934.method35053(clientWorld, n, array, b);
         }
-        final DimensionType method20487 = class1848.dimension.getType();
+        final DimensionType method20487 = clientWorld.dimension.getType();
         if (method20487 == DimensionType.field2225 || method20487 == DimensionType.field2224) {
-            return this.field33934.method35053(class1848, n, array, b);
+            return this.field33934.method35053(clientWorld, n, array, b);
         }
-        final float method20488 = class1848.method6768(n2);
-        float method20489 = class1848.method6766(n2);
+        final float method20488 = clientWorld.method6768(n2);
+        float method20489 = clientWorld.method6766(n2);
         final float n3 = 1.0E-4f;
         final boolean b2 = method20488 > n3;
         final boolean b3 = method20489 > n3;
         if (!b2 && !b3) {
-            return this.field33934.method35053(class1848, n, array, b);
+            return this.field33934.method35053(clientWorld, n, array, b);
         }
         if (method20488 > 0.0f) {
             method20489 /= method20488;
@@ -75,14 +75,14 @@ public class Class8265
         final int[][] array2 = { array, this.field33937, this.field33938 };
         final float[] array3 = new float[3];
         if (n4 > n3) {
-            if (this.field33934.method35053(class1848, n, array2[n6], b)) {
+            if (this.field33934.method35053(clientWorld, n, array2[n6], b)) {
                 array3[n6] = n4;
                 ++n6;
             }
         }
         if (n5 > n3) {
             if (this.field33935 != null) {
-                if (this.field33935.method35053(class1848, n, array2[n6], b)) {
+                if (this.field33935.method35053(clientWorld, n, array2[n6], b)) {
                     array3[n6] = n5;
                     ++n6;
                 }
@@ -90,7 +90,7 @@ public class Class8265
         }
         if (method20489 > n3) {
             if (this.field33936 != null) {
-                if (this.field33936.method35053(class1848, n, array2[n6], b)) {
+                if (this.field33936.method35053(clientWorld, n, array2[n6], b)) {
                     array3[n6] = method20489;
                     ++n6;
                 }

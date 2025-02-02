@@ -22,7 +22,7 @@ public class Class9111
     private static long field38602;
     public static boolean field38603;
     
-    public static void method32952(final Class6092 class6092, final float f, final Class1848 class6093, final int n, final float n2) {
+    public static void method32952(final Class6092 class6092, final float f, final ClientWorld class6093, final int n, final float n2) {
         final IFluidState method18169 = class6092.method18169();
         if (!method18169.isTagged(Class7324.field28319)) {
             if (!method18169.isTagged(Class7324.field28320)) {
@@ -146,8 +146,8 @@ public class Class9111
         }
         else {
             float method18184 = 0.0f;
-            if (class6092.method18166() instanceof Class756) {
-                method18184 = ((Class756)class6092.method18166()).method4140();
+            if (class6092.method18166() instanceof ClientPlayerEntity) {
+                method18184 = ((ClientPlayerEntity)class6092.method18166()).method4140();
             }
             float n20 = Math.min(1.0f / Class9111.field38597, Math.min(1.0f / Class9111.field38598, 1.0f / Class9111.field38599));
             if (Float.isInfinite(n20)) {
@@ -255,8 +255,8 @@ public class Class9111
                 }
                 else {
                     n3 = 0.05f;
-                    if (method18170 instanceof Class756) {
-                        final Class756 class6094 = (Class756)method18170;
+                    if (method18170 instanceof ClientPlayerEntity) {
+                        final ClientPlayerEntity class6094 = (ClientPlayerEntity)method18170;
                         n3 -= class6094.method4140() * class6094.method4140() * 0.03f;
                         final Class3090 method18173 = class6094.world.method6959(new BlockPos(class6094));
                         if (method18173 == Class7102.field27638 || method18173 == Class7102.field27689) {

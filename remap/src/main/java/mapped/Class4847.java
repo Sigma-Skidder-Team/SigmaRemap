@@ -62,7 +62,7 @@ public class Class4847 extends Class4841
     public void finalize() throws Throwable {
         try {
             if (this.field20771 != null) {
-                Client.method35173().method35182(this.field20771);
+                Client.getInstance().method35182(this.field20771);
             }
         }
         finally {

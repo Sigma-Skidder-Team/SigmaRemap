@@ -4,13 +4,13 @@
 
 package mapped;
 
-public class Class537 extends Class535
+public class Class537 extends ChatScreen
 {
     private static final String field3195 = "/reloadShaders";
     private static final String field3196 = "/reloadChunks";
     
-    public Class537(final Class535 class535) {
-        super(Class700.method3901(class535));
+    public Class537(final ChatScreen chatScreen) {
+        super(Class700.method3901(chatScreen));
     }
     
     @Override
@@ -38,7 +38,7 @@ public class Class537 extends Class535
         if (!trim.equals("/reloadChunks")) {
             return false;
         }
-        this.minecraft.field4636.method5701();
+        this.minecraft.worldRenderer.loadRenderers();
         return true;
     }
 }

@@ -136,13 +136,13 @@ public class Class6356 extends Class6354
             this.field25429.put(playerEntity, class514);
             this.field25428.add(class514);
         }
-        if (!playerEntity.field3006.method2376(class513)) {
+        if (!playerEntity.inventory.method2376(class513)) {
             this.field25431.remove(playerEntity.getName().getString());
         }
         for (int i = 0; i < this.field25428.size(); ++i) {
             final Class9244 class515 = this.field25428.get(i);
             final String string = class515.field39643.getName().getString();
-            if (!class515.field39643.removed && (class515.field39643.field3006.method2376(class513) || class513.method27677())) {
+            if (!class515.field39643.removed && (class515.field39643.inventory.method2376(class513) || class513.method27677())) {
                 if (!class513.method27677()) {
                     if (class515.field39643.dimension == this.field25422) {
                         if (this.field25423) {

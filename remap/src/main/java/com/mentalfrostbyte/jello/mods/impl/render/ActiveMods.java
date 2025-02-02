@@ -52,9 +52,9 @@ public class ActiveMods extends Module
     
     @EventListener
     private void method10488(final Class5740 class5740) {
-        if (this.method9906() && ActiveMods.mc.player != null) {
-            final String method9887 = this.method9887("Animation");
-            final String method9888 = this.method9887("Outline");
+        if (this.isEnabled() && ActiveMods.mc.player != null) {
+            final String method9887 = this.getStringSettingValueByName("Animation");
+            final String method9888 = this.getStringSettingValueByName("Outline");
             this.method10489();
             if (this.field15899.calcPercent() == 1.0f) {
                 this.field15899.method35856(0.0f);
@@ -69,7 +69,7 @@ public class ActiveMods extends Module
             for (final Map.Entry<K, Class9572> entry : this.field15896.entrySet()) {
                 final Class9572 class5741 = entry.getValue();
                 final Module class5742 = (Module)entry.getKey();
-                if (!class5742.method9906()) {
+                if (!class5742.isEnabled()) {
                     if (class5741.calcPercent() == 1.0f) {
                         continue;
                     }
@@ -136,15 +136,15 @@ public class ActiveMods extends Module
     private void method10489() {
         if (this.field15896.isEmpty()) {
             this.field15896.clear();
-            for (final Module key : Client.method35173().method35189().method21553().values()) {
+            for (final Module key : Client.getInstance().method35189().method21553().values()) {
                 if (key == this) {
                     continue;
                 }
                 if (key.getCategory() == Category.GUI) {
                     continue;
                 }
-                final Class9572 value = new Class9572(200, 200, key.method9906() ? Direction.FORWARDS : Direction.BACKWARDS);
-                value.method35856(key.method9906() ? 0.0f : 1.0f);
+                final Class9572 value = new Class9572(200, 200, key.isEnabled() ? Direction.FORWARDS : Direction.BACKWARDS);
+                value.method35856(key.isEnabled() ? 0.0f : 1.0f);
                 this.field15896.put(key, value);
                 final Setting class4997 = key.method9899().get("Type");
                 if (class4997 == null) {
@@ -160,19 +160,19 @@ public class ActiveMods extends Module
             }
         }
         for (final Map.Entry entry : this.field15896.entrySet()) {
-            ((Class9572)entry.getValue()).changeDirection(((Module)entry.getKey()).method9906() ? Direction.FORWARDS : Direction.BACKWARDS);
+            ((Class9572)entry.getValue()).changeDirection(((Module)entry.getKey()).isEnabled() ? Direction.FORWARDS : Direction.BACKWARDS);
         }
     }
     
     private String method10490(final Module class3167) {
         String s = "";
-        if (class3167.method9887("Type") == null) {
-            if (class3167.method9887("Mode") != null) {
-                s = s + " " + class3167.method9887("Mode");
+        if (class3167.getStringSettingValueByName("Type") == null) {
+            if (class3167.getStringSettingValueByName("Mode") != null) {
+                s = s + " " + class3167.getStringSettingValueByName("Mode");
             }
         }
         else {
-            s = s + " " + class3167.method9887("Type");
+            s = s + " " + class3167.getStringSettingValueByName("Type");
         }
         return s;
     }

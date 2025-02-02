@@ -51,7 +51,7 @@ public class Class4001 extends Class4000
     }
     
     @Override
-    public int method11826(final Class1852 class1852) {
+    public int tickRate(final Class1852 class1852) {
         return 10;
     }
     

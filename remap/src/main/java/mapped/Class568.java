@@ -55,7 +55,7 @@ public class Class568 extends Class566
         this.field3379.field4632.method7696();
         this.field3379.field4632.method7697();
         final long method27837 = Util.method27837();
-        if (this.field3382 && (this.field3380.method27190() || this.field3379.field4700 != null) && this.field3385 == -1L) {
+        if (this.field3382 && (this.field3380.method27190() || this.field3379.currentScreen != null) && this.field3385 == -1L) {
             this.field3385 = method27837;
         }
         final float n4 = (this.field3384 > -1L) ? ((method27837 - this.field3384) / 200.0f) : -1.0f;
@@ -90,8 +90,8 @@ public class Class568 extends Class566
                 this.field3381.accept(Optional.of(value));
             }
             this.field3384 = Util.method27837();
-            if (this.field3379.field4700 != null) {
-                this.field3379.field4700.init(this.field3379, this.field3379.method5332().method7696(), this.field3379.method5332().method7697());
+            if (this.field3379.currentScreen != null) {
+                this.field3379.currentScreen.init(this.field3379, this.field3379.method5332().method7696(), this.field3379.method5332().method7697());
             }
         }
     }

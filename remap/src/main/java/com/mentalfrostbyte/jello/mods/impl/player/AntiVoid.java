@@ -33,7 +33,7 @@ public class AntiVoid extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15662 = 0.0;
         this.field15664 = 0;
         this.field15663 = 0;
@@ -44,22 +44,22 @@ public class AntiVoid extends Module
     
     @EventListener
     private void method10134(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (AntiVoid.mc.player.onGround || ColorUtils.method19160(AntiVoid.mc.player, 0.001f)) {
                 this.field15665 = new Vec3d(AntiVoid.mc.player.posX, AntiVoid.mc.player.posY, AntiVoid.mc.player.posZ);
             }
             if (this.field15664 <= 0) {
-                final Module method21551 = Client.method35173().method35189().method21551(Fly.class);
-                final String method21552 = method21551.method9887("Type");
-                final Module method21553 = Client.method35173().method35189().method21551(HighJump.class);
-                final String method21554 = method21553.method9887("Type");
-                boolean method21555 = method21551.method9906();
+                final Module method21551 = Client.getInstance().method35189().method21551(Fly.class);
+                final String method21552 = method21551.getStringSettingValueByName("Type");
+                final Module method21553 = Client.getInstance().method35189().method21551(HighJump.class);
+                final String method21554 = method21553.getStringSettingValueByName("Type");
+                boolean method21555 = method21551.isEnabled();
                 if (method21552.equals("Cubecraft")) {
                     if (class5717.method16974() < -0.4) {
                         method21555 = false;
                     }
                 }
-                if (method21553.method9906()) {
+                if (method21553.isEnabled()) {
                     if (method21554.equals("Hypixel")) {
                         method21555 = true;
                     }
@@ -79,7 +79,7 @@ public class AntiVoid extends Module
             if (this.field15662 > this.getNumberSettingValueByName("Fall Distance")) {
                 if (this.method10137() || !this.method9883("Void")) {
                     this.field15662 = 0.0;
-                    this.method10138(this.method9887("Mode"), class5717);
+                    this.method10138(this.getStringSettingValueByName("Mode"), class5717);
                 }
             }
             if (this.field15663 > 0) {
@@ -91,10 +91,10 @@ public class AntiVoid extends Module
     
     @EventListener
     private void method10135(final Class5744 class5744) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5744.method17046()) {
                 if (this.field15664 != 0) {
-                    class5744.method16961(true);
+                    class5744.setCancelled(true);
                 }
             }
         }
@@ -102,7 +102,7 @@ public class AntiVoid extends Module
     
     @EventListener
     private void method10136(final Class5723 class5723) {
-        if (this.method9906() && this.field15664 != 0) {
+        if (this.isEnabled() && this.field15664 != 0) {
             if (class5723.method16998() instanceof Class4328) {
                 this.field15664 = 0;
                 this.field15663 = 4;
@@ -134,7 +134,7 @@ public class AntiVoid extends Module
             }
             case "Cubecraft": {
                 AntiVoid.mc.method5269().method17292(new Class4354(method16760, 3.2E7, method16761, false));
-                Client.method35173().method35189().method21551(Fly.class).method9909(false);
+                Client.getInstance().method35189().method21551(Fly.class).method9909(false);
                 break;
             }
             case "Legit": {

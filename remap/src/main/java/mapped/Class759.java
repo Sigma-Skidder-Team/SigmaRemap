@@ -462,13 +462,13 @@ public abstract class Class759 extends LivingEntity
                 this.method1766(method2109);
             }
             this.method1803(method2108, method2107);
-            switch (Class7556.field29964[method2108.method8401().ordinal()]) {
+            switch (Class7556.field29964[method2108.getSlotType().ordinal()]) {
                 case 1: {
-                    this.field4119[method2108.method8402()] = 2.0f;
+                    this.field4119[method2108.getIndex()] = 2.0f;
                     break;
                 }
                 case 2: {
-                    this.field4121[method2108.method8402()] = 2.0f;
+                    this.field4121[method2108.getIndex()] = 2.0f;
                     break;
                 }
             }
@@ -481,7 +481,7 @@ public abstract class Class759 extends LivingEntity
     public boolean method4166(final ItemStack class8321, final ItemStack class8322, final Class2215 class8323) {
         boolean b = true;
         if (!class8322.method27620()) {
-            if (class8323.method8401() != Class295.field1681) {
+            if (class8323.getSlotType() != Group.field1681) {
                 if (class8321.getItem() instanceof Class4055 && !(class8322.getItem() instanceof Class4055)) {
                     b = true;
                 }
@@ -708,12 +708,12 @@ public abstract class Class759 extends LivingEntity
     
     @Override
     public ItemStack method2718(final Class2215 class2215) {
-        switch (Class7556.field29964[class2215.method8401().ordinal()]) {
+        switch (Class7556.field29964[class2215.getSlotType().ordinal()]) {
             case 1: {
-                return this.field4118.get(class2215.method8402());
+                return this.field4118.get(class2215.getIndex());
             }
             case 2: {
-                return this.field4120.get(class2215.method8402());
+                return this.field4120.get(class2215.getIndex());
             }
             default: {
                 return ItemStack.EMPTY;
@@ -723,13 +723,13 @@ public abstract class Class759 extends LivingEntity
     
     @Override
     public void method1803(final Class2215 class2215, final ItemStack class2216) {
-        switch (Class7556.field29964[class2215.method8401().ordinal()]) {
+        switch (Class7556.field29964[class2215.getSlotType().ordinal()]) {
             case 1: {
-                this.field4118.set(class2215.method8402(), class2216);
+                this.field4118.set(class2215.getIndex(), class2216);
                 break;
             }
             case 2: {
-                this.field4120.set(class2215.method8402(), class2216);
+                this.field4120.set(class2215.getIndex(), class2216);
                 break;
             }
         }
@@ -761,13 +761,13 @@ public abstract class Class759 extends LivingEntity
     
     public float method4183(final Class2215 class2215) {
         float n = 0.0f;
-        switch (Class7556.field29964[class2215.method8401().ordinal()]) {
+        switch (Class7556.field29964[class2215.getSlotType().ordinal()]) {
             case 1: {
-                n = this.field4119[class2215.method8402()];
+                n = this.field4119[class2215.getIndex()];
                 break;
             }
             case 2: {
-                n = this.field4121[class2215.method8402()];
+                n = this.field4121[class2215.getIndex()];
                 break;
             }
             default: {
@@ -793,7 +793,7 @@ public abstract class Class759 extends LivingEntity
             }
             int n2 = 1;
             for (final Class2215 class9593 : Class2215.values()) {
-                if (class9593.method8401() == Class295.field1682) {
+                if (class9593.getSlotType() == Group.field1682) {
                     final ItemStack method2718 = this.method2718(class9593);
                     if (n2 == 0 && this.rand.nextFloat() < n) {
                         break;
@@ -918,7 +918,7 @@ public abstract class Class759 extends LivingEntity
             }
         }
         for (final Class2215 class9593 : Class2215.values()) {
-            if (class9593.method8401() == Class295.field1682) {
+            if (class9593.getSlotType() == Group.field1682) {
                 final ItemStack method35976 = this.method2718(class9593);
                 if (!method35976.method27620()) {
                     if (this.rand.nextFloat() < 0.5f * method35975) {
@@ -950,13 +950,13 @@ public abstract class Class759 extends LivingEntity
     }
     
     public void method4191(final Class2215 class2215, final float n) {
-        switch (Class7556.field29964[class2215.method8401().ordinal()]) {
+        switch (Class7556.field29964[class2215.getSlotType().ordinal()]) {
             case 1: {
-                this.field4119[class2215.method8402()] = n;
+                this.field4119[class2215.getIndex()] = n;
                 break;
             }
             case 2: {
-                this.field4121[class2215.method8402()] = n;
+                this.field4121[class2215.getIndex()] = n;
                 break;
             }
         }
@@ -1060,7 +1060,7 @@ public abstract class Class759 extends LivingEntity
     }
     
     public boolean method4204(final PlayerEntity playerEntity) {
-        return !this.method4205() && !(this instanceof Class762);
+        return !this.method4205() && !(this instanceof IMob);
     }
     
     public boolean method4205() {
@@ -1145,10 +1145,10 @@ public abstract class Class759 extends LivingEntity
         Class2215 class8322;
         if (n != 98) {
             if (n != 99) {
-                if (n != 100 + Class2215.field13605.method8402()) {
-                    if (n != 100 + Class2215.field13604.method8402()) {
-                        if (n != 100 + Class2215.field13603.method8402()) {
-                            if (n != 100 + Class2215.field13602.method8402()) {
+                if (n != 100 + Class2215.field13605.getIndex()) {
+                    if (n != 100 + Class2215.field13604.getIndex()) {
+                        if (n != 100 + Class2215.field13603.getIndex()) {
+                            if (n != 100 + Class2215.field13602.getIndex()) {
                                 return false;
                             }
                             class8322 = Class2215.field13602;
@@ -1343,8 +1343,8 @@ public abstract class Class759 extends LivingEntity
     
     private List method4220(final World class1847) {
         final World method1896 = this.method1896();
-        if (method1896 instanceof Class1848) {
-            return ((Class1848)method1896).method6840();
+        if (method1896 instanceof ClientWorld) {
+            return ((ClientWorld)method1896).method6840();
         }
         if (!(method1896 instanceof Class1849)) {
             return null;

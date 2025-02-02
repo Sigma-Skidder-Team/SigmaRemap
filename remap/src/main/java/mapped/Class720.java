@@ -21,7 +21,7 @@ public class Class720 extends Screen
     private Class654 field3935;
     private Class654 field3936;
     private String field3937;
-    private Class9575 field3938;
+    private ServerData field3938;
     private Class8027 field3939;
     private Class929 field3940;
     private boolean field3941;
@@ -54,18 +54,18 @@ public class Class720 extends Screen
         this.children.add(this.field3932);
         this.field3935 = this.addButton(new Class654(this.width / 2 - 154, this.height - 52, 100, 20, Class8822.method30773("selectServer.select", new Object[0]), class654 -> this.method3948()));
         this.addButton(new Class654(this.width / 2 - 50, this.height - 52, 100, 20, Class8822.method30773("selectServer.direct", new Object[0]), class654 -> {
-            this.field3938 = new Class9575(Class8822.method30773("selectServer.defaultName", new Object[0]), "", false);
+            this.field3938 = new ServerData(Class8822.method30773("selectServer.defaultName", new Object[0]), "", false);
             this.minecraft.displayGuiScreen(new Class529(this, this::method3947, this.field3938));
         }));
         this.addButton(new Class654(this.width / 2 + 4 + 50, this.height - 52, 100, 20, Class8822.method30773("selectServer.add", new Object[0]), class654 -> {
-            this.field3938 = new Class9575(Class8822.method30773("selectServer.defaultName", new Object[0]), "", false);
+            this.field3938 = new ServerData(Class8822.method30773("selectServer.defaultName", new Object[0]), "", false);
             this.minecraft.displayGuiScreen(new Class538(this, this::method3946, this.field3938));
         }));
         this.field3934 = this.addButton(new Class654(this.width / 2 - 154, this.height - 28, 70, 20, Class8822.method30773("selectServer.edit", new Object[0]), class654 -> {
             final Class633 class655 = this.field3932.method3530();
             if (class655 instanceof Class634) {
-                final Class9575 method3658 = ((Class634)class655).method3658();
-                (this.field3938 = new Class9575(method3658.field41612, method3658.field41613, false)).method35872(method3658);
+                final ServerData method3658 = ((Class634)class655).method3658();
+                (this.field3938 = new ServerData(method3658.field41612, method3658.field41613, false)).method35872(method3658);
                 this.minecraft.displayGuiScreen(new Class538(this, this::method3945, this.field3938));
             }
         }));
@@ -125,7 +125,7 @@ public class Class720 extends Screen
         final Class633 class633 = this.field3932.method3530();
         if (b) {
             if (class633 instanceof Class634) {
-                final Class9575 method3658 = ((Class634)class633).method3658();
+                final ServerData method3658 = ((Class634)class633).method3658();
                 method3658.field41612 = this.field3938.field41612;
                 method3658.field41613 = this.field3938.field41613;
                 method3658.method35872(this.field3938);
@@ -191,7 +191,7 @@ public class Class720 extends Screen
         if (!(class633 instanceof Class634)) {
             if (class633 instanceof Class635) {
                 final Class9506 method3661 = ((Class635)class633).method3661();
-                this.method3949(new Class9575(method3661.method35414(), method3661.method35415(), true));
+                this.method3949(new ServerData(method3661.method35414(), method3661.method35415(), true));
             }
         }
         else {
@@ -199,7 +199,7 @@ public class Class720 extends Screen
         }
     }
     
-    private void method3949(final Class9575 class9575) {
+    private void method3949(final ServerData class9575) {
         if (class9575.field41613 != null) {
             if (class9575.field41613.contains("hypixel.net")) {
                 Class9367.field40167 = Class9367.field40168;

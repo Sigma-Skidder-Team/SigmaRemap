@@ -20,12 +20,12 @@ public class EntitySpeed extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
     }
     
     @EventListener
     public void method10312(final Class5718 class5718) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (EntitySpeed.mc.gameSettings.field23439.method1056()) {
@@ -79,7 +79,7 @@ public class EntitySpeed extends Module
     
     @EventListener
     public void method10313(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!(class5723.method16998() instanceof Class4263)) {}
         }
     }

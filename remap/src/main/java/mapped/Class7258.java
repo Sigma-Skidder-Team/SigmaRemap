@@ -54,7 +54,7 @@ public abstract class Class7258 extends Class7257
     
     @Override
     public void method22180(final Class1851 class1851, final BlockPos class1852, final BlockState class1853) {
-        Block.method11837(class1853, class1851.method6744(), class1852, class1853.getBlock().method11802() ? class1851.getTileEntity(class1852) : null);
+        Block.spawnDrops(class1853, class1851.method6744(), class1852, class1853.getBlock().method11802() ? class1851.getTileEntity(class1852) : null);
     }
     
     @Override

@@ -27,14 +27,14 @@ public class Class9200
                 final int min = Math.min(class7493.method771().method11708(), i);
                 i -= min;
                 final ItemStack method772 = class7493.method772(min, false);
-                if (class7494.field3006.method2362(method772) && method772.method27620()) {
+                if (class7494.inventory.method2362(method772) && method772.method27620()) {
                     method772.method27691(1);
                     final Class427 method773 = class7494.method2822(method772, false);
                     if (method773 != null) {
                         method773.method2120();
                     }
                     class7494.world.method6706(null, class7494.getPosX(), class7494.getPosY(), class7494.getPosZ(), Class8520.field35327, Class286.field1585, 0.2f, ((class7494.method2633().nextFloat() - class7494.method2633().nextFloat()) * 0.7f + 1.0f) * 2.0f);
-                    class7494.field3008.method10876();
+                    class7494.container.method10876();
                 }
                 else {
                     final Class427 method774 = class7494.method2822(method772, false);

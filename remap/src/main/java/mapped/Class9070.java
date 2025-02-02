@@ -24,7 +24,7 @@ public class Class9070
     }
     
     public void method32666() {
-        Client.method35173().method35188().method21094(this);
+        Client.getInstance().method35188().method21094(this);
         this.method32669(new Class6709());
         this.method32669(new Class6700());
         this.method32669(new Class6694());
@@ -106,7 +106,7 @@ public class Class9070
     
     @EventListener
     private void method32675(final Class5721 class5721) {
-        if (Client.method35173().method35209() == Class2209.field13466) {
+        if (Client.getInstance().method35209() == Class2209.field13466) {
             return;
         }
         if (class5721.method16990() instanceof Class4317) {
@@ -117,7 +117,7 @@ public class Class9070
                 return;
             }
             if (method12973.startsWith(".")) {
-                class5721.method16961(true);
+                class5721.setCancelled(true);
                 this.method32672();
                 final String[] split = method12973.substring(".".length()).split(" ");
                 final Class6693 method12974 = this.method32667(split[0]);
@@ -143,7 +143,7 @@ public class Class9070
             }
         }
         if (class5721.method16990() instanceof Class4265 && ((Class4265)class5721.method16990()).method12802().startsWith(".")) {
-            class5721.method16961(true);
+            class5721.setCancelled(true);
         }
     }
     

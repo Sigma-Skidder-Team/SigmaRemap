@@ -20,7 +20,7 @@ public class AutoRespawn extends Module
     
     @EventListener
     public void method9974(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!AutoRespawn.mc.player.method1768()) {
                 AutoRespawn.mc.player.method2842();
             }

@@ -448,7 +448,7 @@ public class Class799 extends Class794
     
     @Override
     public boolean method4491(final LivingEntity class511, final LivingEntity class512) {
-        if (class511 instanceof Class765 || class511 instanceof Class761) {
+        if (class511 instanceof Class765 || class511 instanceof GhastEntity) {
             return false;
         }
         if (!(class511 instanceof Class799)) {

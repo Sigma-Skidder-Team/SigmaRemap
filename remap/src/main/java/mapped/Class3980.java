@@ -41,7 +41,7 @@ public class Class3980 extends Block
     
     @Nullable
     @Override
-    public Class434 method11827(final Class7096 class7096, final World class7097, final BlockPos class7098) {
+    public INamedContainerProvider method11827(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         return new Class504((n, class1849, class1850) -> new Class3422(n, class1849, Class7318.method22434(class7097, class7098)), Class3980.field17974);
     }
     

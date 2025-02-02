@@ -19,7 +19,7 @@ public class Legit extends Module
     
     @EventListener
     private void method10546(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             Legit.mc.gameSettings.field23441.field2162 = true;
             if (Legit.mc.player.field2935 != 1) {
                 if (Legit.mc.player.field2935 == 0) {

@@ -71,7 +71,7 @@ public class Class805 extends Class804
                         this.field4329 = 0;
                     }
                     if (!method2715.method27620()) {
-                        if (!playerEntity.field3006.method2362(class514)) {
+                        if (!playerEntity.inventory.method2362(class514)) {
                             playerEntity.method2822(class514, false);
                         }
                     }

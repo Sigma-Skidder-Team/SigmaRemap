@@ -20,8 +20,8 @@ public class Class3828 extends Item
     private final int field17380;
     private final Class7795 field17381;
     
-    public Class3828(final int field17380, final Class7795 field17381, final Class8959 class8959) {
-        super(class8959);
+    public Class3828(final int field17380, final Class7795 field17381, final Properties properties) {
+        super(properties);
         this.field17380 = field17380;
         this.field17381 = field17381;
         Class3828.field17379.put(this.field17381, this);
@@ -53,12 +53,12 @@ public class Class3828 extends Item
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
         list.add(this.method11764().applyTextStyle(TextFormatting.GRAY));
     }
     
     public ITextComponent method11764() {
-        return new Class2259(this.method11717() + ".desc", new Object[0]);
+        return new Class2259(this.getTranslationKey() + ".desc", new Object[0]);
     }
     
     @Nullable

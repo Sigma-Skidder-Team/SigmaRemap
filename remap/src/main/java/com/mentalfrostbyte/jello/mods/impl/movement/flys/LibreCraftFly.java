@@ -20,7 +20,7 @@ public class LibreCraftFly extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field16046 = 0;
         if (!LibreCraftFly.mc.gameSettings.field23440.method1056()) {
             if (!LibreCraftFly.mc.gameSettings.field23440.method1056()) {
@@ -43,9 +43,9 @@ public class LibreCraftFly extends Module
     
     @EventListener
     private void method10733(final Class5752 class5752) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5752.method17061() == LibreCraftFly.mc.gameSettings.field23440.field2161.field32860) {
-                class5752.method16961(true);
+                class5752.setCancelled(true);
                 this.field16047 = true;
             }
         }
@@ -53,9 +53,9 @@ public class LibreCraftFly extends Module
     
     @EventListener
     private void method10734(final Class5715 class5715) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5715.method16963() == LibreCraftFly.mc.gameSettings.field23440.field2161.field32860) {
-                class5715.method16961(true);
+                class5715.setCancelled(true);
                 this.field16047 = false;
             }
         }
@@ -64,7 +64,7 @@ public class LibreCraftFly extends Module
     @EventListener
     @Class6759
     public void method10735(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field16046 <= 0) {
                 if (this.field16046 != -1) {
                     if (this.field16046 == 0) {
@@ -88,7 +88,7 @@ public class LibreCraftFly extends Module
     
     @EventListener
     public void method10736(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             ++this.field16046;
             if (this.field16046 != 2) {
                 if (this.field16046 > 2) {
@@ -96,7 +96,7 @@ public class LibreCraftFly extends Module
                         class5744.method17037(0.1);
                     }
                     else {
-                        class5744.method16961(true);
+                        class5744.setCancelled(true);
                     }
                 }
             }
@@ -109,7 +109,7 @@ public class LibreCraftFly extends Module
     
     @EventListener
     public void method10737(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final IPacket method16998 = class5723.method16998();
             if (LibreCraftFly.mc.player != null) {
                 if (method16998 instanceof Class4328) {

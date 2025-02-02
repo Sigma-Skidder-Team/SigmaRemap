@@ -30,7 +30,7 @@ public class Class3939 extends Class3841
         if (!class7097.isRemote) {
             final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class457) {
-                class7099.method2833((Class434)method6727);
+                class7099.method2833((INamedContainerProvider)method6727);
                 class7099.method2857(Class8276.field34046);
             }
             return Class2201.field13400;
@@ -39,14 +39,14 @@ public class Class3939 extends Class3841
     }
     
     @Override
-    public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.getBlock() != class7099.getBlock()) {
             final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof IInventory) {
                 Class9193.method33638(class7097, class7098, (IInventory)method6727);
                 class7097.method6783(class7098, this);
             }
-            super.method11829(class7096, class7097, class7098, class7099, b);
+            super.onReplaced(class7096, class7097, class7098, class7099, b);
         }
     }
     

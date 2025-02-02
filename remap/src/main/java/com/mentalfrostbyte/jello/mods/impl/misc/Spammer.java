@@ -24,11 +24,11 @@ public class Spammer extends Module
     
     @EventListener
     public void method10465(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             ++this.field15877;
             if (this.field15877 > this.getNumberSettingValueByName("Messages delay") * 20.0f) {
                 this.field15877 = 0;
-                ColorUtils.method19107(this.method9887("Message").replaceAll("%r", Integer.toString(Math.round(10.0f + (float)Math.random() * 89.0f))));
+                ColorUtils.method19107(this.getStringSettingValueByName("Message").replaceAll("%r", Integer.toString(Math.round(10.0f + (float)Math.random() * 89.0f))));
             }
         }
     }

@@ -39,7 +39,7 @@ public class InfiniteAura extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15647 = false;
         this.field15646 = (int)(20.0f / this.method9914().getNumberSettingValueByName("CPS"));
         this.field15648 = (float)this.field15646;
@@ -54,7 +54,7 @@ public class InfiniteAura extends Module
     @EventListener
     @Class6759
     public void method10091(final Class5743 class5743) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         final List<Class8131> method10094 = this.method10094((float)(int)this.getNumberSettingValueByName("Range"));
@@ -82,7 +82,7 @@ public class InfiniteAura extends Module
                 final ArrayList<Class9407> method10096 = Class9147.method33405(new Class9407(method10095.posX, method10095.posY, method10095.posZ), new Class9407(class5744.posX, class5744.posY, class5744.posZ));
                 this.field15649.add(method10096);
                 Collections.reverse(method10096);
-                this.method10092(method10096, Client.method35173().method35189().method21551(Criticals.class).method9906());
+                this.method10092(method10096, Client.getInstance().method35189().method21551(Criticals.class).isEnabled());
                 ColorUtils.method19165(method10095, !this.method9883("No Swing"));
                 Collections.reverse(method10096);
                 this.method10092(method10096, false);
@@ -122,7 +122,7 @@ public class InfiniteAura extends Module
     
     @EventListener
     public void method10093(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15649 != null) {
                 if (this.field15649.size() != 0) {
                     for (final List<Class9407> list : this.field15649) {
@@ -164,7 +164,7 @@ public class InfiniteAura extends Module
         while (iterator2.hasNext()) {
             final Entity method26798 = ((Class8131)iterator2.next()).method26798();
             if (method26798 != InfiniteAura.mc.player) {
-                if (!Client.method35173().method35190().method29878(method26798)) {
+                if (!Client.getInstance().method35190().method29878(method26798)) {
                     if (method26798 instanceof LivingEntity) {
                         if (((LivingEntity)method26798).method2664() != 0.0f) {
                             if (InfiniteAura.mc.player.method1732(method26798) <= n) {
@@ -173,7 +173,7 @@ public class InfiniteAura extends Module
                                         if (!this.method9883("Players") && method26798 instanceof PlayerEntity) {
                                             iterator2.remove();
                                         }
-                                        else if (method26798 instanceof PlayerEntity && Client.method35173().method35191().method31751(method26798)) {
+                                        else if (method26798 instanceof PlayerEntity && Client.getInstance().method35191().method31751(method26798)) {
                                             iterator2.remove();
                                         }
                                         else if (!this.method9883("Invisible") && method26798.method1823()) {
@@ -192,7 +192,7 @@ public class InfiniteAura extends Module
                                             if (!Class9011.method32262((PlayerEntity)method26798)) {
                                                 continue;
                                             }
-                                            if (!Client.method35173().method35189().method21551(Teams.class).method9906()) {
+                                            if (!Client.getInstance().method35189().method21551(Teams.class).isEnabled()) {
                                                 continue;
                                             }
                                             iterator2.remove();
@@ -246,9 +246,9 @@ public class InfiniteAura extends Module
     
     @Override
     public boolean method9898() {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.method10095()) {
-                if (Client.method35173().method35194().method29229()) {
+                if (Client.getInstance().playerTracker().method29229()) {
                     return true;
                 }
             }

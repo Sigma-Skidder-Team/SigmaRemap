@@ -24,7 +24,7 @@ public class OmegaCraftFly extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15971 = OmegaCraftFly.mc.player.posX;
         this.field15972 = OmegaCraftFly.mc.player.posY;
         this.field15973 = OmegaCraftFly.mc.player.posZ;
@@ -46,7 +46,7 @@ public class OmegaCraftFly extends Module
     @EventListener
     @Class6759
     public void method10605(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             ++this.field15970;
             final double max = Math.max(0.35, 0.0);
             if (this.field15969 <= 2) {
@@ -81,7 +81,7 @@ public class OmegaCraftFly extends Module
     
     @EventListener
     public void method10606(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             ++this.field15969;
             if (this.field15969 == 1) {
                 class5744.method17045(true);
@@ -89,7 +89,7 @@ public class OmegaCraftFly extends Module
             if (this.field15969 != 2) {
                 if (this.field15969 > 2) {
                     if (this.field15969 != 40) {
-                        class5744.method16961(true);
+                        class5744.setCancelled(true);
                     }
                     else {
                         class5744.method17037(-(150.0 + Math.random() * 150.0));
@@ -105,7 +105,7 @@ public class OmegaCraftFly extends Module
     
     @EventListener
     public void method10607(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4328) {
                 final Class4328 class5724 = (Class4328)method16998;
@@ -126,7 +126,7 @@ public class OmegaCraftFly extends Module
     
     @EventListener
     public void method10608(final Class5741 class5741) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             double n = this.field15971 - this.field15974;
             double n2 = this.field15972 - this.field15975;
             double n3 = this.field15973 - this.field15976;

@@ -70,7 +70,7 @@ public class Class3961 extends Class3841
     }
     
     public static void method12083(final World class1847, final BlockPos class1848) {
-        Block.method11839(class1847, class1848, new ItemStack(Items.field31632, 3));
+        Block.spawnAsEntity(class1847, class1848, new ItemStack(Items.field31632, 3));
     }
     
     @Override
@@ -85,7 +85,7 @@ public class Class3961 extends Class3841
                     method2715.method27693(1);
                     class7097.method6706(class7099, class7099.getPosX(), class7099.getPosY(), class7099.getPosZ(), Class8520.field35041, Class286.field1584, 1.0f, 1.0f);
                     if (!method2715.method27620()) {
-                        if (!class7099.field3006.method2362(new ItemStack(Items.field31635))) {
+                        if (!class7099.inventory.method2362(new ItemStack(Items.field31635))) {
                             class7099.method2822(new ItemStack(Items.field31635), false);
                         }
                     }
@@ -233,14 +233,14 @@ public class Class3961 extends Class3841
     }
     
     @Override
-    public List<ItemStack> method11833(final BlockState class7096, final Class9098 class7097) {
+    public List<ItemStack> getDrops(final BlockState class7096, final Class9098 class7097) {
         final Entity class7098 = class7097.method32882(Class6683.field26362);
         if (!(class7098 instanceof Class510)) {
             if (!(class7098 instanceof Class765)) {
                 if (!(class7098 instanceof Class421)) {
                     if (!(class7098 instanceof Class767)) {
                         if (!(class7098 instanceof Class432)) {
-                            return super.method11833(class7096, class7097);
+                            return super.getDrops(class7096, class7097);
                         }
                     }
                 }
@@ -250,7 +250,7 @@ public class Class3961 extends Class3841
         if (class7099 instanceof Class438) {
             ((Class438)class7099).method2218(null, class7096, Class2144.field12626);
         }
-        return super.method11833(class7096, class7097);
+        return super.getDrops(class7096, class7097);
     }
     
     @Override

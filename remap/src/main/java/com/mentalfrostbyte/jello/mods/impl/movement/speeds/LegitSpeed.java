@@ -26,7 +26,7 @@ public class LegitSpeed extends Module
     
     @EventListener
     public void method10449(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (LegitSpeed.mc.player.onGround) {
                 if (LegitSpeed.mc.player.collidedVertically) {
                     if (LegitSpeed.mc.player.field2970 != 0.0f || LegitSpeed.mc.player.field2968 != 0.0f) {
@@ -76,7 +76,7 @@ public class LegitSpeed extends Module
     
     @EventListener
     private void method10450(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (LegitSpeed.mc.player != null) {
                 if (class5723.method16998() instanceof Class4273) {
                     final Class4273 class5724 = (Class4273)class5723.method16998();

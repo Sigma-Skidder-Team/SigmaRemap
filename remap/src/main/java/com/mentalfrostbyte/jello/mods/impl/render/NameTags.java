@@ -28,7 +28,7 @@ public class NameTags extends Module
     
     @EventListener
     public void method10324(final Class5734 class5734) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final int n = 20;
             final int n2 = 32;
             for (final Map.Entry<PlayerEntity, V> entry : this.field15776.entrySet()) {
@@ -45,7 +45,7 @@ public class NameTags extends Module
                     RenderUtil.drawString(Class9493.field40813, (float)(round + 3), (float)round2, method8459, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
                     RenderUtil.drawString(Class9493.field40813, (float)(round + 3), (float)(round2 - 1), method8459, ClientColors.LIGHT_GREYISH_BLUE.color);
                     GL11.glPopMatrix();
-                    final List<ItemStack> method8460 = Class8639.method29374(class5735);
+                    final List<ItemStack> method8460 = InvManagerUtil.method29374(class5735);
                     if (method8460.size() == 0) {
                         continue;
                     }
@@ -92,13 +92,13 @@ public class NameTags extends Module
     
     @EventListener
     public void method10325(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             this.field15776.clear();
             for (final Entity class5740 : NameTags.mc.world.method6806()) {
                 if (!(class5740 instanceof PlayerEntity)) {
                     continue;
                 }
-                if (class5740 instanceof Class756) {
+                if (class5740 instanceof ClientPlayerEntity) {
                     continue;
                 }
                 final PlayerEntity key = (PlayerEntity)class5740;
@@ -120,9 +120,9 @@ public class NameTags extends Module
     
     @EventListener
     public void method10326(final Class5749 class5749) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5749.method17056() instanceof PlayerEntity) {
-                class5749.method16961(true);
+                class5749.setCancelled(true);
             }
         }
     }

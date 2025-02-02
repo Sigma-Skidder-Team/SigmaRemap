@@ -78,7 +78,7 @@ public class Class689 extends AbstractGui
         if (this.field3792.gameSettings.field23468) {
             final int method5304 = this.field3792.method5332().method7696();
             this.method3839(this.field3792.method5310(), 0, method5304 / 2, true);
-            final Class1655 method5305 = this.field3792.method5285();
+            final IntegratedServer method5305 = this.field3792.method5285();
             if (method5305 != null) {
                 this.method3839(method5305.method1589(), method5304 - Math.min(method5304 / 2, 240), method5304 / 2, false);
             }
@@ -178,7 +178,7 @@ public class Class689 extends AbstractGui
     }
     
     public List<String> method3832() {
-        final Class1655 method5285 = this.field3792.method5285();
+        final IntegratedServer method5285 = this.field3792.method5285();
         final NetworkManager method5286 = this.field3792.method5269().getNetworkManager();
         final float method5287 = method5286.method11195();
         final float method5288 = method5286.method11194();
@@ -191,7 +191,7 @@ public class Class689 extends AbstractGui
         }
         final BlockPos class354 = new BlockPos(this.field3792.method5303());
         if (this.field3792.method5317()) {
-            return Lists.newArrayList((Object[])new String[] { "Minecraft " + Class9528.method35579().getName() + " (" + this.field3792.method5235() + "/" + Class7932.method25729() + ")", this.field3792.field4707, s, this.field3792.field4636.method5704(), this.field3792.field4636.method5706(), "P: " + this.field3792.field4640.method6488() + ". T: " + this.field3792.world.method6816(), this.field3792.world.method6726(), "", String.format("Chunk-relative: %d %d %d", class354.getX() & 0xF, class354.getY() & 0xF, class354.getZ() & 0xF) });
+            return Lists.newArrayList((Object[])new String[] { "Minecraft " + Class9528.method35579().getName() + " (" + this.field3792.method5235() + "/" + Class7932.method25729() + ")", this.field3792.field4707, s, this.field3792.worldRenderer.method5704(), this.field3792.worldRenderer.method5706(), "P: " + this.field3792.field4640.method6488() + ". T: " + this.field3792.world.method6816(), this.field3792.world.method6726(), "", String.format("Chunk-relative: %d %d %d", class354.getX() & 0xF, class354.getY() & 0xF, class354.getZ() & 0xF) });
         }
         final Entity method5289 = this.field3792.method5303();
         final Direction method5290 = method5289.method1882();
@@ -229,7 +229,7 @@ public class Class689 extends AbstractGui
         if (!this.field3792.method5284()) {
             str = Class7906.method25609(Class9367.method34762()).method25614();
         }
-        final ArrayList arrayList = Lists.newArrayList((Object[])new String[] { "Minecraft " + Class9528.method35579().getName() + " (" + str + "/" + Class7932.method25729() + ("release".equalsIgnoreCase(this.field3792.method5236()) ? "" : ("/" + this.field3792.method5236())) + ")", this.field3792.field4707, s, this.field3792.field4636.method5704(), this.field3792.field4636.method5706(), "P: " + this.field3792.field4640.method6488() + ". T: " + this.field3792.world.method6816(), this.field3792.world.method6726() });
+        final ArrayList arrayList = Lists.newArrayList((Object[])new String[] { "Minecraft " + Class9528.method35579().getName() + " (" + str + "/" + Class7932.method25729() + ("release".equalsIgnoreCase(this.field3792.method5236()) ? "" : ("/" + this.field3792.method5236())) + ")", this.field3792.field4707, s, this.field3792.worldRenderer.method5704(), this.field3792.worldRenderer.method5706(), "P: " + this.field3792.field4640.method6488() + ". T: " + this.field3792.world.method6816(), this.field3792.world.method6726() });
         final String method5292 = this.method3833();
         if (method5292 != null) {
             arrayList.add(method5292);
@@ -315,7 +315,7 @@ public class Class689 extends AbstractGui
     
     @Nullable
     private String method3833() {
-        final Class1655 method5285 = this.field3792.method5285();
+        final IntegratedServer method5285 = this.field3792.method5285();
         if (method5285 != null) {
             final Class1849 method5286 = method5285.method1481(this.field3792.world.method6789().getType());
             if (method5286 != null) {
@@ -332,7 +332,7 @@ public class Class689 extends AbstractGui
     @Nullable
     private Chunk method3835() {
         if (this.field3798 == null) {
-            final Class1655 method5285 = this.field3792.method5285();
+            final IntegratedServer method5285 = this.field3792.method5285();
             if (method5285 != null) {
                 final Class1849 method5286 = method5285.method1481(this.field3792.world.dimension.getType());
                 if (method5286 != null) {

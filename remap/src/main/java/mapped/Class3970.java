@@ -29,7 +29,7 @@ public class Class3970 extends Block
     
     @Override
     public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
-        super.method11828(class7096, class7097, class7098, class7099, b);
+        super.onBlockAdded(class7096, class7097, class7098, class7099, b);
     }
     
     @Nullable

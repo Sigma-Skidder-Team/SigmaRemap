@@ -23,29 +23,29 @@ public class BaicAutoGapple extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15614 = -1;
         this.field15616 = 20;
     }
     
     @EventListener
     public void method10036(final Class5751 class5751) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15614 >= 0) {
-                class5751.method16961(true);
+                class5751.setCancelled(true);
             }
         }
     }
     
     @EventListener
     public void method10037(final Class5752 class5752) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             for (int length = BaicAutoGapple.mc.gameSettings.field23457.length, i = 0; i < length; ++i) {
                 final Class350 class5753 = BaicAutoGapple.mc.gameSettings.field23457[i];
                 final String method1060 = class5753.method1060();
                 final int int1 = Integer.parseInt(String.valueOf(method1060.charAt(method1060.length() - 1)));
                 if (class5752.method17061() == class5753.field2161.field32860) {
-                    if (int1 - 1 != BaicAutoGapple.mc.player.field3006.field2743) {
+                    if (int1 - 1 != BaicAutoGapple.mc.player.inventory.field2743) {
                         this.field15614 = -1;
                         this.field15616 = 0;
                     }
@@ -56,7 +56,7 @@ public class BaicAutoGapple extends Module
     
     @EventListener
     public void method10038(final Class5743 class5743) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (this.field15616 < 20) {
@@ -83,7 +83,7 @@ public class BaicAutoGapple extends Module
                 if (this.field15614 > 1) {
                     if (BaicAutoGapple.mc.player.method2715(Class316.field1877).getItem() != Items.field31341) {
                         if (BaicAutoGapple.mc.player.method2715(Class316.field1877).getItem() != Items.field31342) {
-                            BaicAutoGapple.mc.player.field3006.field2743 = this.field15615;
+                            BaicAutoGapple.mc.player.inventory.field2743 = this.field15615;
                             this.field15615 = -1;
                             this.field15614 = -1;
                         }
@@ -91,17 +91,17 @@ public class BaicAutoGapple extends Module
                 }
             }
             else {
-                this.field15615 = BaicAutoGapple.mc.player.field3006.field2743;
-                BaicAutoGapple.mc.player.field3006.field2743 = method10292;
-                BaicAutoGapple.mc.field4682.method27318();
-                BaicAutoGapple.mc.field4682.method27320(BaicAutoGapple.mc.player, BaicAutoGapple.mc.world, Class316.field1877);
+                this.field15615 = BaicAutoGapple.mc.player.inventory.field2743;
+                BaicAutoGapple.mc.player.inventory.field2743 = method10292;
+                BaicAutoGapple.mc.playerController.method27318();
+                BaicAutoGapple.mc.playerController.method27320(BaicAutoGapple.mc.player, BaicAutoGapple.mc.world, Class316.field1877);
             }
         }
     }
     
     @EventListener
     public void method10039(final Class5723 class5723) {
-        if (this.method9906() && this.field15614 > 1) {
+        if (this.isEnabled() && this.field15614 > 1) {
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4268) {
                 final Class4268 class5724 = (Class4268)method16998;
@@ -111,7 +111,7 @@ public class BaicAutoGapple extends Module
                         if (iterator.next().method34766().method30737() != 14) {
                             continue;
                         }
-                        BaicAutoGapple.mc.player.field3006.field2743 = this.field15615;
+                        BaicAutoGapple.mc.player.inventory.field2743 = this.field15615;
                         this.field15615 = -1;
                         this.field15614 = -1;
                     }

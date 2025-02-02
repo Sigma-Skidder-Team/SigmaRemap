@@ -69,7 +69,7 @@ public class Class724 extends Class723 implements Class725<Class3420>
     }
     
     private void method3984(final int n) {
-        this.minecraft.field4682.method27326(this.field3955.field16154, n);
+        this.minecraft.playerController.method27326(this.field3955.field16154, n);
     }
     
     @Override

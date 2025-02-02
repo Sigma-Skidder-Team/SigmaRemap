@@ -102,8 +102,8 @@ public class Class9066
     }
     
     public static void method32642(final World class1847, final World class1848) {
-        if (class1848 instanceof Class1848) {
-            final Iterator<Entity> iterator = ((Class1848)class1848).method6806().iterator();
+        if (class1848 instanceof ClientWorld) {
+            final Iterator<Entity> iterator = ((ClientWorld)class1848).method6806().iterator();
             while (iterator.hasNext()) {
                 method32639(iterator.next(), class1848);
             }

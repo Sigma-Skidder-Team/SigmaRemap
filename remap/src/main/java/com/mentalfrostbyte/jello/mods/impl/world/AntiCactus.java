@@ -18,7 +18,7 @@ public class AntiCactus extends Module
     
     @EventListener
     private void method10794(final Class5753 class5753) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (AntiCactus.mc.world.getBlockState(class5753.method17064()).method21696() instanceof Class3977) {
                 class5753.method17067(VoxelShapes.method24488(0.0, 0.0, 0.0, 1.0, this.method9883("Above") ? 0.999 : 0.9375, 1.0));
             }

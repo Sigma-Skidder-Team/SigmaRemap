@@ -38,7 +38,7 @@ public class Class786 extends Class785
         this.field4114.method22062(8, new Class3503(this));
         this.field4115.method22062(1, new Class3546(this));
         this.field4115.method22062(2, new Class3547(this, (Class<?>[])new Class[0]));
-        this.field4115.method22062(3, new Class3555<Object>(this, Class759.class, 5, false, false, class511 -> class511 instanceof Class762 && !(class511 instanceof Class765)));
+        this.field4115.method22062(3, new Class3555<Object>(this, Class759.class, 5, false, false, class511 -> class511 instanceof IMob && !(class511 instanceof Class765)));
     }
     
     @Override
@@ -63,7 +63,7 @@ public class Class786 extends Class785
     
     @Override
     public void method2741(final Entity class399) {
-        if (class399 instanceof Class762) {
+        if (class399 instanceof IMob) {
             if (!(class399 instanceof Class765)) {
                 if (this.method2633().nextInt(20) == 0) {
                     this.method4153((LivingEntity)class399);

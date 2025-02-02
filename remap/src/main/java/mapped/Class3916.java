@@ -112,20 +112,20 @@ public class Class3916 extends Block implements Class3856
     }
     
     @Override
-    public int method11826(final Class1852 class1852) {
-        return this.field17749.method11826(class1852);
+    public int tickRate(final Class1852 class1852) {
+        return this.field17749.tickRate(class1852);
     }
     
     @Override
-    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onBlockAdded(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.method21696() != class7096.method21696()) {
             this.field17750.method21734(class7097, class7098, Blocks.AIR, class7098, false);
-            this.field17749.method11828(this.field17750, class7097, class7098, class7099, false);
+            this.field17749.onBlockAdded(this.field17750, class7097, class7098, class7099, false);
         }
     }
     
     @Override
-    public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.method21696() != class7099.method21696()) {
             this.field17750.method21738(class7097, class7098, class7099, b);
         }

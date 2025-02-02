@@ -29,7 +29,7 @@ public class Class166 implements Predicate<Entity>
         if (class399 != null) {
             if (class399.method1749()) {
                 if (method18504) {
-                    if (!Client.method35173().method35191().method31751(class399)) {
+                    if (!Client.getInstance().method35191().method31751(class399)) {
                         return true;
                     }
                 }

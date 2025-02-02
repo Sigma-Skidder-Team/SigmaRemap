@@ -20,7 +20,7 @@ public class FastBow extends Module
     
     @EventListener
     private void method10472(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (FastBow.mc.player.getHeldItemMainhand() != null) {
                 if (FastBow.mc.player.getHeldItemMainhand().getItem() instanceof Class4087) {
                     if (FastBow.mc.player.onGround) {

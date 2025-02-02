@@ -23,12 +23,12 @@ public class Streaming extends Module
     
     @EventListener
     public void method10401(final Class5727 class5727) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.method9883("Hide server name")) {
-                if (this.method9887("Server name").length() > 1) {
-                    class5727.method17002(class5727.method17001().replaceAll(this.method9887("Server name"), "sigmaclient"));
-                    class5727.method17002(class5727.method17001().replaceAll(this.method9887("Server name").toLowerCase(), "sigmaclient"));
-                    class5727.method17002(class5727.method17001().replaceAll(this.method9887("Server name").toUpperCase(), "sigmaclient"));
+                if (this.getStringSettingValueByName("Server name").length() > 1) {
+                    class5727.method17002(class5727.method17001().replaceAll(this.getStringSettingValueByName("Server name"), "sigmaclient"));
+                    class5727.method17002(class5727.method17001().replaceAll(this.getStringSettingValueByName("Server name").toLowerCase(), "sigmaclient"));
+                    class5727.method17002(class5727.method17001().replaceAll(this.getStringSettingValueByName("Server name").toUpperCase(), "sigmaclient"));
                 }
             }
         }
@@ -40,7 +40,7 @@ public class Streaming extends Module
     
     @EventListener
     public void method10403(final Class5729 class5729) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             return;
         }
     }

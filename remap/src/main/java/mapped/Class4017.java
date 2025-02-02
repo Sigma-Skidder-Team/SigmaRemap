@@ -89,7 +89,7 @@ public abstract class Class4017 extends Block
             }
             if (b2 && !class7097.method6961(class7098)) {
                 if (!b) {
-                    Block.method11836(class7096, class7097, class7098);
+                    Block.spawnDrops(class7096, class7097, class7098);
                 }
                 class7097.method6690(class7098, b);
             }
@@ -117,7 +117,7 @@ public abstract class Class4017 extends Block
     @Override
     public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (!b) {
-            super.method11829(class7096, class7097, class7098, class7099, b);
+            super.onReplaced(class7096, class7097, class7098, class7099, b);
             if (class7096.method21772(this.method12205()).method597()) {
                 class7097.method6696(class7098.method1137(), this);
             }

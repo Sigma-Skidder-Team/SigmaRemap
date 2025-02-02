@@ -26,6 +26,6 @@ public class Class3934 extends Class3933
     
     @Override
     public List<ItemStack> method11833(final Class7096 class7096, final Class9098 class7097) {
-        return Blocks.field29459.method11833(class7096, class7097);
+        return Blocks.field29459.getDrops(class7096, class7097);
     }
 }

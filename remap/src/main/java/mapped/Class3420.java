@@ -47,7 +47,7 @@ public class Class3420 extends Class3418
                 }
                 final ItemStack method2159 = this.field16163.method2159(0);
                 this.field16163.method2161();
-                if (!playerEntity.field3006.method2362(method2159)) {
+                if (!playerEntity.inventory.method2362(method2159)) {
                     playerEntity.method2822(method2159, false);
                 }
                 return true;

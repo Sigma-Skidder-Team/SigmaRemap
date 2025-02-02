@@ -50,7 +50,7 @@ public class Class567 extends Class566
         final int method7696 = this.field3366.method5332().method7696();
         final int method7697 = this.field3366.method5332().method7697();
         final long method7698 = Util.method27837();
-        if (this.field3369 && (this.field3367.method27190() || this.field3366.field4700 != null) && this.field3372 == -1L) {
+        if (this.field3369 && (this.field3367.method27190() || this.field3366.currentScreen != null) && this.field3372 == -1L) {
             this.field3372 = method7698;
         }
         final float n4 = (this.field3371 > -1L) ? ((method7698 - this.field3371) / 1000.0f) : -1.0f;
@@ -58,15 +58,15 @@ public class Class567 extends Class566
         float method7699;
         if (n4 >= 1.0f) {
             this.field3377 = true;
-            if (this.field3366.field4700 != null) {
-                this.field3366.field4700.render(0, 0, n3);
+            if (this.field3366.currentScreen != null) {
+                this.field3366.currentScreen.render(0, 0, n3);
             }
             AbstractGui.fill(0, 0, method7696, method7697, this.field3373 | MathHelper.ceil((1.0f - MathHelper.clamp(n4 - 1.0f, 0.0f, 1.0f)) * 255.0f) << 24);
             method7699 = 1.0f - MathHelper.clamp(n4 - 1.0f, 0.0f, 1.0f);
         }
         else if (this.field3369) {
-            if (this.field3366.field4700 != null && n5 < 1.0f) {
-                this.field3366.field4700.render(n, n2, n3);
+            if (this.field3366.currentScreen != null && n5 < 1.0f) {
+                this.field3366.currentScreen.render(n, n2, n3);
             }
             AbstractGui.fill(0, 0, method7696, method7697, this.field3373 | MathHelper.ceil(MathHelper.clamp(n5, 0.15, 1.0) * 255.0) << 24);
             method7699 = MathHelper.clamp(n5, 0.0f, 1.0f);
@@ -103,8 +103,8 @@ public class Class567 extends Class566
                 this.field3368.accept(Optional.of(value));
             }
             this.field3371 = Util.method27837();
-            if (this.field3366.field4700 != null) {
-                this.field3366.field4700.init(this.field3366, this.field3366.method5332().method7696(), this.field3366.method5332().method7697());
+            if (this.field3366.currentScreen != null) {
+                this.field3366.currentScreen.init(this.field3366, this.field3366.method5332().method7696(), this.field3366.method5332().method7697());
             }
         }
     }

@@ -12,10 +12,10 @@ import net.minecraft.world.World;
 public class Class3525 extends Class3446
 {
     private static String[] field16534;
-    private final Class761 field16535;
+    private final GhastEntity field16535;
     public int field16536;
     
-    public Class3525(final Class761 field16535) {
+    public Class3525(final GhastEntity field16535) {
         this.field16535 = field16535;
     }
     

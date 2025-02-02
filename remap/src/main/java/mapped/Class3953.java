@@ -46,7 +46,7 @@ public class Class3953 extends Class3841
                         if (class7101.method2550() != Class2182.field12921) {
                             if (method6728) {
                                 class7101.method2547();
-                                class7097.method6833().method21345(class7098, this, this.method11826(class7097));
+                                class7097.method6833().method21345(class7098, this, this.tickRate(class7097));
                             }
                         }
                     }
@@ -87,7 +87,7 @@ public class Class3953 extends Class3841
                     this.method12067(class7096, class7097, class7098, method6728, b);
                 }
                 if (class7099.method2541() || class7099.method2542()) {
-                    class7097.method6907().method21345(class7098, this, this.method11826(class7097));
+                    class7097.method6907().method21345(class7098, this, this.tickRate(class7097));
                 }
             }
             class7097.method6783(class7098, this);
@@ -105,7 +105,7 @@ public class Class3953 extends Class3841
     }
     
     @Override
-    public int method11826(final Class1852 class1852) {
+    public int tickRate(final Class1852 class1852) {
         return 1;
     }
     

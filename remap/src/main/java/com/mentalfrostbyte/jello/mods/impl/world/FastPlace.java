@@ -21,7 +21,7 @@ public class FastPlace extends Module
     
     @EventListener
     private void method10040(final Class5743 class5743) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (FastPlace.mc.player.getHeldItemMainhand() == null) {

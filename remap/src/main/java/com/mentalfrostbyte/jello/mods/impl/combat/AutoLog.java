@@ -21,11 +21,11 @@ public class AutoLog extends Module
     
     @EventListener
     public void method10769(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (AutoLog.mc.player.ticksExisted > 10) {
                 if (AutoLog.mc.method5285() == null) {
                     if (AutoLog.mc.method5282() != null) {
-                        if (AutoLog.mc.player.method2664() / AutoLog.mc.player.method2701() * 10.0f < this.getNumberSettingValueByName("Min Health") || Class8639.method29375(Items.field31590) == 0) {
+                        if (AutoLog.mc.player.method2664() / AutoLog.mc.player.method2701() * 10.0f < this.getNumberSettingValueByName("Min Health") || InvManagerUtil.method29375(Items.field31590) == 0) {
                             final boolean method9883 = this.method9883("One Time Use");
                             AutoLog.mc.world.method6751();
                             AutoLog.mc.method5264();

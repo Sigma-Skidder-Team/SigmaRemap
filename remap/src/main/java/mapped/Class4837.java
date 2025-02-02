@@ -18,7 +18,7 @@ public class Class4837 extends Class4825
     public String field20734;
     private PlayerEntity field20735;
     private Minecraft field20736;
-    private static Class1848 field20737;
+    private static ClientWorld field20737;
     public Class7971 field20738;
     private Class1773 field20739;
     private Class758 field20740;
@@ -53,7 +53,7 @@ public class Class4837 extends Class4825
         final Class9206 class9206 = new Class9206(this);
         final UUID fromString = UUID.fromString(this.field20738.method25891().equals("steve") ? "123e4567-e89b-12d3-a456-556642440000" : this.field20738.method25891());
         if (Class4837.field20737 == null) {
-            Class4837.field20737 = new Class1848(this.field20736.method5269(), new Class8511(1L, Class101.field299, false, false, Class9505.field40893), DimensionType.field2223, 1, new Class5030(0L, class9206, false), null);
+            Class4837.field20737 = new ClientWorld(this.field20736.method5269(), new Class8511(1L, Class101.field299, false, false, Class9505.field40893), DimensionType.field2223, 1, new Class5030(0L, class9206, false), null);
         }
         if (this.field20740 == null) {
             this.field20740 = new Class758(Class4837.field20737, new GameProfile(fromString, this.field20738.method25889()));

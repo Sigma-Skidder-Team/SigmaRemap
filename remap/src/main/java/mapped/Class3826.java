@@ -13,8 +13,8 @@ import java.util.List;
 
 public class Class3826 extends Class3824
 {
-    public Class3826(final Class8959 class8959) {
-        super(class8959);
+    public Class3826(final Properties properties) {
+        super(properties);
     }
     
     @Override
@@ -35,12 +35,12 @@ public class Class3826 extends Class3824
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
         Class5333.method16478(class8321, list, 0.125f);
     }
     
     @Override
     public String method11718(final ItemStack class8321) {
-        return Class5333.method16474(class8321).method26448(this.method11717() + ".effect.");
+        return Class5333.method16474(class8321).method26448(this.getTranslationKey() + ".effect.");
     }
 }

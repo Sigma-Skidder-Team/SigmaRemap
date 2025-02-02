@@ -17,7 +17,7 @@ public class BoxChestESP extends Module
     
     @EventListener
     private void method10086(final Class5739 class5739) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (BoxChestESP.mc.player != null && BoxChestESP.mc.world != null) {

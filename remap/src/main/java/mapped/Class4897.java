@@ -34,7 +34,7 @@ public class Class4897 extends Class4841
     
     @Override
     public void draw(final float n) {
-        this.field20948 = Client.method35173().method35201().method19347();
+        this.field20948 = Client.getInstance().method35201().method19347();
         String field32930 = "Log in";
         final Texture field32931 = ClientAssets.account;
         if (this.field20948 != null) {

@@ -14,8 +14,8 @@ public class Class3821 extends Item
     private static String[] field17372;
     private final Fluid field17373;
     
-    public Class3821(final Fluid field17373, final Class8959 class8959) {
-        super(class8959);
+    public Class3821(final Fluid field17373, final Properties properties) {
+        super(properties);
         this.field17373 = field17373;
     }
     
@@ -77,7 +77,7 @@ public class Class3821 extends Item
         }
         class8321.method27693(1);
         if (!class8321.method27620()) {
-            if (!class8322.field3006.method2362(new ItemStack(class8323))) {
+            if (!class8322.inventory.method2362(new ItemStack(class8323))) {
                 class8322.method2822(new ItemStack(class8323), false);
             }
             return class8321;

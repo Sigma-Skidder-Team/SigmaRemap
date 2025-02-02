@@ -15,8 +15,8 @@ public class Class4064 extends Item
 {
     private static String[] field18157;
     
-    public Class4064(final Class8959 class8959) {
-        super(class8959);
+    public Class4064(final Properties properties) {
+        super(properties);
     }
     
     @Override
@@ -60,7 +60,7 @@ public class Class4064 extends Item
         class8321.method27693(1);
         class8322.method2859(Class8276.field33981.method8449(this));
         if (!class8321.method27620()) {
-            if (!class8322.field3006.method2362(class8323)) {
+            if (!class8322.inventory.method2362(class8323)) {
                 class8322.method2822(class8323, false);
             }
             return class8321;

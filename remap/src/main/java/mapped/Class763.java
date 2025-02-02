@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public abstract class Class763 extends Class787 implements Class762
+public abstract class Class763 extends Class787 implements IMob
 {
     public Class763(final EntityType<? extends Class763> class7499, final World class7500) {
         super(class7499, class7500);

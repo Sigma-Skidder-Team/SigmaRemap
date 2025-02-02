@@ -43,7 +43,7 @@ public class Class8491
     }
     
     public void method28365() {
-        Client.method35173().method35188().method21094(this);
+        Client.getInstance().method35188().method21094(this);
         new Class9367(null);
     }
     
@@ -51,7 +51,7 @@ public class Class8491
     public void method28366(final Class5751 class5751) {
         if (Class9367.method34762() == Class7906.field32452.method25613()) {
             if (this.field34856.player.method2768() <= 1) {
-                class5751.method16961(true);
+                class5751.setCancelled(true);
             }
         }
     }
@@ -66,7 +66,7 @@ public class Class8491
         if (Class9367.method34762() == Class7906.field32452.method25613()) {
             if (class5752.method17061() == 258) {
                 if (this.field34861 != null) {
-                    if (this.field34856.field4700 instanceof Class535) {
+                    if (this.field34856.currentScreen instanceof ChatScreen) {
                         this.field34856.method5269().getNetworkManager().method11176(this.field34861);
                         this.field34861 = null;
                     }
@@ -171,14 +171,14 @@ public class Class8491
                 return;
             }
             this.field34861 = (Class4265)class5721.method16990();
-            class5721.method16961(true);
+            class5721.setCancelled(true);
         }
     }
     
     @EventListener
     @Class6763
     public void method28373(final Class5723 class5723) {
-        if (!Client.method35173().method35189().method21551(OldHitting.class).method9906() && Class9367.method34762() != Class7906.field32452.method25613()) {
+        if (!Client.getInstance().method35189().method21551(OldHitting.class).isEnabled() && Class9367.method34762() != Class7906.field32452.method25613()) {
             if (!Class8491.field34858.isEmpty()) {
                 Class8491.field34858.clear();
             }
@@ -187,7 +187,7 @@ public class Class8491
             final Class4402 class5724 = (Class4402)class5723.method16998();
             if (class5724.method13249() == Class2215.field13601) {
                 if (class5724.method13247() != null) {
-                    if (Client.method35173().method35189().method21551(OldHitting.class).method9906() || Class9367.method34762() == Class7906.field32452.method25613()) {
+                    if (Client.getInstance().method35189().method21551(OldHitting.class).isEnabled() || Class9367.method34762() == Class7906.field32452.method25613()) {
                         if (!(class5724.method13247().getItem() instanceof Class4100)) {
                             final Entity method6741 = this.field34856.world.getEntityByID(class5724.method13248());
                             if (Class8491.field34858.contains(method6741)) {
@@ -201,7 +201,7 @@ public class Class8491
                                     Class8491.field34858.add(method6742);
                                 }
                             }
-                            class5723.method16961(true);
+                            class5723.setCancelled(true);
                         }
                     }
                 }
@@ -211,7 +211,7 @@ public class Class8491
             Class8090.method26583(class5723, this.field34860);
             if (!(class5723.method16998() instanceof Class4388)) {
                 if (class5723.method16998() instanceof Class4288 && ColorUtils.method19147()) {
-                    class5723.method16961(true);
+                    class5723.setCancelled(true);
                 }
                 else if (!(class5723.method16998() instanceof Class4289)) {
                     if (class5723.method16998() instanceof Class4379 && this.field34856.player != null) {
@@ -223,7 +223,7 @@ public class Class8491
                             if (class5726.method12932() != Class1994.field11169) {
                                 if (this.field34862 != null && class5726.method12932() == Class1994.field11170) {
                                     if (this.field34862.compareTo(class5726.method12931()) != 0) {
-                                        class5723.method16961(true);
+                                        class5723.setCancelled(true);
                                     }
                                     else {
                                         this.field34862 = null;
@@ -231,12 +231,12 @@ public class Class8491
                                 }
                                 else if (this.field34862 != null) {
                                     if (this.field34862.compareTo(class5726.method12931()) != 0) {
-                                        class5723.method16961(true);
+                                        class5723.setCancelled(true);
                                     }
                                 }
                             }
                             else if (this.field34862 != null) {
-                                class5723.method16961(true);
+                                class5723.setCancelled(true);
                             }
                             else {
                                 this.field34862 = class5726.method12931();
@@ -252,7 +252,7 @@ public class Class8491
                     if (this.field34856.world.getEntityByID(class5728.method12878()) != null) {
                         if (class5728.method12879() == 3) {
                             if (Class9367.method34762() == Class7906.field32452.method25613()) {
-                                class5723.method16961(true);
+                                class5723.setCancelled(true);
                             }
                         }
                     }

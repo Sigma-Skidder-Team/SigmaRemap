@@ -19,7 +19,7 @@ public class UnfullPhase extends Module
     
     @EventListener
     private void method10572(final Class5747 class5747) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if ((int) UnfullPhase.mc.player.posY == this.field15944) {
                 if (!UnfullPhase.mc.player.field2967) {
                     ColorUtils.method19155(-2.0);
@@ -42,7 +42,7 @@ public class UnfullPhase extends Module
     
     @EventListener
     private void method10573(final Class5753 class5753) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5753.method17065() == null || class5753.method17064().getY() != this.field15944 - 1) {
                 if (class5753.method17064().getY() != this.field15944) {
                     if (class5753.method17064().getY() != this.field15944 + 1 || !(UnfullPhase.mc.world.getBlockState(class5753.method17064()).method21696() instanceof SlabBlock)) {
@@ -64,13 +64,13 @@ public class UnfullPhase extends Module
     
     @EventListener
     private void method10574(final Class5713 class5713) {
-        if (this.method9906()) {
-            class5713.method16961(true);
+        if (this.isEnabled()) {
+            class5713.setCancelled(true);
         }
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15944 = (int) UnfullPhase.mc.player.posY;
         this.field15945 = this.field15944 - UnfullPhase.mc.player.posY;
     }

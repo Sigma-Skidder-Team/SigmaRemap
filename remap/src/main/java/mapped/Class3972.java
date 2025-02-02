@@ -32,7 +32,7 @@ public class Class3972 extends Block
     public void method11821(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         if (!class7096.get((IProperty<Boolean>)Class3972.field17946)) {
             if (class7096.get((IProperty<Integer>)Class3972.field17945) == 7) {
-                Block.method11836(class7096, class7097, class7098);
+                Block.spawnDrops(class7096, class7097, class7098);
                 class7097.method6690(class7098, false);
             }
         }

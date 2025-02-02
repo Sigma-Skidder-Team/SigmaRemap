@@ -79,7 +79,7 @@ public class Class4030 extends Block
     @Override
     public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         if (class7097.method6992(Class237.field912, class7098) > 11) {
-            Block.method11836(class7096, class7097, class7098);
+            Block.spawnDrops(class7096, class7097, class7098);
             class7097.method6690(class7098, false);
         }
     }

@@ -17,7 +17,7 @@ public class Normal extends Module
     @EventListener
     @Class6757
     private void method10369(final Class5750 class5750) {
-        if (this.method9906() && class5750.method17059()) {
+        if (this.isEnabled() && class5750.method17059()) {
             Normal.mc.method5269().method17292(new Class4336(Normal.mc.player, Class287.field1594));
         }
     }

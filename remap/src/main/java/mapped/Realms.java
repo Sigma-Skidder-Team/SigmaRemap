@@ -113,7 +113,7 @@ public class Realms
     }
     
     public static boolean method25373() {
-        return Minecraft.method5277().field4700 != null && Minecraft.method5277().field4700 instanceof Class548;
+        return Minecraft.method5277().currentScreen != null && Minecraft.method5277().currentScreen instanceof Class548;
     }
     
     public static void method25374(final File file) {

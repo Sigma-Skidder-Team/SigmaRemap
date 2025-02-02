@@ -35,6 +35,6 @@ public class Class4679 implements Class4659
         catch (final JSONException | AuthenticationException | IOException ex) {
             ((Throwable)ex).printStackTrace();
         }
-        Client.method35173().method35197().method25776(new Class6224("Jello connect", "Connected!", ClientAssets.gingerbread));
+        Client.getInstance().method35197().method25776(new Class6224("Jello connect", "Connected!", ClientAssets.gingerbread));
     }
 }

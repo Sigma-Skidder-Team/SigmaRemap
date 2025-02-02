@@ -60,7 +60,7 @@ public class Class526 extends Class516<Class3433>
                     if (n6 < 108.0) {
                         if (n7 < 19.0) {
                             if (((Class3433)this.field3077).method10877(this.minecraft.player, i)) {
-                                this.minecraft.field4682.method27326(((Class3433)this.field3077).field16154, i);
+                                this.minecraft.playerController.method27326(((Class3433)this.field3077).field16154, i);
                                 return true;
                             }
                         }
@@ -236,7 +236,7 @@ public class Class526 extends Class516<Class3433>
     }
     
     public void method3025() {
-        final ItemStack method20053 = this.field3077.method10878(0).method20053();
+        final ItemStack method20053 = this.field3077.getSlot(0).method20053();
         if (!ItemStack.method27643(method20053, this.field3145)) {
             this.field3145 = method20053;
             do {

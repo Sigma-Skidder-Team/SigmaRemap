@@ -21,7 +21,7 @@ public class Cubecraft2Fly extends PremiumModule
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field16023 = 0;
         if (!Cubecraft2Fly.mc.gameSettings.field23440.method1056()) {
             this.field16025 = false;
@@ -32,7 +32,7 @@ public class Cubecraft2Fly extends PremiumModule
         }
         if (ColorUtils.method19148()) {
             if (Class9367.method34762() == Class7906.field32452.method25613()) {
-                Client.method35173().method35197().method25776(new Class6224("Cubecraft2 fly", "This fly was made for 1.9+ only"));
+                Client.getInstance().method35197().method25776(new Class6224("Cubecraft2 fly", "This fly was made for 1.9+ only"));
             }
         }
     }
@@ -59,9 +59,9 @@ public class Cubecraft2Fly extends PremiumModule
     
     @EventListener
     private void method10692(final Class5752 class5752) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5752.method17061() == Cubecraft2Fly.mc.gameSettings.field23440.field2161.field32860) {
-                class5752.method16961(true);
+                class5752.setCancelled(true);
                 this.field16025 = true;
             }
         }
@@ -69,9 +69,9 @@ public class Cubecraft2Fly extends PremiumModule
     
     @EventListener
     private void method10693(final Class5715 class5715) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5715.method16963() == Cubecraft2Fly.mc.gameSettings.field23440.field2161.field32860) {
-                class5715.method16961(true);
+                class5715.setCancelled(true);
                 this.field16025 = false;
             }
         }
@@ -80,7 +80,7 @@ public class Cubecraft2Fly extends PremiumModule
     @EventListener
     @Class6759
     public void method10694(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             ++this.field16023;
             if (this.field16023 != 1) {
                 if (this.field16023 != 2) {
@@ -129,14 +129,14 @@ public class Cubecraft2Fly extends PremiumModule
     @EventListener
     public void method10695(final Class5744 class5744) {
         if (this.field16023 == -3) {
-            class5744.method16961(true);
+            class5744.setCancelled(true);
         }
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             class5744.method17033(true);
             class5744.method17045(true);
             if (this.field16023 != 3) {
                 if (this.field16023 > 3) {
-                    class5744.method16961(true);
+                    class5744.setCancelled(true);
                 }
             }
             else {
@@ -147,7 +147,7 @@ public class Cubecraft2Fly extends PremiumModule
     
     @EventListener
     public void method10696(final Class5723 class5723) {
-        if (!this.method9906() && this.field16023 >= 0) {
+        if (!this.isEnabled() && this.field16023 >= 0) {
             return;
         }
         final IPacket method16998 = class5723.method16998();

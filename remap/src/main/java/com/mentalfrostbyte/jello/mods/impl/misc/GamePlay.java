@@ -41,7 +41,7 @@ public class GamePlay extends ModuleWithSettings
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         if (!this.field15756.method23937()) {
             this.field15756.method23932();
         }
@@ -59,13 +59,13 @@ public class GamePlay extends ModuleWithSettings
     
     @EventListener
     private void method10293(final Class5743 class5743) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (this.field15755 != null) {
-            if (GamePlay.mc.field4700 instanceof Class535) {
+            if (GamePlay.mc.currentScreen instanceof ChatScreen) {
                 this.method10294(null);
-                Client.method35173().method35197().method25776(new Class6224("Auto Join", "Auto join was canceled.", 2500));
+                Client.getInstance().method35197().method25776(new Class6224("Auto Join", "Auto join was canceled.", 2500));
             }
             else if (this.field15755.method24358()) {
                 ColorUtils.method19107(this.field15755.method24360());
@@ -73,14 +73,14 @@ public class GamePlay extends ModuleWithSettings
             }
             else if ((int)(this.field15755.method24359() / 1000L) + 1 < this.field15757) {
                 this.field15757 = (int)(this.field15755.method24359() / 1000L) + 1;
-                Client.method35173().method35197().method25776(new Class6224("Auto Join", "Joining a new game in " + this.field15757 + " second" + ((this.field15757 > 1) ? "s" : "") + ".", 2000));
+                Client.getInstance().method35197().method25776(new Class6224("Auto Join", "Joining a new game in " + this.field15757 + " second" + ((this.field15757 > 1) ? "s" : "") + ".", 2000));
             }
         }
         if (!this.field15756.method23937()) {
             this.field15756.method23932();
         }
         if (!this.field15754.isEmpty()) {
-            final String method9887 = this.method9887("Type");
+            final String method9887 = this.getStringSettingValueByName("Type");
             try {
                 if (GamePlay.mc.player.ticksExisted <= 3) {
                     this.field15754.clear();
@@ -122,13 +122,13 @@ public class GamePlay extends ModuleWithSettings
     public void method10296(final String s) {
         final String[] split = s.split(" ");
         String str = split[0];
-        if (this.method9887("Type").equals("Mineplex") || this.method9887("Type").equals("Funcraft")) {
+        if (this.getStringSettingValueByName("Type").equals("Mineplex") || this.getStringSettingValueByName("Type").equals("Funcraft")) {
             str = split[1];
         }
-        final String method9887 = this.method9887("AutoL Mode");
+        final String method9887 = this.getStringSettingValueByName("AutoL Mode");
         switch (method9887) {
             case "Basic": {
-                this.field15754.add(this.method9887("First character") + "L " + str);
+                this.field15754.add(this.getStringSettingValueByName("First character") + "L " + str);
                 break;
             }
             case "Sigmeme": {
@@ -136,10 +136,10 @@ public class GamePlay extends ModuleWithSettings
                     Collections.shuffle(this.field15753 = new ArrayList<String>(Class9564.field41152));
                 }
                 String replaceAll = this.field15753.get(0);
-                if (this.method9887("Type").equals("Cubecraft")) {
+                if (this.getStringSettingValueByName("Type").equals("Cubecraft")) {
                     replaceAll = replaceAll.replaceAll("sigma", "ＳＩＧＭＡ").replaceAll("Sigma", "ＳＩＧＭＡ");
                 }
-                this.field15754.add(this.method9887("First character") + replaceAll);
+                this.field15754.add(this.getStringSettingValueByName("First character") + replaceAll);
                 this.field15753.remove(0);
                 break;
             }
@@ -148,10 +148,10 @@ public class GamePlay extends ModuleWithSettings
                     Collections.shuffle(this.field15753 = Class9564.field41153);
                 }
                 String replaceAll2 = this.field15753.get(0);
-                if (this.method9887("Type").equals("Cubecraft")) {
+                if (this.getStringSettingValueByName("Type").equals("Cubecraft")) {
                     replaceAll2 = replaceAll2.replaceAll("sigma", "ＳＩＧＭＡ").replaceAll("Sigma", "ＳＩＧＭＡ");
                 }
-                this.field15754.add(this.method9887("First character") + replaceAll2);
+                this.field15754.add(this.getStringSettingValueByName("First character") + replaceAll2);
                 this.field15753.remove(0);
                 break;
             }

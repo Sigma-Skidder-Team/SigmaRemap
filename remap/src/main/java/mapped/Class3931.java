@@ -59,7 +59,7 @@ public class Class3931 extends Class3841
     public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7096.method21696() != class7099.method21696()) {
             this.method12049(class7097, class7098);
-            super.method11829(class7096, class7097, class7098, class7099, b);
+            super.onReplaced(class7096, class7097, class7098, class7099, b);
         }
     }
     

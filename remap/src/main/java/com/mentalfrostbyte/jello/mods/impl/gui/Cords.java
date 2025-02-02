@@ -22,7 +22,7 @@ public class Cords extends Module
     
     @EventListener
     private void method10528(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (ColorUtils.method19135() > this.field15924) {
                 if (Cords.mc.player.ticksExisted % 3 == 0) {
                     ++this.field15924;
@@ -61,7 +61,7 @@ public class Cords extends Module
     @EventListener
     @Class6755
     private void method10529(final Class5740 class5740) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (Cords.mc.player == null) {

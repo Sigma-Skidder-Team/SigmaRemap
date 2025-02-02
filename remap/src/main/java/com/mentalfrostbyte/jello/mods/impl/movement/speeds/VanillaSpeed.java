@@ -20,7 +20,7 @@ public class VanillaSpeed extends Module
     
     @EventListener
     public void method10547(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             Class7482.method23149(class5717, Class7482.method23136() * this.getNumberSettingValueByName("Speed"));
         }
     }

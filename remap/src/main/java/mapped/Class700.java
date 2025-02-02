@@ -164,8 +164,8 @@ public class Class700 extends Class698
         this.field3855.method27577(n, n2, this.field3856);
     }
     
-    public static String method3901(final Class535 class535) {
-        return class535.field3192.method3378();
+    public static String method3901(final ChatScreen chatScreen) {
+        return chatScreen.field3192.method3378();
     }
     
     static {

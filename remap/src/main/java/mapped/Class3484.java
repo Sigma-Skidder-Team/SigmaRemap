@@ -64,7 +64,7 @@ public class Class3484 extends Class3479
                     --n;
                 }
                 if (n > 0) {
-                    Block.method11839(this.field16412.world, this.field16395, new ItemStack(Items.field31630, n));
+                    Block.spawnAsEntity(this.field16412.world, this.field16395, new ItemStack(Items.field31630, n));
                 }
                 this.field16412.method1695(Class8520.field35630, 1.0f, 1.0f);
                 this.field16412.world.setBlockState(this.field16395, ((StateHolder<Object, BlockState>)method6701).with((IProperty<Comparable>)Class3884.field17541, 1), 2);

@@ -19,7 +19,7 @@ public class VanillaHighJump extends Module
     
     @EventListener
     public void method10482(final Class5722 class5722) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             class5722.method16995(this.getNumberSettingValueByName("Motion"));
         }
     }

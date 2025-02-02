@@ -24,7 +24,7 @@ public class Sneak extends Module
     
     @EventListener
     public void method10328(final Class5744 class5744) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!class5744.method17046()) {
                 Sneak.mc.method5269().method17292(new Class4336(Sneak.mc.player, Class287.field1592));
                 Sneak.mc.method5269().method17292(new Class4336(Sneak.mc.player, Class287.field1591));

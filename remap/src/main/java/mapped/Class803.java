@@ -431,7 +431,7 @@ public class Class803 extends Class789
             }
             this.method4663(this.method2718(Class2215.field13600));
             this.method1803(Class2215.field13600, method2107.method27621(1));
-            this.field4119[Class2215.field13600.method8402()] = 2.0f;
+            this.field4119[Class2215.field13600.getIndex()] = 2.0f;
             this.method2746(class427, method2107.method27690());
             class427.method1652();
             this.field4325 = 0;

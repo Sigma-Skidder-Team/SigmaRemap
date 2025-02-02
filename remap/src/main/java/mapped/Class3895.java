@@ -67,7 +67,7 @@ public abstract class Class3895 extends Class3892
     @Override
     public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         if (!class7096.method21752(class7097, class7098)) {
-            Block.method11837(class7096, class7097, class7098, this.method11802() ? class7097.getTileEntity(class7098) : null);
+            Block.spawnDrops(class7096, class7097, class7098, this.method11802() ? class7097.getTileEntity(class7098) : null);
             class7097.method6690(class7098, false);
             final Direction[] values = Direction.values();
             for (int length = values.length, i = 0; i < length; ++i) {
@@ -163,7 +163,7 @@ public abstract class Class3895 extends Class3892
     public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (!b) {
             if (class7096.method21696() != class7099.method21696()) {
-                super.method11829(class7096, class7097, class7098, class7099, b);
+                super.onReplaced(class7096, class7097, class7098, class7099, b);
                 this.method11972(class7097, class7098, class7096);
             }
         }

@@ -19,30 +19,30 @@ public class Class9171
     
     public Class9171() {
         this.field38851 = Minecraft.method5277();
-        Client.method35173().method35188().method21094(this);
+        Client.getInstance().method35188().method21094(this);
     }
     
     @EventListener
     @Class6754
     public void method33483(final Class5732 class5732) {
-        final ModuleWithSettings class5733 = (ModuleWithSettings) Client.method35173().method35189().method21551(Fly.class);
-        final ModuleWithSettings class5734 = (ModuleWithSettings) Client.method35173().method35189().method21551(Disabler.class);
-        final ModuleWithSettings class5735 = (ModuleWithSettings) Client.method35173().method35189().method21551(LongJump.class);
+        final ModuleWithSettings class5733 = (ModuleWithSettings) Client.getInstance().method35189().method21551(Fly.class);
+        final ModuleWithSettings class5734 = (ModuleWithSettings) Client.getInstance().method35189().method21551(Disabler.class);
+        final ModuleWithSettings class5735 = (ModuleWithSettings) Client.getInstance().method35189().method21551(LongJump.class);
         boolean field38852 = false;
         Label_0165: {
             Label_0054: {
                 if (ColorUtils.method19146()) {
                     Label_0089: {
-                        if (class5733.method9887("Type").equalsIgnoreCase("Hypixel")) {
-                            if (class5733.method10260().method9887("Mode").equals("Fast")) {
+                        if (class5733.getStringSettingValueByName("Type").equalsIgnoreCase("Hypixel")) {
+                            if (class5733.method10260().getStringSettingValueByName("Mode").equals("Fast")) {
                                 break Label_0089;
                             }
-                            if (class5733.method10260().method9887("Mode").equals("NoDmg")) {
+                            if (class5733.method10260().getStringSettingValueByName("Mode").equals("NoDmg")) {
                                 break Label_0089;
                             }
                         }
-                        if (!class5734.method9887("Type").equalsIgnoreCase("Hypixel")) {
-                            if (!class5735.method9887("Type").equalsIgnoreCase("Hypixel")) {
+                        if (!class5734.getStringSettingValueByName("Type").equalsIgnoreCase("Hypixel")) {
+                            if (!class5735.getStringSettingValueByName("Type").equalsIgnoreCase("Hypixel")) {
                                 break Label_0054;
                             }
                         }

@@ -49,7 +49,7 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
         this.field3470 = class3426;
         field3466.player.field3009 = class3426;
         this.field3474 = field3466.player.method4122();
-        this.field3477 = field3466.player.field3006.method2373();
+        this.field3477 = field3466.player.inventory.method2373();
         if (this.method3421()) {
             this.method3416(b);
         }
@@ -61,7 +61,7 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
         final int n = (this.field3464 - 147) / 2 - this.field3463;
         final int n2 = (this.field3465 - 166) / 2;
         this.field3476.method15254();
-        this.field3471.player.field3006.method2379(this.field3476);
+        this.field3471.player.inventory.method2379(this.field3476);
         this.field3470.method10934(this.field3476);
         final String s = (this.field3472 == null) ? "" : this.field3472.method3378();
         (this.field3472 = new Class576(this.field3471.fontRenderer, n + 25, n2 + 14, 80, 14, Class8822.method30773("itemGroup.search", new Object[0]))).method3397(50);
@@ -183,16 +183,16 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
     
     public void method3426() {
         if (this.method3421()) {
-            if (this.field3477 != this.field3471.player.field3006.method2373()) {
+            if (this.field3477 != this.field3471.player.inventory.method2373()) {
                 this.method3427();
-                this.field3477 = this.field3471.player.field3006.method2373();
+                this.field3477 = this.field3471.player.inventory.method2373();
             }
         }
     }
     
     private void method3427() {
         this.field3476.method15254();
-        this.field3471.player.field3006.method2379(this.field3476);
+        this.field3471.player.inventory.method2379(this.field3476);
         this.field3470.method10934(this.field3476);
         this.method3424(false);
     }
@@ -223,8 +223,8 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
             this.field3475.method34154(n3, n4);
             if (this.field3469.method3360()) {
                 final String method3429 = this.method3429();
-                if (this.field3471.field4700 != null) {
-                    this.field3471.field4700.renderTooltip(method3429, n3, n4);
+                if (this.field3471.currentScreen != null) {
+                    this.field3471.currentScreen.renderTooltip(method3429, n3, n4);
                 }
             }
             this.method3430(n, n2, n3, n4);
@@ -252,8 +252,8 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
             }
         }
         if (method26164 != null) {
-            if (this.field3471.field4700 != null) {
-                this.field3471.field4700.renderTooltip(this.field3471.field4700.getTooltipFromItem(method26164), n3, n4);
+            if (this.field3471.currentScreen != null) {
+                this.field3471.currentScreen.renderTooltip(this.field3471.currentScreen.getTooltipFromItem(method26164), n3, n4);
             }
         }
     }
@@ -276,7 +276,7 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
                         return false;
                     }
                     this.field3466.method25520();
-                    this.field3471.field4682.method27325(this.field3471.player.field3009.field16154, method34155, Screen.hasShiftDown());
+                    this.field3471.playerController.method27325(this.field3471.player.field3009.field16154, method34155, Screen.hasShiftDown());
                     if (!this.method3436()) {
                         this.method3422(false);
                     }

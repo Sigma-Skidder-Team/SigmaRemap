@@ -19,11 +19,11 @@ public class Class6698 extends Class6693
     
     @Override
     public void run(final String s, final Class8025[] array, final Class6428 class6428) throws CommandException {
-        final List<Class6693> method32668 = Client.method35173().method35204().method32668();
+        final List<Class6693> method32668 = Client.getInstance().method35204().method32668();
         final int i = (int)Math.ceil(method32668.size() / 7.0f);
         final int j = (array.length == 1 && array[0].method26310() == Class1954.field10637) ? (array[0].method26313() - 1) : 0;
         if (array.length == 1 && array[0].method26310() == Class1954.field10636) {
-            final Class6693 method32669 = Client.method35173().method35204().method32667(array[0].method26314());
+            final Class6693 method32669 = Client.getInstance().method35204().method32667(array[0].method26314());
             if (method32669 == null) {
                 throw new Class2332();
             }

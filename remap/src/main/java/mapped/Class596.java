@@ -22,7 +22,7 @@ public class Class596 extends Class594
     
     @Override
     public void method3467(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final boolean b, final float n8) {
-        this.field3507.field3540.fontRenderer.method6610(this.field3505, (float)(this.field3507.field3540.field4700.width / 2 - this.field3506 / 2), (float)(n2 + n5 - 9 - 1), 16777215);
+        this.field3507.field3540.fontRenderer.method6610(this.field3505, (float)(this.field3507.field3540.currentScreen.width / 2 - this.field3506 / 2), (float)(n2 + n5 - 9 - 1), 16777215);
     }
     
     @Override

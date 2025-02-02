@@ -19,7 +19,7 @@ public class Class4072 extends Class4071
     public final float field18169;
     public final float field18170;
     
-    public Class4072(final float n, final float field18170, final Class2038 class2038, final Set<Block> field18171, final Class8959 class2039) {
+    public Class4072(final float n, final float field18170, final Class2038 class2038, final Set<Block> field18171, final Properties class2039) {
         super(class2038, class2039);
         this.field18167 = field18171;
         this.field18168 = class2038.method8110();

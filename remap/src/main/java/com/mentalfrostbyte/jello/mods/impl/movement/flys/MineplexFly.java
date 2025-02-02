@@ -32,7 +32,7 @@ public class MineplexFly extends PremiumModule
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15992 = -1;
         this.field15995 = Class7482.method23136();
         this.field15993 = 0;
@@ -46,22 +46,22 @@ public class MineplexFly extends PremiumModule
     public void onDisable() {
         Class7482.method23151(Class7482.method23136() * 0.5);
         if (this.field15994 != -1) {
-            MineplexFly.mc.method5269().method17292(new Class4321(MineplexFly.mc.player.field3006.field2743));
-            this.field15994 = MineplexFly.mc.player.field3006.field2743;
+            MineplexFly.mc.method5269().method17292(new Class4321(MineplexFly.mc.player.inventory.field2743));
+            this.field15994 = MineplexFly.mc.player.inventory.field2743;
         }
         MineplexFly.mc.timer.timerSpeed = 1.0f;
     }
     
     @EventListener
     public void method10630(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             class5744.method17033(true);
         }
     }
     
     @EventListener
     public void method10631(final Class5732 class5732) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final int n = -1;
             this.field15994 = n;
             this.field15992 = n;
@@ -73,7 +73,7 @@ public class MineplexFly extends PremiumModule
     }
     
     public boolean method10632() {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15994 != -1) {
                 if (this.field15995 < this.getNumberSettingValueByName("Boost")) {
                     if (MineplexFly.mc.player.onGround || ColorUtils.method19160(MineplexFly.mc.player, 0.001f)) {
@@ -89,7 +89,7 @@ public class MineplexFly extends PremiumModule
     
     @EventListener
     public void method10633(final Class5738 class5738) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15999) {
                 if (MineplexFly.mc.player != null) {
                     if (MineplexFly.mc.player.onGround) {
@@ -102,7 +102,7 @@ public class MineplexFly extends PremiumModule
     
     @EventListener
     public void method10634(final Class5717 class5717) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (!this.field15999) {
@@ -189,23 +189,23 @@ public class MineplexFly extends PremiumModule
     
     @EventListener
     public void method10635(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4328) {
                 this.field15999 = true;
-                Client.method35173().method35197().method25776(new Class6224("Mineplex fly", "Please try again"));
+                Client.getInstance().method35197().method25776(new Class6224("Mineplex fly", "Please try again"));
             }
         }
     }
     
     @EventListener
     public void method10636(final Class5721 class5721) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5721.method16990() instanceof Class4321) {
                 if (this.field15994 != -1) {
                     if (this.field15995 < this.getNumberSettingValueByName("Boost")) {
                         if (MineplexFly.mc.player.onGround || ColorUtils.method19160(MineplexFly.mc.player, 0.001f)) {
                             if (!this.field15999) {
-                                class5721.method16961(true);
+                                class5721.setCancelled(true);
                             }
                         }
                     }
@@ -218,8 +218,8 @@ public class MineplexFly extends PremiumModule
         if (!MineplexFly.mc.player.getHeldItemMainhand().method27620()) {
             for (int i = 36; i < 45; ++i) {
                 final int field15994 = i - 36;
-                if (MineplexFly.mc.player.field3008.method10878(i).method20053().method27620()) {
-                    if (MineplexFly.mc.player.field3006.field2743 != field15994) {
+                if (MineplexFly.mc.player.container.getSlot(i).method20053().method27620()) {
+                    if (MineplexFly.mc.player.inventory.field2743 != field15994) {
                         if (this.field15994 != field15994) {
                             MineplexFly.mc.method5269().method17292(new Class4321(field15994));
                             this.field15994 = field15994;
@@ -228,11 +228,11 @@ public class MineplexFly extends PremiumModule
                     return field15994;
                 }
             }
-            Class8639.method29367(MineplexFly.mc.player.field3008.field16154, 42, 0, Class2133.field12438, MineplexFly.mc.player, true);
-            if (!MineplexFly.mc.player.field3008.method10878(42).method20053().method27620()) {
-                Client.method35173().method35197().method25776(new Class6224("Mineplex Fly", "Please empty a slot in your inventory"));
+            InvManagerUtil.method29367(MineplexFly.mc.player.container.field16154, 42, 0, Class2133.field12438, MineplexFly.mc.player, true);
+            if (!MineplexFly.mc.player.container.getSlot(42).method20053().method27620()) {
+                Client.getInstance().method35197().method25776(new Class6224("Mineplex Fly", "Please empty a slot in your inventory"));
             }
-            else if (MineplexFly.mc.player.field3006.field2743 != 6) {
+            else if (MineplexFly.mc.player.inventory.field2743 != 6) {
                 if (this.field15994 != 6) {
                     MineplexFly.mc.method5269().method17292(new Class4321(6));
                     return this.field15994 = 6;
@@ -240,12 +240,12 @@ public class MineplexFly extends PremiumModule
             }
             return -1;
         }
-        return this.field15994 = MineplexFly.mc.player.field3006.field2743;
+        return this.field15994 = MineplexFly.mc.player.inventory.field2743;
     }
     
     @EventListener
     public void method10638(final Class5741 class5741) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.method9883("Fake")) {
                 if (this.field15997 >= 0.0) {
                     if (MineplexFly.mc.player.posY >= this.field15997) {

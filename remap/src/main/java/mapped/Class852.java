@@ -23,7 +23,7 @@ import java.util.List;
 
 import org.apache.logging.log4j.Logger;
 
-public class Class852 extends Class759 implements Class762
+public class Class852 extends Class759 implements IMob
 {
     private static final Logger field2379;
     public static final DataParameter<Integer> field4530;

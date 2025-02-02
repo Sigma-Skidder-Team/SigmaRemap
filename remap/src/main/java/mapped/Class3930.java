@@ -148,7 +148,7 @@ public class Class3930 extends Class3841
     }
     
     @Override
-    public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.getBlock() != class7099.getBlock()) {
             if (class7096.get((IProperty<Boolean>)Class3930.field17800)) {
                 this.method12046(class7096, class7097, class7098);
@@ -156,7 +156,7 @@ public class Class3930 extends Class3841
             if (class7096.get((IProperty<Boolean>)Class3930.field17799)) {
                 class7097.method6696(class7098.method1139(), this);
             }
-            super.method11829(class7096, class7097, class7098, class7099, b);
+            super.onReplaced(class7096, class7097, class7098, class7099, b);
         }
     }
     
@@ -217,14 +217,14 @@ public class Class3930 extends Class3841
     
     @Nullable
     @Override
-    public Class434 method11827(final BlockState class7096, final World class7097, final BlockPos class7098) {
-        return class7096.get((IProperty<Boolean>)Class3930.field17800) ? super.method11827(class7096, class7097, class7098) : null;
+    public INamedContainerProvider getContainer(final BlockState class7096, final World class7097, final BlockPos class7098) {
+        return class7096.get((IProperty<Boolean>)Class3930.field17800) ? super.getContainer(class7096, class7097, class7098) : null;
     }
     
     private void method12047(final World class1847, final BlockPos class1848, final PlayerEntity class1849) {
         final TileEntity method6727 = class1847.getTileEntity(class1848);
         if (method6727 instanceof Class435) {
-            class1849.method2833((Class434)method6727);
+            class1849.method2833((INamedContainerProvider)method6727);
             class1849.method2857(Class8276.field34049);
         }
     }

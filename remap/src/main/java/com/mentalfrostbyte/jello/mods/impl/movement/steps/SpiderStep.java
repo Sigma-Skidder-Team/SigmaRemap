@@ -26,20 +26,20 @@ public class SpiderStep extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15787 = 0;
     }
     
     @EventListener
     @Class6759
     private void method10362(final Class5745 class5745) {
-        if (!this.method9906() || class5745.method16962()) {
+        if (!this.isEnabled() || class5745.isCancelled()) {
             return;
         }
         final double method17049 = class5745.method17049();
         final Class2166 method17050 = ((Step)this.method9914()).method10299(class5745);
         if (method17050 == Class2166.field12884) {
-            class5745.method16961(true);
+            class5745.setCancelled(true);
             return;
         }
         if (method17050 != Class2166.field12885) {
@@ -62,13 +62,13 @@ public class SpiderStep extends Module
     
     @EventListener
     private void method10363(final Class5744 class5744) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (SpiderStep.mc.player != null) {
                 if (class5744.method17046()) {
                     if (this.field15787 != 1) {
                         if (this.field15787 == 3) {
-                            final Module method21551 = Client.method35173().method35189().method21551(Criticals.class);
-                            if (method21551.method9906() && method21551.method9887("Type").equals("NoGround")) {
+                            final Module method21551 = Client.getInstance().method35189().method21551(Criticals.class);
+                            if (method21551.isEnabled() && method21551.getStringSettingValueByName("Type").equals("NoGround")) {
                                 class5744.method17037(class5744.method17036() + 1.0E-14);
                             }
                             else {
@@ -86,7 +86,7 @@ public class SpiderStep extends Module
     
     @EventListener
     private void method10364(final Class5717 class5717) {
-        if (this.method9906() && SpiderStep.mc.player != null) {
+        if (this.isEnabled() && SpiderStep.mc.player != null) {
             if (this.field15787 != 1) {
                 if (this.field15787 != 2) {
                     if (this.field15787 == 3) {
@@ -126,7 +126,7 @@ public class SpiderStep extends Module
     
     @EventListener
     private void method10365(final Class5738 class5738) {
-        if (this.method9906() && SpiderStep.mc.player != null) {
+        if (this.isEnabled() && SpiderStep.mc.player != null) {
             if (!class5738.method17027()) {
                 SpiderStep.mc.player.stepHeight = 1.07f;
             }

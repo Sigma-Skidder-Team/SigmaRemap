@@ -12,8 +12,8 @@ public class Class3825 extends Class3824
 {
     private static String[] field17377;
     
-    public Class3825(final Class8959 class8959) {
-        super(class8959);
+    public Class3825(final Properties properties) {
+        super(properties);
     }
     
     @Override

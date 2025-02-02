@@ -67,7 +67,7 @@ public class Class3859 extends Block implements Class3857
     }
     
     @Override
-    public List<ItemStack> method11833(final BlockState class7096, final Class9098 class7097) {
+    public List<ItemStack> getDrops(final BlockState class7096, final Class9098 class7097) {
         return Collections.emptyList();
     }
     
@@ -77,21 +77,21 @@ public class Class3859 extends Block implements Class3857
     }
     
     @Override
-    public int method11826(final Class1852 class1852) {
+    public int tickRate(final Class1852 class1852) {
         return this.field17481.method22156(class1852);
     }
     
     @Override
-    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onBlockAdded(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (this.method11926(class7097, class7098, class7096)) {
-            class7097.method6834().method21345(class7098, class7096.getFluidState().getFluid(), this.method11826(class7097));
+            class7097.method6834().method21345(class7098, class7096.getFluidState().getFluid(), this.tickRate(class7097));
         }
     }
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         if (class7096.getFluidState().isSource() || class7098.getFluidState().isSource()) {
-            class7099.method6834().method21345(class7100, class7096.getFluidState().getFluid(), this.method11826(class7099));
+            class7099.method6834().method21345(class7100, class7096.getFluidState().getFluid(), this.tickRate(class7099));
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
@@ -99,7 +99,7 @@ public class Class3859 extends Block implements Class3857
     @Override
     public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         if (this.method11926(class7097, class7098, class7096)) {
-            class7097.method6834().method21345(class7098, class7096.getFluidState().getFluid(), this.method11826(class7097));
+            class7097.method6834().method21345(class7098, class7096.getFluidState().getFluid(), this.tickRate(class7097));
         }
     }
     

@@ -123,7 +123,7 @@ public class Class7798
         for (final ItemStack class7946 : list) {
             final Iterator<Class513> iterator2 = collection.iterator();
             while (iterator2.hasNext()) {
-                if (!iterator2.next().field3006.method2362(class7946.method27641())) {
+                if (!iterator2.next().inventory.method2362(class7946.method27641())) {
                     continue;
                 }
                 arrayListWithCapacity.add(class7946);
@@ -150,9 +150,9 @@ public class Class7798
             }
             else {
                 final Class513 class7947 = (Class513)class7946;
-                class7947.field3008.method10876();
+                class7947.container.method10876();
                 method25164(class7946, list, n, n2, arrayListWithCapacity);
-                class7947.field3008.method10876();
+                class7947.container.method10876();
             }
         }
         class7945.method25768(arrayListWithCapacity);

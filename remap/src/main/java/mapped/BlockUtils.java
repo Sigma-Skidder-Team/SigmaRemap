@@ -20,21 +20,21 @@ public class BlockUtils
     private static final ThreadLocal<Class9554> field26583;
     private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Class9554>> field26584;
     
-    public static boolean method20647(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099, final Class9145 class7100) {
-        final Class5719 class7101 = new Class5719(class7096);
-        Client.method35173().method35188().method21097(class7101);
-        if (class7101.method16987()) {
+    public static boolean shouldSideBeRendered(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099, final Class9145 class7100) {
+        final EventRenderBlocks event = new EventRenderBlocks(class7096);
+        Client.getInstance().method35188().method21097(event);
+        if (event.method16987()) {
             return true;
         }
-        if (!class7101.method16962()) {
+        if (!event.isCancelled()) {
             final BlockPos method1149 = class7098.method1149(class7099);
             final BlockState method1150 = class7097.getBlockState(method1149);
-            return !class7096.method21724(method1150, class7099) && (!method1150.isSolid() || method20648(class7096, class7097, class7098, class7099, class7100, method1150, method1149));
+            return !class7096.method21724(method1150, class7099) && (!method1150.isSolid() || shouldSideBeRenderedCached(class7096, class7097, class7098, class7099, class7100, method1150, method1149));
         }
         return false;
     }
     
-    public static boolean method20648(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099, final Class9145 class7100, final BlockState class7101, final BlockPos class7102) {
+    public static boolean shouldSideBeRenderedCached(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099, final Class9145 class7100, final BlockState class7101, final BlockPos class7102) {
         final long n = (long)class7096.getBlockStateId() << 36 | (long)class7101.getBlockStateId() << 4 | (long)class7099.ordinal();
         final Long2ByteLinkedOpenHashMap method33401 = class7100.method33401();
         final byte andMoveToFirst = method33401.getAndMoveToFirst(n);

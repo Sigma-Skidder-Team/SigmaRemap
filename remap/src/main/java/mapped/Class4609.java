@@ -285,7 +285,7 @@ public class Class4609
     }
     
     public static float method13690() {
-        return Class4609.field20075.field4682.method27315();
+        return Class4609.field20075.playerController.method27315();
     }
     
     public static List<BlockPos> method13691(final float n) {
@@ -320,7 +320,7 @@ public class Class4609
             for (float n4 = (float)(-n2); n4 <= n2; ++n4) {
                 for (float n5 = (float)(-n2); n5 <= n2; ++n5) {
                     final BlockPos class354 = new BlockPos(Class4609.field20075.player.posX + n4, Class4609.field20075.player.posY + n3, Class4609.field20075.player.posZ + n5);
-                    if (Class4609.field20075.world.getBlockState(class354).method21696() instanceof Class3992) {
+                    if (Class4609.field20075.world.getBlockState(class354).method21696() instanceof BlockThing) {
                         list.add(class354);
                     }
                 }
@@ -369,7 +369,7 @@ public class Class4609
         final float n4 = -MathHelper.sin(n2);
         final float n5 = MathHelper.cos(n) * MathHelper.cos(n2);
         if (method27315 == 0.0f) {
-            method27315 = Class4609.field20075.field4682.method27315();
+            method27315 = Class4609.field20075.playerController.method27315();
         }
         return Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class5487, new Vec3d(Class4609.field20075.player.field4074 + n3 * method27315, Class4609.field20075.player.field4075 + n4 * method27315 + Class4609.field20075.player.method1892(), Class4609.field20075.player.field4076 + n5 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
     }
@@ -382,7 +382,7 @@ public class Class4609
         final float n4 = -MathHelper.sin(n2);
         final float n5 = MathHelper.cos(n) * MathHelper.cos(n2);
         if (method27315 == 0.0f) {
-            method27315 = Class4609.field20075.field4682.method27315();
+            method27315 = Class4609.field20075.playerController.method27315();
         }
         return Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class5745, new Vec3d(Class4609.field20075.player.field4074 + n3 * method27315, Class4609.field20075.player.field4075 + n4 * method27315 + Class4609.field20075.player.method1892(), Class4609.field20075.player.field4076 + n5 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
     }
@@ -395,7 +395,7 @@ public class Class4609
         final float n5 = -MathHelper.sin(n2);
         final float n6 = MathHelper.cos(n) * MathHelper.cos(n2);
         if (method27315 == 0.0f) {
-            method27315 = Class4609.field20075.field4682.method27315();
+            method27315 = Class4609.field20075.playerController.method27315();
         }
         return Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class5487, new Vec3d(Class4609.field20075.player.field4074 + n4 * method27315, Class4609.field20075.player.field4075 + n5 * method27315 + Class4609.field20075.player.method1892(), Class4609.field20075.player.field4076 + n6 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
     }
@@ -411,7 +411,7 @@ public class Class4609
         final float n3 = -MathHelper.sin(n) * MathHelper.cos(n2);
         final float n4 = -MathHelper.sin(n2);
         final float n5 = MathHelper.cos(n) * MathHelper.cos(n2);
-        final float method27315 = Class4609.field20075.field4682.method27315();
+        final float method27315 = Class4609.field20075.playerController.method27315();
         final BlockRayTraceResult method27316 = Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class9053, new Vec3d(Class4609.field20075.player.posX + n3 * method27315, Class4609.field20075.player.posY + n4 * method27315 + Class4609.field20075.player.method1892(), Class4609.field20075.player.posZ + n5 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.ANY, Class4609.field20075.method5303()));
         return method27316 != null && method27316.getPos().equals(class9052.field38320) && method27316.getFace() == class9052.field38321;
     }
@@ -486,7 +486,7 @@ public class Class4609
     }
     
     public static float[] method13709(final float n, final float n2, final Class9301 class9301) {
-        final BlockRayTraceResult method13697 = method13697(n, n2, Class4609.field20075.field4682.method27315());
+        final BlockRayTraceResult method13697 = method13697(n, n2, Class4609.field20075.playerController.method27315());
         if (method13697 != null && method13697.getPos().equals(class9301.field39906)) {
             return new float[] { n, n2 };
         }

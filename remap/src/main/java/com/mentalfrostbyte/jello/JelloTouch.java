@@ -33,7 +33,7 @@ public class JelloTouch
         this.field27849 = new LinkedHashSet<Class8879>();
         this.field27850 = false;
         this.field27851 = new HashMap<Module, TouchBarButton>();
-        Client.method35173().method35188().method21094(this);
+        Client.getInstance().method35188().method21094(this);
         if (Class9532.field41028) {
             this.field27849.add(new Class8879(344, Class722.class));
         }
@@ -151,7 +151,7 @@ public class JelloTouch
     
     public boolean method21966() {
         if (Minecraft.field4623) {
-            if (Client.method35173().method35209() == Class2209.field13464) {
+            if (Client.getInstance().method35209() == Class2209.field13464) {
                 if (!System.getProperty("os.version").startsWith("10.14")) {
                     if (!System.getProperty("os.version").startsWith("10.15")) {
                         if (!System.getProperty("os.version").startsWith("10.16")) {
@@ -246,37 +246,37 @@ public class JelloTouch
                             if (class3167.getCategory2() != Category.PLAYER) {
                                 if (class3167.getCategory2() != Category.RENDER) {
                                     if (class3167.getCategory2() == Category.WORLD) {
-                                        color = this.method21972(-5118535, class3167.method9906());
+                                        color = this.method21972(-5118535, class3167.isEnabled());
                                     }
                                 }
                                 else {
-                                    color = this.method21972(-1710108, class3167.method9906());
+                                    color = this.method21972(-1710108, class3167.isEnabled());
                                 }
                             }
                             else {
-                                color = this.method21972(-4208147, class3167.method9906());
+                                color = this.method21972(-4208147, class3167.isEnabled());
                             }
                         }
                         else {
-                            color = this.method21972(-1587309, class3167.method9906());
+                            color = this.method21972(-1587309, class3167.isEnabled());
                         }
                     }
                     else {
-                        color = this.method21972(-1916956, class3167.method9906());
+                        color = this.method21972(-1916956, class3167.isEnabled());
                     }
                 }
                 else {
-                    color = this.method21972(-2899864, class3167.method9906());
+                    color = this.method21972(-2899864, class3167.isEnabled());
                 }
             }
             else {
-                color = this.method21972(-2697514, class3167.method9906());
+                color = this.method21972(-2697514, class3167.isEnabled());
             }
         }
         else {
-            color = this.method21972(-20561, class3167.method9906());
+            color = this.method21972(-20561, class3167.isEnabled());
         }
-        color.setAlpha(class3167.method9906() ? 1.0f : 0.35f);
+        color.setAlpha(class3167.isEnabled() ? 1.0f : 0.35f);
         return color;
     }
     

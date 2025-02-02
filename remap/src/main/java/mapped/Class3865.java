@@ -35,7 +35,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     public static final VoxelShape field17503;
     public static final VoxelShape field17504;
     private static final Class6389<Class475, Optional<IInventory>> field17505;
-    private static final Class6389<Class475, Optional<Class434>> field17506;
+    private static final Class6389<Class475, Optional<INamedContainerProvider>> field17506;
     
     public Class3865(final Properties class9288, final Supplier<Class5412<? extends Class475>> supplier) {
         super(class9288, supplier);
@@ -159,21 +159,21 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     }
     
     @Override
-    public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.getBlock() != class7099.getBlock()) {
             final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof IInventory) {
                 Class9193.method33638(class7097, class7098, (IInventory)method6727);
                 class7097.method6783(class7098, this);
             }
-            super.method11829(class7096, class7097, class7098, class7099, b);
+            super.onReplaced(class7096, class7097, class7098, class7099, b);
         }
     }
     
     @Override
     public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (!class7097.isRemote) {
-            final Class434 method11827 = this.method11827(class7096, class7097, class7098);
+            final INamedContainerProvider method11827 = this.getContainer(class7096, class7097, class7098);
             if (method11827 != null) {
                 class7099.method2833(method11827);
                 class7099.method2859(this.method11935());
@@ -206,7 +206,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     
     @Nullable
     @Override
-    public Class434 method11827(final BlockState class7096, final World class7097, final BlockPos class7098) {
+    public INamedContainerProvider getContainer(final BlockState class7096, final World class7097, final BlockPos class7098) {
         return this.method11929(class7096, class7097, class7098, false).method22074(Class3865.field17506).orElse(null);
     }
     

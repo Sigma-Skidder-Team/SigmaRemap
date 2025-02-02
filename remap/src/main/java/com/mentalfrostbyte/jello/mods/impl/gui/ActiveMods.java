@@ -47,12 +47,12 @@ public class ActiveMods extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.method10476();
     }
     
     public void method10476() {
-        final String method9887 = this.method9887("Size");
+        final String method9887 = this.getStringSettingValueByName("Size");
         switch (method9887) {
             case "Normal": {
                 this.field15894 = ClientFonts.JelloLight20;
@@ -72,14 +72,14 @@ public class ActiveMods extends Module
     @Override
     public void method9917() {
         this.field15890.clear();
-        for (final Module class3167 : Client.method35173().method35189().method21553().values()) {
+        for (final Module class3167 : Client.getInstance().method35189().method21553().values()) {
             if (class3167.getCategory2() != Category.GUI) {
                 this.field15890.add(class3167);
                 this.field15893.put(class3167, new Class9572(150, 150, Direction.FORWARDS));
                 if (!this.method9883("Animations")) {
                     continue;
                 }
-                this.field15893.get(class3167).changeDirection(class3167.method9906() ? Direction.BACKWARDS : Direction.FORWARDS);
+                this.field15893.get(class3167).changeDirection(class3167.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
             }
         }
         Collections.sort(this.field15890, new Class4466(this));
@@ -87,7 +87,7 @@ public class ActiveMods extends Module
     
     @EventListener
     private void method10477(final Class5726 class5726) {
-        if (this.method9906() && ActiveMods.mc.player != null) {
+        if (this.isEnabled() && ActiveMods.mc.player != null) {
             if (!class5726.method17000()) {
                 Class8933.method31642(0.0f, (float)(-this.field15892), 0.0f);
             }
@@ -105,7 +105,7 @@ public class ActiveMods extends Module
                 int n = 0;
                 final Iterator<Module> iterator = this.field15890.iterator();
                 while (iterator.hasNext()) {
-                    if (!iterator.next().method9906()) {
+                    if (!iterator.next().isEnabled()) {
                         continue;
                     }
                     ++n;
@@ -128,14 +128,14 @@ public class ActiveMods extends Module
     
     @EventListener
     private void method10478(final Class5740 class5740) {
-        if (!this.method9906() || ActiveMods.mc.player == null) {
+        if (!this.isEnabled() || ActiveMods.mc.player == null) {
             return;
         }
         for (final Module key : this.field15893.keySet()) {
             if (!this.method9883("Animations")) {
                 continue;
             }
-            this.field15893.get(key).changeDirection(key.method9906() ? Direction.BACKWARDS : Direction.FORWARDS);
+            this.field15893.get(key).changeDirection(key.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
         }
         if (!Minecraft.method5277().gameSettings.field23464) {
             int n = 10;
@@ -155,7 +155,7 @@ public class ActiveMods extends Module
                 float n4 = 1.0f;
                 float method7696 = 1.0f;
                 if (!this.method9883("Animations")) {
-                    if (!key2.method9906()) {
+                    if (!key2.isEnabled()) {
                         continue;
                     }
                 }

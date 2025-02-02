@@ -8,7 +8,7 @@ import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 
-public class Class503 implements Class434
+public class Class503 implements INamedContainerProvider
 {
     public final /* synthetic */ Class475 field2878;
     public final /* synthetic */ Class475 field2879;

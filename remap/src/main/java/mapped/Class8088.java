@@ -37,15 +37,15 @@ public class Class8088
     }
     
     public void method26554() {
-        Client.method35173().method35188().method21094(this);
+        Client.getInstance().method35188().method21094(this);
     }
     
     public void method26555() {
         this.field33314.clear();
         this.field33315 = -999.0f;
         this.field33316 = -999.0f;
-        Client.method35173().method35189().method21551(BlockFly.class).method9907(false);
-        Client.method35173().method35189().method21551(Fly.class).method9907(false);
+        Client.getInstance().method35189().method21551(BlockFly.class).method9907(false);
+        Client.getInstance().method35189().method21551(Fly.class).method9907(false);
     }
     
     public void method26556(final List<Class8733> field33314) {
@@ -165,16 +165,16 @@ public class Class8088
             }
         }
         this.field33313.player.rotationYaw = field33316;
-        if (b4 && !this.field33313.player.onGround && !Client.method35173().method35189().method21551(Fly.class).method9906()) {
+        if (b4 && !this.field33313.player.onGround && !Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
             ColorUtils.method19154(0.0);
             ColorUtils.method19156(0.0);
             return;
         }
-        if (Client.method35173().method35189().method21551(Fly.class).method9906() && !ColorUtils.method19160(this.field33313.player, 5.0f)) {
+        if (Client.getInstance().method35189().method21551(Fly.class).isEnabled() && !ColorUtils.method19160(this.field33313.player, 5.0f)) {
             b4 = true;
         }
-        Client.method35173().method35189().method21551(BlockFly.class).method9907(b3);
-        Client.method35173().method35189().method21551(Fly.class).method9907(b4);
+        Client.getInstance().method35189().method21551(BlockFly.class).method9907(b3);
+        Client.getInstance().method35189().method21551(Fly.class).method9907(b4);
         if (b && equals) {
             ColorUtils.method19154(0.0);
             ColorUtils.method19156(0.0);
@@ -249,14 +249,14 @@ public class Class8088
                 class5744.method17043(method1130[0]);
                 class5744.method17041(method1130[1]);
                 this.field33313.player.method2707(Class316.field1877);
-                this.field33313.field4682.method27314(this.field33317, Class4609.method13710(this.field33317));
+                this.field33313.playerController.method27314(this.field33317, Class4609.method13710(this.field33317));
             }
             else {
                 this.field33317 = (BlockPos)list.get(0);
                 final float[] method1131 = Class4609.method13672(this.field33317, Class4609.method13710(this.field33317));
                 class5744.method17043(method1131[0]);
                 class5744.method17041(method1131[1]);
-                Client.method35173().method35188().method21097(new Class5752(0, false, this.field33317));
+                Client.getInstance().method35188().method21097(new Class5752(0, false, this.field33317));
             }
             if (class5745.field36691 != Class2049.field11679) {
                 this.field33316 = class5744.method17040();

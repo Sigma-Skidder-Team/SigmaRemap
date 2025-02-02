@@ -42,7 +42,7 @@ public abstract class Class3905 extends Class3902
     }
     
     @Override
-    public int method11826(final Class1852 class1852) {
+    public int tickRate(final Class1852 class1852) {
         return this.field17710 ? 30 : 20;
     }
     
@@ -96,7 +96,7 @@ public abstract class Class3905 extends Class3902
     public void method12009(final BlockState class7096, final World class7097, final BlockPos class7098) {
         class7097.setBlockState(class7098, ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3905.field17693, true), 3);
         this.method12013(class7096, class7097, class7098);
-        class7097.method6833().method21345(class7098, this, this.method11826(class7097));
+        class7097.method6833().method21345(class7098, this, this.tickRate(class7097));
     }
     
     public void method12010(final PlayerEntity playerEntity, final Class1851 class513, final BlockPos class514, final boolean b) {
@@ -106,13 +106,13 @@ public abstract class Class3905 extends Class3902
     public abstract Class7795 method12011(final boolean p0);
     
     @Override
-    public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (!b) {
             if (class7096.getBlock() != class7099.getBlock()) {
                 if (class7096.get((IProperty<Boolean>)Class3905.field17693)) {
                     this.method12013(class7096, class7097, class7098);
                 }
-                super.method11829(class7096, class7097, class7098, class7099, b);
+                super.onReplaced(class7096, class7097, class7098, class7099, b);
             }
         }
     }
@@ -165,7 +165,7 @@ public abstract class Class3905 extends Class3902
             this.method12010(null, class7097, class7098, b);
         }
         if (b) {
-            class7097.method6833().method21345(new BlockPos(class7098), this, this.method11826(class7097));
+            class7097.method6833().method21345(new BlockPos(class7098), this, this.tickRate(class7097));
         }
     }
     

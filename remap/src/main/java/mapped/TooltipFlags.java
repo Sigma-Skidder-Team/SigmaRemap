@@ -4,7 +4,7 @@
 
 package mapped;
 
-public enum TooltipFlags implements Class1981
+public enum TooltipFlags implements ITooltipFlag
 {
     NORMAL(false),
     ADVANCED(true);

@@ -12,8 +12,8 @@ public class Class4084 extends Item
 {
     private static String[] field18188;
     
-    public Class4084(final Class8959 class8959) {
-        super(class8959);
+    public Class4084(final Properties properties) {
+        super(properties);
     }
     
     @Override
@@ -32,7 +32,7 @@ public class Class4084 extends Item
                 if (!((PlayerEntity)class8323).field3025.field27304) {
                     final ItemStack class8325 = new ItemStack(Items.field31442);
                     final PlayerEntity class8326 = (PlayerEntity)class8323;
-                    if (!class8326.field3006.method2362(class8325)) {
+                    if (!class8326.inventory.method2362(class8325)) {
                         class8326.method2822(class8325, false);
                     }
                 }

@@ -517,7 +517,7 @@ public class Class464 implements IInventory, INameable
             for (int i = 0; i < this.field2740.size(); ++i) {
                 final ItemStack class8321 = this.field2740.get(i);
                 if (class8321.getItem() instanceof Class4055) {
-                    class8321.method27636((int)n, this.field2744, class8322 -> class8322.method2794(Class2215.method8406(Class295.field1682, n2)));
+                    class8321.method27636((int)n, this.field2744, class8322 -> class8322.method2794(Class2215.method8406(Group.field1682, n2)));
                 }
             }
         }

@@ -16,7 +16,7 @@ import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap;
 import org.apache.logging.log4j.Logger;
 
-public class Class8245
+public class PlayerController
 {
     private static final Logger field33862;
     public final Minecraft field33863;
@@ -31,7 +31,7 @@ public class Class8245
     private final Object2ObjectLinkedOpenHashMap<Pair<BlockPos, Class2003>, Class8104> field33872;
     private int field33873;
     
-    public Class8245(final Minecraft field33863, final Class5799 field33864) {
+    public PlayerController(final Minecraft field33863, final Class5799 field33864) {
         this.field33865 = new BlockPos(-1, -1, -1);
         this.field33866 = ItemStack.EMPTY;
         this.field33871 = Class101.field298;
@@ -40,7 +40,7 @@ public class Class8245
         this.field33864 = field33864;
     }
     
-    public static void method27307(final Minecraft class869, final Class8245 class870, final BlockPos class871, final Direction class872) {
+    public static void method27307(final Minecraft class869, final PlayerController class870, final BlockPos class871, final Direction class872) {
         if (!class869.world.method6725(class869.player, class871, class872)) {
             class870.method27311(class871);
         }
@@ -62,7 +62,7 @@ public class Class8245
         if (this.field33863.player.method2803(this.field33863.world, class354, this.field33871)) {
             return false;
         }
-        final Class1848 field4683 = this.field33863.world;
+        final ClientWorld field4683 = this.field33863.world;
         final BlockState method6701 = field4683.getBlockState(class354);
         if (!this.field33863.player.getHeldItemMainhand().getItem().method11703(method6701, field4683, class354, this.field33863.player)) {
             return false;
@@ -222,35 +222,35 @@ public class Class8245
     }
     
     public void method27318() {
-        final int field2743 = this.field33863.player.field3006.field2743;
+        final int field2743 = this.field33863.player.inventory.field2743;
         if (field2743 != this.field33873) {
             this.field33873 = field2743;
             this.field33864.method17292(new Class4321(this.field33873));
         }
     }
     
-    public Class2201 method27319(final Class756 class756, final Class1848 class757, final Class316 class758, final BlockRayTraceResult class759) {
+    public Class2201 method27319(final ClientPlayerEntity clientPlayerEntity, final ClientWorld class757, final Class316 class758, final BlockRayTraceResult class759) {
         this.method27318();
         final BlockPos method21447 = class759.getPos();
         if (!this.field33863.world.getWorldBorder().contains(method21447)) {
             return Class2201.field13403;
         }
-        final ItemStack method21448 = class756.method2715(class758);
+        final ItemStack method21448 = clientPlayerEntity.method2715(class758);
         if (this.field33871 == Class101.field301) {
             this.field33864.method17292(new Class4329(class758, class759));
             return Class2201.field13400;
         }
-        final boolean b = !class756.getHeldItemMainhand().method27620() || !class756.method2714().method27620();
-        if (!class756.method2804() || !b) {
-            final Class2201 method21449 = class757.getBlockState(method21447).method21744(class757, class756, class758, class759);
+        final boolean b = !clientPlayerEntity.getHeldItemMainhand().method27620() || !clientPlayerEntity.method2714().method27620();
+        if (!clientPlayerEntity.method2804() || !b) {
+            final Class2201 method21449 = class757.getBlockState(method21447).method21744(class757, clientPlayerEntity, class758, class759);
             if (method21449.method8374()) {
                 this.field33864.method17292(new Class4329(class758, class759));
                 return method21449;
             }
         }
         this.field33864.method17292(new Class4329(class758, class759));
-        if (!method21448.method27620() && !class756.method2906().method25769(method21448.getItem())) {
-            final Class7075 class760 = new Class7075(class756, class758, class759);
+        if (!method21448.method27620() && !clientPlayerEntity.method2906().method25769(method21448.getItem())) {
+            final Class7075 class760 = new Class7075(clientPlayerEntity, class758, class759);
             Class2201 class761;
             if (!this.field33871.method590()) {
                 class761 = method21448.method27623(class760);
@@ -284,8 +284,8 @@ public class Class8245
         return Class2201.field13402;
     }
     
-    public Class756 method27306(final Class1848 class1848, final Class7474 class1849, final Class6520 class1850) {
-        return new Class756(this.field33863, class1848, this.field33864, class1849, class1850);
+    public ClientPlayerEntity method27306(final ClientWorld clientWorld, final Class7474 class1849, final Class6520 class1850) {
+        return new ClientPlayerEntity(this.field33863, clientWorld, this.field33864, class1849, class1850);
     }
     
     public void method27321(final PlayerEntity playerEntity, final Entity class513) {
@@ -303,7 +303,7 @@ public class Class8245
         return (this.field33871 != Class101.field301) ? playerEntity.method2836(class513, class514) : Class2201.field13402;
     }
     
-    public Class2201 method27323(final PlayerEntity playerEntity, final Entity class513, final Class7007 class514, final Class316 class515) {
+    public Class2201 method27323(final PlayerEntity playerEntity, final Entity class513, final EntityRayTraceResult class514, final Class316 class515) {
         this.method27318();
         final Vec3d method16742 = class514.getHitVec().subtract(class513.getPosX(), class513.getPosY(), class513.getPosZ());
         this.field33864.method17292(new Class4381(class513, class515, method16742));
@@ -311,7 +311,7 @@ public class Class8245
     }
     
     public ItemStack method27324(final int n, final int n2, final int n3, final Class2133 class2133, final PlayerEntity class2134) {
-        return Class8639.method29366(n, n2, n3, class2133, class2134);
+        return InvManagerUtil.method29366(n, n2, n3, class2133, class2134);
     }
     
     public void method27325(final int n, final IRecipe<?> class3662, final boolean b) {
@@ -379,12 +379,12 @@ public class Class8245
     }
     
     public void method27339(final Class2003 class2003, final BlockPos class2004, final Direction class2005) {
-        final Class756 field4684 = this.field33863.player;
+        final ClientPlayerEntity field4684 = this.field33863.player;
         this.field33872.put((Object)Pair.of((Object)class2004, (Object)class2003), (Object)new Class8104(field4684.method1934(), field4684.rotationPitch, field4684.rotationYaw));
         this.field33864.method17292(new Class4399(class2003, class2004, class2005));
     }
     
-    public void method27340(final Class1848 class1848, final BlockPos class1849, final BlockState class1850, final Class2003 class1851, final boolean b) {
+    public void method27340(final ClientWorld clientWorld, final BlockPos class1849, final BlockState class1850, final Class2003 class1851, final boolean b) {
         final Class8104 class1852 = (Class8104)this.field33872.remove((Object)Pair.of((Object)class1849, (Object)class1851));
         while (true) {
             Label_0023: {
@@ -395,18 +395,18 @@ public class Class8245
                     break Label_0023;
                 }
                 if (class1851 != Class2003.field11240) {
-                    if (class1848.getBlockState(class1849) != class1850) {
+                    if (clientWorld.getBlockState(class1849) != class1850) {
                         break Label_0023;
                     }
                 }
                 while (this.field33872.size() >= 50) {
                     final Pair obj = (Pair)this.field33872.firstKey();
                     this.field33872.removeFirst();
-                    Class8245.field33862.error("Too many unacked block actions, dropping " + obj);
+                    PlayerController.field33862.error("Too many unacked block actions, dropping " + obj);
                 }
                 return;
             }
-            class1848.method6824(class1849, class1850);
+            clientWorld.method6824(class1849, class1850);
             if (class1852 == null) {
                 continue;
             }

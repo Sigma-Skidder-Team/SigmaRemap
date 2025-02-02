@@ -20,8 +20,8 @@ public class Class4036 extends Item
     @Deprecated
     private final Block field18131;
     
-    public Class4036(final Block field18131, final Class8959 class8959) {
-        super(class8959);
+    public Class4036(final Block field18131, final Properties properties) {
+        super(properties);
         this.field18131 = field18131;
     }
     
@@ -160,8 +160,8 @@ public class Class4036 extends Item
     }
     
     @Override
-    public String method11717() {
-        return this.method12240().method11856();
+    public String getTranslationKey() {
+        return this.method12240().getTranslationKey();
     }
     
     @Override
@@ -172,9 +172,9 @@ public class Class4036 extends Item
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
-        super.method11728(class8321, class8322, list, class8323);
-        this.method12240().method11883(class8321, class8322, list, class8323);
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
+        super.addInformation(class8321, class8322, list, class8323);
+        this.method12240().addInformation(class8321, class8322, list, class8323);
     }
     
     public Block method12240() {

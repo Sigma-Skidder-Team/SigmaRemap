@@ -20,9 +20,9 @@ public class NickNameDetector extends Module
     
     @EventListener
     private void method10838(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             for (final Entity class5744 : ColorUtils.method19108()) {
-                if (Client.method35173().method35191().method31751(class5744)) {
+                if (Client.getInstance().method35191().method31751(class5744)) {
                     continue;
                 }
                 if (class5744.ticksExisted <= 30) {

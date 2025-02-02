@@ -111,7 +111,7 @@ public class Class9144
         final Class9145 method12414 = class1861.method12414(class1858, class1859);
         final Class6332 method12415 = class1861.method12415();
         for (final Direction class1863 : Direction.VALUES) {
-            if (!b || BlockUtils.method20647(class1858, class1856, class1859, class1863, method12414)) {
+            if (!b || BlockUtils.shouldSideBeRendered(class1858, class1856, class1859, class1863, method12414)) {
                 random.setSeed(n);
                 this.method33359(class1856, class1858, class1859, class1860, class1861, Class9087.method32833(this.field38735 ? class1857.method18700(class1858, class1863, random, class1862) : class1857.method18691(class1858, class1863, random), class1856, class1858, class1859, class1863, method12415, n, method12414), n2, method12414);
                 b2 = true;
@@ -135,7 +135,7 @@ public class Class9144
         final Class9145 method12414 = class1861.method12414(class1858, class1859);
         final Class6332 method12415 = class1861.method12415();
         for (final Direction class1863 : Direction.VALUES) {
-            if (!b || BlockUtils.method20647(class1858, class1856, class1859, class1863, method12414)) {
+            if (!b || BlockUtils.shouldSideBeRendered(class1858, class1856, class1859, class1863, method12414)) {
                 random.setSeed(n);
                 this.method33362(class1856, class1858, class1859, Class1656.method5777(class1856, class1858, class1859.method1149(class1863)), n2, false, class1860, class1861, Class9087.method32833(this.field38735 ? class1857.method18700(class1858, class1863, random, class1862) : class1857.method18691(class1858, class1863, random), class1856, class1858, class1859, class1863, method12415, n, method12414), method12414);
                 b2 = true;

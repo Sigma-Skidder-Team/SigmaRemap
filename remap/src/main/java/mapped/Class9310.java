@@ -254,7 +254,7 @@ public class Class9310
             }
         }
         if (this.field39967 != null) {
-            final Class1848 field4683 = Config.method28894().world;
+            final ClientWorld field4683 = Config.method28894().world;
             if (field4683 != null) {
                 if (!this.field39967.method24697(field4683.method6953())) {
                     return false;
@@ -262,7 +262,7 @@ public class Class9310
             }
         }
         if (this.field39968 != null) {
-            final Class1848 field4684 = Config.method28894().world;
+            final ClientWorld field4684 = Config.method28894().world;
             if (field4684 != null) {
                 if (!this.field39968.method24697((int)field4684.method6755())) {
                     return false;
@@ -270,7 +270,7 @@ public class Class9310
             }
         }
         if (this.field39969 != null) {
-            final Class1848 field4685 = Config.method28894().world;
+            final ClientWorld field4685 = Config.method28894().world;
             if (field4685 != null) {
                 if (!Class9008.method32231(this.field39969, Class2185.method8352(field4685, 0.0f))) {
                     return false;

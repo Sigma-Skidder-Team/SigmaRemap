@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.UUID;
 
-public class Class841 extends Class785 implements Class762
+public class Class841 extends Class785 implements IMob
 {
     private static final UUID field4479;
     private static final Class7919 field4480;

@@ -15,12 +15,12 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class761 extends Class760 implements Class762
+public class GhastEntity extends FlyingEntity implements IMob
 {
     private static final DataParameter<Boolean> field4132;
     private int field4133;
     
-    public Class761(final EntityType<? extends Class761> class7499, final World class7500) {
+    public GhastEntity(final EntityType<? extends GhastEntity> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4133 = 1;
         this.field4108 = 5;
@@ -36,11 +36,11 @@ public class Class761 extends Class760 implements Class762
     }
     
     public boolean method4222() {
-        return this.dataManager.get(Class761.field4132);
+        return this.dataManager.get(GhastEntity.field4132);
     }
     
     public void method4223(final boolean b) {
-        this.dataManager.set(Class761.field4132, b);
+        this.dataManager.set(GhastEntity.field4132, b);
     }
     
     public int method4224() {
@@ -67,7 +67,7 @@ public class Class761 extends Class760 implements Class762
     @Override
     public void method1649() {
         super.method1649();
-        this.dataManager.register(Class761.field4132, false);
+        this.dataManager.register(GhastEntity.field4132, false);
     }
     
     @Override
@@ -102,7 +102,7 @@ public class Class761 extends Class760 implements Class762
         return 10.0f;
     }
     
-    public static boolean method4225(final EntityType<Class761> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4225(final EntityType<GhastEntity> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (class7500.method6954() != Class2113.field12290) {
             if (random.nextInt(20) == 0) {
                 if (Class759.method4178(class7499, class7500, class7501, class7502, random)) {
@@ -138,6 +138,6 @@ public class Class761 extends Class760 implements Class762
     }
     
     static {
-        field4132 = EntityDataManager.method33564(Class761.class, Class7709.field30661);
+        field4132 = EntityDataManager.method33564(GhastEntity.class, Class7709.field30661);
     }
 }

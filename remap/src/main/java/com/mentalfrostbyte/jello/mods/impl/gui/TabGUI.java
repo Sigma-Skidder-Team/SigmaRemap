@@ -54,7 +54,7 @@ public class TabGUI extends Module
     
     @EventListener
     private void method10063(final Class5752 class5752) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         final Class2164 method10069 = method10069(class5752.method17061());
@@ -111,7 +111,7 @@ public class TabGUI extends Module
                     break;
                 }
                 if (method10070 == 2 && class5753 instanceof Class8222) {
-                    this.method10072(Client.method35173().method35189().method21554(this.field15640.get(TabGUI.field15642.get(0).field33778)).get(((Class8222)class5753).field33778));
+                    this.method10072(Client.getInstance().method35189().method21554(this.field15640.get(TabGUI.field15642.get(0).field33778)).get(((Class8222)class5753).field33778));
                     break;
                 }
                 if (method10070 == 3) {
@@ -122,8 +122,8 @@ public class TabGUI extends Module
             }
             case 5: {
                 if (method10070 == 2 && class5753 instanceof Class8222) {
-                    final Module class5754 = Client.method35173().method35189().method21554(this.field15640.get(TabGUI.field15642.get(0).field33778)).get(((Class8222)class5753).field33778);
-                    class5754.method9909(!class5754.method9906());
+                    final Module class5754 = Client.getInstance().method35189().method21554(this.field15640.get(TabGUI.field15642.get(0).field33778)).get(((Class8222)class5753).field33778);
+                    class5754.method9909(!class5754.isEnabled());
                     break;
                 }
                 break;
@@ -135,7 +135,7 @@ public class TabGUI extends Module
         final Class8222 class8222 = TabGUI.field15642.get(0);
         final Class8222 class8223 = TabGUI.field15642.get(1);
         final Class8222 class8224 = TabGUI.field15642.get(2);
-        final Module class8225 = Client.method35173().method35189().method21554(this.field15640.get(class8222.field33778)).get(class8223.field33778);
+        final Module class8225 = Client.getInstance().method35189().method21554(this.field15640.get(class8222.field33778)).get(class8223.field33778);
         final Setting class8226 = this.method10075(class8225).get(class8224.field33778);
         if (!(class8226 instanceof StringSetting)) {
             if (!(class8226 instanceof BooleanSetting)) {
@@ -181,7 +181,7 @@ public class TabGUI extends Module
     
     @EventListener
     private void method10065(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15641 <= 0) {
                 TabGUI.field15637.changeDirection(Direction.FORWARDS);
                 this.field15638.changeDirection(Direction.FORWARDS);
@@ -195,7 +195,7 @@ public class TabGUI extends Module
     @EventListener
     @Class6763
     private void method10066(final Class5740 class5740) {
-        if (!this.method9906() || TabGUI.mc.player == null) {
+        if (!this.isEnabled() || TabGUI.mc.player == null) {
             return;
         }
         if (Minecraft.method5277().gameSettings.field23466) {
@@ -217,8 +217,8 @@ public class TabGUI extends Module
             final Class8222 class8222 = TabGUI.field15642.get(1);
             final Category class8223 = this.field15640.get(TabGUI.field15642.get(0).field33778);
             int n = 0;
-            for (final Module class8224 : Client.method35173().method35189().method21554(class8223)) {
-                class8222.method27241(n++, (class8224.method9906() ? "" : "§7") + class8224.getName2());
+            for (final Module class8224 : Client.getInstance().method35189().method21554(class8223)) {
+                class8222.method27241(n++, (class8224.isEnabled() ? "" : "§7") + class8224.getName2());
             }
         }
     }
@@ -243,7 +243,7 @@ public class TabGUI extends Module
                     }
                 }
             }
-            final Module class8226 = Client.method35173().method35189().method21554(this.field15640.get(class8222.field33778)).get(class8223.field33778);
+            final Module class8226 = Client.getInstance().method35189().method21554(this.field15640.get(class8222.field33778)).get(class8223.field33778);
             String s = class8226.getDesc();
             if (method10076 == 3) {
                 s = this.method10075(class8226).get(class8224.field33778).method15205();
@@ -310,7 +310,7 @@ public class TabGUI extends Module
     
     public void method10071(final Category class8013) {
         final ArrayList list = new ArrayList();
-        final Iterator<Module> iterator = Client.method35173().method35189().method21554(class8013).iterator();
+        final Iterator<Module> iterator = Client.getInstance().method35189().method21554(class8013).iterator();
         while (iterator.hasNext()) {
             list.add(iterator.next().getName2());
         }
@@ -343,7 +343,7 @@ public class TabGUI extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         TabGUI.field15637.changeDirection(Direction.BACKWARDS);
         this.field15641 = 40;
     }

@@ -25,7 +25,7 @@ public class BasicClickTP extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15867.clear();
     }
     
@@ -36,7 +36,7 @@ public class BasicClickTP extends Module
     
     @EventListener
     private void method10454(final Class5748 class5748) {
-        if (this.method9906() && (BasicClickTP.mc.player.method1809() || !this.method9914().method9883("Sneak"))) {
+        if (this.isEnabled() && (BasicClickTP.mc.player.method1809() || !this.method9914().method9883("Sneak"))) {
             if (class5748.method17055() == Class1958.field10672) {
                 final BlockRayTraceResult method13697 = Class4609.method13697(BasicClickTP.mc.player.rotationYaw, BasicClickTP.mc.player.rotationPitch, this.method9914().getNumberSettingValueByName("Maximum range"));
                 Vec3i method13698 = null;
@@ -81,7 +81,7 @@ public class BasicClickTP extends Module
     
     @EventListener
     public void method10455(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15867 != null) {
                 if (this.field15867.size() != 0) {
                     if (this.field15868.method23935() > 4000L) {

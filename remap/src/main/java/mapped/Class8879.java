@@ -40,14 +40,14 @@ public class Class8879
             final String method13268 = JSONObject.getString("type");
             switch (method13268) {
                 case "mod": {
-                    for (final Module field37348 : Client.method35173().method35189().method21553().values()) {
+                    for (final Module field37348 : Client.getInstance().method35189().method21553().values()) {
                         if (JSONObject.getString("target").equals(field37348.getName())) {
                             this.field37348 = field37348;
                         }
                     }
                 }
                 case "screen": {
-                    final Class<? extends Screen> method13269 = Client.method35173().method35193().method32151(JSONObject.getString("target"));
+                    final Class<? extends Screen> method13269 = Client.getInstance().method35193().method32151(JSONObject.getString("target"));
                     if (method13269 != null) {
                         this.field37348 = method13269;
                         break;
@@ -68,7 +68,7 @@ public class Class8879
             }
             case 2: {
                 JSONObject.method13301("type", "screen");
-                JSONObject.method13301("target", Client.method35173().method35193().method32152((Class<? extends Screen>)this.field37348));
+                JSONObject.method13301("target", Client.getInstance().method35193().method32152((Class<? extends Screen>)this.field37348));
                 break;
             }
         }

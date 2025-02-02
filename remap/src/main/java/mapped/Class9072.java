@@ -16,7 +16,7 @@ public class Class9072
 {
     public static Texture method32684(final String name, final BufferedImage bufferedImage) {
         try {
-            final BufferedImage read = ImageIO.read(Client.method35173().getClass().getClassLoader().getResourceAsStream(name));
+            final BufferedImage read = ImageIO.read(Client.getInstance().getClass().getClassLoader().getResourceAsStream(name));
             final BufferedImage bufferedImage2 = new BufferedImage(bufferedImage.getWidth(), bufferedImage.getHeight(), read.getType());
             for (int i = 0; i < read.getHeight(); ++i) {
                 for (int j = 0; j < read.getWidth(); ++j) {

@@ -20,7 +20,7 @@ public class Class4076 extends Class4071
     private final float field18179;
     public static final Map<Block, Class7096> field18180;
     
-    public Class4076(final Class2038 class2038, final float field18179, final Class8959 class2039) {
+    public Class4076(final Class2038 class2038, final float field18179, final Properties class2039) {
         super(class2038, class2039);
         this.field18179 = field18179;
     }

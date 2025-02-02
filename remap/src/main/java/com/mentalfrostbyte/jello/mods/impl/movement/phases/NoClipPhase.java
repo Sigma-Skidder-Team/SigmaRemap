@@ -16,14 +16,14 @@ public class NoClipPhase extends Module
     
     @EventListener
     private void method10715(final Class5713 class5713) {
-        if (this.method9906()) {
-            class5713.method16961(true);
+        if (this.isEnabled()) {
+            class5713.setCancelled(true);
         }
     }
     
     @EventListener
     public void method10716(final Class5753 class5753) {
-        if (this.method9906() && NoClipPhase.mc.world != null) {
+        if (this.isEnabled() && NoClipPhase.mc.world != null) {
             if (class5753.method17064().getY() >= NoClipPhase.mc.player.posY) {
                 class5753.method17067(VoxelShapes.empty());
             }
@@ -32,7 +32,7 @@ public class NoClipPhase extends Module
     
     @EventListener
     public void method10717(final Class5743 class5743) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         NoClipPhase.mc.player.field2985 = 3;

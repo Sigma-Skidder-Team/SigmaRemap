@@ -18,14 +18,14 @@ public class Class8876
     
     public static Class1849 method31206() {
         final Minecraft method28894 = Config.method28894();
-        final Class1848 field4683 = method28894.world;
+        final ClientWorld field4683 = method28894.world;
         if (field4683 == null) {
             return null;
         }
         if (!method28894.method5283()) {
             return null;
         }
-        final Class1655 method28895 = method28894.method5285();
+        final IntegratedServer method28895 = method28894.method5285();
         if (method28895 == null) {
             return null;
         }

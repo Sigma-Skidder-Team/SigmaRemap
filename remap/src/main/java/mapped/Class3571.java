@@ -10,9 +10,9 @@ import java.util.EnumSet;
 public class Class3571 extends Class3446
 {
     private static String[] field16667;
-    private final Class761 field16668;
+    private final GhastEntity field16668;
     
-    public Class3571(final Class761 field16668) {
+    public Class3571(final GhastEntity field16668) {
         this.field16668 = field16668;
         this.method11019(EnumSet.of(Class2139.field12580));
     }

@@ -15,10 +15,10 @@ public class Class6714 implements GameSession
     private final String field26449;
     private final UUID field26450;
     
-    public Class6714(final Class1848 class1848, final Class756 class1849, final Class5799 class1850) {
+    public Class6714(final ClientWorld clientWorld, final ClientPlayerEntity class1849, final Class5799 class1850) {
         this.field26446 = class1850.method17370().size();
         this.field26447 = !class1850.getNetworkManager().method11182();
-        this.field26448 = class1848.method6954().method8239();
+        this.field26448 = clientWorld.method6954().method8239();
         final Class9081 method17371 = class1850.method17371(class1849.method1865());
         if (method17371 == null) {
             this.field26449 = "unknown";

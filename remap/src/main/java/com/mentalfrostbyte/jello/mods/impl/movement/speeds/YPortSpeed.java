@@ -28,9 +28,9 @@ public class YPortSpeed extends Module
     
     @EventListener
     public void method10596(final Class5744 class5744) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (YPortSpeed.mc.player != null) {
-                if (!Client.method35173().method35189().method21551(Fly.class).method9906()) {
+                if (!Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
                     if (YPortSpeed.mc.player.onGround) {
                         if (class5744.method17046()) {
                             if (ColorUtils.method19146()) {
@@ -44,7 +44,7 @@ public class YPortSpeed extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15959 = false;
         this.field15963 = 0;
         this.field15961 = ((YPortSpeed.mc.player != null) ? Class7482.method23136() : 0.2873);
@@ -62,13 +62,13 @@ public class YPortSpeed extends Module
     
     @EventListener
     public void method10597(final Class5717 class5717) {
-        if (!this.method9906() || Client.method35173().method35189().method21551(Fly.class).method9906()) {
+        if (!this.isEnabled() || Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
             return;
         }
         if (YPortSpeed.mc.player.field2967) {
             return;
         }
-        final String method9887 = this.method9887("Mode");
+        final String method9887 = this.getStringSettingValueByName("Mode");
         switch (method9887) {
             case "NCP": {
                 if (Class7482.method23148() && YPortSpeed.mc.player.onGround) {
@@ -127,9 +127,9 @@ public class YPortSpeed extends Module
     
     @EventListener
     private void method10598(final Class5747 class5747) {
-        if (this.method9906()) {
-            if (!this.method9887("Mode").equalsIgnoreCase("NCP")) {
-                if (!Client.method35173().method35189().method21551(Fly.class).method9906()) {
+        if (this.isEnabled()) {
+            if (!this.getStringSettingValueByName("Mode").equalsIgnoreCase("NCP")) {
+                if (!Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
                     if (!YPortSpeed.mc.player.method1706()) {
                         if (!YPortSpeed.mc.player.method1723()) {
                             if (!YPortSpeed.mc.player.method2688()) {
@@ -161,12 +161,12 @@ public class YPortSpeed extends Module
     
     @EventListener
     public void method10599(final Class5741 class5741) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (ColorUtils.method19160(YPortSpeed.mc.player, 0.43f)) {
                 if (YPortSpeed.mc.player.fallDistance <= 0.09) {
                     if (this.method9883("OnGround")) {
                         if (!YPortSpeed.mc.gameSettings.field23439.field2162) {
-                            if (!Client.method35173().method35189().method21551(Fly.class).method9906()) {
+                            if (!Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
                                 if (YPortSpeed.mc.player.onGround) {
                                     if (ColorUtils.method19160(YPortSpeed.mc.player, 0.001f)) {
                                         this.field15960 = YPortSpeed.mc.player.posY;
@@ -189,7 +189,7 @@ public class YPortSpeed extends Module
     
     @EventListener
     private void method10600(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4328) {
                 this.field15962 = 0.0;
             }

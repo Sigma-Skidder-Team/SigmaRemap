@@ -19,7 +19,7 @@ public class ViperMCSpeed extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field16100 = 1;
     }
     
@@ -31,7 +31,7 @@ public class ViperMCSpeed extends Module
     
     @EventListener
     public void method10796(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             ++this.field16100;
             float n = 0.28f + Class7482.method23139() * 0.05f;
             if (this.field16100 >= 4) {

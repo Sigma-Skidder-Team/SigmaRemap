@@ -192,7 +192,7 @@ public class Class6883
         }
         catch (final Exception ex) {
             ex.printStackTrace();
-            Client.method35173().method35187().method20242("An unhandled exception occured in an event handler's function");
+            Client.getInstance().method35187().method20242("An unhandled exception occured in an event handler's function");
         }
         catch (final Throwable t) {
             t.printStackTrace();

@@ -242,7 +242,7 @@ public class Class6123 implements Class6113
     }
     
     private boolean method18335(final Class9307 class9307) {
-        final Class756 field4684 = this.field24855.player;
+        final ClientPlayerEntity field4684 = this.field24855.player;
         return new BlockPos(field4684.getPosX(), class9307.field39938.getY(), field4684.getPosZ()).withinDistance(new BlockPos(class9307.field39938), 30.0);
     }
     

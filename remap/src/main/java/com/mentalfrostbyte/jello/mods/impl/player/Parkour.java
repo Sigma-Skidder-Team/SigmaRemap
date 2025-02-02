@@ -18,7 +18,7 @@ public class Parkour extends Module
     
     @EventListener
     public void method10160(final Class5747 class5747) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (!Parkour.mc.player.onGround) {

@@ -6,8 +6,8 @@ package mapped;
 
 public class Class4101 extends Item
 {
-    public Class4101(final Class8959 class8959) {
-        super(class8959);
+    public Class4101(final Properties properties) {
+        super(properties);
         this.method11705(new ResourceLocation("angle"), new Class8968(this));
     }
 }

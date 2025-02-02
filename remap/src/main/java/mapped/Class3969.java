@@ -90,8 +90,8 @@ public class Class3969 extends Block
                 if (!class1847.isRemote) {
                     if (!class1850.method2889()) {
                         if (class1850.method2825(method6701)) {
-                            Block.method11838(class1849, class1847, class1848, null, class1850, method6702);
-                            Block.method11838(method6701, class1847, class1852, null, class1850, method6702);
+                            Block.spawnAsEntity(class1849, class1847, class1848, null, class1850, method6702);
+                            Block.spawnAsEntity(method6701, class1847, class1852, null, class1850, method6702);
                         }
                     }
                 }

@@ -27,8 +27,8 @@ public class Class3945 extends Class3944
     }
     
     @Override
-    public String method11856() {
-        return this.method11704().method11717();
+    public String getTranslationKey() {
+        return this.method11704().getTranslationKey();
     }
     
     @Override

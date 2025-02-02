@@ -46,7 +46,7 @@ public class Class540 extends Screen
     private final DecimalFormat field3263;
     
     public Class540(final Class501 field3232) {
-        super(new Class2259(Blocks.STRUCTURE_BLOCK.method11856(), new Object[0]));
+        super(new Class2259(Blocks.STRUCTURE_BLOCK.getTranslationKey(), new Object[0]));
         this.field3233 = Class2181.field12917;
         this.field3234 = Class2052.field11707;
         this.field3235 = Class102.field308;

@@ -53,6 +53,6 @@ public class Class6657 implements Class6658
     
     @Override
     public void method20243(final String s) {
-        Client.method35173();
+        Client.getInstance();
     }
 }

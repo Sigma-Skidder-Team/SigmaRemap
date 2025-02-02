@@ -27,7 +27,7 @@ public class Breadcrumbs extends Module
     
     @EventListener
     public void method10416(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5717.method16972() == 0.0) {
                 if (class5717.method16974() == 0.0) {
                     if (class5717.method16976() == 0.0) {
@@ -41,7 +41,7 @@ public class Breadcrumbs extends Module
     
     @EventListener
     public void method10417(final Class5732 class5732) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             this.field15850.clear();
         }
     }
@@ -57,7 +57,7 @@ public class Breadcrumbs extends Module
     
     @EventListener
     public void method10419(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final Vec3d class5740 = new Vec3d(Breadcrumbs.mc.player.lastTickPosX - (Breadcrumbs.mc.player.lastTickPosX - Breadcrumbs.mc.player.posX) * Breadcrumbs.mc.method5314(), Breadcrumbs.mc.player.lastTickPosY - (Breadcrumbs.mc.player.lastTickPosY - Breadcrumbs.mc.player.posY) * Breadcrumbs.mc.method5314(), Breadcrumbs.mc.player.lastTickPosZ - (Breadcrumbs.mc.player.lastTickPosZ - Breadcrumbs.mc.player.posZ) * Breadcrumbs.mc.method5314());
             GL11.glBlendFunc(770, 771);
             GL11.glEnable(3042);

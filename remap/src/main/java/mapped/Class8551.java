@@ -90,7 +90,7 @@ public class Class8551
         this.method28696(EntityType.field29059, new Class4789(this));
         this.method28696(EntityType.field28985, (Class4703<? super Class803>)new Class4731(this));
         this.method28696(EntityType.field29002, new Class4708<Object>(this));
-        this.method28696(EntityType.field28986, (Class4703<? super Class761>)new Class4758(this));
+        this.method28696(EntityType.field28986, (Class4703<? super GhastEntity>)new Class4758(this));
         this.method28696(EntityType.field28987, (Class4703<? super Class764>)new Class4719(this, 6.0f));
         this.method28696(EntityType.field28988, (Class4703<? super Class844>)new Class4764(this));
         this.method28696(EntityType.field29003, new Class4708<Object>(this));

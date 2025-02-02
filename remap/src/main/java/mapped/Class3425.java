@@ -60,12 +60,12 @@ public class Class3425 extends Class3418
                 class513 = method20053.method27641();
                 final int method20054 = this.field16190.getSizeInventory();
                 if (n >= method20054) {
-                    if (this.method10878(1).method20046(method20053) && !this.method10878(1).method20054()) {
+                    if (this.getSlot(1).method20046(method20053) && !this.getSlot(1).method20054()) {
                         if (!this.method10888(method20053, 1, 2, false)) {
                             return ItemStack.EMPTY;
                         }
                     }
-                    else if (!this.method10878(0).method20046(method20053)) {
+                    else if (!this.getSlot(0).method20046(method20053)) {
                         if (method20054 <= 2 || !this.method10888(method20053, 2, method20054, false)) {
                             final int n2 = method20054 + 27;
                             final int n3 = n2 + 9;

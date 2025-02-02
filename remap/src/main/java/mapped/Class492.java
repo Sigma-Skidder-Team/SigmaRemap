@@ -200,7 +200,7 @@ public class Class492 extends TileEntity implements Class439
                 }
             }
             else {
-                final List<Entity> method6739 = this.field2656.method6739((Class<? extends Entity>) LivingEntity.class, this.method2491(), class511 -> class511 instanceof Class762 && class511.method1709());
+                final List<Entity> method6739 = this.field2656.method6739((Class<? extends Entity>) LivingEntity.class, this.method2491(), class511 -> class511 instanceof IMob && class511.method1709());
                 if (!method6739.isEmpty()) {
                     this.field2832 = (LivingEntity)method6739.get(this.field2656.rand.nextInt(method6739.size()));
                 }

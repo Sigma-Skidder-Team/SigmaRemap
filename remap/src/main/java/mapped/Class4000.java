@@ -31,7 +31,7 @@ public abstract class Class4000 extends Block
     }
     
     @Override
-    public int method11826(final Class1852 class1852) {
+    public int tickRate(final Class1852 class1852) {
         return 20;
     }
     
@@ -88,7 +88,7 @@ public abstract class Class4000 extends Block
             }
         }
         if (b2) {
-            class1847.method6833().method21345(new BlockPos(class1848), this, this.method11826(class1847));
+            class1847.method6833().method21345(new BlockPos(class1848), this, this.tickRate(class1847));
         }
     }
     
@@ -97,13 +97,13 @@ public abstract class Class4000 extends Block
     public abstract void method12163(final Class1851 p0, final BlockPos p1);
     
     @Override
-    public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (!b) {
             if (class7096.getBlock() != class7099.getBlock()) {
                 if (this.method12166(class7096) > 0) {
                     this.method12164(class7097, class7098);
                 }
-                super.method11829(class7096, class7097, class7098, class7099, b);
+                super.onReplaced(class7096, class7097, class7098, class7099, b);
             }
         }
     }

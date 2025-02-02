@@ -17,7 +17,7 @@ public class OutlineChestESP extends Module
     
     @EventListener
     private void method10422(final Class5739 class5739) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (OutlineChestESP.mc.player != null && OutlineChestESP.mc.world != null) {

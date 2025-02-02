@@ -4,7 +4,7 @@
 
 package mapped;
 
-public interface Class1981
+public interface ITooltipFlag
 {
     boolean method7991();
 }

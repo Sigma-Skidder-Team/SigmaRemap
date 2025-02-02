@@ -12,8 +12,8 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class755 extends Class754
 {
-    public Class755(final Class1848 class1848, final GameProfile gameProfile) {
-        super(class1848, gameProfile);
+    public Class755(final ClientWorld clientWorld, final GameProfile gameProfile) {
+        super(clientWorld, gameProfile);
         this.stepHeight = 1.0f;
         this.noClip = true;
     }

@@ -21,7 +21,7 @@ import java.io.IOException;
 public class Class4916 extends Class4825
 {
     public Class8848 field21025;
-    public Class9575 field21026;
+    public ServerData field21026;
     public Texture field21027;
     public Texture field21028;
     private java.awt.image.BufferedImage field21029;
@@ -41,10 +41,10 @@ public class Class4916 extends Class4825
     public void finalize() throws Throwable {
         try {
             if (this.field21028 != null) {
-                Client.method35173().method35182(this.field21028);
+                Client.getInstance().method35182(this.field21028);
             }
             if (this.field21027 != null) {
-                Client.method35173().method35182(this.field21027);
+                Client.getInstance().method35182(this.field21027);
             }
         }
         finally {

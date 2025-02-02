@@ -35,8 +35,8 @@ public class AACBlockFly extends Module
     }
     
     @Override
-    public void method9879() {
-        this.field15653 = AACBlockFly.mc.player.field3006.field2743;
+    public void onEnable() {
+        this.field15653 = AACBlockFly.mc.player.inventory.field2743;
         this.field15650 = AACBlockFly.mc.player.rotationYaw;
         this.field15651 = AACBlockFly.mc.player.rotationPitch;
         this.field15652 = (int) AACBlockFly.mc.player.posY;
@@ -47,13 +47,13 @@ public class AACBlockFly extends Module
     @Override
     public void onDisable() {
         if (this.field15653 != -1) {
-            if (this.method9914().method9887("ItemSpoof").equals("Switch")) {
-                AACBlockFly.mc.player.field3006.field2743 = this.field15653;
+            if (this.method9914().getStringSettingValueByName("ItemSpoof").equals("Switch")) {
+                AACBlockFly.mc.player.inventory.field2743 = this.field15653;
             }
         }
         this.field15653 = -1;
         if (((BlockFly)this.method9914()).field15750 >= 0) {
-            AACBlockFly.mc.method5269().method17292(new Class4321(AACBlockFly.mc.player.field3006.field2743));
+            AACBlockFly.mc.method5269().method17292(new Class4321(AACBlockFly.mc.player.inventory.field2743));
             ((BlockFly)this.method9914()).field15750 = -1;
         }
         AACBlockFly.mc.timer.timerSpeed = 1.0f;
@@ -62,10 +62,10 @@ public class AACBlockFly extends Module
     @EventListener
     @Class6759
     public void method10098(final Class5721 class5721) {
-        if (this.method9906() && AACBlockFly.mc.player != null) {
+        if (this.isEnabled() && AACBlockFly.mc.player != null) {
             if (class5721.method16990() instanceof Class4321) {
                 if (((BlockFly)this.method9914()).field15750 >= 0) {
-                    class5721.method16961(true);
+                    class5721.setCancelled(true);
                 }
             }
         }
@@ -73,7 +73,7 @@ public class AACBlockFly extends Module
     
     @EventListener
     public void method10099(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4328) {
                 this.field15655 = 0;
             }
@@ -82,9 +82,9 @@ public class AACBlockFly extends Module
     
     @EventListener
     public void method10100(final Class5738 class5738) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (AACBlockFly.mc.player.onGround) {
-                if (Client.method35173().method35189().method21551(SafeWalk.class).method9906()) {
+                if (Client.getInstance().method35189().method21551(SafeWalk.class).isEnabled()) {
                     class5738.method17026(true);
                 }
             }
@@ -93,7 +93,7 @@ public class AACBlockFly extends Module
     
     @EventListener
     public void method10101(final Class5717 class5717) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (this.method9914().method9883("No Sprint")) {
@@ -128,7 +128,7 @@ public class AACBlockFly extends Module
     
     @EventListener
     private void method10102(final Class5735 class5735) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (AACBlockFly.mc.world != null) {
                 if (AACBlockFly.mc.player != null) {
                     if (this.method9883("Haphe (AACAP)")) {
@@ -148,7 +148,7 @@ public class AACBlockFly extends Module
         boolean b = false;
         if (blockRayTraceResult != null) {
             if (blockRayTraceResult.getType() == RayTraceResult.Type.BLOCK) {
-                if (this.method9914().method9887("ItemSpoof").equals("None")) {
+                if (this.method9914().getStringSettingValueByName("ItemSpoof").equals("None")) {
                     final BlockFly class7006 = (BlockFly)this.method9914();
                     if (!BlockFly.method10279(AACBlockFly.mc.player.method2715(Class316.field1877).getItem())) {
                         return false;
@@ -177,13 +177,13 @@ public class AACBlockFly extends Module
                     return false;
                 }
                 ((BlockFly)this.method9914()).method10282();
-                final int field2743 = AACBlockFly.mc.player.field3006.field2743;
-                if (!this.method9914().method9887("ItemSpoof").equals("None")) {
+                final int field2743 = AACBlockFly.mc.player.inventory.field2743;
+                if (!this.method9914().getStringSettingValueByName("ItemSpoof").equals("None")) {
                     ((BlockFly)this.method9914()).method10280();
                 }
-                final Class2201 method27319 = AACBlockFly.mc.field4682.method27319(AACBlockFly.mc.player, AACBlockFly.mc.world, Class316.field1877, blockRayTraceResult);
-                if (this.method9914().method9887("ItemSpoof").equals("Spoof") || this.method9914().method9887("ItemSpoof").equals("LiteSpoof")) {
-                    AACBlockFly.mc.player.field3006.field2743 = field2743;
+                final Class2201 method27319 = AACBlockFly.mc.playerController.method27319(AACBlockFly.mc.player, AACBlockFly.mc.world, Class316.field1877, blockRayTraceResult);
+                if (this.method9914().getStringSettingValueByName("ItemSpoof").equals("Spoof") || this.method9914().getStringSettingValueByName("ItemSpoof").equals("LiteSpoof")) {
+                    AACBlockFly.mc.player.inventory.field2743 = field2743;
                 }
                 if (method27319 == Class2201.field13400) {
                     if (!this.method9914().method9883("NoSwing")) {
@@ -203,12 +203,12 @@ public class AACBlockFly extends Module
     }
     
     public List<Class9052> method10104(final Block class3833, final BlockPos class3834) {
-        return Class8582.method29051(class3833, class3834, (int) AACBlockFly.mc.field4682.method27315());
+        return Class8582.method29051(class3833, class3834, (int) AACBlockFly.mc.playerController.method27315());
     }
     
     @EventListener
     public void method10105(final Class5741 class5741) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (this.method9883("Haphe (AACAP)")) {
@@ -219,7 +219,7 @@ public class AACBlockFly extends Module
     @EventListener
     @Class6755
     private void method10106(final Class5744 class5744) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!class5744.method17046()) {
                 if (Class7482.method23148()) {
                     if (AACBlockFly.mc.player.onGround) {
@@ -268,10 +268,10 @@ public class AACBlockFly extends Module
     
     @EventListener
     public void method10107(final Class5722 class5722) {
-        if (this.method9906()) {
-            if (this.method9914().method9887("Tower Mode").equalsIgnoreCase("Cubecraft")) {
+        if (this.isEnabled()) {
+            if (this.method9914().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Cubecraft")) {
                 if (!ColorUtils.method19114() || this.method9914().method9883("Tower while moving")) {
-                    class5722.method16961(true);
+                    class5722.setCancelled(true);
                 }
             }
         }

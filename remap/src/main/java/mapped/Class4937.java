@@ -58,7 +58,7 @@ public class Class4937 extends Class4800
         final TrueTypeFont field40807 = Class9493.field40807;
         final String s = "© Sigma Prod";
         final StringBuilder append = new StringBuilder().append("Sigma ");
-        Client.method35173();
+        Client.getInstance();
         final String string = append.append("5.0.0b6").append(" for Minecraft 1.8 to 1.15").toString();
         this.addVisualThing(this.field21194 = new Class4920(this, "particles"));
         final int n = 480;
@@ -85,7 +85,7 @@ public class Class4937 extends Class4800
     }
     
     public void method14862(final Class4800 class4800) {
-        Client.method35173().method35193().method32156(class4800);
+        Client.getInstance().method35193().method32156(class4800);
         this.method14863();
     }
     

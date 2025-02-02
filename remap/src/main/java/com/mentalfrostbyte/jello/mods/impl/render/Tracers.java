@@ -22,7 +22,7 @@ public class Tracers extends Module
     
     @EventListener
     public void method10023(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             GL11.glBlendFunc(770, 771);
             GL11.glAlphaFunc(519, 0.0f);
             GL11.glEnable(3042);
@@ -45,7 +45,7 @@ public class Tracers extends Module
                 if (class5740.ticksExisted <= 30) {
                     continue;
                 }
-                if (Client.method35173().method35191().method31751(class5740)) {
+                if (Client.getInstance().method35191().method31751(class5740)) {
                     continue;
                 }
                 this.method10024(class5740);

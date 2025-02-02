@@ -384,7 +384,7 @@ public class Class9216
     public static Class7095 field39354;
     public static Class7095 field39355;
     private static Map<String, String> field39356;
-    private static Class1848 field39357;
+    private static ClientWorld field39357;
     private static List<Integer> field39358;
     private static Class4114[] field39359;
     private static Class4114[] field39360;
@@ -693,8 +693,8 @@ public class Class9216
     public static void method33708() {
         final boolean field39325 = Class9216.field39325;
         final boolean method33750 = method33750();
-        if (Class9216.field39031.field4636 != null) {
-            Class9216.field39031.field4636.method5766();
+        if (Class9216.field39031.worldRenderer != null) {
+            Class9216.field39031.worldRenderer.method5766();
         }
         Class9216.field39325 = false;
         if (Class9216.field39324 != null) {
@@ -759,8 +759,8 @@ public class Class9216
         if (Class9216.field39031.method5291() != null) {
             Class8929.method31487();
         }
-        if (Class9216.field39031.field4636 != null) {
-            Class9216.field39031.field4636.method5767();
+        if (Class9216.field39031.worldRenderer != null) {
+            Class9216.field39031.worldRenderer.method5767();
         }
         if ((b2 || b3) && Class9216.field39031.method5291() != null) {
             Class9216.field39031.method5278();
@@ -1844,7 +1844,7 @@ public class Class9216
         Class8885.method31272("Reset model renderers");
         ++Class9216.field39040;
         Class8885.method31272("Reset world renderers");
-        Class9216.field39031.field4636.method5701();
+        Class9216.field39031.worldRenderer.loadRenderers();
     }
     
     private static void method33766(final Class9023 class9023, final String s, final String s2, final String s3) {
@@ -3030,7 +3030,7 @@ public class Class9216
         Class8933.method31635();
         Class7778.method24957(class6092, field39031, n);
         Class8933.method31636();
-        final Class1848 field39032 = Class9216.field39031.world;
+        final ClientWorld field39032 = Class9216.field39031.world;
         if (field39032 != null) {
             Class9216.field39075 = field39032.method6755();
             Class9216.field39077 = (Class9216.field39075 - Class9216.field39076) % 24000L;
@@ -3154,11 +3154,11 @@ public class Class9216
         Class8933.method31608(33984);
     }
     
-    public static void method33798(final Class1848 field39357) {
+    public static void method33798(final ClientWorld field39357) {
         if (Class9216.field39357 == field39357) {
             return;
         }
-        final Class1848 field39358 = Class9216.field39357;
+        final ClientWorld field39358 = Class9216.field39357;
         Class9216.field39357 = field39357;
         method33808(Class9216.field39031.method5303());
         final int method33799 = method33799(field39358);
@@ -4395,7 +4395,7 @@ public class Class9216
         }
     }
     
-    public static Class1848 method33918() {
+    public static ClientWorld method33918() {
         return Class9216.field39357;
     }
     

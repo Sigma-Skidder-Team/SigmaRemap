@@ -19,7 +19,7 @@ public class Class4015 extends Block
     }
     
     @Override
-    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onBlockAdded(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7099.getBlock() != class7096.getBlock()) {
             this.method12197(class7097, class7098);
         }
@@ -61,7 +61,7 @@ public class Class4015 extends Block
                     }
                     else if (!(method1150.getBlock() instanceof Class3859)) {
                         if (method1152 == Material.OCEAN_PLANT || method1152 == Material.SEA_GRASS) {
-                            Block.method11837(method1150, class1847, method1149, method1150.getBlock().method11802() ? class1847.getTileEntity(method1149) : null);
+                            Block.spawnDrops(method1150, class1847, method1149, method1150.getBlock().method11802() ? class1847.getTileEntity(method1149) : null);
                             class1847.setBlockState(method1149, Blocks.AIR.getDefaultState(), 3);
                             ++n;
                             if (intValue < 6) {

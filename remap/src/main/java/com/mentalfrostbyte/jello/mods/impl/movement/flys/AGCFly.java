@@ -23,7 +23,7 @@ public class AGCFly extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15643 = 0;
         if (!AGCFly.mc.gameSettings.field23440.method1056()) {
             this.field15645 = false;
@@ -37,9 +37,9 @@ public class AGCFly extends Module
     
     @EventListener
     private void method10079(final Class5752 class5752) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5752.method17061() == AGCFly.mc.gameSettings.field23440.field2161.field32860) {
-                class5752.method16961(true);
+                class5752.setCancelled(true);
                 this.field15645 = true;
             }
         }
@@ -47,9 +47,9 @@ public class AGCFly extends Module
     
     @EventListener
     private void method10080(final Class5715 class5715) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5715.method16963() == AGCFly.mc.gameSettings.field23440.field2161.field32860) {
-                class5715.method16961(true);
+                class5715.setCancelled(true);
                 this.field15645 = false;
             }
         }
@@ -66,7 +66,7 @@ public class AGCFly extends Module
     @EventListener
     @Class6759
     public void method10081(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15643 <= ((this.field15644 != 3) ? this.field15644 : 1) - 2) {
                 if (this.field15643 == -1) {
                     class5717.method16975((this.field15644 != 3) ? 0.001 : 0.095);
@@ -85,12 +85,12 @@ public class AGCFly extends Module
     
     @EventListener
     public void method10082(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             ++this.field15643;
             if (this.field15643 != ((this.field15644 != 3) ? this.field15644 : 1)) {
                 if (this.field15643 > ((this.field15644 != 3) ? this.field15644 : 1)) {
                     if (this.field15643 % 20 != 0) {
-                        class5744.method16961(true);
+                        class5744.setCancelled(true);
                     }
                     else {
                         class5744.method17037(this.method10084() - 1.0E-4);
@@ -110,7 +110,7 @@ public class AGCFly extends Module
     
     @EventListener
     public void method10083(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4328) {
                 final Class4328 class5724 = (Class4328)method16998;

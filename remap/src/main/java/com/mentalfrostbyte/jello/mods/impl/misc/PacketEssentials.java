@@ -19,40 +19,40 @@ public class PacketEssentials extends Module
     
     @EventListener
     private void method10718(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!(class5723.method16998() instanceof Class4339)) {
                 if (!(class5723.method16998() instanceof Class4276)) {
                     if (!(class5723.method16998() instanceof Class4278)) {
                         if (!(class5723.method16998() instanceof Class4301)) {
                             if (!(class5723.method16998() instanceof Class4400)) {
                                 if (class5723.method16998() instanceof Class4268) {
-                                    class5723.method16961(true);
+                                    class5723.setCancelled(true);
                                 }
                             }
                             else {
-                                class5723.method16961(true);
+                                class5723.setCancelled(true);
                             }
                         }
                         else {
-                            class5723.method16961(true);
+                            class5723.setCancelled(true);
                         }
                     }
                     else {
                         final Class4278 class5724 = (Class4278)class5723.method16998();
-                        class5723.method16961(true);
+                        class5723.setCancelled(true);
                     }
                 }
                 else if (((Class4276)class5723.method16998()).method12831() == 1) {
-                    class5723.method16961(true);
+                    class5723.setCancelled(true);
                 }
             }
             else {
                 final Class4339 class5725 = (Class4339)class5723.method16998();
                 if (class5725.method13033() == EntityType.field28958) {
-                    class5723.method16961(true);
+                    class5723.setCancelled(true);
                 }
                 if (class5725.method13033() == EntityType.field28987) {
-                    class5723.method16961(true);
+                    class5723.setCancelled(true);
                 }
             }
         }

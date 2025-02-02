@@ -19,7 +19,7 @@ public class HawkFly extends Module { //Hawk tuah
     }
 
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15577 = HawkFly.mc.player.posX;
         this.field15578 = HawkFly.mc.player.posY;
         this.field15579 = HawkFly.mc.player.posZ;
@@ -37,7 +37,7 @@ public class HawkFly extends Module { //Hawk tuah
     @EventListener
     @Class6759
     public void method9987(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final double n = 0.125;
             if (this.field15576 != -1) {
                 if (this.field15576 == 0) {
@@ -55,7 +55,7 @@ public class HawkFly extends Module { //Hawk tuah
 
     @EventListener
     public void method9988(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             ++this.field15576;
             if (this.field15576 == 1) {
                 class5744.method17037(0.1);
@@ -67,7 +67,7 @@ public class HawkFly extends Module { //Hawk tuah
 
     @EventListener
     public void method9989(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4328) {
                 final Class4328 class5724 = (Class4328) method16998;
@@ -85,7 +85,7 @@ public class HawkFly extends Module { //Hawk tuah
 
     @EventListener
     public void method9990(final Class5741 class5741) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final double field15578 = this.field15578;
             final double field15579 = this.field15577;
             final double field15580 = this.field15579;

@@ -38,7 +38,7 @@ public class Class4935 extends Class4800
     private void method14838(final Class4862 class4862) {
         class4862.method14580((class4862, s, class4863, n) -> {
             this.field21159.field20753.method14398(s, class4863, n);
-            Client.method35173().method35200().method24263(new Class8124(s, class4863.getX(), class4863.getZ(), n));
+            Client.getInstance().method35200().method24263(new Class8124(s, class4863.getX(), class4863.getZ(), n));
             this.method14839();
         });
     }

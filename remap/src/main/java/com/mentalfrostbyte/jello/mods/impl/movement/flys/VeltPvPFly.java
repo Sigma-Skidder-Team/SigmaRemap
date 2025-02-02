@@ -23,7 +23,7 @@ public class VeltPvPFly extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15797 = VeltPvPFly.mc.player.posY;
         this.field15795 = 0;
         if (!VeltPvPFly.mc.gameSettings.field23440.method1056()) {
@@ -47,9 +47,9 @@ public class VeltPvPFly extends Module
     
     @EventListener
     private void method10381(final Class5752 class5752) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5752.method17061() == VeltPvPFly.mc.gameSettings.field23440.field2161.field32860) {
-                class5752.method16961(true);
+                class5752.setCancelled(true);
                 this.field15799 = true;
             }
         }
@@ -57,9 +57,9 @@ public class VeltPvPFly extends Module
     
     @EventListener
     private void method10382(final Class5715 class5715) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5715.method16963() == VeltPvPFly.mc.gameSettings.field23440.field2161.field32860) {
-                class5715.method16961(true);
+                class5715.setCancelled(true);
                 this.field15799 = false;
             }
         }
@@ -68,7 +68,7 @@ public class VeltPvPFly extends Module
     @EventListener
     @Class6759
     public void method10383(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final double n = this.getNumberSettingValueByName("Speed");
             if (this.field15795 <= 0) {
                 if (this.field15795 != -1) {
@@ -104,7 +104,7 @@ public class VeltPvPFly extends Module
     
     @EventListener
     public void method10384(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             ++this.field15795;
             if (this.field15795 != 2) {
                 if (this.field15795 > 2) {
@@ -113,7 +113,7 @@ public class VeltPvPFly extends Module
                         this.field15796 += 2;
                     }
                     else {
-                        class5744.method16961(true);
+                        class5744.setCancelled(true);
                     }
                 }
             }
@@ -127,7 +127,7 @@ public class VeltPvPFly extends Module
     
     @EventListener
     public void method10385(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final IPacket method16998 = class5723.method16998();
             if (!(method16998 instanceof Class4328)) {
                 if (method16998 instanceof Class4378) {
@@ -135,7 +135,7 @@ public class VeltPvPFly extends Module
                     if (this.field15796 > 0) {
                         if (method16999.contains("Now leaving: §") || method16999.contains("Now entering: §")) {
                             --this.field15796;
-                            class5723.method16961(true);
+                            class5723.setCancelled(true);
                         }
                     }
                 }
@@ -153,7 +153,7 @@ public class VeltPvPFly extends Module
     
     @EventListener
     public void method10386(final Class5721 class5721) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final IPacket method16990 = class5721.method16990();
             if (method16990 instanceof Class4353) {
                 final Class4353 class5722 = (Class4353)method16990;
@@ -166,7 +166,7 @@ public class VeltPvPFly extends Module
     
     @EventListener
     public void method10387(final Class5741 class5741) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final double field15797 = this.field15797;
             VeltPvPFly.mc.player.posY = field15797;
             VeltPvPFly.mc.player.lastTickPosY = field15797;

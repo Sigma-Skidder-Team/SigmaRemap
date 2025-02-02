@@ -30,17 +30,17 @@ public class AutoTotem extends Module
     }
     
     private void method10475() {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (AutoTotem.mc.player != null) {
                 if (!AutoTotem.mc.player.field3025.field27304) {
                     if (AutoTotem.mc.player.method2718(Class2215.field13601).getItem() == Items.field31590) {
                         return;
                     }
-                    final int method29319 = Class8639.method29319(Items.field31590);
+                    final int method29319 = InvManagerUtil.method29319(Items.field31590);
                     if (method29319 != -1) {
-                        AutoTotem.mc.field4682.method27324(0, (method29319 >= 9) ? method29319 : (method29319 + 36), 0, Class2133.field12437, AutoTotem.mc.player);
-                        AutoTotem.mc.field4682.method27324(0, 45, 0, Class2133.field12437, AutoTotem.mc.player);
-                        AutoTotem.mc.field4682.method27324(0, (method29319 >= 9) ? method29319 : (method29319 + 36), 0, Class2133.field12437, AutoTotem.mc.player);
+                        AutoTotem.mc.playerController.method27324(0, (method29319 >= 9) ? method29319 : (method29319 + 36), 0, Class2133.field12437, AutoTotem.mc.player);
+                        AutoTotem.mc.playerController.method27324(0, 45, 0, Class2133.field12437, AutoTotem.mc.player);
+                        AutoTotem.mc.playerController.method27324(0, (method29319 >= 9) ? method29319 : (method29319 + 36), 0, Class2133.field12437, AutoTotem.mc.player);
                     }
                 }
             }

@@ -28,7 +28,7 @@ public class Class8617
     }
     
     public void method29223() {
-        Client.method35173().method35188().method21094(this);
+        Client.getInstance().method35188().method21094(this);
     }
     
     @EventListener
@@ -39,7 +39,7 @@ public class Class8617
         if (!this.field36162.player.onGround) {
             this.field36157 = 0;
         }
-        if (this.field36162.field4700 != null) {
+        if (this.field36162.currentScreen != null) {
             this.field36156 = 0;
         }
         if (!Class7482.method23148()) {
@@ -79,7 +79,7 @@ public class Class8617
         return this.field36157;
     }
     
-    public int method29231() {
+    public int focusGameTicks() {
         return this.field36156;
     }
     

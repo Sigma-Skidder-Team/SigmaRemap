@@ -56,7 +56,7 @@ public class Class7658
     }
     
     public void method24261() {
-        Client.method35173().method35188().method21094(this);
+        Client.getInstance().method35188().method21094(this);
         final int n = -7687425;
         for (int i = 0; i < 16; ++i) {
             for (int j = 0; j < 16; ++j) {
@@ -96,7 +96,7 @@ public class Class7658
             Class9532.method35585(class89, file);
         }
         catch (final JSONException | IOException ex) {
-            Client.method35173().method35187().method20242(((Throwable)ex).getMessage());
+            Client.getInstance().method35187().method20242(((Throwable)ex).getMessage());
         }
     }
     

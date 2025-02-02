@@ -27,12 +27,12 @@ public class Class4024 extends Class4022
     }
     
     @Override
-    public int method11826(final Class1852 class1852) {
+    public int tickRate(final Class1852 class1852) {
         return 2;
     }
     
     @Override
-    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onBlockAdded(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         final Direction[] values = Direction.values();
         for (int length = values.length, i = 0; i < length; ++i) {
             class7097.method6696(class7098.method1149(values[i]), this);
@@ -40,7 +40,7 @@ public class Class4024 extends Class4022
     }
     
     @Override
-    public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (!b) {
             final Direction[] values = Direction.values();
             for (int length = values.length, i = 0; i < length; ++i) {
@@ -94,7 +94,7 @@ public class Class4024 extends Class4022
     public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         if (class7096.get((IProperty<Boolean>)Class4024.field18113) == this.method12216(class7097, class7098, class7096)) {
             if (!class7097.method6833().method21342(class7098, this)) {
-                class7097.method6833().method21345(class7098, this, this.method11826(class7097));
+                class7097.method6833().method21345(class7098, this, this.tickRate(class7097));
             }
         }
     }

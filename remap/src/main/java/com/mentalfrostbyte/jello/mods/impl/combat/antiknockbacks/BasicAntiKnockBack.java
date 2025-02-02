@@ -24,14 +24,14 @@ public class BasicAntiKnockBack extends Module
     
     @EventListener
     private void method10567(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (BasicAntiKnockBack.mc.player != null) {
                 if (class5723.method16998() instanceof Class4273) {
                     final Class4273 class5724 = (Class4273)class5723.method16998();
                     if (class5724.method12822() == BasicAntiKnockBack.mc.player.getEntityId()) {
                         if (this.getNumberSettingValueByName("H-Multiplier") == 0.0f) {
                             if (this.getNumberSettingValueByName("V-Multiplier") == 0.0f) {
-                                class5723.method16961(true);
+                                class5723.setCancelled(true);
                             }
                         }
                         class5724.field19165 *= (int)this.getNumberSettingValueByName("H-Multiplier");

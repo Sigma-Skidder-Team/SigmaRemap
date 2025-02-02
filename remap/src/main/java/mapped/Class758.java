@@ -11,8 +11,8 @@ import com.mojang.authlib.GameProfile;
 
 public class Class758 extends Class754
 {
-    public Class758(final Class1848 class1848, final GameProfile gameProfile) {
-        super(class1848, gameProfile);
+    public Class758(final ClientWorld clientWorld, final GameProfile gameProfile) {
+        super(clientWorld, gameProfile);
     }
     
     @Override

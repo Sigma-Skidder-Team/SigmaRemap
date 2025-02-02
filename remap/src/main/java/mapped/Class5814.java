@@ -424,10 +424,10 @@ public class Class5814 implements Class5813
     @Override
     public void method17449(final Class4267 class4267) {
         Class8663.method29631((IPacket<Class5814>)class4267, this, this.field23857.method2940());
-        this.field23857.field3006.method2351(class4267.method12809());
-        this.field23857.field3039.method17469(new Class4272(-2, this.field23857.field3006.field2743, this.field23857.field3006.getStackInSlot(this.field23857.field3006.field2743)));
-        this.field23857.field3039.method17469(new Class4272(-2, class4267.method12809(), this.field23857.field3006.getStackInSlot(class4267.method12809())));
-        this.field23857.field3039.method17469(new Class4388(this.field23857.field3006.field2743));
+        this.field23857.inventory.method2351(class4267.method12809());
+        this.field23857.field3039.method17469(new Class4272(-2, this.field23857.inventory.field2743, this.field23857.inventory.getStackInSlot(this.field23857.inventory.field2743)));
+        this.field23857.field3039.method17469(new Class4272(-2, class4267.method12809(), this.field23857.inventory.getStackInSlot(class4267.method12809())));
+        this.field23857.field3039.method17469(new Class4388(this.field23857.inventory.field2743));
     }
     
     @Override
@@ -909,7 +909,7 @@ public class Class5814 implements Class5813
     public void method17434(final Class4321 class4321) {
         Class8663.method29631((IPacket<Class5814>)class4321, this, this.field23857.method2940());
         if (class4321.method12985() >= 0 && class4321.method12985() < Class464.method2346()) {
-            this.field23857.field3006.field2743 = class4321.method12985();
+            this.field23857.inventory.field2743 = class4321.method12985();
             this.field23857.method2946();
         }
         else {
@@ -1216,13 +1216,13 @@ public class Class5814 implements Class5813
             final boolean b4 = b3;
             if (b2 && b4) {
                 if (!method12875.method27620()) {
-                    this.field23857.field3008.method10882(class4287.method12874(), method12875);
+                    this.field23857.container.method10882(class4287.method12874(), method12875);
                 }
                 else {
-                    this.field23857.field3008.method10882(class4287.method12874(), ItemStack.EMPTY);
+                    this.field23857.container.method10882(class4287.method12874(), ItemStack.EMPTY);
                 }
-                this.field23857.field3008.method10887(this.field23857, true);
-                this.field23857.field3008.method10876();
+                this.field23857.container.method10887(this.field23857, true);
+                this.field23857.container.method10876();
             }
             else if (b) {
                 if (b4) {

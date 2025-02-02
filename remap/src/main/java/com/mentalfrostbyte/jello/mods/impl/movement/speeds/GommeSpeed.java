@@ -20,7 +20,7 @@ public class GommeSpeed extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15929 = 0;
         this.field15930 = 0;
         this.field15932 = Class7482.method23144()[0];
@@ -33,7 +33,7 @@ public class GommeSpeed extends Module
     
     @EventListener
     public void method10548(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4328) {
                 this.field15930 = 0;
             }
@@ -42,7 +42,7 @@ public class GommeSpeed extends Module
     
     @EventListener
     public void method10549(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (GommeSpeed.mc.player.onGround && ColorUtils.method19114()) {
                 this.field15929 = 0;
                 class5717.method16975(Class7482.method23141());

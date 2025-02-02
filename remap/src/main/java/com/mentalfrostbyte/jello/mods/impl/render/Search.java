@@ -44,7 +44,7 @@ public class Search extends Module
     
     @EventListener
     public void method10370(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4271) {
                 this.method10371(Search.mc.world.method6685(((Class4271)class5723.method16998()).method12818()).method7019());
             }
@@ -128,7 +128,7 @@ public class Search extends Module
     
     @EventListener
     public void method10375(final Class5743 class5743) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (Search.mc.player.ticksExisted >= 20) {
@@ -166,14 +166,14 @@ public class Search extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15793.clear();
         this.field15794.clear();
     }
     
     @EventListener
     public void method10376(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             this.method10377();
         }
     }

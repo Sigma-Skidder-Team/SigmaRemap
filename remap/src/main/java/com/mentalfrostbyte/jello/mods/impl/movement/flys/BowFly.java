@@ -35,10 +35,10 @@ public class BowFly extends Module
     
     @EventListener
     public void method10304(final Class5751 class5751) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (BowFly.mc.player.method2715(Class316.field1877).getItem() == Items.field31279) {
                 if (this.field15760 >= 1) {
-                    class5751.method16961(true);
+                    class5751.setCancelled(true);
                 }
             }
         }
@@ -46,7 +46,7 @@ public class BowFly extends Module
     
     @EventListener
     public void method10305(final Class5717 class5717) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         final double field22771 = class5717.method16978().y;
@@ -72,7 +72,7 @@ public class BowFly extends Module
     
     @EventListener
     public void method10306(final Class5744 class5744) {
-        if (!this.method9906() || !class5744.method17046()) {
+        if (!this.isEnabled() || !class5744.method17046()) {
             return;
         }
         if (!this.field15761.method23937()) {
@@ -85,7 +85,7 @@ public class BowFly extends Module
         if (BowFly.mc.player.method2715(Class316.field1877).getItem() == Items.field31279) {
             if (InvManager.method10673(Items.field31280) == 0) {
                 if (this.field15761.method23935() > 5000L) {
-                    Client.method35173().method35197().method25776(new Class6224("BowFly", "You have no arrows"));
+                    Client.getInstance().method35197().method25776(new Class6224("BowFly", "You have no arrows"));
                     this.field15761.method23934();
                 }
                 if (BowFly.mc.timer.timerSpeed == 0.1f) {
@@ -132,13 +132,13 @@ public class BowFly extends Module
     
     private int method10307() {
         for (int i = 36; i < 45; ++i) {
-            if (BowFly.mc.player.field3008.method10878(i).method20054() && BowFly.mc.player.field3008.method10878(i).method20053().getItem() == Items.field31279) {
+            if (BowFly.mc.player.container.getSlot(i).method20054() && BowFly.mc.player.container.getSlot(i).method20053().getItem() == Items.field31279) {
                 return i - 36;
             }
         }
         for (int j = 9; j < 36; ++j) {
-            if (BowFly.mc.player.field3008.method10878(j).method20054() && BowFly.mc.player.field3008.method10878(j).method20053().getItem() == Items.field31279) {
-                Class8639.method29370(j, 7);
+            if (BowFly.mc.player.container.getSlot(j).method20054() && BowFly.mc.player.container.getSlot(j).method20053().getItem() == Items.field31279) {
+                InvManagerUtil.method29370(j, 7);
                 return 7;
             }
         }

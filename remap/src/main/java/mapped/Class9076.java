@@ -36,7 +36,7 @@ public class Class9076
     }
     
     public boolean method32701(final Class8241 class8241) {
-        if (Client.method35173().method35209() == Class2209.field13465 && class8241.field33839.equals("Classic")) {
+        if (Client.getInstance().method35209() == Class2209.field13465 && class8241.field33839.equals("Classic")) {
             return false;
         }
         if (this.field38428.size() <= 1) {
@@ -69,7 +69,7 @@ public class Class9076
     }
     
     public void method32704(String s) throws IOException {
-        final File file = new File(Client.method35173().method35208() + "/profiles/");
+        final File file = new File(Client.getInstance().method35208() + "/profiles/");
         if (!file.exists()) {
             file.mkdirs();
         }
@@ -83,7 +83,7 @@ public class Class9076
                 }
             }
             catch (final JSONException JSONException) {
-                Client.method35173().method35187().method20241("Unable to load profile from " + file2.getName());
+                Client.getInstance().method35187().method20241("Unable to load profile from " + file2.getName());
             }
         }
         if (this.field38428.size() == 0 || this.field38429 == null) {
@@ -92,7 +92,7 @@ public class Class9076
             }
             this.field38428.add(this.field38429 = new Class8241(s, new JSONObject()));
         }
-        Client.method35173().method35189().method21545(this.field38429.field33838);
+        Client.getInstance().method35189().method21545(this.field38429.field33838);
     }
     
     public boolean method32705(final String s) {
@@ -107,8 +107,8 @@ public class Class9076
     }
     
     public void method32706() throws IOException {
-        this.field38429.field33838 = Client.method35173().method35189().method21546(new JSONObject());
-        final File file = new File(Client.method35173().method35208() + "/profiles/");
+        this.field38429.field33838 = Client.getInstance().method35189().method21546(new JSONObject());
+        final File file = new File(Client.getInstance().method35208() + "/profiles/");
         if (!file.exists()) {
             file.mkdirs();
         }
@@ -117,7 +117,7 @@ public class Class9076
             listFiles[i].delete();
         }
         for (final Class8241 class8241 : this.field38428) {
-            final File file2 = new File(Client.method35173().method35208() + "/profiles/" + class8241.field33839 + ".profile");
+            final File file2 = new File(Client.getInstance().method35208() + "/profiles/" + class8241.field33839 + ".profile");
             if (!file2.exists()) {
                 file2.createNewFile();
             }
@@ -130,20 +130,20 @@ public class Class9076
     }
     
     public void method32708(final Class8241 field38429) {
-        Client.method35173().method35179();
+        Client.getInstance().method35179();
         Class1607.field8978 = new HashMap<Object, Integer>();
-        if (Client.method35173().method35209() != Class2209.field13465) {
-            this.field38429.field33838 = Client.method35173().method35189().method21546(new JSONObject());
+        if (Client.getInstance().method35209() != Class2209.field13465) {
+            this.field38429.field33838 = Client.getInstance().method35189().method21546(new JSONObject());
             this.field38429 = field38429;
-            Client.method35173().method35206().method13301("profile", field38429.field33839);
-            Client.method35173().method35189().method21545(field38429.field33838);
-            Client.method35173().method35179();
+            Client.getInstance().method35206().method13301("profile", field38429.field33839);
+            Client.getInstance().method35189().method21545(field38429.field33838);
+            Client.getInstance().method35179();
             return;
         }
         this.field38429.field33838 = field38429.method27290();
-        Client.method35173().method35206().method13301("profile", "Classic");
-        Client.method35173().method35189().method21545(field38429.field33838);
-        Client.method35173().method35179();
+        Client.getInstance().method35206().method13301("profile", "Classic");
+        Client.getInstance().method35189().method21545(field38429.field33838);
+        Client.getInstance().method35179();
     }
     
     public List<Class8241> method32709() {

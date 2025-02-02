@@ -22,7 +22,7 @@ public class AntiKnockBack extends ModuleWithSettings
     
     @Override
     public String getName2() {
-        if (Client.method35173().method35209() != Class2209.field13465) {
+        if (Client.getInstance().method35209() != Class2209.field13465) {
             return super.getName2();
         }
         return "AntiVelocity";

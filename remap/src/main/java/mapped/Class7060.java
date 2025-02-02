@@ -49,14 +49,14 @@ public class Class7060
     }
     
     private void method21542(final Class<? extends Module> clazz) {
-        Client.method35173().method35188().method21095(clazz);
+        Client.getInstance().method35188().method21095(clazz);
         this.field27468.remove(clazz);
     }
     
     private void method21543() {
         Collections.sort(this.field27471, new Class4450(this));
         for (final Module class3167 : this.field27471) {
-            Client.method35173().method35188().method21094(class3167);
+            Client.getInstance().method35188().method21094(class3167);
             this.field27468.put(class3167.getClass(), class3167);
         }
         Class9146.field38766 = true;
@@ -208,7 +208,7 @@ public class Class7060
                     method26640 = Class8105.method26636(method26639, "name", null);
                 }
                 catch (final JSONException class4407) {
-                    Client.method35173().method35187().method20241("Invalid name in mod list config");
+                    Client.getInstance().method35187().method20241("Invalid name in mod list config");
                 }
                 for (final Module class4408 : this.field27468.values()) {
                     if (class4408.getName().equals(method26640)) {
@@ -216,7 +216,7 @@ public class Class7060
                             class4408.method9895(method26639);
                         }
                         catch (final JSONException class4409) {
-                            Client.method35173().method35187().method20241("Could not initialize mod " + class4408.getName() + " from config. All settings for this mod have been erased.");
+                            Client.getInstance().method35187().method20241("Could not initialize mod " + class4408.getName() + " from config. All settings for this mod have been erased.");
                         }
                         break;
                     }
@@ -224,24 +224,24 @@ public class Class7060
             }
         }
         else {
-            Client.method35173().method35187().method20240("Mods array does not exist in config. Assuming a blank profile...");
+            Client.getInstance().method35187().method20240("Mods array does not exist in config. Assuming a blank profile...");
         }
         for (final Module class4410 : this.field27468.values()) {
-            if (class4410.method9906()) {
-                Client.method35173().method35188().method21092(class4410);
+            if (class4410.isEnabled()) {
+                Client.getInstance().method35188().method21092(class4410);
                 if (class4410 instanceof ModuleWithSettings) {
                     final ModuleWithSettings class4411 = (ModuleWithSettings)class4410;
                     if (class4411.field15743 != null) {
-                        Client.method35173().method35188().method21092(class4411.field15743);
+                        Client.getInstance().method35188().method21092(class4411.field15743);
                     }
                 }
             }
             else {
-                Client.method35173().method35188().method21093(class4410);
+                Client.getInstance().method35188().method21093(class4410);
                 if (class4410 instanceof ModuleWithSettings) {
                     final Module[] field15742 = ((ModuleWithSettings)class4410).field15742;
                     for (int length = field15742.length, j = 0; j < length; ++j) {
-                        Client.method35173().method35188().method21093(field15742[j]);
+                        Client.getInstance().method35188().method21093(field15742[j]);
                     }
                 }
             }
@@ -291,7 +291,7 @@ public class Class7060
             method13268 = JSONObject.getString("profile");
         }
         catch (final JSONException class4406) {}
-        if (Client.method35173().method35209() == Class2209.field13465) {
+        if (Client.getInstance().method35209() == Class2209.field13465) {
             method13268 = "Classic";
         }
         this.field27469 = new Class9076();
@@ -301,7 +301,7 @@ public class Class7060
             this.field27470.method21963(JSONObject);
         }
         catch (final IOException ex) {
-            Client.method35173().method35187().method20242("Could not load profiles!");
+            Client.getInstance().method35187().method20242("Could not load profiles!");
             ex.printStackTrace();
             throw new RuntimeException("sorry m8");
         }
@@ -317,7 +317,7 @@ public class Class7060
         }
         catch (final IOException ex) {
             ex.printStackTrace();
-            Client.method35173().method35187().method20241("Unable to save mod profiles...");
+            Client.getInstance().method35187().method20241("Unable to save mod profiles...");
         }
     }
     
@@ -362,7 +362,7 @@ public class Class7060
     public List<Module> method21555() {
         final ArrayList list = new ArrayList();
         for (final Module class3167 : this.field27468.values()) {
-            if (!class3167.method9906()) {
+            if (!class3167.isEnabled()) {
                 continue;
             }
             list.add(class3167);

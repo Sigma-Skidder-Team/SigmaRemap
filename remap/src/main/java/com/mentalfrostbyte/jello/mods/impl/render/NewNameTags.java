@@ -57,7 +57,7 @@ public class NewNameTags extends Module
     
     @EventListener
     private void method10329(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!(this.field15784 = this.method9883("Furnaces"))) {
                 this.field15778.clear();
             }
@@ -85,7 +85,7 @@ public class NewNameTags extends Module
                 if (class5744.method1823()) {
                     continue;
                 }
-                if (Client.method35173().method35191().method31751(class5744)) {
+                if (Client.getInstance().method35191().method31751(class5744)) {
                     continue;
                 }
                 this.field15783.add(class5744);
@@ -95,7 +95,7 @@ public class NewNameTags extends Module
     
     @EventListener
     private void method10330(final Class5721 class5721) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5721.method16990() instanceof Class4329) {
                 final Class4329 class5722 = (Class4329)class5721.method16990();
                 if (NewNameTags.mc.world.getBlockState(class5722.method13000().getPos()).method21696() instanceof Class3951) {
@@ -107,12 +107,12 @@ public class NewNameTags extends Module
                 if (method10332 == null) {
                     return;
                 }
-                if (NewNameTags.mc.field4700 instanceof Class522) {
-                    final Class522 class5723 = (Class522) NewNameTags.mc.field4700;
-                    method10332.field25240 = class5723.method2993().method10878(0).method20053();
-                    method10332.field25241 = new ItemStack(class5723.method2993().method10878(1).method20053().getItem());
-                    method10332.field25241.field34176 = class5723.method2993().method10878(1).method20053().field34176;
-                    method10332.field25242 = class5723.method2993().method10878(2).method20053();
+                if (NewNameTags.mc.currentScreen instanceof Class522) {
+                    final Class522 class5723 = (Class522) NewNameTags.mc.currentScreen;
+                    method10332.field25240 = class5723.method2993().getSlot(0).method20053();
+                    method10332.field25241 = new ItemStack(class5723.method2993().getSlot(1).method20053().getItem());
+                    method10332.field25241.field34176 = class5723.method2993().getSlot(1).method20053().field34176;
+                    method10332.field25242 = class5723.method2993().getSlot(2).method20053();
                 }
             }
         }
@@ -120,7 +120,7 @@ public class NewNameTags extends Module
     
     @EventListener
     private void method10331(final Class5723 class5723) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (class5723.method16998() instanceof Class4308) {
@@ -188,7 +188,7 @@ public class NewNameTags extends Module
     
     @EventListener
     public void method10333(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             RenderSystem.method30084(33986, 240.0f, 240.0f);
             final boolean method9883 = this.method9883("Magnify");
             for (final Entity class5740 : this.field15783) {
@@ -331,9 +331,9 @@ public class NewNameTags extends Module
     public void method10336(final double n, final double n2, final double n3, final Entity class399, final float n4, final String s) {
         final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         String method9887 = (s == null) ? class399.getName().getUnformattedComponentText().replaceAll("§.", "") : s;
-        if (Client.method35173().method35189().method21551(NameProtect.class).method9906()) {
+        if (Client.getInstance().method35189().method21551(NameProtect.class).isEnabled()) {
             if (method9887.equals(NewNameTags.mc.method5287().method33692())) {
-                method9887 = Client.method35173().method35189().method21551(NameProtect.class).method9887("Username");
+                method9887 = Client.getInstance().method35189().method21551(NameProtect.class).getStringSettingValueByName("Username");
             }
         }
         if (method9887.length() != 0) {
@@ -355,8 +355,8 @@ public class NewNameTags extends Module
             GL11.glRotatef(NewNameTags.mc.field4644.method5833().method18163(), 1.0f, 0.0f, 0.0f);
             GL11.glScalef(-0.009f * n4, -0.009f * n4, -0.009f * n4);
             int n8 = this.field15786;
-            if (!Client.method35173().method35190().method29878(class399)) {
-                if (Client.method35173().method35190().method29880(class399)) {
+            if (!Client.getInstance().method35190().method29878(class399)) {
+                if (Client.getInstance().method35190().method29880(class399)) {
                     n8 = ColorUtils.applyAlpha(-6750208, 0.5f);
                 }
             }
@@ -385,7 +385,7 @@ public class NewNameTags extends Module
             }
             RenderUtil.drawString(field40314, 0.0f, -20.0f, method9887, ClientColors.LIGHT_GREYISH_BLUE.color);
             RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, 10.0f, str + string, ClientColors.LIGHT_GREYISH_BLUE.color);
-            final Class6538 method9890 = Client.method35173().method35201().field25697.method33657(class399);
+            final Class6538 method9890 = Client.getInstance().method35201().field25697.method33657(class399);
             if (method9890 != null) {
                 RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, -30.0f, method9890.field25986, ClientColors.LIGHT_GREYISH_BLUE.color);
             }
@@ -401,9 +401,9 @@ public class NewNameTags extends Module
     
     @EventListener
     public void method10337(final Class5749 class5749) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5749.method17056() instanceof PlayerEntity) {
-                class5749.method16961(true);
+                class5749.setCancelled(true);
             }
         }
     }

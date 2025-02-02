@@ -17,8 +17,8 @@ public class Class3823 extends Item
 {
     private static final Logger field17375;
     
-    public Class3823(final Class8959 class8959) {
-        super(class8959);
+    public Class3823(final Properties properties) {
+        super(properties);
     }
     
     @Override

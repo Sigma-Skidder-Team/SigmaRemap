@@ -17,7 +17,7 @@ public abstract class Class754 extends PlayerEntity
     public float field4057;
     public float field4058;
     public float field4059;
-    public final Class1848 field4060;
+    public final ClientWorld field4060;
     private ResourceLocation field4061;
     private long field4062;
     private boolean field4063;
@@ -26,7 +26,7 @@ public abstract class Class754 extends PlayerEntity
     public Class795 field4066;
     private static final ResourceLocation field4067;
     
-    public Class754(final Class1848 field4060, final GameProfile gameProfile) {
+    public Class754(final ClientWorld field4060, final GameProfile gameProfile) {
         super(field4060, gameProfile);
         this.field4061 = null;
         this.field4062 = 0L;
@@ -154,7 +154,7 @@ public abstract class Class754 extends PlayerEntity
             }
         }
         final Class5735 class5735 = new Class5735(Class9570.field41295.method22605() ? Class9570.method35815(Class9570.field41295, this, f) : f);
-        Client.method35173().method35188().method21097(class5735);
+        Client.getInstance().method35188().method21097(class5735);
         return class5735.field23300;
     }
     

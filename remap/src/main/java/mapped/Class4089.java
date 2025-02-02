@@ -14,8 +14,8 @@ import java.util.List;
 
 public class Class4089 extends Item
 {
-    public Class4089(final Class8959 class8959) {
-        super(class8959);
+    public Class4089(final Properties properties) {
+        super(properties);
     }
     
     @Override
@@ -50,7 +50,7 @@ public class Class4089 extends Item
                 return new ItemStack(Items.field31442);
             }
             if (class8324 != null) {
-                class8324.field3006.method2362(new ItemStack(Items.field31442));
+                class8324.inventory.method2362(new ItemStack(Items.field31442));
             }
         }
         return class8321;
@@ -74,11 +74,11 @@ public class Class4089 extends Item
     
     @Override
     public String method11718(final ItemStack class8321) {
-        return Class5333.method16474(class8321).method26448(this.method11717() + ".effect.");
+        return Class5333.method16474(class8321).method26448(this.getTranslationKey() + ".effect.");
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
         Class5333.method16478(class8321, list, 1.0f);
     }
     

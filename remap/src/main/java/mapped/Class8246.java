@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
-public class Class8246 extends Class8245
+public class Class8246 extends PlayerController
 {
     private static String[] field33874;
     private boolean field33875;
@@ -50,10 +50,10 @@ public class Class8246 extends Class8245
     }
     
     @Override
-    public Class2201 method27319(final Class756 class756, final Class1848 class757, final Class316 class758, final BlockRayTraceResult class759) {
+    public Class2201 method27319(final ClientPlayerEntity clientPlayerEntity, final ClientWorld class757, final Class316 class758, final BlockRayTraceResult class759) {
         this.field33875 = true;
         this.field33876 = class759.getPos();
-        final Class2201 method27319 = super.method27319(class756, class757, class758, class759);
+        final Class2201 method27319 = super.method27319(clientPlayerEntity, class757, class758, class759);
         this.field33875 = false;
         return method27319;
     }
@@ -65,7 +65,7 @@ public class Class8246 extends Class8245
     }
     
     @Override
-    public Class2201 method27323(final PlayerEntity playerEntity, final Entity field33877, final Class7007 class513, final Class316 class514) {
+    public Class2201 method27323(final PlayerEntity playerEntity, final Entity field33877, final EntityRayTraceResult class513, final Class316 class514) {
         this.field33877 = field33877;
         return super.method27323(playerEntity, field33877, class513, class514);
     }

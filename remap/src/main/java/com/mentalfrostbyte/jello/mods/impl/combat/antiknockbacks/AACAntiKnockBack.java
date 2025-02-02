@@ -28,7 +28,7 @@ public class AACAntiKnockBack extends Module
     
     @EventListener
     private void method10593(final Class5717 class5717) {
-        if (!this.method9906() || AACAntiKnockBack.mc.player == null) {
+        if (!this.isEnabled() || AACAntiKnockBack.mc.player == null) {
             return;
         }
         if (!this.method10595()) {
@@ -73,7 +73,7 @@ public class AACAntiKnockBack extends Module
     
     @EventListener
     private void method10594(final Class5723 class5723) {
-        if (this.method9906() && AACAntiKnockBack.mc.player != null) {
+        if (this.isEnabled() && AACAntiKnockBack.mc.player != null) {
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4273) {
                 if (this.method10595()) {

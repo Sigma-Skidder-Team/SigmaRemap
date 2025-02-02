@@ -35,7 +35,7 @@ public class BooleanSetting extends Setting<Boolean> {
     public void method15207(final Boolean b, final boolean b2) {
         if (this.field21516) {
             if (b2) {
-                Client.method35173().method35197().method25776(new Class6224("Premium", "Not yet available for free version"));
+                Client.getInstance().method35197().method25776(new Class6224("Premium", "Not yet available for free version"));
             }
         }
         super.method15200(b, b2);

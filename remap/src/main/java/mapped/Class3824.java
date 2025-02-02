@@ -12,8 +12,8 @@ public class Class3824 extends Item
 {
     private static String[] field17376;
     
-    public Class3824(final Class8959 class8959) {
-        super(class8959);
+    public Class3824(final Properties properties) {
+        super(properties);
     }
     
     public Class402 method11758(final World class1847, final ItemStack class1848, final LivingEntity class1849) {

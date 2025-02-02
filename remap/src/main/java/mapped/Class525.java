@@ -36,7 +36,7 @@ public class Class525 extends Class517<Class3434>
     private final Map<ResourceLocation, Class7909<Item>> field3133;
     
     public Class525(final PlayerEntity playerEntity) {
-        super(new Class3434(playerEntity), playerEntity.field3006, new StringTextComponent(""));
+        super(new Class3434(playerEntity), playerEntity.inventory, new StringTextComponent(""));
         this.field3133 = Maps.newTreeMap();
         playerEntity.field3009 = this.field3077;
         this.passEvents = true;
@@ -46,7 +46,7 @@ public class Class525 extends Class517<Class3434>
     
     @Override
     public void tick() {
-        if (this.minecraft.field4682.method27332()) {
+        if (this.minecraft.playerController.method27332()) {
             if (this.field3127 != null) {
                 this.field3127.method3376();
             }
@@ -67,18 +67,18 @@ public class Class525 extends Class517<Class3434>
         if (class6601 == null) {
             if (Class525.field3124 != Class7207.field28005.method22108()) {
                 if (class6602 != Class2133.field12442) {
-                    final Class464 field3006 = this.minecraft.player.field3006;
+                    final Class464 field3006 = this.minecraft.player.inventory;
                     if (!field3006.method2375().method27620()) {
                         if (this.field3132) {
                             if (n2 == 0) {
                                 this.minecraft.player.method2822(field3006.method2375(), true);
-                                this.minecraft.field4682.method27328(field3006.method2375());
+                                this.minecraft.playerController.method27328(field3006.method2375());
                                 field3006.method2374(ItemStack.EMPTY);
                             }
                             if (n2 == 1) {
                                 final ItemStack method27621 = field3006.method2375().method27621(1);
                                 this.minecraft.player.method2822(method27621, true);
-                                this.minecraft.field4682.method27328(method27621);
+                                this.minecraft.playerController.method27328(method27621);
                             }
                         }
                     }
@@ -90,13 +90,13 @@ public class Class525 extends Class517<Class3434>
             return;
         }
         if (class6601 == this.field3129 && b) {
-            for (int i = 0; i < this.minecraft.player.field3008.method10875().size(); ++i) {
-                this.minecraft.field4682.method27327(ItemStack.EMPTY, i);
+            for (int i = 0; i < this.minecraft.player.container.method10875().size(); ++i) {
+                this.minecraft.playerController.method27327(ItemStack.EMPTY, i);
             }
         }
         else if (Class525.field3124 != Class7207.field28005.method22108()) {
             if (class6602 != Class2133.field12442 && class6601.field26173 == Class525.field3123) {
-                final Class464 field3007 = this.minecraft.player.field3006;
+                final Class464 field3007 = this.minecraft.player.inventory;
                 final ItemStack method27622 = field3007.method2375();
                 final ItemStack method27623 = class6601.method20053();
                 if (class6602 == Class2133.field12439) {
@@ -105,8 +105,8 @@ public class Class525 extends Class517<Class3434>
                             if (n2 < 9) {
                                 final ItemStack method27624 = method27623.method27641();
                                 method27624.method27691(method27624.method27628());
-                                this.minecraft.player.field3006.method2160(n2, method27624);
-                                this.minecraft.player.field3008.method10876();
+                                this.minecraft.player.inventory.method2160(n2, method27624);
+                                this.minecraft.player.container.method10876();
                             }
                         }
                     }
@@ -127,7 +127,7 @@ public class Class525 extends Class517<Class3434>
                         final ItemStack method27626 = method27623.method27641();
                         method27626.method27691((n2 != 0) ? method27626.method27628() : 1);
                         this.minecraft.player.method2822(method27626, true);
-                        this.minecraft.field4682.method27328(method27626);
+                        this.minecraft.playerController.method27328(method27626);
                     }
                     return;
                 }
@@ -167,11 +167,11 @@ public class Class525 extends Class517<Class3434>
                 }
             }
             else if (this.field3077 != null) {
-                final ItemStack class6603 = (class6601 != null) ? this.field3077.method10878(class6601.field26174).method20053() : ItemStack.EMPTY;
+                final ItemStack class6603 = (class6601 != null) ? this.field3077.getSlot(class6601.field26174).method20053() : ItemStack.EMPTY;
                 this.field3077.method10879((class6601 != null) ? class6601.field26174 : n, n2, class6602, this.minecraft.player);
                 if (Class3418.method10890(n2) != 2) {
                     if (class6601 != null) {
-                        this.minecraft.field4682.method27327(this.field3077.method10878(class6601.field26174).method20053(), class6601.field26174 - ((Class3434)this.field3077).field16151.size() + 9 + 36);
+                        this.minecraft.playerController.method27327(this.field3077.getSlot(class6601.field26174).method20053(), class6601.field26174 - ((Class3434)this.field3077).field16151.size() + 9 + 36);
                         final int n3 = 45 + n2;
                         if (class6602 != Class2133.field12439) {
                             if (class6602 == Class2133.field12441) {
@@ -179,19 +179,19 @@ public class Class525 extends Class517<Class3434>
                                     final ItemStack method27628 = class6603.method27641();
                                     method27628.method27691((n2 != 0) ? method27628.method27628() : 1);
                                     this.minecraft.player.method2822(method27628, true);
-                                    this.minecraft.field4682.method27328(method27628);
+                                    this.minecraft.playerController.method27328(method27628);
                                 }
                             }
                         }
                         else {
-                            this.minecraft.field4682.method27327(class6603, n3 - ((Class3434)this.field3077).field16151.size() + 9 + 36);
+                            this.minecraft.playerController.method27327(class6603, n3 - ((Class3434)this.field3077).field16151.size() + 9 + 36);
                         }
-                        this.minecraft.player.field3008.method10876();
+                        this.minecraft.player.container.method10876();
                     }
                 }
                 else {
                     for (int j = 0; j < 9; ++j) {
-                        this.minecraft.field4682.method27327(this.field3077.method10878(45 + j).method20053(), 36 + j);
+                        this.minecraft.playerController.method27327(this.field3077.getSlot(45 + j).method20053(), 36 + j);
                     }
                 }
             }
@@ -203,24 +203,24 @@ public class Class525 extends Class517<Class3434>
                         final ItemStack method27629 = class6601.method20060((n2 != 0) ? class6601.method20053().method27628() : 1);
                         final ItemStack method27630 = class6601.method20053();
                         this.minecraft.player.method2822(method27629, true);
-                        this.minecraft.field4682.method27328(method27629);
-                        this.minecraft.field4682.method27327(method27630, Class6604.method20063((Class6604)class6601).field26174);
+                        this.minecraft.playerController.method27328(method27629);
+                        this.minecraft.playerController.method27327(method27630, Class6604.method20063((Class6604)class6601).field26174);
                         return;
                     }
                 }
             }
-            if (class6602 == Class2133.field12441 && !this.minecraft.player.field3006.method2375().method27620()) {
-                this.minecraft.player.method2822(this.minecraft.player.field3006.method2375(), true);
-                this.minecraft.field4682.method27328(this.minecraft.player.field3006.method2375());
-                this.minecraft.player.field3006.method2374(ItemStack.EMPTY);
+            if (class6602 == Class2133.field12441 && !this.minecraft.player.inventory.method2375().method27620()) {
+                this.minecraft.player.method2822(this.minecraft.player.inventory.method2375(), true);
+                this.minecraft.playerController.method27328(this.minecraft.player.inventory.method2375());
+                this.minecraft.player.inventory.method2374(ItemStack.EMPTY);
             }
             else {
-                this.minecraft.player.field3008.method10879((class6601 != null) ? Class6604.method20063((Class6604)class6601).field26174 : n, n2, class6602, this.minecraft.player);
-                this.minecraft.player.field3008.method10876();
+                this.minecraft.player.container.method10879((class6601 != null) ? Class6604.method20063((Class6604)class6601).field26174 : n, n2, class6602, this.minecraft.player);
+                this.minecraft.player.container.method10876();
             }
         }
         else {
-            this.minecraft.player.field3006.method2374(ItemStack.EMPTY);
+            this.minecraft.player.inventory.method2374(ItemStack.EMPTY);
         }
     }
     
@@ -241,7 +241,7 @@ public class Class525 extends Class517<Class3434>
     
     @Override
     public void init() {
-        if (!this.minecraft.field4682.method27332()) {
+        if (!this.minecraft.playerController.method27332()) {
             this.minecraft.displayGuiScreen(new Class518(this.minecraft.player));
         }
         else {
@@ -255,9 +255,9 @@ public class Class525 extends Class517<Class3434>
             final int field3124 = Class525.field3124;
             Class525.field3124 = -1;
             this.method3011(Class7207.field27992[field3124]);
-            this.minecraft.player.field3008.method10874(this.field3130);
+            this.minecraft.player.container.method10874(this.field3130);
             this.field3130 = new Class752(this.minecraft);
-            this.minecraft.player.field3008.method10873(this.field3130);
+            this.minecraft.player.container.method10873(this.field3130);
         }
     }
     
@@ -275,8 +275,8 @@ public class Class525 extends Class517<Class3434>
     public void removed() {
         super.removed();
         if (this.minecraft.player != null) {
-            if (this.minecraft.player.field3006 != null) {
-                this.minecraft.player.field3008.method10874(this.field3130);
+            if (this.minecraft.player.inventory != null) {
+                this.minecraft.player.container.method10874(this.field3130);
             }
         }
         this.minecraft.field4651.method22505(false);
@@ -480,7 +480,7 @@ public class Class525 extends Class517<Class3434>
             }
         }
         else {
-            final Class3427 field3125 = this.minecraft.player.field3008;
+            final Class3427 field3125 = this.minecraft.player.container;
             if (this.field3128 == null) {
                 this.field3128 = (List<Class6601>)ImmutableList.copyOf((Collection)((Class3434)this.field3077).field16151);
             }
@@ -794,13 +794,13 @@ public class Class525 extends Class517<Class3434>
     }
     
     public static void method3019(final Minecraft class869, final int n, final boolean b, final boolean b2) {
-        final Class756 field4684 = class869.player;
+        final ClientPlayerEntity field4684 = class869.player;
         final Class8653 method5321 = class869.method5321();
         final Class2262 method5322 = method5321.method29483(n);
         if (!b) {
             if (b2) {
                 for (int i = 0; i < Class464.method2346(); ++i) {
-                    method5322.set(i, (Object)field4684.field3006.getStackInSlot(i).method27641());
+                    method5322.set(i, (Object)field4684.inventory.getStackInSlot(i).method27641());
                 }
                 class869.field4647.method3805(new Class2259("inventory.hotbarSaved", new Object[] { class869.gameSettings.field23459.method1068(), class869.gameSettings.field23457[n].method1068() }), false);
                 method5321.method29482();
@@ -809,10 +809,10 @@ public class Class525 extends Class517<Class3434>
         else {
             for (int j = 0; j < Class464.method2346(); ++j) {
                 final ItemStack method5323 = ((ItemStack)method5322.get(j)).method27641();
-                field4684.field3006.method2160(j, method5323);
-                class869.field4682.method27327(method5323, 36 + j);
+                field4684.inventory.method2160(j, method5323);
+                class869.playerController.method27327(method5323, 36 + j);
             }
-            field4684.field3008.method10876();
+            field4684.container.method10876();
         }
     }
     

@@ -27,14 +27,14 @@ public class AntiVanish extends Module
     
     @EventListener
     private void method10512(final Class5744 class5744) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (class5744.method17046() && AntiVanish.mc.method5282() != null) {
             if (!this.field15919.isEmpty()) {
                 if (this.field15920 > 3200) {
                     this.field15919.clear();
-                    Client.method35173().method35197().method25776(new Class6224("Vanished Cleared", "Vanish List has been Cleared.", 5500));
+                    Client.getInstance().method35197().method25776(new Class6224("Vanished Cleared", "Vanish List has been Cleared.", 5500));
                     this.field15920 = -3200;
                 }
                 else {
@@ -48,17 +48,17 @@ public class AntiVanish extends Module
                         final ITextComponent class5745 = (method17371 == null) ? null : method17371.method32732();
                         if (method17371 != null && this.field15919.contains(uuid)) {
                             if (class5745 == null) {
-                                Client.method35173().method35197().method25776(new Class6224("Vanished Warning", "A player is vanished !!" + method17371.method32732().getUnformattedComponentText(), 5500));
+                                Client.getInstance().method35197().method25776(new Class6224("Vanished Warning", "A player is vanished !!" + method17371.method32732().getUnformattedComponentText(), 5500));
                             }
                             else {
-                                Client.method35173().method35197().method25776(new Class6224("Vanish Warning", method17371.method32732().getString() + " is no longer Vanished.", 5500));
+                                Client.getInstance().method35197().method25776(new Class6224("Vanish Warning", method17371.method32732().getString() + " is no longer Vanished.", 5500));
                             }
                         }
                         this.field15919.remove(uuid);
                     }
                 }
                 catch (final Exception ex) {
-                    Client.method35173().method35197().method25776(new Class6224("Vanished Error", "Something bad happened.", 5500));
+                    Client.getInstance().method35197().method25776(new Class6224("Vanished Error", "Something bad happened.", 5500));
                 }
             }
         }
@@ -66,7 +66,7 @@ public class AntiVanish extends Module
     
     @EventListener
     private void method10513(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (AntiVanish.mc.method5269() != null) {
                 if (class5723.method16998() instanceof Class4330) {
                     final Class4330 class5724 = (Class4330)class5723.method16998();
@@ -79,7 +79,7 @@ public class AntiVanish extends Module
                                 continue;
                             }
                             System.out.println(class5725.method13869().getId());
-                            Client.method35173().method35197().method25776(new Class6224("Vanished Warning", "A player is vanished ! ", 5500));
+                            Client.getInstance().method35197().method25776(new Class6224("Vanished Warning", "A player is vanished ! ", 5500));
                             this.field15920 = -3200;
                         }
                     }

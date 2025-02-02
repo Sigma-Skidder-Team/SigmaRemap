@@ -17,7 +17,7 @@ public class Class4043 extends Class4036
     private static String[] field18137;
     public final Block field18138;
     
-    public Class4043(final Block class3833, final Block field18138, final Class8959 class3834) {
+    public Class4043(final Block class3833, final Block field18138, final Properties class3834) {
         super(class3833, class3834);
         this.field18138 = field18138;
     }

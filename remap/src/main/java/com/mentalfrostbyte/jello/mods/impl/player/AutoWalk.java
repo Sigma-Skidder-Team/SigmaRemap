@@ -18,7 +18,7 @@ public class AutoWalk extends Module
     
     @EventListener
     private void method10462(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             AutoWalk.mc.gameSettings.field23435.field2162 = true;
         }
     }

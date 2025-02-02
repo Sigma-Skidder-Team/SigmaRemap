@@ -98,7 +98,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
             }
         }
         this.method2973(n, n2);
-        final Class464 field3084 = this.minecraft.player.field3006;
+        final Class464 field3084 = this.minecraft.player.inventory;
         ItemStack class8321 = this.field3084.method27620() ? field3084.method2375() : this.field3084;
         if (!class8321.method27620()) {
             final int n4 = this.field3084.method27620() ? 8 : 16;
@@ -131,7 +131,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
     }
     
     public void method2977(final int n, final int n2) {
-        if (this.minecraft.player.field3006.method2375().method27620()) {
+        if (this.minecraft.player.inventory.method2375().method27620()) {
             if (this.field3081 != null) {
                 if (this.field3081.method20054()) {
                     this.renderTooltip(this.field3081.method20053(), n, n2);
@@ -173,7 +173,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
             n = 0;
         }
         int n2 = n;
-        final ItemStack method2375 = this.minecraft.player.field3006.method2375();
+        final ItemStack method2375 = this.minecraft.player.inventory.method2375();
         String string = null;
         Label_0095: {
             if (class6601 == this.field3082) {
@@ -237,7 +237,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
     }
     
     private void method2980() {
-        final ItemStack method2375 = this.minecraft.player.field3006.method2375();
+        final ItemStack method2375 = this.minecraft.player.inventory.method2375();
         if (!method2375.method27620()) {
             if (this.field3093) {
                 if (this.field3094 != 2) {
@@ -309,7 +309,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
                 }
                 if (this.minecraft.gameSettings.field23429) {
                     if (method1070) {
-                        if (this.minecraft.player.field3006.method2375().method27620()) {
+                        if (this.minecraft.player.inventory.method2375().method27620()) {
                             this.minecraft.displayGuiScreen(null);
                             return true;
                         }
@@ -318,7 +318,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
                 if (field3102 != -1) {
                     if (!this.minecraft.gameSettings.field23429) {
                         if (!this.field3093) {
-                            if (!this.minecraft.player.field3006.method2375().method27620()) {
+                            if (!this.minecraft.player.inventory.method2375().method27620()) {
                                 this.field3093 = true;
                                 this.field3095 = n3;
                                 this.field3092.clear();
@@ -392,7 +392,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
     @Override
     public boolean mouseDragged(final double n, final double n2, final int n3, final double n4, final double n5) {
         final Class6601 method2981 = this.method2981(n, n2);
-        final ItemStack method2982 = this.minecraft.player.field3006.method2375();
+        final ItemStack method2982 = this.minecraft.player.inventory.method2375();
         if (this.field3082 != null && this.minecraft.gameSettings.field23429) {
             if (n3 == 0 || n3 == 1) {
                 if (!this.field3084.method27620()) {
@@ -512,7 +512,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
                                 if (method2983) {
                                     this.method2988(this.field3082, this.field3082.field26174, n3, Class2133.field12437);
                                     this.method2988(method2981, field3081, 0, Class2133.field12437);
-                                    if (!this.minecraft.player.field3006.method2375().method27620()) {
+                                    if (!this.minecraft.player.inventory.method2375().method27620()) {
                                         this.method2988(this.field3082, this.field3082.field26174, n3, Class2133.field12437);
                                         this.field3085 = MathHelper.floor(n - field3079);
                                         this.field3086 = MathHelper.floor(n2 - field3080);
@@ -545,7 +545,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
                 }
                 this.method2988(null, -999, Class3418.method10891(2, this.field3094), Class2133.field12442);
             }
-            else if (!this.minecraft.player.field3006.method2375().method27620()) {
+            else if (!this.minecraft.player.inventory.method2375().method27620()) {
                 if (!this.minecraft.gameSettings.field23447.method1067(n3)) {
                     final boolean b = field3081 != -999 && (Class8341.method27798(Minecraft.method5277().method5332().method7690(), 340) || Class8341.method27798(Minecraft.method5277().method5332().method7690(), 344));
                     if (b) {
@@ -558,7 +558,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
                 }
             }
         }
-        if (this.minecraft.player.field3006.method2375().method27620()) {
+        if (this.minecraft.player.inventory.method2375().method27620()) {
             this.field3098 = 0L;
         }
         this.field3093 = false;
@@ -590,7 +590,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
         if (class6601 != null) {
             field26174 = class6601.field26174;
         }
-        this.minecraft.field4682.method27324(this.field3077.field16154, field26174, n, class6602, this.minecraft.player);
+        this.minecraft.playerController.method27324(this.field3077.field16154, field26174, n, class6602, this.minecraft.player);
     }
     
     @Override
@@ -623,7 +623,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
     }
     
     public boolean method2990(final int n, final int n2) {
-        if (this.minecraft.player.field3006.method2375().method27620()) {
+        if (this.minecraft.player.inventory.method2375().method27620()) {
             if (this.field3081 != null) {
                 for (int i = 0; i < 9; ++i) {
                     if (this.minecraft.gameSettings.field23457[i].method1066(n, n2)) {

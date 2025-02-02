@@ -19,14 +19,14 @@ public class NoServerInfo extends Module
     
     @EventListener
     private void method10582(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4301) {
                 final Class4301 class5724 = (Class4301)class5723.method16998();
-                class5723.method16961(true);
+                class5723.setCancelled(true);
             }
             if (class5723.method16998() instanceof Class4400) {
                 final Class4400 class5725 = (Class4400)class5723.method16998();
-                class5723.method16961(true);
+                class5723.setCancelled(true);
             }
         }
     }

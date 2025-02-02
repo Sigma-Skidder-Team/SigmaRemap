@@ -14,12 +14,12 @@ public class Class5725 implements Class5730, Class5724
     }
     
     @Override
-    public boolean method16961(final boolean field23277) {
+    public boolean setCancelled(final boolean field23277) {
         return this.field23277 = field23277;
     }
     
     @Override
-    public boolean method16962() {
+    public boolean isCancelled() {
         return this.field23277;
     }
 }

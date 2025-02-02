@@ -90,7 +90,7 @@ public class Class3836 extends Class3834
     }
     
     @Override
-    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onBlockAdded(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7099.getBlock() != class7096.getBlock()) {
             if (!class7097.isRemote) {
                 if (class7097.getTileEntity(class7098) == null) {
@@ -301,7 +301,7 @@ public class Class3836 extends Class3834
             for (int j = method1152.size() - 1; j >= 0; --j) {
                 final BlockPos class1853 = method1152.get(j);
                 final BlockState method1153 = class1847.getBlockState(class1853);
-                Block.method11837(method1153, class1847, class1853, method1153.getBlock().method11802() ? class1847.getTileEntity(class1853) : null);
+                Block.spawnDrops(method1153, class1847, class1853, method1153.getBlock().method11802() ? class1847.getTileEntity(class1853) : null);
                 class1847.setBlockState(class1853, Blocks.AIR.getDefaultState(), 18);
                 --n;
                 array[n] = method1153;

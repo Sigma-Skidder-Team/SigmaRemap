@@ -26,7 +26,7 @@ public class Class3899 extends Class3892
     }
     
     @Override
-    public Class434 method11827(final BlockState class7096, final World class7097, final BlockPos class7098) {
+    public INamedContainerProvider getContainer(final BlockState class7096, final World class7097, final BlockPos class7098) {
         return new Class504((n, class1849, class1850) -> new Class3439(n, class1849, Class7318.method22434(class7097, class7098)), Class3899.field17598);
     }
     

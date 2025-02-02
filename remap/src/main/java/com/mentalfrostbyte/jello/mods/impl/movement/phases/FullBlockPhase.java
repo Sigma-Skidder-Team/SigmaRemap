@@ -16,14 +16,14 @@ public class FullBlockPhase extends Module
     
     @EventListener
     private void method10830(final Class5744 class5744) {
-        if (this.method9906() && method10834()) {
+        if (this.isEnabled() && method10834()) {
             class5744.method17033(true);
         }
     }
     
     @EventListener
     private void method10831(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!method10834()) {
                 if (FullBlockPhase.mc.player.collidedHorizontally) {
                     Class7482.method23149(class5717, 0.0);
@@ -38,8 +38,8 @@ public class FullBlockPhase extends Module
     
     @EventListener
     private void method10832(final Class5713 class5713) {
-        if (this.method9906()) {
-            class5713.method16961(true);
+        if (this.isEnabled()) {
+            class5713.setCancelled(true);
         }
     }
     

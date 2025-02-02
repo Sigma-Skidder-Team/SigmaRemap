@@ -34,7 +34,7 @@ public class AutoSoup extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15721 = (int)this.getNumberSettingValueByName("Refill delay");
         this.field15724 = (int)this.getNumberSettingValueByName("Refill delay");
         this.field15725 = false;
@@ -44,13 +44,13 @@ public class AutoSoup extends Module
     
     @EventListener
     private void method10219(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             ++this.field15721;
             ++this.field15724;
-            final String method9887 = this.method9887("Refill mode");
+            final String method9887 = this.getStringSettingValueByName("Refill mode");
             if (!this.field15725) {
                 if (this.method10225(Items.field31301) == 0) {
-                    if (method9887.equals("OpenInv") && !(AutoSoup.mc.field4700 instanceof Class518)) {
+                    if (method9887.equals("OpenInv") && !(AutoSoup.mc.currentScreen instanceof Class518)) {
                         return;
                     }
                     if (this.method10226(Items.field31301) > 0) {
@@ -61,7 +61,7 @@ public class AutoSoup extends Module
                     return;
                 }
             }
-            else if (method9887.equals("OpenInv") && !(AutoSoup.mc.field4700 instanceof Class518)) {
+            else if (method9887.equals("OpenInv") && !(AutoSoup.mc.currentScreen instanceof Class518)) {
                 this.field15725 = false;
             }
             else if (this.method10225(Items.AIR) != 0) {
@@ -77,11 +77,11 @@ public class AutoSoup extends Module
     
     @EventListener
     private void method10220(final Class5721 class5721) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15726) {
                 if (class5721.method16990() instanceof Class4323) {
                     if (((Class4323)class5721.method16990()).method12987() == Class2218.field13623) {
-                        class5721.method16961(true);
+                        class5721.setCancelled(true);
                     }
                 }
             }
@@ -90,20 +90,20 @@ public class AutoSoup extends Module
     
     private void method10221() {
         this.field15725 = true;
-        if (this.method9887("Refill mode").equals("FakeInv")) {
-            if (!(AutoSoup.mc.field4700 instanceof Class518)) {
+        if (this.getStringSettingValueByName("Refill mode").equals("FakeInv")) {
+            if (!(AutoSoup.mc.currentScreen instanceof Class518)) {
                 AutoSoup.mc.method5269().method17292(new Class4323(Class2218.field13623));
                 this.field15726 = true;
             }
         }
-        if (this.method9887("Bowls").equals("Stack")) {
+        if (this.getStringSettingValueByName("Bowls").equals("Stack")) {
             final int method10225 = this.method10225(Items.field31300);
             if (method10225 > 0) {
                 final int method10226 = this.method10224(method10225);
                 if (method10226 > 0) {
-                    Class8639.method29367(AutoSoup.mc.player.field3008.field16154, method10226, 0, Class2133.field12437, AutoSoup.mc.player, true);
-                    Class8639.method29367(AutoSoup.mc.player.field3008.field16154, method10226, 0, Class2133.field12443, AutoSoup.mc.player, true);
-                    Class8639.method29367(AutoSoup.mc.player.field3008.field16154, method10226, 0, Class2133.field12437, AutoSoup.mc.player, true);
+                    InvManagerUtil.method29367(AutoSoup.mc.player.container.field16154, method10226, 0, Class2133.field12437, AutoSoup.mc.player, true);
+                    InvManagerUtil.method29367(AutoSoup.mc.player.container.field16154, method10226, 0, Class2133.field12443, AutoSoup.mc.player, true);
+                    InvManagerUtil.method29367(AutoSoup.mc.player.container.field16154, method10226, 0, Class2133.field12437, AutoSoup.mc.player, true);
                     this.field15724 = -5;
                 }
             }
@@ -116,9 +116,9 @@ public class AutoSoup extends Module
         if (this.field15724 >= n) {
             while (this.field15722 < 36) {
                 boolean b = false;
-                if (Class8639.method29363(this.field15722).getItem() == Items.field31301) {
+                if (InvManagerUtil.method29363(this.field15722).getItem() == Items.field31301) {
                     if (Math.random() * 100.0 > this.getNumberSettingValueByName("Refill accuracy")) {
-                        Class8639.method29367(AutoSoup.mc.player.field3008.field16154, this.field15722, 0, Class2133.field12438, AutoSoup.mc.player, true);
+                        InvManagerUtil.method29367(AutoSoup.mc.player.container.field16154, this.field15722, 0, Class2133.field12438, AutoSoup.mc.player, true);
                         this.field15724 = 0;
                         b = true;
                     }
@@ -142,13 +142,13 @@ public class AutoSoup extends Module
     private void method10223() {
         int field2743 = -1;
         for (int i = 36; i < 45; ++i) {
-            if (AutoSoup.mc.player.field3008.method10878(i).method20053().getItem() == Items.field31301 && Client.method35173().method35195().method28162(i) > 100L) {
+            if (AutoSoup.mc.player.container.getSlot(i).method20053().getItem() == Items.field31301 && Client.getInstance().method35195().method28162(i) > 100L) {
                 field2743 = i - 36;
                 break;
             }
         }
-        final boolean equals = this.method9887("Bowls").equals("Drop");
-        if (this.method9887("Soup mode").equals("Instant")) {
+        final boolean equals = this.getStringSettingValueByName("Bowls").equals("Drop");
+        if (this.getStringSettingValueByName("Soup mode").equals("Instant")) {
             if (field2743 >= 0) {
                 if (this.field15721 > 3) {
                     if (AutoSoup.mc.player.method2664() <= this.getNumberSettingValueByName("Health")) {
@@ -158,7 +158,7 @@ public class AutoSoup extends Module
                         if (equals) {
                             AutoSoup.mc.method5269().method17292(new Class4399(Class2003.field11244, BlockPos.ZERO, Direction.DOWN));
                         }
-                        AutoSoup.mc.method5269().method17292(new Class4321(AutoSoup.mc.player.field3006.field2743));
+                        AutoSoup.mc.method5269().method17292(new Class4321(AutoSoup.mc.player.inventory.field2743));
                         this.field15721 = 0;
                     }
                 }
@@ -169,9 +169,9 @@ public class AutoSoup extends Module
             if (field2743 >= 0) {
                 if (this.field15721 > 3) {
                     if (AutoSoup.mc.player.method2664() <= this.getNumberSettingValueByName("Health")) {
-                        this.field15723 = AutoSoup.mc.player.field3006.field2743;
-                        AutoSoup.mc.player.field3006.field2743 = field2743;
-                        AutoSoup.mc.field4682.method27318();
+                        this.field15723 = AutoSoup.mc.player.inventory.field2743;
+                        AutoSoup.mc.player.inventory.field2743 = field2743;
+                        AutoSoup.mc.playerController.method27318();
                         AutoSoup.mc.method5269().method17292(new Class4307(Class316.field1878));
                         AutoSoup.mc.method5269().method17292(new Class4307(Class316.field1877));
                     }
@@ -182,54 +182,54 @@ public class AutoSoup extends Module
         if (equals) {
             AutoSoup.mc.method5269().method17292(new Class4399(Class2003.field11244, BlockPos.ZERO, Direction.DOWN));
         }
-        AutoSoup.mc.player.field3006.field2743 = this.field15723;
-        AutoSoup.mc.field4682.method27318();
+        AutoSoup.mc.player.inventory.field2743 = this.field15723;
+        AutoSoup.mc.playerController.method27318();
         this.field15721 = 0;
         this.field15723 = -1;
     }
     
     private int method10224(final int n) {
-        final ItemStack method29363 = Class8639.method29363(13);
+        final ItemStack method29363 = InvManagerUtil.method29363(13);
         if (method29363.getItem() == Items.field31300 && method29363.method27690() <= 64 - n) {
             return 13;
         }
         for (int i = 9; i < 36; ++i) {
-            final ItemStack method29364 = Class8639.method29363(i);
+            final ItemStack method29364 = InvManagerUtil.method29363(i);
             if (method29364.getItem() == Items.field31300 && method29364.method27690() <= 64 - n) {
                 return i;
             }
         }
-        final ItemStack method29365 = Class8639.method29363(13);
+        final ItemStack method29365 = InvManagerUtil.method29363(13);
         if (method29365.getItem() == Items.field31300 && method29365.method27690() < 64) {
             return 13;
         }
         for (int j = 9; j < 36; ++j) {
-            final ItemStack method29366 = Class8639.method29363(j);
+            final ItemStack method29366 = InvManagerUtil.method29363(j);
             if (method29366.getItem() == Items.field31300 && method29366.method27690() < 64) {
                 return j;
             }
         }
-        if (Class8639.method29363(13).getItem() == Items.AIR) {
+        if (InvManagerUtil.method29363(13).getItem() == Items.AIR) {
             for (int k = 36; k < 45; ++k) {
-                if (AutoSoup.mc.player.field3008.method10878(k).method20053().getItem() == Items.field31300) {
-                    Class8639.method29370(13, k - 36);
+                if (AutoSoup.mc.player.container.getSlot(k).method20053().getItem() == Items.field31300) {
+                    InvManagerUtil.method29370(13, k - 36);
                     return 13;
                 }
             }
         }
         for (int l = 9; l < 36; ++l) {
-            if (Class8639.method29363(l).getItem() == Items.AIR) {
+            if (InvManagerUtil.method29363(l).getItem() == Items.AIR) {
                 for (int n2 = 36; n2 < 45; ++n2) {
-                    if (AutoSoup.mc.player.field3008.method10878(n2).method20053().getItem() == Items.field31300) {
-                        Class8639.method29370(l, n2 - 36);
+                    if (AutoSoup.mc.player.container.getSlot(n2).method20053().getItem() == Items.field31300) {
+                        InvManagerUtil.method29370(l, n2 - 36);
                         return -1;
                     }
                 }
             }
         }
         for (int n3 = 36; n3 < 45; ++n3) {
-            if (AutoSoup.mc.player.field3008.method10878(n3).method20053().getItem() == Items.field31300) {
-                Class8639.method29370(13, n3 - 36);
+            if (AutoSoup.mc.player.container.getSlot(n3).method20053().getItem() == Items.field31300) {
+                InvManagerUtil.method29370(13, n3 - 36);
                 return -1;
             }
         }
@@ -239,7 +239,7 @@ public class AutoSoup extends Module
     private int method10225(final Item class3820) {
         int n = 0;
         for (int i = 36; i < 45; ++i) {
-            if (AutoSoup.mc.player.field3008.method10878(i).method20053().getItem() == class3820) {
+            if (AutoSoup.mc.player.container.getSlot(i).method20053().getItem() == class3820) {
                 ++n;
             }
         }
@@ -249,7 +249,7 @@ public class AutoSoup extends Module
     private int method10226(final Item class3820) {
         int n = 0;
         for (int i = 9; i < 36; ++i) {
-            if (AutoSoup.mc.player.field3008.method10878(i).method20053().getItem() == class3820) {
+            if (AutoSoup.mc.player.container.getSlot(i).method20053().getItem() == class3820) {
                 ++n;
             }
         }

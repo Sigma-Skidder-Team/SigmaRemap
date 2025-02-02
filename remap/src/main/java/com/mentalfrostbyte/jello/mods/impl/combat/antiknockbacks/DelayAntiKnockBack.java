@@ -29,14 +29,14 @@ public class DelayAntiKnockBack extends Module
     
     @EventListener
     private void method10518(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (DelayAntiKnockBack.mc.player != null) {
                 if (class5723.method16998() instanceof Class4273) {
                     final Class4273 class5724 = (Class4273)class5723.method16998();
                     final List<Entity> method6739 = DelayAntiKnockBack.mc.world.method6739((Class<? extends Entity>) PlayerEntity.class, DelayAntiKnockBack.mc.player.getBoundingBox().intersect(14.0), class5725 -> {
                         if (class5725.method1732(DelayAntiKnockBack.mc.player) < 6.0f) {
                             if (DelayAntiKnockBack.mc.player != class5725) {
-                                if (!Client.method35173().method35191().method31751(class5725)) {
+                                if (!Client.getInstance().method35191().method31751(class5725)) {
                                     return;
                                 }
                             }
@@ -46,7 +46,7 @@ public class DelayAntiKnockBack extends Module
                     if (class5724.method12822() == DelayAntiKnockBack.mc.player.getEntityId()) {
                         if (method6739.size() > 0) {
                             this.field15922.add(class5724);
-                            class5723.method16961(true);
+                            class5723.setCancelled(true);
                             if (this.field15923 == 0) {
                                 this.field15923 = (int)this.getNumberSettingValueByName("Delay");
                             }
@@ -59,7 +59,7 @@ public class DelayAntiKnockBack extends Module
     
     @EventListener
     private void method10519(final Class5721 class5721) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5721.method16990() instanceof Class4381) {
                 if (((Class4381)class5721.method16990()).method13171() != Class2029.field11565) {}
             }

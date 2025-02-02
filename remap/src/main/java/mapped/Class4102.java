@@ -14,8 +14,8 @@ import net.minecraft.world.World;
 
 public class Class4102 extends Item
 {
-    public Class4102(final Class8959 class8959) {
-        super(class8959);
+    public Class4102(final Properties properties) {
+        super(properties);
         this.method11705(new ResourceLocation("throwing"), (class8321, class8322, class8323) -> {
             if (class8323 != null) {
                 if (class8323.method2756()) {
@@ -61,7 +61,7 @@ public class Class4102 extends Item
                             class8322.method6886(class8325);
                             class8322.method6707(null, class8325, Class8520.field35640, Class286.field1585, 1.0f, 1.0f);
                             if (!class8324.field3025.field27304) {
-                                class8324.field3006.method2365(class8321);
+                                class8324.inventory.method2365(class8321);
                             }
                         }
                     }

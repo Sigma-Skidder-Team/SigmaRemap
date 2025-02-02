@@ -20,7 +20,7 @@ public class Class4074 extends Class4072
     private static final Set<Block> field18174;
     public static final Map<Block, BlockState> field18175;
     
-    public Class4074(final Class2038 class2038, final float n, final float n2, final Class8959 class2039) {
+    public Class4074(final Class2038 class2038, final float n, final float n2, final Properties class2039) {
         super(n, n2, class2038, Class4074.field18174, class2039);
     }
     

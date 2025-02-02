@@ -21,7 +21,7 @@ public class Class8949
     }
     
     public void method31750() {
-        Client.method35173().method35188().method21094(this);
+        Client.getInstance().method35188().method21094(this);
     }
     
     public boolean method31751(final Entity class399) {

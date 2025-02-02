@@ -23,10 +23,10 @@ public class FastLadder extends Module
     
     @EventListener
     private void method10233(final Class5717 class5717) {
-        if (this.method9906() && FastLadder.mc.player.method2688()) {
+        if (this.isEnabled() && FastLadder.mc.player.method2688()) {
             final boolean b = Class9367.method34762() >= Class7906.field32453.method25613() || FastLadder.mc.method5282() == null;
             if (!FastLadder.mc.player.collidedHorizontally && (!FastLadder.mc.player.field2967 || !b)) {
-                if ((this.method9887("Down mode").equals("OnSneak") && FastLadder.mc.gameSettings.field23440.method1056()) || this.method9887("Down mode").equals("Always")) {
+                if ((this.getStringSettingValueByName("Down mode").equals("OnSneak") && FastLadder.mc.gameSettings.field23440.method1056()) || this.getStringSettingValueByName("Down mode").equals("Always")) {
                     class5717.method16975(-this.getNumberSettingValueByName("Motion"));
                 }
             }

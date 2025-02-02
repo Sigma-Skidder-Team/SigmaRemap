@@ -24,9 +24,9 @@ public class Class1907 extends AbstractChunkProvider
     private final Chunk field10342;
     private final WorldLightManager field10343;
     public volatile Class9225 field10344;
-    private final Class1848 field10345;
+    private final ClientWorld field10345;
     
-    public Class1907(final Class1848 field10345, final int n) {
+    public Class1907(final ClientWorld field10345, final int n) {
         this.field10345 = field10345;
         this.field10342 = new Class1864(field10345, new ChunkPos(0, 0));
         this.field10343 = new WorldLightManager(this, true, field10345.method6789().method20503());
@@ -166,7 +166,7 @@ public class Class1907 extends AbstractChunkProvider
     
     @Override
     public void method7420(final Class237 class237, final Class353 class238) {
-        Minecraft.method5277().field4636.method5740(class238.method1102(), class238.method1103(), class238.method1104());
+        Minecraft.method5277().worldRenderer.method5740(class238.method1102(), class238.method1103(), class238.method1104());
     }
     
     @Override

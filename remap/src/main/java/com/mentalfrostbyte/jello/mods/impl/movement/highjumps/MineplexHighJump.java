@@ -26,20 +26,20 @@ public class MineplexHighJump extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15704 = false;
     }
     
     @EventListener
     public void method10200(final Class5738 class5738) {
-        if (this.method9906() && MineplexHighJump.mc.player.onGround) {
+        if (this.isEnabled() && MineplexHighJump.mc.player.onGround) {
             class5738.method17026(true);
         }
     }
     
     @EventListener
     public void method10201(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15704) {
                 if (MineplexHighJump.mc.player.posY + 0.42 < this.field15707) {
                     this.method9914().method9910();
@@ -67,7 +67,7 @@ public class MineplexHighJump extends Module
     
     @EventListener
     public void method10202(final Class5747 class5747) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (MineplexHighJump.mc.player.onGround) {
                 if (this.field15704) {
                     this.field15704 = !this.field15704;
@@ -107,7 +107,7 @@ public class MineplexHighJump extends Module
     
     @EventListener
     public void method10203(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4328) {
                 this.method9914().method9910();
             }
@@ -116,7 +116,7 @@ public class MineplexHighJump extends Module
     
     @EventListener
     public void method10204(final Class5741 class5741) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15704) {
                 if (MineplexHighJump.mc.player.posY >= this.field15707) {
                     if (this.method9883("Fake fly")) {

@@ -114,7 +114,7 @@ public class Class400 extends Entity implements Class401
     public void method1959(final RayTraceResult class7006) {
         final RayTraceResult.Type method21449 = class7006.getType();
         if (method21449 == RayTraceResult.Type.ENTITY && this.field2466 != null) {
-            ((Class7007)class7006).method21452().attackEntityFrom(DamageSource.method25694(this, this.field2466).method25706(), 1.0f);
+            ((EntityRayTraceResult)class7006).getEntity().attackEntityFrom(DamageSource.method25694(this, this.field2466).method25706(), 1.0f);
         }
         else if (method21449 == RayTraceResult.Type.BLOCK) {
             if (!this.world.isRemote) {

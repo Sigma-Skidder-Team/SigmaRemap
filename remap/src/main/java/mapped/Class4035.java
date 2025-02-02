@@ -12,8 +12,8 @@ import java.util.AbstractList;
 
 public class Class4035 extends Item
 {
-    public Class4035(final Class8959 class8959) {
-        super(class8959);
+    public Class4035(final Properties properties) {
+        super(properties);
     }
     
     public static void method12228(final ItemStack class8321, final Class5328 class8322, final int n) {

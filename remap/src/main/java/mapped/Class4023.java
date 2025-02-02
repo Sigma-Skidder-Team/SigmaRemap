@@ -29,8 +29,8 @@ public class Class4023 extends Class4022
     }
     
     @Override
-    public String method11856() {
-        return this.method11704().method11717();
+    public String getTranslationKey() {
+        return this.method11704().getTranslationKey();
     }
     
     @Override

@@ -12,8 +12,8 @@ import java.util.List;
 
 public class Class4100 extends Item
 {
-    public Class4100(final Class8959 class8959) {
-        super(class8959);
+    public Class4100(final Properties properties) {
+        super(properties);
         this.method11705(new ResourceLocation("blocking"), (class8321, class8322, class8323) -> {
             if (class8323 != null) {
                 if (class8323.method2756()) {
@@ -29,11 +29,11 @@ public class Class4100 extends Item
     
     @Override
     public String method11718(final ItemStack class8321) {
-        return (class8321.method27660("BlockEntityTag") == null) ? super.method11718(class8321) : (this.method11717() + '.' + method12343(class8321).method814());
+        return (class8321.method27660("BlockEntityTag") == null) ? super.method11718(class8321) : (this.getTranslationKey() + '.' + method12343(class8321).method814());
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
         Class4044.method12243(class8321, list);
     }
     

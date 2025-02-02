@@ -723,9 +723,9 @@ public class Blocks
         field29175 = register("sand", new Class3989(14406560, Block.Properties.create(Material.SAND, MaterialColor.SAND).method34292(0.5f).method34288(SoundType.field30574)));
         field29176 = register("red_sand", new Class3989(11098145, Block.Properties.create(Material.SAND, MaterialColor.ADOBE).method34292(0.5f).method34288(SoundType.field30574)));
         field29177 = register("gravel", new Class3991(Block.Properties.create(Material.SAND, MaterialColor.STONE).method34292(0.6f).method34288(SoundType.field30568)));
-        field29178 = register("gold_ore", new Class3992(Block.Properties.method34279(Material.ROCK).hardnessAndResistance(3.0f, 3.0f)));
-        field29179 = register("iron_ore", new Class3992(Block.Properties.method34279(Material.ROCK).hardnessAndResistance(3.0f, 3.0f)));
-        field29180 = register("coal_ore", new Class3992(Block.Properties.method34279(Material.ROCK).hardnessAndResistance(3.0f, 3.0f)));
+        field29178 = register("gold_ore", new BlockThing(Block.Properties.method34279(Material.ROCK).hardnessAndResistance(3.0f, 3.0f)));
+        field29179 = register("iron_ore", new BlockThing(Block.Properties.method34279(Material.ROCK).hardnessAndResistance(3.0f, 3.0f)));
+        field29180 = register("coal_ore", new BlockThing(Block.Properties.method34279(Material.ROCK).hardnessAndResistance(3.0f, 3.0f)));
         field29181 = register("oak_log", new Class4029(MaterialColor.WOOD, Block.Properties.create(Material.WOOD, MaterialColor.OBSIDIAN).method34292(2.0f).method34288(SoundType.field30567)));
         field29182 = register("spruce_log", new Class4029(MaterialColor.OBSIDIAN, Block.Properties.create(Material.WOOD, MaterialColor.BROWN).method34292(2.0f).method34288(SoundType.field30567)));
         field29183 = register("birch_log", new Class4029(MaterialColor.SAND, Block.Properties.create(Material.WOOD, MaterialColor.QUARTZ).method34292(2.0f).method34288(SoundType.field30567)));
@@ -759,7 +759,7 @@ public class Blocks
         field29211 = register("sponge", new Class4015(Block.Properties.method34279(Material.SPONGE).method34292(0.6f).method34288(SoundType.field30569)));
         field29212 = register("wet_sponge", new Class4013(Block.Properties.method34279(Material.SPONGE).method34292(0.6f).method34288(SoundType.field30569)));
         field29213 = register("glass", new Class3851(Block.Properties.method34279(Material.GLASS).method34292(0.3f).method34288(SoundType.field30572).method34284()));
-        field29214 = register("lapis_ore", new Class3992(Block.Properties.method34279(Material.ROCK).hardnessAndResistance(3.0f, 3.0f)));
+        field29214 = register("lapis_ore", new BlockThing(Block.Properties.method34279(Material.ROCK).hardnessAndResistance(3.0f, 3.0f)));
         field29215 = register("lapis_block", new Block(Block.Properties.create(Material.IRON, MaterialColor.LAPIS).hardnessAndResistance(3.0f, 3.0f)));
         field29216 = register("dispenser", new Class3955(Block.Properties.method34279(Material.ROCK).method34292(3.5f)));
         field29217 = register("sandstone", new Block(Block.Properties.create(Material.ROCK, MaterialColor.SAND).method34292(0.8f)));
@@ -839,7 +839,7 @@ public class Blocks
         OAK_STAIRS = register("oak_stairs", new Class3916(Blocks.OAK_PLANKS.getDefaultState(), Block.Properties.method34282(Blocks.OAK_PLANKS)));
         CHEST = register("chest", new Class3865(Block.Properties.method34279(Material.WOOD).method34292(2.5f).method34288(SoundType.field30567), () -> Class5412.field22542));
         REDSTONE_WIRE = register("redstone_wire", new Class3999(Block.Properties.method34279(Material.MISCELLANEOUS).method34283().method34291()));
-        DIAMOND_ORE = register("diamond_ore", new Class3992(Block.Properties.method34279(Material.ROCK).hardnessAndResistance(3.0f, 3.0f)));
+        DIAMOND_ORE = register("diamond_ore", new BlockThing(Block.Properties.method34279(Material.ROCK).hardnessAndResistance(3.0f, 3.0f)));
         DIAMOND_BLOCK = register("diamond_block", new Block(Block.Properties.create(Material.IRON, MaterialColor.DIAMOND).hardnessAndResistance(5.0f, 6.0f).method34288(SoundType.field30571)));
         CRAFTING_TABLE = register("crafting_table", new Class4007(Block.Properties.method34279(Material.WOOD).method34292(2.5f).method34288(SoundType.field30567)));
         field29297 = register("wheat", new Class3878(Block.Properties.method34279(Material.PLANTS).method34283().method34293().method34291().method34288(SoundType.field30586)));
@@ -953,7 +953,7 @@ public class Blocks
         field29405 = register("redstone_lamp", new Class3970(Block.Properties.method34279(Material.REDSTONE_LIGHT).method34289(15).method34292(0.3f).method34288(SoundType.field30572)));
         field29406 = register("cocoa", new Class3891(Block.Properties.method34279(Material.PLANTS).method34293().hardnessAndResistance(0.2f, 3.0f).method34288(SoundType.field30567).method34284()));
         field29407 = register("sandstone_stairs", new Class3916(Blocks.field29217.getDefaultState(), Block.Properties.method34282(Blocks.field29217)));
-        field29408 = register("emerald_ore", new Class3992(Block.Properties.method34279(Material.ROCK).hardnessAndResistance(3.0f, 3.0f)));
+        field29408 = register("emerald_ore", new BlockThing(Block.Properties.method34279(Material.ROCK).hardnessAndResistance(3.0f, 3.0f)));
         field29409 = register("ender_chest", new Class3863(Block.Properties.method34279(Material.ROCK).hardnessAndResistance(22.5f, 600.0f).method34289(7)));
         field29410 = register("tripwire_hook", new Class3983(Block.Properties.method34279(Material.MISCELLANEOUS).method34283()));
         field29411 = register("tripwire", new Class3975((Class3983) Blocks.field29410, Block.Properties.method34279(Material.MISCELLANEOUS).method34283()));
@@ -1019,7 +1019,7 @@ public class Blocks
         field29471 = register("comparator", new Class3896(Block.Properties.method34279(Material.MISCELLANEOUS).method34291().method34288(SoundType.field30567)));
         field29472 = register("daylight_detector", new Class3940(Block.Properties.method34279(Material.WOOD).method34292(0.2f).method34288(SoundType.field30567)));
         field29473 = register("redstone_block", new Class4032(Block.Properties.create(Material.IRON, MaterialColor.TNT).hardnessAndResistance(5.0f, 6.0f).method34288(SoundType.field30571)));
-        field29474 = register("nether_quartz_ore", new Class3992(Block.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).hardnessAndResistance(3.0f, 3.0f)));
+        field29474 = register("nether_quartz_ore", new BlockThing(Block.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).hardnessAndResistance(3.0f, 3.0f)));
         field29475 = register("hopper", new Class3959(Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(3.0f, 4.8f).method34288(SoundType.field30571).method34284()));
         field29476 = register("quartz_block", new Block(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).method34292(0.8f)));
         field29477 = register("chiseled_quartz_block", new Block(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).method34292(0.8f)));
@@ -1377,7 +1377,7 @@ public class Blocks
                 class3834.method21695();
                 Block.field17391.method562(class3834);
             }
-            class3833.method11832();
+            class3833.getLootTable();
         }
     }
 }

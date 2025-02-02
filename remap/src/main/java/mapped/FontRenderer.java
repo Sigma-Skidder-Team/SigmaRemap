@@ -124,7 +124,7 @@ public class FontRenderer implements AutoCloseable
     
     private float method6615(String method17001, final float n, final float n2, final int n3, final boolean b, final Matrix4f class6789, final IRenderTypeBuffer class6790, final boolean b2, final int n4, final int n5) {
         final Class5727 class6791 = new Class5727(method17001);
-        Client.method35173().method35188().method21097(class6791);
+        Client.getInstance().method35188().method21097(class6791);
         method17001 = class6791.method17001();
         final float n6 = b ? 0.25f : 1.0f;
         final float n7 = (n3 >> 16 & 0xFF) / 255.0f * n6;

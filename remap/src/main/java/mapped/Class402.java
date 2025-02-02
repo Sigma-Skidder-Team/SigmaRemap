@@ -184,13 +184,13 @@ public abstract class Class402 extends Entity implements Class401
                 class355 = method1994.getHitVec();
             }
             while (!this.removed) {
-                Class7007 method1995 = this.method1971(method1993, class355);
+                EntityRayTraceResult method1995 = this.method1971(method1993, class355);
                 if (method1995 != null) {
                     method1994 = method1995;
                 }
                 if (method1994 != null) {
                     if (method1994.getType() == RayTraceResult.Type.ENTITY) {
-                        final Entity method1996 = ((Class7007)method1994).method21452();
+                        final Entity method1996 = ((EntityRayTraceResult)method1994).getEntity();
                         final Entity method1997 = this.method1973();
                         if (method1996 instanceof PlayerEntity) {
                             if (method1997 instanceof PlayerEntity) {
@@ -299,7 +299,7 @@ public abstract class Class402 extends Entity implements Class401
             }
         }
         else {
-            this.method1967((Class7007)class7006);
+            this.method1967((EntityRayTraceResult)class7006);
         }
     }
     
@@ -312,8 +312,8 @@ public abstract class Class402 extends Entity implements Class401
         }
     }
     
-    public void method1967(final Class7007 class7007) {
-        final Entity method21452 = class7007.method21452();
+    public void method1967(final EntityRayTraceResult class7007) {
+        final Entity method21452 = class7007.getEntity();
         int method21453 = MathHelper.ceil(Math.max((float)this.getMotion().length() * this.field2479, 0.0));
         if (this.method1983() > 0) {
             if (this.field2482 == null) {
@@ -435,7 +435,7 @@ public abstract class Class402 extends Entity implements Class401
     }
     
     @Nullable
-    public Class7007 method1971(final Vec3d class5487, final Vec3d class5488) {
+    public EntityRayTraceResult method1971(final Vec3d class5487, final Vec3d class5488) {
         return Class7476.method23094(this.world, this, class5487, class5488, this.getBoundingBox().expand(this.getMotion()).intersect(1.0), class5489 -> {
             final boolean b;
             if (!class5489.isSpectator()) {
@@ -533,7 +533,7 @@ public abstract class Class402 extends Entity implements Class401
                     }
                     int n2 = n;
                     if (this.field2474 == Class2151.field12783) {
-                        if (!playerEntity.field3006.method2362(this.method1974())) {
+                        if (!playerEntity.inventory.method2362(this.method1974())) {
                             n2 = 0;
                         }
                     }

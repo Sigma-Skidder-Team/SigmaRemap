@@ -26,7 +26,7 @@ public class NCPSpeed extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15848 = 1;
         final double field22770 = NCPSpeed.mc.player.getMotion().x;
         final double field22771 = NCPSpeed.mc.player.getMotion().z;
@@ -35,10 +35,10 @@ public class NCPSpeed extends Module
     
     @EventListener
     public void method10412(final Class5744 class5744) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (NCPSpeed.mc.player != null) {
                 if (!Jesus.method10433()) {
-                    if (!Client.method35173().method35189().method21551(Fly.class).method9906()) {
+                    if (!Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
                         if (class5744.method17046()) {
                             if (Speed.field15748 > 1) {
                                 final double n = NCPSpeed.mc.player.posX - NCPSpeed.mc.player.field4074;
@@ -59,7 +59,7 @@ public class NCPSpeed extends Module
     
     @EventListener
     public void method10413(final Class5717 class5717) {
-        if (!this.method9906() || NCPSpeed.mc.player == null) {
+        if (!this.isEnabled() || NCPSpeed.mc.player == null) {
             return;
         }
         if (!Jesus.method10433() && !NCPSpeed.mc.player.method1706()) {
@@ -101,13 +101,13 @@ public class NCPSpeed extends Module
     @EventListener
     @Class6759
     public void method10414(final Class5722 class5722) {
-        if (!this.method9906() || Jesus.method10433()) {
+        if (!this.isEnabled() || Jesus.method10433()) {
             return;
         }
         if (this.field15847 != 0) {
-            class5722.method16961(true);
+            class5722.setCancelled(true);
         }
-        if (NCPSpeed.mc.gameSettings.field23439.method1056() && Client.method35173().method35189().method21551(BlockFly.class).method9906()) {
+        if (NCPSpeed.mc.gameSettings.field23439.method1056() && Client.getInstance().method35189().method21551(BlockFly.class).isEnabled()) {
             return;
         }
         double b = 0.56 + Class7482.method23139() * 0.1;
@@ -122,7 +122,7 @@ public class NCPSpeed extends Module
     
     @EventListener
     public void method10415(final Class5745 class5745) {
-        if (this.method9906() && class5745.method17049() >= 0.9) {
+        if (this.isEnabled() && class5745.method17049() >= 0.9) {
             this.field15848 = 0;
         }
     }

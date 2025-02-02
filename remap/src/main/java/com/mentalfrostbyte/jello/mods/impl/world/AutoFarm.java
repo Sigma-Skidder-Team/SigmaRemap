@@ -19,11 +19,11 @@ public class AutoFarm extends Module
     
     @EventListener
     public void method10345(final Class5744 class5744) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (AutoFarm.mc.player != null && AutoFarm.mc.world != null) {
-            for (final BlockPos class5745 : Class4609.method13675(Class4609.method13691(AutoFarm.mc.field4682.method27315()))) {
+            for (final BlockPos class5745 : Class4609.method13675(Class4609.method13691(AutoFarm.mc.playerController.method27315()))) {
                 if (Class4609.method13665(AutoFarm.mc.player, class5745)) {
                     final BlockState method6701 = AutoFarm.mc.world.getBlockState(class5745);
                     if (!(method6701.getBlock() instanceof Class3878)) {
@@ -69,21 +69,21 @@ public class AutoFarm extends Module
                                     continue;
                                 }
                                 final BlockState method6708 = AutoFarm.mc.world.getBlockState(class5745.method1137());
-                                int n = Class8639.method29340(Items.field31314);
+                                int n = InvManagerUtil.method29340(Items.field31314);
                                 if (n == -1) {
-                                    n = Class8639.method29340(Items.field31517);
+                                    n = InvManagerUtil.method29340(Items.field31517);
                                 }
                                 if (n == -1) {
-                                    n = Class8639.method29340(Items.field31518);
+                                    n = InvManagerUtil.method29340(Items.field31518);
                                 }
                                 if (n == -1) {
-                                    n = Class8639.method29340(Items.field31576);
+                                    n = InvManagerUtil.method29340(Items.field31576);
                                 }
                                 if (n == -1) {
-                                    n = Class8639.method29340(Items.field31430);
+                                    n = InvManagerUtil.method29340(Items.field31430);
                                 }
                                 if (n == -1) {
-                                    n = Class8639.method29340(Items.field31429);
+                                    n = InvManagerUtil.method29340(Items.field31429);
                                 }
                                 if (n == -1) {
                                     continue;

@@ -27,7 +27,7 @@ public class FuncraftGamePlay extends Module
     
     @EventListener
     private void method10133(final Class5723 class5723) {
-        if (this.method9906() && FuncraftGamePlay.mc.player != null) {
+        if (this.isEnabled() && FuncraftGamePlay.mc.player != null) {
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4378) {
                 final String string = ((Class4378)method16998).method13164().getString();

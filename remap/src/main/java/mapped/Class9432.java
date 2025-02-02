@@ -21,7 +21,7 @@ public class Class9432
         return this.field40457;
     }
     
-    public boolean method35053(final Class1848 class1848, final float n, final int[] array, final boolean b) {
+    public boolean method35053(final ClientWorld clientWorld, final float n, final int[] array, final boolean b) {
         if (this.field40457 == null) {
             return false;
         }
@@ -35,8 +35,8 @@ public class Class9432
             if (b) {
                 n2 = method24640 * 16 * 2;
             }
-            float n3 = 1.1666666f * (class1848.method6842(1.0f) - 0.2f);
-            if (class1848.method6848() > 0) {
+            float n3 = 1.1666666f * (clientWorld.method6842(1.0f) - 0.2f);
+            if (clientWorld.method6848() > 0) {
                 n3 = 1.0f;
             }
             final float n4 = Config.method28868(n3) * (method24640 - 1);

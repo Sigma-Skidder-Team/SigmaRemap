@@ -128,7 +128,7 @@ public class Class9458
         final float method35641 = MathHelper.sin(n3 * n3 * 3.1415927f);
         class7351.method22566(Vector3f.YP.rotationDegrees(n4 * MathHelper.sin(method35640 * 3.1415927f) * 70.0f));
         class7351.method22566(Vector3f.ZP.rotationDegrees(n4 * method35641 * -20.0f));
-        final Class756 field4684 = this.field40658.player;
+        final ClientPlayerEntity field4684 = this.field40658.player;
         this.field40658.method5290().method5849(field4684.method4097());
         class7351.method22564(n4 * -1.0f, 3.5999999046325684, 3.5);
         class7351.method22566(Vector3f.ZP.rotationDegrees(n4 * 120.0f));
@@ -171,7 +171,7 @@ public class Class9458
         class7351.method22564(((class7352 != Class2226.field13698) ? -1 : 1) * 0.56f, -0.52f + n * -0.6f, -0.7200000286102295);
     }
     
-    public void method35153(final float n, final MatrixStack class7351, final IRenderTypeBuffer.Impl class7352, final Class756 class7353, final int n2) {
+    public void method35153(final float n, final MatrixStack class7351, final IRenderTypeBuffer.Impl class7352, final ClientPlayerEntity class7353, final int n2) {
         final float method2748 = class7353.method2748(n);
         final Class316 class7354 = (Class316)MoreObjects.firstNonNull((Object)class7353.field2934, (Object)Class316.field1877);
         final float method2749 = MathHelper.method35700(n, class7353.prevRotationPitch, class7353.rotationPitch);
@@ -282,7 +282,7 @@ public class Class9458
             else {
                 final boolean b3 = class759 == Class2226.field13698;
                 final Class5716 class760 = new Class5716(true, n3, n4, class759, class756, class757);
-                Client.method35173().method35188().method21097(class760);
+                Client.getInstance().method35188().method21097(class760);
                 if (class754.method2756() && class754.method2767() > 0 && class754.method2757() == class755) {
                     final int n10 = b3 ? 1 : -1;
                     switch (Class8442.field34698[class756.method27653().ordinal()]) {
@@ -350,7 +350,7 @@ public class Class9458
                     class757.method22566(Vector3f.YP.rotationDegrees(n18 * 65.0f));
                     class757.method22566(Vector3f.ZP.rotationDegrees(n18 * -85.0f));
                 }
-                else if (!class760.method16962()) {
+                else if (!class760.isCancelled()) {
                     class757.method22564((b3 ? 1 : -1) * (-0.4f * MathHelper.sin(MathHelper.method35640(n3) * 3.1415927f)), 0.2f * MathHelper.sin(MathHelper.method35640(n3) * 6.2831855f), -0.2f * MathHelper.sin(n3 * 3.1415927f));
                     this.method35152(class757, class759, n4);
                     this.method35151(class757, class759, n3);
@@ -358,7 +358,7 @@ public class Class9458
                 if (class760 == null || class760.method16970()) {
                     this.method35143(class754, class756, b3 ? Class2016.field11490 : Class2016.field11489, !b3, class757, class758, n5);
                 }
-                Client.method35173().method35188().method21097(new Class5716(false, n3, n4, class759, class756, class757));
+                Client.getInstance().method35188().method21097(new Class5716(false, n3, n4, class759, class756, class757));
             }
             class757.method22568();
         }
@@ -367,13 +367,13 @@ public class Class9458
     public void method35155() {
         this.field40662 = this.field40661;
         this.field40664 = this.field40663;
-        final Class756 field4684 = this.field40658.player;
+        final ClientPlayerEntity field4684 = this.field40658.player;
         final ItemStack method2713 = field4684.getHeldItemMainhand();
         final ItemStack method2714 = field4684.method2714();
         if (!field4684.method4134()) {
             final float method2715 = field4684.method2904(1.0f);
             if (Class9570.field41312.method22605()) {
-                final boolean method2716 = Class9570.method35812(Class9570.field41312, this.field40659, method2713, field4684.field3006.field2743);
+                final boolean method2716 = Class9570.method35812(Class9570.field41312, this.field40659, method2713, field4684.inventory.field2743);
                 final boolean method2717 = Class9570.method35812(Class9570.field41312, this.field40660, method2714, -1);
                 if (!method2716) {
                     if (!Objects.equals(this.field40659, method2713)) {

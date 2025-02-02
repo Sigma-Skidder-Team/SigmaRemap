@@ -27,16 +27,16 @@ public class Class4806 extends Class4803
         this.field20526.method14317(ClientFonts.JelloLight18);
         this.field20526.method14297(false);
         class4805.method14260((class4832, n) -> new Thread(() -> {
-            Client.method35173().method35201().getChallengeResponse();
+            Client.getInstance().method35201().getChallengeResponse();
             final CaptchaChecker class4834;
             if (class4834 != null) {
                 class4834.method30475(this.field20526.method14314());
             }
-            this.field20523 = Client.method35173().method35201().method19343(class4833.method14314(), Client.method35173().method35201().getChallengeResponse());
+            this.field20523 = Client.getInstance().method35201().method19343(class4833.method14314(), Client.getInstance().method35201().getChallengeResponse());
             if (this.field20523 == null) {
                 this.field20523 = "";
             }
-            if (!(!Client.method35173().method35201().method19352())) {
+            if (!(!Client.getInstance().method35201().method19352())) {
                 this.method14225(() -> ((Class4929)this.method14267()).method14790());
             }
         }).start());
@@ -47,7 +47,7 @@ public class Class4806 extends Class4803
         this.field20524.changeDirection(this.isHovered() ? Direction.BACKWARDS : Direction.FORWARDS);
         n = 1.0f;
         n *= this.field20524.calcPercent();
-        final CaptchaChecker method19344 = Client.method35173().method35201().getChallengeResponse();
+        final CaptchaChecker method19344 = Client.getInstance().method35201().getChallengeResponse();
         if (method19344 != null) {
             this.field20526.method14297(method19344.method30471());
             if (method19344.method30470() != null) {

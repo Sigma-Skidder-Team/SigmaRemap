@@ -15,19 +15,17 @@ import java.util.Set;
 
 public class Class9006
 {
-    private static String[] field38021;
     public static final Class9006 field38022;
     private final Set<Class6332> field38023;
     private final Set<Class6332> field38024;
-    private boolean field38025;
+    private final boolean field38025;
     private final List<TileEntity> field38026;
-    private Class8336 field38027;
-    private Class7819 field38028;
-    private BitSet[] field38029;
+    private final Class8336 field38027;
+    private final BitSet[] field38029;
     
     public Class9006() {
-        this.field38023 = (Set<Class6332>)new ObjectArraySet();
-        this.field38024 = (Set<Class6332>)new ObjectArraySet();
+        this.field38023 = new ObjectArraySet<>();
+        this.field38024 = new ObjectArraySet<>();
         this.field38025 = true;
         this.field38026 = Lists.newArrayList();
         this.field38027 = new Class8336();
@@ -47,7 +45,7 @@ public class Class9006
     }
     
     public boolean method32210(final Direction class179, final Direction class180) {
-        return XRay.field15720.method9906() || this.field38027.method27782(class179, class180);
+        return XRay.xrayModule.isEnabled() || this.field38027.method27782(class179, class180);
     }
     
     public BitSet method32215(final Class6332 class6332) {
@@ -72,5 +70,18 @@ public class Class9006
     
     static {
         field38022 = new Class9005();
+    }
+
+    public static final class Class9005 extends Class9006
+    {
+        @Override
+        public boolean method32210(final Direction class179, final Direction class180) {
+            return false;
+        }
+
+        @Override
+        public void method32211(final Class6332 class6332, final BitSet set) {
+            throw new UnsupportedOperationException();
+        }
     }
 }

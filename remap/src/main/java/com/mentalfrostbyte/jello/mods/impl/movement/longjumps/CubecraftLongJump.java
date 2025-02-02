@@ -26,14 +26,14 @@ public class CubecraftLongJump extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15596 = -1;
         CubecraftLongJump.mc.timer.timerSpeed = 0.3f;
     }
     
     @EventListener
     public void method10016(final Class5743 class5743) {
-        if (this.method9906() && CubecraftLongJump.mc.player != null) {
+        if (this.isEnabled() && CubecraftLongJump.mc.player != null) {
             if (!ColorUtils.method19160(CubecraftLongJump.mc.player, 0.001f)) {
                 ++this.field15596;
                 this.field15597 -= 0.005;

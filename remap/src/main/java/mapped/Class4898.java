@@ -36,8 +36,8 @@ public class Class4898 extends Class4841
                 class4890.method14260((class4890, n) -> {
                     this.method14705(true);
                     new Thread(() -> {
-                        Client.method35173();
-                        class4891.method14636(Class4898.field20952.method30570(Client.method35173().method35189().method21556().method32707(), s2));
+                        Client.getInstance();
+                        class4891.method14636(Class4898.field20952.method30570(Client.getInstance().method35189().method21556().method32707(), s2));
                         this.method14705(false);
                     }).start();
                 });

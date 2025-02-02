@@ -29,7 +29,7 @@ public class Class3242 extends Module
     
     @EventListener
     private void method10239(final Class5739 class5739) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (Class3242.mc.player != null && Class3242.mc.world != null) {
@@ -93,22 +93,22 @@ public class Class3242 extends Module
     
     @EventListener
     public void method10241(final Class5749 class5749) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15730) {
                 if (class5749.method17056() instanceof PlayerEntity) {
-                    class5749.method16961(true);
+                    class5749.setCancelled(true);
                 }
             }
         }
     }
     
     public void method10242(final Entity class399, final double n, final double n2, final double n3, final float n4, final MatrixStack class400, final IRenderTypeBuffer class401) {
-        Class3242.mc.field4636.field9290.method28706(class399, MathHelper.lerp(n4, class399.lastTickPosX, class399.getPosX()) - n, MathHelper.lerp(n4, class399.lastTickPosY, class399.getPosY()) - n2, MathHelper.lerp(n4, class399.lastTickPosZ, class399.getPosZ()) - n3, MathHelper.method35700(n4, class399.prevRotationYaw, class399.rotationYaw), n4, class400, class401, 255);
+        Class3242.mc.worldRenderer.field9290.method28706(class399, MathHelper.lerp(n4, class399.lastTickPosX, class399.getPosX()) - n, MathHelper.lerp(n4, class399.lastTickPosY, class399.getPosY()) - n2, MathHelper.lerp(n4, class399.lastTickPosZ, class399.getPosZ()) - n3, MathHelper.method35700(n4, class399.prevRotationYaw, class399.rotationYaw), n4, class400, class401, 255);
     }
     
     @EventListener
     public void method10243(final Class5729 class5729) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15730) {
                 class5729.method17020(false);
             }
@@ -116,7 +116,7 @@ public class Class3242 extends Module
     }
     
     private boolean method10244(final Entity class399) {
-        return class399 instanceof LivingEntity && class399 instanceof PlayerEntity && !(class399 instanceof Class756) && !Client.method35173().method35191().method31751(class399);
+        return class399 instanceof LivingEntity && class399 instanceof PlayerEntity && !(class399 instanceof ClientPlayerEntity) && !Client.getInstance().method35191().method31751(class399);
     }
     
     private void method10245() {

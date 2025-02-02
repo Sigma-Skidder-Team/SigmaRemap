@@ -52,7 +52,7 @@ public class Class830 extends Class827 implements Class768
         if (this.method2718(Class2215.field13601).method27620()) {
             if (this.rand.nextFloat() < 0.03f) {
                 this.method1803(Class2215.field13601, new ItemStack(Items.field31609));
-                this.field4119[Class2215.field13601.method8402()] = 2.0f;
+                this.field4119[Class2215.field13601.getIndex()] = 2.0f;
             }
         }
         return method4188;

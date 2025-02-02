@@ -13,8 +13,8 @@ import java.util.Collection;
 
 public class Class4060 extends Item
 {
-    public Class4060(final Class8959 class8959) {
-        super(class8959);
+    public Class4060(final Properties properties) {
+        super(properties);
     }
     
     @Override
@@ -56,7 +56,7 @@ public class Class4060 extends Item
                     final IProperty<?> class517 = method12267(method21698, method21700, playerEntity.method2804());
                     final String method21701 = class517.getName();
                     method21699.putString(string, method21701);
-                    method12268(playerEntity, new Class2259(this.method11717() + ".select", new Object[] { method21701, method12269(class513, class517) }));
+                    method12268(playerEntity, new Class2259(this.getTranslationKey() + ".select", new Object[] { method21701, method12269(class513, class517) }));
                 }
                 else {
                     if (method21700 == null) {
@@ -64,11 +64,11 @@ public class Class4060 extends Item
                     }
                     final BlockState method21702 = method12266(class513, method21700, playerEntity.method2804());
                     class514.setBlockState(class515, method21702, 18);
-                    method12268(playerEntity, new Class2259(this.method11717() + ".update", new Object[] { method21700.getName(), method12269(method21702, method21700) }));
+                    method12268(playerEntity, new Class2259(this.getTranslationKey() + ".update", new Object[] { method21700.getName(), method12269(method21702, method21700) }));
                 }
             }
             else {
-                method12268(playerEntity, new Class2259(this.method11717() + ".empty", new Object[] { string }));
+                method12268(playerEntity, new Class2259(this.getTranslationKey() + ".empty", new Object[] { string }));
             }
         }
     }

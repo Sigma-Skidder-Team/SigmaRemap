@@ -10,8 +10,8 @@ import net.minecraft.world.World;
 
 public class Class3819 extends Item
 {
-    public Class3819(final Class8959 class8959) {
-        super(class8959);
+    public Class3819(final Properties properties) {
+        super(properties);
     }
     
     @Override

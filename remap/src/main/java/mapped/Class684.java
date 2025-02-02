@@ -235,7 +235,7 @@ public class Class684 extends AbstractGui
     }
     
     public boolean method3770() {
-        return this.field3742.field4700 instanceof Class535;
+        return this.field3742.currentScreen instanceof ChatScreen;
     }
     
     public void method3771(final int n) {

@@ -118,7 +118,7 @@ public class Class3983 extends Block
                     b4 |= (b5 && booleanValue3);
                     array[i] = method6701;
                     if (i == n) {
-                        class1847.method6833().method21345(class1848, this, this.method11826(class1847));
+                        class1847.method6833().method21345(class1848, this, this.tickRate(class1847));
                         b3 &= b5;
                     }
                 }
@@ -201,7 +201,7 @@ public class Class3983 extends Block
                     class7097.method6696(class7098, this);
                     class7097.method6696(class7098.method1149(class7096.method21772((IProperty<Direction>)Class3983.field17983).getOpposite()), this);
                 }
-                super.method11829(class7096, class7097, class7098, class7099, b);
+                super.onReplaced(class7096, class7097, class7098, class7099, b);
             }
         }
     }

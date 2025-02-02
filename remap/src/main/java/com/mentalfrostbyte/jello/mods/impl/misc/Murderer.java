@@ -32,7 +32,7 @@ public class Murderer extends Module
     
     @EventListener
     private void method10247(final Class5723 class5723) throws IOException {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4402) {
                 final Class4402 class5724 = (Class4402)class5723.method16998();
                 if (class5724.method13247().getItem() instanceof Class4077) {
@@ -58,7 +58,7 @@ public class Murderer extends Module
     
     @EventListener
     private void method10248(final Class5740 class5740) throws IOException {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (!this.field15735) {

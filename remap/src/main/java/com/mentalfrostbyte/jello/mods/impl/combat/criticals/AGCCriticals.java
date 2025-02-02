@@ -19,14 +19,14 @@ public class AGCCriticals extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15513 = 0;
     }
     
     @EventListener
     @Class6757
     private void method9880(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             if (!AGCCriticals.mc.player.onGround) {
                 this.field15513 = 0;
             }
@@ -40,7 +40,7 @@ public class AGCCriticals extends Module
                 ++this.field15513;
                 class5744.method17033(true);
             }
-            if (AGCCriticals.mc.field4682.method27337()) {
+            if (AGCCriticals.mc.playerController.method27337()) {
                 if (AGCCriticals.mc.player.onGround) {
                     this.field15513 = 0;
                     class5744.method17037(AGCCriticals.mc.player.posY);

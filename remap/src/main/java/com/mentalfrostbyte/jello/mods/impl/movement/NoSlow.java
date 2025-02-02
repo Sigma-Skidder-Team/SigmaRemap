@@ -22,22 +22,22 @@ public class NoSlow extends Module
     
     @EventListener
     private void method10155(final Class5728 class5728) {
-        if (this.method9906()) {
-            class5728.method16961(true);
+        if (this.isEnabled()) {
+            class5728.setCancelled(true);
         }
     }
     
     @EventListener
     private void method10156(final Class5744 class5744) {
-        if (this.method9906()) {
-            final boolean method9898 = Client.method35173().method35189().method21551(KillAura.class).method9898();
+        if (this.isEnabled()) {
+            final boolean method9898 = Client.getInstance().method35189().method21551(KillAura.class).method9898();
             final boolean b = NoSlow.mc.player.getHeldItemMainhand() != null && NoSlow.mc.player.getHeldItemMainhand().getItem() instanceof Class4077;
             if (!class5744.method17046()) {
                 if (b) {
                     if (NoSlow.mc.gameSettings.field23445.method1056()) {
                         if (!this.field15679) {
                             if (!method9898) {
-                                if (this.method9887("Mode").equals("NCP")) {
+                                if (this.getStringSettingValueByName("Mode").equals("NCP")) {
                                     ColorUtils.method19163();
                                     this.field15679 = true;
                                     return;
@@ -52,7 +52,7 @@ public class NoSlow extends Module
                     }
                 }
             }
-            else if (!this.method9887("Mode").equals("NCP")) {
+            else if (!this.getStringSettingValueByName("Mode").equals("NCP")) {
                 if (this.field15679) {
                     if (!NoSlow.mc.gameSettings.field23445.method1056()) {
                         this.field15679 = false;

@@ -66,7 +66,7 @@ public class Class4970
         method15156(Class8471.field34759, (Class8255<Class3418, Screen>)Class726::new);
         method15156(Class8471.field34760, (Class8255<Class3418, Screen>)Class726::new);
         method15156(Class8471.field34761, (Class8255<Class3418, Screen>)Class740::new);
-        method15156(Class8471.field34762, (Class8255<Class3418, Screen>)Class515::new);
+        method15156(Class8471.field34762, (Class8255<Class3418, Screen>) AnvilScreen::new);
         method15156(Class8471.field34763, (Class8255<Class3418, Screen>)Class748::new);
         method15156(Class8471.field34764, (Class8255<Class3418, Screen>)Class523::new);
         method15156(Class8471.field34765, (Class8255<Class3418, Screen>)Class743::new);

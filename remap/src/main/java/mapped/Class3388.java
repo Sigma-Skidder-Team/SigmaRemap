@@ -14,7 +14,7 @@ public class Class3388 extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         ("op " + Class3388.mc.player.getName()).replace("&", "§");
         this.onDisable();
     }

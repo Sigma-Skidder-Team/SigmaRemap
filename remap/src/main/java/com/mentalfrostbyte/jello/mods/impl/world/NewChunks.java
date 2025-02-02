@@ -26,7 +26,7 @@ public class NewChunks extends Module
     
     @EventListener
     private void method10463(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4298) {
                 final Class4298 class5724 = (Class4298)class5723.method16998();
                 final ChunkPos e = new ChunkPos(class5724.method12909(), class5724.method12910());
@@ -39,7 +39,7 @@ public class NewChunks extends Module
     
     @EventListener
     private void method10464(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final Iterator<ChunkPos> iterator = this.field15876.iterator();
             while (iterator.hasNext()) {
                 final ChunkPos class5740 = iterator.next();

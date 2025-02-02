@@ -25,7 +25,7 @@ public class VClip extends Module
     
     @EventListener
     private void method9943(final Class5748 class5748) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (VClip.mc.gameSettings.field23440.method1056()) {
                 if (class5748.method17055() == Class1958.field10672) {
                     if (VClip.mc.player.rotationPitch >= 0.0f) {
@@ -47,7 +47,7 @@ public class VClip extends Module
             if (!method12973.startsWith("/" + s)) {
                 return;
             }
-            class5721.method16961(true);
+            class5721.setCancelled(true);
             int int1 = 0;
             final String replaceAll = method12973.replace("/" + s, "").replaceAll("\\s", "");
             if (method9945(replaceAll)) {
@@ -101,7 +101,7 @@ public class VClip extends Module
         else {
             VClip.mc.method5269().method17292(new Class4354(VClip.mc.player.posX, VClip.mc.player.posY + i, VClip.mc.player.posZ, false));
             VClip.mc.player.setPosition(VClip.mc.player.posX, VClip.mc.player.posY + i, VClip.mc.player.posZ);
-            Client.method35173().method35197().method25776(new Class6224("Successfuly VCliped", i + " Blocks", 2000, ClientAssets.direction));
+            Client.getInstance().method35197().method25776(new Class6224("Successfuly VCliped", i + " Blocks", 2000, ClientAssets.direction));
         }
     }
 }

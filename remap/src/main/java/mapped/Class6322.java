@@ -211,7 +211,7 @@ public abstract class Class6322
             return;
         });
         field25316 = new Class6341("main_target", () -> {}, () -> {});
-        field25317 = new Class6341("outline_target", () -> Minecraft.method5277().field4636.method5778().method18395(false), () -> Minecraft.method5277().method5234().method18395(false));
+        field25317 = new Class6341("outline_target", () -> Minecraft.method5277().worldRenderer.method5778().method18395(false), () -> Minecraft.method5277().method5234().method18395(false));
         field25318 = new Class6327(OptionalDouble.of(1.0));
     }
 }

@@ -41,7 +41,7 @@ public class CaptchaChecker
     public void finalize() throws Throwable {
         try {
             if (this.field36887 != null) {
-                Client.method35173().method35182(this.field36887);
+                Client.getInstance().method35182(this.field36887);
             }
         }
         finally {

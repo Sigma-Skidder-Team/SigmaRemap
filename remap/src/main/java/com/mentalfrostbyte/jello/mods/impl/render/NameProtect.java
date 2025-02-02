@@ -20,21 +20,21 @@ public class NameProtect extends Module
     
     @EventListener
     public void method10183(final Class5727 class5727) {
-        if (this.method9906()) {
-            class5727.method17002(class5727.method17001().replaceAll(NameProtect.mc.method5287().method33692(), this.method9887("Username")));
+        if (this.isEnabled()) {
+            class5727.method17002(class5727.method17001().replaceAll(NameProtect.mc.method5287().method33692(), this.getStringSettingValueByName("Username")));
         }
     }
     
     @EventListener
     public void method10184(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4377) {
                 final Class4377 class5724 = (Class4377)method16998;
                 if (class5724.method13163() == Class2142.field12614) {
                     final String method16999 = class5724.method13160();
                     if (method16999.contains(NameProtect.mc.method5287().method33692())) {
-                        class5723.method16999(new Class4377(class5724.method13163(), class5724.method13161(), method16999.replaceAll(NameProtect.mc.method5287().method33692(), this.method9887("Username")), class5724.method13162()));
+                        class5723.method16999(new Class4377(class5724.method13163(), class5724.method13161(), method16999.replaceAll(NameProtect.mc.method5287().method33692(), this.getStringSettingValueByName("Username")), class5724.method13162()));
                     }
                 }
             }
@@ -43,7 +43,7 @@ public class NameProtect extends Module
                 final String method17000 = class5725.method13164().getFormattedText();
                 if (method17000 != null) {
                     if (method17000.contains(NameProtect.mc.method5287().method33692())) {
-                        class5723.method16999(new Class4378(new StringTextComponent(method17000.replaceAll(NameProtect.mc.method5287().method33692(), this.method9887("Username"))), class5725.method13166()));
+                        class5723.method16999(new Class4378(new StringTextComponent(method17000.replaceAll(NameProtect.mc.method5287().method33692(), this.getStringSettingValueByName("Username"))), class5725.method13166()));
                     }
                 }
             }
@@ -55,7 +55,7 @@ public class NameProtect extends Module
                     if (class5727.method13872() != null) {
                         final String method17002 = class5727.method13872().getFormattedText();
                         if (method17002.contains(NameProtect.mc.method5287().method33692())) {
-                            class5727.field20115 = new StringTextComponent(method17002.replaceAll(NameProtect.mc.method5287().method33692(), this.method9887("Username")));
+                            class5727.field20115 = new StringTextComponent(method17002.replaceAll(NameProtect.mc.method5287().method33692(), this.getStringSettingValueByName("Username")));
                         }
                     }
                 }
@@ -68,7 +68,7 @@ public class NameProtect extends Module
                 }
                 final String method17003 = class5728.method12933().getFormattedText();
                 if (method17003.contains(NameProtect.mc.method5287().method33692())) {
-                    class5728.field19289 = new StringTextComponent(method17003.replaceAll(NameProtect.mc.method5287().method33692(), this.method9887("Username")));
+                    class5728.field19289 = new StringTextComponent(method17003.replaceAll(NameProtect.mc.method5287().method33692(), this.getStringSettingValueByName("Username")));
                 }
             }
             if (method16998 instanceof Class4352) {
@@ -78,7 +78,7 @@ public class NameProtect extends Module
                 }
                 final String method17004 = class5729.method13074().getFormattedText();
                 if (method17004.contains(NameProtect.mc.method5287().method33692())) {
-                    class5723.method16999(new Class4352(class5729.method13073(), new StringTextComponent(method17004.replaceAll(NameProtect.mc.method5287().method33692(), this.method9887("Username"))), class5729.method13075(), class5729.method13076(), class5729.method13077()));
+                    class5723.method16999(new Class4352(class5729.method13073(), new StringTextComponent(method17004.replaceAll(NameProtect.mc.method5287().method33692(), this.getStringSettingValueByName("Username"))), class5729.method13075(), class5729.method13076(), class5729.method13077()));
                 }
             }
         }

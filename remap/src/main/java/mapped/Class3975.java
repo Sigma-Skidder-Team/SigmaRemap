@@ -56,14 +56,14 @@ public class Class3975 extends Block
     }
     
     @Override
-    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onBlockAdded(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7099.getBlock() != class7096.getBlock()) {
             this.method12115(class7097, class7098, class7096);
         }
     }
     
     @Override
-    public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (!b) {
             if (class7096.getBlock() != class7099.getBlock()) {
                 this.method12115(class7097, class7098, ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3975.field17953, true));
@@ -143,7 +143,7 @@ public class Class3975 extends Block
             this.method12115(class1847, class1848, class1849);
         }
         if (b) {
-            class1847.method6833().method21345(new BlockPos(class1848), this, this.method11826(class1847));
+            class1847.method6833().method21345(new BlockPos(class1848), this, this.tickRate(class1847));
         }
     }
     

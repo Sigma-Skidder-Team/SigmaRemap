@@ -21,13 +21,13 @@ public class FastEat extends Module
     
     @EventListener
     public void method10319(final Class5743 class5743) {
-        if (!this.method9906() || FastEat.mc.player == null) {
+        if (!this.isEnabled() || FastEat.mc.player == null) {
             return;
         }
         if (FastEat.mc.player.method2756()) {
             final ItemStack method2766 = FastEat.mc.player.method2766();
             if (method2766 != null && (method2766.method27653() == Class1992.field11156 || method2766.method27653() == Class1992.field11155) && FastEat.mc.player.method2767() < this.getNumberSettingValueByName("Speed") * 32.0f) {
-                final String method2767 = this.method9887("Mode");
+                final String method2767 = this.getStringSettingValueByName("Mode");
                 switch (method2767) {
                     case "Basic": {
                         for (int n2 = FastEat.mc.player.method2767() + 2, i = 0; i < n2; ++i) {
@@ -37,8 +37,8 @@ public class FastEat extends Module
                         break;
                     }
                     case "Hypixel": {
-                        FastEat.mc.method5269().method17292(new Class4321((FastEat.mc.player.field3006.field2743 + 1 >= 9) ? 0 : (FastEat.mc.player.field3006.field2743 + 1)));
-                        FastEat.mc.method5269().method17292(new Class4321(FastEat.mc.player.field3006.field2743));
+                        FastEat.mc.method5269().method17292(new Class4321((FastEat.mc.player.inventory.field2743 + 1 >= 9) ? 0 : (FastEat.mc.player.inventory.field2743 + 1)));
+                        FastEat.mc.method5269().method17292(new Class4321(FastEat.mc.player.inventory.field2743));
                         break;
                     }
                 }

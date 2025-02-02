@@ -17,7 +17,7 @@ public class Class3822 extends Class3821
 {
     private final EntityType<?> field17374;
     
-    public Class3822(final EntityType<?> field17374, final Fluid class7255, final Class8959 class7256) {
+    public Class3822(final EntityType<?> field17374, final Fluid class7255, final Properties class7256) {
         super(class7255, class7256);
         this.field17374 = field17374;
     }
@@ -42,7 +42,7 @@ public class Class3822 extends Class3821
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
         if (this.field17374 == EntityType.field29034) {
             final CompoundNBT method27657 = class8321.method27657();
             if (method27657 != null) {

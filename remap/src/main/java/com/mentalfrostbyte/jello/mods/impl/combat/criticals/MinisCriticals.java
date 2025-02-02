@@ -23,7 +23,7 @@ public class MinisCriticals extends Module
     
     @EventListener
     private void method10525(final Class5722 class5722) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (KillAura.field16049) {
                 MinisCriticals.mc.method5269().method17292(new Class4354(MinisCriticals.mc.player.posX, MinisCriticals.mc.player.posY, MinisCriticals.mc.player.posZ, true));
             }
@@ -32,9 +32,9 @@ public class MinisCriticals extends Module
     
     @EventListener
     private void method10526(final Class5745 class5745) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (KillAura.field16049) {
-                class5745.method16961(true);
+                class5745.setCancelled(true);
             }
         }
     }

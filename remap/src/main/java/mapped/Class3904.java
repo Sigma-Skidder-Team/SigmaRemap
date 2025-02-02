@@ -118,7 +118,7 @@ public class Class3904 extends Class3902
                 if (class7096.method21772((IProperty<Boolean>)Class3904.field17684)) {
                     this.method12008(class7096, class7097, class7098);
                 }
-                super.method11829(class7096, class7097, class7098, class7099, b);
+                super.onReplaced(class7096, class7097, class7098, class7099, b);
             }
         }
     }

@@ -18,7 +18,7 @@ public class ChatFilter extends Module
     
     @EventListener
     private void method10485(final Class5721 class5721) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5721.method16990() instanceof Class4317) {
                 final Class4317 class5722 = (Class4317)class5721.method16990();
                 final String[] split = class5722.field19346.split(" ");

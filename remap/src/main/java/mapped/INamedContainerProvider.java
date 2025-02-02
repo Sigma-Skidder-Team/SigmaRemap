@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.util.text.ITextComponent;
 
-public interface Class434 extends Class502
+public interface INamedContainerProvider extends Class502
 {
     ITextComponent method1871();
 }

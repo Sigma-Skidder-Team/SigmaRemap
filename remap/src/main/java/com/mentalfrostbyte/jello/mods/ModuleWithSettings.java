@@ -29,7 +29,7 @@ public class ModuleWithSettings extends Module
         this.field15746 = new ArrayList<Class8510>();
         this.field15742 = field15742;
         for (final Module class8014 : this.field15742) {
-            Client.method35173().method35188().method21094(class8014);
+            Client.getInstance().method35188().method21094(class8014);
             this.field15744.add(class8014.getName());
             class8014.method9913(this);
         }
@@ -41,14 +41,14 @@ public class ModuleWithSettings extends Module
     public void method10258() {
         this.method10259();
         for (final Module field15743 : this.field15742) {
-            final boolean equals = this.method9887("Type").equals(field15743.name);
-            if (this.method9906() && ModuleWithSettings.mc.player != null) {
+            final boolean equals = this.getStringSettingValueByName("Type").equals(field15743.name);
+            if (this.isEnabled() && ModuleWithSettings.mc.player != null) {
                 field15743.method9907(equals);
                 if (equals) {
                     this.field15743 = field15743;
                 }
             }
-            else if (this.method9906()) {
+            else if (this.isEnabled()) {
                 field15743.method9908(equals);
             }
             this.method10262(field15743, equals);
@@ -59,7 +59,7 @@ public class ModuleWithSettings extends Module
         int n = 0;
         final Module[] field15742 = this.field15742;
         for (int length = field15742.length, i = 0; i < length; ++i) {
-            if (this.method9887("Type").equals(field15742[i].name)) {
+            if (this.getStringSettingValueByName("Type").equals(field15742[i].name)) {
                 n = 1;
             }
         }
@@ -71,7 +71,7 @@ public class ModuleWithSettings extends Module
     public Module method10260() {
         this.method10259();
         for (final Module class3167 : this.field15742) {
-            if (this.method9887("Type").equals(class3167.name)) {
+            if (this.getStringSettingValueByName("Type").equals(class3167.name)) {
                 return class3167;
             }
         }
@@ -83,7 +83,7 @@ public class ModuleWithSettings extends Module
         if (this.field15743 == null) {
             this.method10258();
         }
-        return (this.field15743 != null) ? this.field15743.method9898() : this.method9906();
+        return (this.field15743 != null) ? this.field15743.method9898() : this.isEnabled();
     }
     
     @Override
@@ -106,7 +106,7 @@ public class ModuleWithSettings extends Module
                                     class4408.method15186(method26639);
                                 }
                                 catch (final JSONException class4409) {
-                                    Client.method35173().method35187().method20241("Could not initialize settings of " + class4406.getName() + "." + class4408.method15204() + " from config.");
+                                    Client.getInstance().method35187().method20241("Could not initialize settings of " + class4406.getName() + "." + class4408.method15204() + " from config.");
                                 }
                                 break;
                             }
@@ -138,10 +138,10 @@ public class ModuleWithSettings extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.method10258();
         if (this.field15743 instanceof PremiumModule) {
-            if (!Client.method35173().method35201().method19352()) {
+            if (!Client.getInstance().method35201().method19352()) {
                 this.method9908(false);
             }
         }

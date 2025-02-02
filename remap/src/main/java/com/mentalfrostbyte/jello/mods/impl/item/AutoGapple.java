@@ -24,8 +24,8 @@ public class AutoGapple extends ModuleWithSettings
     
     public int method10292(final boolean b) {
         for (int i = 36; i < 45; ++i) {
-            if (AutoGapple.mc.player.field3008.method10878(i).method20054()) {
-                final ItemStack method20053 = AutoGapple.mc.player.field3008.method10878(i).method20053();
+            if (AutoGapple.mc.player.container.getSlot(i).method20054()) {
+                final ItemStack method20053 = AutoGapple.mc.player.container.getSlot(i).method20053();
                 if (method20053 != null) {
                     if (!b) {
                         if (method20053.getItem() == Items.field31341 || method20053.getItem() == Items.field31342) {
@@ -33,7 +33,7 @@ public class AutoGapple extends ModuleWithSettings
                         }
                     }
                     else {
-                        final List<Class1948> method20054 = Class8639.method29355(method20053);
+                        final List<Class1948> method20054 = InvManagerUtil.method29355(method20053);
                         if (method20054 != null) {
                             final Iterator<Class1948> iterator = method20054.iterator();
                             while (iterator.hasNext()) {
@@ -48,23 +48,23 @@ public class AutoGapple extends ModuleWithSettings
             }
         }
         for (int j = 9; j < 36; ++j) {
-            if (AutoGapple.mc.player.field3008.method10878(j).method20054()) {
-                final ItemStack method20055 = AutoGapple.mc.player.field3008.method10878(j).method20053();
+            if (AutoGapple.mc.player.container.getSlot(j).method20054()) {
+                final ItemStack method20055 = AutoGapple.mc.player.container.getSlot(j).method20053();
                 if (!b) {
                     if (method20055.getItem() == Items.field31341 || method20055.getItem() == Items.field31342) {
-                        Class8639.method29370(j, 4);
+                        InvManagerUtil.method29370(j, 4);
                         return -1;
                     }
                 }
                 else {
-                    final List<Class1948> method20056 = Class8639.method29355(method20055);
+                    final List<Class1948> method20056 = InvManagerUtil.method29355(method20055);
                     if (method20056 != null) {
                         final Iterator<Class1948> iterator2 = method20056.iterator();
                         while (iterator2.hasNext()) {
                             if (iterator2.next().method7906() != Class9439.field40485) {
                                 continue;
                             }
-                            Class8639.method29370(j, 4);
+                            InvManagerUtil.method29370(j, 4);
                             return -1;
                         }
                     }

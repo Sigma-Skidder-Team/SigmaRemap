@@ -17,7 +17,7 @@ public class PortalGui extends Module
     
     @EventListener
     private void method10159(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             PortalGui.mc.player.inPortal = false;
         }
     }

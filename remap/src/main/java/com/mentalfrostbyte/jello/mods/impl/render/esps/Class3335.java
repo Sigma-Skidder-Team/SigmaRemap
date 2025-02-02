@@ -32,14 +32,14 @@ public class Class3335 extends Module
     
     @EventListener
     public void method10551(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             this.method10556();
         }
     }
     
     @EventListener
     public void method10552(final Class5734 class5734) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         final boolean method9883 = this.method9914().method9883("Show Invisibles");
@@ -50,7 +50,7 @@ public class Class3335 extends Module
             final double[] array2 = Class3335.field15935.get(class5735);
             if (array[3] > 0.0 || array[3] <= 1.0) {
                 RenderSystem.method30059();
-                if ((method9883 || !class5735.method1823()) && class5735 instanceof PlayerEntity && !(class5735 instanceof Class756)) {
+                if ((method9883 || !class5735.method1823()) && class5735 instanceof PlayerEntity && !(class5735 instanceof ClientPlayerEntity)) {
                     this.method10557(class5735);
                     try {
                         final float n = (float)array[1];
@@ -183,7 +183,7 @@ public class Class3335 extends Module
             if (!(next instanceof PlayerEntity)) {
                 continue;
             }
-            if (next instanceof Class756) {
+            if (next instanceof ClientPlayerEntity) {
                 continue;
             }
             final PlayerEntity playerEntity = next;

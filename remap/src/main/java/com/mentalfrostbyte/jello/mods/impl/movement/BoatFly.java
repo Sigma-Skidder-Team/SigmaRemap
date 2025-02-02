@@ -22,7 +22,7 @@ public class BoatFly extends PremiumModule
     
     @EventListener
     public void method10641(final Class5743 class5743) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (BoatFly.mc.player.method1920() != null) {
@@ -44,7 +44,7 @@ public class BoatFly extends PremiumModule
     
     @EventListener
     private void method10642(final Class5752 class5752) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (BoatFly.mc.player.method1920() == null) {
@@ -52,7 +52,7 @@ public class BoatFly extends PremiumModule
         }
         if (!BoatFly.mc.player.method1920().onGround) {
             if (class5752.method17061() == BoatFly.mc.gameSettings.field23440.field2161.field32860) {
-                class5752.method16961(true);
+                class5752.setCancelled(true);
                 this.field16004 = true;
             }
         }
@@ -61,7 +61,7 @@ public class BoatFly extends PremiumModule
     @EventListener
     @Class6757
     private void method10643(final Class5721 class5721) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!class5721.method16990().toString().contains(".play.client.")) {}
             if (!(class5721.method16990() instanceof Class4303)) {
                 if (class5721.method16990() instanceof Class4323) {
@@ -73,7 +73,7 @@ public class BoatFly extends PremiumModule
     
     @EventListener
     private void method10644(final Class5715 class5715) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (BoatFly.mc.player.method1920() == null) {
@@ -81,14 +81,14 @@ public class BoatFly extends PremiumModule
         }
         if (!BoatFly.mc.player.method1920().onGround) {
             if (class5715.method16963() == BoatFly.mc.gameSettings.field23440.field2161.field32860) {
-                class5715.method16961(true);
+                class5715.setCancelled(true);
                 this.field16004 = false;
             }
         }
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field16004 = false;
     }
     

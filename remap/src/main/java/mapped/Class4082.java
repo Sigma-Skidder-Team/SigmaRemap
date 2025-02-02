@@ -14,8 +14,8 @@ public class Class4082 extends Class4081
 {
     private static String[] field18185;
     
-    public Class4082(final Class8959 class8959) {
-        super(EntityType.field28993, class8959);
+    public Class4082(final Properties properties) {
+        super(EntityType.field28993, properties);
     }
     
     @Override

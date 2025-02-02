@@ -4,6 +4,8 @@
 
 package mapped;
 
-public interface Class762
+public enum Group
 {
+    field1681, 
+    field1682;
 }

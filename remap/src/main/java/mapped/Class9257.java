@@ -100,10 +100,10 @@ public class Class9257
     }
     
     public void method34154(final int n, final int n2) {
-        if (this.field39700.field4700 != null) {
+        if (this.field39700.currentScreen != null) {
             if (this.field39698 != null) {
                 if (!this.field39699.method3286()) {
-                    this.field39700.field4700.renderTooltip(this.field39698.method3704(this.field39700.field4700), n, n2);
+                    this.field39700.currentScreen.renderTooltip(this.field39698.method3704(this.field39700.currentScreen), n, n2);
                 }
             }
         }

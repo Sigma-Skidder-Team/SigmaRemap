@@ -872,7 +872,7 @@ public class Class5760
         }
         if (class6469 == Class6469.field25762) {
             this.field23486 = n;
-            this.field23461.field4636.method5701();
+            this.field23461.worldRenderer.loadRenderers();
         }
         if (class6469 == Class6469.field25798) {
             final int n2 = (int)n;
@@ -977,7 +977,7 @@ public class Class5760
         }
         if (class6469 == Class6469.field25756) {
             this.field23491 = method17141(this.field23491, Class5760.field23560);
-            this.field23461.field4636.method5701();
+            this.field23461.worldRenderer.loadRenderers();
         }
         if (class6469 == Class6469.field25804) {
             ++this.field23493;
@@ -1073,7 +1073,7 @@ public class Class5760
             if (this.field23494 > 3) {
                 this.field23494 = 1;
             }
-            this.field23461.field4636.method5701();
+            this.field23461.worldRenderer.loadRenderers();
         }
         if (class6469 == Class6469.field25796) {
             ++this.field23514;
@@ -1081,7 +1081,7 @@ public class Class5760
                 this.field23514 = 1;
             }
             if (this.field23514 == 2) {
-                this.field23461.field4636.method5701();
+                this.field23461.worldRenderer.loadRenderers();
             }
             else {
                 this.field23461.method5278();
@@ -1125,12 +1125,12 @@ public class Class5760
         }
         if (class6469 == Class6469.field25788) {
             this.field23507 = !this.field23507;
-            this.field23461.field4636.method5701();
+            this.field23461.worldRenderer.loadRenderers();
         }
         if (class6469 == Class6469.field25790) {
             this.field23508 = !this.field23508;
             Class8763.method30335();
-            this.field23461.field4636.method5701();
+            this.field23461.worldRenderer.loadRenderers();
         }
         if (class6469 == Class6469.field25791) {
             this.field23509 = !this.field23509;
@@ -1143,7 +1143,7 @@ public class Class5760
         if (class6469 == Class6469.field25794) {
             this.field23511 = !this.field23511;
             Class8763.method30319();
-            this.field23461.field4636.method5701();
+            this.field23461.worldRenderer.loadRenderers();
         }
         if (class6469 == Class6469.field25797) {
             this.field23515 = !this.field23515;
@@ -1159,7 +1159,7 @@ public class Class5760
         if (class6469 == Class6469.field25801) {
             this.field23516 = !this.field23516;
             Class7657.method24258();
-            this.field23461.field4636.method5701();
+            this.field23461.worldRenderer.loadRenderers();
         }
         if (class6469 == Class6469.field25802) {
             this.field23517 = !this.field23517;
@@ -1193,29 +1193,29 @@ public class Class5760
             else {
                 this.field23520 = 0;
             }
-            this.field23461.field4636.method5701();
+            this.field23461.worldRenderer.loadRenderers();
         }
         if (class6469 == Class6469.field25805) {
             this.field23483 = !this.field23483;
         }
         if (class6469 == Class6469.field25817) {
             this.field23484 = !this.field23484;
-            this.field23461.field4636.method5701();
+            this.field23461.worldRenderer.loadRenderers();
         }
         if (class6469 == Class6469.field25819) {
             this.field23485 = !this.field23485;
-            this.field23461.field4636.method5701();
+            this.field23461.worldRenderer.loadRenderers();
         }
         if (class6469 == Class6469.field25810) {
             this.field23521 = !this.field23521;
         }
         if (class6469 == Class6469.field25812) {
             this.field23522 = !this.field23522;
-            this.field23461.field4636.method5701();
+            this.field23461.worldRenderer.loadRenderers();
         }
         if (class6469 == Class6469.field25811) {
             this.field23523 = method17141(this.field23523, Class5760.field23561);
-            Class8850.method30996(this.field23461.field4636);
+            Class8850.method30996(this.field23461.worldRenderer);
         }
         if (class6469 == Class6469.field25815) {
             ++this.field23527;
@@ -1256,7 +1256,7 @@ public class Class5760
         }
         if (class6469 == Class6469.field25822) {
             this.field23547 = !this.field23547;
-            this.field23461.field4636.method5701();
+            this.field23461.worldRenderer.loadRenderers();
         }
     }
     

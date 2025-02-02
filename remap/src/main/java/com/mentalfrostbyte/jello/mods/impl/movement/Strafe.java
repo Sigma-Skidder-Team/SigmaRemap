@@ -24,7 +24,7 @@ public class Strafe extends Module
     
     @EventListener
     public void method9991(final Class5717 class5717) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         this.field15580 = Class7482.method23136();

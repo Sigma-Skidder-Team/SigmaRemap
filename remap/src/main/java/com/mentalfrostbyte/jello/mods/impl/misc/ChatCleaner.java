@@ -18,10 +18,10 @@ public class ChatCleaner extends Module
     
     @EventListener
     private void method10509(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4378) {
                 if (this.method10511(this.method10510(((Class4378)class5723.method16998()).method13164().getString()))) {
-                    class5723.method16961(true);
+                    class5723.setCancelled(true);
                 }
             }
         }

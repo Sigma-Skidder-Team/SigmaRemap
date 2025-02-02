@@ -29,13 +29,13 @@ public class SkeletonESP extends Module
     
     @EventListener
     public void method10560(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             return;
         }
     }
     
     private void method10561(final Class5739 class5739, final PlayerEntity class5740) {
-        final Color color = new Color(Client.method35173().method35190().method29879(class5740.getName().getFormattedText()) ? -8401409 : (class5740.getName().getFormattedText().equalsIgnoreCase(SkeletonESP.mc.player.getName().getFormattedText()) ? -6684775 : new Color(16775672).getRGB()));
+        final Color color = new Color(Client.getInstance().method35190().method29879(class5740.getName().getFormattedText()) ? -8401409 : (class5740.getName().getFormattedText().equalsIgnoreCase(SkeletonESP.mc.player.getName().getFormattedText()) ? -6684775 : new Color(16775672).getRGB()));
         if (!class5740.method1823()) {
             final float[][] array = SkeletonESP.field15939.get(class5740);
             if (array != null) {

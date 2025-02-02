@@ -33,9 +33,9 @@ public class Speed extends ModuleWithSettings
             if (Speed.mc.player != null) {
                 Speed.field15748 = 0;
                 if (this.method9883("Lag back checker")) {
-                    if (this.method9906()) {
+                    if (this.isEnabled()) {
                         if (Speed.mc.player.ticksExisted > 2) {
-                            Client.method35173().method35197().method25776(new Class6224("Speed", "Disabled speed due to lagback."));
+                            Client.getInstance().method35197().method25776(new Class6224("Speed", "Disabled speed due to lagback."));
                             this.method9910();
                         }
                     }

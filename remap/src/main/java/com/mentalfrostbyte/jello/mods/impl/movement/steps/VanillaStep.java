@@ -19,7 +19,7 @@ public class VanillaStep extends Module
     
     @EventListener
     private void method10795(final Class5738 class5738) {
-        if (this.method9906() && VanillaStep.mc.player != null) {
+        if (this.isEnabled() && VanillaStep.mc.player != null) {
             if (!class5738.method17027()) {
                 VanillaStep.mc.player.stepHeight = this.getNumberSettingValueByName("Maximum heigh");
             }

@@ -20,7 +20,7 @@ public class Class4938 extends Class4800
     
     public Class4938() {
         super("Alt Manager");
-        this.field21204 = Client.method35173().method35198();
+        this.field21204 = Client.getInstance().method35198();
         this.field21205 = "§7Idle...";
         this.method14311(false);
         final int n = 400;
@@ -50,7 +50,7 @@ public class Class4938 extends Class4800
                 }
             }).start();
         });
-        this.field21202.method14260((class4803, n) -> Client.method35173().method35193().method32156(new Class4936()));
+        this.field21202.method14260((class4803, n) -> Client.getInstance().method35193().method32156(new Class4936()));
         this.field21203.method14260((class4803, n) -> {
             String glfwGetClipboardString = "";
             try {
@@ -81,7 +81,7 @@ public class Class4938 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Client.method35173().method35193().method32156(new Class4936());
+            Client.getInstance().method35193().method32156(new Class4936());
         }
     }
 }

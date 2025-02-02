@@ -88,10 +88,10 @@ public class NewTabGUI extends Module
     @EventListener
     @Class6763
     private void method10388(final Class5741 class5741) {
-        if (!this.method9906() || NewTabGUI.mc.player == null) {
+        if (!this.isEnabled() || NewTabGUI.mc.player == null) {
             return;
         }
-        if (!Client.method35173().method35193().method32146()) {
+        if (!Client.getInstance().method35193().method32146()) {
             return;
         }
         if (Minecraft.method5277().gameSettings.field23466) {
@@ -108,7 +108,7 @@ public class NewTabGUI extends Module
     @EventListener
     @Class6763
     private void method10389(final Class5740 class5740) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (NewTabGUI.mc.player != null) {
                 if (NewTabGUI.mc.world != null) {
                     if (Minecraft.method5277().gameSettings.field23466) {
@@ -143,7 +143,7 @@ public class NewTabGUI extends Module
     
     private List<Module> method10391(final Category class8013) {
         final ArrayList list = new ArrayList();
-        final Iterator<Module> iterator = Client.method35173().method35189().method21554(class8013).iterator();
+        final Iterator<Module> iterator = Client.getInstance().method35189().method21554(class8013).iterator();
         while (iterator.hasNext()) {
             list.add(iterator.next());
         }
@@ -167,7 +167,7 @@ public class NewTabGUI extends Module
                     this.field15812.put(key, this.field15812.get(key) - this.field15818);
                 }
             }
-            if (key.method9906()) {
+            if (key.isEnabled()) {
                 RenderUtil.drawString(ClientFonts.JelloMedium20, n + 11 + this.field15812.get(key), (float)(n2 + this.field15816 / 2 - ClientFonts.JelloMedium20.getHeight() / 2 + 3 + n4 * this.field15816), key.getName(), ClientColors.LIGHT_GREYISH_BLUE.color);
             }
             else {
@@ -258,7 +258,7 @@ public class NewTabGUI extends Module
             if (class8479.field34795 == b) {
                 final float method35858 = class8479.field34796.calcPercent();
                 int n10 = ColorUtils.applyAlpha(-5658199, (1.0f - method35858 * (0.5f + method35858 * 0.5f)) * 0.8f);
-                if (Client.method35173().method35193().method32146()) {
+                if (Client.getInstance().method35193().method32146()) {
                     n10 = ColorUtils.applyAlpha(-1, (1.0f - method35858) * 0.14f);
                 }
                 RenderUtil.method26886((float)n, (n7 >= 0) ? ((float)(n7 + n2 + 14)) : ((float)n2), n4 * Class7791.method25030(method35858, 0.0f, 1.0f, 1.0f) + 4.0f, n10);
@@ -285,7 +285,7 @@ public class NewTabGUI extends Module
     
     @EventListener
     private void method10396(final Class5739 class5739) {
-        if (this.method9906() && NewTabGUI.mc.player != null) {
+        if (this.isEnabled() && NewTabGUI.mc.player != null) {
             this.method10399();
             final float n = 6.0f;
             final Minecraft field15514 = NewTabGUI.mc;
@@ -295,7 +295,7 @@ public class NewTabGUI extends Module
     
     @EventListener
     private void method10397(final Class5752 class5752) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         switch (class5752.method17061()) {
@@ -358,7 +358,7 @@ public class NewTabGUI extends Module
     }
     
     private void method10398(final int n, final int n2, final int n3, final int n4, final Color[] array, final Color[] array2, final Color[] array3, final float n5) {
-        final boolean method32146 = Client.method35173().method35193().method32146();
+        final boolean method32146 = Client.getInstance().method35193().method32146();
         int n6 = ColorUtils.method19110(array).getRGB();
         int n7 = ColorUtils.method19110(array3).getRGB();
         if (array2 != null) {
@@ -379,7 +379,7 @@ public class NewTabGUI extends Module
     }
     
     private void method10399() {
-        if (Client.method35173().method35193().method32146()) {
+        if (Client.getInstance().method35193().method32146()) {
             return;
         }
         if (Minecraft.method5277().gameSettings.field23466) {

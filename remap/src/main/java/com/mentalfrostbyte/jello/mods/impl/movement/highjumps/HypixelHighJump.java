@@ -21,7 +21,7 @@ public class HypixelHighJump extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15851 = -1;
         this.field15852 = false;
         this.field15853 = 999.0;
@@ -29,7 +29,7 @@ public class HypixelHighJump extends Module
     
     @EventListener
     public void method10420(final Class5717 class5717) {
-        if (this.method9906() && HypixelHighJump.mc.player != null) {
+        if (this.isEnabled() && HypixelHighJump.mc.player != null) {
             if (HypixelHighJump.mc.player.fallDistance > 3.0f + this.getNumberSettingValueByName("Motion") * 4.0f) {
                 if (class5717.method16974() < -0.3) {
                     if (this.field15852) {
@@ -63,7 +63,7 @@ public class HypixelHighJump extends Module
     
     @EventListener
     public void method10421(final Class5744 class5744) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15851 >= 0) {
                 class5744.method17033(true);
             }

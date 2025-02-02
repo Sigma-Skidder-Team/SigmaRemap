@@ -15,7 +15,7 @@ public class Class3434 extends Class3418
     public Class3434(final PlayerEntity playerEntity) {
         super(null, 0);
         this.field16225 = NonNullList.create();
-        final Class464 field3006 = playerEntity.field3006;
+        final Class464 field3006 = playerEntity.inventory;
         for (int i = 0; i < 5; ++i) {
             for (int j = 0; j < 9; ++j) {
                 this.method10870(new Class6603(Class525.method3024(), i * 9 + j, 9 + j * 18, 18 + i * 18));

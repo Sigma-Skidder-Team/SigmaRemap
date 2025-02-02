@@ -21,13 +21,13 @@ public class Unstuck extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15927 = 0;
     }
     
     @EventListener
     public void method10542(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15927 >= this.getNumberSettingValueByName("Flags")) {
                 Class7482.method23149(class5717, 0.0);
                 class5717.method16975(0.0);
@@ -38,19 +38,19 @@ public class Unstuck extends Module
     
     @EventListener
     public void method10543(final Class5732 class5732) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             this.field15927 = 0;
         }
     }
     
     @EventListener
     public void method10544(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             if (!Unstuck.mc.player.onGround && !ColorUtils.method19160(Unstuck.mc.player, 0.001f)) {
                 if (this.field15927 >= this.getNumberSettingValueByName("Flags")) {
                     if (this.field15928 == 0) {
                         this.field15928 = 60;
-                        Client.method35173().method35197().method25776(new Class6224("Unstuck", "Trying to unstuck you.."));
+                        Client.getInstance().method35197().method25776(new Class6224("Unstuck", "Trying to unstuck you.."));
                     }
                 }
                 if (this.field15928 > 0) {
@@ -58,7 +58,7 @@ public class Unstuck extends Module
                     if (this.field15928 == 0) {
                         this.field15927 = 0;
                     }
-                    class5744.method16961(true);
+                    class5744.setCancelled(true);
                 }
             }
             else {
@@ -69,7 +69,7 @@ public class Unstuck extends Module
     
     @EventListener
     public void method10545(final Class5723 class5723) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (Unstuck.mc.player != null) {
@@ -78,7 +78,7 @@ public class Unstuck extends Module
                     if (Unstuck.mc.player.ticksExisted > 10) {
                         ++this.field15927;
                         if (this.field15927 > this.getNumberSettingValueByName("Flags")) {
-                            class5723.method16961(true);
+                            class5723.setCancelled(true);
                         }
                     }
                 }

@@ -102,7 +102,7 @@ public class Class500 extends TileEntity
         final Block method21696 = this.method2194().getBlock();
         if (method21696 instanceof Class3953) {
             this.method2547();
-            this.field2656.method6833().method21345(this.field2657, method21696, method21696.method11826(this.field2656));
+            this.field2656.method6833().method21345(this.field2657, method21696, method21696.tickRate(this.field2656));
         }
     }
     

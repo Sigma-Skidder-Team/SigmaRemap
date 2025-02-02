@@ -24,7 +24,7 @@ public class NoFall extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field16111 = false;
         this.field16112 = false;
         this.field16113 = 0.0;
@@ -33,11 +33,11 @@ public class NoFall extends Module
     @EventListener
     @Class6759
     private void method10828(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5717.method16974() < -0.5) {
                 if (NoFall.mc.player.fallDistance > 2.0 + Class7482.method23140() * 0.5) {
                     if (!NoFall.mc.player.onGround) {
-                        if (this.method9887("Mode").equals("Hypixel")) {
+                        if (this.getStringSettingValueByName("Mode").equals("Hypixel")) {
                             if (ColorUtils.method19146()) {
                                 final double[] method19177 = ColorUtils.method19177();
                                 final int length = method19177.length;
@@ -78,13 +78,13 @@ public class NoFall extends Module
     
     @EventListener
     private void method10829(final Class5744 class5744) {
-        if (!this.method9906() || NoFall.mc.player == null) {
+        if (!this.isEnabled() || NoFall.mc.player == null) {
             return;
         }
         if (NoFall.mc.player.posY < 2.0) {
             return;
         }
-        String method9887 = this.method9887("Mode");
+        String method9887 = this.getStringSettingValueByName("Mode");
         if (!ColorUtils.method19146() && method9887.equals("Hypixel")) {
             method9887 = "OldHypixel";
         }
@@ -152,7 +152,7 @@ public class NoFall extends Module
                 if (NoFall.mc.player.ticksExisted == 1) {
                     this.field16111 = false;
                 }
-                if (!this.field16111 && NoFall.mc.player.fallDistance > 3.0f && this.method9887("Mode").equals("AAC")) {
+                if (!this.field16111 && NoFall.mc.player.fallDistance > 3.0f && this.getStringSettingValueByName("Mode").equals("AAC")) {
                     this.field16111 = !this.field16111;
                     NoFall.mc.method5269().method17292(new Class4354(NoFall.mc.player.posX, Double.NaN, NoFall.mc.player.posZ, true));
                     break;
@@ -196,7 +196,7 @@ public class NoFall extends Module
                 if (NoFall.mc.player.fallDistance > 3.0f) {
                     this.field16112 = true;
                 }
-                if (this.field16112 && Client.method35173().method35194().method29228() == 0 && NoFall.mc.player.onGround) {
+                if (this.field16112 && Client.getInstance().playerTracker().method29228() == 0 && NoFall.mc.player.onGround) {
                     class5744.method17037(class5744.method17036() - 11.0);
                     this.field16112 = false;
                     break;

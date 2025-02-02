@@ -22,7 +22,7 @@ public class BasicAimbot extends Module
     
     @EventListener
     private void method9918(final Class5739 class5739) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final Entity method10266 = ((Aimbot)this.method9914()).method10266(this.getNumberSettingValueByName("Range"));
             if (method10266 != null) {
                 final float[] method10267 = Class8845.method30912(method10266);

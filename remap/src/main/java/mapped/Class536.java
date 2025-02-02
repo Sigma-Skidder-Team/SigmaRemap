@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class536 extends Class535
+public class Class536 extends ChatScreen
 {
     public Class536() {
         super("");

@@ -24,8 +24,8 @@ public class Class4086 extends Class4085
     private boolean field18191;
     private boolean field18192;
     
-    public Class4086(final Class8959 class8959) {
-        super(class8959);
+    public Class4086(final Properties properties) {
+        super(properties);
         this.field18191 = false;
         this.field18192 = false;
         this.method11705(new ResourceLocation("pull"), (class8321, class8322, class8323) -> {
@@ -136,7 +136,7 @@ public class Class4086 extends Class4085
                             if (!(class511 instanceof PlayerEntity)) {
                                 break Label_0083;
                             }
-                            ((PlayerEntity)class511).field3006.method2365(class513);
+                            ((PlayerEntity)class511).inventory.method2365(class513);
                             break Label_0083;
                         }
                     }
@@ -359,7 +359,7 @@ public class Class4086 extends Class4085
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
         final List<ItemStack> method12299 = method12299(class8321);
         if (method12296(class8321)) {
             if (!method12299.isEmpty()) {
@@ -368,7 +368,7 @@ public class Class4086 extends Class4085
                 if (class8323.method7991()) {
                     if (class8324.getItem() == Items.field31532) {
                         final ArrayList arrayList = Lists.newArrayList();
-                        Items.field31532.method11728(class8324, class8322, arrayList, class8323);
+                        Items.field31532.addInformation(class8324, class8322, arrayList, class8323);
                         if (!arrayList.isEmpty()) {
                             for (int i = 0; i < arrayList.size(); ++i) {
                                 arrayList.set(i, new StringTextComponent("  ").appendSibling((ITextComponent)arrayList.get(i)).applyTextStyle(TextFormatting.GRAY));

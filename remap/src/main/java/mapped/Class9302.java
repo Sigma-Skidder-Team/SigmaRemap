@@ -50,7 +50,7 @@ public class Class9302
         final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(collection.size());
         for (final Entity class7494 : collection) {
             if (class7494 instanceof Class513) {
-                ((Class513)class7494).field3008.method10876();
+                ((Class513)class7494).container.method10876();
             }
             if (!class7494.method1893(i, class7493.method27641())) {
                 continue;
@@ -59,7 +59,7 @@ public class Class9302
             if (!(class7494 instanceof Class513)) {
                 continue;
             }
-            ((Class513)class7494).field3008.method10876();
+            ((Class513)class7494).container.method10876();
         }
         if (!arrayListWithCapacity.isEmpty()) {
             if (arrayListWithCapacity.size() != 1) {

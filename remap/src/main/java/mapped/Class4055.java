@@ -40,8 +40,8 @@ public class Class4055 extends Item
         return false;
     }
     
-    public Class4055(final Class2035 field18151, final Class2215 field18152, final Class8959 class8959) {
-        super(class8959.method31783(field18151.method8096(field18152)));
+    public Class4055(final Class2035 field18151, final Class2215 field18152, final Properties properties) {
+        super(properties.method31783(field18151.method8096(field18152)));
         this.field18151 = field18151;
         this.field18148 = field18152;
         this.field18149 = field18151.method8097(field18152);
@@ -83,8 +83,8 @@ public class Class4055 extends Item
     public Multimap<String, Class7919> method11739(final Class2215 class2215) {
         final Multimap<String, Class7919> method11739 = super.method11739(class2215);
         if (class2215 == this.field18148) {
-            method11739.put((Object)Class8107.field33413.method29978(), (Object)new Class7919(Class4055.field18146[class2215.method8402()], "Armor modifier", this.field18149, Class2157.field12809));
-            method11739.put((Object)Class8107.field33414.method29978(), (Object)new Class7919(Class4055.field18146[class2215.method8402()], "Armor toughness", this.field18150, Class2157.field12809));
+            method11739.put((Object)Class8107.field33413.method29978(), (Object)new Class7919(Class4055.field18146[class2215.getIndex()], "Armor modifier", this.field18149, Class2157.field12809));
+            method11739.put((Object)Class8107.field33414.method29978(), (Object)new Class7919(Class4055.field18146[class2215.getIndex()], "Armor toughness", this.field18150, Class2157.field12809));
         }
         return method11739;
     }

@@ -250,7 +250,7 @@ public class Class3999 extends Block
     }
     
     @Override
-    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onBlockAdded(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7099.getBlock() != class7096.getBlock()) {
             if (!class7097.isRemote) {
                 this.method12152(class7097, class7098, class7096);
@@ -277,10 +277,10 @@ public class Class3999 extends Block
     }
     
     @Override
-    public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+    public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (!b) {
             if (class7096.getBlock() != class7099.getBlock()) {
-                super.method11829(class7096, class7097, class7098, class7099, b);
+                super.onReplaced(class7096, class7097, class7098, class7099, b);
                 if (!class7097.isRemote) {
                     final Direction[] values = Direction.values();
                     for (int length = values.length, i = 0; i < length; ++i) {
@@ -318,7 +318,7 @@ public class Class3999 extends Block
     public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         if (!class7097.isRemote) {
             if (!class7096.method21752(class7097, class7098)) {
-                Block.method11836(class7096, class7097, class7098);
+                Block.spawnDrops(class7096, class7097, class7098);
                 class7097.method6690(class7098, false);
             }
             else {

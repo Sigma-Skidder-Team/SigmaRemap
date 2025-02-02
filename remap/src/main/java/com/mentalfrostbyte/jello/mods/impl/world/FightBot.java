@@ -32,7 +32,7 @@ public class FightBot extends PremiumModule
     
     @EventListener
     public void method10639(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             return;
         }
     }
@@ -43,7 +43,7 @@ public class FightBot extends PremiumModule
         final Iterator iterator = arrayList.iterator();
         while (iterator.hasNext()) {
             final Entity class399 = (Entity)iterator.next();
-            if (class399 instanceof PlayerEntity && !Client.method35173().method35191().method31751(class399)) {
+            if (class399 instanceof PlayerEntity && !Client.getInstance().method35191().method31751(class399)) {
                 continue;
             }
             iterator.remove();

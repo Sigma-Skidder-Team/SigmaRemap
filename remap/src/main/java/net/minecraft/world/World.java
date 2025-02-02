@@ -216,7 +216,7 @@ public abstract class World implements Class1851, AutoCloseable
             final IFluidState method6702 = this.getFluidState(class354);
             this.method6955(2001, class354, Block.method11774(method6701));
             if (b) {
-                Block.method11838(method6701, this, class354, method6701.getBlock().method11802() ? this.getTileEntity(class354) : null, class355, ItemStack.EMPTY);
+                Block.spawnAsEntity(method6701, this, class354, method6701.getBlock().method11802() ? this.getTileEntity(class354) : null, class355, ItemStack.EMPTY);
             }
             return this.setBlockState(class354, method6702.getBlockState(), 3);
         }
@@ -280,7 +280,7 @@ public abstract class World implements Class1851, AutoCloseable
                 final CrashReportCategory method6703 = method6702.makeCategory("Block being updated");
                 method6703.addDetail("Source block type", () -> {
                     try {
-                        return String.format("ID #%s (%s // %s)", Registry.BLOCK.getKey(blockIn), blockIn.method11856(), blockIn.getClass().getCanonicalName());
+                        return String.format("ID #%s (%s // %s)", Registry.BLOCK.getKey(blockIn), blockIn.getTranslationKey(), blockIn.getClass().getCanonicalName());
                     }
                     catch (final Throwable t2) {
                         return "ID #" + Registry.BLOCK.getKey(blockIn);

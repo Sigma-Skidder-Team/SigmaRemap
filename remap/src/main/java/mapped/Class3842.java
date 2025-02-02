@@ -33,7 +33,7 @@ public class Class3842 extends Class3841 implements Class3843
         if (!class7097.isRemote) {
             final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class490) {
-                class7099.method2833((Class434)method6727);
+                class7099.method2833((INamedContainerProvider)method6727);
                 class7099.method2857(Class8276.field34030);
             }
             return Class2201.field13400;

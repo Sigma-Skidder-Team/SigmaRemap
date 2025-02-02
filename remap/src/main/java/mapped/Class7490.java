@@ -44,7 +44,7 @@ public class Class7490 implements Class7491
     
     @Override
     public Collection<String> method23206() {
-        return (Collection<String>)((this.field28923.field4691 != null && this.field28923.field4691.getType() == RayTraceResult.Type.ENTITY) ? Collections.singleton(((Class7007)this.field28923.field4691).method21452().method1866()) : Collections.emptyList());
+        return (Collection<String>)((this.field28923.field4691 != null && this.field28923.field4691.getType() == RayTraceResult.Type.ENTITY) ? Collections.singleton(((EntityRayTraceResult)this.field28923.field4691).getEntity().method1866()) : Collections.emptyList());
     }
     
     @Override
@@ -64,7 +64,7 @@ public class Class7490 implements Class7491
     
     @Override
     public boolean method23210(final int n) {
-        final Class756 field4684 = this.field28923.player;
+        final ClientPlayerEntity field4684 = this.field28923.player;
         return (field4684 == null) ? (n == 0) : field4684.method1926(n);
     }
     

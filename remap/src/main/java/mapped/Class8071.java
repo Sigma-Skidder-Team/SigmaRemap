@@ -282,7 +282,7 @@ public class Class8071
                 playerEntity.method2716(class515, ItemStack.EMPTY);
             }
             if (!playerEntity.method2756()) {
-                ((Class513) playerEntity).method2929(playerEntity.field3008);
+                ((Class513) playerEntity).method2929(playerEntity.container);
             }
             return method27692.method34672();
         }
@@ -313,7 +313,7 @@ public class Class8071
             return method21451;
         }
         else {
-            final Class434 method21452 = method21448.method21754(class513, method21447);
+            final INamedContainerProvider method21452 = method21448.method21754(class513, method21447);
             if (method21452 == null) {
                 return Class2201.field13402;
             }

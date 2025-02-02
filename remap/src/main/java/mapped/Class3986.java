@@ -19,13 +19,13 @@ public class Class3986 extends Block
     }
     
     @Override
-    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
-        class7097.method6833().method21345(class7098, this, this.method11826(class7097));
+    public void onBlockAdded(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
+        class7097.method6833().method21345(class7098, this, this.tickRate(class7097));
     }
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        class7099.method6833().method21345(class7100, this, this.method11826(class7099));
+        class7099.method6833().method21345(class7100, this, this.tickRate(class7099));
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
@@ -44,7 +44,7 @@ public class Class3986 extends Block
     }
     
     @Override
-    public int method11826(final Class1852 class1852) {
+    public int tickRate(final Class1852 class1852) {
         return 2;
     }
     

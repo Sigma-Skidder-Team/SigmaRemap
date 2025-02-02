@@ -38,14 +38,14 @@ public class NCPLongJump extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15528 = false;
         this.field15526 = 0;
     }
     
     @EventListener
     public void method9919(final Class5717 class5717) {
-        if (!this.method9906() || NCPLongJump.mc.player == null) {
+        if (!this.isEnabled() || NCPLongJump.mc.player == null) {
             return;
         }
         if (NCPLongJump.mc.player.onGround) {
@@ -84,7 +84,7 @@ public class NCPLongJump extends Module
                     this.field15529 = field15529;
                 }
                 else if (this.field15529 > field15529) {
-                    final String method9887 = this.method9887("Speed Mode");
+                    final String method9887 = this.getStringSettingValueByName("Speed Mode");
                     switch (method9887) {
                         case "Basic": {
                             this.field15529 *= 0.987;
@@ -108,7 +108,7 @@ public class NCPLongJump extends Module
                 }
                 Class7482.method23149(class5717, this.field15529);
                 if (Class7482.method23140() == 0) {
-                    final String method9888 = this.method9887("Glide Mode");
+                    final String method9888 = this.getStringSettingValueByName("Glide Mode");
                     switch (method9888) {
                         case "Basic": {
                             class5717.method16975(((LongJump)this.method9914()).method10270(this.field15527));
@@ -116,7 +116,7 @@ public class NCPLongJump extends Module
                         }
                         case "High": {
                             class5717.method16975(((LongJump)this.method9914()).method10271(this.field15527));
-                            if (!ColorUtils.method19146() || !Client.method35173().method35189().method21551(NoFall.class).method9906() || (this.field15527 != 8 && this.field15527 != 21)) {
+                            if (!ColorUtils.method19146() || !Client.getInstance().method35189().method21551(NoFall.class).isEnabled() || (this.field15527 != 8 && this.field15527 != 21)) {
                                 break;
                             }
                             final double n3 = NCPLongJump.mc.player.posY + class5717.method16974();
@@ -144,18 +144,18 @@ public class NCPLongJump extends Module
     
     @EventListener
     public void method9920(final Class5722 class5722) {
-        if (this.method9906() && NCPLongJump.mc.player != null) {
+        if (this.isEnabled() && NCPLongJump.mc.player != null) {
             this.field15528 = true;
             class5722.method16996(this.field15529 = Class7482.method23137());
             class5722.method16995(0.425 + Class7482.method23140() * 0.1);
-            if (this.method9887("Glide Mode").equals("High")) {
+            if (this.getStringSettingValueByName("Glide Mode").equals("High")) {
                 if (Class7482.method23140() == 0) {
                     class5722.method16995(0.599);
                     class5722.method16996(0.0);
                     if (this.getNumberSettingValueByName("Boost") > 1.5) {
                         class5722.method16996(0.28 + this.getNumberSettingValueByName("Boost") * 0.1 + Class7482.method23139() * 0.05);
                     }
-                    if (this.method9887("Speed Mode").equals("Hypixel")) {
+                    if (this.getStringSettingValueByName("Speed Mode").equals("Hypixel")) {
                         if (this.getNumberSettingValueByName("Boost") > 1.75) {
                             ColorUtils.method19179(true);
                         }
@@ -170,7 +170,7 @@ public class NCPLongJump extends Module
     
     @EventListener
     public void method9921(final Class5738 class5738) {
-        if (this.method9906() && this.method9887("Glide Mode").equals("High")) {
+        if (this.isEnabled() && this.getStringSettingValueByName("Glide Mode").equals("High")) {
             return;
         }
     }

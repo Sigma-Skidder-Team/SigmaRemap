@@ -18,7 +18,7 @@ public class AntiBlind extends Module
     
     @EventListener
     private void method10249(final Class5741 class5741) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             AntiBlind.mc.player.method2659(Class9439.field40482);
             AntiBlind.mc.player.method2659(Class9439.field40488);
         }

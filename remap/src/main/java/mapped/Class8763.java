@@ -829,17 +829,17 @@ public class Class8763
         return -1;
     }
     
-    public static boolean method30361(final Class1848 class1848, final float n, final Class1846 class1849, final boolean b, final float n2) {
-        if (class1848 == null) {
+    public static boolean method30361(final ClientWorld clientWorld, final float n, final Class1846 class1849, final boolean b, final float n2) {
+        if (clientWorld == null) {
             return false;
         }
         if (Class8763.field36808 == null) {
             return false;
         }
-        final int n3 = class1848.dimension.getType().method1270() - Class8763.field36809;
+        final int n3 = clientWorld.dimension.getType().method1270() - Class8763.field36809;
         if (n3 >= 0 && n3 < Class8763.field36808.length) {
             final Class8265 class1850 = Class8763.field36808[n3];
-            return class1850 != null && class1850.method27449(class1848, n, class1849, b, n2);
+            return class1850 != null && class1850.method27449(clientWorld, n, class1849, b, n2);
         }
         return false;
     }

@@ -40,7 +40,7 @@ public class Class4801 extends Class4800
         int n = 30;
         int n2 = 30;
         this.addVisualThing(this.field20466 = new Class4912(this, "brainFreeze"));
-        for (final Module class3167 : Client.method35173().method35189().method21553().values()) {
+        for (final Module class3167 : Client.getInstance().method35189().method21553().values()) {
             if (this.field20464.containsKey(class3167.getCategory2())) {
                 continue;
             }
@@ -82,7 +82,7 @@ public class Class4801 extends Class4800
     }
     
     public boolean method14208() {
-        if (Client.method35173().method35199().method24199() && Client.method35173().method35199().method24200()) {
+        if (Client.getInstance().method35199().method24199() && Client.getInstance().method35199().method24200()) {
             return false;
         }
         if (this.field20469 == null) {
@@ -90,20 +90,20 @@ public class Class4801 extends Class4800
                 final ArrayList list = new ArrayList();
                 list.add(new Class7976(Class294.field1678, "Music", 40));
                 list.add(new Class7976(Class294.field1675, "Jello Music requires:", 20));
-                if (!Client.method35173().method35199().method24199()) {
+                if (!Client.getInstance().method35199().method24199()) {
                     list.add(new Class7976(Class294.field1675, "- Python 2.7.17", 30));
                 }
-                if (!Client.method35173().method35199().method24200()) {
+                if (!Client.getInstance().method35199().method24200()) {
                     list.add(new Class7976(Class294.field1675, "- Visual C++ 2010 x86", 30));
                 }
                 list.add(new Class7976(Class294.field1677, "Download", 55));
                 final Class4907 field20469 = new Class4907(this, "music", true, "Dependencies.", (Class7976[])list.toArray(new Class7976[0]));
                 this.method14242(this.field20469 = field20469);
                 this.field20469.method14516(class4841 -> {
-                    if (!Client.method35173().method35199().method24199()) {
+                    if (!Client.getInstance().method35199().method24199()) {
                         Util.method27845().method980("https://www.python.org/ftp/python/2.7.17/python-2.7.17-macosx10.9.pkg");
                     }
-                    if (!Client.method35173().method35199().method24200()) {
+                    if (!Client.getInstance().method35199().method24200()) {
                         Util.method27845().method980("https://www.microsoft.com/en-US/download/details.aspx?id=5555");
                     }
                 });
@@ -139,7 +139,7 @@ public class Class4801 extends Class4800
         this.field20465.method14297(this.field20465.method14276() < this.method14276() && this.field20465.method14278() < this.method14278());
         super.method14200(n, n2);
         ColorUtils.method19170(Math.min(1.0f, Class4801.field20461.calcPercent() * 4.0f));
-        this.field20466.method14297(Client.method35173().method35189().method21551(BrainFreeze.class).method9906());
+        this.field20466.method14297(Client.getInstance().method35189().method21551(BrainFreeze.class).isEnabled());
         if (this.field20467 != null) {
             final int n3 = n - this.field20467.method14280();
             final int n4 = n2 - this.field20467.method14281();
@@ -228,7 +228,7 @@ public class Class4801 extends Class4800
     @Override
     public void method14204(final int n) {
         super.method14204(n);
-        final int method21959 = Client.method35173().method35189().method21557().method21959(Class722.class);
+        final int method21959 = Client.getInstance().method35189().method21557().method21959(Class722.class);
         if (n != 256) {
             if (n != method21959) {
                 return;
@@ -266,8 +266,8 @@ public class Class4801 extends Class4800
             n3 -= this.field20468.field20927.calcPercent() * 0.1f;
             n2 *= 1.0f + n4 * 0.2f;
         }
-        if (Client.method35173().method35189().method21556().method32707() != null) {
-            final String field33839 = Client.method35173().method35189().method21556().method32707().field33839;
+        if (Client.getInstance().method35189().method21556().method32707() != null) {
+            final String field33839 = Client.getInstance().method35189().method21556().method32707().field33839;
             RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.field20480 - ClientFonts.JelloLight20.getWidth(field33839) - 80), (float)(this.field20481 - 47), field33839, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * Math.max(0.0f, Math.min(1.0f, n2))));
         }
         for (final Class4803 class4803 : this.method14250()) {

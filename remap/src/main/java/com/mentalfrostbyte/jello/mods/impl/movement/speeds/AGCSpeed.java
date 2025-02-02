@@ -20,7 +20,7 @@ public class AGCSpeed extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15593 = Class7482.method23143()[0];
     }
     
@@ -31,7 +31,7 @@ public class AGCSpeed extends Module
     
     @EventListener
     private void method10003(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (AGCSpeed.mc.player != null) {
                 if (class5723.method16998() instanceof Class4273) {
                     if (((Class4273)class5723.method16998()).method12822() == AGCSpeed.mc.player.getEntityId()) {
@@ -44,10 +44,10 @@ public class AGCSpeed extends Module
     
     @EventListener
     public void method10004(final Class5717 class5717) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
-        if (Client.method35173().method35194().method29228() > 25) {
+        if (Client.getInstance().playerTracker().method29228() > 25) {
             this.field15591 = 0;
         }
         if (this.field15591 >= 0) {

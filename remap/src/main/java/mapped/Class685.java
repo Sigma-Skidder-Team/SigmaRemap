@@ -108,7 +108,7 @@ public class Class685 extends AbstractGui
         else {
             this.method3798(this.field3753.method5303());
         }
-        final ItemStack method3810 = this.field3753.player.field3006.method2370(3);
+        final ItemStack method3810 = this.field3753.player.inventory.method2370(3);
         if (this.field3753.gameSettings.field23465 == 0) {
             if (method3810.getItem() == Blocks.field29342.method11704()) {
                 this.method3796();
@@ -120,7 +120,7 @@ public class Class685 extends AbstractGui
                 this.method3799(method3811);
             }
         }
-        if (this.field3753.field4682.method27336() != Class101.field301) {
+        if (this.field3753.playerController.method27336() != Class101.field301) {
             if (!this.field3753.gameSettings.field23464) {
                 this.method3784(n);
             }
@@ -141,21 +141,21 @@ public class Class685 extends AbstractGui
             this.field3753.method5327().endSection();
             RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             this.field3753.method5290().method5849(Class685.GUI_ICONS_LOCATION);
-            if (this.field3753.field4682.method27310()) {
+            if (this.field3753.playerController.method27310()) {
                 this.method3794();
             }
             this.method3795();
             RenderSystem.disableBlend();
             final int n2 = this.field3778 / 2 - 91;
             if (!this.field3753.player.method4129()) {
-                if (this.field3753.field4682.method27330()) {
+                if (this.field3753.playerController.method27330()) {
                     this.method3786(n2);
                 }
             }
             else {
                 this.method3785(n2);
             }
-            if (this.field3753.gameSettings.field23400 && this.field3753.field4682.method27336() != Class101.field301) {
+            if (this.field3753.gameSettings.field23400 && this.field3753.playerController.method27336() != Class101.field301) {
                 this.method3787();
             }
             else if (this.field3753.player.isSpectator()) {
@@ -259,12 +259,12 @@ public class Class685 extends AbstractGui
                 final Class9290 class9290 = (method3816 == null) ? method3815.method19644(1) : method3816;
                 if (class9290 != null) {
                     final Class5726 class9291 = new Class5726(true);
-                    Client.method35173().method35188().method21097(class9291);
-                    if (class9291.method16962()) {
+                    Client.getInstance().method35188().method21097(class9291);
+                    if (class9291.isCancelled()) {
                         return;
                     }
                     this.method3789(class9290);
-                    Client.method35173().method35188().method21097(new Class5726(false));
+                    Client.getInstance().method35188().method21097(new Class5726(false));
                 }
                 RenderSystem.enableBlend();
                 RenderSystem.defaultBlendFunc();
@@ -308,7 +308,7 @@ public class Class685 extends AbstractGui
     private void method3781() {
         final Class5760 field4648 = this.field3753.gameSettings;
         if (field4648.field23465 == 0) {
-            if (this.field3753.field4682.method27336() != Class101.field301 || this.method3782(this.field3753.field4691)) {
+            if (this.field3753.playerController.method27336() != Class101.field301 || this.method3782(this.field3753.field4691)) {
                 if (field4648.field23466) {
                     if (!field4648.field23464) {
                         if (!this.field3753.player.method2896()) {
@@ -360,13 +360,13 @@ public class Class685 extends AbstractGui
             return false;
         }
         if (class7006.getType() == RayTraceResult.Type.ENTITY) {
-            return ((Class7007)class7006).method21452() instanceof Class434;
+            return ((EntityRayTraceResult)class7006).getEntity() instanceof INamedContainerProvider;
         }
         if (class7006.getType() != RayTraceResult.Type.BLOCK) {
             return false;
         }
         final BlockPos method21447 = ((BlockRayTraceResult)class7006).getPos();
-        final Class1848 field4683 = this.field3753.world;
+        final ClientWorld field4683 = this.field3753.world;
         return field4683.getBlockState(method21447).method21754(field4683, method21447) != null;
     }
     
@@ -446,7 +446,7 @@ public class Class685 extends AbstractGui
             final int method3793 = this.getBlitOffset();
             this.setBlitOffset(-90);
             this.blit(n2 - 91, this.field3779 - 22, 0, 0, 182, 22);
-            this.blit(n2 - 91 - 1 + method3790.field3006.field2743 * 20, this.field3779 - 22 - 1, 0, 22, 24, 22);
+            this.blit(n2 - 91 - 1 + method3790.inventory.field2743 * 20, this.field3779 - 22 - 1, 0, 22, 24, 22);
             if (!method3791.method27620()) {
                 if (method3792 != Class2226.field13697) {
                     this.blit(n2 + 91, this.field3779 - 23, 53, 22, 29, 24);
@@ -461,7 +461,7 @@ public class Class685 extends AbstractGui
             RenderSystem.defaultBlendFunc();
             Class9404.method34980(false);
             for (int i = 0; i < 9; ++i) {
-                this.method3800(n2 - 90 + i * 20 + 2, this.field3779 - 16 - 3, n, method3790, method3790.field3006.field2739.get(i));
+                this.method3800(n2 - 90 + i * 20 + 2, this.field3779 - 16 - 3, n, method3790, method3790.inventory.field2739.get(i));
             }
             if (!method3791.method27620()) {
                 Class9404.method34980(true);
@@ -550,7 +550,7 @@ public class Class685 extends AbstractGui
                 }
                 final int n = (this.field3778 - this.method3809().getStringWidth(s)) / 2;
                 int n2 = this.field3779 - 59;
-                if (!this.field3753.field4682.method27310()) {
+                if (!this.field3753.playerController.method27310()) {
                     n2 += 14;
                 }
                 int n3 = (int)(this.field3761 * 256.0f / 10.0f);
@@ -992,7 +992,7 @@ public class Class685 extends AbstractGui
             this.method3797(method5303);
         }
         if (this.field3753.player != null) {
-            final ItemStack method5304 = this.field3753.player.field3006.method2345();
+            final ItemStack method5304 = this.field3753.player.inventory.method2345();
             boolean equals = true;
             if (Class9570.field41336.method22605()) {
                 equals = Config.equals(Class9570.method35825(method5304, Class9570.field41336, method5304.method27664().getUnformattedComponentText()), Class9570.method35825(this.field3762, Class9570.field41336, this.field3762.method27664().getUnformattedComponentText()));

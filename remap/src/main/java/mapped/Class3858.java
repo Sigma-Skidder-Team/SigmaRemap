@@ -84,7 +84,7 @@ public class Class3858 extends Block implements Class3857
     }
     
     @Override
-    public int method11826(final Class1852 class1852) {
+    public int tickRate(final Class1852 class1852) {
         return 5;
     }
     
@@ -115,7 +115,7 @@ public class Class3858 extends Block implements Class3857
                 if (class7097 == Direction.UP) {
                     if (class7098.method21696() != Blocks.BUBBLE_COLUMN) {
                         if (method11924(class7099, class7101)) {
-                            class7099.method6833().method21345(class7100, this, this.method11826(class7099));
+                            class7099.method6833().method21345(class7100, this, this.tickRate(class7099));
                         }
                     }
                 }

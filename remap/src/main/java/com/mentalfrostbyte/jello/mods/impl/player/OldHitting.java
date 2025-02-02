@@ -30,17 +30,17 @@ public class OldHitting extends Module
     @EventListener
     @Class6757
     private void method10435(final Class5744 class5744) {
-        if (!this.method9906() && Class9367.field40167 != Class7906.field32452) {
+        if (!this.isEnabled() && Class9367.field40167 != Class7906.field32452) {
             return;
         }
         if (class5744.method17046()) {
             final boolean b = OldHitting.mc.player.getHeldItemMainhand() != null && OldHitting.mc.player.getHeldItemMainhand().getItem() instanceof Class4077;
-            final boolean method9898 = Client.method35173().method35189().method21551(KillAura.class).method9898();
+            final boolean method9898 = Client.getInstance().method35189().method21551(KillAura.class).method9898();
             boolean b2 = true;
             Label_0104: {
                 if (!OldHitting.mc.player.method1809()) {
                     if (OldHitting.mc.field4691.getType() == RayTraceResult.Type.BLOCK) {
-                        if (!Client.method35173().method35189().method21551(KillAura.class).method9898()) {
+                        if (!Client.getInstance().method35189().method21551(KillAura.class).method9898()) {
                             final Block method9899 = OldHitting.mc.world.getBlockState(((BlockRayTraceResult) OldHitting.mc.field4691).getPos()).method21696();
                             if (!new ArrayList(Arrays.asList(Blocks.CHEST, Blocks.field29409, Blocks.field29468, Blocks.CRAFTING_TABLE, Blocks.field29417, Blocks.field29299, Blocks.BLAST_FURNACE, Blocks.field29398, Blocks.field29465, Blocks.field29466, Blocks.field29467, Blocks.field29216, Blocks.field29220, Blocks.field29316, Blocks.field29475, Blocks.field29481, Blocks.field29345, Blocks.field29471)).contains(method9899)) {
                                 if (!(method9899 instanceof Class3907)) {
@@ -105,7 +105,7 @@ public class OldHitting extends Module
     @EventListener
     @Class6759
     private void method10436(final Class5723 class5723) {
-        if (!this.method9906() && Class9367.field40167 != Class7906.field32452) {
+        if (!this.isEnabled() && Class9367.field40167 != Class7906.field32452) {
             return;
         }
         if (OldHitting.mc.player != null) {
@@ -114,7 +114,7 @@ public class OldHitting extends Module
                 if (class5724.method13247() != null) {
                     if (class5724.method13248() == OldHitting.mc.player.getEntityId()) {
                         if (class5724.method13247().getItem() instanceof Class4100) {
-                            class5723.method16961(true);
+                            class5723.setCancelled(true);
                         }
                     }
                 }
@@ -125,7 +125,7 @@ public class OldHitting extends Module
     @EventListener
     @Class6759
     private void method10437(final Class5716 class5716) {
-        if (!this.method9906() && Class9367.field40167 != Class7906.field32452) {
+        if (!this.isEnabled() && Class9367.field40167 != Class7906.field32452) {
             return;
         }
         final float method16964 = class5716.method16964();
@@ -137,8 +137,8 @@ public class OldHitting extends Module
             return;
         }
         if (OldHitting.field15857 && class5716.method16966()) {
-            class5716.method16961(true);
-            final String method16965 = this.method9887("Animation");
+            class5716.setCancelled(true);
+            final String method16965 = this.getStringSettingValueByName("Animation");
             switch (method16965) {
                 case "Vanilla": {
                     this.method10441(0.0f, method16964, class5716.method16969());

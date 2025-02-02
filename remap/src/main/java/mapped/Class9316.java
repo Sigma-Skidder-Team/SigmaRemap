@@ -17,7 +17,7 @@ public class Class9316
     
     public static void method34477(final Minecraft class869, final MatrixStack class870) {
         RenderSystem.disableAlphaTest();
-        final Class756 field4684 = class869.player;
+        final ClientPlayerEntity field4684 = class869.player;
         if (!field4684.noClip) {
             final BlockState method34478 = method34478(field4684);
             if (method34478 != null) {
@@ -113,7 +113,7 @@ public class Class9316
         final float method22705 = MathHelper.method35700(method22702, method22700, n2);
         final float method22706 = MathHelper.method35700(method22702, method22701, n2);
         final Class5746 class871 = new Class5746(0.9f);
-        Client.method35173().method35188().method21097(class871);
+        Client.getInstance().method35188().method21097(class871);
         for (int i = 0; i < 2; ++i) {
             class870.method22567();
             class870.method22564(-(i * 2 - 1) * 0.24f, -0.30000001192092896, 0.0);

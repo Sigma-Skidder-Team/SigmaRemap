@@ -14,8 +14,8 @@ import java.util.List;
 
 public class Class4034 extends Item
 {
-    public Class4034(final Class8959 class8959) {
-        super(class8959);
+    public Class4034(final Properties properties) {
+        super(properties);
     }
     
     @Override
@@ -34,8 +34,8 @@ public class Class4034 extends Item
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
-        super.method11728(class8321, class8322, list, class8323);
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
+        super.addInformation(class8321, class8322, list, class8323);
         ItemStack.method27669(list, method12225(class8321));
     }
     

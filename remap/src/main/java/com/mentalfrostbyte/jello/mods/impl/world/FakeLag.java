@@ -32,7 +32,7 @@ public class FakeLag extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15553.clear();
         this.field15555 = false;
         this.field15554.method23934();
@@ -48,7 +48,7 @@ public class FakeLag extends Module
     
     @EventListener
     private void method9970(final Class5732 class5732) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             this.field15553.clear();
             this.field15555 = false;
             this.field15554.method23934();
@@ -57,7 +57,7 @@ public class FakeLag extends Module
     
     @EventListener
     private void method9971(final Class5721 class5721) {
-        if (this.method9906() && FakeLag.mc.method5269() != null) {
+        if (this.isEnabled() && FakeLag.mc.method5269() != null) {
             if (!this.field15555) {
                 if (this.field15554.method23935() > this.getNumberSettingValueByName("Delay") * 1000.0f) {
                     this.field15555 = true;
@@ -88,7 +88,7 @@ public class FakeLag extends Module
                     }
                 }
                 this.field15553.add(class5721.method16990());
-                class5721.method16961(true);
+                class5721.setCancelled(true);
             }
             else {
                 this.field15555 = false;

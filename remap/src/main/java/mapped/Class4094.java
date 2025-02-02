@@ -24,8 +24,8 @@ import javax.annotation.Nullable;
 
 public class Class4094 extends Class4093
 {
-    public Class4094(final Class8959 class8959) {
-        super(class8959);
+    public Class4094(final Properties properties) {
+        super(properties);
     }
     
     public static ItemStack method12326(final World class1847, final int n, final int n2, final byte b, final boolean b2, final boolean b3) {
@@ -370,7 +370,7 @@ public class Class4094 extends Class4093
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
         final Class6356 class8324 = (class8322 != null) ? method12328(class8321, class8322) : null;
         if (class8324 != null) {
             if (class8324.field25427) {

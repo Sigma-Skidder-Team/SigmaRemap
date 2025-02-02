@@ -133,7 +133,7 @@ public abstract class Class3418
         return false;
     }
     
-    public Class6601 method10878(final int n) {
+    public Class6601 getSlot(final int n) {
         return this.field16151.get(n);
     }
     
@@ -144,7 +144,7 @@ public abstract class Class3418
     
     public ItemStack method10879(final int n, final int n2, final Class2133 class2133, final PlayerEntity class2134) {
         ItemStack class2135 = ItemStack.EMPTY;
-        final Class464 field3006 = class2134.field3006;
+        final Class464 field3006 = class2134.inventory;
         if (class2133 != Class2133.field12442) {
             if (this.field16157 == 0) {
                 if ((class2133 == Class2133.field12437 || class2133 == Class2133.field12438) && (n2 == 0 || n2 == 1)) {
@@ -479,7 +479,7 @@ public abstract class Class3418
     }
     
     public void method10859(final PlayerEntity playerEntity) {
-        final Class464 field3006 = playerEntity.field3006;
+        final Class464 field3006 = playerEntity.inventory;
         if (!field3006.method2375().method27620()) {
             playerEntity.method2822(field3006.method2375(), false);
             field3006.method2374(ItemStack.EMPTY);
@@ -489,7 +489,7 @@ public abstract class Class3418
     public void method10881(final PlayerEntity playerEntity, final World class513, final IInventory class514) {
         if (playerEntity.method1768() && (playerEntity instanceof Class513 && ((Class513) playerEntity).method2936())) {
             for (int i = 0; i < class514.getSizeInventory(); ++i) {
-                playerEntity.field3006.method2364(class513, class514.method2159(i));
+                playerEntity.inventory.method2364(class513, class514.method2159(i));
             }
         }
         else {
@@ -504,12 +504,12 @@ public abstract class Class3418
     }
     
     public void method10882(final int n, final ItemStack class8321) {
-        this.method10878(n).method20055(class8321);
+        this.getSlot(n).method20055(class8321);
     }
     
     public void method10883(final List<ItemStack> list) {
         for (int i = 0; i < list.size(); ++i) {
-            this.method10878(i).method20055((ItemStack)list.get(i));
+            this.getSlot(i).method20055((ItemStack)list.get(i));
         }
     }
     

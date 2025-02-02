@@ -17,7 +17,7 @@ public class JetpackFly extends Module
     
     @EventListener
     public void method10550(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (JetpackFly.mc.player.field2967) {
                 JetpackFly.mc.player.method2725();
             }

@@ -18,21 +18,21 @@ public class Class552 extends Class551
         super(true);
         if (Class552.field3323.before(new Date(System.currentTimeMillis() - 3000L))) {
             Class552.field3323 = new Date();
-            Client.method35173().method35187().method20240("Saving profiles...");
+            Client.getInstance().method35187().method20240("Saving profiles...");
             try {
-                Client.method35173().method35189().method21556().method32706();
-                Client.method35173().method35179();
+                Client.getInstance().method35189().method21556().method32706();
+                Client.getInstance().method35179();
             }
             catch (final IOException ex) {
                 ex.printStackTrace();
-                Client.method35173().method35187().method20241("Unable to save mod profiles...");
+                Client.getInstance().method35187().method20241("Unable to save mod profiles...");
             }
         }
     }
     
     @Override
     public void init() {
-        if (Client.method35173().method35209() == Class2209.field13464) {
+        if (Client.getInstance().method35209() == Class2209.field13464) {
             this.addButton(new Class654(this.width / 2 - 102, this.height - 45, 204, 20, "Jello for Sigma Options", class654 -> this.minecraft.displayGuiScreen(new Class555())));
         }
         super.init();

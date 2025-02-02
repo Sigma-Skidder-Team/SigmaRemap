@@ -174,7 +174,7 @@ public class ClientAssets
         }
         catch (final Exception ex) {
             ex.printStackTrace();
-            Client.method35173().method35187().method20242("Unable to load texture " + str + ". Please make sure it is a valid path and has a valid extension or load it directly from the load(name, type) function.");
+            Client.getInstance().method35187().method20242("Unable to load texture " + str + ". Please make sure it is a valid path and has a valid extension or load it directly from the load(name, type) function.");
             throw ex;
         }
     }
@@ -222,8 +222,8 @@ public class ClientAssets
     public static InputStream method25394(final String s) {
         try {
             final String string = DigestUtils.sha1Hex(s) + ".bmp";
-            if (Client.method35173().getClass().getClassLoader().getResource(string) != null) {
-                try (final InputStream resourceAsStream = Client.method35173().getClass().getClassLoader().getResourceAsStream(string);
+            if (Client.getInstance().getClass().getClassLoader().getResource(string) != null) {
+                try (final InputStream resourceAsStream = Client.getInstance().getClass().getClassLoader().getResourceAsStream(string);
                      final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
                     final byte[] array = new byte[4096];
                     int n = 0;
@@ -239,7 +239,7 @@ public class ClientAssets
                     return new ByteArrayInputStream(byteArrayOutputStream.toByteArray());
                 }
             }
-            return Client.method35173().getClass().getClassLoader().getResourceAsStream(s);
+            return Client.getInstance().getClass().getClassLoader().getResourceAsStream(s);
         }
         catch (final IOException ex) {
             throw new IllegalStateException("Unable to find " + s + ". You've probably obfuscated the archive and forgot to transfer the assets or keep package names.");

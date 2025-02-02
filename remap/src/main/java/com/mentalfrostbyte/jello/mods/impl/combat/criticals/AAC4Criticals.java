@@ -19,14 +19,14 @@ public class AAC4Criticals extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         AAC4Criticals.field15534 = 0;
     }
     
     @EventListener
     @Class6759
     private void method9939(final Class5745 class5745) {
-        if (this.method9906() && class5745.method17049() >= 0.625) {
+        if (this.isEnabled() && class5745.method17049() >= 0.625) {
             AAC4Criticals.field15534 = 0;
         }
     }
@@ -34,19 +34,19 @@ public class AAC4Criticals extends Module
     @EventListener
     private void method9940(final Class5722 class5722) {
         if (AAC4Criticals.field15534 == 2) {
-            class5722.method16961(true);
+            class5722.setCancelled(true);
         }
     }
     
     @EventListener
     @Class6757
     private void method9941(final Class5744 class5744) {
-        if (!this.method9906() || Client.method35173().method35189().method21551(Speed.class).method9906()) {
+        if (!this.isEnabled() || Client.getInstance().method35189().method21551(Speed.class).isEnabled()) {
             AAC4Criticals.field15534 = 0;
             return;
         }
         if (class5744.method17046()) {
-            if (AAC4Criticals.mc.field4682.method27337()) {
+            if (AAC4Criticals.mc.playerController.method27337()) {
                 AAC4Criticals.field15534 = 0;
             }
             if (AAC4Criticals.mc.player.onGround && AAC4Criticals.mc.player.collidedVertically) {

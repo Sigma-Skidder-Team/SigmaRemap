@@ -17,8 +17,8 @@ import java.util.List;
 
 public class Class4063 extends Item
 {
-    public Class4063(final Class8959 class8959) {
-        super(class8959);
+    public Class4063(final Properties properties) {
+        super(properties);
     }
     
     @Override
@@ -50,7 +50,7 @@ public class Class4063 extends Item
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void addInformation(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final ITooltipFlag class8323) {
         final CompoundNBT method27660 = class8321.method27660("Fireworks");
         if (method27660 != null) {
             if (method27660.contains("Flight", 99)) {

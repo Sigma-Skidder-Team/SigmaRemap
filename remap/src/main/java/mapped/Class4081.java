@@ -15,8 +15,8 @@ public class Class4081 extends Item
     private static String[] field18185;
     private final EntityType<? extends Class860> field18186;
     
-    public Class4081(final EntityType<? extends Class860> field18186, final Class8959 class8959) {
-        super(class8959);
+    public Class4081(final EntityType<? extends Class860> field18186, final Properties properties) {
+        super(properties);
         this.field18186 = field18186;
     }
     

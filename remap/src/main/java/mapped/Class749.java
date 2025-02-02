@@ -35,11 +35,11 @@ public class Class749 extends Class516<Class3417>
         final int field3079 = this.field3079;
         final int field3080 = this.field3080;
         this.blit(field3079, field3080, 0, 0, this.field3075, this.field3076);
-        final Item method27622 = this.field3077.method10878(1).method20053().getItem();
+        final Item method27622 = this.field3077.getSlot(1).method20053().getItem();
         final boolean b = method27622 == Items.field31521;
         final boolean b2 = method27622 == Items.field31369;
         final boolean b3 = method27622 == Items.field30967;
-        final ItemStack method27623 = this.field3077.method10878(0).method20053();
+        final ItemStack method27623 = this.field3077.getSlot(0).method20053();
         boolean b4 = false;
         Class6356 method27624;
         if (method27623.getItem() != Items.field31425) {

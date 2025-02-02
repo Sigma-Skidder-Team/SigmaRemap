@@ -88,7 +88,7 @@ public class Class3884 extends Class3874 implements Class3872
         if (intValue <= 1) {
             return super.method11844(class7096, class7097, class7098, class7099, class7100, class7101);
         }
-        Block.method11839(class7097, class7098, new ItemStack(Items.field31630, 1 + class7097.rand.nextInt(2) + n));
+        Block.spawnAsEntity(class7097, class7098, new ItemStack(Items.field31630, 1 + class7097.rand.nextInt(2) + n));
         class7097.method6705(null, class7098, Class8520.field35630, Class286.field1582, 1.0f, 0.8f + class7097.rand.nextFloat() * 0.4f);
         class7097.setBlockState(class7098, ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3884.field17541, 1), 2);
         return Class2201.field13400;

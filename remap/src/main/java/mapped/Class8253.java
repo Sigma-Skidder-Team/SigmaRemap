@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class8253 extends Class8252<Class756>
+public class Class8253 extends Class8252<ClientPlayerEntity>
 {
     private static String[] field33901;
     

@@ -28,13 +28,13 @@ public class InfoHUD extends Module
     
     @EventListener
     private void method10537(final Class5740 class5740) {
-        if (!this.method9906() || InfoHUD.mc.player == null) {
+        if (!this.isEnabled() || InfoHUD.mc.player == null) {
             return;
         }
         if (Minecraft.method5277().gameSettings.field23464) {
             return;
         }
-        if (!(InfoHUD.mc.field4700 instanceof Class535)) {
+        if (!(InfoHUD.mc.currentScreen instanceof ChatScreen)) {
             final float n = InfoHUD.mc.player.rotationYaw % 360.0f - this.field15926 % 360.0f;
             final float field15926 = this.field15926;
             final float n2 = n;
@@ -45,10 +45,10 @@ public class InfoHUD extends Module
                 n3 += this.method10541(0, InfoHUD.mc.field4632.method7695() - 23, 114);
             }
             if (this.method9883("Show Armor")) {
-                n3 += this.method10540(n3, InfoHUD.mc.field4632.method7695() - 14) + 10;
+                n3 += this.method16695(n3, InfoHUD.mc.field4632.method7695() - 14) + 10;
             }
-            if (!this.method9887("Cords").equals("None")) {
-                final int n4 = n3 + (this.method10539(n3, 42) + 10);
+            if (!this.getStringSettingValueByName("Cords").equals("None")) {
+                final int n4 = n3 + (this.method16694(n3, 42) + 10);
             }
         }
     }
@@ -60,18 +60,18 @@ public class InfoHUD extends Module
         return Math.round(InfoHUD.mc.player.posX * 10.0) / 10.0f + " " + Math.round(InfoHUD.mc.player.posY * 10.0) / 10.0f + " " + Math.round(InfoHUD.mc.player.posZ * 10.0) / 10.0f;
     }
     
-    public int method10539(final int n, final int n2) {
+    public int method16694(final int n, final int n2) {
         final String s = "Facing South";
-        final String method10538 = this.method10538(this.method9887("Cords").equals("Precise"));
+        final String method10538 = this.method10538(this.getStringSettingValueByName("Cords").equals("Precise"));
         RenderUtil.drawString(ClientFonts.JelloMedium20, (float)n, (float)(InfoHUD.mc.field4632.method7695() - n2), method10538, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f));
         return Math.max(ClientFonts.JelloLight20.getWidth(s), ClientFonts.JelloMedium20.getWidth(method10538));
     }
     
-    public int method10540(final int n, final int n2) {
+    public int method16695(final int n, final int n2) {
         int n3 = 0;
-        for (int i = 0; i < InfoHUD.mc.player.field3006.field2740.size(); ++i) {
-            final ItemStack class8321 = InfoHUD.mc.player.field3006.field2740.get(i);
-            if (!(class8321.getItem() instanceof Class4099)) {
+        for (int i = 0; i < InfoHUD.mc.player.inventory.field2740.size(); ++i) {
+            final ItemStack class8321 = InfoHUD.mc.player.inventory.field2740.get(i);
+            if (!(class8321.getItem() instanceof AirBlock)) {
                 ++n3;
                 final int n4 = n2 - 32 * n3;
                 RenderUtil.method26929(class8321, n, n4, 32, 32);

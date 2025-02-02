@@ -14,8 +14,8 @@ public class Class4068 extends Item
     private static final Class6423 field18162;
     private final Class2080 field18163;
     
-    public Class4068(final Class2080 field18163, final Class8959 class8959) {
-        super(class8959);
+    public Class4068(final Class2080 field18163, final Properties properties) {
+        super(properties);
         this.field18163 = field18163;
         Class3955.method12069(this, Class4068.field18162);
     }

@@ -28,7 +28,7 @@ public class MineplexLongJump extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field16045 = true;
         this.field16042 = -1;
         this.field16043 = 0;
@@ -37,7 +37,7 @@ public class MineplexLongJump extends Module
     
     @EventListener
     public void method10729(final Class5744 class5744) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5744.method17046()) {
                 if (this.field16042 >= 0) {
                     class5744.method17033(true);
@@ -48,7 +48,7 @@ public class MineplexLongJump extends Module
     
     @EventListener
     public void method10730(final Class5717 class5717) {
-        if (this.method9906() && MineplexLongJump.mc.player != null) {
+        if (this.isEnabled() && MineplexLongJump.mc.player != null) {
             if (!MineplexLongJump.mc.player.onGround) {
                 if (this.field16042 >= 0) {
                     if (this.field16045) {
@@ -120,7 +120,7 @@ public class MineplexLongJump extends Module
     
     @EventListener
     public void method10731(final Class5722 class5722) {
-        if (this.method9906() && MineplexLongJump.mc.player != null) {
+        if (this.isEnabled() && MineplexLongJump.mc.player != null) {
             this.field16040 = 0.81 + this.field16043 * 0.095;
             if (MineplexLongJump.mc.player.posY != (int) MineplexLongJump.mc.player.posY) {
                 this.field16040 = 0.52;
@@ -139,7 +139,7 @@ public class MineplexLongJump extends Module
     
     @EventListener
     public void method10732(final Class5723 class5723) {
-        if (this.method9906() && MineplexLongJump.mc.player != null) {
+        if (this.isEnabled() && MineplexLongJump.mc.player != null) {
             if (class5723.method16998() instanceof Class4328) {
                 this.field16042 = -1;
                 this.field16043 = 0;

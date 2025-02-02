@@ -22,7 +22,7 @@ public class Regen extends Module
     
     @EventListener
     private void method10527(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!Regen.mc.player.field3025.field27304) {
                 if (Regen.mc.player.method2877().method33491() > 17) {
                     if (Regen.mc.player.method2664() < 20.0f) {

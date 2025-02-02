@@ -14,8 +14,8 @@ public abstract class Class4085 extends Item
     public static final Predicate<ItemStack> field18189;
     public static final Predicate<ItemStack> field18190;
     
-    public Class4085(final Class8959 class8959) {
-        super(class8959);
+    public Class4085(final Properties properties) {
+        super(properties);
     }
     
     public Predicate<ItemStack> method12289() {

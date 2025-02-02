@@ -29,19 +29,19 @@ public class Class9106
         }
     }
     
-    public void method32919(final Class1848 class1848, final RayTraceResult class1849) {
+    public void method32919(final ClientWorld clientWorld, final RayTraceResult class1849) {
         if (this.field38574 != null) {
             if (class1849 != null) {
-                if (class1848 != null) {
-                    this.field38574.method21659(class1848, class1849);
+                if (clientWorld != null) {
+                    this.field38574.method21659(clientWorld, class1849);
                 }
             }
         }
     }
     
-    public void method32920(final Class1848 class1848, final BlockPos class1849, final BlockState class1850, final float n) {
+    public void method32920(final ClientWorld clientWorld, final BlockPos class1849, final BlockState class1850, final float n) {
         if (this.field38574 != null) {
-            this.field38574.method21660(class1848, class1849, class1850, n);
+            this.field38574.method21660(clientWorld, class1849, class1850, n);
         }
     }
     
@@ -99,7 +99,7 @@ public class Class9106
     }
     
     public Class101 method32928() {
-        return (this.field38573.field4682 != null) ? this.field38573.field4682.method27336() : Class101.field297;
+        return (this.field38573.playerController != null) ? this.field38573.playerController.method27336() : Class101.field297;
     }
     
     public static ITextComponent method32929(final String str) {

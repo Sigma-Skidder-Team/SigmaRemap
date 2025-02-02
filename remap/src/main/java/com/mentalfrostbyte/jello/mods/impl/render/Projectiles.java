@@ -31,7 +31,7 @@ public class Projectiles extends Module
     
     @EventListener
     public void method10109(final Class5739 class5739) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (Projectiles.mc.player.getHeldItemMainhand() != null) {

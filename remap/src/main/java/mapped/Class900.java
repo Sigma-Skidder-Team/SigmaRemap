@@ -16,7 +16,7 @@ public final class Class900 extends Thread
     public void run() {
         final Minecraft method5277 = Minecraft.method5277();
         if (method5277 != null) {
-            final Class1655 method5278 = method5277.method5285();
+            final IntegratedServer method5278 = method5277.method5285();
             if (method5278 != null) {
                 method5278.method1456(true);
             }

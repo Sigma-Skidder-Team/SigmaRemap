@@ -88,10 +88,10 @@ public class Class8631 implements ArgumentType<Integer>
             hashMap.put("weapon", 98);
             hashMap.put("weapon.mainhand", 98);
             hashMap.put("weapon.offhand", 99);
-            hashMap.put("armor.head", 100 + Class2215.field13605.method8402());
-            hashMap.put("armor.chest", 100 + Class2215.field13604.method8402());
-            hashMap.put("armor.legs", 100 + Class2215.field13603.method8402());
-            hashMap.put("armor.feet", 100 + Class2215.field13602.method8402());
+            hashMap.put("armor.head", 100 + Class2215.field13605.getIndex());
+            hashMap.put("armor.chest", 100 + Class2215.field13604.getIndex());
+            hashMap.put("armor.legs", 100 + Class2215.field13603.getIndex());
+            hashMap.put("armor.feet", 100 + Class2215.field13602.getIndex());
             hashMap.put("horse.saddle", 400);
             hashMap.put("horse.armor", 401);
             hashMap.put("horse.chest", 499);

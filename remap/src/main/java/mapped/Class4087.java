@@ -12,8 +12,8 @@ import java.util.function.Predicate;
 
 public class Class4087 extends Class4085
 {
-    public Class4087(final Class8959 class8959) {
-        super(class8959);
+    public Class4087(final Properties properties) {
+        super(properties);
         this.method11705(new ResourceLocation("pull"), (class8321, class8322, class8323) -> {
             if (class8323 != null) {
                 return (class8323.method2766().getItem() == Items.field31279) ? ((class8321.method27652() - class8323.method2767()) / 20.0f) : 0.0f;
@@ -83,7 +83,7 @@ public class Class4087 extends Class4085
                         if (!class8324.field3025.field27304) {
                             method2790.method27693(1);
                             if (method2790.method27620()) {
-                                class8324.field3006.method2365(method2790);
+                                class8324.inventory.method2365(method2790);
                             }
                         }
                     }

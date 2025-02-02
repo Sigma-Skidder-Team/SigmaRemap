@@ -29,7 +29,7 @@ public class ShadowESP extends Module
     
     @EventListener
     private void method10719(final Class5739 class5739) {
-        if (!this.method9906()) {
+        if (!this.isEnabled()) {
             return;
         }
         if (ShadowESP.mc.player != null && ShadowESP.mc.world != null) {
@@ -134,12 +134,12 @@ public class ShadowESP extends Module
     }
     
     public void method10722(final Entity class399, final double n, final double n2, final double n3, final float n4, final MatrixStack class400, final IRenderTypeBuffer class401) {
-        ShadowESP.mc.field4636.field9290.method28706(class399, MathHelper.lerp(n4, class399.lastTickPosX, class399.getPosX()) - n, MathHelper.lerp(n4, class399.lastTickPosY, class399.getPosY()) - n2, MathHelper.lerp(n4, class399.lastTickPosZ, class399.getPosZ()) - n3, MathHelper.method35700(n4, class399.prevRotationYaw, class399.rotationYaw), n4, class400, class401, 255);
+        ShadowESP.mc.worldRenderer.field9290.method28706(class399, MathHelper.lerp(n4, class399.lastTickPosX, class399.getPosX()) - n, MathHelper.lerp(n4, class399.lastTickPosY, class399.getPosY()) - n2, MathHelper.lerp(n4, class399.lastTickPosZ, class399.getPosZ()) - n3, MathHelper.method35700(n4, class399.prevRotationYaw, class399.rotationYaw), n4, class400, class401, 255);
     }
     
     @EventListener
     public void method10723(final Class5729 class5729) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (ShadowESP.field16038 != Class2092.field12098) {
                 class5729.method17020(false);
             }
@@ -148,17 +148,17 @@ public class ShadowESP extends Module
     
     @EventListener
     public void method10724(final Class5749 class5749) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (ShadowESP.field16038 != Class2092.field12098) {
                 if (class5749.method17056() instanceof PlayerEntity) {
-                    class5749.method16961(true);
+                    class5749.setCancelled(true);
                 }
             }
         }
     }
     
     private boolean method10725(final Entity class399) {
-        return class399 instanceof LivingEntity && class399 instanceof PlayerEntity && !(class399 instanceof Class756) && !class399.method1823() && !Client.method35173().method35191().method31751(class399);
+        return class399 instanceof LivingEntity && class399 instanceof PlayerEntity && !(class399 instanceof ClientPlayerEntity) && !class399.method1823() && !Client.getInstance().method35191().method31751(class399);
     }
     
     private void method10726() {

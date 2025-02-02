@@ -34,12 +34,12 @@ public class Nuker extends Module
     
     @EventListener
     private void method10609(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             this.field15978 = this.method10612(this.getNumberSettingValueByName("Range") / 2.0f);
             if (this.field15978.isEmpty()) {
                 this.field15977 = null;
             }
-            else if (Nuker.mc.field4682.method27336() != Class101.field299) {
+            else if (Nuker.mc.playerController.method27336() != Class101.field299) {
                 if (this.field15977 != null) {
                     if (Nuker.mc.world.getBlockState(this.field15977).method21706() || Math.sqrt(Nuker.mc.player.method1733(this.field15977.getX() + 0.5, this.field15977.getY() + 0.5, this.field15977.getZ() + 0.5)) > 6.0) {
                         this.field15977 = this.field15978.get(0);
@@ -47,8 +47,8 @@ public class Nuker extends Module
                     final float[] method30919 = Class8845.method30919(this.field15977.getX(), this.field15977.getZ(), this.field15977.getY());
                     class5744.method17043(method30919[0]);
                     class5744.method17041(method30919[1]);
-                    Client.method35173().method35188().method21097(new Class5752(0, false, this.field15977));
-                    Nuker.mc.field4682.method27314(this.field15977, Class4609.method13710(this.field15977));
+                    Client.getInstance().method35188().method21097(new Class5752(0, false, this.field15977));
+                    Nuker.mc.playerController.method27314(this.field15977, Class4609.method13710(this.field15977));
                     if (!this.method9883("NoSwing")) {
                         Nuker.mc.player.method2707(Class316.field1877);
                     }
@@ -61,8 +61,8 @@ public class Nuker extends Module
                     final float[] method30920 = Class8845.method30919(this.field15977.getX(), this.field15977.getZ(), this.field15977.getY());
                     class5744.method17043(method30920[0]);
                     class5744.method17041(method30920[1]);
-                    Client.method35173().method35188().method21097(new Class5752(0, false, this.field15977));
-                    Nuker.mc.field4682.method27314(this.field15977, Class4609.method13710(this.field15977));
+                    Client.getInstance().method35188().method21097(new Class5752(0, false, this.field15977));
+                    Nuker.mc.playerController.method27314(this.field15977, Class4609.method13710(this.field15977));
                     if (!this.method9883("NoSwing")) {
                         Nuker.mc.player.method2707(Class316.field1877);
                     }
@@ -103,7 +103,7 @@ public class Nuker extends Module
                 for (float n4 = -n; n4 <= n; ++n4) {
                     final BlockPos class354 = new BlockPos(Nuker.mc.player.posX + n3, Nuker.mc.player.posY + n2, Nuker.mc.player.posZ + n4);
                     if (!Nuker.mc.world.getBlockState(class354).method21706() && Nuker.mc.world.getBlockState(class354).method21756().method21781() && Math.sqrt(Nuker.mc.player.method1733(class354.getX() + 0.5, class354.getY() + 0.5, class354.getZ() + 0.5)) < n) {
-                        final String method9887 = this.method9887("Mode");
+                        final String method9887 = this.getStringSettingValueByName("Mode");
                         switch (method9887) {
                             case "One hit": {
                                 if (!this.method10611(class354)) {

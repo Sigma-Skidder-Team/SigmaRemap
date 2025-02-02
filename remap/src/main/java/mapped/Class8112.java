@@ -19,9 +19,9 @@ public final class Class8112
     private final CompletableFuture<Map<ChunkPos, String>> field33428;
     public final /* synthetic */ Class6122 field33429;
     
-    private Class8112(final Class6122 field33429, final Class1655 class1655, final double n, final double n2) {
+    private Class8112(final Class6122 field33429, final IntegratedServer class1655, final double n, final double n2) {
         this.field33429 = field33429;
-        final Class1848 field33430 = Class6122.method18316(field33429).field4683;
+        final ClientWorld field33430 = Class6122.method18316(field33429).field4683;
         final DimensionType method20487 = Class6122.method18316(field33429).field4683.field10063.method20487();
         if (class1655.method1481(method20487) != null) {
             class1655.method1481(method20487);

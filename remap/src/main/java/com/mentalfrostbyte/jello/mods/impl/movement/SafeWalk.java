@@ -18,10 +18,10 @@ public class SafeWalk extends Module
     
     @EventListener
     public void method10801(final Class5738 class5738) {
-        if (!this.method9906() || !SafeWalk.mc.player.onGround) {
+        if (!this.isEnabled() || !SafeWalk.mc.player.onGround) {
             return;
         }
-        if (!Client.method35173().method35189().method21551(BlockFly.class).method9906()) {
+        if (!Client.getInstance().method35189().method21551(BlockFly.class).isEnabled()) {
             class5738.method17026(true);
         }
     }

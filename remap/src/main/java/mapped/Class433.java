@@ -16,7 +16,7 @@ import net.minecraft.world.dimension.DimensionType;
 import javax.annotation.Nullable;
 import java.util.Iterator;
 
-public abstract class Class433 extends Class428 implements IInventory, Class434
+public abstract class Class433 extends Class428 implements IInventory, INamedContainerProvider
 {
     private NonNullList<ItemStack> field2645;
     private boolean field2646;

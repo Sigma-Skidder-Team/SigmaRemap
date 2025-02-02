@@ -126,7 +126,7 @@ public class Class4926 extends Class4800
             }
         }
         if (this.field21079) {
-            final String field32930 = Client.method35173().method35201().method19347().field32930;
+            final String field32930 = Client.getInstance().method35201().method19347().field32930;
             final String s = "Welcome back";
             final int n3 = 100;
             final int n4 = (this.field20480 - (n3 + Math.max(ClientFonts.JelloMedium40.getWidth(s), ClientFonts.JelloLight36.getWidth(field32930)) + 10 * 10)) / 2;

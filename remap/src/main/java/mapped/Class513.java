@@ -252,7 +252,7 @@ public class Class513 extends PlayerEntity implements Class514
         if (!this.world.isRemote) {
             if (!this.field3009.method10854(this)) {
                 this.method2814();
-                this.field3009 = this.field3008;
+                this.field3009 = this.container;
             }
         }
         while (!this.field3042.isEmpty()) {
@@ -291,8 +291,8 @@ public class Class513 extends PlayerEntity implements Class514
             if (!this.isSpectator() || this.world.method6971(new BlockPos(this))) {
                 super.method1659();
             }
-            for (int i = 0; i < this.field3006.getSizeInventory(); ++i) {
-                final ItemStack method2157 = this.field3006.getStackInSlot(i);
+            for (int i = 0; i < this.inventory.getSizeInventory(); ++i) {
+                final ItemStack method2157 = this.inventory.getStackInSlot(i);
                 if (method2157.getItem().method11724()) {
                     final IPacket<?> method2158 = ((Class4093)method2157.getItem()).method12325(method2157, this.world, this);
                     if (method2158 != null) {
@@ -699,17 +699,17 @@ public class Class513 extends PlayerEntity implements Class514
     }
     
     @Override
-    public OptionalInt method2833(final Class434 class434) {
-        if (class434 == null) {
+    public OptionalInt method2833(final INamedContainerProvider INamedContainerProvider) {
+        if (INamedContainerProvider == null) {
             return OptionalInt.empty();
         }
-        if (this.field3009 != this.field3008) {
+        if (this.field3009 != this.container) {
             this.method2814();
         }
         this.method2927();
-        final Class3418 method2166 = class434.method2166(this.field3068, this.field3006, this);
+        final Class3418 method2166 = INamedContainerProvider.method2166(this.field3068, this.inventory, this);
         if (method2166 != null) {
-            this.field3039.method17469(new Class4308(method2166.field16154, method2166.method10867(), class434.method1871()));
+            this.field3039.method17469(new Class4308(method2166.field16154, method2166.method10867(), INamedContainerProvider.method1871()));
             method2166.method10873(this);
             this.field3009 = method2166;
             return OptionalInt.of(this.field3068);
@@ -727,12 +727,12 @@ public class Class513 extends PlayerEntity implements Class514
     
     @Override
     public void method2832(final Class806 class806, final IInventory class807) {
-        if (this.field3009 != this.field3008) {
+        if (this.field3009 != this.container) {
             this.method2814();
         }
         this.method2927();
         this.field3039.method17469(new Class4259(this.field3068, class807.getSizeInventory(), class806.getEntityId()));
-        (this.field3009 = new Class3425(this.field3068, this.field3006, class807, class806)).method10873(this);
+        (this.field3009 = new Class3425(this.field3068, this.inventory, class807, class806)).method10873(this);
     }
     
     @Override
@@ -753,9 +753,9 @@ public class Class513 extends PlayerEntity implements Class514
     
     @Override
     public void method2928(final Class3418 class3418, final int n, final ItemStack class3419) {
-        if (!(class3418.method10878(n) instanceof Class6623)) {
-            if (class3418 == this.field3008) {
-                Class7770.field31779.method13866(this, this.field3006);
+        if (!(class3418.getSlot(n) instanceof Class6623)) {
+            if (class3418 == this.container) {
+                Class7770.field31779.method13866(this, this.inventory);
             }
             if (!this.field3069) {
                 this.field3039.method17469(new Class4272(class3418.field16154, n, class3419));
@@ -770,7 +770,7 @@ public class Class513 extends PlayerEntity implements Class514
     @Override
     public void method2930(final Class3418 class3418, final NonNullList<ItemStack> class3419) {
         this.field3039.method17469(new Class4365(class3418.field16154, class3419));
-        this.field3039.method17469(new Class4272(-1, -1, this.field3006.method2375()));
+        this.field3039.method17469(new Class4272(-1, -1, this.inventory.method2375()));
     }
     
     @Override
@@ -786,13 +786,13 @@ public class Class513 extends PlayerEntity implements Class514
     
     public void method2932() {
         if (!this.field3069) {
-            this.field3039.method17469(new Class4272(-1, -1, this.field3006.method2375()));
+            this.field3039.method17469(new Class4272(-1, -1, this.inventory.method2375()));
         }
     }
     
     public void method2933() {
         this.field3009.method10859(this);
-        this.field3009 = this.field3008;
+        this.field3009 = this.container;
     }
     
     public void method2934(final float field2968, final float field2969, final boolean field2970, final boolean b) {
@@ -894,7 +894,7 @@ public class Class513 extends PlayerEntity implements Class514
     public void method2939(final Class513 class513, final boolean b) {
         if (!b) {
             if (this.world.method6765().method31216(Class8878.field37317) || class513.isSpectator()) {
-                this.field3006.method2378(class513.field3006);
+                this.inventory.method2378(class513.inventory);
                 this.field3026 = class513.field3026;
                 this.field3027 = class513.field3027;
                 this.field3028 = class513.field3028;
@@ -902,7 +902,7 @@ public class Class513 extends PlayerEntity implements Class514
             }
         }
         else {
-            this.field3006.method2378(class513.field3006);
+            this.inventory.method2378(class513.inventory);
             this.method2665(class513.method2664());
             this.field3010 = class513.field3010;
             this.field3026 = class513.field3026;

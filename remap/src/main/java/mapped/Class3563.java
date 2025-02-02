@@ -13,7 +13,7 @@ public class Class3563 extends Class3555<LivingEntity>
     private static String[] field16651;
     
     public Class3563(final Class841 class841) {
-        super(class841, LivingEntity.class, 10, true, false, class842 -> class842 instanceof Class762);
+        super(class841, LivingEntity.class, 10, true, false, class842 -> class842 instanceof IMob);
     }
     
     @Override

@@ -45,7 +45,7 @@ public final class Class7476
     }
     
     @Nullable
-    public static Class7007 method23094(final World class1847, final Entity class1848, final Vec3d class1849, final Vec3d class1850, final AxisAlignedBB class1851, final Predicate<Entity> predicate) {
+    public static EntityRayTraceResult method23094(final World class1847, final Entity class1848, final Vec3d class1849, final Vec3d class1850, final AxisAlignedBB class1851, final Predicate<Entity> predicate) {
         return method23097(class1847, class1848, class1849, class1850, class1851, predicate, Double.MAX_VALUE);
     }
     
@@ -62,7 +62,7 @@ public final class Class7476
             if (method1937.getType() != RayTraceResult.Type.MISS) {
                 class403 = method1937.getHitVec();
             }
-            final Class7007 method1938 = method23094(field2391, class399, method1936, class403, class402, predicate);
+            final EntityRayTraceResult method1938 = method23094(field2391, class399, method1936, class403, class402, predicate);
             if (method1938 != null) {
                 method1937 = (BlockRayTraceResult)method1938;
             }
@@ -71,7 +71,7 @@ public final class Class7476
     }
     
     @Nullable
-    public static Class7007 method23096(final Entity class399, final Vec3d other, final Vec3d class400, final AxisAlignedBB class401, final Predicate<Entity> predicate, final double n) {
+    public static EntityRayTraceResult method23096(final Entity class399, final Vec3d other, final Vec3d class400, final AxisAlignedBB class401, final Predicate<Entity> predicate, final double n) {
         final World field2391 = class399.world;
         double n2 = n;
         Entity class402 = null;
@@ -110,11 +110,11 @@ public final class Class7476
                 n2 = 0.0;
             }
         }
-        return (class402 != null) ? new Class7007(class402, class403) : null;
+        return (class402 != null) ? new EntityRayTraceResult(class402, class403) : null;
     }
     
     @Nullable
-    public static Class7007 method23097(final World class1847, final Entity class1848, final Vec3d class1849, final Vec3d class1850, final AxisAlignedBB class1851, final Predicate<Entity> predicate, final double n) {
+    public static EntityRayTraceResult method23097(final World class1847, final Entity class1848, final Vec3d class1849, final Vec3d class1850, final AxisAlignedBB class1851, final Predicate<Entity> predicate, final double n) {
         double n2 = n;
         Entity class1852 = null;
         for (final Entity class1853 : class1847.method6737(class1848, class1851, predicate)) {
@@ -129,7 +129,7 @@ public final class Class7476
             class1852 = class1853;
             n2 = method18513;
         }
-        return (class1852 != null) ? new Class7007(class1852) : null;
+        return (class1852 != null) ? new EntityRayTraceResult(class1852) : null;
     }
     
     private static Set<Entity> method23098(final Entity class399) {

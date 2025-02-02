@@ -19,7 +19,7 @@ public class SpartanSpider extends Module
     
     @EventListener
     private void method10523(final Class5744 class5744) {
-        if (!this.method9906() || !class5744.method17046()) {
+        if (!this.isEnabled() || !class5744.method17046()) {
             return;
         }
         final int method10264 = ((Spider)this.method9914()).method10264();
@@ -76,11 +76,11 @@ public class SpartanSpider extends Module
     
     @EventListener
     private void method10524(final Class5753 class5753) {
-        if (this.method9906() && SpartanSpider.mc.player != null) {
+        if (this.isEnabled() && SpartanSpider.mc.player != null) {
             if (class5753.method17065() != null) {
                 if (!class5753.method17065().isEmpty()) {
                     if (class5753.method17065().getBoundingBox().minY > SpartanSpider.mc.player.boundingBox.minY + 1.0) {
-                        class5753.method16961(true);
+                        class5753.setCancelled(true);
                     }
                 }
             }

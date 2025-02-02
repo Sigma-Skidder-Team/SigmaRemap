@@ -22,7 +22,7 @@ public class SpartanFly extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15947 = false;
         this.field15946 = -10.0;
         if (!SpartanFly.mc.gameSettings.field23440.method1056()) {
@@ -36,9 +36,9 @@ public class SpartanFly extends Module
     
     @EventListener
     private void method10575(final Class5752 class5752) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5752.method17061() == SpartanFly.mc.gameSettings.field23440.field2161.field32860) {
-                class5752.method16961(true);
+                class5752.setCancelled(true);
                 this.field15948 = true;
             }
         }
@@ -46,9 +46,9 @@ public class SpartanFly extends Module
     
     @EventListener
     private void method10576(final Class5715 class5715) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5715.method16963() == SpartanFly.mc.gameSettings.field23440.field2161.field32860) {
-                class5715.method16961(true);
+                class5715.setCancelled(true);
                 this.field15948 = false;
             }
         }
@@ -56,7 +56,7 @@ public class SpartanFly extends Module
     
     @EventListener
     public void method10577(final Class5744 class5744) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (class5744.method17046()) {
                 if (this.method9883("Ground Spoof")) {
                     if (this.field15947) {
@@ -70,7 +70,7 @@ public class SpartanFly extends Module
     
     @EventListener
     public void method10578(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (!SpartanFly.mc.player.onGround && !ColorUtils.method19160(SpartanFly.mc.player, 0.001f)) {
                 if (class5717.method16974() < 0.0) {
                     if (this.field15946 != SpartanFly.mc.player.posY) {
@@ -84,7 +84,7 @@ public class SpartanFly extends Module
                                 SpartanFly.mc.method5269().method17292(new Class4329(Class316.field1877, new BlockRayTraceResult(SpartanFly.mc.player.method1934().add(0.0, -2.0, 0.0), Direction.UP, SpartanFly.mc.player.method1894().add(0, -2, 0), false)));
                             }
                             if (method10579 >= 0) {
-                                SpartanFly.mc.method5269().method17292(new Class4321(SpartanFly.mc.player.field3006.field2743));
+                                SpartanFly.mc.method5269().method17292(new Class4321(SpartanFly.mc.player.inventory.field2743));
                             }
                             class5717.method16975(this.field15946 - SpartanFly.mc.player.posY);
                         }
@@ -111,8 +111,8 @@ public class SpartanFly extends Module
     
     public int method10579() {
         for (int i = 36; i < 45; ++i) {
-            if (SpartanFly.mc.player.field3008.method10878(i).method20054() && SpartanFly.mc.player.field3008.method10878(i).method20053().getItem() instanceof Class4036) {
-                if (i - 36 == SpartanFly.mc.player.field3006.field2743) {
+            if (SpartanFly.mc.player.container.getSlot(i).method20054() && SpartanFly.mc.player.container.getSlot(i).method20053().getItem() instanceof Class4036) {
+                if (i - 36 == SpartanFly.mc.player.inventory.field2743) {
                     i = 34;
                 }
                 return i - 36;

@@ -73,7 +73,7 @@ public class Class804 extends Class789
                     playerEntity.method1695(Class8520.field35098, 1.0f, 1.0f);
                     method2715.method27693(1);
                     if (!method2715.method27620()) {
-                        if (!playerEntity.field3006.method2362(new ItemStack(Items.field31358))) {
+                        if (!playerEntity.inventory.method2362(new ItemStack(Items.field31358))) {
                             playerEntity.method2822(new ItemStack(Items.field31358), false);
                         }
                     }

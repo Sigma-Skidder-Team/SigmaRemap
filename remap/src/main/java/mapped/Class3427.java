@@ -102,8 +102,8 @@ public class Class3427 extends Class3426<Class473>
                             return ItemStack.EMPTY;
                         }
                     }
-                    else if (method20054.method8401() == Class295.field1682 && !this.field16151.get(8 - method20054.method8402()).method20054()) {
-                        final int n2 = 8 - method20054.method8402();
+                    else if (method20054.getSlotType() == Group.field1682 && !this.field16151.get(8 - method20054.getIndex()).method20054()) {
+                        final int n2 = 8 - method20054.getIndex();
                         if (!this.method10888(method20053, n2, n2 + 1, false)) {
                             return ItemStack.EMPTY;
                         }

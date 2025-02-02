@@ -28,7 +28,7 @@ public class CubecraftSpeed extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15941 = 0;
         this.field15943 = -1.0;
     }
@@ -44,10 +44,10 @@ public class CubecraftSpeed extends Module
     
     @EventListener
     public void method10569(final Class5717 class5717) {
-        if (!this.method9906() || Client.method35173().method35189().method21551(BlockFly.class).method9906() || ColorUtils.method19112(CubecraftSpeed.mc.player)) {
+        if (!this.isEnabled() || Client.getInstance().method35189().method21551(BlockFly.class).isEnabled() || ColorUtils.method19112(CubecraftSpeed.mc.player)) {
             return;
         }
-        final String method9887 = this.method9887("Mode");
+        final String method9887 = this.getStringSettingValueByName("Mode");
         switch (method9887) {
             case "Basic": {
                 ++this.field15941;
@@ -117,7 +117,7 @@ public class CubecraftSpeed extends Module
                         this.field15941 = 0;
                     }
                     this.field15943 = CubecraftSpeed.mc.player.posY;
-                    if (!Client.method35173().method35189().method21551(Timer.class).method9906()) {
+                    if (!Client.getInstance().method35189().method21551(Timer.class).isEnabled()) {
                         CubecraftSpeed.mc.timer.timerSpeed = 1.0f;
                         break;
                     }
@@ -146,9 +146,9 @@ public class CubecraftSpeed extends Module
     
     @EventListener
     public void method10570(final Class5741 class5741) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15943 >= 0.0) {
-                if (this.method9887("Mode").equals("YPort")) {
+                if (this.getStringSettingValueByName("Mode").equals("YPort")) {
                     if (CubecraftSpeed.mc.player.onGround) {
                         if (ColorUtils.method19160(CubecraftSpeed.mc.player, 0.001f)) {
                             this.field15943 = CubecraftSpeed.mc.player.posY;
@@ -168,7 +168,7 @@ public class CubecraftSpeed extends Module
     
     @EventListener
     public void method10571(final Class5722 class5722) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             class5722.method16995(0.4);
             this.field15942 = 0.6 + Class7482.method23139() * 0.1;
             this.field15941 = 0;

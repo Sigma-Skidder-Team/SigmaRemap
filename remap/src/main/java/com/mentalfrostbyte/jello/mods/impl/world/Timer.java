@@ -19,7 +19,7 @@ public class Timer extends Module
     
     @EventListener
     private void method10344(final Class5743 class5743) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             Timer.mc.timer.timerSpeed = this.getNumberSettingValueByName("Timer");
         }
     }

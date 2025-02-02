@@ -14,10 +14,10 @@ public class Class5812 implements Class5811
     private boolean field23849;
     private long field23850;
     public final /* synthetic */ NetworkManager field23851;
-    public final /* synthetic */ Class9575 field23852;
+    public final /* synthetic */ ServerData field23852;
     public final /* synthetic */ Class8115 field23853;
     
-    public Class5812(final Class8115 field23853, final NetworkManager field23854, final Class9575 field23855) {
+    public Class5812(final Class8115 field23853, final NetworkManager field23854, final ServerData field23855) {
         this.field23853 = field23853;
         this.field23851 = field23854;
         this.field23852 = field23855;

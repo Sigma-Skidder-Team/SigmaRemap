@@ -18,7 +18,7 @@ public class NCPSpigotFly extends Module
     }
     
     @Override
-    public void method9879() {
+    public void onEnable() {
         this.field15950 = NCPSpigotFly.mc.player.posY;
         this.field15949 = 2;
     }
@@ -34,7 +34,7 @@ public class NCPSpigotFly extends Module
     @EventListener
     @Class6759
     public void method10583(final Class5717 class5717) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             if (this.field15949 <= 1) {
                 if (this.field15949 != -1) {
                     if (this.field15949 != 0) {
@@ -64,7 +64,7 @@ public class NCPSpigotFly extends Module
     
     @EventListener
     public void method10584(final Class5744 class5744) {
-        if (this.method9906() && class5744.method17046()) {
+        if (this.isEnabled() && class5744.method17046()) {
             ++this.field15949;
             if (this.field15949 != 3) {
                 if (this.field15949 > 3) {
@@ -84,7 +84,7 @@ public class NCPSpigotFly extends Module
     
     @EventListener
     public void method10585(final Class5723 class5723) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4328) {
                 final Class4328 class5724 = (Class4328)method16998;
@@ -100,7 +100,7 @@ public class NCPSpigotFly extends Module
     
     @EventListener
     public void method10586(final Class5721 class5721) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final IPacket method16990 = class5721.method16990();
             if (method16990 instanceof Class4353) {
                 final Class4353 class5722 = (Class4353)method16990;
@@ -113,7 +113,7 @@ public class NCPSpigotFly extends Module
     
     @EventListener
     public void method10587(final Class5741 class5741) {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             final double field15950 = this.field15950;
             NCPSpigotFly.mc.player.posY = field15950;
             NCPSpigotFly.mc.player.lastTickPosY = field15950;

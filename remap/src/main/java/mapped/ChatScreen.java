@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class535 extends Screen
+public class ChatScreen extends Screen
 {
     private String field3190;
     private int field3191;
@@ -15,7 +15,7 @@ public class Class535 extends Screen
     private String field3193;
     private Class6823 field3194;
     
-    public Class535(final String field3193) {
+    public ChatScreen(final String field3193) {
         super(NarratorChatListener.EMPTY);
         this.field3190 = "";
         this.field3191 = -1;

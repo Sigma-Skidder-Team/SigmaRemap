@@ -44,10 +44,10 @@ public abstract class PlayerEntity extends LivingEntity
     public static final DataParameter<Byte> field3002;
     public static final DataParameter<CompoundNBT> field3003;
     public static final DataParameter<CompoundNBT> field3004;
-    private long field3005;
-    public Class464 field3006;
+    private long timeEntitySatOnShoulder;
+    public Class464 inventory;
     public Class485 field3007;
-    public final Class3427 field3008;
+    public final Class3427 container;
     public Class3418 field3009;
     public Class9173 field3010;
     public int field3011;
@@ -79,7 +79,7 @@ public abstract class PlayerEntity extends LivingEntity
     
     public PlayerEntity(final World class1847, final GameProfile field3032) {
         super(EntityType.field29058, class1847);
-        this.field3006 = new Class464(this);
+        this.inventory = new Class464(this);
         this.field3007 = new Class485();
         this.field3010 = new Class9173();
         this.field3025 = new Class6999();
@@ -87,8 +87,8 @@ public abstract class PlayerEntity extends LivingEntity
         this.field3035 = this.method2809();
         this.method1864(method2893(field3032));
         this.field3032 = field3032;
-        this.field3008 = new Class3427(this.field3006, !class1847.isRemote, this);
-        this.field3009 = this.field3008;
+        this.container = new Class3427(this.inventory, !class1847.isRemote, this);
+        this.field3009 = this.container;
         final BlockPos method6758 = class1847.method6758();
         this.method1730(method6758.getX() + 0.5, method6758.getY() + 1, method6758.getZ() + 0.5, 0.0f, 0.0f);
         this.field2964 = 180.0f;
@@ -162,7 +162,7 @@ public abstract class PlayerEntity extends LivingEntity
             if (this.field3009 != null) {
                 if (!this.field3009.method10854(this)) {
                     this.method2814();
-                    this.field3009 = this.field3008;
+                    this.field3009 = this.container;
                 }
             }
         }
@@ -391,7 +391,7 @@ public abstract class PlayerEntity extends LivingEntity
     }
     
     public void method2814() {
-        this.field3009 = this.field3008;
+        this.field3009 = this.container;
     }
     
     @Override
@@ -455,7 +455,7 @@ public abstract class PlayerEntity extends LivingEntity
                 }
             }
         }
-        this.field3006.method2361();
+        this.inventory.method2361();
         this.field3012 = this.field3013;
         super.method2736();
         final Class7619 method2710 = this.method2710(Class8107.field33408);
@@ -565,16 +565,16 @@ public abstract class PlayerEntity extends LivingEntity
         super.method2676();
         if (!this.world.method6765().method31216(Class8878.field37317)) {
             this.method2820();
-            this.field3006.method2372();
+            this.inventory.method2372();
         }
     }
     
     public void method2820() {
-        for (int i = 0; i < this.field3006.getSizeInventory(); ++i) {
-            final ItemStack method2157 = this.field3006.getStackInSlot(i);
+        for (int i = 0; i < this.inventory.getSizeInventory(); ++i) {
+            final ItemStack method2157 = this.inventory.getStackInSlot(i);
             if (!method2157.method27620()) {
                 if (Class8742.method30218(method2157)) {
-                    this.field3006.method2159(i);
+                    this.inventory.method2159(i);
                 }
             }
         }
@@ -597,7 +597,7 @@ public abstract class PlayerEntity extends LivingEntity
     }
     
     public boolean method2821(final boolean b) {
-        return this.method2823(this.field3006.method2158(this.field3006.field2743, (b && !this.field3006.method2345().method27620()) ? this.field3006.method2345().method27690() : 1), false, true) != null;
+        return this.method2823(this.inventory.method2158(this.inventory.field2743, (b && !this.inventory.method2345().method27620()) ? this.inventory.method2345().method27690() : 1), false, true) != null;
     }
     
     @Nullable
@@ -633,7 +633,7 @@ public abstract class PlayerEntity extends LivingEntity
     }
     
     public float method2824(final Class7096 class7096) {
-        float method2366 = this.field3006.method2366(class7096);
+        float method2366 = this.inventory.method2366(class7096);
         if (method2366 > 1.0f) {
             final int method2367 = Class8742.method30211(this);
             final ItemStack method2368 = this.getHeldItemMainhand();
@@ -676,15 +676,15 @@ public abstract class PlayerEntity extends LivingEntity
     }
     
     public boolean method2825(final Class7096 class7096) {
-        return class7096.method21697().method26444() || this.field3006.method2369(class7096);
+        return class7096.method21697().method26444() || this.inventory.method2369(class7096);
     }
     
     @Override
     public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
         this.method1864(method2893(this.field3032));
-        this.field3006.method2368(class51.getList("Inventory", 10));
-        this.field3006.field2743 = class51.getInt("SelectedItemSlot");
+        this.inventory.method2368(class51.getList("Inventory", 10));
+        this.inventory.field2743 = class51.getInt("SelectedItemSlot");
         this.field3021 = class51.getShort("SleepTimer");
         this.field3028 = class51.getFloat("XpP");
         this.field3026 = class51.getInt("XpLevel");
@@ -719,8 +719,8 @@ public abstract class PlayerEntity extends LivingEntity
     public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         class51.putInt("DataVersion", Class9528.method35579().getWorldVersion());
-        class51.put("Inventory", this.field3006.method2367(new ListNBT()));
-        class51.putInt("SelectedItemSlot", this.field3006.field2743);
+        class51.put("Inventory", this.inventory.method2367(new ListNBT()));
+        class51.putInt("SelectedItemSlot", this.inventory.field2743);
         class51.putShort("SleepTimer", (short)this.field3021);
         class51.putFloat("XpP", this.field3028);
         class51.putInt("XpLevel", this.field3026);
@@ -801,7 +801,7 @@ public abstract class PlayerEntity extends LivingEntity
     
     @Override
     public void method2694(final float n) {
-        this.field3006.method2371(n);
+        this.inventory.method2371(n);
     }
     
     @Override
@@ -868,7 +868,7 @@ public abstract class PlayerEntity extends LivingEntity
     public void method2832(final Class806 class806, final IInventory class807) {
     }
     
-    public OptionalInt method2833(final Class434 class434) {
+    public OptionalInt method2833(final INamedContainerProvider INamedContainerProvider) {
         return OptionalInt.empty();
     }
     
@@ -880,8 +880,8 @@ public abstract class PlayerEntity extends LivingEntity
     
     public Class2201 method2836(final Entity class399, final Class316 class400) {
         if (this.isSpectator()) {
-            if (class399 instanceof Class434) {
-                this.method2833((Class434)class399);
+            if (class399 instanceof INamedContainerProvider) {
+                this.method2833((INamedContainerProvider)class399);
             }
             return Class2201.field13402;
         }
@@ -934,7 +934,7 @@ public abstract class PlayerEntity extends LivingEntity
     @Override
     public Vec3d method1676(Vec3d class5487, final Class2160 class5488) {
         final Class5738 class5489 = new Class5738(true);
-        Client.method35173().method35188().method21097(class5489);
+        Client.getInstance().method35188().method21097(class5489);
         Label_0074: {
             if ((class5488 != Class2160.field12826 && class5488 != Class2160.field12827) || class5489.method17025() != Class2228.field13706) {
                 if (!this.onGround) {
@@ -1002,7 +1002,7 @@ public abstract class PlayerEntity extends LivingEntity
             }
             class5487 = new Vec3d(field22770, class5487.y, field22771);
         }
-        Client.method35173().method35188().method21097(new Class5738(false));
+        Client.getInstance().method35188().method21097(new Class5738(false));
         return class5487;
     }
     
@@ -1228,7 +1228,7 @@ public abstract class PlayerEntity extends LivingEntity
     @Override
     public void method1652() {
         super.method1652();
-        this.field3008.method10859(this);
+        this.container.method10859(this);
         if (this.field3009 != null) {
             this.field3009.method10859(this);
         }
@@ -1757,37 +1757,37 @@ public abstract class PlayerEntity extends LivingEntity
     @Override
     public ItemStack method2718(final Class2215 class2215) {
         if (class2215 == Class2215.field13600) {
-            return this.field3006.method2345();
+            return this.inventory.method2345();
         }
         if (class2215 != Class2215.field13601) {
-            return (class2215.method8401() != Class295.field1682) ? ItemStack.EMPTY : this.field3006.field2740.get(class2215.method8402());
+            return (class2215.getSlotType() != Group.field1682) ? ItemStack.EMPTY : this.inventory.field2740.get(class2215.getIndex());
         }
-        return this.field3006.field2741.get(0);
+        return this.inventory.field2741.get(0);
     }
     
     @Override
     public void method1803(final Class2215 class2215, final ItemStack class2216) {
         if (class2215 != Class2215.field13600) {
             if (class2215 != Class2215.field13601) {
-                if (class2215.method8401() == Class295.field1682) {
+                if (class2215.getSlotType() == Group.field1682) {
                     this.method2642(class2216);
-                    this.field3006.field2740.set(class2215.method8402(), class2216);
+                    this.inventory.field2740.set(class2215.getIndex(), class2216);
                 }
             }
             else {
                 this.method2642(class2216);
-                this.field3006.field2741.set(0, class2216);
+                this.inventory.field2741.set(0, class2216);
             }
         }
         else {
             this.method2642(class2216);
-            this.field3006.field2739.set(this.field3006.field2743, class2216);
+            this.inventory.field2739.set(this.inventory.field2743, class2216);
         }
     }
     
     public boolean method2885(final ItemStack class8321) {
         this.method2642(class8321);
-        return this.field3006.method2362(class8321);
+        return this.inventory.method2362(class8321);
     }
     
     @Override
@@ -1797,7 +1797,7 @@ public abstract class PlayerEntity extends LivingEntity
     
     @Override
     public Iterable<ItemStack> method1801() {
-        return this.field3006.field2740;
+        return this.inventory.field2740;
     }
     
     public boolean method2886(final CompoundNBT class51) {
@@ -1806,14 +1806,14 @@ public abstract class PlayerEntity extends LivingEntity
                 if (!this.method1706()) {
                     if (this.method2899().method331()) {
                         this.method2900(class51);
-                        this.field3005 = this.world.method6754();
+                        this.timeEntitySatOnShoulder = this.world.method6754();
                         return true;
                     }
                     if (!this.method2901().method331()) {
                         return false;
                     }
                     this.method2902(class51);
-                    this.field3005 = this.world.method6754();
+                    this.timeEntitySatOnShoulder = this.world.method6754();
                     return true;
                 }
             }
@@ -1822,7 +1822,7 @@ public abstract class PlayerEntity extends LivingEntity
     }
     
     public void method2887() {
-        if (this.field3005 + 20L < this.world.method6754()) {
+        if (this.timeEntitySatOnShoulder + 20L < this.world.method6754()) {
             this.method2888(this.method2899());
             this.method2900(new CompoundNBT());
             this.method2888(this.method2901());
@@ -1941,15 +1941,15 @@ public abstract class PlayerEntity extends LivingEntity
     
     @Override
     public boolean method1893(final int n, final ItemStack class8321) {
-        if (n >= 0 && n < this.field3006.field2739.size()) {
-            this.field3006.method2160(n, class8321);
+        if (n >= 0 && n < this.inventory.field2739.size()) {
+            this.inventory.method2160(n, class8321);
             return true;
         }
         Class2215 class8322;
-        if (n != 100 + Class2215.field13605.method8402()) {
-            if (n != 100 + Class2215.field13604.method8402()) {
-                if (n != 100 + Class2215.field13603.method8402()) {
-                    if (n != 100 + Class2215.field13602.method8402()) {
+        if (n != 100 + Class2215.field13605.getIndex()) {
+            if (n != 100 + Class2215.field13604.getIndex()) {
+                if (n != 100 + Class2215.field13603.getIndex()) {
+                    if (n != 100 + Class2215.field13602.getIndex()) {
                         class8322 = null;
                     }
                     else {
@@ -1986,7 +1986,7 @@ public abstract class PlayerEntity extends LivingEntity
                     return false;
                 }
             }
-            this.field3006.method2160(class8322.method8402() + this.field3006.field2739.size(), class8321);
+            this.inventory.method2160(class8322.getIndex() + this.inventory.field2739.size(), class8321);
             return true;
         }
         final int n2 = n - 200;
@@ -2077,8 +2077,8 @@ public abstract class PlayerEntity extends LivingEntity
         final ItemStack method12291 = Class4085.method12291(this, ((Class4085)class8321.getItem()).method12289());
         if (method12291.method27620()) {
             final Predicate<ItemStack> method12292 = ((Class4085)class8321.getItem()).method12290();
-            for (int i = 0; i < this.field3006.getSizeInventory(); ++i) {
-                final ItemStack method12293 = this.field3006.getStackInSlot(i);
+            for (int i = 0; i < this.inventory.getSizeInventory(); ++i) {
+                final ItemStack method12293 = this.inventory.getStackInSlot(i);
                 if (method12292.test(method12293)) {
                     return method12293;
                 }

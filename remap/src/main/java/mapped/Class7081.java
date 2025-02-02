@@ -26,9 +26,9 @@ public class Class7081 implements Class7079
         ++this.field27584;
         if (this.field27582.method32928() == Class101.field298) {
             if (this.field27584 == 1) {
-                final Class756 field4684 = this.field27582.method32927().player;
+                final ClientPlayerEntity field4684 = this.field27582.method32927().player;
                 if (field4684 != null) {
-                    if (field4684.field3006.method2377(Class7855.field32237)) {
+                    if (field4684.inventory.method2377(Class7855.field32237)) {
                         this.field27582.method32926(Class2012.field11444);
                         return;
                     }
@@ -65,10 +65,10 @@ public class Class7081 implements Class7079
         }
     }
     
-    public static boolean method21664(final Class756 class756, final Class7909<Item> class757) {
+    public static boolean method21664(final ClientPlayerEntity clientPlayerEntity, final Class7909<Item> class757) {
         final Iterator<Item> iterator = class757.method25616().iterator();
         while (iterator.hasNext()) {
-            if (class756.method4121().method23091(Class8276.field33980.method8449(iterator.next())) <= 0) {
+            if (clientPlayerEntity.method4121().method23091(Class8276.field33980.method8449(iterator.next())) <= 0) {
                 continue;
             }
             return true;

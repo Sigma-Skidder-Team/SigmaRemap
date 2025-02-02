@@ -91,7 +91,7 @@ public abstract class Module
         }
     }
     
-    public String method9887(final String s) {
+    public String getStringSettingValueByName(final String s) {
         try {
             return (String)this.method9882(s);
         }
@@ -165,7 +165,7 @@ public abstract class Module
                             class4409.method15186(method26639);
                         }
                         catch (final JSONException class4410) {
-                            Client.method35173().method35187().method20241("Could not initialize settings of " + this.getName() + "." + class4409.method15204() + " from config.");
+                            Client.getInstance().method35187().method20241("Could not initialize settings of " + this.getName() + "." + class4409.method15204() + " from config.");
                         }
                         break;
                     }
@@ -173,7 +173,7 @@ public abstract class Module
             }
         }
         if (this.enabled && Module.mc.world != null) {
-            this.method9879();
+            this.onEnable();
         }
         return JSONObject;
     }
@@ -191,10 +191,10 @@ public abstract class Module
         return JSONObject;
     }
     
-    public void method9879() {
+    public void onEnable() {
         if (this.getClass().isAnnotationPresent(Class6752.class)) {
             if (!Module.field15521.contains(this.getClass())) {
-                Client.method35173().method35187().method20241("This mod is still in development. Be careful!");
+                Client.getInstance().method35187().method20241("This mod is still in development. Be careful!");
                 Module.field15521.add(this.getClass());
             }
         }
@@ -204,7 +204,7 @@ public abstract class Module
     }
     
     public boolean method9898() {
-        return this.method9906();
+        return this.isEnabled();
     }
     
     public Map<String, Setting> method9899() {
@@ -224,10 +224,10 @@ public abstract class Module
     }
     
     public Category getCategory2() {
-        if (Client.method35173().method35209() == Class2209.field13465 && this.category == Category.ITEM) {
+        if (Client.getInstance().method35209() == Class2209.field13465 && this.category == Category.ITEM) {
             return Category.PLAYER;
         }
-        if (Client.method35173().method35209() == Class2209.field13465 && this.category == Category.EXPLOIT) {
+        if (Client.getInstance().method35209() == Class2209.field13465 && this.category == Category.EXPLOIT) {
             return Category.MISC;
         }
         return this.category;
@@ -241,45 +241,45 @@ public abstract class Module
         return this.category;
     }
     
-    public boolean method9906() {
-        return Client.method35173().method35209() != Class2209.field13466 && (Client.method35173().method35209() != Class2209.field13465 || this.method9916()) && this.enabled;
+    public boolean isEnabled() {
+        return Client.getInstance().method35209() != Class2209.field13466 && (Client.getInstance().method35209() != Class2209.field13465 || this.method9916()) && this.enabled;
     }
     
     public void method9907(final boolean enabled) {
         if (this.enabled != enabled) {
             if (!(this.enabled = enabled)) {
-                Client.method35173().method35188().method21093(this);
+                Client.getInstance().method35188().method21093(this);
                 this.onDisable();
             }
             else {
-                Client.method35173().method35188().method21092(this);
-                this.method9879();
+                Client.getInstance().method35188().method21092(this);
+                this.onEnable();
             }
         }
-        Client.method35173().method35189().method21557().method21968(this);
+        Client.getInstance().method35189().method21557().method21968(this);
     }
     
     public void method9908(final boolean field15518) {
         if (!(this.enabled = field15518)) {
-            Client.method35173().method35188().method21093(this);
+            Client.getInstance().method35188().method21093(this);
         }
         else {
-            Client.method35173().method35188().method21092(this);
+            Client.getInstance().method35188().method21092(this);
         }
     }
     
     public void method9909(final boolean enabled) {
         if (this.enabled != enabled) {
             if (!(this.enabled = enabled)) {
-                Client.method35173().method35188().method21093(this);
+                Client.getInstance().method35188().method21093(this);
                 if (!(this instanceof ModuleWithSettings)) {
-                    if (Client.method35173().method35209() == Class2209.field13464) {
-                        if (Client.method35173().method35189().method21551(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).method9883("Sound")) {
-                            Client.method35173().method35196().method32830("deactivate");
+                    if (Client.getInstance().method35209() == Class2209.field13464) {
+                        if (Client.getInstance().method35189().method21551(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).method9883("Sound")) {
+                            Client.getInstance().method35196().method32830("deactivate");
                         }
                     }
-                    if (Client.method35173().method35209() == Class2209.field13465) {
-                        if (Client.method35173().method35189().method21551(ActiveMods.class).method9883("Sound")) {
+                    if (Client.getInstance().method35209() == Class2209.field13465) {
+                        if (Client.getInstance().method35189().method21551(ActiveMods.class).method9883("Sound")) {
                             Minecraft.method5277().method5299().method6422(Class6836.method20933(Class8520.field35617, 0.6f));
                         }
                     }
@@ -287,26 +287,26 @@ public abstract class Module
                 this.onDisable();
             }
             else {
-                Client.method35173().method35188().method21092(this);
-                if (Client.method35173().method35209() == Class2209.field13464) {
-                    if (Client.method35173().method35189().method21551(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).method9883("Sound")) {
-                        Client.method35173().method35196().method32830("activate");
+                Client.getInstance().method35188().method21092(this);
+                if (Client.getInstance().method35209() == Class2209.field13464) {
+                    if (Client.getInstance().method35189().method21551(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).method9883("Sound")) {
+                        Client.getInstance().method35196().method32830("activate");
                     }
                 }
-                if (Client.method35173().method35209() == Class2209.field13465) {
-                    if (Client.method35173().method35189().method21551(ActiveMods.class).method9883("Sound")) {
+                if (Client.getInstance().method35209() == Class2209.field13465) {
+                    if (Client.getInstance().method35189().method21551(ActiveMods.class).method9883("Sound")) {
                         Minecraft.method5277().method5299().method6422(Class6836.method20933(Class8520.field35617, 0.7f));
                     }
                 }
-                this.method9879();
+                this.onEnable();
                 ++this.field15523;
             }
         }
-        Client.method35173().method35189().method21557().method21968(this);
+        Client.getInstance().method35189().method21557().method21968(this);
     }
     
     public void method9910() {
-        if (this.method9906()) {
+        if (this.isEnabled()) {
             this.method9909(false);
         }
         else {

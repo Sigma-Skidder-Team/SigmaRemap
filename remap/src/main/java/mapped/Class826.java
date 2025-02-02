@@ -154,7 +154,7 @@ public class Class826 extends Class827 implements Class825
                     }
                 }
                 else {
-                    class1850.method1893(class1851.method8402() + 300, method2718);
+                    class1850.method1893(class1851.getIndex() + 300, method2718);
                 }
             }
         }

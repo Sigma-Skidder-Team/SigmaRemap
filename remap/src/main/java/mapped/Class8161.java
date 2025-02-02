@@ -38,13 +38,13 @@ public class Class8161
     }
     
     private void method26952(final long n, int n2, final int n3, final int n4) {
-        if (Client.method35173().method35193().method32154() == null) {
-            if (this.field33604.field4700 == null) {
+        if (Client.getInstance().method35193().method32154() == null) {
+            if (this.field33604.currentScreen == null) {
                 if (n3 != 1 && n3 != 2) {
                     if (n3 == 0) {
                         final Class5715 class5715 = new Class5715(n2);
-                        Client.method35173().method35188().method21097(class5715);
-                        if (class5715.method16962()) {
+                        Client.getInstance().method35188().method21097(class5715);
+                        if (class5715.isCancelled()) {
                             return;
                         }
                     }
@@ -54,8 +54,8 @@ public class Class8161
                         Class8004.method26199(n2);
                     }
                     final Class5752 class5716 = new Class5752(n2, n3 == 2, null);
-                    Client.method35173().method35188().method21097(class5716);
-                    if (class5716.method16962()) {
+                    Client.getInstance().method35188().method21097(class5716);
+                    if (class5716.isCancelled()) {
                         return;
                     }
                 }
@@ -94,14 +94,14 @@ public class Class8161
                 }
                 final boolean[] array = { false };
                 if (this.field33604.field4701 == null) {
-                    if (this.field33604.field4700 != null) {
+                    if (this.field33604.currentScreen != null) {
                         final double n5 = this.field33608 * this.field33604.method5332().method7696() / this.field33604.method5332().method7694();
                         final double n6 = this.field33609 * this.field33604.method5332().method7697() / this.field33604.method5332().method7695();
                         if (!field33605) {
-                            Screen.method3053(() -> array2[0] = this.field33604.field4700.mouseReleased(n7, n8, n9), "mouseReleased event handler", this.field33604.field4700.getClass().getCanonicalName());
+                            Screen.method3053(() -> array2[0] = this.field33604.currentScreen.mouseReleased(n7, n8, n9), "mouseReleased event handler", this.field33604.currentScreen.getClass().getCanonicalName());
                         }
                         else {
-                            Screen.method3053(() -> array3[0] = this.field33604.field4700.mouseClicked(n10, n11, n12), "mouseClicked event handler", this.field33604.field4700.getClass().getCanonicalName());
+                            Screen.method3053(() -> array3[0] = this.field33604.currentScreen.mouseClicked(n10, n11, n12), "mouseClicked event handler", this.field33604.currentScreen.getClass().getCanonicalName());
                         }
                     }
                     else if (!this.field33621) {
@@ -111,7 +111,7 @@ public class Class8161
                     }
                 }
                 if (!array[0]) {
-                    if (this.field33604.field4700 == null || this.field33604.field4700.passEvents) {
+                    if (this.field33604.currentScreen == null || this.field33604.currentScreen.passEvents) {
                         if (this.field33604.field4701 == null) {
                             if (field33606 != 0) {
                                 if (field33606 != 2) {
@@ -141,21 +141,21 @@ public class Class8161
             }
             return;
         }
-        Client.method35173().method35193().method32130(n2, n3);
+        Client.getInstance().method35193().method32130(n2, n3);
     }
     
     private void method26953(final long n, final double n2, final double d) {
-        if (Client.method35173().method35193().method32154() != null) {
-            Client.method35173().method35193().method32129(n2, d);
+        if (Client.getInstance().method35193().method32154() != null) {
+            Client.getInstance().method35193().method32129(n2, d);
             return;
         }
         final Class5720 class5720 = new Class5720(d);
-        Client.method35173().method35188().method21097(class5720);
-        if (!class5720.method16962()) {
+        Client.getInstance().method35188().method21097(class5720);
+        if (!class5720.isCancelled()) {
             if (n == Minecraft.method5277().method5332().method7690()) {
                 final double d2 = (this.field33604.gameSettings.field23423 ? Math.signum(d) : d) * this.field33604.gameSettings.field23411;
                 if (this.field33604.field4701 == null) {
-                    if (this.field33604.field4700 == null) {
+                    if (this.field33604.currentScreen == null) {
                         if (this.field33604.player != null) {
                             if (this.field33619 != 0.0) {
                                 if (Math.signum(d2) != Math.signum(this.field33619)) {
@@ -169,7 +169,7 @@ public class Class8161
                             }
                             this.field33619 -= n3;
                             if (!this.field33604.player.isSpectator()) {
-                                this.field33604.player.field3006.method2356(n3);
+                                this.field33604.player.inventory.method2356(n3);
                             }
                             else if (!this.field33604.field4647.method3810().method3327()) {
                                 this.field33604.player.field3025.method21426(MathHelper.clamp(this.field33604.player.field3025.method21425() + n3 * 0.005f, 0.0f, 0.2f));
@@ -180,7 +180,7 @@ public class Class8161
                         }
                     }
                     else {
-                        this.field33604.field4700.mouseScrolled(this.field33608 * this.field33604.method5332().method7696() / this.field33604.method5332().method7694(), this.field33609 * this.field33604.method5332().method7697() / this.field33604.method5332().method7695(), d2);
+                        this.field33604.currentScreen.mouseScrolled(this.field33608 * this.field33604.method5332().method7696() / this.field33604.method5332().method7694(), this.field33609 * this.field33604.method5332().method7697() / this.field33604.method5332().method7695(), d2);
                     }
                 }
             }
@@ -198,7 +198,7 @@ public class Class8161
                 this.field33609 = n11;
                 this.field33612 = false;
             }
-            final Screen field4700 = this.field33604.field4700;
+            final Screen field4700 = this.field33604.currentScreen;
             if (field4700 != null) {
                 if (this.field33604.field4701 == null) {
                     final double n4 = n9 * this.field33604.method5332().method7696() / this.field33604.method5332().method7694();

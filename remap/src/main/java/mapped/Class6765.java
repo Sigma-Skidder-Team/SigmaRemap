@@ -93,7 +93,7 @@ public abstract class Class6765
         class3643.method17469(new Class4376(Class4376.field19590, new PacketBuffer(Unpooled.buffer()).method29514(this.method20576().method1490())));
         class3643.method17469(new Class4315(method2849.method29597(), method2849.method29599()));
         class3643.method17469(new Class4300(class3642.field3025));
-        class3643.method17469(new Class4388(class3642.field3006.field2743));
+        class3643.method17469(new Class4388(class3642.inventory.field2743));
         class3643.method17469(new Class4281(this.field26562.method1577().method6383()));
         class3643.method17469(new Class4297(this.field26562.method1578()));
         this.method20584(class3642);
@@ -544,9 +544,9 @@ public abstract class Class6765
     }
     
     public void method20607(final Class513 class513) {
-        class513.method2929(class513.field3008);
+        class513.method2929(class513.container);
         class513.method2937();
-        class513.field3039.method17469(new Class4388(class513.field3006.field2743));
+        class513.field3039.method17469(new Class4388(class513.inventory.field2743));
     }
     
     public int method20608() {
