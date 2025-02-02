@@ -59,7 +59,7 @@ public class NoGroundCriticals extends Module
     
     @EventListener
     @Class6757
-    private void method10471(final Class5744 class5744) {
+    private void method10471(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled()) {
             return;
         }
@@ -83,7 +83,7 @@ public class NoGroundCriticals extends Module
             else {
                 switch (this.field15884) {
                     case 0: {
-                        class5744.method17033(true);
+                        updateWalkingEvent.method17033(true);
                         --this.field15884;
                         break;
                     }
@@ -93,7 +93,7 @@ public class NoGroundCriticals extends Module
                         break;
                     }
                     case 2: {
-                        class5744.method17033(true);
+                        updateWalkingEvent.method17033(true);
                         n = 0.065;
                         --this.field15884;
                         if (!this.field15885) {
@@ -104,7 +104,7 @@ public class NoGroundCriticals extends Module
                         break;
                     }
                     case 3: {
-                        class5744.method17033(true);
+                        updateWalkingEvent.method17033(true);
                         n = 0.0;
                         b = true;
                         --this.field15884;
@@ -114,15 +114,15 @@ public class NoGroundCriticals extends Module
             }
             final Module method21551 = Client.getInstance().method35189().method21551(Speed.class);
             if (!method21551.isEnabled() || method21551.getStringSettingValueByName("Type").equalsIgnoreCase("Hypixel")) {
-                class5744.method17037(class5744.method17036() + n);
+                updateWalkingEvent.method17037(updateWalkingEvent.method17036() + n);
             }
-            class5744.method17045(b);
+            updateWalkingEvent.method17045(b);
         }
         else {
             this.field15884 = ((this.method9883("Avoid Fall Damage") && !this.field15885) ? 3 : 0);
             if (this.method9883("Avoid Fall Damage") && this.field15885 && !this.field15887 && NoGroundCriticals.mc.player.getMotion().y < -0.1) {
                 this.field15887 = !this.field15887;
-                class5744.method17045(true);
+                updateWalkingEvent.method17045(true);
             }
         }
     }

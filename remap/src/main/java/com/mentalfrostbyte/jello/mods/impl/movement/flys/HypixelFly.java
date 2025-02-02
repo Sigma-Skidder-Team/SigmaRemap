@@ -99,8 +99,8 @@ public class HypixelFly extends Module {
     }
 
     @EventListener
-    public void method10771(final Class5744 class5744) {
-        if (class5744.method17046()) {
+    public void method10771(final UpdateWalkingEvent updateWalkingEvent) {
+        if (updateWalkingEvent.method17046()) {
             if (!ColorUtils.method19160(HypixelFly.mc.player, 1.0E-5f)) {
                 Label_0031:
                 {
@@ -123,18 +123,18 @@ public class HypixelFly extends Module {
                             final int length = method9888.length;
                             int n = 0;
                             for (int i = 0; i < length; ++i) {
-                                if (class5744.method17036() - (int) class5744.method17036() == method9888[i]) {
+                                if (updateWalkingEvent.method17036() - (int) updateWalkingEvent.method17036() == method9888[i]) {
                                     n = 1;
                                 }
                             }
                             if (n != 0) {
-                                class5744.method17045(true);
+                                updateWalkingEvent.method17045(true);
                             }
                         }
                     }
                 }
                 if (HypixelFly.field16077 != 3.0) {
-                    class5744.method17033(true);
+                    updateWalkingEvent.method17033(true);
                 }
             }
         }

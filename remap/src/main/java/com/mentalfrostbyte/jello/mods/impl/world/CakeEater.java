@@ -49,7 +49,7 @@ public class CakeEater extends Module
     
     @EventListener
     @Class6757
-    private void method10146(final Class5744 class5744) {
+    private void method10146(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled()) {
             return;
         }
@@ -57,7 +57,7 @@ public class CakeEater extends Module
         if (class5745.method10260() instanceof MineplexFly && ((MineplexFly)class5745.method10260()).method10632()) {
             return;
         }
-        if (!class5744.method17046()) {
+        if (!updateWalkingEvent.method17046()) {
             if (CakeEater.field15674 != null) {
                 if (this.method9883("No Swing") && !this.method9883("Mineplex")) {
                     CakeEater.mc.method5269().method17292(new Class4380(Class316.field1877));
@@ -78,8 +78,8 @@ public class CakeEater extends Module
                 CakeEater.field15674 = method10147.get(0);
                 if (!this.method9883("Mineplex")) {
                     final float[] method10148 = Class8845.method30919(CakeEater.field15674.getX() + 0.5, CakeEater.field15674.getZ() + 0.5, CakeEater.field15674.getY());
-                    class5744.method17043(method10148[0]);
-                    class5744.method17041(method10148[1]);
+                    updateWalkingEvent.method17043(method10148[0]);
+                    updateWalkingEvent.method17041(method10148[1]);
                 }
             }
         }

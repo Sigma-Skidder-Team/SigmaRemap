@@ -55,13 +55,13 @@ public class SpartanFly extends Module
     }
     
     @EventListener
-    public void method10577(final Class5744 class5744) {
+    public void method10577(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
-            if (class5744.method17046()) {
+            if (updateWalkingEvent.method17046()) {
                 if (this.method9883("Ground Spoof")) {
                     if (this.field15947) {
                         this.field15947 = !this.field15947;
-                        class5744.method17045(true);
+                        updateWalkingEvent.method17045(true);
                     }
                 }
             }

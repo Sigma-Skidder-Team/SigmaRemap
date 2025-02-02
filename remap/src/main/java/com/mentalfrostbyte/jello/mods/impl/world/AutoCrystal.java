@@ -41,25 +41,25 @@ public class AutoCrystal extends PremiumModule
     }
     
     @EventListener
-    private void method10650(final Class5744 class5744) {
+    private void method10650(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled() || AutoCrystal.mc.world == null) {
             return;
         }
-        if (class5744.method17046()) {
+        if (updateWalkingEvent.method17046()) {
             this.field16009 = this.method10651();
         }
         switch (this.field16009.ordinal()) {
             case 1: {
-                if (class5744.method17046()) {
-                    this.method10659(class5744);
+                if (updateWalkingEvent.method17046()) {
+                    this.method10659(updateWalkingEvent);
                     break;
                 }
                 this.method10660();
                 break;
             }
             case 2: {
-                if (class5744.method17046()) {
-                    this.method10661(class5744);
+                if (updateWalkingEvent.method17046()) {
+                    this.method10661(updateWalkingEvent);
                     break;
                 }
                 this.method10662();
@@ -174,7 +174,7 @@ public class AutoCrystal extends PremiumModule
         return AutoCrystal.mc.world.method6737(AutoCrystal.mc.player, AutoCrystal.mc.player.boundingBox.grow(n, n, n), Class9170.field38850.and((Predicate<? super Entity>)new Class165(this, n)));
     }
     
-    private void method10659(final Class5744 class5744) {
+    private void method10659(final UpdateWalkingEvent updateWalkingEvent) {
         final List<Entity> method10658 = this.method10658();
         if (method10658.size() != 0) {
             if (!this.field16010.containsKey(method10658.get(0))) {
@@ -185,10 +185,10 @@ public class AutoCrystal extends PremiumModule
                 }
                 else {
                     final float[] method10659 = Class8845.method30912(method10658.get(0));
-                    final EntityRayTraceResult method10660 = ColorUtils.rayTraceFromPlayer(class5744.method17042(), class5744.method17040(), 5.0f, 0.0);
+                    final EntityRayTraceResult method10660 = ColorUtils.rayTraceFromPlayer(updateWalkingEvent.method17042(), updateWalkingEvent.method17040(), 5.0f, 0.0);
                     if (method10660 == null || !method10658.get(0).equals(method10660.getEntity())) {
-                        class5744.method17043(method10659[0]);
-                        class5744.method17041(method10659[1]);
+                        updateWalkingEvent.method17043(method10659[0]);
+                        updateWalkingEvent.method17041(method10659[1]);
                     }
                 }
             }
@@ -210,7 +210,7 @@ public class AutoCrystal extends PremiumModule
         }
     }
     
-    private void method10661(final Class5744 class5744) {
+    private void method10661(final UpdateWalkingEvent updateWalkingEvent) {
         this.field16011 = null;
         this.field16012 = null;
         final List<Entity> method10653 = this.method10653();
@@ -227,8 +227,8 @@ public class AutoCrystal extends PremiumModule
                 }
                 this.field16012 = method10656;
                 this.field16011 = field16011;
-                class5744.method17043(method10655[0]);
-                class5744.method17041(method10655[1]);
+                updateWalkingEvent.method17043(method10655[0]);
+                updateWalkingEvent.method17041(method10655[1]);
             }
         }
     }

@@ -62,10 +62,10 @@ public class HypixelHighJump extends Module
     }
     
     @EventListener
-    public void method10421(final Class5744 class5744) {
+    public void method10421(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
             if (this.field15851 >= 0) {
-                class5744.method17033(true);
+                updateWalkingEvent.method17033(true);
             }
         }
     }

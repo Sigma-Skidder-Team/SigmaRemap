@@ -80,26 +80,26 @@ public class OmegaCraftFly extends Module
     }
     
     @EventListener
-    public void method10606(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
+    public void method10606(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
             ++this.field15969;
             if (this.field15969 == 1) {
-                class5744.method17045(true);
+                updateWalkingEvent.method17045(true);
             }
             if (this.field15969 != 2) {
                 if (this.field15969 > 2) {
                     if (this.field15969 != 40) {
-                        class5744.setCancelled(true);
+                        updateWalkingEvent.setCancelled(true);
                     }
                     else {
-                        class5744.method17037(-(150.0 + Math.random() * 150.0));
+                        updateWalkingEvent.method17037(-(150.0 + Math.random() * 150.0));
                     }
                 }
             }
             else {
-                class5744.method17037(-(150.0 + Math.random() * 150.0));
+                updateWalkingEvent.method17037(-(150.0 + Math.random() * 150.0));
             }
-            class5744.method17033(true);
+            updateWalkingEvent.method17033(true);
         }
     }
     

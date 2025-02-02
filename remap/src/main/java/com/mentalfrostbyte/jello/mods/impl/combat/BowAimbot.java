@@ -43,8 +43,8 @@ public class BowAimbot extends Module
     }
     
     @EventListener
-    private void method10191(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
+    private void method10191(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
             if (!(BowAimbot.mc.player.method2766().getItem() instanceof Class4087)) {
                 this.field15703.clear();
             }
@@ -54,8 +54,8 @@ public class BowAimbot extends Module
             if (!this.field15703.isEmpty()) {
                 if (this.method9883("Silent")) {
                     final float[] method30921 = Class8845.method30921(this.field15703.get(0));
-                    class5744.method17043(method30921[0]);
-                    class5744.method17041(method30921[1]);
+                    updateWalkingEvent.method17043(method30921[0]);
+                    updateWalkingEvent.method17041(method30921[1]);
                 }
             }
         }

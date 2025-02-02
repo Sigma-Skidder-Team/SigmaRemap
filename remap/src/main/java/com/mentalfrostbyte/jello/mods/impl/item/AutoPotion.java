@@ -43,8 +43,8 @@ public class AutoPotion extends Module
     
     @EventListener
     @Class6755
-    private void method10613(final Class5744 class5744) {
-        if (!this.isEnabled() || !class5744.method17046()) {
+    private void method10613(final UpdateWalkingEvent updateWalkingEvent) {
+        if (!this.isEnabled() || !updateWalkingEvent.method17046()) {
             return;
         }
         if (!this.method9883("In fight") && (KillAura.field16061 != null || KillAura.field16060 != null)) {
@@ -76,13 +76,13 @@ public class AutoPotion extends Module
                     if (array[i] != -1) {
                         if (array[i] != 6 && array[i] != 10) {
                             if (this.field15979 > 60) {
-                                this.method10618(class5744, method10615, array[i]);
+                                this.method10618(updateWalkingEvent, method10615, array[i]);
                             }
                         }
                         else if (this.field15979 > 18) {
                             if (!AutoPotion.mc.player.method2653(Class5328.method16450(array[i]))) {
                                 if (AutoPotion.mc.player.method2664() < this.getNumberSettingValueByName("Health") * 2.0f) {
-                                    this.method10618(class5744, method10615, array[i]);
+                                    this.method10618(updateWalkingEvent, method10615, array[i]);
                                 }
                             }
                         }
@@ -187,7 +187,7 @@ public class AutoPotion extends Module
         return n;
     }
     
-    public void method10618(final Class5744 class5744, final int n, final int n2) {
+    public void method10618(final UpdateWalkingEvent updateWalkingEvent, final int n, final int n2) {
         final int method10616 = this.method10616(n2);
         if (method10616 != -1) {
             if (method10616 < 36) {
@@ -202,8 +202,8 @@ public class AutoPotion extends Module
                 AutoPotion.mc.playerController.method27318();
                 if (!this.method9883("Instant")) {
                     this.field15982 = 1;
-                    class5744.method17043(method10617[0]);
-                    class5744.method17041(method10617[1]);
+                    updateWalkingEvent.method17043(method10617[0]);
+                    updateWalkingEvent.method17041(method10617[1]);
                 }
                 else {
                     AutoPotion.mc.method5269().method17292(new Class4356(method10617[0], method10617[1], !b && AutoPotion.mc.player.onGround));

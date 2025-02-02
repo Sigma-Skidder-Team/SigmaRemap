@@ -218,9 +218,9 @@ public class AACBlockFly extends Module
     
     @EventListener
     @Class6755
-    private void method10106(final Class5744 class5744) {
+    private void method10106(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
-            if (!class5744.method17046()) {
+            if (!updateWalkingEvent.method17046()) {
                 if (Class7482.method23148()) {
                     if (AACBlockFly.mc.player.onGround) {
                         if (this.method9883("Haphe (AACAP)")) {
@@ -260,8 +260,8 @@ public class AACBlockFly extends Module
                         this.field15651 = Class4609.method13673(class5745.field38320, class5745.field38321)[1];
                     }
                 }
-                class5744.method17041(this.field15651);
-                class5744.method17043(this.field15650);
+                updateWalkingEvent.method17041(this.field15651);
+                updateWalkingEvent.method17043(this.field15650);
             }
         }
     }

@@ -32,9 +32,9 @@ public class HypixelAutoGapple extends PremiumModule
     }
     
     @EventListener
-    public void method10697(final Class5744 class5744) {
+    public void method10697(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
-            if (class5744.method17046()) {
+            if (updateWalkingEvent.method17046()) {
                 if (!(HypixelAutoGapple.mc.currentScreen instanceof Class726)) {
                     if (this.field16028 < 20) {
                         ++this.field16028;
@@ -69,7 +69,7 @@ public class HypixelAutoGapple extends PremiumModule
                         if (this.field16026 >= 0) {
                             ++this.field16026;
                             if (this.field16026 == 2) {
-                                class5744.method17041(class5744.method17040() + 1.0f);
+                                updateWalkingEvent.method17041(updateWalkingEvent.method17040() + 1.0f);
                             }
                             if (this.field16026 != 1) {
                                 if (this.field16026 >= 3) {

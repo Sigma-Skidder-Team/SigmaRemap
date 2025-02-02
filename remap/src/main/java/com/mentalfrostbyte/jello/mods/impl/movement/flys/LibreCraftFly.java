@@ -87,23 +87,23 @@ public class LibreCraftFly extends Module
     }
     
     @EventListener
-    public void method10736(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
+    public void method10736(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
             ++this.field16046;
             if (this.field16046 != 2) {
                 if (this.field16046 > 2) {
                     if (this.field16046 >= 20 && this.field16046 % 20 == 0) {
-                        class5744.method17037(0.1);
+                        updateWalkingEvent.method17037(0.1);
                     }
                     else {
-                        class5744.setCancelled(true);
+                        updateWalkingEvent.setCancelled(true);
                     }
                 }
             }
             else {
-                class5744.method17037(0.1);
+                updateWalkingEvent.method17037(0.1);
             }
-            class5744.method17033(true);
+            updateWalkingEvent.method17033(true);
         }
     }
     

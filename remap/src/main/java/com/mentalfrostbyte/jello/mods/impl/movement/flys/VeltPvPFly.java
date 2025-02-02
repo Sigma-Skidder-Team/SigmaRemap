@@ -103,25 +103,25 @@ public class VeltPvPFly extends Module
     }
     
     @EventListener
-    public void method10384(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
+    public void method10384(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
             ++this.field15795;
             if (this.field15795 != 2) {
                 if (this.field15795 > 2) {
                     if (this.field15795 >= 20 && this.field15795 % 20 == 0) {
-                        class5744.method17037(-(150.0 + Math.random() * 150.0));
+                        updateWalkingEvent.method17037(-(150.0 + Math.random() * 150.0));
                         this.field15796 += 2;
                     }
                     else {
-                        class5744.setCancelled(true);
+                        updateWalkingEvent.setCancelled(true);
                     }
                 }
             }
             else {
-                class5744.method17037(-(150.0 + Math.random() * 150.0));
+                updateWalkingEvent.method17037(-(150.0 + Math.random() * 150.0));
                 this.field15796 += 2;
             }
-            class5744.method17033(true);
+            updateWalkingEvent.method17033(true);
         }
     }
     

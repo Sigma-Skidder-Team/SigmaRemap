@@ -7,7 +7,7 @@ package mapped;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class5744 extends Class5714
+public class UpdateWalkingEvent extends Class5714
 {
     private static String[] field23316;
     private double field23317;
@@ -25,7 +25,7 @@ public class Class5744 extends Class5714
     private List<Runnable> field23329;
     public boolean field23330;
     
-    public Class5744(final double field23317, final double field23318, final double field23319, final float field23320, final float field23321, final boolean field23322) {
+    public UpdateWalkingEvent(final double field23317, final double field23318, final double field23319, final float field23320, final float field23321, final boolean field23322) {
         this.field23329 = new ArrayList<Runnable>();
         this.field23317 = field23317;
         this.field23318 = field23318;
@@ -38,10 +38,10 @@ public class Class5744 extends Class5714
     }
     
     public void method17031() {
-        Class5744.field23326 = Class5744.field23324;
-        Class5744.field23327 = Class5744.field23325;
-        Class5744.field23324 = this.field23321;
-        Class5744.field23325 = this.field23320;
+        UpdateWalkingEvent.field23326 = UpdateWalkingEvent.field23324;
+        UpdateWalkingEvent.field23327 = UpdateWalkingEvent.field23325;
+        UpdateWalkingEvent.field23324 = this.field23321;
+        UpdateWalkingEvent.field23325 = this.field23320;
         this.field23330 = false;
     }
     

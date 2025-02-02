@@ -53,9 +53,9 @@ public class MineplexFly extends PremiumModule
     }
     
     @EventListener
-    public void method10630(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
-            class5744.method17033(true);
+    public void method10630(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+            updateWalkingEvent.method17033(true);
         }
     }
     

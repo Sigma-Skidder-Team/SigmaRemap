@@ -234,10 +234,10 @@ public class Freecam extends Module
     }
     
     @EventListener
-    public void method10504(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
-            class5744.method17043(this.field15908 % 360.0f);
-            class5744.method17041(this.field15909);
+    public void method10504(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+            updateWalkingEvent.method17043(this.field15908 % 360.0f);
+            updateWalkingEvent.method17041(this.field15909);
             Freecam.mc.player.field4077 = this.field15908;
             Freecam.mc.player.field4078 = this.field15909;
             final float[] method23145 = Class7482.method23145(this.field15912, this.field15911);

@@ -36,11 +36,11 @@ public class MineplexLongJump extends Module
     }
     
     @EventListener
-    public void method10729(final Class5744 class5744) {
+    public void method10729(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
-            if (class5744.method17046()) {
+            if (updateWalkingEvent.method17046()) {
                 if (this.field16042 >= 0) {
-                    class5744.method17033(true);
+                    updateWalkingEvent.method17033(true);
                 }
             }
         }

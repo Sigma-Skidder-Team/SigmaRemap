@@ -28,8 +28,8 @@ public class Derp extends Module
     }
     
     @EventListener
-    public void method10456(final Class5744 class5744) {
-        if (!this.isEnabled() || !class5744.method17046()) {
+    public void method10456(final UpdateWalkingEvent updateWalkingEvent) {
+        if (!this.isEnabled() || !updateWalkingEvent.method17046()) {
             return;
         }
         if (this.method9883("Sneak")) {
@@ -49,8 +49,8 @@ public class Derp extends Module
         final String method9887 = this.getStringSettingValueByName("Rotation Mode");
         switch (method9887) {
             case "Random": {
-                class5744.method17043(this.field15869.nextFloat() * 360.0f);
-                class5744.method17041(this.field15869.nextFloat() * 180.0f - 90.0f);
+                updateWalkingEvent.method17043(this.field15869.nextFloat() * 360.0f);
+                updateWalkingEvent.method17041(this.field15869.nextFloat() * 180.0f - 90.0f);
                 break;
             }
             case "Spin": {
@@ -58,7 +58,7 @@ public class Derp extends Module
                 while (this.field15872 > 360) {
                     this.field15872 -= 360;
                 }
-                class5744.method17043(this.field15872 + this.field15869.nextFloat());
+                updateWalkingEvent.method17043(this.field15872 + this.field15869.nextFloat());
                 break;
             }
         }

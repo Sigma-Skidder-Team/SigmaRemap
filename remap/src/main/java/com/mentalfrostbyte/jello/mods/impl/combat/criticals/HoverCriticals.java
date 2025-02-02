@@ -34,8 +34,8 @@ public class HoverCriticals extends Module
     
     @EventListener
     @Class6757
-    private void method10484(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
+    private void method10484(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
             final boolean b = HoverCriticals.mc.field4691 != null && HoverCriticals.mc.field4691.getType() == RayTraceResult.Type.BLOCK;
             final boolean b2 = HoverCriticals.mc.playerController.method27337() || (HoverCriticals.mc.gameSettings.field23446.method1056() && b);
             if (Client.getInstance().playerTracker().method29228() > 0 && !b2) {
@@ -43,9 +43,9 @@ public class HoverCriticals extends Module
                 if (this.field15895 < 0.0 || Step.field15758 == 0) {
                     this.field15895 = 1.0E-11;
                 }
-                class5744.method17033(true);
-                class5744.method17037(class5744.method17036() + this.field15895);
-                class5744.method17045(false);
+                updateWalkingEvent.method17033(true);
+                updateWalkingEvent.method17037(updateWalkingEvent.method17036() + this.field15895);
+                updateWalkingEvent.method17045(false);
             }
             else {
                 this.field15895 = 1.0E-11;

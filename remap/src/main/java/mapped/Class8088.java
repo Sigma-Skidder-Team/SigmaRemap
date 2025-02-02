@@ -213,8 +213,8 @@ public class Class8088
     }
     
     @EventListener
-    private void method26564(final Class5744 class5744) {
-        if (!class5744.method17046()) {
+    private void method26564(final UpdateWalkingEvent updateWalkingEvent) {
+        if (!updateWalkingEvent.method17046()) {
             return;
         }
         if (this.method26560()) {
@@ -246,21 +246,21 @@ public class Class8088
                     this.field33317 = (BlockPos)list.get(0);
                 }
                 final float[] method1130 = Class4609.method13672(this.field33317, Class4609.method13710(this.field33317));
-                class5744.method17043(method1130[0]);
-                class5744.method17041(method1130[1]);
+                updateWalkingEvent.method17043(method1130[0]);
+                updateWalkingEvent.method17041(method1130[1]);
                 this.field33313.player.method2707(Class316.field1877);
                 this.field33313.playerController.method27314(this.field33317, Class4609.method13710(this.field33317));
             }
             else {
                 this.field33317 = (BlockPos)list.get(0);
                 final float[] method1131 = Class4609.method13672(this.field33317, Class4609.method13710(this.field33317));
-                class5744.method17043(method1131[0]);
-                class5744.method17041(method1131[1]);
+                updateWalkingEvent.method17043(method1131[0]);
+                updateWalkingEvent.method17041(method1131[1]);
                 Client.getInstance().method35188().method21097(new Class5752(0, false, this.field33317));
             }
             if (class5745.field36691 != Class2049.field11679) {
-                this.field33316 = class5744.method17040();
-                this.field33315 = class5744.method17042();
+                this.field33316 = updateWalkingEvent.method17040();
+                this.field33315 = updateWalkingEvent.method17042();
             }
         }
     }

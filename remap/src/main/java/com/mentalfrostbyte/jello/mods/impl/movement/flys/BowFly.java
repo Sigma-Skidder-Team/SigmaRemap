@@ -71,8 +71,8 @@ public class BowFly extends Module
     }
     
     @EventListener
-    public void method10306(final Class5744 class5744) {
-        if (!this.isEnabled() || !class5744.method17046()) {
+    public void method10306(final UpdateWalkingEvent updateWalkingEvent) {
+        if (!this.isEnabled() || !updateWalkingEvent.method17046()) {
             return;
         }
         if (!this.field15761.method23937()) {
@@ -104,8 +104,8 @@ public class BowFly extends Module
             if (BowFly.mc.player.getMotion().y < -0.1) {
                 n = 90.0f;
             }
-            class5744.method17041(n);
-            class5744.method17043(field2399);
+            updateWalkingEvent.method17041(n);
+            updateWalkingEvent.method17043(field2399);
             if (BowFly.mc.player.onGround && BowFly.mc.player.collidedVertically) {
                 BowFly.mc.player.method2725();
             }

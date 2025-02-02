@@ -152,9 +152,9 @@ public class ClientPlayerEntity extends Class754
     }
     
     public void method4113() {
-        final Class5744 class5744 = new Class5744(this.posX, this.getBoundingBox().minY, this.posZ, this.rotationPitch, this.rotationYaw, this.onGround);
-        Client.getInstance().method35188().method21097(class5744);
-        if (!class5744.isCancelled()) {
+        final UpdateWalkingEvent updateWalkingEvent = new UpdateWalkingEvent(this.posX, this.getBoundingBox().minY, this.posZ, this.rotationPitch, this.rotationYaw, this.onGround);
+        Client.getInstance().method35188().method21097(updateWalkingEvent);
+        if (!updateWalkingEvent.isCancelled()) {
             final boolean method1815 = this.method1815();
             if (method1815 != this.field4081) {
                 this.field4069.method17292(new Class4336(this, method1815 ? Class287.field1594 : Class287.field1595));
@@ -166,12 +166,12 @@ public class ClientPlayerEntity extends Class754
                 this.field4080 = method1816;
             }
             if (this.method4132()) {
-                final double method1817 = class5744.method17034();
-                final double method1818 = class5744.method17036();
-                final double method1819 = class5744.method17038();
-                final float method1820 = class5744.method17040();
-                final float field4077 = class5744.method17042() % 360.0f;
-                final boolean method1821 = class5744.method17044();
+                final double method1817 = updateWalkingEvent.method17034();
+                final double method1818 = updateWalkingEvent.method17036();
+                final double method1819 = updateWalkingEvent.method17038();
+                final float method1820 = updateWalkingEvent.method17040();
+                final float field4077 = updateWalkingEvent.method17042() % 360.0f;
+                final boolean method1821 = updateWalkingEvent.method17044();
                 final double n = method1817 - this.field4074;
                 final double n2 = method1818 - this.field4075;
                 final double n3 = method1819 - this.field4076;
@@ -180,7 +180,7 @@ public class ClientPlayerEntity extends Class754
                 ++this.field4082;
                 int n6 = 0;
                 Label_0366: {
-                    if (!class5744.method17032()) {
+                    if (!updateWalkingEvent.method17032()) {
                         if (n * n + n2 * n2 + n3 * n3 <= 9.0E-4) {
                             if (this.field4082 < 20) {
                                 n6 = 0;
@@ -228,12 +228,12 @@ public class ClientPlayerEntity extends Class754
                 this.field4079 = this.onGround;
                 this.field4100 = this.field4086.gameSettings.field23414;
             }
-            final Iterator<Runnable> iterator = class5744.method17048().iterator();
+            final Iterator<Runnable> iterator = updateWalkingEvent.method17048().iterator();
             while (iterator.hasNext()) {
                 iterator.next().run();
             }
-            class5744.method17031();
-            Client.getInstance().method35188().method21097(class5744);
+            updateWalkingEvent.method17031();
+            Client.getInstance().method35188().method21097(updateWalkingEvent);
         }
     }
     

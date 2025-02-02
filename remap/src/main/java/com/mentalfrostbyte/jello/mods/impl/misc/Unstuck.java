@@ -44,8 +44,8 @@ public class Unstuck extends Module
     }
     
     @EventListener
-    public void method10544(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
+    public void method10544(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
             if (!Unstuck.mc.player.onGround && !ColorUtils.method19160(Unstuck.mc.player, 0.001f)) {
                 if (this.field15927 >= this.getNumberSettingValueByName("Flags")) {
                     if (this.field15928 == 0) {
@@ -58,7 +58,7 @@ public class Unstuck extends Module
                     if (this.field15928 == 0) {
                         this.field15927 = 0;
                     }
-                    class5744.setCancelled(true);
+                    updateWalkingEvent.setCancelled(true);
                 }
             }
             else {

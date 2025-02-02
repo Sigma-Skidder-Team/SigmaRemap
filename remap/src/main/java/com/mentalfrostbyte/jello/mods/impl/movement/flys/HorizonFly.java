@@ -62,22 +62,22 @@ public class HorizonFly extends Module
     }
     
     @EventListener
-    public void method10026(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
+    public void method10026(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
             ++this.field15606;
             if (this.field15606 != 11) {
                 if (this.field15606 > 11) {
                     if (this.field15606 >= 20) {
                         if (this.field15606 % 20 == 0) {
-                            class5744.method17037(0.0);
+                            updateWalkingEvent.method17037(0.0);
                         }
                     }
                 }
             }
             else {
-                class5744.method17037(0.0);
+                updateWalkingEvent.method17037(0.0);
             }
-            class5744.method17033(true);
+            updateWalkingEvent.method17033(true);
         }
     }
     

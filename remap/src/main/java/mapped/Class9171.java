@@ -58,7 +58,7 @@ public class Class9171
     
     @EventListener
     @Class6754
-    public void method33484(final Class5744 class5744) {
+    public void method33484(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.field38851.method5282() != null && Class9171.field38852) {
             final Class6999 class5745 = new Class6999();
             class5745.field27302 = true;

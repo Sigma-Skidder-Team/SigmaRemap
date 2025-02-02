@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.mods.impl.movement.spiders;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.impl.movement.Spider;
-import mapped.Class5744;
+import mapped.UpdateWalkingEvent;
 import mapped.Class5753;
 import mapped.EventListener;
 
@@ -18,8 +18,8 @@ public class SpartanSpider extends Module
     }
     
     @EventListener
-    private void method10523(final Class5744 class5744) {
-        if (!this.isEnabled() || !class5744.method17046()) {
+    private void method10523(final UpdateWalkingEvent updateWalkingEvent) {
+        if (!this.isEnabled() || !updateWalkingEvent.method17046()) {
             return;
         }
         final int method10264 = ((Spider)this.method9914()).method10264();
@@ -31,43 +31,43 @@ public class SpartanSpider extends Module
             if (SpartanSpider.mc.player.getMotion().y <= -0.22768848754498797 || SpartanSpider.mc.player.onGround) {
                 if (!SpartanSpider.mc.player.onGround) {
                     SpartanSpider.mc.player.setPosition(field2395, field2396 - (field2396 - (int)field2396), field2397);
-                    class5744.method17037(field2396 - (field2396 - (int)field2396));
+                    updateWalkingEvent.method17037(field2396 - (field2396 - (int)field2396));
                     n = -1.0E-13;
                 }
                 SpartanSpider.mc.player.method2725();
-                class5744.method17045(true);
+                updateWalkingEvent.method17045(true);
             }
             switch (method10264) {
                 case 1: {
                     if (field2395 < 0.0) {
-                        class5744.method17035((int)field2395 - 0.3 - n);
+                        updateWalkingEvent.method17035((int)field2395 - 0.3 - n);
                         break;
                     }
-                    class5744.method17035((int)(field2395 + 1.0) - 0.3 - n);
+                    updateWalkingEvent.method17035((int)(field2395 + 1.0) - 0.3 - n);
                     break;
                 }
                 case 2: {
                     if (field2395 < 0.0) {
-                        class5744.method17035((int)(field2395 - 1.0) + 0.3 + n);
+                        updateWalkingEvent.method17035((int)(field2395 - 1.0) + 0.3 + n);
                         break;
                     }
-                    class5744.method17035((int)field2395 + 0.3 + n);
+                    updateWalkingEvent.method17035((int)field2395 + 0.3 + n);
                     break;
                 }
                 case 3: {
                     if (field2397 < 0.0) {
-                        class5744.method17039((int)field2397 - 0.3 - n);
+                        updateWalkingEvent.method17039((int)field2397 - 0.3 - n);
                         break;
                     }
-                    class5744.method17039((int)(field2397 + 1.0) - 0.3 - n);
+                    updateWalkingEvent.method17039((int)(field2397 + 1.0) - 0.3 - n);
                     break;
                 }
                 case 4: {
                     if (field2397 < 0.0) {
-                        class5744.method17039((int)(field2397 - 1.0) + 0.3 + n);
+                        updateWalkingEvent.method17039((int)(field2397 - 1.0) + 0.3 + n);
                         break;
                     }
-                    class5744.method17039((int)field2397 + 0.3 + n);
+                    updateWalkingEvent.method17039((int)field2397 + 0.3 + n);
                     break;
                 }
             }

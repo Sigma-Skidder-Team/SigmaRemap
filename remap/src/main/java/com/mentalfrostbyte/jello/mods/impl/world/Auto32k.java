@@ -175,7 +175,7 @@ public class Auto32k extends Module
     }
     
     @EventListener
-    private void method9984(final Class5744 class5744) {
+    private void method9984(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled()) {
             return;
         }
@@ -190,8 +190,8 @@ public class Auto32k extends Module
                 if (this.field15571 == 1) {
                     final float n = Class4609.method13673(this.field15568.method1137(), Direction.UP)[0];
                     final float n2 = Class4609.method13673(this.field15568.method1137(), Direction.UP)[1];
-                    class5744.method17043(n);
-                    class5744.method17041(n2);
+                    updateWalkingEvent.method17043(n);
+                    updateWalkingEvent.method17041(n2);
                     final int field2743 = Auto32k.mc.player.inventory.field2743;
                     Auto32k.mc.player.inventory.field2743 = this.field15569;
                     final Class2201 method27319 = Auto32k.mc.playerController.method27319(Auto32k.mc.player, Auto32k.mc.world, Class316.field1877, new BlockRayTraceResult(Class4609.method13702(Direction.UP, this.field15568), Direction.UP, this.field15568, false));
@@ -213,8 +213,8 @@ public class Auto32k extends Module
             else {
                 final float n3 = Class4609.method13673(this.field15568, Direction.UP)[0];
                 final float n4 = Class4609.method13673(this.field15568, Direction.UP)[1];
-                class5744.method17043(n3);
-                class5744.method17041(n4);
+                updateWalkingEvent.method17043(n3);
+                updateWalkingEvent.method17041(n4);
                 ++this.field15571;
             }
         }

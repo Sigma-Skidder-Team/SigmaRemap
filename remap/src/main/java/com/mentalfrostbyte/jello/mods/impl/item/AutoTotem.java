@@ -23,8 +23,8 @@ public class AutoTotem extends Module
     }
     
     @EventListener
-    private void method10474(final Class5744 class5744) {
-        if (!class5744.method17046()) {
+    private void method10474(final UpdateWalkingEvent updateWalkingEvent) {
+        if (!updateWalkingEvent.method17046()) {
             this.method10475();
         }
     }

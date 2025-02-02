@@ -69,10 +69,10 @@ public class Jesus extends Module
     }
     
     @EventListener
-    public void method10427(final Class5744 class5744) {
+    public void method10427(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
             if (Jesus.mc.world != null) {
-                if (class5744.method17046()) {
+                if (updateWalkingEvent.method17046()) {
                     if (Jesus.mc.method5282() != null) {
                         if (method10433() && !this.method10432(Jesus.mc.player.boundingBox)) {
                             ++this.field15856;
@@ -82,10 +82,10 @@ public class Jesus extends Module
                         }
                         if (method10433() && !this.method10432(Jesus.mc.player.boundingBox)) {
                             Jesus.mc.player.field2985 = 0;
-                            class5744.method17033(true);
+                            updateWalkingEvent.method17033(true);
                             ++this.field15854;
                             if (this.field15854 % 2 == 0) {
-                                class5744.method17037(class5744.method17036() - 0.001);
+                                updateWalkingEvent.method17037(updateWalkingEvent.method17036() - 0.001);
                             }
                         }
                         else {

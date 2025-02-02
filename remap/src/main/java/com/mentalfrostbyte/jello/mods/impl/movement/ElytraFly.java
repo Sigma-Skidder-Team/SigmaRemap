@@ -117,7 +117,7 @@ public class ElytraFly extends Module
     }
     
     @EventListener
-    private void method10033(final Class5744 class5744) {
+    private void method10033(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
             final int field15613 = 65;
             if (this.field15613 != field15613 - 1) {
@@ -140,7 +140,7 @@ public class ElytraFly extends Module
                 }
             }
             if (this.field15613 > 0) {
-                class5744.method17041(-90.0f);
+                updateWalkingEvent.method17041(-90.0f);
             }
             if (!ElytraFly.mc.player.field2967) {
                 this.field15613 = 0;

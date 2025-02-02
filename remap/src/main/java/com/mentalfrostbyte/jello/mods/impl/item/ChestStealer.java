@@ -53,8 +53,8 @@ public class ChestStealer extends Module
     }
     
     @EventListener
-    public void method10251(final Class5744 class5744) {
-        if (!this.isEnabled() || !class5744.method17046()) {
+    public void method10251(final UpdateWalkingEvent updateWalkingEvent) {
+        if (!this.isEnabled() || !updateWalkingEvent.method17046()) {
             return;
         }
         if (this.method9883("Aura")) {
@@ -122,8 +122,8 @@ public class ChestStealer extends Module
                 }
                 this.field15741 = field15741;
                 final float[] method30919 = Class8845.method30919(n2 + 0.5, n4 + 0.5, n3 + 0.35);
-                class5744.method17043(method30919[0]);
-                class5744.method17041(method30919[1]);
+                updateWalkingEvent.method17043(method30919[0]);
+                updateWalkingEvent.method17041(method30919[1]);
                 n = 1;
             }
             if (n == 0) {

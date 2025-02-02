@@ -61,23 +61,23 @@ public class SpiderStep extends Module
     }
     
     @EventListener
-    private void method10363(final Class5744 class5744) {
+    private void method10363(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
             if (SpiderStep.mc.player != null) {
-                if (class5744.method17046()) {
+                if (updateWalkingEvent.method17046()) {
                     if (this.field15787 != 1) {
                         if (this.field15787 == 3) {
                             final Module method21551 = Client.getInstance().method35189().method21551(Criticals.class);
                             if (method21551.isEnabled() && method21551.getStringSettingValueByName("Type").equals("NoGround")) {
-                                class5744.method17037(class5744.method17036() + 1.0E-14);
+                                updateWalkingEvent.method17037(updateWalkingEvent.method17036() + 1.0E-14);
                             }
                             else {
-                                class5744.method17045(true);
+                                updateWalkingEvent.method17045(true);
                             }
                         }
                     }
                     else {
-                        class5744.method17045(false);
+                        updateWalkingEvent.method17045(false);
                     }
                 }
             }

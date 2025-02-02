@@ -54,14 +54,14 @@ public class HawkFly extends Module { //Hawk tuah
     }
 
     @EventListener
-    public void method9988(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
+    public void method9988(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
             ++this.field15576;
             if (this.field15576 == 1) {
-                class5744.method17037(0.1);
+                updateWalkingEvent.method17037(0.1);
             }
-            class5744.method17033(true);
-            class5744.method17045(false);
+            updateWalkingEvent.method17033(true);
+            updateWalkingEvent.method17045(false);
         }
     }
 

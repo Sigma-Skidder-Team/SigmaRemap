@@ -47,15 +47,15 @@ public class HypixelSpeed extends Module
     }
     
     @EventListener
-    public void method10588(final Class5744 class5744) {
+    public void method10588(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
             if (HypixelSpeed.mc.player != null) {
                 if (!Jesus.method10433()) {
                     if (!Client.getInstance().method35189().method21551(BlockFly.class).isEnabled()) {
                         if (!Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
-                            if (class5744.method17046()) {
+                            if (updateWalkingEvent.method17046()) {
                                 if (!HypixelSpeed.mc.player.onGround) {
-                                    if (class5744.method17046()) {
+                                    if (updateWalkingEvent.method17046()) {
                                         if (Speed.field15748 > 1) {
                                             final double n = HypixelSpeed.mc.player.posX - HypixelSpeed.mc.player.field4074;
                                             final double n2 = HypixelSpeed.mc.player.posZ - HypixelSpeed.mc.player.field4076;
@@ -83,7 +83,7 @@ public class HypixelSpeed extends Module
                                         b = false;
                                     }
                                     if (!b) {
-                                        class5744.method17037(class5744.method17036() + 1.0E-14);
+                                        updateWalkingEvent.method17037(updateWalkingEvent.method17036() + 1.0E-14);
                                     }
                                 }
                             }

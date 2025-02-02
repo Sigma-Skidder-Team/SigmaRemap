@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.Class287;
 import mapped.Class4336;
-import mapped.Class5744;
+import mapped.UpdateWalkingEvent;
 import mapped.EventListener;
 
 public class Sneak extends Module
@@ -23,9 +23,9 @@ public class Sneak extends Module
     }
     
     @EventListener
-    public void method10328(final Class5744 class5744) {
+    public void method10328(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
-            if (!class5744.method17046()) {
+            if (!updateWalkingEvent.method17046()) {
                 Sneak.mc.method5269().method17292(new Class4336(Sneak.mc.player, Class287.field1592));
                 Sneak.mc.method5269().method17292(new Class4336(Sneak.mc.player, Class287.field1591));
             }

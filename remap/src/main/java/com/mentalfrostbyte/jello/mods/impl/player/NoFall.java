@@ -77,7 +77,7 @@ public class NoFall extends Module
     }
     
     @EventListener
-    private void method10829(final Class5744 class5744) {
+    private void method10829(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled() || NoFall.mc.player == null) {
             return;
         }
@@ -91,7 +91,7 @@ public class NoFall extends Module
         final String s = method9887;
         switch (s) {
             case "Test": {
-                if (class5744.method17046()) {
+                if (updateWalkingEvent.method17046()) {
                     break;
                 }
                 if (ColorUtils.method19160(NoFall.mc.player, 1.0E-4f)) {
@@ -109,7 +109,7 @@ public class NoFall extends Module
                 break;
             }
             case "OldHypixel": {
-                if (!class5744.method17046()) {
+                if (!updateWalkingEvent.method17046()) {
                     break;
                 }
                 if (ColorUtils.method19160(NoFall.mc.player, 1.0E-4f)) {
@@ -118,26 +118,26 @@ public class NoFall extends Module
                 }
                 if (NoFall.mc.player.getMotion().y < -0.1) {
                     if (this.field16113 == 0.0) {
-                        class5744.method17045(true);
+                        updateWalkingEvent.method17045(true);
                     }
                     this.field16113 -= NoFall.mc.player.getMotion().y;
                 }
                 if (this.field16113 > 3.0) {
                     this.field16113 = 1.0E-14;
-                    class5744.method17045(true);
+                    updateWalkingEvent.method17045(true);
                     break;
                 }
                 break;
             }
             case "Hypixel": {
-                if (!class5744.method17046()) {
+                if (!updateWalkingEvent.method17046()) {
                     break;
                 }
                 if (NoFall.mc.player.getMotion().y < 0.0 && !NoFall.mc.player.onGround && ColorUtils.method19146()) {
                     final double[] method9888 = ColorUtils.method19177();
                     for (int length = method9888.length, i = 0; i < length; ++i) {
-                        if ((int)class5744.method17036() - class5744.method17036() + method9888[i] == 0.0) {
-                            class5744.method17045(true);
+                        if ((int) updateWalkingEvent.method17036() - updateWalkingEvent.method17036() + method9888[i] == 0.0) {
+                            updateWalkingEvent.method17045(true);
                             break;
                         }
                     }
@@ -146,7 +146,7 @@ public class NoFall extends Module
                 break;
             }
             case "AAC": {
-                if (!class5744.method17046()) {
+                if (!updateWalkingEvent.method17046()) {
                     break;
                 }
                 if (NoFall.mc.player.ticksExisted == 1) {
@@ -160,18 +160,18 @@ public class NoFall extends Module
                 break;
             }
             case "Vanilla": {
-                if (!class5744.method17046()) {
+                if (!updateWalkingEvent.method17046()) {
                     break;
                 }
                 if (NoFall.mc.player.getMotion().y < -0.1) {
-                    class5744.method17045(true);
+                    updateWalkingEvent.method17045(true);
                     break;
                 }
                 break;
             }
             case "Vanilla Legit": {
                 if (NoFall.mc.player.getMotion().y < -0.1) {
-                    class5744.method17045(true);
+                    updateWalkingEvent.method17045(true);
                 }
                 if (NoFall.mc.player.fallDistance > 3.0f) {
                     this.field16114 = true;
@@ -190,14 +190,14 @@ public class NoFall extends Module
                 break;
             }
             case "NCPSpigot": {
-                if (!class5744.method17046()) {
+                if (!updateWalkingEvent.method17046()) {
                     break;
                 }
                 if (NoFall.mc.player.fallDistance > 3.0f) {
                     this.field16112 = true;
                 }
                 if (this.field16112 && Client.getInstance().playerTracker().method29228() == 0 && NoFall.mc.player.onGround) {
-                    class5744.method17037(class5744.method17036() - 11.0);
+                    updateWalkingEvent.method17037(updateWalkingEvent.method17036() - 11.0);
                     this.field16112 = false;
                     break;
                 }

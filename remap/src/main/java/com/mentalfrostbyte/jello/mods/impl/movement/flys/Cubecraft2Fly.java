@@ -127,20 +127,20 @@ public class Cubecraft2Fly extends PremiumModule
     }
     
     @EventListener
-    public void method10695(final Class5744 class5744) {
+    public void method10695(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.field16023 == -3) {
-            class5744.setCancelled(true);
+            updateWalkingEvent.setCancelled(true);
         }
-        if (this.isEnabled() && class5744.method17046()) {
-            class5744.method17033(true);
-            class5744.method17045(true);
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+            updateWalkingEvent.method17033(true);
+            updateWalkingEvent.method17045(true);
             if (this.field16023 != 3) {
                 if (this.field16023 > 3) {
-                    class5744.setCancelled(true);
+                    updateWalkingEvent.setCancelled(true);
                 }
             }
             else {
-                class5744.method17037(-150.0);
+                updateWalkingEvent.method17037(-150.0);
             }
         }
     }

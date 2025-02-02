@@ -104,13 +104,13 @@ public class HypixelBlockFly extends Module
     
     @EventListener
     @Class6759
-    public void method10209(final Class5744 class5744) {
+    public void method10209(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled() && this.field15715.method10281() != 0) {
-            if (!class5744.method17046()) {
+            if (!updateWalkingEvent.method17046()) {
                 if (this.field15709 != 999.0f) {
                     this.field15715.method10282();
                     if (this.field15710 != null) {
-                        final BlockRayTraceResult method13698 = Class4609.method13698(this.field15709, this.field15708, 5.0f, class5744);
+                        final BlockRayTraceResult method13698 = Class4609.method13698(this.field15709, this.field15708, 5.0f, updateWalkingEvent);
                         if (method13698.getType() == RayTraceResult.Type.MISS) {
                             return;
                         }
@@ -145,7 +145,7 @@ public class HypixelBlockFly extends Module
             else {
                 ++this.field15712;
                 --this.field15719;
-                class5744.method17033(true);
+                updateWalkingEvent.method17033(true);
                 this.field15714 = Class316.field1877;
                 final BlockFly field2744 = this.field15715;
                 Label_0100: {
@@ -159,9 +159,9 @@ public class HypixelBlockFly extends Module
                         this.field15714 = Class316.field1878;
                     }
                 }
-                double n = class5744.method17034();
-                double n2 = class5744.method17038();
-                double n3 = class5744.method17036();
+                double n = updateWalkingEvent.method17034();
+                double n2 = updateWalkingEvent.method17038();
+                double n3 = updateWalkingEvent.method17036();
                 if (!HypixelBlockFly.mc.player.collidedHorizontally) {
                     if (!HypixelBlockFly.mc.gameSettings.field23439.field2162) {
                         final double[] method13700 = this.method10214();
@@ -209,11 +209,11 @@ public class HypixelBlockFly extends Module
                     this.field15710 = null;
                 }
                 if (this.field15709 != 999.0f) {
-                    class5744.method17043(this.field15709);
-                    class5744.method17041(this.field15708);
+                    updateWalkingEvent.method17043(this.field15709);
+                    updateWalkingEvent.method17041(this.field15708);
                 }
-                if (HypixelBlockFly.mc.player.rotationYaw != class5744.method17042()) {
-                    if (HypixelBlockFly.mc.player.rotationPitch != class5744.method17040()) {
+                if (HypixelBlockFly.mc.player.rotationYaw != updateWalkingEvent.method17042()) {
+                    if (HypixelBlockFly.mc.player.rotationPitch != updateWalkingEvent.method17040()) {
                         this.field15712 = 0;
                     }
                 }

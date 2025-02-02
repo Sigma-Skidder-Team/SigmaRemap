@@ -55,14 +55,14 @@ public class AutoMLG extends PremiumModule
     
     @EventListener
     @Class6759
-    private void method10647(final Class5744 class5744) {
+    private void method10647(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled() && AutoMLG.mc.playerController.method27330()) {
-            if (class5744.method17046()) {
+            if (updateWalkingEvent.method17046()) {
                 if (AutoMLG.field16007 >= 0) {
                     ++AutoMLG.field16007;
                     final float[] method30919 = Class8845.method30919(this.field16008.getX() + 0.5, this.field16008.getZ() + 0.5, this.field16008.getY() + 0.5);
-                    class5744.method17043(method30919[0]);
-                    class5744.method17041(method30919[1]);
+                    updateWalkingEvent.method17043(method30919[0]);
+                    updateWalkingEvent.method17041(method30919[1]);
                 }
             }
             if (AutoMLG.field16007 == (this.method9883("Cubecraft") ? 5 : 3)) {
@@ -84,10 +84,10 @@ public class AutoMLG extends PremiumModule
                         if (AutoMLG.mc.player.fallDistance > 3.0f) {
                             final BlockPos method30921 = this.method10649();
                             if (method30921 != null) {
-                                if (class5744.method17046() && AutoMLG.field16007 == -1) {
+                                if (updateWalkingEvent.method17046() && AutoMLG.field16007 == -1) {
                                     final float[] method30922 = Class8845.method30919(method30921.getX() + 0.5, method30921.getZ() + 0.5, method30921.getY() + 0.5);
-                                    class5744.method17043(method30922[0]);
-                                    class5744.method17041(method30922[1]);
+                                    updateWalkingEvent.method17043(method30922[0]);
+                                    updateWalkingEvent.method17041(method30922[1]);
                                     if (method30920 != AutoMLG.mc.player.inventory.field2743) {
                                         this.field16006 = AutoMLG.mc.player.inventory.field2743;
                                         AutoMLG.mc.player.inventory.field2743 = method30920;

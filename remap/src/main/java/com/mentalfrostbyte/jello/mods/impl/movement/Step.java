@@ -41,8 +41,8 @@ public class Step extends ModuleWithSettings
     
     @EventListener
     @Class6754
-    private void method10298(final Class5744 class5744) {
-        if (class5744.method17046()) {
+    private void method10298(final UpdateWalkingEvent updateWalkingEvent) {
+        if (updateWalkingEvent.method17046()) {
             ++Step.field15758;
         }
     }

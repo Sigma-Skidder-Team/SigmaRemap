@@ -43,8 +43,8 @@ public class AutoSoup extends Module
     }
     
     @EventListener
-    private void method10219(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
+    private void method10219(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
             ++this.field15721;
             ++this.field15724;
             final String method9887 = this.getStringSettingValueByName("Refill mode");

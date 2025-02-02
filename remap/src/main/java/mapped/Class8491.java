@@ -360,23 +360,23 @@ public class Class8491
             }
         }
         if (class5729.method17011() != 1.0f) {
-            if (Class5744.field23324 - this.field34856.player.field2953 == 0.0f) {
+            if (UpdateWalkingEvent.field23324 - this.field34856.player.field2953 == 0.0f) {
                 if (this.field34864) {
-                    class5729.method17012(MathHelper.method35706(class5729.method17011(), Class5744.field23326, class5729.method17016().field2951));
-                    class5729.method17013(MathHelper.method35706(class5729.method17011(), Class5744.field23326, class5729.method17016().field2953));
-                    class5729.method17015(MathHelper.method35700(class5729.method17011(), Class5744.field23327, class5729.method17016().rotationPitch));
+                    class5729.method17012(MathHelper.method35706(class5729.method17011(), UpdateWalkingEvent.field23326, class5729.method17016().field2951));
+                    class5729.method17013(MathHelper.method35706(class5729.method17011(), UpdateWalkingEvent.field23326, class5729.method17016().field2953));
+                    class5729.method17015(MathHelper.method35700(class5729.method17011(), UpdateWalkingEvent.field23327, class5729.method17016().rotationPitch));
                     class5729.method17014(class5729.method17008() - class5729.method17007());
-                    class5729.method17016().prevRotationPitch = Class5744.field23327;
-                    class5729.method17016().prevRotationYaw = Class5744.field23326;
-                    class5729.method17016().field2954 = Class5744.field23326;
-                    class5729.method17016().field2952 = Class5744.field23326;
+                    class5729.method17016().prevRotationPitch = UpdateWalkingEvent.field23327;
+                    class5729.method17016().prevRotationYaw = UpdateWalkingEvent.field23326;
+                    class5729.method17016().field2954 = UpdateWalkingEvent.field23326;
+                    class5729.method17016().field2952 = UpdateWalkingEvent.field23326;
                     this.field34864 = !this.field34864;
                 }
             }
             else {
-                class5729.method17012(MathHelper.method35706(class5729.method17011(), Class5744.field23326, Class5744.field23324));
-                class5729.method17013(MathHelper.method35706(class5729.method17011(), Class5744.field23326, Class5744.field23324));
-                class5729.method17015(MathHelper.method35700(class5729.method17011(), Class5744.field23327, Class5744.field23325));
+                class5729.method17012(MathHelper.method35706(class5729.method17011(), UpdateWalkingEvent.field23326, UpdateWalkingEvent.field23324));
+                class5729.method17013(MathHelper.method35706(class5729.method17011(), UpdateWalkingEvent.field23326, UpdateWalkingEvent.field23324));
+                class5729.method17015(MathHelper.method35700(class5729.method17011(), UpdateWalkingEvent.field23327, UpdateWalkingEvent.field23325));
                 class5729.method17014(class5729.method17008() - class5729.method17007());
                 this.field34864 = true;
             }

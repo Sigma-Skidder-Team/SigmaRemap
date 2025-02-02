@@ -137,9 +137,9 @@ public class NCPBlockFly extends Module
     
     @EventListener
     @Class6759
-    public void method10047(final Class5744 class5744) {
+    public void method10047(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled() && this.field15628.method10281() != 0) {
-            if (!class5744.method17046()) {
+            if (!updateWalkingEvent.method17046()) {
                 this.field15628.method10282();
                 if (this.field15623 != null) {
                     final BlockRayTraceResult class5745 = new BlockRayTraceResult(method10053(this.field15623.field39906, this.field15623.field39907), this.field15623.field39907, this.field15623.field39906, false);
@@ -161,7 +161,7 @@ public class NCPBlockFly extends Module
             }
             else {
                 ++this.field15625;
-                class5744.method17033(true);
+                updateWalkingEvent.method17033(true);
                 this.field15627 = Class316.field1877;
                 final BlockFly field2744 = this.field15628;
                 Label_0094: {
@@ -175,9 +175,9 @@ public class NCPBlockFly extends Module
                         this.field15627 = Class316.field1878;
                     }
                 }
-                double n = class5744.method17034();
-                double n2 = class5744.method17038();
-                double n3 = class5744.method17036();
+                double n = updateWalkingEvent.method17034();
+                double n2 = updateWalkingEvent.method17038();
+                double n3 = updateWalkingEvent.method17036();
                 if (!NCPBlockFly.mc.player.collidedHorizontally) {
                     if (!NCPBlockFly.mc.gameSettings.field23439.field2162) {
                         final double[] method10052 = this.method10052();
@@ -213,21 +213,21 @@ public class NCPBlockFly extends Module
                         final float[] method10053 = Class4609.method13672(this.field15623.field39906, this.field15623.field39907);
                         this.field15622 = method10053[0];
                         this.field15621 = method10053[1];
-                        class5744.method17043(this.field15622);
-                        class5744.method17041(this.field15621);
+                        updateWalkingEvent.method17043(this.field15622);
+                        updateWalkingEvent.method17041(this.field15621);
                     }
                 }
                 else {
                     if (this.method9883("KeepRotations")) {
                         if (this.field15621 != 999.0f) {
-                            class5744.method17043(this.field15622);
-                            class5744.method17041(this.field15621);
+                            updateWalkingEvent.method17043(this.field15622);
+                            updateWalkingEvent.method17041(this.field15621);
                         }
                     }
                     this.field15623 = null;
                 }
-                if (NCPBlockFly.mc.player.rotationYaw != class5744.method17042()) {
-                    if (NCPBlockFly.mc.player.rotationPitch != class5744.method17040()) {
+                if (NCPBlockFly.mc.player.rotationYaw != updateWalkingEvent.method17042()) {
+                    if (NCPBlockFly.mc.player.rotationPitch != updateWalkingEvent.method17040()) {
                         this.field15625 = 0;
                     }
                 }

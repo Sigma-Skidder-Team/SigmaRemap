@@ -26,11 +26,11 @@ public class AntiVanish extends Module
     }
     
     @EventListener
-    private void method10512(final Class5744 class5744) {
+    private void method10512(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled()) {
             return;
         }
-        if (class5744.method17046() && AntiVanish.mc.method5282() != null) {
+        if (updateWalkingEvent.method17046() && AntiVanish.mc.method5282() != null) {
             if (!this.field15919.isEmpty()) {
                 if (this.field15920 > 3200) {
                     this.field15919.clear();

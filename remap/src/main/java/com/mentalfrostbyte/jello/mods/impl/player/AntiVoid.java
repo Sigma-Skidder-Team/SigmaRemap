@@ -90,11 +90,11 @@ public class AntiVoid extends Module
     }
     
     @EventListener
-    private void method10135(final Class5744 class5744) {
+    private void method10135(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
-            if (class5744.method17046()) {
+            if (updateWalkingEvent.method17046()) {
                 if (this.field15664 != 0) {
-                    class5744.setCancelled(true);
+                    updateWalkingEvent.setCancelled(true);
                 }
             }
         }

@@ -34,12 +34,12 @@ public class NCPSpeed extends Module
     }
     
     @EventListener
-    public void method10412(final Class5744 class5744) {
+    public void method10412(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
             if (NCPSpeed.mc.player != null) {
                 if (!Jesus.method10433()) {
                     if (!Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
-                        if (class5744.method17046()) {
+                        if (updateWalkingEvent.method17046()) {
                             if (Speed.field15748 > 1) {
                                 final double n = NCPSpeed.mc.player.posX - NCPSpeed.mc.player.field4074;
                                 final double n2 = NCPSpeed.mc.player.posZ - NCPSpeed.mc.player.field4076;

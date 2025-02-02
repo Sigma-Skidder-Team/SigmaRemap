@@ -84,25 +84,25 @@ public class AGCFly extends Module
     }
     
     @EventListener
-    public void method10082(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
+    public void method10082(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
             ++this.field15643;
             if (this.field15643 != ((this.field15644 != 3) ? this.field15644 : 1)) {
                 if (this.field15643 > ((this.field15644 != 3) ? this.field15644 : 1)) {
                     if (this.field15643 % 20 != 0) {
-                        class5744.setCancelled(true);
+                        updateWalkingEvent.setCancelled(true);
                     }
                     else {
-                        class5744.method17037(this.method10084() - 1.0E-4);
-                        class5744.method17033(true);
-                        class5744.method17045(true);
+                        updateWalkingEvent.method17037(this.method10084() - 1.0E-4);
+                        updateWalkingEvent.method17033(true);
+                        updateWalkingEvent.method17045(true);
                     }
                 }
             }
             else {
-                class5744.method17037(this.method10084() - 1.0E-4);
-                class5744.method17045(true);
-                class5744.method17033(true);
+                updateWalkingEvent.method17037(this.method10084() - 1.0E-4);
+                updateWalkingEvent.method17045(true);
+                updateWalkingEvent.method17033(true);
                 this.field15644 = (this.field15645 ? (AGCFly.mc.gameSettings.field23439.method1056() ? 1 : 2) : (AGCFly.mc.gameSettings.field23439.method1056() ? 3 : 1));
             }
         }

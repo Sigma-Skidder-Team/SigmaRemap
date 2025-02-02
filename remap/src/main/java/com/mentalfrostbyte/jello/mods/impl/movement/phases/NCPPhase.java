@@ -35,8 +35,8 @@ public class NCPPhase extends PremiumModule
     }
     
     @EventListener
-    private void method10698(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
+    private void method10698(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
             if (NCPPhase.mc.gameSettings.field23440.method1056()) {
                 final double field2395 = NCPPhase.mc.player.posX;
                 final double field2396 = NCPPhase.mc.player.posY;
@@ -44,9 +44,9 @@ public class NCPPhase extends PremiumModule
                 if (!ColorUtils.method19114()) {
                     if (ColorUtils.method19160(NCPPhase.mc.player, 0.001f) && !method10703()) {
                         NCPPhase.mc.player.setPosition(field2395, field2396 - 1.0, field2397);
-                        class5744.method17037(field2396 - 1.0);
-                        class5744.method17033(true);
-                        class5744.method17043(class5744.method17042() + 10.0f);
+                        updateWalkingEvent.method17037(field2396 - 1.0);
+                        updateWalkingEvent.method17033(true);
+                        updateWalkingEvent.method17043(updateWalkingEvent.method17042() + 10.0f);
                         ColorUtils.method19155(0.0);
                     }
                     else if (NCPPhase.mc.player.posY == (int) NCPPhase.mc.player.posY) {
@@ -61,8 +61,8 @@ public class NCPPhase extends PremiumModule
                             ++this.field16032;
                             final float n = (float)Math.sin(this.field16032) * 5.0f;
                             final float n2 = (float)Math.cos(this.field16032) * 5.0f;
-                            class5744.method17043(class5744.method17042() + n);
-                            class5744.method17041(class5744.method17040() + n2);
+                            updateWalkingEvent.method17043(updateWalkingEvent.method17042() + n);
+                            updateWalkingEvent.method17041(updateWalkingEvent.method17040() + n2);
                             break Label_0045;
                         }
                     }
@@ -71,7 +71,7 @@ public class NCPPhase extends PremiumModule
                     return;
                 }
             }
-            class5744.method17033(true);
+            updateWalkingEvent.method17033(true);
         }
     }
     

@@ -27,14 +27,14 @@ public class YPortSpeed extends Module
     }
     
     @EventListener
-    public void method10596(final Class5744 class5744) {
+    public void method10596(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
             if (YPortSpeed.mc.player != null) {
                 if (!Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
                     if (YPortSpeed.mc.player.onGround) {
-                        if (class5744.method17046()) {
+                        if (updateWalkingEvent.method17046()) {
                             if (ColorUtils.method19146()) {
-                                class5744.method17037(class5744.method17036() + 1.0E-14);
+                                updateWalkingEvent.method17037(updateWalkingEvent.method17036() + 1.0E-14);
                             }
                         }
                     }

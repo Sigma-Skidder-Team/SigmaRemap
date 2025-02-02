@@ -40,12 +40,12 @@ public class AAC4Criticals extends Module
     
     @EventListener
     @Class6757
-    private void method9941(final Class5744 class5744) {
+    private void method9941(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled() || Client.getInstance().method35189().method21551(Speed.class).isEnabled()) {
             AAC4Criticals.field15534 = 0;
             return;
         }
-        if (class5744.method17046()) {
+        if (updateWalkingEvent.method17046()) {
             if (AAC4Criticals.mc.playerController.method27337()) {
                 AAC4Criticals.field15534 = 0;
             }
@@ -54,13 +54,13 @@ public class AAC4Criticals extends Module
                 AAC4Criticals.mc.player.field4075 = 0.0;
                 if (AAC4Criticals.field15534 != 2) {
                     if (AAC4Criticals.field15534 >= 3) {
-                        class5744.method17037(class5744.method17036() + 0.001);
-                        class5744.method17045(false);
+                        updateWalkingEvent.method17037(updateWalkingEvent.method17036() + 0.001);
+                        updateWalkingEvent.method17045(false);
                     }
                 }
                 else {
-                    class5744.method17037(class5744.method17036() + 0.00101);
-                    class5744.method17045(false);
+                    updateWalkingEvent.method17037(updateWalkingEvent.method17036() + 0.00101);
+                    updateWalkingEvent.method17045(false);
                 }
             }
             else {

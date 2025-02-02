@@ -63,22 +63,22 @@ public class NCPSpigotFly extends Module
     }
     
     @EventListener
-    public void method10584(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
+    public void method10584(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
             ++this.field15949;
             if (this.field15949 != 3) {
                 if (this.field15949 > 3) {
                     if (this.field15949 >= 20) {
                         if (this.field15949 % 20 == 0) {
-                            class5744.method17037(-150.0 - Math.random() * 150.0);
+                            updateWalkingEvent.method17037(-150.0 - Math.random() * 150.0);
                         }
                     }
                 }
             }
             else {
-                class5744.method17037(-150.0 - Math.random() * 150.0);
+                updateWalkingEvent.method17037(-150.0 - Math.random() * 150.0);
             }
-            class5744.method17033(true);
+            updateWalkingEvent.method17033(true);
         }
     }
     

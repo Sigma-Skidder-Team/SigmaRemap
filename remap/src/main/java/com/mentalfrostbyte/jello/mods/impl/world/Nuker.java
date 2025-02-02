@@ -33,8 +33,8 @@ public class Nuker extends Module
     }
     
     @EventListener
-    private void method10609(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
+    private void method10609(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
             this.field15978 = this.method10612(this.getNumberSettingValueByName("Range") / 2.0f);
             if (this.field15978.isEmpty()) {
                 this.field15977 = null;
@@ -45,8 +45,8 @@ public class Nuker extends Module
                         this.field15977 = this.field15978.get(0);
                     }
                     final float[] method30919 = Class8845.method30919(this.field15977.getX(), this.field15977.getZ(), this.field15977.getY());
-                    class5744.method17043(method30919[0]);
-                    class5744.method17041(method30919[1]);
+                    updateWalkingEvent.method17043(method30919[0]);
+                    updateWalkingEvent.method17041(method30919[1]);
                     Client.getInstance().method35188().method21097(new Class5752(0, false, this.field15977));
                     Nuker.mc.playerController.method27314(this.field15977, Class4609.method13710(this.field15977));
                     if (!this.method9883("NoSwing")) {
@@ -59,8 +59,8 @@ public class Nuker extends Module
                 else {
                     this.field15977 = this.field15978.get(0);
                     final float[] method30920 = Class8845.method30919(this.field15977.getX(), this.field15977.getZ(), this.field15977.getY());
-                    class5744.method17043(method30920[0]);
-                    class5744.method17041(method30920[1]);
+                    updateWalkingEvent.method17043(method30920[0]);
+                    updateWalkingEvent.method17041(method30920[1]);
                     Client.getInstance().method35188().method21097(new Class5752(0, false, this.field15977));
                     Nuker.mc.playerController.method27314(this.field15977, Class4609.method13710(this.field15977));
                     if (!this.method9883("NoSwing")) {

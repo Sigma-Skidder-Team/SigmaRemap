@@ -165,11 +165,11 @@ public class KillAura extends Module
     
     @EventListener
     @Class6755
-    public void method10746(final Class5744 class5744) {
+    public void method10746(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled() || KillAura.mc.player == null) {
             return;
         }
-        if (class5744.method17046()) {
+        if (updateWalkingEvent.method17046()) {
             if (this.field16057 > 0) {
                 --this.field16057;
             }
@@ -201,16 +201,16 @@ public class KillAura extends Module
                     final ModuleWithSettings class5745 = (ModuleWithSettings) Client.getInstance().method35189().method21551(Criticals.class);
                     if (class5745.isEnabled()) {
                         if (class5745.getStringSettingValueByName("Type").equalsIgnoreCase("Minis")) {
-                            this.method10751(class5744, class5745.method10260().method9883("Hypixel"), class5745.method10260().method9883("Avoid Fall Damage"));
+                            this.method10751(updateWalkingEvent, class5745.method10260().method9883("Hypixel"), class5745.method10260().method9883("Avoid Fall Damage"));
                         }
                     }
                     this.method10754();
-                    if (class5744.method17042() - KillAura.mc.player.rotationYaw != 0.0f) {
-                        this.field16064.field32884 = class5744.method17042();
-                        this.field16064.field32885 = class5744.method17040();
+                    if (updateWalkingEvent.method17042() - KillAura.mc.player.rotationYaw != 0.0f) {
+                        this.field16064.field32884 = updateWalkingEvent.method17042();
+                        this.field16064.field32885 = updateWalkingEvent.method17040();
                     }
-                    class5744.method17043(this.field16064.field32884);
-                    class5744.method17041(this.field16064.field32885);
+                    updateWalkingEvent.method17043(this.field16064.field32884);
+                    updateWalkingEvent.method17041(this.field16064.field32885);
                     ++this.field16051;
                     final boolean method9887 = this.field16050.method31135(this.field16051);
                     final float n = (KillAura.mc.player.method2903() >= 1.26) ? KillAura.mc.player.method2904(0.0f) : 1.0f;
@@ -259,7 +259,7 @@ public class KillAura extends Module
                     if (n3 != 0) {
                         final Class1590 class5747 = new Class1590(this, method9886);
                         if (!this.getStringSettingValueByName("Attack Mode").equals("Pre")) {
-                            class5744.method17047(class5747);
+                            updateWalkingEvent.method17047(class5747);
                         }
                         else {
                             class5747.run();
@@ -414,7 +414,7 @@ public class KillAura extends Module
         return this.isEnabled() && this.method10750();
     }
     
-    public void method10751(final Class5744 class5744, final boolean b, final boolean b2) {
+    public void method10751(final UpdateWalkingEvent updateWalkingEvent, final boolean b, final boolean b2) {
         double n = b ? 1.0E-14 : 0.0;
         boolean b3 = true;
         Label_0077: {
@@ -492,7 +492,7 @@ public class KillAura extends Module
                                 this.field16052 = 1;
                                 b3 = b2;
                                 n = 0.0626;
-                                this.field16072 = new double[] { class5744.method17034(), class5744.method17036() + n, class5744.method17038() };
+                                this.field16072 = new double[] { updateWalkingEvent.method17034(), updateWalkingEvent.method17036() + n, updateWalkingEvent.method17038() };
                             }
                         }
                     }
@@ -526,8 +526,8 @@ public class KillAura extends Module
                                     else {
                                         KillAura.field16049 = true;
                                     }
-                                    class5744.method17037(KillAura.mc.player.posY + n);
-                                    class5744.method17045(b3);
+                                    updateWalkingEvent.method17037(KillAura.mc.player.posY + n);
+                                    updateWalkingEvent.method17045(b3);
                                 }
                             }
                         }

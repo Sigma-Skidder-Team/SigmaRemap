@@ -99,8 +99,8 @@ public class Test extends Module
     }
     
     @EventListener
-    public void method10779(final Class5744 class5744) {
-        if (this.isEnabled() && class5744.method17046()) {
+    public void method10779(final UpdateWalkingEvent updateWalkingEvent) {
+        if (this.isEnabled() && updateWalkingEvent.method17046()) {
             final Entity method10786 = this.method10786(3.3f);
             if (this.method10786(8.0f) != null) {
                 if (this.field16087 < 1.0) {

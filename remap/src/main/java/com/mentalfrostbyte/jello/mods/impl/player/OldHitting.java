@@ -29,11 +29,11 @@ public class OldHitting extends Module
     
     @EventListener
     @Class6757
-    private void method10435(final Class5744 class5744) {
+    private void method10435(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled() && Class9367.field40167 != Class7906.field32452) {
             return;
         }
-        if (class5744.method17046()) {
+        if (updateWalkingEvent.method17046()) {
             final boolean b = OldHitting.mc.player.getHeldItemMainhand() != null && OldHitting.mc.player.getHeldItemMainhand().getItem() instanceof Class4077;
             final boolean method9898 = Client.getInstance().method35189().method21551(KillAura.class).method9898();
             boolean b2 = true;

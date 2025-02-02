@@ -66,7 +66,7 @@ public class VanillaFly extends Module
     }
     
     @EventListener
-    public void method10459(final Class5744 class5744) {
+    public void method10459(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled()) {
             return;
         }
@@ -75,35 +75,35 @@ public class VanillaFly extends Module
                 if (this.field15874 % 30 == 0) {
                     if (!ColorUtils.method19160(VanillaFly.mc.player, 0.01f)) {
                         if (Class9367.method34762() != Class7906.field32452.method25613()) {
-                            class5744.method17037(class5744.method17036() - 0.04);
+                            updateWalkingEvent.method17037(updateWalkingEvent.method17036() - 0.04);
                         }
                         else {
                             final double method10461 = this.method10461();
                             if (method10461 < 0.0) {
                                 return;
                             }
-                            double method10462 = class5744.method17036();
+                            double method10462 = updateWalkingEvent.method17036();
                             final ArrayList list = new ArrayList();
                             if (method10462 - method10461 <= 9.0) {
-                                VanillaFly.mc.method5269().method17292(new Class4354(class5744.method17034(), method10461, class5744.method17038(), true));
+                                VanillaFly.mc.method5269().method17292(new Class4354(updateWalkingEvent.method17034(), method10461, updateWalkingEvent.method17038(), true));
                             }
                             else {
                                 while (method10462 > method10461 + 9.0) {
                                     method10462 -= 9.0;
                                     list.add(method10462);
-                                    VanillaFly.mc.method5269().method17292(new Class4354(class5744.method17034(), method10462, class5744.method17038(), true));
+                                    VanillaFly.mc.method5269().method17292(new Class4354(updateWalkingEvent.method17034(), method10462, updateWalkingEvent.method17038(), true));
                                 }
                                 final Iterator iterator = list.iterator();
                                 while (iterator.hasNext()) {
-                                    VanillaFly.mc.method5269().method17292(new Class4354(class5744.method17034(), (double)iterator.next(), class5744.method17038(), true));
+                                    VanillaFly.mc.method5269().method17292(new Class4354(updateWalkingEvent.method17034(), (double)iterator.next(), updateWalkingEvent.method17038(), true));
                                 }
-                                VanillaFly.mc.method5269().method17292(new Class4354(class5744.method17034(), method10461, class5744.method17038(), true));
+                                VanillaFly.mc.method5269().method17292(new Class4354(updateWalkingEvent.method17034(), method10461, updateWalkingEvent.method17038(), true));
                                 Collections.reverse(list);
                                 final Iterator iterator2 = list.iterator();
                                 while (iterator2.hasNext()) {
-                                    VanillaFly.mc.method5269().method17292(new Class4354(class5744.method17034(), (double)iterator2.next(), class5744.method17038(), true));
+                                    VanillaFly.mc.method5269().method17292(new Class4354(updateWalkingEvent.method17034(), (double)iterator2.next(), updateWalkingEvent.method17038(), true));
                                 }
-                                VanillaFly.mc.method5269().method17292(new Class4354(class5744.method17034(), class5744.method17036(), class5744.method17038(), true));
+                                VanillaFly.mc.method5269().method17292(new Class4354(updateWalkingEvent.method17034(), updateWalkingEvent.method17036(), updateWalkingEvent.method17038(), true));
                             }
                             this.field15874 = 0;
                         }

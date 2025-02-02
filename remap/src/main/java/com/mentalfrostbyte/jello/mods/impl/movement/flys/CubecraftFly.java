@@ -294,15 +294,15 @@ public class CubecraftFly extends Module
     }
     
     @EventListener
-    public void method10179(final Class5744 class5744) {
+    public void method10179(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled() || !this.field15694) {
             return;
         }
-        class5744.method17033(true);
+        updateWalkingEvent.method17033(true);
         if (Class9367.method34762() == Class7906.field32452.method25613() && (CubecraftFly.field15696 == 0 || (CubecraftFly.field15696 == 1 && this.field15697.method23935() > 2000L)) && this.field15694) {
-            class5744.setCancelled(true);
+            updateWalkingEvent.setCancelled(true);
         }
-        class5744.method17045(true);
+        updateWalkingEvent.method17045(true);
     }
     
     @EventListener
