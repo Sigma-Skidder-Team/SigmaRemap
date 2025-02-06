@@ -19,10 +19,10 @@ public class LinuxSNGetter extends SerialNumberGetter
     @Override
     public String getSerialNumber() {
         if (LinuxSNGetter.serialNumber == null) {
-            method28420();
+            setSerialNumber2();
         }
         if (LinuxSNGetter.serialNumber == null) {
-            method28419();
+            setSerialNumber();
         }
         if (LinuxSNGetter.serialNumber != null) {
             return LinuxSNGetter.serialNumber;
@@ -30,11 +30,11 @@ public class LinuxSNGetter extends SerialNumberGetter
         throw new RuntimeException("Cannot find computer SN");
     }
     
-    private static void method28419() {
+    private static void setSerialNumber() {
         final String s = "system.hardware.serial =";
         BufferedReader method28421 = null;
         try {
-            method28421 = method28421("lshal");
+            method28421 = execCommand("lshal");
             String line;
             while ((line = method28421.readLine()) != null) {
                 if (line.indexOf(s) != -1) {
@@ -58,13 +58,13 @@ public class LinuxSNGetter extends SerialNumberGetter
         }
     }
     
-    private static void method28420() {
+    private static void setSerialNumber2() {
         final String s = "Serial Number:";
-        BufferedReader method28421 = null;
+        BufferedReader reader = null;
         try {
-            method28421 = method28421("dmidecode -t system");
+            reader = execCommand("dmidecode -t system");
             String line;
-            while ((line = method28421.readLine()) != null) {
+            while ((line = reader.readLine()) != null) {
                 if (line.indexOf(s) != -1) {
                     LinuxSNGetter.serialNumber = line.split(s)[1].trim();
                     break;
@@ -75,9 +75,9 @@ public class LinuxSNGetter extends SerialNumberGetter
             throw new RuntimeException(cause);
         }
         finally {
-            if (method28421 != null) {
+            if (reader != null) {
                 try {
-                    method28421.close();
+                    reader.close();
                 }
                 catch (final IOException cause2) {
                     throw new RuntimeException(cause2);
@@ -86,7 +86,7 @@ public class LinuxSNGetter extends SerialNumberGetter
         }
     }
     
-    private static BufferedReader method28421(final String s) {
+    private static BufferedReader execCommand(final String s) {
         final Runtime runtime = Runtime.getRuntime();
         Process exec;
         try {
