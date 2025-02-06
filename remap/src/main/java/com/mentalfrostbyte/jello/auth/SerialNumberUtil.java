@@ -2,24 +2,28 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package com.mentalfrostbyte.jello.auth;
 
 import com.sun.jna.Platform;
+import mapped.LinuxSNGetter;
+import mapped.MacOSSNGetter;
+import mapped.WindowsSNGetter;
+
 import java.util.Base64;
 import java.security.NoSuchAlgorithmException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
-public class Class7977
+public class SerialNumberUtil
 {
-    public static String method25919() {
-        final Class8505 method25924 = method25924();
-        return (method25924 != null) ? method25924.method28418() : "Unknown";
+    public static String getSerialNumber() {
+        final SerialNumberGetter sng = getSerialNumberGetter();
+        return (sng != null) ? sng.getSerialNumber() : "Unknown";
     }
     
-    public static byte[] method25920(final String str) {
-        final Class8505 method25924 = method25924();
-        final String s = (str + method25924 == null) ? "Unknown" : (Class8505.field34904 + method25924.method28418());
+    public static byte[] getHWID(final String prefix) {
+        final SerialNumberGetter sng = getSerialNumberGetter();
+        final String s = (prefix + sng == null) ? "Unknown" : (SerialNumberGetter.field34904 + sng.getSerialNumber());
         byte[] array;
         try {
             return MessageDigest.getInstance("SHA-256").digest(s.getBytes(StandardCharsets.UTF_8));
@@ -34,9 +38,9 @@ public class Class7977
         return array;
     }
     
-    public static byte[] method25921() {
-        final Class8505 method25924 = method25924();
-        final String s = (method25924 == null) ? "Unknown" : (Class8505.field34904 + method25924.method28418());
+    public static byte[] getHWID() {
+        final SerialNumberGetter sng = getSerialNumberGetter();
+        final String s = (sng == null) ? "Unknown" : (SerialNumberGetter.field34904 + sng.getSerialNumber());
         byte[] array;
         try {
             return MessageDigest.getInstance("SHA-256").digest(s.getBytes(StandardCharsets.UTF_8));
@@ -51,24 +55,24 @@ public class Class7977
         return array;
     }
     
-    public static String method25922() {
-        return new String(Base64.getEncoder().encode(method25921()));
+    public static String getHashedHWID() {
+        return new String(Base64.getEncoder().encode(getHWID()));
     }
     
     public static String method25923(final String s) {
-        return new String(Base64.getEncoder().encode(method25920(s)));
+        return new String(Base64.getEncoder().encode(getHWID(s)));
     }
     
-    public static Class8505 method25924() {
+    public static SerialNumberGetter getSerialNumberGetter() {
         if (Platform.isMac()) {
-            return new Class8506();
+            return new MacOSSNGetter();
         }
         if (Platform.isWindows()) {
-            return new Class8507();
+            return new WindowsSNGetter();
         }
         if (!Platform.isLinux()) {
             return null;
         }
-        return new Class8504();
+        return new LinuxSNGetter();
     }
 }

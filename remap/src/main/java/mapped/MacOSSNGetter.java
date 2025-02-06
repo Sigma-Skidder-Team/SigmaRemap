@@ -4,21 +4,22 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.auth.SerialNumberGetter;
+
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.Reader;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 
-public class Class8506 extends Class8505
+public class MacOSSNGetter extends SerialNumberGetter
 {
-    public static String field34905;
+    public static String serialNumber;
     
     @Override
-    public String method28418() {
-        if (Class8506.field34905 != null) {
-            return Class8506.field34905;
+    public String getSerialNumber() {
+        if (MacOSSNGetter.serialNumber != null) {
+            return MacOSSNGetter.serialNumber;
         }
         final Runtime runtime = Runtime.getRuntime();
         Process exec;
@@ -42,7 +43,7 @@ public class Class8506 extends Class8505
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 if (line.contains(s)) {
-                    Class8506.field34905 = line.split(":")[1].trim();
+                    MacOSSNGetter.serialNumber = line.split(":")[1].trim();
                     break;
                 }
             }
@@ -58,9 +59,9 @@ public class Class8506 extends Class8505
                 throw new RuntimeException(cause4);
             }
         }
-        if (Class8506.field34905 == null) {
+        if (MacOSSNGetter.serialNumber == null) {
             throw new RuntimeException("Cannot find computer SN");
         }
-        return Class8506.field34905;
+        return MacOSSNGetter.serialNumber;
     }
 }

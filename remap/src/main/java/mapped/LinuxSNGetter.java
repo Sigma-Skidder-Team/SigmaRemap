@@ -4,27 +4,28 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.auth.SerialNumberGetter;
+
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.Reader;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class Class8504 extends Class8505
+public class LinuxSNGetter extends SerialNumberGetter
 {
-    public static String field34903;
+    public static String serialNumber;
     
     @Override
-    public String method28418() {
-        if (Class8504.field34903 == null) {
+    public String getSerialNumber() {
+        if (LinuxSNGetter.serialNumber == null) {
             method28420();
         }
-        if (Class8504.field34903 == null) {
+        if (LinuxSNGetter.serialNumber == null) {
             method28419();
         }
-        if (Class8504.field34903 != null) {
-            return Class8504.field34903;
+        if (LinuxSNGetter.serialNumber != null) {
+            return LinuxSNGetter.serialNumber;
         }
         throw new RuntimeException("Cannot find computer SN");
     }
@@ -37,7 +38,7 @@ public class Class8504 extends Class8505
             String line;
             while ((line = method28421.readLine()) != null) {
                 if (line.indexOf(s) != -1) {
-                    Class8504.field34903 = line.split(s)[1].replaceAll("\\(string\\)|(\\')", "").trim();
+                    LinuxSNGetter.serialNumber = line.split(s)[1].replaceAll("\\(string\\)|(\\')", "").trim();
                     break;
                 }
             }
@@ -65,7 +66,7 @@ public class Class8504 extends Class8505
             String line;
             while ((line = method28421.readLine()) != null) {
                 if (line.indexOf(s) != -1) {
-                    Class8504.field34903 = line.split(s)[1].trim();
+                    LinuxSNGetter.serialNumber = line.split(s)[1].trim();
                     break;
                 }
             }

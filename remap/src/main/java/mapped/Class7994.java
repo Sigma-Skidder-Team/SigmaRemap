@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.auth.SerialNumberUtil;
+
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
@@ -28,7 +30,7 @@ public class Class7994
     }
     
     public Class7994(final byte[] input) {
-        final byte[] copy = Arrays.copyOf(Class7977.method25920("mcAzMFSvCM6wFCHcgzOn"), 16);
+        final byte[] copy = Arrays.copyOf(SerialNumberUtil.getHWID("mcAzMFSvCM6wFCHcgzOn"), 16);
         final byte[] bytes = "jelloconnectvect".getBytes();
         final SecretKeySpec key = new SecretKeySpec(copy, "AES");
         try {
@@ -50,7 +52,7 @@ public class Class7994
     }
     
     public byte[] method26158() {
-        final byte[] copy = Arrays.copyOf(Class7977.method25920("mcAzMFSvCM6wFCHcgzOn"), 16);
+        final byte[] copy = Arrays.copyOf(SerialNumberUtil.getHWID("mcAzMFSvCM6wFCHcgzOn"), 16);
         final byte[] bytes = "jelloconnectvect".getBytes();
         final SecretKeySpec key = new SecretKeySpec(copy, "AES");
         try {
