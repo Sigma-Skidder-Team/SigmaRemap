@@ -25,7 +25,6 @@ We have fixed many features already,
 ### [!] TO-DO
 1. Fix singleplayer;
 2. Packet issues on some servers (instant disconnect/kicks);
-3. Main menu, animation and gui flickering;
 4. Fix shaders crashing game when loading new chunks;
 
 ### Contributors
