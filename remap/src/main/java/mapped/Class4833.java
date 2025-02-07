@@ -27,7 +27,7 @@ public class Class4833 extends Class4825
     public static URL field20694;
     private Class4817 field20695;
     private Class4817 field20696;
-    private Class4803 field20697;
+    private CustomGuiScreen field20697;
     private Class7643 field20698;
     public static Map<String, Class9175> field20699;
     public static String field20700;
@@ -39,7 +39,7 @@ public class Class4833 extends Class4825
     private Class4865 field20706;
     private int field20707;
     private Texture field20708;
-    private Class4803 field20709;
+    private CustomGuiScreen field20709;
     public Class4838 field20710;
     public Class4842 field20711;
     public static Class9175[] field20712;
@@ -47,11 +47,11 @@ public class Class4833 extends Class4825
     public static long field20714;
     public float field20715;
     public float field20716;
-    private Class9572 field20717;
+    private Animation field20717;
     public boolean field20718;
     
-    public Class4833(final Class4803 class4803, final String s) {
-        super(class4803, s, 875, 55, 800, 600, false);
+    public Class4833(final CustomGuiScreen customGuiScreen, final String s) {
+        super(customGuiScreen, s, 875, 55, 800, 600, false);
         this.field20689 = 250;
         this.field20690 = 40;
         this.field20691 = 64;
@@ -60,28 +60,28 @@ public class Class4833 extends Class4825
         this.field20698 = Client.getInstance().method35199();
         this.field20715 = 0.0f;
         this.field20716 = 0.0f;
-        this.field20717 = new Class9572(80, 150, Direction.FORWARDS);
+        this.field20717 = new Animation(80, 150, Direction.FORWARDS);
         this.field20718 = false;
         Class4833.field20714 = System.nanoTime();
         this.method14277(800);
         this.method14279(600);
         this.method14273(Math.abs(this.method14272()));
         this.method14275(Math.abs(this.method14274()));
-        this.addVisualThing(this.field20695 = new Class4817(this, "musictabs", 0, this.field20691 + 14, this.field20689, this.method14278() - 64 - this.field20692));
-        this.addVisualThing(this.field20697 = new Class4817(this, "musiccontrols", this.field20689, this.method14278() - this.field20692, this.method14276() - this.field20689, this.field20692));
-        this.addVisualThing(this.field20709 = new Class4803(this, "reShowView", 0, 0, 1, this.method14278()));
+        this.addToList(this.field20695 = new Class4817(this, "musictabs", 0, this.field20691 + 14, this.field20689, this.method14278() - 64 - this.field20692));
+        this.addToList(this.field20697 = new Class4817(this, "musiccontrols", this.field20689, this.method14278() - this.field20692, this.method14276() - this.field20689, this.field20692));
+        this.addToList(this.field20709 = new CustomGuiScreen(this, "reShowView", 0, 0, 1, this.method14278()));
         final Class4906 class4804;
-        this.addVisualThing(class4804 = new Class4906(this, "spectrumButton", 15, this.field20481 - 140, 40, 40, this.field20698.method24178()));
+        this.addToList(class4804 = new Class4906(this, "spectrumButton", 15, this.field20481 - 140, 40, 40, this.field20698.method24178()));
         class4804.method14301(true);
-        class4804.method14260((class4803, n) -> {
+        class4804.doThis((class4803, n) -> {
             this.field20698.method24177(!this.field20698.method24178());
             ((Class4906)class4803).method14738(this.field20698.method24178());
         });
-        this.field20695.method14311(false);
-        class4804.method14311(false);
-        this.field20697.method14311(false);
-        this.field20709.method14311(false);
-        new Class6523(1250067, -15329770).method19734(ClientColors.LIGHT_GREYISH_BLUE.color).method19738(Class2056.field11738);
+        this.field20695.setListening(false);
+        class4804.setListening(false);
+        this.field20697.setListening(false);
+        this.field20709.setListening(false);
+        new ColorHelper(1250067, -15329770).method19734(ClientColors.LIGHT_GREYISH_BLUE.color).method19738(Class2056.field11738);
         final ArrayList list = new ArrayList();
         for (int length = Class4833.field20712.length, n2 = 0; n2 < length; ++n2) {
             list.add(new Thread(() -> {
@@ -95,55 +95,55 @@ public class Class4833 extends Class4825
                         Class4833.field20699.put(class4806.field38864, class4806);
                     }
                 }
-                this.method14225(new Class1136(this, class4806, class4807, class4808));
+                this.runThisOnDimensionUpdate(new Class1136(this, class4806, class4807, class4808));
                 return;
             }));
             ((Thread)list.get(list.size() - 1)).start();
         }
         final int n = (this.method14276() - this.field20689 - 38) / 2;
-        this.field20697.addVisualThing(this.field20702 = new Class4873(this.field20697, "play", n, 27, 38, 38, ClientAssets.playmusic, new Class6523(ClientColors.LIGHT_GREYISH_BLUE.color), null));
-        this.field20697.addVisualThing(this.field20703 = new Class4873(this.field20697, "pause", n, 27, 38, 38, ClientAssets.pause, new Class6523(ClientColors.LIGHT_GREYISH_BLUE.color), null));
-        this.field20697.addVisualThing(this.field20704 = new Class4873(this.field20697, "forwards", n + 114, 23, 46, 46, ClientAssets.forwards, new Class6523(ClientColors.LIGHT_GREYISH_BLUE.color), null));
-        this.field20697.addVisualThing(this.field20705 = new Class4873(this.field20697, "backwards", n - 114, 23, 46, 46, ClientAssets.backwards, new Class6523(ClientColors.LIGHT_GREYISH_BLUE.color), null));
-        this.field20697.addVisualThing(this.field20706 = new Class4865(this.field20697, "volume", this.method14276() - this.field20689 - 19, 14, 4, 40));
+        this.field20697.addToList(this.field20702 = new Class4873(this.field20697, "play", n, 27, 38, 38, ClientAssets.playmusic, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), null));
+        this.field20697.addToList(this.field20703 = new Class4873(this.field20697, "pause", n, 27, 38, 38, ClientAssets.pause, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), null));
+        this.field20697.addToList(this.field20704 = new Class4873(this.field20697, "forwards", n + 114, 23, 46, 46, ClientAssets.forwards, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), null));
+        this.field20697.addToList(this.field20705 = new Class4873(this.field20697, "backwards", n - 114, 23, 46, 46, ClientAssets.backwards, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), null));
+        this.field20697.addToList(this.field20706 = new Class4865(this.field20697, "volume", this.method14276() - this.field20689 - 19, 14, 4, 40));
         final Class4860 class4805;
-        this.field20697.addVisualThing(class4805 = new Class4860(this.field20697, "repeat", 14, 34, 27, 20, this.field20698.method24169()));
+        this.field20697.addToList(class4805 = new Class4860(this.field20697, "repeat", 14, 34, 27, 20, this.field20698.method24169()));
         class4805.method14516(class4861 -> this.field20698.method24168(class4805.method14577()));
-        this.addVisualThing(this.field20711 = new Class4842(this, "progress", this.field20689, this.method14278() - 5, this.method14276() - this.field20689, 5));
+        this.addToList(this.field20711 = new Class4842(this, "progress", this.field20689, this.method14278() - 5, this.method14276() - this.field20689, 5));
         this.field20711.method14301(true);
-        this.field20711.method14311(false);
+        this.field20711.setListening(false);
         this.field20709.method14301(true);
         this.field20709.method14256((class4803, n) -> {
             this.field20718 = true;
             this.field20715 = (float)this.method14272();
             this.field20716 = (float)this.method14274();
         });
-        this.field20703.method14297(false);
-        this.field20702.method14297(false);
-        this.field20702.method14260((class4803, n) -> this.field20698.method24175(true));
-        this.field20703.method14260((class4803, n) -> this.field20698.method24175(false));
-        this.field20704.method14260((class4803, n) -> this.field20698.method24181());
-        this.field20705.method14260((class4803, n) -> this.field20698.method24180());
+        this.field20703.setEnabled(false);
+        this.field20702.setEnabled(false);
+        this.field20702.doThis((class4803, n) -> this.field20698.method24175(true));
+        this.field20703.doThis((class4803, n) -> this.field20698.method24175(false));
+        this.field20704.doThis((class4803, n) -> this.field20698.method24181());
+        this.field20705.doThis((class4803, n) -> this.field20698.method24180());
         this.field20706.method14594(class4865 -> this.field20698.method24176((int)((1.0f - this.field20706.method14592()) * 100.0f)));
         this.field20706.method14593(1.0f - this.field20698.method24179() / 100.0f);
-        this.addVisualThing(this.field20710 = new Class4838(this, "search", this.field20689, 0, this.method14276() - this.field20689, this.method14278() - this.field20692, "Search..."));
-        this.field20710.method14297(true);
-        this.field20710.method14311(false);
+        this.addToList(this.field20710 = new Class4838(this, "search", this.field20689, 0, this.method14276() - this.field20689, this.method14278() - this.field20692, "Search..."));
+        this.field20710.setEnabled(true);
+        this.field20710.setListening(false);
     }
     
     private void method14479(final Class4817 field20696) {
         if (this.field20696 != null) {
-            this.field20696.method14297(false);
+            this.field20696.setEnabled(false);
         }
-        field20696.method14297(true);
-        this.field20693 = field20696.method14314();
+        field20696.setEnabled(true);
+        this.field20693 = field20696.getTypedText();
         this.field20696 = field20696;
-        this.field20710.method14297(false);
+        this.field20710.setEnabled(false);
         this.field20696.field20613 = 65;
     }
     
     private void method14480(final Class9175 field20701, final Class8681 class8681) {
-        if (!((Class4801)this.method14267()).method14208()) {
+        if (!((Class4801)this.getParent()).method14208()) {
             this.field20698.method24182(field20701, class8681);
             Class4833.field20701 = field20701;
         }
@@ -257,12 +257,12 @@ public class Class4833 extends Class4825
         this.field20717.changeDirection((this.method14272() + this.method14276() > this.field20475.method14276() && !this.field20718) ? Direction.BACKWARDS : Direction.FORWARDS);
         n *= 0.5f + (1.0f - this.field20717.calcPercent()) * 0.5f;
         if (this.field20698.method24184()) {
-            this.field20702.method14297(false);
-            this.field20703.method14297(true);
+            this.field20702.setEnabled(false);
+            this.field20703.setEnabled(true);
         }
         else {
-            this.field20702.method14297(true);
-            this.field20703.method14297(false);
+            this.field20702.setEnabled(true);
+            this.field20703.setEnabled(false);
         }
         RenderUtil.method26876((float)(this.method14272() + this.field20689), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() - this.field20692), ColorUtils.applyAlpha(-14277082, n * 0.8f));
         RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.field20689), (float)(this.method14274() + this.method14278() - this.field20692), ColorUtils.applyAlpha(-16777216, n * 0.95f));
@@ -290,17 +290,17 @@ public class Class4833 extends Class4825
         final Texture method24191 = this.field20698.method24191();
         final Texture method24192 = this.field20698.method24190();
         if (method24191 != null && method24192 != null) {
-            RenderUtil.method26899((float)this.method14272(), (float)(this.method14274() + this.method14278() - this.field20692), (float)this.method14276(), (float)this.field20692, method24192, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * n));
-            RenderUtil.method26876((float)this.method14272(), (float)(this.method14274() + this.method14278() - this.field20692), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() - 5), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.43f * n));
-            RenderUtil.method26876((float)this.method14272(), (float)(this.method14274() + this.method14278() - 5), (float)(this.method14272() + this.field20689), (float)(this.method14274() + this.method14278()), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.43f * n));
-            RenderUtil.method26899((float)(this.method14272() + (this.field20689 - 114) / 2), (float)(this.method14274() + this.method14278() - 170), 114.0f, 114.0f, method24191, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+            RenderUtil.drawImage((float)this.method14272(), (float)(this.method14274() + this.method14278() - this.field20692), (float)this.method14276(), (float)this.field20692, method24192, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * n));
+            RenderUtil.method26876((float)this.method14272(), (float)(this.method14274() + this.method14278() - this.field20692), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() - 5), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.43f * n));
+            RenderUtil.method26876((float)this.method14272(), (float)(this.method14274() + this.method14278() - 5), (float)(this.method14272() + this.field20689), (float)(this.method14274() + this.method14278()), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.43f * n));
+            RenderUtil.drawImage((float)(this.method14272() + (this.field20689 - 114) / 2), (float)(this.method14274() + this.method14278() - 170), 114.0f, 114.0f, method24191, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
             RenderUtil.method26913((float)(this.method14272() + (this.field20689 - 114) / 2), (float)(this.method14274() + this.method14278() - 170), 114.0f, 114.0f, 14.0f, n);
         }
         else {
-            RenderUtil.method26899((float)this.method14272(), (float)(this.method14274() + this.method14278() - this.field20692), (float)this.method14276(), (float)this.field20692, ClientAssets.bg, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * n));
-            RenderUtil.method26876((float)this.method14272(), (float)(this.method14274() + this.method14278() - this.field20692), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() - 5), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.43f * n));
-            RenderUtil.method26876((float)this.method14272(), (float)(this.method14274() + this.method14278() - 5), (float)(this.method14272() + this.field20689), (float)(this.method14274() + this.method14278()), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.43f * n));
-            RenderUtil.method26899((float)(this.method14272() + (this.field20689 - 114) / 2), (float)(this.method14274() + this.method14278() - 170), 114.0f, 114.0f, ClientAssets.artwork, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+            RenderUtil.drawImage((float)this.method14272(), (float)(this.method14274() + this.method14278() - this.field20692), (float)this.method14276(), (float)this.field20692, ClientAssets.bg, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * n));
+            RenderUtil.method26876((float)this.method14272(), (float)(this.method14274() + this.method14278() - this.field20692), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() - 5), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.43f * n));
+            RenderUtil.method26876((float)this.method14272(), (float)(this.method14274() + this.method14278() - 5), (float)(this.method14272() + this.field20689), (float)(this.method14274() + this.method14278()), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.43f * n));
+            RenderUtil.drawImage((float)(this.method14272() + (this.field20689 - 114) / 2), (float)(this.method14274() + this.method14278() - 170), 114.0f, 114.0f, ClientAssets.artwork, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
             RenderUtil.method26913((float)(this.method14272() + (this.field20689 - 114) / 2), (float)(this.method14274() + this.method14278() - 170), 114.0f, 114.0f, 14.0f, n);
         }
     }
@@ -343,7 +343,7 @@ public class Class4833 extends Class4825
         if (method25031 > 0.0f) {
             RenderUtil.drawString(ClientFonts.JelloLight14, n6 - method25032 * method25031 + method25032, (float)n7, s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * n));
         }
-        RenderUtil.method26872();
+        RenderUtil.endScissor();
     }
     
     private void method14486(final float n) {
@@ -351,7 +351,7 @@ public class Class4833 extends Class4825
         if (this.field20707 != this.field20696.method14392()) {
             try {
                 if (this.field20708 != null) {
-                    this.field20708.method24923();
+                    this.field20708.release();
                 }
                 this.field20708 = Class9399.method34928("blur", BufferedImage.method20831(this.method14272() + this.field20689, this.method14274(), this.method14276() - this.field20689, this.field20691, 10, 10));
             }
@@ -366,7 +366,7 @@ public class Class4833 extends Class4825
         RenderUtil.method26876((float)this.field20689, 0.0f, (float)this.method14276(), (float)this.field20691, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n2 * n * 0.2f));
         RenderUtil.drawString(ClientFonts.JelloLight25, (float)((this.method14276() - ClientFonts.JelloLight25.getWidth(this.field20693) + this.field20689) / 2), 16.0f + (1.0f - n2) * 14.0f, this.field20693, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n2));
         RenderUtil.drawString(ClientFonts.JelloMedium25, (float)((this.method14276() - ClientFonts.JelloMedium25.getWidth(this.field20693) + this.field20689) / 2), 16.0f + (1.0f - n2) * 14.0f, this.field20693, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 1.0f - n2));
-        RenderUtil.method26899((float)this.field20689, (float)this.field20691, (float)(this.method14276() - this.field20689), 20.0f, ClientAssets.shadow_bottom, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n2 * n * 0.5f));
+        RenderUtil.drawImage((float)this.field20689, (float)this.field20691, (float)(this.method14276() - this.field20689), 20.0f, ClientAssets.shadow_bottom, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n2 * n * 0.5f));
         this.field20707 = this.field20696.method14392();
     }
     

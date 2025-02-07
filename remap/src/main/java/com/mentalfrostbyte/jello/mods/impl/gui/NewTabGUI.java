@@ -77,10 +77,10 @@ public class NewTabGUI extends Module
         this.field15824 = 170;
         this.field15825 = 0.0f;
         this.field15827 = new ArrayList<Class8479>();
-        this.field15828 = ColorUtils.applyAlpha(ClientColors.field1273.color, 0.0625f);
+        this.field15828 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.0625f);
         this.field15829 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f);
         this.field15830 = this.getCategories();
-        this.field15831 = ColorUtils.applyAlpha(ClientColors.field1281.color, 0.05f);
+        this.field15831 = ColorUtils.applyAlpha(ClientColors.MID_GREY.color, 0.05f);
         this.method9915(false);
         NewTabGUI.field15826 = this;
     }
@@ -120,10 +120,10 @@ public class NewTabGUI extends Module
                         this.field15825 += Math.min(abs, abs * 0.14f * this.field15818) * ((this.method10390() - this.field15825 < 0.0f) ? -1 : 1);
                         this.field15807 = class5740.method17028();
                         this.method10398(this.field15806, this.field15807, this.field15808, this.field15809, this.field15801, null, this.field15802, 1.0f);
-                        RenderUtil.method26869((float)this.field15806, (float)this.field15807, (float)this.field15808, (float)this.field15809);
+                        RenderUtil.startScissor((float)this.field15806, (float)this.field15807, (float)this.field15808, (float)this.field15809);
                         this.method10394(this.field15806, this.field15807 - Math.round(this.field15825), this.field15830.size() * this.field15816 + this.field15817, this.field15808, this.field15813, false, 1.0f);
                         this.method10393(this.field15806, this.field15807 - Math.round(this.field15825), this.field15830);
-                        RenderUtil.method26872();
+                        RenderUtil.endScissor();
                         if (this.field15819) {
                             this.field15821 = this.method10391(this.field15820).size() * this.field15816 + this.field15817;
                             this.method10398(170, this.field15807, this.field15824, this.field15821, this.field15803, this.field15805, this.field15804, 1.0f);
@@ -249,8 +249,8 @@ public class NewTabGUI extends Module
             }
         }
         RenderUtil.method26876((float)n, (n7 >= 0) ? ((float)(n7 + n2)) : ((float)n2), (float)(n + n4), (n7 + this.field15817 + this.field15816 <= n3) ? ((float)(n7 + n2 + this.field15816 + this.field15817)) : ((float)(n2 + n3 + this.field15817)), this.field15828);
-        RenderUtil.method26899((float)n, (n7 + this.field15817 + this.field15816 <= n3) ? ((float)(n7 + n2 + this.field15816 - 10)) : ((float)(n2 + n3 - 10)), (float)n4, 14.0f, ClientAssets.shadow_top, this.field15829);
-        RenderUtil.method26899((float)n, (n7 >= 0) ? ((float)(n7 + n2)) : ((float)n2), (float)n4, 14.0f, ClientAssets.shadow_bottom, this.field15829);
+        RenderUtil.drawImage((float)n, (n7 + this.field15817 + this.field15816 <= n3) ? ((float)(n7 + n2 + this.field15816 - 10)) : ((float)(n2 + n3 - 10)), (float)n4, 14.0f, ClientAssets.shadow_top, this.field15829);
+        RenderUtil.drawImage((float)n, (n7 >= 0) ? ((float)(n7 + n2)) : ((float)n2), (float)n4, 14.0f, ClientAssets.shadow_bottom, this.field15829);
         RenderUtil.method26870(n, (n7 >= 0) ? (n7 + n2) : n2, n + n4, (n7 + this.field15817 + this.field15816 <= n3) ? (n7 + n2 + this.field15816 + this.field15817) : (n2 + n3 + this.field15817));
         final Iterator<Class8479> iterator = this.field15827.iterator();
         while (iterator.hasNext()) {
@@ -268,7 +268,7 @@ public class NewTabGUI extends Module
                 iterator.remove();
             }
         }
-        RenderUtil.method26872();
+        RenderUtil.endScissor();
     }
     
     private List<Category> getCategories() {
@@ -370,9 +370,9 @@ public class NewTabGUI extends Module
             RenderUtil.method26881(n, n2, n + n3, n2 + n4, n6, n7);
         }
         else {
-            RenderUtil.method26869((float)n, (float)n2, (float)n3, (float)n4);
+            RenderUtil.startScissor((float)n, (float)n2, (float)n3, (float)n4);
             Class8707.method29899();
-            RenderUtil.method26872();
+            RenderUtil.endScissor();
             RenderUtil.method26876((float)n, (float)n2, (float)(n + n3), (float)(n2 + n4), this.field15831);
         }
         RenderUtil.method26913((float)n, (float)n2, (float)n3, (float)n4, 8.0f, 0.7f * n5);

@@ -34,7 +34,7 @@ public class Search extends Module
         this.addSetting(class4996 = new NumberSetting("Chunk Range", "Range at which search scans blocks", 5.0f, (Class<? extends T>)Float.class, 1.0f, 12.0f, 1.0f));
         final BooleanSetting class4997;
         this.addSetting(class4997 = new BooleanSetting("Holes", "Shows 1x1 explosion protection holes", false));
-        this.addSetting(new ColorSetting("Color", "The rendered block color", ClientColors.field1281.color, true));
+        this.addSetting(new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.color, true));
         final StringListSetting class4998;
         this.addSetting(class4998 = new StringListSetting("Blocks", "Blocks to render", true, new String[0]));
         class4998.method15195(class4997 -> this.field15793.clear());

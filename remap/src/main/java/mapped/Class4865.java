@@ -15,8 +15,8 @@ public class Class4865 extends Class4841
     private boolean field20593;
     private final List<Class7131> field20606;
     
-    public Class4865(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4865(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20831 = 1.0f;
         this.field20593 = false;
         this.field20606 = new ArrayList<Class7131>();
@@ -24,14 +24,14 @@ public class Class4865 extends Class4841
     
     @Override
     public void draw(final float n) {
-        RenderUtil.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), this.field20479 + this.field20481 * this.field20831, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.2f));
-        RenderUtil.method26876((float)this.field20478, (float)(this.field20479 + this.field20481), (float)(this.field20478 + this.field20480), this.field20479 + this.field20481 * this.field20831, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.2f));
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), this.y + this.field20481 * this.field20831, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.2f));
+        RenderUtil.method26876((float)this.x, (float)(this.y + this.field20481), (float)(this.x + this.field20480), this.y + this.field20481 * this.field20831, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.2f));
         super.draw(n);
     }
     
     @Override
     public boolean method14211(final int n, final int n2, final int n3) {
-        if (!super.method14211(this.field20478, this.field20479, n3)) {
+        if (!super.method14211(this.x, this.y, n3)) {
             this.field20593 = true;
             return false;
         }

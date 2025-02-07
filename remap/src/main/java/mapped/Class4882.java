@@ -12,18 +12,18 @@ public class Class4882 extends Class4841
     private List<Class4868> field20876;
     public int field20877;
     
-    public Class4882(final Class4803 class4803, final String s, final int n, final int n2) {
-        super(class4803, s, n, n2, 1060, 357, false);
+    public Class4882(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2) {
+        super(customGuiScreen, s, n, n2, 1060, 357, false);
         this.field20876 = new ArrayList<Class4868>();
         for (final Class283 class4804 : Class283.values()) {
             final Class4857 class4805;
-            this.addVisualThing(class4805 = new Class4857(this, "KEY_" + class4804.field1563 + this.method14250().size(), class4804.method928(), class4804.method927(), class4804.method929(), class4804.method930(), class4804.field1560, class4804.field1563));
-            class4805.method14260((class4858, n) -> {
+            this.addToList(class4805 = new Class4857(this, "KEY_" + class4804.field1563 + this.method14250().size(), class4804.method928(), class4804.method927(), class4804.method929(), class4804.method930(), class4804.field1560, class4804.field1563));
+            class4805.doThis((class4858, n) -> {
                 this.field20877 = class4805.field20807;
                 this.method14517();
             });
         }
-        this.method14311(false);
+        this.setListening(false);
     }
     
     @Override
@@ -51,11 +51,11 @@ public class Class4882 extends Class4841
     }
     
     public void method14614() {
-        for (final Class4803 class4803 : this.method14250()) {
-            if (!(class4803 instanceof Class4857)) {
+        for (final CustomGuiScreen customGuiScreen : this.method14250()) {
+            if (!(customGuiScreen instanceof Class4857)) {
                 continue;
             }
-            ((Class4857)class4803).method14570();
+            ((Class4857) customGuiScreen).method14570();
         }
     }
     
@@ -77,8 +77,8 @@ public class Class4882 extends Class4841
     public void draw(final float n) {
         final int n2 = 20;
         final int n3 = 14;
-        final int n4 = this.field20478 - n2;
-        final int n5 = this.field20479 - n2;
+        final int n4 = this.x - n2;
+        final int n5 = this.y - n2;
         final int n6 = this.field20480 + n2 * 2;
         final int n7 = this.field20481 + 5 + n2 * 2;
         RenderUtil.method26913((float)(n4 + n3 / 2), (float)(n5 + n3 / 2), (float)(n6 - n3), (float)(n7 - n3), 20.0f, n * 0.5f);

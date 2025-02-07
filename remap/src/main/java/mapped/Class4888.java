@@ -10,11 +10,11 @@ import org.lwjgl.opengl.GL11;
 public class Class4888 extends Class4841
 {
     private static String[] field20591;
-    public Class9572 field20897;
+    public Animation field20897;
     
-    public Class4888(final Class4803 class4803, final String s, final int n, final int n2) {
-        super(class4803, s, n, n2, 20, 20, false);
-        this.field20897 = new Class9572(1200, 1200, Direction.FORWARDS);
+    public Class4888(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2) {
+        super(customGuiScreen, s, n, n2, 20, 20, false);
+        this.field20897 = new Animation(1200, 1200, Direction.FORWARDS);
     }
     
     @Override
@@ -22,7 +22,7 @@ public class Class4888 extends Class4841
         this.field20897.changeDirection(this.method14308() ? Direction.BACKWARDS : Direction.FORWARDS);
         if (this.field20897.calcPercent() == 1.0f) {
             if (this.method14308()) {
-                this.field20897 = new Class9572(1200, 1200, Direction.BACKWARDS);
+                this.field20897 = new Animation(1200, 1200, Direction.BACKWARDS);
             }
         }
         final int n2 = this.method14272() + 10;
@@ -31,7 +31,7 @@ public class Class4888 extends Class4841
         GL11.glTranslatef((float)n2, (float)n3, 0.0f);
         GL11.glRotatef(this.field20897.calcPercent() * 360.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n2), (float)(-n3), 0.0f);
-        RenderUtil.method26905((float)this.field20478, (float)this.field20479, 20.0f, 20.0f, this.method14308() ? UglyClickGUICategory.gear2 : UglyClickGUICategory.gear);
+        RenderUtil.method26905((float)this.x, (float)this.y, 20.0f, 20.0f, this.method14308() ? UglyClickGUICategory.gear2 : UglyClickGUICategory.gear);
         GL11.glPopMatrix();
         super.draw(n);
     }

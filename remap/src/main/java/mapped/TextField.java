@@ -14,10 +14,10 @@ import slick2d.TrueTypeFont;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4831 extends Class4825
+public class TextField extends Class4825
 {
-    public static final Class6523 field20670;
-    public static final Class6523 field20671;
+    public static final ColorHelper field20670;
+    public static final ColorHelper field20671;
     private String field20672;
     private float field20673;
     private final float field20674 = 2.0f;
@@ -35,8 +35,8 @@ public class Class4831 extends Class4825
     private final List<Class8992> field20686;
     private boolean field20687;
     
-    public Class4831(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        super(class4803, s, n, n2, n3, n4, Class4831.field20670, "", false);
+    public TextField(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        super(customGuiScreen, s, n, n2, n3, n4, TextField.field20670, "", false);
         this.field20672 = "";
         this.field20683 = false;
         this.field20684 = Character.toString('·');
@@ -46,8 +46,8 @@ public class Class4831 extends Class4825
         this.field20685.method23932();
     }
     
-    public Class4831(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804) {
-        super(class4803, s, n, n2, n3, n4, class4804, "", false);
+    public TextField(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804) {
+        super(customGuiScreen, s, n, n2, n3, n4, class4804, "", false);
         this.field20672 = "";
         this.field20683 = false;
         this.field20684 = Character.toString('·');
@@ -57,8 +57,8 @@ public class Class4831 extends Class4825
         this.field20685.method23932();
     }
     
-    public Class4831(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2) {
-        super(class4803, s, n, n2, n3, n4, class4804, s2, false);
+    public TextField(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804, final String s2) {
+        super(customGuiScreen, s, n, n2, n3, n4, class4804, s2, false);
         this.field20672 = "";
         this.field20683 = false;
         this.field20684 = Character.toString('·');
@@ -68,8 +68,8 @@ public class Class4831 extends Class4825
         this.field20685.method23932();
     }
     
-    public Class4831(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2, final String field20672) {
-        super(class4803, s, n, n2, n3, n4, class4804, s2, ClientFonts.JelloLight25, false);
+    public TextField(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804, final String s2, final String field20672) {
+        super(customGuiScreen, s, n, n2, n3, n4, class4804, s2, ClientFonts.JelloLight25, false);
         this.field20672 = "";
         this.field20683 = false;
         this.field20684 = Character.toString('·');
@@ -80,8 +80,8 @@ public class Class4831 extends Class4825
         this.field20685.method23932();
     }
     
-    public Class4831(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2, final String field20672, final TrueTypeFont class4805) {
-        super(class4803, s, n, n2, n3, n4, class4804, s2, false);
+    public TextField(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804, final String s2, final String field20672, final TrueTypeFont class4805) {
+        super(customGuiScreen, s, n, n2, n3, n4, class4804, s2, false);
         this.field20672 = "";
         this.field20683 = false;
         this.field20684 = Character.toString('·');
@@ -360,11 +360,11 @@ public class Class4831 extends Class4825
             s = this.field20495.replaceAll(".", this.field20684);
         }
         RenderUtil.method26871(this.method14272(), this.method14274(), this.method14272() + this.field20480, this.method14274() + this.field20481, true);
-        final int n3 = this.field20478 + 4;
+        final int n3 = this.x + 4;
         final int n4 = this.field20480 - 4;
         final float n5 = n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20678));
         if (this.method14306()) {
-            RenderUtil.method26876(n5 + (s.isEmpty() ? 0 : -1), (float)(this.field20479 + this.field20481 / 2 - this.field20496.getHeight(s) / 2 + 2), n5 + (float)(s.isEmpty() ? 1 : 0), (float)(this.field20479 + this.field20481 / 2 + this.field20496.getHeight(s) / 2 - 1), ColorUtils.applyAlpha(this.field20497.method19733(), b ? 0.8f : (0.1f * n)));
+            RenderUtil.method26876(n5 + (s.isEmpty() ? 0 : -1), (float)(this.y + this.field20481 / 2 - this.field20496.getHeight(s) / 2 + 2), n5 + (float)(s.isEmpty() ? 1 : 0), (float)(this.y + this.field20481 / 2 + this.field20496.getHeight(s) / 2 - 1), ColorUtils.applyAlpha(this.field20497.method19733(), b ? 0.8f : (0.1f * n)));
             final float n6 = n3 + this.field20496.getWidth(s.substring(0, this.field20678)) + this.field20676;
             if (n6 < n3) {
                 this.field20676 += n3 - n6;
@@ -377,11 +377,11 @@ public class Class4831 extends Class4825
         this.field20675 += (this.field20676 - this.field20675) / 2.0f;
         this.field20679 = Math.min(Math.max(0, this.field20679), s.length());
         this.field20680 = Math.min(Math.max(0, this.field20680), s.length());
-        RenderUtil.method26876(n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20679)), (float)(this.field20479 + this.field20481 / 2 - this.field20496.getHeight(s) / 2), n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20680)), (float)(this.field20479 + this.field20481 / 2 + this.field20496.getHeight(s) / 2), ColorUtils.applyAlpha(-5516546, n));
-        RenderUtil.method26890(this.field20496, n3 + this.field20675, (float)(this.field20479 + this.field20481 / 2), (s.length() != 0 || (this.field20488 && s.length() > 0)) ? s : this.field20672, ColorUtils.applyAlpha(this.field20497.method19733(), (this.field20673 / 2.0f + 0.4f) * n * ((this.field20488 && s.length() > 0) ? 1.0f : 0.5f)), this.field20497.method19735(), this.field20497.method19737());
-        RenderUtil.method26872();
+        RenderUtil.method26876(n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20679)), (float)(this.y + this.field20481 / 2 - this.field20496.getHeight(s) / 2), n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20680)), (float)(this.y + this.field20481 / 2 + this.field20496.getHeight(s) / 2), ColorUtils.applyAlpha(-5516546, n));
+        RenderUtil.method26890(this.field20496, n3 + this.field20675, (float)(this.y + this.field20481 / 2), (s.length() != 0 || (this.field20488 && s.length() > 0)) ? s : this.field20672, ColorUtils.applyAlpha(this.field20497.method19733(), (this.field20673 / 2.0f + 0.4f) * n * ((this.field20488 && s.length() > 0) ? 1.0f : 0.5f)), this.field20497.method19735(), this.field20497.method19737());
+        RenderUtil.endScissor();
         if (this.field20687) {
-            RenderUtil.method26876((float)this.field20478, (float)(this.field20479 + this.field20481 - 2), (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), ColorUtils.applyAlpha(this.field20497.method19729(), (this.field20673 / 2.0f + 0.5f) * n));
+            RenderUtil.method26876((float)this.x, (float)(this.y + this.field20481 - 2), (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(this.field20497.method19729(), (this.field20673 / 2.0f + 0.5f) * n));
         }
         super.draw(n);
     }
@@ -414,7 +414,7 @@ public class Class4831 extends Class4825
     }
     
     static {
-        field20670 = new Class6523(-892679478, -892679478, -892679478, ClientColors.field1273.color, Class2056.field11734, Class2056.field11738);
-        field20671 = new Class6523(-1, -1, -1, ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11734, Class2056.field11738);
+        field20670 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.color, Class2056.field11734, Class2056.field11738);
+        field20671 = new ColorHelper(-1, -1, -1, ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11734, Class2056.field11738);
     }
 }

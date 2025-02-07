@@ -14,14 +14,14 @@ public class Class6801 implements Class6802
     }
     
     @Override
-    public void method20822(final Class4803 class4803) {
-        if (class4803.method14250().size() > 0) {
+    public void method20822(final CustomGuiScreen customGuiScreen) {
+        if (customGuiScreen.method14250().size() > 0) {
             int n = 0;
             int n2 = 0;
             int max = 0;
-            for (int i = 0; i < class4803.method14250().size(); ++i) {
-                final Class4803 class4804 = class4803.method14250().get(i);
-                if (n + class4804.method14276() + this.field26741 > class4803.method14276()) {
+            for (int i = 0; i < customGuiScreen.method14250().size(); ++i) {
+                final CustomGuiScreen class4804 = customGuiScreen.method14250().get(i);
+                if (n + class4804.method14276() + this.field26741 > customGuiScreen.method14276()) {
                     n = 0;
                     n2 += max;
                 }

@@ -45,27 +45,27 @@ public class UglyClickGUICategory extends Class4807
     public static Texture world;
     public static Texture world2;
     
-    public UglyClickGUICategory(final Class4803 class4803, final String s, final int n, final int n2) {
-        super(class4803, s, n - 198, n2 - 298, 396, 596);
+    public UglyClickGUICategory(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2) {
+        super(customGuiScreen, s, n - 198, n2 - 298, 396, 596);
         this.field20530 = new ArrayList<Class4868>();
         decryptUglyGuiAssets();
-        this.addVisualThing(this.combatCat = new UglyClickGUICategoryIcon(this, "combat", 24, 58, 170, 130, "Combat", UglyClickGUICategory.combat, UglyClickGUICategory.combat2));
-        this.addVisualThing(this.movementCat = new UglyClickGUICategoryIcon(this, "movement", 24, 208, 170, 130, "Movement", UglyClickGUICategory.movement, UglyClickGUICategory.movement2));
-        this.addVisualThing(this.worldCat = new UglyClickGUICategoryIcon(this, "world", 24, 358, 170, 130, "World", UglyClickGUICategory.world, UglyClickGUICategory.world2));
-        this.addVisualThing(this.playerCat = new UglyClickGUICategoryIcon(this, "player", 201, 58, 170, 130, "Player", UglyClickGUICategory.player, UglyClickGUICategory.player2));
-        this.addVisualThing(this.visualsCat = new UglyClickGUICategoryIcon(this, "visuals", 201, 208, 170, 130, "Visuals", UglyClickGUICategory.visuals, UglyClickGUICategory.visuals2));
-        this.addVisualThing(this.otherCat = new UglyClickGUICategoryIcon(this, "other", 201, 358, 170, 130, "Others", UglyClickGUICategory.others, UglyClickGUICategory.others2));
+        this.addToList(this.combatCat = new UglyClickGUICategoryIcon(this, "combat", 24, 58, 170, 130, "Combat", UglyClickGUICategory.combat, UglyClickGUICategory.combat2));
+        this.addToList(this.movementCat = new UglyClickGUICategoryIcon(this, "movement", 24, 208, 170, 130, "Movement", UglyClickGUICategory.movement, UglyClickGUICategory.movement2));
+        this.addToList(this.worldCat = new UglyClickGUICategoryIcon(this, "world", 24, 358, 170, 130, "World", UglyClickGUICategory.world, UglyClickGUICategory.world2));
+        this.addToList(this.playerCat = new UglyClickGUICategoryIcon(this, "player", 201, 58, 170, 130, "Player", UglyClickGUICategory.player, UglyClickGUICategory.player2));
+        this.addToList(this.visualsCat = new UglyClickGUICategoryIcon(this, "visuals", 201, 208, 170, 130, "Visuals", UglyClickGUICategory.visuals, UglyClickGUICategory.visuals2));
+        this.addToList(this.otherCat = new UglyClickGUICategoryIcon(this, "other", 201, 358, 170, 130, "Others", UglyClickGUICategory.others, UglyClickGUICategory.others2));
         final Class4886 class4804;
-        this.addVisualThing(class4804 = new Class4886(this, "exit", this.method14276() - 41, 9));
-        class4804.method14260((class4803, n) -> Minecraft.method5277().displayGuiScreen(null));
-        final Class4799 class4805 = (Class4799)this.method14267();
-        this.combatCat.method14260((class4800, n) -> class4805.method14198("Combat", Category.COMBAT));
-        this.movementCat.method14260((class4800, n) -> class4805.method14198("Movement", Category.MOVEMENT));
-        this.worldCat.method14260((class4800, n) -> class4805.method14198("World", Category.WORLD));
-        this.playerCat.method14260((class4800, n) -> class4805.method14198("Player", Category.PLAYER));
-        this.visualsCat.method14260((class4800, n) -> class4805.method14198("Visuals", Category.RENDER, Category.GUI));
-        this.otherCat.method14260((class4800, n) -> class4805.method14198("Others", Category.MISC));
-        this.method14311(false);
+        this.addToList(class4804 = new Class4886(this, "exit", this.method14276() - 41, 9));
+        class4804.doThis((class4803, n) -> Minecraft.method5277().displayGuiScreen(null));
+        final Class4799 class4805 = (Class4799)this.getParent();
+        this.combatCat.doThis((class4800, n) -> class4805.method14198("Combat", Category.COMBAT));
+        this.movementCat.doThis((class4800, n) -> class4805.method14198("Movement", Category.MOVEMENT));
+        this.worldCat.doThis((class4800, n) -> class4805.method14198("World", Category.WORLD));
+        this.playerCat.doThis((class4800, n) -> class4805.method14198("Player", Category.PLAYER));
+        this.visualsCat.doThis((class4800, n) -> class4805.method14198("Visuals", Category.RENDER, Category.GUI));
+        this.otherCat.doThis((class4800, n) -> class4805.method14198("Others", Category.MISC));
+        this.setListening(false);
     }
     
     public static void decryptUglyGuiAssets() {

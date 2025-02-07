@@ -14,8 +14,8 @@ public class Class4904 extends Class4841
     private float field20981;
     public boolean field20982;
     
-    public Class4904(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final float field20979, final float field20980, final float field20981) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4904(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final float field20979, final float field20980, final float field20981) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20980 = 0.0f;
         this.field20981 = 1.0f;
         this.field20982 = false;
@@ -41,13 +41,13 @@ public class Class4904 extends Class4841
     public void draw(final float n) {
         final int method19118 = ColorUtils.applyAlpha(Color.HSBtoRGB(this.field20979, 0.0f, 1.0f), n);
         final int method19119 = ColorUtils.applyAlpha(Color.HSBtoRGB(this.field20979, 1.0f, 1.0f), n);
-        final int method19120 = ColorUtils.applyAlpha(ClientColors.field1273.color, n);
+        final int method19120 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n);
         RenderUtil.method26865(this);
         RenderUtil.method26882(this.method14272(), this.method14274(), this.method14272() + this.method14276(), this.method14274() + this.method14278(), method19118, method19119, method19119, method19118);
-        RenderUtil.method26882(this.method14272(), this.method14274(), this.method14272() + this.method14276(), this.method14274() + this.method14278(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.0f), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.0f), method19120, method19120);
-        Class4885.method14626(this.field20478 + Math.round(this.field20480 * this.method14730()), this.field20479 + Math.round(this.field20481 * (1.0f - this.method14733())), Color.HSBtoRGB(this.field20979, this.field20980, this.field20981), n);
-        RenderUtil.method26878((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.25f * n));
-        RenderUtil.method26872();
+        RenderUtil.method26882(this.method14272(), this.method14274(), this.method14272() + this.method14276(), this.method14274() + this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.0f), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.0f), method19120, method19120);
+        Class4885.method14626(this.x + Math.round(this.field20480 * this.method14730()), this.y + Math.round(this.field20481 * (1.0f - this.method14733())), Color.HSBtoRGB(this.field20979, this.field20980, this.field20981), n);
+        RenderUtil.method26878((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.25f * n));
+        RenderUtil.endScissor();
         super.draw(n);
     }
     

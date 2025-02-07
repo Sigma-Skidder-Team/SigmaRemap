@@ -21,17 +21,17 @@ import java.util.List;
 
 public class TabGUI extends Module
 {
-    public static final Class9572 field15637;
-    public Class9572 field15638;
-    private Class9572 field15639;
+    public static final Animation field15637;
+    public Animation field15638;
+    private Animation field15639;
     private List<Category> field15640;
     private int field15641;
     private static List<Class8221> field15642;
     
     public TabGUI() {
         super(Category.GUI, "TabGUI", "Manage mods without opening the ClickGUI");
-        this.field15638 = new Class9572(500, 0, Direction.FORWARDS);
-        this.field15639 = new Class9572(300, 300, Direction.FORWARDS);
+        this.field15638 = new Animation(500, 0, Direction.FORWARDS);
+        this.field15639 = new Animation(300, 300, Direction.FORWARDS);
         this.field15640 = new ArrayList<Category>();
         this.field15641 = 0;
     }
@@ -66,7 +66,7 @@ public class TabGUI extends Module
         final int method10070 = this.method10076();
         final Class8221 class5753 = TabGUI.field15642.get(method10070 - 1);
         if (method10069 != Class2164.field12876 && ((!this.method10078() && method10069 != Class2164.field12874) || method10070 != 3)) {
-            this.field15638 = new Class9572(500, 200, Direction.FORWARDS);
+            this.field15638 = new Animation(500, 200, Direction.FORWARDS);
         }
         switch (Class8971.field37805[method10069.ordinal()]) {
             case 1: {
@@ -255,7 +255,7 @@ public class TabGUI extends Module
             final float n2 = class8225.method27234() + (float)class8225.method27233() + 14.0f * method10077;
             final float n3 = class8225.method27235() + 16.0f;
             class8225.getClass();
-            RenderUtil.method26885(n2, n3 + 25 * class8225.field33778, 24.0f * method10077, ColorUtils.applyAlpha(ClientColors.field1273.color, n * 0.6f), ColorUtils.applyAlpha(ClientColors.field1273.color, n * 0.6f));
+            RenderUtil.method26885(n2, n3 + 25 * class8225.field33778, 24.0f * method10077, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n * 0.6f), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n * 0.6f));
             final int n4 = class8225.method27234() + class8225.method27233() + 4 + Math.round(method10077 * 28.0f);
             final int method10078 = class8225.method27235();
             class8225.getClass();
@@ -266,14 +266,14 @@ public class TabGUI extends Module
             final float n8 = (float)n5;
             final float n9 = n6 * method10079;
             class8225.getClass();
-            RenderUtil.method26874(n7, n8, n9, 25.0f, ColorUtils.applyAlpha(ClientColors.field1273.color, n * 0.6f));
+            RenderUtil.method26874(n7, n8, n9, 25.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n * 0.6f));
             final float n10 = (float)n4;
             final float n11 = (float)n5;
             final float n12 = n6 * method10079;
             class8225.getClass();
-            RenderUtil.method26869(n10, n11, n12, 25.0f);
+            RenderUtil.startScissor(n10, n11, n12, 25.0f);
             RenderUtil.drawString(class8225.field33770, (float)(n4 + 4), (float)(n5 + 2), s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, Math.min(1.0f, n * 1.7f)));
-            RenderUtil.method26872();
+            RenderUtil.endScissor();
         }
     }
     
@@ -393,7 +393,7 @@ public class TabGUI extends Module
     }
     
     static {
-        field15637 = new Class9572(200, 200, Direction.FORWARDS);
+        field15637 = new Animation(200, 200, Direction.FORWARDS);
         TabGUI.field15642 = new ArrayList<Class8221>();
     }
 }

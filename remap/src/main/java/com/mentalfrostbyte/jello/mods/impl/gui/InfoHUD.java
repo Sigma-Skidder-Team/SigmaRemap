@@ -78,8 +78,8 @@ public class InfoHUD extends Module
                 GL11.glDisable(2896);
                 final float n5 = 1.0f - class8321.method27632() / (float)class8321.method27634();
                 if (n5 != 1.0f) {
-                    RenderUtil.method26874((float)(n + 2), (float)(n4 + 28), 28.0f, 5.0f, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
-                    RenderUtil.method26874((float)(n + 2), (float)(n4 + 28), 28.0f * n5, 3.0f, ColorUtils.applyAlpha((n5 > 0.2) ? ClientColors.field1276.color : ClientColors.field1283.color, 0.9f));
+                    RenderUtil.method26874((float)(n + 2), (float)(n4 + 28), 28.0f, 5.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
+                    RenderUtil.method26874((float)(n + 2), (float)(n4 + 28), 28.0f * n5, 3.0f, ColorUtils.applyAlpha((n5 > 0.2) ? ClientColors.DARK_SLATE_GREY.color : ClientColors.PALE_YELLOW.color, 0.9f));
                 }
             }
         }

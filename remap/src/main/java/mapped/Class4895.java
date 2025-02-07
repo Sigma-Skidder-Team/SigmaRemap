@@ -10,8 +10,8 @@ import slick2d.Texture;
 
 public class Class4895 extends Class4841
 {
-    public Class9572 field20926;
-    public Class9572 field20927;
+    public Animation field20926;
+    public Animation field20927;
     public int field20928;
     public int field20929;
     public int field20930;
@@ -22,8 +22,8 @@ public class Class4895 extends Class4841
     public Texture field20935;
     public boolean field20936;
     
-    public Class4895(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Module field20934) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4895(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final Module field20934) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20936 = false;
         this.field20930 = 500;
         this.field20931 = (int)Math.min(600.0f, n4 * 0.7f);
@@ -32,10 +32,10 @@ public class Class4895 extends Class4841
         this.field20934 = field20934;
         final int n5 = 10;
         final int n6 = 59;
-        this.addVisualThing(this.field20933 = new Class4819(this, "mods", this.field20929 + n5, this.field20928 + n6, this.field20930 - n5 * 2, this.field20931 - n6 - n5, field20934));
-        this.field20926 = new Class9572(200, 120);
-        this.field20927 = new Class9572(240, 200);
-        this.method14311(false);
+        this.addToList(this.field20933 = new Class4819(this, "mods", this.field20929 + n5, this.field20928 + n6, this.field20930 - n5 * 2, this.field20931 - n6 - n5, field20934));
+        this.field20926 = new Animation(200, 120);
+        this.field20927 = new Animation(240, 200);
+        this.setListening(false);
     }
     
     @Override
@@ -89,14 +89,14 @@ public class Class4895 extends Class4841
             n = Class7791.method25030(method35858, 0.0f, 1.0f, 1.0f);
         }
         this.method14288(0.8f + n * 0.2f, 0.8f + n * 0.2f);
-        RenderUtil.method26876((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.45f * method35858));
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.45f * method35858));
         super.method14227();
         RenderUtil.method26925((float)this.field20929, (float)this.field20928, (float)this.field20930, (float)this.field20931, 10.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method35858));
         RenderUtil.drawString(ClientFonts.JelloMedium40, (float)this.field20929, (float)(this.field20928 - 60), this.field20934.getName(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method35858));
         final int n2 = 30;
-        RenderUtil.method26869((float)this.field20929, (float)this.field20928, (float)(this.field20930 - 30), (float)this.field20931);
-        RenderUtil.drawString(ClientFonts.JelloLight20, (float)(n2 + this.field20929), (float)(n2 + this.field20928), this.field20934.getDesc(), ColorUtils.applyAlpha(ClientColors.field1273.color, method35858 * 0.7f));
-        RenderUtil.method26872();
+        RenderUtil.startScissor((float)this.field20929, (float)this.field20928, (float)(this.field20930 - 30), (float)this.field20931);
+        RenderUtil.drawString(ClientFonts.JelloLight20, (float)(n2 + this.field20929), (float)(n2 + this.field20928), this.field20934.getDesc(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, method35858 * 0.7f));
+        RenderUtil.endScissor();
         super.draw(method35858);
     }
 }

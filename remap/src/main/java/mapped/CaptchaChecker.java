@@ -14,9 +14,9 @@ import java.awt.image.BufferedImage;
 
 public class CaptchaChecker
 {
-    private String field36881;
+    private final String field36881;
     private boolean field36882;
-    private long field36883;
+    private final long field36883;
     private boolean field36884;
     private String field36885;
     private BufferedImage field36886;
@@ -41,7 +41,7 @@ public class CaptchaChecker
     public void finalize() throws Throwable {
         try {
             if (this.field36887 != null) {
-                Client.getInstance().method35182(this.field36887);
+                Client.getInstance().addTexture(this.field36887);
             }
         }
         finally {

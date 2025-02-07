@@ -25,9 +25,9 @@ public class Class4926 extends Class4800
     private Class4887 field21075;
     private Class4866 field21076;
     private Class4907 field21077;
-    private Class4861 field21078;
+    private UIButton field21078;
     private boolean field21079;
-    private Class9572 field21080;
+    private Animation field21080;
     
     public Class4926() {
         super("Credits");
@@ -37,34 +37,34 @@ public class Class4926 extends Class4800
         this.field21072 = 0.0f;
         this.field21073 = 0.0f;
         this.field21079 = false;
-        this.field21080 = new Class9572(250, 250, Direction.FORWARDS);
-        this.method14311(false);
+        this.field21080 = new Animation(250, 250, Direction.FORWARDS);
+        this.setListening(false);
         this.field21074 = ClientAssets.method25396("com/mentalfrostbyte/gui/resources/" + ClientAssets.getPanorama(), 0.075f, 8);
-        this.addVisualThing(this.field21075 = new Class4887(this, "login", (this.field20480 - Class4887.field20896) / 2, (this.field20481 - Class4887.field20895) / 2, Class4887.field20896, Class4887.field20895));
-        this.addVisualThing(this.field21076 = new Class4866(this, "register", (this.field20480 - Class4866.field20842) / 2, (this.field20481 - Class4866.field20841) / 2, Class4866.field20842, Class4866.field20841));
+        this.addToList(this.field21075 = new Class4887(this, "login", (this.field20480 - Class4887.field20896) / 2, (this.field20481 - Class4887.field20895) / 2, Class4887.field20896, Class4887.field20895));
+        this.addToList(this.field21076 = new Class4866(this, "register", (this.field20480 - Class4866.field20842) / 2, (this.field20481 - Class4866.field20841) / 2, Class4866.field20842, Class4866.field20841));
         this.method14780();
-        this.addVisualThing(this.field21078 = new Class4861(this, "continue", this.field20480 / 2 - 120, this.field20481 / 2 + 120, 240, 60, new Class6523(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f)), "Continue", ClientFonts.JelloLight25));
-        this.field21078.method14297(false);
+        this.addToList(this.field21078 = new UIButton(this, "continue", this.field20480 / 2 - 120, this.field20481 / 2 + 120, 240, 60, new ColorHelper(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f)), "Continue", ClientFonts.JelloLight25));
+        this.field21078.setEnabled(false);
         this.field21075.method14516(class4841 -> {
             this.field21079 = true;
-            this.field21078.method14297(true);
+            this.field21078.setEnabled(true);
         });
-        this.field21078.method14260((class4803, n) -> Minecraft.method5277().displayGuiScreen(new Class548()));
+        this.field21078.doThis((class4803, n) -> Minecraft.method5277().displayGuiScreen(new Class548()));
     }
     
     public void method14779() {
-        this.field21075.method14297(false);
-        this.field21076.method14297(true);
+        this.field21075.setEnabled(false);
+        this.field21076.setEnabled(true);
     }
     
     public void method14780() {
-        this.field21075.method14297(true);
-        this.field21076.method14297(false);
+        this.field21075.setEnabled(true);
+        this.field21076.setEnabled(false);
     }
     
     public void method14781(final String s, final String s2) {
         if (this.field21077 == null) {
-            this.method14225(() -> {
+            this.runThisOnDimensionUpdate(() -> {
                 final ArrayList list = new ArrayList();
                 list.add(new Class7976(Class294.field1678, s3, 45));
                 ColorUtils.method19175(s4, 240, ClientFonts.JelloLight20);
@@ -83,7 +83,7 @@ public class Class4926 extends Class4800
                 this.field21077.method14745(class4841 -> new Thread(() -> {
                     try {
                         Thread.sleep(114L);
-                        this.method14225(() -> {
+                        this.runThisOnDimensionUpdate(() -> {
                             this.method14245(this.field21077);
                             this.field21077 = null;
                         });
@@ -122,16 +122,16 @@ public class Class4926 extends Class4800
         }
         if (this.field21079) {
             if (this.field21080.calcPercent() == 1.0f) {
-                this.field21075.method14297(false);
+                this.field21075.setEnabled(false);
             }
         }
         if (this.field21079) {
-            final String field32930 = Client.getInstance().method35201().method19347().field32930;
+            final String field32930 = Client.getInstance().getNetworkManager().method19347().field32930;
             final String s = "Welcome back";
             final int n3 = 100;
             final int n4 = (this.field20480 - (n3 + Math.max(ClientFonts.JelloMedium40.getWidth(s), ClientFonts.JelloLight36.getWidth(field32930)) + 10 * 10)) / 2;
             final int n5 = (this.field20481 - n3 * 2) / 2;
-            RenderUtil.method26876(0.0f, 0.0f, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.45f * this.field21080.calcPercent()));
+            RenderUtil.method26876(0.0f, 0.0f, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.45f * this.field21080.calcPercent()));
             RenderUtil.method26904((float)(n4 + 20), (float)(n5 + 40), (float)(n3 + 30), (float)(n3 + 30), ClientAssets.sigma, this.field21080.calcPercent());
             final int n6 = 165;
             final int n7 = 54;

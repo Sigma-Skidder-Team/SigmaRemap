@@ -28,7 +28,7 @@ public class Class1114 implements Runnable
             method14392 = Class4934.method14833(this.field6003).method14392();
             this.field6000.method14245(Class4934.method14833(this.field6003));
         }
-        final Class4803 method14393 = this.field6000.method14224("alts");
+        final CustomGuiScreen method14393 = this.field6000.method14224("alts");
         if (method14393 != null) {
             this.field6000.method14245(method14393);
         }

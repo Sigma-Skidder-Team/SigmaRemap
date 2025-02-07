@@ -266,12 +266,12 @@ public class Class7764 implements Class7763
         if (!this.field31739) {
             this.field31739 = true;
             if (this.field31729 != null) {
-                this.field31730 = this.field31729.method24918();
-                this.field31731 = this.field31729.method24917();
+                this.field31730 = this.field31729.getImageWidth();
+                this.field31731 = this.field31729.getImageHeight();
                 this.field31734 = 0.0f;
                 this.field31735 = 0.0f;
-                this.field31732 = this.field31729.method24920();
-                this.field31733 = this.field31729.method24919();
+                this.field31732 = this.field31729.getWidth();
+                this.field31733 = this.field31729.getHeight();
             }
             this.method24814();
             this.field31742 = (float)(this.field31730 / 2);
@@ -716,10 +716,10 @@ public class Class7764 implements Class7763
     
     public Color method24855(int n, int n2) {
         if (this.field31740 == null) {
-            this.field31740 = this.field31729.method24925();
+            this.field31740 = this.field31729.getTextureData();
         }
-        final int n3 = (int)(this.field31734 * this.field31729.method24922());
-        final int n4 = (int)(this.field31735 * this.field31729.method24921());
+        final int n3 = (int)(this.field31734 * this.field31729.getTextureWidth());
+        final int n4 = (int)(this.field31735 * this.field31729.getTextureHeight());
         if (this.field31732 >= 0.0f) {
             n += n3;
         }
@@ -732,8 +732,8 @@ public class Class7764 implements Class7763
         else {
             n2 = n4 - n2;
         }
-        final int n5 = (n + n2 * this.field31729.method24922()) * (this.field31729.method24914() ? 4 : 3);
-        if (!this.field31729.method24914()) {
+        final int n5 = (n + n2 * this.field31729.getTextureWidth()) * (this.field31729.hasAlpha() ? 4 : 3);
+        if (!this.field31729.hasAlpha()) {
             return new Color(this.method24854(this.field31740[n5]), this.method24854(this.field31740[n5 + 1]), this.method24854(this.field31740[n5 + 2]));
         }
         return new Color(this.method24854(this.field31740[n5]), this.method24854(this.field31740[n5 + 1]), this.method24854(this.field31740[n5 + 2]), this.method24854(this.field31740[n5 + 3]));
@@ -746,7 +746,7 @@ public class Class7764 implements Class7763
     public void method24857() throws SlickException {
         if (!this.method24856()) {
             this.field31741 = true;
-            this.field31729.method24923();
+            this.field31729.release();
         }
     }
     

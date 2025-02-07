@@ -57,8 +57,8 @@ public class NewChunks extends Module
                     final double n3 = -NewChunks.mc.field4644.method5833().method18161().getY();
                     GL11.glDisable(2929);
                     final Class7644 class5742 = new Class7644(n, n3, n2, n + 16.0, n3, n2 + 16.0);
-                    RenderUtil.method26909(class5742, ColorUtils.applyAlpha(ClientColors.field1285.color, 0.1f));
-                    RenderUtil.method26911(class5742, ColorUtils.applyAlpha(ClientColors.field1285.color, 0.1f));
+                    RenderUtil.method26909(class5742, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.color, 0.1f));
+                    RenderUtil.method26911(class5742, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.color, 0.1f));
                     GL11.glColor3f(1.0f, 1.0f, 1.0f);
                     GL11.glEnable(2929);
                     final int n4 = NewChunks.mc.player.chunkCoordX - class5741.field32290;

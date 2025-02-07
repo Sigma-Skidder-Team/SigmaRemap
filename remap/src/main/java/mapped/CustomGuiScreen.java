@@ -15,14 +15,14 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4803 implements Class4925
+public class CustomGuiScreen implements Class4925
 {
     public String field20474;
-    public Class4803 field20475;
-    private final List<Class4803> field20476;
+    public CustomGuiScreen field20475;
+    private final List<CustomGuiScreen> field20476;
     private final List<Class6507> field20477;
-    public int field20478;
-    public int field20479;
+    public int x;
+    public int y;
     public int field20480;
     public int field20481;
     public float field20482;
@@ -40,12 +40,12 @@ public class Class4803 implements Class4925
     public boolean field20494;
     public String field20495;
     public TrueTypeFont field20496;
-    public Class6523 field20497;
+    public ColorHelper field20497;
     private ArrayList<Runnable> field20498;
-    private final List<Class4803> field20499;
+    private final List<CustomGuiScreen> field20499;
     private boolean field20500;
-    private final List<Class4803> field20501;
-    private Class4803 field20502;
+    private final List<CustomGuiScreen> field20501;
+    private CustomGuiScreen field20502;
     private final List<Class8538> field20503;
     private final List<Class7818> field20504;
     private final List<Class9492> field20505;
@@ -54,32 +54,32 @@ public class Class4803 implements Class4925
     private int field20508;
     private int field20509;
     
-    public Class4803(final Class4803 class4803, final String s) {
-        this(class4803, s, 0, 0, 0, 0);
+    public CustomGuiScreen(final CustomGuiScreen customGuiScreen, final String s) {
+        this(customGuiScreen, s, 0, 0, 0, 0);
     }
     
-    public Class4803(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        this(class4803, s, n, n2, n3, n4, Class6523.field25964);
+    public CustomGuiScreen(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        this(customGuiScreen, s, n, n2, n3, n4, ColorHelper.field25964);
     }
     
-    public Class4803(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804) {
-        this(class4803, s, n, n2, n3, n4, class4804, null);
+    public CustomGuiScreen(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804) {
+        this(customGuiScreen, s, n, n2, n3, n4, class4804, null);
     }
     
-    public Class4803(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2) {
-        this(class4803, s, n, n2, n3, n4, class4804, s2, ClientFonts.JelloLight25);
+    public CustomGuiScreen(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804, final String s2) {
+        this(customGuiScreen, s, n, n2, n3, n4, class4804, s2, ClientFonts.JelloLight25);
     }
     
-    public Class4803(final Class4803 field20475, final String field20476, final int field20477, final int field20478, final int field20479, final int field20480, final Class6523 field20481, final String field20482, final TrueTypeFont field20483) {
-        this.field20476 = new ArrayList<Class4803>();
+    public CustomGuiScreen(final CustomGuiScreen field20475, final String field20476, final int field20477, final int x, final int y, final int field20480, final ColorHelper field20481, final String field20482, final TrueTypeFont field20483) {
+        this.field20476 = new ArrayList<CustomGuiScreen>();
         this.field20477 = new ArrayList<Class6507>();
         this.field20482 = 1.0f;
         this.field20483 = 1.0f;
         this.field20484 = 0;
         this.field20485 = 0;
         this.field20498 = new ArrayList<Runnable>();
-        this.field20499 = new ArrayList<Class4803>();
-        this.field20501 = new ArrayList<Class4803>();
+        this.field20499 = new ArrayList<CustomGuiScreen>();
+        this.field20501 = new ArrayList<CustomGuiScreen>();
         this.field20503 = new ArrayList<Class8538>();
         this.field20504 = new ArrayList<Class7818>();
         this.field20505 = new ArrayList<Class9492>();
@@ -87,9 +87,9 @@ public class Class4803 implements Class4925
         this.field20507 = new ArrayList<Class8749>();
         this.field20474 = field20476;
         this.field20475 = field20475;
-        this.field20478 = field20477;
-        this.field20479 = field20478;
-        this.field20480 = field20479;
+        this.x = field20477;
+        this.y = x;
+        this.field20480 = y;
         this.field20481 = field20480;
         this.field20495 = field20482;
         this.field20497 = field20481;
@@ -101,30 +101,30 @@ public class Class4803 implements Class4925
     }
     
     private void method14223() {
-        for (final Class4803 class4803 : new ArrayList(this.field20476)) {
-            if (class4803.method14300()) {
-                this.field20476.remove(class4803);
-                this.field20476.add(class4803);
+        for (final CustomGuiScreen customGuiScreen : new ArrayList(this.field20476)) {
+            if (customGuiScreen.method14300()) {
+                this.field20476.remove(customGuiScreen);
+                this.field20476.add(customGuiScreen);
             }
-            if (!class4803.method14302()) {
+            if (!customGuiScreen.method14302()) {
                 continue;
             }
-            this.field20476.remove(class4803);
-            this.field20476.add(0, class4803);
+            this.field20476.remove(customGuiScreen);
+            this.field20476.add(0, customGuiScreen);
         }
     }
     
-    public Class4803 method14224(final String anObject) {
-        for (final Class4803 class4803 : this.field20476) {
-            if (!class4803.method14266().equals(anObject)) {
+    public CustomGuiScreen method14224(final String anObject) {
+        for (final CustomGuiScreen customGuiScreen : this.field20476) {
+            if (!customGuiScreen.method14266().equals(anObject)) {
                 continue;
             }
-            return class4803;
+            return customGuiScreen;
         }
         return null;
     }
     
-    public void method14225(final Runnable e) {
+    public void runThisOnDimensionUpdate(final Runnable e) {
         synchronized (this) {
             if (e != null) {
                 this.field20498.add(e);
@@ -133,15 +133,15 @@ public class Class4803 implements Class4925
     }
     
     private void method14226() {
-        for (final Class4803 class4803 : this.field20501) {
-            this.field20476.remove(class4803);
-            if (this.field20502 != class4803) {
+        for (final CustomGuiScreen customGuiScreen : this.field20501) {
+            this.field20476.remove(customGuiScreen);
+            if (this.field20502 != customGuiScreen) {
                 continue;
             }
             this.field20502 = null;
         }
         this.field20499.clear();
-        final Iterator<Class4803> iterator2 = this.field20499.iterator();
+        final Iterator<CustomGuiScreen> iterator2 = this.field20499.iterator();
         while (iterator2.hasNext()) {
             this.field20476.add(iterator2.next());
         }
@@ -166,7 +166,7 @@ public class Class4803 implements Class4925
         this.field20498.clear();
         this.field20500 = true;
         try {
-            final Iterator<Class4803> iterator = this.field20476.iterator();
+            final Iterator<CustomGuiScreen> iterator = this.field20476.iterator();
             while (iterator.hasNext()) {
                 iterator.next().method14200(field20508, field20509);
             }
@@ -178,7 +178,7 @@ public class Class4803 implements Class4925
         this.field20492 &= this.field20491;
         for (final Class6507 class6507 : this.method14269()) {
             if (this.field20486) {
-                class6507.method19597(this, this.method14267());
+                class6507.method19597(this, this.getParent());
             }
         }
         this.method14226();
@@ -203,22 +203,22 @@ public class Class4803 implements Class4925
         Class8933.method31503();
         GL11.glAlphaFunc(519, 0.0f);
         GL11.glTranslatef((float)this.method14272(), (float)this.method14274(), 0.0f);
-        for (final Class4803 class4803 : this.field20476) {
-            if (!class4803.method14296()) {
+        for (final CustomGuiScreen customGuiScreen : this.field20476) {
+            if (!customGuiScreen.method14296()) {
                 continue;
             }
             GL11.glPushMatrix();
-            class4803.draw(n);
+            customGuiScreen.draw(n);
             GL11.glPopMatrix();
         }
     }
     
     public boolean method14230() {
-        for (final Class4803 class4803 : this.method14250()) {
-            if (class4803 instanceof Class4831 && class4803.field20488) {
+        for (final CustomGuiScreen customGuiScreen : this.method14250()) {
+            if (customGuiScreen instanceof TextField && customGuiScreen.field20488) {
                 return true;
             }
-            if (!class4803.method14230()) {
+            if (!customGuiScreen.method14230()) {
                 continue;
             }
             return true;
@@ -227,41 +227,41 @@ public class Class4803 implements Class4925
     }
     
     public void method14231(final int n) {
-        for (final Class4803 class4803 : this.field20476) {
-            if (!class4803.isHovered()) {
+        for (final CustomGuiScreen customGuiScreen : this.field20476) {
+            if (!customGuiScreen.isHovered()) {
                 continue;
             }
-            if (!class4803.method14296()) {
+            if (!customGuiScreen.method14296()) {
                 continue;
             }
-            class4803.method14231(n);
+            customGuiScreen.method14231(n);
         }
     }
     
     @Override
     public void method14232(final char c) {
-        for (final Class4803 class4803 : this.field20476) {
-            if (!class4803.isHovered()) {
+        for (final CustomGuiScreen customGuiScreen : this.field20476) {
+            if (!customGuiScreen.isHovered()) {
                 continue;
             }
-            if (!class4803.method14296()) {
+            if (!customGuiScreen.method14296()) {
                 continue;
             }
-            class4803.method14232(c);
+            customGuiScreen.method14232(c);
         }
         this.method14265(c);
     }
     
     @Override
     public void method14204(final int n) {
-        for (final Class4803 class4803 : this.field20476) {
-            if (!class4803.isHovered()) {
+        for (final CustomGuiScreen customGuiScreen : this.field20476) {
+            if (!customGuiScreen.isHovered()) {
                 continue;
             }
-            if (!class4803.method14296()) {
+            if (!customGuiScreen.method14296()) {
                 continue;
             }
-            class4803.method14204(n);
+            customGuiScreen.method14204(n);
         }
         this.method14263(n);
     }
@@ -270,14 +270,14 @@ public class Class4803 implements Class4925
     public boolean method14211(final int n, final int n2, final int n3) {
         boolean b = false;
         for (int i = this.field20476.size() - 1; i >= 0; --i) {
-            final Class4803 class4803 = this.field20476.get(i);
+            final CustomGuiScreen customGuiScreen = this.field20476.get(i);
             boolean b2 = false;
             Label_0140: {
-                if (class4803.method14267() != null) {
-                    if (class4803.method14267() instanceof Class4817) {
-                        if (class4803.method14267().method14236(n, n2)) {
-                            if (class4803.method14267().method14296()) {
-                                if (class4803.method14267().isHovered()) {
+                if (customGuiScreen.getParent() != null) {
+                    if (customGuiScreen.getParent() instanceof Class4817) {
+                        if (customGuiScreen.getParent().method14236(n, n2)) {
+                            if (customGuiScreen.getParent().method14296()) {
+                                if (customGuiScreen.getParent().isHovered()) {
                                     b2 = true;
                                     break Label_0140;
                                 }
@@ -289,20 +289,20 @@ public class Class4803 implements Class4925
             }
             final boolean b3 = b2;
             if (!b) {
-                if (class4803.isHovered()) {
-                    if (class4803.method14296()) {
-                        if (class4803.method14236(n, n2) || b3) {
-                            class4803.method14211(n, n2, n3);
+                if (customGuiScreen.isHovered()) {
+                    if (customGuiScreen.method14296()) {
+                        if (customGuiScreen.method14236(n, n2) || b3) {
+                            customGuiScreen.method14211(n, n2, n3);
                             b = !b3;
                             continue;
                         }
                     }
                 }
             }
-            class4803.method14307(false);
-            final Class4803 class4804 = class4803;
+            customGuiScreen.method14307(false);
+            final CustomGuiScreen class4804 = customGuiScreen;
             if (class4804 != null) {
-                final Iterator<Class4803> iterator = class4804.method14250().iterator();
+                final Iterator<CustomGuiScreen> iterator = class4804.method14250().iterator();
                 while (iterator.hasNext()) {
                     iterator.next().method14307(false);
                 }
@@ -322,14 +322,14 @@ public class Class4803 implements Class4925
     @Override
     public void method14233(final int n, final int n2, final int n3) {
         this.field20491 = this.method14236(n, n2);
-        for (final Class4803 class4803 : this.field20476) {
-            if (!class4803.isHovered()) {
+        for (final CustomGuiScreen customGuiScreen : this.field20476) {
+            if (!customGuiScreen.isHovered()) {
                 continue;
             }
-            if (!class4803.method14296()) {
+            if (!customGuiScreen.method14296()) {
                 continue;
             }
-            class4803.method14233(n, n2, n3);
+            customGuiScreen.method14233(n, n2, n3);
         }
         this.method14259(n3);
         if (this.method14309()) {
@@ -347,14 +347,14 @@ public class Class4803 implements Class4925
     
     @Override
     public void method14235(final float n) {
-        for (final Class4803 class4803 : this.field20476) {
-            if (!class4803.isHovered()) {
+        for (final CustomGuiScreen customGuiScreen : this.field20476) {
+            if (!customGuiScreen.isHovered()) {
                 continue;
             }
-            if (!class4803.method14296()) {
+            if (!customGuiScreen.method14296()) {
                 continue;
             }
-            class4803.method14235(n);
+            customGuiScreen.method14235(n);
         }
     }
     
@@ -378,16 +378,16 @@ public class Class4803 implements Class4925
         if (method14236) {
             if (this.field20475 != null) {
                 if (b) {
-                    for (final Class4803 class4803 : this.method14250()) {
-                        if (class4803.method14296() && class4803.method14236(n, n2)) {
+                    for (final CustomGuiScreen customGuiScreen : this.method14250()) {
+                        if (customGuiScreen.method14296() && customGuiScreen.method14236(n, n2)) {
                             return false;
                         }
                     }
                 }
-                Class4803 class4804 = this;
-                for (Class4803 class4805 = this.method14267(); class4805 != null; class4805 = class4805.method14267()) {
+                CustomGuiScreen class4804 = this;
+                for (CustomGuiScreen class4805 = this.getParent(); class4805 != null; class4805 = class4805.getParent()) {
                     for (int i = class4805.method14249(class4804) + 1; i < class4805.method14250().size(); ++i) {
-                        final Class4803 class4806 = class4805.method14250().get(i);
+                        final CustomGuiScreen class4806 = class4805.method14250().get(i);
                         if (class4806 != class4804) {
                             if (class4806.method14296()) {
                                 if (class4806.method14236(n, n2)) {
@@ -407,31 +407,31 @@ public class Class4803 implements Class4925
         return this.method14237(n, n2, true);
     }
     
-    public void addVisualThing(final Class4803 class4803) {
-        if (class4803 == null) {
+    public void addToList(final CustomGuiScreen customGuiScreen) {
+        if (customGuiScreen == null) {
             return;
         }
-        for (final Class4803 class4804 : this.method14250()) {
-            if (class4804.method14266().equals(class4803.method14266())) {
+        for (final CustomGuiScreen class4804 : this.method14250()) {
+            if (class4804.method14266().equals(customGuiScreen.method14266())) {
                 throw new RuntimeException("Children with duplicate IDs! Child with id \"" + class4804.method14266() + "\" already exists in view \"" + this.method14266() + "\"!");
             }
         }
-        class4803.method14268(this);
+        customGuiScreen.method14268(this);
         if (this.field20500) {
-            this.field20499.add(class4803);
+            this.field20499.add(customGuiScreen);
         }
         else {
             try {
-                this.field20476.add(class4803);
+                this.field20476.add(customGuiScreen);
             }
             catch (final ConcurrentModificationException ex) {
-                this.field20499.add(class4803);
+                this.field20499.add(customGuiScreen);
             }
         }
     }
     
     public boolean method14240(final String anObject) {
-        final Iterator<Class4803> iterator = this.method14250().iterator();
+        final Iterator<CustomGuiScreen> iterator = this.method14250().iterator();
         while (iterator.hasNext()) {
             if (!iterator.next().method14266().equals(anObject)) {
                 continue;
@@ -441,65 +441,65 @@ public class Class4803 implements Class4925
         return false;
     }
     
-    public void method14241(final Class4803 class4803) {
-        if (class4803 != null) {
-            final Iterator<Class4803> iterator = this.method14250().iterator();
+    public void method14241(final CustomGuiScreen customGuiScreen) {
+        if (customGuiScreen != null) {
+            final Iterator<CustomGuiScreen> iterator = this.method14250().iterator();
             while (iterator.hasNext()) {
-                if (!iterator.next().method14266().equals(class4803.method14266())) {
+                if (!iterator.next().method14266().equals(customGuiScreen.method14266())) {
                     continue;
                 }
                 throw new RuntimeException("Children with duplicate IDs!");
             }
-            class4803.method14268(this);
-            this.field20499.add(class4803);
+            customGuiScreen.method14268(this);
+            this.field20499.add(customGuiScreen);
         }
     }
     
-    public void method14242(final Class4803 class4803) {
-        if (class4803 == null) {
+    public void method14242(final CustomGuiScreen customGuiScreen) {
+        if (customGuiScreen == null) {
             return;
         }
-        final Iterator<Class4803> iterator = this.method14250().iterator();
+        final Iterator<CustomGuiScreen> iterator = this.method14250().iterator();
         while (iterator.hasNext()) {
-            if (iterator.next().method14266().equals(class4803.method14266())) {
+            if (iterator.next().method14266().equals(customGuiScreen.method14266())) {
                 throw new RuntimeException("Children with duplicate IDs!");
             }
         }
-        class4803.method14268(this);
+        customGuiScreen.method14268(this);
         try {
-            this.field20476.add(class4803);
+            this.field20476.add(customGuiScreen);
         }
         catch (final ConcurrentModificationException ex) {}
     }
     
-    public void method14243(final Class4803 class4803) {
+    public void method14243(final CustomGuiScreen customGuiScreen) {
         if (this.field20500) {
-            this.field20501.add(class4803);
+            this.field20501.add(customGuiScreen);
         }
         else {
-            this.method14245(class4803);
+            this.method14245(customGuiScreen);
         }
     }
     
-    public void method14244(final Class4803 class4803) {
-        this.field20501.add(class4803);
+    public void method14244(final CustomGuiScreen customGuiScreen) {
+        this.field20501.add(customGuiScreen);
     }
     
-    public void method14245(final Class4803 class4803) {
-        this.field20476.remove(class4803);
+    public void method14245(final CustomGuiScreen customGuiScreen) {
+        this.field20476.remove(customGuiScreen);
         if (this.field20502 != null) {
-            if (this.field20502.equals(class4803)) {
+            if (this.field20502.equals(customGuiScreen)) {
                 this.field20502 = null;
             }
         }
-        if (this.field20499.contains(class4803)) {
-            this.field20499.remove(class4803);
+        if (this.field20499.contains(customGuiScreen)) {
+            this.field20499.remove(customGuiScreen);
         }
     }
     
-    public void method14246(final Class4803 class4803) {
-        for (final Class4803 class4804 : this.method14250()) {
-            if (!class4804.field20474.equals(class4803.field20474)) {
+    public void method14246(final CustomGuiScreen customGuiScreen) {
+        for (final CustomGuiScreen class4804 : this.method14250()) {
+            if (!class4804.field20474.equals(customGuiScreen.field20474)) {
                 continue;
             }
             this.method14243(class4804);
@@ -510,15 +510,15 @@ public class Class4803 implements Class4925
         this.field20476.clear();
     }
     
-    public boolean method14248(final Class4803 class4803) {
-        return this.field20476.contains(class4803);
+    public boolean method14248(final CustomGuiScreen customGuiScreen) {
+        return this.field20476.contains(customGuiScreen);
     }
     
-    public int method14249(final Class4803 class4803) {
-        return this.field20476.indexOf(class4803);
+    public int method14249(final CustomGuiScreen customGuiScreen) {
+        return this.field20476.indexOf(customGuiScreen);
     }
     
-    public List<Class4803> method14250() {
+    public List<CustomGuiScreen> method14250() {
         return this.field20476;
     }
     
@@ -531,11 +531,11 @@ public class Class4803 implements Class4925
     }
     
     public void method14252() {
-        for (final Class4803 class4803 : this.field20475.method14250()) {
-            if (class4803 == this) {
+        for (final CustomGuiScreen customGuiScreen : this.field20475.method14250()) {
+            if (customGuiScreen == this) {
                 return;
             }
-            class4803.method14251();
+            customGuiScreen.method14251();
         }
     }
     
@@ -560,7 +560,7 @@ public class Class4803 implements Class4925
     
     public final JSONObject method14254(final JSONObject JSONObject) {
         final JSONArray class4406 = new JSONArray();
-        for (final Class4803 class4407 : this.field20476) {
+        for (final CustomGuiScreen class4407 : this.field20476) {
             if (!class4407.method14310()) {
                 continue;
             }
@@ -576,8 +576,8 @@ public class Class4803 implements Class4925
     
     public void method14203(final JSONObject JSONObject) {
         if (this.method14310()) {
-            this.field20478 = CJsonUtils.method26632(JSONObject, "x", this.field20478);
-            this.field20479 = CJsonUtils.method26632(JSONObject, "y", this.field20479);
+            this.x = CJsonUtils.method26632(JSONObject, "x", this.x);
+            this.y = CJsonUtils.method26632(JSONObject, "y", this.y);
             if (this.method14312()) {
                 this.field20480 = CJsonUtils.method26632(JSONObject, "width", this.field20480);
                 this.field20481 = CJsonUtils.method26632(JSONObject, "height", this.field20481);
@@ -590,7 +590,7 @@ public class Class4803 implements Class4925
                     final JSONObject method26639 = method26638.getJSONObject(i);
                     final String method26640 = CJsonUtils.method26636(method26639, "id", null);
                     final int method26641 = CJsonUtils.method26632(method26639, "index", -1);
-                    for (final Class4803 class4406 : list) {
+                    for (final CustomGuiScreen class4406 : list) {
                         if (!class4406.method14266().equals(method26640)) {
                             continue;
                         }
@@ -616,9 +616,9 @@ public class Class4803 implements Class4925
         if (this == o) {
             return true;
         }
-        if (o instanceof Class4803) {
-            final Class4803 class4803 = (Class4803)o;
-            return this.field20474.equals(class4803.field20474) && (this.method14267() == null || this.method14267().equals(class4803.method14267()));
+        if (o instanceof CustomGuiScreen) {
+            final CustomGuiScreen customGuiScreen = (CustomGuiScreen)o;
+            return this.field20474.equals(customGuiScreen.field20474) && (this.getParent() == null || this.getParent().equals(customGuiScreen.getParent()));
         }
         return false;
     }
@@ -627,7 +627,7 @@ public class Class4803 implements Class4925
         class6802.method20822(this);
     }
     
-    public final Class4803 method14256(final Class8538 class8538) {
+    public final CustomGuiScreen method14256(final Class8538 class8538) {
         this.field20503.add(class8538);
         return this;
     }
@@ -639,7 +639,7 @@ public class Class4803 implements Class4925
         }
     }
     
-    public Class4803 method14258(final Class7818 class7818) {
+    public CustomGuiScreen method14258(final Class7818 class7818) {
         this.field20504.add(class7818);
         return this;
     }
@@ -651,7 +651,7 @@ public class Class4803 implements Class4925
         }
     }
     
-    public Class4803 method14260(final Class9492 class9492) {
+    public CustomGuiScreen doThis(final Class9492 class9492) {
         this.field20505.add(class9492);
         return this;
     }
@@ -663,7 +663,7 @@ public class Class4803 implements Class4925
         }
     }
     
-    public final Class4803 method14262(final Class8306 class8306) {
+    public final CustomGuiScreen method14262(final Class8306 class8306) {
         this.field20506.add(class8306);
         return this;
     }
@@ -675,7 +675,7 @@ public class Class4803 implements Class4925
         }
     }
     
-    public final Class4803 method14264(final Class8749 class8749) {
+    public final CustomGuiScreen method14264(final Class8749 class8749) {
         this.field20507.add(class8749);
         return this;
     }
@@ -691,11 +691,11 @@ public class Class4803 implements Class4925
         return this.field20474;
     }
     
-    public Class4803 method14267() {
+    public CustomGuiScreen getParent() {
         return this.field20475;
     }
     
-    public void method14268(final Class4803 field20475) {
+    public void method14268(final CustomGuiScreen field20475) {
         this.field20475 = field20475;
     }
     
@@ -712,19 +712,19 @@ public class Class4803 implements Class4925
     }
     
     public int method14272() {
-        return this.field20478;
+        return this.x;
     }
     
     public void method14273(final int field20478) {
-        this.field20478 = field20478;
+        this.x = field20478;
     }
     
     public int method14274() {
-        return this.field20479;
+        return this.y;
     }
     
     public void method14275(final int field20479) {
-        this.field20479 = field20479;
+        this.y = field20479;
     }
     
     public int method14276() {
@@ -744,11 +744,11 @@ public class Class4803 implements Class4925
     }
     
     public int method14280() {
-        return (this.field20475 == null) ? this.field20478 : (this.field20475.method14280() + this.field20478);
+        return (this.field20475 == null) ? this.x : (this.field20475.method14280() + this.x);
     }
     
     public int method14281() {
-        return (this.field20475 == null) ? this.field20479 : (this.field20475.method14281() + this.field20479);
+        return (this.field20475 == null) ? this.y : (this.field20475.method14281() + this.y);
     }
     
     public float method14282() {
@@ -756,7 +756,7 @@ public class Class4803 implements Class4925
     }
     
     public float method14283() {
-        return (this.method14267() == null) ? this.method14282() : (this.method14267().method14283() * this.method14282());
+        return (this.getParent() == null) ? this.method14282() : (this.getParent().method14283() * this.method14282());
     }
     
     public float method14284() {
@@ -764,7 +764,7 @@ public class Class4803 implements Class4925
     }
     
     public float method14285() {
-        return (this.method14267() == null) ? this.method14284() : (this.method14267().method14285() * this.method14284());
+        return (this.getParent() == null) ? this.method14284() : (this.getParent().method14285() * this.method14284());
     }
     
     public void method14286(final float field20482) {
@@ -785,7 +785,7 @@ public class Class4803 implements Class4925
     }
     
     public int method14290() {
-        return (this.method14267() == null) ? this.method14289() : (this.method14267().method14290() * this.method14289());
+        return (this.getParent() == null) ? this.method14289() : (this.getParent().method14290() * this.method14289());
     }
     
     public int method14291() {
@@ -793,7 +793,7 @@ public class Class4803 implements Class4925
     }
     
     public int method14292() {
-        return (this.method14267() == null) ? this.method14291() : (this.method14267().method14292() * this.method14291());
+        return (this.getParent() == null) ? this.method14291() : (this.getParent().method14292() * this.method14291());
     }
     
     public void method14293(final int field20484) {
@@ -813,7 +813,7 @@ public class Class4803 implements Class4925
         return this.field20486;
     }
     
-    public void method14297(final boolean field20486) {
+    public void setEnabled(final boolean field20486) {
         this.field20486 = field20486;
     }
     
@@ -872,7 +872,7 @@ public class Class4803 implements Class4925
         return this.field20493;
     }
     
-    public void method14311(final boolean field20493) {
+    public void setListening(final boolean field20493) {
         this.field20493 = field20493;
     }
     
@@ -884,7 +884,7 @@ public class Class4803 implements Class4925
         this.field20494 = field20494;
     }
     
-    public String method14314() {
+    public String getTypedText() {
         return this.field20495;
     }
     
@@ -896,15 +896,15 @@ public class Class4803 implements Class4925
         return this.field20496;
     }
     
-    public void method14317(final TrueTypeFont field20496) {
+    public void setFont(final TrueTypeFont field20496) {
         this.field20496 = field20496;
     }
     
-    public Class6523 method14318() {
+    public ColorHelper method14318() {
         return this.field20497;
     }
     
-    public void method14319(final Class6523 field20497) {
+    public void method14319(final ColorHelper field20497) {
         this.field20497 = field20497;
     }
     

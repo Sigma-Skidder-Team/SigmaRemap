@@ -14,17 +14,17 @@ public class Class4885 extends Class4841
     public Class4903 field20884;
     public Class4884 field20885;
     
-    public Class4885(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final int n5, final boolean field20882) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4885(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final int n5, final boolean field20882) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20881 = n5;
         final Color color = new Color(n5);
         final float[] rgBtoHSB = Color.RGBtoHSB(color.getRed(), color.getGreen(), color.getBlue(), null);
-        this.addVisualThing(this.field20883 = new Class4904(this, "block", 10, 10, n3 - 20, n4 - 50, rgBtoHSB[0], rgBtoHSB[1], rgBtoHSB[2]));
-        this.addVisualThing(this.field20884 = new Class4903(this, "slider", 14, n4 - 25, n3 - 65, 8, rgBtoHSB[0]));
-        this.addVisualThing(this.field20885 = new Class4884(this, "bubble", n3 - 40, n4 - 32, 25, 25, color.getRGB()));
+        this.addToList(this.field20883 = new Class4904(this, "block", 10, 10, n3 - 20, n4 - 50, rgBtoHSB[0], rgBtoHSB[1], rgBtoHSB[2]));
+        this.addToList(this.field20884 = new Class4903(this, "slider", 14, n4 - 25, n3 - 65, 8, rgBtoHSB[0]));
+        this.addToList(this.field20885 = new Class4884(this, "bubble", n3 - 40, n4 - 32, 25, 25, color.getRGB()));
         this.field20883.method14516(class4841 -> this.method14624());
         this.field20884.method14516(class4841 -> this.method14624());
-        this.field20885.method14260((class4803, n) -> this.method14619(!this.method14621()));
+        this.field20885.doThis((class4803, n) -> this.method14619(!this.method14621()));
         this.field20882 = field20882;
     }
     
@@ -70,10 +70,10 @@ public class Class4885 extends Class4841
     
     public static void method14626(final int n, final int n2, final int n3, final float n4) {
         final int n5 = 14;
-        RenderUtil.method26888((float)n, (float)n2, (float)n5, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.1f * n4));
-        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 1), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.14f * n4));
+        RenderUtil.method26888((float)n, (float)n2, (float)n5, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f * n4));
+        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 1), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.14f * n4));
         RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 2), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
-        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 6), ColorUtils.applyAlpha(ColorUtils.method19120(n3, ClientColors.field1273.color, 0.7f), n4));
+        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 6), ColorUtils.applyAlpha(ColorUtils.method19120(n3, ClientColors.DEEP_TEAL.color, 0.7f), n4));
         RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 7), ColorUtils.applyAlpha(n3, n4));
     }
     

@@ -20,26 +20,26 @@ public class Class4848 extends Class4841
         return Math.round((n2 + n * (Math.abs(n3 - n2) / n4) * n4) * Math.pow(10.0, n5)) / (float)Math.pow(10.0, n5);
     }
     
-    public Class4848(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4848(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20773 = false;
         this.method14536();
     }
     
-    public Class4848(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804) {
-        super(class4803, s, n, n2, n3, n4, class4804, false);
+    public Class4848(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804) {
+        super(customGuiScreen, s, n, n2, n3, n4, class4804, false);
         this.field20773 = false;
         this.method14536();
     }
     
-    public Class4848(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2) {
-        super(class4803, s, n, n2, n3, n4, class4804, s2, false);
+    public Class4848(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804, final String s2) {
+        super(customGuiScreen, s, n, n2, n3, n4, class4804, s2, false);
         this.field20773 = false;
         this.method14536();
     }
     
-    public Class4848(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class6523 class4804, final String s2, final TrueTypeFont class4805) {
-        super(class4803, s, n, n2, n3, n4, class4804, s2, class4805, false);
+    public Class4848(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804, final String s2, final TrueTypeFont class4805) {
+        super(customGuiScreen, s, n, n2, n3, n4, class4804, s2, class4805, false);
         this.field20773 = false;
         this.method14536();
     }
@@ -58,11 +58,11 @@ public class Class4848 extends Class4841
     
     @Override
     public void draw(final float n) {
-        RenderUtil.method26874((float)(this.field20478 + this.field20480), (float)(this.field20479 + 1), 1.0f, (float)(this.field20481 - 2), -8882056);
-        RenderUtil.method26874((float)(this.field20478 + 1), (float)this.field20479, (float)(this.field20480 - 1), (float)this.field20481, -8882056);
-        RenderUtil.method26874((float)this.field20478, (float)(this.field20479 + 1), 1.0f, (float)(this.field20481 - 2), -6250336);
-        RenderUtil.method26874((float)(this.field20478 + 1), (float)this.field20479, this.field20480 * this.field20772 - 1.0f, (float)this.field20481, -6250336);
-        this.method14537(Math.round(this.field20478 + this.field20480 * this.field20772) - 2, this.field20479 - 3);
+        RenderUtil.method26874((float)(this.x + this.field20480), (float)(this.y + 1), 1.0f, (float)(this.field20481 - 2), -8882056);
+        RenderUtil.method26874((float)(this.x + 1), (float)this.y, (float)(this.field20480 - 1), (float)this.field20481, -8882056);
+        RenderUtil.method26874((float)this.x, (float)(this.y + 1), 1.0f, (float)(this.field20481 - 2), -6250336);
+        RenderUtil.method26874((float)(this.x + 1), (float)this.y, this.field20480 * this.field20772 - 1.0f, (float)this.field20481, -6250336);
+        this.method14537(Math.round(this.x + this.field20480 * this.field20772) - 2, this.y - 3);
         super.draw(n);
     }
     

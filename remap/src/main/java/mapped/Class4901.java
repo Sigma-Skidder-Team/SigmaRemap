@@ -34,8 +34,8 @@ public class Class4901 extends Class4841
     private final List<Class8058> field20971;
     private final List<Class8345> field20972;
     
-    public Class4901(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4901(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20957 = new ArrayList<Class4868>();
         this.field20961 = 8;
         this.field20962 = 0.0f;
@@ -44,9 +44,9 @@ public class Class4901 extends Class4841
         this.field20972 = new ArrayList<Class8345>();
         final int n5 = 90;
         final int n6 = 40;
-        this.addVisualThing(this.field20959 = new Class4847(this, "zoom", n3 - n6 - 10, n4 - n5 - 10, n6, n5));
+        this.addToList(this.field20959 = new Class4847(this, "zoom", n3 - n6 - 10, n4 - n5 - 10, n6, n5));
         this.field20960 = Minecraft.method5277().world.method6965(Minecraft.method5277().player.method1894()).method7019();
-        this.method14311(false);
+        this.setListening(false);
     }
     
     public void method14717(final boolean b) {
@@ -147,14 +147,14 @@ public class Class4901 extends Class4841
         final Class1663 method5278 = method5277.method5290();
         method5277.method5290();
         method5278.method5849(Class1663.field9428);
-        RenderUtil.method26871(this.field20478, this.field20479, this.field20478 + this.field20480, this.field20479 + this.field20481, true);
+        RenderUtil.method26871(this.x, this.y, this.x + this.field20480, this.y + this.field20481, true);
         GL11.glPushMatrix();
-        GL11.glTranslatef((float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + this.field20481 / 2), 0.0f);
+        GL11.glTranslatef((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), 0.0f);
         GL11.glScalef(n4, n4, 0.0f);
         GL11.glRotatef(-90.0f, 0.0f, 0.0f, 1.0f);
-        GL11.glTranslatef((float)(-this.field20478 - this.field20480 / 2), (float)(-this.field20479 - this.field20481 / 2), 0.0f);
+        GL11.glTranslatef((float)(-this.x - this.field20480 / 2), (float)(-this.y - this.field20481 / 2), 0.0f);
         GL11.glTranslated(-n6, n7, 0.0);
-        RenderUtil.method26903((float)(this.field20478 + n2), (float)(this.field20479 + n3), (float)max, (float)max, this.field20966.field30451, ClientColors.LIGHT_GREYISH_BLUE.color, 0.0f, 0.0f, (float)this.field20966.field30449, (float)this.field20966.field30450, true, false);
+        RenderUtil.method26903((float)(this.x + n2), (float)(this.y + n3), (float)max, (float)max, this.field20966.field30451, ClientColors.LIGHT_GREYISH_BLUE.color, 0.0f, 0.0f, (float)this.field20966.field30449, (float)this.field20966.field30450, true, false);
         GL11.glPopMatrix();
         for (final Class8124 class7861 : Client.getInstance().method35200().method24262()) {
             final float n8 = this.field20960.field32290 * 16 - this.field20963 * 16.0f;
@@ -162,11 +162,11 @@ public class Class4901 extends Class4841
             final float n10 = class7861.field33469 - n8 + 1.0f;
             final float n11 = class7861.field33470 - n9 + 1.0f;
             final float n12 = max / ((this.field20961 - 1) * 2.0f);
-            RenderUtil.method26899((float)(this.field20478 + Math.round(n10 * n12 / 16.0f) + this.field20480 / 2 - 16), (float)(this.field20479 + Math.round(n11 * n12 / 16.0f) + this.field20481 / 2 - 42), 32.0f, 46.0f, ClientAssets.waypoint, class7861.field33471);
+            RenderUtil.drawImage((float)(this.x + Math.round(n10 * n12 / 16.0f) + this.field20480 / 2 - 16), (float)(this.y + Math.round(n11 * n12 / 16.0f) + this.field20481 / 2 - 42), 32.0f, 46.0f, ClientAssets.waypoint, class7861.field33471);
         }
-        RenderUtil.method26872();
+        RenderUtil.endScissor();
         final String string = Math.round(this.field20960.field32290 * 16 - this.field20963 * 16.0f) + "  " + Math.round(this.field20960.field32291 * 16 - this.field20962 * 16.0f);
-        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.field20478 - ClientFonts.JelloLight14.getWidth(string) - 23), (float)(this.field20479 + 35), string, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.4f));
+        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.x - ClientFonts.JelloLight14.getWidth(string) - 23), (float)(this.y + 35), string, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.4f));
         this.field20968 = this.field20962;
         this.field20969 = this.field20963;
         this.field20967 = this.field20961;

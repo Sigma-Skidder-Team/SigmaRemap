@@ -34,7 +34,7 @@ public class Class5837
         hashMap.put("X-Forwarded-For", "1.1.1.1");
         hashMap.put("User-Agent", "Agora client");
         hashMap.put("Referer", "https://agora.sigmaclient.info");
-        final String replaceAll = Client.getInstance().method35201().getToken().replaceAll("-", "");
+        final String replaceAll = Client.getInstance().getNetworkManager().getToken().replaceAll("-", "");
         try {
             (this.field23930 = new Class959(this, "wss://wsprg.sigmaclient.info/ws/agora/" + replaceAll, hashMap)).method5487(HttpsURLConnection.getDefaultSSLSocketFactory());
             this.field23930.method5453();

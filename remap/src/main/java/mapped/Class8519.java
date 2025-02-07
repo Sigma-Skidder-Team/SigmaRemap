@@ -679,9 +679,9 @@ public class Class8519
     }
     
     public void method28522(final Class7764 class7764, final int n, final int n2) {
-        final int n3 = class7764.method24852().method24914() ? 6408 : 6407;
+        final int n3 = class7764.method24852().hasAlpha() ? 6408 : 6407;
         class7764.method24811();
-        Class8519.field34937.method19281(3553, 0, n3, n, this.field34953 - (n2 + class7764.method24844()), class7764.method24852().method24922(), class7764.method24852().method24921(), 0);
+        Class8519.field34937.method19281(3553, 0, n3, n, this.field34953 - (n2 + class7764.method24844()), class7764.method24852().getTextureWidth(), class7764.method24852().getTextureHeight(), 0);
         class7764.method24848();
     }
     

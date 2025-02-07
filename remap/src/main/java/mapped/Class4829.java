@@ -18,13 +18,13 @@ public class Class4829 extends Class4825
     public final List<Class4868> field20658;
     private Texture field20659;
     
-    public Class4829(final Class4803 class4803, final String s) {
-        super(class4803, s, 0, Minecraft.method5277().window.method7695() - 70, Minecraft.method5277().window.method7694(), 110, false);
+    public Class4829(final CustomGuiScreen customGuiScreen, final String s) {
+        super(customGuiScreen, s, 0, Minecraft.method5277().window.method7695() - 70, Minecraft.method5277().window.method7694(), 110, false);
         this.field20655 = 0.0f;
         this.field20656 = Class2118.field12348;
         this.field20658 = new ArrayList<Class4868>();
         this.method14301(true);
-        this.method14311(false);
+        this.setListening(false);
     }
     
     public float method14460() {
@@ -68,7 +68,7 @@ public class Class4829 extends Class4825
     public void draw(final float n) {
         final int n2 = 20;
         if (n >= 0.6) {
-            RenderUtil.method26915(this.field20478 + n2, this.field20479 + n2, this.field20480 - n2 * 2, this.field20481 - n2 * 2, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f * n));
+            RenderUtil.method26915(this.x + n2, this.y + n2, this.field20480 - n2 * 2, this.field20481 - n2 * 2, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f * n));
             super.draw(n);
         }
     }

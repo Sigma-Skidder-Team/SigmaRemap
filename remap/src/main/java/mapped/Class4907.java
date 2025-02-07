@@ -17,19 +17,19 @@ import java.util.Map;
 
 public class Class4907 extends Class4841
 {
-    public Class4803 field20987;
+    public CustomGuiScreen field20987;
     public String field20988;
     public Texture field20989;
-    private Class9572 field20990;
+    private Animation field20990;
     public boolean field20991;
     public int field20992;
     public int field20993;
     private Map<String, String> field20994;
     private final List<Class8214> field20995;
     
-    public Class4907(final Class4803 class4803, final String s, final boolean field20991, final String field20992, final Class7976... array) {
-        super(class4803, s, 0, 0, Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7695(), false);
-        this.field20990 = new Class9572(285, 100);
+    public Class4907(final CustomGuiScreen customGuiScreen, final String s, final boolean field20991, final String field20992, final Class7976... array) {
+        super(customGuiScreen, s, 0, 0, Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7695(), false);
+        this.field20990 = new Animation(285, 100);
         this.field20992 = 240;
         this.field20993 = 0;
         this.field20995 = new ArrayList<Class8214>();
@@ -38,13 +38,13 @@ public class Class4907 extends Class4841
         this.method14305(false);
         this.method14301(false);
         this.method14252();
-        Class4831 class4804 = null;
-        Class4831 class4805 = null;
+        TextField class4804 = null;
+        TextField class4805 = null;
         for (int length = array.length, i = 0; i < length; ++i) {
             this.field20993 += array[i].field32813 + 10;
         }
         this.field20993 -= 10;
-        this.addVisualThing(this.field20987 = new Class4803(this, "modalContent", (this.field20480 - this.field20992) / 2, (this.field20481 - this.field20993) / 2, this.field20992, this.field20993));
+        this.addToList(this.field20987 = new CustomGuiScreen(this, "modalContent", (this.field20480 - this.field20992) / 2, (this.field20481 - this.field20993) / 2, this.field20992, this.field20993));
         int n = 0;
         int n2 = 0;
         for (final Class7976 class4806 : array) {
@@ -53,19 +53,19 @@ public class Class4907 extends Class4841
                 if (class4806.field32811 != Class294.field1676) {
                     if (class4806.field32811 != Class294.field1677) {
                         if (class4806.field32811 == Class294.field1678) {
-                            this.field20987.addVisualThing(new Class4834(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, new Class6523(ClientColors.field1273.color, ClientColors.field1273.color, ClientColors.field1273.color, ClientColors.field1273.color), class4806.field32812, ClientFonts.JelloLight36));
+                            this.field20987.addToList(new Class4834(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, new ColorHelper(ClientColors.DEEP_TEAL.color, ClientColors.DEEP_TEAL.color, ClientColors.DEEP_TEAL.color, ClientColors.DEEP_TEAL.color), class4806.field32812, ClientFonts.JelloLight36));
                         }
                     }
                     else {
                         final Class4868 class4807;
-                        this.field20987.addVisualThing(class4807 = new Class4868(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, Class6523.field25964, class4806.field32812));
+                        this.field20987.addToList(class4807 = new Class4868(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, ColorHelper.field25964, class4806.field32812));
                         class4807.field20847 = 4;
-                        class4807.method14260((class4803, n) -> this.method14742());
+                        class4807.doThis((class4803, n) -> this.method14742());
                     }
                 }
                 else {
-                    final Class4831 class4808;
-                    this.field20987.addVisualThing(class4808 = new Class4831(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, Class4831.field20670, "", class4806.field32812));
+                    final TextField class4808;
+                    this.field20987.addToList(class4808 = new TextField(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, TextField.field20670, "", class4806.field32812));
                     if (!class4806.field32812.contains("Password")) {
                         if (class4806.field32812.contains("Email")) {
                             class4804 = class4808;
@@ -78,14 +78,14 @@ public class Class4907 extends Class4841
                 }
             }
             else {
-                this.field20987.addVisualThing(new Class4834(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, new Class6523(ClientColors.field1281.color, ClientColors.field1281.color, ClientColors.field1281.color, ClientColors.field1281.color), class4806.field32812, ClientFonts.JelloLight20));
+                this.field20987.addToList(new Class4834(this.field20987, "Item" + n, 0, n2, this.field20992, class4806.field32813, new ColorHelper(ClientColors.MID_GREY.color, ClientColors.MID_GREY.color, ClientColors.MID_GREY.color, ClientColors.MID_GREY.color), class4806.field32812, ClientFonts.JelloLight20));
             }
             n2 += class4806.field32813 + 10;
         }
         if (class4804 != null) {
             if (class4805 != null) {
                 class4804.method14473(class4832 -> {
-                    final String method14314 = class4832.method14314();
+                    final String method14314 = class4832.getTypedText();
                     if (method14314 != null) {
                         if (method14314.contains(":")) {
                             final String[] split = method14314.split(":");
@@ -110,30 +110,30 @@ public class Class4907 extends Class4841
     @Override
     public void method14305(final boolean b) {
         if (b) {
-            for (final Class4803 class4803 : this.field20987.method14250()) {
-                if (!(class4803 instanceof Class4831)) {
+            for (final CustomGuiScreen customGuiScreen : this.field20987.method14250()) {
+                if (!(customGuiScreen instanceof TextField)) {
                     continue;
                 }
-                ((Class4831)class4803).method14315("");
-                ((Class4831)class4803).method14469();
+                ((TextField) customGuiScreen).method14315("");
+                ((TextField) customGuiScreen).method14469();
             }
         }
         this.field20990.changeDirection(b ? Direction.BACKWARDS : Direction.FORWARDS);
         super.method14305(b);
     }
     
-    public Class4803 method14739() {
+    public CustomGuiScreen method14739() {
         return this.field20987;
     }
     
     private Map<String, String> method14740() {
         final HashMap hashMap = new HashMap();
         for (final Class4825 class4825 : this.field20987.method14250()) {
-            if (!(class4825 instanceof Class4831)) {
+            if (!(class4825 instanceof TextField)) {
                 continue;
             }
-            final Class4831 class4826 = (Class4831)class4825;
-            hashMap.put(class4826.method14475(), class4826.method14314());
+            final TextField class4826 = (TextField)class4825;
+            hashMap.put(class4826.method14475(), class4826.getTypedText());
         }
         return hashMap;
     }
@@ -170,7 +170,7 @@ public class Class4907 extends Class4841
             final int n5 = (int)(n2 * method14743);
             final int n6 = (int)(n3 * method14743);
             RenderUtil.method26898(-5.0f, -5.0f, (float)(this.method14276() + 10), (float)(this.method14278() + 10), this.field20989, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
-            RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.1f * n4));
+            RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f * n4));
             if (n5 > 0) {
                 RenderUtil.method26915((this.field20480 - n5) / 2, (this.field20481 - n6) / 2, n5, n6, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
             }
@@ -181,7 +181,7 @@ public class Class4907 extends Class4841
         }
         if (this.method14306()) {
             this.method14307(false);
-            this.method14297(false);
+            this.setEnabled(false);
             this.method14252();
         }
     }
@@ -210,7 +210,7 @@ public class Class4907 extends Class4841
         if (b && !this.isHovered()) {
             try {
                 if (this.field20989 != null) {
-                    this.field20989.method24923();
+                    this.field20989.release();
                 }
                 this.field20989 = Class9399.method34928("blur", BufferedImage.method20830(0, 0, this.method14276(), this.method14278(), 5, 10, ClientColors.LIGHT_GREYISH_BLUE.color, true));
             }
@@ -223,7 +223,7 @@ public class Class4907 extends Class4841
         }
         this.method14305(b);
         if (b) {
-            this.method14297(true);
+            this.setEnabled(true);
         }
         this.method14301(b);
     }
@@ -231,7 +231,7 @@ public class Class4907 extends Class4841
     public void finalize() throws Throwable {
         try {
             if (this.field20989 != null) {
-                Client.getInstance().method35182(this.field20989);
+                Client.getInstance().addTexture(this.field20989);
             }
         }
         finally {

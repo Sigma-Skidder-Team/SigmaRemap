@@ -16,7 +16,7 @@ import org.lwjgl.opengl.GL11;
 
 public class RearView extends PremiumModule
 {
-    public Class9572 field15985;
+    public Animation field15985;
     public static Class6153 field15986;
     private static final String field15987 = "Show in GUI";
     private static final String field15988 = "Smart Visibility";
@@ -26,7 +26,7 @@ public class RearView extends PremiumModule
     public RearView() {
         super("RearView", "See behind you", Category.GUI);
         this.field15990 = 0;
-        this.field15985 = new Class9572(230, 200, Direction.FORWARDS);
+        this.field15985 = new Animation(230, 200, Direction.FORWARDS);
         this.addSetting(new BooleanSetting("Show in GUI", "Makes the Rear View visible in guis", false));
         this.addSetting(new BooleanSetting("Smart Visibility", "Only pops up when a player is behind you", false));
         this.addSetting(new NumberSetting("Size", "The rear view width", 400.0f, Integer.class, 120.0f, 1000.0f, 1.0f));

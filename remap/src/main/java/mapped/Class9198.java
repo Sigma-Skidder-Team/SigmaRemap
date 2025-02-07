@@ -50,7 +50,7 @@ public class Class9198
     }
     
     public static void method33654() {
-        Client.getInstance().method35201().method19342();
+        Client.getInstance().getNetworkManager().method19342();
     }
     
     public HashMap<UUID, Class6538> method33655() {

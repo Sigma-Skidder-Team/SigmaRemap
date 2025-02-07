@@ -166,7 +166,7 @@ public class Class6466
         }
     }
     
-    public String method19343(final String s, final CaptchaChecker captchaChecker) {
+    public String redeemPremium(final String s, final CaptchaChecker captchaChecker) {
         String s2 = "Unexpected error";
         try {
             final HttpPost httpPost = new HttpPost(this.claimPremiumUrl);
@@ -292,7 +292,7 @@ public class Class6466
         return this.randomUuid;
     }
     
-    public boolean method19352() {
+    public boolean isPremium() {
         return Class6466.field25695;
     }
     

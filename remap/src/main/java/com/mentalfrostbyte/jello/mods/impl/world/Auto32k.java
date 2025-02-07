@@ -110,7 +110,7 @@ public class Auto32k extends Module
             final double n = field15568.getX() - Auto32k.mc.field4644.method5833().method18161().getX();
             final double n2 = field15568.getY() - Auto32k.mc.field4644.method5833().method18161().getY();
             final double n3 = field15568.getZ() - Auto32k.mc.field4644.method5833().method18161().getZ();
-            RenderUtil.method26909(new Class7644(n, n2 + 1.625, n3, n + 1.0, n2 + 3.0, n3 + 1.0), ColorUtils.applyAlpha(ClientColors.field1285.color, 0.3f));
+            RenderUtil.method26909(new Class7644(n, n2 + 1.625, n3, n + 1.0, n2 + 3.0, n3 + 1.0), ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.color, 0.3f));
             GL11.glColor3f(1.0f, 1.0f, 1.0f);
             GL11.glBlendFunc(770, 771);
             GL11.glEnable(3042);
@@ -122,7 +122,7 @@ public class Auto32k extends Module
             final float n4 = 8.0f;
             if (true) {
                 GL11.glPushMatrix();
-                final int method19118 = ColorUtils.applyAlpha(ClientColors.field1285.color, 0.5f);
+                final int method19118 = ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.color, 0.5f);
                 GL11.glColor4f((method19118 >> 16 & 0xFF) / 255.0f, (method19118 >> 8 & 0xFF) / 255.0f, (method19118 & 0xFF) / 255.0f, (method19118 >> 24 & 0xFF) / 255.0f);
                 GL11.glTranslated(n + 0.5, n2 + 1.0099999904632568, n3 + 0.5);
                 GL11.glRotatef(90.0f, 0.0f, 0.0f, 0.0f);

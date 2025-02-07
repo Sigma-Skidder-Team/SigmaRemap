@@ -49,12 +49,12 @@ public class RenderUtil
         return new Rectangle(Math.round(n3 + (n5 - round) / 4.0f), Math.round(n4 + (n6 - round2) / 6.0f), round, round2);
     }
     
-    public static Rectangle method26864(final Class4803 class4803) {
-        return new Rectangle(class4803.method14272(), class4803.method14274(), class4803.method14276(), class4803.method14278());
+    public static Rectangle method26864(final CustomGuiScreen customGuiScreen) {
+        return new Rectangle(customGuiScreen.method14272(), customGuiScreen.method14274(), customGuiScreen.method14276(), customGuiScreen.method14278());
     }
     
-    public static void method26865(final Class4803 class4803) {
-        method26871(class4803.method14272(), class4803.method14274(), class4803.method14276() + class4803.method14272(), class4803.method14278() + class4803.method14274(), true);
+    public static void method26865(final CustomGuiScreen customGuiScreen) {
+        method26871(customGuiScreen.method14272(), customGuiScreen.method14274(), customGuiScreen.method14276() + customGuiScreen.method14272(), customGuiScreen.method14278() + customGuiScreen.method14274(), true);
     }
     
     public static float[] method26866(final int n, final int n2) {
@@ -74,7 +74,7 @@ public class RenderUtil
         method26871((int)n, (int)n2, (int)n3, (int)n4, true);
     }
     
-    public static void method26869(final float n, final float n2, final float n3, final float n4) {
+    public static void startScissor(final float n, final float n2, final float n3, final float n4) {
         method26871((int)n, (int)n2, (int)n + (int)n3, (int)n2 + (int)n4, true);
     }
     
@@ -134,7 +134,7 @@ public class RenderUtil
         }
     }
     
-    public static void method26872() {
+    public static void endScissor() {
         if (RenderUtil.field33584.isEmpty()) {
             GL11.glDisable(3089);
         }
@@ -596,16 +596,16 @@ public class RenderUtil
     }
     
     public static void method26898(final float n, final float n2, final float n3, final float n4, final Texture class7776, final int n5) {
-        method26902(n, n2, n3, n4, class7776, n5, 0.0f, 0.0f, (float)class7776.method24918(), (float)class7776.method24917(), true);
-        method26902(n, n2, n3, n4, class7776, n5, 0.0f, 0.0f, (float)class7776.method24918(), (float)class7776.method24917(), false);
+        method26902(n, n2, n3, n4, class7776, n5, 0.0f, 0.0f, (float)class7776.getImageWidth(), (float)class7776.getImageHeight(), true);
+        method26902(n, n2, n3, n4, class7776, n5, 0.0f, 0.0f, (float)class7776.getImageWidth(), (float)class7776.getImageHeight(), false);
     }
     
-    public static void method26899(final float n, final float n2, final float n3, final float n4, final Texture class7776, final int n5) {
-        method26902(n, n2, n3, n4, class7776, n5, 0.0f, 0.0f, (float)class7776.method24918(), (float)class7776.method24917(), true);
+    public static void drawImage(final float n, final float n2, final float n3, final float n4, final Texture class7776, final int n5) {
+        method26902(n, n2, n3, n4, class7776, n5, 0.0f, 0.0f, (float)class7776.getImageWidth(), (float)class7776.getImageHeight(), true);
     }
     
     public static void method26900(final float n, final float n2, final float n3, final float n4, final Texture class7776, final int n5, final boolean b) {
-        method26902(n, n2, n3, n4, class7776, n5, 0.0f, 0.0f, (float)class7776.method24918(), (float)class7776.method24917(), b);
+        method26902(n, n2, n3, n4, class7776, n5, 0.0f, 0.0f, (float)class7776.getImageWidth(), (float)class7776.getImageHeight(), b);
     }
     
     public static void method26901(final float n, final float n2, final float n3, final float n4, final Texture class7776, final int n5, final float n6, final float n7, final float n8, final float n9) {
@@ -631,12 +631,12 @@ public class RenderUtil
             GL11.glEnable(3042);
             GL11.glEnable(3553);
             class7776.bind();
-            final float n10 = a3 / class7776.method24922() / (a3 / class7776.method24918());
-            final float n11 = a4 / class7776.method24921() / (a4 / class7776.method24917());
-            final float n12 = n4 / class7776.method24918() * n10;
-            final float n13 = n5 / class7776.method24917() * n11;
-            final float n14 = n2 / class7776.method24918() * n10;
-            final float n15 = n3 / class7776.method24917() * n11;
+            final float n10 = a3 / class7776.getTextureWidth() / (a3 / class7776.getImageWidth());
+            final float n11 = a4 / class7776.getTextureHeight() / (a4 / class7776.getImageHeight());
+            final float n12 = n4 / class7776.getImageWidth() * n10;
+            final float n13 = n5 / class7776.getImageHeight() * n11;
+            final float n14 = n2 / class7776.getImageWidth() * n10;
+            final float n15 = n3 / class7776.getImageHeight() * n11;
             if (!b) {
                 GL11.glTexParameteri(3553, 10240, 9729);
             }
@@ -709,11 +709,11 @@ public class RenderUtil
     }
     
     public static void method26904(final float n, final float n2, final float n3, final float n4, final Texture class7776, final float n5) {
-        method26899(n, n2, n3, n4, class7776, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n5));
+        drawImage(n, n2, n3, n4, class7776, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n5));
     }
     
     public static void method26905(final float n, final float n2, final float n3, final float n4, final Texture class7776) {
-        method26899(n, n2, n3, n4, class7776, -1);
+        drawImage(n, n2, n3, n4, class7776, -1);
     }
     
     public static void method26906(final float n, final float n2, final float n3, final float n4, final Texture class7776, final float n5, final float n6, final float n7, final float n8) {
@@ -937,10 +937,10 @@ public class RenderUtil
     public static void method26913(final float n, final float n2, final float n3, final float n4, final float n5, final float n6) {
         GL11.glAlphaFunc(519, 0.0f);
         final int method19118 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n6);
-        method26899(n - n5, n2 - n5, n5, n5, ClientAssets.shadow_corner, method19118);
-        method26899(n + n3, n2 - n5, n5, n5, ClientAssets.shadow_corner_2, method19118);
-        method26899(n - n5, n2 + n4, n5, n5, ClientAssets.shadow_corner_3, method19118);
-        method26899(n + n3, n2 + n4, n5, n5, ClientAssets.shadow_corner_4, method19118);
+        drawImage(n - n5, n2 - n5, n5, n5, ClientAssets.shadow_corner, method19118);
+        drawImage(n + n3, n2 - n5, n5, n5, ClientAssets.shadow_corner_2, method19118);
+        drawImage(n - n5, n2 + n4, n5, n5, ClientAssets.shadow_corner_3, method19118);
+        drawImage(n + n3, n2 + n4, n5, n5, ClientAssets.shadow_corner_4, method19118);
         method26900(n - n5, n2, n5, n4, ClientAssets.shadow_left, method19118, false);
         method26900(n + n3, n2, n5, n4, ClientAssets.shadow_right, method19118, false);
         method26900(n, n2 - n5, n3, n5, ClientAssets.shadow_top, method19118, false);
@@ -964,60 +964,60 @@ public class RenderUtil
         final int n9 = 10;
         final int n10 = n8 - n9;
         method26876((float)(n + n9), (float)(n2 + n9), (float)(n + n3 - n9), (float)(n2 + n4 - n9), n5);
-        method26899((float)(n - n10), (float)(n2 - n10), (float)n8, (float)n8, ClientAssets.floating_corner, n5);
+        drawImage((float)(n - n10), (float)(n2 - n10), (float)n8, (float)n8, ClientAssets.floating_corner, n5);
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(n + n3 - n8 / 2), (float)(n2 + n8 / 2), 0.0f);
         GL11.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n - n3 - n8 / 2), (float)(-n2 - n8 / 2), 0.0f);
-        method26899((float)(n + n3 - n10), (float)(n2 - n10), (float)n8, (float)n8, ClientAssets.floating_corner, n5);
+        drawImage((float)(n + n3 - n10), (float)(n2 - n10), (float)n8, (float)n8, ClientAssets.floating_corner, n5);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(n + n3 - n8 / 2), (float)(n2 + n4 + n8 / 2), 0.0f);
         GL11.glRotatef(180.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n - n3 - n8 / 2), (float)(-n2 - n4 - n8 / 2), 0.0f);
-        method26899((float)(n + n3 - n10), (float)(n2 + n9 + n4), (float)n8, (float)n8, ClientAssets.floating_corner, n5);
+        drawImage((float)(n + n3 - n10), (float)(n2 + n9 + n4), (float)n8, (float)n8, ClientAssets.floating_corner, n5);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(n - n8 / 2), (float)(n2 + n4 + n8 / 2), 0.0f);
         GL11.glRotatef(270.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n - n8 / 2), (float)(-n2 - n4 - n8 / 2), 0.0f);
-        method26899((float)(n + n9), (float)(n2 + n9 + n4), (float)n8, (float)n8, ClientAssets.floating_corner, n5);
+        drawImage((float)(n + n9), (float)(n2 + n9 + n4), (float)n8, (float)n8, ClientAssets.floating_corner, n5);
         GL11.glPopMatrix();
         method26870(n6 - n8, n7 + n9, n6 - n10 + n8, n7 - n9 + n4);
         for (int i = 0; i < n4; i += n8) {
-            method26899((float)(n - n10), (float)(n2 + n9 + i), (float)n8, (float)n8, ClientAssets.floating_border, n5);
+            drawImage((float)(n - n10), (float)(n2 + n9 + i), (float)n8, (float)n8, ClientAssets.floating_border, n5);
         }
-        method26872();
+        endScissor();
         method26870(n6, n7 - n10, n6 + n3 - n9, n7 + n9);
         for (int j = 0; j < n3; j += n8) {
             GL11.glPushMatrix();
             GL11.glTranslatef((float)(n + n8 / 2), (float)(n2 + n8 / 2), 0.0f);
             GL11.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-n - n8 / 2), (float)(-n2 - n8 / 2), 0.0f);
-            method26899((float)(n - n10), (float)(n2 - n9 - j), (float)n8, (float)n8, ClientAssets.floating_border, n5);
+            drawImage((float)(n - n10), (float)(n2 - n9 - j), (float)n8, (float)n8, ClientAssets.floating_border, n5);
             GL11.glPopMatrix();
         }
-        method26872();
+        endScissor();
         method26870(n6 + n3 - n9, n7 - n10, n + n3 + n10, n7 + n4 - n9);
         for (int k = 0; k < n4; k += n8) {
             GL11.glPushMatrix();
             GL11.glTranslatef((float)(n + n8 / 2), (float)(n2 + n8 / 2), 0.0f);
             GL11.glRotatef(180.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-n - n8 / 2), (float)(-n2 - n8 / 2), 0.0f);
-            method26899((float)(n - n3 + n9), (float)(n2 - n9 - k), (float)n8, (float)n8, ClientAssets.floating_border, n5);
+            drawImage((float)(n - n3 + n9), (float)(n2 - n9 - k), (float)n8, (float)n8, ClientAssets.floating_border, n5);
             GL11.glPopMatrix();
         }
-        method26872();
+        endScissor();
         method26870(n6 - n9, n7 - n10 + n4 - n8, n6 + n3 - n9, n7 + n4 + n9 * 2);
         for (int l = 0; l < n3; l += n8) {
             GL11.glPushMatrix();
             GL11.glTranslatef((float)(n + n8 / 2), (float)(n2 + n8 / 2), 0.0f);
             GL11.glRotatef(270.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-n - n8 / 2), (float)(-n2 - n8 / 2), 0.0f);
-            method26899((float)(n - n4 + n9), (float)(n2 + n9 + l), (float)n8, (float)n8, ClientAssets.floating_border, n5);
+            drawImage((float)(n - n4 + n9), (float)(n2 + n9 + l), (float)n8, (float)n8, ClientAssets.floating_border, n5);
             GL11.glPopMatrix();
         }
-        method26872();
+        endScissor();
     }
     
     public static void method26917(final int n, final int n2, final int n3, final int n4, final int n5) {
@@ -1025,60 +1025,60 @@ public class RenderUtil
         final int n7 = 10;
         final int n8 = n6 - n7;
         method26876((float)(n + n7), (float)(n2 + n7), (float)(n + n3 - n7), (float)(n2 + n4 - n7), n5);
-        method26899((float)(n - n8), (float)(n2 - n8), (float)n6, (float)n6, ClientAssets.floating_corner, n5);
+        drawImage((float)(n - n8), (float)(n2 - n8), (float)n6, (float)n6, ClientAssets.floating_corner, n5);
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(n + n3 - n6 / 2), (float)(n2 + n6 / 2), 0.0f);
         GL11.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n - n3 - n6 / 2), (float)(-n2 - n6 / 2), 0.0f);
-        method26899((float)(n + n3 - n8), (float)(n2 - n8), (float)n6, (float)n6, ClientAssets.floating_corner, n5);
+        drawImage((float)(n + n3 - n8), (float)(n2 - n8), (float)n6, (float)n6, ClientAssets.floating_corner, n5);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(n + n3 - n6 / 2), (float)(n2 + n4 + n6 / 2), 0.0f);
         GL11.glRotatef(180.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n - n3 - n6 / 2), (float)(-n2 - n4 - n6 / 2), 0.0f);
-        method26899((float)(n + n3 - n8), (float)(n2 + n7 + n4), (float)n6, (float)n6, ClientAssets.floating_corner, n5);
+        drawImage((float)(n + n3 - n8), (float)(n2 + n7 + n4), (float)n6, (float)n6, ClientAssets.floating_corner, n5);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(n - n6 / 2), (float)(n2 + n4 + n6 / 2), 0.0f);
         GL11.glRotatef(270.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n - n6 / 2), (float)(-n2 - n4 - n6 / 2), 0.0f);
-        method26899((float)(n + n7), (float)(n2 + n7 + n4), (float)n6, (float)n6, ClientAssets.floating_corner, n5);
+        drawImage((float)(n + n7), (float)(n2 + n7 + n4), (float)n6, (float)n6, ClientAssets.floating_corner, n5);
         GL11.glPopMatrix();
         method26871(n - n6, n2 + n7, n - n8 + n6, n2 - n7 + n4, true);
         for (int i = 0; i < n4; i += n6) {
-            method26899((float)(n - n8), n2 + n7 + i - 0.4f, (float)n6, n6 + 0.4f, ClientAssets.floating_border, n5);
+            drawImage((float)(n - n8), n2 + n7 + i - 0.4f, (float)n6, n6 + 0.4f, ClientAssets.floating_border, n5);
         }
-        method26872();
+        endScissor();
         method26871(n, n2 - n8, n + n3 - n7, n2 + n7, true);
         for (int j = 0; j < n3; j += n6) {
             GL11.glPushMatrix();
             GL11.glTranslatef((float)(n + n6 / 2), (float)(n2 + n6 / 2), 0.0f);
             GL11.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-n - n6 / 2), (float)(-n2 - n6 / 2), 0.0f);
-            method26899((float)(n - n8), n2 - n7 - j - 0.4f, (float)n6, n6 + 0.4f, ClientAssets.floating_border, n5);
+            drawImage((float)(n - n8), n2 - n7 - j - 0.4f, (float)n6, n6 + 0.4f, ClientAssets.floating_border, n5);
             GL11.glPopMatrix();
         }
-        method26872();
+        endScissor();
         method26871(n + n3 - n7, n2 - n8, n + n3 + n8, n2 + n4 - n7, true);
         for (int k = 0; k < n4; k += n6) {
             GL11.glPushMatrix();
             GL11.glTranslatef((float)(n + n6 / 2), (float)(n2 + n6 / 2), 0.0f);
             GL11.glRotatef(180.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-n - n6 / 2), (float)(-n2 - n6 / 2), 0.0f);
-            method26899((float)(n - n3 + n7), n2 - n7 - k - 0.4f, (float)n6, n6 + 0.4f, ClientAssets.floating_border, n5);
+            drawImage((float)(n - n3 + n7), n2 - n7 - k - 0.4f, (float)n6, n6 + 0.4f, ClientAssets.floating_border, n5);
             GL11.glPopMatrix();
         }
-        method26872();
+        endScissor();
         method26871(n - n7, n2 - n8 + n4 - n6, n + n3 - n7, n2 + n4 + n7 * 2, true);
         for (int l = 0; l < n3; l += n6) {
             GL11.glPushMatrix();
             GL11.glTranslatef((float)(n + n6 / 2), (float)(n2 + n6 / 2), 0.0f);
             GL11.glRotatef(270.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-n - n6 / 2), (float)(-n2 - n6 / 2), 0.0f);
-            method26899((float)(n - n4 + n7), n2 + n7 + l - 0.4f, (float)n6, n6 + 0.4f, ClientAssets.floating_border, n5);
+            drawImage((float)(n - n4 + n7), n2 + n7 + l - 0.4f, (float)n6, n6 + 0.4f, ClientAssets.floating_border, n5);
             GL11.glPopMatrix();
         }
-        method26872();
+        endScissor();
     }
     
     public static void method26918() {
@@ -1128,16 +1128,16 @@ public class RenderUtil
         final float n7 = n5 * Class9000.field37993;
         method26868(n, n2, n + n5, n2 + n5);
         method26886(n + n5, n2 + n5, n5, n6);
-        method26872();
+        endScissor();
         method26868(n + n3 - n5, n2, n + n3, n2 + n5);
         method26886(n - n5 + n3, n2 + n5, n5, n6);
-        method26872();
+        endScissor();
         method26868(n, n2 + n4 - n5, n + n5, n2 + n4);
         method26886(n + n5, n2 - n5 + n4, n5, n6);
-        method26872();
+        endScissor();
         method26868(n + n3 - n5, n2 + n4 - n5, n + n3, n2 + n4);
         method26886(n - n5 + n3, n2 - n5 + n4, n5, n6);
-        method26872();
+        endScissor();
     }
     
     public static void method26924(final float n, final float n2, final float n3, final float n4, final float n5, final int n6) {
@@ -1157,16 +1157,16 @@ public class RenderUtil
         method26876(n + n5, n2 + n4 - n5, n + n3 - n5, n2 + n4, n6);
         method26868(n, n2, n + n5, n2 + n5);
         method26888(n + n5, n2 + n5, n5 * 2.0f, n6);
-        method26872();
+        endScissor();
         method26868(n + n3 - n5, n2, n + n3, n2 + n5);
         method26888(n - n5 + n3, n2 + n5, n5 * 2.0f, n6);
-        method26872();
+        endScissor();
         method26868(n, n2 + n4 - n5, n + n5, n2 + n4);
         method26888(n + n5, n2 - n5 + n4, n5 * 2.0f, n6);
-        method26872();
+        endScissor();
         method26868(n + n3 - n5, n2 + n4 - n5, n + n3, n2 + n4);
         method26888(n - n5 + n3, n2 - n5 + n4, n5 * 2.0f, n6);
-        method26872();
+        endScissor();
     }
     
     public static void method26926() {

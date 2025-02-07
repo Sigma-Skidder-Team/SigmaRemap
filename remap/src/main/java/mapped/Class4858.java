@@ -13,14 +13,14 @@ public class Class4858 extends Class4841
     public Class4851 field20813;
     public Class4851 field20814;
     
-    public Class4858(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final int n5) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4858(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final int n5) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20811 = n5;
         final Color color = new Color(n5);
         Color.RGBtoHSB(color.getRed(), color.getGreen(), color.getBlue(), null);
-        this.addVisualThing(this.field20812 = new Class4851(this, "redSlider", 14, 10, n3 - 28, 8, n5, color.getRed()));
-        this.addVisualThing(this.field20813 = new Class4851(this, "greenSlider", 14, 20, n3 - 28, 8, n5, color.getGreen()));
-        this.addVisualThing(this.field20814 = new Class4851(this, "blueSlider", 14, 30, n3 - 28, 8, n5, color.getBlue()));
+        this.addToList(this.field20812 = new Class4851(this, "redSlider", 14, 10, n3 - 28, 8, n5, color.getRed()));
+        this.addToList(this.field20813 = new Class4851(this, "greenSlider", 14, 20, n3 - 28, 8, n5, color.getGreen()));
+        this.addToList(this.field20814 = new Class4851(this, "blueSlider", 14, 30, n3 - 28, 8, n5, color.getBlue()));
         this.field20812.method14516(class4841 -> this.method14573());
         this.field20813.method14516(class4841 -> this.method14573());
         this.field20814.method14516(class4841 -> this.method14573());

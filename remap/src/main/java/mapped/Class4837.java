@@ -14,7 +14,7 @@ import org.lwjgl.opengl.GL11;
 
 public class Class4837 extends Class4825
 {
-    public static Class6523 field20733;
+    public static ColorHelper field20733;
     public String field20734;
     private PlayerEntity field20735;
     private Minecraft field20736;
@@ -23,8 +23,8 @@ public class Class4837 extends Class4825
     private Class1773 field20739;
     private Class758 field20740;
     
-    public Class4837(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final String field20734) {
-        super(class4803, s, n, n2, n3, n4, Class4837.field20733, false);
+    public Class4837(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final String field20734) {
+        super(customGuiScreen, s, n, n2, n3, n4, Class4837.field20733, false);
         this.field20734 = null;
         this.field20736 = Minecraft.method5277();
         this.field20734 = field20734;
@@ -40,7 +40,7 @@ public class Class4837 extends Class4825
         RenderSystem.disableDepthTest();
         RenderSystem.method30029();
         RenderSystem.pushMatrix();
-        RenderSystem.translatef((float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 - this.field20481 / 4), -200.0f);
+        RenderSystem.translatef((float)(this.x + this.field20480 / 2), (float)(this.y - this.field20481 / 4), -200.0f);
         GL11.glColor3f(1.0f, 1.0f, 1.0f);
         RenderSystem.method30062(180.0f, 1.0f, 0.0f, 0.0f);
         RenderSystem.method30062(180.0f, 0.0f, 0.0f, 1.0f);
@@ -113,6 +113,6 @@ public class Class4837 extends Class4825
     }
     
     static {
-        Class4837.field20733 = new Class6523(ClientColors.field1273.color, ClientColors.field1273.color, ClientColors.field1273.color, ClientColors.field1273.color, Class2056.field11734, Class2056.field11738);
+        Class4837.field20733 = new ColorHelper(ClientColors.DEEP_TEAL.color, ClientColors.DEEP_TEAL.color, ClientColors.DEEP_TEAL.color, ClientColors.DEEP_TEAL.color, Class2056.field11734, Class2056.field11738);
     }
 }

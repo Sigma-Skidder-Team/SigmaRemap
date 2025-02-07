@@ -11,11 +11,11 @@ public class Class4867 extends Class4841
 {
     private static String[] field20591;
     public boolean field20843;
-    public Class9572 field20844;
+    public Animation field20844;
     
-    public Class4867(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        super(class4803, s, n, n2, n3, n4, false);
-        this.field20844 = new Class9572(70, 90);
+    public Class4867(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
+        this.field20844 = new Animation(70, 90);
     }
     
     public boolean method14600() {
@@ -38,14 +38,14 @@ public class Class4867 extends Class4841
     
     @Override
     public void draw(final float n) {
-        RenderUtil.method26925((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, 10.0f, ColorUtils.applyAlpha(-4144960, (this.method14309() ? 0.6f : 0.43f) * this.field20844.calcPercent() * n));
+        RenderUtil.method26925((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, 10.0f, ColorUtils.applyAlpha(-4144960, (this.method14309() ? 0.6f : 0.43f) * this.field20844.calcPercent() * n));
         final float n2 = (1.0f - this.field20844.calcPercent()) * n;
-        RenderUtil.method26925((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, 10.0f, ColorUtils.applyAlpha(ColorUtils.method19120(-14047489, ClientColors.field1273.color, this.method14309() ? 0.9f : 1.0f), n2));
+        RenderUtil.method26925((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, 10.0f, ColorUtils.applyAlpha(ColorUtils.method19120(-14047489, ClientColors.DEEP_TEAL.color, this.method14309() ? 0.9f : 1.0f), n2));
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(this.method14272() + this.method14276() / 2), (float)(this.method14274() + this.method14278() / 2), 0.0f);
         GL11.glScalef(1.5f - 0.5f * n2, 1.5f - 0.5f * n2, 0.0f);
         GL11.glTranslatef((float)(-this.method14272() - this.method14276() / 2), (float)(-this.method14274() - this.method14278() / 2), 0.0f);
-        RenderUtil.method26899((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, ClientAssets.check, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n2));
+        RenderUtil.drawImage((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, ClientAssets.check, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n2));
         GL11.glPopMatrix();
         super.draw(n);
     }

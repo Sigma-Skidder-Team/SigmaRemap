@@ -32,7 +32,7 @@ public class Class721 extends Class720
         super.render(n, n2, n3);
         RenderUtil.method26870(0, 0, Minecraft.method5277().window.method7694(), (int)(30.0 * Minecraft.method5277().window.getGuiScaleFactor() / Class9000.field37993));
         this.renderBackground();
-        RenderUtil.method26872();
+        RenderUtil.endScissor();
         this.field3944.render(n, n2, n3);
         this.drawString(this.font, this.title.getFormattedText(), this.width / 2 - 146, 13, 16777215);
         this.drawString(this.font, "Jello Portal:", this.width / 2 - 30, 13, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f));

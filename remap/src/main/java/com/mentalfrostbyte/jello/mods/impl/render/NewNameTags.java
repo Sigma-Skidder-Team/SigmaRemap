@@ -47,7 +47,7 @@ public class NewNameTags extends Module
         this.field15783 = new ArrayList<Entity>();
         this.field15784 = false;
         this.field15785 = new HashMap<UUID, String>();
-        this.field15786 = ColorUtils.applyAlpha(ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.field1273.color, 75.0f), 0.5f);
+        this.field15786 = ColorUtils.applyAlpha(ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 75.0f), 0.5f);
         this.addSetting(new BooleanSetting("Magnify", "Scales nametags to keep them readable", true));
         this.addSetting(new BooleanSetting("Furnaces", "Shows furnaces info once open", true));
         this.addSetting(new BooleanSetting("Mob Owners", "Shows mob owners", true));
@@ -369,8 +369,8 @@ public class NewNameTags extends Module
                 RenderUtil.method26913((float)(-n9 - 10), -25.0f, (float)(n9 * 2 + 20), (float)(field40314.getHeight() + 27), 20.0f, 0.5f);
             }
             else {
-                RenderUtil.method26899((float)(-n9 - 10 - 31), -25.0f, (float)(field40314.getHeight() + 27), (float)(field40314.getHeight() + 27), NewNameTags.field15781.get(method9887), ColorUtils.applyAlpha(Color.getHSBColor(System.currentTimeMillis() % 10000L / 10000.0f, 0.5f, 1.0f).getRGB(), 0.7f));
-                RenderUtil.method26899((float)(-n9 - 10 - 31 + field40314.getHeight() + 27), -25.0f, 14.0f, (float)(field40314.getHeight() + 27), ClientAssets.shadow_right, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f));
+                RenderUtil.drawImage((float)(-n9 - 10 - 31), -25.0f, (float)(field40314.getHeight() + 27), (float)(field40314.getHeight() + 27), NewNameTags.field15781.get(method9887), ColorUtils.applyAlpha(Color.getHSBColor(System.currentTimeMillis() % 10000L / 10000.0f, 0.5f, 1.0f).getRGB(), 0.7f));
+                RenderUtil.drawImage((float)(-n9 - 10 - 31 + field40314.getHeight() + 27), -25.0f, 14.0f, (float)(field40314.getHeight() + 27), ClientAssets.shadow_right, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f));
                 RenderUtil.method26913((float)(-n9 - 10 - 31), -25.0f, (float)(n9 * 2 + 20 + 31 + 27), (float)(field40314.getHeight() + 27), 20.0f, 0.5f);
                 GL11.glTranslatef(27.0f, 0.0f, 0.0f);
             }
@@ -385,7 +385,7 @@ public class NewNameTags extends Module
             }
             RenderUtil.drawString(field40314, 0.0f, -20.0f, method9887, ClientColors.LIGHT_GREYISH_BLUE.color);
             RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, 10.0f, str + string, ClientColors.LIGHT_GREYISH_BLUE.color);
-            final Class6538 method9890 = Client.getInstance().method35201().field25697.method33657(class399);
+            final Class6538 method9890 = Client.getInstance().getNetworkManager().field25697.method33657(class399);
             if (method9890 != null) {
                 RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, -30.0f, method9890.field25986, ClientColors.LIGHT_GREYISH_BLUE.color);
             }

@@ -14,8 +14,8 @@ public class Class4912 extends Class4825
     private Class8338 field21013;
     public Class2315 field21014;
     
-    public Class4912(final Class4803 class4803, final String s) {
-        super(class4803, s, 0, 0, Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7695(), false);
+    public Class4912(final CustomGuiScreen customGuiScreen, final String s) {
+        super(customGuiScreen, s, 0, 0, Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7695(), false);
         this.field21012 = new ArrayList<Class9159>();
         this.field21013 = new Class8338();
         this.field21014 = new Class2315();
@@ -23,7 +23,7 @@ public class Class4912 extends Class4825
         this.method14305(false);
         this.method14301(false);
         this.method14303(true);
-        this.method14311(false);
+        this.setListening(false);
     }
     
     @Override

@@ -16,16 +16,16 @@ import org.apache.http.impl.client.HttpClients;
 import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 
-public class Class4812 extends Class4803
+public class Class4812 extends CustomGuiScreen
 {
-    public Class9572 animation;
+    public Animation animation;
     public Class4817 field20582;
     private static JSONArray cachedChangelog;
     
-    public Class4812(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        super(class4803, s, n, n2, n3, n4);
-        this.animation = new Class9572(380, 200, Direction.FORWARDS);
-        this.method14311(false);
+    public Class4812(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        super(customGuiScreen, s, n, n2, n3, n4);
+        this.animation = new Animation(380, 200, Direction.FORWARDS);
+        this.setListening(false);
         (this.field20582 = new Class4817(this, "scroll", 100, 200, n3 - 200, n4 - 200)).method14397(true);
         this.method14242(this.field20582);
         new Thread(() -> this.method14363(this.getChangelog())).start();
@@ -33,7 +33,7 @@ public class Class4812 extends Class4803
     
     public void method14363(final JSONArray JSONArray) {
         if (JSONArray != null) {
-            this.method14267().method14225(new Class998(this, JSONArray));
+            this.getParent().runThisOnDimensionUpdate(new Class998(this, JSONArray));
         }
     }
     
@@ -44,7 +44,7 @@ public class Class4812 extends Class4803
             return;
         }
         if (this.isHovered() && this.method14296()) {
-            for (final Class4803 class4805 : this.field20582.method14396().method14250()) {
+            for (final CustomGuiScreen class4805 : this.field20582.method14396().method14250()) {
                 class4805.field20497.method35855(Direction.BACKWARDS);
                 if (class4805.field20522.method35858() >= 0.5) {
                     continue;
@@ -53,7 +53,7 @@ public class Class4812 extends Class4803
             }
             return;
         }
-        final Iterator<Class4803> iterator2 = this.field20582.method14396().method14250().iterator();
+        final Iterator<CustomGuiScreen> iterator2 = this.field20582.method14396().method14250().iterator();
         while (iterator2.hasNext()) {
             ((Class4805)iterator2.next()).field20522.changeDirection(Direction.FORWARDS);
         }

@@ -166,7 +166,7 @@ public class MiniMap extends Module
                             final float n8 = -n6 / 2.0f + this.field15837 / 2 + n4;
                             RenderUtil.method26905(0.0f, 0.0f, 0.0f, 0.0f, ClientAssets.gingerbread);
                             RenderUtil.method26903(n7, n8, n5, n6, field15832, ClientColors.LIGHT_GREYISH_BLUE.color, 0.0f, 0.0f, (float)(this.field15843 * 16), (float)(this.field15843 * 16), true, false);
-                            RenderUtil.method26872();
+                            RenderUtil.endScissor();
                             GL11.glPopMatrix();
                             RenderUtil.drawString(field15833, (float)(this.field15839 + this.field15838 / 2 - 4), (float)(this.field15840 + this.field15837 / 2 - 8), s, ClientColors.LIGHT_GREYISH_BLUE.color);
                             RenderUtil.drawString(field15833, (float)(this.field15839 + this.field15838 / 2 - 4), (float)(this.field15840 + this.field15837 / 2 - 6), s, 1879048192);

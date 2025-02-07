@@ -9,13 +9,13 @@ public class Class6506 implements Class6507
     private static String[] field25882;
     
     @Override
-    public void method19597(final Class4803 class4803, final Class4803 class4804) {
-        class4803.method14275(0);
+    public void method19597(final CustomGuiScreen customGuiScreen, final CustomGuiScreen class4804) {
+        customGuiScreen.method14275(0);
         if (class4804 == null) {
-            class4803.method14279(Minecraft.method5277().window.method7695());
+            customGuiScreen.method14279(Minecraft.method5277().window.method7695());
         }
         else {
-            class4803.method14279(class4804.method14278());
+            customGuiScreen.method14279(class4804.method14278());
         }
     }
 }

@@ -19,8 +19,8 @@ public class Class4826 extends Class4825
     private List<Class4916> field20648;
     private float field20649;
     
-    public Class4826(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4826(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20647 = null;
         this.field20648 = new ArrayList<Class4916>();
         this.field20649 = 0.0f;
@@ -48,7 +48,7 @@ public class Class4826 extends Class4825
                         continue;
                     }
                     final Class4916 class8849 = new Class4916(this, ((Class8848)list.get(n)).method30980(), 40, 100 + n * (n2 + n3), this.field20480 - 90, n2, class8848);
-                    this.addVisualThing(class8849);
+                    this.addToList(class8849);
                     this.field20648.add(class8849);
                     ++n;
                 }
@@ -64,11 +64,11 @@ public class Class4826 extends Class4825
         this.field20649 = Math.min(1.0f, Math.max(0.0f, this.field20649));
         if (this.field20647 == null) {
             final int n2 = this.field20480 - 30;
-            RenderUtil.method26905((float)(this.field20478 + 5), (float)((Minecraft.method5277().window.method7695() - n2 * 342 / 460) / 2 - 60), (float)n2, (float)(n2 * 342 / 460), ClientAssets.img);
+            RenderUtil.method26905((float)(this.x + 5), (float)((Minecraft.method5277().window.method7695() - n2 * 342 / 460) / 2 - 60), (float)n2, (float)(n2 * 342 / 460), ClientAssets.img);
         }
         if (this.field20647 != null) {
-            ColorUtils.applyAlpha(ClientColors.field1273.color, 0.2f);
-            RenderUtil.drawString(ClientFonts.JelloLight36, (float)(this.field20478 + (this.field20480 - ClientFonts.JelloLight36.getWidth(this.field20647.method25889())) / 2), (float)this.field20479, this.field20647.method25889(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.7f));
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.2f);
+            RenderUtil.drawString(ClientFonts.JelloLight36, (float)(this.x + (this.field20480 - ClientFonts.JelloLight36.getWidth(this.field20647.method25889())) / 2), (float)this.y, this.field20647.method25889(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.7f));
             super.draw(n);
         }
     }

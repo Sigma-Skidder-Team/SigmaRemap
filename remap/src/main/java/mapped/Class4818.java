@@ -16,17 +16,17 @@ public class Class4818 extends Class4817
 {
     private List<Class4846> field20615;
     public final int field20616;
-    public Class9572 field20617;
+    public Animation field20617;
     public boolean field20618;
     public Class4846 field20619;
     
-    public Class4818(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        super(class4803, s, n, n2, n3, n4);
+    public Class4818(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        super(customGuiScreen, s, n, n2, n3, n4);
         this.field20615 = new ArrayList<Class4846>();
         this.field20616 = 70;
-        (this.field20617 = new Class9572(300, 300)).changeDirection(Direction.FORWARDS);
+        (this.field20617 = new Animation(300, 300)).changeDirection(Direction.FORWARDS);
         this.field20599 = true;
-        this.method14311(false);
+        this.setListening(false);
         this.method14390();
     }
     
@@ -36,11 +36,11 @@ public class Class4818 extends Class4817
     public void method14398(final String s, final Vec3i class352, final int n) {
         final String string = "waypoint x" + class352.getX() + " z" + class352.getZ();
         if (this.field20610.method14224(string) == null) {
-            final Class4846 class353 = new Class4846(this, string, this.field20478, this.method14250().get(0).method14250().size() * this.field20616, this.field20480, this.field20616, s, class352, n);
+            final Class4846 class353 = new Class4846(this, string, this.x, this.method14250().get(0).method14250().size() * this.field20616, this.field20480, this.field20616, s, class352, n);
             class353.field20760 = class353.method14274();
             this.field20615.add(class353);
-            this.addVisualThing(class353);
-            class353.method14260((class4820, n) -> ((Class4843)class4818.method14267()).field20752.method14718(class353.field20764.getX(), class353.field20764.getZ()));
+            this.addToList(class353);
+            class353.doThis((class4820, n) -> ((Class4843)class4818.method14267()).field20752.method14718(class353.field20764.getX(), class353.field20764.getZ()));
             class353.method14516(class4848 -> {
                 Client.getInstance().method35200().method24266(new Class8124(class353.field20763, class353.field20764.getX(), class353.field20764.getZ(), class353.field20765));
                 class4847.field20610.method14246(class353);
@@ -122,6 +122,6 @@ public class Class4818 extends Class4817
             }
         }
         super.draw(n);
-        RenderUtil.method26900((float)(this.field20478 - Math.round(Class7791.method25029(1.0f - this.field20617.calcPercent(), 0.0f, 1.0f, 1.0f) * 30.0f) + 18), (float)(this.field20481 - 46), 22.0f, 26.0f, ClientAssets.trashcan, ColorUtils.applyAlpha(this.field20618 ? ClientColors.field1283.color : ClientColors.field1273.color, this.field20617.calcPercent() * 0.5f), false);
+        RenderUtil.method26900((float)(this.x - Math.round(Class7791.method25029(1.0f - this.field20617.calcPercent(), 0.0f, 1.0f, 1.0f) * 30.0f) + 18), (float)(this.field20481 - 46), 22.0f, 26.0f, ClientAssets.trashcan, ColorUtils.applyAlpha(this.field20618 ? ClientColors.PALE_YELLOW.color : ClientColors.DEEP_TEAL.color, this.field20617.calcPercent() * 0.5f), false);
     }
 }

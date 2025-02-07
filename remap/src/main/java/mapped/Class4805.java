@@ -7,24 +7,24 @@ package mapped;
 import com.mentalfrostbyte.jello.ClientFonts;
 import org.lwjgl.opengl.GL11;
 
-public class Class4805 extends Class4803
+public class Class4805 extends CustomGuiScreen
 {
-    public Class9572 field20522;
+    public Animation field20522;
     
-    public Class4805(final Class4803 class4803, final String s, final JSONObject class4804) {
-        super(class4803, s);
-        this.field20522 = new Class9572(370, 150, Direction.FORWARDS);
-        this.method14277(this.method14267().method14276());
+    public Class4805(final CustomGuiScreen customGuiScreen, final String s, final JSONObject class4804) {
+        super(customGuiScreen, s);
+        this.field20522 = new Animation(370, 150, Direction.FORWARDS);
+        this.method14277(this.getParent().method14276());
         int n = 0;
         if (class4804.has("deprecated")) {
             GL11.glTexEnvi(8960, 8704, 260);
         }
         final String method13268 = class4804.getString("title");
         final JSONArray method13269 = class4804.method13263("changes");
-        this.addVisualThing(new Class4834(this, "title", 0, n, 0, 0, Class6523.field25964, method13268, ClientFonts.JelloMedium40));
+        this.addToList(new Class4834(this, "title", 0, n, 0, 0, ColorHelper.field25964, method13268, ClientFonts.JelloMedium40));
         n += 55;
         for (int i = 0; i < method13269.length(); ++i) {
-            this.addVisualThing(new Class4834(this, "change" + i, 0, n, 0, 0, new Class6523(0, 0, 0, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f)), " - " + method13269.method459(i), ClientFonts.JelloLight20));
+            this.addToList(new Class4834(this, "change" + i, 0, n, 0, 0, new ColorHelper(0, 0, 0, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f)), " - " + method13269.method459(i), ClientFonts.JelloLight20));
             n += 22;
         }
         n += 75;

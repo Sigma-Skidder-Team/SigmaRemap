@@ -41,8 +41,8 @@ public class NameTags extends Module
                     final int round2 = Math.round(class5736.y);
                     GL11.glPushMatrix();
                     GL11.glTranslatef((float)(-n3 / 2), (float)(-n), 0.0f);
-                    RenderUtil.method26874((float)round, (float)round2, (float)n3, 20.0f, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
-                    RenderUtil.drawString(Class9493.field40813, (float)(round + 3), (float)round2, method8459, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
+                    RenderUtil.method26874((float)round, (float)round2, (float)n3, 20.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
+                    RenderUtil.drawString(Class9493.field40813, (float)(round + 3), (float)round2, method8459, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
                     RenderUtil.drawString(Class9493.field40813, (float)(round + 3), (float)(round2 - 1), method8459, ClientColors.LIGHT_GREYISH_BLUE.color);
                     GL11.glPopMatrix();
                     final List<ItemStack> method8460 = InvManagerUtil.method29374(class5735);

@@ -520,7 +520,7 @@ public class Class1660 implements AutoCloseable, Class1657
                 this.field9380.method5327().endSection();
             }
             RenderSystem.pushMatrix();
-            Client.getInstance().method35183();
+            Client.getInstance().renderVisuals();
             RenderSystem.popMatrix();
             if (this.field9422 != (this.field9380.field4701 != null)) {
                 if (this.field9380.field4701 != null) {

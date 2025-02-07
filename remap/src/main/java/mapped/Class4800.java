@@ -4,7 +4,7 @@
 
 package mapped;
 
-public abstract class Class4800 extends Class4803
+public abstract class Class4800 extends CustomGuiScreen
 {
     public static int field20458;
     

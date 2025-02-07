@@ -33,11 +33,11 @@ public class Class4940 extends Class4800
         super("KeybindManager");
         this.field21214 = false;
         this.field21211 = new Date();
-        this.addVisualThing(this.field21213 = new Class4882(this, "keyboard", (this.field20480 - 1060) / 2, (this.field20481 - 357) / 2));
+        this.addToList(this.field21213 = new Class4882(this, "keyboard", (this.field20480 - 1060) / 2, (this.field20481 - 357) / 2));
         this.field21213.method14288(0.4f, 0.4f);
         this.field21213.method14516(class4941 -> {
             boolean b = false;
-            final Iterator<Class4803> iterator = this.method14250().iterator();
+            final Iterator<CustomGuiScreen> iterator = this.method14250().iterator();
             while (iterator.hasNext()) {
                 if (!(iterator.next() instanceof Class4850)) {
                     continue;
@@ -74,23 +74,23 @@ public class Class4940 extends Class4800
     }
     
     private void method14875(final Class4882 class4882) {
-        this.method14225(new Class1093(this, class4882));
+        this.runThisOnDimensionUpdate(new Class1093(this, class4882));
     }
     
     private void method14876() {
-        this.method14225(new Class1644(this, this));
+        this.runThisOnDimensionUpdate(new Class1644(this, this));
     }
     
     private void method14877() {
-        this.method14225(new Class1435(this, this));
+        this.runThisOnDimensionUpdate(new Class1435(this, this));
     }
     
     private void method14878() {
-        this.method14225(new Class966(this, this));
+        this.runThisOnDimensionUpdate(new Class966(this, this));
     }
     
     private void method14879() {
-        this.method14225(new Class1239(this, this));
+        this.runThisOnDimensionUpdate(new Class1239(this, this));
     }
     
     @Override
@@ -104,11 +104,11 @@ public class Class4940 extends Class4800
         if (this.field21212 != null) {
             this.field21213.method14251();
             this.method14253();
-            this.addVisualThing(this.field21212);
+            this.addToList(this.field21212);
             this.field21212 = null;
         }
         super.method14200(n, n2);
-        this.method14311(false);
+        this.setListening(false);
     }
     
     @Override
@@ -130,7 +130,7 @@ public class Class4940 extends Class4800
         n = Math.min(200L, new Date().getTime() - this.field21211.getTime()) / 200.0f;
         final float method24584 = Class7707.method24584(n, 0.0f, 1.0f, 1.0f);
         this.method14288(0.8f + method24584 * 0.2f, 0.8f + method24584 * 0.2f);
-        RenderUtil.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.25f * n));
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.25f * n));
         super.method14227();
         RenderUtil.drawString(ClientFonts.JelloMedium40, (float)((this.field20480 - 1060) / 2), (float)((this.field20481 - 357) / 2 - 90), "Keybind Manager", ClientColors.LIGHT_GREYISH_BLUE.color);
         super.draw(n);

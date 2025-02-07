@@ -6,29 +6,29 @@ package slick2d;
 
 public interface Texture
 {
-    boolean method24914();
+    boolean hasAlpha();
     
-    String method24915();
+    String getTextureRef();
     
     void bind();
     
-    int method24917();
+    int getImageHeight();
     
-    int method24918();
+    int getImageWidth();
     
-    float method24919();
+    float getHeight();
     
-    float method24920();
+    float getWidth();
     
-    int method24921();
+    int getTextureHeight();
     
-    int method24922();
+    int getTextureWidth();
     
-    void method24923();
+    void release();
     
-    int method24924();
+    int getTextureID();
     
-    byte[] method24925();
+    byte[] getTextureData();
     
-    void method24926(final int p0);
+    void setTextureFilter(final int textureFilter);
 }

@@ -18,7 +18,7 @@ public class Class4936 extends Class4800
     private float field21168;
     private float field21169;
     private boolean field21170;
-    public Class4861 field21171;
+    public UIButton field21171;
     private Class4823 field21172;
     private Class4907 field21173;
     private Class4907 field21174;
@@ -45,9 +45,9 @@ public class Class4936 extends Class4800
         this.field21181 = Class225.field793;
         this.field21182 = false;
         this.field21185 = "§7Idle...";
-        this.method14311(false);
+        this.setListening(false);
         final Class4920 class4920;
-        this.addVisualThing(class4920 = new Class4920(this, "particles"));
+        this.addToList(class4920 = new Class4920(this, "particles"));
         class4920.method14303(true);
         final ArrayList list = new ArrayList();
         final Class9295 class4921 = new Class9295(Minecraft.method5277());
@@ -59,19 +59,19 @@ public class Class4936 extends Class4800
             }
         }
         final int n = 790;
-        this.addVisualThing(this.field21183 = new Class4832(this, "textbox", (Minecraft.method5277().window.method7694() - n) / 2 - 140, this.method14278() - 40, 140, 32, Class4831.field20670, "", "Search...", ClientFonts.JelloLight18));
-        this.field21183.method14317(ClientFonts.Default);
+        this.addToList(this.field21183 = new Class4832(this, "textbox", (Minecraft.method5277().window.method7694() - n) / 2 - 140, this.method14278() - 40, 140, 32, TextField.field20670, "", "Search...", ClientFonts.JelloLight18));
+        this.field21183.setFont(ClientFonts.Default);
         this.field21183.method14473(class4831 -> this.method14851());
         this.method14852();
-        this.addVisualThing(this.field21184 = new Class4810(this, "toolbar", (Minecraft.method5277().window.method7694() - n) / 2 + 16, this.method14278() - 94));
+        this.addToList(this.field21184 = new Class4810(this, "toolbar", (Minecraft.method5277().window.method7694() - n) / 2 + 16, this.method14278() - 94));
         this.field21184.method14305(false);
     }
     
     private void method14844(final Class7971 class7971) {
         final int n = 52;
         final Class4836 class7972;
-        this.field21172.addVisualThing(class7972 = new Class4836(this.field21172, class7971.method25888(), 4, n * this.method14849() + 4, this.field21172.method14276() - 8, n, class7971));
-        class7972.method14260((class4837, n) -> {
+        this.field21172.addToList(class7972 = new Class4836(this.field21172, class7971.method25888(), 4, n * this.method14849() + 4, this.field21172.method14276() - 8, n, class7971));
+        class7972.doThis((class4837, n) -> {
             if (n == 0) {
                 final Class4836 method14855 = this.method14855();
                 if (method14855 != null) {
@@ -131,9 +131,9 @@ public class Class4936 extends Class4800
     
     private int method14849() {
         int n = 0;
-        for (final Class4803 class4803 : this.field21172.method14250()) {
-            if (!(class4803 instanceof Class4827)) {
-                for (final Class4803 class4804 : class4803.method14250()) {
+        for (final CustomGuiScreen customGuiScreen : this.field21172.method14250()) {
+            if (!(customGuiScreen instanceof Class4827)) {
+                for (final CustomGuiScreen class4804 : customGuiScreen.method14250()) {
                     ++n;
                 }
             }
@@ -143,7 +143,7 @@ public class Class4936 extends Class4800
     
     private void method14850() {
         RenderUtil.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class9493.field40801);
-        RenderUtil.method26874(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.23f));
+        RenderUtil.method26874(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.23f));
     }
     
     @Override
@@ -162,9 +162,9 @@ public class Class4936 extends Class4800
     
     @Override
     public void method14203(final JSONObject JSONObject) {
-        for (final Class4803 class4406 : this.field21172.method14250()) {
+        for (final CustomGuiScreen class4406 : this.field21172.method14250()) {
             if (!(class4406 instanceof Class4827)) {
-                final Iterator<Class4803> iterator2 = class4406.method14250().iterator();
+                final Iterator<CustomGuiScreen> iterator2 = class4406.method14250().iterator();
                 while (iterator2.hasNext()) {
                     this.field21172.method14243(iterator2.next());
                 }
@@ -174,17 +174,17 @@ public class Class4936 extends Class4800
     }
     
     public void method14851() {
-        this.method14225(new Class1418(this));
+        this.runThisOnDimensionUpdate(new Class1418(this));
     }
     
     public void method14852() {
-        final List<Class7971> method24356 = Class7673.method24356(this.field21178.method25466(), Class225.field793, "", this.field21183.method14314());
+        final List<Class7971> method24356 = Class7673.method24356(this.field21178.method25466(), Class225.field793, "", this.field21183.getTypedText());
         int method24357 = 0;
         if (this.field21172 != null) {
             method24357 = this.field21172.method14392();
             this.method14245(this.field21172);
         }
-        final Class4803 method24358 = this.method14224("alts");
+        final CustomGuiScreen method24358 = this.method14224("alts");
         if (method24358 != null) {
             this.method14245(method24358);
         }
@@ -195,7 +195,7 @@ public class Class4936 extends Class4800
             this.method14844(iterator.next());
         }
         this.field21172.method14391(method24357);
-        this.field21172.method14311(false);
+        this.field21172.setListening(false);
         this.field21172.method14394(true);
         this.field21172.method14251();
     }
@@ -208,9 +208,9 @@ public class Class4936 extends Class4800
     }
     
     public Class4836 method14855() {
-        for (final Class4803 class4803 : this.field21172.method14250()) {
-            if (!(class4803 instanceof Class4827)) {
-                for (final Class4803 class4804 : class4803.method14250()) {
+        for (final CustomGuiScreen customGuiScreen : this.field21172.method14250()) {
+            if (!(customGuiScreen instanceof Class4827)) {
+                for (final CustomGuiScreen class4804 : customGuiScreen.method14250()) {
                     if (!(class4804 instanceof Class4836)) {
                         continue;
                     }

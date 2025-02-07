@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.Date;
 
-public class Class9572
+public class Animation
 {
     private static String[] field41602;
     public int field41603;
@@ -15,11 +15,11 @@ public class Class9572
     public Date field41606;
     public Date field41607;
     
-    public Class9572(final int n, final int n2) {
+    public Animation(final int n, final int n2) {
         this(n, n2, Direction.BACKWARDS);
     }
     
-    public Class9572(final int field41603, final int field41604, final Direction direction) {
+    public Animation(final int field41603, final int field41604, final Direction direction) {
         this.field41605 = Direction.BACKWARDS;
         this.field41603 = field41603;
         this.field41604 = field41604;

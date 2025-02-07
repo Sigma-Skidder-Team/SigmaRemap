@@ -63,8 +63,8 @@ public class ShulkerInfo extends Module
                         GL11.glEnable(3042);
                         GL11.glAlphaFunc(516, 0.0f);
                         GL11.glEnable(2848);
-                        RenderUtil.method26909(new Class7644(n - n4, n2 + 0.009999999776482582, n3 - n4, n + n4, n2 + n4 * 2.0f, n3 + n4), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.1f));
-                        RenderUtil.method26912(new Class7644(n - n4, n2 + 0.009999999776482582, n3 - n4, n + n4, n2 + n4 * 2.0f, n3 + n4), 3.0f, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.3f));
+                        RenderUtil.method26909(new Class7644(n - n4, n2 + 0.009999999776482582, n3 - n4, n + n4, n2 + n4 * 2.0f, n3 + n4), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f));
+                        RenderUtil.method26912(new Class7644(n - n4, n2 + 0.009999999776482582, n3 - n4, n + n4, n2 + n4 * 2.0f, n3 + n4), 3.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3f));
                         GL11.glDisable(3042);
                         if (ShulkerInfo.mc.gameSettings.field23445.method1056()) {
                             ShulkerInfo.mc.gameSettings.field23445.field2162 = false;
@@ -181,11 +181,11 @@ public class ShulkerInfo extends Module
         RenderSystem.method30002();
         GL11.glAlphaFunc(519, 0.0f);
         if (!b) {
-            RenderUtil.method26874((float)n, (float)n2, (float)n6, (float)n5, ColorUtils.applyAlpha(ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.field1273.color, 75.0f), 0.7f));
+            RenderUtil.method26874((float)n, (float)n2, (float)n6, (float)n5, ColorUtils.applyAlpha(ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 75.0f), 0.7f));
             RenderUtil.method26913((float)n, (float)n2, (float)n6, (float)n5, 10.0f, 0.5f);
         }
         else {
-            RenderUtil.method26917(n, n2, n6, n5, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.94f));
+            RenderUtil.method26917(n, n2, n6, n5, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.94f));
         }
         RenderUtil.drawString(ClientFonts.JelloLight25, (float)(n + n3), (float)(n2 + n3 - 3), s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f));
         RenderSystem.method30001();
@@ -224,7 +224,7 @@ public class ShulkerInfo extends Module
                         a = Math.max(a, ShulkerInfo.mc.fontRenderer.getStringWidth((String)method23541.get(k)));
                     }
                     final int n12 = (int)(a * RenderUtil.method26867());
-                    RenderUtil.method26874((float)n11, (float)(n10 + round), n12 + 9.0f * RenderUtil.method26867(), 10.0f * RenderUtil.method26867() * method23541.size() + 7.0f * RenderUtil.method26867(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.8f));
+                    RenderUtil.method26874((float)n11, (float)(n10 + round), n12 + 9.0f * RenderUtil.method26867(), 10.0f * RenderUtil.method26867() * method23541.size() + 7.0f * RenderUtil.method26867(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.8f));
                     GL11.glPushMatrix();
                     GL11.glScalef(RenderUtil.method26867(), RenderUtil.method26867(), 0.0f);
                     final int n13 = (int)(n10 * (1.0f / RenderUtil.method26867()));

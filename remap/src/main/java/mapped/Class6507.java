@@ -6,5 +6,5 @@ package mapped;
 
 public interface Class6507
 {
-    void method19597(final Class4803 p0, final Class4803 p1);
+    void method19597(final CustomGuiScreen p0, final CustomGuiScreen p1);
 }

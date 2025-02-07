@@ -294,8 +294,8 @@ public class Class8088
         if (Class4609.method13694(this.field33313.player.rotationYaw, this.field33313.player.rotationPitch, 100.0f) != null) {
             if (this.field33314 != null) {
                 if (this.field33314.size() > 0) {
-                    final int method19118 = ColorUtils.applyAlpha(ClientColors.field1285.color, 0.02f);
-                    final int method19119 = ColorUtils.applyAlpha(ClientColors.field1276.color, 0.02f);
+                    final int method19118 = ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.color, 0.02f);
+                    final int method19119 = ColorUtils.applyAlpha(ClientColors.DARK_SLATE_GREY.color, 0.02f);
                     GL11.glPushMatrix();
                     GL11.glDisable(2929);
                     final Iterator<Long> iterator2 = this.field33314.get(0).field36694.iterator();
@@ -342,7 +342,7 @@ public class Class8088
         final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.01f, -0.01f, -0.01f);
-        RenderUtil.method26876((float)(-field40314.getWidth(s) / 2 - 10), 0.0f, (float)(field40314.getWidth(s) / 2 + 10), (float)(field40314.getHeight() + 2), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.1f));
+        RenderUtil.method26876((float)(-field40314.getWidth(s) / 2 - 10), 0.0f, (float)(field40314.getWidth(s) / 2 + 10), (float)(field40314.getHeight() + 2), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f));
         GL11.glTranslated((double)(-field40314.getWidth(s) / 2), 0.0, 0.0);
         RenderUtil.drawString(field40314, 0.0f, 0.0f, s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
         GL11.glPopMatrix();

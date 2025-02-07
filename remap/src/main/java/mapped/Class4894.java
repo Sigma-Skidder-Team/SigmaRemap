@@ -16,52 +16,52 @@ import java.util.List;
 
 public class Class4894 extends Class4841
 {
-    public static final Class6523 field20919;
+    public static final ColorHelper field20919;
     public List<String> field20920;
     public int field20921;
     public boolean field20922;
     public boolean field20923;
-    private Class9572 field20924;
+    private Animation field20924;
     private Map<Integer, Class4845> field20925;
     
-    public Class4894(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20920, final int field20921) {
-        super(class4803, s, n, n2, n3, n4, Class4894.field20919, false);
+    public Class4894(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20920, final int field20921) {
+        super(customGuiScreen, s, n, n2, n3, n4, Class4894.field20919, false);
         this.field20920 = new ArrayList<String>();
         this.field20921 = 0;
-        this.field20924 = new Class9572(220, 220);
+        this.field20924 = new Animation(220, 220);
         this.field20925 = new HashMap<Integer, Class4845>();
         this.field20920 = field20920;
         this.field20921 = field20921;
         this.method14684();
     }
     
-    public Class4894(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20920, final int field20921, final Class6523 class4804) {
-        super(class4803, s, n, n2, n3, n4, class4804, false);
+    public Class4894(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20920, final int field20921, final ColorHelper class4804) {
+        super(customGuiScreen, s, n, n2, n3, n4, class4804, false);
         this.field20920 = new ArrayList<String>();
         this.field20921 = 0;
-        this.field20924 = new Class9572(220, 220);
+        this.field20924 = new Animation(220, 220);
         this.field20925 = new HashMap<Integer, Class4845>();
         this.field20920 = field20920;
         this.field20921 = field20921;
         this.method14684();
     }
     
-    public Class4894(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20920, final int field20921, final Class6523 class4804, final String s2) {
-        super(class4803, s, n, n2, n3, n4, class4804, s2, false);
+    public Class4894(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20920, final int field20921, final ColorHelper class4804, final String s2) {
+        super(customGuiScreen, s, n, n2, n3, n4, class4804, s2, false);
         this.field20920 = new ArrayList<String>();
         this.field20921 = 0;
-        this.field20924 = new Class9572(220, 220);
+        this.field20924 = new Animation(220, 220);
         this.field20925 = new HashMap<Integer, Class4845>();
         this.field20920 = field20920;
         this.field20921 = field20921;
         this.method14684();
     }
     
-    public Class4894(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20920, final int field20921, final Class6523 class4804, final String s2, final TrueTypeFont class4805) {
-        super(class4803, s, n, n2, n3, n4, class4804, s2, class4805, false);
+    public Class4894(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20920, final int field20921, final ColorHelper class4804, final String s2, final TrueTypeFont class4805) {
+        super(customGuiScreen, s, n, n2, n3, n4, class4804, s2, class4805, false);
         this.field20920 = new ArrayList<String>();
         this.field20921 = 0;
-        this.field20924 = new Class9572(220, 220);
+        this.field20924 = new Animation(220, 220);
         this.field20925 = new HashMap<Integer, Class4845>();
         this.field20920 = field20920;
         this.field20921 = field20921;
@@ -71,13 +71,13 @@ public class Class4894 extends Class4841
     public void method14681(final List<String> list, final int n) {
         final Class4845 class4845 = new Class4845(this, "sub" + n, this.field20480 + 10, this.method14278() * (n + 1), 200, this.method14278(), list, 0);
         this.field20925.put(n, class4845);
-        class4845.method14297(false);
+        class4845.setEnabled(false);
         class4845.method14516(class4841 -> {
             this.method14694(n);
             this.method14696(false);
             this.method14517();
         });
-        this.addVisualThing(class4845);
+        this.addToList(class4845);
     }
     
     public int method14682(final int n) {
@@ -101,19 +101,19 @@ public class Class4894 extends Class4841
         this.method14250().clear();
         this.field20496 = ClientFonts.JelloLight18;
         final Class4868 class4868;
-        this.addVisualThing(class4868 = new Class4868(this, "dropdownButton", 0, 0, this.method14278(), this.method14278(), this.field20497));
+        this.addToList(class4868 = new Class4868(this, "dropdownButton", 0, 0, this.method14278(), this.method14278(), this.field20497));
         class4868.method14270((class4803, class4804) -> {
             class4803.method14273(0);
             class4803.method14275(0);
             class4803.method14277(this.method14276());
             class4803.method14279(this.method14278());
         });
-        class4868.method14260((class4803, n) -> this.method14696(!this.method14695()));
+        class4868.doThis((class4803, n) -> this.method14696(!this.method14695()));
         for (final String s : this.field20920) {
             final Class4868 class4869;
-            this.addVisualThing(class4869 = new Class4868(this, s, 0, this.method14278(), this.method14276(), this.method14278(), new Class6523(ClientColors.LIGHT_GREYISH_BLUE.color, -1381654, this.field20497.method19729(), this.field20497.method19729(), Class2056.field11734, Class2056.field11738), s, this.method14316()));
+            this.addToList(class4869 = new Class4868(this, s, 0, this.method14278(), this.method14276(), this.method14278(), new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color, -1381654, this.field20497.method19729(), this.field20497.method19729(), Class2056.field11734, Class2056.field11738), s, this.method14316()));
             class4869.method14603(10);
-            class4869.method14260((class4803, n) -> {
+            class4869.doThis((class4803, n) -> {
                 final int method14693 = this.method14693();
                 this.method14694(this.field20920.indexOf(s));
                 this.method14696(false);
@@ -173,7 +173,7 @@ public class Class4894 extends Class4841
                     if (this.field20924.calcPercent() == 1.0f) {
                         if (n - this.method14280() < this.method14276()) {
                             for (final Map.Entry<K, Class4845> entry : this.field20925.entrySet()) {
-                                entry.getValue().method14297((int)entry.getKey() == n3);
+                                entry.getValue().setEnabled((int)entry.getKey() == n3);
                             }
                             return;
                         }
@@ -184,7 +184,7 @@ public class Class4894 extends Class4841
         if (!this.method14236(n, n2) || this.field20924.getDirection() == Direction.FORWARDS) {
             final Iterator<Map.Entry<Integer, Class4845>> iterator2 = this.field20925.entrySet().iterator();
             while (iterator2.hasNext()) {
-                ((Map.Entry<K, Class4845>)iterator2.next()).getValue().method14297(false);
+                ((Map.Entry<K, Class4845>)iterator2.next()).getValue().setEnabled(false);
             }
         }
     }
@@ -194,7 +194,7 @@ public class Class4894 extends Class4841
         RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * this.field20924.calcPercent()));
         RenderUtil.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14686() - 1), 6.0f, n * 0.1f * this.field20924.calcPercent());
         RenderUtil.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14686() - 1), 20.0f, n * 0.2f * this.field20924.calcPercent());
-        if (this.method14314() != null) {
+        if (this.getTypedText() != null) {
             RenderUtil.method26865(this);
             String string = "";
             for (final Map.Entry<Integer, V> entry : this.field20925.entrySet()) {
@@ -203,8 +203,8 @@ public class Class4894 extends Class4841
                 }
                 string = " (" + ((Class4845)entry.getValue()).field20758.get(((Class4845)entry.getValue()).field20759) + ")";
             }
-            RenderUtil.drawString(this.method14316(), (float)(this.method14272() + 10), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2 + 1), this.method14314() + string, ColorUtils.applyAlpha(this.field20497.method19729(), n * 0.7f));
-            RenderUtil.method26872();
+            RenderUtil.drawString(this.method14316(), (float)(this.method14272() + 10), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2 + 1), this.getTypedText() + string, ColorUtils.applyAlpha(this.field20497.method19729(), n * 0.7f));
+            RenderUtil.endScissor();
         }
         final boolean b = this.field20924.calcPercent() < 1.0f;
         if (b) {
@@ -216,7 +216,7 @@ public class Class4894 extends Class4841
         }
         GL11.glPopMatrix();
         if (b) {
-            RenderUtil.method26872();
+            RenderUtil.endScissor();
         }
         final int n2 = this.method14276() - (int)(this.method14278() / 2.0f + 0.5f);
         final int n3 = (int)(this.method14278() / 2.0f + 0.5f) + 1;
@@ -265,7 +265,7 @@ public class Class4894 extends Class4841
     }
     
     @Override
-    public String method14314() {
+    public String getTypedText() {
         return (this.method14689().size() <= 0) ? null : this.method14689().get(this.method14693());
     }
     
@@ -291,6 +291,6 @@ public class Class4894 extends Class4841
     }
     
     static {
-        field20919 = new Class6523(1250067, -15329770).method19734(ClientColors.field1273.color).method19738(Class2056.field11738);
+        field20919 = new ColorHelper(1250067, -15329770).method19734(ClientColors.DEEP_TEAL.color).method19738(Class2056.field11738);
     }
 }

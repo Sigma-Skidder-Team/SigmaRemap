@@ -9,9 +9,9 @@ public class Class4919 extends Class4825
     private static String[] field20591;
     public final /* synthetic */ Class4801 field21051;
     
-    public Class4919(final Class4801 field21051, final Class4803 class4803, final String s) {
+    public Class4919(final Class4801 field21051, final CustomGuiScreen customGuiScreen, final String s) {
         this.field21051 = field21051;
-        super(class4803, s, 0, 0, Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7695(), false);
+        super(customGuiScreen, s, 0, 0, Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7695(), false);
     }
     
     @Override

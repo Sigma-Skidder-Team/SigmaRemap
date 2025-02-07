@@ -22,7 +22,7 @@ public class Class7920
     private Class7617 field32525;
     private int field32526;
     private int field32527;
-    private Class9572 field32528;
+    private Animation field32528;
     
     public Class7920(final Texture field32514, final int field32515, final int field32516, final int field32517, final Class267 field32518, final int field32519, final int field32520) {
         this.field32522 = true;
@@ -35,8 +35,8 @@ public class Class7920
         this.field32524 = field32518;
         this.field32519 = field32519;
         this.field32527 = field32520;
-        this.field32528 = new Class9572(field32519, field32519, Direction.FORWARDS);
-        this.field32520 = (int)(field32514.method24922() / (float)field32516);
+        this.field32528 = new Animation(field32519, field32519, Direction.FORWARDS);
+        this.field32520 = (int)(field32514.getTextureWidth() / (float)field32516);
         this.field32523 = Class226.field797;
     }
     

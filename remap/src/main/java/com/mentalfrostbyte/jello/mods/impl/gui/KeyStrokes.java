@@ -66,7 +66,7 @@ public class KeyStrokes extends Module
                     RenderUtil.method26870(this.field15538 + method8208.field37368, this.field15539 + method8208.field37369, this.field15538 + method8208.field37368 + method8209.field37368, this.field15539 + method8208.field37369 + method8209.field37369);
                     Class8707.method29896(this.field15538 + method8208.field37368, this.field15539 + method8208.field37369, method8209.field37368, method8209.field37369);
                     Class8707.method29899();
-                    RenderUtil.method26872();
+                    RenderUtil.endScissor();
                 }
             }
             for (final Class2090 class5742 : Class2090.values()) {
@@ -87,7 +87,7 @@ public class KeyStrokes extends Module
                 else {
                     method8212 = "L";
                 }
-                RenderUtil.method26876((float)(this.field15538 + method8210.field37368), (float)(this.field15539 + method8210.field37369), (float)(this.field15538 + method8210.field37368 + method8211.field37368), (float)(this.field15539 + method8210.field37369 + method8211.field37369), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f * n));
+                RenderUtil.method26876((float)(this.field15538 + method8210.field37368), (float)(this.field15539 + method8210.field37369), (float)(this.field15538 + method8210.field37368 + method8211.field37368), (float)(this.field15539 + method8210.field37369 + method8211.field37369), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f * n));
                 RenderUtil.method26913((float)(this.field15538 + method8210.field37368), (float)(this.field15539 + method8210.field37369), (float)method8211.field37368, (float)method8211.field37369, 10.0f, 0.75f * n2);
                 RenderUtil.drawString(ClientFonts.JelloLight18, (float)(this.field15538 + method8210.field37368 + (method8211.field37368 - ClientFonts.JelloLight18.getWidth(method8212)) / 2), (float)(this.field15539 + method8210.field37369 + 12), method8212, ClientColors.LIGHT_GREYISH_BLUE.color);
             }
@@ -120,7 +120,7 @@ public class KeyStrokes extends Module
                     n5 = ColorUtils.applyAlpha(-1, (1.0f - method8215 * (0.5f + method8215 * 0.5f)) * 0.8f);
                 }
                 RenderUtil.method26886((float)(this.field15538 + method8213.field37368 + method8214.method31267() / 2), (float)(this.field15539 + method8213.field37369 + method8214.field37369 / 2), (method8214.method31267() - 4) * method8215 + 4.0f, n5);
-                RenderUtil.method26872();
+                RenderUtil.endScissor();
                 if (class5743.field38782.calcPercent() != 1.0f) {
                     continue;
                 }

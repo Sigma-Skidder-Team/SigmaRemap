@@ -75,7 +75,7 @@ public class Waypoints extends Module
                             if (this.field15594.containsKey(method12990.method1865())) {
                                 this.field15594.remove(method12990.method1865());
                             }
-                            this.field15594.put(method12990.method1865(), new Class8124(method12990.getName().getUnformattedComponentText() + " Unspawn", (int)method12990.posX, (int)method12990.posY, (int)method12990.posZ, ClientColors.field1284.color));
+                            this.field15594.put(method12990.method1865(), new Class8124(method12990.getName().getUnformattedComponentText() + " Unspawn", (int)method12990.posX, (int)method12990.posY, (int)method12990.posZ, ClientColors.DARK_OLIVE.color));
                         }
                     }
                 }
@@ -152,13 +152,13 @@ public class Waypoints extends Module
             GL11.glPushMatrix();
             GL11.glRotatef((float)i, 0.0f, 1.0f, 0.0f);
             GL11.glRotatef(180.0f, 1.0f, 0.0f, 0.0f);
-            this.method10010(ColorUtils.method19120(ClientColors.field1273.color, n, 0.04f * i / 90.0f));
+            this.method10010(ColorUtils.method19120(ClientColors.DEEP_TEAL.color, n, 0.04f * i / 90.0f));
             GL11.glPopMatrix();
         }
         for (int j = 0; j <= 270; j += 90) {
             GL11.glPushMatrix();
             GL11.glRotatef((float)j, 0.0f, 1.0f, 0.0f);
-            this.method10010(ColorUtils.method19120(ClientColors.field1273.color, n, 0.04f * j / 90.0f));
+            this.method10010(ColorUtils.method19120(ClientColors.DEEP_TEAL.color, n, 0.04f * j / 90.0f));
             GL11.glPopMatrix();
         }
     }
@@ -242,7 +242,7 @@ public class Waypoints extends Module
         GL11.glPushMatrix();
         GL11.glScalef(-0.009f * n5, -0.009f * n5, -0.009f * n5);
         GL11.glTranslated(0.0, -20.0 * Math.sqrt(Math.sqrt(n5)), 0.0);
-        RenderUtil.method26876((float)(-field40314.getWidth(s) / 2 - 14), -5.0f, field40314.getWidth(s) / 2.0f + 14.0f, (float)(field40314.getHeight() + 7), ColorUtils.applyAlpha(ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.field1273.color, 75.0f), 0.5f));
+        RenderUtil.method26876((float)(-field40314.getWidth(s) / 2 - 14), -5.0f, field40314.getWidth(s) / 2.0f + 14.0f, (float)(field40314.getHeight() + 7), ColorUtils.applyAlpha(ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 75.0f), 0.5f));
         RenderUtil.method26913((float)(-field40314.getWidth(s) / 2 - 14), -5.0f, (float)(field40314.getWidth(s) + 28), (float)(field40314.getHeight() + 12), 20.0f, 0.5f);
         GL11.glTranslated((double)(-field40314.getWidth(s) / 2), 0.0, 0.0);
         RenderUtil.drawString(field40314, 0.0f, 0.0f, s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f));

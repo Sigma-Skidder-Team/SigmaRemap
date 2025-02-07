@@ -13,8 +13,8 @@ public class Class4923 extends Class4825
     private int field21059;
     private int field21060;
     
-    public Class4923(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class8592 field21058) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4923(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final Class8592 field21058) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field21059 = -2434342;
         this.field21060 = -6505234;
         this.field21058 = field21058;
@@ -22,12 +22,12 @@ public class Class4923 extends Class4825
     
     @Override
     public void draw(final float n) {
-        int n2 = this.field20478 + 20;
-        final int n3 = this.field20479 + 5;
+        int n2 = this.x + 20;
+        final int n3 = this.y + 5;
         final int method29097 = this.field21058.method29097();
         final int n4 = this.field20481 - 10 - Class4824.method14454();
         int n5 = ColorUtils.applyAlpha(this.field21059, n);
-        int n6 = ColorUtils.applyAlpha(ClientColors.field1273.color, n);
+        int n6 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n);
         if (this.field21058.field36094) {
             n5 = ColorUtils.applyAlpha(-15038729, n);
             n2 += 402 - method29097;

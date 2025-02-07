@@ -113,12 +113,12 @@ public class Class568 extends Class566
         GL11.glTranslatef((float)(Minecraft.method5277().window.method7694() / 2), (float)(Minecraft.method5277().window.method7695() / 2), 0.0f);
         GL11.glScalef(n6, n6, 0.0f);
         GL11.glTranslatef((float)(-Minecraft.method5277().window.method7694() / 2), (float)(-Minecraft.method5277().window.method7695() / 2), 0.0f);
-        RenderUtil.method26899((float)n5, (float)round, (float)n3, (float)n4, Class568.field3390, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+        RenderUtil.drawImage((float)n5, (float)round, (float)n3, (float)n4, Class568.field3390, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
         final float min = Math.min(1.0f, n2 * 1.02f);
         final int n7 = 80;
         if (n == 1.0f) {
             RenderUtil.method26925((float)n5, (float)(round + n4 + n7), (float)n3, 20.0f, 10.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f * n));
-            RenderUtil.method26925((float)(n5 + 1), (float)(round + n4 + n7 + 1), (float)(n3 - 2), 18.0f, 9.0f, ColorUtils.applyAlpha(ClientColors.field1273.color, 1.0f * n));
+            RenderUtil.method26925((float)(n5 + 1), (float)(round + n4 + n7 + 1), (float)(n3 - 2), 18.0f, 9.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 1.0f * n));
         }
         RenderUtil.method26925((float)(n5 + 2), (float)(round + n4 + n7 + 2), (float)(int)((n3 - 4) * min), 16.0f, 8.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f * n));
         GL11.glPopMatrix();

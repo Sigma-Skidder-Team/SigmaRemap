@@ -6,25 +6,25 @@ package mapped;
 
 public enum ClientColors
 {
-    field1273(-16711423), 
-    field1274(-16723258), 
-    field1275(-15698006), 
-    field1276(-9581017), 
-    field1277(-11231458), 
+    DEEP_TEAL(-16711423),
+    DARK_BLUE_GREY(-16723258),
+    DARK_GREEN(-15698006),
+    DARK_SLATE_GREY(-9581017),
+    GREYISH_BLUE(-11231458),
     LIGHT_GREYISH_BLUE(-65794),
-    field1279(-14163205), 
-    field1280(-16548724), 
-    field1281(-6710887), 
-    field1282(-12303292), 
-    field1283(-43691), 
-    field1284(-7864320), 
-    field1285(-21931), 
-    field1286(-7846912), 
-    field1287(-171), 
-    field1288(-7829504), 
-    field1289(-43521), 
-    field1290(-7864184), 
-    field1291(-16724271);
+    DARK_PURPLE(-14163205),
+    DARK_NAVY_BLUE(-16548724),
+    MID_GREY(-6710887),
+    DULL_GREEN(-12303292),
+    PALE_YELLOW(-43691),
+    DARK_OLIVE(-7864320),
+    PALE_ORANGE(-21931),
+    DARK_MAROON(-7846912),
+    VERY_LIGHT_GREY(-171),
+    DARK_MAUVE(-7829504),
+    PALE_YELLOW_GREEN(-43521),
+    PALE_RED(-7864184),
+    BRIGHT_PINK(-16724271);
     
     public final int color;
     

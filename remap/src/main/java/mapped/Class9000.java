@@ -225,11 +225,11 @@ public class Class9000
             if (Client.getInstance().method35209() != ClientMode.JELLO) {
                 final float n4 = 0.5f + TabGUI.field15637.calcPercent() * 0.5f;
                 GL11.glAlphaFunc(516, 0.1f);
-                RenderUtil.method26874(4.0f, 2.0f, 106.0f, 28.0f, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.6f * n4));
-                RenderUtil.drawString(Class9493.field40811, 9.0f, 2.0f, "Sigma", ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f * n4));
+                RenderUtil.method26874(4.0f, 2.0f, 106.0f, 28.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.6f * n4));
+                RenderUtil.drawString(Class9493.field40811, 9.0f, 2.0f, "Sigma", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f * n4));
                 RenderUtil.drawString(Class9493.field40811, 8.0f, 1.0f, "Sigma", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, Math.min(1.0f, n4 * 1.2f)));
                 final int rgb = Color.getHSBColor(System.currentTimeMillis() % 4000L / 4000.0f, 1.0f, 1.0f).getRGB();
-                RenderUtil.drawString(Class9493.field40814, 73.0f, 2.0f, "5.0.0", ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
+                RenderUtil.drawString(Class9493.field40814, 73.0f, 2.0f, "5.0.0", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
                 RenderUtil.drawString(Class9493.field40814, 72.0f, 1.0f, "5.0.0", ColorUtils.applyAlpha(rgb, Math.min(1.0f, n4 * 1.4f)));
             }
             else {
@@ -421,7 +421,7 @@ public class Class9000
     static {
         field37982 = new HashMap<Class<? extends Screen>, Class<? extends Class4800>>();
         field37983 = new HashMap<Class<? extends Screen>, String>();
-        Class9000.field37982.put(Class548.class, Class4929.class);
+        Class9000.field37982.put(Class548.class, MainMenuScreen.class);
         Class9000.field37982.put(Class722.class, Class4801.class);
         Class9000.field37982.put(Class531.class, Class4940.class);
         Class9000.field37982.put(Class739.class, Class4935.class);

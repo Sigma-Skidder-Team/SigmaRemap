@@ -40,7 +40,7 @@ public class Test extends Module
     private float field16095;
     private float field16096;
     private float field16097;
-    public Class9572 field16098;
+    public Animation field16098;
     private Entity field16099;
     
     public Test() {
@@ -55,7 +55,7 @@ public class Test extends Module
     @Override
     public void onEnable() {
         this.field16086 = 0.0;
-        this.field16098 = new Class9572(1000, 100000, Direction.BACKWARDS);
+        this.field16098 = new Animation(1000, 100000, Direction.BACKWARDS);
         this.field16092 = Test.mc.player.rotationYaw;
         this.field16093 = Test.mc.player.rotationPitch;
         final double field2395 = Test.mc.player.posX;

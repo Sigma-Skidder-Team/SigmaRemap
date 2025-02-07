@@ -26,12 +26,12 @@ import java.util.List;
 public class BlockFly extends ModuleWithSettings {
     public static List<Block> field15749;
     public int field15750;
-    public Class9572 field15751;
+    public Animation field15751;
     public int field15752;
 
     public BlockFly() {
         super(Category.MOVEMENT, "BlockFly", "Allows you to automatically bridge", new Module[]{new NCPBlockFly(), new AACBlockFly(), new HypixelBlockFly()});
-        this.field15751 = new Class9572(114, 114, Direction.FORWARDS);
+        this.field15751 = new Animation(114, 114, Direction.FORWARDS);
         this.field15752 = 0;
         this.addSetting(new StringSetting("ItemSpoof", "Item spoofing mode", 2, new String[]{"None", "Switch", "Spoof", "LiteSpoof"}));
         this.addSetting(new StringSetting("Tower Mode", "Tower mode", 1, new String[]{"None", "NCP", "AAC", "Cubecraft"}).setPremiumMode("Cubecraft"));
@@ -363,7 +363,7 @@ public class BlockFly extends ModuleWithSettings {
     public void method10290(final int n, final int n2, float n3) {
         n3 = (float) (0.5 + 0.5 * n3);
         GL11.glAlphaFunc(518, 0.1f);
-        RenderUtil.drawString(Class9493.field40815, (float) (n + 10), (float) (n2 + 5), this.field15752 + " Blocks", ColorUtils.applyAlpha(ClientColors.field1273.color, n3 * 0.3f));
+        RenderUtil.drawString(Class9493.field40815, (float) (n + 10), (float) (n2 + 5), this.field15752 + " Blocks", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n3 * 0.3f));
         RenderUtil.drawString(Class9493.field40815, (float) (n + 10), (float) (n2 + 4), this.field15752 + " Blocks", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n3 * 0.8f));
         GL11.glAlphaFunc(519, 0.0f);
     }
@@ -384,7 +384,7 @@ public class BlockFly extends ModuleWithSettings {
         GL11.glTranslatef((float) n, (float) n2, 0.0f);
         GL11.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float) (-n), (float) (-n2), 0.0f);
-        RenderUtil.method26899((float) n, (float) n2, 9.0f, 23.0f, ClientAssets.select, ColorUtils.applyAlpha(-15461356, 0.8f * n3));
+        RenderUtil.drawImage((float) n, (float) n2, 9.0f, 23.0f, ClientAssets.select, ColorUtils.applyAlpha(-15461356, 0.8f * n3));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
     }

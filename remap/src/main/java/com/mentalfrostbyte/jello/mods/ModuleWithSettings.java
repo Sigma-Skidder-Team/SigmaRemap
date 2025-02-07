@@ -141,7 +141,7 @@ public class ModuleWithSettings extends Module
     public void onEnable() {
         this.method10258();
         if (this.parentModule instanceof PremiumModule) {
-            if (!Client.getInstance().method35201().method19352()) {
+            if (!Client.getInstance().getNetworkManager().isPremium()) {
                 this.method9908(false);
             }
         }

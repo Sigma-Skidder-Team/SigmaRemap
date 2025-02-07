@@ -61,7 +61,7 @@ public class Class9399
         GL11.glPixelStorei(3315, 0);
         GL11.glPixelStorei(3316, 0);
         GL11.glPixelStorei(3317, 4);
-        Renderer.get().method19297(n, 0, n2, class5339.method24922(), class5339.method24921(), 0, n5, 5121, method24222);
+        Renderer.get().method19297(n, 0, n2, class5339.getTextureWidth(), class5339.getTextureHeight(), 0, n5, 5121, method24222);
         return class5339;
     }
     

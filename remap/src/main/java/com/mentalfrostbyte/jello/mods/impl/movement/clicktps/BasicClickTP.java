@@ -106,7 +106,7 @@ public class BasicClickTP extends Module
                     for (final Class9407 class5741 : this.field15867) {
                         final double n = class5741.method34993() - BasicClickTP.mc.field4644.method5833().method18161().getX();
                         final double n2 = class5741.method34995() - BasicClickTP.mc.field4644.method5833().method18161().getZ();
-                        RenderUtil.method26909(new Class7644(n - 0.30000001192092896, class5741.method34994() - BasicClickTP.mc.field4644.method5833().method18161().getY(), n2 - 0.30000001192092896, n + 0.30000001192092896, class5741.method34994() - BasicClickTP.mc.field4644.method5833().method18161().getY() + 1.600000023841858, n2 + 0.30000001192092896), ColorUtils.applyAlpha(ClientColors.field1285.color, 0.2f));
+                        RenderUtil.method26909(new Class7644(n - 0.30000001192092896, class5741.method34994() - BasicClickTP.mc.field4644.method5833().method18161().getY(), n2 - 0.30000001192092896, n + 0.30000001192092896, class5741.method34994() - BasicClickTP.mc.field4644.method5833().method18161().getY() + 1.600000023841858, n2 + 0.30000001192092896), ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.color, 0.2f));
                     }
                     GL11.glPushMatrix();
                     GL11.glTranslated(BasicClickTP.mc.field4644.method5833().method18161().getX(), BasicClickTP.mc.field4644.method5833().method18161().getY(), BasicClickTP.mc.field4644.method5833().method18161().getZ());

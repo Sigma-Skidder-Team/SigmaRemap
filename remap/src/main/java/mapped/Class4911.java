@@ -33,13 +33,13 @@ public class Class4911 extends Class4825
     }
     
     public void method14752(final float n, final float n2) {
-        this.field20478 = (int)n;
-        this.field20479 = (int)n2;
+        this.x = (int)n;
+        this.y = (int)n2;
     }
     
     @Override
     public void draw(final float n) {
-        RenderUtil.method26888((float)(this.field20478 + 5), (float)(this.field20479 + 5), 10.0f, ColorUtils.applyAlpha(this.method14386() ? ClientColors.field1274.color : ClientColors.field1275.color, n));
+        RenderUtil.method26888((float)(this.x + 5), (float)(this.y + 5), 10.0f, ColorUtils.applyAlpha(this.method14386() ? ClientColors.DARK_BLUE_GREY.color : ClientColors.DARK_GREEN.color, n));
         super.draw(n);
     }
 }

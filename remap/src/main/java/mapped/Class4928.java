@@ -22,14 +22,14 @@ public class Class4928 extends Class4800
         this.field21084 = 0;
         this.field21085 = 0;
         this.field21086 = true;
-        this.method14311(false);
+        this.setListening(false);
     }
     
     @Override
     public void draw(final float n) {
         super.draw(n);
-        final int method24918 = ClientAssets.mentalfrostbyte.method24918();
-        final int method24919 = ClientAssets.mentalfrostbyte.method24917();
+        final int method24918 = ClientAssets.mentalfrostbyte.getImageWidth();
+        final int method24919 = ClientAssets.mentalfrostbyte.getImageHeight();
         final int min = Math.min(method24918, (int)(Minecraft.method5277().window.method7695() / 1.65f));
         final int min2 = Math.min(method24919, (int)(Minecraft.method5277().window.method7695() / 1.65f));
         this.method14789();
@@ -41,9 +41,9 @@ public class Class4928 extends Class4800
         GL11.glTranslatef((float)(-this.method14276() / 2), (float)(-this.method14278() / 2), 0.0f);
         final String s = "Jello by MF & Tomygames";
         final TrueTypeFont field40314 = ClientFonts.JelloLight25;
-        RenderUtil.drawString(field40314, (float)((this.method14276() - field40314.getWidth(s)) / 2), (float)(this.method14278() - 110), s, ClientColors.field1273.color);
+        RenderUtil.drawString(field40314, (float)((this.method14276() - field40314.getWidth(s)) / 2), (float)(this.method14278() - 110), s, ClientColors.DEEP_TEAL.color);
         GL11.glPopMatrix();
-        RenderUtil.method26899(this.method14276() / 2 - (min - min * (this.field21083 - 1.0f) * this.field21083) / 2.0f, (float)(Math.max(min2 * 1.2f, (float)(this.method14278() / 2)) - min2 - min2 * Math.sin(this.field21083 * this.field21083 * 3.141592653589793) * Math.sin(this.field21083 * this.field21083 * 3.141592653589793)), min - min * (this.field21083 - 1.0f) * this.field21083, min2 - min2 * (this.field21083 - 1.0f) * this.field21083, ClientAssets.mentalfrostbyte, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, Math.min(1.0f, this.field21083)));
+        RenderUtil.drawImage(this.method14276() / 2 - (min - min * (this.field21083 - 1.0f) * this.field21083) / 2.0f, (float)(Math.max(min2 * 1.2f, (float)(this.method14278() / 2)) - min2 - min2 * Math.sin(this.field21083 * this.field21083 * 3.141592653589793) * Math.sin(this.field21083 * this.field21083 * 3.141592653589793)), min - min * (this.field21083 - 1.0f) * this.field21083, min2 - min2 * (this.field21083 - 1.0f) * this.field21083, ClientAssets.mentalfrostbyte, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, Math.min(1.0f, this.field21083)));
         if (this.field21083 >= 0.986) {
             this.field21083 = 1.0f;
         }

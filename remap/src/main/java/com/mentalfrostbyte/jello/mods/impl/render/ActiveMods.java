@@ -20,14 +20,14 @@ import java.util.TreeMap;
 
 public class ActiveMods extends Module
 {
-    private TreeMap<Module, Class9572> field15896;
+    private TreeMap<Module, Animation> field15896;
     private TrueTypeFont field15897;
     private TrueTypeFont field15898;
-    private Class9572 field15899;
+    private Animation field15899;
     
     public ActiveMods() {
         super(Category.RENDER, "ActiveMods", "Shows active mods");
-        this.field15896 = new TreeMap<Module, Class9572>();
+        this.field15896 = new TreeMap<Module, Animation>();
         this.addSetting(new StringSetting("Outline", "Outline", 0, new String[] { "All", "Left", "Right", "None" }));
         this.addSetting(new StringSetting("Animation", "Animation", 0, new String[] { "Smooth", "Slide", "Both", "None" }));
         this.addSetting(new BooleanSetting("Sound", "Toggle sound", true));
@@ -40,14 +40,14 @@ public class ActiveMods extends Module
     }
     
     private void method10486() {
-        this.field15899 = new Class9572(2000, 2000, Direction.BACKWARDS);
+        this.field15899 = new Animation(2000, 2000, Direction.BACKWARDS);
     }
     
     private void method10487() {
         this.field15896.clear();
         this.field15897 = Class9493.field40812;
         this.field15898 = Class9493.field40813;
-        this.field15896 = new TreeMap<Module, Class9572>(new Class4462(this));
+        this.field15896 = new TreeMap<Module, Animation>(new Class4462(this));
     }
     
     @EventListener
@@ -66,8 +66,8 @@ public class ActiveMods extends Module
             int n4 = new java.awt.Color(0, 192, 255, 255).getRGB();
             int n5 = -7;
             float method9889 = this.field15899.calcPercent();
-            for (final Map.Entry<K, Class9572> entry : this.field15896.entrySet()) {
-                final Class9572 class5741 = entry.getValue();
+            for (final Map.Entry<K, Animation> entry : this.field15896.entrySet()) {
+                final Animation class5741 = entry.getValue();
                 final Module class5742 = (Module)entry.getKey();
                 if (!class5742.isEnabled()) {
                     if (class5741.calcPercent() == 1.0f) {
@@ -114,7 +114,7 @@ public class ActiveMods extends Module
                 RenderUtil.method26868((float)(n2 - method9890 - 3), (float)(n + 1), (float)n2, n + n6 - Class7791.method25030(class5741.calcPercent(), 0.0f, 1.0f, 1.0f));
                 this.field15897.drawString((float)(n2 - method9890), (float)n, class5742.getFormattedName(), new Color(hsBtoRGB));
                 this.field15898.drawString((float)(n2 - this.field15898.getWidth(this.method10490(class5742))), n + 1.6f, this.method10490(class5742), new Color(160, 160, 160));
-                RenderUtil.method26872();
+                RenderUtil.endScissor();
                 RenderSystem.disableBlend();
                 n += n6;
                 RenderSystem.popMatrix();
@@ -143,7 +143,7 @@ public class ActiveMods extends Module
                 if (key.getCategory() == Category.GUI) {
                     continue;
                 }
-                final Class9572 value = new Class9572(200, 200, key.isEnabled() ? Direction.FORWARDS : Direction.BACKWARDS);
+                final Animation value = new Animation(200, 200, key.isEnabled() ? Direction.FORWARDS : Direction.BACKWARDS);
                 value.method35856(key.isEnabled() ? 0.0f : 1.0f);
                 this.field15896.put(key, value);
                 final Setting class4997 = key.method9899().get("Type");
@@ -160,7 +160,7 @@ public class ActiveMods extends Module
             }
         }
         for (final Map.Entry entry : this.field15896.entrySet()) {
-            ((Class9572)entry.getValue()).changeDirection(((Module)entry.getKey()).isEnabled() ? Direction.FORWARDS : Direction.BACKWARDS);
+            ((Animation)entry.getValue()).changeDirection(((Module)entry.getKey()).isEnabled() ? Direction.FORWARDS : Direction.BACKWARDS);
         }
     }
     

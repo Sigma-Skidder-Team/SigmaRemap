@@ -13,11 +13,11 @@ import org.lwjgl.opengl.GL11;
 public class Cords extends Module
 {
     private int field15924;
-    private Class9572 field15925;
+    private Animation field15925;
     
     public Cords() {
         super(Category.GUI, "Cords", "Displays coordinates");
-        this.field15925 = new Class9572(1500, 1500, Direction.FORWARDS);
+        this.field15925 = new Animation(1500, 1500, Direction.FORWARDS);
     }
     
     @EventListener

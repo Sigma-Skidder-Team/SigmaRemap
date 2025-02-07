@@ -254,7 +254,7 @@ public class NoteblockPlayer extends PremiumModule
         final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.01f, -0.01f, -0.01f);
-        RenderUtil.method26876((float)(-field40314.getWidth(s) / 2 - 10), 0.0f, (float)(field40314.getWidth(s) / 2 + 10), (float)(field40314.getHeight() + 2), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.4f));
+        RenderUtil.method26876((float)(-field40314.getWidth(s) / 2 - 10), 0.0f, (float)(field40314.getWidth(s) / 2 + 10), (float)(field40314.getHeight() + 2), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.4f));
         GL11.glTranslated((double)(-field40314.getWidth(s) / 2), 0.0, 0.0);
         RenderUtil.drawString(field40314, 0.0f, 0.0f, s, ClientColors.LIGHT_GREYISH_BLUE.color);
         GL11.glPopMatrix();

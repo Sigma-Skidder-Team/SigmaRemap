@@ -146,8 +146,8 @@ public class Class7649
         final boolean b2 = method28387.method16480() == 32;
         class7777.method24935(method28387.method16483());
         class7777.method24934(method28387.method16482());
-        class7777.method24922();
-        class7777.method24921();
+        class7777.getTextureWidth();
+        class7777.getTextureHeight();
         final IntBuffer intBuffer = BufferUtils.createIntBuffer(16);
         Class7649.field30374.method19285(3379, intBuffer);
         intBuffer.get(0);
@@ -188,8 +188,8 @@ public class Class7649
         final boolean b = obj.method16480() == 32;
         class7777.method24935(obj.method16483());
         class7777.method24934(obj.method16482());
-        final int method16489 = class7777.method24922();
-        final int method16490 = class7777.method24921();
+        final int method16489 = class7777.getTextureWidth();
+        final int method16490 = class7777.getTextureHeight();
         final int n3 = b ? 6408 : 6407;
         final int n4 = b ? 4 : 3;
         class7777.method24933(method16487);
@@ -239,7 +239,7 @@ public class Class7649
         Class7649.field30374.method19258(n5, method24221);
         Class7649.field30374.method19289(n5, 10241, n3);
         Class7649.field30374.method19289(n5, 10240, n4);
-        Class7649.field30374.method19297(n5, 0, this.field30378, class7777.method24922(), class7777.method24921(), 0, n, 5121, byteBuffer);
+        Class7649.field30374.method19297(n5, 0, this.field30378, class7777.getTextureWidth(), class7777.getTextureHeight(), 0, n, 5121, byteBuffer);
         return method24221;
     }
     

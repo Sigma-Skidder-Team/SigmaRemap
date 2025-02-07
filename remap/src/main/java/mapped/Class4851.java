@@ -11,8 +11,8 @@ public class Class4851 extends Class4841
     private int field20792;
     public boolean field20793;
     
-    public Class4851(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final int field20791, final int field20792) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4851(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final int field20791, final int field20792) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20793 = false;
         this.field20791 = field20791;
         this.field20792 = field20792;
@@ -33,7 +33,7 @@ public class Class4851 extends Class4841
     
     @Override
     public void draw(final float n) {
-        RenderUtil.method26874((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, this.field20791);
+        RenderUtil.method26874((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, this.field20791);
         super.draw(n);
     }
     

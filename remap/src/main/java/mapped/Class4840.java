@@ -13,8 +13,8 @@ public class Class4840 extends Class4825
     public Class7617 field20745;
     public float field20746;
     
-    public Class4840(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4840(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20745 = new Class7617();
         this.field20746 = 0.0f;
         this.field20745.method23932();
@@ -27,10 +27,10 @@ public class Class4840 extends Class4825
         final float n2 = (float)(this.field20745.method23935() / 75L % 12L);
         if (this.field20746 != 0.0f) {
             GL11.glPushMatrix();
-            GL11.glTranslatef((float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + this.field20481 / 2), 0.0f);
+            GL11.glTranslatef((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), 0.0f);
             GL11.glRotatef(n2 * 30.0f, 0.0f, 0.0f, 1.0f);
-            GL11.glTranslatef((float)(-this.field20478 - this.field20480 / 2), (float)(-this.field20479 - this.field20481 / 2), 0.0f);
-            RenderUtil.method26899((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, ClientAssets.loading_indicator, ColorUtils.applyAlpha(ClientColors.field1273.color, this.field20746 * n));
+            GL11.glTranslatef((float)(-this.x - this.field20480 / 2), (float)(-this.y - this.field20481 / 2), 0.0f);
+            RenderUtil.drawImage((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, ClientAssets.loading_indicator, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, this.field20746 * n));
             GL11.glPopMatrix();
         }
     }

@@ -29,7 +29,7 @@ public class Class4935 extends Class4800
         this.field21158 = new Date();
         final int max = Math.max(300, Math.min(850, Minecraft.method5277().window.method7694() - 40));
         final int max2 = Math.max(200, Math.min(550, Minecraft.method5277().window.method7695() - 80));
-        this.addVisualThing(this.field21159 = new Class4843(this, "mapView", (this.field20480 - max) / 2, (this.field20481 - max2) / 2, max, max2));
+        this.addToList(this.field21159 = new Class4843(this, "mapView", (this.field20480 - max) / 2, (this.field20481 - max2) / 2, max, max2));
         this.field21159.field20752.method14719((class4936, n, n2, class4937) -> class4935.method14225(new Class1271(this, class4935, n, n2, class4937)));
         this.field21159.field20752.method14721(class4901 -> this.method14839());
         ColorUtils.method19169();
@@ -44,19 +44,19 @@ public class Class4935 extends Class4800
     }
     
     private void method14839() {
-        for (final Class4803 class4803 : this.method14250()) {
-            if (!(class4803 instanceof Class4862)) {
+        for (final CustomGuiScreen customGuiScreen : this.method14250()) {
+            if (!(customGuiScreen instanceof Class4862)) {
                 continue;
             }
-            final Class4862 class4804 = (Class4862)class4803;
-            this.method14225(new Class1036(this, this, class4803));
+            final Class4862 class4804 = (Class4862) customGuiScreen;
+            this.runThisOnDimensionUpdate(new Class1036(this, this, customGuiScreen));
         }
     }
     
     @Override
     public void method14200(final int n, final int n2) {
         super.method14200(n, n2);
-        this.method14311(false);
+        this.setListening(false);
     }
     
     @Override
@@ -78,7 +78,7 @@ public class Class4935 extends Class4800
         n = Math.min(200L, new Date().getTime() - this.field21158.getTime()) / 200.0f;
         final float method24584 = Class7707.method24584(n, 0.0f, 1.0f, 1.0f);
         this.method14288(0.8f + method24584 * 0.2f, 0.8f + method24584 * 0.2f);
-        RenderUtil.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.25f * n));
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.25f * n));
         super.method14227();
         super.draw(n);
     }

@@ -12,8 +12,8 @@ public class Class4902 extends Class4841
     public ItemStack field20973;
     public boolean field20974;
     
-    public Class4902(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final ItemStack field20973) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4902(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ItemStack field20973) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20973 = field20973;
     }
     
@@ -21,9 +21,9 @@ public class Class4902 extends Class4841
     public void draw(final float n) {
         final int n2 = 5;
         if (this.method14723() || this.method14308()) {
-            RenderUtil.method26914((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, 14.0f, this.method14723() ? (0.8f * n) : (0.3f * n));
+            RenderUtil.method26914((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, 14.0f, this.method14723() ? (0.8f * n) : (0.3f * n));
         }
-        RenderUtil.method26929(this.field20973, this.field20478 + n2, this.field20479 + n2, this.field20480 - n2 * 2, this.field20481 - n2 * 2);
+        RenderUtil.method26929(this.field20973, this.x + n2, this.y + n2, this.field20480 - n2 * 2, this.field20481 - n2 * 2);
         super.draw(n);
     }
     

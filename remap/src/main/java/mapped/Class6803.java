@@ -19,34 +19,34 @@ public class Class6803 implements Class6802
         this.field26744 = field26744;
     }
     
-    private Class4803 method20823(final Class4803[] array) {
-        Class4803 class4803 = array[0];
-        for (final Class4803 class4804 : array) {
-            if (class4804.method14278() > class4803.method14278()) {
-                class4803 = class4804;
+    private CustomGuiScreen method20823(final CustomGuiScreen[] array) {
+        CustomGuiScreen customGuiScreen = array[0];
+        for (final CustomGuiScreen class4804 : array) {
+            if (class4804.method14278() > customGuiScreen.method14278()) {
+                customGuiScreen = class4804;
             }
         }
-        return class4803;
+        return customGuiScreen;
     }
     
     @Override
-    public void method20822(final Class4803 class4803) {
-        if (class4803.method14250().size() > 0) {
-            for (int i = 0; i < class4803.method14250().size(); i += this.field26743) {
-                final Class4803 class4804 = class4803.method14250().get(i);
+    public void method20822(final CustomGuiScreen customGuiScreen) {
+        if (customGuiScreen.method14250().size() > 0) {
+            for (int i = 0; i < customGuiScreen.method14250().size(); i += this.field26743) {
+                final CustomGuiScreen class4804 = customGuiScreen.method14250().get(i);
                 if (i > 0) {
                     if (i % this.field26743 == 0) {
-                        final Class4803[] array = new Class4803[this.field26743];
+                        final CustomGuiScreen[] array = new CustomGuiScreen[this.field26743];
                         for (int j = 0; j < this.field26743; ++j) {
-                            array[j] = class4803.method14250().get(i - this.field26743 + j);
+                            array[j] = customGuiScreen.method14250().get(i - this.field26743 + j);
                         }
-                        class4804.method14270((class4804, class4805) -> class4804.method14275(class4803.method14274() + class4804.method14278() + this.field26744));
+                        class4804.method14270((class4804, class4805) -> class4804.method14275(customGuiScreen.method14274() + class4804.method14278() + this.field26744));
                     }
                 }
-                final Class4803[] array2 = new Class4803[this.field26743];
+                final CustomGuiScreen[] array2 = new CustomGuiScreen[this.field26743];
                 array2[0] = class4804;
                 for (int k = 1; k < this.field26743; ++k) {
-                    array2[k] = class4803.method14250().get(i + k);
+                    array2[k] = customGuiScreen.method14250().get(i + k);
                     this.method20823(array2).method14270((class4804, class4805) -> class4804.method14275(class4804.method14274() + class4804.method14278() / 2));
                 }
             }

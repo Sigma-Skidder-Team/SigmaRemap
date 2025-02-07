@@ -15,8 +15,8 @@ public class Class4920 extends Class4825
     private Class8338 field21053;
     public Class2315 field21054;
     
-    public Class4920(final Class4803 class4803, final String s) {
-        super(class4803, s, 0, 0, Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7695(), false);
+    public Class4920(final CustomGuiScreen customGuiScreen, final String s) {
+        super(customGuiScreen, s, 0, 0, Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7695(), false);
         this.field21052 = new ArrayList<Class9096>();
         this.field21053 = new Class8338();
         this.field21054 = new Class2315();

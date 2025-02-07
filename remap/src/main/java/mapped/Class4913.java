@@ -12,13 +12,13 @@ import java.util.List;
 
 public class Class4913 extends Class4825
 {
-    public static Class6523 field21015;
+    public static ColorHelper field21015;
     private int field21016;
     private int field21017;
     private int field21018;
     
-    public Class4913(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final String s2) {
-        super(class4803, s, n, n2, n3, n4, Class4913.field21015, s2, false);
+    public Class4913(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final String s2) {
+        super(customGuiScreen, s, n, n2, n3, n4, Class4913.field21015, s2, false);
         this.field21016 = this.field20495.length();
     }
     
@@ -171,6 +171,6 @@ public class Class4913 extends Class4825
     }
     
     static {
-        Class4913.field21015 = new Class6523(ClientColors.field1273.color, ClientColors.field1273.color, ClientColors.field1273.color, ClientColors.field1273.color, Class2056.field11734, Class2056.field11738);
+        Class4913.field21015 = new ColorHelper(ClientColors.DEEP_TEAL.color, ClientColors.DEEP_TEAL.color, ClientColors.DEEP_TEAL.color, ClientColors.DEEP_TEAL.color, Class2056.field11734, Class2056.field11738);
     }
 }

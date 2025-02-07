@@ -9,14 +9,14 @@ import java.util.List;
 
 public class Class4890 extends Class4841
 {
-    public static final Class6523 field20903;
+    public static final ColorHelper field20903;
     public List<String> field20904;
     public int field20905;
     public boolean field20906;
     public boolean field20907;
     
-    public Class4890(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20904, final int field20905) {
-        super(class4803, s, n, n2, n3, n4, Class4890.field20903, false);
+    public Class4890(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20904, final int field20905) {
+        super(customGuiScreen, s, n, n2, n3, n4, Class4890.field20903, false);
         this.field20904 = new ArrayList<String>();
         this.field20905 = 0;
         this.field20904 = field20904;
@@ -28,19 +28,19 @@ public class Class4890 extends Class4841
         this.method14250().clear();
         this.field20496 = Class9493.field40809;
         final Class4868 class4868;
-        this.addVisualThing(class4868 = new Class4868(this, "dropdownButton", 0, 0, this.method14278(), this.method14278(), this.field20497));
+        this.addToList(class4868 = new Class4868(this, "dropdownButton", 0, 0, this.method14278(), this.method14278(), this.field20497));
         class4868.method14270((class4803, class4804) -> {
             class4803.method14273(0);
             class4803.method14275(0);
             class4803.method14277(this.method14276());
             class4803.method14279(this.method14278());
         });
-        class4868.method14260((class4803, n) -> this.method14657(!this.method14656()));
+        class4868.doThis((class4803, n) -> this.method14657(!this.method14656()));
         for (final String s : this.field20904) {
             final Class4868 class4869;
-            this.addVisualThing(class4869 = new Class4868(this, s, 0, this.method14278(), this.method14276(), 17, new Class6523(-14540254, this.field20497.method19729(), this.field20497.method19729(), ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11734, Class2056.field11738), s, Class9493.field40810));
+            this.addToList(class4869 = new Class4868(this, s, 0, this.method14278(), this.method14276(), 17, new ColorHelper(-14540254, this.field20497.method19729(), this.field20497.method19729(), ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11734, Class2056.field11738), s, Class9493.field40810));
             class4869.method14603(8);
-            class4869.method14260((class4803, n) -> {
+            class4869.doThis((class4803, n) -> {
                 final int method14654 = this.method14654();
                 this.method14655(this.field20904.indexOf(s));
                 this.method14657(false);
@@ -80,7 +80,7 @@ public class Class4890 extends Class4841
     @Override
     public void draw(final float n) {
         RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), -14540254);
-        RenderUtil.method26878((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), ClientColors.field1273.color);
+        RenderUtil.method26878((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), ClientColors.DEEP_TEAL.color);
         if (this.method14236(this.method14320(), this.method14321())) {
             if (this.method14321() - this.method14281() < this.method14278()) {
                 RenderUtil.method26878((float)(this.method14272() + 1), (float)(this.method14274() + 1), (float)(this.method14272() + this.method14276() - 1), (float)(this.method14274() + this.method14278() - 1), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.25f));
@@ -89,28 +89,28 @@ public class Class4890 extends Class4841
         final int n2 = this.method14272() + this.method14276() - 11;
         final int n3 = this.method14274() + this.method14278() - 12;
         if (!this.method14656()) {
-            RenderUtil.method26884((float)n2, (float)n3, (float)(n2 + 6), (float)n3, (float)(n2 + 3), (float)(n3 + 3), ClientColors.field1281.color);
+            RenderUtil.method26884((float)n2, (float)n3, (float)(n2 + 6), (float)n3, (float)(n2 + 3), (float)(n3 + 3), ClientColors.MID_GREY.color);
         }
         else {
-            RenderUtil.method26884((float)n2, (float)(n3 + 3), (float)(n2 + 6), (float)(n3 + 3), (float)(n2 + 3), (float)n3, ClientColors.field1281.color);
+            RenderUtil.method26884((float)n2, (float)(n3 + 3), (float)(n2 + 6), (float)(n3 + 3), (float)(n2 + 3), (float)n3, ClientColors.MID_GREY.color);
         }
-        for (final Class4803 class4803 : this.method14250()) {
-            if (class4803.method14266().equals("dropdownButton")) {
+        for (final CustomGuiScreen customGuiScreen : this.method14250()) {
+            if (customGuiScreen.method14266().equals("dropdownButton")) {
                 continue;
             }
-            class4803.method14297(this.field20906);
+            customGuiScreen.setEnabled(this.field20906);
         }
-        if (this.method14314() != null) {
+        if (this.getTypedText() != null) {
             RenderUtil.method26865(this);
-            RenderUtil.drawString(this.method14316(), (float)(this.method14272() + 7), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2), this.method14314(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * 0.5f));
-            RenderUtil.method26872();
+            RenderUtil.drawString(this.method14316(), (float)(this.method14272() + 7), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2), this.getTypedText(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * 0.5f));
+            RenderUtil.endScissor();
         }
         if (!this.method14656()) {
             RenderUtil.method26865(this);
         }
         super.draw(n);
         if (!this.method14656()) {
-            RenderUtil.method26872();
+            RenderUtil.endScissor();
         }
     }
     
@@ -151,7 +151,7 @@ public class Class4890 extends Class4841
     }
     
     @Override
-    public String method14314() {
+    public String getTypedText() {
         return (this.method14650().size() <= 0) ? null : this.method14650().get(this.method14654());
     }
     
@@ -172,6 +172,6 @@ public class Class4890 extends Class4841
     }
     
     static {
-        field20903 = new Class6523(1250067, -15329770).method19734(ClientColors.field1273.color).method19738(Class2056.field11738);
+        field20903 = new ColorHelper(1250067, -15329770).method19734(ClientColors.DEEP_TEAL.color).method19738(Class2056.field11738);
     }
 }

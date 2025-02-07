@@ -10,28 +10,28 @@ import com.mentalfrostbyte.jello.UglyClickGUICategory;
 public class Class4799 extends Class4800
 {
     private static Minecraft field20454;
-    private static Class9572 field20455;
+    private static Animation field20455;
     private static boolean field20456;
     private Class4807 field20457;
     
     public Class4799() {
         super("ClassicScreen");
-        Class4799.field20455 = new Class9572(250, 200, Direction.BACKWARDS);
+        Class4799.field20455 = new Animation(250, 200, Direction.BACKWARDS);
         this.method14199();
         ColorUtils.method19169();
     }
     
     public void method14197() {
-        this.method14225(() -> this.method14199());
+        this.runThisOnDimensionUpdate(() -> this.method14199());
     }
     
     public void method14198(final String s, final Category... array) {
-        this.method14225(() -> {
+        this.runThisOnDimensionUpdate(() -> {
             if (this.field20457 != null) {
                 this.method14245(this.field20457);
             }
             final Class4808 field20457 = new Class4808(this, s2, this.method14276() / 2, this.method14278() / 2, array2);
-            this.addVisualThing(this.field20457 = field20457);
+            this.addToList(this.field20457 = field20457);
         });
     }
     
@@ -39,7 +39,7 @@ public class Class4799 extends Class4800
         if (this.field20457 != null) {
             this.method14245(this.field20457);
         }
-        this.addVisualThing(this.field20457 = new UglyClickGUICategory(this, "Sigma", this.method14276() / 2, this.method14278() / 2));
+        this.addToList(this.field20457 = new UglyClickGUICategory(this, "Sigma", this.method14276() / 2, this.method14278() / 2));
     }
     
     @Override
@@ -74,7 +74,7 @@ public class Class4799 extends Class4800
     
     @Override
     public void draw(final float n) {
-        RenderUtil.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), ColorUtils.applyAlpha(ClientColors.field1273.color, Class4799.field20455.calcPercent() * 0.35f));
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, Class4799.field20455.calcPercent() * 0.35f));
         super.draw(n);
     }
     

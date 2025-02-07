@@ -15,27 +15,27 @@ public class Class4854 extends Class4841
 {
     private List<String> field20797;
     private Class4817 field20798;
-    private Class4831 field20799;
+    private TextField field20799;
     private boolean field20800;
     
-    public Class4854(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final boolean field20800, final String... array) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4854(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final boolean field20800, final String... array) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20797 = new ArrayList<String>();
         this.field20800 = field20800;
-        this.addVisualThing(this.field20799 = new Class4831(this, "textbox", 0, 0, n3, 32, Class4831.field20670, "", "Search...", ClientFonts.JelloLight14));
-        this.field20799.method14317(ClientFonts.JelloLight18);
-        this.field20799.method14473(class4831 -> this.method14560(this.field20799.method14314()));
+        this.addToList(this.field20799 = new TextField(this, "textbox", 0, 0, n3, 32, TextField.field20670, "", "Search...", ClientFonts.JelloLight14));
+        this.field20799.setFont(ClientFonts.JelloLight18);
+        this.field20799.method14473(class4831 -> this.method14560(this.field20799.getTypedText()));
         this.method14562(array);
         this.method14560("");
     }
     
     public void method14560(final String s) {
-        this.method14225(() -> {
+        this.runThisOnDimensionUpdate(() -> {
             if (this.field20798 != null) {
                 this.method14245(this.field20798);
             }
             final Class4817 field20798 = new Class4817(this, "scrollview", 0, 40, this.field20480, this.field20481 - 40);
-            this.addVisualThing(this.field20798 = field20798);
+            this.addToList(this.field20798 = field20798);
             final ArrayList list = new ArrayList();
             Registry.field211.iterator();
             final Iterator iterator;
@@ -71,8 +71,8 @@ public class Class4854 extends Class4841
                         final Class4817 field20799 = this.field20798;
                         final int n;
                         new Class4902(this, "btn" + str, 0, 0, n, n, class4038.method11741());
-                        final Class4803 class4040;
-                        field20799.addVisualThing(class4040);
+                        final CustomGuiScreen class4040;
+                        field20799.addToList(class4040);
                         final Class4902 class4041;
                         class4041.method14725(this.field20797.contains(str), false);
                         class4041.method14516(class4903 -> {

@@ -20,15 +20,15 @@ public class Class4821 extends Class4817 implements Class4820
     private boolean field20632;
     private float field20633;
     
-    public Class4821(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Category field20629) {
-        super(class4803, s, n, n2, n3, n4);
+    public Class4821(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final Category field20629) {
+        super(customGuiScreen, s, n, n2, n3, n4);
         this.field20630 = new ArrayList<Class4868>();
         this.field20633 = 1.0f;
         this.field20629 = field20629;
         this.field20632 = true;
-        ((Class4924)class4803).field21063 = 1.0f;
+        ((Class4924) customGuiScreen).field21063 = 1.0f;
         this.field20632 = true;
-        this.method14311(false);
+        this.setListening(false);
         this.method14390();
     }
     
@@ -36,10 +36,10 @@ public class Class4821 extends Class4817 implements Class4820
         int n = 0;
         for (final Module class3167 : Client.getInstance().method35189().getModulesByCategory(this.field20629)) {
             final int method19118 = ColorUtils.applyAlpha(-3487030, 0.0f);
-            final Class6523 method19119 = new Class6523(class3167.isEnabled() ? -14047489 : 1895167477, class3167.isEnabled() ? -14042881 : method19118).method19734(class3167.isEnabled() ? ClientColors.LIGHT_GREYISH_BLUE.color : ClientColors.field1273.color);
+            final ColorHelper method19119 = new ColorHelper(class3167.isEnabled() ? -14047489 : 1895167477, class3167.isEnabled() ? -14042881 : method19118).method19734(class3167.isEnabled() ? ClientColors.LIGHT_GREYISH_BLUE.color : ClientColors.DEEP_TEAL.color);
             method19119.method19736(Class2056.field11734);
             final Class4868 class3168;
-            this.method14396().addVisualThing(class3168 = new Class4868(this.method14396(), class3167.getName() + "Button", 0, n * 30, this.method14276(), 30, method19119, class3167.getName(), ClientFonts.JelloLight20));
+            this.method14396().addToList(class3168 = new Class4868(this.method14396(), class3167.getName() + "Button", 0, n * 30, this.method14276(), 30, method19119, class3167.getName(), ClientFonts.JelloLight20));
             if (!class3167.isEnabled()) {
                 class3168.method14603(22);
             }
@@ -47,16 +47,16 @@ public class Class4821 extends Class4817 implements Class4820
                 class3168.method14603(30);
             }
             this.field20630.add(class3168);
-            class3168.method14260((class3168, n2) -> {
+            class3168.doThis((class3168, n2) -> {
                 final Class4868 class3169 = (Class4868)class3168;
                 if (n2 != 0) {
                     if (n2 == 1) {
-                        ((Class4924)this.method14267()).method14776(class3167);
+                        ((Class4924)this.getParent()).method14776(class3167);
                     }
                 }
                 else {
                     class3167.method9910();
-                    final Class6523 method19734 = new Class6523(class3167.isEnabled() ? -14047489 : 1895167477, class3167.isEnabled() ? -14042881 : method19118).method19734(class3167.isEnabled() ? ClientColors.LIGHT_GREYISH_BLUE.color : ClientColors.field1273.color);
+                    final ColorHelper method19734 = new ColorHelper(class3167.isEnabled() ? -14047489 : 1895167477, class3167.isEnabled() ? -14042881 : method19118).method19734(class3167.isEnabled() ? ClientColors.LIGHT_GREYISH_BLUE.color : ClientColors.DEEP_TEAL.color);
                     if (!class3167.isEnabled()) {
                         class3169.method14603(22);
                     }
@@ -98,7 +98,7 @@ public class Class4821 extends Class4817 implements Class4820
         this.field20633 = Math.max(0.0f, Math.min(1.0f, this.field20633));
         class4924.field21063 = this.method14431(this.field20633, 0.0f, 1.0f, 1.0f);
         if (this.method14403()) {
-            this.method14297(true);
+            this.setEnabled(true);
             if (class4924.field21063 > 0.0f) {
                 if (class4924.field21063 >= 1.0f) {
                     this.field20631 = false;

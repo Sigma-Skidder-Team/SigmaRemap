@@ -4,8 +4,6 @@
 
 package com.mentalfrostbyte;
 
-import java.util.Iterator;
-
 import com.mentalfrostbyte.jello.ClientAssets;
 import mapped.*;
 import org.lwjgl.opengl.GL11;
@@ -126,7 +124,7 @@ public class Client
                 discordRPC.Discord_RunCallbacks();
                 try {
                     Thread.sleep(2000L);
-                    if (getInstance().method35201().method19352() && (discordRichPresence2.smallImageKey == null || discordRichPresence2.smallImageKey.equals("premium"))) {
+                    if (getInstance().getNetworkManager().isPremium() && (discordRichPresence2.smallImageKey == null || discordRichPresence2.smallImageKey.equals("premium"))) {
                         discordRichPresence2.smallImageKey = "premium";
                         discordRichPresence2.smallImageText = "Premium";
                         discordRPC.Discord_UpdatePresence(discordRichPresence2);
@@ -201,15 +199,14 @@ public class Client
         GL11.glPopMatrix();
     }
     
-    public void method35182(final Texture e) {
+    public void addTexture(final Texture e) {
         Client.textureList.add(e);
     }
     
-    public void method35183() {
+    public void renderVisuals() {
         if (!Client.textureList.isEmpty()) {
-            final Iterator<Texture> iterator = Client.textureList.iterator();
-            while (iterator.hasNext()) {
-                iterator.next().method24923();
+            for (Texture texture : Client.textureList) {
+                texture.release();
             }
             Client.textureList.clear();
         }
@@ -316,7 +313,7 @@ public class Client
         return this.field40706;
     }
     
-    public Class6466 method35201() {
+    public Class6466 getNetworkManager() {
         return this.field40701;
     }
     

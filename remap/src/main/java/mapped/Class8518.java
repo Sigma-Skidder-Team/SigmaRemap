@@ -18,7 +18,7 @@ public class Class8518 extends Class8519
     private boolean field34936;
     
     public Class8518(final Class7764 field34934) throws SlickException {
-        super(field34934.method24852().method24922(), field34934.method24852().method24921());
+        super(field34934.method24852().getTextureWidth(), field34934.method24852().getTextureHeight());
         this.field34936 = true;
         this.field34934 = field34934;
         Class8452.method28208("Creating FBO " + field34934.method24843() + "x" + field34934.method24844());
@@ -66,7 +66,7 @@ public class Class8518 extends Class8519
         try {
             final Texture method24230 = Class7649.method24214().method24230(this.field34934.method24843(), this.field34934.method24844(), this.field34934.method24801());
             EXTFramebufferObject.glBindFramebufferEXT(36160, this.field34935);
-            EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36064, 3553, method24230.method24924(), 0);
+            EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36064, 3553, method24230.getTextureID(), 0);
             this.method28447();
             this.method28450();
             this.method28466();

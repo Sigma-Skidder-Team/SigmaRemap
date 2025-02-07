@@ -10,12 +10,12 @@ import slick2d.Texture;
 public class Class4859 extends Class4841
 {
     private static String[] field20591;
-    public Class9572 field20815;
+    public Animation field20815;
     public Texture field20816;
     
-    public Class4859(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Texture field20816) {
-        super(class4803, s, n, n2, n3, n4, false);
-        this.field20815 = new Class9572(300, 300, Direction.FORWARDS);
+    public Class4859(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final Texture field20816) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
+        this.field20815 = new Animation(300, 300, Direction.FORWARDS);
         this.field20816 = field20816;
     }
     
@@ -40,11 +40,11 @@ public class Class4859 extends Class4841
         }
         this.drawBackground((int)(-25.0f * n2));
         this.method14228();
-        RenderUtil.method26905((float)(this.field20478 + 20), (float)this.field20479, 100.0f, 100.0f, this.field20816);
-        final int n3 = this.field20478 + 12 - (Class9493.field40807.getWidth(this.field20474) - this.field20480) / 2;
-        final int n4 = this.field20479 + 102;
+        RenderUtil.method26905((float)(this.x + 20), (float)this.y, 100.0f, 100.0f, this.field20816);
+        final int n3 = this.x + 12 - (Class9493.field40807.getWidth(this.field20474) - this.field20480) / 2;
+        final int n4 = this.y + 102;
         GL11.glAlphaFunc(516, 0.1f);
-        RenderUtil.drawString(Class9493.field40807, (float)n3, (float)(n4 + 1), this.field20474, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
+        RenderUtil.drawString(Class9493.field40807, (float)n3, (float)(n4 + 1), this.field20474, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
         RenderUtil.drawString(Class9493.field40807, (float)n3, (float)n4, this.field20474, ClientColors.LIGHT_GREYISH_BLUE.color);
         GL11.glAlphaFunc(519, 0.0f);
         super.method14229(n);

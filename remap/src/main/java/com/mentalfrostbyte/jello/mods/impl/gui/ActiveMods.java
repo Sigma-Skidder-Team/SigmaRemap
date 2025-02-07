@@ -30,14 +30,14 @@ public class ActiveMods extends Module
     private List<Module> field15890;
     public int field15891;
     public int field15892;
-    public HashMap<Module, Class9572> field15893;
+    public HashMap<Module, Animation> field15893;
     public TrueTypeFont field15894;
     
     public ActiveMods() {
         super(Category.GUI, "ActiveMods", "Renders active mods");
         this.field15890 = new ArrayList<Module>();
         this.field15891 = 0;
-        this.field15893 = new HashMap<Module, Class9572>();
+        this.field15893 = new HashMap<Module, Animation>();
         this.field15894 = ClientFonts.JelloLight20;
         this.addSetting(new StringSetting("Size", "The font size", 0, new String[] { "Normal", "Small", "Tiny" }));
         this.addSetting(new BooleanSetting("Animations", "Scale in animation", true));
@@ -75,7 +75,7 @@ public class ActiveMods extends Module
         for (final Module class3167 : Client.getInstance().method35189().getModuleMap().values()) {
             if (class3167.getCategoryBasedOnMode() != Category.GUI) {
                 this.field15890.add(class3167);
-                this.field15893.put(class3167, new Class9572(150, 150, Direction.FORWARDS));
+                this.field15893.put(class3167, new Animation(150, 150, Direction.FORWARDS));
                 if (!this.method9883("Animations")) {
                     continue;
                 }
@@ -160,7 +160,7 @@ public class ActiveMods extends Module
                     }
                 }
                 else {
-                    final Class9572 class5741 = this.field15893.get(key2);
+                    final Animation class5741 = this.field15893.get(key2);
                     if (class5741.calcPercent() == 0.0f) {
                         continue;
                     }
@@ -175,7 +175,7 @@ public class ActiveMods extends Module
                 GL11.glTranslatef((float)n5, (float)n6, 0.0f);
                 GL11.glScalef(n4, n4, 1.0f);
                 GL11.glTranslatef((float)(-n5), (float)(-n6), 0.0f);
-                RenderUtil.method26899(method7694 - field15894.getWidth(method7697) * 1.5f - n - 20.0f, (float)(field15895 - 20), field15894.getWidth(method7697) * 3.0f, (float)(field15894.getHeight() + n2 + 40), ClientAssets.shadow, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.36f * method7696 * (float)Math.sqrt(Math.min(1.2f, field15894.getWidth(method7697) / 63.0f))));
+                RenderUtil.drawImage(method7694 - field15894.getWidth(method7697) * 1.5f - n - 20.0f, (float)(field15895 - 20), field15894.getWidth(method7697) * 3.0f, (float)(field15894.getHeight() + n2 + 40), ClientAssets.shadow, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.36f * method7696 * (float)Math.sqrt(Math.min(1.2f, field15894.getWidth(method7697) / 63.0f))));
                 RenderUtil.drawString(field15894, (float)(method7694 - n - field15894.getWidth(method7697)), (float)field15895, method7697, (method7696 != 1.0f) ? ColorUtils.applyAlpha(-1, method7696 * 0.95f) : method7695);
                 GL11.glPopMatrix();
                 n3 -= 100;

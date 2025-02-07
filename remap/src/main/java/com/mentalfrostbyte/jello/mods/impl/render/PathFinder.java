@@ -32,7 +32,7 @@ public class PathFinder extends Module
     }
     
     public void method10466() {
-        final int method19118 = ColorUtils.applyAlpha(ClientColors.field1283.color, 0.14f);
+        final int method19118 = ColorUtils.applyAlpha(ClientColors.PALE_YELLOW.color, 0.14f);
         GL11.glPushMatrix();
         GL11.glDisable(2929);
         final Iterator<Class8733> iterator = this.field15879.iterator();

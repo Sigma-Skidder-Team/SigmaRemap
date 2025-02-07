@@ -6,5 +6,5 @@ package mapped;
 
 public interface Class8992
 {
-    void method32082(final Class4831 p0);
+    void method32082(final TextField p0);
 }

@@ -49,12 +49,12 @@ public class Class7777 implements Texture
     }
     
     @Override
-    public boolean method24914() {
+    public boolean hasAlpha() {
         return this.field31848;
     }
     
     @Override
-    public String method24915() {
+    public String getTextureRef() {
         return this.field31849;
     }
     
@@ -91,32 +91,32 @@ public class Class7777 implements Texture
     }
     
     @Override
-    public int method24917() {
+    public int getImageHeight() {
         return this.field31842;
     }
     
     @Override
-    public int method24918() {
+    public int getImageWidth() {
         return this.field31843;
     }
     
     @Override
-    public float method24919() {
+    public float getHeight() {
         return this.field31847;
     }
     
     @Override
-    public float method24920() {
+    public float getWidth() {
         return this.field31846;
     }
     
     @Override
-    public int method24921() {
+    public int getTextureHeight() {
         return this.field31845;
     }
     
     @Override
-    public int method24922() {
+    public int getTextureWidth() {
         return this.field31844;
     }
     
@@ -143,7 +143,7 @@ public class Class7777 implements Texture
     }
     
     @Override
-    public void method24923() {
+    public void release() {
         final IntBuffer method24939 = this.method24939(1);
         method24939.put(this.field31841);
         method24939.flip();
@@ -160,7 +160,7 @@ public class Class7777 implements Texture
     }
     
     @Override
-    public int method24924() {
+    public int getTextureID() {
         return this.field31841;
     }
     
@@ -175,10 +175,10 @@ public class Class7777 implements Texture
     }
     
     @Override
-    public byte[] method24925() {
-        final ByteBuffer byteBuffer = BufferUtils.createByteBuffer((this.method24914() ? 4 : 3) * this.field31844 * this.field31845);
+    public byte[] getTextureData() {
+        final ByteBuffer byteBuffer = BufferUtils.createByteBuffer((this.hasAlpha() ? 4 : 3) * this.field31844 * this.field31845);
         this.bind();
-        Class7777.field31838.method19286(3553, 0, this.method24914() ? 6408 : 6407, 5121, byteBuffer);
+        Class7777.field31838.method19286(3553, 0, this.hasAlpha() ? 6408 : 6407, 5121, byteBuffer);
         final byte[] dst = new byte[byteBuffer.limit()];
         byteBuffer.get(dst);
         byteBuffer.clear();
@@ -186,10 +186,10 @@ public class Class7777 implements Texture
     }
     
     @Override
-    public void method24926(final int n) {
+    public void setTextureFilter(final int textureFilter) {
         this.bind();
-        Class7777.field31838.method19289(this.field31840, 10241, n);
-        Class7777.field31838.method19289(this.field31840, 10240, n);
+        Class7777.field31838.method19289(this.field31840, 10241, textureFilter);
+        Class7777.field31838.method19289(this.field31840, 10240, textureFilter);
     }
     
     public void method24940(final int n, final int n2, final int n3, final int n4, final ByteBuffer byteBuffer) {

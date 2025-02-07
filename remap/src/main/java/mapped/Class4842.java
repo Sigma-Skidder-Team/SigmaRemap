@@ -13,8 +13,8 @@ public class Class4842 extends Class4841
     private Class7643 field20748;
     public float field20749;
     
-    public Class4842(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4842(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20748 = Client.getInstance().method35199();
         this.field20749 = -1.0f;
         this.method14256((class4803, n) -> this.field20749 = Math.min((int)this.field20748.method24186() / (float)this.field20748.method24192(), 1.0f));
@@ -43,11 +43,11 @@ public class Class4842 extends Class4841
             }
         }
         if (n2 == 0 && !this.field20748.method24184()) {
-            RenderUtil.method26874((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.43f * n));
+            RenderUtil.method26874((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.43f * n));
         }
         else {
-            RenderUtil.method26874((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.field1281.color, 0.075f));
-            RenderUtil.method26874(this.method14272() + this.method14276() * max, (float)this.method14274(), this.method14276() * (1.0f - max), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.43f * n));
+            RenderUtil.method26874((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.MID_GREY.color, 0.075f));
+            RenderUtil.method26874(this.method14272() + this.method14276() * max, (float)this.method14274(), this.method14276() * (1.0f - max), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.43f * n));
             RenderUtil.method26874((float)this.method14272(), (float)this.method14274(), this.method14276() * n3, (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * n));
             if (n3 != 0.0f) {
                 RenderUtil.method26905(this.method14272() + this.method14276() * n3, (float)this.method14274(), 5.0f, 5.0f, ClientAssets.shadow_right);

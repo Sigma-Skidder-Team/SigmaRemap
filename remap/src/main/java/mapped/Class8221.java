@@ -14,12 +14,12 @@ public class Class8221
     public final int field33771;
     private boolean field33772;
     public final int field33773 = 25;
-    public Class9572 field33774;
+    public Animation field33774;
     public final int field33775 = 7;
     
     public Class8221(final int field33771) {
         this.field33772 = false;
-        this.field33774 = new Class9572(300, 300);
+        this.field33774 = new Animation(300, 300);
         this.field33770 = Class9493.field40813;
         this.field33771 = field33771;
     }
@@ -58,9 +58,9 @@ public class Class8221
         if (this.field33774.getDirection() == Direction.FORWARDS) {
             n2 = Class8468.method28269(this.field33774.calcPercent(), 0.0f, 1.0f, 1.0f);
         }
-        RenderUtil.method26869((float)this.method27234(), (float)this.method27235(), this.method27233() * n2, (float)this.method27239());
+        RenderUtil.startScissor((float)this.method27234(), (float)this.method27235(), this.method27233() * n2, (float)this.method27239());
         this.method27232(n);
-        RenderUtil.method26872();
+        RenderUtil.endScissor();
     }
     
     public void method27232(final float n) {

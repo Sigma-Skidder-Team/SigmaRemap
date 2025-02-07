@@ -75,7 +75,7 @@ public class Class8707
             final int n = 35;
             RenderUtil.method26870(Class8707.field36590, Class8707.field36591 - n, Class8707.field36592, Class8707.field36593 + n);
             Class8707.field36587.method7247(Class8707.field36586.timer.field26528);
-            RenderUtil.method26872();
+            RenderUtil.endScissor();
             GL11.glEnable(3008);
             Class8707.field36588.method18395(true);
             Class8707.field36586.field4667.method18395(true);

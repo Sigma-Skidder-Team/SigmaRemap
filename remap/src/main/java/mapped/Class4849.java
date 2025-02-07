@@ -17,7 +17,7 @@ import java.util.List;
 
 public class Class4849 extends Class4841
 {
-    public Class9572 field20774;
+    public Animation field20774;
     public int field20775;
     public int field20776;
     public int field20777;
@@ -29,8 +29,8 @@ public class Class4849 extends Class4841
     public boolean field20783;
     private final List<Class7390> field20784;
     
-    public Class4849(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4849(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20783 = false;
         this.field20784 = new ArrayList<Class7390>();
         this.field20777 = 500;
@@ -38,21 +38,21 @@ public class Class4849 extends Class4841
         this.field20776 = (n3 - this.field20777) / 2;
         this.field20775 = (n4 - this.field20778) / 2;
         final int n5 = 30;
-        final Class4831 class4804;
-        this.addVisualThing(class4804 = new Class4831(this, "search", this.field20776 + n5, this.field20775 + n5 + 50, this.field20777 - n5 * 2, 60, Class4831.field20670, "", "Search..."));
+        final TextField class4804;
+        this.addToList(class4804 = new TextField(this, "search", this.field20776 + n5, this.field20775 + n5 + 50, this.field20777 - n5 * 2, 60, TextField.field20670, "", "Search..."));
         class4804.method14473(class4832 -> {
-            this.field20779 = class4804.method14314();
+            this.field20779 = class4804.getTypedText();
             this.field20780.method14391(0);
         });
         class4804.method14251();
-        this.addVisualThing(this.field20780 = new Class4817(this, "mods", this.field20776 + n5, this.field20775 + n5 + 120, this.field20777 - n5 * 2, this.field20778 - n5 * 2 - 120));
+        this.addToList(this.field20780 = new Class4817(this, "mods", this.field20776 + n5, this.field20775 + n5 + 120, this.field20777 - n5 * 2, this.field20778 - n5 * 2 - 120));
         int n6 = 10;
         final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator = Class9000.field37983.entrySet().iterator();
         while (iterator.hasNext()) {
             final Class8799 class4805 = new Class8799(((Map.Entry<Class<? extends Screen>, V>)iterator.next()).getKey());
             final Class4868 class4806;
-            this.field20780.addVisualThing(class4806 = new Class4868(this.field20780, class4805.method30702(), 0, n6++ * 55, this.field20780.method14276(), 55, new Class6523(ColorUtils.applyAlpha(ClientColors.field1273.color, 0.02f), -986896).method19734(ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f)).method19736(Class2056.field11738), class4805.method30702()));
-            class4806.method14260((class4869, n) -> {
+            this.field20780.addToList(class4806 = new Class4868(this.field20780, class4805.method30702(), 0, n6++ * 55, this.field20780.method14276(), 55, new ColorHelper(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.02f), -986896).method19734(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f)).method19736(Class2056.field11738), class4805.method30702()));
+            class4806.doThis((class4869, n) -> {
                 final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator = Class9000.field37983.entrySet().iterator();
                 while (iterator.hasNext()) {
                     final Class8799 field20781 = new Class8799(((Map.Entry<Class<? extends Screen>, V>)iterator.next()).getKey());
@@ -67,11 +67,11 @@ public class Class4849 extends Class4841
         n6 += 50;
         for (final Module class4807 : Client.getInstance().method35189().getModuleMap().values()) {
             final Class4868 class4808;
-            this.field20780.addVisualThing(class4808 = new Class4868(this.field20780, class4807.getName(), 0, n6++ * 40, this.field20780.method14276(), 40, new Class6523(16777215, -986896).method19734(ClientColors.field1273.color).method19736(Class2056.field11734), new Class8799(class4807).method30702()));
+            this.field20780.addToList(class4808 = new Class4868(this.field20780, class4807.getName(), 0, n6++ * 40, this.field20780.method14276(), 40, new ColorHelper(16777215, -986896).method19734(ClientColors.DEEP_TEAL.color).method19736(Class2056.field11734), new Class8799(class4807).method30702()));
             class4808.method14603(10);
-            class4808.method14260((class4869, n) -> {
+            class4808.doThis((class4869, n) -> {
                 for (final Module class4870 : Client.getInstance().method35189().getModuleMap().values()) {
-                    if (class4870.getName().equals(class4808.method14314()) && !this.field20783) {
+                    if (class4870.getName().equals(class4808.getTypedText()) && !this.field20783) {
                         this.field20781 = new Class8799(class4870);
                         this.field20783 = true;
                         break;
@@ -79,8 +79,8 @@ public class Class4849 extends Class4841
                 }
             });
         }
-        this.field20774 = new Class9572(200, 120);
-        this.method14311(false);
+        this.field20774 = new Animation(200, 120);
+        this.setListening(false);
     }
     
     @Override
@@ -104,9 +104,9 @@ public class Class4849 extends Class4841
         final TreeMap treeMap2 = new TreeMap();
         final TreeMap treeMap3 = new TreeMap();
         final ArrayList list = new ArrayList();
-        for (final Class4803 class4803 : this.field20780.method14250()) {
-            if (!(class4803 instanceof Class4827)) {
-                for (final Class4803 class4804 : class4803.method14250()) {
+        for (final CustomGuiScreen customGuiScreen : this.field20780.method14250()) {
+            if (!(customGuiScreen instanceof Class4827)) {
+                for (final CustomGuiScreen class4804 : customGuiScreen.method14250()) {
                     if (!(class4804 instanceof Class4868)) {
                         continue;
                     }
@@ -122,15 +122,15 @@ public class Class4849 extends Class4841
                                     break Label_0279;
                                 }
                             }
-                            treeMap.put(class4805.method14314(), class4805);
+                            treeMap.put(class4805.getTypedText(), class4805);
                             continue;
                         }
                     }
-                    if (!b && this.method14542(this.field20779, class4805.method14314())) {
-                        treeMap2.put(class4805.method14314(), class4805);
+                    if (!b && this.method14542(this.field20779, class4805.getTypedText())) {
+                        treeMap2.put(class4805.getTypedText(), class4805);
                     }
-                    else if (!b && this.method14541(this.field20779, class4805.method14314())) {
-                        treeMap3.put(class4805.method14314(), class4805);
+                    else if (!b && this.method14541(this.field20779, class4805.getTypedText())) {
+                        treeMap3.put(class4805.getTypedText(), class4805);
                     }
                     else {
                         list.add(class4805);
@@ -140,7 +140,7 @@ public class Class4849 extends Class4841
         }
         int n3 = (treeMap.size() <= 0) ? 0 : 10;
         for (final Class4868 class4806 : treeMap.values()) {
-            class4806.method14297(true);
+            class4806.setEnabled(true);
             class4806.method14275(n3);
             n3 += class4806.method14278();
         }
@@ -148,18 +148,18 @@ public class Class4849 extends Class4841
             n3 += 10;
         }
         for (final Class4868 class4807 : treeMap2.values()) {
-            class4807.method14297(true);
+            class4807.setEnabled(true);
             class4807.method14275(n3);
             n3 += class4807.method14278();
         }
         for (final Class4868 class4808 : treeMap3.values()) {
-            class4808.method14297(true);
+            class4808.setEnabled(true);
             class4808.method14275(n3);
             n3 += class4808.method14278();
         }
         final Iterator iterator6 = list.iterator();
         while (iterator6.hasNext()) {
-            ((Class4868)iterator6.next()).method14297(false);
+            ((Class4868)iterator6.next()).setEnabled(false);
         }
         super.method14200(n, n2);
     }
@@ -199,11 +199,11 @@ public class Class4849 extends Class4841
                 this.method14544(this.field20781);
             }
         }
-        RenderUtil.method26876((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.3f * method35858));
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3f * method35858));
         super.method14227();
         RenderUtil.method26925((float)this.field20776, (float)this.field20775, (float)this.field20777, (float)this.field20778, 10.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method35858));
         final int n2 = 30;
-        RenderUtil.drawString(ClientFonts.JelloLight36, (float)(n2 + this.field20776), (float)(n2 + this.field20775), "Select mod to bind", ColorUtils.applyAlpha(ClientColors.field1273.color, method35858 * 0.7f));
+        RenderUtil.drawString(ClientFonts.JelloLight36, (float)(n2 + this.field20776), (float)(n2 + this.field20775), "Select mod to bind", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, method35858 * 0.7f));
         super.draw(method35858);
     }
     

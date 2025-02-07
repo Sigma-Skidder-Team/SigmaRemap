@@ -17,32 +17,32 @@ public class Class4850 extends Class4841
 {
     private List<Class4868> field20785;
     private final int field20786;
-    private final Class9572 field20787;
+    private final Animation field20787;
     private boolean field20788;
     private final List<Class9031> field20789;
     private final List<Class5257> field20790;
     
-    public Class4850(final Class4803 class4803, final String s, final int n, final int n2, final int field20786, final String s2) {
-        super(class4803, s, n - 125, n2, 250, 330, Class6523.field25964, s2, false);
+    public Class4850(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int field20786, final String s2) {
+        super(customGuiScreen, s, n - 125, n2, 250, 330, ColorHelper.field25964, s2, false);
         this.field20785 = new ArrayList<Class4868>();
         this.field20788 = false;
         this.field20789 = new ArrayList<Class9031>();
         this.field20790 = new ArrayList<Class5257>();
-        if (this.field20479 + this.field20481 <= Minecraft.method5277().window.method7695()) {
-            this.field20479 += 10;
+        if (this.y + this.field20481 <= Minecraft.method5277().window.method7695()) {
+            this.y += 10;
         }
         else {
-            this.field20479 -= 400;
+            this.y -= 400;
             this.field20788 = true;
         }
         this.field20786 = field20786;
-        this.field20787 = new Class9572(250, 0);
+        this.field20787 = new Animation(250, 0);
         this.method14301(true);
-        this.method14311(false);
+        this.setListening(false);
         this.method14549();
-        final Class4861 class4804;
-        this.addVisualThing(class4804 = new Class4861(this, "addButton", this.field20480 - 70, this.field20481 - 70, ClientFonts.JelloLight25.getWidth("Add"), 70, Class6523.field25964, "Add", ClientFonts.JelloLight25));
-        class4804.method14260((class4803, n) -> this.method14551());
+        final UIButton class4804;
+        this.addToList(class4804 = new UIButton(this, "addButton", this.field20480 - 70, this.field20481 - 70, ClientFonts.JelloLight25.getWidth("Add"), 70, ColorHelper.field25964, "Add", ClientFonts.JelloLight25));
+        class4804.doThis((class4803, n) -> this.method14551());
     }
     
     public void method14548() {
@@ -52,11 +52,11 @@ public class Class4850 extends Class4841
     public void method14549() {
         int n = 1;
         final ArrayList list = new ArrayList();
-        for (final Class4803 class4803 : this.method14250()) {
-            if (class4803.method14278() == 0) {
+        for (final CustomGuiScreen customGuiScreen : this.method14250()) {
+            if (customGuiScreen.method14278() == 0) {
                 continue;
             }
-            list.add(class4803.method14266());
+            list.add(customGuiScreen.method14266());
         }
         this.method14251();
         this.method14307(true);
@@ -66,7 +66,7 @@ public class Class4850 extends Class4841
                 continue;
             }
             final Class4896 class4805;
-            this.addVisualThing(class4805 = new Class4896(this, class4804.method30702(), 0, 20 + 55 * n, this.field20480, 55, class4804, n++));
+            this.addToList(class4805 = new Class4896(this, class4804.method30702(), 0, 20 + 55 * n, this.field20480, 55, class4804, n++));
             class4805.method14516(class8800 -> {
                 class4804.method30704(0);
                 this.method14517();
@@ -84,11 +84,11 @@ public class Class4850 extends Class4841
     @Override
     public void method14200(final int n, final int n2) {
         final HashMap hashMap = new HashMap();
-        for (final Class4803 class4803 : this.method14250()) {
-            if (!(class4803 instanceof Class4896)) {
+        for (final CustomGuiScreen customGuiScreen : this.method14250()) {
+            if (!(customGuiScreen instanceof Class4896)) {
                 continue;
             }
-            final Class4896 value = (Class4896)class4803;
+            final Class4896 value = (Class4896) customGuiScreen;
             hashMap.put(value.field20940, value);
         }
         int n3 = 75;
@@ -108,17 +108,17 @@ public class Class4850 extends Class4841
         super.method14227();
         final int n = 10;
         final int method35860 = ColorUtils.applyAlpha(-723724, Class7791.method25030(method35858, 0.0f, 1.0f, 1.0f));
-        RenderUtil.method26913((float)(this.field20478 + n / 2), (float)(this.field20479 + n / 2), (float)(this.field20480 - n), (float)(this.field20481 - n), 35.0f, method35858);
-        RenderUtil.method26876((float)(this.field20478 + n / 2), (float)(this.field20479 + n / 2), (float)(this.field20478 - n / 2 + this.field20480), (float)(this.field20479 - n / 2 + this.field20481), ColorUtils.applyAlpha(ClientColors.field1273.color, method35858 * 0.25f));
-        RenderUtil.method26925((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, (float)n, method35860);
+        RenderUtil.method26913((float)(this.x + n / 2), (float)(this.y + n / 2), (float)(this.field20480 - n), (float)(this.field20481 - n), 35.0f, method35858);
+        RenderUtil.method26876((float)(this.x + n / 2), (float)(this.y + n / 2), (float)(this.x - n / 2 + this.field20480), (float)(this.y - n / 2 + this.field20481), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, method35858 * 0.25f));
+        RenderUtil.method26925((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, (float)n, method35860);
         GL11.glPushMatrix();
-        GL11.glTranslatef((float)this.field20478, (float)this.field20479, 0.0f);
+        GL11.glTranslatef((float)this.x, (float)this.y, 0.0f);
         GL11.glRotatef(this.field20788 ? 90.0f : -90.0f, 0.0f, 0.0f, 1.0f);
-        GL11.glTranslatef((float)(-this.field20478), (float)(-this.field20479), 0.0f);
-        RenderUtil.method26899((float)(this.field20478 + (this.field20788 ? this.field20481 : 0)), this.field20479 + (this.field20480 - 47) / 2 * (this.field20788 ? -1.5f : 1.0f), 18.0f, 47.0f, ClientAssets.select, method35860);
+        GL11.glTranslatef((float)(-this.x), (float)(-this.y), 0.0f);
+        RenderUtil.drawImage((float)(this.x + (this.field20788 ? this.field20481 : 0)), this.y + (this.field20480 - 47) / 2 * (this.field20788 ? -1.5f : 1.0f), 18.0f, 47.0f, ClientAssets.select, method35860);
         GL11.glPopMatrix();
-        RenderUtil.drawString(ClientFonts.JelloLight25, (float)(this.field20478 + 25), (float)(this.field20479 + 20), this.field20495 + " Key", ColorUtils.applyAlpha(ClientColors.field1273.color, 0.8f * method35858));
-        RenderUtil.method26876((float)(this.field20478 + 25), (float)(this.field20479 + 68), (float)(this.field20478 + this.field20480 - 25), (float)(this.field20479 + 69), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.05f * method35858));
+        RenderUtil.drawString(ClientFonts.JelloLight25, (float)(this.x + 25), (float)(this.y + 20), this.field20495 + " Key", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.8f * method35858));
+        RenderUtil.method26876((float)(this.x + 25), (float)(this.y + 68), (float)(this.x + this.field20480 - 25), (float)(this.y + 69), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05f * method35858));
         super.draw(method35858);
     }
     

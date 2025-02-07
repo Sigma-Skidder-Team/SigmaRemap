@@ -15,12 +15,12 @@ public class PremiumModule extends Module
     
     @Override
     public boolean isEnabled() {
-        return Client.getInstance().method35201().method19352() && super.isEnabled();
+        return Client.getInstance().getNetworkManager().isPremium() && super.isEnabled();
     }
     
     @Override
     public void method9907(final boolean enabled) {
-        if (Client.getInstance().method35201().method19352()) {
+        if (Client.getInstance().getNetworkManager().isPremium()) {
             super.method9907(enabled);
             return;
         }
@@ -32,7 +32,7 @@ public class PremiumModule extends Module
     
     @Override
     public void method9908(final boolean b) {
-        if (Client.getInstance().method35201().method19352()) {
+        if (Client.getInstance().getNetworkManager().isPremium()) {
             super.method9908(b);
             return;
         }
@@ -46,7 +46,7 @@ public class PremiumModule extends Module
     
     @Override
     public void method9909(final boolean enabled) {
-        if (Client.getInstance().method35201().method19352()) {
+        if (Client.getInstance().getNetworkManager().isPremium()) {
             super.method9909(enabled);
             return;
         }

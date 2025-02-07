@@ -9,8 +9,8 @@ public class Class4893 extends Class4841
     private static String[] field20591;
     public float field20918;
     
-    public Class4893(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        super(class4803, s, n, n2, n3, n4, false);
+    public Class4893(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        super(customGuiScreen, s, n, n2, n3, n4, false);
     }
     
     @Override
@@ -22,8 +22,8 @@ public class Class4893 extends Class4841
     
     @Override
     public void draw(final float n) {
-        RenderUtil.method26888((float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + this.field20481 / 2), (float)this.field20480, ColorUtils.applyAlpha(ClientColors.field1283.color, (0.5f + this.field20918 * 0.3f + (this.field20492 ? 0.2f : 0.0f)) * n));
-        RenderUtil.method26874((float)(this.field20478 + (this.field20480 - 10) / 2), (float)(this.field20479 + this.field20481 / 2 - 1), 10.0f, 2.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.75f * n));
+        RenderUtil.method26888((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), (float)this.field20480, ColorUtils.applyAlpha(ClientColors.PALE_YELLOW.color, (0.5f + this.field20918 * 0.3f + (this.field20492 ? 0.2f : 0.0f)) * n));
+        RenderUtil.method26874((float)(this.x + (this.field20480 - 10) / 2), (float)(this.y + this.field20481 / 2 - 1), 10.0f, 2.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.75f * n));
         super.draw(n);
     }
 }

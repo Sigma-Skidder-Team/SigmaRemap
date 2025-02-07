@@ -10,11 +10,11 @@ import slick2d.TrueTypeFont;
 public class Class4879 extends Class4868
 {
     private Class4892 field20871;
-    private Class9572 field20872;
+    private Animation field20872;
     
     public Class4879(final Class4892 field20871, final int n) {
-        super(field20871, "sliderButton", 0, 0, n, n, new Class6523(ClientColors.LIGHT_GREYISH_BLUE.color));
-        (this.field20872 = new Class9572(125, 125)).changeDirection(Direction.FORWARDS);
+        super(field20871, "sliderButton", 0, 0, n, n, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color));
+        (this.field20872 = new Animation(125, 125)).changeDirection(Direction.FORWARDS);
         this.method14385(true);
         this.field20602 = true;
         this.field20871 = field20871;
@@ -46,7 +46,7 @@ public class Class4879 extends Class4868
         final float n4 = (float)this.method14276();
         RenderUtil.method26913((float)(this.method14272() + n3), (float)(this.method14274() + n3), (float)(this.method14276() - n3 * 2), (float)(this.method14278() - n3 * 2), 10.0f, n * 0.8f);
         RenderUtil.method26888((float)(this.method14272() + this.method14276() / 2), (float)(this.method14274() + this.method14276() / 2), n4, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
-        if (this.method14314() == null) {}
+        if (this.getTypedText() == null) {}
         final TrueTypeFont field40310 = ClientFonts.JelloLight12;
         super.method14229(n);
     }

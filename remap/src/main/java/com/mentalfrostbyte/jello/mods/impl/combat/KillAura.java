@@ -56,11 +56,11 @@ public class KillAura extends Module
     private float field16070;
     private boolean field16071;
     private double[] field16072;
-    public HashMap<Entity, Class9572> field16073;
+    public HashMap<Entity, Animation> field16073;
     
     public KillAura() {
         super(Category.COMBAT, "KillAura", "Automatically attacks entities");
-        this.field16073 = new HashMap<Entity, Class9572>();
+        this.field16073 = new HashMap<Entity, Animation>();
         this.addSetting(new StringSetting("Mode", "Mode", 0, new String[] { "Single", "Switch", "Multi", "Multi2" }));
         this.addSetting(new StringSetting("Autoblock Mode", "Autoblock Mode", 0, new String[] { "None", "NCP", "Basic1", "Basic2", "Vanilla" }));
         this.addSetting(new StringSetting("Sort Mode", "Sort Mode", 0, new String[] { "Range", "Health", "Angle", "Armor", "Prev Range" }));
@@ -290,7 +290,7 @@ public class KillAura extends Module
     public void method10747(final Class5739 class5739) {
         if (this.isEnabled()) {
             if (this.field16062 != null) {
-                final Iterator<Map.Entry<Entity, Class9572>> iterator = this.field16073.entrySet().iterator();
+                final Iterator<Map.Entry<Entity, Animation>> iterator = this.field16073.entrySet().iterator();
                 while (iterator.hasNext()) {
                     final Map.Entry entry = iterator.next();
                     final Iterator<Class8131> iterator2 = this.field16062.iterator();
@@ -299,8 +299,8 @@ public class KillAura extends Module
                             continue;
                         }
                     }
-                    ((Class9572)entry.getValue()).changeDirection(Direction.FORWARDS);
-                    if (((Class9572)entry.getValue()).calcPercent() != 0.0f) {
+                    ((Animation)entry.getValue()).changeDirection(Direction.FORWARDS);
+                    if (((Animation)entry.getValue()).calcPercent() != 0.0f) {
                         continue;
                     }
                     iterator.remove();
@@ -308,14 +308,14 @@ public class KillAura extends Module
                 for (final Class8131 class5740 : this.field16062) {
                     if (class5740 != null) {
                         if (!this.field16073.containsKey(class5740.method26798())) {
-                            this.field16073.put(class5740.method26798(), new Class9572(250, 250));
+                            this.field16073.put(class5740.method26798(), new Animation(250, 250));
                         }
                         else {
                             this.field16073.get(class5740.method26798()).changeDirection(Direction.BACKWARDS);
                         }
                     }
                 }
-                final Iterator<Map.Entry<Entity, Class9572>> iterator4 = this.field16073.entrySet().iterator();
+                final Iterator<Map.Entry<Entity, Animation>> iterator4 = this.field16073.entrySet().iterator();
                 while (iterator4.hasNext()) {
                     this.method10748((iterator4.next()).getKey());
                 }

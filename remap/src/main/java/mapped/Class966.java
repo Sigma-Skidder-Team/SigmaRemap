@@ -4,8 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
-
 public class Class966 implements Runnable
 {
     private static String[] field5142;
@@ -19,11 +17,11 @@ public class Class966 implements Runnable
     
     @Override
     public void run() {
-        for (final Class4803 class4803 : this.field5143.method14250()) {
-            if (!(class4803 instanceof Class4850)) {
+        for (final CustomGuiScreen customGuiScreen : this.field5143.method14250()) {
+            if (!(customGuiScreen instanceof Class4850)) {
                 continue;
             }
-            final Class4850 class4804 = (Class4850)class4803;
+            final Class4850 class4804 = (Class4850) customGuiScreen;
             class4804.method14549();
             this.field5144.field21213.method14614();
             class4804.method14301(true);

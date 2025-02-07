@@ -15,8 +15,8 @@ public class Class4827 extends Class4825 implements Class4828
     public final Class4921 field20653;
     public Class7617 field20654;
     
-    public Class4827(final Class4803 class4803, final int n) {
-        super(class4803, "verticalScrollBar", class4803.method14276() - n - 5, 5, n, class4803.method14278() - 10, false);
+    public Class4827(final CustomGuiScreen customGuiScreen, final int n) {
+        super(customGuiScreen, "verticalScrollBar", customGuiScreen.method14276() - n - 5, 5, n, customGuiScreen.method14278() - 10, false);
         this.field20654 = new Class7617();
         this.method14270((class4803, class4804) -> {
             class4803.method14273(class4804.method14276() - n - 5);
@@ -24,15 +24,15 @@ public class Class4827 extends Class4825 implements Class4828
             class4803.method14277(n);
             class4803.method14279(class4804.method14278() - 10);
         });
-        this.addVisualThing(this.field20653 = new Class4921(this, this, n));
+        this.addToList(this.field20653 = new Class4921(this, this, n));
     }
     
     @Override
     public void method14235(final float n) {
         super.method14235(n);
         if ((this.field20475 != null && this.field20475.method14237(this.method14320(), this.method14321(), false)) || ((Class4817)this.field20475).field20614) {
-            final float n2 = (float)((Class4817)this.method14267()).method14396().method14278();
-            final float n3 = (float)this.method14267().method14278();
+            final float n2 = (float)((Class4817)this.getParent()).method14396().method14278();
+            final float n3 = (float)this.getParent().method14278();
             final float n4 = (float)this.method14278();
             if (n2 == 0.0f) {
                 return;
@@ -70,8 +70,8 @@ public class Class4827 extends Class4825 implements Class4828
         }
         this.field20651 = field20651 + n3;
         this.field20651 = Math.min(Math.max(0.0f, this.field20651), 1.0f);
-        final float n4 = (float)((Class4817)this.method14267()).method14396().method14278();
-        final float n5 = (float)this.method14267().method14278();
+        final float n4 = (float)((Class4817)this.getParent()).method14396().method14278();
+        final float n5 = (float)this.getParent().method14278();
         final float n6 = (float)this.method14278();
         boolean b = false;
         Label_0204: {
@@ -86,7 +86,7 @@ public class Class4827 extends Class4825 implements Class4828
             b = false;
         }
         final boolean b2 = b;
-        this.method14297(b2);
+        this.setEnabled(b2);
         this.method14305(b2);
     }
     
@@ -94,19 +94,19 @@ public class Class4827 extends Class4825 implements Class4828
     public void draw(float n) {
         n *= this.field20651;
         final int n2 = 5;
-        final int method19118 = ColorUtils.applyAlpha(ClientColors.field1273.color, 0.2f * n);
-        int field20478 = this.field20478;
+        final int method19118 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.2f * n);
+        int field20478 = this.x;
         int field20479 = this.field20480;
         if (Client.getInstance().method35209() != ClientMode.JELLO) {
             final int n3 = 0;
             field20479 -= 8;
             field20478 += 8;
-            RenderUtil.method26876((float)field20478, (float)(this.field20479 + n3), (float)(field20478 + field20479), (float)(this.field20479 + this.field20481 - n3), ColorUtils.applyAlpha(ClientColors.field1281.color, 0.1f * n));
+            RenderUtil.method26876((float)field20478, (float)(this.y + n3), (float)(field20478 + field20479), (float)(this.y + this.field20481 - n3), ColorUtils.applyAlpha(ClientColors.MID_GREY.color, 0.1f * n));
         }
         else {
-            RenderUtil.method26904((float)field20478, (float)this.field20479, (float)field20479, 5.0f, ClientAssets.verticalscrollbartop, 0.45f * n);
-            RenderUtil.method26904((float)field20478, (float)(this.field20479 + this.field20481 - n2), (float)field20479, 5.0f, ClientAssets.verticalscrollbarbottom, 0.45f * n);
-            RenderUtil.method26876((float)field20478, (float)(this.field20479 + n2), (float)(field20478 + field20479), (float)(this.field20479 + this.field20481 - n2), method19118);
+            RenderUtil.method26904((float)field20478, (float)this.y, (float)field20479, 5.0f, ClientAssets.verticalscrollbartop, 0.45f * n);
+            RenderUtil.method26904((float)field20478, (float)(this.y + this.field20481 - n2), (float)field20479, 5.0f, ClientAssets.verticalscrollbarbottom, 0.45f * n);
+            RenderUtil.method26876((float)field20478, (float)(this.y + n2), (float)(field20478 + field20479), (float)(this.y + this.field20481 - n2), method19118);
         }
         super.draw(n);
     }

@@ -34,21 +34,21 @@ public class Class4930 extends Class4800
         this.field21111 = 55;
         this.field21112 = 200;
         this.field21113 = true;
-        this.addVisualThing(this.field21105 = new Class4900(this, "input", this.field21108, this.method14278() - this.field21111 - this.field21108, this.field21109, this.field21111));
-        this.addVisualThing(this.field21106 = new Class4817(this, "navbar", this.field21108, this.method14278() - this.field21111 - this.field21108 * 2 - this.field21110 + 80, this.field21112, this.field21110 - 90));
-        this.addVisualThing(this.field21107 = new Class4844(this, "chatView", this.field21108 + this.field21112, this.method14278() - this.field21111 - this.field21108 * 2 - this.field21110, this.field21109 - this.field21112, this.field21110));
+        this.addToList(this.field21105 = new Class4900(this, "input", this.field21108, this.method14278() - this.field21111 - this.field21108, this.field21109, this.field21111));
+        this.addToList(this.field21106 = new Class4817(this, "navbar", this.field21108, this.method14278() - this.field21111 - this.field21108 * 2 - this.field21110 + 80, this.field21112, this.field21110 - 90));
+        this.addToList(this.field21107 = new Class4844(this, "chatView", this.field21108 + this.field21112, this.method14278() - this.field21111 - this.field21108 * 2 - this.field21110, this.field21109 - this.field21112, this.field21110));
         final int n = 55;
         System.out.println("loading");
-        for (final Map.Entry<K, Class6538> entry : Client.getInstance().method35201().field25697.method33655().entrySet()) {
+        for (final Map.Entry<K, Class6538> entry : Client.getInstance().getNetworkManager().field25697.method33655().entrySet()) {
             System.out.println("added " + entry.getValue().field25988);
-            this.field21106.addVisualThing(new Class4856(this.field21106, entry.getValue().field25987 + "_" + this.field21106.method14250().size(), 0, 0, this.field21106.method14276(), n, entry.getValue().field25986, entry.getValue().field25989));
+            this.field21106.addToList(new Class4856(this.field21106, entry.getValue().field25987 + "_" + this.field21106.method14250().size(), 0, 0, this.field21106.method14276(), n, entry.getValue().field25986, entry.getValue().field25989));
         }
     }
     
     @Override
     public void method14200(final int n, final int n2) {
         super.method14200(n, n2);
-        this.method14311(false);
+        this.setListening(false);
         this.field21109 = 642;
         this.field21105.method14277(this.field21109);
     }
@@ -93,17 +93,17 @@ public class Class4930 extends Class4800
         RenderUtil.method26913((float)(field21108 + 5), (float)(n + 5), (float)(this.field21112 - 10), (float)(field21110 - 10), 25.0f, method25031 * 0.4f);
         RenderUtil.method26921((float)field21108, (float)n, (float)field21109, (float)field21110, 10.0f);
         if (this.field21114 != null) {
-            RenderUtil.method26899((float)field21108, (float)n, (float)this.field21112, (float)field21110, this.field21114, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method25031));
+            RenderUtil.drawImage((float)field21108, (float)n, (float)this.field21112, (float)field21110, this.field21114, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method25031));
         }
-        RenderUtil.method26876((float)field21108, (float)n, (float)(field21108 + this.field21112), (float)(n + 80), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.14f));
+        RenderUtil.method26876((float)field21108, (float)n, (float)(field21108 + this.field21112), (float)(n + 80), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.14f));
         RenderUtil.method26928();
         RenderUtil.method26870(field21108 + this.field21112, n - this.field21108, field21108 + field21109 + this.field21108, n + field21110 + this.field21108);
         RenderUtil.method26917(field21108, n, field21109, field21110, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method25031));
-        RenderUtil.method26872();
+        RenderUtil.endScissor();
         RenderUtil.method26870(field21108 - this.field21108, n - this.field21108, field21108 + this.field21112, n + field21110 + this.field21108);
         RenderUtil.method26917(field21108, n, field21109, field21110, ColorUtils.applyAlpha(-2236963, method25031 * 0.75f));
-        RenderUtil.method26876((float)(field21108 + this.field21112 - 1), (float)n, (float)(field21108 + this.field21112), (float)(n + field21110), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.05f));
-        RenderUtil.method26872();
+        RenderUtil.method26876((float)(field21108 + this.field21112 - 1), (float)n, (float)(field21108 + this.field21112), (float)(n + field21110), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05f));
+        RenderUtil.endScissor();
         super.draw(method25031);
     }
     

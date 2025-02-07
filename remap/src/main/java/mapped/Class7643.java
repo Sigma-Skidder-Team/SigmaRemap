@@ -170,7 +170,7 @@ public class Class7643
             for (int index = 0; index < n; ++index) {
                 final float n3 = 1.0f - (index + 1) / n;
                 final float n4 = ((float)(Math.sqrt(this.field30354.get(index)) / 12.0) - 5.0f) * (Class7643.field30332.window.method7695() / 1080.0f);
-                RenderUtil.method26874(index * n2, Class7643.field30332.window.method7695() - n4, n2, n4, ColorUtils.applyAlpha(ClientColors.field1281.color, 0.2f * n3));
+                RenderUtil.method26874(index * n2, Class7643.field30332.window.method7695() - n4, n2, n4, ColorUtils.applyAlpha(ClientColors.MID_GREY.color, 0.2f * n3));
             }
             RenderUtil.method26926();
             for (int index2 = 0; index2 < n; ++index2) {
@@ -199,13 +199,13 @@ public class Class7643
             GL11.glPopMatrix();
             final String[] split = this.field30339.split(" - ");
             if (split.length <= 1) {
-                RenderUtil.drawString(ClientFonts.JelloLight18_AA, 130.0f, (float)(Class7643.field30332.window.method7695() - 70), split[0], ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
+                RenderUtil.drawString(ClientFonts.JelloLight18_AA, 130.0f, (float)(Class7643.field30332.window.method7695() - 70), split[0], ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
                 RenderUtil.drawString(ClientFonts.JelloLight18, 130.0f, (float)(Class7643.field30332.window.method7695() - 70), split[0], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7f));
             }
             else {
-                RenderUtil.drawString(ClientFonts.JelloMedium20_AA, 130.0f, (float)(Class7643.field30332.window.method7695() - 81), split[0], ColorUtils.applyAlpha(ClientColors.field1273.color, 0.45f));
+                RenderUtil.drawString(ClientFonts.JelloMedium20_AA, 130.0f, (float)(Class7643.field30332.window.method7695() - 81), split[0], ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.45f));
                 RenderUtil.drawString(ClientFonts.JelloMedium20, 130.0f, (float)(Class7643.field30332.window.method7695() - 81), split[0], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f));
-                RenderUtil.drawString(ClientFonts.JelloLight18_AA, 130.0f, (float)(Class7643.field30332.window.method7695() - 56), split[1], ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
+                RenderUtil.drawString(ClientFonts.JelloLight18_AA, 130.0f, (float)(Class7643.field30332.window.method7695() - 56), split[1], ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
                 RenderUtil.drawString(ClientFonts.JelloLight18, 130.0f, (float)(Class7643.field30332.window.method7695() - 56), split[1], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7f));
             }
         }
@@ -220,10 +220,10 @@ public class Class7643
         try {
             if (this.field30343 && this.field30341 != null && this.field30338 != null && this.field30349 == null) {
                 if (this.field30342 != null) {
-                    this.field30342.method24923();
+                    this.field30342.release();
                 }
                 if (this.field30340 != null) {
-                    this.field30340.method24923();
+                    this.field30340.release();
                 }
                 this.field30342 = Class9399.method34928("picture", this.field30341);
                 this.field30340 = Class9399.method34928("picture", this.field30338);

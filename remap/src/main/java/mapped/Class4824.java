@@ -24,13 +24,13 @@ public class Class4824 extends Class4817
     private boolean field20645;
     private static final String field20646 = "\n";
     
-    public Class4824(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        super(class4803, s, n, n2, n3, n4);
+    public Class4824(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        super(customGuiScreen, s, n, n2, n3, n4);
         this.field20638 = new ArrayList<Class4868>();
         this.field20641 = 1.0f;
         this.field20642 = 0;
         this.field20643 = 14;
-        this.method14311(this.field20645 = false);
+        this.setListening(this.field20645 = false);
     }
     
     @Override
@@ -45,7 +45,7 @@ public class Class4824 extends Class4817
             this.field20643 -= 7;
         }
         final int n = this.method14396().method14278() - this.method14278();
-        this.method14396().addVisualThing(new Class4923(this.method14396(), "message" + this.field20642, 0, this.field20643, this.method14276(), class8592.method29096() + Class4824.field20644, class8592));
+        this.method14396().addToList(new Class4923(this.method14396(), "message" + this.field20642, 0, this.field20643, this.method14276(), class8592.method29096() + Class4824.field20644, class8592));
         this.field20643 += class8592.method29096();
         ++this.field20642;
         this.field20645 = class8592.field36094;

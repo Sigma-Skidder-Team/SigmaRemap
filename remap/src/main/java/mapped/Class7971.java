@@ -216,7 +216,7 @@ public class Class7971
     public void finalize() throws Throwable {
         try {
             if (this.field32797 != null) {
-                Client.getInstance().method35182(this.field32797);
+                Client.getInstance().addTexture(this.field32797);
             }
         }
         finally {

@@ -13,12 +13,12 @@ import java.util.List;
 public class Class4845 extends Class4841
 {
     private static String[] field20591;
-    public static final Class6523 field20757;
+    public static final ColorHelper field20757;
     public List<String> field20758;
     public int field20759;
     
-    public Class4845(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20758, final int field20759) {
-        super(class4803, s, n, n2, n3, n4, Class4845.field20757, false);
+    public Class4845(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20758, final int field20759) {
+        super(customGuiScreen, s, n, n2, n3, n4, Class4845.field20757, false);
         this.field20758 = new ArrayList<String>();
         this.field20759 = 0;
         this.field20758 = field20758;
@@ -31,9 +31,9 @@ public class Class4845 extends Class4841
         this.field20496 = ClientFonts.JelloLight18;
         for (final String s : this.field20758) {
             final Class4868 class4868;
-            this.addVisualThing(class4868 = new Class4868(this, s, 0, 0, this.method14276(), this.method14278(), new Class6523(ClientColors.LIGHT_GREYISH_BLUE.color, -1381654, this.field20497.method19729(), this.field20497.method19729(), Class2056.field11734, Class2056.field11738), s, this.method14316()));
+            this.addToList(class4868 = new Class4868(this, s, 0, 0, this.method14276(), this.method14278(), new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color, -1381654, this.field20497.method19729(), this.field20497.method19729(), Class2056.field11734, Class2056.field11738), s, this.method14316()));
             class4868.method14603(10);
-            class4868.method14260((class4803, n) -> {
+            class4868.doThis((class4803, n) -> {
                 this.method14531(this.field20758.indexOf(s));
                 this.method14517();
             });
@@ -89,7 +89,7 @@ public class Class4845 extends Class4841
     }
     
     @Override
-    public String method14314() {
+    public String getTypedText() {
         return (this.method14526().size() <= 0) ? null : this.method14526().get(this.method14530());
     }
     
@@ -110,6 +110,6 @@ public class Class4845 extends Class4841
     }
     
     static {
-        field20757 = new Class6523(1250067, -15329770).method19734(ClientColors.field1273.color).method19738(Class2056.field11738);
+        field20757 = new ColorHelper(1250067, -15329770).method19734(ClientColors.DEEP_TEAL.color).method19738(Class2056.field11738);
     }
 }

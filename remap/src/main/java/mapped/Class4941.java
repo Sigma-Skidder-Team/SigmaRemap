@@ -12,7 +12,7 @@ public class Class4941 extends Class4800
     private int field21221;
     private int field21222;
     private boolean field21223;
-    public static Class9572 field21224;
+    public static Animation field21224;
     private Texture field21225;
     private Class4813 field21226;
     public static Screen field21227;
@@ -22,11 +22,11 @@ public class Class4941 extends Class4800
         this.field21221 = 0;
         this.field21222 = 0;
         this.field21223 = true;
-        this.method14311(false);
+        this.setListening(false);
         final int max = Math.max((int)(this.field20481 * 0.8f), 420);
         final int n = (int)(this.field20480 * 0.8f);
-        this.addVisualThing(this.field21226 = new Class4813(this, "centerBlock", this.method14276() - n, this.method14278() - max, n - (this.method14276() - n), max - (this.method14278() - max)));
-        Class4941.field21224 = new Class9572(300, 100);
+        this.addToList(this.field21226 = new Class4813(this, "centerBlock", this.method14276() - n, this.method14278() - max, n - (this.method14276() - n), max - (this.method14278() - max)));
+        Class4941.field21224 = new Animation(300, 100);
     }
     
     @Override
@@ -49,7 +49,7 @@ public class Class4941 extends Class4800
             n2 = 0.7f + Class7791.method25030(Class4941.field21224.calcPercent(), 0.0f, 1.0f, 1.0f) * 0.3f;
             method35858 = Class4941.field21224.calcPercent();
         }
-        RenderUtil.method26881(0, 0, this.method14276(), this.method14278(), ColorUtils.method19120(-1072689136, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.1f), method35858), ColorUtils.method19120(-804253680, ColorUtils.applyAlpha(ClientColors.field1273.color, 0.1f), method35858));
+        RenderUtil.method26881(0, 0, this.method14276(), this.method14278(), ColorUtils.method19120(-1072689136, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f), method35858), ColorUtils.method19120(-804253680, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f), method35858));
         this.method14288(n2, n2);
         this.method14227();
         super.draw(Class4941.field21224.calcPercent());
@@ -91,7 +91,7 @@ public class Class4941 extends Class4800
     }
     
     static {
-        Class4941.field21224 = new Class9572(300, 200);
+        Class4941.field21224 = new Animation(300, 200);
         Class4941.field21227 = null;
     }
 }

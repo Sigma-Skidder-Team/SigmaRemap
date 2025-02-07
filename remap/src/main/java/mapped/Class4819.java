@@ -22,29 +22,29 @@ public class Class4819 extends Class4817 implements Class4820
     private boolean field20622;
     public int field20623;
     private HashMap<Class4834, Setting> field20624;
-    public HashMap<Module, Class4803> field20625;
-    public Class9572 field20626;
+    public HashMap<Module, CustomGuiScreen> field20625;
+    public Animation field20626;
     private String field20627;
     private String field20628;
     
-    public Class4819(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Module field20620) {
-        super(class4803, s, n, n2, n3, n4);
+    public Class4819(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final Module field20620) {
+        super(customGuiScreen, s, n, n2, n3, n4);
         this.field20623 = 200;
         this.field20624 = new HashMap<Class4834, Setting>();
-        this.field20625 = new HashMap<Module, Class4803>();
-        this.field20626 = new Class9572(114, 114);
+        this.field20625 = new HashMap<Module, CustomGuiScreen>();
+        this.field20626 = new Animation(114, 114);
         this.field20627 = "";
         this.field20628 = "";
         this.field20620 = field20620;
-        this.method14311(false);
+        this.setListening(false);
         this.method14390();
     }
     
-    private int method14402(final Class4803 class4803, final Setting class4804, final int n, int n2, final int n3) {
+    private int method14402(final CustomGuiScreen customGuiScreen, final Setting class4804, final int n, int n2, final int n3) {
         switch (Class9155.field38793[class4804.method15197().ordinal()]) {
             case 1: {
-                final Class4834 key = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, 24, Class4834.field20719, class4804.method15204());
-                final Class4867 class4805 = new Class4867(class4803, class4804.method15204() + "checkbox", class4803.method14276() - 24 - n3, n2 + 6, 24, 24);
+                final Class4834 key = new Class4834(customGuiScreen, class4804.method15204() + "lbl", n, n2, this.field20623, 24, Class4834.field20719, class4804.method15204());
+                final Class4867 class4805 = new Class4867(customGuiScreen, class4804.method15204() + "checkbox", customGuiScreen.method14276() - 24 - n3, n2 + 6, 24, 24);
                 this.field20624.put(key, class4804);
                 class4805.method14602(class4804.method15198(), false);
                 class4804.method15195(class4868 -> {
@@ -54,17 +54,17 @@ public class Class4819 extends Class4817 implements Class4820
                 });
                 class4805.method14516(class4998 -> class4804.method15199(((Class4867)class4998).method14600()));
                 class4805.method14270((class4803, class4804) -> class4803.method14273(class4804.method14276() - 24 - n3));
-                class4803.addVisualThing(key);
-                class4803.addVisualThing(class4805);
+                customGuiScreen.addToList(key);
+                customGuiScreen.addToList(class4805);
                 n2 += 24 + n3;
                 break;
             }
             case 2: {
-                final Class4834 key2 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, 24, Class4834.field20719, class4804.method15204());
+                final Class4834 key2 = new Class4834(customGuiScreen, class4804.method15204() + "lbl", n, n2, this.field20623, 24, Class4834.field20719, class4804.method15204());
                 this.field20624.put(key2, class4804);
                 final NumberSetting class4806 = (NumberSetting)class4804;
-                final Class4892 class4807 = new Class4892(class4803, class4804.method15204() + "slider", class4803.method14276() - 126 - n3, n2 + 6, 126, 24);
-                class4807.method14674().method14317(ClientFonts.JelloLight14);
+                final Class4892 class4807 = new Class4892(customGuiScreen, class4804.method15204() + "slider", customGuiScreen.method14276() - 126 - n3, n2 + 6, 126, 24);
+                class4807.method14674().setFont(ClientFonts.JelloLight14);
                 class4807.method14315(Float.toString((float)class4804.method15198()));
                 class4807.method14677(Class4892.method14671(class4806.method15187(), class4806.method15189(), (float)class4806.method15198()), false);
                 class4807.method14680(-1.0f);
@@ -83,8 +83,8 @@ public class Class4819 extends Class4817 implements Class4820
                     }
                 });
                 class4807.method14270((class4803, class4804) -> class4803.method14273(class4804.method14276() - 126 - n3));
-                class4803.addVisualThing(key2);
-                class4803.addVisualThing(class4807);
+                customGuiScreen.addToList(key2);
+                customGuiScreen.addToList(class4807);
                 n2 += 24 + n3;
                 break;
             }
@@ -92,14 +92,14 @@ public class Class4819 extends Class4817 implements Class4820
                 final int n4 = 114;
                 final int n5 = 27;
                 final Class4834 key3;
-                this.addVisualThing(key3 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, n5, Class4834.field20719, class4804.method15204()));
+                this.addToList(key3 = new Class4834(customGuiScreen, class4804.method15204() + "lbl", n, n2, this.field20623, n5, Class4834.field20719, class4804.method15204()));
                 this.field20624.put(key3, class4804);
-                final Class4831 class4808;
-                this.addVisualThing(class4808 = new Class4831(class4803, class4804.method15204() + "txt", class4803.method14276() - n3 - n4, n2 + n5 / 4 - 1, n4, n5, Class4831.field20670, (String)class4804.method15198()));
-                class4808.method14317(ClientFonts.JelloLight18);
-                class4808.method14473(class4998 -> class4804.method15199(class4998.method14314()));
+                final TextField class4808;
+                this.addToList(class4808 = new TextField(customGuiScreen, class4804.method15204() + "txt", customGuiScreen.method14276() - n3 - n4, n2 + n5 / 4 - 1, n4, n5, TextField.field20670, (String)class4804.method15198()));
+                class4808.setFont(ClientFonts.JelloLight18);
+                class4808.method14473(class4998 -> class4804.method15199(class4998.getTypedText()));
                 class4804.method15195(class4833 -> {
-                    if (class4808.method14314() != ((TextInputSetting)class4804).method15198()) {
+                    if (class4808.getTypedText() != ((TextInputSetting)class4804).method15198()) {
                         class4808.method14315(((TextInputSetting)class4804).method15198());
                     }
                 });
@@ -107,8 +107,8 @@ public class Class4819 extends Class4817 implements Class4820
                 break;
             }
             case 4: {
-                final Class4834 key4 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2 + 2, this.field20623, 27, Class4834.field20719, class4804.method15204());
-                final Class4894 class4809 = new Class4894(class4803, class4804.method15204() + "btn", class4803.method14276() - n3, n2 + 6 - 1, 123, 27, ((StringSetting)class4804).method15215(), ((StringSetting)class4804).method15213());
+                final Class4834 key4 = new Class4834(customGuiScreen, class4804.method15204() + "lbl", n, n2 + 2, this.field20623, 27, Class4834.field20719, class4804.method15204());
+                final Class4894 class4809 = new Class4894(customGuiScreen, class4804.method15204() + "btn", customGuiScreen.method14276() - n3, n2 + 6 - 1, 123, 27, ((StringSetting)class4804).method15215(), ((StringSetting)class4804).method15213());
                 this.field20624.put(key4, class4804);
                 class4804.method15195(class4896 -> {
                     if (class4809.method14693() != ((StringSetting)class4804).method15213()) {
@@ -119,27 +119,27 @@ public class Class4819 extends Class4817 implements Class4820
                     ((StringSetting)class4804).method15214(((Class4894)class4999).method14693());
                     class4809.method14694(((StringSetting)class4804).method15213());
                 });
-                class4809.method14270((class4804, class4805) -> class4804.method14273(class4803.method14276() - 123 - n3));
-                class4803.addVisualThing(key4);
-                class4803.addVisualThing(class4809);
+                class4809.method14270((class4804, class4805) -> class4804.method14273(customGuiScreen.method14276() - 123 - n3));
+                customGuiScreen.addToList(key4);
+                customGuiScreen.addToList(class4809);
                 n2 += 27 + n3;
             }
             case 6: {
-                final Class4803 class4810 = new Class4803(class4803, class4804.method15204() + "view", n, n2, class4803.method14276(), 0);
+                final CustomGuiScreen class4810 = new CustomGuiScreen(customGuiScreen, class4804.method15204() + "view", n, n2, customGuiScreen.method14276(), 0);
                 int method15186 = 0;
                 final Iterator<Setting> iterator = (Iterator<Setting>)((SubOptionSettingExtender)class4804).method15224().iterator();
                 while (iterator.hasNext()) {
                     method15186 = this.method14402(class4810, iterator.next(), 0, method15186, n3);
                 }
-                new Class6509().method19597(class4810, class4803);
+                new Class6509().method19597(class4810, customGuiScreen);
                 class4810.method14270((class4803, class4804) -> class4803.method14277(class4804.method14276() - n3));
-                class4803.addVisualThing(class4810);
+                customGuiScreen.addToList(class4810);
                 n2 += class4810.method14278() + n3;
                 break;
             }
             case 7: {
-                final Class4834 key5 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, 27, Class4834.field20719, class4804.method15204());
-                final Class4875 class4811 = new Class4875(class4803, class4804.method15204() + "btn", class4803.method14276() - n3, n2 + 6, 123, 27, ((ButtonSetting)class4804).method15223(), class4804.method15198());
+                final Class4834 key5 = new Class4834(customGuiScreen, class4804.method15204() + "lbl", n, n2, this.field20623, 27, Class4834.field20719, class4804.method15204());
+                final Class4875 class4811 = new Class4875(customGuiScreen, class4804.method15204() + "btn", customGuiScreen.method14276() - n3, n2 + 6, 123, 27, ((ButtonSetting)class4804).method15223(), class4804.method15198());
                 this.field20624.put(key5, class4804);
                 class4804.method15195(class4876 -> {
                     if (class4811.method14610() != class4876.method15198()) {
@@ -147,27 +147,27 @@ public class Class4819 extends Class4817 implements Class4820
                     }
                 });
                 class4811.method14516(class4998 -> class4804.method15199(((Class4875)class4998).method14610()));
-                class4811.method14270((class4804, class4805) -> class4804.method14273(class4803.method14276() - 123 - n3));
-                class4803.addVisualThing(key5);
-                class4803.addVisualThing(class4811);
+                class4811.method14270((class4804, class4805) -> class4804.method14273(customGuiScreen.method14276() - 123 - n3));
+                customGuiScreen.addToList(key5);
+                customGuiScreen.addToList(class4811);
                 n2 += 27 + n3;
                 break;
             }
             case 8: {
-                final Class4834 key6 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, 200, Class4834.field20719, class4804.method15204());
-                final Class4854 class4812 = new Class4854(class4803, class4804.method15204() + "picker", class4803.method14276() - n3, n2 + 5, 175, 200, ((StringListSetting)class4804).method15209(), (String[])((Setting<List>)class4804).method15198().toArray(new String[0]));
+                final Class4834 key6 = new Class4834(customGuiScreen, class4804.method15204() + "lbl", n, n2, this.field20623, 200, Class4834.field20719, class4804.method15204());
+                final Class4854 class4812 = new Class4854(customGuiScreen, class4804.method15204() + "picker", customGuiScreen.method14276() - n3, n2 + 5, 175, 200, ((StringListSetting)class4804).method15209(), (String[])((Setting<List>)class4804).method15198().toArray(new String[0]));
                 this.field20624.put(key6, class4804);
                 class4812.method14516(class4999 -> class4804.method15199(class4812.method14563()));
-                class4812.method14270((class4804, class4805) -> class4804.method14273(class4803.method14276() - 175 - n3));
-                class4803.addVisualThing(key6);
-                class4803.addVisualThing(class4812);
+                class4812.method14270((class4804, class4805) -> class4804.method14273(customGuiScreen.method14276() - 175 - n3));
+                customGuiScreen.addToList(key6);
+                customGuiScreen.addToList(class4812);
                 n2 += 200 + n3;
                 break;
             }
             case 9: {
                 final ColorSetting class4813 = (ColorSetting)class4804;
-                final Class4834 key7 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, 24, Class4834.field20719, class4804.method15204());
-                final Class4885 class4814 = new Class4885(class4803, class4804.method15204() + "color", class4803.method14276() - 160 - n3 + 10, n2, 160, 114, class4804.method15198(), class4813.method15219());
+                final Class4834 key7 = new Class4834(customGuiScreen, class4804.method15204() + "lbl", n, n2, this.field20623, 24, Class4834.field20719, class4804.method15204());
+                final Class4885 class4814 = new Class4885(customGuiScreen, class4804.method15204() + "color", customGuiScreen.method14276() - 160 - n3 + 10, n2, 160, 114, class4804.method15198(), class4813.method15219());
                 this.field20624.put(key7, class4804);
                 class4804.method15195(class4888 -> {
                     class4814.method14622(class4804.method15198());
@@ -177,23 +177,23 @@ public class Class4819 extends Class4817 implements Class4820
                     class4804.method15200(((Class4885)class4999).method14623(), false);
                     class4813.method15220(((Class4885)class4999).method14621());
                 });
-                class4803.addVisualThing(key7);
-                class4803.addVisualThing(class4814);
+                customGuiScreen.addToList(key7);
+                customGuiScreen.addToList(class4814);
                 n2 += 114 + n3 - 10;
                 break;
             }
             case 10: {
                 final Class8531 class4815 = class4804.method15198();
-                final Class4834 key8 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, 24, Class4834.field20719, class4804.method15204());
-                final Class4855 class4816 = new Class4855(class4803, class4804.method15204() + "color", class4803.method14276() - 150 - n3 + 10, n2, 150, 150, 20, class4815.field35807, class4815.field35808, class4815.field35809, class4815.field35810);
+                final Class4834 key8 = new Class4834(customGuiScreen, class4804.method15204() + "lbl", n, n2, this.field20623, 24, Class4834.field20719, class4804.method15204());
+                final Class4855 class4816 = new Class4855(customGuiScreen, class4804.method15204() + "color", customGuiScreen.method14276() - 150 - n3 + 10, n2, 150, 150, 20, class4815.field35807, class4815.field35808, class4815.field35809, class4815.field35810);
                 this.field20624.put(key8, class4804);
                 class4804.method15195(class4999 -> {
                     final Class8531 class5000 = class4804.method15198();
                     class4816.method14568(class5000.field35807, class5000.field35808, class5000.field35809, class5000.field35810);
                 });
                 class4816.method14516(class4999 -> ((BezierSetting)class4804).method15216(class4816.method14567()[0], class4816.method14567()[1], class4816.method14567()[2], class4816.method14567()[3]));
-                class4803.addVisualThing(key8);
-                class4803.addVisualThing(class4816);
+                customGuiScreen.addToList(key8);
+                customGuiScreen.addToList(class4816);
                 n2 += 150 + n3 - 10;
                 break;
             }
@@ -212,14 +212,14 @@ public class Class4819 extends Class4817 implements Class4820
             final ModuleWithSettings class3247 = (ModuleWithSettings)this.field20620;
             for (final Module key : class3247.field15742) {
                 int a = 0;
-                final Class4803 value = new Class4803(this, key.getName() + "SubView", 0, n, this.field20480, this.field20481 - b);
+                final CustomGuiScreen value = new CustomGuiScreen(this, key.getName() + "SubView", 0, n, this.field20480, this.field20481 - b);
                 value.method14270((class4803, class4804) -> class4803.method14277(class4804.method14276()));
                 final Iterator<Setting> iterator2 = key.method9899().values().iterator();
                 while (iterator2.hasNext()) {
                     a = this.method14402(value, iterator2.next(), 20, a, 20);
                 }
                 b = Math.max(b + a, b);
-                for (final Class4803 class3248 : value.method14250()) {
+                for (final CustomGuiScreen class3248 : value.method14250()) {
                     if (!(class3248 instanceof Class4894)) {
                         continue;
                     }
@@ -227,13 +227,13 @@ public class Class4819 extends Class4817 implements Class4820
                     a = Math.max(a, class3249.method14687() + class3249.method14274() + class3249.method14278() + 14);
                 }
                 value.method14279(a);
-                this.addVisualThing(value);
+                this.addToList(value);
                 this.field20625.put(key, value);
             }
-            class3247.method10261((class3247, key, b) -> this.field20625.get(key).method14297(b));
+            class3247.method10261((class3247, key, b) -> this.field20625.get(key).setEnabled(b));
             class3247.method10258();
         }
-        this.addVisualThing(new Class4803(this, "extentionhack", 0, b, 0, 20));
+        this.addToList(new CustomGuiScreen(this, "extentionhack", 0, b, 0, 20));
     }
     
     @Override

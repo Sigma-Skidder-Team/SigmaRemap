@@ -10,8 +10,8 @@ public class Class4864 extends Class4863
     private boolean field20829;
     private boolean field20830;
     
-    public Class4864(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
-        super(class4803, s, n, n2, n3, n4, false, new Class7920(Class9493.field40804, 20, 40, 18, Class267.field1427, 200, 1));
+    public Class4864(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+        super(customGuiScreen, s, n, n2, n3, n4, false, new Class7920(Class9493.field40804, 20, 40, 18, Class267.field1427, 200, 1));
         this.method14585();
     }
     
