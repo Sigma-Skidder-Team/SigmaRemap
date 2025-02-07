@@ -6,11 +6,10 @@ import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import org.lwjgl.opengl.GL11;
 
 public class Class4333 extends CustomGuiScreen {
-   public Animation field21149 = new Animation(500, 200, Direction.FORWARDS);
+   public Animation field21149 = new Animation(500, 200, Animation.Direction.FORWARDS);
 
    public Class4333(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);

@@ -87,7 +87,7 @@ public class Class4276 extends Class4247 {
 
    @Override
    public void draw(float partialTicks) {
-      partialTicks = Animation.method25321(this.field20724, this.field20726, 250.0F, 120.0F);
+      partialTicks = Animation.calculateProgressWithReverse(this.field20724, this.field20726, 250.0F, 120.0F);
       float var4 = EasingFunctions.easeOutBack(partialTicks, 0.0F, 1.0F, 1.0F);
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
       this.method13284((int) ((float) this.widthA * 0.2F * (1.0F - var4)) * (!this.field20725 ? 1 : -1));

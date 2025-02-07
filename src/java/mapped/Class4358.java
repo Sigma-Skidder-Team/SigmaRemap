@@ -7,7 +7,6 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
 import net.minecraft.client.gui.screen.Screen;
@@ -112,7 +111,7 @@ public class Class4358 extends Class4247 {
          this.field21311 = true;
       }
 
-      this.field21302.changeDirection(this.field21311 ? Direction.BACKWARDS : Direction.FORWARDS);
+      this.field21302.changeDirection(this.field21311 ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
       Map<String, ButtonPanel> var5 = new TreeMap();
       Map<String, ButtonPanel> var6 = new TreeMap();
       Map<String, ButtonPanel> var7 = new TreeMap();

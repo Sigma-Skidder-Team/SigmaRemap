@@ -8,13 +8,12 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import totalcross.json.JSONArray;
 
 public class RedeemKeyScreen extends CustomGuiScreen {
    public String field21135 = "";
-   public Animation field21136 = new Animation(380, 200, Direction.BACKWARDS);
+   public Animation field21136 = new Animation(380, 200, Animation.Direction.BACKWARDS);
    private static JSONArray field21137;
    private UIInput field21138;
 
@@ -61,11 +60,11 @@ public class RedeemKeyScreen extends CustomGuiScreen {
 
    @Override
    public void draw(float partialTicks) {
-      this.field21136.changeDirection(!this.isHovered() ? Direction.BACKWARDS : Direction.FORWARDS);
+      this.field21136.changeDirection(!this.isHovered() ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
       partialTicks = 1.0F;
       partialTicks *= this.field21136.calcPercent();
       float var4 = MathUtils.lerp(this.field21136.calcPercent(), 0.17, 1.0, 0.51, 1.0);
-      if (this.field21136.getDirection() == Direction.BACKWARDS) {
+      if (this.field21136.getDirection() == Animation.Direction.BACKWARDS) {
          var4 = 1.0F;
       }
 

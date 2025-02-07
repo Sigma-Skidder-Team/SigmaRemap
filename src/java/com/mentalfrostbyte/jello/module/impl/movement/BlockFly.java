@@ -17,7 +17,6 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.util.player.Rots;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
@@ -39,7 +38,7 @@ import java.util.List;
 public class BlockFly extends ModuleWithModuleSettings {
     public static List<Block> blocksToNotPlace;
     public int field23884;
-    public Animation field23885 = new Animation(114, 114, Direction.BACKWARDS);
+    public Animation field23885 = new Animation(114, 114, Animation.Direction.BACKWARDS);
     public int field23886 = 0;
 
     public BlockFly() {
@@ -396,13 +395,13 @@ public class BlockFly extends ModuleWithModuleSettings {
     @Override
     public void onDisable() {
         Rots.rotating = false;
-        this.field23885.changeDirection(Direction.BACKWARDS);
+        this.field23885.changeDirection(Animation.Direction.BACKWARDS);
         super.onDisable();
     }
 
     @EventTarget
     public void method16743(EventRender var1) {
-        this.field23885.changeDirection(Direction.FORWARDS);
+        this.field23885.changeDirection(Animation.Direction.FORWARDS);
         if (this.field23885.calcPercent() != 0.0F) {
             if (this.getBooleanValueFromSettingName("Show Block Amount")) {
                 if (Client.getInstance().clientMode != ClientMode.JELLO) {

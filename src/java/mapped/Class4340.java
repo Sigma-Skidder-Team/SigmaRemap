@@ -5,7 +5,6 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.vector.Vector3i;
@@ -23,7 +22,7 @@ public class Class4340 extends Class4339 {
 
    public Class4340(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
-      this.field21211.changeDirection(Direction.BACKWARDS);
+      this.field21211.changeDirection(Animation.Direction.BACKWARDS);
       this.field20883 = true;
       this.method13300(false);
       this.method13511();
@@ -70,7 +69,7 @@ public class Class4340 extends Class4339 {
       }
 
       for (Class4355 var7 : this.field21209) {
-         if (!var7.method13216() && var7.field21290.getDirection() == Direction.BACKWARDS) {
+         if (!var7.method13216() && var7.field21290.getDirection() == Animation.Direction.BACKWARDS) {
             var7.field21288 = var5 + 5;
          } else {
             var7.field21288 = var7.getYA();
@@ -81,7 +80,7 @@ public class Class4340 extends Class4339 {
 
       for (Class4355 var11 : this.field21209) {
          if (var11.method13216()) {
-            this.field21211.changeDirection(Direction.FORWARDS);
+            this.field21211.changeDirection(Animation.Direction.FORWARDS);
             if (newHeight > this.method13271() + 10
                   && newHeight < this.method13271() + 50
                   && newWidth < this.method13272() + this.getHeightA() - 10
@@ -95,7 +94,7 @@ public class Class4340 extends Class4339 {
             break;
          }
 
-         if (!var11.method13216() && this.field21211.getDirection() == Direction.FORWARDS) {
+         if (!var11.method13216() && this.field21211.getDirection() == Animation.Direction.FORWARDS) {
             Client.getInstance().waypointsManager.method29989().clear();
 
             for (Class4355 var9 : this.field21209) {
@@ -109,7 +108,7 @@ public class Class4340 extends Class4339 {
             Client.getInstance().waypointsManager.method29991();
          }
 
-         this.field21211.changeDirection(Direction.BACKWARDS);
+         this.field21211.changeDirection(Animation.Direction.BACKWARDS);
       }
    }
 

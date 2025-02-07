@@ -41,7 +41,7 @@ public class Class4253 extends Class4247 {
    @Override
    public void draw(float partialTicks) {
       if (this.field20627 != null) {
-         float var4 = Animation.method25322(this.field20627, 150.0F);
+         float var4 = Animation.calculateProgress(this.field20627, 150.0F);
          var4 = QuadraticEasing.easeOutQuad(var4, 0.0F, 1.0F, 1.0F);
          this.setHeightA((int) (55.0F * var4));
          if (var4 == 1.0F) {
@@ -50,7 +50,7 @@ public class Class4253 extends Class4247 {
       }
 
       if (this.field20625 != null) {
-         float var6 = Animation.method25322(this.field20625, 180.0F);
+         float var6 = Animation.calculateProgress(this.field20625, 180.0F);
          var6 = QuadraticEasing.easeOutQuad(var6, 0.0F, 1.0F, 1.0F);
          this.setHeightA((int) (55.0F * (1.0F - var6)));
          if (var6 == 1.0F) {

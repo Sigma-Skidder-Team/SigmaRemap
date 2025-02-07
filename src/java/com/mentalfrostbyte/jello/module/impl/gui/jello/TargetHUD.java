@@ -12,7 +12,6 @@ import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mojang.authlib.GameProfile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -60,10 +59,10 @@ public class TargetHUD extends Module {
         this.registerSetting(new BooleanSetting("Armor", "Draw target's armor", false));
         this.registerSetting(new BooleanSetting("Head", "Draw target's head", false));
         this.method16005(false);
-        this.field23689 = new Animation(800, 200, Direction.BACKWARDS);
-        this.field23691 = new Animation(1500, 200, Direction.BACKWARDS);
-        this.field23692 = new Animation(950, 200, Direction.BACKWARDS);
-        this.field23690 = new Animation(230, 200, Direction.FORWARDS);
+        this.field23689 = new Animation(800, 200, Animation.Direction.BACKWARDS);
+        this.field23691 = new Animation(1500, 200, Animation.Direction.BACKWARDS);
+        this.field23692 = new Animation(950, 200, Animation.Direction.BACKWARDS);
+        this.field23690 = new Animation(230, 200, Animation.Direction.FORWARDS);
     }
 
     @Override
@@ -101,7 +100,7 @@ public class TargetHUD extends Module {
             if (var6 != this.field23688) {
                 this.field23687 = this.field23688;
                 this.field23688 = var6;
-                this.field23690.method25318(0.0F);
+                this.field23690.updateStartTime(0.0F);
             }
         }
     }
@@ -131,7 +130,7 @@ public class TargetHUD extends Module {
             if (var6 != this.field23688) {
                 this.field23687 = this.field23688;
                 this.field23688 = var6;
-                this.field23690.method25318(0.0F);
+                this.field23690.updateStartTime(0.0F);
             }
         }
     }

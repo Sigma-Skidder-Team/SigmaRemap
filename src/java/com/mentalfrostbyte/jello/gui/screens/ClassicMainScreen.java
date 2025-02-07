@@ -7,7 +7,6 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -35,8 +34,8 @@ public class ClassicMainScreen extends Screen {
                 super("Main Screen");
                 this.method13300(false);
                 this.field21100 = new Animation(175, 325);
-                this.field21100.changeDirection(Direction.FORWARDS);
-                this.field21101.changeDirection(Direction.BACKWARDS);
+                this.field21100.changeDirection(Animation.Direction.FORWARDS);
+                this.field21101.changeDirection(Animation.Direction.BACKWARDS);
                 TrueTypeFont var9 = ResourceList.regular20;
                 String var11 = "© Sigma Prod";
                 StringBuilder var10000 = new StringBuilder().append("Sigma ");

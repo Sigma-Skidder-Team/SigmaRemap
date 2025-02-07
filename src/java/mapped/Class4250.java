@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mentalfrostbyte.jello.util.ClientColors;
@@ -54,7 +53,7 @@ public class Class4250 extends Class4247 {
 
    @Override
    public void draw(float partialTicks) {
-      this.field20611.changeDirection(Direction.FORWARDS);
+      this.field20611.changeDirection(Animation.Direction.FORWARDS);
       if (this.field20611.calcPercent() == 1.0F) {
          this.field20611 = new Animation(1500, 0);
       }

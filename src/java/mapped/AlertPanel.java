@@ -7,7 +7,6 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
 import net.minecraft.client.Minecraft;
@@ -153,7 +152,7 @@ public class AlertPanel extends Class4247 {
          }
       }
 
-      this.field21282.changeDirection(!var1 ? Direction.BACKWARDS : Direction.FORWARDS);
+      this.field21282.changeDirection(!var1 ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
       super.method13296(var1);
    }
 
@@ -191,7 +190,7 @@ public class AlertPanel extends Class4247 {
    }
 
    public float method13602(float var1, float var2) {
-      return this.field21282.getDirection() != Direction.BACKWARDS
+      return this.field21282.getDirection() != Animation.Direction.BACKWARDS
             ? (float) (Math.pow(2.0, (double) (-10.0F * var1))
                   * Math.sin((double) (var1 - var2 / 4.0F) * (Math.PI * 2) / (double) var2) + 1.0)
             : 0.5F + QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F) * 0.5F;

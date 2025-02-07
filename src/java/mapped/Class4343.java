@@ -8,7 +8,6 @@ import com.mentalfrostbyte.jello.module.settings.*;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.lwjgl.opengl.GL11;
 
@@ -315,7 +314,7 @@ public class Class4343 extends Class4339 implements Class4342 {
       GL11.glPushMatrix();
       super.draw(partialTicks);
       GL11.glPopMatrix();
-      this.field21225.changeDirection(!var4 ? Direction.BACKWARDS : Direction.FORWARDS);
+      this.field21225.changeDirection(!var4 ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
       RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
             (float) (this.getXA() + 10),

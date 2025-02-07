@@ -11,7 +11,6 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
 
@@ -68,7 +67,7 @@ public class Class4286 extends Class4278 {
    @Override
    public void updatePanelDimensions(int newHeight, int newWidth) {
       boolean var5 = this.method13298() && this.getScreen().getScreen().method13114(newHeight, newWidth);
-      this.field20777.changeDirection(!var5 ? Direction.BACKWARDS : Direction.FORWARDS);
+      this.field20777.changeDirection(!var5 ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
       if (var5) {
          Client.getInstance().guiManager.method33459(GuiManager.field41345);
       }

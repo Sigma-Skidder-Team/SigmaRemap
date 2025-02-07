@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.lwjgl.opengl.GL11;
@@ -98,7 +97,7 @@ public class Class4363 extends Class4247 {
          });
       }
 
-      this.field21330.changeDirection(Direction.BACKWARDS);
+      this.field21330.changeDirection(Animation.Direction.BACKWARDS);
       this.method13246(new Class7262(1));
    }
 
@@ -119,7 +118,7 @@ public class Class4363 extends Class4247 {
 
    private int method13648() {
       float var3 = MathHelper.calculateTransition(this.field21330.calcPercent(), 0.0F, 1.0F, 1.0F);
-      if (this.field21330.getDirection() != Direction.FORWARDS) {
+      if (this.field21330.getDirection() != Animation.Direction.FORWARDS) {
          var3 = QuadraticEasing.easeInQuad(this.field21330.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
@@ -133,20 +132,20 @@ public class Class4363 extends Class4247 {
    @Override
    public void updatePanelDimensions(int newHeight, int newWidth) {
       super.updatePanelDimensions(newHeight, newWidth);
-      if (!this.method13114(newHeight, newWidth) && this.field21330.getDirection() == Direction.FORWARDS) {
+      if (!this.method13114(newHeight, newWidth) && this.field21330.getDirection() == Animation.Direction.FORWARDS) {
          this.method13658(false);
       }
 
       int var5 = (newWidth - this.method13272()) / this.getHeightA() - 1;
       if (var5 >= 0
             && var5 < this.values.size()
-            && this.field21330.getDirection() == Direction.FORWARDS
+            && this.field21330.getDirection() == Animation.Direction.FORWARDS
             && this.field21330.calcPercent() == 1.0F
             && newHeight - this.method13271() < this.getWidthA()) {
          for (Entry var9 : this.field21331.entrySet()) {
             ((Class4362) var9.getValue()).setEnabled((Integer) var9.getKey() == var5);
          }
-      } else if (!this.method13114(newHeight, newWidth) || this.field21330.getDirection() == Direction.BACKWARDS) {
+      } else if (!this.method13114(newHeight, newWidth) || this.field21330.getDirection() == Animation.Direction.BACKWARDS) {
          for (Entry var7 : this.field21331.entrySet()) {
             ((Class4362) var7.getValue()).setEnabled(false);
          }
@@ -251,7 +250,7 @@ public class Class4363 extends Class4247 {
 
    public void method13658(boolean var1) {
       this.field21328 = var1;
-      this.field21330.changeDirection(!this.method13657() ? Direction.BACKWARDS : Direction.FORWARDS);
+      this.field21330.changeDirection(!this.method13657() ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
    }
 
    @Override

@@ -10,7 +10,6 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
@@ -33,8 +32,8 @@ public class JelloMainMenuScreen extends Screen {
    public MainmenuScreen2 field20969;
    public ChangelogScreen field20970;
    public RedeemKeyScreen field20971;
-   public Animation field20972 = new Animation(200, 200, Direction.BACKWARDS);
-   public Animation field20973 = new Animation(200, 200, Direction.BACKWARDS);
+   public Animation field20972 = new Animation(200, 200, Animation.Direction.BACKWARDS);
+   public Animation field20973 = new Animation(200, 200, Animation.Direction.BACKWARDS);
    private Animation field20974 = new Animation(325, 325);
    private Animation field20975 = new Animation(800, 800);
    private static Texture field20976;
@@ -86,8 +85,8 @@ public class JelloMainMenuScreen extends Screen {
                "com/mentalfrostbyte/gui/resources/background/panorama5.png", 0.075F, 8);
       }
 
-      this.field20974.changeDirection(Direction.BACKWARDS);
-      this.field20975.changeDirection(Direction.BACKWARDS);
+      this.field20974.changeDirection(Animation.Direction.BACKWARDS);
+      this.field20975.changeDirection(Animation.Direction.BACKWARDS);
       int var3 = Minecraft.getInstance().mainWindow.getWidth() * Minecraft.getInstance().mainWindow.getHeight() / 14000;
       Random var4 = new Random();
 
@@ -110,7 +109,7 @@ public class JelloMainMenuScreen extends Screen {
    }
 
    public void method13340() {
-      this.field20972.changeDirection(Direction.BACKWARDS);
+      this.field20972.changeDirection(Animation.Direction.BACKWARDS);
       this.field20970.method13296(false);
       this.field20971.method13296(false);
       this.field20971.method13292(false);
@@ -118,17 +117,17 @@ public class JelloMainMenuScreen extends Screen {
    }
 
    public void method13341() {
-      this.field20972.changeDirection(Direction.FORWARDS);
-      this.field20973.changeDirection(Direction.FORWARDS);
+      this.field20972.changeDirection(Animation.Direction.FORWARDS);
+      this.field20973.changeDirection(Animation.Direction.FORWARDS);
    }
 
    public void animateIn() {
-      this.field20972.changeDirection(Direction.FORWARDS);
+      this.field20972.changeDirection(Animation.Direction.FORWARDS);
       this.field20970.method13296(true);
    }
 
    public void method13343() {
-      this.field20972.changeDirection(Direction.FORWARDS);
+      this.field20972.changeDirection(Animation.Direction.FORWARDS);
       this.field20971.method13296(true);
       this.field20971.method13292(true);
       this.field20971.method13294(false);
@@ -146,7 +145,7 @@ public class JelloMainMenuScreen extends Screen {
    @Override
    public void draw(float partialTicks) {
       float var4 = MathHelper.calculateTransition(this.field20972.calcPercent(), 0.0F, 1.0F, 1.0F);
-      if (this.field20972.getDirection() == Direction.BACKWARDS) {
+      if (this.field20972.getDirection() == Animation.Direction.BACKWARDS) {
          var4 = MathHelper.calculateBackwardTransition(this.field20972.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
@@ -175,8 +174,8 @@ public class JelloMainMenuScreen extends Screen {
             this.field20967 = (int) ((float) this.field20967 + var11 * field20982);
          }
       } else {
-         this.field20974.changeDirection(Direction.FORWARDS);
-         this.field20975.changeDirection(Direction.FORWARDS);
+         this.field20974.changeDirection(Animation.Direction.FORWARDS);
+         this.field20975.changeDirection(Animation.Direction.FORWARDS);
          float var12 = 0.5F - (float) this.field20967 / (float) Minecraft.getInstance().mainWindow.getWidth() * -1.0F;
          float var13 = 1.0F - this.field20974.calcPercent();
          float var14 = 1.0F - this.field20975.calcPercent();
@@ -265,7 +264,7 @@ public class JelloMainMenuScreen extends Screen {
             }
          }
 
-         if (this.field20973.getDirection() == Direction.FORWARDS) {
+         if (this.field20973.getDirection() == Animation.Direction.FORWARDS) {
             RenderUtil.method11440(
                   ResourceRegistry.JelloMediumFont50,
                   (float) (this.widthA / 2),

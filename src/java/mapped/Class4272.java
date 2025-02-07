@@ -7,11 +7,10 @@ import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
 public class Class4272 extends Class4247 {
-   public Animation field20703 = new Animation(300, 200, Direction.BACKWARDS);
+   public Animation field20703 = new Animation(300, 200, Animation.Direction.BACKWARDS);
    private final int field20704;
    private Class4339 field20705;
    public static Class8233 field20706;
@@ -83,11 +82,11 @@ public class Class4272 extends Class4247 {
    }
 
    public void method13119(boolean var1) {
-      this.field20703.changeDirection(!var1 ? Direction.BACKWARDS : Direction.FORWARDS);
+      this.field20703.changeDirection(!var1 ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
    }
 
    public boolean method13120() {
-      return this.field20703.getDirection() == Direction.FORWARDS;
+      return this.field20703.getDirection() == Animation.Direction.FORWARDS;
    }
 
    @Override
@@ -98,7 +97,7 @@ public class Class4272 extends Class4247 {
    @Override
    public void draw(float partialTicks) {
       float var4 = MathUtils.lerp(this.field20703.calcPercent(), 0.1, 0.81, 0.14, 1.0);
-      if (this.field20703.getDirection() == Direction.BACKWARDS) {
+      if (this.field20703.getDirection() == Animation.Direction.BACKWARDS) {
          var4 = MathUtils.lerp(this.field20703.calcPercent(), 0.61, 0.01, 0.87, 0.16);
       }
 

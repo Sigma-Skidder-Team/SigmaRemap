@@ -13,7 +13,6 @@ import com.mentalfrostbyte.jello.module.settings.SettingType;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
 
 import java.util.HashMap;
@@ -177,11 +176,11 @@ public class Class4345 extends Class4339 {
    }
 
    public void method13556() {
-      this.field21231.changeDirection(Direction.BACKWARDS);
+      this.field21231.changeDirection(Animation.Direction.BACKWARDS);
    }
 
    public boolean method13557() {
-      return this.field21231.getDirection() == Direction.BACKWARDS && this.field21231.calcPercent() == 0.0F;
+      return this.field21231.getDirection() == Animation.Direction.BACKWARDS && this.field21231.calcPercent() == 0.0F;
    }
 
    @Override
@@ -192,7 +191,7 @@ public class Class4345 extends Class4339 {
    @Override
    public void draw(float partialTicks) {
       int var4 = Math.round((float)this.getHeightA() * MathHelper.calculateTransition(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
-      if (this.field21231.getDirection() == Direction.BACKWARDS) {
+      if (this.field21231.getDirection() == Animation.Direction.BACKWARDS) {
          var4 = Math.round((float)this.getHeightA() * MathHelper.calculateBackwardTransition(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
       }
 

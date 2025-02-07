@@ -10,7 +10,6 @@ import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
 import mapped.*;
@@ -329,7 +328,7 @@ public class AltManagerScreen extends Screen {
                         if (var7.getYA() <= Minecraft.getInstance().mainWindow.getHeight()
                                 && this.field21010.method13513() == 0) {
                             if (var3 > 0.2F) {
-                                var8.field20805.changeDirection(Direction.FORWARDS);
+                                var8.field20805.changeDirection(Animation.Direction.FORWARDS);
                             }
 
                             float var9 = MathUtils.lerp(var8.field20805.calcPercent(), 0.51, 0.82, 0.0, 0.99);
@@ -337,7 +336,7 @@ public class AltManagerScreen extends Screen {
                             var3 = var8.field20805.calcPercent();
                         } else {
                             var8.method13284(0);
-                            var8.field20805.changeDirection(Direction.FORWARDS);
+                            var8.field20805.changeDirection(Animation.Direction.FORWARDS);
                         }
                     }
                 }

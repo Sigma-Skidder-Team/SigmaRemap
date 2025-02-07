@@ -140,7 +140,7 @@ public class KeyStrokes extends Module {
                         }
 
                         if (var18.method8816().isKeyDown() && var16.field33988.calcPercent() >= var24 && var25 < 2) {
-                            var16.field33988.method25318(var24);
+                            var16.field33988.updateStartTime(var24);
                         }
 
                         float var27 = var16.field33988.calcPercent();

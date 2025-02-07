@@ -10,7 +10,6 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -18,7 +17,7 @@ import org.lwjgl.opengl.GL11;
 
 public class Cords extends Module {
     private int field23755;
-    private final Animation field23756 = new Animation(1500, 1500, Direction.BACKWARDS);
+    private final Animation field23756 = new Animation(1500, 1500, Animation.Direction.BACKWARDS);
 
     public Cords() {
         super(ModuleCategory.GUI, "Cords", "Displays coordinates");
@@ -37,11 +36,11 @@ public class Cords extends Module {
 
             boolean var4 = MovementUtil.isMoving() || mc.player.isJumping || mc.player.isSneaking();
             if (!var4) {
-                if (this.field23756.calcPercent() == 1.0F && this.field23756.getDirection() == Direction.FORWARDS) {
-                    this.field23756.changeDirection(Direction.BACKWARDS);
+                if (this.field23756.calcPercent() == 1.0F && this.field23756.getDirection() == Animation.Direction.FORWARDS) {
+                    this.field23756.changeDirection(Animation.Direction.BACKWARDS);
                 }
             } else {
-                this.field23756.changeDirection(Direction.FORWARDS);
+                this.field23756.changeDirection(Animation.Direction.FORWARDS);
             }
         }
     }
@@ -64,7 +63,7 @@ public class Cords extends Module {
                         float var8 = 150;
                         float var9 = (float) ResourceRegistry.JelloLightFont18.getWidth(var5);
                         float var10 = Math.min(1.0F, (float) var8 / var9);
-                        if (this.field23756.getDirection() != Direction.FORWARDS) {
+                        if (this.field23756.getDirection() != Animation.Direction.FORWARDS) {
                             var10 *= 0.9F
                                     + QuadraticEasing.easeInQuad(Math.min(1.0F, this.field23756.calcPercent() * 8.0F),
                                             0.0F, 1.0F, 1.0F) * 0.1F;

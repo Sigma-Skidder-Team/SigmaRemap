@@ -6,7 +6,6 @@ import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
 import net.minecraft.client.Minecraft;
@@ -14,7 +13,7 @@ import org.lwjgl.opengl.GL11;
 
 public class Class4236 extends PNGIconButton implements Class4238 {
    public boolean field20577 = false;
-   public Animation field20578 = new Animation(160, 140, Direction.BACKWARDS);
+   public Animation field20578 = new Animation(160, 140, Animation.Direction.BACKWARDS);
 
    public Class4236(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7,
          ColorHelper var8, String var9, TrueTypeFont var10) {
@@ -42,11 +41,11 @@ public class Class4236 extends PNGIconButton implements Class4238 {
       this.field20577 = this.method13298();
       if (!this.field20577) {
          if (this.method13029()) {
-            this.field20578.changeDirection(Direction.BACKWARDS);
+            this.field20578.changeDirection(Animation.Direction.BACKWARDS);
             this.method13292(false);
          }
       } else {
-         this.field20578.changeDirection(Direction.FORWARDS);
+         this.field20578.changeDirection(Animation.Direction.FORWARDS);
          this.method13292(true);
       }
    }
@@ -67,7 +66,7 @@ public class Class4236 extends PNGIconButton implements Class4238 {
    public void draw(float partialTicks) {
       float var4 = !this.method13212() ? 0.0F : 0.1F;
       float var5 = this.method13030();
-      if (this.field20578.getDirection() == Direction.BACKWARDS) {
+      if (this.field20578.getDirection() == Animation.Direction.BACKWARDS) {
          var5 = this.method13031();
       }
 

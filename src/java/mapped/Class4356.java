@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
+import com.mentalfrostbyte.jello.util.render.animation.Animation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +29,12 @@ public class Class4356 extends Class4247 {
             for (CustomGuiScreen var6 : var1x.getScreen().method13241()) {
                if (var6 instanceof Class4245) {
                   ((Class4245)var6).field20598 = false;
-                  ((Class4245)var6).field20599.changeDirection(Direction.BACKWARDS);
+                  ((Class4245)var6).field20599.changeDirection(Animation.Direction.BACKWARDS);
                }
             }
 
             ((Class4245)var1x).field20598 = true;
-            ((Class4245)var1x).field20599.changeDirection(Direction.FORWARDS);
+            ((Class4245)var1x).field20599.changeDirection(Animation.Direction.FORWARDS);
             this.field21296 = ((Class4245)var1x).field20597.field13428;
          });
          var7 = false;

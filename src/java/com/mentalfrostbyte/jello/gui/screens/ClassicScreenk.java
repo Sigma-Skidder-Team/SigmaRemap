@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -18,7 +17,7 @@ public class ClassicScreenk extends Screen {
 
     public ClassicScreenk() {
         super("ClassicScreen");
-        field21079 = new Animation(250, 200, Direction.FORWARDS);
+        field21079 = new Animation(250, 200, Animation.Direction.FORWARDS);
         this.method13419();
         MultiUtilities.method17739();
     }

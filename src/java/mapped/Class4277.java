@@ -5,7 +5,6 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
 public class Class4277 extends Class4247 {
@@ -50,7 +49,7 @@ public class Class4277 extends Class4247 {
    private void method13136() {
       this.addToList(this.field20734 = new Class4246(this, this.getHeightA()));
       this.field20732 = -1.0F;
-      this.field20735 = new Animation(114, 114, Direction.BACKWARDS);
+      this.field20735 = new Animation(114, 114, Animation.Direction.BACKWARDS);
    }
 
    @Override
@@ -59,8 +58,8 @@ public class Class4277 extends Class4247 {
             .changeDirection(
                   !this.method13298() && !this.field20734.method13298() && !this.method13212()
                         && !this.field20734.method13216()
-                              ? Direction.BACKWARDS
-                              : Direction.FORWARDS);
+                              ? Animation.Direction.BACKWARDS
+                              : Animation.Direction.FORWARDS);
       super.updatePanelDimensions(newHeight, newWidth);
    }
 

@@ -3,7 +3,6 @@ package mapped;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.lwjgl.opengl.GL11;
 
@@ -19,7 +18,7 @@ public class Class4241 extends ButtonPanel {
 
    @Override
    public void updatePanelDimensions(int newHeight, int newWidth) {
-      this.field20589.changeDirection(!this.field20909 ? Direction.BACKWARDS : Direction.FORWARDS);
+      this.field20589.changeDirection(!this.field20909 ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
       super.updatePanelDimensions(newHeight, newWidth);
    }
 

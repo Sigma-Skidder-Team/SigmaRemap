@@ -9,7 +9,6 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
 import net.minecraft.client.Minecraft;
@@ -38,7 +37,7 @@ public class Class4348 extends Class4278 {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21243 = var7;
       this.field21244 = var7.method31736();
-      this.field21248 = new Animation(200, 200, Direction.BACKWARDS);
+      this.field21248 = new Animation(200, 200, Animation.Direction.BACKWARDS);
    }
 
    @Override
@@ -62,9 +61,9 @@ public class Class4348 extends Class4278 {
       float var4 = EasingFunctions.easeOutBack(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
       float var5 = QuadraticEasing.easeInQuad(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
       if (this.method13298()) {
-         this.field21248.changeDirection(Direction.FORWARDS);
+         this.field21248.changeDirection(Animation.Direction.FORWARDS);
       } else if ((double) Math.abs(var4 - var5) < 0.7) {
-         this.field21248.changeDirection(Direction.BACKWARDS);
+         this.field21248.changeDirection(Animation.Direction.BACKWARDS);
       }
 
       if (this.method13272() + this.method13282() < Minecraft.getInstance().mainWindow.getHeight() - 36
@@ -94,7 +93,7 @@ public class Class4348 extends Class4278 {
          GL11.glPushMatrix();
          int var9 = this.widthA / 2;
          int var7 = this.heightA / 2;
-         if (this.field21248.getDirection() == Direction.BACKWARDS) {
+         if (this.field21248.getDirection() == Animation.Direction.BACKWARDS) {
             var4 = QuadraticEasing.easeInQuad(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
          }
 
@@ -139,7 +138,7 @@ public class Class4348 extends Class4278 {
       byte var3 = 44;
       byte var4 = 44;
       float var5 = EasingFunctions.easeOutBack(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
-      if (this.field21248.getDirection() == Direction.BACKWARDS) {
+      if (this.field21248.getDirection() == Animation.Direction.BACKWARDS) {
          var5 = QuadraticEasing.easeInQuad(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
@@ -178,7 +177,7 @@ public class Class4348 extends Class4278 {
       byte var9 = 76;
       byte var10 = 44;
       float var11 = EasingFunctions.easeOutBack(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
-      if (this.field21248.getDirection() == Direction.BACKWARDS) {
+      if (this.field21248.getDirection() == Animation.Direction.BACKWARDS) {
          var11 = QuadraticEasing.easeInQuad(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 

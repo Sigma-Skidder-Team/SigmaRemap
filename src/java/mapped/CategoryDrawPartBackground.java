@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.module.impl.gui.classic.TabGUI;
 import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
 
 public class CategoryDrawPartBackground {
@@ -32,7 +31,7 @@ public class CategoryDrawPartBackground {
 
    public void expand() {
       this.expanded = true;
-      this.field32398.changeDirection(Direction.BACKWARDS);
+      this.field32398.changeDirection(Animation.Direction.BACKWARDS);
    }
 
    public boolean isExpanded() {
@@ -49,7 +48,7 @@ public class CategoryDrawPartBackground {
 
    public void method24726(float partialTicks) {
       float var4 = MathHelper.calculateTransition(this.field32398.calcPercent(), 0.0F, 1.0F, 1.0F);
-      if (this.field32398.getDirection() == Direction.BACKWARDS) {
+      if (this.field32398.getDirection() == Animation.Direction.BACKWARDS) {
          var4 = MathHelper.calculateBackwardTransition(this.field32398.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 

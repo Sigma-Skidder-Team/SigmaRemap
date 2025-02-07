@@ -12,7 +12,6 @@ import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
@@ -33,7 +32,7 @@ public class RearView extends Module {
 
     public RearView() {
         super(ModuleCategory.GUI, "RearView", "See behind you");
-        this.animation = new Animation(230, 200, Direction.BACKWARDS);
+        this.animation = new Animation(230, 200, Animation.Direction.BACKWARDS);
         this.registerSetting(new BooleanSetting("Show in GUI", "Makes the Rear View visible in guis", false));
         this.registerSetting(new BooleanSetting("Smart Visibility", "Only pops up when a player is behind you", false));
         this.registerSetting(new NumberSetting<Integer>("Size", "The rear view width", 400.0F, Integer.class, 120.0F,
@@ -88,11 +87,11 @@ public class RearView extends Module {
                     if (!this.getBooleanValueFromSettingName("Smart Visibility")) {
                         this.animation.changeDirection(
                                 mc.currentScreen != null && !this.getBooleanValueFromSettingName("Show in GUI")
-                                        ? Direction.BACKWARDS
-                                        : Direction.FORWARDS);
+                                        ? Animation.Direction.BACKWARDS
+                                        : Animation.Direction.FORWARDS);
                     } else {
                         this.animation
-                                .changeDirection(this.visibilityTimer <= 0 ? Direction.BACKWARDS : Direction.FORWARDS);
+                                .changeDirection(this.visibilityTimer <= 0 ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
                     }
 
                     float aspectRatio = (float) mc.mainWindow.getWidth() / (float) mc.mainWindow.getHeight();
@@ -104,7 +103,7 @@ public class RearView extends Module {
                         if (this.animation.calcPercent() == 0.0F) {
                             return;
                         }
-                    } else if (this.animation.getDirection() != Direction.FORWARDS) {
+                    } else if (this.animation.getDirection() != Animation.Direction.FORWARDS) {
                         positionY = (int) ((float) positionY
                                 * MathUtils.lerp(this.animation.calcPercent(), 0.49, 0.59, 0.16, 1.04));
                     } else {
@@ -225,6 +224,6 @@ public class RearView extends Module {
 
     @Override
     public void onDisable() {
-        this.animation.changeDirection(Direction.BACKWARDS);
+        this.animation.changeDirection(Animation.Direction.BACKWARDS);
     }
 }

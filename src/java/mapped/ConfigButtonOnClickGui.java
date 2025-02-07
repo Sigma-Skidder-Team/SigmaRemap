@@ -7,7 +7,6 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import totalcross.json.JSONObject;
 
@@ -82,14 +81,14 @@ public class ConfigButtonOnClickGui extends Class4247 {
    }
 
    public void method13613() {
-      this.field21300.field20703.changeDirection(Direction.BACKWARDS);
-      if (this.field21298.getDirection() != Direction.BACKWARDS) {
-         this.field21298.changeDirection(Direction.BACKWARDS);
+      this.field21300.field20703.changeDirection(Animation.Direction.BACKWARDS);
+      if (this.field21298.getDirection() != Animation.Direction.BACKWARDS) {
+         this.field21298.changeDirection(Animation.Direction.BACKWARDS);
       }
    }
 
    public boolean method13614() {
-      return this.field21298.getDirection() == Direction.BACKWARDS && this.field21298.calcPercent() == 0.0F;
+      return this.field21298.getDirection() == Animation.Direction.BACKWARDS && this.field21298.calcPercent() == 0.0F;
    }
 
    @Override
@@ -141,7 +140,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
       partialTicks = this.field21298.calcPercent();
       this.method13616();
       float var4 = MathUtils.lerp(partialTicks, 0.37, 1.48, 0.17, 0.99);
-      if (this.field21298.getDirection() == Direction.BACKWARDS) {
+      if (this.field21298.getDirection() == Animation.Direction.BACKWARDS) {
          var4 = MathUtils.lerp(partialTicks, 0.38, 0.73, 0.0, 1.0);
       }
 
@@ -169,7 +168,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
             var6);
       float var7 = 0.9F
             + (1.0F - MathUtils.lerp(this.field21300.field20703.calcPercent(), 0.0, 0.96, 0.69, 0.99)) * 0.1F;
-      if (this.field21300.field20703.getDirection() == Direction.BACKWARDS) {
+      if (this.field21300.field20703.getDirection() == Animation.Direction.BACKWARDS) {
          var7 = 0.9F + (1.0F - MathUtils.lerp(this.field21300.field20703.calcPercent(), 0.61, 0.01, 0.87, 0.16)) * 0.1F;
       }
 

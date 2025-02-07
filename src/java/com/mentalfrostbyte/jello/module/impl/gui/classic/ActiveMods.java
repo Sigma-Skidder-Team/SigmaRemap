@@ -11,7 +11,6 @@ import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.module.settings.Setting;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -45,7 +44,7 @@ public class ActiveMods extends Module {
     }
 
     private void method16852() {
-        this.field23965 = new Animation(2000, 2000, Direction.FORWARDS);
+        this.field23965 = new Animation(2000, 2000, Animation.Direction.FORWARDS);
     }
 
     private void method16853() {
@@ -62,7 +61,7 @@ public class ActiveMods extends Module {
             String var5 = this.getStringSettingValueByName("Outline");
             this.method16855();
             if (this.field23965.calcPercent() == 1.0F) {
-                this.field23965.method25318(0.0F);
+                this.field23965.updateStartTime(0.0F);
             }
 
             int var6 = -2;
@@ -153,8 +152,8 @@ public class ActiveMods extends Module {
 
             for (Module var4 : Client.getInstance().moduleManager.getModuleMap().values()) {
                 if (var4 != this && var4.getCategory() != ModuleCategory.GUI) {
-                    Animation var5 = new Animation(200, 200, !var4.isEnabled() ? Direction.FORWARDS : Direction.BACKWARDS);
-                    var5.method25318(!var4.isEnabled() ? 1.0F : 0.0F);
+                    Animation var5 = new Animation(200, 200, !var4.isEnabled() ? Animation.Direction.FORWARDS : Animation.Direction.BACKWARDS);
+                    var5.updateStartTime(!var4.isEnabled() ? 1.0F : 0.0F);
                     this.field23962.put(var4, var5);
                     Setting var6 = var4.getSettingMap().get("Type");
                     if (var6 == null) {
@@ -172,7 +171,7 @@ public class ActiveMods extends Module {
         for (Entry var8 : this.field23962.entrySet()) {
             Module var9 = (Module) var8.getKey();
             Animation var11 = (Animation) var8.getValue();
-            var11.changeDirection(!var9.isEnabled() ? Direction.FORWARDS : Direction.BACKWARDS);
+            var11.changeDirection(!var9.isEnabled() ? Animation.Direction.FORWARDS : Animation.Direction.BACKWARDS);
         }
     }
 

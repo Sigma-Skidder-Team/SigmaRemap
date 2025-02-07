@@ -3,7 +3,6 @@ package mapped;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
 public class Class4265 extends Class4247 {
@@ -18,7 +17,7 @@ public class Class4265 extends Class4247 {
 
    @Override
    public void draw(float partialTicks) {
-      this.field20683.changeDirection(!this.method13298() ? Direction.BACKWARDS : Direction.FORWARDS);
+      this.field20683.changeDirection(!this.method13298() ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
       partialTicks *= 0.09F + 0.25F * this.field20683.calcPercent() + (this.field20682 ? 0.0F : 0.2F);
       RenderUtil.renderBackgroundBox(
             (float) (this.xA + 10), (float) (this.yA + 16), 5.0F, 14.0F,

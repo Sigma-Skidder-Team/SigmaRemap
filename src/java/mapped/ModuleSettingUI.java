@@ -5,7 +5,6 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
 public class ModuleSettingUI extends Class4247 {
@@ -44,8 +43,8 @@ public class ModuleSettingUI extends Class4247 {
          this.field20671 = true;
       }
 
-      this.animation1.changeDirection(this.field20671 ? Direction.BACKWARDS : Direction.FORWARDS);
-      this.animation.changeDirection(this.field20671 ? Direction.BACKWARDS : Direction.FORWARDS);
+      this.animation1.changeDirection(this.field20671 ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
+      this.animation.changeDirection(this.field20671 ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
       super.updatePanelDimensions(newHeight, newWidth);
    }
 

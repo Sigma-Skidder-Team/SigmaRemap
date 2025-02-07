@@ -13,7 +13,6 @@ import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
@@ -69,10 +68,10 @@ public class ActiveMods extends Module {
         for (Module var4 : Client.getInstance().moduleManager.getModuleMap().values()) {
             if (var4.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.GUI) {
                 this.field23612.add(var4);
-                this.field23615.put(var4, new Animation(150, 150, Direction.BACKWARDS));
+                this.field23615.put(var4, new Animation(150, 150, Animation.Direction.BACKWARDS));
                 if (this.getBooleanValueFromSettingName("Animations")) {
                     this.field23615.get(var4)
-                            .changeDirection(!var4.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
+                            .changeDirection(!var4.isEnabled() ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
                 }
             }
         }
@@ -126,7 +125,7 @@ public class ActiveMods extends Module {
             for (Module var5 : this.field23615.keySet()) {
                 if (this.getBooleanValueFromSettingName("Animations")) {
                     this.field23615.get(var5)
-                            .changeDirection(!var5.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
+                            .changeDirection(!var5.isEnabled() ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
                 }
             }
 

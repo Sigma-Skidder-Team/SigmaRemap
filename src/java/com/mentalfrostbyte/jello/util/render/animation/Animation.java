@@ -3,73 +3,67 @@ package com.mentalfrostbyte.jello.util.render.animation;
 import java.util.Date;
 
 public class Animation {
-    public int field32936;
-    public int field32937;
-    public Direction direction = Direction.FORWARDS;
-    public Date field32939;
-    public Date field32940;
+    public int duration;
+    public int reverseDuration;
+    public Direction direction;
+    public Date startTime;
+    public Date reverseStartTime;
 
-    public Animation(int var1, int var2) {
-        this(var1, var2, Direction.FORWARDS);
+    public Animation(int duration, int reverseDuration) {
+        this(duration, reverseDuration, Direction.FORWARDS);
     }
 
-    public Animation(int var1, int var2, Direction var3) {
-        this.field32936 = var1;
-        this.field32937 = var2;
-        this.field32939 = new Date();
-        this.field32940 = new Date();
-        this.changeDirection(var3);
+    public Animation(int duration, int reverseDuration, Direction direction) {
+        this.direction = Direction.FORWARDS;
+        this.duration = duration;
+        this.reverseDuration = reverseDuration;
+        this.startTime = new Date();
+        this.reverseStartTime = new Date();
+        this.changeDirection(direction);
     }
 
-    public static float method25321(Date var0, Date var1, float var2, float var3) {
-        float var6 = Math.min(var2, (float) (new Date().getTime() - (var0 != null ? var0.getTime() : new Date().getTime())))
-                / var2
-                * (1.0F - Math.min(var3, (float) (new Date().getTime() - (var1 != null ? var1.getTime() : new Date().getTime()))) / var3);
-        return Math.max(0.0F, Math.min(1.0F, var6));
+    public static float calculateProgressWithReverse(final Date date, final Date date2, final float a, final float a2) {
+        return Math.max(0.0f, Math.min(1.0f, Math.min(a, (float) (new Date().getTime() - ((date != null) ? date.getTime() : new Date().getTime()))) / a * (1.0f - Math.min(a2, (float) (new Date().getTime() - ((date2 != null) ? date2.getTime() : new Date().getTime()))) / a2)));
     }
 
-    public static float method25322(Date var0, float var1) {
-        float var4 = Math.min(var1, (float) (new Date().getTime() - (var0 != null ? var0.getTime() : new Date().getTime()))) / var1;
-        return Math.max(0.0F, Math.min(1.0F, var4));
+    public static float calculateProgress(final Date date, final float a) {
+        return Math.max(0.0f, Math.min(1.0f, Math.min(a, (float) (new Date().getTime() - ((date != null) ? date.getTime() : new Date().getTime()))) / a));
     }
 
-    public static float method25323(Date var0, Date var1, float var2) {
-        return method25321(var0, var1, var2, var2);
+    public static float calculateProgressWithReverse(final Date date, final Date date2, final float max) {
+        return calculateProgressWithReverse(date, date2, max, max);
     }
 
-    public static boolean method25324(Date var0, float var1) {
+    public static boolean hasTimeElapsed(Date var0, float var1) {
         return var0 != null && (float) (new Date().getTime() - var0.getTime()) > var1;
     }
 
-    public int method25316() {
-        return this.field32936;
+    public int getDuration() {
+        return this.duration;
     }
 
-    public void changeDirection(Direction var1) {
-        if (this.direction != var1) {
-            switch (direction) {
-                case FORWARDS:
-                    long var4 = (long) (this.calcPercent() * (float) this.field32936);
-                    this.field32939 = new Date(new Date().getTime() - var4);
-                    break;
-                case BACKWARDS:
-                    long var6 = (long) ((1.0F - this.calcPercent()) * (float) this.field32937);
-                    this.field32940 = new Date(new Date().getTime() - var6);
-            }
-
-            this.direction = var1;
+    public void changeDirection(final Direction direction) {
+        if (this.direction == direction) {
+            return;
         }
+        if (direction == Direction.FORWARDS) {
+            this.startTime = new Date(new Date().getTime() - (long) (this.calcPercent() * this.duration));
+        } else {
+            this.reverseStartTime = new Date(new Date().getTime() - (long) ((1.0f - this.calcPercent()) * this.reverseDuration));
+        }
+        this.direction = direction;
     }
 
-    public void method25318(float var1) {
-        switch (direction) {
-            case FORWARDS:
-                long var4 = (long) (var1 * (float) this.field32936);
-                this.field32939 = new Date(new Date().getTime() - var4);
+    public void updateStartTime(final float progress) {
+        switch (this.direction.ordinal()) {
+            case 1: {
+                this.startTime = new Date(new Date().getTime() - (long) (progress * this.duration));
                 break;
-            case BACKWARDS:
-                long var6 = (long) ((1.0F - var1) * (float) this.field32937);
-                this.field32940 = new Date(new Date().getTime() - var6);
+            }
+            case 2: {
+                this.reverseStartTime = new Date(new Date().getTime() - (long) ((1.0f - progress) * this.reverseDuration));
+                break;
+            }
         }
     }
 
@@ -78,8 +72,14 @@ public class Animation {
     }
 
     public float calcPercent() {
-        return this.direction != Direction.FORWARDS
-                ? 1.0F - (float) Math.min(this.field32937, new Date().getTime() - this.field32940.getTime()) / (float) this.field32937
-                : (float) Math.min(this.field32936, new Date().getTime() - this.field32939.getTime()) / (float) this.field32936;
+        if (this.direction == Direction.BACKWARDS) {
+            return Math.max(0.0f, 1.0f - Math.min(1.0f, (new Date().getTime() - this.reverseStartTime.getTime()) / (float) this.reverseDuration));
+        }
+        return Math.min(1.0f, (new Date().getTime() - this.startTime.getTime()) / (float) this.duration);
+    }
+
+    public enum Direction {
+        FORWARDS,
+        BACKWARDS
     }
 }

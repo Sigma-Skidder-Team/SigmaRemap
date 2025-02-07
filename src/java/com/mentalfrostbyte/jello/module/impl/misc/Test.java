@@ -10,7 +10,6 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.*;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import mapped.ArmorStandEntity;
 import mapped.Class3597;
 import mapped.Class8781;
@@ -115,7 +114,7 @@ public class Test extends Module {
     @Override
     public void onEnable() {
         this.field23739 = 0.0;
-        this.field23751 = new Animation(1000, 100000, Direction.FORWARDS);
+        this.field23751 = new Animation(1000, 100000, Animation.Direction.FORWARDS);
         this.field23745 = MathHelper.wrapDegrees(mc.player.rotationYaw);
         this.field23745 = 39.0F;
         this.field23746 = mc.player.rotationPitch;

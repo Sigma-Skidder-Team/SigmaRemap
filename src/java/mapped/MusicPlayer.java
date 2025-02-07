@@ -13,7 +13,6 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
 
@@ -54,7 +53,7 @@ public class MusicPlayer extends Class4278 {
    public static long field20870 = 0L;
    public float field20871 = 0.0F;
    public float field20872 = 0.0F;
-   private Animation field20873 = new Animation(80, 150, Direction.BACKWARDS);
+   private Animation field20873 = new Animation(80, 150, Animation.Direction.BACKWARDS);
    public boolean field20874 = false;
 
    public MusicPlayer(CustomGuiScreen var1, String var2) {
@@ -284,8 +283,8 @@ public class MusicPlayer extends Class4278 {
       this.field20865.setWidthA(this.getXA() + this.getWidthA() <= this.screen.getWidthA() ? 0 : 41);
       this.field20873
             .changeDirection(
-                  this.getXA() + this.getWidthA() > this.screen.getWidthA() && !this.field20874 ? Direction.FORWARDS
-                        : Direction.BACKWARDS);
+                  this.getXA() + this.getWidthA() > this.screen.getWidthA() && !this.field20874 ? Animation.Direction.FORWARDS
+                        : Animation.Direction.BACKWARDS);
       partialTicks *= 0.5F + (1.0F - this.field20873.calcPercent()) * 0.5F;
       if (this.field20854.method24319()) {
          this.play.setEnabled(false);

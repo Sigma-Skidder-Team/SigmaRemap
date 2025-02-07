@@ -10,7 +10,6 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
@@ -159,7 +158,7 @@ public class JelloClickGUI extends Screen {
          this.configButton = null;
       }
 
-      if (field20942.getDirection() == Direction.BACKWARDS && this.field20949 != null && !this.field20949.field20671) {
+      if (field20942.getDirection() == Animation.Direction.BACKWARDS && this.field20949 != null && !this.field20949.field20671) {
          this.field20949.field20671 = true;
       }
 
@@ -172,8 +171,8 @@ public class JelloClickGUI extends Screen {
 
       if (field20944) {
          float var8 = (float) (0.03F * (60.0 / (double) this.method13313()));
-         Direction var9 = field20942.getDirection();
-         field20942.changeDirection(!field20943 ? Direction.FORWARDS : Direction.BACKWARDS);
+         Animation.Direction var9 = field20942.getDirection();
+         field20942.changeDirection(!field20943 ? Animation.Direction.FORWARDS : Animation.Direction.BACKWARDS);
          if (field20942.calcPercent() <= 0.0F && field20943) {
             field20943 = false;
             this.method13316(field20943);
@@ -236,7 +235,7 @@ public class JelloClickGUI extends Screen {
    }
 
    public float method13317(float var1, float var2) {
-      return field20942.getDirection() != Direction.BACKWARDS
+      return field20942.getDirection() != Animation.Direction.BACKWARDS
             ? (float) (Math.pow(2.0, (double) (-10.0F * var1))
                   * Math.sin((double) (var1 - var2 / 4.0F) * (Math.PI * 2) / (double) var2) + 1.0)
             : QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F);
@@ -258,7 +257,7 @@ public class JelloClickGUI extends Screen {
       float var7 = 1.0F;
       if (this.field20949 != null) {
          float var8 = EasingFunctions.easeOutBack(this.field20949.animation.calcPercent(), 0.0F, 1.0F, 1.0F);
-         if (this.field20949.animation.getDirection() == Direction.BACKWARDS) {
+         if (this.field20949.animation.getDirection() == Animation.Direction.BACKWARDS) {
             var8 = MathHelper.calculateBackwardTransition(this.field20949.animation.calcPercent(), 0.0F, 1.0F, 1.0F);
          }
 

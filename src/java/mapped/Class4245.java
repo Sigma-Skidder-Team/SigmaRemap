@@ -3,7 +3,6 @@ package mapped;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.lwjgl.opengl.GL11;
 
@@ -17,13 +16,13 @@ public class Class4245 extends ButtonPanel {
       super(var1, var2, var3, var4, 18, 18);
       this.field20597 = var5;
       this.field20599 = new Animation(250, 250);
-      this.field20599.changeDirection(Direction.BACKWARDS);
+      this.field20599.changeDirection(Animation.Direction.BACKWARDS);
    }
 
    @Override
    public void draw(float partialTicks) {
       if (this.field20598 && partialTicks == 1.0F) {
-         this.field20599.changeDirection(Direction.FORWARDS);
+         this.field20599.changeDirection(Animation.Direction.FORWARDS);
       }
 
       int var4 = (int) (EasingFunctions.easeInOutCustomBack(this.field20599.calcPercent(), 0.0F, 1.0F, 1.0F, 7.0F)

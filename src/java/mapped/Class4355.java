@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.util.math.vector.Vector3i;
 
@@ -23,7 +22,7 @@ public class Class4355 extends Class4247 {
       this.field21288 = var4;
       this.field21289 = new Animation(114, 114);
       this.field21290 = new Animation(200, 200);
-      this.field21290.changeDirection(Direction.BACKWARDS);
+      this.field21290.changeDirection(Animation.Direction.BACKWARDS);
       this.field21291 = var7;
       this.field21292 = var8;
       this.field21293 = var9;
@@ -34,10 +33,10 @@ public class Class4355 extends Class4247 {
    @Override
    public void updatePanelDimensions(int newHeight, int newWidth) {
       super.updatePanelDimensions(newHeight, newWidth);
-      this.field21289.changeDirection(!this.method13216() ? Direction.BACKWARDS : Direction.FORWARDS);
+      this.field21289.changeDirection(!this.method13216() ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
       boolean var5 = this.method13216() || newHeight > this.method13271() + this.getWidthA() - 62;
       this.method13215(var5);
-      if (this.field21290.getDirection() == Direction.FORWARDS) {
+      if (this.field21290.getDirection() == Animation.Direction.FORWARDS) {
          this.method13215(false);
          this.setXA(Math.round(
                (float) this.getWidthA() * QuadraticEasing.easeInQuad(this.field21290.calcPercent(), 0.0F, 1.0F, 1.0F)));
@@ -48,7 +47,7 @@ public class Class4355 extends Class4247 {
    }
 
    public void method13608() {
-      this.field21290.changeDirection(Direction.FORWARDS);
+      this.field21290.changeDirection(Animation.Direction.FORWARDS);
    }
 
    @Override

@@ -19,7 +19,6 @@ import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.player.Rots;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
@@ -322,7 +321,7 @@ public class KillAura extends Module {
             while (var4.hasNext()) {
                 Entry<Entity, Animation> var5 = var4.next();
 
-                var5.getValue().changeDirection(Direction.BACKWARDS);
+                var5.getValue().changeDirection(Animation.Direction.BACKWARDS);
                 if (var5.getValue().calcPercent() == 0.0F) {
                     var4.remove();
                 }
@@ -333,7 +332,7 @@ public class KillAura extends Module {
                     if (!this.field23961.containsKey(var10.getEntity())) {
                         this.field23961.put(var10.getEntity(), new Animation(250, 250));
                     } else {
-                        this.field23961.get(var10.getEntity()).changeDirection(Direction.FORWARDS);
+                        this.field23961.get(var10.getEntity()).changeDirection(Animation.Direction.FORWARDS);
                     }
                 }
             }

@@ -3,7 +3,6 @@ package mapped;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
 
@@ -32,7 +31,7 @@ public class Class7312 {
       this.field31349 = var5;
       this.field31344 = var6;
       this.field31352 = var7;
-      this.field31353 = new Animation(var6, var6, Direction.BACKWARDS);
+      this.field31353 = new Animation(var6, var6, Animation.Direction.BACKWARDS);
       this.field31345 = (int) ((float) var1.getTextureWidth() / (float) var3);
       this.field31348 = Class2311.field15840;
    }
@@ -40,15 +39,15 @@ public class Class7312 {
    public void method23104() {
       this.field31350.start();
       this.field31346 = true;
-      if (this.field31353.getDirection() != Direction.BACKWARDS) {
-         this.field31353.changeDirection(Direction.BACKWARDS);
+      if (this.field31353.getDirection() != Animation.Direction.BACKWARDS) {
+         this.field31353.changeDirection(Animation.Direction.BACKWARDS);
       } else {
-         this.field31353.changeDirection(Direction.FORWARDS);
+         this.field31353.changeDirection(Animation.Direction.FORWARDS);
       }
    }
 
    public boolean method23105() {
-      return this.field31353.getDirection() != Direction.BACKWARDS;
+      return this.field31353.getDirection() != Animation.Direction.BACKWARDS;
    }
 
    public void method23106() {

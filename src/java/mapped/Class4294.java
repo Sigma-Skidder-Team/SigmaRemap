@@ -6,7 +6,6 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
 
@@ -18,9 +17,9 @@ public class Class4294 extends Class4278 {
    private Texture field20800;
    private UILoadingCircle field20801;
    private boolean field20802 = false;
-   private Animation field20803 = new Animation(114, 114, Direction.BACKWARDS);
+   private Animation field20803 = new Animation(114, 114, Animation.Direction.BACKWARDS);
    private float field20804 = 0.0F;
-   public Animation field20805 = new Animation(300, 300, Direction.BACKWARDS);
+   public Animation field20805 = new Animation(300, 300, Animation.Direction.BACKWARDS);
    private int field20806 = 0;
    private int field20807 = 0;
    private int field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
@@ -38,14 +37,14 @@ public class Class4294 extends Class4278 {
    }
 
    public void method13167(boolean var1, boolean var2) {
-      this.field20803.changeDirection(!var1 ? Direction.BACKWARDS : Direction.FORWARDS);
+      this.field20803.changeDirection(!var1 ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
       if (var2) {
-         this.field20803.method25318(1.0F);
+         this.field20803.updateStartTime(1.0F);
       }
    }
 
    public boolean method13168() {
-      return this.field20803.getDirection() == Direction.FORWARDS;
+      return this.field20803.getDirection() == Animation.Direction.FORWARDS;
    }
 
    @Override

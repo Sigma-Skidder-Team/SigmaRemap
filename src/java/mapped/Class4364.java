@@ -2,12 +2,11 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import org.lwjgl.opengl.GL11;
 
 public class Class4364 extends Class4247 {
    private static String[] field21332;
-   public Animation field21333 = new Animation(1200, 1200, Direction.BACKWARDS);
+   public Animation field21333 = new Animation(1200, 1200, Animation.Direction.BACKWARDS);
 
    public Class4364(CustomGuiScreen var1, String var2, int var3, int var4) {
       super(var1, var2, var3, var4, 20, 20, false);
@@ -15,9 +14,9 @@ public class Class4364 extends Class4247 {
 
    @Override
    public void draw(float partialTicks) {
-      this.field21333.changeDirection(!this.method13298() ? Direction.BACKWARDS : Direction.FORWARDS);
+      this.field21333.changeDirection(!this.method13298() ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
       if (this.field21333.calcPercent() == 1.0F && this.method13298()) {
-         this.field21333 = new Animation(1200, 1200, Direction.FORWARDS);
+         this.field21333 = new Animation(1200, 1200, Animation.Direction.FORWARDS);
       }
 
       int var4 = this.getXA() + 10;

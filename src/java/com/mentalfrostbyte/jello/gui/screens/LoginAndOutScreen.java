@@ -6,7 +6,6 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
 import mapped.*;
@@ -28,7 +27,7 @@ public class LoginAndOutScreen extends Screen {
    private AlertPanel field21090;
    private UIButton field21091;
    private boolean field21092 = false;
-   private Animation field21093 = new Animation(250, 250, Direction.BACKWARDS);
+   private Animation field21093 = new Animation(250, 250, Animation.Direction.BACKWARDS);
 
    public LoginAndOutScreen() {
       super("Credits");
@@ -108,7 +107,7 @@ public class LoginAndOutScreen extends Screen {
       ResourceList.cancelIconPNG.bind();
       this.field21085 = Math.max(0.0F, Math.min(this.field21085 + 0.075F, 1.0F));
       if (this.field21092) {
-         this.field21093.changeDirection(Direction.FORWARDS);
+         this.field21093.changeDirection(Animation.Direction.FORWARDS);
       }
 
       this.method13425();

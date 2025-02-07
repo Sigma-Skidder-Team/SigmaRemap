@@ -6,7 +6,6 @@ import com.mentalfrostbyte.jello.unmapped.*;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
-import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -16,7 +15,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class GuiSwitch extends Screen {
-    public static Animation field21069 = new Animation(300, 200, Direction.BACKWARDS);
+    public static Animation field21069 = new Animation(300, 200, Animation.Direction.BACKWARDS);
     public static float field21070;
     public static float field21071;
 
@@ -90,7 +89,7 @@ public class GuiSwitch extends Screen {
     @Override
     public void draw(float partialTicks) {
         if (CustomResourceLoadProgressGui.field6779 != null) {
-            field21069.changeDirection(Direction.FORWARDS);
+            field21069.changeDirection(Animation.Direction.FORWARDS);
             int var4 = 40;
             float var5 = -field21070 / (float) Minecraft.getInstance().mainWindow.getWidth();
             float var6 = -field21071 / (float) Minecraft.getInstance().mainWindow.getHeight();
