@@ -6,6 +6,7 @@ Sigma 5.0 remapping project
 
 ### [!] Latest fixes/improvements
 We have fixed many features already,
+- Animations being broken
 - music player (featured playlists & search functionality);
 - added back viaversion from 1.7 all the way up to 1.21.1;
 - all modules that had rotations broken were fixed;
