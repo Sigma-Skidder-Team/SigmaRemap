@@ -65,20 +65,20 @@ public class Class4819 extends Class4817 implements Class4820
                 final NumberSetting class4806 = (NumberSetting)class4804;
                 final Class4892 class4807 = new Class4892(customGuiScreen, class4804.method15204() + "slider", customGuiScreen.method14276() - 126 - n3, n2 + 6, 126, 24);
                 class4807.method14674().setFont(ClientFonts.JelloLight14);
-                class4807.method14315(Float.toString((float)class4804.method15198()));
+                class4807.setTypedText(Float.toString((float)class4804.method15198()));
                 class4807.method14677(Class4892.method14671(class4806.method15187(), class4806.method15189(), (float)class4806.method15198()), false);
                 class4807.method14680(-1.0f);
                 final int method15185 = class4806.method15185();
                 class4806.method15195(class4894 -> {
                     if (Class4892.method14672(class4807.method14675(), class4806.method15187(), class4806.method15189(), class4806.method15191(), method15185) != class4894.method15198()) {
-                        class4807.method14315(Float.toString(class4894.method15198()));
+                        class4807.setTypedText(Float.toString(class4894.method15198()));
                         class4807.method14677(Class4892.method14671(class4806.method15187(), class4806.method15189(), class4894.method15198()), false);
                     }
                 });
                 class4807.method14516(class4999 -> {
                     final float method14672 = Class4892.method14672(((Class4892)class4999).method14675(), class4806.method15187(), class4806.method15189(), class4806.method15191(), method15185);
                     if (method14672 != class4804.method15198()) {
-                        class4807.method14315(Float.toString(method14672));
+                        class4807.setTypedText(Float.toString(method14672));
                         class4804.method15199(method14672);
                     }
                 });
@@ -100,7 +100,7 @@ public class Class4819 extends Class4817 implements Class4820
                 class4808.method14473(class4998 -> class4804.method15199(class4998.getTypedText()));
                 class4804.method15195(class4833 -> {
                     if (class4808.getTypedText() != ((TextInputSetting)class4804).method15198()) {
-                        class4808.method14315(((TextInputSetting)class4804).method15198());
+                        class4808.setTypedText(((TextInputSetting)class4804).method15198());
                     }
                 });
                 n2 += n5 + n3;

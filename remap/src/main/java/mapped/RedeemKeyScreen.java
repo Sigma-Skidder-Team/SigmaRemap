@@ -28,7 +28,7 @@ public class RedeemKeyScreen extends CustomGuiScreen
         redeemButton.doThis((var2x, var3x) -> new Thread(() -> {
             final CaptchaChecker captcha = Client.getInstance().getNetworkManager().getChallengeResponse();
             if (captcha != null) {
-                captcha.method30475(this.captchaField.getTypedText());
+                captcha.setChallengeAnswer(this.captchaField.getTypedText());
             }
             this.field20523 = Client.getInstance().getNetworkManager().redeemPremium(redeemBox.getTypedText(), Client.getInstance().getNetworkManager().getChallengeResponse());
             if (this.field20523 == null) {

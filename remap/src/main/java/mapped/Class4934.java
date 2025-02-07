@@ -223,7 +223,7 @@ public class Class4934 extends Class4800
     private void method14815() {
         if (this.field21150 != this.field21139.method14392()) {
             try {
-                this.field21149 = Class9399.method34928("blur", BufferedImage.method20832(0, 0, (int)(Minecraft.method5277().window.method7694() * this.field21143) - 15, 114, 4, 40, -921102));
+                this.field21149 = BufferedImageUtil.getTexture("blur", BufferedImage.method20832(0, 0, (int)(Minecraft.method5277().window.method7694() * this.field21143) - 15, 114, 4, 40, -921102));
             }
             catch (final IOException ex) {
                 ex.printStackTrace();

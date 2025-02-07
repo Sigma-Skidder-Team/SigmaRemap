@@ -33,7 +33,7 @@ public class JelloTouch
         this.field27849 = new LinkedHashSet<Class8879>();
         this.field27850 = false;
         this.field27851 = new HashMap<Module, TouchBarButton>();
-        Client.getInstance().getEventBus().method21094(this);
+        Client.getInstance().getEventBus().register2(this);
         if (Class9532.field41028) {
             this.field27849.add(new Class8879(344, Class722.class));
         }
@@ -107,7 +107,7 @@ public class JelloTouch
             }
             class4406.method486(class4407.method31227());
         }
-        JSONObject.method13301("keybinds", class4406);
+        JSONObject.put("keybinds", class4406);
         return JSONObject;
     }
     
@@ -151,7 +151,7 @@ public class JelloTouch
     
     public boolean method21966() {
         if (Minecraft.field4623) {
-            if (Client.getInstance().method35209() == ClientMode.JELLO) {
+            if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
                 if (!System.getProperty("os.version").startsWith("10.14")) {
                     if (!System.getProperty("os.version").startsWith("10.15")) {
                         if (!System.getProperty("os.version").startsWith("10.16")) {

@@ -22,7 +22,7 @@ public class AntiKnockBack extends ModuleWithSettings
     
     @Override
     public String getFormattedName() {
-        if (Client.getInstance().method35209() != ClientMode.CLASSIC) {
+        if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
             return super.getFormattedName();
         }
         return "AntiVelocity";

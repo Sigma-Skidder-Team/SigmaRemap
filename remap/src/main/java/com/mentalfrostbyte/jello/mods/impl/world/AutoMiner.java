@@ -136,7 +136,7 @@ public class AutoMiner extends Module
                     if (!Client.getInstance().method35205().method26559()) {
                         if (this.field16106 == null) {
                             this.method10821();
-                            Client.getInstance().method35197().method25776(new Class6224("AutoMiner", "Computing...", ClientAssets.direction));
+                            Client.getInstance().getNotificationManager().send(new Notification("AutoMiner", "Computing...", ClientAssets.direction));
                             (this.field16106 = new Thread(() -> {
                                 list2.iterator();
                                 final Iterator iterator4;
@@ -158,11 +158,11 @@ public class AutoMiner extends Module
                                         final List list3;
                                         if (list3.size() > 1) {
                                             Client.getInstance().method35205().method26556(list3);
-                                            Client.getInstance().method35197();
-                                            new Class6224("AutoMiner", "Solved in " + list3.size() + " steps! (" + this.field16105.field40407 + ":" + n3 + ")", ClientAssets.direction);
-                                            final Class6224 class5751;
+                                            Client.getInstance().getNotificationManager();
+                                            new Notification("AutoMiner", "Solved in " + list3.size() + " steps! (" + this.field16105.field40407 + ":" + n3 + ")", ClientAssets.direction);
+                                            final Notification class5751;
                                             final Object o2;
-                                            ((Class7951)o2).method25776(class5751);
+                                            ((Class7951)o2).send(class5751);
                                             break;
                                         }
                                         else {
@@ -176,11 +176,11 @@ public class AutoMiner extends Module
                                 try {
                                     final boolean b;
                                     if (!b) {
-                                        Client.getInstance().method35197();
-                                        new Class6224("AutoMiner", "Could not fin any safe path. (" + list2.size() + ")", ClientAssets.direction);
-                                        final Class6224 class5752;
+                                        Client.getInstance().getNotificationManager();
+                                        new Notification("AutoMiner", "Could not fin any safe path. (" + list2.size() + ")", ClientAssets.direction);
+                                        final Notification class5752;
                                         final Object o3;
-                                        ((Class7951)o3).method25776(class5752);
+                                        ((Class7951)o3).send(class5752);
                                         Thread.sleep(1000L);
                                     }
                                 }
@@ -199,7 +199,7 @@ public class AutoMiner extends Module
                             this.field16110 = this.field16109;
                             this.field16109 = this.method10825();
                         }
-                        Client.getInstance().method35197().method25776(new Class6224("AutoMiner", "Computing... (" + this.field16105.field40407 + ")", ClientAssets.direction));
+                        Client.getInstance().getNotificationManager().send(new Notification("AutoMiner", "Computing... (" + this.field16105.field40407 + ")", ClientAssets.direction));
                     }
                 }
             }
@@ -254,7 +254,7 @@ public class AutoMiner extends Module
         this.field16103.clear();
         this.field16104.clear();
         Client.getInstance().method35205().method26555();
-        Client.getInstance().method35197().method25776(new Class6224("AutoMiner", "Scanning Terrain..."));
+        Client.getInstance().getNotificationManager().send(new Notification("AutoMiner", "Scanning Terrain..."));
     }
     
     @Override

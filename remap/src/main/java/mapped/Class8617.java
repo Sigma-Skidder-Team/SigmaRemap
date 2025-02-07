@@ -28,7 +28,7 @@ public class Class8617
     }
     
     public void method29223() {
-        Client.getInstance().getEventBus().method21094(this);
+        Client.getInstance().getEventBus().register2(this);
     }
     
     @EventListener

@@ -385,7 +385,7 @@ public class NewNameTags extends Module
             }
             RenderUtil.drawString(field40314, 0.0f, -20.0f, method9887, ClientColors.LIGHT_GREYISH_BLUE.color);
             RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, 10.0f, str + string, ClientColors.LIGHT_GREYISH_BLUE.color);
-            final Class6538 method9890 = Client.getInstance().getNetworkManager().field25697.method33657(class399);
+            final Class6538 method9890 = Client.getInstance().getNetworkManager().combatTracker.method33657(class399);
             if (method9890 != null) {
                 RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, -30.0f, method9890.field25986, ClientColors.LIGHT_GREYISH_BLUE.color);
             }

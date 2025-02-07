@@ -85,7 +85,7 @@ public class BowFly extends Module
         if (BowFly.mc.player.method2715(Class316.field1877).getItem() == Items.field31279) {
             if (InvManager.method10673(Items.field31280) == 0) {
                 if (this.field15761.method23935() > 5000L) {
-                    Client.getInstance().method35197().method25776(new Class6224("BowFly", "You have no arrows"));
+                    Client.getInstance().getNotificationManager().send(new Notification("BowFly", "You have no arrows"));
                     this.field15761.method23934();
                 }
                 if (BowFly.mc.timer.timerSpeed == 0.1f) {

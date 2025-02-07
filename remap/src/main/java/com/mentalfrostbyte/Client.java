@@ -41,8 +41,8 @@ public class Client
     private Class8617 field40697;
     private Class7861 field40698;
     private Class8707 field40699;
-    private Class9198 field40700;
-    private Class6466 field40701;
+    private CombatTracker field40700;
+    private NetworkManager2 field40701;
     private Class5837 field40702;
     private Class9086 field40703;
     private Class7951 field40704;
@@ -85,7 +85,7 @@ public class Client
         this.field40689 = new Class6883();
         (this.field40691 = new Class9070()).method32666();
         ClientAssets.decryptTextures();
-        (this.field40701 = new Class6466()).method19338();
+        (this.field40701 = new NetworkManager2()).method19338();
         (this.field40702 = new Class5837()).method17548();
         this.guiManager = new Class9000();
         (this.field40693 = new Class8706()).method29876();
@@ -210,7 +210,7 @@ public class Client
             }
             Client.textureList.clear();
         }
-        if (getInstance().method35209() != ClientMode.NOADDONS) {
+        if (getInstance().getClientMode() != ClientMode.NOADDONS) {
             final double n = Client.mc.window.getGuiScaleFactor() / (float)Math.pow(Client.mc.window.getGuiScaleFactor(), 2.0);
             GL11.glScaled(n, n, 1.0);
             GL11.glScaled((double)Class9000.field37993, (double)Class9000.field37993, 1.0);
@@ -297,7 +297,7 @@ public class Client
         return this.field40703;
     }
     
-    public Class7951 method35197() {
+    public Class7951 getNotificationManager() {
         return this.field40704;
     }
     
@@ -313,7 +313,7 @@ public class Client
         return this.field40706;
     }
     
-    public Class6466 getNetworkManager() {
+    public NetworkManager2 getNetworkManager() {
         return this.field40701;
     }
     
@@ -345,7 +345,7 @@ public class Client
         return this.field40684;
     }
     
-    public ClientMode method35209() {
+    public ClientMode getClientMode() {
         return this.clientMode;
     }
     

@@ -43,7 +43,7 @@ public class Class8491
     }
     
     public void method28365() {
-        Client.getInstance().getEventBus().method21094(this);
+        Client.getInstance().getEventBus().register2(this);
         new Class9367(null);
     }
     

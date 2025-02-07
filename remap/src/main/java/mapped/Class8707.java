@@ -21,7 +21,7 @@ public class Class8707
     public static int field36593;
     
     public void method29895() {
-        Client.getInstance().getEventBus().method21094(this);
+        Client.getInstance().getEventBus().register2(this);
     }
     
     public static void method29896(final int a, final int a2, final int n, final int n2) {

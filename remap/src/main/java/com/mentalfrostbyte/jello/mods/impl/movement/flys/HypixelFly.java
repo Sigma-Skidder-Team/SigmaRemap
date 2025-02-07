@@ -39,7 +39,7 @@ public class HypixelFly extends Module {
     public void onEnable() {
         String method9887 = this.getStringSettingValueByName("Mode");
         if ((method9887.equals("Fast") || method9887.equals("NoDmg")) && !Class9171.field38852) {
-            Client.getInstance().method35197().method25776(new Class6224("Hypixel " + method9887 + " fly", "Set " + method9887 + " mode before playing"));
+            Client.getInstance().getNotificationManager().send(new Notification("Hypixel " + method9887 + " fly", "Set " + method9887 + " mode before playing"));
             method9887 = "Basic";
         }
         this.field16078 = 1.0f;

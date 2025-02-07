@@ -56,24 +56,24 @@ public class Class4822 extends Class4817
             case 2: {
                 final NumberSetting class4808 = (NumberSetting)class4804;
                 final Class4848 class4809 = new Class4848(customGuiScreen, class4804.method15204() + "slider", n, n2 + 31, 240, 4);
-                class4809.method14315(Float.toString((float)class4804.method15198()));
-                class4805.method14315(class4804.method15204() + ": " + Float.toString(class4804.method15198()));
+                class4809.setTypedText(Float.toString((float)class4804.method15198()));
+                class4805.setTypedText(class4804.method15204() + ": " + Float.toString(class4804.method15198()));
                 class4809.method14540(Class4892.method14671(class4808.method15187(), class4808.method15189(), (float)class4808.method15198()), false);
                 final int method15185 = class4808.method15185();
                 class4808.method15195(class4852 -> {
                     if (Class4848.method14535(class4809.method14538(), class4808.method15187(), class4808.method15189(), class4808.method15191(), method15185) != class4852.method15198()) {
-                        class4809.method14315(Float.toString(class4852.method15198()));
+                        class4809.setTypedText(Float.toString(class4852.method15198()));
                         class4809.method14540(Class4848.method14534(class4808.method15187(), class4808.method15189(), class4852.method15198()), false);
-                        class4805.method14315(class4804.method15204() + ": " + Float.toString(class4804.method15198()));
+                        class4805.setTypedText(class4804.method15204() + ": " + Float.toString(class4804.method15198()));
                     }
                 });
                 class4809.method14516(class5000 -> {
                     final float method14535 = Class4848.method14535(((Class4848)class5000).method14538(), class4808.method15187(), class4808.method15189(), class4808.method15191(), method15185);
                     if (method14535 != class4804.method15198()) {
-                        class4809.method14315(Float.toString(method14535));
+                        class4809.setTypedText(Float.toString(method14535));
                         class4804.method15199(method14535);
                     }
-                    class4805.method14315(class4804.method15204() + ": " + Float.toString(class4804.method15198()));
+                    class4805.setTypedText(class4804.method15204() + ": " + Float.toString(class4804.method15198()));
                 });
                 customGuiScreen.addToList(class4809);
                 n2 += 54;
@@ -88,7 +88,7 @@ public class Class4822 extends Class4817
                 class4810.method14473(class4998 -> class4804.method15199(class4998.getTypedText()));
                 class4804.method15195(class4833 -> {
                     if (class4810.getTypedText() != ((TextInputSetting)class4804).method15198()) {
-                        class4810.method14315(((TextInputSetting)class4804).method15198());
+                        class4810.setTypedText(((TextInputSetting)class4804).method15198());
                     }
                 });
                 n2 += n5 + n3;

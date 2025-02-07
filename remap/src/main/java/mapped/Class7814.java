@@ -22,7 +22,7 @@ public abstract class Class7814 implements Class7813
         this.field32017 = field32017;
         this.field32018 = field32018;
         this.field32019 = field32019;
-        Client.getInstance().getEventBus().method21094(this);
+        Client.getInstance().getEventBus().register2(this);
     }
     
     public String method25241() {

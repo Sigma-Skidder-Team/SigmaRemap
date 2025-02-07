@@ -128,7 +128,7 @@ public class Class4910 extends Class4825
                     if (this.field21008 != null) {
                         this.field21008.release();
                     }
-                    this.field21008 = Class9399.method34928("picture", this.field21006);
+                    this.field21008 = BufferedImageUtil.getTexture("picture", this.field21006);
                 }
                 catch (final IOException ex) {
                     ex.printStackTrace();
@@ -139,7 +139,7 @@ public class Class4910 extends Class4825
                     if (this.field21009 != null) {
                         this.field21009.release();
                     }
-                    this.field21009 = Class9399.method34928("picture", BufferedImage.method20826(this.field21006, 14));
+                    this.field21009 = BufferedImageUtil.getTexture("picture", BufferedImage.method20826(this.field21006, 14));
                 }
                 catch (final IOException ex2) {
                     ex2.printStackTrace();

@@ -69,7 +69,7 @@ public class Class4921 extends Class4825
         n *= (this.field20593 ? 0.75f : (this.field20491 ? 0.7f : 0.3f));
         int field20478 = this.x;
         int field20479 = this.field20480;
-        if (Client.getInstance().method35209() != ClientMode.JELLO) {
+        if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
             final int n3 = 0;
             field20479 -= 7;
             field20478 += 7;

@@ -72,7 +72,7 @@ public class CubecraftGamePlay extends Module
                                 continue;
                             }
                             this.field15666.method10294(new Class7674(method17000.method35310(), (long)this.field15666.getNumberSettingValueByName("Auto Join delay") * 1000L));
-                            Client.getInstance().method35197().method25776(new Class6224("Auto Join", "Joining a new game in 3 seconds.", (int)(this.field15666.getNumberSettingValueByName("Auto Join delay") - 1.0f) * 1000));
+                            Client.getInstance().getNotificationManager().send(new Notification("Auto Join", "Joining a new game in 3 seconds.", (int)(this.field15666.getNumberSettingValueByName("Auto Join delay") - 1.0f) * 1000));
                             break;
                         }
                     }

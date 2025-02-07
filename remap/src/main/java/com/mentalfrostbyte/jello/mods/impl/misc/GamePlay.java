@@ -65,7 +65,7 @@ public class GamePlay extends ModuleWithSettings
         if (this.field15755 != null) {
             if (GamePlay.mc.currentScreen instanceof ChatScreen) {
                 this.method10294(null);
-                Client.getInstance().method35197().method25776(new Class6224("Auto Join", "Auto join was canceled.", 2500));
+                Client.getInstance().getNotificationManager().send(new Notification("Auto Join", "Auto join was canceled.", 2500));
             }
             else if (this.field15755.method24358()) {
                 ColorUtils.method19107(this.field15755.method24360());
@@ -73,7 +73,7 @@ public class GamePlay extends ModuleWithSettings
             }
             else if ((int)(this.field15755.method24359() / 1000L) + 1 < this.field15757) {
                 this.field15757 = (int)(this.field15755.method24359() / 1000L) + 1;
-                Client.getInstance().method35197().method25776(new Class6224("Auto Join", "Joining a new game in " + this.field15757 + " second" + ((this.field15757 > 1) ? "s" : "") + ".", 2000));
+                Client.getInstance().getNotificationManager().send(new Notification("Auto Join", "Joining a new game in " + this.field15757 + " second" + ((this.field15757 > 1) ? "s" : "") + ".", 2000));
             }
         }
         if (!this.field15756.method23937()) {

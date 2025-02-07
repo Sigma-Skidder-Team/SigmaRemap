@@ -15,7 +15,7 @@ public class Class8004
     private static final Minecraft field32966;
     
     public static void method26199(final int n) {
-        if (Client.getInstance().method35209() == ClientMode.NOADDONS) {
+        if (Client.getInstance().getClientMode() == ClientMode.NOADDONS) {
             return;
         }
         if (n == -1) {

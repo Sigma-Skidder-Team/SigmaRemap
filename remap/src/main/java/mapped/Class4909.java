@@ -13,7 +13,7 @@ public class Class4909 extends Class4825
     
     public Class4909(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final String s2, final int field21003) {
         super(customGuiScreen, s, n, n2, n3, n4, false);
-        this.method14315(s2);
+        this.setTypedText(s2);
         this.doThis((class4803, n) -> Minecraft.method5277().method5299().method6422(Class6836.method20933(Class8520.field35662, 1.0f)));
         this.field21003 = field21003;
     }

@@ -32,7 +32,7 @@ public class Class552 extends Class551
     
     @Override
     public void init() {
-        if (Client.getInstance().method35209() == ClientMode.JELLO) {
+        if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
             this.addButton(new Class654(this.width / 2 - 102, this.height - 45, 204, 20, "Jello for Sigma Options", class654 -> this.minecraft.displayGuiScreen(new Class555())));
         }
         super.init();

@@ -6,19 +6,18 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 
-public class Class1490 implements Runnable
+public class PremiumChecker implements Runnable
 {
-    private static String[] field8285;
     private final boolean field8286;
     
-    public Class1490(final boolean field8286) {
+    public PremiumChecker(final boolean field8286) {
         this.field8286 = field8286;
     }
     
     @Override
     public void run() {
         while (!Thread.interrupted()) {
-            if (Client.getInstance().method35209() == ClientMode.INDETERMINATE) {
+            if (Client.getInstance().getClientMode() == ClientMode.INDETERMINATE) {
                 try {
                     Thread.sleep(200L);
                     continue;
@@ -27,7 +26,7 @@ public class Class1490 implements Runnable
                     break;
                 }
             }
-            Class6466.field25695 = this.field8286;
+            NetworkManager2.premium = this.field8286;
             break;
         }
     }

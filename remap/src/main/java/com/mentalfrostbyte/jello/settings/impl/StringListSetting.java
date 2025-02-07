@@ -25,8 +25,8 @@ public class StringListSetting extends Setting<List<String>> {
 
     @Override
     public JSONObject method15193(final JSONObject JSONObject) {
-        JSONObject.method13301("name", this.method15204());
-        JSONObject.method13301("value", new JSONArray((Collection<?>) this.currentValue));
+        JSONObject.put("name", this.method15204());
+        JSONObject.put("value", new JSONArray((Collection<?>) this.currentValue));
         return JSONObject;
     }
 

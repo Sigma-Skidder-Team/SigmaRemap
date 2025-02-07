@@ -39,12 +39,12 @@ public class Class7643
     private int field30335;
     private long field30336;
     private Thread field30337;
-    public java.awt.image.BufferedImage field30338;
-    public String field30339;
-    private Texture field30340;
-    private java.awt.image.BufferedImage field30341;
+    public java.awt.image.BufferedImage scaledThumbnail;
+    public String songTitle;
+    private Texture notificationImage;
+    private java.awt.image.BufferedImage thumbnailImage;
     private Texture field30342;
-    private boolean field30343;
+    private boolean isThumbnailProcessing;
     private boolean field30344;
     private transient volatile Thread field30345;
     private int field30346;
@@ -67,8 +67,8 @@ public class Class7643
         this.field30335 = 50;
         this.field30336 = -1L;
         this.field30337 = new Thread();
-        this.field30339 = "";
-        this.field30343 = false;
+        this.songTitle = "";
+        this.isThumbnailProcessing = false;
         this.field30345 = null;
         this.field30347 = 0L;
         this.field30350 = true;
@@ -81,7 +81,7 @@ public class Class7643
     }
     
     public void method24158() {
-        Client.getInstance().getEventBus().method21094(this);
+        Client.getInstance().getEventBus().register2(this);
         this.method24160();
         if (!this.method24195()) {
             this.method24196();
@@ -94,7 +94,7 @@ public class Class7643
         JSONObject.method13298("volume", this.field30335);
         JSONObject.method13295("spectrum", this.field30350);
         JSONObject.method13298("repeat", this.field30351.field1232);
-        Client.getInstance().method35206().method13301("music", JSONObject);
+        Client.getInstance().method35206().put("music", JSONObject);
     }
     
     private void method24160() {
@@ -116,7 +116,7 @@ public class Class7643
     
     @EventListener
     private void method24161(final Class5740 class5740) {
-        if (Client.getInstance().method35209() == ClientMode.JELLO) {
+        if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
             if (this.field30333) {
                 if (this.field30352.size() != 0) {
                     final double[] array = this.field30352.get(0);
@@ -161,7 +161,7 @@ public class Class7643
         if (this.field30352.size() == 0) {
             return;
         }
-        if (this.field30340 == null) {
+        if (this.notificationImage == null) {
             return;
         }
         if (this.field30354.size() != 0) {
@@ -178,7 +178,7 @@ public class Class7643
                 RenderUtil.method26874(index2 * n2, Class7643.field30332.window.method7695() - n5, n2, n5, ClientColors.LIGHT_GREYISH_BLUE.color);
             }
             RenderUtil.method26927(Class2225.field13694);
-            if (this.field30340 != null) {
+            if (this.notificationImage != null) {
                 if (this.field30342 != null) {
                     RenderUtil.method26904(0.0f, 0.0f, (float)Class7643.field30332.window.method7694(), (float)Class7643.field30332.window.method7695(), this.field30342, 0.4f);
                 }
@@ -194,10 +194,10 @@ public class Class7643
             GL11.glTranslated(60.0, (double)(Class7643.field30332.window.method7695() - 55), 0.0);
             GL11.glScalef(n7, n7, 0.0f);
             GL11.glTranslated(-60.0, (double)(-(Class7643.field30332.window.method7695() - 55)), 0.0);
-            RenderUtil.method26905(10.0f, (float)(Class7643.field30332.window.method7695() - 110), 100.0f, 100.0f, this.field30340);
+            RenderUtil.method26905(10.0f, (float)(Class7643.field30332.window.method7695() - 110), 100.0f, 100.0f, this.notificationImage);
             RenderUtil.method26913(10.0f, (float)(Class7643.field30332.window.method7695() - 110), 100.0f, 100.0f, 14.0f, 0.3f);
             GL11.glPopMatrix();
-            final String[] split = this.field30339.split(" - ");
+            final String[] split = this.songTitle.split(" - ");
             if (split.length <= 1) {
                 RenderUtil.drawString(ClientFonts.JelloLight18_AA, 130.0f, (float)(Class7643.field30332.window.method7695() - 70), split[0], ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
                 RenderUtil.drawString(ClientFonts.JelloLight18, 130.0f, (float)(Class7643.field30332.window.method7695() - 70), split[0], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7f));
@@ -218,24 +218,24 @@ public class Class7643
             this.field30354.clear();
         }
         try {
-            if (this.field30343 && this.field30341 != null && this.field30338 != null && this.field30349 == null) {
+            if (this.isThumbnailProcessing && this.thumbnailImage != null && this.scaledThumbnail != null && this.field30349 == null) {
                 if (this.field30342 != null) {
                     this.field30342.release();
                 }
-                if (this.field30340 != null) {
-                    this.field30340.release();
+                if (this.notificationImage != null) {
+                    this.notificationImage.release();
                 }
-                this.field30342 = Class9399.method34928("picture", this.field30341);
-                this.field30340 = Class9399.method34928("picture", this.field30338);
-                Client.getInstance().method35197().method25776(new Class6224("Now Playing", this.field30339, 7000, this.field30340));
-                this.field30343 = false;
+                this.field30342 = BufferedImageUtil.getTexture("picture", this.thumbnailImage);
+                this.notificationImage = BufferedImageUtil.getTexture("picture", this.scaledThumbnail);
+                Client.getInstance().getNotificationManager().send(new Notification("Now Playing", this.songTitle, 7000, this.notificationImage));
+                this.isThumbnailProcessing = false;
             }
         }
         catch (final IOException ex) {
             ex.printStackTrace();
         }
-        if (!this.field30343) {
-            this.method24166(this.field30349);
+        if (!this.isThumbnailProcessing) {
+            this.startProcessingVideoThumbnail(this.field30349);
         }
     }
     
@@ -247,7 +247,7 @@ public class Class7643
         return this.field30334.field38866.get(n);
     }
     
-    private void method24166(final Class8681 class8681) {
+    private void startProcessingVideoThumbnail(final Class8681 class8681) {
         if (this.field30349 != null) {
             this.field30352.clear();
             new Thread(() -> this.method24174(this.field30349)).start();
@@ -313,7 +313,7 @@ public class Class7643
                             this.field30336 = (long)class1751.method19499();
                             if (this.field30336 > 1300L) {
                                 ((Class1750)inputStream2).close();
-                                Client.getInstance().method35197().method25776(new Class6224("Now Playing", "Music is too long."));
+                                Client.getInstance().getNotificationManager().send(new Notification("Now Playing", "Music is too long."));
                             }
                             final Class4206 class1753 = new Class4206(class1752.method21178());
                             final Class9157 class1754 = new Class9157();
@@ -438,21 +438,21 @@ public class Class7643
     
     public void method24174(final Class8681 class8681) {
         try {
-            this.field30343 = true;
+            this.isThumbnailProcessing = true;
             final java.awt.image.BufferedImage read = ImageIO.read(new URL(class8681.field36488));
-            this.field30341 = BufferedImage.method20826(read, 15);
-            this.field30341 = this.field30341.getSubimage(0, (int)(this.field30341.getHeight() * 0.75f), this.field30341.getWidth(), (int)(this.field30341.getHeight() * 0.2f));
-            this.field30339 = class8681.field36487;
+            this.thumbnailImage = BufferedImage.method20826(read, 15);
+            this.thumbnailImage = this.thumbnailImage.getSubimage(0, (int)(this.thumbnailImage.getHeight() * 0.75f), this.thumbnailImage.getWidth(), (int)(this.thumbnailImage.getHeight() * 0.2f));
+            this.songTitle = class8681.field36487;
             if (read.getHeight() != read.getWidth()) {
-                if (this.field30339.contains("[NCS Release]")) {
-                    this.field30338 = read.getSubimage(1, 3, 170, 170);
+                if (this.songTitle.contains("[NCS Release]")) {
+                    this.scaledThumbnail = read.getSubimage(1, 3, 170, 170);
                 }
                 else {
-                    this.field30338 = read.getSubimage(70, 0, 180, 180);
+                    this.scaledThumbnail = read.getSubimage(70, 0, 180, 180);
                 }
             }
             else {
-                this.field30338 = read;
+                this.scaledThumbnail = read;
             }
             this.field30349 = null;
         }
@@ -556,7 +556,7 @@ public class Class7643
         }
         catch (final Class2333 class6463) {
             if (class6463.getMessage() != null && class6463.getMessage().contains("ERROR: This video contains content from") && class6463.getMessage().contains("who has blocked it in your country on copyright grounds")) {
-                Client.getInstance().method35197().method25776(new Class6224("Now Playing", "Not available in your region."));
+                Client.getInstance().getNotificationManager().send(new Notification("Now Playing", "Not available in your region."));
             }
             else {
                 class6463.printStackTrace();
@@ -571,7 +571,7 @@ public class Class7643
     }
     
     public String method24189() {
-        return this.field30339;
+        return this.songTitle;
     }
     
     public Texture method24190() {
@@ -579,7 +579,7 @@ public class Class7643
     }
     
     public Texture method24191() {
-        return this.field30340;
+        return this.notificationImage;
     }
     
     public int method24192() {

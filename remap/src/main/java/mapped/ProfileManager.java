@@ -36,7 +36,7 @@ public class ProfileManager
     }
     
     public boolean method32701(final Class8241 class8241) {
-        if (Client.getInstance().method35209() == ClientMode.CLASSIC && class8241.field33839.equals("Classic")) {
+        if (Client.getInstance().getClientMode() == ClientMode.CLASSIC && class8241.field33839.equals("Classic")) {
             return false;
         }
         if (this.field38428.size() <= 1) {
@@ -132,16 +132,16 @@ public class ProfileManager
     public void method32708(final Class8241 field38429) {
         Client.getInstance().method35179();
         Class1607.field8978 = new HashMap<Object, Integer>();
-        if (Client.getInstance().method35209() != ClientMode.CLASSIC) {
+        if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
             this.field38429.field33838 = Client.getInstance().method35189().saveCurrentConfigToJSON(new JSONObject());
             this.field38429 = field38429;
-            Client.getInstance().method35206().method13301("profile", field38429.field33839);
+            Client.getInstance().method35206().put("profile", field38429.field33839);
             Client.getInstance().method35189().load(field38429.field33838);
             Client.getInstance().method35179();
             return;
         }
         this.field38429.field33838 = field38429.method27290();
-        Client.getInstance().method35206().method13301("profile", "Classic");
+        Client.getInstance().method35206().put("profile", "Classic");
         Client.getInstance().method35189().load(field38429.field33838);
         Client.getInstance().method35179();
     }

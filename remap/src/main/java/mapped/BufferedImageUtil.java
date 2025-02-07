@@ -12,11 +12,11 @@ import slick2d.Texture;
 import java.io.IOException;
 import java.awt.image.BufferedImage;
 
-public class Class9399
+public class BufferedImageUtil
 {
     private static String[] field40306;
     
-    public static Texture method34928(final String s, final BufferedImage bufferedImage) throws IOException {
+    public static Texture getTexture(final String s, final BufferedImage bufferedImage) throws IOException {
         return method34930(s, bufferedImage, 3553, 6408, 9729, 9729);
     }
     

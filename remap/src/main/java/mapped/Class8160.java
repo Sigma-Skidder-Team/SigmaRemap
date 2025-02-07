@@ -37,9 +37,9 @@ public class Class8160
     public static JSONObject method26950(final String s) throws JSONException {
         final JSONObject JSONObject = new JSONObject();
         final JSONTokener class4406 = new JSONTokener(s);
-        JSONObject.method13301("name", class4406.method30790('='));
+        JSONObject.put("name", class4406.method30790('='));
         class4406.method30786('=');
-        JSONObject.method13301("value", class4406.method30790(';'));
+        JSONObject.put("value", class4406.method30790(';'));
         class4406.method30785();
         while (class4406.method30784()) {
             final String method26951 = method26951(class4406.method30791("=;"));
@@ -54,7 +54,7 @@ public class Class8160
                 }
                 s2 = Boolean.TRUE;
             }
-            JSONObject.method13301(method26951, s2);
+            JSONObject.put(method26951, s2);
         }
         return JSONObject;
     }

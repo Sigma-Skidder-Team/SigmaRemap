@@ -42,8 +42,8 @@ public class ColorSetting extends Setting<Integer> {
 
     @Override
     public JSONObject method15193(final JSONObject JSONObject) {
-        JSONObject.method13301("name", this.method15204());
-        JSONObject.method13301("value", this.method15222());
+        JSONObject.put("name", this.method15204());
+        JSONObject.put("value", this.method15222());
         JSONObject.method13295("rainbow", this.field21520);
         return JSONObject;
     }

@@ -131,11 +131,11 @@ public class JSONObject
                 JSONObject method13289 = JSONObject.method13289(s);
                 if (method13289 == null) {
                     method13289 = new JSONObject();
-                    JSONObject.method13301(s, method13289);
+                    JSONObject.put(s, method13289);
                 }
                 JSONObject = method13289;
             }
-            JSONObject.method13301(split[n], bundle.getString(nextElement));
+            JSONObject.put(split[n], bundle.getString(nextElement));
         }
     }
     
@@ -144,14 +144,14 @@ public class JSONObject
         final Object method13277 = this.opt(s);
         if (method13277 != null) {
             if (!(method13277 instanceof JSONArray)) {
-                this.method13301(s, new JSONArray().method486(method13277).method486(o));
+                this.put(s, new JSONArray().method486(method13277).method486(o));
             }
             else {
                 ((JSONArray)method13277).method486(o);
             }
         }
         else {
-            this.method13301(s, (o instanceof JSONArray) ? new JSONArray().method486(o) : o);
+            this.put(s, (o instanceof JSONArray) ? new JSONArray().method486(o) : o);
         }
         return this;
     }
@@ -163,10 +163,10 @@ public class JSONObject
             if (!(method13277 instanceof JSONArray)) {
                 throw new JSONException("JSONObject[" + str + "] is not a JSONArray.");
             }
-            this.method13301(str, ((JSONArray)method13277).method486(o));
+            this.put(str, ((JSONArray)method13277).method486(o));
         }
         else {
-            this.method13301(str, new JSONArray().method486(o));
+            this.put(str, new JSONArray().method486(o));
         }
         return this;
     }
@@ -356,11 +356,11 @@ public class JSONObject
                     }
                 }
                 else {
-                    this.method13301(s, ((BigDecimal)method13277).add(BigDecimal.ONE));
+                    this.put(s, ((BigDecimal)method13277).add(BigDecimal.ONE));
                 }
             }
             else {
-                this.method13301(s, ((BigInteger)method13277).add(BigInteger.ONE));
+                this.put(s, ((BigInteger)method13277).add(BigInteger.ONE));
             }
         }
         else {
@@ -567,36 +567,36 @@ public class JSONObject
     }
     
     public JSONObject method13295(final String s, final boolean b) throws org.json.JSONException {
-        this.method13301(s, b ? Boolean.TRUE : Boolean.FALSE);
+        this.put(s, b ? Boolean.TRUE : Boolean.FALSE);
         return this;
     }
     
     public JSONObject method13296(final String s, final Collection<?> collection) throws org.json.JSONException {
-        this.method13301(s, new JSONArray(collection));
+        this.put(s, new JSONArray(collection));
         return this;
     }
     
     public JSONObject method13297(final String s, final double value) throws org.json.JSONException {
-        this.method13301(s, new Double(value));
+        this.put(s, new Double(value));
         return this;
     }
     
     public JSONObject method13298(final String s, final int value) throws org.json.JSONException {
-        this.method13301(s, new Integer(value));
+        this.put(s, new Integer(value));
         return this;
     }
     
     public JSONObject method13299(final String s, final long value) throws org.json.JSONException {
-        this.method13301(s, new Long(value));
+        this.put(s, new Long(value));
         return this;
     }
     
     public JSONObject method13300(final String s, final Map<?, ?> map) throws org.json.JSONException {
-        this.method13301(s, new JSONObject(map));
+        this.put(s, new JSONObject(map));
         return this;
     }
     
-    public JSONObject method13301(final String s, final Object o) throws org.json.JSONException {
+    public JSONObject put(final String s, final Object o) throws org.json.JSONException {
         if (s != null) {
             if (o == null) {
                 this.method13306(s);
@@ -616,7 +616,7 @@ public class JSONObject
                 if (this.opt(str) != null) {
                     throw new JSONException("Duplicate key \"" + str + "\"");
                 }
-                this.method13301(str, o);
+                this.put(str, o);
             }
         }
         return this;
@@ -625,7 +625,7 @@ public class JSONObject
     public JSONObject method13303(final String s, final Object o) throws org.json.JSONException {
         if (s != null) {
             if (o != null) {
-                this.method13301(s, o);
+                this.put(s, o);
             }
         }
         return this;

@@ -10,10 +10,10 @@ public class Class9194
 {
     private static String[] field38967;
     private Minecraft field38968;
-    private Class9198 field38969;
+    private CombatTracker field38969;
     private HashMap<String, Class8502> field38970;
     
-    public Class9194(final Class9198 field38969) {
+    public Class9194(final CombatTracker field38969) {
         this.field38968 = Minecraft.method5277();
         this.field38970 = new HashMap<String, Class8502>();
         this.field38969 = field38969;

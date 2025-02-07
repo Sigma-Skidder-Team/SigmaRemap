@@ -123,7 +123,7 @@ public class KillAura extends Module
     @EventListener
     public void method10743(final Class5732 class5732) {
         if (this.isEnabled() && this.method9883("Disable on death")) {
-            Client.getInstance().method35197().method25776(new Class6224("Aura", "Aura disabled due to respawn"));
+            Client.getInstance().getNotificationManager().send(new Notification("Aura", "Aura disabled due to respawn"));
             this.method9910();
         }
     }
@@ -143,7 +143,7 @@ public class KillAura extends Module
             return;
         }
         this.method9910();
-        Client.getInstance().method35197().method25776(new Class6224("Aura", "Aura disabled due to death"));
+        Client.getInstance().getNotificationManager().send(new Notification("Aura", "Aura disabled due to death"));
     }
     
     @EventListener

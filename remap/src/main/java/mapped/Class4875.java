@@ -44,7 +44,7 @@ public class Class4875 extends Class4873
     private void method14609() {
         if (this.field20861 >= 0 && this.field20861 < this.field20860.length) {
             this.setFont(ClientFonts.JelloLight20);
-            this.method14315(this.field20860[this.field20861]);
+            this.setTypedText(this.field20860[this.field20861]);
             return;
         }
         throw new RuntimeException("Invalid index for TypeButton");
@@ -78,7 +78,7 @@ public class Class4875 extends Class4873
         field20861 %= this.field20860.length;
         if (field20861 != this.field20861) {
             this.field20861 = field20861;
-            this.method14315(this.field20860[field20861]);
+            this.setTypedText(this.field20860[field20861]);
             if (b) {
                 this.method14517();
             }

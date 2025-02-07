@@ -314,7 +314,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     }
     
     private String method5228() {
-        final StringBuilder sb = new StringBuilder((Client.getInstance().method35209() == ClientMode.JELLO) ? "Jello for Sigma 5.0" : "Sigma 5.0");
+        final StringBuilder sb = new StringBuilder((Client.getInstance().getClientMode() == ClientMode.JELLO) ? "Jello for Sigma 5.0" : "Sigma 5.0");
         final Class5799 method5269 = this.method5269();
         if (method5269 != null && method5269.getNetworkManager().method11187()) {
             sb.append(" - ");
@@ -737,7 +737,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     }
     
     private int method5249() {
-        return (this.world != null || (this.currentScreen == null && this.field4701 == null)) ? this.window.method7679() : ((Client.getInstance().method35209() == ClientMode.JELLO) ? 120 : 60);
+        return (this.world != null || (this.currentScreen == null && this.field4701 == null)) ? this.window.method7679() : ((Client.getInstance().getClientMode() == ClientMode.JELLO) ? 120 : 60);
     }
     
     public void method5250() {

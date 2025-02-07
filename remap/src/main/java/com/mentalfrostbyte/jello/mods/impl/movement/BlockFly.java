@@ -323,7 +323,7 @@ public class BlockFly extends ModuleWithSettings {
 
     @Override
     public String getFormattedName() {
-        if (Client.getInstance().method35209() != ClientMode.CLASSIC) {
+        if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
             return super.getFormattedName();
         }
         return "Scaffold";
@@ -352,7 +352,7 @@ public class BlockFly extends ModuleWithSettings {
             return;
         }
         if (this.method9883("Show Block Amount")) {
-            if (Client.getInstance().method35209() != ClientMode.JELLO) {
+            if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
                 this.method10290(BlockFly.mc.window.method7694() / 2, BlockFly.mc.window.method7695() / 2 + 15 - (int) (10.0f * this.field15751.calcPercent()), this.field15751.calcPercent());
             } else {
                 this.method10291(BlockFly.mc.window.method7694() / 2, BlockFly.mc.window.method7695() - 138 - (int) (25.0f * Class8468.method28270(this.field15751.calcPercent(), 0.0f, 1.0f, 1.0f)), this.field15751.calcPercent());

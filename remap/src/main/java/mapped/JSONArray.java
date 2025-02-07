@@ -444,7 +444,7 @@ public class JSONArray implements Iterable<Object>
                 if (this.length() != 0) {
                     final JSONObject class89 = new JSONObject();
                     for (int i = 0; i < JSONArray.length(); ++i) {
-                        class89.method13301(JSONArray.method459(i), this.method463(i));
+                        class89.put(JSONArray.method459(i), this.method463(i));
                     }
                     return class89;
                 }

@@ -15,7 +15,7 @@ public class Class8659
         while (class4406.method30784()) {
             final String method26951 = Class8160.method26951(class4406.method30790('='));
             class4406.method30786('=');
-            JSONObject.method13301(method26951, Class8160.method26951(class4406.method30790(';')));
+            JSONObject.put(method26951, Class8160.method26951(class4406.method30790(';')));
             class4406.method30785();
         }
         return JSONObject;

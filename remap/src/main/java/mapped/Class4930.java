@@ -39,7 +39,7 @@ public class Class4930 extends Class4800
         this.addToList(this.field21107 = new Class4844(this, "chatView", this.field21108 + this.field21112, this.method14278() - this.field21111 - this.field21108 * 2 - this.field21110, this.field21109 - this.field21112, this.field21110));
         final int n = 55;
         System.out.println("loading");
-        for (final Map.Entry<K, Class6538> entry : Client.getInstance().getNetworkManager().field25697.method33655().entrySet()) {
+        for (final Map.Entry<K, Class6538> entry : Client.getInstance().getNetworkManager().combatTracker.method33655().entrySet()) {
             System.out.println("added " + entry.getValue().field25988);
             this.field21106.addToList(new Class4856(this.field21106, entry.getValue().field25987 + "_" + this.field21106.method14250().size(), 0, 0, this.field21106.method14276(), n, entry.getValue().field25986, entry.getValue().field25989));
         }
@@ -82,7 +82,7 @@ public class Class4930 extends Class4800
         final int field21110 = this.field21110;
         try {
             if (this.field21113) {
-                this.field21114 = Class9399.method34928("blur", BufferedImage.method20836(BufferedImage.method20830(field21108, n, 200, field21110, 10, 14, 0, true), 0.0f, 1.1f, 1.3f));
+                this.field21114 = BufferedImageUtil.getTexture("blur", BufferedImage.method20836(BufferedImage.method20830(field21108, n, 200, field21110, 10, 14, 0, true), 0.0f, 1.1f, 1.3f));
             }
         }
         catch (final IOException ex) {

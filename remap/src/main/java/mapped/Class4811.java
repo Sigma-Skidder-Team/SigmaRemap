@@ -59,7 +59,7 @@ public class Class4811 extends CustomGuiScreen
                 ((MainMenuScreen)this.getParent()).method14792();
             }
             else {
-                this.method14351(new Class4926());
+                this.method14351(new RegisterScreen());
             }
         });
         this.field20570.doThis((class4803, n) -> this.method14350(new Class544(Minecraft.method5277().currentScreen)));
@@ -72,7 +72,7 @@ public class Class4811 extends CustomGuiScreen
                 ((MainMenuScreen)this.getParent()).method14794();
             }
             else {
-                this.method14351(new Class4926());
+                this.method14351(new RegisterScreen());
             }
         });
         this.field20577.doThis((class4803, n) -> {

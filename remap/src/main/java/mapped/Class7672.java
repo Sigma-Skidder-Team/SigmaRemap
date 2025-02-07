@@ -20,7 +20,7 @@ public class Class7672
                 final Enumeration<?> propertyNames = properties.propertyNames();
                 while (propertyNames.hasMoreElements()) {
                     final String key = (String)propertyNames.nextElement();
-                    JSONObject.method13301(key, properties.getProperty(key));
+                    JSONObject.put(key, properties.getProperty(key));
                 }
             }
         }

@@ -241,7 +241,7 @@ public class MainMenuScreen extends Class4800
                         ex.printStackTrace();
                     }
                 }).start());
-                this.field21101.method14516(class4841 -> Client.getInstance().getNetworkManager().method19348());
+                this.field21101.method14516(class4841 -> Client.getInstance().getNetworkManager().resetLicense());
                 this.field21101.method14744(true);
             });
         }

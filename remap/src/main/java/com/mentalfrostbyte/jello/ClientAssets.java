@@ -12,7 +12,7 @@ import java.io.ByteArrayOutputStream;
 
 import com.mentalfrostbyte.Client;
 import mapped.BufferedImage;
-import mapped.Class9399;
+import mapped.BufferedImageUtil;
 import mapped.Class9577;
 import org.apache.commons.codec.digest.DigestUtils;
 import slick2d.Texture;
@@ -254,7 +254,7 @@ public class ClientAssets
             graphics2D.scale(n, n);
             graphics2D.drawImage(read, 0, 0, null);
             graphics2D.dispose();
-            return Class9399.method34928(str, BufferedImage.method20836(BufferedImage.method20826(bufferedImage, n2), 0.0f, 1.3f, -0.35f));
+            return BufferedImageUtil.getTexture(str, BufferedImage.method20836(BufferedImage.method20826(bufferedImage, n2), 0.0f, 1.3f, -0.35f));
         }
         catch (final IOException ex) {
             throw new IllegalStateException("Unable to find " + str + ". You've probably obfuscated the archive and forgot to transfer the assets or keep package names.");
@@ -269,7 +269,7 @@ public class ClientAssets
             graphics2D.scale(n, n);
             graphics2D.drawImage(read, 0, 0, null);
             graphics2D.dispose();
-            return Class9399.method34928(str, BufferedImage.method20836(BufferedImage.method20826(BufferedImage.method20835(bufferedImage, n2), n2), 0.0f, 1.1f, 0.0f));
+            return BufferedImageUtil.getTexture(str, BufferedImage.method20836(BufferedImage.method20826(BufferedImage.method20835(bufferedImage, n2), n2), 0.0f, 1.1f, 0.0f));
         }
         catch (final IOException ex) {
             throw new IllegalStateException("Unable to find " + str + ". You've probably obfuscated the archive and forgot to transfer the assets or keep package names.");

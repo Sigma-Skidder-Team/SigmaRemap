@@ -59,8 +59,8 @@ public class Class4931 extends Class4800
             if (glfwGetClipboardString != "" && glfwGetClipboardString.contains(":")) {
                 final String[] split = glfwGetClipboardString.split(":");
                 if (split.length == 2) {
-                    this.field21115.method14315(split[0].replace("\n", ""));
-                    this.field21116.method14315(split[1].replace("\n", ""));
+                    this.field21115.setTypedText(split[0].replace("\n", ""));
+                    this.field21116.setTypedText(split[1].replace("\n", ""));
                 }
             }
         });

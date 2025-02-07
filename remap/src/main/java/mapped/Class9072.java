@@ -25,7 +25,7 @@ public class Class9072
                     bufferedImage2.setRGB(j, i, ColorUtils.applyAlpha(bufferedImage.getRGB(j, i), color.getAlpha() / 255.0f));
                 }
             }
-            return Class9399.method34928("mask", bufferedImage2);
+            return BufferedImageUtil.getTexture("mask", bufferedImage2);
         }
         catch (final IOException ex) {
             ex.printStackTrace();

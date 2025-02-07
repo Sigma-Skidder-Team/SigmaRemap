@@ -59,7 +59,7 @@ public class SpartanClickTP extends Module
                 if (class5724.field19377 == this.field15792.getX() + 0.5) {
                     if (class5724.field19378 == this.field15792.getY() + 1) {
                         if (class5724.field19379 == this.field15792.getZ() + 0.5) {
-                            Client.getInstance().method35197().method25776(new Class6224("ClickTP", "Successfully teleported"));
+                            Client.getInstance().getNotificationManager().send(new Notification("ClickTP", "Successfully teleported"));
                             this.method9914().method9910();
                         }
                     }

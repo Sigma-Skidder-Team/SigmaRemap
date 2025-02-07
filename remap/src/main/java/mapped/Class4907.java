@@ -91,9 +91,9 @@ public class Class4907 extends Class4841
                             final String[] split = method14314.split(":");
                             if (split.length <= 2) {
                                 if (split.length > 0) {
-                                    class4832.method14315(split[0].replace("\n", ""));
+                                    class4832.setTypedText(split[0].replace("\n", ""));
                                     if (split.length == 2) {
-                                        class4805.method14315(split[1].replace("\n", ""));
+                                        class4805.setTypedText(split[1].replace("\n", ""));
                                     }
                                 }
                             }
@@ -114,7 +114,7 @@ public class Class4907 extends Class4841
                 if (!(customGuiScreen instanceof TextField)) {
                     continue;
                 }
-                ((TextField) customGuiScreen).method14315("");
+                ((TextField) customGuiScreen).setTypedText("");
                 ((TextField) customGuiScreen).method14469();
             }
         }
@@ -212,7 +212,7 @@ public class Class4907 extends Class4841
                 if (this.field20989 != null) {
                     this.field20989.release();
                 }
-                this.field20989 = Class9399.method34928("blur", BufferedImage.method20830(0, 0, this.method14276(), this.method14278(), 5, 10, ClientColors.LIGHT_GREYISH_BLUE.color, true));
+                this.field20989 = BufferedImageUtil.getTexture("blur", BufferedImage.method20830(0, 0, this.method14276(), this.method14278(), 5, 10, ClientColors.LIGHT_GREYISH_BLUE.color, true));
             }
             catch (final IOException ex) {
                 Client.getInstance().getLogger().error(ex.getMessage());

@@ -27,8 +27,8 @@ public class Class7861
     }
     
     public void method25457() {
-        Client.getInstance().getEventBus().method21094(this);
-        Client.getInstance().getEventBus().method21094(this.field32299);
+        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().register2(this.field32299);
     }
     
     @Deprecated
@@ -111,7 +111,7 @@ public class Class7861
             JSONArray.method486(iterator.next().method25904());
         }
         final JSONObject class89 = new JSONObject();
-        class89.method13301("alts", JSONArray);
+        class89.put("alts", JSONArray);
         try {
             Class9532.method35585(class89, new File(Client.getInstance().method35208() + "/alts.json"));
         }
@@ -124,7 +124,7 @@ public class Class7861
         try {
             final JSONObject method35586 = Class9532.method35586(this.field32297);
             if (!method35586.has("alts")) {
-                method35586.method13301("alts", new JSONArray());
+                method35586.put("alts", new JSONArray());
             }
             final Iterator<Object> iterator = method35586.method13263("alts").iterator();
             while (iterator.hasNext()) {

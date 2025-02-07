@@ -179,7 +179,7 @@ public abstract class Module
     }
     
     public JSONObject method9896(final JSONObject JSONObject) {
-        JSONObject.method13301("name", this.getName());
+        JSONObject.put("name", this.getName());
         JSONObject.method13295("enabled", this.enabled);
         JSONObject.method13295("allowed", this.method9911());
         final JSONArray class4406 = new JSONArray();
@@ -187,7 +187,7 @@ public abstract class Module
         while (iterator.hasNext()) {
             class4406.method486(iterator.next().method15193(new JSONObject()));
         }
-        JSONObject.method13301("options", class4406);
+        JSONObject.put("options", class4406);
         return JSONObject;
     }
     
@@ -224,10 +224,10 @@ public abstract class Module
     }
     
     public Category getCategoryBasedOnMode() {
-        if (Client.getInstance().method35209() == ClientMode.CLASSIC && this.category == Category.ITEM) {
+        if (Client.getInstance().getClientMode() == ClientMode.CLASSIC && this.category == Category.ITEM) {
             return Category.PLAYER;
         }
-        if (Client.getInstance().method35209() == ClientMode.CLASSIC && this.category == Category.EXPLOIT) {
+        if (Client.getInstance().getClientMode() == ClientMode.CLASSIC && this.category == Category.EXPLOIT) {
             return Category.MISC;
         }
         return this.category;
@@ -242,7 +242,7 @@ public abstract class Module
     }
     
     public boolean isEnabled() {
-        return Client.getInstance().method35209() != ClientMode.NOADDONS && (Client.getInstance().method35209() != ClientMode.CLASSIC || this.method9916()) && this.enabled;
+        return Client.getInstance().getClientMode() != ClientMode.NOADDONS && (Client.getInstance().getClientMode() != ClientMode.CLASSIC || this.method9916()) && this.enabled;
     }
     
     public void method9907(final boolean enabled) {
@@ -273,12 +273,12 @@ public abstract class Module
             if (!(this.enabled = enabled)) {
                 Client.getInstance().getEventBus().unregister(this);
                 if (!(this instanceof ModuleWithSettings)) {
-                    if (Client.getInstance().method35209() == ClientMode.JELLO) {
+                    if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
                         if (Client.getInstance().method35189().getModuleByClass(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).method9883("Sound")) {
                             Client.getInstance().method35196().method32830("deactivate");
                         }
                     }
-                    if (Client.getInstance().method35209() == ClientMode.CLASSIC) {
+                    if (Client.getInstance().getClientMode() == ClientMode.CLASSIC) {
                         if (Client.getInstance().method35189().getModuleByClass(ActiveMods.class).method9883("Sound")) {
                             Minecraft.method5277().method5299().method6422(Class6836.method20933(Class8520.field35617, 0.6f));
                         }
@@ -288,12 +288,12 @@ public abstract class Module
             }
             else {
                 Client.getInstance().getEventBus().register(this);
-                if (Client.getInstance().method35209() == ClientMode.JELLO) {
+                if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
                     if (Client.getInstance().method35189().getModuleByClass(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).method9883("Sound")) {
                         Client.getInstance().method35196().method32830("activate");
                     }
                 }
-                if (Client.getInstance().method35209() == ClientMode.CLASSIC) {
+                if (Client.getInstance().getClientMode() == ClientMode.CLASSIC) {
                     if (Client.getInstance().method35189().getModuleByClass(ActiveMods.class).method9883("Sound")) {
                         Minecraft.method5277().method5299().method6422(Class6836.method20933(Class8520.field35617, 0.7f));
                     }

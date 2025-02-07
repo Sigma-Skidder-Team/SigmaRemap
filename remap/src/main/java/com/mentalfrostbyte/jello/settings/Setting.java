@@ -32,8 +32,8 @@ public abstract class Setting<T>
     public abstract JSONObject method15186(final JSONObject p0);
     
     public JSONObject method15193(final JSONObject JSONObject) {
-        JSONObject.method13301("name", this.method15204());
-        JSONObject.method13301("value", this.currentValue);
+        JSONObject.put("name", this.method15204());
+        JSONObject.put("value", this.currentValue);
         return JSONObject;
     }
     

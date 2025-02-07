@@ -37,7 +37,7 @@ public class Class8088
     }
     
     public void method26554() {
-        Client.getInstance().getEventBus().method21094(this);
+        Client.getInstance().getEventBus().register2(this);
     }
     
     public void method26555() {

@@ -39,7 +39,7 @@ public class RearView extends PremiumModule
             return;
         }
         if (Config.method28955()) {
-            Client.getInstance().method35197().method25776(new Class6224("RearView", "Not compatible with Shaders"));
+            Client.getInstance().getNotificationManager().send(new Notification("RearView", "Not compatible with Shaders"));
             this.method9909(false);
         }
         if (RearView.field15986 != null) {

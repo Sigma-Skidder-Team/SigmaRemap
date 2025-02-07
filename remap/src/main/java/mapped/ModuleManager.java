@@ -49,7 +49,7 @@ public class ModuleManager
     private void sortBySuffixAndRegisterEvents() {
         this.modules.sort(new Class4450(this));
         for (final Module mod : this.modules) {
-            Client.getInstance().getEventBus().method21094(mod);
+            Client.getInstance().getEventBus().register2(mod);
             this.moduleMap.put(mod.getClass(), mod);
         }
         Class9146.field38766 = true;
@@ -248,7 +248,7 @@ public class ModuleManager
         while (iterator.hasNext()) {
             class4406.method486(iterator.next().method9896(new JSONObject()));
         }
-        JSONObject.method13301("mods", class4406);
+        JSONObject.put("mods", class4406);
         return JSONObject;
     }
     
@@ -262,7 +262,7 @@ public class ModuleManager
             method13268 = JSONObject.getString("profile");
         }
         catch (final JSONException class4406) {}
-        if (Client.getInstance().method35209() == ClientMode.CLASSIC) {
+        if (Client.getInstance().getClientMode() == ClientMode.CLASSIC) {
             method13268 = "Classic";
         }
         this.profile = new ProfileManager();
@@ -280,7 +280,7 @@ public class ModuleManager
     }
     
     public void saveModProfiles(final JSONObject JSONObject) {
-        JSONObject.method13301("profile", this.profile.method32707().field33839);
+        JSONObject.put("profile", this.profile.method32707().field33839);
         this.profile.method32707().field33838 = this.saveCurrentConfigToJSON(new JSONObject());
         try {
             this.profile.method32706();

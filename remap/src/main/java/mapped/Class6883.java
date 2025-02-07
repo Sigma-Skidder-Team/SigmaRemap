@@ -120,7 +120,7 @@ public class Class6883
         this.method21096();
     }
     
-    public void method21094(final Object o) {
+    public void register2(final Object o) {
         if (o != null) {
             for (Class<?> key = o.getClass(); key != null; key = key.getSuperclass()) {
                 for (final Method method : key.getDeclaredMethods()) {

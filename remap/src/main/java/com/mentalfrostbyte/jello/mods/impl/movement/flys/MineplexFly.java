@@ -192,7 +192,7 @@ public class MineplexFly extends PremiumModule
         if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4328) {
                 this.field15999 = true;
-                Client.getInstance().method35197().method25776(new Class6224("Mineplex fly", "Please try again"));
+                Client.getInstance().getNotificationManager().send(new Notification("Mineplex fly", "Please try again"));
             }
         }
     }
@@ -230,7 +230,7 @@ public class MineplexFly extends PremiumModule
             }
             InvManagerUtil.method29367(MineplexFly.mc.player.container.field16154, 42, 0, Class2133.field12438, MineplexFly.mc.player, true);
             if (!MineplexFly.mc.player.container.getSlot(42).method20053().method27620()) {
-                Client.getInstance().method35197().method25776(new Class6224("Mineplex Fly", "Please empty a slot in your inventory"));
+                Client.getInstance().getNotificationManager().send(new Notification("Mineplex Fly", "Please empty a slot in your inventory"));
             }
             else if (MineplexFly.mc.player.inventory.field2743 != 6) {
                 if (this.field15994 != 6) {

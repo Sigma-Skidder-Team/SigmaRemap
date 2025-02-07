@@ -50,7 +50,7 @@ public class Unstuck extends Module
                 if (this.field15927 >= this.getNumberSettingValueByName("Flags")) {
                     if (this.field15928 == 0) {
                         this.field15928 = 60;
-                        Client.getInstance().method35197().method25776(new Class6224("Unstuck", "Trying to unstuck you.."));
+                        Client.getInstance().getNotificationManager().send(new Notification("Unstuck", "Trying to unstuck you.."));
                     }
                 }
                 if (this.field15928 > 0) {

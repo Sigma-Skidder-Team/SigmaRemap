@@ -99,7 +99,7 @@ public class Class4837 extends Class4825
         GL11.glDisable(2929);
         if (this.field20738.method25900() != null) {
             try {
-                Class9399.method34928("sf", this.field20738.method25900());
+                BufferedImageUtil.getTexture("sf", this.field20738.method25900());
             }
             catch (final IOException ex) {
                 ex.printStackTrace();

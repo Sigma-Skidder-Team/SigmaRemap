@@ -2,11 +2,13 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package xd;
 
-public class JSONInstance extends JSONObject
+import mapped.Class1607;
+
+public class JSONObject extends mapped.JSONObject
 {
-    public JSONInstance(final String s) {
+    public JSONObject(final String s) {
         super(s);
     }
     

@@ -50,7 +50,7 @@ public class ClientFonts
         }
         catch (final Exception ex) {
             ex.printStackTrace();
-            return new TrueTypeFont(new Font("Arial", 0, (int)size), Client.getInstance().method35209() != ClientMode.CLASSIC);
+            return new TrueTypeFont(new Font("Arial", 0, (int)size), Client.getInstance().getClientMode() != ClientMode.CLASSIC);
         }
     }
     

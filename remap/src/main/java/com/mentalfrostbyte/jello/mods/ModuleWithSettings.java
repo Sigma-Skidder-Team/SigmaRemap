@@ -29,7 +29,7 @@ public class ModuleWithSettings extends Module
         this.field15746 = new ArrayList<Class8510>();
         this.field15742 = field15742;
         for (final Module class8014 : this.field15742) {
-            Client.getInstance().getEventBus().method21094(class8014);
+            Client.getInstance().getEventBus().register2(class8014);
             this.field15744.add(class8014.getName());
             class8014.method9913(this);
         }
@@ -131,9 +131,9 @@ public class ModuleWithSettings extends Module
             while (iterator.hasNext()) {
                 class4408.method486(iterator.next().method15193(new JSONObject()));
             }
-            class4406.method13301(class4407.getName(), class4408);
+            class4406.put(class4407.getName(), class4408);
         }
-        JSONObject.method13301("sub-options", class4406);
+        JSONObject.put("sub-options", class4406);
         return super.method9896(JSONObject);
     }
     

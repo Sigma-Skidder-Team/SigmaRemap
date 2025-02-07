@@ -109,7 +109,7 @@ public class Class9000
             Minecraft.method5277().displayGuiScreen(new Class552());
             return true;
         }
-        if (Client.getInstance().method35209() == ClientMode.NOADDONS) {
+        if (Client.getInstance().getClientMode() == ClientMode.NOADDONS) {
             if (class527 instanceof Class548) {
                 if (!(class527 instanceof Class549)) {
                     Minecraft.method5277().currentScreen = null;
@@ -125,7 +125,7 @@ public class Class9000
         if (class527 == null) {
             return null;
         }
-        if (Client.getInstance().method35209() == ClientMode.INDETERMINATE) {
+        if (Client.getInstance().getClientMode() == ClientMode.INDETERMINATE) {
             return new Class4939();
         }
         if (method32131(class527)) {
@@ -222,7 +222,7 @@ public class Class9000
             if (Minecraft.method5277().gameSettings.field23466) {
                 n = Minecraft.method5277().window.method7694() / 2 - n3 / 2;
             }
-            if (Client.getInstance().method35209() != ClientMode.JELLO) {
+            if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
                 final float n4 = 0.5f + TabGUI.field15637.calcPercent() * 0.5f;
                 GL11.glAlphaFunc(516, 0.1f);
                 RenderUtil.method26874(4.0f, 2.0f, 106.0f, 28.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.6f * n4));
@@ -273,7 +273,7 @@ public class Class9000
         if (this.field37997 != null) {
             final JSONObject method14202 = this.field37997.method14202(new JSONObject());
             if (method14202.method13274() != 0) {
-                JSONObject.method13301(this.field37997.method14266(), method14202);
+                JSONObject.put(this.field37997.method14266(), method14202);
             }
         }
         JSONObject.method13295("guiBlur", this.field37994);

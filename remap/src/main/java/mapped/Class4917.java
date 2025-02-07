@@ -15,7 +15,7 @@ public class Class4917 extends Class4825
     public Class7971 field21031;
     private BufferedImage field21032;
     private Texture field21033;
-    private Class4840 field21034;
+    private LoadingIndicator field21034;
     private boolean field21035;
     private Animation field21036;
     private float field21037;
@@ -35,7 +35,7 @@ public class Class4917 extends Class4825
         this.field21040 = 0;
         this.field21041 = ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 20.0f);
         this.field21031 = field21031;
-        this.addToList(this.field21034 = new Class4840(this, "loading", n3 - 50, 35, 30, 30));
+        this.addToList(this.field21034 = new LoadingIndicator(this, "loading", n3 - 50, 35, 30, 30));
         this.field21034.method14305(false);
     }
     

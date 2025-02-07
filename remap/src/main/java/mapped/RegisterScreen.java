@@ -14,7 +14,7 @@ import slick2d.Texture;
 
 import java.util.ArrayList;
 
-public class Class4926 extends Class4800
+public class RegisterScreen extends Class4800
 {
     private int field21069;
     private int field21070;
@@ -23,13 +23,13 @@ public class Class4926 extends Class4800
     private float field21073;
     private Texture field21074;
     private Class4887 field21075;
-    private Class4866 field21076;
+    private LoginScreen field21076;
     private Class4907 field21077;
     private UIButton field21078;
     private boolean field21079;
     private Animation field21080;
     
-    public Class4926() {
+    public RegisterScreen() {
         super("Credits");
         this.field21069 = 0;
         this.field21070 = 0;
@@ -41,7 +41,7 @@ public class Class4926 extends Class4800
         this.setListening(false);
         this.field21074 = ClientAssets.method25396("com/mentalfrostbyte/gui/resources/" + ClientAssets.getPanorama(), 0.075f, 8);
         this.addToList(this.field21075 = new Class4887(this, "login", (this.field20480 - Class4887.field20896) / 2, (this.field20481 - Class4887.field20895) / 2, Class4887.field20896, Class4887.field20895));
-        this.addToList(this.field21076 = new Class4866(this, "register", (this.field20480 - Class4866.field20842) / 2, (this.field20481 - Class4866.field20841) / 2, Class4866.field20842, Class4866.field20841));
+        this.addToList(this.field21076 = new LoginScreen(this, "register", (this.field20480 - LoginScreen.field20842) / 2, (this.field20481 - LoginScreen.field20841) / 2, LoginScreen.field20842, LoginScreen.field20841));
         this.method14780();
         this.addToList(this.field21078 = new UIButton(this, "continue", this.field20480 / 2 - 120, this.field20481 / 2 + 120, 240, 60, new ColorHelper(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f)), "Continue", ClientFonts.JelloLight25));
         this.field21078.setEnabled(false);
@@ -126,7 +126,7 @@ public class Class4926 extends Class4800
             }
         }
         if (this.field21079) {
-            final String field32930 = Client.getInstance().getNetworkManager().method19347().field32930;
+            final String field32930 = Client.getInstance().getNetworkManager().method19347().username;
             final String s = "Welcome back";
             final int n3 = 100;
             final int n4 = (this.field20480 - (n3 + Math.max(ClientFonts.JelloMedium40.getWidth(s), ClientFonts.JelloLight36.getWidth(field32930)) + 10 * 10)) / 2;

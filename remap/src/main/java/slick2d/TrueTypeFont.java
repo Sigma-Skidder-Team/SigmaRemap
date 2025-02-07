@@ -149,7 +149,7 @@ public class TrueTypeFont implements Font
                     this.customChars.put(new Character(value), class8535);
                 }
             }
-            this.fontTexture = Class9399.method34928(this.font.toString(), bufferedImage);
+            this.fontTexture = BufferedImageUtil.getTexture(this.font.toString(), bufferedImage);
         }
         catch (final IOException ex) {
             System.err.println("Failed to create font.");

@@ -21,7 +21,7 @@ public class Class8949
     }
     
     public void method31750() {
-        Client.getInstance().getEventBus().method21094(this);
+        Client.getInstance().getEventBus().register2(this);
     }
     
     public boolean method31751(final Entity class399) {

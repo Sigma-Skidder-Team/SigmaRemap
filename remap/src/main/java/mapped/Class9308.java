@@ -15,20 +15,20 @@ public class Class9308
         final Class8825 class4406 = new Class8825(s);
         final String method30780 = class4406.method30780();
         if (!method30780.toUpperCase().startsWith("HTTP")) {
-            JSONObject.method13301("Method", method30780);
-            JSONObject.method13301("Request-URI", class4406.method30780());
-            JSONObject.method13301("HTTP-Version", class4406.method30780());
+            JSONObject.put("Method", method30780);
+            JSONObject.put("Request-URI", class4406.method30780());
+            JSONObject.put("HTTP-Version", class4406.method30780());
         }
         else {
-            JSONObject.method13301("HTTP-Version", method30780);
-            JSONObject.method13301("Status-Code", class4406.method30780());
-            JSONObject.method13301("Reason-Phrase", class4406.method30790('\0'));
+            JSONObject.put("HTTP-Version", method30780);
+            JSONObject.put("Status-Code", class4406.method30780());
+            JSONObject.put("Reason-Phrase", class4406.method30790('\0'));
             class4406.method30785();
         }
         while (class4406.method30784()) {
             final String method30781 = class4406.method30790(':');
             class4406.method30786(':');
-            JSONObject.method13301(method30781, class4406.method30790('\0'));
+            JSONObject.put(method30781, class4406.method30790('\0'));
             class4406.method30785();
         }
         return JSONObject;

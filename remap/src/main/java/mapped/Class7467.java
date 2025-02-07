@@ -27,7 +27,7 @@ public class Class7467
                     final JSONArray class8829 = new JSONArray();
                     final JSONObject class8830 = new JSONObject();
                     if (!b) {
-                        class8830.method13301("tagName", s);
+                        class8830.put("tagName", s);
                         if (class8828 != null) {
                             class8828.method486(class8830);
                         }
@@ -83,7 +83,7 @@ public class Class7467
                                 }
                                 if (!b) {
                                     if (class8829.length() > 0) {
-                                        class8830.method13301("childNodes", class8829);
+                                        class8830.put("childNodes", class8829);
                                     }
                                 }
                                 if (class8828 != null) {

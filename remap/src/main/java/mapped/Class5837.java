@@ -45,7 +45,7 @@ public class Class5837
     }
     
     public void method17550() {
-        Class9198.method33654();
+        CombatTracker.method33654();
     }
     
     public synchronized void method17551() {

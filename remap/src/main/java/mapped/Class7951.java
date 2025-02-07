@@ -17,7 +17,7 @@ public class Class7951
 {
     private static String[] field32653;
     public Minecraft field32654;
-    private List<Class6224> field32655;
+    private List<Notification> field32655;
     private int field32656;
     private int field32657;
     private int field32658;
@@ -31,7 +31,7 @@ public class Class7951
     
     public Class7951() {
         this.field32654 = Minecraft.method5277();
-        this.field32655 = new ArrayList<Class6224>();
+        this.field32655 = new ArrayList<Notification>();
         this.field32656 = 20;
         this.field32657 = 1;
         this.field32658 = 200;
@@ -44,14 +44,14 @@ public class Class7951
         this.field32665 = ClientFonts.JelloLight20;
     }
     
-    public void method25776(final Class6224 class6224) {
-        for (final Class6224 class6225 : this.field32655) {
+    public void send(final Notification class6224) {
+        for (final Notification class6225 : this.field32655) {
             if (!class6225.equals(class6224)) {
                 continue;
             }
             class6225.field25089.method23936(Math.min(class6225.field25089.method23935(), this.field32658 + 1));
             class6225.field25086 = class6224.field25086;
-            final Class6224 class6226 = class6225;
+            final Notification class6226 = class6225;
             ++class6226.field25092;
             class6225.field25087 = class6224.field25087;
             return;
@@ -59,7 +59,7 @@ public class Class7951
         this.field32655.add(class6224);
     }
     
-    public float method25777(final Class6224 class6224) {
+    public float method25777(final Notification class6224) {
         final float n = (float)Math.min(class6224.field25089.method23935(), class6224.field25088);
         if (n < this.field32658 * 1.4f) {
             return Class7791.method25030(n / (this.field32658 * 1.4f), 0.0f, 1.0f, 1.0f);
@@ -85,7 +85,7 @@ public class Class7951
             final Minecraft field32654 = this.field32654;
             this.field32657 = Math.max(Math.round((float)(n - Minecraft.method5338() / 10)), 1);
             for (int i = 0; i < this.field32655.size(); ++i) {
-                final Class6224 class5741 = this.field32655.get(i);
+                final Notification class5741 = this.field32655.get(i);
                 final float method25777 = this.method25777(class5741);
                 final int n2 = Minecraft.method5277().window.method7694() - this.field32662 - (int)(this.field32659 * method25777 * method25777);
                 final int n3 = this.field32654.window.method7695() - this.field32660 - this.field32661 - i * (int)(this.field32660 * this.method25778(i) + this.field32663 * this.method25778(i));
@@ -110,9 +110,9 @@ public class Class7951
     
     @EventListener
     private void method25780(final Class5743 class5743) {
-        final Iterator<Class6224> iterator = this.field32655.iterator();
+        final Iterator<Notification> iterator = this.field32655.iterator();
         while (iterator.hasNext()) {
-            final Class6224 class5744 = iterator.next();
+            final Notification class5744 = iterator.next();
             if (class5744.field25089.method23935() <= class5744.field25088) {
                 continue;
             }
@@ -129,7 +129,7 @@ public class Class7951
     
     private void method25782() {
         for (int i = 0; i < this.field32655.size(); ++i) {
-            final Class6224 class6224 = this.field32655.get(i);
+            final Notification class6224 = this.field32655.get(i);
             final float method25777 = this.method25777(class6224);
             final int n = Minecraft.method5277().window.method7694() - this.field32662 - (int)(this.field32659 * method25777 * method25777);
             final int n2 = this.field32654.window.method7695() - this.field32660 - this.field32661 - i * (int)(this.field32660 * this.method25778(i) + this.field32663 * this.method25778(i));
@@ -141,6 +141,6 @@ public class Class7951
     }
     
     public void method25783() {
-        Client.getInstance().getEventBus().method21094(this);
+        Client.getInstance().getEventBus().register2(this);
     }
 }

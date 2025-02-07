@@ -62,13 +62,13 @@ public class Class8879
         final JSONObject JSONObject = new JSONObject();
         switch (Class8623.field36188[this.method31231().ordinal()]) {
             case 1: {
-                JSONObject.method13301("type", "mod");
-                JSONObject.method13301("target", ((Module)this.field37348).getName());
+                JSONObject.put("type", "mod");
+                JSONObject.put("target", ((Module)this.field37348).getName());
                 break;
             }
             case 2: {
-                JSONObject.method13301("type", "screen");
-                JSONObject.method13301("target", Client.getInstance().getGuimanager().method32152((Class<? extends Screen>)this.field37348));
+                JSONObject.put("type", "screen");
+                JSONObject.put("target", Client.getInstance().getGuimanager().method32152((Class<? extends Screen>)this.field37348));
                 break;
             }
         }

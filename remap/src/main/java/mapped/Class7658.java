@@ -56,7 +56,7 @@ public class Class7658
     }
     
     public void method24261() {
-        Client.getInstance().getEventBus().method21094(this);
+        Client.getInstance().getEventBus().register2(this);
         final int n = -7687425;
         for (int i = 0; i < 16; ++i) {
             for (int j = 0; j < 16; ++j) {
@@ -91,7 +91,7 @@ public class Class7658
             JSONArray.method486(iterator.next().method26749());
         }
         final JSONObject class89 = new JSONObject();
-        class89.method13301("waypoints", JSONArray);
+        class89.put("waypoints", JSONArray);
         try {
             Class9532.method35585(class89, file);
         }
@@ -105,7 +105,7 @@ public class Class7658
         try {
             final JSONObject method35586 = Class9532.method35586(file);
             if (!method35586.has("waypoints")) {
-                method35586.method13301("waypoints", new JSONArray());
+                method35586.put("waypoints", new JSONArray());
             }
             final Iterator<Object> iterator = method35586.method13263("waypoints").iterator();
             while (iterator.hasNext()) {

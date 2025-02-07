@@ -51,7 +51,7 @@ public class Class8124
     
     public JSONObject method26749() {
         final JSONObject JSONObject = new JSONObject();
-        JSONObject.method13301("name", this.field33468);
+        JSONObject.put("name", this.field33468);
         JSONObject.method13298("color", this.field33471);
         JSONObject.method13298("x", this.field33469);
         JSONObject.method13298("z", this.field33470);

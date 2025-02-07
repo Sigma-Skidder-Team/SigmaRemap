@@ -82,7 +82,7 @@ public class Class4847 extends Class4841
                 if (this.field20771 != null) {
                     this.field20771.release();
                 }
-                this.field20771 = Class9399.method34928("blur", method20833);
+                this.field20771 = BufferedImageUtil.getTexture("blur", method20833);
                 this.field20770 = false;
             }
             if (this.field20771 != null) {

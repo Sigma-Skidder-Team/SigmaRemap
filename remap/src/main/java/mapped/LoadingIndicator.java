@@ -7,13 +7,13 @@ package mapped;
 import com.mentalfrostbyte.jello.ClientAssets;
 import org.lwjgl.opengl.GL11;
 
-public class Class4840 extends Class4825
+public class LoadingIndicator extends Class4825
 {
     private static String[] field20591;
     public Class7617 field20745;
     public float field20746;
     
-    public Class4840(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+    public LoadingIndicator(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
         super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20745 = new Class7617();
         this.field20746 = 0.0f;

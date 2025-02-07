@@ -353,7 +353,7 @@ public class Class4833 extends Class4825
                 if (this.field20708 != null) {
                     this.field20708.release();
                 }
-                this.field20708 = Class9399.method34928("blur", BufferedImage.method20831(this.method14272() + this.field20689, this.method14274(), this.method14276() - this.field20689, this.field20691, 10, 10));
+                this.field20708 = BufferedImageUtil.getTexture("blur", BufferedImage.method20831(this.method14272() + this.field20689, this.method14274(), this.method14276() - this.field20689, this.field20691, 10, 10));
             }
             catch (final IOException ex) {
                 ex.printStackTrace();

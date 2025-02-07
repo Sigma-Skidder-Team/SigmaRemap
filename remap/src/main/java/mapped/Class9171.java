@@ -19,7 +19,7 @@ public class Class9171
     
     public Class9171() {
         this.field38851 = Minecraft.method5277();
-        Client.getInstance().getEventBus().method21094(this);
+        Client.getInstance().getEventBus().register2(this);
     }
     
     @EventListener

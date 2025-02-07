@@ -36,7 +36,7 @@ public class Class8848
     
     public JSONObject method30979() {
         final JSONObject JSONObject = new JSONObject();
-        JSONObject.method13301("server", this.field37203);
+        JSONObject.put("server", this.field37203);
         JSONObject.method13299("until", this.field37204.getTime());
         return JSONObject;
     }

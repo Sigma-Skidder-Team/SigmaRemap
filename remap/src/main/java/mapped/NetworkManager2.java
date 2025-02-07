@@ -24,86 +24,86 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClients;
 import java.util.UUID;
 import org.apache.http.client.HttpClient;
+import xd.JSONObject;
 
-public class Class6466
+public class NetworkManager2
 {
     public HttpClient httpClient;
     public CaptchaChecker captcha;
-    public Class7994 field25687;
+    public Encryptor encryptor;
     public String mainURL;
     public String loginUrl;
     public String registerUrl;
     public String claimPremiumUrl;
     public String challengeUrl;
     public String field25693;
-    public String randomUuid;
-    public static boolean field25695;
+    public String token;
+    public static boolean premium;
     public static boolean field25696;
-    public Class9198 field25697;
+    public CombatTracker combatTracker;
     
-    public Class6466() {
+    public NetworkManager2() {
         this.mainURL = "https://jelloprg.sigmaclient.info/";
         this.loginUrl = this.mainURL + "/login";
         this.registerUrl = this.mainURL + "/register";
         this.claimPremiumUrl = this.mainURL + "/claim_premium";
         this.challengeUrl = this.mainURL + "/challenge";
-        this.randomUuid = UUID.randomUUID().toString().replaceAll("-", "");
+        this.token = UUID.randomUUID().toString().replaceAll("-", "");
         this.httpClient = (HttpClient)HttpClients.createDefault();
-        if (!Class6466.field25695) {}
     }
     
     public void method19338() {
-        Client.getInstance().getEventBus().method21094(this);
-        this.field25697 = new Class9198(this);
+        Client.getInstance().getEventBus().register2(this);
+        this.combatTracker = new CombatTracker(this);
     }
 
-    public String method19339(String var1, String var2, CaptchaChecker var3) {
-        String var6 = "Unexpected error";
+    public String newAccount(String var1, String var2, CaptchaChecker var3) {
+        String error = "Unexpected error";
 
         try {
-            HttpPost var7 = new HttpPost(this.loginUrl);
-            ArrayList var8 = new ArrayList();
-            var8.add(new BasicNameValuePair("username", var1));
-            var8.add(new BasicNameValuePair("password", var2));
-            var8.add(new BasicNameValuePair("challengeUid", var3.method30476()));
-            var8.add(new BasicNameValuePair("challengeAnswer", var3.method30474()));
-            var8.add(new BasicNameValuePair("token", this.randomUuid));
+            HttpPost httpPost = new HttpPost(this.loginUrl);
+            List<BasicNameValuePair> requests = new ArrayList<>();
+            requests.add(new BasicNameValuePair("username", var1));
+            requests.add(new BasicNameValuePair("password", var2));
+            requests.add(new BasicNameValuePair("challengeUid", var3.getChallengeUid()));
+            requests.add(new BasicNameValuePair("challengeAnswer", var3.getChallengeAnswer()));
+            requests.add(new BasicNameValuePair("token", this.token));
             var3.method30473(false);
-            var7.setEntity(new UrlEncodedFormEntity(var8, "UTF-8"));
-            HttpResponse var9 = this.httpClient.execute(var7);
-            HttpEntity var10 = var9.getEntity();
-            if (var10 != null) {
-                String var15;
-                try (InputStream var11 = var10.getContent()) {
-                    String var13 = IOUtils.toString(var11, "UTF-8");
-                    JSONInstance jsonInstance = new JSONInstance(var13);
-                    if (jsonInstance.getBoolean("success")) {
-                        if (jsonInstance.has("premium")) {
-                            new Thread(new Class1490(jsonInstance.has("premium"))).start();
+            httpPost.setEntity(new UrlEncodedFormEntity(requests, "UTF-8"));
+            HttpResponse response = this.httpClient.execute(httpPost);
+            HttpEntity entity = response.getEntity();
+            if (entity != null) {
+                String response_real;
+                try (InputStream inputStream = entity.getContent()) {
+                    String var13 = IOUtils.toString(inputStream, "UTF-8");
+                    JSONObject jsonObject = new JSONObject(var13);
+                    if (jsonObject.getBoolean("success")) {
+                        if (jsonObject.has("premium")) {
+                            new Thread(new PremiumChecker(jsonObject.has("premium"))).start();
                         }
 
-                        this.method19345(jsonInstance);
+                        this.handleLoginResponse(jsonObject);
                         return null;
                     }
 
-                    if (jsonInstance.has("error")) {
-                        var6 = jsonInstance.getString("error");
+                    if (jsonObject.has("error")) {
+                        error = jsonObject.getString("error");
                     }
 
-                    var15 = var6;
+                    response_real = error;
                 }
 
-                return var15;
+                return response_real;
             }
-        } catch (IOException var28) {
-            var6 = var28.getMessage();
-            var28.printStackTrace();
+        } catch (IOException exc) {
+            error = exc .getMessage();
+            exc.printStackTrace();
         }
 
-        return var6;
+        return error;
     }
     
-    public void method19340(final String s, final String s2, String s3, final CaptchaChecker captchaChecker) {
+    public void method30448(final String s, final String s2, String s3, final CaptchaChecker captchaChecker) {
         if (s3 == null) {
             s3 = "";
         }
@@ -114,17 +114,17 @@ public class Class6466
             list.add(new BasicNameValuePair("username", s));
             list.add(new BasicNameValuePair("password", s2));
             list.add(new BasicNameValuePair("email", s3));
-            list.add(new BasicNameValuePair("challengeUid", captchaChecker.method30476()));
-            list.add(new BasicNameValuePair("challengeAnswer", captchaChecker.method30474()));
-            list.add(new BasicNameValuePair("token", this.randomUuid));
+            list.add(new BasicNameValuePair("challengeUid", captchaChecker.getChallengeUid()));
+            list.add(new BasicNameValuePair("challengeAnswer", captchaChecker.getChallengeAnswer()));
+            list.add(new BasicNameValuePair("token", this.token));
             captchaChecker.method30473(false);
             httpPost.setEntity(new UrlEncodedFormEntity(list, "UTF-8"));
             final HttpEntity entity = this.httpClient.execute(httpPost).getEntity();
             if (entity != null) {
                 try (final InputStream content = entity.getContent()) {
-                    final JSONInstance class8774 = new JSONInstance(IOUtils.toString(content, StandardCharsets.UTF_8));
+                    final JSONObject class8774 = new JSONObject(IOUtils.toString(content, StandardCharsets.UTF_8));
                     if (class8774.getBoolean("success")) {
-                        this.method19345(class8774);
+                        this.handleLoginResponse(class8774);
                         return;
                     }
                     if (class8774.has("error")) {
@@ -139,24 +139,24 @@ public class Class6466
         }
     }
     
-    public String method19341() {
-        new Thread(new Class1490(true)).start();
+    public String validateToken() {
+        new Thread(new PremiumChecker(true)).start();
         return "Cracked";
     }
     
-    public void method19342() {
-        if (this.field25687 != null) {
+    public void loadLicense() {
+        if (this.encryptor != null) {
             return;
         }
         final File file = new File("jello/jello.lic");
         if (file.exists()) {
             try {
-                this.field25687 = new Class7994(Files.readAllBytes(file.toPath()));
-                if (this.field25687.field32930 == null || this.field25687.field32930.length() == 0) {
-                    this.field25687 = null;
+                this.encryptor = new Encryptor(Files.readAllBytes(file.toPath()));
+                if (this.encryptor.username == null || this.encryptor.username.isEmpty()) {
+                    this.encryptor = null;
                 }
-                if (this.method19341() != null) {
-                    this.field25687 = null;
+                if (this.validateToken() != null) {
+                    this.encryptor = null;
                 }
                 else {
                     Client.method35174().setThreadName("Logged in!");
@@ -172,17 +172,17 @@ public class Class6466
             final HttpPost httpPost = new HttpPost(this.claimPremiumUrl);
             final ArrayList list = new ArrayList();
             list.add(new BasicNameValuePair("key", s));
-            list.add(new BasicNameValuePair("challengeUid", captchaChecker.method30476()));
-            list.add(new BasicNameValuePair("challengeAnswer", captchaChecker.method30474()));
-            list.add(new BasicNameValuePair("token", this.randomUuid));
+            list.add(new BasicNameValuePair("challengeUid", captchaChecker.getChallengeUid()));
+            list.add(new BasicNameValuePair("challengeAnswer", captchaChecker.getChallengeAnswer()));
+            list.add(new BasicNameValuePair("token", this.token));
             captchaChecker.method30473(false);
             httpPost.setEntity((HttpEntity)new UrlEncodedFormEntity((List)list, "UTF-8"));
             final HttpEntity entity = this.httpClient.execute((HttpUriRequest)httpPost).getEntity();
             if (entity != null) {
                 try (final InputStream content = entity.getContent()) {
-                    final JSONInstance class8774 = new JSONInstance(IOUtils.toString(content, "UTF-8"));
+                    final JSONObject class8774 = new JSONObject(IOUtils.toString(content, "UTF-8"));
                     if (class8774.getBoolean("success")) {
-                        this.method19345(class8774);
+                        this.handleLoginResponse(class8774);
                         return null;
                     }
                     if (class8774.has("error")) {
@@ -206,18 +206,18 @@ public class Class6466
         try {
             final HttpPost httpPost = new HttpPost(this.challengeUrl);
             final List<BasicNameValuePair> list = new ArrayList<>();
-            list.add(new BasicNameValuePair("token", this.randomUuid));
+            list.add(new BasicNameValuePair("token", this.token));
             httpPost.setEntity(new UrlEncodedFormEntity(list, "UTF-8"));
             final HttpEntity entity = this.httpClient.execute(httpPost).getEntity();
             if (entity != null) {
                 try (final InputStream content = entity.getContent()) {
-                    final JSONInstance jsonInstance = new JSONInstance(IOUtils.toString(content, StandardCharsets.UTF_8));
-                    if (jsonInstance.getBoolean("success")) {
-                        final String uid = jsonInstance.getString("uid");
+                    final JSONObject jsonObject = new JSONObject(IOUtils.toString(content, StandardCharsets.UTF_8));
+                    if (jsonObject.getBoolean("success")) {
+                        final String uid = jsonObject.getString("uid");
                         boolean completed = false;
 
-                        if (jsonInstance.has("captcha")) {
-                            completed = jsonInstance.getBoolean("captcha");
+                        if (jsonObject.has("captcha")) {
+                            completed = jsonObject.getBoolean("captcha");
                         }
                         this.captcha = new CaptchaChecker(uid, completed);
                         return this.captcha;
@@ -232,7 +232,7 @@ public class Class6466
         return null;
     }
     
-    public void method19345(final JSONObject JSONObject) {
+    public void handleLoginResponse(final mapped.JSONObject JSONObject) {
         String method13268 = null;
         String method13269 = null;
         String method13270 = null;
@@ -247,8 +247,8 @@ public class Class6466
         }
         if (method13268 != null && method13269 != null && method13270 != null) {
             try {
-                this.field25687 = new Class7994(method13269, method13268, method13270);
-                FileUtils.writeByteArrayToFile(new File("jello/jello.lic"), this.field25687.method26158());
+                this.encryptor = new Encryptor(method13269, method13268, method13270);
+                FileUtils.writeByteArrayToFile(new File("jello/jello.lic"), this.encryptor.encrypt());
             }
             catch (final IOException ex) {}
         }
@@ -266,14 +266,14 @@ public class Class6466
         }
     }
     
-    public Class7994 method19347() {
-        return this.field25687;
+    public Encryptor method19347() {
+        return this.encryptor;
     }
     
-    public void method19348() {
+    public void resetLicense() {
         this.field25693 = null;
-        this.field25687 = null;
-        Class6466.field25695 = false;
+        this.encryptor = null;
+        premium = false;
         final File file = new File("jello/jello.lic");
         if (file.exists()) {
             file.delete();
@@ -289,15 +289,15 @@ public class Class6466
     }
     
     public String getToken() {
-        return this.randomUuid;
+        return this.token;
     }
     
     public boolean isPremium() {
-        return Class6466.field25695;
+        return premium;
     }
     
     static {
-        Class6466.field25695 = false;
-        Class6466.field25696 = false;
+        NetworkManager2.premium = false;
+        NetworkManager2.field25696 = false;
     }
 }

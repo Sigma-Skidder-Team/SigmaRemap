@@ -57,7 +57,7 @@ public class JartexGamePlay extends Module
                             final Class9485 method17000 = iterator.next().getStyle().method30410();
                             if (method17000 != null && method17000.method35309() == Class2075.field11973) {
                                 this.field15759.method10294(new Class7674(method17000.method35310(), (long)this.field15759.getNumberSettingValueByName("Auto Join delay") * 1000L));
-                                Client.getInstance().method35197().method25776(new Class6224("Auto Join", "Joining a new game in 3 seconds.", (int)(this.field15759.getNumberSettingValueByName("Auto Join delay") - 1.0f) * 1000));
+                                Client.getInstance().getNotificationManager().send(new Notification("Auto Join", "Joining a new game in 3 seconds.", (int)(this.field15759.getNumberSettingValueByName("Auto Join delay") - 1.0f) * 1000));
                                 break;
                             }
                         }

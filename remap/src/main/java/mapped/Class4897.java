@@ -18,7 +18,7 @@ public class Class4897 extends Class4841
     public int field20509;
     public int field20946;
     public int field20947;
-    private Class7994 field20948;
+    private Encryptor field20948;
     
     public Class4897(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final String s2) {
         super(customGuiScreen, s, n, n2, n3, n4, ColorHelper.field25964, s2, false);
@@ -38,7 +38,7 @@ public class Class4897 extends Class4841
         String field32930 = "Log in";
         final Texture field32931 = ClientAssets.account;
         if (this.field20948 != null) {
-            field32930 = this.field20948.field32930;
+            field32930 = this.field20948.username;
         }
         this.method14277(this.field20496.getWidth(field32930) + 50 + 60);
         this.method14273(Minecraft.method5277().window.method7694() - this.field20480 - 20);

@@ -545,7 +545,7 @@ public class CustomGuiScreen implements Class4925
     
     public JSONObject method14202(final JSONObject JSONObject) {
         if (this.method14310()) {
-            JSONObject.method13301("id", this.method14266());
+            JSONObject.put("id", this.method14266());
             JSONObject.method13298("x", this.method14272());
             JSONObject.method13298("y", this.method14274());
             if (this.method14312()) {
@@ -570,7 +570,7 @@ public class CustomGuiScreen implements Class4925
             }
             class4406.method486(method14202);
         }
-        JSONObject.method13301("children", class4406);
+        JSONObject.put("children", class4406);
         return JSONObject;
     }
     
@@ -888,7 +888,7 @@ public class CustomGuiScreen implements Class4925
         return this.field20495;
     }
     
-    public void method14315(final String field20495) {
+    public void setTypedText(final String field20495) {
         this.field20495 = field20495;
     }
     

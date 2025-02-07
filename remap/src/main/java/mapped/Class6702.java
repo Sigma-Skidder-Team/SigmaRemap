@@ -51,7 +51,7 @@ public class Class6702 extends Class6693
                     class6428.method19104("§l" + Client.getInstance().method35189().getProfile().method32709().size() + " " + this.method20356() + " :");
                     for (final Class8241 class6429 : Client.getInstance().method35189().getProfile().method32709()) {
                         final boolean b = Client.getInstance().method35189().getProfile().method32707() == class6429;
-                        if (Client.getInstance().method35209() == ClientMode.CLASSIC && b) {
+                        if (Client.getInstance().getClientMode() == ClientMode.CLASSIC && b) {
                             continue;
                         }
                         class6428.method19104((b ? "§n" : "") + class6429.field33839);
@@ -97,7 +97,7 @@ public class Class6702 extends Class6693
     }
     
     public String method20356() {
-        if (Client.getInstance().method35209() != ClientMode.CLASSIC) {
+        if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
             return "Profile";
         }
         return "Config";

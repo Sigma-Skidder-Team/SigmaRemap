@@ -201,7 +201,7 @@ public class Class7971
     public Texture method25899() {
         if (this.field32797 == null && this.field32795 != null) {
             try {
-                this.field32797 = Class9399.method34928("skin", this.field32795.getSubimage(8, 8, 8, 8));
+                this.field32797 = BufferedImageUtil.getTexture("skin", this.field32795.getSubimage(8, 8, 8, 8));
             }
             catch (final IOException ex) {
                 ex.printStackTrace();
@@ -281,11 +281,11 @@ public class Class7971
     
     public JSONObject method25904() {
         final JSONObject JSONObject = new JSONObject();
-        JSONObject.method13301("bans", this.method25905());
-        JSONObject.method13301("email", this.field32789);
-        JSONObject.method13301("password", method25906(this.field32790));
-        JSONObject.method13301("knownName", this.field32787);
-        JSONObject.method13301("knownUUID", this.field32788);
+        JSONObject.put("bans", this.method25905());
+        JSONObject.put("email", this.field32789);
+        JSONObject.put("password", method25906(this.field32790));
+        JSONObject.put("knownName", this.field32787);
+        JSONObject.put("knownUUID", this.field32788);
         JSONObject.method13298("useCount", this.field32794);
         JSONObject.method13299("lastUsed", this.field32792);
         JSONObject.method13299("dateAdded", this.field32793);
@@ -300,7 +300,7 @@ public class Class7971
             catch (final IOException ex) {
                 ex.printStackTrace();
             }
-            JSONObject.method13301("skin", string);
+            JSONObject.put("skin", string);
         }
         return JSONObject;
     }

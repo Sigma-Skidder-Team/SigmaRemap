@@ -101,7 +101,7 @@ public class VClip extends Module
         else {
             VClip.mc.method5269().method17292(new Class4354(VClip.mc.player.posX, VClip.mc.player.posY + i, VClip.mc.player.posZ, false));
             VClip.mc.player.setPosition(VClip.mc.player.posX, VClip.mc.player.posY + i, VClip.mc.player.posZ);
-            Client.getInstance().method35197().method25776(new Class6224("Successfuly VCliped", i + " Blocks", 2000, ClientAssets.direction));
+            Client.getInstance().getNotificationManager().send(new Notification("Successfuly VCliped", i + " Blocks", 2000, ClientAssets.direction));
         }
     }
 }

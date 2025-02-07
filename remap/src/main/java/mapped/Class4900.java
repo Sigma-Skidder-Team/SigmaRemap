@@ -37,8 +37,8 @@ public class Class4900 extends Class4841
         super.method14204(n);
         if (n == 257) {
             ((Class4930)this.getParent()).method14804(this.field20956.getTypedText());
-            Client.getInstance().getNetworkManager().field25697.method33660("SF4FSERFERF", this.field20956.getTypedText());
-            this.field20956.method14315("");
+            Client.getInstance().getNetworkManager().combatTracker.method33660("SF4FSERFERF", this.field20956.getTypedText());
+            this.field20956.setTypedText("");
             this.field20956.method14307(true);
         }
     }

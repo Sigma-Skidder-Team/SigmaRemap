@@ -180,7 +180,7 @@ public class CubecraftFly extends Module
                 if (this.field15697.method23935() > 2000L) {
                     if (this.field15697.method23937()) {
                         CubecraftFly.mc.method5269().method17292(new Class4354(CubecraftFly.mc.player.posX, 3.2E7, CubecraftFly.mc.player.posZ, false));
-                        Client.getInstance().method35197().method25776(new Class6224("Cubecraft fly", "Lagbacked you to avoid ban"));
+                        Client.getInstance().getNotificationManager().send(new Notification("Cubecraft fly", "Lagbacked you to avoid ban"));
                         this.field15697.method23933();
                     }
                     class5717.method16975(0.0);
@@ -276,7 +276,7 @@ public class CubecraftFly extends Module
             }
             if (this.field15697.method23935() > 2000L) {
                 this.field15697.method23933();
-                Client.getInstance().method35197().method25776(new Class6224("Cubecraft fly", "Lagbacked you to avoid ban"));
+                Client.getInstance().getNotificationManager().send(new Notification("Cubecraft fly", "Lagbacked you to avoid ban"));
                 CubecraftFly.mc.method5269().method17292(new Class4354(CubecraftFly.mc.player.posX, 3.2E7, CubecraftFly.mc.player.posZ, false));
             }
             if (!ColorUtils.method19160(CubecraftFly.mc.player, 0.01f) && (CubecraftFly.mc.method5282() == null || !CubecraftFly.mc.method5282().field41613.equalsIgnoreCase("play.cubecraft.net"))) {

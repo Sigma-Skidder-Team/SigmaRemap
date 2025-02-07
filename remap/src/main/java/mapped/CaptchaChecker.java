@@ -48,11 +48,11 @@ public class CaptchaChecker
             super.finalize();
         }
     }
-    
+
     public Texture method30470() {
         if (this.field36887 == null && this.field36886 != null) {
             try {
-                this.field36887 = Class9399.method34928("", this.field36886);
+                this.field36887 = BufferedImageUtil.getTexture("", this.field36886);
             }
             catch (final IOException ex) {
                 ex.printStackTrace();
@@ -60,7 +60,7 @@ public class CaptchaChecker
         }
         return this.field36887;
     }
-    
+
     public boolean method30471() {
         return this.field36882;
     }
@@ -73,15 +73,15 @@ public class CaptchaChecker
         this.field36884 = field36884;
     }
     
-    public String method30474() {
+    public String getChallengeAnswer() {
         return this.field36885;
     }
     
-    public void method30475(final String field36885) {
+    public void setChallengeAnswer(final String field36885) {
         this.field36885 = field36885;
     }
     
-    public String method30476() {
+    public String getChallengeUid() {
         return this.field36881;
     }
 }

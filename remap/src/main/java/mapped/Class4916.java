@@ -68,8 +68,8 @@ public class Class4916 extends Class4825
                 try {
                     final java.awt.image.BufferedImage method25030 = method14759(this.field21026.method35869());
                     if (method25030 != null) {
-                        this.field21027 = Class9399.method34928("servericon", method25030);
-                        this.field21028 = Class9399.method34928("servericon", BufferedImage.method20826(BufferedImage.method20836(method14760(method25030, 2.5, 2.5), 0.0f, 1.1f, 0.0f), 25));
+                        this.field21027 = BufferedImageUtil.getTexture("servericon", method25030);
+                        this.field21028 = BufferedImageUtil.getTexture("servericon", BufferedImage.method20826(BufferedImage.method20836(method14760(method25030, 2.5, 2.5), 0.0f, 1.1f, 0.0f), 25));
                     }
                 }
                 catch (final IOException ex) {

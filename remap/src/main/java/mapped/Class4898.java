@@ -14,7 +14,7 @@ public class Class4898 extends Class4841
     private final int field20950;
     private Class4817 field20951;
     public static Class8784 field20952;
-    private Class4840 field20953;
+    private LoadingIndicator field20953;
     
     public Class4898(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int field20950) {
         super(customGuiScreen, s, n, n2, n3, 0, ColorHelper.field25964, false);
@@ -25,7 +25,7 @@ public class Class4898 extends Class4841
         final UIButton class4805;
         this.addToList(class4805 = new UIButton(this, "dupeButton", n3 - 25 - ClientFonts.JelloLight20.getWidth("Duplicate"), 0, ClientFonts.JelloLight20.getWidth("Duplicate"), 30, ColorHelper.field25964, "Duplicate", ClientFonts.JelloLight20));
         class4805.doThis((class4803, n) -> ((Class4889)this.getParent()).method14635());
-        this.addToList(this.field20953 = new Class4840(this, "loading", (n3 - 30) / 2, 100, 30, 30));
+        this.addToList(this.field20953 = new LoadingIndicator(this, "loading", (n3 - 30) / 2, 100, 30, 30));
         this.addToList(this.field20951 = new Class4817(this, "defaultProfiles", 0, 40, n3, field20950 - 40));
         Class4898.field20952 = new Class8784(list -> {
             this.field20953.setEnabled(false);

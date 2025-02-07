@@ -64,7 +64,7 @@ public class Class5255
             while (method463.hasNext()) {
                 final String s = method463.next();
                 try {
-                    class4408.method13301(s, method16359(class4409.get(s), list));
+                    class4408.put(s, method16359(class4409.get(s), list));
                 }
                 catch (final JSONException thrown3) {
                     Class5255.field22286.log(Level.WARNING, "An error occured while putting data to JSONObject", thrown3);
@@ -108,7 +108,7 @@ public class Class5255
         while (method464.hasNext()) {
             final String s = method464.next();
             try {
-                class89.method13301(s, method16361(class89.get(s), array));
+                class89.put(s, method16361(class89.get(s), array));
             }
             catch (final JSONException thrown2) {
                 Class5255.field22286.log(Level.WARNING, "An error occured while putting data to JSONObject", thrown2);

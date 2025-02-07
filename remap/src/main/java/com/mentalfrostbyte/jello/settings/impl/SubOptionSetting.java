@@ -53,8 +53,8 @@ public abstract class SubOptionSetting extends Setting<Boolean> {
         while (iterator.hasNext()) {
             class4406.method486(iterator.next().method15193(new JSONObject()));
         }
-        JSONObject.method13301("children", class4406);
-        JSONObject.method13301("name", this.method15204());
+        JSONObject.put("children", class4406);
+        JSONObject.put("name", this.method15204());
         return super.method15193(JSONObject);
     }
 

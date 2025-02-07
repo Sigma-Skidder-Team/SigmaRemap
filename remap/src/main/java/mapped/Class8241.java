@@ -34,8 +34,8 @@ public class Class8241
     }
     
     public JSONObject method27289(final JSONObject JSONObject) {
-        JSONObject.method13301("modConfig", this.field33838);
-        JSONObject.method13301("name", this.field33839);
+        JSONObject.put("modConfig", this.field33838);
+        JSONObject.put("name", this.field33839);
         return JSONObject;
     }
     
@@ -65,7 +65,7 @@ public class Class8241
                 }
                 for (final Module class2383 : Client.getInstance().method35189().getModuleMap().values()) {
                     if (class2383.getName().equals(method26640) && class2383.getCategoryBasedOnMode() != Category.GUI && class2383.getCategoryBasedOnMode() != Category.RENDER) {
-                        method26639.method13301("enabled", "false");
+                        method26639.put("enabled", "false");
                     }
                 }
             }

@@ -23,8 +23,8 @@ public class BezierSetting extends Setting<Class8531> {
 
     @Override
     public JSONObject method15193(final JSONObject JSONObject) {
-        JSONObject.method13301("name", this.method15204());
-        JSONObject.method13301("value", this.method15198().method28615());
+        JSONObject.put("name", this.method15204());
+        JSONObject.put("value", this.method15198().method28615());
         return JSONObject;
     }
 

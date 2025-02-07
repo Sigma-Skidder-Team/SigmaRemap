@@ -17,7 +17,7 @@ public class Class4887 extends Class4841
     private UIButton field20891;
     private UIButton field20892;
     private UIButton field20893;
-    private Class4840 field20894;
+    private LoadingIndicator field20894;
     public static int field20895;
     public static int field20896;
     
@@ -27,7 +27,7 @@ public class Class4887 extends Class4841
         this.addToList(this.field20891 = new UIButton(this, "LoginButton", 468, 238, ClientFonts.JelloLight25.getWidth("Login"), 70, ColorHelper.field25964, "Login", ClientFonts.JelloLight25));
         this.addToList(this.field20892 = new UIButton(this, "RegisterButton", 88, 250, ClientFonts.JelloLight14.getWidth("Register"), 14, ColorHelper.field25964, "Register", ClientFonts.JelloLight14));
         this.addToList(this.field20893 = new UIButton(this, "ForgotButton", 60, 275, ClientFonts.JelloLight14.getWidth("Forgot password?"), 14, ColorHelper.field25964, "Forgot password?", ClientFonts.JelloLight14));
-        this.addToList(this.field20894 = new Class4840(this, "loading", 511, 260, 30, 30));
+        this.addToList(this.field20894 = new LoadingIndicator(this, "loading", 511, 260, 30, 30));
         this.field20894.method14305(false);
         this.field20894.method14303(true);
         final int n5 = 50;
@@ -43,7 +43,7 @@ public class Class4887 extends Class4841
         this.field20890.setFont(ClientFonts.JelloLight20);
         this.field20890.setEnabled(false);
         this.field20891.doThis((a, b) -> this.method14630());
-        this.field20892.doThis((a, b) -> ((Class4926)this.getParent()).method14779());
+        this.field20892.doThis((a, b) -> ((RegisterScreen)this.getParent()).method14779());
         this.field20893.doThis((a, b) -> Util.method27845().method980("https://sigmaclient.info/pwdreset.php"));
     }
     
@@ -75,14 +75,14 @@ public class Class4887 extends Class4841
             Client.getInstance().getNetworkManager().getChallengeResponse();
             final CaptchaChecker captchaChecker = new CaptchaChecker("", true);
             if (captchaChecker != null) {
-                captchaChecker.method30475(this.field20890.getTypedText());
+                captchaChecker.setChallengeAnswer(this.field20890.getTypedText());
             }
-            Client.getInstance().getNetworkManager().method19348();
-            Client.getInstance().getNetworkManager().method19339(this.field20888.getTypedText(), this.field20889.getTypedText(), captchaChecker);
+            Client.getInstance().getNetworkManager().resetLicense();
+            Client.getInstance().getNetworkManager().newAccount(this.field20888.getTypedText(), this.field20889.getTypedText(), captchaChecker);
             final String s = "asd";
             if (s != null) {
-                ((Class4926)this.getParent()).method14781("Error", s);
-                this.field20890.method14315("");
+                ((RegisterScreen)this.getParent()).method14781("Error", s);
+                this.field20890.setTypedText("");
             }
             else {
                 this.method14517();

@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.UUID;
 import java.util.List;
 
-public class Class9198
+public class CombatTracker
 {
     private Minecraft field38982;
     private String field38983;
@@ -35,22 +35,22 @@ public class Class9198
     private List<UUID> field38985;
     private HashMap<UUID, Class6538> field38986;
     private HttpClient field38987;
-    private Class6466 field38988;
+    private NetworkManager2 field38988;
     private Class4960 field38989;
     public Class9194 field38990;
     
-    public Class9198(final Class6466 field38988) {
+    public CombatTracker(final NetworkManager2 field38988) {
         this.field38982 = Minecraft.method5277();
         this.field38985 = new ArrayList<UUID>();
         this.field38986 = new HashMap<UUID, Class6538>();
-        Client.getInstance().getEventBus().method21094(this);
+        Client.getInstance().getEventBus().register2(this);
         this.field38987 = (HttpClient)HttpClients.createDefault();
         this.field38988 = field38988;
         this.field38990 = new Class9194(this);
     }
     
     public static void method33654() {
-        Client.getInstance().getNetworkManager().method19342();
+        Client.getInstance().getNetworkManager().loadLicense();
     }
     
     public HashMap<UUID, Class6538> method33655() {
@@ -120,8 +120,8 @@ public class Class9198
     
     public void method33660(final String s, final String s2) {
         final JSONObject JSONObject = new JSONObject();
-        JSONObject.method13301("target", s);
-        JSONObject.method13301("message", s2);
+        JSONObject.put("target", s);
+        JSONObject.put("message", s2);
         if (this.field38989 != null) {
             this.field38989.method14942("message", JSONObject);
         }
