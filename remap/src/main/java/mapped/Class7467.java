@@ -82,7 +82,7 @@ public class Class7467
                                     throw class8827.syntaxError("Mismatched '" + s + "' and '" + str + "'");
                                 }
                                 if (!b) {
-                                    if (class8829.method462() > 0) {
+                                    if (class8829.length() > 0) {
                                         class8830.method13301("childNodes", class8829);
                                     }
                                 }
@@ -216,7 +216,7 @@ public class Class7467
                 sb.append('\"');
             }
         }
-        final int method464 = JSONArray.method462();
+        final int method464 = JSONArray.length();
         if (n < method464) {
             sb.append('>');
             do {
@@ -285,7 +285,7 @@ public class Class7467
             final JSONArray method13296 = JSONObject.method13288("childNodes");
             if (method13296 != null) {
                 sb.append('>');
-                for (int method13297 = method13296.method462(), i = 0; i < method13297; ++i) {
+                for (int method13297 = method13296.length(), i = 0; i < method13297; ++i) {
                     final Object method13298 = method13296.method449(i);
                     if (method13298 != null) {
                         if (!(method13298 instanceof String)) {

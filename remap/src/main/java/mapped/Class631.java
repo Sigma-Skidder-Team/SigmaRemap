@@ -61,10 +61,10 @@ public class Class631 extends Class624
         final boolean b2 = b;
         RealmsScreen.method15419("realms:textures/gui/realms/restore_icon.png");
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.method30063(0.5f, 0.5f, 0.5f);
         RealmsScreen.method15411(n * 2, n2 * 2, 0.0f, b2 ? 28.0f : 0.0f, 23, 28, 23, 56);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         if (b2) {
             Class5071.method15650(this.field3617, RealmsScreen.getLocalizedString("mco.backup.button.restore"));
         }
@@ -92,10 +92,10 @@ public class Class631 extends Class624
         final boolean b2 = b;
         RealmsScreen.method15419("realms:textures/gui/realms/plus_icon.png");
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.method30063(0.5f, 0.5f, 0.5f);
         RealmsScreen.method15411(n * 2, n2 * 2, 0.0f, b2 ? 15.0f : 0.0f, 15, 15, 15, 30);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         if (b2) {
             Class5071.method15650(this.field3617, RealmsScreen.getLocalizedString("mco.backup.changes.tooltip"));
         }

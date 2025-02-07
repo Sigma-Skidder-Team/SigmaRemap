@@ -20,13 +20,13 @@ public class Class6705 extends Class6693
         }
         final Minecraft field26420 = Class6705.field26420;
         if (Minecraft.field4623) {
-            if (!Client.getInstance().method35193().method32148()) {
+            if (!Client.getInstance().getGuimanager().method32148()) {
                 class6428.method19104("HighDPI was enabled!");
             }
             else {
                 class6428.method19104("HighDPI was disabled!");
             }
-            Client.getInstance().method35193().method32147(!Client.getInstance().method35193().method32148());
+            Client.getInstance().getGuimanager().method32147(!Client.getInstance().getGuimanager().method32148());
             return;
         }
         throw new Class2332("This feature is only available on macOS!");

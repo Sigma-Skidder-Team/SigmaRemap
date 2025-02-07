@@ -33,7 +33,7 @@ public class JelloTouch
         this.field27849 = new LinkedHashSet<Class8879>();
         this.field27850 = false;
         this.field27851 = new HashMap<Module, TouchBarButton>();
-        Client.getInstance().method35188().method21094(this);
+        Client.getInstance().getEventBus().method21094(this);
         if (Class9532.field41028) {
             this.field27849.add(new Class8879(344, Class722.class));
         }
@@ -114,8 +114,8 @@ public class JelloTouch
     public void method21963(final JSONObject JSONObject) {
         if (JSONObject.has("keybinds")) {
             final JSONArray method13263 = JSONObject.method13263("keybinds");
-            for (int i = 0; i < method13263.method462(); ++i) {
-                final Class8879 e = new Class8879(method13263.method457(i));
+            for (int i = 0; i < method13263.length(); ++i) {
+                final Class8879 e = new Class8879(method13263.getJSONObject(i));
                 if (e.method31228()) {
                     this.field27849.add(e);
                 }
@@ -151,7 +151,7 @@ public class JelloTouch
     
     public boolean method21966() {
         if (Minecraft.field4623) {
-            if (Client.getInstance().method35209() == Class2209.field13464) {
+            if (Client.getInstance().method35209() == ClientMode.JELLO) {
                 if (!System.getProperty("os.version").startsWith("10.14")) {
                     if (!System.getProperty("os.version").startsWith("10.15")) {
                         if (!System.getProperty("os.version").startsWith("10.16")) {
@@ -168,7 +168,7 @@ public class JelloTouch
     public void method21967() {
         if (this.method21966()) {
             if (this.field27848 != null) {
-                this.field27848.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().field4632.method7690()));
+                this.field27848.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().window.getHandle()));
             }
             (this.field27848 = new JTouchBar()).setCustomizationIdentifier("JelloTouch");
             this.method21970();
@@ -177,7 +177,7 @@ public class JelloTouch
                 view.setStringValue(" Jello for Sigma 5.0   -   Open the keybind manager to add keybinds here!");
                 this.field27848.addItem(new TouchBarItem("Jello", view, true));
             }
-            this.field27848.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().field4632.method7690()));
+            this.field27848.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().window.getHandle()));
             this.field27850 = true;
         }
     }
@@ -206,13 +206,13 @@ public class JelloTouch
     public void method21969() {
         if (this.method21966()) {
             if (this.field27848 != null) {
-                this.field27848.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().field4632.method7690()));
+                this.field27848.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().window.getHandle()));
             }
             (this.field27848 = new JTouchBar()).setCustomizationIdentifier("JelloTouch");
             final TouchBarTextField view = new TouchBarTextField();
             view.setStringValue(" Jello for Sigma 5.0   -   © SIGMA Prod");
             this.field27848.addItem(new TouchBarItem("Jello", view, true));
-            this.field27848.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().field4632.method7690()));
+            this.field27848.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().window.getHandle()));
             this.field27850 = false;
         }
     }
@@ -238,14 +238,14 @@ public class JelloTouch
     
     public Color method21971(final Module class3167) {
         Color color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
-        if (class3167.getCategory2() != Category.COMBAT) {
-            if (class3167.getCategory2() != Category.GUI) {
-                if (class3167.getCategory2() != Category.ITEM) {
-                    if (class3167.getCategory2() != Category.MISC) {
-                        if (class3167.getCategory2() != Category.MOVEMENT) {
-                            if (class3167.getCategory2() != Category.PLAYER) {
-                                if (class3167.getCategory2() != Category.RENDER) {
-                                    if (class3167.getCategory2() == Category.WORLD) {
+        if (class3167.getCategoryBasedOnMode() != Category.COMBAT) {
+            if (class3167.getCategoryBasedOnMode() != Category.GUI) {
+                if (class3167.getCategoryBasedOnMode() != Category.ITEM) {
+                    if (class3167.getCategoryBasedOnMode() != Category.MISC) {
+                        if (class3167.getCategoryBasedOnMode() != Category.MOVEMENT) {
+                            if (class3167.getCategoryBasedOnMode() != Category.PLAYER) {
+                                if (class3167.getCategoryBasedOnMode() != Category.RENDER) {
+                                    if (class3167.getCategoryBasedOnMode() == Category.WORLD) {
                                         color = this.method21972(-5118535, class3167.isEnabled());
                                     }
                                 }

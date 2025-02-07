@@ -934,7 +934,7 @@ public abstract class PlayerEntity extends LivingEntity
     @Override
     public Vec3d method1676(Vec3d class5487, final Class2160 class5488) {
         final Class5738 class5489 = new Class5738(true);
-        Client.getInstance().method35188().method21097(class5489);
+        Client.getInstance().getEventBus().method21097(class5489);
         Label_0074: {
             if ((class5488 != Class2160.field12826 && class5488 != Class2160.field12827) || class5489.method17025() != Class2228.field13706) {
                 if (!this.onGround) {
@@ -1002,7 +1002,7 @@ public abstract class PlayerEntity extends LivingEntity
             }
             class5487 = new Vec3d(field22770, class5487.y, field22771);
         }
-        Client.getInstance().method35188().method21097(new Class5738(false));
+        Client.getInstance().getEventBus().method21097(new Class5738(false));
         return class5487;
     }
     

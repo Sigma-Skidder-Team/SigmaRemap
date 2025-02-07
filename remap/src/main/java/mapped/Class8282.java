@@ -53,7 +53,7 @@ public class Class8282
     
     @Nullable
     public Class7646 method27521(final Class1925 class1925) {
-        final long glfwGetWindowMonitor = GLFW.glfwGetWindowMonitor(class1925.method7690());
+        final long glfwGetWindowMonitor = GLFW.glfwGetWindowMonitor(class1925.getHandle());
         if (glfwGetWindowMonitor == 0L) {
             final int method7698 = class1925.method7698();
             final int n = method7698 + class1925.method7694();

@@ -72,8 +72,8 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
         RenderSystem.disableRescaleNormal();
         RenderSystem.disableDepthTest();
         super.render(n, n2, n3);
-        RenderSystem.method30059();
-        RenderSystem.method30065((float)field3079, (float)field3080, 0.0f);
+        RenderSystem.pushMatrix();
+        RenderSystem.translatef((float)field3079, (float)field3080, 0.0f);
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.enableRescaleNormal();
         this.field3081 = null;
@@ -126,7 +126,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
             }
             this.method2978(this.field3089, this.field3085 + (int)((this.field3087.field26175 - this.field3085) * n5), this.field3086 + (int)((this.field3087.field26176 - this.field3086) * n5), null);
         }
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         RenderSystem.enableDepthTest();
     }
     
@@ -141,7 +141,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
     }
     
     private void method2978(final ItemStack class8321, final int n, final int n2, final String s) {
-        RenderSystem.method30065(0.0f, 0.0f, 32.0f);
+        RenderSystem.translatef(0.0f, 0.0f, 32.0f);
         this.setBlitOffset(200);
         this.itemRenderer.zLevel = 200.0f;
         this.itemRenderer.method6540(class8321, n, n2);
@@ -338,7 +338,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
                             }
                             else {
                                 if (!this.minecraft.gameSettings.field23447.method1067(n3)) {
-                                    final boolean b = field3102 != -999 && (Class8341.method27798(Minecraft.method5277().method5332().method7690(), 340) || Class8341.method27798(Minecraft.method5277().method5332().method7690(), 344));
+                                    final boolean b = field3102 != -999 && (Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 340) || Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 344));
                                     Class2133 class2133 = Class2133.field12437;
                                     if (!b) {
                                         if (field3102 == -999) {
@@ -547,7 +547,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
             }
             else if (!this.minecraft.player.inventory.method2375().method27620()) {
                 if (!this.minecraft.gameSettings.field23447.method1067(n3)) {
-                    final boolean b = field3081 != -999 && (Class8341.method27798(Minecraft.method5277().method5332().method7690(), 340) || Class8341.method27798(Minecraft.method5277().method5332().method7690(), 344));
+                    final boolean b = field3081 != -999 && (Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 340) || Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 344));
                     if (b) {
                         this.field3102 = ((method2981 != null && method2981.method20054()) ? method2981.method20053().method27641() : ItemStack.EMPTY);
                     }

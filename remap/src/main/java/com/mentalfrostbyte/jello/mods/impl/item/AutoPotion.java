@@ -196,7 +196,7 @@ public class AutoPotion extends Module
             else {
                 this.field15979 = 0;
                 final int field2743 = AutoPotion.mc.player.inventory.field2743;
-                final boolean b = Client.getInstance().method35189().method21551(Criticals.class).isEnabled() && Client.getInstance().method35189().method21551(Criticals.class).getStringSettingValueByName("Type").equalsIgnoreCase("NoGround");
+                final boolean b = Client.getInstance().method35189().getModuleByClass(Criticals.class).isEnabled() && Client.getInstance().method35189().getModuleByClass(Criticals.class).getStringSettingValueByName("Type").equalsIgnoreCase("NoGround");
                 final float[] method10617 = this.method10614();
                 AutoPotion.mc.player.inventory.field2743 = method10616 - 36;
                 AutoPotion.mc.playerController.method27318();

@@ -37,7 +37,7 @@ public class Class6127 implements Class6113
     }
     
     private void method18352(final BlockPos class354, final Class8340 class355) {
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.enableBlend();
         RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
         RenderSystem.method30068(0.0f, 1.0f, 0.0f, 0.75f);
@@ -48,6 +48,6 @@ public class Class6127 implements Class6113
         }
         RenderSystem.enableTexture();
         RenderSystem.disableBlend();
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
     }
 }

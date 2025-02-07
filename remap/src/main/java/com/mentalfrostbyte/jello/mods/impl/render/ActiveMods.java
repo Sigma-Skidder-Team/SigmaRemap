@@ -34,7 +34,7 @@ public class ActiveMods extends Module
     }
     
     @Override
-    public void method9917() {
+    public void initialize() {
         this.method10487();
         this.method10486();
     }
@@ -60,7 +60,7 @@ public class ActiveMods extends Module
                 this.field15899.method35856(0.0f);
             }
             int n = -2;
-            final int n2 = Minecraft.method5277().field4632.method7694() - 2;
+            final int n2 = Minecraft.method5277().window.method7694() - 2;
             final int n3 = -2;
             new java.awt.Color(0, 192, 255, 255).getRGB();
             int n4 = new java.awt.Color(0, 192, 255, 255).getRGB();
@@ -80,12 +80,12 @@ public class ActiveMods extends Module
                 final int hsBtoRGB = java.awt.Color.HSBtoRGB(method9889, 1.0f, 1.0f);
                 n4 = java.awt.Color.HSBtoRGB(method9889, 1.0f, 1.0f);
                 final int method9890 = this.method10491(class5742);
-                int n6 = this.field15897.getHeight(class5742.getName2()) + n3;
+                int n6 = this.field15897.getHeight(class5742.getFormattedName()) + n3;
                 final float n7 = 1.0f - Class7791.method25030(class5741.calcPercent(), 0.0f, 1.0f, 1.0f);
                 if (method9887.equalsIgnoreCase("Smooth") || method9887.equalsIgnoreCase("Both")) {
                     n6 *= (int)n7;
                 }
-                RenderSystem.method30059();
+                RenderSystem.pushMatrix();
                 if (method9888.equalsIgnoreCase("Right")) {
                     GL11.glTranslated(-3.0, 0.0, 0.0);
                 }
@@ -112,12 +112,12 @@ public class ActiveMods extends Module
                     GL11.glTranslated((double)(method9890 * Class7791.method25030(class5741.calcPercent(), 0.0f, 1.0f, 1.0f)), 0.0, 0.0);
                 }
                 RenderUtil.method26868((float)(n2 - method9890 - 3), (float)(n + 1), (float)n2, n + n6 - Class7791.method25030(class5741.calcPercent(), 0.0f, 1.0f, 1.0f));
-                this.field15897.drawString((float)(n2 - method9890), (float)n, class5742.getName2(), new Color(hsBtoRGB));
+                this.field15897.drawString((float)(n2 - method9890), (float)n, class5742.getFormattedName(), new Color(hsBtoRGB));
                 this.field15898.drawString((float)(n2 - this.field15898.getWidth(this.method10490(class5742))), n + 1.6f, this.method10490(class5742), new Color(160, 160, 160));
                 RenderUtil.method26872();
                 RenderSystem.disableBlend();
                 n += n6;
-                RenderSystem.method30060();
+                RenderSystem.popMatrix();
                 n5 = method9890;
                 method9889 += (float)0.0196078431372549;
                 if (method9889 <= 1.0f) {
@@ -136,7 +136,7 @@ public class ActiveMods extends Module
     private void method10489() {
         if (this.field15896.isEmpty()) {
             this.field15896.clear();
-            for (final Module key : Client.getInstance().method35189().method21553().values()) {
+            for (final Module key : Client.getInstance().method35189().getModuleMap().values()) {
                 if (key == this) {
                     continue;
                 }
@@ -178,6 +178,6 @@ public class ActiveMods extends Module
     }
     
     private int method10491(final Module class3167) {
-        return this.field15897.getWidth(class3167.getName2()) + this.field15898.getWidth(this.method10490(class3167));
+        return this.field15897.getWidth(class3167.getFormattedName()) + this.field15898.getWidth(this.method10490(class3167));
     }
 }

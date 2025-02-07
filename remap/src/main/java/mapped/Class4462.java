@@ -24,7 +24,7 @@ public class Class4462 implements Comparator<Module>
             return -1;
         }
         if (ActiveMods.method10494(this.field19817, class3167) >= ActiveMods.method10494(this.field19817, class3168)) {
-            return class3167.getName2().compareTo(class3168.getName2());
+            return class3167.getFormattedName().compareTo(class3168.getFormattedName());
         }
         return 1;
     }

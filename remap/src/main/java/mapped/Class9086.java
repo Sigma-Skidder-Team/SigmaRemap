@@ -36,7 +36,7 @@ public class Class9086
             }
             return;
         }
-        Client.getInstance().method35187().method20241("Invalid audio file attempted to be played: " + str);
+        Client.getInstance().getLogger().warn("Invalid audio file attempted to be played: " + str);
     }
     
     public void method32831() {

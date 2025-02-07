@@ -73,13 +73,13 @@ public class Class572 extends AbstractGui
             this.field3414 = 56 - (this.field3418 + this.field3416) / 2;
             this.field3420 = true;
         }
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.enableDepthTest();
-        RenderSystem.method30065(0.0f, 0.0f, 950.0f);
+        RenderSystem.translatef(0.0f, 0.0f, 950.0f);
         RenderSystem.method30049(false, false, false, false);
         AbstractGui.fill(4680, 2260, -4680, -2260, -16777216);
         RenderSystem.method30049(true, true, true, true);
-        RenderSystem.method30065(0.0f, 0.0f, -950.0f);
+        RenderSystem.translatef(0.0f, 0.0f, -950.0f);
         RenderSystem.method30009(518);
         AbstractGui.fill(234, 113, 0, 0, -16777216);
         RenderSystem.method30009(515);
@@ -103,18 +103,18 @@ public class Class572 extends AbstractGui
         this.field3411.method3746(method22531, method22532, false);
         this.field3411.method3747(method22531, method22532);
         RenderSystem.method30009(518);
-        RenderSystem.method30065(0.0f, 0.0f, -950.0f);
+        RenderSystem.translatef(0.0f, 0.0f, -950.0f);
         RenderSystem.method30049(false, false, false, false);
         AbstractGui.fill(4680, 2260, -4680, -2260, -16777216);
         RenderSystem.method30049(true, true, true, true);
-        RenderSystem.method30065(0.0f, 0.0f, 950.0f);
+        RenderSystem.translatef(0.0f, 0.0f, 950.0f);
         RenderSystem.method30009(515);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
     }
     
     public void method3342(final int n, final int n2, final int n3, final int n4) {
-        RenderSystem.method30059();
-        RenderSystem.method30065(0.0f, 0.0f, 200.0f);
+        RenderSystem.pushMatrix();
+        RenderSystem.translatef(0.0f, 0.0f, 200.0f);
         AbstractGui.fill(0, 0, 234, 113, MathHelper.method35642(this.field3419 * 255.0f) << 24);
         int n5 = 0;
         final int method35644 = MathHelper.floor(this.field3413);
@@ -135,7 +135,7 @@ public class Class572 extends AbstractGui
                 }
             }
         }
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         if (n5 == 0) {
             this.field3419 = MathHelper.clamp(this.field3419 - 0.04f, 0.0f, 1.0f);
         }

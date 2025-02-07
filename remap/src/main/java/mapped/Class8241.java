@@ -50,21 +50,21 @@ public class Class8241
     public void method27292() {
         JSONArray method26638 = null;
         try {
-            method26638 = Class8105.method26638(this.field33838, "mods");
+            method26638 = CJsonUtils.getJSONArrayOrNull(this.field33838, "mods");
         }
         catch (final JSONException JSONException) {}
         if (method26638 != null) {
-            for (int i = 0; i < method26638.method462(); ++i) {
-                final JSONObject method26639 = method26638.method457(i);
+            for (int i = 0; i < method26638.length(); ++i) {
+                final JSONObject method26639 = method26638.getJSONObject(i);
                 Object method26640 = null;
                 try {
-                    method26640 = Class8105.method26636(method26639, "name", null);
+                    method26640 = CJsonUtils.method26636(method26639, "name", null);
                 }
                 catch (final JSONException class2382) {
-                    Client.getInstance().method35187().method20241("Invalid name in mod list config");
+                    Client.getInstance().getLogger().warn("Invalid name in mod list config");
                 }
-                for (final Module class2383 : Client.getInstance().method35189().method21553().values()) {
-                    if (class2383.getName().equals(method26640) && class2383.getCategory2() != Category.GUI && class2383.getCategory2() != Category.RENDER) {
+                for (final Module class2383 : Client.getInstance().method35189().getModuleMap().values()) {
+                    if (class2383.getName().equals(method26640) && class2383.getCategoryBasedOnMode() != Category.GUI && class2383.getCategoryBasedOnMode() != Category.RENDER) {
                         method26639.method13301("enabled", "false");
                     }
                 }
@@ -75,22 +75,22 @@ public class Class8241
     public void method27293(final JSONObject JSONObject, final Module class4406) {
         JSONArray method26638 = null;
         try {
-            method26638 = Class8105.method26638(this.field33838, "mods");
+            method26638 = CJsonUtils.getJSONArrayOrNull(this.field33838, "mods");
         }
         catch (final JSONException class4407) {}
         boolean b = false;
         if (method26638 != null) {
-            for (int i = 0; i < method26638.method462(); ++i) {
-                final JSONObject method26639 = method26638.method457(i);
+            for (int i = 0; i < method26638.length(); ++i) {
+                final JSONObject method26639 = method26638.getJSONObject(i);
                 Object method26640 = null;
                 try {
-                    method26640 = Class8105.method26636(method26639, "name", null);
+                    method26640 = CJsonUtils.method26636(method26639, "name", null);
                 }
                 catch (final JSONException class4408) {
-                    Client.getInstance().method35187().method20241("Invalid name in mod list config");
+                    Client.getInstance().getLogger().warn("Invalid name in mod list config");
                 }
                 if (class4406.getName().equals(method26640)) {
-                    if (class4406.getCategory2() != Category.GUI && class4406.getCategory2() != Category.RENDER) {
+                    if (class4406.getCategoryBasedOnMode() != Category.GUI && class4406.getCategoryBasedOnMode() != Category.RENDER) {
                         method26638.method493(i, JSONObject);
                     }
                     b = true;
@@ -105,18 +105,18 @@ public class Class8241
     public JSONObject method27294(final Module class3167) {
         JSONArray method26638 = null;
         try {
-            method26638 = Class8105.method26638(this.field33838, "mods");
+            method26638 = CJsonUtils.getJSONArrayOrNull(this.field33838, "mods");
         }
         catch (final JSONException class3168) {}
         if (method26638 != null) {
-            for (int i = 0; i < method26638.method462(); ++i) {
-                final JSONObject method26639 = method26638.method457(i);
+            for (int i = 0; i < method26638.length(); ++i) {
+                final JSONObject method26639 = method26638.getJSONObject(i);
                 Object method26640 = null;
                 try {
-                    method26640 = Class8105.method26636(method26639, "name", null);
+                    method26640 = CJsonUtils.method26636(method26639, "name", null);
                 }
                 catch (final JSONException class3169) {
-                    Client.getInstance().method35187().method20241("Invalid name in mod list config");
+                    Client.getInstance().getLogger().warn("Invalid name in mod list config");
                 }
                 if (class3167.getName().equals(method26640)) {
                     return method26639;

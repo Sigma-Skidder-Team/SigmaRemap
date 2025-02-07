@@ -26,7 +26,7 @@ public class HypixelGamePlay extends Module
     }
     
     @Override
-    public void method9917() {
+    public void initialize() {
         this.field15682 = (GamePlay)this.method9914();
     }
     
@@ -44,8 +44,8 @@ public class HypixelGamePlay extends Module
                 return;
             }
             String s = HypixelGamePlay.mc.player.getName().getFormattedText().toLowerCase();
-            if (Client.getInstance().method35189().method21551(NameProtect.class).isEnabled()) {
-                s = Client.getInstance().method35189().method21551(NameProtect.class).getStringSettingValueByName("Username").toLowerCase();
+            if (Client.getInstance().method35189().getModuleByClass(NameProtect.class).isEnabled()) {
+                s = Client.getInstance().method35189().getModuleByClass(NameProtect.class).getStringSettingValueByName("Username").toLowerCase();
             }
             if (this.field15682.method9883("AutoL")) {
                 final String[] array = { "MULTI ", "PENTA ", "QUADRA ", "TRIPLE ", "DOUBLE ", "" };

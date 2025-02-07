@@ -20,17 +20,17 @@ public class GameIdler extends Module
     @EventListener
     private void method10090(final Class5740 class5740) {
         if (this.isEnabled()) {
-            if (GLFW.glfwGetWindowAttrib(GameIdler.mc.field4632.method7690(), 131073) == 1) {
-                Minecraft.method5277().field4632.method7678(GameIdler.mc.gameSettings.field23383);
+            if (GLFW.glfwGetWindowAttrib(GameIdler.mc.window.getHandle(), 131073) == 1) {
+                Minecraft.method5277().window.method7678(GameIdler.mc.gameSettings.field23383);
             }
             else {
-                Minecraft.method5277().field4632.method7678(5);
+                Minecraft.method5277().window.method7678(5);
             }
         }
     }
     
     @Override
     public void onDisable() {
-        Minecraft.method5277().field4632.method7678(GameIdler.mc.gameSettings.field23383);
+        Minecraft.method5277().window.method7678(GameIdler.mc.gameSettings.field23383);
     }
 }

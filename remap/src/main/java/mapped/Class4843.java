@@ -47,7 +47,7 @@ public class Class4843 extends Class4841
         final int n2 = 14;
         RenderUtil.method26913((float)(this.field20478 + n2 / 2), (float)(this.field20479 + n2 / 2), (float)(this.field20480 - n2), (float)(this.field20481 - n2), 20.0f, n * 0.9f);
         float n3 = 0.88f;
-        if (!Client.getInstance().method35193().method32144()) {
+        if (!Client.getInstance().getGuimanager().method32144()) {
             n3 = 0.95f;
         }
         RenderUtil.method26925((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, 14.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n3));

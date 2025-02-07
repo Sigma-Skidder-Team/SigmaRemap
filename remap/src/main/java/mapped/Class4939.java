@@ -32,15 +32,15 @@ public class Class4939 extends Class4800
         final Class4876 class4878;
         this.addVisualThing(class4878 = new Class4876(this, "pb3", n5 + n2 + 9, n3 + n6 + 9, n2, n4, ClientAssets.jello));
         class4876.method14260((class4803, n) -> {
-            Client.getInstance().method35210(Class2209.field13466);
+            Client.getInstance().setupClient(ClientMode.NOADDONS);
             Minecraft.method5277().displayGuiScreen(new Class548());
         });
         class4878.method14260((class4803, n) -> {
-            Client.getInstance().method35210(Class2209.field13464);
+            Client.getInstance().setupClient(ClientMode.JELLO);
             Minecraft.method5277().displayGuiScreen(new Class548());
         });
         class4877.method14260((class4803, n) -> {
-            Client.getInstance().method35210(Class2209.field13465);
+            Client.getInstance().setupClient(ClientMode.CLASSIC);
             Minecraft.method5277().displayGuiScreen(new Class548());
         });
         final Class4803 class4879 = new Class4803(this, "socialbtns", (this.method14276() - 174) / 2, this.method14278() - 70, 174, 34);
@@ -85,14 +85,14 @@ public class Class4939 extends Class4800
         if (Class568.field3391 != null) {
             Class4939.field21206.changeDirection(Direction.BACKWARDS);
             final int n2 = 40;
-            RenderUtil.method26905(n2 * (-Class4939.field21207 / Minecraft.method5277().field4632.method7694()), n2 * (-Class4939.field21208 / Minecraft.method5277().field4632.method7695()), (float)(Minecraft.method5277().field4632.method7694() + n2), (float)(Minecraft.method5277().field4632.method7695() + n2), Class568.field3391);
+            RenderUtil.method26905(n2 * (-Class4939.field21207 / Minecraft.method5277().window.method7694()), n2 * (-Class4939.field21208 / Minecraft.method5277().window.method7695()), (float)(Minecraft.method5277().window.method7694() + n2), (float)(Minecraft.method5277().window.method7695() + n2), Class568.field3391);
             final float method31033 = MathUtils.lerp(Class4939.field21206.calcPercent(), 0.16, 0.71, 0.0, 0.99);
-            final int n3 = (Minecraft.method5277().field4632.method7694() - 455) / 2;
-            final int n4 = (int)((Minecraft.method5277().field4632.method7695() - 78) / 2 - 14 - 116.0f * method31033);
-            RenderUtil.method26874(0.0f, 0.0f, (float) Minecraft.method5277().field4632.method7694(), (float) Minecraft.method5277().field4632.method7695(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.3f));
+            final int n3 = (Minecraft.method5277().window.method7694() - 455) / 2;
+            final int n4 = (int)((Minecraft.method5277().window.method7695() - 78) / 2 - 14 - 116.0f * method31033);
+            RenderUtil.method26874(0.0f, 0.0f, (float) Minecraft.method5277().window.method7694(), (float) Minecraft.method5277().window.method7695(), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.3f));
             super.draw(n);
-            RenderUtil.method26899(0.0f, 0.0f, (float) Minecraft.method5277().field4632.method7694(), (float) Minecraft.method5277().field4632.method7695(), Class568.field3392, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 1.0f - Class4939.field21206.calcPercent()));
-            RenderUtil.method26874(0.0f, 0.0f, (float) Minecraft.method5277().field4632.method7694(), (float) Minecraft.method5277().field4632.method7695(), ColorUtils.applyAlpha(0, 0.75f * (1.0f - Class4939.field21206.calcPercent())));
+            RenderUtil.method26899(0.0f, 0.0f, (float) Minecraft.method5277().window.method7694(), (float) Minecraft.method5277().window.method7695(), Class568.field3392, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 1.0f - Class4939.field21206.calcPercent()));
+            RenderUtil.method26874(0.0f, 0.0f, (float) Minecraft.method5277().window.method7694(), (float) Minecraft.method5277().window.method7695(), ColorUtils.applyAlpha(0, 0.75f * (1.0f - Class4939.field21206.calcPercent())));
             RenderUtil.method26905((float)n3, (float)n4, 455.0f, 78.0f, Class568.field3390);
         }
     }

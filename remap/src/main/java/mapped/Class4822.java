@@ -124,7 +124,7 @@ public class Class4822 extends Class4817
     }
     
     private void method14390() {
-        this.addVisualThing(new Class4834(this, "settingsname", 12, 2, this.field20480, 20, Class4834.field20719, this.field20634.getName2() + " Settings", this.field20496));
+        this.addVisualThing(new Class4834(this, "settingsname", 12, 2, this.field20480, 20, Class4834.field20719, this.field20634.getFormattedName() + " Settings", this.field20496));
         int method14434 = 35;
         final Iterator<Setting> iterator = this.field20634.method9899().values().iterator();
         while (iterator.hasNext()) {

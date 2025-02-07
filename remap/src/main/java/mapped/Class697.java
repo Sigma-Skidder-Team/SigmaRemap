@@ -135,8 +135,8 @@ public class Class697 extends Screen
         final int n5 = this.height + 50;
         this.field3837 += n3;
         final float n6 = -this.field3837 * this.field3840;
-        RenderSystem.method30059();
-        RenderSystem.method30065(0.0f, n6, 0.0f);
+        RenderSystem.pushMatrix();
+        RenderSystem.translatef(0.0f, n6, 0.0f);
         this.minecraft.method5290().method5849(Class697.field3832);
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.enableAlphaTest();
@@ -150,7 +150,7 @@ public class Class697 extends Screen
             if (i == this.field3838.size() - 1) {
                 final float n8 = n7 + n6 - (this.height / 2 - 6);
                 if (n8 < 0.0f) {
-                    RenderSystem.method30065(0.0f, -n8, 0.0f);
+                    RenderSystem.translatef(0.0f, -n8, 0.0f);
                 }
             }
             if (n7 + n6 + 12.0f + 8.0f > 0.0f) {
@@ -167,7 +167,7 @@ public class Class697 extends Screen
             }
             n7 += 12;
         }
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         this.minecraft.method5290().method5849(Class697.field3834);
         RenderSystem.enableBlend();
         RenderSystem.method30013(Class2050.field11696, Class2135.field12461);

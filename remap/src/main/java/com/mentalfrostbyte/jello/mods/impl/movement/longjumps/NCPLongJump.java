@@ -116,7 +116,7 @@ public class NCPLongJump extends Module
                         }
                         case "High": {
                             class5717.method16975(((LongJump)this.method9914()).method10271(this.field15527));
-                            if (!ColorUtils.method19146() || !Client.getInstance().method35189().method21551(NoFall.class).isEnabled() || (this.field15527 != 8 && this.field15527 != 21)) {
+                            if (!ColorUtils.method19146() || !Client.getInstance().method35189().getModuleByClass(NoFall.class).isEnabled() || (this.field15527 != 8 && this.field15527 != 21)) {
                                 break;
                             }
                             final double n3 = NCPLongJump.mc.player.posY + class5717.method16974();

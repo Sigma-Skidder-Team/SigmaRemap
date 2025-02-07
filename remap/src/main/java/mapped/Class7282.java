@@ -150,8 +150,8 @@ public class Class7282
                 final double field4644 = method5278.method18161().x;
                 final double field4645 = method5278.method18161().y;
                 final double field4646 = method5278.method18161().z;
-                RenderSystem.method30059();
-                RenderSystem.method30065((float)(n - field4644), (float)(n2 - field4645) + 0.07f, (float)(n3 - field4646));
+                RenderSystem.pushMatrix();
+                RenderSystem.translatef((float)(n - field4644), (float)(n2 - field4645) + 0.07f, (float)(n3 - field4646));
                 RenderSystem.method30006(0.0f, 1.0f, 0.0f);
                 RenderSystem.method30067(new Matrix4f(method5278.method18165()));
                 RenderSystem.method30063(n5, -n5, n5);
@@ -171,7 +171,7 @@ public class Class7282
                 method5279.finish();
                 RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
                 RenderSystem.enableDepthTest();
-                RenderSystem.method30060();
+                RenderSystem.popMatrix();
             }
         }
     }

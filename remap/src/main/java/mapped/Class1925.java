@@ -295,7 +295,7 @@ public final class Class1925 implements AutoCloseable
     private void method7676(final long n, final int field10490, final int field10491) {
         this.field10490 = field10490;
         this.field10491 = field10491;
-        Client.getInstance().method35193().method32153();
+        Client.getInstance().getGuimanager().method32153();
     }
     
     private void method7677(final long n, final boolean b) {
@@ -428,7 +428,7 @@ public final class Class1925 implements AutoCloseable
         GLFW.glfwSetWindowTitle(this.field10480, (CharSequence)s);
     }
     
-    public long method7690() {
+    public long getHandle() {
         return this.field10480;
     }
     
@@ -468,7 +468,7 @@ public final class Class1925 implements AutoCloseable
         return this.field10489;
     }
     
-    public double method7700() {
+    public double getGuiScaleFactor() {
         return this.field10496;
     }
     

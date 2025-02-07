@@ -129,7 +129,7 @@ public abstract class Module
         this.field15525.get(s).method15199(s2);
     }
     
-    public void method9894() {
+    public void resetModuleState() {
         if (this.enabled) {
             this.onDisable();
         }
@@ -142,7 +142,7 @@ public abstract class Module
     }
     
     public JSONObject method9895(final JSONObject JSONObject) {
-        final JSONArray method26638 = Class8105.method26638(JSONObject, "options");
+        final JSONArray method26638 = CJsonUtils.getJSONArrayOrNull(JSONObject, "options");
         try {
             this.enabled = JSONObject.getBoolean("enabled");
         }
@@ -152,11 +152,11 @@ public abstract class Module
         }
         catch (final JSONException class4407) {}
         if (method26638 != null) {
-            for (int i = 0; i < method26638.method462(); ++i) {
-                final JSONObject method26639 = method26638.method457(i);
+            for (int i = 0; i < method26638.length(); ++i) {
+                final JSONObject method26639 = method26638.getJSONObject(i);
                 Object method26640 = null;
                 try {
-                    method26640 = Class8105.method26636(method26639, "name", null);
+                    method26640 = CJsonUtils.method26636(method26639, "name", null);
                 }
                 catch (final JSONException class4408) {}
                 for (final Setting class4409 : this.field15525.values()) {
@@ -165,7 +165,7 @@ public abstract class Module
                             class4409.method15186(method26639);
                         }
                         catch (final JSONException class4410) {
-                            Client.getInstance().method35187().method20241("Could not initialize settings of " + this.getName() + "." + class4409.method15204() + " from config.");
+                            Client.getInstance().getLogger().warn("Could not initialize settings of " + this.getName() + "." + class4409.method15204() + " from config.");
                         }
                         break;
                     }
@@ -194,7 +194,7 @@ public abstract class Module
     public void onEnable() {
         if (this.getClass().isAnnotationPresent(Class6752.class)) {
             if (!Module.field15521.contains(this.getClass())) {
-                Client.getInstance().method35187().method20241("This mod is still in development. Be careful!");
+                Client.getInstance().getLogger().warn("This mod is still in development. Be careful!");
                 Module.field15521.add(this.getClass());
             }
         }
@@ -211,7 +211,7 @@ public abstract class Module
         return this.field15525;
     }
     
-    public String getName2() {
+    public String getFormattedName() {
         return this.name;
     }
     
@@ -223,11 +223,11 @@ public abstract class Module
         return this.desc;
     }
     
-    public Category getCategory2() {
-        if (Client.getInstance().method35209() == Class2209.field13465 && this.category == Category.ITEM) {
+    public Category getCategoryBasedOnMode() {
+        if (Client.getInstance().method35209() == ClientMode.CLASSIC && this.category == Category.ITEM) {
             return Category.PLAYER;
         }
-        if (Client.getInstance().method35209() == Class2209.field13465 && this.category == Category.EXPLOIT) {
+        if (Client.getInstance().method35209() == ClientMode.CLASSIC && this.category == Category.EXPLOIT) {
             return Category.MISC;
         }
         return this.category;
@@ -242,44 +242,44 @@ public abstract class Module
     }
     
     public boolean isEnabled() {
-        return Client.getInstance().method35209() != Class2209.field13466 && (Client.getInstance().method35209() != Class2209.field13465 || this.method9916()) && this.enabled;
+        return Client.getInstance().method35209() != ClientMode.NOADDONS && (Client.getInstance().method35209() != ClientMode.CLASSIC || this.method9916()) && this.enabled;
     }
     
     public void method9907(final boolean enabled) {
         if (this.enabled != enabled) {
             if (!(this.enabled = enabled)) {
-                Client.getInstance().method35188().method21093(this);
+                Client.getInstance().getEventBus().unregister(this);
                 this.onDisable();
             }
             else {
-                Client.getInstance().method35188().method21092(this);
+                Client.getInstance().getEventBus().register(this);
                 this.onEnable();
             }
         }
-        Client.getInstance().method35189().method21557().method21968(this);
+        Client.getInstance().method35189().getJelloTouch().method21968(this);
     }
     
     public void method9908(final boolean field15518) {
         if (!(this.enabled = field15518)) {
-            Client.getInstance().method35188().method21093(this);
+            Client.getInstance().getEventBus().unregister(this);
         }
         else {
-            Client.getInstance().method35188().method21092(this);
+            Client.getInstance().getEventBus().register(this);
         }
     }
     
     public void method9909(final boolean enabled) {
         if (this.enabled != enabled) {
             if (!(this.enabled = enabled)) {
-                Client.getInstance().method35188().method21093(this);
+                Client.getInstance().getEventBus().unregister(this);
                 if (!(this instanceof ModuleWithSettings)) {
-                    if (Client.getInstance().method35209() == Class2209.field13464) {
-                        if (Client.getInstance().method35189().method21551(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).method9883("Sound")) {
+                    if (Client.getInstance().method35209() == ClientMode.JELLO) {
+                        if (Client.getInstance().method35189().getModuleByClass(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).method9883("Sound")) {
                             Client.getInstance().method35196().method32830("deactivate");
                         }
                     }
-                    if (Client.getInstance().method35209() == Class2209.field13465) {
-                        if (Client.getInstance().method35189().method21551(ActiveMods.class).method9883("Sound")) {
+                    if (Client.getInstance().method35209() == ClientMode.CLASSIC) {
+                        if (Client.getInstance().method35189().getModuleByClass(ActiveMods.class).method9883("Sound")) {
                             Minecraft.method5277().method5299().method6422(Class6836.method20933(Class8520.field35617, 0.6f));
                         }
                     }
@@ -287,14 +287,14 @@ public abstract class Module
                 this.onDisable();
             }
             else {
-                Client.getInstance().method35188().method21092(this);
-                if (Client.getInstance().method35209() == Class2209.field13464) {
-                    if (Client.getInstance().method35189().method21551(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).method9883("Sound")) {
+                Client.getInstance().getEventBus().register(this);
+                if (Client.getInstance().method35209() == ClientMode.JELLO) {
+                    if (Client.getInstance().method35189().getModuleByClass(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).method9883("Sound")) {
                         Client.getInstance().method35196().method32830("activate");
                     }
                 }
-                if (Client.getInstance().method35209() == Class2209.field13465) {
-                    if (Client.getInstance().method35189().method21551(ActiveMods.class).method9883("Sound")) {
+                if (Client.getInstance().method35209() == ClientMode.CLASSIC) {
+                    if (Client.getInstance().method35189().getModuleByClass(ActiveMods.class).method9883("Sound")) {
                         Minecraft.method5277().method5299().method6422(Class6836.method20933(Class8520.field35617, 0.7f));
                     }
                 }
@@ -302,7 +302,7 @@ public abstract class Module
                 ++this.field15523;
             }
         }
-        Client.getInstance().method35189().method21557().method21968(this);
+        Client.getInstance().method35189().getJelloTouch().method21968(this);
     }
     
     public void method9910() {
@@ -338,7 +338,7 @@ public abstract class Module
         return this.field15520;
     }
     
-    public void method9917() {
+    public void initialize() {
     }
     
     static {

@@ -18,7 +18,7 @@ import mapped.*;
 public class ModuleWithSettings extends Module
 {
     public Module[] field15742;
-    public Module field15743;
+    public Module parentModule;
     private List<String> field15744;
     public StringSetting field15745;
     private final List<Class8510> field15746;
@@ -29,7 +29,7 @@ public class ModuleWithSettings extends Module
         this.field15746 = new ArrayList<Class8510>();
         this.field15742 = field15742;
         for (final Module class8014 : this.field15742) {
-            Client.getInstance().method35188().method21094(class8014);
+            Client.getInstance().getEventBus().method21094(class8014);
             this.field15744.add(class8014.getName());
             class8014.method9913(this);
         }
@@ -45,7 +45,7 @@ public class ModuleWithSettings extends Module
             if (this.isEnabled() && ModuleWithSettings.mc.player != null) {
                 field15743.method9907(equals);
                 if (equals) {
-                    this.field15743 = field15743;
+                    this.parentModule = field15743;
                 }
             }
             else if (this.isEnabled()) {
@@ -80,24 +80,24 @@ public class ModuleWithSettings extends Module
     
     @Override
     public boolean method9898() {
-        if (this.field15743 == null) {
+        if (this.parentModule == null) {
             this.method10258();
         }
-        return (this.field15743 != null) ? this.field15743.method9898() : this.isEnabled();
+        return (this.parentModule != null) ? this.parentModule.method9898() : this.isEnabled();
     }
     
     @Override
     public JSONObject method9895(final JSONObject JSONObject) {
-        final JSONObject method26637 = Class8105.method26637(JSONObject, "sub-options");
+        final JSONObject method26637 = CJsonUtils.method26637(JSONObject, "sub-options");
         if (method26637 != null) {
             for (final Module class4406 : this.field15742) {
-                final JSONArray method26638 = Class8105.method26638(method26637, class4406.getName());
+                final JSONArray method26638 = CJsonUtils.getJSONArrayOrNull(method26637, class4406.getName());
                 if (method26638 != null) {
-                    for (int j = 0; j < method26638.method462(); ++j) {
-                        final JSONObject method26639 = method26638.method457(j);
+                    for (int j = 0; j < method26638.length(); ++j) {
+                        final JSONObject method26639 = method26638.getJSONObject(j);
                         Object method26640 = null;
                         try {
-                            method26640 = Class8105.method26636(method26639, "name", null);
+                            method26640 = CJsonUtils.method26636(method26639, "name", null);
                         }
                         catch (final JSONException class4407) {}
                         for (final Setting class4408 : class4406.field15525.values()) {
@@ -106,7 +106,7 @@ public class ModuleWithSettings extends Module
                                     class4408.method15186(method26639);
                                 }
                                 catch (final JSONException class4409) {
-                                    Client.getInstance().method35187().method20241("Could not initialize settings of " + class4406.getName() + "." + class4408.method15204() + " from config.");
+                                    Client.getInstance().getLogger().warn("Could not initialize settings of " + class4406.getName() + "." + class4408.method15204() + " from config.");
                                 }
                                 break;
                             }
@@ -140,7 +140,7 @@ public class ModuleWithSettings extends Module
     @Override
     public void onEnable() {
         this.method10258();
-        if (this.field15743 instanceof PremiumModule) {
+        if (this.parentModule instanceof PremiumModule) {
             if (!Client.getInstance().method35201().method19352()) {
                 this.method9908(false);
             }
@@ -156,12 +156,12 @@ public class ModuleWithSettings extends Module
     }
     
     @Override
-    public void method9894() {
+    public void resetModuleState() {
         final Module[] field15742 = this.field15742;
         for (int length = field15742.length, i = 0; i < length; ++i) {
             field15742[i].method9907(false);
         }
-        super.method9894();
+        super.resetModuleState();
     }
     
     public final ModuleWithSettings method10261(final Class8510 class8510) {
@@ -177,11 +177,11 @@ public class ModuleWithSettings extends Module
     }
     
     @Override
-    public void method9917() {
-        super.method9917();
+    public void initialize() {
+        super.initialize();
         final Module[] field15742 = this.field15742;
         for (int length = field15742.length, i = 0; i < length; ++i) {
-            field15742[i].method9917();
+            field15742[i].initialize();
         }
     }
 }

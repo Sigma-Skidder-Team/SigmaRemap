@@ -23,7 +23,7 @@ public class Class4805 extends Class4803
         final JSONArray method13269 = class4804.method13263("changes");
         this.addVisualThing(new Class4834(this, "title", 0, n, 0, 0, Class6523.field25964, method13268, ClientFonts.JelloMedium40));
         n += 55;
-        for (int i = 0; i < method13269.method462(); ++i) {
+        for (int i = 0; i < method13269.length(); ++i) {
             this.addVisualThing(new Class4834(this, "change" + i, 0, n, 0, 0, new Class6523(0, 0, 0, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f)), " - " + method13269.method459(i), ClientFonts.JelloLight20));
             n += 22;
         }

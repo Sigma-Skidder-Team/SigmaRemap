@@ -25,6 +25,6 @@ public class AutoWalk extends Module
     
     @Override
     public void onDisable() {
-        AutoWalk.mc.gameSettings.field23435.field2162 = (GLFW.glfwGetKey(AutoWalk.mc.field4632.method7690(), AutoWalk.mc.gameSettings.field23435.field2161.field32860) == 1);
+        AutoWalk.mc.gameSettings.field23435.field2162 = (GLFW.glfwGetKey(AutoWalk.mc.window.getHandle(), AutoWalk.mc.gameSettings.field23435.field2161.field32860) == 1);
     }
 }

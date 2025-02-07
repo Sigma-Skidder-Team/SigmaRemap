@@ -19,7 +19,7 @@ public class AntiBot extends Module
     }
     
     @Override
-    public void method9917() {
+    public void initialize() {
         if (this.isEnabled()) {
             this.method10302();
         }

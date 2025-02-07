@@ -30,7 +30,7 @@ public class Class6695 extends Class6693
     }
     
     public Module method20352(final String anotherString) {
-        for (final Module class3167 : Client.getInstance().method35189().method21553().values()) {
+        for (final Module class3167 : Client.getInstance().method35189().getModuleMap().values()) {
             if (!class3167.getName().replace(" ", "").equalsIgnoreCase(anotherString)) {
                 continue;
             }

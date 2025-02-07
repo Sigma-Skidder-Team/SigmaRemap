@@ -70,10 +70,10 @@ public class ActiveMods extends Module
     }
     
     @Override
-    public void method9917() {
+    public void initialize() {
         this.field15890.clear();
-        for (final Module class3167 : Client.getInstance().method35189().method21553().values()) {
-            if (class3167.getCategory2() != Category.GUI) {
+        for (final Module class3167 : Client.getInstance().method35189().getModuleMap().values()) {
+            if (class3167.getCategoryBasedOnMode() != Category.GUI) {
                 this.field15890.add(class3167);
                 this.field15893.put(class3167, new Class9572(150, 150, Direction.FORWARDS));
                 if (!this.method9883("Animations")) {
@@ -112,7 +112,7 @@ public class ActiveMods extends Module
                 }
                 final int n2 = 23 + n * (this.field15894.getHeight() + 1);
                 final int size = method6786.size();
-                final int n3 = Minecraft.method5277().field4632.method7695() / 2;
+                final int n3 = Minecraft.method5277().window.method7695() / 2;
                 ActiveMods.mc.fontRenderer.getClass();
                 final int n4 = n3 - (9 + 5) * (size - 3 + 2);
                 if (n2 <= n4) {
@@ -140,14 +140,14 @@ public class ActiveMods extends Module
         if (!Minecraft.method5277().gameSettings.field23464) {
             int n = 10;
             final int n2 = 1;
-            final int method7694 = Minecraft.method5277().field4632.method7694();
+            final int method7694 = Minecraft.method5277().window.method7694();
             final TrueTypeFont field15894 = this.field15894;
             int field15895 = n - 4;
             if (this.field15894 == ClientFonts.JelloLight14) {
                 n -= 3;
             }
             if (Minecraft.method5277().gameSettings.field23466) {
-                field15895 = (int)(ActiveMods.mc.field4647.field3763.field3801.size() * 9 * ActiveMods.mc.field4632.method7700() + 7.0);
+                field15895 = (int)(ActiveMods.mc.field4647.field3763.field3801.size() * 9 * ActiveMods.mc.window.getGuiScaleFactor() + 7.0);
             }
             int n3 = 0;
             final int method7695 = ColorUtils.applyAlpha(-1, 0.95f);
@@ -167,7 +167,7 @@ public class ActiveMods extends Module
                     method7696 = class5741.calcPercent();
                     n4 = 0.86f + 0.14f * method7696;
                 }
-                final String method7697 = key2.getName2();
+                final String method7697 = key2.getFormattedName();
                 GL11.glAlphaFunc(519, 0.0f);
                 GL11.glPushMatrix();
                 final int n5 = method7694 - n - field15894.getWidth(method7697) / 2;
@@ -192,7 +192,7 @@ public class ActiveMods extends Module
     private Color method10480(final int n, final int n2, final Color color) {
         final ByteBuffer allocateDirect = ByteBuffer.allocateDirect(3);
         GL11.glPixelStorei(3317, 1);
-        GL11.glReadPixels(n, Minecraft.method5277().field4632.method7695() - n2, 1, 1, 6407, 5120, allocateDirect);
+        GL11.glReadPixels(n, Minecraft.method5277().window.method7695() - n2, 1, 1, 6407, 5120, allocateDirect);
         Color method19109 = new Color(allocateDirect.get(0) * 2, allocateDirect.get(1) * 2, allocateDirect.get(2) * 2, 1);
         if (color != null) {
             method19109 = ColorUtils.method19109(method19109, color, 0.08f);

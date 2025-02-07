@@ -69,12 +69,12 @@ public class Class569 extends AbstractGui implements Class570
         this.field3396.method5290().method5849(Class569.field3395);
         if (class6991 != Class9039.field38256) {
             final int n5 = (int)(n4 * 255.0f);
-            RenderSystem.method30059();
-            RenderSystem.method30065((float)n2, n3, 0.0f);
+            RenderSystem.pushMatrix();
+            RenderSystem.translatef((float)n2, n3, 0.0f);
             final float n6 = class6991.method21405() ? 1.0f : 0.25f;
             RenderSystem.method30068(n6, n6, n6, n4);
             class6991.method21404(n6, n5);
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
             final String value = String.valueOf(this.field3396.gameSettings.field23457[n].method1068());
             if (n5 > 3) {
                 if (class6991.method21405()) {
@@ -93,12 +93,12 @@ public class Class569 extends AbstractGui implements Class570
                 if (s != null) {
                     final int n2 = (this.field3396.method5332().method7696() - this.field3396.fontRenderer.getStringWidth(s)) / 2;
                     final int n3 = this.field3396.method5332().method7697() - 35;
-                    RenderSystem.method30059();
+                    RenderSystem.pushMatrix();
                     RenderSystem.enableBlend();
                     RenderSystem.defaultBlendFunc();
                     this.field3396.fontRenderer.drawStringWithShadow(s, (float)n2, (float)n3, 16777215 + (n << 24));
                     RenderSystem.disableBlend();
-                    RenderSystem.method30060();
+                    RenderSystem.popMatrix();
                 }
             }
         }

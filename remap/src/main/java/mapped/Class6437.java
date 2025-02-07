@@ -28,7 +28,7 @@ public class Class6437
         }
         if (o instanceof JSONArray) {
             final JSONArray JSONArray = (JSONArray)o;
-            for (int method462 = JSONArray.method462(), i = 0; i < method462; ++i) {
+            for (int method462 = JSONArray.length(), i = 0; i < method462; ++i) {
                 Object o2;
                 try {
                     o2 = (JSONArray.method460(i) ? null : JSONArray.method449(i));

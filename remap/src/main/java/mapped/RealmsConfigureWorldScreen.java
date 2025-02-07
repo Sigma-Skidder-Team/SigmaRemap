@@ -291,9 +291,9 @@ public class RealmsConfigureWorldScreen extends Class5075<Class7430> implements 
     private void method15692(final int n, final int n2, final int n3, final int n4) {
         RealmsScreen.method15419("realms:textures/gui/realms/expired_icon.png");
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 10, 28, 10, 28);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         if (n3 >= n) {
             if (n3 <= n + 9) {
                 if (n4 >= n2) {
@@ -308,14 +308,14 @@ public class RealmsConfigureWorldScreen extends Class5075<Class7430> implements 
     private void method15693(final int n, final int n2, final int n3, final int n4, final int i) {
         RealmsScreen.method15419("realms:textures/gui/realms/expires_soon_icon.png");
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         if (this.field21800 % 20 >= 10) {
             RealmsScreen.method15411(n, n2, 10.0f, 0.0f, 10, 28, 20, 28);
         }
         else {
             RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 10, 28, 20, 28);
         }
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         if (n3 >= n) {
             if (n3 <= n + 9) {
                 if (n4 >= n2) {
@@ -340,9 +340,9 @@ public class RealmsConfigureWorldScreen extends Class5075<Class7430> implements 
     private void method15694(final int n, final int n2, final int n3, final int n4) {
         RealmsScreen.method15419("realms:textures/gui/realms/on_icon.png");
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 10, 28, 10, 28);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         if (n3 >= n) {
             if (n3 <= n + 9) {
                 if (n4 >= n2) {
@@ -357,9 +357,9 @@ public class RealmsConfigureWorldScreen extends Class5075<Class7430> implements 
     private void method15695(final int n, final int n2, final int n3, final int n4) {
         RealmsScreen.method15419("realms:textures/gui/realms/off_icon.png");
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 10, 28, 10, 28);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         if (n3 >= n) {
             if (n3 <= n + 9) {
                 if (n4 >= n2) {

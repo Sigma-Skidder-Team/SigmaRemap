@@ -80,7 +80,7 @@ public class InvMove extends Module
                 if (InvMove.mc.currentScreen instanceof Class525 && ((Class525) InvMove.mc.currentScreen).method3018() == 5) {
                     return;
                 }
-                if (Client.getInstance().method35193().method32154() != null && Client.getInstance().method35193().method32154().method14230()) {
+                if (Client.getInstance().getGuimanager().method32154() != null && Client.getInstance().getGuimanager().method32154().method14230()) {
                     final Class350[] field23460 = Minecraft.method5277().gameSettings.field23460;
                     for (int length = field23460.length, i = 0; i < length; ++i) {
                         field23460[i].field2162 = false;
@@ -91,7 +91,7 @@ public class InvMove extends Module
                     if (class5744.field2161.field32860 > 0) {
                         if (InvMove.mc.gameSettings.field23440.field2161.field32860 != class5744.field2161.field32860) {
                             if (class5744.field2161.field32860 > 4) {
-                                class5744.field2162 = (GLFW.glfwGetKey(InvMove.mc.field4632.method7690(), class5744.field2161.field32860) == 1);
+                                class5744.field2162 = (GLFW.glfwGetKey(InvMove.mc.window.getHandle(), class5744.field2161.field32860) == 1);
                             }
                         }
                     }

@@ -35,12 +35,12 @@ public class OldHitting extends Module
         }
         if (updateWalkingEvent.method17046()) {
             final boolean b = OldHitting.mc.player.getHeldItemMainhand() != null && OldHitting.mc.player.getHeldItemMainhand().getItem() instanceof Class4077;
-            final boolean method9898 = Client.getInstance().method35189().method21551(KillAura.class).method9898();
+            final boolean method9898 = Client.getInstance().method35189().getModuleByClass(KillAura.class).method9898();
             boolean b2 = true;
             Label_0104: {
                 if (!OldHitting.mc.player.method1809()) {
                     if (OldHitting.mc.field4691.getType() == RayTraceResult.Type.BLOCK) {
-                        if (!Client.getInstance().method35189().method21551(KillAura.class).method9898()) {
+                        if (!Client.getInstance().method35189().getModuleByClass(KillAura.class).method9898()) {
                             final Block method9899 = OldHitting.mc.world.getBlockState(((BlockRayTraceResult) OldHitting.mc.field4691).getPos()).method21696();
                             if (!new ArrayList(Arrays.asList(Blocks.CHEST, Blocks.field29409, Blocks.field29468, Blocks.CRAFTING_TABLE, Blocks.field29417, Blocks.field29299, Blocks.BLAST_FURNACE, Blocks.field29398, Blocks.field29465, Blocks.field29466, Blocks.field29467, Blocks.field29216, Blocks.field29220, Blocks.field29316, Blocks.field29475, Blocks.field29481, Blocks.field29345, Blocks.field29471)).contains(method9899)) {
                                 if (!(method9899 instanceof Class3907)) {

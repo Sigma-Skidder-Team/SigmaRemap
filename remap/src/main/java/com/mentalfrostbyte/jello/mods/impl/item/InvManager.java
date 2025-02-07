@@ -153,7 +153,7 @@ public class InvManager extends PremiumModule
     
     public static boolean method10667(final ItemStack class8321) {
         final float method10669 = method10669(class8321);
-        final Module method10670 = Client.getInstance().method35189().method21551(InvManager.class);
+        final Module method10670 = Client.getInstance().method35189().getModuleByClass(InvManager.class);
         for (int i = 9; i < 45; ++i) {
             if (InvManager.mc.player.container.getSlot(i).method20054()) {
                 final ItemStack method10671 = InvManager.mc.player.container.getSlot(i).method20053();
@@ -252,10 +252,10 @@ public class InvManager extends PremiumModule
                     if (method27622 instanceof Class4036 && (this.method10672() > (int)this.getNumberSettingValueByName("Block Cap") || BlockFly.field15749.contains(((Class4036)method27622).method12240()))) {
                         return true;
                     }
-                    if (method27622 == Items.field31350 && Client.getInstance().method35189().method21551(AutoMLG.class).isEnabled()) {
+                    if (method27622 == Items.field31350 && Client.getInstance().method35189().getModuleByClass(AutoMLG.class).isEnabled()) {
                         return method10673(Items.field31350) > 1;
                     }
-                    if (method27622 == Items.field31349 && Client.getInstance().method35189().method21551(AutoMLG.class).isEnabled()) {
+                    if (method27622 == Items.field31349 && Client.getInstance().method35189().getModuleByClass(AutoMLG.class).isEnabled()) {
                         return method10673(Items.field31349) > 1;
                     }
                     if (method27622 instanceof Class4089 && InvManagerUtil.method29371(class8321)) {

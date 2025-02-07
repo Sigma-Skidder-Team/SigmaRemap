@@ -44,7 +44,7 @@ public class HypixelBlockFly extends Module
     }
     
     @Override
-    public void method9917() {
+    public void initialize() {
         this.field15715 = (BlockFly)this.method9914();
     }
     
@@ -87,7 +87,7 @@ public class HypixelBlockFly extends Module
     @EventListener
     public void method10208(final Class5738 class5738) {
         if (this.isEnabled()) {
-            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
+            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().method35189().getModuleByClass(Fly.class).isEnabled()) {
                 if (HypixelBlockFly.mc.world.method6981(HypixelBlockFly.mc.player, HypixelBlockFly.mc.player.boundingBox.expand(0.0, -1.5, 0.0).contract(0.05, 0.0, 0.05).contract(-0.05, 0.0, -0.05)).count() == 0L) {
                     if (HypixelBlockFly.mc.player.fallDistance < 1.0f) {
                         class5738.method17026(true);
@@ -95,7 +95,7 @@ public class HypixelBlockFly extends Module
                 }
             }
             else if (HypixelBlockFly.mc.player.onGround) {
-                if (Client.getInstance().method35189().method21551(SafeWalk.class).isEnabled()) {
+                if (Client.getInstance().method35189().getModuleByClass(SafeWalk.class).isEnabled()) {
                     class5738.method17026(true);
                 }
             }
@@ -248,7 +248,7 @@ public class HypixelBlockFly extends Module
                 if (HypixelBlockFly.mc.player.onGround && ColorUtils.method19114() && !HypixelBlockFly.mc.player.method1809() && !this.field15716) {
                     this.field15717 = false;
                     HypixelBlockFly.mc.player.method2725();
-                    ((Speed) Client.getInstance().method35189().method21551(Speed.class)).method10269();
+                    ((Speed) Client.getInstance().method35189().getModuleByClass(Speed.class)).method10269();
                     this.field15717 = true;
                     class5717.method16975(HypixelBlockFly.mc.player.getMotion().y);
                     class5717.method16973(HypixelBlockFly.mc.player.getMotion().x);

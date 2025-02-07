@@ -85,7 +85,7 @@ public class Class4937 extends Class4800
     }
     
     public void method14862(final Class4800 class4800) {
-        Client.getInstance().method35193().method32156(class4800);
+        Client.getInstance().getGuimanager().method32156(class4800);
         this.method14863();
     }
     

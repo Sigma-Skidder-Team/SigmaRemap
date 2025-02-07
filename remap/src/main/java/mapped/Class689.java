@@ -68,13 +68,13 @@ public class Class689 extends AbstractGui
     
     public void method3828() {
         this.field3792.method5327().startSection("debug");
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         final Entity method5303 = this.field3792.method5303();
         this.field3794 = method5303.method1748(20.0, 0.0f, false);
         this.field3795 = method5303.method1748(20.0, 0.0f, true);
         this.method3829();
         this.method3830();
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         if (this.field3792.gameSettings.field23468) {
             final int method5304 = this.field3792.method5332().method7696();
             this.method3839(this.field3792.method5310(), 0, method5304 / 2, true);
@@ -443,7 +443,7 @@ public class Class689 extends AbstractGui
     
     private void method3839(final Class9462 class9462, int max, int n, final boolean b) {
         if (!b) {
-            max = Math.max(max, (int)(512.0 / this.field3792.method5332().method7700()));
+            max = Math.max(max, (int)(512.0 / this.field3792.method5332().getGuiScaleFactor()));
             n = this.field3792.method5332().method7696() - max;
             RenderSystem.disableDepthTest();
             final int method35169 = class9462.method35169();

@@ -21,7 +21,7 @@ public class Class8707
     public static int field36593;
     
     public void method29895() {
-        Client.getInstance().method35188().method21094(this);
+        Client.getInstance().getEventBus().method21094(this);
     }
     
     public static void method29896(final int a, final int a2, final int n, final int n2) {
@@ -41,7 +41,7 @@ public class Class8707
     @EventListener
     @Class6755
     public void method29898(final Class5739 class5739) {
-        if (Client.getInstance().method35193().method32146() && Class8707.field36590 < Class8707.field36592 && Class8707.field36591 < Class8707.field36593) {
+        if (Client.getInstance().getGuimanager().method32146() && Class8707.field36590 < Class8707.field36592 && Class8707.field36591 < Class8707.field36593) {
             if (Class8707.field36588 == null) {
                 try {
                     (Class8707.field36587 = new Class1884(Class8707.field36586.method5290(), new Class6584(), Class8707.field36586.method5234(), new ResourceLocation("jelloblur"))).method7246(Class8707.field36586.field4667.field24886, Class8707.field36586.field4667.field24887);
@@ -67,11 +67,11 @@ public class Class8707
             RenderSystem.method30056(256, Minecraft.field4623);
             RenderSystem.method30057(5889);
             RenderSystem.method30058();
-            RenderSystem.method30061(0.0, Class8707.field36586.field4632.method7692() / Class8707.field36586.field4632.method7700(), Class8707.field36586.field4632.method7693() / Class8707.field36586.field4632.method7700(), 0.0, 1000.0, 3000.0);
+            RenderSystem.method30061(0.0, Class8707.field36586.window.method7692() / Class8707.field36586.window.getGuiScaleFactor(), Class8707.field36586.window.method7693() / Class8707.field36586.window.getGuiScaleFactor(), 0.0, 1000.0, 3000.0);
             RenderSystem.method30057(5888);
             RenderSystem.method30058();
-            RenderSystem.method30065(0.0f, 0.0f, -2000.0f);
-            GL11.glScaled(1.0 / Class8707.field36586.field4632.method7700() * Class9000.field37993, 1.0 / Class8707.field36586.field4632.method7700() * Class9000.field37993, 1.0);
+            RenderSystem.translatef(0.0f, 0.0f, -2000.0f);
+            GL11.glScaled(1.0 / Class8707.field36586.window.getGuiScaleFactor() * Class9000.field37993, 1.0 / Class8707.field36586.window.getGuiScaleFactor() * Class9000.field37993, 1.0);
             final int n = 35;
             RenderUtil.method26870(Class8707.field36590, Class8707.field36591 - n, Class8707.field36592, Class8707.field36593 + n);
             Class8707.field36587.method7247(Class8707.field36586.timer.field26528);
@@ -95,11 +95,11 @@ public class Class8707
             RenderSystem.method30056(256, Minecraft.field4623);
             RenderSystem.method30057(5889);
             RenderSystem.method30058();
-            RenderSystem.method30061(0.0, Class8707.field36586.field4632.method7692() / Class8707.field36586.field4632.method7700(), Class8707.field36586.field4632.method7693() / Class8707.field36586.field4632.method7700(), 0.0, 1000.0, 3000.0);
+            RenderSystem.method30061(0.0, Class8707.field36586.window.method7692() / Class8707.field36586.window.getGuiScaleFactor(), Class8707.field36586.window.method7693() / Class8707.field36586.window.getGuiScaleFactor(), 0.0, 1000.0, 3000.0);
             RenderSystem.method30057(5888);
             RenderSystem.method30058();
-            RenderSystem.method30065(0.0f, 0.0f, -2000.0f);
-            GL11.glScaled(1.0 / Class8707.field36586.field4632.method7700() * Class9000.field37993, 1.0 / Class8707.field36586.field4632.method7700() * Class9000.field37993, 1.0);
+            RenderSystem.translatef(0.0f, 0.0f, -2000.0f);
+            GL11.glScaled(1.0 / Class8707.field36586.window.getGuiScaleFactor() * Class9000.field37993, 1.0 / Class8707.field36586.window.getGuiScaleFactor() * Class9000.field37993, 1.0);
             Class8707.field36586.field4667.method18395(true);
         }
     }

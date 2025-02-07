@@ -18,7 +18,7 @@ public class Class1490 implements Runnable
     @Override
     public void run() {
         while (!Thread.interrupted()) {
-            if (Client.getInstance().method35209() == Class2209.field13463) {
+            if (Client.getInstance().method35209() == ClientMode.INDETERMINATE) {
                 try {
                     Thread.sleep(200L);
                     continue;

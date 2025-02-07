@@ -1199,14 +1199,14 @@ public class Class1656 implements AutoCloseable, Class1657
                 this.method5727(class7351, method6805.method25214(Class6332.method18791()), class7352.method18166(), method6798, method6799, method6800, method6815, method6816);
             }
         }
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.method30067(class7351.getLast().getMatrix());
         final boolean method6817 = Class8933.method31670();
         Class8933.method31585();
         this.field9288.field4645.method22332(class7351, method6805, method6798, method6799, method6800);
         Class8933.method31671(method6817);
         this.method5725(class7352);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         method6805.method25217(Class8752.method30265());
         method6805.method25217(Class8752.method30257());
         method6805.method25217(Class8752.method30258());
@@ -1240,7 +1240,7 @@ public class Class1656 implements AutoCloseable, Class1657
             Class9216.method33852();
         }
         Class8933.method31687(true);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.method30067(class7351.getLast().getMatrix());
         method6796.method15300("cloudsLayers");
         if (this.field9288.gameSettings.method17128() != Class2202.field13405) {
@@ -1264,7 +1264,7 @@ public class Class1656 implements AutoCloseable, Class1657
         RenderSystem.shadeModel(7424);
         RenderSystem.method30010(true);
         RenderSystem.disableBlend();
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         Class9111.method32953();
     }
     
@@ -1365,7 +1365,7 @@ public class Class1656 implements AutoCloseable, Class1657
             RenderSystem.disableTexture();
             for (final Class9071 class6093 : this.field9294) {
                 final Class8974 field38417 = class6093.field38417;
-                RenderSystem.method30059();
+                RenderSystem.pushMatrix();
                 final BlockPos method22699 = field38417.method31873();
                 RenderSystem.method30066(method22699.getX() - method22696, method22699.getY() - method22697, method22699.getZ() - method22698);
                 if (this.field9288.field4708) {
@@ -1427,7 +1427,7 @@ public class Class1656 implements AutoCloseable, Class1657
                         method22694.draw();
                     }
                 }
-                RenderSystem.method30060();
+                RenderSystem.popMatrix();
             }
             RenderSystem.method30010(true);
             RenderSystem.disableBlend();
@@ -1440,8 +1440,8 @@ public class Class1656 implements AutoCloseable, Class1657
             RenderSystem.enableBlend();
             RenderSystem.defaultBlendFunc();
             RenderSystem.method30072(10.0f);
-            RenderSystem.method30059();
-            RenderSystem.method30065((float)(this.field9334.field28226 - class6092.method18161().x), (float)(this.field9334.field28227 - class6092.method18161().y), (float)(this.field9334.field28228 - class6092.method18161().z));
+            RenderSystem.pushMatrix();
+            RenderSystem.translatef((float)(this.field9334.field28226 - class6092.method18161().x), (float)(this.field9334.field28227 - class6092.method18161().y), (float)(this.field9334.field28228 - class6092.method18161().z));
             RenderSystem.method30010(true);
             method22695.begin(7, DefaultVertexFormats.POSITION_COLOR);
             this.method5717(method22695, 0, 1, 2, 3, 0, 1, 1);
@@ -1479,7 +1479,7 @@ public class Class1656 implements AutoCloseable, Class1657
             this.method5716(method22695, 3);
             this.method5716(method22695, 7);
             method22694.draw();
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
             RenderSystem.method30010(true);
             RenderSystem.disableBlend();
             RenderSystem.method30028();
@@ -1976,7 +1976,7 @@ public class Class1656 implements AutoCloseable, Class1657
             RenderSystem.method30015(Class2050.field11693, Class2135.field12455, Class2050.field11686, Class2135.field12464);
             this.field9289.method5849(Class1656.field9284);
             RenderSystem.method30010(false);
-            RenderSystem.method30059();
+            RenderSystem.pushMatrix();
             final int method22698 = method22697.method34785().method8217();
             RenderSystem.method30068((method22698 >> 16 & 0xFF) / 255.0f, (method22698 >> 8 & 0xFF) / 255.0f, (method22698 & 0xFF) / 255.0f, (float)pow);
             RenderSystem.method30035(-3.0f, -3.0f);
@@ -2043,7 +2043,7 @@ public class Class1656 implements AutoCloseable, Class1657
             RenderSystem.enableAlphaTest();
             RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
             RenderSystem.disableBlend();
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
             RenderSystem.method30010(true);
         }
     }

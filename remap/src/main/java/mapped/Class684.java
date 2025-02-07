@@ -49,8 +49,8 @@ public class Class684 extends AbstractGui
                 }
                 final double method3774 = this.method3774();
                 int method3775 = MathHelper.ceil(this.method3772() / method3774);
-                RenderSystem.method30059();
-                RenderSystem.method30065(2.0f, 8.0f, 0.0f);
+                RenderSystem.pushMatrix();
+                RenderSystem.translatef(2.0f, 8.0f, 0.0f);
                 RenderSystem.method30064(method3774, method3774, 1.0);
                 final double n2 = this.field3742.gameSettings.field23390 * 0.8999999761581421 + 0.10000000149011612;
                 final double field23391 = this.field3742.gameSettings.field23391;
@@ -89,7 +89,7 @@ public class Class684 extends AbstractGui
                 }
                 if (b) {
                     final int n10 = 9;
-                    RenderSystem.method30065(-3.0f, 0.0f, 0.0f);
+                    RenderSystem.translatef(-3.0f, 0.0f, 0.0f);
                     final int n11 = size * n10 + size;
                     final int n12 = n3 * n10 + n3;
                     final int n13 = this.field3746 * n12 / size;
@@ -100,7 +100,7 @@ public class Class684 extends AbstractGui
                         AbstractGui.fill(2, -n13, 1, -n13 - n14, 13421772 + (n15 << 24));
                     }
                 }
-                RenderSystem.method30060();
+                RenderSystem.popMatrix();
             }
         }
     }
@@ -259,7 +259,7 @@ public class Class684 extends AbstractGui
     public int method3772() {
         final int method3775 = method3775(this.field3742.gameSettings.field23402);
         final Class1925 method3776 = Minecraft.method5277().method5332();
-        return MathHelper.method35651(method3775, 0, (int)((method3776.method7692() - 3) / method3776.method7700()));
+        return MathHelper.method35651(method3775, 0, (int)((method3776.method7692() - 3) / method3776.getGuiScaleFactor()));
     }
     
     public int method3773() {

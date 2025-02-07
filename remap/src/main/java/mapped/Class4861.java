@@ -24,7 +24,7 @@ public class Class4861 extends Class4841
         super.method14200(n, n2);
         this.field20818.changeDirection(this.method14308() ? Direction.BACKWARDS : Direction.FORWARDS);
         if (this.method14308()) {
-            Client.getInstance().method35193().method32133(Class9000.field37990);
+            Client.getInstance().getGuimanager().method32133(Class9000.field37990);
         }
     }
     

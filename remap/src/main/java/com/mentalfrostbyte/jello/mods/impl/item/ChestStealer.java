@@ -268,10 +268,10 @@ public class ChestStealer extends Module
         if (method27622 instanceof Class4036) {
             return !BlockFly.method10279(method27622);
         }
-        if (method27622 instanceof Class3824 || (method27622 instanceof Class4087 && Client.getInstance().method35189().method21551(InvManager.class).method9883("Archery"))) {
+        if (method27622 instanceof Class3824 || (method27622 instanceof Class4087 && Client.getInstance().method35189().getModuleByClass(InvManager.class).method9883("Archery"))) {
             return true;
         }
-        if (method27622 == Items.field31350 && Client.getInstance().method35189().method21551(AutoMLG.class).isEnabled()) {
+        if (method27622 == Items.field31350 && Client.getInstance().method35189().getModuleByClass(AutoMLG.class).isEnabled()) {
             return false;
         }
         final ArrayList list = new ArrayList((Collection<? extends E>)Arrays.asList(Items.field31375, Items.field31307, Items.field31337, Items.field31374, Items.field31306, Items.field31299, Items.field30896, Items.field31349, Items.field31351, Items.field31350, Items.field30929, Items.field31534, Items.field31510, Items.field31426, Items.field31019, Items.field30900, Items.field31576, Items.field31430, Items.field31429, Items.field31314, Items.field31357, Items.field31442, Items.field30835, Items.field31355, Items.field31376));

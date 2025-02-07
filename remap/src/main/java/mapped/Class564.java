@@ -115,8 +115,8 @@ public class Class564 extends AbstractGui implements IRenderable, IGuiEventListe
             RenderSystem.enableBlend();
             RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             this.field3356.method5290().method5849(Class564.field3351);
-            RenderSystem.method30059();
-            RenderSystem.method30065(0.0f, 0.0f, 170.0f);
+            RenderSystem.pushMatrix();
+            RenderSystem.translatef(0.0f, 0.0f, 170.0f);
             final int b = (this.field3352.size() > 16) ? 5 : 4;
             this.method3284(Math.min(this.field3352.size(), b), MathHelper.ceil(this.field3352.size() / (float)b), 24, 4, 82, 208);
             RenderSystem.disableBlend();
@@ -124,7 +124,7 @@ public class Class564 extends AbstractGui implements IRenderable, IGuiEventListe
             while (iterator.hasNext()) {
                 iterator.next().render(n, n2, n3);
             }
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
         }
     }
     

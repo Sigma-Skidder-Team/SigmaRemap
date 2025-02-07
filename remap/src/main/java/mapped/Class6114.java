@@ -48,7 +48,7 @@ public class Class6114 implements Class6113
     }
     
     public static void method18272(final Class9468 class9468, final float n, final boolean b, final boolean b2, final double n2, final double n3, final double n4) {
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
         RenderSystem.method30068(0.0f, 1.0f, 0.0f, 0.75f);
@@ -57,7 +57,7 @@ public class Class6114 implements Class6113
         method18273(class9468, n, b, b2, n2, n3, n4);
         RenderSystem.enableTexture();
         RenderSystem.disableBlend();
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
     }
     
     private static void method18273(final Class9468 class9468, final float n, final boolean b, final boolean b2, final double n2, final double n3, final double n4) {

@@ -37,15 +37,15 @@ public class Class8088
     }
     
     public void method26554() {
-        Client.getInstance().method35188().method21094(this);
+        Client.getInstance().getEventBus().method21094(this);
     }
     
     public void method26555() {
         this.field33314.clear();
         this.field33315 = -999.0f;
         this.field33316 = -999.0f;
-        Client.getInstance().method35189().method21551(BlockFly.class).method9907(false);
-        Client.getInstance().method35189().method21551(Fly.class).method9907(false);
+        Client.getInstance().method35189().getModuleByClass(BlockFly.class).method9907(false);
+        Client.getInstance().method35189().getModuleByClass(Fly.class).method9907(false);
     }
     
     public void method26556(final List<Class8733> field33314) {
@@ -165,16 +165,16 @@ public class Class8088
             }
         }
         this.field33313.player.rotationYaw = field33316;
-        if (b4 && !this.field33313.player.onGround && !Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
+        if (b4 && !this.field33313.player.onGround && !Client.getInstance().method35189().getModuleByClass(Fly.class).isEnabled()) {
             ColorUtils.method19154(0.0);
             ColorUtils.method19156(0.0);
             return;
         }
-        if (Client.getInstance().method35189().method21551(Fly.class).isEnabled() && !ColorUtils.method19160(this.field33313.player, 5.0f)) {
+        if (Client.getInstance().method35189().getModuleByClass(Fly.class).isEnabled() && !ColorUtils.method19160(this.field33313.player, 5.0f)) {
             b4 = true;
         }
-        Client.getInstance().method35189().method21551(BlockFly.class).method9907(b3);
-        Client.getInstance().method35189().method21551(Fly.class).method9907(b4);
+        Client.getInstance().method35189().getModuleByClass(BlockFly.class).method9907(b3);
+        Client.getInstance().method35189().getModuleByClass(Fly.class).method9907(b4);
         if (b && equals) {
             ColorUtils.method19154(0.0);
             ColorUtils.method19156(0.0);
@@ -256,7 +256,7 @@ public class Class8088
                 final float[] method1131 = Class4609.method13672(this.field33317, Class4609.method13710(this.field33317));
                 updateWalkingEvent.method17043(method1131[0]);
                 updateWalkingEvent.method17041(method1131[1]);
-                Client.getInstance().method35188().method21097(new Class5752(0, false, this.field33317));
+                Client.getInstance().getEventBus().method21097(new Class5752(0, false, this.field33317));
             }
             if (class5745.field36691 != Class2049.field11679) {
                 this.field33316 = updateWalkingEvent.method17040();

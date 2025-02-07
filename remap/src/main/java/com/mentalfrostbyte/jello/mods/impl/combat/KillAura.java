@@ -86,10 +86,10 @@ public class KillAura extends Module
     }
     
     @Override
-    public void method9917() {
+    public void initialize() {
         this.field16062 = new ArrayList<Class8131>();
         this.field16050 = new Class8866(this);
-        super.method9917();
+        super.initialize();
     }
     
     @Override
@@ -198,7 +198,7 @@ public class KillAura extends Module
             if (this.field16062 != null) {
                 if (!this.field16062.isEmpty()) {
                     final float method9886 = this.getNumberSettingValueByName("Hit box expand");
-                    final ModuleWithSettings class5745 = (ModuleWithSettings) Client.getInstance().method35189().method21551(Criticals.class);
+                    final ModuleWithSettings class5745 = (ModuleWithSettings) Client.getInstance().method35189().getModuleByClass(Criticals.class);
                     if (class5745.isEnabled()) {
                         if (class5745.getStringSettingValueByName("Type").equalsIgnoreCase("Minis")) {
                             this.method10751(updateWalkingEvent, class5745.method10260().method9883("Hypixel"), class5745.method10260().method9883("Avoid Fall Damage"));
@@ -243,7 +243,7 @@ public class KillAura extends Module
                         n2 = 0;
                     }
                     int n3 = n2;
-                    final ModuleWithSettings class5746 = (ModuleWithSettings) Client.getInstance().method35189().method21551(Fly.class);
+                    final ModuleWithSettings class5746 = (ModuleWithSettings) Client.getInstance().method35189().getModuleByClass(Fly.class);
                     if (class5746.isEnabled()) {
                         if (class5746.getStringSettingValueByName("Type").equals("Hypixel")) {
                             if (ColorUtils.method19146()) {
@@ -514,7 +514,7 @@ public class KillAura extends Module
         final boolean b5 = !Jesus.method10433() && (KillAura.mc.player.onGround || ColorUtils.method19160(KillAura.mc.player, 0.001f));
         if (b5) {
             ++this.field16053;
-            if (!Client.getInstance().method35189().method21551(Speed.class).isEnabled() || Client.getInstance().method35189().method21551(Speed.class).getStringSettingValueByName("Type").equalsIgnoreCase("Cubecraft")) {
+            if (!Client.getInstance().method35189().getModuleByClass(Speed.class).isEnabled() || Client.getInstance().method35189().getModuleByClass(Speed.class).getStringSettingValueByName("Type").equalsIgnoreCase("Cubecraft")) {
                 if (KillAura.mc.player.collidedVertically) {
                     if (b5) {
                         if (!KillAura.mc.player.field2967) {

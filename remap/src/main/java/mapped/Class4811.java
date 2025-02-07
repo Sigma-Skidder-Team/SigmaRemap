@@ -77,7 +77,7 @@ public class Class4811 extends Class4803
         });
         this.field20577.method14260((class4803, n) -> {
             if (this.field20580++ > 8) {
-                Client.getInstance().method35193().method32156(new Class4928());
+                Client.getInstance().getGuimanager().method32156(new Class4928());
             }
         });
     }
@@ -117,7 +117,7 @@ public class Class4811 extends Class4803
     }
     
     public void method14351(final Class4800 class4800) {
-        Client.getInstance().method35193().method32156(class4800);
+        Client.getInstance().getGuimanager().method32156(class4800);
         this.method14349();
     }
     

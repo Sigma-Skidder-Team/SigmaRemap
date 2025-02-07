@@ -30,7 +30,7 @@ public class Class6496
             list.add(class7966);
             return;
         }
-        Client.getInstance().method35187().method20241("Registered the same method of the same instance twice. Was this intended?");
+        Client.getInstance().getLogger().warn("Registered the same method of the same instance twice. Was this intended?");
     }
     
     public void method19538(final Object o) {

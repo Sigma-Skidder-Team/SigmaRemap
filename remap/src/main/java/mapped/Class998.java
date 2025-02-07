@@ -17,8 +17,8 @@ public class Class998 implements Runnable
     @Override
     public void run() {
         int n = 75;
-        for (int i = 0; i < this.field5328.method462(); ++i) {
-            final JSONObject method457 = this.field5328.method457(i);
+        for (int i = 0; i < this.field5328.length(); ++i) {
+            final JSONObject method457 = this.field5328.getJSONObject(i);
             if (method457.has("url")) {
                 Util.method27845().method980(method457.getString("url"));
             }

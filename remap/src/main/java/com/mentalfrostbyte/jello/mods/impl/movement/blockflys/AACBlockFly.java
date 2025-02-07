@@ -84,7 +84,7 @@ public class AACBlockFly extends Module
     public void method10100(final Class5738 class5738) {
         if (this.isEnabled()) {
             if (AACBlockFly.mc.player.onGround) {
-                if (Client.getInstance().method35189().method21551(SafeWalk.class).isEnabled()) {
+                if (Client.getInstance().method35189().getModuleByClass(SafeWalk.class).isEnabled()) {
                     class5738.method17026(true);
                 }
             }

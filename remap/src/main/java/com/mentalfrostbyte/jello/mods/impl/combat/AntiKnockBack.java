@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.mods.impl.combat.antiknockbacks.AACAntiKnockBac
 import com.mentalfrostbyte.jello.mods.impl.combat.antiknockbacks.BasicAntiKnockBack;
 import com.mentalfrostbyte.jello.mods.impl.combat.antiknockbacks.DelayAntiKnockBack;
 import com.mentalfrostbyte.jello.mods.impl.combat.antiknockbacks.SpartanAntiKnockBack;
-import mapped.Class2209;
+import mapped.ClientMode;
 
 public class AntiKnockBack extends ModuleWithSettings
 {
@@ -21,9 +21,9 @@ public class AntiKnockBack extends ModuleWithSettings
     }
     
     @Override
-    public String getName2() {
-        if (Client.getInstance().method35209() != Class2209.field13465) {
-            return super.getName2();
+    public String getFormattedName() {
+        if (Client.getInstance().method35209() != ClientMode.CLASSIC) {
+            return super.getFormattedName();
         }
         return "AntiVelocity";
     }

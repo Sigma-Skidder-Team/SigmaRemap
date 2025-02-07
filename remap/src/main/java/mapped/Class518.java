@@ -95,8 +95,8 @@ public class Class518 extends Class517<Class3427> implements Class519
     public static void method2999(final int n, final int n2, final int n3, final float n4, final float n5, final LivingEntity class511) {
         final float n6 = (float)Math.atan(n4 / 40.0f);
         final float n7 = (float)Math.atan(n5 / 40.0f);
-        RenderSystem.method30059();
-        RenderSystem.method30065((float)n, (float)n2, 1050.0f);
+        RenderSystem.pushMatrix();
+        RenderSystem.translatef((float)n, (float)n2, 1050.0f);
         RenderSystem.method30063(1.0f, 1.0f, -1.0f);
         final MatrixStack class512 = new MatrixStack();
         class512.method22564(0.0, 0.0, 1000.0);
@@ -128,7 +128,7 @@ public class Class518 extends Class517<Class3427> implements Class519
         class511.rotationPitch = field2953;
         class511.field2954 = field2954;
         class511.field2953 = field2955;
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
     }
     
     @Override

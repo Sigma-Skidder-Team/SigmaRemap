@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
 import mapped.JSONObject;
-import mapped.Class8105;
+import mapped.CJsonUtils;
 import mapped.Class8531;
 
 public class BezierSetting extends Setting<Class8531> {
@@ -17,7 +17,7 @@ public class BezierSetting extends Setting<Class8531> {
 
     @Override
     public JSONObject method15186(final JSONObject JSONObject) {
-        this.currentValue = new Class8531(Class8105.method26638(JSONObject, "value"));
+        this.currentValue = new Class8531(CJsonUtils.getJSONArrayOrNull(JSONObject, "value"));
         return JSONObject;
     }
 

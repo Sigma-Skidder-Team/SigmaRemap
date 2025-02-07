@@ -10,7 +10,7 @@ import com.mentalfrostbyte.Client;
 import org.apache.commons.io.IOUtils;
 import java.io.OutputStream;
 
-public class Class6657 implements Class6658
+public class Class6657 implements Logger
 {
     public OutputStream field26313;
     
@@ -22,7 +22,7 @@ public class Class6657 implements Class6658
     }
     
     @Override
-    public void method20240(final String str) {
+    public void info(final String str) {
         try {
             IOUtils.write("Jello: INFO - " + str + "\n", this.field26313);
         }
@@ -32,7 +32,7 @@ public class Class6657 implements Class6658
     }
     
     @Override
-    public void method20241(final String str) {
+    public void warn(final String str) {
         try {
             IOUtils.write("Jello: WARNING - " + str + "\n", this.field26313);
         }
@@ -42,7 +42,7 @@ public class Class6657 implements Class6658
     }
     
     @Override
-    public void method20242(final String str) {
+    public void error(final String str) {
         try {
             IOUtils.write("Jello: ERROR - " + str + "\n", this.field26313);
         }
@@ -52,7 +52,7 @@ public class Class6657 implements Class6658
     }
     
     @Override
-    public void method20243(final String s) {
+    public void setThreadName(final String s) {
         Client.getInstance();
     }
 }

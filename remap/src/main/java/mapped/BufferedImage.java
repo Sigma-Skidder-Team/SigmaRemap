@@ -94,7 +94,7 @@ public class BufferedImage
         n3 *= (int)Class9000.field37993;
         n4 *= (int)Class9000.field37993;
         n5 *= (int)Class9000.field37993;
-        n2 = Minecraft.method5277().field4632.method7693() - n2 - n4;
+        n2 = Minecraft.method5277().window.method7693() - n2 - n4;
         if (n5 <= 0) {
             n5 = 1;
         }

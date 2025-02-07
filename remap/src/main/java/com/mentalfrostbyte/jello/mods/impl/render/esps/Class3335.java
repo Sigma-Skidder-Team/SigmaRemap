@@ -44,12 +44,12 @@ public class Class3335 extends Module
         }
         final boolean method9883 = this.method9914().method9883("Show Invisibles");
         final boolean method9884 = this.method9883("Show Health");
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         for (final Entity class5735 : Class3335.field15934.keySet()) {
             final double[] array = Class3335.field15934.get(class5735);
             final double[] array2 = Class3335.field15935.get(class5735);
             if (array[3] > 0.0 || array[3] <= 1.0) {
-                RenderSystem.method30059();
+                RenderSystem.pushMatrix();
                 if ((method9883 || !class5735.method1823()) && class5735 instanceof PlayerEntity && !(class5735 instanceof ClientPlayerEntity)) {
                     this.method10557(class5735);
                     try {
@@ -62,9 +62,9 @@ public class Class3335 extends Module
                             n5 = n4;
                             n4 = (float)array2[0] + n3 / 4.0f;
                         }
-                        RenderSystem.method30059();
+                        RenderSystem.pushMatrix();
                         RenderSystem.method30063(2.0f, 2.0f, 2.0f);
-                        RenderSystem.method30060();
+                        RenderSystem.popMatrix();
                         GL11.glEnable(3042);
                         GL11.glDisable(3553);
                         int n6 = -65536;
@@ -78,21 +78,21 @@ public class Class3335 extends Module
                         final float method9885 = ((PlayerEntity)class5735).method2664();
                         RenderUtil.method26876(n4 - 4.0f, n2 - 1.0f, n4 - 2.0f, n2 + (n - n2) * (method9885 * 5.0f * 0.01f), method10553(new float[] { 0.0f, 0.5f, 1.0f }, new Color[] { Color.RED, Color.YELLOW, Color.GREEN }, method9885 * 5.0f * 0.01f).brighter().getRGB());
                         if ((int)Class6029.method17958(method9885 * 5.0f, 1.0) != 100 && method9884) {
-                            RenderSystem.method30059();
+                            RenderSystem.pushMatrix();
                             RenderSystem.method30063(2.0f, 2.0f, 2.0f);
                             new StringBuilder().append((int)Class6029.method17958(method9885 * 5.0f, 1.0)).append("HP").toString();
-                            RenderSystem.method30060();
+                            RenderSystem.popMatrix();
                         }
                     }
                     catch (final Exception ex) {}
                 }
-                RenderSystem.method30060();
+                RenderSystem.popMatrix();
                 GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
             }
         }
         GL11.glScalef(1.0f, 1.0f, 1.0f);
         GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
     }
     
     public static Color method10553(final float[] array, final Color[] array2, final float n) {

@@ -28,7 +28,7 @@ public class Class4907 extends Class4841
     private final List<Class8214> field20995;
     
     public Class4907(final Class4803 class4803, final String s, final boolean field20991, final String field20992, final Class7976... array) {
-        super(class4803, s, 0, 0, Minecraft.method5277().field4632.method7694(), Minecraft.method5277().field4632.method7695(), false);
+        super(class4803, s, 0, 0, Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7695(), false);
         this.field20990 = new Class9572(285, 100);
         this.field20992 = 240;
         this.field20993 = 0;
@@ -215,7 +215,7 @@ public class Class4907 extends Class4841
                 this.field20989 = Class9399.method34928("blur", BufferedImage.method20830(0, 0, this.method14276(), this.method14278(), 5, 10, ClientColors.LIGHT_GREYISH_BLUE.color, true));
             }
             catch (final IOException ex) {
-                Client.getInstance().method35187().method20242(ex.getMessage());
+                Client.getInstance().getLogger().error(ex.getMessage());
             }
         }
         if (this.isHovered() != b && !b) {

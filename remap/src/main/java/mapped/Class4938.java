@@ -50,11 +50,11 @@ public class Class4938 extends Class4800
                 }
             }).start();
         });
-        this.field21202.method14260((class4803, n) -> Client.getInstance().method35193().method32156(new Class4936()));
+        this.field21202.method14260((class4803, n) -> Client.getInstance().getGuimanager().method32156(new Class4936()));
         this.field21203.method14260((class4803, n) -> {
             String glfwGetClipboardString = "";
             try {
-                glfwGetClipboardString = GLFW.glfwGetClipboardString(Minecraft.method5277().field4632.method7690());
+                glfwGetClipboardString = GLFW.glfwGetClipboardString(Minecraft.method5277().window.getHandle());
             }
             catch (final Exception ex) {}
             if (glfwGetClipboardString != "" && glfwGetClipboardString.contains(":")) {
@@ -81,7 +81,7 @@ public class Class4938 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Client.getInstance().method35193().method32156(new Class4936());
+            Client.getInstance().getGuimanager().method32156(new Class4936());
         }
     }
 }

@@ -402,7 +402,7 @@ public class Class1660 implements AutoCloseable, Class1657
             }
             this.field9396.method1417();
             final Class5746 class7353 = new Class5746();
-            Client.getInstance().method35188().method21097(class7353);
+            Client.getInstance().getEventBus().method21097(class7353);
             if (this.field9380.gameSettings.field23465 == 0) {
                 if (!b4) {
                     if (!class7353.isCancelled()) {
@@ -465,7 +465,7 @@ public class Class1660 implements AutoCloseable, Class1657
             final MatrixStack class7351 = new MatrixStack();
             if (b && this.field9380.world != null && !Config.method29020()) {
                 this.field9380.method5327().startSection("level");
-                Client.getInstance().method35188().method21097(new Class5741(n, n2));
+                Client.getInstance().getEventBus().method21097(new Class5741(n, n2));
                 this.method5820(n, n2, class7351);
                 if (this.field9380.method5284() && this.field9394 < Util.method27837() - 1000L) {
                     this.field9394 = Util.method27837();
@@ -480,10 +480,10 @@ public class Class1660 implements AutoCloseable, Class1657
                     RenderSystem.disableAlphaTest();
                     RenderSystem.enableTexture();
                     RenderSystem.method30057(5890);
-                    RenderSystem.method30059();
+                    RenderSystem.pushMatrix();
                     RenderSystem.method30058();
                     this.field9406.method7247(n);
-                    RenderSystem.method30060();
+                    RenderSystem.popMatrix();
                 }
                 this.field9380.method5234().method18395(true);
             }
@@ -494,10 +494,10 @@ public class Class1660 implements AutoCloseable, Class1657
             RenderSystem.method30056(256, Minecraft.field4623);
             RenderSystem.method30057(5889);
             RenderSystem.method30058();
-            RenderSystem.method30061(0.0, method5332.method7692() / method5332.method7700(), method5332.method7693() / method5332.method7700(), 0.0, 1000.0, 3000.0);
+            RenderSystem.method30061(0.0, method5332.method7692() / method5332.getGuiScaleFactor(), method5332.method7693() / method5332.getGuiScaleFactor(), 0.0, 1000.0, 3000.0);
             RenderSystem.method30057(5888);
             RenderSystem.method30058();
-            RenderSystem.method30065(0.0f, 0.0f, -2000.0f);
+            RenderSystem.translatef(0.0f, 0.0f, -2000.0f);
             Class8317.method27612();
             if (this.field9396.method1429()) {
                 this.field9396.method1428(false);
@@ -513,15 +513,15 @@ public class Class1660 implements AutoCloseable, Class1657
                         Config.method28988();
                     }
                     if (this.field9380.gameSettings.field23466) {
-                        Class9036.method32480((int)this.field9380.method5332().method7700());
+                        Class9036.method32480((int)this.field9380.method5332().getGuiScaleFactor());
                     }
                     RenderSystem.method30056(256, Minecraft.field4623);
                 }
                 this.field9380.method5327().endSection();
             }
-            RenderSystem.method30059();
+            RenderSystem.pushMatrix();
             Client.getInstance().method35183();
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
             if (this.field9422 != (this.field9380.field4701 != null)) {
                 if (this.field9380.field4701 != null) {
                     this.field9380.method5290().method5858(Config.field36042);
@@ -543,7 +543,7 @@ public class Class1660 implements AutoCloseable, Class1657
                         throw new ReportedException(method5333);
                     }
                 }
-                if (this.field9380.currentScreen != null && Client.getInstance().method35193().method32154() == null) {
+                if (this.field9380.currentScreen != null && Client.getInstance().getGuimanager().method32154() == null) {
                     try {
                         if (Class9570.field41284.method22605()) {
                             Class9570.method35811(Class9570.field41284, this.field9380.currentScreen, i, j, this.field9380.method5315());
@@ -557,7 +557,7 @@ public class Class1660 implements AutoCloseable, Class1657
                         final CrashReportCategory method5335 = method5334.makeCategory("Screen render details");
                         method5335.addDetail("Screen name", () -> this.field9380.currentScreen.getClass().getCanonicalName());
                         method5335.addDetail("Mouse location", () -> String.format(Locale.ROOT, "Scaled: (%d, %d). Absolute: (%f, %f)", k, l, this.field9380.field4650.method26959(), this.field9380.field4650.method26960()));
-                        method5335.addDetail("Screen size", () -> String.format(Locale.ROOT, "Scaled: (%d, %d). Absolute: (%d, %d). Scale factor of %f", this.field9380.method5332().method7696(), this.field9380.method5332().method7697(), this.field9380.method5332().method7692(), this.field9380.method5332().method7693(), this.field9380.method5332().method7700()));
+                        method5335.addDetail("Screen size", () -> String.format(Locale.ROOT, "Scaled: (%d, %d). Absolute: (%d, %d). Scale factor of %f", this.field9380.method5332().method7696(), this.field9380.method5332().method7697(), this.field9380.method5332().method7692(), this.field9380.method5332().method7693(), this.field9380.method5332().getGuiScaleFactor()));
                         throw new ReportedException(method5334);
                     }
                 }
@@ -732,10 +732,10 @@ public class Class1660 implements AutoCloseable, Class1657
                     Class9216.method33817();
                 }
                 RenderSystem.method30056(256, Minecraft.field4623);
-                RenderSystem.method30059();
+                RenderSystem.pushMatrix();
                 RenderSystem.method30067(class7351.getLast().getMatrix());
                 Client.getInstance().method35184();
-                RenderSystem.method30060();
+                RenderSystem.popMatrix();
                 if (!method28955) {
                     this.method5812(class7351, field9411, n);
                 }
@@ -957,7 +957,7 @@ public class Class1660 implements AutoCloseable, Class1657
                 final float n8 = this.field9404 * (n / 4);
                 final float n9 = this.field9405 * (n2 / 4);
                 RenderSystem.enableAlphaTest();
-                RenderSystem.method30059();
+                RenderSystem.pushMatrix();
                 RenderSystem.method29995();
                 RenderSystem.enableDepthTest();
                 RenderSystem.method30029();
@@ -974,7 +974,7 @@ public class Class1660 implements AutoCloseable, Class1657
                 class7351.method22568();
                 method11006.finish();
                 RenderSystem.method29997();
-                RenderSystem.method30060();
+                RenderSystem.popMatrix();
                 RenderSystem.method30028();
                 RenderSystem.disableDepthTest();
             }

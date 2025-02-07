@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class8105
+public class CJsonUtils
 {
     private static String[] field33370;
     
@@ -80,7 +80,7 @@ public class Class8105
         }
     }
     
-    public static JSONArray method26638(final JSONObject JSONObject, final String s) {
+    public static JSONArray getJSONArrayOrNull(final JSONObject JSONObject, final String s) {
         try {
             return JSONObject.method13263(s);
         }

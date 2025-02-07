@@ -19,7 +19,7 @@ public class Class4829 extends Class4825
     private Texture field20659;
     
     public Class4829(final Class4803 class4803, final String s) {
-        super(class4803, s, 0, Minecraft.method5277().field4632.method7695() - 70, Minecraft.method5277().field4632.method7694(), 110, false);
+        super(class4803, s, 0, Minecraft.method5277().window.method7695() - 70, Minecraft.method5277().window.method7694(), 110, false);
         this.field20655 = 0.0f;
         this.field20656 = Class2118.field12348;
         this.field20658 = new ArrayList<Class4868>();
@@ -36,7 +36,7 @@ public class Class4829 extends Class4825
         super.method14200(n, n2);
         final int n3 = 20;
         if (this.field20656 == Class2118.field12348) {
-            if (Math.abs(Minecraft.method5277().field4632.method7695() - n2) < n3) {
+            if (Math.abs(Minecraft.method5277().window.method7695() - n2) < n3) {
                 if (!this.field20475.method14248(((Class4801)this.field20475).field20459)) {
                     this.field20656 = Class2118.field12346;
                 }
@@ -54,14 +54,14 @@ public class Class4829 extends Class4825
             this.field20655 = 1.0f;
             this.field20656 = Class2118.field12348;
         }
-        if (Minecraft.method5277().field4632.method7695() - n2 > this.method14278()) {
+        if (Minecraft.method5277().window.method7695() - n2 > this.method14278()) {
             this.field20656 = Class2118.field12347;
         }
         float n5 = Class7707.method24584(this.field20655, 0.0f, 1.0f, 1.0f);
         if (this.field20656 == Class2118.field12347) {
             n5 = Class7707.method24582(this.field20655, 0.0f, 1.0f, 1.0f);
         }
-        this.method14275(Minecraft.method5277().field4632.method7695() - (int)(this.method14278() * n5));
+        this.method14275(Minecraft.method5277().window.method7695() - (int)(this.method14278() * n5));
     }
     
     @Override

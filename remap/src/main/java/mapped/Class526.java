@@ -80,11 +80,11 @@ public class Class526 extends Class516<Class3433>
         final int n5 = (this.height - this.field3076) / 2;
         this.blit(n4, n5, 0, 0, this.field3075, this.field3076);
         RenderSystem.method30057(5889);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.method30058();
-        final int n6 = (int)this.minecraft.method5332().method7700();
+        final int n6 = (int)this.minecraft.method5332().getGuiScaleFactor();
         RenderSystem.method30048((this.width - 320) / 2 * n6, (this.height - 240) / 2 * n6, 320 * n6, 240 * n6);
-        RenderSystem.method30065(-0.34f, 0.23f, 0.0f);
+        RenderSystem.translatef(-0.34f, 0.23f, 0.0f);
         RenderSystem.method30067(Matrix4f.method20755(90.0, 1.3333334f, 9.0f, 80.0f));
         RenderSystem.method30057(5888);
         final MatrixStack class7351 = new MatrixStack();
@@ -124,7 +124,7 @@ public class Class526 extends Class516<Class3433>
         class7351.method22568();
         RenderSystem.method30057(5889);
         RenderSystem.method30048(0, 0, this.minecraft.method5332().method7692(), this.minecraft.method5332().method7693());
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         RenderSystem.method30057(5888);
         Class8317.method27612();
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);

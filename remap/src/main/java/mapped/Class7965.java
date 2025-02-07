@@ -75,7 +75,7 @@ public class Class7965 extends Class7966
             }
         }
         catch (final Exception ex) {
-            Client.getInstance().method35187().method20242(array[0] + "is an invalid input for variable " + this.field32734.getClass().getName() + "::" + this.field32733.getName());
+            Client.getInstance().getLogger().error(array[0] + "is an invalid input for variable " + this.field32734.getClass().getName() + "::" + this.field32733.getName());
             ex.printStackTrace();
         }
     }

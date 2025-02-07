@@ -1681,7 +1681,7 @@ public abstract class LivingEntity extends Entity
         final Vec3d method2725 = this.getMotion();
         final Class5722 class5722 = new Class5722(new Vec3d(method2725.x, method2724, method2725.z));
         if (this instanceof ClientPlayerEntity) {
-            Client.getInstance().method35188().method21097(class5722);
+            Client.getInstance().getEventBus().method21097(class5722);
         }
         if (!class5722.isCancelled()) {
             this.method1936(class5722.method16994());

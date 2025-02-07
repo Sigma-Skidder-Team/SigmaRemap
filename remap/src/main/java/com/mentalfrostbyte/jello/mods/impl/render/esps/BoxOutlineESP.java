@@ -49,7 +49,7 @@ public class BoxOutlineESP extends Module
     }
     
     private void method9933() {
-        if (Client.getInstance().method35209() == Class2209.field13464) {
+        if (Client.getInstance().method35209() == ClientMode.JELLO) {
             BoxOutlineESP.mc.world.field10072.forEach((p0, class399) -> {
                 final boolean b = ColorUtils.method19174(class399) == Class2068.field11839 && this.method9914().method9883("Show Players");
                 final boolean b2 = !class399.method1823() || this.method9914().method9883("Show Invisibles");
@@ -105,7 +105,7 @@ public class BoxOutlineESP extends Module
                 final int method9885 = this.method9885("Color");
                 final Class7644 method9886 = new Class7644(class399.getBoundingBox().offset((class399.posX - class399.lastTickPosX) * BoxOutlineESP.mc.timer.field26528 - (class399.posX - class399.lastTickPosX), (class399.posY - class399.lastTickPosY) * BoxOutlineESP.mc.timer.field26528 - (class399.posY - class399.lastTickPosY), (class399.posZ - class399.lastTickPosZ) * BoxOutlineESP.mc.timer.field26528 - (class399.posZ - class399.lastTickPosZ))).method24204(0.10000000149011612);
                 if (b) {
-                    RenderUtil.method26912(method9886, 3.0f, ColorUtils.applyAlpha(method9885, (Client.getInstance().method35209() != Class2209.field13464) ? 0.8f : 0.35f));
+                    RenderUtil.method26912(method9886, 3.0f, ColorUtils.applyAlpha(method9885, (Client.getInstance().method35209() != ClientMode.JELLO) ? 0.8f : 0.35f));
                 }
                 else {
                     RenderUtil.method26909(method9886, ClientColors.LIGHT_GREYISH_BLUE.color);

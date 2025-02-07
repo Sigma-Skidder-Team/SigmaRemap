@@ -30,7 +30,7 @@ public class BowFly extends Module
     }
     
     @Override
-    public void method9917() {
+    public void initialize() {
     }
     
     @EventListener

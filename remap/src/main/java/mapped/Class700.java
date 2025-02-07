@@ -88,7 +88,7 @@ public class Class700 extends Class698
         final Class1925 method5332 = this.minecraft.method5332();
         final int method5333 = Class9563.method35784(this.field3857);
         final int method5334 = Class9563.method35785(this.field3857);
-        GLFW.glfwSetCursorPos(method5332.method7690(), (this.field3857.field3426 + (method5333 - method5334)) * method5332.method7700(), (this.field3857.field3427 + method5334 / 2) * method5332.method7700());
+        GLFW.glfwSetCursorPos(method5332.getHandle(), (this.field3857.field3426 + (method5333 - method5334)) * method5332.getGuiScaleFactor(), (this.field3857.field3427 + method5334 / 2) * method5332.getGuiScaleFactor());
     }
     
     private void method3900(final Class673 class673, final int n) {

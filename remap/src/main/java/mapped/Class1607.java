@@ -34,8 +34,8 @@ public class Class1607 implements Runnable
                     if (Client.getInstance().method35189() == null) {
                         continue;
                     }
-                    final List<Module> list = new ArrayList(Client.getInstance().method35189().method21553().values());
-                    for (final Module class3167 : Client.getInstance().method35189().method21553().values()) {
+                    final List<Module> list = new ArrayList(Client.getInstance().method35189().getModuleMap().values());
+                    for (final Module class3167 : Client.getInstance().method35189().getModuleMap().values()) {
                         if (class3167 instanceof ModuleWithSettings) {
                             list.addAll(Arrays.asList(((ModuleWithSettings)class3167).field15742));
                         }

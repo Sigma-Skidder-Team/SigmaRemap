@@ -35,7 +35,7 @@ public class Class686 extends AbstractGui implements Class687
         }
         if (this.field3783) {
             if (!this.field3782.isEmpty()) {
-                RenderSystem.method30059();
+                RenderSystem.pushMatrix();
                 RenderSystem.enableBlend();
                 RenderSystem.defaultBlendFunc();
                 final Vec3d class5487 = new Vec3d(this.field3781.player.getPosX(), this.field3781.player.method1944(), this.field3781.player.getPosZ());
@@ -65,8 +65,8 @@ public class Class686 extends AbstractGui implements Class687
                     final int method16759 = this.field3781.fontRenderer.getStringWidth(method16757);
                     final int method16760 = MathHelper.floor(MathHelper.method35655(255.0, 75.0, (Util.method27837() - class5489.method27993()) / 3000.0f));
                     final int n7 = method16760 << 16 | method16760 << 8 | method16760;
-                    RenderSystem.method30059();
-                    RenderSystem.method30065(this.field3781.method5332().method7696() - n4 * 1.0f - 2.0f, this.field3781.method5332().method7697() - 30 - n * (n5 + 1) * 1.0f, 0.0f);
+                    RenderSystem.pushMatrix();
+                    RenderSystem.translatef(this.field3781.method5332().method7696() - n4 * 1.0f - 2.0f, this.field3781.method5332().method7697() - 30 - n * (n5 + 1) * 1.0f, 0.0f);
                     RenderSystem.method30063(1.0f, 1.0f, 1.0f);
                     AbstractGui.fill(-n4 - 1, -n6 - 1, n4 + 1, n6 + 1, this.field3781.gameSettings.method17115(0.8f));
                     RenderSystem.enableBlend();
@@ -81,11 +81,11 @@ public class Class686 extends AbstractGui implements Class687
                         }
                     }
                     this.field3781.fontRenderer.method6610(method16757, (float)(-method16759 / 2), (float)(-n6), n7 - 16777216);
-                    RenderSystem.method30060();
+                    RenderSystem.popMatrix();
                     ++n;
                 }
                 RenderSystem.disableBlend();
-                RenderSystem.method30060();
+                RenderSystem.popMatrix();
             }
         }
     }

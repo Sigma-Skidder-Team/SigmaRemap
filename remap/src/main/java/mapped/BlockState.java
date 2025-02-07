@@ -121,7 +121,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
 
     public int getLightValue() {
         final EventRenderBlocks eventRenderBlocks = new EventRenderBlocks(this);
-        Client.getInstance().method35188().method21097(eventRenderBlocks);
+        Client.getInstance().getEventBus().method21097(eventRenderBlocks);
         if (!eventRenderBlocks.method16987()) {
             return this.lightLevel;
         }

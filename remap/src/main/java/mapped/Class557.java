@@ -101,10 +101,10 @@ public class Class557 extends Screen implements Class558
     private void method3260(final int n, final int n2, final int n3, final int n4) {
         final Class572 field3340 = this.field3340;
         if (field3340 != null) {
-            RenderSystem.method30059();
-            RenderSystem.method30065((float)(n3 + 9), (float)(n4 + 18), 0.0f);
+            RenderSystem.pushMatrix();
+            RenderSystem.translatef((float)(n3 + 9), (float)(n4 + 18), 0.0f);
             field3340.method3341();
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
             RenderSystem.method30009(515);
             RenderSystem.disableDepthTest();
         }
@@ -140,12 +140,12 @@ public class Class557 extends Screen implements Class558
     private void method3262(final int n, final int n2, final int n3, final int n4) {
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         if (this.field3340 != null) {
-            RenderSystem.method30059();
+            RenderSystem.pushMatrix();
             RenderSystem.enableDepthTest();
-            RenderSystem.method30065((float)(n3 + 9), (float)(n4 + 18), 400.0f);
+            RenderSystem.translatef((float)(n3 + 9), (float)(n4 + 18), 400.0f);
             this.field3340.method3342(n - n3 - 9, n2 - n4 - 18, n3, n4);
             RenderSystem.disableDepthTest();
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
         }
         if (this.field3339.size() > 1) {
             for (final Class572 class572 : this.field3339.values()) {

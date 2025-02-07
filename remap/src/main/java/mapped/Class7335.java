@@ -235,16 +235,16 @@ public class Class7335
     }
     
     public void method22503(final long n, final int i, final int j, final int k, final int l) {
-        if (n == this.field28331.method5332().method7690()) {
-            if (Client.getInstance().method35193().method32154() != null) {
-                Client.getInstance().method35193().method32127(i, k);
+        if (n == this.field28331.method5332().getHandle()) {
+            if (Client.getInstance().getGuimanager().method32154() != null) {
+                Client.getInstance().getGuimanager().method32127(i, k);
                 return;
             }
             if (this.field28331.currentScreen != null) {
                 if (this.field28331.currentScreen instanceof ChatScreen) {
                     if (i == 258) {
                         final Class5752 class5752 = new Class5752(i, k == 2, null);
-                        Client.getInstance().method35188().method21097(class5752);
+                        Client.getInstance().getEventBus().method21097(class5752);
                         if (class5752.isCancelled()) {
                             return;
                         }
@@ -259,14 +259,14 @@ public class Class7335
             else {
                 Class8004.method26199(i);
                 final Class5752 class5753 = new Class5752(i, k == 2, null);
-                Client.getInstance().method35188().method21097(class5753);
+                Client.getInstance().getEventBus().method21097(class5753);
                 if (class5753.isCancelled()) {
                     return;
                 }
             }
             if (this.field28334 <= 0L) {
-                if (Class8341.method27798(Minecraft.method5277().method5332().method7690(), 67)) {
-                    if (Class8341.method27798(Minecraft.method5277().method5332().method7690(), 292)) {
+                if (Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 67)) {
+                    if (Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 292)) {
                         this.field28337 = true;
                         this.field28334 = Util.method27837();
                         this.field28335 = Util.method27837();
@@ -274,7 +274,7 @@ public class Class7335
                     }
                 }
             }
-            else if (!Class8341.method27798(Minecraft.method5277().method5332().method7690(), 67) || !Class8341.method27798(Minecraft.method5277().method5332().method7690(), 292)) {
+            else if (!Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 67) || !Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 292)) {
                 this.field28334 = -1L;
             }
             final Screen field4700 = this.field28331.currentScreen;
@@ -375,9 +375,9 @@ public class Class7335
                     boolean b3 = false;
                     if (this.field28331.currentScreen == null) {
                         if (i == 256) {
-                            this.field28331.method5255(Class8341.method27798(Minecraft.method5277().method5332().method7690(), 292));
+                            this.field28331.method5255(Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 292));
                         }
-                        b3 = (Class8341.method27798(Minecraft.method5277().method5332().method7690(), 292) && this.method22499(i));
+                        b3 = (Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 292) && this.method22499(i));
                         this.field28337 |= b3;
                         if (i == 290) {
                             this.field28331.gameSettings.field23464 = !this.field28331.gameSettings.field23464;
@@ -548,7 +548,7 @@ public class Class7335
     }
     
     public String method22507() {
-        return this.field28333.method34063(this.field28331.method5332().method7690(), (n4, n5) -> {
+        return this.field28333.method34063(this.field28331.method5332().getHandle(), (n4, n5) -> {
             if (n4 != 65545) {
                 this.field28331.method5332().method7670(n4, n5);
             }
@@ -556,7 +556,7 @@ public class Class7335
     }
     
     public void method22508(final String s) {
-        this.field28333.method34065(this.field28331.method5332().method7690(), s);
+        this.field28333.method34065(this.field28331.method5332().getHandle(), s);
     }
     
     public void method22509() {

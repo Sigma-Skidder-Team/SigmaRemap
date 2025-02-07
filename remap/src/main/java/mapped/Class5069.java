@@ -220,9 +220,9 @@ public class Class5069 extends RealmsScreen
         final boolean b2 = b;
         RealmsScreen.method15419("realms:textures/gui/realms/cross_player_icon.png");
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RealmsScreen.method15411(n, n2, 0.0f, b2 ? 7.0f : 0.0f, 8, 7, 8, 14);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         if (b2) {
             this.field21731 = RealmsScreen.getLocalizedString("mco.configure.world.invites.remove.tooltip");
         }
@@ -250,9 +250,9 @@ public class Class5069 extends RealmsScreen
         final boolean b2 = b;
         RealmsScreen.method15419("realms:textures/gui/realms/op_icon.png");
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RealmsScreen.method15411(n, n2, 0.0f, b2 ? 8.0f : 0.0f, 8, 8, 8, 16);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         if (b2) {
             this.field21731 = RealmsScreen.getLocalizedString("mco.configure.world.invites.ops.tooltip");
         }
@@ -280,9 +280,9 @@ public class Class5069 extends RealmsScreen
         final boolean b2 = b;
         RealmsScreen.method15419("realms:textures/gui/realms/user_icon.png");
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RealmsScreen.method15411(n, n2, 0.0f, b2 ? 8.0f : 0.0f, 8, 8, 8, 16);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         if (b2) {
             this.field21731 = RealmsScreen.getLocalizedString("mco.configure.world.invites.normal.tooltip");
         }

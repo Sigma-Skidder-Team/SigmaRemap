@@ -22,7 +22,7 @@ public class CubecraftGamePlay extends Module
     }
     
     @Override
-    public void method9917() {
+    public void initialize() {
         this.field15666 = (GamePlay)this.method9914();
     }
     

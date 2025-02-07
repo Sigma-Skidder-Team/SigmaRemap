@@ -62,7 +62,7 @@ public class Class4940 extends Class4800
     
     public static ArrayList<Class8799> method14874() {
         final ArrayList list = new ArrayList();
-        final Iterator<Module> iterator = Client.getInstance().method35189().method21553().values().iterator();
+        final Iterator<Module> iterator = Client.getInstance().method35189().getModuleMap().values().iterator();
         while (iterator.hasNext()) {
             list.add(new Class8799(iterator.next()));
         }

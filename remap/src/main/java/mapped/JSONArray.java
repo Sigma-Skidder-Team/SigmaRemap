@@ -163,7 +163,7 @@ public class JSONArray implements Iterable<Object>
         return (JSONArray)method449;
     }
     
-    public JSONObject method457(final int i) throws org.json.JSONException {
+    public JSONObject getJSONObject(final int i) throws org.json.JSONException {
         final Object method449 = this.method449(i);
         if (!(method449 instanceof JSONObject)) {
             throw new JSONException("JSONArray[" + i + "] is not a JSONObject.");
@@ -194,7 +194,7 @@ public class JSONArray implements Iterable<Object>
     }
     
     public String method461(final String str) throws org.json.JSONException {
-        final int method462 = this.method462();
+        final int method462 = this.length();
         final StringBuilder sb = new StringBuilder();
         for (int i = 0; i < method462; ++i) {
             if (i > 0) {
@@ -205,12 +205,12 @@ public class JSONArray implements Iterable<Object>
         return sb.toString();
     }
     
-    public int method462() {
+    public int length() {
         return this.field201.size();
     }
     
     public Object method463(final int index) {
-        return (index >= 0 && index < this.method462()) ? this.field201.get(index) : null;
+        return (index >= 0 && index < this.length()) ? this.field201.get(index) : null;
     }
     
     public boolean method464(final int n) {
@@ -392,8 +392,8 @@ public class JSONArray implements Iterable<Object>
     public JSONArray method493(final int i, final Object element) throws org.json.JSONException {
         JSONObject.method13309(element);
         if (i >= 0) {
-            if (i >= this.method462()) {
-                while (i != this.method462()) {
+            if (i >= this.length()) {
+                while (i != this.length()) {
                     this.method486(JSONObject.field19729);
                 }
                 this.method486(element);
@@ -407,15 +407,15 @@ public class JSONArray implements Iterable<Object>
     }
     
     public Object method494(final int index) {
-        return (index >= 0 && index < this.method462()) ? this.field201.remove(index) : null;
+        return (index >= 0 && index < this.length()) ? this.field201.remove(index) : null;
     }
     
     public boolean method495(final Object o) {
         if (!(o instanceof JSONArray)) {
             return false;
         }
-        final int method462 = this.method462();
-        if (method462 == ((JSONArray)o).method462()) {
+        final int method462 = this.length();
+        if (method462 == ((JSONArray)o).length()) {
             for (int i = 0; i < method462; ++i) {
                 final Object method463 = this.method449(i);
                 final Object method464 = ((JSONArray)o).method449(i);
@@ -440,10 +440,10 @@ public class JSONArray implements Iterable<Object>
     
     public JSONObject method496(final JSONArray JSONArray) throws org.json.JSONException {
         if (JSONArray != null) {
-            if (JSONArray.method462() != 0) {
-                if (this.method462() != 0) {
+            if (JSONArray.length() != 0) {
+                if (this.length() != 0) {
                     final JSONObject class89 = new JSONObject();
-                    for (int i = 0; i < JSONArray.method462(); ++i) {
+                    for (int i = 0; i < JSONArray.length(); ++i) {
                         class89.method13301(JSONArray.method459(i), this.method463(i));
                     }
                     return class89;
@@ -477,7 +477,7 @@ public class JSONArray implements Iterable<Object>
     public Writer method498(final Writer writer, final int n, final int n2) throws org.json.JSONException {
         try {
             int n3 = 0;
-            final int method462 = this.method462();
+            final int method462 = this.length();
             writer.write(91);
             if (method462 == 1) {
                 JSONObject.method13314(writer, this.field201.get(0), n, n2);

@@ -48,17 +48,17 @@ public class Class6702 extends Class6693
                     if (!lowerCase.equalsIgnoreCase("list")) {
                         throw new Class2332();
                     }
-                    class6428.method19104("§l" + Client.getInstance().method35189().method21556().method32709().size() + " " + this.method20356() + " :");
-                    for (final Class8241 class6429 : Client.getInstance().method35189().method21556().method32709()) {
-                        final boolean b = Client.getInstance().method35189().method21556().method32707() == class6429;
-                        if (Client.getInstance().method35209() == Class2209.field13465 && b) {
+                    class6428.method19104("§l" + Client.getInstance().method35189().getProfile().method32709().size() + " " + this.method20356() + " :");
+                    for (final Class8241 class6429 : Client.getInstance().method35189().getProfile().method32709()) {
+                        final boolean b = Client.getInstance().method35189().getProfile().method32707() == class6429;
+                        if (Client.getInstance().method35209() == ClientMode.CLASSIC && b) {
                             continue;
                         }
                         class6428.method19104((b ? "§n" : "") + class6429.field33839);
                     }
                 }
                 else if (array.length != 1) {
-                    if (!Client.getInstance().method35189().method21556().method32702(array[1].method26314().toLowerCase())) {
+                    if (!Client.getInstance().method35189().getProfile().method32702(array[1].method26314().toLowerCase())) {
                         class6428.method19104(this.method20356() + " not found!");
                     }
                     else {
@@ -71,10 +71,10 @@ public class Class6702 extends Class6693
             }
             else if (array.length != 1) {
                 final String lowerCase2 = array[1].method26314().toLowerCase();
-                final Class8241 method32707 = Client.getInstance().method35189().method21556().method32707();
-                method32707.field33838 = Client.getInstance().method35189().method21546(new JSONObject());
-                Client.getInstance().method35189().method21556().method32702(lowerCase2);
-                Client.getInstance().method35189().method21556().method32700(new Class8241(lowerCase2, method32707.field33838));
+                final Class8241 method32707 = Client.getInstance().method35189().getProfile().method32707();
+                method32707.field33838 = Client.getInstance().method35189().saveCurrentConfigToJSON(new JSONObject());
+                Client.getInstance().method35189().getProfile().method32702(lowerCase2);
+                Client.getInstance().method35189().getProfile().method32700(new Class8241(lowerCase2, method32707.field33838));
                 class6428.method19104("Saved " + this.method20356());
             }
             else {
@@ -82,12 +82,12 @@ public class Class6702 extends Class6693
             }
         }
         else if (array.length != 1) {
-            final Class8241 method32708 = Client.getInstance().method35189().method21556().method32703(array[1].method26314().toLowerCase());
+            final Class8241 method32708 = Client.getInstance().method35189().getProfile().method32703(array[1].method26314().toLowerCase());
             if (method32708 == null) {
                 class6428.method19104(this.method20356() + " not found!");
             }
             else {
-                Client.getInstance().method35189().method21556().method32708(method32708);
+                Client.getInstance().method35189().getProfile().method32708(method32708);
                 class6428.method19104(this.method20356() + " was loaded!");
             }
         }
@@ -97,14 +97,14 @@ public class Class6702 extends Class6693
     }
     
     public String method20356() {
-        if (Client.getInstance().method35209() != Class2209.field13465) {
+        if (Client.getInstance().method35209() != ClientMode.CLASSIC) {
             return "Profile";
         }
         return "Config";
     }
     
     public void method20357(final String str) {
-        Client.getInstance().method35189().method21546(new JSONObject());
+        Client.getInstance().method35189().saveCurrentConfigToJSON(new JSONObject());
         final File file = new File(Client.getInstance().method35208() + "/configs/");
         if (!file.exists()) {
             file.mkdirs();

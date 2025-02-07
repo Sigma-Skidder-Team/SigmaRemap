@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
 import mapped.JSONObject;
-import mapped.Class8105;
+import mapped.CJsonUtils;
 
 import java.awt.Color;
 
@@ -27,8 +27,8 @@ public class ColorSetting extends Setting<Integer> {
 
     @Override
     public JSONObject method15186(final JSONObject JSONObject) {
-        this.currentValue = Integer.valueOf(Class8105.method26632(JSONObject, "value", this.method15203()));
-        this.field21520 = Class8105.method26630(JSONObject, "rainbow", false);
+        this.currentValue = Integer.valueOf(CJsonUtils.method26632(JSONObject, "value", this.method15203()));
+        this.field21520 = CJsonUtils.method26630(JSONObject, "rainbow", false);
         return JSONObject;
     }
 

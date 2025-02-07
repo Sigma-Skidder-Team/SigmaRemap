@@ -97,7 +97,7 @@ public class Class4827 extends Class4825 implements Class4828
         final int method19118 = ColorUtils.applyAlpha(ClientColors.field1273.color, 0.2f * n);
         int field20478 = this.field20478;
         int field20479 = this.field20480;
-        if (Client.getInstance().method35209() != Class2209.field13464) {
+        if (Client.getInstance().method35209() != ClientMode.JELLO) {
             final int n3 = 0;
             field20479 -= 8;
             field20478 += 8;
@@ -140,7 +140,7 @@ public class Class4827 extends Class4825 implements Class4828
     @Override
     public void method14203(final JSONObject JSONObject) {
         super.method14203(JSONObject);
-        this.field20650 = Class8105.method26632(JSONObject, "offset", this.field20650);
+        this.field20650 = CJsonUtils.method26632(JSONObject, "offset", this.field20650);
     }
     
     @Override

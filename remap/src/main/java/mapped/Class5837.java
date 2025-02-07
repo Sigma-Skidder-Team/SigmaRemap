@@ -81,25 +81,25 @@ public class Class5837
                 for (final Object next : Class9146.field38765) {
                     for (Class<?> key = next.getClass(); key != null; key = key.getSuperclass()) {
                         for (final Method method : key.getDeclaredMethods()) {
-                            if (Client.getInstance().method35188().method21087(method)) {
+                            if (Client.getInstance().getEventBus().method21087(method)) {
                                 method.setAccessible(true);
-                                final Class2046 method2 = Client.getInstance().method35188().method21091(method);
+                                final Class2046 method2 = Client.getInstance().getEventBus().method21091(method);
                                 final Class<?> clazz = method.getParameterTypes()[0];
                                 final Class7557 class7557 = new Class7557(next, key, method, method2);
-                                final Map<Class<? extends Class5730>, List<Class7557>> map = Client.getInstance().method35188().field26968.getOrDefault(key, new HashMap<Class<? extends Class5730>, List<Class7557>>());
+                                final Map<Class<? extends Class5730>, List<Class7557>> map = Client.getInstance().getEventBus().field26968.getOrDefault(key, new HashMap<Class<? extends Class5730>, List<Class7557>>());
                                 List<Class7557> list = map.get(clazz);
                                 if (list == null) {
                                     map.put((Class<? extends Class5730>)clazz, (ArrayList)(list = new ArrayList<Class7557>()));
                                 }
                                 list.add(class7557);
                                 map.put((Class<? extends Class5730>)clazz, (ArrayList)list);
-                                Client.getInstance().method35188().field26968.put((Class)key, map);
+                                Client.getInstance().getEventBus().field26968.put((Class)key, map);
                             }
                         }
                     }
                 }
-                Client.getInstance().method35188().method21096();
-                for (final Module class7558 : Client.getInstance().method35189().method21553().values()) {
+                Client.getInstance().getEventBus().method21096();
+                for (final Module class7558 : Client.getInstance().method35189().getModuleMap().values()) {
                     final Iterator<Setting> iterator3 = class7558.method9899().values().iterator();
                     while (iterator3.hasNext()) {
                         iterator3.next().method15201();
@@ -114,24 +114,24 @@ public class Class5837
                         }
                     }
                     if (class7558.isEnabled()) {
-                        Client.getInstance().method35188().method21092(class7558);
+                        Client.getInstance().getEventBus().register(class7558);
                         if (!(class7558 instanceof ModuleWithSettings)) {
                             continue;
                         }
                         final ModuleWithSettings class7559 = (ModuleWithSettings)class7558;
-                        if (class7559.field15743 == null) {
+                        if (class7559.parentModule == null) {
                             continue;
                         }
-                        Client.getInstance().method35188().method21092(class7559.field15743);
+                        Client.getInstance().getEventBus().register(class7559.parentModule);
                     }
                     else {
-                        Client.getInstance().method35188().method21093(class7558);
+                        Client.getInstance().getEventBus().unregister(class7558);
                         if (!(class7558 instanceof ModuleWithSettings)) {
                             continue;
                         }
                         final Module[] field23934 = ((ModuleWithSettings)class7558).field15742;
                         for (int length3 = field23934.length, k = 0; k < length3; ++k) {
-                            Client.getInstance().method35188().method21093(field23934[k]);
+                            Client.getInstance().getEventBus().unregister(field23934[k]);
                         }
                     }
                 }

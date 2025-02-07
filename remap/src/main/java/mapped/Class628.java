@@ -79,18 +79,18 @@ public class Class628 extends Class624
         if (!"".equals(anObject)) {
             RealmsScreen.method15419("realms:textures/gui/realms/link_icons.png");
             RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            RenderSystem.method30059();
+            RenderSystem.pushMatrix();
             RenderSystem.method30063(1.0f, 1.0f, 1.0f);
             RealmsScreen.method15411(n + n5, n2, (!b) ? 0.0f : 15.0f, 0.0f, 15, 15, 30, 15);
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
         }
         if (!"".equals(s)) {
             RealmsScreen.method15419("realms:textures/gui/realms/trailer_icons.png");
             RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            RenderSystem.method30059();
+            RenderSystem.pushMatrix();
             RenderSystem.method30063(1.0f, 1.0f, 1.0f);
             RealmsScreen.method15411(n + n5 + ("".equals(anObject) ? 0 : 17), n2, (!b2) ? 0.0f : 15.0f, 0.0f, 15, 15, 30, 15);
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
         }
         if (b && !"".equals(anObject)) {
             Class5045.method15395(this.field3612, RealmsScreen.getLocalizedString("mco.template.info.tooltip"));

@@ -78,7 +78,7 @@ public class StringSetting extends Setting<String> {
 
     @Override
     public JSONObject method15186(final JSONObject JSONObject) {
-        this.currentValue = Class8105.method26636(JSONObject, "value", this.method15203());
+        this.currentValue = CJsonUtils.method26636(JSONObject, "value", this.method15203());
         int n = 0;
         final Iterator<String> iterator = this.field21518.iterator();
         while (iterator.hasNext()) {

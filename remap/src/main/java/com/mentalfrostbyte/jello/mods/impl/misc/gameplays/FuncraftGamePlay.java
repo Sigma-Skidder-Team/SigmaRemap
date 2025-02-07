@@ -21,7 +21,7 @@ public class FuncraftGamePlay extends Module
     }
     
     @Override
-    public void method9917() {
+    public void initialize() {
         this.field15661 = (GamePlay)this.method9914();
     }
     

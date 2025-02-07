@@ -25,7 +25,7 @@ public class Class8706
     }
     
     public void method29876() {
-        Client.getInstance().method35188().method21094(this);
+        Client.getInstance().getEventBus().method21094(this);
         this.method29892();
     }
     

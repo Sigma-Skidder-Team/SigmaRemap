@@ -46,9 +46,9 @@ public class Test extends Module
     public Test() {
         super(Category.MISC, "Test", "A mod for testing things");
         this.addSetting(new BezierSetting("Bezier", "ey", 0.57f, -0.035f, 0.095f, -0.0f));
-        this.addSetting(new BooleanSetting("Test Checkbox", "A test checkbox", true).method15195(class4997 -> Client.getInstance().method35187().method20240("Changed checkbox: " + class4997.method15198())));
-        this.addSetting(new NumberSetting("Test Slider", "A test slider", 0.5f, Float.class, 0.0f, 1.0f, 0.1f).method15195(class4997 -> Client.getInstance().method35187().method20240("Changed slider: " + class4997.method15198())));
-        this.addSetting(new ButtonSetting("Test Type", "A test type button", 0, new String[] { "hello", "goodbye" }).method15195(class4997 -> Client.getInstance().method35187().method20240("Changed type: " + class4997.method15198())));
+        this.addSetting(new BooleanSetting("Test Checkbox", "A test checkbox", true).method15195(class4997 -> Client.getInstance().getLogger().info("Changed checkbox: " + class4997.method15198())));
+        this.addSetting(new NumberSetting("Test Slider", "A test slider", 0.5f, Float.class, 0.0f, 1.0f, 0.1f).method15195(class4997 -> Client.getInstance().getLogger().info("Changed slider: " + class4997.method15198())));
+        this.addSetting(new ButtonSetting("Test Type", "A test type button", 0, new String[] { "hello", "goodbye" }).method15195(class4997 -> Client.getInstance().getLogger().info("Changed type: " + class4997.method15198())));
         this.addSetting(new SubOptionSettingExtender("Test Suboptions", "A test suboption", false, new Setting[] { new BooleanSetting("Test Checkbox", "A test checkbox", true), new NumberSetting("Test Slider", "A test slider", 0.5f, Float.class, 0.0f, 1.0f, 0.1f) }));
     }
     

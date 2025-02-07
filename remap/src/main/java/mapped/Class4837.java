@@ -39,15 +39,15 @@ public class Class4837 extends Class4825
         Class8317.method27608();
         RenderSystem.disableDepthTest();
         RenderSystem.method30029();
-        RenderSystem.method30059();
-        RenderSystem.method30065((float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 - this.field20481 / 4), -200.0f);
+        RenderSystem.pushMatrix();
+        RenderSystem.translatef((float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 - this.field20481 / 4), -200.0f);
         GL11.glColor3f(1.0f, 1.0f, 1.0f);
         RenderSystem.method30062(180.0f, 1.0f, 0.0f, 0.0f);
         RenderSystem.method30062(180.0f, 0.0f, 0.0f, 1.0f);
-        final float n2 = (float)(this.field20736.field4632.method7695() - this.method14321() - this.field20736.field4632.method7695() / 2);
-        final float n3 = (float)(this.field20736.field4632.method7694() - this.method14320() - this.field20736.field4632.method7694() / 2);
-        final float n4 = (float)Math.atan(n2 / (this.field20736.field4632.method7695() / 2)) * 20.0f;
-        final float n5 = (float)Math.atan(n3 / (this.field20736.field4632.method7694() / 2)) * 20.0f;
+        final float n2 = (float)(this.field20736.window.method7695() - this.method14321() - this.field20736.window.method7695() / 2);
+        final float n3 = (float)(this.field20736.window.method7694() - this.method14320() - this.field20736.window.method7694() / 2);
+        final float n4 = (float)Math.atan(n2 / (this.field20736.window.method7695() / 2)) * 20.0f;
+        final float n5 = (float)Math.atan(n3 / (this.field20736.window.method7694() / 2)) * 20.0f;
         RenderSystem.method30062(-n4, 1.0f, 0.0f, 0.0f);
         RenderSystem.method30062(-n5, 0.0f, 1.0f, 0.0f);
         final Class9206 class9206 = new Class9206(this);
@@ -77,7 +77,7 @@ public class Class4837 extends Class4825
             final Class4711 class9208 = new Class4711(this.field20736.method5306());
             Minecraft.method5277().method5333().method11006();
             final MatrixStack class9209 = new MatrixStack();
-            RenderSystem.method30059();
+            RenderSystem.pushMatrix();
             this.field20736.method5306().method28702(false);
             Class8317.method27612();
             RenderSystem.method30001();
@@ -88,9 +88,9 @@ public class Class4837 extends Class4825
             this.field20740.field2946 = n6 * 0.5f;
             Class518.method2999(0, 390, 160, 0.0f, 0.0f, this.field20740);
             this.field20736.method5306().method28702(true);
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
         }
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         Class8317.method27609();
         RenderSystem.disableRescaleNormal();
         RenderSystem.method30039(33985);

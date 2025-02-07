@@ -91,7 +91,7 @@ public class NewTabGUI extends Module
         if (!this.isEnabled() || NewTabGUI.mc.player == null) {
             return;
         }
-        if (!Client.getInstance().method35193().method32146()) {
+        if (!Client.getInstance().getGuimanager().method32146()) {
             return;
         }
         if (Minecraft.method5277().gameSettings.field23466) {
@@ -143,7 +143,7 @@ public class NewTabGUI extends Module
     
     private List<Module> method10391(final Category class8013) {
         final ArrayList list = new ArrayList();
-        final Iterator<Module> iterator = Client.getInstance().method35189().method21554(class8013).iterator();
+        final Iterator<Module> iterator = Client.getInstance().method35189().getModulesByCategory(class8013).iterator();
         while (iterator.hasNext()) {
             list.add(iterator.next());
         }
@@ -258,7 +258,7 @@ public class NewTabGUI extends Module
             if (class8479.field34795 == b) {
                 final float method35858 = class8479.field34796.calcPercent();
                 int n10 = ColorUtils.applyAlpha(-5658199, (1.0f - method35858 * (0.5f + method35858 * 0.5f)) * 0.8f);
-                if (Client.getInstance().method35193().method32146()) {
+                if (Client.getInstance().getGuimanager().method32146()) {
                     n10 = ColorUtils.applyAlpha(-1, (1.0f - method35858) * 0.14f);
                 }
                 RenderUtil.method26886((float)n, (n7 >= 0) ? ((float)(n7 + n2 + 14)) : ((float)n2), n4 * Class7791.method25030(method35858, 0.0f, 1.0f, 1.0f) + 4.0f, n10);
@@ -358,7 +358,7 @@ public class NewTabGUI extends Module
     }
     
     private void method10398(final int n, final int n2, final int n3, final int n4, final Color[] array, final Color[] array2, final Color[] array3, final float n5) {
-        final boolean method32146 = Client.getInstance().method35193().method32146();
+        final boolean method32146 = Client.getInstance().getGuimanager().method32146();
         int n6 = ColorUtils.method19110(array).getRGB();
         int n7 = ColorUtils.method19110(array3).getRGB();
         if (array2 != null) {
@@ -379,7 +379,7 @@ public class NewTabGUI extends Module
     }
     
     private void method10399() {
-        if (Client.getInstance().method35193().method32146()) {
+        if (Client.getInstance().getGuimanager().method32146()) {
             return;
         }
         if (Minecraft.method5277().gameSettings.field23466) {

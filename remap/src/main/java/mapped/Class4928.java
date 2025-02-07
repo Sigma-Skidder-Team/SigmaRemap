@@ -30,8 +30,8 @@ public class Class4928 extends Class4800
         super.draw(n);
         final int method24918 = ClientAssets.mentalfrostbyte.method24918();
         final int method24919 = ClientAssets.mentalfrostbyte.method24917();
-        final int min = Math.min(method24918, (int)(Minecraft.method5277().field4632.method7695() / 1.65f));
-        final int min2 = Math.min(method24919, (int)(Minecraft.method5277().field4632.method7695() / 1.65f));
+        final int min = Math.min(method24918, (int)(Minecraft.method5277().window.method7695() / 1.65f));
+        final int min2 = Math.min(method24919, (int)(Minecraft.method5277().window.method7695() / 1.65f));
         this.method14789();
         RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f * this.field21083));
         final float method24920 = Class7707.method24584((this.field21083 >= 0.5) ? ((float)(this.field21083 - 0.5) * 2.0f) : 0.0f, 0.0f, 1.0f, 1.0f);

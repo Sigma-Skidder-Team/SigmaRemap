@@ -27,8 +27,8 @@ public class Class7861
     }
     
     public void method25457() {
-        Client.getInstance().method35188().method21094(this);
-        Client.getInstance().method35188().method21094(this.field32299);
+        Client.getInstance().getEventBus().method21094(this);
+        Client.getInstance().getEventBus().method21094(this.field32299);
     }
     
     @Deprecated
@@ -116,7 +116,7 @@ public class Class7861
             Class9532.method35585(class89, new File(Client.getInstance().method35208() + "/alts.json"));
         }
         catch (final JSONException | IOException ex) {
-            Client.getInstance().method35187().method20242(((Throwable)ex).getMessage());
+            Client.getInstance().getLogger().error(((Throwable)ex).getMessage());
         }
     }
     
@@ -132,7 +132,7 @@ public class Class7861
             }
         }
         catch (final IOException ex) {
-            Client.getInstance().method35187().method20242(ex.getMessage());
+            Client.getInstance().getLogger().error(ex.getMessage());
         }
     }
     

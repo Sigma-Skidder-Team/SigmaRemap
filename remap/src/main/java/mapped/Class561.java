@@ -70,12 +70,12 @@ public class Class561 extends Screen
     public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
         this.field3347.render(n, n2, n3);
-        RenderSystem.method30059();
-        RenderSystem.method30065(0.0f, 0.0f, 400.0f);
+        RenderSystem.pushMatrix();
+        RenderSystem.translatef(0.0f, 0.0f, 400.0f);
         this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 8, 16777215);
         this.drawString(this.font, this.field3345, 50, 30, 10526880);
         this.drawString(this.font, this.field3346, 50, 70, 10526880);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         this.field3349.render(n, n2, n3);
         super.render(n, n2, n3);
     }

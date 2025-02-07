@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
 import mapped.JSONObject;
-import mapped.Class8105;
+import mapped.CJsonUtils;
 
 public class ButtonSetting extends Setting<Integer> {
     private String[] field21521;
@@ -19,7 +19,7 @@ public class ButtonSetting extends Setting<Integer> {
 
     @Override
     public JSONObject method15186(final JSONObject JSONObject) {
-        this.currentValue = Integer.valueOf(Class8105.method26632(JSONObject, "value", this.method15203()));
+        this.currentValue = Integer.valueOf(CJsonUtils.method26632(JSONObject, "value", this.method15203()));
         return JSONObject;
     }
 

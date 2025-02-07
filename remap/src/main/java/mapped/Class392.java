@@ -64,7 +64,7 @@ public class Class392 implements AutoCloseable
             RenderSystem.method30057(5890);
             RenderSystem.method30058();
             RenderSystem.method30063(0.00390625f, 0.00390625f, 0.00390625f);
-            RenderSystem.method30065(8.0f, 8.0f, 8.0f);
+            RenderSystem.translatef(8.0f, 8.0f, 8.0f);
             RenderSystem.method30057(5888);
             this.field2285.method5290().method5849(this.field2281);
             RenderSystem.method30042(3553, 10241, 9729);

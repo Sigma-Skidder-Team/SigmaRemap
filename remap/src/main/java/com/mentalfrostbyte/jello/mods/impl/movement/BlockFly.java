@@ -238,7 +238,7 @@ public class BlockFly extends ModuleWithSettings {
     }
 
     public void method10287(final Class5717 class5717) {
-        if (Client.getInstance().method35189().method21551(Speed.class).isEnabled() && !HypixelSpeed.field15955) {
+        if (Client.getInstance().method35189().getModuleByClass(Speed.class).isEnabled() && !HypixelSpeed.field15955) {
             return;
         }
         if (BlockFly.mc.timer.timerSpeed == 0.8038576f) {
@@ -322,9 +322,9 @@ public class BlockFly extends ModuleWithSettings {
     }
 
     @Override
-    public String getName2() {
-        if (Client.getInstance().method35209() != Class2209.field13465) {
-            return super.getName2();
+    public String getFormattedName() {
+        if (Client.getInstance().method35209() != ClientMode.CLASSIC) {
+            return super.getFormattedName();
         }
         return "Scaffold";
     }
@@ -352,10 +352,10 @@ public class BlockFly extends ModuleWithSettings {
             return;
         }
         if (this.method9883("Show Block Amount")) {
-            if (Client.getInstance().method35209() != Class2209.field13464) {
-                this.method10290(BlockFly.mc.field4632.method7694() / 2, BlockFly.mc.field4632.method7695() / 2 + 15 - (int) (10.0f * this.field15751.calcPercent()), this.field15751.calcPercent());
+            if (Client.getInstance().method35209() != ClientMode.JELLO) {
+                this.method10290(BlockFly.mc.window.method7694() / 2, BlockFly.mc.window.method7695() / 2 + 15 - (int) (10.0f * this.field15751.calcPercent()), this.field15751.calcPercent());
             } else {
-                this.method10291(BlockFly.mc.field4632.method7694() / 2, BlockFly.mc.field4632.method7695() - 138 - (int) (25.0f * Class8468.method28270(this.field15751.calcPercent(), 0.0f, 1.0f, 1.0f)), this.field15751.calcPercent());
+                this.method10291(BlockFly.mc.window.method7694() / 2, BlockFly.mc.window.method7695() - 138 - (int) (25.0f * Class8468.method28270(this.field15751.calcPercent(), 0.0f, 1.0f, 1.0f)), this.field15751.calcPercent());
             }
         }
     }

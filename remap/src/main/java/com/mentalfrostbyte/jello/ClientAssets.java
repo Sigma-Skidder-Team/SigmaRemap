@@ -174,7 +174,7 @@ public class ClientAssets
         }
         catch (final Exception ex) {
             ex.printStackTrace();
-            Client.getInstance().method35187().method20242("Unable to load texture " + str + ". Please make sure it is a valid path and has a valid extension or load it directly from the load(name, type) function.");
+            Client.getInstance().getLogger().error("Unable to load texture " + str + ". Please make sure it is a valid path and has a valid extension or load it directly from the load(name, type) function.");
             throw ex;
         }
     }

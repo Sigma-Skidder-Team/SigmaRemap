@@ -35,8 +35,8 @@ public class DVDSimulator extends Module
     
     @Override
     public void onEnable() {
-        this.field15557 = (float)((DVDSimulator.mc.field4632.method7694() - this.field15561.field40723) * Math.random());
-        this.field15558 = (float)((DVDSimulator.mc.field4632.method7695() - this.field15561.field40724) * Math.random());
+        this.field15557 = (float)((DVDSimulator.mc.window.method7694() - this.field15561.field40723) * Math.random());
+        this.field15558 = (float)((DVDSimulator.mc.window.method7695() - this.field15561.field40724) * Math.random());
         this.method9973();
     }
     
@@ -45,8 +45,8 @@ public class DVDSimulator extends Module
         if (this.isEnabled()) {
             if (DVDSimulator.mc.player != null) {
                 if (DVDSimulator.mc.world != null) {
-                    final int method7695 = DVDSimulator.mc.field4632.method7695();
-                    final int method7696 = DVDSimulator.mc.field4632.method7694();
+                    final int method7695 = DVDSimulator.mc.window.method7695();
+                    final int method7696 = DVDSimulator.mc.window.method7694();
                     final int n = 2;
                     if (this.field15558 > n) {
                         if (this.field15558 + this.field15561.field40724 > method7695) {

@@ -93,7 +93,7 @@ public class Class6883
         return Class2046.field11659;
     }
     
-    public void method21092(final Module class3167) {
+    public void register(final Module class3167) {
         final Map map = this.field26968.get(class3167.getClass());
         if (map != null) {
             for (final Map.Entry<Class, V> entry : map.entrySet()) {
@@ -106,7 +106,7 @@ public class Class6883
         }
     }
     
-    public void method21093(final Module class3167) {
+    public void unregister(final Module class3167) {
         final Map map = this.field26968.get(class3167.getClass());
         if (map != null) {
             for (final Map.Entry<Class, V> entry : map.entrySet()) {
@@ -192,7 +192,7 @@ public class Class6883
         }
         catch (final Exception ex) {
             ex.printStackTrace();
-            Client.getInstance().method35187().method20242("An unhandled exception occured in an event handler's function");
+            Client.getInstance().getLogger().error("An unhandled exception occured in an event handler's function");
         }
         catch (final Throwable t) {
             t.printStackTrace();

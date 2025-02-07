@@ -36,10 +36,10 @@ public class Class4889 extends Class4841
     
     public void method14635() {
         Client.getInstance();
-        Class9076 method21556;
+        ProfileManager method21556;
         Class8241 method21557;
         int n;
-        for (method21556 = Client.getInstance().method35189().method21556(), method21557 = method21556.method32707(), n = 1; method21556.method32705(method21557.field33839 + " Copy " + n); ++n) {}
+        for (method21556 = Client.getInstance().method35189().getProfile(), method21557 = method21556.method32707(), n = 1; method21556.method32705(method21557.field33839 + " Copy " + n); ++n) {}
         method21556.method32700(method21557.method27291(method21557.field33839 + " Copy " + n));
         this.method14225(() -> this.method14640());
         this.field20901.method14706(false);
@@ -47,7 +47,7 @@ public class Class4889 extends Class4841
     
     public void method14636(final Class8241 class8241) {
         Client.getInstance();
-        final Class9076 method21556 = Client.getInstance().method35189().method21556();
+        final ProfileManager method21556 = Client.getInstance().method35189().getProfile();
         method21556.method32707();
         int n;
         for (n = 1; method21556.method32705(class8241.field33839 + " " + n); ++n) {}
@@ -58,9 +58,9 @@ public class Class4889 extends Class4841
     
     public void method14637() {
         Client.getInstance();
-        Class9076 method21556;
+        ProfileManager method21556;
         int n;
-        for (method21556 = Client.getInstance().method35189().method21556(), n = 1; method21556.method32705("New Profile " + n); ++n) {}
+        for (method21556 = Client.getInstance().method35189().getProfile(), n = 1; method21556.method32705("New Profile " + n); ++n) {}
         method21556.method32700(new Class8241("New Profile " + n, new JSONObject()));
         this.method14225(() -> this.method14640());
         this.field20901.method14706(false);
@@ -96,7 +96,7 @@ public class Class4889 extends Class4841
         this.field20902.clear();
         int i = 0;
         final int n = 70;
-        final Iterator<Class8241> iterator = Client.getInstance().method35189().method21556().method32709().iterator();
+        final Iterator<Class8241> iterator = Client.getInstance().method35189().getProfile().method32709().iterator();
         while (iterator.hasNext()) {
             final Class4830 class4830 = new Class4830(this, "profile" + i, 0, n * i, this.field20900.method14276(), n, iterator.next(), i);
             this.field20900.addVisualThing(class4830);

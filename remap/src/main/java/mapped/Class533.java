@@ -75,10 +75,10 @@ public class Class533 extends Screen
     @Override
     public void render(final int n, final int n2, final float n3) {
         this.fillGradient(0, 0, this.width, this.height, 1615855616, -1602211792);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.method30063(2.0f, 2.0f, 2.0f);
         this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2 / 2, 30, 16777215);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         if (this.field3182 != null) {
             this.drawCenteredString(this.font, this.field3182.getFormattedText(), this.width / 2, 85, 16777215);
         }

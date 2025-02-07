@@ -65,12 +65,12 @@ public class Class4849 extends Class4841
             });
         }
         n6 += 50;
-        for (final Module class4807 : Client.getInstance().method35189().method21553().values()) {
+        for (final Module class4807 : Client.getInstance().method35189().getModuleMap().values()) {
             final Class4868 class4808;
             this.field20780.addVisualThing(class4808 = new Class4868(this.field20780, class4807.getName(), 0, n6++ * 40, this.field20780.method14276(), 40, new Class6523(16777215, -986896).method19734(ClientColors.field1273.color).method19736(Class2056.field11734), new Class8799(class4807).method30702()));
             class4808.method14603(10);
             class4808.method14260((class4869, n) -> {
-                for (final Module class4870 : Client.getInstance().method35189().method21553().values()) {
+                for (final Module class4870 : Client.getInstance().method35189().getModuleMap().values()) {
                     if (class4870.getName().equals(class4808.method14314()) && !this.field20783) {
                         this.field20781 = new Class8799(class4870);
                         this.field20783 = true;

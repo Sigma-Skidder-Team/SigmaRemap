@@ -24,11 +24,11 @@ public class Class8065
         final Tessellator method22694 = Tessellator.getInstance();
         final BufferBuilder method22695 = method22694.getBuffer();
         RenderSystem.method30057(5889);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.method30058();
         RenderSystem.method30067(Matrix4f.method20755(85.0, class869.method5332().method7692() / (float)class869.method5332().method7693(), 0.05f, 10.0f));
         RenderSystem.method30057(5888);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.method30058();
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.method30062(180.0f, 1.0f, 0.0f, 0.0f);
@@ -38,8 +38,8 @@ public class Class8065
         RenderSystem.method30010(false);
         RenderSystem.defaultBlendFunc();
         for (int i = 0; i < 4; ++i) {
-            RenderSystem.method30059();
-            RenderSystem.method30065((i % 2 / 2.0f - 0.5f) / 256.0f, (i / 2 / 2.0f - 0.5f) / 256.0f, 0.0f);
+            RenderSystem.pushMatrix();
+            RenderSystem.translatef((i % 2 / 2.0f - 0.5f) / 256.0f, (i / 2 / 2.0f - 0.5f) / 256.0f, 0.0f);
             RenderSystem.method30062(n, 1.0f, 0.0f, 0.0f);
             RenderSystem.method30062(n2, 0.0f, 1.0f, 0.0f);
             for (int j = 0; j < 6; ++j) {
@@ -84,14 +84,14 @@ public class Class8065
                 }
                 method22694.draw();
             }
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
             RenderSystem.method30049(true, true, true, false);
         }
         RenderSystem.method30049(true, true, true, true);
         RenderSystem.method30057(5889);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         RenderSystem.method30057(5888);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         RenderSystem.method30010(true);
         RenderSystem.method30028();
         RenderSystem.enableDepthTest();

@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
 import mapped.JSONObject;
-import mapped.Class8105;
+import mapped.CJsonUtils;
 
 public class NumberSetting<T extends Number> extends Setting<Float> {
     private Class<? extends T> field21506;
@@ -33,7 +33,7 @@ public class NumberSetting<T extends Number> extends Setting<Float> {
 
     @Override
     public JSONObject method15186(final JSONObject JSONObject) {
-        this.currentValue = Float.valueOf(Class8105.method26634(JSONObject, "value", this.method15203()));
+        this.currentValue = Float.valueOf(CJsonUtils.method26634(JSONObject, "value", this.method15203()));
         return JSONObject;
     }
 

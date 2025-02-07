@@ -81,33 +81,33 @@ public class Class749 extends Class516<Class3417>
                 this.blit(field3079 + 67, field3080 + 13, this.field3075, 0, 66, 66);
                 this.method4093(class6356, field3079 + 71, field3080 + 17, 0.45f);
                 this.minecraft.method5290().method5849(Class749.field4047);
-                RenderSystem.method30059();
-                RenderSystem.method30065(0.0f, 0.0f, 1.0f);
+                RenderSystem.pushMatrix();
+                RenderSystem.translatef(0.0f, 0.0f, 1.0f);
                 this.blit(field3079 + 66, field3080 + 12, 0, this.field3076, 66, 66);
-                RenderSystem.method30060();
+                RenderSystem.popMatrix();
             }
         }
         else {
             this.blit(field3079 + 67 + 16, field3080 + 13, this.field3075, 132, 50, 66);
             this.method4093(class6356, field3079 + 86, field3080 + 16, 0.34f);
             this.minecraft.method5290().method5849(Class749.field4047);
-            RenderSystem.method30059();
-            RenderSystem.method30065(0.0f, 0.0f, 1.0f);
+            RenderSystem.pushMatrix();
+            RenderSystem.translatef(0.0f, 0.0f, 1.0f);
             this.blit(field3079 + 67, field3080 + 13 + 16, this.field3075, 132, 50, 66);
             this.method4093(class6356, field3079 + 70, field3080 + 32, 0.34f);
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
         }
     }
     
     private void method4093(final Class6356 class6356, final int n, final int n2, final float n3) {
         if (class6356 != null) {
-            RenderSystem.method30059();
-            RenderSystem.method30065((float)n, (float)n2, 1.0f);
+            RenderSystem.pushMatrix();
+            RenderSystem.translatef((float)n, (float)n2, 1.0f);
             RenderSystem.method30063(n3, n3, 1.0f);
             final IRenderTypeBuffer.Impl method25212 = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
             this.minecraft.field4644.method5822().method7391(new MatrixStack(), method25212, class6356, true, 15728880);
             method25212.finish();
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
         }
     }
     

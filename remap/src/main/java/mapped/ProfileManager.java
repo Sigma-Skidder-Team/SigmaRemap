@@ -18,7 +18,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class9076
+public class ProfileManager
 {
     private List<Class8241> field38428;
     private Class8241 field38429;
@@ -27,7 +27,7 @@ public class Class9076
     public static final String field38432 = "/profiles/";
     public static final String field38433 = "Default";
     
-    public Class9076() {
+    public ProfileManager() {
         this.field38428 = new ArrayList<Class8241>();
     }
     
@@ -36,7 +36,7 @@ public class Class9076
     }
     
     public boolean method32701(final Class8241 class8241) {
-        if (Client.getInstance().method35209() == Class2209.field13465 && class8241.field33839.equals("Classic")) {
+        if (Client.getInstance().method35209() == ClientMode.CLASSIC && class8241.field33839.equals("Classic")) {
             return false;
         }
         if (this.field38428.size() <= 1) {
@@ -83,7 +83,7 @@ public class Class9076
                 }
             }
             catch (final JSONException JSONException) {
-                Client.getInstance().method35187().method20241("Unable to load profile from " + file2.getName());
+                Client.getInstance().getLogger().warn("Unable to load profile from " + file2.getName());
             }
         }
         if (this.field38428.size() == 0 || this.field38429 == null) {
@@ -92,7 +92,7 @@ public class Class9076
             }
             this.field38428.add(this.field38429 = new Class8241(s, new JSONObject()));
         }
-        Client.getInstance().method35189().method21545(this.field38429.field33838);
+        Client.getInstance().method35189().load(this.field38429.field33838);
     }
     
     public boolean method32705(final String s) {
@@ -107,7 +107,7 @@ public class Class9076
     }
     
     public void method32706() throws IOException {
-        this.field38429.field33838 = Client.getInstance().method35189().method21546(new JSONObject());
+        this.field38429.field33838 = Client.getInstance().method35189().saveCurrentConfigToJSON(new JSONObject());
         final File file = new File(Client.getInstance().method35208() + "/profiles/");
         if (!file.exists()) {
             file.mkdirs();
@@ -132,17 +132,17 @@ public class Class9076
     public void method32708(final Class8241 field38429) {
         Client.getInstance().method35179();
         Class1607.field8978 = new HashMap<Object, Integer>();
-        if (Client.getInstance().method35209() != Class2209.field13465) {
-            this.field38429.field33838 = Client.getInstance().method35189().method21546(new JSONObject());
+        if (Client.getInstance().method35209() != ClientMode.CLASSIC) {
+            this.field38429.field33838 = Client.getInstance().method35189().saveCurrentConfigToJSON(new JSONObject());
             this.field38429 = field38429;
             Client.getInstance().method35206().method13301("profile", field38429.field33839);
-            Client.getInstance().method35189().method21545(field38429.field33838);
+            Client.getInstance().method35189().load(field38429.field33838);
             Client.getInstance().method35179();
             return;
         }
         this.field38429.field33838 = field38429.method27290();
         Client.getInstance().method35206().method13301("profile", "Classic");
-        Client.getInstance().method35189().method21545(field38429.field33838);
+        Client.getInstance().method35189().load(field38429.field33838);
         Client.getInstance().method35179();
     }
     

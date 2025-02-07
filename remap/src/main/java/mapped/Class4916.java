@@ -63,7 +63,7 @@ public class Class4916 extends Class4825
         else if (Math.abs(n2 - method25029) < 0.7) {
             this.field21030.changeDirection(Direction.FORWARDS);
         }
-        if (this.method14281() + this.method14291() < Minecraft.method5277().field4632.method7695() - 36 && this.method14281() + this.method14291() > 52) {
+        if (this.method14281() + this.method14291() < Minecraft.method5277().window.method7695() - 36 && this.method14281() + this.method14291() > 52) {
             if (this.field21026 != null && this.field21028 == null) {
                 try {
                     final java.awt.image.BufferedImage method25030 = method14759(this.field21026.method35869());

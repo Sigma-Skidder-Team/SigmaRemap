@@ -20,7 +20,7 @@ public class Class757 extends ClientPlayerEntity
     @Override
     public void method4113() {
         final Class5747 class5747 = new Class5747();
-        Client.getInstance().method35188().method21097(class5747);
+        Client.getInstance().getEventBus().method21097(class5747);
         if (!class5747.isCancelled()) {
             super.method4113();
         }
@@ -29,7 +29,7 @@ public class Class757 extends ClientPlayerEntity
     @Override
     public void method1671(final Class2160 class2160, final Vec3d class2161) {
         final Class5717 class2162 = new Class5717(class2161);
-        Client.getInstance().method35188().method21097(class2162);
+        Client.getInstance().getEventBus().method21097(class2162);
         if (!class2162.isCancelled()) {
             super.method1671(class2160, new Vec3d(class2162.method16972(), class2162.method16974(), class2162.method16976()));
         }
@@ -38,7 +38,7 @@ public class Class757 extends ClientPlayerEntity
     @Override
     public void pushOutOfBlocks(final double n, final double n2, final double n3) {
         final Class5713 class5713 = new Class5713();
-        Client.getInstance().method35188().method21097(class5713);
+        Client.getInstance().getEventBus().method21097(class5713);
         if (!class5713.isCancelled()) {
             super.pushOutOfBlocks(n, n2, n3);
         }
@@ -58,7 +58,7 @@ public class Class757 extends ClientPlayerEntity
             }
             catch (final InterruptedException ex) {}
         }
-        Client.getInstance().method35188().method21097(class5743);
+        Client.getInstance().getEventBus().method21097(class5743);
         if (class5743.isCancelled()) {
             return;
         }
@@ -68,7 +68,7 @@ public class Class757 extends ClientPlayerEntity
     @Override
     public void method2738() {
         super.method2738();
-        Client.getInstance().method35188().method21097(new Class5742());
+        Client.getInstance().getEventBus().method21097(new Class5742());
     }
     
     @Override

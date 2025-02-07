@@ -42,10 +42,10 @@ public class InfoHUD extends Module
             this.field15926 = field15926 + n2 / Minecraft.method5338() * 1.5f;
             int n3 = 14;
             if (this.method9883("Show Player")) {
-                n3 += this.method10541(0, InfoHUD.mc.field4632.method7695() - 23, 114);
+                n3 += this.method10541(0, InfoHUD.mc.window.method7695() - 23, 114);
             }
             if (this.method9883("Show Armor")) {
-                n3 += this.method16695(n3, InfoHUD.mc.field4632.method7695() - 14) + 10;
+                n3 += this.method16695(n3, InfoHUD.mc.window.method7695() - 14) + 10;
             }
             if (!this.getStringSettingValueByName("Cords").equals("None")) {
                 final int n4 = n3 + (this.method16694(n3, 42) + 10);
@@ -63,7 +63,7 @@ public class InfoHUD extends Module
     public int method16694(final int n, final int n2) {
         final String s = "Facing South";
         final String method10538 = this.method10538(this.getStringSettingValueByName("Cords").equals("Precise"));
-        RenderUtil.drawString(ClientFonts.JelloMedium20, (float)n, (float)(InfoHUD.mc.field4632.method7695() - n2), method10538, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f));
+        RenderUtil.drawString(ClientFonts.JelloMedium20, (float)n, (float)(InfoHUD.mc.window.method7695() - n2), method10538, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f));
         return Math.max(ClientFonts.JelloLight20.getWidth(s), ClientFonts.JelloMedium20.getWidth(method10538));
     }
     

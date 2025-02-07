@@ -53,7 +53,7 @@ public class Class6466
     }
     
     public void method19338() {
-        Client.getInstance().method35188().method21094(this);
+        Client.getInstance().getEventBus().method21094(this);
         this.field25697 = new Class9198(this);
     }
 
@@ -159,7 +159,7 @@ public class Class6466
                     this.field25687 = null;
                 }
                 else {
-                    Client.method35174().method20243("Logged in!");
+                    Client.method35174().setThreadName("Logged in!");
                 }
             }
             catch (final IOException ex) {}

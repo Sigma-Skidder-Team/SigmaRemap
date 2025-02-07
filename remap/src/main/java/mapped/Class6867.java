@@ -33,10 +33,10 @@ public class Class6867 implements Class6866
             class690.method3853().fontRenderer.method6610(Class8822.method30773("recipe.toast.description", new Object[0]), 30.0f, 18.0f, -16777216);
             final IRecipe class691 = this.field26903.get((int)(field26904 / (5000L / this.field26903.size()) % this.field26903.size()));
             final ItemStack method11297 = class691.getIcon();
-            RenderSystem.method30059();
+            RenderSystem.pushMatrix();
             RenderSystem.method30063(0.6f, 0.6f, 1.0f);
             class690.method3853().getItemRenderer().method6541(null, method11297, 3, 3);
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
             class690.method3853().getItemRenderer().method6541(null, class691.getRecipeOutput(), 8, 8);
             return (field26904 - this.field26904 < 5000L) ? Class2204.field13417 : Class2204.field13418;
         }

@@ -42,11 +42,11 @@ public class Class4810 extends Class4803
         this.field20567.method14260((class4937, n) -> {
             final Class4836 method14855 = class4804.method14855();
             if (method14855 != null) {
-                Client.getInstance().method35193().method32156(new Class4933(method14855.field20723));
+                Client.getInstance().getGuimanager().method32156(new Class4933(method14855.field20723));
             }
         });
-        this.field20568.method14260((class4803, n) -> Client.getInstance().method35193().method32156(new Class4938()));
-        this.field20566.method14260((class4803, n) -> Client.getInstance().method35193().method32156(new Class4931()));
+        this.field20568.method14260((class4803, n) -> Client.getInstance().getGuimanager().method32156(new Class4938()));
+        this.field20566.method14260((class4803, n) -> Client.getInstance().getGuimanager().method32156(new Class4931()));
     }
     
     @Override

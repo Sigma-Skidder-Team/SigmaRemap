@@ -28,7 +28,7 @@ public class Class4850 extends Class4841
         this.field20788 = false;
         this.field20789 = new ArrayList<Class9031>();
         this.field20790 = new ArrayList<Class5257>();
-        if (this.field20479 + this.field20481 <= Minecraft.method5277().field4632.method7695()) {
+        if (this.field20479 + this.field20481 <= Minecraft.method5277().window.method7695()) {
             this.field20479 += 10;
         }
         else {

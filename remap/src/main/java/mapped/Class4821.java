@@ -34,7 +34,7 @@ public class Class4821 extends Class4817 implements Class4820
     
     public void method14390() {
         int n = 0;
-        for (final Module class3167 : Client.getInstance().method35189().method21554(this.field20629)) {
+        for (final Module class3167 : Client.getInstance().method35189().getModulesByCategory(this.field20629)) {
             final int method19118 = ColorUtils.applyAlpha(-3487030, 0.0f);
             final Class6523 method19119 = new Class6523(class3167.isEnabled() ? -14047489 : 1895167477, class3167.isEnabled() ? -14042881 : method19118).method19734(class3167.isEnabled() ? ClientColors.LIGHT_GREYISH_BLUE.color : ClientColors.field1273.color);
             method19119.method19736(Class2056.field11734);

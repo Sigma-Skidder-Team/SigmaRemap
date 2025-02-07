@@ -50,7 +50,7 @@ public class MineplexSpeed extends Module
     @Class6757
     public void method10150(final Class5717 class5717) {
         if (this.isEnabled()) {
-            if (!Client.getInstance().method35189().method21551(BlockFly.class).isEnabled()) {
+            if (!Client.getInstance().method35189().getModuleByClass(BlockFly.class).isEnabled()) {
                 if (!ColorUtils.method19112(MineplexSpeed.mc.player)) {
                     final double field15678 = this.getNumberSettingValueByName("OnGround Speed");
                     if (!MineplexSpeed.mc.player.onGround) {

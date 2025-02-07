@@ -23,7 +23,7 @@ public class Fullbright extends Module
     }
     
     @Override
-    public void method9917() {
+    public void initialize() {
         if (!this.isEnabled()) {
             Fullbright.mc.gameSettings.field23472 = 1.0;
         }

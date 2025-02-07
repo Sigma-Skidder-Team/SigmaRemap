@@ -67,10 +67,10 @@ public class Class647 extends Widget
         final boolean b = this.field3671 > 0.0f;
         if (b) {
             final float n6 = 1.0f + 0.1f * (float)Math.sin(this.field3671 / 15.0f * 3.1415927f);
-            RenderSystem.method30059();
-            RenderSystem.method30065((float)(this.field3426 + 8), (float)(this.field3427 + 12), 0.0f);
+            RenderSystem.pushMatrix();
+            RenderSystem.translatef((float)(this.field3426 + 8), (float)(this.field3427 + 12), 0.0f);
             RenderSystem.method30063(n6, n6, 1.0f);
-            RenderSystem.method30065((float)(-(this.field3426 + 8)), (float)(-(this.field3427 + 12)), 0.0f);
+            RenderSystem.translatef((float)(-(this.field3426 + 8)), (float)(-(this.field3427 + 12)), 0.0f);
             this.field3671 -= n3;
         }
         this.blit(this.field3426, this.field3427, n4, n5, this.field3424, this.field3425);
@@ -86,7 +86,7 @@ public class Class647 extends Widget
         }
         method5277.getItemRenderer().method6540(method5279, this.field3426 + n7, this.field3427 + n7);
         if (b) {
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
         }
     }
     

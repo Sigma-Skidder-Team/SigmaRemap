@@ -135,7 +135,7 @@ public class Class746 extends Class516<Class3423>
             final int n5 = (this.height - this.field3076) / 2;
             int n6 = n5 + 16 + 1;
             final int n7 = n4 + 5 + 5;
-            RenderSystem.method30059();
+            RenderSystem.pushMatrix();
             RenderSystem.enableRescaleNormal();
             this.minecraft.method5290().method5849(Class746.field4032);
             this.method4063(n4, n5, method10931);
@@ -181,7 +181,7 @@ public class Class746 extends Class516<Class3423>
                 }
                 class9019.field3432 = (class9019.field3702 < ((Class3423)this.field3077).method10931().size());
             }
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
             RenderSystem.enableDepthTest();
         }
         this.method2977(n, n2);

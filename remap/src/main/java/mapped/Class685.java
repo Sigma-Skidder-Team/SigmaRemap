@@ -194,8 +194,8 @@ public class Class685 extends AbstractGui
                         n6 = 255;
                     }
                     if (n6 > 8) {
-                        RenderSystem.method30059();
-                        RenderSystem.method30065((float)(this.field3778 / 2), (float)(this.field3779 - 68), 0.0f);
+                        RenderSystem.pushMatrix();
+                        RenderSystem.translatef((float)(this.field3778 / 2), (float)(this.field3779 - 68), 0.0f);
                         RenderSystem.enableBlend();
                         RenderSystem.defaultBlendFunc();
                         int n7 = 16777215;
@@ -206,7 +206,7 @@ public class Class685 extends AbstractGui
                         this.method3780(method3809, -4, method3809.getStringWidth(this.field3757));
                         method3809.method6610(this.field3757, (float)(-method3809.getStringWidth(this.field3757) / 2), -4.0f, n7 | n8);
                         RenderSystem.disableBlend();
-                        RenderSystem.method30060();
+                        RenderSystem.popMatrix();
                     }
                     this.field3753.method5327().endSection();
                 }
@@ -222,27 +222,27 @@ public class Class685 extends AbstractGui
                     }
                     final int method3812 = MathHelper.method35651(n10, 0, 255);
                     if (method3812 > 8) {
-                        RenderSystem.method30059();
-                        RenderSystem.method30065((float)(this.field3778 / 2), (float)(this.field3779 / 2), 0.0f);
+                        RenderSystem.pushMatrix();
+                        RenderSystem.translatef((float)(this.field3778 / 2), (float)(this.field3779 / 2), 0.0f);
                         RenderSystem.enableBlend();
                         RenderSystem.defaultBlendFunc();
-                        RenderSystem.method30059();
+                        RenderSystem.pushMatrix();
                         RenderSystem.method30063(4.0f, 4.0f, 4.0f);
                         final int n11 = method3812 << 24 & 0xFF000000;
                         final int method3813 = method3809.getStringWidth(this.field3769);
                         this.method3780(method3809, -10, method3813);
                         method3809.drawStringWithShadow(this.field3769, (float)(-method3813 / 2), -10.0f, 0xFFFFFF | n11);
-                        RenderSystem.method30060();
+                        RenderSystem.popMatrix();
                         if (!this.field3770.isEmpty()) {
-                            RenderSystem.method30059();
+                            RenderSystem.pushMatrix();
                             RenderSystem.method30063(2.0f, 2.0f, 2.0f);
                             final int method3814 = method3809.getStringWidth(this.field3770);
                             this.method3780(method3809, 5, method3814);
                             method3809.drawStringWithShadow(this.field3770, (float)(-method3814 / 2), 5.0f, 0xFFFFFF | n11);
-                            RenderSystem.method30060();
+                            RenderSystem.popMatrix();
                         }
                         RenderSystem.disableBlend();
-                        RenderSystem.method30060();
+                        RenderSystem.popMatrix();
                     }
                     this.field3753.method5327().endSection();
                 }
@@ -259,22 +259,22 @@ public class Class685 extends AbstractGui
                 final Class9290 class9290 = (method3816 == null) ? method3815.method19644(1) : method3816;
                 if (class9290 != null) {
                     final Class5726 class9291 = new Class5726(true);
-                    Client.getInstance().method35188().method21097(class9291);
+                    Client.getInstance().getEventBus().method21097(class9291);
                     if (class9291.isCancelled()) {
                         return;
                     }
                     this.method3789(class9290);
-                    Client.getInstance().method35188().method21097(new Class5726(false));
+                    Client.getInstance().getEventBus().method21097(new Class5726(false));
                 }
                 RenderSystem.enableBlend();
                 RenderSystem.defaultBlendFunc();
                 RenderSystem.disableAlphaTest();
-                RenderSystem.method30059();
-                RenderSystem.method30065(0.0f, (float)(this.field3779 - 48), 0.0f);
+                RenderSystem.pushMatrix();
+                RenderSystem.translatef(0.0f, (float)(this.field3779 - 48), 0.0f);
                 this.field3753.method5327().startSection("chat");
                 this.field3755.method3757(this.field3756);
                 this.field3753.method5327().endSection();
-                RenderSystem.method30060();
+                RenderSystem.popMatrix();
                 final Class9290 method3819 = method3815.method19644(0);
                 Label_1448: {
                     if (this.field3753.gameSettings.field23449.method1056()) {
@@ -313,14 +313,14 @@ public class Class685 extends AbstractGui
                     if (!field4648.field23464) {
                         if (!this.field3753.player.method2896()) {
                             if (!field4648.field23425) {
-                                RenderSystem.method30059();
-                                RenderSystem.method30065((float)(this.field3778 / 2), (float)(this.field3779 / 2), (float)this.getBlitOffset());
+                                RenderSystem.pushMatrix();
+                                RenderSystem.translatef((float)(this.field3778 / 2), (float)(this.field3779 / 2), (float)this.getBlitOffset());
                                 final Class6092 method5833 = this.field3753.field4644.method5833();
                                 RenderSystem.method30062(method5833.method18163(), -1.0f, 0.0f, 0.0f);
                                 RenderSystem.method30062(method5833.method18164(), 0.0f, 1.0f, 0.0f);
                                 RenderSystem.method30063(-1.0f, -1.0f, -1.0f);
                                 RenderSystem.method30082(10);
-                                RenderSystem.method30060();
+                                RenderSystem.popMatrix();
                                 return;
                             }
                         }
@@ -558,7 +558,7 @@ public class Class685 extends AbstractGui
                     n3 = 255;
                 }
                 if (n3 > 0) {
-                    RenderSystem.method30059();
+                    RenderSystem.pushMatrix();
                     RenderSystem.enableBlend();
                     RenderSystem.defaultBlendFunc();
                     AbstractGui.fill(n - 2, n2 - 2, n + this.method3809().getStringWidth(s) + 2, n2 + 9 + 2, this.field3753.gameSettings.method17116(0));
@@ -573,7 +573,7 @@ public class Class685 extends AbstractGui
                         class1844.drawStringWithShadow(s, (float)((this.field3778 - class1844.getStringWidth(s)) / 2), (float)n2, 16777215 + (n3 << 24));
                     }
                     RenderSystem.disableBlend();
-                    RenderSystem.method30060();
+                    RenderSystem.popMatrix();
                 }
             }
         }
@@ -958,15 +958,15 @@ public class Class685 extends AbstractGui
         if (!class513.method27620()) {
             final float n4 = class513.method27688() - n3;
             if (n4 > 0.0f) {
-                RenderSystem.method30059();
+                RenderSystem.pushMatrix();
                 final float n5 = 1.0f + n4 / 5.0f;
-                RenderSystem.method30065((float)(n + 8), (float)(n2 + 12), 0.0f);
+                RenderSystem.translatef((float)(n + 8), (float)(n2 + 12), 0.0f);
                 RenderSystem.method30063(1.0f / n5, (n5 + 1.0f) / 2.0f, 1.0f);
-                RenderSystem.method30065((float)(-(n + 8)), (float)(-(n2 + 12)), 0.0f);
+                RenderSystem.translatef((float)(-(n + 8)), (float)(-(n2 + 12)), 0.0f);
             }
             this.field3754.method6541(playerEntity, class513, n, n2);
             if (n4 > 0.0f) {
-                RenderSystem.method30060();
+                RenderSystem.popMatrix();
             }
             this.field3754.method6542(this.field3753.fontRenderer, class513, n, n2);
         }

@@ -43,7 +43,7 @@ public class Class4933 extends Class4800
             class7971.method25893(this.field21129.method14314());
             this.field21133 = "Edited!";
         });
-        this.field21131.method14260((class4803, n) -> Client.getInstance().method35193().method32156(new Class4936()));
+        this.field21131.method14260((class4803, n) -> Client.getInstance().getGuimanager().method32156(new Class4936()));
     }
     
     @Override
@@ -60,7 +60,7 @@ public class Class4933 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Client.getInstance().method35193().method32156(new Class4936());
+            Client.getInstance().getGuimanager().method32156(new Class4936());
         }
     }
 }

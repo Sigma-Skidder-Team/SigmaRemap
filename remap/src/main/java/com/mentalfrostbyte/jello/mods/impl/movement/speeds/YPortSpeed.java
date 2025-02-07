@@ -30,7 +30,7 @@ public class YPortSpeed extends Module
     public void method10596(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
             if (YPortSpeed.mc.player != null) {
-                if (!Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
+                if (!Client.getInstance().method35189().getModuleByClass(Fly.class).isEnabled()) {
                     if (YPortSpeed.mc.player.onGround) {
                         if (updateWalkingEvent.method17046()) {
                             if (ColorUtils.method19146()) {
@@ -62,7 +62,7 @@ public class YPortSpeed extends Module
     
     @EventListener
     public void method10597(final Class5717 class5717) {
-        if (!this.isEnabled() || Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
+        if (!this.isEnabled() || Client.getInstance().method35189().getModuleByClass(Fly.class).isEnabled()) {
             return;
         }
         if (YPortSpeed.mc.player.field2967) {
@@ -129,7 +129,7 @@ public class YPortSpeed extends Module
     private void method10598(final Class5747 class5747) {
         if (this.isEnabled()) {
             if (!this.getStringSettingValueByName("Mode").equalsIgnoreCase("NCP")) {
-                if (!Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
+                if (!Client.getInstance().method35189().getModuleByClass(Fly.class).isEnabled()) {
                     if (!YPortSpeed.mc.player.method1706()) {
                         if (!YPortSpeed.mc.player.method1723()) {
                             if (!YPortSpeed.mc.player.method2688()) {
@@ -166,7 +166,7 @@ public class YPortSpeed extends Module
                 if (YPortSpeed.mc.player.fallDistance <= 0.09) {
                     if (this.method9883("OnGround")) {
                         if (!YPortSpeed.mc.gameSettings.field23439.field2162) {
-                            if (!Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
+                            if (!Client.getInstance().method35189().getModuleByClass(Fly.class).isEnabled()) {
                                 if (YPortSpeed.mc.player.onGround) {
                                     if (ColorUtils.method19160(YPortSpeed.mc.player, 0.001f)) {
                                         this.field15960 = YPortSpeed.mc.player.posY;

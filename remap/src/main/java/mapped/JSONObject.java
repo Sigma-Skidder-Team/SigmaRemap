@@ -391,7 +391,7 @@ public class JSONObject
         while (method13272.hasNext()) {
             JSONArray.method486(method13272.next());
         }
-        return (JSONArray.method462() != 0) ? JSONArray : null;
+        return (JSONArray.length() != 0) ? JSONArray : null;
     }
     
     public static String method13276(final Number n) throws org.json.JSONException {
@@ -803,9 +803,9 @@ public class JSONObject
     }
     
     public JSONArray method13310(final JSONArray JSONArray) throws org.json.JSONException {
-        if (JSONArray != null && JSONArray.method462() != 0) {
+        if (JSONArray != null && JSONArray.length() != 0) {
             final JSONArray class89 = new JSONArray();
-            for (int i = 0; i < JSONArray.method462(); ++i) {
+            for (int i = 0; i < JSONArray.length(); ++i) {
                 class89.method486(this.opt(JSONArray.method459(i)));
             }
             return class89;

@@ -16,6 +16,6 @@ public class Class8292 implements Class8293
     
     @Override
     public void method27560(final byte[] array, final int n, final int n2) {
-        Client.method35174().method20243("DONE");
+        Client.method35174().setThreadName("DONE");
     }
 }

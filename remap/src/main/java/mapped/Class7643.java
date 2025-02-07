@@ -81,7 +81,7 @@ public class Class7643
     }
     
     public void method24158() {
-        Client.getInstance().method35188().method21094(this);
+        Client.getInstance().getEventBus().method21094(this);
         this.method24160();
         if (!this.method24195()) {
             this.method24196();
@@ -116,7 +116,7 @@ public class Class7643
     
     @EventListener
     private void method24161(final Class5740 class5740) {
-        if (Client.getInstance().method35209() == Class2209.field13464) {
+        if (Client.getInstance().method35209() == ClientMode.JELLO) {
             if (this.field30333) {
                 if (this.field30352.size() != 0) {
                     final double[] array = this.field30352.get(0);
@@ -166,21 +166,21 @@ public class Class7643
         }
         if (this.field30354.size() != 0) {
             final float n = 114.0f;
-            final float n2 = (float)Math.ceil(Class7643.field30332.field4632.method7694() / n);
+            final float n2 = (float)Math.ceil(Class7643.field30332.window.method7694() / n);
             for (int index = 0; index < n; ++index) {
                 final float n3 = 1.0f - (index + 1) / n;
-                final float n4 = ((float)(Math.sqrt(this.field30354.get(index)) / 12.0) - 5.0f) * (Class7643.field30332.field4632.method7695() / 1080.0f);
-                RenderUtil.method26874(index * n2, Class7643.field30332.field4632.method7695() - n4, n2, n4, ColorUtils.applyAlpha(ClientColors.field1281.color, 0.2f * n3));
+                final float n4 = ((float)(Math.sqrt(this.field30354.get(index)) / 12.0) - 5.0f) * (Class7643.field30332.window.method7695() / 1080.0f);
+                RenderUtil.method26874(index * n2, Class7643.field30332.window.method7695() - n4, n2, n4, ColorUtils.applyAlpha(ClientColors.field1281.color, 0.2f * n3));
             }
             RenderUtil.method26926();
             for (int index2 = 0; index2 < n; ++index2) {
-                final float n5 = ((float)(Math.sqrt(this.field30354.get(index2)) / 12.0) - 5.0f) * (Class7643.field30332.field4632.method7695() / 1080.0f);
-                RenderUtil.method26874(index2 * n2, Class7643.field30332.field4632.method7695() - n5, n2, n5, ClientColors.LIGHT_GREYISH_BLUE.color);
+                final float n5 = ((float)(Math.sqrt(this.field30354.get(index2)) / 12.0) - 5.0f) * (Class7643.field30332.window.method7695() / 1080.0f);
+                RenderUtil.method26874(index2 * n2, Class7643.field30332.window.method7695() - n5, n2, n5, ClientColors.LIGHT_GREYISH_BLUE.color);
             }
             RenderUtil.method26927(Class2225.field13694);
             if (this.field30340 != null) {
                 if (this.field30342 != null) {
-                    RenderUtil.method26904(0.0f, 0.0f, (float)Class7643.field30332.field4632.method7694(), (float)Class7643.field30332.field4632.method7695(), this.field30342, 0.4f);
+                    RenderUtil.method26904(0.0f, 0.0f, (float)Class7643.field30332.window.method7694(), (float)Class7643.field30332.window.method7695(), this.field30342, 0.4f);
                 }
             }
             RenderUtil.method26928();
@@ -191,22 +191,22 @@ public class Class7643
             }
             final float n7 = 1.0f + Math.round((float)(max / (n6 - 1000)) * 0.14f * 75.0f) / 75.0f;
             GL11.glPushMatrix();
-            GL11.glTranslated(60.0, (double)(Class7643.field30332.field4632.method7695() - 55), 0.0);
+            GL11.glTranslated(60.0, (double)(Class7643.field30332.window.method7695() - 55), 0.0);
             GL11.glScalef(n7, n7, 0.0f);
-            GL11.glTranslated(-60.0, (double)(-(Class7643.field30332.field4632.method7695() - 55)), 0.0);
-            RenderUtil.method26905(10.0f, (float)(Class7643.field30332.field4632.method7695() - 110), 100.0f, 100.0f, this.field30340);
-            RenderUtil.method26913(10.0f, (float)(Class7643.field30332.field4632.method7695() - 110), 100.0f, 100.0f, 14.0f, 0.3f);
+            GL11.glTranslated(-60.0, (double)(-(Class7643.field30332.window.method7695() - 55)), 0.0);
+            RenderUtil.method26905(10.0f, (float)(Class7643.field30332.window.method7695() - 110), 100.0f, 100.0f, this.field30340);
+            RenderUtil.method26913(10.0f, (float)(Class7643.field30332.window.method7695() - 110), 100.0f, 100.0f, 14.0f, 0.3f);
             GL11.glPopMatrix();
             final String[] split = this.field30339.split(" - ");
             if (split.length <= 1) {
-                RenderUtil.drawString(ClientFonts.JelloLight18_AA, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 70), split[0], ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
-                RenderUtil.drawString(ClientFonts.JelloLight18, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 70), split[0], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7f));
+                RenderUtil.drawString(ClientFonts.JelloLight18_AA, 130.0f, (float)(Class7643.field30332.window.method7695() - 70), split[0], ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
+                RenderUtil.drawString(ClientFonts.JelloLight18, 130.0f, (float)(Class7643.field30332.window.method7695() - 70), split[0], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7f));
             }
             else {
-                RenderUtil.drawString(ClientFonts.JelloMedium20_AA, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 81), split[0], ColorUtils.applyAlpha(ClientColors.field1273.color, 0.45f));
-                RenderUtil.drawString(ClientFonts.JelloMedium20, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 81), split[0], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f));
-                RenderUtil.drawString(ClientFonts.JelloLight18_AA, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 56), split[1], ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
-                RenderUtil.drawString(ClientFonts.JelloLight18, 130.0f, (float)(Class7643.field30332.field4632.method7695() - 56), split[1], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7f));
+                RenderUtil.drawString(ClientFonts.JelloMedium20_AA, 130.0f, (float)(Class7643.field30332.window.method7695() - 81), split[0], ColorUtils.applyAlpha(ClientColors.field1273.color, 0.45f));
+                RenderUtil.drawString(ClientFonts.JelloMedium20, 130.0f, (float)(Class7643.field30332.window.method7695() - 81), split[0], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f));
+                RenderUtil.drawString(ClientFonts.JelloLight18_AA, 130.0f, (float)(Class7643.field30332.window.method7695() - 56), split[1], ColorUtils.applyAlpha(ClientColors.field1273.color, 0.5f));
+                RenderUtil.drawString(ClientFonts.JelloLight18, 130.0f, (float)(Class7643.field30332.window.method7695() - 56), split[1], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7f));
             }
         }
     }
@@ -267,7 +267,7 @@ public class Class7643
                 for (int i = this.field30348; i < this.field30334.field38866.size(); ++i) {
                     Class5031.method15317(this.field30334.field38866.get(i).field36486);
                     final URL url;
-                    Client.method35174().method20243(url.toString());
+                    Client.method35174().setThreadName(url.toString());
                     this.field30346 = i;
                     this.field30349 = this.field30334.field38866.get(i);
                     this.field30352.clear();
@@ -288,7 +288,7 @@ public class Class7643
                     try {
                         this.method24188(url);
                         final URL url2;
-                        Client.method35174().method20243((url2 == null) ? "No stream" : url2.toString());
+                        Client.method35174().setThreadName((url2 == null) ? "No stream" : url2.toString());
                         if (url2 != null) {
                             url2.openConnection();
                             final URLConnection urlConnection;
@@ -304,7 +304,7 @@ public class Class7643
                             new Class7828(inputStream2).method25294();
                             final Class6476 class1751;
                             if (class1751.method19491().isEmpty()) {
-                                Client.method35174().method20243("No content");
+                                Client.method35174().setThreadName("No content");
                             }
                             final Class6890 class1752 = class1751.method19491().get(1);
                             final AudioFormat format = new AudioFormat((float)class1752.method21188(), class1752.method21189(), class1752.method21187(), true, true);
@@ -616,7 +616,7 @@ public class Class7643
     }
     
     public void method24196() {
-        Client.getInstance().method35187().method20243("Updating dependencies threaded");
+        Client.getInstance().getLogger().setThreadName("Updating dependencies threaded");
         new Thread(() -> this.method24197()).start();
     }
     
@@ -624,7 +624,7 @@ public class Class7643
         if (this.field30353) {
             return;
         }
-        Client.getInstance().method35187().method20243("Updating dependencies");
+        Client.getInstance().getLogger().setThreadName("Updating dependencies");
         if (Util.method27845() == Class306.field1833) {
             try {
                 FileUtils.copyURLToFile(new URL("https://yt-dl.org/downloads/latest/youtube-dl.exe"), new File(Client.getInstance().method35208() + "/music/youtube-dl.exe"));

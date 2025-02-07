@@ -9,7 +9,7 @@ public abstract class Class4800 extends Class4803
     public static int field20458;
     
     public Class4800(final String s) {
-        super(null, s, 0, 0, Minecraft.method5277().field4632.method7694(), Minecraft.method5277().field4632.method7695());
+        super(null, s, 0, 0, Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7695());
     }
     
     public int method14201() {
@@ -19,15 +19,15 @@ public abstract class Class4800 extends Class4803
     @Override
     public void method14203(final JSONObject JSONObject) {
         super.method14203(JSONObject);
-        this.method14277(Minecraft.method5277().field4632.method7694());
-        this.method14279(Minecraft.method5277().field4632.method7695());
+        this.method14277(Minecraft.method5277().window.method7694());
+        this.method14279(Minecraft.method5277().window.method7695());
     }
     
     @Override
     public void method14204(final int n) {
         if (n == Minecraft.method5277().gameSettings.field23454.field2161.field32860) {
-            Minecraft.method5277().field4632.method7685();
-            Minecraft.method5277().gameSettings.field23430 = Minecraft.method5277().field4632.method7691();
+            Minecraft.method5277().window.method7685();
+            Minecraft.method5277().gameSettings.field23430 = Minecraft.method5277().window.method7691();
         }
         super.method14204(n);
     }

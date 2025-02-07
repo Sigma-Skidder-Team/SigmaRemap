@@ -1563,7 +1563,7 @@ public class Config
     }
     
     public static boolean method29018(final int n) {
-        return GLFW.glfwGetKey(Config.field36028.method5332().method7690(), n) == 1;
+        return GLFW.glfwGetKey(Config.field36028.method5332().getHandle(), n) == 1;
     }
     
     public static boolean method29019(final Boolean b) {

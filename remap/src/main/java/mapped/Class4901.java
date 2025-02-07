@@ -81,7 +81,7 @@ public class Class4901 extends Class4841
             final int max = Math.max(this.field20480, this.field20481);
             final float n4 = (this.field20480 - max) / 2.0f;
             final float n5 = n - (this.method14280() + (this.field20481 - max) / 2.0f + max / 2);
-            final float n6 = Minecraft.method5277().field4632.method7695() - n2 - (this.method14281() + n4 + max / 2);
+            final float n6 = Minecraft.method5277().window.method7695() - n2 - (this.method14281() + n4 + max / 2);
             final float n7 = max / ((this.field20961 - 1) * 2.0f);
             final float n8 = this.field20960.field32290 * 16 - this.field20963 * 16.0f;
             final float n9 = this.field20960.field32291 * 16 - this.field20962 * 16.0f;

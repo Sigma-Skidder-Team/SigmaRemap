@@ -19,51 +19,44 @@ import com.mentalfrostbyte.jello.mods.impl.player.*;
 import com.mentalfrostbyte.jello.mods.impl.render.*;
 import com.mentalfrostbyte.jello.mods.impl.render.ActiveMods;
 import com.mentalfrostbyte.jello.mods.impl.world.*;
-import com.mentalfrostbyte.jello.settings.Setting;
 
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.Collections;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Class7060
+public class ModuleManager
 {
-    private Map<Class<? extends Module>, Module> field27468;
-    private Class9076 field27469;
-    private JelloTouch field27470;
-    private List<Module> field27471;
+    private Map<Class<? extends Module>, Module> moduleMap;
+    private ProfileManager profile;
+    private JelloTouch macOSTouchBar;
+    private List<Module> modules;
     
-    public Class7060() {
-        this.field27468 = new LinkedHashMap<Class<? extends Module>, Module>();
+    public ModuleManager() {
+        this.moduleMap = new LinkedHashMap<Class<? extends Module>, Module>();
     }
     
-    private void method21540() {
-        this.field27471 = new ArrayList<Module>();
+    private void createModules() {
+        this.modules = new ArrayList<Module>();
     }
     
     private void addModule(final Module class3167) {
-        this.field27471.add(class3167);
+        this.modules.add(class3167);
     }
-    
-    private void method21542(final Class<? extends Module> clazz) {
-        Client.getInstance().method35188().method21095(clazz);
-        this.field27468.remove(clazz);
-    }
-    
-    private void method21543() {
-        Collections.sort(this.field27471, new Class4450(this));
-        for (final Module class3167 : this.field27471) {
-            Client.getInstance().method35188().method21094(class3167);
-            this.field27468.put(class3167.getClass(), class3167);
+
+    private void sortBySuffixAndRegisterEvents() {
+        this.modules.sort(new Class4450(this));
+        for (final Module mod : this.modules) {
+            Client.getInstance().getEventBus().method21094(mod);
+            this.moduleMap.put(mod.getClass(), mod);
         }
         Class9146.field38766 = true;
     }
     
-    public void method21544(final Class2209 class2209) {
-        this.method21540();
+    public void register(final ClientMode clientMode) {
+        this.createModules();
         this.addModule(new BlockFly());
         this.addModule(new Fly());
         this.addModule(new Speed());
@@ -155,8 +148,8 @@ public class Class7060
         this.addModule(new Unstuck());
         this.addModule(new AntiLevitation());
         this.addModule(new FakeForge());
-        if (class2209 != Class2209.field13464) {
-            if (class2209 == Class2209.field13465) {
+        if (clientMode != ClientMode.JELLO) {
+            if (clientMode == ClientMode.CLASSIC) {
                 this.addModule(new ActiveMods());
                 this.addModule(new TabGUI());
                 this.addModule(new NameTags());
@@ -187,36 +180,35 @@ public class Class7060
             this.addModule(new AutoTotem());
             this.addModule(new NoteblockPlayer());
         }
-        this.method21543();
+        this.sortBySuffixAndRegisterEvents();
     }
     
-    public JSONObject method21545(final JSONObject JSONObject) {
-        JSONArray method26638 = null;
+    public JSONObject load(final JSONObject json) {
+        JSONArray array = null;
         try {
-            method26638 = Class8105.method26638(JSONObject, "mods");
+            array = CJsonUtils.getJSONArrayOrNull(json, "mods");
         }
-        catch (final JSONException class4406) {}
-        final Iterator<Module> iterator = this.field27468.values().iterator();
-        while (iterator.hasNext()) {
-            iterator.next().method9894();
+        catch (final JSONException ignored) {}
+        for (Module module : this.moduleMap.values()) {
+            module.resetModuleState();
         }
-        if (method26638 != null) {
-            for (int i = 0; i < method26638.method462(); ++i) {
-                final JSONObject method26639 = method26638.method457(i);
-                Object method26640 = null;
+        if (array != null) {
+            for (int i = 0; i < array.length(); ++i) {
+                final JSONObject method26639 = array.getJSONObject(i);
+                Object moduleObject = null;
                 try {
-                    method26640 = Class8105.method26636(method26639, "name", null);
+                    moduleObject = CJsonUtils.method26636(method26639, "name", null);
                 }
                 catch (final JSONException class4407) {
-                    Client.getInstance().method35187().method20241("Invalid name in mod list config");
+                    Client.getInstance().getLogger().warn("Invalid name in mod list config");
                 }
-                for (final Module class4408 : this.field27468.values()) {
-                    if (class4408.getName().equals(method26640)) {
+                for (final Module class4408 : this.moduleMap.values()) {
+                    if (class4408.getName().equals(moduleObject)) {
                         try {
                             class4408.method9895(method26639);
                         }
                         catch (final JSONException class4409) {
-                            Client.getInstance().method35187().method20241("Could not initialize mod " + class4408.getName() + " from config. All settings for this mod have been erased.");
+                            Client.getInstance().getLogger().warn("Could not initialize mod " + class4408.getName() + " from config. All settings for this mod have been erased.");
                         }
                         break;
                     }
@@ -224,35 +216,35 @@ public class Class7060
             }
         }
         else {
-            Client.getInstance().method35187().method20240("Mods array does not exist in config. Assuming a blank profile...");
+            Client.getInstance().getLogger().info("Mods array does not exist in config. Assuming a blank profile...");
         }
-        for (final Module class4410 : this.field27468.values()) {
+        for (final Module class4410 : this.moduleMap.values()) {
             if (class4410.isEnabled()) {
-                Client.getInstance().method35188().method21092(class4410);
+                Client.getInstance().getEventBus().register(class4410);
                 if (class4410 instanceof ModuleWithSettings) {
                     final ModuleWithSettings class4411 = (ModuleWithSettings)class4410;
-                    if (class4411.field15743 != null) {
-                        Client.getInstance().method35188().method21092(class4411.field15743);
+                    if (class4411.parentModule != null) {
+                        Client.getInstance().getEventBus().register(class4411.parentModule);
                     }
                 }
             }
             else {
-                Client.getInstance().method35188().method21093(class4410);
+                Client.getInstance().getEventBus().unregister(class4410);
                 if (class4410 instanceof ModuleWithSettings) {
-                    final Module[] field15742 = ((ModuleWithSettings)class4410).field15742;
-                    for (int length = field15742.length, j = 0; j < length; ++j) {
-                        Client.getInstance().method35188().method21093(field15742[j]);
+                    final Module[] module1 = ((ModuleWithSettings)class4410).field15742;
+                    for (int length = module1.length, j = 0; j < length; ++j) {
+                        Client.getInstance().getEventBus().unregister(module1[j]);
                     }
                 }
             }
-            class4410.method9917();
+            class4410.initialize();
         }
-        return JSONObject;
+        return json;
     }
     
-    public JSONObject method21546(final JSONObject JSONObject) {
+    public JSONObject saveCurrentConfigToJSON(final JSONObject JSONObject) {
         final JSONArray class4406 = new JSONArray();
-        final Iterator<Module> iterator = this.field27468.values().iterator();
+        final Iterator<Module> iterator = this.moduleMap.values().iterator();
         while (iterator.hasNext()) {
             class4406.method486(iterator.next().method9896(new JSONObject()));
         }
@@ -261,120 +253,70 @@ public class Class7060
     }
     
     public void method21547() {
-        long n = this.method21550();
-        for (final Module class3167 : this.field27468.values()) {
-            final Iterator<Setting> iterator2 = class3167.method9899().values().iterator();
-            while (iterator2.hasNext()) {
-                if (iterator2.next().getValue()) {
-                    ++n;
-                }
-                if (!(class3167 instanceof ModuleWithSettings)) {
-                    continue;
-                }
-                final Module[] field15742 = ((ModuleWithSettings)class3167).field15742;
-                for (int length = field15742.length, i = 0; i < length; ++i) {
-                    final Iterator<Setting> iterator3 = field15742[i].method9899().values().iterator();
-                    while (iterator3.hasNext()) {
-                        if (!iterator3.next().getValue()) {
-                            continue;
-                        }
-                        ++n;
-                    }
-                }
-            }
-        }
+
     }
     
-    public void method21548(final JSONObject JSONObject) {
+    public void loadModProfiles(final JSONObject JSONObject) {
         String method13268 = null;
         try {
             method13268 = JSONObject.getString("profile");
         }
         catch (final JSONException class4406) {}
-        if (Client.getInstance().method35209() == Class2209.field13465) {
+        if (Client.getInstance().method35209() == ClientMode.CLASSIC) {
             method13268 = "Classic";
         }
-        this.field27469 = new Class9076();
-        this.field27470 = new JelloTouch();
+        this.profile = new ProfileManager();
+        this.macOSTouchBar = new JelloTouch();
         try {
-            this.field27469.method32704(method13268);
-            this.field27470.method21963(JSONObject);
+            this.profile.method32704(method13268);
+            this.macOSTouchBar.method21963(JSONObject);
         }
         catch (final IOException ex) {
-            Client.getInstance().method35187().method20242("Could not load profiles!");
+            Client.getInstance().getLogger().error("Could not load profiles!");
             ex.printStackTrace();
             throw new RuntimeException("sorry m8");
         }
-        this.field27470.method21969();
+        this.macOSTouchBar.method21969();
     }
     
-    public void method21549(final JSONObject JSONObject) {
-        JSONObject.method13301("profile", this.field27469.method32707().field33839);
-        this.field27469.method32707().field33838 = this.method21546(new JSONObject());
+    public void saveModProfiles(final JSONObject JSONObject) {
+        JSONObject.method13301("profile", this.profile.method32707().field33839);
+        this.profile.method32707().field33838 = this.saveCurrentConfigToJSON(new JSONObject());
         try {
-            this.field27469.method32706();
-            this.field27470.method21962(JSONObject);
+            this.profile.method32706();
+            this.macOSTouchBar.method21962(JSONObject);
         }
         catch (final IOException ex) {
             ex.printStackTrace();
-            Client.getInstance().method35187().method20241("Unable to save mod profiles...");
+            Client.getInstance().getLogger().warn("Unable to save mod profiles...");
         }
     }
-    
-    public int method21550() {
-        final Setting class4997 = this.method21551(Jesus.class).method9899().get("Mode");
-        final String field21511 = (String)class4997.currentValue;
-        class4997.method15199("Dolphin");
-        class4997.currentValue = (T)field21511;
-        return 0;
+
+    public Module getModuleByClass(final Class<? extends Module> clazz) {
+        return this.moduleMap.get(clazz);
+    }
+
+    public Map<Class<? extends Module>, Module> getModuleMap() {
+        return this.moduleMap;
     }
     
-    public Module method21551(final Class<? extends Module> clazz) {
-        return this.field27468.get(clazz);
-    }
-    
-    public Module method21552(final Class<? extends Module> clazz) {
-        if (clazz.getSuperclass() == ModuleWithSettings.class) {
-            for (final Module class3167 : this.field27468.get(clazz.getSuperclass()).field15742) {
-                if (class3167.getClass() == clazz) {
-                    return class3167;
-                }
+    public List<Module> getModulesByCategory(final Category category) {
+        ArrayList<Module> moduleList = new ArrayList<>();
+
+        for (Module moduleFromMap : this.moduleMap.values()) {
+            if (moduleFromMap.getCategoryBasedOnMode().equals(category)) {
+                moduleList.add(moduleFromMap);
             }
         }
-        return this.field27468.get(clazz);
+
+        return moduleList;
+    }
+
+    public ProfileManager getProfile() {
+        return this.profile;
     }
     
-    public Map<Class<? extends Module>, Module> method21553() {
-        return this.field27468;
-    }
-    
-    public List<Module> method21554(final Category class8013) {
-        final ArrayList list = new ArrayList();
-        for (final Module class8014 : this.field27468.values()) {
-            if (!class8014.getCategory2().equals(class8013)) {
-                continue;
-            }
-            list.add(class8014);
-        }
-        return list;
-    }
-    
-    public List<Module> method21555() {
-        final ArrayList list = new ArrayList();
-        for (final Module class3167 : this.field27468.values()) {
-            if (!class3167.isEnabled()) {
-                continue;
-            }
-            list.add(class3167);
-        }
-        return list;
-    }
-    
-    public Class9076 method21556() {
-        return this.field27469;
-    }
-    
-    public JelloTouch method21557() {
-        return this.field27470;
+    public JelloTouch getJelloTouch() {
+        return this.macOSTouchBar;
     }
 }

@@ -173,7 +173,7 @@ public class Class4803 implements Class4925
         }
         catch (final ConcurrentModificationException ex) {
             ex.printStackTrace();
-            Client.method35174().method20242("FUCK! Why does this shit happen");
+            Client.method35174().error("FUCK! Why does this shit happen");
         }
         this.field20492 &= this.field20491;
         for (final Class6507 class6507 : this.method14269()) {
@@ -576,20 +576,20 @@ public class Class4803 implements Class4925
     
     public void method14203(final JSONObject JSONObject) {
         if (this.method14310()) {
-            this.field20478 = Class8105.method26632(JSONObject, "x", this.field20478);
-            this.field20479 = Class8105.method26632(JSONObject, "y", this.field20479);
+            this.field20478 = CJsonUtils.method26632(JSONObject, "x", this.field20478);
+            this.field20479 = CJsonUtils.method26632(JSONObject, "y", this.field20479);
             if (this.method14312()) {
-                this.field20480 = Class8105.method26632(JSONObject, "width", this.field20480);
-                this.field20481 = Class8105.method26632(JSONObject, "height", this.field20481);
+                this.field20480 = CJsonUtils.method26632(JSONObject, "width", this.field20480);
+                this.field20481 = CJsonUtils.method26632(JSONObject, "height", this.field20481);
             }
-            final JSONArray method26638 = Class8105.method26638(JSONObject, "children");
+            final JSONArray method26638 = CJsonUtils.getJSONArrayOrNull(JSONObject, "children");
             JSONObject.method13273().iterator();
             if (method26638 != null) {
                 final ArrayList list = new ArrayList((Collection<? extends E>)this.field20476);
-                for (int i = 0; i < method26638.method462(); ++i) {
-                    final JSONObject method26639 = method26638.method457(i);
-                    final String method26640 = Class8105.method26636(method26639, "id", null);
-                    final int method26641 = Class8105.method26632(method26639, "index", -1);
+                for (int i = 0; i < method26638.length(); ++i) {
+                    final JSONObject method26639 = method26638.getJSONObject(i);
+                    final String method26640 = CJsonUtils.method26636(method26639, "id", null);
+                    final int method26641 = CJsonUtils.method26632(method26639, "index", -1);
                     for (final Class4803 class4406 : list) {
                         if (!class4406.method14266().equals(method26640)) {
                             continue;

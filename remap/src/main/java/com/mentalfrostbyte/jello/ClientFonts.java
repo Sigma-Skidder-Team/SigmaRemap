@@ -5,7 +5,7 @@
 package com.mentalfrostbyte.jello;
 
 import com.mentalfrostbyte.Client;
-import mapped.Class2209;
+import mapped.ClientMode;
 import mapped.DefaultFont;
 import slick2d.TrueTypeFont;
 
@@ -50,7 +50,7 @@ public class ClientFonts
         }
         catch (final Exception ex) {
             ex.printStackTrace();
-            return new TrueTypeFont(new Font("Arial", 0, (int)size), Client.getInstance().method35209() != Class2209.field13465);
+            return new TrueTypeFont(new Font("Arial", 0, (int)size), Client.getInstance().method35209() != ClientMode.CLASSIC);
         }
     }
     

@@ -428,12 +428,12 @@ public class RenderSystem
         Class8933.method31634();
     }
     
-    public static void method30059() {
+    public static void pushMatrix() {
         method29989(RenderSystem::method29987);
         Class8933.method31635();
     }
     
-    public static void method30060() {
+    public static void popMatrix() {
         method29989(RenderSystem::method29987);
         Class8933.method31636();
     }
@@ -458,7 +458,7 @@ public class RenderSystem
         Class8933.method31641(n, n2, n3);
     }
     
-    public static void method30065(final float n, final float n2, final float n3) {
+    public static void translatef(final float n, final float n2, final float n3) {
         method29989(RenderSystem::method29987);
         Class8933.method31642(n, n2, n3);
     }

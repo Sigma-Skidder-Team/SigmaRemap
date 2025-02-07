@@ -63,7 +63,7 @@ public class Class1918 implements AutoCloseable
     }
     
     public void method7591(final Matrix4f class6789, int field10428) {
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.method30058();
         RenderSystem.method30067(class6789);
         if (this.field10428 > 0) {
@@ -75,7 +75,7 @@ public class Class1918 implements AutoCloseable
         else {
             this.field10426.method31174(field10428, this.field10427);
         }
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
     }
     
     public static void method7592() {

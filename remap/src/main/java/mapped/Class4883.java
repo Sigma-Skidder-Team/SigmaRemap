@@ -26,7 +26,7 @@ public class Class4883 extends Class4841
     
     @Override
     public void draw(final float n) {
-        RenderUtil.drawString(Class9493.field40808, (float)(this.field20478 + 10), (float)(this.field20479 + 8), this.field20878.getName2(), ColorUtils.applyAlpha(ClientColors.field1273.color, this.field20878.isEnabled() ? 0.9f : 0.5f));
+        RenderUtil.drawString(Class9493.field40808, (float)(this.field20478 + 10), (float)(this.field20479 + 8), this.field20878.getFormattedName(), ColorUtils.applyAlpha(ClientColors.field1273.color, this.field20878.isEnabled() ? 0.9f : 0.5f));
         RenderUtil.drawString(Class9493.field40809, (float)(this.field20478 + 15), (float)(this.field20479 + 33), "Bind", ColorUtils.applyAlpha(ClientColors.field1273.color, 1.0f));
         RenderUtil.drawString(Class9493.field40809, (float)(this.field20478 + 15), (float)(this.field20479 + 52), ColorUtils.method19166(this.field20878.method9885("Keybind")), ColorUtils.applyAlpha(ClientColors.field1273.color, 0.7f));
         if (this.field20878.method9899().size() > 1) {

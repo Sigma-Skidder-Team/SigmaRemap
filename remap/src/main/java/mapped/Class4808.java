@@ -17,10 +17,10 @@ public class Class4808 extends Class4807
     public Class4808(final Class4803 class4803, final String s, final int n, final int n2, final Category[] array) {
         super(class4803, s, n - 296, n2 - 346, 592, 692);
         this.field20529 = 0;
-        for (final Module class4804 : Client.getInstance().method35189().method21553().values()) {
+        for (final Module class4804 : Client.getInstance().method35189().getModuleMap().values()) {
             if (class4804.method9916()) {
                 for (int length = array.length, i = 0; i < length; ++i) {
-                    if (class4804.getCategory2().equals(array[i])) {
+                    if (class4804.getCategoryBasedOnMode().equals(array[i])) {
                         this.method14327(class4804);
                     }
                 }

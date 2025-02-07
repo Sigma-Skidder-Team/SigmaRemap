@@ -88,7 +88,7 @@ public class Class6092
             if (method6987.getType() != RayTraceResult.Type.MISS) {
                 final double method6988 = method6987.getHitVec().distanceTo(this.field24708);
                 if (method6988 < n) {
-                    if (!Client.getInstance().method35189().method21551(CameraNoClip.class).isEnabled()) {
+                    if (!Client.getInstance().method35189().getModuleByClass(CameraNoClip.class).isEnabled()) {
                         n = method6988;
                     }
                 }

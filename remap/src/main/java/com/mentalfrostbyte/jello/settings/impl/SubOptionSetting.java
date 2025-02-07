@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
 import mapped.JSONObject;
-import mapped.Class8105;
+import mapped.CJsonUtils;
 import mapped.JSONArray;
 
 import java.util.Iterator;
@@ -28,11 +28,11 @@ public abstract class SubOptionSetting extends Setting<Boolean> {
 
     @Override
     public JSONObject method15186(final JSONObject JSONObject) {
-        final JSONArray method26638 = Class8105.method26638(JSONObject, this.method15204());
+        final JSONArray method26638 = CJsonUtils.getJSONArrayOrNull(JSONObject, this.method15204());
         if (method26638 != null) {
-            for (int i = 0; i < method26638.method462(); ++i) {
-                final JSONObject method26639 = method26638.method457(i);
-                final String method26640 = Class8105.method26636(JSONObject, "name", null);
+            for (int i = 0; i < method26638.length(); ++i) {
+                final JSONObject method26639 = method26638.getJSONObject(i);
+                final String method26640 = CJsonUtils.method26636(JSONObject, "name", null);
                 for (final Setting class4406 : this.method15224()) {
                     if (!class4406.method15204().equals(method26640)) {
                         continue;
@@ -42,7 +42,7 @@ public abstract class SubOptionSetting extends Setting<Boolean> {
                 }
             }
         }
-        this.currentValue = Boolean.valueOf(Class8105.method26630(JSONObject, "value", this.method15203()));
+        this.currentValue = Boolean.valueOf(CJsonUtils.method26630(JSONObject, "value", this.method15203()));
         return JSONObject;
     }
 

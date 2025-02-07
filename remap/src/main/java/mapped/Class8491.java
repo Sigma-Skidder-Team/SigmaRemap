@@ -43,7 +43,7 @@ public class Class8491
     }
     
     public void method28365() {
-        Client.getInstance().method35188().method21094(this);
+        Client.getInstance().getEventBus().method21094(this);
         new Class9367(null);
     }
     
@@ -178,7 +178,7 @@ public class Class8491
     @EventListener
     @Class6763
     public void method28373(final Class5723 class5723) {
-        if (!Client.getInstance().method35189().method21551(OldHitting.class).isEnabled() && Class9367.method34762() != Class7906.field32452.method25613()) {
+        if (!Client.getInstance().method35189().getModuleByClass(OldHitting.class).isEnabled() && Class9367.method34762() != Class7906.field32452.method25613()) {
             if (!Class8491.field34858.isEmpty()) {
                 Class8491.field34858.clear();
             }
@@ -187,7 +187,7 @@ public class Class8491
             final Class4402 class5724 = (Class4402)class5723.method16998();
             if (class5724.method13249() == Class2215.field13601) {
                 if (class5724.method13247() != null) {
-                    if (Client.getInstance().method35189().method21551(OldHitting.class).isEnabled() || Class9367.method34762() == Class7906.field32452.method25613()) {
+                    if (Client.getInstance().method35189().getModuleByClass(OldHitting.class).isEnabled() || Class9367.method34762() == Class7906.field32452.method25613()) {
                         if (!(class5724.method13247().getItem() instanceof Class4100)) {
                             final Entity method6741 = this.field34856.world.getEntityByID(class5724.method13248());
                             if (Class8491.field34858.contains(method6741)) {

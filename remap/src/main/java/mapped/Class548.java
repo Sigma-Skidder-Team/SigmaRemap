@@ -181,13 +181,13 @@ public class Class548 extends Screen
                 this.field3304 = Class9570.method35817(Class9570.field41309, this, this.minecraft.fontRenderer, this.width, this.height);
             }
             if (this.field3304 != null) {
-                RenderSystem.method30059();
-                RenderSystem.method30065((float)(this.width / 2 + 90), 70.0f, 0.0f);
+                RenderSystem.pushMatrix();
+                RenderSystem.translatef((float)(this.width / 2 + 90), 70.0f, 0.0f);
                 RenderSystem.method30062(-20.0f, 0.0f, 0.0f, 1.0f);
                 final float n8 = (1.8f - MathHelper.method35647(MathHelper.sin(Util.method27837() % 1000L / 1000.0f * 6.2831855f) * 0.1f)) * 100.0f / (this.font.getStringWidth(this.field3304) + 32);
                 RenderSystem.method30063(n8, n8, n8);
                 this.drawCenteredString(this.font, this.field3304, 0, -8, 0xFFFF00 | n7);
-                RenderSystem.method30060();
+                RenderSystem.popMatrix();
             }
             final String string = "Minecraft " + Class9528.method35579().getName();
             String str;

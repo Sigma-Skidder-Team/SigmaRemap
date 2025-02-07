@@ -42,7 +42,7 @@ public class Class4899 extends Class4841
     public ArrayList<Module> method14713() {
         final ArrayList list = new ArrayList();
         if (this.field20955 != null && this.field20955.length() != 0) {
-            for (final Module e : Client.getInstance().method35189().method21553().values()) {
+            for (final Module e : Client.getInstance().method35189().getModuleMap().values()) {
                 if (!this.method14715(this.field20955, e.getName())) {
                     continue;
                 }

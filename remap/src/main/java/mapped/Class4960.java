@@ -250,7 +250,7 @@ public class Class4960 extends Class4961
     }
     
     private static Object[] method14960(final JSONArray JSONArray) {
-        final int method462 = JSONArray.method462();
+        final int method462 = JSONArray.length();
         final Object[] array = new Object[method462];
         for (int i = 0; i < method462; ++i) {
             Object method463;

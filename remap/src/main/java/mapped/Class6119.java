@@ -33,7 +33,7 @@ public class Class6119 implements Class6113
     @Override
     public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
         this.field24837.field4644.method5833();
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
         RenderSystem.disableTexture();
@@ -52,6 +52,6 @@ public class Class6119 implements Class6113
         });
         RenderSystem.enableDepthTest();
         RenderSystem.enableTexture();
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
     }
 }

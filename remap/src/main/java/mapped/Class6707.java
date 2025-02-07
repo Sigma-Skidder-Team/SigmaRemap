@@ -46,11 +46,11 @@ public class Class6707 extends Class6693
                         throw new Class2332("Key " + array[1].method26314() + " not found");
                     }
                     if (method20364 != -1) {
-                        class6428.method19104("Key " + array[1].method26314() + " was set for module " + method20363.getName2());
-                        Client.getInstance().method35189().method21557().method21956(method20364, method20363);
+                        class6428.method19104("Key " + array[1].method26314() + " was set for module " + method20363.getFormattedName());
+                        Client.getInstance().method35189().getJelloTouch().method21956(method20364, method20363);
                     }
                     else {
-                        class6428.method19104("Keybind was reset for module " + method20363.getName2());
+                        class6428.method19104("Keybind was reset for module " + method20363.getFormattedName());
                     }
                 }
             }
@@ -60,7 +60,7 @@ public class Class6707 extends Class6693
                     throw new Class2332("Module " + array[0].method26314() + " not found");
                 }
                 final String prefix = "key.keyboard.";
-                final int method20366 = Client.getInstance().method35189().method21557().method21960(method20365);
+                final int method20366 = Client.getInstance().method35189().getJelloTouch().method21960(method20365);
                 String substring = null;
                 for (final Map.Entry<String, V> entry : Class7985.field32861.entrySet()) {
                     if (!entry.getKey().startsWith(prefix)) {
@@ -72,10 +72,10 @@ public class Class6707 extends Class6693
                     substring = entry.getKey().substring(prefix.length());
                 }
                 if (substring != null) {
-                    class6428.method19104(method20365.getName2() + " is bound to : " + substring);
+                    class6428.method19104(method20365.getFormattedName() + " is bound to : " + substring);
                 }
                 else {
-                    class6428.method19104("§c[Error] " + method20365.getName2() + " is bound to an unknown key");
+                    class6428.method19104("§c[Error] " + method20365.getFormattedName() + " is bound to an unknown key");
                 }
             }
             return;
@@ -97,7 +97,7 @@ public class Class6707 extends Class6693
     }
     
     public Module method20363(final String anotherString) {
-        for (final Module class3167 : Client.getInstance().method35189().method21553().values()) {
+        for (final Module class3167 : Client.getInstance().method35189().getModuleMap().values()) {
             if (!class3167.getName().replace(" ", "").equalsIgnoreCase(anotherString)) {
                 continue;
             }

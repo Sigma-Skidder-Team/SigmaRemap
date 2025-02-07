@@ -44,10 +44,10 @@ public class Class7767<T extends Class6866>
                 this.field31765 = method27837;
             }
         }
-        RenderSystem.method30059();
-        RenderSystem.method30065(n - 160.0f * this.method24872(method27837), (float)(n2 * 32), (float)(800 + n2));
+        RenderSystem.pushMatrix();
+        RenderSystem.translatef(n - 160.0f * this.method24872(method27837), (float)(n2 * 32), (float)(800 + n2));
         final Class2204 method27838 = this.field31763.method20978(this.field31767, method27837 - this.field31765);
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         if (method27838 != this.field31766) {
             this.field31764 = method27837 - (int)((1.0f - this.method24872(method27837)) * 600.0f);
             (this.field31766 = method27838).method8381(Class690.method3854(this.field31767).method5299());

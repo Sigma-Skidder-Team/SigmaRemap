@@ -32,7 +32,7 @@ public class Class1114 implements Runnable
         if (method14393 != null) {
             this.field6000.method14245(method14393);
         }
-        this.field6000.method14242(Class4934.method14834(this.field6003, new Class4817(this.field6000, "alts", 0, 114, (int)(Minecraft.method5277().field4632.method7694() * Class4934.method14835(this.field6003)) - 4, Minecraft.method5277().field4632.method7695() - 119 - Class4934.method14836(this.field6003))));
+        this.field6000.method14242(Class4934.method14834(this.field6003, new Class4817(this.field6000, "alts", 0, 114, (int)(Minecraft.method5277().window.method7694() * Class4934.method14835(this.field6003)) - 4, Minecraft.method5277().window.method7695() - 119 - Class4934.method14836(this.field6003))));
         final Iterator iterator = this.field6001.iterator();
         while (iterator.hasNext()) {
             Class4934.method14837(this.field6003, (Class7971)iterator.next(), this.field6002);

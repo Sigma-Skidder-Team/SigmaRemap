@@ -21,7 +21,7 @@ public class Class6116 implements Class6113
     @Override
     public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
         final ClientWorld field4683 = this.field24829.world;
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
         RenderSystem.disableTexture();
@@ -40,6 +40,6 @@ public class Class6116 implements Class6113
             Class7282.method22339(String.valueOf(method6992), class7354.getX() + 0.5, class7354.getY() + 0.25, class7354.getZ() + 0.5, method6993);
         }
         RenderSystem.enableTexture();
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
     }
 }

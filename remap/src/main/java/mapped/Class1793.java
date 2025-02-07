@@ -310,7 +310,7 @@ public class Class1793 implements Class1662
             RenderSystem.method30019();
             return;
         };
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.method30067(class7351.getLast().getMatrix());
         Object o = Class1793.field9922;
         if (Class9570.field41282.method22623()) {
@@ -342,7 +342,7 @@ public class Class1793 implements Class1662
                 class7355.method19305(method22694);
             }
         }
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         RenderSystem.method30010(true);
         RenderSystem.disableBlend();
         RenderSystem.method30118();

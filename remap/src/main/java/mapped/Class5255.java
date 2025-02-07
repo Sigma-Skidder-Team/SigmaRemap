@@ -46,7 +46,7 @@ public class Class5255
         if (o instanceof JSONArray) {
             final JSONArray class4406 = new JSONArray();
             final JSONArray class4407 = (JSONArray)o;
-            for (int method462 = class4407.method462(), i = 0; i < method462; ++i) {
+            for (int method462 = class4407.length(), i = 0; i < method462; ++i) {
                 try {
                     class4406.method493(i, method16359(class4407.method449(i), list));
                 }
@@ -85,7 +85,7 @@ public class Class5255
     private static Object method16361(final Object o, final byte[][] array) {
         if (o instanceof JSONArray) {
             final JSONArray JSONArray = (JSONArray)o;
-            for (int method462 = JSONArray.method462(), i = 0; i < method462; ++i) {
+            for (int method462 = JSONArray.length(), i = 0; i < method462; ++i) {
                 try {
                     JSONArray.method493(i, method16361(JSONArray.method449(i), array));
                 }

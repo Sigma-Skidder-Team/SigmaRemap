@@ -36,7 +36,7 @@ public class TargetStrafe extends Module
     public void method10227(final Class5739 class5739) {
         if (this.isEnabled()) {
             Entity class5740 = null;
-            if ((Client.getInstance().method35189().method21551(Speed.class).isEnabled() && !HypixelSpeed.field15955) || !this.method9883("Only speed")) {
+            if ((Client.getInstance().method35189().getModuleByClass(Speed.class).isEnabled() && !HypixelSpeed.field15955) || !this.method9883("Only speed")) {
                 if (KillAura.field16061 == null) {
                     if (KillAura.field16060 != null) {
                         class5740 = KillAura.field16060;
@@ -57,7 +57,7 @@ public class TargetStrafe extends Module
             return;
         }
         Entity class5718 = null;
-        if ((Client.getInstance().method35189().method21551(Speed.class).isEnabled() || !this.method9883("Only speed")) && !HypixelSpeed.field15955) {
+        if ((Client.getInstance().method35189().getModuleByClass(Speed.class).isEnabled() || !this.method9883("Only speed")) && !HypixelSpeed.field15955) {
             if (KillAura.field16061 != null) {
                 class5718 = KillAura.field16061.method26798();
             }

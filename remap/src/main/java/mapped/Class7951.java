@@ -87,8 +87,8 @@ public class Class7951
             for (int i = 0; i < this.field32655.size(); ++i) {
                 final Class6224 class5741 = this.field32655.get(i);
                 final float method25777 = this.method25777(class5741);
-                final int n2 = Minecraft.method5277().field4632.method7694() - this.field32662 - (int)(this.field32659 * method25777 * method25777);
-                final int n3 = this.field32654.field4632.method7695() - this.field32660 - this.field32661 - i * (int)(this.field32660 * this.method25778(i) + this.field32663 * this.method25778(i));
+                final int n2 = Minecraft.method5277().window.method7694() - this.field32662 - (int)(this.field32659 * method25777 * method25777);
+                final int n3 = this.field32654.window.method7695() - this.field32660 - this.field32661 - i * (int)(this.field32660 * this.method25778(i) + this.field32663 * this.method25778(i));
                 final float min = Math.min(1.0f, method25777);
                 final int rgb = new Color(0.14f, 0.14f, 0.14f, min * 0.93f).getRGB();
                 final int rgb2 = new Color(0.0f, 0.0f, 0.0f, Math.min(method25777 * 0.075f, 1.0f)).getRGB();
@@ -131,8 +131,8 @@ public class Class7951
         for (int i = 0; i < this.field32655.size(); ++i) {
             final Class6224 class6224 = this.field32655.get(i);
             final float method25777 = this.method25777(class6224);
-            final int n = Minecraft.method5277().field4632.method7694() - this.field32662 - (int)(this.field32659 * method25777 * method25777);
-            final int n2 = this.field32654.field4632.method7695() - this.field32660 - this.field32661 - i * (int)(this.field32660 * this.method25778(i) + this.field32663 * this.method25778(i));
+            final int n = Minecraft.method5277().window.method7694() - this.field32662 - (int)(this.field32659 * method25777 * method25777);
+            final int n2 = this.field32654.window.method7695() - this.field32660 - this.field32661 - i * (int)(this.field32660 * this.method25778(i) + this.field32663 * this.method25778(i));
             for (int j = 0; j < 3; ++j) {
                 class6224.field25090[j] = RenderUtil.method26930(n + this.field32659 / 3 * j, n2, class6224.field25090[j]);
                 class6224.field25091[j] = RenderUtil.method26930(n + this.field32659 / 3 * j, n2 + this.field32660, class6224.field25091[j]);
@@ -141,6 +141,6 @@ public class Class7951
     }
     
     public void method25783() {
-        Client.getInstance().method35188().method21094(this);
+        Client.getInstance().getEventBus().method21094(this);
     }
 }

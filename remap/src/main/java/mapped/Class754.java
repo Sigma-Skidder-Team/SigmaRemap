@@ -154,7 +154,7 @@ public abstract class Class754 extends PlayerEntity
             }
         }
         final Class5735 class5735 = new Class5735(Class9570.field41295.method22605() ? Class9570.method35815(Class9570.field41295, this, f) : f);
-        Client.getInstance().method35188().method21097(class5735);
+        Client.getInstance().getEventBus().method21097(class5735);
         return class5735.field23300;
     }
     

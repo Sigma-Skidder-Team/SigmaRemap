@@ -42,10 +42,10 @@ public class Class646 extends Class645
     public void method3353(final int n, final int n2, final float n3) {
         if (this.field3665 > 0.0f) {
             final float n4 = 1.0f + 0.1f * (float)Math.sin(this.field3665 / 15.0f * 3.1415927f);
-            RenderSystem.method30059();
-            RenderSystem.method30065((float)(this.field3426 + 8), (float)(this.field3427 + 12), 0.0f);
+            RenderSystem.pushMatrix();
+            RenderSystem.translatef((float)(this.field3426 + 8), (float)(this.field3427 + 12), 0.0f);
             RenderSystem.method30063(1.0f, n4, 1.0f);
-            RenderSystem.method30065((float)(-(this.field3426 + 8)), (float)(-(this.field3427 + 12)), 0.0f);
+            RenderSystem.translatef((float)(-(this.field3426 + 8)), (float)(-(this.field3427 + 12)), 0.0f);
         }
         final Minecraft method5277 = Minecraft.method5277();
         method5277.method5290().method5849(this.field3657);
@@ -67,7 +67,7 @@ public class Class646 extends Class645
         RenderSystem.enableDepthTest();
         this.method3695(method5277.getItemRenderer());
         if (this.field3665 > 0.0f) {
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
             this.field3665 -= n3;
         }
     }

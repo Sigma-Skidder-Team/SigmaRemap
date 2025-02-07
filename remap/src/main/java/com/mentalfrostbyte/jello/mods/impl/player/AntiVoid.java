@@ -49,9 +49,9 @@ public class AntiVoid extends Module
                 this.field15665 = new Vec3d(AntiVoid.mc.player.posX, AntiVoid.mc.player.posY, AntiVoid.mc.player.posZ);
             }
             if (this.field15664 <= 0) {
-                final Module method21551 = Client.getInstance().method35189().method21551(Fly.class);
+                final Module method21551 = Client.getInstance().method35189().getModuleByClass(Fly.class);
                 final String method21552 = method21551.getStringSettingValueByName("Type");
-                final Module method21553 = Client.getInstance().method35189().method21551(HighJump.class);
+                final Module method21553 = Client.getInstance().method35189().getModuleByClass(HighJump.class);
                 final String method21554 = method21553.getStringSettingValueByName("Type");
                 boolean method21555 = method21551.isEnabled();
                 if (method21552.equals("Cubecraft")) {
@@ -134,7 +134,7 @@ public class AntiVoid extends Module
             }
             case "Cubecraft": {
                 AntiVoid.mc.method5269().method17292(new Class4354(method16760, 3.2E7, method16761, false));
-                Client.getInstance().method35189().method21551(Fly.class).method9909(false);
+                Client.getInstance().method35189().getModuleByClass(Fly.class).method9909(false);
                 break;
             }
             case "Legit": {

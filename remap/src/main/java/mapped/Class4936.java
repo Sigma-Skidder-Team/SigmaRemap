@@ -59,11 +59,11 @@ public class Class4936 extends Class4800
             }
         }
         final int n = 790;
-        this.addVisualThing(this.field21183 = new Class4832(this, "textbox", (Minecraft.method5277().field4632.method7694() - n) / 2 - 140, this.method14278() - 40, 140, 32, Class4831.field20670, "", "Search...", ClientFonts.JelloLight18));
+        this.addVisualThing(this.field21183 = new Class4832(this, "textbox", (Minecraft.method5277().window.method7694() - n) / 2 - 140, this.method14278() - 40, 140, 32, Class4831.field20670, "", "Search...", ClientFonts.JelloLight18));
         this.field21183.method14317(ClientFonts.Default);
         this.field21183.method14473(class4831 -> this.method14851());
         this.method14852();
-        this.addVisualThing(this.field21184 = new Class4810(this, "toolbar", (Minecraft.method5277().field4632.method7694() - n) / 2 + 16, this.method14278() - 94));
+        this.addVisualThing(this.field21184 = new Class4810(this, "toolbar", (Minecraft.method5277().window.method7694() - n) / 2 + 16, this.method14278() - 94));
         this.field21184.method14305(false);
     }
     
@@ -188,8 +188,8 @@ public class Class4936 extends Class4800
         if (method24358 != null) {
             this.method14245(method24358);
         }
-        final int n = Minecraft.method5277().field4632.method7694() - 200;
-        this.method14242(this.field21172 = new Class4823(this, "alts", (this.method14276() - n) / 2, 69, n, Minecraft.method5277().field4632.method7695() - 169));
+        final int n = Minecraft.method5277().window.method7694() - 200;
+        this.method14242(this.field21172 = new Class4823(this, "alts", (this.method14276() - n) / 2, 69, n, Minecraft.method5277().window.method7695() - 169));
         final Iterator<Class7971> iterator = method24356.iterator();
         while (iterator.hasNext()) {
             this.method14844(iterator.next());
@@ -204,7 +204,7 @@ public class Class4936 extends Class4800
     }
     
     public int method14854() {
-        return Minecraft.method5277().field4632.method7695() / 12 + 280 + Minecraft.method5277().field4632.method7695() / 12;
+        return Minecraft.method5277().window.method7695() / 12 + 280 + Minecraft.method5277().window.method7695() / 12;
     }
     
     public Class4836 method14855() {

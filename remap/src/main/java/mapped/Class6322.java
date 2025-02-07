@@ -80,10 +80,10 @@ public abstract class Class6322
     
     private static void method18711(final float n) {
         RenderSystem.method30057(5890);
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.method30058();
         final long n2 = Util.method27837() * 8L;
-        RenderSystem.method30065(-(n2 % 110000L / 110000.0f), n2 % 30000L / 30000.0f, 0.0f);
+        RenderSystem.translatef(-(n2 % 110000L / 110000.0f), n2 % 30000L / 30000.0f, 0.0f);
         RenderSystem.method30062(10.0f, 0.0f, 0.0f, 1.0f);
         RenderSystem.method30063(n, n, n);
         RenderSystem.method30057(5888);
@@ -149,13 +149,13 @@ public abstract class Class6322
         field25293 = new Class6323("outline_texturing", () -> RenderSystem.method30103(), () -> RenderSystem.method30104());
         field25294 = new Class6323("glint_texturing", () -> method18711(8.0f), () -> {
             RenderSystem.method30057(5890);
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
             RenderSystem.method30057(5888);
             return;
         });
         field25295 = new Class6323("entity_glint_texturing", () -> method18711(0.16f), () -> {
             RenderSystem.method30057(5890);
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
             RenderSystem.method30057(5888);
             return;
         });
@@ -185,13 +185,13 @@ public abstract class Class6322
         });
         field25312 = new Class6330("projection_layering", () -> {
             RenderSystem.method30057(5889);
-            RenderSystem.method30059();
+            RenderSystem.pushMatrix();
             RenderSystem.method30063(1.0f, 1.0f, 0.999f);
             RenderSystem.method30057(5888);
             return;
         }, () -> {
             RenderSystem.method30057(5889);
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
             RenderSystem.method30057(5888);
             return;
         });

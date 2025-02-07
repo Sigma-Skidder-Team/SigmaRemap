@@ -169,10 +169,10 @@ public class Class613 extends Class608<Class639>
             final int n3 = n + 12;
             final int n4 = n2 - 12;
             this.fillGradient(n3 - 3, n4 - 3, n3 + this.field3583.font.getStringWidth(method8461) + 3, n4 + 8 + 3, -1073741824, -1073741824);
-            RenderSystem.method30059();
-            RenderSystem.method30065(0.0f, 0.0f, 400.0f);
+            RenderSystem.pushMatrix();
+            RenderSystem.translatef(0.0f, 0.0f, 400.0f);
             this.field3583.font.drawStringWithShadow(method8461, (float)n3, (float)n4, -1);
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
         }
     }
     

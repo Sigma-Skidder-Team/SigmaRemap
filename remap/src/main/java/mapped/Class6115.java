@@ -53,7 +53,7 @@ public class Class6115 implements Class6113
     
     @Override
     public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
         RenderSystem.disableTexture();
@@ -62,7 +62,7 @@ public class Class6115 implements Class6113
         this.method18280();
         RenderSystem.enableTexture();
         RenderSystem.disableBlend();
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         if (!this.field24824.player.isSpectator()) {
             this.method18300();
         }

@@ -38,7 +38,7 @@ public class NCPSpeed extends Module
         if (this.isEnabled()) {
             if (NCPSpeed.mc.player != null) {
                 if (!Jesus.method10433()) {
-                    if (!Client.getInstance().method35189().method21551(Fly.class).isEnabled()) {
+                    if (!Client.getInstance().method35189().getModuleByClass(Fly.class).isEnabled()) {
                         if (updateWalkingEvent.method17046()) {
                             if (Speed.field15748 > 1) {
                                 final double n = NCPSpeed.mc.player.posX - NCPSpeed.mc.player.field4074;
@@ -107,7 +107,7 @@ public class NCPSpeed extends Module
         if (this.field15847 != 0) {
             class5722.setCancelled(true);
         }
-        if (NCPSpeed.mc.gameSettings.field23439.method1056() && Client.getInstance().method35189().method21551(BlockFly.class).isEnabled()) {
+        if (NCPSpeed.mc.gameSettings.field23439.method1056() && Client.getInstance().method35189().getModuleByClass(BlockFly.class).isEnabled()) {
             return;
         }
         double b = 0.56 + Class7482.method23139() * 0.1;

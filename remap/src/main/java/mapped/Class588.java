@@ -55,12 +55,12 @@ public class Class588 extends Widget implements Class587<Ingredient>
         }
         this.blit(this.field3426, this.field3427, n4, n5, this.field3424, this.field3425);
         for (final Class8370 class8370 : this.field3486) {
-            RenderSystem.method30059();
+            RenderSystem.pushMatrix();
             final int n6 = (int)((this.field3426 + class8370.field34328) / 0.42f - 3.0f);
             final int n7 = (int)((this.field3427 + class8370.field34329) / 0.42f - 3.0f);
             RenderSystem.method30063(0.42f, 0.42f, 1.0f);
             Class564.method3288(this.field3487).method5307().method6540(class8370.field34327[MathHelper.method35642(Class564.method3290(this.field3487) / 30.0f) % class8370.field34327.length], n6, n7);
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
         }
         RenderSystem.disableAlphaTest();
     }

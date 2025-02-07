@@ -54,7 +54,7 @@ public class Class9524
                 if (method35550 == null) {
                     break;
                 }
-                if (class8827.method462() == 0) {
+                if (class8827.length() == 0) {
                     if (method35550.length() == 0) {
                         if (c != ',') {
                             break;
@@ -88,7 +88,7 @@ public class Class9524
     
     public static String method35553(final JSONArray JSONArray) {
         final StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < JSONArray.method462(); ++i) {
+        for (int i = 0; i < JSONArray.length(); ++i) {
             if (i > 0) {
                 sb.append(',');
             }
@@ -141,7 +141,7 @@ public class Class9524
     }
     
     public static JSONArray method35557(final JSONArray JSONArray, final JSONTokener class89) throws JSONException {
-        if (JSONArray == null || JSONArray.method462() == 0) {
+        if (JSONArray == null || JSONArray.length() == 0) {
             return null;
         }
         final JSONArray class90 = new JSONArray();
@@ -152,7 +152,7 @@ public class Class9524
             }
             class90.method486(method35552);
         }
-        if (class90.method462() != 0) {
+        if (class90.length() != 0) {
             return class90;
         }
         return null;
@@ -170,9 +170,9 @@ public class Class9524
     }
     
     public static String toString(final JSONArray JSONArray, final JSONArray class89) throws JSONException {
-        if (JSONArray != null && JSONArray.method462() != 0) {
+        if (JSONArray != null && JSONArray.length() != 0) {
             final StringBuffer sb = new StringBuffer();
-            for (int i = 0; i < class89.method462(); ++i) {
+            for (int i = 0; i < class89.length(); ++i) {
                 final JSONObject method475 = class89.method475(i);
                 if (method475 != null) {
                     sb.append(method35553(method475.method13310(JSONArray)));

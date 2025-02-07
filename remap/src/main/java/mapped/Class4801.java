@@ -40,12 +40,12 @@ public class Class4801 extends Class4800
         int n = 30;
         int n2 = 30;
         this.addVisualThing(this.field20466 = new Class4912(this, "brainFreeze"));
-        for (final Module class3167 : Client.getInstance().method35189().method21553().values()) {
-            if (this.field20464.containsKey(class3167.getCategory2())) {
+        for (final Module class3167 : Client.getInstance().method35189().getModuleMap().values()) {
+            if (this.field20464.containsKey(class3167.getCategoryBasedOnMode())) {
                 continue;
             }
-            final Class4924 class3168 = new Class4924(this, class3167.getCategory2().getName(), n, n2, class3167.getCategory2());
-            this.field20464.put(class3167.getCategory2(), class3168);
+            final Class4924 class3168 = new Class4924(this, class3167.getCategoryBasedOnMode().getName(), n, n2, class3167.getCategoryBasedOnMode());
+            this.field20464.put(class3167.getCategoryBasedOnMode(), class3168);
             this.addVisualThing(class3168);
             n += class3168.method14276() + 10;
             if (this.field20464.size() == 4) {
@@ -139,7 +139,7 @@ public class Class4801 extends Class4800
         this.field20465.method14297(this.field20465.method14276() < this.method14276() && this.field20465.method14278() < this.method14278());
         super.method14200(n, n2);
         ColorUtils.method19170(Math.min(1.0f, Class4801.field20461.calcPercent() * 4.0f));
-        this.field20466.method14297(Client.getInstance().method35189().method21551(BrainFreeze.class).isEnabled());
+        this.field20466.method14297(Client.getInstance().method35189().getModuleByClass(BrainFreeze.class).isEnabled());
         if (this.field20467 != null) {
             final int n3 = n - this.field20467.method14280();
             final int n4 = n2 - this.field20467.method14281();
@@ -228,7 +228,7 @@ public class Class4801 extends Class4800
     @Override
     public void method14204(final int n) {
         super.method14204(n);
-        final int method21959 = Client.getInstance().method35189().method21557().method21959(Class722.class);
+        final int method21959 = Client.getInstance().method35189().getJelloTouch().method21959(Class722.class);
         if (n != 256) {
             if (n != method21959) {
                 return;
@@ -266,12 +266,12 @@ public class Class4801 extends Class4800
             n3 -= this.field20468.field20927.calcPercent() * 0.1f;
             n2 *= 1.0f + n4 * 0.2f;
         }
-        if (Client.getInstance().method35189().method21556().method32707() != null) {
-            final String field33839 = Client.getInstance().method35189().method21556().method32707().field33839;
+        if (Client.getInstance().method35189().getProfile().method32707() != null) {
+            final String field33839 = Client.getInstance().method35189().getProfile().method32707().field33839;
             RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.field20480 - ClientFonts.JelloLight20.getWidth(field33839) - 80), (float)(this.field20481 - 47), field33839, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * Math.max(0.0f, Math.min(1.0f, n2))));
         }
         for (final Class4803 class4803 : this.method14250()) {
-            class4803.method14295((int)((class4803.method14272() + class4803.method14276() / 2 - Class4801.field20460.field4632.method7694() / 2) * (1.0f - n2) * 0.5f), (int)((class4803.method14274() + class4803.method14278() / 2 - Class4801.field20460.field4632.method7695() / 2) * (1.0f - n2) * 0.5f));
+            class4803.method14295((int)((class4803.method14272() + class4803.method14276() / 2 - Class4801.field20460.window.method7694() / 2) * (1.0f - n2) * 0.5f), (int)((class4803.method14274() + class4803.method14278() / 2 - Class4801.field20460.window.method7695() / 2) * (1.0f - n2) * 0.5f));
             class4803.method14288(1.5f - n2 * 0.5f, 1.5f - n2 * 0.5f);
         }
         super.draw(n * Math.min(1.0f, n2) * n3);

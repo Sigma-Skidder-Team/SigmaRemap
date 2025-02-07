@@ -43,7 +43,7 @@ public class Class9198
         this.field38982 = Minecraft.method5277();
         this.field38985 = new ArrayList<UUID>();
         this.field38986 = new HashMap<UUID, Class6538>();
-        Client.getInstance().method35188().method21094(this);
+        Client.getInstance().getEventBus().method21094(this);
         this.field38987 = (HttpClient)HttpClients.createDefault();
         this.field38988 = field38988;
         this.field38990 = new Class9194(this);
@@ -131,7 +131,7 @@ public class Class9198
     private void method33661(final Class5723 class5723) {
         if (class5723.method16998() instanceof Class4367) {
             final Class4367 class5724 = (Class4367)class5723.method16998();
-            Client.method35174().method20240("Connecting...");
+            Client.method35174().info("Connecting...");
             try {
                 this.field38989 = Class6593.method20037("http://localhost:3000");
             }
@@ -160,7 +160,7 @@ public class Class9198
         final String method33693 = this.field38982.field4642.method33693();
         ((YggdrasilMinecraftSessionService)new YggdrasilAuthenticationService(Proxy.NO_PROXY, method33693).createMinecraftSessionService()).joinServer(gameProfile, method33693, s);
         Client.getInstance();
-        Client.method35174().method20240("Jello Connect: successfully reached out mojangs servers " + s);
+        Client.method35174().info("Jello Connect: successfully reached out mojangs servers " + s);
         System.out.println("https://sessionserver.mojang.com/session/minecraft/hasJoined?serverId=" + s + "&username=" + this.field38982.field4642.method33692());
     }
     

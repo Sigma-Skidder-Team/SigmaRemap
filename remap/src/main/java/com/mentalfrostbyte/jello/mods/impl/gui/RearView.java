@@ -43,7 +43,7 @@ public class RearView extends PremiumModule
             this.method9909(false);
         }
         if (RearView.field15986 != null) {
-            if (RearView.field15986.field24886 != RearView.mc.field4632.method7692() || RearView.field15986.field24887 != RearView.mc.field4632.method7693()) {
+            if (RearView.field15986.field24886 != RearView.mc.window.method7692() || RearView.field15986.field24887 != RearView.mc.window.method7693()) {
                 this.onEnable();
             }
         }
@@ -95,7 +95,7 @@ public class RearView extends PremiumModule
             else {
                 this.field15985.changeDirection((this.field15990 <= 0) ? Direction.FORWARDS : Direction.BACKWARDS);
             }
-            final float n = RearView.mc.field4632.method7694() / (float) RearView.mc.field4632.method7695();
+            final float n = RearView.mc.window.method7694() / (float) RearView.mc.window.method7695();
             final int n2 = (int)this.getNumberSettingValueByName("Size");
             final int n3 = (int)(n2 / n);
             final int n4 = 10;
@@ -111,29 +111,29 @@ public class RearView extends PremiumModule
             else {
                 n5 *= (int) MathUtils.lerp(this.field15985.calcPercent(), 0.3, 0.88, 0.47, 1.0);
             }
-            RenderUtil.method26913((float)(RearView.mc.field4632.method7694() - n4 - n2), (float)(RearView.mc.field4632.method7695() + n5), (float)n2, (float)(n3 - 1), 14.0f, this.field15985.calcPercent());
+            RenderUtil.method26913((float)(RearView.mc.window.method7694() - n4 - n2), (float)(RearView.mc.window.method7695() + n5), (float)n2, (float)(n3 - 1), 14.0f, this.field15985.calcPercent());
             final int n6 = (int)(n2 * Class9000.field37993);
             final int n7 = (int)(n3 * Class9000.field37993);
             final int n8 = (int)(n4 * Class9000.field37993);
             final int n9 = (int)(n5 * Class9000.field37993);
-            RenderSystem.method30059();
-            this.method10626(RearView.field15986, n6, n7, RearView.mc.field4632.method7692() - n8 - n6, RearView.mc.field4632.method7693() + n9);
-            RenderSystem.method30060();
+            RenderSystem.pushMatrix();
+            this.method10626(RearView.field15986, n6, n7, RearView.mc.window.method7692() - n8 - n6, RearView.mc.window.method7693() + n9);
+            RenderSystem.popMatrix();
             RenderSystem.method30056(256, Minecraft.field4623);
             RenderSystem.method30057(5889);
             RenderSystem.method30058();
-            RenderSystem.method30061(0.0, RearView.mc.field4632.method7692() / RearView.mc.field4632.method7700(), RearView.mc.field4632.method7693() / RearView.mc.field4632.method7700(), 0.0, 1000.0, 3000.0);
+            RenderSystem.method30061(0.0, RearView.mc.window.method7692() / RearView.mc.window.getGuiScaleFactor(), RearView.mc.window.method7693() / RearView.mc.window.getGuiScaleFactor(), 0.0, 1000.0, 3000.0);
             RenderSystem.method30057(5888);
             RenderSystem.method30058();
-            RenderSystem.method30065(0.0f, 0.0f, -2000.0f);
-            GL11.glScaled(1.0 / RearView.mc.field4632.method7700() * Class9000.field37993, 1.0 / RearView.mc.field4632.method7700() * Class9000.field37993, 1.0);
+            RenderSystem.translatef(0.0f, 0.0f, -2000.0f);
+            GL11.glScaled(1.0 / RearView.mc.window.getGuiScaleFactor() * Class9000.field37993, 1.0 / RearView.mc.window.getGuiScaleFactor() * Class9000.field37993, 1.0);
             RearView.field15986.method18397();
             RearView.mc.method5234().method18395(true);
         }
     }
     
     public void method10626(final Class6153 class6153, final int n, final int n2, final double n3, double n4) {
-        n4 = n4 - RearView.mc.field4632.method7693() + n2;
+        n4 = n4 - RearView.mc.window.method7693() + n2;
         RenderSystem.method30049(true, true, true, false);
         RenderSystem.disableDepthTest();
         RenderSystem.method30010(false);
@@ -142,7 +142,7 @@ public class RearView extends PremiumModule
         RenderSystem.method30061(0.0, n + n3, n2, 0.0, 1000.0, 3000.0);
         RenderSystem.method30057(5888);
         RenderSystem.method30058();
-        RenderSystem.method30065(0.0f, 0.0f, -2000.0f);
+        RenderSystem.translatef(0.0f, 0.0f, -2000.0f);
         RenderSystem.method30048(0, 0, n + (int)n3, n2 - (int)n4);
         RenderSystem.enableTexture();
         RenderSystem.method30002();
@@ -182,7 +182,7 @@ public class RearView extends PremiumModule
                 }
             }
             RenderUtil.method26918();
-            RenderSystem.method30059();
+            RenderSystem.pushMatrix();
             RenderSystem.method30056(16640, false);
             RearView.field15986.method18395(true);
             RenderSystem.enableTexture();
@@ -206,7 +206,7 @@ public class RearView extends PremiumModule
             RearView.mc.field4644.field9392 = true;
             RearView.mc.gameSettings.field23471 = field2401;
             RearView.mc.player.rotationYaw = field2399;
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
             RearView.mc.method5234().method18395(true);
             return;
         }
@@ -216,8 +216,8 @@ public class RearView extends PremiumModule
     @Override
     public void onEnable() {
         RenderUtil.method26919(RearView.mc.method5234());
-        final int method7692 = RearView.mc.field4632.method7692();
-        final int method7693 = RearView.mc.field4632.method7693();
+        final int method7692 = RearView.mc.window.method7692();
+        final int method7693 = RearView.mc.window.method7693();
         final boolean b = true;
         final Minecraft field15514 = RearView.mc;
         (RearView.field15986 = new Class6153(method7692, method7693, b, Minecraft.field4623)).method18398(1.0f, 1.0f, 1.0f, 1.0f);

@@ -45,8 +45,8 @@ public class Speed extends ModuleWithSettings
     }
     
     public void method10269() {
-        if (this.field15743 instanceof HypixelSpeed) {
-            ((HypixelSpeed)this.field15743).method10592();
+        if (this.parentModule instanceof HypixelSpeed) {
+            ((HypixelSpeed)this.parentModule).method10592();
         }
     }
 }

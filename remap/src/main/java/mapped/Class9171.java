@@ -19,15 +19,15 @@ public class Class9171
     
     public Class9171() {
         this.field38851 = Minecraft.method5277();
-        Client.getInstance().method35188().method21094(this);
+        Client.getInstance().getEventBus().method21094(this);
     }
     
     @EventListener
     @Class6754
     public void method33483(final Class5732 class5732) {
-        final ModuleWithSettings class5733 = (ModuleWithSettings) Client.getInstance().method35189().method21551(Fly.class);
-        final ModuleWithSettings class5734 = (ModuleWithSettings) Client.getInstance().method35189().method21551(Disabler.class);
-        final ModuleWithSettings class5735 = (ModuleWithSettings) Client.getInstance().method35189().method21551(LongJump.class);
+        final ModuleWithSettings class5733 = (ModuleWithSettings) Client.getInstance().method35189().getModuleByClass(Fly.class);
+        final ModuleWithSettings class5734 = (ModuleWithSettings) Client.getInstance().method35189().getModuleByClass(Disabler.class);
+        final ModuleWithSettings class5735 = (ModuleWithSettings) Client.getInstance().method35189().getModuleByClass(LongJump.class);
         boolean field38852 = false;
         Label_0165: {
             Label_0054: {

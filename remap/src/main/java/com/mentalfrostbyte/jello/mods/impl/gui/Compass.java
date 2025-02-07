@@ -36,11 +36,11 @@ public class Compass extends Module
                 }
             }
             final double n3 = (7.0f + this.method10809(Compass.mc.player.rotationYaw) - intValue) / 15.0f * n;
-            RenderUtil.method26899(Compass.mc.field4632.method7694() / 2 - index * n * 1.5f, -40.0f, index * n * 2 * 1.5f, (float)(220 + n2), ClientAssets.shadow, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.25f));
+            RenderUtil.method26899(Compass.mc.window.method7694() / 2 - index * n * 1.5f, -40.0f, index * n * 2 * 1.5f, (float)(220 + n2), ClientAssets.shadow, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.25f));
             int n4 = 0;
             for (final int intValue2 : method10807) {
                 ++n4;
-                this.method10805(Compass.mc.field4632.method7694() / 2 + n4 * n - (int)n3 - (index + 1) * n - 2, 30 + n2, n, intValue2, (float)Math.min(Math.max(0.0, Math.min((n4 * n - n3) / (float)(n * index), 1.0)), Math.max(0.0, Math.min(2.25 - (n4 * n - n3) / (float)(n * index), 1.0))) * 0.8f);
+                this.method10805(Compass.mc.window.method7694() / 2 + n4 * n - (int)n3 - (index + 1) * n - 2, 30 + n2, n, intValue2, (float)Math.min(Math.max(0.0, Math.min((n4 * n - n3) / (float)(n * index), 1.0)), Math.max(0.0, Math.min(2.25 - (n4 * n - n3) / (float)(n * index), 1.0))) * 0.8f);
             }
         }
     }

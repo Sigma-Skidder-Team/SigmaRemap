@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
 import mapped.JSONObject;
-import mapped.Class8105;
+import mapped.CJsonUtils;
 import mapped.JSONArray;
 
 import java.util.ArrayList;
@@ -32,10 +32,10 @@ public class StringListSetting extends Setting<List<String>> {
 
     @Override
     public JSONObject method15186(final JSONObject JSONObject) {
-        final JSONArray method26638 = Class8105.method26638(JSONObject, "value");
+        final JSONArray method26638 = CJsonUtils.getJSONArrayOrNull(JSONObject, "value");
         this.currentValue = new ArrayList();
         if (method26638 != null) {
-            for (int i = 0; i < method26638.method462(); ++i) {
+            for (int i = 0; i < method26638.length(); ++i) {
                 ((List) this.currentValue).add(method26638.method459(i));
             }
         }

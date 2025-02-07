@@ -16,8 +16,8 @@ public class FPSBooster extends Module
     }
     
     @Override
-    public void method9917() {
-        super.method9917();
+    public void initialize() {
+        super.initialize();
         FPSBooster.field16048 = this.isEnabled();
     }
     

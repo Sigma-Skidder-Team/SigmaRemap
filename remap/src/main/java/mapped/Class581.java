@@ -200,8 +200,8 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
     @Override
     public void render(final int n, final int n2, final float n3) {
         if (this.method3421()) {
-            RenderSystem.method30059();
-            RenderSystem.method30065(0.0f, 0.0f, 100.0f);
+            RenderSystem.pushMatrix();
+            RenderSystem.translatef(0.0f, 0.0f, 100.0f);
             this.field3471.method5290().method5849(Class581.field3462);
             RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             final int n4 = (this.field3464 - 147) / 2 - this.field3463;
@@ -214,7 +214,7 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
             }
             this.field3469.render(n, n2, n3);
             this.field3475.method34153(n4, n5, n, n2, n3);
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
         }
     }
     

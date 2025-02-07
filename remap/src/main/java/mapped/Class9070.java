@@ -24,7 +24,7 @@ public class Class9070
     }
     
     public void method32666() {
-        Client.getInstance().method35188().method21094(this);
+        Client.getInstance().getEventBus().method21094(this);
         this.method32669(new Class6709());
         this.method32669(new Class6700());
         this.method32669(new Class6694());
@@ -106,7 +106,7 @@ public class Class9070
     
     @EventListener
     private void method32675(final Class5721 class5721) {
-        if (Client.getInstance().method35209() == Class2209.field13466) {
+        if (Client.getInstance().method35209() == ClientMode.NOADDONS) {
             return;
         }
         if (class5721.method16990() instanceof Class4317) {

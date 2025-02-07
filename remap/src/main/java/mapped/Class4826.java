@@ -64,7 +64,7 @@ public class Class4826 extends Class4825
         this.field20649 = Math.min(1.0f, Math.max(0.0f, this.field20649));
         if (this.field20647 == null) {
             final int n2 = this.field20480 - 30;
-            RenderUtil.method26905((float)(this.field20478 + 5), (float)((Minecraft.method5277().field4632.method7695() - n2 * 342 / 460) / 2 - 60), (float)n2, (float)(n2 * 342 / 460), ClientAssets.img);
+            RenderUtil.method26905((float)(this.field20478 + 5), (float)((Minecraft.method5277().window.method7695() - n2 * 342 / 460) / 2 - 60), (float)n2, (float)(n2 * 342 / 460), ClientAssets.img);
         }
         if (this.field20647 != null) {
             ColorUtils.applyAlpha(ClientColors.field1273.color, 0.2f);

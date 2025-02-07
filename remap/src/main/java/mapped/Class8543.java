@@ -40,7 +40,7 @@ public class Class8543
     
     public static int method28663(final Class1925 class1925) {
         RenderSystem.method29989(RenderSystem::method29984);
-        long n = GLFW.glfwGetWindowMonitor(class1925.method7690());
+        long n = GLFW.glfwGetWindowMonitor(class1925.getHandle());
         if (n == 0L) {
             n = GLFW.glfwGetPrimaryMonitor();
         }
@@ -82,7 +82,7 @@ public class Class8543
     }
     
     public static boolean method28667(final Class1925 class1925) {
-        return GLFW.glfwWindowShouldClose(class1925.method7690());
+        return GLFW.glfwWindowShouldClose(class1925.getHandle());
     }
     
     public static void method28668() {

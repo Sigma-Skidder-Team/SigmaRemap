@@ -140,7 +140,7 @@ public class Class8866
                                         else if (!method26798.method1850()) {
                                             if (method26798 instanceof PlayerEntity) {
                                                 if (Class9011.method32262((PlayerEntity)method26798)) {
-                                                    if (Client.getInstance().method35189().method21551(Teams.class).isEnabled()) {
+                                                    if (Client.getInstance().method35189().getModuleByClass(Teams.class).isEnabled()) {
                                                         iterator2.remove();
                                                         continue;
                                                     }

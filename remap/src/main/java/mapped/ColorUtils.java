@@ -332,7 +332,7 @@ public class ColorUtils
             execute.close();
         }
         final JSONArray JSONArray = new JSONArray(string);
-        for (int i = 0; i < JSONArray.method462(); ++i) {
+        for (int i = 0; i < JSONArray.length(); ++i) {
             list.add(new JSONObject(JSONArray.method449(i).toString()).getString("name"));
         }
         return list;
@@ -646,7 +646,7 @@ public class ColorUtils
     public static void method19165(final Entity class399, final boolean b) {
         final boolean equals = Class9367.field40167.equals(Class7906.field32452);
         final Class5750 class400 = new Class5750(class399, true);
-        Client.getInstance().method35188().method21097(class400);
+        Client.getInstance().getEventBus().method21097(class400);
         if (!class400.isCancelled()) {
             if (equals) {
                 if (b) {
@@ -682,7 +682,7 @@ public class ColorUtils
                     if (!ColorUtils.field25541.player.onGround) {
                         break Label_0330;
                     }
-                    if (!Client.getInstance().method35189().method21551(Criticals.class).isEnabled()) {
+                    if (!Client.getInstance().method35189().getModuleByClass(Criticals.class).isEnabled()) {
                         break Label_0330;
                     }
                 }
@@ -695,7 +695,7 @@ public class ColorUtils
                 }
             }
             class400.method17060();
-            Client.getInstance().method35188().method21097(class400);
+            Client.getInstance().getEventBus().method21097(class400);
         }
     }
     
@@ -750,7 +750,7 @@ public class ColorUtils
     
     public static void method19169() {
         if (ColorUtils.field25541.method5303() instanceof PlayerEntity) {
-            if (Client.getInstance().method35193().method32144()) {
+            if (Client.getInstance().getGuimanager().method32144()) {
                 if (ColorUtils.field25541.field4644.field9406 != null) {
                     ColorUtils.field25541.field4644.field9406.close();
                 }
@@ -948,7 +948,7 @@ public class ColorUtils
         if (!class399.method1850()) {
             if (class399 instanceof PlayerEntity) {
                 if (Class9011.method32262((PlayerEntity)class399)) {
-                    if (Client.getInstance().method35189().method21551(Teams.class).isEnabled()) {
+                    if (Client.getInstance().method35189().getModuleByClass(Teams.class).isEnabled()) {
                         return false;
                     }
                 }

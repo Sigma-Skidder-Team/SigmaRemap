@@ -59,7 +59,7 @@ public class KeyStrokes extends Module
         }
         if (!Minecraft.method5277().gameSettings.field23464) {
             this.field15539 = class5740.method17028();
-            if (Client.getInstance().method35193().method32146()) {
+            if (Client.getInstance().getGuimanager().method32146()) {
                 for (final Class2090 class5741 : Class2090.values()) {
                     final Class8883 method8208 = class5741.method8208();
                     final Class8883 method8209 = class5741.method8209();
@@ -74,7 +74,7 @@ public class KeyStrokes extends Module
                 final Class8883 method8211 = class5742.method8209();
                 float n = 1.0f;
                 float n2 = 1.0f;
-                if (Client.getInstance().method35193().method32146()) {
+                if (Client.getInstance().getGuimanager().method32146()) {
                     n2 = 0.5f;
                     n = 0.5f;
                 }
@@ -116,7 +116,7 @@ public class KeyStrokes extends Module
                 }
                 final float method8215 = class5743.field38782.calcPercent();
                 int n5 = ColorUtils.applyAlpha(-5658199, (1.0f - method8215 * (0.5f + method8215 * 0.5f)) * 0.8f);
-                if (Client.getInstance().method35193().method32146()) {
+                if (Client.getInstance().getGuimanager().method32146()) {
                     n5 = ColorUtils.applyAlpha(-1, (1.0f - method8215 * (0.5f + method8215 * 0.5f)) * 0.8f);
                 }
                 RenderUtil.method26886((float)(this.field15538 + method8213.field37368 + method8214.method31267() / 2), (float)(this.field15539 + method8213.field37369 + method8214.field37369 / 2), (method8214.method31267() - 4) * method8215 + 4.0f, n5);

@@ -204,7 +204,7 @@ public class ItemRenderer implements Class1657
     
     public void method6539(final ItemStack class8321, final int n, final int n2, Class6313 method34966) {
         ItemRenderer.field9959 = true;
-        RenderSystem.method30059();
+        RenderSystem.pushMatrix();
         this.field9954.method5849(Class1774.field9853);
         this.field9954.method5853(Class1774.field9853).method5868(false, false);
         RenderSystem.enableRescaleNormal();
@@ -216,8 +216,8 @@ public class ItemRenderer implements Class1657
         if (Config.method28987()) {
             method34966 = Class9404.method34966(class8321, method34966, Class9168.field38843, true);
         }
-        RenderSystem.method30065((float)n, (float)n2, 100.0f + this.zLevel);
-        RenderSystem.method30065(8.0f, 8.0f, 0.0f);
+        RenderSystem.translatef((float)n, (float)n2, 100.0f + this.zLevel);
+        RenderSystem.translatef(8.0f, 8.0f, 0.0f);
         RenderSystem.method30063(1.0f, -1.0f, 1.0f);
         RenderSystem.method30063(16.0f, 16.0f, 16.0f);
         final MatrixStack class8322 = new MatrixStack();
@@ -234,7 +234,7 @@ public class ItemRenderer implements Class1657
         }
         RenderSystem.disableAlphaTest();
         RenderSystem.disableRescaleNormal();
-        RenderSystem.method30060();
+        RenderSystem.popMatrix();
         ItemRenderer.field9959 = false;
     }
     

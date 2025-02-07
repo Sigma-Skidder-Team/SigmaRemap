@@ -26,16 +26,16 @@ public class Client
     public static final String field40680 = "Sigma Production";
     public static final boolean field40681 = false;
     private static Client field40682;
-    private static Minecraft field40683;
+    private static Minecraft mc;
     private final File field40684;
-    private JSONObject field40685;
+    private JSONObject config;
     private boolean field40686;
-    private Class6658 field40687;
+    private Logger field40687;
     private Class8678 field40688;
     private Class6883 field40689;
-    private Class7060 field40690;
+    private ModuleManager moduleManager;
     private Class9070 field40691;
-    private Class9000 field40692;
+    private Class9000 guiManager;
     private Class8706 field40693;
     private Class8949 field40694;
     private Class8491 field40695;
@@ -52,33 +52,33 @@ public class Client
     private Class7658 field40706;
     private Class8088 field40707;
     private Class9367 field40708;
-    private Class2209 field40709;
-    public static ArrayList<Texture> field40710;
+    private ClientMode clientMode;
+    public static ArrayList<Texture> textureList;
     public static boolean field40711;
     
     public static Client getInstance() {
         return (Client.field40682 != null) ? Client.field40682 : (Client.field40682 = new Client());
     }
     
-    public static Class6658 method35174() {
-        return getInstance().method35187();
+    public static Logger method35174() {
+        return getInstance().getLogger();
     }
     
     private Client() {
         this.field40684 = new File("sigma5");
         this.field40686 = true;
-        this.field40709 = Class2209.field13463;
+        this.clientMode = ClientMode.INDETERMINATE;
     }
     
     public void method35175() {
         System.currentTimeMillis();
         Class9220.method34003();
-        (this.field40687 = new Class6659(System.out, System.out, System.err)).method20240("Initializing...");
+        (this.field40687 = new Class6659(System.out, System.out, System.err)).info("Initializing...");
         try {
             if (!this.field40684.exists()) {
                 this.field40684.mkdirs();
             }
-            this.field40685 = Class9532.method35586(new File(this.field40684 + "/config.json"));
+            this.config = Class9532.method35586(new File(this.field40684 + "/config.json"));
         }
         catch (final IOException ex) {
             ex.printStackTrace();
@@ -89,7 +89,7 @@ public class Client
         ClientAssets.decryptTextures();
         (this.field40701 = new Class6466()).method19338();
         (this.field40702 = new Class5837()).method17548();
-        this.field40692 = new Class9000();
+        this.guiManager = new Class9000();
         (this.field40693 = new Class8706()).method29876();
         (this.field40694 = new Class8949()).method31750();
         (this.field40695 = new Class8491()).method28365();
@@ -102,13 +102,13 @@ public class Client
         (this.field40706 = new Class7658()).method24261();
         (this.field40699 = new Class8707()).method29895();
         (this.field40707 = new Class8088()).method26554();
-        GLFW.glfwSetWindowTitle(Client.field40683.field4632.method7690(), (CharSequence)"Sigma 5.0");
+        GLFW.glfwSetWindowTitle(Client.mc.window.getHandle(), (CharSequence)"Sigma 5.0");
         System.currentTimeMillis();
         this.method35177();
-        this.field40687.method20240("Initialized.");
+        this.field40687.info("Initialized.");
     }
     
-    public void method35176() {
+    public void initRPC() {
         final DiscordRPC instance = DiscordRPC.INSTANCE;
         final String s = "693493612754763907";
         final String s2 = "";
@@ -144,30 +144,30 @@ public class Client
     }
     
     public void method35178() {
-        this.field40687.method20240("Shutting down...");
+        this.field40687.info("Shutting down...");
         try {
-            if (this.field40692 != null) {
-                this.field40692.method32142(this.field40685);
+            if (this.guiManager != null) {
+                this.guiManager.method32142(this.config);
             }
-            if (this.field40690 != null) {
-                this.field40690.method21549(this.field40685);
+            if (this.moduleManager != null) {
+                this.moduleManager.saveModProfiles(this.config);
             }
-            final Class5736 class5736 = new Class5736(this.field40685);
+            final Class5736 class5736 = new Class5736(this.config);
             if (this.field40689 != null) {
                 this.field40689.method21097(class5736);
             }
             Class9532.method35585(class5736.method17022(), new File(this.field40684 + "/config.json"));
         }
         catch (final IOException ex) {
-            this.field40687.method20242("Unable to shutdown correctly. Config may be corrupt?");
+            this.field40687.error("Unable to shutdown correctly. Config may be corrupt?");
             ex.printStackTrace();
         }
-        this.field40687.method20240("Done.");
+        this.field40687.info("Done.");
     }
     
     public void method35179() {
         try {
-            Class9532.method35585(this.field40685, new File(this.field40684 + "/config.json"));
+            Class9532.method35585(this.config, new File(this.field40684 + "/config.json"));
         }
         catch (final IOException ex) {
             ex.printStackTrace();
@@ -175,24 +175,24 @@ public class Client
     }
     
     public void method35180() {
-        this.field40692.method32134();
+        this.guiManager.method32134();
     }
     
     public void method35181() {
         GL11.glPushMatrix();
-        final double n = Client.field40683.field4632.method7700() / (float)Math.pow(Client.field40683.field4632.method7700(), 2.0);
+        final double n = Client.mc.window.getGuiScaleFactor() / (float)Math.pow(Client.mc.window.getGuiScaleFactor(), 2.0);
         GL11.glScaled(n, n, n);
         GL11.glScaled((double)Class9000.field37993, (double)Class9000.field37993, (double)Class9000.field37993);
         GL11.glDisable(2912);
         RenderSystem.disableDepthTest();
-        RenderSystem.method30065(0.0f, 0.0f, 1000.0f);
+        RenderSystem.translatef(0.0f, 0.0f, 1000.0f);
         RenderSystem.method30000(519, 0.0f);
         RenderSystem.enableBlend();
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         GL11.glDisable(2896);
         RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
         ClientAssets.gingerbread.bind();
-        getInstance().method35188().method21097(new Class5734());
+        getInstance().getEventBus().method21097(new Class5734());
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.method30028();
         RenderSystem.disableDepthTest();
@@ -202,39 +202,39 @@ public class Client
     }
     
     public void method35182(final Texture e) {
-        Client.field40710.add(e);
+        Client.textureList.add(e);
     }
     
     public void method35183() {
-        if (!Client.field40710.isEmpty()) {
-            final Iterator<Texture> iterator = Client.field40710.iterator();
+        if (!Client.textureList.isEmpty()) {
+            final Iterator<Texture> iterator = Client.textureList.iterator();
             while (iterator.hasNext()) {
                 iterator.next().method24923();
             }
-            Client.field40710.clear();
+            Client.textureList.clear();
         }
-        if (getInstance().method35209() != Class2209.field13466) {
-            final double n = Client.field40683.field4632.method7700() / (float)Math.pow(Client.field40683.field4632.method7700(), 2.0);
+        if (getInstance().method35209() != ClientMode.NOADDONS) {
+            final double n = Client.mc.window.getGuiScaleFactor() / (float)Math.pow(Client.mc.window.getGuiScaleFactor(), 2.0);
             GL11.glScaled(n, n, 1.0);
             GL11.glScaled((double)Class9000.field37993, (double)Class9000.field37993, 1.0);
             RenderSystem.disableDepthTest();
-            RenderSystem.method30059();
-            RenderSystem.method30065(0.0f, 0.0f, 1000.0f);
-            this.field40692.method32138();
-            RenderSystem.method30060();
+            RenderSystem.pushMatrix();
+            RenderSystem.translatef(0.0f, 0.0f, 1000.0f);
+            this.guiManager.renderWatermark();
+            RenderSystem.popMatrix();
             RenderSystem.enableDepthTest();
             RenderSystem.enableAlphaTest();
             GL11.glAlphaFunc(518, 0.1f);
-            final Class1663 method5290 = Client.field40683.method5290();
-            Client.field40683.method5290();
+            final Class1663 method5290 = Client.mc.method5290();
+            Client.mc.method5290();
             method5290.method5849(Class1663.field9428);
         }
     }
     
     public void method35184() {
-        if (Client.field40683 != null) {
-            if (Client.field40683.world != null) {
-                if (Client.field40683.player != null) {
+        if (Client.mc != null) {
+            if (Client.mc.world != null) {
+                if (Client.mc.player != null) {
                     if (!Client.field40711) {
                         GL11.glTranslatef(0.0f, 0.0f, 0.0f);
                         RenderSystem.disableDepthTest();
@@ -243,8 +243,8 @@ public class Client
                         this.field40689.method21097(new Class5739());
                         RenderSystem.enableDepthTest();
                         RenderSystem.method30010(true);
-                        final Class1663 method5290 = Client.field40683.method5290();
-                        Client.field40683.method5290();
+                        final Class1663 method5290 = Client.mc.method5290();
+                        Client.mc.method5290();
                         method5290.method5849(Class1663.field9428);
                     }
                 }
@@ -260,16 +260,16 @@ public class Client
         this.field40686 = field40686;
     }
     
-    public Class6658 method35187() {
+    public Logger getLogger() {
         return this.field40687;
     }
     
-    public Class6883 method35188() {
+    public Class6883 getEventBus() {
         return this.field40689;
     }
     
-    public Class7060 method35189() {
-        return this.field40690;
+    public ModuleManager method35189() {
+        return this.moduleManager;
     }
     
     public Class8706 method35190() {
@@ -284,8 +284,8 @@ public class Client
         return this.field40695;
     }
     
-    public Class9000 method35193() {
-        return this.field40692;
+    public Class9000 getGuimanager() {
+        return this.guiManager;
     }
     
     public Class8617 playerTracker() {
@@ -337,47 +337,47 @@ public class Client
     }
     
     public JSONObject method35206() {
-        return this.field40685;
+        return this.config;
     }
     
     public void method35207() {
-        this.field40685 = new JSONObject();
+        this.config = new JSONObject();
     }
     
     public File method35208() {
         return this.field40684;
     }
     
-    public Class2209 method35209() {
-        return this.field40709;
+    public ClientMode method35209() {
+        return this.clientMode;
     }
     
-    public void method35210(final Class2209 \u7d3f\uc854\uc3f2\u6f94\ub5d91) {
-        this.field40709 = \u7d3f\uc854\uc3f2\u6f94\ub5d91;
-        if (\u7d3f\uc854\uc3f2\u6f94\ub5d91 != Class2209.field13465) {
-            if (\u7d3f\uc854\uc3f2\u6f94\ub5d91 == Class2209.field13464) {
-                this.method35176();
-                GLFW.glfwSetWindowTitle(Client.field40683.field4632.method7690(), (CharSequence)"Classic Sigma 5.0");
+    public void setupClient(final ClientMode bruh) {
+        this.clientMode = bruh;
+        if (bruh != ClientMode.CLASSIC) {
+            if (bruh == ClientMode.JELLO) {
+                this.initRPC();
+                GLFW.glfwSetWindowTitle(Client.mc.window.getHandle(), "Classic Sigma 5.0");
             }
         }
         else {
             Class9493.method35323();
-            getInstance().method35193().method32126();
-            GLFW.glfwSetWindowTitle(Client.field40683.field4632.method7690(), (CharSequence)"Jello for Sigma 5.0");
+            getInstance().getGuimanager().method33452();
+            GLFW.glfwSetWindowTitle(Client.mc.window.getHandle(), "Jello for Sigma 5.0");
         }
-        if (this.field40690 == null) {
+        if (this.moduleManager == null) {
             if (Class1607.thread != null) {
-                (this.field40690 = new Class7060()).method21544(this.field40709);
-                this.field40690.method21548(this.field40685);
-                this.field40690.method21547();
+                (this.moduleManager = new ModuleManager()).register(this.clientMode);
+                this.moduleManager.loadModProfiles(this.config);
+                this.moduleManager.method21547();
             }
         }
         System.gc();
     }
     
     static {
-        Client.field40683 = Minecraft.method5277();
-        Client.field40710 = new ArrayList<Texture>();
+        Client.mc = Minecraft.method5277();
+        Client.textureList = new ArrayList<Texture>();
         Client.field40711 = false;
     }
 }

@@ -76,7 +76,7 @@ public class ElytraFly extends Module
                     class5717.method16975(this.field15610);
                 }
             }
-            if (GLFW.glfwGetKey(ElytraFly.mc.field4632.method7690(), ElytraFly.mc.gameSettings.field23440.field2161.field32860) == 1 && this.method9883("NCP")) {
+            if (GLFW.glfwGetKey(ElytraFly.mc.window.getHandle(), ElytraFly.mc.gameSettings.field23440.field2161.field32860) == 1 && this.method9883("NCP")) {
                 class5717.method16975(-0.8999999761581421);
             }
             else if (!ElytraFly.mc.player.method1809()) {

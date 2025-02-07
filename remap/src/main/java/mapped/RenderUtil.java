@@ -67,7 +67,7 @@ public class RenderUtil
     }
     
     public static float method26867() {
-        return (float) RenderUtil.field33582.field4632.method7700();
+        return (float) RenderUtil.field33582.window.getGuiScaleFactor();
     }
     
     public static void method26868(final float n, final float n2, final float n3, final float n4) {
@@ -102,7 +102,7 @@ public class RenderUtil
             GL11.glGetIntegerv(3088, intBuffer);
             RenderUtil.field33584.push(intBuffer);
             final int value = intBuffer.get(0);
-            final int n5 = Minecraft.method5277().field4632.method7693() - intBuffer.get(1) - intBuffer.get(3);
+            final int n5 = Minecraft.method5277().window.method7693() - intBuffer.get(1) - intBuffer.get(3);
             final int n6 = value + intBuffer.get(2);
             final int n7 = n5 + intBuffer.get(3);
             if (n < value) {
@@ -125,7 +125,7 @@ public class RenderUtil
             }
         }
         final int n8 = n;
-        final int n9 = Minecraft.method5277().field4632.method7693() - n4;
+        final int n9 = Minecraft.method5277().window.method7693() - n4;
         final int n10 = n3 - n;
         final int n11 = n4 - n2;
         GL11.glEnable(3089);
@@ -1095,7 +1095,7 @@ public class RenderUtil
         EXTFramebufferObject.glDeleteRenderbuffersEXT(class6153.field24891);
         final int glGenRenderbuffersEXT = EXTFramebufferObject.glGenRenderbuffersEXT();
         EXTFramebufferObject.glBindRenderbufferEXT(36161, glGenRenderbuffersEXT);
-        EXTFramebufferObject.glRenderbufferStorageEXT(36161, 34041, Minecraft.method5277().field4632.method7692(), Minecraft.method5277().field4632.method7693());
+        EXTFramebufferObject.glRenderbufferStorageEXT(36161, 34041, Minecraft.method5277().window.method7692(), Minecraft.method5277().window.method7693());
         EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36128, 36161, glGenRenderbuffersEXT);
         EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36096, 36161, glGenRenderbuffersEXT);
     }
@@ -1218,7 +1218,7 @@ public class RenderUtil
             method5291.method6538(class8321, 0, 0);
             GL11.glDepthFunc(515);
             RenderSystem.method30029();
-            RenderSystem.method30060();
+            RenderSystem.popMatrix();
             GL11.glAlphaFunc(519, 0.0f);
             RenderSystem.method30084(33986, 240.0f, 240.0f);
             GL11.glDisable(2929);
@@ -1235,7 +1235,7 @@ public class RenderUtil
         n2 *= (int)Class9000.field37993;
         final ByteBuffer allocateDirect = ByteBuffer.allocateDirect(3);
         GL11.glPixelStorei(3317, 1);
-        GL11.glReadPixels(n, Minecraft.method5277().field4632.method7693() - n2, 1, 1, 6407, 5120, allocateDirect);
+        GL11.glReadPixels(n, Minecraft.method5277().window.method7693() - n2, 1, 1, 6407, 5120, allocateDirect);
         return new java.awt.Color(allocateDirect.get(0) * 2, allocateDirect.get(1) * 2, allocateDirect.get(2) * 2, 1);
     }
     
