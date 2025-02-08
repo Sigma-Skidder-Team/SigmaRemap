@@ -6,6 +6,7 @@ Sigma 5.0 remapping project
 
 ### [!] Latest fixes/improvements
 We have fixed many features already,
+- Animations being broken
 - music player (featured playlists & search functionality);
 - added back viaversion from 1.7 all the way up to 1.21.1;
 - all modules that had rotations broken were fixed;
@@ -24,7 +25,6 @@ We have fixed many features already,
 ### [!] TO-DO
 1. Fix singleplayer;
 2. Packet issues on some servers (instant disconnect/kicks);
-3. Main menu, animation and gui flickering;
 4. Fix shaders crashing game when loading new chunks;
 
 ### Contributors
